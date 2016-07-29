@@ -1,10 +1,10 @@
-Файлы xprofile, ~/.xprofile и /etc/xprofile позволяют выполнять команды при старте сессии пользователя X, до старта [Оконного менеджера](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)").
+Файлы xprofile, `~/.xprofile` и `/etc/xprofile`, позволяют выполнять команды при старте сессии пользователя X. До старта [оконного менеджера](/index.php/Window_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Window manager (Русский)").
 
-Файл xprofile похож по стилю на [xinitrc](/index.php/Xinitrc "Xinitrc").
+Файл xprofile схож по стилю с [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)").
 
 ## Совместимость
 
-Файлы xprofile автоматически выполняются следующими экранными менеджерами:
+Следующие экранные менеджеры имеют встроенную поддержку xprofile:
 
 *   [GDM](/index.php/GDM "GDM") - `/etc/gdm/Xsession`
 *   [KDM](/index.php/KDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDM (Русский)") - `/usr/share/config/kdm/Xsession`
@@ -12,31 +12,33 @@
 *   [LXDM](/index.php/LXDM "LXDM") - `/etc/lxdm/Xsession`
 *   [SDDM](/index.php/SDDM "SDDM") - `/usr/share/sddm/scripts/Xsession`
 
-### Выполнение xprofile со стартом xinit
+### Выполнение команд из xprofile со стартом xinit
 
-Можно выполнить xprofile, если сессия начинается со старта одной из следующих программ:
+Следующие программы автоматически выполнят команды из xprofile при старте сеанса:
 
 *   `startx`
 *   `xinit`
 *   [XDM](/index.php/XDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XDM (Русский)")
 *   [SLiM](/index.php/SLiM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SLiM (Русский)")
-*   Любой другой [Экранный менеджер](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)") который использует `~/.xsession` или `~/.xinitrc`
+*   Любой другой [экранный менеджер](/index.php/Display_manager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Display manager (Русский)"), использующий `~/.xsession` или `~/.xinitrc`
 
-Любой запуск `~/.xinitrc` (обычно копируется из `/etc/X11/xinit/xinitrc` если он не существует) выполняется прямым или косвенным образом. Поэтому надо добавить следующие строки в файлы:
+Все запуски происходят прямым или косвенным образом из `~/.xinitrc` или `/etc/X11/xinit/xinitrc`, если первый не существует. Поэтому все требуемые команды xprofile должны располагаться именно там.
 
  `~/.xinitrc и /etc/X11/xinit/xinitrc` 
 ```
 #!/bin/sh
 
-# Убедитесь, что эти строки перед командой 'exec', иначе не будет работать.
+# Убедитесь в том, что эти строчки перед первой командой 'exec', иначе ничего не сработает
 [ -f /etc/xprofile ] && source /etc/xprofile
 [ -f ~/.xprofile ] && source ~/.xprofile
+
+...
 
 ```
 
 ## Конфигурация
 
-Сначала, создайте файл `~/.xprofile`, если он не существует. Далее, добавьте программы, которые буду запускаться при старте сессии. Для примера будут использоваться [tint2](/index.php/Tint2_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Tint2 (Русский)") и [nm-applet](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)"):
+Во-первых, создайте файл `~/.xprofile`, если его не существует. Затем добавьте соответствующие команды для программ, требующих запуск при старте сессии. Смотрите ниже:
 
  `~/.xprofile` 
 ```

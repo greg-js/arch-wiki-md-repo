@@ -29,11 +29,13 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
         *   [2.1.1 Dual boot](#Dual_boot)
         *   [2.1.2 Bug](#Bug)
         *   [2.1.3 Sound pops twice during shutdown and sleep](#Sound_pops_twice_during_shutdown_and_sleep)
-    *   [2.2 Power](#Power)
-        *   [2.2.1 Messages during console login](#Messages_during_console_login)
+    *   [2.2 Messages during console login](#Messages_during_console_login)
+    *   [2.3 USB devices and sleep](#USB_devices_and_sleep)
+        *   [2.3.1 Battery charging issues](#Battery_charging_issues)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Touchpad switch](#Touchpad_switch)
-    *   [3.2 Special keys for window managers](#Special_keys_for_window_managers)
+    *   [3.2 Full fan speed](#Full_fan_speed)
+    *   [3.3 Special keys for window managers](#Special_keys_for_window_managers)
 
 ## Configuration
 
@@ -208,9 +210,7 @@ WantedBy=suspend.target
 
 Then [enable](/index.php/Enable "Enable") `beep-disable.service` and `beep-disable-wakeup.service` as root.
 
-### Power
-
-#### Messages during console login
+### Messages during console login
 
 After booting up, when Linux asks you to enter your login and password, some messages might appear similar to these:
 
@@ -223,11 +223,62 @@ Nouveau E[    DRM] Pointer to flat panel table invalid
 
 After installing Intel with Nvidia graphics drivers, messages should dissappear.
 
+### USB devices and sleep
+
+Hibernate via systemd works out of the box when the swap space or file is correctly identified in the resume kernel parameter. However, even though the system suspends properly it will lock up when resuming. This is due to the USB controller not properly turning off on its own. Create two the following files as shown:
+
+ `/etc/systemd/system/root-suspend.service` 
+```
+[Unit]
+Description=Local system suspend actions
+Before=sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=-/usr/bin/rmmod ehci_pci ; /usr/bin/rmmod ehci_hcd ; /usr/bin/rmmod xhci_pci ; /usr/bin/rmmod xhci_hcd
+
+[Install]
+WantedBy=sleep.target
+```
+ `/etc/systemd/system/root-resume.service` 
+```
+[Unit]
+Description=Local system resume actions
+After=suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/modprobe ehci_hcd ; /usr/bin/modprobe ehci_pci ; /usr/bin/modprobe xhci_hcd ; /usr/bin/modprobe xhci_pci
+
+[Install]
+WantedBy=suspend.target
+
+```
+
+Then [enable](/index.php/Enable "Enable") `root-suspend.service` and `root-resume.service` as root.
+
+#### Battery charging issues
+
+This battery in this laptop can only be accessed by removing the bottom of the entire laptop, which requires removing 10 TORX-5 screws. That there appears to be a power issue related to the recharging USB port (the USB port with a lightning bolt) under Linux. When an externally powered device is plugged into the charging USB port and the system is power cycled, the battery indicator will begin flashing orange and the system no longer recognizes or charges the battery. One way to reset the charging circuit is to force shutdown by holding the power button for a few seconds. See [this thread at the Ubuntu forums](http://ubuntuforums.org/showthread.php?t=2176915&page=4&p=13035724#post13035724) for other possible solutions.
+
 ## Tips and tricks
 
 ### Touchpad switch
 
 The touchpad can be toggled using a `xinput` [script](/index.php/Touchpad_Synaptics#Software_toggle "Touchpad Synaptics").
+
+### Full fan speed
+
+**Note:** No solution yet how to slow it down. After the reboot everything is fine
+
+This is very helpful if you are about to play a heavy game. Install package [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), then follow [Lm_sensors#Setup](/index.php/Lm_sensors#Setup "Lm sensors") guide to set up sensors. Once you ready, just before every hard game run the following command:
+
+```
+# pwmconfig
+
+```
+
+If prompted, click `y` and after a few seconds you are done. Fan spins at full speed.
 
 ### Special keys for window managers
 

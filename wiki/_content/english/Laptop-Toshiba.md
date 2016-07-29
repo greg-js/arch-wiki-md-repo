@@ -22,7 +22,7 @@ Dimming of display: NA
 Frequency scaling of CPU: NA | Yes | NA | need BIOS Update V.1.20 or higher |
 | Satellite A135-SP4108 | current | Intel Mobile 945GM/GMS with xf86-video-intel driver | Sound works, Volume control wheel works | Yes | Intel Pro wireless 3945ABG (wicd) | NA | not tested | not tested | Card Reader works | NA |
 | Satellite A200-1TO | Current | ATI HD2400 (128-892MB Shared) Fully supported by latest ATI Catalyst Drivers | Sound works perfectly under current (2.6.25) kernel, using snd_hda_intel and ALSA. | Yes | Intel 3945 wireless. Works with stock Arch kernel | NA | Power Management working flawlessly. Setup as per Wiki instructions | Not tested. | NA | NA |
-| Satellite C50-B032 | 2015.09 | xf86-video-intel | Yes (works out of the box) | Yes (works out of the box) | Yes (works out of the box) | [qca9565-bluetooth-firmware](https://aur.archlinux.org/packages/qca9565-bluetooth-firmware/) | works out of the box | NA | NA | NA |
+| Satellite C50-B032 | 2016.07.01 | xf86-video-intel | Yes (works out of the box) | Yes (works out of the box) | Yes (works out of the box) | works out of the box | works out of the box | NA | NA | NA |
 | Satellite P100-PSPA3C-MA502C | Current | 3D supported with latest NVIDIA Driver | Sound works with snd_hda_intel and DSDT modification. See [Gentoo Wiki](http://www.gentoo-wiki.com/HARDWARE_Toshiba_Satellite_P100) for info. | Yes | Works with ipw3945 | NA | Suspend to
 RAM: NA
 Disk: NA

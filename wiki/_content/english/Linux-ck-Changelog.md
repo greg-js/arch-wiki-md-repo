@@ -2,6 +2,16 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.6.5-2**
+
+*   Changelog: 4.6.5-1 neglected to apply one of the BFQ patches; 4.6.5-2 fixes it (thanks to Lucjan Lucjanov for pointing this out).
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8099b0a3ae7993c950cd7f077cd2984cb2025fed](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8099b0a3ae7993c950cd7f077cd2984cb2025fed)
+
+**Bump to v4.6.5-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.5](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.5)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c955d210c7fc306d96bf570641afc11fdda9dfd8](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c955d210c7fc306d96bf570641afc11fdda9dfd8)
+
 **Bump to v4.6.4-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.4](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.4)

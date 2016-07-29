@@ -1,4 +1,4 @@
-[Blueman](https://github.com/blueman-project/blueman) is a full featured Bluetooth manager written in [GTK+](/index.php/GTK%2B "GTK+"). Blueman versions 1.23 and below were developed on [launchpad.net](https://launchpad.net) and used the, now unmaintained, [Bluez4](/index.php/Bluez4 "Bluez4") bluetooth stack. In November 2013, Blueman development moved to [Github](https://github.com/blueman-project/blueman). As of version 2.0, Blueman has full support for the Bluez5 Bluetooth stack.
+[Blueman](https://github.com/blueman-project/blueman) is a full featured Bluetooth manager written in [GTK+](/index.php/GTK%2B "GTK+"). See the project page on [Github](https://github.com/blueman-project/blueman).
 
 ## Contents
 

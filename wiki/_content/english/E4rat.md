@@ -13,15 +13,17 @@ Current version is 0.2.3
     *   [3.3 e4rat-preload](#e4rat-preload)
     *   [3.4 Alternative: e4rat-preload-lite](#Alternative:_e4rat-preload-lite)
 *   [4 e4rat and init systems](#e4rat_and_init_systems)
-*   [5 Bootchart](#Bootchart)
-    *   [5.1 bootchart 0.9-9](#bootchart_0.9-9)
-    *   [5.2 bootchart2](#bootchart2)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 startup.log is not created](#startup.log_is_not_created)
-    *   [6.2 e4rat erroneously reports an ext2 files system](#e4rat_erroneously_reports_an_ext2_files_system)
-    *   [6.3 /var/lib/e4rat/startup.log is not accessible](#.2Fvar.2Flib.2Fe4rat.2Fstartup.log_is_not_accessible)
-    *   [6.4 Remove annoying message that mess up boot message](#Remove_annoying_message_that_mess_up_boot_message)
-*   [7 See also](#See_also)
+*   [5 e4rat-lite](#e4rat-lite)
+    *   [5.1 Using e4rat-lite](#Using_e4rat-lite)
+*   [6 Bootchart](#Bootchart)
+    *   [6.1 bootchart](#bootchart_2)
+    *   [6.2 bootchart2](#bootchart2)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 startup.log is not created](#startup.log_is_not_created)
+    *   [7.2 e4rat erroneously reports an ext2 files system](#e4rat_erroneously_reports_an_ext2_files_system)
+    *   [7.3 /var/lib/e4rat/startup.log is not accessible](#.2Fvar.2Flib.2Fe4rat.2Fstartup.log_is_not_accessible)
+    *   [7.4 Remove annoying message that mess up boot message](#Remove_annoying_message_that_mess_up_boot_message)
+*   [8 See also](#See_also)
 
 ## Process
 
@@ -127,13 +129,27 @@ init /usr/bin/busybox
 
 This allows to launch both `e4rat-preload` and `bootchart` in the same boot sequence.
 
+## e4rat-lite
+
+An alternative to e4rat with some improvements made. It is also expected to circumvent some issues one may experience with the original e4rat package. It can be acquired from [e4rat-lite-git](https://aur.archlinux.org/packages/e4rat-lite-git/)
+
+### Using e4rat-lite
+
+The commands for e4rat-lite work identically to e4rat. The only differences are the paths to them.
+
+collect: `init=/usr/bin/e4rat-lite-collect`
+
+realloc: `/usr/bin/e4rat-lite-realloc`
+
+preload: `init=/usr/bin/e4rat-preload`
+
 ## Bootchart
 
-**Warning:** This has not worked for and is still in development - any suggestions welcome
+[Bootchart](/index.php/Bootchart "Bootchart") can be used to generate graphs of the system startup. This is useful to get visual representations of the CPU and Disk usages. While not required, a before and after comparison of the boot process can be obtained using Bootchart.
 
-You will see a noticeable improvement but nothing can beat a nice [Bootchart](/index.php/Bootchart "Bootchart"). Have it run before and after e4rat installation and gawk at the difference.
+### bootchart
 
-### bootchart 0.9-9
+**Warning:** The official bootchart package appears to be deprecated, as it longer includes the bootchart-render command needed to generate the graph. It is recommended to use bootchart2 as an alternative.
 
 This version of [bootchart](/index.php/Bootchart "Bootchart") automatically stops logging as soon as a [display manager](/index.php/Display_manager "Display manager") comes up. Supposedly the following overrides that and continues logging but it does not work for me:
 
@@ -160,7 +176,7 @@ init=/sbin/bootchartd bootchart_init=/sbin/e4rat-preload
 
 ### bootchart2
 
-To get [bootchart](/index.php/Bootchart "Bootchart")2 working together with e4rat edit `/sbin/bootchartd` and replace the line where it says
+To get [bootchart2](https://aur.archlinux.org/packages/bootchart2/) working together with e4rat edit `/sbin/bootchartd2` and replace the line where it says
 
 ```
 init="/sbin/init"
@@ -174,16 +190,18 @@ init="/sbin/e4rat-preload"
 
 ```
 
-This will allow you to measure your boot time with the fine informations that Bootchart2 provides.
+This will allow you to measure your boot time with the information that Bootchart2 provides.
 
-It's easy to set up when to stop bootchart2 (on opposite to bootchat) by editing its configuration file `/etc/bootchartd.conf`. Simply adjust the line
+It's easy to set up when to stop bootchart2 (contrary to bootchart) by editing its configuration file `/etc/bootchartd2.conf`. The line
 
 ```
 EXIT_PROC="kdm_greet xterm konsole gnome-terminal metacity mutter compiz ldm icewm-session enlightenment"
 
 ```
 
-with any program you want Bootchart2 stop logging when it launches, or rather left it empty for logging to be stopped manually.
+can be configured to stop Bootchart2 logging when the specified application launches. Alternatively it may be left empty for the logging to be stopped manually.
+
+To generate the chart, run the command: `pybootchartgui -i`
 
 ## Troubleshooting
 
@@ -200,6 +218,7 @@ dmesg | grep e4rat
 ```
 
 *   Try to increase verbosity and loglevel to 31 in your `e4rat.conf`
+*   Try using e4rat-lite instead of e4rat
 
 ### e4rat erroneously reports an ext2 files system
 

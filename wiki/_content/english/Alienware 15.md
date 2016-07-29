@@ -13,7 +13,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 ## Contents
 
 *   [1 Hardware overview](#Hardware_overview)
-    *   [1.1 Alienware 15 R2](#Alienware_15_R2)
+    *   [1.1 Alienware 15(early 2015)](#Alienware_15.28early_2015.29)
+    *   [1.2 Alienware 15 R2](#Alienware_15_R2)
 *   [2 Networking](#Networking)
     *   [2.1 Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter](#Qualcomm_Atheros_QCA6174_802.11ac_Wireless_Network_Adapter)
 *   [3 Input](#Input)
@@ -23,6 +24,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [6 Issues](#Issues)
 
 ## Hardware overview
+
+### Alienware 15(early 2015)
 
 Tested configuration:
 

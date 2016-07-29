@@ -461,7 +461,7 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 
 ```
 
-For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in.in).
+For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
 
 ## See also
 

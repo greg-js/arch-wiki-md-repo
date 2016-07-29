@@ -46,6 +46,8 @@ cryptdevice=*device*:*dmname*
 *   `*dmname*` is the **d**evice-**m**apper name given to the device after decryption, which will be available as `/dev/mapper/*dmname*`.
 *   If a LVM contains the [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the LVM gets activated first and the volume group containing the logical volume of the encrypted root serves as *device*. It is then followed by the respective volume group to be mapped to root. The parameter follows the form of `cryptdevice=*/dev/vgname/lvname*:*dmname*`.
 
+**Note:** When using systemd & sd-encrypt hooks, use `*luks.uuid*` instead of cryptdevice, see *systemd-cryptsetup-generator(8)*.
+
 ### root
 
 The `root=` parameter specifies the `*device*` of the actual (decrypted) root file system:

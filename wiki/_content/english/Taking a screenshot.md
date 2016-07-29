@@ -215,7 +215,7 @@ saves the screenshot in a filename with the current year, month, date, hours, mi
 
 See `man scrot` for more information. You can simply automate the file to uploaded like so [[1]](https://github.com/kaihendry/Kai-s--HOME/tree/master/bin).
 
-**Note:** According to [this thread](http://comments.gmane.org/gmane.comp.misc.suckless/6901), `scrot -s` does not work when ran using a shortcut in [dwm](https://www.archlinux.org/packages/?name=dwm) (defined in `config.def.c`/`config.c`).
+**Note:** According to [this thread](http://comments.gmane.org/gmane.comp.misc.suckless/6901), `scrot -s` does not work when run using a shortcut in [dwm](https://www.archlinux.org/packages/?name=dwm) (defined in `config.def.c`/`config.c`).
 
 ### escrotum
 

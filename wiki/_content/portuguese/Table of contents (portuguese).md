@@ -32,4 +32,3 @@
 | <small>8.5.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(2)</small> |
 | <small>8.5.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>8.6.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |
-| <small>9.</small> [Website Resources](/index.php?title=Category:Website_Resources_(Portugu%C3%AAs)&action=edit&redlink=1 "Category:Website Resources (Português) (page does not exist)") <small>(0)</small> |

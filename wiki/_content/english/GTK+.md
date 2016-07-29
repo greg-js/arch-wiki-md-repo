@@ -354,11 +354,11 @@ See also [[1]](http://martin.ankerl.com/2008/10/10/how-to-make-a-compact-gnome-t
 
 ### File-Chooser Startup-Location
 
-Open the file-chooser within the **current-working-directory** and not with the artifical **recent** location. Normally the **current-working-directory** is **home-directory**.
+Open the file-chooser within the **current-working-directory** and not the **recent** location. Normally the **current-working-directory** is **home-directory**.
 
 **GTK+ 3**
 
-Modify DConf with *gsettings*, there is no configuration file available:
+Modify DConf with *gsettings*, as the database file ($XDG_CONFIG_HOME/dconf/users) is binary:
 
 ```
 $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
@@ -367,7 +367,7 @@ $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
 
 **GTK+ 2**
 
-Modify `~/.config/gtk-2.0/gtkfilechooser.ini`configuration file:
+Modify `~/.config/gtk-2.0/gtkfilechooser.ini` configuration file:
 
  `~/.config/gtk-2.0/gtkfilechooser.ini`  `StartupMode=cwd` 
 

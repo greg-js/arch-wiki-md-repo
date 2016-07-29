@@ -68,7 +68,7 @@ To enable this swap partition on boot, add an entry to [fstab](/index.php/Fstab 
 **Note:**
 
 *   Adding an entry to fstab is optional in most cases with systemd. See the next subsection.
-*   If using an SSD with TRIM support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d` or `--discard` parameter achieves the same. See `man 8 swapon` for details.
+*   If using an SSD with [TRIM](/index.php/TRIM "TRIM") support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d` or `--discard` parameter achieves the same. See `man 8 swapon` for details.
 
 **Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
 

@@ -60,7 +60,7 @@ Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards 
 
 Now the `mysqld.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
 
-**Tip:** If you use something other than `/var/lib/mysql` for datadir, you need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") `mysqld.service` and append the same parameter to the `ExecStart` line.
+**Tip:** If you use something other than `/var/lib/mysql` for datadir, you need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") `mysqld.service` and append the same `--datadir` parameter to the `ExecStart` line.
 
 It is recommended to secure the MySQL installation by running the following command:
 

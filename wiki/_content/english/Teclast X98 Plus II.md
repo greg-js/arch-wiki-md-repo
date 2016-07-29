@@ -48,20 +48,30 @@ Probably related bug reports:
 
 [https://bugzilla.redhat.com/show_bug.cgi?id=1337627](https://bugzilla.redhat.com/show_bug.cgi?id=1337627)
 
+Some ACPI-related warnings in the [dmesg output](https://gist.githubusercontent.com/Keziolio/bfc782b534daef1f2d9849380179908c/raw/7fc408eeae363b6c2a90fddb195cf0bf779efd2a/dmesg%2520-%2520teclast) may be related
+
 ### Touchscreen (needs hacking, works)
 
 The touchscreen does not work out of the box, but it can be made to work with the following driver:
 
-[https://github.com/sigboe/gslX68X](https://github.com/sigboe/gslX68X) (follow the links for instructions on how to handle the firmware)
+[https://github.com/sigboe/gslX68X](https://github.com/sigboe/gslX68X)
 
-You can get the firmware by executing this command, it just downloads it as a base64 string from a temporarily link:
+For a working touchscreen you need also a firmware, you can get it by executing this command, it just downloads it as a base64 string from a temporarily link:
 
 ```
 $ wget -qO- [https://gist.githubusercontent.com/Keziolio/caed197e8cff640b00e766aa55c7bea6/raw/104dde63bae574acf8143a7080bd7c95629e02df/firmware.base64](https://gist.githubusercontent.com/Keziolio/caed197e8cff640b00e766aa55c7bea6/raw/104dde63bae574acf8143a7080bd7c95629e02df/firmware.base64) | base64 -d > firm.fw
 
 ```
 
-The touchscreen will not be precise, [touchscreen calibration](/index.php/Touchscreen#Calibration "Touchscreen") is needed to get proper functionality. After the calibration it should work without major issues.
+Then copy the firmware in `/lib/firmware/mssl1680.fw` , install the driver and the touchscreen should be working.
+
+If it doesn't, uninstall `xf86-input-libinput` and use `xf86-input-evdev`.
+
+Xorg should work, wayland is more problematic, weston can have proper support and calibration, but other compositors do lack some features.
+
+If you have another tablet with silead based touchscreen, read carefully the driver's readme and follow its links, it explains how to handle drivers and firmwares for various devices.
+
+The touchscreen will not be precise out of the box, [touchscreen calibration](/index.php/Touchscreen#Calibration "Touchscreen") is needed to get proper functionality. After the calibration it should work without major issues. Maybe this can be solved at the firmware level with another driver.
 
 ### WiFi (needs hacking)
 
@@ -73,7 +83,7 @@ But it needs some kernel patches applied, it has yet to be tested.
 
 ### Power and volume buttons
 
-No, totally unresponsive, more research is needed
+No, totally unresponsive, more research is needed, for the power button, it may be related to the power management / acpi breakage issue.
 
 ### Sound card
 

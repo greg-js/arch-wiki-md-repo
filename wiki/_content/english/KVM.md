@@ -60,7 +60,7 @@ $ zgrep CONFIG_KVM /proc/config.gz
 
 ```
 
-If the module is not set equal to `y` or `m`, then the module is **not** available.
+The module is **only** available if it is set to either `y` or `m`.
 
 ## Para-virtualized devices
 

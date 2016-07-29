@@ -33,10 +33,11 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [3.1 Enable Echo/Noise-Cancelation](#Enable_Echo.2FNoise-Cancelation)
     *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
     *   [3.3 Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio)
-        *   [3.3.1 Finding out your audio device parameters (1/4)](#Finding_out_your_audio_device_parameters_.281.2F4.29)
-        *   [3.3.2 Calculate your fragment size in msecs and number of fragments (2/4)](#Calculate_your_fragment_size_in_msecs_and_number_of_fragments_.282.2F4.29)
-        *   [3.3.3 Modify PulseAudio's configuration file (3/4)](#Modify_PulseAudio.27s_configuration_file_.283.2F4.29)
-        *   [3.3.4 Restart the PulseAudio daemon (4/4)](#Restart_the_PulseAudio_daemon_.284.2F4.29)
+        *   [3.3.1 Disabling timer-based scheduling (0/4)](#Disabling_timer-based_scheduling_.280.2F4.29)
+        *   [3.3.2 Finding out your audio device parameters (1/4)](#Finding_out_your_audio_device_parameters_.281.2F4.29)
+        *   [3.3.3 Calculate your fragment size in msecs and number of fragments (2/4)](#Calculate_your_fragment_size_in_msecs_and_number_of_fragments_.282.2F4.29)
+        *   [3.3.4 Modify PulseAudio's configuration file (3/4)](#Modify_PulseAudio.27s_configuration_file_.283.2F4.29)
+        *   [3.3.5 Restart the PulseAudio daemon (4/4)](#Restart_the_PulseAudio_daemon_.284.2F4.29)
     *   [3.4 Choppy sound with analog surround sound setup](#Choppy_sound_with_analog_surround_sound_setup)
     *   [3.5 Laggy sound](#Laggy_sound)
     *   [3.6 Choppy/distorted sound](#Choppy.2Fdistorted_sound)
@@ -534,6 +535,12 @@ Some Intel audio cards using the `snd-hda-intel` module need the otions `vid=808
 Please report any such cards to [PulseAudio Broken Sound Driver page](http://www.freedesktop.org/wiki/Software/PulseAudio/Backends/ALSA/BrokenDrivers/)
 
 ### Setting the default fragment number and buffer size in PulseAudio
+
+#### Disabling timer-based scheduling (0/4)
+
+By default, PulseAudio uses timer-based scheduling. In this mode, fragments are not used at all, and so the default-fragments and default-fragment-size-msec parameters are ignored. To turn timer-based scheduling off add `tsched=0` in `/etc/pulse/default.pa`:
+
+ `/etc/pulse/default.pa`  `load-module module-udev-detect tsched=0` 
 
 #### Finding out your audio device parameters (1/4)
 

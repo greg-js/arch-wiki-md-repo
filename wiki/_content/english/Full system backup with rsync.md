@@ -96,22 +96,6 @@ where you substitute the desired partition for /dev/sdb3\. To list the UUIDs of 
 
 ```
 
-If the one you found from lsblk is not found by grep, then grub-mkconfig did not work. Most likely, you will have to [Change root](/index.php/Change_root "Change root") into the duplicate file system and then use [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). For example, if you had used rsync to duplicate root on /dev/sdb3 then change root and use mkinitcpio as follows:
-
-```
-# mkdir /mnt/arch
-# mount /dev/sdb3 /mnt/arch
-# cd /mnt/arch
-# mount -t proc proc proc/
-# mount --rbind /sys sys/
-# mount --rbind /dev dev/
-# chroot /mnt/arch /bin/bash
-# mkinitcpio -p linux
-
-```
-
-After exiting, verify the new UUID is included.
-
 ## First boot
 
 Reboot the computer and select the right entry in the bootloader. This will load the system for the first time. All peripherals should be detected and the empty folders in `/` will be populated.
@@ -119,8 +103,6 @@ Reboot the computer and select the right entry in the bootloader. This will load
 Now you can re-edit `/etc/fstab` to add the previously removed partitions and mount points.
 
 If you transferred the data from HDD to SSD (solid state drive), do not forget to activate TRIM. Also consider using HDD and tmpfs mount points to reduce SSD wearing - see [Maximizing performance#Relocate files to tmpfs](/index.php/Maximizing_performance#Relocate_files_to_tmpfs "Maximizing performance") and [Solid State Drives#Tips for minimizing disk reads/writes](/index.php/Solid_State_Drives#Tips_for_minimizing_disk_reads.2Fwrites "Solid State Drives").
-
-**Note:** You may have to reboot again in order to get all services and daemons working correctly. Personally, pulseaudio would not initialise because of a module loading error. I restarted the dbus.service to make it work.
 
 ## See also
 

@@ -2,7 +2,7 @@
 
 * * *
 
-[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – **Go** – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – **Go** – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
 [Go](https://en.wikipedia.org/wiki/Go_(programming_language) is well supported on Arch Linux.
 
@@ -24,9 +24,9 @@ The [go](https://www.archlinux.org/packages/?name=go) package contains the **go*
         *   [2.3.1 Using *go get*](#Using_go_get)
         *   [2.3.2 Using *go get*](#Using_go_get_2)
 
-# General guidelines
+## General guidelines
 
-## Naming
+### Naming
 
 *   For applications written in Go, use the name of the application as the package name, in lowercase.
     *   Be creative if the name is already taken.
@@ -40,7 +40,7 @@ The [go](https://www.archlinux.org/packages/?name=go) package contains the **go*
     *   In general, the most popular packages should be allowed to use the shortest or "best" name.
 *   Postfixes to the package names (like `-hg`, `-git` or `-svn`) are optional if there are no official releases from the project in question. On one hand, it is common to use them when the package downloads from a VCS. On the other hand, most Go projects do not have any release-tarballs, only the repo which is used for branching/tagging the official release, if it is not *trunk*. Also, `go get`, which is the "official" way to install Go modules, uses the repositories directly. Use your better judgement.
 
-## Packaging
+### Packaging
 
 *   Go projects are either just library files, just executables or both. Choose the appropriate way of packaging them. There are several examples below.
 *   Some Go applications or libraries have not been updated to the latest version of Go yet.
@@ -51,9 +51,9 @@ The [go](https://www.archlinux.org/packages/?name=go) package contains the **go*
     *   Alternatively, use the current date as the version number, in this form `YYYYMMDD`.
 *   Since Go applications are usually statically compiled, it is hard to envision reasons for packaging Go libraries instead of just Go applications.
 
-# Sample PKGBUILDs
+## Sample PKGBUILDs
 
-## Sample PKGBUILD for an application written in Go
+### Sample PKGBUILD for an application written in Go
 
 ```
 # Maintainer: NAME <EMAIL>
@@ -86,12 +86,12 @@ package() {
 # vim:set ts=2 sw=2 et:
 ```
 
-### Sample packages
+#### Sample packages
 
 *   [gendesk](https://www.archlinux.org/packages/?name=gendesk)
 *   [dcpu16](https://aur.archlinux.org/packages/dcpu16/)
 
-## Sample PKGBUILD for when only a single source file is available
+### Sample PKGBUILD for when only a single source file is available
 
 ```
 # Maintainer: NAME <EMAIL>
@@ -119,13 +119,13 @@ package() {
 # vim:set ts=2 sw=2 et:
 ```
 
-### Sample packages
+#### Sample packages
 
 *   [gorun](https://aur.archlinux.org/packages/gorun/)
 
-## Sample PKGBUILDs for Go libraries that also includes executables
+### Sample PKGBUILDs for Go libraries that also includes executables
 
-### Using *go get*
+#### Using *go get*
 
 This is the recommended way, instead of the method below.
 
@@ -181,7 +181,7 @@ package() {
 
 Thanks to Rémy Oudompheng‎ for this one.
 
-### Using *go get*
+#### Using *go get*
 
 Here is another way that relies on `go get`.
 

@@ -390,7 +390,7 @@ You may adjust the "sharpness" parameter on your monitor settings to adjust the 
 
 ## Linux console
 
-The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `sun12x22` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives. See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for configuration details.
+The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n`(normal) and `ter-132b`(bold). See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for configuration details.
 
 ## See also
 

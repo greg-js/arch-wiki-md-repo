@@ -27,8 +27,12 @@ This page explains how to set up, diagnose, and benchmark an InfiniBand network.
         *   [3.4.1 Connection mode](#Connection_mode)
         *   [3.4.2 MTU](#MTU)
         *   [3.4.3 Fine-tuning connection mode and MTU](#Fine-tuning_connection_mode_and_MTU)
-    *   [3.5 iSCSI over InfiniBand](#iSCSI_over_InfiniBand)
-        *   [3.5.1 ISCSI over IPoIB](#ISCSI_over_IPoIB)
+    *   [3.5 Remote Data Storage over InfiniBand](#Remote_Data_Storage_over_InfiniBand)
+        *   [3.5.1 iSCSI](#iSCSI)
+            *   [3.5.1.1 Over IPoIB](#Over_IPoIB)
+            *   [3.5.1.2 Over iSER](#Over_iSER)
+                *   [3.5.1.2.1 Single iSER Device](#Single_iSER_Device)
+                *   [3.5.1.2.2 Multiple iSER Devices](#Multiple_iSER_Devices)
 *   [4 InfiniBand programs for diagnosing and benchmarking](#InfiniBand_programs_for_diagnosing_and_benchmarking)
     *   [4.1 ibstat - View a computer's InfiniBand GUIDs](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs)
     *   [4.2 ibhosts - View all hosts on InfiniBand network](#ibhosts_-_View_all_hosts_on_InfiniBand_network)
@@ -326,13 +330,15 @@ Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples g
 
 **Tip:** It's usually best to have an entire subnet using the same connection and MTU settings. Mixing and matching appears to work, but not optimally.
 
-### iSCSI over InfiniBand
+### Remote Data Storage over InfiniBand
+
+#### iSCSI
 
 iSCSI allows storage devices and virtual storage devices to be used over a network. It differs from traditional file sharing (i.e. [Samba](/index.php/Samba "Samba") or [NFS](/index.php/NFS "NFS")) because iSCSI has the "guest" system view the shared device as its own block level device, rather than a traditionally mounted network shared folder. The disadvantage is iSCSI only allows one system to use each shared device at a time; trying to mount a shared device on the target ("host") system that is logged into by iSCSI by another system will fail. (A system using a shared deivce can certainly run traditional file sharing on top.) The advantages are that iSCSI allows speed, more control, and even a system's root filesystem to be located remotely (remote booting.)
 
-There is a lot of overlap with the [ISCSI Target](/index.php/ISCSI_Target "ISCSI Target"), [ISCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator"), and [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") articles, but the necessities will be discussed since much needs to be customized for usage over InfiniBand.
+There is a lot of overlap with the [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target"), [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator"), and [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") articles, but the necessities will be discussed since much needs to be customized for usage over InfiniBand.
 
-#### ISCSI over IPoIB
+##### Over IPoIB
 
 *   On all target ("host") and initiator ("guest") systems, [Install TCP/IP over InfiniBand](#TCP.2FIP_over_InfiniBand_.28IPoIB.29)
 
@@ -347,7 +353,7 @@ There is a lot of overlap with the [ISCSI Target](/index.php/ISCSI_Target "ISCSI
             *   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create *name* *file*`.
             *   To share a physical SCSI device as a pass-through, run: `cd /backstores/pscsi`; and `create *name* *dev*`.
             *   To share a RAM disk, run: `cd /backstores/ramdisk`; and `create *name* *size*`.
-            *   Where: *name* is for the backstore's name.
+            *   Where *name* is for the backstore's name.
             *   Where *dev* is the block device to share (i.e. /dev/sda, /dev/sda4, /dev/disk/by-id/*x*, or a LVM logical volume /dev/vg0/lv1).
             *   Where *file* is the file to share (i.e. */path/to/file*).
             *   Where *size* is the size of the RAM disk to create (i.e. 512MB, 20GB.)
@@ -367,9 +373,54 @@ There is a lot of overlap with the [ISCSI Target](/index.php/ISCSI_Target "ISCSI
     *   At this point, if you need this initiator system's iqn (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target ("host") system's `luns` in `targetcli`, run: `cat /etc/iscsi/initiatorname.iscsi`.
     *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p *portal*`, where *portal* is an IP (v4 or v6) address or hostname.
     *   Login to discovered targets. Run `iscsiadm -m node -L all`.
-    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3`. The block device ID will be the last line in the tree for each target. `-P` is the print command, and its option is the verbosity level. Only verbosity level 3 lists the block device IDs.
+    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3 | grep Attached`. The block device ID will be the last line in the tree for each target. `-P` is the print command, and its option is the verbosity level. Only verbosity level 3 lists the block device IDs.
 
 Now, on the initiator ("guest") system, you should be able to use your new iSCSI-backed block device just like any other. i.e. `fdisk /dev/*block_device_id*`, `mkfs.btrfs /dev/*block_device_id_with_partition_number*`.
+
+##### Over iSER
+
+iSER (iSCSI Extensions for RDMA) takes advantage of InfiniBand's RDMA protocols, rather than using TCP/IP. It eliminates TCP/IP overhead, and provides higher bandwidth, zero copy time, lower latency, and lower CPU utilization.
+
+There is currently a bug using more than 1 iSER device, [which seems to be with open-iscsi](https://github.com/open-iscsi/open-iscsi/issues/21).
+
+If this bug is fixed, multiple iSER devices should be able to be configured using the following instructions for a single iSER device. In the meantime, the multiple iSER devices workaround is given.
+
+###### Single iSER Device
+
+Follow the [Over IPoIB](#Over_IPoIB) instructions, with the following changes:
+
+*   On the target ("host") system:
+    *   After everything else is setup in `targetcli`, enable iSER on the target.
+        *   Run `cd /iscsi/*iqn*/tpg1/portals/0.0.0.0:3260`.
+            *   Where *iqn* is the randomly generated target name, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
+        *   Run `enable_iser true`.
+        *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
+*   On the initiator ("guest") system, when running `iscsiadm` to discover online targets and login to them, use the additional argument `-I iser`.
+
+###### Multiple iSER Devices
+
+As of open-iscsi 2.0_873-7, if you try the above for discovering multiple iSER devices, `openiscsi` will give this error:
+
+```
+  iscsiadm: recv's end state machine bug?
+  iscsiadm: Could not perform SendTargets discovery: iSCSI PDU timed out
+
+```
+
+This bug occurs for discovering multiple iSER devices. Once they're discovered, you can login to them, and use them fully. So as a workaround, you can discover the targets using IPoIB, change the target ("host") to iSER, make the 3 changes (filename, and two setting values) that `open-iscsi -m discovery` would make using iSER on the initiator ("guest"), and proceed as normal.
+
+*   On the target ("host") system, follow the [Over IPoIB](#Over_IPoIB) instructions, **without** the changes for [Single iSER Devices](#Single_iSER_Devices).
+*   On the initiator ("guest") system, follow the [Over IPoIB](#Over_IPoIB) instructions, **without** the changes for [Single iSER Devices](#Single_iSER_Devices), **up to and including** discovering online targets. Then:
+    *   Run `systemctl stop open-iscsi`.
+    *   Rename each `/etc/iscsi/nodes/*iqn*/*ip-port*/default` file to `iser`, and edit each of these files.
+        *   Where *iqn* is the randomly generated target name in targetcli, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
+        *   Where *ip-port-etc* is a directory in the form "192.168.2.1,3260,1".
+        *   Change `iface.iscsi_ifacename = default` to `iface.iscsi_ifacename = iser`.
+        *   Change `iface.transport_name = tcp` to `iface.transport_name = iser`.
+*   On the target ("host") system, enable iSER by following the [Over iSER](#Over_iSER) instructions for the target ("host") system.
+*   On the initiator ("guest") system:
+    *   Run `systemctl start open-iscsi`.
+    *   When logging in to discovered targets, run `iscsiadm -m node -L all -I iser`.
 
 ## InfiniBand programs for diagnosing and benchmarking
 

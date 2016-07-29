@@ -7,21 +7,26 @@ This article provides information on basic system diagnostics relating to perfor
     *   [1.2 The first thing to do](#The_first_thing_to_do)
     *   [1.3 Benchmarking](#Benchmarking)
 *   [2 Storage devices](#Storage_devices)
-    *   [2.1 Swap files](#Swap_files)
-    *   [2.2 RAID](#RAID)
-    *   [2.3 Multiple hardware paths](#Multiple_hardware_paths)
-    *   [2.4 Partitioning](#Partitioning)
-    *   [2.5 Choosing and tuning your filesystem](#Choosing_and_tuning_your_filesystem)
-        *   [2.5.1 Mount options](#Mount_options)
-            *   [2.5.1.1 Reiserfs](#Reiserfs)
-    *   [2.6 Tuning kernel parameters](#Tuning_kernel_parameters)
-    *   [2.7 Tuning IO schedulers](#Tuning_IO_schedulers)
-        *   [2.7.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
-        *   [2.7.2 systemd-tmpfiles](#systemd-tmpfiles)
-        *   [2.7.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
-    *   [2.8 Power management configuration](#Power_management_configuration)
-    *   [2.9 RAM disks](#RAM_disks)
-    *   [2.10 USB storage devices](#USB_storage_devices)
+    *   [2.1 Multiple hardware paths](#Multiple_hardware_paths)
+    *   [2.2 Partitioning](#Partitioning)
+        *   [2.2.1 Multiple drives](#Multiple_drives)
+        *   [2.2.2 Layout on HDDs](#Layout_on_HDDs)
+    *   [2.3 Choosing and tuning your filesystem](#Choosing_and_tuning_your_filesystem)
+        *   [2.3.1 Mount options](#Mount_options)
+            *   [2.3.1.1 Reiserfs](#Reiserfs)
+    *   [2.4 Tuning kernel parameters](#Tuning_kernel_parameters)
+        *   [2.4.1 USB storage devices](#USB_storage_devices)
+    *   [2.5 Tuning IO schedulers](#Tuning_IO_schedulers)
+        *   [2.5.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
+        *   [2.5.2 systemd-tmpfiles](#systemd-tmpfiles)
+        *   [2.5.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
+    *   [2.6 Power management configuration](#Power_management_configuration)
+    *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads.2Fwrites)
+        *   [2.7.1 Show disk writes](#Show_disk_writes)
+        *   [2.7.2 Relocate files to tmpfs](#Relocate_files_to_tmpfs)
+        *   [2.7.3 Compiling in tmpfs](#Compiling_in_tmpfs)
+        *   [2.7.4 Disabling journaling on the filesystem](#Disabling_journaling_on_the_filesystem)
+        *   [2.7.5 Swap space](#Swap_space)
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
     *   [3.2 Verynice](#Verynice)
@@ -32,14 +37,11 @@ This article provides information on basic system diagnostics relating to perfor
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
     *   [4.2 Driconf](#Driconf)
 *   [5 RAM and swap](#RAM_and_swap)
-    *   [5.1 Relocate files to tmpfs](#Relocate_files_to_tmpfs)
-    *   [5.2 Root on RAM overlay](#Root_on_RAM_overlay)
-    *   [5.3 Zram or zswap](#Zram_or_zswap)
-        *   [5.3.1 Swap on zRAM using a udev rule](#Swap_on_zRAM_using_a_udev_rule)
-    *   [5.4 Using the graphic card's RAM](#Using_the_graphic_card.27s_RAM)
+    *   [5.1 Root on RAM overlay](#Root_on_RAM_overlay)
+    *   [5.2 Zram or zswap](#Zram_or_zswap)
+        *   [5.2.1 Swap on zRAM using a udev rule](#Swap_on_zRAM_using_a_udev_rule)
+    *   [5.3 Using the graphic card's RAM](#Using_the_graphic_card.27s_RAM)
 *   [6 Network](#Network)
-*   [7 Application-specific tips](#Application-specific_tips)
-    *   [7.1 Firefox](#Firefox)
 
 ## The basics
 
@@ -92,14 +94,6 @@ The effects of optimization are often difficult to judge. They can however be me
 
 ## Storage devices
 
-### Swap files
-
-Creating your swap files on a separate disk can also help quite a bit, especially if your machine swaps frequently. It happens if you do not have enough RAM for your environment. Using KDE with all the features and applications that come along may require several GiB of memory, whereas a tiny window manager with console applications will perfectly fit in less than 512 MiB of memory.
-
-### RAID
-
-If you have multiple disks available, you can set them up as a software [RAID](/index.php/RAID "RAID") for serious speed improvements.
-
 ### Multiple hardware paths
 
 An internal hardware path is how the storage device is connected to your motherboard. There are different ways to connect to the motherboard such as TCP/IP through a NIC, plugged in directly using PCIe/PCI, Firewire, Raid Card, USB, etc. By spreading your storage devices across these multiple connection points you maximize the capabilities of your motherboard, for example 6 hard-drives connected via USB would be much much slower than 3 over USB and 3 over Firewire. The reason is that each entry path into the motherboard is like a pipe, and there is a set limit to how much can go through that pipe at any one time. The good news is that the motherboard usually has several pipes.
@@ -115,6 +109,16 @@ Note also that if you have a 2 USB ports on the front of your machine, and 4 USB
  `USB Device Tree`  `$ lsusb -tv`  `PCI Device Tree`  `$ lspci -tv` 
 
 ### Partitioning
+
+Make sure that your partitions are [properly aligned](/index.php/Partitioning#Partition_alignment "Partitioning").
+
+#### Multiple drives
+
+If you have multiple disks available, you can set them up as a software [RAID](/index.php/RAID "RAID") for serious speed improvements.
+
+Creating [swap](/index.php/Swap "Swap") on a separate disk can also help quite a bit, especially if your machine swaps frequently.
+
+#### Layout on HDDs
 
 If using a traditional spinning HDD, your partition layout can influence the system's performance. Sectors at the beginning of the drive (closer to the outside of the disk) are faster than those at the end. Also, a smaller partition requires less movements from the drive's head, and so speed up disk operations. Therefore, it is advised to create a small partition (10GB, more or less depending on your needs) only for your system, as near to the beginning of the drive as possible. Other data (pictures, videos) should be kept on a separate partition, and this is usually achieved by separating the home directory (`/home/*user*`) from the system (`/`).
 
@@ -149,6 +153,20 @@ Replace `/dev/sd**a1**` with the partition reserved for the journal, and `/dev/s
 ### Tuning kernel parameters
 
 There are several key tunables affecting the performance of block devices, see [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl") for more information.
+
+#### USB storage devices
+
+If USB drives like pendrives are slow to copy files, append these three lines in a [systemd](/index.php/Systemd "Systemd") tmpfile:
+
+ `/etc/tmpfiles.d/local.conf` 
+```
+w /sys/kernel/mm/transparent_hugepage/enabled - - - - madvise
+w /sys/kernel/mm/transparent_hugepage/defrag - - - - madvise
+w /sys/kernel/mm/transparent_hugepage/khugepaged/defrag - - - - 0
+
+```
+
+See also [[1]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[2]](http://lwn.net/Articles/572911/).
 
 ### Tuning IO schedulers
 
@@ -239,23 +257,37 @@ $ cat /sys/block/sd**X**/queue/scheduler  # where **X** is the device in questio
 
 When dealing with traditional rotational disks (HDD's) you may want to [lower or disable power saving features](/index.php/Hdparm#Power_management_configuration "Hdparm") completely.
 
-### RAM disks
+### Reduce disk reads/writes
 
-See [tmpfs](/index.php/Tmpfs "Tmpfs").
+Avoiding unnecessary access to slow storage drives is good for performance and also increasing lifetime of the devices, although on modern hardware the difference in life expectancy is usually negligible.
 
-### USB storage devices
+**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[4]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
 
-If USB drives like pendrives are slow to copy files, append these three lines in a [systemd](/index.php/Systemd "Systemd") tmpfile:
+#### Show disk writes
 
- `/etc/tmpfiles.d/local.conf` 
-```
-w /sys/kernel/mm/transparent_hugepage/enabled - - - - madvise
-w /sys/kernel/mm/transparent_hugepage/defrag - - - - madvise
-w /sys/kernel/mm/transparent_hugepage/khugepaged/defrag - - - - 0
+The [iotop](https://www.archlinux.org/packages/?name=iotop) package can sort by disk writes, and show how much and how frequently programs are writing to the disk. See [iotop(8)](http://man7.org/linux/man-pages/man8/iotop.8.html#) for details.
 
-```
+#### Relocate files to tmpfs
 
-See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl"), [[2]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[3]](http://lwn.net/Articles/572911/).
+Relocate files, such as your browser profile, to a [tmpfs](/index.php/Tmpfs "Tmpfs") file system, for improvements in application response as all the files are now stored in RAM:
+
+*   Refer to [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") for syncing browser profiles. Certain browsers might need special attention, see e.g. [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM").
+*   Refer to [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") for syncing any specified folder.
+*   Refer to [Makepkg#tmpfs](/index.php/Makepkg#tmpfs "Makepkg") for improving compile times when building packages.
+
+#### Compiling in tmpfs
+
+See [Makepkg#Improving compile times](/index.php/Makepkg#Improving_compile_times "Makepkg").
+
+#### Disabling journaling on the filesystem
+
+**Warning:** Using a filesystem with journaling disabled is data loss as a result of an ungraceful dismount (i.e. post power failure, kernel lockup, etc.). With modern SSDs, [Ted Tso](http://tytso.livejournal.com/61830.html) advocates that journaling can be enabled with minimal added read/write cycles under most circumstances.
+
+Using a journaling filesystem such as ext4 on an SSD **without** a journal is an option to decrease read/writes. With *ext4*, this is done by enabling the `nointegrity` option. See [Fstab](/index.php/Fstab "Fstab").
+
+#### Swap space
+
+See [Swap#Swappiness](/index.php/Swap#Swappiness "Swap").
 
 ## CPU
 
@@ -306,14 +338,6 @@ Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the
 [driconf](https://www.archlinux.org/packages/?name=driconf) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
 
 ## RAM and swap
-
-### Relocate files to tmpfs
-
-Relocate files, such as your browser profile, to a [tmpfs](https://en.wikipedia.org/wiki/tmpfs "wikipedia:tmpfs") file system, for improvements in application response as all the files are now stored in RAM:
-
-*   Refer to [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") for syncing browser profiles.
-*   Refer to [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon") for syncing any specified folder.
-*   Refer to [Makepkg#tmpfs](/index.php/Makepkg#tmpfs "Makepkg") for improving compile times when building packages.
 
 ### Root on RAM overlay
 
@@ -395,18 +419,3 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 ## Network
 
 Every time a connections is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be done. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached-git](https://aur.archlinux.org/packages/rescached-git/).
-
-## Application-specific tips
-
-### Firefox
-
-See [Firefox tweaks#Performance](/index.php/Firefox_tweaks#Performance "Firefox tweaks") and [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM").
-
-Firefox in the official repositories is built with the profile guided optimization flag enabled. You may want to use it in your custom build. To do this append:
-
-```
-ac_add_options --enable-profile-guided-optimization
-
-```
-
-to your `.mozconfig` file.

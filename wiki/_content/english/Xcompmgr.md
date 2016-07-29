@@ -19,7 +19,7 @@ Because it does not replace any existing window manager, it is an ideal solution
 
 ## Installation
 
-Before installing Xcompmgr, make sure you have installed and correctly configured [Xorg](/index.php/Xorg "Xorg"). To make sure the [Composite](/index.php/Composite "Composite") extension is enabled for the X Server, run:
+Before installing Xcompmgr, make sure you have [installed](/index.php/Installed "Installed") and correctly configured [Xorg](/index.php/Xorg "Xorg"). To make sure the [Composite](/index.php/Composite "Composite") extension is enabled for the X Server, run:
 
  `$ xdpyinfo | grep Composite`  `Composite` 
 
@@ -32,7 +32,7 @@ Section "Extensions"
 EndSection
 ```
 
-Xcompmgr can be [installed](/index.php/Pacman "Pacman") with the package [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr), available in the [official repositories](/index.php/Official_repositories "Official repositories"). For transparency also install [transset-df](https://www.archlinux.org/packages/?name=transset-df) from the [official repositories](/index.php/Official_repositories "Official repositories"). See [Xterm#Automatic transparency](/index.php/Xterm#Automatic_transparency "Xterm") for an example.
+Xcompmgr can be [installed](/index.php/Installed "Installed") with the package [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr), available in the [official repositories](/index.php/Official_repositories "Official repositories"). For transparency also [install](/index.php/Install "Install") [transset-df](https://www.archlinux.org/packages/?name=transset-df) from the [official repositories](/index.php/Official_repositories "Official repositories"). See [Xterm#Automatic transparency](/index.php/Xterm#Automatic_transparency "Xterm") for an example.
 
 ### Forks and updated versions
 
@@ -173,7 +173,7 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 ### Background turns light gray briefly after logging in (e.g. in Openbox)
 
-This is fixed by installing [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of *#000000*) before `xcompmgr`.
+This is fixed by [installing](/index.php/Installing "Installing") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of *#000000*) before `xcompmgr`.
 
 ### BadPicture request in awesome
 
@@ -186,13 +186,13 @@ If you get the following error in [awesome](/index.php/Awesome "Awesome"):
 
 ```
 
-just install [feh](/index.php/Feh "Feh") and restart [awesome](/index.php/Awesome "Awesome").
+just [install](/index.php/Install "Install") [feh](/index.php/Feh "Feh") and restart [awesome](/index.php/Awesome "Awesome").
 
 ### Screen not updating in awesome after resolution change
 
 When using an external monitor, you may encounter problems when automatically changing display resolutions: a part of the screen becomes "stuck" and no longer updates itself. This problem occurs because of the initial resolution change (happening before Xcompmgr starts) as well as [awesome](/index.php/Awesome "Awesome") setting the background via [feh](/index.php/Feh "Feh").
 
-To fix it, you need to install [hsetroot](https://aur.archlinux.org/packages/hsetroot/), from the [official repositories](/index.php/Official_repositories "Official repositories"), and put the following line in `.xinitrc`, just before `xcompmgr`:
+To fix it, you need to [install](/index.php/Install "Install") [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and put the following line in `.xinitrc`, just before `xcompmgr`:
 
 ```
 hsetroot -solid "#000066"

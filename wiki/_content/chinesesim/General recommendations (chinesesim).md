@@ -352,7 +352,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 可能有人需要安装微软视窗下的字体，如下安装之: [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/), [ttf-office-2007-fonts](https://aur.archlinux.org/packages/ttf-office-2007-fonts/)
 
-请访问 [字体配置](/index.php/Font_configuration "Font configuration") 获取配置字体渲染的详细信息，[Fonts](/index.php/Fonts "Fonts") 提供了字体选择建议和安装方法。
+请访问 [字体配置](/index.php/Font_configuration "Font configuration") 获取配置字体渲染的详细信息，[Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") 提供了字体选择建议和安装方法。
 
 #### 终端字体
 

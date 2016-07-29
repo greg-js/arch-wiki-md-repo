@@ -220,6 +220,35 @@ init
 	Hello.show ()
 ```
 
+**Go**
+
+*   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
+
+ `main.go` 
+```
+package main
+
+import (
+	"fmt"
+	"os"
+
+	notify "github.com/mqu/go-notify"
+)
+
+func main() {
+	notify.Init("Hello World!")
+	defer notify.UnInit()
+
+	hello := notify.NotificationNew("Hello World!", "This is an example notification.", "")
+
+	if e := notify.NotificationShow(hello); e != nil {
+		fmt.Fprintf(os.Stderr, "%s
+", e.Message())
+		return
+	}
+}
+```
+
 **Groovy**
 
 *   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/)

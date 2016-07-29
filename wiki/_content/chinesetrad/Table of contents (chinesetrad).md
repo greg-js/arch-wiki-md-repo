@@ -12,14 +12,13 @@
 | <small>2.</small> [應用程式](/index.php/Category:Applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Applications (正體中文)") <small>(7)</small> |
 | <small>2.1.</small> [指令 shell](/index.php/Category:Command_shells_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Command shells (正體中文)") <small>(1)</small> |
 | <small>2.2.</small> [資料壓縮和封存](/index.php/Category:Data_compression_and_archiving_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Data compression and archiving (正體中文)") <small>(2)</small> |
-| <small>2.3.</small> [圖形和桌面出版](/index.php?title=Category:Graphics_and_desktop_publishing_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Category:Graphics and desktop publishing (正體中文) (page does not exist)") <small>(0)</small> |
-| <small>2.4.</small> [網路應用程式](/index.php/Category:Internet_applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internet applications (正體中文)") <small>(2) (還在 [網路](/index.php/Category:Networking_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Networking (正體中文)"))</small> |
-| <small>2.4.1.</small> [Email clients](/index.php/Category:Email_clients_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Email clients (正體中文)") <small>(2)</small> |
-| <small>2.5.</small> [數學和科學](/index.php/Category:Mathematics_and_science_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mathematics and science (正體中文)") <small>(1)</small> |
-| <small>2.6.</small> [播放器](/index.php/Category:Multimedia_players_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Multimedia players (正體中文)") <small>(1)</small> |
-| <small>2.7.</small> [辦公](/index.php/Category:Office_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Office (正體中文)") <small>(1)</small> |
-| <small>2.8.</small> [文字編輯器](/index.php/Category:Text_editors_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Text editors (正體中文)") <small>(1)</small> |
-| <small>2.9.</small> [Wine](/index.php/Category:Wine_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Wine (正體中文)") <small>(1)</small> |
+| <small>2.3.</small> [網路應用程式](/index.php/Category:Internet_applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internet applications (正體中文)") <small>(2) (還在 [網路](/index.php/Category:Networking_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Networking (正體中文)"))</small> |
+| <small>2.3.1.</small> [Email clients](/index.php/Category:Email_clients_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Email clients (正體中文)") <small>(2)</small> |
+| <small>2.4.</small> [數學和科學](/index.php/Category:Mathematics_and_science_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mathematics and science (正體中文)") <small>(1)</small> |
+| <small>2.5.</small> [播放器](/index.php/Category:Multimedia_players_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Multimedia players (正體中文)") <small>(1)</small> |
+| <small>2.6.</small> [辦公](/index.php/Category:Office_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Office (正體中文)") <small>(1)</small> |
+| <small>2.7.</small> [文字編輯器](/index.php/Category:Text_editors_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Text editors (正體中文)") <small>(1)</small> |
+| <small>2.8.</small> [Wine](/index.php/Category:Wine_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Wine (正體中文)") <small>(1)</small> |
 | <small>3.</small> [開發](/index.php/Category:Development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Development (正體中文)") <small>(1)</small> |
 | <small>3.1.</small> [Arch 開發](/index.php/Category:Arch_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Arch development (正體中文)") <small>(0) (還在 [關於 Arch](/index.php/Category:About_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:About Arch (正體中文)"))</small> |
 | <small>3.1.1.</small> [軟體包開發](/index.php/Category:Package_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package development (正體中文)") <small>(5)</small> |

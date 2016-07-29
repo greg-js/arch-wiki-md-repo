@@ -707,10 +707,9 @@ Segmentation fault (core dumped)
 
 ```
 
-Apparently it is a bug of some versions of virtualgl. So a workaround is to install and use primus instead.
+Apparently it is a bug of some versions of virtualgl. So a workaround is to [install](/index.php/Install "Install") [primus](https://www.archlinux.org/packages/?name=primus) and [lib32-primus](https://www.archlinux.org/packages/?name=lib32-primus) and use it instead:
 
 ```
-$ pacman -Sy primus lib32-primus
 $ primusrun glxspheres64
 $ optirun -b primus glxspheres64
 

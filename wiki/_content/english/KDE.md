@@ -84,6 +84,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [10.8 Konsole does not save commands' history](#Konsole_does_not_save_commands.27_history)
     *   [10.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
     *   [10.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [10.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
 *   [11 Unstable releases](#Unstable_releases)
 *   [12 Bugs](#Bugs)
 *   [13 See also](#See_also)
@@ -798,6 +799,15 @@ fs.inotify.max_user_watches = 10000
 ### Freezes when using Automount on a NFS volume
 
 Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
+
+### Locale warning when installing packages in Konsole
+
+```
+ mandb: can't set the locale; make sure $lc_* and $lang are correct
+
+```
+
+By default, Konsole sets $LANG to en_US.US-ASCII. If you haven't generated that locale, then mandb can't use it. In your Konsole profile settings, click "Environment" and then add a line for LANG=en_US.UTF-8 or whatever your locale should be.
 
 ## Unstable releases
 

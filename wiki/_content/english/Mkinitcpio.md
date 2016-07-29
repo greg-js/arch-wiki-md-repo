@@ -222,6 +222,7 @@ A table of common hooks and how they affect image creation and runtime follows. 
 
 See the man page of systemd-cryptsetup-generator(8) for available kernel command line options. Alternatively, if the file `/etc/crypttab.initramfs` exists, it will be added to the initramfs as `/etc/crypttab`. See the crypttab(5) manpage for more information on crypttab syntax.
 
+**Note:** Use `*luks.uuid*` instead of cryptdevice for bootloader when using this hook, see the aforementioned man page for more details.
  | -- |
 | **lvm2** | Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this. | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
 | **sd-lvm2** | Use this hook instead of **lvm2** when using the **systemd** hook | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |

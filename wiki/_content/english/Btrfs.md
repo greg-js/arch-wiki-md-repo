@@ -298,7 +298,7 @@ LABEL=arch64 / btrfs defaults,noatime,ssd,compress=lzo,commit=120 0 0
 
 A Btrfs filesystem will automatically free unused blocks from an SSD drive supporting the TRIM command.
 
-More information about enabling and using TRIM can be found in [Solid State Drives/Tips and tricks#TRIM](/index.php/Solid_State_Drives/Tips_and_tricks#TRIM "Solid State Drives/Tips and tricks").
+More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
 
 ## Usage
 

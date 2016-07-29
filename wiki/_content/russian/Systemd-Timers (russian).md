@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Дата последней синхронизации: 24 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=427528).
+**Состояние перевода:** На этой странице представлен перевод статьи [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Дата последней синхронизации: 27 июля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=437648).
 
 Таймеры - файлы служб [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), имя которых оканчивается на `.service`, а также они контролируют файлы `.service` или события. И могут выступать альтернативой [cron](/index.php/Cron "Cron") (смотрите [#В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)). Помимо этого имеют встроенную поддержку временных событий календаря, монотонных временных событий и могут быть запущены в асинхронном режиме.
 
@@ -10,7 +10,7 @@
 *   [4 Пример](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80)
     *   [4.1 Монотонный таймер](#.D0.9C.D0.BE.D0.BD.D0.BE.D1.82.D0.BE.D0.BD.D0.BD.D1.8B.D0.B9_.D1.82.D0.B0.D0.B9.D0.BC.D0.B5.D1.80)
     *   [4.2 Таймер в реальном времени](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B5.D1.80_.D0.B2_.D1.80.D0.B5.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
-*   [5 Transient .timer units](#Transient_.timer_units)
+*   [5 Временные юниты .timer](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D1.8B_.timer)
 *   [6 В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)
     *   [6.1 Полезности](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
     *   [6.2 Предостережения](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
@@ -51,7 +51,7 @@ Fri 2014-07-11 00:00:00 CEST  15h left    Thu 2014-07-10 00:00:13 CEST  8h ago  
 
 ## Пример
 
-No changes to service unit files are needed to schedule them with a timer. The following example schedules `foo.service` to be run with a corresponding timer called `foo.timer`.
+Не требуется никаких изменений в файлах сервисного юнита, чтобы использовать его вместе с таймером. В следующем примере назначаем запуск `foo.service` в соответствии с таймером `foo.timer`.
 
 ### Монотонный таймер
 
@@ -88,7 +88,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-Если требуется указать более точную дату и время, используйте следующий формат: `DayOfWeek Year-Month-Day Hour:Minute:Second`. Звездочка может быть использована, чтобы указать все значения, а запятые могут быть использованы для перечисления возможных значений. В следующем примере сервис запускается в первые четыре дня каждого месяца в полдень, но *только*, если этими днями являются понедельник или вторник. Более подробная информация доступна в `man systemd.time`.
+Если требуется указать более точную дату и время, используйте следующий формат: `ДеньНедели Год-Месяц-День Часы:Минуты:Секунды`. Звездочка может быть использована, чтобы указать все значения, а запятые, в свою очередь, для перечисления возможных значений. В следующем примере сервис запускается в первые четыре дня каждого месяца в полдень, но *только*, если этими днями являются понедельник или вторник. Более подробная информация доступна в `man systemd.time`.
 
 ```
 OnCalendar=Mon,Tue *-*-01,02,03,04 12:00:00
@@ -97,23 +97,23 @@ OnCalendar=Mon,Tue *-*-01,02,03,04 12:00:00
 
 **Совет:** Специальные выражения событий, такие как `daily` и `weekly`, относятся к *конкретному времени начала* и, таким образом, все таймеры, использующие эти выражения, запустятся одновременно. Таймеры, использующие специальные выражения, могут негативно сказаться на производительности системы, если сервисы, запускаемые таймерами, являются ресурсозатратными. Опция `RandomizedDelaySec` помогает избежать подобных проблем посредством случайного выбора времени запуска каждого из таймеров. Смотрите `systemd.timer (5)`.
 
-## Transient .timer units
+## Временные юниты .timer
 
-One can use `systemd-run` to create transient `.timer` units. That is, one can set a command to run at a specified time without having a service file. For example the following command touches a file after 30 seconds:
+Можно использовать `systemd-run` для создания временных юнитов `.timer`. То есть, можно назначить запуск определенной команды в нужно время, не имя файла сервиса. Например, следующая команда создаст файл через 30 секунд:
 
 ```
 # systemd-run --on-active=30 /bin/touch /tmp/foo
 
 ```
 
-One can also specify a pre-existing service file that does not have a timer file. For example, the following starts the systemd unit named `*someunit*.service` after 12.5 hours have elapsed:
+Кроме того, можно указать предварительно существующий файл сервиса, при этом не имея файла таймера. Например, запустим юнит, который называется `*некоторыйюнит*.service`, через 12.5 часов:
 
 ```
-# systemd-run --on-active="12h 30m" --unit *someunit*.service
+# systemd-run --on-active="12h 30m" --unit *некоторыйюнит*.service
 
 ```
 
-See `man systemd-run` for more information and examples.
+Смотрите `man systemd-run` для получения дополнительной информации и примеров.
 
 ## В качестве замены cron
 

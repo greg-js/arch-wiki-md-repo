@@ -70,15 +70,14 @@ Proceed once the contents of both lists are satisfactory, since they will be use
 Define bash alias for recovery purposes:
 
 ```
-# recovery-pacman() {
-    pacman "$@"       \
+ recovery-pacman() {
+    sudo pacman "$@"  \
     --log /dev/null   \
     --noscriptlet     \
     --dbonly          \
     --force           \
     --nodeps          \
     --needed          \
-    #
 }
 
 ```

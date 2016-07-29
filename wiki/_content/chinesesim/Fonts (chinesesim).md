@@ -23,24 +23,24 @@
     *   [3.2 持久性配置](#.E6.8C.81.E4.B9.85.E6.80.A7.E9.85.8D.E7.BD.AE)
 *   [4 字体包](#.E5.AD.97.E4.BD.93.E5.8C.85)
     *   [4.1 盲文点字](#.E7.9B.B2.E6.96.87.E7.82.B9.E5.AD.97)
-    *   [4.2 非英文使用者](#.E9.9D.9E.E8.8B.B1.E6.96.87.E4.BD.BF.E7.94.A8.E8.80.85)
-        *   [4.2.1 阿拉伯和乌尔都文字](#.E9.98.BF.E6.8B.89.E4.BC.AF.E5.92.8C.E4.B9.8C.E5.B0.94.E9.83.BD.E6.96.87.E5.AD.97)
-        *   [4.2.2 波斯文字](#.E6.B3.A2.E6.96.AF.E6.96.87.E5.AD.97)
-        *   [4.2.3 缅甸文字](#.E7.BC.85.E7.94.B8.E6.96.87.E5.AD.97)
-        *   [4.2.4 中日韩越文字](#.E4.B8.AD.E6.97.A5.E9.9F.A9.E8.B6.8A.E6.96.87.E5.AD.97)
-            *   [4.2.4.1 Pan-CJK](#Pan-CJK)
-            *   [4.2.4.2 中文字](#.E4.B8.AD.E6.96.87.E5.AD.97)
-            *   [4.2.4.3 日文字](#.E6.97.A5.E6.96.87.E5.AD.97)
-            *   [4.2.4.4 韩文字](#.E9.9F.A9.E6.96.87.E5.AD.97)
-        *   [4.2.5 西里尔文字](#.E8.A5.BF.E9.87.8C.E5.B0.94.E6.96.87.E5.AD.97)
-        *   [4.2.6 希腊文字](#.E5.B8.8C.E8.85.8A.E6.96.87.E5.AD.97)
-        *   [4.2.7 希伯来文字](#.E5.B8.8C.E4.BC.AF.E6.9D.A5.E6.96.87.E5.AD.97)
-        *   [4.2.8 印地文字](#.E5.8D.B0.E5.9C.B0.E6.96.87.E5.AD.97)
-        *   [4.2.9 高棉文字](#.E9.AB.98.E6.A3.89.E6.96.87.E5.AD.97)
-        *   [4.2.10 僧伽罗文字](#.E5.83.A7.E4.BC.BD.E7.BD.97.E6.96.87.E5.AD.97)
-        *   [4.2.11 塔米尔文字](#.E5.A1.94.E7.B1.B3.E5.B0.94.E6.96.87.E5.AD.97)
-        *   [4.2.12 藏文字](#.E8.97.8F.E6.96.87.E5.AD.97)
-    *   [4.3 数学字体](#.E6.95.B0.E5.AD.A6.E5.AD.97.E4.BD.93)
+    *   [4.2 数学和符号字体](#.E6.95.B0.E5.AD.A6.E5.92.8C.E7.AC.A6.E5.8F.B7.E5.AD.97.E4.BD.93)
+    *   [4.3 非英文使用者](#.E9.9D.9E.E8.8B.B1.E6.96.87.E4.BD.BF.E7.94.A8.E8.80.85)
+        *   [4.3.1 中日韩越文字](#.E4.B8.AD.E6.97.A5.E9.9F.A9.E8.B6.8A.E6.96.87.E5.AD.97)
+            *   [4.3.1.1 Pan-CJK](#Pan-CJK)
+            *   [4.3.1.2 中文字](#.E4.B8.AD.E6.96.87.E5.AD.97)
+            *   [4.3.1.3 日文字](#.E6.97.A5.E6.96.87.E5.AD.97)
+            *   [4.3.1.4 韩文字](#.E9.9F.A9.E6.96.87.E5.AD.97)
+        *   [4.3.2 阿拉伯和乌尔都文字](#.E9.98.BF.E6.8B.89.E4.BC.AF.E5.92.8C.E4.B9.8C.E5.B0.94.E9.83.BD.E6.96.87.E5.AD.97)
+        *   [4.3.3 波斯文字](#.E6.B3.A2.E6.96.AF.E6.96.87.E5.AD.97)
+        *   [4.3.4 缅甸文字](#.E7.BC.85.E7.94.B8.E6.96.87.E5.AD.97)
+        *   [4.3.5 西里尔文字](#.E8.A5.BF.E9.87.8C.E5.B0.94.E6.96.87.E5.AD.97)
+        *   [4.3.6 希腊文字](#.E5.B8.8C.E8.85.8A.E6.96.87.E5.AD.97)
+        *   [4.3.7 希伯来文字](#.E5.B8.8C.E4.BC.AF.E6.9D.A5.E6.96.87.E5.AD.97)
+        *   [4.3.8 印地文字](#.E5.8D.B0.E5.9C.B0.E6.96.87.E5.AD.97)
+        *   [4.3.9 高棉文字](#.E9.AB.98.E6.A3.89.E6.96.87.E5.AD.97)
+        *   [4.3.10 僧伽罗文字](#.E5.83.A7.E4.BC.BD.E7.BD.97.E6.96.87.E5.AD.97)
+        *   [4.3.11 塔米尔文字](#.E5.A1.94.E7.B1.B3.E5.B0.94.E6.96.87.E5.AD.97)
+        *   [4.3.12 藏文字](#.E8.97.8F.E6.96.87.E5.AD.97)
     *   [4.4 Microsoft 字体](#Microsoft_.E5.AD.97.E4.BD.93)
     *   [4.5 Apple OS X 字体](#Apple_OS_X_.E5.AD.97.E4.BD.93)
     *   [4.6 等宽字体](#.E7.AD.89.E5.AE.BD.E5.AD.97.E4.BD.93)
@@ -402,6 +402,19 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - 包含 Unicode **盲文点字**符号的字体。
 
+### 数学和符号字体
+
+*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - 提供许多 Unicode 符号，包括 Emoji
+*   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Wolfram 公司的 Mathematica 字体
+*   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core), [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) 包含许多数学字体，如拉丁符号。
+*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google 的 emoji 字体
+*   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType 字体
+*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
+*   [otf-latin-modern](https://aur.archlinux.org/packages/otf-latin-modern/), [otf-latinmodern-math](https://aur.archlinux.org/packages/otf-latinmodern-math/) -Computer Modern fonts 的改进版本
+*   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - STIX 字体的 OpenType 实现，以及对从右到左的书写支持。
+*   [emojione-color-font](https://aur.archlinux.org/packages/emojione-color-font/) -完整、独立、开源的 Emoji 字体集，专心于设计正确
+*   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter 的开源 Emoji 字形
+
 ### 非英文使用者
 
 应用程序与浏览器会根据 fontconfig 设置和 Unicode 文字可用的字体来选择其显示字体。用指令 `fc-list :lang="双字母的语言代码"` 枚举系统安装了哪些可对应该语言的字体。例如，枚举已经安装的阿拉伯文字体，以及支持阿拉伯字的字体：
@@ -416,10 +429,49 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 ```
 
-若要在多国语言的网站（如维基百科、Arch Linux wiki）中正确显示字形，需要安装下列一项软件包：
+若要在多国语言的网站（如Wikipedia、Arch Linux Wiki）中正确显示字形，需要安装下列一项软件包：
 
 *   谷歌的 [Noto](http://www.google.com/get/noto/) 字体家族旨在支持所有语言。请安装 [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts), [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) 和 [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) 软件包。
 *   An alternative set of fonts which has a good coverage of languages is [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) with [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) and [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk).
+
+#### 中日韩越文字
+
+##### Pan-CJK
+
+*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Google Noto CJK 字体， 提供简体中文、繁体中文、日文、韩文一致的设计和外观。它是基于 [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) 重贴的商标。
+*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - 思源黑体， 是由 Adobe 与 Google 合资开发的，囊括简体中文、繁体中文、日文、韩文字形和来自 Source Sans 字体家族的拉丁文、希腊文和西里尔文字形的高质量无衬线 OpenType 字体。
+
+##### 中文字
+
+*   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - 思源黑体简体中文部分
+*   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - 思源黑体繁体中文部分
+*   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑，无衬线形式的高质量中日韩越 (CJKV) 轮廓字体。
+*   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - 文泉驿正黑，黑体 (无衬线) 的中文轮廓字体，附带文泉驿点阵宋体 (也支持部分日韩字符)。
+*   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - **楷书** (带有笔触) Unicode 字体 (推荐启用反锯齿)
+*   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - **明体** (印刷) Unicode 字体
+*   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - **新宋**字体，之前为 ttf-fireflysung
+*   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - 文泉驿点阵宋体 (衬线) 中文字体
+*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - 中文、越南文 TrueType 字体
+*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体
+
+##### 日文字
+
+*   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - 思源黑体日文部分
+*   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - 正式的日文哥特体（无衬线）与明朝体 （衬线）字形集，高质量的开源字体之一，openSUSE-ja 的默认字形。
+*   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - 一款免费的日文汉字字体，Mincho（衬线）风格。
+*   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - 自由的日文 TrueType 字体。已经过期无人维护，但在某些环境下可当作备用字体使用。
+*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - 日文哥特体字形。Debian/Fedora/Vine Linux 的默认字体
+*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - 现代哥特体的日文轮廓字体。包含所有日文平假名/片假名、Basic Latin、Latin-1 Supplement、Latin Extended-A、IPA Extensions。另外还有大部分日文汉字、希腊字母、西里尔字与越南文字，可以 7 磅 (等比例) 或 5 磅 (等宽) 字重显示。
+*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - 日文字体，可正确显示 [2ch 的 Shift JIS 艺术创作](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art")。
+
+##### 韩文字
+
+*   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - 思源黑体韩文部分
+*   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - 韩文 TrueType 字体集合
+*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - Nanum 系列 TrueType 字体
+*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - Nanum 系列 TrueType 等宽字体
+*   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/) - 由 Naver 制作的 TrueType 等宽字体
+*   [spoqa-han-sans](https://aur.archlinux.org/packages/spoqa-han-sans/) - 由 Spoqa 定制的 Source Han Sans 字体。
 
 #### 阿拉伯和乌尔都文字
 
@@ -428,6 +480,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 *   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - 来自 SIL 的 Unicode 阿拉伯文字体
 *   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - 来自 SIL 的 Unicode 阿拉伯文字体
 *   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - 自由的阿拉伯文字体集合
+*   [ttf-urdufonts](https://aur.archlinux.org/packages/ttf-urdufonts/) - Urdu 字体
 
 #### 波斯文字
 
@@ -440,42 +493,6 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 *   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 源自myordbok.com的121款字体*(AUR)*
 
-#### 中日韩越文字
-
-##### Pan-CJK
-
-*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - **思源黑体** 是由 Adobe 与 Google 合资开发的，囊括简体中文、繁体中文、日文、韩文字形和来自 Source Sans 字体家族的拉丁文、希腊文和西里尔文字形的高质量无衬线 OpenType 字体
-
-##### 中文字
-
-*   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - 思源黑体简体中文部分
-*   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - 思源黑体繁体中文部分
-*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - （繁体）台湾教育部发行的标准楷书、宋体字体
-*   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - 文泉驿微米黑：无衬线形式的高质量中日韩越 (CJKV) 轮廓字体，自 Google Droid 字体衍生而来。
-*   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - 文泉驿正黑：黑体 (无衬线) 的中文轮廓字体，附带文泉驿点阵宋体 (也支持部分日韩字符)。
-*   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - **楷书** (带有笔触) Unicode 字体 (推荐启用反锯齿)
-*   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - **明体** (印刷) Unicode 字体
-*   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - **新宋**字体，之前为 ttf-fireflysung
-*   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - 文泉驿点阵宋体 (衬线) 中文字体
-*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - 中文、越南文 TrueType 字体
-
-##### 日文字
-
-*   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - 思源黑体日文部分
-*   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - 正规的日文哥特体 (无衬线) 与明朝体 (衬线) 字形集；其中一项高质量的开放原始码字形。openSUSE-ja 的缺省字形。
-*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - 日文哥特体字形。Debian/Fedora/Vine Linux 的缺省字体
-*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - 现代哥特体的日文轮廓字体。包含所有日文平假名/片假名、Basic Latin、Latin-1 Supplement、Latin Extended-A、IPA Extensions。另外还有大部分日文汉字、希腊字母、西里尔字与越南文字，可以 7 磅 (等比例) 或 5 磅 (等宽) 字重显示。
-*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - 日文字体，可正确显示 [2ch 的 Shift JIS 艺术创作](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art")。
-*   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - 自由的日文 TrueType 字体。已经过期无人维护，但在某些环境下可当作备案字体使用。
-*   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - 一款免费的日文汉字字体，Mincho (serif)风格。
-
-##### 韩文字
-
-*   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - 思源黑体韩文部分
-*   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - 韩文 TrueType 字体集合
-*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - 共享体 (Nanum) 系列 TrueType 字体
-*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - 共享体 (Nanum) 系列 TrueType 等宽字体
-
 #### 西里尔文字
 
 另请参阅[#等宽字体](#.E7.AD.89.E5.AE.BD.E5.AD.97.E4.BD.93)、[#无衬线字体](#.E6.97.A0.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)和[#衬线字体](#.E8.A1.AC.E7.BA.BF.E5.AD.97.E4.BD.93)
@@ -484,7 +501,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 #### 希腊文字
 
-几乎所有 Unicode 字体都包含希腊代码集 (也包含多调变音符号)。某些额外的字体软件包未包含完整的 Unicode 集，但拥有高质量的希腊字字形 (当然包含拉丁字)：
+几乎所有 Unicode 字体都包含希腊代码集 (也包含多调变音符号)，某些额外字体包虽然未包含完整的 Unicode 集，但拥有高质量的希腊字字形 (也包含拉丁字)：
 
 *   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - 由 Greek Font Society 选用的 OpenType 字体
 *   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - 来自 Magenta 的专业 TrueType 字体
@@ -524,12 +541,6 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 #### 藏文字
 
 *   [ttf-tibetan-machine](https://www.archlinux.org/packages/?name=ttf-tibetan-machine) - 藏文 (Tibetan) Machine TTFont
-
-### 数学字体
-
-*   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Wolfram 公司的 Mathematica 字体
-*   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType 字体 *(AUR)*
-*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/) - *(AUR)*
 
 ### Microsoft 字体
 

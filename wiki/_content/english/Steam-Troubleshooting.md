@@ -9,9 +9,7 @@ See [Steam](/index.php/Steam "Steam") for the main article.
 *   [1 Issues with nvidia 361.28](#Issues_with_nvidia_361.28)
 *   [2 Steam runtime issues](#Steam_runtime_issues)
     *   [2.1 Possible symptoms](#Possible_symptoms)
-    *   [2.2 Work arounds](#Work_arounds)
-        *   [2.2.1 Using the dynamic linker](#Using_the_dynamic_linker)
-        *   [2.2.2 Deleting the runtime libraries](#Deleting_the_runtime_libraries)
+    *   [2.2 Work around using the dynamic linker](#Work_around_using_the_dynamic_linker)
     *   [2.3 More information](#More_information)
 *   [3 Multiple monitors setup](#Multiple_monitors_setup)
 *   [4 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
@@ -85,18 +83,14 @@ Could not find required OpenGL entry point 'glGetError'! Either your video card 
 
 **Note:** A misconfigured firewall may also show up as a runtime issue, because Steam silently fails whenever it can't connect to its servers, and most games just crash whenever the Steam API fails to load.
 
-#### Work arounds
+#### Work around using the dynamic linker
 
-You can work around the issue by forcing Steam to use the up-to-date system versions (the ones installed by [pacman](/index.php/Pacman "Pacman")). There are two ways to do so.
-
-##### Using the dynamic linker
-
-The dynamic linker (`man 8 ld.so`) can be told to load specific libraries using the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"), in your own wrapper, for example:
+The dynamic linker (`man 8 ld.so`) can be used to force Steam to load the up-to-date system libraries via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"). For example, you can create your own wrapper script:
 
  `/usr/local/bin/steam` 
 ```
 #!/bin/sh
-LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
+export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
 exec /usr/bin/steam "$@"
 ```
 
@@ -108,33 +102,6 @@ Exec=env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/
 ```
 
 **Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.
-
-##### Deleting the runtime libraries
-
-Run this command to delete the runtime libraries known to cause issues on Arch Linux:
-
-```
-find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
-
-```
-
-If the above command does not work, run the above command again, then run this command.
-
-```
-find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
-
-```
-
-**Note:** Steam will frequently re-install these runtime libraries when Steam is updated, so until the issue is resolved: whenever Steam updates, you should exit, remove the libraries, and restart it again.
-
-If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality.
-
-**Warning:** `--reset` also deletes your games (the AppCache).
-
-```
-steam --reset
-
-```
 
 #### More information
 

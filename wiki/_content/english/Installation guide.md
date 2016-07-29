@@ -1,6 +1,6 @@
 This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles (accessible from the installation environment with [ELinks](/index.php/ELinks "ELinks")), or the various programs' [man pages](/index.php/Man_page "Man page"); see `[archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt)` for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
+For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles (accessible from the installation environment with [ELinks](/index.php/ELinks "ELinks")), or the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
 ## Contents
 
@@ -64,7 +64,7 @@ The layout can be changed with [loadkeys(1)](http://man7.org/linux/man-pages/man
 
 Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping(8)](http://man7.org/linux/man-pages/man8/ping.8.html#).
 
-For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd(8)](http://man7.org/linux/man-pages/man8/systemd-networkd.8.html#) and `[netctl(1)](https://git.archlinux.org/netctl.git/tree/docs/netctl.1.txt)` are available. See [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html#) and `[netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt)` for examples.
+For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd(8)](http://man7.org/linux/man-pages/man8/systemd-networkd.8.html#) and [netctl(1)](https://git.archlinux.org/netctl.git/tree/docs/netctl.1.txt) are available. See [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html#) and [netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt) for examples.
 
 When using either service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service`:
 
@@ -86,7 +86,7 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-To modify and print [partition tables](/index.php/Partition_table "Partition table"), use [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html#) or [parted(8)](http://man7.org/linux/man-pages/man8/parted.8.html#) for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or `[gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html)` for GPT only.
+To modify and print [partition tables](/index.php/Partition_table "Partition table"), use [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html#) or [parted(8)](http://man7.org/linux/man-pages/man8/parted.8.html#) for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html) for GPT only.
 
 At least one partition must be available for the `/` directory. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
@@ -117,7 +117,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 ```
 
-To [install](/index.php/Install "Install") other packages or groups to the new system, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or a [boot loader](/index.php/Boot_loader "Boot loader"), append their names to *pacstrap* (space separated) or to individual `[pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)` commands after [changing root](#Chroot).
+To [install](/index.php/Install "Install") other packages or groups to the new system, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or a [boot loader](/index.php/Boot_loader "Boot loader"), append their names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after [changing root](#Chroot).
 
 ## Configure the system
 

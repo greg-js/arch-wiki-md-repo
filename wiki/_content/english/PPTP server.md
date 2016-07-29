@@ -157,10 +157,21 @@ Now change `/etc/ufw/before.rules`, add following code after header and before *
 :POSTROUTING ACCEPT [0:0]
 
 # Allow traffic from clients to eth0
--A POSTROUTING -s 172.16.36.0/24 -o eth0 -j MASQUERADE
+-A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
 
 # commit to apply changes
 COMMIT
+
+```
+
+Allow GRE packets (protocol 47) in `/etc/ufw/before.rules`, find the line with: `# drop INVALID packets` and add rule:
+
+ `/etc/ufw/before.rules` 
+```
+# drop INVALID packets (logs these in loglevel medium and higher)
+**-A ufw-before-input -p 47 -i $iface -j ACCEPT**
+-A ufw-before-input -m conntrack --ctstate INVALID -j ufw-logging-deny
+-A ufw-before-input -m conntrack --ctstate INVALID -j DROP
 
 ```
 

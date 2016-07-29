@@ -16,7 +16,7 @@ You need to install [wine](/index.php/Wine "Wine"), [winetricks](https://www.arc
 From winetricks, install:
 
 ```
-$ winetricks corefonts vcrun2005 vcrun2008
+$ winetricks corefonts vcrun2005 vcrun2008 vcrun2015
 
 ```
 

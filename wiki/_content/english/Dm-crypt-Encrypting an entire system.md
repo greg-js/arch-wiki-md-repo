@@ -631,6 +631,8 @@ cryptdevice=/dev/sd*X*:enc cryptkey=/dev/sd*Z*:0:512 crypto=sha512:twofish-xts-p
 
 ```
 
+**Note:** If using sd-encrypt instead of encrypt, use `*luks.uuid*` instead of cryptdevice, see *systemd-cryptsetup-generator(8)*.
+
 See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") for details and other parameters that you may need.
 
 **Tip:** If using GRUB, you can install it on the same USB as the `/boot` partition with:

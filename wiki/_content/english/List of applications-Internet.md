@@ -15,7 +15,7 @@
             *   [1.3.2.1 Gecko-based](#Gecko-based)
             *   [1.3.2.2 Blink-based](#Blink-based)
             *   [1.3.2.3 WebKit-based](#WebKit-based)
-                *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqtwebkit)
+                *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qt5-webkit/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqt5-webkit.2Fqtwebkit)
             *   [1.3.2.4 Other](#Other)
     *   [1.4 File sharing](#File_sharing)
         *   [1.4.1 Download managers](#Download_managers)
@@ -116,7 +116,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 	[http://elinks.or.cz/](http://elinks.or.cz/) || [elinks](https://www.archlinux.org/packages/?name=elinks)
 
-*   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Text WWW browser. Includes a console version [links] similar to Lynx, and a graphical X-window/framebuffer version [links -g] (must be compiled in, Arch has both) with CSS, image rendering, pull-down menus.
+*   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Text WWW browser. Includes a console version [links] similar to Lynx, and a graphical X-window/framebuffer version [xlinks -g] (must be compiled in, Arch has both) with CSS, image rendering, pull-down menus.
 
 	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links)
 
@@ -178,6 +178,10 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
 
+*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier. The linux version of Maxthon has not been updated since September 2014.
+
+	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
+
 *   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
@@ -210,10 +214,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://github.com/vain/lariza/](https://github.com/vain/lariza/) || [lariza-git](https://aur.archlinux.org/packages/lariza-git/)
 
-*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier. The linux version of Maxthon has not been updated since September 2014.
-
-	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
-
 *   **Rainbow Lollipop** — The visual history browser.
 
 	[http://rainbow-lollipop.de/](http://rainbow-lollipop.de/) || [rainbow-lollipop-git](https://aur.archlinux.org/packages/rainbow-lollipop-git/)
@@ -226,9 +226,9 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://launchpad.net/webby-browser](https://launchpad.net/webby-browser) || [webby-browser-bzr](https://aur.archlinux.org/packages/webby-browser-bzr/)
 
-###### Browsers based on webkitgtk/webkitgtk2/qtwebkit
+###### Browsers based on webkitgtk/webkitgtk2/qt5-webkit/qtwebkit
 
-**Warning:** The following browsers are based on one of three WebKit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
 
 *   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
 
@@ -919,6 +919,10 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
 
 	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
+
+*   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
+
+	[https://discordapp.com/](https://discordapp.com/) || [discord-canary](https://aur.archlinux.org/packages/discord-canary/)
 
 ###### Multi-protocol
 

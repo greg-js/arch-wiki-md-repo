@@ -32,6 +32,7 @@
     *   [5.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
     *   [5.17 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
     *   [5.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
+    *   [5.19 Firefox looks bad with GTK+ >=3.20](#Firefox_looks_bad_with_GTK.2B_.3E.3D3.20)
 *   [6 See also](#See_also)
 
 ## Installing
@@ -357,6 +358,10 @@ Edit > Settings > Advanced > General > Use smooth scrolling
 ### Tearing video in fullscreen mode
 
 If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, try [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29 "Firefox tweaks").
+
+### Firefox looks bad with GTK+ >=3.20
+
+Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-gtk2](https://aur.archlinux.org/packages/firefox-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") for pre-built GTK2 Firefox packages.
 
 ## See also
 

@@ -1568,6 +1568,13 @@ Arch the best lah!
 
 ```
 
+	Slovak
+
+```
+Arch je najlepší!
+
+```
+
 	Slovenian
 
 ```

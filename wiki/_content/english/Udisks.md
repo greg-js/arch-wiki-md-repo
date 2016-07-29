@@ -32,11 +32,11 @@ See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks
 
 ## Mount helpers
 
-Automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
+The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
 
 ### Devmon
 
-[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible to *udisks* and *udisks2*. It uses mount helpers with the following priority:
+[udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible with *udisks* and *udisks2*. It uses mount helpers with the following priority:
 
 1.  [udevil](http://ignorantguru.github.io/udevil/) (SUID)
 2.  pmount (SUID)
@@ -52,7 +52,7 @@ To mount devices with *udisks* or *udisks2*, remove the SUID permission from *ud
 
 **Note:** `chmod -x /usr/bin/udevil` as root causes devmon to use *udisks* for device monitoring
 
-**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. Keep in mind services run outside the [session](/index.php/Session "Session"). Adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run *devmon* from the user session (see [Autostart](/index.php/Autostart "Autostart")).
+**Tip:** To run devmon in the background and automatically mount devices, [enable](/index.php/Enable "Enable") it with `devmon@.service`, taking the user name as argument: `devmon@*user*.service`. Keep in mind that services run outside the [session](/index.php/Session "Session"). Adjust [Polkit](/index.php/Polkit "Polkit") rules where appropriate, or run *devmon* from the user session (see [Autostart](/index.php/Autostart "Autostart")).
 
 ### udevadm monitor
 
@@ -115,7 +115,7 @@ KERNEL=="sda2", ENV{UDISKS_PRESENTATION_HIDE}="1"
 
 ```
 
-shows all partitions with the exception of `sda1` and `sda2` on your desktop. Notice if you are using [udisks2](https://www.archlinux.org/packages/?name=udisks2) the above will not work as `UDISKS_PRESENTATION_HIDE` is no longer supported. Instead use `UDISKS_IGNORE` as follows:
+shows all partitions with the exception of `sda1` and `sda2` on your desktop. Note that if you are using [udisks2](https://www.archlinux.org/packages/?name=udisks2), the above will not work as `UDISKS_PRESENTATION_HIDE` is no longer supported. Instead, use `UDISKS_IGNORE` as follows:
 
 ```
 KERNEL=="sda1", ENV{UDISKS_IGNORE}="1"
@@ -123,7 +123,7 @@ KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 ```
 
-Because block device names can change between reboots, it is possible to also use UUID (as gathered from executing the `blkid /dev/sdX` command) to hide the partitions or whole devices:
+Because block device names can change between reboots, it is also possible to use UUIDs (as gathered from executing the `blkid /dev/sdX` command) to hide partitions or whole devices:
 
 For example:
 
