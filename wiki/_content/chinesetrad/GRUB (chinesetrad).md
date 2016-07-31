@@ -1,6 +1,6 @@
-[GRUB2](http://www.gnu.org/software/grub/) 是新一代的 GRand Unified Bootloader (GRUB/開機引導程式). GRUB2 來自於 [PUPA](http://www.nongnu.org/pupa/) 這個探討下一代 GRUB 的研究專案 。GRUB 2 清除了所有東西並被重新編寫，擁有模組化和可移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.html#q1)
+[GRUB2](http://www.gnu.org/software/grub/) 是新一代的 GRand Unified Bootloader (GRUB/開機引導程式). GRUB2 來自於 [PUPA](http://www.nongnu.org/pupa/) 這個探討下一代 GRUB 的研究專案 。GRUB 2 被重新編寫，擁有模組化和可移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.html#q1)
 
-簡單地說，*開機引導程式* 是當電腦開機時第一個執行的程式（在此請自動乎略bios，謝謝）。它負責載入並移交控制權給 Linux 核心。而核心載入後，則反過來啟動作業系統內的其它部份。
+簡單地說，*開機引導程式* 是當電腦開機時第一個執行的程式（在此請自動忽略BIOS）。它負責載入並移交控制權給 Linux 核心。而核心載入後，則反過來啟動作業系統內的其它部份。
 
 ## Contents
 
@@ -86,7 +86,7 @@
 
 *   The name *GRUB* officially refers to version *2* of the software, see [[2]](https://www.gnu.org/software/grub/). If you are looking for the article on the legacy version, see [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
 
-*   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") (i.e. version 0.9x) 已被開發者們認為是舊作，在 Arch Linux已經被GRUB2和 [Syslinux](/index.php/Syslinux "Syslinux")給取代 . 參閱最新消息 [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). Upstream recommends GRUB2 >=1.99 over GRUB Legacy, even for current GRUB Legacy users.
+*   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") (i.e. version 0.9x) 已被開發者們認為是舊作，在 Arch Linux已經被GRUB2取代 . 參閱最新消息 [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). Upstream recommends GRUB2 >=1.99 over GRUB Legacy, even for current GRUB Legacy users.
 
 *   The [Archboot](/index.php/Archboot "Archboot") ISO的安裝script支援 [grub-bios](https://www.archlinux.org/packages/?name=grub-bios) 和 [grub-efi-x86_64](https://www.archlinux.org/packages/?name=grub-efi-x86_64)的安裝. 舊版官方的安裝script-AIF (Arch Installation Framework)還未支援 GRUB(2)。
 
@@ -96,7 +96,7 @@
 
 ### 給 GRUB 舊版的使用者
 
-*   GRUB 舊版將從您的系統中移除, 您可以考慮將 GRUB更新到版本 2.x, 或者其他導引程式.
+*   GRUB 舊版將從您的系統中移除, 您可以考慮將 GRUB更新到版本 2.x, 或者其他開機程式.
 
 *   Upgrade from [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") to [GRUB](/index.php/GRUB "GRUB")(2) is the much same as fresh installing GRUB(2)which is covered [below](#Installation).
 
@@ -104,7 +104,7 @@
 
 *   GRUB2 現在己經 *模組化* 且不再需要 "stage 1.5"。因此，引導程式本身是有限的 - 當需要擴充功能時模組才從硬碟內被載入（例如，[LVM](/index.php/LVM "LVM") 或 RAID支援）
 
-*   GRUB2 設備命名也改得和 GRUB 不同。磁區 Partitions 由數字 1 起算，而硬碟仍然由 0 起算，舉例來說，`/dev/sda1` 被 GRUB2 指引為 `(hd0,1)` 。
+*   GRUB2 設備命名也改得和 GRUB 不同。磁區 Partitions 由數字 1 起算，而硬碟仍然由 0 起算，舉例來說，`/dev/sda1` 被 GRUB2 指引為 `(hd0,1)`等 。
 
 ### Preliminary Requirements for GRUB2
 
@@ -132,7 +132,7 @@ Usually the post-MBR gap (after the 512 byte MBR region and before the start of 
 
 **注意:** 建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
 
-遵循 [Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") 中創建 UEFI SYSTEM PARTITION的指引. 接在將 UEFI SYSTEM PARTITION 掛載在 `/boot/efi`. 如果您已經將 UEFISYS partition 掛載在其他掛載點, 以此掛載點置換在下面指引中的 {ic|/boot/efi}} :
+遵循 [Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") 中創建 UEFI SYSTEM PARTITION的指引. 接在將 UEFI SYSTEM PARTITION（也就是ESP分割區） 掛載在 `/boot/efi`. 如果您已經將 UEFI System Partition 掛載在其他掛載點, 以此掛載點置換在下面指引中的 {ic|/boot/efi}} :
 
 ```
 # mkdir -p /boot/efi
@@ -355,9 +355,9 @@ sh:grub> legacy_configfile ${prefix}/menu.lst
 
 ##### 在BIOS-MBR模式中啟動已安裝的Microsoft Windows(Boot Microsoft Windows installed in BIOS-MBR mode)
 
-**注意:** GRUB(2) 支援直接啟動 `bootmgr`和分割區啟動區的連鎖載入 (chainload of partition boot sector)，因此不需要BIOS-MBR設定來啟動Windows
+**注意:** GRUB(2) 支援直接啟動 `bootmgr`檔案和分割區啟動區的連鎖載入 (chainload of partition boot sector)，因此不需要BIOS-MBR設定來啟動Windows
 
-**警告:** 需要注意是具有bootmgr的系統分割區, 而不是你 "真正的" windows 分割區, 也就是說:當你用blkid這個指令顯示出所有UUID's，他將是有著 LABEL="SYSTEM RESERVED" 約 100 mb 大，更像是arch的 boot 分割區. 觀看 [http://en.wikipedia.org/wiki/System_partition_and_boot_partition](http://en.wikipedia.org/wiki/System_partition_and_boot_partition) for some more info.
+**警告:** 需要注意是具有bootmgr檔案的系統分割區, 而不一定是安裝有Windows的分割區, 也就是說:當你用blkid這個指令顯示出所有UUID's，他將是有著 LABEL="SYSTEM RESERVED" 且大小約為 100 mb-200 mb，更像是Arch的 /boot 分割區. 觀看 [http://en.wikipedia.org/wiki/System_partition_and_boot_partition](http://en.wikipedia.org/wiki/System_partition_and_boot_partition) for some more info.
 
 找到放置著`bootmgr`的NTFS格式Windows系統分割區的UUID . 舉例來說, 如果 Windows `bootmgr` 置放在 `/media/Windows/bootmgr`:
 
@@ -396,7 +396,7 @@ menuentry "Microsoft Windows XP" {
 
 ### UEFI系統(UEFI systems)
 
-**Note:** 在閱讀這個部份前，建議先讀過 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
+**Note:** 在閱讀這個部份前，建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
 
 #### 安裝grub-uefi套件(Install grub-uefi package)
 
@@ -712,7 +712,7 @@ Multiple entries are separated by spaces within the double quotes. So, for users
 
 ### 手動創建grub.cfg( Manually creating grub.cfg)
 
-**警告:** 直接對這個檔案進行編輯是非常不建議的事.這個檔案是用 `grub-mkconfig` 產生,所以最好是編輯你的 `/etc/default/grub` 或其他在 `/etc/grub.d` 資料夾的script.
+**警告:** 直接對這個檔案進行編輯是不建議的事.這個檔案是用 `grub-mkconfig` 產生,所以最好是編輯你的 `/etc/default/grub` 或其他在 `/etc/grub.d` 資料夾的script.
 
 一個基本的 GRUB 設置檔使用下列的選項
 

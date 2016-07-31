@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Shorewall](/index.php/Shorewall "Shorewall") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-23，点击[这里](https://wiki.archlinux.org/index.php?title=Shorewall&diff=0&oldid=442339)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Shorewall](/index.php/Shorewall "Shorewall") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-31，点击[这里](https://wiki.archlinux.org/index.php?title=Shorewall&diff=0&oldid=442339)可以查看翻译后英文页面的改动。
 
 [The Shoreline Firewall](http://www.shorewall.net/), more commonly known as "Shorewall", is high-level tool for configuring Netfilter.
 
@@ -8,8 +8,8 @@ Shorewall can be used on a dedicated firewall system, a multi-function gateway/r
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 /etc/shorewall/interfaces](#.2Fetc.2Fshorewall.2Finterfaces)
     *   [2.2 /etc/shorewall/policy](#.2Fetc.2Fshorewall.2Fpolicy)
     *   [2.3 /etc/shorewall/rules](#.2Fetc.2Fshorewall.2Frules)
@@ -18,14 +18,14 @@ Shorewall can be used on a dedicated firewall system, a multi-function gateway/r
         *   [2.4.2 Port forwarding (DNAT)](#Port_forwarding_.28DNAT.29)
     *   [2.5 /etc/shorewall/stoppedrules](#.2Fetc.2Fshorewall.2Fstoppedrules)
     *   [2.6 /etc/shorewall/shorewall.conf](#.2Fetc.2Fshorewall.2Fshorewall.conf)
-*   [3 Start](#Start)
+*   [3 启动](#.E5.90.AF.E5.8A.A8)
 *   [4 Traffic shaping](#Traffic_shaping)
 
-## Installation
+## 安装
 
 [Install](/index.php/Install "Install") the [shorewall](https://www.archlinux.org/packages/?name=shorewall) or [shorewall6](https://www.archlinux.org/packages/?name=shorewall6) package.
 
-## Configuration
+## 配置
 
 These settings are based on the [two-interface documentation on the Shorewall web site](http://www.shorewall.net/two-interface.htm).
 
@@ -153,7 +153,7 @@ STARTUP_ENABLED=Yes
 
 See [man page](http://shorewall.net/manpages/shorewall.conf.html) for more info.
 
-## Start
+## 启动
 
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `shorewall.service`.
 

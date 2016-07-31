@@ -53,6 +53,8 @@ Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https
 *   happy ([happy](https://www.archlinux.org/packages/?name=happy)) — Parser generator
 *   alex ([alex](https://www.archlinux.org/packages/?name=alex)) — Lexical analyzer generator
 
+Alternatively, you can use [stack](https://www.archlinux.org/packages/?name=stack) to manage your Haskell environment by following the [Arch Linux install instructions](https://docs.haskellstack.org/en/stable/install_and_upgrade/#arch-linux).
+
 ## Managing Haskell packages
 
 Many Haskell libraries and executables are grouped in packages. They are all available on [Hackage](http://hackage.haskell.org). To install and manage these packages, several methods are available and unusual ones are explained in the rest of this section.

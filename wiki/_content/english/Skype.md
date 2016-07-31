@@ -6,8 +6,6 @@ There are two official Linux versions of Skype available:
 
 *   The old Skype (last release in June 2014): see [#Legacy Skype](#Legacy_Skype)
 
-	Video and voice chat no longer works. Group chats also broken.
-
 Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working voice chat, at least with Chromium/Chrome.
 
 ## Contents
@@ -52,7 +50,7 @@ There is a new [Skype for Linux Alpha](http://blogs.skype.com/2016/07/13/skype-f
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [skype](https://www.archlinux.org/packages/?name=skype) package. If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository first, since Skype is 32-bit only.
+[Install](/index.php/Install "Install") the [skype](https://aur.archlinux.org/packages/skype/) package.
 
 Running Skype is just as easy. Type `skype` into a terminal or double-click the Skype icon on your desktop or in your DE's application menu.
 

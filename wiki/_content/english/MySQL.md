@@ -51,16 +51,16 @@ Alternative implementations are:
 *   If the database (in `/var/lib/mysql`) resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
 *   If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
 
-Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards run the following command **before starting** the `mysqld.service`:
+Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards run the following command **before starting** the `mariadb.service`:
 
 ```
 # mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 ```
 
-Now the `mysqld.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
+Now the `mariadb.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
 
-**Tip:** If you use something other than `/var/lib/mysql` for datadir, you need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") `mysqld.service` and append the same `--datadir` parameter to the `ExecStart` line.
+**Tip:** If you use something other than `/var/lib/mysql` for datadir, you need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") `mariadb.service` and append the same `--datadir` parameter to the `ExecStart` line.
 
 It is recommended to secure the MySQL installation by running the following command:
 
@@ -382,7 +382,7 @@ And then run:
 
 ### Reset the root password
 
-Stop `mysqld.service`. Issue the following command:
+Stop `mariadb.service`. Issue the following command:
 
 ```
 # mysqld_safe --skip-grant-tables &
@@ -406,7 +406,7 @@ mysql> exit
 
 ```
 
-Start `mysqld.service`.
+Start `mariadb.service`.
 
 ### Check and repair all tables
 

@@ -3,7 +3,6 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Inox](#Inox)
 *   [2 Configuration](#Configuration)
     *   [2.1 Set Chromium as default browser](#Set_Chromium_as_default_browser)
     *   [2.2 File associations](#File_associations)
@@ -25,28 +24,43 @@
 
 ## Installation
 
-The open-source project, **Chromium**, can be [installed](/index.php/Install "Install") with the [chromium](https://www.archlinux.org/packages/?name=chromium) package. You can also find:
+The open-source project, **Chromium**, can be [installed](/index.php/Install "Install") with the [chromium](https://www.archlinux.org/packages/?name=chromium) package.
 
-*   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/) - the development version
-*   [chromium-continuous-bin](https://aur.archlinux.org/packages/chromium-continuous-bin/) - the automatically tested nightly version
-*   [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/) - the untested nightly version
-*   [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) - Chromium with a patch to enable [VA-API](/index.php/VA-API "VA-API")
+Other alternatives include:
 
-The derived browser, **Google Chrome**, bundled with Flash Player and Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package. You can also find:
+*   **Chromium Beta Channel** — the beta version
 
-*   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/) - the beta version
-*   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/) - the development version
+	[http://googlechromereleases.blogspot.hu/](http://googlechromereleases.blogspot.hu/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=chromium-beta)</small>
+
+*   **Chromium Dev Channel** — the development version
+
+	[http://googlechromereleases.blogspot.hu/](http://googlechromereleases.blogspot.hu/) || [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
+
+*   **Chromium snapshot builds** — the untested nightly version
+
+	[https://build.chromium.org/](https://build.chromium.org/) || [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/)
+
+*   **Chromium with [VA-API](/index.php/VA-API "VA-API") support** — with a patch to enable VA-API
+
+	[https://www.chromium.org/](https://www.chromium.org/) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
+
+The derived browser, **Google Chrome**, bundled with Flash Player and Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
+
+Other alternatives include:
+
+*   **Google Chrome Beta Channel** — the beta version
+
+	[https://www.google.com/chrome](https://www.google.com/chrome) || [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
+
+*   **Google Chrome Dev Channel** — the development version
+
+	[https://www.google.com/chrome](https://www.google.com/chrome) || [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
 
 **Note:** Google Chrome dropped 32 bits support, and only supports 64 bits installation
 
-**Tip:** See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](http://news.softpedia.com/news/Google-Chrome-vs-Chromium-Understanding-Stable-Beta-Dev-Releases-and-Version-No-140060.shtml) for an explanation of the differences between Stable/Beta/Dev, as well as Chromium vs. Chrome and an explanation of the version numbering.
+See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](http://news.softpedia.com/news/Google-Chrome-vs-Chromium-Understanding-Stable-Beta-Dev-Releases-and-Version-No-140060.shtml) for an explanation of the differences between Stable/Beta/Dev, as well as Chromium vs. Chrome and an explanation of the version numbering.
 
-### Inox
-
-Inox is a privacy-focused patchset which disables Google services, proprietary features, prevents "calling home" and unhides all extensions. Flags are stored in `inox-flags.conf`. See [this GitHub project](https://github.com/gcarq/inox-patchset) for details. Otherwise, instructions regarding Chromium apply equally.
-
-*   [inox-bin](https://aur.archlinux.org/packages/inox-bin/) - prebuilt binaries.
-*   [inox](https://aur.archlinux.org/packages/inox/) - Allows disabling additional features in PKGBUILD. Takes a **long** time to build, regardless of your CPU.
+On top of the different Chromium build channels, a number of forks exist with more or less special features; see [List of applications#Blink-based](/index.php/List_of_applications#Blink-based "List of applications").
 
 ## Configuration
 

@@ -70,7 +70,7 @@ You can also use just StartFunction and prepend your commands with Test commands
 
 ```
 AddToFunc StartFunction
-+ I Test (Init) nm-applet &
++ I Test (Init) Exec nm-applet &
 
 ```
 

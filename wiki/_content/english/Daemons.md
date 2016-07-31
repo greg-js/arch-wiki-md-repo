@@ -15,6 +15,7 @@ The *Package* column contains a link to ArchWiki page for each daemon (or link t
 | [Autofs](/index.php/Autofs "Autofs") | autofs | autofs.service | Automounting of removable media or network shares when they are inserted or accessed. |
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Allows programs to automatically find local network services. |
 | avahi-dnsconfd | avahi-dnsconfd.service | Multicast/unicast DNS-SD framework. |
+| [Audit framework](/index.php/Audit_framework "Audit framework") | auditd | auditd.service | Linux audit framework |
 | [Bitlbee](/index.php/Bitlbee "Bitlbee") | bitlbee | bitlbee.service | Brings instant messaging (XMPP, MSN, Yahoo!, AIM, ICQ, Twitter) to IRC. |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | bluetooth | bluetooth.service | Bluetooth protocol stack, framework, subsystem. |
 | [Chrony](/index.php/Chrony "Chrony") | chrony | chrony.service | Lightweight NTP client and server. |
@@ -37,7 +38,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Fan control daemon (part of lm_sensors) |
 | [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *not yet implemented* | Graphical boot splash screen for the user. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Software synthesizer. |
- ftpd | ftpd.service | inetutils FTP daemon. |
+| [inetutils](https://www.archlinux.org/packages/?name=inetutils) | ftpd | ftpd.service | inetutils FTP daemon. |
 | [GDM](/index.php/GDM "GDM") | gdm | gdm.service | GNOME Display Manager. |
 | [Git](/index.php/Git "Git") | git-daemon | git-daemon.socket | Git daemon. |
 | [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm | gpm.service | Console mouse support. |
@@ -96,6 +97,10 @@ rfkill-unblock@.service | (Un)blocks radio devices. |
 | [samba](/index.php/Samba "Samba") | samba | smbd.service
 nmbd.service
 winbindd.service | File and print services for Microsoft Windows clients. |
+| [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
+lvm2-lvmetad.service
+lvm2-monitor.service
+lvm2-pvscan.service | LVM is a logical volume manager for the Linux kernel; it manages disk drives and similar mass-storage devices. |
 | [SANE](/index.php/SANE "SANE") | saned | saned@.service | SANE network daemon. |
  saslauthd | saslauthd.service | SASL authentication daemon. |
 | [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Sensor information logging daemon. |

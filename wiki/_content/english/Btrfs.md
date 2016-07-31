@@ -49,7 +49,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Corruption recovery](#Corruption_recovery)
     *   [7.2 Booting into snapshots with GRUB](#Booting_into_snapshots_with_GRUB)
-    *   [7.3 Use Btrfs subvolume as nspawn container root](#Use_Btrfs_subvolume_as_nspawn_container_root)
+    *   [7.3 Use Btrfs subvolumes with systemd-nspawn](#Use_Btrfs_subvolumes_with_systemd-nspawn)
     *   [7.4 Automatic snapshots on each boot](#Automatic_snapshots_on_each_boot)
         *   [7.4.1 Requirements](#Requirements)
         *   [7.4.2 Snapshot script](#Snapshot_script)
@@ -476,9 +476,9 @@ You can manually create a [GRUB#GNU/Linux menu entry](/index.php/GRUB#GNU.2FLinu
 
 Alternatively, you can automatically populate your GRUB menu with btrfs snapshots when regenerating the GRUB configuration file by using [grub-btrfs](https://aur.archlinux.org/packages/grub-btrfs/) or [grub-btrfs-git](https://aur.archlinux.org/packages/grub-btrfs-git/).
 
-### Use Btrfs subvolume as nspawn container root
+### Use Btrfs subvolumes with systemd-nspawn
 
-See the [Systemd-nspawn#Use Btrfs subvolume as container root](/index.php/Systemd-nspawn#Use_Btrfs_subvolume_as_container_root "Systemd-nspawn") article.
+See the [Systemd-nspawn#Use Btrfs subvolume as container root](/index.php/Systemd-nspawn#Use_Btrfs_subvolume_as_container_root "Systemd-nspawn") and [Systemd-nspawn#Use temporary Btrfs snapshot of container](/index.php/Systemd-nspawn#Use_temporary_Btrfs_snapshot_of_container "Systemd-nspawn") articles.
 
 ### Automatic snapshots on each boot
 

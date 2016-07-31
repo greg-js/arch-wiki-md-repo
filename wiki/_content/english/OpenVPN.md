@@ -41,11 +41,13 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [9.1 Update resolv-conf script](#Update_resolv-conf_script)
     *   [9.2 Update systemd-resolved script](#Update_systemd-resolved_script)
 *   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Resolve issues](#Resolve_issues)
-    *   [11.2 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
-    *   [11.3 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
-*   [12 See Also](#See_Also)
+*   [11 Creating an iOS or Android OpenVPN Connect Profile](#Creating_an_iOS_or_Android_OpenVPN_Connect_Profile)
+    *   [11.1 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
+*   [12 Troubleshooting](#Troubleshooting)
+    *   [12.1 Resolve issues](#Resolve_issues)
+    *   [12.2 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
+    *   [12.3 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
+*   [13 See Also](#See_Also)
 
 ## Install OpenVPN
 
@@ -55,8 +57,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 
 ## Kernel configuration
 
-OpenVPN requires TUN/TAP support, which is already configured in the default kernel. If you build your own kernel, make sure to enable the `tun` module as below:
-
+**Note:** OpenVPN requires TUN/TAP support, which is already configured in the default kernel. Users of custom kernel should make sure to enable the `tun` module as below.
  `Kernel config file` 
 ```
  Device Drivers
@@ -74,19 +75,17 @@ To connect to a VPN service provided by a third party, most of the following can
 
 ## Create a Public Key Infrastructure (PKI) from scratch
 
-If you are setting up OpenVPN from scratch, you will need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure").
+When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is accomplished by using the [easy-rsa](/index.php/Easy-rsa "Easy-rsa").
 
-Create the needed certificates and keys using the [easy-rsa](/index.php/Easy-rsa "Easy-rsa") scripts.
+Once created, symlinks are created as follows (as the root user):
 
-The final step of the key creation process is to copy the files needed to the correct machines through a secure channel.
+```
+ln -s /etc/easy-rsa/pki/ca.crt ca.crt /etc/openvpn
+ln -s /etc/easy-rsa/pki/private/server.key server.key /etc/openvpn
+ln -s /etc/easy-rsa/pki/issued/server.crt server.crt /etc/openvpn
+ln -s /etc/easy-rsa/pki/dh.pem dh.pem /etc/openvpn
 
-**Note:** The rest of this article assumes that the keys and certificates are placed in `/etc/openvpn`.
-
-The public ca.crt certificate is needed on all servers and clients. The private ca.key key is secret and only needed on the key generating machine.
-
-A server needs server.crt, dh2048.pem (public), server.key, and ta.key (private).
-
-A client needs client.crt (public), client.key, and ta.key (private).
+```
 
 ## A basic L3 IP routing configuration
 
@@ -125,10 +124,9 @@ Edit the following:
  `/etc/openvpn/server.conf` 
 ```
 ca /etc/openvpn/ca.crt
-cert /etc/openvpn/elmer.crt
-key /etc/openvpn/elmer.key
-
-dh /etc/openvpn/dh2048.pem
+cert /etc/openvpn/server.crt
+key /etc/openvpn/server.key  # This file should be kept secret
+dh /etc/openvpn/dh.pem
 .
 .
 tls-auth /etc/openvpn/ta.key **0**
@@ -165,8 +163,8 @@ remote elmer.acmecorp.org 1194
 user nobody
 group nobody
 ca /etc/openvpn/ca.crt
-cert /etc/openvpn/bugs.crt
-key /etc/openvpn/bugs.key
+cert /etc/openvpn/client.crt
+key /etc/openvpn/client.key
 .
 .
 tls-auth /etc/openvpn/ta.key **1**
@@ -420,23 +418,23 @@ By default only traffic directly to and from an OpenVPN server passes through th
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
-push "dhcp-option DNS 10.8.0.1"
+push "dhcp-option DNS 8.8.8.8"
 
 ```
 
-Change `10.8.0.1` to your preferred DNS IP address.
+Change `8.8.8.8` to your preferred DNS IP address if configured to run on the same box as the server or else leave it at 8.8.8.8 to use google's DNS.
 
 If you have problems with non responsive DNS after connecting to server, install [BIND](/index.php/BIND "BIND") as simple DNS forwarder and push the IP address of the OpenVPN server as DNS to clients.
 
-Additionally, if you want to allow clients to be able to reach other (private) subnets behind the server, you may want to use the `push "route <address pool> <subnet>"` option:
+After setting up the configuration file, one must [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") on the server. Additionally, the server's firewall will need to be set up to allow VPN traffic through it, which is described below for both [ufw](/index.php/Ufw "Ufw") and [iptables](/index.php/Iptables "Iptables").
+
+To allow clients to be able to reach other (private) subnets behind the server, you may want to use the `push "route <address pool> <subnet>"` option:
 
 ```
 push "route 172.10.142.0 255.255.255.0"
 push "route 172.20.142.0 255.255.255.0"
 
 ```
-
-After setting up your configuration file, you need to [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") on the server. Additionally, your server's firewall will need to be set up to allow VPN traffic through it, which is described below for both [ufw](/index.php/Ufw "Ufw") and [iptables](/index.php/Iptables "Iptables").
 
 ### Firewall configuration
 
@@ -677,6 +675,31 @@ down /etc/openvpn/update-systemd-resolved
 ## L2 Ethernet bridging
 
 For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
+
+## Creating an iOS or Android OpenVPN Connect Profile
+
+The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format. Tested on the iOS version of OpenVPN Connect and likely works with the Android app as well. Simply invoke the script with 5 tokens:
+
+1.  Server Fully Qualified Domain Name of the OpenVPN server (or IP address).
+2.  Full path to the CA cert.
+3.  Full path to the client cert.
+4.  Full path to the client private key.
+5.  Full path to the server TLS shared secret key.
+
+Example:
+
+```
+# ovpngen titty.nipples.org /etc/easy-rsa/pki/ca.crt /etc/easy-rsa/pki/issued/client.crt /etc/easy-rsa/pki/private/client.key /etc/openvpn/ta.key > iphone.ovpn
+
+```
+
+The resulting `iphone.ovpn` can be edited if desired.
+
+### Converting certificates to encrypted .p12 format
+
+Some software will only read VPN certificates that are stored in a password-encrypted .p12 file. These can be generated with the following command:
+
+ `# openssl pkcs12 -export -inkey keys/bugs.key -in keys/bugs.crt -certfile keys/ca.crt -out keys/bugs.p12` 
 
 ## Troubleshooting
 

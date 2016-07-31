@@ -81,6 +81,14 @@ dtparam=audio=on
 
 ```
 
+To ensure that your user is allowed to access the sound devices you need to add it to the audio group. You can test soundcard access with aplay or alsamixer.
+
+```
+$ sudo usermod -a -G audio alarm
+$ aplay -l
+
+```
+
 **Tip:** Ensure that the sole source "PCM" is not muted (denoted by `MM` if muted, press `M` to unmute).
 
 Select an audio source for output:

@@ -619,6 +619,8 @@ In the latest version of GnuPG, the default algorithms used are SHA256 and AES, 
 
 ### Encrypt a password
 
+**Tip:** [pass](/index.php/Pass "Pass") automates this process.
+
 It can be useful to encrypt some password, so it will not be written in clear on a configuration file. A good example is your email password.
 
 First create a file with your password. You **need** to leave **one** empty line after the password, otherwise gpg will return an error message when evaluating the file.

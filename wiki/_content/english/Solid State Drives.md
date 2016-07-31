@@ -16,7 +16,17 @@
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Resolving NCQ errors](#Resolving_NCQ_errors)
     *   [2.2 Resolving SATA power management related errors](#Resolving_SATA_power_management_related_errors)
-*   [3 See also](#See_also)
+*   [3 Firmware](#Firmware)
+    *   [3.1 ADATA](#ADATA)
+    *   [3.2 Crucial](#Crucial)
+    *   [3.3 Intel](#Intel)
+    *   [3.4 Kingston](#Kingston)
+    *   [3.5 Mushkin](#Mushkin)
+    *   [3.6 OCZ](#OCZ)
+    *   [3.7 Samsung](#Samsung)
+        *   [3.7.1 Native upgrade](#Native_upgrade)
+    *   [3.8 SanDisk](#SanDisk)
+*   [4 See also](#See_also)
 
 ## Usage
 
@@ -24,7 +34,7 @@
 
 Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. For a performance benchmark before and after filling an SSD with data, see [[1]](http://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html).
 
-As of Linux kernel version 3.8 onwards, the following filesystems support TRIM: [Ext4](/index.php/Ext4 "Ext4"), [Btrfs](/index.php/Btrfs "Btrfs"), [JFS](/index.php/JFS "JFS") [[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY), [XFS](/index.php/XFS "XFS") [[3]](http://xfs.org/index.php/FITRIM/discard), [F2FS](/index.php/F2FS "F2FS"), VFAT.
+As of Linux kernel version 3.8 onwards, the following filesystems support TRIM: [Ext4](/index.php/Ext4 "Ext4"), [Btrfs](/index.php/Btrfs "Btrfs"), [JFS](/index.php/JFS "JFS") [[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY), [XFS](/index.php/XFS "XFS") [[3]](http://xfs.org/index.php/FITRIM/discard), [F2FS](/index.php/F2FS "F2FS"), VFAT. See also [List of file systems optimized for SSD](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems").
 
 As of [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) version 2015.3.14, TRIM is supported for [NTFS](/index.php/NTFS "NTFS") filesystem too [[4]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101).
 
@@ -40,6 +50,8 @@ As of [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) version 2015.3
 | VFAT | Yes | No |
 | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | No | Yes |
 
+**Warning:** Users need to be certain that their SSD supports TRIM before attempting to use it. Data loss can occur otherwise!
+
 To verify TRIM support, run:
 
 ```
@@ -49,8 +61,6 @@ To verify TRIM support, run:
 ```
 
 **Note:** There are different types of TRIM support defined by the specification. Hence, the output may differ depending what the drive supports. See [w:TRIM#ATA](https://en.wikipedia.org/wiki/TRIM#ATA "w:TRIM") for more information.
-
-See also [File systems](/index.php/File_systems "File systems") and [w:List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems").
 
 #### Periodic TRIM
 
@@ -62,7 +72,9 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 
 #### Continuous TRIM
 
-**Warning:** Users need to be certain that their SSD supports TRIM before attempting to mount a partition with the `discard` flag. Data loss can occur otherwise! Unfortunately, there are wide quality gaps of SSD's bios' to perform continuous TRIM, which is also why using the `discard` mount flag is [recommended against](http://thread.gmane.org/gmane.comp.file-systems.ext4/41974) generally by filesystem developer Theodore Ts'o. If in doubt about your hardware, [#Apply periodic TRIM via fstrim](#Apply_periodic_TRIM_via_fstrim) instead. Also be aware of other [shortcomings](https://en.wikipedia.org/wiki/Trim_(computing)#Shortcomings "wikipedia:Trim (computing)"), most importantly that "TRIM commands [have been linked](https://blog.algolia.com/when-solid-state-drives-are-not-that-solid/) to serious data corruption in several devices, most notably Samsung 8* series." After the data corruption [had been confirmed](https://github.com/torvalds/linux/blob/e64f638483a21105c7ce330d543fa1f1c35b5bc7/drivers/ata/libata-core.c#L4109-L4286), the Linux kernel blacklisted queued TRIM command execution for a number of [popular devices](https://github.com/torvalds/linux/blob/v4.5/drivers/ata/libata-core.c#L4223) as of March 28, 2016\. For affected Samsung 8 series drives, the drive incorrectly identifies it supports queued TRIM even though it does not. Firmware updated EVO 850's and newer EVO 840's or 840's with updated firmware and newer drives in the 8* series are all affected. Read [trim does not work with Samsung 840 EVO after firmware update](https://bugs.launchpad.net/ubuntu/+source/fstrim/+bug/1449005) on the Ubuntu bug tracker for more information.
+**Warning:** Unfortunately, there are wide quality gaps of SSD's bios' to perform continuous TRIM, which is also why using the `discard` mount flag is [recommended against](http://thread.gmane.org/gmane.comp.file-systems.ext4/41974) generally by filesystem developer Theodore Ts'o. If in doubt about your hardware, apply [#Periodic TRIM](#Periodic_TRIM) instead.
+
+**Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 "w:Serial ATA") all TRIM commands were synchronous, so continuous trimming would produce frequent system freezes. In this case, applying [#Periodic TRIM](#Periodic_TRIM) less often is better alternative. Similar issue holds also for a [number of devices](https://github.com/torvalds/linux/blob/master/drivers/ata/libata-core.c#L4403-L4417), for which queued TRIM command execution was blacklisted due to [serious data corruption](https://blog.algolia.com/when-solid-state-drives-are-not-that-solid/). See [Wikipedia:Trim (computing)#Shortcomings](https://en.wikipedia.org/wiki/Trim_(computing)#Shortcomings for details.
 
 Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM in device operations:
 
@@ -182,6 +194,133 @@ If this (and also updating the firmware) does not resolves the problem or cause 
 Some SSDs (e.g. Transcend MTS400) are failing when SATA Active Link Power Management, [ALPM](https://en.wikipedia.org/wiki/Aggressive_Link_Power_Management "wikipedia:Aggressive Link Power Management"), is enabled. ALPM is disabled by default and enabled by a power saving daemon (e.g. [TLP](/index.php/TLP "TLP"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")).
 
 If you starting to encounter SATA related errors when using such daemon then you should try to disable ALPM by setting its state to `max_performance` for both battery and AC powered profiles.
+
+## Firmware
+
+### ADATA
+
+ADATA has a utility available for Linux (i686) on their support page [here](http://www.adata.com.tw/index.php?action=ss_main&page=ss_content_driver&lan=en). The link to latest firmware will appear after selecting the model. The latest Linux update utility is packed with firmware and needs to be run as root. One may need to set correct permissions for binary file first.
+
+### Crucial
+
+Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product [here](http://www.crucial.com/usa/en/support-ssd) and downloading the "Manual Boot File." Owners of an M4 Crucial model, may check if a firmware upgrade is needed with `smartctl`.
+
+ `$ smartctl --all /dev/sd**X**` 
+```
+==> WARNING: This drive may hang after 5184 hours of power-on time:
+[http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html](http://www.tomshardware.com/news/Crucial-m4-Firmware-BSOD,14544.html)
+See the following web pages for firmware updates:
+[http://www.crucial.com/support/firmware.aspx](http://www.crucial.com/support/firmware.aspx)
+[http://www.micron.com/products/solid-state-storage/client-ssd#software](http://www.micron.com/products/solid-state-storage/client-ssd#software)
+
+```
+
+Users seeing this warning are advised to backup all sensible data and **consider upgrading immediately**.
+
+### Intel
+
+Intel has a Linux live system based [Firmware Update Tool](https://downloadcenter.intel.com/download/18363) for operating systems that are not compatible with its [Intel® Solid-State Drive Toolbox](https://downloadcenter.intel.com/download/18455) software.
+
+### Kingston
+
+Kingston has a Linux utility to update the firmware of Sandforce controller based drives: [SSD support page](http://www.kingston.com/en/ssd). Click the images on the page to go to a support page for your SSD model. Support specifically for, e.g. the SH100S3 SSD, can be found here: [support page](http://www.kingston.com/en/support/technical/downloads?product=sh100s3&filename=sh100_503fw_win).
+
+### Mushkin
+
+The lesser known Mushkin brand Solid State drives also use Sandforce controllers, and have a Linux utility (nearly identical to Kingston's) to update the firmware.
+
+### OCZ
+
+OCZ has a command line utility available for Linux (i686 and x86_64) on their forum [here](http://www.ocztechnology.com/ssd_tools/).
+
+### Samsung
+
+Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](http://www.samsung.com/global/business/semiconductor/samsungssd/downloads.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician](https://aur.archlinux.org/packages/samsung_magician/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
+
+**Note:** Samsung does not make it obvious at all that they actually provide these. They seem to have 4 different firmware update pages, and each references different ways of doing things.
+
+Users preferring to run the firmware update from a live USB created under Linux (without using Samsung's "Magician" software under Microsoft Windows) can refer to [this post](http://fomori.org/blog/?p=933) for reference.
+
+#### Native upgrade
+
+Alternatively, the firmware can be upgraded natively, without making a bootable USB stick, as shown below.
+
+First visit the [Samsung downloads page](http://www.samsung.com/global/business/semiconductor/minisite/SSD/global/html/support/downloads.html) and download the latest firmware for Windows, which is available as a disk image. In the following, `Samsung_SSD_840_EVO_EXT0DB6Q.iso` is used as an example file name, adjust it accordingly.
+
+Setup the disk image:
+
+```
+$ udisksctl loop-setup -r -f Samsung_SSD_840_EVO_EXT0DB6Q.iso
+
+```
+
+This will make the ISO available as a loop device, and display the device path. Assuming it was `/dev/loop0`:
+
+```
+$ udisksctl mount -b /dev/loop0
+
+```
+
+Get the contents of the disk:
+
+```
+$ mkdir Samsung_SSD_840_EVO_EXT0DB6Q
+$ cp -r /run/media/$USER/CDROM/isolinux/ Samsung_SSD_840_EVO_EXT0DB6Q
+
+```
+
+Unmount the iso:
+
+```
+$ udisksctl unmount -b /dev/loop0
+$ cd Samsung_SSD_840_EVO_EXT0DB6Q/isolinux
+
+```
+
+There is a FreeDOS image here that contains the firmware. Mount the image as before:
+
+```
+$ udisksctl loop-setup -r -f btdsk.img
+$ udisksctl mount -b /dev/loop1
+$ cp -r /run/media/$USER/C04D-1342/ Samsung_SSD_840_EVO_EXT0DB6Q
+$ cd Samsung_SSD_840_EVO_EXT0DB6Q/C04D-1342/samsung
+
+```
+
+Get the disk number from magician:
+
+```
+# magician -L
+
+```
+
+Assuming it was 0:
+
+```
+# magician --disk 0 -F -p DSRD
+
+```
+
+Verify that the latest firmware has been installed:
+
+```
+# magician -L
+
+```
+
+Finally reboot.
+
+### SanDisk
+
+SanDisk makes **ISO firmware images** to allow SSD firmware update on operating systems that are unsupported by their SanDisk SSD Toolkit. One must choose the firmware for the right *SSD model*, as well as for the *capacity* that it has (e.g. 60GB, **or** 256GB). After burning the adequate ISO firmware image, simply restart the PC to boot with the newly created CD/DVD boot disk (may work from a USB stick).
+
+The iso images just contain a linux kernel and an initrd. Extract them to `/boot` partition and boot them with [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") to update the firmware.
+
+See also:
+
+SanDisk Extreme SSD [Firmware Release notes](http://kb.sandisk.com/app/answers/detail/a_id/10127) and [Manual Firmware update version R211](http://kb.sandisk.com/app/answers/detail/a_id/10476)
+
+SanDisk Ultra SSD [Firmware release notes](http://kb.sandisk.com/app/answers/detail/a_id/10192) and [Manual Firmware update version 365A13F0](http://kb.sandisk.com/app/answers/detail/a_id/10477)
 
 ## See also
 

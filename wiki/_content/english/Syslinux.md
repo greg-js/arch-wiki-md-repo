@@ -583,7 +583,7 @@ Install EXTLINUX to the partition VBR, and copy necessary `*.c32` files
 
 Create `/mnt/boot/syslinux/syslinux.cfg`. You can use the other Linux's bootloader menu file for reference. Below is an example:
 
- `/boot/syslinux/syslinux.cfg **on /dev/sda3**` 
+ `/mnt/boot/syslinux/syslinux.cfg **on /dev/sda3**` 
 ```
 timeout 10
 
@@ -600,9 +600,19 @@ label MAIN
 
 ```
 
+And then add an entry to your main syslinux.cfg
+
+ `/boot/syslinux/syslinux.cfg` 
+```
+label Other Linux
+    com32 chain.c32
+    append hd0 3
+
+```
+
 taken from [Djgera's user wiki page](/index.php/User:Djgera "User:Djgera").
 
-Note that the other Linux entry in `<other-OS>/boot/syslinux/syslinux.cfg` will need to be edited each time you update this OS's kernel. Since we are booting the kernel directly and not chainloading the other-OS's default bootloader.
+Note that the other Linux entry in `<other-OS>/boot/syslinux/syslinux.cfg` will need to be edited each time you update this OS's kernel unless it has symlinks to its latest kernel and initrd in **/**. Since we are booting the kernel directly and not chainloading the other-OS's default bootloader.
 
 ### Using memtest
 

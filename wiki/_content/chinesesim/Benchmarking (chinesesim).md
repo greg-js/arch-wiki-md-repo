@@ -169,7 +169,7 @@ $ iozone -e -I -a -s 10M -r 4k -i 0 -i 1 -i 2
 **Note:**
 
 *   单位是KB/s。
-*   SD卡和其他闪存介质的性能图表[汤姆的硬件](http://www.tomshardware.com/charts/memory-cards,39.html)。
+*   SD卡和其他闪存介质的性能图表[Tom's Hardware](http://www.tomshardware.com/charts/memory-cards,39.html)。
 
 请看
 

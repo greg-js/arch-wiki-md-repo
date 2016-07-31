@@ -25,6 +25,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [21 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
 *   [22 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
 *   [23 Setting global Wayland environment with an environment variable](#Setting_global_Wayland_environment_with_an_environment_variable)
+*   [24 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
 
 ## Shell freezes
 
@@ -249,3 +250,7 @@ The dash is the "toolbar" that appears, by default, [on the left](https://en.wik
 ## Setting global Wayland environment with an environment variable
 
 Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work - *gnome-session* will exit immediately. Instead, use `export GDK_BACKEND='wayland,x11'` in your bash profile, or use `env GDK_BACKEND='wayland,x11' gnome-session --session=gnome-wayland` on the command line. But in general, neither of these environment settings are necessary, and running `gnome-session` with the `--session=gnome-wayland` switch is sufficient. Without the `GDK_BACKEND` environment variable, the GNOME Application must be "Wayland aware" to run as a Wayland application, or default to running on Xwayland otherwise. See also `GDK_BACKEND` under GNOME [Environment variables](https://developer.gnome.org/gtk3/stable/gtk-running.html).
+
+## Gnome Crashes while installing gnome-extra
+
+Attempting to install the gnome-extra group while a gnome environment is running will crash gnome while installing gnome-getting-started-docs. X will continue to run, but gnome will not work until fixed. To fix, simply install gnome-extra from a terminal rather than inside gnome. When complete, gnome should work again.

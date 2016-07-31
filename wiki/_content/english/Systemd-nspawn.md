@@ -312,14 +312,21 @@ where `*my-container*` is the name of the directory that will be created for the
 
 ### Use temporary Btrfs snapshot of container
 
-One can use the `--ephemeral` flag to create a temporary btrfs snapshot of the container and use it as the container root. Any changes made while booted in the container will be lost. For example:
+One can use the `--ephemeral` or `-x` flag to create a temporary btrfs snapshot of the container and use it as the container root. Any changes made while booted in the container will be lost. For example:
 
 ```
-# systemd-nspawn -b -D *my-container* --ephemeral
+# systemd-nspawn -D *my-container* -xb
 
 ```
 
-where *my-container* is the directory of an **existing** container. After powering off the container, the btrfs subvolume that was created is immediately removed.
+where *my-container* is the directory of an **existing** container or system. For example, if `/` is a btrfs subvolume one could create an ephemeral container of the currently running host system by doing:
+
+```
+# systemd-nspawn -D / -xb 
+
+```
+
+After powering off the container, the btrfs subvolume that was created is immediately removed.
 
 ## Troubleshooting
 

@@ -180,7 +180,7 @@ DNS=('10.1.10.1')
 
 ```
 
-Take care to include the subnet notation of `/24`. It equates to a netmask of `255.255.255.0`) and without out it the profile will fail to start. See also [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"). To alias more than one IP address per a NIC set `Address=('10.1.10.2/24' '192.168.1.2/24')`.
+Take care to include the subnet notation of `/24`. It equates to a netmask of `255.255.255.0`) and without it the profile will fail to start. See also [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"). To alias more than one IP address per a NIC set `Address=('10.1.10.2/24' '192.168.1.2/24')`.
 
 #### Wireless (WPA-PSK)
 
@@ -326,7 +326,7 @@ Disable any other profiles (specially a wired or wireless) you had enabled befor
 
 ```
 
-Now you need to configure *wpa_supplicant* to connect to any know network you wish. You should create a file for each interface and enable it on systemd. Create the following file with this content:
+Now you need to configure *wpa_supplicant* to connect to any known network you wish. You should create a file for each interface and enable it on systemd. Create the following file with this content:
 
  `/etc/wpa_supplicant/wpa_supplicant-wlan0.conf` 
 ```
@@ -334,7 +334,7 @@ ctrl_interface=/run/wpa_supplicant
 update_config=1
 ```
 
-And append to the end of this file any networks you want to connect:
+And append to the end of this file any network you want to connect to:
 
 ```
 network={

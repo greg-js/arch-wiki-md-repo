@@ -341,6 +341,13 @@ For example:
 
 ```
 
+**Tip:** If you get the message `RTNETLINK answers: Network is unreachable`, try to break up the route creation in the following two parts:
+```
+# ip route add 192.168.1.1 dev eth0
+# ip route add default via 192.168.1.1 dev eth0
+
+```
+
 To undo these steps (e.g. before switching to a dynamic IP), first remove any assigned IP address:
 
 ```

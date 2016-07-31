@@ -29,12 +29,13 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.3 Wine applications](#Wine_applications)
     *   [6.4 Skype](#Skype)
     *   [6.5 Spotify](#Spotify)
-    *   [6.6 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [6.7 NetBeans](#NetBeans)
-    *   [6.8 Gimp 2.8](#Gimp_2.8)
-    *   [6.9 VLC](#VLC)
-    *   [6.10 Steam](#Steam)
-    *   [6.11 Unsupported applications](#Unsupported_applications)
+    *   [6.6 Zathura document viewer](#Zathura_document_viewer)
+    *   [6.7 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [6.8 NetBeans](#NetBeans)
+    *   [6.9 Gimp 2.8](#Gimp_2.8)
+    *   [6.10 VLC](#VLC)
+    *   [6.11 Steam](#Steam)
+    *   [6.12 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Mirroring](#Mirroring)
@@ -267,6 +268,17 @@ Spotify can be launched with a custom scaling factor, for example
 
 ```
 $ spotify --force-device-scale-factor=1.5
+
+```
+
+### Zathura document viewer
+
+No modifications required for document viewing.
+
+UI text scaling is specified via [configuration file](https://pwmt.org/projects/zathura/documentation/) (note that "font" is a [girara option](https://pwmt.org/projects/girara/options/)):
+
+```
+set font "monospace normal 20"
 
 ```
 

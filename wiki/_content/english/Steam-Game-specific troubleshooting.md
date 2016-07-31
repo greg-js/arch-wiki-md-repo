@@ -246,6 +246,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [74 Unity3D](#Unity3D)
     *   [74.1 Locale Settings](#Locale_Settings_2)
     *   [74.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [74.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
 *   [75 Unity of Command](#Unity_of_Command)
     *   [75.1 Dependencies](#Dependencies_36)
     *   [75.2 Troubleshooting](#Troubleshooting_31)
@@ -1736,7 +1737,23 @@ Some of the affected games: *FORCED*, *Gone Home*, *Ichi*, *Nimble Quest*, *Syde
 
 ### Unity 5 sound problems
 
-The sound system in Unity 5 changed and to be able to play games created with it you must most likely install and run [PulseAudio](/index.php/PulseAudio "PulseAudio"). Another solution is to disable the Steam runtime: in the launch options for the game, write this: LD_LIBRARY_PATH="" %command%
+The sound system in Unity 5 changed and to be able to play games created with it you must most likely install and run [PulseAudio](/index.php/PulseAudio "PulseAudio"). Another solution is to disable the Steam runtime: in the launch options for the game, write this: `LD_LIBRARY_PATH="" %command%`
+
+### Game launching on wrong monitor in fullscreen mode
+
+Unity games that do not support monitor selection will most likely launch the game on a wrong monitor.
+
+The problem is that Unity games write the default param `<pref name="UnitySelectMonitor" type="int">-1</pref>` to the game config file.
+
+This will lead to the game launching on a non-primary monitor.
+
+When changing to value into `<pref name="UnitySelectMonitor" type="int">**0**</pref>` for the according game, the game will start on the correct (primary) monitor.
+
+A Unity game config file usually resides in `~/.config/unity3d/[CompanyName]/[ProductName]/prefs`.
+
+Some of the affected games: *Cities: Skylines*, *Tablestop Simulator*, *Assault Android Cactus*.
+
+Be aware that some games do not support setting that parameter, it will simply be ignored. This is the case for *Pillars of Eternity*, *Kentucky Route Zero*, *Sunless Sea*.
 
 ## Unity of Command
 

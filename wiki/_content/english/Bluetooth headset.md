@@ -11,6 +11,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.1.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
         *   [1.1.4 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
         *   [1.1.5 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+        *   [1.1.6 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -258,6 +259,12 @@ During pairing you might see this output in *bluetoothctl*:
 ```
 
 This message is a very common one and can be ignored.
+
+#### PC shows device as paired, but is not recognized by device
+
+This might be due to the device not supporting bluetooth LE for pairing.
+
+Try setting *ControllerMode = bredr* in */etc/bluetooth/main.conf*. See [here](http://unix.stackexchange.com/questions/292189/pairing-bose-qc-35-over-bluetooth-on-fedora).
 
 ## Legacy method: ALSA-BTSCO
 

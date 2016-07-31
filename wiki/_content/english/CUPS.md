@@ -70,6 +70,8 @@ DeviceID = parallel:/dev/usb/lp0
 
 ```
 
+**Warning:** Helper programs are run using the `lp` group and `daemon` user. This allows the helper programs to access parallel port devices **and** read config files in `/etc/cups/`, which all belong to the `lp` group. Adding extra users to the `lp` group to allow them to access parallel port devices may expose sensitive information in those files. Consider using an [Udev](/index.php/Udev "Udev") rule instead. See [cups-files.conf(5)](http://man7.org/linux/man-pages/man5/cups-files.conf.5.html#) and `/etc/cups/cups-files.conf` for more information on CUPS groups and users.
+
 ### Local Network
 
 Newer versions of CUPS tend to be good at detecting printers, and tend to pick the right hostname, but unless you have added the printer to your /etc/hosts, CUPS will fail to resolve for normal printer activities. Unless you want to make your printer ip static, Avahi can help autoresolve your printer hostname. Set up [Avahi](/index.php/Avahi "Avahi") and [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") then restart CUPS by [restarting](/index.php/Restart "Restart") the `org.cups.cupsd.service` systemd unit.

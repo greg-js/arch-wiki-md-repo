@@ -162,6 +162,7 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo B50 | NA | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested |
 | Lenovo B50-70 | Yes | Yes* | Yes | Yes | Yes | Yes | Not tested | NA | See below* |
+| Lenovo B450 | Yes | Yes | Yes | Yes | Yes | NA | Not tested | NA |
 
 ### K series
 

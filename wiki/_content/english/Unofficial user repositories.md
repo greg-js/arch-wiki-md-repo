@@ -121,16 +121,13 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.4 archstudio](#archstudio)
         *   [5.2.5 brtln](#brtln)
         *   [5.2.6 jkanetwork](#jkanetwork)
-        *   [5.2.7 mazdlc](#mazdlc)
-        *   [5.2.8 mazdlc-deadbeef-plugins](#mazdlc-deadbeef-plugins)
-        *   [5.2.9 mazdlc-kde-frameworks-5](#mazdlc-kde-frameworks-5)
-        *   [5.2.10 mikroskeem](#mikroskeem)
-        *   [5.2.11 mingw-w64](#mingw-w64)
-        *   [5.2.12 pkgbuild-current](#pkgbuild-current)
-        *   [5.2.13 pnsft-pur](#pnsft-pur)
-        *   [5.2.14 rakudo](#rakudo)
-        *   [5.2.15 rightlink](#rightlink)
-        *   [5.2.16 zrootfs](#zrootfs)
+        *   [5.2.7 mikroskeem](#mikroskeem)
+        *   [5.2.8 mingw-w64](#mingw-w64)
+        *   [5.2.9 pkgbuild-current](#pkgbuild-current)
+        *   [5.2.10 pnsft-pur](#pnsft-pur)
+        *   [5.2.11 rakudo](#rakudo)
+        *   [5.2.12 rightlink](#rightlink)
+        *   [5.2.13 zrootfs](#zrootfs)
 *   [6 armv6h only](#armv6h_only)
     *   [6.1 Unsigned](#Unsigned_5)
         *   [6.1.1 arch-fook-armv6h](#arch-fook-armv6h)
@@ -1355,42 +1352,6 @@ Server = http://pkgbuild.com/~barthalion/brtln/$arch/
 ```
 [jkanetwork]
 Server = http://repo.jkanetwork.com/repo/$repo/
-
-```
-
-#### mazdlc
-
-*   **Maintainer:** maz-1 <ohmygod19993 at gmail dot com>
-*   **Description:** Various packages maintained by maz-1 (mainly Qt5-based packages and multimedia-related packages )
-*   **Upstream page:** [https://build.opensuse.org/project/show/home:mazdlc](https://build.opensuse.org/project/show/home:mazdlc)
-
-```
-[home_mazdlc_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/mazdlc/Arch_Extra/$arch
-
-```
-
-#### mazdlc-deadbeef-plugins
-
-*   **Maintainer:** maz-1 <ohmygod19993 at gmail dot com>
-*   **Description:** Plugins for the feature-rich music player DeaDBeeF.
-*   **Upstream page:** [https://build.opensuse.org/project/show/home:mazdlc](https://build.opensuse.org/project/show/home:mazdlc)
-
-```
-[home_mazdlc_deadbeef-plugins_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/mazdlc:/deadbeef-plugins/Arch_Extra/$arch
-
-```
-
-#### mazdlc-kde-frameworks-5
-
-*   **Maintainer:** maz-1 <ohmygod19993 at gmail dot com>
-*   **Description:** Unstable packages based on kde frameworks 5.
-*   **Upstream page:** [https://build.opensuse.org/project/show/home:mazdlc](https://build.opensuse.org/project/show/home:mazdlc)
-
-```
-[home_mazdlc_kde-frameworks-5_Arch_Extra]
-Server = http://download.opensuse.org/repositories/home:/mazdlc:/kde-frameworks-5/Arch_Extra/$arch
 
 ```
 

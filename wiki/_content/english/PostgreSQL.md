@@ -170,7 +170,7 @@ The PostgreSQL database server configuration file is `postgresql.conf`. This fil
 Edit the file `/var/lib/postgres/data/postgresql.conf`. In the connections and authentications section, add the `listen_addresses` line to your needs:
 
 ```
-listen_addresses = 'localhost,my_remote_server_ip_address'
+listen_addresses = 'localhost,my_remote_client_ip_address'
 
 ```
 
@@ -184,7 +184,7 @@ host   all   all   *my_remote_client_ip_address*/32   md5
 
 ```
 
-where `your_desired_ip_address` is the IP address of the client.
+where `my_remote_client_ip_address` is the IP address of the client.
 
 See the documentation for [pg_hba.conf](http://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html).
 

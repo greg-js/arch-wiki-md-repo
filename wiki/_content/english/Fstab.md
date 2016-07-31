@@ -209,17 +209,25 @@ UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures  
 
 Below atime options can impact drive performance.
 
-*   The `strictatime` option updates the *atime* of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
+*   The `strictatime` option updates the access time of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
 
-*   The `noatime` option fully disables writing file access times to the drive every time you read a file. This works well for almost all applications, except for a rare few like [Mutt](/index.php/Mutt "Mutt") that needs such information. When using mutt or other atime dependent applications, `noatime` should not be used; using the `relatime` or `lazytime` option is acceptable and still provides a performance boost(see below). The write time information to a file will continue to be updated anytime the file is written to with this option enabled.
+*   The `noatime` option fully disables writing file access times to the drive every time you read a file. This works well for almost all applications, except for those that need to know if a file has been read since the last time it was modified. The write time information to a file will continue to be updated anytime the file is written to with this option enabled.
 
 *   The `nodiratime` option disables the writing of file access times only for directories while other files still get access times written.
 
 **Note:** `noatime` already includes `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
 
-*   `relatime` enables the writing of file access times when the file is being modified (unlike `noatime` where the file access time will never be changed and will be older than the modification time) or (since Linux 2.6.30) every 24 hours if the file is accessed. For kernels prior to 4.0, the best compromise might be the use this option since programs like [Mutt](/index.php/Mutt "Mutt") will continue to work, but you will still have a performance boost as the files will not get access times updated unless they are modified or if the file is accessed after 24 hours has passed. This option is used when the `defaults` keyword option, `atime` option (which means to use the kernel default, which is `relatime`; see `man 8 mount` and [wikipedia:Stat (system call)#Criticism of atime](https://en.wikipedia.org/wiki/Stat_(system_call)#Criticism_of_atime "wikipedia:Stat (system call)")) or no options at all are specified in *fstab* for a given mount point.
+*   `relatime` updates the access time only if the previous access time was earlier than the current modify or change time. In addition, since Linux 2.6.30, the access time is always updated if the previous access time was more than 24 hours old. This option is used when the `defaults` option, `atime` option (which means to use the kernel default, which is `relatime`; see `man 8 mount` and [wikipedia:Stat (system call)#Criticism of atime](https://en.wikipedia.org/wiki/Stat_(system_call)#Criticism_of_atime "wikipedia:Stat (system call)")) or no options at all are specified.
 
-*   `lazytime` (since kernel 4.0) updates times to in-memory(RAM) version of the file inode and causes updates to on-disk timestamps only when (1) the file inode needs to be updated for some change unrelated to file timestamps(e.g., the file is modified), (2) a sync to disk occurs, (3) the inode is evicted from memory or (4) if the file is accessed and over 24 hours has passed since the previous access(i.e., the atime is more than 24 hours old). `lazytime` solves POSIX and time-dependent applications' compatibility issues yet significantly reduces writes to disk since all time changes are maintained in system RAM until forced to disk. Particularly useful for filesystems on SSD(s), as is noatime, because of the reduced number of writes to disk.
+When using [Mutt](/index.php/Mutt "Mutt") or other applications that need to know if a file has been read since the last time it was modified, the `noatime` option should not be used; using the `relatime` option is acceptable and still provides a performance improvement.
+
+Since kernel 4.0 there is another related option:
+
+*   `lazytime` reduces writes to disk by maintaining changes to inode timestamps (access, modification and creation times) only in memory. The on-disk timestamps are updated only when either (1) the file inode needs to be updated for some change unrelated to file timestamps, (2) a sync to disk occurs, (3) an undeleted inode is evicted from memory or (4) if more than 24 hours passed since the the last time the in-memory copy was written to disk.
+
+**Warning:** In the event of a system crash, the access and modification times on disk might be out of date by up to 24 hours.
+
+Note that the `lazytime` option works **in combination** with the aforementioned `*atime` options, not as an alternative. That is `relatime` by default, but can be even `strictatime` with the same or less cost of disk writes as the plain `relatime` option.
 
 ### Writing to FAT32 as Normal User
 

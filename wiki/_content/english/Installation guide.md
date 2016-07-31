@@ -86,7 +86,7 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-To modify and print [partition tables](/index.php/Partition_table "Partition table"), use [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html#) or [parted(8)](http://man7.org/linux/man-pages/man8/parted.8.html#) for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html) for GPT only.
+To modify and print [partition tables](/index.php/Partition_table "Partition table"), use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html) for GPT only.
 
 At least one partition must be available for the `/` directory. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 

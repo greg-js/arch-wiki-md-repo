@@ -14,8 +14,13 @@
         *   [1.3.2 Graphical](#Graphical)
             *   [1.3.2.1 Gecko-based](#Gecko-based)
             *   [1.3.2.2 Blink-based](#Blink-based)
+                *   [1.3.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
+                *   [1.3.2.2.2 Browsers based on electron](#Browsers_based_on_electron)
+                *   [1.3.2.2.3 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
             *   [1.3.2.3 WebKit-based](#WebKit-based)
-                *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qt5-webkit/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqt5-webkit.2Fqtwebkit)
+                *   [1.3.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
+                *   [1.3.2.3.2 Browsers based on webkitgtk/webkitgtk2](#Browsers_based_on_webkitgtk.2Fwebkitgtk2)
+                *   [1.3.2.3.3 Browsers based on qt5-webkit/qtwebkit](#Browsers_based_on_qt5-webkit.2Fqtwebkit)
             *   [1.3.2.4 Other](#Other)
     *   [1.4 File sharing](#File_sharing)
         *   [1.4.1 Download managers](#Download_managers)
@@ -128,7 +133,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 	[http://retawq.sourceforge.net/](http://retawq.sourceforge.net/) || [retawq](https://aur.archlinux.org/packages/retawq/)
 
-*   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images. It has javascript support too.
+*   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images.
 
 	[http://w3m.sourceforge.net/](http://w3m.sourceforge.net/) || [w3m](https://www.archlinux.org/packages/?name=w3m)
 
@@ -138,101 +143,113 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(software) "wikipedia:Gecko (software)").
 
-*   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Keyboard-based browser modeled after [Emacs](/index.php/Emacs "Emacs") using [XULRunner](https://en.wikipedia.org/wiki/XULRunner "wikipedia:XULRunner"). Customizable via JavaScript.
+*   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Keyboard-based browser modeled after [Emacs](/index.php/Emacs "Emacs") using Firefox. Customizable via JavaScript.
 
-	[http://repo.or.cz/w/conkeror.git/](http://repo.or.cz/w/conkeror.git/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
+	[http://conkeror.org/](http://conkeror.org/) || [conkeror](https://aur.archlinux.org/packages/conkeror/)
 
 *   **[Firefox](/index.php/Firefox "Firefox")** — Extensible browser from Mozilla based on Gecko with fast rendering.
 
 	[https://mozilla.com/firefox](https://mozilla.com/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
-*   **Seamonkey** — Continuation of the Mozilla Internet Suite.
+*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A customized build of Firefox ESR distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
+
+	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
+
+*   **[SeaMonkey](https://en.wikipedia.org/wiki/SeaMonkey "wikipedia:SeaMonkey")** — Continuation of the Mozilla Internet Suite.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
-
-*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A Firefox fork distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
-
-	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)
-
-*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — A Firefox fork focussing on speed, with a pre-Firefox 29 interface. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
-
-	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
 
 ##### Blink-based
 
 See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)").
 
-*   **Brave** — Web browser that blocks ads and trackers by default.
-
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
-
 *   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Web browser developed by Google.
+###### Chromium spin-offs
+
+*   **[Google Chrome](/index.php/Chromium "Chromium")** — Proprietary web browser developed by Google.
 
 	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+
+*   **Inox** — A privacy-focused patchset for Chromium, which disables Google services, proprietary features, prevents "calling home" and unhides all extensions.
+
+	[https://github.com/gcarq/inox-patchset](https://github.com/gcarq/inox-patchset) || [inox](https://aur.archlinux.org/packages/inox/) or [inox-bin](https://aur.archlinux.org/packages/inox-bin/)
+
+*   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/iridium-browser/wiki/Differences-between-Iridium-and-Chromium).
+
+	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
+
+*   **[Opera](/index.php/Opera "Opera")** — Highly customizable proprietary browser with focuses on an adherence to web rendering standards.
+
+	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
+
+*   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
+
+	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
+
+*   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
+
+	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
+
+*   **[Yandex Browser](https://en.wikipedia.org/wiki/Yandex_Browser "wikipedia:Yandex Browser")** — Proprietary browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
+
+	[https://browser.yandex.com/](https://browser.yandex.com/) || [yandex-browser-beta](https://aur.archlinux.org/packages/yandex-browser-beta/)
+
+###### Browsers based on electron
+
+*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Electron](http://electron.atom.io/) platform.
+
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
+
+*   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
+
+	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://aur.archlinux.org/packages/min/)
+
+###### Browsers based on qt5-webengine
 
 *   **Liri** — A minimalistic material design web browser written for Papyros.
 
 	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
 
-*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier. The linux version of Maxthon has not been updated since September 2014.
+*   **Qt WebBrowser** — Browser for embedded devices developed using the capabilities of Qt and Qt WebEngine.
 
-	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
-
-*   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
-
-	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
-
-*   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
-
-	[https://bitbucket.org/xiannox/quill](https://bitbucket.org/xiannox/quill) || [quill-git](https://aur.archlinux.org/packages/quill-git/)
+	[http://doc.qt.io/QtWebBrowser/](http://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
 
 *   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on QtWebEngine, written in Qt framework.
 
 	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
-*   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced browser made with the power user in mind.
-
-	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
-
-*   **Yandex.Browser** — Combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
-
-	[https://browser.yandex.ru/beta/](https://browser.yandex.ru/beta/) || [yandex-browser-beta](https://aur.archlinux.org/packages/yandex-browser-beta/)
-
 ##### WebKit-based
 
 See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit").
+
+###### Browsers based on webkit2gtk
 
 *   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
 	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
 
-*   **Lariza** — A simple web browser using GTK+ 3, GLib and WebKit2GTK+.
+*   **Lariza** — A simple, experimental web browser using GTK+ 3, GLib and WebKit2GTK+.
 
-	[https://github.com/vain/lariza/](https://github.com/vain/lariza/) || [lariza-git](https://aur.archlinux.org/packages/lariza-git/)
+	[https://www.uninformativ.de/projects/lariza/](https://www.uninformativ.de/projects/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
-*   **Rainbow Lollipop** — The visual history browser.
+*   **Rainbow Lollipop** — The visual history browser. In early state of development.
 
 	[http://rainbow-lollipop.de/](http://rainbow-lollipop.de/) || [rainbow-lollipop-git](https://aur.archlinux.org/packages/rainbow-lollipop-git/)
 
-*   **Surf 2** — A simple web browser based on WebKit2GTK+.
+*   **[Surf](/index.php/Surf "Surf") 2** — A simple web browser based on WebKit2GTK+. Experimental branch.
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf-webkit2gtk-git](https://aur.archlinux.org/packages/surf-webkit2gtk-git/)
 
-*   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher.
+*   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher. In early state of development.
 
 	[https://launchpad.net/webby-browser](https://launchpad.net/webby-browser) || [webby-browser-bzr](https://aur.archlinux.org/packages/webby-browser-bzr/)
 
-###### Browsers based on webkitgtk/webkitgtk2/qt5-webkit/qtwebkit
+###### Browsers based on webkitgtk/webkitgtk2
 
-**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
-
-*   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
-
-	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
+**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
 
 *   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with *vi*-like shortcuts and tiling layouts. As of October 2014 *dwb* is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
 
@@ -248,21 +265,9 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Lightweight web browser based on GTK+ and WebKit.
 
-	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
+	[http://midori-browser.org/](http://midori-browser.org/) || GTK+ 3: [midori](https://www.archlinux.org/packages/?name=midori), GTK+ 2: [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2)
 
-*   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
-
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
-
-*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
-
-	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
-
-*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
-
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
-
-*   **Surf** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
+*   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
 
@@ -278,23 +283,51 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
 
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as *xxxterm*)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
+*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero")** — Webkit minimalist web browser (formerly known as *xxxterm*) with sophisticated security features designed-in, BSD style.
 
 	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
 
+###### Browsers based on qt5-webkit/qtwebkit
+
+**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. Qt browsers should be switching to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
+*   **[Arora](https://en.wikipedia.org/wiki/Arora_(web_browser) "wikipedia:Arora (web browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
+
+	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
+
+*   **[Dooble](https://en.wikipedia.org/wiki/Dooble "wikipedia:Dooble")** — A safe WebKit Web browser.
+
+	[http://dooble.sourceforge.net/](http://dooble.sourceforge.net/) || [dooble](https://aur.archlinux.org/packages/dooble/)
+
+*   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
+
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+
+*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
+
+	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+
+*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
+
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+
 ##### Other
 
-*   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk").
+*   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk"). Uses its own layout engine.
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
 
-*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt and KHTML, part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and KHTML layout engine, part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
 	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
 
-*   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Featherweight browser written in C, notable for its slowly developing JavaScript support and fast rendering through its own custom rendering engine.
+*   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Featherweight browser written in C, notable for its slowly developing JavaScript support and fast rendering through its own layout engine.
 
 	[http://netsurf-browser.org](http://netsurf-browser.org) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
+
+*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) layout engine, a fork of Gecko. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
+
+	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon](https://aur.archlinux.org/packages/palemoon/)
 
 ### File sharing
 

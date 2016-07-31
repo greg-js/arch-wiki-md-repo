@@ -209,9 +209,15 @@ Uncomment `en_US.UTF-8 UTF-8` in `/etc/locale.gen` and then run `locale-gen` as 
 
 ### The game crashes immediately after start
 
-If your game crashes immediately, try disabling: *"Enable the Steam Overlay while in-game"* in game *Properties*.
+First, right-click on the game, choose Properties, and click the "Set Launch Options" button. In that text box put:
 
-If this doesn't work, you should check Steam's output for any error from the game. You may encounter the following:
+ `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%` 
+
+And try the game again. Some games work with this and some games don't.
+
+Then if your game still crashes immediately, try disabling: *"Enable the Steam Overlay while in-game"* in game *Properties*.
+
+And finally, if those don't work, you should check Steam's output for any error from the game. You may encounter the following:
 
 *   munmap_chunk(): invalid pointer
 *   free(): invalid pointer

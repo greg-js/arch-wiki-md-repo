@@ -12,28 +12,30 @@
     *   [4.4 Adding search engines](#Adding_search_engines)
         *   [4.4.1 arch-firefox-search](#arch-firefox-search)
     *   [4.5 Multimedia playback](#Multimedia_playback)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Firefox startup takes very long](#Firefox_startup_takes_very_long)
-    *   [5.2 Font troubleshooting](#Font_troubleshooting)
-    *   [5.3 Setting an email client](#Setting_an_email_client)
-    *   [5.4 File association](#File_association)
-        *   [5.4.1 File association problems](#File_association_problems)
-    *   [5.5 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_.7E.2FDesktop_even_when_this_is_not_desired)
-    *   [5.6 Make plugins respect blocked pop-ups](#Make_plugins_respect_blocked_pop-ups)
-    *   [5.7 Middle-click errors](#Middle-click_errors)
-    *   [5.8 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_.27Back.27_button)
-    *   [5.9 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
-    *   [5.10 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
-    *   [5.11 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
-    *   [5.12 Silently fails when installing desktop apps from marketplace](#Silently_fails_when_installing_desktop_apps_from_marketplace)
-    *   [5.13 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
-    *   [5.14 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
-    *   [5.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
-    *   [5.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [5.17 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
-    *   [5.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [5.19 Firefox looks bad with GTK+ >=3.20](#Firefox_looks_bad_with_GTK.2B_.3E.3D3.20)
-*   [6 See also](#See_also)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Screenshot of webpage](#Screenshot_of_webpage)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Firefox startup takes very long](#Firefox_startup_takes_very_long)
+    *   [6.2 Font troubleshooting](#Font_troubleshooting)
+    *   [6.3 Setting an email client](#Setting_an_email_client)
+    *   [6.4 File association](#File_association)
+        *   [6.4.1 File association problems](#File_association_problems)
+    *   [6.5 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_.7E.2FDesktop_even_when_this_is_not_desired)
+    *   [6.6 Make plugins respect blocked pop-ups](#Make_plugins_respect_blocked_pop-ups)
+    *   [6.7 Middle-click errors](#Middle-click_errors)
+    *   [6.8 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_.27Back.27_button)
+    *   [6.9 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
+    *   [6.10 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
+    *   [6.11 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
+    *   [6.12 Silently fails when installing desktop apps from marketplace](#Silently_fails_when_installing_desktop_apps_from_marketplace)
+    *   [6.13 Firefox detects the wrong version of my plugin](#Firefox_detects_the_wrong_version_of_my_plugin)
+    *   [6.14 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
+    *   [6.15 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
+    *   [6.16 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
+    *   [6.17 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
+    *   [6.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
+    *   [6.19 Firefox looks bad with GTK+ >=3.20](#Firefox_looks_bad_with_GTK.2B_.3E.3D3.20)
+*   [7 See also](#See_also)
 
 ## Installing
 
@@ -43,11 +45,11 @@ Other alternatives include:
 
 *   **Firefox Extended Support Release** — long-term supported version
 
-	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
+	[https://www.mozilla.org/firefox/organizations/](https://www.mozilla.org/firefox/organizations/) || [firefox-esr](https://aur.archlinux.org/packages/firefox-esr/) or [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)
 
 *   **Firefox Beta** — cutting-edge version
 
-	[https://www.mozilla.org/firefox/channel/#beta](https://www.mozilla.org/firefox/channel/#beta) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
+	[https://www.mozilla.org/firefox/channel/#beta](https://www.mozilla.org/firefox/channel/#beta) || [firefox-beta](https://aur.archlinux.org/packages/firefox-beta/) or [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)
 
 *   **Firefox Developer Edition/Aurora** — for developers
 
@@ -179,6 +181,26 @@ Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multime
 Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](http://www.quirksmode.org/html5/tests/video.html) or [audio-test page](http://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
 See also [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration.
+
+## Tips and tricks
+
+### Screenshot of webpage
+
+To use Firefox to take a screenshot of a webpage open the developer console using `Shift+F2`. Then type in:
+
+```
+screenshot *filename*
+
+```
+
+where *filename* is optional.
+
+To take a screenshot of the entire page, not just the section displayed on the screen, use the `--fullpage` option:
+
+```
+screenshot --fullpage *filename*
+
+```
 
 ## Troubleshooting
 

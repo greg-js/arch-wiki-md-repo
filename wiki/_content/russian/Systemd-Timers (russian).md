@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Дата последней синхронизации: 27 июля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=437648).
+**Состояние перевода:** На этой странице представлен перевод статьи [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers"). Дата последней синхронизации: 30 июля 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=437648).
 
 Таймеры - файлы служб [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"), имя которых оканчивается на `.service`, а также они контролируют файлы `.service` или события. И могут выступать альтернативой [cron](/index.php/Cron "Cron") (смотрите [#В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)). Помимо этого имеют встроенную поддержку временных событий календаря, монотонных временных событий и могут быть запущены в асинхронном режиме.
 
@@ -12,7 +12,7 @@
     *   [4.2 Таймер в реальном времени](#.D0.A2.D0.B0.D0.B9.D0.BC.D0.B5.D1.80_.D0.B2_.D1.80.D0.B5.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8)
 *   [5 Временные юниты .timer](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D1.8B_.timer)
 *   [6 В качестве замены cron](#.D0.92_.D0.BA.D0.B0.D1.87.D0.B5.D1.81.D1.82.D0.B2.D0.B5_.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D1.8B_cron)
-    *   [6.1 Полезности](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
+    *   [6.1 Преимущества](#.D0.9F.D1.80.D0.B5.D0.B8.D0.BC.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D0.B0)
     *   [6.2 Предостережения](#.D0.9F.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
     *   [6.3 MAILTO](#MAILTO)
     *   [6.4 Использование crontab](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_crontab)
@@ -119,26 +119,26 @@ OnCalendar=Mon,Tue *-*-01,02,03,04 12:00:00
 
 Although [cron](/index.php/Cron "Cron") is arguably the most well-known job scheduler, *systemd* timers can be an alternative.
 
-### Полезности
+### Преимущества
 
-The main benefits of using timers come from each job having its own *systemd* service. Some of these benefits are:
+Основные преимущества использования таймеров приходят от каждой задачи, которая имеет собственную службу *systemd*. Вот некоторые из этих преимуществ:
 
-*   Jobs can be easily started independently of their timers. This simplifies debugging.
-*   Each job can be configured to run in a specific environment (see the `systemd.exec(5)` [man page](/index.php/Man_page "Man page")).
-*   Jobs can be attached to [cgroups](/index.php/Cgroups "Cgroups").
-*   Jobs can be set up to depend on other *systemd* units.
-*   Jobs are logged in the *systemd* journal for easy debugging.
+*   Задачи могут быть легко запущены независимо от их таймеров. Это упрощает отладку.
+*   Каждая задача может быть настроена для работы в определенной среде (смотрите [man page](/index.php/Man_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Man page (Русский)") `systemd.exec(5)`).
+*   Задачи могут быть присоединены к [cgroups](/index.php/Cgroups "Cgroups").
+*   Задачи могут быть настроены в зависимости от других юнитов *systemd*.
+*   Задачи регистрируются в журнале *systemd* для легкости отладки.
 
 ### Предостережения
 
-Some things that are easy to do with cron are difficult to do with timer units alone.
+Некоторые вещи, которые легко сделать посредством cron, трудно сделать только юнитами таймера.
 
-*   Complexity: to set up a timed job with *systemd* you create two files and run a couple `systemctl` commands. Compare that to adding a single line to a crontab.
-*   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up an equivalent using `OnFailure=`.
+*   Сложность: чтобы настроить задачу, запускаемую в определенное время, при помощи *systemd*, вам нужно создать два файла и запустить несколько команд `systemctl`. Сравните это с добавлением одной строчки в crontab.
+*   Электронная почта: отсутствие встроенного эквивалента cron `MAILTO` для отправки писем при сбое. В следующем разделе приведен пример создания эквивалента с использованием `OnFailure=`.
 
 ### MAILTO
 
-You can set up systemd to send an e-mail when a unit fails - much like Cron does with `MAILTO`. First you need two files: an executable for sending the mail and a *.service* for starting the executable. For this example, the executable is just a shell script using `sendmail`:
+Вы можете настроить systemd для отправки электронной почты при сбое юнита - так же, как Cron делает с `MAILTO`. Прежде всего, нужно два файла: исполняемый для посылки почты и *.service* для запуска первого. В следующем примере, исполняемый файл - скрипт, использующий `sendmail`:
 
  `/usr/local/bin/systemd-email` 
 ```
@@ -155,28 +155,28 @@ $(systemctl status --full "$2")
 ERRMAIL
 ```
 
-Whatever executable you use, it should probably take at least two arguments as this shell script does: the address to send to and the unit file to get the status of. The *.service* we create will pass these arguments:
+В независимости от используемого выполняемого файла, вероятно, следует считывать по крайней мере два аргумента, как делает скрипт: адрес для отправки и файл юнита, чтобы получить его статус. Файл *.service*, который мы создадим, будет передавать следующие аргументы:
 
- `/etc/systemd/system/status-email-**user1**@.service` 
+ `/etc/systemd/system/status-email-*user*@.service` 
 ```
 [Unit]
-Description=status email for %I to **user1**
+Description=status email for %I to *user*
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/systemd-email **user1@mailhost** %i
+ExecStart=/usr/local/bin/systemd-email *address* %i
 User=nobody
 Group=systemd-journal
-
 ```
 
-First notice that the unit to send email about is an instance parameter, so this one service can be used to send email for many other units. However the recipient is hard-coded (since unit templates can only take a single parameter) so you will need to create multiple services if you want to send emails to different sets of recipients. At this point you should test the service to verify that you can receive the emails:
+Где `*user*` - получатель почты, а `*address*` - адрес электронной почты пользователя. Однако получателя изменить нельзя, потому что файл юнита передается как instance-параметр, то есть он может быть использован для отправки почты для других юнитов. Можете [запустить](/index.php/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D1%8C "Запустить") `status-email-*user*@dbus.service`, чтобы убедиться в том, что вы можете получать почту.
 
- `# systemctl start status-email-user1@dbus.service` 
+Затем просто [отредактируйте](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B0.D0.BC.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") службу, о которой вы хотите получать почту и добавьте `OnFailure=status-email-*user*@%n.service` в раздел `[Unit]`. `%n` передает имя юнита в шаблон.
 
-Then simply [edit](/index.php/Systemd#Editing_provided_units "Systemd") the service you want emails for and add `OnFailure=status-email-user1@%n.service` to the `[Unit]` section. `%n` passes the unit's name to the template.
+**Примечание:**
 
-**Примечание:** If you set up SSMTP security according to [SSMTP#Security](/index.php/SSMTP#Security "SSMTP") the user `nobody` will not have access to `/etc/ssmtp/ssmtp.conf`, and the `systemctl start status-email-user1@dbus.service` command will fail. One solution is to use `root` as the User in the `status-email-user1@.service` module.
+*   Если вы настроили SSMTP в соответствии с [SSMTP#Security](/index.php/SSMTP#Security "SSMTP"), то пользователь `nobody` не будет иметь доступа к `/etc/ssmtp/ssmtp.conf` и команда `systemctl start status-email-*user*@dbus.service` не сработает. Одним из решений является использование `root`, как Пользователь, в юните `status-email-*user*@.service`.
+*   Если вы попробуете использовать `mail -s somelogs *address*` в почтовом скрипте, `mail` создаст свой форк и systemd убьет процесс посылки почты, когда увидит, что скрипт завершился. Можно сделать так, чтобы почтовый процесс не создавал своих форков путем выполнения `mail -Ssendwait -s somelogs *address*`.
 
 ### Использование crontab
 

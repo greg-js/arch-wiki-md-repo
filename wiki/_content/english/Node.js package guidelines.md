@@ -6,6 +6,10 @@
 
 This document covers standards and guidelines on writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for [Node.js](/index.php/Node.js "Node.js") packages.
 
+## Package naming
+
+Package names should start with a `nodejs-` prefix.
+
 ## Using npm
 
 When installing with *npm*, add it as a build dependency:

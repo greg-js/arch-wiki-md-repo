@@ -25,11 +25,11 @@
 
 ### GRUB
 
-[GRUB](/index.php/GRUB "GRUB") 功能丰富，支持复杂场景。配置文件和 'sh' 脚本语言很类似，可以自动生成。
+[GRUB](/index.php/GRUB "GRUB") 功能丰富，支持复杂场景。配置文件和 'sh' 脚本语言很类似，可以自动生成。也是Linux平台下最常用的启动加载器。
 
 ### Syslinux
 
-[Syslinux](/index.php/Syslinux "Syslinux")目前仅能从安装分区加载文件，配置文件示例位于 [Syslinux#Examples](/index.php/Syslinux#Examples "Syslinux")。
+[Syslinux](/index.php/Syslinux "Syslinux")目前仅能从安装分区加载文件，配置文件示例位于 [Syslinux#Examples](/index.php/Syslinux#Examples "Syslinux")。Syslinux主要用于Linux光盘的安装程序。
 
 ## 仅支持 UEFI 的启动加载器
 
@@ -58,11 +58,11 @@ ELILO 是只支持 BIOS [LILO](/index.php/LILO "LILO") 的 UEFI 版本。它的�
 
 ## BIOS-only Boot Loaders
 
-**Note:** 这些启动加载器都未获得 ArchLinux 开发团队的官方支持。
+**Note:** 这些启动加载器都未获得 ArchLinux 开发团队的官方支持，或者他们已经过时。
 
 ### GRUB Legacy
 
-GRUB Legacy (也称之为 grub-0.97), is the legacy, BIOS-only branch of [GRUB](/index.php/GRUB "GRUB"). See [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy").
+GRUB Legacy (也称之为 grub-0.97), is the legacy, BIOS-only branch of [GRUB](/index.php/GRUB "GRUB"). See [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). 旧的GRUB 0.x被称为GRUB Legacy或GRUB1，新的GRUB2则经过了重写和大革新。
 
 ### LILO
 

@@ -16,7 +16,7 @@ LAMP是指在许多web 服务器上使用的一个软件组合：Linux,Apache,My
         *   [2.4.1 管理多个主机](#.E7.AE.A1.E7.90.86.E5.A4.9A.E4.B8.AA.E4.B8.BB.E6.9C.BA)
 *   [3 扩展](#.E6.89.A9.E5.B1.95)
     *   [3.1 PHP](#PHP)
-        *   [3.1.1 Using apache2-mpm-worker and mod_fcgid](#Using_apache2-mpm-worker_and_mod_fcgid)
+        *   [3.1.1 使用 apache2-mpm-worker 和 mod_fcgid](#.E4.BD.BF.E7.94.A8_apache2-mpm-worker_.E5.92.8C_mod_fcgid)
     *   [3.2 MariaDB](#MariaDB)
     *   [3.3 HTTP2](#HTTP2)
 *   [4 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
@@ -315,7 +315,7 @@ httpd.service: control process exited, code=exited status=1
 
 高级的配置和扩展，请设置 [PHP](/index.php/PHP "PHP").
 
-#### Using apache2-mpm-worker and mod_fcgid
+#### 使用 apache2-mpm-worker 和 mod_fcgid
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [mod_fcgid](https://www.archlinux.org/packages/?name=mod_fcgid) 和 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi).
 

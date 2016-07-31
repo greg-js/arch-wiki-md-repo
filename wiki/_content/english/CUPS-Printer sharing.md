@@ -62,6 +62,15 @@ There are more configuration possibilities, including automatic methods, which a
 
 After making any modifications, restart CUPS.
 
+If CUPS is started using socket activation, create a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for `org.cups.cupsd.socket` so that socket activation also works for remote connections:
+
+ `/etc/systemd/system/org.cups.cupsd.socket.d/override.conf` 
+```
+[Socket]
+ListenStream=631
+
+```
+
 ### Enabling browsing
 
 To enable browsing (shared printer discovery), [Avahi](/index.php/Avahi "Avahi") must be installed and running on the server. If you do not need printer discovery, Avahi is not required on either the server or the client.

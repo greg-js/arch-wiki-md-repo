@@ -8,15 +8,16 @@ From the project [home page](https://launchpad.net/ufw):
 *   [2 Basic configuration](#Basic_configuration)
 *   [3 Adding other applications](#Adding_other_applications)
 *   [4 Deleting applications](#Deleting_applications)
-*   [5 Rate limiting with ufw](#Rate_limiting_with_ufw)
-*   [6 User rules](#User_rules)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Disable remote ping](#Disable_remote_ping)
-    *   [7.2 Disable UFW logging](#Disable_UFW_logging)
-*   [8 GUI frontends](#GUI_frontends)
-    *   [8.1 Gufw](#Gufw)
-    *   [8.2 kcm-ufw](#kcm-ufw)
-*   [9 See also](#See_also)
+*   [5 Black listing IP addresses](#Black_listing_IP_addresses)
+*   [6 Rate limiting with ufw](#Rate_limiting_with_ufw)
+*   [7 User rules](#User_rules)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Disable remote ping](#Disable_remote_ping)
+    *   [8.2 Disable UFW logging](#Disable_UFW_logging)
+*   [9 GUI frontends](#GUI_frontends)
+    *   [9.1 Gufw](#Gufw)
+    *   [9.2 kcm-ufw](#kcm-ufw)
+*   [10 See also](#See_also)
 
 ## Installation
 
@@ -132,6 +133,24 @@ To                         Action      From
 Anywhere                   ALLOW       192.168.0.0/24
 SSH                        ALLOW       Anywhere
 Deluge-my                  ALLOW       Anywhere
+
+```
+
+## Black listing IP addresses
+
+It might be desirable to add ip addresses to a blacklist which is easily achieved simply by editing `/etc/ufw/before.rules` and inserting an iptables DROP line at the bottom of the file right above the "COMMIT" word.
+
+ `/etc/ufw/before.rules` 
+```
+...
+## blacklist section
+# block just 199.115.117.99
+-A ufw-before-input -s 199.115.117.99 -j DROP
+# block 184.105.*.*
+-A ufw-before-input -s 184.105.0.0/16 -j DROP
+
+# don't delete the 'COMMIT' line or these rules won't be processed
+COMMIT
 
 ```
 

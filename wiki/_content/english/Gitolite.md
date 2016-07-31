@@ -10,7 +10,8 @@
     *   [3.1 ssh users](#ssh_users)
     *   [3.2 http(s) users](#http.28s.29_users)
 *   [4 Gitosis-like ssh usernames](#Gitosis-like_ssh_usernames)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -196,6 +197,29 @@ $user =~ s/\.pub$//;              # baz@home.pub -> baz@home
 
 *   update authorized_keys file (for example, by pushing into the *gitolite-admin* repository)
 
+## Troubleshooting
+
+In case you cannot log in with the gitolite account, it may be caused by the account being locked, and depending of your ssh configuration.
+
+If you have done some SSH hardening, it may be the cause of this behavior, as noted in [SSH and locked users Article](http://arlimus.github.io/articles/usepam/) and [Unix & Linux StackExchange - How to unlock account for public key ssh authorization, but not for password authorization](http://unix.stackexchange.com/questions/193066/how-to-unlock-account-for-public-key-ssh-authorization-but-not-for-password-aut).
+
+To solve this you have to allow PAM in `sshd_config` or unlock the account by:
+
+```
+# usermod -p '*' gitolite
+
+```
+ `# nano /etc/passwd` 
+```
+...
+gitolite:*:16199:0:99999:7:::
+...
+```
+
+**Warning:** Do not leave the account in the state left by `passwd -u` (with a blank password field). Doing that will allow logins without entering a password!
+
 ## See also
 
-[http://sitaramc.github.com/gitolite/index.html](http://sitaramc.github.com/gitolite/index.html)
+*   [Gitolite Site](http://sitaramc.github.com/gitolite/index.html)
+*   [SSH and locked users Article](http://arlimus.github.io/articles/usepam/)
+*   [Unix & Linux StackExchange - How to unlock account for public key ssh authorization, but not for password authorization](http://unix.stackexchange.com/questions/193066/how-to-unlock-account-for-public-key-ssh-authorization-but-not-for-password-aut)

@@ -105,7 +105,7 @@ To always automatically save the current playback position on quit, start *mpv* 
 
 ### Volume is too low
 
-Set `softvol-max=*value*` in your configuration file to a reasonable amount, such as `softvol-max=600`. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=drc`.
+Set `volume-max=*value*` in your configuration file to a reasonable amount, such as `volume-max=600`. Additionally (or alternatively), you can utilize [dynamic range compression](https://en.wikipedia.org/wiki/Dynamic_range_compression "wikipedia:Dynamic range compression") with `af=drc`.
 
 ### Quickly cycle between multiple aspect ratio
 

@@ -19,14 +19,15 @@
         *   [4.1.3 Build Image](#Build_Image)
     *   [4.2 Debian](#Debian)
 *   [5 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
-*   [6 Useful tips](#Useful_tips)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Docker info errors out](#Docker_info_errors_out)
-    *   [7.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
-    *   [7.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [7.4 docker complains about no loopback devices](#docker_complains_about_no_loopback_devices)
-    *   [7.5 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
-*   [8 See also](#See_also)
+*   [6 Clean Remove Docker + Images](#Clean_Remove_Docker_.2B_Images)
+*   [7 Useful tips](#Useful_tips)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Docker info errors out](#Docker_info_errors_out)
+    *   [8.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
+    *   [8.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
+    *   [8.4 docker complains about no loopback devices](#docker_complains_about_no_loopback_devices)
+    *   [8.5 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -226,6 +227,90 @@ Alternatively, you could use [Arch Linux Archive](/index.php/Arch_Linux_Archive 
 
 ```
  Server=[https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch](https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch)
+
+```
+
+## Clean Remove Docker + Images
+
+In case you want to remove Docker entirely you can do this by following the steps below:
+
+**Note:** Don't just copy paste those commands without making sure you know what you are doing!
+
+Check for running containers
+
+```
+# docker ps
+
+```
+
+Killing still running containers
+
+```
+# docker kill <CONTAINER ID>
+
+```
+
+List all containers running on the host for deletion
+
+```
+# docker ps -a
+
+```
+
+Delete all containers listed by ID
+
+```
+# docker rm <CONTAINER ID>
+
+```
+
+List all Docker images
+
+```
+# docker images
+
+```
+
+Delete all images by ID
+
+```
+# docker rmi <IMAGE ID>
+
+```
+
+Disable Docker
+
+```
+# systemctl disable docker
+# systemctl stop docker
+
+```
+
+Remove Docker/Compose from the system
+
+```
+# pacman -Rs docker docker-compose
+
+```
+
+Remove users from docker group
+
+```
+# gpasswd -d <user> docker
+
+```
+
+Delete docker group from system
+
+```
+# groupdel docker
+
+```
+
+Delete all Docker data (folder).
+
+```
+# rm -R /var/lib/docker
 
 ```
 

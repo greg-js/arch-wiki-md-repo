@@ -209,7 +209,7 @@ For the Sandy Bridge model (L502X): Suspend works; hibernation does not (it gets
 
 For the XPS 9550 variant, sound works out of the box with the linux kernel. If you try to plug in headphones, you won't hear any output from them. Upon restart, you'll receive a **Dummy Output** as your sound card.
 
-sudo aplay -l should give you this output if Arch can detect your soundcard:
+aplay -l should give you this output if Arch can detect your soundcard:
 
 ```
 **** List of PLAYBACK Hardware Devices ****
@@ -228,7 +228,7 @@ card 0: PCH [HDA Intel PCH], device 8: HDMI 2 [HDMI 2]
 
 ```
 
-sudo aplay -l will give you this output if Arch cannot detect your soundcard:
+aplay -l will give you this output if Arch cannot detect your soundcard:
 
 ```
 aplay: device_list:268: no soundcards found...
@@ -242,12 +242,12 @@ Things you can try:
 - Disable audio, microphone, and internal speaker from BIOS, let it boot into Arch, shutdown, re-enable audio settings, and boot into Arch with sound back. This has worked 100% of the time... so far.
 
 ```
-sudo mkinitcpio -p linux
+mkinitcpio -p linux
 
 ```
 
 ```
-sudo modprobe snd_hda_intel
+modprobe snd_hda_intel
 
 ```
 

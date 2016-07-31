@@ -2,7 +2,7 @@
 
 GPT fdisk, as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables." [[1]](http://www.rodsbooks.com/gdisk/)
 
-This article covers **fdisk** and its related **sfdisk** and **cfdisk** utilities, as well as the analogous **gdisk**, **sgdisk** and **cgdisk** utilities.
+This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html#) its related [sfdisk(8)](http://man7.org/linux/man-pages/man8/sfdisk.8.html#) and [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html#) utilities, as well as the analogous [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html), *sgdisk* and *cgdisk* utilities.
 
 ## Contents
 
@@ -109,7 +109,7 @@ If both drives will be in the same computer, you need to randomize the GUID's:
 
 ## Create a partition table and partitions
 
-The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
+The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
 
 Before beginning, you may wish to [backup](#Backup_and_restore) your current partition table and scheme.
 
@@ -125,7 +125,7 @@ Using [MBR](/index.php/MBR "MBR"), the utility for editing the partition table i
 
 Note that in the olden days, *fdisk* used cylinders as the default display unit, and retained an MS-DOS compatibility quirk that messed with SSD alignment. Therefore one will find many guides around the internet from around 2008-2009 making a big deal out of getting everything correct. With the latest *fdisk*, things are much simpler, as reflected in this guide.
 
-Start *fdisk* against your drive as root, in this example we are using `/dev/sda`):
+Start *fdisk* against your drive as root, in this example we are using `/dev/sda`:
 
 ```
 # fdisk /dev/sda
