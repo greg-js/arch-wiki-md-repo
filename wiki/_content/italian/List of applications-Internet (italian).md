@@ -417,7 +417,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Skype](/index.php/Skype "Skype")** — Popolare applicazione P2P per comunicazioni voce di alta qualità.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Applicazione proprietaria VoIP, che ha tra i videogiocatori come target di riferimento.
 

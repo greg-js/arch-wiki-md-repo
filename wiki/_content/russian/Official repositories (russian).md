@@ -55,7 +55,7 @@
 
 Этот репозиторий можно найти в каталоге `.../multilib/os/` на каждом из доступных [зеркал](/index.php/Mirrors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mirrors (Русский)").
 
-*multilib* содержит 32-битное программное обеспечение и библиотеки, которые можно использовать для запуска и сборки 32-битных приложений на 64-битных системах (например, [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://www.archlinux.org/packages/?name=skype) и т.д.).
+*multilib* содержит 32-битное программное обеспечение и библиотеки, которые можно использовать для запуска и сборки 32-битных приложений на 64-битных системах (например, [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/) и т.д.).
 
 Для получения дополнительной информации смотрите статью [Multilib (Русский)](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)").
 

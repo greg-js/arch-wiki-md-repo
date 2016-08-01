@@ -63,7 +63,7 @@ community 仓库位于Arch镜像的 `.../community/os/` 目录中。
 
 [multilib](/index.php/Multilib "Multilib") 仓库位于Arch镜像的 `.../multilib/os/` 目录中。
 
-包含64位系统中需要的32位软件和库，例如： [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://www.archlinux.org/packages/?name=skype) 等。
+包含64位系统中需要的32位软件和库，例如： [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/) 等。
 
 ## testing
 

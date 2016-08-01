@@ -7,9 +7,10 @@ Here is an example implementation in [Python](/index.php/Python "Python") 3. Pla
  `/usr/local/bin/kb-light.py` 
 ```
 #!/usr/bin/env python3
+# coding: utf-8
 
-import dbus
 from sys import argv
+import dbus
 
 def kb_light_set(delta):
     bus = dbus.SystemBus()
@@ -27,15 +28,18 @@ def kb_light_set(delta):
     # Return current backlight level percentage
     return 100 * current / maximum
 
-if len(argv[1:]) == 1:
-    if argv[1] == "--up" or argv[1] == "+":
-        print(kb_light_set(1)) # ./kb-light.py (+|--up) to increment
-    elif argv[1] == "--down" or argv[1] == "-":
-        print(kb_light_set(-1)) # ./kb-light.py (-|--down) to decrement
+if __name__ == '__main__':
+    if len(argv[1:]) == 1:
+        if argv[1] == "--up" or argv[1] == "+":
+            # ./kb-light.py (+|--up) to increment
+            print(kb_light_set(1))
+        elif argv[1] == "--down" or argv[1] == "-":
+            # ./kb-light.py (-|--down) to decrement
+            print(kb_light_set(-1))
+        else:
+            print("Unknown argument:", argv[1])
     else:
-        print("Unknown argument:", argv[1])
-else:
-    print("Script takes exactly one argument.", len(argv[1:]), "arguments provided.")
+        print("Script takes exactly one argument.", len(argv[1:]), "arguments provided.")
 ```
 
 ## Asus

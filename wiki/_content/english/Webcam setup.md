@@ -398,7 +398,7 @@ This is very similar to Microsoft NetMeeting. Install the [ekiga](https://www.ar
 
 ### Skype
 
-The newest version of [Skype](/index.php/Skype "Skype") has video support. Check Video Devices in the options for a test image which you can double-click to make full screen. Install the [skype](https://www.archlinux.org/packages/?name=skype) package. If you get a green or disorted picture with skype read the section [#Get software to use your webcam](#Get_software_to_use_your_webcam) above.
+The newest version of [Skype](/index.php/Skype "Skype") has video support. Check Video Devices in the options for a test image which you can double-click to make full screen. Install the [skype](https://aur.archlinux.org/packages/skype/) package. If you get a green or disorted picture with skype read the section [#Get software to use your webcam](#Get_software_to_use_your_webcam) above.
 
 If you're running x86-64 you might actually need to install [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) and then run skype with
 

@@ -567,15 +567,15 @@ usb.generic.allowHID = "TRUE"
 VMware attempts to automatically optimize mouse for gaming. If experiencing problems, disabling it is recommended: *Edit > Preferences > Input > Optimize mouse for games: Never*
 ```
 
-Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg53932.html) the `catchall` event in `10-evdev.conf` may be needed:
+Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg53932.html) the `catchall` event in `60-libinput.conf` may be needed:
 
- `/etc/X11/xorg.conf.d/10-evdev.conf` 
+ `/usr/share/X11/xorg.conf.d/60-libinput.conf` 
 ```
 #Section "InputClass"
-#        Identifier "evdev pointer catchall"
+#        Identifier "libinput pointer catchall"
 #        MatchIsPointer "on"
 #        MatchDevicePath "/dev/input/event*"
-#        Driver "evdev"
+#        Driver "libinput"
 #EndSection
 
 ```

@@ -264,7 +264,7 @@ This message is a very common one and can be ignored.
 
 This might be due to the device not supporting bluetooth LE for pairing.
 
-Try setting *ControllerMode = bredr* in */etc/bluetooth/main.conf*. See [here](http://unix.stackexchange.com/questions/292189/pairing-bose-qc-35-over-bluetooth-on-fedora).
+Try setting `ControllerMode = bredr` in `/etc/bluetooth/main.conf`. See [[2]](http://unix.stackexchange.com/questions/292189/pairing-bose-qc-35-over-bluetooth-on-fedora).
 
 ## Legacy method: ALSA-BTSCO
 
@@ -702,7 +702,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 
 | Model | Version | Comments | Compatible |
 | **Philips SHB9150** | bluez5, pulseaudio 9 | Yes |
-| **Philips SHB9100** | Pause and resume is flaky. See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality. | Limited |
+| **Philips SHB9100** | Pause and resume is flaky. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality. | Limited |
 | **Philips SHB7000** | Pause and resume is flaky. | Limited |
 | **Philips SHB7100** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume is flaky (sometimes works in VLC, not at all in Audacious). Tested only A2DP and Handsfree audio out, built-in mic was broken. | Limited |
 | **Philips SHB7150** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume work in VLC. Tested only A2DP profile. | Yes |
@@ -710,7 +710,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Parrot Zik** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
 | **Parrot Zik 2.0** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
 | **Parrot Zik 3.0** | Microphone detected but does not work (HSP profile unavailable). No delay issues. | Limited |
-| **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[3]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
+| **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[4]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
 | **Sony SBH50** | bluez5 | Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe"). | Yes |
 | **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Doesn't auto-connect, need to connect manually. Other functionality works fine. | Limited |
 | **Sony MUC-M1BT1** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Both A2DP & HSP/HFP work fine. | Yes |

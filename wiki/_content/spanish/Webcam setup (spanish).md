@@ -368,7 +368,7 @@ Sonic-snap [[2]](http://www.stolk.org/sonic-snap/) es un visor/capturador para w
 
 ### Skype
 
-La nueva versión de [Skype (Español)](/index.php?title=Skype_(Espa%C3%B1ol)&action=edit&redlink=1 "Skype (Español) (page does not exist)") tiene soporte para video. Compruebe dispositivos de video en las opciones para una imagen de prueba a la cual puede hacer doble clic para ponerla a pantalla completa. Instale el paquete [skype](https://www.archlinux.org/packages/?name=skype). Si ve una imagen verde o distorsionada con skype, lea la sección [#Consiga que el software use su webcam](#Consiga_que_el_software_use_su_webcam) más arriba.
+La nueva versión de [Skype (Español)](/index.php?title=Skype_(Espa%C3%B1ol)&action=edit&redlink=1 "Skype (Español) (page does not exist)") tiene soporte para video. Compruebe dispositivos de video en las opciones para una imagen de prueba a la cual puede hacer doble clic para ponerla a pantalla completa. Instale el paquete [skype](https://aur.archlinux.org/packages/skype/). Si ve una imagen verde o distorsionada con skype, lea la sección [#Consiga que el software use su webcam](#Consiga_que_el_software_use_su_webcam) más arriba.
 
 Si su sistema es x86-64, debería instalar [lib32-v4l-utils](https://www.archlinux.org/packages/?name=lib32-v4l-utils) y ejecutar skype con
 

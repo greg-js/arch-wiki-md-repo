@@ -55,7 +55,7 @@ core 包含的軟體包有以下用途：
 
 這個軟體庫位於鏡像站的 `.../multilib/os/` 目錄下。
 
-*multilib* 包含 32 位元的軟體與函式庫，讓 64 位元機器可以執行、組建 32 位元的應用程式 (例如 [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://www.archlinux.org/packages/?name=skype))。
+*multilib* 包含 32 位元的軟體與函式庫，讓 64 位元機器可以執行、組建 32 位元的應用程式 (例如 [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/))。
 
 更多資訊請參閱 [Multilib](/index.php/Multilib "Multilib")。
 

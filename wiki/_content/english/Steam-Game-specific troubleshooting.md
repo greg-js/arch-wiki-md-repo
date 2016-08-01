@@ -1751,7 +1751,7 @@ When changing to value into `<pref name="UnitySelectMonitor" type="int">**0**</p
 
 A Unity game config file usually resides in `~/.config/unity3d/[CompanyName]/[ProductName]/prefs`.
 
-Some of the affected games: *Cities: Skylines*, *Tablestop Simulator*, *Assault Android Cactus*.
+Some of the affected games: *Cities: Skylines*, *Tablestop Simulator*, *Assault Android Cactus*, *Wasteland 2*.
 
 Be aware that some games do not support setting that parameter, it will simply be ignored. This is the case for *Pillars of Eternity*, *Kentucky Route Zero*, *Sunless Sea*.
 

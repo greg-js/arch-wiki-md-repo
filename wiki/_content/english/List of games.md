@@ -120,10 +120,6 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://www.nongnu.org/crack-attack/](http://www.nongnu.org/crack-attack/) || [crack-attack](https://aur.archlinux.org/packages/crack-attack/)
 
-*   **[Frogatto](https://en.wikipedia.org/wiki/Frogatto "wikipedia:Frogatto")** — Much enjoyable platformer, in which you help a small green fellow named Frogatto walk and jump between solid footholds without getting hurt; have a look at [this review](http://www.slidetoplay.com/story/frogatto-review).
-
-	[http://frogatto.com](http://frogatto.com) || [frogatto](https://www.archlinux.org/packages/?name=frogatto)
-
 *   **[Frozen Bubble](https://en.wikipedia.org/wiki/Frozen_Bubble "wikipedia:Frozen Bubble")** — Arcade game with colorful animated penguin eyecandy
 
 	[http://frozen-bubble.org](http://frozen-bubble.org) || [frozen-bubble](https://www.archlinux.org/packages/?name=frozen-bubble)
@@ -331,6 +327,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 	[http://themanaworld.org](http://themanaworld.org) || [manaplus](https://www.archlinux.org/packages/?name=manaplus)
 
 ## Platformer
+
+*   **[Frogatto](https://en.wikipedia.org/wiki/Frogatto "wikipedia:Frogatto")** — Platformer with adventure elements.
+
+	[http://frogatto.com](http://frogatto.com) || [frogatto](https://www.archlinux.org/packages/?name=frogatto)
 
 *   **Knyttstories** — Platformer with adventure elements, heavy exploration and downloadable levels.
 

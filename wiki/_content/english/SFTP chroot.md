@@ -8,10 +8,14 @@ OpenSSH 4.9+ includes a built-in chroot for sftp, but requires a few tweaks to t
     *   [2.2 Fixing path for authorized_keys](#Fixing_path_for_authorized_keys)
     *   [2.3 Adding new chrooted users](#Adding_new_chrooted_users)
 *   [3 Logging](#Logging)
+    *   [3.1 Create sub directory](#Create_sub_directory)
+    *   [3.2 Syslog-ng configuration](#Syslog-ng_configuration)
+    *   [3.3 sshd configuration](#sshd_configuration)
+    *   [3.4 Restart service](#Restart_service)
 *   [4 Testing your chroot](#Testing_your_chroot)
 *   [5 Troubleshooting](#Troubleshooting)
 *   [6 Write access to chroot dir](#Write_access_to_chroot_dir)
-*   [7 Links & References](#Links_.26_References)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -80,40 +84,35 @@ With the standard path of *AuthorizedKeysFile*, the public key authentication wi
 **Note:** This has the side effect of improving overall security with the tradeoff of root intervention for revocation in case a user changes their key or their key gets lost or stolen.
 
 ```
-  AuthorizedKeysFile      /etc/ssh/authorized_keys/%u
+AuthorizedKeysFile      /etc/ssh/authorized_keys/%u
 
 ```
 
 Create *authorized_keys* directory and move existing users' authorized_keys:
 
 ```
- sudo mkdir /etc/ssh/authorized_keys
- sudo bash -c 'for user in /home/*; do mv ${user}/.ssh/authorized_keys /etc/ssh/authorized_keys/${user#/home/}; done'
+# mkdir /etc/ssh/authorized_keys
+# bash -c 'for user in /home/*; do mv ${user}/.ssh/authorized_keys /etc/ssh/authorized_keys/${user#/home/}; done'
 
 ```
 
 **Warning:** Be careful during this step not to lock yourself out of the machine you're working on. Always have a secondary method of access, such as an additional ssh session open or console access should things go awry
 
-Restart sshd:
-
-```
- sudo systemctl restart sshd.service
-
-```
+[Restart](/index.php/Restart "Restart") `sshd.service`.
 
 ### Adding new chrooted users
 
 If using the group method above, ensure all sftp users are put in the appropriate group, i.e.:
 
 ```
- sudo usermod -g sftponly username
+# usermod -g sftponly username
 
 ```
 
 Also, set their shell to */usr/bin/false* to prevent a normal ssh login:
 
 ```
- sudo usermod -s /bin/false username
+# usermod -s /bin/false username
 
 ```
 
@@ -125,9 +124,11 @@ Note that since this is only for sftp, a proper chroot environment with a shell 
 
 ## Logging
 
-**1)**
+The user will not be able to access `/dev/log`. This can be seen by running `strace` on the process once the user connects and attempts to download a file.
 
-The user will not be able to access `/dev/log`. This can be seen by running `strace` on the process once the user connects and attempts to download a file. Create the sub-directory `dev` in the `ChrootDirectory`, for example:
+### Create sub directory
+
+Create the sub-directory `dev` in the `ChrootDirectory`, for example:
 
 ```
  sudo mkdir /usr/local/chroot/theuser/dev
@@ -137,7 +138,7 @@ The user will not be able to access `/dev/log`. This can be seen by running `str
 
 `syslog-ng` will create the device `/usr/local/chroot/theuser/dev/log` once configured.
 
-**2)**
+### Syslog-ng configuration
 
 Add to `/etc/syslog-ng/syslog-ng.conf` a new source for the log and add the configuration, for example change the section:
 
@@ -184,19 +185,13 @@ log { source(src); filter(f_ssh); destination(ssh); };
 
 (From [Syslog-ng#Move log to another file](/index.php/Syslog-ng#Move_log_to_another_file "Syslog-ng"))
 
-**3)**
+### sshd configuration
 
 Edit `/etc/ssh/sshd_config` to replace all instances of `internal-sftp` with `internal-sftp -f AUTH -l VERBOSE`
 
-**4)**
+### Restart service
 
-Restart logging and SSH:
-
-```
- systemctl restart syslog-ng.service
- systemctl restart sshd.service
-
-```
+[Restart](/index.php/Restart "Restart") service `syslog-ng` and `sshd`.
 
 `/usr/local/chroot/theuser/dev/log` should now exist.
 
@@ -265,7 +260,7 @@ Optional add an entry to `/etc/fstab`:
 
 Now the user can log in with SFTP, they are chrooted to `/home/user`, but they see a folder called "web" they can access to manipulate files on a web site (assuming they have correct permissions in `/srv/web/example.com`.
 
-## Links & References
+## See also
 
 *   [http://www.minstrel.org.uk/papers/sftp/builtin/](http://www.minstrel.org.uk/papers/sftp/)
 *   [http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config](http://www.openbsd.org/cgi-bin/man.cgi?query=sshd_config)

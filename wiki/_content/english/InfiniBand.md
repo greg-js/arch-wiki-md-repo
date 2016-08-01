@@ -28,11 +28,16 @@ This page explains how to set up, diagnose, and benchmark an InfiniBand network.
         *   [3.4.2 MTU](#MTU)
         *   [3.4.3 Fine-tuning connection mode and MTU](#Fine-tuning_connection_mode_and_MTU)
     *   [3.5 Remote Data Storage over InfiniBand](#Remote_Data_Storage_over_InfiniBand)
-        *   [3.5.1 iSCSI](#iSCSI)
-            *   [3.5.1.1 Over IPoIB](#Over_IPoIB)
-            *   [3.5.1.2 Over iSER](#Over_iSER)
-                *   [3.5.1.2.1 Single iSER Device](#Single_iSER_Device)
-                *   [3.5.1.2.2 Multiple iSER Devices](#Multiple_iSER_Devices)
+        *   [3.5.1 targetcli](#targetcli)
+            *   [3.5.1.1 Installing and using](#Installing_and_using)
+            *   [3.5.1.2 Create backstores](#Create_backstores)
+        *   [3.5.2 iSCSI](#iSCSI)
+            *   [3.5.2.1 Over IPoIB](#Over_IPoIB)
+            *   [3.5.2.2 Over iSER](#Over_iSER)
+                *   [3.5.2.2.1 Bug with multiple iSER devices, workarounds](#Bug_with_multiple_iSER_devices.2C_workarounds)
+                *   [3.5.2.2.2 Configuring iSER devices](#Configuring_iSER_devices)
+                *   [3.5.2.2.3 Workaround for multiple iSER devices on open-iscsi 2.0_873-7](#Workaround_for_multiple_iSER_devices_on_open-iscsi_2.0_873-7)
+        *   [3.5.3 SRP](#SRP)
 *   [4 InfiniBand programs for diagnosing and benchmarking](#InfiniBand_programs_for_diagnosing_and_benchmarking)
     *   [4.1 ibstat - View a computer's InfiniBand GUIDs](#ibstat_-_View_a_computer.27s_InfiniBand_GUIDs)
     *   [4.2 ibhosts - View all hosts on InfiniBand network](#ibhosts_-_View_all_hosts_on_InfiniBand_network)
@@ -332,74 +337,81 @@ Using the [qperf](#qperf_-_Measure_performance_over_RDMA_or_TCP.2FIP) examples g
 
 ### Remote Data Storage over InfiniBand
 
+You can share physical or virtual devices from a target (host/server) to an initiator (guest/client) system over an InfiniBand network, using iSCSI, iSCSI with iSER, or SRP. These methods differ from traditional file sharing (i.e. [Samba](/index.php/Samba "Samba") or [NFS](/index.php/NFS "NFS")) because the initiator system views the shared device as its own block level device, rather than a traditionally mounted network shared folder. i.e. `fdisk /dev/*block_device_id*`, `mkfs.btrfs /dev/*block_device_id_with_partition_number*`
+
+The disadvantage is only one system can use each shared device at a time; trying to mount a shared device on the target or another initiator system will fail. (An initiator system can certainly run traditional file sharing on top.)
+
+The advantages are faster bandwidth, more control, and even having an initiator's root filesystem being physically located remotely (remote booting.)
+
+#### targetcli
+
+`targetcli` acts like a shell that presents its complex (and not worth creating by hand) `/etc/target/saveconfig.json` as a pseudo-filesystem.
+
+##### Installing and using
+
+On the target system:
+
+*   Install [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) with prerequisites: [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/); and [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/).
+*   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `target.service`
+
+In `targetcli`:
+
+*   In any pseudo-directory, you can run `help` to see the commands available *in that pseudo-directory*. Or, `help *command*` (like `help create`) for more detailed help.
+*   Tab-completion is also available for many commands.
+*   Run `ls` to see the entire pseudo-filesystem at and below the current pseudo-directory.
+
+##### Create backstores
+
+In `targetcli`, setup a backstore for each device or virtual device to share:
+
+*   To share an actual block device, run: `cd /backstores/block`; and `create *name* *dev*`.
+*   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create *name* *file*`.
+*   To share a physical SCSI device as a pass-through, run: `cd /backstores/pscsi`; and `create *name* *dev*`.
+*   To share a RAM disk, run: `cd /backstores/ramdisk`; and `create *name* *size*`.
+*   Where *name* is for the backstore's name.
+*   Where *dev* is the block device to share (i.e. /dev/sda, /dev/sda4, /dev/disk/by-id/*x*, or a LVM logical volume /dev/vg0/lv1).
+*   Where *file* is the file to share (i.e. */path/to/file*).
+*   Where *size* is the size of the RAM disk to create (i.e. 512MB, 20GB.)
+
 #### iSCSI
 
-iSCSI allows storage devices and virtual storage devices to be used over a network. It differs from traditional file sharing (i.e. [Samba](/index.php/Samba "Samba") or [NFS](/index.php/NFS "NFS")) because iSCSI has the "guest" system view the shared device as its own block level device, rather than a traditionally mounted network shared folder. The disadvantage is iSCSI only allows one system to use each shared device at a time; trying to mount a shared device on the target ("host") system that is logged into by iSCSI by another system will fail. (A system using a shared deivce can certainly run traditional file sharing on top.) The advantages are that iSCSI allows speed, more control, and even a system's root filesystem to be located remotely (remote booting.)
+iSCSI allows storage devices and virtual storage devices to be used over a network. For InfiniBand networks, the storage can either work over IPoIB or iSER.
 
 There is a lot of overlap with the [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target"), [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator"), and [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") articles, but the necessities will be discussed since much needs to be customized for usage over InfiniBand.
 
 ##### Over IPoIB
 
-*   On all target ("host") and initiator ("guest") systems, [Install TCP/IP over InfiniBand](#TCP.2FIP_over_InfiniBand_.28IPoIB.29)
+Perform the target system instructions first, which will direct you when to temporarily switch over to the initiator system instructions.
 
-*   On the target ("host") system:
-    *   Install [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) with prerequisites: [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/); and [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/).
-    *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `target.service`
-    *   Setup your iSCSI targets. Run `targetcli`, which acts like a shell that presents its complex and not worth creating by hand `/etc/target/saveconfig.json` as a pseudo-filesystem.
-        *   In any pseudo-directory, you can run `help` to see the commands available *in that pseudo-directory*. Or, `help *command*` (like `help create` for more detailed help.
-        *   Run `ls` to see the entire pseudo-filesystem at and below the current pseudo-directory.
-        *   Create a backstore (the device or virtual device you want to share)
-            *   To share an actual block device, run: `cd /backstores/block`; and `create *name* *dev*`.
-            *   To share a file as a virtual block device, run: `cd /backstores/fileio`; and `create *name* *file*`.
-            *   To share a physical SCSI device as a pass-through, run: `cd /backstores/pscsi`; and `create *name* *dev*`.
-            *   To share a RAM disk, run: `cd /backstores/ramdisk`; and `create *name* *size*`.
-            *   Where *name* is for the backstore's name.
-            *   Where *dev* is the block device to share (i.e. /dev/sda, /dev/sda4, /dev/disk/by-id/*x*, or a LVM logical volume /dev/vg0/lv1).
-            *   Where *file* is the file to share (i.e. */path/to/file*).
-            *   Where *size* is the size of the RAM disk to create (i.e. 512MB, 20GB.)
-        *   Create an iqn (iSCSI Qualified Name) (the name other systems' configurations will see the storage as.)
-            *   Run: `cd /iscsi`; and `create`. It will give you a *randomly_generated_target_name*, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
+*   On the target and initiator systems, [install TCP/IP over InfiniBand](#TCP.2FIP_over_InfiniBand_.28IPoIB.29).
+
+*   On the target system, for each device or virtual device you want to share, in `targetcli`:
+    *   [Create a backstore](#Create_backstores).
+    *   For each backstore, create an iqn (iSCSI Qualified Name) (the name other systems' configurations will see the storage as.)
+        *   Run: `cd /iscsi`; and `create`. It will give you a *randomly_generated_target_name*, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
         *   Set up the tpg (Target Portal Group), automatically created in the last step as tpg1.
             *   Create a lun (Logical Unit Number).
                 *   Run: `cd *randomly_generated_target_name*/tpg1/luns`; and `create *storage_object*`. Where `*storage_object*` is a full path to an existing storage object, i.e. /backstores/block/*name*.
             *   Create an acl (Access Control List).
-                *   Run: `cd ../acls`; and `create *wwn*`. Where `*wwn*` is the initiator ("guest") system's iqn (iSCSI Qualified Name), aka its (World Wide Name).
-                    *   Get the `*wwn*` by running on the initiator ("guest") system, **not** this target ("host") system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)) `cat /etc/iscsi/initiatorname.iscsi`.
-        *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
+                *   Run: `cd ../acls`; and `create *wwn*`. Where `*wwn*` is the initiator system's iqn (iSCSI Qualified Name), aka its (World Wide Name).
+                    *   Get the `*wwn*` by running on the initiator system, **not** this target system: (after installing on it [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/)) `cat /etc/iscsi/initiatorname.iscsi`.
+    *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
 
-*   On the initiator ("guest") system:
+*   On the initiator system:
     *   Install [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi), or [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/).
     *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") open-iscsi.service.
-    *   At this point, if you need this initiator system's iqn (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target ("host") system's `luns` in `targetcli`, run: `cat /etc/iscsi/initiatorname.iscsi`.
+    *   At this point, if you need this initiator system's iqn (iSCSI Qualified Name), aka its wwn (World Wide Name), for setting up the target system's `luns`, run: `cat /etc/iscsi/initiatorname.iscsi`.
     *   Discover online targets. Run `iscsiadm -m discovery -t sendtargets -p *portal*`, where *portal* is an IP (v4 or v6) address or hostname.
     *   Login to discovered targets. Run `iscsiadm -m node -L all`.
-    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3 | grep Attached`. The block device ID will be the last line in the tree for each target. `-P` is the print command, and its option is the verbosity level. Only verbosity level 3 lists the block device IDs.
-
-Now, on the initiator ("guest") system, you should be able to use your new iSCSI-backed block device just like any other. i.e. `fdisk /dev/*block_device_id*`, `mkfs.btrfs /dev/*block_device_id_with_partition_number*`.
+    *   View which block device ID was given to each target logged into. Run `iscsiadm -m session -P 3 | grep Attached`. The block device ID will be the last line in the tree for each target. (`-P` is the print command, its option is the verbosity level, and only level 3 lists the block device IDs.)
 
 ##### Over iSER
 
 iSER (iSCSI Extensions for RDMA) takes advantage of InfiniBand's RDMA protocols, rather than using TCP/IP. It eliminates TCP/IP overhead, and provides higher bandwidth, zero copy time, lower latency, and lower CPU utilization.
 
-There is currently a bug using more than 1 iSER device, [which seems to be with open-iscsi](https://github.com/open-iscsi/open-iscsi/issues/21).
+###### Bug with multiple iSER devices, workarounds
 
-If this bug is fixed, multiple iSER devices should be able to be configured using the following instructions for a single iSER device. In the meantime, the multiple iSER devices workaround is given.
-
-###### Single iSER Device
-
-Follow the [Over IPoIB](#Over_IPoIB) instructions, with the following changes:
-
-*   On the target ("host") system:
-    *   After everything else is setup in `targetcli`, enable iSER on the target.
-        *   Run `cd /iscsi/*iqn*/tpg1/portals/0.0.0.0:3260`.
-            *   Where *iqn* is the randomly generated target name, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
-        *   Run `enable_iser true`.
-        *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
-*   On the initiator ("guest") system, when running `iscsiadm` to discover online targets and login to them, use the additional argument `-I iser`.
-
-###### Multiple iSER Devices
-
-As of open-iscsi 2.0_873-7, if you try the above for discovering multiple iSER devices, `openiscsi` will give this error:
+As of [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) 2.0_873-7, if you try discovering multiple iSER devices, as described below, `iscsiadm` will give this error:
 
 ```
   iscsiadm: recv's end state machine bug?
@@ -407,20 +419,43 @@ As of open-iscsi 2.0_873-7, if you try the above for discovering multiple iSER d
 
 ```
 
-This bug occurs for discovering multiple iSER devices. Once they're discovered, you can login to them, and use them fully. So as a workaround, you can discover the targets using IPoIB, change the target ("host") to iSER, make the 3 changes (filename, and two setting values) that `open-iscsi -m discovery` would make using iSER on the initiator ("guest"), and proceed as normal.
+The bug was fixed long ago, but the [open-iscsi developers](https://github.com/open-iscsi/open-iscsi) have not tagged a release since 2012, so [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) 2.0_873-7 is using its source code from 2012\. So, your two workarounds are:
 
-*   On the target ("host") system, follow the [Over IPoIB](#Over_IPoIB) instructions, **without** the changes for [Single iSER Devices](#Single_iSER_Devices).
-*   On the initiator ("guest") system, follow the [Over IPoIB](#Over_IPoIB) instructions, **without** the changes for [Single iSER Devices](#Single_iSER_Devices), **up to and including** discovering online targets. Then:
+1.  Use [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/), to run the latest development branch source code.
+2.  Use the workaround described a few sections below.
+
+###### Configuring iSER devices
+
+You can use these instructions if you're going to use a single iSER device, or if you're going to use multiple iSER devices and have installed [open-iscsi-git](https://aur.archlinux.org/packages/open-iscsi-git/). If you're going to use multiple iSER devices and are using [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) to run a tagged release version rather than the developmental branch source code, you need to use the workaround described in the section below.
+
+Follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, with the following changes:
+
+*   If you wish, instead of [installing IPoIB](#TCP.2FIP_over_InfiniBand_IPoIB), you can just [install RDMA for loading kernel modules](#Kernel_modules).
+*   On the target system, after everything else is setup, while still in `targetcli`, enable iSER on the target:
+    *   Run `cd /iscsi/*iqn*/tpg1/portals/0.0.0.0:3260` for each *iqn* you want to have use iSER rather than IPoIB.
+        *   Where *iqn* is the randomly generated target name, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
+    *   Run `enable_iser true`.
+    *   Save and exit by running: `cd /`; `saveconfig`; and `exit`.
+*   On the initiator system, when running `iscsiadm` to discover online targets and login to them, use the additional argument `-I iser`.
+
+###### Workaround for multiple iSER devices on open-iscsi 2.0_873-7
+
+The bug only affects discovering multiple iSER devices. Once they're discovered, you can login to them, and fully use them. So as a workaround, you can discover the targets using IPoIB, change the target to iSER, make the 3 changes (filename, and two setting values) that `open-iscsi -m discovery` would make using iSER on the initiator, and proceed as normal.
+
+*   On the target system, follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, **without** the changes for [Configuring iSER devices](#Configuring_iSER_devices).
+*   On the initiator system, follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, **up to and including** discovering online targets, **without** the changes for [Configuring iSER devices](#Configuring_iSER_devices). Then:
     *   Run `systemctl stop open-iscsi`.
     *   Rename each `/etc/iscsi/nodes/*iqn*/*ip-port*/default` file to `iser`, and edit each of these files.
         *   Where *iqn* is the randomly generated target name in targetcli, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.
         *   Where *ip-port-etc* is a directory in the form "192.168.2.1,3260,1".
         *   Change `iface.iscsi_ifacename = default` to `iface.iscsi_ifacename = iser`.
         *   Change `iface.transport_name = tcp` to `iface.transport_name = iser`.
-*   On the target ("host") system, enable iSER by following the [Over iSER](#Over_iSER) instructions for the target ("host") system.
-*   On the initiator ("guest") system:
+*   On the target system, enable iSER by following the [Configuring iSER devices](#Configuring_iSER_devices) instructions for the target system.
+*   On the initiator system:
     *   Run `systemctl start open-iscsi`.
     *   When logging in to discovered targets, run `iscsiadm -m node -L all -I iser`.
+
+#### SRP
 
 ## InfiniBand programs for diagnosing and benchmarking
 

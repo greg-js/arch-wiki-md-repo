@@ -43,7 +43,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [nginx](https://www.archlinux.org/packages/?name=nginx).
+[Install](/index.php/Install "Install") the package [nginx](https://www.archlinux.org/packages/?name=nginx) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline).
 
 For a Ruby on Rails setup with nginx, see [Ruby on Rails#The Perfect Rails Setup](/index.php/Ruby_on_Rails#The_Perfect_Rails_Setup "Ruby on Rails").
 
@@ -196,7 +196,7 @@ Reload or restart `nginx` service to enable the new configuration.
 
 **Tip:** You may want to read the [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate) docs first before configuring SSL
 
-**Tip:** [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A nginx plugin is available by installing [letsencrypt-nginx](https://www.archlinux.org/packages/?name=letsencrypt-nginx) to request valid ssl certificates straight from the command line and automatic configuration.
+**Tip:** [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A plugin is available to request valid SSL certificates straight from the command line and automatic configuration.
 
 Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](/index.php/OpenSSL#Making_requests "OpenSSL"):
 

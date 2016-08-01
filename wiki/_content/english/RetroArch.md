@@ -37,6 +37,13 @@ A default emulation core can be defined in the configuration, obviating the need
 
 RetroArch provides a very well commented skeleton configuration file located at `/etc/retroarch.cfg`.
 
+Copy the skeleton configuration file located at `/etc/retroarch.cfg` to `~/.retroarch.cfg`.
+
+```
+$ cp /etc/retroarch.cfg ~/.retroarch.cfg
+
+```
+
 It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig /path/to/config` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various implementations.
 
 **Tip:** RetroArch is capable of loading *[bsnes xml filters](https://gitorious.org/bsnes/xml-shaders)* and *[cg shaders](https://github.com/libretro/common-shaders)* that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.

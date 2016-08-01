@@ -558,6 +558,7 @@ Once *gpg-agent* is running you can use *ssh-add* to approve keys, following the
  `~/.gnupg/gpg-agent.conf` 
 ```
 default-cache-ttl-ssh 10800
+max-cache-ttl-ssh 10800
 
 ```
 

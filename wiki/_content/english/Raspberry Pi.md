@@ -31,8 +31,9 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
     *   [13.1 SPI](#SPI)
     *   [13.2 Python](#Python)
 *   [14 I2C](#I2C)
-*   [15 QEMU chroot](#QEMU_chroot)
-*   [16 See also](#See_also)
+*   [15 Compiling on the RPi](#Compiling_on_the_RPi)
+*   [16 QEMU chroot](#QEMU_chroot)
+*   [17 See also](#See_also)
 
 ## Article preface
 
@@ -78,14 +79,6 @@ A key change with Linux kernel version 4.4.x for ARM related to ALSA and to the 
 
 ```
 dtparam=audio=on
-
-```
-
-To ensure that your user is allowed to access the sound devices you need to add it to the audio group. You can test soundcard access with aplay or alsamixer.
-
-```
-$ sudo usermod -a -G audio alarm
-$ aplay -l
 
 ```
 
@@ -140,7 +133,7 @@ overscan_bottom=-16
 
 ```
 
-Or you can simply disable overscan if you have a "fit to screen" option in your monitor/TV:
+Or simply disable overscan if the TV/monitor has a "fit to screen" option.
 
 ```
 disable_overscan=1
@@ -377,7 +370,7 @@ Configure the bootloader to enable the i2c hardware by appending `/boot/config.t
 
 ```
 
-Configure the `i2c-dev` and `i2c-bcm2708` (if you did not blacklist it for the camera) modules to be loaded at boot:
+Configure the `i2c-dev` and `i2c-bcm2708` (if not blacklisted for the camera) modules to be loaded at boot:
 
  `/etc/modules-load.d/raspberrypi.conf` 
 ```
@@ -392,7 +385,7 @@ Reboot the Raspberry Pi and issue the following command to get the hardware addr
 
 ```
 
-**Note:** If you use the I2C1 port instead of I2C0, you will need to run `i2cdetect -y 1` instead and replace `i2c-0` with `i2c-1` in the following steps.
+**Note:** When using the I2C1 port instead of I2C0, one will need to run `i2cdetect -y 1` instead and replace `i2c-0` with `i2c-1` in the following steps.
 
 Now we need to tell Linux to instantiate the device. Change the hardware address to the address found in the previous step with '0x' as prefix (e.g. 0x48) and choose a device name:
 
@@ -414,6 +407,10 @@ Finally, read the sensor output:
  sensors
 
 ```
+
+## Compiling on the RPi
+
+Compiling can be very slow on a RPi. [Distcc](/index.php/Distcc "Distcc") can greatly improve compilation times if other nodes are on the network. For users with x86_64 or i686 boxes, [Distcc#Arch_ARM](/index.php/Distcc#Arch_ARM "Distcc") describes the proper setup for distcc to use these resources.
 
 ## QEMU chroot
 

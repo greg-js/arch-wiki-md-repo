@@ -22,7 +22,7 @@ Skype — бесплатное программное обеспечение с 
 
 ### Установка Skype
 
-[Установите](/index.php/Pacman "Pacman") [skype](https://www.archlinux.org/packages/?name=skype) из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") или добавьте репозиторий [multilib](/index.php/Multilib "Multilib") для 64-битной системы:
+[Установите](/index.php/Pacman "Pacman") [skype](https://aur.archlinux.org/packages/skype/) из [официального репозитория](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") или добавьте репозиторий [multilib](/index.php/Multilib "Multilib") для 64-битной системы:
 
 ```
 [multilib]

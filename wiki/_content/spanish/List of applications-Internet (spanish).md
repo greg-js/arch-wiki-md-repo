@@ -443,7 +443,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular aplicación P2P para la comunicación de voz, de alta calidad.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Aplicación VoIP propietaria que tiene a los videojugadores como destinatarios principales.
 

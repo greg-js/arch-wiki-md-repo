@@ -6,30 +6,43 @@ See [Steam](/index.php/Steam "Steam") for the main article.
 
 ## Contents
 
-*   [1 Issues with nvidia 361.28](#Issues_with_nvidia_361.28)
-*   [2 Steam runtime issues](#Steam_runtime_issues)
-    *   [2.1 Possible symptoms](#Possible_symptoms)
-    *   [2.2 Work around using the dynamic linker](#Work_around_using_the_dynamic_linker)
-    *   [2.3 More information](#More_information)
-*   [3 Multiple monitors setup](#Multiple_monitors_setup)
-*   [4 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
-*   [5 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
-*   [6 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
-*   [7 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-*   [8 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
-*   [9 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
-*   [10 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
-*   [11 No audio in certain games](#No_audio_in_certain_games)
-    *   [11.1 FMOD sound engine](#FMOD_sound_engine)
-*   [12 Missing libc](#Missing_libc)
-*   [13 Missing libGL](#Missing_libGL)
-*   [14 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
-*   [15 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
-*   [16 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-*   [17 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-*   [18 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
-*   [19 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-*   [20 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+*   [1 Debugging Steam](#Debugging_Steam)
+*   [2 Issues with nvidia 361.28](#Issues_with_nvidia_361.28)
+*   [3 Steam runtime issues](#Steam_runtime_issues)
+    *   [3.1 Possible symptoms](#Possible_symptoms)
+    *   [3.2 Work around using the dynamic linker](#Work_around_using_the_dynamic_linker)
+    *   [3.3 More information](#More_information)
+*   [4 Multiple monitors setup](#Multiple_monitors_setup)
+*   [5 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
+*   [6 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
+*   [7 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
+*   [8 Text is corrupt or missing](#Text_is_corrupt_or_missing)
+*   [9 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
+*   [10 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
+*   [11 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
+*   [12 No audio in certain games](#No_audio_in_certain_games)
+    *   [12.1 FMOD sound engine](#FMOD_sound_engine)
+*   [13 Missing libc](#Missing_libc)
+*   [14 Missing libGL](#Missing_libGL)
+*   [15 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
+*   [16 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
+*   [17 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
+*   [18 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+*   [19 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
+*   [20 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+*   [21 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+
+### Debugging Steam
+
+It is possible to debug Steam to gain more information which could be useful to find out why something does not work.
+
+You can set `DEBUGGER` environment variable with one of `gdb`, `cgdb`, `valgrind`, `callgrind`, `strace` and then start `steam`.
+
+For example with [gdb](https://www.archlinux.org/packages/?name=gdb)
+
+ `$ DEBUGGER=gdb steam` 
+
+`gdb` will open, then type `run` which will start `steam` and once crash happens you can type `backtrace` to see call stack.
 
 ### Issues with nvidia 361.28
 
@@ -128,6 +141,8 @@ and then run steam.
 	Valve GitHub [issue 3863](https://github.com/ValveSoftware/steam-for-linux/issues/3863)
 
 As per the bug report above, Steam crashes with `/home/<username>/.local/share/Steam/steam.sh: line 756: <variable numeric code> Segmentation fault (core dumped)` when running with STEAM_RUNTIME=0.
+
+This happens because steamclient.so is linked to libudev.so.0 ([lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/)) which conflicts with libudev.so.1 ([lib32-systemd](https://www.archlinux.org/packages/?name=lib32-systemd))
 
 The only proposed workaround is copying Steam's packaged 32-bit versions of libusb and libgudev to /usr/lib32:
 

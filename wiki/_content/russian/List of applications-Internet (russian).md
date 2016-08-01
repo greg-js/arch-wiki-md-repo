@@ -798,7 +798,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Skype](/index.php/Skype_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Skype (Русский)")** — Популярное, но проприетарное приложение высокого качества для голосового общения
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Проприетарное приложение VoIP, целевой аудиторией которого являются геймеры
 

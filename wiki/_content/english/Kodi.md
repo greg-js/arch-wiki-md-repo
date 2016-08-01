@@ -40,7 +40,8 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
     *   [3.10 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
     *   [3.11 Raspberry Pi](#Raspberry_Pi)
         *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.11.2 Shutdown buttons](#Shutdown_buttons)
+        *   [3.11.2 Right Click Menu Key](#Right_Click_Menu_Key)
+        *   [3.11.3 Blackborders are transparent](#Blackborders_are_transparent)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -491,6 +492,8 @@ SDL_VIDEO_FULLSCREEN_HEAD=0
 
 Users observing tearing when watching a movie try this: [https://bbs.archlinux.org/viewtopic.php?id=176651](https://bbs.archlinux.org/viewtopic.php?id=176651)
 
+As an alternative with [Xfce](/index.php/Xfce "Xfce") you can use a different X11 compositor like [compton](https://www.archlinux.org/packages/?name=compton) which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
+
 ### Slowing down CD/DVD drive speed
 
 The `eject` program from the `util-linux` package does a nice job for this, but its setting is cleared as soon as the media is changed.
@@ -565,9 +568,13 @@ To make sure that [sudo](/index.php/Sudo "Sudo") does not ask for password for `
 
 ```
 
-#### Shutdown buttons
+#### Right Click Menu Key
 
-Install [polkit](https://www.archlinux.org/packages/?name=polkit) to enable the shutdown and reboot button when exiting kodi.
+On the Raspberry Pi the physical keyboard "Menu Key" does not work with kodi. As an alternative you can hold the "Enter Key" longer to access submenus in kodi. This bug seems to be exclusive to the Raspberry Pi as it is run in a standalone environment.
+
+#### Blackborders are transparent
+
+If you use the kodi-standalone mode as systemd service you will notice that in the transparent screensaver and cropped videos with black borders the console is visible behind. This is a bug of the systemd script in the alarm repository and will hopefully get fixed soon. Further details and a fix can be found on [Github](https://github.com/archlinuxarm/PKGBUILDs/pull/1379).
 
 ## See also
 

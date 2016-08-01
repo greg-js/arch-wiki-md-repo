@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-09，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=440434)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-31，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=441741)可以查看翻译后英文页面的改动。
 
 *分区* 硬盘的可用空间可以划分为多个逻辑区块，区块之间的访问是相互独立的。
 
@@ -24,9 +24,6 @@
         *   [2.3.5 /tmp](#.2Ftmp)
         *   [2.3.6 Swap](#Swap)
         *   [2.3.7 分区应该设置多大？](#.E5.88.86.E5.8C.BA.E5.BA.94.E8.AF.A5.E8.AE.BE.E7.BD.AE.E5.A4.9A.E5.A4.A7.EF.BC.9F)
-    *   [2.4 分区示例](#.E5.88.86.E5.8C.BA.E7.A4.BA.E4.BE.8B)
-        *   [2.4.1 UEFI/GPT 分区示例](#UEFI.2FGPT_.E5.88.86.E5.8C.BA.E7.A4.BA.E4.BE.8B)
-        *   [2.4.2 BIOS/MBR 分区示例](#BIOS.2FMBR_.E5.88.86.E5.8C.BA.E7.A4.BA.E4.BE.8B)
 *   [3 分区工具](#.E5.88.86.E5.8C.BA.E5.B7.A5.E5.85.B7)
 *   [4 分区对齐](#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90)
     *   [4.1 机械硬盘](#.E6.9C.BA.E6.A2.B0.E7.A1.AC.E7.9B.98)
@@ -37,6 +34,8 @@
 ## 分区表
 
 分区信息被存放在分区表中。目前有两种主流的模式：传统的 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")，和新的 [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")。后者功能更强大，解决了许多MBR的限制。
+
+**Note:** 可以用 `parted */dev/sda* print` 或 `fdisk -l */dev/sda*` 查看当前分区信息，`*/dev/sda*` 是设备名。
 
 ### Master Boot Record
 
@@ -89,7 +88,9 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ### 单root分区
 
-这种是最简单，同时也能满足大部分应用场景的方案。如果需要的话，可以建立一个 [swapfile](/index.php/Swapfile "Swapfile")。通常刚开始的时候建议一个单独的 `/` 分区，然后根据应用场景的需要，例如 RAID，加密，独立的多媒体分区等建立其他的分区。注意，在一个 BIOS 系统上使用 GPT 进行分区后，安装 GRUB 时会需要一个额外的 BIOS 启动分区。
+这种是最简单，同时也能满足大部分应用场景的方案。如果需要的话，可以建立一个 [swapfile](/index.php/Swapfile "Swapfile")。通常刚开始的时候建议一个单独的 `/` 分区，然后根据应用场景的需要，例如 RAID，加密，独立的多媒体分区等建立其他的分区。
+
+[UEFI](/index.php/UEFI "UEFI")系统需要 [ESP](/index.php/EFI_System_Partition "EFI System Partition") 分区，在 [BIOS](/index.php?title=BIOS&action=edit&redlink=1 "BIOS (page does not exist)") 系统上使用 [GPT](/index.php/GPT "GPT") 进行分区后，安装 GRUB 时会需要一个额外的 BIOS 启动分区。
 
 ### 多分区
 
@@ -137,7 +138,7 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 #### Swap
 
-[swap](/index.php/Swap "Swap") 分区提供能够被作为虚拟内存的内存空间。[swap file](/index.php/Swap#Swap_file "Swap") 也可以实现同样的功能，并且它们之间没有明显的性能区别，但是后者更易于根据需要调整大小。如果没有使用休眠特性的话，swap 分区*可以*被多个系统共享。
+[swap](/index.php/Swap "Swap") 分区提供能够被作为虚拟内存的内存空间。[swap file](/index.php/Swap#Swap_file "Swap") 也可以实现同样的功能，并且它们之间没有明显的性能区别，但是后者更易于根据需要调整大小。如果没有使用休眠特性的话，swap 分区*可以*被多个系统共享。查看 [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") 了解如何通过 swap 分区或文件休眠。
 
 #### 分区应该设置多大？
 
@@ -173,27 +174,6 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 	/data - [不定] 
 
 	可以为需要多用户共享的文件建立一个“data”分区。也可以使用 `/home` 分区用于这一目的。
-
-### 分区示例
-
-这里假定要使用一个新的连续分区方式，占据整个 `/dev/sd**x**` 设备. 请根据需要修改设备名、分区号和布局。
-
-#### UEFI/GPT 分区示例
-
-需要一个*bootable* [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition")，假设被挂载成 `/boot`.
-
-| 挂载点 | 分区 | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | 启动标记 | 建议大小 |
-| /boot | /dev/sd**x**1 | EFI 系统分区 | Yes | 260–512 MiB |
- /dev/sd**x**2 | Linux swap | No | 不超过 512 MiB |
-| / | /dev/sd**x**3 | Linux | No | 15–20 GiB |
-| /home | /dev/sd**x**4 | Linux | No | 剩余空间 |
-
-#### BIOS/MBR 分区示例
-
-| 挂载点 | 分区 | [分区类型](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | 启动标记 | 建议大小 |
- /dev/sd**x**1 | Linux swap | No | 不超过 512 MiB |
-| / | /dev/sd**x**2 | Linux | Yes | 15–20 GiB |
-| /home | /dev/sd**x**3 | Linux | No | 剩余空间 |
 
 ## 分区工具
 
@@ -233,53 +213,22 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 	[http://sourceforge.net/projects/partitionman/](http://sourceforge.net/projects/partitionman/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
 
-*   **QtParted** — 与 Partitionmanager 类似，在 [AUR](/index.php/AUR "AUR") 中可获取。
-
-	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)
-
 下面表格可以帮助选择
 
 | 用户交互 | MBR | GPT |
 | 对话框 | fdisk
-
-parted
-
- | fdisk
-
+parted | fdisk
 gdisk
-
-parted
-
- |
+parted |
 | 模拟图形界面 | cfdisk | cfdisk
-
-cgdisk
-
- |
+cgdisk |
 | 非交互 | sfdisk
-
-parted
-
- | sfdisk
-
+parted | sfdisk
 sgdisk
-
-parted
-
- |
+parted |
 | 图形界面 | gparted
-
-partitionmanager
-
-qtparted(?)
-
- | gparted
-
-partitionmanager
-
-qtparted(?)
-
- |
+partitionmanager | gparted
+partitionmanager |
 
 ## 分区对齐
 

@@ -151,7 +151,7 @@
 | 1 | [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение") | 7/7 | Нужно перевести пару предложений, проверить стилистику. -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 13:46, 19 марта 2016 |
 | 1 | [LightDM (Русский)](/index.php/LightDM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LightDM (Русский)") | 7/7 | - |
 | 1 | [xterm (Русский)](/index.php/Xterm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xterm (Русский)") | 0/6 | Синхронизирована с Англ. статьёй, исправлены некоторые ссылки на Рус. -- [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([talk](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")) 12:43, 19 марта 2016 |
-| 1 | [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры") | 1;6/6 | - |
+| 1 | [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры") | 7/7 | - |
 | 1 | [Systemd/Пользователь](/index.php/Systemd/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C "Systemd/Пользователь") | 0/6 | - |
 | 1 | [Pacman/Советы и приёмы](/index.php/Pacman/%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D1%8B "Pacman/Советы и приёмы") | 1-2.2; 4.2.2;4.2.4 / 4.2 | - |
 

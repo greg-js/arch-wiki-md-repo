@@ -1,8 +1,11 @@
-**翻译状态：** 本文是英文页面 [Persistent_block_device_naming](/index.php/Persistent_block_device_naming "Persistent block device naming") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-05-14，点击[这里](https://wiki.archlinux.org/index.php?title=Persistent_block_device_naming&diff=0&oldid=373601)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Persistent_block_device_naming](/index.php/Persistent_block_device_naming "Persistent block device naming") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-31，点击[这里](https://wiki.archlinux.org/index.php?title=Persistent_block_device_naming&diff=0&oldid=423674)可以查看翻译后英文页面的改动。
 
 本文讲述如何为你的块设备提供持久化命名。udev的导入使之成为可能，也使之优于基于总线的命名法。如果你的机器上有不止一个 SATA, SCSI 或 IDE 磁盘控制器，那么它们所对应的设备节点将会依随机次序添加。这样就可能导致每次引导时设备的名字如 `/dev/**sda**` 与 `/dev/**sdb**` 互换了，最终导致系统不可引导、kernel panic、或者设备不可见。持久化命名法可以解决这些问题。
 
-**注意:** 如果你使用 [LVM2](/index.php/LVM "LVM")，本文将不适用。因为 LVM 自动处理这一问题。
+**注意:**
+
+*   持久设备名有一些超出本文范围的限制，比如虽然 [mkinitcpio](/index.php/Mkinitcpio#init "Mkinitcpio") 支持某个方法，systemd 会对支持的设备名添加额外的限制(例如 [FS#42884](https://bugs.archlinux.org/task/42884))。
+*   如果你使用 [LVM2](/index.php/LVM2 "LVM2")，本文将不适用。因为 LVM 自动处理这一问题。
 
 ## Contents
 
@@ -13,7 +16,7 @@
     *   [1.4 by-partlabel](#by-partlabel)
     *   [1.5 by-partuuid](#by-partuuid)
     *   [1.6 使用 Udev 静态设备名](#.E4.BD.BF.E7.94.A8_Udev_.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)
-*   [2 使用持久化的命名](#.E4.BD.BF.E7.94.A8.E6.8C.81.E4.B9.85.E5.8C.96.E7.9A.84.E5.91.BD.E5.90.8D)
+*   [2 使用持久名称](#.E4.BD.BF.E7.94.A8.E6.8C.81.E4.B9.85.E5.90.8D.E7.A7.B0)
     *   [2.1 fstab](#fstab)
     *   [2.2 引导管理器](#.E5.BC.95.E5.AF.BC.E7.AE.A1.E7.90.86.E5.99.A8)
 
@@ -36,7 +39,7 @@ sda
 
 ```
 
-对于 [GPT 分区表](/index.php/GUID_Partition_Table "GUID Partition Table")，应改用 `blkid` 命令。字母便于脚本使用但可读性降低。
+[GPT 分区表](/index.php/GUID_Partition_Table "GUID Partition Table")的系统应改用 `blkid` 命令，这个命令更方便脚本使用但可读性低。
 
  `$ blkid` 
 ```
@@ -49,7 +52,7 @@ sda
 
 ### by-label
 
-几乎每一个文件系统都可以有一个标签。所有有标签的分区都在 `/dev/disk/by-label` 目录中列出。这个目录是动态地创建和销毁的，视有无带标签的分区而定。
+几乎每一个文件系统都可以有一个标签。所有有标签的分区都在 `/dev/disk/by-label` 目录中列出。这个目录随着分区标签的变动而被动态地创建和销毁。
 
  `$ ls -l /dev/disk/by-label` 
 ```
@@ -98,11 +101,16 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 	`ntfslabel /dev/XXX <label>` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
 
+	zfs 
+
+	这个文件系统不支持 `/dev/disk/by-label`, 但可以使用 [#by-partlabel](#by-partlabel)
+
 **Note:**
 
 *   Changing the filesystem label of the root partition has to be done from a "live" GNU/Linux distribution because the partition needs to be unmounted first.
 *   Labels have to be unambiguous to prevent any possible conflicts;
 *   Labels can be up to 16 characters long.
+*   Label 是文件系统的一个属性，所以无法持久的表示单一磁盘阵列设备.
 
 ### by-uuid
 
@@ -126,7 +134,9 @@ The disadvantage is that UUIDs make long code lines hard to read and break forma
 
 ### by-id and by-path
 
-`by-id` creates a unique name depending on the hardware serial number, `by-path` depending on the shortest physical path (according to sysfs). Both contain strings to indicate which subsystem they belong to (i.e. `-ide-` for `by-path`, and `-ata-` for `by-id`) and thus are not suitable for solving the problems mentioned in the beginning of this article. They will not be discussed any further here.
+`by-id` creates a unique name depending on the hardware serial number, `by-path` depending on the shortest physical path (according to sysfs). Both contain strings to indicate which subsystem they belong to (i.e. `-ide-` for `by-path`, and `-ata-` for `by-id`), so they are linked to the hardware controlling the device. This implies different levels of persistence: the `by-path` will already change when the device is plugged into a different port of the controller, the `by-id` will change when the device is plugged into a port of a hardware controller subject to another subsystem. [[1]](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Online_Storage_Reconfiguration_Guide/persistent_naming.html) Thus, both are not suitable to achieve persistent naming tolerant to hardware changes.
+
+However, both provide important information to find a particular device in a large hardware infrastructure. For example, if you do not manually assign persistent labels (`by-label` or `by-partlabel`) and keep a directory with hardware port usage, `by-id` and `by-path` can be used to find a particular device.[[2]](http://linuxshellaccount.blogspot.in/2008/09/how-to-easily-find-wwns-of-qlogic-hba.html) [[3]](http://www.linuxquestions.org/questions/linux-server-73/how-to-find-wwn-for-dev-sdc-917269/)
 
 ### by-partlabel
 
@@ -175,15 +185,15 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 d0d0d110-0a71-4ed6-936a-304969ea36af -> .
 
 ### 使用 Udev 静态设备名
 
-See [Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
+参考 [Udev#Setting static device names](/index.php/Udev#Setting_static_device_names "Udev").
 
-## 使用持久化的命名
+## 使用持久名称
 
-There are various applications that can be configured using persistent naming. Following are some examples of how to configure them.
+有多种应用可以使用持久名称：
 
 ### fstab
 
-See the main article: [fstab#UUIDs](/index.php/Fstab#UUIDs "Fstab")
+参考 [fstab#UUIDs](/index.php/Fstab#UUIDs "Fstab")
 
 ### 引导管理器
 

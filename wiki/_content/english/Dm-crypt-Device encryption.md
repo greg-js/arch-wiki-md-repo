@@ -84,7 +84,7 @@ An encrypted blockdevice is protected by a key. A key is either:
 *   a passphrase: see [Disk encryption#Choosing a strong passphrase](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
 *   a keyfile, see [#Keyfiles](#Keyfiles).
 
-Both key types have default maximum sizes: passphrases can be up to 512 characters and keyfiles up to 8192kB.
+Both key types have default maximum sizes: passphrases can be up to 512 characters and keyfiles up to 8192kiB.
 
 An important distinction of *LUKS* to note at this point is that the key is used to unlock the master-key of a LUKS-encrypted device and can be changed with root access. Other encryption modes do not support changing the key after setup, because they do not employ a master-key for the encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") for details.
 

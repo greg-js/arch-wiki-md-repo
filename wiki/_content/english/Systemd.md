@@ -47,6 +47,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [9.7 systemd-tmpfiles-setup.service fails to start at boot](#systemd-tmpfiles-setup.service_fails_to_start_at_boot)
     *   [9.8 systemctl enable fails for symlinks in /etc/systemd/system](#systemctl_enable_fails_for_symlinks_in_.2Fetc.2Fsystemd.2Fsystem)
     *   [9.9 dependent services are not started when starting a service manually](#dependent_services_are_not_started_when_starting_a_service_manually)
+    *   [9.10 systemd version printed on boot is not the same as installed package version](#systemd_version_printed_on_boot_is_not_the_same_as_installed_package_version)
 *   [10 See also](#See_also)
 
 ## Basic systemctl usage
@@ -782,6 +783,12 @@ systemctl start ServiceWithSubservices
 systemctl disable ServiceWithSubservices
 
 ```
+
+### systemd version printed on boot is not the same as installed package version
+
+You need to [regenerate your initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and the versions should match.
+
+**Tip:** A pacman hook can be used to automatically regenerate the initramfs every time [systemd](https://www.archlinux.org/packages/?name=systemd) is upgraded. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?id=215411) and [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
 ## See also
 

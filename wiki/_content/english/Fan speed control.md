@@ -219,6 +219,7 @@ Description=i8kmon
 
 [Service]
 #ExecStartPre=/usr/bin/smm 30a3  # uncomment to disable BIOS fan control
+#ExecStopPost=/usr/bin/smm 31a3  # ... and re-enable it afterwards
 ExecStart=/usr/bin/i8kmon -d
 Restart=always
 RestartSec=5

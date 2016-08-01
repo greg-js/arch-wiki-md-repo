@@ -22,10 +22,11 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
 *   [15 Other packages](#Other_packages)
 *   [16 Skype plugin](#Skype_plugin)
 *   [17 Auto logout on suspend](#Auto_logout_on_suspend)
-*   [18 Troubleshooting](#Troubleshooting)
-    *   [18.1 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
-*   [19 History import Kopete to Pidgin](#History_import_Kopete_to_Pidgin)
-*   [20 See also](#See_also)
+*   [18 Minimize to tray](#Minimize_to_tray)
+*   [19 Troubleshooting](#Troubleshooting)
+    *   [19.1 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
+*   [20 History import Kopete to Pidgin](#History_import_Kopete_to_Pidgin)
+*   [21 See also](#See_also)
 
 ## Installation
 
@@ -78,6 +79,8 @@ If clicking a link within Pidgin creates an error message about trying to use 's
 ```
 
 This example assumes you use [Firefox](/index.php/Firefox "Firefox").
+
+As an alternative if the method above does not work you can set the desired browser in the pidgin preferences in the section "Browser".
 
 ## QIP encoding bug
 
@@ -260,6 +263,10 @@ case "$1" in
 esac
 
 ```
+
+## Minimize to tray
+
+To make use of the [Xfce](/index.php/Xfce "Xfce") system tray go to preferences and enable the system tray in the section "Interface". You can now close the main window and run pidgin minimized. You will also be able to see message notifications in the tray.
 
 ## Troubleshooting
 

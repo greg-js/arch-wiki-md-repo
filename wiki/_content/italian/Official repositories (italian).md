@@ -63,7 +63,7 @@ Esso contiene i pacchetti provenienti dall'[Arch User Repository](/index.php/Arc
 
 Questo repository può essere trovato in `.../multilib/os/` del mirror preferito.
 
-Esso contiene software a 32 bit e librerie che possono essere utilizzate per eseguire e sviluppare applicazioni a 32 bit su 64 bit (ad esempio [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://www.archlinux.org/packages/?name=skype), ecc).
+Esso contiene software a 32 bit e librerie che possono essere utilizzate per eseguire e sviluppare applicazioni a 32 bit su 64 bit (ad esempio [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/), ecc).
 
 Per maggiori informazioni, vedere [Multilib](/index.php/Multilib "Multilib").
 

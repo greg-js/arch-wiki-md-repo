@@ -13,13 +13,6 @@
 
 Install [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) package from the [AUR](/index.php/AUR "AUR"). Development version is also available with [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
 
-Run the following command to complete the installation:
-
-```
-# libtool --finish /usr/lib/security
-
-```
-
 ## Setting up the PAM
 
 **Warning:** If you do all configuration via SSH do not close the session before you tested that everything is working, else you may lock yourself out. Furthermore consider generating the key file before activating the PAM.

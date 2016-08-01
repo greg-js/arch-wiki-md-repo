@@ -1,7 +1,7 @@
-There are two types of browser plugins, based on the plugin API they use:
+Есть два типа плагинов для браузеров, в зависимости от API, на котором они основаны:
 
-*   Netscape plugin API (NPAPI): these plugins work in [Firefox](/index.php/Firefox "Firefox"), [Opera](/index.php/Opera "Opera") and most other browsers (**not** in [Chromium](/index.php/Chromium "Chromium")).
-*   Pepper plugin API (PPAPI): these plugins work only in [Chromium](/index.php/Chromium "Chromium") and Chrome.
+*   Netscape plugin API (NPAPI): эти плагины работают в [Firefox](/index.php/Firefox "Firefox"), [Opera](/index.php/Opera "Opera") и большинстве других браузеров (**не** в [Chromium](/index.php/Chromium "Chromium")).
+*   Pepper plugin API (PPAPI): эти плагины работают только в [Chromium](/index.php/Chromium "Chromium") и Chrome.
 
 Most plugins on this page are NPAPI-only, unless noted otherwise.
 

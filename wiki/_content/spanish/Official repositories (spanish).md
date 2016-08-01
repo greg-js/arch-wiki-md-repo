@@ -64,7 +64,7 @@ Contiene los paquetes provenientes del repositorio [Arch User Repository](/index
 
 Este depósito se encuentra en `.../multilib/os/` desde su mirror favorito.
 
-Contiene el software de 32 bits y las bibliotecas que se pueden utilizar para ejecutar y desarrollar aplicaciones de 32 bits en instalaciones de 64 bits (por ejemplo, [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://www.archlinux.org/packages/?name=skype), etc.).
+Contiene el software de 32 bits y las bibliotecas que se pueden utilizar para ejecutar y desarrollar aplicaciones de 32 bits en instalaciones de 64 bits (por ejemplo, [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/), etc.).
 
 Para obtener más información, véase [Multilib](/index.php/Multilib "Multilib").
 

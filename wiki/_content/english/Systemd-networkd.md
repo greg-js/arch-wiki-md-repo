@@ -54,7 +54,7 @@ To use *systemd-networkd*, [start](/index.php/Start "Start") the following two s
 For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), delete or rename the existing file and create the following symbolic link:
 
 ```
-# ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+# ln -s /usr/lib/systemd/resolv.conf /etc/resolv.conf
 
 ```
 

@@ -383,7 +383,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Skype](/index.php/Skype "Skype")** — Populární P2P aplikace pro hlasovou komunikaci s vysokou kvalitou
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietární VoIP aplikace zaměřená na hráče
 
@@ -431,7 +431,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Vysoce programovatelný webový prohlížeč, založený na technologii Mozilla XULRunner
 
-	[http://conkeror.org/](http://conkeror.org/) || [conkeror](https://www.archlinux.org/packages/?name=conkeror)
+	[http://conkeror.org/](http://conkeror.org/) || [conkeror](https://aur.archlinux.org/packages/conkeror/)
 
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Malý, rychlý grafický webový prohlížeč, postavený na FLTK
 

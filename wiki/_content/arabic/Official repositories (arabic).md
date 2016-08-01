@@ -52,7 +52,7 @@ It contains packages from the [Arch User Repository](/index.php/Arch_User_Reposi
 
 This repository can be found in `.../multilib/os/` on your favorite mirror.
 
-It contains 32 bit software and libraries that can be used to run and build 32 bit applications on 64 bit installs (e.g. [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://www.archlinux.org/packages/?name=skype), etc).
+It contains 32 bit software and libraries that can be used to run and build 32 bit applications on 64 bit installs (e.g. [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/), etc).
 
 For more information, see [Multilib](/index.php/Multilib "Multilib").
 

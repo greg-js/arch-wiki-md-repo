@@ -436,7 +436,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — A highly programmable web browser based on Mozilla XULRunner
 
-	[http://conkeror.org/](http://conkeror.org/) || [conkeror](https://www.archlinux.org/packages/?name=conkeror)
+	[http://conkeror.org/](http://conkeror.org/) || [conkeror](https://aur.archlinux.org/packages/conkeror/)
 
 *   [Chromium](/index.php/Chromium "Chromium") - The open-source project behind Google Chrome, a web browser developed by Google that uses the WebKit layout engine and application framework. [http://code.google.com/chromium/](http://code.google.com/chromium/)
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — A small, fast graphical web browser built on FLTK

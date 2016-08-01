@@ -378,7 +378,7 @@ Consulte también: [MPlayer#Configuration](/index.php/MPlayer#Configuration "MPl
 
 ### Skype
 
-El paquete [skype](https://www.archlinux.org/packages/?name=skype) solo incluye soporte para ALSA, ya que el soporte para OSS fue eliminado en las versiones recientes. Para tener una versión OSS compatible con [Skype](/index.php/Skype "Skype"), instale el paquete [skype-oss](https://aur.archlinux.org/packages/skype-oss/) desde el repositorio Community.
+El paquete [skype](https://aur.archlinux.org/packages/skype/) solo incluye soporte para ALSA, ya que el soporte para OSS fue eliminado en las versiones recientes. Para tener una versión OSS compatible con [Skype](/index.php/Skype "Skype"), instale el paquete [skype-oss](https://aur.archlinux.org/packages/skype-oss/) desde el repositorio Community.
 
 O utilice [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) con module-oss: Modifique `/etc/pulse/default.pa`, comentando la línea que comienza con `load-module module-udev-detect` y añada `load-module module-oss device="/dev/dsp" sink_name=output source_name=input mmap==0`.
 

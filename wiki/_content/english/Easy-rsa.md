@@ -11,8 +11,9 @@ To facilitate the certificate creation process, [easy-rsa](https://www.archlinux
 
 *   [1 OpenVPN Server and Client Configuration](#OpenVPN_Server_and_Client_Configuration)
     *   [1.1 Create the CA](#Create_the_CA)
-    *   [1.2 Create and and sign an entity keypair](#Create_and_and_sign_an_entity_keypair)
-    *   [1.3 Generate a secret Hash-based Message Authentication Code (HMAC) key](#Generate_a_secret_Hash-based_Message_Authentication_Code_.28HMAC.29_key)
+    *   [1.2 Create the DH](#Create_the_DH)
+    *   [1.3 Create and and sign an entity keypair](#Create_and_and_sign_an_entity_keypair)
+    *   [1.4 Generate a secret Hash-based Message Authentication Code (HMAC) key](#Generate_a_secret_Hash-based_Message_Authentication_Code_.28HMAC.29_key)
 *   [2 See also](#See_also)
 
 ## OpenVPN Server and Client Configuration
@@ -30,6 +31,16 @@ easyrsa build-ca
 
 ```
 
+### Create the DH
+
+Created the initial dh2048.pem file:
+
+```
+cd /etc/easy-rsa
+openssl dhparam -out dh.pem 2048
+
+```
+
 ### Create and and sign an entity keypair
 
 The term entity generally means either a server or client. For ease, substitute the word "entity" below with "server" or "client" as an example.
@@ -38,7 +49,7 @@ Generate and sign a key pair:
 
 ```
 cd /etc/easy-rsa
-easyrsa gen-req entity
+easyrsa gen-req entity nopass
 
 ```
 
@@ -52,18 +63,11 @@ easyrsa sign-req type entity
 
 ```
 
-A blank password is expected if using the openvpn systemd service. This can be accomplished via the following command:
-
-```
-cd /etc/easy-rsa
-easyrsa set-rsa-pass server nopass
-
-```
-
 ### Generate a secret Hash-based Message Authentication Code (HMAC) key
 
 ```
-openvpn --genkey --secret /root/easy-rsa/keys/ta.key
+cd /etc/easy-rsa
+openvpn --genkey --secret /etc/easy-rsa/pki/ta.key
 
 ```
 
@@ -76,4 +80,7 @@ This will be used to add an additional HMAC signature to all SSL/TLS handshake p
 
 ## See also
 
-*   [Official EasyRSA instructions](https://openvpn.net/index.php/open-source/documentation/miscellaneous/rsa-key-management.html)
+Upstream docs
+
+*   [quick start](https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md).
+*   [advanced usage](https://github.com/OpenVPN/easy-rsa/blob/master/doc/EasyRSA-Advanced.md).

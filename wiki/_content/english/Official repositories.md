@@ -55,7 +55,7 @@ This repository can be found in `.../community/os/` on your favorite mirror.
 
 This repository can be found in `.../multilib/os/` on your favorite mirror.
 
-*multilib* contains 32 bit software and libraries that can be used to run and build 32 bit applications on 64 bit installs (e.g. [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://www.archlinux.org/packages/?name=skype), etc).
+*multilib* contains 32 bit software and libraries that can be used to run and build 32 bit applications on 64 bit installs (e.g. [wine](https://www.archlinux.org/packages/?name=wine), [skype](https://aur.archlinux.org/packages/skype/), etc).
 
 For more information, see [Multilib](/index.php/Multilib "Multilib").
 

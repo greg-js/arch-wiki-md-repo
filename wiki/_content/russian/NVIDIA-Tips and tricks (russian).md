@@ -14,16 +14,15 @@
     *   [6.2 Method 2 - nvidia-smi](#Method_2_-_nvidia-smi)
     *   [6.3 Method 3 - nvclock](#Method_3_-_nvclock)
 *   [7 Установка скорости вентилятора при входе](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B2.D0.B5.D0.BD.D1.82.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5)
-*   [8 Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers)
-*   [9 Переключение драйверов NVIDIA и nouveau](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.B2_NVIDIA_.D0.B8_nouveau)
-*   [10 Как избежать разрывов/тиринга на картах GeForce серий 500/600/700/900](#.D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B7.D1.80.D1.8B.D0.B2.D0.BE.D0.B2.2F.D1.82.D0.B8.D1.80.D0.B8.D0.BD.D0.B3.D0.B0_.D0.BD.D0.B0_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D1.85_GeForce_.D1.81.D0.B5.D1.80.D0.B8.D0.B9_500.2F600.2F700.2F900)
-*   [11 Ручная конфигурация](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
-    *   [11.1 Отключение логотипа при загрузке](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.B3.D0.BE.D1.82.D0.B8.D0.BF.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
-    *   [11.2 Переопределение обнаружения монитора](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
-    *   [11.3 Включение контроля яркости](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8)
-    *   [11.4 Включение SLI](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_SLI)
-    *   [11.5 Включение разгона](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
-        *   [11.5.1 Настройка статического 2D/3D разгона](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_2D.2F3D_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
+*   [8 Переключение драйверов NVIDIA и nouveau](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.B2_NVIDIA_.D0.B8_nouveau)
+*   [9 Как избежать разрывов/тиринга на картах GeForce серий 500/600/700/900](#.D0.9A.D0.B0.D0.BA_.D0.B8.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B7.D1.80.D1.8B.D0.B2.D0.BE.D0.B2.2F.D1.82.D0.B8.D1.80.D0.B8.D0.BD.D0.B3.D0.B0_.D0.BD.D0.B0_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D1.85_GeForce_.D1.81.D0.B5.D1.80.D0.B8.D0.B9_500.2F600.2F700.2F900)
+*   [10 Ручная конфигурация](#.D0.A0.D1.83.D1.87.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [10.1 Отключение логотипа при загрузке](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BB.D0.BE.D0.B3.D0.BE.D1.82.D0.B8.D0.BF.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
+    *   [10.2 Переопределение обнаружения монитора](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
+    *   [10.3 Включение контроля яркости](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8F_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D0.B8)
+    *   [10.4 Включение SLI](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_SLI)
+    *   [10.5 Включение разгона](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
+        *   [10.5.1 Настройка статического 2D/3D разгона](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_2D.2F3D_.D1.80.D0.B0.D0.B7.D0.B3.D0.BE.D0.BD.D0.B0)
 
 ## Исправление разрешения терминала
 
@@ -246,8 +245,6 @@ Name=nvidia-fan-speed
 ```
 
 **Примечание:** С версии драйвера 349.16, опция `GPUCurrentFanSpeed` заменена на `GPUTargetFanSpeed`. [[1]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
-
-## Switching between NVIDIA and nouveau drivers
 
 ## Переключение драйверов NVIDIA и nouveau
 

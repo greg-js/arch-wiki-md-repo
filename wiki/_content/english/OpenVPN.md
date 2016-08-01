@@ -77,13 +77,14 @@ To connect to a VPN service provided by a third party, most of the following can
 
 When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is accomplished by using the [easy-rsa](/index.php/Easy-rsa "Easy-rsa").
 
-Once created, symlinks are created as follows (as the root user):
+Once created, copy the created as follows (as the root user):
 
 ```
-ln -s /etc/easy-rsa/pki/ca.crt ca.crt /etc/openvpn
-ln -s /etc/easy-rsa/pki/private/server.key server.key /etc/openvpn
-ln -s /etc/easy-rsa/pki/issued/server.crt server.crt /etc/openvpn
-ln -s /etc/easy-rsa/pki/dh.pem dh.pem /etc/openvpn
+ln -sf /etc/easy-rsa/pki/ca.crt /etc/openvpn
+ln -sf /etc/easy-rsa/pki/private/server.key /etc/openvpn
+ln -sf /etc/easy-rsa/pki/issued/server.crt /etc/openvpn
+ln -sf /etc/easy-rsa/dh.pem /etc/openvpn
+ln -sf /etc/easy-rsa/pki/ta.key /etc/openvpn
 
 ```
 
