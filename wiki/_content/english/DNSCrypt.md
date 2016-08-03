@@ -12,7 +12,8 @@
     *   [3.2 Enable EDNS0](#Enable_EDNS0)
         *   [3.2.1 Test EDNS0](#Test_EDNS0)
     *   [3.3 Redundant DNSCrypt providers](#Redundant_DNSCrypt_providers)
-    *   [3.4 Run as unprivileged user](#Run_as_unprivileged_user)
+*   [4 Known issues](#Known_issues)
+    *   [4.1 dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges)
 
 ## Installation
 
@@ -250,18 +251,24 @@ systemctl restart unbound
 
 If successful, your two selected dns providers should be the only ones found when using one of the dns leak test websites.
 
-### Run as unprivileged user
+## Known issues
 
-Since DNSCrypt is a long-running network service, it is recommended to run it as its own, unprivileged user. [Create the user](/index.php/Users_and_groups#User_management "Users and groups") (assuming an empty skeleton directory, such as provided by [ssh](https://www.archlinux.org/packages/?name=ssh)):
+### dnscrypt runs with root privileges
+
+See [FS#49881](https://bugs.archlinux.org/task/49881). To work around this, create an unprivileged user manually.
+
+[Create the user](/index.php/Users_and_groups#User_management "Users and groups") as follows:
 
 ```
-# useradd -r -d /var/dnscrypt -m -k /var/empty -s /bin/nologin dnscrypt
+# useradd -r -d /var/dnscrypt -m -s /sbin/nologin dnscrypt
 
 ```
 
 [Edit](/index.php/Systemd#Editing_provided_units "Systemd") `dnscrypt-proxy.service`, pointing `--user` to the new user:
 
 ```
+[Service]
+ExecStart=
 ExecStart=/usr/bin/dnscrypt-proxy -R dnscrypt.eu-nl --user=dnscrypt
 
 ```

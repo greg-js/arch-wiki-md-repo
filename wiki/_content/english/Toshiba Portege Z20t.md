@@ -57,3 +57,7 @@ It works out of the box, even after resume, no additional package has been insta
 ### Keyboard Backlight control
 
 Works
+
+For instructions on Keyboard backlight toggle see [Toshiba Portege Z30-A#Installation and configuration](/index.php/Toshiba_Portege_Z30-A#Installation_and_configuration "Toshiba Portege Z30-A").
+
+Since changing sys values requires root, one can either write a wrapper for bash scripts for setuid, which is generally considered insecure. Here is a simple toggle switch written in C: [https://github.com/Exel232/Configurations/tree/highcontrast/Toshiba](https://github.com/Exel232/Configurations/tree/highcontrast/Toshiba)

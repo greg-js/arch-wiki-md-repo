@@ -14,6 +14,8 @@ Mad Catz produces a series of gaming mice, for example the Saitek Cyborg R.A.T.3
 
 No driver installation is required. The mouse should be detected at boot or whenever it is hot-plugged.
 
+**Note:** On some systems the *MatchProduct* string may vary, therefore, you can use the command `xinput list`
+
 ## Issues
 
 After being plugged, the mouse will seems to work, but you may experience different issues :

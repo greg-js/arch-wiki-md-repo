@@ -15,6 +15,7 @@ Businesses are storing their data on the network for ages now, but the past few 
 
 There are many UPnP or DLNA-compliant server and you can use Mpd too. Some of the them do not get along together. If you are experiencing problems, make sure you are not running two of them at the same time.
 
+*   [Subsonic](/index.php/Subsonic "Subsonic")
 *   [MediaTomb](/index.php/MediaTomb "MediaTomb")
 *   [ReadyMedia](/index.php/ReadyMedia "ReadyMedia")
 *   [Rygel](/index.php/Rygel "Rygel")

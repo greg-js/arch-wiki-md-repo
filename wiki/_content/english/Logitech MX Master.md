@@ -1,5 +1,12 @@
 [Logitech MX Master](http://www.logitech.com/en-us/product/mx-master)
 
+## Contents
+
+*   [1 Usage](#Usage)
+*   [2 Mappings for extra buttons](#Mappings_for_extra_buttons)
+*   [3 Power](#Power)
+*   [4 Smart shift](#Smart_shift)
+
 ## Usage
 
 Mainly, the mouse should work right away with the supplied USB dongle. To get a [Bluetooth](/index.php/Bluetooth "Bluetooth") connection working, change the channel on the bottom of the mouse, and click the `connect` button. Now, search for the mouse with a bluetooth manager of your choice and engage a connection. In future it should connect as soon as you switch to that channel when your bluetooth is active.
@@ -74,4 +81,10 @@ $ pkill xbindkeys && xbindkeys
 
 ## Power
 
-Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar has s system tray utility.
+Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar ([solaar](https://aur.archlinux.org/packages/solaar/)) has s system tray utility.
+
+## Smart shift
+
+In order to change the sensitivity of changing the mouse wheel mode (between hyperfast and click-to-click), install [solaar-git](https://aur.archlinux.org/packages/solaar-git/). A slider appears that can be set somewhere between 0 and 50 (inclusive). 0 means always in hyperfast mode, 50 means always in click-to-click mode.
+
+To change the sensitivity, change this value somewhere between 0 and 50.

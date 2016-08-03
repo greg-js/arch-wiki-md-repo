@@ -119,8 +119,6 @@ If you're booting into the `multi-user.target` then follow the steps mentioned h
 
 [Start](/index.php/Start "Start") `vmtoolsd.service` and enable it on boot, if desired.
 
-**Note:** There is a bug in `vmtoolsd`, where the service is not able to properly shut down and hangs for 60 seconds. A quick workaround is described in [the forums](https://bbs.archlinux.org/viewtopic.php?pid=1206006#p1206006).
-
 #### Graphical Target
 
 If you are booting into a graphical environment then follow these steps to enable the VMware tools.
@@ -620,6 +618,8 @@ Do not forget to run:
  `# mkinitcpio -p linux` 
 
 ### Drag and drop, copy/paste
+
+The drag-and-drop (copy/paste) feature requires both [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) and [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) packages to be installed in order to work.
 
 `/etc/xdg/autostart/vmware-user.desktop` may try to start *vmware-user-suid-wrapper* properly when you log in, but there is an unspecified relationship between it and *gtkmm* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).
 

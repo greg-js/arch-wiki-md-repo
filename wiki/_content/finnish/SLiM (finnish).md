@@ -1,8 +1,3 @@
-| **Summary**  |
-| Yleiskatsaus yksinkertaisesta sisäänkirjautumismanagerista. |
-| **Related** |
-| [Display Manager](/index.php/Display_Manager "Display Manager") |
-
 [SLiM](http://slim.berlios.de/) on akronyymi sanoista (Simple Login Manger), mikä tarkoittaa suomeksi helppo sisäänkirjautumismanageri. [SLiM](/index.php/SLiM "SLiM") on yksinkertainen, kevyt ja helposti muokattavissa. Kevyen työpöytäympäristön käyttäjät voivat valita [SLiM](/index.php/SLiM "SLiM"):in kirjatumismanageriksi. [SLiM](/index.php/SLiM "SLiM") on kevyt sisäänkirjatumismanagerii, koska sillä ei ole riippuvaisuuksia.
 
 ## Contents

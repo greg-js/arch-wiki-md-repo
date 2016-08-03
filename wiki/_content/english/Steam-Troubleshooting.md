@@ -11,6 +11,7 @@ See [Steam](/index.php/Steam "Steam") for the main article.
 *   [3 Steam runtime issues](#Steam_runtime_issues)
     *   [3.1 Possible symptoms](#Possible_symptoms)
     *   [3.2 Work around using the dynamic linker](#Work_around_using_the_dynamic_linker)
+        *   [3.2.1 Deleting the runtime libraries](#Deleting_the_runtime_libraries)
     *   [3.3 More information](#More_information)
 *   [4 Multiple monitors setup](#Multiple_monitors_setup)
 *   [5 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
@@ -115,6 +116,35 @@ Exec=env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/
 ```
 
 **Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.
+
+##### Deleting the runtime libraries
+
+**Warning:** This method is more prone to errors and harder to undo than the previous one. Use at your own risk.
+
+You can also run this command to delete the runtime libraries known to cause issues on Arch Linux:
+
+```
+$ find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
+
+```
+
+If the above command does not work, run the above command again, then run this command.
+
+```
+$ find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
+
+```
+
+**Note:** Steam will frequently re-install these runtime libraries when Steam is updated, so until the issue is resolved: whenever Steam updates, you should exit, remove the libraries, and restart it again.
+
+If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality.
+
+**Warning:** `--reset` also deletes your games (the AppCache).
+
+```
+$ steam --reset
+
+```
 
 #### More information
 

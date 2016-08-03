@@ -1,10 +1,3 @@
-| **Summary**  |
-| Una guida per l'installazione e la configurazione di netcfg, gli script e il profilo di configurazione della rete. |
-| **Overview** |
-| Arch Linux fornisce due opzioni per l'amministrazione della rete: [*network*](/index.php/Configuring_Network "Configuring Network") e *[netcfg](/index.php/Netcfg "Netcfg")*. Il demone *network* è una semplice e lineare soluzione per desktop e server cablati. La navigazione tramite [Wireless](/index.php/Wireless_Setup "Wireless Setup") richiede una configurazione ulteriore. Lo script *netcfg* fornisce il supporto roaming per utenti mobili e facilita la gestione dei profili di rete; [NetworkManager](/index.php/NetworkManager "NetworkManager") e [Wicd](/index.php/Wicd "Wicd") sono due popolari alternative. |
-| **Resources** |
-| [netcfg network scripts repository](https://projects.archlinux.org/netcfg.git/) |
-
 Dalla pagina [netcfg man](https://projects.archlinux.org/netcfg.git/tree/man/netcfg.8):
 
 	***netcfg** viene utilizzato per configurare e gestire le connessioni di rete tramite profili. Ha il supporto plugin per vari tipi di connessione, come il wireless, Ethernet, e ppp. È anche in grado di avviare/arrestare molte connessioni in una, cioè può gestire connessioni multiple all'interno dello stesso profilo, opzionalmente anche con il "bonding".*
@@ -58,6 +51,7 @@ netcfg è utile a quegli utenti che cercano un mezzo semplice e robusto per gest
     *   [8.1 Perchè netcfg non fa *(alcune cose)*?](#Perch.C3.A8_netcfg_non_fa_.28alcune_cose.29.3F)
     *   [8.2 Perchè netcfg non si comporta in *questo* modo?](#Perch.C3.A8_netcfg_non_si_comporta_in_questo_modo.3F)
     *   [8.3 Ho ancora bisogno di *(qualche cosa)* se sto utilizzando netcfg?](#Ho_ancora_bisogno_di_.28qualche_cosa.29_se_sto_utilizzando_netcfg.3F)
+*   [9 Resources](#Resources)
 
 ## Preparazione
 
@@ -767,3 +761,7 @@ netcfg non impone alcuna regola; Si limita a collegarsi alle reti. Non impone al
 ### Ho ancora bisogno di *(qualche cosa)* se sto utilizzando netcfg?
 
 Questa domanda di solito si riferisce a `/etc/hosts` e la variabile `HOSTNAME` in `/etc/rc.conf`, che sono ancora entrambi necessari. Si può comunque rimuovere `network` dalla stringa `DAEMONS` se tutte le reti sono state configurate con netcfg.
+
+## Resources
+
+*   [netcfg network scripts repository](https://projects.archlinux.org/netcfg.git/)

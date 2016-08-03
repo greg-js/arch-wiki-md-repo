@@ -88,10 +88,6 @@ A few third-party utilities providing various levels of automation for these tas
 
 You can use one of the following tools:
 
-*   **diffpac** — Standalone pacdiffviewer replacement
-
-	[https://github.com/bruenig/diffpac](https://github.com/bruenig/diffpac) || [diffpac](https://aur.archlinux.org/packages/diffpac/)
-
 *   **[Dotpac](/index.php/Dotpac "Dotpac")** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
 
 	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
@@ -100,13 +96,9 @@ You can use one of the following tools:
 
 	[https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update](https://wiki.gentoo.org/wiki/Handbook:Parts/Portage/Tools#etc-update) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
-*   **pacdiffviewer** — Fully-featured interactive CLI script with automatic merging. Part of [Yaourt](/index.php/Yaourt "Yaourt").
+*   **pacmarge** — A tool for automatically merging .pacnew files
 
-	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
-
-*   **pacmerge-git** — Interactive CLI merge program.
-
-	[https://gitorious.org/pacmerge](https://gitorious.org/pacmerge) || [pacmerge-git](https://aur.archlinux.org/packages/pacmerge-git/)
+	[https://github.com/foutrelis/pacmarge](https://github.com/foutrelis/pacmarge) || [pacmarge](https://aur.archlinux.org/packages/pacmarge/)
 
 *   **pacnew-auto** — Automatic `pacnew` merging using [git](https://www.archlinux.org/packages/?name=git) rebase.
 

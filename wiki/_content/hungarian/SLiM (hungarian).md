@@ -1,8 +1,3 @@
-| **Summary**  |
-| A Simple Login Manager áttekintője. |
-| **Related** |
-| [Display Manager](/index.php/Display_Manager "Display Manager") |
-
 [SLiM](http://slim.berlios.de/) egy betűszó a Simple Login Manager-ből. SLiM egyszerű, könnyűsúlyú és könnyen konfigurálható. SLiM-et azért használják, mert nem követeli meg a [GNOME](/index.php/GNOME "GNOME") vagy [KDE](/index.php/KDE "KDE") függőségeket, segíthet a felhasználóknak egy könnyű rendszer összeállítani, akik szeretik használni a kis erőforrásigényű asztali rendszereket, mint [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox") vagy [Fluxbox](/index.php/Fluxbox "Fluxbox").
 
 ## Contents

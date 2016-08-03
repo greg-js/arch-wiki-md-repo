@@ -1,15 +1,3 @@
-| **ملخص**  |
-| مستودع مستخدم آرتش The Arch User Repository عبارة عن مجموعة من ملفات [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") تم وضعها من قبل المستخدمين تزيد من توفر البرمجيات مع [official repositories](/index.php/Official_repositories "Official repositories"). هذه المقالة تشرح كيفية بناء حزم *غير مدعومة* من مستودع AUR. |
-| **نظرة عامة** |
-| في آرتش لينوكس يتم بناء الحزم باستخدام [makepkg](/index.php/Makepkg "Makepkg") وسكربت بناء مخصص لكل حزمة (يُعرف بـ [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")). حالما يتم بناء الحزمة تستطيع تثبيت البرنامج وإدارته باستخدام مدير الحزم [pacman](/index.php/Pacman "Pacman"). ملفات البناء PKGBUILDs للبرامج الموجودة في [المستودعات الرسمية](/index.php/Official_repositories "Official repositories") متوفرة عن طريق شجرة [Arch Build System](/index.php/Arch_Build_System "Arch Build System")، وآلاف الملفات غيرها متوفرة في مستودع **AUR**. |
-| **مواضيع متصلة** |
-| [AUR Helpers](/index.php/AUR_Helpers "AUR Helpers") |
-| [AurJson](/index.php/AurJson "AurJson") |
-| [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") |
-| **مصادر** |
-| [AUR Web Interface](https://aur.archlinux.org) |
-| [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general) |
-
 مستودع مستخدِم آرتش (AUR) هو عبارة عن مستودع يديره أعضاء مجتمع آرتش لينوكس يحتوي على ملفات بناء الحزم ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) والتي تسمح لك ببناء الحزمة من المصدر باستخدام سكربت [makepkg](/index.php/Makepkg "Makepkg") ومن ثم تثبيت هذه الحزمة عن طريق مدير الحزم [pacman](/index.php/Pacman "Pacman")، تم إنشاء AUR لكي تنظم وتُشارك الحزم الصادرة من المجتمع، ولكي تساعد في الإسراع من ضم الحزم الشائعة إلى مستودع [[community]](#.5Bcommunity.5D)، هذا المستند يشرح كيفية الوصول والاستفادة من AUR.
 
 عدد لا بأس به من الحزم التي تتواجد في المستودعات الرسمية بدأت أولاً في مستودع AUR، حيث أن المستخدمين قادرين على مشاركة ما قاموا بتصميمه (PKGBUILD والملفات المتعلقة بها)، ويستطيع أعضاء مجتمع AUR التصويت مع أو ضد الحزم الموجودة في المستودع، وإذا أصبح لإحدى الحزم شعبية كافية فقد يتم إدخالها إلى مستودع [community] (الذي تستطيع الوصول إليه مباشرة عن طريق [pacman](/index.php/Pacman "Pacman") أو [abs](/index.php/Abs "Abs")).
@@ -46,6 +34,7 @@
     *   [10.12 كيف يمكنني أن أزيد من سرعة عملية البناء المتكررة؟](#.D9.83.D9.8A.D9.81_.D9.8A.D9.85.D9.83.D9.86.D9.86.D9.8A_.D8.A3.D9.86_.D8.A3.D8.B2.D9.8A.D8.AF_.D9.85.D9.86_.D8.B3.D8.B1.D8.B9.D8.A9_.D8.B9.D9.85.D9.84.D9.8A.D8.A9_.D8.A7.D9.84.D8.A8.D9.86.D8.A7.D8.A1_.D8.A7.D9.84.D9.85.D8.AA.D9.83.D8.B1.D8.B1.D8.A9.D8.9F)
     *   [10.13 كيف يمكنني الحصول على الحزم غير المدعومة؟](#.D9.83.D9.8A.D9.81_.D9.8A.D9.85.D9.83.D9.86.D9.86.D9.8A_.D8.A7.D9.84.D8.AD.D8.B5.D9.88.D9.84_.D8.B9.D9.84.D9.89_.D8.A7.D9.84.D8.AD.D8.B2.D9.85_.D8.BA.D9.8A.D8.B1_.D8.A7.D9.84.D9.85.D8.AF.D8.B9.D9.88.D9.85.D8.A9.D8.9F)
     *   [10.14 كيف يمكنني الرفع إلى AUR بدون استخدام واجهة الويب (موقع AUR على الإنترنت)؟](#.D9.83.D9.8A.D9.81_.D9.8A.D9.85.D9.83.D9.86.D9.86.D9.8A_.D8.A7.D9.84.D8.B1.D9.81.D8.B9_.D8.A5.D9.84.D9.89_AUR_.D8.A8.D8.AF.D9.88.D9.86_.D8.A7.D8.B3.D8.AA.D8.AE.D8.AF.D8.A7.D9.85_.D9.88.D8.A7.D8.AC.D9.87.D8.A9_.D8.A7.D9.84.D9.88.D9.8A.D8.A8_.28.D9.85.D9.88.D9.82.D8.B9_AUR_.D8.B9.D9.84.D9.89_.D8.A7.D9.84.D8.A5.D9.86.D8.AA.D8.B1.D9.86.D8.AA.29.D8.9F)
+*   [11 مصادر](#.D9.85.D8.B5.D8.A7.D8.AF.D8.B1)
 
 ## الشروع في العمل
 
@@ -344,3 +333,8 @@ AUR (Arch User Repository) هو عبارة عن مكان يقوم مستخدمو
 ### كيف يمكنني الرفع إلى AUR بدون استخدام واجهة الويب (موقع AUR على الإنترنت)؟
 
 يمكنك استخدام حزم [burp](https://www.archlinux.org/packages/?name=burp) أو *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) أو [aurup](https://aur.archlinux.org/packages/aurup/) ، فهي عبارة عن برامج تعمل في سطر الأوامر.
+
+## مصادر
+
+*   [AUR Web Interface](https://aur.archlinux.org)
+*   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)

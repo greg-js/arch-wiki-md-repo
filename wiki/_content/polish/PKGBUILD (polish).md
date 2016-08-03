@@ -1,17 +1,5 @@
 **Translation Status:** This article is a localized version of [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Last translation date: 9 November 2012‎. You can help to synchronize translation, if there were [ID changes](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=History) in English version.
 
-| **Summary**  |
-| PKGBUILD jest skryptem który opisuje jak skompilować oprogramowanie i zbudować pakiet. Poniższy artykuł wyjaśnia znaczenie zmiennych PKGBUILDa podczas [tworzenia pakietów](/index.php?title=Tworzenie_Pakiet%C3%B3w&action=edit&redlink=1 "Tworzenie Pakietów (page does not exist)"). |
-| **Przegląd** |
-| Packages in Arch Linux are built using [makepkg](/index.php/Makepkg "Makepkg") and a custom build script for each package (known as a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")). Once packaged, software can be installed and managed with [pacman](/index.php/Pacman "Pacman"). PKGBUILDs for software in the [official repositories](/index.php/Official_repositories "Official repositories") are available from the [ABS](/index.php/ABS "ABS") tree; thousands more are available from the (unsupported) [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). |
-| **Powiązane** |
-| [Arch Packaging Standards](/index.php/Arch_Packaging_Standards "Arch Packaging Standards") |
-| [Tworzenie Pakietów](/index.php?title=Tworzenie_Pakiet%C3%B3w&action=edit&redlink=1 "Tworzenie Pakietów (page does not exist)") |
-| [Custom local repository](/index.php/Custom_local_repository "Custom local repository") |
-| [pacman Tips](/index.php/Pacman_Tips "Pacman Tips") |
-| **Resources** |
-| [PKGBUILD(5) Strona Man](https://www.archlinux.org/pacman/PKGBUILD.5.html) |
-
 **PKGBUILD** jest plikiem [Arch Linuksa](/index.php/Arch_Linux_(Polski) "Arch Linux (Polski)") opisującym proces budowania pakietu używany podczas [tworzenia pakietów](/index.php?title=Tworzenie_Pakiet%C3%B3w&action=edit&redlink=1 "Tworzenie Pakietów (page does not exist)").
 
 Pakiety w Arch Linuksie budowane są za pomocą narzędzia [makepkg](/index.php/Makepkg "Makepkg") i informacji zawartych w PKGBUILDach. Kiedy **makepkg** jest uruchamiany, szuka pliku `PKGBUILD` w aktualnym katalogu i postępuje zgodnie ze wskazówkami w nim zawartymi aby skompilować źródła lub w jakikolwiek inny sposób pobrać pliki potrzebne do zbudowania pliku pakietu (`*pkgname*.pkg.tar.xz`). Wynikowy pakiet zawiera pliki binarne i instrukcje instalacyjne, łatwo instalowane z [pacmanem](/index.php/Pacman "Pacman").
@@ -254,5 +242,6 @@ An array of SHA-2 checksums with digest sizes 256, 384 and 512 bits respectively
 
 ## See also
 
+*   [PKGBUILD(5) Strona Man](https://www.archlinux.org/pacman/PKGBUILD.5.html)
 *   [Example PKGBUILD file](http://pastebin.com/MeXiLDV9)
 *   [Example .install file](http://seberm.pastebin.com/gP0tBqvs)

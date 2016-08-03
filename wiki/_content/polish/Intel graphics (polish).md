@@ -1,12 +1,3 @@
-| **Streszczenie**  |
-| Informacje dotyczące kart graficznych Intela i sterownika graficznego *intel*. |
-| **Powiązane artykuły** |
-| [ATI_(Polski)](/index.php/ATI_(Polski) "ATI (Polski)") |
-| [NVIDIA_(Polski)](/index.php?title=NVIDIA_(Polski)&action=edit&redlink=1 "NVIDIA (Polski) (page does not exist)") |
-| [Poulsbo_(Polski)](/index.php?title=Poulsbo_(Polski)&action=edit&redlink=1 "Poulsbo (Polski) (page does not exist)") |
-| [Xorg_(Polski)](/index.php/Xorg_(Polski) "Xorg (Polski)") |
-| [Intel_gma3600_(Polski)](/index.php?title=Intel_gma3600_(Polski)&action=edit&redlink=1 "Intel gma3600 (Polski) (page does not exist)") |
-
 Ponieważ Intel udostępnia i wspiera otwarte sterowniki, karty graficzne Intela zwykle działają bez problemów.
 
 **Note:** Informacje dotyczące używawania sterowników w konsoli bez [X](/index.php/Xorg_(Polski) "Xorg (Polski)") znajdziesz w [Uvesafb](/index.php?title=Uvesafb_(Polski)&action=edit&redlink=1 "Uvesafb (Polski) (page does not exist)").

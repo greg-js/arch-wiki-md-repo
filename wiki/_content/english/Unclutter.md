@@ -49,7 +49,7 @@ Unclutter is a tool from the early 90s and has not been updated since. It works 
 
 ### xbanish
 
-xbanish is a popular rewrite of unclutter. You can grab it on the AUR as [xbanish](https://aur.archlinux.org/packages/xbanish/) or [xbanish-git](https://aur.archlinux.org/packages/xbanish-git/).
+xbanish is another tool similar to unclutter, but works in a different way. Instead of using cursor movements, xbanish hides the cursor during typing. You can grab it on the AUR as [xbanish](https://aur.archlinux.org/packages/xbanish/) or [xbanish-git](https://aur.archlinux.org/packages/xbanish-git/).
 
 ## See also
 

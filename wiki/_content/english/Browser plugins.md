@@ -116,17 +116,7 @@ When using a multiple monitor setup, or swapping between virtual desktops, it is
 
 Unfortunately, this behavior is hard coded into the binary. In order to change this behavior it is necessary to alter the binary.
 
-Fixing this issue only works for the NPAPI plugin and this issue can be fixed via 3 ways.
-
-*   Using [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/) which providess wine as a required dependency since the patch has been initially made for Windows.
-
-	After the package has been installed, backup `libflashplayer.so`:
-
-	 `# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup` 
-
-	Then, patch libflashplayer.so:
-
-	 `# flash-fullscreen-patcher.sh -i /usr/lib/mozilla/plugins/libflashplayer.so` 
+Fixing this issue only works for the NPAPI plugin and this issue can be fixed via 2 ways.
 
 *   Using the [flashplugin-focusfix](https://aur.archlinux.org/packages/flashplugin-focusfix/).
 
@@ -162,7 +152,7 @@ See also [Wikipedia:Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash"
 
 [GNU Gnash](http://www.gnu.org/software/gnash/) is a free (libre) alternative to Adobe Flash Player. It is available both as a standalone player for desktop computers and embedded devices, as well as a browser plugin, and supports the SWF format up to version 7 (with versions 8 and 9 under development) and about 80% of ActionScript 2.0.
 
-There are multiple packages available: [gnash](https://aur.archlinux.org/packages/gnash/), [gnash-kde4](https://aur.archlinux.org/packages/gnash-kde4/), [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
+There is a packages available: [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
 
 **Note:** If you find that Gnash does not work properly right out of the box, then you may also need to [install](/index.php/Install "Install") the [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) package.
 
@@ -170,7 +160,7 @@ There are multiple packages available: [gnash](https://aur.archlinux.org/package
 
 [Lightspark](http://lightspark.github.com/) is another attempt to provide a free alternative to Adobe Flash aimed at supporting newer Flash formats. Lightspark has the ability to fall back on Gnash for old content, which enables users to install both and enjoy wider coverage. Although it is still very much in development, it supports some [popular sites](https://github.com/lightspark/lightspark/wiki/Site-Support).
 
-Lightspark can be [installed](/index.php/Install "Install") with the [lightspark](https://aur.archlinux.org/packages/lightspark/) or [lightspark-git](https://aur.archlinux.org/packages/lightspark-git/) package.
+Lightspark can be [installed](/index.php/Install "Install") with the [lightspark-git](https://aur.archlinux.org/packages/lightspark-git/) package.
 
 ### Video players workarounds
 

@@ -114,9 +114,7 @@ ExecStart=/usr/bin/certbot renew
 
 Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
 
-Then, you can add a timer to renew the certificates [daily](https://letsencrypt.org/getting-started/#writing-your-own-renewal-script). (The script will automatically skip certificates not due to renewal yet.)
-
-Include a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load.
+Then, you can add a timer to renew the certificates daily. Include a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load.
 
  `/etc/systemd/system/certbot.timer` 
 ```
@@ -141,4 +139,4 @@ You'll probably want your web server to be restarted after each certificate rene
 
 ## See also
 
-*   [List of ACME clients](https://github.com/certbot/certbot/wiki/Links#other-lets-encrypt--acme-clients)
+*   [List of ACME clients](https://letsencrypt.org/docs/client-options/)

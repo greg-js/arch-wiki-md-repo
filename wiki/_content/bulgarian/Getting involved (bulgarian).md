@@ -1,9 +1,3 @@
-| **Summary**  |
-| This article describes various ways Archers (both new and experienced users) can contribute to the Arch community. Note that this is not an exhaustive list. |
-| **Related** |
-| [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") |
-| [Help:Editing](/index.php/Help:Editing "Help:Editing") |
-
 В биологията, [мутуализъм](https://en.wikipedia.org/wiki/Mutualism_biology) "wikipedia:Mutualism biology)") се нарича връзка между два индивида, при която те имат взаимна полза. Този принцип може също да се приложи и за активните и мотивирани членове на Arch обществото, които искат да допринесат за развитието на тяхната любима дистрибуция, като по този начин имат полза не само те, но и всички останали ползващи Arch Linux, също така и всички фенове на [свободния отворен софтуер](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 ## Contents

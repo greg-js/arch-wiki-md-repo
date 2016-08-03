@@ -237,7 +237,7 @@ Similarly in `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.c
 
 This will prevent PulseAudio to fiddle with the gain setting at all.
 
-**Note:** Unfortunately, you must make the same modifications every time the PulseAudio package is updated.
+**Note:** Unfortunately, you must make the same modifications every time the PulseAudio package is updated. Additionally, this will entirely disable the internal microphone.
 
 ### Loud popping-noises when sound was not playing
 

@@ -37,7 +37,6 @@
 
 Неактивны (менее 5 правок за последние 30 дней):
 
-*   [Clearsprite](/index.php/User:Clearsprite "User:Clearsprite") ([обсуждение](/index.php/User_talk:Clearsprite "User talk:Clearsprite")|[вклад](/index.php/Special:Contributions/Clearsprite "Special:Contributions/Clearsprite"))
 *   [Agent0](/index.php/User:Agent0 "User:Agent0") ([обсуждение](/index.php/User_talk:Agent0 "User talk:Agent0")|[вклад](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0"))
 *   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (page does not exist)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 
@@ -202,7 +201,6 @@
 | [nginx (Русский)](/index.php/Nginx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nginx (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [Nano (Русский)](/index.php/Nano_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nano (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Official repositories (Русский)](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") | [Официальные репозитории](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории") | [Kycok](/index.php/User:Kycok "User:Kycok") | - |
-| [Openbox (Русский)](/index.php/Openbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Openbox (Русский)") | Не требуется | [ClearSprite](/index.php/User:Clearsprite "User:Clearsprite") | - |
 | [OpenRC (Русский)](/index.php/OpenRC_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "OpenRC (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Pidgin (Русский)](/index.php/Pidgin_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pidgin (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [Powerpill (Русский)](/index.php/Powerpill_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Powerpill (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
@@ -216,6 +214,7 @@
 | [Sshfs (Русский)](/index.php/Sshfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sshfs (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Sudo (Русский)](/index.php/Sudo_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Sudo (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
+| [systemd/Timers (Русский)](/index.php/Systemd/Timers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd/Timers (Русский)") | [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры") | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Tox (Русский)](/index.php/Tox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Tox (Русский)") | Не требуется | [Agent0](/index.php/User:Agent0 "User:Agent0") | - |
 | [Udisks (Русский)](/index.php/Udisks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udisks (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Vim (Русский)](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |

@@ -141,7 +141,7 @@ Always try open source drivers before resorting to proprietary drivers. Most of 
 
 ### Be careful with unofficial packages
 
-Use precaution when using packages from the [AUR](/index.php/AUR "AUR") or an [unofficial user repository](/index.php/Unofficial_user_repository "Unofficial user repository"). Most are supplied by regular users and thus may not have the same standards as those in the official repositories. Be careful with [AUR helpers](/index.php/AUR_helpers "AUR helpers") which highly simplify installation of AUR packages. **Always** check PKGBUILDs for sanity and signs of mistake or malicious code before building and/or installing the package.
+Use precaution when using packages from the [AUR](/index.php/AUR "AUR") or an [unofficial user repository](/index.php/Unofficial_user_repository "Unofficial user repository"). Most are supplied by regular users and thus may not have the same standards as those in the official repositories. Be careful with [AUR helpers](/index.php/AUR_helpers "AUR helpers") which automate installation of AUR packages. **Always** check PKGBUILDs for sanity and signs of mistake or malicious code before building and/or installing the package.
 
 To simplify maintenance, limit the amount of unofficial packages used. Make periodic checks on which are in actual use, and remove (or replace with their official counterparts) any others. See [pacman/Tips and tricks#Maintenance](/index.php/Pacman/Tips_and_tricks#Maintenance "Pacman/Tips and tricks") for useful commands.
 

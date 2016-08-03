@@ -1,8 +1,3 @@
-| **Podsumowanie**  |
-| Obejmuje instalację i korzystanie z ncmpcpp |
-| **Powiązane** |
-| [Music_Player_Daemon_(Polski)](/index.php/Music_Player_Daemon_(Polski) "Music Player Daemon (Polski)") |
-
 [Ncmpcpp](http://unkart.ovh.org/ncmpcpp/) lub ncmpcpp jest klientem [mpd](/index.php/Mpd "Mpd") z interfejsem podobnym do tego w ncmpc, lecz dodatkowo posiada dużo ciekawych funkcji jak regex w wyszukiwarce, filtrowanie kolekcji, last.fm, sortowanie playlist, możliwość sortowanie w przeglądarce plików, edytor tagów, przeglądanie panelowe i inne.
 
 ## Contents

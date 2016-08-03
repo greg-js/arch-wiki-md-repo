@@ -1,8 +1,3 @@
-| **ملخص**  |
-| إرشادات لمختلف أنظمة التشغيل في كيفية صنع ذاكرة USB مجهزة للإقلاع لاستخدامها في تثبيت آرتش لينوكس أو في صيانة النظام أو في الاسترجاع. |
-| **مواضيع متصلة** |
-| [CD Burning](/index.php/CD_Burning "CD Burning") |
-
 هذه الصفحة تناقش الطرق المتعددة في كتابة نسخة آرتش لينوكس على قرص USB (كما تسمى أيضاً *قرص فلاش، ذاكرة USB، مفتاح USB* ... إلخ)، والنتيجة ستكون نظام مشابه لـ LiveCD (يمكنك تسميته *"LiveUSB"* إن أردت) والذي وبطبيعة [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS") فإنه سيقوم بنبذ كل التغييرات بمجرد إيقاف تشغيل الحاسوب.
 
 إن كنت ترغب بالقيام بعملية تثبيت كاملة لآرتش لينوكس من قرص USB (أي مع الإعدادات المستمرة) قم بالاطلاع على [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key").

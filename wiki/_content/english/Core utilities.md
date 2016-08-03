@@ -135,7 +135,7 @@ Instead, find takes a set of directories and matches each file under them agains
 
 Before `locate` can be used, the database will need to be created. To do this, simply run `updatedb` as root.
 
-See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/)
+See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
 
 ## iconv
 

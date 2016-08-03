@@ -1,8 +1,3 @@
-| **Summary**  |
-| GNOME 3 provê um ambiente moderno, reescrito do zero, usando o GTK3+ toolkit. |
-| **Overview** |
-| The [Xorg](/index.php/Xorg "Xorg") project provides an open source implementation of the X Window System – the foundation for a graphical user interface. [Desktop environments](/index.php/Desktop_environments "Desktop environments") such as [Enlightenment](/index.php/Enlightenment "Enlightenment"), [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") provide a complete graphical environment. Various [window managers](/index.php/Window_managers "Window managers") offer alternative and novel environments, and may be used *standalone* to conserve system resources. [Display managers](/index.php/Display_manager "Display manager") provide a graphical login prompt. |
-
 Para o GNOME 3, os desenvolvedores começaram do zero e criaram um novo complemento, um ambiente de trabalho moderno para os usuários e as tecnologias recentes. Algumas das características implementadas:
 
 *   Novo tema e visual, bem como fontes modernas.

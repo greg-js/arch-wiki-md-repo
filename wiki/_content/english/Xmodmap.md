@@ -17,8 +17,9 @@
 *   [7 Swapping mouse buttons](#Swapping_mouse_buttons)
 *   [8 Templates](#Templates)
     *   [8.1 Spanish](#Spanish)
-    *   [8.2 Turn CapsLock into Control, and LeftControl into Hyper](#Turn_CapsLock_into_Control.2C_and_LeftControl_into_Hyper)
-    *   [8.3 Switch every number key N with Shift-N and vice-versa, for Croatian layout](#Switch_every_number_key_N_with_Shift-N_and_vice-versa.2C_for_Croatian_layout)
+    *   [8.2 Turn CapsLock into Control](#Turn_CapsLock_into_Control)
+    *   [8.3 Turn CapsLock into Control, and LeftControl into Hyper](#Turn_CapsLock_into_Control.2C_and_LeftControl_into_Hyper)
+    *   [8.4 Switch every number key N with Shift-N and vice-versa, for Croatian layout](#Switch_every_number_key_N_with_Shift-N_and_vice-versa.2C_for_Croatian_layout)
 *   [9 See also](#See_also)
 
 ## Introduction
@@ -190,6 +191,19 @@ keycode  58 = comma question comma questiondown dead_acute dead_doubleacute dead
 keycode  61 = exclam section exclamdown section dead_belowdot dead_abovedot dead_belowdot
 !Maps the Mode key to the Alt key
 keycode 64 = Mode_switch
+
+```
+
+### Turn CapsLock into Control
+
+Simplest example of changing `CapsLock` into `Control`.
+
+ `~/.Xmodmap` 
+```
+clear lock
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R
 
 ```
 

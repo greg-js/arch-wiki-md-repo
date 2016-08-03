@@ -33,7 +33,7 @@ easyrsa build-ca
 
 ### Create the DH
 
-Created the initial dh2048.pem file:
+Created the initial dh.pem file:
 
 ```
 cd /etc/easy-rsa
@@ -41,25 +41,27 @@ openssl dhparam -out dh.pem 2048
 
 ```
 
+**Note:** Although values higher than 2048 (4096 for example) may be used, they take considerably more time to generate and offer little benefit in security.
+
 ### Create and and sign an entity keypair
 
-The term entity generally means either a server or client. For ease, substitute the word "entity" below with "server" or "client" as an example.
+The term "entity" in the context of keys is taken to mean either *server* or *client*. Substitute the word "entity" below with "server" or "client" as the use-case requires.
 
 Generate and sign a key pair:
 
 ```
 cd /etc/easy-rsa
-easyrsa gen-req entity nopass
+easyrsa gen-req *entity* nopass
 
 ```
 
 Sign the server cert and key with the CA.
 
-**Note:** Servers need to be signed with "server" type whereas clients need to be signed with the "client" type. Make the appropriate substitution for the word "type" in the following command.
+**Note:** Servers need to be signed with "server" type whereas clients need to be signed with the "client" type. Make the appropriate substitution for the word "TYPE" in the following command.
 
 ```
 cd /etc/easy-rsa
-easyrsa sign-req type entity
+easyrsa sign-req TYPE *entity*
 
 ```
 
@@ -82,5 +84,5 @@ This will be used to add an additional HMAC signature to all SSL/TLS handshake p
 
 Upstream docs
 
-*   [quick start](https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md).
-*   [advanced usage](https://github.com/OpenVPN/easy-rsa/blob/master/doc/EasyRSA-Advanced.md).
+*   [README.quickstart](https://github.com/OpenVPN/easy-rsa/blob/master/README.quickstart.md).
+*   [EASYRSA-Advanced](https://github.com/OpenVPN/easy-rsa/blob/master/doc/EasyRSA-Advanced.md).

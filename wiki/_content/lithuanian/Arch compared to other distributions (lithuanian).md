@@ -1,11 +1,3 @@
-| **Summary**  |
-| Trumpas Arch Linux palyginimas su kitomis populiariomis GNU/Linux distribucijomis ir BSD sistemomis. |
-| **Susiję straipsniai** |
-| [Arch Linux (Lietuviškai)](/index.php/Arch_Linux_(Lietuvi%C5%A1kai) "Arch Linux (Lietuviškai)") |
-| [The Arch Way (Lietuviškai)](/index.php/The_Arch_Way_(Lietuvi%C5%A1kai) "The Arch Way (Lietuviškai)") |
-| **Išorinės nuorodos** |
-| [DistroWatch.com](http://distrowatch.com/) |
-
 Šitas puslapis bando sulyginti Arch Linux su kitomis populiariomis GNU/Linux distribucijomis ir UNIX tipo operacinėmis sistemomis. Sekantys apibūdinimai yra trumpi apibūdinimai, kurios galėtų padėti žmogui apsispręsti ar Arch Linux gali patenkinti jo poreikius. Nors apžvalgos ir apibūdinimai gali būti naudingi, patirtis iš pirmų rankų visada yra geriausias būdas palyginti distribucijas.
 
 ## Contents
@@ -30,6 +22,7 @@
 *   [5 Kitos](#Kitos)
     *   [5.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
     *   [5.2 Frugalware](#Frugalware)
+*   [6 Išorinės nuorodos](#I.C5.A1orin.C4.97s_nuorodos)
 
 ## Paremtos pradinio kodo kompiliavimu
 
@@ -118,3 +111,7 @@ Debian yra daug didesnis projektas su didesne bendruomene, turinti stabilią, te
 ### Frugalware
 
 Arch yra tekstiškai paremta ir orientuota į komandinę eilutę. Frugalware prisijaukino Arch [pacman](/index.php/Pacman "Pacman") kaip savo paketų tvarkyklę, bet naudoja bzipped archyvus. Palyginus, Arch naudoja gzipped archyvus, nes tai leidžia palaikyti paketų įdiegimo tikslumo. Frugalware numatomai nepalaiko JFS failų sistemos. Frugalware daugiau nėra paremta Slackware. Jinai daugiau egzistuoja kaip savarankiška i686 distribucija. Arch fundamentaliai yra kitokia sistema, kuri yra įdiegiama kaip minimali aplinka ir plečiama su pacman, vartotojo nuožiūra. Frugalware įdiegiama per DVD, su numatyta programinę įranga ir darbine aplinka. Tai jau nuspręsta už vartotoją. Frugalware turi išleidimo grafiką. Vėl gi, Arch yra daugiau sufokusuota prie paprastumo, minimalumo, kodo teisingumo ir naujausių paketų su pagrindinės versijos modelio principu.
+
+## Išorinės nuorodos
+
+*   [DistroWatch.com](http://distrowatch.com/)

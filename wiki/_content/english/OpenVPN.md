@@ -12,6 +12,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [4 Create a Public Key Infrastructure (PKI) from scratch](#Create_a_Public_Key_Infrastructure_.28PKI.29_from_scratch)
 *   [5 A basic L3 IP routing configuration](#A_basic_L3_IP_routing_configuration)
     *   [5.1 The server configuration file](#The_server_configuration_file)
+        *   [5.1.1 Hardening the server](#Hardening_the_server)
     *   [5.2 The client configuration file](#The_client_configuration_file)
         *   [5.2.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
     *   [5.3 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
@@ -41,7 +42,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [9.1 Update resolv-conf script](#Update_resolv-conf_script)
     *   [9.2 Update systemd-resolved script](#Update_systemd-resolved_script)
 *   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
-*   [11 Creating an iOS or Android OpenVPN Connect Profile](#Creating_an_iOS_or_Android_OpenVPN_Connect_Profile)
+*   [11 Creating an OpenVPN client profile (Linux, iOS, or Android)](#Creating_an_OpenVPN_client_profile_.28Linux.2C_iOS.2C_or_Android.29)
     *   [11.1 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
 *   [12 Troubleshooting](#Troubleshooting)
     *   [12.1 Resolve issues](#Resolve_issues)
@@ -77,7 +78,7 @@ To connect to a VPN service provided by a third party, most of the following can
 
 When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is accomplished by using the [easy-rsa](/index.php/Easy-rsa "Easy-rsa").
 
-Once created, copy the created as follows (as the root user):
+Once created, symlinks are created as follows (as the root user):
 
 ```
 ln -sf /etc/easy-rsa/pki/ca.crt /etc/openvpn
@@ -109,6 +110,8 @@ For more advanced configurations, please see the official [OpenVPN 2.2 man page]
 
 ### The server configuration file
 
+**Note:** Note that if the server is behind a firewall or a NAT translating router, the OpenVPN UDP port must be forward on to the server.
+
 Copy the example server configuration file to `/etc/openvpn/server.conf`:
 
 ```
@@ -138,7 +141,21 @@ group nobody
 
 ```
 
-**Note:** Note that if the server is behind a firewall or a NAT translating router, you will have to forward the OpenVPN UDP port (1194) to the server.
+#### Hardening the server
+
+If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and limiting the newer tls ciphers. Do so by adding the following to `/etc/openvpn/server.conf`
+
+```
+..
+cipher AES-256-CBC
+auth SHA512
+tls-version-min 1.2
+tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
+..
+
+```
+
+**Note:** The .ovpn client profile MUST contain a matching cipher and auth line to work properly (at least with the iOS client)!
 
 ### The client configuration file
 
@@ -677,24 +694,30 @@ down /etc/openvpn/update-systemd-resolved
 
 For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
 
-## Creating an iOS or Android OpenVPN Connect Profile
+## Creating an OpenVPN client profile (Linux, iOS, or Android)
 
-The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format. Tested on the iOS version of OpenVPN Connect and likely works with the Android app as well. Simply invoke the script with 5 tokens:
+The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format. Tested on the iOS version of OpenVPN Connect and likely works with the Android app as well as the native Linux client.
+
+Simply invoke the script with 5 tokens:
 
 1.  Server Fully Qualified Domain Name of the OpenVPN server (or IP address).
 2.  Full path to the CA cert.
 3.  Full path to the client cert.
 4.  Full path to the client private key.
 5.  Full path to the server TLS shared secret key.
+6.  Optionally a port number.
+7.  Optionally a protocol (udp or tcp).
 
 Example:
 
 ```
-# ovpngen titty.nipples.org /etc/easy-rsa/pki/ca.crt /etc/easy-rsa/pki/issued/client.crt /etc/easy-rsa/pki/private/client.key /etc/openvpn/ta.key > iphone.ovpn
+# ovpngen titty.nipples.org /etc/easy-rsa/pki/ca.crt /etc/easy-rsa/pki/issued/client.crt /etc/easy-rsa/pki/private/client.key /etc/openvpn/ta.key > myprofile.ovpn
 
 ```
 
-The resulting `iphone.ovpn` can be edited if desired.
+The resulting `myprofile.ovpn` can be edited if desired.
+
+**Tip:** If the server.conf contains a specified cipher and/or auth line, it is highly recommended that users manually edit the generated .ovpn file adding matching lines for cipher and auth. Failure to do so may results in connection errors!
 
 ### Converting certificates to encrypted .p12 format
 

@@ -43,7 +43,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [nginx](https://www.archlinux.org/packages/?name=nginx) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline).
+[Install](/index.php/Install "Install") the package [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) (mainline branch : new features, updates, bugfixes) or [nginx](https://www.archlinux.org/packages/?name=nginx) (stable branch : major bufixes only). Using the mainline branch is recommended.
+
+The main reason to use the stable branch is that you are concerned about possible impacts of new features, such as incompatibility with third-party modules or the inadvertent introduction of bugs in new features[[1]](https://www.nginx.com/blog/nginx-1-6-1-7-released/).
 
 For a Ruby on Rails setup with nginx, see [Ruby on Rails#The Perfect Rails Setup](/index.php/Ruby_on_Rails#The_Perfect_Rails_Setup "Ruby on Rails").
 
@@ -893,7 +895,7 @@ If run as root, permissions for the libraries should be read and executable for 
 
 ### Alternative script for systemd
 
-On pure systemd you can get advantages of chroot + systemd. [[1]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
+On pure systemd you can get advantages of chroot + systemd. [[2]](http://0pointer.de/blog/projects/changing-roots.html) Based on set [user group](http://wiki.nginx.org/CoreModule#user) an pid on:
 
  `/etc/nginx/nginx.conf` 
 ```

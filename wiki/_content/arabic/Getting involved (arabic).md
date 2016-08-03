@@ -1,8 +1,3 @@
-| **Summary**  |
-| تصف هذه المقالة كيف يمكن لمستخدموا آرتش الجُدد أو المتقدّمين المساهمة في المجتمع. اعلم أنّ هذه القائمة ليست شاملة. |
-| **Related** |
-| [Arch_User_Repository_(العربية)](/index.php/Arch_User_Repository_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Arch User Repository (العربية)") |
-
 في علم الأحياء، [التكافل](https://en.wikipedia.org/wiki/Mutualism_(biology) هو تفاعل بين مخلوقين، كلّ واحد يستمد مصالحه من الآخر. هذا المبدأ يُطبّق أيضًا على أعضاء مجتمع آرتش السبّاقين للإنخراط والمساهمة في توزيعة لينكس المفضّلة لديهم. مصالح هذه المشاركة ليست فقط عضو في المجتمع وآرتشاويون متتبّعين، لكن كل مستخدموا [البرمجيات الحرة والمفتوحة المصدر](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 ## Contents

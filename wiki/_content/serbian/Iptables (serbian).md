@@ -1,9 +1,3 @@
-| **Summary**  |
-| Informacije u vezi instraliranja i podesavanja iptables-a. |
-| **Odnosno** |
-| [Firewall-ovi](/index.php?title=Firewall-ovi&action=edit&redlink=1 "Firewall-ovi (page does not exist)") |
-| [Sysctl#TCP/IP stek ojacavanje](/index.php/Sysctl#TCP.2FIP_stek_ojacavanje "Sysctl") |
-
 iptables je mocan [vatreni zid](/index.php/Firewall "Firewall") ugradjen u linux kernel i deo je [netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter") projekta. Moze se podesiti direktno ili upotrebu jednog od mnogih [frontend-ova](/index.php/Firewalls#iptables_front-ends "Firewalls") i [GUI-ja](/index.php/Firewall#iptables_GUIs "Firewall"). ip tabele se koriste za [ipv4](https://en.wikipedia.org/wiki/Ipv4 "wikipedia:Ipv4") i ip6 tabele se koriste za [ipv6](https://en.wikipedia.org/wiki/Ipv6 "wikipedia:Ipv6").
 
 ## Contents

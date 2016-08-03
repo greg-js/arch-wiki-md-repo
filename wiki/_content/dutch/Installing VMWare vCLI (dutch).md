@@ -1,9 +1,3 @@
-| **Summary**  |
-| Installatie van de vCLI voor beheer van vSphere omgevingen |
-| **Related** |
-| [VMware](/index.php/VMware "VMware") |
-| [Installing_Arch_Linux_in_VMWare_(Nederlands)](/index.php/Installing_Arch_Linux_in_VMWare_(Nederlands) "Installing Arch Linux in VMWare (Nederlands)") |
-
 De vCLI utilities maken het mogelijk om VMWare ESX servers te beheren al dan niet via vCenter. Hoewel Arch Linux niet behoort tot de "supported platforms" voor deze utilities is het vrij eenvoudig deze te installeren
 
 ## Download lokatie

@@ -1,13 +1,3 @@
-| **Summary**  |
-| Forklarer om byggesystemet i Arch Linux |
-| **Relaterede artikler (Engelsk)** |
-| [AUR_Trusted_User_Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") |
-| [AUR](/index.php/AUR "AUR") |
-| [AUR Q & A](/index.php/AUR_Q_%26_A "AUR Q & A") |
-| [Aurbuild](/index.php/Aurbuild "Aurbuild") |
-| **Andre artikler på dansk** |
-| [Main_Page_(Dansk)](/index.php/Main_Page_(Dansk) "Main Page (Dansk)") |
-
 ## Contents
 
 *   [1 Hvad er ABS?](#Hvad_er_ABS.3F)

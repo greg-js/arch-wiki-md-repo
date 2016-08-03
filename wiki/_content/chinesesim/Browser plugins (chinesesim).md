@@ -10,12 +10,17 @@
 *   [1 Flash Player](#Flash_Player)
     *   [1.1 Adobe Flash Player](#Adobe_Flash_Player)
         *   [1.1.1 Installation](#Installation)
-    *   [1.2 Gnash](#Gnash)
+        *   [1.1.2 更新](#.E6.9B.B4.E6.96.B0)
+        *   [1.1.3 配置](#.E9.85.8D.E7.BD.AE)
+        *   [1.1.4 Disable the "Press ESC to exit full screen mode" message](#Disable_the_.22Press_ESC_to_exit_full_screen_mode.22_message)
+        *   [1.1.5 Multiple monitor full-screen fix](#Multiple_monitor_full-screen_fix)
+        *   [1.1.6 Playing DRM-protected content](#Playing_DRM-protected_content)
+    *   [1.2 Shumway](#Shumway)
+    *   [1.3 Gnash](#Gnash)
+    *   [1.4 Lightspark](#Lightspark)
 *   [2 PDF浏览器](#PDF.E6.B5.8F.E8.A7.88.E5.99.A8)
-    *   [2.1 Evince](#Evince)
-    *   [2.2 Adobe Reader](#Adobe_Reader)
-        *   [2.2.1 32位（i686）](#32.E4.BD.8D.EF.BC.88i686.EF.BC.89)
-        *   [2.2.2 64位（x86_64）](#64.E4.BD.8D.EF.BC.88x86_64.EF.BC.89)
+    *   [2.1 PDF.js](#PDF.js)
+    *   [2.2 External PDF viewers](#External_PDF_viewers)
 *   [3 Citrix](#Citrix)
 *   [4 Java](#Java)
     *   [4.1 IcedTea](#IcedTea)
@@ -51,6 +56,88 @@
 *   某些时候文本显示不太正常，可能需要从[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)
 *   [freshplayerplugin-git](https://aur.archlinux.org/packages/freshplayerplugin-git/) 软件包提供了 NPAPI 浏览器比如 Firefox 使用 [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) 的测试版本。可以通过将 `/usr/share/freshplayerplugin/freshwrapper.conf.example` 复制到 `/usr/share/freshplayerplugin/freshwrapper.conf` 配置硬件加速。
 
+#### 更新
+
+如果使用 [Firefox](/index.php/Firefox "Firefox")，请查阅 [此处的说明](/index.php/Firefox#Firefox_detects_the_wrong_version_of_my_plugin "Firefox").
+
+#### 配置
+
+To change the preferences (privacy settings, resource usage, etc.) of Flash Player, right click on any embedded Flash content (for instance [adobe's flash home](https://helpx.adobe.com/flash-player.html)) and choose *Settings* from the menu.
+
+You can also use the Flash settings file `/etc/adobe/mms.cfg`. Gentoo has an extensively commented [example mms.cfg](http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/www-plugins/adobe-flash/files/mms.cfg).
+
+To enable video decoding with [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"), add/uncomment the following line:
+
+```
+EnableLinuxHWVideoDecode = 1
+
+```
+
+It might also be required to add/uncomment the following line:
+
+```
+OverrideGPUValidation = 1
+
+```
+
+#### Disable the "Press ESC to exit full screen mode" message
+
+There is no solution other than patching the Flash plugin. Please note only the NPAPI plugin is supported. Install [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/) which provides wine as a required dependency since the patch has been initially made for Windows.
+
+After the package has been installed, backup `libflashplayer.so`:
+
+```
+# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup 
+
+```
+
+Then, patch `libflashplayer.so`:
+
+```
+# flash-fullscreen-patcher.sh -f /usr/lib/mozilla/plugins/libflashplayer.so
+
+```
+
+If you use Firefox and want to remove the message *Press ESC to exit full screen mode in HTML5 videos* too, go to about:config and set `full-screen-api.warning.timeout` to `0`.
+
+Alternatively, install Firefox extension [Disable HTML5 Fullscreen Alert](https://addons.mozilla.org/firefox/addon/disable-html5-fullscreen-alert/), which will suppress full screen warnings for HTML5 content.
+
+#### Multiple monitor full-screen fix
+
+When using a multiple monitor setup, or swapping between virtual desktops, it is possible to lose focus on a fullscreen flash window. In such a case, the adobe flash-plugin will automatically exit full-screen mode. This may not be to your liking.
+
+Unfortunately, this behavior is hard coded into the binary. In order to change this behavior it is necessary to alter the binary.
+
+Fixing this issue only works for the NPAPI plugin and this issue can be fixed via 2 ways.
+
+*   Using the [flashplugin-focusfix](https://aur.archlinux.org/packages/flashplugin-focusfix/).
+
+*   [Patching manually](http://www.webupd8.org/2012/10/ubuntu-multi-monitor-tweaks-full-screen.html):
+
+	After the package has been installed, backup `libflashplayer.so`:
+
+	 `# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup` 
+
+	Then, you will need to alter that file using a hex editor like [ghex](https://www.archlinux.org/packages/?name=ghex). You must open it with root privileges obviously.
+
+	 `# ghex /usr/lib/mozilla/plugins/libflashplayer.so` 
+
+	Using the hex editor find the string `_NET_ACTIVE_WINDOW`. In ghex the readable string is on the right hand side of the window, and the hex is on the left, you are trying to locate the readable string. It should be easy to find using a search function.
+
+	Upon finding `_NET_ACTIVE_WINDOW` rewrite the line, but **do not** change the length of the line, for example `_NET_ACTIVE_WINDOW` becomes `_XET_ACTIVE_WINDOW`.
+
+	Save the binary, and restart any processes using the plugin (as this will crash any instance of the plugin in use.)
+
+#### Playing DRM-protected content
+
+See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content").
+
+### Shumway
+
+[Shumway](http://mozilla.github.io/shumway/) 尝试直接使用 HTML5 技术而不是本地代码处理和显示 SWF 文件。可以通过 [Mozilla's github.io 网页](http://mozilla.github.io/shumway/)直接安装. 根据 [Shumway wiki](https://github.com/mozilla/shumway/wiki), "如果实验成功，这个功能有机会整合进 Firef。"
+
+Firefox Nightly/Aurora 编译版本包含了 Shumway.
+
 ### Gnash
 
 参考 [Wikipedia:Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash"). [GNU Gnash](http://www.gnu.org/software/gnash/) 是 Adobe Flash Player 的自由软件替代。可以作为单独的播放器，也可以嵌入浏览器。支持 SWF v7 和 80% 的 ActionScript 2.0。
@@ -59,49 +146,41 @@
 
 **Note:** 如果发现 Gnash 无法工作，可能需要先 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg).
 
+### Lightspark
+
+[Lightspark](http://lightspark.github.com/) is another attempt to provide a free alternative to Adobe Flash aimed at supporting newer Flash formats. Lightspark has the ability to fall back on Gnash for old content, which enables users to install both and enjoy wider coverage. Although it is still very much in development, it supports some [popular sites](https://github.com/lightspark/lightspark/wiki/Site-Support).
+
+Lightspark can be [installed](/index.php/Install "Install") with the [lightspark-git](https://aur.archlinux.org/packages/lightspark-git/) package.
+
 ## PDF浏览器
 
-### Evince
+### PDF.js
 
-Firefox中现已可以直接打开PDF
+[PDF.js](https://github.com/mozilla/pdf.js) is a PDF renderer created by Mozilla and built using HTML5 technologies.
 
-### Adobe Reader
+It is included in [Firefox](/index.php/Firefox "Firefox").
 
-由于许可证问题，官方软件仓库不能提供 Adobe Reader。但在[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")中可以找到这些包。
+For [Chromium](/index.php/Chromium "Chromium") and Google Chrome it is available as extension in the [Chrome Web Store](https://chrome.google.com/webstore/detail/pdf-viewer/oemmndcbldboiebfnladdacbdfmadadm).
 
-[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")中亦提供了多语言支持包[localizations](https://aur.archlinux.org/packages.php?O=0&K=acroread-&do_Search=Go)。
+### External PDF viewers
 
-#### 32位（i686）
+To use an external PDF viewer you need [#MozPlugger](#MozPlugger) or [#kpartsplugin](#kpartsplugin).
 
-32位安装包：[acroread](https://aur.archlinux.org/packages/acroread/)。
-
-该包也提供Firefox插件。硬件渲染功能在Linux平台貌似不可用。
-
-第三方软件仓库提供了预编译版本。打开`/etc/pacman.conf`，添加如下内容：
+If you want to use MozPlugger with Evince, for example, you have to find the lines containing `pdf` in the `/etc/mozpluggerrc` file and modify the corresponding line after `GV()` as below:
 
 ```
-[archlinuxfr]
-Server = [http://repo.archlinux.fr/i686](http://repo.archlinux.fr/i686)
+repeat noisy swallow(evince) fill: evince "$file"
 
 ```
 
-然后更新软件信息，并安装Adobe Reader：
+(replace `evince` with something else if it is not your viewer of choice).
 
-```
-# pacman -Syu acroread
+If this is not enough, you may need to change 2 values in `about:config`:
 
-```
+*   Change `pdfjs.disabled`'s value to *true*;
+*   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
 
-#### 64位（x86_64）
-
-Adobe Reader是闭源软件。除非官方提供支持，否则我们无法使用原生64位版本。
-
-作为代替，可以安装[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")中的[acroread](https://aur.archlinux.org/packages/acroread/)，并使用32位软件库。该包的可选依赖也最好一并安装。注意该包的Firefox插件无法在64位浏览器直接使用。要使用插件，安装[nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper)，然后以普通用户身份执行：
-
-```
-$ nspluginwrapper -v -a -i
-
-```
+Restart and it should work like a charm!
 
 ## Citrix
 

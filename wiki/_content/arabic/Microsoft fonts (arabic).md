@@ -1,10 +1,3 @@
-| **Summary**  |
-| تثبيت خطوط TrueType لمايكروسوفت ومحاكاة تصيير خط ويندوز |
-| **متعلّق** |
-| [Fonts](/index.php/Fonts "Fonts"): Information on adding fonts and font recommendations |
-| [Font Configuration](/index.php/Font_Configuration "Font Configuration"): Font setup and beautification |
-| [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts"): Fonts specific to Sun's Java virtual machine |
-
 ## Contents
 
 *   [1 التثبيت](#.D8.A7.D9.84.D8.AA.D8.AB.D8.A8.D9.8A.D8.AA)

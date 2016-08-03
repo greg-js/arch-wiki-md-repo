@@ -151,8 +151,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Deepin Window Manager
 [deepin-wm](https://www.archlinux.org/packages/?name=deepin-wm) | Deepin Dock
 [deepin-dock](https://www.archlinux.org/packages/?name=deepin-dock) | Deepin Terminal
-[deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-[nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
+[deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | Deepin File Manager
+[deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
 [gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
 [eog](https://www.archlinux.org/packages/?name=eog) | Deepin Movie

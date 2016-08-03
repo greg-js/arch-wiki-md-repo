@@ -10,6 +10,7 @@ In Arch Linux, IPv6 is enabled by default.
     *   [3.1 dhcpcd](#dhcpcd)
     *   [3.2 NetworkManager](#NetworkManager)
     *   [3.3 systemd-networkd](#systemd-networkd)
+    *   [3.4 connman](#connman)
 *   [4 Static address](#Static_address)
 *   [5 IPv6 and PPPoE](#IPv6_and_PPPoE)
 *   [6 Prefix delegation (DHCPv6-PD)](#Prefix_delegation_.28DHCPv6-PD.29)
@@ -160,7 +161,17 @@ Systemd-networkd also does not honor the settings `net.ipv6.conf.xxx.use_tempadd
 
 are honored, however.
 
-See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5) man page](http://www.freedesktop.org/software/systemd/man/systemd.network.html) for details.
+See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) for details.
+
+### connman
+
+Add to `/var/lib/connman/settings` under the global section:
+
+```
+ [global]
+ IPv6.privacy=prefered
+
+```
 
 ## Static address
 

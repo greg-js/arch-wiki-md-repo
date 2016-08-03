@@ -17,8 +17,6 @@
 
 ## Preparation
 
-**Warning:** Plymouth is currently under heavy development and may contain serious bugs.
-
 Plymouth primarily uses [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) to display graphics. If you can't use KMS (e.g. because you are using a proprietary driver) you will need to use [framebuffer](/index.php/Framebuffer#Framebuffer_Resolution "Framebuffer") instead. In EFI/UEFI systems, plymouth can utilize the EFI framebuffer, otherwise [Uvesafb](/index.php/Uvesafb "Uvesafb") is recommended as it can function with widescreen resolutions.
 
 If you have neither KMS nor a framebuffer, Plymouth will fall back to text-mode.

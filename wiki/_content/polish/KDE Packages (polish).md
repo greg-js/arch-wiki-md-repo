@@ -1,8 +1,3 @@
-| **Streszczenie**  |
-| Objaśnienie grup pakietów i meta-pakietów w KDE. |
-| **Podobne artykuły** |
-| [KDE](/index.php/KDE "KDE") |
-
 Od wersji KDE SC 4.3, dla każdej aplikacji dostarczane są oddzielne pakiety. W artykule opisano koncepcję grup i meta-pakietów.
 
 ## Contents

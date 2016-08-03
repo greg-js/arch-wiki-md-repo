@@ -1,14 +1,3 @@
-| **Summary**  |
-| Сховище Пакунків Користувачів є сховищем [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")’ів, що надіслані користувачами і які доповнюють програми з [офіційних сховищ](/index.php/Official_repositories "Official repositories"). Ця стаття описує процес збирання *непідтримуваних* пакунків з AUR. |
-| **Огляд** |
-| Packages in Arch Linux are built using [makepkg](/index.php/Makepkg "Makepkg") and a custom build script for each package (known as a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")). Once packaged, software can be installed and managed with [pacman](/index.php/Pacman "Pacman"). PKGBUILDs for software in the [official repositories](/index.php/Official_repositories "Official repositories") are available from the [ABS](/index.php/ABS "ABS") tree; thousands more are available from the (unsupported) [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). |
-| **Подібне** |
-| [AUR helpers](/index.php/AUR_helpers "AUR helpers") |
-| [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") |
-| **Ресурси** |
-| [Веб-сторінка AUR](https://aur.archlinux.org) |
-| [Список розсилки AUR](https://www.archlinux.org/mailman/listinfo/aur-general) |
-
 Arch User Repository (AUR) — це сховище пакунків, кероване спільнотою Arch. Воно містить описи пакунків (так звані PKGBUILD), що полегшують зібрання пакета з джерела ([makepkg](/index.php/Makepkg "Makepkg")) та його встановлення ([pacman](/index.php/Pacman "Pacman")). Метою AUR є організація й розповсюдження нових пакунків, створених користувачами, а також надання доступу до популярних пакунків через сховища [[community]](#.5Bcommunity.5D). Ця стаття пояснює, як використовувати AUR.
 
 Чимало пакунків, що отримують місце в офіційних сховищах, створюються в AUR. Завдяки AUR користувачі можуть внести свій вклад у розвиток пакунку за рахунок супроводу PKGBUILD й пов’язаних файлів. Спільнота AUR має можливість проголосувати за пакунок у цьому сховищі чи проти нього; пакунок, за який проголосувало достатньо користувачів, потрапляє до сховища [community], що доступний прямо через [pacman](/index.php/Pacman "Pacman") чи [abs](/index.php/ABS "ABS").
@@ -44,6 +33,7 @@ Arch User Repository (AUR) — це сховище пакунків, керов�
     *   [9.11 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes.3F)
     *   [9.12 How do I access unsupported packages?](#How_do_I_access_unsupported_packages.3F)
     *   [9.13 How can I upload to AUR without using the web interface?](#How_can_I_upload_to_AUR_without_using_the_web_interface.3F)
+*   [10 Ресурси](#.D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.B8)
 
 ## З чого почати
 
@@ -361,3 +351,8 @@ See [#Installing packages](#Installing_packages)
 ### How can I upload to AUR without using the web interface?
 
 You can use *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)), [aurup](https://aur.archlinux.org/packages/aurup/) or [burp](https://www.archlinux.org/packages/?name=burp) -- these are command-line programs.
+
+## Ресурси
+
+*   [Веб-сторінка AUR](https://aur.archlinux.org)
+*   [Список розсилки AUR](https://www.archlinux.org/mailman/listinfo/aur-general)

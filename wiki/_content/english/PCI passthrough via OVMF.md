@@ -590,23 +590,24 @@ exit 0
 
 **Note:** This may also fix SYSTEM_THREAD_EXCEPTION_NOT_HANDLED boot crashes related to Nvidia drivers
 
-Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration.
+Since version 337.88, Nvidia drivers on Windows check if an hypervisor is running and fail if it detects one, which results in an Error 43 in the Windows device manager. Starting with QEMU 2.5.0 and libvirt 1.3.3, the vendor_id for the hypervisor can be spoofed, which is enough to fool the Nvidia drivers into loading anyway. All one must do is add `hv_vendor_id=whatever` to the cpu parameters in their QEMU command line, or by adding the following line to their libvirt domain configuration. It may help for the ID to be set to a 12-character alphanumeric (e.g. '123456789ab') as opposed to longer or shorter strings.
 
  `EDITOR=nano virsh edit myPciPassthroughVm` 
 ```
 ...
-<hyperv>
-	...
-	<vendor_id state='on' value='whatever'/>
-	...
-</hyperv>
-...
 
 <features>
+	<hyperv>
+		...
+		<nowiki><vendor_id state='on' value='whatever'/>
+		...
+	</hyperv>
+	...
 	<kvm>
 	<hidden state='on'/>
 	</kvm>
 </features>...
+</nowiki>
 
 ```
 
@@ -615,11 +616,14 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
  `EDITOR=nano virsh edit myPciPassthroughVm` 
 ```
 ...
-<hyperv>
-	<relaxed state='on'/>
-	<vapic state='on'/>
-	<spinlocks state='on' retries='8191'/>
-</hyperv>
+<features>
+	<hyperv>
+		<relaxed state='on'/>
+		<vapic state='on'/>
+		<spinlocks state='on' retries='8191'/>
+	</hyperv>
+	...
+</features>
 ...
 <clock offset='localtime'>
 	<timer name='hypervclock' present='yes'/>
@@ -629,12 +633,7 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 
 ```
 ...
-<hyperv>
-	<relaxed state='off'/>
-	<vapic state='off'/>
-	<spinlocks state='off'/>
-</hyperv>
-...
+
 <clock offset='localtime'>
 	<timer name='hypervclock' present='no'/>
 </clock>
@@ -643,6 +642,13 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 	<kvm>
 	<hidden state='on'/>
 	</kvm>
+	...
+	<hyperv>
+		<relaxed state='off'/>
+		<vapic state='off'/>
+		<spinlocks state='off'/>
+	</hyperv>
+	...
 </features>
 ...
 ```

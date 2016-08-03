@@ -265,7 +265,7 @@ Avoiding unnecessary access to slow storage drives is good for performance and a
 
 #### Show disk writes
 
-The [iotop](https://www.archlinux.org/packages/?name=iotop) package can sort by disk writes, and show how much and how frequently programs are writing to the disk. See [iotop(8)](http://man7.org/linux/man-pages/man8/iotop.8.html#) for details.
+The [iotop](https://www.archlinux.org/packages/?name=iotop) package can sort by disk writes, and show how much and how frequently programs are writing to the disk. See [iotop(8)](http://man7.org/linux/man-pages/man8/iotop.8.html) for details.
 
 #### Relocate files to tmpfs
 

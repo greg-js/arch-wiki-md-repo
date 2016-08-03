@@ -57,7 +57,7 @@ This secures the access to the file from non-root users. Read more on [File perm
     *   If you have [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) installed, it will created the configuration files for [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). Make sure to [restart](/index.php/Restart "Restart") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to see them.
     *   If you have [connman](https://www.archlinux.org/packages/?name=connman) installed, it will create the configuration files for [connman](https://www.archlinux.org/packages/?name=connman). [Start](/index.php/Start "Start") `connman-vpn.service` if not running already. It will auto load the profiles.
 
-**Tip:** Disable auto-login in configurations by adding `openvpn_auto_login = False` to `/etc/private-internet-access/pia.conf`
+**Tip:** Disable auto-login in configurations by adding `openvpn_auto_login = False` to `/etc/private-internet-access/pia.conf` and running `pia -a`
 
 ### Manually Connecting to VPN
 
@@ -77,12 +77,18 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 ### WIP: Advanced Options
 
 *   Create `/etc/private-internet-access/pia.conf`
+*   For the `[pia]` section:
 
 | option | option values | description |
-| openvpn_auto-login | True,False | Default: True; Configures if OpenVPN configuration files should have auto-login enabled. See [#Enabling auto-login](#Enabling_auto-login) |
+| openvpn_auto_login | True,False | Default: True; Configures if OpenVPN configuration files should have auto-login enabled. See [#Enabling auto-login](#Enabling_auto-login) |
+| strong_encryption | True,False | Default: False; Configures strong encryption. Uses port 1197, cipher aes-256-cbc, auth sha256\. Custom configurations for port, cipher, and auth are ignored when enabling this option. |
+
+*   For the `[configure]` section:
+
+| option | option values | description |
 | port | 80, 443, 110, 53, 8080, 9201 | Default: 1194; This configures which port and protocol the VPN uses. 80,443,110=TCP; 53,8080,9201=UDP |
 | cipher | aes-128-cbc, aes-256-cbc, bf-cbc, None | Default: aes-128-cbc; This configures the data encryption cipher. |
-| auth | sha1, sha265, None | Default: sha1; This configures the data authentication. |
+| auth | sha1, sha256, None | Default: sha1; This configures the data authentication. |
 
 ## Example Configuration
 

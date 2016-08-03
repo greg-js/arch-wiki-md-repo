@@ -1,9 +1,3 @@
-| **ملخص**  |
-| هذه المقالة تناقش مدير الملفات ثونَر [Thunar](http://thunar.xfce.org/index.html) من جميع الجوانب. |
-| **مواضيع متصلة** |
-| [Xfce](/index.php/Xfce "Xfce"): يتم تثبيت ثونَر مع تثبيت [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/). |
-| [Nautilus](/index.php/GNOME#Nautilus "GNOME"): ثونَر ليس مدير الملفات الوحيد فهناك الكثير منهم، على سبيل المثال هناك نُوتيلُس وهو مدير الملفات في [gnome](https://www.archlinux.org/groups/x86_64/gnome/). |
-
 **ثونَر** [Thunar](http://thunar.xfce.org/index.html) عبارة عن مدير ملفات صمم ليكون سريعاً خفيفاً وسهل الاستخدام، يمكن تثبيته منفصلاً أو ضمن حزمة [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
 ## Contents

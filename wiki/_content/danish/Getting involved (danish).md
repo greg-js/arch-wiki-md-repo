@@ -1,9 +1,3 @@
-| **Summary**  |
-| Denne artikel beskriver forskellige måder, hvorpå Arch-brugere (både nye og gamle) kan bidrage til Arch-fællesskabet. Bemærk at denne liste ikke er udtømmende. |
-| **Beslægtet** |
-| [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") |
-| [Help:Editing](/index.php/Help:Editing "Help:Editing") |
-
 I biologi er [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) et samarbejde mellem to organismer. Dette princip kan også bruges om proaktive og motiverede medlemmer af Arch-fællesskabet, som er interesserede i at involvere sig i udviklingen af deres yndlingsdistribution af GNU/Linux. Det kommer ikke kun dem og Arch Linux til gode, men potentielt alle fans af [fri og open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 ## Contents

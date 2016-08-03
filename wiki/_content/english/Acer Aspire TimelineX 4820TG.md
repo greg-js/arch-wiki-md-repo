@@ -20,7 +20,7 @@ Make sure that you have [BIOS_Acer_1.25_A_A.zip](http://global-download.acer.com
 
 This laptop contains inbuilt Intel HD & Radeon 5650 graphics adapters. The Intel HD graphics adapter is optimized for low power consumption which Radeon 5650 consumes high power.
 
-To use Linux kernel's "Laptop Hybrid Graphics - GPU switching support" add following to [/etc/fstab](/index.php//etc/fstab "/etc/fstab")
+To use Linux kernel's "Laptop Hybrid Graphics - GPU switching support" add following to [/etc/fstab](/index.php/Fstab "Fstab")
 
 ```
 none            /sys/kernel/debug debugfs defaults 0 0

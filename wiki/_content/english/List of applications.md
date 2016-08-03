@@ -23,10 +23,14 @@ This article is a general list of applications sorted by category, as a referenc
         *   [1.3.1 Console](#Console)
         *   [1.3.2 Graphical](#Graphical)
             *   [1.3.2.1 Gecko-based](#Gecko-based)
-                *   [1.3.2.1.1 Firefox forks](#Firefox_forks)
             *   [1.3.2.2 Blink-based](#Blink-based)
-            *   [1.3.2.3 Webkit-based](#Webkit-based)
-                *   [1.3.2.3.1 Browsers based on webkitgtk/webkitgtk2/qtwebkit](#Browsers_based_on_webkitgtk.2Fwebkitgtk2.2Fqtwebkit)
+                *   [1.3.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
+                *   [1.3.2.2.2 Browsers based on electron](#Browsers_based_on_electron)
+                *   [1.3.2.2.3 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
+            *   [1.3.2.3 WebKit-based](#WebKit-based)
+                *   [1.3.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
+                *   [1.3.2.3.2 Browsers based on webkitgtk/webkitgtk2](#Browsers_based_on_webkitgtk.2Fwebkitgtk2)
+                *   [1.3.2.3.3 Browsers based on qt5-webkit/qtwebkit](#Browsers_based_on_qt5-webkit.2Fqtwebkit)
             *   [1.3.2.4 Other](#Other)
     *   [1.4 File sharing](#File_sharing)
         *   [1.4.1 Download managers](#Download_managers)
@@ -123,39 +127,40 @@ This article is a general list of applications sorted by category, as a referenc
     *   [3.2 Mount tools](#Mount_tools)
         *   [3.2.1 Udisks](#Udisks)
     *   [3.3 Basic shell commands](#Basic_shell_commands)
-    *   [3.4 Integrated development environments](#Integrated_development_environments)
-    *   [3.5 Build automation](#Build_automation)
-    *   [3.6 Terminal emulators](#Terminal_emulators)
-        *   [3.6.1 VTE-based](#VTE-based)
-        *   [3.6.2 KMS-based](#KMS-based)
-        *   [3.6.3 framebuffer-based](#framebuffer-based)
-    *   [3.7 Files](#Files)
-        *   [3.7.1 File managers](#File_managers)
-            *   [3.7.1.1 Console](#Console_10)
-            *   [3.7.1.2 Graphical](#Graphical_9)
-        *   [3.7.2 Desktop search engines](#Desktop_search_engines)
-        *   [3.7.3 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [3.7.3.1 Console](#Console_11)
-            *   [3.7.3.2 Graphical](#Graphical_10)
-        *   [3.7.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
-        *   [3.7.5 Batch renamers](#Batch_renamers)
-    *   [3.8 Disk cleaning](#Disk_cleaning)
-    *   [3.9 Disk usage display](#Disk_usage_display)
-    *   [3.10 Clock synchronization](#Clock_synchronization)
-    *   [3.11 System monitoring](#System_monitoring)
-    *   [3.12 System information viewers](#System_information_viewers)
-        *   [3.12.1 Console](#Console_12)
-        *   [3.12.2 Graphical](#Graphical_11)
-        *   [3.12.3 Others](#Others_2)
-    *   [3.13 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [3.14 Power management](#Power_management)
-    *   [3.15 Clipboard managers](#Clipboard_managers)
-    *   [3.16 Wallpaper setters](#Wallpaper_setters)
-    *   [3.17 Package management](#Package_management)
-    *   [3.18 Input method editor](#Input_method_editor)
-    *   [3.19 Trash management](#Trash_management)
-    *   [3.20 File synchronization](#File_synchronization)
-    *   [3.21 Finders](#Finders)
+    *   [3.4 getty](#getty)
+    *   [3.5 Integrated development environments](#Integrated_development_environments)
+    *   [3.6 Build automation](#Build_automation)
+    *   [3.7 Terminal emulators](#Terminal_emulators)
+        *   [3.7.1 VTE-based](#VTE-based)
+        *   [3.7.2 KMS-based](#KMS-based)
+        *   [3.7.3 framebuffer-based](#framebuffer-based)
+    *   [3.8 Files](#Files)
+        *   [3.8.1 File managers](#File_managers)
+            *   [3.8.1.1 Console](#Console_10)
+            *   [3.8.1.2 Graphical](#Graphical_9)
+        *   [3.8.2 Desktop search engines](#Desktop_search_engines)
+        *   [3.8.3 Archiving and compression tools](#Archiving_and_compression_tools)
+            *   [3.8.3.1 Console](#Console_11)
+            *   [3.8.3.2 Graphical](#Graphical_10)
+        *   [3.8.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [3.8.5 Batch renamers](#Batch_renamers)
+    *   [3.9 Disk cleaning](#Disk_cleaning)
+    *   [3.10 Disk usage display](#Disk_usage_display)
+    *   [3.11 Clock synchronization](#Clock_synchronization)
+    *   [3.12 System monitoring](#System_monitoring)
+    *   [3.13 System information viewers](#System_information_viewers)
+        *   [3.13.1 Console](#Console_12)
+        *   [3.13.2 Graphical](#Graphical_11)
+        *   [3.13.3 Others](#Others_2)
+    *   [3.14 Keyboard layout switchers](#Keyboard_layout_switchers)
+    *   [3.15 Power management](#Power_management)
+    *   [3.16 Clipboard managers](#Clipboard_managers)
+    *   [3.17 Wallpaper setters](#Wallpaper_setters)
+    *   [3.18 Package management](#Package_management)
+    *   [3.19 Input method editor](#Input_method_editor)
+    *   [3.20 Trash management](#Trash_management)
+    *   [3.21 File synchronization](#File_synchronization)
+    *   [3.22 Finders](#Finders)
 *   [4 Documents and texts](#Documents_and_texts)
     *   [4.1 Office suites](#Office_suites)
     *   [4.2 Word processors](#Word_processors)
@@ -302,7 +307,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 	[http://elinks.or.cz/](http://elinks.or.cz/) || [elinks](https://www.archlinux.org/packages/?name=elinks)
 
-*   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Text WWW browser. Includes a console version [links] similar to Lynx, and a graphical X-window/framebuffer version [links -g] (must be compiled in, Arch has both) with CSS, image rendering, pull-down menus.
+*   **[Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")** — Text WWW browser. Includes a console version [links] similar to Lynx, and a graphical X-window/framebuffer version [xlinks -g] (must be compiled in, Arch has both) with CSS, image rendering, pull-down menus.
 
 	[http://links.twibright.com/](http://links.twibright.com/) || [links](https://www.archlinux.org/packages/?name=links)
 
@@ -314,7 +319,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 	[http://retawq.sourceforge.net/](http://retawq.sourceforge.net/) || [retawq](https://aur.archlinux.org/packages/retawq/)
 
-*   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images. It has javascript support too.
+*   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images.
 
 	[http://w3m.sourceforge.net/](http://w3m.sourceforge.net/) || [w3m](https://www.archlinux.org/packages/?name=w3m)
 
@@ -326,103 +331,111 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 *   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Keyboard-based browser modeled after [Emacs](/index.php/Emacs "Emacs") using [XULRunner](https://en.wikipedia.org/wiki/XULRunner "wikipedia:XULRunner"). Customizable via JavaScript.
 
-	[http://repo.or.cz/w/conkeror.git/](http://repo.or.cz/w/conkeror.git/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
+	[http://conkeror.org/](http://conkeror.org/) || [conkeror](https://aur.archlinux.org/packages/conkeror/)
 
 *   **[Firefox](/index.php/Firefox "Firefox")** — Extensible browser from Mozilla based on Gecko with fast rendering.
 
 	[https://mozilla.com/firefox](https://mozilla.com/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
-*   **Seamonkey** — Continuation of the Mozilla Internet Suite.
+*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — A customized build of Firefox ESR distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
+
+	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/) or [icecat-bin](https://aur.archlinux.org/packages/icecat-bin/)
+
+*   **[SeaMonkey](https://en.wikipedia.org/wiki/SeaMonkey "wikipedia:SeaMonkey")** — Continuation of the Mozilla Internet Suite.
 
 	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
-
-###### Firefox forks
-
-**Warning:** The following browsers are third-party builds of Firefox. Please direct any support requests to their respective creators.
-
-*   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — Web browser distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
-
-	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)
-
-*   **[Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#Iceweasel "wikipedia:Mozilla Corporation software rebranded by the Debian project")** — Fork of Firefox developed by Debian Linux. The main difference is that it does not include any trademarked Mozilla artwork. See [glandium](http://web.glandium.org/blog/?p=97) for more information on Iceweasel's existence.
-
-	[https://wiki.debian.org/Iceweasel](https://wiki.debian.org/Iceweasel) || [iceweasel](https://aur.archlinux.org/packages/iceweasel/)
-
-*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — Fork based on Firefox, using a Firefox 3+ interface through selective use of add-ons. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
-
-	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
 
 ##### Blink-based
 
 See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)").
 
-*   **Brave** — Web browser that blocks ads and trackers by default.
-
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
-
 *   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Web browser developed by Google.
+###### Chromium spin-offs
+
+*   **[Google Chrome](/index.php/Chromium "Chromium")** — Proprietary web browser developed by Google.
 
 	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+
+*   **Inox** — A privacy-focused patchset for Chromium, which disables Google services, proprietary features, prevents "calling home" and unhides all extensions.
+
+	[https://github.com/gcarq/inox-patchset](https://github.com/gcarq/inox-patchset) || [inox](https://aur.archlinux.org/packages/inox/) or [inox-bin](https://aur.archlinux.org/packages/inox-bin/)
+
+*   **Iridium** — A privacy-focused [patchset](https://git.iridiumbrowser.de/cgit.cgi/iridium-browser/tree/?h=patchview) for Chromium. See [differences from Chromium](https://github.com/iridium-browser/iridium-browser/wiki/Differences-between-Iridium-and-Chromium).
+
+	[https://iridiumbrowser.de/](https://iridiumbrowser.de/) || [iridium](https://aur.archlinux.org/packages/iridium/)
+
+*   **[Opera](/index.php/Opera "Opera")** — Highly customizable proprietary browser with focuses on an adherence to web rendering standards.
+
+	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
+
+*   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
+
+	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
+
+*   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
+
+	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
+
+*   **[Yandex Browser](https://en.wikipedia.org/wiki/Yandex_Browser "wikipedia:Yandex Browser")** — Proprietary browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
+
+	[https://browser.yandex.com/](https://browser.yandex.com/) || [yandex-browser-beta](https://aur.archlinux.org/packages/yandex-browser-beta/)
+
+###### Browsers based on electron
+
+*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Electron](http://electron.atom.io/) platform.
+
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
+
+*   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
+
+	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://aur.archlinux.org/packages/min/)
+
+###### Browsers based on qt5-webengine
 
 *   **Liri** — A minimalistic material design web browser written for Papyros.
 
 	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
 
-*   **[Opera](/index.php/Opera "Opera")** — Highly customizable browser with focuses on an adherence to web rendering standards.
+*   **Qt WebBrowser** — Browser for embedded devices developed using the capabilities of Qt and Qt WebEngine.
 
-	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
+	[http://doc.qt.io/QtWebBrowser/](http://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
 
-*   **Quill** — A simple web browser that hopefully won't leave you asking "Why is the RAM gone?".
+*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on QtWebEngine, written in Qt framework.
 
-	[https://bitbucket.org/xiannox/quill](https://bitbucket.org/xiannox/quill) || [quill-git](https://aur.archlinux.org/packages/quill-git/)
+	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
-*   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced browser made with the power user in mind.
+##### WebKit-based
 
-	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
+See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit").
 
-*   **Yandex.Browser** — Combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
-
-	[https://browser.yandex.ru/beta/](https://browser.yandex.ru/beta/) || [yandex-browser-beta](https://aur.archlinux.org/packages/yandex-browser-beta/)
-
-##### Webkit-based
-
-See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webkit").
+###### Browsers based on webkit2gtk
 
 *   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
 	[https://wiki.gnome.org/Apps/Web/](https://wiki.gnome.org/Apps/Web/) || [epiphany](https://www.archlinux.org/packages/?name=epiphany)
 
-*   **Lariza** — A simple web browser using GTK+ 3, GLib and WebKit2GTK+.
+*   **Lariza** — A simple, experimental web browser using GTK+ 3, GLib and WebKit2GTK+.
 
-	[https://github.com/vain/lariza/](https://github.com/vain/lariza/) || [lariza-git](https://aur.archlinux.org/packages/lariza-git/)
+	[https://www.uninformativ.de/projects/lariza/](https://www.uninformativ.de/projects/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
-*   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier. The linux version of Maxthon has not been updated since September 2014.
-
-	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
-
-*   **Rainbow Lollipop** — The visual history browser.
+*   **Rainbow Lollipop** — The visual history browser. In early state of development.
 
 	[http://rainbow-lollipop.de/](http://rainbow-lollipop.de/) || [rainbow-lollipop-git](https://aur.archlinux.org/packages/rainbow-lollipop-git/)
 
-*   **Surf 2** — A simple web browser based on WebKit2GTK+.
+*   **[Surf](/index.php/Surf "Surf") 2** — A simple web browser based on WebKit2GTK+. Experimental branch.
 
-	[http://surf.suckless.org](http://surf.suckless.org) || [surf2](https://aur.archlinux.org/packages/surf2/)
+	[http://surf.suckless.org](http://surf.suckless.org) || [surf-webkit2gtk-git](https://aur.archlinux.org/packages/surf-webkit2gtk-git/)
 
-*   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher.
+*   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher. In early state of development.
 
 	[https://launchpad.net/webby-browser](https://launchpad.net/webby-browser) || [webby-browser-bzr](https://aur.archlinux.org/packages/webby-browser-bzr/)
 
-###### Browsers based on webkitgtk/webkitgtk2/qtwebkit
+###### Browsers based on webkitgtk/webkitgtk2
 
-**Warning:** The following browsers are based on one of three webkit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk and Qt browsers to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
-
-*   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
-
-	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
+**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
 
 *   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with *vi*-like shortcuts and tiling layouts. As of October 2014 *dwb* is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
 
@@ -438,25 +451,9 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Lightweight web browser based on GTK+ and WebKit.
 
-	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
+	[http://midori-browser.org/](http://midori-browser.org/) || GTK+ 3: [midori](https://www.archlinux.org/packages/?name=midori), GTK+ 2: [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2)
 
-*   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
-
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
-
-*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on WebKit core, written in Qt framework.
-
-	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
-
-*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
-
-	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
-
-*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
-
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
-
-*   **Surf** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
+*   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
 
@@ -472,23 +469,51 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
 
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as *xxxterm*)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
+*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero")** — Webkit minimalist web browser (formerly known as *xxxterm*) with sophisticated security features designed-in, BSD style.
 
 	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
 
+###### Browsers based on qt5-webkit/qtwebkit
+
+**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. Qt browsers should be switching to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
+*   **[Arora](https://en.wikipedia.org/wiki/Arora_(web_browser) "wikipedia:Arora (web browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
+
+	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
+
+*   **[Dooble](https://en.wikipedia.org/wiki/Dooble "wikipedia:Dooble")** — A safe WebKit Web browser.
+
+	[http://dooble.sourceforge.net/](http://dooble.sourceforge.net/) || [dooble](https://aur.archlinux.org/packages/dooble/)
+
+*   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
+
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+
+*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
+
+	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+
+*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
+
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+
 ##### Other
 
-*   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk").
+*   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk"). Uses its own layout engine.
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
 
-*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt and KHTML, part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and KHTML layout engine, part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
 	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
 
-*   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Featherweight browser written in C, notable for its slowly developing JavaScript support and fast rendering through its own custom rendering engine.
+*   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Featherweight browser written in C, notable for its slowly developing JavaScript support and fast rendering through its own layout engine.
 
 	[http://netsurf-browser.org](http://netsurf-browser.org) || [netsurf](https://www.archlinux.org/packages/?name=netsurf)
+
+*   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) layout engine, a fork of Gecko. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
+
+	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon](https://aur.archlinux.org/packages/palemoon/)
 
 ### File sharing
 
@@ -684,7 +709,7 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 *   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
 
-	[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)
+	[https://sourceforge.net/projects/sharelin/](https://sourceforge.net/projects/sharelin/) || [sharelin](https://aur.archlinux.org/packages/sharelin/)
 
 #### Video downloaders
 
@@ -782,6 +807,10 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://roundcube.net/](http://roundcube.net/) || [roundcubemail](https://www.archlinux.org/packages/?name=roundcubemail)
 
+*   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Email client included in the SeaMonkey suite.
+
+	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
+
 *   **[Sylpheed](https://en.wikipedia.org/wiki/Sylpheed "wikipedia:Sylpheed")** — Lightweight and user-friendly GTK+ email client.
 
 	[http://sylpheed.sraoss.jp/en/](http://sylpheed.sraoss.jp/en/) || [sylpheed](https://www.archlinux.org/packages/?name=sylpheed)
@@ -841,6 +870,10 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 	[http://weechat.org/](http://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 
 ###### Graphical
+
+*   **[ChatZilla](https://en.wikipedia.org/wiki/ChatZilla "wikipedia:ChatZilla")** — Clean, easy to use and highly extensible Internet Relay Chat (IRC) client, built on the Mozilla platform using [XULRunner](https://en.wikipedia.org/wiki/XULRunner "wikipedia:XULRunner").
+
+	[http://chatzilla.hacksrus.com/](http://chatzilla.hacksrus.com/) || [chatzilla](https://aur.archlinux.org/packages/chatzilla/)
 
 *   **HexChat** — Fork of XChat for Linux and Windows.
 
@@ -1098,7 +1131,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for high-quality voice communication.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 ###### Other
 
@@ -1113,6 +1146,10 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
 
 	[http://www.teamspeak.com/](http://www.teamspeak.com/) || [teamspeak3](https://www.archlinux.org/packages/?name=teamspeak3)
+
+*   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
+
+	[https://discordapp.com/](https://discordapp.com/) || [discord-canary](https://aur.archlinux.org/packages/discord-canary/)
 
 ###### Multi-protocol
 
@@ -1182,11 +1219,15 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
 
-	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
+	[https://github.com/martinrotter/rssguard](https://github.com/martinrotter/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
 
 *   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Powerful aggregator for RSS and Atom feeds, written in Java using Eclipse Rich Client Platform and SWT as a widget toolkit.
 
 	[http://boreal.rssowl.org](http://boreal.rssowl.org) || [rssowl](https://aur.archlinux.org/packages/rssowl/)
+
+*   **[SeaMonkey Mail & Newsgroups](https://en.wikipedia.org/wiki/SeaMonkey#Mail "wikipedia:SeaMonkey")** — Email client included in the SeaMonkey suite which also functions as a pretty nice news aggregator.
+
+	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Email client from Mozilla which also functions as a pretty nice news aggregator.
 
@@ -1606,7 +1647,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-*   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
+*   **[GIMP](/index.php/GIMP "GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
@@ -2108,7 +2149,7 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 ### Mobile phone managers
 
-*   **gnokii** — Tools and user space driver for use with mobile phones.
+*   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.
 
 	[http://www.gnokii.org/](http://www.gnokii.org/) || [gnokii](https://www.archlinux.org/packages/?name=gnokii)
 
@@ -2191,6 +2232,10 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 *   **QMPlay2** — QMPlay2 is a QT based video player. It can play and stream all formats supported by ffmpeg and libmodplug. It has on integrated module system, which includes a Youtube browser.
 
 	[http://qt-apps.org/content/show.php/QMPlay2?content=153339](http://qt-apps.org/content/show.php/QMPlay2?content=153339) || [qmplay2](https://aur.archlinux.org/packages/qmplay2/)
+
+*   **xt7-player-mpv** — Audio/Video player with rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, YouTube, online radios, podcasts, DVB-T and more.
+
+	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
 
 #### Subtitles
 
@@ -2348,7 +2393,7 @@ see [Podcast clients](/index.php/List_of_applications/Internet#Podcast_clients "
 
 *   **[Kodi](/index.php/Kodi "Kodi")** — Application for organizing various collections and automatically retrieving info about them (video, music, photos).
 
-	[http://kodi.tv/](http://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
+	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
 
 *   **[Tellico](https://en.wikipedia.org/wiki/Tellico "wikipedia:Tellico")** — KDE application for organizing various collections (books, video, music, coins, etc.).
 
@@ -2423,6 +2468,19 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 *   **[Core utilities](/index.php/Core_utilities "Core utilities")** — The basic file, shell and text manipulation utilities of the GNU operating system
 
 	[http://www.gnu.org/software/coreutils](http://www.gnu.org/software/coreutils) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
+
+### getty
+
+A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the generic name for a program which manages a terminal line and its connected terminal. Its purpose is to protect the system from unauthorized access. Generally, each getty process is started by [systemd](/index.php/Systemd "Systemd") and manages a single terminal line.
+
+*   **agetty** is part of [util-linux](https://www.archlinux.org/packages/?name=util-linux) and installed by default.
+*   **fgetty** AUR [fgetty](https://aur.archlinux.org/packages/fgetty/)
+*   **mingetty** AUR [mingetty](https://aur.archlinux.org/packages/mingetty/)
+*   **[qingy](/index.php/Qingy "Qingy")** AUR package: [qingy](https://aur.archlinux.org/packages/qingy/)
+*   **fbgetty** official package: [fbgetty](https://www.archlinux.org/packages/?name=fbgetty)
+*   **ngetty** AUR: [ngetty](https://aur.archlinux.org/packages/ngetty/)
+*   **rungetty** AUR: [rungetty](https://aur.archlinux.org/packages/rungetty/)
+*   **mgetty** AUR: [mgetty](https://aur.archlinux.org/packages/mgetty/)
 
 ### Integrated development environments
 
@@ -2787,6 +2845,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **Caja** — The file manager for the MATE desktop.
 
 	[https://github.com/mate-desktop/caja](https://github.com/mate-desktop/caja) || [caja](https://www.archlinux.org/packages/?name=caja)
+
+*   **Deepin File Manager** — File manager developed for [Deepin](/index.php/Deepin "Deepin").
+
+	[https://github.com/linuxdeepin/dde-file-manager](https://github.com/linuxdeepin/dde-file-manager) || [deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager)
 
 *   **Dino** — Easy to use and powerful file manager built in Qt.
 
@@ -3166,6 +3228,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/mate-desktop/mate-system-monitor](https://github.com/mate-desktop/mate-system-monitor) || [mate-system-monitor](https://www.archlinux.org/packages/?name=mate-system-monitor)
 
+*   **netdata** — A web-based real-time performance monitor
+
+	[https://github.com/firehol/netdata/wiki](https://github.com/firehol/netdata/wiki) || [netdata](https://www.archlinux.org/packages/?name=netdata)
+
 *   **Task Manager** — GTK2 process mangement application for [Xfce](/index.php/Xfce "Xfce").
 
 	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
@@ -3177,6 +3243,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **Sysstat** — A collection of resource monitoring tools: iostat, isag, mpstat, pidstat, sadf, sar.
 
 	[http://pagesperso-orange.fr/sebastien.godard/](http://pagesperso-orange.fr/sebastien.godard/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
+
+*   **xosview** — A system monitor that resembles gr_osview from SGI IRIX
+
+	[http://www.pogo.org.uk/~mark/xosview/](http://www.pogo.org.uk/~mark/xosview/) || [xosview](https://aur.archlinux.org/packages/xosview/)
 
 ### System information viewers
 
@@ -3410,6 +3480,10 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 	[http://glabels.org/](http://glabels.org/) || [glabels](https://www.archlinux.org/packages/?name=glabels)
 
+*   **[KompoZer](https://en.wikipedia.org/wiki/KompoZer "wikipedia:KompoZer")** — A Dreamweaver style WYSIWYG web editor; Nvu unofficial bug-fix release.
+
+	[http://kompozer.net/](http://kompozer.net/) || [kompozer](https://www.archlinux.org/packages/?name=kompozer)
+
 *   **[LibreOffice Writer](/index.php/LibreOffice "LibreOffice")** — Full-featured word processor included in the LibreOffice suite.
 
 	[https://www.libreoffice.org/discover/writer](https://www.libreoffice.org/discover/writer) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still)
@@ -3425,6 +3499,10 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 *   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
 
 	[http://www.scribus.net/canvas/Scribus](http://www.scribus.net/canvas/Scribus) || [scribus](https://www.archlinux.org/packages/?name=scribus)
+
+*   **[SeaMonkey Composer](https://en.wikipedia.org/wiki/SeaMonkey#Composer "wikipedia:SeaMonkey")** — Powerful yet simple HTML editor included in the SeaMonkey suite.
+
+	[http://www.seamonkey-project.org/](http://www.seamonkey-project.org/) || [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 
 *   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK+-based rich text processor (with footnote support).
 
@@ -3828,7 +3906,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Cool Reader** — E-book viewer with many supported formats such as EPUB (non-DRM), FictionBook, TXT, RTF, HTML, CHM and TCR.
 
-	[http://crengine.sourceforge.net/](http://crengine.sourceforge.net/) || [coolreader](https://aur.archlinux.org/packages/coolreader/)
+	[http://crengine.sourceforge.net/](http://crengine.sourceforge.net/) || [coolreader3-git](https://aur.archlinux.org/packages/coolreader3-git/)
 
 *   **epub** — A console EPUB reader using Python and Curses.
 
@@ -3992,7 +4070,7 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **[MComix](https://en.wikipedia.org/wiki/MComix "wikipedia:MComix")** — GTK2 image viewer specifically designed to handle comic book archives (fork of Comix). Also includes library manager.
 
-	[http://sourceforge.net/projects/mcomix/](http://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
+	[https://sourceforge.net/projects/mcomix/](https://sourceforge.net/projects/mcomix/) || [mcomix](https://www.archlinux.org/packages/?name=mcomix)
 
 *   **QComicBook** — Lightweight comic book viewer written in C++ and Qt4.
 
@@ -4123,6 +4201,10 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 *   **Freeplane** — Free and open source software application that supports thinking, sharing information and getting things done at work, in school and at home. The software can be used for mind mapping and analyzing the information contained in mind maps.
 
 	[http://freeplane.sourceforge.net](http://freeplane.sourceforge.net) || [freeplane](https://aur.archlinux.org/packages/freeplane/)
+
+*   **Labyrinth** — Lightweight mind-mapping tool with support for image import and drawing.
+
+	[https://github.com/labyrinth-team/labyrinth](https://github.com/labyrinth-team/labyrinth) || [labyrinth](https://www.archlinux.org/packages/?name=labyrinth)
 
 *   **Semantik** — A mind-mapping application for KDE.
 
@@ -4498,6 +4580,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[http://github.com/comotion/cpm](http://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)
 
+*   **Enpass** — A multiplatform password manager
+
+	[https://www.enpass.io/](https://www.enpass.io/) || [enpass-bin](https://aur.archlinux.org/packages/enpass-bin/)
+
 *   **Figaro's Password Manager 2** — GTK2 port of [Figaro's Password Manager](http://fpm.sourceforge.net/) with some new enhancements.
 
 	[http://als.regnet.cz/fpm2/](http://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)
@@ -4626,7 +4712,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **Qalculate** — Calculator and equation solver with fault-tolerant parsing, constant recognition and units.
 
-	[http://qalculate.sourceforge.net/](http://qalculate.sourceforge.net/) || [libqalculate](https://www.archlinux.org/packages/?name=libqalculate)
+	[http://qalculate.github.io/](http://qalculate.github.io/) || [libqalculate](https://www.archlinux.org/packages/?name=libqalculate)
 
 *   **SpeedCrunch** — Fast, high precision and powerful cross-platform calculator.
 
@@ -4938,6 +5024,10 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://www.stellarium.org/](http://www.stellarium.org/) || [stellarium](https://www.archlinux.org/packages/?name=stellarium)
 
+*   **Where Is M13** — Application to visualize the locations and physical properties of deep sky objects.
+
+	[http://www.thinkastronomy.com/M13/](http://www.thinkastronomy.com/M13/) || [where-is-m13](https://aur.archlinux.org/packages/where-is-m13/)
+
 *   **[XEphem](https://en.wikipedia.org/wiki/XEphem "wikipedia:XEphem")** — Motif-based ephemeris and planetarium program.
 
 	[http://www.clearskyinstitute.com/xephem/xephem.html](http://www.clearskyinstitute.com/xephem/xephem.html) || [xephem](https://aur.archlinux.org/packages/xephem/)
@@ -5218,7 +5308,7 @@ See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_
 
 *   **[Bmpanel](/index.php/Bmpanel "Bmpanel")** — Lightweight, NETWM compliant panel.
 
-	[http://code.google.com/p/bmpanel2/](http://code.google.com/p/bmpanel2/) || [bmpanel](https://aur.archlinux.org/packages/bmpanel/)
+	[http://code.google.com/p/bmpanel2/](http://code.google.com/p/bmpanel2/) || [bmpanel2](https://aur.archlinux.org/packages/bmpanel2/)
 
 *   **[Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock")** — Highly customizable dock and launcher application.
 
@@ -5339,6 +5429,10 @@ See also [Wikipedia:Comparison of desktop application launchers](https://en.wiki
 *   **j4-dmenu-desktop** — Very fast dmenu application launcher.
 
 	[https://github.com/enkore/j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop) || [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/)
+
+*   **higgins** — A desktop agnostic application launcher, file finder, calculator and more. Plugin based and freely and easily extendable via user-written plugins
+
+	[https://github.com/kokoko3k/higgins](https://github.com/kokoko3k/higgins) || [higgins-git](https://aur.archlinux.org/packages/higgins-git/)
 
 *   **Kupfer** — Convenient command and access tool for the GNOME desktop that can launch applications, open documents and access different types of objects and act on them.
 
@@ -5702,6 +5796,10 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 *   **PCSX2** — PlayStation 2 emulator. It is still being maintained and developed. It requires BIOS files.
 
 	[http://www.pcsx2.net/](http://www.pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
+
+*   **PPSSPP** — PlayStation Portable emulator.
+
+	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
 
 *   **snes-9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
 

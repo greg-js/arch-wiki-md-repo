@@ -22,7 +22,8 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   [16 Tycoon/management games](#Tycoon.2Fmanagement_games)
 *   [17 Visual novels](#Visual_novels)
 *   [18 Other](#Other)
-*   [19 See also](#See_also)
+*   [19 Comparison table](#Comparison_table)
+*   [20 See also](#See_also)
 
 ## Action and adventure
 
@@ -296,7 +297,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **[RuneScape](/index.php/RuneScape "RuneScape")** — Massive online adventure game by Jagex
 
-	[http://www.runescape.com](http://www.runescape.com) || [unix-runescape-client](https://aur.archlinux.org/packages/unix-runescape-client/)
+	[http://www.runescape.com](http://www.runescape.com) || [unix-runescape-client](https://aur.archlinux.org/packages/unix-runescape-client/) (old Java client), [runescape-launcher](https://aur.archlinux.org/packages/runescape-launcher/) (new NXT client)
 
 *   **[Ryzom](https://en.wikipedia.org/wiki/Ryzom "wikipedia:Ryzom")** — 3D Fantasy MMORPG
 
@@ -970,6 +971,53 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **Pygame** — A set of python modules for writing games in [python](https://en.wikipedia.org/wiki/python "wikipedia:python"). It is used as the basis of the ["Invent with Python"](http://inventwithpython.com/) books.
 
 	[http://www.pygame.org](http://www.pygame.org) || [python2-pygame](https://www.archlinux.org/packages/?name=python2-pygame)
+
+## Comparison table
+
+| Name | Written in | Genre | License | Package | Description |
+| **[0 A.D.](https://en.wikipedia.org/wiki/0_A.D._(video_game) "w:0 A.D. (video game)")**
+- [play0ad.com](https://play0ad.com/) | C/C++ | Strategy | <abbr title="GNU Lesser General Public License">LGPL</abbr>/<abbr title="GNU General Public License Version 2">GPLv2</abbr> | [0ad](https://www.archlinux.org/packages/?name=0ad) | 3D and historically-based real-time strategy game. |
+| **Abuse**
+- [abuse.zoy.org](http://abuse.zoy.org) | C++ | Action | <abbr title="Public Domain">PD</abbr>/<abbr title="GNU General Public License">GPL</abbr>/<abbr title="Do What the Fuck You Want To Public License">WTFPL</abbr> | [abuse](https://www.archlinux.org/packages/?name=abuse) | Side-scroller action game that pits you against ruthless alien killers. |
+| **[ADOM](https://en.wikipedia.org/wiki/ADOM "w:ADOM")**
+- [adom.de](http://adom.de) | C | Rogue-Like | Freemium | [adom](https://aur.archlinux.org/packages/adom/) | Ancient Domains Of Mystery. |
+| **[Alien Arena](https://en.wikipedia.org/wiki/CodeRED:_Alien_Arena "w:CodeRED: Alien Arena")**
+- [red.planetarena.org](http://red.planetarena.org/) | C | <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [alienarena](https://www.archlinux.org/packages/?name=alienarena) | Free, standalone FPS focused mainly on online multiplayer, but can also be played singleplayer against bots. |
+| **[Angband](https://en.wikipedia.org/wiki/Angband_(video_game) "w:Angband (video game)")**
+- [rephial.org](http://rephial.org) | C | Rogue-Like | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [angband](https://www.archlinux.org/packages/?name=angband) | Roguelike dungeon exploration game based on the writings of JRR Tolkien. |
+| **[AssaultCube](https://en.wikipedia.org/wiki/AssaultCube "w:AssaultCube")**
+- [assault.cubers.net](http://assault.cubers.net/) | C/C++ | <abbr title="First-Person Shooter">FPS</abbr> | ZLIB | [assaultcube](https://www.archlinux.org/packages/?name=assaultcube) | Free multiplayer FPS, based on the cube engine. Realistic environments, fast, arcade gameplay. Much like Counter-Strike. |
+| **[Endgame Singularity](https://en.wikipedia.org/wiki/Endgame:_Singularity "w:Endgame: Singularity")**
+- [emhsoft.com/singularity](http://www.emhsoft.com/singularity/) | Python | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [singularity](https://www.archlinux.org/packages/?name=singularity) | Turn based single player strategy/simulation about a AI hiding, growing and evolving. |
+| **[FlightGear](https://en.wikipedia.org/wiki/FlightGear "w:FlightGear")**
+- [flightgear.org](http://www.flightgear.org/) | C/C++ | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [flightgear](https://www.archlinux.org/packages/?name=flightgear) | Open-source, multi-platform flight simulator. |
+| **[Foobillard++](https://en.wikipedia.org/wiki/Foobillard%2B%2B "w:Foobillard++")**
+- [foobillardplus.sourceforge.net](http://foobillardplus.sourceforge.net/) | C | Simulation | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [foobillard++](https://www.archlinux.org/packages/?name=foobillard%2B%2B) | Successor to Foobillard, OpenGL billiard game for Linux. |
+| **[Freeciv](https://en.wikipedia.org/wiki/Freeciv "w:Freeciv")**
+- [freeciv.wikia.com](http://freeciv.wikia.com/wiki/Main_Page) | C | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freeciv](https://www.archlinux.org/packages/?name=freeciv) | Multiuser clone of the famous Microprose game of Civilization. |
+| **[Freecol](https://en.wikipedia.org/wiki/Freecol "w:Freecol")**
+- [freecol.org](http://www.freecol.org/) | Java | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freecol](https://www.archlinux.org/packages/?name=freecol) | Turn-based strategy game based on Colonization. |
+| **[OpenRA](https://en.wikipedia.org/wiki/Command_%26_Conquer:_Red_Alert#Open_source_remake "w:Command & Conquer: Red Alert")**
+- [openra.net](http://www.openra.net) | C# | Strategy | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [openra](https://www.archlinux.org/packages/?name=openra), [openra-git](https://aur.archlinux.org/packages/openra-git/) | An open-source implementation of the Command & Conquer: Red Alert engine using .NET/Mono and OpenGL. |
+| **PyChess**
+- [pychess.org](http://pychess.org) | Python | Chess | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [pychess](https://www.archlinux.org/packages/?name=pychess) | An advanced chess client for Linux following the GNOME Human Interface Guidelines. |
+| **[RuneScape](https://en.wikipedia.org/wiki/RuneScape "w:RuneScape")**
+- [runescape.com](http://www.runescape.com) | Java (legacy) | <abbr title="Massively Multiplayer Online Role-Playing Game">MMORPG</abbr> | Freemium | [unix-runescape-client](https://aur.archlinux.org/packages/unix-runescape-client/) | Massive online medieval fantasy game by Jagex. |
+| C++ (NXT) | [runescape-launcher](https://aur.archlinux.org/packages/runescape-launcher/) |
+| **[SuperTux](https://en.wikipedia.org/wiki/SuperTux "w:SuperTux")**
+- [supertux.github.io](http://supertux.github.io/) | C++ | Platform | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [supertux](https://www.archlinux.org/packages/?name=supertux)
+[supertux-git](https://aur.archlinux.org/packages/supertux-git/)
+[supertux-old](https://aur.archlinux.org/packages/supertux-old/) | Classic 2D jump'n side-scroller game similar to the Super Mario Bros games, featuring Tux.
+Milestone 1 of the game was released in 2003 and is provided by supertux-old.
+Milestone 2, the current version of SuperTux in the Arch Linux community repository, was released in December 2015. |
+| **[The Battle for Wesnoth](https://en.wikipedia.org/wiki/The_Battle_for_Wesnoth "w:The Battle for Wesnoth")**
+- [wesnoth.org](http://www.wesnoth.org/) | C/C++/Java | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [wesnoth](https://www.archlinux.org/packages/?name=wesnoth) | Free, turn-based tactical strategy game with a high fantasy theme, featuring both single-player, and online/hotseat multiplayer combat. |
+| **The Mana World**
+- [themanaworld.org](http://themanaworld.org/) | C++ | <abbr title="Massively Multiplayer Online Role-Playing Game">MMORPG</abbr> | <abbr title="GNU Affero General Public License Version 3">AGPLv3</abbr>/<abbr title="GNU General Public License Version 3">GPLv3</abbr> | [manaplus](https://www.archlinux.org/packages/?name=manaplus) | Serious effort to create an innovative free and open-source MMORPG. |
+| **[Urban Terror](/index.php/Urban_Terror "Urban Terror")**
+- [urbanterror.info](http://urbanterror.info/) | C | <abbr title="First-Person Shooter">FPS</abbr> | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [urbanterror](https://www.archlinux.org/packages/?name=urbanterror) | Modern multiplayer FPS based on the ioquake3 engine. |
+| **[Warzone 2100](/index.php/Warzone_2100 "Warzone 2100")**
+- [wz2100.net](http://wz2100.net/) | C++ | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [warzone2100](https://www.archlinux.org/packages/?name=warzone2100) | 3D realtime strategy game on a future Earth. |
 
 ## See also
 

@@ -1,10 +1,3 @@
-| **Summary**  |
-| Artykuł ten opisuje sposoby w jaki zaawansowani oraz początkujący użytkownicy Archa mogą wspomóc społeczność. Ten artykuł zawiera jedynie szczątkowe informacje o sposobach wsparcia. |
-| **Related** |
-| [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") |
-| [Help:Editing](/index.php/Help:Editing "Help:Editing") |
-| [Help:Style](/index.php/Help:Style "Help:Style") |
-
 W biologii, [mutualizm](https://en.wikipedia.org/wiki/Mutualism_(biology) jest zjawiskiem występującym pomiędzy dwoma organizmami, które czerpią z tego związku korzyści. Ta zasada obowiązuje także w przypadku społeczności Archa, która pragnie wspomóc swoją ulubioną dystrybucję Linuksa. Udzielona pomoc nie ogranicza się jedynie do użytkowników Archa, ale do wszystkich użytkowników [Wolnego i Otwartego Oprogramowania](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software").
 
 ## Contents

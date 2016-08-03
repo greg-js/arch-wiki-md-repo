@@ -1,9 +1,3 @@
-| **Summary**  |
-| Artikel ini akan menjelaskan bagaimana Archers (pemula dan pengguna yang sudah berpengalaman) dapat berkontribusi kepada komunitas Arch. Sebagai catatan,panduan ini belumlah lengkap. |
-| **Related** |
-| [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") |
-| [Help:Editing](/index.php/Help:Editing "Help:Editing") |
-
 Dalam ilmu Biologi,simbiosis [mutualisme](https://en.wikipedia.org/wiki/Mutualism_(biology) adalah hubungan antar organisme yang saling memberikan manfaat/keuntungan.Prinsip ini juga dapat diaplikasikan untuk memotivasi dan mengajak anggota komunitas Archlinux untuk ikut serta dan berkontribusi untuk distro GNU/Linux favoritnya. Keikutsertaan ini tidak hanya memberikan manfaat untuk anggota komunitas dan kepada Archer lainnya,tetapi juga kepada seluruh pengguna [free and open source software](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software")
 
 ## Contents

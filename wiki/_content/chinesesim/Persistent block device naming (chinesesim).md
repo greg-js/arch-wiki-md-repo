@@ -12,7 +12,7 @@
 *   [1 持久化命名的方法](#.E6.8C.81.E4.B9.85.E5.8C.96.E5.91.BD.E5.90.8D.E7.9A.84.E6.96.B9.E6.B3.95)
     *   [1.1 by-label](#by-label)
     *   [1.2 by-uuid](#by-uuid)
-    *   [1.3 by-id and by-path](#by-id_and_by-path)
+    *   [1.3 by-id 和 by-path](#by-id_.E5.92.8C_by-path)
     *   [1.4 by-partlabel](#by-partlabel)
     *   [1.5 by-partuuid](#by-partuuid)
     *   [1.6 使用 Udev 静态设备名](#.E4.BD.BF.E7.94.A8_Udev_.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)
@@ -22,7 +22,7 @@
 
 ## 持久化命名的方法
 
-有四种持久化命名方案：[by-label](#by-label)、[by-uuid](#by-uuid)、[by-id 和 by-path](#by-id_and_by-path)。对于那些使用[GUID 分区表(GPT)](/index.php/GUID_Partition_Table "GUID Partition Table")的磁盘，还有额外的两种方案，[by-partlabel](#by-partlabel) 和 [by-partuuid](#by-partuuid)。你也可以[使用 Udev 静态设备名](#.E4.BD.BF.E7.94.A8_Udev_.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)方案。
+有四种持久化命名方案：[by-label](#by-label)、[by-uuid](#by-uuid)、[by-id 和 by-path](#by-id_.E5.92.8C_by-path)。对于那些使用[GUID 分区表(GPT)](/index.php/GUID_Partition_Table "GUID Partition Table")的磁盘，还有额外的两种方案，[by-partlabel](#by-partlabel) 和 [by-partuuid](#by-partuuid)。你也可以[使用 Udev 静态设备名](#.E4.BD.BF.E7.94.A8_Udev_.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)方案。
 
 下面讲解各种命名方案及其用法。
 
@@ -132,7 +132,7 @@ The disadvantage is that UUIDs make long code lines hard to read and break forma
 
 **Tip:** In case your swap partition does not have an UUID assigned, you will need to reset the swap partition using [mkswap](/index.php/Swap#Swap_partition "Swap") utility.
 
-### by-id and by-path
+### by-id 和 by-path
 
 `by-id` creates a unique name depending on the hardware serial number, `by-path` depending on the shortest physical path (according to sysfs). Both contain strings to indicate which subsystem they belong to (i.e. `-ide-` for `by-path`, and `-ata-` for `by-id`), so they are linked to the hardware controlling the device. This implies different levels of persistence: the `by-path` will already change when the device is plugged into a different port of the controller, the `by-id` will change when the device is plugged into a port of a hardware controller subject to another subsystem. [[1]](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Online_Storage_Reconfiguration_Guide/persistent_naming.html) Thus, both are not suitable to achieve persistent naming tolerant to hardware changes.
 

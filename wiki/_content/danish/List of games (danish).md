@@ -1,10 +1,3 @@
-| **Summary**  |
-| Provides a list of popular GNU/Linux games, categorized by genre. |
-| **Related** |
-| [Gaming](/index.php/Gaming "Gaming") |
-| [Common Applications](/index.php/Common_Applications "Common Applications") |
-| [Lightweight Applications](/index.php/Lightweight_Applications "Lightweight Applications") |
-
 Denne sider viser kun populære spil for GNU/Linux. For at lære mere omkring kørsel af spil og relateret system konfigurations tips, se [Gaming](/index.php/Gaming "Gaming"). Se [Netbook Games](/index.php/Netbook_Games "Netbook Games") for spil lavet til netbooks.
 
 ## Contents

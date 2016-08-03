@@ -1,9 +1,3 @@
-| **Summary**  |
-| Installatie en configuratie van TGT als iSCSI target |
-| **Related** |
-| [ISCSI_Target](/index.php/ISCSI_Target "ISCSI Target") |
-| [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot") |
-
 Het [TGT SCSI framework](http://stgt.sourceforge.net) kan gebruikt worden voor meerdere storage protocollen. Dit document beschrijft het gebruik van TGT als iSCSI target.
 
 ## Contents

@@ -1,9 +1,3 @@
-| **Summary**  |
-| Installatie Arch Linux in VMware: open-vm-tools en configuratie Xorg |
-| **Related** |
-| [VMware](/index.php/VMware "VMware") |
-| [Installing_VMWare_vCLI_(Nederlands)](/index.php/Installing_VMWare_vCLI_(Nederlands) "Installing VMWare vCLI (Nederlands)") |
-
 Dit artikel behandelt de installatie van Arch Linux in virtuele machine binnen een VMware omgeving zoals bijvoorbeeld VMware ESX, VMware Workstation/Fusion en VMware Player.
 
 ## Contents

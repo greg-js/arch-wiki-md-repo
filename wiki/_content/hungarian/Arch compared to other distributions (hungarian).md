@@ -1,11 +1,3 @@
-| **Summary**  |
-| Ez a cikk röviden összefoglalja az Arch Linux és más GNU/Linux disztribúciók közti hasonlóságokat és különbségeket. |
-| **Kapcsolódó cikkek** |
-| [Arch Linux](/index.php/Arch_Linux "Arch Linux") |
-| [The Arch Way](/index.php/The_Arch_Way "The Arch Way") |
-| **Külső linkek** |
-| [DistroWatch.com](http://distrowatch.com/) |
-
 Ez az oldal megpróbálja felvázolni az Arch Linux és más népszerű GNU/Linux disztribúciók, illetve <tt>UNIX</tt>-szerű operációs rendszerek közti hasonlóságokat és különbségeket. A következő leírások csak rövid összefoglalók, melyek célja, hogy segítsen az olvasónak eldönteni, hogy az Arch Linux megfelel-e igényeinek. Még ha ezek az összefoglaló törekednek is a minél jobb leírásra, a döntést a rendszer tényleges kipróbálása után érdemes meghozni.
 
 ## Contents
@@ -30,6 +22,7 @@ Ez az oldal megpróbálja felvázolni az Arch Linux és más népszerű GNU/Linu
 *   [5 Egyéb](#Egy.C3.A9b)
     *   [5.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
     *   [5.2 Frugalware](#Frugalware)
+*   [6 Külső linkek](#K.C3.BCls.C5.91_linkek)
 
 ## Forráskód alapú disztribúciók
 
@@ -118,3 +111,7 @@ A Debian egy sokkal nagyobb projekt, sokkal nagyobb közösséggel. Különböz�
 ### Frugalware
 
 Az Arch szöveges alapú, parancssoros megközelítést használ. A Frugalware átvette az Arch csomagkezelőjét, a [pacman](/index.php/Pacman "Pacman")-t, de bzip tömörítésű tar csomagokat használ. Az Arch xz tömörített (lzma) tar fájlokat használ a telepítés egyszerűsége érdekében. A Frugalware alapból nem támogatja a JFS fájlrendszert. A Frugalware már nem a Slackware-n alapuló disztribúció, mostanra önállóvá vált, és alapvetően i686 architektúrára készül. Az Arch alapvetően más megközelítést használ, hisz csak egy alaprendszer települ, és a pacman segítségével az kerül bővítésre a felhasználó igényeinek és döntéseinek megfelelően. A Frugalware telepítője DVD méretű, már előre kiválasztott grafikus környezettel (DE - Desktop Environment) és programokkal. A Frugalware-nek ütemezett kiadásai vannak. Ismét csak az mondható el, hogy az Arch sokkal inkább koncentrál az egyszerűségre, minimalizmusra, kódhelyességre és naprakész csomagokra, ahogy ezt a rolling-release megköveteli.
+
+## Külső linkek
+
+*   [DistroWatch.com](http://distrowatch.com/)

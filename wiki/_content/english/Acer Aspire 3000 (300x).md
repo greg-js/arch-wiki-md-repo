@@ -61,7 +61,7 @@ The `sisfb` module is no longer available as of [linux](https://www.archlinux.or
 
 ### /boot/grub/menu.lst
 
-If you want have nicer screen resolutin in [framebuffer](/index.php/Framebuffer "Framebuffer") (textmode), then you have to add this configuration in [/boot/grub/menu.lst](/index.php//boot/grub/menu.lst "/boot/grub/menu.lst").
+If you want have nicer screen resolutin in [framebuffer](/index.php/Framebuffer "Framebuffer") (textmode), then you have to add this configuration in [/boot/grub/menu.lst](/index.php/GRUB_Legacy "GRUB Legacy").
 
 #### sisfb
 

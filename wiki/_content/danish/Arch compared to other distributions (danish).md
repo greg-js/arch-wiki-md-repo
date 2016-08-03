@@ -1,11 +1,3 @@
-| **Summary**  |
-| En kort sammenligning mellem Arch Linux og andre distributioner og BSD'er. |
-| **Relaterede artikler** |
-| [Arch Linux (Dansk)](/index.php/Arch_Linux_(Dansk) "Arch Linux (Dansk)") |
-| [The Arch Way (Dansk)](/index.php/The_Arch_Way_(Dansk) "The Arch Way (Dansk)") |
-| **Eksterne links** |
-| [DistroWatch.com](http://distrowatch.com/) |
-
 Denne side forsøger at drage sammenligninger mellem Arch Linux og andre populære GNU/Linux-distributioner og <tt>UNIX</tt>-lignende operativsystemer. De følgende opsummeringer er korte beskrivelser som kan hjælpe med at beslutte om Arch Linux vil dække dine behov. Selvom gennemgange og beskrivelser kan være nyttige, er førstehåndsoplevelser uanfægteligt den bedste måde til at sammenligne distributioner.
 
 ## Contents
@@ -30,6 +22,7 @@ Denne side forsøger at drage sammenligninger mellem Arch Linux og andre populæ
     *   [5.1 FreeBSD](#FreeBSD)
     *   [5.2 NetBSD](#NetBSD)
     *   [5.3 OpenBSD](#OpenBSD)
+*   [6 Eksterne links](#Eksterne_links)
 
 ## Kildebaserede
 
@@ -178,3 +171,7 @@ NetBSD er et frit, sikkert og meget portabelt <tt>UNIX</tt>-lignende *open-sourc
 OpenBSD projektet producerer et frit, multiplatforms 4.4BSD-baseret <tt>UNIX</tt>-lignende operativsystem. Indsatsen fokuserer på portabilitet, standardisering, kode-korrekthed, proaktiv sikkerhed og integreret kryptografi. I modsætning fokuserer Arch mere på enkelthed, elegance, minimalisme og spritnyt software. OpenBSD er selvbeskrevet som "måske nr. 1 sikkerheds OS."
 
 I lighed med Arch tilbyder OpenBSD en lille, elegant grundinstallation og benytter et *ports*-system og pakkesystemer som tillader let installation og administration af programmer som ikke er del af grundoperativsystemet. I modsætning til et GNU/Linux system som Arch, men tilfælles med andre BSD-baserede operativsystemer, er OpenBSD's kerne og brugerprogrammer, såsom skal og almindelige værktøjer (som ls, cp, cat og ps,) udviklet sammen i en enkelt kildekodesamling.
+
+## Eksterne links
+
+*   [DistroWatch.com](http://distrowatch.com/)

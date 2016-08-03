@@ -34,10 +34,9 @@
 
 Linux-ck roughly follows the release cycle of the official ARCH kernel. The following are requirements for its release:
 
-*   Upstream code
-*   CK's Patchset
-*   BFQ Patchset
-*   ARCH config/config.x86_64 sets for major version jumps only
+*   Corresponding ARCH kernel base must be in [core] or else the corresponding modules such as nvidia, nvidia-304xx, nvidia-340xx, and vbox will not be available to users and will cause version conflicts.
+*   CK's patchset.
+*   BFQ patchset (until it gets mainlined).
 
 ### Package defaults
 

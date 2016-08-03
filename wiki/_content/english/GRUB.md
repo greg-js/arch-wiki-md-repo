@@ -732,7 +732,7 @@ The GRUB's command shell environment can be used to boot operating systems. A co
 
 *Chainloading* means to load another boot-loader from the current one, ie, chain-loading.
 
-The other bootloader may be embedded at the starting of the disk(MBR) or at the starting of a partition.
+The other bootloader may be embedded at the starting of the disk(MBR) or at the starting of a partition or as an EFI file in the ESP in the case of UEFI.
 
 #### Chainloading a partition
 

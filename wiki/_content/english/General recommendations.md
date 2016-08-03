@@ -168,7 +168,7 @@ A full-fledged desktop environment provides a complete and consistent graphical 
 
 ### Display manager
 
-Most desktop environment include a [display manager](/index.php/Display_manager "Display manager") for automatically starting the graphical environment and managing user logins. Users without a desktop environment can install one separately. Alternatively you may [start X at login](/index.php/Start_X_at_login "Start X at login") as a simple alternative to a display manager.
+Most desktop environment include a [display manager](/index.php/Display_manager "Display manager") for automatically starting the graphical environment and managing user logins. Users without a desktop environment can install one separately. Alternatively you may [start X at login](/index.php/Xinit#Autostart_X_at_login "Xinit") as a simple alternative to a display manager.
 
 ## Power management
 

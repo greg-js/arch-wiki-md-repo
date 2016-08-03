@@ -12,12 +12,13 @@
 
 There are two Go compilers nowadays, and they can be [installed](/index.php/Install "Install") from [official repositories](/index.php/Official_repositories "Official repositories"):
 
-*   **gc**: common name for official set of compilers 8g(x86), 6g(amd64), 5g(arm), that can be [installed](/index.php/Install "Install") with [go](https://www.archlinux.org/packages/?name=go)
+*   **go**: interface to the set of compilation tools that can be [installed](/index.php/Install "Install") with [go](https://www.archlinux.org/packages/?name=go)
     *   fast compilation
+    *   official tools (go get, go doc, etc.)
+    *   cross-compilation
 *   **gccgo**: frontend for *gcc*, part of its compiler collection, can be [installed](/index.php/Install "Install") with [gcc-go](https://www.archlinux.org/packages/?name=gcc-go)
     *   goroutines becomes full flow
-    *   small size of the binary
-    *   better optimization
+    *   small size of the binary (dynamic linking)
 
 ### Test your installation
 

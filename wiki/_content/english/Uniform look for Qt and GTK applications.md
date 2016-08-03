@@ -3,12 +3,12 @@
 ## Contents
 
 *   [1 Overview](#Overview)
-*   [2 Theme engines](#Theme_engines)
-    *   [2.1 QGtkStyle](#QGtkStyle)
-    *   [2.2 QGnomePlatform](#QGnomePlatform)
-*   [3 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B)
-    *   [3.1 Breeze](#Breeze)
-    *   [3.2 Adwaita](#Adwaita)
+*   [2 Styles for both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B)
+    *   [2.1 Breeze](#Breeze)
+    *   [2.2 Adwaita](#Adwaita)
+*   [3 Theme engines](#Theme_engines)
+    *   [3.1 QGtkStyle](#QGtkStyle)
+    *   [3.2 QGnomePlatform](#QGnomePlatform)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 KDE file dialogs for GTK+ applications](#KDE_file_dialogs_for_GTK.2B_applications)
     *   [4.2 Using a GTK+ icon theme in Qt apps](#Using_a_GTK.2B_icon_theme_in_Qt_apps)
@@ -28,8 +28,40 @@ To get a similar look between the toolkits, you will most likely have to modify 
 
 You can choose various approaches:
 
-*   Use a special [theme engine](#Theme_engines), which intermediates the modification of the other graphical toolkit to match your main toolkit.
 *   Modify [GTK+ and Qt styles](#Styles_for_both_Qt_and_GTK.2B) separately with the tools listed below for each toolkit and aim for choosing similarly looking themes (style, colors, icons, cursors, fonts).
+*   Use a special [theme engine](#Theme_engines), which intermediates the modification of the other graphical toolkit to match your main toolkit.
+
+## Styles for both Qt and GTK+
+
+There are widget style sets available for the purpose of integration, where builds are written and provided for both Qt and GTK+, all major versions included. With these, you can have one look for all applications regardless of the toolkit they had been written with.
+
+**Tip:** You may want to apply user defined styles to root applications, see [GTK#Theme not applied to root applications](/index.php/GTK#Theme_not_applied_to_root_applications "GTK") and [Qt#Theme not applied to root applications](/index.php/Qt#Theme_not_applied_to_root_applications "Qt").
+
+**Note:** Since version 3.16, GTK+ 3 [does not support](https://bbs.archlinux.org/viewtopic.php?pid=1518404#p1518404) non-CSS themes, hence previous solutions such as Oxygen-Gtk are [no longer viable](https://bugs.kde.org/show_bug.cgi?id=340288) options.
+
+### Breeze
+
+Breeze is the default Qt style of KDE Plasma. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, the [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) package for Qt4, and the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package for GTK+ 2 and GTK+ 3.
+
+Once installed, you can use one of the many [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") to change the GTK+ theme.
+
+### Adwaita
+
+Adwaita is the default GNOME theme. The GTK+ 3 version is included in the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package, while the GTK+ 2 version is in [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimics the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) and [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) packages for the Qt 4 and 5 versions, respectively.
+
+To set the Qt style as default:
+
+*   For Qt4, it can be enabled with *Qt Configuration* (`qtconfig-qt4`), choose *adwaita* under *Appearance > GUI Style*. Alternatively, edit the `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific) file:
+
+ `~/.config/Trolltech.conf` 
+```
+...
+[Qt]
+style=adwaita
+...
+```
+
+*   For Qt 5, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE=adwaita`.
 
 ## Theme engines
 
@@ -64,38 +96,6 @@ For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2
 This Qt 5 platform theme applies the appearance settings of GNOME for Qt applications. It can be installed with the [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/) package. It does not provide a Qt style itself, instead it requires a [style that support both Qt and GTK+](#Styles_for_both_Qt_and_GTK.2B).
 
 This platform theme is enabled automatically in GNOME since version 3.20\. For other systems, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform`.
-
-## Styles for both Qt and GTK+
-
-There are widget style sets available for the purpose of integration, where builds are written and provided for both Qt and GTK+, all major versions included. With these, you can have one look for all applications regardless of the toolkit they had been written with.
-
-**Tip:** You may want to apply user defined styles to root applications, see [GTK#Theme not applied to root applications](/index.php/GTK#Theme_not_applied_to_root_applications "GTK") and [Qt#Theme not applied to root applications](/index.php/Qt#Theme_not_applied_to_root_applications "Qt").
-
-**Note:** Since version 3.16, GTK+ 3 [does not support](https://bbs.archlinux.org/viewtopic.php?pid=1518404#p1518404) non-CSS themes, hence previous solutions such as Oxygen-Gtk are [no longer viable](https://bugs.kde.org/show_bug.cgi?id=340288) options.
-
-### Breeze
-
-Breeze is the default Qt style of KDE Plasma. It can be installed with the [breeze](https://www.archlinux.org/packages/?name=breeze) package for Qt5, the [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) package for Qt4, and the [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) package for GTK+ 2 and GTK+ 3.
-
-Once installed, you can use one of the many [GTK+ configuration tools](/index.php/GTK%2B#Configuration_tools "GTK+") to change the GTK+ theme.
-
-### Adwaita
-
-Adwaita is the default GNOME theme. The GTK+ 3 version is included in the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package, while the GTK+ 2 version is in [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). [adwaita-qt](https://github.com/MartinBriza/adwaita-qt) is a Qt port of the Adwaita theme. Unlike [#QGtkStyle](#QGtkStyle), which mimics the GTK+ 2 theme, it provides a native Qt style made to look like the GTK+ 3 Adwaita. It can be [installed](/index.php/Install "Install") with the [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/) and [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/) packages for the Qt 4 and 5 versions, respectively.
-
-To set the Qt style as default:
-
-*   For Qt4, it can be enabled with *Qt Configuration* (`qtconfig-qt4`), choose *adwaita* under *Appearance > GUI Style*. Alternatively, edit the `/etc/xdg/Trolltech.conf` (system-wide) or `~/.config/Trolltech.conf` (user-specific) file:
-
- `~/.config/Trolltech.conf` 
-```
-...
-[Qt]
-style=adwaita
-...
-```
-
-*   For Qt 5, it can be enabled by setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE=adwaita`.
 
 ## Tips and tricks
 

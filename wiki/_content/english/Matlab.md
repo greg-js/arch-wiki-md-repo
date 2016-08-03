@@ -71,7 +71,6 @@ Comment=Start MATLAB - The Language of Technical Computing
 Exec=matlab -desktop -nosplash
 Categories=Development;
 MimeType=text/x-matlab;
-StartupWMClass=sun-awt-X11-XFramePeer
 
 ```
 

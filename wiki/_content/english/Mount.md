@@ -1,4 +1,4 @@
-*mount* is an application used to access file systems, partition tables, and shared folders. It can mount file systems supported by the Linux kernel, but can be extended with other drivers or applications, such as [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) for mounting [NTFS](/index.php/NTFS "NTFS") filesystems.
+[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) is an application used to access file systems, partition tables, and shared folders. It can mount file systems supported by the Linux kernel, but can be extended with other drivers or applications, such as [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) for mounting [NTFS](/index.php/NTFS "NTFS") filesystems.
 
 ## Contents
 
@@ -25,7 +25,7 @@ You can read about supported file systems by the mount command in the manual: `m
 
 ## Mounting a file system
 
-The file [/etc/fstab](/index.php//etc/fstab "/etc/fstab") (see fstab(5)), may contain lines describing what devices are usually mounted where, using which options. A filesystem specified in `/etc/fstab` will be mounted at boot time, with some exceptions. For example, any device whose line contains the `noauto` option will not be mounted. This is useful for things like partitions for other OSes. External devices that are to be mounted when present, but ignored if absent, may require the `nofail` option. See [external devices](/index.php/Fstab#External_devices "Fstab") for more information.
+The [fstab](/index.php/Fstab "Fstab") file (see [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html)), may contain lines describing what devices are usually mounted where, using which options. A filesystem specified in `/etc/fstab` will be mounted at boot time, with some exceptions. For example, any device whose line contains the `noauto` option will not be mounted. This is useful for things like partitions for other OSes. External devices that are to be mounted when present, but ignored if absent, may require the `nofail` option. See [external devices](/index.php/Fstab#External_devices "Fstab") for more information.
 
 When mounting a filesystem mentioned in fstab or mtab, it is sufficient to give only the device, or only the mount point.
 
@@ -48,8 +48,6 @@ If the mount point does not exist, it may be necessary to create it first. To mo
 # mount /dev/sdXY /mnt/mydir1
 
 ```
-
-See [/etc/fstab](/index.php//etc/fstab "/etc/fstab"), `man fstab` and `man mount` for more information.
 
 ## Listing mounted file systems
 

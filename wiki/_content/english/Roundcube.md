@@ -16,7 +16,9 @@
     *   [4.1 Setting Roundcube up for use with an IMAP server that only allows TLS authentication](#Setting_Roundcube_up_for_use_with_an_IMAP_server_that_only_allows_TLS_authentication)
     *   [4.2 PDF and OpenDocument file preview](#PDF_and_OpenDocument_file_preview)
     *   [4.3 Synchronize address book with CardDav contacts](#Synchronize_address_book_with_CardDav_contacts)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 SMTP Error: Authentication failure](#SMTP_Error:_Authentication_failure)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -253,6 +255,18 @@ $config['plugins'] = array(
 ```
 
 Further usage instructions can be found [here](https://github.com/blind-coder/rcmcarddav).
+
+## Troubleshooting
+
+### SMTP Error: Authentication failure
+
+You may first try to disable(comment) the following settings in *config.inc.php* as shown:
+
+```
+//$config['smtp_user'] = '%u';
+//$config['smtp_pass'] = '%p';
+
+```
 
 ## See also
 

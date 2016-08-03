@@ -1,8 +1,3 @@
-| **Summary**  |
-| Pacman er Arch Linux' pakkehåndtering. Pakkehåndtering benyttes til at installere, opdatere og fjerne software. Denne artikel dækker grundlæggende brug og fejlsøgning. |
-| **Den danske forside her på wiki** |
-| [Main Page (Dansk)](/index.php/Main_Page_(Dansk) "Main Page (Dansk)") |
-
 Programmet til pakkehåndtering - **Pacman** - er et af de store lyspunkter i Arch Linux. Det kombinerer et simpelt binært pakkeformat med et letanvendeligt pakkebygningssystem (se evt. [makepkg (Dansk)](/index.php?title=Makepkg_(Dansk)&action=edit&redlink=1 "Makepkg (Dansk) (page does not exist)") og [ABS (Dansk)](/index.php/ABS_(Dansk) "ABS (Dansk)")). **Pacman** muliggør en nem håndtering af programpakker, hvadenten de kommer fra de officielle Arch Linux softwarekilder, eller de kommer fra brugernes selvbyggede pakker.
 
 Pacman kan holde et system opdateret ved at synkronisere dets pakkeliste med hovedserveren. Denne server-/klient-model tillader dig også at hente og installere pakker - komplet med alle afhængigheder - med en enkelt kommando.

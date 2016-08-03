@@ -1,11 +1,4 @@
-| **Summary**  |
-| Biedt een overzicht van het Arch User Repository. |
-| **Links** |
-| [AUR Web Interface](https://aur.archlinux.org) |
-| [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general) |
-| **Richtlijnen** |
-| [AUR User Guidelines](/index.php/AUR_User_Guidelines "AUR User Guidelines") |
-| [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") |
+Biedt een overzicht van het Arch User Repository.
 
 ## Contents
 
@@ -56,3 +49,5 @@ Vervolgens werden de Trusted User Repositories geboren. Bepaalde mensen in de ge
 ## Zie ook
 
 *   [AUR helpers](/index.php/AUR_helpers "AUR helpers") kunnen je helpen met het zoeken naar, downloaden en installeren van pakketten van AUR.
+*   [AUR Web Interface](https://aur.archlinux.org)
+*   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)

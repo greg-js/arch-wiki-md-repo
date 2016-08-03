@@ -41,6 +41,13 @@ If you intend to "print" into a PDF document, also install the [cups-pdf](https:
 
 Before CUPS can attempt to use a printer, it must be able to detect the printer. Additional steps for printer detection are listed below for various connection interfaces.
 
+**Note:** CUPS helper programs are run using the `lp` group and `daemon` user. This allows the helper programs to access printer devices **and** read config files in `/etc/cups/`, which all belong to the `lp` group. This default may conflict with non-printer parallel port device access:
+
+*   Adding extra users to the `lp` group will allow those users to read CUPS files, and
+*   CUPS helpers may gain access to any non-printer parallel port devices.
+
+If this is a concern, consider using an [Udev](/index.php/Udev "Udev") rule to assign a different group for any non-printer parallel port device ([FS#50009](https://bugs.archlinux.org/task/50009)). The group and user that CUPS uses can be changed, but the permissions of some files may need to be manually fixed. See [cups-files.conf(5)](http://man7.org/linux/man-pages/man5/cups-files.conf.5.html) and `/etc/cups/cups-files.conf` for more information on CUPS groups and users.
+
 ### USB
 
 To see if your USB printer is detected:
@@ -69,8 +76,6 @@ If you are using a USB to parallel port adapter, add the printer using a differe
 DeviceID = parallel:/dev/usb/lp0
 
 ```
-
-**Warning:** Helper programs are run using the `lp` group and `daemon` user. This allows the helper programs to access parallel port devices **and** read config files in `/etc/cups/`, which all belong to the `lp` group. Adding extra users to the `lp` group to allow them to access parallel port devices may expose sensitive information in those files. Consider using an [Udev](/index.php/Udev "Udev") rule instead. See [cups-files.conf(5)](http://man7.org/linux/man-pages/man5/cups-files.conf.5.html#) and `/etc/cups/cups-files.conf` for more information on CUPS groups and users.
 
 ### Local Network
 

@@ -1,14 +1,3 @@
-| **Резиме**  |
-| The Arch User Repository је колекција PKGBUILD-ова који су поднели корисници и који су додатак софтверу који је доступан из официјалних репозиторијума. Овај чланак описује како изградити *unsupported* софтверске пакете из AUR-а. |
-| **Преглед** |
-| Packages in Arch Linux are built using [makepkg](/index.php/Makepkg "Makepkg") and a custom build script for each package (known as a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")). Once packaged, software can be installed and managed with [pacman](/index.php/Pacman "Pacman"). PKGBUILDs for software in the [official repositories](/index.php/Official_repositories "Official repositories") are available from the [ABS](/index.php/ABS "ABS") tree; thousands more are available from the (unsupported) [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). |
-| **Слично** |
-| [AUR Helpers](/index.php/AUR_Helpers "AUR Helpers") |
-| [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") |
-| **Ресурси** |
-| [AUR Web Interface](https://aur.archlinux.org) |
-| [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general) |
-
 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) је репозиторијум који води заједница и намењен је корисницима Arch линукса. Садржи описе пакета ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) који дозвољавају компајлирање пакета из извора коришћењем [makepkg](/index.php/Makepkg "Makepkg") и инсталирање уз помоћ [pacman](/index.php/Pacman "Pacman"). AUR је креиран да би се организовали и делили нови пакети из заједнице и да би се омогућило да се популарни пакети брже додају у [[community]](#.5Bcommunity.5D) репозиторијум. Овај документ објашњава како корисници могу да приступе и искористе AUR.
 
 Добар део нових пакета који улазе у официјалне репозиторијуме потичу из AUR-а. У AUR-у, корисници могу да допринесу својим пакетима (PKGBUILD и слични фајлови). AUR заједница има могућност гласања за и против пакета у AUR-у. Ако пакет постане довољно популаран -- под условом да има компатибилну лиценцу и добру технику паковања -- он може да уђе у [community] репозиторијум (директно доступан преко `pacman` или `abs`).
@@ -42,6 +31,7 @@
     *   [8.10 Како могу да убрзам процес изградње?](#.D0.9A.D0.B0.D0.BA.D0.BE_.D0.BC.D0.BE.D0.B3.D1.83_.D0.B4.D0.B0_.D1.83.D0.B1.D1.80.D0.B7.D0.B0.D0.BC_.D0.BF.D1.80.D0.BE.D1.86.D0.B5.D1.81_.D0.B8.D0.B7.D0.B3.D1.80.D0.B0.D0.B4.D1.9A.D0.B5.3F)
     *   [8.11 Како да приступим неподржаним пакетима?](#.D0.9A.D0.B0.D0.BA.D0.BE_.D0.B4.D0.B0_.D0.BF.D1.80.D0.B8.D1.81.D1.82.D1.83.D0.BF.D0.B8.D0.BC_.D0.BD.D0.B5.D0.BF.D0.BE.D0.B4.D1.80.D0.B6.D0.B0.D0.BD.D0.B8.D0.BC_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.B8.D0.BC.D0.B0.3F)
     *   [8.12 Како да пошаљем пакет на AUR без коришћења веб интерфејса?](#.D0.9A.D0.B0.D0.BA.D0.BE_.D0.B4.D0.B0_.D0.BF.D0.BE.D1.88.D0.B0.D1.99.D0.B5.D0.BC_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82_.D0.BD.D0.B0_AUR_.D0.B1.D0.B5.D0.B7_.D0.BA.D0.BE.D1.80.D0.B8.D1.88.D1.9B.D0.B5.D1.9A.D0.B0_.D0.B2.D0.B5.D0.B1_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D1.98.D1.81.D0.B0.3F)
+*   [9 Ресурси](#.D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81.D0.B8)
 
 ## Увод
 
@@ -307,3 +297,8 @@ A [TU (Trusted User)](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User G
 ### Како да пошаљем пакет на AUR без коришћења веб интерфејса?
 
 Можете користити [aurploader](https://aur.archlinux.org/packages.php?ID=23393) или [burp](https://www.archlinux.org/packages/?name=burp) -- оба из интерфејса командне линије.
+
+## Ресурси
+
+*   [AUR Web Interface](https://aur.archlinux.org)
+*   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)

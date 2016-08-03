@@ -173,7 +173,7 @@ See here for more information: [https://github.com/SirCmpwn/sway/issues/521](htt
 You can still apply the patch manually though:
 
 ```
-$ wget 'https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch'
+$ wget '[https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch'](https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch')
 # patch -p0 /usr/bin/i3-dmenu-desktop < 2265.patch
 
 ```

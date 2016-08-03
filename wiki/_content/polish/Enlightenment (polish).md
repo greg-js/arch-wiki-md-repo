@@ -1,11 +1,3 @@
-| **Summary**  |
-| Projekt Enlightenment dostarcza użytecznych bibliotek, środowiska graficznego oraz innych aplikacji, w tym narzędzi developerskich. Artykuł ten zawiera informacje na temat instalacji, konfiguracji oraz problemów jakie możemy napotkać podczas pracy ze środowiskiem. |
-| E17 uses the [Elementary](/index.php?title=Elementary&action=edit&redlink=1 "Elementary (page does not exist)") toolkit. |
-| **Overview** |
-| The [Xorg](/index.php/Xorg "Xorg") project provides an open source implementation of the X Window System – the foundation for a graphical user interface. [Desktop environments](/index.php/Desktop_environments "Desktop environments") such as [Enlightenment](/index.php/Enlightenment "Enlightenment"), [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), and [Xfce](/index.php/Xfce "Xfce") provide a complete graphical environment. Various [window managers](/index.php/Window_managers "Window managers") offer alternative and novel environments, and may be used *standalone* to conserve system resources. [Display managers](/index.php/Display_manager "Display manager") provide a graphical login prompt. |
-| **Related** |
-| [Enlightenment](/index.php/Enlightenment "Enlightenment") |
-
 From the [Enlightenment wiki](http://trac.enlightenment.org/e/wiki/Enlightenment):
 
 	*Enlightenment (ang. oświecenie, nazywany też często e) - menedżer okien dla środowiska X Window System, który może być używany samodzielnie lub wraz ze środowiskami graficznymi takimi jak GNOME (swego czasu był to domyślny menedżer okien tego środowiska) czy KDE. Jego głównym autorem jest programista i grafik Carsten Haitzler (Rasterman). Wydany na licencji BSD.*

@@ -1,10 +1,3 @@
-| **Summary**  |
-| GRUB2 adalah generasi terbaru dari grub. |
-| **Related** |
-| [Burg](/index.php/Burg "Burg") - Burg adalah boot loader baru yang berdasar atas GRUB2\. Yang menggunakan format object dimana hal ini membuat BURG dapat di gunakan di berbagai Operating System termasuk Linux/Windows/OSX/Solaris/FreeBSD, dll. Juga mempunyai tampilan untuk di konfigurasi yang unik baik melalui text mode atau GUI mode. |
-| **Resources** |
-| [GNU GRUB -- GNU Project](http://www.gnu.org/software/grub/) |
-
 [GRUB2](http://www.gnu.org/software/grub/) generasi berikutnya dari GRUB. GRUB2 adalah derivasi dari [PUPA](http://www.nongnu.org/pupa/) yang merupakan proyek pengembangand dari GRUB. GRUB 2 telah di tulis ulang untuk membersihkan segalanya dan memberikan modularitas dan portabilitas. [[1]](http://www.gnu.org/software/grub/grub-faq.en.html#q1).
 
 Secara singkat, *bootloader* adalah program software pertama yang berjalan ketika komputer pertama dinyalakan. *Bootloader* bertanggung jawab sebagai pemicu dan pengirim kontrol ke Kernel Linux. Kernel, selanjutnya, menginisialisasi seluruh sistem operasi.

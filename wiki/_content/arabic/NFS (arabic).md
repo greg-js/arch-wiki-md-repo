@@ -1,8 +1,3 @@
-| **ملخص**  |
-| Article covers configuration of NFSv4 which is an open standard network file sharing protocol. |
-| **مواضيع ذات صلة** |
-| [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting") - Dedicated article for common problems and solutions. |
-
 نقلا عن: [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"): نظام ملفات الشبكة:*(Network File System NFS) هو بروتوكول نظام الملفات الموزع وقد تم تطويره من شركة صن ميكروسيستمز عام 1984 ، حيث يتيح للمستخدم على الحاسب العميل أن يصل للملفات عبر الشبكة بطريقة مشابهة لكيفية الوصول إلى أقراص التخزين المحلية.*
 
 ## Contents

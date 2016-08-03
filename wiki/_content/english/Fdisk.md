@@ -2,7 +2,7 @@
 
 GPT fdisk, as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables." [[1]](http://www.rodsbooks.com/gdisk/)
 
-This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html#) its related [sfdisk(8)](http://man7.org/linux/man-pages/man8/sfdisk.8.html#) and [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html#) utilities, as well as the analogous [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html), *sgdisk* and *cgdisk* utilities.
+This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html) its related [sfdisk(8)](http://man7.org/linux/man-pages/man8/sfdisk.8.html) and [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html) utilities, as well as the analogous [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html), *sgdisk* and *cgdisk* utilities.
 
 ## Contents
 

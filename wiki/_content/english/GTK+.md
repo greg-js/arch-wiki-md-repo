@@ -21,7 +21,9 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [4.7 Legacy scrolling behavior](#Legacy_scrolling_behavior)
     *   [4.8 Disable overlay scrollbars](#Disable_overlay_scrollbars)
         *   [4.8.1 Remove overlay scroll indicators](#Remove_overlay_scroll_indicators)
-*   [5 GTK+ and HTML with Broadway](#GTK.2B_and_HTML_with_Broadway)
+*   [5 GDK backends](#GDK_backends)
+    *   [5.1 Broadway backend](#Broadway_backend)
+    *   [5.2 Wayland backend](#Wayland_backend)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Different themes between GTK+ 2 and GTK+ 3 applications](#Different_themes_between_GTK.2B_2_and_GTK.2B_3_applications)
     *   [6.2 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
@@ -74,6 +76,10 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://quickgit.kde.org/?p=breeze-gtk.git](https://quickgit.kde.org/?p=breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
 
+*   **Deepin** — Default theme for the Deepin desktop.
+
+	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
+
 *   **GNOME Standard Themes** — Default themes for the GNOME desktop. Includes: *Adwaita*, *HighContrast*
 
 	[https://github.com/GNOME/gnome-themes-standard](https://github.com/GNOME/gnome-themes-standard) || [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard)
@@ -86,25 +92,29 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-themes](https://www.archlinux.org/packages/?name=numix-themes)
 
-*   **Oo-mox** — Graphical application for generating different color variations of Numix theme (GTK2, GTK3) and gnome-colors icon theme.
-
-	[https://github.com/actionless/oomox](https://github.com/actionless/oomox) || [oomox-git](https://aur.archlinux.org/packages/oomox-git/)
-
 *   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines.
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://aur.archlinux.org/packages/adapta-gtk-theme/)
-
-*   **Flat-Plat** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
-
-	[https://github.com/nana-4/Flat-Plat](https://github.com/nana-4/Flat-Plat) || [flatplat-theme-git](https://aur.archlinux.org/packages/flatplat-theme-git/)
 
 *   **Arc** — A flat theme with a modern look and transparent elements.
 
 	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || [gtk-theme-arc](https://aur.archlinux.org/packages/gtk-theme-arc/)
 
+*   **Blackbird** — Dark Desktop Suite for Xfce.
+
+	[https://github.com/shimmerproject/Blackbird](https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
+
+*   **Flat-Plat** — A Material Design-like flat theme for GTK3, GTK2, and GNOME-Shell.
+
+	[https://github.com/nana-4/Flat-Plat](https://github.com/nana-4/Flat-Plat) || [flatplat-theme-git](https://aur.archlinux.org/packages/flatplat-theme-git/)
+
 *   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
 
 	[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)
+
+*   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
+
+	[https://github.com/shimmerproject/Greybird](https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
 
 *   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
 
@@ -113,36 +123,6 @@ More themes can be installed from the official repositories or the [AUR](/index.
 *   **Zuki** — Themes for GTK, gnome-shell and more.
 
 	[https://github.com/lassekongo83/zuki-themes](https://github.com/lassekongo83/zuki-themes) || [zuki-themes-git](https://aur.archlinux.org/packages/zuki-themes-git/)
-
-**GTK+ 2 and GTK+ 3.18 or older are supported:**
-
-*   **Deepin** — Default theme for the Deepin desktop.
-
-	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
-
-*   **Albatross** — A dark, smooth Xfce theme, introduced in the release of Xubuntu 9.10.
-
-	[https://github.com/shimmerproject/Albatross](https://github.com/shimmerproject/Albatross) || [xfce-theme-albatross](https://aur.archlinux.org/packages/xfce-theme-albatross/)
-
-*   **Blackbird** — Dark Desktop Suite for Xfce.
-
-	[https://github.com/shimmerproject/Blackbird](https://github.com/shimmerproject/Blackbird) || [xfce-theme-blackbird](https://aur.archlinux.org/packages/xfce-theme-blackbird/)
-
-*   **Ceti-2** — Theme for GTK 3, GTK 2 and Gnome-Shell.
-
-	[https://github.com/horst3180/ceti-2-theme](https://github.com/horst3180/ceti-2-theme) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)
-
-*   **Clearlooks-Phénix** — GTK3 theme visually close to Clearlooks.
-
-	[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)
-
-*   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
-
-	[https://github.com/shimmerproject/Greybird](https://github.com/shimmerproject/Greybird) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
-
-*   **Orion** — A modern and light GTK theme.
-
-	[https://github.com/shimmerproject/Orion](https://github.com/shimmerproject/Orion) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)
 
 **Only GTK+ 2 is supported:**
 
@@ -172,11 +152,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 There are a number of additional GTK+ themes in the [AUR](/index.php/AUR "AUR"): [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [search for gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
 
-**Note:**
-
-*   Because GTK+ 3 changes rapidly, GTK+ 3 themes often require re-working after a GTK+ 3 release. For this reason, not all GTK+ 3 themes may look as intended when used with the latest GTK+ 3 version.
-*   Some themes may require [librsvg](https://www.archlinux.org/packages/?name=librsvg) to display correctly, but not all specify it as a dependency. Try installing it if the chosen theme looks broken.
-*   Some themes are not usable as-is for displaying a panel (light text over light background), so you need to use the provided [panel background](http://i.imgur.com/QmeyN.png).
+**Note:** Because GTK+ 3 changes rapidly, GTK+ 3 themes often require re-working after a GTK+ 3 release. For this reason, not all GTK+ 3 themes may look as intended when used with the latest GTK+ 3 version.
 
 ### GTK+ and Qt
 
@@ -205,6 +181,10 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 *   **LXAppearance** — Desktop independent GTK+ 2 and GTK+ 3 style configuration tool from the LXDE project (it does not require other parts of the LXDE desktop).
 
 	[http://wiki.lxde.org/en/LXAppearance](http://wiki.lxde.org/en/LXAppearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
+
+*   **Oo-mox** — Graphical application for generating different color variations of Numix theme (GTK2, GTK3) and gnome-colors icon theme.
+
+	[https://github.com/actionless/oomox](https://github.com/actionless/oomox) || [oomox](https://aur.archlinux.org/packages/oomox/)
 
 **Only GTK+ 2 is supported:**
 
@@ -403,7 +383,11 @@ undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { backgroun
 
 ```
 
-## GTK+ and HTML with Broadway
+## GDK backends
+
+GDK (the underlying abstraction layer of GTK+) supports multiple backends to display GTK+ applications. The default backend is *x11*.
+
+### Broadway backend
 
 The GDK Broadway backend provides support for displaying GTK+ applications in a web browser, using HTML5 and web sockets. [[3]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
 
@@ -443,6 +427,10 @@ Alternatively can set address and port
 $ broadwayd --port $port_number --address $address $display_number
 
 ```
+
+### Wayland backend
+
+The GDK [Wayland](/index.php/Wayland "Wayland") backend can be enabled by setting the `GDK_BACKEND=wayland` environment variable.
 
 ## Troubleshooting
 

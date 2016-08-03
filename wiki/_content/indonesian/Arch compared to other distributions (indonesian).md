@@ -1,11 +1,3 @@
-| **Summary**  |
-| Suatu perbandingan singkat Archlinux dengan distribusi GNU/Linux lain dan keluarga BSD. |
-| **Artikel terkait** |
-| [Arch Linux](/index.php/Arch_Linux "Arch Linux") |
-| [The Arch Way](/index.php/The_Arch_Way "The Arch Way") |
-| **Pranala eksternal** |
-| [DistroWatch.com](http://distrowatch.com/) |
-
 Halaman ini berisi tentang perbandingan antara Archlinux dengan distribusi GNU/Linux lain serta sistem operasi yang menyerupai UNIX. Sehingga Anda dapat tahu apakah Archlinux adalah sistem operasi yang cocok untuk Anda atau tidak.Namun,mencoba secara langsung Archlinux adalah cara terbaik untuk membandingkan Archlinux dengan sistem operasi lainnya.
 
 ## Contents
@@ -30,6 +22,7 @@ Halaman ini berisi tentang perbandingan antara Archlinux dengan distribusi GNU/L
 *   [5 Lainnya](#Lainnya)
     *   [5.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
     *   [5.2 Frugalware](#Frugalware)
+*   [6 Pranala eksternal](#Pranala_eksternal)
 
 ## Source-based (Berbasis kode sumber)
 
@@ -120,3 +113,7 @@ Debian adalah suatu proyek dan komunitas yang sangat besar dan memiliki fitur ca
 ### Frugalware
 
 Arch berorientasi berbasis teks dan *command-line*. Frugalware mengadopsi [pacman](/index.php/Pacman "Pacman") milik Arch sebagai pengelola paket, tetapi memakai *bzipped tarballs*. Sebaliknya, Arch memakai *gzipped tarballs*, dengan tujuan memudahkan instalasi. Frugalware pada dasarnya tidak mendukung sistem berkas JFS. Frugalware tidak lagi berbasis Slackware tetapi lebih sebagai distro tersendiri, dan dipromosikan sebagai sebuah distro i686\. Arch dasarnya adalah sistem yang berbeda, diinstal sebagai lingkungan dasar yang minimal dan diperlengkap dengan pacman sesuai kebutuhan dan pilihan penggunanya. Frugalware diinstal dari DVD, dengan pilihan perangkat lunak dan lingkungan desktop yang sudah tersedia bagi pengguna. Frugalware memiliki siklus rilis terjadwal. Lagi, Arch lebih fokus pada kesederhanaan, minimalisme, kesesuaian kode dan kemutakhiran dengan model rolling-release.
+
+## Pranala eksternal
+
+*   [DistroWatch.com](http://distrowatch.com/)

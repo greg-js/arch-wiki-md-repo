@@ -1,17 +1,3 @@
-| **Summary**  |
-| pacman je Arch Linux paket menadzer. Paket menadzeri se koriste za instaliranje, osvezavanje i uklanjanje softvera. Ovaj clanak pokriva osnovnu upotrebu i savete za resavanje eventualnih problema. |
-| **Related** |
-| [Unazadjivanje paketa](/index.php?title=Unazadjivanje_paketa&action=edit&redlink=1 "Unazadjivanje paketa (page does not exist)") |
-| [Unapredjivanje pacman performansi](/index.php?title=Unapredjivanje_pacman_performansi&action=edit&redlink=1 "Unapredjivanje pacman performansi (page does not exist)") |
-| [pacman frontendovi sa GUI-jem](/index.php?title=Pacman_frontendovi_sa_GUI-jem&action=edit&redlink=1 "Pacman frontendovi sa GUI-jem (page does not exist)") |
-| [pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") |
-| [pacman saveti](/index.php?title=Pacman_saveti&action=edit&redlink=1 "Pacman saveti (page does not exist)") |
-| **Izvori** |
-| [libalpm(3) Manual Page](https://www.archlinux.org/pacman/libalpm.3.html) |
-| [pacman(8) Manual Page](https://www.archlinux.org/pacman/pacman.8.html) |
-| [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html) |
-| [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html) |
-
 **[pacman](https://archlinux.org/pacman/)** paket menadzer je jedan od glavnih funkcija Arch Linux-a. On kombinuje jednostavni formati binarnih paketa sa jednostavnim sistemom za izgradnju paketa (pogledajte [makepkg (Српски)](/index.php/Makepkg_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Makepkg (Српски)") i [Arch Build System (Српски)](/index.php?title=Arch_Build_System_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8)&action=edit&redlink=1 "Arch Build System (Српски) (page does not exist)"). Cilj pacman-a je da ucini mogucim jednostavno upravljanje paketima, bez obzira da li su oni iz oficijalnih Arch repozitorijuma ili ih je korisnik sam napravio.
 
 pacman zadrzava sistem aktuelnim tako sto sinhronizuje paket liste sa master serverom. Ovaj server/klijent model takodje pruza mogucnost da preuzmete/instalirate pakete sa jednostavnom komandom, zajedno sa svim neophodnim zavisnostima.
@@ -40,6 +26,7 @@ pacman je napisan u C programskom jeziku i koristi `.pkg.tar.xz` paket format.
     *   [3.6 pacman puca tokom osvezavanja sistema!](#pacman_puca_tokom_osvezavanja_sistema.21)
     *   [3.7 Instalirao sam softver sa make install; ovi fajlovi ne pripadaju ni jednom paketu!](#Instalirao_sam_softver_sa_make_install.3B_ovi_fajlovi_ne_pripadaju_ni_jednom_paketu.21)
     *   [3.8 pacman je potpuno slomljen! Kako da ga instaliram?](#pacman_je_potpuno_slomljen.21_Kako_da_ga_instaliram.3F)
+*   [4 Izvori](#Izvori)
 
 ## Podesavanje
 
@@ -336,3 +323,10 @@ Pogledajte [preuzimanje liste fajlova koje nisu u posedu ni jednog paketa](/inde
 ### pacman je potpuno slomljen! Kako da ga instaliram?
 
 U slucaju da je pacman slomljen bez mogucnosti da se popravi, rucno preuzmite i napravite neophodne pakete (openssl, libarchive, libfetch i pacman) i otpakujte ih u root. Pacman binarni kod ce biti obnovljen zajedno sa svojim difolt konfiguracionim fajlom. Nakon toga, reinstalirajte ove pakete sa pacman-om da odrzite integritet baze paketa. Dodatne informacije i primer (zastarele) skripte koja automatizuje proces je dostupna u [ovom](https://bbs.archlinux.org/viewtopic.php?id=95007) forum postu.
+
+## Izvori
+
+*   [libalpm(3) Manual Page](https://www.archlinux.org/pacman/libalpm.3.html)
+*   [pacman(8) Manual Page](https://www.archlinux.org/pacman/pacman.8.html)
+*   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
+*   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)

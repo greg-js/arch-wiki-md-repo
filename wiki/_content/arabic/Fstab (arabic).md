@@ -1,12 +1,3 @@
-| **ملخص**  |
-| هذا المقال يشرح كيفية إعداد واستخدام ملف fstab. |
-| **مواضيع متصلة** |
-| [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") |
-| [NTFS Write Support](/index.php/NTFS_Write_Support "NTFS Write Support") |
-| [Firefox Ramdisk](/index.php/Firefox_Ramdisk "Firefox Ramdisk") |
-| [Boot Debugging](/index.php/Boot_Debugging "Boot Debugging") |
-| [udev](/index.php/Udev "Udev") |
-
 يحتوي ملف [/etc/fstab](https://en.wikipedia.org/wiki/Fstab "wikipedia:Fstab") على معلومات عن نظم الملفات الثابتة .وهو يعرفنا بكيفية وصل أقراص التخزين ونظم الملفات وكيفية دمجا في النظام بشكل كلي. ويتم قراءته من خلال الأمر `mount` لتحديد أي خيار سيستخدم عند وصل قسم أو قرص معين.
 
 ## Contents

@@ -1,9 +1,4 @@
-| **Summary**  |
-| Pregled opcija za podesavanje fontova i raznih tehnika za unapredjenje citljivosti fontova |
-| **Odnosno** |
-| [Fonts](/index.php/Fonts "Fonts"): Informacije za dodavanje fontova i preporuke fontova |
-| [Java fontovi - Sun JRE](/index.php?title=Java_fontovi_-_Sun_JRE&action=edit&redlink=1 "Java fontovi - Sun JRE (page does not exist)"): Fontovi specificni za Sun-ovu Java masinu |
-| [MS Fonts](/index.php/MS_Fonts "MS Fonts"): Dodavanje Microsoft fontova i oponasanje Windows font podesavanja |
+Pregled opcija za podesavanje fontova i raznih tehnika za unapredjenje citljivosti fontova.
 
 ## Contents
 

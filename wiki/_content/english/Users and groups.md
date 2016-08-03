@@ -438,7 +438,6 @@ These groups are used by certain non-essential software. Sometimes they are used
 | clamav | `/var/lib/clamav/*`, `/var/log/clamav/*` | Used by [Clam AntiVirus](/index.php/Clam_AntiVirus "Clam AntiVirus"). |
 | gdm | X server authorization directory (ServAuthDir) | [GDM](/index.php/GDM "GDM") group. |
 | locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Right to use [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") command. |
-| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to printer hardware, parallel port devices and read-only access to [CUPS](/index.php/CUPS "CUPS") files. Used by [CUPS](/index.php/CUPS "CUPS") to run helpers. See [[2]](https://wiki.archlinux.org/index.php?title=User_talk:Lahwaacz&diff=437507&oldid=437506#Parallel_ports) for a discussion about the implied problems. |
 | mpd | `/var/lib/mpd/*`, `/var/log/mpd/*`, `/var/run/mpd/*`, optionally music directories | [MPD](/index.php/MPD "MPD") group. |
 | ntp | `/var/lib/ntp/*` | [NTPd](/index.php/NTPd "NTPd") group. |
 | thinkpad | `/dev/misc/nvram` | Used by ThinkPad users for access to tools such as [tpb](/index.php/Tpb "Tpb"). |
@@ -469,7 +468,8 @@ There are some notable exceptions which require adding a user to some of these g
 | camera | Access to [Digital Cameras](/index.php/Digital_Cameras "Digital Cameras"). |
 | disk | `/dev/sd[a-z][1-9]` | Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`. |
 | floppy | `/dev/fd[0-9]` | Access to floppy drives. |
-| input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Access to input devices. Introduced in systemd 215 [[3]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |
+| input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Access to input devices. Introduced in systemd 215 [[2]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |
+| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to parallel port devices (printers and others) and read-only access to [CUPS](/index.php/CUPS "CUPS") files. If you run a non-printer parallel port device, see [FS#50009](https://bugs.archlinux.org/task/50009) for implied problems. |
 | kvm | `/dev/kvm` | Access to virtual machines using [KVM](/index.php/KVM "KVM"). |
 | optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | Access to optical devices such as CD and DVD drives. |
 | scanner | `/var/lock/sane` | Access to scanner hardware. |
