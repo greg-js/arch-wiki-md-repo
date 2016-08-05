@@ -460,10 +460,26 @@ Gigabyte Z77X-UD3H rev. 1.1 (UEFI 版本 F19e)
 
 ### Windows 改变了启动次序
 
-某些主板上 (ASRock Z77 Extreme4 确认有此问题) Windows 8 每次启动时改变了 NVRAM 中的启动次序。解决方式是让 Windows Boot Manager 加载另一引导器而不是启动 Windows. Windows 下以管理员模式执行如下命令:
+例如你升级Windows 后直接启动了Windows而不是选择启动菜单:
+
+*   确定UEFI固件设置中的"安全启动"(Secure Boot) 和 [Windows 中的"快速启动"](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") 选项没有启用.
+*   确定UEFI固件设置的启动顺序中Linux Boot Manager 先于 Windows Boot Manager.
+
+**Note:** Windows 8.x+,和 Windows 10,可能会覆盖你在UEFI固件设置中设置的启动顺序并把自己设置成第一启动选项. 所以你应该知道如何修改"一次性启动选项".
+
+你可以通过组策略和一个批处理文件(".bat")来阻止Windows更改启动设置,在Windows上这样做:
+
+1.  以管理员身份打开命令提示符,运行 `bcdedit /enum firmware`
+2.  寻找描述中带有"linux"的启动选项,例如 "Linux Boot Manager"
+3.  复制带大括号的描述符, 例如 `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
+4.  创建一个批处理文件 (例如 `bootorder.bat`) ,包含下列的内容: `bcdedit /set {fwbootmgr} DEFAULT {*这里是你在第三步中获得的描述符*}` (例如 `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
+5.  运行 *gpedit (组策略对象编辑器)* 在 *本地计算机策略 > 计算机设置 > Windows 设置 > 脚本(启动/关机)*中,选择"启动,会打开一个名为"启动选项:的对话框.
+6.  添加第四步中创建的批处理文件到"脚本"列表中.
+
+或者让Windows 启动管理器加载systemd-boot的EFI应用程序,要这样做的话在Windows上以管理员身份运行:
 
 ```
-bcdedit /set {bootmgr} path \EFI\boot_app_dir\boot_app.efi
+bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 ```
 

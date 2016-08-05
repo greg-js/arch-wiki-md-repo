@@ -113,12 +113,14 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 
 In the example the value of `*swap_file_offset*` is `38912`.
 
-**Tip:** The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
+The value of `*swap_file_offset*` can also be obtained by running `swap-offset *swap_file*`. The *swap-offset* binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
 
 **Note:**
 
 *   The `resume` kernel parameter specifies the device of the partition that contains the swap file, not swap file itself! The parameter `resume_offset` informs the system where the swap file starts on the resume device. Before the first hibernation a reboot is required for them to be active.
 *   If using [uswsusp](/index.php/Uswsusp "Uswsusp"), then these two parameters have to be provided in `/etc/suspend.conf` via the keys `resume device` and `resume offset`. No reboot is required in this case.
+
+**Tip:** You might want to decrease the [Swap#Swappiness](/index.php/Swap#Swappiness "Swap") for your swapfile if the only purpose is to be able to hibernate and not expand RAM.
 
 ### Configure the initramfs
 

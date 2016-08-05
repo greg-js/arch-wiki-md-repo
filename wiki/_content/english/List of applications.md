@@ -3772,7 +3772,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://beaver-editor.sourceforge.net/](http://beaver-editor.sourceforge.net/) || [beaver](https://www.archlinux.org/packages/?name=beaver)
 
-*   **Brackets** — An open source code editor for the web, written in JavaScript, HTML and CSS.
+*   **[Brackets](https://en.wikipedia.org/wiki/Brackets_(text_editor) "w:Brackets (text editor)")** — An open source code editor for the web, written in JavaScript, HTML and CSS.
 
 	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)
 
@@ -3872,6 +3872,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://sublimetext.com](http://sublimetext.com) || [sublime-text](https://aur.archlinux.org/packages/sublime-text/)
 
+*   **[Sublime Text 3](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
+
+	[http://sublimetext.com](http://sublimetext.com) || [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/)
+
 *   **Tea** — Qt-based feature rich text editor.
 
 	[http://semiletov.org/tea/](http://semiletov.org/tea/) || [tea](https://www.archlinux.org/packages/?name=tea)
@@ -3880,9 +3884,9 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://foicica.com/textadept/](http://foicica.com/textadept/) || [textadept](https://aur.archlinux.org/packages/textadept/)
 
-*   **[Visual Studio Code](https://en.wikipedia.org/wiki/Visual_Studio_Code "wikipedia:Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
+*   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com/](https://code.visualstudio.com/) || [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)
+	[https://code.visualstudio.com/](https://code.visualstudio.com/) || [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)/[visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/) (open-source version)
 
 *   **XEdit** — Simple text editor for the X Window System.
 

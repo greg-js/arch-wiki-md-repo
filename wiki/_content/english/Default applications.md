@@ -345,7 +345,7 @@ The *.mailcap* file format is used by mail programs such as [mutt](https://www.a
 To **query** the mime type used by an existing file, use
 
 ```
-$ xdg-mime query *filetype* *file.ext*
+$ xdg-mime query filetype *file.ext*
 
 ```
 

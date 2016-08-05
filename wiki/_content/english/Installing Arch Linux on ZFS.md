@@ -86,13 +86,20 @@ ZFS does not support swap files. If you require a swap partition, see [ZFS#Swap 
 Here are some example commands to partition a drive for the second scenario above ie using BIOS/legacy boot mode with a GPT partition table and a (slighty more than) 1MB BIOS boot partition for GRUB:
 
 ```
-# parted /dev/sda
+# parted /dev/sdx
 (parted)mklabel gpt
 (parted)mkpart non-fs 0% 2
 (parted)mkpart primary 2 100%
 (parted)set 1 bios_grub on
 (parted)set 2 boot on
 (parted)quit
+
+```
+
+You can achieve the above in a single command like so:
+
+```
+parted --script /dev/sdx mklabel gpt mkpart non-fs 0% 2 mkpart primary 2 100% set 1 bios_grub on set 2 boot on
 
 ```
 
@@ -131,13 +138,13 @@ One of the most useful features of ZFS is boot environments. Boot environments a
 
 You should always create a dataset for at least your root filesystem and in nearly all cases you will also want `/home` to be in a separate dataset. You may decide you want your logs to persist over boot environments. If you are a running any software that stores data outside of `/home` (such as is the case for database servers) you should structure your datasets so that the data directories of the software you want to run are separated out from the root dataset.
 
-With these example commands, we will create a basic boot enviroment compatible configuration comprisng of just root and `/home` datasets:
+With these example commands, we will create a basic boot environment compatible configuration comprising of just root and `/home` datasets with lz4 compression to save space and improve IO performance:
 
 ```
 # zfs create -o mountpoint=none zroot/data
 # zfs create -o mountpoint=none zroot/ROOT
-# zfs create -o mountpoint=/ zroot/ROOT/default
-# zfs create -o mountpoint=/home zroot/data/home
+# zfs create -o compression=lz4 -o mountpoint=/ zroot/ROOT/default
+# zfs create -o compression=lz4 -o mountpoint=/home zroot/data/home
 
 ```
 

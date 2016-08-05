@@ -1,7 +1,5 @@
 This article documents the configuration of `libgphoto2` to access digital cameras. Some digital cameras will mount as normal [USB storage devices](/index.php/USB_storage_devices "USB storage devices") and may not require the use of libgphoto2.
 
-**Note:** As of libgphoto2 version 2.14.13, users do not need to be part of the `camera` group.
-
 ## Contents
 
 *   [1 libgphoto2](#libgphoto2)
@@ -22,25 +20,6 @@ This article documents the configuration of `libgphoto2` to access digital camer
 ### Permission issues
 
 Users with a local session have permissions granted for cameras using [ACLs](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list"). See [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") if it does not work.
-
-If you want these permissions to work for remote ([SSH](/index.php/SSH "SSH")) sessions too, you can use the old 'camera' group, by adding the requisite users to the deprecated camera group and create a new udev rules file as follows:
-
-```
-# /usr/lib/libgphoto2/print-camera-list udev-rules version 175 group camera > /etc/udev/rules.d/40-gphoto.rules
-
-```
-
-These rules will use the group for newly added camera devices.
-
-If the camera is not present in any [udev](/index.php/Udev "Udev") rule, can check vendor and product id and add it. To check it just run:
-
- `# lsusb` 
-```
- ...
- Bus 001 Device 005: ID 04a9:318e Canon, Inc.
- ...
-
-```
 
 ### GPhoto2 usage
 

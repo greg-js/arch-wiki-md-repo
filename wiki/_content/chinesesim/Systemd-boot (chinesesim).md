@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-18，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=412593)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=443307)可以查看翻译后英文页面的改动。
 
-**systemd-boot** (以前被称为**gummiboot**) 是可以执行 EFI 镜像文件的简单 UEFI 启动管理器。启动的内容可以通过一个配置(glob)或者屏幕菜单选择。[systemd](https://www.archlinux.org/packages/?name=systemd) 从版本 220-2 开始包含此组件。
+**systemd-boot** (以前被称为**gummiboot**) 是可以执行 EFI 镜像文件的简单 UEFI 启动管理器。启动的内容可以通过一个配置(glob)或者屏幕菜单选择。Arch 默认安装的 [systemd](https://www.archlinux.org/packages/?name=systemd) 提供了这个功能。
 
 配置很简单，但是只能启动 EFI 可执行程序，例如 Linux 内核 [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, Windows Boot Manager等。
 
@@ -35,8 +35,13 @@
 
 1.  确认启动方式是 UEFI 模式
 2.  验证[可以正确访问 EFI 变量](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface")
-3.  EFI 系统分区正确挂载，而且内核和 initramfs 已经被复制到 ESP。 systemd-boot 无法从其它分区加载 EFI 程序。 建议将 ESP 挂载到 `/boot`. 如果希望 ESP 和 /boot 分离，请查看后面的 [#更新](#.E6.9B.B4.E6.96.B0)部分。
-4.  执行下面命令将 systemd-boot 程序复制到 EFI 系统分区并将 systemd-boot 安装成EFI启动管理器的默认的 EFI 程序。
+3.  挂载 [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition")(ESP)
+    **Note:** systemd-boot 无法从其它分区加载 EFI 程序。 建议将 ESP 挂载到 `/boot`. 如果希望 ESP 和 /boot 分离，请查看后面的 [#更新](#.E6.9B.B4.E6.96.B0)部分。
+
+4.  复制内核和 initramfs 到 ESP。
+    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
+
+5.  执行下面命令将 systemd-boot 程序复制到 EFI 系统分区并将 systemd-boot 安装成EFI启动管理器的默认的 EFI 程序。
 
 ```
 # bootctl --path=*$esp* install
@@ -68,9 +73,11 @@ systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统
 如果 EFI 系统分区不在 `/boot`, 需要加入 `--path=` 参数来指定. 例如:
 
 ```
-# bootctl --path=/boot/$esp update
+ # bootctl --path=*esp* update
 
 ```
+
+**Note:** This is also the command to use when migrating from *gummiboot*, before removing that package. If that package has already been removed, however, run `bootctl --path=*esp* install`.
 
 ## 配置
 
@@ -80,7 +87,7 @@ systemd-boot (bootctl(1), systemd-efi-boot-generator(8)) 假定你的 EFI 系统
 
 *   `default` –默认加载的配置文件 (不含 `.conf` 后缀); 可以使用通配符 `arch-*`
 
-*   `timeout` –启动选单的超时时间,如果不设置的话,启动选单只有在你按住Space键时才显示.
+*   `timeout` –启动选单的超时时间,如果不设置的话,启动选单只有在按键时才显示.
 
 *   `editor` -是否允许用户编辑内核参数. `1` (默认值) 是允许, `0` 是阻止. 因为用户可以通过 `init=/bin/bash` 来绕过root密码并获得root权限,建议设置成`0`.
 
@@ -96,9 +103,13 @@ editor   0
 
 你也可以在启动选单中改变默认值和超时时间,所做的改动会保存到efivars中.
 
+**Tip:** `/usr/share/systemd/bootctl`包含参考示例文件.
+
 ### 增加启动选项
 
 **Note:** 如果存在的话,bootctl 会自动为 "**Windows Boot Manager (Windows 启动管理器)**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) 和 "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`)增加启动选项. 但并不会为其他EFI应用程序创建启动选项,所以需要进行进一步设置. 如果你是和Windows 组成双重启动,建议禁用 [Windows 中的"快速启动"](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") 选项.
+
+如果需要 Intel [microcode](/index.php/Microcode "Microcode")，不要忘了修改 `initrd`。
 
 **Tip:** 你能用 `blkid -s PARTUUID -o value /dev/sdxY` 找到某个分区的PARTUUID, 'x' 和 'Y' 分别是磁盘和分区编号.稍后可能需要这些信息.
 
@@ -112,7 +123,7 @@ bootctl 会在 `$esp/loader/entries/*.conf` 搜索启动选项– 一个文件�
 
 *   `efi` – 要启动的EFI应用程序的位置,以 (`$esp`) 为相对路径,; 例如 `/vmlinuz-linux`. **需要此选项或是 `linux` (参阅下文) 的一项.**
 
-*   `options` – 传递给EFI应用程序的参数,可选.但如果你要启动linux,至少需要 `initrd=*efipath*` 和 `root=*dev*`选项.
+*   `options` – 传递给 EFI 应用程序或内核启动的参数,可选.但如果你要启动linux,至少需要 `initrd=*efipath*` 和 `root=*dev*`选项.
 
 要启动linux,你还可以指定 `linux *path-to-vmlinuz*` 和 `initrd *path-to-initramfs*`;这会自动转换成 `efi *path*` 和 `options initrd=*path*` – 这个语法只是为了方便,在功能上并没有区别.
 
@@ -129,6 +140,8 @@ options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
 ```
 
 注意这个例子中用PARTUUID(或是PARTLABEL)来标识一个GPT分区(和UUID/LABEL不同,它标识一个文件系统).使用因为PARTUUID/PARTLABEL是因为它不像UUID/LABEL会在格式化时改变,也不像 /dev/sd* 会在某些时候交换.在某些无文件系统分区(或是不支持卷标的LUKS 加密卷)上也能工作.
+
+**Tip:** `/usr/share/systemd/bootctl` 提供了参考示例文件.
 
 #### 根分区在LVM 逻辑卷上时
 
@@ -165,6 +178,16 @@ options cryptdevice=UUID=<UUID>:<mapped-name> root=/dev/mapper/<mapped-name> qui
 ```
 
 这个例子中用了UUID; PARTUUID 应该也可以使用, 如果你愿意,也可以用UUID替换/dev/段. 参阅 [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+
+如果使用 LVM，cryptdevice 行应该类似于：
+
+ `*esp*/loader/entries/arch-encrypted-lvm.conf` 
+```
+title Arch Linux Encrypted LVM
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options cryptdevice=UUID=<UUID>:MyVolGroup root=/dev/mapper/MyVolGroup-MyVolRoot quiet rw
+```
 
 你也可以加入类似于 `\EFI\arch\grub.efi`的EFI应用程序.
 
@@ -239,28 +262,7 @@ efi    /EFI/shellx64_v2.efi
 
 ### 在Windows升级后不能看到启动菜单
 
-例如你升级Windows 后直接启动了Windows而不是选择启动菜单:
-
-*   确定UEFI固件设置中的"安全启动"(Secure Boot) 和 [Windows 中的"快速启动"](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") 选项没有启用.
-*   确定UEFI固件设置的启动顺序中Linux Boot Manager 先于 Windows Boot Manager.
-
-**Note:** Windows 8.x+,和 Windows 10,可能会覆盖你在UEFI固件设置中设置的启动顺序并把自己设置成第一启动选项. 所以你应该知道如何修改"一次性启动选项".
-
-你可以通过组策略和一个批处理文件(".bat")来阻止Windows更改启动设置,在Windows上这样做:
-
-1.  以管理员身份打开命令提示符,运行 `bcdedit /enum firmware`
-2.  寻找描述中带有"linux"的启动选项,例如 "Linux Boot Manager"
-3.  复制带大括号的描述符, 例如 `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`
-4.  创建一个批处理文件 (例如 `bootorder.bat`) ,包含下列的内容: `bcdedit /set {fwbootmgr} DEFAULT {*这里是你在第三步中获得的描述符*}` (例如 `bcdedit /set {fwbootmgr} DEFAULT {31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`).
-5.  运行 *gpedit (组策略对象编辑器)* 在 *本地计算机策略 > 计算机设置 > Windows 设置 > 脚本(启动/关机)*中,选择"启动,会打开一个名为"启动选项:的对话框.
-6.  添加第四步中创建的批处理文件到"脚本"列表中.
-
-或者让Windows 启动管理器加载systemd-boot的EFI应用程序,要这样做的话在Windows上以管理员身份运行:
-
-```
-bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
-
-```
+参阅[Windows 修改了启动顺序](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)")。
 
 ## 参阅
 

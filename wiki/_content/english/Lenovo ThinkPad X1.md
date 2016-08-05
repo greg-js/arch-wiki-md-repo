@@ -7,6 +7,7 @@
 *   [3 Hardware](#Hardware)
     *   [3.1 Fingerprint Reader](#Fingerprint_Reader)
     *   [3.2 Adjusting Backlight Brightness](#Adjusting_Backlight_Brightness)
+    *   [3.3 Bluetooth](#Bluetooth)
 *   [4 Power management](#Power_management)
 *   [5 Extra Keys](#Extra_Keys)
 *   [6 USB3 Issues](#USB3_Issues)
@@ -55,6 +56,10 @@ Restart your computer for the udev change to take effect.
 ### Adjusting Backlight Brightness
 
 Add `acpi_osi="!Windows 2012"` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (see [https://bbs.archlinux.org/viewtopic.php?id=158775](https://bbs.archlinux.org/viewtopic.php?id=158775)).
+
+### Bluetooth
+
+Laptop has a Broadcom BCM20702 bluetooth chip. There are no drivers for this chip in any package. When you try to enable bluetooth you get the message `bluetooth hci0: Direct firmware load for brcm/BCM20702A1-0a5c-21e6.hcd failed with error -2` The file /lib/firmware/brcm/BCM20702A1-0a5c-21e6.hcd can be generated with the help of this guide [http://www.slackwiki.com/Btfirmware-nonfree](http://www.slackwiki.com/Btfirmware-nonfree) Those who don't want to hassle around can download the file from [here](https://yadi.sk/d/SeZeFsvJtt9YE) Don't forget to read the [Bluetooth](/index.php/Bluetooth "Bluetooth") page to finalize bluetooth setup to make it work.
 
 ## Power management
 

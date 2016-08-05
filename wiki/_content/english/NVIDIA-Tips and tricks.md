@@ -304,6 +304,8 @@ If brightness control still does not work with this option, try installing [nvid
 
 **Warning:** As of May 7, 2011, you may experience sluggish video performance in GNOME 3 after enabling SLI.
 
+**Warning:** Since the GTX 10xx Series (1080, 1070, 1060, etc) only 2-way SLI is supported. 3-way and 4-way SLI may work for CUDA/OpenCL applications, but will most likely break all OpenGL applications.
+
 Taken from the NVIDIA driver's [README](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html) Appendix B: *This option controls the configuration of SLI rendering in supported configurations.* A "supported configuration" is a computer equipped with an SLI-Certified Motherboard and 2 or 3 SLI-Certified GeForce GPUs. See NVIDIA's [SLI Zone](http://www.slizone.com/page/home.html) for more information.
 
 Find the first GPU's PCI Bus ID using `lspci`:

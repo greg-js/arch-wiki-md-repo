@@ -268,6 +268,8 @@ The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endstha
 
 **Note:** You can find the installed drivers in `/usr/lib/dri/`.
 
+**Note:** Since version 12.0.1 [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) provides `radeonsi` instead of `gallium`.
+
 ### Configuring VDPAU
 
 The driver for use with VDPAU is auto-detected, but you may need to override it by using the `VDPAU_DRIVER` [environment variable](/index.php/Environment_variable "Environment variable").

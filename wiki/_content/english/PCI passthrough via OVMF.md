@@ -31,10 +31,13 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [8.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
     *   [8.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
     *   [8.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
-*   [9 Additional Information](#Additional_Information)
-    *   [9.1 Passing through a USB controller](#Passing_through_a_USB_controller)
-    *   [9.2 ACS Override Patch](#ACS_Override_Patch)
-*   [10 See also](#See_also)
+*   [9 Passing though other devices](#Passing_though_other_devices)
+    *   [9.1 USB controller](#USB_controller)
+    *   [9.2 Gotchas](#Gotchas_4)
+        *   [9.2.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+*   [10 Additional Information](#Additional_Information)
+    *   [10.1 ACS Override Patch](#ACS_Override_Patch)
+*   [11 See also](#See_also)
 
 ## Prerequisites
 
@@ -370,7 +373,7 @@ On the quad-core machine mentioned above, it would look like this :
 
 If you would instead prefer to have the host and guest running intensive tasks at the same time, it would then be preferable to pin a limited amount of physical cores and their respective threads on the guest and leave the rest to the host to avoid the two competing for CPU time.
 
-On the dual-core machine mentionned above, it would look like this :
+On the quad-core machine mentioned above, it would look like this :
 
  `EDITOR=nano virsh edit myPciPassthroughVm` 
 ```
@@ -672,9 +675,9 @@ options kvm ignore_msrs=1
 
 Windows 8 or Windows 10 guests may raise a generic compatibility exception at boot, namely "System Thread Exception Not Handled", which tends to be caused by legacy drivers acting strangely on real machines. On KVM machines this issue can generally be solved by setting the CPU model to `core2duo`.
 
-## Additional Information
+## Passing though other devices
 
-### Passing through a USB controller
+### USB controller
 
 If your motherboard has multiple USB controllers mapped to multiple groups, it is possible to pass those instead of USB devices. Passing an actual controller over an individual USB device provides the following advantages :
 
@@ -704,6 +707,40 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 This laptop has 3 USB ports managed by 2 USB controllers, each with their own IOMMU group. In this example, Bus 001 manages a single USB port (with a SanDisk USB pendrive plugged into it so it appears on the list), but also a number of internal devices, such as the internal webcam and the bluetooth card. Bus 002, on the other hand, does not apprear to manage anything except for the calculator that is plugged into it. The third port is empty, which is why it does not show up on the list, but is actually managed by Bus 002.
 
 Once you have identified which controller manages which ports by plugging various devices into them and decided which one you want to passthrough, simply add it to the list of PCI host devices controlled by the VM in your guest configuration. No other configuration should be needed.
+
+### Gotchas
+
+#### Passing through a device that does not support resetting
+
+When the VM shuts down, all devices used by the guest are deinitialized by its OS in preparation for shutdown. In this state, those devices are no longer functionnal and must then be power-cycled before they can resume normal operation. Linux can handle this power-cycling on its own, but when a device has no known reset methods, it remains in this disabled state and becomes unavailable. Since Libvirt and Qemu both expect all host PCI devices to be ready to reattach to the host before completely stopping the VM, when encountering a device that won't reset, they will hang in a "Shutting down" state where they will not be able to be restarted until the host system has been rebooted. It is therefore reccomanded to only pass through PCI devices which the kernel is able to reset, as evidenced by the presence of a `reset` file in the PCI device sysfs node, such as `/sys/bus/pci/devices/0000:00:1a.0/reset`.
+
+The following bash command, based on the one used to list IOMMU groups, shows which devices can and cannot be reset.
+
+ `for iommu_group in $(find /sys/kernel/iommu_groups/ -maxdepth 1 -mindepth 1 -type d);do echo "IOMMU group $(basename "$iommu_group")"; for device in $(ls -1 "$iommu_group"/devices/); do if [[ -e "$iommu_group"/devices/"$device"/reset ]]; then echo -n "[RESET]"; fi; echo -n $'\t';lspci -nns "$device"; done; done` 
+```
+IOMMU group 0
+	00:00.0 Host bridge [0600]: Intel Corporation Xeon E3-1200 v2/Ivy Bridge DRAM Controller [8086:0158] (rev 09)
+IOMMU group 1
+	00:01.0 PCI bridge [0604]: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port [8086:0151] (rev 09)
+	01:00.0 VGA compatible controller [0300]: NVIDIA Corporation GK208 [GeForce GT 720] [10de:1288] (rev a1)
+	01:00.1 Audio device [0403]: NVIDIA Corporation GK208 HDMI/DP Audio Controller [10de:0e0f] (rev a1)
+IOMMU group 2
+	00:14.0 USB controller [0c03]: Intel Corporation 7 Series/C210 Series Chipset Family USB xHCI Host Controller [8086:1e31] (rev 04)
+IOMMU group 4
+[RESET]	00:1a.0 USB controller [0c03]: Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #2 [8086:1e2d] (rev 04)
+IOMMU group 5
+[RESET]	00:1b.0 Audio device [0403]: Intel Corporation 7 Series/C210 Series Chipset Family High Definition Audio Controller [8086:1e20] (rev 04)
+IOMMU group 10
+[RESET]	00:1d.0 USB controller [0c03]: Intel Corporation 7 Series/C210 Series Chipset Family USB Enhanced Host Controller #1 [8086:1e26] (rev 04)
+IOMMU group 13
+	06:00.0 VGA compatible controller [0300]: NVIDIA Corporation GM204 [GeForce GTX 970] [10de:13c2] (rev a1)
+	06:00.1 Audio device [0403]: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
+
+```
+
+This signals that the xHCI USB controller in 00:14.0 cannot be reset and will therefore stop the VM from shutting down properly, while the integrated sound card in 00:1b.0 and the other two controllers in 00:1a.0 amd 00:1d.0 do not share this problem and can be passed without issue.
+
+## Additional Information
 
 ### ACS Override Patch
 

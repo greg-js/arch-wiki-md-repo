@@ -38,7 +38,6 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [5.8 LVM Cache (lvmcache)](#LVM_Cache_.28lvmcache.29)
         *   [5.8.1 Create](#Create)
         *   [5.8.2 Remove](#Remove)
-        *   [5.8.3 Root device on a cached LV](#Root_device_on_a_cached_LV)
 *   [6 Graphical Configuration](#Graphical_Configuration)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Changes that could be required due to changes in the Arch-Linux defaults](#Changes_that_could_be_required_due_to_changes_in_the_Arch-Linux_defaults)
@@ -439,7 +438,7 @@ Last, you need to shrink the partition with your favorite [partitioning tool](/i
 
 #### Logical volumes
 
-**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r, --resizefs` option which allows to resize the file system together with the LV using `fsadm(8)` (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
+**Note:** *lvresize* provides more or less the same options as the specialized `lvextend` and `lvreduce` commands, while allowing to do both types of operation. Notwithstanding this, all those utilities offer a `-r, --resizefs` option which allows to resize the file system together with the LV using [fsadm(8)](http://man7.org/linux/man-pages/man8/fsadm.8.html) (*ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") supported). Therefore it may be easier to simply use `lvresize` for both operations and use `--resizefs` to simplify things a bit, except if you have specific needs or want full control over the process.
 
 ##### Growing or shrinking with lvresize
 
@@ -479,7 +478,7 @@ See `man lvresize` for more detailed options.
 
 ##### Resizing the file system separately
 
-If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using a file system unspported by `fsadm(8)` ([Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")...), you need to manually resize the FS before shrinking the LV or after expanding it.
+If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using a file system unspported by [fsadm(8)](http://man7.org/linux/man-pages/man8/fsadm.8.html) ([Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")...), you need to manually resize the FS before shrinking the LV or after expanding it.
 
 **Warning:** Not all file systems support resizing without loss of data and/or resizing online.
 
@@ -693,16 +692,6 @@ If you ever need to undo the one step creation operation above:
 ```
 
 This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html).
-
-#### Root device on a cached LV
-
-If your root device is on a cached LV, you must prepare `mkinitcpio` to include required modules:
-
- `/etc/mkinitcpio.conf`  `MODULES="... **dm-cache dm_cache_mq dm_cache_smq** ..."` 
-
-**dm_cache_smq** is only if you run a linux kernel superior or equal to 4.2
-
-If you fail to do so, you'll end up in a rescue shell early in the boot process. A way to boot again is to remove the cache as described above (`lvconvert` may not be available from the rescue shell, but is accessible from the `lvm` tool). Before leaving the rescue shell, activate the LV.
 
 ## Graphical Configuration
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-20，点击[这里](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=388232)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-03，点击[这里](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=444215)可以查看翻译后英文页面的改动。
 
 本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [新手指南](/index.php/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97 "新手指南") 和 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。
 
@@ -13,10 +13,10 @@
     *   [1.4 系统维护](#.E7.B3.BB.E7.BB.9F.E7.BB.B4.E6.8A.A4)
 *   [2 软件包管理](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AE.A1.E7.90.86)
     *   [2.1 Pacman](#Pacman)
-    *   [2.2 软件仓库](#.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93)
-    *   [2.3 Arch编译系统（ABS）](#Arch.E7.BC.96.E8.AF.91.E7.B3.BB.E7.BB.9F.EF.BC.88ABS.EF.BC.89)
-    *   [2.4 Arch用户软件源（AUR）](#Arch.E7.94.A8.E6.88.B7.E8.BD.AF.E4.BB.B6.E6.BA.90.EF.BC.88AUR.EF.BC.89)
-    *   [2.5 软件仓库镜像](#.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.E9.95.9C.E5.83.8F)
+    *   [2.2 软件仓库镜像](#.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.E9.95.9C.E5.83.8F)
+    *   [2.3 软件仓库](#.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93)
+    *   [2.4 Arch编译系统（ABS）](#Arch.E7.BC.96.E8.AF.91.E7.B3.BB.E7.BB.9F.EF.BC.88ABS.EF.BC.89)
+    *   [2.5 Arch用户软件源（AUR）](#Arch.E7.94.A8.E6.88.B7.E8.BD.AF.E4.BB.B6.E6.BA.90.EF.BC.88AUR.EF.BC.89)
 *   [3 启动](#.E5.90.AF.E5.8A.A8)
     *   [3.1 硬件自动探测](#.E7.A1.AC.E4.BB.B6.E8.87.AA.E5.8A.A8.E6.8E.A2.E6.B5.8B)
     *   [3.2 微代码](#.E5.BE.AE.E4.BB.A3.E7.A0.81)
@@ -24,11 +24,11 @@
     *   [3.4 开机启动 X](#.E5.BC.80.E6.9C.BA.E5.90.AF.E5.8A.A8_X)
     *   [3.5 开机时打开 Num Lock](#.E5.BC.80.E6.9C.BA.E6.97.B6.E6.89.93.E5.BC.80_Num_Lock)
 *   [4 图形界面](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2)
-    *   [4.1 显卡驱动](#.E6.98.BE.E5.8D.A1.E9.A9.B1.E5.8A.A8)
-    *   [4.2 显示服务](#.E6.98.BE.E7.A4.BA.E6.9C.8D.E5.8A.A1)
-    *   [4.3 窗口管理器](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [4.4 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [4.5 桌面环境](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
+    *   [4.1 显示服务](#.E6.98.BE.E7.A4.BA.E6.9C.8D.E5.8A.A1)
+    *   [4.2 显卡驱动](#.E6.98.BE.E5.8D.A1.E9.A9.B1.E5.8A.A8)
+    *   [4.3 桌面环境](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
+    *   [4.4 窗口管理器](#.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [4.5 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
 *   [5 电源管理](#.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
     *   [5.1 ACPI 事件](#ACPI_.E4.BA.8B.E4.BB.B6)
     *   [5.2 CPU 频率调节](#CPU_.E9.A2.91.E7.8E.87.E8.B0.83.E8.8A.82)
@@ -40,11 +40,10 @@
     *   [6.3 解码器](#.E8.A7.A3.E7.A0.81.E5.99.A8)
 *   [7 网络](#.E7.BD.91.E7.BB.9C)
     *   [7.1 时钟同步](#.E6.97.B6.E9.92.9F.E5.90.8C.E6.AD.A5)
-    *   [7.2 DNS 加速](#DNS_.E5.8A.A0.E9.80.9F)
-    *   [7.3 DNS 安全](#DNS_.E5.AE.89.E5.85.A8)
-    *   [7.4 DNSSEC 验证](#DNSSEC_.E9.AA.8C.E8.AF.81)
-    *   [7.5 配置防火墙](#.E9.85.8D.E7.BD.AE.E9.98.B2.E7.81.AB.E5.A2.99)
-    *   [7.6 Windows 网络](#Windows_.E7.BD.91.E7.BB.9C)
+    *   [7.2 DNS 安全](#DNS_.E5.AE.89.E5.85.A8)
+    *   [7.3 DNSSEC 验证](#DNSSEC_.E9.AA.8C.E8.AF.81)
+    *   [7.4 配置防火墙](#.E9.85.8D.E7.BD.AE.E9.98.B2.E7.81.AB.E5.A2.99)
+    *   [7.5 资源共享](#.E8.B5.84.E6.BA.90.E5.85.B1.E4.BA.AB)
 *   [8 输入](#.E8.BE.93.E5.85.A5)
     *   [8.1 键盘布局](#.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
     *   [8.2 鼠标按键配置](#.E9.BC.A0.E6.A0.87.E6.8C.89.E9.94.AE.E9.85.8D.E7.BD.AE)
@@ -60,8 +59,6 @@
     *   [10.3 本地邮件交换](#.E6.9C.AC.E5.9C.B0.E9.82.AE.E4.BB.B6.E4.BA.A4.E6.8D.A2)
 *   [11 外观美化](#.E5.A4.96.E8.A7.82.E7.BE.8E.E5.8C.96)
     *   [11.1 字体](#.E5.AD.97.E4.BD.93)
-        *   [11.1.1 终端字体](#.E7.BB.88.E7.AB.AF.E5.AD.97.E4.BD.93)
-        *   [11.1.2 打补丁的字体包](#.E6.89.93.E8.A1.A5.E4.B8.81.E7.9A.84.E5.AD.97.E4.BD.93.E5.8C.85)
     *   [11.2 GTK and Qt themes](#GTK_and_Qt_themes)
 *   [12 控制台优化](#.E6.8E.A7.E5.88.B6.E5.8F.B0.E4.BC.98.E5.8C.96)
     *   [12.1 别名](#.E5.88.AB.E5.90.8D)
@@ -69,8 +66,6 @@
     *   [12.3 其它 shells](#.E5.85.B6.E5.AE.83_shells)
     *   [12.4 Bash 增强功能](#Bash_.E5.A2.9E.E5.BC.BA.E5.8A.9F.E8.83.BD)
     *   [12.5 彩色输出](#.E5.BD.A9.E8.89.B2.E8.BE.93.E5.87.BA)
-        *   [12.5.1 核心工具](#.E6.A0.B8.E5.BF.83.E5.B7.A5.E5.85.B7)
-        *   [12.5.2 Man帮助文档](#Man.E5.B8.AE.E5.8A.A9.E6.96.87.E6.A1.A3)
     *   [12.6 压缩文件](#.E5.8E.8B.E7.BC.A9.E6.96.87.E4.BB.B6)
         *   [12.6.1 控制台提示符](#.E6.8E.A7.E5.88.B6.E5.8F.B0.E6.8F.90.E7.A4.BA.E7.AC.A6)
         *   [12.6.2 Emacs shell](#Emacs_shell)
@@ -120,19 +115,23 @@
 
 ### 系统维护
 
-Arch 是滚动发行系统，软件包的更新速度很快，用户需要花些时间进行 [系统维护](/index.php/System_maintenance "System maintenance"). [提高系统稳定性](/index.php/Enhance_system_stability "Enhance system stability") 页面也给出了很多建议和技巧。
+Arch 是滚动发行系统，软件包的更新速度很快，用户需要花些时间进行 [系统维护](/index.php/System_maintenance "System maintenance"). [安全](/index.php/Security "Security")页面也给出了很多加强系统安全性的建议和技巧。
 
 ## 软件包管理
 
 此部分提供了软件包管理的信息，参见：[Category:Package management (简体中文)](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)")。
 
-**注意:** 因为[代码正确优于易用性](/index.php/The_Arch_Way#Code-correctness_over_convenience "The Arch Way")的理念，Arch 的升级有时候需要手动处理。请订阅[arch-announce 邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ，每次升级前查看 [Arch 新闻](https://www.archlinux.org/)或者订阅 [RSS feed](https://www.archlinux.org/feeds/news/)。
+**注意:** Arch 的升级有时候需要手动处理。请订阅[arch-announce 邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) ，每次升级前查看 [Arch 新闻](https://www.archlinux.org/)或者订阅 [RSS feed](https://www.archlinux.org/feeds/news/)。
 
 ### Pacman
 
 Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 和 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AE.A1.E7.90.86 "FAQ (简体中文)") 页面提供了安装、升级和管理软件包的信息。
 
 [Pacman tips (简体中文)](/index.php/Pacman_tips_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman tips (简体中文)")中有很多方便 pacman 使用的技巧。
+
+### 软件仓库镜像
+
+参见[软件仓库镜像](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)")一文，获取寻找更快更新pacman镜像的方法。此外，可以查看[镜像状态](https://www.archlinux.org/mirrors/status/)获取最新镜像站点同步信息。
 
 ### 软件仓库
 
@@ -150,13 +149,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ### Arch用户软件源（AUR）
 
-[ABS](/index.php/ABS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ABS (简体中文)")提供了编译官方库软件的脚本，而[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")则提供了用户提交的、非官方的软件包编译脚本。这是一个基于[web界面](https://aur.archlinux.org/index.php)（或通过[AUR工具](/index.php/AUR_helper_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helper (简体中文)")访问）的非官方软件仓库。
-
-[AUR工具](/index.php/AUR_helper_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helper (简体中文)")为使用[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")提供便利，帮助用户从上万PKGBUILD中进行查询。
-
-### 软件仓库镜像
-
-参见[软件仓库镜像](/index.php/Mirrors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mirrors (简体中文)")一文，获取寻找更快更新pacman镜像的方法。此外，可以查看[镜像状态](https://www.archlinux.org/mirrors/status/)获取最新镜像站点同步信息。
+[ABS](/index.php/ABS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ABS (简体中文)")提供了编译官方库软件的脚本，而[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")则提供了用户提交的、非官方的软件包编译脚本。这是一个基于[web界面](https://aur.archlinux.org/index.php) 或通过[AUR工具](/index.php/AUR_helper_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR helper (简体中文)") 访问的非官方软件仓库。
 
 ## 启动
 
@@ -186,15 +179,19 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 本部分提供了在系统上安装图形程序，参阅 [Category:X server (简体中文)](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)")。
 
-### 显卡驱动
-
-默认的**vesa**显卡驱动对于大多数显卡都是兼容的，但性能远不如专门的驱动。根据显卡制造商，参见：[ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")，[Intel (简体中文)](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel (简体中文)")，[NVIDIA (简体中文)](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)")。
-
 ### 显示服务
 
 [X 窗口管理系统](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System")(**X11**或者**X**) 是基于网络的显示协议，提供了窗口功能，包含建立图形用户界面(GUI)的标准工具和协议。[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")是X窗口系统11版本的开源实现，提供图形用户界面, 安装和配置请阅读[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")。
 
 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 是新的显示服务协议，Weston 是参考实现。目前还处于开发阶段，支持的程序很少。
+
+### 显卡驱动
+
+默认的**vesa**显卡驱动对于大多数显卡都是兼容的，但性能远不如专门的驱动。根据显卡制造商，参见：[ATI (简体中文)](/index.php/ATI_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ATI (简体中文)")，[Intel (简体中文)](/index.php/Intel_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Intel (简体中文)")，[NVIDIA (简体中文)](/index.php/NVIDIA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NVIDIA (简体中文)")。
+
+### 桌面环境
+
+[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")只提供图形环境的基本框架，完整的用户体验还需要其他组件。 [桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")(DE): 在**X**之上并与其共同运作，提供完整的功能和动态图形界面。桌面环境通常提供图标、小程序（applets）、窗口、工具栏、文件夹、壁纸、应用程序和拖放等功能。使用[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")、[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")、[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")、[Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")这类[桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")，是最简单的配置方法. [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") 包含了各种桌面环境。
 
 ### 窗口管理器
 
@@ -203,10 +200,6 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 ### 显示管理器
 
 除了手动启动 X 的方法外，可以让图形界面自动启动，[显示管理器](/index.php/%E6%98%BE%E7%A4%BA%E7%AE%A1%E7%90%86%E5%99%A8 "显示管理器") 介绍了启动管理器的使用方法。 [Start X at Login](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)") 提供了直接从终端启动的轻量方法。
-
-### 桌面环境
-
-[Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")只提供图形环境的基本框架，完整的用户体验还需要其他组件。 [桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")(DE): 在**X**之上并与其共同运作，提供完整的功能和动态图形界面。桌面环境通常提供图标、小程序（applets）、窗口、工具栏、文件夹、壁纸、应用程序和拖放等功能。使用[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")、[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")、[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")、[Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")这类[桌面环境](/index.php/%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83 "桌面环境")，是最简单的配置方法. [Category:Desktop environments](/index.php/Category:Desktop_environments "Category:Desktop environments") 包含了各种桌面环境。
 
 ## 电源管理
 
@@ -230,7 +223,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 ## 多媒体
 
-[Category:Audio/Video (简体中文)](/index.php/Category:Audio/Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio/Video (简体中文)")包含更多多媒体方面的资源
+[Category:Multimedia](/index.php/Category:Multimedia "Category:Multimedia")包含更多多媒体方面的资源
 
 ### 声音
 
@@ -239,7 +232,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 *   [ALSA](/index.php/ALSA_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ALSA (简体中文)") 是Linux内核组件，推荐使用。只需要解除静音,安装[alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)软件包，它包含了`alsamixer`)工具，然后按照[此文](/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.8F.96.E6.B6.88.E9.80.9A.E9.81.93.E9.9D.99.E9.9F.B3 "Advanced Linux Sound Architecture (简体中文)")进行设置即可。
 *   如果 Alsa 不能工作，可以试试[OSS](/index.php/OSS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "OSS (简体中文)")。
 
-另外，用户可能希望安装且配置一个 [sound server](/index.php/Sound#Sound_servers "Sound"). 对于高级声音需求, 可浏览 [Pro Audio](/index.php/Pro_Audio "Pro Audio").
+另外，用户可能希望安装且配置一个 [sound server](/index.php/Sound#Sound_servers "Sound")，例如[PulseAudio](/index.php/PulseAudio "PulseAudio"). 对于高级声音需求, 可浏览 [professional audio](/index.php/Professional_audio "Professional audio").
 
 ### 浏览器插件
 
@@ -257,10 +250,6 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 [NTP](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)")，是最常用的网络同步时间的协议。
 
-### DNS 加速
-
-通过安装[pdnsd](/index.php/Pdnsd "Pdnsd"),[dnsmasq](/index.php/Dnsmasq_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dnsmasq (简体中文)"),[unbound](/index.php/Unbound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unbound (简体中文)")和[rescached-git](https://aur.archlinux.org/packages/rescached-git/)建立本地DNS，可以加速DNS解析速度。
-
 ### DNS 安全
 
 当在浏览网站，在线支付，连接 [SSH](/index.php/SSH "SSH") 服务 和类似的事情的时候，为了更安全，考虑使用 [DNSSEC](/index.php/DNSSEC "DNSSEC")-enabled 浏览器，它可以验证 [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") 记录的签名, 也可以用 [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") 来加密 DNS 的传输.
@@ -273,11 +262,15 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 [防火墙](/index.php/Firewalls "Firewalls")为Linux网络访问提供额外保护。作为[Netfilter](https://en.wikipedia.org/wiki/Netfilter "wikipedia:Netfilter")计划的一部分，Linux 内核内置了iptables——一种[状态防火墙](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")（Stateful firewall）。可以通过直接或间接的方式配置它。Arch默认不打开任何端口，因此一般没有必要使用防火墙。
 
-### Windows 网络
+### 资源共享
+
+可以通过 [NFS](/index.php/NFS "NFS") 或 [SSHFS](/index.php/SSHFS "SSHFS") 在网络间共享文件.
 
 用户可以使用[Samba](/index.php/Samba_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Samba (简体中文)")进行 Windows 与 Arch Linux 间的网络传输。
 
 要将 Arch Linux 系统连接到 Active Directory 认证的网络，请阅读文章[Active Directory 整合](/index.php/Active_Directory_Integration "Active Directory Integration").
+
+参阅 [Category:Network sharing](/index.php/Category:Network_sharing "Category:Network sharing").
 
 ## 输入
 
@@ -354,13 +347,7 @@ Linux下，一般由[X图形服务器](/index.php/X_(%E7%AE%80%E4%BD%93%E4%B8%AD
 
 请访问 [字体配置](/index.php/Font_configuration "Font configuration") 获取配置字体渲染的详细信息，[Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") 提供了字体选择建议和安装方法。
 
-#### 终端字体
-
 对于经常使用虚拟终端的用户，可以通过配置字体提高可读性，参见：[Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")。
-
-#### 打补丁的字体包
-
-可使用一些补丁包来实现比标准库更好的字体平滑, 参见：[Font configuration#Patched packages.](/index.php/Font_configuration#Patched_packages. "Font configuration")。
 
 ### GTK and Qt themes
 
@@ -388,13 +375,9 @@ Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 
 
 ### 彩色输出
 
-虽然一部分软件能够输出彩色字符, 使用通用的彩色字过滤器也是另一种方法. 安装 [acoc](https://aur.archlinux.org/packages/acoc/) 或经常更新的[Git](/index.php/Git "Git")版本 [cope-git](https://aur.archlinux.org/packages/cope-git/), 可以从 [AUR](/index.php/AUR "AUR")安装。
-
-#### 核心工具
+虽然一部分软件能够输出彩色字符, 使用通用的彩色字过滤器也是另一种方法. 安装 [cope-git](https://aur.archlinux.org/packages/cope-git/)。
 
 关于Linux核心工具（例如**grep**以及**ls**）的彩色输出，参见[核心工具](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)")。
-
-#### Man帮助文档
 
 Man页（帮助文档）是GNU/Linux最常用的信息工具。为提高可读性，可以打开彩色输出，参见：[彩色显示](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BD.A9.E8.89.B2.E6.98.BE.E7.A4.BA "Man page (简体中文)")。
 

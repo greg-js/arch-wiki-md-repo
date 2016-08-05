@@ -13,6 +13,8 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [5 A basic L3 IP routing configuration](#A_basic_L3_IP_routing_configuration)
     *   [5.1 The server configuration file](#The_server_configuration_file)
         *   [5.1.1 Hardening the server](#Hardening_the_server)
+        *   [5.1.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
+            *   [5.1.2.1 TCP vs UDP](#TCP_vs_UDP)
     *   [5.2 The client configuration file](#The_client_configuration_file)
         *   [5.2.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
     *   [5.3 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
@@ -110,7 +112,7 @@ For more advanced configurations, please see the official [OpenVPN 2.2 man page]
 
 ### The server configuration file
 
-**Note:** Note that if the server is behind a firewall or a NAT translating router, the OpenVPN UDP port must be forward on to the server.
+**Note:** Note that if the server is behind a firewall or a NAT translating router, the OpenVPN port must be forward on to the server.
 
 Copy the example server configuration file to `/etc/openvpn/server.conf`:
 
@@ -132,9 +134,7 @@ cert /etc/openvpn/server.crt
 key /etc/openvpn/server.key  # This file should be kept secret
 dh /etc/openvpn/dh.pem
 .
-.
 tls-auth /etc/openvpn/ta.key **0**
-.
 .
 user nobody
 group nobody
@@ -145,17 +145,51 @@ group nobody
 
 If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and limiting the newer tls ciphers. Do so by adding the following to `/etc/openvpn/server.conf`
 
+ `/etc/openvpn/server.conf` 
 ```
-..
+.
 cipher AES-256-CBC
 auth SHA512
 tls-version-min 1.2
-tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
-..
+tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-2}56-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
+.
 
 ```
 
 **Note:** The .ovpn client profile MUST contain a matching cipher and auth line to work properly (at least with the iOS client)!
+
+#### Deviating from the standard port and/or protocol
+
+Some public/private network admins may not allow OpenVPN connections running on its default port and/or protocol. A good strategy to circumvent this is to mimic https/SSL traffic on OpenVPN's server via employing the port 443/tcp which is very likely unobstructed.
+
+To do so, configure `/etc/openvpn/server.conf` as such:
+
+ `/etc/openvpn/server.conf` 
+```
+.
+port 443
+proto tcp
+.
+
+```
+
+**Note:** The .ovpn client profile MUST contain a matching port and proto line to work properly!
+
+##### TCP vs UDP
+
+There are subtle differences between TCP and UDP.
+
+TCP
+
+*   So-called "stateful protocol."
+*   High reliability due to error correction (i.e. waits for packet acknowledgment).
+*   Potentially slower than UDP.
+
+UDP
+
+*   So-called "stateless protocol."
+*   Less reliable than TCP as no error correction is in use.
+*   Potentially faster than TCP.
 
 ### The client configuration file
 
@@ -177,13 +211,11 @@ Edit the following:
 ```
 remote elmer.acmecorp.org 1194
 .
-.
 user nobody
 group nobody
 ca /etc/openvpn/ca.crt
 cert /etc/openvpn/client.crt
 key /etc/openvpn/client.key
-.
 .
 tls-auth /etc/openvpn/ta.key **1**
 

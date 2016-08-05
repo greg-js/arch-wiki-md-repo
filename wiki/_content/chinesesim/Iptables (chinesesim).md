@@ -107,7 +107,7 @@ iptables 包含 5 张表（tables）:
 
 ### 遍历链 （Traversing Chains）
 
-[流程图](http://www.frozentux.net/iptables-tutorial/chunkyhtml/images/tables_traverse.jpg)上显示了在任何接口上收到的网络数据包按顺序穿过表的交通控制链的过程。第一个路由策略包括决定数据包的目的地是本地主机（这种情况下，数据包穿过 `INPUT` 链）或是其他（数据包穿过 `FORWARD` 链）。随后的路由策略包括决定给传出包分配哪个端口。通过路径上的每一条链，链上的每一条规则按顺序评估，无论何时匹配了一条规则，相应的目标/跳转动作将会执行。最常用的3个目标是 `ACCEPT`, `DROP` 和跳转到用户定义的链。内置链可以有默认的策略，但是用户定义的链没有。如果链中经过的每一条规则都不能提供完整匹配，那么数据包像[这张图片](http://www.frozentux.net/iptables-tutorial/images/table_subtraverse.jpg)上一样回落到调用链。如果任何时候一个 `DROP` 目标的规则实现完全匹配，那么丢弃数据包，不进行进一步处理。如果一个数据包在链中被 `ACCEPT`，那么它也将被所有超集链 `ACCEPT`，并且不再遍历其他超集链。然而，要注意，数据包将以正常的方式继续遍历其他表中的其他链。
+该[流程图](http://www.frozentux.net/iptables-tutorial/chunkyhtml/images/tables_traverse.jpg)描述链了在任何接口上收到的网络数据包是按照怎样的顺序穿过表的交通管制链。第一个路由策略包括决定数据包的目的地是本地主机（这种情况下，数据包穿过 `INPUT` 链），还是其他主机（数据包穿过 `FORWARD` 链）；中间的路由策略包括决定给传出的数据包使用那个源地址、分配哪个接口；最后一个路由策略存在是因为先前的 mangle 与 nat 链可能会改变数据包的路由信息。数据包通过路径上的每一条链时，链中的每一条规则按顺序匹配；无论何时匹配了一条规则，相应的 target/jump 动作将会执行。最常用的3个 target 是 `ACCEPT`, `DROP` ,或者 jump 到用户自定义的链。内置的链有默认的策略，但是用户自定义的链没有默认的策略。在 jump 到的链中，若每一条规则都不能提供完全匹配，那么数据包像[这张图片](http://www.frozentux.net/iptables-tutorial/images/table_subtraverse.jpg)描述的一样返回到调用链。在任何时候，若 `DROP` target 的规则实现完全匹配，那么被匹配的数据包会被丢弃，不会进行进一步处理。如果一个数据包在链中被 `ACCEPT`，那么它也会被所有的父链 `ACCEPT`，并且不再遍历其他父链。然而，要注意的是，数据包还会以正常的方式继续遍历其他表中的其他链。
 
 ### 模块 （Modules）
 

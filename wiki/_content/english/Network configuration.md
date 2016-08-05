@@ -625,7 +625,7 @@ $ lspci | grep Ethernet
 
 ```
 
-*   Plug you network cable in. If this solves your problems you can make this permanent by adding `broadcom` and `tg3` (in this order) to the `MODULES` array in `/etc/mkinitcpio.conf`:
+*   Plug your network cable in. If this solves your problems you can make this permanent by adding `broadcom` and `tg3` (in this order) to the `MODULES` array in `/etc/mkinitcpio.conf`:
 
 ```
 MODULES=".. broadcom tg3 .."

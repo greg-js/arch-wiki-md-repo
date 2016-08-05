@@ -108,14 +108,14 @@ To list the available networks found after a scan run (example output):
 
 ```
 
-To connect to an open network, use the second field beginning with **wifi_**
-
-Recent versions of connman have tab completion so use this to your advantage!:
+To connect to an open network, use the second field beginning with `wifi_`:
 
 ```
 $ connmanctl connect wifi_dc85de828967_4d6568657272696e_managed_none
 
 ```
+
+**Tip:** Network names can be tab-completed.
 
 You should now be connected to the network. Check using `ip addr` or `connmanctl state`.
 

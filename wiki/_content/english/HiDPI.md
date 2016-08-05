@@ -237,6 +237,8 @@ Full out of the box HiDPI support is available in [chromium](https://www.archlin
 
 Using this option, a scaling factor of 1 would be normal scaling. Floating point values can be used.
 
+If you use a HiDPI monitor such as Retina display together with another monitor, you can use the [reszoom](https://chrome.google.com/webstore/detail/resolution-zoom/enjjhajnmggdgofagbokhmifgnaophmh) extension in order to automatically adjust the zoom level for the active screen.
+
 #### Opera
 
 Since version 24 one can alter Opera's DPI by starting it with the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)

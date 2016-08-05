@@ -8,7 +8,6 @@
     *   [1.3 Touchpad](#Touchpad)
     *   [1.4 Backlight control keys](#Backlight_control_keys)
     *   [1.5 Suspend to ram](#Suspend_to_ram)
-    *   [1.6 Microphone](#Microphone)
 *   [2 Power Saving](#Power_Saving)
     *   [2.1 TLP](#TLP)
 *   [3 x230T (tablet version)](#x230T_.28tablet_version.29)
@@ -31,7 +30,9 @@ After saving the above files, make sure to regenerate your init ram image by the
 
 ### Screen
 
-X230 has IPS or TN screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information.
+X230 has IPS or TN screen with 125.37 DPI. Refer to [HiDPI](/index.php/HiDPI "HiDPI") page for more information. It can be set with command `xrandr --dpi 125.37` using .xinitrc or other autostarts.
+
+See [Intel](/index.php/Intel "Intel") for driver choice.
 
 ### Touchpad
 
@@ -110,10 +111,6 @@ StandardInput=tty
 RemainAfterExit=yes
 
 ```
-
-### Microphone
-
-If the built-in microphone is not detected when using PulseAudio, the steps here may fix the issue: [PulseAudio/Troubleshooting#Microphone not detected by PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio "PulseAudio/Troubleshooting").
 
 ## Power Saving
 

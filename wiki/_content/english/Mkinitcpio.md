@@ -24,11 +24,12 @@
     *   [5.6 /usr as a separate partition](#.2Fusr_as_a_separate_partition)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Extracting the image](#Extracting_the_image)
-    *   [6.2 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
-    *   [6.3 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
-    *   [6.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
-    *   [6.5 Standard rescue procedures](#Standard_rescue_procedures)
-        *   [6.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+    *   [6.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
+    *   [6.3 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
+    *   [6.4 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
+    *   [6.5 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
+    *   [6.6 Standard rescue procedures](#Standard_rescue_procedures)
+        *   [6.6.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
 *   [7 See also](#See_also)
 
 ## Overview
@@ -426,6 +427,35 @@ You can also get a more human-friendly listing of the important parts in the ima
 $ lsinitcpio -a /boot/initramfs-linux.img
 
 ```
+
+### Recompressing a modified extracted image
+
+After extracting an image as explained above, after modifying it, you can find the command necessary to recompress it. Edit `/usr/bin/mkinitcpio` and change the line as shown below (line 531 in mkinitcpio v20-1.)
+
+```
+#MKINITCPIO_PROCESS_PRESET=1 "$0" "${preset_cmd[@]}"
+MKINITCPIO_PROCESS_PRESET=1 /usr/bin/bash -x "$0" "${preset_cmd[@]}"
+
+```
+
+Then running `mkinitcpio` with its usual options (typically `mkinitcpio -p linux`), toward the last 20 lines or so you will see something like:
+
+```
++ find -mindepth 1 -printf '%P\0'
++ LANG=C
++ bsdcpio -0 -o -H newc --quiet
++ gzip
+
+```
+
+Which corresponds to the command you need to run, which may be:
+
+```
+# find -mindepth 1 -printf '%P\0' | LANG=C bsdcpio -0 -o -H newc --quiet | gzip > /boot/initramfs-linux.img
+
+```
+
+**Warning:** It's a good idea to rename the automatically generated /boot/initramfs-linux.img before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
 
 ### "/dev must be mounted" when it already is
 

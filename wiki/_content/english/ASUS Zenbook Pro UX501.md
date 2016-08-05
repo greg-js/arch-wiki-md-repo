@@ -27,6 +27,13 @@ acpi_osi= acpi_backlight=native
 
 ```
 
+To allow X to start without locking up when the GPU is powered down via bbswitch, replace the acpi_osi= above with:
+
+```
+acpi_osi=! acpi_osi="Windows 2009"
+
+```
+
 ## Module Configuration
 
 Warning: Before trying out below fixes run pacman -Syu

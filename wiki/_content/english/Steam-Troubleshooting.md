@@ -1,5 +1,3 @@
-See [Steam](/index.php/Steam "Steam") for the main article.
-
 **Tip:** The `/usr/bin/steam` script redirects Steam's stdout and stderr to `/tmp/dumps/${USER}_stdout.txt`. This means you do not have to run Steam from a terminal emulator to see that output.
 
 **Note:** In addition to being documented here, any bug/fix/error should be, if not already, reported on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux).
@@ -9,10 +7,8 @@ See [Steam](/index.php/Steam "Steam") for the main article.
 *   [1 Debugging Steam](#Debugging_Steam)
 *   [2 Issues with nvidia 361.28](#Issues_with_nvidia_361.28)
 *   [3 Steam runtime issues](#Steam_runtime_issues)
-    *   [3.1 Possible symptoms](#Possible_symptoms)
-    *   [3.2 Work around using the dynamic linker](#Work_around_using_the_dynamic_linker)
-        *   [3.2.1 Deleting the runtime libraries](#Deleting_the_runtime_libraries)
-    *   [3.3 More information](#More_information)
+    *   [3.1 Dynamic linker](#Dynamic_linker)
+    *   [3.2 Native runtime](#Native_runtime)
 *   [4 Multiple monitors setup](#Multiple_monitors_setup)
 *   [5 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
 *   [6 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
@@ -32,8 +28,10 @@ See [Steam](/index.php/Steam "Steam") for the main article.
 *   [19 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
 *   [20 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
 *   [21 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+*   [22 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+*   [23 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 
-### Debugging Steam
+## Debugging Steam
 
 It is possible to debug Steam to gain more information which could be useful to find out why something does not work.
 
@@ -45,7 +43,7 @@ For example with [gdb](https://www.archlinux.org/packages/?name=gdb)
 
 `gdb` will open, then type `run` which will start `steam` and once crash happens you can type `backtrace` to see call stack.
 
-### Issues with nvidia 361.28
+## Issues with nvidia 361.28
 
 A bug was introduced in nvidia 361.28 that prevents some games from launching with an error such as
 
@@ -59,11 +57,9 @@ To workaround this until NVIDIA fixes this issue, use this line for the launch o
 
 Alternatively, you can roll back to the 361.16 drivers
 
-### Steam runtime issues
+## Steam runtime issues
 
-Steam installs its own older versions of some libraries collectively called the "Steam Runtime". These will often conflict with the libraries included in Arch Linux.
-
-#### Possible symptoms
+Steam installs its own older versions of some libraries collectively called the "Steam Runtime". These will often conflict with the libraries included in Arch Linux, and out-of-date libraries may be missing important features (Notably, the OpenAL version they ship lacks [HRTF](/index.php/Gaming#Binaural_Audio_with_OpenAL "Gaming") and surround71 support).
 
 Some of the possible symptoms of this issue are the Steam client itself crashing or hanging, and/or various errors:
 
@@ -86,74 +82,94 @@ ERROR: ld.so: object '~/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' f
 ```
 
 ```
-OpenGL GLX context is not using direct rendering, which may cause performance problems. [(see below)](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
+OpenGL GLX context is not using direct rendering, which may cause performance problems.
 
 ```
 
 ```
-Could not find required OpenGL entry point 'glGetError'! Either your video card is unsupported or your OpenGL driver needs to be updated.}}
+Could not find required OpenGL entry point 'glGetError'! Either your video card is unsupported or your OpenGL driver needs to be updated.
 
 ```
 
-**Note:** A misconfigured firewall may also show up as a runtime issue, because Steam silently fails whenever it can't connect to its servers, and most games just crash whenever the Steam API fails to load.
+**Note:** A misconfigured [firewall](/index.php/Firewall "Firewall") may cause Steam to fail as it can not connect to its servers. [[1]](https://support.steampowered.com/kb_article.php?ref=2198-AGHC-7226) Most games will crash if the Steam API fails to load.
 
-#### Work around using the dynamic linker
-
-The dynamic linker (`man 8 ld.so`) can be used to force Steam to load the up-to-date system libraries via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"). For example, you can create your own wrapper script:
-
- `/usr/local/bin/steam` 
-```
-#!/bin/sh
-export LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so'
-exec /usr/bin/steam "$@"
-```
-
-Note that if you use the .desktop shortcut you will need to modify it to set `Exec=/usr/local/bin/steam %U`. Alternatively you can define the environment variable directly in the shortcut:
-
-```
-Exec=env LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam %U
-
-```
-
-**Note:** The '$LIB' above is not a variable but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating $LIB as a variable.
-
-##### Deleting the runtime libraries
-
-**Warning:** This method is more prone to errors and harder to undo than the previous one. Use at your own risk.
-
-You can also run this command to delete the runtime libraries known to cause issues on Arch Linux:
-
-```
-$ find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
-
-```
-
-If the above command does not work, run the above command again, then run this command.
-
-```
-$ find ~/.local/share/Steam/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
-
-```
-
-**Note:** Steam will frequently re-install these runtime libraries when Steam is updated, so until the issue is resolved: whenever Steam updates, you should exit, remove the libraries, and restart it again.
-
-If you wish to restore the files that were deleted by the commands above, you can use the built-in steam reset functionality.
-
-**Warning:** `--reset` also deletes your games (the AppCache).
-
-```
-$ steam --reset
-
-```
-
-#### More information
-
-See also [upstream issue #13](https://github.com/ValveSoftware/steam-runtime/issues/13), [#Using native runtime](#Using_native_runtime), and these forum threads:
+See also [upstream issue #13](https://github.com/ValveSoftware/steam-runtime/issues/13), and these forum threads:
 
 *   [https://bbs.archlinux.org/viewtopic.php?id=181171](https://bbs.archlinux.org/viewtopic.php?id=181171)
 *   [https://bbs.archlinux.org/viewtopic.php?id=183141](https://bbs.archlinux.org/viewtopic.php?id=183141)
 
-### Multiple monitors setup
+### Dynamic linker
+
+The dynamic linker (see [ld.so(8)](http://man7.org/linux/man-pages/man8/ld.so.8.html)) can be used to force Steam to load the up-to-date system libraries via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"). For example:
+
+```
+LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam
+
+```
+
+**Note:** The `$LIB` above is **not** a variable, but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating `$LIB` as a variable.
+
+**Tip:** You can put this command in a wrapper script such as `/usr/local/bin/steam-preload`, appending `"$@"` to preserve command-line arguments. This script can be referred to in a [desktop file](/index.php/Desktop_file "Desktop file"), for example through `Exec=/usr/local/bin/steam-preload %U`.
+
+### Native runtime
+
+To use your own system libraries, you can run Steam with:
+
+```
+$ STEAM_RUNTIME=0 steam
+
+```
+
+However, if you are missing any libraries Steam makes use of, this will fail to launch properly. An easy way to find the missing libraries is to run the following commands:
+
+```
+$ cd ~/.local/share/Steam/ubuntu12_32
+$ LD_LIBRARY_PATH=".:${LD_LIBRARY_PATH}" ldd $(file *|sed '/ELF/!d;s/:.*//g')|grep 'not found'|sort|uniq
+
+```
+
+**Note:** The libraries will have to be 32-bit, which means you may have to download some from the AUR if on x86_64, such as NetworkManager.
+
+Once you have done this, run steam again with `STEAM_RUNTIME=0 steam` and verify it is not loading anything outside of the handful of steam support libraries:
+
+```
+$ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | sort | uniq
+
+```
+
+To launch Steam using native runtime in a graphical user environment you can add the [environment variable](/index.php/Environment_variable "Environment variable") to your [xprofile](/index.php/Xprofile "Xprofile") file:
+
+ `~/.xprofile` 
+```
+export STEAM_RUNTIME=0
+
+```
+
+If you create or edit this file while in a desktop session you will need to log out and then back into your [desktop environment](/index.php/Desktop_environment "Desktop environment") to enable the change to take effect.
+
+**Backing out using the native runtime in a graphical environment change**
+
+To reverse this change remove or comment out the export line in your [xprofile](/index.php/Xprofile "Xprofile") file. Log out and then in again to refresh your desktop session. When launched, Steam will use the old bundled Ubuntu libraries.
+
+**Convenience repository**
+
+The unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repository contains all libraries needed to run native steam on x86_64\. Please note that, for some reason, steam does not pick up sdl2 or libav* even if you have them installed. It will still use the ones it ships with.
+
+All you need to install is the meta-package [steam-libs](https://aur.archlinux.org/packages/steam-libs/), it will pull all the libs for you. Please report if there is any missing library, the maintainer already had some lib32 packages installed so a library may have been overlooked.
+
+**Satisfying dependencies without using the convenience repository or steam-libs meta-package (For x86_64)**
+
+If you do not like the approach of installing all the libraries known for Steam and various game-compatibility libraries and want to install the minimum required libraries to launch Steam and most games install the following libraries:
+
+Steam on x86_64 requires the following libraries from [AUR](/index.php/AUR "AUR") to be installed [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) and [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/).
+
+It will also require the following libraries from the [multilib](/index.php/Multilib "Multilib") repository [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3).
+
+If Steam displays errors related to libcanberra-gtk3 install [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra).
+
+While most games will run with the minimal set of libraries listed here some games will require additional libraries to run. For a list of known game-compatibility libraries consult the [game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") page.
+
+## Multiple monitors setup
 
 Setup with multiple monitors can cause `ERROR: ld.so: object '~/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.` error which will make game unable to start. If you stuck on this error and have multiple monitors, try to disable all additional displays, and then run a game. You can enable them after the game successfully started.
 
@@ -166,7 +182,7 @@ export LD_LIBRARY_PATH=/usr/lib32/nvidia:/usr/lib/nvidia:$LD_LIBRARY_PATH
 
 and then run steam.
 
-### Native runtime: steam.sh line 756 Segmentation fault
+## Native runtime: steam.sh line 756 Segmentation fault
 
 	Valve GitHub [issue 3863](https://github.com/ValveSoftware/steam-for-linux/issues/3863)
 
@@ -187,7 +203,7 @@ Alternatively it has been successful to prioritize the loading of the libudev.so
 
  `$ LD_PRELOAD=/usr/lib32/libudev.so.1 STEAM_RUNTIME=0 steam` 
 
-### The close button only minimizes the window
+## The close button only minimizes the window
 
 	Valve GitHub [issue 1025](https://github.com/ValveSoftware/steam-for-linux/issues/1025)
 
@@ -195,7 +211,7 @@ To close the Steam window (and remove it from the taskbar) when you press **x**,
 
 Steam provides a script located at `/usr/bin/steam` that will be run when launching Steam; adding `export STEAM_FRAME_FORCE_CLOSE=1` to this file will export the environment variable for Steam on application launch.
 
-### Audio not working or 756 Segmentation fault
+## Audio not working or 756 Segmentation fault
 
 First try to install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) and if you run a x86_64 system [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins).
 
@@ -240,7 +256,7 @@ and find the new libs and their versions.
 
 Bugs reports have been filed: [#3376](https://github.com/ValveSoftware/steam-for-linux/issues/3376) and [#3504](https://github.com/ValveSoftware/steam-for-linux/issues/3504)
 
-### Text is corrupt or missing
+## Text is corrupt or missing
 
 The Steam Support [instructions](https://support.steampowered.com/kb_article.php?ref=1974-YFKL-4947) for Windows seem to work on Linux also.
 
@@ -248,11 +264,11 @@ You can install them via the [steam-fonts](https://aur.archlinux.org/packages/st
 
 **Note:** When steam cannot find the Arial fonts, font-config likes to fall back onto the Helveticia bitmap font. Steam does not render this and possibly other bitmap fonts correctly, so either removing problem fonts or [disabling bitmap fonts](/index.php/Font_configuration#Disable_bitmap_fonts "Font configuration") will most likely fix the issue without installing the Arial or ArialBold fonts. The font being used in place of Arial can be found with the command `$ fc-match -v Arial` 
 
-### SetLocale('en_US.UTF-8') fails at game startup
+## SetLocale('en_US.UTF-8') fails at game startup
 
 Uncomment `en_US.UTF-8 UTF-8` in `/etc/locale.gen` and then run `locale-gen` as root.
 
-### The game crashes immediately after start
+## The game crashes immediately after start
 
 First, right-click on the game, choose Properties, and click the "Set Launch Options" button. In that text box put:
 
@@ -269,9 +285,9 @@ And finally, if those don't work, you should check Steam's output for any error 
 
 In these particular cases, try replacing the libsteam_api.so file from the problematic game with one from a game that works fine. This error usually happens for games that were not updated recently when Steam runtime is disabled. This error has been encountered with at least AYIM, Bastion and Monaco.
 
-### OpenGL not using direct rendering / Steam crashes Xorg
+## OpenGL not using direct rendering / Steam crashes Xorg
 
-Sometimes presented with the error message "OpenGL GLX context is not using direct rendering, which may cause performance problems." [[1]](https://support.steampowered.com/kb_article.php?ref=9938-EYZB-7457)
+Sometimes presented with the error message "OpenGL GLX context is not using direct rendering, which may cause performance problems." [[2]](https://support.steampowered.com/kb_article.php?ref=9938-EYZB-7457)
 
 If you still encounter this problem after addressing [#Steam runtime issues](#Steam_runtime_issues), you have probably not installed your 32-bit graphics driver correctly. See [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg") for which packages to install.
 
@@ -282,11 +298,11 @@ $ glxinfo32 | grep OpenGL.
 
 ```
 
-### No audio in certain games
+## No audio in certain games
 
 If there is no audio in certain games, and the suggestions provided in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") do not fix the problem, [#Using native runtime](#Using_native_runtime) may provide a successful workaround. (See the note about "Steam Runtime issues" at the top of this section.)
 
-#### FMOD sound engine
+### FMOD sound engine
 
 While troubleshooting a sound issue, it became evident that the following games (as examples) use the 'FMOD' audio middleware package:
 
@@ -300,7 +316,7 @@ It usually occurs when you have a default sound device set with ALSA, but you do
 
 To check what your default device is set as, use something like 'aplay' to output to your 'default' device, and see if you get sound, if you don't, your default is likely set to something that isn't even plugged in!
 
-### Missing libc
+## Missing libc
 
 Verify that [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) is installed.
 
@@ -323,7 +339,7 @@ If it doesn't, try to delete the `~/.local/share/Steam/` directory and launch st
 
 This error message can also occur due to a bug in steam which occurs when your `$HOME` directory ends in a slash (Valve GitHub [issue 3730](https://github.com/ValveSoftware/steam-for-linux/issues/3730)). This can be fixed by editing `/etc/passwd` and changing `/home/<username>/` to `home/<username>`, then logging out and in again. Afterwards, steam should repair itself automatically.
 
-### Missing libGL
+## Missing libGL
 
 You may encounter this error when you launch Steam at first time.
 
@@ -336,7 +352,7 @@ Make sure you have installed the `lib32` version of all your video drivers as de
 
 If you get this error after reinstalling your Nvidia proprietary drivers, or switching from a version to another, [reinstall](/index.php/Reinstall "Reinstall") [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) and [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl).
 
-### Games do not launch on older intel hardware
+## Games do not launch on older intel hardware
 
 On older Intel hardware, if the game immediately crashes when run, it may be because your hardware does not directly support the latest OpenGL. It appears as a gameoverlayrenderer.so error in /tmp/dumps/mobile_stdout.txt, but looking in /tmp/gameoverlayrenderer.log it shows a GLXBadFBConfig error.
 
@@ -347,11 +363,11 @@ MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140 %command%
 
 ```
 
-### 2k games do not run on xfs partitions
+## 2k games do not run on xfs partitions
 
-If you are running 2k games such as Civilization 5 on xfs partitions, then the game may not start or run properly due to how the game loads files as it starts. [[3]](https://bbs.archlinux.org/viewtopic.php?id=185222)
+If you are running 2k games such as Civilization 5 on xfs partitions, then the game may not start or run properly due to how the game loads files as it starts. [[4]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 
-### Unable to add library folder because of missing execute permissions
+## Unable to add library folder because of missing execute permissions
 
 If you add another steam library folder on another drive, you might receive the error message *"New Steam library folder must be on a filesystem mounted with execute permissions"*.
 
@@ -359,11 +375,11 @@ Make sure you are mounting the filesystem with the correct flags in your `/etc/f
 
 This error might also occur if you are readding a library folder and Steam is unable to find a contained `steamapps` folder. Previous versions used `SteamApps` instead, so ensure the name is fully lowercase.
 
-### Steam controller not being detected correctly
+## Steam controller not being detected correctly
 
 See [Gamepad#Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad").
 
-### VERSION_ID: unbound variable
+## VERSION_ID: unbound variable
 
 In Steam's output, you may see the following line:
 
@@ -379,7 +395,7 @@ VERSION_ID="2015.11.01"
 
 ```
 
-### Steam hangs on "Installing breakpad exception handler..."
+## Steam hangs on "Installing breakpad exception handler..."
 
 [BBS#177245](https://bbs.archlinux.org/viewtopic.php?id=177245)
 
@@ -394,6 +410,36 @@ Installing breakpad exception handler for appid(steam)/version(0_client)
 
 Then nothing else happens. This is likely related to mis-matched `lib32-nvidia-*` packages.
 
-### 'GLBCXX_3.X.XX' not found when using Bumblebee
+## 'GLBCXX_3.X.XX' not found when using Bumblebee
 
 This error is likely caused because Steam packages its own out of date `libstdc++.so.6`. See [#Steam runtime issues](#Steam_runtime_issues) about working around the bad library. See also GitHub [issue 3773](https://github.com/ValveSoftware/steam-for-linux/issues/3773).
+
+## Prevent Memory Dumps Consuming RAM
+
+Every time steam crashes, it writes a memory dump to **/tmp/dumps/**. If Steam falls into a crash loop, and it often does, the dump files can start consuming considerable space. Since **/tmp** on Arch is mounted as tmpfs, memory and swap file can be consumed needlessly. To prevent this, you can make a symbolic link to **/dev/null** or create and modify permissions on **/tmp/dumps**. Then Steam will be unable to write dump files to the directory. This also has the added benefit of Steam not uploading these dumps to Valve's servers.
+
+```
+# ln -s /dev/null /tmp/dumps
+
+```
+
+or
+
+```
+# mkdir /tmp/dumps
+# chmod 600 /tmp/dumps
+
+```
+
+## Killing standalone compositors when launching games
+
+Further to this, utilising the `%command%` switch, you can kill standalone compositors (such as Xcompmgr or [Compton](/index.php/Compton "Compton")) - which can cause lag and tearing in some games on some systems - and relaunch them after the game ends by adding the following to your game's launch options.
+
+```
+ killall compton && %command%; compton -b &
+
+```
+
+Replace `compton` in the above command with whatever your compositor is. You can also add -options to `%command%` or `compton`, of course.
+
+Steam will latch on to any processes launched after `%command%` and your Steam status will show as in game. So in this example, we run the compositor through `nohup` so it is not attached to Steam (it will keep running if you close Steam) and follow it with an ampersand so that the line of commands ends, clearing your Steam status.

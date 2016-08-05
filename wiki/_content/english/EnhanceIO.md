@@ -1,4 +1,4 @@
-[EnhanceIO](https://github.com/stec-inc/EnhanceIO) makes it possible to use an SSD as a caching device for any other type of block device storage (HDD, Network, you name it) with almost zero configuration. Based on [Flashcache](/index.php/Flashcache "Flashcache") is it much simpler to set up. Unlike [Bcache](/index.php/Bcache "Bcache") there is no need to convert file systems.
+[EnhanceIO](https://github.com/stec-inc/EnhanceIO) makes it possible to use an SSD as a caching device for any other type of block device storage (HDD, Network, you name it) with almost zero configuration. Based on [Flashcache](/index.php/Flashcache "Flashcache") it is much simpler to set up. Unlike [Bcache](/index.php/Bcache "Bcache") there is no need to convert file systems.
 
 **Warning:**
 

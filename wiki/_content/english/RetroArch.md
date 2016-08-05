@@ -7,6 +7,7 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
+    *   [3.1 Configuring Paths](#Configuring_Paths)
 *   [4 Online updater](#Online_updater)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Input devices do not operate](#Input_devices_do_not_operate)
@@ -31,16 +32,16 @@ $ retroarch -L /usr/lib/libretro/libretro-*core*.so *path/to/rom*
 
 A default emulation core can be defined in the configuration, obviating the need to specify it on every run.
 
- `/etc/retroarch.cfg or ~/.retroarch.cfg`  `libretro_path = "/usr/lib/libretro/libretro-*core*.so"` 
+ `/etc/retroarch.cfg or ~/.config/retroarch/retroarch.cfg`  `libretro_path = "/usr/lib/libretro/libretro-*core*.so"` 
 
 ## Configuration
 
 RetroArch provides a very well commented skeleton configuration file located at `/etc/retroarch.cfg`.
 
-Copy the skeleton configuration file located at `/etc/retroarch.cfg` to `~/.retroarch.cfg`.
+Copy the skeleton configuration file located at `/etc/retroarch.cfg` to `~/.config/retroarch/retroarch.cfg`.
 
 ```
-$ cp /etc/retroarch.cfg ~/.retroarch.cfg
+$ cp /etc/retroarch.cfg ~/.config/retroarch/retroarch.cfg
 
 ```
 
@@ -51,6 +52,17 @@ It supports split configuration files using the `#include "foo.cfg"` directive w
 **Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
 
 **Warning:** When using *[ALSA](/index.php/ALSA "ALSA")* it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually 48000.
+
+### Configuring Paths
+
+Some modifications are required to use the correct paths for Arch packages:
+
+```
+assets_directory = "/usr/share/libretro/assets"
+libretro_info_path = = "/usr/share/libretro/info"
+libretro_directory = "/usr/lib/libretro"
+
+```
 
 ## Online updater
 

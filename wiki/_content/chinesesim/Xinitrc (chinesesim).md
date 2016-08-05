@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Xinitrc](/index.php/Xinitrc "Xinitrc") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-02，点击[这里](https://wiki.archlinux.org/index.php?title=Xinitrc&diff=0&oldid=389609)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Xinitrc](/index.php/Xinitrc "Xinitrc") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Xinitrc&diff=0&oldid=442881)可以查看翻译后英文页面的改动。
 
 `~/.xinitrc` 文件是 `xinit` 和它的前端 `startx` 第一次启动时会读取的脚本。通常用在启动 X 时执行[窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 和其他程序，例如启动守护进程和设置环境变量。`xinit`程序用来启动[X窗口系统](/index.php/Xorg "Xorg")，是不使用[显示管理器](/index.php/Display_manager "Display manager")时的第一个客户端。
 
@@ -8,20 +8,41 @@
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
-*   [3 在启动的时候自动启用X](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E5.80.99.E8.87.AA.E5.8A.A8.E5.90.AF.E7.94.A8X)
-    *   [3.1 自动登录到虚拟终端](#.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95.E5.88.B0.E8.99.9A.E6.8B.9F.E7.BB.88.E7.AB.AF)
-*   [4 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [4.1 从命令行覆盖 xinitrc](#.E4.BB.8E.E5.91.BD.E4.BB.A4.E8.A1.8C.E8.A6.86.E7.9B.96_xinitrc)
-    *   [4.2 Making a DE/WM choice](#Making_a_DE.2FWM_choice)
-    *   [4.3 不启动窗口管理器，直接启动程序](#.E4.B8.8D.E5.90.AF.E5.8A.A8.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.EF.BC.8C.E7.9B.B4.E6.8E.A5.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
+    *   [2.1 xserverrc](#xserverrc)
+    *   [2.2 xinitrc](#xinitrc)
+*   [3 使用](#.E4.BD.BF.E7.94.A8)
+*   [4 在启动的时候自动启用X](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E5.80.99.E8.87.AA.E5.8A.A8.E5.90.AF.E7.94.A8X)
+    *   [4.1 自动登录到虚拟终端](#.E8.87.AA.E5.8A.A8.E7.99.BB.E5.BD.95.E5.88.B0.E8.99.9A.E6.8B.9F.E7.BB.88.E7.AB.AF)
+*   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
+    *   [5.1 从命令行覆盖 xinitrc](#.E4.BB.8E.E5.91.BD.E4.BB.A4.E8.A1.8C.E8.A6.86.E7.9B.96_xinitrc)
+    *   [5.2 Making a DE/WM choice](#Making_a_DE.2FWM_choice)
+    *   [5.3 不启动窗口管理器，直接启动程序](#.E4.B8.8D.E5.90.AF.E5.8A.A8.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.EF.BC.8C.E7.9B.B4.E6.8E.A5.E5.90.AF.E5.8A.A8.E7.A8.8B.E5.BA.8F)
 
 ## 安装
 
-[安装](/index.php/Install "Install") 软件包 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). 此软件包提供了 *xinit* 和 *startx*。
+[安装](/index.php/Install "Install") 软件包 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit). 此软件包提供了 *xinit*、*startx*和默认的 xinitrc 文件。
 
 ## 配置
 
-如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm") (*xinit* 的默认行为不一样，请参阅 `man 1 xinit`). 所以要设置窗口管理器或桌面环境，先通过复制创建默认文件：
+### xserverrc
+
+`xserverrc` 文件是一个启动 X server 的 shell 脚本。如果存在 `~/.xserverrc` ，*startx* 和 *xinit* 都会执行这个文件。如果文件不存在，*startx* 会使用 `/etc/X11/xinit/xserverrc`.
+
+为了维护 `logind` 的 [authenticated session|会话认证](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")，避免切换终端时跳过屏幕锁， 必须找用户登录的虚拟终端启动 [Xorg](/index.php/Xorg "Xorg")。[[1]](http://blog.falconindy.com/articles/back-to-basics-with-x-and-systemd.html) 所以建议在 `~/.xserverrc` 中指定 `vt$XDG_VTNR`:
+
+ `~/.xserverrc` 
+```
+
+#!/bin/sh
+exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
+
+```
+
+如果要让 X 在其他的终端启动，可以使用 `/usr/lib/systemd/systemd-multi-seat-x` 提供的 X server 包裹程序。修改 `~/.xserverrc`，可以让 *xinit* 和*startx* 都使用这个包裹程序.
+
+### xinitrc
+
+如果用户主目录中存在 `.xinitrc`，*startx* 和 *xinit* 会执行此文件。如果不存在，*startx* 会执行默认的 `/etc/X11/xinit/xinitrc`。这个文件默认启动 [Twm](/index.php/Twm "Twm") 和 [Xterm](/index.php/Xterm "Xterm"). *xinit* 的默认行为不一样，请参阅 `man 1 xinit`。要设置窗口管理器或桌面环境，先通过复制创建默认文件：
 
 ```
 $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -41,7 +62,7 @@ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 ...
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-    for f in /etc/X11/xinit/xinitrc.d/**?*** ; do
+    for f in /etc/X11/xinit/xinitrc.d/**?*.sh** ; do
         [ -x "$f" ] && . "$f"
     done
     unset f
@@ -57,6 +78,7 @@ fi
 # exec openbox-session
 # ...or the Window Manager of your choice
 
+## some applications that should be run in the background
 xscreensaver **&**
 xsetroot -cursor_name left_ptr **&**
 **exec** openbox-session
@@ -64,6 +86,8 @@ xsetroot -cursor_name left_ptr **&**
 ```
 
 `~/.xinitrc` 中应该只有 **一个** 未注释掉的 `exec` 行，而且 exec 行必须位于配置文件的末尾。exec 后面的所有命令只有窗口退出后才会被执行。在窗口管理器前启动的命令应该用 **&** 在后台启动, 否则启动程序会等待它们退出。使用 `exec` 作为前缀会替换当前的进程，这样进程进入后台时 X 不会退出。
+
+## 使用
 
 现在以普通用户启动 X：
 
@@ -75,33 +99,48 @@ xsetroot -cursor_name left_ptr **&**
 或者
 
 ```
-$ xinit -- :1 -nolisten tcp vt$XDG_VTNR
+$ xinit -- :1
 
 ```
 
-*   上面命令在用户登录的虚拟终端执行 [Xorg](/index.php/Xorg "Xorg")，[[1]](http://blog.falconindy.com/articles/back-to-basics-with-x-and-systemd.html) 这样 `logind` 就可以保持认证会话，而且切换虚拟终端也无法跳过屏保。
-*   在 xinit 命令中必须使用 `vt$XDG_VTNR` 才能 [保持会话权限](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
-*   *xinit* 在登录了不同的虚拟终端是不会处理多个会话。所以必须通过`-- :*session_no*` 指定会话。如果 X 已经在运行，需要指定 :1 或更高。
+**Note:** *xinit* 无法在其它 X server 启动时处理多个显示，要使用多显示，需要通过 `-- :*display_number*` 指定，`*display_number*` 是 1 或更高的数值。
+
+选择的窗口管理器或桌面环境就应该正常启动了.
+
+要退出 X, 运行窗口管理器的退出功能，如果窗口管理器未提供此功能，可以运行：
+
+```
+$ pkill -15 Xorg
+
+```
+
+**Note:** *pkill* 会杀死所有 X 实例，如果仅希望杀死当前虚拟终端的窗口管理器，运行：
+```
+$ pkill -15 -t tty"$XDG_VTNR" Xorg
+
+```
+
+`xprop` 是软件包 [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop)提供的。
 
 ## 在启动的时候自动启用X
+
+先确保 *startx* 已经配置好了。
 
 **注意:** 这种方式将在登陆 tty 启动 X，只有这样才能保持登录会话。
 
 如果使用[Bash](/index.php/Bash "Bash"), 编辑 `~/.bash_profile`,加入如下内容. 如果文件不存在，从 `/etc/skel/.bash_profile` 复制一个框架版本。
 
-如果使用 [zsh](/index.php/Zsh "Zsh")，则编辑 `~/.zprofile``~/.zlogin`.
+如果使用 [zsh](/index.php/Zsh "Zsh")，则编辑 `~/.zprofile`.
 
 ```
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[ -z "$DISPLAY" -a "$(fgconsole)" -eq 1 ] && exec startx
 
 ```
 
 **注意:**
 
 *   如果想在多个 VT 上使用图形登陆，可以将`-eq 1`修改为`-le 3` (vt1 到 vt3)
-*   X 必须在登陆 TTY 启动，这样才能保持 logind 会话。默认的`/etc/X11/xinit/xserverrc`，已经进行了处理。
-*   `xinit` may be faster than `startx`, but needs additional parameter such as `-nolisten tcp`.
-*   If you would like to remain logged in when the X session ends, remove `exec`.
+*   如果希望在 X 会话终止时保持登入状态，删除 `exec`.
 
 *   此方法与[automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")一起可以实现自动登陆。
 *   如果 X 被关闭，用户将自动退出。要避免这个问题，删除 `exec`。
@@ -109,11 +148,11 @@ $ xinit -- :1 -nolisten tcp vt$XDG_VTNR
 
 	 `alias startx='startx &> ~/.xlog'` 
 
-See also [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") and [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
+参阅 [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") 和 [Systemd/User#Automatic login into Xorg without display manager](/index.php/Systemd/User#Automatic_login_into_Xorg_without_display_manager "Systemd/User").
 
 ### 自动登录到虚拟终端
 
-This method can be combined with [automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console"). When doing this you have to set correct dependencies for the autologin systemd service to ensure that dbus is started before `~/.xinitrc` is read and hence pulseaudio started (see: [BBS#155416](https://bbs.archlinux.org/viewtopic.php?id=155416))
+可以和 [自动登录到虚拟终端](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")一起使用.
 
 ## 提示和技巧
 
@@ -126,17 +165,10 @@ $ startx /full/path/to/window-manager
 
 ```
 
-Note that the full path is **required**. Optionally, you can also override `/etc/X11/xinit/xserverrc` file (which stores the default X server options) with custom options by appending them after `--`, e.g.:
+Note that the full path is **required**. Optionally, you can also specify custom options for [#xserverrc](#xserverrc) script by appending them after `--`, e.g.:
 
 ```
-$ startx /usr/bin/enlightenment -- -nolisten tcp -br +bs -dpi 96 vt$XDG_VTNR
-
-```
-
-or
-
-```
-$ xinit /usr/bin/enlightenment -- -nolisten tcp -br +bs -dpi 96 vt$XDG_VTNR
+ $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 ```
 
@@ -180,13 +212,6 @@ case $session in
     # No known session, try to run it as command
     *) exec $1;;
 esac
-
-```
-
-Then copy the `/etc/X11/xinit/xserverrc` file to your home directory:
-
-```
-$ cp /etc/X11/xinit/xserverrc ~/.xserverrc
 
 ```
 

@@ -8,49 +8,39 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Big Picture Mode (with a Display Manager)](#Big_Picture_Mode_.28with_a_Display_Manager.29)
-    *   [2.2 Silent Mode](#Silent_Mode)
-    *   [2.3 Headless In-Home Streaming Server](#Headless_In-Home_Streaming_Server)
+    *   [2.1 Big Picture Mode](#Big_Picture_Mode)
+    *   [2.2 Steam runtime](#Steam_runtime)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Launching games with custom commands](#Launching_games_with_custom_commands)
-    *   [3.2 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-    *   [3.3 Using native runtime](#Using_native_runtime)
-    *   [3.4 Skins for Steam](#Skins_for_Steam)
-        *   [3.4.1 Steam skin manager](#Steam_skin_manager)
-    *   [3.5 Changing the Steam friends notification placement](#Changing_the_Steam_friends_notification_placement)
-        *   [3.5.1 Use a skin](#Use_a_skin)
-        *   [3.5.2 On-the-fly patch](#On-the-fly_patch)
-    *   [3.6 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+    *   [3.2 Skins for Steam](#Skins_for_Steam)
+    *   [3.3 Changing the Steam friends notification placement](#Changing_the_Steam_friends_notification_placement)
+        *   [3.3.1 Use a skin](#Use_a_skin)
+        *   [3.3.2 On-the-fly patch](#On-the-fly_patch)
+    *   [3.4 Silent Mode](#Silent_Mode)
+    *   [3.5 Streaming server](#Streaming_server)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 See also](#See_also)
 
 ## Installation
 
-**Note:** Arch Linux is **not** [officially supported](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366).
+**Note:**
 
-If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository.
+*   Arch Linux is **not** [officially supported](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366).
+*   If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository.
 
 [Install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
 
 Steam is not supported on this distribution. As such some fixes are needed on the users part to get things functioning properly:
 
 *   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
-
-*   If you have a 64-bit system, you **must** install the 32-bit Multilib version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg").
-
-*   If you have a 64-bit system, you will need to install [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) to enable sound.
-
-*   If you have a 64-bit system, you will need to install [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) to enable update at first run.
-
+*   If you have a 64-bit system, you **must** install the 32-bit Multilib version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg"), [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) to enable sound, and [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) to enable update at first run.
 *   Several games have dependencies which may be missing from your system. If a game fails to launch (often without error messages) then make sure all of the libraries listed in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") are installed.
 
 ## Usage
 
-### Big Picture Mode (with a Display Manager)
+### Big Picture Mode
 
-To start Steam in Big Picture Mode from a Display Manager (such as GDM), install [steam-session-git](https://aur.archlinux.org/packages/steam-session-git/). This will set up the necessary session files to launch Steam from xfwm4, along with shutting down Steam cleanly on exit. Launching from xfwm4 may also help those having issues with mouse/keyboard/controller input.
-
-Alternatively, you can create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following content:
+To start Steam in Big Picture Mode from a [Display Manager](/index.php/Display_Manager "Display Manager"), create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following contents:
 
  `/usr/share/xsessions/steam-big-picture.desktop` 
 ```
@@ -63,30 +53,11 @@ Icon=
 Type=Application
 ```
 
-### Silent Mode
+Alternatively, [install](/index.php/Install "Install") [steam-session-git](https://aur.archlinux.org/packages/steam-session-git/). This will set up the necessary session files to launch Steam from [xfwm4](/index.php/Xfwm4 "Xfwm4"), along with shutting down Steam cleanly on exit. Launching from xfwm4 may also help those having issues with mouse/keyboard/controller input.
 
-To stop the main window from showing at startup, use the `-silent` option:
+### Steam runtime
 
-```
-$ steam -silent
-
-```
-
-alternatively, if you launch Steam from a desktop shortcut, you can add this option to a custom [desktop entry](/index.php/Desktop_entry "Desktop entry"):
-
- `~/.config/autostart/steam.desktop` 
-```
-[Desktop Entry]
-Name=Steam
-...
-Exec=/usr/bin/steam -silent %U
-...
-
-```
-
-### Headless In-Home Streaming Server
-
-To setup a Headless In-Home Streaming Server follow the Guide at: [https://steamcommunity.com/sharedfiles/filedetails/?id=680514371](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371)
+See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
 
 ## Tips and tricks
 
@@ -127,77 +98,6 @@ IGNORE_ME=%command% glxgears
 
 ```
 
-### Killing standalone compositors when launching games
-
-Further to this, utilising the `%command%` switch, you can kill standalone compositors (such as Xcompmgr or [Compton](/index.php/Compton "Compton")) - which can cause lag and tearing in some games on some systems - and relaunch them after the game ends by adding the following to your game's launch options.
-
-```
- killall compton && %command%; compton -b &
-
-```
-
-Replace `compton` in the above command with whatever your compositor is. You can also add -options to `%command%` or `compton`, of course.
-
-Steam will latch on to any processes launched after `%command%` and your Steam status will show as in game. So in this example, we run the compositor through `nohup` so it is not attached to Steam (it will keep running if you close Steam) and follow it with an ampersand so that the line of commands ends, clearing your Steam status.
-
-### Using native runtime
-
-Steam, by default, ships with a copy of every library it uses, packaged within itself, so that games can launch without issue. This can be a resource hog, and the slightly out-of-date libraries they package may be missing important features (Notably, the OpenAL version they ship lacks [HRTF](/index.php/Gaming#Binaural_Audio_with_OpenAL "Gaming") and surround71 support). To use your own system libraries, you can run Steam with:
-
-```
-$ STEAM_RUNTIME=0 steam
-
-```
-
-However, if you are missing any libraries Steam makes use of, this will fail to launch properly. An easy way to find the missing libraries is to run the following commands:
-
-```
-$ cd ~/.local/share/Steam/ubuntu12_32
-$ LD_LIBRARY_PATH=".:${LD_LIBRARY_PATH}" ldd $(file *|sed '/ELF/!d;s/:.*//g')|grep 'not found'|sort|uniq
-
-```
-
-**Note:** The libraries will have to be 32-bit, which means you may have to download some from the AUR if on x86_64, such as NetworkManager.
-
-Once you have done this, run steam again with `STEAM_RUNTIME=0 steam` and verify it is not loading anything outside of the handful of steam support libraries:
-
-```
-$ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | sort | uniq
-
-```
-
-To launch Steam using native runtime in a graphical user environment you can add the [environment variable](/index.php/Environment_variable "Environment variable") to your [xprofile](/index.php/Xprofile "Xprofile") file:
-
- `~/.xprofile` 
-```
-export STEAM_RUNTIME=0
-
-```
-
-If you create or edit this file while in a desktop session you will need to log out and then back into your [desktop environment](/index.php/Desktop_environment "Desktop environment") to enable the change to take effect.
-
-**Backing out using the native runtime in a graphical environment change**
-
-To reverse this change remove or comment out the export line in your [xprofile](/index.php/Xprofile "Xprofile") file. Log out and then in again to refresh your desktop session. When launched, Steam will use the old bundled Ubuntu libraries.
-
-**Convenience repository**
-
-The unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repository contains all libraries needed to run native steam on x86_64\. Please note that, for some reason, steam does not pick up sdl2 or libav* even if you have them installed. It will still use the ones it ships with.
-
-All you need to install is the meta-package [steam-libs](https://aur.archlinux.org/packages/steam-libs/), it will pull all the libs for you. Please report if there is any missing library, the maintainer already had some lib32 packages installed so a library may have been overlooked.
-
-**Satisfying dependencies without using the convenience repository or steam-libs meta-package (For x86_64)**
-
-If you do not like the approach of installing all the libraries known for Steam and various game-compatibility libraries and want to install the minimum required libraries to launch Steam and most games install the following libraries:
-
-Steam on x86_64 requires the following libraries from [AUR](/index.php/AUR "AUR") to be installed [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) and [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/).
-
-It will also require the following libraries from the [multilib](/index.php/Multilib "Multilib") repository [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3).
-
-If Steam displays errors related to libcanberra-gtk3 install [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra).
-
-While most games will run with the minimal set of libraries listed here some games will require additional libraries to run. For a list of known game-compatibility libraries consult the [game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") page.
-
 ### Skins for Steam
 
 **Note:** Using skins that are not up-to-date with the version of the Steam client may cause visual errors.
@@ -205,14 +105,6 @@ While most games will run with the minimal set of libraries listed here some gam
 The Steam interface can be fully customized by copying its various interface files in its skins directory and modifying them.
 
 An extensive list of skins can be found on [Steam's forums](http://forums.steampowered.com/forums/showthread.php?t=1161035).
-
-#### Steam skin manager
-
-The process of applying a skin to Steam can be greatly simplified by installing the [steam-skin-manager](https://aur.archlinux.org/packages/steam-skin-manager/) package. The package also comes with a hacked version of the Steam launcher which allows the window manager to draw its borders on the Steam window.
-
-As a result, skins for Steam will come in two flavors, one with and one without window buttons. The skin manager will prompt you whether you use the hacked version or not, and will automatically apply the theme corresponding to your GTK+ theme if it is found. You can of course still apply another skin if you want.
-
-The package ships with two themes for the default Ubuntu themes, Ambiance and Radiance.
 
 ### Changing the Steam friends notification placement
 
@@ -316,22 +208,20 @@ And the launch options should be something like the following.
 
 There is another file in the same folder as **gameoverlay.style** folder called **steam.style** which has an entry with the exact same function as the file we patched and will change the notification corner for the desktop only (not in-game), but for editing this file to actually work it has to be set before steam is launched and the folder set to read-only so steam cannot re-write the file. Therefore the only two ways to modify that file is to make the directory read only so steam cannot change it when it is launched (can break updates) or making a skin like in method 1.
 
-### Prevent Memory Dumps Consuming RAM
+### Silent Mode
 
-Every time steam crashes, it writes a memory dump to **/tmp/dumps/**. If Steam falls into a crash loop, and it often does, the dump files can start consuming considerable space. Since **/tmp** on Arch is mounted as tmpfs, memory and swap file can be consumed needlessly. To prevent this, you can make a symbolic link to **/dev/null** or create and modify permissions on **/tmp/dumps**. Then Steam will be unable to write dump files to the directory. This also has the added benefit of Steam not uploading these dumps to Valve's servers.
-
-```
-# ln -s /dev/null /tmp/dumps
+To stop the main window from showing at startup, use the `-silent` option:
 
 ```
-
-or
-
-```
-# mkdir /tmp/dumps
-# chmod 600 /tmp/dumps
+$ steam -silent
 
 ```
+
+**Tip:** This option can be added to a [desktop entry](/index.php/Desktop_entry "Desktop entry").
+
+### Streaming server
+
+See [https://steamcommunity.com/sharedfiles/filedetails/?id=680514371](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371)
 
 ## Troubleshooting
 

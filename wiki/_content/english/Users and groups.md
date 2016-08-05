@@ -15,9 +15,8 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
 *   [7 Group list](#Group_list)
     *   [7.1 User groups](#User_groups)
     *   [7.2 System groups](#System_groups)
-    *   [7.3 Software groups](#Software_groups)
+    *   [7.3 Pre-systemd groups](#Pre-systemd_groups)
     *   [7.4 Unused groups](#Unused_groups)
-        *   [7.4.1 Pre-systemd groups](#Pre-systemd_groups)
 
 ## Overview
 
@@ -389,6 +388,10 @@ Updates to the [filesystem](https://www.archlinux.org/packages/?name=filesystem)
 
 ## Group list
 
+This section explains the purpose of the essential groups from the [core/filesystem](https://git.archlinux.org/svntogit/packages.git/tree/trunk/group?h=packages/filesystem) package. There are many other groups, which will be created with [correct GID](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") when the relevant package is installed. See the main page for the software for details.
+
+**Note:** A later removal of the package does not remove the respective user/group again. This is intentional because any files created during its usage would otherwise be left orphaned as a potential security risk.
+
 ### User groups
 
 Workstation/desktop users often add their non-root user to some of following groups to allow access to peripherals and other hardware and facilitate system administration:
@@ -413,38 +416,32 @@ The following groups are used for system purposes and are not likely to be used 
 | Group | Affected files | Purpose |
 | dbus | used internally by [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Right to use [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") command. |
+| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to parallel port devices (printers and others) and read-only access to [CUPS](/index.php/CUPS "CUPS") files. If you run a non-printer parallel port device, see [FS#50009](https://bugs.archlinux.org/task/50009) for implied problems. |
 | mail | `/usr/bin/mail` |
 | nobody | Unprivileged group. |
-| polkitd | [polkit](/index.php/Polkit "Polkit") group. |
 | proc | `/proc/*pid*/` | A group authorized to learn processes information otherwise prohibited by `hidepid=` mount option of the [proc filesystem](https://www.kernel.org/doc/Documentation/filesystems/proc.txt). The group must be explicitly set with the `gid=` mount option. |
 | root | `/*` | Complete system administration and control (root, admin). |
 | smmsp | [sendmail](/index.php/Sendmail "Sendmail") group. |
 | tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` |
+| utmp | `/run/utmp`, `/var/log/btmp`, `/var/log/wtmp` |
 
-### Software groups
+### Pre-systemd groups
 
-These groups are used by certain non-essential software. Sometimes they are used just internally, in these cases you should not add your user into these groups. See the main page for the software for details.
+Before arch migrated to [systemd](/index.php/Systemd "Systemd"), users had to be manually added to these groups in order to be able to access the corresponding devices. This way has been deprecated in favour of [udev](/index.php/Udev "Udev") marking the devices with a `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules) and *logind* assigning the permissions to users dynamically via [ACLs](/index.php/ACL "ACL") according to which session is currently active. Note that the session must not be broken for this to work (see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") to check it).
 
-**Note:**
-
-*   Do **not** create the groups manually, they will be created with [correct GID](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") when the relevant package is installed. [FS#42182](https://bugs.archlinux.org/task/42182)
-*   A later removal of the package does not remove the respective user/group again. This is intentional because any files created during its usage would otherwise be left orphaned as a potential security risk.
+There are some notable exceptions which require adding a user to some of these groups: for example if you want to allow users to access the device even when they are not logged in. However, note that adding users to the groups can even cause some functionality to break (for example, the `audio` group will break fast user switching and allows applications to block software mixing).
 
 | Group | Affected files | Purpose |
-| adbusers | devices nodes under `/dev/` | Right to access [Android](/index.php/Android "Android") Debugging Bridge. |
-| avahi |
-| bumblebee | `/run/bumblebee.socket` | Right to launch applications with Bumblebee to utilize NVIDIA Optimus GPUs. |
-| cdemu | `/dev/vhba_ctl` | Right to use [CDemu](/index.php/CDemu "CDemu") drive emulation. |
-| clamav | `/var/lib/clamav/*`, `/var/log/clamav/*` | Used by [Clam AntiVirus](/index.php/Clam_AntiVirus "Clam AntiVirus"). |
-| gdm | X server authorization directory (ServAuthDir) | [GDM](/index.php/GDM "GDM") group. |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Right to use [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") command. |
-| mpd | `/var/lib/mpd/*`, `/var/log/mpd/*`, `/var/run/mpd/*`, optionally music directories | [MPD](/index.php/MPD "MPD") group. |
-| ntp | `/var/lib/ntp/*` | [NTPd](/index.php/NTPd "NTPd") group. |
-| thinkpad | `/dev/misc/nvram` | Used by ThinkPad users for access to tools such as [tpb](/index.php/Tpb "Tpb"). |
-| vboxsf | virtual machines' shared folders | Used by [VirtualBox](/index.php/VirtualBox "VirtualBox"). |
-| vboxusers | `/dev/vboxdrv` | Right to use VirtualBox software. |
-| vmware | Right to use [VMware](/index.php/VMware "VMware") software. |
-| wireshark | Right to capture packets with [Wireshark](/index.php/Wireshark "Wireshark"). |
+| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Direct access to sound hardware, for all sessions. It is still required to make [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS") work in remote sessions, see [ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). |
+| disk | `/dev/sd[a-z][1-9]` | Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`. |
+| floppy | `/dev/fd[0-9]` | Access to floppy drives. |
+| input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Access to input devices. Introduced in systemd 215 [[2]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |
+| kvm | `/dev/kvm` | Access to virtual machines using [KVM](/index.php/KVM "KVM"). |
+| optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | Access to optical devices such as CD and DVD drives. |
+| scanner | `/var/lock/sane` | Access to scanner hardware. |
+| storage | Access to removable drives such as USB hard drives, flash/jump drives, MP3 players; enables the user to mount storage devices. |
+| video | `/dev/fb/0`, `/dev/misc/agpgart` | Access to video capture devices, 2D/3D hardware acceleration, framebuffer ([X](/index.php/X "X") can be used *without* belonging to this group). |
 
 ### Unused groups
 
@@ -453,25 +450,8 @@ Following groups are currently of no use for anyone:
 | Group | Affected files | Purpose |
 | bin | none | Historical |
 | daemon |
+| lock |
 | mem |
 | network | Unused by default. Can be used e.g. for granting access to NetworkManager (see [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
 | power |
-
-#### Pre-systemd groups
-
-Before arch migrated to [systemd](/index.php/Systemd "Systemd"), users had to be manually added to these groups in order to be able to access the corresponding devices. This way has been deprecated in favour of [udev](/index.php/Udev "Udev") marking the devices with a `uaccess` tag and *logind* assigning the permissions to users dynamically via [ACLs](/index.php/ACL "ACL") according to which session is currently active. Note that the session must not be broken for this to work (see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") to check it).
-
-There are some notable exceptions which require adding a user to some of these groups: for example if you want to allow users to access the device even when they are not logged in. However, note that adding users to the groups can even cause some functionality to break (for example, the `audio` group will break fast user switching and allows applications to block software mixing).
-
-| Group | Affected files | Purpose |
-| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Direct access to sound hardware, for all sessions. It is still required to make [ALSA](/index.php/ALSA "ALSA") and [OSS](/index.php/OSS "OSS") work in remote sessions, see [ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). |
-| camera | Access to [Digital Cameras](/index.php/Digital_Cameras "Digital Cameras"). |
-| disk | `/dev/sd[a-z][1-9]` | Access to block devices not affected by other groups such as `optical`, `floppy`, and `storage`. |
-| floppy | `/dev/fd[0-9]` | Access to floppy drives. |
-| input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Access to input devices. Introduced in systemd 215 [[2]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |
-| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to parallel port devices (printers and others) and read-only access to [CUPS](/index.php/CUPS "CUPS") files. If you run a non-printer parallel port device, see [FS#50009](https://bugs.archlinux.org/task/50009) for implied problems. |
-| kvm | `/dev/kvm` | Access to virtual machines using [KVM](/index.php/KVM "KVM"). |
-| optical | `/dev/sr[0-9]`, `/dev/sg[0-9]` | Access to optical devices such as CD and DVD drives. |
-| scanner | `/var/lock/sane` | Access to scanner hardware. |
-| storage | Access to removable drives such as USB hard drives, flash/jump drives, MP3 players; enables the user to mount storage devices. |
-| video | `/dev/fb/0`, `/dev/misc/agpgart` | Access to video capture devices, 2D/3D hardware acceleration, framebuffer ([X](/index.php/X "X") can be used *without* belonging to this group). |
+| uuidd |

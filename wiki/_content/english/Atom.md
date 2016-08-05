@@ -20,6 +20,9 @@ The following packages provide Atom:
 *   *atom* from the unofficial [atom](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") repository.
     **Note:** Bugs regarding binary packages from the *atom* repository can be reported on [GitHub](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
 
+*   *atom-bleeding*/*atom-editor*/*atom-editor-base* from the unofficial [pkgbuild-current](/index.php/Unofficial_user_repositories#pkgbuild-current "Unofficial user repositories") repository. Further details can be found in its README [here](https://github.com/fusion809/arch-atom/blob/master/README.md).
+    **Note:** Bugs regarding binary packages from the *pkgbuild-current* repository can be reported on [GitHub](https://github.com/fusion809/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
+
 ## Packages
 
 Its packages can be installed from within Atom itself or from the command-line using the apm command. The correct syntax of apm is:

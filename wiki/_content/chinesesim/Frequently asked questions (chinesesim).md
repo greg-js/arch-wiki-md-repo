@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Frequently_asked_questions](/index.php/Frequently_asked_questions "Frequently asked questions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=426982)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Frequently_asked_questions](/index.php/Frequently_asked_questions "Frequently asked questions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=441711)可以查看翻译后英文页面的改动。
 
 除了本文，还建议你阅读一下[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)") 和 [Arch terminology](/index.php/Arch_terminology "Arch terminology")。
 
@@ -25,15 +25,16 @@
     *   [2.2 Q) 我发现了某个软件包的错误，该怎么办？](#Q.29_.E6.88.91.E5.8F.91.E7.8E.B0.E4.BA.86.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E9.94.99.E8.AF.AF.EF.BC.8C.E8.AF.A5.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
     *   [2.3 Q) Arch软件包需要独特的后缀名。“.pkg.tar.xz”太长了，而且令人困惑](#Q.29_Arch.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.9C.80.E8.A6.81.E7.8B.AC.E7.89.B9.E7.9A.84.E5.90.8E.E7.BC.80.E5.90.8D.E3.80.82.E2.80.9C.pkg.tar.xz.E2.80.9D.E5.A4.AA.E9.95.BF.E4.BA.86.EF.BC.8C.E8.80.8C.E4.B8.94.E4.BB.A4.E4.BA.BA.E5.9B.B0.E6.83.91)
     *   [2.4 Q) Pacman应该提供函数库接口，这样其他软件就可容易地获得软件包信息。](#Q.29_Pacman.E5.BA.94.E8.AF.A5.E6.8F.90.E4.BE.9B.E5.87.BD.E6.95.B0.E5.BA.93.E6.8E.A5.E5.8F.A3.EF.BC.8C.E8.BF.99.E6.A0.B7.E5.85.B6.E4.BB.96.E8.BD.AF.E4.BB.B6.E5.B0.B1.E5.8F.AF.E5.AE.B9.E6.98.93.E5.9C.B0.E8.8E.B7.E5.BE.97.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BF.A1.E6.81.AF.E3.80.82)
-    *   [2.5 Q) pacman需要某某功能！](#Q.29_pacman.E9.9C.80.E8.A6.81.E6.9F.90.E6.9F.90.E5.8A.9F.E8.83.BD.EF.BC.81)
-    *   [2.6 Q) Arch的不同软件仓库分别有什么用？](#Q.29_Arch.E7.9A.84.E4.B8.8D.E5.90.8C.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.E5.88.86.E5.88.AB.E6.9C.89.E4.BB.80.E4.B9.88.E7.94.A8.EF.BC.9F)
-    *   [2.7 Q) 我刚刚安装了一个软件包，怎么启动呢？](#Q.29_.E6.88.91.E5.88.9A.E5.88.9A.E5.AE.89.E8.A3.85.E4.BA.86.E4.B8.80.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.EF.BC.8C.E6.80.8E.E4.B9.88.E5.90.AF.E5.8A.A8.E5.91.A2.EF.BC.9F)
-    *   [2.8 Q) 在官方仓库中，为什么只为每个共享链接库提供一个版本？](#Q.29_.E5.9C.A8.E5.AE.98.E6.96.B9.E4.BB.93.E5.BA.93.E4.B8.AD.EF.BC.8C.E4.B8.BA.E4.BB.80.E4.B9.88.E5.8F.AA.E4.B8.BA.E6.AF.8F.E4.B8.AA.E5.85.B1.E4.BA.AB.E9.93.BE.E6.8E.A5.E5.BA.93.E6.8F.90.E4.BE.9B.E4.B8.80.E4.B8.AA.E7.89.88.E6.9C.AC.EF.BC.9F)
-    *   [2.9 Q) 执行pacman -Syu时，显示某个共享库需要升级，但依赖它的程序没有升级，我该怎么做呢？](#Q.29_.E6.89.A7.E8.A1.8Cpacman_-Syu.E6.97.B6.EF.BC.8C.E6.98.BE.E7.A4.BA.E6.9F.90.E4.B8.AA.E5.85.B1.E4.BA.AB.E5.BA.93.E9.9C.80.E8.A6.81.E5.8D.87.E7.BA.A7.EF.BC.8C.E4.BD.86.E4.BE.9D.E8.B5.96.E5.AE.83.E7.9A.84.E7.A8.8B.E5.BA.8F.E6.B2.A1.E6.9C.89.E5.8D.87.E7.BA.A7.EF.BC.8C.E6.88.91.E8.AF.A5.E6.80.8E.E4.B9.88.E5.81.9A.E5.91.A2.EF.BC.9F)
-    *   [2.10 Q) 会不会出现仓库中的内核主版本更新了，而某些驱动包没有一同升级的情况？](#Q.29_.E4.BC.9A.E4.B8.8D.E4.BC.9A.E5.87.BA.E7.8E.B0.E4.BB.93.E5.BA.93.E4.B8.AD.E7.9A.84.E5.86.85.E6.A0.B8.E4.B8.BB.E7.89.88.E6.9C.AC.E6.9B.B4.E6.96.B0.E4.BA.86.EF.BC.8C.E8.80.8C.E6.9F.90.E4.BA.9B.E9.A9.B1.E5.8A.A8.E5.8C.85.E6.B2.A1.E6.9C.89.E4.B8.80.E5.90.8C.E5.8D.87.E7.BA.A7.E7.9A.84.E6.83.85.E5.86.B5.EF.BC.9F)
-    *   [2.11 Q) Arch 使用软件包签名机制吗？](#Q.29_Arch_.E4.BD.BF.E7.94.A8.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AD.BE.E5.90.8D.E6.9C.BA.E5.88.B6.E5.90.97.EF.BC.9F)
-    *   [2.12 升级前该做什么?](#.E5.8D.87.E7.BA.A7.E5.89.8D.E8.AF.A5.E5.81.9A.E4.BB.80.E4.B9.88.3F)
-    *   [2.13 我知道某个包已经更新,但是 pacman 并没有发现更新](#.E6.88.91.E7.9F.A5.E9.81.93.E6.9F.90.E4.B8.AA.E5.8C.85.E5.B7.B2.E7.BB.8F.E6.9B.B4.E6.96.B0.2C.E4.BD.86.E6.98.AF_pacman_.E5.B9.B6.E6.B2.A1.E6.9C.89.E5.8F.91.E7.8E.B0.E6.9B.B4.E6.96.B0)
+    *   [2.5 Pacman需要某某功能！](#Pacman.E9.9C.80.E8.A6.81.E6.9F.90.E6.9F.90.E5.8A.9F.E8.83.BD.EF.BC.81)
+    *   [2.6 Arch的不同软件仓库分别有什么用？](#Arch.E7.9A.84.E4.B8.8D.E5.90.8C.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.E5.88.86.E5.88.AB.E6.9C.89.E4.BB.80.E4.B9.88.E7.94.A8.EF.BC.9F)
+    *   [2.7 仓库和镜像的区别是什么？](#.E4.BB.93.E5.BA.93.E5.92.8C.E9.95.9C.E5.83.8F.E7.9A.84.E5.8C.BA.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
+    *   [2.8 Q) 我刚刚安装了一个软件包，怎么启动呢？](#Q.29_.E6.88.91.E5.88.9A.E5.88.9A.E5.AE.89.E8.A3.85.E4.BA.86.E4.B8.80.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.EF.BC.8C.E6.80.8E.E4.B9.88.E5.90.AF.E5.8A.A8.E5.91.A2.EF.BC.9F)
+    *   [2.9 Q) 在官方仓库中，为什么只为每个共享链接库提供一个版本？](#Q.29_.E5.9C.A8.E5.AE.98.E6.96.B9.E4.BB.93.E5.BA.93.E4.B8.AD.EF.BC.8C.E4.B8.BA.E4.BB.80.E4.B9.88.E5.8F.AA.E4.B8.BA.E6.AF.8F.E4.B8.AA.E5.85.B1.E4.BA.AB.E9.93.BE.E6.8E.A5.E5.BA.93.E6.8F.90.E4.BE.9B.E4.B8.80.E4.B8.AA.E7.89.88.E6.9C.AC.EF.BC.9F)
+    *   [2.10 Q) 执行pacman -Syu时，显示某个共享库需要升级，但依赖它的程序没有升级，我该怎么做呢？](#Q.29_.E6.89.A7.E8.A1.8Cpacman_-Syu.E6.97.B6.EF.BC.8C.E6.98.BE.E7.A4.BA.E6.9F.90.E4.B8.AA.E5.85.B1.E4.BA.AB.E5.BA.93.E9.9C.80.E8.A6.81.E5.8D.87.E7.BA.A7.EF.BC.8C.E4.BD.86.E4.BE.9D.E8.B5.96.E5.AE.83.E7.9A.84.E7.A8.8B.E5.BA.8F.E6.B2.A1.E6.9C.89.E5.8D.87.E7.BA.A7.EF.BC.8C.E6.88.91.E8.AF.A5.E6.80.8E.E4.B9.88.E5.81.9A.E5.91.A2.EF.BC.9F)
+    *   [2.11 会不会出现仓库中的内核主版本更新了，而某些驱动包没有一同升级的情况？](#.E4.BC.9A.E4.B8.8D.E4.BC.9A.E5.87.BA.E7.8E.B0.E4.BB.93.E5.BA.93.E4.B8.AD.E7.9A.84.E5.86.85.E6.A0.B8.E4.B8.BB.E7.89.88.E6.9C.AC.E6.9B.B4.E6.96.B0.E4.BA.86.EF.BC.8C.E8.80.8C.E6.9F.90.E4.BA.9B.E9.A9.B1.E5.8A.A8.E5.8C.85.E6.B2.A1.E6.9C.89.E4.B8.80.E5.90.8C.E5.8D.87.E7.BA.A7.E7.9A.84.E6.83.85.E5.86.B5.EF.BC.9F)
+    *   [2.12 Arch 使用软件包签名机制吗？](#Arch_.E4.BD.BF.E7.94.A8.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AD.BE.E5.90.8D.E6.9C.BA.E5.88.B6.E5.90.97.EF.BC.9F)
+    *   [2.13 升级前该做什么?](#.E5.8D.87.E7.BA.A7.E5.89.8D.E8.AF.A5.E5.81.9A.E4.BB.80.E4.B9.88.3F)
+    *   [2.14 我知道某个包已经更新,但是 pacman 并没有发现更新](#.E6.88.91.E7.9F.A5.E9.81.93.E6.9F.90.E4.B8.AA.E5.8C.85.E5.B7.B2.E7.BB.8F.E6.9B.B4.E6.96.B0.2C.E4.BD.86.E6.98.AF_pacman_.E5.B9.B6.E6.B2.A1.E6.9C.89.E5.8F.91.E7.8E.B0.E6.9B.B4.E6.96.B0)
 *   [3 安装](#.E5.AE.89.E8.A3.85)
     *   [3.1 Q) Arch需要安装程序，比如带图形界面的。](#Q.29_Arch.E9.9C.80.E8.A6.81.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F.EF.BC.8C.E6.AF.94.E5.A6.82.E5.B8.A6.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E7.9A.84.E3.80.82)
     *   [3.2 我安装了Arch，现在正面对一个命令行登陆界面，怎么办？](#.E6.88.91.E5.AE.89.E8.A3.85.E4.BA.86Arch.EF.BC.8C.E7.8E.B0.E5.9C.A8.E6.AD.A3.E9.9D.A2.E5.AF.B9.E4.B8.80.E4.B8.AA.E5.91.BD.E4.BB.A4.E8.A1.8C.E7.99.BB.E9.99.86.E7.95.8C.E9.9D.A2.EF.BC.8C.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
@@ -111,7 +112,7 @@ Arch使用滚动升级模式，只需执行一条命令，便可升级系统到�
 
 ### Q) Arch需要更多开发者
 
-**A)** 也许吧。欢迎你来帮助我们！逛逛[论坛](https://bbs.archlinux.org)，以及[邮件列表](https://mailman.archlinux.org/mailman/listinfo/)，看看有什么需要做的。或者，看看论坛的 Community Contributions 子版面吧。
+**A)** 也许吧。欢迎你来帮助我们！逛逛[论坛](https://bbs.archlinux.org)，[IRC channels](/index.php/IRC_channels "IRC channels") 以及[邮件列表](https://mailman.archlinux.org/mailman/listinfo/)，看看有什么需要做的。或者，看看论坛的 Community Contributions 子版面吧。
 
 ### Q) 为什么Arch下网速比其他系统慢？
 
@@ -174,17 +175,21 @@ $ pkgfile *file_name*
 
 ### Q) Pacman应该提供函数库接口，这样其他软件就可容易地获得软件包信息。
 
-**A)** 从3.0.0版本开始，libalpm（Arch Linux Package Management，Arch Linux 软件包管理）库成为了pacman的后端，这个库大大方便了交互式前端的编写（例如图形化前端）。
+**A)** [libalpm](https://www.archlinux.org/pacman/libalpm.3.html)（Arch Linux Package Management，Arch Linux 软件包管理）是 pacman 的后端，这个库大大方便了交互式前端的编写（例如图形化前端）。
 
-### Q) pacman需要某某功能！
+### Pacman需要某某功能！
 
 如果有新想法，可以在 [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/) 邮件列表进行讨论，或查看[官方论坛](https://bbs.archlinux.org/) 看看有没有类似想法。
 
 也欢迎你自己实现新功能。也许你的代码或补丁不会被官方接受，但他人可能会用到。
 
-### Q) Arch的不同软件仓库分别有什么用？
+### Arch的不同软件仓库分别有什么用？
 
-**A)** 参见[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。
+参见[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。
+
+### 仓库和镜像的区别是什么？
+
+参考 [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman").
 
 ### Q) 我刚刚安装了一个软件包，怎么启动呢？
 
@@ -214,13 +219,13 @@ libbaz=1.5
 
 如果`foobaz`是你自己编译的或是从AUR获取的，当`libbaz`升级时你应当重新编译它。如果编译失败，请通知`foobaz`开发者。
 
-### Q) 会不会出现仓库中的内核主版本更新了，而某些驱动包没有一同升级的情况？
+### 会不会出现仓库中的内核主版本更新了，而某些驱动包没有一同升级的情况？
 
-**A)** 不可能。当内核主版本升级时，所有支持的驱动一定会一同更新。然而，如果你安装有非内核支持的驱动包，比如`catalyst`，内核升级可能导致系统挂机。你应当在内核升级时自行重编译它们。
+不可能。当内核主版本升级时，所有支持的驱动一定会一同更新。然而，如果你安装有非内核支持的驱动包，比如`catalyst`，内核升级可能导致系统挂机。你应当在内核升级时自行重编译它们。
 
-### Q) Arch 使用软件包签名机制吗？
+### Arch 使用软件包签名机制吗？
 
-**A)** 是的，pacman 4 已经包含软件签名功能，请参见[package signing](/index.php/Package_signing "Package signing")。
+是的，pacman 已经包含软件签名功能，请参见[package signing](/index.php/Package_signing "Package signing")。
 
 ### 升级前该做什么?
 

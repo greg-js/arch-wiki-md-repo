@@ -326,6 +326,15 @@ For advanced configuration and extensions, please read [PHP](/index.php/PHP "PHP
 
 [Install](/index.php/Install "Install") the [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) package.
 
+Enable proxy modules:
+
+ `/etc/httpd/conf/httpd.conf` 
+```
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
+
+```
+
 Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 
  `/etc/httpd/conf/extra/php-fpm.conf` 
@@ -333,11 +342,6 @@ Create `/etc/httpd/conf/extra/php-fpm.conf` with the following content:
 <FilesMatch \.php$>
     SetHandler "proxy:unix:/run/php-fpm/php-fpm.sock|fcgi://localhost/"
 </FilesMatch>
-<Proxy "fcgi://localhost/" enablereuse=on max=10>
-</Proxy>
-<IfModule dir_module>
-    DirectoryIndex index.php index.html
-</IfModule>
 
 ```
 
@@ -348,7 +352,7 @@ Include conf/extra/php-fpm.conf
 
 ```
 
-**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string but it should match in `SetHandler` and `Proxy` directives. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html). `SetHandler` and `Proxy` can be used per vhost configs but the name after `fcgi://` should differ for each vhost setup.
+**Note:** The pipe between `sock` and `fcgi` is not allowed to be surrounded by a space! `localhost` can be replaced by any string. More [here](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)
 
 You can configure PHP-FPM in `/etc/php/php-fpm.d/www.conf`, but the default setup should work fine.
 

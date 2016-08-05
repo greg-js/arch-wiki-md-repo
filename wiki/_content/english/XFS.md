@@ -18,8 +18,6 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
 
 ## Installation
 
-**Warning:** GRUB has problems with XFS version 5 ([FS#46856](https://bugs.archlinux.org/task/46856)). Use a separate boot partition with another filesystem or install [grub-git](https://aur.archlinux.org/packages/grub-git/) instead as a workaround.
-
 The tools to manage XFS partions are in the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package from the [official repositories](/index.php/Official_repositories "Official repositories"), which is included in the default base installation.
 
 ## Data corruption

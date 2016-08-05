@@ -64,27 +64,28 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [10.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
         *   [10.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
     *   [10.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
-    *   [10.3 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
-    *   [10.4 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
-    *   [10.5 KF5/Qt5 applications don't display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_don.27t_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [10.6 Graphical related problems](#Graphical_related_problems)
-        *   [10.6.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
-        *   [10.6.2 Applications don't refresh properly](#Applications_don.27t_refresh_properly)
-        *   [10.6.3 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
-            *   [10.6.3.1 GPU driver problem](#GPU_driver_problem)
-            *   [10.6.3.2 The Raster engine workaround](#The_Raster_engine_workaround)
-        *   [10.6.4 Low 3D desktop performance](#Low_3D_desktop_performance)
-        *   [10.6.5 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
-        *   [10.6.6 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [10.6.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
-    *   [10.7 Sound problems under KDE](#Sound_problems_under_KDE)
-        *   [10.7.1 ALSA related problems](#ALSA_related_problems)
-            *   [10.7.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
-            *   [10.7.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [10.8 Konsole does not save commands' history](#Konsole_does_not_save_commands.27_history)
-    *   [10.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
-    *   [10.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [10.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
+    *   [10.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
+    *   [10.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
+    *   [10.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
+    *   [10.6 KF5/Qt5 applications don't display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_don.27t_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [10.7 Graphical related problems](#Graphical_related_problems)
+        *   [10.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
+        *   [10.7.2 Applications don't refresh properly](#Applications_don.27t_refresh_properly)
+        *   [10.7.3 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
+            *   [10.7.3.1 GPU driver problem](#GPU_driver_problem)
+            *   [10.7.3.2 The Raster engine workaround](#The_Raster_engine_workaround)
+        *   [10.7.4 Low 3D desktop performance](#Low_3D_desktop_performance)
+        *   [10.7.5 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
+        *   [10.7.6 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [10.7.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
+    *   [10.8 Sound problems under KDE](#Sound_problems_under_KDE)
+        *   [10.8.1 ALSA related problems](#ALSA_related_problems)
+            *   [10.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
+            *   [10.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+    *   [10.9 Konsole does not save commands' history](#Konsole_does_not_save_commands.27_history)
+    *   [10.10 Inotify folder watch limit](#Inotify_folder_watch_limit)
+    *   [10.11 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [10.12 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
 *   [11 Unstable releases](#Unstable_releases)
 *   [12 Bugs](#Bugs)
 *   [13 See also](#See_also)
@@ -643,6 +644,10 @@ $ mv ~/.config/akonadi ~/.config/akonadi-old
 Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi` and `~/.config/akonadi` - the copies you made ensure that you can back-track if necessary.
 
 Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it work properly.
+
+### Fix empty IMAP inbox
+
+For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[6]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
 
 ### Getting current state of KWin for support and debug purposes
 

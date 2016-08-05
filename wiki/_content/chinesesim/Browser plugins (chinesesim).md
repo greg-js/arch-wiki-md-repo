@@ -23,21 +23,22 @@
     *   [2.2 External PDF viewers](#External_PDF_viewers)
 *   [3 Citrix](#Citrix)
 *   [4 Java](#Java)
-    *   [4.1 IcedTea](#IcedTea)
-    *   [4.2 Weird symlink](#Weird_symlink)
-*   [5 视频播放插件](#.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E6.8F.92.E4.BB.B6)
-    *   [5.1 Gecko Media Player](#Gecko_Media_Player)
-    *   [5.2 Totem Plugin](#Totem_Plugin)
-*   [6 其他](#.E5.85.B6.E4.BB.96)
-    *   [6.1 Mozplugger](#Mozplugger)
-*   [7 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [7.1 Flash独占了声音设备](#Flash.E7.8B.AC.E5.8D.A0.E4.BA.86.E5.A3.B0.E9.9F.B3.E8.AE.BE.E5.A4.87)
-    *   [7.2 Flash无声音](#Flash.E6.97.A0.E5.A3.B0.E9.9F.B3)
-    *   [7.3 Flash性能](#Flash.E6.80.A7.E8.83.BD)
-    *   [7.4 插件安装后无法使用](#.E6.8F.92.E4.BB.B6.E5.AE.89.E8.A3.85.E5.90.8E.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
-    *   [7.5 Gecko Media Player 无法播放 Apple Trailers](#Gecko_Media_Player_.E6.97.A0.E6.B3.95.E6.92.AD.E6.94.BE_Apple_Trailers)
-    *   [7.6 Flash中webcam分辨率低](#Flash.E4.B8.ADwebcam.E5.88.86.E8.BE.A8.E7.8E.87.E4.BD.8E)
-    *   [7.7 Black bars in fullscreen video playback on multiheaded desktops](#Black_bars_in_fullscreen_video_playback_on_multiheaded_desktops)
+*   [5 Pipelight](#Pipelight)
+*   [6 视频播放插件](#.E8.A7.86.E9.A2.91.E6.92.AD.E6.94.BE.E6.8F.92.E4.BB.B6)
+    *   [6.1 其它插件](#.E5.85.B6.E5.AE.83.E6.8F.92.E4.BB.B6)
+*   [7 其他](#.E5.85.B6.E4.BB.96)
+    *   [7.1 Hangouts](#Hangouts)
+    *   [7.2 MozPlugger](#MozPlugger)
+    *   [7.3 kpartsplugin](#kpartsplugin)
+*   [8 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+    *   [8.1 Flash无声音](#Flash.E6.97.A0.E5.A3.B0.E9.9F.B3)
+    *   [8.2 Flash独占了声音设备](#Flash.E7.8B.AC.E5.8D.A0.E4.BA.86.E5.A3.B0.E9.9F.B3.E8.AE.BE.E5.A4.87)
+    *   [8.3 Flash性能](#Flash.E6.80.A7.E8.83.BD)
+    *   [8.4 Flash中webcam分辨率低](#Flash.E4.B8.ADwebcam.E5.88.86.E8.BE.A8.E7.8E.87.E4.BD.8E)
+    *   [8.5 Black bars in fullscreen video playback on multiheaded desktops](#Black_bars_in_fullscreen_video_playback_on_multiheaded_desktops)
+    *   [8.6 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
+    *   [8.7 插件安装后无法使用](#.E6.8F.92.E4.BB.B6.E5.AE.89.E8.A3.85.E5.90.8E.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8)
+    *   [8.8 Gecko Media Player 无法播放 Apple Trailers](#Gecko_Media_Player_.E6.97.A0.E6.B3.95.E6.92.AD.E6.94.BE_Apple_Trailers)
 
 ## Flash Player
 
@@ -188,76 +189,130 @@ Restart and it should work like a charm!
 
 ## Java
 
-### IcedTea
+**Note:** Both Java plugins are NPAPI-only and thus do not work in Chromium and Opera.
 
-```
-# pacman -S icedtea-web-java7
+To enable [Java](/index.php/Java "Java") support in your browser, you have two options: the open-source [OpenJDK](https://en.wikipedia.org/wiki/OpenJDK "wikipedia:OpenJDK") (recommended) or Oracle's proprietary version. For details about why OpenJDK is recommended see [this](https://mailman.archlinux.org/pipermail/arch-general/2011-August/021671.html).
 
-```
+To use OpenJDK, you have to install the [IcedTea](http://icedtea.classpath.org/wiki/Main_Page) browser plugin, [icedtea-web](https://www.archlinux.org/packages/?name=icedtea-web).
 
-### Weird symlink
+If you want to use Oracle's JRE, install the [jre](https://aur.archlinux.org/packages/jre/) package.
 
-开源和闭源[Java](/index.php/Java "Java")软件包都提供了浏览器插件支持。官方仓库提供了开源版本：
+See [Java#OpenJDK](/index.php/Java#OpenJDK "Java") for additional details and references.
 
-```
-# pacman -S jre7-openjdk
+**Note:** If you experience any problems with the Java plugin (e.g. it is not recognized by the browser), you can try this [solution](#Plugins_are_installed_but_not_working).
 
-```
+## Pipelight
 
-[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")中有闭源版本：[jre](https://aur.archlinux.org/packages/jre/)。
-
-两个版本不能同时使用。开源版本目前已经相当完美，无需刻意使用闭源版本。闭源版本有个小问题，由于从Firefox3.6开始，浏览器不再从`/usr/lib/mozilla/plugins`查找插件，而jre插件默认安装在这里，需要调整一下：
-
-```
-# ln -s /opt/java/jre/lib/i386/libnpjp2.so ~/mozilla/plugins/libnpjp2.so
-
-```
+See [Pipelight](/index.php/Pipelight "Pipelight").
 
 ## 视频播放插件
 
-### Gecko Media Player
+很多浏览器支持通过 [GStreamer](/index.php/GStreamer "GStreamer") 框架播放 HTML5 `<audio>` 和 `<video>`。安装时注意查看浏览器的可选依赖关系(或 [webkitgtk](https://www.archlinux.org/packages/?name=webkitgtk)/[webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) 依赖关系)确认支持的 GStreamer 版本，可能是当前 `gst-*` 版本或老的 `gstreamer0.10-*` 版本。详情参考 [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer").
 
-mplayer用户可以使用该插件：
+### 其它插件
 
-```
-# pacman -S gecko-mediaplayer
+*   **Gecko 媒体播放器** — Mozilla 处理网页多媒体的插件，使用 MPlayer.
 
-```
+	[https://sites.google.com/site/kdekorte2/gecko-mediaplayer](https://sites.google.com/site/kdekorte2/gecko-mediaplayer) || [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer)
 
-### Totem Plugin
+*   **GNOME Videos 插件** — 基于 [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos") 媒体播放器的插件，使用 [GStreamer](/index.php/GStreamer "GStreamer").
 
-gstreamer用户可以使用该插件：
+	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
 
-```
-# pacman -S totem-plugin
+*   **Rosa Media Player Plugin** — 基于 MPlayer 的 Qt 浏览器插件.
 
-```
+	[https://abf.rosalinux.ru/uxteam/ROSA_Media_Player](https://abf.rosalinux.ru/uxteam/ROSA_Media_Player) || [rosa-media-player-plugin](https://aur.archlinux.org/packages/rosa-media-player-plugin/)
+
+*   **VLC Plugin** — NPAPI 接口，VLC 插件.
+
+	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://www.archlinux.org/packages/?name=npapi-vlc)
 
 ## 其他
 
-### Mozplugger
+### Hangouts
 
-从[AUR](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)")安装[mozplugger](https://aur.archlinux.org/packages/mozplugger/)。
+Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Installing this plugin is not necessary for fresh version of chromium browser. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously. While using "new" version, you can share your screen with others like in Skype, but if you switch to "old" version, it will be possible to do the following things together: watching YouTube, making diagrams, editing documents, playing games and other things.
+
+### MozPlugger
+
+MozPlugger can be installed with the [mozplugger](https://aur.archlinux.org/packages/mozplugger/) package.
+
+[MozPlugger](http://mozplugger.mozdev.org/) is a Mozilla plugin which can show many types of multimedia inside your browser. To accomplish this, it uses external programs such as MPlayer, xine, Evince, OpenOffice, TiMidity, etc. To modify or add applications to be used by MozPlugger just modify the `/etc/mozpluggerrc` file.
+
+For example, MozPlugger uses OpenOffice by default to open `doc` files. To change it to use LibreOffice instead, look for the OpenOffice section:
+
+ `/etc/mozpluggerrc` 
+```
+...
+### OpenOffice
+define([OO],[swallow(VCLSalFrame) fill: ooffice2.0 -nologo -norestore -view $1 "$file"
+    swallow(VCLSalFrame) fill: ooffice -nologo -norestore -view $1 "$file"
+    swallow(VCLSalFrame) fill: soffice -nologo $1 "$file"])
+...
+
+```
+
+and add LibreOffice at the beginning of the list:
+
+ `/etc/mozpluggerrc` 
+```
+...
+### LibreOffice/OpenOffice
+define([OO],[swallow(VCLSalFrame) fill: libreoffice --nologo --norestore --view $1 "$file"
+    swallow(VCLSalFrame) fill: ooffice2.0 -nologo -norestore -view $1 "$file"
+    swallow(VCLSalFrame) fill: ooffice -nologo -norestore -view $1 "$file"
+    swallow(VCLSalFrame) fill: soffice -nologo $1 "$file"])
+...
+
+```
+
+**Note:** Be sure to also choose LibreOffice as your preferred application to open `doc` files.
+
+As another simple example, if you want to open `cpp` files with your favorite text editor (we will use Kate) to get syntax highlighting, just add a new section to your `mozpluggerrc` file:
+
+ `/etc/mozpluggerrc` 
+```
+text/x-c++:cpp:C++ Source File
+text/x-c++:hpp:C++ Header File
+    repeat noisy swallow(kate) fill: kate -b "$file"
+
+```
+
+To change the default of MPlayer so that [mpv](/index.php/Mpv "Mpv") is used instead, change the appropriate lines such that:
+
+ `/etc/mozpluggerrc` 
+```
+...
+### MPlayer
+
+#define(MP_CMD,[mplayer -really-quiet -nojoystick -nofs -zoom -vo xv,x11 -ao esd,alsa,oss,arts,null -osdlevel 0 $1 </dev/null])
+define(MP_CMD,[mpv -really-quiet $1 </dev/null])
+
+#define(MP_EMBED,[embed noisy ignore_errors: MP_CMD(-xy $width -wid $window $1)])
+define(MP_EMBED,[embed noisy ignore_errors: MP_CMD(--autofit=$width -wid $window $1)])
+
+#define(MP_NOEMBED,[noembed noisy ignore_errors maxaspect swallow(MPlayer): MP_CMD($1)])
+define(MP_NOEMBED,[noembed noisy ignore_errors maxaspect swallow(mpv): MP_CMD($1)])
+
+...
+
+#define(MP_AUDIO,[mplayer -quiet -nojoystick $1 </dev/null])
+define(MP_AUDIO,[mpv -really-quiet $1 </dev/null])
+
+#define(MP_AUDIO_STREAM,[controls stream noisy ignore_errors: mplayer -quiet -nojoystick $1 "$file" </dev/null])
+define(MP_AUDIO_STREAM,[controls stream noisy ignore_errors: mpv -really-quiet $1 "$file" </dev/null])
+...
+```
+
+For a more complete list of MozPlugger options see [this page](http://www.linuxmanpages.com/man7/mozplugger.7.php).
+
+### kpartsplugin
+
+[The KParts plugin](http://www.unix-ag.uni-kl.de/~fischer/kpartsplugin/) is a plugin that uses KDE's KPart technology to embed different file viewers in the browser, such as Okular (for PDF), Ark (for different archives), Calligra Words (for ODF), etc. It cannot use applications that are not based on the KPart technology.
+
+The KParts plugin can be installed with the package [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
 
 ## 疑难解答
-
-### Flash独占了声音设备
-
-如果发现播放Flash时其他程序无法正常播放声音，那么可能是由于没有加载`snd_pcm_oss`模块：
-
-```
-$ lsmod | grep snd_pcm_oss
-
-```
-
-重新加载：
-
-```
-# rmmod snd_pcm_oss
-
-```
-
-并重启浏览器即可。
 
 ### Flash无声音
 
@@ -295,9 +350,56 @@ card 1
 
 ```
 
+### Flash独占了声音设备
+
+如果发现播放Flash时其他程序无法正常播放声音，那么可能是由于没有加载`snd_pcm_oss`模块：
+
+```
+$ lsmod | grep snd_pcm_oss
+
+```
+
+重新加载：
+
+```
+# rmmod snd_pcm_oss
+
+```
+
+并重启浏览器即可。
+
 ### Flash性能
 
 Adobe的Flash插件有严重的性能问题，尤其是在CPU使用自动降频功能时。参见：[cpufrequtils#Changing the ondemand governor's threshold](/index.php/Cpufrequtils#Changing_the_ondemand_governor.27s_threshold "Cpufrequtils")。
+
+### Flash中webcam分辨率低
+
+尝试使用如下命令启动浏览器：
+
+```
+$ LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so [broswer]
+
+```
+
+### Black bars in fullscreen video playback on multiheaded desktops
+
+The Flash plugin has a known bug where the full screen mode does not really work when you have a multi-monitor setup. Apparently, it incorrectly determines the full screen resolution, so the full screen Flash Player fills the correct monitor but gets scaled as if the monitor had the resolution of the total display area.
+
+To fix this, you can use the "hack" described [here](http://al.robotfuzz.com/content/workaround-fullscreen-flash-linux-multiheaded-desktops). Simply download the source from the link given on the page, and follow the instructions in the README.
+
+**Tip:** The hack is available and can be installed with the [fullscreenhack](https://aur.archlinux.org/packages/fullscreenhack/) package.
+
+**Note:** While the author mentions using NVDIA's TwinView, the hack should work for any multi-monitor setup.
+
+### Flash Player: plugin version still shown older version after upgrade
+
+Solution for Firefox: delete file "pluginreg.dat" in user's profile directory.
+
+*   Close firefox
+*   Go to /home/<username>/.mozilla/firefox/<profile_folder>/
+*   Delete file "pluginreg.dat"
+
+Firefox will automatically rebuild this file once it is started again. Make sure to substitute <username> and <profile_folder> with the appropriate information.
 
 ### 插件安装后无法使用
 
@@ -308,7 +410,12 @@ echo $MOZ_PLUGIN_PATH
 
 ```
 
-若未设置，请尝试重新登录。
+若未设置，请尝试重新登录, 或:
+
+```
+$ source /etc/profile.d/mozilla-common.sh && firefox
+
+```
 
 ### Gecko Media Player 无法播放 Apple Trailers
 
@@ -318,16 +425,3 @@ echo $MOZ_PLUGIN_PATH
 QuickTime/7.6.2 (qtver=7.6.2;os=Windows NT 5.1Service Pack 3)
 
 ```
-
-### Flash中webcam分辨率低
-
-尝试使用如下命令启动浏览器：
-
-```
-LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so chromium
-
-```
-
-### Black bars in fullscreen video playback on multiheaded desktops
-
-Follow the instructions on this page: [link](http://al.robotfuzz.com/content/workaround-fullscreen-flash-linux-multiheaded-desktops)

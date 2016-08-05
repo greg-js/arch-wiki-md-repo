@@ -8,6 +8,8 @@ From the [official website](http://www.maplesoft.com/products/maple/):
 *   [2 Installation](#Installation)
 *   [3 Issues](#Issues)
     *   [3.1 "Failed to determine Host ID of license server"](#.22Failed_to_determine_Host_ID_of_license_server.22)
+    *   [3.2 Blank main window on tiling window managers](#Blank_main_window_on_tiling_window_managers)
+    *   [3.3 3D plots failing](#3D_plots_failing)
 
 ## Overview
 
@@ -26,3 +28,26 @@ Once the package is installed, you will need to provide a license activation cod
 ### "Failed to determine Host ID of license server"
 
 In order to get Maple to accept your activation code, you may need to install the [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/) package from the AUR. This will fake a standard Linux standard base runtime and convince the authentication server to accept your valid activation code. The [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) package does not solve this issue, as the [MapleSoft installation support site](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) might lead one to believe.
+
+### Blank main window on tiling window managers
+
+More correctly a common problem with Java applications and non-reparenting window managers, see [[1]](https://wiki.archlinux.org/index.php/Java#Non-reparenting_window_managers) for a fix.
+
+### 3D plots failing
+
+Maple ships with its own C++ runtime, which seems to cause issues with 3D rendering (plot3d, implicitplot3d, ...).
+
+Linking the system's libstdc++ instead seems to fix the problem, for example for Maple 2016 on x64 systems, go to
+
+```
+   maple2016/bin.X86_64_LINUX/system
+
+```
+
+and link libstdc++.so.6.0.20 and libstdc++.so.6 to your system's version:
+
+```
+   libstdc++.so.6 -> /usr/lib64/libstdc++.so.6
+   libstdc++.so.6.0.20 -> /usr/lib64/libstdc++.so.6.0.22
+
+```

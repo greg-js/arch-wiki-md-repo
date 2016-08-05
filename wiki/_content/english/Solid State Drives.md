@@ -1,4 +1,4 @@
-[Solid State Drives](https://en.wikipedia.org/wiki/Solid_State_Drive "w:Solid State Drive") (SSDs) are not PnP devices. Special considerations such as partition alignment, choice of file system, TRIM support, etc. are needed to set up SSDs for optimal performance. This article attempts to capture referenced, key learnings to enable users to get the most out of SSDs under Linux. Users are encouraged to read this article in its entirety before acting on recommendations.
+This article covers special topics for operating [w:Solid State Drives](https://en.wikipedia.org/wiki/Solid_State_Drive "w:Solid State Drive") (SSDs) and other flash-memory based storage devices. If you want to partition a SSD for a specific purpose, it may be useful to consider the [List of file systems optimized for flash memory](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems"). For general usage, you should simply choose your preferred [filesystem](/index.php/Filesystem "Filesystem").
 
 ## Contents
 
@@ -32,23 +32,22 @@
 
 ### TRIM
 
-Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. For a performance benchmark before and after filling an SSD with data, see [[1]](http://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html).
+Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. A [techspot](http://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html) article shows performance benchmark examples of before and after filling an SSD with data.
 
-As of Linux kernel version 3.8 onwards, the following filesystems support TRIM: [Ext4](/index.php/Ext4 "Ext4"), [Btrfs](/index.php/Btrfs "Btrfs"), [JFS](/index.php/JFS "JFS") [[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY), [XFS](/index.php/XFS "XFS") [[3]](http://xfs.org/index.php/FITRIM/discard), [F2FS](/index.php/F2FS "F2FS"), VFAT. See also [List of file systems optimized for SSD](https://en.wikipedia.org/wiki/List_of_file_systems#File_systems_optimized_for_flash_memory.2C_solid_state_media "w:List of file systems").
-
-As of [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) version 2015.3.14, TRIM is supported for [NTFS](/index.php/NTFS "NTFS") filesystem too [[4]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101).
+As of Linux kernel version 3.8 onwards, support for TRIM was continually added for the different filesystems. See the following table for an indicative overview and the respective filesystems' articles for further details:
 
 | File system | Continuous TRIM
 (`discard` option) | Periodic TRIM
-(*fstrim*) |
+(*fstrim*) | References
+and notes |
 | [Ext3](/index.php/Ext3 "Ext3") | No | ? |
-| [Ext4](/index.php/Ext4 "Ext4") | Yes | Yes |
+| [Ext4](/index.php/Ext4 "Ext4") | Yes | Yes | [[1]](http://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/ext4.txt#n344) |
 | [Btrfs](/index.php/Btrfs "Btrfs") | Yes | Yes |
-| [JFS](/index.php/JFS "JFS") | Yes | Yes |
-| [XFS](/index.php/XFS "XFS") | Yes | Yes |
+| [JFS](/index.php/JFS "JFS") | Yes | Yes | [[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) |
+| [XFS](/index.php/XFS "XFS") | Yes | Yes | [[3]](http://xfs.org/index.php/FITRIM/discard) |
 | [F2FS](/index.php/F2FS "F2FS") | Yes | Yes |
 | VFAT | Yes | No |
-| [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | No | Yes |
+| [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | No | Yes | since version 2015.3.14, [[4]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101) |
 
 **Warning:** Users need to be certain that their SSD supports TRIM before attempting to use it. Data loss can occur otherwise!
 

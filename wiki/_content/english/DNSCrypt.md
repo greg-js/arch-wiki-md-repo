@@ -21,11 +21,18 @@
 
 ## Configuration
 
-When `dnscrypt-proxy.socket` is [enabled](/index.php/Enable "Enable"), *dnscrypt-proxy* accepts incoming requests on `127.0.0.1:53` to a DNS resolver. The default DNS resolver for `dnscrypt-proxy.service` is *dnscrypt.eu-nl*. Compatible resolver names are visible in the first column of `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` (a potentially more up-to-date list is available directly on the [upstream page](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv)).
+Select a resolver from `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` and [edit](/index.php/Systemd#Editing_provided_units "Systemd") `dnscrypt-proxy.service`, using the first column as the name of the resolver with the `-R` flag. For example, to select *dnscrypt.eu-nl* as the resolver, the drop-in file would look like this:
 
-To change the default, [edit](/index.php/Systemd#Editing_provided_units "Systemd") `dnscrypt-proxy.service`. It is recommended to choose a provider close to your location.
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dnscrypt-proxy -R dnscrypt.eu-nl
 
-Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with *localhost*:
+```
+
+**Tip:** A potentially more up-to-date list is available directly on the [upstream page](https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv).
+
+After selecting a dnscrypt resolver, modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with address for *localhost*:
 
 ```
 nameserver 127.0.0.1

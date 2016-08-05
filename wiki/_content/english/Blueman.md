@@ -91,7 +91,7 @@ If you see a notification saying `Incoming file over Bluetooth` then this means 
 
 ### No adapters detected
 
-If your Bluetooth applet or manager doesn't show or detect any Bluetooth adapter, you might be missing [rfkill](https://www.archlinux.org/packages/?name=rfkill). Restart might be required.
+If your Bluetooth applet or manager doesn't show or detect any Bluetooth adapter, your wireless card may be blocked. Try un-block it using [rfkill](/index.php/Wireless_network_configuration#Rfkill_caveat "Wireless network configuration").
 
 ### Can't receive files
 
