@@ -25,7 +25,7 @@ This article contains instruction on sharing printers between systems, be it bet
 
 ## Between GNU/Linux systems
 
-The server can be configured using either the web interface or by manually editing `/etc/cups/cupsd.conf`. To configure the client, see [CUPS#Remote printers](/index.php/CUPS#Remote_printers "CUPS").
+The server can be configured using either the web interface or by manually editing `/etc/cups/cupsd.conf`. To configure the client, see [CUPS#Remote CUPS servers](/index.php/CUPS#Remote_CUPS_servers "CUPS").
 
 ### Using the web interface
 

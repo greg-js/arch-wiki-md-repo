@@ -12,8 +12,7 @@ Fluxbox is a window manager for X11\. It is based on the (now abandoned) Blackbo
         *   [3.1.4 Manually create/edit the menu](#Manually_create.2Fedit_the_menu)
     *   [3.2 Init](#Init)
     *   [3.3 Hotkeys](#Hotkeys)
-        *   [3.3.1 alsa](#alsa)
-        *   [3.3.2 PulseAudio](#PulseAudio)
+        *   [3.3.1 Sound](#Sound)
     *   [3.4 Workspaces](#Workspaces)
     *   [3.5 Tabbing and grouping](#Tabbing_and_grouping)
     *   [3.6 Wallpaper](#Wallpaper)
@@ -143,47 +142,11 @@ The `~/.fluxbox/init` file is Fluxbox's primary configuration resource file. You
 
 ### Hotkeys
 
-Fluxbox offers basic hotkeys functionality. The Fluxbox hotkey file is located at `~/.fluxbox/keys`. The Control key is represented by "Control". Mod1 corresponds to the Alt key and Mod4 corresponds to Meta (not a standard key but most users map Meta to the "Win" key). When installed and first run Fluxbox will provide you with a very usable, almost complete set of hotkeys. You should peruse and learn the `~/.fluxbox/keys` file to enhance your Fluxbox experience.
+Fluxbox offers basic hotkeys functionality. The Fluxbox hotkey file is located at `~/.fluxbox/keys`. The Control key is represented by "Control". `Mod1` corresponds to the Alt key and `Mod4` corresponds to Super (not a standard key but most users map Super to the "Win" key). You should peruse and learn the `~/.fluxbox/keys` file to enhance your Fluxbox experience.
 
-#### alsa
+#### Sound
 
-Example: here is a quick way to control the Master volume using alsa including mute:
-
-```
-Control Mod1 Up   :Exec amixer sset Master,0 5%+
-Control Mod1 Down :Exec amixer sset Master,0 5%-
-Control Mod1 M    :Exec amixer sset Master,0 toggle
-
-```
-
-Example: the same with multimedia keys:
-
-```
-XF86AudioRaiseVolume :Exec amixer sset Master,0 5%+
-XF86AudioLowerVolume :Exec amixer sset Master,0 5%-
-XF86AudioMute        :Exec amixer sset Master,0 toggle
-
-```
-
-#### PulseAudio
-
-Example: here is a quick way to control the Master volume using pulseaudio including mute (install [pamixer](https://www.archlinux.org/packages/?name=pamixer) first):
-
-```
-Control Mod1 Up   :Exec pamixer -i 5
-Control Mod1 Down :Exec pamixer -d 5
-Control Mod1 M    :Exec pamixer -t 
-
-```
-
-Example: and with multimedia keys:
-
-```
-XF86AudioRaiseVolume :Exec pamixer -i 5
-XF86AudioLowerVolume :Exec pamixer -d 5
-XF86AudioMute        :Exec pamixer -t
-
-```
+See [Advanced Linux Sound Architecture#Keyboard volume control](/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control "Advanced Linux Sound Architecture") and [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio").
 
 ### Workspaces
 

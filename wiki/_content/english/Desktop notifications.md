@@ -36,7 +36,7 @@ You can choose one of the following implementations:
 
 	[https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)
 
-*   **Deepin Notifications** — Notification server for [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment").
+*   **Deepin Notifications** — Notification server for [Deepin](/index.php/Deepin "Deepin").
 
 	[https://github.com/linuxdeepin/deepin-notifications](https://github.com/linuxdeepin/deepin-notifications) || [deepin-notifications](https://www.archlinux.org/packages/?name=deepin-notifications)
 
@@ -122,12 +122,13 @@ Hello.Show()
  `hello_world.c` 
 ```
 #include <libnotify/notify.h>
-void main () {
+int main() {
 	notify_init ("Hello world!");
 	NotifyNotification * Hello = notify_notification_new ("Hello world", "This is an example notification.", "dialog-information");
 	notify_notification_show (Hello, NULL);
 	g_object_unref(G_OBJECT(Hello));
 	notify_uninit();
+	return 0;
 }
 ```
 
@@ -142,7 +143,8 @@ void main () {
 int main(int argc, char *argv[]) {
 	Notify::init("Hello world!");
 	Notify::Notification Hello("Hello world", "This is an example notification.", "dialog-information");
-        Hello.show();
+	Hello.show();
+	return 0;
 }
 ```
 

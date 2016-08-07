@@ -58,7 +58,7 @@ options hid_apple fnmode=2
 
 ```
 
-Don't forget to add this file to FILES in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") or rebuild the initial ramdisk, otherwise it will not work.
+Don't forget to add this file to FILES in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") and rebuild the initial ramdisk, otherwise it will not work.
 
 ### If the above doesn't work for your wireless keyboard
 

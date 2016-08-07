@@ -312,9 +312,7 @@ While troubleshooting a sound issue, it became evident that the following games 
 
 This package is a bit buggy, and as a result while sound can appear to be working fine for the rest of your system, some games may still have problems.
 
-It usually occurs when you have a default sound device set with ALSA, but you don't actually use that device, and have manually changed the device through other software, with me I had my default set as HDMI, but audio set through Steam/Gnome as S/PDIF.
-
-To check what your default device is set as, use something like 'aplay' to output to your 'default' device, and see if you get sound, if you don't, your default is likely set to something that isn't even plugged in!
+It usually occurs when an unused sound device is used as default for ALSA. See [Advanced_Linux_Sound_Architecture#Set_the_default_sound_card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture").
 
 ## Missing libc
 

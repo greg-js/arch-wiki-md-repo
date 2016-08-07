@@ -103,7 +103,7 @@ where `linux` is the name of the image loaded on boot. If you installed [linux-m
 
 ### Note on Mount Options
 
-Using the `discard` mount option for your filesystem is not recommended, as mentioned in [this warning](/index.php/Solid_State_Drives#Enable_continuous_TRIM_by_mount_flag "Solid State Drives") and [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1593544#p1593544). See also [Solid State Drives/NVMe#Discards](/index.php/Solid_State_Drives/NVMe#Discards "Solid State Drives/NVMe") for further information.
+Using the `discard` mount option for your filesystem is not recommended, as mentioned in [this warning](/index.php/Solid_State_Drives#Continuous_TRIM "Solid State Drives") and [the forum](https://bbs.archlinux.org/viewtopic.php?pid=1593544#p1593544). See also [Solid State Drives/NVMe#Discards](/index.php/Solid_State_Drives/NVMe#Discards "Solid State Drives/NVMe") for further information.
 
 ## Wireless
 
@@ -147,7 +147,7 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 ### Linux kernel 4.3 or earlier
 
-If you are using an older kernel 4.3 or earlier, you also require the kernel parameter `i915.preliminary_hw_support=1`, see [Intel graphics#Driver not working for Intel Skylake chips](/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips "Intel graphics"). (For later kernels 4.3+ or [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) the parameter is unnecessary.)
+If you are using an older kernel 4.3 or earlier, you also require the kernel parameter `i915.preliminary_hw_support=1`, see [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"). (For later kernels 4.3+ or [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) the parameter is unnecessary.)
 
 ### Linux kernel 4.5 or earlier
 

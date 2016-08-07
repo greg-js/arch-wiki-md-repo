@@ -72,13 +72,7 @@ Install the xf86-video-intel package as shown [here](/index.php/Intel_graphics#I
 
 ## Solid State Drive
 
-[Enable TRIM by mount flag](/index.php/Solid_State_Drives#Enable_continuous_TRIM_by_mount_flag "Solid State Drives")
-
-[Apply trim via periodic fstrim with systemd](/index.php/Solid_State_Drives#Apply_TRIM_via_periodic_fstrim "Solid State Drives")
-
-[Switch from default CFQ scheduler to NOOP, for the whole system](/index.php/Solid_State_Drives#Kernel_parameter_.28for_a_single_device.29 "Solid State Drives")
-
-[Reduce Swappiness to 1](/index.php/Swap#Swappiness "Swap")
+[Enable TRIM by mount flag](/index.php/Solid_State_Drives#Enable_continuous_TRIM_by_mount_flag "Solid State Drives")[Apply trim via periodic fstrim with systemd](/index.php/Solid_State_Drives#Apply_TRIM_via_periodic_fstrim "Solid State Drives")[Switch from default CFQ scheduler to NOOP, for the whole system](/index.php/Solid_State_Drives#Kernel_parameter_.28for_a_single_device.29 "Solid State Drives")[Reduce Swappiness to 1](/index.php/Swap#Swappiness "Swap")
 
 ## Touchpad
 

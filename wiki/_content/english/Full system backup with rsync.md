@@ -45,7 +45,7 @@ If you wish to restore the backup use the same rsync command that was executed, 
 
 ## Boot requirements
 
-Having a bootable backup can be useful in case the filesystem becomes corrupt or if an update breaks the system. The backup can also be used as a test bed for updates, with the [testing] repo enabled, etc. If you transferred the system to a different partition or drive and you want to boot it, the process is as simple as updating the backup's `/etc/fstab` and your bootloader's configuration file.
+Having a bootable backup can be useful in case the filesystem becomes corrupt or if an update breaks the system. The backup can also be used as a test bed for updates, with the *testing* repo enabled, etc. If you transferred the system to a different partition or drive and you want to boot it, the process is as simple as updating the backup's `/etc/fstab` and your bootloader's configuration file.
 
 ### Update the fstab
 
@@ -101,8 +101,6 @@ where you substitute the desired partition for /dev/sdb3\. To list the UUIDs of 
 Reboot the computer and select the right entry in the bootloader. This will load the system for the first time. All peripherals should be detected and the empty folders in `/` will be populated.
 
 Now you can re-edit `/etc/fstab` to add the previously removed partitions and mount points.
-
-If you transferred the data from HDD to SSD (solid state drive), do not forget to activate TRIM. Also consider using HDD and tmpfs mount points to reduce SSD wearing - see [Maximizing performance#Relocate files to tmpfs](/index.php/Maximizing_performance#Relocate_files_to_tmpfs "Maximizing performance") and [Solid State Drives#Tips for minimizing disk reads/writes](/index.php/Solid_State_Drives#Tips_for_minimizing_disk_reads.2Fwrites "Solid State Drives").
 
 ## See also
 

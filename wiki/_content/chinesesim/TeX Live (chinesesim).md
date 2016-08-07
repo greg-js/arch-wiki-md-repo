@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [TeXLive](/index.php/TeXLive "TeXLive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-08，点击[这里](https://wiki.archlinux.org/index.php?title=TeXLive&diff=0&oldid=251936)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [TeXLive](/index.php/TeXLive "TeXLive") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-05，点击[这里](https://wiki.archlinux.org/index.php?title=TeXLive&diff=0&oldid=439503)可以查看翻译后英文页面的改动。
 
-[TeX Live](http://www.tug.org/texlive/)是"安装和运行[TeX](/index.php/Category:TeX "Category:TeX")文档制作系统的简单方式。它提供了一个全面的Tex系统，提供的二进制文件适用于大多数Unix风格操作系统(包括GNU/Linux)的二进制文件，当然也有Windows。它包含了全部主要的Tex相关的属于自由软件的程序，宏包，字体，还有对世界上很多语种的支持。"
+[TeX Live](https://www.tug.org/texlive/)是"安装和运行[TeX](/index.php/Category:TeX "Category:TeX")文档制作系统的简单方式。它提供了一个全面的Tex系统，提供的二进制文件适用于大多数Unix风格操作系统(包括GNU/Linux)的二进制文件，当然也有Windows。它包含了全部主要的Tex相关的属于自由软件的程序，宏包，字体，还有对世界上很多语种的支持。"
 
 Tex Live是[LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX")， [ConTeXt](https://en.wikipedia.org/wiki/ConTeXt "wikipedia:ConTeXt")和其他友商最流行的发行版本之一。
 
@@ -21,9 +21,10 @@ Tex Live是[LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX")， [Co
 *   [5 TeXLive Local Manager](#TeXLive_Local_Manager)
     *   [5.1 "langukenglish" 错误](#.22langukenglish.22_.E9.94.99.E8.AF.AF)
 *   [6 安装 .sty 文件](#.E5.AE.89.E8.A3.85_.sty_.E6.96.87.E4.BB.B6)
-    *   [6.1 手工安装.sty文件](#.E6.89.8B.E5.B7.A5.E5.AE.89.E8.A3.85.sty.E6.96.87.E4.BB.B6)
-    *   [6.2 使用PKGBUILD安装 .sty](#.E4.BD.BF.E7.94.A8PKGBUILD.E5.AE.89.E8.A3.85_.sty)
-*   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
+    *   [6.1 手工安装](#.E6.89.8B.E5.B7.A5.E5.AE.89.E8.A3.85)
+    *   [6.2 使用 PKGBUILD 安装](#.E4.BD.BF.E7.94.A8_PKGBUILD_.E5.AE.89.E8.A3.85)
+*   [7 更新 babelbib 语言定义](#.E6.9B.B4.E6.96.B0_babelbib_.E8.AF.AD.E8.A8.80.E5.AE.9A.E4.B9.89)
+*   [8 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
 
 ## 安装
 
@@ -32,7 +33,7 @@ Tex Live宏包主要在[官方仓库](/index.php/Official_repositories "Official
 *   [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) 包括Tex Live应用
 *   [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/) 提供个性化的设置和非英语特性
 
-必要的软件包[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 包含了基本的 texmf-dist 目录树(宏包和字体)，[texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) 包含二进制文件，库文件，和 texmf 目录树。[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 基于上游发行版的"medium"安装方案。所有其它的包基于TeX Live同名的包。想确定每个包重包含了哪些CTAN包，查看这些文件：
+必要的软件包[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 包含了基本的 texmf-dist 目录树(宏包和字体)，[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 包含二进制文件，库文件，和 texmf 目录树。[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 基于上游发行版的"medium"安装方案。所有其它的包基于TeX Live同名的包。想确定每个包重包含了哪些CTAN包，查看这些文件：
 
 ```
   /var/lib/texmf-var/arch/installedpkgs/<package>_<revnr>.pkgs
@@ -77,7 +78,7 @@ Tex Live宏包主要在[官方仓库](/index.php/Official_repositories "Official
 *   [texlive-langkorean](https://www.archlinux.org/packages/?name=texlive-langkorean)
 *   [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra)
 
-**注意:** `texlive-langextra` 提供了对 African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan 和 Vietnamese 的语言支持.
+**注意:** [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra) 提供了对 African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan 和 Vietnamese 的语言支持.
 
 ### 手动安装TeXLive
 
@@ -85,7 +86,7 @@ Tex Live宏包主要在[官方仓库](/index.php/Official_repositories "Official
 
 ## 使用
 
-You can test your installation with
+用下面方法验证安装：
 
 ```
 $ tex '\empty Hello world!\bye'
@@ -93,11 +94,11 @@ $ pdftex '\empty Hello world!\bye'
 
 ```
 
-You should get a DVI or a PDF file accordingly.
+可以分别生成 DVI 和 PDF 文件.
 
-You will probably want a [TeX editor](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents").
+[TeX editor 汇总](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents")了可用的图形界面.
 
-There are also a few online solutions that let you create TeX-based documents without TeX Live:
+下面一些在线服务可以不用 TeX Live 就编辑 TeX 文档:
 
 *   **Authorea** — Online collaborative editor for scientific, academic, and technical documents.
 
@@ -119,7 +120,7 @@ There are also a few online solutions that let you create TeX-based documents wi
 
 	[http://papeeria.com/](http://papeeria.com/) ||
 
-Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
+更多信息请查看 [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
 
 ## 重要信息
 
@@ -127,7 +128,7 @@ Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installati
 
 *   ConTeX格式(MKII和MKIV)不会在安装时自动生成。参见 [**the ConTeXT wiki**](http://wiki.contextgarden.net) 获取更多的指导。
 
-*   包含文档和源码的包在 [community] 仓库中。你也可以在 [http://tug.org/texlive/Contents/live/doc.html](http://tug.org/texlive/Contents/live/doc.html) 或者在 CTAN 上在线查阅。
+*   包含文档和源码已经从仓库中移除。可以通过 [tllocalmgr](#TeXLive_Local_Manager) 手动编译或在 [http://tug.org/texlive/Contents/live/doc.html](http://tug.org/texlive/Contents/live/doc.html) 或者在 CTAN 上在线查阅。
 
 *   TeX Live (上游) 现在提供了一个升级CTAN中包的工具。在此基础上，我们也计划定期升级我们的包(我们已经写了几乎自动完成这个任务的工具)。
 
@@ -141,14 +142,14 @@ Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installati
 
 ### 纸张大小
 
-美国用户建议运行
+要将默认的纸张大小设为 "Letter"，而不是当前的默认值 A4：
 
 ```
 $ texconfig
 
 ```
 
-将默认的纸张大小设为 "Letter"，而不是当前的默认值 A4。这个命令也可以更改其他有用的设定。不更改这个设定右边距将大于左边距，可能造成略有瑕疵的输出。
+这个命令也可以更改其他有用的设定。
 
 ### 升级时出现 "formats not generated" 错误
 
@@ -179,7 +180,7 @@ $ texconfig
 
 ```
 
-另外，[texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) 提供的 `/etc/fonts/conf.avail/09-texlive-fonts.conf` 文件包含了TeX Live使用的目录列表。用下面命令使用此文件：
+另外，[texlive-core](https://www.archlinux.org/packages/?name=texlive-core) 提供的 `/etc/fonts/conf.avail/09-texlive-fonts.conf` 文件包含了TeX Live使用的目录列表。用下面命令使用此文件：
 
  `# ln -s /etc/fonts/conf.avail/09-texlive-fonts.conf /etc/fonts/conf.d/09-texlive-fonts.conf` 
 
@@ -253,7 +254,7 @@ CTeX宏包现在已经在texlive2011中，确保安装需要的中文字体如�
 
 ## TeXLive Local Manager
 
-现在有一个Firmicus提供的用来方便在archlinux上管理TeXLive的新工具。 参见 [AUR](/index.php/Arch_User_Repository "Arch User Repository") 中的 [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/)。
+现在有一个Firmicus提供的用来方便在archlinux上管理TeXLive的新工具。 参见 [AUR](/index.php/AUR "AUR") 中的 [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/)。
 
 ```
 Usage: tllocalmgr  
@@ -365,59 +366,34 @@ kpsewhich <filename>
 
 若能找到，会输出文件的完整路径。
 
-### 手工安装.sty文件
+如果某个 sty 文件仅是给特定用户使用，可以放到 `~/texmf/` 目录。例如 `wrapfig.sty` 文件放到 `~/texmf/tex/latex/wrapfig/wrapfig.sty`. 不需要重新运行 `mktexlsr` 等，因为 tex 每次运行的时候都会搜索 `~/texmf`。
+
+### 手工安装
 
 通常，一个新的.sty文件在`/usr/share/texmf-dist/tex/latex/<package name>/*`中。如果你没有这个目录创建它。这个目录将被自动搜索当 *tex (pdftex/latex/xelatex.....)命令被执行。更多的讨论见这里: [https://bbs.archlinux.org/viewtopic.php?id=85757](https://bbs.archlinux.org/viewtopic.php?id=85757) 。
 
-### 使用PKGBUILD安装 .sty
+### 使用 PKGBUILD 安装
 
-在整个系统的层面上安装latex包，出于简化安装和维护的考虑你应该使用PKGBUILD。看这个例子：
+在整个系统的层面上安装latex包，出于简化安装和维护的考虑你应该使用 PKGBUILD。[AUR](/index.php/AUR "AUR")中的软件包[texlive-gantt](https://aur.archlinux.org/packages/texlive-gantt/)示例.
 
-```
-# Original autor: Martin Kumm <pluto@ls68.de> 
-# Maintainer: masterkorp  <masterkorp@gmail.com>    irc: masterkorp at freenode.org
-# Last edited: 2nd April 2011
+## 更新 babelbib 语言定义
 
-pkgname=texlive-gantt
-pkgver=1.3
-pkgrel=1
-license=('GPL')
-depends=('texlive-core')
-pkgdesc="A LaTeX package for drawing gantt plots using pgf/tikz"
-url="[http://www.martin-kumm.de/tex_gantt_package.php](http://www.martin-kumm.de/tex_gantt_package.php)"
-arch=('any')
-install=texlive-gantt.install
-source=([http://www.martin-kumm.de/tex/gantt.sty](http://www.martin-kumm.de/tex/gantt.sty))
-md5sums=('e942191eb0024633155aa3188b4bbc06')
-
-build()
-{
-	mkdir -p $pkgdir/usr/share/texmf/tex/latex/gantt
-	cp $srcdir/gantt.sty $pkgdir/usr/share/texmf/tex/latex/gantt
-}
-```
-
-这是 .install 文件:
+如果 babelbib 没有需要的最新语言定义，可以从 [https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/](https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/) 获取最新定义并放到 `/usr/share/texmf-dist/tex/latex/babelbib/`. 例如：
 
 ```
-post_install() {
-  post_remove
-  echo "The file was installed in:"
-  kpsewhich gantt.sty
-}
-
-post_upgrade() {
-  post_install
-}
-
-post_remove() {
-  echo "Upgrading package database..."
-  mktexlsr
-}
+# cd /usr/share/texmf-dist/tex/latex/babelbib/ 
+# wget [https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/romanian.bdf](https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/romanian.bdf)
+# wget [...all-other-language-files...]
+# wget [https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/babelbib.sty](https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/babelbib.sty)
 
 ```
 
-来自[AUR](/index.php/AUR "AUR")软件包[texlive-gantt](https://aur.archlinux.org/packages/texlive-gantt/).
+运行 `texhash` 更新 TeX 数据库:
+
+```
+# texhash
+
+```
 
 ## 更多信息
 

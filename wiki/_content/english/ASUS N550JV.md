@@ -35,7 +35,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Touchpad switch](#Touchpad_switch)
     *   [3.2 Full fan speed](#Full_fan_speed)
-    *   [3.3 Special keys for window managers](#Special_keys_for_window_managers)
+    *   [3.3 Disable GPU throotling](#Disable_GPU_throotling)
+    *   [3.4 Special keys for window managers](#Special_keys_for_window_managers)
 
 ## Configuration
 
@@ -170,6 +171,8 @@ If you boot your laptop right after Windows to Linux, sound might only work thro
 
 The internal speakers seems not to play any sound until volume is being increased significantly. This also occurs on Windows operation system as well as on Linux.
 
+To fix this, please flash BIOS 206 as per description in [#Disable GPU throotling](#Disable_GPU_throotling) section.
+
 #### Sound pops twice during shutdown and sleep
 
 Create new file:
@@ -279,6 +282,14 @@ This is very helpful if you are about to play a heavy game. Install package [lm_
 ```
 
 If prompted, click `y` and after a few seconds you are done. Fan spins at full speed.
+
+### Disable GPU throotling
+
+If you have BIOS 208 installed and tried to play something heavy, you noticed that for a few seconds game runs for 60fps, but most of the time - 20-40fps. GPU performance is being reduced, so temperature can drop down and this is known as GPU throttling. This is strange behavior and even if temperature limit is set to 90c, GPU throttling occurs at 75c or even all the time.
+
+To fix this, flash [bios 206](https://www.asus.com/support/Download/3/529/0/2/dad5aYI8mC6sfoNV/41/). If your BIOS version is newer than this, you must follow [this guide](http://forums.legitreviews.com/viewtopic.php?t=41080), which requires you to have Windows installed to your laptop.
+
+**Note:** If you get error while installing WinFlash that this is only supported on Asus notebooks - first you need to install [ATKACPI driver](http://www.asus.com/support/Download/3/588/0/1/41/).
 
 ### Special keys for window managers
 

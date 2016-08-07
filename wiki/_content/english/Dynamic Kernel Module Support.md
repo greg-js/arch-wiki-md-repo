@@ -28,7 +28,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wi
 
 The *positive effect* of using DKMS is that modules are often able to be rebuilt when the kernel is upgrading. This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module.
 
-Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuilt of the modules is handled automatically when a kernel is upgraded. See also [#Upgrading](#Upgrading).
+Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuilt of the modules is handled automatically when a kernel is upgraded. See also [#Upgrades](#Upgrades).
 
 ## Installation
 
@@ -43,7 +43,9 @@ A good number of modules that lie outside the kernel source tree have a DKMS var
     *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
     *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
     *   [nvidia-grsec-dkms](https://aur.archlinux.org/packages/nvidia-grsec-dkms/)
-*   [VirtualBox](/index.php/VirtualBox "VirtualBox"), section [VirtualBox#Hosts running a custom kernel](/index.php/VirtualBox#Hosts_running_a_custom_kernel "VirtualBox")
+*   [VirtualBox](/index.php/VirtualBox "VirtualBox"):
+    *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
+    *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
 *   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 
 ## Upgrades

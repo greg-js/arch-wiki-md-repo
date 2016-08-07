@@ -25,12 +25,15 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.1 CPU pinning](#CPU_pinning)
         *   [5.1.1 The case of Hyper-threading](#The_case_of_Hyper-threading)
     *   [5.2 Static huge pages](#Static_huge_pages)
+    *   [5.3 Stutter in Games](#Stutter_in_Games)
+    *   [5.4 High DPC Latency](#High_DPC_Latency)
 *   [6 Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
 *   [7 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
     *   [8.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
     *   [8.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
+    *   [8.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
 *   [9 Passing though other devices](#Passing_though_other_devices)
     *   [9.1 USB controller](#USB_controller)
     *   [9.2 Gotchas](#Gotchas_4)
@@ -415,6 +418,16 @@ Also, since static huge pages can only be used by applications that specifically
 ...
 ```
 
+### Stutter in Games
+
+If you are experiencing stutter in CPU-intensive games, it may be due to cpu scaling being [controlled by the host OS](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678) and is therefore being applied differently than the guest OS/game expects. In this case, try [setting all cores to maximum frequency](/index.php/CPU_frequency_scaling "CPU frequency scaling") to see if this improves performance. Note that if you're using a modern intel chip with the default pstate driver, cpupower commands will be [ineffective](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling"), so monitor `/proc/cpuinfo` to make sure your cpu is actually at max frequency.
+
+### High DPC Latency
+
+If you are experiencing high DPC and/or interrupt latency in your Guest VM, ensure you have [loaded the needed virtio kernel modules](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") on the host kernel. Loadable virtio kernel modules include: `virtio-pci, virtio-net, virtio-blk, virtio-balloon, virtio-ring` and `virtio`.
+
+After loading one or more of these modules, `lsmod | grep virtio` executed on the host should not return empty.
+
 ## Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)
 
 This script starts Samba and Synergy, runs the VM and closes everything after the VM is shut down. Note that this method does **not** require libvirtd to be running or configured.
@@ -674,6 +687,36 @@ options kvm ignore_msrs=1
 ### "System Thread Exception Not Handled" when booting on a Windows VM
 
 Windows 8 or Windows 10 guests may raise a generic compatibility exception at boot, namely "System Thread Exception Not Handled", which tends to be caused by legacy drivers acting strangely on real machines. On KVM machines this issue can generally be solved by setting the CPU model to `core2duo`.
+
+### Slowed down audio pumped through HDMI on the video card
+
+For some users VM's audio slows down/starts stuttering/becomes demonic after a while when it's pumped through HDMI on the video card. This usually also slows down graphics. A possible solution consists of enabling MSI (Message Signaled-Based Interrupts) instead of the default (Line-Based Interrupts).
+
+In order to check whether MSI is supported or enabled, run the following command as root:
+
+```
+# lspci -vs $device | grep 'MSI:'
+
+```
+
+where `$device` is the card's address (e.g. `01:00.0`).
+
+The output should be similar to:
+
+```
+Capabilities: [60] MSI: Enable**-** Count=1/1 Maskable- 64bit+
+
+```
+
+A `-` after `Enabled` means MSI is supported, but not used by the VM, while a `+` says that the VM is using it.
+
+The procedure to enable it is quite complex, instructions and an overview of the setting can be found [here](http://forums.guru3d.com/showthread.php?t=378044).
+
+Other hints can be found on the [lime-technology's wiki](http://lime-technology.com/wiki/index.php/UnRAID_6/VM_Guest_Support#Enable_MSI_for_Interrupts_to_Fix_HDMI_Audio_Support), or on this article on [VFIO tips and tricks](http://vfio.blogspot.it/2014/09/vfio-interrupts-and-how-to-coax-windows.html).
+
+Some tools named `MSI_util` or similar are available on the Internet, but they didn't work for me on Windows 10 64bit.
+
+In order to fix the issues enabling MSI on the 0 function of my nVidia card (`01:00.0 VGA compatible controller: NVIDIA Corporation GM206 [GeForce GTX 960] (rev a1) (prog-if 00 [VGA controller])`) was not enough; I also enabled it on the other function (`01:00.1 Audio device: NVIDIA Corporation Device 0fba (rev a1)`) and that seems to have fixed the issue.
 
 ## Passing though other devices
 

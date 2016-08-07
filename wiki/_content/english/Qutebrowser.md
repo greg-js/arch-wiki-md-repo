@@ -6,6 +6,7 @@
 *   [2 Basic usage](#Basic_usage)
     *   [2.1 User Configuration](#User_Configuration)
     *   [2.2 Keybindings](#Keybindings)
+    *   [2.3 Video playback](#Video_playback)
 
 ## Installation
 
@@ -40,3 +41,7 @@ g = ${google}
 Keybindings reside in `$XDG_CONFIG_HOME/qutebrowser/keys.conf)`.
 
 You can edit the keybindings directly from the browser with the command `:bind *key* *command*` or you can edit them directly from the file. Notice that there are many, many keybinds already in place. If you notice a lag on one of your keybind it is because some other keybind is also starting with the same key.
+
+### Video playback
+
+See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_playback "Browser plugins").

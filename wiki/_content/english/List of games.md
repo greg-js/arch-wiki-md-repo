@@ -997,6 +997,8 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 - [freeciv.wikia.com](http://freeciv.wikia.com/wiki/Main_Page) | C | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freeciv](https://www.archlinux.org/packages/?name=freeciv) | Multiuser clone of the famous Microprose game of Civilization. |
 | **[Freecol](https://en.wikipedia.org/wiki/Freecol "w:Freecol")**
 - [freecol.org](http://www.freecol.org/) | Java | Strategy | <abbr title="GNU General Public License Version 2">GPLv2</abbr> | [freecol](https://www.archlinux.org/packages/?name=freecol) | Turn-based strategy game based on Colonization. |
+| **[Megaglest](https://en.wikipedia.org/wiki/Megaglest "w:Megaglest")**
+- [megaglest.org](https://megaglest.org/) | C/C++ | Strategy | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [megaglest](https://www.archlinux.org/packages/?name=megaglest) | Fork of Glest, a 3D real-time strategy game in a fantastic world. |
 | **[OpenRA](https://en.wikipedia.org/wiki/Command_%26_Conquer:_Red_Alert#Open_source_remake "w:Command & Conquer: Red Alert")**
 - [openra.net](http://www.openra.net) | C# | Strategy | <abbr title="GNU General Public License Version 3">GPLv3</abbr> | [openra](https://www.archlinux.org/packages/?name=openra), [openra-git](https://aur.archlinux.org/packages/openra-git/) | An open-source implementation of the Command & Conquer: Red Alert engine using .NET/Mono and OpenGL. |
 | **PyChess**

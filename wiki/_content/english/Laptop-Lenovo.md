@@ -152,7 +152,7 @@ install CD version
 | [Lenovo IdeaPad S10](/index.php/Lenovo_IdeaPad_S10 "Lenovo IdeaPad S10") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo IdeaPad S400 Touch](/index.php/Lenovo_IdeaPad_S400_Touch "Lenovo IdeaPad S400 Touch") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
 | Lenovo IdeaPad U430p | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
-| Lenovo IdeaPad Y700 | 2015.12.01 | Yes | Yes | Yes | Yes | Yes | Not tested | NA |
+| Lenovo IdeaPad Y700 | 2015.12.01 | Yes | Yes | Yes | Yes | Yes | Not tested | NA | [Trackpad requires pata_legacy to be blacklisted](https://bugzilla.kernel.org/show_bug.cgi?id=151681) |
 
 ### B series
 

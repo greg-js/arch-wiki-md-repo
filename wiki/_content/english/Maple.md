@@ -6,9 +6,9 @@ From the [official website](http://www.maplesoft.com/products/maple/):
 
 *   [1 Overview](#Overview)
 *   [2 Installation](#Installation)
-*   [3 Issues](#Issues)
-    *   [3.1 "Failed to determine Host ID of license server"](#.22Failed_to_determine_Host_ID_of_license_server.22)
-    *   [3.2 Blank main window on tiling window managers](#Blank_main_window_on_tiling_window_managers)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Failed to determine Host ID of license server](#Failed_to_determine_Host_ID_of_license_server)
+    *   [3.2 Blank main window with tiling window managers](#Blank_main_window_with_tiling_window_managers)
     *   [3.3 3D plots failing](#3D_plots_failing)
 
 ## Overview
@@ -23,15 +23,15 @@ After purchasing your license, [download](http://www.maplesoft.com/support/downl
 
 Once the package is installed, you will need to provide a license activation code. This should have been included in your installation archive.
 
-## Issues
+## Troubleshooting
 
-### "Failed to determine Host ID of license server"
+### Failed to determine Host ID of license server
 
-In order to get Maple to accept your activation code, you may need to install the [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/) package from the AUR. This will fake a standard Linux standard base runtime and convince the authentication server to accept your valid activation code. The [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) package does not solve this issue, as the [MapleSoft installation support site](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) might lead one to believe.
+In order to get Maple to accept your activation code, you may need to [install](/index.php/Install "Install") the [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/) package. This will fake a standard Linux standard base runtime and convince the authentication server to accept your valid activation code. The [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) package does not solve this issue, as the [MapleSoft installation support site](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) might lead one to believe.
 
-### Blank main window on tiling window managers
+### Blank main window with tiling window managers
 
-More correctly a common problem with Java applications and non-reparenting window managers, see [[1]](https://wiki.archlinux.org/index.php/Java#Non-reparenting_window_managers) for a fix.
+See [Java#Non-reparenting_window_managers](/index.php/Java#Non-reparenting_window_managers "Java").
 
 ### 3D plots failing
 

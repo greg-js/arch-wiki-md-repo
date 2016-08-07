@@ -44,6 +44,8 @@ $ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
 
 Where `-p 9876` stands for the port number, `-C` use compression and `-o allow_other` to allow non-rooted users have read/write access.
 
+**Note:** The `allow_other` option is disabled by default. To enable it, uncomment the line `user_allow_other` in `/etc/fuse.conf` to enable non-root users to use the allow_other mount option.
+
 **Note:** Users may also define a non-standard port on a host-by-host basis in `~/.ssh/config` to avoid appending the -p switch here. For more information see [Secure Shell#Saving connection data in SSH config](/index.php/Secure_Shell#Saving_connection_data_in_SSH_config "Secure Shell").
 
 SSH will ask for the password, if needed. If you do not want to type in the password multiple times a day, read: [How to Use RSA Key Authentication with SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) or [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys").

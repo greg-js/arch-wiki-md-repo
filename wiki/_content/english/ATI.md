@@ -50,6 +50,7 @@ If unsure, try the open source driver first, it will suit most needs and is gene
     *   [14.11 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
     *   [14.12 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
     *   [14.13 Low 2D performance in console and X](#Low_2D_performance_in_console_and_X)
+    *   [14.14 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
 
 ## Selecting the right driver
 
@@ -711,3 +712,7 @@ Try booting with the [kernel parameter](/index.php/Kernel_parameter "Kernel para
 ### Low 2D performance in console and X
 
 Since kernel 4.1.4, [dpm](#Dynamic_power_management) is broken on certain R9 270X cards (chip device number 6810, subsystem 174b:e271, shown as Curacao XT, PC Partner Limited / Sapphire Technology Device e271 in lspci). The regression is caused by a [fix](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=ea039f927524e36c15b5905b4c9469d788591932) for cards with the same PCI ids. Disabling dpm (add `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters")) solves the problem.
+
+### R9-390 Poor Performance and/or Instability
+
+Firmware issues with R9-390 series cards include poor performance and crashes (frequently caused by gaming or using Google Maps) possibly related DPM. Comment 115 of this bug [report](https://bugs.freedesktop.org/show_bug.cgi?id=91880) includes instructions for a fix.

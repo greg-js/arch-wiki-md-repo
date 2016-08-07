@@ -12,6 +12,7 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
     *   [3.4 Mouse cursor disappears after screen unlocks](#Mouse_cursor_disappears_after_screen_unlocks)
     *   [3.5 Touchpad active even if disabled in BIOS](#Touchpad_active_even_if_disabled_in_BIOS)
     *   [3.6 Prevent tap clicking while typing](#Prevent_tap_clicking_while_typing)
+    *   [3.7 Video compression artifacts in VLC](#Video_compression_artifacts_in_VLC)
 *   [4 lspci](#lspci)
 
 ## Installation
@@ -94,6 +95,10 @@ synclient TapButton1=0
 ```
 
 This change can be made permament by changing the Xorg configuration.
+
+### Video compression artifacts in VLC
+
+When running on the Nvidia dGPU, if you see compression artifacts when playing videos in VLC, go to Tools -> Preferences -> Input / Codecs and set "Hardware-accelerated decoding" to "Disable".
 
 ## lspci
 

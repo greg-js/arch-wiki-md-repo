@@ -26,7 +26,11 @@
 
 The [OpenConnect](http://www.infradead.org/openconnect/) VPN client has recently added support for Juniper VPN, supporting both TCP and UDP data transports. See the [initial announcement](http://lists.infradead.org/pipermail/openconnect-devel/2015-January/002628.html) on the mailing list for more details.
 
-To use, install [openconnect](https://www.archlinux.org/packages/?name=openconnect) from the Archlinux respositories. If you want NetworkManager support, also install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), and restart NetworkManager.
+To use, install [openconnect](https://www.archlinux.org/packages/?name=openconnect) from the Archlinux respositories. If your Juniper VPN setup doesn't require any input after conneting you can use this command in order to connect
+
+ `sudo openconnect --juniper [https://vpn.server.com/](https://vpn.server.com/)` 
+
+If you want NetworkManager support, you can wait until version 1.4 comes out and install [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect), or try the latest git version.
 
 ## Official Software Preferred installation method
 

@@ -47,9 +47,8 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [11 Creating an OpenVPN client profile (Linux, iOS, or Android)](#Creating_an_OpenVPN_client_profile_.28Linux.2C_iOS.2C_or_Android.29)
     *   [11.1 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
 *   [12 Troubleshooting](#Troubleshooting)
-    *   [12.1 Resolve issues](#Resolve_issues)
-    *   [12.2 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
-    *   [12.3 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
+    *   [12.1 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
+    *   [12.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
 *   [13 See Also](#See_Also)
 
 ## Install OpenVPN
@@ -72,7 +71,7 @@ Read [Kernel modules](/index.php/Kernel_modules "Kernel modules") for more infor
 
 ## Connect to a VPN provided by a third party
 
-To connect to a VPN service provided by a third party, most of the following can most likely be ignored, especially regarding server setup. Most likely you will want to begin with [#The client configuration file](#The_client_configuration_file) and skip ahead to [#Starting OpenVPN](#Starting_OpenVPN) after that. Use the certificates and instructions given by your provider, for instance see: [Airvpn](/index.php/Airvpn "Airvpn").
+To connect to a VPN service provided by a third party, most of the following can most likely be ignored, especially regarding server setup. Begin with [#The client configuration file](#The_client_configuration_file) and skip ahead to [#Starting OpenVPN](#Starting_OpenVPN) after that. One should use the provider certificates and instructions, for instance see: [Airvpn](/index.php/Airvpn "Airvpn").
 
 **Note:** Most free VPN providers will (often only) offer [PPTP](/index.php/PPTP_server "PPTP server"), which is drastically easier to setup and configure, but is [not secure](http://poptop.sourceforge.net/dox/protocol-security.phtml).
 
@@ -86,7 +85,7 @@ Once created, symlinks are created as follows (as the root user):
 ln -sf /etc/easy-rsa/pki/ca.crt /etc/openvpn
 ln -sf /etc/easy-rsa/pki/private/server.key /etc/openvpn
 ln -sf /etc/easy-rsa/pki/issued/server.crt /etc/openvpn
-ln -sf /etc/easy-rsa/dh.pem /etc/openvpn
+ln -sf /etc/easy-rsa/pki/dh.pem /etc/openvpn
 ln -sf /etc/easy-rsa/pki/ta.key /etc/openvpn
 
 ```
@@ -121,11 +120,7 @@ Copy the example server configuration file to `/etc/openvpn/server.conf`:
 
 ```
 
-Edit the following:
-
-*   The `ca`, `cert`, `key`, and `dh` parameters to reflect the path and names of the keys and certificates. Specifying the paths will allow you to run the OpenVPN executable from any directory for testing purposes.
-*   Enable the SSL/TLS HMAC handshake protection. **Note the use of the parameter 0 for a server**.
-*   It is recommended to run OpenVPN with reduced privileges once it has initialized. Do this by uncommenting the `user` and `group` directives.
+Edit the file making a minimum of the following changes:
 
  `/etc/openvpn/server.conf` 
 ```
@@ -160,7 +155,7 @@ tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA2
 
 #### Deviating from the standard port and/or protocol
 
-Some public/private network admins may not allow OpenVPN connections running on its default port and/or protocol. A good strategy to circumvent this is to mimic https/SSL traffic on OpenVPN's server via employing the port 443/tcp which is very likely unobstructed.
+Some public/private network admins may not allow OpenVPN connections on its default port and/or protocol. One strategy to circumvent this is to mimic https/SSL traffic which is very likely unobstructed.
 
 To do so, configure `/etc/openvpn/server.conf` as such:
 
@@ -236,7 +231,7 @@ Depending on setup, there are four ways to handle these situations:
 
 ### Testing the OpenVPN configuration
 
-Run `# openvpn /etc/openvpn/server.conf` on the server, and `# openvpn /etc/openvpn/client.conf` on the client. You should see something similar to this:
+Run `# openvpn /etc/openvpn/server.conf` on the server, and `# openvpn /etc/openvpn/client.conf` on the client. Example output should be similar to the following:
 
  `# openvpn /etc/openvpn/server.conf` 
 ```
@@ -316,8 +311,6 @@ PING 10.8.0.1 (10.8.0.1) 56(84) bytes of data.
 3 packets transmitted, 3 received, 0% packet loss, time 2001ms
 rtt min/avg/max/mdev = 157.426/158.278/158.940/0.711 ms
 ```
-
-You now have a working OpenVPN installation, and your client (bugs) will be able to use services on the server (elmer), and vice versa.
 
 **Note:** If using a firewall, make sure that IP packets on the TUN device are not blocked.
 
@@ -758,30 +751,6 @@ Some software will only read VPN certificates that are stored in a password-encr
  `# openssl pkcs12 -export -inkey keys/bugs.key -in keys/bugs.crt -certfile keys/ca.crt -out keys/bugs.p12` 
 
 ## Troubleshooting
-
-### Resolve issues
-
-If you are having resolve issues when starting your profile:
-
- `# journalctl _SYSTEMD_UNIT=openvpn@*profile*.service` 
-```
-RESOLVE: Cannot resolve host address: example.com: Name or service not known
-
-```
-
-Then, **only if your network setup can be started before OpenVPN**, you should force OpenVPN to wait for the network by adding `Requires=network.target` and `After=network.target` to the OpenVPN systemd service file:
-
- `/usr/lib/systemd/system/openvpn@.service` 
-```
-[Unit]
-Description=OpenVPN connection to %i
-Requires=network.target
-After=network.target
-...
-
-```
-
-Do not forget to run `systemctl daemon-reload` and [restart](/index.php/Restart "Restart") `openvpn@*profile*.service`.
 
 ### Client daemon not restarting after suspend
 

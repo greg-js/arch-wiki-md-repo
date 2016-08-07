@@ -89,39 +89,39 @@ Required:
 
 *   **Compiz Core** — OpenGL compositing window manager.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/), [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/)
+	[https://github.com/compiz-reloaded/compiz/](https://github.com/compiz-reloaded/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/), [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/)
 
 Highly recommended:
 
 *   **CompizConfig Settings Manager** — Graphical settings manager for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [ccsm](https://aur.archlinux.org/packages/ccsm/)
+	[https://github.com/compiz-reloaded/ccsm](https://github.com/compiz-reloaded/ccsm) || [ccsm](https://aur.archlinux.org/packages/ccsm/)
 
 *   **Compiz Fusion Plugins Main** — Main plugins collection for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-main](https://aur.archlinux.org/packages/compiz-fusion-plugins-main/)
+	[https://github.com/compiz-reloaded/compiz-plugins-main](https://github.com/compiz-reloaded/compiz-plugins-main) || [compiz-fusion-plugins-main](https://aur.archlinux.org/packages/compiz-fusion-plugins-main/)
 
 *   **Compiz Fusion Plugins Extra** — Extra plugins collection for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-extra](https://aur.archlinux.org/packages/compiz-fusion-plugins-extra/)
+	[https://github.com/compiz-reloaded/compiz-plugins-extra](https://github.com/compiz-reloaded/compiz-plugins-extra) || [compiz-fusion-plugins-extra](https://aur.archlinux.org/packages/compiz-fusion-plugins-extra/)
 
 Optional:
 
 *   **Compiz Fusion Plugins Experimental** — Experimental Compiz plugins.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-experimental](https://aur.archlinux.org/packages/compiz-fusion-plugins-experimental/)
+	[https://github.com/compiz-reloaded/compiz-plugins-experimental](https://github.com/compiz-reloaded/compiz-plugins-experimental) || [compiz-fusion-plugins-experimental](https://aur.archlinux.org/packages/compiz-fusion-plugins-experimental/)
 
 *   **Emerald** — A standalone window decorator for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald](https://aur.archlinux.org/packages/emerald/)
+	[https://github.com/compiz-reloaded/emerald](https://github.com/compiz-reloaded/emerald) || [emerald](https://aur.archlinux.org/packages/emerald/)
 
 *   **Emerald Themes** — Extra themes for the Emerald window decorator.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
+	[https://github.com/compiz-reloaded/emerald-themes](https://github.com/compiz-reloaded/emerald-themes) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
 
 *   **Fusion Icon** — A tray applet for starting Compiz and switching window managers and decorators on the fly.
 
-	[http://www.compiz.org/](http://www.compiz.org/) || [fusion-icon](https://aur.archlinux.org/packages/fusion-icon/)
+	[https://github.com/compiz-reloaded/fusion-icon](https://github.com/compiz-reloaded/fusion-icon) || [fusion-icon](https://aur.archlinux.org/packages/fusion-icon/)
 
 ## Starting Compiz
 

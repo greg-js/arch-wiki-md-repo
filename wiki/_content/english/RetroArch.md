@@ -38,7 +38,7 @@ A default emulation core can be defined in the configuration, obviating the need
 
 RetroArch provides a very well commented skeleton configuration file located at `/etc/retroarch.cfg`.
 
-Copy the skeleton configuration file located at `/etc/retroarch.cfg` to `~/.config/retroarch/retroarch.cfg`.
+Copy the skeleton configuration file to your home directory
 
 ```
 $ cp /etc/retroarch.cfg ~/.config/retroarch/retroarch.cfg

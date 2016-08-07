@@ -16,10 +16,10 @@
     *   [4.2 Statusbar](#Statusbar)
     *   [4.3 Wallpaper](#Wallpaper)
     *   [4.4 Input devices](#Input_devices)
-    *   [4.5 Custom keybindings](#Custom_keybindings)
+    *   [4.5 HiDPI](#HiDPI)
+    *   [4.6 Custom keybindings](#Custom_keybindings)
 *   [5 Known issues](#Known_issues)
     *   [5.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
-    *   [5.2 hidpi](#hidpi)
 *   [6 See also](#See_also)
 
 ## Status
@@ -148,6 +148,22 @@ man sway-input
 
 ```
 
+### HiDPI
+
+Set your displays scale factor with the `output` command in your config file. The scale factor must be an integer, and is usually 2 for HiDPI screens.
+
+```
+output <name> scale <factor>
+
+```
+
+You can find your display name with the following command:
+
+```
+swaymsg -t get_outputs
+
+```
+
 ### Custom keybindings
 
 [Special keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") on your keyboard can be used to execute commands, for example to control your volume or your monitor brightness:
@@ -177,10 +193,6 @@ $ wget '[https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch'](ht
 # patch -p0 /usr/bin/i3-dmenu-desktop < 2265.patch
 
 ```
-
-### hidpi
-
-wlc (which sway relies on) does not currently support hidpi : [https://github.com/Cloudef/wlc/issues/57](https://github.com/Cloudef/wlc/issues/57)
 
 ## See also
 

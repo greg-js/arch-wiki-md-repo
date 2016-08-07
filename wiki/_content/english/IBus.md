@@ -41,6 +41,7 @@ You will need at least one input method, corresponding to the language you wish 
 *   [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) - M17n IME which allows input of many languages using the input methods from [m17n-db](https://www.archlinux.org/packages/?name=m17n-db).
 *   [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) - Japanese IME, based on [Mozc](/index.php/Mozc "Mozc").
 *   [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) - Japanese IME, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
+*   [ibus-cangjie](https://aur.archlinux.org/packages/ibus-cangjie/) - Chinese IME for Cangjie3, Cangjie3, and Quick based on [libcangjie](https://aur.archlinux.org/packages/libcangjie/) and [python-pycangjie](https://aur.archlinux.org/packages/python-pycangjie/).
 
 To see all available input methods:
 

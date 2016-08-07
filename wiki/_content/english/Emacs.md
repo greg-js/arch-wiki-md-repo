@@ -328,7 +328,7 @@ $ setxkbmap -option "shift:both_capslock"
 
 ### Multiplexing emacs and emacsclient
 
-To open the new file in the same `emacs-session` its use needs use to use `emacsclient`. `emacs` command can be itself wrapped to do the smarter job to open the file if the session exists.
+Opening a new file in the same `emacs-session` requires the use of `emacsclient`. `emacs` command can be itself wrapped to do the smarter job to open the file if the session exists.
 
 To start session you need to `start-server`. This snippet will create server in first session of emacs. Add this to your `emacs` configuration file.
 

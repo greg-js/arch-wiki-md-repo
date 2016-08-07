@@ -25,6 +25,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.6 Change Default Window Title Font Size](#Change_Default_Window_Title_Font_Size)
     *   [4.7 Disable GTK+ 3](#Disable_GTK.2B_3)
     *   [4.8 White on white quick outline and type hierarchy](#White_on_white_quick_outline_and_type_hierarchy)
+    *   [4.9 Freshplayerplugin](#Freshplayerplugin)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -285,6 +286,10 @@ When using GTK2 backend the workaround is to edit the theme. Append the followin
 ```
 
 For GTK3 backend this should already be fixed. See [https://bugs.eclipse.org/bugs/show_bug.cgi?id=492376](https://bugs.eclipse.org/bugs/show_bug.cgi?id=492376) for the relevant info.
+
+### Freshplayerplugin
+
+Eclipse is not compatible with [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/). See [https://github.com/i-rinat/freshplayerplugin/issues/298](https://github.com/i-rinat/freshplayerplugin/issues/298).
 
 ## See also
 

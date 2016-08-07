@@ -13,7 +13,7 @@
     *   [1.8 Validate configuration](#Validate_configuration)
 *   [2 Client configuration](#Client_configuration)
     *   [2.1 List Public Shares](#List_Public_Shares)
-    *   [2.2 WINS host names](#WINS_host_names)
+    *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
     *   [2.3 Manual mounting](#Manual_mounting)
         *   [2.3.1 Storing Share Passwords](#Storing_Share_Passwords)
     *   [2.4 Automatic mounting](#Automatic_mounting)
@@ -78,7 +78,7 @@ Open `/etc/samba/smb.conf` and scroll down to the **Share Definitions** section.
 
 The default config file also shares your printers and contains several commented sample configurations. For more information about available options you can read the `smb.conf` man page (which is also available [online](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)).
 
-On Windows side, be sure to change `smb.conf` to the in-use Windows Workgroup (default: `WORKGROUP`).
+The `workgroup` specified in `smb.conf` has to match the in use Windows workgroup. By default it's set to the default Windows workgroup `WORKGROUP`.
 
 ### Starting services
 
@@ -264,7 +264,9 @@ $ smbtree -b -N
 
 Where the options are `-b` (`--broadcast`) to use broadcast instead of using the master browser and `-N` (`-no-pass`) to not ask for a password.
 
-### WINS host names
+### NetBIOS/WINS host names
+
+You may need to [start/enable](/index.php/Start/enable "Start/enable") winbindd in order to resolve host names with e.g., mount.cifs
 
 The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add “wins” to the “hosts” line in /etc/nsswitch.conf.
 

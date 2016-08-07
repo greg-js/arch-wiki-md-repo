@@ -183,7 +183,7 @@ Compruebe que el mapeado funciona según lo previsto:
 
 Si ha creado particiones separadas (por ejemplo, `/home`), estos pasos tienen que ser adaptados y repetidos para todas ellas, a *excepción* de `/boot`. Véase [dm-crypt/Encrypting a non-root file system#Automated unlocking and mounting](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Automated_unlocking_and_mounting "Dm-crypt/Encrypting a non-root file system") para saber cómo manejar particiones adicionales en el arranque.
 
-Tenga en cuenta que cada dispositivo de bloque requiere su propia contraseña. Esto puede ser un inconveniente, porque da lugar a una frase de acceso separada para cada uno, que hay que introducir durante el inicio. Una alternativa es utilizar un archivo de claves almacenada en la partición del sistema para desbloquear la partición separada mediante `crypttab`. Vease [Dm-crypt/Device encryption#Using LUKS to Format Partitions with a Keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_Format_Partitions_with_a_Keyfile "Dm-crypt/Device encryption") para obtener instrucciones.
+Tenga en cuenta que cada dispositivo de bloque requiere su propia contraseña. Esto puede ser un inconveniente, porque da lugar a una frase de acceso separada para cada uno, que hay que introducir durante el inicio. Una alternativa es utilizar un archivo de claves almacenada en la partición del sistema para desbloquear la partición separada mediante `crypttab`. Vease [Dm-crypt/Device encryption#Using LUKS to format partitions with a keyfile](/index.php/Dm-crypt/Device_encryption#Using_LUKS_to_format_partitions_with_a_keyfile "Dm-crypt/Device encryption") para obtener instrucciones.
 
 ### Preparar la partición de arranque
 

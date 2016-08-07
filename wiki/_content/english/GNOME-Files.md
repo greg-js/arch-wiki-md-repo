@@ -142,4 +142,8 @@ The new columns should now have been added. To enable them, navigate to Preferen
 
 ### Files is no longer the default file manager
 
-See [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").
+This can be caused by the file association for directories being reset. Installing [anjuta](https://www.archlinux.org/packages/?name=anjuta) tends to do this.
+
+To solve this, open Files, right-click on a folder, and choose *Open With Other Application > Files > Select*. This will set the association for directories back to Files.
+
+If this does not solve the issue, see [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").

@@ -1,4 +1,4 @@
-PIA is a subscription based service provided from the [PIA](https://www.privateinternetaccess.com/). See its [How It Works](https://www.privateinternetaccess.com/pages/how-it-works/) page for more information.
+PIA is a subscription based service provided from [PIA](https://www.privateinternetaccess.com/). See its [How It Works](https://www.privateinternetaccess.com/pages/how-it-works/) page for more information.
 
 ## Contents
 
@@ -16,7 +16,7 @@ PIA is a subscription based service provided from the [PIA](https://www.privatei
 
 PIA supports nearly any operating system and solution any user would need. This guide automatically sets up the configurations for PIA which works for most Arch Linux users.
 
-**Note:** Arch Linux users may setup PIA manually by reading information on [PIA Client Support](https://www.privateinternetaccess.com/pages/client-support/) page.
+**Note:** Arch Linux users may set up PIA manually by reading information on [PIA Client Support](https://www.privateinternetaccess.com/pages/client-support/) page.
 
 ## Installation
 

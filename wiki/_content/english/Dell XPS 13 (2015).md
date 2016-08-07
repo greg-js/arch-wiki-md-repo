@@ -118,11 +118,11 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 With BIOS A02+ and Arch kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0 or newer.[[2]](http://www.spinics.net/lists/linux-acpi/msg57457.html)
 
-**Note:** Kernel 4.5+ requires the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21); otherwise, the sound card will not be recognized. This has been resolved in Arch kernel 4.5.2+.[[4]](https://bugs.archlinux.org/task/48936)
+**Note:** Kernels 4.5-4.7 require the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21); otherwise, the sound card will not be recognized. This has been resolved in Arch kernel 4.5.2+[[4]](https://bugs.archlinux.org/task/48936); meanwhile, a better fix is forthcoming in kernel 4.8.[[5]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e)
 
 ##### Enabling the microphone
 
-**Note:** The microphone appears to be enabled by default as of Arch kernel 4.5.3, so these instructions may be unnecessary.[[5]](https://bugs.archlinux.org/task/47989#comment146876)
+**Note:** The microphone appears to be enabled by default as of Arch kernel 4.5.3, so these instructions may be unnecessary.[[6]](https://bugs.archlinux.org/task/47989#comment146876)
 
 In I2S mode, the built-in microphone is muted by default. To enable it you have to unmute `Mic` item; follow the instructions below in order to achieve the goal:
 
@@ -157,23 +157,19 @@ EndSection
 
 ```
 
-Refer to `man libinput` for more configurable options (for eg. NaturalScrolling, MiddleEmulation).
+Refer to `man libinput` for more configurable options (e.g. NaturalScrolling, MiddleEmulation.)
 
 ### Powersaving
 
-With kernel 4.5.4 and [tlp](https://www.archlinux.org/packages/?name=tlp), the idle power usage can reach ~2.3 W with the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
-
-```
-pcie_aspm=force i915.enable_fbc=1
-
-```
+With kernel 4.6.5 and [tlp](https://www.archlinux.org/packages/?name=tlp), the idle power usage can reach ~2.3 W with the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `pcie_aspm=force` enabled.
 
 Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to tweak performance and monitor power consumption.
 
 **Note:**  
 
-*   With kernel 4.6+, frame-buffer compression (FBC) and panel self-refresh (PSR) are enabled by default, so `i915.enable_fbc` and `i915.enable_psr` are no longer needed. However, PSR still causes the display to briefly flicker at times; a patch is available to fix this[[6]](https://bugs.freedesktop.org/show_bug.cgi?id=95176#c14), but until it's merged you may want to disable PSR by adding `i915.enable_psr=0` to your kernel parameters if it bothers you.
+*   With kernel 4.6+, frame-buffer compression (FBC) and panel self-refresh (PSR) are enabled by default, so `i915.enable_fbc` and `i915.enable_psr` are no longer needed. Kernel 4.6.2+ is recommended as older kernels may cause the display to flicker.
 *   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to irc #intel-gfx, "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use."
+*   `i915.enable_rc6=7` is useless on Broadwell/gen8 systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[8]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
 
 ### Calibrated ICC profile for QHD+ models
 

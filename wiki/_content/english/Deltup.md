@@ -9,7 +9,7 @@ Delta updates save time and size in downloading and updating the system. Package
 
 ## Install
 
-[Install](/index.php/Install "Install") [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) package.
 
 ## Configuration
 

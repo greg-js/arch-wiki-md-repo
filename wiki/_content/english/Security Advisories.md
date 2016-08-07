@@ -40,6 +40,10 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### August 2016
 
+*   [05 August 2016] [ASA-201608-5](https://lists.archlinux.org/pipermail/arch-security/2016-August/000679.html) [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) multiple issues
+*   [05 August 2016] [ASA-201608-4](https://lists.archlinux.org/pipermail/arch-security/2016-August/000678.html) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) multiple issues
+*   [05 August 2016] [ASA-201608-3](https://lists.archlinux.org/pipermail/arch-security/2016-August/000677.html) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) multiple issues
+*   [05 August 2016] [ASA-201608-2](https://lists.archlinux.org/pipermail/arch-security/2016-August/000676.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
 *   [02 August 2016] [ASA-201608-1](https://lists.archlinux.org/pipermail/arch-security/2016-August/000675.html) [openssh](https://www.archlinux.org/packages/?name=openssh) information leakage
 
 ### July 2016

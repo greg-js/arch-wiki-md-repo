@@ -895,6 +895,14 @@ This may occur after upgrading the [virtualbox](https://www.archlinux.org/packag
 
 If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
 
+**Sound input (microphone) not working after upgrade**
+
+There has been issues reported around sound input in 5.1.x versions;
+
+[https://forums.virtualbox.org/viewtopic.php?f=7&t=78797](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
+
+[Downgrading](https://wiki.archlinux.org/index.php/Downgrading_packages) may solve the problem
+
 ### Fullscreen mode shows blank guest screen
 
 On some window managers ([i3](/index.php/I3 "I3")), VirtualBox has issues with fullscreen mode properly due to the overlay bar. To workaround this issue, disable "Show in Full-screen/Seamless" option in "Guest Settings --> User Interface --> Mini ToolBar". See [the upstream bug report](https://www.virtualbox.org/ticket/14323) for more information.

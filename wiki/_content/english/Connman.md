@@ -151,7 +151,7 @@ connmanctl> agent on
 
 ```
 
-You now need to connect to one of the protected services. To do this it is very handy to have a terminal that allows cut and paste. If you were connecting to OtherNET in the example above you would type:
+You now need to connect to one of the protected services. To do this easily, just use tab completion for the wifi_ service. If you were connecting to OtherNET in the example above you would type:
 
 ```
 connmanctl> connect wifi_dc85de828967_38303944616e69656c73_managed_psk

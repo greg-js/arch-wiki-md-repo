@@ -763,7 +763,7 @@ We create a directory for the installation of pyroscope, then download and updat
 
 ```
 mkdir -p ~/.lib
-svn checkout http://pyroscope.googlecode.com/svn/trunk/ ~/.lib/pyroscope
+git clone "https://github.com/pyroscope/pyrocore.git" ~/.lib/pyroscope
 ~/.lib/pyroscope/update-to-head.sh
 ```
 

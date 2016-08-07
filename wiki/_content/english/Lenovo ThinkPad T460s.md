@@ -35,7 +35,7 @@ With kernels older than 4.5.1, there is a [kernel bug](https://bugzilla.kernel.o
 
 ### Suspend / Resume
 
-Suspending the T460s by closing the lid when running on battery causes the machine to freeze up entirely. This can be worked around by setting the "intel_pstate=no_hwp" kernel parameter or by compiling the kernel with the patch attached to the [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=113551) tracking this issue. Kernel 4.6.0 (available via e.g. [linux-git](https://aur.archlinux.org/packages/linux-git/)) resolves this issue.
+With kernels older than 4.6, suspending the T460s by closing the lid when running on battery causes the machine to freeze up entirely. This can be worked around by setting the "intel_pstate=no_hwp" kernel parameter or by compiling the kernel with the patch attached to the [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=113551) tracking this issue.
 
 ### Hibernate / Resume
 

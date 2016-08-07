@@ -1,6 +1,6 @@
 From the [awesome website](https://awesome.naquadah.org/):
 
-	*[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.*
+	[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.
 
 ## Contents
 
@@ -38,9 +38,10 @@ From the [awesome website](https://awesome.naquadah.org/):
         *   [4.3.1 Mod4 key vs. IBM ThinkPad users](#Mod4_key_vs._IBM_ThinkPad_users)
     *   [4.4 Fix Java (GUI appears gray only)](#Fix_Java_.28GUI_appears_gray_only.29)
     *   [4.5 Eclipse: cannot resize/move main window](#Eclipse:_cannot_resize.2Fmove_main_window)
-    *   [4.6 YouTube: fullscreen appears in background](#YouTube:_fullscreen_appears_in_background)
-    *   [4.7 Prevent the mouse scroll wheel from changing tags](#Prevent_the_mouse_scroll_wheel_from_changing_tags)
-    *   [4.8 Starting console clients on specific tags](#Starting_console_clients_on_specific_tags)
+    *   [4.6 scrot: Cannot take a mouse selected screenshot with keyboard shortcuts](#scrot:_Cannot_take_a_mouse_selected_screenshot_with_keyboard_shortcuts)
+    *   [4.7 YouTube: fullscreen appears in background](#YouTube:_fullscreen_appears_in_background)
+    *   [4.8 Prevent the mouse scroll wheel from changing tags](#Prevent_the_mouse_scroll_wheel_from_changing_tags)
+    *   [4.9 Starting console clients on specific tags](#Starting_console_clients_on_specific_tags)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -480,6 +481,15 @@ If you get stuck and cannot move or resize the main window (using mod4 + left/ri
 
 ```
 <window height="xx" maximized="true" width="xx" x="xx" y="xx"
+
+```
+
+### scrot: Cannot take a mouse selected screenshot with keyboard shortcuts
+
+When using [scrot](http://www.wikipedia.org/wiki/Scrot), you may have problems at assigning a keyboard shortcut to the mouse selection option (formally `scrot -s`). To fix it, add the following line to your `rc.lua`:
+
+```
+awful.key( { modkey,	 }, <shortcut>, function () awful.util.spawn_with_shell("sleep 0.5 && scrot -s") end)
 
 ```
 

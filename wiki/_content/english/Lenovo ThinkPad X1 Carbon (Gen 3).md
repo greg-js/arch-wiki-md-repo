@@ -125,7 +125,7 @@ Note that recent versions of fprint are broken for this model : One is able to 
 
 ### WiFi
 
-There are several cards used - all should be covered by iiwlwifi:
+There are several cards used - all should be covered by iwlwifi:
 
 *   Intel Wireless-N 7265, 2x2, 802.11b/g/n
 *   Intel Dual Band Wireless-N 7265, 2x2 802.11a/b/g/n

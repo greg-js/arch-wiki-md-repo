@@ -6,68 +6,45 @@ The `mount` command will use fstab, if just one of either directory or device is
 
 ## Contents
 
-*   [1 File example](#File_example)
-*   [2 Field definitions](#Field_definitions)
-*   [3 Identifying filesystems](#Identifying_filesystems)
-    *   [3.1 Kernel name descriptors](#Kernel_name_descriptors)
-    *   [3.2 Labels](#Labels)
-    *   [3.3 UUIDs](#UUIDs)
-    *   [3.4 GPT labels](#GPT_labels)
-    *   [3.5 GPT UUIDs](#GPT_UUIDs)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Automount with systemd](#Automount_with_systemd)
-    *   [4.2 External devices](#External_devices)
-    *   [4.3 Filepath spaces](#Filepath_spaces)
-    *   [4.4 atime options](#atime_options)
-    *   [4.5 Writing to FAT32 as Normal User](#Writing_to_FAT32_as_Normal_User)
-    *   [4.6 Remounting the root partition](#Remounting_the_root_partition)
-    *   [4.7 bind mounts](#bind_mounts)
-*   [5 See also](#See_also)
+*   [1 Usage](#Usage)
+*   [2 Identifying filesystems](#Identifying_filesystems)
+    *   [2.1 Kernel name descriptors](#Kernel_name_descriptors)
+    *   [2.2 Labels](#Labels)
+    *   [2.3 UUIDs](#UUIDs)
+    *   [2.4 GPT labels](#GPT_labels)
+    *   [2.5 GPT UUIDs](#GPT_UUIDs)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Automount with systemd](#Automount_with_systemd)
+    *   [3.2 External devices](#External_devices)
+    *   [3.3 Filepath spaces](#Filepath_spaces)
+    *   [3.4 atime options](#atime_options)
+    *   [3.5 Writing to FAT32 as Normal User](#Writing_to_FAT32_as_Normal_User)
+    *   [3.6 Remounting the root partition](#Remounting_the_root_partition)
+    *   [3.7 bind mounts](#bind_mounts)
+*   [4 See also](#See_also)
 
-## File example
+## Usage
 
 A simple `/etc/fstab`, using kernel name descriptors:
 
  `/etc/fstab` 
 ```
-# <file system>        <dir>         <type>    <options>             <dump> <pass>
+# <device>             <dir>         <type>    <options>             <dump> <fsck>
 /dev/sda1              /             ext4      defaults,noatime      0      1
 /dev/sda2              none          swap      defaults              0      0
 /dev/sda3              /home         ext4      defaults,noatime      0      2
 ```
 
-## Field definitions
+*   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying_filesystems](#Identifying_filesystems).
+*   `<dir>` describes the [mount](/index.php/Mount "Mount") directory, `<type>` the [file system](/index.php/File_system "File system") type, and `<options>` the associated mount options; see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS).
+*   `<dump>` is checked by the [dump(8)](http://linux.die.net/man/8/dump) utility.
+*   `<fsck>` sets the order for filesystem checks at boot time; see [fsck(8)](http://man7.org/linux/man-pages/man8/fsck.8.html).
 
-Each line in the `/etc/fstab` file contains the following fields separated by spaces or tabs:
+**Tip:** The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
 
-```
-*file_system*    *dir*    *type*    *options*    *dump*    *pass*
+**Note:** If the root file system is [btrfs](/index.php/Btrfs "Btrfs"), the fsck order should be set to `0` instead of `1`.
 
-```
-
-	*file system*
-
-	The partition or storage device to be mounted.
-
-	*dir*
-
-	The mountpoint where <file system> is mounted to.
-
-	*type*
-
-	The file system type of the partition or storage device to be mounted. Many different file systems are supported: `ext2`, `ext3`, `ext4`, `btrfs`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` and `auto`. The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
-
-	*options*
-
-	Mount options of the filesystem to be used. See the [mount man page](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS). Please note that some options are specific to filesystems; to discover them see below in the aforementioned mount man page.
-
-	*dump*
-
-	Used by the dump utility to decide when to make a backup. Dump checks the entry and uses the number to decide if a file system should be backed up. Possible entries are 0 and 1\. If 0, dump will ignore the file system; if 1, dump will make a backup. Most users will not have dump installed, so they should put 0 for the *dump* entry.
-
-	*pass*
-
-	Used by [fsck](/index.php/Fsck "Fsck") to decide which order filesystems are to be checked. Possible entries are 0, 1 and 2\. The root file system should have the highest priority 1 (unless its type is [btrfs](/index.php/Btrfs "Btrfs"), in which case this field should be 0) - all other file systems you want to have checked should have a 2\. File systems with a value 0 will not be checked by the fsck utility.
+See [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html#DESCRIPTION) for details.
 
 ## Identifying filesystems
 
@@ -81,7 +58,7 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
 
  `/etc/fstab` 
 ```
-# <file system> <dir> <type> <options>                                                                                            <dump> <pass>
+# <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
 /dev/sda1       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
 /dev/sda2       /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
 /dev/sda3       /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
@@ -95,7 +72,7 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* colu
 
  `/etc/fstab` 
 ```
-# <file system> <dir> <type> <options>                                                                                            <dump> <pass>
+# <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
 LABEL=EFI       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
 LABEL=SYSTEM    /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
 LABEL=DATA      /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
@@ -111,7 +88,7 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *UUID* colum
 
  `/etc/fstab` 
 ```
-# <file system>                           <dir> <type> <options>                                                                                            <dump> <pass>
+# <device>                                <dir> <type> <options>                                                                                            <dump> <fsck>
 UUID=CBB6-24F2                            /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
 UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
 UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
@@ -127,7 +104,7 @@ Run `blkid` to list the partitions, and use the *PARTLABEL* values without the q
 
  `/etc/fstab` 
 ```
-# <file system>                      <dir> <type> <options>                                                                                            <dump> <pass>
+# <device>                           <dir> <type> <options>                                                                                            <dump> <fsck>
 PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
 PARTLABEL=GNU/LINUX                  /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
 PARTLABEL=HOME                       /home ext4   rw,relatime,discard,data=ordered                                                                     0      2
@@ -143,7 +120,7 @@ Run `blkid` to list the partitions, and use the *PARTUUID* values without the qu
 
  `/etc/fstab` 
 ```
-# <file system>                               <dir> <type> <options>                                                                                            <dump> <pass>
+# <device>                                    <dir> <type> <options>                                                                                            <dump> <fsck>
 PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
 PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   rw,relatime,discard,data=ordered                                                                     0      1
 PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   rw,relatime,discard,data=ordered                                                                     0      2

@@ -37,7 +37,7 @@ Created the initial dh.pem file:
 
 ```
 cd /etc/easy-rsa
-openssl dhparam -out dh.pem 2048
+openssl dhparam -out /etc/easy-rsa/pki/dh.pem 2048
 
 ```
 
@@ -45,7 +45,7 @@ openssl dhparam -out dh.pem 2048
 
 ### Create and and sign an entity keypair
 
-The term "entity" in the context of keys is taken to mean either *server* or *client*. Substitute the word "entity" below with "server" or "client" as the use-case requires.
+The term "entity" in this context can be a unique name given to a specific user (in the case of client key pairs) or to a particular server.
 
 Generate and sign a key pair:
 
@@ -57,7 +57,7 @@ easyrsa gen-req *entity* nopass
 
 Sign the server cert and key with the CA.
 
-**Note:** Servers need to be signed with "server" type whereas clients need to be signed with the "client" type. Make the appropriate substitution for the word "TYPE" in the following command.
+**Note:** Server keys need to be signed with "server" type whereas clients need to be signed with the "client" type. Make the appropriate substitution for the word "TYPE" in the following command.
 
 ```
 cd /etc/easy-rsa

@@ -1,12 +1,12 @@
 [nftables](http://netfilter.org/projects/nftables/) is a netfilter project that aims to replace the existing ip-, ip6-, arp-, and ebtables framework. It provides a new packet filtering framework, a new user-space utility (nft), and a compatibility layer for ip- and ip6tables. It uses the existing hooks, connection tracking system, user-space queueing component, and logging subsystem of netfilter.
 
-You can also visit the [official nftables wiki page](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) for more information.
+It consists of three main components: a kernel implementation, the libnl netlink communication and the nftables user-space front-end. The kernel provides a netlink configuration interface, as well as run-time rule-set evaluation, libnl contains the low-level functions for communicating with the kernel, and the nftables front-end is what the user interacts with via nft.
 
-The first release is available in Linux 3.13, which is in the *core* repository ([linux](https://www.archlinux.org/packages/?name=linux)), and nftables (the user-space components) is available in the *extra* repository ([nftables](https://www.archlinux.org/packages/?name=nftables)), and on the [AUR](/index.php/AUR "AUR") in package [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
+You can also visit the [official nftables wiki page](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) for more information.
 
 ## Contents
 
-*   [1 Overview](#Overview)
+*   [1 Installation](#Installation)
 *   [2 nft](#nft)
 *   [3 Tables](#Tables)
     *   [3.1 Family](#Family)
@@ -42,9 +42,9 @@ The first release is available in Linux 3.13, which is in the *core* repository 
 *   [11 Logging to Syslog](#Logging_to_Syslog)
 *   [12 See also](#See_also)
 
-## Overview
+## Installation
 
-nftables consists of three main components: a kernel implementation, the libnl netlink communication and the nftables user-space front-end. The kernel provides a netlink configuration interface, as well as run-time rule-set evaluation using a small classification language interpreter. libnl contains the low-level functions for communicating with the kernel; the nftables front-end is what the user interacts with.
+The Linux kernel supports nftables since version 3.13 but running the latest kernel is recommended. You will only need to install the userland utilities, which are provided by the package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git-version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
 ## nft
 

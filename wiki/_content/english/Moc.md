@@ -89,6 +89,8 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 
 In January of 2016 last.fm updated their password requirements, with all new and updated passwords requiring the inclusion of one of the following characters !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~, or a space". This is known to cause an authentication error with mocpscrob configurations which specify passwords not conforming to these new specifications. Changing one's password and updating the ~/.mocpscrob/config password accordingly resolves this issue.
 
+If you want to use Libre.fm instead of Last.fm it is important to change `hostname` from `post.audioscrobbler.com` to `turtle.libre.fm`.
+
 ## Front-ends
 
 *   **dmenu_mocp** — Dmenu frontend to MOC

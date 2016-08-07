@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Downgrading_Packages](/index.php/Downgrading_Packages "Downgrading Packages") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-25，点击[这里](https://wiki.archlinux.org/index.php?title=Downgrading_Packages&diff=0&oldid=422336)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Downgrading_Packages](/index.php/Downgrading_Packages "Downgrading Packages") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-05，点击[这里](https://wiki.archlinux.org/index.php?title=Downgrading_Packages&diff=0&oldid=438900)可以查看翻译后英文页面的改动。
 
 在决定降级之前，请小心考虑。如果是因为现有包有Bug，请在[Bug追踪系统](https://bugs.archlinux.org/)搜索现有的Bug报告。如果没有，请花上几分钟帮忙把它报告给Arch的Bug追踪系统或软件包的项目地址，或者在论坛中警告其他可能遇到类似问题的用户。
 
