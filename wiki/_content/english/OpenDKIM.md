@@ -14,7 +14,7 @@ DomainKeys Identified Mail (DKIM) is a digital email signing/verification techno
 
 ## The idea
 
-Basically DKIM means digitally signing all messages on the server to verify the message actually was sent from the domain in question and is not spam or pishing (and has not been modified).
+Basically DKIM means digitally signing all messages on the server to verify the message actually was sent from the domain in question and is not spam or phishing (and has not been modified).
 
 *   The sender's mail server signs outgoing email with the private key.
 

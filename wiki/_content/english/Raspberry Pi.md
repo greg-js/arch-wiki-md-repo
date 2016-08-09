@@ -53,7 +53,7 @@ The Raspberry Pi is an ARM-based device and therefore needs binaries compiled fo
 
 System responsiveness, particularly during operations involving disk I/O such as updating the system, can be adversely affected by poor quality/slow SD media. This is characterized by [frequent, often extended pauses](http://archlinuxarm.org/forum/viewtopic.php?f=64&t=9467) as pacman writes out files to the file system. The pauses are not due to saturation of the RPi or RPi2 bus, but are likely the bottle-neck due to a slow SD (or micro SD) card. See the [Benchmarking#Flash media](/index.php/Benchmarking#Flash_media "Benchmarking") for more.
 
-Performance and system responsiveness can be generally improved by making adjustments to the system configuration. See especially [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") and [SSD#Tips for minimizing disk reads/writes](/index.php/SSD#Tips_for_minimizing_disk_reads.2Fwrites "SSD").
+Performance and system responsiveness can be generally improved by making adjustments to the system configuration. See [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance").
 
 ### Enable fsck on boot
 
@@ -410,7 +410,7 @@ Finally, read the sensor output:
 
 ## Compiling on the RPi
 
-Compiling can be very slow on a RPi. [Distcc](/index.php/Distcc "Distcc") can greatly improve compilation times if other nodes are on the network. For users with x86_64 or i686 boxes, [Distcc#Arch_ARM](/index.php/Distcc#Arch_ARM "Distcc") describes the proper setup for distcc to use these resources.
+Compiling can be very slow on a RPi. [Distcc](/index.php/Distcc "Distcc") can greatly improve compilation times if other nodes are on the network. For users with x86_64 or i686 boxes, [Distcc#Arch ARM](/index.php/Distcc#Arch_ARM "Distcc") describes the proper setup for distcc to use these resources.
 
 ## QEMU chroot
 

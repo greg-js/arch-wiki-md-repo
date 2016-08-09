@@ -66,7 +66,7 @@ Advanced users may wish to install the latest development version of mkinitcpio 
 
 By default, the mkinitcpio script generates two images after kernel installation or upgrades: `/boot/initramfs-linux.img` and `/boot/initramfs-linux-fallback.img`. The *fallback* image utilizes the same configuration file as the *default* image, except the **autodetect** hook is skipped during creation, thus including a full range of modules. The **autodetect** hook detects required modules and tailors the image for specific hardware, shrinking the initramfs.
 
-Users may create any number of initramfs images with a variety of different configurations. The desired image must be specified for the bootloader, often in its [configuration file](/index.php/Boot_Loader#Configuration_files "Boot Loader"). After changes are made to the mkinitcpio configuration file, the image must be regenerated. For the stock Arch Linux kernel, [linux](https://www.archlinux.org/packages/?name=linux), this is done by running this command with root privileges:
+Users may create any number of initramfs images with a variety of different configurations. The desired image must be specified in the respective [boot loader](/index.php/Boot_loader "Boot loader") configuration file. After changes are made to the mkinitcpio configuration file, the image must be regenerated. For the stock Arch Linux kernel, the [linux](https://www.archlinux.org/packages/?name=linux) package, this is done by running this command with root privileges:
 
 ```
 # mkinitcpio -p linux

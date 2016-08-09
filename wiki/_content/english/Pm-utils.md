@@ -52,7 +52,7 @@ Used in conjunction with the [cpupower](/index.php/Cpupower "Cpupower") package,
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) package.
 
 **Note:**
 

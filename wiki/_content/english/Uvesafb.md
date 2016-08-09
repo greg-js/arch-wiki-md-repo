@@ -8,30 +8,29 @@ It should support as much hardware as vesafb.
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Prepare the system](#Prepare_the_system)
+*   [2 Configuration](#Configuration)
     *   [2.1 Boot manager](#Boot_manager)
         *   [2.1.1 GRUB](#GRUB)
         *   [2.1.2 GRUB legacy](#GRUB_legacy)
     *   [2.2 mkinitcpio hook](#mkinitcpio_hook)
-*   [3 Configure uvesafb](#Configure_uvesafb)
-    *   [3.1 Define a resolution](#Define_a_resolution)
-    *   [3.2 Optimizing Resolution](#Optimizing_Resolution)
-    *   [3.3 Checking Current Resolution](#Checking_Current_Resolution)
-*   [4 kernel module parameters](#kernel_module_parameters)
-*   [5 Uvesafb and 915resolution](#Uvesafb_and_915resolution)
-    *   [5.1 915resolution-static](#915resolution-static)
-    *   [5.2 The resolution](#The_resolution)
-    *   [5.3 The Hooks Array](#The_Hooks_Array)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Uvesafb cannot reserve memory](#Uvesafb_cannot_reserve_memory)
-    *   [6.2 Error: "pci_root PNP0A08:00 address space collision + Uvesafb cannot reserve memory"](#Error:_.22pci_root_PNP0A08:00_address_space_collision_.2B_Uvesafb_cannot_reserve_memory.22)
-*   [7 See also](#See_also)
+    *   [2.3 Define a resolution](#Define_a_resolution)
+    *   [2.4 Optimizing Resolution](#Optimizing_Resolution)
+    *   [2.5 Checking Current Resolution](#Checking_Current_Resolution)
+*   [3 kernel module parameters](#kernel_module_parameters)
+*   [4 Uvesafb and 915resolution](#Uvesafb_and_915resolution)
+    *   [4.1 915resolution-static](#915resolution-static)
+    *   [4.2 The resolution](#The_resolution)
+    *   [4.3 The Hooks Array](#The_Hooks_Array)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Uvesafb cannot reserve memory](#Uvesafb_cannot_reserve_memory)
+    *   [5.2 Error: "pci_root PNP0A08:00 address space collision + Uvesafb cannot reserve memory"](#Error:_.22pci_root_PNP0A08:00_address_space_collision_.2B_Uvesafb_cannot_reserve_memory.22)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [v86d](https://aur.archlinux.org/packages/v86d/) package.
 
-## Prepare the system
+## Configuration
 
 Remove any framebuffer-related kernel boot parameter from the bootloader configuration to disable the old vesafb framebuffer from loading.
 
@@ -45,18 +44,9 @@ Should return no results. If you do have a `vga=` option somewhere, you will nee
 
 ### Boot manager
 
-Make sure your boot manager does not screw with the graphics settings.
-
 #### GRUB
 
-First edit `/etc/default/grub` commenting the `GRUB_GFXPAYLOAD_LINUX=keep` line.
-
-Then regenerate `grub.cfg` via the standard script:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
+First edit `/etc/default/grub` Comment the `GRUB_GFXPAYLOAD_LINUX=keep` line in `/etc/default/grub`, and [GRUB#Generate_the_main_configuration_file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
 
 #### GRUB legacy
 
@@ -70,8 +60,6 @@ Add the v86d hook to HOOKS in `/etc/mkinitcpio.conf`. This allows uvesafb to tak
 HOOKS="base udev v86d ..."
 
 ```
-
-## Configure uvesafb
 
 ### Define a resolution
 

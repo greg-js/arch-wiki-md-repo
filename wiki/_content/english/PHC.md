@@ -2,25 +2,20 @@ PHC is an acpi-cpufreq patch built with the purpose of enabling undervolting on 
 
 ## Contents
 
-*   [1 Alternative to PHC](#Alternative_to_PHC)
-*   [2 Supported CPUs](#Supported_CPUs)
-    *   [2.1 Intel](#Intel)
-    *   [2.2 AMD](#AMD)
-*   [3 Installing the necessary packages](#Installing_the_necessary_packages)
-    *   [3.1 Automatic module generation with DKMS](#Automatic_module_generation_with_DKMS)
-*   [4 Configuring PHC](#Configuring_PHC)
-    *   [4.1 Finding safe low voltages](#Finding_safe_low_voltages)
-    *   [4.2 Editing the configuration](#Editing_the_configuration)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Module loading](#Module_loading)
-    *   [5.2 Hardware recognition](#Hardware_recognition)
-    *   [5.3 Voltage controlling](#Voltage_controlling)
-    *   [5.4 System stability](#System_stability)
-*   [6 Links](#Links)
-
-## Alternative to PHC
-
-[cpupowerd](https://aur.archlinux.org/packages/cpupowerd/) is a userland solution to replace the in-kernel cpufreq governors and also enable undervolting, only on AMD processors. Like PHC, it requires the user to find safe voltages.
+*   [1 Supported CPUs](#Supported_CPUs)
+    *   [1.1 Intel](#Intel)
+    *   [1.2 AMD](#AMD)
+*   [2 Installation](#Installation)
+    *   [2.1 Automatic module generation with DKMS](#Automatic_module_generation_with_DKMS)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Finding safe low voltages](#Finding_safe_low_voltages)
+    *   [3.2 Editing the configuration](#Editing_the_configuration)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Module loading](#Module_loading)
+    *   [4.2 Hardware recognition](#Hardware_recognition)
+    *   [4.3 Voltage controlling](#Voltage_controlling)
+    *   [4.4 System stability](#System_stability)
+*   [5 Links](#Links)
 
 ## Supported CPUs
 
@@ -41,9 +36,9 @@ PHC supports the following processor families:
 
 *   K8 series
 
-## Installing the necessary packages
+## Installation
 
-Install from the [AUR](/index.php/AUR "AUR") either [phc-intel](https://aur.archlinux.org/packages/phc-intel/) if you have an Intel processor, or [phc-k8](https://aur.archlinux.org/packages/phc-k8/) if you have an AMD-K8-series one.
+[Install](/index.php/Install "Install") the [phc-intel](https://aur.archlinux.org/packages/phc-intel/) package if you have an Intel processor, or [phc-k8](https://aur.archlinux.org/packages/phc-k8/) if you have an AMD-K8-series one.
 
 Next you need to compile the module for your kernel; this will also be necessary after a kernel update (but see the section below on using DKMS to automate this).
 
@@ -65,7 +60,7 @@ or
 
 depending on processor.
 
-If the [*acpi-cpufreq*](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling") module is not already being loaded at boot, create the appropriate file in `/etc/modules-load.d/`. See [this](/index.php/Kernel_modules#Loading "Kernel modules") wiki article for more information.
+If the [*acpi-cpufreq*](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling") module is not already being loaded at boot, create the appropriate file in `/etc/modules-load.d/`. See [Kernel_modules](/index.php/Kernel_modules "Kernel modules") for more information.
 
 **Note:** In the case of [phc-intel](https://aur.archlinux.org/packages/phc-intel/), the *acpi-cpufreq* module is automatically loaded by `/usr/lib/modprobe.d/phc-intel.conf`.
 
@@ -80,13 +75,11 @@ To enable the systemd service, type:
 
 ```
 
-## Configuring PHC
+## Configuration
 
 ### Finding safe low voltages
 
 To automatically find the best voltages, you can use the [mprime-phc-setup](https://bbs.archlinux.org/viewtopic.php?pid=1141702#p1141702) script ([source-code](https://bitbucket.org/stqn/shell-tools/src/)). Just copy the code into a text file, chmod +x it to make it executable and run it. You need to install [mprime](https://aur.archlinux.org/packages/mprime/) or [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) first (it is used to check that the CPU is stable). This script has not been tested on many systems yet, but should be safe.
-
-You can also try [linux-phc-optimize](https://aur.archlinux.org/packages/linux-phc-optimize/), although it has produced unsafe vids on [some setups](https://bbs.archlinux.org/viewtopic.php?pid=1044323#p1044323). The script progressively lowers the values until the system crashes, and adds two to the values for stability. Because the system will crash, do not do anything else during the tests. Run it once for each value, then check `/usr/share/linux-phc-optimize/phc_tweaked_vids`.
 
 ### Editing the configuration
 

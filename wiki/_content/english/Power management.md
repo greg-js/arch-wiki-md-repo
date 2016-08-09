@@ -104,7 +104,7 @@ Note that if the power manager does not inhibit *systemd* for the appropriate ev
 
 #### xss-lock
 
-[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). *xss-lock* also reacts to the [X screensaver](/index.php/Display_Power_Management_Signaling#xset_screen-saver_control "Display Power Management Signaling") and runs or kills the locker in response to the x-server signals.
+[xss-lock-git](https://aur.archlinux.org/packages/xss-lock-git/) subscribes to the systemd-events `suspend`, `hibernate`, `lock-session`, and `unlock-session` with appropriate actions (run locker and wait for user to unlock or kill locker). *xss-lock* also reacts to [DPMS](/index.php/DPMS "DPMS") events and runs or kills the locker in response.
 
 Start xss-lock in your [autostart](/index.php/Autostart "Autostart"), for example
 
@@ -596,13 +596,13 @@ See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/us
 
 See [hdparm#Power management configuration](/index.php/Hdparm#Power_management_configuration "Hdparm") for drive parameters that can be set.
 
-Power saving is not effective when too many programs are frequently writing to the disk. Tracking all programs, and how and when they write to disk is the way to limit disk usage. Use [iotop](https://www.archlinux.org/packages/?name=iotop) to see which programs use the disk frequently. See [Solid State Drives#Tips for minimizing disk reads/writes](/index.php/Solid_State_Drives#Tips_for_minimizing_disk_reads.2Fwrites "Solid State Drives") for other tips, most of them are not specific to SSDs.
+Power saving is not effective when too many programs are frequently writing to the disk. Tracking all programs, and how and when they write to disk is the way to limit disk usage. Use [iotop](https://www.archlinux.org/packages/?name=iotop) to see which programs use the disk frequently. See [Maximizing performance#Storage devices](/index.php/Maximizing_performance#Storage_devices "Maximizing performance") for other tips.
 
 Also little things like setting the [noatime](/index.php/Fstab#atime_options "Fstab") option can help. If enough RAM is available, consider disabling or limiting [swappiness](/index.php/Swappiness "Swappiness") as it has the possibility to limit a good number of disk writes.
 
 ### CD-ROM or DVD drive
 
-See [Udisks#udisks: Devices do not remain unmounted](/index.php/Udisks#udisks:_Devices_do_not_remain_unmounted "Udisks").
+See [Udisks#Devices do not remain unmounted (udisks)](/index.php/Udisks#Devices_do_not_remain_unmounted_.28udisks.29 "Udisks").
 
 ## Tools and scripts
 

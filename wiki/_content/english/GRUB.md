@@ -796,6 +796,8 @@ grub rescue> set prefix=(hdX,Y)/boot/grub
 
 where X is the physical drive number and Y is the partition number.
 
+**Note:** With a separate boot partition, omit `/boot` from the path, (i.e. type `set prefix=(hdX,Y)/grub`).
+
 To expand console capabilities, insert the `linux` module:
 
 ```
@@ -803,7 +805,12 @@ grub rescue> insmod i386-pc/linux.mod
 
 ```
 
-**Note:** With a separate boot partition, omit `/boot` from the path, (i.e. type `set prefix=(hdX,Y)/grub`).
+or simply
+
+```
+grub rescue> insmod linux
+
+```
 
 This introduces the `linux` and `initrd` commands, which should be familiar.
 
@@ -817,12 +824,14 @@ boot
 
 ```
 
-With a separate boot partition, again change the lines accordingly:
+With a separate boot partition (e.g. when using EFI), again change the lines accordingly:
+
+**Note:** Since boot is a separate partition and not part of your root partition, you must address the boot partition manually, in the same way as for the prefix variable.
 
 ```
 set root=(hd0,5)
-linux /vmlinuz-linux root=/dev/sda6
-initrd /initramfs-linux.img
+linux (hdX,Y)/vmlinuz-linux root=/dev/sda6
+initrd (hdX,Y)/initramfs-linux.img
 boot
 
 ```

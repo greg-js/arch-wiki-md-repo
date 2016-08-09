@@ -207,7 +207,7 @@ With lower kernel versions, it switches the wireless card on/off at the hardware
 
 ### EFISTUB does not boot
 
-As of version A07, the BIOS does not pass any boot parameters to the kernel. Use a [UEFI boot loader](/index.php/Boot_loaders#UEFI-only_boot_loaders "Boot loaders") instead. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") works with current kernels.
+As of version A07, the BIOS does not pass any boot parameters to the kernel. Use a UEFI [boot loader](/index.php/Boot_loader "Boot loader") instead. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") will work with current kernels.
 
 ### Random kernel hangs at boot
 

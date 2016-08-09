@@ -53,8 +53,8 @@ Instead of installing and configuring cron, you can directly use [systemd](/inde
 
 **Warning:**
 
-*   The [KCron](https://userbase.kde.org/KCron) and [GNOME Schedule](https://wiki.gnome.org/Schedule) can use own wrappers inside crontab to run scheduled tasks that will cause problems such as use of the `pacman-db-upgrade` may leave the `/var/lib/pacman/db.lck` lock file that will prevent run of the next [pacman](https://www.archlinux.org/packages/?name=pacman) command.
-*   You must make backup of [pacman database](/index.php/Pacman_tips#Backing_up_Local_database_with_systemd "Pacman tips") before giving computer to user.
+*   The [KCron](https://userbase.kde.org/KCron) and [GNOME Schedule](https://wiki.gnome.org/Schedule) can use own wrappers inside crontab to run scheduled tasks that will cause problems, such as use of the `pacman-db-upgrade` may leave the `/var/lib/pacman/db.lck` lock file that will prevent run of the next [pacman](https://www.archlinux.org/packages/?name=pacman) command.
+*   You must create a backup of [pacman database](/index.php/Pacman/Tips_and_tricks#Back-up_the_pacman_database "Pacman/Tips and tricks") before giving computer to user.
 
 If you want to set up Arch Linux for home user and still keep system up to date you will need to make work in background without distraction of user.
 

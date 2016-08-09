@@ -55,7 +55,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[LXDE](/index.php/LXDE "LXDE")** — The Lightweight X11 Desktop Environment is a fast and energy-saving desktop environment. It comes with a modern interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. Fundamentally designed to be lightweight, LXDE strives to be less CPU and RAM intensive than other environments.
 
-	[http://lxde.org/](http://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3 (experimental): [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
+	[http://lxde.org/](http://lxde.org/) || GTK+ 2: [lxde](https://www.archlinux.org/groups/x86_64/lxde/), GTK+ 3: [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/)
 
 *   **[LXQt](/index.php/LXQt "LXQt")** — LXQt is the Qt port and the upcoming version of LXDE, the Lightweight Desktop Environment. It is the product of the merge between the LXDE-Qt and the Razor-qt projects: A lightweight, modular, blazing-fast and user-friendly desktop environment.
 
@@ -63,7 +63,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[MATE](/index.php/MATE "MATE")** — Mate provides an intuitive and attractive desktop to Linux users using traditional metaphors. MATE is a fork of GNOME 2.
 
-	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || GTK+ 2: [mate](https://www.archlinux.org/groups/x86_64/mate/), GTK+ 3 (experimental): [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/)
+	[http://www.mate-desktop.org/](http://www.mate-desktop.org/) || GTK+ 2: [mate](https://www.archlinux.org/groups/x86_64/mate/), GTK+ 3: [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/)
 
 *   **[Xfce](/index.php/Xfce "Xfce")** — Xfce embodies the traditional UNIX philosophy of modularity and re-usability. It consists of a number of components that provide the full functionality one can expect of a modern desktop environment, while remaining relatively light. They are packaged separately and you can pick among the available packages to create the optimal personal working environment.
 

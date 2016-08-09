@@ -151,7 +151,7 @@ end
 
 ```
 
-Adopt `button` to whatever button on your remote you want to assign to start Kodi. You can use irw ([LIRC#Testing the Remote](/index.php/LIRC#Testing_the_Remote "LIRC")) to find out the correct values for `remote` and `button`.
+Adopt `button` to whatever button on your remote you want to assign to start Kodi. You can use *irw* (see [LIRC#Usage](/index.php/LIRC#Usage "LIRC")) to find out the correct values for `remote` and `button`.
 
 Next copy `kodi.service` from `/usr/lib/systemd/system/` to `/etc/systemd/system/` and change the line
 

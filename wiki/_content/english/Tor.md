@@ -378,7 +378,7 @@ XferCommand = /usr/bin/curl --socks5-hostname localhost:9050 -C - -f %u > %o
 
 ## Running a Tor server
 
-The Tor network is reliant on people contributing bandwidth. There are several ways to contribute to the network.
+The Tor network is reliant on people contributing bandwidth and setting up services. There are several ways to contribute to the network.
 
 ### Running a Tor bridge
 

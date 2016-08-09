@@ -443,6 +443,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 *   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts series.
 *   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series.
 *   [ttf-sina](https://aur.archlinux.org/packages/ttf-sina/) - Sina Pardazesh Persian font series.
+*   [ttf-yas](https://aur.archlinux.org/packages/ttf-yas/) - The Yas Persian font series (with **hollow zero**).
 *   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
 *   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
 *   [ttf-vazir](https://aur.archlinux.org/packages/ttf-vazir/), [ttf-samim](https://aur.archlinux.org/packages/ttf-samim/), [ttf-tanha](https://aur.archlinux.org/packages/ttf-tanha/), [ttf-shabnam](https://aur.archlinux.org/packages/ttf-shabnam/), [ttf-gandom](https://aur.archlinux.org/packages/ttf-gandom/), [ttf-parastoo](https://aur.archlinux.org/packages/ttf-parastoo/) - Beautiful Persian fonts made by Ali Rasti Kerdar.

@@ -355,7 +355,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 ###### Chromium spin-offs
 
-*   **[Google Chrome](/index.php/Chromium "Chromium")** — Proprietary web browser developed by Google.
+*   **[Google Chrome](/index.php/Google_Chrome "Google Chrome")** — Proprietary web browser developed by Google.
 
 	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 
@@ -1212,6 +1212,10 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 *   **Blam** — Simple newsreader for GNOME written in C Sharp.
 
 	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+
+*   **[Evolution](/index.php/Evolution "Evolution") RSS** — Plugin for Evolution Mail that enables reading of RSS/RDF/ATOM feeds.
+
+	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://aur.archlinux.org/packages/evolution-rss/)
 
 *   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
 

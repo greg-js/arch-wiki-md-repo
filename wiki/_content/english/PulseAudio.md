@@ -32,10 +32,9 @@
     *   [6.3 XMMS2](#XMMS2)
     *   [6.4 KDE Plasma Workspaces and Qt4](#KDE_Plasma_Workspaces_and_Qt4)
     *   [6.5 Audacious](#Audacious)
-    *   [6.6 Java/OpenJDK 6](#Java.2FOpenJDK_6)
-    *   [6.7 Music Player Daemon (MPD)](#Music_Player_Daemon_.28MPD.29)
-    *   [6.8 MPlayer](#MPlayer)
-    *   [6.9 guvcview](#guvcview)
+    *   [6.6 Music Player Daemon (MPD)](#Music_Player_Daemon_.28MPD.29)
+    *   [6.7 MPlayer](#MPlayer)
+    *   [6.8 guvcview](#guvcview)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Keyboard volume control](#Keyboard_volume_control)
     *   [7.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron.29)
@@ -447,13 +446,9 @@ If the phonon-gstreamer backend is used for Phonon, GStreamer should also be con
 
 [Audacious](/index.php/Audacious "Audacious") natively supports PulseAudio. In order to use it, set Audacious Preferences -> Audio -> Current output plugin to 'PulseAudio Output Plugin'.
 
-### Java/OpenJDK 6
-
-Create a wrapper for the Java executable using padsp as seen on the [Java sound with PulseAudio](/index.php/Java#Java_sound_with_PulseAudio "Java") page.
-
 ### Music Player Daemon (MPD)
 
-[configure](http://mpd.wikia.com/wiki/PulseAudio) [MPD](/index.php/MPD "MPD") to use PulseAudio. See also [MPD/Tips and Tricks#MPD and PulseAudio](/index.php/MPD/Tips_and_Tricks#MPD_and_PulseAudio "MPD/Tips and Tricks").
+[configure](http://mpd.wikia.com/wiki/PulseAudio) [MPD](/index.php/MPD "MPD") to use PulseAudio. See also [MPD/Tips and Tricks#PulseAudio](/index.php/MPD/Tips_and_Tricks#PulseAudio "MPD/Tips and Tricks").
 
 ### MPlayer
 

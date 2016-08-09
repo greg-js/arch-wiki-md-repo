@@ -25,7 +25,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
             *   [1.3.3.5 Securing the authorized_keys file](#Securing_the_authorized_keys_file)
 *   [2 Other SSH clients and servers](#Other_SSH_clients_and_servers)
     *   [2.1 Dropbear](#Dropbear)
-    *   [2.2 Mosh: mobile shell](#Mosh:_mobile_shell)
+    *   [2.2 Mosh](#Mosh)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Encrypted SOCKS tunnel](#Encrypted_SOCKS_tunnel)
         *   [3.1.1 Step 1: start the connection](#Step_1:_start_the_connection)
@@ -368,7 +368,7 @@ Apart from OpenSSH, there are many SSH [clients](https://en.wikipedia.org/wiki/C
 
 The command-line ssh client is named dbclient.
 
-### Mosh: mobile shell
+### Mosh
 
 From the Mosh [website](http://mosh.mit.edu/):
 
@@ -460,15 +460,16 @@ On the remote system:
 *   in `/etc/ssh/ssh**d**_config`:
     *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to *yes*, and that `X11DisplayOffset` is set to *10* (those are the default values if nothing has been changed, see `man sshd_config`)
     *   set `X11Forwarding` to *yes*
-*   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Managing_the_sshd_daemon).
+*   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Daemon_management).
 
-On the client's side, enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in [openSSH client's configuration file](#Client).
+On the client's side, enable the `ForwardX11` option by either specifying the `-X` switch on the command line for opportunistic connections, or by setting `ForwardX11` to *yes* in the [client's configuration](#Configuration).
 
 **Tip:** You can enable the `ForwardX11Trusted` option (`-Y` switch on the command line) if GUI is drawing badly or you receive errors; this will prevent X11 forwardings from being subjected to the [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) controls. Be sure you have read [the warning](#X11_forwarding) at the beginning of this section if you do so.
 
 #### Usage
 
-[Log on to the remote machine](#Connecting_to_the_server) normally, specifying the `-X` switch if *ForwardX11* was not enabled in the client's configuration file:
+Log on to the remote machine normally, specifying the `-X` switch if *ForwardX11* was not enabled in the client's configuration file:
+
 ```
 $ ssh -X *user@host*
 

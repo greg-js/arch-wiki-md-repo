@@ -77,7 +77,7 @@ After restarting your wallet should unlock automatically if your user password i
 
 ## Using the KDE Wallet to store ssh keys
 
-First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") running. For instructions on how to start and stop `ssh-agent` on login and logout respectively follow [SSH keys#Using KDM](/index.php/SSH_keys#Using_KDM "SSH keys").
+First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") running.
 
 [Install](/index.php/Install "Install") the [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
 

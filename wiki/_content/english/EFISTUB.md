@@ -1,6 +1,6 @@
 The Linux Kernel ([linux](https://www.archlinux.org/packages/?name=linux)>=3.3) supports EFISTUB (EFI BOOT STUB) booting. This feature allows EFI firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels or can be activated by setting `CONFIG_EFI_STUB=y` in the Kernel configuration (see [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) for more information).
 
-An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly using a [UEFI boot manager](/index.php/Boot_loaders#UEFI-only_boot_loaders "Boot loaders"). The latter is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
+An EFISTUB kernel can be booted directly by a UEFI motherboard or indirectly using a [boot loader](/index.php/Boot_loader "Boot loader"). The latter is recommended if you have multiple kernel/initramfs pairs and your motherboard's UEFI boot menu is not easy to use.
 
 ## Contents
 
@@ -216,25 +216,18 @@ To avoid needing to remember all of your kernel parameters every time, you can s
 
 ### Using UEFI directly
 
-UEFI is [designed to remove the need](/index.php/UEFI#Multibooting_in_UEFI "UEFI") for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or UEFI Shell v2 to modify your motherboard's boot entries.
+UEFI is designed to remove the need for an intermediate bootloader such as [GRUB](/index.php/GRUB "GRUB"). If your motherboard has a good UEFI implementation, it is possible to embed the kernel parameters within a UEFI boot entry and for the motherboard to boot Arch directly. You can use [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or UEFI Shell v2 to modify your motherboard's boot entries.
 
 #### efibootmgr
 
-```
-# efibootmgr -d /dev/sd**X** -p **Y** -c -L "Arch Linux" -l /vmlinuz-linux -u "root=**/dev/sda2** rw initrd=/initramfs-linux.img"
+The command looks like
 
 ```
-
-Where `X` and `Y` are changed to reflect the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root (disk UUIDs can also be used).
-
-**Or** with [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") active:
-
-```
-# efibootmgr -d /dev/sd**X** -p **Y** -c -L "Arch Linux" -l /vmlinuz-linux -u "root=**/dev/sda2** rw resume=**/dev/sda4** initrd=/initramfs-linux.img"
+# efibootmgr -d */dev/sdX* -p *Y* -c -L "Arch Linux" -l /vmlinuz-linux -u "root=*/dev/sdBZ* rw initrd=/initramfs-linux.img"
 
 ```
 
-Change the `resume=` parameter to reflect your swap partition, considering the same as above for the other options.
+Where `*/dev/sdX*` and `*Y*` are the disk and partition where the ESP is located. Change the `root=` parameter to reflect your Linux root (disk UUIDs can also be used). Note that the `-u` argument in double quotes is just the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), so you may need to add additional parameters e.g. for [suspend to disk](/index.php/Suspend_and_hibernate#Required_kernel_parameters "Suspend and hibernate") or [microcode](/index.php/Microcode "Microcode").
 
 It is a good idea to then run
 

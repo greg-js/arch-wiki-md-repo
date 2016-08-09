@@ -18,6 +18,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [1.2.3 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
         *   [1.2.4 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
         *   [1.2.5 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+        *   [1.2.6 Enable Electrolysis](#Enable_Electrolysis)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -194,6 +195,10 @@ If the system has memory to spare, `tmpfs` can be used to [cache the entire prof
 #### Turn off sponsored content and tiles
 
 In `about:config`, set the string value to a blank for both of these: `browser.newtabpage.directory.source` and `browser.newtabpage.directory.ping`. Consider also disabling the tile feature from the tools on a new tab page. A [Wireshark](/index.php/Wireshark "Wireshark") session demonstrates the level of chatter created by these features.
+
+#### Enable Electrolysis
+
+In firefox 48 or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to true in `about:config`.
 
 ## Appearance
 
@@ -610,7 +615,7 @@ Now scrolling should flow smoothly.
 
 **Warning:** This method disables WebRTC.
 
-To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.enabled` to **false** (or use this [addon](https://addons.mozilla.org/firefox/addon/happy-bonobo-disable-webrtc/)).
+To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.enabled` to **false** (or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/)).
 
 ### Run Firefox inside an nspawn container
 

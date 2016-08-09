@@ -87,7 +87,7 @@ Use the following configuration files:
 Name=eno1
 
 [Network]
-DHCP=v4
+DHCP=ipv4
 VLAN=eno1.100
 VLAN=eno1.200
 

@@ -2,7 +2,7 @@
 
 It is simple to configure, but can only start EFI executables, such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager, and such.
 
-**Warning:** *systemd-boot* simply provides a boot menu for EFISTUB kernels. In case you have issues booting EFISTUB kernels like in [FS#33745](https://bugs.archlinux.org/task/33745), you should use a boot loader which does not use EFISTUB, like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [ELILO](/index.php/Boot_loaders#ELILO "Boot loaders").
+**Warning:** *systemd-boot* simply provides a boot menu for EFISTUB kernels. In case you have issues booting EFISTUB kernels like in [FS#33745](https://bugs.archlinux.org/task/33745), you should use a boot loader which does not use EFISTUB, like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or any other [Boot loader](/index.php/Boot_loaders "Boot loaders") which does not solely rely on [UEFI](/index.php/UEFI "UEFI").
 
 ## Contents
 
@@ -252,7 +252,7 @@ If `bootctl install` command failed, you can create a EFI boot entry manually us
 
 ```
 
-where `/dev/sdXY` is the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI").
+where `/dev/sdXY` is the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 ### Menu does not appear after Windows upgrade
 

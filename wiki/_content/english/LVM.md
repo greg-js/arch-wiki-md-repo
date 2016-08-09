@@ -658,7 +658,7 @@ See [Create root filesystem snapshots with LVM](/index.php/Create_root_filesyste
 
 [Dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") and [Dm-crypt/Encrypting an entire system#LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system").
 
-If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "Initramfs"), [enable](#Using_units) the **lvm-monitoring** service, which is provided by the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package.
+If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "Initramfs"), [enable](/index.php/Enable "Enable") the **lvm-monitoring** service, which is provided by the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package.
 
 ### LVM Cache (lvmcache)
 

@@ -1,4 +1,5 @@
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from hard drives, CDs, and over the network via PXE. It supports the [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and uncompressed single-device [Btrfs](/index.php/Btrfs "Btrfs") [file systems](/index.php/File_systems "File systems").
+**Warning:** As of Syslinux 6.03, the bootloader will fail on ext4 volumes with "64bit" feature enabled. See [#Syslinux Failed to load ldlinux.c32](#Syslinux_Failed_to_load_ldlinux.c32).
 
 **Note:** Syslinux cannot access files from partitions other than its own. For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
 
@@ -40,12 +41,13 @@
     *   [4.4 Missing operating system](#Missing_operating_system)
     *   [4.5 Windows boots up, ignoring Syslinux](#Windows_boots_up.2C_ignoring_Syslinux)
     *   [4.6 Menu entries do nothing](#Menu_entries_do_nothing)
-    *   [4.7 Cannot remove ldlinux.sys](#Cannot_remove_ldlinux.sys)
-    *   [4.8 White block in upper left corner when using vesamenu](#White_block_in_upper_left_corner_when_using_vesamenu)
-    *   [4.9 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
-    *   [4.10 Read bootloader log](#Read_bootloader_log)
-    *   [4.11 Btrfs compression](#Btrfs_compression)
-    *   [4.12 Btrfs multi-device](#Btrfs_multi-device)
+    *   [4.7 Syslinux Failed to load ldlinux.c32](#Syslinux_Failed_to_load_ldlinux.c32)
+    *   [4.8 Cannot remove ldlinux.sys](#Cannot_remove_ldlinux.sys)
+    *   [4.9 White block in upper left corner when using vesamenu](#White_block_in_upper_left_corner_when_using_vesamenu)
+    *   [4.10 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
+    *   [4.11 Read bootloader log](#Read_bootloader_log)
+    *   [4.12 Btrfs compression](#Btrfs_compression)
+    *   [4.13 Btrfs multi-device](#Btrfs_multi-device)
 *   [5 See also](#See_also)
 
 ## BIOS Systems
@@ -874,6 +876,10 @@ The MBR that comes with Syslinux looks for the first active partition that has t
 ### Menu entries do nothing
 
 You select a menu entry and it does nothing, it just *"refreshes"* the menu. This usually means that you have an error in your `syslinux.cfg` file. Hit `Tab` to edit your boot parameters. Alternatively, press `Esc` and type in the `LABEL` of your boot entry (e.g. *arch*). Another cause could be that you do not have a kernel installed. Find a way to access your file system (through live CD, etc) and make sure that `/mount/vmlinuz-linux` exists and does not have a size of 0\. If this is the case, [reinstall your kernel](/index.php/Kernel_Panics#Option_2:_Reinstall_kernel "Kernel Panics").
+
+### Syslinux Failed to load ldlinux.c32
+
+This may happen if your boot volume is formatted with ext4\. As of Syslinux 6.03, "pure 64-bits", compression and/or encryption are not supported. See [Official Page](http://www.syslinux.org/wiki/index.php?title=Filesystem#ext) for more detail. To manually disable the "64bit" feature when creating ext4 volumes, append `-O ^64bit` in the relevant `mke2fs` or `mkfs.ext4` command.
 
 ### Cannot remove ldlinux.sys
 

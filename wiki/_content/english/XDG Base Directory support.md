@@ -269,7 +269,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 `$ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"/tmux`
 
  |
-| [urxvtd](/index.php/Rxvt-unicode#Daemon-client "Rxvt-unicode") | `~/.urxvt/urxvtd-hostname` | `$ export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvt/urxvt-"$(hostname)"` |
+| [urxvtd](/index.php/Rxvt-unicode/Tips_and_tricks#Daemon-client "Rxvt-unicode/Tips and tricks") | `~/.urxvt/urxvtd-hostname` | `$ export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvt/urxvt-"$(hostname)"` |
 | [WeeChat](/index.php/WeeChat "WeeChat") | `~/.weechat` | [[60]](http://savannah.nongnu.org/task/?10934) | `$ export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat`
 
 `$ weechat -d "$XDG_CONFIG_HOME"/weechat`

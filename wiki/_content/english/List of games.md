@@ -225,6 +225,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[https://gnu.org/s/chess](https://gnu.org/s/chess) || [gnuchess](https://www.archlinux.org/packages/?name=gnuchess)
 
+*   **chessx** — Chess Database and PGN viewer
+
+	[http://chessx.sourceforge.net](http://chessx.sourceforge.net) || [chessx](https://aur.archlinux.org/packages/chessx/)
+
 *   **Eboard** — Chess interface to ICS and chess engines
 
 	[http://bergo.eng.br/eboard](http://bergo.eng.br/eboard) || [eboard](https://aur.archlinux.org/packages/eboard/)

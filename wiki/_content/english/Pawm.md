@@ -1,58 +1,35 @@
-This wiki page details installation and configuration of the PAWM window manager under Arch Linux.
-
-**Note:** It's unmaintained. Latest released version is 2.3.0.
-
-## Contents
-
-*   [1 Introduction](#Introduction)
-    *   [1.1 PAWM creation history](#PAWM_creation_history)
-*   [2 Installation](#Installation)
-*   [3 Start PAWM with X as default](#Start_PAWM_with_X_as_default)
-*   [4 Configuration (making PAWM pretty)](#Configuration_.28making_PAWM_pretty.29)
-    *   [4.1 Icons](#Icons)
-*   [5 Application Launcher](#Application_Launcher)
-    *   [5.1 Creating new Launcher files](#Creating_new_Launcher_files)
-*   [6 Using PAWM](#Using_PAWM)
-*   [7 PAWM Utilities](#PAWM_Utilities)
-
-## Introduction
-
 [PAWM](https://sites.google.com/site/pleyadestest/david/projects/pawm) is an X11 stacking window manager. It is a very small, fast, and simple window manager. It is based on Xlib and needs no other external libraries to compile it. It provides an initial windowing environment for minimalist desktops or for single use purposes such as:
 
 *   A web browser terminal computer.
 *   Testing gui based programs.
 
-### PAWM creation history
-
 PAWM was written by David Gómez and Raúl Núñez de Arenas Coronado. PAWM was written with the objective of creating a tiny window manager that would execute any X application, but still keep it simple and intuitive to use.
 
-PAWM stands for *Puto Amo Window Manager'.*
+PAWM stands for *Puto Amo Window Manager*.
+
+**Note:** It's unmaintained. Latest released version is 2.3.0.
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Icons](#Icons)
+    *   [2.2 Application Launcher](#Application_Launcher)
+        *   [2.2.1 Creating new Launcher files](#Creating_new_Launcher_files)
+*   [3 Usage](#Usage)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pawm](https://www.archlinux.org/packages/?name=pawm).
+[Install](/index.php/Install "Install") the [pawm](https://www.archlinux.org/packages/?name=pawm) package.
 
-## Start PAWM with X as default
-
-In order to run PAWM as your default window manager, edit the file `~/.xinitrc` (See [xinitrc](/index.php/Xinitrc "Xinitrc")) so the final line is:
+In order to run PAWM as your default window manager, edit the file `~/.xinitrc` (See [xinit](/index.php/Xinit "Xinit")) so the final line is:
 
 ```
 exec pawm
 
 ```
 
-If you now type:
-
-```
-startx
-
-```
-
-at the command prompt, X will start using PAWM for its window manager.
-
-If you would like to configure X (and PAWM) to start on boot (or when you login) read the wiki page [Start X at login](/index.php/Start_X_at_login "Start X at login") to find out how.
-
-## Configuration (making PAWM pretty)
+## Configuration
 
 By default, PAWM looks blue, plain and kind of dated. By editing the file `/etc/pawm.conf` you can customize the scheme of your PAWM.
 
@@ -62,7 +39,7 @@ You may also adjust adjust the behavior of pabar, paicons, pashut icon or any mo
 
 ### Icons
 
-PAWM only supports [.xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") format. Programs like [GIMP](/index.php/GIMP#GIMP "GIMP") can convert images appropriately.
+PAWM only supports [.xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X PixMap") format. Programs like [GIMP](/index.php/GIMP "GIMP") can convert images appropriately.
 
 *   Window icons must be 20x20 pixels.
 *   Pashut icons must be 20x20 pixels.
@@ -70,7 +47,7 @@ PAWM only supports [.xpm](https://en.wikipedia.org/wiki/X_PixMap "wikipedia:X Pi
 
 Any icons used in PAWM **must** be put in `/usr/share/pawm/icons/`
 
-## Application Launcher
+### Application Launcher
 
 First, create a directory `~/.pawm` . This allows each user to have a unique application set.
 
@@ -82,7 +59,7 @@ There are 3 ways to launch programs in PAWM.
 
 This article covers the third option.
 
-### Creating new Launcher files
+#### Creating new Launcher files
 
 Create a new file in the directory. For our example we will use the terminal emulator [Sakura](http://www.pleyades.net/david/sakura.php).
 
@@ -112,7 +89,7 @@ sakura
 
 When you next start PAWM your icons will be there. As well, any icon changes including position will be preserved.
 
-## Using PAWM
+## Usage
 
 As PAWM is minimalistic, the controls are as well.
 
@@ -125,11 +102,3 @@ As PAWM is minimalistic, the controls are as well.
 *   Clicking on a Launcher executes the program.
 *   Clicking on the power button brings up a dialog to quit PAWM.
 *   Reloading PAWM refreshes any changes made.
-
-## PAWM Utilities
-
-The following complementary packages can be found in the [AUR](/index.php/AUR "AUR").
-
-*   [xsri](https://aur.archlinux.org/packages/xsri/) A program that can be used for fast image and gradient setting. Good for `~/.xinitrc`
-*   [thinglaunch](https://aur.archlinux.org/packages/thinglaunch/) is a launcher program for X. You can bind it to a key in your favorite window manager. When you want to start a program, just type its name. thinglaunch has a tiny footprint and depends only on Xlib.
-*   [pawmIcons](https://aur.archlinux.org/packages/pawmIcons/) A simple python based utility for creating hassle free Launcher icons. It does not support custom icons.

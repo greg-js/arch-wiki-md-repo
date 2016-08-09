@@ -71,7 +71,7 @@ options ...
 
 ```
 
-If you do not mount the ESP to `/boot`, copy `/boot/intel-ucode.img` to your [Unified Extensible Firmware Interface#EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface").
+If you do not mount the ESP to `/boot`, copy `/boot/intel-ucode.img` to your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 ### EFI boot stub / EFI handover
 

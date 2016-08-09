@@ -81,15 +81,24 @@ to disable it for the current session.
 
 ## Creating new profiles
 
-To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. Be sure to stop the service afterwards (and maybe clear `/var/log/audit/audit.log`) because it causes overhead.
+To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have create rules. See this section: [Audit_framework#Adding_rules](/index.php/Audit_framework#Adding_rules "Audit framework").
+
+Be sure to stop the service afterwards (and maybe clear `/var/log/audit/audit.log`) because it causes overhead.
 
 ## Security considerations
 
 ### Preventing circumvention of path-based MAC via links
 
-AppArmor can be circumvented via hardlinks in the standard POSIX security model. However, the kernel now includes the ability to prevent this vulnerability, without needing the patches distributions like Ubuntu have applied to their kernels as workarounds.
+AppArmor can be circumvented via hardlinks in the standard POSIX security model. However, the kernel [included](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=800179c9b8a1e796e441674776d11cd4c05d61d7) the ability to prevent this vulnerability via the following settings:
 
-See [Security#Preventing link TOCTOU vulnerabilities](/index.php/Security#Preventing_link_TOCTOU_vulnerabilities "Security") for details.
+ `/usr/lib/sysctl.d/50-default.conf` 
+```
+...
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+```
+
+Patches distributions like Ubuntu have applied to their kernels as workarounds as not needed anymore.
 
 ## Tips and tricks
 

@@ -12,7 +12,10 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
     *   [2.3 Spigot (respectively Craftbukkit)](#Spigot_.28respectively_Craftbukkit.29)
     *   [2.4 Cuberite](#Cuberite)
     *   [2.5 Additional notes](#Additional_notes)
-*   [3 See also](#See_also)
+*   [3 Minecraft Mod Launchers](#Minecraft_Mod_Launchers)
+    *   [3.1 Feed The Beast](#Feed_The_Beast)
+    *   [3.2 Technic Launcher](#Technic_Launcher)
+*   [4 See also](#See_also)
 
 ## Client
 
@@ -91,6 +94,18 @@ It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in pop
 *   You might even set up a cron job with a [mapper](http://www.minecraftwiki.net/wiki/Programs_and_editors#Mappers) to generate periodic maps of your world.
 *   ...or you could use [rsync](/index.php/Rsync "Rsync") to perform routine backups.
 
+## Minecraft Mod Launchers
+
+You can launch Minecraft from different "Launchers" that often include an array of Mod Packs to enchance one's gameplay and add [mods](http://minecraft.gamepedia.com/Mods).
+
+### Feed The Beast
+
+[feedthebeast](https://aur.archlinux.org/packages/feedthebeast/) includes the Feed The Beast launcher. The official page for Feed The Beast is: [feed-the-beast.com](https://www.feed-the-beast.com/)
+
+### Technic Launcher
+
+[minecraft-technic-launcher](https://aur.archlinux.org/packages/minecraft-technic-launcher/) includes the Technic Launcher. The official page for Technic Launcher is: [technicpack.net](http://www.technicpack.net/)
+
 ## See also
 
 *   [Official Minecraft site](https://www.minecraft.net/)
@@ -99,3 +114,4 @@ It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in pop
 *   [Crafting Recipes](http://www.minecraftwiki.net/wiki/Crafting)
 *   [Block and item data values](http://www.minecraftwiki.net/wiki/Data_values)
 *   [Reddit Minecraft community](http://www.reddit.com/r/minecraft)
+*   [Minecraft Skins](http://www.minecraftskins.net)

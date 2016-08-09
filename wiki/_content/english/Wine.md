@@ -304,7 +304,7 @@ Since 2013 Wine developers have been experimenting with [stream/worker thread op
 
 [Wine-staging](http://www.wine-staging.com/) includes CSMT support (included again since [version 1.9.10](http://www.wine-staging.com/news/2016-05-18-release-1.9.10.html)), and can be installed with the [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) package.
 
-CSMT support needs to be enabled before it can be used, instructions can be found [here](https://github.com/wine-compholio/wine-staging/wiki/CSMT#enabledisable-csmt), no further configuration is needed.
+CSMT support needs to be enabled in `winecfg` (Staging tab) before it can be used.
 
 Further information:
 

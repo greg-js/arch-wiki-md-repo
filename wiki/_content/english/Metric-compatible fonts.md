@@ -23,7 +23,7 @@
 In the following table, commonly-specified families are shown in **bold**. This table is mainly based on [<tt>30-metric-aliases.conf</tt>](https://cgit.freedesktop.org/fontconfig/tree/conf.d/30-metric-aliases.conf) from [fontconfig](/index.php/Fontconfig "Fontconfig").
 
 <caption>"Core fonts for the web" compatibilities</caption>
-| [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Windows](#Microsoft) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | [StarOffice](#StarOffice) | Other |
+| [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Windows](#Microsoft) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | StarOffice | Other |
 | **Helvetica** | Nimbus Sans | TeX Gyre Heros | FreeSans | MS Sans Serif (Helv) | **Arial** | Liberation Sans | Arimo | Albany |
 | **Times** | Nimbus Roman | TeX Gyre Termes | FreeSerif | MS Serif (Tms Rmn) | **Times New Roman** | Liberation Serif | Tinos | Thorndale |
 | **Courier** | Nimbus Mono | TeX Gyre Cursor | FreeMono | **Courier New** | Liberation Mono | Cousine | Cumberland |

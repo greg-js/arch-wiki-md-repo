@@ -455,7 +455,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 ## Routing all client traffic through the server
 
-**Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documenation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
+**Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
 By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server.conf`) [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 

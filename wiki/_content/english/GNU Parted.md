@@ -120,7 +120,7 @@ To create a new GPT partition table for UEFI systems instead, use:
 You can decide the number and size of the partitions the devices should be split into, and which directories will be used to mount the partitions in the installed system (also known as *mount points*). The mapping from partitions to directories is the [partition scheme](/index.php/Partition_scheme "Partition scheme"), which must comply with the following requirements:
 
 *   At least a partition for the `/` (*root*) directory **must** be created.
-*   When using a UEFI motherboard, one [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") **must** be created
+*   When using a UEFI motherboard, one [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") **must** be created
 
 In the examples below it is assumed that a new and contiguous partitioning scheme is applied to a single device. Some optional partitions will also be created for the `/boot` and `/home` directories: see also [Arch filesystem hierarchy](/index.php/Arch_filesystem_hierarchy "Arch filesystem hierarchy") for an explanation of the purpose of the various directories; if separate partitions for directories like `/boot` or `/home` are not created, these will simply be contained in the `/` partition. Also the creation of an optional partiton for [swap space](/index.php/Swap_space "Swap space") will be illustrated.
 

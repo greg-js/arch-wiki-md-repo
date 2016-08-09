@@ -79,6 +79,20 @@ The `Exec` command line is composed as follows:
 *   `-desktop` is a flag needed to run Matlab without a terminal.
 *   `-nosplash` is a flag preventing the splash screen from showing and taking up a temporary space in your task bar.
 
+In order for icons to appear correctly the startup WM class needs to be added to the new `.desktop` file. While MATLAB is running, open a teminal window and enter:
+
+```
+# xprop | grep WM_CLASS
+
+```
+
+With xprop running, select the MATLAB window, and add the outputted information to the bottom of the `.desktop` file, for example:
+
+```
+StartupWMClass=MATLAB R2016a - academic use
+
+```
+
 You can also put this `.desktop` file in the `~/Desktop` directory to create a shortcut on your desktop. See also [[1]](https://help.ubuntu.com/community/MATLAB).
 
 ### Installing from the AUR package

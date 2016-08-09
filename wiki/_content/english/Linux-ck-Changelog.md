@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.6.5-4**
+
+*   Changelog: v8r2 of BFQ
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=405dbda7dc89d37b5ca5cd73cdb5e111c06dbfa6](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=405dbda7dc89d37b5ca5cd73cdb5e111c06dbfa6)
+
 **Bump to v4.6.5-3**
 
 *   Changelog: v8r1 of BFQ
@@ -1797,7 +1802,7 @@ Bump to latest version from mainline. Also includes bfs v0.404 from ck. For deta
 
 Bump to latest version with a fixed libata regression [https://projects.archlinux.org/svntogit/packages.git/commit/?id=82d1e0060dfe93404bd54305da18469d51e4ee13](https://projects.archlinux.org/svntogit/packages.git/commit/?id=82d1e0060dfe93404bd54305da18469d51e4ee13)
 
-For repo-only versions, the package now comes with the BFQ I/O scheduler built as a module which users can enable at will. Read the [section](#How_to_Enable_the_BFQ_I.2FO_Scheduler_.28Repo_Users_Only.29) for instructions to load it and enable it.
+For repo-only versions, the package now comes with the BFQ I/O scheduler built as a module which users can enable at will. Read this [section](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck") for instructions to load it and enable it.
 
 **11-May-2011 kernel26-ck 2.6.38.6-2**
 

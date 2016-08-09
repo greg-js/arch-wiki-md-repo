@@ -26,7 +26,27 @@
 
 [Install](/index.php/Install "Install") the [evolution](https://www.archlinux.org/packages/?name=evolution) package.
 
-Exchange servers are supported by [evolution-ews](https://www.archlinux.org/packages/?name=evolution-ews) and web calendars (like Google Calendar) by [evolution-data-server](https://www.archlinux.org/packages/?name=evolution-data-server).
+Additional plugins:
+
+*   **Bogofilter Plugin** — Spam filtering for Evolution, using Bogofilter.
+
+	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution-bogofilter](https://www.archlinux.org/packages/?name=evolution-bogofilter)
+
+*   **EWS Plugin** — MS Exchange integration through Exchange Web Services.
+
+	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution-ews](https://www.archlinux.org/packages/?name=evolution-ews)
+
+*   **MAPI Plugin** — MS Exchange integration through OpenChange. (deprecated)
+
+	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution-mapi](https://aur.archlinux.org/packages/evolution-mapi/)
+
+*   **RSS Plugin** — Enables reading of RSS/RDF/ATOM feeds.
+
+	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://aur.archlinux.org/packages/evolution-rss/)
+
+*   **SpamAssassin Plugin** — Spam filtering for Evolution, using SpamAssassin.
+
+	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution-spamassassin](https://www.archlinux.org/packages/?name=evolution-spamassassin)
 
 ## IMAP Setup
 

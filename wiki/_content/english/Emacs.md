@@ -620,8 +620,6 @@ $ emacs -q
 
 ```
 
-If this solves the problem, see [#Init file loads slowly](#Init_file_loads_slowly).
-
 *   Mistakes, particularly in /etc/hosts, will often result in a 5+ second delay when starting Emacs. Refer to '[set the hostname](/index.php/Configuring_network#Set_the_hostname "Configuring network")' in the network configuration guide for information.
 
 *   You may need to monitor any network packets sent from your computer (using a program like Wireshark) to see if there is any strange behavior.

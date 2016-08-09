@@ -25,7 +25,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.1 CPU pinning](#CPU_pinning)
         *   [5.1.1 The case of Hyper-threading](#The_case_of_Hyper-threading)
     *   [5.2 Static huge pages](#Static_huge_pages)
-    *   [5.3 Stutter in Games](#Stutter_in_Games)
+    *   [5.3 CPU frequency governor](#CPU_frequency_governor)
     *   [5.4 High DPC Latency](#High_DPC_Latency)
 *   [6 Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
 *   [7 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
@@ -111,7 +111,7 @@ IOMMU group 13
 	06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
 ```
 
-An IOMMU group is the smallest set of physical devices that can be passed to a virtual machine. For instance, in the example above, both the GPU in 06:00.0 and its audio controller in 6:00.1 belong to IOMMU group 13 and can only be passed together. The frontal USB controller, however, has its own group (group 2) which is separate from both the USB expansion controller (group 10) and the rear USB controller (group 4), meaning that [any of them could be passed to a VM without affecting the others](#Passing_through_a_USB_controller).
+An IOMMU group is the smallest set of physical devices that can be passed to a virtual machine. For instance, in the example above, both the GPU in 06:00.0 and its audio controller in 6:00.1 belong to IOMMU group 13 and can only be passed together. The frontal USB controller, however, has its own group (group 2) which is separate from both the USB expansion controller (group 10) and the rear USB controller (group 4), meaning that [any of them could be passed to a VM without affecting the others](#USB_controller).
 
 ### Gotchas
 
@@ -418,9 +418,9 @@ Also, since static huge pages can only be used by applications that specifically
 ...
 ```
 
-### Stutter in Games
+### CPU frequency governor
 
-If you are experiencing stutter in CPU-intensive games, it may be due to cpu scaling being [controlled by the host OS](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678) and is therefore being applied differently than the guest OS/game expects. In this case, try [setting all cores to maximum frequency](/index.php/CPU_frequency_scaling "CPU frequency scaling") to see if this improves performance. Note that if you're using a modern intel chip with the default pstate driver, cpupower commands will be [ineffective](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling"), so monitor `/proc/cpuinfo` to make sure your cpu is actually at max frequency.
+Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU frequency scaling") is configured, the VM threads may not hit the CPU load thresholds for the frequency to ramp up. Indeed, KVM cannot actually change the CPU frequency on its own, which can be a problem if the it does not scale up with vCPU usage as it would result in underwhelming performance. An easy way to see if it behaves correctly is to check if the frequency reported by `watch lscpu` goes up when running a CPU-intensive task on the guest. If you are indeed experiencing stutter and the frequency does not go up to reach its reported maximum, it may be due to [cpu scaling being controlled by the host OS](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678). In this case, try setting all cores to maximum frequency to see if this improves performance. Note that if you're using a modern intel chip with the default pstate driver, cpupower commands will be [ineffective](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling"), so monitor `/proc/cpuinfo` to make sure your cpu is actually at max frequency.
 
 ### High DPC Latency
 

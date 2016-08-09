@@ -1,4 +1,4 @@
-[StarCraft II](http://eu.battle.net/sc2/en/) is a real-time strategy game from Blizzard Entertainment released in 2010\. A native Linux version isn't available, but the game is fully playable using Wine.
+[StarCraft II](http://eu.battle.net/sc2/en/) is a real-time strategy game from Blizzard Entertainment released in 2010\. A native Linux version isn't available, but the game is fully playable using [Wine](/index.php/Wine "Wine").
 
 ## Contents
 
@@ -23,7 +23,7 @@
 
 #### Packages
 
-You need to [install](/index.php/Install "Install") [wine](https://www.archlinux.org/packages/?name=wine), [lib32-libjpeg-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg-turbo), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng) and [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap). If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) available in [multilib](/index.php/Multilib "Multilib"). Optionally, instead of regular Wine, you might prefer [Wine-Staging](/index.php/Wine#CSMT_via_wine-staging "Wine") - enabling CSMT via the Staging tab in winecfg may greatly improve performance, but is not required. You'll also need to use [winetricks](https://www.archlinux.org/packages/?name=winetricks) and install the following components (to use the Map Editor and avoid crashes on certain system configurations):
+You need to [install](/index.php/Install "Install") [wine](https://www.archlinux.org/packages/?name=wine), [lib32-libjpeg-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg-turbo), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng) and [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap). If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) available in [multilib](/index.php/Multilib "Multilib"). Optionally, instead of regular [wine](https://www.archlinux.org/packages/?name=wine), you might prefer [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) - [enabling CSMT via the Staging tab in winecfg](/index.php/Wine#CSMT_patch "Wine") may greatly improve performance, but is not required. You'll also need to use [winetricks](https://www.archlinux.org/packages/?name=winetricks) and install the following components (to use the Map Editor and avoid crashes on certain system configurations):
 
 ```
 $ winetricks corefonts vcrun2005 vcrun2008 vcrun2015
@@ -32,14 +32,14 @@ $ winetricks corefonts vcrun2005 vcrun2008 vcrun2015
 
 #### Configuration
 
-You'll need to tell Wine how much VRAM you have. Open the Registry Editor:
+If you have a GPU which doesn't properly report the amount of memory available (older integrated or early AMD APUs), you'll need to tell Wine how much VRAM you have available. Open the Registry Editor:
 
 ```
 $ regedit
 
 ```
 
-*(Skip in Wine 1.9.x as key doesn't exist)* Go to *HKEY_CURRENT_USER/Software/Wine/Direct3D*, right-click on *Direct3D* (if such a key doesn't exist, right-click on *Wine*, New -> Key, *Direct3D*, OK), select New -> String Value, *VideoMemorySize*, which you should set to the amount of VRAM your GPU has, in MB (for example, "1024" or "2048"). If you're using an integrated GPU, try to preallocate a fair amount of RAM for your GPU in BIOS/UEFI Setup and use the same value here (512 is good enough for low-medium settings).
+Go to *HKEY_CURRENT_USER/Software/Wine/Direct3D* (right-click on Wine and New -> Key, *Direct3D*, Enter, if it doesn't exist) right-click on *Direct3D* (if such a key doesn't exist, right-click on *Wine*, New -> Key, *Direct3D*, OK), select New -> String Value, *VideoMemorySize*, which you should set to the amount of VRAM your GPU has, in MB (for example, "1024" or "2048"). If you're using an integrated GPU, try to preallocate a fair amount of RAM for your GPU in BIOS/UEFI Setup and use the same value here (512 is good enough for low-medium settings).
 
 *   If the Battle.net App doesn't work, use a new Wine prefix.
 *   **If you are asked to install Gecko, then click Install to do so.**

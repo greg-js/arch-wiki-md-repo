@@ -192,7 +192,7 @@ Below atime options can impact drive performance.
 
 *   The `nodiratime` option disables the writing of file access times only for directories while other files still get access times written.
 
-**Note:** `noatime` already includes `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
+**Note:** `noatime` implies `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
 
 *   `relatime` updates the access time only if the previous access time was earlier than the current modify or change time. In addition, since Linux 2.6.30, the access time is always updated if the previous access time was more than 24 hours old. This option is used when the `defaults` option, `atime` option (which means to use the kernel default, which is `relatime`; see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) and [wikipedia:Stat (system call)#Criticism of atime](https://en.wikipedia.org/wiki/Stat_(system_call)#Criticism_of_atime "wikipedia:Stat (system call)")) or no options at all are specified.
 

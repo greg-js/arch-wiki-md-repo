@@ -260,7 +260,7 @@ Information string: NVIDIA VDPAU Driver Shared Library  364.19  Tue Apr 19 14:14
 
 ### Configuring VA-API
 
-The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API is autodetected. To determine which one is used see [#Verifying](#Verifying). You can override it by setting the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
+The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API is autodetected. To determine which one is used see [#Verification](#Verification). You can override it by setting the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
 
 *   For Intel Graphics use `i965`.
 *   For NVIDIA use `vdpau`.

@@ -475,3 +475,6 @@ For further information, refer to the [app-folders schema](https://git.gnome.org
     *   [GNOME Files](http://www.gnomefiles.org/)
     *   [GNOME Project Listing](http://www.gnome.org/projects/)
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
+*   GNOME Source/Mirrors:
+    *   [GNOME Git Repository](https://git.gnome.org/browse/)
+    *   [GNOME Github Mirror](https://github.com/GNOME)

@@ -100,8 +100,6 @@ Once you have downloaded a developer key, you will not have to download it again
 
 You can use this method, for example, to add your own key to the *pacman* keyring, or when enabling a signed [unofficial repository](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
-**Note:** You may first need to run `dirmngr` as root, see [#gpg: keyserver receive failed: No dirmngr](#gpg:_keyserver_receive_failed:_No_dirmngr).
-
 First get the key ID (`*keyid*`) from the owner of the key. Then you need to add the key to the keyring:
 
 *   If the key is found on a keyserver, import it with: `# pacman-key -r *keyid*` 

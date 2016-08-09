@@ -64,7 +64,7 @@ Then restart `dnscrypt-proxy.socket` and *stop* `dnscrypt-proxy.service` if alre
 
 #### Example: configuration for Unbound
 
-Configure [Unbound](/index.php/Unbound "Unbound") to your liking (remember to [set /etc/resolv.conf to use the local DNS server](/index.php/Unbound#Set_.2Fetc.2Fresolv.conf_to_use_the_local_DNS_server "Unbound")) and add the following lines to the end of the `server` section in `/etc/unbound/unbound.conf`:
+Configure [Unbound](/index.php/Unbound "Unbound") to your liking (in particular, see [Unbound#Local DNS server](/index.php/Unbound#Local_DNS_server "Unbound")) and add the following lines to the end of the `server` section in `/etc/unbound/unbound.conf`:
 
 ```
 do-not-query-localhost: no
@@ -76,7 +76,7 @@ forward-zone:
 
 **Tip:** If you are setting up a server, add `interface: 0.0.0.0@53` and `access-control: *your-network*/*subnet-mask* allow` inside the `server:` section so that the other computers can connect to the server. A client must be configured with `nameserver *address-of-your-server*` in `/etc/resolv.conf`.
 
-Restart `unbound.service` to apply the changes.
+[Restart](/index.php/Restart "Restart") `unbound.service` to apply the changes.
 
 #### Example: configuration for dnsmasq
 

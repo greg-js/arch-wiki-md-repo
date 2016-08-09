@@ -13,7 +13,7 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [3.1 Touchpad tapping](#Touchpad_tapping)
     *   [3.2 Natural scrolling](#Natural_scrolling)
     *   [3.3 Mouse button re-mapping](#Mouse_button_re-mapping)
-    *   [3.4 Multitouch events](#Multitouch_events)
+    *   [3.4 Gestures](#Gestures)
 *   [4 Debugging](#Debugging)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
 *   [5 See also](#See_also)
@@ -163,13 +163,13 @@ done
 ...
 ```
 
-### Multitouch events
+### Gestures
 
-While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch, the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
+While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch gestures, the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
 
-For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile.
+For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The script reads libinput gestures (through `libinput-debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
 
-The utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file. An [AUR](/index.php/AUR "AUR") package is not available yet.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6)
+The [libinput-gestures-git](https://aur.archlinux.org/packages/libinput-gestures-git/) package installs the script system-wide.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6) Alternatively, the utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file.
 
 ## Debugging
 

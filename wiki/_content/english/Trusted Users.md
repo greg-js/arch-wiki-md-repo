@@ -75,6 +75,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [stativ](https://aur.archlinux.org/packages.php?K=stativ&SeB=m) | Lukas Jirkovsky | l.jirkovsky strange_curved_character gmail.com |
 | [svenstaro](https://aur.archlinux.org/packages.php?K=svenstaro&SeB=m) | [Sven-Hendrik Haase](/index.php/User:Svenstaro "User:Svenstaro") | sh@lutzhaase.com |
 | [td123](https://aur.archlinux.org/packages.php?K=td123&SeB=m) | Thomas Dziedzic | gostrc at gmail |
+| [tensor5](https://aur.archlinux.org/packages.php?K=tensor5&SeB=m) | Nicola Squartini | tensor5@gmail.com |
 | [thestinger](https://aur.archlinux.org/packages.php?K=thestinger&SeB=m) | Daniel Micay | [danielmicay@gmail.com](mailto:danielmicay@gmail.com) |
 | [tredaelli](https://aur.archlinux.org/packages.php?K=tredaelli&SeB=m) | Timothy Redaelli | timothy.redaelli@gmail.com |
 | [Xyne](https://aur.archlinux.org/packages.php?K=Xyne&SeB=m) | Xyne | ca . archlinux @ xyne, in reverse order |

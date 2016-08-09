@@ -2,7 +2,7 @@ This article describes how to use persistent names for your block devices. This 
 
 **Note:**
 
-*   Persistent naming has limits that are out-of-scope in this article. For example, while [mkinitcpio](/index.php/Mkinitcpio#init "Mkinitcpio") may support a method, systemd may impose its own limits (e.g. [FS#42884](https://bugs.archlinux.org/task/42884)) on naming it can process during boot.
+*   Persistent naming has limits that are out-of-scope in this article. For example, while [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") may support a method, systemd may impose its own limits (e.g. [FS#42884](https://bugs.archlinux.org/task/42884)) on naming it can process during boot.
 *   If you are using [LVM2](/index.php/LVM2 "LVM2"), this article is not relevant as LVM takes care of this automatically.
 
 ## Contents

@@ -6,8 +6,8 @@
 
 This page expains how to write [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software running on Windows using GCC. There are two options to build software for Windows on Linux:
 
-*   [[mingw-w64.sourceforge.net]](#MinGW-w64): provides 32 and 64-bit toolchains with secure crt, Vista+ API, DDK (ReactOS), and DirectX (WINE) support. For a full list of supported features and differences with the old MinGW.org, see [here](http://sourceforge.net/apps/trac/mingw-w64/wiki/Feature%20list). Available from Arch's [[community]](#.5Bcommunity.5D) repository by installing [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc).
-*   [[www.MinGW.org]](#MinGW.org): provides 32-bit toolchains with limited DirectX support. It also suffers from long-standing breakage in the implementation of thread-local storage and the floating point library support. It has been removed from the official repositories and the AUR.
+*   [mingw-w64](https://mingw-w64.org): provides 32 and 64-bit toolchains with secure crt, Vista+ API, DDK (ReactOS), and DirectX (WINE) support. For a full list of supported features and differences with the old MinGW.org, see [here](http://sourceforge.net/apps/trac/mingw-w64/wiki/Feature%20list). Available from Arch's [community](/index.php/Community "Community") repository by installing [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc).
+*   [MinGW](http://www.mingw.org/): provides 32-bit toolchains with limited DirectX support. It also suffers from long-standing breakage in the implementation of thread-local storage and the floating point library support. It has been removed from the official repositories and the AUR.
 
 ## Contents
 

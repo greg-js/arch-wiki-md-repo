@@ -73,7 +73,7 @@ The default Arch Linux kernel is *modular*, meaning many of the drivers for mach
 
 Some wireless chipsets also require firmware, in addition to a corresponding driver. Many firmware images are provided by the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package which is installed by default, however, proprietary firmware images are not included and have to be installed separately. This is described in [#Installing driver/firmware](#Installing_driver.2Ffirmware).
 
-**Note:** Udev is not perfect. If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Loading "Kernel modules"). Note also that udev may occasionally load more than one driver for a device, and the resulting conflict will prevent successful configuration. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the unwanted module.
+**Note:** Udev is not perfect. If the proper module is not loaded by udev on boot, simply [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). Note also that udev may occasionally load more than one driver for a device, and the resulting conflict will prevent successful configuration. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the unwanted module.
 
 **Tip:** Though not strictly required, it's a good idea to first install user-space tools mentioned in [#Manual setup](#Manual_setup), especially when some problem should appear.
 
@@ -541,7 +541,7 @@ $ iw list | grep -A 15 Frequencies:
 
 ```
 
-A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain. `wpa_supplicant` can also use a regdomain in the `country=` line of `/etc/wpa_supplicant.conf`.
+A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain. `wpa_supplicant` can also use a regdomain in the `country=` line of `/etc/wpa_supplicant/wpa_supplicant.conf`.
 
 It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` as [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
@@ -677,7 +677,7 @@ A list of devices supported by the modules is available at the project's [homepa
 
 For devices which are using the rt3090 chipset it should be possible to use `rt2800pci` driver, however, is not working with this chipset very well (e.g. sometimes it is not possible to use higher rate than 2Mb/s).
 
-The best way is to use the [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) driver. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the `rt2800pci` module and setup the `rt3090sta` module to [load](/index.php/Kernel_modules#Loading "Kernel modules") at boot.
+The best way is to use the [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) driver. Make sure to [blacklist](/index.php/Blacklist "Blacklist") the `rt2800pci` module and setup the `rt3090sta` module to [load](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") at boot.
 
 **Note:** This driver also works with rt3062 chipsets. Also the [rt3090](https://aur.archlinux.org/packages/rt3090/) package is not supported by the latest kernel and has been orphaned; [rt3090-dkms](https://aur.archlinux.org/packages/rt3090-dkms/) should be used instead.
 
@@ -823,7 +823,7 @@ These modules are fully supported in the kernel, but they require additional fir
 
 [iwlegacy](http://wireless.kernel.org/en/users/Drivers/iwlegacy) is the wireless driver for Intel's 3945 and 4965 wireless chips. The firmware is included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
-[udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") for details.
+[udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details.
 
 If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n:
 
@@ -950,7 +950,7 @@ $ ndiswrapper -l
 
 ```
 
-Now the ndiswrapper install is almost finished; follow the instructions on [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") to automatically load the module at boot.
+Now the ndiswrapper install is almost finished; follow the instructions on [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") to automatically load the module at boot.
 
 The important part is making sure that ndiswrapper exists on this line, so just add it alongside the other modules. It would be best to test that ndiswrapper will load now, so:
 

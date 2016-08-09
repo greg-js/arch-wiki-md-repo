@@ -430,7 +430,7 @@ You can use these instructions if you're going to use a single iSER device, or i
 
 Follow the [iSCSI Over IPoIB](#Over_IPoIB) instructions, with the following changes:
 
-*   If you wish, instead of [installing IPoIB](#TCP.2FIP_over_InfiniBand_IPoIB), you can just [install RDMA for loading kernel modules](#Kernel_modules).
+*   If you wish, instead of [installing IPoIB](#TCP.2FIP_over_InfiniBand_.28IPoIB.29), you can just [install RDMA for loading kernel modules](#Kernel_modules).
 *   On the target system, after everything else is setup, while still in `targetcli`, enable iSER on the target:
     *   Run `cd /iscsi/*iqn*/tpg1/portals/0.0.0.0:3260` for each *iqn* you want to have use iSER rather than IPoIB.
         *   Where *iqn* is the randomly generated target name, i.e. iqn.2003-01.org.linux-iscsi.hostname.x8664:sn.3d74b8d4020a.

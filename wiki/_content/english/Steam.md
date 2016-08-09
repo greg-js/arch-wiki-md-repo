@@ -40,7 +40,7 @@ Steam is not supported on this distribution. As such some fixes are needed on th
 
 ### Big Picture Mode
 
-To start Steam in Big Picture Mode from a [Display Manager](/index.php/Display_Manager "Display Manager"), create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following contents:
+To start Steam in Big Picture Mode from a [Display manager](/index.php/Display_manager "Display manager"), create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following contents:
 
  `/usr/share/xsessions/steam-big-picture.desktop` 
 ```
@@ -52,8 +52,6 @@ TryExec=/usr/bin/steam
 Icon=
 Type=Application
 ```
-
-Alternatively, [install](/index.php/Install "Install") [steam-session-git](https://aur.archlinux.org/packages/steam-session-git/). This will set up the necessary session files to launch Steam from [xfwm4](/index.php/Xfwm4 "Xfwm4"), along with shutting down Steam cleanly on exit. Launching from xfwm4 may also help those having issues with mouse/keyboard/controller input.
 
 ### Steam runtime
 

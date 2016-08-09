@@ -410,7 +410,7 @@ If you are using [LightDM](/index.php/LightDM "LightDM"), awesome will log error
 
 ### Mod4 key
 
-Awesome recommends to remap `mod4`, which by default should be **Win key**. If for some reason it isn't mapped to `mod4`, use [xmodmap](/index.php/Xmodmap "Xmodmap") to find out what is. To change the mapping, use `xev` to find the keycode and name of the key to be mapped. Then add something like the following to `~/.xinitrc`
+Awesome recommends to remap `mod4`, which by default should be **Win key**. If for some reason it is not mapped to `mod4`, use [xmodmap](/index.php/Xmodmap "Xmodmap") to find out what is. To change the mapping, use `xev` to find the keycode and name of the key to be mapped. Then add something like the following to `~/.xinitrc`
 
 ```
 xmodmap -e "keycode 115 = Super_L" -e "add mod4 = Super_L"
@@ -486,7 +486,7 @@ If you get stuck and cannot move or resize the main window (using mod4 + left/ri
 
 ### scrot: Cannot take a mouse selected screenshot with keyboard shortcuts
 
-When using [scrot](http://www.wikipedia.org/wiki/Scrot), you may have problems at assigning a keyboard shortcut to the mouse selection option (formally `scrot -s`). To fix it, add the following line to your `rc.lua`:
+When using [scrot](https://en.wikipedia.org/wiki/Scrot "w:Scrot"), you may have problems at assigning a keyboard shortcut to the mouse selection option (formally `scrot -s`). To fix it, add the following line to your `rc.lua`:
 
 ```
 awful.key( { modkey,	 }, <shortcut>, function () awful.util.spawn_with_shell("sleep 0.5 && scrot -s") end)

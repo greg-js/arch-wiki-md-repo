@@ -138,4 +138,4 @@ Change `verbose` to `quiet` on the bootloader's kernel line. For some systems, p
 
 ## Suspend to RAM
 
-The best way to reduce boot time is not booting at all. Consider [suspending your system to RAM](/index.php/Suspend_and_hibernate#Suspend_to_RAM "Suspend and hibernate") instead.
+The best way to reduce boot time is not booting at all. Consider [suspending your system to RAM](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate") instead.

@@ -36,6 +36,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [8.3 Linux kernel 4.5 or earlier](#Linux_kernel_4.5_or_earlier)
 *   [9 Touchpad](#Touchpad)
     *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
+    *   [9.2 Gestures](#Gestures)
 *   [10 Sound](#Sound)
     *   [10.1 Hissing/Crackling noises when using headphones](#Hissing.2FCrackling_noises_when_using_headphones)
     *   [10.2 Loud popping-noises when sound was not playing](#Loud_popping-noises_when_sound_was_not_playing)
@@ -167,9 +168,9 @@ or by adding `i915.enable_rc6=0` to the kernel boot parameters.
 
 ## Touchpad
 
-Only key-presses work out of the box. Installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is sufficient for proper mouse support plus it also handles the touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration. Features such as tap-to-click are usually adjustable within the desktop environment.
+Only key-presses work out of the box. Installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is sufficient for proper mouse support plus it also handles the touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration. Features such as tap-to-click are usually adjustable within the [desktop environment](/index.php/Desktop_environment "Desktop environment").
 
-Alternatively you may want to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as driver but "it is on maintenance mode and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) must be preferred over" (installation note from the package itself). Plus it may lack the ability to be easily adjustable within your DE (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). Restarting the X server might be required.
+Alternatively you may want to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as driver but "it is on maintenance mode and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) must be preferred over" (installation note from the package itself). Plus it may lack the ability to be easily adjustable within your [DE](/index.php/Desktop_environment "Desktop environment") (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). Restarting the X server might be required.
 
 ### Remove psmouse errors from dmesg
 
@@ -192,6 +193,10 @@ Then add this file to `/etc/mkinitcpio.conf`:
 ```
 
 Rebuild your initial ramdisk image (see [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")).
+
+### Gestures
+
+Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for information about the current development state and available methods.
 
 ## Sound
 

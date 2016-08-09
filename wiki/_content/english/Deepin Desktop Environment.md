@@ -22,6 +22,8 @@ However, it is recommended to also install [deepin-extra](https://www.archlinux.
 *   [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot): Deepin screen-shot tools
 *   [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal): Deepin terminal
 
+To be able to use the integrated network administration, the [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) package is required, and the `NetworkManager.service` must be [started and enabled](/index.php/Systemd#Using_units "Systemd").
+
 ## Launching Deepin Desktop Environment
 
 ### Via a Display Manager

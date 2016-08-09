@@ -388,7 +388,7 @@ To install some M-Audio MIDI keyboards, you will need the firmware package [midi
 
 ### "Cannot lock down memory area (Cannot allocate memory)" message on startup
 
-See [Realtime for Users#Add user to audio group](/index.php/Realtime_for_Users#Add_user_to_audio_group "Realtime for Users").
+See [Realtime process management#Configuring PAM](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") and ensure that the user is in the `audio` [group](/index.php/Users_and_groups#Group_management "Users and groups").
 
 ### jack2-dbus and qjackctl errors
 

@@ -55,7 +55,7 @@ or:
 
 To preserve changes between reboots, add or modify the appropriate lines in `/etc/sysctl.d/99-sysctl.conf` or another applicable parameter file in `/etc/sysctl.d/`.
 
-**Tip:** Some parameters that can be applied may depend on kernel modules which in turn might not be loaded. For example parameters in `/proc/sys/net/bridge/*` depend on the `br_netfilter` module. If it is not loaded at runtime (or after a reboot), those will *silently* not be applied. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules")
+**Tip:** Some parameters that can be applied may depend on kernel modules which in turn might not be loaded. For example parameters in `/proc/sys/net/bridge/*` depend on the `br_netfilter` module. If it is not loaded at runtime (or after a reboot), those will *silently* not be applied. See [Kernel modules](/index.php/Kernel_modules "Kernel modules").
 
 ## Security
 
@@ -139,11 +139,11 @@ There are several key parameters to tune the operation of the virtual memory (VM
 
 	Contains, as a percentage of total available memory that contains free pages and reclaimable pages, the number of pages at which the background kernel flusher threads will start writing out dirty data.
 
-As noted in the comments for the parameters, one needs to consider the total amount of RAM when setting these values:
+As noted in the comments for the parameters, one needs to consider the total amount of RAM when setting these values. For example, simplifying by taking the installed system RAM instead of available memory:
 
-*   `vm.dirty_ratio` defaults to 10 (percent of RAM). Consensus is that 10% of RAM when RAM is say half a GB (so 10% is ~50 MB) is a sane value on spinning disks. But if the machine has much more RAM, say 16 GB (10% is ~1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case is 3 (16*0.03 ~ 491 MB).
+*   If `vm.dirty_ratio` is set to 10 (percent of RAM). Consensus is that 10% of RAM when RAM is say half a GB (so 10% is 50 MB) is a sane value on spinning disks. But if the machine has much more RAM, say 16 GB (10% is 1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case is 3 (16*0.03 ~ 491 MB).
 
-*   `vm.dirty_background_ratio` similarly, 5 (% of RAM) by default may be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
+*   A `vm.dirty_background_ratio` setting of 5 (% of RAM) may, similarly, be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
 
 ## MDADM
 

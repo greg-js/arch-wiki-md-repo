@@ -72,7 +72,7 @@ opacity-rule = [
 
 ### Ctrl+Shift+t
 
-If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [source](/index.php/Source "Source") `/etc/profile.d/vte.sh`. See [GNOME#New terminals adopt current directory](/index.php/GNOME#New_terminals_adopt_current_directory "GNOME").
+If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [source](/index.php/Source "Source") `/etc/profile.d/vte.sh`. See [GNOME/Tips and tricks#New terminals adopt current directory](/index.php/GNOME/Tips_and_tricks#New_terminals_adopt_current_directory "GNOME/Tips and tricks").
 
 ## See also
 

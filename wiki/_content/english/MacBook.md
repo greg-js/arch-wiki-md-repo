@@ -546,19 +546,9 @@ MacBook keyboards work by default. For swaping fn keys with Fx keys see [Apple K
 
 To enable it you can map with right application like **xbindkeys** or through DE preferences; but another very good way, that we recommend, is to install the [pommed](https://aur.archlinux.org/packages/pommed/) package.
 
-```
-Edit the `/etc/pommed.conf` according to your hardware on MacBook, building
-it from `/etc/pommed.conf.mac` or `/etc/pommed.conf.ppc` example files.
+Edit the `/etc/pommed.conf` according to your hardware on MacBook, building it from `/etc/pommed.conf.mac` or `/etc/pommed.conf.ppc` example files.
 
-```
-
-Note that you can also run it without a configuration file, the defaults may work for you. Then enable and start pommed [Systemd](/index.php/Systemd "Systemd") service.
-
-```
-systemctl enable pommed
-systemctl start pommed
-
-```
+Note that you can also run it without a configuration file, the defaults may work for you. Then [enable](/index.php/Enable "Enable") and start `pommed.service`.
 
 **Tip:** if you are using Gnome or KDE you can easily configure *3rd level functionality*, *multimedia key*, etc. in Keyboard Preferences.
 
@@ -1313,7 +1303,7 @@ Bluetooth is fully supported starting from kernel-4.4.0.
 
 ##### Suspend & Power Off (11,4+)
 
-The 11,4 and 11,5 MacBook Pros do not shutdown or suspend correctly with the default kernel. This issue has been addressed in [Bug 103211](https://bugzilla.kernel.org/show_bug.cgi?id=103211) and the patch is currently available in [linux-macbook-pro](https://aur.archlinux.org/packages/linux-macbook-pro/).
+The 11,4 and 11,5 MacBook Pros do not shutdown or suspend correctly with the default kernel. This issue is being addressed in [Bug 103211](https://bugzilla.kernel.org/show_bug.cgi?id=103211) and a temporary patch is currently available in [linux-macbook](https://aur.archlinux.org/packages/linux-macbook/).
 
 ##### Keyboard & Trackpad
 

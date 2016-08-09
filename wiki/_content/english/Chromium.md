@@ -4,13 +4,12 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Set Chromium as default browser](#Set_Chromium_as_default_browser)
-    *   [2.2 File associations](#File_associations)
-    *   [2.3 Flash Player plugin](#Flash_Player_plugin)
-    *   [2.4 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
-    *   [2.5 PDF viewer plugin](#PDF_viewer_plugin)
-        *   [2.5.1 PDF.js](#PDF.js)
-    *   [2.6 Certificates](#Certificates)
+    *   [2.1 Default applications](#Default_applications)
+    *   [2.2 Flash Player plugin](#Flash_Player_plugin)
+    *   [2.3 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
+    *   [2.4 PDF viewer plugin](#PDF_viewer_plugin)
+        *   [2.4.1 PDF.js](#PDF.js)
+    *   [2.5 Certificates](#Certificates)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Constant freezes under KDE](#Constant_freezes_under_KDE)
@@ -64,13 +63,9 @@ On top of the different Chromium build channels, a number of forks exist with mo
 
 ## Configuration
 
-### Set Chromium as default browser
+### Default applications
 
-This behaviour is related to [xdg-open](/index.php/Xdg-open "Xdg-open"): see [xdg-open#Set the default browser](/index.php/Xdg-open#Set_the_default_browser "Xdg-open"). For more information about the topic in general, see [Default applications](/index.php/Default_applications "Default applications").
-
-### File associations
-
-This behaviour is related to [xdg-open](/index.php/Xdg-open "Xdg-open"): see [xdg-open#Configuration](/index.php/Xdg-open#Configuration "Xdg-open"). For more information about the topic in general, see [Default applications](/index.php/Default_applications "Default applications").
+To set Chromium as the default browser and to change which applications Chromium launches when opening downloaded files, see [default applications](/index.php/Default_applications "Default applications").
 
 ### Flash Player plugin
 

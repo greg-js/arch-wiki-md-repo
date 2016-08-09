@@ -1,13 +1,5 @@
 For requesting help from an IRC help channel (like [#archlinux](/index.php/Irc "Irc")), you can use collaborative debugging services (like [pastebin](http://pastie.org/)) to give IRC users details about problems you are seeing or configuration files you need referenced.
 
-## Contents
-
-*   [1 IRC Usage](#IRC_Usage)
-*   [2 Output Errors/Messages to File](#Output_Errors.2FMessages_to_File)
-*   [3 Programs to Upload to Pastebin Services](#Programs_to_Upload_to_Pastebin_Services)
-    *   [3.1 pastebinit](#pastebinit)
-*   [4 Console Installer Questions](#Console_Installer_Questions)
-
 ## IRC Usage
 
 When you tell the people in the chat-room what your problem is, sometimes they will need to know additional information. This could be the output (for example) of a command or the contents of a configuration file. It is a general rule for IRC channels to never paste text greater than three lines. When you need to do more, paste services (e.g. [pastebin](http://pastebin.com/)) allow temporary use of storing text information. To prevent from having to write the information down physically and then type it manually into an IRC channel this is where it becomes useful to use collaborative debugging program that can send the information to a paste service. There are several tools that can be used that can send information to a pastebin service.
@@ -31,35 +23,6 @@ fdisk -l > partitions.txt 2>&1
 ```
 
 It will redirect all output to a text file (both standard output and standard error output) and can be uploaded to a pastebin service.
-
-## Programs to Upload to Pastebin Services
-
-A number of programs exist to upload to pastebin services.
-
-### pastebinit
-
-To add pastebinit:
-
-```
-pacman -S pastebinit
-
-```
-
-And to upload a file:
-
-```
-pastebinit ~/.bashrc
-
-```
-
-Or pipe the output of a command to pastebinit:
-
-```
-dmesg | pastebinit
-
-```
-
-pastebinit will then return a URL of the uploaded file.
 
 ## Console Installer Questions
 

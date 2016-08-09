@@ -163,7 +163,7 @@ When=PostTransaction
 Exec=/usr/bin/refind-install
 ```
 
-Where the `Exec=` may need to be changed to the correct update command for your setup. If you did [#Manual configuration](#Manual_configuration), you could create your own update script to call with the hook.
+Where the `Exec=` may need to be changed to the correct update command for your setup. If you did [#Manual installation](#Manual_installation), you could create your own update script to call with the hook.
 
 ## Configuration
 
@@ -246,7 +246,7 @@ showtools **shell**, **memtest**, **gdisk**, **netboot**, ...
 
 See [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").
 
-Copy `shellx64.efi` to the root of the [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface").
+Copy `shellx64.efi` to the root of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 ### Memtest86
 

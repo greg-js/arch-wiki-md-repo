@@ -385,7 +385,7 @@ Then click "Save".
 
 #### ntpd
 
-Following advice in [Systemd#Drop-in snippets](/index.php/Systemd#Drop-in_snippets "Systemd"), change how systemd starts `ntpd.service`:
+Following advice in [systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd"), change how systemd starts `ntpd.service`:
 
 ```
 # systemctl edit ntpd.service

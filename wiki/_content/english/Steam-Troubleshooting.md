@@ -300,7 +300,7 @@ $ glxinfo32 | grep OpenGL.
 
 ## No audio in certain games
 
-If there is no audio in certain games, and the suggestions provided in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") do not fix the problem, [#Using native runtime](#Using_native_runtime) may provide a successful workaround. (See the note about "Steam Runtime issues" at the top of this section.)
+If there is no audio in certain games, and the suggestions provided in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") do not fix the problem, [#Native runtime](#Native_runtime) may provide a successful workaround. (See the note about "Steam Runtime issues" at the top of this section.)
 
 ### FMOD sound engine
 
@@ -312,7 +312,7 @@ While troubleshooting a sound issue, it became evident that the following games 
 
 This package is a bit buggy, and as a result while sound can appear to be working fine for the rest of your system, some games may still have problems.
 
-It usually occurs when an unused sound device is used as default for ALSA. See [Advanced_Linux_Sound_Architecture#Set_the_default_sound_card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture").
+It usually occurs when an unused sound device is used as default for ALSA. See [Advanced Linux Sound Architecture#Set the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture").
 
 ## Missing libc
 

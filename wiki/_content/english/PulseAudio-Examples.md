@@ -317,7 +317,7 @@ Connect speakers to front analog output and headphones to rear output. It would 
 
 Make sure to replace alsa_output.pci-0000_05_00.0.analog-surround-40 with the sound card name shown in 'pacmd list-sinks'. Now you have 2 additional sinks which can be used separately. You can choose 'sink_name' freely, as long as there is no sink with that name already. The 'remix' parameter controls whether the audio should be down-/upmixed to match the channels in the sink.
 
-**Tip:** If pulseaudio fails with `master sink not found`, comment out the remapping lines, start PulseAudio and verify your card output is set to the one you specified (e.g. analog surround 4.0). Alternatively, try using a [sink index](#Set_the_defaulting_output_source) instead of a sink name.
+**Tip:** If pulseaudio fails with `master sink not found`, comment out the remapping lines, start PulseAudio and verify your card output is set to the one you specified (e.g. analog surround 4.0). Alternatively, try using a [sink index](#Set_the_default_output_source) instead of a sink name.
 
 ### Splitting 7.1 into 5.1+2.0
 
@@ -331,7 +331,7 @@ Similar to the example above, you can also split a 7.1 configuration into 5.1 su
 
 Make sure to replace alsa_output.pci-0000_00_14.2 with your sound card name, get it by running 'pacmd list-sinks'. This configuration will use the front/rear/center+lfe (green/black/orange) jacks for the 5.1 sink and the side (grey) jack for the stereo sink. It will also downmix any audio to stereo for the stereo sink, but will not touch the 5.1 output.
 
-**Tip:** If pulseaudio fails with `master sink not found`, comment out the remapping lines, start PulseAudio and verify your card output is set to analog surround 7.1\. Alternatively, try using a [sink index](#Set_the_defaulting_output_source) instead of a sink name.
+**Tip:** If pulseaudio fails with `master sink not found`, comment out the remapping lines, start PulseAudio and verify your card output is set to analog surround 7.1\. Alternatively, try using a [sink index](#Set_the_default_output_source) instead of a sink name.
 
 ### Disabling LFE remixing
 

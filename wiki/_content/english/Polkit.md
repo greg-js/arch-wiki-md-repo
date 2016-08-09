@@ -33,7 +33,7 @@ An authentication agent is used to make the user of a session prove that the use
 
 If you are using a graphical environment, make sure that a graphical authentication agent is installed and [autostarted](/index.php/Autostarting "Autostarting") on login.
 
-[Cinnamon](/index.php/Cinnamon "Cinnamon"), [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [LXQt](/index.php/LXQt "LXQt"), [MATE](/index.php/MATE "MATE") and [Xfce](/index.php/Xfce "Xfce") have an authentication agent already. In other desktop environments, you have to choose one of the following implementations:
+[Cinnamon](/index.php/Cinnamon "Cinnamon"), [Deepin](/index.php/Deepin "Deepin"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [LXQt](/index.php/LXQt "LXQt"), [MATE](/index.php/MATE "MATE") and [Xfce](/index.php/Xfce "Xfce") have an authentication agent already. In other desktop environments, you have to choose one of the following implementations:
 
 *   [lxqt-policykit](https://www.archlinux.org/packages/?name=lxqt-policykit), which provides `/usr/bin/lxqt-policykit-agent`
 *   [lxsession](https://www.archlinux.org/packages/?name=lxsession), which provides `/usr/bin/lxpolkit`

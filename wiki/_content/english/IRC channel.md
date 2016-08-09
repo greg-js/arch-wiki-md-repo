@@ -5,7 +5,7 @@
 *   [1 Main channels](#Main_channels)
     *   [1.1 Registration](#Registration)
     *   [1.2 Channel operators](#Channel_operators)
-*   [2 Other IRC channels](#Other_IRC_channels)
+*   [2 Other channels](#Other_channels)
     *   [2.1 International IRC channels](#International_IRC_channels)
 
 ## Main channels
@@ -55,7 +55,7 @@ If you for some reason need the help of an op, do not be shy to `/query` or `/ms
 *   vodik
 *   wonder / ioni
 
-## Other IRC channels
+## Other channels
 
 The size of our community led to the creation of multiple IRC channels. To get a list of all channels on **[irc.freenode.net](irc://irc.freenode.net)** that contain `archlinux` in their name, use the command `/query alis list *archlinux*`.
 

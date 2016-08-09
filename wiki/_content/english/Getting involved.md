@@ -39,7 +39,7 @@ One of the easiest ways to get involved is participating in the [Arch Linux Foru
 
 ### Join the chatroom
 
-You can help other users to solve problems on the [IRC channel](/index.php/IRC_channel "IRC channel"). It is of vital importance however, that you read both the [rules](/index.php/IRC_channel#.23archlinux_rules "IRC channel") and [guidelines](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") before participating. [Further channels](/index.php/IRC_channels "IRC channels") are available for specific topics.
+You can help other users to solve problems on the [IRC channel](/index.php/IRC_channel "IRC channel"). It is of vital importance however, that you read the [channel rules](/index.php/Code_of_conduct#IRC "Code of conduct") before participating. [Further channels](/index.php/IRC_channel#Other_channels "IRC channel") are available for specific topics.
 
 ### Report installed packages
 
@@ -154,10 +154,6 @@ They offer you some different methods to visit ArchWiki.
 ### Services
 
 Services specifically made for Arch users.
-
-	[ArchLinux.me](http://archlinux.me)
-
-	Arch Linux Blogs, to register read [this forum post](https://bbs.archlinux.org/viewtopic.php?id=73622).
 
 	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
 

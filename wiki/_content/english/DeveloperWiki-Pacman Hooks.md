@@ -4,9 +4,7 @@
     *   [1.1 systemd-tmpfiles](#systemd-tmpfiles)
     *   [1.2 systemd-sysusers](#systemd-sysusers)
     *   [1.3 udevadm hwdb, systemd-hwdb](#udevadm_hwdb.2C_systemd-hwdb)
-    *   [1.4 mktexlsr, texhash](#mktexlsr.2C_texhash)
-    *   [1.5 fc-cache](#fc-cache)
-    *   [1.6 update-ca-trust](#update-ca-trust)
+    *   [1.4 fc-cache](#fc-cache)
 *   [2 TBD](#TBD)
 *   [3 Implemented](#Implemented)
 
@@ -81,28 +79,6 @@ Exec = /usr/bin/systemd-hwdb update
 
 ```
 
-## mktexlsr, texhash
-
-Used in 27 packages
-
-Proposed hook (texlive-texmf)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/share/texmf/*
-Target = usr/share/texmf-dist/*
-
-[Action]
-Description = Updating TeX Live ls-R databases...
-When = PostTransaction
-Exec = /usr/bin/mktexlsr
-
-```
-
 ## fc-cache
 
 Used by 53 packages
@@ -121,27 +97,6 @@ Target = usr/share/fonts/*
 Description = Updating fontconfig cache...
 When = PostTransaction
 Exec = /usr/bin/fc-cache -s
-
-```
-
-## update-ca-trust
-
-Used by 5 packages
-
-Proposed hook (ca-certificates-utils)
-
-```
-[Trigger]
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Type = File
-Target = usr/share/ca-certificates/trust-source/*
-
-[Action]
-Description = Rebuilding certificate stores...
-When = PostTransaction
-Exec = /usr/bin/update-ca-trust
 
 ```
 
@@ -165,3 +120,5 @@ Exec = /usr/bin/update-ca-trust
 *   gdk-pixbuf-query-loaders
 *   gtk-query-immodules-2.0
 *   gtk-query-immodules-3.0
+*   mktexlsr
+*   update-ca-trust

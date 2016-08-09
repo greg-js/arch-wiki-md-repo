@@ -633,7 +633,7 @@ At the boot loader, select an entry and edit it (`e` key). Append the following 
 
 ```
 
-This will start in single-user mode (init 1), i.e. you will end up to a root prompt without being asked for password. This may be useful for recovery features, like resetting the root password. However, this is a huge security flaw if you have not set any [password protection](/index.php/GRUB#Password_protection "GRUB") for grub.
+This will start in single-user mode (init 1), i.e. you will end up to a root prompt without being asked for password. This may be useful for recovery features, like resetting the root password. However, this is a huge security flaw if you have not set any [#Password protection](#Password_protection) for grub.
 
 ### Password protection
 

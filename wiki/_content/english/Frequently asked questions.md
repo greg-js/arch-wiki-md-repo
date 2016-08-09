@@ -105,7 +105,7 @@ Possibly so. Feel free to volunteer your time! Visit the [forums](https://bbs.ar
 
 ### Why is my internet so slow compared to other operating systems?
 
-Is your network configured correctly? Have a look at [Hostname](/index.php/Beginners%27_guide#Hostname "Beginners' guide") and [Configure the network](/index.php/Beginners%27_guide#Configure_the_network "Beginners' guide") from the Beginners' Guide.
+Is your network configured correctly? Have a look at the [Network configuration](/index.php/Network_configuration "Network configuration") article.
 
 Also note that Arch Linux does not come with [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") enabled. Thus, it is possible that if a program on it somehow utilizes your internet connection to the full – regardless if it's over P2P or classic client-server connections – other local ones will find it clogged, resulting in severe lags and timeouts. Relief can be provided by [firewalls](/index.php/Firewalls "Firewalls") such as Shorewall or Vuurmuur; there are also static scripts for [iproute2](https://www.archlinux.org/packages/?name=iproute2) (such as [this derivative](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) of Wondershaper), which allow shaping on the network layer.
 

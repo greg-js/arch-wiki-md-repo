@@ -270,11 +270,6 @@ esac
 
 ## Migration to systemd
 
-**Note:**
-
-*   [systemd](https://www.archlinux.org/packages/?name=systemd) and [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) are both installed by default on installation media newer than [2012-10-13](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/). This section is aimed at Arch Linux installations that still rely on *sysvinit* and *initscripts*.
-*   If you are running Arch Linux inside a VPS, please see [Virtual Private Server#Moving your VPS from initscripts to systemd](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server").
-
 ### Considerations before switching
 
 *   Interactive *initscripts* do not work with *systemd*.

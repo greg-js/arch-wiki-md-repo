@@ -197,4 +197,4 @@ In case of a linux kernel update you have to either restart your system or reins
 
 ### I'm running a custom kernel and tinc won't start.
 
-Make sure you have [TUN/TAP support](/index.php/OpenVPN#Configure_the_system_for_TUN.2FTAP_support "OpenVPN") enabled.
+Make sure you have [TUN/TAP support](/index.php/OpenVPN#Kernel_configuration "OpenVPN") enabled.

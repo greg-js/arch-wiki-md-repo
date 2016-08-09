@@ -110,10 +110,10 @@ Xorg should run smoothly without closed source drivers, which are typically need
 | GCN 4 | RX 400 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
 | GCN 3 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
 [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
-| GCN 2 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| GCN 1 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") legacy |
+| GCN 2 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 1 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/Catalyst "Catalyst") legacy |
 | Older | X1000 and older | *not available* |
 
 	: [experimental AMDGPU support coming in Linux 4.8](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code)

@@ -274,12 +274,13 @@ By default, both Intel and NVidia cards are active, which can consume a lot of p
 
 #### Intel only
 
-Install the Intel video driver using the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.
+If your model comes with an nVidia card which you don't use then you can try to disable it with an ACPI command. Depending on the model, this can have a small to *profound* effect on the laptop's temperature and battery life (it can more than *double* battery life!)
 
-To make sure nvidia module will not load into your system:
+*   Install the Intel video driver using the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.
 
-*   Remove nouveau and/or nvidia drivers
-*   Use acpi_call (compile [acpi_call](http://github.com/mkottman/acpi_call) or use one of the [AUR packages](https://aur.archlinux.org/packages/?K=acpi_call)) to disable the nvidia card
+*   To make sure nVidia module will not load into your system:
+    *   Remove nouveau and/or nvidia drivers
+    *   Use acpi_call (compile [acpi_call](http://github.com/mkottman/acpi_call) or use one of the [AUR packages](https://aur.archlinux.org/packages/?K=acpi_call)) to disable the nVidia card
 
 ##### acpi_call usage
 
@@ -303,10 +304,17 @@ Else your can test the other script m11xr2.sh (it worked for me):
 
 ```
 
+For the XPS 15 9550 the correct command seems to be:
+
+```
+echo '\_SB.PCI0.PEG0.PEGP._OFF' > /proc/acpi/call
+
+```
+
 You can use this command *before* and *after* to see how the battery consumption change (you need to disconnect sector first):
 
 ```
-grep rate /proc/acpi/battery/BAT1/state
+cat /sys/class/power_supply/BAT0/current_now
 
 ```
 

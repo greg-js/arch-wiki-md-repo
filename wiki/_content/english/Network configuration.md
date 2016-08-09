@@ -155,7 +155,7 @@ Skip the next section if the driver was loaded successfully. Otherwise, you will
 
 Search in the Internet for the right module/driver for the chipset. Some common modules are `8139too` for cards with a Realtek chipset, or `sis900` for cards with a SiS chipset. Once you know which module to use, try to [load it manually](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). If you get an error saying that the module was not found, it's possible that the driver is not included in Arch kernel. You may search the [AUR](/index.php/AUR "AUR") for the module name.
 
-If udev is not detecting and loading the proper module automatically during bootup, see [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules").
+If udev is not detecting and loading the proper module automatically during bootup, see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
 ## Network interfaces
 
@@ -656,7 +656,7 @@ softdep tg3 pre: broadcom
 
 ```
 
-The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and should be used for a reliable connection in this case. [Blacklist](/index.php/Blacklist "Blacklist") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev") add it to your list of user specified [modules](/index.php/Kernel_modules#Loading "Kernel modules").
+The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and should be used for a reliable connection in this case. [Blacklist](/index.php/Blacklist "Blacklist") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev"), see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
 Another fault in the drivers for some revisions of this adapter is poor IPv6 support. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") can be helpful if you encounter issues such as hanging webpages and slow speeds.
 

@@ -9,6 +9,7 @@ This article will show you how to do a full system backup with [tar](/index.php/
 *   [5 Exclude File](#Exclude_File)
 *   [6 Backup Script](#Backup_Script)
 *   [7 Restoring](#Restoring)
+*   [8 Backup with parallel compression](#Backup_with_parallel_compression)
 
 ## Overview
 
@@ -129,3 +130,30 @@ tar --xattrs -xpf $backupfile
 ```
 
 replacing $backupfile with the backup archive. Removing all files that had been added since the backup was made must be done manually. Recreating the filesystem(s) is an easy way to do this.
+
+## Backup with parallel compression
+
+To back up using parallel compression ([SMP](https://en.wikipedia.org/wiki/Symmetric_multiprocessing "wikipedia:Symmetric multiprocessing")), use [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) (Parallel bzip2).
+
+First back up the files to a plain tarball with no compression:
+
+```
+# tar -cvf /*destionation_path*/etc-backup.tar /etc
+
+```
+
+Then use pbzip2 to compress it in parallel:
+
+```
+$ pbzip2 /path/to/chosen/directory/etc-backup.tar.bz2
+
+```
+
+Store `etc-backup.tar.bz2` on one or more offline media, such as a USB stick, external hard drive, or CD-R. Occasionally verify the integrity of the backup process by comparing original files and directories with their backups. Possibly maintain a list of hashes of the backed up files to make the comparison quicker.
+
+Restore corrupted `/etc` files by extracting the `etc-backup.tar.bz2` file in a temporary working directory, and copying over individual files and directories as needed. To restore the entire `/etc` directory with all its contents execute the following command as root:
+
+```
+tar -xvjf etc-backup.tar.bz2 -C /
+
+```

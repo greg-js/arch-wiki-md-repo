@@ -18,7 +18,7 @@ $ gksu *name-of-app*
 
 ```
 
-*   bashrun (in community)
+*   [bashrun](https://www.archlinux.org/packages/?name=bashrun) (in community)
 
 ```
 $ bashrun --su *name-of-app*

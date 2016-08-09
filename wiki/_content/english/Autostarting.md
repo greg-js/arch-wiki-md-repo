@@ -66,7 +66,7 @@ See [Xfce#Startup applications](/index.php/Xfce#Startup_applications "Xfce").
 
 ### LXDE
 
-See [LXDE#Autostart programs](/index.php/LXDE#Autostart_programs "LXDE").
+See [LXDE#Autostart](/index.php/LXDE#Autostart "LXDE").
 
 ### LXQt
 

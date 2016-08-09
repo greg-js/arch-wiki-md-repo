@@ -93,7 +93,7 @@ Adding the `-r`/`--rmdeps` flag causes *makepkg* to remove the make dependencies
 
 **Note:**
 
-*   These dependencies must be available in the configured repositories; see [pacman#Repositories](/index.php/Pacman#Repositories "Pacman") for details. Alternatively, one can manually install dependencies prior to building (`pacman -S --asdeps *dep1* *dep2*`).
+*   These dependencies must be available in the configured repositories; see [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman") for details. Alternatively, one can manually install dependencies prior to building (`pacman -S --asdeps *dep1* *dep2*`).
 *   Only global values are used when installing dependencies, i.e any override done in a split package's packaging function will not be used. [[4]](https://patchwork.archlinux.org/patch/2271/)
 
 Once all dependencies are satisfied and the package builds successfully, a package file (`*pkgname*-*pkgver*.pkg.tar.xz`) will be created in the working directory. To install, use `-i`/`--install` (same as `pacman -U *pkgname*-*pkgver*.pkg.tar.xz`):

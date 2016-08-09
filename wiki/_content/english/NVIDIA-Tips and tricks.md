@@ -6,18 +6,17 @@
 *   [4 Check the power source](#Check_the_power_source)
 *   [5 Listening to ACPI events](#Listening_to_ACPI_events)
 *   [6 Displaying GPU temperature in the shell](#Displaying_GPU_temperature_in_the_shell)
-    *   [6.1 Method 1 - nvidia-settings](#Method_1_-_nvidia-settings)
-    *   [6.2 Method 2 - nvidia-smi](#Method_2_-_nvidia-smi)
-    *   [6.3 Method 3 - nvclock](#Method_3_-_nvclock)
+    *   [6.1 nvidia-settings](#nvidia-settings)
+    *   [6.2 nvidia-smi](#nvidia-smi)
+    *   [6.3 nvclock](#nvclock)
 *   [7 Set fan speed at login](#Set_fan_speed_at_login)
-*   [8 Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers)
-*   [9 Manual configuration](#Manual_configuration)
-    *   [9.1 Disabling the logo on startup](#Disabling_the_logo_on_startup)
-    *   [9.2 Overriding monitor detection](#Overriding_monitor_detection)
-    *   [9.3 Enabling brightness control](#Enabling_brightness_control)
-    *   [9.4 Enabling SLI](#Enabling_SLI)
-    *   [9.5 Enabling overclocking](#Enabling_overclocking)
-        *   [9.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
+*   [8 Manual configuration](#Manual_configuration)
+    *   [8.1 Disabling the logo on startup](#Disabling_the_logo_on_startup)
+    *   [8.2 Overriding monitor detection](#Overriding_monitor_detection)
+    *   [8.3 Enabling brightness control](#Enabling_brightness_control)
+    *   [8.4 Enabling SLI](#Enabling_SLI)
+    *   [8.5 Enabling overclocking](#Enabling_overclocking)
+        *   [8.5.1 Setting static 2D/3D clocks](#Setting_static_2D.2F3D_clocks)
 
 ## Fixing terminal resolution
 
@@ -110,7 +109,7 @@ If you are on laptop, it might be a good idea to install and enable the [acpid](
 
 ## Displaying GPU temperature in the shell
 
-### Method 1 - nvidia-settings
+### nvidia-settings
 
 **Note:** This method requires that you are using X. Use Method 2 or Method 3 if you are not. Also note that Method 3 currently does not not work with newer NVIDIA cards such as GeForce 200 series cards as well as embedded GPUs such as the Zotac IONITX's 8800GS.
 
@@ -137,7 +136,7 @@ In order to get just the temperature for use in utils such as `rrdtool` or `conk
 
  `$ nvidia-settings -q gpucoretemp -t`  `41` 
 
-### Method 2 - nvidia-smi
+### nvidia-smi
 
 Use nvidia-smi which can read temps directly from the GPU without the need to use X at all. This is important for a small group of users who do not have X running on their boxes, perhaps because the box is headless running server apps. To display the GPU temperature in the shell, use nvidia-smi as follows:
 
@@ -193,7 +192,7 @@ In order to get just the temperature for use in utils such as rrdtool or conky, 
 
 Reference: [http://www.question-defense.com/2010/03/22/gpu-linux-shell-temp-get-nvidia-gpu-temperatures-via-linux-cli](http://www.question-defense.com/2010/03/22/gpu-linux-shell-temp-get-nvidia-gpu-temperatures-via-linux-cli).
 
-### Method 3 - nvclock
+### nvclock
 
 Use [nvclock](https://aur.archlinux.org/packages/nvclock/) which is available from the [AUR](/index.php/AUR "AUR").
 
@@ -239,27 +238,6 @@ Name=nvidia-fan-speed
 ```
 
 **Note:** Since the drivers version 349.16, `GPUCurrentFanSpeed` has to be replaced with `GPUTargetFanSpeed`.[[1]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
-
-## Switching between NVIDIA and nouveau drivers
-
-If you need to switch between drivers, you may use the following script, run as root (say yes to all confirmations):
-
-```
-#!/bin/bash
-BRANCH= # Enter a branch if needed, i.e. -340xx or -304xx
-NVIDIA=nvidia${BRANCH} # If no branch entered above this would be "nvidia"
-NOUVEAU=xf86-video-nouveau
-
-# Replace -R with -Rs to if you want to remove the unneeded dependencies
-if [ $(pacman -Qqs ^mesa-libgl$) ]; then
-    pacman -S $NVIDIA ${NVIDIA}-libgl # Add lib32-${NVIDIA}-libgl and ${NVIDIA}-lts if needed
-    # pacman -R $NOUVEAU
-elif [ $(pacman -Qqs ^${NVIDIA}$) ]; then
-    pacman -S --needed $NOUVEAU mesa-libgl # Add lib32-mesa-libgl if needed
-    pacman -R $NVIDIA # Add ${NVIDIA}-lts if needed
-fi
-
-```
 
 ## Manual configuration
 

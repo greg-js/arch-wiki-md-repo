@@ -87,7 +87,7 @@ extract() {
 
 ```
 
-**Note:** Make sure `extglob` is enabled: `shopt -s extglob`, by adding it to the `~/.bashrc` (see: [Greg's Wiki:glob#Options which change globbing behavior](http://mywiki.wooledge.org/glob#Options_which_change_globbing_behavior)). It is enabled by default, if using [Bash completion](#Tab_completion).
+**Note:** Make sure `extglob` is enabled: `shopt -s extglob`, by adding it to the `~/.bashrc` (see [gregswiki:glob#Options_which_change_globbing_behavior](http://mywiki.wooledge.org/glob#Options_which_change_globbing_behavior "gregswiki:glob")).
 
 Another way to do this is to install a specialized package. For example:
 

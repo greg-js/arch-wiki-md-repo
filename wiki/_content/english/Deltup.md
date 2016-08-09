@@ -5,7 +5,7 @@ Delta updates save time and size in downloading and updating the system. Package
 *   [1 Install](#Install)
 *   [2 Configuration](#Configuration)
 *   [3 Comparisons](#Comparisons)
-*   [4 Disadvantage](#Disadvantage)
+*   [4 Disadvantages](#Disadvantages)
 
 ## Install
 
@@ -27,7 +27,7 @@ Server = http://delta.archlinux.fr/$repo/os/$arch
 .....
 ```
 
-Then edit `/etc/pacman.conf` uncommenting (removing `#`) the option `UseDelta`:
+Then edit `/etc/pacman.conf` uncommenting the option `UseDelta`:
 
  `/etc/pacman.conf` 
 ```
@@ -72,7 +72,7 @@ After enabling delta, check again for the updates available (now the option `Use
 
 In this way we do not need to download 416,89 MB of packages but only 343,15 MB, so we obtain a shorter time in the update process.
 
-## Disadvantage
+## Disadvantages
 
 This method isn't fully supported in Arch Linux as opposed to [OpenSuSE](http://www.opensuse.org) or [Gentoo](http://www.gentoo.org) which use this as standard for their update system. In fact the available delta repository are just a few. The results can be much better if delta have more deltup packages between previous versions in the repositories. For example, in the repository the author uses, there is only -1 version of each package.
 

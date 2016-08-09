@@ -91,7 +91,7 @@ $4 00000b31
 
 As you might have noticed, the Sleep button in the sample output is actually recognized as *SBTN*, rather than the *SLPB* label specified in the default `/etc/acpi/handler.sh`. In order for Sleep function to work properly on this machine, we would need to replace *SLPB)* with *SBTN)*.
 
-Using this information as a base, you can easily customize the `/etc/acpi/handler.sh` file to execute a variety of commands depending on which event is triggered. See the [Tips & Tricks](#Tips_.26_Tricks) section below for other commonly used commands.
+Using this information as a base, you can easily customize the `/etc/acpi/handler.sh` file to execute a variety of commands depending on which event is triggered. See the [#Tips and tricks](#Tips_and_tricks) section below for other commonly used commands.
 
 ### Alternative configuration
 
@@ -245,7 +245,7 @@ See [[1]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e0
 
 **Note:**
 
-*   If the LCD backlight is not turned off when the lid is closed, you may do so manually by running `getXuser xset dpms force off` and `getXuser xset dpms force on` respectively on lid close and lid open events. Should the display be blanked, but the backlight left on, instead use [vbetool](https://www.archlinux.org/packages/?name=vbetool) with `vbetool dpms off` and `vbetool dpms on`. See also [XScreenSaver#DPMS settings](/index.php/XScreenSaver#DPMS_settings "XScreenSaver").
+*   If the LCD backlight is not turned off when the lid is closed, you may do so manually by running `getXuser xset dpms force off` and `getXuser xset dpms force on` respectively on lid close and lid open events. Should the display be blanked, but the backlight left on, instead use [vbetool](https://www.archlinux.org/packages/?name=vbetool) with `vbetool dpms off` and `vbetool dpms on`. See also [XScreenSaver#Configuration](/index.php/XScreenSaver#Configuration "XScreenSaver").
 *   When using *who* or *w*, make sure `/run/utmp` is created at boot-time. See `man utmp` for details.
 
 #### Connect to acpid socket

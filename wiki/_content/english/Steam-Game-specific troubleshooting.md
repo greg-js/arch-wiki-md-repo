@@ -29,6 +29,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [8.2 Using Ctrl Key](#Using_Ctrl_Key)
     *   [8.3 Logging into SHiFT](#Logging_into_SHiFT)
 *   [9 Borderlands the Pre-Sequel](#Borderlands_the_Pre-Sequel)
+    *   [9.1 Keyboard not working](#Keyboard_not_working)
 *   [10 Cities in Motion 2](#Cities_in_Motion_2)
     *   [10.1 Dialog boxes fail to display properly](#Dialog_boxes_fail_to_display_properly)
 *   [11 Cities Skylines](#Cities_Skylines)
@@ -409,6 +410,10 @@ As an alternative the following can be added to the launch options in Steam:
 SSL_CERT_DIR="/etc/ssl/certs" %command%
 
 ```
+
+### Keyboard not working
+
+Using dwm, no keyboard input seems to register with BL:TPQ. Switching to openbox helped solved the issue, no other fix could be found. It's either a specific dwm issue or tiling WMs in general.
 
 ## Cities in Motion 2
 
@@ -1864,7 +1869,7 @@ exec dosbox -conf dosbox_wiz6.conf -conf dosbox_wiz6_launch_linux.conf -noconsol
 
 ### Dependencies
 
-*   [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image)
+*   [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image) (Required to enable keyboard functionality in-game)
 
 ### Hangs on startup
 

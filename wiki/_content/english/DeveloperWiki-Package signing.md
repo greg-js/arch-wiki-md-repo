@@ -52,7 +52,7 @@ To prepare for checking signed packages, run the [pacman-key](/index.php/Pacman-
 
 ```
 
-If this command is never run, pacman will abort saying “failed to commit transaction (invalid or corrupted package [PGP signature])” when it encounters packages signed with an unknown key.
+If this command is never run, pacman will abort saying “*failed to commit transaction (invalid or corrupted package [PGP signature])*” when it encounters packages signed with an unknown key.
 
 Pacman usually prompts to add new keys of signed packages to its keyring. Keys can be manually compared against the lists of Arch [developers](/index.php/Developer "Developer") and [trusted users](/index.php/Trusted_Users "Trusted Users") on the [Arch Linux web site](https://www.archlinux.org). If the *SigLevel* configuration specifies “TrustAll”, pacman considers keys to be trusted once they are imported to the keyring, so it will then continue installing each package. If pacman does not prompt to add new keys (cannot find on configured key server perhaps?), they could still be added manually by using the [pacman-key](/index.php/Pacman-key "Pacman-key") tool.
 

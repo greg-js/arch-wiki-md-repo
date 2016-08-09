@@ -65,7 +65,7 @@ One variable you may want to set is `PATH`.
 
 #### Service example
 
-Create the [drop-in](/index.php/Systemd#Drop-in_snippets "Systemd") directory `/etc/systemd/system/user@.service.d/` and inside create a file that has the extension `.conf` (e.g. `local.conf`):
+Create the [drop-in](/index.php/Systemd#Drop-in_files "Systemd") directory `/etc/systemd/system/user@.service.d/` and inside create a file that has the extension `.conf` (e.g. `local.conf`):
 
  `/etc/systemd/system/user@.service.d/local.conf` 
 ```

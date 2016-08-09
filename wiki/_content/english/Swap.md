@@ -133,7 +133,7 @@ Activate the swap file:
 
 ```
 
-Finally, edit [fstab](/index.php/Fstab#File_example "Fstab") to add an entry for the swap file:
+Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap file:
 
  `/etc/fstab`  `/swapfile none swap defaults 0 0` 
 

@@ -286,5 +286,5 @@ Below is an example `chromium-flags.conf` file that defines the flags `--start-m
 ## See also
 
 *   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") - Systemd service that saves Chromium profile in tmpfs and syncs to disk
-*   [Tmpfs](/index.php/Tmpfs#tmpfs "Tmpfs") - Tmpfs Filesystem in `/etc/fstab`
+*   [Tmpfs](/index.php/Tmpfs "Tmpfs") - Tmpfs Filesystem in `/etc/fstab`
 *   [Official tmpfs kernel Documentation](https://www.kernel.org/doc/Documentation/filesystems/tmpfs.txt)

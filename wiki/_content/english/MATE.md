@@ -64,55 +64,23 @@ The base desktop consists of [marco](https://www.archlinux.org/packages/?name=ma
 
 ### Additional MATE packages
 
-There are additional official packages not included in the [mate](https://www.archlinux.org/groups/x86_64/mate/) or [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) groups because they are not necessarily useful to everyone.
+There are a number of other unofficial MATE applications that are contributed to and maintained by the MATE community and therefore not included in the [mate](https://www.archlinux.org/groups/x86_64/mate/) or [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) groups.
 
-*   **GNOME Main Menu** — A MATE panel applet similar to the traditional main-menu, but with a few additions.
+*   **Caja Actions** — An extension for Caja which allows arbitrary programs to be launched via context menu.
 
-	[http://mate-desktop.org](http://mate-desktop.org) || [gnome-main-menu](https://www.archlinux.org/packages/?name=gnome-main-menu)
+	[https://github.com/raveit65/caja-actions](https://github.com/raveit65/caja-actions) || [caja-actions](https://www.archlinux.org/packages/?name=caja-actions)
 
-*   **MATE Netbook** — This applet will automatically maximize all windows and provides an application switcher applet.
+*   **Dock Applet** — Application dock for the MATE panel.
 
-	[http://mate-desktop.org](http://mate-desktop.org) || [mate-netbook](https://www.archlinux.org/packages/?name=mate-netbook)
-
-There are also a number of other unofficial MATE applications that are contributed to and maintained by the MATE community and therefore not included in the [mate](https://www.archlinux.org/groups/x86_64/mate/) or [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) groups.
-
-*   **MATE AccountsDialog** — An application to view and modify user accounts information for MATE.
-
-	[https://github.com/NiceandGently/mate-accountsdialog](https://github.com/NiceandGently/mate-accountsdialog) || [mate-accountsdialog](https://www.archlinux.org/packages/?name=mate-accountsdialog)
-
-*   **Lock Keys Applet** — A MATE panel applet that shows which of the CapsLock, NumLock and ScrollLock keys are on and which are off.
-
-	[http://www.zavedil.com/mate-lock-keys-applet/](http://www.zavedil.com/mate-lock-keys-applet/) || [mate-applet-lockkeys](https://www.archlinux.org/packages/?name=mate-applet-lockkeys)
+	[https://github.com/robint99/dock-applet](https://github.com/robint99/dock-applet) || [mate-applet-dock](https://www.archlinux.org/packages/?name=mate-applet-dock)
 
 *   **Online Radio Applet** — A MATE panel applet to let you play your favourite online radio station with a single click.
 
 	[http://www.zavedil.com/online-radio-applet/](http://www.zavedil.com/online-radio-applet/) || [mate-applet-streamer](https://www.archlinux.org/packages/?name=mate-applet-streamer)
 
-*   **MATE Color Manager** — Color management application for MATE.
-
-	[https://github.com/NiceandGently/mate-color-manager](https://github.com/NiceandGently/mate-color-manager) || [mate-color-manager](https://www.archlinux.org/packages/?name=mate-color-manager)
-
-*   **MATE Disk Utility** — Disk management application for MATE.
-
-	[https://github.com/NiceandGently/mate-disk-utility](https://github.com/NiceandGently/mate-disk-utility) || [mate-disk-utility](https://www.archlinux.org/packages/?name=mate-disk-utility)
-
-*   **MATE Screensaver Hacks** — Enable screensavers from xscreensaver for MATE.
-
-	[http://www.jwz.org/xscreensaver/](http://www.jwz.org/xscreensaver/) || [mate-screensaver-hacks](https://www.archlinux.org/packages/?name=mate-screensaver-hacks)
-
-*   **Variety** — Variety changes the wallpaper on a regular interval using user-specified or automatically downloaded images.
-
-	[http://peterlevi.com/variety/](http://peterlevi.com/variety/) || [variety](https://www.archlinux.org/packages/?name=variety)
-
-The followings are also available via the AUR and integrate with MATE but the packages are not maintained by the MATE team.
-
-*   **Dock Applet** — Application dock for the MATE panel.
-
-	[https://github.com/robint99/dock-applet](https://github.com/robint99/dock-applet) || [mate-applet-dock](https://aur.archlinux.org/packages/mate-applet-dock/)
-
 *   **MATE Menu** — Advanced menu for MATE Panel, a fork of MintMenu.
 
-	[https://bitbucket.org/ubuntu-mate/mate-menu](https://bitbucket.org/ubuntu-mate/mate-menu) || [mate-menu](https://aur.archlinux.org/packages/mate-menu/)
+	[https://bitbucket.org/ubuntu-mate/mate-menu](https://bitbucket.org/ubuntu-mate/mate-menu) || [mate-menu](https://www.archlinux.org/packages/?name=mate-menu)
 
 *   **MATE Tweak** — Tweak tool for MATE, a fork of mintDesktop.
 

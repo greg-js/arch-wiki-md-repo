@@ -45,7 +45,7 @@ To enable bootup, shutdown and reboot sounds using canberra, [enable](/index.php
 
 ### Write your own canberra app
 
-You can write your own libcanberra sound events easily in some programming languages, or you can simply use bash.
+You can write your own libcanberra sound events easily in many programming languages using [GSound](https://wiki.gnome.org/Projects/GSound) through GObject-Introspection, or you can simply use bash.
 
 **Bash**
 
@@ -94,6 +94,56 @@ init
 		PROP_EVENT_ID, "phone-incoming-call",
 		PROP_EVENT_DESCRIPTION, "hello world")
 	Thread.usleep (2000000)
+```
+
+**JavaScript**
+
+*   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [gjs](https://www.archlinux.org/packages/?name=gjs)
+
+ `hello_world.js` 
+```
+#!/usr/bin/gjs
+const GLib = imports.gi.GLib;
+const GSound = imports.gi.GSound;
+
+let hello = new GSound.Context();
+hello.init(null);
+hello.play_simple({ "event.id" : "phone-incoming-call" }, null);
+GLib.usleep (2000000);
+```
+
+**Lua**
+
+*   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [lua-lgi](https://www.archlinux.org/packages/?name=lua-lgi)
+
+ `hello_world.lua` 
+```
+#!/usr/bin/lua
+lgi = require 'lgi'
+GLib = lgi.require('GLib')
+GSound = lgi.require('GSound')
+
+hello = GSound.Context()
+hello:init()
+hello:play_simple({[GSound.ATTR_EVENT_ID] = "phone-incoming-call"})
+GLib.usleep(2000000)
+```
+
+**Python**
+
+*   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
+
+ `hello_world.py` 
+```
+#!/usr/bin/python
+import gi
+gi.require_version('GSound', '1.0')
+from gi.repository import GLib, GSound
+
+hello = GSound.Context()
+hello.init()
+hello.play_simple({ GSound.ATTR_EVENT_ID : "phone-incoming-call" })
+GLib.usleep (2000000);
 ```
 
 **Vala**

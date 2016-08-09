@@ -4,11 +4,12 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
 
 *   [1 Installation](#Installation)
     *   [1.1 Unsupported drivers](#Unsupported_drivers)
-    *   [1.2 Alternate install: custom kernel](#Alternate_install:_custom_kernel)
+    *   [1.2 Custom kernel](#Custom_kernel)
     *   [1.3 Pure Video HD](#Pure_Video_HD)
     *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
         *   [1.4.1 Pacman hook](#Pacman_hook)
     *   [1.5 Hardware accelerated video decoding with XvMC](#Hardware_accelerated_video_decoding_with_XvMC)
+    *   [1.6 Switching between NVIDIA and nouveau drivers](#Switching_between_NVIDIA_and_nouveau_drivers)
 *   [2 Configuration](#Configuration)
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
@@ -67,7 +68,7 @@ However, Nvidia's legacy drivers are still available and might provide better 3D
 
 **Tip:** The legacy nvidia-96xx-dkms and nvidia-173xx-dkms drivers can also be installed from the unofficial [[city] repository](http://pkgbuild.com/~bgyorgy/city.html). (It is strongly advised that you do not skip any dependencies restriction when installing from here)
 
-### Alternate install: custom kernel
+### Custom kernel
 
 If you are using a custom kernel, compilation of the Nvidia kernel modules can be automated with [DKMS](/index.php/DKMS "DKMS").
 
@@ -107,6 +108,27 @@ Exec=/usr/bin/mkinitcpio -p linux
 ### Hardware accelerated video decoding with XvMC
 
 Accelerated decoding of MPEG-1 and MPEG-2 videos via [XvMC](/index.php/XvMC "XvMC") are supported on GeForce4, GeForce 5 FX, GeForce 6 and GeForce 7 series cards. See [XvMC](/index.php/XvMC "XvMC") for details.
+
+### Switching between NVIDIA and nouveau drivers
+
+If you need to switch between drivers, you may use the following script, run as root (say yes to all confirmations):
+
+```
+#!/bin/bash
+BRANCH= # Enter a branch if needed, i.e. -340xx or -304xx
+NVIDIA=nvidia${BRANCH} # If no branch entered above this would be "nvidia"
+NOUVEAU=xf86-video-nouveau
+
+# Replace -R with -Rs to if you want to remove the unneeded dependencies
+if [ $(pacman -Qqs ^mesa-libgl$) ]; then
+    pacman -S $NVIDIA ${NVIDIA}-libgl # Add lib32-${NVIDIA}-libgl and ${NVIDIA}-lts if needed
+    # pacman -R $NOUVEAU
+elif [ $(pacman -Qqs ^${NVIDIA}$) ]; then
+    pacman -S --needed $NOUVEAU mesa-libgl # Add lib32-mesa-libgl if needed
+    pacman -R $NVIDIA # Add ${NVIDIA}-lts if needed
+fi
+
+```
 
 ## Configuration
 

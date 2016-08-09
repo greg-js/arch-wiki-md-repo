@@ -40,6 +40,10 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### August 2016
 
+*   [08 August 2016] [ASA-201608-9](https://lists.archlinux.org/pipermail/arch-security/2016-August/000683.html) [curl](https://www.archlinux.org/packages/?name=curl) multiple issues
+*   [08 August 2016] [ASA-201608-8](https://lists.archlinux.org/pipermail/arch-security/2016-August/000682.html) [libupnp](https://www.archlinux.org/packages/?name=libupnp) arbitrary filesystem access
+*   [08 August 2016] [ASA-201608-7](https://lists.archlinux.org/pipermail/arch-security/2016-August/000681.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) denial of service
+*   [08 August 2016] [ASA-201608-6](https://lists.archlinux.org/pipermail/arch-security/2016-August/000680.html) [glibc](https://www.archlinux.org/packages/?name=glibc) denial of service
 *   [05 August 2016] [ASA-201608-5](https://lists.archlinux.org/pipermail/arch-security/2016-August/000679.html) [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) multiple issues
 *   [05 August 2016] [ASA-201608-4](https://lists.archlinux.org/pipermail/arch-security/2016-August/000678.html) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) multiple issues
 *   [05 August 2016] [ASA-201608-3](https://lists.archlinux.org/pipermail/arch-security/2016-August/000677.html) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) multiple issues

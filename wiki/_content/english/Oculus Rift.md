@@ -2,19 +2,18 @@ The Oculus Rift is a virtual reality head-mounted display developed by [Oculus V
 
 ## Contents
 
-*   [1 Basic Setup](#Basic_Setup)
+*   [1 Installation](#Installation)
     *   [1.1 Hardware](#Hardware)
     *   [1.2 SDK](#SDK)
     *   [1.3 Video Mode](#Video_Mode)
-        *   [1.3.1 xrandrift](#xrandrift)
-        *   [1.3.2 Manually, using xrandr](#Manually.2C_using_xrandr)
+        *   [1.3.1 Manually, using xrandr](#Manually.2C_using_xrandr)
 *   [2 Working applications](#Working_applications)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Kernel log spamming by DK2 camera](#Kernel_log_spamming_by_DK2_camera)
     *   [3.2 Camera misbehaving after suspend/resume](#Camera_misbehaving_after_suspend.2Fresume)
     *   [3.3 Inaccurate latency readings for legacy applications](#Inaccurate_latency_readings_for_legacy_applications)
 
-## Basic Setup
+## Installation
 
 ### Hardware
 
@@ -35,33 +34,6 @@ For the Rift to function optimally, only certain video modes work very well. In 
 The Rift itself needs to be the primary monitor, or synchronization will not work properly.
 
 **Note:** Having the display rotated adds an extra frame of latency, which makes it operate at the equivalent of Extended Mode on Windows. With the display unrotated, this extra frame of latency is removed and you get a much improved experience (equivalent of Direct Mode on Windows). Unfortunately only certain applications work correctly with this. You should test each to see if each application works correctly unrotated first.
-
-#### xrandrift
-
-A package exists on the AUR called [riftutilities-git](https://aur.archlinux.org/packages/riftutilities-git/) which contains (currently only) a script called `xrandrift`. It uses `xrandr` to determine suitable video modes (based on arguments passed) to run your rift, as well as trying to record your current video mode, and then switches back after the program exits.
-
-For best latency (for applications which support it), run the programs like so:
-
-```
-   xrandrift OculusWorldDemo
-
-```
-
-**Note:** You may experience tearing due to the selected video mode being too big to fit on the same framebuffer as your device. If you see an odd vertical tearing in the Rift, try running with `-o` instead.
-
-For Source games, such as Team Fortress 2 (in properties, set launch options):
-
-```
-   xrandrift -e -p %command% -freq 75
-
-```
-
-For games which only run properly at 60Hz:
-
-```
-   xrandrift -s -p OculusWorldDemo
-
-```
 
 #### Manually, using xrandr
 
@@ -88,7 +60,7 @@ The above video modes can have some havoc on your display if you simply use xran
 
 ## Working applications
 
-See [Virtual reality#Working Applications](/index.php/Virtual_reality#Working_Applications "Virtual reality").
+See [Virtual reality#Supported software](/index.php/Virtual_reality#Supported_software "Virtual reality").
 
 ## Troubleshooting
 

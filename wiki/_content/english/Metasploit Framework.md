@@ -269,7 +269,7 @@ msf exploit(ms08_067_netapi) > exploit
 
 ```
 
-If you are lucky, you will be dropped to a Meterpreter session where you can do anything on the remote computer. See [#Meterpreter](#Meterpreter) for available commands.
+If you are lucky, you will be dropped to a Meterpreter session where you can do anything on the remote computer.
 
 ## Bugs
 

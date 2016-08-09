@@ -3,14 +3,14 @@
 ## Contents
 
 *   [1 Server configuration](#Server_configuration)
-    *   [1.1 Creating a share](#Creating_a_share)
-    *   [1.2 Starting services](#Starting_services)
-    *   [1.3 Creating usershare path](#Creating_usershare_path)
-    *   [1.4 Adding a user](#Adding_a_user)
-    *   [1.5 Changing Samba user's password](#Changing_Samba_user.27s_password)
-    *   [1.6 Required ports](#Required_ports)
-    *   [1.7 Sample configuration](#Sample_configuration)
-    *   [1.8 Validate configuration](#Validate_configuration)
+    *   [1.1 smb.conf](#smb.conf)
+    *   [1.2 Creating a share](#Creating_a_share)
+    *   [1.3 Starting services](#Starting_services)
+    *   [1.4 Creating usershare path](#Creating_usershare_path)
+    *   [1.5 Adding a user](#Adding_a_user)
+    *   [1.6 Changing Samba user's password](#Changing_Samba_user.27s_password)
+    *   [1.7 Required ports](#Required_ports)
+    *   [1.8 Sample configuration](#Sample_configuration)
 *   [2 Client configuration](#Client_configuration)
     *   [2.1 List Public Shares](#List_Public_Shares)
     *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
@@ -53,14 +53,18 @@
 
 To share files with Samba, [install](/index.php/Install "Install") the [samba](https://www.archlinux.org/packages/?name=samba) package.
 
-The Samba server is configured in `/etc/samba/smb.conf.default`. Copy the default Samba configuration file to `/etc/samba/smb.conf`:
+### smb.conf
+
+Samba is configured in `/etc/samba/smb.conf`, if this file doesn't exist smbd will fail to start.
+
+To get started you can copy the default config file `/etc/samba/smb.conf.default`:
 
 ```
 # cp /etc/samba/smb.conf.default /etc/samba/smb.conf
 
 ```
 
-Otherwise, smbd will fail to start.
+The available options are documented in the `smb.conf` man page ([link](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)). Whenever you modify the file run the `testparm` command to check for syntactic errrors.
 
 ### Creating a share
 
@@ -76,9 +80,7 @@ Open `/etc/samba/smb.conf` and scroll down to the **Share Definitions** section.
    valid users = %S
 ```
 
-The default config file also shares your printers and contains several commented sample configurations. For more information about available options you can read the `smb.conf` man page (which is also available [online](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)).
-
-The `workgroup` specified in `smb.conf` has to match the in use Windows workgroup. By default it's set to the default Windows workgroup `WORKGROUP`.
+The `workgroup` specified in `smb.conf` has to match the in use Windows workgroup (default `WORKGROUP`).
 
 ### Starting services
 
@@ -99,14 +101,14 @@ This creates the usershare directory in `/var/lib/samba`:
 
 ```
 
-This makes the group sambashare:
+This creates the group sambashare:
 
 ```
 # groupadd -r sambashare
 
 ```
 
-This changes the owner of the directory and group you just created to root:
+This changes the owner of the directory to root and the group to sambashare:
 
 ```
 # chown root:sambashare /var/lib/samba/usershare
@@ -120,7 +122,7 @@ This changes the permissions of the usershare directory so that users in the gro
 
 ```
 
-Set the following variables in `smb.conf` configuration file:
+Set the following parameters in the `smb.conf` configuration file:
 
  `/etc/samba/smb.conf` 
 ```
@@ -142,7 +144,7 @@ Add your user to the *sambashare* group. Replace `*your_username*` with the name
 
 Restart `smbd.service` and `nmbd.service` services.
 
-Log out and log back in. You should now be able to configure your samba share using GUI. For example, in [Thunar](/index.php/Thunar "Thunar") you can right click on any directory and share it on the network. If you want to share pathes inside your home directory you must make it listable for the group others.
+Log out and log back in. You should now be able to configure your samba share using GUI. For example, in [Thunar](/index.php/Thunar "Thunar") you can right click on any directory and share it on the network. If you want to share paths inside your home directory you must make it listable for the group others.
 
 ### Adding a user
 
@@ -226,15 +228,6 @@ See `man smb.conf` for details and explanation of configuration options. There i
 Restart the `smbd` service to apply configuration changes.
 
 **Note:** Connected clients may need to reconnect before configuration changes take effect.
-
-### Validate configuration
-
-The command `testparm` validates the configuration of `smb.conf`:
-
-```
-# testparm -s
-
-```
 
 ## Client configuration
 

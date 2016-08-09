@@ -7,6 +7,7 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [3 dd](#dd)
 *   [4 grep](#grep)
     *   [4.1 Standard error](#Standard_error)
+    *   [4.2 Colored output](#Colored_output)
 *   [5 find](#find)
 *   [6 locate](#locate)
 *   [7 iconv](#iconv)
@@ -16,6 +17,7 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [10 ls](#ls)
     *   [10.1 Long format](#Long_format)
     *   [10.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
+    *   [10.3 Colored output](#Colored_output_2)
 *   [11 mkdir](#mkdir)
 *   [12 mv](#mv)
 *   [13 od](#od)
@@ -119,6 +121,25 @@ $ *command* |& grep *args*
 
 See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
+### Colored output
+
+`grep`'s color output can be helpful for learning [regexp](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") and additional `grep` functionality.
+
+To enable *grep* coloring write the following entry to the shell configuration file (e.g. if using [Bash](/index.php/Bash "Bash")):
+
+ `~/.bashrc`  `alias grep='grep --color=auto'` 
+
+To include file line numbers in the output, add the option `-n` to the line.
+
+The environment variable `GREP_COLOR` can be used to define the default highlight color (the default is red). To change the color find the [ANSI escape sequence](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) for the color liked and add it:
+
+```
+export GREP_COLOR="1;32"
+
+```
+
+`GREP_COLORS` may be used to define specific searches.
+
 ## find
 
 *find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
@@ -129,11 +150,11 @@ Instead, find takes a set of directories and matches each file under them agains
 
 ## locate
 
-[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. When `mlocate` is installed, a script is automatically scheduled to run daily via `systemd`, to update the database. You can also manually run `updatedb` as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so `locate` may not discover files on external devices. See `man updatedb.conf` for details.
+[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. After installation a script is automatically scheduled to run a daily task to update its database. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(1)](http://man7.org/linux/man-pages/man1/updatedb.1.html) for details.
 
-`locate` is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by `locate`. This problem is minimised by regular, typically scheduled use of the `updatedb` command, which (as the name suggests) updates the database.
+The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*. This problem is minimised by regular, typically scheduled use of the *updatedb* command, which (as the name suggests) updates the database.
 
-Before `locate` can be used, the database will need to be created. To do this, simply run `updatedb` as root.
+Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
 
 See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
 
@@ -243,6 +264,22 @@ Below, each file and subdirectory is represented by a line divided into 7 metada
 ### File names containing spaces enclosed in quotes
 
 By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
+
+### Colored output
+
+Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
+
+```
+alias ls='ls --color=auto'
+
+```
+
+The next step will further enhance the colored *ls* output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
+
+```
+eval $(dircolors -b)
+
+```
 
 ## mkdir
 

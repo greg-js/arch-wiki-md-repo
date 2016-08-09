@@ -247,8 +247,6 @@ Options can be changed with the `--set` flag. Some useful examples are
 
 ```
 
-For further configuration tips and tricks see below in [#Specific configuration tips](#Specific_configuration_tips).
-
 **Note:** You can reset your temporary configuration at any time by unplugging and replugging in your tablet.
 
 **Note:** There are some configurations that can only be set up dynamically with xsetwacom. In those cases it is possible to run a script that configures the device calling xsetwacom every time the device is plugged in. See [[1]](http://unix.stackexchange.com/a/290940/89955).

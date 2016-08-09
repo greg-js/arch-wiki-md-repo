@@ -8,7 +8,7 @@ This article explains what RAID is and how to create/manage a software RAID arra
     *   [1.3 RAID level comparison](#RAID_level_comparison)
 *   [2 Implementation](#Implementation)
     *   [2.1 Which type of RAID do I have?](#Which_type_of_RAID_do_I_have.3F)
-*   [3 Setup](#Setup)
+*   [3 Installation](#Installation)
     *   [3.1 Prepare the Devices](#Prepare_the_Devices)
     *   [3.2 Create the Partition Table (GPT)](#Create_the_Partition_Table_.28GPT.29)
         *   [3.2.1 Partitions Types for MBR](#Partitions_Types_for_MBR)
@@ -153,7 +153,7 @@ Since software RAID is implemented by the user, the type of RAID is easily known
 
 However, discerning between FakeRAID and true hardware RAID can be more difficult. As stated, manufacturers often incorrectly distinguish these two types of RAID and false advertising is always possible. The best solution in this instance is to run the `lspci` command and looking through the output to find the RAID controller. Then do a search to see what information can be located about the RAID controller. Hardware RAID controllers appear in this list, but FakeRAID implementations do not. Also, true hardware RAID controller are often rather expensive (~$400+), so if someone customized the system, then it is very likely that choosing a hardware RAID setup made a very noticeable change in the computer's price.
 
-## Setup
+## Installation
 
 Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [official repositories](/index.php/Official_repositories "Official repositories"). *mdadm* is used for administering pure software RAID using plain block devices: the underlying hardware does not provides any RAID logic, just a supply of disks. *mdadm* will work with any collection of block devices. Even if unusual. For example, one can thus make a RAID array from a collection of thumb drives.
 

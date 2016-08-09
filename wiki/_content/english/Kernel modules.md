@@ -79,7 +79,7 @@ Kernel modules can be explicitly loaded during boot and are configured as a stat
 virtio-net
 ```
 
-See `man modules-load.d` for more details.
+See [modules-load.d(5)](http://man7.org/linux/man-pages/man5/modules-load.d.5.html) for more details.
 
 ## Manual module handling
 

@@ -1,16 +1,16 @@
 | **Device** | **Working** |
 | Fan is throttled | Yes |
-| [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
+| [Intel graphics](#Intel_graphics) | Yes |
 | DisplayPort | Yes |
 | VGA | Yes |
 | [Audio](/index.php/Audio "Audio") | Yes |
 | USB 3.0 | Yes |
 | [Ethernet](/index.php/Network "Network") | Yes |
 | [WLAN](/index.php/Wireless "Wireless") | Yes |
-| [WWAN](#WWAN) | Yes |
+| [WWAN](#WWAN_.28and_GPS.29_adapter) | Yes |
 | [GPS](/index.php/GPS "GPS") | Yes |
-| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Buggy device |
-| [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
+| [Bluetooth](#Bluetooth_adapter) | Buggy device |
+| [Touchpad](#Synaptics_Touchpad) | Yes |
 | Pointstick | Yes |
 | [Backlight control](/index.php/Backlight "Backlight") | Yes |
 | [Function keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") | Yes |
@@ -58,7 +58,7 @@ The integrated [Bluetooth](/index.php/Bluetooth "Bluetooth") device [BCM20702A0]
 
 ## Power management
 
-Hardware-specific power management functions are described below, for more generic ones [power management](/index.php/Power_management "Power management") should also be reviewed thoroughly. For a nice all in one power management package consider [TLP](/index.php/TLP "TLP").
+Hardware-specific power management functions are described below, for more generic ones [power management](/index.php/Power_management "Power management") should also be reviewed thoroughly. For a nice all-in-one power management package consider [TLP](/index.php/TLP "TLP").
 
 ### Intel graphics
 

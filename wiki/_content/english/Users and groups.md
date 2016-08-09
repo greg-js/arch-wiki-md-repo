@@ -269,10 +269,8 @@ Also keep in mind the following notes:
 
 *   If you are using [sudo](/index.php/Sudo "Sudo") make sure you update your `/etc/sudoers` to reflect the new username(s) (via the visudo command as root).
 *   If you modified your PATH statement in your `~/.bashrc`, make sure you change it to reflect the new username.
-*   Likewise, be sure you change any config file such as `/etc/rc.local` or whatever if you are pointing it to a script or mountpoint, etc. within the old user's home directory.
 *   Personal [crontabs](/index.php/Cron#Crontab_format "Cron") need to be adjusted by renaming the user's file in `/var/spool/cron` from the old to the new name, and then opening `crontab -e` to change any relevant paths and have it adjust the file permissions accordingly.
 *   [Wine's](/index.php/Wine "Wine") personal folders/files' contents in `~/.wine/drive_c/users`, `~/.local/share/applications/wine/Programs` and possibly more need to be manually renamed/edited.
-*   The procedure to [enable spell checking](/index.php/Firefox#Enable_spell_checking "Firefox") in Firefox may need to be redone, or else the check-as-you-type spelling might not work after renaming the user.
 *   Certain Thunderbird addons, like [Enigmail](http://enigmail.mozdev.org/home/index.php), may need to be reinstalled.
 *   Anything on your system (desktop shortcuts, shell scripts, etc.) that uses an absolute path to your home dir (i.e. `/home/oldname`) will need to be changed to reflect your new name. To avoid these problems in shell scripts, simply use the `~` or `$HOME` variables for home directories.
 *   Also do not forget to edit accordingly the configuration files in `/etc` that relies on your absolute path (i.e. Samba, CUPS, so on). A nice way to learn what files you need to update involves using the grep command this way: `# grep -r {old_user} *`
@@ -390,11 +388,11 @@ Updates to the [filesystem](https://www.archlinux.org/packages/?name=filesystem)
 
 This section explains the purpose of the essential groups from the [core/filesystem](https://git.archlinux.org/svntogit/packages.git/tree/trunk/group?h=packages/filesystem) package. There are many other groups, which will be created with [correct GID](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") when the relevant package is installed. See the main page for the software for details.
 
-**Note:** A later removal of the package does not remove the respective user/group again. This is intentional because any files created during its usage would otherwise be left orphaned as a potential security risk.
+**Note:** A later removal of a package does not remove the automatically created user/group (UID/GID) again. This is intentional because any files created during its usage would otherwise be left orphaned as a potential security risk.
 
 ### User groups
 
-Workstation/desktop users often add their non-root user to some of following groups to allow access to peripherals and other hardware and facilitate system administration:
+Non-root workstation/desktop users often need to be added to some of following groups to allow access to hardware peripherals and facilitate system administration:
 
 | Group | Affected files | Purpose |
 | adm | Administration group, similar to `wheel`. |
@@ -411,12 +409,12 @@ Workstation/desktop users often add their non-root user to some of following gro
 
 ### System groups
 
-The following groups are used for system purposes and are not likely to be used by users:
+The following groups are used for system purposes, an assignment to users is only required for dedicated purposos:
 
 | Group | Affected files | Purpose |
 | dbus | used internally by [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Right to use [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") command. |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | See [Core utilities#locate](/index.php/Core_utilities#locate "Core utilities"). |
 | lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to parallel port devices (printers and others) and read-only access to [CUPS](/index.php/CUPS "CUPS") files. If you run a non-printer parallel port device, see [FS#50009](https://bugs.archlinux.org/task/50009) for implied problems. |
 | mail | `/usr/bin/mail` |
 | nobody | Unprivileged group. |
@@ -445,7 +443,7 @@ There are some notable exceptions which require adding a user to some of these g
 
 ### Unused groups
 
-Following groups are currently of no use for anyone:
+The following groups are currently not used for any purpose:
 
 | Group | Affected files | Purpose |
 | bin | none | Historical |

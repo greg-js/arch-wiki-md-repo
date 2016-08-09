@@ -180,7 +180,7 @@ about:plugins
 
 ### 多媒体播放
 
-Firefox会尝试使用[FFmpeg](/index.php/FFmpeg "FFmpeg")播放HTML5的`<audio>`和`<video>`标签内的多媒体内容，需要先安装[FFmpeg](https://www.archlinux.org/packages/?name=FFmpeg)。
+Firefox会尝试使用[FFmpeg](/index.php/FFmpeg "FFmpeg")播放HTML5的`<audio>`和`<video>`标签内的多媒体内容，需要先安装[ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg)。
 
 重启Firefox。你可以到[Youtube HTML5页面](http://www.youtube.com/html5)或者[这个网页](http://www.quirksmode.org/html5/tests/video.html)来验证软件包正确安装并启用了。
 

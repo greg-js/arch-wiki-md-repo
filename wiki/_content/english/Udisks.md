@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Mount helpers](#Mount_helpers)
-    *   [3.1 Devmon](#Devmon)
+    *   [3.1 devmon](#devmon)
     *   [3.2 udevadm monitor](#udevadm_monitor)
     *   [3.3 udiskie](#udiskie)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -15,7 +15,6 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
     *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
-    *   [5.3 Devices no longer mounted after physical removal](#Devices_no_longer_mounted_after_physical_removal)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -34,7 +33,7 @@ See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks
 
 The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications") and [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality").
 
-### Devmon
+### devmon
 
 [udevil](https://www.archlinux.org/packages/?name=udevil) includes [devmon](http://igurublog.wordpress.com/downloads/script-devmon), which is compatible with *udisks* and *udisks2*. It uses mount helpers with the following priority:
 
@@ -176,23 +175,6 @@ or for all devices:
 ```
 
 See `man udisks` for more information.
-
-### Devices no longer mounted after physical removal
-
-This may happen when both udisks and [systemd](/index.php/Systemd "Systemd") try to unmount a device that is no longer present. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1588027#p1588027) [[5]](https://github.com/systemd/systemd/issues/1741) Example error messages:
-
-```
-Jan 16 18:46:04 thinkpad systemd[1]: media-ASMT_2105.mount: Unit is bound to inactive unit dev-sdc2.device. Stopping, too.
-Jan 16 18:46:04 thinkpad systemd[1]: Unmounting /media/ASMT_2105...
-
-```
-
-To reset the state of the mount unit, run:
-
-```
-# systemctl reset-failed
-
-```
 
 ## See also
 

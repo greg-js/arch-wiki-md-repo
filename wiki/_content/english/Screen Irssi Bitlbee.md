@@ -180,4 +180,4 @@ replacing TAG as necessary. In the current version, those occur on lines 181 and
 
 If you use a laptop, you likely suspend and change wireless networks often, which causes your ssh client to lose connection. This can be annoying for a chat client you expect to always be available.
 
-To fix this, try [Mosh](/index.php/Secure_Shell#SSH_alternative:_Mobile_Shell_-_responsive.2C_survives_disconnects "Secure Shell"), which is a shell that seamlessly deals with reconnection after resuming or changing wireless networks.
+To fix this, try [Mosh](/index.php/Secure_Shell#Mosh "Secure Shell"), which is a shell that seamlessly deals with reconnection after resuming or changing wireless networks.

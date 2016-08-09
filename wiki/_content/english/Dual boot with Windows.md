@@ -70,9 +70,9 @@ However if Arch is installed in BIOS-GPT in one disk and Windows is installed in
 
 All pre-installed Windows 8/8.1 systems by default boot in UEFI-GPT mode and have UEFI Secure Boot enabled by default. This is mandated by Microsoft for all OEM pre-installed systems.
 
-Arch Linux install media currently supports Secure Boot but it requires some manual steps by the user to [setup the HashTool while booting](/index.php/Secure_Boot#Secure_boot_archiso "Secure Boot").
+Arch Linux install media currently supports Secure Boot. See [Secure Boot#Booting archiso](/index.php/Secure_Boot#Booting_archiso "Secure Boot").
 
-So it is advisable to disable UEFI Secure Boot in the firmware setup manually before attempting to boot Arch Linux. Windows 8/8.1 SHOULD continue to boot fine even if Secure boot is disabled. The only issue with regards to disabling UEFI Secure Boot support is that it requires physical access to the system to disable secure boot option in the firmware setup, as Microsoft has explicitly forbidden presence of any method to remotely or programmatically (from within OS) disable secure boot in all Windows 8/8.1 pre-installed systems
+It is advisable to disable UEFI Secure Boot in the firmware setup manually before attempting to boot Arch Linux. Windows 8/8.1 SHOULD continue to boot fine even if Secure boot is disabled. The only issue with regards to disabling UEFI Secure Boot support is that it requires physical access to the system to disable secure boot option in the firmware setup, as Microsoft has explicitly forbidden presence of any method to remotely or programmatically (from within OS) disable secure boot in all Windows 8/8.1 pre-installed systems
 
 ### Fast Start-Up
 
@@ -168,7 +168,7 @@ You can then proceed with [partitioning](/index.php/Partitioning "Partitioning")
 
 Concerning bootloaders, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and [rEFInd](/index.php/REFInd "REFInd") autodetect *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) and show it in their boot menu automatically. For [GRUB](/index.php/GRUB "GRUB") follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). Syslinux (as of version 6.02 and 6.03-pre9) and ELILO do not support chainloading other EFI applications, so they cannot be used to boot `\EFI\Microsoft\Boot\bootmgfw.efi`.
 
-Computers that come with newer versions of Windows often have [secure boot](/index.php/UEFI#Secure_Boot "UEFI") enabled. You will need to take extra steps to either disable secure boot or to make your installation media compatible with secure boot (see above and in the linked page).
+Computers that come with newer versions of Windows often have [Secure Boot](/index.php/Secure_Boot "Secure Boot") enabled. You will need to take extra steps to either disable Secure Boot or to make your installation media compatible with secure boot (see above and in the linked page).
 
 ### Troubleshooting
 

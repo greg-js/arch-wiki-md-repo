@@ -380,11 +380,8 @@ body::before {
 	A delimiter-less, object oriented, imperative, high-level, hybrid language with emojis as fix points and methods.
 
 ```
-🐇 🐼 🍇
-    🐇🐖 🏁 ➡️ 🚂 🍇
-        😀 🔤Arch is the best!🔤
-        🍎 0
-    🍉
+🏁 🍇
+    😀 🔤Arch is the best!🔤
 🍉
 
 ```

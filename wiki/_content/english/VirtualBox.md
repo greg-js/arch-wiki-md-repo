@@ -99,7 +99,7 @@ Navigate to your kernel tree folder and execute the following command:
 
 Since version 5.0.16, [virtualbox-host-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-host-modules-arch) and [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms) use `systemd-modules-load.service` to load all four VirtualBox modules at boot time.
 
-**Note:** If you don't want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
+**Note:** If you do not want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-host-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
 
 Among the [kernel modules](/index.php/Kernel_modules "Kernel modules") VirtualBox uses, there is a mandatory module named `vboxdrv`, which must be loaded before any virtual machines can run.
 
@@ -155,7 +155,7 @@ Refer to the [VirtualBox manual](https://www.virtualbox.org/manual) to learn how
 
 Boot the Arch installation media through one of the virtual machine's virtual drives. Then, complete the installation of a basic Arch system as explained in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or the [Installation guide](/index.php/Installation_guide "Installation guide").
 
-#### Installation in EFI mode
+### Installation in EFI mode
 
 If you want to install Arch Linux in EFI mode inside VirtualBox, in the settings of the virtual machine, choose *System* item from the panel on the left and *Motherboard* tab from the right panel, and check the checkbox *Enable EFI (special OSes only)*. After selecting the kernel from the Arch Linux installation media's menu, the media will hang for a minute or two and will continue to boot the kernel normally afterwards. Be patient.
 
@@ -214,7 +214,7 @@ The parameters "Arch Linux" and "1360x768x24" in the example above should be rep
 
 Afterwards, restart the virtual machine and run `hwinfo --framebuffer` once more to verify that the new resolutions have been recognized by your guest system (which does not guarantee they will all work, depending on your hardware limitations).
 
-Finally, add a `video=*resolution*` kernel parameter ([https://wiki.archlinux.org/index.php/Kernel_parameters](https://wiki.archlinux.org/index.php/Kernel_parameters)) to set the framebuffer to the new resolution, for example `video=1360x768`.
+Finally, add a `video=*resolution*` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to set the framebuffer to the new resolution, for example `video=1360x768`.
 
 If you use GRUB as your bootloader, you can edit `/etc/default/grub` to include this kernel parameter in the `GRUB_CMDLINE_LINUX_DEFAULT` list, like so:
 
@@ -249,7 +249,7 @@ To load the modules manually, type:
 
 Since version 5.0.16, [virtualbox-guest-modules-arch](https://www.archlinux.org/packages/?name=virtualbox-guest-modules-arch) and [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms) use **systemd-modules-load** service to load their modules at boot time.
 
-**Note:** If you don't want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
+**Note:** If you do not want the VirtualBox modules to be loaded at boot time, you have to mask the default `/usr/lib/modules-load.d/virtualbox-guest-modules-arch.conf` (or `-dkms.conf`) by creating an empty file (or symlink to `/dev/null`) with the same name in `/etc/modules-load.d`.
 
 ### Launch the VirtualBox guest services
 
@@ -847,13 +847,13 @@ There are two workarounds:
 1.  Disable UAC from Control Panel -> Action Center -> "Change User Account Control settings" from left side pane -> set slider to "Never notify" -> OK and reboot
 2.  Copy the file from the shared folder to the guest and run from there
 
-Other threads on the internet suggest to add VBOXSVR to the list of trusted sites, but this doesn't work with Windows 7 or newer.
+Other threads on the internet suggest to add VBOXSVR to the list of trusted sites, but this does not work with Windows 7 or newer.
 
 ### No 64-bit OS client options
 
 When launching a VM client, and no 64-bit options are available, make sure your CPU virtualization capabilities (usually named `VT-x`) are enabled in the BIOS.
 
-If you're using a Windows host, you may need to disable Hyper-V, as it prevents VirtualBox from using VT-x. [[7]](https://www.virtualbox.org/ticket/12350)
+If you are using a Windows host, you may need to disable Hyper-V, as it prevents VirtualBox from using VT-x. [[7]](https://www.virtualbox.org/ticket/12350)
 
 ### Host OS freezes on Virtual Machine start
 
@@ -901,7 +901,7 @@ There has been issues reported around sound input in 5.1.x versions;
 
 [https://forums.virtualbox.org/viewtopic.php?f=7&t=78797](https://forums.virtualbox.org/viewtopic.php?f=7&t=78797)
 
-[Downgrading](https://wiki.archlinux.org/index.php/Downgrading_packages) may solve the problem
+[Downgrading](/index.php/Downgrading "Downgrading") may solve the problem.
 
 ### Fullscreen mode shows blank guest screen
 

@@ -545,5 +545,5 @@ See [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_de
 10.  [^](#Compatibility_.26_prevalence) [http://csrc.nist.gov/archive/aes/round2/r2report.pdf](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)
 11.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)
 12.  [^](#Compatibility_.26_prevalence) [https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf)
-13.  [^](#encfs_acceleration) [https://code.google.com/p/encfs/issues/detail?id=131](https://code.google.com/p/encfs/issues/detail?id=131)
+13.  [^](#.23Performance_features) [https://github.com/vgough/encfs/issues/118](https://github.com/vgough/encfs/issues/118)
 14.  [^](#Compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)

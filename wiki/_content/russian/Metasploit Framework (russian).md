@@ -99,7 +99,7 @@ msf > db_rebuild_cache
 
 Metasploit обновит кэш БД в фоне, это не помешает Вам использовать фреймворк в это же время.
 
-[Template:Подсказка](/index.php?title=Template:%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B0&action=edit&redlink=1 "Template:Подсказка (page does not exist)")
+**Совет:** Обновление кэша БД может занять несколько минут. Запустите `top` или [htop](https://www.archlinux.org/packages/?name=htop), чтобы наблюдать процесс обновления кэша. В это время процессы Ruby/Postgres/Metasploit будут создавать до 50% нагрузки на CPU.
 
 Metasploit нуждается в команде `db_connect` при каждом запуске `msfconsole`. Чтобы избежать этих манипуляций при каждом запуске, просто используйте этот alias в вашем файле автозапуска, например, `~/.bashrc`:
 

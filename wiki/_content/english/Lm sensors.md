@@ -491,7 +491,7 @@ $ modprobe it87 force_id=0x8728
 
 ```
 
-Or you can [load the module](/index.php/Kernel_modules#Loading "Kernel modules") during boot process by creating the following two files:
+Or you can [load the modules](/index.php/Kernel_modules "Kernel modules") during boot process by creating the following two files:
 
  `/etc/modules-load.d/it87.conf`  `it87`  `/etc/modprobe.d/it87.conf`  `options it87 force_id=0x8603` 
 

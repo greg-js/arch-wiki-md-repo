@@ -83,7 +83,7 @@ Kao i pre, ovo je meta paket, i preporucuje se da instalirate sve pakete iz ove 
 
 *   [cheese](https://www.archlinux.org/packages/?name=cheese) koristi vasu web kameru za preuzimanje slika i video snimaka; ako nemate web kameru onda ovaj paket nije neophodan.
 
-*   [dasher](https://www.archlinux.org/packages/?name=dasher) je aplikacija za unos teksta koja koristi kursor umesto tastature. Ako vi i svi ostali koji ce koristiti taj desktop mogu da koriste tastaturu onda ovaj paket nije neophodan.
+*   [dasher](https://aur.archlinux.org/packages/dasher/) je aplikacija za unos teksta koja koristi kursor umesto tastature. Ako vi i svi ostali koji ce koristiti taj desktop mogu da koriste tastaturu onda ovaj paket nije neophodan.
 
 *   **deskbar-applet** je sve-u-jednom traka za pretrazivanje za GNOME desktop. Ako vam ne treba desktop pretrazivanje onda ovaj paket nije neophodan.
 

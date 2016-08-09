@@ -184,7 +184,7 @@ For example:
 
 ```
 
-The default [Umask](/index.php/Umask "Umask") can be changed to improve security for newly created files. The [NSA RHEL5 Security Guide](http://www.nsa.gov/ia/_files/os/redhat/rhel5-guide-i731.pdf) suggests a umask of `077` for maximum security, which makes new files not readable by users other than the owner. To change this, see [Umask#Setting the umask](/index.php/Umask#Setting_the_umask "Umask").
+The default [Umask](/index.php/Umask "Umask") can be changed to improve security for newly created files. The [NSA RHEL5 Security Guide](http://www.nsa.gov/ia/_files/os/redhat/rhel5-guide-i731.pdf) suggests a umask of `077` for maximum security, which makes new files not readable by users other than the owner. To change this, see [Umask#Set the mask value](/index.php/Umask#Set_the_mask_value "Umask").
 
 ## User setup
 

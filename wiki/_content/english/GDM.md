@@ -413,7 +413,7 @@ $ cd /usr/share/xsessions
 
 If you happen to have KDM installed in parallel, you can alternatively open the new session in KDM which will create the new `.desktop` file. Then return to using GDM and the new session will be available.
 
-See also [Display manager#Session list](/index.php/Display_manager#Session_list "Display manager").
+See also [Display manager#Session configuration](/index.php/Display_manager#Session_configuration "Display manager").
 
 ### Enable root login in GDM
 

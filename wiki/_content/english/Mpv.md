@@ -6,6 +6,7 @@
     *   [1.1 Front ends](#Front_ends)
 *   [2 Configuration](#Configuration)
     *   [2.1 An example input.conf file](#An_example_input.conf_file)
+    *   [2.2 mpv and PulseAudio since 0.18.1](#mpv_and_PulseAudio_since_0.18.1)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Hardware Decoding](#Hardware_Decoding)
     *   [3.2 High quality video output](#High_quality_video_output)
@@ -72,6 +73,24 @@ Alt+j add video-pan-x -0.05
 Alt+l add video-pan-x 0.05
 Alt+i add video-pan-y 0.05
 Alt+k add video-pan-y -0.05
+
+```
+
+### mpv and PulseAudio since 0.18.1
+
+This entry only applies if you are using pulseaudio for mpv (`-ao=pulse` or `ao=pulse` in `mpv.conf`).
+
+Add the following to your `~/.config/mpv/input.conf` to make volume changes work again from PulseAudio to mpv and vice versa:
+
+```
++ add ao-volume -1
+
+```
+
+The volume can now be raised to 130%. Some like it, some do not. If you want 100% to be the maximum, then add the following to `~/.config/mpv/mpv.conf`:
+
+```
+volume-max=100.0<
 
 ```
 

@@ -7,38 +7,39 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 nft](#nft)
-*   [3 Tables](#Tables)
-    *   [3.1 Family](#Family)
-    *   [3.2 Listing](#Listing)
-    *   [3.3 Creation](#Creation)
-    *   [3.4 Deletion](#Deletion)
-*   [4 Chains](#Chains)
-    *   [4.1 Listing](#Listing_2)
-    *   [4.2 Creation](#Creation_2)
-        *   [4.2.1 Properties](#Properties)
-            *   [4.2.1.1 Types](#Types)
-            *   [4.2.1.2 Hooks](#Hooks)
-            *   [4.2.1.3 Priorities](#Priorities)
-    *   [4.3 Deletion](#Deletion_2)
-*   [5 Rules](#Rules)
-    *   [5.1 Listing](#Listing_3)
-    *   [5.2 Creation](#Creation_3)
-        *   [5.2.1 Matches](#Matches)
-        *   [5.2.2 Jumps](#Jumps)
-    *   [5.3 Insertion](#Insertion)
-    *   [5.4 Deletion](#Deletion_3)
-    *   [5.5 Atomic Reloading](#Atomic_Reloading)
-*   [6 File Definitions](#File_Definitions)
-*   [7 Getting Started](#Getting_Started)
-*   [8 Samples](#Samples)
-    *   [8.1 Simple IP/IPv6 Firewall](#Simple_IP.2FIPv6_Firewall)
-    *   [8.2 Limit rate IP/IPv6 Firewall](#Limit_rate_IP.2FIPv6_Firewall)
-    *   [8.3 Jump](#Jump)
-*   [9 Practical examples](#Practical_examples)
-    *   [9.1 Different rules for different interfaces](#Different_rules_for_different_interfaces)
-    *   [9.2 Masquerading](#Masquerading)
-*   [10 Loading rules at boot](#Loading_rules_at_boot)
+*   [2 Basic Implementation](#Basic_Implementation)
+    *   [2.1 Load the basic default ruleset](#Load_the_basic_default_ruleset)
+*   [3 nft](#nft)
+*   [4 Tables](#Tables)
+    *   [4.1 Family](#Family)
+    *   [4.2 Listing](#Listing)
+    *   [4.3 Creation](#Creation)
+    *   [4.4 Deletion](#Deletion)
+*   [5 Chains](#Chains)
+    *   [5.1 Listing](#Listing_2)
+    *   [5.2 Creation](#Creation_2)
+        *   [5.2.1 Properties](#Properties)
+            *   [5.2.1.1 Types](#Types)
+            *   [5.2.1.2 Hooks](#Hooks)
+            *   [5.2.1.3 Priorities](#Priorities)
+    *   [5.3 Deletion](#Deletion_2)
+*   [6 Rules](#Rules)
+    *   [6.1 Listing](#Listing_3)
+    *   [6.2 Creation](#Creation_3)
+        *   [6.2.1 Matches](#Matches)
+        *   [6.2.2 Jumps](#Jumps)
+    *   [6.3 Insertion](#Insertion)
+    *   [6.4 Deletion](#Deletion_3)
+    *   [6.5 Atomic Reloading](#Atomic_Reloading)
+*   [7 File Definitions](#File_Definitions)
+*   [8 Getting Started](#Getting_Started)
+*   [9 Samples](#Samples)
+    *   [9.1 Simple IP/IPv6 Firewall](#Simple_IP.2FIPv6_Firewall)
+    *   [9.2 Limit rate IP/IPv6 Firewall](#Limit_rate_IP.2FIPv6_Firewall)
+    *   [9.3 Jump](#Jump)
+*   [10 Practical examples](#Practical_examples)
+    *   [10.1 Different rules for different interfaces](#Different_rules_for_different_interfaces)
+    *   [10.2 Masquerading](#Masquerading)
 *   [11 Logging to Syslog](#Logging_to_Syslog)
 *   [12 See also](#See_also)
 
@@ -46,11 +47,28 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 
 The Linux kernel supports nftables since version 3.13 but running the latest kernel is recommended. You will only need to install the userland utilities, which are provided by the package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git-version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
+## Basic Implementation
+
+Like other firewalls, nftables makes a distinction between temporary rules made in the commandline and permanent ones loaded from or saved to a file. The default file is `/etc/nftables.conf` which already contains a simple ipv4/ipv6 firewall table named "inet filter".
+
+### Load the basic default ruleset
+
+To use it [start/enable](/index.php/Start/enable "Start/enable") the `nftables.service`.
+
+You can check the ruleset with
+
+```
+# nft list ruleset
+
+```
+
+If it returns the inet filter table setup, you're good to go for basic desktop internet usage.
+
+**Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `$ lsmod | grep '^nf'` Otheriwse, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
+
 ## nft
 
 nftables' user-space utility `nft` now performs most of the rule-set evaluation before handing rule-sets to the kernel. Because of this, nftables provides no default tables or chains; although, a user can emulate an iptables-like setup.
-
-**Note:** [nftables](https://www.archlinux.org/packages/?name=nftables) contains `/etc/nftables.conf` which has a "filter" table. Rules in this table are designed to allow some protocols and reject everything else.
 
 It works in a fashion similar to ifconfig or iproute2\. The commands are a long, structured sequence rather than using argument switches like in iptables. For example:
 
@@ -675,14 +693,6 @@ table ip nat {
 }
 
 ```
-
-## Loading rules at boot
-
-To automatically load rules on system boot, simply enable the nftables systemd service by executing `systemctl enable nftables`
-
-The rules will be loaded from `/etc/nftables.conf` by default.
-
-**Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `lsmod | grep nf` Otheriwse, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
 
 ## Logging to Syslog
 

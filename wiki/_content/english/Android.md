@@ -32,11 +32,12 @@
         *   [4.2.1 Heimdall](#Heimdall)
         *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
 *   [5 Alternative connection methods](#Alternative_connection_methods)
-    *   [5.1 adb-sync](#adb-sync)
-    *   [5.2 AirDroid](#AirDroid)
-    *   [5.3 FTP](#FTP)
-    *   [5.4 SSH Server](#SSH_Server)
-    *   [5.5 Samba](#Samba)
+    *   [5.1 KDE Connect](#KDE_Connect)
+    *   [5.2 adb-sync](#adb-sync)
+    *   [5.3 AirDroid](#AirDroid)
+    *   [5.4 FTP](#FTP)
+    *   [5.5 SSH Server](#SSH_Server)
+    *   [5.6 Samba](#Samba)
 *   [6 Tips & Tricks](#Tips_.26_Tricks)
     *   [6.1 During Debugging "Source not found"](#During_Debugging_.22Source_not_found.22)
     *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
@@ -499,7 +500,7 @@ In some cases, you want to return to the stock Android after flashing custom ROM
 
 ### Fastboot
 
-Fastboot (as well as [ADB](#Connecting_to_a_real_device_-_Android_Debug_Bridge_.28ADB.29)) comes together with a package [android-tools](https://www.archlinux.org/packages/?name=android-tools) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Fastboot (as well as [ADB](#Android_Debug_Bridge_.28ADB.29)) comes together with a package [android-tools](https://www.archlinux.org/packages/?name=android-tools) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:** Restoring firmwares using `fastboot` can be quite tricky, but you might want to browse [XDA developers forums](http://www.xda-developers.com/) for a stock firmware, which is mostly a `*.zip` file, but inside of it, comes with the firmware files and `flash-all.sh` script. For example, [Google Nexus](https://developers.google.com/android/nexus/images) firmwares include `flash-all.sh` script or another example could be for OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541), where you can find firmwares with included `flash-all.sh` script.
 
@@ -546,6 +547,10 @@ which means that your device is visible to Odin and is ready to be flashed.
 **Note:** There are no general instructions of restoring stock firmware on Samsung mobile devices. You have to use [Google](https://www.google.com) and [XDA developers forums](http://www.xda-developers.com) to find a flashing instructions for specific device. For example, this is how the [thread](http://goo.gl/cZLyF8) about the Samsung Galaxy S4 looks like
 
 ## Alternative connection methods
+
+### KDE Connect
+
+[kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) integrates your android device with the KDE desktop. Its features include synced notifications, clipboard sync, multimedia control, and file/URL sharing.
 
 ### adb-sync
 

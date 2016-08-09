@@ -57,7 +57,7 @@ How SpaceFM may be autostarted as a daemon process or to manage the desktop for 
 
 ### Mounting remote hosts
 
-SpaceFM supports mounting remote hosts via [udevil](/index.php/File_manager_functionality#udevil.2Fdevmon "File manager functionality"). To add a remote host, add the access URL into the URL bar. A terminal window should pop up showing the mounting process which is useful for error tracing.
+SpaceFM supports mounting remote hosts via [udevil](/index.php/Udisks#devmon "Udisks"). To add a remote host, add the access URL into the URL bar. A terminal window should pop up showing the mounting process which is useful for error tracing.
 
 An overview of the supported remote hosts is available in the [udevil help](http://ignorantguru.github.io/udevil/udevil--help.html). For example to mount a remote FTP server:
 

@@ -26,8 +26,7 @@
         *   [5.2.2 Remove special udev rule](#Remove_special_udev_rule)
         *   [5.2.3 Disable and remove the services created by archiso](#Disable_and_remove_the_services_created_by_archiso)
         *   [5.2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
-        *   [5.2.5 Create an initial ramdisk environment](#Create_an_initial_ramdisk_environment)
-        *   [5.2.6 Normal configuration](#Normal_configuration)
+        *   [5.2.5 Configure the system](#Configure_the_system)
 *   [6 Testing iso file by Virtualbox](#Testing_iso_file_by_Virtualbox)
 *   [7 See also](#See_also)
     *   [7.1 Documentation and tutorials](#Documentation_and_tutorials)
@@ -343,13 +342,13 @@ Change the `x86_64` part as necessary and put your **real** usb label there.
 
 ## Installation without Internet access
 
-If you wish to install the archiso(e.g. [the offical monthly release](https://www.archlinux.org/download/)) as it is without an Internet connection, or, if you do not want to download the packages you want again:
+If you wish to install the archiso (e.g. [the offical monthly release](https://www.archlinux.org/download/)) as it is without an Internet connection, or, if you do not want to download the packages you want again:
 
-First, please follow the [beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and skip some parts (like [#Establish an internet connection](/index.php/Beginners%27_guide#Establish_an_internet_connection "Beginners' guide")) until the [#Install the base system](/index.php/Beginners%27_guide#Install_the_base_system "Beginners' guide") step.
+First, follow the [Installation guide](/index.php/Installation_guide "Installation guide"), skipping the [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide") section, until the [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide") step.
 
 ### Install the archiso to the new root
 
-Instead of installing the packages with `pacstrap`(as it downloads every packages from remote repository and we have no Internet access now), copy *everything* in the Live environment to the new root:
+Instead of installing the packages with `pacstrap` (which would try to download from the remote repositories), copy *everything* in the live environment to the new root:
 
 ```
 # time cp -ax / /mnt
@@ -365,7 +364,7 @@ Then, copy the kernel image to the new root, in order to keep the integrity of t
 
 ```
 
-After that, please generate a fstab as described in [Beginners' guide#Generate an fstab](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide").
+After that, generate a fstab as described in [Installation guide#Fstab](/index.php/Installation_guide#Fstab "Installation guide").
 
 ### Chroot and configure the base system
 
@@ -376,7 +375,7 @@ Next, chroot into your newly installed system:
 
 ```
 
-Please note that before you configure the locale,keymap,etc,... there are something necessary to do, in order to get rid of the trace of a Live environment(in other words, the customization of archiso which does not fit a non-Live environment).
+**Note:** Before performing the other [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") steps (e.g. locale, keymap, etc.), it is necessary to get rid of the trace of the Live environment (in other words, the customization of archiso which does not fit a non-Live environment).
 
 #### Restore the configuration of journald
 
@@ -419,27 +418,22 @@ There are some scripts installed in the live system by archiso scripts, which ar
 
 ```
 
-#### Create an initial ramdisk environment
+#### Configure the system
 
-Please create an initial ramdisk as described in [Beginners' guide#Create an initial ramdisk environment](/index.php/Beginners%27_guide#Create_an_initial_ramdisk_environment "Beginners' guide").
-
-#### Normal configuration
-
-After all of these, now you can follow the [Beginners' guide#Locale](/index.php/Beginners%27_guide#Locale "Beginners' guide") and finish the installation.
+Now you can follow the skipped steps of the [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") section (setting a locale, timezone, hostname, etc.) and finish the installation by creating an initial ramdisk as described in [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide").
 
 ## Testing iso file by Virtualbox
 
-*   add 'virtualbox-guest-modules-arch' 'virtualbox-guest-utils' into packages.both
-*   added three lines in airootfs/etc/modules-load.d/virtualbox.conf
+*   add `virtualbox-guest-modules-arch` and `virtualbox-guest-utils` into `packages.both`
+*   add the following three Virtualbox modules into `airootfs/etc/modules-load.d/virtualbox.conf`:
 
-```
- vboxguest
- vboxsf
- vboxvideo
+	`vboxguest`
 
-```
+	`vboxsf`
 
-*   in your .xinitrc add '/usr/bin/VBoxClient-all'
+	`vboxvideo`
+
+*   in your `.xinitrc` add `/usr/bin/VBoxClient-all`
 
 ## See also
 
