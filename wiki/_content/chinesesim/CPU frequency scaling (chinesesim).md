@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [CPU_Frequency_Scaling](/index.php/CPU_Frequency_Scaling "CPU Frequency Scaling") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-22，点击[这里](https://wiki.archlinux.org/index.php?title=CPU_Frequency_Scaling&diff=0&oldid=436397)可以查看翻译后英文页面的改动。
 
-[CPUfreq](http://www.kernel.org/pub/linux/utils/kernel/cpufreq/cpufreq.html) 引用了内核架构中的 CPU 频率调整部分相关功能。这项技术使得操作系统能够提高或降低CPU速度来达到省电目的。CPU 频率可以根据系统负荷自动调整，或响应 ACPI 事件而调整，或通过用户空间程序手工调整。
+CPU 调频允许操作系统通过提高或降低 CPU 频率来达到省电目的。CPU 频率可以根据系统负载或响应 ACPI 事件来自动调整，也可通过用户空间程序手工调整。
 
-从 3.4 内核开始，必要的模块都会自动加载，而且推荐的调速器 [ondemand governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling") 默认启动。但是，用户空间程序，例如 [cpupower](#cpupower)，[acpid](/index.php/Acpid "Acpid")，[laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools")，或你的桌面系统对应的图形化工具，在进行高级特性配置时可能仍然需要被用到。
+Linux 内核具有 CPU 调频实现，该基础架构称为 *cpufreq*。从 3.4 内核开始，必要的模块都会自动加载，而且推荐的调频器 [ondemand governor](/index.php/CPU_frequency_scaling#Scaling_governors "CPU frequency scaling") 默认启用。但是，在进行高级配置时，仍然会用到其他用户空间工具，例如 [cpupower](#cpupower)，[acpid](/index.php/Acpid "Acpid")，[laptop-mode-tools](/index.php/Laptop-mode-tools "Laptop-mode-tools")，或桌面环境所提供的图形化工具。
 
 ## Contents
 
@@ -10,7 +10,7 @@
     *   [1.1 thermald](#thermald)
     *   [1.2 i7z](#i7z)
     *   [1.3 cpupower](#cpupower)
-*   [2 CPU frequency driver](#CPU_frequency_driver)
+*   [2 CPU 频率驱动程序](#CPU_.E9.A2.91.E7.8E.87.E9.A9.B1.E5.8A.A8.E7.A8.8B.E5.BA.8F)
     *   [2.1 设置最大和最小频率](#.E8.AE.BE.E7.BD.AE.E6.9C.80.E5.A4.A7.E5.92.8C.E6.9C.80.E5.B0.8F.E9.A2.91.E7.8E.87)
 *   [3 调整调速器](#.E8.B0.83.E6.95.B4.E8.B0.83.E9.80.9F.E5.99.A8)
     *   [3.1 调节 ondemand 调速器](#.E8.B0.83.E8.8A.82_ondemand_.E8.B0.83.E9.80.9F.E5.99.A8)
@@ -29,51 +29,43 @@
 
 ### thermald
 
-[thermald](https://aur.archlinux.org/packages/thermald/) 是一个 Linux 守护进程，它可以防止平台过热。此进程监控平台的温度，且使用可用的办法帮助温度的降低。
+[thermald](https://aur.archlinux.org/packages/thermald/) 是一个 Linux 守护进程，用于防止平台过热。此守护进程会监控平台温度，并采用可用的冷却方式来降低温度。
 
-By default, it monitors CPU temperature using available CPU digital temperature sensors and maintains CPU temperature under control, before HW takes aggressive correction action. If there is a skin temperature sensor in thermal sysfs, then it tries to keep skin temperature under 45C.
-
-默认情况下，它在硬件采取激进的行为之前，利用现有的 CPU 数字温度传感器监控 CPU 温度，并保持 CPU 的温度处于可控范围。如果 sysfs 中存在表面温度传感器，那么它将让表面温度保持在 45℃ 以下。
+默认情况下，在硬件采取激进的降温措施之前，它将利用现有的 CPU 数字温度传感器监控 CPU 温度，并保持 CPU 的温度处于可控范围。如果 sysfs 中存在表面温度传感器，那么它将让表面温度保持在 45℃ 以下。
 
 ### i7z
 
-[i7z](https://www.archlinux.org/packages/?name=i7z) 是 i7 CPU 的报告工具（也同样适用于 i3 和 i5 CPU）。您可以在终端下输入 `i7z` 或者使用图形化工具 `i7z-gui` 来运行它。
+[i7z](https://www.archlinux.org/packages/?name=i7z) 是 i7 CPU （也同样适用于 i3 和 i5 CPU）的报告工具。可以在终端下输入 `i7z` 或者使用图形化工具 `i7z-gui` 来运行该工具。
 
 ### cpupower
 
-[cpupower](https://www.archlinux.org/packages/?name=cpupower) is a set of userspace utilities designed to assist with CPU frequency scaling. The package is not required to use scaling, but is highly recommended because it provides useful command-line utilities and a [systemd](/index.php/Systemd "Systemd") service to change the governor at boot.
+[cpupower](https://www.archlinux.org/packages/?name=cpupower) 是一组为辅助 CPU 调频而设计的用户空间工具。该软件包并非必须，但强烈建议安装，因为它提供了方便的命令行实用程序，并且内置 [systemd](/index.php/Systemd "Systemd") 服务，可在启动时更改调频器。
 
-The configuration file for *cpupower* is located in `/etc/default/cpupower`. This configuration file is read by a bash script in `/usr/lib/systemd/scripts/cpupower` which is activated by *systemd* with `cpupower.service`. You may want to enable `cpupower.service` to start at boot.
-
-[cpupower](https://www.archlinux.org/packages/?name=cpupower) 是一组为辅助 *CPU frequency scaling* 而设计的用户空间工具。这个软件包并不是必须的，但强烈建议安装，因为它提供了方便的命令行工具，且提供在启动时改变调速器的服务。
-
-[cpupower](https://www.archlinux.org/packages/?name=cpupower) 的配置文件位于 `/etc/default/cpupower`。这个配置文件被bash脚本读取，该脚本位于 `/usr/lib/systemd/scripts/cpupower`，它又由 `systemd` 通过 `cpupower.service` 激活。为使用 [systemd](https://www.archlinux.org/packages/?name=systemd) 在启动时启用 [cpupower](https://www.archlinux.org/packages/?name=cpupower)，运行：
+*cpupower* 的配置文件位于 `/etc/default/cpupower`。此配置文件由 `/usr/lib/systemd/scripts/cpupower` 中的 bash 脚本读取，而该脚本由 *systemd* 通过 `cpupower.service` 激活。若要在启动时启用 *cpupower*，请执行：
 
 ```
 # systemctl enable cpupower.service
 
 ```
 
-## CPU frequency driver
+## CPU 频率驱动程序
 
 **注意:**
 
-*   原生的 CPU 模块将会自动加载。
-*   `pstate` 的新的功率驱动程序将会在以下的驱动程序之前自动为现代的 Intel CPU 启用。该驱动会优先于其他的驱动程序，因为它是内置驱动，而不是作为一个模块来加载。该驱动自动作用于 Sandy Bridge 和 Ivy Bridge 这两个类型的 CPU。如果您在使用这个驱动的时候遇到问题，建议您在 Grub 的内核参数中对其禁用（即修改 /etc/default/grub 文件，在 GRUB_CMDLINE_LINUX_DEFAULT= 后添加 intel_pstate=disable）。
-*   实际上，P 状态的状态功能可以通过 `/sys/devices/system/cpu/intel_pstate` 进行更改。例如：通过 `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` 可以关闭 Intel Turbo Boost 来降低 CPU 的温度。
-*   对于现代的 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如[thermald](https://aur.archlinux.org/packages/thermald/)），它们能够更加激进的用 P-states，T-states 或 Intel power clamp driver 对系统温度进行抑制。thermald 也可用于老式的 Intel CPUs。如果最新的驱动不可用，守护进程将会恢复到 x86 model specific registers 而用 Linux ‘cpufreq subsystem’ 来抱持系统的清凉。
+*   原生 CPU 模块将会自动加载。
+*   对于现代 Intel CPU，将使用 `pstate` 功率驱动程序，而非下列其他驱动程序。此驱动程序的优先级高于其他驱动程序，并编入内核（而非编译为模块）。此驱动程序将自动用于 Sandy Bridge（以及更新的 CPU）。如果在使用这个驱动的时候遇到问题，建议您在 Grub 的内核参数中将其禁用（即修改 /etc/default/grub 文件，在 GRUB_CMDLINE_LINUX_DEFAULT= 后添加 `intel_pstate=disable`）。您可以使用与此驱动程序配套的用户空间工具，但这些工具**不受您的控制**。
+*   尽管上述 P State 行为会受到 `/sys/devices/system/cpu/intel_pstate` 影响，例如：可以通过 `# echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo` 关闭 Intel 睿频加速，从而降低 CPU 的温度。
+*   对于现代 Intel CPU，[Linux Thermal Daemon](https://01.org/linux-thermal-daemon) 也提供了一些其他的控制方法（例如 [thermald](https://aur.archlinux.org/packages/thermald/)），它们可以通过 P-state、T-state 或 Intel 节能驱动程序来主动控制系统温度。thermald 也适用于较老的 Intel CPU。如果最新版本的驱动程序不可用，那么守护进程会还原为 x86 MSR (Model Specific Register)，由 Linux“cpufreq 子系统”来控制系统冷却。
 
-*cpupower* 需要模块才能知道本地的 CPU 限制信息：
+*cpupower* 需要相应模块来了解本地 CPU 的限制信息：
 
 | 模块 | 描述 |
-| intel_pstate | This driver implements a scaling driver with an internal governor for Intel Core (SandyBridge and newer) processors. |
-| acpi-cpufreq | CPUFreq driver which utilizes the ACPI Processor Performance States. This driver also supports Intel Enhanced SpeedStep (previously supported by the deprecated speedstep-centrino module).支持ACPI Processor Performance States的CPUFreq驱动。该驱动也支持Intel Enhanced SpeedStep（之前由已过期的模块speedstep-centrino支持）。 |
-| speedstep-lib | CPUFreq driver for Intel speedstep enabled processors (mostly atoms and older pentiums (< 3)) 支持拥有speedstep功能的Intel处理器（通常是atom和奔腾3代或更老的处理器）CPUFreq驱动。 |
-| powernow-k8 | CPUFreq driver for K8/K10 Athlon64/Opteron/Phenom processors. **Deprecated since linux 3.7 - Use acpi_cpufreq.**支持K8/K10 Athlon64/Opteron/Phenom处理器的CPUFreq驱动。**从linux 3.7开始进入淘汰阶段，使用acpi-cpufreq替代。** |
-| pcc-cpufreq | This driver supports Processor Clocking Control interface by Hewlett-Packard and Microsoft Corporation which is useful on some Proliant servers.支持HP和微软提出的“处理器时钟频率控制”接口，这在一些Proliant服务器上很有用。 |
-| p4-clockmod | CPUFreq driver for Intel Pentium 4 / Xeon / Celeron processors. When enabled it will lower CPU temperature by skipping clocks.
-You probably want to use a Speedstep driver instead.支持Intel奔腾4 / 至强 / 赛扬 处理器的CPUFreq驱动。生效时会通过skipping clocks技术降低CPU发热量。
-你可能更希望使用Speedstep驱动代替它。 |
+| intel_pstate | 此驱动程序通过内置调频器，实现面向 Intel Core（SandyBridge 和更新的型号）处理器的调频驱动。 |
+| acpi-cpufreq | 此 CPUFreq 驱动程序可充分利用 ACPI Processor Performance States。此驱动程序也支持 Intel Enhanced SpeedStep（之前由 speedstep-centrino 模块（已废弃）提供支持）。 |
+| speedstep-lib | 此 CPUFreq 驱动程序面向支持 Intel SpeedStep 的 CPU（主要包括 Atom 和早于 Pentinum 3 的 CPU）。 |
+| powernow-k8 | 面向 K8/K10 Athlon 64/Opteron/Phenom 的 CPUFreq 驱动程序。从 Linux 3.7 开始，对于此系列中的较现代 CPU，将自动使用“acpi-cpufreq”。 |
+| pcc-cpufreq | 此驱动程序支持 HP 和 Microsoft 提出的 Processor Clocking Control 接口，在某些 ProLiant 服务器上比较有用。 |
+| p4-clockmod | 面向 Intel Pentium 4/Xeon/Celeron 处理器的 CPUFreq 驱动程序，可通过跳频来降低 CPU 温度。（您最好使用 SpeedStep 驱动程序。） |
 
 查看所有可用的模块，运行以下命令：
 

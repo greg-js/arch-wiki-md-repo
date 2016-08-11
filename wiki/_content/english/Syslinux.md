@@ -1,7 +1,8 @@
-[Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from hard drives, CDs, and over the network via PXE. It supports the [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and uncompressed single-device [Btrfs](/index.php/Btrfs "Btrfs") [file systems](/index.php/File_systems "File systems").
-**Warning:** As of Syslinux 6.03, the bootloader will fail on ext4 volumes with "64bit" feature enabled. See [#Syslinux Failed to load ldlinux.c32](#Syslinux_Failed_to_load_ldlinux.c32).
+[Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from drives, CDs, and over the network via PXE. Some of the supported [file systems](/index.php/File_systems "File systems") are [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and uncompressed single-device [Btrfs](/index.php/Btrfs "Btrfs").
 
-**Note:** Syslinux cannot access files from partitions other than its own. For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
+**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[1]](http://www.syslinux.org/wiki/index.php/Filesystem#ext) for more information.
+
+**Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading). For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
 
 ## Contents
 
@@ -41,13 +42,12 @@
     *   [4.4 Missing operating system](#Missing_operating_system)
     *   [4.5 Windows boots up, ignoring Syslinux](#Windows_boots_up.2C_ignoring_Syslinux)
     *   [4.6 Menu entries do nothing](#Menu_entries_do_nothing)
-    *   [4.7 Syslinux Failed to load ldlinux.c32](#Syslinux_Failed_to_load_ldlinux.c32)
-    *   [4.8 Cannot remove ldlinux.sys](#Cannot_remove_ldlinux.sys)
-    *   [4.9 White block in upper left corner when using vesamenu](#White_block_in_upper_left_corner_when_using_vesamenu)
-    *   [4.10 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
-    *   [4.11 Read bootloader log](#Read_bootloader_log)
-    *   [4.12 Btrfs compression](#Btrfs_compression)
-    *   [4.13 Btrfs multi-device](#Btrfs_multi-device)
+    *   [4.7 Cannot remove ldlinux.sys](#Cannot_remove_ldlinux.sys)
+    *   [4.8 White block in upper left corner when using vesamenu](#White_block_in_upper_left_corner_when_using_vesamenu)
+    *   [4.9 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
+    *   [4.10 Read bootloader log](#Read_bootloader_log)
+    *   [4.11 Btrfs compression](#Btrfs_compression)
+    *   [4.12 Btrfs multi-device](#Btrfs_multi-device)
 *   [5 See also](#See_also)
 
 ## BIOS Systems
@@ -134,7 +134,7 @@ Your boot partition, on which you plan to install Syslinux, must contain a FAT, 
 
 After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the Master Boot Record 440-byte boot code region (not to be confused with MBR aka msdos partition table) of the disk, as described in the next sections, respectively.
 
-**Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. You could skip below and jump to [#Configuration](#Configuration). See [[1]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
+**Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. You could skip below and jump to [#Configuration](#Configuration). See [[2]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
 
 ##### MBR partition table
 
@@ -216,11 +216,11 @@ If this does not work, you can also try:
 
 ### Limitations of UEFI Syslinux
 
-*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report: [[2]](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
-*   Using TAB to edit kernel parameters in UEFI Syslinux menu might lead to garbaged display (text on top of one another). Bug report: [[3]](http://bugzilla.syslinux.org/show_bug.cgi?id=9)
-*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Enhancement request: [[4]](http://bugzilla.syslinux.org/show_bug.cgi?id=17)
-*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports: [[5]](http://bugzilla.syslinux.org/show_bug.cgi?id=21), [[6]](http://bugzilla.syslinux.org/show_bug.cgi?id=23) and [[7]](http://bugzilla.syslinux.org/show_bug.cgi?id=72)
-*   Memdisk is not available for UEFI. Enhancement request: [[8]](http://bugzilla.syslinux.org/show_bug.cgi?id=30)
+*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report: [[3]](http://bugzilla.syslinux.org/show_bug.cgi?id=8)
+*   Using TAB to edit kernel parameters in UEFI Syslinux menu might lead to garbaged display (text on top of one another). Bug report: [[4]](http://bugzilla.syslinux.org/show_bug.cgi?id=9)
+*   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Enhancement request: [[5]](http://bugzilla.syslinux.org/show_bug.cgi?id=17)
+*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports: [[6]](http://bugzilla.syslinux.org/show_bug.cgi?id=21), [[7]](http://bugzilla.syslinux.org/show_bug.cgi?id=23) and [[8]](http://bugzilla.syslinux.org/show_bug.cgi?id=72)
+*   Memdisk is not available for UEFI. Enhancement request: [[9]](http://bugzilla.syslinux.org/show_bug.cgi?id=30)
 
 ### Installation on UEFI
 
@@ -482,7 +482,7 @@ The passwd can be either a cleartext password or hashed: [see official documenta
 
 ### Chainloading
 
-**Note:** Syslinux BIOS cannot directly chainload files from other partitions; however, `chain.c32` can boot a partition boot sector (VBR).
+**Note:** Syslinux BIOS cannot directly chainload files located on other partitions; however, `chain.c32` can boot a partition boot sector (VBR).
 
 If you want to chainload other operating systems (such as Windows) or boot loaders, copy the `chain.c32` module to the Syslinux directory (additional `lib*.c32` library modules might be needed too; for details, see the instructions in the previous section). Then create a section in the configuration file:
 
@@ -591,7 +591,7 @@ timeout 10
 
 ui menu.c32
 
-label Other Linux
+label OtherLinux
     linux /boot/vmlinuz-linux
     initrd /boot/initramfs-linux.img
     append root=/dev/sda3 rw quiet
@@ -606,7 +606,7 @@ And then add an entry to your main syslinux.cfg
 
  `/boot/syslinux/syslinux.cfg` 
 ```
-label Other Linux
+label OtherLinux
     com32 chain.c32
     append hd0 3
 
@@ -753,7 +753,7 @@ Syslinux supports booting from ISO images directly using the [memdisk](http://ww
 
 ### Serial console
 
-To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[9]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
+To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[10]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
 
  `syslinux.cfg` 
 ```
@@ -761,7 +761,7 @@ SERIAL 0 115200
 
 ```
 
-Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[10]](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
+Enable Serial Console in the kernel at boot by adding `console=tty0 console=ttyS0,115200n8` to the `APPEND` option.[[11]](http://www.mjmwired.net/kernel/Documentation/kernel-parameters.txt#681)
 
  `syslinux.cfg`  `APPEND root=UUID=126ca36d-c853-4f3a-9f46-cdd49d034ce4 rw console=tty0 console=ttyS0,115200n8` 
 
@@ -877,10 +877,6 @@ The MBR that comes with Syslinux looks for the first active partition that has t
 
 You select a menu entry and it does nothing, it just *"refreshes"* the menu. This usually means that you have an error in your `syslinux.cfg` file. Hit `Tab` to edit your boot parameters. Alternatively, press `Esc` and type in the `LABEL` of your boot entry (e.g. *arch*). Another cause could be that you do not have a kernel installed. Find a way to access your file system (through live CD, etc) and make sure that `/mount/vmlinuz-linux` exists and does not have a size of 0\. If this is the case, [reinstall your kernel](/index.php/Kernel_Panics#Option_2:_Reinstall_kernel "Kernel Panics").
 
-### Syslinux Failed to load ldlinux.c32
-
-This may happen if your boot volume is formatted with ext4\. As of Syslinux 6.03, "pure 64-bits", compression and/or encryption are not supported. See [Official Page](http://www.syslinux.org/wiki/index.php?title=Filesystem#ext) for more detail. To manually disable the "64bit" feature when creating ext4 volumes, append `-O ^64bit` in the relevant `mke2fs` or `mkfs.ext4` command.
-
 ### Cannot remove ldlinux.sys
 
 The `ldlinux.sys` file has the immutable attribute set, which prevents it from being deleted or overwritten. This is because the sector location of the file must not change or else Syslinux has to be reinstalled. To remove it, run:
@@ -937,7 +933,7 @@ To get more detailed debug log, [recompile](/index.php/ABS "ABS") the [syslinux]
 
 ### Btrfs compression
 
-Booting from btrfs with compression is not supported.[[11]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
+Booting from btrfs with compression is not supported.[[12]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
 
 ```
 btrfs: found compressed data, cannot continue!
@@ -949,7 +945,7 @@ invalid or corrupt kernel image.
 
 ### Btrfs multi-device
 
-Booting from multiple-device btrfs is not supported.[[12]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 7/21/2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
+Booting from multiple-device btrfs is not supported.[[13]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 7/21/2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
 
 ```
 /boot/syslinux is device /dev/sda1

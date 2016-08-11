@@ -13,10 +13,9 @@ This article explains some methods for general troubleshooting. For application 
     *   [2.3 Recovery shells](#Recovery_shells)
     *   [2.4 Blank screen with Intel video](#Blank_screen_with_Intel_video)
     *   [2.5 Stuck while loading the kernel](#Stuck_while_loading_the_kernel)
-    *   [2.6 Unbootable system](#Unbootable_system)
-    *   [2.7 Debugging kernel modules](#Debugging_kernel_modules)
-    *   [2.8 Debugging hardware](#Debugging_hardware)
-    *   [2.9 See also](#See_also)
+    *   [2.6 Debugging kernel modules](#Debugging_kernel_modules)
+    *   [2.7 Debugging hardware](#Debugging_hardware)
+    *   [2.8 See also](#See_also)
 *   [3 Package management](#Package_management)
 *   [4 fuser](#fuser)
 *   [5 Session permissions](#Session_permissions)
@@ -100,6 +99,8 @@ Additionally, before posting your question, you may wish to review [how to ask s
 
 A lot happens during the [boot process](/index.php/Boot_process "Boot process"), so it is a common time for errors to manifest. There are many methods for diagnosing and fixing boot problems, but most involve changing the kernel parameters and rebooting the system. Ensure that you are familiar with how to change your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
+If the system does not boot at all, boot from a [live image](https://www.archlinux.org/download/) and [change root](/index.php/Change_root "Change root") to log into the system and fix the issue.
+
 ### Console clearing
 
 If all you want is to be able to see error messages that are already being displayed, you should [disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages").
@@ -137,10 +138,6 @@ This is most likely due to a problem with [kernel mode setting](/index.php/Kerne
 ### Stuck while loading the kernel
 
 Try disabling ACPI by adding the `acpi=off` kernel parameter.
-
-### Unbootable system
-
-If your system will not boot at all, simply boot from a [live image](https://www.archlinux.org/download/) and [change root](/index.php/Change_root "Change root") to log into the system and fix the issue.
 
 ### Debugging kernel modules
 

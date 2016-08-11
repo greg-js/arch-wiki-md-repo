@@ -1,12 +1,3 @@
-## About MEGA
+Redirect to:
 
-MEGA Is a hosting company that owns the web domain [mega.nz](https://www.mega.nz)
-
-## MEGA Sync
-
-[megasync](https://aur.archlinux.org/packages/megasync/) is an arch-linux port of MEGASync.
-
-## See Also
-
-*   [Megasync AUR](https://aur.archlinux.org/packages/megasync/)
-*   [Mega Official Site](https://www.mega.nz)
+*   [Synchronization and backup programs#Third-party services](/index.php?title=Synchronization_and_backup_programs&redirect=no#Third-party_services "Synchronization and backup programs")

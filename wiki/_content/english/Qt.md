@@ -168,7 +168,7 @@ Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?
 To automatically set `QT_QPA_PLATFORMTHEME` for user session, add the following line to `~/.profile`.
 
 ```
-[ "$XDG_CURRENT_DESKTOP" = "KDE" -o "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
 
 ```
 

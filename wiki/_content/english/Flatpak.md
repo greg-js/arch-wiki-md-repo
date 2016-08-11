@@ -72,7 +72,7 @@ where *remote* is the name of the remote repository, and *name* is the name of t
 To list installed runtimes and applications do:
 
 ```
-$ flatpak ls
+$ flatpak list
 
 ```
 

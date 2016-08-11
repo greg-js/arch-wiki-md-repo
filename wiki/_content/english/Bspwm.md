@@ -33,7 +33,7 @@ exec bspwm
 
 Example configuration is found at `/usr/share/doc/bspwm/examples/` and on [GitHub](https://github.com/baskerville/bspwm/blob/master/examples/).
 
-**Important:** Make you sure environment variable $XDG_CONFIG_HOME is set or your bspwmrc will not be found. This can be done by adding XDG_CONFIG_HOME="$HOME/.config" and export XDG_CONFIG_HOME to your ~/.profile.
+**Important:** Make sure your environment variable $XDG_CONFIG_HOME is set or your bspwmrc will not be found. This can be done by adding XDG_CONFIG_HOME="$HOME/.config" and export XDG_CONFIG_HOME to your ~/.profile.
 
 Create `~/.config/bspwm/` and `~/.config/sxhkd/`, then copy `/usr/share/doc/bspwm/examples/bspwmrc` to `~/.config/bspwm/` and `/usr/share/doc/bspwm/examples/sxhkdrc` to `~/.config/sxhkd/`. Make bspwmrc executable with `chmod +x ~/.config/bspwm/bspwmrc`.
 

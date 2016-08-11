@@ -15,13 +15,15 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
         *   [5.1.1 Hardening the server](#Hardening_the_server)
         *   [5.1.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
             *   [5.1.2.1 TCP vs UDP](#TCP_vs_UDP)
-    *   [5.2 The client configuration file](#The_client_configuration_file)
+    *   [5.2 The client config profile (OpenVPN)](#The_client_config_profile_.28OpenVPN.29)
         *   [5.2.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
-    *   [5.3 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
-    *   [5.4 Configure the MTU with Fragment and MSS](#Configure_the_MTU_with_Fragment_and_MSS)
-    *   [5.5 IPv6](#IPv6)
-        *   [5.5.1 Connect to the server via IPv6](#Connect_to_the_server_via_IPv6)
-        *   [5.5.2 Provide IPv6 inside the tunnel](#Provide_IPv6_inside_the_tunnel)
+    *   [5.3 The client profile (generic for Linux, iOS, or Android)](#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29)
+    *   [5.4 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
+    *   [5.5 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
+    *   [5.6 Configure the MTU with Fragment and MSS](#Configure_the_MTU_with_Fragment_and_MSS)
+    *   [5.7 IPv6](#IPv6)
+        *   [5.7.1 Connect to the server via IPv6](#Connect_to_the_server_via_IPv6)
+        *   [5.7.2 Provide IPv6 inside the tunnel](#Provide_IPv6_inside_the_tunnel)
 *   [6 Starting OpenVPN](#Starting_OpenVPN)
     *   [6.1 Manual startup](#Manual_startup)
     *   [6.2 systemd service configuration](#systemd_service_configuration)
@@ -44,12 +46,10 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [9.1 Update resolv-conf script](#Update_resolv-conf_script)
     *   [9.2 Update systemd-resolved script](#Update_systemd-resolved_script)
 *   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
-*   [11 Creating an OpenVPN client profile (Linux, iOS, or Android)](#Creating_an_OpenVPN_client_profile_.28Linux.2C_iOS.2C_or_Android.29)
-    *   [11.1 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
-*   [12 Troubleshooting](#Troubleshooting)
-    *   [12.1 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
-    *   [12.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
-*   [13 See Also](#See_Also)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
+    *   [11.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
+*   [12 See Also](#See_Also)
 
 ## Install OpenVPN
 
@@ -77,16 +77,17 @@ To connect to a VPN service provided by a third party, most of the following can
 
 ## Create a Public Key Infrastructure (PKI) from scratch
 
-When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is accomplished by using the [easy-rsa](/index.php/Easy-rsa "Easy-rsa").
+When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is detailed in the [easy-rsa](/index.php/Easy-rsa "Easy-rsa") article. Once the needed certificates, private keys, and associated files are created via following the steps in the separate article, one should have 4 files in `/etc/openvpn` at this point:
 
-Once created, symlinks are created as follows (as the root user):
+*   `/etc/openvpn/ca.crt`
+*   `/etc/openvpn/dh.pem`
+*   `/etc/openvpn/servername.crt`
+*   `/etc/openvpn/ta.key`
+
+The server private key can simply be symlinked:
 
 ```
-ln -sf /etc/easy-rsa/pki/ca.crt /etc/openvpn
-ln -sf /etc/easy-rsa/pki/private/server.key /etc/openvpn
-ln -sf /etc/easy-rsa/pki/issued/server.crt /etc/openvpn
-ln -sf /etc/easy-rsa/pki/dh.pem /etc/openvpn
-ln -sf /etc/easy-rsa/pki/ta.key /etc/openvpn
+# ln -sf /etc/easy-rsa/pki/private/servername.key /etc/openvpn
 
 ```
 
@@ -186,7 +187,7 @@ UDP
 *   Less reliable than TCP as no error correction is in use.
 *   Potentially faster than TCP.
 
-### The client configuration file
+### The client config profile (OpenVPN)
 
 Copy the example client configuration file to `/etc/openvpn/client.conf`:
 
@@ -228,6 +229,37 @@ Depending on setup, there are four ways to handle these situations:
 *   Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki HowTo](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
 
 **Note:** The OpenVPN HowTos linked above create a dedicated non-privileged user/group, instead of the already existing `nobody`. The advantage is that this avoids potential risks when sharing a user among daemons.
+
+### The client profile (generic for Linux, iOS, or Android)
+
+The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format suitable for the iOS version of OpenVPN Connect as well as for the Android app.
+
+Simply invoke the script with 5 tokens:
+
+1.  Server Fully Qualified Domain Name of the OpenVPN server (or IP address).
+2.  Full path to the CA cert.
+3.  Full path to the client cert.
+4.  Full path to the client private key.
+5.  Full path to the server TLS shared secret key.
+6.  Optionally a port number.
+7.  Optionally a protocol (udp or tcp).
+
+Example:
+
+```
+# ovpngen titty.nipples.org /etc/openvpn/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/ta.key > iphone.ovpn
+
+```
+
+The resulting `iphone.ovpn` can be edited if desired as the script does insert some commented lines.
+
+**Tip:** If the server.conf contains a specified cipher and/or auth line, it is highly recommended that users manually edit the generated .ovpn file adding matching lines for cipher and auth. Failure to do so may results in connection errors!
+
+### Converting certificates to encrypted .p12 format
+
+Some software will only read VPN certificates that are stored in a password-encrypted .p12 file. These can be generated with the following command:
+
+ `# openssl pkcs12 -export -inkey keys/bugs.key -in keys/bugs.crt -certfile keys/ca.crt -out keys/bugs.p12` 
 
 ### Testing the OpenVPN configuration
 
@@ -693,9 +725,8 @@ Once the script is installed add lines like the following into your OpenVPN clie
 
 ```
 script-security 2
-setenv PATH /usr/bin
 up /etc/openvpn/update-resolv-conf
-down /etc/openvpn/update-resolv-conf
+down-pre /etc/openvpn/update-resolv-conf
 
 ```
 
@@ -718,37 +749,6 @@ down /etc/openvpn/update-systemd-resolved
 ## L2 Ethernet bridging
 
 For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
-
-## Creating an OpenVPN client profile (Linux, iOS, or Android)
-
-The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format. Tested on the iOS version of OpenVPN Connect and likely works with the Android app as well as the native Linux client.
-
-Simply invoke the script with 5 tokens:
-
-1.  Server Fully Qualified Domain Name of the OpenVPN server (or IP address).
-2.  Full path to the CA cert.
-3.  Full path to the client cert.
-4.  Full path to the client private key.
-5.  Full path to the server TLS shared secret key.
-6.  Optionally a port number.
-7.  Optionally a protocol (udp or tcp).
-
-Example:
-
-```
-# ovpngen titty.nipples.org /etc/easy-rsa/pki/ca.crt /etc/easy-rsa/pki/issued/client.crt /etc/easy-rsa/pki/private/client.key /etc/openvpn/ta.key > myprofile.ovpn
-
-```
-
-The resulting `myprofile.ovpn` can be edited if desired.
-
-**Tip:** If the server.conf contains a specified cipher and/or auth line, it is highly recommended that users manually edit the generated .ovpn file adding matching lines for cipher and auth. Failure to do so may results in connection errors!
-
-### Converting certificates to encrypted .p12 format
-
-Some software will only read VPN certificates that are stored in a password-encrypted .p12 file. These can be generated with the following command:
-
- `# openssl pkcs12 -export -inkey keys/bugs.key -in keys/bugs.crt -certfile keys/ca.crt -out keys/bugs.p12` 
 
 ## Troubleshooting
 

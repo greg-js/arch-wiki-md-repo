@@ -102,7 +102,7 @@ $ msgfmt -o django.mo django.po
 Next we need to add this default language to the settings now:
 
 ```
-$ echo "LANGUAGE='<yourlanguage>'" >> $HOME/example.org/seahub_settings.py
+$ echo "LANGUAGE='<yourlanguage>'" >> $HOME/example.org/conf/seahub_settings.py
 
 ```
 

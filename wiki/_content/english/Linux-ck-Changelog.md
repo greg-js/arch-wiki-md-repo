@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.6.6-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.6](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.6.6)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=96c562260243461eb7e6ae7759b19b7136e7113e](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=96c562260243461eb7e6ae7759b19b7136e7113e)
+
 **Bump to v4.6.5-4**
 
 *   Changelog: v8r2 of BFQ

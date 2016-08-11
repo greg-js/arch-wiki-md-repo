@@ -240,16 +240,27 @@ The *pacstrap* tool used in the next step also installs a copy of the file to th
 
 ### Install the base packages
 
-The *pacstrap* script installs the [base](https://www.archlinux.org/groups/x86_64/base/) group of packages. This group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs); see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
-
-To build packages from the [AUR](/index.php/AUR "AUR") or with the [ABS](/index.php/ABS "ABS"), the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is also required. Packages can be [installed](/index.php/Install "Install") with *pacman* anytime after the [#Change root](#Change_root) step later, or by appending their names to the *pacstrap* command.
+Execute the [pacstrap](https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) script:
 
 ```
-# pacstrap -i /mnt base base-devel
+# pacstrap /mnt
 
 ```
 
-The `-i` switch ensures prompting before package installation. With the base group, the first [initramfs](/index.php/Initramfs "Initramfs") will be generated and installed to the new system's boot path; double-check output prompts `==> Image creation successful` for it.
+which defaults to install the [base](https://www.archlinux.org/groups/x86_64/base/) group of packages.
+
+This group represents the recommended minimum of packages for an Arch Linux installation. The group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs); see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
+
+To build packages from the [AUR](/index.php/AUR "AUR") or with the [ABS](/index.php/ABS "ABS"), the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is also required. Packages can be [installed](/index.php/Install "Install") with [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) anytime after the [#Change root](#Change_root) step later, or by appending their names to the *pacstrap* command. For example:
+
+```
+# pacstrap -i /mnt base base-devel btrfs-progs
+
+```
+
+The `-i` switch ensures prompting before package installation.
+
+With the base group, the first [initramfs](/index.php/Initramfs "Initramfs") will be generated and installed to the new system's boot path; double-check output prompts `==> Image creation successful` for it.
 
 ## Configuration
 

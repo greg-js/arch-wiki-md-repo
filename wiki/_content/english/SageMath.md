@@ -17,7 +17,6 @@ SageMath provides support for the following:
     *   [2.2 Sage Notebook](#Sage_Notebook)
     *   [2.3 Jupyter Notebook](#Jupyter_Notebook)
     *   [2.4 Cantor](#Cantor)
-    *   [2.5 Documentation](#Documentation)
 *   [3 Optional additions](#Optional_additions)
     *   [3.1 SageTeX](#SageTeX)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -30,11 +29,11 @@ SageMath provides support for the following:
 *   [sagemath-doc](https://www.archlinux.org/packages/?name=sagemath-doc) for HTML documentation and inline help from the command line.
 *   [sage-notebook](https://www.archlinux.org/packages/?name=sage-notebook) includes the browser-based notebook interface.
 
-**Note:** Most if not all of the [standard sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as [optional dependencies](/index.php/Pacman#Installing_packages "Pacman") of the [sagemath](https://www.archlinux.org/packages/?name=sagemath) package, therefore they have to be installed additionally as normal Arch packages in order to take advantage of their features. Note that there is no need to install them with `sage -i`, in fact mixing system and user packages is discouraged.
+**Note:** Most if not all of the [standard sage packages](http://doc.sagemath.org/html/en/installation/standard_packages.html) are available as [optional dependencies](/index.php/Pacman#Installing_packages "Pacman") of the [sagemath](https://www.archlinux.org/packages/?name=sagemath) package, therefore they have to be installed additionally as normal Arch packages in order to take advantage of their features. Note that there is no need to install them with `sage -i`, in fact this command will not work if you installed SageMath with pacman.
 
 ## Usage
 
-SageMath mainly uses Python as a scripting language with a few [modifications](http://www.sagemath.org/doc/tutorial/afterword.html#section-mathannoy) to make it better suited for mathematical computations.
+SageMath mainly uses Python as a scripting language with a few [modifications](http://doc.sagemath.org/html/en/tutorial/afterword.html#section-mathannoy) to make it better suited for mathematical computations.
 
 ### SageMath command-line
 
@@ -45,9 +44,9 @@ $ sage
 
 ```
 
-For information on the SageMath command-line see [this page](http://www.sagemath.org/doc/reference/cmd/index.html).
+For information on the SageMath command-line see [this page](http://doc.sagemath.org/reference/repl/index.html).
 
-The command-line is based on the IPython shell so you can use all its [tricks](http://www.sagemath.org/doc/tutorial/interactive_shell.html) with SageMath. For an extensive tutorial on IPython see the community maintained [IPython Cookbook](http://wiki.ipython.org/Cookbook).
+The command-line is based on the IPython shell so you can use all its [tricks](http://doc.sagemath.org/html/en/tutorial/interactive_shell.html) with SageMath. For an extensive tutorial on IPython see the community maintained [IPython Cookbook](http://wiki.ipython.org/Cookbook).
 
 Note, however, that it is not very comfortable for some uses such as plotting. When you try to plot something, for example:
 
@@ -56,9 +55,11 @@ sage: plot(sin,(x,0,10))
 
 ```
 
-SageMath opens a browser window with the Sage Notebook.
+SageMath opens the plot in an external application.
 
 ### Sage Notebook
+
+**Note:** The SageMath Flask notebook is currently in maintenance mode and will be deprecated in favour of the Jupyter notebook. The Jupyter notebook is recommended for all new worksheets. You can use the [sage-notebook-exporter](https://www.archlinux.org/packages/?name=sage-notebook-exporter) application to convert your Flask notebooks to Jupyter
 
 A better suited interface for advanced usage in SageMath is the Notebook. To start the Notebook server from the command-line, execute:
 
@@ -76,7 +77,7 @@ $ sage -c "notebook(automatic_login=True)"
 
 ```
 
-For a more comprehensive tutorial on the Sage Notebook see the [Sage documentation](http://www.sagemath.org/doc/reference/notebook/index.html). For more information on the `notebook()` command see [this page](http://www.sagemath.org/doc/reference/notebook/sagenb/notebook/notebook.html).
+For a more comprehensive tutorial on the Sage Notebook see the [Sage documentation](http://doc.sagemath.org/html/en/reference/notebook/index.html). For more information on the `notebook()` command see [this page](http://doc.sagemath.org/html/en/reference/notebook/sagenb/notebook/notebook.html).
 
 ### Jupyter Notebook
 
@@ -95,24 +96,11 @@ and choose "SageMath" in the drop-down "New..." menu. The SageMath Jupyter noteb
 
 Cantor can be installed with the [cantor](https://www.archlinux.org/packages/?name=cantor) package or as part of the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) or [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/) groups, available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-### Documentation
-
-For local documentation, one can compile it into multiple formats such as HTML or PDF. To build the whole SageMath reference, execute the following command (as root):
-
-```
-# sage --docbuild reference html
-
-```
-
-This builds the HTML documentation for the whole *reference* tree (may take longer than an hour). An option is to build a smaller part of the documentation tree, but you would need to know what it is you want. Until then, you might consider just browsing the [online reference](http://www.sagemath.org/doc/).
-
-For a list of documents see `sage --docbuild --documents` and for a list of supported formats see `sage --docbuild --formats`.
-
 ## Optional additions
 
 ### SageTeX
 
-If you have installed [TeX Live](/index.php/TeX_Live "TeX Live") on your system, you may be interested in [using SageTeX](http://www.sagemath.org/doc/tutorial/sagetex.html), a package that makes the inclusion of SageMath code in LaTeX files possible. TeX Live is made aware of SageTeX automatically so you can start using it straight away.
+If you have installed [TeX Live](/index.php/TeX_Live "TeX Live") on your system, you may be interested in [using SageTeX](http://doc.sagemath.org/html/en/tutorial/sagetex.html), a package that makes the inclusion of SageMath code in LaTeX files possible. TeX Live is made aware of SageTeX automatically so you can start using it straight away.
 
 As a simple example, here is how you include a Sage 2D plot in your TEX document (assuming you use `pdflatex`):
 
@@ -186,7 +174,7 @@ texhash: Done.
 ## See also
 
 *   [Official Website](http://www.sagemath.org/)
-*   [SageMath Documentation](http://www.sagemath.org/doc/)
+*   [SageMath Documentation](http://doc.sagemath.org/)
 *   [Planet Sage](http://planet.sagemath.org/)
 *   [SageMath Wiki](http://wiki.sagemath.org/)
 *   [Software Used by SageMath](http://www.sagemath.org/links-components.html)

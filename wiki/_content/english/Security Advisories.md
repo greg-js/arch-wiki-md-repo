@@ -40,6 +40,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### August 2016
 
+*   [10 August 2016] [ASA-201608-10](https://lists.archlinux.org/pipermail/arch-security/2016-August/000684.html) [jq](https://www.archlinux.org/packages/?name=jq) arbitrary code execution
 *   [08 August 2016] [ASA-201608-9](https://lists.archlinux.org/pipermail/arch-security/2016-August/000683.html) [curl](https://www.archlinux.org/packages/?name=curl) multiple issues
 *   [08 August 2016] [ASA-201608-8](https://lists.archlinux.org/pipermail/arch-security/2016-August/000682.html) [libupnp](https://www.archlinux.org/packages/?name=libupnp) arbitrary filesystem access
 *   [08 August 2016] [ASA-201608-7](https://lists.archlinux.org/pipermail/arch-security/2016-August/000681.html) [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) denial of service

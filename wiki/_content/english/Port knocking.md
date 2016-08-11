@@ -158,7 +158,9 @@ COMMIT
 
 ## Port knocking script
 
-Now that configuration is done, to do the port knocking you will need a tool. [nmap](https://www.archlinux.org/packages/?name=nmap) is used here. A simple shell script (`knock.sh`) automates the port knocking:
+Now that configuration is done, to do the port knocking you will need a tool. [knockd](https://www.archlinux.org/packages/?name=knockd), mentioned above, comes with the `knock` tool, which is simple and probably sufficient for many requirements. The upstream site has the `knock` tool for other OSs.
+
+[nmap](https://www.archlinux.org/packages/?name=nmap) can also be used here. A simple shell script (`knock.sh`) automates the port knocking:
 
  `knock.sh` 
 ```

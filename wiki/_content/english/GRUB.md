@@ -602,7 +602,10 @@ x:\> "bootrec.exe /fixboot"
 x:\> "bootrec.exe /RebuildBcd".
 
 ```
+
 Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out.
+
+Or you can use Boot Repair function in Troubleshooting menu - it won't wipe out GRUB but will fix most error.
 
 `/etc/grub.d/40_custom` can be used as a template to create `/etc/grub.d/nn_custom`. Where `nn` defines the precendence, indicating the order the script is executed. The order scripts are executed determine the placement in the grub boot menu.
 

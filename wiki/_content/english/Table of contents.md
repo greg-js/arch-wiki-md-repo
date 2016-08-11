@@ -91,7 +91,7 @@
 | <small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
-| <small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(24)</small> |
+| <small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(23)</small> |
 | <small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.8.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small> |
 | <small>5.9.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small> |
@@ -105,7 +105,7 @@
 | <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(62)</small> |
 | <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(10)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small> |
-| <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(43)</small> |
+| <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(42)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(12)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
 | <small>6.2.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(16)</small> |
@@ -134,7 +134,7 @@
 | <small>6.11.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.5.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(5)</small> |
-| <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(31)</small> |
+| <small>6.12.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(30)</small> |
 | <small>6.13.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(20)</small> |
 | <small>6.13.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |
 | <small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(62)</small> |

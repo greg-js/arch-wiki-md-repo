@@ -67,7 +67,7 @@ For more information on configuring systemd-boot, see the [systemd-boot](/index.
 
 	 `linux /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff *quiet splash*` 
 
-	Press `b` to boot with these parameters.
+	Press `Ctrl+x` to boot with these parameters.
 
 *   To make the change persistent after reboot, while you *could* manually edit `/boot/grub/grub.cfg` with the exact line from above, the best practice is to:
 

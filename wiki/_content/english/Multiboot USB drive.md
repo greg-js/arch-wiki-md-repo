@@ -110,7 +110,7 @@ For UEFI, the partition has to be the first one in an MBR partition table and fo
 This configuration is useful for creating an universal USB key, bootable everywhere. First of all you must create a [GPT](/index.php/GPT "GPT") partition table on your device. You need at least 3 partitions:
 
 1.  A BIOS boot partition (type EF02)
-2.  An EFI System partition (type EF00)
+2.  An EFI System partition (type EF00 with a [FAT32 filesystem](/index.php/EFI_System_Partition#Format_the_partition "EFI System Partition"))
 3.  Your data partition (use a filesystem supported by [GRUB](/index.php/GRUB "GRUB"))
 
 The BIOS boot partition must be sized 1 MB, while the EFI System partition can be at least as small as 50 MB. The data partition can take up the rest of the space of your drive.

@@ -3,28 +3,34 @@
 *   [1 Write a simple message dialog app](#Write_a_simple_message_dialog_app)
     *   [1.1 Ada](#Ada)
     *   [1.2 Bash](#Bash)
-    *   [1.3 Boo](#Boo)
-    *   [1.4 C](#C)
-    *   [1.5 C++](#C.2B.2B)
-    *   [1.6 C#](#C.23)
-    *   [1.7 Cobra](#Cobra)
-    *   [1.8 D](#D)
-    *   [1.9 F#](#F.23)
-    *   [1.10 Fortran](#Fortran)
-    *   [1.11 Genie](#Genie)
-    *   [1.12 Go](#Go)
-    *   [1.13 Groovy](#Groovy)
-    *   [1.14 Haskell](#Haskell)
-    *   [1.15 Java](#Java)
-    *   [1.16 JavaScript](#JavaScript)
-    *   [1.17 Lua](#Lua)
-    *   [1.18 Pascal](#Pascal)
-    *   [1.19 Perl](#Perl)
-    *   [1.20 Python](#Python)
-    *   [1.21 Ruby](#Ruby)
-    *   [1.22 Scala](#Scala)
-    *   [1.23 Vala](#Vala)
-    *   [1.24 Visual Basic .NET](#Visual_Basic_.NET)
+    *   [1.3 BASIC](#BASIC)
+    *   [1.4 Boo](#Boo)
+    *   [1.5 C](#C)
+    *   [1.6 C++](#C.2B.2B)
+    *   [1.7 C#](#C.23)
+    *   [1.8 Cobra](#Cobra)
+    *   [1.9 D](#D)
+    *   [1.10 F#](#F.23)
+    *   [1.11 Fortran](#Fortran)
+    *   [1.12 Genie](#Genie)
+    *   [1.13 Go](#Go)
+    *   [1.14 Groovy](#Groovy)
+    *   [1.15 Haskell](#Haskell)
+    *   [1.16 IronPython](#IronPython)
+    *   [1.17 Java](#Java)
+    *   [1.18 JavaScript](#JavaScript)
+    *   [1.19 JRuby](#JRuby)
+    *   [1.20 Jython](#Jython)
+    *   [1.21 Lua](#Lua)
+    *   [1.22 Nemerle](#Nemerle)
+    *   [1.23 Pascal](#Pascal)
+    *   [1.24 Perl](#Perl)
+    *   [1.25 Python](#Python)
+    *   [1.26 Ruby](#Ruby)
+    *   [1.27 Rust](#Rust)
+    *   [1.28 Scala](#Scala)
+    *   [1.29 Vala](#Vala)
+    *   [1.30 Visual Basic .NET](#Visual_Basic_.NET)
 
 ## Write a simple message dialog app
 
@@ -68,6 +74,22 @@ end hello_world;
 ```
 #!/bin/bash
 zenity --info --title='Hello world!' --text='This is an example dialog.'
+```
+
+### BASIC
+
+*   Dependency: [gtk3](https://www.archlinux.org/packages/?name=gtk3)
+*   Makedependency: [freebasic-gnomeheaders](https://aur.archlinux.org/packages/freebasic-gnomeheaders/)
+*   Build with: `fbc hello_world.bas`
+
+ `hello_world.bas` 
+```
+#include "Gir/Gtk-3.0.bi"
+Dim As GtkWidget Ptr hello
+gtk_init (cast(gint ptr, @__fb_argc__), @__fb_argv__)
+hello = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK, "Hello world!")
+gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (hello), "This is an example dialog.")
+gtk_dialog_run (GTK_DIALOG (hello))
 ```
 
 ### Boo
@@ -117,6 +139,7 @@ int main(int argc, char *argv[]) {
 	Gtk::MessageDialog Hello("Hello world!", false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK);
 	Hello.set_secondary_text("This is an example dialog.");
 	Hello.run();
+        return 0;
 }
 ```
 
@@ -182,7 +205,7 @@ void main(string[] args)
 
 *   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
 *   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)
-*   Build with: `fsharpc -r:gtk-sharp.dll -I:/usr/lib/mono/gtk-sharp-3.0/`
+*   Build with: `fsharpc -r:gtk-sharp.dll -I:/usr/lib/mono/gtk-sharp-3.0/ hello_world.fs`
 *   Run with: `mono hello_world.exe`
 
  `hello_world.fs` 
@@ -199,7 +222,7 @@ Hello.Run() |> ignore
 
 *   Dependency: [gtk-3-fortran-git](https://aur.archlinux.org/packages/gtk-3-fortran-git/)
 *   Makedependency: [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran)
-*   Build with: `gfortran hello_world.f90 -o hello_world $(pkg-config --cflags --libs gtk-3-fortran)`
+*   Build with: `gfortran -o hello_world $(pkg-config --cflags --libs gtk-3-fortran) hello_world.f90`
 
  `hello_world.f90` 
 ```
@@ -259,7 +282,7 @@ func main() {
 
 *   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/)
 *   Build with: `groovyc -cp /usr/share/java/gtk.jar HelloWorld.groovy && jar cfe HelloWorld.jar HelloWorld HelloWorld.class`
-*   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`)
+*   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`
 
  `HelloWorld.groovy` 
 ```
@@ -272,19 +295,34 @@ Hello.run()
 ### Haskell
 
 *   Dependency: [gtk3](https://www.archlinux.org/packages/?name=gtk3)
-*   Makedependency: [haskell-gtk3](https://aur.archlinux.org/packages/haskell-gtk3/)
+*   Makedependency: [haskell-gtk](https://www.archlinux.org/packages/?name=haskell-gtk)
 *   Build with: `ghc hello_world`
 
  `hello_world.hs` 
 ```
 import Graphics.UI.Gtk
-
 main = do
-	initGUI
-	dialog <- messageDialogNew Nothing [DialogModal] MessageInfo ButtonsOk "Hello world!"
-	messageDialogSetSecondaryText dialog "This is an example dialog."
-	_res <- dialogRun dialog
-	return 0
+         initGUI
+         dialog <- messageDialogNew Nothing [DialogModal] MessageInfo ButtonsOk "Hello world!"
+         messageDialogSetSecondaryText dialog "This is an example dialog."
+         _res <- dialogRun dialog
+         return 0
+```
+
+### IronPython
+
+*   Dependencies: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3), [ironpython](https://www.archlinux.org/packages/?name=ironpython)
+*   Run with: `ipy hello_world.py`
+
+ `hello_world.py` 
+```
+import clr
+clr.AddReference('gtk-sharp')
+import Gtk
+Gtk.Application.Init()
+Hello = Gtk.MessageDialog (None, Gtk.DialogFlags.Modal, Gtk.MessageType.Info, Gtk.ButtonsType.Ok, "Hello world!")
+Hello.SecondaryText="This is an example dialog."
+Hello.Run()
 ```
 
 ### Java
@@ -311,7 +349,7 @@ public class HelloWorld {
 
 ### JavaScript
 
-*   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [gjs](https://www.archlinux.org/packages/?name=gjs) (works also with [seed](https://www.archlinux.org/packages/?name=seed))
+*   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [gjs](https://www.archlinux.org/packages/?name=gjs)
 
  `hello_world.js` 
 ```
@@ -322,6 +360,37 @@ var Hello = new Gtk.MessageDialog({type: Gtk.MessageType.INFO,
                                    buttons: Gtk.ButtonsType.OK,
                                    text: "Hello world!",
                                    "secondary-text": "This is an example dialog."})
+Hello.run()
+```
+
+### JRuby
+
+*   Dependencies: [java-gnome](https://aur.archlinux.org/packages/java-gnome/), [jruby](https://www.archlinux.org/packages/?name=jruby)
+*   Build with: `jrubyc hello_world.rb && jar cfe hello_world.jar hello_world hello_world.class`
+*   Run with: `java -cp /opt/jruby/lib/jruby.jar:hello_world.jar hello_world` or `jruby hello_world.rb`
+
+ `hello_world.rb` 
+```
+require '/usr/share/java/gtk.jar'
+import Java::OrgGnomeGtk::Gtk
+import Java::OrgGnomeGtk::Dialog
+import Java::OrgGnomeGtk::InfoMessageDialog
+
+Gtk.init(nil)
+Hello = InfoMessageDialog.new(nil, "Hello world!", "This is an example dialog.")
+Hello.run
+```
+
+### Jython
+
+*   Dependencies: [java-gnome](https://aur.archlinux.org/packages/java-gnome/), [jython](https://www.archlinux.org/packages/?name=jython)
+*   Run with: `jython -Dpython.path=/usr/share/java/gtk.jar hello_world.py`
+
+ `hello_world.py` 
+```
+from org.gnome.gtk import Gtk, InfoMessageDialog
+Gtk.init(None)
+Hello=InfoMessageDialog(None, "Hello world!", "This is an example dialog.")
 Hello.run()
 ```
 
@@ -340,6 +409,26 @@ Hello=Gtk.MessageDialog {message_type = Gtk.MessageType.INFO,
                          text = "Hello world!",
                          secondary_text = "This is an example dialog."}
 Hello:run()
+```
+
+### Nemerle
+
+*   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
+*   Makedependency: [nemerle](https://aur.archlinux.org/packages/nemerle/)
+*   Build with: `ncc -pkg:gtk-sharp-3.0 -out:hello_world.exe hello_world.n`
+*   Run with: `mono hello_world.exe`
+
+ `hello_world.n` 
+```
+using Gtk;
+public class HelloWorld {
+	static Main() : void {
+		Application.Init ();
+		def Hello = MessageDialog (null, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Hello world!");
+		Hello.SecondaryText = "This is an example dialog.";
+		_ = Hello.Run ();
+	}
+}
 ```
 
 ### Pascal
@@ -377,11 +466,13 @@ $hello->run;
 
 ### Python
 
-*   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
+*   Dependencies: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) (or [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) for Python 2)
 
  `hello_world.py` 
 ```
 #!/usr/bin/env python
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 Gtk.init(None)
 Hello=Gtk.MessageDialog(None, Gtk.DialogFlags.MODAL, Gtk.MessageType.INFO, Gtk.ButtonsType.OK, "Hello world!")
@@ -390,6 +481,18 @@ Hello.run()
 ```
 
 ### Ruby
+
+*   Dependency: [gtk3](https://www.archlinux.org/packages/?name=gtk3), [ruby-gir_ffi-gtk](https://aur.archlinux.org/packages/ruby-gir_ffi-gtk/)
+
+ `hello_world.rb` 
+```
+#!/usr/bin/env ruby
+require 'gir_ffi-gtk3'
+Gtk.init
+Hello = Gtk::MessageDialog.new nil, :modal, :info, :ok, "Hello world!"
+Hello.secondary_text = "This is an example dialog."
+Hello.run
+```
 
 *   Dependency: [ruby-gtk3](https://aur.archlinux.org/packages/ruby-gtk3/)
 
@@ -403,6 +506,40 @@ Hello = Gtk::MessageDialog.new(:type => :info,
                                :message => "Hello world!")
 Hello.secondary_text = "This is an example dialog."
 Hello.run
+```
+
+### Rust
+
+Using [Gtk-rs](http://gtk-rs.org/).
+
+*   Dependency: [gtk3](https://www.archlinux.org/packages/?name=gtk3)
+*   Makedependency: [cargo](https://www.archlinux.org/packages/?name=cargo)
+*   Build with: `cargo build`
+*   Run with: `target/debug/hello_world` or `cargo run`
+
+ `Cargo.toml` 
+```
+[package]
+name = "hello_world"
+version = "0.1.0"
+
+[dependencies]
+gtk = "^0"
+```
+ `src/main.rs` 
+```
+extern crate gtk;
+use gtk::prelude::*;
+use gtk::{ButtonsType, DialogFlags, MessageType, MessageDialog, Window};
+
+fn main() {
+    let _ = gtk::init();
+    MessageDialog::new(None::<&Window>,
+                       DialogFlags::empty(),
+                       MessageType::Info,
+                       ButtonsType::Ok,
+                       "Hello world!").run();
+}
 ```
 
 ### Scala
@@ -448,7 +585,7 @@ public class HelloWorld {
 
 *   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
 *   Makedependency: [mono-basic](https://www.archlinux.org/packages/?name=mono-basic)
-*   Build with: `vbnc -r:/usr/lib/mono/gtk-sharp-3.0/gio-sharp.dll -r:/usr/lib/mono/gtk-sharp-3.0/glib-sharp.dll -r:/usr/lib/mono/gtk-sharp-3.0/gtk-sharp.dll hello_world.vb`
+*   Build with: `vbnc -r:/usr/lib/mono/gtk-sharp-3.0/gtk-sharp.dll hello_world.vb`
 *   Run with: `mono hello_world.exe`
 
  `hello_world.vb` 

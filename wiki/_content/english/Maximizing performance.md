@@ -187,6 +187,8 @@ scsi_mod.use_blk_mq=1
 
 ```
 
+**Note:** Using blk_mq is an all-or-nothing proposition. When enabled all IO schedulers are disabled which is fine for SSDs but doing this may [negatively impact performance of rotational discs](https://mahmoudhatem.wordpress.com/2016/02/08/oracle-uek-4-where-is-my-io-scheduler-none-multi-queue-model-blk-mq/).
+
 A HDD has spinning disks and head that move physically to the required location. Such structure leads to following characteristics:
 
 *   random latency is quite high, for modern HDDs it is ~10ms (ignoring a disk controller write buffer).

@@ -100,7 +100,7 @@ The boot loader must be modified to load a special Xen kernel (`xen.gz` or in th
 
 There are several ways UEFI can be involved in booting Xen but this section will cover the most simple way to get Xen to boot with help of EFI-stub.
 
-Make sure that you have compiled Xen with UEFI support enabled accoring to [#With UEFI support](#With_UEFI_support).
+Make sure that you have compiled Xen with UEFI support enabled according to [#With UEFI support](#With_UEFI_support).
 
 It is possible to boot a kernel from UEFI just by placing it on the EFI partition, but since Xen at least needs to know what kernel should be booted as dom0, a minimum configuration file is required. Create or edit a `/boot/xen.cfg` file according to system requirements, for example:
 

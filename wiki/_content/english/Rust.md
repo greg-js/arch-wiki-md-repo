@@ -26,6 +26,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language) "wiki
     *   [7.2 Editors](#Editors)
         *   [7.2.1 Atom](#Atom)
         *   [7.2.2 Visual Studio Code](#Visual_Studio_Code)
+        *   [7.2.3 Vim](#Vim)
 *   [8 See also](#See_also)
 
 ### Rust Core Library
@@ -200,6 +201,10 @@ Atom has the best support for Rust programming as of this moment with the availa
 #### Visual Studio Code
 
 Visual Studio Code also provides support for Rust, although it is not as great as Atom's support. Support for Rust can be obtained by installing [RustyCode](https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode).
+
+#### Vim
+
+Vim support for Rust is enabled via [vim-racer](https://github.com/racer-rust/vim-racer) plugin.
 
 ## See also
 

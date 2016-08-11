@@ -175,7 +175,7 @@ public class HelloWorld {
 *   Build with: `cobra -c hello_world`
 *   Run with: `mono hello_world.exe`
 
- `hello_world.cs` 
+ `hello_world.cobra` 
 ```
 @args -pkg:notify-sharp-3.0
 use Notifications
@@ -218,36 +218,26 @@ uses
 
 init
 	Notify.init ("Hello world")
-	var Hello=new Notification ("Hello world!","This is an example notification.","dialog-information")
+	var Hello=new Notify.Notification ("Hello world!","This is an example notification.","dialog-information")
 	Hello.show ()
 ```
 
 **Go**
 
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
+*   Makedependency: [go-notify-git](https://aur.archlinux.org/packages/go-notify-git/)
+*   Build with: `go build hello_world.go`
+*   (Or run with: `go run hello_world.go`)
 
- `main.go` 
+ `hello_world.go` 
 ```
 package main
-
-import (
-	"fmt"
-	"os"
-
-	notify "github.com/mqu/go-notify"
-)
+import ("github.com/mqu/go-notify")
 
 func main() {
-	notify.Init("Hello World!")
-	defer notify.UnInit()
-
-	hello := notify.NotificationNew("Hello World!", "This is an example notification.", "")
-
-	if e := notify.NotificationShow(hello); e != nil {
-		fmt.Fprintf(os.Stderr, "%s
-", e.Message())
-		return
-	}
+	notify.Init("Hello world")
+	hello := notify.NotificationNew("Hello World!", "This is an example notification.","dialog-information")
+	hello.Show()
 }
 ```
 
@@ -255,7 +245,7 @@ func main() {
 
 *   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/)
 *   Build with: `groovyc -cp /usr/share/java/gtk.jar HelloWorld.groovy && jar cfe HelloWorld.jar HelloWorld HelloWorld.class`
-*   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`)
+*   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`
 
  `HelloWorld.groovy` 
 ```
@@ -266,6 +256,40 @@ Gtk.init()
 Notify.init("Hello world")
 def Hello = new Notification("Hello world!", "This is an example notification.", "dialog-information")
 Hello.show()
+```
+
+**Haskell**
+
+*   Makedependency: [haskell-fdo-notify](https://www.archlinux.org/packages/?name=haskell-fdo-notify)
+*   Build with: `ghc hello_world`
+
+ `hello_world.hs` 
+```
+import DBus.Notify
+main = do
+         client <- connectSession
+         let hello = blankNote { summary="Hello world!",
+                                 body=(Just $ Text "This is an example notification."),
+                                 appImage=(Just $ Icon "dialog-information") }
+         notification <- notify client hello
+         return 0
+```
+
+**IronPython**
+
+*   Dependencies: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3), [ironpython](https://www.archlinux.org/packages/?name=ironpython)
+*   Run with: `ipy hello_world.py`
+
+ `hello_world.py` 
+```
+import clr
+clr.AddReference('notify-sharp')
+import Notifications
+Hello = Notifications.Notification()
+Hello.Summary  = "Hello world!"
+Hello.Body     = "This is an example notification."
+Hello.IconName = "dialog-information"
+Hello.Show()
 ```
 
 **Java**
@@ -294,7 +318,7 @@ public class HelloWorld
 
 **JavaScript**
 
-*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [gjs](https://www.archlinux.org/packages/?name=gjs) (works also with [seed](https://www.archlinux.org/packages/?name=seed))
+*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [gjs](https://www.archlinux.org/packages/?name=gjs)
 
  `hello_world.js` 
 ```
@@ -305,6 +329,40 @@ var Hello=new Notify.Notification ({summary: "Hello world!",
                                     body: "This is an example notification.",
                                     "icon-name": "dialog-information"});
 Hello.show ();
+```
+
+**JRuby**
+
+*   Dependencies: [java-gnome](https://aur.archlinux.org/packages/java-gnome/), [jruby](https://www.archlinux.org/packages/?name=jruby)
+*   Build with: `jrubyc hello_world.rb && jar cfe hello_world.jar hello_world hello_world.class`
+*   Run with: `java -cp /opt/jruby/lib/jruby.jar:hello_world.jar hello_world` or `jruby hello_world.rb`
+
+ `hello_world.rb` 
+```
+require '/usr/share/java/gtk.jar'
+import Java::OrgGnomeGtk::Gtk
+import Java::OrgGnomeNotify::Notify
+import Java::OrgGnomeNotify::Notification
+
+Gtk.init(nil)
+Notify.init("Hello world")
+Hello = Notification.new("Hello world!", "This is an example notification.", "dialog-information")
+Hello.show
+```
+
+**Jython**
+
+*   Dependencies: [java-gnome](https://aur.archlinux.org/packages/java-gnome/), [jython](https://www.archlinux.org/packages/?name=jython)
+*   Run with: `jython -Dpython.path=/usr/share/java/gtk.jar hello_world.py`
+
+ `hello_world.py` 
+```
+from org.gnome.gtk import Gtk
+from org.gnome.notify import Notify, Notification
+Gtk.init(None)
+Notify.init("Hello world")
+Hello=Notification("Hello world!", "This is an example notification.", "dialog-information")
+Hello.show()
 ```
 
 **Lua**
@@ -319,6 +377,45 @@ Notify = lgi.require('Notify')
 Notify.init("Hello world")
 Hello=Notify.Notification.new("Hello world","This is an example notification.","dialog-information")
 Hello:show()
+```
+
+**Nemerle**
+
+*   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
+*   Makedependency: [nemerle](https://aur.archlinux.org/packages/nemerle/)
+*   Build with: `ncc -pkg:notify-sharp-3.0 -out:hello_world.exe hello_world.n`
+*   Run with: `mono hello_world.exe`
+
+ `hello_world.n` 
+```
+using Notifications;
+public class HelloWorld {
+	static Main() : void {
+		def Hello = Notification();
+		Hello.Summary  = "Hello world!";
+		Hello.Body     = "This is an example notification.";
+		Hello.IconName = "dialog-information";
+		Hello.Show();
+	}
+}
+```
+
+**Pascal**
+
+*   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
+*   Makedependency: [fpc](https://www.archlinux.org/packages/?name=fpc), [libnotify binding](https://github.com/ik5/libnotify-fpc)
+*   Build with: `fpc hello_world`
+
+ `hello_world.pas` 
+```
+program	hello_world;
+uses	libnotify;
+var	hello : PNotifyNotification;
+begin
+	notify_init(argv[0]);
+	hello := notify_notification_new ('Hello world', 'This is an example notification.', 'dialog-information');
+	notify_notification_show (hello, nil);
+end.
 ```
 
 **Perl**
@@ -345,6 +442,8 @@ $hello->show;
  `hello_world.py` 
 ```
 #!/usr/bin/python
+import gi
+gi.require_version('Notify', '0.7')
 from gi.repository import Notify
 Notify.init("Hello world")
 Hello=Notify.Notification.new("Hello world", "This is an example notification.", "dialog-information")
@@ -367,17 +466,29 @@ Hello.show
 
 **Rust**
 
-*   Dependencies: [rust](https://www.archlinux.org/packages/?name=rust) and [cargo](https://www.archlinux.org/packages/?name=cargo) (or just [multirust](https://aur.archlinux.org/packages/multirust/))
-*   notification crate: [notify-rust](https://crates.io/crates/notify-rust)
+Using [notify-rust](https://crates.io/crates/notify-rust).
 
- `hello_world.rs` 
+*   Makedependency: [cargo](https://www.archlinux.org/packages/?name=cargo)
+*   Build with: `cargo build`
+*   Run with: `target/debug/hello_world` or `cargo run`
+
+ `Cargo.toml` 
+```
+[package]
+name = "hello_world"
+version = "0.1.0"
+
+[dependencies]
+notify-rust = "^3"
+```
+ `src/main.rs` 
 ```
 extern crate notify_rust;
 use notify_rust::Notification;
 fn main(){
     Notification::new()
         .summary("Hello world")
-        .body("This is an example notification")
+        .body("This is an example notification.")
         .icon("dialog-information")
         .show().unwrap();
 }
@@ -417,7 +528,7 @@ using Notify;
 public class HelloWorld {
 	static void main () {
 		Notify.init ("Hello world");
-		var Hello = new Notification("Hello world!", "This is an example notification.", "dialog-information");
+		var Hello = new Notify.Notification("Hello world!", "This is an example notification.", "dialog-information");
 		Hello.show ();
 	}
 }

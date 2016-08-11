@@ -209,6 +209,14 @@ For the Sandy Bridge model (L502X): Suspend works; hibernation does not (it gets
 
 For the XPS 9550 variant, sound works out of the box with the linux kernel. If you try to plug in headphones, you won't hear any output from them. Upon restart, you'll receive a **Dummy Output** as your sound card.
 
+dmesg gives you this output:
+
+```
+snd_hda_intel 0000:00:1f.3: CORB reset timeout#1, CORBRP = 0
+snd_hda_intel 0000:00:1f.3: no codecs found!
+
+```
+
 aplay -l should give you this output if Arch can detect your soundcard:
 
 ```
@@ -237,36 +245,11 @@ aplay: device_list:268: no soundcards found...
 
 You may or may not get sound back after a few restarts. This is a bug and has been documented here: [[1]](https://bugs.archlinux.org/task/49157)
 
-Things you can try:
+Things you can try ():
 
-- Disable audio, microphone, and internal speaker from BIOS, let it boot into Arch, shutdown, re-enable audio settings, and boot into Arch with sound back. This has worked 100% of the time... so far.
+Restart your computer until you get it back.
 
-```
-mkinitcpio -p linux
-
-```
-
-```
-modprobe snd_hda_intel
-
-```
-
-Then reboot.
-
-- Use the linux-lts kernel. Click here for more information on changing your kernel: [System maintenance#Install the linux-lts package](/index.php/System_maintenance#Install_the_linux-lts_package "System maintenance")
-
-- Make sure FluidSynth is installed and enabled (systemctl enable fluidsynth). Then ensure the line "AUDIO_DRIVER" in /etc/conf.d/fluidsynth matches this:
-
-```
-...
-AUDIO_DRIVER=alsa
-...
-
-```
-
-It may take a few restarts to get headphones to register in alsamixer. Sometimes, when you plug in your headphones, you may have to unmute the channel in alsamixer.
-
-Regardless, for now, it is recommended that you reduce hot-plugging headphones as it makes ALSA/PulseAudio break/very unstable.
+Regardless, for now, it is recommended that you don't/reduce hot-plugging headphones as it makes ALSA/PulseAudio break/very unstable.
 
 ### Graphics
 

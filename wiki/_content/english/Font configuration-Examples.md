@@ -15,7 +15,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 
 ## Hinted fonts
 
- `$XDG_CONFIG_HOME/fontconfig/fonts.conf` 
+ `~/.config/fontconfig/fonts.conf` 
 ```
 <?xml version='1.0'?>
 <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>

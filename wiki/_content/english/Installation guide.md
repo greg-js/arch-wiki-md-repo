@@ -110,14 +110,16 @@ This file will later be copied to the new system by *pacstrap*, so it is worth g
 
 ### Install the base packages
 
-Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) script to install the [base](https://www.archlinux.org/groups/x86_64/base/) group:
+Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) script to install the [base](https://www.archlinux.org/groups/x86_64/base/) package group:
 
 ```
 # pacstrap /mnt base
 
 ```
 
-To [install](/index.php/Install "Install") other packages or groups to the new system, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or a [boot loader](/index.php/Boot_loader "Boot loader"), append their names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after [changing root](#Chroot).
+The group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
+
+To [install](/index.php/Install "Install") other packages or groups to the new system, append their names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
 
 ## Configure the system
 

@@ -5,8 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Systemd](#Systemd)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Write your own canberra app](#Write_your_own_canberra_app)
+*   [4 Usage in programming](#Usage_in_programming)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -41,9 +40,7 @@ In GNOME, these settings are managed by gnome-settings-daemon, and the configura
 
 To enable bootup, shutdown and reboot sounds using canberra, [enable](/index.php/Enable "Enable") `canberra-system-bootup` service.
 
-## Tips and tricks
-
-### Write your own canberra app
+## Usage in programming
 
 You can write your own libcanberra sound events easily in many programming languages using [GSound](https://wiki.gnome.org/Projects/GSound) through GObject-Introspection, or you can simply use bash.
 
@@ -60,13 +57,13 @@ canberra-gtk-play -i phone-incoming-call -d "hello world"
 **C**
 
 *   Dependency: [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)
-*   Build with: `gcc hello_world.c -o hello_world `pkg-config --cflags --libs glib-2.0 libcanberra``
+*   Build with: `gcc -o hello_world `pkg-config --cflags --libs glib-2.0 libcanberra` hello_world.c`
 
  `hello_world.c` 
 ```
 #include <glib.h>
 #include <canberra.h>
-void main () {
+int main () {
 	ca_context * hello;
 	ca_context_create (&hello);
 	ca_context_play (hello, 0,
@@ -74,6 +71,25 @@ void main () {
 		CA_PROP_EVENT_DESCRIPTION, "hello world",
 		NULL);
 	g_usleep (2000000);
+	return 0;
+}
+```
+
+*   Dependency: [gsound](https://www.archlinux.org/packages/?name=gsound)
+*   Build with: `gcc -o hello_world `pkg-config --cflags --libs glib-2.0 gsound` hello_world.c`
+
+ `hello_world.c` 
+```
+#include <glib.h>
+#include <gsound.h>
+int main () {
+	GSoundContext *hello = gsound_context_new(NULL, NULL);
+	gsound_context_play_simple(hello, NULL, NULL,
+		GSOUND_ATTR_EVENT_ID, "phone-incoming-call",
+		GSOUND_ATTR_EVENT_DESCRIPTION, "hello world",
+		NULL);
+	g_usleep (2000000);
+	return 0;
 }
 ```
 
@@ -96,6 +112,23 @@ init
 	Thread.usleep (2000000)
 ```
 
+*   Dependency: [gsound](https://www.archlinux.org/packages/?name=gsound)
+*   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
+*   Build with: `valac --pkg gsound hello_world.gs`
+
+ `hello_world.gs` 
+```
+uses
+	GSound
+init
+	var hello = new GSound.Context
+	hello.init()
+	hello.play_simple(null,
+		GSound.Attribute.EVENT_ID, "phone-incoming-call",
+		GSound.Attribute.EVENT_DESCRIPTION, "hello world")
+	Thread.usleep (2000000)
+```
+
 **JavaScript**
 
 *   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [gjs](https://www.archlinux.org/packages/?name=gjs)
@@ -108,7 +141,8 @@ const GSound = imports.gi.GSound;
 
 let hello = new GSound.Context();
 hello.init(null);
-hello.play_simple({ "event.id" : "phone-incoming-call" }, null);
+hello.play_simple({ "event.id" : "phone-incoming-call", 
+                    "event.description" : "hello world" }, null);
 GLib.usleep (2000000);
 ```
 
@@ -124,9 +158,27 @@ GLib = lgi.require('GLib')
 GSound = lgi.require('GSound')
 
 hello = GSound.Context()
-hello:init()
-hello:play_simple({[GSound.ATTR_EVENT_ID] = "phone-incoming-call"})
-GLib.usleep(2000000)
+hello:play_simple({ [GSound.ATTR_EVENT_ID] = "phone-incoming-call",
+                    [GSound.ATTR_EVENT_DESCRIPTION] = "hello world" })
+GLib.usleep (2000000)
+```
+
+**Perl**
+
+*   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [perl-glib-object-introspection](https://aur.archlinux.org/packages/perl-glib-object-introspection/)
+
+ `hello_world.pl` 
+```
+#!/usr/bin/perl
+use Glib::Object::Introspection;
+Glib::Object::Introspection->setup (
+	basename => 'GSound',
+	version => '1.0',
+	package => 'GSound');
+my $hello = GSound::Context->new;
+$hello->play_simple({ "event.id" => "phone-incoming-call",
+                      "event.description" => "hello world" });
+sleep (2);
 ```
 
 **Python**
@@ -142,8 +194,24 @@ from gi.repository import GLib, GSound
 
 hello = GSound.Context()
 hello.init()
-hello.play_simple({ GSound.ATTR_EVENT_ID : "phone-incoming-call" })
+hello.play_simple({ GSound.ATTR_EVENT_ID : "phone-incoming-call",
+                    GSound.ATTR_EVENT_DESCRIPTION : "hello world" })
 GLib.usleep (2000000);
+```
+
+**Ruby**
+
+*   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [ruby-gir_ffi](https://aur.archlinux.org/packages/ruby-gir_ffi/)
+
+ `hello_world.rb` 
+```
+#!/usr/bin/ruby
+require 'gir_ffi'
+GirFFI.setup :GSound
+Hello = GSound::Context.new
+Hello.play_simple("event.id" => "phone-incoming-call", 
+                  "event.description" => "hello world")
+sleep (2)
 ```
 
 **Vala**
@@ -167,6 +235,26 @@ public class HelloWorld {
 }
 ```
 
+*   Dependency: [gsound](https://www.archlinux.org/packages/?name=gsound)
+*   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
+*   Build with: `valac --pkg gsound hello_world.vala`
+
+ `hello_world.vala` 
+```
+using GSound;
+public class HelloWorld {
+	static void main () {
+	var hello = new GSound.Context();
+	hello.init();
+        hello.play_simple(null,
+		GSound.Attribute.EVENT_ID, "phone-incoming-call",
+		GSound.Attribute.EVENT_DESCRIPTION, "hello world");
+	Thread.usleep (2000000);
+	}
+}
+```
+
 ## See also
 
 *   [Libcanberra Reference Manual](http://0pointer.de/lennart/projects/libcanberra/gtkdoc/)
+*   [GSound Reference Manual](https://developer.gnome.org/gsound/)

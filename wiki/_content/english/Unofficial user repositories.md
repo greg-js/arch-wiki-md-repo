@@ -39,51 +39,37 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.13 ivasilev](#ivasilev_2)
         *   [3.1.14 llvm-svn](#llvm-svn)
         *   [3.1.15 nuvolaplayer](#nuvolaplayer)
-        *   [3.1.16 metalgamer](#metalgamer)
-        *   [3.1.17 miffe](#miffe)
-        *   [3.1.18 pipelight](#pipelight)
-        *   [3.1.19 repo-ck](#repo-ck)
-        *   [3.1.20 seblu](#seblu)
-        *   [3.1.21 seiichiro](#seiichiro)
-        *   [3.1.22 sergej-repo](#sergej-repo)
-        *   [3.1.23 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.16 miffe](#miffe)
+        *   [3.1.17 repo-ck](#repo-ck)
+        *   [3.1.18 seblu](#seblu)
+        *   [3.1.19 seiichiro](#seiichiro)
+        *   [3.1.20 sergej-repo](#sergej-repo)
+        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
     *   [3.2 Unsigned](#Unsigned_2)
-        *   [3.2.1 arch-deepin](#arch-deepin)
-        *   [3.2.2 archaudio](#archaudio)
-        *   [3.2.3 archlinuxfr](#archlinuxfr)
-        *   [3.2.4 archlinuxgis](#archlinuxgis)
-        *   [3.2.5 archlinuxgr](#archlinuxgr)
-        *   [3.2.6 archlinuxgr-kde4](#archlinuxgr-kde4)
-        *   [3.2.7 arsch](#arsch)
-        *   [3.2.8 cinnamon](#cinnamon)
-        *   [3.2.9 ede](#ede)
-        *   [3.2.10 heftig](#heftig)
-        *   [3.2.11 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.12 mesa-git](#mesa-git)
-        *   [3.2.13 noware](#noware)
-        *   [3.2.14 openrc-eudev](#openrc-eudev)
-        *   [3.2.15 oracle](#oracle)
-        *   [3.2.16 pantheon](#pantheon)
-        *   [3.2.17 paulburton-fitbitd](#paulburton-fitbitd)
-        *   [3.2.18 pietma](#pietma)
-        *   [3.2.19 pfkernel](#pfkernel)
-        *   [3.2.20 suckless](#suckless)
-        *   [3.2.21 trinity](#trinity)
-        *   [3.2.22 Unity-for-Arch](#Unity-for-Arch)
-        *   [3.2.23 Unity-for-Arch-Extra](#Unity-for-Arch-Extra)
-        *   [3.2.24 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.25 QOwnNotes](#QOwnNotes)
+        *   [3.2.1 archaudio](#archaudio)
+        *   [3.2.2 archlinuxfr](#archlinuxfr)
+        *   [3.2.3 archlinuxgr](#archlinuxgr)
+        *   [3.2.4 archlinuxgr-kde4](#archlinuxgr-kde4)
+        *   [3.2.5 arsch](#arsch)
+        *   [3.2.6 cinnamon](#cinnamon)
+        *   [3.2.7 heftig](#heftig)
+        *   [3.2.8 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
+        *   [3.2.9 mesa-git](#mesa-git)
+        *   [3.2.10 noware](#noware)
+        *   [3.2.11 openrc-eudev](#openrc-eudev)
+        *   [3.2.12 pantheon](#pantheon)
+        *   [3.2.13 pietma](#pietma)
+        *   [3.2.14 trinity](#trinity)
+        *   [3.2.15 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.16 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
-        *   [4.1.1 eee-ck](#eee-ck)
-        *   [4.1.2 xyne-i686](#xyne-i686)
+        *   [4.1.1 xyne-i686](#xyne-i686)
     *   [4.2 Unsigned](#Unsigned_3)
         *   [4.2.1 andrwe](#andrwe)
         *   [4.2.2 kpiche](#kpiche)
         *   [4.2.3 kernel26-pae](#kernel26-pae)
         *   [4.2.4 linux-pae](#linux-pae)
-        *   [4.2.5 rfad](#rfad)
-        *   [4.2.6 studioidefix](#studioidefix)
 *   [5 x86_64 only](#x86_64_only)
     *   [5.1 Signed](#Signed_4)
         *   [5.1.1 apathism](#apathism)
@@ -97,43 +83,28 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.9 eatabrick](#eatabrick)
         *   [5.1.10 freifunk-rheinland](#freifunk-rheinland)
         *   [5.1.11 holo](#holo)
-        *   [5.1.12 Linux-pf](#Linux-pf)
-        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.14 kc9ydn](#kc9ydn)
-        *   [5.1.15 linux-lts-ck](#linux-lts-ck)
-        *   [5.1.16 linux-lts31x](#linux-lts31x)
-        *   [5.1.17 linux-lts31x-ck](#linux-lts31x-ck)
-        *   [5.1.18 linux-ck-pax](#linux-ck-pax)
-        *   [5.1.19 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.20 linux-tresor](#linux-tresor)
-        *   [5.1.21 nullptr_t](#nullptr_t)
-        *   [5.1.22 markzz](#markzz)
-        *   [5.1.23 qt-debug](#qt-debug)
-        *   [5.1.24 quarry](#quarry)
-        *   [5.1.25 rstudio](#rstudio)
-        *   [5.1.26 siosm-aur](#siosm-aur)
-        *   [5.1.27 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.28 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.13 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.14 nullptr_t](#nullptr_t)
+        *   [5.1.15 markzz](#markzz)
+        *   [5.1.16 qt-debug](#qt-debug)
+        *   [5.1.17 quarry](#quarry)
+        *   [5.1.18 siosm-aur](#siosm-aur)
+        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
         *   [5.2.3 andrwe](#andrwe_2)
-        *   [5.2.4 archstudio](#archstudio)
-        *   [5.2.5 brtln](#brtln)
-        *   [5.2.6 jkanetwork](#jkanetwork)
-        *   [5.2.7 mikroskeem](#mikroskeem)
-        *   [5.2.8 mingw-w64](#mingw-w64)
-        *   [5.2.9 pkgbuild-current](#pkgbuild-current)
-        *   [5.2.10 pnsft-pur](#pnsft-pur)
-        *   [5.2.11 rakudo](#rakudo)
-        *   [5.2.12 rightlink](#rightlink)
-        *   [5.2.13 zrootfs](#zrootfs)
-*   [6 armv6h only](#armv6h_only)
-    *   [6.1 Unsigned](#Unsigned_5)
-        *   [6.1.1 arch-fook-armv6h](#arch-fook-armv6h)
-*   [7 armv7h only](#armv7h_only)
-    *   [7.1 Unsigned](#Unsigned_6)
-        *   [7.1.1 pietma](#pietma_2)
+        *   [5.2.4 brtln](#brtln)
+        *   [5.2.5 jkanetwork](#jkanetwork)
+        *   [5.2.6 mikroskeem](#mikroskeem)
+        *   [5.2.7 mingw-w64](#mingw-w64)
+        *   [5.2.8 pkgbuild-current](#pkgbuild-current)
+        *   [5.2.9 pnsft-pur](#pnsft-pur)
+        *   [5.2.10 rakudo](#rakudo)
+        *   [5.2.11 rightlink](#rightlink)
+        *   [5.2.12 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -414,18 +385,6 @@ Server = https://repo.celti.name/archlinux/$repo/$arch
 
 ```
 
-#### metalgamer
-
-*   **Maintainer:** [metalgamer](http://metalgamer.eu/)
-*   **Description:** Packages I use and/or maintain on the AUR.
-*   **Key ID:** F55313FB
-
-```
-[metalgamer]
-Server = http://repo.metalgamer.eu/$arch
-
-```
-
 #### miffe
 
 *   **Maintainer:** [miffe](https://bbs.archlinux.org/profile.php?id=4059)
@@ -435,20 +394,6 @@ Server = http://repo.metalgamer.eu/$arch
 ```
 [miffe]
 Server = http://arch.miffe.org/$arch/
-
-```
-
-#### pipelight
-
-*   **Maintainer:**
-*   **Description:** Pipelight and wine-compholio
-*   **Upstream page:** [fds-team.de](http://fds-team.de/)
-*   **Key-ID:** E49CC0415DC2D5CA
-*   **Keyfile:** [http://repos.fds-team.de/Release.key](http://repos.fds-team.de/Release.key)
-
-```
-[pipelight]
-Server = http://repos.fds-team.de/stable/arch/$arch
 
 ```
 
@@ -520,20 +465,6 @@ Server = http://pkgbuild.com/~tredaelli/repo/systemd/$arch
 
 **Note:** Users will need to add the following to these entries: `SigLevel = PackageOptional`
 
-#### arch-deepin
-
-*   **Maintainer:** [metak](https://build.opensuse.org/project/show/home:metakcahura), [fasheng](https://github.com/fasheng)
-*   **Description:** Porting software from Linux Deepin to Archlinux.
-*   **Upstream page:** [https://github.com/fasheng/arch-deepin](https://github.com/fasheng/arch-deepin)
-
-```
-[home_metakcahura_arch-deepin_Arch_Extra]
-SigLevel = Never
-Server = http://download.opensuse.org/repositories/home:/metakcahura:/arch-deepin/Arch_Extra/$arch
-#Server = http://anorien.csc.warwick.ac.uk/mirrors/download.opensuse.org/repositories/home:/metakcahura:/arch-deepin/Arch_Extra/$arch
-
-```
-
 #### archaudio
 
 *   **Maintainer:** [Ray Rashif](/index.php/User:Schivmeister "User:Schivmeister"), [Joakim Hernberg](https://aur.archlinux.org/account/jhernberg)
@@ -554,17 +485,6 @@ Server = http://repos.archaudio.org/$repo/$arch
 ```
 [archlinuxfr]
 Server = http://repo.archlinux.fr/$arch
-
-```
-
-#### archlinuxgis
-
-*   **Maintainer:**
-*   **Description:** Maintainers needed - low bandwidth
-
-```
-[archlinuxgis]
-Server = http://archlinuxgis.no-ip.org/$arch
 
 ```
 
@@ -612,21 +532,10 @@ Server = http://archlinux.zoelife4u.org/cinnamon/$arch
 
 ```
 
-#### ede
-
-*   **Maintainer:**
-*   **Description:** Equinox Desktop Environment repository
-
-```
-[ede]
-Server = http://ede.elderlinux.org/repos/archlinux/$arch
-
-```
-
 #### heftig
 
 *   **Maintainer:** [Jan Steffens](https://www.archlinux.org/trustedusers/#heftig)
-*   **Description:** Includes linux-zen and firefox-developer-edition
+*   **Description:** Includes pulseaudio-git, pavucontrol-git, and firefox-developer-edition
 *   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
 
 ```
@@ -683,19 +592,6 @@ Server=ftp://ftp.heanet.ie/mirrors/sourceforge/a/ar/archopenrc/$repo/$arch
 
 ```
 
-#### oracle
-
-*   **Maintainer:** [Malvineous](/index.php/User:Malvineous "User:Malvineous")
-*   **Description:** Oracle database client
-
-**Warning:** By adding this you are agreeing to the Oracle license at [http://www.oracle.com/technetwork/licenses/instant-client-lic-152016.html](http://www.oracle.com/technetwork/licenses/instant-client-lic-152016.html)
-
-```
-[oracle]
-Server = http://linux.shikadi.net/arch/$repo/$arch/
-
-```
-
 #### pantheon
 
 *   **Maintainer:** [Maxime Gauduin](https://www.archlinux.org/trustedusers/#alucryd)
@@ -704,17 +600,6 @@ Server = http://linux.shikadi.net/arch/$repo/$arch/
 ```
 [pantheon]
 Server = http://pkgbuild.com/~alucryd/$repo/$arch
-
-```
-
-#### paulburton-fitbitd
-
-*   **Maintainer:**
-*   **Description:** Contains fitbitd for synchronizing FitBit trackers
-
-```
-[paulburton-fitbitd]
-Server = http://www.paulburton.eu/arch/fitbitd/$arch
 
 ```
 
@@ -731,29 +616,6 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-#### pfkernel
-
-*   **Maintainer:** [nous](/index.php/User:Nous "User:Nous")
-*   **Description:** Generic and optimized binaries of the ARCH kernel patched with BFS, TuxOnIce, BFQ, Aufs3; i.e. linux-pf[-cpu] and linux-pf-lts[-cpu]. Also, openrc and initscripts-openrc.
-*   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox). For example, for x86_64, point your browser to [http://dl.dropbox.com/u/11734958/x86_64/index.html](http://dl.dropbox.com/u/11734958/x86_64/index.html) or start at [http://bit.do/linux-pf](http://bit.do/linux-pf)
-
-```
-[pfkernel]
-Server = http://dl.dropbox.com/u/11734958/$arch
-
-```
-
-#### suckless
-
-*   **Maintainer:**
-*   **Description:** suckless.org packages
-
-```
-[suckless]
-Server = http://dl.suckless.org/arch/$arch
-
-```
-
 #### trinity
 
 *   **Maintainer:** [Michael Manley](/index.php?title=User:Mmanley&action=edit&redlink=1 "User:Mmanley (page does not exist)")
@@ -762,30 +624,6 @@ Server = http://dl.suckless.org/arch/$arch
 ```
 [trinity]
 Server = http://repo.nasutek.com/arch/contrib/trinity/$arch
-
-```
-
-#### Unity-for-Arch
-
-*   **Maintainer:** [https://github.com/chenxiaolong](https://github.com/chenxiaolong)
-*   **Description:** [Unity](/index.php/Unity "Unity") packages for Arch
-
-```
-[Unity-for-Arch]
-SigLevel = Optional TrustAll
-Server = http://dl.dropbox.com/u/486665/Repos/$repo/$arch
-
-```
-
-#### Unity-for-Arch-Extra
-
-*   **Maintainer:** [https://github.com/chenxiaolong](https://github.com/chenxiaolong)
-*   **Description:** [Unity](/index.php/Unity "Unity") extra packages for Arch
-
-```
-[Unity-for-Arch-Extra]
-SigLevel = Optional TrustAll
-Server = http://dl.dropbox.com/u/486665/Repos/$repo/$arch
 
 ```
 
@@ -815,19 +653,6 @@ Server = http://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Ex
 ## i686 only
 
 ### Signed
-
-#### eee-ck
-
-*   **Maintainer:** Gruppenpest
-*   **Description:** Kernel and modules optimized for Asus Eee PC 701, with -ck patchset.
-*   **Key-ID:** 27D4A19A
-*   **Keyfile** [http://zembla.duckdns.org/repo/gruppenpest.gpg](http://zembla.duckdns.org/repo/gruppenpest.gpg)
-
-```
-[eee-ck]
-Server = http://zembla.duckdns.org/repo
-
-```
 
 #### xyne-i686
 
@@ -888,28 +713,6 @@ Server = http://kernel26-pae.archlinux.ca/
 ```
 [linux-pae]
 Server = http://pae.archlinux.ca/
-
-```
-
-#### rfad
-
-*   **Maintainer:** requiem [at] archlinux.us
-*   **Description:** Repository made by haxit
-
-```
-[rfad]
-Server = http://web.ncf.ca/ey723/archlinux/repo/
-
-```
-
-#### studioidefix
-
-*   **Maintainer:**
-*   **Description:** Precompiled boxee packages.
-
-```
-[studioidefix]
-Server = http://studioidefix.googlecode.com/hg/repo/i686
 
 ```
 
@@ -1060,19 +863,6 @@ Server = https://repo.holocm.org/archlinux/x86_64
 
 ```
 
-#### Linux-pf
-
-*   **Maintainer:** [Thaodan](/index.php?title=User:Thaodan&action=edit&redlink=1 "User:Thaodan (page does not exist)")
-*   **Description:** Generic and optimized binaries of the ARCH kernel patched with BFS, TuxOnIce, BFQ, Aufs3; i.e. linux-pf, just like [linux-pf](https://aur.archlinux.org/packages/linux-pf/) from the [AUR](/index.php/AUR "AUR") but additionally optimized for intel CPUs Sandy Bridge, Ivy Bridge, Haswell and generic of course, and some extra packages
-*   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox).
-
-```
-[Linux-pf]
-Server = https://dl.dropboxusercontent.com/u/172590784/Linux-pf/x86_64/
-SigLevel = Optional
-
-```
-
 #### infinality-bundle-multilib
 
 *   **Maintainer:** [bohoomil](http://bohoomil.com/)
@@ -1083,70 +873,6 @@ SigLevel = Optional
 ```
 [infinality-bundle-multilib]
 Server = http://bohoomil.com/repo/multilib/$arch
-
-```
-
-#### kc9ydn
-
-*   **Maintainer:** [KC9YDN](http://kc9ydn.us)
-*   **Description:** Consists mostly of amateur radio related apps
-*   **Key-ID:** 7DA25A0F
-
-```
-[kc9ydn]
-Server = http://kc9ydn.us/repo/
-
-```
-
-#### linux-lts-ck
-
-*   **Maintainer:** Claire Farron [clfarron4](https://aur.archlinux.org/account/clfarron4)
-*   **Description:** Current ArchLinux LTS kernel with the CK patch
-*   **Key-ID:** E6366A92
-*   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox). For example, for x86_64, point your browser to [http://dl.dropbox.com/u/298301785/arch/linux-lts-ck/x86_64/index.html](http://dl.dropbox.com/u/298301785/arch/linux-lts-ck/x86_64/index.html) or start at [http://tiny.cc/linux-lts-ck](http://tiny.cc/linux-lts-ck)
-
-```
-[linux-lts-ck]
-Server = http://dl.dropbox.com/u/298301785/arch/linux-lts-ck/$arch
-
-```
-
-#### linux-lts31x
-
-*   **Maintainer:** Claire Farron [clfarron4](https://aur.archlinux.org/account/clfarron4)
-*   **Description:** Older LTS kernels (3.10 and 3.12 branch)
-*   **Key-ID:** E6366A92
-*   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox). For example, for x86_64, point your browser to [http://dl.dropbox.com/u/298301785/arch/linux-lts31x/x86_64/index.html](http://dl.dropbox.com/u/298301785/arch/linux-lts31x/x86_64/index.html) or start at [http://tiny.cc/linux-lts31x](http://tiny.cc/linux-lts31x)
-
-```
-[linux-lts31x]
-Server = http://dl.dropbox.com/u/298301785/arch/linux-lts31x/$arch
-
-```
-
-#### linux-lts31x-ck
-
-*   **Maintainer:** Claire Farron [clfarron4](https://aur.archlinux.org/account/clfarron4)
-*   **Description:** Older LTS kernels (3.10 and 3.12 branch) with the CK patch
-*   **Key-ID:** E6366A92
-*   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox). For example, for x86_64, point your browser to [http://dl.dropbox.com/u/298301785/arch/linux-lts31x-ck/x86_64/index.html](http://dl.dropbox.com/u/298301785/arch/linux-lts31x-ck/x86_64/index.html) or start at [http://tiny.cc/linux-lts31x-ck](http://tiny.cc/linux-lts31x-ck)
-
-```
-[linux-lts31x-ck]
-Server = http://dl.dropbox.com/u/298301785/arch/linux-lts31x-ck/$arch
-
-```
-
-#### linux-ck-pax
-
-*   **Maintainer:** Claire Farron [clfarron4](https://aur.archlinux.org/account/clfarron4)
-*   **Description:** Current Arch Kernel with the CK and PaX security patchsets
-*   **Key-ID:** E6366A92
-*   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox). For example, for x86_64, point your browser to [http://dl.dropbox.com/u/298301785/arch/linux-ck-pax/x86_64/index.html](http://dl.dropbox.com/u/298301785/arch/linux-ck-pax/x86_64/index.html) or start at [http://tiny.cc/linux-ck-pax](http://tiny.cc/linux-ck-pax)
-
-```
-[linux-ck-pax]
-Server = http://dl.dropbox.com/u/298301785/arch/linux-ck-pax/$arch
 
 ```
 
@@ -1161,19 +887,6 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-ck-pax/$arch
 ```
 [linux-kalterfx]
 Server = http://deadsoftware.ru/files/linux-kalterfx/repo/$arch
-
-```
-
-#### linux-tresor
-
-*   **Maintainer:** Claire Farron [clfarron4](https://aur.archlinux.org/account/clfarron4)
-*   **Description:** Arch Current and LTS kernels with TRESOR
-*   **Key-ID:** E6366A92
-*   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox). For example, for x86_64, point your browser to [http://dl.dropbox.com/u/298301785/arch/linux-tresor/x86_64/index.html](http://dl.dropbox.com/u/298301785/arch/linux-tresor/x86_64/index.html) or start at [http://tiny.cc/linux-tresor](http://tiny.cc/linux-tresor)
-
-```
-[linux-tresor]
-Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 
 ```
 
@@ -1227,18 +940,6 @@ Server = http://qutebrowser.org/qt-debug/$arch
 ```
 [quarry]
 Server = http://pkgbuild.com/~anatolik/quarry/x86_64/
-
-```
-
-#### rstudio
-
-*   **Maintainer:** [Artem Klevtsov](https://aur.archlinux.org/account/unikum/)
-*   **Description:** Rstudio IDE package (git version) and depends.
-*   **Key-ID:** 1CB48DD4
-
-```
-[rstudio]
-Server = http://repo.psylab.info/archlinux/x86_64/
 
 ```
 
@@ -1313,23 +1014,11 @@ Server = http://pkgbuild.com/~alucryd/$repo/x86_64
 
 *   **Maintainer:** Andrwe Lord Weber
 *   **Description:** contains programs I'm using on many systems
-*   **Upstream page:** [http://andrwe.dyndns.org/doku.php/blog/repository](http://andrwe.dyndns.org/doku.php/blog/repository) 
+*   **Upstream page:** [http://andrwe.org/linux/repository](http://andrwe.org/linux/repository)
 
 ```
 [andrwe]
 Server = http://repo.andrwe.org/x86_64
-
-```
-
-#### archstudio
-
-*   **Maintainer:**
-*   **Description:** Audio and Music Packages optimized for Intel Core i3, i5, and i7.
-*   **Upstream page:** [http://www.xsounds.org/~archstudio](http://www.xsounds.org/~archstudio)
-
-```
-[archstudio]
-Server = http://www.xsounds.org/~archstudio/x86_64
 
 ```
 
@@ -1433,37 +1122,5 @@ Server = https://s3-ap-southeast-2.amazonaws.com/archlinux.rightscale.me/repo
 ```
 [zrootfs]
 Server = http://www.izzette.com/izzi/zrootfs-old
-
-```
-
-## armv6h only
-
-### Unsigned
-
-#### arch-fook-armv6h
-
-*   **Maintainer:** Jaska Kivelä <jaska@kivela.net>
-*   **Description:** Stuff that I have compiled for my Raspberry PI. Including Enlightenment and home automation stuff.
-
-```
-[arch-fook-armv6h]
-Server = http://kivela.net/jaska/arch-fook-armv6h
-
-```
-
-## armv7h only
-
-### Unsigned
-
-#### pietma
-
-*   **Maintainer:** MartiMcFly <martimcfly@autorisation.de>
-*   **Description:** Arch User Repository packages [I create or maintain.](https://aur.archlinux.org/packages/?K=martimcfly&SeB=m).
-*   **Upstream page:** [http://pietma.com/tag/aur/](http://pietma.com/tag/aur/)
-
-```
-[pietma]
-SigLevel = Optional TrustAll
-Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch/$repo
 
 ```

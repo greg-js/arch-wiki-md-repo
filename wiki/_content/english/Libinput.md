@@ -165,7 +165,7 @@ done
 
 ### Gestures
 
-While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch gestures, the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
+While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch [gestures](https://wayland.freedesktop.org/libinput/doc/latest/gestures.html), the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
 
 For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The script reads libinput gestures (through `libinput-debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
 

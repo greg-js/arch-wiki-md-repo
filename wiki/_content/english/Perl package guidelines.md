@@ -2,7 +2,7 @@
 
 * * *
 
-[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – **Perl** – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – **Perl** – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
 This document covers the creation of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for perl modules distributed over CPAN, the Comprehensive Perl Authors Network. The target audience of this document is intended to be packagers of perl modules.
 
@@ -24,15 +24,16 @@ This document covers the creation of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")
 *   [4 Installation modules](#Installation_modules)
     *   [4.1 ExtUtils::MakeMaker](#ExtUtils::MakeMaker)
     *   [4.2 Module::Build](#Module::Build)
-    *   [4.3 Module::Install](#Module::Install)
-    *   [4.4 Environment variables](#Environment_variables)
-        *   [4.4.1 PERL_MM_USE_DEFAULT](#PERL_MM_USE_DEFAULT)
-        *   [4.4.2 PERL_AUTOINSTALL](#PERL_AUTOINSTALL)
-        *   [4.4.3 PERL_MM_OPT](#PERL_MM_OPT)
-        *   [4.4.4 PERL_MB_OPT](#PERL_MB_OPT)
-        *   [4.4.5 MODULEBUILDRC](#MODULEBUILDRC)
-        *   [4.4.6 PERL5LIB](#PERL5LIB)
-        *   [4.4.7 PERL_LOCAL_LIB_ROOT](#PERL_LOCAL_LIB_ROOT)
+    *   [4.3 Module::Build::Tiny](#Module::Build::Tiny)
+    *   [4.4 Module::Install](#Module::Install)
+    *   [4.5 Environment variables](#Environment_variables)
+        *   [4.5.1 PERL_MM_USE_DEFAULT](#PERL_MM_USE_DEFAULT)
+        *   [4.5.2 PERL_AUTOINSTALL](#PERL_AUTOINSTALL)
+        *   [4.5.3 PERL_MM_OPT](#PERL_MM_OPT)
+        *   [4.5.4 PERL_MB_OPT](#PERL_MB_OPT)
+        *   [4.5.5 MODULEBUILDRC](#MODULEBUILDRC)
+        *   [4.5.6 PERL5LIB](#PERL5LIB)
+        *   [4.5.7 PERL_LOCAL_LIB_ROOT](#PERL_LOCAL_LIB_ROOT)
 *   [5 Problems with user-installed perl](#Problems_with_user-installed_perl)
 
 ## ArchLinux Packaging Conventions
@@ -135,7 +136,7 @@ check() {
 package() {
   cd "$srcdir/$_dist-$pkgver"
   unset PERL5LIB PERL_MM_OPT PERL_MB_OPT PERL_LOCAL_LIB_ROOT
-  ./Build install installdirs=vendor destdir="$pkgdir"
+  ./Build install --installdirs=vendor --destdir="$pkgdir"
 }
 
 ```
@@ -244,6 +245,18 @@ The original, oldest module for installing modules is `ExtUtils::MakeMaker`. The
 
 The main advantage of Module::Build is that it is pure-perl. This means it does not require a `make` program to be installed for you to build/install modules. Its adoption was rocky because if `Module::Build` was not already installed, you could not run the bundled `Build.PL` script! This is not a problem with recent versions of perl because `Module::Build` is a core module. (**NOTE** As of perl 5.22, Module::Build will no longer be a core module)
 
+### Module::Build::Tiny
+
+	Build script
+
+	`Build.PL`
+
+	CPAN link
+
+	[http://search.cpan.org/dist/Module-Build-Tiny](http://search.cpan.org/dist/Module-Build-Tiny)
+
+This is another pure-perl build tool. As an interface it implements a subset of Module::Build's interface, in particular it requires dashes before its arguments (Module::Build accepts with and without) and doesn't support `.modulebuildrc`.
+
 ### Module::Install
 
 	Build script
@@ -288,7 +301,7 @@ This is the same thing as `PERL_MM_OPT` except it is only for `Module::Build`. F
 
 #### MODULEBUILDRC
 
-`Module::Build` allows you to override its command-line-arguments with an rcfile. This defaults to `~/.modulebuildrc`. You can override which file it uses by setting the path to the rcfile in `MODULEBUILDRC`. The paranoid might set `MODULEBUILDRC` to `/dev/null`... just in case.
+`Module::Build` allows you to override its command-line-arguments with an rcfile. This defaults to `~/.modulebuildrc`. This is considered deprecated within the perl toolchain. You can override which file it uses by setting the path to the rcfile in `MODULEBUILDRC`. The paranoid might set `MODULEBUILDRC` to `/dev/null`... just in case.
 
 #### PERL5LIB
 

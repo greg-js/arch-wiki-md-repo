@@ -8,9 +8,10 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 From the unofficial repository (recommended)](#From_the_unofficial_repository_.28recommended.29)
-    *   [1.2 Manual compilation](#Manual_compilation)
-        *   [1.2.1 Install compiled package](#Install_compiled_package)
+    *   [1.1 From the unofficial repository](#From_the_unofficial_repository)
+    *   [1.2 From the AUR](#From_the_AUR)
+    *   [1.3 Manual compilation](#Manual_compilation)
+        *   [1.3.1 Install compiled package](#Install_compiled_package)
 *   [2 Configuration](#Configuration)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Forum thread for linux-pf](#Forum_thread_for_linux-pf)
@@ -18,13 +19,15 @@
 
 ## Installation
 
-Install [linux-pf](https://aur.archlinux.org/packages/linux-pf/) from the [AUR](/index.php/AUR "AUR"). A long-term support version of linux-pf is available with [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/).
+### From the unofficial repository
 
-### From the unofficial repository (recommended)
-
-Precompiled packages (generic or CPU-family optimized) are available from the [pfkernel](/index.php/Unofficial_user_repositories#pfkernel "Unofficial user repositories"), [Linux-pf](/index.php/Unofficial_user_repositories#Linux-pf "Unofficial user repositories") and [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") unofficial repositories. See [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") for configuration details.
+Precompiled packages (generic or CPU-family optimized) are available from the [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") unofficial repository. See [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") for configuration details.
 
 After an [upgrade](/index.php/Pacman#Upgrading_packages "Pacman"), running `pacman -Sl *repo_name*` will show the packages available in the given repository. Afterwards, just install the *linux-pf* and *linux-pf-headers* packages (for generic binaries - platform-specific binaries are also available in some repositories and will be listed in the output from the aforementioned pacman command). See the [#Configuration](#Configuration) section for additional configuration steps.
+
+### From the AUR
+
+Install [linux-pf](https://aur.archlinux.org/packages/linux-pf/) from the [AUR](/index.php/AUR "AUR"). A long-term support version of linux-pf is available with [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/).
 
 ### Manual compilation
 
