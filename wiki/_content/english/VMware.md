@@ -513,6 +513,7 @@ As of VMware Workstation Pro 12.1, the module source needs to be modified to be 
 # tar xf vmnet.tar
 # mv vmnet.tar vmnet.old.tar
 # sed -i -e 's/get_user_pages/get_user_pages_remote/g' vmnet-only/userif.c
+# sed -i -e 's/dev->trans_start = jiffies/netif_trans_update\(dev\)/g' vmnet-only/netif.c # Only for kernel 4.7 or later.
 # tar cf vmnet.tar vmnet-only
 # rm -r vmnet-only
 

@@ -602,3 +602,4 @@ If using Synaptics, read [Synaptics](/index.php/Synaptics "Synaptics").
 *   [A fairly comprehensive writeup of running Arch Linux on an XPS 15 9530.](http://drwho.virtadpt.net/archive/2015/01/05/linux-on-the-dell-xps-15-9530)
 *   [Comprehensive coverage of Arch Linux on XPS 15 9550](https://ahxxm.com/151.moew/)
 *   [Multitouch gestures with libinput and libinput-gestures](https://blog.spirotot.com/2016/07/27/dell-xps-15-9550-arch-linux-trackpad-gestures/)
+*   [Fixing 9550 screen flickering and black screen on resume from suspend](https://blog.spirotot.com/2016/08/11/xps-9550-arch-linux-fix-screen-flickering/)

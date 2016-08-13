@@ -5,31 +5,31 @@
 ## Contents
 
 *   [1 Debugging Steam](#Debugging_Steam)
-*   [2 Issues with nvidia 361.28](#Issues_with_nvidia_361.28)
-*   [3 Steam runtime issues](#Steam_runtime_issues)
-    *   [3.1 Dynamic linker](#Dynamic_linker)
-    *   [3.2 Native runtime](#Native_runtime)
-*   [4 Multiple monitors setup](#Multiple_monitors_setup)
-*   [5 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
-*   [6 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
-*   [7 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
-*   [8 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-*   [9 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
-*   [10 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
-*   [11 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
-*   [12 No audio in certain games](#No_audio_in_certain_games)
-    *   [12.1 FMOD sound engine](#FMOD_sound_engine)
-*   [13 Missing libc](#Missing_libc)
-*   [14 Missing libGL](#Missing_libGL)
-*   [15 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
-*   [16 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
-*   [17 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-*   [18 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-*   [19 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
-*   [20 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-*   [21 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
-*   [22 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
-*   [23 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
+*   [2 Steam runtime issues](#Steam_runtime_issues)
+    *   [2.1 Dynamic linker](#Dynamic_linker)
+    *   [2.2 Native runtime](#Native_runtime)
+        *   [2.2.1 Libraries for x86_64](#Libraries_for_x86_64)
+*   [3 Multiple monitors setup](#Multiple_monitors_setup)
+*   [4 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
+*   [5 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
+*   [6 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
+*   [7 Text is corrupt or missing](#Text_is_corrupt_or_missing)
+*   [8 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
+*   [9 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
+*   [10 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
+*   [11 No audio in certain games](#No_audio_in_certain_games)
+    *   [11.1 FMOD sound engine](#FMOD_sound_engine)
+*   [12 Missing libc](#Missing_libc)
+*   [13 Missing libGL](#Missing_libGL)
+*   [14 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
+*   [15 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
+*   [16 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
+*   [17 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+*   [18 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
+*   [19 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+*   [20 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+*   [21 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+*   [22 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
 
 ## Debugging Steam
 
@@ -42,20 +42,6 @@ For example with [gdb](https://www.archlinux.org/packages/?name=gdb)
  `$ DEBUGGER=gdb steam` 
 
 `gdb` will open, then type `run` which will start `steam` and once crash happens you can type `backtrace` to see call stack.
-
-## Issues with nvidia 361.28
-
-A bug was introduced in nvidia 361.28 that prevents some games from launching with an error such as
-
- `"Missing basic OpenGL v1.0 -> v2.0 required OpenGL functionality."` 
-
-You can update to 361.42 drivers
-
-To workaround this until NVIDIA fixes this issue, use this line for the launch options for every game that fails:
-
- `__GLVND_DISALLOW_PATCHING=1 %command%` 
-
-Alternatively, you can roll back to the 361.16 drivers
 
 ## Steam runtime issues
 
@@ -100,7 +86,7 @@ See also [upstream issue #13](https://github.com/ValveSoftware/steam-runtime/iss
 
 ### Dynamic linker
 
-The dynamic linker (see [ld.so(8)](http://man7.org/linux/man-pages/man8/ld.so.8.html)) can be used to force Steam to load the up-to-date system libraries via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"). For example:
+The dynamic linker—see [ld.so(8)](http://man7.org/linux/man-pages/man8/ld.so.8.html)—can be used to force Steam to load the up-to-date system libraries via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"). For example:
 
 ```
 LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam
@@ -113,61 +99,47 @@ LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so
 
 ### Native runtime
 
-To use your own system libraries, you can run Steam with:
+To force Steam to use only your system libraries, run it with
 
 ```
 $ STEAM_RUNTIME=0 steam
 
 ```
 
-However, if you are missing any libraries Steam makes use of, this will fail to launch properly. An easy way to find the missing libraries is to run the following commands:
+This variable can also be set in a wrapper script or .desktop file, as with the [#Dynamic linker](#Dynamic_linker) solution. However, if you are missing any libraries from the Steam runtime, individual games or Steam itself may fail to launch. To find the required libraries run:
 
 ```
 $ cd ~/.local/share/Steam/ubuntu12_32
-$ LD_LIBRARY_PATH=".:${LD_LIBRARY_PATH}" ldd $(file *|sed '/ELF/!d;s/:.*//g')|grep 'not found'|sort|uniq
+$ file * | grep ELF | cut -d: -f1 | LD_LIBRARY_PATH=. xargs ldd | grep 'not found' | sort | uniq
 
 ```
 
-**Note:** The libraries will have to be 32-bit, which means you may have to download some from the AUR if on x86_64, such as NetworkManager.
+**Note:** The libraries must be 32-bit, some of which are only available for x86_64 in the [AUR](/index.php/AUR "AUR").
 
-Once you have done this, run steam again with `STEAM_RUNTIME=0 steam` and verify it is not loading anything outside of the handful of steam support libraries:
+Alternatively, while Steam is running, the following command will show which non-system libraries Steam is using (not all of these are part of the Steam runtime):
 
 ```
 $ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | sort | uniq
 
 ```
 
-To launch Steam using native runtime in a graphical user environment you can add the [environment variable](/index.php/Environment_variable "Environment variable") to your [xprofile](/index.php/Xprofile "Xprofile") file:
+#### Libraries for x86_64
 
- `~/.xprofile` 
-```
-export STEAM_RUNTIME=0
+The minimum required libraries needed on an x86_64 system are
 
-```
+*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
+*   [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss)
+*   [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2)
+*   [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3)
+*   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
+*   [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/)
+*   [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/)
+*   [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/)
+*   [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/)
 
-If you create or edit this file while in a desktop session you will need to log out and then back into your [desktop environment](/index.php/Desktop_environment "Desktop environment") to enable the change to take effect.
+Some games may require additional libraries in order to launch without the runtime. See [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").
 
-**Backing out using the native runtime in a graphical environment change**
-
-To reverse this change remove or comment out the export line in your [xprofile](/index.php/Xprofile "Xprofile") file. Log out and then in again to refresh your desktop session. When launched, Steam will use the old bundled Ubuntu libraries.
-
-**Convenience repository**
-
-The unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repository contains all libraries needed to run native steam on x86_64\. Please note that, for some reason, steam does not pick up sdl2 or libav* even if you have them installed. It will still use the ones it ships with.
-
-All you need to install is the meta-package [steam-libs](https://aur.archlinux.org/packages/steam-libs/), it will pull all the libs for you. Please report if there is any missing library, the maintainer already had some lib32 packages installed so a library may have been overlooked.
-
-**Satisfying dependencies without using the convenience repository or steam-libs meta-package (For x86_64)**
-
-If you do not like the approach of installing all the libraries known for Steam and various game-compatibility libraries and want to install the minimum required libraries to launch Steam and most games install the following libraries:
-
-Steam on x86_64 requires the following libraries from [AUR](/index.php/AUR "AUR") to be installed [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) and [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/).
-
-It will also require the following libraries from the [multilib](/index.php/Multilib "Multilib") repository [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3).
-
-If Steam displays errors related to libcanberra-gtk3 install [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra).
-
-While most games will run with the minimal set of libraries listed here some games will require additional libraries to run. For a list of known game-compatibility libraries consult the [game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") page.
+The meta-package [steam-libs](https://aur.archlinux.org/packages/steam-libs/) includes all of these libraries (as well as some game-specific libraries) as dependencies, to simplify the install process. You can also use the unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repository to install prebuilt versions of the AUR packages.
 
 ## Multiple monitors setup
 

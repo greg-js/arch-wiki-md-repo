@@ -187,7 +187,7 @@ $(xrandr)"
 
 This script iterates over all xrandr outputs. If anything is connected it tries to figure out the best possible resolution places that right-of the previous display.
 
-I am using it with [srandrd](https://aur.archlinux.org/packages/srandrd/) in my [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) like so ([#Example 3](#Example_3) didn't work for me for some reason or other):
+The following uses it with [srandrd](https://aur.archlinux.org/packages/srandrd/) and [i3-wm](https://www.archlinux.org/packages/?name=i3-wm):
 
  `~/.xprofile` 
 ```

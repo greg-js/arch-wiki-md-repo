@@ -1,80 +1,4 @@
-**Mutt** is a text-based mail client renowned for its powerful features. Though over 2 decades old, Mutt remains the mail client of choice for a great number of power-users. Unfortunately, a default Mutt install is plagued by complex keybindings along with a daunting amount of documentation. This guide will help the average user get Mutt up and running, and begin customizing it to their particular needs.
-
-## Contents
-
-*   [1 Overview](#Overview)
-*   [2 Installing](#Installing)
-*   [3 Configuring](#Configuring)
-    *   [3.1 IMAP](#IMAP)
-        *   [3.1.1 Native IMAP support](#Native_IMAP_support)
-            *   [3.1.1.1 imap_user](#imap_user)
-            *   [3.1.1.2 imap_pass](#imap_pass)
-            *   [3.1.1.3 folder](#folder)
-            *   [3.1.1.4 spoolfile](#spoolfile)
-            *   [3.1.1.5 mailboxes](#mailboxes)
-            *   [3.1.1.6 Summary](#Summary)
-        *   [3.1.2 External IMAP support](#External_IMAP_support)
-    *   [3.2 POP3](#POP3)
-    *   [3.3 Maildir](#Maildir)
-    *   [3.4 SMTP](#SMTP)
-        *   [3.4.1 Folders](#Folders)
-        *   [3.4.2 Native SMTP support](#Native_SMTP_support)
-        *   [3.4.3 External SMTP support](#External_SMTP_support)
-        *   [3.4.4 Sending mails from Mutt](#Sending_mails_from_Mutt)
-    *   [3.5 Multiple accounts](#Multiple_accounts)
-    *   [3.6 Passwords management](#Passwords_management)
-        *   [3.6.1 Security concern](#Security_concern)
-*   [4 Advanced features](#Advanced_features)
-    *   [4.1 Key bindings](#Key_bindings)
-    *   [4.2 E-mail character encoding](#E-mail_character_encoding)
-    *   [4.3 Printing](#Printing)
-    *   [4.4 Custom mail headers](#Custom_mail_headers)
-    *   [4.5 Signature block](#Signature_block)
-        *   [4.5.1 Random signature](#Random_signature)
-    *   [4.6 Viewing URLs & opening your favorite web browser](#Viewing_URLs_.26_opening_your_favorite_web_browser)
-    *   [4.7 Viewing HTML](#Viewing_HTML)
-    *   [4.8 Mutt and Vim](#Mutt_and_Vim)
-    *   [4.9 Mutt and GNU nano](#Mutt_and_GNU_nano)
-    *   [4.10 Mutt and Emacs](#Mutt_and_Emacs)
-    *   [4.11 Colors](#Colors)
-    *   [4.12 Index Format](#Index_Format)
-        *   [4.12.1 Display recipient instead of sender in "Sent" folder view](#Display_recipient_instead_of_sender_in_.22Sent.22_folder_view)
-        *   [4.12.2 Variable column width](#Variable_column_width)
-    *   [4.13 Contact management](#Contact_management)
-        *   [4.13.1 Address aliases](#Address_aliases)
-        *   [4.13.2 Abook](#Abook)
-        *   [4.13.3 Goobook](#Goobook)
-    *   [4.14 Manage multiple sender accounts](#Manage_multiple_sender_accounts)
-    *   [4.15 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
-    *   [4.16 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
-    *   [4.17 Speed up folders switch](#Speed_up_folders_switch)
-    *   [4.18 Use Mutt to send mail from command line](#Use_Mutt_to_send_mail_from_command_line)
-    *   [4.19 Composing HTML e-mails](#Composing_HTML_e-mails)
-    *   [4.20 How to display another email while composing](#How_to_display_another_email_while_composing)
-    *   [4.21 Archive treated e-mails](#Archive_treated_e-mails)
-    *   [4.22 Mutt-Sidebar](#Mutt-Sidebar)
-    *   [4.23 Migrating mails from one computer to another](#Migrating_mails_from_one_computer_to_another)
-    *   [4.24 Filtering the message view](#Filtering_the_message_view)
-    *   [4.25 Display the index above the pager view](#Display_the_index_above_the_pager_view)
-    *   [4.26 Default folder for saving attachments](#Default_folder_for_saving_attachments)
-    *   [4.27 PGP signed/encrypted mail](#PGP_signed.2Fencrypted_mail)
-    *   [4.28 Pager behavior](#Pager_behavior)
-    *   [4.29 Fast reply](#Fast_reply)
-    *   [4.30 Ignore own e-mail addresses from group-reply](#Ignore_own_e-mail_addresses_from_group-reply)
-    *   [4.31 Conversation grouping](#Conversation_grouping)
-    *   [4.32 IMAP message cache](#IMAP_message_cache)
-*   [5 NeoMutt](#NeoMutt)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
-    *   [6.2 The *change-folder* function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
-    *   [6.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_.28Mutt_-R.29)
-    *   [6.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
-    *   [6.5 Character encoding problems](#Character_encoding_problems)
-    *   [6.6 Unable to login with GMail](#Unable_to_login_with_GMail)
-*   [7 Documentation](#Documentation)
-*   [8 See also](#See_also)
-
-## Overview
+**Mutt** is a text-based mail client renowned for its powerful features. Though over 2 decades old, Mutt remains the mail client of choice for a great number of power-users.
 
 Mutt focuses primarily on being a Mail User Agent (MUA), and was originally written to view mail. Later implementations (added for retrieval, sending, and filtering mail) are simplistic compared to other mail applications and, as such, users may wish to use external applications to extend Mutt's capabilities.
 
@@ -82,7 +6,80 @@ Nevertheless, the Arch Linux [mutt](https://www.archlinux.org/packages/?name=mut
 
 This article covers using both native IMAP sending and retrieval, and a setup depending on [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") or [getmail](/index.php/Getmail "Getmail") (POP3) to retrieve mail, [procmail](/index.php/Procmail "Procmail") to filter it in the case of POP3, and [msmtp](/index.php/Msmtp "Msmtp") to send it.
 
-## Installing
+## Contents
+
+*   [1 Installation](#Installation)
+    *   [1.1 NeoMutt](#NeoMutt)
+*   [2 Configuration](#Configuration)
+    *   [2.1 IMAP](#IMAP)
+        *   [2.1.1 Native IMAP support](#Native_IMAP_support)
+            *   [2.1.1.1 imap_user](#imap_user)
+            *   [2.1.1.2 imap_pass](#imap_pass)
+            *   [2.1.1.3 folder](#folder)
+            *   [2.1.1.4 spoolfile](#spoolfile)
+            *   [2.1.1.5 mailboxes](#mailboxes)
+            *   [2.1.1.6 Summary](#Summary)
+        *   [2.1.2 External IMAP support](#External_IMAP_support)
+    *   [2.2 POP3](#POP3)
+    *   [2.3 Maildir](#Maildir)
+    *   [2.4 SMTP](#SMTP)
+        *   [2.4.1 Folders](#Folders)
+        *   [2.4.2 Native SMTP support](#Native_SMTP_support)
+        *   [2.4.3 External SMTP support](#External_SMTP_support)
+        *   [2.4.4 Sending mails from Mutt](#Sending_mails_from_Mutt)
+    *   [2.5 Multiple accounts](#Multiple_accounts)
+    *   [2.6 Passwords management](#Passwords_management)
+        *   [2.6.1 Security concern](#Security_concern)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Key bindings](#Key_bindings)
+    *   [3.2 E-mail character encoding](#E-mail_character_encoding)
+    *   [3.3 Printing](#Printing)
+    *   [3.4 Custom mail headers](#Custom_mail_headers)
+    *   [3.5 Signature block](#Signature_block)
+        *   [3.5.1 Random signature](#Random_signature)
+    *   [3.6 Viewing URLs & opening your favorite web browser](#Viewing_URLs_.26_opening_your_favorite_web_browser)
+    *   [3.7 Viewing HTML](#Viewing_HTML)
+    *   [3.8 Mutt and Vim](#Mutt_and_Vim)
+    *   [3.9 Mutt and GNU nano](#Mutt_and_GNU_nano)
+    *   [3.10 Mutt and Emacs](#Mutt_and_Emacs)
+    *   [3.11 Colors](#Colors)
+    *   [3.12 Index Format](#Index_Format)
+        *   [3.12.1 Display recipient instead of sender in "Sent" folder view](#Display_recipient_instead_of_sender_in_.22Sent.22_folder_view)
+        *   [3.12.2 Variable column width](#Variable_column_width)
+    *   [3.13 Contact management](#Contact_management)
+        *   [3.13.1 Address aliases](#Address_aliases)
+        *   [3.13.2 Abook](#Abook)
+        *   [3.13.3 Goobook](#Goobook)
+    *   [3.14 Manage multiple sender accounts](#Manage_multiple_sender_accounts)
+    *   [3.15 Request IMAP mail retrieval manually](#Request_IMAP_mail_retrieval_manually)
+    *   [3.16 Avoiding slow index on large (IMAP) folders due to coloring](#Avoiding_slow_index_on_large_.28IMAP.29_folders_due_to_coloring)
+    *   [3.17 Speed up folders switch](#Speed_up_folders_switch)
+    *   [3.18 Use Mutt to send mail from command line](#Use_Mutt_to_send_mail_from_command_line)
+    *   [3.19 Composing HTML e-mails](#Composing_HTML_e-mails)
+    *   [3.20 How to display another email while composing](#How_to_display_another_email_while_composing)
+    *   [3.21 Archive treated e-mails](#Archive_treated_e-mails)
+    *   [3.22 Mutt-Sidebar](#Mutt-Sidebar)
+    *   [3.23 Migrating mails from one computer to another](#Migrating_mails_from_one_computer_to_another)
+    *   [3.24 Filtering the message view](#Filtering_the_message_view)
+    *   [3.25 Display the index above the pager view](#Display_the_index_above_the_pager_view)
+    *   [3.26 Default folder for saving attachments](#Default_folder_for_saving_attachments)
+    *   [3.27 PGP signed/encrypted mail](#PGP_signed.2Fencrypted_mail)
+    *   [3.28 Pager behavior](#Pager_behavior)
+    *   [3.29 Fast reply](#Fast_reply)
+    *   [3.30 Ignore own e-mail addresses from group-reply](#Ignore_own_e-mail_addresses_from_group-reply)
+    *   [3.31 Conversation grouping](#Conversation_grouping)
+    *   [3.32 IMAP message cache](#IMAP_message_cache)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Backspace does not work in Mutt](#Backspace_does_not_work_in_Mutt)
+    *   [4.2 The *change-folder* function always prompt for the same mailbox](#The_change-folder_function_always_prompt_for_the_same_mailbox)
+    *   [4.3 I cannot change folder when using Mutt read-only (Mutt -R)](#I_cannot_change_folder_when_using_Mutt_read-only_.28Mutt_-R.29)
+    *   [4.4 Error sending message, child exited 127 (Exec error.).](#Error_sending_message.2C_child_exited_127_.28Exec_error..29.)
+    *   [4.5 Character encoding problems](#Character_encoding_problems)
+    *   [4.6 Unable to login with GMail](#Unable_to_login_with_GMail)
+*   [5 Documentation](#Documentation)
+*   [6 See also](#See_also)
+
+## Installation
 
 [Install](/index.php/Install "Install") the [mutt](https://www.archlinux.org/packages/?name=mutt) package. Alternatively consider using the [#NeoMutt](#NeoMutt) package.
 
@@ -96,7 +93,13 @@ Or (if using POP3) [getmail](https://www.archlinux.org/packages/?name=getmail), 
 *   If you want to (or have to) use CRAM-MD5, GSSAPI or DIGEST-MD5, install the package [cyrus-sasl-gssapi](https://www.archlinux.org/packages/?name=cyrus-sasl-gssapi)
 *   If you are using Gmail as your SMTP server, you may need to install the package [cyrus-sasl](https://www.archlinux.org/packages/?name=cyrus-sasl)
 
-## Configuring
+### NeoMutt
+
+The [NeoMutt](http://www.neomutt.org/) Project aims to bring together all the patches for Mutt. It adds a large set of features such as a [sidebar](http://www.neomutt.org/feature/sidebar/), support for [notmuch](https://notmuchmail.org/) and [NNTP](https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol "wikipedia:Network News Transfer Protocol"). Lots of old Mutt patches have been brought up-to-date, tidied and documented. See [here](http://www.neomutt.org/features.html) for a full list of features added on top of vanilla Mutt
+
+While there are many different packages of mutt in the AUR, each of them providing another set of patches, NeoMutt aims to replace them in the future by implementing appropriate compile options. For now, you can find NeoMutt in the AUR at [neomutt](https://aur.archlinux.org/packages/neomutt/) and [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/).
+
+## Configuration
 
 This section covers [#IMAP](#IMAP), [#POP3](#POP3), [#Maildir](#Maildir) and [#SMTP](#SMTP) configuration.
 
@@ -521,7 +524,7 @@ If `enter-command` is available from the UI, it is possible to see the password 
 
 ```
 
-## Advanced features
+## Tips and tricks
 
 Guides to get you started with using & customizing Mutt :
 
@@ -834,100 +837,7 @@ source ~/.mutt/colors.zenburn
 
 ```
 
-A nice theme example:
-
-```
-## Theme kindly inspired from
-## http://nongeekshandbook.blogspot.ie/2009/03/mutt-color-configuration.html
-
-## Colours for items in the index
-color index brightcyan black ~N
-color index brightred black ~O
-color index brightyellow black ~F
-color index black green ~T
-color index brightred black ~D
-mono index bold ~N
-mono index bold ~F
-mono index bold ~T
-mono index bold ~D
-
-## Highlights inside the body of a message.
-
-## URLs
-color body brightgreen black "(http|ftp|news|telnet|finger)://[^ \"\t\r
-]*"
-color body brightgreen black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r
-]*"
-mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-
-## Email addresses.
-color body brightgreen black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
-
-## Header
-color header green black "^from:"
-color header green black "^to:"
-color header green black "^cc:"
-color header green black "^date:"
-color header yellow black "^newsgroups:"
-color header yellow black "^reply-to:"
-color header brightcyan black "^subject:"
-color header red black "^x-spam-rule:"
-color header green black "^x-mailer:"
-color header yellow black "^message-id:"
-color header yellow black "^Organization:"
-color header yellow black "^Organisation:"
-color header yellow black "^User-Agent:"
-color header yellow black "^message-id: .*pine"
-color header yellow black "^X-Fnord:"
-color header yellow black "^X-WebTV-Stationery:"
-
-color header red black "^x-spam-rule:"
-color header green black "^x-mailer:"
-color header yellow black "^message-id:"
-color header yellow black "^Organization:"
-color header yellow black "^Organisation:"
-color header yellow black "^User-Agent:"
-color header yellow black "^message-id: .*pine"
-color header yellow black "^X-Fnord:"
-color header yellow black "^X-WebTV-Stationery:"
-color header yellow black "^X-Message-Flag:"
-color header yellow black "^X-Spam-Status:"
-color header yellow black "^X-SpamProbe:"
-color header red black "^X-SpamProbe: SPAM"
-
-## Coloring quoted text - coloring the first 7 levels:
-color quoted cyan black
-color quoted1 yellow black
-color quoted2 red black
-color quoted3 green black
-color quoted4 cyan black
-color quoted5 yellow black
-color quoted6 red black
-color quoted7 green black
-
-## Default color definitions
-#color hdrdefault white green
-color signature brightmagenta black
-color indicator black cyan
-color attachment black green
-color error red black
-color message white black
-color search brightwhite magenta
-color status brightyellow blue
-color tree brightblue black
-color normal white black
-color tilde green black
-color bold brightyellow black
-#color underline magenta black
-color markers brightcyan black
-
-## Colour definitions when on a mono screen
-mono bold bold
-mono underline underline
-mono indicator reverse
-
-```
+See [[1]](http://nongeekshandbook.blogspot.be/2009/03/mutt-color-configuration.html) for a theme example.
 
 ### Index Format
 
@@ -1387,12 +1297,6 @@ set message_cachedir=~/.cache/mutt/messages
 source "~/.mutt/purgecache.sh '$message_cachedir'|"
 
 ```
-
-## NeoMutt
-
-The [NeoMutt](http://www.neomutt.org/) Project aims to bring together all the patches for Mutt. It adds a large set of features such as a [sidebar](http://www.neomutt.org/feature/sidebar/), support for [notmuch](https://notmuchmail.org/) and [NNTP](https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol "wikipedia:Network News Transfer Protocol"). Lots of old Mutt patches have been brought up-to-date, tidied and documented. See [here](http://www.neomutt.org/features.html) for a full list of features added on top of vanilla Mutt
-
-While there are many different packages of mutt in the AUR, each of them providing another set of patches, NeoMutt aims to replace them in the future by implementing appropriate compile options. For now, you can find NeoMutt in the AUR at [neomutt](https://aur.archlinux.org/packages/neomutt/) and [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/).
 
 ## Troubleshooting
 

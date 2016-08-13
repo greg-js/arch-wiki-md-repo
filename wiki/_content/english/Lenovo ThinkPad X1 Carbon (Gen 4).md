@@ -42,6 +42,7 @@ Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using 
 | Fingerprint Reader |  ?? |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
+| microSD card reader | Yes |
 
 ## Configuration
 

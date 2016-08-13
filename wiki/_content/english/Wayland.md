@@ -115,8 +115,11 @@ Example configuration file for keyboard layout, module selection and UI modifica
  `~/.config/weston.ini` 
 ```
 [core]
-### uncomment this line for xwayland support ###
-#modules=xwayland.so
+# xwayland support
+modules=xwayland.so
+
+[libinput]
+enable_tap=true
 
 [shell]
 background-image=/usr/share/backgrounds/gnome/Aqua.jpg
@@ -124,6 +127,8 @@ background-color=0xff002244
 panel-color=0x90ff0000
 locking=true
 animation=zoom
+close-animation=fade
+focus-animation=dim-layer
 #binding-modifier=ctrl
 #num-workspaces=6
 ### for cursor themes install xcursor-themes pkg from Extra. ###
@@ -135,40 +140,6 @@ animation=zoom
 #lockscreen=/usr/share/backgrounds/gnome/Garden.jpg
 #homescreen=/usr/share/backgrounds/gnome/Blinds.jpg
 #animation=fade
-
-[keyboard]
-keymap_rules=evdev
-#keymap_layout=gb
-#keymap_options=caps:ctrl_modifier,shift:both_capslock_cancel
-### keymap_options from /usr/share/X11/xkb/rules/base.lst ###
-
-[terminal]
-#font=DroidSansMono
-#font-size=14
-
-[launcher]
-icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
-path=/usr/bin/gnome-terminal
-
-[launcher]
-icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
-path=/usr/bin/weston-terminal
-
-[launcher]
-icon=/usr/share/icons/hicolor/24x24/apps/firefox.png
-path=/usr/bin/firefox
-
-[launcher]
-icon=/usr/share/icons/gnome/24x24/apps/arts.png
-path=./clients/flower
-
-[screensaver]
-# Uncomment path to disable screensaver
-path=/usr/libexec/weston-screensaver
-duration=600
-
-[input-method]
-path=/usr/libexec/weston-keyboard
 
 ###  for Laptop displays  ###
 #[output]
@@ -187,6 +158,41 @@ path=/usr/libexec/weston-keyboard
 #mode=1024x768
 #transform=flipped-270
 
+[input-method]
+path=/usr/libexec/weston-keyboard
+
+[keyboard]
+keymap_rules=evdev
+#keymap_layout=gb,de
+#keymap_options=caps:ctrl_modifier,shift:both_capslock_cancel
+### keymap_options from /usr/share/X11/xkb/rules/base.lst ###
+numlock-on=true
+
+[terminal]
+#font=DroidSansMono
+#font-size=14
+
+[launcher]
+icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
+path=/usr/bin/weston-terminal
+
+[launcher]
+icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
+path=/usr/bin/gnome-terminal
+
+[launcher]
+icon=/usr/share/icons/hicolor/24x24/apps/firefox.png
+path=/usr/bin/firefox
+
+[launcher]
+icon=/usr/share/weston/icon_flower.png
+path=/usr/bin/weston-flower
+
+[screensaver]
+# Uncomment path to disable screensaver
+path=/usr/libexec/weston-screensaver
+duration=600
+
 ```
 
 Minimal `weston.ini` :
@@ -199,6 +205,11 @@ modules=xwayland.so
 [keyboard]
 keymap_layout=gb
 
+[output]
+name=LVDS1
+mode=1680x1050
+transform=90
+
 [launcher]
 icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
 path=/usr/bin/weston-terminal
@@ -206,11 +217,6 @@ path=/usr/bin/weston-terminal
 [launcher]
 icon=/usr/share/icons/hicolor/24x24/apps/firefox.png
 path=/usr/bin/firefox
-
-[output]
-name=LVDS1
-mode=1680x1050
-transform=90
 
 ```
 

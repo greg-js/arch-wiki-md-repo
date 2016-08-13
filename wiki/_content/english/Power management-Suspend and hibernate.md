@@ -69,9 +69,7 @@ See main article [pm-utils](/index.php/Pm-utils "Pm-utils").
 
 ## Hibernation
 
-In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to add the `resume` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to the configuration file of the [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") generator, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
-
-If you are using the `systemd` hooks for mkinitcpio, you do not need the `resume` hook, but you still need to specify the resume partition in the kernel parameteters.
+In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap") partition or file. You will need to point the kernel to your swap using the `resume=` kernel parameter, which is configured via the boot loader. You will also need to [configure the initramfs](#Configure_the_initramfs). This tells the kernel to attempt resuming from the specified swap in early userspace. These three steps are described in detail below.
 
 ### About swap partition/file size
 

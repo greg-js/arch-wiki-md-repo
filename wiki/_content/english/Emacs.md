@@ -463,6 +463,11 @@ You can have let Emacs tell you the name of the face where the point is. Use the
 
 Emacs in console can handle 256 colors, but you will have to use an appropriate terminal for that. For instance URxvt has support for 256 colors. You can use the *list-colors-display* for a comprehensive list of supported colors. This is highly terminal-dependent.
 
+See also:
+
+*   [https://www.emacswiki.org/emacs/ColorThemes](https://www.emacswiki.org/emacs/ColorThemes)
+*   [https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html)
+
 ### SyncTeX support
 
 Emacs is a powerful LaTeX editor. This is mostly due to the fact you can adapt or create a LaTeX mode to fit your needs best.

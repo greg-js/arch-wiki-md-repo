@@ -15,7 +15,9 @@
     *   [4.1 Start ntpd on network connection](#Start_ntpd_on_network_connection)
     *   [4.2 Using ntpd with GPS](#Using_ntpd_with_GPS)
     *   [4.3 Running in a chroot](#Running_in_a_chroot)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Cannot assign requested address](#Cannot_assign_requested_address)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -308,17 +310,25 @@ should now link to `/var/lib/ntp` instead of `/`.
 
 It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as *ntpd* does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
 
-If you get following in your journal:
+## Troubleshooting
+
+### Cannot assign requested address
+
+If you get the message *Cannot assign requested address* as shown below:
+
+ `$ journalctl -u ntpd` 
+```
+ntpd[2130]: bind(21) AF_INET6 fe80::6ef0:49ff:fe51:4946%2#123 flags 0x11 failed: Cannot assign requested address
+ntpd[2130]: unable to create socket on eth0 (5) for fe80::6ef0:49ff:fe51:4946%2#123
+ntpd[2130]: failed to init interface for address fe80::6ef0:49ff:fe51:4946%2
+```
+
+you can get rid of it by disabling IP6\. To do so, [edit](/index.php/Systemd#Editing_provided_units "Systemd") `ntpd.service` and add `-4`:
 
 ```
-   ntpd[601]: frequency file /ntp.drift.TEMP: Permission denied
-
-```
-
-Try following:
-
-```
-# chown ntp:ntp /var/lib/ntp
+[Service]
+ExecStart=
+ExecStart=/usr/bin/ntpd -g -u ntp:ntp **-4**
 
 ```
 

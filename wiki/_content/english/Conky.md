@@ -109,6 +109,8 @@ Some examples below may still use the old syntax, which looks like this:
 
 ```
 
+A Lua script is available to convert from the old syntax to the new Lua syntax [here](https://github.com/brndnmtthws/conky/blob/master/extras/convert.lua).
+
 If in doubt, or something doesn't work at all, you can start with the default config file:
 
 ```

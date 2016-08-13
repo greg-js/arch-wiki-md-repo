@@ -364,6 +364,20 @@ Run the following command from the `/usr` directory to install the default table
 
 ```
 
+If you have datadir in /home /root or /run/user or a subdirectory of those, from 10.1.16 onwards, due to enhanced security, you need to move your datadir to a path or [edit](/index.php/Edit "Edit") `mysqld.service` to change the default
+
+```
+# ProtectHome=true
+
+```
+
+to:
+
+```
+# ProtectHome=false
+
+```
+
 ### Unable to run mysql_upgrade because MySQL cannot start
 
 Try run MySQL in safemode:
@@ -472,7 +486,7 @@ consider changing the password to smaller one.
 **Warning:** This behavior is considered dangerous, because your password might leak, for example, to the logs. Use it only in case of emergency and do not forget to change password right afterwards.
 
 ```
-$ mysql -u <user> -p"<some-veryveryveryveryveryveryveryveryveryveryveryveryveryveryvery-long-and-veryveryveryveryveryveryveryveryveryvery-strong-password>"
+$ mysql -u <user> -p"<some-very-strong-password>"
 
 ```
 

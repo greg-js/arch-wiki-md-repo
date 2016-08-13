@@ -131,7 +131,7 @@ After enabling a profile, it will be started at next boot. Obviously this can on
     *   To prioritize a profile with a static IP over DHCP profiles, you can set `Priority=2`, which is higher than the default priority given to DHCP profiles of `Priority=1`.
 
 *   For wireless interfaces, install package [wpa_actiond](https://www.archlinux.org/packages/?name=wpa_actiond): After [starting and enabling](/index.php/Start "Start") `netctl-auto@*interface*.service` profiles are started/stopped automatically as you move from the range of one network into the range of another network (roaming).
-    *   Profiles must use `Security=wpa-configsection` to work with *netctl-auto* rather than `Security=wpa-config`.
+    *   Profiles must use `Security=wpa-configsection` or `Security=wpa` to work with *netctl-auto* rather than `Security=wpa-config`.
     *   If you want some wireless profile **not** to be started automatically by `netctl-auto@*interface*.service`, you have to explicitly add `ExcludeAuto=yes` to that profile.
     *   You can use `priority=` in the *WPAConfigSection* (see `/etc/netctl/examples/wireless-wpa-configsection`) to set priority of a profile when multiple wireless access points are available.
 

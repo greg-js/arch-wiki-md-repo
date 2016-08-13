@@ -43,7 +43,9 @@
     *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
     *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
     *   [nvidia-grsec-dkms](https://aur.archlinux.org/packages/nvidia-grsec-dkms/)
-*   [VirtualBox](/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VirtualBox (Русский)"), раздел [VirtualBox#Хосты, работающие со сторонним ядром](/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A5.D0.BE.D1.81.D1.82.D1.8B.2C_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B8.D0.B5_.D1.81.D0.BE_.D1.81.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.BC_.D1.8F.D0.B4.D1.80.D0.BE.D0.BC "VirtualBox (Русский)")
+*   [VirtualBox](/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VirtualBox (Русский)"):
+    *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
+    *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
 *   [VMware](/index.php/VMware_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VMware (Русский)"), раздел [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 
 ## Обновления

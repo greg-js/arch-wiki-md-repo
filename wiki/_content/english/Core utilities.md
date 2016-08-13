@@ -7,17 +7,16 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [3 dd](#dd)
 *   [4 grep](#grep)
     *   [4.1 Standard error](#Standard_error)
-    *   [4.2 Colored output](#Colored_output)
 *   [5 find](#find)
 *   [6 locate](#locate)
 *   [7 iconv](#iconv)
     *   [7.1 Convert a file in place](#Convert_a_file_in_place)
 *   [8 ip](#ip)
 *   [9 less](#less)
+    *   [9.1 Vim as alternative pager](#Vim_as_alternative_pager)
 *   [10 ls](#ls)
     *   [10.1 Long format](#Long_format)
     *   [10.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
-    *   [10.3 Colored output](#Colored_output_2)
 *   [11 mkdir](#mkdir)
 *   [12 mv](#mv)
 *   [13 od](#od)
@@ -121,25 +120,6 @@ $ *command* |& grep *args*
 
 See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
-### Colored output
-
-`grep`'s color output can be helpful for learning [regexp](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") and additional `grep` functionality.
-
-To enable *grep* coloring write the following entry to the shell configuration file (e.g. if using [Bash](/index.php/Bash "Bash")):
-
- `~/.bashrc`  `alias grep='grep --color=auto'` 
-
-To include file line numbers in the output, add the option `-n` to the line.
-
-The environment variable `GREP_COLOR` can be used to define the default highlight color (the default is red). To change the color find the [ANSI escape sequence](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) for the color liked and add it:
-
-```
-export GREP_COLOR="1;32"
-
-```
-
-`GREP_COLORS` may be used to define specific searches.
-
 ## find
 
 *find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
@@ -221,6 +201,22 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
 
+### Vim as alternative pager
+
+[Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries, directories. Add the following line to your shell configuration file to use it as a pager:
+
+ `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
+
+There is also an alternative to *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
+
+ `~/.bashrc` 
+```
+export PAGER='vimpager'
+alias less=$PAGER
+```
+
+Now programs that use the `PAGER` environment variable, like [git](/index.php/Git "Git"), will use *vim* as pager.
+
 ## ls
 
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
@@ -264,22 +260,6 @@ Below, each file and subdirectory is represented by a line divided into 7 metada
 ### File names containing spaces enclosed in quotes
 
 By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
-
-### Colored output
-
-Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
-
-```
-alias ls='ls --color=auto'
-
-```
-
-The next step will further enhance the colored *ls* output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
-
-```
-eval $(dircolors -b)
-
-```
 
 ## mkdir
 

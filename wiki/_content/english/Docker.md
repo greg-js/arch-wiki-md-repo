@@ -87,8 +87,6 @@ Proxy configuration is broken down into two. First is the host configuration of 
 
 #### Proxy configuration
 
-Copy `/usr/lib/systemd/system/docker.service` to `/etc/systemd/system/docker.service`. Then edit `/etc/systemd/system/docker.service`, where `http_proxy` is your proxy server and `-g <path>` is your docker home. The path defaults to `/var/lib/docker`.
-
 First, create a systemd drop-in directory for the docker service: `mkdir /etc/systemd/system/docker.service.d`
 
 Now create a file called `/etc/systemd/system/docker.service.d/http-proxy.conf` that adds the `HTTP_PROXY` environment variable:

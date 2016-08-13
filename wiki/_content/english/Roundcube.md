@@ -167,7 +167,7 @@ location /webmail {
         }
         #Roundcube fastcgi config
         location ~ /webmail(/.*\.php)$ {
-                include fastcgi_params;
+                include fastcgi.conf;
                 fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
                 fastcgi_split_path_info ^(.+.php)(/.*)$;
                 fastcgi_index index.php;

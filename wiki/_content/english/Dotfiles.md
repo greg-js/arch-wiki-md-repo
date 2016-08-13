@@ -120,7 +120,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 
 ## See also
 
-*   [Dotfiles - Greg's Wiki](http://mywiki.wooledge.org/DotFiles)
+*   [gregswiki:DotFiles](http://mywiki.wooledge.org/DotFiles "gregswiki:DotFiles")
 *   [XMonad Config Archive](http://wiki.haskell.org/Xmonad/Config_archive)
 *   [dotshare.it](http://dotshare.it)
 *   [dotfiles.org](http://dotfiles.org) - [Copy of contents](http://techie.cat/all-contents-from-dotfiles-org/)

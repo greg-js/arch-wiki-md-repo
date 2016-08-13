@@ -7,8 +7,9 @@
 *   [2 Usage](#Usage)
     *   [2.1 Wired](#Wired)
     *   [2.2 Wi-Fi](#Wi-Fi)
-        *   [2.2.1 Connecting to an open access point](#Connecting_to_an_open_access_point)
-        *   [2.2.2 Connecting to a protected access point](#Connecting_to_a_protected_access_point)
+        *   [2.2.1 Enabling and disabling wifi](#Enabling_and_disabling_wifi)
+        *   [2.2.2 Connecting to an open access point](#Connecting_to_an_open_access_point)
+        *   [2.2.3 Connecting to a protected access point](#Connecting_to_a_protected_access_point)
     *   [2.3 Settings](#Settings)
     *   [2.4 Technologies](#Technologies)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -83,7 +84,9 @@ ConnMan will automatically handle wired connections.
 
 ### Wi-Fi
 
-**Note:** Make sure the Wi-Fi device is listed in the output of `ip link show up`. If it is not listed that means it is not powered on. Use `Fn` keys on the laptop to turn it on. You may need to run `connmanctl enable wifi`.
+#### Enabling and disabling wifi
+
+To check if wifi is enabled you can run `connmanctl technologies` and check for the line that says `Powered: True/False`. To power the wifi on you can run `connmanctl enable wifi` or if you need to disable it you can run `connmanctl disable wifi`. Other ways to enable wifi could include using the `Fn` keys on the laptop to turn it on or running `ip link set <interface> up`.
 
 #### Connecting to an open access point
 

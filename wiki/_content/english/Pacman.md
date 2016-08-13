@@ -21,13 +21,12 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [1.7 Installation reason](#Installation_reason)
 *   [2 Configuration](#Configuration)
     *   [2.1 General options](#General_options)
-        *   [2.1.1 Color output](#Color_output)
-        *   [2.1.2 Comparing versions before updating](#Comparing_versions_before_updating)
-        *   [2.1.3 Skip package from being upgraded](#Skip_package_from_being_upgraded)
-        *   [2.1.4 Skip package group from being upgraded](#Skip_package_group_from_being_upgraded)
-        *   [2.1.5 Skip files from being installed to system](#Skip_files_from_being_installed_to_system)
-        *   [2.1.6 Maintain several configuration files](#Maintain_several_configuration_files)
-        *   [2.1.7 Hooks](#Hooks)
+        *   [2.1.1 Comparing versions before updating](#Comparing_versions_before_updating)
+        *   [2.1.2 Skip package from being upgraded](#Skip_package_from_being_upgraded)
+        *   [2.1.3 Skip package group from being upgraded](#Skip_package_group_from_being_upgraded)
+        *   [2.1.4 Skip files from being installed to system](#Skip_files_from_being_installed_to_system)
+        *   [2.1.5 Maintain several configuration files](#Maintain_several_configuration_files)
+        *   [2.1.6 Hooks](#Hooks)
     *   [2.2 Repositories and mirrors](#Repositories_and_mirrors)
         *   [2.2.1 Package security](#Package_security)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -447,10 +446,6 @@ Use `--asexplicit` to do the opposite operation.
 ### General options
 
 General options are in the `[options]` section. Read the [man page](/index.php/Man_page "Man page") or look in the default `pacman.conf` for information on what can be done here.
-
-#### Color output
-
-Pacman has a color option. Uncomment the "Color" line in `/etc/pacman.conf`.
 
 #### Comparing versions before updating
 

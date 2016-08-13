@@ -32,6 +32,7 @@
             *   [1.5.1.4 Schematic capture editor](#Schematic_capture_editor)
         *   [1.5.2 Physics simulation](#Physics_simulation)
         *   [1.5.3 Unit conversion](#Unit_conversion)
+    *   [1.6 Geography](#Geography)
 
 ## Science
 
@@ -520,3 +521,25 @@ Digital logic software are mainly simple educational tools that intended for onl
 *   **[Units](https://en.wikipedia.org/wiki/GNU_Units "wikipedia:GNU Units")** — Command-line unit converter and calculator that can handle multiplicative scale changes, nonlinear conversions such as Fahrenheit to Celsius or wire gauge and others.
 
 	[http://www.gnu.org/s/units/](http://www.gnu.org/s/units/) || [units](https://www.archlinux.org/packages/?name=units)
+
+### Geography
+
+*   **GNOME Maps** — A simple map client for GNOME. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
+
+	[https://wiki.gnome.org/Apps/Maps](https://wiki.gnome.org/Apps/Maps) || [gnome-maps](https://www.archlinux.org/packages/?name=gnome-maps)
+
+*   **JOSM** — An editor for OpenStreetMap written in Java.
+
+	[http://josm.openstreetmap.de/](http://josm.openstreetmap.de/) || [josm](https://www.archlinux.org/packages/?name=josm)
+
+*   **Marble** — Virtual Globe and World Atlas that can be used to learn more about the Earth. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/marble](https://www.kde.org/applications/education/marble) || [marble](https://www.archlinux.org/packages/?name=marble)
+
+*   **Merkaartor** — OpenStreetMap editor.
+
+	[http://merkaartor.be/](http://merkaartor.be/) || [merkaartor](https://www.archlinux.org/packages/?name=merkaartor)
+
+*   **Viking** — GTK+2 application to manage GPS data.
+
+	[http://viking.sourceforge.net/](http://viking.sourceforge.net/) || [viking](https://www.archlinux.org/packages/?name=viking)

@@ -47,13 +47,13 @@ These are queues that do basic management of traffic by reordering, slowing or d
 
 #### fifo_fast
 
-This was the default qdisc up until systemd 217\. In every network device where no custom qdisc configuration has been applied, fifo_fast is the qdisc set on the root. fifo means *First In First Out*, that is, the first package to get in, is going to be the first to be sent. This way, no package gets special treatment.
+This was the default qdisc up until systemd 217\. In every network device where no custom qdisc configuration has been applied, fifo_fast is the qdisc set on the root. fifo means *First In First Out*, that is, the first packet to get in, is going to be the first to be sent. This way, no package gets special treatment.
 
 #### Token Bucket Filter (TBF)
 
 This qdisc allows bytes to pass, as long certain rate limit is not passed.
 
-It works by creating a virtual bucket and then dropping tokens at certain speed, filling that bucket. Each package takes a virtual token from the bucket, and uses it to get a permission to pass. If too many packages arrive, the bucket will have no more tokens left and the remaining packages are going to wait certain time for new tokens. If the tokens do not arrive fast enough, the packages are going to be dropped. On the opposite case (too few packages sent), the tokens can be used to allow some burst (uploading spikes) to happen.
+It works by creating a virtual bucket and then dropping tokens at certain speed, filling that bucket. Each package takes a virtual token from the bucket, and uses it to get a permission to pass. If too many packets arrive, the bucket will have no more tokens left and the remaining packets are going to wait certain time for new tokens. If the tokens do not arrive fast enough, the packets are going to be dropped. On the opposite case (too few packets sent), the tokens can be used to allow some burst (uploading spikes) to happen.
 
 That means this qdisc is useful to slow down an interface.
 
@@ -132,7 +132,7 @@ Once a classful qdisc is set on root (which may contain classes with more classf
 
 On a classless-only environment, filters are not necessary.
 
-You can filter packages by using tc, or a combination of tc + iptables.
+You can filter packets by using tc, or a combination of tc + iptables.
 
 ### Using tc only
 
@@ -140,24 +140,24 @@ Here is an example explaining a filter:
 
 ```
 # This command adds a filter to the qdisc 1: of dev eth0, set the
-# priority of the filter to 1, matches packages with a
+# priority of the filter to 1, matches packets with a
 # destination port 22, and make the class 1:10 process the
-# packages that match.
+# packets that match.
 tc filter add dev eth0 protocol ip parent 1: prio 1 u32 match ip dport 22 0xffff flowid 1:10
 
 # This filter is attached to the qdisc 1: of dev eth0, has a
 # priority of 2, and matches the ip address 4.3.2.1 exactly, and
-# matches packages with a source port of 80, then makes class
-# 1:11 process the packages that match
+# matches packets with a source port of 80, then makes class
+# 1:11 process the packets that match
 tc filter add dev eth0 parent 1: protocol ip prio 2 u32 match ip src 4.3.2.1/32 match ip sport 80 0xffff flowid 1:11
 
 ```
 
 ### Using tc + iptables
 
-iptables has a method called fwmark, which can be used to add a mark to packages, a mark that can survive routing across interfaces.
+iptables has a method called fwmark that can be used to mark packets across interfaces.
 
-First, this makes packages marked with 6, to be processed by the 1:30 class
+First, this makes packets marked with 6, to be processed by the 1:30 class
 
 ```
 # tc filter add dev eth0 protocol ip parent 1: prio 1 handle 6 fw flowid 1:30
@@ -171,7 +171,7 @@ This sets that mark 6, using iptables
 
 ```
 
-You can then use the regular way of iptables to match packages and then use fwmark to mark them.
+You can then use iptables normally to match packets and then mark them with fwmark.
 
 ## Example of ingress traffic shaping with SNAT
 

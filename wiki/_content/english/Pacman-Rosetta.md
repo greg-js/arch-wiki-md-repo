@@ -7,7 +7,7 @@ This page uses a table to display the correspondence of [package management](htt
 *   Some of the tools described here are specific to a certain version of pacman. The -Qk option is new in pacman 4.1.
 *   The command `pkgfile` can be found in the [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) package.
 
-| **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SUSE/openSUSE** | **Gentoo** |
+| **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SLES/openSUSE** | **Gentoo** |
 | Install a package(s) by name | pacman -S | dnf install | apt install | zypper install
 zypper in | emerge [-a] |
 | Remove a package(s) by name | pacman -Rs | dnf remove | apt autoremove | zypper remove
@@ -47,13 +47,13 @@ modify IgnorePkg array | dnf.conf <--”exclude” option (add/amend) | apt-mark
 | Lists packages which have an update available. Note: Some provide special commands to limit the output to certain installation sources, others use options. | pacman -Qu | dnf list updates, dnf check-update | apt-get upgrade -> n | zypper list-updates zypper patch-check (just for patches) | emerge -uDNp world |
 | Display a list of all packages in all installation sources that are handled by the packages management. Some tools provide options or additional commands to limit the output to a specific installation source. | pacman -Sl | dnf list available | apt-cache dumpavail apt-cache dump (Cache only) apt-cache pkgnames | zypper packages | emerge -ep world |
 | Displays packages which provide the given exp. aka reverse provides. Mainly a shortcut to search a specific field. Other tools might offer this functionality through the search command. | pkgfile <filename> | dnf provides | apt-file search <filename> | zypper what-provides zypper wp | equery belongs (only installed packages); pfl |
-| Display packages which require X to be installed, aka show reverse/ dependencies. | pacman -Sii | dnf provides | apt-cache rdepends / aptitude search ~Dpattern | zypper search --requires | equery depends |
-| Display packages which conflict with given expression (often package). Search can be used as well to mimic this function. | repoquery --whatconflicts | aptitude search '~Cpattern' |
+| Display packages which require X to be installed, aka show reverse dependencies. | pacman -Sii | dnf repoquery --alldeps --whatrequires | apt-cache rdepends / aptitude search ~Dpattern | zypper search --requires | equery depends |
+| Display packages which conflict with given expression (often package). Search can be used as well to mimic this function. | dnf repoquery --conflicts | aptitude search '~Cpattern' |
 | List all packages which are required for the given package, aka show dependencies. | pacman -[S|Q]i | dnf repoquery --requires | apt-cache depends / apt-cache show | zypper info --requires | emerge -ep |
 | List what the current package provides | dnf provides | dpkg -s / aptitude show | zypper info --provides | equery files |
 | List the files that the package holds. Again, this functionality can be mimicked by other more complex commands. | pacman -Ql $pkgname
 pkgfile -l | dnf repoquery -l $pkgname | dpkg-query -L $pkgname | rpm -ql $pkgname | equery files |
-| List all packages that require a particular package | repoquery --whatrequires [--recursive] | aptitude search \~D{depends,recommends,suggests}:pattern / aptitude why pkg | zypper search --requires | equery depends -a |
+| List all packages that require a particular package | dnf repoquery --alldeps --whatrequires | aptitude search \~D{depends,recommends,suggests}:pattern / aptitude why pkg | zypper search --requires | equery depends -a |
 | Search all packages to find the one which holds the specified file. auto-apt is using this functionality. | pkgfile -s | dnf provides | apt-file search | zypper search -f | equery belongs |
 | Display all packages that the specified packages obsoletes. | dnf list obsoletes | apt-cache show |
 | Verify dependencies of the complete system. Used if installation process was forcefully killed. | pacman -Dk | dnf repoquery --requires | apt-get check | zypper verify | emerge -uDN world |
@@ -64,7 +64,7 @@ pkgfile -l | dnf repoquery -l $pkgname | dpkg-query -L $pkgname | rpm -ql $pkgna
 | Clean up all local caches. Options might limit what is actually cleaned. Autoclean removes only unneeded, obsolete information. | pacman -Sc
 pacman -Scc | dnf clean all | apt-get clean / apt-get autoclean / aptitude clean | zypper clean | eclean distfiles |
 | Add a local package to the local package cache mostly for debugging purposes. | cp $pkgname /var/cache/pacman/pkg/ | apt-cache add | n/a | cp $srcfile /usr/portage/distfiles |
-| Display the source package to the given package name(s) | repoquery -s | apt-cache showsrc | n/a |
+| Display the source package to the given package name(s) | dnf repoquery -s | apt-cache showsrc | n/a |
 | Generates an output suitable for processing with dotty for the given package(s). | apt-cache dotty | n/a |
 | Set the priority of the given package to avoid upgrade, force downgrade or to overwrite any default behavior. Can also be used to prefer a package version from a certain installation source. | ${EDITOR} /etc/pacman.conf
 Modify HoldPkg and/or IgnorePkg arrays | /etc/apt/preferences, apt-cache policy | zypper mr -p | ${EDITOR} /etc/portage/package.keywords
@@ -89,7 +89,7 @@ remove offending line |
 | Display local package information: Name, version, description, etc. | pacman -Qi | rpm -qi | dpkg -s / aptitude show | zypper info; rpm -qi | emerge -pv and emerge -S |
 | Display remote package information: Name, version, description, etc. | pacman -Si | dnf info | apt-cache show / aptitude show | zypper info | emerge -pv and emerge -S |
 | Display files provided by local package | pacman -Ql | rpm -ql | dpkg -L | rpm -Ql | equery files |
-| Display files provided by a remote package | pkgfile -l | repoquery -l | apt-file list pattern | pfl |
+| Display files provided by a remote package | pkgfile -l | dnf repoquery -l | apt-file list pattern | pfl |
 | Query the package which provides FILE | pacman -Qo | rpm -qf (installed only) or dnf provides (everything) | dpkg -S / dlocate | zypper search -f | equery belongs |
 | Query a package supplied on the command line rather than an entry in the package management database | pacman -Qp | rpm -qp | dpkg -I |
 | Show the changelog of a package | pacman -Qc | rpm -q --changelog | apt-get changelog | equery changes -f |

@@ -13,13 +13,11 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 *   [3 Isolating the GPU](#Isolating_the_GPU)
     *   [3.1 Using vfio-pci](#Using_vfio-pci)
     *   [3.2 Using pci-stub (legacy method, pre-4.1 kernels)](#Using_pci-stub_.28legacy_method.2C_pre-4.1_kernels.29)
-    *   [3.3 Gotchas](#Gotchas_2)
-        *   [3.3.1 Tainting your boot GPU](#Tainting_your_boot_GPU)
 *   [4 Setting up an OVMF-based guest VM](#Setting_up_an_OVMF-based_guest_VM)
     *   [4.1 Configuring libvirt](#Configuring_libvirt)
     *   [4.2 Setting up the guest OS](#Setting_up_the_guest_OS)
     *   [4.3 Attaching the PCI devices](#Attaching_the_PCI_devices)
-    *   [4.4 Gotchas](#Gotchas_3)
+    *   [4.4 Gotchas](#Gotchas_2)
         *   [4.4.1 Using a non-EFI image on an OVMF-based VM](#Using_a_non-EFI_image_on_an_OVMF-based_VM)
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 CPU pinning](#CPU_pinning)
@@ -27,19 +25,21 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.2 Static huge pages](#Static_huge_pages)
     *   [5.3 CPU frequency governor](#CPU_frequency_governor)
     *   [5.4 High DPC Latency](#High_DPC_Latency)
-*   [6 Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
-*   [7 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [8.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
-    *   [8.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
-    *   [8.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
-*   [9 Passing though other devices](#Passing_though_other_devices)
-    *   [9.1 USB controller](#USB_controller)
-    *   [9.2 Gotchas](#Gotchas_4)
-        *   [9.2.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
-*   [10 Additional Information](#Additional_Information)
-    *   [10.1 ACS Override Patch](#ACS_Override_Patch)
+*   [6 Special procedures](#Special_procedures)
+    *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
+    *   [6.2 Passing the boot GPU to the guest](#Passing_the_boot_GPU_to_the_guest)
+    *   [6.3 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
+*   [7 Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
+*   [8 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [9.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
+    *   [9.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
+    *   [9.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+*   [10 Passing though other devices](#Passing_though_other_devices)
+    *   [10.1 USB controller](#USB_controller)
+    *   [10.2 Gotchas](#Gotchas_3)
+        *   [10.2.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -244,12 +244,6 @@ Check dmesg output for successful assignment of the device to pci-stub:
 [    2.390159] pci-stub 0000:06:00.1: claimed by stub
 ```
 
-### Gotchas
-
-#### Tainting your boot GPU
-
-If you are passing through your boot GPU and you cannot change it, make sure you also add `video=efifb:off` to your kernel command line so nothing gets sent to it before vfio-pci gets to bind with it.
-
 ## Setting up an OVMF-based guest VM
 
 OVMF is an open-source UEFI firmware for QEMU virtual machines. While it's possible to use SeaBIOS to get similar results to an actual PCI passthough, the setup process is different and it is generally preferable to use the EFI method if your hardware supports it.
@@ -427,6 +421,43 @@ Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU f
 If you are experiencing high DPC and/or interrupt latency in your Guest VM, ensure you have [loaded the needed virtio kernel modules](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") on the host kernel. Loadable virtio kernel modules include: `virtio-pci, virtio-net, virtio-blk, virtio-balloon, virtio-ring` and `virtio`.
 
 After loading one or more of these modules, `lsmod | grep virtio` executed on the host should not return empty.
+
+## Special procedures
+
+Certain setups require specific configuration tweaks in order to work properly. If you're having problems getting your host or your VM to work properly, see if your system matches one of the cases below and try adjusting your configuration accordingly.
+
+### Using identical guest and host GPUs
+
+Due to how both pci-stub and vfio-pci use your vendor and device id pair to identify which device they need to bind to at boot, if you have two GPUs sharing such an ID pair you won't be able to get your passthough driver to bind with just one of them. This sort of setup makes it necessary to use a script, so that whichever driver you're using is instead assigned by pci bus address using the `driver_override` mechanism.
+
+### Passing the boot GPU to the guest
+
+The GPU marked as `boot_vga` is a special case when it comes to doing PCI passthroughs, since the BIOS needs to use it in order to display things like boot messages or the BIOS configuration menu. To do that, it makes [a copy of the VGA boot ROM which can then be freely modified](https://www.redhat.com/archives/vfio-users/2016-May/msg00224.html). This modified copy is the version the system gets to see, which the passthrough driver may reject as invalid. As such, it is generally reccomanded to change the boot GPU in the BIOS configuration so the host GPU is used instead or, if that's not possible, to swap the host and guest cards in the machine itself.
+
+### Bypassing the IOMMU groups (ACS override patch)
+
+If you find your PCI devices grouped among others that you do not wish to pass through, you may be able to seperate them using Alex Williamson's ACS override patch. Make sure you understand [the potential risk](http://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html) of doing so.
+
+You will need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) package.
+
+In addition, the ACS override patch needs to be enabled with kernel command line options. The patch file adds the following documentation:
+
+```
+       pcie_acs_override =
+               [PCIE] Override missing PCIe ACS support for:
+           downstream
+               All downstream ports - full ACS capabilties
+           multifunction
+               All multifunction devices - multifunction ACS subset
+           id:nnnn:nnnn
+               Specfic device - full ACS capabilities
+               Specified as vid:did (vendor/device ID) in hex
+
+```
+
+The option `pcie_acs_override=downstream` is typically sufficient.
+
+After installation and configuration, reconfigure your [bootloader kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to load the new kernel with the `pcie_acs_override=` option enabled.
 
 ## Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)
 
@@ -782,33 +813,6 @@ IOMMU group 13
 ```
 
 This signals that the xHCI USB controller in 00:14.0 cannot be reset and will therefore stop the VM from shutting down properly, while the integrated sound card in 00:1b.0 and the other two controllers in 00:1a.0 amd 00:1d.0 do not share this problem and can be passed without issue.
-
-## Additional Information
-
-### ACS Override Patch
-
-If you find your PCI devices grouped among others that you do not wish to pass through, you may be able to seperate them using Alex Williamson's ACS override patch. Make sure you understand [the potential risk](http://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html) of doing so.
-
-You will need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) package.
-
-In addition, the ACS override patch needs to be enabled with kernel command line options. The patch file adds the following documentation:
-
-```
-       pcie_acs_override =
-               [PCIE] Override missing PCIe ACS support for:
-           downstream
-               All downstream ports - full ACS capabilties
-           multifunction
-               All multifunction devices - multifunction ACS subset
-           id:nnnn:nnnn
-               Specfic device - full ACS capabilities
-               Specified as vid:did (vendor/device ID) in hex
-
-```
-
-The option `pcie_acs_override=downstream` is typically sufficient.
-
-After installation and configuration, reconfigure your [bootloader kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to load the new kernel with the `pcie_acs_override=` option enabled.
 
 ## See also
 

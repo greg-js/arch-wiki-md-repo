@@ -157,8 +157,8 @@ Parameters always come in `parameter` or `parameter=value`. All of these paramet
 | init= | Run specified binary instead of `/sbin/init` (symlinked to [systemd](/index.php/Systemd "Systemd") in Arch) as init process. |
 | init=/bin/sh | Boot to shell. |
 | systemd.unit= |
-| systemd.unit=multi-user | Boot to a specified runlevel. |
-| systemd.unit=rescue | Boot to single-user mode (root). |
+| systemd.unit=multi-user.target | Boot to a specified runlevel. |
+| systemd.unit=rescue.target | Boot to single-user mode (root). |
 | nomodeset | Disable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). |
 | zswap.enabled | Enable [Zswap](/index.php/Zswap "Zswap"). |
 | video=<videosetting> | Override framebuffer video defaults. |

@@ -44,6 +44,8 @@ $ sshfs sessy@mycomputer:/remote/path /local/path -C -p 9876 -o allow_other
 
 Где `-p 9876` является номером порта, `-C` - использование сжатия и `-o allow_other` - разрешение обычным пользователям доступ на чтение/запись.
 
+**Примечание:** Опция `allow_other` отключена по умолчанию. Раскоментируйте `user_allow_other` в `/etc/fuse.conf`, чтобы у обычных пользователей был доступ к параметру монтирования allow_other.
+
 **Примечание:** Пользователи могут задать нестандартный порт в host-by-host конфигурации в `~/.ssh/config`, чтобы избежать параметра -p. Для получения дополнительной информации смотрите [Secure Shell (Русский)#Сохранение данных о подключении в конфигурационном файле ssh](/index.php/Secure_Shell_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D0.BE_.D0.BF.D0.BE.D0.B4.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D0.BE.D0.BC_.D1.84.D0.B0.D0.B9.D0.BB.D0.B5_ssh "Secure Shell (Русский)").
 
 SSH запросит пароль, если необходимо. Если вы не хотите постоянно вводить пароль, прочитайте: [как использовать ключ аутентификации RSA с SSH](http://linuxmafia.com/~karsten/Linux/FAQs/sshrsakey.html) или [SSH Keys](/index.php/SSH_keys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSH keys (Русский)").

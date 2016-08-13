@@ -11,6 +11,7 @@
 
 The following packages provide Atom:
 
+*   [atom](https://www.archlinux.org/packages/?name=atom)
 *   [atom-editor](https://aur.archlinux.org/packages/atom-editor/)
 *   [atom-editor-arch](https://aur.archlinux.org/packages/atom-editor-arch/)
 *   [atom-editor-bin](https://aur.archlinux.org/packages/atom-editor-bin/)

@@ -290,7 +290,12 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | Application | Legacy Path | Supported Since | Discussion | Notes |
 | [Apache Directory Studio](https://directory.apache.org/studio/) | `~/.ApacheDirectoryStudio` |
 | [AMule](/index.php/AMule "AMule") | `~/.aMule` |
-| [bash](/index.php/Bash "Bash") | `~/.bashrc` `~/.bash_history` `~/.bash_profile` `~/.bash_login` `~/.bash_logout` | [[63]](http://savannah.gnu.org/support/?108134) | `export HISTFILE="$XDG_DATA_HOME"/bash/history` |
+| [bash](/index.php/Bash "Bash") | `~/.bashrc` `~/.bash_history` `~/.bash_profile` `~/.bash_login` `~/.bash_logout` | [[63]](http://savannah.gnu.org/support/?108134) | 
+
+*   A specified `bashrc` can be sourced from `/etc/bashrc`
+*   `export HISTFILE="$XDG_DATA_HOME"/bash/history`
+
+ |
 | [cabal](https://www.haskell.org/cabal/) | `~/.cabal` | [[64]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
 | [CUPS](/index.php/CUPS "CUPS") | `~/.cups` | [[65]](http://www.cups.org/str.php?L4243) |
 | [dbus](/index.php/Dbus "Dbus") | `~/.dbus` | [[66]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |

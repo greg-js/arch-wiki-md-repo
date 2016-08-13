@@ -49,7 +49,7 @@ write_enable=YES
 
 ### Local user login
 
-One must set the line to `/etc/vsftpd.conf` to allow users in `/etc/passwd` to login:
+One must set the line `local_enable` in `/etc/vsftpd.conf` to `YES` in order to allow users in `/etc/passwd` to login:
 
 ```
 local_enable=YES

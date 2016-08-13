@@ -81,7 +81,7 @@ r2e email *new_address@example.net*
 
 ## Advanced configuration
 
-The following configuration changes should be made in `config.py`, which should be located at `~/.rss2email/config.py`.
+The following configuration changes should be made in `rss2email.cfg`, which should be located at `~/.config/rss2email.cfg`.
 
 To have RSS entries sent as HTML e-mails instead of as plain text, set:
 

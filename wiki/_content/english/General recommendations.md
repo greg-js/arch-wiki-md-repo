@@ -324,11 +324,7 @@ A list of miscellaneous Bash settings, including completion enhancements, histor
 
 ### Colored output
 
-Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as [cope-git](https://aur.archlinux.org/packages/cope-git/), is another route.
-
-Colorizing the output of specific core utilities such as `grep` and `ls` is covered in the [Core utilities](/index.php/Core_utilities "Core utilities") article.
-
-Man pages (or manual pages) are one of the most useful resources available to GNU/Linux users. To aid readability, the pager can be configured to render colored text as explained in [man page#Colored man pages](/index.php/Man_page#Colored_man_pages "Man page").
+This section is covered in [Color output in console](/index.php/Color_output_in_console "Color output in console").
 
 ### Compressed files
 

@@ -187,11 +187,11 @@ The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/s
 This can be useful for some full screen applications:
 
 ```
-$ xrandr --output LVDS1 --set PANEL_FITTING param
+$ xrandr --output LVDS1 --set PANEL_FITTING *param*
 
 ```
 
-where `param` can be:
+where `*param*` can be:
 
 *   `center`: resolution will be kept exactly as defined, no scaling will be made,
 *   `full`: scale the resolution so it uses the entire screen or
@@ -200,11 +200,11 @@ where `param` can be:
 If it does not work, try:
 
 ```
-$ xrandr --output LVDS1 --set "scaling mode" param
+$ xrandr --output LVDS1 --set "scaling mode" *param*
 
 ```
 
-where `param` is one of `"Full"`, `"Center"` or `"Full aspect"`.
+where `*param*` is one of `"Full"`, `"Center"` or `"Full aspect"`.
 
 ### KMS Issue: console is limited to small area
 

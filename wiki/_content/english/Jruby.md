@@ -1,6 +1,6 @@
 ## Installation
 
-A [jruby](https://www.archlinux.org/packages/?name=jruby) package can be found on [AUR](/index.php/AUR "AUR").
+Install the [jruby](https://www.archlinux.org/packages/?name=jruby) package.
 
 **Note:** *jruby* will require either [openjdk](/index.php/Java#Installation "Java") or [jre](/index.php/Java#Installation "Java") in order to run
 

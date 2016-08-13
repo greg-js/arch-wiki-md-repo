@@ -64,6 +64,13 @@ $ xrandr --setprovideroffloadsink radeon Intel
 
 ```
 
+You may also use provider index instead of provider name:
+
+```
+$ xrandr --setprovideroffloadsink 1 0
+
+```
+
 Now, you can use your discrete card for the applications who need it the most (for example games, 3D modellers...) by prepending the `DRI_PRIME=1` environment variable:
 
  `$ DRI_PRIME=1 glxinfo | grep "OpenGL renderer"` 
