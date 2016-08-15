@@ -87,7 +87,7 @@ EndSection
 
 ```
 
-**Tip:** 如果你需要经常性在两种驱动间切换，你可以使用 [这些脚本](/index.php/NVIDIA#Switching_between_nvidia_and_nouveau_drivers "NVIDIA").
+**Tip:** 如果你需要经常性在两种驱动间切换，你可以使用 [这些脚本](/index.php/NVIDIA#Switching_between_NVIDIA_and_nouveau_drivers "NVIDIA").
 
 如果你已经安装了官方驱动，又想在不重启的情况下测试Nouveau驱动，请确保‘nvidia’模块未被加载：
 

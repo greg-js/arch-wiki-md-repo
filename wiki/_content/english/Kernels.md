@@ -54,6 +54,10 @@ Note for [AUR](/index.php/AUR "AUR") packages, "pre-compiled" means the packages
 
 	The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 
+	[linux-cik](https://aur.archlinux.org/packages/linux-cik/)
+
+	The Linux Kernel enabling support of extra graphic cards in [AMDGPU](/index.php/AMDGPU "AMDGPU").
+
 	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
 	Linux Kernel built with Con Kolivas' ck1 patchset—see the [#-ck](#-ck) section or the [linux-ck](/index.php/Linux-ck "Linux-ck") page. Additional options which can be toggled on/off in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") include: BFQ scheduler, nconfig, localmodconfig and use running kernel's config.

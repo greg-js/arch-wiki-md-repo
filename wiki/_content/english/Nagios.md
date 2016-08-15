@@ -42,6 +42,8 @@ According to the [official documentation](http://nagios.sourceforge.net/docs/3_0
 
 ### Installation
 
+Before installation, it's a good idea to make sure you have prerequisites installed, e.g. if you're using nginx then: nginx, php, php-fpm, fcgiwrap might be a good start.
+
 Install [nagios](https://aur.archlinux.org/packages/nagios/) from the [AUR](/index.php/AUR "AUR").
 
 Users may also want to install [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins). When you do, make sure to edit `/etc/nagios/resource.cfg` later to reflect the new paths:
@@ -181,6 +183,11 @@ server {
         fastcgi_param   REMOTE_USER $remote_user;
         include         fastcgi.conf;
         fastcgi_pass    unix:/run/fcgiwrap.sock;
+    }
+
+    # Fixes the fact some links are expected to resolve to /nagios, see [here](http://serverfault.com/questions/653960/nagios-nginx-css-and-image-issues).
+    location /nagios {
+        alias /usr/share/nagios/share;
     }
 
 }

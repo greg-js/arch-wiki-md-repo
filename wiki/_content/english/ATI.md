@@ -193,8 +193,6 @@ EndSection
 
 **Tip:** You may want to debug the newly parameters with `systool` as stated in [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules").
 
-Useful [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") may be `radeon.bapm=1` [[1]](https://www.phoronix.com/scan.php?page=news_item&px=MTczMzI), `radeon.disp_priority=2` [[2]](http://lists.freedesktop.org/pipermail/xorg/2013-February/055477.html), `radeon.hw_i2c=1` [[3]](https://superuser.com/questions/723760/does-radeon-hw-i2c-1-has-any-thing-to-do-with-temperature-readings), `radeon.mst=1` [[4]](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.1-Radeon-DP-MST), `radeon.msi=1` (force-enable MSI-support), `radeon.audio=0` (force-disable GPU audio) and/or `radeon.tv=0` (disable TV-out).
-
 Defining the **gartsize**, if not autodetected, can be done by adding `radeon.gartsize=32` into [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 **Note:** Setting this parameter should not be needed anymore with modern AMD videocards:

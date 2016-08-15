@@ -45,6 +45,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.19 seiichiro](#seiichiro)
         *   [3.1.20 sergej-repo](#sergej-repo)
         *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.22 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 archaudio](#archaudio)
         *   [3.2.2 archlinuxfr](#archlinuxfr)
@@ -458,6 +459,19 @@ Server = http://repo.p5n.pp.ru/$repo/os/$arch
 ```
 [tredaelli-systemd]
 Server = http://pkgbuild.com/~tredaelli/repo/systemd/$arch
+
+```
+
+#### Webkit2Gtk-unstable
+
+*   **Maintainer:** [Mariusz Wojcik](/index.php/User:Mrmariusz "User:Mrmariusz")
+*   **Description:** Latest Webkit2Gtk build for early adopters.
+*   **Upstream Page:** [https://webkitgtk.org/](https://webkitgtk.org/)
+*   **Key-ID:** 346854B5
+
+```
+[home_mrmariusz_ArchLinux]
+Server = http://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$arch
 
 ```
 
@@ -879,14 +893,14 @@ Server = http://bohoomil.com/repo/multilib/$arch
 #### linux-kalterfx
 
 *   **Maintainer**: Anna Ivanova ([kalterfive](https://aur.archlinux.org/account/kalterfive))
-*   **Upstream page**: [https://kalterfive.github.io/linux-kalterfx/about.html](https://kalterfive.github.io/linux-kalterfx/about.html)
+*   **Upstream page**: [https://deadsoftware.ru/files/linux-kalterfx](https://deadsoftware.ru/files/linux-kalterfx)
 *   **Description**: A stable kernel with [pf-kernel](#Linux-pf), [reiser4](/index.php/Reiser4 "Reiser4") and smack
 *   **Key-ID**: A0C04F15
 *   **Keyfile**: [https://keybase.io/kalterfive/key.asc](https://keybase.io/kalterfive/key.asc)
 
 ```
 [linux-kalterfx]
-Server = http://deadsoftware.ru/files/linux-kalterfx/repo/$arch
+Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
 
 ```
 

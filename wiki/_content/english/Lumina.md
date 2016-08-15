@@ -22,7 +22,7 @@ Lumina's features include:
 
 ## Installation
 
-**Warning:** Lumina is still beta software and thus potentially unstable. Additionally, the DE is primarily targeted at FreeBSD, not Linux.
+**Warning:** Lumina DE is primarily targeted at FreeBSD, not Linux.
 
 To install the Lumina Desktop environment, simply install [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/) or [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/) from the AUR.
 
@@ -34,7 +34,7 @@ To install the Lumina Desktop environment, simply install [lumina-desktop](https
 
  ` ~/.xinitrc` 
 ```
-exec Lumina-DE
+exec start-lumina-desktop
 
 ```
 

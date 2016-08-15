@@ -570,6 +570,7 @@ session required pam_unix.so
 Под ней допишите следующее:
 
 ```
+session required pam_mkhomedir.so umask=0022 skel=/etc/skel
 session [success=1 default=ignore] pam_localuser.so
 session required pam_winbind.so
 

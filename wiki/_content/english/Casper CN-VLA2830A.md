@@ -15,6 +15,7 @@
     *   [1.12 Manufacturer](#Manufacturer)
 *   [2 Software Information](#Software_Information)
     *   [2.1 BIOS](#BIOS)
+    *   [2.2 Battery](#Battery)
 
 ## Hardware Information
 
@@ -105,13 +106,15 @@ Generic STORAGE DEVICE	#Card Reader
 
 ### RAM
 
-Has Single Slot
+Has Single Slot Maximum supported RAM 8GB
 
 Elixir m2s4g64cc88b4n #4GB, Datasheet [[5]](http://www.elixir-memory.com/products/file/B3070-144004(4GB_8GB_DDR3_B_Die_Elixir-SODIMM_Datasheet).pdf)
 
 ### Manufacturer
 
-It is probably made by Lengda, since battery info says Lengda. Very similar to this [[6]](http://www.lengdatek.com/detail.asp?ThisproductID=85&TengsoID=2039)
+It is probably made by Lengda, since battery info says Lengda. Very similar to this [[6]](http://www.lengdatek.com/detail.asp?ThisproductID=85&TengsoID=2039) [archive.is mirror](https://archive.is/kn0xn)
+
+[https://archive.is/kn0xn](https://archive.is/kn0xn)
 
 ## Software Information
 
@@ -124,3 +127,7 @@ User can disable secure boot.
 UEFI or Legacy mode. Legacy mode is not tested.
 
 Tested with Ubuntu 14.04 for now.
+
+### Battery
+
+8.2V Design capacity 32.6 Wh

@@ -251,7 +251,7 @@ fastcgi.server = (
 
 ```
 
-Make lighttpd use the new configuration file:
+Make lighttpd use the new configuration file by appending the following line to your lighttpd configuration file:
 
  `/etc/lighttpd/lighttpd.conf` 
 ```

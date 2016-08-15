@@ -255,7 +255,7 @@ Create a new directory `/etc/systemd/system/ntpd.service.d/` if it does not exis
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/ntpd -g -i /var/lib/ntp -u ntp:ntp -p /run/ntpd.pid
+ExecStart=/usr/bin/ntpd -g -u ntp:ntp **-i /var/lib/ntp**
 
 ```
 

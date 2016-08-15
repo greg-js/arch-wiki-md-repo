@@ -83,8 +83,6 @@ More details about these options are provided in the PKGBUILD itself via line co
 
 If users would rather not spend the time to compile on their own, an unofficial repo maintained by [graysky](/index.php/User:Graysky "User:Graysky") is available to the community. For details, see: [Repo-ck](/index.php/Repo-ck "Repo-ck").
 
-There are also unofficial repositories for the aforementioned LTS branches, available at [linux-lts-ck](/index.php/Unofficial_user_repositories#linux-lts-ck "Unofficial user repositories") and [linux-lts31x-ck](/index.php/Unofficial_user_repositories#linux-lts31x-ck "Unofficial user repositories"), maintained by [clfarron4](/index.php/User:Clfarron4 "User:Clfarron4").
-
 ## How to enable the BFQ I/O Scheduler
 
 **Note:** Do not confuse BFS (Brain Fuck Scheduler) with BFQ (Budget Fair Queueing). The BFS is a CPU scheduler and is enabled by default whereas BFQ is an I/O scheduler and must explicitly be enabled in order to use it.

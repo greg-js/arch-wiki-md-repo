@@ -121,6 +121,8 @@ Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installati
 
 ## Important information
 
+*   The [biber](https://www.archlinux.org/packages/?name=biber) utility used to handle biblatex bibliography is provided as a separate package.
+
 *   The way to handle font mappings for updmap was improved in September 2009, and installation should now be much more reliable than in the past. In the meantime, if you encounter error messages about unavailable map files, simply remove them by hand from the `updmap.cfg` file (ideally using `updmap-sys --edit`). You can also run `updmap-sys --syncwithtrees` to automatically comment out outdated map lines from the config file.
 
 *   The ConTeXt formats (for MKII and MKIV) are not automatically generated upon installation. See [the ConTeXT wiki](http://wiki.contextgarden.net) for instructions on how to do this.
@@ -129,7 +131,7 @@ Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installati
 
 *   TeX Live (upstream) now provides a tool for incremental updates of CTAN packages. On that basis, we also plan to update our packages on a regular basis (we have written tools that almost automate that task).
 
-*   Some tools and utilities included in TeX Live rely on [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [perl](https://www.archlinux.org/packages/?name=perl), and [ruby](https://www.archlinux.org/packages/?name=ruby).
+*   Some tools and utilities included in TeX Live rely on [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [perl](https://www.archlinux.org/packages/?name=perl), [python2](https://www.archlinux.org/packages/?name=python2), and [ruby](https://www.archlinux.org/packages/?name=ruby).
 
 *   For help and information about TeX Live see: [https://tug.org/texlive/doc.html](https://tug.org/texlive/doc.html) and [https://tug.org/texlive/doc/texlive-en/texlive-en.html](https://tug.org/texlive/doc/texlive-en/texlive-en.html)
 

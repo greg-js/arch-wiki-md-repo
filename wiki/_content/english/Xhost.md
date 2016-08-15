@@ -22,14 +22,14 @@ See *man xhost* for the full info.
 To provide access to an application running as sudo or su to the graphical server (aka your X session aka your computer screen), open a terminal and type as your normal user (don't *su -*):
 
 ```
-xhost +local:
+$ xhost +local:
 
 ```
 
 To get things back to normal, with controlled access to the X screen:
 
 ```
-xhost -
+$ xhost -
 
 ```
 

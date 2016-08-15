@@ -83,16 +83,12 @@ This entry only applies if you are using pulseaudio for mpv (`-ao=pulse` or `ao=
 Add the following to your `~/.config/mpv/input.conf` to make volume changes work again from PulseAudio to mpv and vice versa:
 
 ```
-+ add ao-volume -1
+/ add ao-volume -2
+SHIFT+* add ao-volume 2
 
 ```
 
-The volume can now be raised to 130%. Some like it, some do not. If you want 100% to be the maximum, then add the following to `~/.config/mpv/mpv.conf`:
-
-```
-volume-max=100.0<
-
-```
+Change the above to whatever volume keys you use. The above is the default of MPV only handles by "softvol" and with those lines handled by PulseAudio.
 
 ## Tips and Tricks
 

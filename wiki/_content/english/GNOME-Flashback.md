@@ -86,7 +86,7 @@ You can use an alternative [window manager](/index.php/Window_manager "Window ma
 
 ```
 
-where **window-manager** is the window manager you wish to use. See [GNOME#Custom GNOME sessions](/index.php/GNOME#Custom_GNOME_sessions "GNOME").
+where **window-manager** is the window manager you wish to use. See [GNOME/Tips and tricks#Custom GNOME sessions](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks").
 
 Also see [this article](http://makandra.com/notes/1367-running-the-awesome-window-manager-within-gnome) on running awesome as the window manager in GNOME.
 

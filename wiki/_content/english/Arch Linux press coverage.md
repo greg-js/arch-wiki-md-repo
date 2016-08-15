@@ -20,6 +20,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## 2016
 
+*   [mintCast 250 – The Return of Arch](https://mintcast.org/2016/07/25/mintcast-250-the-return-of-arch/) (from 00:49:40) Rob and Isaac - mintcast.org 2016-07-25
 *   [mintCast 239 – A Friendly Look at Arch](http://mintcast.org/2016/01/21/mintcast-239-a-friendly-look-at-arch/) (from 00:32:16) Rob, Scott, Joe and Isaac - mintcast.org 2016-01-21
 
 ## 2015

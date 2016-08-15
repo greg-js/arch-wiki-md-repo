@@ -60,7 +60,7 @@ or
 
 depending on processor.
 
-If the [*acpi-cpufreq*](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling") module is not already being loaded at boot, create the appropriate file in `/etc/modules-load.d/`. See [Kernel_modules](/index.php/Kernel_modules "Kernel modules") for more information.
+If the [*acpi-cpufreq*](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling") module is not already being loaded at boot, create the appropriate file in `/etc/modules-load.d/`. See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for more information.
 
 **Note:** In the case of [phc-intel](https://aur.archlinux.org/packages/phc-intel/), the *acpi-cpufreq* module is automatically loaded by `/usr/lib/modprobe.d/phc-intel.conf`.
 

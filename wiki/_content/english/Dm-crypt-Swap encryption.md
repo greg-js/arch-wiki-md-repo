@@ -19,8 +19,8 @@ To enable this feature, simply uncomment the line beginning with `swap` in `/etc
 
  `/etc/crypttab` 
 ```
-# <name>       <device>         <password>              <options>
-  swap         /dev/sd*X#*        /dev/urandom            swap,cipher=aes-cbc-essiv:sha256,size=256
+# <name>  <device>     <password>     <options>
+swap      /dev/sd*X#*    /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
 This will map `/dev/sd*X#*` to `/dev/mapper/swap` as a swap partition that can be added in `/etc/fstab` like a normal swap. If you had a non-encrypted swap partition before, do not forget to disable it - or re-use its [fstab](/index.php/Fstab "Fstab") entry by changing the device to `/dev/mapper/swap`. The default options should be sufficient for most usage. For other options see and an explanation of each column, see `man 5 crypttab` as well as [point cryptsetup FAQ 2.3](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup).
@@ -44,8 +44,8 @@ Then use as a persistent reference for the `/dev/sd*X#*` example partition (if t
 
  `/etc/crypttab` 
 ```
-# <name>                      <device>                                   <password>     <options>
-  swap  /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX  /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
+# <name>  <device>                                                         <password>     <options>
+swap      /dev/disk/by-id/ata-WDC_WD2500BEVT-22ZCT0_WD-WXE908VF0470-partX  /dev/urandom   swap,cipher=aes-cbc-essiv:sha256,size=256
 ```
 
 After a reboot to activate the encrypted swap, you will note that running `swapon -s` shows an arbitrary device mapper entry (e.g. `/dev/dm-1`) for it, while the `lsblk` command shows **crypt** in the `FSTYPE` column. Due to fresh encryption each boot, the UUID for `/dev/mapper/swap` will change every time.
@@ -73,7 +73,7 @@ With this, `/dev/sdX#` now can easily be identified either by UUID or LABEL, reg
 
  `/etc/crypttab` 
 ```
-# <name> <device>       <password>    <options>
+# <name> <device>         <password>    <options>
 swap     LABEL=*cryptswap*  /dev/urandom  swap,offset=2048,cipher=aes-xts-plain64,size=256
 ```
 
@@ -81,7 +81,7 @@ Note the offset: it's 2048 sectors of 512 bytes, thus 1 MiB. This way the encryp
 
  `/etc/fstab` 
 ```
-# <filesystem>         <dir>  <type>  <options>  <dump>  <pass>
+# <filesystem>    <dir>  <type>  <options>  <dump>  <pass>
 /dev/mapper/swap  none   swap    defaults   0       0
 ```
 

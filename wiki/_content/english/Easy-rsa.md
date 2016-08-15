@@ -4,7 +4,7 @@ The first step when setting up [OpenVPN](/index.php/OpenVPN "OpenVPN") is to cre
 *   A separate public certificate and private key pair for each server.
 *   A separate public certificate and private key pair for each client.
 
-One can think of the key-based authentication in terms similar to that of how [SSH_keys](/index.php/SSH_keys "SSH keys") work with the added layer of a signing authority (the CA). OpenVPN relies on a bidirectional authentication strategy, so the client must authenticate the server's certificate and in parallel, the server must authenticate the client's certificate. This is accomplished by the 3rd party's signature (the CA) on both the client and server certificates. Once this is established, further checks are performed before the authentication is complete. For more details, see [secure-computing's guide](https://www.secure-computing.net/openvpn/howto.php#pki).
+One can think of the key-based authentication in terms similar to that of how [SSH keys](/index.php/SSH_keys "SSH keys") work with the added layer of a signing authority (the CA). OpenVPN relies on a bidirectional authentication strategy, so the client must authenticate the server's certificate and in parallel, the server must authenticate the client's certificate. This is accomplished by the 3rd party's signature (the CA) on both the client and server certificates. Once this is established, further checks are performed before the authentication is complete. For more details, see [secure-computing's guide](https://www.secure-computing.net/openvpn/howto.php#pki).
 
 **Note:** The process outlined below requires users to securely transfer private key files to/from machines. For the purposes of this guide, using scp is shown, but readers may employ alternative methods as well. Since the Arch default is to deny the root user over ssh, using scp requires transferring ownership of the files to be exported to a non-root user called *foo* throughout the guide.
 
@@ -209,7 +209,7 @@ chown root:root /etc/openvpn/servername.crt
 
 ```
 
-The signed client certificate can be stored anywhere since it will be used in the subsequent step of preparing the [ovpn client profile file](https://wiki.archlinux.org/index.php/OpenVPN#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29).
+The signed client certificate can be stored anywhere since it will be used in the subsequent step of preparing the [ovpn client profile file](/index.php/OpenVPN#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29 "OpenVPN").
 
 ```
 mkdir /etc/easy-rsa/pki/signed

@@ -36,7 +36,7 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 
 **Warning:** NPAPI support has been dropped from Chrome/Chromium. Pipelight only works on a browser (e.g. FireFox) with enabled NPAPI support.
 
-Pipelight is not presently available in the [official repositories](/index.php/Official_repositories "Official repositories"), and can be either installed from the [AUR](/index.php/AUR "AUR") or the unofficial [[pipelight]](/index.php/Unofficial_user_repositories#pipelight "Unofficial user repositories") repository, maintained by the Pipelight developers.
+Pipelight is not presently available in the [official repositories](/index.php/Official_repositories "Official repositories"), and can be either installed from the [AUR](/index.php/AUR "AUR") or the unofficial [[pipelight](/index.php/Unofficial_user_repositories#pipelight "Unofficial user repositories")] repository, maintained by the Pipelight developers.
 
 ### Installing from the AUR
 

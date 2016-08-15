@@ -123,7 +123,7 @@ Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). See [
 
 ### SD Card Reader
 
-This requires the `rtsx_usb` module [[1]](http://cateee.net/lkddb/web-lkddb/MFD_RTSX_USB.html). [Load the module](/index.php/Kernel_modules "Kernel modules") and [blacklist](/index.php/Blacklist "Blacklist") `sdhci`, `sdhci_acpi` and `sdhci_pci`, or install [lenovo-s20-30](https://aur.archlinux.org/packages/lenovo-s20-30/) from the [AUR](/index.php/AUR "AUR"). Then [rebuild the kernel image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") with `mkinitcpio -P linux` as root.
+This requires the `rtsx_usb` module [[1]](http://cateee.net/lkddb/web-lkddb/MFD_RTSX_USB.html). [Load the moduleand](/index.php/Kernel_modules "Kernel modules") [blacklist](/index.php/Blacklist "Blacklist") `sdhci`, `sdhci_acpi` and `sdhci_pci`, or install [lenovo-s20-30](https://aur.archlinux.org/packages/lenovo-s20-30/) from the [AUR](/index.php/AUR "AUR"). Then [rebuild the kernel image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") with `mkinitcpio -P linux` as root.
 
 ### Webcam
 

@@ -27,7 +27,7 @@ Arch é mais simples que o Debian. Arch tem menos pacotes. Arch provê melhor su
 
 ## Arch x Ubuntu
 
-Arch tem um alicerce mais simples que o Ubuntu. Se você gosta de compilar seus próprios kernels, experimente projetos disponíveis apenas em CVS, ou monte um programa a partir dos fontes de vez em quando, Arch é melhor apropriado para isso. Se você quer ir rodando logo e não mexer com as entranhas do sistema, Ubuntu é mais adequado. Em geral desenvolvedores e 'fuçadores' gostarão mais de Arch que do Ubuntu.
+Arch tem um alicerce mais simples que o Ubuntu. Se você gosta de compilar seus próprios kernels, experimentar projetos disponíveis apenas em CVS, ou montar um programa a partir dos fontes de vez em quando, Arch é melhor apropriado para isso. Se você quer ir rodando logo e não mexer com as entranhas do sistema, Ubuntu é mais adequado. Em geral desenvolvedores e 'fuçadores' gostarão mais de Arch que do Ubuntu.
 
 ## Arch x Crux
 

@@ -35,8 +35,9 @@ It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" me
     *   [9.1 Windows 7 will not boot in UEFI Mode](#Windows_7_will_not_boot_in_UEFI_Mode)
     *   [9.2 Windows changes boot order](#Windows_changes_boot_order)
     *   [9.3 USB media gets struck with black screen](#USB_media_gets_struck_with_black_screen)
-        *   [9.3.1 Using GRUB](#Using_GRUB)
-    *   [9.4 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
+    *   [9.4 Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI)
+        *   [9.4.1 Using GRUB](#Using_GRUB)
+    *   [9.5 UEFI boot loader does not show up in firmware menu](#UEFI_boot_loader_does_not_show_up_in_firmware_menu)
 *   [10 See also](#See_also)
 
 ## UEFI versions
@@ -59,7 +60,7 @@ An x86_64 EFI firmware does not include support for launching 32-bit EFI apps (u
 
 Check whether the dir `/sys/firmware/efi` exists, if it exists it means the kernel has booted in EFI mode. In that case the UEFI bitness is same as kernel bitness. (ie. i686 or x86_64)
 
-**Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [#Using GRUB](#Using_GRUB) for more info.
+**Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for more info.
 
 ### Apple Macs
 
@@ -187,11 +188,10 @@ Assuming the boot-loader file to be launched is `/boot/efi/EFI/refind/refind_x64
 
 To determine the actual device path for the EFI System Partition (assuming mountpoint `/boot/efi` for example) (should be in the form `/dev/sdXY`), try :
 
+ `# findmnt /boot/efi` 
 ```
-# findmnt /boot/efi
 TARGET SOURCE  FSTYPE OPTIONS
-/boot/efi  /dev/sdXY  vfat         rw,flush,tz=UTC
-
+ /boot/efi  /dev/sdXY  vfat         rw,flush,tz=UTC
 ```
 
 Verify that uefi variables support in kernel is working properly by running:
@@ -206,11 +206,11 @@ If efivar lists the uefi variables without any error, then you can proceed. If n
 Then create the boot entry using efibootmgr as follows:
 
 ```
-# efibootmgr -c -d /dev/sdX -p Y -l /EFI/refind/refind_x64.efi -L "rEFInd"
+# efibootmgr --create --disk /dev/sdX --part Y --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
 
 ```
 
-**Note:** UEFI uses backward slash `\` as path separator (similar to Windows paths), but the official [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) pkg support passing unix-style paths with forward-slash `/` as path-separator for the `-l` option. Efibootmgr internally converts `/` to `\` before encoding the loader path. The relevant git commit that incorporated this feature in efibootmgr is [http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378](http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378) .
+**Note:** UEFI uses backward slash `\` as path separator (similar to Windows paths), but the official [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) pkg support passing unix-style paths with forward-slash `/` as path-separator for the `-l`/`--loader` option. Efibootmgr internally converts `/` to `\` before encoding the loader path. The relevant git commit that incorporated this feature in efibootmgr is [http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378](http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378) .
 
 In the above command `/boot/efi/EFI/refind/refind_x64.efi` translates to `/boot/efi` and `/EFI/refind/refind_x64.efi` which in turn translate to drive `/dev/sdX` -> partition `Y` -> file `/EFI/refind/refind_x64.efi`.
 
@@ -433,9 +433,11 @@ If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot wit
 
 ### USB media gets struck with black screen
 
-*   This issue can occur either due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") while booting the USB.
+This issue can occur due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") while booting the USB.
 
-*   If the issue is not due to KMS, then it may be due to bug in [EFISTUB](/index.php/EFISTUB "EFISTUB") booting (see [FS#33745](https://bugs.archlinux.org/task/33745) and [[3]](https://bbs.archlinux.org/viewtopic.php?id=156670) for more information.). Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [Gummiboot](/index.php/Gummiboot "Gummiboot") Boot Manager for menu) for booting the kernel in UEFI mode. In such a case you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
+### Booting 64-bit kernel on 32-bit UEFI
+
+Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. In such a case you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
 
 #### Using GRUB
 
@@ -445,7 +447,7 @@ If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot wit
 
 *   Backup `EFI/boot/loader.efi` to `EFI/boot/gummiboot.efi`
 
-*   [Create a GRUB standalone image](/index.php/GRUB#GRUB_standalone "GRUB") and copy the generate `grub*.efi` to the USB as `EFI/boot/loader.efi`, `EFI/boot/bootx64.efi` and/or `EFI/boot/bootia32.efi` (useful when running on a 32-bit UEFI)
+*   [Create a GRUB standalone image](/index.php/GRUB#GRUB_standalone "GRUB") and copy the generate `grub*.efi` to the USB as `EFI/boot/loader.efi` and/or `EFI/boot/bootia32.efi`
 
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 
@@ -528,7 +530,7 @@ menuentry "UEFI Shell x86_64 v1" {
 
 ### UEFI boot loader does not show up in firmware menu
 
-On some UEFI motherboards like boards with an Intel Z77 chipset, adding entries with `efibootmgr` or `bcfg` from the EFI Shell will not work because they do not show up on the boot menu list after being added to NVRAM.
+On certain UEFI motherboards like some boards with an Intel Z77 chipset, adding entries with `efibootmgr` or `bcfg` from the EFI Shell will not work because they do not show up on the boot menu list after being added to NVRAM.
 
 This issue is caused because the motherboards can only load Microsoft Windows. To solve this you have to place the `.efi` file in the location that Windows uses.
 
@@ -553,9 +555,9 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [UEFI boot: how does that actually work, then? - A blog post by AdamW](https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/)
 *   [Linux Kernel x86_64 UEFI Documentation](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/x86/x86_64/uefi.txt)
 *   [Intel's page on EFI](http://www.intel.com/technology/efi/)
-*   [Intel UEFI Community Resource Center](http://uefidk.intel.com/)
-*   [Matt Fleming - The Linux EFI Boot Stub](http://uefidk.intel.com/blog/linux-efi-boot-stub)
-*   [Matt Fleming - Accessing UEFI Variables from Linux](http://uefidk.intel.com/blog/accessing-uefi-variables-linux)
+*   [Intel Architecture Firmware Resource Center](http://firmware.intel.com/)
+*   [Matt Fleming - The Linux EFI Boot Stub](http://firmware.intel.com/blog/linux-efi-boot-stub)
+*   [Matt Fleming - Accessing UEFI Variables from Linux](http://firmware.intel.com/blog/accessing-uefi-variables-linux)
 *   [Rod Smith - Linux on UEFI: A Quick Installation Guide](http://www.rodsbooks.com/linux-uefi/)
 *   [UEFI Boot problems on some newer machines (LKML)](https://lkml.org/lkml/2011/6/8/322)
 *   [LPC 2012 Plumbing UEFI into Linux](http://linuxplumbers.ubicast.tv/videos/plumbing-uefi-into-linux/)

@@ -81,7 +81,7 @@ to disable it for the current session.
 
 ## Creating new profiles
 
-To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have create rules. See this section: [Audit_framework#Adding_rules](/index.php/Audit_framework#Adding_rules "Audit framework").
+To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have create rules. See this section: [Audit framework#Adding rules](/index.php/Audit_framework#Adding_rules "Audit framework").
 
 Be sure to stop the service afterwards (and maybe clear `/var/log/audit/audit.log`) because it causes overhead.
 

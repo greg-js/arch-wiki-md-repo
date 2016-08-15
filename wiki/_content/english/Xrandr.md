@@ -6,11 +6,10 @@
 *   [2 Testing configuration](#Testing_configuration)
 *   [3 Configuration](#Configuration)
     *   [3.1 Scripts](#Scripts)
-        *   [3.1.1 Example 1](#Example_1)
-        *   [3.1.2 Example 2](#Example_2)
-        *   [3.1.3 Example 3](#Example_3)
-        *   [3.1.4 Example 3a](#Example_3a)
-        *   [3.1.5 Example 4 - avoiding X crash with xrasengan](#Example_4_-_avoiding_X_crash_with_xrasengan)
+        *   [3.1.1 Toggle external monitor](#Toggle_external_monitor)
+        *   [3.1.2 Example 3](#Example_3)
+        *   [3.1.3 Example 3a](#Example_3a)
+        *   [3.1.4 Avoid X crash with xrasengan](#Avoid_X_crash_with_xrasengan)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Adding undetected resolutions](#Adding_undetected_resolutions)
         *   [4.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
@@ -85,45 +84,26 @@ $ xrandr --output LVDS --off --output HDMI-0 --auto
 
 ### Scripts
 
-#### Example 1
+#### Toggle external monitor
 
-This script toggles between external monitor (specified by `$EXT`) and default monitor (specified by `$IN`), so that only one monitor is active at a time.
-
-The default monitor (specified by `$IN`) should be connected when running the script, which is always true for a laptop.
-
-```
-#!/bin/bash
-
-IN="LVDS1"
-EXT="VGA1"
-
-if (xrandr | grep "$EXT disconnected"); then
-    xrandr --output $EXT --off --output $IN --auto
-else
-    xrandr --output $IN --off --output $EXT --auto
-fi
-
-```
-
-#### Example 2
-
-This script toggles only external monitor (specified by `$EXT`), leaves the default monitor (specified by `$IN`) on.
+This script toggles between an external monitor (specified by `$EXT`) and a default monitor (specified by `$IN`), so that only one monitor is active at a time.
 
 The default monitor (specified by `$IN`) should be connected when running the script, which is always true for a laptop.
 
 ```
 #!/bin/bash
+intern=LVDS1
+extern=VGA1
 
-IN="LVDS1"
-EXT="VGA1"
-
-if (xrandr | grep "$EXT disconnected"); then
-    xrandr --output $IN --auto --output $EXT --off 
+if xrandr | grep "$extern disconnected"; then
+    xrandr --output "$extern" --off --output "$intern" --auto
 else
-    xrandr --output $IN --auto --primary --output $EXT --auto --right-of $IN
+    xrandr --output "$intern" --off --output "$extern" --auto
 fi
 
 ```
+
+**Note:** To leave the external monitor enabled, replace the *else* clause with `xrandr --output "$intern" --primary --auto --output "$extern" --right-of "$intern" --auto`.
 
 #### Example 3
 
@@ -238,18 +218,18 @@ set +x
 
 ```
 
-#### Example 4 - avoiding X crash with xrasengan
+#### Avoid X crash with xrasengan
 
 Use this workaround to turn on connected outputs that may be in suspend mode and hence shown as disconnected, as is often the case of DisplayPort monitors:
 
 ```
-local times=2
-local seconds=1
+declare -i count=2
+declare -i seconds=1
 
-while [ $times -gt 0 ]; do
-    xrandr 1> /dev/null
+while ((count)); do
+    xrandr >/dev/null
     sleep $seconds
-    let times-=1
+    ((count--))
 done
 
 ```

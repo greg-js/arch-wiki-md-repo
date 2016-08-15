@@ -396,7 +396,7 @@ where `*displayName*` is the name of the display device e.g. `DFP-4`. You can fi
 
 ## Overclocking with nvidia-settings GUI not working
 
-Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks") . `man nvidia-settings` for more information.
+Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"). `man nvidia-settings` for more information.
 
 Example to query all variables:
 
@@ -432,6 +432,7 @@ This however has been reported to reduce the performance of some OpenGL applicat
 
 In order to make the change permanent, it must be added to the `"Screen"` section of your Xorg configuration file. When making this change, `TripleBuffering` should be enabled and `AllowIndirectGLXProtocol` should be disabled in the driver configuration as well. See example configuration below:
 
+**Warning:** MetaMode "extra attributes" in Xorg configuration files seem to be broken at the moment and might keep X from starting. Use the command line tool instead until this is fixed: [https://devtalk.nvidia.com/default/topic/950647/linux/black-screen-with-367-35/2](https://devtalk.nvidia.com/default/topic/950647/linux/black-screen-with-367-35/2)
  `/etc/X11/xorg.conf.d/20-nvidia.conf` 
 ```
 Section "Screen"

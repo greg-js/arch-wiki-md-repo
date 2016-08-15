@@ -79,7 +79,7 @@ $ export XDG_MENU_PREFIX=gnome-
 
 ### لا تظهر الأيقونات؟
 
-إذا كنت تستعمل مدير نوافذ [WM](/index.php/WM "WM") بدلاً من بيئة سطح مكتب [DE](/index.php/DE "DE") ولا تظهر أيقونات الملفات أو المجلدات فقم بتحديد أحد سمات أيقونات gtk.
+إذا كنت تستعمل مدير نوافذ [window manager](/index.php/Window_manager "Window manager") بدلاً من بيئة سطح مكتب [desktop environment](/index.php/Desktop_environment "Desktop environment") ولا تظهر أيقونات الملفات أو المجلدات فقم بتحديد أحد سمات أيقونات gtk.
 
 قم بتحرير `~/.gtkrc-2.0` أو **`/etc/gtk-2.0/gtkrc` بإضافة السطر التالي**:
 

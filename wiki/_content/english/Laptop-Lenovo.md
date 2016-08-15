@@ -129,6 +129,7 @@ install CD version
 | [Lenovo ThinkPad X100e](/index.php/Lenovo_ThinkPad_X100e "Lenovo ThinkPad X100e") | Yes | Yes | Yes | Yes | Yes | Yes | Not tested | NA | SD card (Yes), Webcam (Yes) |
 | [Lenovo ThinkPad X200](/index.php/Lenovo_ThinkPad_X200 "Lenovo ThinkPad X200") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad X201](/index.php/Lenovo_ThinkPad_X201 "Lenovo ThinkPad X201") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Not tested |
+| [Lenovo ThinkPad X220](/index.php/Lenovo_ThinkPad_X220 "Lenovo ThinkPad X220") | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA | SD card (Yes), Webcam (Yes) |
 | Lenovo ThinkPad X1 Carbon 3rd | NA | Yes | Yes | Yes | Yes | NA | Yes | NA |
 
 #### P series

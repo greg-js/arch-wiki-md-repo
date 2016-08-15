@@ -13,6 +13,7 @@ These laptops are a part of the Latitude 13 7000 Series featuring Intel Skylake 
     *   [6.2 lsusb](#lsusb)
 *   [7 known issues](#known_issues)
     *   [7.1 suspend](#suspend)
+    *   [7.2 no keyboard](#no_keyboard)
 
 ## kernel
 
@@ -43,13 +44,13 @@ The display is a hidpi display. If experiencing screen flashes during boot it co
 
 ## lspci and lsusb
 
-On kernel '4.7.0-rc1-mainline' via [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
+On kernel '4.8.0-rc1-mainline' via [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
 
 ### lspci
 
 ```
  00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 08)
- 00:02.0 VGA compatible controller: Intel Corporation Skylake Integrated Graphics (rev 07)
+ 00:02.0 VGA compatible controller: Intel Corporation HD Graphics 515 (rev 07)
  00:04.0 Signal processing controller: Intel Corporation Skylake Processor Thermal Subsystem (rev 08)
  00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller (rev 21)
  00:14.2 Signal processing controller: Intel Corporation Sunrise Point-LP Thermal subsystem (rev 21)
@@ -72,7 +73,8 @@ On kernel '4.7.0-rc1-mainline' via [linux-mainline](https://aur.archlinux.org/pa
 
 ```
  Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
- Bus 001 Device 003: ID 0a5c:5805 Broadcom Corp. 
+ Bus 001 Device 003: ID 0bda:5768 Realtek Semiconductor Corp. 
+ Bus 001 Device 002: ID 0a5c:5805 Broadcom Corp. 
  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
@@ -82,3 +84,7 @@ On kernel '4.7.0-rc1-mainline' via [linux-mainline](https://aur.archlinux.org/pa
 ### suspend
 
 It appears the system can get into a state in which suspend will stop working (system will suspend but upon attempt to resume will cold boot)[[4]](https://bbs.archlinux.org/viewtopic.php?id=207543). Current resolution appears to be to perform a shutdown within the system and suspend should start working again.
+
+### no keyboard
+
+It appears that on [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) the system will boot without a keyboard. This can be resolved by adding `i8042` to the MODULES line in `/etc/mkinitcpio.conf`

@@ -176,6 +176,19 @@ server {
 
 ```
 
+You also have to add the following values to your ccnet.conf and seahub_settings.py if you're using HTTPS with nginx, as uploads fail otherwise [[1]](http://manual.seafile.com/deploy/https_with_nginx.html), [[2]](https://forum.seafile.de/t/was-loaded-over-https-but-requested-an-insecure-xmlhttprequest-endpoint/248). Remeber to edit these files as user seafile
+
+ `$HOME/example.org/config/ccnet.conf` 
+```
+SERVICE_URL = https://example.org:8000
+
+```
+ `$HOME/example.org/config/seahub_settings.py` 
+```
+FILE_SERVER_ROOT = 'https://example.org/seafhttp'
+
+```
+
 ## Maintenance
 
 ### Upgrading
@@ -261,4 +274,5 @@ If the output looks okay, proceed to run the same command without the --dry-run 
 
 *   [http://manual.seafile.com/deploy/README.html](http://manual.seafile.com/deploy/README.html)
 *   [http://manual.seafile.com/deploy/deploy_with_nginx.html](http://manual.seafile.com/deploy/deploy_with_nginx.html)
+*   [http://manual.seafile.com/deploy/https_with_nginx.html](http://manual.seafile.com/deploy/https_with_nginx.html)
 *   [http://manual.seafile.com/maintain/seafile_gc.html](http://manual.seafile.com/maintain/seafile_gc.html)

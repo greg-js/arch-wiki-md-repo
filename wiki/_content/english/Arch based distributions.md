@@ -45,7 +45,6 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [PacBang](https://sourceforge.net/projects/architect-linux/)
 *   [Obarun](http://www.obarun.org/index.html)
 *   [PacBSD](https://www.pacbsd.org/)
-*   [PoliArch](https://sourceforge.net/projects/poliarch/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Velt OS](https://velt.io)
@@ -54,7 +53,7 @@ The following distributions include a pre-installed [Desktop environment](/index
 
 *   [Alpine Linux](http://alpinelinux.org/)
 *   [Arch Linux ARM](http://archlinuxarm.org/)
-*   [Arch-Anywhere](http://arch-anywhere.org/)
+*   [Arch-Anywhere](https://sourceforge.net/projects/arch-anywhere/)
 *   [LinHES](http://linhes.org/)
 *   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
@@ -69,6 +68,7 @@ These distributions are no longer developed, but show some of the history surrou
 *   [ArchAssault](https://sourceforge.net/projects/archassault/)
 *   [Bridge Linux](https://sourceforge.net/projects/bridgelinux/)
 *   [Kademar](http://www.kademar.org/)
+*   [PoliArch](https://sourceforge.net/projects/poliarch/)
 *   [Tux Hat Linux](https://sourceforge.net/projects/tuxhatlinux/)
 
 ### 2014

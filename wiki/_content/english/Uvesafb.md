@@ -46,7 +46,7 @@ Should return no results. If you do have a `vga=` option somewhere, you will nee
 
 #### GRUB
 
-First edit `/etc/default/grub` Comment the `GRUB_GFXPAYLOAD_LINUX=keep` line in `/etc/default/grub`, and [GRUB#Generate_the_main_configuration_file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
+First edit `/etc/default/grub` Comment the `GRUB_GFXPAYLOAD_LINUX=keep` line in `/etc/default/grub`, and [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
 
 #### GRUB legacy
 

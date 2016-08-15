@@ -6,13 +6,16 @@ Web is the default web browser for [GNOME](https://live.gnome.org/). Web provide
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Flash](#Flash)
+    *   [2.1 Blocking advertisements](#Blocking_advertisements)
+        *   [2.1.1 Managing Subscriptions](#Managing_Subscriptions)
     *   [2.2 Web Apps](#Web_Apps)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Pixelated fonts](#Pixelated_fonts)
-    *   [3.2 Font hinting](#Font_hinting)
-    *   [3.3 Blocking advertisements](#Blocking_advertisements)
-*   [4 See also](#See_also)
+*   [3 Plugins](#Plugins)
+    *   [3.1 Flash](#Flash)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Pixelated fonts](#Pixelated_fonts)
+    *   [4.2 Font hinting](#Font_hinting)
+    *   [4.3 Ad-blocking does not work](#Ad-blocking_does_not_work)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -20,13 +23,43 @@ Web can be installed by [installing](/index.php/Install "Install") the [epiphany
 
 ## Configuration
 
-### Flash
+### Blocking advertisements
 
-See [Flash#Flash Player](/index.php/Flash#Flash_Player "Flash").
+You can enable filtering by unchecking "Allow advertisements" in application preferences. By default, this will enable the [EasyList](https://easylist-downloads.adblockplus.org/easylist.txt) list and is periodically refreshed.
+
+#### Managing Subscriptions
+
+Create the file `~/.config/epiphany/adblock/filters.list` and populate it with URLs (see [EasyList](https://easylist.to/) and [Known Adblock Plus subscriptions](https://adblockplus.org/en/subscriptions)) in a semicolon formatted list:
+
+ `/home/archie/.config/epiphany/adblock/filters.list` 
+```
+https://easylist.to/easylist/easylist.txt;
+https://easylist-downloads.adblockplus.org/easylistdutch.txt;
+https://easylist.to/easylist/easyprivacy.txt;
+https://easylist.to/easylist/fanboy-annoyance.txt;
+https://easylist-downloads.adblockplus.org/antiadblockfilters.txt;
+https://easylist-downloads.adblockplus.org/adwarefilters.txt;
+https://easylist-downloads.adblockplus.org/malwaredomains_full.txt;
+https://raw.githubusercontent.com/liamja/Prebake/master/obtrusive.txt;
+https://www.fanboy.co.nz/enhancedstats.txt;
+
+```
+
+On next startup, the application fetches the subscriptions and should create a file for each entry as `~/.config/epiphany/adblock/*32-hex*`.
 
 ### Web Apps
 
 Web can add *web app* launchers to GNOME Shell. To manage and remove them, navigate to `about:applications` in Web.
+
+## Plugins
+
+See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+
+To find out what plugins are installed/enabled, enter `about:plugins` in the address bar.
+
+### Flash
+
+The [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) package provides an experimental adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with Web, see [Browser plugins#Flash Player](/index.php/Browser_plugins#Flash_Player "Browser plugins") for details.
 
 ## Troubleshooting
 
@@ -43,27 +76,16 @@ Some websites such as github.com tend to use a bitmap font from X11, named `Clea
 
 Web does not respect GNOME hinting settings, but respects Fontconfig one. Check [Font configuration](/index.php/Font_configuration "Font configuration") for further instructions.
 
-### Blocking advertisements
+### Ad-blocking does not work
 
-You can enable filtering by unchecking "Allow advertisements" in application preferences. By default, this will enable the [EasyList](https://easylist-downloads.adblockplus.org/easylist.txt) list.
-
-If this does not work, close GNOME Web, then delete your filters configuration:
+Close Web and delete the current filters configuration:
 
 ```
 rm -r ~/.config/epiphany/adblock/
 
 ```
 
-and restart the application.
-
-If more than one adblock list is required, create a file named filters.list in:
-
-```
-~/.config/epiphany/adblock/ 
-
-```
-
-and populate it with URLs in a semicolon formatted list. On next startup, the application should fetch and apply the new lists.
+On restart, the filter should be reset.
 
 ## See also
 

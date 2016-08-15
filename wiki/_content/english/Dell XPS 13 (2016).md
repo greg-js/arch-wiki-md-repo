@@ -170,7 +170,7 @@ or by adding `i915.enable_rc6=0` to the kernel boot parameters.
 
 Only key-presses work out of the box. Installing [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is sufficient for proper mouse support plus it also handles the touchscreen - see [libinput](/index.php/Libinput "Libinput") for configuration. Features such as tap-to-click are usually adjustable within the [desktop environment](/index.php/Desktop_environment "Desktop environment").
 
-Alternatively you may want to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as driver but "it is on maintenance mode and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) must be preferred over" (installation note from the package itself). Plus it may lack the ability to be easily adjustable within your [DE](/index.php/Desktop_environment "Desktop environment") (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). Restarting the X server might be required.
+Alternatively you may want to install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as driver but "it is on maintenance mode and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) must be preferred over" (installation note from the package itself). Plus it may lack the ability to be easily adjustable within your [desktop environment](/index.php/Desktop_environment "Desktop environment") (see [Dell Studio XPS 13](/index.php/Dell_Studio_XPS_13 "Dell Studio XPS 13")). Restarting the X server might be required.
 
 ### Remove psmouse errors from dmesg
 

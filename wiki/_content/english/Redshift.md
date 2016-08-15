@@ -34,7 +34,7 @@ For desktop environments, the `redshift-gtk` command is installed with the [reds
 There are several options to have redshift automatically started:
 
 *   By launching redshift with a script under `/etc/X11/xinit/xinitrc.d/`.
-*   By using the provided [systemd service unit files](/index.php/Systemd#Using_units "Systemd"). Be careful: the service can only be started in user mode. See [systemd/User#Basic setup](/index.php/Systemd/User#Basic_setup "Systemd/User")). Two service files are provided: `/usr/lib/systemd/user/redshift.service` and `/usr/lib/systemd/user/redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon. The `DISPLAY` environment variable needs to be configured. See [systemd/User#DISPLAY and XAUTHORITY](/index.php/Systemd/User#DISPLAY_and_XAUTHORITY "Systemd/User").
+*   By using the provided [systemd service unit files](/index.php/Systemd#Using_units "Systemd"). Be careful: the service can only be started in user mode, see [systemd/User#Basic setup](/index.php/Systemd/User#Basic_setup "Systemd/User"). Two service files are provided: `/usr/lib/systemd/user/redshift.service` and `/usr/lib/systemd/user/redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon. The `DISPLAY` environment variable needs to be configured. See [systemd/User#DISPLAY and XAUTHORITY](/index.php/Systemd/User#DISPLAY_and_XAUTHORITY "Systemd/User").
 *   By right-clicking the system tray icon when redshift-gtk or plasma5-applets-redshift-control is already launched and selecting 'Autostart'.
 
 **Note:** The redshift services files contains `Restart=always` so the service will restart infinitely (see `man systemd.service`)
@@ -44,6 +44,8 @@ There are several options to have redshift automatically started:
 Redshift will at least need your location to start, meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually: For most places/cities an easy way is to look up the wikipedia page of that place and get the location from there (search the page for "coordinates").
 
 ### Quick start
+
+**Tip:** [Latlong.net](http://www.latlong.net/) provides a service getting the Latitude and Longitude coordinates.
 
 To just get it up and running with a basic setup, issue:
 

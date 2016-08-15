@@ -45,3 +45,5 @@ Type the following code:
 ```
 
 Save the file; log out and in again.
+
+As of Kernel version 4.4, there is no need to change kernel boot parameters or or create xorg.conf files.

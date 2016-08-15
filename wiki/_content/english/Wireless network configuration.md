@@ -200,7 +200,7 @@ The table below gives an overview of comparable commands for *iw* and *wireless_
 | iw dev wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | Connecting to open network. |
 | iw dev wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
 | iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
-| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
+| iwconfig wlan0 essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
 | iw dev wlan0 set power_save on | iwconfig wlan0 power on | Enabling power save. |
 
 **Note:** Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may try to directly activate their wireless network from step [#Association](#Association).

@@ -46,6 +46,7 @@ Then, install the appropriate package:
 *   [brscan2](https://aur.archlinux.org/packages/brscan2/)
 *   [brscan3](https://aur.archlinux.org/packages/brscan3/)
 *   [brscan4](https://aur.archlinux.org/packages/brscan4/)
+*   [libsane-dsseries](https://aur.archlinux.org/packages/libsane-dsseries/)
 
 Now, the scanner should be recognized by SANE.
 
