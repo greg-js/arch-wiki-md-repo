@@ -109,7 +109,7 @@ If you want to store sensitive data in your Dropbox, you should encrypt it befor
 
 *   Another possibility is to use [EncFS](/index.php/EncFS "EncFS"), which has the advantage that all files are encrypted separately, i.e. you do not have to determine in advance the size of the content you want to encrypt and your encrypted directory grows and shrinks while you add/delete/modify files in it. You can also mount an encrypted volume at startup using the `-S` option of `encfs` to avoid having to input the passphrase, but note that your encrypted files are not secure from someone who has direct access to your computer.
 
-*   A third option is to use [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/). It's similar to EncFS, except that gocryptfs uses authenticated encryption, AES-GCM, for protecting the both confidentiality and integrity (tamper-resistance) of your data. gocryptfs was originally written to solve some of the security issues with EncFS. See the [Project Website](https://nuetzlich.net/gocryptfs/) for details.
+*   A third option is to use [gocryptfs](https://aur.archlinux.org/packages/gocryptfs/). It's similar to EncFS, except that gocryptfs uses authenticated encryption, AES-GCM, for protecting the both confidentiality and integrity (tamper-resistance) of your data. gocryptfs was originally written to solve some of the [security issues](https://github.com/vgough/encfs/issues?q=is%3Aissue+label%3A%222.x+candidate%22+is%3Aopen) with EncFS. See the [Project Website](https://nuetzlich.net/gocryptfs/) for details.
 
 ### Setup EncFS with Dropbox
 

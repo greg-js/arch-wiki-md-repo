@@ -59,27 +59,30 @@ Other prototypes are found in `/usr/share/pacman` from the pacman and abs packag
 ## Package etiquette
 
 *   Packages should **never** be installed to `/usr/local`
-*   **Do not introduce new variables** into `PKGBUILD` build scripts, unless the package cannot be built without doing so, as these could possibly **conflict** with variables used in makepkg itself. If a new variable is absolutely required, **prefix the variable name with an underscore** (`_`), e.g. `_customvariable=` 
-*   **Avoid** using `/usr/libexec/` for anything. Use `/usr/lib/${pkgname}/` instead.
-*   The `packager` field from the package meta file can be **customized** by the package builder by modifying the appropriate option in the `/etc/makepkg.conf` file, or alternatively override it by creating ~/.makepkg.conf
+*   **Do not introduce new variables** into `PKGBUILD` build scripts, unless the package cannot be built without doing so, as these could possibly **conflict** with variables used in makepkg itself.
+*   If a new variable is absolutely required, **prefix the variable name with an underscore** (`_`), e.g. `_customvariable=` 
+*   **Avoid** using `/usr/libexec/` for anything. Use `/usr/lib/$pkgname/` instead.
+*   The `packager` field from the package meta file can be **customized** by the package builder by modifying the appropriate option in the `/etc/makepkg.conf` file, or alternatively override it by creating `~/.makepkg.conf`.
 *   All important messages should be echoed during install using an **.install file**. For example, if a package needs extra setup to work, directions should be included.
 *   Any **optional dependencies** that are not needed to run the package or have it generally function should not be included in the **depends** array; instead the information should be added to the **optdepends** array:
-    ```
-    optdepends=('cups: printing support'
-                'sane: scanners support'
-                'libgphoto2: digital cameras support'
-                'alsa-lib: sound support'
-                'giflib: GIF images support'
-                'libjpeg: JPEG images support'
-                'libpng: PNG images support')
-    ```
 
-    The above example is taken from the **wine** package in `extra`. The optdepends information is automatically printed out on installation/upgrade so one should **not** keep this kind of information in .install files.
+```
+optdepends=('cups: printing support'
+            'sane: scanners support'
+            'libgphoto2: digital cameras support'
+            'alsa-lib: sound support'
+            'giflib: GIF images support'
+            'libjpeg: JPEG images support'
+            'libpng: PNG images support')
+```
+
+	The above example is taken from the **wine** package in `extra`. The optdepends information is automatically printed out on installation/upgrade so one should **not** keep this kind of information in `.install` files.
 
 *   When creating a **package description** for a package, do not include the package name in a self-referencing way. For example, "Nedit is a text editor for X11" could be simplified to "A text editor for X11". Also try to keep the descriptions to ~80 characters or less.
 *   Try to keep the **line length** in the PKGBUILD below ~100 characters.
 *   Where possible, **remove empty lines** from the `PKGBUILD` (`provides`, `replaces`, etc.)
 *   It is common practice to **preserve the order** of the `PKGBUILD` fields as shown above. However, this is not mandatory, as the only requirement in this context is **correct bash syntax**.
+*   **Quote** variables which may contain spaces, such as `"$pkgdir"` and `"$srcdir"`.
 
 ## Package naming
 
@@ -132,13 +135,19 @@ When [makepkg](/index.php/Makepkg "Makepkg") is used to build a package, it does
 3.  **Checks the integrity** of source files
 4.  **Unpacks** source files
 5.  Does any necessary **patching**
-6.  **Builds** the software and installs it in a fake root
-7.  **Strips** symbols from binaries
-8.  **Strips** debugging symbols from libraries
-9.  **Compresses** manual and, or info pages
-10.  Generates the **package meta file** which is included with each package
-11.  **Compresses** the fake root into the package file
-12.  **Stores** the package file in the configured destination directory (cwd by default)
+6.  **Builds** the software and installs it in a fake
+
+```
+root
+
+```
+
+1.  **Strips** symbols from binaries
+2.  **Strips** debugging symbols from libraries
+3.  **Compresses** manual and, or info pages
+4.  Generates the **package meta file** which is included with each package
+5.  **Compresses** the fake root into the package file
+6.  **Stores** the package file in the configured destination directory (cwd by default)
 
 ## Architectures
 
@@ -150,9 +159,11 @@ The [license](/index.php/License "License") array is being implemented in the of
 
 *   A licenses package has been created in [core] that stores common licenses in /usr/share/licenses/common ie. /usr/share/licenses/common/GPL. If a package is licensed under one of these licenses, the licenses variable will be set to the directory name e.g. license=('GPL')
 *   If the appropriate license is not included in the official licenses package, several things must be done:
-    1.  The license file(s) should be included in /usr/share/licenses/$pkgname/ e.g. /usr/share/licenses/dibfoo/LICENSE. One good way to do this is by using: `install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"` 
-    2.  If the source tarball does NOT contain the license details and the license is only displayed on a website for example, then copy the license to a file and include it. Remember to call it something appropriate too.
-    3.  Add 'custom' to the licenses array. Optionally, you can replace 'custom' with 'custom:"name of license"'.
+
+1.  The license file(s) should be included in /usr/share/licenses/$pkgname/ e.g. /usr/share/licenses/dibfoo/LICENSE. One good way to do this is by using: `install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"` 
+2.  If the source tarball does NOT contain the license details and the license is only displayed on a website for example, then copy the license to a file and include it. Remember to call it something appropriate too.
+3.  Add 'custom' to the licenses array. Optionally, you can replace 'custom' with 'custom:"name of license"'.
+
 *   Once a licenses is used in two or more packages in an official repo, including [community], it becomes common
 *   The MIT, BSD, zlib/libpng and Python licenses are special cases and cannot be included in the 'common' licenses pkg. For the sake of the license variable, it is treated like a common license (license=('BSD'), license=('MIT'), license=('ZLIB') or license=('Python')) but for the sake of the filesystem, it is a custom license, because each one has its own copyright line. Each MIT, BSD, zlib/libpng or Python licensed package should have its unique license stored in /usr/share/licenses/$pkgname/.
 *   Some packages may not be covered by a single license. In these cases multiple entries may be made in the license array e.g. license=("GPL" "custom:some commercial license"). For the majority of packages these licenses apply in different cases, as opposed to applying at the same time. When pacman gets the ability to filter on licenses (so you can say, "I only want GPL and BSD licensed software") dual (or more) licenses will be treated by pacman using OR, rather than AND logic, thus pacman will consider the above example as GPL licensed software, regardless of the other licenses listed.
@@ -165,12 +176,9 @@ The [license](/index.php/License "License") array is being implemented in the of
 
 Note the following before submitting any packages to the AUR:
 
-1.  The submitted PKGBUILDs **MUST NOT** build applications already in any of the official binary repositories under any circumstances. Exception to this strict rule may only be packages having extra features enabled and/or patches in compare to the official ones. In such an occasion the pkgname array should be different to express that difference. eg. A GNU screen PKGBUILD submitted containing the sidebar patch, could be named screen-sidebar etc. Additionally the **provides=('screen')** PKGBUILD array should be used in order to avoid conflicts with the official package.
+1.  The submitted PKGBUILDs **MUST NOT** build applications already in any of the official binary repositories under any circumstances. Exception to this strict rule may only be packages having extra features enabled and/or patches in compare to the official ones. In such an occasion the pkgname array should be different to express that difference. e.g. A GNU screen PKGBUILD submitted containing the sidebar patch, could be named screen-sidebar etc. Additionally the **provides=('screen')** PKGBUILD array should be used in order to avoid conflicts with the official package.
 2.  To ensure the security of pkgs submitted to the AUR please **ensure** that you have correctly filled the `md5sums` field. The `md5sums` values can be updated using the `updpkgsums` command.
-3.  Please **add a comment line** to the top of the `PKGBUILD` file that follows this format. Remember to disguise your email to protect against spam: `# Maintainer: Your Name <address at domain dot com>` 
-
-    If you are assuming the role of maintainer for an existing PKGBUILD, add your name to the top as described above and change the title of the previous Maintainer(s) to Contributor:
-
+3.  Please **add a comment line** to the top of the `PKGBUILD` file that follows this format. Remember to disguise your email to protect against spam: `# Maintainer: Your Name <address at domain dot com>` If you are assuming the role of maintainer for an existing PKGBUILD, add your name to the top as described above and change the title of the previous Maintainer(s) to Contributor:
     ```
     # Maintainer: Your Name <address at domain dot com>
     # Contributor: Previous Name <address at domain dot com>
@@ -179,7 +187,7 @@ Note the following before submitting any packages to the AUR:
 4.  Verify the package **dependencies** (eg, run `ldd` on dynamic executables, check tools required by scripts, etc). The TU team **strongly** recommend the use of the `namcap` utility, written by Jason Chu (jason@archlinux.org), to analyze the sanity of packages. `namcap` will warn you about bad permissions, missing dependencies, un-needed dependencies, and other common mistakes. You can install the `namcap` package with `pacman`. Remember `namcap` can be used to check both pkg.tar.gz files and PKGBUILDs
 5.  **Dependencies** are the most common packaging error. Namcap can help detect them, but it is not always correct. Verify dependencies by looking at source documentation and the program website.
 6.  **Do not use `replaces`** in a PKGBUILD unless the package is to be renamed, for example when *Ethereal* became *Wireshark*. If the package is an alternate version of an already existing package, use `conflicts` (and `provides` if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching `replaces` anywhere in its repositories; `conflicts` on the other hand is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
-7.  Read [Arch User Repository#Submitting packages](/index.php/Arch_User_Repository#Submitting_packages "Arch User Repository") for a detailed description of the submission process. The repository **should not** contain the binary tarball created by makepkg, nor should it contain the filelist
+7.  Read [Arch User Repository#Submitting packages](/index.php/Arch_User_Repository#Submitting_packages "Arch User Repository") for a detailed description of the submission process. The repository **should not** contain the binary tarball created by makepkg, nor should it contain the filelist.
 
 ## Additional guidelines
 
@@ -189,4 +197,4 @@ Be sure to read the above guidelines first - important points are listed on this
 
 * * *
 
-[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+[CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")

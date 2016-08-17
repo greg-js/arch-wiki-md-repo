@@ -51,12 +51,12 @@ For a verbose status, another way is to execute:
 
 ### Set up PreLoader
 
-**Note:** `PreLoader.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package is not signed, so its usefulness is limited. You can get a signed `PreLoader.efi` from [[1]](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
+**Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [[1]](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
 
-[Install](/index.php/Install "Install") the [efitools](https://www.archlinux.org/packages/?name=efitools) package and copy `PreLoader.efi` and `HashTool.efi` to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+Acquire signed `PreLoader.efi` and `HashTool.efi` and copy them to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
-# cp /usr/share/efitools/efi/{PreLoader,HashTool}.efi *esp*/EFI/systemd
+# cp {PreLoader,HashTool}.efi *esp*/EFI/systemd
 
 ```
 
@@ -83,7 +83,7 @@ This entry should be added to the list as the first to boot; check with the `efi
 If there are problems booting the custom NVRAM entry, copy `HashTool.efi` & `loader.efi` to the default loader location booted automatically by UEFI systems:
 
 ```
-# cp /usr/share/efitools/efi/HashTool.efi *esp*/EFI/Boot
+# cp HashTool.efi *esp*/EFI/Boot
 # cp *esp*/EFI/systemd/systemd-bootx64.efi *esp*/EFI/Boot/loader.efi
 
 ```
@@ -91,7 +91,7 @@ If there are problems booting the custom NVRAM entry, copy `HashTool.efi` & `loa
 Copy over `PreLoader.efi` and rename it:
 
 ```
-# cp /usr/share/efitools/efi/PreLoader.efi *esp*/EFI/Boot/bootx64.efi
+# cp PreLoader.efi *esp*/EFI/Boot/bootx64.efi
 
 ```
 
@@ -99,7 +99,7 @@ For particularly intransigent UEFI implementations, copy `PreLoader.efi` to the 
 
 ```
 # mkdir -p *esp*/EFI/Microsoft/Boot
-# cp /usr/share/efitools/efi/PreLoader.efi *esp*/EFI/Microsoft/Boot/bootmgfw.efi
+# cp PreLoader.efi *esp*/EFI/Microsoft/Boot/bootmgfw.efi
 
 ```
 
@@ -113,7 +113,7 @@ When the system starts with Secure Boot enabled, follow the steps above to enrol
 
 **Note:** Since you are going to remove stuff, is a good idea to backup it.
 
-Simply [remove](/index.php/Remove "Remove") the installed [efitools](https://www.archlinux.org/packages/?name=efitools) package, copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+Simply [remove](/index.php/Remove "Remove") the copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
 # rm *esp*/EFI/systemd/{PreLoader,HashTool}.efi
@@ -252,4 +252,8 @@ See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/cont
 
 ## Disable Secure Boot
 
-The Secure Boot feature can be disabled from the firmware interface. You may access the firmware configuration by pressing a special key during the boot process. They key to use depends on the firmware. It is usually one of `ESC`, `F2`, `DEL` or possibly another `F*n*` key. If that did not work for you and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*. You should find an option to disable secure boot. Note that some motherboards (this is the case in a Packard Bell laptop) only allow to disable secure boot if you have set an administrator password (that can be removed afterwards). See also [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).
+The Secure Boot feature can be disabled via the UEFI firmware interface. You may access the firmware configuration by pressing a special key during the boot process. The key to use depends on the firmware. It is usually one of `ESC`, `F2`, `DEL` or possibly another `F*n*` key.
+
+If using a hotkey did not work and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*.
+
+Note that some motherboards (this is the case in a Packard Bell laptop) only allow to disable secure boot if you have set an administrator password (that can be removed afterwards). See also [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).

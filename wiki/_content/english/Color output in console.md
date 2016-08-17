@@ -208,53 +208,40 @@ Color-enabled man pages allow for a clearer presentation and easier digestion of
 
 ### Using less
 
-Add the following to a shell configuration file.[[2]](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html) For [Bash](/index.php/Bash "Bash") it would be:
+You can set various `LESS_TERMCAP_***` environment variables to change how it highlights text. For example, `LESS_TERMCAP_md` is used for bold text and `LESS_TERMCAP_me` is used to reset to normal text formatting[[2]](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized).
+
+In Bash, the escape sequences you can use are the same ones from [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") and these variables can be defined in a function wrapping the `man` command:
 
  `~/.bashrc` 
 ```
 man() {
-    env \
-    LESS_TERMCAP_mb=$'\e[01;31m' \
     LESS_TERMCAP_md=$'\e[01;31m' \
     LESS_TERMCAP_me=$'\e[0m' \
     LESS_TERMCAP_se=$'\e[0m' \
     LESS_TERMCAP_so=$'\e[01;44;33m' \
     LESS_TERMCAP_ue=$'\e[0m' \
     LESS_TERMCAP_us=$'\e[01;32m' \
-    man "$@"
+    command man "$@"
 }
 
 ```
 
-To see the changes in your Man Pages (without restarting bash or linux), you may run:
-
-```
-$ source ~/.bashrc
-
-```
-
-For [Fish](/index.php/Fish "Fish") a basic configuration would be:
+For [Fish](/index.php/Fish "Fish") you could accomplish this with:
 
  `~/.config/fish/config.fish` 
 ```
-set -xU LESS_TERMCAP_mb (printf "\e[01;31m")      # begin blinking
-set -xU LESS_TERMCAP_md (printf "\e[01;31m")      # begin bold
-set -xU LESS_TERMCAP_me (printf "\e[0m")          # end mode
-set -xU LESS_TERMCAP_se (printf "\e[0m")          # end standout-mode
-set -xU LESS_TERMCAP_so (printf "\e[01;44;33m")   # begin standout-mode - info box
-set -xU LESS_TERMCAP_ue (printf "\e[0m")          # end underline
-set -xU LESS_TERMCAP_us (printf "\e[01;32m")      # begin underline
+set -xU LESS_TERMCAP_md (printf "\e[01;31m")
+set -xU LESS_TERMCAP_me (printf "\e[0m")
+set -xU LESS_TERMCAP_se (printf "\e[0m")
+set -xU LESS_TERMCAP_so (printf "\e[01;44;33m")
+set -xU LESS_TERMCAP_ue (printf "\e[0m")
+set -xU LESS_TERMCAP_us (printf "\e[01;32m")
 
 ```
 
-To see the changes in your Man Pages (without restarting fish or linux), you may run:
+Remember to source your config or restart your shell to make the changes take effect.
 
-```
-$ source ~/.config/fish/config.fish
-
-```
-
-For a detailed explanation on these variables, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840). To customize the colors, see [Wikipedia:ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code") for reference.
+For a detailed explanation on these variables, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840). [Bash/Prompt customization#Examples](/index.php/Bash/Prompt_customization#Examples "Bash/Prompt customization") has some (non-Bash-specific) examples of escape sequences that can be used.
 
 ### Using most
 

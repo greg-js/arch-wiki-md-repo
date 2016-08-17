@@ -395,7 +395,7 @@ In many desktop environments, it is possible to replace the supplied window mana
 
 	GNOME
 
-Alternative window managers cannot be used with GNOME Shell however [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") provides sessions for Metacity and [Compiz](/index.php/Compiz "Compiz"). Furthermore, it is possible to define your own [custom GNOME sessions](/index.php/GNOME#Custom_GNOME_sessions "GNOME") which use alternative components.
+Alternative window managers cannot be used with GNOME Shell however [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") provides sessions for Metacity and [Compiz](/index.php/Compiz "Compiz"). Furthermore, it is possible to define your own [custom GNOME sessions](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") which use alternative components.
 
 	Cinnamon
 

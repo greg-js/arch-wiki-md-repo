@@ -3,19 +3,18 @@
 *   [1 Overview](#Overview)
 *   [2 Installation](#Installation)
     *   [2.1 Booting the install USB](#Booting_the_install_USB)
-    *   [2.2 Network connection](#Network_connection)
-*   [3 Boot manager](#Boot_manager)
-*   [4 Configuration](#Configuration)
-    *   [4.1 TrackPad](#TrackPad)
-    *   [4.2 TrackPoint](#TrackPoint)
-    *   [4.3 TouchScreen and Stylus](#TouchScreen_and_Stylus)
-    *   [4.4 Video](#Video)
-    *   [4.5 Card reader](#Card_reader)
-    *   [4.6 Bluetooth](#Bluetooth)
-*   [5 Hardware information](#Hardware_information)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 High CPU usage in idle](#High_CPU_usage_in_idle)
-    *   [6.2 Screen rotation not working](#Screen_rotation_not_working)
+*   [3 Configuration](#Configuration)
+    *   [3.1 TrackPad](#TrackPad)
+    *   [3.2 TrackPoint](#TrackPoint)
+    *   [3.3 TouchScreen and Stylus](#TouchScreen_and_Stylus)
+    *   [3.4 Video](#Video)
+    *   [3.5 Card reader](#Card_reader)
+    *   [3.6 Bluetooth](#Bluetooth)
+*   [4 Hardware information](#Hardware_information)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 High CPU usage in idle](#High_CPU_usage_in_idle)
+    *   [5.2 Blank screen after loading kernel](#Blank_screen_after_loading_kernel)
+    *   [5.3 Screen rotation not working](#Screen_rotation_not_working)
 
 ## Overview
 
@@ -39,28 +38,11 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 
 ## Installation
 
-In order to boot with a current kernel, you need to pass `intel_pstate=no_hwp` as kernel parameter. With a standard Arch-USB-ISO this can be done by pressing the Tabulator-Key on selecting the boot-menu-entry.
-
-If you cannot manage to utilize the kernel parameter, installation gets difficult because you need to choose an old kernel (e.g., installation media from 2015.08 or before) and you do not have network access without additional RJ45 adapter, as the laptop does not have an RJ45 port.
+Newer kernels boot without problems and the wifi should be available. If you get a blank screen after booting, the power modes are not supported by your kernel; refer to Troubleshooting.
 
 ### Booting the install USB
 
 To access the boot menu and BIOS, use "F1". Disable secure boot from the BIOS. UEFI boot mode works fine.
-
-### Network connection
-
-If you have a OneLink+ dock or a USB Ethernet adapter, you can have wired connection. Otherwise, you need a workaround. Since you cannot edit the boot options on the USB stick, to pass `intel_pstate=no_hwp` to the kernel, you can either [remaster the install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO") or install a bootstrap Linux, upgrade its kernel, edit its boot parameters, and continue [installing Arch from an existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). The latter was tested with Linux Mint 17.3 acting as the bootstrap system.
-
-## Boot manager
-
-The default ESP partition has ample space (260 MByte). Irrespective of which boot manager you choose, remember to add `intel_pstate=no_hwp` as a kernel parameter. If you use GRUB, edit your `/etc/default/grub` file and add the following:
-
-```
-GRUB_CMDLINE_LINUX="intel_pstate=no_hwp"
-
-```
-
-Don't forget to generate the config files with `grub-mkconfig`.
 
 ## Configuration
 
@@ -190,6 +172,19 @@ WantedBy=multi-user.target
 ```
 
 Then [enable](/index.php/Enable "Enable") the `disable-interrupts.service` systemd unit.
+
+### Blank screen after loading kernel
+
+This happens with older kernels because the Intel P-State driver had problems. The workaround is to disable the buggy part of the driver. To achieve this, add `intel_pstate=no_hwp` as a kernel parameter. If you use GRUB, edit your `/etc/default/grub` file and add the following:
+
+```
+GRUB_CMDLINE_LINUX="intel_pstate=no_hwp"
+
+```
+
+Don't forget to generate the config files with `grub-mkconfig`.
+
+With a standard Arch-USB-ISO this can be done by pressing the Tabulator-Key on selecting the boot-menu-entry.
 
 ### Screen rotation not working
 

@@ -4,7 +4,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 **Note:**
 
-*   Some recommend not installing the Intel driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel), [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and `man modesetting`.
+*   Some recommend not installing the Intel driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel), [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and `man modesetting`. However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 *   PowerVR-based graphics ([GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") and [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
 
 ## Contents
@@ -25,17 +25,18 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [5.6 Setting brightness and gamma](#Setting_brightness_and_gamma)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 SNA issues](#SNA_issues)
-    *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
-    *   [6.3 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot.2C_when_.22Loading_modules.22)
-    *   [6.4 X freeze/crash with intel driver](#X_freeze.2Fcrash_with_intel_driver)
-    *   [6.5 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [6.6 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
-    *   [6.7 Backlight is not adjustable](#Backlight_is_not_adjustable)
-    *   [6.8 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
-    *   [6.9 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
-    *   [6.10 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.11 Skylake support](#Skylake_support)
-    *   [6.12 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.2 DRI3 issues](#DRI3_issues)
+    *   [6.3 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
+    *   [6.4 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot.2C_when_.22Loading_modules.22)
+    *   [6.5 X freeze/crash with intel driver](#X_freeze.2Fcrash_with_intel_driver)
+    *   [6.6 Adding undetected resolutions](#Adding_undetected_resolutions)
+    *   [6.7 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
+    *   [6.8 Backlight is not adjustable](#Backlight_is_not_adjustable)
+    *   [6.9 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
+    *   [6.10 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
+    *   [6.11 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
+    *   [6.12 Skylake support](#Skylake_support)
+    *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -232,6 +233,15 @@ Option      "AccelMethod"  "uxa"
 ```
 
 See `man 4 intel` under `Option "AccelMethod"`.
+
+### DRI3 issues
+
+*DRI3* is the default DRI version in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). On some systems this can cause issues such as [this](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). To switch back to *DRI2* add the following line to your [configuration file](#Configuration):
+
+```
+Option "DRI" "2"
+
+```
 
 ### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
 

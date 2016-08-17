@@ -13,3 +13,4 @@ install CD version
 | MacBook Pro 5,2 17" | x86_64 2009.08 | Yes | Yes | Yes | Yes | Not used | cpufreq + pm-util | Not Used | - | suspend,hibernate OK |
 | Macbook Air 2013 | x86_64 2014.10.01 | Yes | Yes | Yes | Yes | Yes | Out of the box | Unknown | - | All works out of the box except webcam (no support for webcam at all) |
 | Macbook Mid2006 | i686 2014.10.01 | Yes | Yes | Yes | Yes | Yes, with HID to HCI conversion | Out of the box | N/A | The synaptics driver allows triple click, a feature unavailable in OSX. | Everything except webcam, use isight-firmware-tools |
+| Macbook Pro mid-2009 | x86_64 2016.08.01 | Yes | Yes | Yes | Yes | Yes | Unknown | N/A | Virtual console does not display when switching from a graphical session with proprietary nvidia drivers. This does not happen on nouveau drivers. | Everything except iSight works out of the box |

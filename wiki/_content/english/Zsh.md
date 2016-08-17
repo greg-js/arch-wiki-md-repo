@@ -332,6 +332,7 @@ Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash
 | `$fg_bold[color]` | will set the text to bold and set the text color |
 | `$reset_color` | will reset the text color to the default color. Does not reset bold. use `%b` to reset bold. Saves typing if it's just `%f` though. |
 | `%K{color} [...] %k` | will set the background color. Same color as non-bold text color. Prefixing with any single-digit number makes the bg black. |
+| `%S [...] %s` | Standout mode, switches the text and background colors. Useful for Powerline-like prompts, especially if you switch between light/dark backgrounds. |
 
 | Possible color values |
 | `black` or `0` | `red` or `1` |

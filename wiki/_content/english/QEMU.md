@@ -24,6 +24,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [5.3.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
         *   [5.3.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
         *   [5.3.3 With kpartx](#With_kpartx)
+        *   [5.3.4 With udisksctl](#With_udisksctl)
     *   [5.4 Mounting a partition inside a qcow2 image](#Mounting_a_partition_inside_a_qcow2_image)
     *   [5.5 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
         *   [5.5.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
@@ -220,7 +221,7 @@ $ qemu-system-i386 *options* *disk_image*
 
 Options are the same for all `qemu-system-*` binaries, see `qemu(1)` for documentation of all options.
 
-By default, QEMU will show the virtual machine's video output in a window. One thing to keep in mind: when you click inside the QEMU window, the mouse pointer is grabbed. To release it, press `Ctrl+Alt`.
+By default, QEMU will show the virtual machine's video output in a window. One thing to keep in mind: when you click inside the QEMU window, the mouse pointer is grabbed. To release it, press `Ctrl+Alt+g`.
 
 **Warning:** QEMU should never be run as root. If you must launch it in a script as root, you should use the `-runas` option to make QEMU drop root privileges.
 
@@ -316,6 +317,8 @@ Then, if the device created was `/dev/loop0`, additional devices `/dev/loop0pX` 
 
 ```
 
+See also [Udisks#Mount_an_ISO_image](/index.php/Udisks#Mount_an_ISO_image "Udisks").
+
 #### With kpartx
 
 **kpartx** from the [multipath-tools](https://aur.archlinux.org/packages/multipath-tools/) package can read a partition table on a device and create a new device for each partition. For example:
@@ -326,6 +329,22 @@ Then, if the device created was `/dev/loop0`, additional devices `/dev/loop0pX` 
 ```
 
 This will setup the loopback device and create the necessary partition(s) device(s) in `/dev/mapper/`.
+
+#### With udisksctl
+
+`udisksctl` from [udisks2](https://www.archlinux.org/packages/?name=udisks2) can be used to setup loop device. It will detect available partitions automatically. To setup loop device, issue this command.
+
+```
+$ udisksctl loop-setup -f *disk_image*
+
+```
+
+To release the loop device, issue this command. Make sure to substitute `/dev/loop0` with correct loop device.
+
+```
+$ udisksctl loop-delete -b */dev/loop0*
+
+```
 
 ### Mounting a partition inside a qcow2 image
 

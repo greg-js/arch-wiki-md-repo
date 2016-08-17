@@ -5,10 +5,8 @@ Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 From the unofficial repository](#From_the_unofficial_repository)
-    *   [1.2 From source](#From_source)
-        *   [1.2.1 Updating](#Updating)
-    *   [1.3 Standard and extended functionality](#Standard_and_extended_functionality)
+    *   [1.1 Updating](#Updating)
+    *   [1.2 Standard and extended functionality](#Standard_and_extended_functionality)
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Customize LightDM wallpaper and appearance](#Customize_LightDM_wallpaper_and_appearance)
     *   [2.2 Autostart programs on login](#Autostart_programs_on_login)
@@ -27,17 +25,7 @@ Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 
 **Warning:** Installing Unity means that many official packages will be replaced with patched Ubuntu versions. Be careful to check the resulting package conflicts.
 
-Unity can be installed on Arch Linux from an unofficial repository or alternatively from source.
-
-### From the unofficial repository
-
-[Add](/index.php/Pacman#Repositories "Pacman") the [Unity-for-Arch](/index.php/Unofficial_user_repositories#Unity-for-Arch "Unofficial user repositories") repository. Available packages are listed on [GitHub](https://github.com/chenxiaolong/Unity-for-Arch/blob/master/README.md#compiling-from-source). It is recommended to [install](/index.php/Install "Install") the [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/) package.
-
-Additional packages are available from [Unity-for-Arch-Extra](/index.php/Unofficial_user_repositories#Unity-for-Arch-Extra "Unofficial user repositories") - see [GitHub](https://github.com/chenxiaolong/Unity-for-Arch-Extra/blob/master/README.md#compiling-from-source) for available packages.
-
-### From source
-
-All of the PKGBUILDs can be browsed on the [GitHub repository](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/), *unity-tweak-tool* (a popular Unity configuration tool) and more.
+PKGBUILDs for the Unity desktop are available on [GitHub](https://github.com/chenxiaolong/Unity-for-Arch), where [Unity-For-Arch](https://github.com/chenxiaolong/Unity-for-Arch) provides a minimal working Unity shell, and [Unity-For-Arch-Extra](https://github.com/chenxiaolong/Unity-for-Arch-Extra) provides some additional applications, including [lightdm-ubuntu](https://aur.archlinux.org/packages/lightdm-ubuntu/) ([LightDM](/index.php/LightDM "LightDM") with Ubuntu patches), [ubuntu-themes](https://aur.archlinux.org/packages/ubuntu-themes/), *unity-tweak-tool* (a popular Unity configuration tool) and more.
 
 [Install](/index.php/Install "Install") [git](https://www.archlinux.org/packages/?name=git) and navigate to a directory in which the sources can be built, then do:
 

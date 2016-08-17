@@ -11,8 +11,9 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
 *   [3 Configuration](#Configuration)
     *   [3.1 Replace Openbox](#Replace_Openbox)
     *   [3.2 Autostarting applications](#Autostarting_applications)
-    *   [3.3 Editing the Application Menu](#Editing_the_Application_Menu)
-    *   [3.4 Compton](#Compton)
+    *   [3.3 Set-up environment variables](#Set-up_environment_variables)
+    *   [3.4 Editing the Application Menu](#Editing_the_Application_Menu)
+    *   [3.5 Compton](#Compton)
 *   [4 Suggested applications](#Suggested_applications)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Desktop icons are grouped together](#Desktop_icons_are_grouped_together)
@@ -105,6 +106,12 @@ lxqt-config-session
 From this window, click on "AutoStart" on the left side. Here you can add a new application to either the global autostart (launched in all sessions implementing the said specification) or your local autostart (labled LXQt Autostart) (See [issue 746](https://github.com/lxde/lxqt/issues/746) for a bug related to this option).
 
 For each item you add, `lxqt-config-session` will create a .desktop-file at `~/.config/autostart`. Preinstalled applications that will be automatically started at login can be found at `/etc/xdg/autostart`. So you can also change your autostart preferences by editing the files in these directories. Besides, the distinction between "Global Autostart" and "LXQt Autostart" does not depend on the directory in which the corresponding .desktop-file is located, but rather on the `OnlyShowIn`-setting. If it is `OnlyShowIn=true`, it is considered an "LXQt Autostart". Furthermore, if `X-LXQt-Module=true`, the item is not shown in `lxqt-config-session`.
+
+### Set-up environment variables
+
+Environment variables for LXQt session can be defined in Session Settings.
+
+For example use `SAL_USE_VCLPLUGIN=gtk` to force starting libreoffice with gtk2 UI.
 
 ### Editing the Application Menu
 

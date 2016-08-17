@@ -119,7 +119,7 @@ $ wicd-curses
 
 **Note:** Wicd does not prompt you for a passkey. To use encrypted connections (WPA/WEP), expand the network you want to connect to, click **Advanced** and enter the needed info.
 
-**Note:** *wicd-curses* is less stable than *wicd-gtk*, and is known to crash regularly.
+**Note:** *wicd-curses* is less stable than *wicd-gtk*, and is known to crash regularly. If a crash occurs when attempting to configure a wireless network, try [wicd-patched](https://aur.archlinux.org/packages/wicd-patched/)
 
 ### Switching WPA supplicant driver
 

@@ -1,4 +1,4 @@
-Ksplice is an open source extension of the Linux kernel which allows system administrators to apply security patches to a running kernel without having to reboot the operating system.
+Ksplice is an open source extension of the Linux kernel which allows system administrators to apply security patches to a running kernel without having to reboot the operating system. By 2011\. it is acquired by Oracle and available only under premier support.
 
 ## Installation
 

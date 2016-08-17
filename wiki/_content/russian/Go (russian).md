@@ -196,6 +196,7 @@ linux      ppc64
 linux      ppc64le
 linux      mips64
 linux      mips64le
+linux      s390x
 netbsd     386
 netbsd     amd64
 netbsd     arm
@@ -204,6 +205,7 @@ openbsd    amd64
 openbsd    arm
 plan9      386
 plan9      amd64
+plan9      arm
 solaris    amd64
 windows    386
 windows    amd64

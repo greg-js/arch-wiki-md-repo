@@ -1020,5 +1020,6 @@ You can use the following website to get your device's coordinates along with a 
 50.697456, 7.251146 "autarchprinceps" # Heisterbacherroth, NRW, Germany
 52.337376,-0.189092 "shawny" # Huntingdon, Cambridgeshire, UK
 19.168670,73.263631 "rksomayaji" # Badlapur, Maharashtra, India
+46.012929, -65.155508 "hakstrap01013" # Wheaton Settlement, New Brunswick, Canada
 
 ```

@@ -317,6 +317,8 @@ A plasma bar presenting you the current existing Plasma Desktop Activities will 
 
 Plasma has an integrated power saving service called "**Powerdevil Power Management**" that may adjust the power saving profile of the system and/or the brightness of the screen (if supported).
 
+**Note:** Powerdevil may not [inhibit](/index.php/Power_management#Power_managers "Power management") all logind settings (such as the lid close action for laptops). In these cases, the logind setting itself will need to be changed - see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
+
 ### Monitoring changes on local files and directories
 
 KDE now uses **inotify** directly from the kernel with **kdirwatch** (included in kdelibs), so Gamin or FAM are no longer needed. You may want to install this [kdirwatch](https://aur.archlinux.org/packages/kdirwatch/) from AUR which is a GUI frontend for kdirwatch.

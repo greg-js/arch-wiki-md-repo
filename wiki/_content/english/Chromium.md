@@ -18,7 +18,6 @@
     *   [4.3 Force 3D acceleration](#Force_3D_acceleration)
     *   [4.4 WebGL](#WebGL)
     *   [4.5 Distorted GUI](#Distorted_GUI)
-    *   [4.6 "Search Google for this image" broken](#.22Search_Google_for_this_image.22_broken)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -29,11 +28,11 @@ Other alternatives include:
 
 *   **Chromium Beta Channel** — the beta version
 
-	[http://googlechromereleases.blogspot.hu/](http://googlechromereleases.blogspot.hu/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=chromium-beta)</small>
+	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=chromium-beta)</small>
 
 *   **Chromium Dev Channel** — the development version
 
-	[http://googlechromereleases.blogspot.hu/](http://googlechromereleases.blogspot.hu/) || [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
+	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
 
 *   **Chromium snapshot builds** — the untested nightly version
 
@@ -139,16 +138,10 @@ If none of the above solves your problem, you may be able to visit `chrome://gpu
 
 Chromium's graphical interface may look unsightly, distorted and zoomed in on high-DPI displays. To disable any attempts to scale display according to device DPI, use `--force-device-scale-factor=1`.
 
-### "Search Google for this image" broken
-
-This seems to be a general Chromium for Linux bug, which has been reported upstream: [[1]](https://code.google.com/p/chromium/issues/detail?id=473558).
-
-Version [46.0.2490.71-2](https://projects.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/chromium&id=5c6dde4a40faa3ffcb58a9434c18cc0ac64a75fc) fixes this issue.
-
 ## See also
 
-*   [Chromium homepage](http://www.chromium.org/Home)
-*   [Google Chrome release notes](http://googlechromereleases.blogspot.com)
+*   [Chromium homepage](https://www.chromium.org/)
+*   [Google Chrome release notes](https://googlechromereleases.blogspot.com)
 *   [Chrome web store](https://chrome.google.com/webstore/category/home)
 *   [Differences between Chromium and Google Chrome](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Differences_from_Google_Chrome "wikipedia:Chromium (web browser)")
 *   [List of Chromium command-line switches](http://peter.sh/experiments/chromium-command-line-switches/)

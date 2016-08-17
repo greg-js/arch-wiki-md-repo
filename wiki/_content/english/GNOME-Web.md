@@ -27,6 +27,8 @@ Web can be installed by [installing](/index.php/Install "Install") the [epiphany
 
 You can enable filtering by unchecking "Allow advertisements" in application preferences. By default, this will enable the [EasyList](https://easylist-downloads.adblockplus.org/easylist.txt) list and is periodically refreshed.
 
+**Note:** Due to some missing features, for example element hiding, Web misses to block/hide some ads. See the [related bugreport](https://bugzilla.gnome.org/show_bug.cgi?id=757824) for progress.
+
 #### Managing Subscriptions
 
 Create the file `~/.config/epiphany/adblock/filters.list` and populate it with URLs (see [EasyList](https://easylist.to/) and [Known Adblock Plus subscriptions](https://adblockplus.org/en/subscriptions)) in a semicolon formatted list:

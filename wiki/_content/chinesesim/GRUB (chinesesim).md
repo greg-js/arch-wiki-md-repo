@@ -265,7 +265,7 @@ Installation finished. No error reported.
 
 ### 检查你是否使用GPT且有ESP分区
 
-要使用 EFI 在某个磁盘上进行启动,就需要使用[EFI系统分区](/index.php/EFI_System_Partition "EFI System Partition")(ESP). GPT 倒不是必须的,不过我们还是高度建议使用 GTP,并且这也是本文当前唯一支持的方法.如果你在一个支持 EFI,并且已经有操作系统(Win8/Win10)的电脑上安装 Arch,系统上已经有了ESP.可以通过`parted`来列出启动磁盘上的分区表以检查其是否支持GPT和ESP(假设这个启动磁盘是/dev/sda)
+要使用 EFI 在某个磁盘上进行启动,就需要使用[EFI系统分区](/index.php/EFI_System_Partition "EFI System Partition")(ESP). GPT 倒不是必须的,不过我们还是高度建议使用 GPT,并且这也是本文当前唯一支持的方法.如果你在一个支持 EFI,并且已经有操作系统(Win8/Win10)的电脑上安装 Arch,系统上已经有了ESP.可以通过`parted`来列出启动磁盘上的分区表以检查其是否支持GPT和ESP(假设这个启动磁盘是/dev/sda)
 
 ```
 # parted /dev/sda print
@@ -1511,7 +1511,7 @@ boot
 
 ### Intel BIOS不能引导GPT
 
-一些Intel的BIOS要求至少要一个可启动的分区(MBR方案下的),导致GTP方案下的分区GRUB无法启动.
+一些Intel的BIOS要求至少要一个可启动的分区(MBR方案下的),导致GPT方案下的分区GRUB无法启动.
 
 可以通过fdisk来将一个GPT分区标志为'boot'((最好就设在你为GRUB创建的那个1007KiB分区上)),这样就可以绕过这个问题了:
 

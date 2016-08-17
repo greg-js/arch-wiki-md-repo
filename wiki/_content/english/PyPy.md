@@ -6,6 +6,7 @@
 *   [2 Usage](#Usage)
     *   [2.1 Interactive Interpreter](#Interactive_Interpreter)
     *   [2.2 Run Program From File](#Run_Program_From_File)
+    *   [2.3 Virtual Environment Creation](#Virtual_Environment_Creation)
 *   [3 EasyInstall](#EasyInstall)
     *   [3.1 EasyInstall Installation](#EasyInstall_Installation)
     *   [3.2 Installing EasyInstall Packages](#Installing_EasyInstall_Packages)
@@ -48,9 +49,20 @@ $ pypy example.py
 
 where example.py is the file name of the program.
 
+### Virtual Environment Creation
+
+To make a virtual environment with PyPy
+
+```
+$ virtualenv --python=/usr/bin/pypy venv-pypy
+
+```
+
+see [Python/Virtual environment](https://wiki.archlinux.org/index.php/Python/Virtual_environment) for further information
+
 ## EasyInstall
 
-Python libraries and programs can be installed in PyPy through EasyInstall. PyPy libraries are stored in a different folder then Cpython libraries.
+Python libraries and programs can be installed in PyPy through EasyInstall. PyPy libraries are stored in a different folder then CPython libraries.
 
 ### EasyInstall Installation
 

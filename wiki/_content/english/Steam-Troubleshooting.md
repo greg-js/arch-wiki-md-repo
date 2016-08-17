@@ -30,7 +30,7 @@
 *   [20 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
 *   [21 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
 *   [22 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-*   [23 In Home Streaming doesn't work from archlinux host to archlinux guest](#In_Home_Streaming_doesn.27t_work_from_archlinux_host_to_archlinux_guest)
+*   [23 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
 
 ## Debugging Steam
 
@@ -415,13 +415,8 @@ Replace `compton` in the above command with whatever your compositor is. You can
 
 Steam will latch on to any processes launched after `%command%` and your Steam status will show as in game. So in this example, we run the compositor through `nohup` so it is not attached to Steam (it will keep running if you close Steam) and follow it with an ampersand so that the line of commands ends, clearing your Steam status.
 
-## In Home Streaming doesn't work from archlinux host to archlinux guest
+## In Home Streaming does not work from archlinux host to archlinux guest
 
-Chances are you are missing lib32-libcanberra. Once you install that, it should work as expected.
-
-```
- sudo pacman -S lib32-libcanberra
-
-```
+Chances are you are missing [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra). Once you [install](/index.php/Install "Install") that, it should work as expected.
 
 With that, steam should no longer crash when trying to launch a game through in home streaming.

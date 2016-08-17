@@ -32,6 +32,12 @@
 
 To install League of Legends using this method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) must be installed in the system. When you first run it, [PlayOnLinux](/index.php/Wine#PlayOnLinux.2FPlayOnMac "Wine") will install some necessary fonts. Afterwards, click Install, check the "testing box" and then search for "League of Legends". The rest is self-explanatory.
 
+If the installer fails saying that DirectX cannot be installed, make sure you install these packages first:
+
+*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
+*   [openal](https://www.archlinux.org/packages/?name=openal)
+*   [freealut](https://www.archlinux.org/packages/?name=freealut)
+
 ### AUR Package
 
 **Note:** You may need to add your user to `games` group.

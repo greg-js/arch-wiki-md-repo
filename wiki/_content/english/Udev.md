@@ -191,6 +191,9 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2104", GROUP="user
 #Atmel Copr. JTAGICE3
 SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2140", GROUP="users", MODE="0666"
 
+#Atmel Corp. ATMEL ICE  
+SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2141", GROUP="users", MODE="0666"
+
 ```
 
 ### Execute on USB insert

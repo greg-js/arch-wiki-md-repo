@@ -20,7 +20,8 @@
     *   [5.4 startup-noautoreload](#startup-noautoreload)
     *   [5.5 toggle-stylesheet](#toggle-stylesheet)
     *   [5.6 youtube-player](#youtube-player)
-    *   [5.7 rocker gestures](#rocker_gestures)
+    *   [5.7 MPVideo](#MPVideo)
+    *   [5.8 rocker gestures](#rocker_gestures)
 *   [6 Stylesheet](#Stylesheet)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Search engines search for *undefined*](#Search_engines_search_for_undefined)
@@ -310,6 +311,26 @@ Signal.connect("navigation", function (wv, frame, request) {
     system.spawn("sh -c 'mplayer \"$(youtube-dl -g " + request.uri + ")\"'");
   return false;
 });
+```
+
+### MPVideo
+
+Slight modification of above script, this opens videos from You Tube, Dailymotion, Vodlocker and more with mpv. (uses [mpv](https://www.archlinux.org/packages/?name=mpv) and [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)).
+
+ `~/.config/dwb/userscripts/MPVideo.js` 
+```
+//!javascript 
+// opens  videos from You Tube, Dailymotion, Vodlocker and many more with mpv.
+
+function playInMplayer() {
+        system.spawn("sh -c 'mpv \"$(youtube-dl -g " + tabs.current.uri + ")\"'");
+}
+function downloadVideo() {
+        system.spawn("sh -c 'xterm -e \"youtube-dl " + tabs.current.uri + "\"'");
+}
+bind("mp", playInMplayer, "play_in_mplayer");
+bind(null, downloadVideo, "download_video");
+
 ```
 
 ### rocker gestures

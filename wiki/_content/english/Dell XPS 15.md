@@ -317,6 +317,10 @@ See the [Bumblebee](/index.php/Bumblebee "Bumblebee") page [set of instructions]
 
 ### Screen
 
+**9550 Flickering Screen:**
+
+As of 08/2016, the A10 BIOS causes the screen to flicker even worse then the A06 BIOS. The **best** fix is to downgrade to the A06 BIOS. A10 BIOS also breaks suspend/resume, unless if you have your brightness set to max. Please take a read here for more information: [Fixing 9550 screen flickering and black screen on resume from suspend](https://blog.spirotot.com/2016/08/11/xps-9550-arch-linux-fix-screen-flickering/) (thank you Spirotot)
+
 ### External Display
 
 Since the Display Port is controlled by the Intel driver, it tends to work quite well and will usually mirror the laptop display without configuration. Getting both the HDMI and DP adapters to display separate requires additional setup.

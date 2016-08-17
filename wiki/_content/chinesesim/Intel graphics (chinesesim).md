@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-03，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=438925)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-16，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=446766)可以查看翻译后英文页面的改动。
 
 由于 Intel 提供和支持 X.Org 开源驱动，Intel 的显卡基本上是即插即用的。
 
@@ -27,17 +27,18 @@ Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wiki
     *   [5.6 设置伽马和亮度](#.E8.AE.BE.E7.BD.AE.E4.BC.BD.E9.A9.AC.E5.92.8C.E4.BA.AE.E5.BA.A6)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [6.1 SNA 问题](#SNA_.E9.97.AE.E9.A2.98)
-    *   [6.2 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
-    *   [6.3 在启动阶段，当 "Loading modules" 时黑屏](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E9.98.B6.E6.AE.B5.EF.BC.8C.E5.BD.93_.22Loading_modules.22_.E6.97.B6.E9.BB.91.E5.B1.8F)
-    *   [6.4 X 冻结/崩溃](#X_.E5.86.BB.E7.BB.93.2F.E5.B4.A9.E6.BA.83)
-    *   [6.5 添加未识别分辨率](#.E6.B7.BB.E5.8A.A0.E6.9C.AA.E8.AF.86.E5.88.AB.E5.88.86.E8.BE.A8.E7.8E.87)
-    *   [6.6 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
-    *   [6.7 Backlight is not adjustable](#Backlight_is_not_adjustable)
-    *   [6.8 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
-    *   [6.9 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
-    *   [6.10 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.11 Skylake support](#Skylake_support)
-    *   [6.12 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.2 DRI3 问题](#DRI3_.E9.97.AE.E9.A2.98)
+    *   [6.3 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
+    *   [6.4 在启动阶段，当 "Loading modules" 时黑屏](#.E5.9C.A8.E5.90.AF.E5.8A.A8.E9.98.B6.E6.AE.B5.EF.BC.8C.E5.BD.93_.22Loading_modules.22_.E6.97.B6.E9.BB.91.E5.B1.8F)
+    *   [6.5 X 冻结/崩溃](#X_.E5.86.BB.E7.BB.93.2F.E5.B4.A9.E6.BA.83)
+    *   [6.6 添加未识别分辨率](#.E6.B7.BB.E5.8A.A0.E6.9C.AA.E8.AF.86.E5.88.AB.E5.88.86.E8.BE.A8.E7.8E.87)
+    *   [6.7 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
+    *   [6.8 Backlight is not adjustable](#Backlight_is_not_adjustable)
+    *   [6.9 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
+    *   [6.10 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
+    *   [6.11 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
+    *   [6.12 Skylake support](#Skylake_support)
+    *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
 *   [7 更多信息](#.E6.9B.B4.E5.A4.9A.E4.BF.A1.E6.81.AF)
 
 ## 安装
@@ -84,31 +85,9 @@ EndSection
 
 ### 启用 early KMS
 
-**提示:** 如果你有分辨率方面的问题，可以参考一下 [enforcing the mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") ，也许会有帮助。
-
 [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS)被使用的i915 DRM驱动程序英特尔芯片组所支持，并且默认情况下被强制启用。
 
-KMS通常是在[initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process")之后开始初始化，但是你也可以在initramfs的阶段启用KMS，添加`i915`模块到`/etc/mkinitcpio.conf`的`MODULES`行：
-
-```
-MODULES="**i915**"
-
-```
-
-**注意:** 有些用户也许需要在 `i915` 之前添加`intel_agp` 用来阻止 ACPI 错误。顺序很重要，因为模块是按顺序加载的.
-
-如果您使用的是自定义的 [EDID](https://en.wikipedia.org/wiki/Extended_display_identification_data "wikipedia:Extended display identification data") 文件,你应该也把它添加到initramfs中：
-
- `/etc/mkinitcpio.conf`  `FILES="/lib/firmware/edid/your_edid.bin"` 
-
-然后，重新生成initramfs
-
-```
-mkinitcpio -p linux
-
-```
-
-重启系统，一切搞定！
+要在启动过程的早期启动 KMS，请参考 [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")。
 
 ## 基于模块的省电选项
 
@@ -255,6 +234,15 @@ Section "Device"
    Driver      "intel"
    Option      "AccelMethod"  "uxa"
 EndSection
+```
+
+### DRI3 问题
+
+*DRI3* 是 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 默认的 DRI 版本，在有些系统上可能出现 [问题](https://bugs.chromium.org/p/chromium/issues/detail?id=370022)。要退回到 *DRI2*，在配置文件中加入:
+
+```
+Option "DRI" "2"
+
 ```
 
 ### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)

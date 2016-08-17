@@ -53,11 +53,21 @@ There are a number of different ways to capture exactly what you are looking for
 
 ### Filtering TCP packets
 
-If you want to see all the current TCP packets, type `tcp` into the "Filter" bar.
+If you want to see all the current TCP packets, type `tcp` into the "Filter" bar or in the CLI, enter:
+
+```
+$ tshark -f "tcp"
+
+```
 
 ### Filtering UDP packets
 
-If you want to see all the current UDP packets, type `udp` into the "Filter" bar.
+If you want to see all the current UDP packets, type `udp` into the "Filter" bar or in the CLI, enter:
+
+```
+$ tshark -f "udp"
+
+```
 
 ### Filter packets to a specific IP Address
 

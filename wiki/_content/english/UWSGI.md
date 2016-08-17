@@ -59,7 +59,7 @@ uWSGI is configured in `/etc/uwsgi/`. Details can be found [in the uWSGI documen
 
 ##### Application configuration
 
-The following is a simple example to get python support. You may need to install the uwsgi-plugin-python or uwsgi-plugin-python2 plugin from the community repository by pacman.
+The following is a simple example to get python support. You may need to [install](/index.php/Install "Install") the [uwsgi-plugin-python](https://www.archlinux.org/packages/?name=uwsgi-plugin-python) or [uwsgi-plugin-python2](https://www.archlinux.org/packages/?name=uwsgi-plugin-python2) plugin.
 
 ```
 [uwsgi]
@@ -78,7 +78,7 @@ uwsgi --socket 127.0.0.1:3031 --plugin python2 --wsgi-file ~/foo.py --master --p
 
 ```
 
-Note, you should avoid running this command as root.
+**Note:** You should avoid running this command as root
 
 #### Php applications
 

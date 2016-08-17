@@ -7,6 +7,8 @@
 *   [1 Installation](#Installation)
     *   [1.1 Scripted installation](#Scripted_installation)
         *   [1.1.1 Secure Boot](#Secure_Boot)
+            *   [1.1.1.1 Using PreLoader](#Using_PreLoader)
+            *   [1.1.1.2 Using your own keys](#Using_your_own_keys)
     *   [1.2 Manual installation](#Manual_installation)
     *   [1.3 Upgrading](#Upgrading)
         *   [1.3.1 Pacman hook](#Pacman_hook)
@@ -72,6 +74,28 @@ By default, *rEFInd* will scan all of your drives (that it has drivers for) and 
 **Tip:** It is always a good idea to edit the default config `/EFI/refind/refind.conf` on the ESP to ensure that the default options work for you.
 
 #### Secure Boot
+
+##### Using PreLoader
+
+See [Secure Boot#Set up PreLoader](/index.php/Secure_Boot#Set_up_PreLoader "Secure Boot") to acquire signed `PreLoader.efi` and `HashTool.efi` binaries.
+
+Execute `refind-install` with the option `--preloader */path/to/preloader*`
+
+```
+# refind-install --preloader *PreLoader.efi*
+
+```
+
+The script will
+
+*   copy `PreLoader.efi` to `*esp*/EFI/refind/refind_x64.efi` or `*esp*/EFI/BOOT/BOOT_X64.EFI` if used with `--usedefault` option
+*   copy rEFInd binary as `loader.efi` to the same directory as PreLoader on ESP
+*   copy `HashTool.efi` to same directory as PreLoader on ESP
+*   setup boot entry with `efibootmgr` unless used with `--usedefault` option
+
+Next time you boot with Secure Boot enabled, HashTool will launch and you will need to register rEFInd as a trusted application.
+
+##### Using your own keys
 
 Follow [Secure Boot#Using your own keys](/index.php/Secure_Boot#Using_your_own_keys "Secure Boot") to create keys.
 

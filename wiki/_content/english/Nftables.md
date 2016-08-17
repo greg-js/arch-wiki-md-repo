@@ -64,7 +64,7 @@ You can check the ruleset with
 
 If it returns the inet filter table setup, you're good to go for basic desktop internet usage.
 
-**Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `$ lsmod | grep '^nf'` Otheriwse, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
+**Note:** You may have to create `/etc/modules-load.d/nftables.conf` with all of the nftables related modules you require as entries for the systemd service to work correctly. You can get a list of modules using this command: `$ lsmod | grep '^nf'` Otherwise, you could end up with the dreaded `Error: Could not process rule: No such file or directory` error.
 
 ## nft
 
@@ -112,7 +112,7 @@ flush
 
 ## Tables
 
-The purpose of tables is to hold chains. Unlike tables in iptables, there are no built-in tables in nftables. How many tables one uses, or their naming, is largely a matter of style and personal preference. However, each table has a (network) family and and only applies to packets of this family. Tables can have one of five families specified, which unifies the various iptables utilities into one:
+The purpose of tables is to hold chains. Unlike tables in iptables, there are no built-in tables in nftables. How many tables one uses, or their naming, is largely a matter of style and personal preference. However, each table has a (network) family and only applies to packets of this family. Tables can have one of five families specified, which unifies the various iptables utilities into one:
 
 | nftables family | iptables utility |
 | ip | iptables |

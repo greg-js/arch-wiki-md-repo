@@ -9,7 +9,7 @@ This article describes how to automatically log in to a [virtual console](https:
 
 ## Configuration
 
-Configuration relies on systemd [drop-in files](/index.php/Systemd#Editing_provided_units "Systemd") to override the default parameters passed to *agetty*.
+Configuration relies on systemd [drop-in files](/index.php/Systemd#Editing_provided_units "Systemd") to override the default parameters passed to *[agetty](/index.php/Agetty "Agetty")*.
 
 Configuration differs for virtual versus serial consoles. In most cases, you want to set up automatic login on a virtual console, (whose device name is `tty*N*`, where `*N*` is a number). The configuration of automatic login for serial consoles will be slightly different. Device names of the serial consoles look like `ttyS*N*`, where `*N*` is a number.
 

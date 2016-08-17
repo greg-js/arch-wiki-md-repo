@@ -9,8 +9,9 @@ You can install Arch on an [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target"
         *   [2.2.1 Using an iBFT Compatible Rom](#Using_an_iBFT_Compatible_Rom)
         *   [2.2.2 Manually Setting the iSCSI Target](#Manually_Setting_the_iSCSI_Target)
         *   [2.2.3 Using DHCP](#Using_DHCP)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Device not found](#Device_not_found)
+*   [3 Configuring Open iSCSI initiator on the diskless system](#Configuring_Open_iSCSI_initiator_on_the_diskless_system)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Device not found](#Device_not_found)
 
 ## Server / Target Setup
 
@@ -175,6 +176,58 @@ Then run "mkinitcpio -p linux" and new `/boot/initramfs-linux.img` and `/boot/in
 **Note:** Rebuilding the initial ramdisk will take some time if autodetect is removed from HOOKS
 
 Now your new system can mount the file systems from iSCSI target drive after reboot.
+
+## Configuring Open iSCSI initiator on the diskless system
+
+The initiator on the diskless system must be configured to make it resistant to network problems or even the restart of the target system, the open-iscsi [README](https://github.com/open-iscsi/open-iscsi/blob/master/README) describes optimal iSCSI settings for iSCSI root
+
+When accessing the root partition directly through a iSCSI disk, the iSCSI timers should be set so that iSCSI layer has several chances to try to re-establish a session and so that commands are not quickly requeued to the SCSI layer. Basically you want the opposite of when using dm-multipath.
+
+For this setup, you can turn off iSCSI pings by setting:
+
+```
+node.conn[0].timeo.noop_out_interval = 0
+node.conn[0].timeo.noop_out_timeout = 0
+
+```
+
+And you can turn the replacement_timer to a very long value:
+
+```
+node.session.timeo.replacement_timeout = 86400
+
+```
+
+If a network problem is detected by the initiator, the running commands are failed immediately. There is one exception to this and that is when the SCSI layer's error handler is running. To check if the SCSI error handler is running iscsiadm can be run as:
+
+iscsiadm -m session -P 3
+
+You will then see:
+
+Host Number: X State: Recovery When the SCSI EH is running, commands will not be failed until node.session.timeo.replacement_timeout seconds.
+
+To modify the timer that starts the SCSI EH, you can either write directly to the device's sysfs file:
+
+```
+echo X > /sys/block/sdX/device/timeout
+
+```
+
+where X is in seconds or on most distros you can modify the udev rule.
+
+To modify the timeout using a udev rule create /etc/udev/rules.d/50-iscsi.rules, and add the following lines:
+
+```
+  ACTION=="add", SUBSYSTEM=="scsi" , ATTR{type}=="0|7|14", \
+       RUN+="/bin/sh -c 'echo 90 > /sys$$DEVPATH/timeout'"
+
+```
+
+Change the echo 90 part of the line to the value that you want.
+
+The default timeout for normal File System commands is 30 seconds when udev is not being used.
+
+Since low level I/O commands will go through the IO scheduler on the target it is recommended for performance to use elevator=noop on the diskless system, see [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") to set the elevator.
 
 ## Troubleshooting
 

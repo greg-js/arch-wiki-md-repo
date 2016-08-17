@@ -1,17 +1,13 @@
-Pipelight is a special browser plugin which allows one to use Windows-only plugins inside Linux browsers. The main focus of the project is on Silverlight and its features, such as watching DRM protected videos. It works by creating a bridge between a Windows application, which handles the Windows-only plugin (e.g. Silverlight), and a native Linux browser plugin. The Windows application is run using a patched version of Wine, therefore requiring Pipelight users to move to this version. Pipelight can be used in browsers that support NPAPI plugins, such as Firefox. It does **not** work with Chromium.
+Pipelight is a special browser plugin which allows one to use Windows-only plugins inside Linux browsers. The main focus of the project is on Silverlight and its features, such as watching DRM protected videos. It works by creating a bridge between a Windows application, which handles the Windows-only plugin (e.g. Silverlight), and a native Linux browser plugin. The Windows application is run using a patched version of Wine, therefore requiring Pipelight users to move to this version. Pipelight can be used in browsers that support NPAPI plugins, such as Firefox. It does **not** work with Chrome/Chromium or Opera.
 
-**Tip:**
+**Tip:**  
 
-*   If you are here because you want to watch **Netflix** or **Amazon Instant Videos**, you do not need to install Silverlight/Pipelight. It is easier to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/), which includes the Widevine content decryption plugin which satisfies Netflix's DRM requirements. This should move to other browsers e.g. Firefox (who have agreed to implement the HTML5 code) in due course.
-*   If you are here because you want to watch **BlinkBox** (UK) you need to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/) (Requires: version 42+) and use the [User-Agent Switcher for Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg) extension with a Mac UA string 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'. Windows UA strings will result in WP209 playback errors due to HDCP.
-
-**Note:** Pipelight playback of **BlinkBox** content (which used to work fine with the Silverlight 5.0 plugin) now appears broken.
+*   If you are here because you want to watch **Netflix** or **Amazon Instant Videos**, you do not need to install Silverlight/Pipelight. It is easier to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/), which includes the Widevine content decryption plugin which satisfies Netflix's DRM requirements. The Widevine plugin will also be available in Firefox from version 49.[[1]](http://www.phoronix.com/scan.php?page=news_item&px=Firefox-49-Widevine-Linux)
+*   If you are here because you want to watch **BlinkBox** (UK) you need to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/) and use the [User-Agent Switcher for Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg) extension with a Mac UA string `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36`. Windows UA strings will result in WP209 playback errors due to HDCP.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Installing from the AUR](#Installing_from_the_AUR)
-    *   [1.2 Installing from the unofficial pipelight repositories](#Installing_from_the_unofficial_pipelight_repositories)
 *   [2 Managing plugins](#Managing_plugins)
     *   [2.1 Plug-in(s) not visible in Mozilla Firefox](#Plug-in.28s.29_not_visible_in_Mozilla_Firefox)
 *   [3 User Agent](#User_Agent)
@@ -34,17 +30,9 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 
 ## Installation
 
-**Warning:** NPAPI support has been dropped from Chrome/Chromium. Pipelight only works on a browser (e.g. FireFox) with enabled NPAPI support.
+**Warning:** Pipelight requires a browser with NPAPI support, e.g. Firefox. NPAPI support is **not** present in Chrome/Chromium or Opera.
 
-Pipelight is not presently available in the [official repositories](/index.php/Official_repositories "Official repositories"), and can be either installed from the [AUR](/index.php/AUR "AUR") or the unofficial [[pipelight](/index.php/Unofficial_user_repositories#pipelight "Unofficial user repositories")] repository, maintained by the Pipelight developers.
-
-### Installing from the AUR
-
-Pipelight is available in the [AUR](/index.php/AUR "AUR") as the [pipelight](https://aur.archlinux.org/packages/pipelight/) package.
-
-### Installing from the unofficial pipelight repositories
-
-Pre-built Pipelight packages for Arch Linux can be obtained from the unofficial [pipelight](/index.php/Unofficial_user_repositories#pipelight "Unofficial user repositories") repository, which is maintained by the Pipelight developers. Since these packages are pre-built, it does not require the time expensive task of compiling wine from sources. If you are running a 64-bit system, you will need to enable the [Multilib](/index.php/Multilib "Multilib") repository first.
+Pipelight can be [installed](/index.php/Install "Install") with the [pipelight](https://aur.archlinux.org/packages/pipelight/) package.
 
 ## Managing plugins
 
@@ -169,7 +157,7 @@ For example, to install Wine-Silverlight in `/opt`:
 
 ### Pipelight stopped working after upgrade of chromium (version 35+)
 
-NPAPI support has now been dropped from chromium. If you want to recompile in NPAPI support yourself, patches from Michael Müller are attached to this bug [[1]](https://bugs.archlinux.org/task/40676?string=chromium&project=1&search_name=&only_watched=1&type%5B0%5D=&sev%5B0%5D=&pri%5B0%5D=&due%5B0%5D=&reported%5B0%5D=&cat%5B0%5D=&status%5B0%5D=open&percent%5B0%5D=&opened=&dev=&closed=&duedatefrom=&duedateto=&changedfrom=&changedto=&openedfrom=&openedto=&closedfrom=&closedto=) The patches are originally from: [[2]](https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1307989)
+NPAPI support has now been dropped from chromium. If you want to recompile in NPAPI support yourself, patches from Michael Müller are attached to this bug [[2]](https://bugs.archlinux.org/task/40676?string=chromium&project=1&search_name=&only_watched=1&type%5B0%5D=&sev%5B0%5D=&pri%5B0%5D=&due%5B0%5D=&reported%5B0%5D=&cat%5B0%5D=&status%5B0%5D=open&percent%5B0%5D=&opened=&dev=&closed=&duedatefrom=&duedateto=&changedfrom=&changedto=&openedfrom=&openedto=&closedfrom=&closedto=) The patches are originally from: [[3]](https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1307989)
 
 ### Silverlight plug-in error with Firefox and apparmor
 

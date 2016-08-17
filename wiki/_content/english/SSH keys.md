@@ -327,7 +327,9 @@ Identity added: /home/user/.ssh/id_ecdsa (/home/user/.ssh/id_ecdsa)
 
 If your private key is encrypted, `ssh-add` will prompt you to enter your passphrase. Once your private key has been successfully added to the agent you will be able to make SSH connections without having to enter your passphrase.
 
-In order to have all this happen automatically, and make sure that only one `ssh-agent` process runs at a time, add the following to your `~/.bashrc`:
+**Tip:** To make all `ssh` clients, including `git` store keys in the agent on first use, add the configuration setting `AddKeysToAgent yes` to `~/.ssh/config`. Other possible values are `confirm`, `ask` and `no` (default).
+
+In order to start the agent automatically and make sure that only one `ssh-agent` process runs at a time, add the following to your `~/.bashrc`:
 
 ```
 if ! pgrep -u $USER ssh-agent > /dev/null; then
@@ -336,11 +338,10 @@ fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval $(<~/.ssh-agent-thing)
 fi
-ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
 ```
 
-This will run a `ssh-agent` process if there is not one already, and save the output thereof. If there is one running already, we retrieve the cached `ssh-agent` output and evaluate it which will set the necessary environment variables. Also, if needed, we create an alias around `ssh` to add the key to the agent, then remove the alias. One downside to this approach is that the key will not be added by commands that use the private key other than `ssh`, such as `git`.
+This will run a `ssh-agent` process if there is not one already, and save the output thereof. If there is one running already, we retrieve the cached `ssh-agent` output and evaluate it which will set the necessary environment variables.
 
 There also exist a number of front-ends to `ssh-agent` and alternative agents described later in this section which avoid this problem.
 

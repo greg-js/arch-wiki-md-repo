@@ -16,7 +16,8 @@
     *   [4.5 Logging](#Logging)
     *   [4.6 Caching](#Caching)
 *   [5 Theme](#Theme)
-*   [6 See also](#See_also)
+*   [6 Restart after Upgrade](#Restart_after_Upgrade)
+*   [7 See also](#See_also)
 
 ## Packages
 
@@ -85,6 +86,22 @@ Install [postgresql](https://www.archlinux.org/packages/?name=postgresql) and se
 ## Theme
 
 The current package (gogs-git* and gogs>=0.4.2) support custom themes. The location for Gogs themes is `/usr/share/themes/gogs/`. Gogs comes with one default theme, but you can easily create a own theme. Just copy the default `theme` directory and change what every you want. In the `public` directory is every javascript, stylesheet and font file and in the `template` directory are the HTML templates. The current selected theme can be changed over the `app.ini` configuration parameter `STATIC_ROOT_PATH`. Changed it with the absolute path to the new theme.
+
+## Restart after Upgrade
+
+Gogs needs to be restarted after every upgrade because the paths of javascript/css assets will change and therefor break the website. To automate this the following pacman hook can be inserted to `/etc/pacman.d/hooks/gogs.hook`:
+
+```
+ [Trigger]
+ Type = File
+ Operation = Upgrade
+ Target = usr/share/gogs/gogs
+ [Action]
+ Description = Restart gogs...
+ When = PostTransaction
+ Exec = /usr/bin/systemctl try-restart gogs.service
+
+```
 
 ## See also
 

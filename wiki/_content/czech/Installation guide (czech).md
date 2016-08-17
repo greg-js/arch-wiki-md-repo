@@ -4,154 +4,257 @@ Komunitou spravovaná [ArchWiki](/index.php/Main_page_(%C4%8Cesky) "Main page (�
 
 ## Contents
 
-*   [1 Stažení](#Sta.C5.BEen.C3.AD)
+*   [1 Před instalaci](#P.C5.99ed_instalaci)
+    *   [1.1 UEFI](#UEFI)
+    *   [1.2 Rozložení klávesnice](#Rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice)
+    *   [1.3 Připojte se k Internetu](#P.C5.99ipojte_se_k_Internetu)
+        *   [1.3.1 Bezdrátové připojení](#Bezdr.C3.A1tov.C3.A9_p.C5.99ipojen.C3.AD)
+    *   [1.4 Nastavte systémový čas](#Nastavte_syst.C3.A9mov.C3.BD_.C4.8Das)
+    *   [1.5 Rozdělte disk](#Rozd.C4.9Blte_disk)
+    *   [1.6 Naformátujte oddíly](#Naform.C3.A1tujte_odd.C3.ADly)
+    *   [1.7 Připojte oddíly](#P.C5.99ipojte_odd.C3.ADly)
 *   [2 Instalace](#Instalace)
-    *   [2.1 Rozložení klávesnice](#Rozlo.C5.BEen.C3.AD_kl.C3.A1vesnice)
-    *   [2.2 Rozdělte disk](#Rozd.C4.9Blte_disk)
-    *   [2.3 Naformátujte oddíly](#Naform.C3.A1tujte_odd.C3.ADly)
-    *   [2.4 Připojte oddíly](#P.C5.99ipojte_odd.C3.ADly)
-    *   [2.5 Připojte se k Internetu](#P.C5.99ipojte_se_k_Internetu)
-        *   [2.5.1 Bezdrátové připojení](#Bezdr.C3.A1tov.C3.A9_p.C5.99ipojen.C3.AD)
-    *   [2.6 Nainstalujte základní systém](#Nainstalujte_z.C3.A1kladn.C3.AD_syst.C3.A9m)
-    *   [2.7 Nainstalujte bootloader](#Nainstalujte_bootloader)
-        *   [2.7.1 GRUB](#GRUB)
-        *   [2.7.2 Syslinux](#Syslinux)
-    *   [2.8 Nakonfigurujte systém](#Nakonfigurujte_syst.C3.A9m)
-    *   [2.9 Odpojte oddíly a rebootujte](#Odpojte_odd.C3.ADly_a_rebootujte)
-*   [3 Po instalaci](#Po_instalaci)
-    *   [3.1 Správa uživatelů](#Spr.C3.A1va_u.C5.BEivatel.C5.AF)
-    *   [3.2 Správa balíčků](#Spr.C3.A1va_bal.C3.AD.C4.8Dk.C5.AF)
-    *   [3.3 Správa služeb](#Spr.C3.A1va_slu.C5.BEeb)
-    *   [3.4 Zvuk](#Zvuk)
-    *   [3.5 Ovladač grafické karty](#Ovlada.C4.8D_grafick.C3.A9_karty)
-    *   [3.6 Display server](#Display_server)
-    *   [3.7 Fonty](#Fonty)
-*   [4 Závěr](#Z.C3.A1v.C4.9Br)
+    *   [2.1 Vyberte mirrory](#Vyberte_mirrory)
+    *   [2.2 Nainstalujte základní systém](#Nainstalujte_z.C3.A1kladn.C3.AD_syst.C3.A9m)
+*   [3 Nakonfigurujte systém](#Nakonfigurujte_syst.C3.A9m)
+    *   [3.1 fstab](#fstab)
+    *   [3.2 Chroot](#Chroot)
+    *   [3.3 Časové pásmo](#.C4.8Casov.C3.A9_p.C3.A1smo)
+    *   [3.4 Lokalizace](#Lokalizace)
+    *   [3.5 Hostname](#Hostname)
+    *   [3.6 Nastavení síte](#Nastaven.C3.AD_s.C3.ADte)
+    *   [3.7 Initramfs](#Initramfs)
+    *   [3.8 Root heslo](#Root_heslo)
+    *   [3.9 Boot loader](#Boot_loader)
+    *   [3.10 Restart](#Restart)
+*   [4 Po instalaci](#Po_instalaci)
+    *   [4.1 Správa uživatelů](#Spr.C3.A1va_u.C5.BEivatel.C5.AF)
+    *   [4.2 Správa balíčků](#Spr.C3.A1va_bal.C3.AD.C4.8Dk.C5.AF)
+    *   [4.3 Správa služeb](#Spr.C3.A1va_slu.C5.BEeb)
+    *   [4.4 Zvuk](#Zvuk)
+    *   [4.5 Ovladač grafické karty](#Ovlada.C4.8D_grafick.C3.A9_karty)
+    *   [4.6 Display server](#Display_server)
+    *   [4.7 Fonty](#Fonty)
+*   [5 Závěr](#Z.C3.A1v.C4.9Br)
 
-## Stažení
+## Před instalaci
+
+Arch Linux by měl běžet na jakémkoliv [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) kompatibilním stroji s alespoň 256 MB RAM. Základní instalace se všemi balíčky ze skupiny [base](https://www.archlinux.org/groups/x86_64/base/) by měla zabírat méně než 800 MB místa na disku.
 
 ISO Arch Linuxu stáhněte z [Arch Linux download page](https://www.archlinux.org/download/).
 
 *   Poskytujeme jediný obraz, který lze nabootovat do živého i686 nebo x86_64 systému určeného pro instalaci Arch Linuxu přes síť. Média obsahující repozitář [core] již nejsou a nebudou poskytovány.
-*   Instalační obrazy jsou podepsány a je silně doporučeno před použitím ověřit jejich signaturu. V Arch Linuxu toto můžete provést pomocí `pacman-key -v <iso-file>.sig` 
+*   Instalační obrazy jsou podepsány a je silně doporučeno před použitím ověřit jejich signaturu. V Arch Linuxu toto můžete provést pomocí `$ pacman-key -v <iso-file>.sig` 
 *   Obraz lze vypálit na CD, připojit jako ISO soubor nebo [zapsat na USB flashdisk](/index.php/USB_Installation_Media "USB Installation Media"). Obraz je určen pouze pro nové instalace; existující Arch Linux systém lze vždy aktualizovat příkazem `pacman -Syu`.
 
-## Instalace
+Po zavedení systému budete přihlášeni jako root uživatel se [Zsh](/index.php/Zsh "Zsh") shellem.
+
+Pro úpravu nebo vytvoření konfiguračních souborů je možné použít nástroje [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") nebo [vim](/index.php/Vim#Usage "Vim")
+
+### UEFI
+
+Pokud máte základní desku s [UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") firmvérem a nastaven UEFI režim, ověřte, zda je systém zavedený v UEFI režimu zkontrolováním [efivars](/index.php/Efivars "Efivars"):
+
+```
+# ls /sys/firmware/efi/efivars
+
+```
 
 ### Rozložení klávesnice
 
 Pro mnohé země a typy klávesnic (včetně té české) jsou již příslušné mapy klávesnic k dispozici a příkaz `loadkeys cz-qwertz` by mohl udělat to co chcete. Další mapy klávesnic můžete nalézt v `/usr/share/kbd/keymaps/` (při použití loadkeys můžete cestu k souboru a příponu vynechat).
 
-### Rozdělte disk
-
-Pro detaily vizte [partitioning](/index.php/Partitioning "Partitioning").
-
-Nezapomeňte vytvořit jakákoliv vrstvená bloková zařízení typu [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") nebo [RAID](/index.php/RAID "RAID").
-
-### Naformátujte oddíly
-
-Pro detaily vizte [zde](/index.php/File_systems#Step_2:_create_the_new_file_system "File systems").
-
-Pokud používáte (U)EFI, nejspíše budete potřebovat oddíl navíc pro hostování Systémového oddílu UEFI. Přečtěte si [tento článek](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface").
-
-### Připojte oddíly
-
-Nyní musíme připojit kořenový oddíl na `/mnt`. Měli byste též vytvořit podadresáře pro jakékoliv další oddíly (`/mnt/boot`, `/mnt/home`, ...) včetně [swapu](/index.php/Swap "Swap") a připojit je, pokud chcete, aby je `genfstab` našel.
-
 ### Připojte se k Internetu
 
-Služba DHCP je již povolena pro všehna dostupná síťová rozhraní. Pokud potřebujete nastavit statickou IP adresu nebo použít nějaký nástroj pro správu připojení (např. [Netctl](/index.php/Netctl "Netctl")), měli byste tuto službu nejdříve zastavit: `systemctl stop dhcpcd.service`. Pro více informací navštivte [configuring network](/index.php/Configuring_network "Configuring network").
+Služba DHCP je již povolena pro všechna dostupná síťová rozhraní. Ověřte funkčnost připojení, např. příkazem `ping google.com`.
+
+Pokud potřebujete nastavit statickou IP adresu nebo použít nějaký nástroj pro správu připojení (např. [Netctl](/index.php/Netctl "Netctl")), měli byste tuto službu nejdříve zastavit (nahraďte `enp0s25` správným síťovým rozhraním):
+
+```
+# systemctl stop dhcpcd@*enp0s25*.service
+
+```
+
+Pro více informací navštivte [Network configuration](/index.php/Network_configuration "Network configuration").
 
 #### Bezdrátové připojení
 
-Pro nastavení své bezdrátové sítě spusťte `wifi-menu`. Pro podrobnosti vizte [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") a [Netctl](/index.php/Netctl "Netctl").
+Pro výpis dostupných sítí a vytvoření připojení na zvoleném síťovém rozhraní použijte příkaz (nahraďte `wlp2s0` síťovým rozhraním bezdrátového adaptéru):
 
-### Nainstalujte základní systém
+```
+# wifi-menu -o *wlp2s0*
+
+```
+
+Výsledný konfigurační soubor bude uložen v `/etc/netctl`. Pro podrobnosti vizte [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+
+### Nastavte systémový čas
+
+Použijte [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") pro nastavení přesného času:
+
+```
+# timedatectl set-ntp true
+
+```
+
+Chcete-li zkontrolovat stav služby, použijte `timedatectl status`.
+
+### Rozdělte disk
+
+Pro úpravu a vytvoření [partition table](/index.php/Partition_table "Partition table") (tabulka oddílů) použijte [fdisk](/index.php/Fdisk "Fdisk"), [cfdisk](/index.php/Cfdisk "Cfdisk") nebo [parted](/index.php/Parted "Parted") pro [MBR](/index.php/MBR "MBR") a [GPT](/index.php/GPT "GPT"), nebo [gdisk](/index.php/Gdisk "Gdisk") (pouze GPT).
+
+Alespoň jeden oddíl musí být dostupný pro kořenový adresář `/`. Pokud používáte UEFI, budete potřebovat další oddíl pro hostování [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Také mohou být zapotřebí další oddíly, např. [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") na BIOS/GPT konfiguraci.
+
+Nezapomeňte vytvořit jakákoliv vrstvená bloková zařízení typu [LVM](/index.php/LVM "LVM"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") nebo [RAID](/index.php/RAID "RAID"), pokud je požadujete.
+
+Pro detaily vizte [Partitioning](/index.php/Partitioning "Partitioning").
+
+### Naformátujte oddíly
+
+Naformátovaní oddílu jako [ext4](/index.php/Ext4 "Ext4"):
+
+```
+# mkfs.ext4 /dev/sd*xY*
+
+```
+
+Naformátovaní [swap](/index.php/Swap "Swap") oddílu:
+
+```
+# mkswap /dev/sd*xY*
+
+```
+
+Naformátovaní oddílu jako FAT32 (EFI System Partition):
+
+```
+# mkfs.fat -F32 /dev/sd*xY*
+
+```
+
+Pro detaily vizte [zde](/index.php/File_systems#Create_a_file_system "File systems") a [zde](/index.php/Swap "Swap").
+
+### Připojte oddíly
+
+Nyní připojte kořenový oddíl na `/mnt`. Poté vytvořte podadresáře pro jakékoliv další oddíly a připojte je (`/mnt/boot`, `/mnt/home`, ...) a aktivujte [swap](/index.php/Swap "Swap") oddíl přes `swapon`, pokud chcete, aby je `genfstab` našel.
+
+## Instalace
+
+### Vyberte mirrory
 
 Před instalací byste mohli chtít provést změny v `/etc/pacman.d/mirrorlist`, aby byl vámi upřednostňovaný mirror první v seznamu. Tato kopie mirrorlistu bude také nainstalována na váš nový systém přes `pacstrap`, takže má cenu udělat to správně už teď.
 
-Použitím skriptu [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) nainstalujeme základní systém.
+### Nainstalujte základní systém
+
+Použitím skriptu [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) nainstalujete základní systém.
 
 ```
 # pacstrap /mnt base
 
 ```
 
-Další balíčky můžete nainstalovat připsáním jejich názvů k výše uvedenému příkazu (oddělujte je pomocí mezer), včetně bootloaderu, chcete-li. Doporučuji společně s balíkem `base` nainstalovat i balík `base-devel`.
+Další balíčky můžete nainstalovat připsáním jejich názvů k výše uvedenému příkazu (oddělujte je pomocí mezer), včetně bootloaderu, chcete-li. Doporučuje se společně s balíkem `base` nainstalovat i balík `base-devel`.
 
-### Nainstalujte bootloader
+## Nakonfigurujte systém
 
-#### [GRUB](/index.php/GRUB2 "GRUB2")
+### fstab
 
-*   Pro BIOS:
-
-```
-# arch-chroot /mnt pacman -S grub-bios
-
-```
-
-*   Pro EFI (v některých případech budete namísto uvedeného potřebovat `grub-efi-i386`:
-
-```
-# arch-chroot /mnt pacman -S grub-efi-x86_64
-
-```
-
-#### [Syslinux](/index.php/Syslinux "Syslinux")
-
-```
-# arch-chroot /mnt pacman -S syslinux
-
-```
-
-### Nakonfigurujte systém
-
-Následujícím příkazem vygenerujete [fstab](/index.php/Fstab "Fstab") (pokud upřednostňujete použití UUID nebo labelů, přidejte přepínač `-U`, respektive `-L`):
+Vygenerujte [fstab](/index.php/Fstab "Fstab") soubor (pokud upřednostňujete použití UUID nebo labelů, použijte přepínač `-U`, respektive `-L`):
 
 ```
 # genfstab -p /mnt >> /mnt/etc/fstab
 
 ```
 
-Dále provedeme [chroot](/index.php/Chroot "Chroot") do našeho nově nainstalovaného systému:
+Poté skontrolujte výsledek v `/mnt/etc/fstab` a pokud jsou v něm chyby, opravte je.
+
+### Chroot
+
+Proveďte [chroot](/index.php/Chroot "Chroot") do nově nainstalovaného systému:
 
 ```
 # arch-chroot /mnt
 
 ```
 
-*   Zapište svůj hostname do `/etc/hostname`.
-*   Proveďte symlink `/etc/localtime` na `/usr/share/zoneinfo/Zóna/Podzóna`. Nahraďte `Zóna` a `Podzóna` podle svého gusta. Například:
+### Časové pásmo
+
+Nastavte [časové pásmo](/index.php/Time_zone "Time zone") vytvořením symlinku `/etc/localtime` na `/usr/share/zoneinfo/Zóna/Podzóna`. Nahraďte `Zóna` a `Podzóna` podle svého gusta. Například:
 
 ```
 # ln -s /usr/share/zoneinfo/Europe/Prague /etc/localtime
 
 ```
 
-*   Odkomentujte vybrané locale v `/etc/locale.gen` a vygenerujte ho s `locale-gen`.
-*   Nastavte [locale](/index.php/Locale#Setting_the_system_locale "Locale") v `/etc/locale.conf`.
-*   Nastavte [konzolové rozložení klávesnice](/index.php/KEYMAP "KEYMAP") and [konzolový font](/index.php/Fonts#Console_fonts "Fonts") v `/etc/vconsole.conf`
-*   Nakonfigurujte `/etc/mkinitcpio.conf` podle potřeby (vizte [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) a vytvořte startovací RAM disk s:
+Spusťte `hwclock` pro vygenerovaní `/etc/adjtime`. Pokud je zvolen UTC standard, ostatní operační systémy (Windows) musí být nastaveny stejně. Pro více informací vizte [Time](/index.php/Time "Time").
+
+```
+# hwclock --systohc --*utc*
+
+```
+
+### Lokalizace
+
+Odkomentujte vybrané locale v `/etc/locale.gen` a vygenerujte je:
+
+```
+# locale-gen
+
+```
+
+Zapište předvolenou lokalizaci ve formátu `LANG=*your_locale*` do `/etc/locale.conf`. Pokud chcete, nastavte [konzolové rozložení klávesnice](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") a [konzolový font](/index.php/Fonts#Console_fonts "Fonts") v `/etc/vconsole.conf`
+
+### Hostname
+
+Zapište [hostname](/index.php/Hostname "Hostname") do `/etc/hostname` a `/etc/hosts`.
+
+### Nastavení síte
+
+Pro nainstalovaný systém znovu nastavte síťové připojení. Pokud chcete zapnout DHCP na všech kabelových síťových rozhraních (jako při startu systému), použijte příkaz:
+
+```
+# systemctl enable dhcpcd.service
+
+```
+
+Pro podrobnosti vizte [Network configuration](/index.php/Network_configuration "Network configuration") a [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+
+### Initramfs
+
+Pokud jste udělali změny v [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), vytvořte nový startovací RAM disk:
 
 ```
 # mkinitcpio -p linux
 
 ```
 
-*   Nakonfigurujte bootloader. Pro GRUB vizte [instalaci a konfiguraci GRUBu](/index.php/GRUB#Installation "GRUB"); pro Syslinux vizte [konfiguraci Syslinuxu](/index.php/Syslinux#Configuration "Syslinux").
-*   Nastavte heslo uživatele root příkazem `passwd`.
-*   Pro nainstalovaný systém znovu nastavte síťové připojení. Vizte [Network configuration](/index.php/Network_configuration "Network configuration") a [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
+### Root heslo
 
-### Odpojte oddíly a rebootujte
-
-Pokud jste stále v prostředí chrootu, napište `exit` nebo stiskněte `Ctrl+D` pro jeho opuštění. Dříve jsme připojili potřebné oddíly pod `/mnt`. V tomto kroku je odpojíme:
+Nastavte heslo pro užívatele root:
 
 ```
-# umount /mnt/{boot,home,}
+# passwd
 
 ```
 
-Nakonec restartujte počítač a přihlašte se do nového systému do účtu uživatele root.
+### Boot loader
+
+Nainstalujte a nakonfigurujte [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders") (zavaděč). Na výběr jsou např. [GRUB](/index.php/GRUB "GRUB") (BIOS/UEFI), [rEFInd](/index.php/REFInd "REFInd"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (pouze UEFI) a [syslinux](/index.php/Syslinux "Syslinux") (pouze BIOS).
+
+Pokud máte procesor Intel, nainstalujte i balíček [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) a [povolte aktualizace mikrokódu.](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+
+### Restart
+
+Pokud jste stále v prostředí chrootu, napište `exit` nebo stiskněte `Ctrl+D` pro jeho opuštění.
+
+Dříve jsme připojili potřebné oddíly pod `/mnt`. V tomto kroku je odpojíme:
+
+```
+# umount -R /mnt
+
+```
+
+Nakonec restartujte počítač příkazem `reboot` a přihlašte se do nového systému do účtu uživatele root.
 
 ## Po instalaci
 
@@ -200,15 +303,16 @@ Ovladač `vesa` je obecným ovladačem nastavujícím rozlišení, který funguj
 
 Aby fungovala akcelerace a často aby se zpřístupnila všechna rozlišení, která umí GPU nastavit, je nutné použít patřičný ovladač:
 
-| Výrobce | Typ | Ovladač | [Multilib](/index.php/Multilib "Multilib") balíček
-(pro 32-bit aplikace na Arch x86_64) | Dokumentace |
-| **AMD/ATI** | Open source | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-ati-dri](https://www.archlinux.org/packages/?name=lib32-ati-dri) | [ATI](/index.php/ATI "ATI") |
-| Proprietární | [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/) | [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
-| **Intel** | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
-| **Nvidia** | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-nouveau-dri](https://www.archlinux.org/packages/?name=lib32-nouveau-dri) | [Nouveau](/index.php/Nouveau "Nouveau") |
-| [xf86-video-nv](https://www.archlinux.org/packages/?name=xf86-video-nv) | – | (zastaralý ovladač) |
-| Proprietární | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
-| [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [lib32-nvidia-304xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-utils) |
+| Výrobce | Typ | Ovladač | OpenGL | OpenGL ([Multilib](/index.php/Multilib "Multilib")) | Dokumentace |
+| **AMD/
+ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [AMDGPU](/index.php/AMDGPU "AMDGPU") |
+| [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI](/index.php/ATI "ATI") |
+| Proprietární | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [catalyst-libgl](https://aur.archlinux.org/packages/catalyst-libgl/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| **Intel** | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
+| **Nvidia** | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Nouveau](/index.php/Nouveau "Nouveau") |
+| Proprietární | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl) | [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
+| [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl) | [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) |
+| [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) | [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl) | [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl) |
 
 ### Display server
 

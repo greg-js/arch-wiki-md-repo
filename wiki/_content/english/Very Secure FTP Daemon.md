@@ -38,6 +38,16 @@ See the [#Using xinetd](#Using_xinetd) for procedures to use vsftpd with xinetd.
 
 Most of the settings in vsftpd are done by editing the file `/etc/vsftpd.conf`. The file itself is well-documented, so this section only highlights some important changes you may want to modify. For all available options and documentation, see the man page for vsftpd.conf (5), or [view it online](https://security.appspot.com/vsftpd/vsftpd_conf.html). Files are served by default from `/srv/ftp`.
 
+Enable connections `/etc/hosts.allow`:
+
+```
+# Allow all connections
+vsftpd: ALL
+# IP adress range
+vsftpd: 10.0.0.0/255.255.255.0
+
+```
+
 ### Enabling uploading
 
 The `WRITE_ENABLE` flag must be set to YES in `/etc/vsftpd.conf` in order to allow changes to the filesystem, such as uploading:

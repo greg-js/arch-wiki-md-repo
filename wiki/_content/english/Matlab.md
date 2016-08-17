@@ -29,6 +29,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [5.7 Install-Time Library Errors](#Install-Time_Library_Errors)
     *   [5.8 Resolving start warnings/errors](#Resolving_start_warnings.2Ferrors)
     *   [5.9 Segmentation Fault on startup](#Segmentation_Fault_on_startup)
+    *   [5.10 Hangs on rendering or exiting with Intel graphics](#Hangs_on_rendering_or_exiting_with_Intel_graphics)
 
 ## Overview
 
@@ -328,3 +329,14 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 ### Segmentation Fault on startup
 
 If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
+
+### Hangs on rendering or exiting with Intel graphics
+
+Some users have reported issues with DRI3 enabled on Intel Graphics chips. The issue can be circumvented by selecting software rendering with the MATLAB command:
+
+```
+opengl('save','software')
+
+```
+
+See [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) for more.
