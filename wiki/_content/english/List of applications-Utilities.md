@@ -115,12 +115,8 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the generic name for a program which manages a terminal line and its connected terminal. Its purpose is to protect the system from unauthorized access. Generally, each getty process is started by [systemd](/index.php/Systemd "Systemd") and manages a single terminal line.
 
 *   **agetty** is part of [util-linux](https://www.archlinux.org/packages/?name=util-linux) and installed by default.
-*   **fgetty** AUR [fgetty](https://aur.archlinux.org/packages/fgetty/)
 *   **mingetty** AUR [mingetty](https://aur.archlinux.org/packages/mingetty/)
-*   **[qingy](/index.php/Qingy "Qingy")** AUR package: [qingy](https://aur.archlinux.org/packages/qingy/)
 *   **fbgetty** official package: [fbgetty](https://www.archlinux.org/packages/?name=fbgetty)
-*   **ngetty** AUR: [ngetty](https://aur.archlinux.org/packages/ngetty/)
-*   **rungetty** AUR: [rungetty](https://aur.archlinux.org/packages/rungetty/)
 *   **mgetty** AUR: [mgetty](https://aur.archlinux.org/packages/mgetty/)
 
 ### Integrated development environments

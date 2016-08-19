@@ -166,6 +166,14 @@ theme=theme_name
 
 ```
 
+You can also configure LXDM to use a GTK theme (stored in `/usr/share/themes`) on the mentioned configuration file:
+
+```
+## GTK theme
+gtk_theme=gtk_theme_name
+
+```
+
 ### Advanced Session Configuration
 
 After a user logs on, LXDM sources *all* of the following files, in order:

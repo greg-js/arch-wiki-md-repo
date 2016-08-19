@@ -12,6 +12,8 @@ The [Lenovo Yoga 900](http://shop.lenovo.com/us/en/laptops/yoga/900-series/yoga-
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
+**ATTENTION:** GNU/Linux can only be installed on the first revision of the Yoga 900 which is named 13ISK. One cannot install GNU/Linux on the newer revisions like 13ISK2, 13ISK Business Edition or Yoga 900S due to a change in the SSD configuration. The NVMe SSD of the newer devices cannot be detected by Linux!
+
 ## Contents
 
 *   [1 Installation](#Installation)

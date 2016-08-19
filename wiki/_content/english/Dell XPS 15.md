@@ -245,9 +245,11 @@ aplay: device_list:268: no soundcards found...
 
 You may or may not get sound back after a few restarts. This is a bug and has been documented here: [[1]](https://bugs.archlinux.org/task/49157)
 
-Things you can try ():
+Workarounds:
 
-Restart your computer until you get it back.
+*   Suspend and resume your computer [(thank you spheenik)](https://www.reddit.com/r/Dell/comments/4y1svp/gnulinux_on_xps_9550_questions_arch/)
+*   Restart your computer
+*   Disable sound BIOS, powerboot into Arch, enable sound in BIOS, start Arch with sound back
 
 Regardless, for now, it is recommended that you don't/reduce hot-plugging headphones as it makes ALSA/PulseAudio break/very unstable.
 

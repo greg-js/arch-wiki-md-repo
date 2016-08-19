@@ -59,6 +59,8 @@ options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
 ```
 
+But be careful with `/etc/modprobe.d/i915.conf`. It may cause screen freezing.
+
 ## Touch Pad
 
 The touch pad will work with the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package.

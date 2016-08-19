@@ -137,7 +137,7 @@ $ optirun glxspheres32
 
 ```
 
-If the window with animation shows up - Optimus with Bumblebee is working.
+If the window with animation shows up, Optimus with Bumblebee is working.
 
 **Note:** If `glxgears` failed, but `glxspheres*XX*` worked, always replace "`glxgears`" with "`glxspheres*XX*`" in all cases.
 

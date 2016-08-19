@@ -26,8 +26,8 @@
     *   [6.5 PhpStorm](#PhpStorm)
     *   [6.6 Zend Studio](#Zend_Studio)
 *   [7 Commandline tools](#Commandline_tools)
-    *   [7.1 Box](#Box)
-    *   [7.2 Composer](#Composer)
+    *   [7.1 Composer](#Composer)
+    *   [7.2 Box](#Box)
     *   [7.3 PDepend](#PDepend)
     *   [7.4 PHP Coding Standards Fixer](#PHP_Coding_Standards_Fixer)
     *   [7.5 PHP-CodeSniffer](#PHP-CodeSniffer)
@@ -38,6 +38,7 @@
     *   [7.10 phptok](#phptok)
     *   [7.11 PHPUnit](#PHPUnit)
     *   [7.12 PHPUnit Skeleton Generator](#PHPUnit_Skeleton_Generator)
+    *   [7.13 Producer](#Producer)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
     *   [8.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
@@ -252,13 +253,13 @@ You would need other plugins for JavaScript support and DB query.
 
 ## Commandline tools
 
-### Box
-
-[Box](http://box-project.github.io/box2/) is an application for building and managing Phars. It can be installed with the [php-box](https://aur.archlinux.org/packages/php-box/) package.
-
 ### Composer
 
 [Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [composer](https://www.archlinux.org/packages/?name=composer) package.
+
+### Box
+
+[Box](http://box-project.github.io/box2/) is an application for building and managing Phars. It can be installed with the [php-box](https://aur.archlinux.org/packages/php-box/) package.
 
 ### PDepend
 
@@ -299,6 +300,10 @@ You would need other plugins for JavaScript support and DB query.
 ### PHPUnit Skeleton Generator
 
 [PHPUnit Skeleton Generator](https://github.com/sebastianbergmann/phpunit-skeleton-generator) is a tool that can generate skeleton test classes from production code classes and vice versa. It can be installed with the [phpunit-skeleton-generator](https://aur.archlinux.org/packages/phpunit-skeleton-generator/) package.
+
+### Producer
+
+[Producer](http://getproducer.org/) is a command-line quality-assurance tool to validate, and then release, your PHP library package. It can be installed with the [producer](https://aur.archlinux.org/packages/producer/) package.
 
 ## Troubleshooting
 

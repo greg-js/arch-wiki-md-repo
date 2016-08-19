@@ -20,7 +20,7 @@
     *   [5.4 startup-noautoreload](#startup-noautoreload)
     *   [5.5 toggle-stylesheet](#toggle-stylesheet)
     *   [5.6 youtube-player](#youtube-player)
-    *   [5.7 MPVideo](#MPVideo)
+    *   [5.7 mpv.sh](#mpv.sh)
     *   [5.8 rocker gestures](#rocker_gestures)
 *   [6 Stylesheet](#Stylesheet)
 *   [7 Troubleshooting](#Troubleshooting)
@@ -313,24 +313,18 @@ Signal.connect("navigation", function (wv, frame, request) {
 });
 ```
 
-### MPVideo
+### mpv.sh
 
-Slight modification of above script, this opens videos from You Tube, Dailymotion, Vodlocker and more with mpv. (uses [mpv](https://www.archlinux.org/packages/?name=mpv) and [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)).
+The [vv](/index.php?title=Vv&action=edit&redlink=1 "Vv (page does not exist)") keybind will open the URL of current page with mpv, works with You Tube, Dailymotion, Vodlocker and many more video streaming services. (uses [mpv](https://www.archlinux.org/packages/?name=mpv) [libnotify](https://www.archlinux.org/packages/?name=libnotify) [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl)).
 
- `~/.config/dwb/userscripts/MPVideo.js` 
+ `~/.config/dwb/userscripts/mpv.sh` 
 ```
-//!javascript 
-// opens  videos from You Tube, Dailymotion, Vodlocker and many more with mpv.
+#!/bin/bash
+# dwb: vv
+mpv $DWB_URI &
+notify-send  -h string:bgcolor:#000000 -h string:fgcolor:#ff4444 "MPV is opening" "$DWB_URI" 
 
-function playInMplayer() {
-        system.spawn("sh -c 'mpv \"$(youtube-dl -g " + tabs.current.uri + ")\"'");
-}
-function downloadVideo() {
-        system.spawn("sh -c 'xterm -e \"youtube-dl " + tabs.current.uri + "\"'");
-}
-bind("mp", playInMplayer, "play_in_mplayer");
-bind(null, downloadVideo, "download_video");
-
+fi
 ```
 
 ### rocker gestures

@@ -44,6 +44,7 @@ According to the [official website](http://www.gnupg.org):
     *   [8.4 Change trust model](#Change_trust_model)
     *   [8.5 Hide all recipient id's](#Hide_all_recipient_id.27s)
     *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
+    *   [8.7 Always show long ID's and fingerprints](#Always_show_long_ID.27s_and_fingerprints)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
     *   [9.2 su](#su)
@@ -189,7 +190,7 @@ $ gpg --recv-keys *<key-id>*
 **Warning:**
 
 *   You should verify the authenticity of the retrieved public key by comparing its fingerprint with one that the owner published on an independent source(s) (i.e., contacting the person directly). See [Wikipedia:Public key fingerprint](https://en.wikipedia.org/wiki/Public_key_fingerprint "wikipedia:Public key fingerprint") for more information.
-*   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key. See [[2]](http://gwolf.org/node/4070).
+*   Using a short ID may encounter collisions. All keys will be imported that have the short ID. To avoid this, use the full fingerprint or long key ID when receiving a key.[[2]](https://lkml.org/lkml/2016/8/15/445)
 
 **Tip:**
 
@@ -678,6 +679,10 @@ To allow users to validate keys on the keyservers and in their keyrings (i.e. ma
 For an easier process of signing keys and sending signatures to the owners after a keysigning party, you can use the tool *caff*. It can be installed from the AUR with the package [caff-svn](https://aur.archlinux.org/packages/caff-svn/).
 
 To send the signatures to their owners you need a working [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent"). If you do not have already one, install [msmtp](/index.php/Msmtp "Msmtp").
+
+### Always show long ID's and fingerprints
+
+To always show long key ID's add `keyid-format 0xlong` to your configuration file. To always show full fingerprints of keys, add `with-fingerprint` to your configuration file.
 
 ## Troubleshooting
 

@@ -73,6 +73,7 @@ As root use `fallocate` to create a swap file the size of your choosing (M = Meg
 
 ```
 # fallocate -l 512M /swapfile
+或
 # dd if=/dev/zero of=/swapfile bs=1M count=512
 
 ```

@@ -4,9 +4,10 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 
 *   [1 BenQ/Acer](#BenQ.2FAcer)
 *   [2 Brother](#Brother)
-    *   [2.1 Invalid argument](#Invalid_argument)
-    *   [2.2 Scan-key-tool](#Scan-key-tool)
-    *   [2.3 xsane crashes](#xsane_crashes)
+    *   [2.1 Network Scanning](#Network_Scanning)
+    *   [2.2 Invalid argument](#Invalid_argument)
+    *   [2.3 Scan-key-tool](#Scan-key-tool)
+    *   [2.4 xsane crashes](#xsane_crashes)
 *   [3 Canon](#Canon)
     *   [3.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer.2Fscanners)
     *   [3.2 Cannot read scanner make and model](#Cannot_read_scanner_make_and_model)
@@ -63,6 +64,35 @@ Example:
 # brsaneconfig2 -a name=SCANNER_DCP770CW model=DCP-770CW ip=192.168.0.110
 
 ```
+
+### Network Scanning
+
+In case of network scanning, e.g. by WiFi, Sane is still unable to find the scanner. You need to specify the IP address of the scanner in the corresponding net.conf file of sane. So for instance if the scanner is at IP address 192.168.1.100 do:
+
+```
+   echo 192.168.1.100 | sudo tee -a /etc/sane.d/net.conf
+
+```
+
+Now use `scanimage --check-devices` do check whether sane is able to find your scanner. If not, further check that Sane expects this device through the network (see [http://neithere.net/2013/02/18/archlinux_brother_7860.html](http://neithere.net/2013/02/18/archlinux_brother_7860.html)).
+
+Check it:
+
+```
+   $ grep brother /etc/sane.d/dll.conf
+      brother4
+
+```
+
+If nothing was found (it must fit exactly brother4), add it:
+
+```
+   $ echo brother4 | sudo tee -a /etc/sane.d/dll.conf
+   $ scanimage -L
+
+```
+
+The scanner should now appear in the list.
 
 ### Invalid argument
 

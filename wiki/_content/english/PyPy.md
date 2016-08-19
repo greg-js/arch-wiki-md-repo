@@ -4,13 +4,13 @@
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Interactive Interpreter](#Interactive_Interpreter)
-    *   [2.2 Run Program From File](#Run_Program_From_File)
-    *   [2.3 Virtual Environment Creation](#Virtual_Environment_Creation)
+    *   [2.1 Interactive interpreter](#Interactive_interpreter)
+    *   [2.2 Run program from file](#Run_program_from_file)
+    *   [2.3 Virtual environment creation](#Virtual_environment_creation)
 *   [3 EasyInstall](#EasyInstall)
-    *   [3.1 EasyInstall Installation](#EasyInstall_Installation)
-    *   [3.2 Installing EasyInstall Packages](#Installing_EasyInstall_Packages)
-    *   [3.3 EasyInstall Package Example](#EasyInstall_Package_Example)
+    *   [3.1 EasyInstall installation](#EasyInstall_installation)
+    *   [3.2 Installing EasyInstall packages](#Installing_EasyInstall_packages)
+    *   [3.3 EasyInstall package example](#EasyInstall_package_example)
 
 ## Installation
 
@@ -29,7 +29,7 @@ $ pypy -h
 
 to view the listing of `pypy` options.
 
-### Interactive Interpreter
+### Interactive interpreter
 
 To load the pypy interactive interpreter run
 
@@ -38,7 +38,7 @@ $ pypy
 
 ```
 
-### Run Program From File
+### Run program from file
 
 To run a Python program from a file in pypy run
 
@@ -49,7 +49,7 @@ $ pypy example.py
 
 where example.py is the file name of the program.
 
-### Virtual Environment Creation
+### Virtual environment creation
 
 To make a virtual environment with PyPy
 
@@ -58,13 +58,13 @@ $ virtualenv --python=/usr/bin/pypy venv-pypy
 
 ```
 
-see [Python/Virtual environment](https://wiki.archlinux.org/index.php/Python/Virtual_environment) for further information
+see [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for further information
 
 ## EasyInstall
 
 Python libraries and programs can be installed in PyPy through EasyInstall. PyPy libraries are stored in a different folder then CPython libraries.
 
-### EasyInstall Installation
+### EasyInstall installation
 
 EasyInstall does not come with the PyPy package and must be installed manually. Create the /opt/pypy/site-packages/ folder which will be needed for the EasyInstall installation.
 
@@ -84,7 +84,7 @@ $ cd /opt/pypy/
 
 EasyInstall is located at /opt/pypy/bin/easy_install
 
-### Installing EasyInstall Packages
+### Installing EasyInstall packages
 
 To install EasyInstall package *package_name* into PyPy enter
 
@@ -95,7 +95,7 @@ To install EasyInstall package *package_name* into PyPy enter
 
 Packages Will be Located at /opt/pypy/site-packages Installed libraries and applications will be at /opt/pypy/bin Programs installed through EasyInstall on PyPy can usually be ran with `/opt/pypy/bin/program_name` where *program_name* is the name of the PyPy program.
 
-### EasyInstall Package Example
+### EasyInstall package example
 
 The following will install the Lamson email framework.
 

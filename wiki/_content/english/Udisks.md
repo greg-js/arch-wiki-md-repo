@@ -10,7 +10,7 @@
     *   [3.3 udiskie](#udiskie)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
-    *   [4.2 Mount an ISO image](#Mount_an_ISO_image)
+    *   [4.2 Mount loop devices](#Mount_loop_devices)
     *   [4.3 Hide selected partitions](#Hide_selected_partitions)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
@@ -93,7 +93,7 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
 ```
 
-### Mount an ISO image
+### Mount loop devices
 
 To easily mount ISO images, use the following command:
 
@@ -103,6 +103,8 @@ $ udisksctl loop-setup -r -f *image.iso*
 ```
 
 This will create a loop device and show the ISO image ready to mount. Once unmounted, the loop device will be terminated by [udev](/index.php/Udev "Udev").
+
+**Note:** This mounts a read only image. To mount raw disk images, such as for [QEMU](/index.php/QEMU "QEMU"), remove the `-r` flag, and release the image after use with `udisksctl loop-delete -b */dev/loop0*`. Substitute `/dev/loop0` with the name of the loop device.
 
 ### Hide selected partitions
 

@@ -24,6 +24,7 @@ The [Lenovo X201](https://support.lenovo.com/us/en/documents/migr-75044) is a du
     *   [2.2 No speaker output](#No_speaker_output)
     *   [2.3 No ACPI events](#No_ACPI_events)
     *   [2.4 Display issues](#Display_issues)
+    *   [2.5 Hardware virtualization](#Hardware_virtualization)
 *   [3 lspci](#lspci)
 *   [4 See also](#See_also)
 
@@ -52,7 +53,7 @@ Add the `i915_enable_rc6=1` and `i915_enable_fbc=1` [kernel parameters](/index.p
 
 ### Backlight
 
-As of [linux](https://www.archlinux.org/packages/?name=linux) 4.4 and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 4.1, backlight keys must be configured manually. See [Backlight](/index.php/Backlight "Backlight") for details.
+As of [linux](https://www.archlinux.org/packages/?name=linux) 3.16, backlight keys must be configured manually. [[1]](https://bugzilla.kernel.org/show_bug.cgi?id=81691#c11) See [Backlight](/index.php/Backlight "Backlight") for details.
 
 ### Hibernation
 
@@ -62,9 +63,9 @@ Hibernation works with [linux-lts](https://www.archlinux.org/packages/?name=linu
 
 ### Overheating
 
-There are some discussions concerning overheating-related shutdowns when running under full load (video encoding, etc). [[1]](http://forums.lenovo.com/t5/X-Series-ThinkPad-Laptops/x201-random-shutdown/td-p/227471) [[2]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/751689)
+There are some discussions concerning overheating-related shutdowns when running under full load (video encoding, etc). [[2]](http://forums.lenovo.com/t5/X-Series-ThinkPad-Laptops/x201-random-shutdown/td-p/227471) [[3]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/751689)
 
-Use the following [thinkfan](https://aur.archlinux.org/packages/thinkfan/) configuration [[3]](http://thinkpad-forum.de/threads/185587-X201-Thinkfan-Standardschaltschwellen-ermitteln):
+Use the following [thinkfan](https://aur.archlinux.org/packages/thinkfan/) configuration [[4]](http://thinkpad-forum.de/threads/185587-X201-Thinkfan-Standardschaltschwellen-ermitteln):
 
  `/etc/thinkfan.conf` 
 ```
@@ -90,21 +91,17 @@ Try pressing the **mute button** (next to the Escape key). See [this article](ht
 
 ### No ACPI events
 
-After suspension, an EC IRQ may hang in the queue causing all functions keys to stop working. [[5]](http://www.coreboot.org/Board:lenovo/x201)
-
-It may help to reload the *thinkpad_acpi* module (`rmmod -f` is used as the module may be in use):
-
-```
-# rmmod -f thinkpad_acpi
-# modprobe thinkpad_acpi
-
-```
+After suspension, an EC IRQ may hang in the queue causing all functions keys to stop working. [[6]](http://www.coreboot.org/Board:lenovo/x201)
 
 Other issues include the yellow USB port not being powered.
 
 ### Display issues
 
 See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
+
+### Hardware virtualization
+
+If [KVM](/index.php/KVM "KVM") claims virtualization support is disabled in BIOS, even with VT-x enabled, disable Intel TXT. [[7]](https://groups.google.com/forum/#!topic/qubes-users/4NP4goUds2c)
 
 ## lspci
 

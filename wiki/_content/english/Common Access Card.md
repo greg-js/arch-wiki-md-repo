@@ -45,11 +45,11 @@ The primary root certificate used has a CN of "DoD Root CA 2": this certificate 
 
 1\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so`
 
-2\. Go to : [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
+2\. Go to: [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
 
-3\. Download certs -> "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.0" download zip
+3\. Download certs: "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.0" (ZIP Download)
 
-4\. Unzip the DoD PKI zip and install
+4\. Unzip the DoD PKI zip, change directory to the new folder, and install:
 
 ```
  for n in (ls * | grep Chrome); do certutil -d sql:$HOME/.pki/nssdb -A -t TC -n $n -i $n; done

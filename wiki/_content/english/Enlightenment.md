@@ -78,7 +78,7 @@ Simply choose *Enlightenment* session from your favourite [display manager](/ind
 
 **Warning:** Entrance is highly experimental, and does not have proper systemd support. Use it at your own risk.
 
-Enlightenment has a new display manager called Entrance, which is provided by the [entrance-git](https://aur.archlinux.org/packages/entrance-git/) package. Entrance is quite sophisticated and its configuration is controlled by `/etc/entrance.conf`. It can be used by enabling `entrance.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+Enlightenment has a new display manager called Entrance, which is provided by the [entrance-git](https://aur.archlinux.org/packages/entrance-git/) package. Entrance is quite sophisticated and its configuration is controlled by `/etc/entrance/entrance.conf`. It can be used by enabling `entrance.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 #### Starting Enlightenment manually
 

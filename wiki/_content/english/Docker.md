@@ -140,7 +140,7 @@ Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for t
 ```
 [Service]
 ExecStart= 
-ExecStart=/usr/bin/docker daemon -g */path/to/new/location/docker* -H fd://
+ExecStart=/usr/bin/dockerd -g */path/to/new/location/docker* -H fd://
 ```
 
 Finally, [reload](/index.php/Reload "Reload") configuration and [start](/index.php/Start "Start") `docker.service` again.

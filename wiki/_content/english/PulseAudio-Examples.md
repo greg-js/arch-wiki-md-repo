@@ -278,6 +278,13 @@ udevadm control --reload-rules
 
 ```
 
+You'll also need to reload the systemd units.
+
+```
+systemctl daemon-reload
+
+```
+
 A reboot can be required.
 
 ## Surround sound systems

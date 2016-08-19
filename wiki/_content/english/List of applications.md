@@ -504,6 +504,10 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
 
+*   **Elbow** — An EFL based browser.
+
+	[https://github.com/bunhere/elbow](https://github.com/bunhere/elbow) || [elbow-git](https://aur.archlinux.org/packages/elbow-git/)
+
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and KHTML layout engine, part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
 
 	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
@@ -2296,6 +2300,10 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
 
+*   **Flowblade** — Flowblade is a multitrack non-linear video editor for Linux, designed to provide a fast, robust editing experience.
+
+	[https://github.com/jliljebl/flowblade](https://github.com/jliljebl/flowblade) || [flowblade](https://aur.archlinux.org/packages/flowblade/)
+
 *   **HandBrake** — Simple yet powerful video transcoder ideal for batch mkv/x264 ripping. GTK+ version.
 
 	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
@@ -2479,12 +2487,8 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the generic name for a program which manages a terminal line and its connected terminal. Its purpose is to protect the system from unauthorized access. Generally, each getty process is started by [systemd](/index.php/Systemd "Systemd") and manages a single terminal line.
 
 *   **agetty** is part of [util-linux](https://www.archlinux.org/packages/?name=util-linux) and installed by default.
-*   **fgetty** AUR [fgetty](https://aur.archlinux.org/packages/fgetty/)
 *   **mingetty** AUR [mingetty](https://aur.archlinux.org/packages/mingetty/)
-*   **[qingy](/index.php/Qingy "Qingy")** AUR package: [qingy](https://aur.archlinux.org/packages/qingy/)
 *   **fbgetty** official package: [fbgetty](https://www.archlinux.org/packages/?name=fbgetty)
-*   **ngetty** AUR: [ngetty](https://aur.archlinux.org/packages/ngetty/)
-*   **rungetty** AUR: [rungetty](https://aur.archlinux.org/packages/rungetty/)
 *   **mgetty** AUR: [mgetty](https://aur.archlinux.org/packages/mgetty/)
 
 ### Integrated development environments
@@ -3461,7 +3465,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 	[http://www.freeoffice.com/](http://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)
 
-*   **[WPS Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Propietary office productivity suite, previously known as Kingsoft Office.
+*   **[WPS Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Proprietary office productivity suite, previously known as Kingsoft Office.
 
 	[http://www.wps.com/](http://www.wps.com/) || [wps-office](https://aur.archlinux.org/packages/wps-office/)
 
@@ -3788,6 +3792,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **Edile** — PyGTK code and scripting editor implemented in one file.
 
 	[https://code.google.com/p/edile/](https://code.google.com/p/edile/) || [edile](https://aur.archlinux.org/packages/edile/)
+
+*   **ePad** — A simple text editor written in Python and EFL.
+
+	[https://github.com/JeffHoogland/ePad](https://github.com/JeffHoogland/ePad) || [epad](https://aur.archlinux.org/packages/epad/)
 
 *   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — A text editor using the GTK2 toolkit with basic features of an integrated development environment. It has support for TeX-based documents.
 

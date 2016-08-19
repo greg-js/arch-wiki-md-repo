@@ -85,8 +85,13 @@ Of course you can elect to use an alternative driver for one device and libinput
 
 There are different GUI tools:
 
-*   [GNOME](/index.php/GNOME "GNOME"): Control center
-*   KDE Plasma 5: Basic options within Touchpad (kcm_touchpad) in System Settings.
+*   [GNOME](/index.php/GNOME "GNOME"):
+    *   Control center has a basic UI under 'Mouse & Touchpad'.
+*   [Cinnamon](/index.php/Cinnamon "Cinnamon"):
+    *   Similar to the GNOME UI, with more options.
+*   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:
+    *   Basic options within Touchpad section (kcm_touchpad) in System Settings.
+    *   [pointing-devices-kcm](https://github.com/amezin/pointing-devices-kcm) ([kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/)) is a new and rewritten KCM for all input devices supported by libinput.
 
 ## Tips and tricks
 
@@ -167,9 +172,9 @@ done
 
 While the libinput driver already contains logic to process advanced multitouch events like swipe and pinch [gestures](https://wayland.freedesktop.org/libinput/doc/latest/gestures.html), the [Desktop environment](/index.php/Desktop_environment "Desktop environment") or [Window manager](/index.php/Window_manager "Window manager") might not have implemented actions for all of them yet.
 
-For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The script reads libinput gestures (through `libinput-debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
+For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extended Window Manager Hints") (see also [wm-spec](https://www.freedesktop.org/wiki/Specifications/wm-spec/)) compliant window managers, the [libinput-gestures](https://github.com/bulletmark/libinput-gestures) utility can be used meanwhile. The program reads libinput gestures (through `libinput-debug-events`) from the touchpad and maps them to gestures according to a configuration file. Hence, it offers some flexibility within the boundaries of libinput's built-in recognition.
 
-The [libinput-gestures-git](https://aur.archlinux.org/packages/libinput-gestures-git/) package installs the script system-wide.[[2]](https://github.com/bulletmark/libinput-gestures/issues/6) Alternatively, the utility can be installed/configured/uninstalled as a user, If its [python](https://www.archlinux.org/packages/?name=python) and [xdotool](https://www.archlinux.org/packages/?name=xdotool) dependencies are installed on the system. It enables to define custom swipe and pinch actions via a `~/.config/libinput-events.conf` file.
+To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), install the [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) package. You can use the default system-wide configured swipe and pinch gestures or define your own in a personal configuration file, see the [README](https://github.com/bulletmark/libinput-gestures/blob/master/README.md) for details.
 
 ## Debugging
 

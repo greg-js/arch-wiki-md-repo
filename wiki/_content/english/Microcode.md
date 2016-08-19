@@ -13,6 +13,7 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
     *   [2.3 EFI boot stub / EFI handover](#EFI_boot_stub_.2F_EFI_handover)
     *   [2.4 rEFInd](#rEFInd)
     *   [2.5 Syslinux](#Syslinux)
+    *   [2.6 LILO](#LILO)
 *   [3 Verifying that microcode got updated on boot](#Verifying_that_microcode_got_updated_on_boot)
 *   [4 Which CPUs accept microcode updates](#Which_CPUs_accept_microcode_updates)
     *   [4.1 Detecting available microcode update](#Detecting_available_microcode_update)
@@ -109,6 +110,47 @@ LABEL arch
     LINUX ../vmlinuz-linux
     INITRD ../intel-ucode.img,../initramfs-linux.img
     APPEND *<your kernel parameters>*
+
+```
+
+### LILO
+
+LILO and potentially other old bootloaders do not support multiple initrd images. In that case, `intel-ucode` and `initramfs-linux` will have to be merged into one image.
+
+**Warning:** The merged image must be recreated after each kernel update!
+
+**Note:** The additional image, in this case `intel-ucode` must not be compressed. Otherwise, the kernel might complain that it can only find garbage in the uncompressed image and fail to boot.
+
+`intel-ucode.img` should be a cpio archive, as in this case. It is advised to check whether the archive is compressed after each microcode update, as there is no guarantee that the image will stay non-compressed in the future. In order to check whether `intel-ucode` is compressed, you can use the `file` command:
+
+```
+$ file /boot/intel-ucode.img 
+/boot/intel-ucode.img: ASCII cpio archive (SVR4 with no CRC)
+
+```
+
+**Note:** The order is important. The original image `initramfs-linux` must be concatenated **on top** of the `intel-ucode` image.
+
+To merge both images into one image named `initramfs-merged.img`, the following command can be used:
+
+```
+# cat /boot/intel-ucode.img /boot/initramfs-linux.img > /boot/initramfs-merged.img
+
+```
+
+Now, edit `/etc/lilo.conf` to load the new image.
+
+```
+[...]
+   initrd=/boot/initramfs-merged.img
+[...]
+
+```
+
+And run `lilo` as root:
+
+```
+# lilo
 
 ```
 

@@ -40,6 +40,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### August 2016
 
+*   [17 August 2016] [ASA-201608-16](https://lists.archlinux.org/pipermail/arch-security/2016-August/000690.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
+*   [17 August 2016] [ASA-201608-15](https://lists.archlinux.org/pipermail/arch-security/2016-August/000689.html) [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) information disclosure
 *   [14 August 2016] [ASA-201608-14](https://lists.archlinux.org/pipermail/arch-security/2016-August/000688.html) [postgresql](https://www.archlinux.org/packages/?name=postgresql) multiple issues
 *   [14 August 2016] [ASA-201608-13](https://lists.archlinux.org/pipermail/arch-security/2016-August/000687.html) [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) information disclosure
 *   [14 August 2016] [ASA-201608-12](https://lists.archlinux.org/pipermail/arch-security/2016-August/000686.html) [linux](https://www.archlinux.org/packages/?name=linux) information disclosure

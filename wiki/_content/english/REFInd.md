@@ -93,7 +93,7 @@ The script will
 *   copy `HashTool.efi` to same directory as PreLoader on ESP
 *   setup boot entry with `efibootmgr` unless used with `--usedefault` option
 
-Next time you boot with Secure Boot enabled, HashTool will launch and you will need to register rEFInd as a trusted application.
+Next time you boot with Secure Boot enabled, HashTool will launch and you will need to register rEFInd (`loader.efi`) as a trusted application.
 
 ##### Using your own keys
 

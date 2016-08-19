@@ -288,7 +288,7 @@ it is possible that you also have this issue, try to run the other executables s
 
 ## See also
 
-*   [Website](http://supmua.org/)
+*   [Website](http://sup-heliotrope.github.io/)
 *   [Wiki](https://github.com/sup-heliotrope/sup/wiki)
 *   [README](https://github.com/sup-heliotrope/sup/blob/develop/README.md)
 *   [FAQ](https://github.com/sup-heliotrope/sup/blob/develop/doc/FAQ.txt)

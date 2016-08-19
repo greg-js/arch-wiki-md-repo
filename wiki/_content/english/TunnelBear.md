@@ -8,7 +8,7 @@ In order to use this tutorial, one must have Giant or Grizzly subscription.
 
 [Install](/index.php/Install "Install") [openvpn](https://www.archlinux.org/packages/?name=openvpn).
 
-Download [TunnelBear OpenVPN config files](https://s3.amazonaws.com/tunnelbear/linux/openvpn.zip).
+Download [TunnelBear OpenVPN config files](https://s3.amazonaws.com/tunnelbear/linux/openvpn.zip) (also you can install [tunnelbear](https://aur.archlinux.org/packages/tunnelbear/) package from AUR).
 
 Unzip the folder, and copy all the files to
 

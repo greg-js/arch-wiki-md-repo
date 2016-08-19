@@ -353,7 +353,7 @@ $ dmesg |tail
 
 ```
 
-The solution is to disable frame buffer compression which will slightly increase power consumption. In order to disable it add `i915.enable_fbc=0` to the kernel line parameters. More information on the results of disabled compression can be found [here](http://zinc.canonical.com/~cking/power-benchmarking/background-colour-and-framebuffer-compression/results.txt).
+The solution is to disable frame buffer compression which will imperceptibly increase power consumption (around 0.06 W). In order to disable it add `i915.enable_fbc=0` to the kernel line parameters. More information on the results of disabled compression can be found [here](http://kernel.ubuntu.com/~cking/power-benchmarking/background-colour-and-framebuffer-compression/).
 
 ### Corruption/Unresponsiveness in Chromium and Firefox
 

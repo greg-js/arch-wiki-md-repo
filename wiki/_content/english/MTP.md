@@ -315,30 +315,45 @@ This appears to be a security feature: MTP does not work when the phone is locke
 
 ### gvfs-mtp
 
-If you have installed the [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) package, and your device does not show up in the file manager, you might need to reboot or write a udev rule in order to auto-mount the device.
+The [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) is available in the official repositories.
 
-Plug your device and get the vendor-id and product-id,respectively:
+With `lsusb` you can get information about your device where Bus and Device numbers can be used with `gvfs-mtp` and device ID for creating of an [udev](/index.php/Udev "Udev") rule.
 
 ```
-$ lsusb
-Bus 001 Device 007: ID 0421:0661 Nokia Mobile Phones Lumia 920
+Bus **001** Device **007**: ID **0421:0661** Nokia Mobile Phones Lumia 920
 (...)
 
 ```
 
-The two numbers after ID are *vendorId* : *productID*
-
-Then make a udev rule, e.g.
+To see if gvfs can detect your connected device with enabled MTP
 
 ```
-# nano /etc/udev/rules.d/51-android.rules
+`gvfs-mount -l | grep -e Phone -e MTP`.
 
 ```
 
-and type this rule:
+To mount all available connected MTP devices use inline script
 
 ```
-ATTR{idVendor}=="YOUR VENDOR ID HERE", ATTR{idProduct}=="YOUR PRODUCT ID HERE", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
+gvfs-mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gvfs-mount "$2)}'
+
+```
+
+To mount or dismount from a command with gvfs-mtp use Bus and Device numbers, e.g. to mount `gvfs-mount mtp://[usb:001,007]/` and to unmount `gvfs-mount -u mtp://[usb:001,007]/`. The mounted device will be available in a directory that begins with *mtp:host=* and is located under */run/user/$UID/gvfs/*.
+
+Disable automount of MTP devises with gvfs you will need to change value *true* to *false* for variable *AutoMount* that is located in `/usr/share/gvfs/mounts/mtp.mount`.
+
+**Note:** The file managers can have own options for automount. On start they checking for all available mountable devices.
+
+If your device does not show up in the file manager, you might need to reboot or write a udev rule in order to auto-mount the device.
+
+Plug your device and get the vendor-id and product-id,respectively:
+
+Use ID number that represents by pattern *vendorId*:*productID* and make an udev rule by creating a configuration file
+
+ `/etc/udev/rules.d/51-android.rules` 
+```
+ ATTR{idVendor}=="YOUR VENDOR ID HERE", ATTR{idProduct}=="YOUR PRODUCT ID HERE", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
 
 ```
 

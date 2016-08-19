@@ -122,13 +122,14 @@ Of course you have to replace the file name and path according to your wallpaper
 
 ### Input devices
 
-Its possible to tweak specific input device configurations. For example to enable tap-to-click for a touchpad, add an input block:
+Its possible to tweak specific input device configurations. For example to enable tap-to-click and natural scolling for a touchpad, add an input block:
 
  `~/.config/sway/config` 
 ```
- input "2:14:ETPS/2_Elantech_Touchpad" {
-     tap enabled
- }
+input "2:14:ETPS/2_Elantech_Touchpad" {
+    tap enabled
+    natural_scroll enabled
+}
 
 ```
 
@@ -139,9 +140,9 @@ swaymsg -t get_inputs
 
 ```
 
-Output from the command, sometimes has "\" to escape some symbols like "/" (ie `"2:14:ETPS\/2_Elantech_Touchpad"`) and need to be removed
+The output from the command, sometimes has a "\" to escape symbols like "/" (ie `"2:14:ETPS\/2_Elantech_Touchpad"`) and it needs to be removed.
 
-More documentation and options like acceleration profiles can be found with
+More documentation and options like acceleration profiles can be found with:
 
 ```
 man sway-input

@@ -128,9 +128,9 @@ Linux kernel exposes EFI variables data to userspace via **efivarfs** (**EFI** *
 
 ### Requirements for UEFI variable support
 
-1.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
-2.  Kernel processor [bitness](#UEFI_Firmware_bitness) and EFI processor bitness should match.
-3.  Kernel should be booted in EFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any [EFI boot loader](/index.php/Boot_loaders "Boot loaders"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM).
+1.  Kernel processor [bitness](#UEFI_Firmware_bitness) and EFI processor bitness should match.
+2.  Kernel should be booted in EFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any [EFI boot loader](/index.php/Boot_loaders "Boot loaders"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM).
+3.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
 4.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used.
 5.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.
 6.  `efivar` should list (option `-l`) the EFI Variables without any error.
@@ -170,11 +170,25 @@ To remount with write support, run:
 
 There are few tools that can access/modify the UEFI variables, namely
 
-1.  **efivar** - Library and Tool to manipulate UEFI Variables (used by efibootmgr) - [https://github.com/vathpela/efivar](https://github.com/vathpela/efivar) - [efivar](https://www.archlinux.org/packages/?name=efivar) or [efivar-git](https://aur.archlinux.org/packages/efivar-git/)
-2.  **efibootmgr** - Tool to manipulate UEFI Firmware Boot Manager Settings - [https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) - [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) or [efibootmgr-git](https://aur.archlinux.org/packages/efibootmgr-git/)
-3.  **uefivars** - Dumps list of EFI variables with some additional PCI related info (uses efibootmgr code internally) - [https://github.com/fpmurphy/Various/tree/master/uefivars-2.0](https://github.com/fpmurphy/Various/tree/master/uefivars-2.0) supports only efivarfs and [https://github.com/fpmurphy/Various/tree/master/uefivars-1.0](https://github.com/fpmurphy/Various/tree/master/uefivars-1.0) supports only sysfs-efivars . AUR package [uefivars-git](https://aur.archlinux.org/packages/uefivars-git/)
-4.  **efitools** - Tools for manipulating UEFI secure boot platforms - [efitools](https://www.archlinux.org/packages/?name=efitools) or [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
-5.  **Ubuntu's Firmware Test Suite** - [https://wiki.ubuntu.com/FirmwareTestSuite/](https://wiki.ubuntu.com/FirmwareTestSuite/) - [fwts](https://aur.archlinux.org/packages/fwts/) (along with [fwts-efi-runtime-dkms](https://aur.archlinux.org/packages/fwts-efi-runtime-dkms/)) or [fwts-git](https://aur.archlinux.org/packages/fwts-git/)
+*   **efivar** — Library and Tool to manipulate UEFI Variables (used by efibootmgr)
+
+	[https://github.com/vathpela/efivar](https://github.com/vathpela/efivar) || [efivar](https://www.archlinux.org/packages/?name=efivar), [efivar-git](https://aur.archlinux.org/packages/efivar-git/)
+
+*   **efibootmgr** — Tool to manipulate UEFI Firmware Boot Manager Settings
+
+	[https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) || [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr), [efibootmgr-git](https://aur.archlinux.org/packages/efibootmgr-git/)
+
+*   **uefivars** — Dumps list of EFI variables with some additional PCI related info (uses efibootmgr code internally)
+
+	[https://github.com/fpmurphy/Various/tree/master/uefivars-2.0](https://github.com/fpmurphy/Various/tree/master/uefivars-2.0) || [uefivars-git](https://aur.archlinux.org/packages/uefivars-git/)
+
+*   **efitools** — Tools for manipulating UEFI secure boot platforms
+
+	[http://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git](http://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git) || [efitools](https://www.archlinux.org/packages/?name=efitools), [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
+
+*   **Ubuntu's Firmware Test Suite** — Test suite that performs sanity checks on Intel/AMD PC firmware
+
+	[https://wiki.ubuntu.com/FirmwareTestSuite/](https://wiki.ubuntu.com/FirmwareTestSuite/) || [fwts-git](https://aur.archlinux.org/packages/fwts-git/)
 
 #### efibootmgr
 
@@ -210,7 +224,7 @@ Then create the boot entry using efibootmgr as follows:
 
 ```
 
-**Note:** UEFI uses backward slash `\` as path separator (similar to Windows paths), but the official [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) pkg support passing unix-style paths with forward-slash `/` as path-separator for the `-l`/`--loader` option. Efibootmgr internally converts `/` to `\` before encoding the loader path. The relevant git commit that incorporated this feature in efibootmgr is [http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378](http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378) .
+**Note:** UEFI uses backward slash `\` as path separator (similar to Windows paths), but the official [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) pkg support passing unix-style paths with forward-slash `/` as path-separator for the `-l`/`--loader` option. Efibootmgr internally converts `/` to `\` before encoding the loader path.
 
 In the above command `/boot/efi/EFI/refind/refind_x64.efi` translates to `/boot/efi` and `/EFI/refind/refind_x64.efi` which in turn translate to drive `/dev/sdX` -> partition `Y` -> file `/EFI/refind/refind_x64.efi`.
 
@@ -230,6 +244,7 @@ You can download a BSD licensed UEFI Shell from Intel's Tianocore UDK/EDK2 Sourc
 *   There are copies of Shell v1 and Shell v2 in the EFI directory on the Arch install media image.
 *   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/master/ShellBinPkg) (may not be up-to-date)
 *   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream)
+*   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](http://dl.dropbox.com/u/17629062/Shell2.zip) - from Clover EFI bootloader
 
 Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=ShellPkg) and [this mail](http://sourceforge.net/mailarchive/message.php?msg_id=28690732)
 
@@ -254,7 +269,7 @@ More info at [http://software.intel.com/en-us/articles/efi-shells-and-scripting/
 **Note:**
 
 *   Try `bcfg` only if `efibootmgr` fails to create working boot entries on your system.
-*   UEFI Shell v1 official binary does not support `bcfg` command. You can download a [modified UEFI Shell v2 binary](http://dl.dropbox.com/u/17629062/Shell2.zip) which may work in UEFI pre-2.3 firmwares.
+*   UEFI Shell v1 official binary does not support `bcfg` command. See [#Obtaining UEFI Shell](#Obtaining_UEFI_Shell) for a modified UEFI Shell v2 binary which may work in UEFI pre-2.3 firmwares.
 
 To dump a list of current boot entries:
 
@@ -572,4 +587,3 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [EFI Shells and Scripting - Intel Documentation](http://software.intel.com/en-us/articles/efi-shells-and-scripting/)
 *   [UEFI Shell - Intel Documentation](http://software.intel.com/en-us/articles/uefi-shell/)
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)
-*   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware - from Clover efiboot](http://dl.dropbox.com/u/17629062/Shell2.zip)

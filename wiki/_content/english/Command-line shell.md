@@ -28,6 +28,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 	[https://github.com/michaelmacinnis/oh](https://github.com/michaelmacinnis/oh) || [oh](https://aur.archlinux.org/packages/oh/)
 
+*   **[Powershell](https://en.wikipedia.org/wiki/Windows_Powershell "wikipedia:Windows Powershell")** — PowerShell is an object-oriented programming language and interactive command line shell, originally written for and exclusive to Windows. Later on, it was open sourced and ported to Mac OS X and Linux.
+
+	[https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) || [powershell-bin](https://aur.archlinux.org/packages/powershell-bin/)
+
 *   **[rc](https://en.wikipedia.org/wiki/rc "wikipedia:rc")** — Command interpreter for Plan 9 that provides similar facilities to UNIX’s Bourne shell, with some small additions and less idiosyncratic syntax.
 
 	[http://plan9.bell-labs.com/sys/doc/rc.html](http://plan9.bell-labs.com/sys/doc/rc.html) || [9base-git](https://aur.archlinux.org/packages/9base-git/)

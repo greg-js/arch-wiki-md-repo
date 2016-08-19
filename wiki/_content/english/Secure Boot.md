@@ -212,12 +212,16 @@ Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 **Note:** If running *sbsign* without `--output` the resulting file will be `*filename*.signed`.
 
 ```
-# sbsign --key db.key --cert db.crt /boot/vmlinuz-linux
+# sbsign --key db.key --cert db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 # sbsign --key db.key --cert db.crt --output *esp*/EFI/BOOT/BOOTX64.EFI *esp*/EFI/BOOT/BOOTX64.EFI
 
 ```
 
-Add an entry to your boot loader with kernel option `vmlinuz-linux.signed`.
+**Tip:** To check if a binary is signed and list its signatures use
+```
+$ sbverify --list */path/to/binary*
+
+```
 
 ### Put firmware in "Setup Mode"
 
@@ -252,7 +256,7 @@ See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/cont
 
 ## Disable Secure Boot
 
-The Secure Boot feature can be disabled via the UEFI firmware interface. You may access the firmware configuration by pressing a special key during the boot process. The key to use depends on the firmware. It is usually one of `ESC`, `F2`, `DEL` or possibly another `F*n*` key.
+The Secure Boot feature can be disabled via the UEFI firmware interface. You may access the firmware configuration by pressing a special key during the boot process. The key to use depends on the firmware. It is usually one of `Esc`, `F2`, `Del` or possibly another `F*n*` key.
 
 If using a hotkey did not work and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*.
 

@@ -31,7 +31,6 @@ The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the pri
         *   [4.7.2 Wired](#Wired)
         *   [4.7.3 Wireless](#Wireless)
     *   [4.8 Root password](#Root_password)
-    *   [4.9 User Accounts](#User_Accounts)
 *   [5 Unmount the partitions and reboot](#Unmount_the_partitions_and_reboot)
 *   [6 Post-installation](#Post-installation)
 
@@ -402,24 +401,6 @@ Set the root [password](/index.php/Password "Password") with:
 # passwd
 
 ```
-
-### User Accounts
-
-It is advised that you run applications with user level privileges and use the root account only for administrative tasks. In order to accomplish this, you should create a new user with:
-
-```
-# useradd -m -g users -G wheel,storage,power -s /bin/bash 'username'
-
-```
-
-And give them a password with
-
-```
-# passwd 'username'
-
-```
-
-See [Users_and_groups](/index.php/Users_and_groups "Users and groups") for more details.
 
 ## Unmount the partitions and reboot
 
