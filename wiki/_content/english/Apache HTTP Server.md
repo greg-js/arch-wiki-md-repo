@@ -307,6 +307,13 @@ Include conf/extra/php7_module.conf
 
 ```
 
+*   And the handler at the end of the `LoadModule`:
+
+```
+AddHandler php7-script php
+
+```
+
 Restart `httpd.service` [using systemd](/index.php/Systemd#Using_units "Systemd")
 
 To test whether PHP was correctly configured: create a file called `test.php` in your Apache `DocumentRoot` directory (e.g. `/srv/http/` or `~/public_html`) with the following contents:

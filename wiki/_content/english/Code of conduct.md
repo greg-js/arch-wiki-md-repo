@@ -154,7 +154,7 @@ In addition to the [common code](#Code_of_conduct), each of the fora has its own
 
 #### Pasting pictures and code
 
-Please use [code] tags when pasting console snippets. Please use a [pastebin client](/index.php/Pastebin#Pastebin_clients "Pastebin") when posting large amounts of code. For non-English locale users: Please prepend `LC_ALL=C` to posted commands so that the output will be in English. Do not post full screen pictures; use links to the images instead, optionally with thumbnails. Any image with dimensions greater than 250x250px or over 50Kb in size will be removed. Do **not** post screenshots of text output; post the actual text.
+Please use [code] tags when pasting console snippets. Please use a [pastebin client](/index.php/Pastebin#Pastebin_clients "Pastebin") when posting large amounts of code. For non-English locale users: Please prepend `LC_ALL=C` to posted commands so that the output will be in English. Do not post full screen pictures; use links to the images instead, optionally with thumbnails. Any image with dimensions greater than 250x250px or over 50Kb in size will be removed. Do **not** post screenshots of text output; post [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### Life is a two-way street
 

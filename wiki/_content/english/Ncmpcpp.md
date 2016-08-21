@@ -103,6 +103,9 @@ Partial list of views within ncmpcpp:
 *   `l` - Retrieve song lyrics for current song Show/hide lyrics
 *   `>` - Next track
 *   `<` - Previous track
+*   `p` - Play/Pause
+*   `+` - Increase volume 2%
+*   `-` - Decrease volume 2%
 
 ### Playback modes
 

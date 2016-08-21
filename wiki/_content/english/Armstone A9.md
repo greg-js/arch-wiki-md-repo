@@ -19,23 +19,7 @@ Sources, kernel and firmware images can be downloaded from the companies [suppor
 
 ### Base system
 
-Unfortunately, this board is only supported by the companys own [linux kernel 3.0.35](http://forum.fs-net.de/index.php/Thread/3972-fsimx6-V2-1-released/), which is too old to run the newest stock ArchLinuxARM image ([systemd requires at least kernel 3.15/3.16](http://archlinuxarm.org/forum/viewtopic.php?f=47&t=9225#p48367)). The company is looking forward to provide a newer kernel in the [first quarter of 2016](http://forum.fs-net.de/index.php/Thread/3842-armStoneA9-Linux-development-state-and-releases/?postID=13176#post13176). So usually we could use [ArchLinuxARM-armv7-latest](http://os.archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz) base system but following packages has to be downgraded and recompiled:
-
-```
-libsystemd ~221-1
-systemd ~216-3
-libgcrypt
-dbus
-dbus-glib
-libdbus
-libutil-linux
-util-linux
-
-```
-
-**Warning:** The following section referes to ArchLinuxARM images which are from an untrusted and unknown source. Use it at your own risk!
-
-Following ArchLinuxARM base system package already contains older systemd binaries and is compatible with the older stock kernel: [https://groups.google.com/forum/#!topic/wandboard/Spo2LR0wmZo](https://groups.google.com/forum/#!topic/wandboard/Spo2LR0wmZo) The content of the package can be copied to a sdcard or usb-stick partition, preferably ext3/ext4 formatted.
+The content of the package [ArchLinuxARM-armv7-latest](http://os.archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz) can be copied to a sdcard or usb-stick partition, preferably ext2/ext3 formatted. Further put the factory kernel (4.1) into the /boot directory of your flash drive, so it can be used later.
 
 ### Serial console access
 
@@ -47,11 +31,11 @@ First access the bootloader console via. serial connection, see manufacturer [li
 
 ### Install kernel
 
-In this example, we'll initialize the usb system and load the kernel image from a ext3/ext4 partition on the usb stick. After that the NAND kernel partition gets erased and recieves a the new kernel image:
+In this example, we'll initialize the usb system and load the kernel image from a ext2/ext3 partition on the usb stick. After that the NAND kernel partition gets erased and recieves a the new kernel image:
 
 ```
 armStoneA9 # usb start
-armStoneA9 # ext4load usb 0:1 $(loadaddr) /boot/uImage-fsimx6
+armStoneA9 # ext2load usb 0:1 $(loadaddr) /boot/uImage-fsimx6
 armStoneA9 # nand erase.part Kernel
 armStoneA9 # nand write $loadaddr Kernel $filesize
 

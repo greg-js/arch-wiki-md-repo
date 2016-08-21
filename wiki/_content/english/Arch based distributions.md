@@ -44,7 +44,6 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [PacBang](https://sourceforge.net/projects/architect-linux/)
 *   [Obarun](http://www.obarun.org/index.html)
-*   [PacBSD](https://www.pacbsd.org/)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Velt OS](https://velt.io)
@@ -58,6 +57,7 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)
 *   [UBOS](http://ubos.net/)
+*   [PacBSD](https://www.pacbsd.org/)
 
 ## Inactive
 

@@ -174,7 +174,7 @@ The permissions for the used firmware file are wrong. Correct them using
 
 #### Multiple backends claim scanner
 
-It may happen, that multiple backends support (or pretend to support) your scanner, and sane chooses one that doesn't do after all (the scanner won't be displayed by scanimage -L then). This has happend with older Epson scanners and the `epson2` resp. `epson` backends. In this case, the solution is to comment out the unwanted backend in `/etc/sane.d/dll.conf`. In the Epson case, that would be to change
+It may happen, that multiple backends support (or pretend to support) your scanner, and sane chooses one that does not do after all (the scanner will not be displayed by scanimage -L then). This has happend with older Epson scanners and the `epson2` resp. `epson` backends. In this case, the solution is to comment out the unwanted backend in `/etc/sane.d/dll.conf`. In the Epson case, that would be to change
 
 ```
  epson2
@@ -189,6 +189,8 @@ to
  epson
 
 ```
+
+It may also be possible that the independant [iscan](https://www.archlinux.org/packages/?name=iscan) epkowa backend interferes with your snapscan backend (epson scanners). You may get this error right after using the `scanimage -L` command. Starting the scanner app (like [xscan](https://www.archlinux.org/packages/?name=xscan)) twice can also solve the problem. Otherwise check your `/etc/sane.d/epkowa.conf` for wrong configuations or remove the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
 
 #### Communication via xHCI not working (older scanner models)
 
@@ -229,7 +231,7 @@ First, as root, check connected usb devices with `lsusb`:
 
 In our example we see the scanner: `Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard`. Here `03f0` is the *vendorID* and `2504` is the *productID*.
 
-Now open `/usr/lib/udev/rules.d/49-sane.rules` and see if there is there is a line with the vendorID and productID of your scanner. If there isn't any, create the new file `/etc/udev/rules.d/49-sane-missing-scanner.rules`, with the following contents:
+Now open `/usr/lib/udev/rules.d/49-sane.rules` and see if there is there is a line with the vendorID and productID of your scanner. If there is not any, create the new file `/etc/udev/rules.d/49-sane-missing-scanner.rules`, with the following contents:
 
 ```
 ATTRS{idVendor}=="**vendorID**", ATTRS{idProduct}=="**productID**", MODE="0664", GROUP="scanner", ENV{libsane_matched}="yes"

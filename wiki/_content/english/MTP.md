@@ -13,14 +13,13 @@
     *   [2.5 simple-mtpfs](#simple-mtpfs)
     *   [2.6 Android File Transfer](#Android_File_Transfer)
     *   [2.7 Media players](#Media_players)
+    *   [2.8 gvfs-mtp](#gvfs-mtp)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 libmtp](#libmtp_2)
-        *   [3.1.1 Unknown device](#Unknown_device)
-        *   [3.1.2 Unable to enumerate USB device](#Unable_to_enumerate_USB_device)
+        *   [3.1.1 Unable to enumerate USB device](#Unable_to_enumerate_USB_device)
     *   [3.2 jmtpfs](#jmtpfs_2)
         *   [3.2.1 Input/output error upon first access](#Input.2Foutput_error_upon_first_access)
-    *   [3.3 gvfs-mtp](#gvfs-mtp)
-    *   [3.4 kio-mtp](#kio-mtp)
+    *   [3.3 kio-mtp](#kio-mtp)
 
 ## Installation
 
@@ -251,26 +250,86 @@ Also reload udev rules:
 
 ```
 
+### gvfs-mtp
+
+The [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) is available in the official repositories.
+
+With `lsusb` you can get information about your device where Bus and Device numbers can be used with `gvfs-mtp` and device ID for creating of an [udev](/index.php/Udev "Udev") rule.
+
+```
+Bus **001** Device **007**: ID **0421:0661** Nokia Mobile Phones Lumia 920
+(...)
+
+```
+
+To see detected device with enabled MTP
+
+Use *gvfs-mount*:
+
+ `gvfs-mount -li | grep -e ^Volume -e activation_root` 
+```
+Volume(0): MT65xx Android Phone
+  activation_root=mtp://[usb:002,018]/
+```
+
+Use *lsusb*:
+
+ `lsusb -v 2> /dev/null | grep -e Bus -e iInterface -e bInterfaceProtocol` 
+```
+(......
+......)
+Bus 002 Device 018: ID 04b7:88a9 Compal Electronics, Inc. 
+      bInterfaceProtocol      0 
+      iInterface              5 MTP
+(......
+......)
+
+```
+
+To mount all available connected MTP devices use inline script
+
+```
+gvfs-mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gvfs-mount "$2)}'
+
+```
+
+To mount or dismount from a command with gvfs-mtp use Bus and Device numbers, e.g. to mount `gvfs-mount mtp://[usb:001,007]/` and to unmount `gvfs-mount -u mtp://[usb:001,007]/`. The mounted device will be available in a directory that begins with *mtp:host=* and is located under */run/user/$UID/gvfs/*.
+
+Disable automount of MTP devises with gvfs you will need to change value *true* to *false* for variable *AutoMount* that is located in `/usr/share/gvfs/mounts/mtp.mount`.
+
+**Note:** The file managers can have own options for automount. On start they checking for all available mountable devices.
+
+If your device isn't showing up in the file manager then the [libmtp](https://www.archlinux.org/packages/?name=libmtp) is missing a native support and is not currently available in the list of the [supported devices](https://sourceforge.net/p/libmtp/code/ci/HEAD/tree/src/music-players.h). If you will try to mount by using command line you may also get an error
+
+```
+Device 0 (VID=*XXXX* and PID=*XXXX*) is UNKNOWN.
+Please report this VID/PID and the device model to the libmtp development team
+```
+
+The workaround to make it shown in the file manager is to write an [udev](/index.php/Udev "Udev") rule for the device but it is no guaranty that you will be able to mount it with by using MTP connection.
+
+Use ID number that represents by pattern *vendorId*:*productID*,e.g. *0421*:*0661*, and make an udev rule by creating a configuration file
+
+ `/etc/udev/rules.d/51-android.rules` 
+```
+ ATTR{idVendor}=="0421", ATTR{idProduct}=="0661", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
+
+```
+
+Reload the udev rules.
+
+```
+# udevadm control --reload
+
+```
+
+The file managers with support for [gvfs](/index.php/Gvfs "Gvfs") will be able to show MTP devices and mount them if supported by [libmtp](https://www.archlinux.org/packages/?name=libmtp) but if has no support and cannot be opened then change settings in the phone to PTP and install [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) for having access at least to the photos, command line mounting of PTP is a little similar to mounting of the MTP devices: `gvfs-mount gphoto2://[usb:002,019]/`.
+
+**Note:** If you getting limited access to the device and cannot use standard commands from command line such as e.g. `cp`,`ls` then look for [gvfs](/index.php/Gvfs "Gvfs") own alternatives, `ls -1 /usr/bin/gvfs-*`.
+
 ## Troubleshooting
 
 ### libmtp
-
-#### Unknown device
-
-If you see a message like:
-
-```
-Device 0 (VID=XXXX and PID=XXXX) is UNKNOWN.
-Please report this VID/PID and the device model to the libmtp development team
-
-```
-
-You should check whether your device is listed in the [supported devices list](http://sourceforge.net/p/libmtp/code/ci/HEAD/tree/src/music-players.h). If it is not, you should report it to the developers team. If it is, your `libmtp` might be slightly outdated. To allow it to be properly used by `libmtp`, you can add your device to:
-
-```
-/etc/udev/rules.d/69-libmtp.rules
-
-```
 
 #### Unable to enumerate USB device
 
@@ -312,59 +371,6 @@ Symptoms: jmtpfs successfully mounts, but as soon as one attempts to access file
 ```
 
 This appears to be a security feature: MTP does not work when the phone is locked by the lockscreen. Unlock the phone and it should work again as long as the cord remains connected.
-
-### gvfs-mtp
-
-The [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) is available in the official repositories.
-
-With `lsusb` you can get information about your device where Bus and Device numbers can be used with `gvfs-mtp` and device ID for creating of an [udev](/index.php/Udev "Udev") rule.
-
-```
-Bus **001** Device **007**: ID **0421:0661** Nokia Mobile Phones Lumia 920
-(...)
-
-```
-
-To see if gvfs can detect your connected device with enabled MTP
-
-```
-`gvfs-mount -l | grep -e Phone -e MTP`.
-
-```
-
-To mount all available connected MTP devices use inline script
-
-```
-gvfs-mount -li | awk -F= '{if(index($2,"mtp") == 1)system("gvfs-mount "$2)}'
-
-```
-
-To mount or dismount from a command with gvfs-mtp use Bus and Device numbers, e.g. to mount `gvfs-mount mtp://[usb:001,007]/` and to unmount `gvfs-mount -u mtp://[usb:001,007]/`. The mounted device will be available in a directory that begins with *mtp:host=* and is located under */run/user/$UID/gvfs/*.
-
-Disable automount of MTP devises with gvfs you will need to change value *true* to *false* for variable *AutoMount* that is located in `/usr/share/gvfs/mounts/mtp.mount`.
-
-**Note:** The file managers can have own options for automount. On start they checking for all available mountable devices.
-
-If your device does not show up in the file manager, you might need to reboot or write a udev rule in order to auto-mount the device.
-
-Plug your device and get the vendor-id and product-id,respectively:
-
-Use ID number that represents by pattern *vendorId*:*productID* and make an udev rule by creating a configuration file
-
- `/etc/udev/rules.d/51-android.rules` 
-```
- ATTR{idVendor}=="YOUR VENDOR ID HERE", ATTR{idProduct}=="YOUR PRODUCT ID HERE", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
-
-```
-
-Reload the udev rules.
-
-```
-# udevadm control --reload
-
-```
-
-And reboot the system. Now file managers (like Thunar) should be able to automount the MTP Device. [[1]](https://bbs.archlinux.org/viewtopic.php?id=180719)
 
 ### kio-mtp
 

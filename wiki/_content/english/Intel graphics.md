@@ -123,7 +123,7 @@ options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
 
 You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[3]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
 
-The available `enable_rc6` values are a bitmask with bit values RC6=1, RC6p=2, RC6pp=3[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/intel_pm.c#n34) - where "RC6p" and "RC6pp" are lower power states.
+The available `enable_rc6` values are a bitmask with bit values RC6=1, RC6p=2, RC6pp=4[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/intel_pm.c#n34) - where "RC6p" and "RC6pp" are lower power states.
 
 To confirm the current running RC6 level, you can look in sysfs:
 
@@ -423,7 +423,7 @@ Another option that seems to work for some users is to add the `i915.enable_rc6=
 
 ### Lag in Windows guests
 
-The video output of a Windows guests in VirtualBox sometimes hangs until the host forces a screen update (e.g. by moving the mouse cursor). Removing the `enable_fbc=1` option fixes this issue.
+The video output of a Windows guest in VirtualBox sometimes hangs until the host forces a screen update (e.g. by moving the mouse cursor). Removing the `enable_fbc=1` option fixes this issue.
 
 ## See also
 

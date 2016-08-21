@@ -13,9 +13,11 @@ Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to inst
         *   [3.2.2 Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility_2)
     *   [3.3 OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
 *   [4 Setup bootloader](#Setup_bootloader)
-    *   [4.1 Installing GRUB to EFI partition directly](#Installing_GRUB_to_EFI_partition_directly)
-    *   [4.2 Using blessing](#Using_blessing)
-    *   [4.3 Compilation](#Compilation)
+    *   [4.1 Using the native Apple bootloader with GRUB](#Using_the_native_Apple_bootloader_with_GRUB)
+    *   [4.2 Other methods](#Other_methods)
+    *   [4.3 Installing GRUB to EFI partition directly](#Installing_GRUB_to_EFI_partition_directly)
+    *   [4.4 Using blessing](#Using_blessing)
+    *   [4.5 Compilation](#Compilation)
 *   [5 Installation](#Installation)
 *   [6 Post-installation](#Post-installation)
     *   [6.1 Video](#Video)
@@ -306,11 +308,110 @@ cd /efi/refit
 
 ## Setup bootloader
 
+### Using the native Apple bootloader with GRUB
+
+Despite using UEFI, the MacBook's native EFI bootloader [does not use the EFI partition for booting](http://refit.sourceforge.net/myths/). Instead, it looks for .efi files inside all the partitions in internal and external drives and shows them as possible boot options if certain conditions are satisfied. For example, MacBooks can detect an existing OSX installation after checking that:
+
+*   there is a partition formatted as HFS+
+*   the partition contains the partition id `af00`
+*   in the root of that partition, there is a file called `mach_kernel`
+*   inside that partition, there a `boot.efi` file inside `/System/Library/CoreServices`
+
+This means that configuring an Arch installation to be automatically recognized by the MacBook bootloader is possible. Moreover, it simply requires a properly-formatted HFS+ `/boot` partition and does not require meddling with the EFI system partition. The advantage of this method is that it can coexist with OS X nicely and allows to avoid other bootloaders such as rEFInd. However, this requires manual configuration. The following steps will illustrate how to perform this configuration using GRUB.
+
+*   First, while configuring a new Arch installation, create a separate `/boot` partition. Many tools are available in the Arch ISO, for example **cgdisk**.
+*   Make sure the partition is at least ~250 MB in size, since it will be used to store the kernel as well as any custom kernel you will install in the future. Moreover, make sure the partition type is set as Apple HFS/HFS+ (it will appear as `Apple HFS/HFS+` in fdisk/cgdisk or `af00` in gdisk)
+*   Since the Arch installation ISO does not include the package [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs), we need to install it in the installation environment before proceeding with formatting the new partition as HFS+
+
+```
+ # pacman -Sy hfsprogs
+ # modprobe hfsplus
+ # mkfs.hfsplus /dev/sd**X** -v "Arch Linux"
+
+```
+
+Note: replace /dev/sd**X** with the correct device as appropriate
+
+*   Done, proceed with [#Installation](#Installation)
+
+**Warning:**
+
+Once inside the chrooted enviroment, don’t forget to install [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) on the newly installed system as well. After the installation of the package, regenerate the initramfs while chrooted
+
+```
+ # mkinitcpio -p linux
+
+```
+
+*   Once inside the chrooted enviroment, install the [grub](https://www.archlinux.org/packages/?name=grub) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages. The following steps install the GRUB UEFI application to `/boot/EFI/arch/System/Library/CoreServices/boot.efi` and install its modules to `/boot/grub/x86_64-efi`.
+
+```
+ # grub-install --target=x86_64-efi --efi-directory=/boot
+
+```
+
+After that, remember to create a standard configuration file:
+
+```
+ # grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+As you can see, the directory structure of the `boot.efi` is not correct, as the `/System/Library/CoreServices` directory is not supposed to be a subdirectory of the `/boot/EFI/` folder. For this reason, we need to relocate the `boot.efi` stub in a location the MacBook bootloader is able to recognize:
+
+```
+ # mv /boot/EFI/arch/System/ /boot/
+ # rm -r /boot/EFI/
+
+```
+
+Also, create a dummy `mach_kernel` file
+
+```
+ # touch /boot/mach_kernel
+
+```
+
+After that, you need to create the following file
+
+ `# nano /boot/System/Library/CoreServices/SystemVersion.plist` 
+```
+<?xml version="1.0" encoding="UTF-8"?>
+ <plist version="1.0">
+ <dict>
+        <key>ProductBuildVersion</key>
+        <string></string>
+        <key>ProductName</key>
+        <string>Linux</string>
+        <key>ProductVersion</key>
+        <string>Arch Linux</string>
+ </dict>
+ </plist>
+```
+
+At the next reboot, the Apple Boot Manager, shown when holding down the option key when booting the MacBook, should display Arch Linux as a possible boot option. Selecting that option will boot GRUB.
+
+Done! GRUB can now be selected on the standard MacBook bootloader and you can boot into your newly installed Arch Linux.
+
+**Tip:** After the installation, it is optionally possible to set a custom icon that will be displayed in the MacBook boot loader. In order to do that, you need to install the [wget](https://www.archlinux.org/packages/?name=wget), [librsvg](https://www.archlinux.org/packages/?name=librsvg) and [libicns](https://aur.archlinux.org/packages/libicns/) packages. After that, just follow the following commands:
+```
+ $ wget -O /tmp/archlinux.svg [https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg](https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg)
+ $ rsvg-convert -w 128 -h 128 -o /tmp/archlogo.png /tmp/archlinux.svg
+ $ sudo png2icns /boot/.VolumeIcon.icns /tmp/archlogo.png
+ $ rm /tmp/archlogo.png
+ $ rm /tmp/archlinux.svg
+
+```
+
+Obviously, you can replace the Arch logo with any other icon you like.
+
+### Other methods
+
+**Tip:** rEFIt is a popular bootloader for EFI-firmware computers (including Macs). It can be installed at any time during the installation. For instructions, please see [#rEFIt](#rEFIt).
+
 If you are going for an Arch Linux-only setup, installing the bootloader is no different than on any other machine: Install [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), [rEFInd](/index.php/REFInd "REFInd") or other bootloader of your choice.
 
 If, on the other hand, you are dual/triple booting, then read on.
-
-**Tip:** rEFIt is a popular bootloader for EFI-firmware computers (including Macs). It can be installed at any time during the installation. For instructions, please see [#rEFIt](#rEFIt).
 
 ### Installing GRUB to EFI partition directly
 

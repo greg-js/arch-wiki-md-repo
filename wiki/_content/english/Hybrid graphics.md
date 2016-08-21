@@ -3,15 +3,9 @@ Hybrid-graphics is a concept involving two graphics cards on same computer. It w
 ## Contents
 
 *   [1 About Hybrid-graphics Technologies](#About_Hybrid-graphics_Technologies)
-*   [2 The "Old" Hybrid Model (Basic Switching)](#The_.22Old.22_Hybrid_Model_.28Basic_Switching.29)
-*   [3 The New Dynamic Switching Model](#The_New_Dynamic_Switching_Model)
-    *   [3.1 Nvidia Optimus](#Nvidia_Optimus)
-        *   [3.1.1 Current Problems](#Current_Problems)
-        *   [3.1.2 Software Solutions So Far](#Software_Solutions_So_Far)
-    *   [3.2 ATI Dynamic Switchable Graphics](#ATI_Dynamic_Switchable_Graphics)
-        *   [3.2.1 Current Problems](#Current_Problems_2)
-    *   [3.3 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
-*   [4 See Also](#See_Also)
+*   [2 First Generation Hybrid Model (Basic Switching)](#First_Generation_Hybrid_Model_.28Basic_Switching.29)
+*   [3 The Current Dynamic Switching Model](#The_Current_Dynamic_Switching_Model)
+    *   [3.1 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
 
 ## About Hybrid-graphics Technologies
 
@@ -19,9 +13,11 @@ The laptop manufacturers developed new technologies involving two graphic cards 
 
 We call hybrid graphics a set of two graphic cards with different abilities and power consumptions. There are a variety of technologies and each manufacturer developed its own solution to this problem. Here we try to explain a little about each approach and models and some community solutions to the lack of GNU/Linux systems support.
 
-## The "Old" Hybrid Model (Basic Switching)
+## First Generation Hybrid Model (Basic Switching)
 
-This approach involves a two graphic card setup with a hardware multiplexer ([MUX](https://en.wikipedia.org/wiki/Multiplexer "wikipedia:Multiplexer")). It allows power save and low-end 3D rendering by using an Integrated Graphics Processor (IGP); or a major power consumption with 3D rendering performance using a Dedicated/Discrete Graphics Processor (DGP). This model makes the user choose (at boot time or at login time) within the two power/graphics profiles and is almost fixed through all the user session. The switch is done by a similar workflow:
+**Note:** Unless your notebook is from the last decade, it’s most likely using [dynamic switching](#The_Current_Dynamic_Switching_Model).
+
+The first generation of notebooks with hybrid graphics follow an approach that involves a two graphic card setup with a hardware multiplexer ([MUX](https://en.wikipedia.org/wiki/Multiplexer "wikipedia:Multiplexer")). It allows power save and low-end 3D rendering by using an Integrated Graphics Processor (IGP); or a major power consumption with 3D rendering performance using a Dedicated/Discrete Graphics Processor (DGP). This model makes the user choose (at boot time or at login time) within the two power/graphics profiles and is almost fixed through all the user session. The switch is done by a similar workflow:
 
 *   Turn off the display
 *   Turn on the DGP
@@ -31,48 +27,13 @@ This approach involves a two graphic card setup with a hardware multiplexer ([MU
 
 This switch is somewhat rough and adds some blinks and black screens in laptops that could do it "on the fly". Later approaches made the transition a little more user-friendly.
 
-## The New Dynamic Switching Model
+## The Current Dynamic Switching Model
 
-Most of the new Hybrid-graphics technologies involves two graphic cards as the basic switching but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
+Most of the new Hybrid-graphics technologies involve two graphic cards as the basic switching but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
 
-### Nvidia Optimus
-
-[Nvidia Optimus Whitepaper](http://www.nvidia.com/object/LO_optimus_whitepapers.html)
-
-#### Current Problems
-
-*   Switching between cards when possible.
-*   Switching on/off the discrete card.
-*   Be able to use the discrete card for 3D render.
-*   Be able to use both cards for 3D render (problem arised in [this post](https://bbs.archlinux.org/viewtopic.php?id=120994)).
-
-#### Software Solutions So Far
-
-*   asus_switcheroo -- a solution for Intel/Nvidia switching on ASUS and other laptops with a similar hardware mux -- by Alex Williamson
-*   byo_switcheroo -- a solution to build your own handler (like acpi_call) to switch between cards with vga_switcheroo -- by Alex Williamson
-*   [vga_switcheroo](https://wiki.gentoo.org/wiki/Hprofile#VGA) -- the original GPU switching solution primarily for Intel/ATI notebooks -- by David Airlie
-*   acpi_call -- allows you to switch off discrete graphics card to improve battery life -- by Michal Kottman
-*   [PRIME](/index.php/PRIME "PRIME") -- long-term Optimus solution in progress -- by David Airlie
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee") -- allows you to run specific programs on the discrete graphic card, inside of an X session using the integrated graphic card. Works on Nvidia Optimus cards -- by Martin Juhl
-*   hybrid-windump -- dump window using Nvidia onto Intel display -- by Florian Berger and Joakim Gebart
-*   [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/) -- gpu-switch is an application to switch between the integrated and dedicated GPU of dual-GPU MacBook Pro models for the next reboot
-*   [systemd-vgaswitcheroo-units](https://aur.archlinux.org/packages/systemd-vgaswitcheroo-units/) -- Disable discrete GPU at boot for AMD/NVIDIA & Intel dual GPU setups.
-
-### ATI Dynamic Switchable Graphics
-
-This is a new technology similar to the one of Nvidia as it uses no hardware multiplexer.
-
-#### Current Problems
-
-The Dynamic Switch needs Xorg support for the discrete videocard assigned for rendering to work [[1]](http://www.x.org/wiki/RadeonFeature#fnref-e188f8b793017f6c1c15025dc3d042a1e560915e). So, rendering on the discrete gpu will not work until the Xorg team adds support for it.
-
-This means that with a muxless intel+ati design, you cannot use your discrete card by simply modprobing the radeon module.
-
-As of now, there are 2 choices:
-
-*   Test and improve some virtualGL based program to make the switch, like the common-amd branch of bumblebee project. Check the [project repository](https://github.com/Bumblebee-Project/Bumblebee/issues/52) and [this](http://forums.gentoo.org/viewtopic-t-909802.html) useful post.
-
-*   Use the proprietary driver with powerxpress (a.k.a. pxp) support maintained by [Vi0l0](/index.php/AMD_Catalyst#Installing_from_the_AUR "AMD Catalyst") (remember to check for xorg compatibility).
+**Note:**
+Read [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") and [Bumblebee](/index.php/Bumblebee "Bumblebee") for details about NVidia using hybrid graphics with NVidia’s proprietary driver.
+Read [PRIME](/index.php/PRIME "PRIME") basically everything else (like AMD Radeon and NVidia GPUs with Nouveau driver).
 
 ### Fully Power Down Discrete GPU
 
@@ -151,11 +112,3 @@ w /proc/acpi/call - - - - \\_SB.PCI0.PEG0.PEGP._OFF
 The above config will be loaded at boot by systemd. What it does is write the specific OFF signal to the `/proc/acpi/call` file. Obviously, replace the `\_SB.PCI0.PEG0.PEGP._OFF` with the one which works on your system (please note that you need to escape the backslash).
 
 **Tip:** If you are experiencing trouble hibernating or suspending the system after disabling the GPU, try to enable it again by sending the corresponding acpi_call. See also [Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management").
-
-## See Also
-
-*   [Linux Hybrid-Graphics Blog](http://linux-hybrid-graphics.blogspot.com)
-*   [Hybrid graphics on Linux Wiki](http://hybrid-graphics-linux.tuxfamily.org/index.php)
-*   [Nvidia Optimus commercial presentation](http://www.nvidia.com/object/optimus_technology.html)
-*   [ATI commercial presentation](http://www.amd.com/us/products/technologies/switchable-graphics/Pages/dynamic-switchable-graphics.aspx)
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee")

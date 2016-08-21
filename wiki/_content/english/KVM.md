@@ -87,7 +87,7 @@ $ lsmod | grep virtio
 
 ```
 
-In case the above commands return nothing, you need to [load](/index.php/Kernel_modules#Loading "Kernel modules") kernel modules.
+In case the above commands return nothing, you need to [Kernel modules#Manual module handling](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") kernel modules.
 
 **Tip:** If modprobing `kvm_intel` or `kvm_amd` fails but modprobing `kvm` succeeds, (and `lscpu` claims that hardware acceleration is supported), check your BIOS settings. Some vendors (especially laptop vendors) disable these processor extensions by default. To determine whether there's no hardware support or there is but the extensions are disabled in BIOS, the output from `dmesg` after having failed to modprobe will tell.
 

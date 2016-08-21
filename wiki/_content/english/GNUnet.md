@@ -21,7 +21,7 @@ GNUnet can be [installed](/index.php/Installed "Installed") with the [gnunet](ht
 
 [Start](/index.php/Start "Start") and possibly [enable](/index.php/Enable "Enable") the `gnunet` service.
 
-To start the peer immediately in a terminal:
+Alternatively, to start the peer immediately in a terminal:
 
 ```
 # gnunet-arm -s

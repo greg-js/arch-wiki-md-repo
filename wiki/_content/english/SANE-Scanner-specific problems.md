@@ -13,6 +13,7 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
     *   [3.2 Cannot read scanner make and model](#Cannot_read_scanner_make_and_model)
 *   [4 Epson](#Epson)
     *   [4.1 Epson Perfection 1270](#Epson_Perfection_1270)
+    *   [4.2 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
 *   [5 Fujitsu](#Fujitsu)
     *   [5.1 S300M](#S300M)
 *   [6 HP](#HP)
@@ -67,32 +68,9 @@ Example:
 
 ### Network Scanning
 
-In case of network scanning, e.g. by WiFi, Sane is still unable to find the scanner. You need to specify the IP address of the scanner in the corresponding net.conf file of sane. So for instance if the scanner is at IP address 192.168.1.100 do:
+In case of network scanning, e.g. by WiFi, Sane may still be unable to find the scanner. If so, you need to specify the IP address of the scanner in the `/etc/sane.d/net.conf` file.
 
-```
-   echo 192.168.1.100 | sudo tee -a /etc/sane.d/net.conf
-
-```
-
-Now use `scanimage --check-devices` do check whether sane is able to find your scanner. If not, further check that Sane expects this device through the network (see [http://neithere.net/2013/02/18/archlinux_brother_7860.html](http://neithere.net/2013/02/18/archlinux_brother_7860.html)).
-
-Check it:
-
-```
-   $ grep brother /etc/sane.d/dll.conf
-      brother4
-
-```
-
-If nothing was found (it must fit exactly brother4), add it:
-
-```
-   $ echo brother4 | sudo tee -a /etc/sane.d/dll.conf
-   $ scanimage -L
-
-```
-
-The scanner should now appear in the list.
+Now use `scanimage --check-devices` to check whether sane is able to find your scanner. If not, further check that Sane expects this device through the network (see [[1]](http://neithere.net/2013/02/18/archlinux_brother_7860.html)). Check that `/etc/sane.d/dll.conf` contains `brother*X*`, where the `*X*` stands for the brscan version from above. If nothing was found, add `brother*X*` to the end of the file.
 
 ### Invalid argument
 
@@ -150,7 +128,6 @@ With Epson scanners, you can use "Image Scan! for Linux".
 
 *   Install the [iscan](https://www.archlinux.org/packages/?name=iscan) package
 *   Install the appropriate iscan-plugin package for your scanner (for example, [iscan-plugin-gt-x820](https://aur.archlinux.org/packages/iscan-plugin-gt-x820/) for the Epson Perfection Photo V600)
-*   Add your user to the "scanner" group
 *   Reboot, so that udev will recognize the device as a scanner and apply appropriate permissions
 
 For network (including Wi-Fi) scanners, install [iscan](https://www.archlinux.org/packages/?name=iscan) and [iscan-plugin-network](https://aur.archlinux.org/packages/iscan-plugin-network/), then edit `/etc/sane.d/epkowa.conf` and add the line:
@@ -198,6 +175,25 @@ Replug scanner, you have a working Epson Perfection 1270 now.
 *   To prevent `scanimage: sane_start: Error during device I/O` and hangup of the scanner itself, when trying to scan with ADF (automatic document feed) enabled, I had to remove or comment out all Backends from `/etc/sane.d/dll.conf` and instead just add this to the file: `snapscan` 
 
 Finally. If you still get the `Error I/O` messages try to check the transportation lock of the scanner. It is on the bottom of the scanner. It must be opened.
+
+### Epson Perfection 1670/2480/2580/3490/3590
+
+**Note:** Installation instructions were only tested for Epson Perfection 3590 but should be similar to the other models. Check the instructions above and the links below and edit this wiki page if you can verify that your scanner works.
+
+Make sure to download the correct firmware for your Epson model. You can get an overview of some models and their drivers [here](https://wiki.ubuntuusers.de/Scanner/Epson%20Perfection/#Unterstuetze-Geraete) and [here](http://snapscan.sourceforge.net/). The download links of the firmware are broken, but you can use [this link](https://wiki.ubuntuusers.de/Scanner/Epson_Perfection/Esfw52.bin/) as alternative instead. Make sure to change the firmware filename of the link suiting your model. If you want to download and extract the firmware sources from the official epson sites yourself you can use [this guide](https://forum.ubuntuusers.de/topic/epson-perfection-3490-photo-on-ubuntu-9-04-64/).
+
+As an alternative you can also install the AUR package [sane-epson-perfection-firmware](https://aur.archlinux.org/packages/sane-epson-perfection-firmware/) which will download the firmware from the official sources, extract the binary and install those to `/usr/share/sane/snapscan/`.
+
+Modify the configuration file of the snapscan backend, `/etc/sane.d/snapscan.conf`. Change the firmware path line with yours:
+
+```
+# Change to the fully qualified filename of your firmware file, if
+# firmware upload is needed by the scanner
+firmware /usr/share/sane/snapscan/esfw52.bin
+
+```
+
+Other modifications were not needed for the Epson Perfection 3590 and might not be for other models as well. If you still have problems it can also help if you [completely remove](https://wiki.archlinux.org/index.php/SANE#Multiple_backends_claim_scanner) the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
 
 ## Fujitsu
 

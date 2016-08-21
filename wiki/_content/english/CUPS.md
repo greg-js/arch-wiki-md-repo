@@ -106,6 +106,8 @@ CUPS already includes a few printer drivers. In that case you can just select it
 
 [foomatic-db-ppds](https://www.archlinux.org/packages/?name=foomatic-db-ppds) or [foomatic-db-nonfree-ppds](https://www.archlinux.org/packages/?name=foomatic-db-nonfree-ppds) provide prebuilt PPD files from manufacturers.
 
+Note that foomatic only provides PPDs, not driver binaries. It can drive some printers using [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), but other printers may need alternative drivers such as [min12xxw](https://aur.archlinux.org/packages/min12xxw/).
+
 ### Gutenprint
 
 The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [foomatic-db-gutenprint](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint), [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.

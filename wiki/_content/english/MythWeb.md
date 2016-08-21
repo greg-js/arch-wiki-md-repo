@@ -46,6 +46,14 @@ Include conf/extra/mythweb.conf
 
 ```
 
+If you want to use MythWeb with the recent default mythweb.conf options enabled you will also need to uncomment the following lines in httpd.conf:
+
+```
+LoadModule rewrite_module modules/mod_rewrite.so
+LoadModule deflate_module modules/mod_deflate.so
+
+```
+
 Edit *mythweb.conf* to point it to the directory where you'll be installing mythweb (near the beginning of the file).
 
 ```

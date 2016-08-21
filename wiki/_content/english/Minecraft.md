@@ -21,7 +21,7 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
 
 ### Installation
 
-[minecraft](https://aur.archlinux.org/packages/minecraft/) includes the official game launcher and a script to launch it. Otherwise, just get the launcher on the [official download site](https://minecraft.net/download).
+[minecraft](https://aur.archlinux.org/packages/minecraft/) includes the official game launcher and a script to launch it. Otherwise, just get the launcher on the [official download site](https://minecraft.net/download), and note that Minecraft requires [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
 
 ### Running
 

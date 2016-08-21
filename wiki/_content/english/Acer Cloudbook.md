@@ -5,6 +5,7 @@ At least four different versions of this laptop exist: AO1-131-C9PM and AO1-131-
 *   [1 Hardware](#Hardware)
     *   [1.1 AO1-431-C2YR](#AO1-431-C2YR)
     *   [1.2 AO1-431-C7F9 (possibly)](#AO1-431-C7F9_.28possibly.29)
+    *   [1.3 AO1-431-C8G8](#AO1-431-C8G8)
 *   [2 Installation (legacy mode)](#Installation_.28legacy_mode.29)
     *   [2.1 BIOS configuration](#BIOS_configuration)
     *   [2.2 Kernel parameters](#Kernel_parameters)
@@ -14,6 +15,7 @@ At least four different versions of this laptop exist: AO1-131-C9PM and AO1-131-
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 GDM](#GDM)
     *   [4.2 High load average on idle](#High_load_average_on_idle)
+    *   [4.3 Bluetooth](#Bluetooth)
 
 ## Hardware
 
@@ -32,7 +34,7 @@ At least four different versions of this laptop exist: AO1-131-C9PM and AO1-131-
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Card Reader | Yes |
-| Bluetooth | No |
+| Bluetooth | Yes |
 
 **Wireless NIC:** Qualcomm Atheros QCA9565 / AR9565 Wireless Network Adapter 802.11b/g/n (rev 01)
 
@@ -83,6 +85,33 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 00:1f.0 ISA bridge [0601]: Intel Corporation Device [8086:229c] (rev 21)
 00:1f.3 SMBus [0c05]: Intel Corporation Device [8086:2292] (rev 21)
 02:00.0 Network controller [0280]: Intel Corporation Wireless 3160 [8086:08b3] (rev 83)
+
+```
+
+### AO1-431-C8G8
+
+ `# lspci -nn` 
+```
+00:00.0 Host bridge [0600]: Intel Corporation Device [8086:2280] (rev 21)
+00:02.0 VGA compatible controller [0300]: Intel Corporation Device [8086:22b1] (rev 21)
+00:0b.0 Signal processing controller [1180]: Intel Corporation Device [8086:22dc] (rev 21)
+00:14.0 USB controller [0c03]: Intel Corporation Device [8086:22b5] (rev 21)
+00:1a.0 Encryption controller [1080]: Intel Corporation Device [8086:2298] (rev 21)
+00:1b.0 Audio device [0403]: Intel Corporation Device [8086:2284] (rev 21)
+00:1c.0 PCI bridge [0604]: Intel Corporation Device [8086:22c8] (rev 21)
+00:1c.2 PCI bridge [0604]: Intel Corporation Device [8086:22cc] (rev 21)
+00:1f.0 ISA bridge [0601]: Intel Corporation Device [8086:229c] (rev 21)
+00:1f.3 SMBus [0c05]: Intel Corporation Device [8086:2292] (rev 21)
+02:00.0 Network controller [0280]: Intel Corporation Wireless 3160 [8086:08b3] (rev 83)
+
+```
+ `# lsusb` 
+```
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 8087:07dc Intel Corp. 
+Bus 001 Device 003: ID 064e:9404 Suyin Corp. 
+Bus 001 Device 002: ID 0bda:0129 Realtek Semiconductor Corp. RTS5129 Card Reader Controller
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
@@ -148,3 +177,7 @@ If Gnome/GDM is installed and started, the login page will flicker up-to the poi
 ### High load average on idle
 
 The kernel module **rtsx_usb_ms** is loaded at boot time yet is non-functional (the kernel thread associated to the module when inspecting with *top* is a zombified process) and unnecessary for the system to function. The module can safely be [blacklisted](/index.php/Blacklist "Blacklist").
+
+### Bluetooth
+
+At least in AO1-431-C8G8 bluetooth device is deactivated via RF-kill by default. After activating it works flawlessly with bluez.

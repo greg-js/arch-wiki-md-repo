@@ -46,6 +46,12 @@ Create or edit `~/.imwheelrc`. In this configuration file lines can be added for
 
 ```
 
+`Up` and `Down` may be used in the place of `Button4` and `Button5` respectively for the mousewheel.
+
+Matching all programs (using ".*") can cause unwanted behaviour in some programs; since imwheel emulates multiple scroll actions for each one the user makes, programs that have actions bound to the mousewheel will perform those actions more times than expected.
+
+For example, terminal emulators in which scrolling selects commands from the history will jump multiple items per scroll.
+
 ### Run imwheel
 
 Run imwheel simply like so:

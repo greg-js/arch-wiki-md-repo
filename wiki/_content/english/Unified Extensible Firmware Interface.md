@@ -43,7 +43,7 @@ It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" me
 ## UEFI versions
 
 *   UEFI started as Intel's EFI in versions 1.x.
-*   Later, a group of companies called the UEFI Forum took over its development, which renamed it as Unified EFI starting with version 2.0\.
+*   Later, a group of companies called the UEFI Forum took over its development, which renamed it as Unified EFI starting with version 2.0.
 *   Unless specified as EFI 1.x, EFI and UEFI terms are used interchangeably to denote UEFI 2.x firmware.
 *   As of 15 April 2015, UEFI Specification 2.5 is the most recent version.
 *   Apple's EFI implementation is neither a EFI 1.x version nor UEFI 2.x version but mixes up both. This kind of firmware does not fall under any one (U)EFI specification and therefore is not a standard UEFI firmware. Unless stated explicitly, these instructions are general and some of them may not work or may be different in [Apple Macs](/index.php/MacBook "MacBook").
@@ -332,8 +332,8 @@ Shell> bcfg -? -v -b
 Before running file system commands such as `cd` or `ls`, you need to change the shell to the appropriate file system by typing its name:
 
 ```
-  Shell> fs0:
-  fs0:\> cd EFI/
+Shell> fs0:
+fs0:\> cd EFI/
 
 ```
 
@@ -344,9 +344,7 @@ Before running file system commands such as `cd` or `ls`, you need to change the
 For example, to edit rEFInd's `refind.conf` in the EFI System Partition (`fs0:` in the firmware),
 
 ```
-Shell> fs0:
-FS0:\> cd \EFI\arch\refind
-FS0:\EFI\arch\refind\> edit refind.conf
+Shell> edit FS0:\EFI\refind\refind.conf
 
 ```
 

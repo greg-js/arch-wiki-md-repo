@@ -27,6 +27,7 @@
     *   [5.1 Overriding UI and autorefresh settings](#Overriding_UI_and_autorefresh_settings)
     *   [5.2 Folder could not be created](#Folder_could_not_be_created)
     *   [5.3 SSL fingerprint does not match](#SSL_fingerprint_does_not_match)
+    *   [5.4 Copying message, connection closed](#Copying_message.2C_connection_closed)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -560,6 +561,16 @@ cert_fingerprint = keykeykey
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 ```
+
+### Copying message, connection closed
+
+```
+ERROR: Copying message -2 [acc: email] connection closed
+Folder sent [acc: email]: ERROR: while syncing sent [account email] connection closed
+
+```
+
+Cause of this can be creation of same message both locally and on server. This happens if your email provider automatically saves sent mails to same folder as your local client. If you encounter this, disable save of sent messages in your local client.
 
 ## See also
 

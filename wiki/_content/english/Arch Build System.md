@@ -234,6 +234,8 @@ $ makepkg -s
 
 **Note:** Before complaining about missing (make) dependencies, remember that the group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) is assumed to be installed when building with *makepkg*. See [#Install tools](#Install_tools).
 
+**Note:** If you need to make changes to the source itself, rather than just the PKGBUILD, see [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS").
+
 Install as root:
 
 ```

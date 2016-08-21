@@ -74,10 +74,9 @@ In order to use OMEMO in Gajim, just install the [gajim-plugin-omemo](https://au
 
 ### Configuration
 
-At first time, you also need to activate OMEMO plugin:
+After installing the OMEMO plugin, you have to enable it in Gajim Plugin Manager in order to use it:
 
-1.  Go to menu Edit => Modules;
+1.  Go to menu Edit => Plugins;
 2.  Activate the "OMEMO Multi-End Message and Object Encryption" plugin;
 3.  Close dialogs to save the changes.
-4.  Use the checkbox on the bottom of each chat tab to enable or disable OMEMO encryption. (if you don't see a checkbox you might have "Make message windows compact" enabled in the general settings)
-5.  Click on "Get Device Keys".
+4.  Please refer to the official documentation for [running instructions](https://github.com/omemo/gajim-omemo#running)

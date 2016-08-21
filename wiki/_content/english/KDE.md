@@ -86,6 +86,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [10.10 Inotify folder watch limit](#Inotify_folder_watch_limit)
     *   [10.11 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
     *   [10.12 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
+    *   [10.13 Multi-monitor issues](#Multi-monitor_issues)
 *   [11 Unstable releases](#Unstable_releases)
 *   [12 Bugs](#Bugs)
 *   [13 See also](#See_also)
@@ -815,6 +816,19 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 ```
 
 By default, Konsole sets $LANG to en_US.US-ASCII. If you haven't generated that locale, then mandb can't use it. In your Konsole profile settings, click "Environment" and then add a line for LANG=en_US.UTF-8 or whatever your locale should be.
+
+### Multi-monitor issues
+
+The current release of KDE Plasma has several issues with multi-monitor setups, which can make Plasma unusable. See [these](https://bugs.kde.org/show_bug.cgi?id=356225) [reports](https://bugs.kde.org/show_bug.cgi?id=356720).
+
+These bugs have been resolved in the upstream/git KDE Plasma builds, which can be installed from [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) or [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) - bear in mind that all packages will conflict with current versions - it is recommended to remove them first:
+
+```
+ # pacman -R plasma-meta
+
+```
+
+The [unstable releases](/index.php/Official_repositories#kde-unstable "Official repositories") may also contain the required patches (not confirmed).
 
 ## Unstable releases
 

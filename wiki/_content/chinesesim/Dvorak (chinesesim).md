@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Dvorak](/index.php/Dvorak "Dvorak") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-10-13，点击[这里](https://wiki.archlinux.org/index.php?title=Dvorak&diff=0&oldid=277680)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Dvorak](/index.php/Dvorak "Dvorak") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-19，点击[这里](https://wiki.archlinux.org/index.php?title=Dvorak&diff=0&oldid=435865)可以查看翻译后英文页面的改动。
 
 本文是一个快速参考手册，可以设置你的键盘映射从qwerty转换到Dvorak.
 
@@ -20,7 +20,7 @@
 *   `dvorak-l`, 左手布局
 *   `dvorak-r`, 右手布局
 
-**Note:** For console, these are standalone keymaps, but for Xorg these are variants of the `us` layout, you need to pass them to `XkbVariant` variable. See [Keyboard configuration in Xorg#Setting keyboard layout](/index.php/Keyboard_configuration_in_Xorg#Setting_keyboard_layout "Keyboard configuration in Xorg") for an explanation.
+**Note:** 终端有单独的键盘映射，但是 Xorg 有 `us` 布局变体，需要传递给 `XkbVariant` 变量，参考 [Keyboard configuration in Xorg#Setting keyboard layout](/index.php/Keyboard_configuration_in_Xorg#Setting_keyboard_layout "Keyboard configuration in Xorg")。
 
 下面的国际 Dvorak 仅能在 Xorg 中使用:
 
@@ -30,17 +30,16 @@
 
 ### Swedish
 
-Swedish people interested in trying dvorak can find the swedish "version", called svorak, at [aoeu.info](http://www.aoeu.info)! To convert to svorak in X you do not need to download any additional files from www.aoeu.info.
+Swedish 用户可以选择使用 swedish "dvorak 版本"，被称为 svorak，要将 X 切换到 svorak，并不需要从 www.aoeu.info 下载额外文件。
 
 ### Spanish
 
-In console, specify `dvorak-es` instead of `dvorak` to use the Spanish dvorak variant.
+要使用西班牙 dvorak 变体，使用 `dvorak-es` 替换 `dvorak`。
 
-In Xorg, specify `es` as `XkbLayout` and `dvorak` as `XkbVariant`.
+在 Xorg 中将 `XkbLayout` 设置为 `es`， `XkbVariant` 设置为 `dvorak`.
 
 ## 打字练习软件
 
 *   终端: [DvorakNG](https://aur.archlinux.org/packages/DvorakNG/)
 *   GUI: [KTouch](https://www.archlinux.org/packages/extra/x86_64/kdeedu-ktouch/) (包含了英语、法语、德语和西班牙语的 Dvorak 课程)
 *   GUI: [klavaro](https://www.archlinux.org/packages/?name=klavaro) Dvorak 课程: (BG; BR; DE_neo2; EO; FR; FR_bépo; TR; UK; US; US_BR; US_ES; US_SE)
-*   网站：[http://typeyourway.com/](http://typeyourway.com/) - *Your keyboard, Your Words, Your Rules, Learn to Type Your Way*

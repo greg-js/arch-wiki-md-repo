@@ -275,12 +275,15 @@ noextract=('foobar.tar.xz')
 
 ```
 
-To extract *nothing*, you can do something like this (taken from [firefox-i18n's PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n#n123)):
+To extract *nothing*, you can do something like this:
 
-```
-noextract=("${source[@]%%::*}")
+*   If `source` contains only plain URLs without custom file names, strip the source array before the last slash:
 
-```
+	 `noextract=("${source[@]##*/}")` 
+
+*   If `source` contains only entries with custom file names, strip the source array after the `::` separator (taken from [firefox-i18n's PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/firefox-i18n#n123)):
+
+	 `noextract=("${source[@]%%::*}")` 
 
 ### validpgpkeys
 

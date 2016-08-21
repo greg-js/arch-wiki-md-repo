@@ -6,7 +6,7 @@
 | Touchpad | Works after configuration |  ? |
 | Webcam | Working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
-| Wireless switch | Working | intel-hid |
+| Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
 
 The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. The laptop is available in both a standard edition with Windows installed as well as a Developer Edition which only differs in that it comes with Ubuntu installed as well as the Broadcom WiFi card replaced with an Intel WiFi card. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.

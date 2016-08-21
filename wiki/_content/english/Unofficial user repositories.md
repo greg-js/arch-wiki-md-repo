@@ -73,26 +73,25 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [4.2.4 linux-pae](#linux-pae)
 *   [5 x86_64 only](#x86_64_only)
     *   [5.1 Signed](#Signed_4)
-        *   [5.1.1 apathism](#apathism)
-        *   [5.1.2 archzfs](#archzfs)
-        *   [5.1.3 ashleyis](#ashleyis)
-        *   [5.1.4 atom](#atom)
-        *   [5.1.5 boyska64](#boyska64)
-        *   [5.1.6 coderkun-aur](#coderkun-aur)
-        *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.8 decryptedepsilon](#decryptedepsilon)
-        *   [5.1.9 eatabrick](#eatabrick)
-        *   [5.1.10 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.11 holo](#holo)
-        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.13 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.14 nullptr_t](#nullptr_t)
-        *   [5.1.15 markzz](#markzz)
-        *   [5.1.16 qt-debug](#qt-debug)
-        *   [5.1.17 quarry](#quarry)
-        *   [5.1.18 siosm-aur](#siosm-aur)
-        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.1 archzfs](#archzfs)
+        *   [5.1.2 ashleyis](#ashleyis)
+        *   [5.1.3 atom](#atom)
+        *   [5.1.4 boyska64](#boyska64)
+        *   [5.1.5 coderkun-aur](#coderkun-aur)
+        *   [5.1.6 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.7 decryptedepsilon](#decryptedepsilon)
+        *   [5.1.8 eatabrick](#eatabrick)
+        *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.10 holo](#holo)
+        *   [5.1.11 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.12 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.13 nullptr_t](#nullptr_t)
+        *   [5.1.14 markzz](#markzz)
+        *   [5.1.15 qt-debug](#qt-debug)
+        *   [5.1.16 quarry](#quarry)
+        *   [5.1.17 siosm-aur](#siosm-aur)
+        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -735,20 +734,6 @@ Server = http://pae.archlinux.ca/
 ## x86_64 only
 
 ### Signed
-
-#### apathism
-
-*   **Maintainer:** Ivan Koryabkin ([apathism](https://aur.archlinux.org/account/apathism/))
-*   **Upstream page:** [https://apathism.net/](https://apathism.net/)
-*   **Description:** Some AUR packages like [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/) (with qt5 enabled).
-*   **Key-ID:** 3E37398D
-*   **Keyfile:** [http://apathism.net/archlinux/apathism.key](http://apathism.net/archlinux/apathism.key)
-
-```
-[apathism]
-Server = https://apathism.net/archlinux/
-
-```
 
 #### archzfs
 

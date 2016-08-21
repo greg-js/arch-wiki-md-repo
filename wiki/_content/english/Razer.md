@@ -7,13 +7,14 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
     *   [1.2 Installation](#Installation)
     *   [1.3 Using the Razer Configuration Tool](#Using_the_Razer_Configuration_Tool)
 *   [2 Razer Blade](#Razer_Blade)
-    *   [2.1 2016 version (Razer Blade Stealth)](#2016_version_.28Razer_Blade_Stealth.29)
+    *   [2.1 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
         *   [2.1.1 Killer Wireless Network Adapter](#Killer_Wireless_Network_Adapter)
         *   [2.1.2 Touchpad](#Touchpad)
         *   [2.1.3 Graphics Drivers](#Graphics_Drivers)
-        *   [2.1.4 Suspend Loop](#Suspend_Loop)
-        *   [2.1.5 Tweaking](#Tweaking)
-        *   [2.1.6 Unresolved Issues](#Unresolved_Issues)
+        *   [2.1.4 Hybrid graphics](#Hybrid_graphics)
+        *   [2.1.5 Suspend Loop](#Suspend_Loop)
+        *   [2.1.6 Tweaking](#Tweaking)
+        *   [2.1.7 Unresolved Issues](#Unresolved_Issues)
     *   [2.2 2014 version](#2014_version)
         *   [2.2.1 Problems](#Problems)
         *   [2.2.2 Possible trackpad solution](#Possible_trackpad_solution)
@@ -101,7 +102,7 @@ color=1:GlowingLogo:FFFFFF
 
 Razer Blade is Razer's line of gaming laptops. There is currently a 14" model, and a 17" model. Due to the proprietary SBUI trackpad on the 17" model, it will be extremely difficult to get it to work without extensive USB protocol reversing.
 
-### 2016 version (Razer Blade Stealth)
+### 2016 version (Razer Blade & Razer Blade Stealth)
 
 The normal installation process works in general with the exceptions enumerated below.
 
@@ -114,12 +115,14 @@ The wireless adapter won't work without proprietary firmware. You will require a
 
 ```
 
-It is a [Killer Wireless-AC 1535](http://www.killernetworking.com/support/knowledge-base/17-linux/20-killer-wireless-ac-in-linux-ubuntu-debian) which requires proprietary firmware for the board. The latest 4.4.1 kernel only requires the *board.bin* to be overwritten.
+It is a [Killer Wireless-AC 1535](http://www.killernetworking.com/product-support/knowledge-base/17-linux/20-killer-wireless-ac-in-linux-ubuntu-debian) which requires proprietary firmware for the board. The latest 4.4.1 kernel only requires the *board.bin* to be overwritten.
 
 ```
-# wget -O /lib/firmware/ath10k/QCA6174/hw3.0/board.bin http://www.killernetworking.com/support/board.bin
+# wget -O /lib/firmware/ath10k/QCA6174/hw3.0/board.bin http://www.killernetworking.com/support/K1535_Debian/board.bin
 
 ```
+
+Or use the [Installer Script](https://github.com/stuartwells4/razer-laptop/tree/master/stealth) at your own risk.
 
 #### Touchpad
 
@@ -143,6 +146,10 @@ Section "Device"
 EndSection
 
 ```
+
+#### Hybrid graphics
+
+If the discrete Nvidia GPU is switched off before starting Xorg or Wayland, then the system freezes. The only possible solution is to manually disable/enable the discrete card after starting the graphical session. However there is a ACPI DSDT fix available which fixes this problem. Check the [repository](https://github.com/m4ng0squ4sh/razer_blade_14_2016_acpi_dsdt) for more information.
 
 #### Suspend Loop
 

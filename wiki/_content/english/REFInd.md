@@ -195,7 +195,7 @@ The *rEFInd* configuration `refind.conf` is located in the same directory as the
 
 ### Passing kernel parameters
 
-There are two methods for setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") that *rEFInd* will pass to the kernel.
+There are two methods for setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") that *rEFInd* will pass to the kernel. Keep in mind that the Linux Kernel initrd path is relative to the esp root.
 
 #### For kernels automatically detected by rEFInd
 

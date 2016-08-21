@@ -469,20 +469,20 @@ This will allow the module to load at boot.
 
 ### Sensors not working since Linux 2.6.31
 
-A change in version 2.6.31 has made some sensors stop working. See [this FAQ entry](http://www.lm-sensors.org/wiki/FAQ/Chapter3#Mysensorshavestoppedworkinginkernel2.6.31) for a detailed explanation and for some example errors. To fix sensors, add the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+A change in version 2.6.31 has made some sensors stop working. See [this FAQ entry](http://web.archive.org/web/20140630034601/http://www.lm-sensors.org/wiki/FAQ/Chapter3#Mysensorshavestoppedworkinginkernel2.6.31) for a detailed explanation and for some example errors. In most cases the information is still accessible via other modules (e.g. via ACPI modules) for the hardware in question. Many utilities and monitors (e.g. `/usr/bin/sensors`) can gather information from either source. Where possible, this is the preferred solution.
+
+**Warning:** The following workaround is risky and has the potential to damage your hardware. The change in 2.6.31 is not a bug, but a fix to remove that risk. Consult the aforementioned FAQ entry for details.
+
+If you want to restore pre-2.6.31-behaviour, add the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
 acpi_enforce_resources=lax
 
 ```
 
-**Warning:** In some situations, this may be dangerous. Consult the FAQ for details.
-
-Note that in most cases the information is still accessible via other modules (e.g. via ACPI modules) for the hardware in question. Many utilities and monitors (e.g. `/usr/bin/sensors`) can gather information from either source. Where possible, this is the preferred solution.
-
 ### Gigabyte GA-J1900N-D3V
 
-The motherboard use the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[1]](http://www.lm-sensors.org/wiki/Devices) [[2]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part.
+The motherboard use the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[1]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[2]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, [[3]](https://www.kernel.org/doc/Documentation/hwmon/it87) lists the IT8620E as supported.
 
 You can load the module at runtime with modprobe:
 

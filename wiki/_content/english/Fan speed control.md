@@ -18,7 +18,7 @@ For some Dell laptops, an alternative is [i8kutils](#i8kutils).
 
 ## Sensor driver
 
-Support for newer motherboards may not yet be in the Linux kernel. Check the official [lm-sensors devices](http://www.lm-sensors.org/wiki/Devices) table to see if experimental drivers are available for such motherboards.
+Support for newer motherboards may not yet be in the Linux kernel. Check the official [lm-sensors devices](https://hwmon.wiki.kernel.org/device_support_status) table to see if experimental drivers are available for such motherboards.
 
 It is recommended not to use `lm_sensors.service` to load the needed modules for fancontrol. Instead, manually place them in `/etc/modules-load.d/load_these.conf` since the order in which these modules are loaded dictate the order in which the needed symlinks for hwmon get created. In other words, using the `lm_sensors.service` causes inconsistencies boot-to-boot which will render the configuration file for fan control worthless for a consistency point of view. To avoid this problem:
 

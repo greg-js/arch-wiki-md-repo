@@ -145,7 +145,7 @@ Banner /etc/issue
 
 ```
 
-Host keys will be generated automatically by the sshd Systemd service. If you want sshd to use a particular key which you have provided, you can configure it manually:
+Host keys will be generated automatically by the *sshd* [service files](#Daemon_management). If you want sshd to use a particular key which you have provided, you can configure it manually:
 
 ```
 HostKey /etc/ssh/ssh_host_rsa_key

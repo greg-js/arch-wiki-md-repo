@@ -127,13 +127,15 @@ $ systemctl list-units --state=running "*.service" > daemons.list
 
 ```
 
-then configure the [#Init scripts](#Init_scripts) accordingly. See also [[2]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
+then configure the [#Init scripts](#Init_scripts) accordingly. See also [[3]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
 
 Temporary files (*systemd-tmpfiles*), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
 
 ### logind
 
-[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) requires *systemd* to be the init process. [[3]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) As such, [local sessions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") and other functionality is not available.
+[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) requires *systemd* to be the init process. [[4]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) As such, [local sessions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") and other functionality is not available.
+
+**Tip:** A standalone version of *logind* is available as [elogind-git](https://aur.archlinux.org/packages/elogind-git/) [[5]](https://lists.gnu.org/archive/html/guix-devel/2015-04/msg00352.html)
 
 #### Device permissions
 
@@ -148,7 +150,7 @@ See [Policykit#Bypass password prompt](/index.php/Policykit#Bypass_password_prom
 
 #### Rootless X (1.16)
 
-As `Xorg.wrap` does not check if logind is active [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [root rights for Xorg](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg") need be enabled manually:
+As `Xorg.wrap` does not check if logind is active [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [root rights for Xorg](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg") need be enabled manually:
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
@@ -162,7 +164,7 @@ Arch uses [timer](/index.php/Systemd#Timers "Systemd") files instead of [cron](/
 
 ### Dbus
 
-User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[5]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
+User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[7]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
 
  `/etc/X11/xinit/xinitrc.d/30-dbus.sh` 
 ```
@@ -189,7 +191,7 @@ The PID namespace creates a new hierarchy of processes starting with PID 1\. In 
 
 as systemd tries to remount the root with `private` option.
 
-To setup a chroot with a new PID namespace you can use jchroot.[[6]](http://vincent.bernat.im/en/blog/2011-jchroot-isolation.html) [[7]](https://github.com/vincentbernat/jchroot). Make sure not to mount `/proc` inside the new root before chrooting, otherwise systemd will detect the chroot environment. You can mount it later once systemd is running.
+To setup a chroot with a new PID namespace you can use jchroot.[[8]](http://vincent.bernat.im/en/blog/2011-jchroot-isolation.html) [[9]](https://github.com/vincentbernat/jchroot). Make sure not to mount `/proc` inside the new root before chrooting, otherwise systemd will detect the chroot environment. You can mount it later once systemd is running.
 
 ## See also
 
@@ -197,6 +199,6 @@ To setup a chroot with a new PID namespace you can use jchroot.[[6]](http://vinc
 *   [How to run s6-svscan as process 1](http://skarnet.org/software/s6/s6-svscan-1.html)
 *   [Replace systemd with busybox + minirc](https://bbs.archlinux.org/viewtopic.php?id=162606&p=1)
 *   [Experiments of Manjaro](http://www.troubleshooters.com/linux/init/manjaro_experiments.htm)
-*   [Init vs. runsv](http://busybox.net/~vda/init_vs_runsv.html)
+*   [Init vs. runsv](https://busybox.net/~vda/init_vs_runsv.html)
 *   [Demystifying the init system](https://felipec.wordpress.com/2013/11/04/init/)
 *   [A history of modern init systems (1992-2015)](http://blog.darknedgy.net/technology/2015/09/05/0/)

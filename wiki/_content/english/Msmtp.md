@@ -131,6 +131,8 @@ $ cat test.mail | msmtp -a default <username>@domain.com
 
 **Tip:** If using Gmail you'll need to allow "Less Secure Apps" in *Settings* > *Security*. Make sure to sign out of your other Gmail accounts first because the security settings part of Google Accounts can not manage concurrent sessions of more than one account.
 
+**Tip:** You can use *--read-envelope-from* instead of *-a default* to automatically chose account by *From:* field in message you are going to send.
+
 ## Cronie default email client
 
 To make [cronie](https://www.archlinux.org/packages/?name=cronie) use msmtp rather than sendmail, make sure [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) is installed, or edit the `cronie.service` systemd unit:

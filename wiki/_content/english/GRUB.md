@@ -29,6 +29,7 @@
         *   [5.2.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
         *   [5.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
         *   [5.2.3 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
+            *   [5.2.3.1 Encrypted GNU/Linux menuentry](#Encrypted_GNU.2FLinux_menuentry)
         *   [5.2.4 FreeBSD menu entry](#FreeBSD_menu_entry)
             *   [5.2.4.1 Loading the kernel directly](#Loading_the_kernel_directly)
             *   [5.2.4.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
@@ -467,6 +468,18 @@ menuentry "Other Linux" {
 
 	linux /boot/vmlinuz (add other options here as required, for example: root=UUID=763A-9CB6)
 	initrd /boot/initrd.img (if the other kernel uses/needs one)
+}
+```
+
+###### Encrypted GNU/Linux menuentry
+
+```
+menuentry "Other Linux (Encrypted)"{
+      insmod luks
+      cryptomount (hd0,2)
+      set root=(crypto0)
+      linux /boot/vmlinuz cryptdevice=/dev/sda2:cryptroot root=/dev/mapper/cryptroot (add more options if required)
+      initrd /boot/initrd.img (If the other kernel uses/needs one)
 }
 ```
 

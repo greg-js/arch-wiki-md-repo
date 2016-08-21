@@ -1,69 +1,141 @@
-**翻译状态：** 本文是英文页面 [Windows and Arch Dual Boot](/index.php/Windows_and_Arch_Dual_Boot "Windows and Arch Dual Boot") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-04-02，点击[and Arch Dual Boot&diff=0&oldid=308005 这里](https://wiki.archlinux.org/index.php?title=Windows)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Dual_boot_with_Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-20，点击[这里](https://wiki.archlinux.org/index.php?title=Dual_boot_with_Windows&diff=0&oldid=445881)可以查看翻译后英文页面的改动。
 
-This is a simple article detailing different methods of Arch/Windows coexistence.
+这篇条目提供了 Arch Linux 和 Windows 双重启动的一些相关信息。
 
 ## Contents
 
-*   [1 Potential Data Loss](#Potential_Data_Loss)
-    *   [1.1 Renaming Files on NTFS partitions](#Renaming_Files_on_NTFS_partitions)
-    *   [1.2 Fast Start-Up](#Fast_Start-Up)
-*   [2 Installation](#Installation)
-    *   [2.1 BIOS Systems](#BIOS_Systems)
-        *   [2.1.1 Using a Linux boot loader](#Using_a_Linux_boot_loader)
-        *   [2.1.2 Using Windows boot loader](#Using_Windows_boot_loader)
-            *   [2.1.2.1 Windows 7/8 boot loader](#Windows_7.2F8_boot_loader)
-            *   [2.1.2.2 Windows 2000/XP boot loader](#Windows_2000.2FXP_boot_loader)
-    *   [2.2 UEFI Systems](#UEFI_Systems)
+*   [1 重要信息](#.E9.87.8D.E8.A6.81.E4.BF.A1.E6.81.AF)
+    *   [1.1 Windows UEFI 和 BIOS 启动限制](#Windows_UEFI_.E5.92.8C_BIOS_.E5.90.AF.E5.8A.A8.E9.99.90.E5.88.B6)
+    *   [1.2 安装介质限制](#.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8.E9.99.90.E5.88.B6)
+    *   [1.3 UEFI / BIOS 启动管理器限制](#UEFI_.2F_BIOS_.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8.E9.99.90.E5.88.B6)
+    *   [1.4 UEFI 安全启动](#UEFI_.E5.AE.89.E5.85.A8.E5.90.AF.E5.8A.A8)
+    *   [1.5 快速启动](#.E5.BF.AB.E9.80.9F.E5.90.AF.E5.8A.A8)
+    *   [1.6 Windows 中的文件名限制](#Windows_.E4.B8.AD.E7.9A.84.E6.96.87.E4.BB.B6.E5.90.8D.E9.99.90.E5.88.B6)
+*   [2 安装](#.E5.AE.89.E8.A3.85)
+    *   [2.1 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
+        *   [2.1.1 使用 Linux 启动管理器](#.E4.BD.BF.E7.94.A8_Linux_.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8)
+        *   [2.1.2 使用 Windows 启动管理器](#.E4.BD.BF.E7.94.A8_Windows_.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8)
+            *   [2.1.2.1 Windows Vista/7/8/8.1/10 的启动管理器](#Windows_Vista.2F7.2F8.2F8.1.2F10_.E7.9A.84.E5.90.AF.E5.8A.A8.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [2.2 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
+    *   [2.3 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+        *   [2.3.1 Couldn't create a new partition or locate an existing one (无法创建或者定位分区)](#Couldn.27t_create_a_new_partition_or_locate_an_existing_one_.28.E6.97.A0.E6.B3.95.E5.88.9B.E5.BB.BA.E6.88.96.E8.80.85.E5.AE.9A.E4.BD.8D.E5.88.86.E5.8C.BA.29)
+        *   [2.3.2 安装 Windows 后无法再引导 Linux](#.E5.AE.89.E8.A3.85_Windows_.E5.90.8E.E6.97.A0.E6.B3.95.E5.86.8D.E5.BC.95.E5.AF.BC_Linux)
 *   [3 时间标准](#.E6.97.B6.E9.97.B4.E6.A0.87.E5.87.86)
-*   [4 See also](#See_also)
+*   [4 另见](#.E5.8F.A6.E8.A7.81)
 
-## Potential Data Loss
+## 重要信息
 
-### Renaming Files on NTFS partitions
+### Windows UEFI 和 BIOS 启动限制
 
-Windows is limited to filepaths being shorter than [260 characters](http://blogs.msdn.com/b/bclteam/archive/2007/02/13/long-paths-in-net-part-1-of-3-kim-hamilton.aspx).
+Microsoft 对不同版本的启动方式限制不同:
 
-Windows also puts [certain characters off limits](http://msdn.microsoft.com/en-us/library/aa365247(VS.85).aspx#naming_conventions) in filenames for reasons that run all the way back to DOS:
+| Windows 版本 | BIOS-MBR | UEFI-GPT |
+| x86 (IA32) | x86_64 |
+| Windows XP | x86 | 支持
 
-*   < (less than)
-*   > (greater than)
-*   : (colon)
-*   " (double quote)
-*   / (forward slash)
-*   \ (backslash)
-*   | (vertical bar or pipe)
-*   ? (question mark)
-*   * (asterisk)
+（大多数）
 
-These are limitations of Windows and not NTFS: any other OS using the NTFS partition will be fine. Windows will fail to detect these files and running `chkdsk` will most likely cause them to be deleted.
+ | 不支持 | 不支持 |
+| x64 |
+| Windows Vista | x86 |
+| x64 | 带有 SP1 的版本支持 |
+| Windows 7 | x86 | 不支持 |
+| x64 | 支持 |
+| Windows 8/8.1 | x86 | 部分支持 | 不支持 |
+| x64 | 不支持 | 支持 |
+| Windows 10 | x86 | 部分支持 | 不支持 |
+| x64 | 不支持 | 支持 |
 
-### Fast Start-Up
+所有版本的 Windows 都不支持 BIOS 引导 GPT 分区上的 Windows 或 UEFI 引导 MBR 分区上的 Windows。
 
-Fast Start-Up is a feature in Windows 8 that hibernates the computer rather than actually shutting it down to speed up boot times. Your system can lose data if Windows hibernates and you dual boot into another OS and make changes to files. Even if you don't intend to share filesystems, the EFI System Partition is likely to be damaged on an EFI system. Therefore, you should disable Fast Startup, as described [here](http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html), before you install Linux on any computer that uses Windows 8.
+某些 Intel Atom 芯片的平板电脑只支持 IA32-UEFI ，因此只能启动 GPT 分区上的 32 位 ( x86 ) 操作系统。
 
-[NTFS-3G added a safe-guard](http://sourceforge.net/p/ntfs-3g/ntfs-3g/ci/559270a8f67c77a7ce51246c23d2b2837bcff0c9/) to prevent read-write mounting of hibernated disks, but the NTFS driver within the Linux kernel has no such safeguard.
+对于预装在电脑上的 Windows 的大多数情况:
 
-## Installation
+*   预装 Windows XP ( 所有版本 ),Windows Vista 或 Windows 7 (32 位版本),默认通过 BIOS-MBR 启动.
+*   大多数预装 Windows 7 64位版本的电脑默认通过 BIOS-MBR 启动,有部分近期预装Windows 7 64位版本的电脑通过 UEFI-GPT 启动.
+*   预装 Windows 8/8.1/10 的电脑都是通过 UEFI 启动,32 位系统通过 IA32 UEFI 模式启动,64 位系统通过 x86_64 UEFI 模式启动.
 
-The recommended way to setup a Linux/Windows dual booting system is to first install Windows, only using part of the disk for its partitions. When you have finished the Windows setup, boot into the Linux install environment where you can create additional partitions for Linux while leaving the existing Windows partitions untouched.
+可以从 Windows 系统信息中了解具体的启动类型 (这个方法来自[这里](http://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html)):
 
-Some newer computers come pre-installed with Windows 8 which will be using Secure Boot. Arch Linux currently does not support Secure Boot, but some Windows 8 installations have been seen not to boot if Secure Boot is turned off in the BIOS. In some cases it is necessary to turn off both Secure Boot as well as Fastboot in the BIOS options in order to allow Windows 8 to boot without Secure Boot. However there are potential security risks in turning off Secure Boot for booting up Windows 8\. Therefore, it may be a better option to keep the Windows 8 install intact and have an independent hard drive for the Linux install - which can then be partitioned from scratch using a GPT partition table. Once that is done, creating several ext4/FAT32/swap partitions on the second drive may be a better way forward if the computer has two drives available. This is often not easy or possible on a small laptop. Currently, Secure Boot is still not in a fully stable state for reliable operation, even for Linux distributions that support it.
+*   启动进 Windows
+*   按下 Windows 徽标键和 R 键打开 "运行" 对话框
+*   键入 "msinfo32" 并回车确认
+*   在系统信息窗口中,选择"系统摘要",查看右侧的"BIOS 模式".
+*   对于 UEFI-GPT 模式,这里的值为 "UEFI",对于 BIOS-MBR 模式,这里的值为 "Legacy".
 
-### BIOS Systems
+一般的, Windows 强制通过固件类型确定硬盘分区表.这是由 Windows 安装程序限定的(例如以 UEFI 模式启动的安装程序只能安装在 GPT 硬盘上,以 Legacy BIOS 模式启动的安装程序只能安装在 MBR (也叫做 msdos) 分区表的硬盘上).目前官方 (Microsoft) 没有在 UEFI-MBR 或 BIOS-GPT 上运行 Windows 的方法.因此 Windows 只支持 UEFI-GPT 或 BIOS-MBR 启动.
 
-#### Using a Linux boot loader
+尽管 Linux 内核并不强制要求这些,但是考虑到 Windows 的限制和启动管理器的需要,如果需要在一个硬盘上启动 Windows 和 Linux 的话,建议用户选择 Windows 可用的分区组合,例如 UEFI-GPT 或 BIOS-MBR,参阅 [http://support.microsoft.com/kb/2581408](http://support.microsoft.com/kb/2581408) 获得更多信息.
 
-You may use [GRUB](/index.php/GRUB#Dual-booting "GRUB") or [Syslinux](/index.php/Syslinux#Chainloading "Syslinux").
+### 安装介质限制
 
-#### Using Windows boot loader
+某些 Intel Atom SoC 平板 (Clover trail / Bay Trail) 因为 Microsoft 对 Connected Standby 的要求只提供 IA32 UEFI 固件支持而不包含 Legacy BIOS 支持 (和大多数 x86_64 UEFI 系统不同).Arch Linux 官方安装介质和 Archboot (2014/02 以前) 并不提供 IA32-UEFI 启动支持,因此在这种设备上无法通过 ArchISO 启动安装.
 
-With this setup the Windows bootloader loads GRUB which then boots Arch.
+### UEFI / BIOS 启动管理器限制
 
-##### Windows 7/8 boot loader
+大部分 Linux 的启动管理器不支持运行或链式加载另一种固件的启动管理器. 因此安装在 UEFI 模式下的 Arch Linux 的启动管理器无法加载位于另一个 BIOS-MBR 硬盘上的 Windows .安装在 BIOS 模式下的 Arch Linux 的启动管理器也无法加载位于另一个 UEFI-GPT 硬盘上的 Windows.
 
-The following section contains excerpts from [http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/](http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/).
+例外是安装在 Apple Mac 上的 UEFI 模式的 GRUB (通过 **apploloader** 实现引导 BIOS 系统,不能用于非 Apple 设备上),和 rEFInd (技术上支持 UEFI 引导 BIOS 系统,但是作者 Rod Smith 称[不能用于非 Apple UEFI 上](http://rodsbooks.com/refind/using.html#legacy).)
 
-The remainder of the setup is similar to a typical installation. Some documents state that the partition being loaded by the Windows boot loader must be a primary partition but I have used this without problem on an extended partition.
+另外安装在 BIOS-GPT 上的 Arch 可以引导另一块 BIOS-MBR 硬盘上的 Windows (如果所选用的启动管理器支持链式加载另一块硬盘上的启动扇区).
+
+**Note:** 对于同一个硬盘上安装的 Arch Linux 和 Windows ,Arch 要使用和 Windows 一致的启动模式和分区组合.
+
+### UEFI 安全启动
+
+所有预装 Windows 8/8.1/10 并以 UEFI 模式启动的电脑默认开启安全启动. Arch Linux 的安装媒体可以在安全启动打开的状态下启动,参见[Secure Boot#Booting archiso](/index.php/Secure_Boot#Booting_archiso "Secure Boot").
+
+建议在启动 Arch Linux 之前手动从 UEFI 固件设置中关闭安全启动,Windows 应该仍能启动.唯一的要求是能访问 UEFI 固件设置并且能够从固件设置中禁用安全启动 (因为 Microsoft 禁止在预装 Windows 8/8.1/10 的电脑中远程关闭或者在系统中关闭安全启动).
+
+### 快速启动
+
+快速启动是 Windows 8 (及更新的版本) 中的一项功能,通过休眠来提高启动速度.但是如果你休眠 Windows 然后进入另一个系统修改文件,可能会造成数据丢失.即使你不打算在双系统中共享文件,这也容易损坏 EFI 系统分区.因此你应该在安装 Linux 前禁用快速启动:
+
+*   [Windows 8](http://www.eightforums.com/tutorials/6320-fast-startup-turn-off-windows-8-a.html)
+*   [Windows 10](http://www.tenforums.com/tutorials/4189-fast-startup-turn-off-windows-10-a.html),
+
+[ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) 通过 [safe-guard](http://sourceforge.net/p/ntfs-3g/ntfs-3g/ci/559270a8f67c77a7ce51246c23d2b2837bcff0c9/) 阻止以读写方式挂载休眠中的硬盘,但 Linux 内核中的驱动并不能保证这一点.
+
+### Windows 中的文件名限制
+
+Windows 中的文件名长度最长为 [260 字符](http://blogs.msdn.com/b/bclteam/archive/2007/02/13/long-paths-in-net-part-1-of-3-kim-hamilton.aspx).
+
+另外 Windows [对文件名中包含的字符也有限制](http://msdn.microsoft.com/en-us/library/aa365247(VS.85).aspx#naming_conventions), Windows 中文件名中不能包含:
+
+*   < (小于号)
+*   > (大于号)
+*   : (冒号)
+*   " (双引号)
+*   / (斜线)
+*   \ (反斜线)
+*   | (管道符号)
+*   ? (问号)
+*   * (星号)
+
+这是 Windows 而非 NTFS 的限制,因此其它系统依然可以在 NTFS 文件系统中创建文件名中带有这些符号的文件,但 Windows 无法识别这些文件. 运行 `chkdsk` 时也可能删除它们,这是一个引发数据丢失的风险.
+
+**NTFS-3G** 可以通过 [windows_filenames](http://www.tuxera.com/community/ntfs-3g-manual/#4) 挂载选项遵循这些限制 (参阅 [fstab](/index.php/Fstab "Fstab")).
+
+## 安装
+
+推荐先安装 Windows 再安装 Linux , 安装 Windows 时只使用硬盘的部分空间建立需要的分区.在 Windows 安装完毕后,进入 Linux 安装环境中后你可以对硬盘未分配的空间进行分区而不改动 Windows 分区. 对于 UEFI 系统,可以使用 Windows 安装时建立的 EFI 系统分区.
+
+### BIOS 系统
+
+#### 使用 Linux 启动管理器
+
+你可以使用 [GRUB](/index.php/GRUB#Dual-booting "GRUB") 或 [Syslinux](/index.php/Syslinux#Chainloading "Syslinux").
+
+#### 使用 Windows 启动管理器
+
+需要设置 Windows 启动管理器使它加载另一个启动管理器 (例如 GRUB ),然后启动 Arch Linux.
+
+##### Windows Vista/7/8/8.1/10 的启动管理器
+
+下面的内容摘录自 [http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/](http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/).
+
+In order to have the Windows boot loader see the Linux partition, one of the Linux partitions created needs to be FAT32 (in this case, `/dev/sda3`). The remainder of the setup is similar to a typical installation. Some documents state that the partition being loaded by the Windows boot loader must be a primary partition but I have used this without problem on an extended partition.
 
 *   When installing the GRUB boot loader, install it on your `/boot` partition rather than the MBR.
     **Note:** For instance, my `/boot` partition is `/dev/sda5`. So I installed GRUB at `/dev/sda5` instead of `/dev/sda`. For help on doing this, see [GRUB#Install to partition or partitionless disk](/index.php/GRUB#Install_to_partition_or_partitionless_disk "GRUB")
@@ -86,7 +158,7 @@ bcdedit /create /d “Linux” /application BOOTSECTOR
 
 ```
 
-*   BCDEdit will return an alphanumeric identifier for this entry that I will refer to as {ID} in the remaining steps. You’ll need to replace {ID} by the actual returned identifier. An example of {ID} is {d7294d4e-9837-11de-99ac-f3f3a79e3e93}.
+*   BCDEdit will return an alphanumeric identifier for this entry that I will refer to as {ID} in the remaining steps. You will need to replace {ID} by the actual returned identifier. An example of {ID} is {d7294d4e-9837-11de-99ac-f3f3a79e3e93}.
 
 ```
 bcdedit /set {ID} device partition=c:
@@ -98,26 +170,41 @@ bcdedit /timeout 30
 
 Reboot and enjoy. In my case I'm using the Windows boot loader so that I can map my Dell Precision M4500's second power button to boot Linux instead of Windows.
 
-##### Windows 2000/XP boot loader
+### UEFI 系统
 
-For information on this method see [http://www.geocities.com/epark/linux/grub-w2k-HOWTO.html](http://www.geocities.com/epark/linux/grub-w2k-HOWTO.html). I do not believe there are any distinct advantages of this method over the Linux boot loader; you will still need a `/boot` partition, and this one is arguably more difficult to set up.
+在你安装好 Windows 以后,你的硬盘上应该会有这些分区 :
 
-### UEFI Systems
+*   格式化成 `FAT32` 的 EFI 系统分区,分区类型为 `ef00 EFI System`,
+*   一个分区类型为 `0c01 Microsoft reserved` 的 Microsoft 保留分区, 一般大小为 `128 MiB`,
+*   一个 `NTFS` 文件系统 ,分区类型为 `0700 Microsoft basic data` (Microsoft 基本数据) 的分区 ,这是 Windows 中的 `C:\`,
+*   可能还会有与 C:\ 相同类型的分区,一般为恢复分区 .
 
-Both [Gummiboot](/index.php/Gummiboot "Gummiboot") and [rEFInd](/index.php/REFInd "REFInd") autodetect **Windows Boot Manager** `\EFI\Microsoft\Boot\bootmgfw.efi` and show it in their boot menu, so there is no manual config required.
+用 Windows 中的磁盘分区工具(例如"磁盘管理"),检查这些分区的位置和卷标.这会帮你理解哪些分区对 Windows 而言是重要的. 简而言之:前三个分区(EFI 系统分区,Microsoft 保留分区,和 Windows 所在的分区)很重要,不要删除它们.
 
-For [GRUB](/index.php/GRUB "GRUB")(2) follow [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB").
+你可以根据需要 [进行分区](/index.php/Partitioning "Partitioning"), 记住如果有就没必要创建新的 EFI 系统分区.如果需要,[挂载](/index.php/Mount "Mount") 现有的 EFI 系统分区到`/boot`, 安装 [bootloader](/index.php/Bootloader "Bootloader") ,并把它的信息写入到 `/etc/[fstab](/index.php/Fstab "Fstab")`.
 
-Syslinux (as of version 6.01) and ELILO do not support chainloading other EFI applications, so they cannot be used to chainload `\EFI\Microsoft\Boot\bootmgfw.efi` .
+选择一个合适的启动管理器, [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 和 [rEFInd](/index.php/REFInd "REFInd") 可以自动检测 *Windows Boot Manager* (`\EFI\Microsoft\Boot\bootmgfw.efi`) 并为它添加启动项.
 
-Computers that come with newer versions of Windows often have [secure boot](/index.php/UEFI#Secure_Boot "UEFI") enabled. You will need to take extra steps to either disable secure boot or to make your installation media compatible with secure boot.
+[GRUB](/index.php/GRUB "GRUB") 用户请参阅 [GRUB#Windows installed in UEFI-GPT Mode menu entry](/index.php/GRUB#Windows_installed_in_UEFI-GPT_Mode_menu_entry "GRUB"). Syslinux (version 6.02 和 6.03-pre9) 和 ELILO 不支持链式加载 EFI 可执行文件,所以不能引导 `\EFI\Microsoft\Boot\bootmgfw.efi`.
+
+对于打开 [安全启动](/index.php/Secure_Boot "Secure Boot") 的电脑,你可能需要更多的步骤(关闭安全启动或是使安装介质支持安全启动,参见前面的链接).
+
+### 疑难解答
+
+#### Couldn't create a new partition or locate an existing one (无法创建或者定位分区)
+
+Windows 的安装介质应该格式化为与硬盘分区表相同的模式,见上文 [#Windows UEFI 和 BIOS 启动限制](#Windows_UEFI_.E5.92.8C_BIOS_.E5.90.AF.E5.8A.A8.E9.99.90.E5.88.B6).
+
+#### 安装 Windows 后无法再引导 Linux
+
+参阅 [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_order "UEFI").
 
 ## 时间标准
 
-*   建议：将 Arch Linux 和 Windows 皆设置为UTC。需要[修改Windows注册表](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC "Time (简体中文)")。另：记得关闭Windows的在线时间校准以防硬件时间被设为*localtime*。若需同步网络时间(NTP sync)，请在Arch Linux上安装[ntpd](/index.php/Ntpd "Ntpd")。
+*   推荐: 参照 [Time#UTC in Windows](/index.php/Time#UTC_in_Windows "Time") 将 Windows 和 Arch 的硬件时钟设置为 UTC,并停用 Windows 的自动更新时间服务 (因为 Windows 会重新成默认的 *localtime*).
 
-*   不建议：将Arch Linux的硬件时钟模式设为*localtime*并禁用任何时钟同步服务（如`ntpd.service`）。这将会使Windows检查硬件时间的正确性，并且你需要在一年中至少启动Windows两次(分别在春季与秋季)以正确应用[夏令时](https://en.wikipedia.org/wiki/Daylight_savings_time "wikipedia:Daylight savings time")。So please **don't** ask on the forums why the clock is one hour behind or ahead if you usually go for days or weeks without booting into Windows（所以请不要忘记启动Windows而在论坛问为什麼时钟会快/慢一个小时）。}}
+*   不推荐: 设置 Arch Linux 的硬件时钟为 *localtime* 并停用所有时间同步关联的服务,例如 [NTPd](/index.php/NTPd "NTPd") . 这会让 Windows 接管硬件时钟设置,因此你应该至少每年启动两次 Windows (例如当你所在的地区应用夏令时,在每年的春季和秋季启动一次). 同时,如果你这么做,就别在论坛里问为什么时钟慢了一个小时之类的问题了(特别是你有些时候没启动 Windows 的情况下).
 
-## See also
+## 另见
 
 *   [Booting Windows from a desktop shortcut](https://bbs.archlinux.org/viewtopic.php?id=140049)

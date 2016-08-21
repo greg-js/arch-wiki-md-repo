@@ -700,7 +700,7 @@ If you use a Linux kernel < 3.17, you have to modprobe `xt_LOG` to enable loggin
 
 ## See also
 
-*   [netfilter nftables wiki](http://people.netfilter.org/wiki-nftables/index.php/)
+*   [netfilter nftables wiki](https://wiki.nftables.org/)
 *   [First release of nftables](https://lwn.net/Articles/324251/)
 *   [nftables quick howto](https://home.regit.org/netfilter-en/nftables-quick-howto/)
 *   [The return of nftables](https://lwn.net/Articles/564095/)

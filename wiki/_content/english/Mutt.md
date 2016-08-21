@@ -1089,11 +1089,7 @@ macro index \' "<tag-pattern>~R !~D !~F<enter>\
 
 ### Mutt-Sidebar
 
-The vanilla Mutt does not feature a sidebar unlike most MUAs. If you miss it, you can install [mutt-sidebar](https://aur.archlinux.org/packages/mutt-sidebar/) which adds a list of folders on the left side of the Mutt window.
-
-For a while there has been several different patches for the sidebar. The [NeoMutt](http://www.neomutt.org/) project maintains the most current patch. For more documentation see [there](http://www.neomutt.org/feature/sidebar/). Note that the patch also updates the `muttrc` man page, so have a look at the `sidebar_*` sections.
-
-You can choose to display the sidebar on startup, or to prompt it manually with a key:
+A sidebar is included by default in Arch. You can choose to display the sidebar on startup, or to prompt it manually with a key:
 
 ```
 set sidebar_visible = yes

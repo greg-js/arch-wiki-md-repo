@@ -25,7 +25,7 @@
 
 ## Installation
 
-Install [consolekit](https://aur.archlinux.org/packages/consolekit/) and [polkit-consolekit](https://aur.archlinux.org/packages/polkit-consolekit/) from the [AUR](/index.php/AUR "AUR").
+Install [consolekit-git](https://aur.archlinux.org/packages/consolekit-git/) and [polkit-consolekit](https://aur.archlinux.org/packages/polkit-consolekit/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

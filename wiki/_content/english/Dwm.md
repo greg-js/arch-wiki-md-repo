@@ -180,15 +180,17 @@ exec dwm
 To do this, conky needs to be told to output text to the console only. The following is a sample conkyrc for a dual core CPU, displaying several usage statistics:
 
 ```
-out_to_console yes
-out_to_x no
-background no
-update_interval 2
-total_run_times 0
-use_spacer none
-
-TEXT
-$mpd_smart :: ${cpu cpu1}% / ${cpu cpu2}%  ${loadavg 1} ${loadavg 2 3} :: ${acpitemp}c :: $memperc% ($mem) :: ${downspeed eth0}K/s ${upspeed eth0}K/s :: ${time %a %b %d %I:%M%P}
+conky.config = {
+out_to_console = true,
+out_to_x = false,
+background = false,
+update_interval = 2,
+total_run_times = 0,
+use_spacer = 'none',
+};
+conky.text = [[
+$mpd_smart :: ${cpu cpu1}% / ${cpu cpu2}%  ${loadavg 1} ${loadavg 2 3} :: ${acpitemp}c :: $memperc% ($mem) :: ${downspeed eth0}K/s ${upspeed eth0}K/s :: ${time %a %b %d %I:%M%P}
+]];
 
 ```
 

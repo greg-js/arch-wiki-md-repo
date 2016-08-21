@@ -43,7 +43,7 @@ launchbar
 
 ```
 
-Next, you must edit the config file for bmpanel2, usually located at ~/.config/bmpanel2/bmpanel2rc. For each entry, you must provide the command to execute along with an icon. Icons are usually located at /usr/share/icons. An example configuration is given below:
+Next, you must edit the config file for bmpanel2, usually located at ~/.config/bmpanel2/bmpanel2rc. For each entry, you must provide the command to execute along with an icon. NOTE: icons must be png files. An example configuration is given below:
 
 ```
 theme xsocam_dark

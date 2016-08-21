@@ -769,7 +769,7 @@ end.
 	A high-level, general-purpose, interpreted, dynamic programming language.
 
 ```
-#!/usr/bin/perl
+#!/usr/bin/env perl
 print "Arch is the best!
 ";
 

@@ -16,7 +16,9 @@
 
 [Install](/index.php/Install "Install") [snapd](https://www.archlinux.org/packages/?name=snapd) from the official repositories.
 
-Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages. Note that [snap-confine](https://github.com/snapcore/snap-confine) is built with the `--disable-apparmor` option; full confinement relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel and related profile for the snap.
+Installing it will install the `snapd` daemon as well as *snap-confine*, which mounts and launches snap packages.
+
+**Warning:** [snap-confine](https://github.com/snapcore/snap-confine) is built with the `--disable-apparmor` option; full confinement relies on an [AppArmor](/index.php/AppArmor "AppArmor") enabled kernel with Ubuntu's [Linux 4.4 patchset](http://archive.ubuntu.com/ubuntu/pool/main/l/linux/linux_4.4.0-21.37.diff.gz) applied and a related profile for the snap.
 
 **Tip:** `snapd` installs a script in `/etc/profile.d/` to export the paths of binaries installed with the snapd package and desktop entries. Reboot once to make this change take effect.
 

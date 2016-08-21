@@ -174,3 +174,4 @@ See also [Bridging with a wireless NIC](https://wiki.debian.org/BridgeNetworkCon
 
 *   [Official documentation for bridge-utils](http://www.linuxfoundation.org/collaborate/workgroups/networking/bridge)
 *   [Official documentation for iproute2](http://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2)
+*   [ebtables/iptables interaction on a Linux-based bridge](http://ebtables.netfilter.org/br_fw_ia/br_fw_ia.html)
