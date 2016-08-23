@@ -86,6 +86,6 @@ StoneSense is an isometric world visualizer for Dwarf Fortress, and can be insta
 
 If you choose to install StoneSense manually instead of using the AUR package, you'll need the following dependencies:
 
-*   [lib32-libjpeg6-turbo](https://aur.archlinux.org/packages/lib32-libjpeg6-turbo/)
-*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)
+*   [lib32-libjpeg6-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg6-turbo)
+*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
 *   [lib32-allegro](https://aur.archlinux.org/packages/lib32-allegro/)

@@ -34,7 +34,7 @@ Paquetes oficiales adicionales no incluidos en [mate](https://www.archlinux.org/
 
 *   **GNOME Main Menu** — Miniaplicación para el panel de MATE similar al menu principal tradicional, pero con algunas adiciones.
 
-	[http://mate-desktop.org](http://mate-desktop.org) || [gnome-main-menu](https://www.archlinux.org/packages/?name=gnome-main-menu)
+	[http://mate-desktop.org](http://mate-desktop.org) || [gnome-main-menu](https://aur.archlinux.org/packages/gnome-main-menu/)
 
 *   **MATE Netbook** — Miniaplicación para el panel de MATE que podría ser útil para propietarios de dispositivos de pantalla pequeña, como una Netbook. La miniaplicación maximiza automáticamente todas las ventanas y proporciona una miniaplicación para cambiar aplicaciones.
 
@@ -48,7 +48,7 @@ También hay otras aplicaciones de MATE no oficiales que son mantenidas por la c
 
 *   **Lock Keys Applet** — Miniaplicación para el panel de MATE que muestra cuales de las teclas CapsLock, NumLock y ScrollLock están encendidas y cuales están apagadas.
 
-	[http://www.zavedil.com/mate-lock-keys-applet/](http://www.zavedil.com/mate-lock-keys-applet/) || [mate-applet-lockkeys](https://www.archlinux.org/packages/?name=mate-applet-lockkeys)
+	[http://www.zavedil.com/mate-lock-keys-applet/](http://www.zavedil.com/mate-lock-keys-applet/) || [mate-applet-lockkeys](https://aur.archlinux.org/packages/mate-applet-lockkeys/)
 
 *   **Online Radio Applet** — Miniaplicación para el panel de MATE que deja reproducir tu radio favorita en linea con un solo clic.
 
@@ -56,11 +56,11 @@ También hay otras aplicaciones de MATE no oficiales que son mantenidas por la c
 
 *   **MATE Color Manager** — Aplicación de gestión de color para MATE.
 
-	[https://github.com/NiceandGently/mate-color-manager](https://github.com/NiceandGently/mate-color-manager) || [mate-color-manager](https://www.archlinux.org/packages/?name=mate-color-manager)
+	[https://github.com/NiceandGently/mate-color-manager](https://github.com/NiceandGently/mate-color-manager) || [mate-color-manager](https://aur.archlinux.org/packages/mate-color-manager/)
 
 *   **MATE Disk Utility** — Aplicación de gestión de disco para MATE.
 
-	[https://github.com/NiceandGently/mate-disk-utility](https://github.com/NiceandGently/mate-disk-utility) || [mate-disk-utility](https://www.archlinux.org/packages/?name=mate-disk-utility)
+	[https://github.com/NiceandGently/mate-disk-utility](https://github.com/NiceandGently/mate-disk-utility) || [mate-disk-utility](https://aur.archlinux.org/packages/mate-disk-utility/)
 
 *   **MATE Screensaver Hacks** — Habilita salvapantallas de xscreensaver en MATE.
 

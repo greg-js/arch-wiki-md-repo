@@ -64,10 +64,23 @@ To enable the device for paging:
 
 To enable this swap partition on boot, add an entry to [fstab](/index.php/Fstab "Fstab"):
 
- `/etc/fstab`  `/dev/sda2 none swap defaults 0 0` 
+```
+UUID=<UUID> none swap defaults 0 0
+
+```
+
+where the <UUID> is taken from the command:
+
+```
+lsblk -no UUID /dev/sda2
+
+```
+
+**Tip:** UUIDs and LABELs should be favoured over the use of the device names given by the kernel as the device order could change in the future. See: [fstab](/index.php/Fstab "Fstab").
+
 **Note:**
 
-*   Adding an entry to fstab is optional in most cases with systemd. See the next subsection.
+*   The fstab-entry is optional if the swap partition is located on a device using GPT. See the next subsection.
 *   If using an SSD with [TRIM](/index.php/TRIM "TRIM") support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d` or `--discard` parameter achieves the same. See `man 8 swapon` for details.
 
 **Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
@@ -166,34 +179,14 @@ Thanks to the modularity offered by Linux, we can have multiple swap partitions 
 
 To add a USB device to swap, first take a USB flash drive and partition it for swap as described in [#Swap partition](#Swap_partition).
 
-Next open `/etc/fstab`.
-
-Now add the following entry, just under the current swap entry, which take the current swap partition over the new USB one
-
-```
-UUID=... none swap defaults,pri=10 0 0
-
-```
-
-where the UUID is taken from the command:
-
-```
-ls -l /dev/disk/by-uuid/ | grep /dev/sdc1
-
-```
-
-Just replace sdc1 with your new USB swap partition. `sdb1`
-
-**Tip:** The UUID is used because when other devices are attached to the computer, the device order could be changed
-
-Last, add
+Next open `/etc/fstab` and add
 
 ```
 pri=0
 
 ```
 
-in the *original* swap entry so that the USB swap partition will take priority over the old swap partition.
+to the mount options of the *original* swap entry so that the USB swap partition will take priority over the old swap partition.
 
 This guide will work for other memory such as SD cards, etc.
 

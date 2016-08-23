@@ -11,7 +11,7 @@
 
 ## Installation
 
-To install kexec, [install](/index.php/Install "Install") the [kexec-tools](https://www.archlinux.org/packages/?name=kexec-tools) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [kexec-tools](https://www.archlinux.org/packages/?name=kexec-tools) package.
 
 ## Rebooting using kexec
 

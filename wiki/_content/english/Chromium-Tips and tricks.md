@@ -223,16 +223,17 @@ REMPORT=${2:-443}
 exec 6>&1
 exec > $REMHOST
 echo | openssl s_client -connect ${REMHOST}:${REMPORT} 2>&1 |sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p'
-certutil -d sql:$HOME/.pki/nssdb -A -t TC -n "$REMHOST" -i $REMHOST 
+certutil -d sql:$HOME/.pki/nssdb -A -t "P,," -n "$REMHOST" -i $REMHOST 
 exec 1>&6 6>&-
 
 ```
 
 Syntax is advertised in the commented lines.
 
-Reference:
+References:
 
 *   [http://blog.avirtualhome.com/adding-ssl-certificates-to-google-chrome-linux-ubuntu](http://blog.avirtualhome.com/adding-ssl-certificates-to-google-chrome-linux-ubuntu)
+*   [https://chromium.googlesource.com/chromium/src/+/master/docs/linux_cert_management.md](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_cert_management.md)
 
 #### Example 2: Using Firefox to isolate the certificate from TomatoUSB
 

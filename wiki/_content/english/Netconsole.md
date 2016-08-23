@@ -106,8 +106,11 @@ dmesg -n 8
 
 netconsole=6666@192.168.1.28/eth0,6666@192.168.1.19/00:13:32:20:r9:a5
 
-{{Note| MAC address is optional.}}
+```
 
+**Note:** MAC address is optional.
+
+```
 nc -l -u -p 6666 &
 nc -u 192.168.1.28 6666
 

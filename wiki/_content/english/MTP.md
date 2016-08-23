@@ -257,7 +257,7 @@ The [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) is available i
 With `lsusb` you can get information about your device where Bus and Device numbers can be used with `gvfs-mtp` and device ID for creating of an [udev](/index.php/Udev "Udev") rule.
 
 ```
-Bus **001** Device **007**: ID **0421:0661** Nokia Mobile Phones Lumia 920
+Bus **002** Device **018**: ID **04b7**:**88a9** Compal Electronics, Inc.
 (...)
 
 ```
@@ -269,7 +269,7 @@ Use *gvfs-mount*:
  `gvfs-mount -li | grep -e ^Volume -e activation_root` 
 ```
 Volume(0): MT65xx Android Phone
-  activation_root=mtp://[usb:002,018]/
+  activation_root=mtp://[usb:**002**,**018**]/
 ```
 
 Use *lsusb*:
@@ -308,11 +308,11 @@ Please report this VID/PID and the device model to the libmtp development team
 
 The workaround to make it shown in the file manager is to write an [udev](/index.php/Udev "Udev") rule for the device but it is no guaranty that you will be able to mount it with by using MTP connection.
 
-Use ID number that represents by pattern *vendorId*:*productID*,e.g. *0421*:*0661*, and make an udev rule by creating a configuration file
+Use ID number that represents by pattern **vendorId**:**productID**,e.g. **04b7**:**88a9**, and make an udev rule by creating a configuration file
 
  `/etc/udev/rules.d/51-android.rules` 
 ```
- ATTR{idVendor}=="0421", ATTR{idProduct}=="0661", SYMLINK+="libmtp",  MODE="660", ENV{ID_MTP_DEVICE}="1"
+SUBSYSTEM=="usb", ATTR{idVendor}=="04b7", ATTR{idProduct}=="88a9", MODE="0660", GROUP="uucp", ENV{ID_MTP_DEVICE}="1", SYMLINK+="libmtp"
 
 ```
 

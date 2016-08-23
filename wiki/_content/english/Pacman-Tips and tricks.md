@@ -440,7 +440,9 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 #### Synchronize pacman package cache using BitTorrent Sync
 
-[BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync") is a new way of synchronizing folder via network (it works in LAN and over the internet). It is peer-to-peer so you do not need to set up a server: follow the link for more information. How to share a pacman cache using BitTorrent Sync:
+[BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync") is a new way of synchronizing folder via network (it works in LAN and over the internet). It is peer-to-peer so you do not need to set up a server: follow the link for more information.
+
+How to share a pacman cache using BitTorrent Sync:
 
 *   First install the [btsync](https://aur.archlinux.org/packages/btsync/) package from the AUR on the machines you want to sync
 *   Follow the installation instructions of the AUR package or on the [BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync") wiki page
@@ -451,6 +453,8 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
     *   Add the folder on all the other machines using the same Secret to share the cached packages between all systems. Or, to set the first system as a master and the others as slaves, use the Read Only Secret. Be sure to point it to `/var/cache/pacman/pkg`
 
 Now the machines should connect and start synchronizing their cache. Pacman works as expected even during synchronization. The process of syncing is entirely automatic.
+
+**Note:** There is a free/libre alternative to bittorent Sync, called [Syncthing](/index.php/Syncthing "Syncthing"), which could be used here the same way as bittorent Sync.
 
 #### Preventing unwanted cache purges
 

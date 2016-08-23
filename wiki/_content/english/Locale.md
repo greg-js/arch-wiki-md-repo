@@ -16,7 +16,7 @@ Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and 
     *   [3.5 LC_ALL: troubleshooting](#LC_ALL:_troubleshooting)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 My terminal does not support UTF-8](#My_terminal_does_not_support_UTF-8)
-        *   [4.1.1 Gnome-terminal or rxvt-unicode does not support UTF-8](#Gnome-terminal_or_rxvt-unicode_does_not_support_UTF-8)
+        *   [4.1.1 Gnome-terminal or rxvt-unicode](#Gnome-terminal_or_rxvt-unicode)
     *   [4.2 My system is still using wrong language](#My_system_is_still_using_wrong_language)
 *   [5 See also](#See_also)
 
@@ -62,9 +62,16 @@ $ locale
 
 ```
 
-The locale to be used, chosen among the previously generated ones, is set in `locale.conf` files, each of which must contain a new-line separated list of environment variable assignments having the same format as output by *locale*.
+The locale to be used, chosen among the previously generated ones, is set in `locale.conf` files. Each of these files must contain a new-line separated list of [environment variable](/index.php/Environment_variable "Environment variable") assignments, having the same format as output by *locale*.
 
-To list available locales that can be used which have been previously generated do:
+To list available locales which have been previously generated, run:
+
+```
+$ localedef --list-archive
+
+```
+
+Alternatively, using [localectl(1)](http://man7.org/linux/man-pages/man1/localectl.1.html):
 
 ```
 $ localectl list-locales
@@ -73,20 +80,20 @@ $ localectl list-locales
 
 ### Setting the system locale
 
-To set the system locale use the *localectl* command, where *en_US.UTF-8* is from the **first column** of an uncommented entry in `/etc/locale.gen`.
+To set the system locale, write the `LANG` variable to `/etc/locale.conf`, where `en_US.UTF-8` belongs to the **first column** of an uncommented entry in `/etc/locale.gen`:
+
+ `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
+
+Alternatively, run:
 
 ```
 # localectl set-locale LANG=*en_US.UTF-8*
 
 ```
 
-**Note:** *localectl* cannot be used to set the system locale in the installation chroot environment. `/etc/locale.conf` must be edited manually as follows.
+See [#Variables](#Variables) and [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) for details.
 
-Alternatively, manually [edit](/index.php/Edit "Edit") or [create](/index.php/Create "Create") `/etc/locale.conf`:
-
- `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
-
-See [#Variables](#Variables), `man 5 locale.conf` and related for details.
+**Note:** *localectl* cannot be used to set the system locale in the installation chroot environment.
 
 ### Overriding system locale per user session
 
@@ -147,7 +154,7 @@ $ export LANG=C
 *   `LC_TELEPHONE`
 *   [LC_TIME](#LC_TIME:_date_and_time_format)
 
-Full meaning of the above `LC_*` variables can be found on manpage [locale(7)](https://www.mankier.com/7/locale), whereas details of their definition are described on [locale(5)](https://www.mankier.com/5/locale).
+Full meaning of the above `LC_*` variables can be found on manpage [locale(7)](http://man7.org/linux/man-pages/man7/locale.7.html), whereas details of their definition are described on [locale(5)](http://man7.org/linux/man-pages/man5/locale.5.html).
 
 ### LANG: default locale
 
@@ -200,9 +207,9 @@ The following lists some (not all) terminals that support UTF-8:
 *   [st](/index.php/St "St")
 *   [termite](/index.php/Termite "Termite")
 *   [VTE-based terminals](/index.php/List_of_applications/Utilities#VTE-based "List of applications/Utilities")
-*   [xterm](/index.php/Xterm "Xterm") - Must be run with the argument `-u8`. Alternatively run *uxterm*, which is provided by the package [xterm](https://www.archlinux.org/packages/?name=xterm).
+*   [xterm](/index.php/Xterm "Xterm") - Run with the argument `-u8` or configure resource `xterm*utf8: 2`.
 
-#### Gnome-terminal or rxvt-unicode does not support UTF-8
+#### Gnome-terminal or rxvt-unicode
 
 You need to launch these applications from a UTF-8 locale or they will drop UTF-8 support. Enable the `en_US.UTF-8` locale (or your local UTF-8 alternative) per the instructions above and set it as the default locale, then reboot.
 

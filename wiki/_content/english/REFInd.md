@@ -1,4 +1,4 @@
-*rEFInd* is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-longer-maintained [rEFIt](http://refit.sourceforge.net/) and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
+*rEFInd* is a [UEFI](/index.php/UEFI "UEFI") boot manager (boot loader). It is a fork of the no-longer-maintained [rEFIt](http://refit.sourceforge.net/) and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
 **Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
 
@@ -195,7 +195,7 @@ The *rEFInd* configuration `refind.conf` is located in the same directory as the
 
 ### Passing kernel parameters
 
-There are two methods for setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") that *rEFInd* will pass to the kernel. Keep in mind that the Linux Kernel initrd path is relative to the esp root.
+There are two methods for setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") that *rEFInd* will pass to the kernel.
 
 #### For kernels automatically detected by rEFInd
 
@@ -219,6 +219,8 @@ Alternatively, try running:
 Which will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf`. The script will only set up the most basic kernel parameters, so be sure to check the file it created for correctness.
 
 If you do not specify an `initrd=` parameter, *rEFInd* will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [Microcode](/index.php/Microcode "Microcode") passed before the initramfs: `... initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img`.
+
+**Warning:** `initrd` path is relative to the root of the file system on which the kernel resides.
 
 #### Manual boot stanzas
 

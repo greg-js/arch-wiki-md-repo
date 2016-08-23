@@ -320,7 +320,7 @@ $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4
 
 #### Курсоры мыши
 
-Смотрите на странице [Cursor themes](/index.php/Cursor_themes "Cursor themes"). Установить тему можно в меню *Settings > Mouse*.
+Смотрите на странице [Темы курсора](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0 "Темы курсора"). Установить тему можно в меню *Settings > Mouse*.
 
 #### Значки
 
@@ -542,7 +542,7 @@ xdg-settings: unknown desktop environment
 
 ### Цветовые схемы терминала
 
-Цветовые схемы терминала (цветовые палитры) могут быть настроены во вкладке Appearance в окне Preferences. Это цвета, доступные для многих консольных приложений, например [Emacs](/index.php/Emacs "Emacs"), [Vi](/index.php/Vi "Vi") и т.п. Их параметры хранятся для каждого пользователя отдельно в файле `~/.config/xfce4/terminal/terminalrc`. Существуют также многие другие готовые темы на ваш выбор. В ветке [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818) на форуме вы найдете сотни новых тем на любой вкус.
+Цветовые схемы терминала (цветовые палитры) могут быть настроены во вкладке Appearance в окне Preferences. Это цвета, доступные для многих консольных приложений, например [Emacs](/index.php/Emacs "Emacs"), [Vi](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") и т.п. Их параметры хранятся для каждого пользователя отдельно в файле `~/.config/xfce4/terminal/terminalrc`. Существуют также многие другие готовые темы на ваш выбор. В ветке [Terminal Colour Scheme Screenshots](https://bbs.archlinux.org/viewtopic.php?id=51818) на форуме вы найдете сотни новых тем на любой вкус.
 
 #### Изменение стандартной цветовой схемы
 

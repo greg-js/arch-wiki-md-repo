@@ -584,9 +584,9 @@ Both should work. You should notice that `/home/example/test.user` will be autom
 
 ## Configuring Shares
 
-Earlier we skipped configuration of the shares. Now that things are working, go back to `/etc/smb.conf`, and add the exports for the host that you want available on the windows network.
+Earlier we skipped configuration of the shares. Now that things are working, go back to `/etc/samba/smb.conf`, and add the exports for the host that you want available on the windows network.
 
- `/etc/smb.conf` 
+ `/etc/samba/smb.conf` 
 ```
 [MyShare]
   comment = Example Share

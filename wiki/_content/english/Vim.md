@@ -88,7 +88,7 @@ autocmd FileType python set breakindentopt=shift:4
 
 ### Using the mouse
 
-Vim has the ability to make use of the mouse, but it only works for certain terminals (on Linux it is [xterm](/index.php/Xterm "Xterm") and Linux console with [gpm](https://www.archlinux.org/packages/?name=gpm), see [Console mouse support](/index.php/Console_mouse_support "Console mouse support") for details).
+Vim has the ability to make use of the mouse, but it only works for certain terminals (on Linux it is [xterm](/index.php/Xterm "Xterm"), [konsole](https://www.archlinux.org/packages/?name=konsole) and Linux console with [gpm](https://www.archlinux.org/packages/?name=gpm), see [Console mouse support](/index.php/Console_mouse_support "Console mouse support") for details, also PuTTY).
 
 To enable this feature, add this line into `~/.vimrc`:
 
@@ -97,10 +97,7 @@ set mouse=a
 
 ```
 
-**Note:**
-
-*   This even works in PuTTY over SSH.
-*   In PuTTY, the normal highlight/copy behavior is changed because Vim enters visual mode when the mouse is used. To select text with the mouse normally, hold down the `Shift` key while selecting text.
+**Note:** The normal highlight/copy behavior has changed because Vim enters visual mode when the mouse is used. To select text with the mouse normally, hold down the `Shift` key while selecting text.
 
 ### Traverse line breaks with arrow keys
 

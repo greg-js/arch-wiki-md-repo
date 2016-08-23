@@ -60,16 +60,16 @@ MATE доступен в [официальных репозиториях](/inde
 
 Также существуют пакеты, которые не входят в группы [mate](https://www.archlinux.org/groups/x86_64/mate/) или [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/), т.к. вероятнее всего они будут нужны малому количеству пользователей.
 
-*   [gnome-main-menu](https://www.archlinux.org/packages/?name=gnome-main-menu) - Апллет для панели MATE, подобный классическому главному меню, но с небольшими изменениями.
+*   [gnome-main-menu](https://aur.archlinux.org/packages/gnome-main-menu/) - Апллет для панели MATE, подобный классическому главному меню, но с небольшими изменениями.
 *   [mate-netbook](https://www.archlinux.org/packages/?name=mate-netbook) - Апплет для панели MATE, который может быть полезен владельцем устройств с небольшим экраном, такими как нетбук. Апплет будет автоматически разворачивать все окна, и предоставляет возможность переключения между приложениями.
 
 Кроме того, имеется ряд приложений, которые разрабатываются и поддерживаются сообществом MATE, но которые не включены в группы [mate](https://www.archlinux.org/groups/x86_64/mate/) или [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/).
 
-*   [mate-applet-lockkeys](https://www.archlinux.org/packages/?name=mate-applet-lockkeys) - Апплет, показывающий состояние клавиш CapsLock, NumLock и ScrollLock.
+*   [mate-applet-lockkeys](https://aur.archlinux.org/packages/mate-applet-lockkeys/) - Апплет, показывающий состояние клавиш CapsLock, NumLock и ScrollLock.
 *   [mate-applet-streamer](https://www.archlinux.org/packages/?name=mate-applet-streamer) - Апплет, позволяющий включить любимое online-радио одним кликом.
-*   [mate-color-manager](https://www.archlinux.org/packages/?name=mate-color-manager) - Утилита управления цветом.
+*   [mate-color-manager](https://aur.archlinux.org/packages/mate-color-manager/) - Утилита управления цветом.
 *   [mate-accountsdialog](https://www.archlinux.org/packages/?name=mate-accountsdialog) - Приложение для просмотра и редактирования информации об аккаутнах.
-*   [mate-disk-utility](https://www.archlinux.org/packages/?name=mate-disk-utility) - Утилита управления дисками.
+*   [mate-disk-utility](https://aur.archlinux.org/packages/mate-disk-utility/) - Утилита управления дисками.
 *   [mate-screensaver-hacks](https://www.archlinux.org/packages/?name=mate-screensaver-hacks) - Хранители экрана xscreensaver для MATE.
 *   [mate-themes-extras](https://www.archlinux.org/packages/?name=mate-themes-extras) - Коллекция GTK2/3 тем для MATE.
 
@@ -315,7 +315,7 @@ fi
 
 ### Совместимость курсоров
 
-Вы можете обнаружить, что тема курсора, используемая в MATE непоследовательна. Например, курсор может меняться при перемещении между окнами разных приложений. Чтобы исправить это, установите тему курсора создав файл `index.theme`. Он определяет тему курсора в соответствии с спецификацией XDG. Для подробностей смотри статью [Cursor themes (Русский)#Используя файл index.theme (рекомендуется)](/index.php/Cursor_themes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_.D1.84.D0.B0.D0.B9.D0.BB_index.theme_.28.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D1.83.D0.B5.D1.82.D1.81.D1.8F.29 "Cursor themes (Русский)").
+Вы можете обнаружить, что тема курсора, используемая в MATE непоследовательна. Например, курсор может меняться при перемещении между окнами разных приложений. Чтобы исправить это, установите тему курсора создав файл `index.theme`. Он определяет тему курсора в соответствии с спецификацией XDG. Для подробностей смотри статью [Темы курсора#Спецификация XDG](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_XDG "Темы курсора").
 
 ### Отбрасывание панелью тени
 

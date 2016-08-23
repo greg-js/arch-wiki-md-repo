@@ -4,7 +4,7 @@ Hybrid-graphics is a concept involving two graphics cards on same computer. It w
 
 *   [1 About Hybrid-graphics Technologies](#About_Hybrid-graphics_Technologies)
 *   [2 First Generation Hybrid Model (Basic Switching)](#First_Generation_Hybrid_Model_.28Basic_Switching.29)
-*   [3 The Current Dynamic Switching Model](#The_Current_Dynamic_Switching_Model)
+*   [3 Dynamic Switching Model](#Dynamic_Switching_Model)
     *   [3.1 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
 
 ## About Hybrid-graphics Technologies
@@ -15,7 +15,7 @@ We call hybrid graphics a set of two graphic cards with different abilities and 
 
 ## First Generation Hybrid Model (Basic Switching)
 
-**Note:** Unless your notebook is from the last decade, it’s most likely using [dynamic switching](#The_Current_Dynamic_Switching_Model).
+**Note:** Unless your notebook is from the last decade, it’s most likely using [dynamic switching](#Dynamic_Switching_Model).
 
 The first generation of notebooks with hybrid graphics follow an approach that involves a two graphic card setup with a hardware multiplexer ([MUX](https://en.wikipedia.org/wiki/Multiplexer "wikipedia:Multiplexer")). It allows power save and low-end 3D rendering by using an Integrated Graphics Processor (IGP); or a major power consumption with 3D rendering performance using a Dedicated/Discrete Graphics Processor (DGP). This model makes the user choose (at boot time or at login time) within the two power/graphics profiles and is almost fixed through all the user session. The switch is done by a similar workflow:
 
@@ -27,7 +27,9 @@ The first generation of notebooks with hybrid graphics follow an approach that i
 
 This switch is somewhat rough and adds some blinks and black screens in laptops that could do it "on the fly". Later approaches made the transition a little more user-friendly.
 
-## The Current Dynamic Switching Model
+## Dynamic Switching Model
+
+**Note:** This model is utilized by most manufacturers as of 2016.
 
 Most of the new Hybrid-graphics technologies involve two graphic cards as the basic switching but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
 

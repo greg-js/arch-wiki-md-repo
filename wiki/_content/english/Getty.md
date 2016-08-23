@@ -1,15 +1,32 @@
 A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the generic name for a program which manages a terminal line and its connected terminal. Its purpose is to protect the system from unauthorized access. Generally, each getty process is started by [systemd](/index.php/Systemd "Systemd") and manages a single terminal line.
 
-[Agetty](https://www.archlinux.org/packages/?name=Agetty) is the default getty in Arch Linux. It modifies the TTY settings while waiting for a login so that the newlines are not translated to CR-LFs. This tends to cause a "staircase effect" for messages printed to the console. Agetty manages virtual consoles and six of these virtual consoles are provided by default in Arch Linux. They are usually accessible by pressing `Ctrl+Alt+F1` through `Ctrl+Alt+F6`. It is part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
-
 ## Contents
 
-*   [1 Add additional virtual consoles](#Add_additional_virtual_consoles)
-*   [2 Automatic login to virtual console](#Automatic_login_to_virtual_console)
-    *   [2.1 Virtual console](#Virtual_console)
-    *   [2.2 Serial console](#Serial_console)
-    *   [2.3 See also](#See_also)
-*   [3 Others](#Others)
+*   [1 Installation](#Installation)
+*   [2 Add additional virtual consoles](#Add_additional_virtual_consoles)
+*   [3 Automatic login to virtual console](#Automatic_login_to_virtual_console)
+    *   [3.1 Virtual console](#Virtual_console)
+    *   [3.2 Serial console](#Serial_console)
+*   [4 Have boot messages stay on tty1](#Have_boot_messages_stay_on_tty1)
+*   [5 See also](#See_also)
+
+## Installation
+
+*agetty* is the default getty in Arch Linux, as part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package. It modifies the TTY settings while waiting for a login so that the newlines are not translated to CR-LFs. This tends to cause a "staircase effect" for messages printed to the console. Agetty manages virtual consoles and six of these virtual consoles are provided by default in Arch Linux. They are usually accessible by pressing `Ctrl+Alt+F1` through `Ctrl+Alt+F6`.
+
+Alternatives include:
+
+*   **mingetty** — A minimal getty which allows automatic logins.
+
+	[https://aur.archlinux.org/packages/mingetty/](https://aur.archlinux.org/packages/mingetty/) || [mingetty](https://aur.archlinux.org/packages/mingetty/)
+
+*   **fbgetty** — A console getty like mingetty, which supports framebuffers.
+
+	[http://projects.meuh.org/fbgetty/](http://projects.meuh.org/fbgetty/) || [fbgetty](https://www.archlinux.org/packages/?name=fbgetty)
+
+*   **mgetty** — A versatile program to handle all aspects of a modem under Unix.
+
+	[http://mgetty.greenie.net/](http://mgetty.greenie.net/) || [mgetty](https://aur.archlinux.org/packages/mgetty/)
 
 ## Add additional virtual consoles
 
@@ -54,10 +71,23 @@ ExecStart=
 ExecStart=-/usr/bin/agetty --autologin *username* -s %I 115200,38400,9600 vt102
 ```
 
-### See also
+## Have boot messages stay on tty1
 
-*   [Change default runlevel/target to boot into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")
+By default, Arch has the `getty@tty1` service enabled. The service file already passes `--noclear`, which stops agetty from clearing the screen. However [systemd](/index.php/Systemd "Systemd") clears the screen before starting it. To disable this behavior, create `/etc/systemd/system/getty@tty1.service.d/noclear.conf`:
 
-## Others
+ `/etc/systemd/system/getty@tty1.service.d/noclear.conf` 
+```
+[Service]
+TTYVTDisallocate=no
+```
 
-See [List of applications#getty](/index.php/List_of_applications#getty "List of applications").
+This overrides only `TTYVTDisallocate` for *agetty* on TTY1, and leaves the global service file `/usr/lib/systemd/system/getty@.service` untouched. See [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
+
+**Note:**
+
+*   Make sure to remove `quiet` from the [kernel parameters](/index.php/Kernel_parameter "Kernel parameter").
+*   Late KMS starting may cause the first few boot messages to clear. See [KMS#Early KMS start](/index.php/KMS#Early_KMS_start "KMS").
+
+## See also
+
+*   [Systemd#Change_default_target_to_boot_into](/index.php/Systemd#Change_default_target_to_boot_into "Systemd")

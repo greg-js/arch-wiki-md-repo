@@ -115,7 +115,7 @@ This platform theme is enabled automatically in GNOME since version 3.20\. For o
 
 ### Using a GTK+ icon theme in Qt apps
 
-If running [KDE](/index.php/KDE "KDE"), install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under *System Settings > Application Style > GTK*.
+If running Plasma, install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under *System Settings > Application Style > GTK*.
 
 If you are not using [GNOME](/index.php/GNOME "GNOME"), run `gconf-editor`, look under *desktop > gnome > interface* for the `icon_theme` key and change it to your preference. As you are not using GNOME, it is possible that you will have to set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using [LightDM](/index.php/LightDM "LightDM"), in `/etc/environment`.
 

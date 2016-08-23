@@ -75,7 +75,7 @@ Optional:
 
 *   **Emerald Themes** — Extra themes for the Emerald window decorator.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
+	[https://github.com/compiz-reloaded/emerald-themes](https://github.com/compiz-reloaded/emerald-themes) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
 
 *   **Fusion Icon** — A tray applet for starting Compiz and switching window managers and decorators on the fly.
 
@@ -452,7 +452,7 @@ Alternatively, use GTK Window Decorator instead of Emerald or use a different wi
 
 ### Plugins in Compiz 0.8 are not present in Compiz 0.9
 
-Many plugins that were popular in Compiz 0.8 (such as the Animations Add-On plugin) were disabled in Compiz versions 0.9.8 and above in order to complete [OpenGL ES](https://en.wikipedia.org/wiki/OpenGL_ES "wikipedia:OpenGL ES") support. Disabled plugins that receive patches for this issue may well be re-enabled in future releases. For more information, see the [Compiz 0.9.8 release notes](https://launchpad.net/compiz/0.9.8/0.9.8.0).
+Some plugins that were popular in Compiz 0.8 were disabled in Compiz versions 0.9.8 and above in order to complete [OpenGL ES](https://en.wikipedia.org/wiki/OpenGL_ES "wikipedia:OpenGL ES") support. A few of the disabled plugins have since been re-enabled; for instance, the *Animations Add-On* plugin was re-enabled for the Compiz 0.9.13.0 release. Other currently-disabled plugins that receive patches for this issue may well be re-enabled in future releases. For more information, see the [Compiz 0.9.8 release notes](https://launchpad.net/compiz/0.9.8/0.9.8.0).
 
 Likewise, Compiz Plugins Unsupported (a package which includes plugins such as *Atlantis*) is unavailable in recent versions of Compiz 0.9\. It has not been developed for the Compiz 0.9 series since Compiz 0.9.5 and no longer builds successfully.
 

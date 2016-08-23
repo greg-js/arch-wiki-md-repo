@@ -19,7 +19,9 @@
 *   [4 备用方法](#.E5.A4.87.E7.94.A8.E6.96.B9.E6.B3.95)
     *   [4.1 NFS](#NFS)
     *   [4.2 NBD](#NBD)
-    *   [4.3 小内存](#.E5.B0.8F.E5.86.85.E5.AD.98)
+    *   [4.3 已有的 PXE 服务器](#.E5.B7.B2.E6.9C.89.E7.9A.84_PXE_.E6.9C.8D.E5.8A.A1.E5.99.A8)
+    *   [4.4 DHCP interface rename bug](#DHCP_interface_rename_bug)
+    *   [4.5 小内存](#.E5.B0.8F.E5.86.85.E5.AD.98)
 
 ## 准备
 
@@ -60,6 +62,7 @@ dhcp-range=192.168.0.50,192.168.0.150,12h
 dhcp-boot=/arch/boot/syslinux/lpxelinux.0
 dhcp-option-force=209,boot/syslinux/archiso.cfg
 dhcp-option-force=210,/arch/
+dhcp-option-force=66,192.168.0.1
 enable-tftp
 tftp-root=/mnt/archiso
 ```
@@ -74,7 +77,7 @@ tftp-root=/mnt/archiso
 
 然后用`/mnt/archiso`作文件根目录并启动 [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)：
 
- `# darkhttpd /mnt/archiso --no-keepalive` 
+ `# darkhttpd /mnt/archiso` 
 ```
 darkhttpd/1.8, copyright (c) 2003-2011 Emil Mikulic.
 listening on: http://0.0.0.0:80/
@@ -154,7 +157,7 @@ syslinux 菜单中暗含着其他方法：
 
 ### NFS
 
-您需搭建 [NFS 服务器](/index.php/NFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NFS (简体中文)")并将安装镜像的挂载点作为出口（export）。如果您按照[前面的小节](#Preparation)做了的话，出口就是 `/mnt/archiso`。服务器搭建起来后，往 `/etc/exports` 写入这行：
+您需搭建 [NFS 服务器](/index.php/NFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NFS (简体中文)")并将安装镜像的挂载点作为出口（export）。如果您按照[#准备](#.E5.87.86.E5.A4.87) 段落做了的话，出口就是 `/mnt/archiso`。服务器搭建起来后，往 `/etc/exports` 写入这行：
 
  `/etc/exports`  `/mnt/archiso 192.168.0.0/24(ro,no_subtree_check)` 
 
@@ -179,6 +182,31 @@ syslinux 菜单中暗含着其他方法：
     readonly = true
     exportname = /srv/archlinux-2013.02.01-dual.iso
 ```
+
+[启动](/index.php/Start "Start") 服务 `nbd`。
+
+### 已有的 PXE 服务器
+
+如果已经有了 syslinux 系统的 PXE 服务器(BIND+DHCPd+TFTPd), 可以将下面内容加入 pxelinux.cfg 配置文件，这样就可以用需要的方式启动 Arch。
+
+ `# vim /srv/tftp/arch.menu` 
+```
+LABEL 2
+        MENU LABEL Arch Linux x86_64
+        LINUX /path/to/extracted/Arch/ISO/arch/boot/x86_64/vmlinuz
+        INITRD /path/to/extracted/Arch/ISO/arch/boot/intel_ucode.img,/path/to/extracted/Arch/ISO/arch/boot/x86_64/archiso.img
+        APPEND archisobasedir=arch archiso_nfs_srv=${nfsserver}:/path/to/extracted/Arch/ISO/ ip=:::::eth0:dhcp
+        SYSAPPEND 3
+        TEXT HELP
+        Arch Linux 2016.03 x86_64
+        ENDTEXT
+```
+
+要启动 32 位系统，将 x86_64 替换为 i686。还可以将 archiso_nfs_srv 替换为其它支持的方式。为了在挂载安装介质前启动网络，需要使用 ip= 参数。
+
+### DHCP interface rename bug
+
+As of November 2015 there is [FS#36749](https://bugs.archlinux.org/task/36749) that causes default [predictable network interface renaming](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) to fail and then dhcp client to fail because of it. A workaround is to add the kernel boot parameter net.ifnames=0 to disable predictable interface names.
 
 ### 小内存
 

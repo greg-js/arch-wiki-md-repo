@@ -819,16 +819,9 @@ By default, Konsole sets $LANG to en_US.US-ASCII. If you haven't generated that 
 
 ### Multi-monitor issues
 
-The current release of KDE Plasma has several issues with multi-monitor setups, which can make Plasma unusable. See [these](https://bugs.kde.org/show_bug.cgi?id=356225) [reports](https://bugs.kde.org/show_bug.cgi?id=356720).
+The current release of KDE Plasma has several issues with multi-monitor setups, which can make Plasma unusable. See [KDE Bug 356225](https://bugs.kde.org/show_bug.cgi?id=356225).
 
-These bugs have been resolved in the upstream/git KDE Plasma builds, which can be installed from [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) or [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) - bear in mind that all packages will conflict with current versions - it is recommended to remove them first:
-
-```
- # pacman -R plasma-meta
-
-```
-
-The [unstable releases](/index.php/Official_repositories#kde-unstable "Official repositories") may also contain the required patches (not confirmed).
+These bugs have been resolved in the upstream/git KDE Plasma builds, which can be installed from [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) or [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) - bear in mind that all packages will conflict with current versions - it is recommended to [remove](/index.php/Remove "Remove") them first.
 
 ## Unstable releases
 

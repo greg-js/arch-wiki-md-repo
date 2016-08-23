@@ -157,33 +157,11 @@ sgdisk --clear --new 1:0:+${rootspace}MiB --new 2:0:+${swapspace}MiB --typecode 
 
 ### Convert from MBR to GPT
 
-One of the best features of gdisk (and sgdisk and cgdisk too) is its ability to convert MBR and BSD disklabels to GPT without data loss. Upon conversion, all the MBR primary partitions and the logical partitions become GPT partitions with the correct partition type GUIDs and Unique partition GUIDs created for each partition.
-
-Just open the MBR disk using gdisk and exit with "w" option to write the changes back to the disk (similar to fdisk) to convert the MBR disk to GPT. **Watch out for any error and fix them before writing any change to disk** because you may risk losing data. See [http://www.rodsbooks.com/gdisk/mbr2gpt.html](http://www.rodsbooks.com/gdisk/mbr2gpt.html) for more info. After conversion, the bootloaders will need to be reinstalled to configure them to boot from GPT.
-
-**Note:**
-
-*   Remember that GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR doesn't have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion, resize the final partition, or convert everything but the final partition.
-*   Keep in mind that if your Boot-Manager is GRUB, it needs a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). If your MBR Partitioning Layout isn't too old, there is a good chance that the first partition starts at sector 2048 for alignment reasons. That means at the beginning will be 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") of empty space where this bios-boot partition can be created. To do this, first do the mbr->gpt conversion with gdisk as described above. Afterwards, create a new partition with gdisk and manually specify its position to be sectors 34 - 2047, and set the `EF02` partition type.
-*   There are known corruption issues with the backup GPT table on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
-
-See also [fdisk#Convert between MBR and GPT](/index.php/Fdisk#Convert_between_MBR_and_GPT "Fdisk").
+See [fdisk#Convert between MBR and GPT](/index.php/Fdisk#Convert_between_MBR_and_GPT "Fdisk").
 
 ### Resize a partition
 
-This is generally applicable to reduce partition, so a new one can be created in that space. But it can be applied to growing a partition also. This example is for reducing a partition size.
-
-**Warning:** Backup your data before attempting this. Resizing a partition can possibly compromise the filesystem on it. Try this on a [virtual machine environment](/index.php/Category:Virtualization "Category:Virtualization"), before trying this on a live system.
-
-```
-# parted /dev/sdX
-p # take note of where the target partition ends
-resizepart <PART NUMBER> <NEW END SIZE>
-quit
-
-```
-
-After this, the filesystem on the reduced partition might need to be recreated. A new partition can be created in the new space at the end of the resized partition. The partition numbering will not be sequential. [Sorting](#Sort_the_partitions) can be used.
+See [GNU Parted#Resizing Partitions](/index.php/GNU_Parted#Resizing_Partitions "GNU Parted").
 
 ### Sort the partitions
 

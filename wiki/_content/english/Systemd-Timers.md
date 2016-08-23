@@ -86,10 +86,10 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-The format controlling `OnCalendar` events uses the following format when more specific dates and times are required: `DayOfWeek Year-Month-Day Hour:Minute:Second`. An asterisk may be used to specify any value and commas may be used to list possible values. In this example the service is run the first four days of each month at 12:00 PM, but *only* if that day is also on a Monday or a Tuesday. More information is available in `man systemd.time`.
+The format controlling `OnCalendar` events uses the following format when more specific dates and times are required: `DayOfWeek Year-Month-Day Hour:Minute:Second`. An asterisk may be used to specify any value and commas may be used to list possible values. Two values separated by `..` may be used to indicate a contiguous range. In this example the service is run the first four days of each month at 12:00 PM, but *only* if that day is also on a Monday or a Tuesday. More information is available in `man systemd.time`.
 
 ```
-OnCalendar=Mon,Tue *-*-01,02,03,04 12:00:00
+OnCalendar=Mon,Tue *-*-01..04 12:00:00
 
 ```
 

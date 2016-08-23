@@ -65,7 +65,7 @@ Gateway='192.168.0.1'
 DNS=('192.168.0.1')
 ```
 
-Before attempting to start the bridge, [disable](/index.php/Disable "Disable") the running network interface on the host as the bridge will replace it; this depends on how the host network is configured, common networking examples are shown in [Beginners'_guide#Network_configuration](/index.php/Beginners%27_guide#Network_configuration "Beginners' guide").
+Before attempting to start the bridge, [disable](/index.php/Disable "Disable") the running network interface on the host as the bridge will replace it; this depends on how the host network is configured, common networking examples are shown in [Beginners' guide#Network configuration](/index.php/Beginners%27_guide#Network_configuration "Beginners' guide").
 
 For users already using netctl to manage an adapter, simply switch-to it:
 

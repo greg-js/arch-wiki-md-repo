@@ -62,13 +62,26 @@ Make sure the server configuration for the certificates points to `/etc/letsencr
 
 If you use more than one domain or subdomains, the webroot has to be given for every domain. If no new webroot is given, the previous is taken.
 
-Management of this can be made much easier, if you map all http requests for `/.well-known/acme-challenge/` to a single folder, e.g. `/var/lib/letsencrypt`. For nginx you can achieve this by placing this location block within server blocks of sites you want to request certificates for:
+Management of this can be made much easier, if you map all http requests for `/.well-known/acme-challenge/` to a single folder, e.g. `/var/lib/letsencrypt`. For nginx you can achieve this by placing creating a file containing this location block then including it in server blocks of sites you want to request certificates for:
 
+ `/etc/nginx/letsencrypt.conf` 
 ```
 location /.well-known/acme-challenge {
     root /var/lib/letsencrypt;
     default_type "text/plain";
     try_files $uri =404;
+}
+
+```
+
+Then within the server block:
+
+ `/etc/nginx/servers/example.com` 
+```
+server {
+    ...
+
+    include letsencrypt.conf;
 }
 
 ```

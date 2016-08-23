@@ -8,9 +8,9 @@ This article is an introduction to building custom kernels from **kernel.org sou
     *   [1.3 Download the kernel source](#Download_the_kernel_source)
     *   [1.4 Unpack the kernel source](#Unpack_the_kernel_source)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Simple configuration](#Simple_configuration)
-        *   [2.1.1 Default Arch settings](#Default_Arch_settings)
-        *   [2.1.2 Generated configuration file](#Generated_configuration_file)
+    *   [2.1 Kernel configuration](#Kernel_configuration)
+        *   [2.1.1 A. Default Arch configuration](#A._Default_Arch_configuration)
+        *   [2.1.2 B. Generated configuration](#B._Generated_configuration)
     *   [2.2 Advanced configuration](#Advanced_configuration)
 *   [3 Compilation and installation](#Compilation_and_installation)
     *   [3.1 Compile the kernel](#Compile_the_kernel)
@@ -41,23 +41,26 @@ $ mkdir ~/kernelbuild
 
 ### Download the kernel source
 
-**Note:**
+**Warning:** [systemd](/index.php/Systemd "Systemd") requires kernel version 3.11 and above (4.2 and above for unified [cgroups](/index.php/Cgroups "Cgroups") hierarchy support). See `/usr/share/systemd/README` for more information.
 
-*   It is a good idea to verify the signature for any downloaded tarball to ensure that it is legitimate. See [kernel.org/signature](http://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures).
-*   [systemd](/index.php/Systemd "Systemd") requires kernel version 3.11 and above (4.2 and above for unified [cgroups](/index.php/Cgroups "Cgroups") hierarchy support). See `/usr/share/systemd/README` for more information.
+Download the kernel source from [http://www.kernel.org](http://www.kernel.org). This should be the [tarball](https://en.wikipedia.org/wiki/Tar_(computing) (`tar.xz`) file for your chosen kernel.
 
-Download the kernel source from [http://www.kernel.org](http://www.kernel.org). This should be the [tarball](https://en.wikipedia.org/wiki/Tar_(computing) (`tar.xz`) file for your chosen kernel. It can be downloaded by simply right-clicking the `tar.xz` link in your browser and selecting `Save Link As...`, or any other number of ways via alternative graphical or command-line tools that utilise HTTP, [FTP](/index.php/Ftp#FTP "Ftp"), [RSYNC](/index.php/Rsync "Rsync"), or [Git](/index.php/Git "Git"). In the following command-line example, [wget](https://www.archlinux.org/packages/?name=wget) has been installed and is used inside the `~/kernelbuild` directory to obtain kernel 3.18:
+It can be downloaded by simply right-clicking the `tar.xz` link in your browser and selecting `Save Link As...`, or any other number of ways via alternative graphical or command-line tools that utilise HTTP, [FTP](/index.php/Ftp#FTP "Ftp"), [RSYNC](/index.php/Rsync "Rsync"), or [Git](/index.php/Git "Git").
+
+**Note:** It is a good idea to verify the PGP signature of any downloaded kernel tarball. This ensures that it is legitimate and helps to build the Web of Trust. See [kernel.org/signature](http://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures).
+
+In the following command-line example, [wget](https://www.archlinux.org/packages/?name=wget) has been installed and is used inside the `~/kernelbuild` directory to obtain kernel 4.7.2:
 
 ```
 $ cd ~/kernelbuild
-$ wget [https://kernel.org/pub/linux/kernel/v3.x/linux-3.18.28.tar.xz](https://kernel.org/pub/linux/kernel/v3.x/linux-3.18.28.tar.xz)
+$ wget [https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.7.2.tar.xz](https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.7.2.tar.xz)
 
 ```
 
 If `wget` was not used inside the build directory, it will be necessary to move the tarball into it, e.g.
 
 ```
-$ mv /path/to/linux-3.18.28.tar.xz ~/kernelbuild/
+$ mv /path/to/linux-4.7.2.tar.xz ~/kernelbuild/
 
 ```
 
@@ -66,32 +69,36 @@ $ mv /path/to/linux-3.18.28.tar.xz ~/kernelbuild/
 Within the build directory, unpack the kernel tarball:
 
 ```
-$ tar -xvJf linux-3.18.28.tar.xz
+$ tar -xvJf linux-4.7.2.tar.xz
 
 ```
 
 To finalise the preparation, ensure that the kernel tree is absolutely clean; do not rely on the source tree being clean after unpacking. To do so, first change into the new kernel source directory created, and then run the `make mrproper` command:
 
 ```
-$ cd linux-3.18.28
+$ cd linux-4.7.2/
 $ make clean && make mrproper
 
 ```
 
 ## Configuration
 
-This is the most crucial step in customizing the kernel to reflect your computer's precise specifications. Kernel configuration is set in its `.config` file, which includes the use of the [Kernel modules](/index.php/Kernel_modules "Kernel modules"). By setting the options in `.config` properly, your kernel and computer will function most efficiently. Note that - again - it is not necessary to use the root account or root privileges for this stage.
+This is the most crucial step in customizing the default kernel to reflect your computer's precise specifications. Kernel configuration is set in its `.config` file, which includes the use of [Kernel modules](/index.php/Kernel_modules "Kernel modules").
 
-### Simple configuration
+**Note:** It is not necessary to use the root account or root privileges at this stage.
 
-**Note:** The custom kernel(s) being configured may support different features than the official Arch kernels. In this instance, you will be prompted to manually configure them. The configuration options should be `y` to enable, `n` to disable, and `m` to enable when necessary.
+By setting the options in `.config` properly, your kernel and computer will function most efficiently.
 
-Two options are available for ease and to save time:
+### Kernel configuration
 
-*   Use the default Arch settings from an official kernel (recommended)
-*   Generate a configuration file by the modules and settings in use by a running kernel *at that time*.
+You can choose from two options to set your kernel configuration:
 
-#### Default Arch settings
+*   A. Use the default Arch settings from an official kernel (recommended)
+*   B. Generate a configuration file which matches the currently running kernel's configuration. (useful if you want to customize your kernel settings further)
+
+**Note:** Especially if you choose option **B**, you will be prompted to manually configure your kernel with tools described in `Advanced Configuration`.
+
+#### A. Default Arch configuration
 
 This method will create a `.config` file for the custom kernel using the default Arch kernel settings. Ensure that a stock Arch kernel is running and use the following command inside the custom kernel source directory:
 
@@ -102,13 +109,15 @@ $ zcat /proc/config.gz > .config
 
 **Warning:** If you are compiling a kernel using your current `.config` file, do not forget to rename your kernel version in the `General Setup --->` option using one of the user interfaces listed later. If you skip this, there is the risk of overwriting one of your existing kernels by mistake.
 
-#### Generated configuration file
+#### B. Generated configuration
 
 **Tip:** Plug in all devices that you expect to use on the system if using this method.
 
 Since kernel 2.6.32, the `localmodconfig` command will create a `.config` file for the custom kernel by disabling any and all options not currently in use by the running kernel *at the time*. In other words, it will only enable the options currently being used.
 
-While this minimalist approach will result in a highly streamlined and efficient configuration tailored specifically for your system, there are drawbacks, such as the potential inability of the kernel to support new hardware, peripherals, or other features. Again, ensure that all devices you expect to use have been connected to (and detected by) your system before running the following command:
+While this minimalist approach will result in a highly streamlined and efficient configuration tailored specifically for your system, there are drawbacks, such as the potential inability of the kernel to support newer hardware, peripherals, or other features.
+
+**Note:** Again, ensure that all devices you expect to use have been connected to (and detected by) your system before running the following command
 
 ```
 $ make localmodconfig
@@ -119,16 +128,24 @@ $ make localmodconfig
 
 **Tip:** Unless you want to see a lot of extra messages when booting and shutting down with the custom kernel, it is a good idea to deactivate the relevant debugging options.
 
-There are several interfaces available to fine-tune the kernel configuration, which provide an alternative to otherwise spending hours manually configuring each and every one of the options available during compilation. They are:
+There are several tools available to fine-tune the kernel configuration, which provide an alternative to otherwise spending hours manually configuring each and every one of the options available during compilation.
 
-*   `make menuconfig`: Old command-line ncurses interface superceded by `nconfig`
+**Note:** Those tools listed below will provide you with three configuration options for each kernel feature: `y` for enabled, `n` for disabled, and `m` for enabled as kernel module (loaded when necessary).
+
+Those tools are:
+
+*   `make menuconfig`: Command-line ncurses interface superseded by `nconfig`
 *   `make nconfig`: Newer ncurses interface for the command-line
 *   `make xconfig`: User-friendly graphical interface that requires [packagekit-qt4](https://www.archlinux.org/packages/?name=packagekit-qt4) to be installed as a dependency. This is the recommended method - especially for less experienced users - as it is easier to navigate, and information about each option is also displayed.
 *   `make gconfig`: Graphical configuration similar to xconfig but using gtk.
 
 The chosen method should be run inside the kernel source directory, and all will either create a new `.config` file, or overwrite an existing one where present. All optional configurations will be automatically enabled, although any newer configuration options (i.e. with an older kernel `.config`) may not be automatically selected.
 
-Once the changes have been made save the `.config` file. It is a good idea to make a backup copy outside the source directory since you could be doing this multiple times until you get all the options right. If unsure, only change a few options between compilations. If you cannot boot your newly built kernel, see the list of necessary config items [here](https://www.archlinux.org/news/users-of-unofficial-kernels-must-enable-devtmpfs-support/). Running `$ lspci -k #` from liveCD lists names of kernel modules in use. Most importantly, you must maintain CGROUPS support. This is necessary for [systemd](/index.php/Systemd "Systemd").
+Once the changes have been made save the `.config` file. It is a good idea to make a backup copy outside the source directory. You may need to do this multiple times before you get all the options right.
+
+If unsure, only change a few options between compilations. If you cannot boot your newly built kernel, see the list of necessary config items [here](https://www.archlinux.org/news/users-of-unofficial-kernels-must-enable-devtmpfs-support/).
+
+Running `$ lspci -k #` from liveCD lists names of kernel modules in use. Most importantly, you must maintain CGROUPS support. This is necessary for [systemd](/index.php/Systemd "Systemd").
 
 ## Compilation and installation
 

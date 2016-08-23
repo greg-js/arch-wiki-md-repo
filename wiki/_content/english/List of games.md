@@ -944,6 +944,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[Play via Web Start](http://www.tropiceuro.com/play) || [http://www.tropiceuro.com](http://www.tropiceuro.com)
 
+*   **OpenRCT2** — Free reimplementation of the game "RollerCoaster Tycoon 2 (RCT2)" with multiplayer support. It requires a copy of the original game to play it.
+
+	[https://openrct2.org/](https://openrct2.org/) || [openrct2](https://aur.archlinux.org/packages/openrct2/)
+
 ## Visual novels
 
 *   **[Digital: A Love Story](https://en.wikipedia.org/wiki/Digital:_A_Love_Story "wikipedia:Digital: A Love Story")** — Computer mystery/romance set five minutes into the future of 1988.

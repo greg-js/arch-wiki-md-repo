@@ -121,7 +121,7 @@ $ ln -s /usr/share/icons/[name-of-cursor-theme] ~/.icons/default
 
 ```
 
-Для более подробной информации ознакомьтесь с более подробной страницей Arch WiKi [X11 Cursors](/index.php/X11_Cursors "X11 Cursors")
+Для более подробной информации ознакомьтесь с более подробной страницей Arch WiKi [Темы курсора](/index.php/%D0%A2%D0%B5%D0%BC%D1%8B_%D0%BA%D1%83%D1%80%D1%81%D0%BE%D1%80%D0%B0 "Темы курсора")
 
 ### Темы GTK
 

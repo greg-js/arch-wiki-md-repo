@@ -72,12 +72,7 @@ ping archlinux.org
 
 If no response is received, the connection is not working. If this is the case, you are probably experiencing [a bug Microsoft has acknowledged](https://support.microsoft.com/kb/974909). You can try installing the hotfix from the Knowledge Base page, or just wait a little while and try again.
 
-In general, you may now install Arch as you would on any other system. The Generation 1 VMs are BIOS-only (no UEFI), so you must follow the BIOS-specific instructions for the various [bootloaders](/index.php/Bootloaders "Bootloaders"). For GPT systems with GRUB, the steps are as follows:
-
-1.  During drive partitioning with `gdisk`, make the first partition on the root drive a 1MB partition of type `ef02 - BIOS boot partition`. Do not format this partition with any filesystem; leave it blank.
-2.  After the rest of the installation, install [grub](https://www.archlinux.org/packages/?name=grub): `# pacman -S grub`.
-3.  Install GRUB to the root drive: `# grub-install --target=i386-pc --recheck /dev/sd*X*`, where `*X*` is the actual drive letter.
-4.  Run `grub-mkconfig`: `# grub-mkconfig -o /boot/grub/grub.cfg`.
+In general, you may now install Arch as you would on any other system. The Generation 1 VMs are BIOS-only (no UEFI), so you must follow the BIOS-specific instructions for the various [bootloaders](/index.php/Bootloaders "Bootloaders").
 
 ## Post-installation
 

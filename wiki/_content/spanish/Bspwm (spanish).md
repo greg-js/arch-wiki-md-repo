@@ -1,4 +1,4 @@
-*bspwm* es un [gestor de ventanas tipo mosaico](http://es.wikipedia.org/wiki/Gestor_de_ventanas#Gestores_de_ventanas_de_mosaico) que organiza las ventanas en un [árbol binario completo](http://es.wikipedia.org/wiki/%C3%81rbol_binario). Tiene soporte para [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) y múltiples monitores, y se configura y controla a través de mensajes.
+*bspwm* es un [gestor de ventanas tipo mosaico](https://es.wikipedia.org/wiki/Gestor_de_ventanas#Gestores_de_ventanas_de_mosaico) que organiza las ventanas en un [árbol binario completo](https://es.wikipedia.org/wiki/%C3%81rbol_binario). Tiene soporte para [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) y múltiples monitores, y se configura y controla a través de mensajes.
 
 ## Contents
 
@@ -17,9 +17,9 @@
 
 ## Instalación
 
-[Instale](/index.php?title=Instale&action=edit&redlink=1 "Instale (page does not exist)") [bspwm](https://www.archlinux.org/packages/?name=bspwm) y [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), o las versiones en desarrollo: [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) y [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/). **sxhkd** es un simple servicio de combinaciones de teclas usables dentro de [X](http://es.wikipedia.org/wiki/Sistema_de_ventanas_X), requerido para comunicarse con bspwm y lanzar aplicaciones a elección.
+[Instale](/index.php?title=Instale&action=edit&redlink=1 "Instale (page does not exist)") [bspwm](https://www.archlinux.org/packages/?name=bspwm) y [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), o las versiones en desarrollo: [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) y [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/). **sxhkd** es un simple servicio de combinaciones de teclas usables dentro de [X](https://es.wikipedia.org/wiki/Sistema_de_ventanas_X), requerido para comunicarse con bspwm y lanzar aplicaciones a elección.
 
-Para comenzar bspwm al iniciar sesión, añada lo siguiente a `~/.xinitrc` o `~/.xprofile` (dependiendo de [cómo ha escogido iniciar X](http://wiki.archlinux.org/index.php/Xorg_(Espa%C3%B1ol)#Ejecuci.C3.B3n)):
+Para comenzar bspwm al iniciar sesión, añada lo siguiente a `~/.xinitrc` o `~/.xprofile` (dependiendo de [cómo ha escogido iniciar X](https://wiki.archlinux.org/index.php/Xorg_(Espa%C3%B1ol)#Ejecuci.C3.B3n)):
 
 ```
 sxhkd &
@@ -84,7 +84,7 @@ Aparte de los ejemplos de bspwmrc y de sxhkdrc, en la carpeta *examples* se encu
 
 El panel se ejecuta incluyendo la línea `panel &` en su bspwmrc.
 
-Para visualizar información del sistema en la barra de estado, se puede usar diversas [llamadas al sistema](http://es.wikipedia.org/wiki/Llamada_al_sistema). El siguiente ejemplo le enseñará a conseguir que su panel muestre el estado del volumen de audio:
+Para visualizar información del sistema en la barra de estado, se puede usar diversas [llamadas al sistema](https://es.wikipedia.org/wiki/Llamada_al_sistema). El siguiente ejemplo le enseñará a conseguir que su panel muestre el estado del volumen de audio:
 
 ```
 panel_volume()

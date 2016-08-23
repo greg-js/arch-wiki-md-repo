@@ -706,7 +706,7 @@ Recent versions of Skype allow you to change the theme via the Options menu. How
 
 **Note:** You may not have to install [lib32-gtk-engines](https://aur.archlinux.org/packages/lib32-gtk-engines/). First try if the following steps work for you if you only install *lib32-gtk2* and a GTK+2 theme respectively. See also the [forums](https://bbs.archlinux.org/viewtopic.php?pid=1200975#p1200975).
 
-Once installed, it will still not work unless you have a 32-bit version of GConf installed. You could build and install [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) if desired, but there is an easier workaround. First, create or edit `~/.gtkrc-2.0` so that it contains the following line:
+Once installed, it will still not work unless you have a 32-bit version of GConf installed. You could build and install [lib32-gconf](https://www.archlinux.org/packages/?name=lib32-gconf) if desired, but there is an easier workaround. First, create or edit `~/.gtkrc-2.0` so that it contains the following line:
 
 ```
 $ gtk-theme-name = "*My theme*"
@@ -857,12 +857,7 @@ $ echo *username* *password* | skype --pipelogin
 
 #### Skype doesn't output any sound after upgrading PulseAudio
 
-Currently, Skype doesn't work PulseAudio 9.0, the only solution is to downgrade to 8.0 and to prevent future updates you may add all pulse-related packages to pacman.conf.
-
-```
- IgnorePkg = lib32-libpulse libpulse pulseaudio pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-gconf
-
-```
+Currently, Skype doesn't work PulseAudio 9.0 `enable-memfd` option, you have to make sure it's disabled in `/etc/pulse/daemon.conf`.
 
 ## Skype plugin for Pidgin
 

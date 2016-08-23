@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Network_configuration](/index.php/Network_configuration "Network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-19，点击[这里](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=424907)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Network_configuration](/index.php/Network_configuration "Network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=445647)可以查看翻译后英文页面的改动。
 
 本页解释了如何配置 **有线** 网络连接。如果你需要设置 **无线** 网络，参见[无线配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")页面。
 
@@ -93,6 +93,8 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 
 这将会把 **myhostname** 写入 `/etc/hostname`。详情参见 `man 5 hostname` 和 `man 1 hostnamectl`。
 
+**注意:** 在 Arch Linux chroot 安装环境中，*hostnamectl*不起作用，要设置安装环境的主机名，请手动[编辑](/index.php/Edit "Edit") `/etc/hostname`，加入一行`*myhostname*`.
+
 建议同时在 `/etc/hosts` 中设置 hostname：
 
  `/etc/hosts` 
@@ -114,6 +116,8 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 # hostname *myhostname*
 
 ```
+
+要设置清晰的主机名和其它机器数据，请参考 `machine-info` 手册页.
 
 ## 设备驱动程序
 
@@ -235,9 +239,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 ## 配置 IP 地址
 
-有两种配置方式：通过 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol")，或者不变的*静态*地址。
-
-**Tip:** In addition to the methods described below one can also use a [network manager](/index.php/List_of_applications#Network_managers "List of applications"). Network managers are especially useful for dynamic network connections and wifi networking.
+有两种配置方式：通过 [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol")，或者不变的*静态*地址。请选择一种方式，同时使用多个设置方式可能会引起冲突。
 
 ### 动态 IP 地址
 
@@ -247,7 +249,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 #### dhcpcd
 
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") is the default client in Arch Linux to setup DHCP on the installation ISO. It is a powerful tool with many configurable DHCP client options. See [dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd") on how to activate it for an interface.
+[dhcpcd](/index.php/Dhcpcd "Dhcpcd") 是 Arch Linux 安装 ISO 上默认的 DHCP 客户的，功能强大，有多种客户端配置选项。启用方式请参考 [dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd")。
 
 #### netctl
 
@@ -259,7 +261,7 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 *   静态IP地址，
 *   [子网掩码](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")，使用 [CIDR 表示法](https://en.wikipedia.org/wiki/CIDR_notation "wikipedia:CIDR notation")
-*   Subnet mask in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing"), for example `/24` is the CIDR notation of `255.255.255.0` netmask
+*   [CIDR 表示法](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing") 的子网掩码，例如 `255.255.255.0` 按 CIDR 表示为 `/24`
 *   [广播地址](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address")，
 *   [网关](https://en.wikipedia.org/wiki/Default_gateway "wikipedia:Default gateway")的IP地址
 *   Name server (DNS) IP addresses. See also [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
@@ -268,20 +270,20 @@ ACTION=="add", SUBSYSTEM=="net", KERNEL=="wl*", ATTR{mtu}="1480", ATTR{tx_queue_
 
 **Warning:**
 
-*   Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797)
+*   请确保手动设置的 IP 地址不会和 DHCP 自动分配的地址冲突，参考 [这个论坛帖子](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797)
 *   在不使用路由器的情况下和一台安装 Windows 的电脑分享你的网络连接，请确保两台电脑都使用静态 IP ，否则你的局域网将会有问题。
 
 #### netctl
 
-To create a [netctl](/index.php/Netctl "Netctl") profile with a static IP, set the `IP=static` option as well as `Address`, `Gateway`, and `DNS`. See [netctl#Wired](/index.php/Netctl#Wired "Netctl").
+要创建 [netctl](/index.php/Netctl "Netctl") 静态 IP 配置，设置 `IP=static` 选项以及 `Address`, `Gateway` 和 `DNS`. 参考 [netctl#Wired](/index.php/Netctl#Wired "Netctl").
 
 #### systemd-networkd
 
-The [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") service provided by systemd can set up a static IP using a simple configuration file. See [systemd-networkd#Wired adapter using a static IP](/index.php/Systemd-networkd#Wired_adapter_using_a_static_IP "Systemd-networkd").
+[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 服务可以使用简单的配置文件配置静态 IP 地址，参考 [systemd-networkd#Wired adapter using a static IP](/index.php/Systemd-networkd#Wired_adapter_using_a_static_IP "Systemd-networkd").
 
 #### dhcpcd
 
-See [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
+参考 [dhcpcd#Static profile](/index.php/Dhcpcd#Static_profile "Dhcpcd").
 
 #### 手动指定
 
@@ -315,7 +317,14 @@ It is possible to manually set up a static IP using only the [iproute2](https://
 
 ```
 
-To undo these steps (e.g. before switching to a dynamic IP), first remove any assigned IP address:
+**Tip:** 如果遇到 `RTNETLINK answers: Network is unreachable`错误，请将路由创建步骤拆成两步：
+```
+# ip route add 192.168.1.1 dev eth0
+# ip route add default via 192.168.1.1 dev eth0
+
+```
+
+要撤销设置 (例如将要切换成动态 IP 前)，先删除所有关联的 IP 地址:
 
 ```
 # ip addr flush dev *interface*
@@ -628,7 +637,7 @@ MODULES=".. broadcom tg3 .."
 
 ```
 
-The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and should be used for a reliable connection in this case. [Blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev") add it to your list of user specified [modules](/index.php/Kernel_modules#Loading "Kernel modules").
+The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and should be used for a reliable connection in this case. [Blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev")，see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules")。
 
 Another fault in the drivers for some revisions of this adapter is poor IPv6 support. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") can be helpful if you encounter issues such as hanging webpages and slow speeds.
 

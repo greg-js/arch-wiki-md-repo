@@ -193,7 +193,7 @@ firmware /usr/share/sane/snapscan/esfw52.bin
 
 ```
 
-Other modifications were not needed for the Epson Perfection 3590 and might not be for other models as well. If you still have problems it can also help if you [completely remove](https://wiki.archlinux.org/index.php/SANE#Multiple_backends_claim_scanner) the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
+Other modifications were not needed for the Epson Perfection 3590 and might not be for other models as well. If you still have problems it can also help if you [completely remove](/index.php/SANE#Multiple_backends_claim_scanner "SANE") the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
 
 ## Fujitsu
 

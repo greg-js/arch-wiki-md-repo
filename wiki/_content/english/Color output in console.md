@@ -418,7 +418,7 @@ This combination puts colors to **bold** and <u>underlined</u> words in `xterm/u
 
 *   **python-blessings** — A thin, practical wrapper around terminal coloring, styling, and positioning
 
-	[https://pypi.python.org/pypi/blessings](https://pypi.python.org/pypi/blessings) || [python-blessings](https://aur.archlinux.org/packages/python-blessings/), [python2-blessings](https://aur.archlinux.org/packages/python2-blessings/)
+	[https://pypi.python.org/pypi/blessings](https://pypi.python.org/pypi/blessings) || [python-blessings](https://www.archlinux.org/packages/?name=python-blessings), [python2-blessings](https://www.archlinux.org/packages/?name=python2-blessings)
 
 ## Shells
 

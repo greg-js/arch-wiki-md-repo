@@ -8,14 +8,16 @@ This article explains some methods for general troubleshooting. For application 
     *   [1.3 Be more specific](#Be_more_specific)
     *   [1.4 Additional support](#Additional_support)
 *   [2 Boot problems](#Boot_problems)
-    *   [2.1 Console clearing](#Console_clearing)
-    *   [2.2 Debug output](#Debug_output)
-    *   [2.3 Recovery shells](#Recovery_shells)
-    *   [2.4 Blank screen with Intel video](#Blank_screen_with_Intel_video)
-    *   [2.5 Stuck while loading the kernel](#Stuck_while_loading_the_kernel)
-    *   [2.6 Debugging kernel modules](#Debugging_kernel_modules)
-    *   [2.7 Debugging hardware](#Debugging_hardware)
-    *   [2.8 See also](#See_also)
+    *   [2.1 Console messages](#Console_messages)
+        *   [2.1.1 Flow control](#Flow_control)
+        *   [2.1.2 Scrollback](#Scrollback)
+        *   [2.1.3 Debug output](#Debug_output)
+    *   [2.2 Recovery shells](#Recovery_shells)
+    *   [2.3 Blank screen with Intel video](#Blank_screen_with_Intel_video)
+    *   [2.4 Stuck while loading the kernel](#Stuck_while_loading_the_kernel)
+    *   [2.5 Debugging kernel modules](#Debugging_kernel_modules)
+    *   [2.6 Debugging hardware](#Debugging_hardware)
+    *   [2.7 See also](#See_also)
 *   [3 Package management](#Package_management)
 *   [4 fuser](#fuser)
 *   [5 Session permissions](#Session_permissions)
@@ -97,15 +99,36 @@ Additionally, before posting your question, you may wish to review [how to ask s
 
 ## Boot problems
 
-A lot happens during the [boot process](/index.php/Boot_process "Boot process"), so it is a common time for errors to manifest. There are many methods for diagnosing and fixing boot problems, but most involve changing the kernel parameters and rebooting the system. Ensure that you are familiar with how to change your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+Diagnosing errors during the [boot process](/index.php/Boot_process "Boot process") involves changing the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and rebooting the system.
 
-If the system does not boot at all, boot from a [live image](https://www.archlinux.org/download/) and [change root](/index.php/Change_root "Change root") to log into the system and fix the issue.
+If booting the system is not possible, boot from a [live image](https://www.archlinux.org/download/) and [change root](/index.php/Change_root "Change root") to the existing system.
 
-### Console clearing
+### Console messages
 
-If all you want is to be able to see error messages that are already being displayed, you should [disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages").
+After the boot process, the screen is cleared and the login prompt appears, leaving users unable to read init output and error messages. This default behavior may be modified using methods outlined in the sections below.
 
-### Debug output
+Note that regardless of the chosen option, kernel messages can be displayed for inspection after booting by using `dmesg` or all logs from the current boot with `journalctl -b`.
+
+#### Flow control
+
+This is basic management that applies to most terminal emulators, including virtual consoles (vc):
+
+*   Press `Ctrl+S` to pause the output
+*   And `Ctrl+Q` to resume it
+
+This pauses not only the output, but also programs which try to print to the terminal, as they will block on the `write()` calls for as long as the output is paused. If your *init* appears frozen, make sure the system console is not paused.
+
+To see error messages which are already displayed, see [Getty#Have_boot_messages_stay_on_tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty").
+
+#### Scrollback
+
+Scrollback allows the user to go back and view text which has scrolled off the screen of a text console. This is made possible by a buffer created between the video adapter and the display device called the scrollback buffer. By default, the key combinations of `Shift+PageUp` and `Shift+PageDown` scroll the buffer up and down.
+
+If scrolling up all the way does not show you enough information, you need to expand your scrollback buffer to hold more output. This is done by tweaking the kernel's framebuffer console (fbcon) with the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `fbcon=scrollback:Nk` where `N` is the desired buffer size is kilobytes. The default size is 32k.
+
+If this does not work, your framebuffer console may not be properly enabled. Check the [Framebuffer Console documentation](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) for other parameters, e.g. for changing the framebuffer driver.
+
+#### Debug output
 
 Most kernel messages are hidden during boot. You can see more of these messages by adding different kernel parameters. The simplest ones are:
 
@@ -119,7 +142,7 @@ Other parameters you can add that might be useful in certain situations are:
 
 There are also a number of separate debug parameters for enabling debugging in specific subsystems e.g. `bootmem_debug`, `sched_debug`. Check the [kernel parameter documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) for specific information.
 
-**Note:** If you cannot scroll back far enough to view the desired boot output, you should increase the size of the [scrollback buffer](/index.php/Scrollback_buffer "Scrollback buffer").
+**Note:** If you cannot scroll back far enough to view the desired boot output, you should increase the size of the [scrollback buffer](#Scrollback).
 
 ### Recovery shells
 

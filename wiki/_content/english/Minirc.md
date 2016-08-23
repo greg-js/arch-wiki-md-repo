@@ -6,7 +6,7 @@
 
 Minirc is available in the [AUR](/index.php/AUR "AUR"). For details on init components, see [Init](/index.php/Init "Init").
 
-Install the [minirc-git](https://aur.archlinux.org/packages/minirc-git/) package. Minirc replaces /sbin/init so it removes systemd-sysvcompat. It will also conflict with [SysVinit](https://wiki.archlinux.org/index.php/SysVinit), if you have it installed.
+Install the [minirc-git](https://aur.archlinux.org/packages/minirc-git/) package. Minirc replaces /sbin/init so it removes systemd-sysvcompat. It will also conflict with [SysVinit](/index.php/SysVinit "SysVinit"), if you have it installed.
 
 Also if you are using a desktop environment, It might help to install [ConsoleKit](/index.php/ConsoleKit "ConsoleKit").
 

@@ -32,7 +32,7 @@ You may need to use dosfslabel (install core/dosfstools) to give the USB drive F
 
 If the screen corrupts, append *nomodeset* to the kernel parameters. There may be issues with the cord of the external optical drive, possibly specific to the device.
 
-On Haswell editions, you may run into [EFISTUB](/index.php/EFISTUB "EFISTUB") issues on full UEFI boot as detailed in [FS #33745](https://bugs.archlinux.org/task/33745). For workarounds, see [Unified Extensible Firmware Interface#USB media gets struck with black screen](/index.php/Unified_Extensible_Firmware_Interface#USB_media_gets_struck_with_black_screen "Unified Extensible Firmware Interface"). This problem is intermittent and may also be present after installation, affecting the choice of bootloaders.
+On Haswell editions, you may run into [EFISTUB](/index.php/EFISTUB "EFISTUB") issues on full UEFI boot as detailed in [FS#33745](https://bugs.archlinux.org/task/33745). For workarounds, see [Unified Extensible Firmware Interface#USB media gets struck with black screen](/index.php/Unified_Extensible_Firmware_Interface#USB_media_gets_struck_with_black_screen "Unified Extensible Firmware Interface"). This problem is intermittent and may also be present after installation, affecting the choice of bootloaders.
 
 ### Partitioning
 

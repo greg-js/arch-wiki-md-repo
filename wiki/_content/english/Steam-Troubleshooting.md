@@ -133,9 +133,9 @@ The minimum required libraries needed on an x86_64 system are
 *   [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2)
 *   [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3)
 *   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
-*   [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/)
-*   [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/)
-*   [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/)
+*   [lib32-gconf](https://www.archlinux.org/packages/?name=lib32-gconf)
+*   [lib32-dbus-glib](https://www.archlinux.org/packages/?name=lib32-dbus-glib)
+*   [lib32-libnm-glib](https://www.archlinux.org/packages/?name=lib32-libnm-glib)
 *   [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/)
 
 Some games may require additional libraries in order to launch without the runtime. See [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").

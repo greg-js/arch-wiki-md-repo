@@ -6,6 +6,11 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Enabling ACL](#Enabling_ACL)
     *   [2.2 Set ACL](#Set_ACL)
+        *   [2.2.1 Set permissions for a user](#Set_permissions_for_a_user)
+        *   [2.2.2 Set permissions for a group](#Set_permissions_for_a_group)
+        *   [2.2.3 Allow all files or directories to inherit ACL entries from the directory it is within](#Allow_all_files_or_directories_to_inherit_ACL_entries_from_the_directory_it_is_within)
+        *   [2.2.4 Remove a specific entry](#Remove_a_specific_entry)
+        *   [2.2.5 Remove all entries](#Remove_all_entries)
     *   [2.3 Show ACL](#Show_ACL)
 *   [3 Examples](#Examples)
     *   [3.1 Output of ls command](#Output_of_ls_command)
@@ -50,45 +55,52 @@ Using the default mount options instead of an entry in `/etc/fstab` is very usef
 
 To modify ACL use `setfacl` command. To add permissions use `setfacl -m`.
 
-Add permissions to some user:
+#### Set permissions for a user
 
 ```
-# setfacl -m "u:username:permissions"
-
-```
-
-or
-
-```
-# setfacl -m "u:uid:permissions"
-
-```
-
-Add permissions to some group:
-
-```
-# setfacl -m "g:groupname:permissions"
+# setfacl -m "u:username:permissions" <file/dir>
 
 ```
 
 or
 
 ```
-# setfacl -m "g:gid:permissions"
+# setfacl -m "u:uid:permissions" <file/dir>
 
 ```
 
-Remove all permissions:
+#### Set permissions for a group
 
 ```
-# setfacl -b
+# setfacl -m "g:groupname:permissions" <file/dir>
 
 ```
 
-Remove each entry:
+or
 
 ```
-# setfacl -x "entry"
+# setfacl -m "g:gid:permissions" <file/dir>
+
+```
+
+#### Allow all files or directories to inherit ACL entries from the directory it is within
+
+```
+# setfacl -dm "entry" <dir>
+
+```
+
+#### Remove a specific entry
+
+```
+# setfacl -x "entry" <file/dir>
+
+```
+
+#### Remove all entries
+
+```
+# setfacl -b <file/dir>
 
 ```
 

@@ -279,9 +279,7 @@ Server = http://repo.herecura.be/$repo/$arch
 
 ```
 [catalyst]
-Server = http://catalyst.wirephire.com/repo/catalyst/$arch
-## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/catalyst/$arch
+Server = http://mirror.hactar.bz/Vi0L0/catalyst/$arch
 
 ```
 
@@ -294,9 +292,7 @@ Server = http://catalyst.wirephire.com/repo/catalyst/$arch
 
 ```
 [catalyst-hd234k]
-Server = http://catalyst.wirephire.com/repo/catalyst-hd234k/$arch
-## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/catalyst-hd234k/$arch
+Server = http://mirror.hactar.bz/Vi0L0/catalyst-hd234k/$arch
 
 ```
 

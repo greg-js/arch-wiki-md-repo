@@ -1,4 +1,4 @@
-[nano](https://www.nano-editor.org/) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 1.5 MB of resident memory.
+[GNU nano](https://www.nano-editor.org/) (or nano) is a text editor which aims to introduce a simple interface and intuitive command options to console based text editing. *nano* supports features including colorized syntax highlighting, DOS/Mac file type conversions, spellchecking and [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "wikipedia:UTF-8") encoding. *nano* opened with an empty buffer typically occupies under 1.5 MB of resident memory.
 
 ## Contents
 
@@ -41,7 +41,7 @@ Proceed to establish the nano console environment by setting and/or unsetting co
 
 ### Syntax highlighting
 
-**Nano** ships with predefined [w:Syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting "w:Syntax highlighting") rules, defined in `/usr/share/nano/*.nanorc`. To enable them, add the following line to your `~/.nanorc` or to `/etc/nanorc`:
+**Nano** ships with predefined [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting "wikipedia:Syntax highlighting") rules, defined in `/usr/share/nano/*.nanorc`. To enable them, add the following line to your `~/.nanorc` or to `/etc/nanorc`:
 
 ```
 include "/usr/share/nano/*.nanorc"
@@ -52,15 +52,14 @@ Syntax highlighting enhancements which replace and expand the defaults can be fo
 
 #### PKGBUILD
 
-Save one of the below files to `/etc/nano/pkgbuild.nanorc` and include it:
+*   Save [https://paste.xinu.at/4ss/](https://paste.xinu.at/4ss/) (similar to [svntogit-server](https://projects.archlinux.org/svntogit/packages.git/tree)) to `/etc/nano/pkgbuild.nanorc` and include it:
 
 ```
 include "/etc/nano/pkgbuild.nanorc"
 
 ```
 
-*   [https://paste.xinu.at/4ss/](https://paste.xinu.at/4ss/) (similar to [svntogit-server](https://projects.archlinux.org/svntogit/packages.git/tree))
-*   [https://paste.xinu.at/yxrjWe/](https://paste.xinu.at/yxrjWe/) (alternate version, see [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=565476))
+*   [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/) has an alternate version
 
 ### Suspension
 
@@ -133,6 +132,6 @@ Some window managers have keybindings that conflict with nano, for example `Alt+
 ## See also
 
 *   [nano (text editor)](https://en.wikipedia.org/wiki/Nano_(text_editor) - Wikipedia Entry
-*   [nano Homepage](https://www.nano-editor.org/) - Official Site
-*   [nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Bug Reporting
+*   [GNU nano Homepage](https://www.nano-editor.org/) - Official Site
+*   [GNU nano Bugs](https://savannah.gnu.org/bugs/?group=nano) Bug Reporting
 *   [Better syntax highlighting definitions](https://github.com/craigbarnes/nanorc)

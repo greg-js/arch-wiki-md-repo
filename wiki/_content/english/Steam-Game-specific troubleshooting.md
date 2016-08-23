@@ -303,8 +303,8 @@ Air Brawl seems to require some fonts that are missing, installing the package [
 
 *   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora)
 *   [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)
-*   [lib32-libtiff4](https://aur.archlinux.org/packages/lib32-libtiff4/)
-*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)
+*   [lib32-libtiff4](https://www.archlinux.org/packages/?name=lib32-libtiff4)
+*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
 
 ### Compatibility
 
@@ -681,7 +681,7 @@ LD_LIBRARY_PATH="." primusrun ./EoCApp
 
 *   [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)
 *   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) (Looks like it fixes sound in some cases. See [this github issue](https://github.com/ValveSoftware/steam-for-linux/issues/2968) for details)
-*   [lib32-libcurl-compat](https://aur.archlinux.org/packages/lib32-libcurl-compat/) (Requires further commands after installation as described [here](http://steamcommunity.com/app/219740/discussions/2/620700960796078576/#c611704730329482542))
+*   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) (Requires further commands after installation as described [here](http://steamcommunity.com/app/219740/discussions/2/620700960796078576/#c611704730329482542))
 
 ### Troubleshooting
 
@@ -937,7 +937,7 @@ LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
 
 ### Dependencies
 
-*   [lib32-sdl2_mixer](https://aur.archlinux.org/packages/lib32-sdl2_mixer/)
+*   [lib32-sdl2_mixer](https://www.archlinux.org/packages/?name=lib32-sdl2_mixer)
 
 ## Half-Life 2 & episodes
 
@@ -1199,7 +1199,7 @@ KillingFloor comes with its own libopenal.so (called openal.so). To use system l
 
 ### Dependencies
 
-*   [lib32-glew1.10](https://aur.archlinux.org/packages/lib32-glew1.10/)
+*   [lib32-glew1.10](https://www.archlinux.org/packages/?name=lib32-glew1.10)
 
 ## Life is Strange
 
@@ -1471,7 +1471,7 @@ mmap = true
 
 *   [lib32-sqlite](https://www.archlinux.org/packages/?name=lib32-sqlite)
 *   [lib32-sdl_image](https://www.archlinux.org/packages/?name=lib32-sdl_image)
-*   [lib32-sdl_mixer](https://aur.archlinux.org/packages/lib32-sdl_mixer/)
+*   [lib32-sdl_mixer](https://www.archlinux.org/packages/?name=lib32-sdl_mixer)
 
 ### Troubleshooting
 
@@ -1592,7 +1592,7 @@ Again, this should work because Steam checks for a `noload/` directory relative 
 
 ### Dependencies
 
-*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)
+*   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
 
 ### Making HRTF work
 
@@ -1739,7 +1739,7 @@ look for entries that say `not found`
 
 ### Dependencies
 
-*   [lib32-libgcrypt15](https://www.archlinux.org/packages/?name=lib32-libgcrypt15)
+*   [lib32-libgcrypt15](https://aur.archlinux.org/packages/lib32-libgcrypt15/)
 *   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
 
 ## Trine 2
@@ -1843,12 +1843,12 @@ If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRI
 ### Dependencies
 
 *   [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2)
-*   [lib32-libcurl-compat](https://aur.archlinux.org/packages/lib32-libcurl-compat/)
+*   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat)
 *   [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls)
 
 *   [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2)
-*   [lib32-sdl2_image](https://aur.archlinux.org/packages/lib32-sdl2_image/)
-*   [lib32-libcurl-gnutls](https://aur.archlinux.org/packages/lib32-libcurl-gnutls/)
+*   [lib32-sdl2_image](https://www.archlinux.org/packages/?name=lib32-sdl2_image)
+*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
 
 ### Troubleshooting
 

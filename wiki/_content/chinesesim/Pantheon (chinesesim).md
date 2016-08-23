@@ -9,7 +9,7 @@
         *   [1.1.1 Packages based on older evolution-data-server](#Packages_based_on_older_evolution-data-server)
 *   [2 启用Pantheon桌面](#.E5.90.AF.E7.94.A8Pantheon.E6.A1.8C.E9.9D.A2)
     *   [2.1 使用显示服务器启动](#.E4.BD.BF.E7.94.A8.E6.98.BE.E7.A4.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E5.90.AF.E5.8A.A8)
-    *   [2.2 Via .xinitrc](#Via_.xinitrc)
+    *   [2.2 通过 .xinitrc 启动](#.E9.80.9A.E8.BF.87_.xinitrc_.E5.90.AF.E5.8A.A8)
     *   [2.3 Autostart applications](#Autostart_applications)
 *   [3 Configuration](#Configuration)
     *   [3.1 Pantheon Files](#Pantheon_Files)
@@ -111,9 +111,9 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 **Note:** Either use the bzr version of *cerbere* or add 'gala' to the monitored processes for this to work.
 
-### Via .xinitrc
+### 通过 .xinitrc 启动
 
-You can also use `~/.xinitrc` to launch the Pantheon shell. The following code will successfully launch a Pantheon session:
+你也可以用 `~/.xinitrc` 启动Pantheon。这段代码将能够成功启动Pantheon:
 
 ```
 #!/bin/sh

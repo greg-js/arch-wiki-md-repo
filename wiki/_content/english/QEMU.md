@@ -316,7 +316,7 @@ Then, if the device created was `/dev/loop0`, additional devices `/dev/loop0pX` 
 
 ```
 
-To mount the disk image with *udisksctl*, see [Udisks#Mount_loop_devices](/index.php/Udisks#Mount_loop_devices "Udisks").
+To mount the disk image with *udisksctl*, see [Udisks#Mount loop devices](/index.php/Udisks#Mount_loop_devices "Udisks").
 
 #### With kpartx
 

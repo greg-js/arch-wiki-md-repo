@@ -19,8 +19,7 @@
         *   [4.1.2 Without a local CUPS server](#Without_a_local_CUPS_server)
 *   [5 Configuration](#Configuration)
     *   [5.1 Printer sharing](#Printer_sharing)
-    *   [5.2 Remote administration](#Remote_administration)
-    *   [5.3 Test the printer](#Test_the_printer)
+    *   [5.2 Test the printer](#Test_the_printer)
 *   [6 Usage](#Usage)
     *   [6.1 CLI tools](#CLI_tools)
     *   [6.2 GUI applications](#GUI_applications)
@@ -154,7 +153,7 @@ Once the driver is selected, CUPS will inform that the printer has been added su
 
 ### Remote CUPS servers
 
-**Note:** As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround (undocumented as of 2013-05-07, but see [this bug report](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=704238)) is to put the following in `/etc/cups/client.conf`: ServerName HOSTNAME-OR-IP-ADDRESS[:PORT]/version=1.1
+See [CUPS/Troubleshooting#Networking issues](/index.php/CUPS/Troubleshooting#Networking_issues "CUPS/Troubleshooting") for common issues.
 
 #### Local CUPS server
 
@@ -198,64 +197,6 @@ The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cup
 ### Printer sharing
 
 See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing").
-
-### Remote administration
-
-Once the server is set up as described in [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing"), it can also be configured so that it can be remotely administered. If this is needed, then access to the CUPS administration will need to be granted from more systems than the localhost. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [CUPS/Printer sharing#Manual setup](/index.php/CUPS/Printer_sharing#Manual_setup "CUPS/Printer sharing"). Note that three levels of access can be granted:
-
-```
-<Location />           #access to the server
-<Location /admin>	#access to the admin pages
-<Location /admin/conf>	#access to configuration files
-
-```
-
-To give remote hosts access to one of these levels, add an `Allow` statement to that level's section. An `Allow` statement can take one or more of the forms listed below:
-
-```
-Allow from all
-Allow from host.domain.com
-Allow from *.domain.com
-Allow from ip-address
-Allow from ip-address/netmask
-Allow from @LOCAL
-
-```
-
-Deny statements can also be used. For example, if wanting to give full access to all hosts on your local network interfaces, file `/etc/cups/cupsd.conf` would include this:
-
-```
-# Restrict access to the server...
-# By default only localhost connections are possible
-<Location />
-   Order allow,deny
-   **Allow from @LOCAL**
-</Location>
-
-# Restrict access to the admin pages...
-<Location /admin>
-   Order allow,deny
-   **Allow from @LOCAL**
-</Location>
-
-# Restrict access to configuration files...
-<Location /admin/conf>
-   AuthType Basic
-   Require user @SYSTEM
-   Order allow,deny
-   **Allow from @LOCAL**
-</Location>
-
-```
-
-You might also need to add:
-
-```
-DefaultEncryption Never
-
-```
-
-This should avoid the error: 426 - Upgrade Required when using the CUPS web interface from a remote machine.
 
 ### Test the printer
 

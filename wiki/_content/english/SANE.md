@@ -190,7 +190,7 @@ to
 
 ```
 
-It may also be possible that the independant [iscan](https://www.archlinux.org/packages/?name=iscan) epkowa backend interferes with your snapscan backend (epson scanners). You may get this error right after using the `scanimage -L` command. Starting the scanner app (like [xscan](https://www.archlinux.org/packages/?name=xscan)) twice can also solve the problem. Otherwise check your `/etc/sane.d/epkowa.conf` for wrong configuations or remove the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
+It may also be possible that the independant [iscan](https://www.archlinux.org/packages/?name=iscan) epkowa backend interferes with your snapscan backend (epson scanners). You may get this error right after using the `scanimage -L` command. Starting the scanner app (like [xsane](https://www.archlinux.org/packages/?name=xsane)) twice can also solve the problem. Otherwise check your `/etc/sane.d/epkowa.conf` for wrong configuations or remove the [iscan](https://www.archlinux.org/packages/?name=iscan) package.
 
 #### Communication via xHCI not working (older scanner models)
 

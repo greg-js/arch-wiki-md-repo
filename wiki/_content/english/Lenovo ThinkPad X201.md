@@ -15,10 +15,8 @@ The [Lenovo X201](https://support.lenovo.com/us/en/documents/migr-75044) is a du
 ## Contents
 
 *   [1 Configuration](#Configuration)
-    *   [1.1 Modify wake events](#Modify_wake_events)
-    *   [1.2 Power saving](#Power_saving)
-    *   [1.3 Backlight](#Backlight)
-    *   [1.4 Hibernation](#Hibernation)
+    *   [1.1 Backlight](#Backlight)
+    *   [1.2 Hibernation](#Hibernation)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Overheating](#Overheating)
     *   [2.2 No speaker output](#No_speaker_output)
@@ -29,27 +27,6 @@ The [Lenovo X201](https://support.lenovo.com/us/en/documents/migr-75044) is a du
 *   [4 See also](#See_also)
 
 ## Configuration
-
-### Modify wake events
-
-Events which cause the system to resume from [power states](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Power_states "w:Advanced Configuration and Power Interface") can be regulated in `/proc/acpi/wakeup`. Writing an entry from the *Device* column toggles the status from `enabled` to `disabled`, or vice-versa.
-
-For example, to disable waking from suspend (S3) on opening the lid, run:
-
-```
-# echo LID > /proc/acpi/wakeup
-
-```
-
-This change can be made permament with tmpfiles.d(5):
-
- `/etc/tmpfiles.d/disable-lid-wakeup.conf`  `w /proc/acpi/wakeup - - - - LID` 
-
-### Power saving
-
-**Warning:** These options may cause system instabilities. Remove them if experiencing problems.
-
-Add the `i915_enable_rc6=1` and `i915_enable_fbc=1` [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to make use of power saving mechanismens turned off by default because of reported instabilities.
 
 ### Backlight
 

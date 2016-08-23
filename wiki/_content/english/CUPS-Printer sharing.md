@@ -17,11 +17,12 @@ This article contains instruction on sharing printers between systems, be it bet
             *   [2.2.3.1 Configuration using the web interface](#Configuration_using_the_web_interface)
             *   [2.2.3.2 Manual configuration](#Manual_configuration)
             *   [2.2.3.3 Finding URIs for Windows print servers](#Finding_URIs_for_Windows_print_servers)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
-    *   [3.2 Unable to add/modify a printer via SAMBA](#Unable_to_add.2Fmodify_a_printer_via_SAMBA)
-    *   [3.3 Permission errors on Windows](#Permission_errors_on_Windows)
-*   [4 Other operating systems](#Other_operating_systems)
+*   [3 Remote administration](#Remote_administration)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Cannot print with GTK applications](#Cannot_print_with_GTK_applications)
+    *   [4.2 Unable to add/modify a printer via SAMBA](#Unable_to_add.2Fmodify_a_printer_via_SAMBA)
+    *   [4.3 Permission errors on Windows](#Permission_errors_on_Windows)
+*   [5 Other operating systems](#Other_operating_systems)
 
 ## Between GNU/Linux systems
 
@@ -304,6 +305,64 @@ smb://username.password@REGULATOR-PC/EPSON Stylus CX8400 Series
 ```
 
 as the URI into CUPS.
+
+## Remote administration
+
+Once the server is set up as described in [#Between GNU/Linux systems](#Between_GNU.2FLinux_systems), it can also be configured so that it can be remotely administered. Add the allowed hosts to the `<Location /admin>` block in `/etc/cups/cupsd.conf`, using the same syntax as described in [#Manual setup](#Manual_setup). Note that three levels of access can be granted:
+
+```
+<Location />           #access to the server
+<Location /admin>	#access to the admin pages
+<Location /admin/conf>	#access to configuration files
+
+```
+
+To give remote hosts access to one of these levels, add an `Allow` statement to that level's section. An `Allow` statement can take one or more of the forms listed below:
+
+```
+Allow from all
+Allow from host.domain.com
+Allow from *.domain.com
+Allow from ip-address
+Allow from ip-address/netmask
+Allow from @LOCAL
+
+```
+
+Deny statements can also be used. For example, to give full access to all hosts on your local network interfaces, edit `/etc/cups/cupsd.conf` to include this:
+
+```
+# Restrict access to the server...
+# By default only localhost connections are possible
+<Location />
+   Order allow,deny
+   **Allow from @LOCAL**
+</Location>
+
+# Restrict access to the admin pages...
+<Location /admin>
+   Order allow,deny
+   **Allow from @LOCAL**
+</Location>
+
+# Restrict access to configuration files...
+<Location /admin/conf>
+   AuthType Basic
+   Require user @SYSTEM
+   Order allow,deny
+   **Allow from @LOCAL**
+</Location>
+
+```
+
+You might also need to add:
+
+```
+DefaultEncryption Never
+
+```
+
+This should avoid the error: 426 - Upgrade Required when using the CUPS web interface from a remote machine.
 
 ## Troubleshooting
 

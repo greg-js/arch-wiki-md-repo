@@ -240,7 +240,7 @@ $ sort -t ";" -k 2 -u ~/.zsh_history | sort -o ~/.zsh_history
 
 ### Назначение клавиш
 
-Zsh не использует Readline, вместо этого он использует свой собственный и более мощный ZLE. Т.е. не читает `/etc/inputrc` или `~/.inputrc`. Zle имеет [emacs](/index.php/Emacs "Emacs") режим и [vi](/index.php/Vi "Vi") режим. По умолчанию, он пытается взять клавиши emacs или vi из переменной среды `$EDITOR`. Если она пуста, то по умолчанию будет Emacs. Измните это `bindkey -e` или `bindkey -v` соответственно в режиме Emacs или режиме VI.
+Zsh не использует Readline, вместо этого он использует свой собственный и более мощный ZLE. Т.е. не читает `/etc/inputrc` или `~/.inputrc`. Zle имеет [emacs](/index.php/Emacs "Emacs") режим и [vi](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") режим. По умолчанию, он пытается взять клавиши emacs или vi из переменной среды `$EDITOR`. Если она пуста, то по умолчанию будет Emacs. Измните это `bindkey -e` или `bindkey -v` соответственно в режиме Emacs или режиме VI.
 
 Смотрите также [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
 

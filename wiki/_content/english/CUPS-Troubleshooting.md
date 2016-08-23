@@ -10,7 +10,8 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [2.4 The PPD version is not compatible with gutenprint](#The_PPD_version_is_not_compatible_with_gutenprint)
 *   [3 Networking issues](#Networking_issues)
     *   [3.1 Unable to locate printer](#Unable_to_locate_printer)
-    *   [3.2 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
+    *   [3.2 Old CUPS server](#Old_CUPS_server)
+    *   [3.3 CUPS identifies printer but cannot connect to it](#CUPS_identifies_printer_but_cannot_connect_to_it)
 *   [4 USB printers](#USB_printers)
     *   [4.1 Conflict with SANE](#Conflict_with_SANE)
     *   [4.2 Conflict with usblp](#Conflict_with_usblp)
@@ -125,6 +126,10 @@ And restart CUPS (as pointed out in gutenprint's post-install message)
 ### Unable to locate printer
 
 Even if CUPS can detect networked printers, you may still end up with an "Unable to locate printer" error when trying to print something. The solution to this problem is to enable Avahi's [.local hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi"). See [CUPS#Local Network](/index.php/CUPS#Local_Network "CUPS") for details.
+
+### Old CUPS server
+
+As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround is to append the `version=1.1` option documented at [[1]](https://www.cups.org/doc/network.html#TABLE2) to the URL.
 
 ### CUPS identifies printer but cannot connect to it
 
@@ -333,11 +338,11 @@ Prior to [cups](https://www.archlinux.org/packages/?name=cups) 2.0.0-2, if the g
 
 To fix this, ensure that the the `Group` directive is set to `lp`, and the `SystemGroup` directive does not include `lp`.
 
-Fixed in Arch with [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=c20b22f4f996cb08b1aa856d4c8991e869459eb2).
+Fixed in Arch with [[2]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=c20b22f4f996cb08b1aa856d4c8991e869459eb2).
 
 ### Printing fails with unauthorised error
 
-If a remote printer requests authentication CUPS will automatically add an `AuthInfoRequired` directive to the printer in `/etc/cups/printers.conf`. However, some graphical applications (for instance, some versions of [LibreOffice](/index.php/LibreOffice "LibreOffice") [[2]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) have no way to prompt for credentials, so printing fails. To fix this include the required username and password in the URI. See [[3]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[4]](https://bbs.archlinux.org/viewtopic.php?id=61826),
+If a remote printer requests authentication CUPS will automatically add an `AuthInfoRequired` directive to the printer in `/etc/cups/printers.conf`. However, some graphical applications (for instance, some versions of [LibreOffice](/index.php/LibreOffice "LibreOffice") [[3]](https://bugs.documentfoundation.org/show_bug.cgi?id=53029)) have no way to prompt for credentials, so printing fails. To fix this include the required username and password in the URI. See [[4]](https://bugs.launchpad.net/ubuntu/+source/cups/+bug/283811), [[5]](https://bbs.archlinux.org/viewtopic.php?id=61826),
 
 ### Unknown supported format: application/postscript
 

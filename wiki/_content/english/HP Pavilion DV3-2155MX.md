@@ -1,9 +1,5 @@
 **Warning:** As of Jun, 13, 2011 (kernel 2.6.39) Archlinux -- and possibly Linux itself -- is not stable on this equipement. You may experience random freezes, reboots and other unrecoverable errors.
 
-## Introduction
-
-This article will point you how to configure your Archlinux (x64) to get the most of your HP Pavilion DV3-2155MX laptop.
-
 ## Hardware Identification
 
 **lscpu**

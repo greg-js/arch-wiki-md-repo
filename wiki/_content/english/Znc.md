@@ -12,18 +12,10 @@
 
 [Install](/index.php/Install "Install") the [znc](https://www.archlinux.org/packages/?name=znc) package. The installation script will create a group and user **znc**. The default home directory for this user is `/var/lib/znc`.
 
-By default the **znc** user has a nologin shell. Assign a shell to the user before next step:
-
-```
-# usermod -s /bin/sh znc
-
-```
-
 Generate ZNC config as user **znc**.
 
 ```
-# su - znc
-$ znc --makeconf
+$ sudo -u znc znc --makeconf
 
 ```
 

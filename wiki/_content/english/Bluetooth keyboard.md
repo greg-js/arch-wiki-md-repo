@@ -1,4 +1,4 @@
-This article describes how to set up a Bluetooth HID keyboard with Arch Linux, bluez version 5.
+This article describes how to set up a [Bluetooth](/index.php/Bluetooth "Bluetooth") HID keyboard with Arch Linux, bluez version 5.
 
 ## Contents
 

@@ -16,6 +16,7 @@ If there are laptop model specific instructions, the respective article is cross
             *   [1.1.2.1 Testing events](#Testing_events)
     *   [1.2 Suspend and Hibernate](#Suspend_and_Hibernate)
     *   [1.3 Hard drive spin down problem](#Hard_drive_spin_down_problem)
+    *   [1.4 Modify wake events](#Modify_wake_events)
 *   [2 Hardware support](#Hardware_support)
     *   [2.1 Screen brightness](#Screen_brightness)
     *   [2.2 Touchpad](#Touchpad)
@@ -99,6 +100,21 @@ See the main article [Suspend and hibernate](/index.php/Suspend_and_hibernate "S
 Documented [here](https://bugs.launchpad.net/ubuntu/+source/acpi-support/+bug/59695).
 
 To prevent your laptop hard drive from spinning down too often, set less aggressive power management as described in [hdparm#Power management configuration](/index.php/Hdparm#Power_management_configuration "Hdparm"). Even the default values may be too aggressive.
+
+### Modify wake events
+
+Events which cause the system to resume from [power states](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface#Power_states "w:Advanced Configuration and Power Interface") can be regulated in `/proc/acpi/wakeup`. Writing an entry from the *Device* column toggles the status from `enabled` to `disabled`, or vice-versa.
+
+For example, to disable waking from suspend (S3) on opening the lid, run:
+
+```
+# echo LID > /proc/acpi/wakeup
+
+```
+
+This change can be made permament with tmpfiles.d(5):
+
+ `/etc/tmpfiles.d/disable-lid-wakeup.conf`  `w /proc/acpi/wakeup - - - - LID` 
 
 ## Hardware support
 

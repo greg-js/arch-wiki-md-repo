@@ -223,6 +223,8 @@ quit
 
 Maybe you have entered the wrong user/password for MySQL or the MySQL socket is not in the right place.
 
+This error will also occur if you neglect to run newaliases at least once before starting postfix. MySQL is not required for local only usage of postfix.
+
 ```
 550 5.1.1 <email@spam.me>: Recipient address rejected: User unknown in virtual mailbox table.
 

@@ -17,3 +17,17 @@ NODM_XSESSION=/home/*user/.xinitrc*
 ```
 
 [Enable](/index.php/Enable "Enable") `nodm.service` so *nodm* will be started on boot.
+
+### Login session
+
+For proper session handling, create pam.d file with the following content:
+
+ `/etc/pam.d/nodm` 
+```
+#%PAM-1.0
+
+auth      include   system-login
+account   include   system-login
+password  include   system-login
+session   include   system-login
+```

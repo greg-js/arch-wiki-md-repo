@@ -194,7 +194,7 @@ All you need to install is the meta-package [steam-libs](https://aur.archlinux.o
 
 If you do not like the approach of installing all the libraries known for Steam and various game-compatibility libraries and want to install the minimum required libraries to launch Steam and most games install the following libraries:
 
-Steam on x86_64 requires the following libraries from [AUR](/index.php/AUR "AUR") to be installed [lib32-gconf](https://aur.archlinux.org/packages/lib32-gconf/) [lib32-dbus-glib](https://aur.archlinux.org/packages/lib32-dbus-glib/) [lib32-libnm-glib](https://aur.archlinux.org/packages/lib32-libnm-glib/) and [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/).
+Steam on x86_64 requires the following libraries from [AUR](/index.php/AUR "AUR") to be installed [lib32-gconf](https://www.archlinux.org/packages/?name=lib32-gconf) [lib32-dbus-glib](https://www.archlinux.org/packages/?name=lib32-dbus-glib) [lib32-libnm-glib](https://www.archlinux.org/packages/?name=lib32-libnm-glib) and [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/).
 
 It will also require the following libraries from the [multilib](/index.php/Multilib "Multilib") repository [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal) [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss) [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2) and [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3).
 
