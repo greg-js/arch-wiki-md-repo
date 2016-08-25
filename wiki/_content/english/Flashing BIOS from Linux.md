@@ -105,6 +105,8 @@ If you want to flash other flash chips on your mainboard, you will find all opti
 
 ```
 
+**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[1]](https://www.flashrom.org/FAQ﻿).
+
 ## FreeDOS
 
 [FreeDOS](http://www.freedos.org/) a free DOS-compatible operating system, is up to the challenge, no need for proprietary DOS versions. So, all you need is a bootable floppy disk image with FreeDOS kernel on it.

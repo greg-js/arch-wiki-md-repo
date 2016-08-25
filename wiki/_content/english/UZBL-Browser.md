@@ -3,25 +3,28 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Plugins](#Plugins)
-*   [3 Commands](#Commands)
-    *   [3.1 Navigation](#Navigation)
-    *   [3.2 Page Movement](#Page_Movement)
-    *   [3.3 Zooming](#Zooming)
-    *   [3.4 Searching](#Searching)
-    *   [3.5 Inserting Text](#Inserting_Text)
-    *   [3.6 Bookmarks and History](#Bookmarks_and_History)
-    *   [3.7 Tabs (when using uzbl-tabbed)](#Tabs_.28when_using_uzbl-tabbed.29)
-    *   [3.8 Other](#Other)
-*   [4 Tips and tricks](#Tips_and_tricks)
-*   [5 Troubleshooting](#Troubleshooting)
-*   [6 See also](#See_also)
+    *   [1.1 Plugins](#Plugins)
+*   [2 Commands](#Commands)
+    *   [2.1 Navigation](#Navigation)
+    *   [2.2 Page Movement](#Page_Movement)
+    *   [2.3 Zooming](#Zooming)
+    *   [2.4 Searching](#Searching)
+    *   [2.5 Inserting Text](#Inserting_Text)
+    *   [2.6 Bookmarks and History](#Bookmarks_and_History)
+    *   [2.7 Tabs (when using uzbl-tabbed)](#Tabs_.28when_using_uzbl-tabbed.29)
+    *   [2.8 Other](#Other)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Caching](#Caching)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Parcellite](#Parcellite)
+    *   [4.2 TLS certificates](#TLS_certificates)
+*   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser) or [uzbl-tabbed](https://www.archlinux.org/packages/?name=uzbl-tabbed) available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser) or [uzbl-tabbed](https://www.archlinux.org/packages/?name=uzbl-tabbed) package.
 
-## Plugins
+### Plugins
 
 Uzbl can make use of outside [browser plugins](/index.php/Browser_plugins "Browser plugins") like Flash and Java. Installing these packages will enable their use in uzbl-browser and uzbl-tabbed.
 
@@ -134,28 +137,25 @@ ctrl+[    = back to normal mode
 
 ## Tips and tricks
 
-*   Create an alias in `~/.bashrc` to start uzbl-tabbed as just uzbl:
+### Caching
 
-```
-alias uzbl='uzbl-tabbed'
-
-```
-
-*   If you wish to open uzbl with a program launcher using the trick above:
-
-```
- cd /usr/bin
- sudo ln -s uzbl-tabbed uzbl
-
-```
-
-This creates a [symbolic link](https://en.wikipedia.org/wiki/Symbolic_link "wikipedia:Symbolic link"), called uzbl, which points to uzbl-tabbed.
-
-*   Due to its lightweight nature, uzbl does NOT contain caching functionality. You can install [Polipo](/index.php/Polipo "Polipo") to speed up page loading.
+Due to its lightweight nature, uzbl does NOT contain caching functionality. You can install [Polipo](/index.php/Polipo "Polipo") to speed up page loading.
 
 ## Troubleshooting
 
+### Parcellite
+
 Parcellite can cause problems at the time of selecting text under uzbl - just disable it.
+
+### TLS certificates
+
+Per [this post](https://bbs.archlinux.org/viewtopic.php?id=185014) set the following in `~/.config/uzbl/config`:
+
+```
+set ssl_ca_file /etc/ssl/cert.pem
+set ssl_policy fail
+
+```
 
 ## See also
 

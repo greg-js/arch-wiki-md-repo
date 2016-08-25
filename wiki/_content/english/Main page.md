@@ -16,17 +16,9 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 	Summarizes the similarities and differences between Arch and other distributions.
 
-	[Arch Linux press coverage](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
-
-	What they say about us.
-
-	[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-
-	Detailed guide through the whole process of installing and configuring Arch Linux.
-
 	[Installation guide](/index.php/Installation_guide "Installation guide")
 
-	Concise installation guide aimed at experienced Arch users.
+	Guide through the process of installing Arch Linux.
 
 	[General recommendations](/index.php/General_recommendations "General recommendations")
 

@@ -94,29 +94,18 @@ Specifically, the procedure for installing Arch Linux on a MacBook is:
 
 ## Updating OS X
 
-**Note:** If you uninstalled OS X or want to reinstall it, do that first. [Apple](https://support.apple.com/en-us/HT204904) has great instructions.
+Before proceeding with the installation of Arch Linux, it is important to ensure that the latest firmware updates for you MacBook are installed. This procedure requires OS X. In OS X, open the App Store and check for updates. If your mac finds and installs any updates, make sure to **reboot** your computer, and then check again for updates to make sure that you installed everything.
 
-In OS X, **install every update** (in the App Store). **Reboot** your computer, and then **update again** to make sure that you installed everything.
+**Note:** If you uninstalled OS X or want to reinstall it, [Apple](https://support.apple.com/en-us/HT204904) has great instructions.
 
-*   If you plan to remove OS X completely, make backups of these files, which you will need in Linux for adjusting the [color profile](#Color_Profile):
-
-**Note:** It is advisable to keep OS X, because the firmware can only be updated using OS X.
+It is advisable to keep OS X installed, because MacBook firmware updates can only be installed using OS X. However, if you plan to remove OS X completely, make backups of these files, which you will need in Linux for adjusting the [color profile](#Color_Profile):
 
 ```
 /Library/ColorSync/Profiles/Displays/*
 
 ```
 
-You will also need the following file for iSight functionality:
-
-**Note:** This does not apply to devices using the FaceTime HD webcam (MacBookAir5,1/5,2/6,1/6,2), because the webcam is not yet supported by the Linux kernel.
-
-```
-/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext/Contents/MacOS/AppleUSBVideoSupport
-
-```
-
-*   If you plan to dual boot and want to keep OS X, continue to [#Partitions](#Partitions)
+Continue to [#Partitions](#Partitions)
 
 ## Partitions
 
@@ -535,24 +524,20 @@ See [General recommendations](/index.php/General_recommendations "General recomm
 
 #### Video
 
-Different MacBook models have different graphic cards.
-
-To see which graphics card you have type:
+Different MacBook models have different graphic cards. To see which graphics card you have type:
 
 ```
 $ lspci | grep VGA
 
 ```
 
-*   If it returns a string containing **intel** you only need the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver. Intel-based MacBooks work out-of-the-box.
+*   If it returns a string containing **intel**, read [Intel graphics](/index.php/Intel_graphics "Intel graphics").
 
 *   If it returns **nVidia**, read [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 *   Otherwise if it returns **ATI** or **AMD**, read [ATI](/index.php/ATI "ATI").
 
 ##### NVIDIA note
-
-**Tip:** MBP 6.2 - With the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers, support for [PureVideo HD](/index.php/NVIDIA#Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") is available for hardware video decoding.
 
 **Tip:** If you have installed OS in EFI mode and NVIDIA binary drivers are working only in BIOS mode (e.g. you get black screen on EFI boot), try this approach: [http://askubuntu.com/a/613573/492886](http://askubuntu.com/a/613573/492886)
 

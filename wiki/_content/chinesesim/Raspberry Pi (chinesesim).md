@@ -4,7 +4,7 @@
 
 	"*树莓派是有英国树莓派基金会开发的一系列只有信用卡大小的单板计算机，目的是促进校园中基础性计算机教学的发展。*"
 
-树莓派最初的版本于2012年发布，基于博通的BCM2835芯片（[ARM11 架构](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")）。而最新的树莓派2于1015年发布，基于博通的BCM2836芯片（双核 [ARM Cortex-A7 架构](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")）。
+树莓派最初的版本于2012年发布，基于博通的BCM2835芯片（[ARM11 架构](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")）。而最新的树莓派2于2015年发布，基于博通的BCM2836芯片（双核 [ARM Cortex-A7 架构](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")）。
 
 ## Contents
 

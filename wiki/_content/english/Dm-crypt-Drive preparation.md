@@ -1,6 +1,6 @@
 Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
-Before encrypting a drive, you should perform a secure erase of the disk by overwriting the entire drive with random data. To prevent cryptographic attacks or unwanted [file recovery](/index.php/File_recovery "File recovery"), this data is ideally indistinguishable from data later written by dm-crypt. For a more comprehensive discussion see [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption").
+Before encrypting a drive, it is recommended to preform a secure erase of the disk by overwriting the entire drive with random data. To prevent cryptographic attacks or unwanted [file recovery](/index.php/File_recovery "File recovery"), this data is ideally indistinguishable from data later written by dm-crypt. For a more comprehensive discussion see [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption").
 
 ## Contents
 
@@ -41,7 +41,7 @@ The [cryptsetup FAQ](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAs
 
 #### dm-crypt wipe on an empty disk or partition
 
-First, create a temporary encrypted container on the partition (`sdXY`) or the full disk (`sdX`) you want to encrypt, e.g. using default encryption parameters and a random key via the `--key-file /dev/{u}random` option (see also [Random number generation](/index.php/Random_number_generation "Random number generation")):
+First, create a temporary encrypted container on the partition (`sdXY`) or the full disk (`sdX`) to be encrypted, e.g. using default encryption parameters and a random key via the `--key-file /dev/{u}random` option (see also [Random number generation](/index.php/Random_number_generation "Random number generation")):
 
 ```
 # cryptsetup open --type plain /dev/sdXY container --key-file /dev/random
@@ -57,19 +57,26 @@ Disk /dev/mapper/container: 1000 MB, 1000277504 bytes
 Disk /dev/mapper/container does not contain a valid partition table
 ```
 
-Finally, wipe the container with zeros. A use of `if=/dev/urandom` is not required as the encryption cipher is used for randomness.
+Wipe the container with zeros. A use of `if=/dev/urandom` is not required as the encryption cipher is used for randomness.
 
  `# dd if=/dev/zero of=/dev/mapper/container status=progress`  `dd: writing to ‘/dev/mapper/container’: No space left on device` 
 **Tip:**
 
 *   Using *dd* with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
-*   If you want to perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 */dev/mapper/container*` can be used to get the exact container size as root. Now *od* can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j *containersize - blocksize*` to view the wipe completed to the end.
+*   To perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 */dev/mapper/container*` can be used to get the exact container size as root. Now *od* can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j *containersize - blocksize*` to view the wipe completed to the end.
 
-If you are encrypting an entire system, the next step is [#Partitioning](#Partitioning). If you are just encrypting a partition, continue [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system").
+Finally, close the temporary container
+
+```
+# cryptsetup close container
+
+```
+
+When encrypting an entire system, the next step is [#Partitioning](#Partitioning). If just encrypting a partition, continue [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system").
 
 #### dm-crypt wipe free space after installation
 
-If you did not have time for the wipe procedure before [installation](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), the same effect can be achieved once the encrypted system is booted and the filesystems mounted. However, consider if the concerned filesystem may have set up reserved space, e.g. for the root user, or another [disk quota](/index.php/Disk_quota "Disk quota") mechanism, that that may limit the wipe even when performed by the root user: some parts of the underlying block device might not get written to at all.
+Users who did not have time for the wipe procedure before [installation](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), can achieve a similar effect once the encrypted system is booted and the filesystems are mounted. However, consider if the concerned filesystem may have set up reserved space, e.g. for the root user, or another [disk quota](/index.php/Disk_quota "Disk quota") mechanism, that that may limit the wipe even when performed by the root user: some parts of the underlying block device might not get written to at all.
 
 To execute the wipe, temporarily fill the remaining free space of the partition by writing to a file inside the encrypted container:
 
@@ -83,7 +90,7 @@ Sync the cache to disk and then delete the file to reclaim the free space.
 
 ```
 
-The above process has to be repeated for every partition blockdevice created and filesystem in it. For example, if you set-up [LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system"), the process has to be performed for every logical volume.
+The above process has to be repeated for every partition blockdevice created and filesystem in it. For example, setting-up [LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system"), the process has to be performed for every logical volume.
 
 #### Wipe LUKS header
 
@@ -91,7 +98,7 @@ The partitions formatted with dm-crypt/LUKS contain a header with the cipher and
 
 Wiping the LUKS header will delete the PBKDF2-encrypted (AES) master key, salts and so on.
 
-**Note:** It is crucial to write to the LUKS encrypted partition (`/dev/sda**1**` in this example) and not directly to the disks device node. If you did set up encryption as a device-mapper layer on top of others, e.g. LVM on LUKS on RAID then write to RAID respectively.
+**Note:** It is crucial to write to the LUKS encrypted partition (`/dev/sda**1**` in this example) and not directly to the disks device node. Setups with encryption as a device-mapper layer on top of others, e.g. LVM on LUKS on RAID should then write to RAID respectively.
 
 A header with one single default 256 bit size keyslot is 1024KB in size. It is advised to also overwrite the first 4KB written by dm-crypt, so 1028KB have to be wiped. That is `1052672` Byte.
 

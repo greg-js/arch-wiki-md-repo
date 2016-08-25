@@ -20,27 +20,29 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [4.4 Elementary (EFL)](#Elementary_.28EFL.29)
 *   [5 Display managers](#Display_managers)
     *   [5.1 SDDM](#SDDM)
-*   [6 Applications](#Applications)
-    *   [6.1 Browsers](#Browsers)
-        *   [6.1.1 Firefox](#Firefox)
-        *   [6.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
-        *   [6.1.3 Opera](#Opera)
-    *   [6.2 Thunderbird](#Thunderbird)
-    *   [6.3 Wine applications](#Wine_applications)
-    *   [6.4 Skype](#Skype)
-    *   [6.5 Spotify](#Spotify)
-    *   [6.6 Zathura document viewer](#Zathura_document_viewer)
-    *   [6.7 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [6.8 NetBeans](#NetBeans)
-    *   [6.9 Gimp 2.8](#Gimp_2.8)
-    *   [6.10 VLC](#VLC)
-    *   [6.11 Steam](#Steam)
-    *   [6.12 Unsupported applications](#Unsupported_applications)
-*   [7 Multiple displays](#Multiple_displays)
-    *   [7.1 Side display](#Side_display)
-    *   [7.2 Mirroring](#Mirroring)
-*   [8 Linux console](#Linux_console)
-*   [9 See also](#See_also)
+*   [6 Boot managers](#Boot_managers)
+    *   [6.1 GRUB](#GRUB)
+*   [7 Applications](#Applications)
+    *   [7.1 Browsers](#Browsers)
+        *   [7.1.1 Firefox](#Firefox)
+        *   [7.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
+        *   [7.1.3 Opera](#Opera)
+    *   [7.2 Thunderbird](#Thunderbird)
+    *   [7.3 Wine applications](#Wine_applications)
+    *   [7.4 Skype](#Skype)
+    *   [7.5 Spotify](#Spotify)
+    *   [7.6 Zathura document viewer](#Zathura_document_viewer)
+    *   [7.7 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [7.8 NetBeans](#NetBeans)
+    *   [7.9 Gimp 2.8](#Gimp_2.8)
+    *   [7.10 VLC](#VLC)
+    *   [7.11 Steam](#Steam)
+    *   [7.12 Unsupported applications](#Unsupported_applications)
+*   [8 Multiple displays](#Multiple_displays)
+    *   [8.1 Side display](#Side_display)
+    *   [8.2 Mirroring](#Mirroring)
+*   [9 Linux console](#Linux_console)
+*   [10 See also](#See_also)
 
 ## Desktop environments
 
@@ -214,6 +216,28 @@ To scale SDDM you have to change the following properties in `/etc/sddm.conf`. I
 [XDisplay]
 # X server arguments
 ServerArguments=-dpi 144
+
+```
+
+## Boot managers
+
+### GRUB
+
+A possible solution is to use a big size font. Generate a GRUB font of custom size, e.g. using the font DejaVu Sans Mono and size 36:
+
+```
+# grub-mkfont --output=/boot/grub/fonts/DejaVuSansMono36.pf2 --size=36 /usr/share/fonts/TTF/DejaVuSansMono.ttf
+
+```
+
+then set GRUB to use it, adding the `GRUB_FONT` line to `/etc/default/grub`
+
+ `/etc/default/grub`  `GRUB_FONT=/boot/grub/fonts/DejaVuSansMono36.pf2` 
+
+and finally update GRUB configuration with
+
+```
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 

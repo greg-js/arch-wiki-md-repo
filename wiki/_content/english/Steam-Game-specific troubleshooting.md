@@ -1908,6 +1908,7 @@ exec dosbox -conf dosbox_wiz6.conf -conf dosbox_wiz6_launch_linux.conf -noconsol
 ### Dependencies
 
 *   [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image) (Required to enable keyboard functionality in-game)
+*   [librtmp0](https://www.archlinux.org/packages/?name=librtmp0) (Required to run the game)
 
 ### Hangs on startup
 

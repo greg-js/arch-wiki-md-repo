@@ -1,43 +1,41 @@
-**翻译状态：** 本文是英文页面 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-24，点击[这里](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=420028)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=447214)可以查看翻译后英文页面的改动。
 
-**统一可扩展固件界面（Unified Extensible Firmware Interface）** (简称UEFI) 是一种新型固件，引入了新的系统启动方式，该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")启动代码”(其二者区别见 [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process"))。本文介绍了 **什么是UEFI** 以及 **UEFI在Linux内核中的支持** 。若要配置 UEFI 引导器，详见 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)").
+[统一可扩展固件界面](http://www.uefi.org/)(Unified Extensible Firmware Interface)，简称 UEFI, 是操作系统与固件交互的新模式，提供了启动操作系统或程序的标准环境。该方式有别于传统[BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS")系统所使用的“[MBR](/index.php/MBR "MBR")”，二者启动的区别见 [Arch boot process#Firmware types](/index.php/Arch_boot_process#Firmware_types "Arch boot process")。若要配置 UEFI 引导器，详见 [Boot loaders (简体中文)](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)").
 
 ## Contents
 
 *   [1 UEFI 发展历史](#UEFI_.E5.8F.91.E5.B1.95.E5.8E.86.E5.8F.B2)
-*   [2 UEFI 引导过程](#UEFI_.E5.BC.95.E5.AF.BC.E8.BF.87.E7.A8.8B)
-    *   [2.1 UEFI 的多重引导](#UEFI_.E7.9A.84.E5.A4.9A.E9.87.8D.E5.BC.95.E5.AF.BC)
-    *   [2.2 检测 UEFI 固件架构](#.E6.A3.80.E6.B5.8B_UEFI_.E5.9B.BA.E4.BB.B6.E6.9E.B6.E6.9E.84)
-        *   [2.2.1 非 Mac 机](#.E9.9D.9E_Mac_.E6.9C.BA)
-        *   [2.2.2 Apple Mac](#Apple_Mac)
-    *   [2.3 Secure Boot](#Secure_Boot)
-*   [3 Linux 内核中有关 UEFI 的配置选项](#Linux_.E5.86.85.E6.A0.B8.E4.B8.AD.E6.9C.89.E5.85.B3_UEFI_.E7.9A.84.E9.85.8D.E7.BD.AE.E9.80.89.E9.A1.B9)
-*   [4 UEFI 变量](#UEFI_.E5.8F.98.E9.87.8F)
-    *   [4.1 Linux 内核中的 UEFI 变量支持](#Linux_.E5.86.85.E6.A0.B8.E4.B8.AD.E7.9A.84_UEFI_.E5.8F.98.E9.87.8F.E6.94.AF.E6.8C.81)
-        *   [4.1.1 efivarfs 和 sysfs-efivars 的不一致](#efivarfs_.E5.92.8C_sysfs-efivars_.E7.9A.84.E4.B8.8D.E4.B8.80.E8.87.B4)
-    *   [4.2 UEFI 变量正常工作的需求](#UEFI_.E5.8F.98.E9.87.8F.E6.AD.A3.E5.B8.B8.E5.B7.A5.E4.BD.9C.E7.9A.84.E9.9C.80.E6.B1.82)
-        *   [4.2.1 挂载 efivarfs](#.E6.8C.82.E8.BD.BD_efivarfs)
-    *   [4.3 用户空间工具](#.E7.94.A8.E6.88.B7.E7.A9.BA.E9.97.B4.E5.B7.A5.E5.85.B7)
-        *   [4.3.1 efibootmgr](#efibootmgr)
-*   [5 UEFI Shell](#UEFI_Shell)
-    *   [5.1 获取 UEFI Shell](#.E8.8E.B7.E5.8F.96_UEFI_Shell)
-    *   [5.2 启动 UEFI Shell](#.E5.90.AF.E5.8A.A8_UEFI_Shell)
-    *   [5.3 重要 UEFI Shell 命令](#.E9.87.8D.E8.A6.81_UEFI_Shell_.E5.91.BD.E4.BB.A4)
-        *   [5.3.1 bcfg](#bcfg)
-        *   [5.3.2 edit](#edit)
-*   [6 UEFI Linux 硬件兼容性](#UEFI_Linux_.E7.A1.AC.E4.BB.B6.E5.85.BC.E5.AE.B9.E6.80.A7)
-*   [7 UEFI 可启动介质](#UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8.E4.BB.8B.E8.B4.A8)
-    *   [7.1 从 ISO 创建 UEFI 可启动 USB](#.E4.BB.8E_ISO_.E5.88.9B.E5.BB.BA_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
-    *   [7.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
-*   [8 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
-    *   [8.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
-    *   [8.2 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
-*   [9 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [9.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
-    *   [9.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
-    *   [9.3 USB 介质卡在黑屏界面](#USB_.E4.BB.8B.E8.B4.A8.E5.8D.A1.E5.9C.A8.E9.BB.91.E5.B1.8F.E7.95.8C.E9.9D.A2)
-        *   [9.3.1 使用 GRUB](#.E4.BD.BF.E7.94.A8_GRUB)
-*   [10 参阅](#.E5.8F.82.E9.98.85)
+    *   [1.1 检测 UEFI 固件架构](#.E6.A3.80.E6.B5.8B_UEFI_.E5.9B.BA.E4.BB.B6.E6.9E.B6.E6.9E.84)
+    *   [1.2 Apple Mac](#Apple_Mac)
+*   [2 Linux 内核中有关 UEFI 的配置选项](#Linux_.E5.86.85.E6.A0.B8.E4.B8.AD.E6.9C.89.E5.85.B3_UEFI_.E7.9A.84.E9.85.8D.E7.BD.AE.E9.80.89.E9.A1.B9)
+*   [3 UEFI 变量](#UEFI_.E5.8F.98.E9.87.8F)
+    *   [3.1 Linux 内核中的 UEFI 变量支持](#Linux_.E5.86.85.E6.A0.B8.E4.B8.AD.E7.9A.84_UEFI_.E5.8F.98.E9.87.8F.E6.94.AF.E6.8C.81)
+        *   [3.1.1 efivarfs 和 sysfs-efivars 的不一致](#efivarfs_.E5.92.8C_sysfs-efivars_.E7.9A.84.E4.B8.8D.E4.B8.80.E8.87.B4)
+    *   [3.2 UEFI 变量正常工作的需求](#UEFI_.E5.8F.98.E9.87.8F.E6.AD.A3.E5.B8.B8.E5.B7.A5.E4.BD.9C.E7.9A.84.E9.9C.80.E6.B1.82)
+        *   [3.2.1 挂载 efivarfs](#.E6.8C.82.E8.BD.BD_efivarfs)
+    *   [3.3 用户空间工具](#.E7.94.A8.E6.88.B7.E7.A9.BA.E9.97.B4.E5.B7.A5.E5.85.B7)
+        *   [3.3.1 efibootmgr](#efibootmgr)
+*   [4 UEFI Shell](#UEFI_Shell)
+    *   [4.1 获取 UEFI Shell](#.E8.8E.B7.E5.8F.96_UEFI_Shell)
+    *   [4.2 启动 UEFI Shell](#.E5.90.AF.E5.8A.A8_UEFI_Shell)
+    *   [4.3 重要 UEFI Shell 命令](#.E9.87.8D.E8.A6.81_UEFI_Shell_.E5.91.BD.E4.BB.A4)
+        *   [4.3.1 bcfg](#bcfg)
+        *   [4.3.2 map](#map)
+        *   [4.3.3 edit](#edit)
+*   [5 UEFI Linux 硬件兼容性](#UEFI_Linux_.E7.A1.AC.E4.BB.B6.E5.85.BC.E5.AE.B9.E6.80.A7)
+*   [6 UEFI 可启动介质](#UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8.E4.BB.8B.E8.B4.A8)
+    *   [6.1 从 ISO 创建 UEFI 可启动 USB](#.E4.BB.8E_ISO_.E5.88.9B.E5.BB.BA_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
+    *   [6.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
+*   [7 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
+    *   [7.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
+    *   [7.2 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
+*   [8 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
+    *   [8.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
+    *   [8.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
+    *   [8.3 USB 介质卡在黑屏界面](#USB_.E4.BB.8B.E8.B4.A8.E5.8D.A1.E5.9C.A8.E9.BB.91.E5.B1.8F.E7.95.8C.E9.9D.A2)
+    *   [8.4 Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI)
+        *   [8.4.1 使用 GRUB](#.E4.BD.BF.E7.94.A8_GRUB)
+*   [9 参阅](#.E5.8F.82.E9.98.85)
 
 ## UEFI 发展历史
 
@@ -47,31 +45,15 @@
 *   自2015年4月，UEFI 标准 2.5 是最新的版本。
 *   苹果公司的EFI实现不是EFI 1.x也不是UEFI 2.x而是这两者的混合体。这类固件不被归入到任何(U)EFI规格中，因而并没有一个标准的UEFI固件。除非特别指明，以下说明可通用但部分可能会在[Apple Macs](/index.php/MacBook "MacBook")上有所不同或是会不起效。
 
-## UEFI 引导过程
-
-1.  系统开机 - 上电自检（Power On Self Test 或 POST）。
-2.  UEFI 固件被加载，并由它初始化启动要用的硬件。
-3.  固件读取其引导管理器以确定从何处（比如，从哪个硬盘及分区）加载哪个 UEFI 应用。
-4.  固件按照引导管理器中的启动项目，加载UEFI 应用。
-5.  已启动的 UEFI 应用还可以启动其他应用（对应于 UEFI shell 或 rEFInd 之类的引导管理器的情况）或者启动内核及initramfs（对应于GRUB之类引导器的情况），这取决于 UEFI 应用的配置。
-
-**Note:** 在有些 UEFI 系统中，唯一可行的启动时（如果应用没有在 UEFI 启动菜单定制条目的话）加载 UEFI 应用的方法是把它放在此固定位置：`<EFI SYSTEM PARTITION>/EFI/boot/bootx64.efi` （对于 64 位的 x86 系统）
-
-### UEFI 的多重引导
-
-因为每个操作系统或者提供者都可以维护自己的 EFI 系统分区中的文件，同时不影响其他系统，所以 UEFI 的多重启动只是简单的运行不同的UEFI 程序，对应于特定操作系统的引导程序。这避免了依赖 chainloading 机制（通过一个[启动引导程序](/index.php/Boot_loaders "Boot loaders")加载另一个引导程序，来切换操作系统）。
-
-参阅 [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
-
 ### 检测 UEFI 固件架构
 
-#### 非 Mac 机
+UEFI 下每一个程序，无论它是某个 OS 引导器还是某个内存测试或数据恢复的工具，都要兼容于 EFI 固件位数或体系结构。
 
-检查目录 `/sys/firmware/efi` 是否存在，如果存在表明内核已经以 UEFI 模式启动，这种情况下 UEFI 架构等同于内核架构。(例如： 32位 或者 64位)
+目前主流的 UEFI 固件，包括近期的 Apple Macs，都采用了 x86_64 EFI 固件。目前还在用 IA32 即 32 位的 EFI 的已知设备只有于 2008 年前生产的 Apple Macs，一些 Intel Cloverfield 超级本和采用 EFI 1.10 固件的 Intel 服务器主板。
 
-**注意:** Intel 的 Atom 片上系统 附带32位的 UEFI (自2013年11月2日). 更多信息见 [使用 GRUB](/index.php?title=%E4%BD%BF%E7%94%A8_GRUB&action=edit&redlink=1 "使用 GRUB (page does not exist)") 。
+x86_64 EFI 不能兼容 32 位 EFI 程序。所以 UEFI 应用程序必须依固件处理器位数／体系结构编译而成。
 
-#### Apple Mac
+### Apple Mac
 
 2008年以前的 Mac 大都使用 i386-efi 固件， 2008年以后大都使用 x86_64-efi 。有能力运行 Mac OS X Snow Leopard 64位内核的 Mac 都是 x86_64 EFI 1.x 版的固件。 在 Mac OS 下输入以下命令可以找出该 Mac 的 efi 固件：
 
@@ -81,37 +63,6 @@ ioreg -l -p IODeviceTree | grep firmware-abi
 ```
 
 如果命令返回 EFI32 则对应的是 i386 EFI 1.x 版本的固件，返回 EFI64 对应的则是 x86_64 EFI 1.x 版的固件. Mac 没有 UEFI 2.x 固件，Apple的 EFI 实现也不完全跟 UEFI 标准兼容。
-
-### Secure Boot
-
-关于在 Linux 中 Secure Boot 的概述请参考文章 [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html). 本节的重点在于如何在 Arch Linux 中设置安全启动。本节暂时仅介绍在开启 Secure Boot 模式的情况下启动 archiso 的步骤。因为 EFI 程序 `PreLoader.efi` 和 `HashTool.efi` 已经添加到 archiso 中，所以在开启 Secure Boot 模式的情况下启动 archiso 是可以的，将会显示一条 "Failed to Start loader...I will now execute HashTool". 的消息。要使用 HashTool 来注册 `loader.efi` 和 `vmlinuz.efi` 的 hash 值，执行如下步骤：
-
-*   选择 `OK`
-*   在 HashTool 主菜单先选择 `Enroll Hash`，再选择 `\loader.efi`，然后点击 `Yes` 确认。再选择 `Enroll Hash` 和 `archiso`，进入 archiso 目录，然后选择 `vmlinuz-efi` 并且点击 `Yes` 确认，最后点击 `Exit` 返回启动设备选择菜单。
-*   在启动设备选择菜单选择 `Arch Linux archiso x86_64 UEFI CD`。
-
-archiso 启动后会自动以 root 登陆，并且出现 shell 提示符。使用以下命令检查 archiso 是否以 Secure Boot 模式启动：
-
-```
-$ od -An -t u1 /sys/firmware/efi/efivars/SecureBoot-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-
-```
-
-XXXX 部分因不同机器而各不相同。可以使用 tab 补全来获取帮助或者列出 EFI 变量。
-
-如果以 Secure Boot 模式启动，命令会返回以 **1** 结尾的五个整数，例如：
-
-```
-6  0  0  0  1
-
-```
-
-此外，另一种方法是执行：
-
-```
-$ bootctl status
-
-```
 
 ## Linux 内核中有关 UEFI 的配置选项
 
@@ -202,9 +153,9 @@ Linux 内核通过两个接口来把 EFI 变量数据传递给用户空间:
 
 ### UEFI 变量正常工作的需求
 
-1.  EFI 运行时服务支持应出现在内核中 (`CONFIG_EFI=y`, 运行 `zgrep CONFIG_EFI /proc/config.gz` 来核对是否共存 ).
-2.  内核处理器的位数/架构应该与EFI处理器的位数/架构相符。
-3.  内核应以 EFI 模式(通过 [EFISTUB](/index.php/EFISTUB "EFISTUB") 或 [EFI 引导器](/index.php/Boot_loaders "Boot loaders")，而不是 BIOS/CSM 或者同为 BIOS/CSM 的"bootcamp")启动。
+1.  内核处理器的位数/架构应该与EFI处理器的位数/架构相符。
+2.  内核应以 EFI 模式(通过 [EFISTUB](/index.php/EFISTUB "EFISTUB") 或 [EFI 引导器](/index.php/Boot_loaders "Boot loaders")，而不是 BIOS/CSM 或者同为 BIOS/CSM 的"bootcamp")启动。
+3.  EFI 运行时服务支持应出现在内核中 (`CONFIG_EFI=y`, 运行 `zgrep CONFIG_EFI /proc/config.gz` 来核对是否共存 ).
 4.  EFI 运行时服务在内核命令行中**不应被禁用**，即**不应使用**内核参数 `noefi`.
 5.  `efivarfs` 文件系统应被挂载在 `/sys/firmware/efi/efivars`, 否则参考下文 [#挂载 efivarfs](#.E6.8C.82.E8.BD.BD_efivarfs) 部分。
 6.  `efivar` 应无错列出 (选项 `-l`) EFI 变量。参见输出内容 [#Sample_List_of_UEFI_Variables](#Sample_List_of_UEFI_Variables).
@@ -243,7 +194,7 @@ efivarfs    /sys/firmware/efi/efivars    efivarfs    defaults    0    0
 2.  **efibootmgr** - 操作 UEFI 固件启动管理器设置的工具- [https://github.com/vathpela/efibootmgr](https://github.com/vathpela/efibootmgr) - [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) 或 [efibootmgr-git](https://aur.archlinux.org/packages/efibootmgr-git/)
 3.  **uefivars** - 转储 UEFI 变量和 PCI 相关信息 (内部使用 efibootmgr 源码) - [https://github.com/fpmurphy/Various/tree/master/uefivars-2.0](https://github.com/fpmurphy/Various/tree/master/uefivars-2.0) 仅支持 efivarfs ，以及 [https://github.com/fpmurphy/Various/tree/master/uefivars-1.0](https://github.com/fpmurphy/Various/tree/master/uefivars-1.0) 仅支持 sysfs-efivars . AUR 软件包 [uefivars-git](https://aur.archlinux.org/packages/uefivars-git/)
 4.  **efitools** - 创建与设置自己的 UEFI Secure Boot 证书，密钥和签名过的程序的工具 (需要 efivarfs) - [efitools-git](https://aur.archlinux.org/packages/efitools-git/)
-5.  **Ubuntu的固件测试套件** - [https://wiki.ubuntu.com/FirmwareTestSuite/](https://wiki.ubuntu.com/FirmwareTestSuite/) - [fwts](https://aur.archlinux.org/packages/fwts/) (以及 [fwts-efi-runtime-dkms](https://aur.archlinux.org/packages/fwts-efi-runtime-dkms/)) 或 [fwts-git](https://aur.archlinux.org/packages/fwts-git/)
+5.  **Ubuntu的固件测试套件** - [https://wiki.ubuntu.com/FirmwareTestSuite/](https://wiki.ubuntu.com/FirmwareTestSuite/) - [fwts-git](https://aur.archlinux.org/packages/fwts-git/)
 
 #### efibootmgr
 
@@ -276,11 +227,11 @@ TARGET SOURCE  FSTYPE OPTIONS
 然后用 efibootmgr 如下创建启动条目:
 
 ```
-# efibootmgr -c -d /dev/sdX -p Y -l /EFI/refind/refind_x64.efi -L "rEFInd"
+ # efibootmgr --create --disk /dev/sdX --part Y --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
 
 ```
 
-**注意:** UEFI 使用反斜杠 `\` 作为路径分隔符 (类似于 Windows 路径)，但是官方 [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) 包使用 `-l` 选项时也支持 Unix 风格的路径分隔符斜杠 `/` . Efibootmgr 解析路径之前内部会把 `/` 转换为 `\` . 有关纳入此功能的 git 评论是 [http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378](http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/commit/?id=f38f4aaad1dfa677918e417c9faa6e3286411378) .
+**注意:** UEFI 使用反斜杠 `\` 作为路径分隔符 (类似于 Windows 路径)，但是官方 [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) 包使用 `-l`/`--loader` 选项时也支持 Unix 风格的路径分隔符斜杠 `/` . Efibootmgr 解析路径之前内部会把 `/` 转换为 `\`.
 
 在上面的命令中 `/boot/efi/EFI/refind/refind_x64.efi` 转译为 `/boot/efi` 和 `/EFI/refind/refind_x64.efi` , 进一步译为 `/dev/sdX` -> 分区 `Y` -> 文件 `/EFI/refind/refind_x64.efi`.
 
@@ -296,11 +247,10 @@ UEFI Shell 是固件的终端，可用于启动包括引导器的 UEFI 程序。
 
 你可从 Intel 的 Tianocore UDK/EDK2 Sourceforge.net 工程下载以 BSD 许可证发布的 UEFI Shell.
 
-*   [AUR](/index.php/AUR "AUR") **[uefi-shell-svn](https://aur.archlinux.org/packages/uefi-shell-svn/)** 包 (推荐) - 为 x86_64 系统提供 x86_64 Shell 以及为 i686 系统提供 IA32 Shell - 直接从 Tianocore EDK2 SVN 最新的源码编译
-*   [Precompiled x86_64 UEFI Shell v2 binary](https://svn.code.sf.net/p/edk2/code/trunk/edk2/ShellBinPkg/UefiShell/X64/Shell.efi) (可能不是最新)
-*   [Precompiled x86_64 UEFI Shell v1 binary](https://svn.code.sf.net/p/edk2/code/trunk/edk2/EdkShellBinPkg/FullShell/X64/Shell_Full.efi) (上游再也不更新了)
-*   [Precompiled IA32 UEFI Shell v2 binary](https://svn.code.sf.net/p/edk2/code/trunk/edk2/ShellBinPkg/UefiShell/Ia32/Shell.efi) (可能不是最新)
-*   [Precompiled IA32 UEFI Shell v1 binary](https://svn.code.sf.net/p/edk2/code/trunk/edk2/EdkShellBinPkg/FullShell/Ia32/Shell_Full.efi) (上游再也不更新了)
+*   [uefi-shell-git](https://aur.archlinux.org/packages/uefi-shell-git/) 包 (推荐) - 为 x86_64 系统提供 x86_64 Shell 以及为 i686 系统提供 IA32 Shell - 直接从 Tianocore EDK2 最新的源码编译
+*   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/master/ShellBinPkg) (may not be up-to-date)
+*   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream)
+*   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](http://dl.dropbox.com/u/17629062/Shell2.zip) - from Clover EFI bootloader
 
 Shell v2 在 UEFI 2.3+ 系统上表现最好，并比 Shell v1 优先推荐。Shell v1 应该在所有 UEFI 系统上有效并且与它们遵循的 UEFI 标准版本无关。更多信息见 [ShellPkg](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=ShellPkg) 和 [这封邮件](http://sourceforge.net/mailarchive/message.php?msg_id=28690732)
 
@@ -314,13 +264,13 @@ Phoenix SecureCore Tiano UEFI 固件已内嵌 UEFI Shell, 可按 `F6`, `F11` 或
 
 ### 重要 UEFI Shell 命令
 
-UEFI Shell 命令通常支持 `-b` 选项，它在输出的每页末尾暂停。 `map` 能列出识别出的文件系统 (`fs0`, ...) 和存储设备 (`blk0`, ...). 运行 `help -b` 来列出所有可用命令。
+UEFI Shell 命令通常支持 `-b` 选项，它在输出的每页末尾暂停. 运行 `help -b` 来列出所有可用命令。
 
 更多信息见 [http://software.intel.com/en-us/articles/efi-shells-and-scripting/](http://software.intel.com/en-us/articles/efi-shells-and-scripting/)
 
 #### bcfg
 
-BCFG 命令用于修改 UEFI NVRAM 条目，它能让用户改变启动条目或驱动器选项。在"UEFI Shell Specification 2.0" PDF 文档的83页 (Section 5.3) 有详细描述。
+`bcfg` 命令用于修改 UEFI NVRAM 条目，它能让用户改变启动条目或驱动器选项。在"UEFI Shell Specification 2.0" PDF 文档的83页 (Section 5.3) 有详细描述。
 
 **注意:**
 
@@ -342,6 +292,16 @@ Shell> bcfg boot add 3 fs0:\EFI\refind\refind_x64.efi "rEFInd"
 ```
 
 `fs0:` 映射到 EFI 系统分区，`fs0:\EFI\refind\refind_x64.efi` i是要启动的文件。
+
+To add an entry to boot directly into your system without a bootloader, configure a boot option using your kernel as an [EFISTUB](/index.php/EFISTUB#UEFI_Shell "EFISTUB"):
+
+```
+Shell> bcfg boot add **N** fs**V**:\vmlinuz-linux "Arch Linux"	
+Shell> bcfg boot -opt **N** "root=**/dev/sdX#** initrd=\initramfs-linux.img"
+
+```
+
+where `N` is the priority, `V` is the volume number of your EFI partition, and `/dev/sdX#` is your root partition.
 
 删除第4个启动选项:
 
@@ -371,6 +331,18 @@ Shell> bcfg -? -v -b
 
 ```
 
+#### map
+
+`map` displays a list of device mappings i.e. the names of available file systems (`fs0`) and storage devices (`blk0`).
+
+Before running file system commands such as `cd` or `ls`, you need to change the shell to the appropriate file system by typing its name:
+
+```
+ Shell> fs0:
+ fs0:\> cd EFI/
+
+```
+
 #### edit
 
 EDIT 命令提供了类似于 nano 界面的基本编辑器，但是功能略少一点。它以 UTF-8 编码并且行尾结束符兼容 LF 和 CRLF.
@@ -378,9 +350,7 @@ EDIT 命令提供了类似于 nano 界面的基本编辑器，但是功能略少
 本例中，编辑在固件 EFI 系统分区 (`fs0:` 中 rEFInd 的 `refind.conf`
 
 ```
-Shell> fs0:
-FS0:\> cd \EFI\arch\refind
-FS0:\EFI\arch\refind\> edit refind.conf
+ Shell> edit FS0:\EFI\refind\refind.conf
 
 ```
 
@@ -433,10 +403,17 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 [OVMF](https://tianocore.github.io/ovmf/) 是一个 tianocore 工程用以对虚拟机支持 UEFI. OVMF 为 QEMU 包含了一个样本 UEFI 固件。
 
-你可从 AUR [ovmf-svn](https://aur.archlinux.org/packages/ovmf-svn/) 建立 OVMF (有 Secure Boot 支持), 运行如下命令:
+安装 [ovmf](https://www.archlinux.org/packages/?name=ovmf)，建立 OVMF (有 Secure Boot 支持), 运行如下命令:
 
 ```
-$ qemu-system-x86_64 -enable-kvm -net none -m 1024 -pflash /usr/share/ovmf/x86_64/bios.bin
+$ qemu-system-x86_64 -enable-kvm -net none -m 1024 -drive file=/usr/share/ovmf/ovmf_x64.bin,format=raw,if=pflash,readonly
+
+```
+
+As shorter alternative, [ovmf](https://www.archlinux.org/packages/?name=ovmf) can be loaded using `-bios` parameter
+
+```
+$ qemu-system-x86_64 -enable-kvm -m 1G -bios /usr/share/ovmf/ovmf_x64.bin
 
 ```
 
@@ -460,7 +437,7 @@ Gigabyte Z77X-UD3H rev. 1.1 (UEFI 版本 F19e)
 
 ### Windows 改变了启动次序
 
-例如你升级Windows 后直接启动了Windows而不是选择启动菜单:
+例如你升级 Windows 后直接启动了Windows而不是选择启动菜单:
 
 *   确定UEFI固件设置中的"安全启动"(Secure Boot) 和 [Windows 中的"快速启动"](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") 选项没有启用.
 *   确定UEFI固件设置的启动顺序中Linux Boot Manager 先于 Windows Boot Manager.
@@ -485,9 +462,11 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 ### USB 介质卡在黑屏界面
 
-*   也可能是 [KMS](/index.php/KMS "KMS") 的问题。从 USB 启动时尝试 [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting").
+可能是 [KMS](/index.php/KMS "KMS") 的问题。从 USB 启动时尝试 [Disabling KMS](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting").
 
-*   如果不是 KMS 的问题，那么可能是 [EFISTUB](/index.php/EFISTUB "EFISTUB") 启动的 bug (更多信息见 [[1]](https://bugs.archlinux.org/task/33745) and [[2]](https://bbs.archlinux.org/viewtopic.php?id=156670) ). 官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 和 [Archboot](/index.php/Archboot "Archboot") iso 都用 EFISTUB (通过 [Gummiboot](/index.php/Gummiboot "Gummiboot") 启动管理器) 来让内核以 UEFI 模式启动。这种情况下参考下文来使用 [GRUB](/index.php/GRUB "GRUB") 作为 USB 的引导器。
+### Booting 64-bit kernel on 32-bit UEFI
+
+官方 ISO ([Archiso](/index.php/Archiso "Archiso")) 和 [Archboot](/index.php/Archboot "Archboot") iso 都用 EFISTUB (通过 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 启动管理器) 来让内核以 UEFI 模式启动。这种情况下参考下文来使用 [GRUB](/index.php/GRUB "GRUB") 作为 USB 的引导器。
 
 #### 使用 GRUB
 
@@ -495,7 +474,7 @@ bcdedit /set {bootmgr} path \EFI\systemd\systemd-bootx64.efi
 
 *   把 `<USB>/EFI/boot/loader.efi` 备份为 `<USB>/EFI/boot/gummiboot.efi`
 
-*   [创建一个独立的 GRUB 镜像](/index.php/GRUB#GRUB_standalone "GRUB")并把它复制为 `<USB>/EFI/boot/loader.efi`
+*   [创建一个独立的 GRUB 镜像](/index.php/GRUB#GRUB_standalone "GRUB")并把它复制为 `<USB>/EFI/boot/loader.efi` 或 `EFI/boot/bootia32.efi`
 
 *   按如下内容创建 `<USB>/EFI/boot/grub.cfg` (替换 `ARCH_YYYYMM` 为 USB 盘，例如 `ARCH_201404`):
 
@@ -592,7 +571,7 @@ menuentry "UEFI Shell x86_64 v1" {
 *   [LPC 2012 UEFI Tutorial : part 1](http://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-1/)
 *   [LPC 2012 UEFI Tutorial : part 2](http://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-2/)
 *   [Intel's Tianocore Project](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=Welcome_to_TianoCore) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox
-*   [FGA: The EFI boot process](http://homepage.ntlworld.com/jonathan.deboynepollard/FGA/efi-boot-process.html)
+*   [FGA: The EFI boot process](https://jdebp.eu/FGA/efi-boot-process.html)
 *   [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)
 *   [Convert Windows x64 from BIOS-MBR mode to UEFI-GPT mode without Reinstall](https://gitorious.org/tianocore_uefi_duet_builds/pages/Windows_x64_BIOS_to_UEFI)
 *   [Create a Linux BIOS+UEFI and Windows x64 BIOS+UEFI bootable USB drive](https://gitorious.org/tianocore_uefi_duet_builds/pages/Linux_Windows_BIOS_UEFI_boot_USB)
@@ -600,4 +579,3 @@ menuentry "UEFI Shell x86_64 v1" {
 *   [EFI Shells and Scripting - Intel Documentation](http://software.intel.com/en-us/articles/efi-shells-and-scripting/)
 *   [UEFI Shell - Intel Documentation](http://software.intel.com/en-us/articles/uefi-shell/)
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)
-*   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware - from Clover efiboot](http://dl.dropbox.com/u/17629062/Shell2.zip)

@@ -153,7 +153,7 @@ Refer to the [VirtualBox manual](https://www.virtualbox.org/manual) to learn how
 
 ## Installation steps for Arch Linux guests
 
-Boot the Arch installation media through one of the virtual machine's virtual drives. Then, complete the installation of a basic Arch system as explained in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or the [Installation guide](/index.php/Installation_guide "Installation guide").
+Boot the Arch installation media through one of the virtual machine's virtual drives. Then, complete the installation of a basic Arch system as explained in the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### Installation in EFI mode
 

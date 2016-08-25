@@ -57,7 +57,7 @@ There are no exclusive hardware differences between the Developer Edition and th
 
 ### BIOS updates
 
-[BIOS update A07](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=28M21) was released on 2015-11-26\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+[BIOS update A08](http://www.dell.com/support/Home/us/en/19/Drivers/DriversDetails?driverId=KTW00) was released on 2016-08-24\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ### Backlight
 

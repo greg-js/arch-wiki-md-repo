@@ -139,7 +139,7 @@ MATE is well suited for use by individuals with sight or mobility impairment. [I
 Before starting MATE for the first time, enter the following command as the user who needs accessibility features:
 
 ```
-gsettings set org.mate.interface accessibility true
+$ gsettings set org.mate.interface accessibility true
 
 ```
 
@@ -152,7 +152,7 @@ Once you start MATE, you can configure the accessibility applications via *Syste
 Compositing is not enabled by default. To enable it navigate to run `System -> Preferences -> Windows` and click the tick box alongside **Enable software compositing window manager** in the `General` tab. Alternatively, you can run the following from the terminal:
 
 ```
-$ dconf write /org/mate/marco/general/compositing-manager true
+$ gsettings set org.mate.Marco.general compositing-manager true
 
 ```
 
@@ -161,7 +161,7 @@ $ dconf write /org/mate/marco/general/compositing-manager true
 By default, new windows are placed in the top-left corner. To center new windows on creation navigate to run `System -> Preferences -> Windows` and click the tick box alongside **Center new windows** in the `Placement` tab. Alternatively, you can run the following from the terminal:
 
 ```
-$ dconf write /org/mate/marco/general/center-new-windows true
+$ gsettings set org.mate.Marco.general center-new-windows true
 
 ```
 
@@ -170,18 +170,18 @@ $ dconf write /org/mate/marco/general/center-new-windows true
 Window snapping is not be enabled by default, to enable it navigate to run `System -> Preferences -> Windows` and click the tick box alongside **Enable side by side tiling** in the `Placement` tab. Alternatively, you can run the following from the terminal:
 
 ```
-$ dconf write /org/mate/marco/general/side-by-side-tiling true 
+$ gsettings set org.mate.Marco.general side-by-side-tiling true
 
 ```
 
 ### Show or hide desktop icons
 
-By default, MATE shows multiple icons on the desktop: The content of your desktop directory, computer, home and network directories, the trash and mounted drives. You can show or hide them individually or all at once using `dconf`.
+By default, MATE shows multiple icons on the desktop: The content of your desktop directory, computer, home and network directories, the trash and mounted drives. You can show or hide them individually or all at once using `gsettings`.
 
 #### Hide all desktop icons
 
 ```
-$ dconf write /org/mate/desktop/background/show-desktop-icons false
+$ gsettings set org.mate.background show-desktop-icons false
 
 ```
 
@@ -190,35 +190,35 @@ $ dconf write /org/mate/desktop/background/show-desktop-icons false
 Hide computer icon:
 
 ```
-$ dconf write /org/mate/caja/desktop/computer-icon-visible false
+$ gsettings set org.mate.caja.desktop computer-icon-visible false
 
 ```
 
 Hide user directory icon:
 
 ```
-$ dconf write /org/mate/caja/desktop/home-icon-visible false
+$ gsettings set org.mate.caja.desktop home-icon-visible false
 
 ```
 
 Hide network icon:
 
 ```
-$ dconf write /org/mate/caja/desktop/network-icon-visible false
+$ gsettings set org.mate.caja.desktop network-icon-visible false
 
 ```
 
 Hide trash icon:
 
 ```
-$ dconf write /org/mate/caja/desktop/trash-icon-visible false
+$ gsettings set org.mate.caja.desktop trash-icon-visible false
 
 ```
 
 Hide mounted volumes:
 
 ```
-$ dconf write /org/mate/caja/desktop/volumes-visible false
+$ gsettings set org.mate.caja.desktop volumes-visible false
 
 ```
 
@@ -228,12 +228,12 @@ Replace `false` with `true` for the icons to reappear.
 
 The *marco* window manager can be replaced with another window manager via either of the following methods:
 
-	Using DConf (recommended)
+	Using gsettings (recommended)
 
 Execute the following to specify a different window manager for MATE:
 
 ```
-$ dconf write /org/mate/desktop/session/required-components/windowmanager *wm-name*
+$ gsettings set org.mate.session.required-components windowmanager *wm-name*
 
 ```
 
@@ -247,16 +247,16 @@ To prevent Caja from managing the desktop, execute the following:
 
 ```
 $ gsettings set org.mate.background show-desktop-icons false
-$ killall caja # caja will be restarted by session manager
+$ killall caja  # Caja will be restarted by session manager
 
 ```
 
 ### Change window decoration button order
 
-You can change the button using dconf. The key is in org.mate.marco.general.button-layout. Use the graphical dconf-editor or the dconf command line tool to change it:
+You can change the button order using the graphical dconf-editor or the gsettings command line tool:
 
 ```
-$ dconf write /org/mate/marco/general/button-layout "'close,maximize,minimize:'"
+$ gsettings set org.mate.Marco.general button-layout 'close,maximize,minimize:'
 
 ```
 
@@ -264,10 +264,10 @@ and put **menu**, **close**, **minimize** and **maximize** in your desired order
 
 ### Auto open file manager after drive mount
 
-By default, MATE automatically opens a new file manager window when a drive is mounted. To disable this, change the following key in dconf:
+By default, MATE automatically opens a new file manager window when a drive is mounted. To disable this:
 
 ```
-$ dconf write /org/mate/desktop/media-handling/automount-open false
+$ gsettings set org.mate.media-handling automount-open false
 
 ```
 
@@ -368,11 +368,11 @@ To easily toggle the compositing feature, save the following script somewhere wi
 
 ```
 #!/bin/bash
-if $(dconf read /org/mate/marco/general/compositing-manager) == "true"
+if $(gsettings get org.mate.Marco.general compositing-manager) == "true"
 then
-  dconf write /org/mate/marco/general/compositing-manager false
+  gsettings set org.mate.Marco.general compositing-manager false
 else
-  dconf write /org/mate/marco/general/compositing-manager true
+  gsettings set org.mate.Marco.general compositing-manager true
 fi
 
 ```
@@ -389,21 +389,21 @@ See [Cursor themes#Desktop environments](/index.php/Cursor_themes#Desktop_enviro
 
 ### Use of gradient backgrounds with LightDM
 
-If you wish to use the default MATE (1.8) *Stripes* background as the LightDM background as well so as to make for seamless transition from LightDM to MATE, you will find that it is runtime-constructed from a grayscale PNG upon which MATE layers a vertical blue-to-green gradient, something which LightDM does not currently support. If insistent, you can work around this by temporarily setting `/org/mate/desktop/background/show-desktop-icons` to `false`, either through the `dconf Editor` tool available from the `System Tools` menu or by running
+If you wish to use the default MATE (1.8) *Stripes* background as the LightDM background as well so as to make for seamless transition from LightDM to MATE, you will find that it is runtime-constructed from a grayscale PNG upon which MATE layers a vertical blue-to-green gradient, something which LightDM does not currently support. If insistent, you can work around this by temporarily setting `/org/mate/desktop/background/show-desktop-icons` to `false`, either through the `dconf-editor` tool available from the `System Tools` menu or by running
 
 ```
-dconf write /org/mate/desktop/background/show-desktop-icons false
+$ gsettings set org.mate.background show-desktop-icons false
 
 ```
 
 from the Alt-F2 `Run Application` dialog, then running `killall mate-panel` from said dialog and hitting `Print Screen` before the panel reappears. You are then presented with a `Save As` dialog for exactly that fully rendered, screen-sized PNG that you need for LightDM. Run
 
 ```
-dconf reset /org/mate/desktop/background/show-desktop-icons
+$ gsettings set org.mate.background show-desktop-icons true
 
 ```
 
-to have your desktop icons reappear.
+to have your desktop icons reappear, if desired.
 
 ### Enabling panel shadow
 

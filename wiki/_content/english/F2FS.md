@@ -13,6 +13,12 @@ Create the partition:
 
 where `*/dev/sdxY*` is the target volume to format in F2FS.
 
+**Warning:** If using F2FS as your root partition, you will need to add the following modules to the `MODULES` line in your `/etc/mkinitcpio.conf` file [[1]](https://bbs.archlinux.org/viewtopic.php?id=210673):
+```
+MODULES="f2fs crc32 libcrc32c crc32c_generic crc32c-intel crc32-pclmul"
+
+```
+
 ## Mounting a F2FS partition
 
 Users will likely need to manually load the F2FS kernel module before mounting. Issue as root:

@@ -12,8 +12,9 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Touchpad tapping](#Touchpad_tapping)
     *   [3.2 Natural scrolling](#Natural_scrolling)
-    *   [3.3 Mouse button re-mapping](#Mouse_button_re-mapping)
-    *   [3.4 Gestures](#Gestures)
+    *   [3.3 Edge Scrolling](#Edge_Scrolling)
+    *   [3.4 Mouse button re-mapping](#Mouse_button_re-mapping)
+    *   [3.5 Gestures](#Gestures)
 *   [4 Debugging](#Debugging)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
 *   [5 See also](#See_also)
@@ -133,6 +134,20 @@ EndSection
 ```
 
 This will enable natural scrolling for any mice or touchpads.
+
+### Edge Scrolling
+
+To set up edge (vertical) scrolling, add the following configuration file:
+
+ `/etc/X11/xorg.conf.d/30-touchpad.conf` 
+```
+Section "InputClass"
+        Identifier "MyTouchpad"
+        MatchIsTouchpad "on"
+        Driver "libinput"
+        Option "ScrollMethod" "edge"
+EndSection
+```
 
 ### Mouse button re-mapping
 

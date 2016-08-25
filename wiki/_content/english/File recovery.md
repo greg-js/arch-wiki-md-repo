@@ -1,4 +1,4 @@
-This article lists data recovery and undeletion options for Arch Linux.
+This article lists data recovery and undeletion options for Linux.
 
 ## Contents
 

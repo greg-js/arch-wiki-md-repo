@@ -77,7 +77,7 @@ Remember to configure your [firewall](/index.php/Firewall "Firewall") to not blo
 
 ```
 $ dbus-launch gsettings set org.gnome.Vino authentication-methods "['vnc']"
-$ dbus-launch gsettings set org.gnome.Vino vnc-password $(echo "mypassword"|base64)
+$ dbus-launch gsettings set org.gnome.Vino vnc-password $(echo -n "mypassword"|base64)
 
 ```
 

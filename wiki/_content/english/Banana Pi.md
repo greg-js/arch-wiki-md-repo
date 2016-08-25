@@ -50,7 +50,7 @@ dd if=/dev/zero of=/dev/sdX bs=1M count=8
 
 ```
 
-Use [fdisk](/index.php/Fdisk "Fdisk") to partition the SD card, and [format](/index.php/File_systems "File systems") it with `mkfs.ext4`.
+Use [fdisk](/index.php/Fdisk "Fdisk") to partition the SD card, and [format](/index.php/File_systems "File systems") it with `mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1`.
 
 Mount the ext4 filesystem, replacing `sda1` with the formatted partition:
 

@@ -16,17 +16,9 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	Resume algunas de las similitudes y diferencias entre Arch y otras distribuciones.
 
-	[Noticias de prensa sobre Arch Linux](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
-
-	Lo que dicen de nosotros.
-
-	[Guía para principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)")
-
-	Una guía detallada cuyo seguimiento le permitirá completar el proceso de instalación y configuración de Arch Linux.
-
 	[Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 
-	Una guía de instalación concisa dirigida a usuarios con cierta experiencia en Arch.
+	Una guía cuyo seguimiento le permitirá completar el proceso de instalación y configuración de Arch Linux.
 
 	[Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
 
@@ -37,6 +29,10 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 	Presentación por categorías de los paquetes oficiales y de AUR más comunes.
 
 ## Nuestra comunidad
+
+	[Código de conducta](/index.php/Forum_etiquette_(Espa%C3%B1ol) "Forum etiquette (Español)")
+
+	Conozca las normas de conducta para los miembros del foro de Arch.
 
 	[Colaborar con la comunidad](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)")
 
@@ -53,10 +49,6 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 	[Comunidades internacionales](/index.php/International_communities "International communities")
 
 	Recolección de enlaces a las comunidades de Arch Linux del resto del mundo.
-
-	[Etiqueta del fórum](/index.php/Forum_etiquette_(Espa%C3%B1ol) "Forum etiquette (Español)")
-
-	Conozca las normas de conducta para los miembros del foro de Arch.
 
 	[Canales IRC](/index.php/IRC_channels_(Espa%C3%B1ol) "IRC channels (Español)")
 

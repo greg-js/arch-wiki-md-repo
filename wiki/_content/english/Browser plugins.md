@@ -57,7 +57,7 @@ The package you will need to install depends on the browser you use.
 
 *   The NPAPI version can be [installed](/index.php/Pacman "Pacman") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package. This plugin was [discontinued by Adobe](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html) and is stuck at version 11.2; although, Adobe will provide security updates for 5 years after its release (i.e. until March 2017[[1]](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)[[2]](http://helpx.adobe.com/flash-player/release-note/release-notes-developer-flash-player.html)).
 
-*   The PPAPI version is shipped with Google Chrome. If you are using Chromium or any other browser using the PPAPI interface such as [Opera](/index.php/Opera "Opera"), see [Chromium#Flash Player plugin](/index.php/Chromium#Flash_Player_plugin "Chromium") for more information.
+*   The PPAPI version is shipped with Google Chrome and is also available on [https://get.adobe.com/flashplayer/?no_redirect](https://get.adobe.com/flashplayer/?no_redirect) and on [https://get.adobe.com/flashplayer/otherversions/](https://get.adobe.com/flashplayer/otherversions/). If you are using Chromium or any other browser using the PPAPI interface such as [Opera](/index.php/Opera "Opera"), see [Chromium#Flash Player plugin](/index.php/Chromium#Flash_Player_plugin "Chromium") for more information.
 
 **Note:**
 

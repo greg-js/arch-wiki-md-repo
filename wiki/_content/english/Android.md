@@ -32,12 +32,13 @@
         *   [4.2.1 Heimdall](#Heimdall)
         *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
 *   [5 Alternative connection methods](#Alternative_connection_methods)
-    *   [5.1 KDE Connect](#KDE_Connect)
-    *   [5.2 adb-sync](#adb-sync)
-    *   [5.3 AirDroid](#AirDroid)
+    *   [5.1 adb-sync](#adb-sync)
+    *   [5.2 AirDroid](#AirDroid)
+    *   [5.3 AndroidScreencast](#AndroidScreencast)
     *   [5.4 FTP](#FTP)
-    *   [5.5 SSH Server](#SSH_Server)
-    *   [5.6 Samba](#Samba)
+    *   [5.5 KDE Connect](#KDE_Connect)
+    *   [5.6 SSH Server](#SSH_Server)
+    *   [5.7 Samba](#Samba)
 *   [6 Tips & Tricks](#Tips_.26_Tricks)
     *   [6.1 During Debugging "Source not found"](#During_Debugging_.22Source_not_found.22)
     *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
@@ -548,10 +549,6 @@ which means that your device is visible to Odin and is ready to be flashed.
 
 ## Alternative connection methods
 
-### KDE Connect
-
-[kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) integrates your android device with the KDE desktop. Its features include synced notifications, clipboard sync, multimedia control, and file/URL sharing.
-
 ### adb-sync
 
 [adb-sync](https://github.com/google/adb-sync) (available in [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) is a tool to synchronize files between a PC and an Android device using the ADB protocol.
@@ -560,11 +557,19 @@ which means that your device is visible to Odin and is ready to be flashed.
 
 [AirDroid](http://goo.gl/EZQ9GQ) is an Android app to access files from your web browser.
 
+### AndroidScreencast
+
+[AndroidScreencast](http://xsavikx.github.io/AndroidScreencast) was developed to view and control your android device from a PC (using ADB).
+
 ### FTP
 
 You run a FTP server on Arch and connect to it from your phone, or the other way around: run a FTP server on your phone and connect to it from Arch.
 
 See [List of applications/Internet#FTP](/index.php/List_of_applications/Internet#FTP "List of applications/Internet"). There are a lot of FTP clients/servers available for Android.
+
+### KDE Connect
+
+[kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) integrates your android device with the KDE desktop. Its features include synced notifications, clipboard sync, multimedia control, and file/URL sharing.
 
 ### SSH Server
 

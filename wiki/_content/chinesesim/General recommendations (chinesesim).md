@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-03，点击[这里](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=444215)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [General_Recommendations](/index.php/General_Recommendations "General Recommendations") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=General_Recommendations&diff=0&oldid=447656)可以查看翻译后英文页面的改动。
 
-本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [新手指南](/index.php/%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97 "新手指南") 和 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。
+本文是各种重要或常用的文章的详细索引。阅读本文前，读者应该先通过 [官方安装指南](/index.php/%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 "官方安装指南") 安装 Arch Linux 基本系统。
 
 **注意:** 中国用户可以特别留意 [#中国大陆用户的推荐解决方案](#.E4.B8.AD.E5.9B.BD.E5.A4.A7.E9.99.86.E7.94.A8.E6.88.B7.E7.9A.84.E6.8E.A8.E8.8D.90.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88) 内容。
 
@@ -375,13 +375,7 @@ Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 
 
 ### 彩色输出
 
-虽然一部分软件能够输出彩色字符, 使用通用的彩色字过滤器也是另一种方法. 安装 [cope-git](https://aur.archlinux.org/packages/cope-git/)。
-
-关于Linux核心工具（例如**grep**以及**ls**）的彩色输出，参见[核心工具](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Core utilities (简体中文)")。
-
-Man页（帮助文档）是GNU/Linux最常用的信息工具。为提高可读性，可以打开彩色输出，参见：[彩色显示](/index.php/Man_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.BD.A9.E8.89.B2.E6.98.BE.E7.A4.BA "Man page (简体中文)")。
-
-这一部分介绍优化控制台程序的方法。更多信息，参见：[Category:Command shells (简体中文)](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)")。
+参考 [Color output in console](/index.php/Color_output_in_console "Color output in console")。
 
 ### 压缩文件
 

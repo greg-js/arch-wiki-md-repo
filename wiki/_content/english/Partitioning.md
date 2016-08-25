@@ -1,4 +1,4 @@
-*Partitioning* a hard drive allows one to logically divide the available space into sections that can be accessed independently of one another.
+*Partitioning* a hard drive divides the available space into sections that can be accessed independently.
 
 An entire hard drive may be allocated to a single partition, or one may divide the available storage space across multiple partitions. A number of scenarios require creating multiple partitions: dual- or multi-booting, for example, or maintaining a [swap](/index.php/Swap "Swap") partition. In other cases, partitioning is used as a means of logically separating data, such as creating separate partitions for audio and video files. Common partitioning schemes are discussed in detail below.
 

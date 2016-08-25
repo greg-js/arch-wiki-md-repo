@@ -37,7 +37,7 @@
 | [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2014-04` |
 | [ArchWiki:Contributing (Español)](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)") | Ayuda/Colaboración | `2014-04` |
 | [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)") | Tarjeta gráfica | `2013-09` |
-| [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") | Información/Guía/Instalación | `2016-03` | [Pedro](/index.php/User:Pedro "User:Pedro") |
+| [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") | Información/Guía/Instalación | `2016-08` | Redirigida a Installation guide (Español) |
 | [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)") | Gestores de arranque | `2015-07` | La página es un artículo marco que se remite para su desarrollo a otras subpáginas |
 | [Bumblebee (Español)](/index.php/Bumblebee_(Espa%C3%B1ol) "Bumblebee (Español)") | Tarjeta gráfica | `2013-09` |
 | [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") | Recuperación del sistema | `2013-09` |
@@ -77,7 +77,7 @@
 | [Improve pacman performance (Español)](/index.php/Improve_pacman_performance_(Espa%C3%B1ol) "Improve pacman performance (Español)") | Gestión de paquetes | `2013-09` |
 | [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)") | Instalación | `2013-11` |
 | [Install from SSH (Español)](/index.php/Install_from_SSH_(Espa%C3%B1ol) "Install from SSH (Español)") | Instalación | `2014-12` |
-| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | Información/Guía/Instalación | `2016-04` | [Pedro](/index.php/User:Pedro "User:Pedro") |
+| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | Información/Guía/Instalación | `2016-08` | [Pedro](/index.php/User:Pedro "User:Pedro") |
 | [Installing Arch Linux on a USB key (Español)](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)") | Instalación | `2013-11` |
 | [Intel graphics (Español)](/index.php/Intel_graphics_(Espa%C3%B1ol) "Intel graphics (Español)") | Tarjeta gráfica | `2013-09` |
 | [Iptables (Español)](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") | Seguridad/Cortaguegos | `2013-09` |
@@ -97,7 +97,7 @@
 | [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)") | Aplicaciones/juegos | `2013-10` | Página desgajada de [List of applications](/index.php/List_of_applications "List of applications") |
 | [Locale (Español)](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") | Configuración del sistema/Idioma sistema | `2013-09` |
 | [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") | Sistema archivos/Particionado | `2015-06` |
-| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | Portada wiki | `2016-04` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir una sección sobre el equipo de traducción |
+| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | Portada wiki | `2016-08` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir una sección sobre el equipo de traducción |
 | [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") | Tabla de particionado | `2013-09` |
 | [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") | Servidores de réplica | `2013-09` |
 | [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") | Configuración del sistema | `2013-09` |

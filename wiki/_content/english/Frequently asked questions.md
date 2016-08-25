@@ -75,7 +75,7 @@ If you are a beginner and want to use Arch, you must be willing to invest time i
 
 Before asking for help, do your own independent research by Googling, searching the forum and the superb documentation provided by the Arch Wiki. *There is a reason these resources were made available to you in the first place.* Many thousands of *volunteered* hours have been spent compiling this excellent information.
 
-See also [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") and the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+See also [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") and the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### Is Arch designed to be used as a server? A desktop? A workstation?
 
@@ -217,7 +217,7 @@ Before upgrading check the front page [Arch news](https://www.archlinux.org/), [
 
 ### Arch needs an installer. Maybe a GUI installer?
 
-Since installation doesn't occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") and [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") have been fully updated to use the command-line method. If you're still interested in using an installer, consider using [Archboot](/index.php/Archboot "Archboot").
+Since installation doesn't occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") has been fully updated to use the command-line method. If you're still interested in using an installer, consider using [Archboot](/index.php/Archboot "Archboot").
 
 ### I installed Arch, and now I am at a shell! What now?
 

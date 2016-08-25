@@ -3,7 +3,7 @@ This page describes how to automatically configure archlinux using [cdist](http:
 ## Contents
 
 *   [1 Introduction](#Introduction)
-*   [2 Preperation](#Preperation)
+*   [2 Preparation](#Preparation)
 *   [3 How to use the types](#How_to_use_the_types)
 *   [4 Type overview](#Type_overview)
 *   [5 Managed Desktop (__nico_managed_desktop)](#Managed_Desktop_.28_nico_managed_desktop.29)
@@ -16,9 +16,9 @@ This page describes how to automatically configure archlinux using [cdist](http:
 
 Cdist is a configuration management system. The author of cdist is also using Archlinux as a target distribution and has some re-usable example configurations online.
 
-## Preperation
+## Preparation
 
-Get the [cdist repository with Nicos modications](http://git.schottelius.org/?p=cdist-nico;a=summary):
+Get the [cdist repository with Nico's modifications](http://git.schottelius.org/?p=cdist-nico;a=summary):
 
 ```
 [git://git.schottelius.org/cdist-nico](git://git.schottelius.org/cdist-nico)

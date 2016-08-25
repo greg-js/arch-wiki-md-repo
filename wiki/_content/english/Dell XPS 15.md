@@ -22,30 +22,32 @@ This page is a work in progress! More info coming soon.
 ## Contents
 
 *   [1 System Settings](#System_Settings)
-*   [2 System Setup](#System_Setup)
-    *   [2.1 Power Management](#Power_Management)
-    *   [2.2 Sound](#Sound)
-    *   [2.3 Graphics](#Graphics)
-        *   [2.3.1 Intel only](#Intel_only)
-            *   [2.3.1.1 acpi_call usage](#acpi_call_usage)
-        *   [2.3.2 Intel with Nvidia](#Intel_with_Nvidia)
-    *   [2.4 Screen](#Screen)
-    *   [2.5 External Display](#External_Display)
-        *   [2.5.1 Multihead](#Multihead)
-    *   [2.6 WLAN](#WLAN)
-        *   [2.6.1 Note](#Note)
-    *   [2.7 Bluetooth](#Bluetooth)
-    *   [2.8 Webcam](#Webcam)
-    *   [2.9 Power management](#Power_management_2)
-    *   [2.10 Special Touch Keys](#Special_Touch_Keys)
-        *   [2.10.1 Alternative method](#Alternative_method)
-    *   [2.11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
-    *   [2.12 Touchpad Gestures](#Touchpad_Gestures)
-        *   [2.12.1 libinput](#libinput)
-            *   [2.12.1.1 XPS 9550](#XPS_9550)
-        *   [2.12.2 Synaptics](#Synaptics)
-    *   [2.13 Notes](#Notes)
-*   [3 Howtos](#Howtos)
+*   [2 Differences between XPS 9550 & Precision 5510](#Differences_between_XPS_9550_.26_Precision_5510)
+*   [3 System Setup](#System_Setup)
+    *   [3.1 Power Management](#Power_Management)
+    *   [3.2 Sound](#Sound)
+    *   [3.3 Graphics](#Graphics)
+        *   [3.3.1 Intel only](#Intel_only)
+            *   [3.3.1.1 acpi_call usage](#acpi_call_usage)
+        *   [3.3.2 Intel with Nvidia](#Intel_with_Nvidia)
+    *   [3.4 Screen](#Screen)
+    *   [3.5 External Display](#External_Display)
+        *   [3.5.1 Multihead](#Multihead)
+    *   [3.6 WLAN](#WLAN)
+        *   [3.6.1 Note](#Note)
+    *   [3.7 Bluetooth](#Bluetooth)
+    *   [3.8 BIOS](#BIOS)
+    *   [3.9 Webcam](#Webcam)
+    *   [3.10 Power management](#Power_management_2)
+    *   [3.11 Special Touch Keys](#Special_Touch_Keys)
+        *   [3.11.1 Alternative method](#Alternative_method)
+    *   [3.12 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+    *   [3.13 Touchpad Gestures](#Touchpad_Gestures)
+        *   [3.13.1 libinput](#libinput)
+            *   [3.13.1.1 XPS 9550](#XPS_9550)
+        *   [3.13.2 Synaptics](#Synaptics)
+    *   [3.14 Notes](#Notes)
+*   [4 Howtos](#Howtos)
 
 ## System Settings
 
@@ -198,6 +200,36 @@ Bus 001 Device 005: ID 1bcf:2b95 Sunplus Innovation Technology Inc.
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+lspci for model Precision 5510:
+
+```
+00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 07)
+00:01.0 PCI bridge: Intel Corporation Skylake PCIe Controller (x16) (rev 07)
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics P530 (rev 06)
+00:04.0 Signal processing controller: Intel Corporation Skylake Processor Thermal Subsystem (rev 07)
+00:14.0 USB controller: Intel Corporation Sunrise Point-H USB 3.0 xHCI Controller (rev 31)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-H Thermal subsystem (rev 31)
+00:15.0 Signal processing controller: Intel Corporation Sunrise Point-H Serial IO I2C Controller #0 (rev 31)
+00:15.1 Signal processing controller: Intel Corporation Sunrise Point-H Serial IO I2C Controller #1 (rev 31)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-H CSME HECI #1 (rev 31)
+00:1c.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #1 (rev f1)
+00:1d.0 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #9 (rev f1)
+00:1d.4 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #13 (rev f1)
+00:1d.6 PCI bridge: Intel Corporation Sunrise Point-H PCI Express Root Port #15 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-H LPC Controller (rev 31)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-H PMC (rev 31)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-H HD Audio (rev 31)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-H SMBus (rev 31)
+01:00.0 3D controller: NVIDIA Corporation GM107GLM [Quadro M1000M] (rev a2)
+02:00.0 Network controller: Intel Corporation Wireless 8260 (rev 3a)
+03:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller (rev 01)
+
+```
+
+## Differences between XPS 9550 & Precision 5510
+
+The Precision 5510 is essentially identical to the 9550 variant, with the exception of an Intel Wireless NIC & Quadro 1000M Graphics Chip. Compared to the 9550's Broadcom NIC & 960M graphics chip.
 
 ## System Setup
 
@@ -504,6 +536,28 @@ hciconfig hci0 reset
 ```
 
 to get blueman working
+
+### BIOS
+
+**XPS 9550 with InfinityEdge 4K**
+
+The XPS 9550 4K, with its current state, is unstable due to it's young age. A majority of the bugs stem from Dell's BIOS.
+
+Listed below are you may encounter with the XPS 9550 4K:
+
+**01.02.00**
+• Brightness works with slow fade (XF86MonBrightnessUp / xbacklight -inc:-dec)
+• Sleep resume working around 80% of the time
+• Resume from sleep restarts the laptop
+
+**01.02.10+**
+• Increased speeds (faster boot, applications feel snappier when loading, especially in 01.02.13)
+• Black screen upon resume (the computer will operate as if it's on, to get display to work, set brightness to max using keyboard shortcut)
+• Brightness flickers/stutters when dimming or increasing the brightness (demonstrated in [i3wm](https://wiki.archlinux.org/index.php/I3))
+• Screen flickers on low brightness settings
+• Possible poor fan behavior (not confirmed)
+
+Many users have recommend the 01.02.00 BIOS, as it proves to be the most balanced out of all of the updates.
 
 ### Webcam
 

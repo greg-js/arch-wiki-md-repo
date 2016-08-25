@@ -118,25 +118,37 @@ done &
 
 ### Scratchpad
 
-You can emulate a scratchpad (like i3's) by adding a shortcut for this command:
+You can emulate a dropdown terminal (like i3's scratchpad feature if you put a terminal in it) using bspwm's window flags.
 
 ```
-xdotool search --onlyvisible --classname scratchpad windowunmap \
-|| xdotool search --classname scratchpad windowmap \
-|| st -c scratchpad -g 1000x400+460 &
+Append the following to the end of the bspwm config file (adapt to your own terminal emulator):
 
 ```
 
-and adding this rule:
+```
+bspc rule -a scratchpad sticky=on state=floating hidden=on
+st -c scratchpad -e ~/bin/scratch &
 
 ```
-bspc rule -a scratchpad sticky=on state=floating
+
+The sticky flag ensures that the window is always present on the current desktop. And `~/bin/scratch` is:
+
+```
+#!/usr/bin/sh
+bspc query -N -n .floating > /tmp/scratchid
+$SHELL
 
 ```
 
-See also [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1338582#p1338582) and [[2]](http://yuri-rage.github.io/geekery/2015/01/26/bleeding-edge-bspwm/).
+The hotkey for toggling the scratchpad should be bound to:
 
-For a scratch-pad which can use any window type without pre-defined rules, see: [[3]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
+```
+id=$(cat /tmp/scratchid);\
+bspc node $id --flag hidden;bspc node -f $id
+
+```
+
+For a scratch-pad which can use any window type without pre-defined rules, see: [[1]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
 
 For a more sophisticated scratchpad script that supports many terminals out of the box and has flags for doing things like optionally starting a tmuxinator/tmux session, turning any window into a scratchpad on the fly, and automatically resizing a scratchpad to fit the current monitor see [tdrop-git](https://aur.archlinux.org/packages/tdrop-git/).
 

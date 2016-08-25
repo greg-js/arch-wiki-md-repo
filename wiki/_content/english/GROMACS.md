@@ -64,8 +64,6 @@ Some other packages that may increase performance are:
 *   [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) - "An external [Boost library](https://en.wikipedia.org/wiki/Boost_(C%2B%2B_libraries) can be used to provide better implementation support for smart pointers and exception handling." [[1]](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#optional-build-components)
 *   [lapack](https://www.archlinux.org/packages/?name=lapack) - "Hardware-optimized BLAS and LAPACK libraries are useful for a few of the GROMACS utilities focused on normal modes and matrix manipulation, but they do not provide any benefits for normal simulations." [[2]](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#optional-build-components)
 
-**Tip:** An [FFTW](https://en.wikipedia.org/wiki/fftw "wikipedia:fftw") library with some GROMACS-specific enhancements is available in the [fftw-bettersimd](https://aur.archlinux.org/packages/fftw-bettersimd/) package which can be used in place of the dependency [fftw](https://www.archlinux.org/packages/?name=fftw).
-
 The [gromacs-git](https://aur.archlinux.org/packages/gromacs-git/) package contains the latest development source, and should not be used in production.
 
 ## Configuration

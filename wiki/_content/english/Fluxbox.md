@@ -280,7 +280,7 @@ If you use mmaker -f FluxBox to create your menus, you will not see the styles m
 
 ### The Slit
 
-Fluxbox, WindowMaker and a couple of other lightweight window managers have a "Slit". This is a dock for any application that can be 'dockable'. A docked application is anchored and appears on every workspace. It cannot be moved freely and is not influenced by any manipulation to windows. It is basically a small widget. Dock apps that are useful in such a situation tend to be clocks, system monitors, weather, etc. Visit [dockapps.windowmaker.org](http://dockapps.windowmaker.org/)
+Fluxbox, WindowMaker and a couple of other lightweight window managers have a "Slit". This is a dock for any application that can be 'dockable'. A docked application is anchored and appears on every workspace. It cannot be moved freely and is not influenced by any manipulation to windows. It is basically a small widget. Dock apps that are useful in such a situation tend to be clocks, system monitors, weather, etc. Visit [dockapps.net](http://www.dockapps.net/)
 
 ### Autostart programs
 

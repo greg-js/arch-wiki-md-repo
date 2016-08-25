@@ -6,10 +6,10 @@ This article covers the installation and setup of disk quota.
 
 ## Contents
 
-*   [1 Installing](#Installing)
-*   [2 Enabling](#Enabling)
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
     *   [2.1 Journaled quota](#Journaled_quota)
-*   [3 Configuring](#Configuring)
+*   [3 Configuration](#Configuration)
     *   [3.1 Example configuration](#Example_configuration)
 *   [4 Managing](#Managing)
     *   [4.1 Basics](#Basics)
@@ -19,11 +19,11 @@ This article covers the installation and setup of disk quota.
     *   [4.3 Other commands](#Other_commands)
 *   [5 See also](#See_also)
 
-## Installing
+## Installation
 
-Disk quota only requires the [quota-tools](https://www.archlinux.org/packages/?name=quota-tools) package to be [installed](/index.php/Install "Install").
+[Install](/index.php/Install "Install") the [quota-tools](https://www.archlinux.org/packages/?name=quota-tools) package.
 
-## Enabling
+## Usage
 
 First, edit `/etc/fstab` to enable the quota mount option(s) on selected file systems. For example, edit an entry
 
@@ -80,7 +80,7 @@ If trying to remount the filesystem returns with
 Finally, enable quotas:
 
 ```
- # quotaon -av
+# quotaon -av
 
 ```
 
@@ -106,7 +106,7 @@ or additionally, enable the group quota mount option;
 
 The vfsv1 format is necessary for supporting quotas more than 4TB. You need at least kernel 2.6.33 for quota_v2 support. If your kernel is older, you have to use vfsv0.
 
-## Configuring
+## Configuration
 
 **Tip:** To find out how many 1K blocks are there for a partition use `df`
 
@@ -169,7 +169,7 @@ The `hard` limit is stricter, so to speak; a user can never write more data once
 
 ## Managing
 
-*Checking for quota limits and advanced operations*
+Check for quota limits and advanced operations.
 
 ### Basics
 
@@ -214,7 +214,7 @@ Use `edquota -g -p *group1* *group2* ...` to copy settings for groups.
 The idea is to modify the quota settings for one user and copy the setting to all other users. Set the quota for `*user1*` and apply the quota to users with a UID greater than 999.
 
 ```
-# edquota -p *user1* `awk -F: '$3 > 999 {print $1}' /etc/passwd`
+# edquota -p *user1* $(awk -F: '$3 > 999 {print $1}' /etc/passwd)
 
 ```
 
@@ -248,4 +248,4 @@ Number of in use dquot entries (user/group): -1946
 *   [http://tldp.org/HOWTO/Quota.html](http://tldp.org/HOWTO/Quota.html)
 *   [http://www.sf.net/projects/linuxquota/](http://www.sf.net/projects/linuxquota/)
 *   [http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialQuotas.html)
-*   [http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html](http://www.redhat.com/docs/manuals/linux/RHL-8.0-Manual/admin-primer/s1-storage-quotas.html)
+*   [RHEL7: Disk Quotas](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch-disk-quotas.html)

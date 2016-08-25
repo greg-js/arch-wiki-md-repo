@@ -184,7 +184,7 @@ Server = http://xyne.archlinux.ca/repos/xyne
 
 *   **Maintainer:** [Case_Of](https://bbs.archlinux.org/profile.php?id=94876)
 *   **Description:** A repository for latest release of youtube-dl package.
-*   **Key-ID:** 9F213FB2
+*   **Key-ID:** [9F213FB2](http://youtube-dl.tk/youtube-dl-pgp.key)
 
 **Note:** Install the package with `pacman -S youtube-dl/youtube-dl`.
 

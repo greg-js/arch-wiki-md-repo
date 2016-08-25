@@ -95,7 +95,7 @@ notify-send 'Hello world!' 'This is an example notification.' --icon=dialog-info
 **Tip:**
 
 *   An overview on the available icons can be found [here](http://standards.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html).
-*   To send desktop notification from a background script running as root (replace `*X_user*` with the user running X): `# sudo -u *X_user* DISPLAY=:0 notify-send 'Hello world!' 'This is an example notification.'` 
+*   To send desktop notification from a background script running as root (replace `*X_user*` and `*X_userid*` with the user and userid running X respectively): `# sudo -u *X_user* DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/*X_userid*/bus notify-send 'Hello world!' 'This is an example notification.'` 
 
 **Boo**
 

@@ -59,6 +59,8 @@ There are several approaches for flashing a custom firmware:
 *   Use Matt DeVillier's [ezScript](http://forum.kodi.tv/showthread.php?tid=194362) (currently supports only Chromeboxes).
 *   Manually with `flashrom`, in this case you will need to obtain the firmware by yourself or to compile it from the Coreboot sources ([official](http://www.coreboot.org/Download_coreboot) or [Chromium OS fork](https://chromium.googlesource.com/chromiumos/third_party/coreboot/)).
 
+**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ﻿).
+
 ### Disable the hardware write protection
 
 See the [Disabling the hardware write protection](#Disabling_the_hardware_write_protection) at the [Firmware write protection](#Firmware_write_protection).
@@ -194,7 +196,7 @@ Chrome OS already includes `flashrom`.
 ### Required tools
 
 *   Programmer, both the [Raspberry Pi](http://flashrom.org/RaspberryPi) and the [Bus Pirate](http://flashrom.org/Bus_Pirate) are mentioned as compatible devices on the [flashrom wiki](http://flashrom.org/). The [Bus Pirate](http://flashrom.org/Bus_Pirate) is preferable as it will allow you to use Chromium OS's version of `flashrom` that supports `--wp-disable` and `--wp-status` flags.
-*   SOIC clip is recommended, see [[2]](http://flashrom.org/ISP).
+*   SOIC clip is recommended, see [[3]](http://flashrom.org/ISP).
 *   Female jumper wires.
 *   If you want to use Chromium OS's `flashrom` another Linux machine (32bit or 64bit) is required.
 

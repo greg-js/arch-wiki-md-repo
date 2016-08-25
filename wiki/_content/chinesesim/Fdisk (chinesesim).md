@@ -1,5 +1,9 @@
 **翻译状态：** 本文是英文页面 [Fdisk](/index.php/Fdisk "Fdisk") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-18，点击[这里](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=391664)可以查看翻译后英文页面的改动。
 
+GPT fdisk 是编辑 GPT 硬盘的文本模式工具集。由 gdisk, sgdisk 和 cgdisk 组成，它们分别和来自 util-linux 的 fdisk (用于 MBR 硬盘)等价。在 [extra] 源的 [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) 可用。
+
+来自 util-linux (基于 util-linux 内建的 libfdisk) 的 fdisk 工具部分支持 GPT, 但仍在测试阶段 (自从2013年10月7日). 相关的 cfdisk 和 sfdisk 仍不支持 GPT, 并在 GPT 硬盘上使用的话有可能损坏 GPT 头和分区表。
+
 ## Contents
 
 *   [1 使用 GPT - 推荐方式](#.E4.BD.BF.E7.94.A8_GPT_-_.E6.8E.A8.E8.8D.90.E6.96.B9.E5.BC.8F)
@@ -8,7 +12,8 @@
     *   [2.1 Fdisk 用法](#Fdisk_.E7.94.A8.E6.B3.95)
         *   [2.1.1 用 cgdisk 创建 GPT 分区](#.E7.94.A8_cgdisk_.E5.88.9B.E5.BB.BA_GPT_.E5.88.86.E5.8C.BA)
         *   [2.1.2 用 fdisk 建立 MBR 分区](#.E7.94.A8_fdisk_.E5.BB.BA.E7.AB.8B_MBR_.E5.88.86.E5.8C.BA)
-*   [3 See also](#See_also)
+*   [3 从 MBR 转换为 GPT](#.E4.BB.8E_MBR_.E8.BD.AC.E6.8D.A2.E4.B8.BA_GPT)
+*   [4 See also](#See_also)
 
 ## 使用 GPT - 推荐方式
 
@@ -162,6 +167,18 @@ Syncing disks.
 ```
 
 若因 *fdisk* 遇到错误导致以上操作无法完成，可以用 `q` 命令来退出。
+
+## 从 MBR 转换为 GPT
+
+gdisk (以及 sgdisk 和 cgdisk也是)最好的特性之一就是能无损转换 MBR 和 BSD 盘符到 GPT. 一旦转换完成，MBR 主分区和逻辑分区转换成 GPT 分区并生成有正确的分区类型 GUID 和 唯一分区 GUID.
+
+只需打开 MBR, 用 gdisk 的"w"选项来把改变写入到硬盘(和 fdisk 类似)以转换到 GPT. **警惕所有错误并在写入硬盘之前修复它们**，因为你会有损失数据的风险。更多信息见 [http://www.rodsbooks.com/gdisk/mbr2gpt.html](http://www.rodsbooks.com/gdisk/mbr2gpt.html) . 转换之后，需要重新安装引导器以配置到从 GPT 启动。
+
+**注意:**
+
+*   记住 GPT 在硬盘末尾存储了第二分区表。这个数据结构默认占有了33512B空间。MBR 不具有类似数据结构，这意味着 MBR 硬盘的最后一个分区的最后一部分可能被占用进而妨碍到完全的转换。如果这发生在你身上，你必须放弃转换，改变最后一个分区的大小，或是保留最后一个分区不转换。
+*   注意如果你的启动管理器是 GRUB的话, 它需要 [BIOS 启动分区](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")。如果你的 MBR 分区层不是太旧的话，出于对齐的需要这是一个让第一个分区从2048扇区起始的好机会。这意味着开始的部分有1007 KB的空间可以分配给 BIOS 启动分区。为此，首先用 gdisk 完成上文的 MBR->GPT 转换，之后，用 gdisk 创建新分区并手动指定为扇区 34 - 2047, 并设置为 `EF02` 分区类型。
+*   在 RAID 模式下的基于 Intel的笔记本有一些关于备份 GPT 表损坏的问题，解决方法是尽可能使用 AHCI 替代 RAID.
 
 ## See also
 

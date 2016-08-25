@@ -2,6 +2,14 @@ Galera is a synchronous multi-master cluster for MySQL/InnoDB databases. For mor
 
 **Note:** Currently replication is supported only for InnoDB tables.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Installation MariaDB](#Installation_MariaDB)
+*   [3 Configuration](#Configuration)
+*   [4 Compile Galera](#Compile_Galera)
+*   [5 See also](#See_also)
+
 ## Installation
 
 The two components Galera cluster comprised of are Galera plugin itself and a patched version of MySQL server which connect using wsrep API.
@@ -9,6 +17,15 @@ The two components Galera cluster comprised of are Galera plugin itself and a pa
 Install the [mysql-wsrep](https://aur.archlinux.org/packages/mysql-wsrep/) and [galera](https://aur.archlinux.org/packages/galera/) packages from the [AUR](/index.php/AUR "AUR").
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mysqld.service` daemon.
+
+## Installation [MariaDB](/index.php/MariaDB "MariaDB")
+
+MariaDB V>10.1 is ready to use galera / wsrep out of the box. [[1]](https://mariadb.org/mariadb-10-1-1-galera-support/)
+
+[Install](/index.php/Install "Install") these packages:
+
+*   [mariadb](https://www.archlinux.org/packages/?name=mariadb) — Standard MariaDB Package
+*   [galera](https://aur.archlinux.org/packages/galera/) — ATM this package does not install the galera library to the right place so you should [Galera#Compile Galera](/index.php/Galera#Compile_Galera "Galera") yourself.
 
 ## Configuration
 
@@ -90,6 +107,23 @@ Once you configured the first node, you should be able to start all other nodes 
 
 ```
 # systemctl start mysqld.service
+
+```
+
+## Compile Galera
+
+*   Download galera from github [Galera Releases](https://github.com/codership/galera/releases)
+*   Extract content and run scons in root directory
+
+```
+$ tar xvfz release_*.tar.gz && cd galera_release_* && scons
+
+```
+
+*   Copy lib to `/usr/lib/galera/libgalera_smm.so`
+
+```
+$ sudo mkdir /usr/lib/galera && sudo cp libgalera_smm.so /usr/lib/galera/
 
 ```
 

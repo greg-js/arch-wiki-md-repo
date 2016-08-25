@@ -9,6 +9,7 @@ The **ArchMap** project creates a map of Arch Linux users all over the world.
     *   [3.1 OpenStreetMap](#OpenStreetMap)
     *   [3.2 Google Earth](#Google_Earth)
     *   [3.3 Daily updated map](#Daily_updated_map)
+    *   [3.4 User Generated Maps](#User_Generated_Maps)
 *   [4 List yourself](#List_yourself)
 
 ## History
@@ -19,7 +20,7 @@ When Google Earth for Linux was released, [brain0](/index.php/User:Brain0 "User:
 
 The third version of ArchMap was based on Google Maps.
 
-The current version was started by [alux](/index.php/User:Alux "User:Alux") with help from [kyrias](/index.php/User:Kyrias "User:Kyrias") and [fsckd](/index.php?title=User:Fsckd&action=edit&redlink=1 "User:Fsckd (page does not exist)").
+The current version was started by [alux](/index.php/User:Alux "User:Alux") with help from [kyrias](/index.php/User:Kyrias "User:Kyrias") and [fsckd](/index.php/User:Fsckd "User:Fsckd").
 
 ### Screenshots
 
@@ -60,6 +61,10 @@ You can refresh the data by right-clicking the ArchMap folder and selecting *Ref
 ### Daily updated map
 
 [This map](http://dopsi.ch/archmap) is updated daily (around 10:00am UTC) using the [ArchMap](http://github.com/maelstrom59/ArchMap) script. The KML data used to render the map is available [here](http://dopsi.ch/archmap/archmap.kml).
+
+### User Generated Maps
+
+[This map](https://api.mapbox.com/styles/v1/erayaydin/cis93dj9j001v2xuge20kuq0h.html?fresh=true&title=true&access_token=pk.eyJ1IjoiZXJheWF5ZGluIiwiYSI6ImNpczdxMG1pNDAwMmYyb2xqY2Y1NXB5ZDUifQ.TUVUVEtsW6MHYsybhpZ3-w#5.32/38.578/32.784) created by Eray Aydın on 24.08.2016
 
 ## List yourself
 

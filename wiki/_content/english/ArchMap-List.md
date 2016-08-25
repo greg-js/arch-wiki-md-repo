@@ -1022,5 +1022,6 @@ You can use the following website to get your device's coordinates along with a 
 19.168670,73.263631 "rksomayaji" # Badlapur, Maharashtra, India
 46.012929, -65.155508 "hakstrap01013" # Wheaton Settlement, New Brunswick, Canada
 59.959530, 10.634994 "corebob" # Oslo, Norway
+37.997714, 32.529863 "erayaydin" # Konya, Turkey
 
 ```

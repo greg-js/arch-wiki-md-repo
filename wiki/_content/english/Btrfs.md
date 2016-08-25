@@ -113,7 +113,10 @@ The Btrfs default blocksize is 16KB. To use a larger blocksize for data/metadata
 
 #### Multi-device file system
 
-**Warning:** As of August 2016, the RAID 5, RAID 6 mode of Btrfs is considered *fatally flawed*, and shouldn't be used for "anything but testing with throw-away data." [[1]](https://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg55161.html)
+**Warning:**
+
+*   As of August 2016, the RAID 5, RAID 6 mode of Btrfs is considered *fatally flawed*, and shouldn't be used for "anything but testing with throw-away data." [[1]](https://www.mail-archive.com/linux-btrfs@vger.kernel.org/msg55161.html)
+*   Some [boot loaders](/index.php/Boot_loader "Boot loader") such as [Syslinux](/index.php/Syslinux "Syslinux") do not support multi-device file systems.
 
 Multiple devices can be entered to create a RAID. Supported RAID levels include RAID 0, RAID 1, RAID 10, RAID 5 and RAID 6\. The RAID levels can be configured separately for data and metadata using the `-d` and `-m` options respectively. By default the data is striped (`raid0`) and the metadata is mirrored (`raid1`). See [Using Btrfs with Multiple Devices](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) for more information about how to create a Btrfs RAID volume as well as the manpage for `mkfs.btrfs`.
 

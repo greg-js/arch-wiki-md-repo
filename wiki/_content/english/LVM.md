@@ -122,8 +122,8 @@ Quick overview:
 *   Create your physical volumes (PVs). If you have one disk it is best to just create one PV in one large partition. If you have multiple disks you can create partitions on each of them and create a PV on each partition.
 *   Create your volume group (VG) and add all PVs to it.
 *   Create logical volumes (LVs) inside that VG.
-*   Continue with “Format the partitions” step of [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
-*   When you reach the “Create initial ramdisk environment” step in the Beginners Guide, add the `lvm` hook to `/etc/mkinitcpio.conf` (see below for details).
+*   Continue with [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide").
+*   When you reach the “Create initial ramdisk environment” step in the Installation guide, add the `lvm` hook to `/etc/mkinitcpio.conf` (see below for details).
 
 **Warning:** `/boot` cannot reside in LVM when using [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), which does not support LVM. [GRUB](/index.php/GRUB "GRUB") users do not have this limitation. If you need to use GRUB Legacy, you must create a separate `/boot` partition and format it directly.
 
@@ -276,7 +276,7 @@ Your logical volumes should now be located in `/dev/mapper/` and `/dev/*YourVolu
 
 ```
 
-Now you can create file systems on logical volumes and mount them as normal partitions (if you are installing Arch linux, refer to [mounting the partitions](/index.php/Beginners%27_guide#Mount_the_partitions "Beginners' guide") for additional details):
+Now you can create file systems on logical volumes and mount them as normal partitions (if you are installing Arch linux, refer to [mounting the partitions](/index.php/Mount "Mount") for additional details):
 
 ```
 # mkfs.<*fstype*> /dev/mapper/<*volume_group*>-<*logical_volume*>

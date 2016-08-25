@@ -124,6 +124,8 @@ It is a [Killer Wireless-AC 1535](http://www.killernetworking.com/product-suppor
 
 Or use the [Installer Script](https://github.com/stuartwells4/razer-laptop/tree/master/stealth) at your own risk.
 
+To improve WiFi stability, go into the BIOS and ENABLE WiFi Firmware loading. This loads the wireless firmware at boot, which prevents the WiFi from failing to initiate at boot.
+
 #### Touchpad
 
 [Install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package. See [Libinput](/index.php/Libinput "Libinput") for more information on this driver.

@@ -71,7 +71,7 @@ Read [Kernel modules](/index.php/Kernel_modules "Kernel modules") for more infor
 
 ## Connect to a VPN provided by a third party
 
-To connect to a VPN service provided by a third party, most of the following can most likely be ignored, especially regarding server setup. Begin with [#The client configuration file](#The_client_configuration_file) and skip ahead to [#Starting OpenVPN](#Starting_OpenVPN) after that. One should use the provider certificates and instructions, for instance see: [Airvpn](/index.php/Airvpn "Airvpn").
+To connect to a VPN service provided by a third party, most of the following can most likely be ignored, especially regarding server setup. Begin with [#The client config profile](#The_client_config_profile_.28OpenVPN.29) and skip ahead to [#Starting OpenVPN](#Starting_OpenVPN) after that. One should use the provider certificates and instructions, for instance see: [Airvpn](/index.php/Airvpn "Airvpn").
 
 **Note:** Most free VPN providers will (often only) offer [PPTP](/index.php/PPTP_server "PPTP server"), which is drastically easier to setup and configure, but is [not secure](http://poptop.sourceforge.net/dox/protocol-security.phtml).
 

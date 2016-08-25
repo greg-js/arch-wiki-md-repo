@@ -41,35 +41,37 @@
 
 ## Установка
 
-Вероятней всего Wayland уже установлен на вашей системе, так как он является зависимостью для [gtk2](https://www.archlinux.org/packages/?name=gtk2) и [gtk3](https://www.archlinux.org/packages/?name=gtk3). Если же он отсутствует, пакет [wayland](https://www.archlinux.org/packages/?name=wayland) можно установить из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+**Примечание:** Wayland, скорее всего, установлен на вашей системе, так как является зависимостью для [gtk2](https://www.archlinux.org/packages/?name=gtk2) и [gtk3](https://www.archlinux.org/packages/?name=gtk3).
+
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [wayland](https://www.archlinux.org/packages/?name=wayland).
 
 ## Использование
 
-Wayland это просто библиотека, которая бесполезна сама по себе. Для использования этой технологии вместо сервера X понадобится композитный менеджер (такой как Weston).
+Wayland - библиотека, которая бесполезна сама по себе. Чтобы заменить X сервер, понадобится композитный менеджер (например, [#Weston](#Weston)).
 
 ## Weston
 
 ### Установка
 
-Вам нужно установить пакет [weston](https://www.archlinux.org/packages/?name=weston) из официальных репозиториев.
+Установите пакет [weston](https://www.archlinux.org/packages/?name=weston).
 
 ### Использование
 
-<caption>***Горячие клавиши** (super = windows key - можно изменить, см. weston.ini)*</caption>
+<caption>***Горячие клавиши** (super = клавиша windows - можно изменить, смотрите weston.ini)*</caption>
 | Комманда | Действие |
 | Ctrl + Alt + Backspace | Выйти из Weston |
 | Super + Scroll (or PageUp/PageDown) | Увеличить/уменьшить рабочий стол |
 | Super + Tab | Переключить окно |
 | Super + ЛКМ | Переместить окно |
-| Super + Колесо прокрутки | Изменить размер окна |
 | Super + ПКМ | Повернуть окно! |
+| Super + Колесо прокрутки | Изменить размер окна |
 | Super + Alt + Колесо прокрутки | Изменить прозрачность окна |
 | Super + K | Принудительно завершить активное окно |
 | Super + KeyUp/KeyDown | Переключиться на предыдущее/следующее рабочее пространство |
 | Super + Shift + KeyUp/KeyDown | Переключение рабочего пространства с захватом текущего окна |
 | Super + F***n*** | Перейти на рабочее пространство ***n*** |
 | Super + S | Сделать скриншот |
-| Super + R | Скринкастинг. |
+| Super + R | Записать скринкаст. |
 
 Теперь, когда установлен Wayland и выполнены все требования, можно проверить его.
 
@@ -80,7 +82,7 @@ $ weston
 
 ```
 
-Также Weston может быть запущен самостоятельно. Попробуйте выполнить в виртуальном терминале:
+Кроме того, Weston может быть запущен самостоятельно. Попробуйте выполнить в виртуальном терминале:
 
 ```
 $ weston-launch
@@ -98,6 +100,13 @@ $ weston-terminal
 
 ```
 $ weston-flower 
+
+```
+
+Для проверки протокола передачи кадров (запускает `glxgears`):
+
+```
+$ weston-gears
 
 ```
 
