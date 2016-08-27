@@ -50,7 +50,7 @@ Heinz Maulshagen开发了dmraid工具来检测RAID和创建它们的映射.支�
 
 ## 准备
 
-*   在其它机器上打开需要的指南(如[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), [Installation guide](/index.php/Installation_guide "Installation guide"))。如果没有其它的机器，打印出来。
+*   在其它机器上打开需要的指南(如 [Installation guide](/index.php/Installation_guide "Installation guide"))。如果没有其它的机器，打印出来。
 *   下载最新的Arch Linux安装镜像.
 *   备份所有重要的文件，因为目标分区中的所有文件将被破坏。
 

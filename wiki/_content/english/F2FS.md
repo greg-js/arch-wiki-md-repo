@@ -40,8 +40,8 @@ The partition can then be mounted:
 With the latest [installation media](https://www.archlinux.org/download/) it is possible to install Arch linux with root located on a F2FS filesystem:
 
 1.  Create the root partition as F2FS as described in section [#Creating a F2FS partition](#Creating_a_F2FS_partition).
-2.  Create a separate `/boot` partition as ext2, or any other filesystem supported by the bootloader.
-3.  Continue with the installation procedure as per [Beginners' guide#Mount the partitions](/index.php/Beginners%27_guide#Mount_the_partitions "Beginners' guide") until [chrooted](/index.php/Change_root "Change root").
+2.  If your [bootloader](/index.php/Bootloader "Bootloader") does not support F2FS, create a separate `/boot` partition using a filesystem that it does.
+3.  Continue with the installation procedure as per [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide") until [chrooted](/index.php/Change_root "Change root").
 4.  Install [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) on the newly installed system as well.
 5.  Regenerate the [initramfs](/index.php/Initramfs "Initramfs") while chrooted.
 

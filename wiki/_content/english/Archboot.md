@@ -46,13 +46,13 @@ It only runs in RAM, without any special filesystems like squashfs, thus it is l
 	network labeled images don't include [core] repository.
 
 *   Please check md5sum before using it.
-*   [Download 2016.05 „2k16-R1“](https://downloads.archlinux.de/iso/archboot/2016.05) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2016.05-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
+*   [Download 2016.08 „2k16-R2“](https://downloads.archlinux.de/iso/archboot/2016.08) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2016.08-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
-	kernel: 4.5.4-1
+	kernel: 4.7.2-1
 
-	pacman: 5.0.1-3
+	pacman: 5.0.1-4
 
-	systemd: 229-3
+	systemd: 231-1
 
 	RAM recommendations: 600 MB
 
@@ -67,7 +67,7 @@ Hybrid image file is a standard CD-burnable image and also a raw disk image.
 
 ### PXE booting / Rescue system
 
-[Download 2016.05 „2k16-R1“](https://downloads.archlinux.de/iso/archboot/2016.05/boot) needed files from the directory.
+[Download 2016.05 „2k16-R1“](https://downloads.archlinux.de/iso/archboot/2016.08/boot) needed files from the directory.
 
 *   vmlinuz_i686 + initramfs_i686.img (i686)
 *   vmlinuz_x86_64 + initramfs_x86_64.img(x86_64)

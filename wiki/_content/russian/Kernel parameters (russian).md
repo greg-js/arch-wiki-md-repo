@@ -108,7 +108,7 @@ image=/boot/vmlinuz-linux
 
 **Примечание:** If you have not set a value for menu timeout, you will need to hold `Space` while booting for the Gummiboot menu to appear.
 
-*   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") and configuration files according to the instructions in the [Beginners' Guide](/index.php/Beginners%27_guide#Gummiboot "Beginners' guide")) and add them to the `options` line:
+*   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") and configuration files according to the instructions in the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and add them to the `options` line:
 
 	 `options root=/dev/sda2 rw *quiet splash*` 
 

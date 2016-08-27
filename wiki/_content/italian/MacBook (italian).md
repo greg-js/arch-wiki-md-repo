@@ -1,4 +1,4 @@
-La procedura per installare Arch Linux su un Macbook è molto simile a quella valida per qualsiasi altro computer. Nonostante ciò, a causa di alcuni componenti hardware specifici del MacBook, bisogna prendere dei particolari accorgimenti. Per informazioni generali sull'installazione, vedi [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). Queste istruzioni sono da considerarsi valide per qualsiasi computer Apple il cui harware sia supportato dal kernel Linux. Si consiglia di leggere i relativi articoli (in alto a destra nella pagina), per la risoluzione dei problemi di specifiche versioni di MacBook.
+La procedura per installare Arch Linux su un Macbook è molto simile a quella valida per qualsiasi altro computer. Nonostante ciò, a causa di alcuni componenti hardware specifici del MacBook, bisogna prendere dei particolari accorgimenti. Per informazioni generali sull'installazione, vedi [Installation guide](/index.php/Installation_guide "Installation guide"). Queste istruzioni sono da considerarsi valide per qualsiasi computer Apple il cui harware sia supportato dal kernel Linux. Si consiglia di leggere i relativi articoli (in alto a destra nella pagina), per la risoluzione dei problemi di specifiche versioni di MacBook.
 
 ## Contents
 
@@ -102,7 +102,7 @@ Per installare usando EFI, seguire le istruzioni [instruction to make a EFI boot
 **Note:**
 
 *   La partizione di Swap è opzionale su macchine con RAM superiore a 4GB, dato che non influirebbe sulle prestazioni della macchina. Si può comunque creare in un secondo momento [Swap file](/index.php/Swap#Swap_file "Swap").
-*   Per ulteriori informazioni sul partizionamento [Partitioning hard disks: General information](/index.php/Beginners%27_guide#Partitioning_hard_disks:_General_information "Beginners' guide").
+*   Per ulteriori informazioni sul partizionamento [Partitioning](/index.php/Partitioning "Partitioning")
 
 .
 

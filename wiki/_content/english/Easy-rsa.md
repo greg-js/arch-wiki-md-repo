@@ -201,7 +201,7 @@ $ scp /tmp/*.crt foo@hostname-of-openvpn_server:/tmp
 
 ```
 
-On the **OpenVPN machine**, move the certificates in place and reassign ownership:
+On the **OpenVPN server**, move the certificates in place and reassign ownership:
 
 ```
 mv /tmp/servername.crt /etc/openvpn

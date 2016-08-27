@@ -31,7 +31,7 @@ Udover de herunder dækkede spørgsmål finder kan du finde mange oplysninger p�
 
 ## Jeg er total Linux-nybegynder. Skal jeg bruge Arch?
 
-Der har været megen debat om netop dette emne. Arch er rettet mod mere erfarne Linux-brugere, men mange føler, at Arch er et godt sted at begynde. Hvis du er begynder og ønsker at bruge Arch, er du hermed advaret - du MÅ være villig til at lære. Før du stiller spørgsmål, bør du selv søge efter svar ved at 'google', søge på wikien og i forum (og læse tidligere FAQ). Hvis du gør det, skal det nok gå. Vid også, at mange mennesker gider ikke svare på de samme basale spørgsmål igen og igen, så det er det miljø, du udsætter dig selv for. Der er en årsag til, at alt dette blev oprettet/gjort tilgængeligt for dig. Du kan begynde med at læse [begynder-guiden](/index.php/Beginners%27_guide "Beginners' guide"), som indtil videre kun er på engelsk.
+Der har været megen debat om netop dette emne. Arch er rettet mod mere erfarne Linux-brugere, men mange føler, at Arch er et godt sted at begynde. Hvis du er begynder og ønsker at bruge Arch, er du hermed advaret - du MÅ være villig til at lære. Før du stiller spørgsmål, bør du selv søge efter svar ved at 'google', søge på wikien og i forum (og læse tidligere FAQ). Hvis du gør det, skal det nok gå. Vid også, at mange mennesker gider ikke svare på de samme basale spørgsmål igen og igen, så det er det miljø, du udsætter dig selv for. Der er en årsag til, at alt dette blev oprettet/gjort tilgængeligt for dig.
 
 ## Hvornår kommer der en ny udgave?
 
@@ -55,11 +55,11 @@ Det er i grunden rigtigt, så det står dig frit for at bidrage. Dokumentation k
 
 ## Hvorfor er Arch så langsom? Jeg troede, at den skulle være hurtig!
 
-Der er to almindelige årsager til, at dit system er langsommere, end det burde være. Først skal du sikre dig, at 'loopback' (lo i /etc/rc.conf) er aktiveret. Bagefter skal du sikre dig, at dit 'hostname' er sat korrekt i /etc/hosts (f.eks. at det matcher 'hostname' i rc.conf. Kig evt. på "Configure the System" i [begynderguiden](/index.php/Beginners%27_guide "Beginners' guide")). Begge kan forårsage, at programmer starter meget langsomt op.
+Der er to almindelige årsager til, at dit system er langsommere, end det burde være. Først skal du sikre dig, at 'loopback' (lo i /etc/rc.conf) er aktiveret. Bagefter skal du sikre dig, at dit 'hostname' er sat korrekt i /etc/hosts (f.eks. at det matcher 'hostname' i rc.conf. Begge kan forårsage, at programmer starter meget langsomt op.
 
 ## Hvorfor er min internetforbindelse så langsom sammenlignet med andre operativsystemer?
 
-Er dit netværk sat rigtigt op? Har du dobbelttjekket din /etc/rc.conf, /etc/hosts og /etc/resolv.conf? Kig evt. på "Configure the System" i [begynderguiden](/index.php/Beginners%27_guide "Beginners' guide") og vær særlig opmærksom på syntaksen 'localhost'.
+Er dit netværk sat rigtigt op? Har du dobbelttjekket din /etc/rc.conf, /etc/hosts og /etc/resolv.conf?
 
 # Pakkehåndtering
 

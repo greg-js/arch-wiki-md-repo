@@ -64,7 +64,7 @@ Hardware components as reported by **lspci**:
 
 ## Installation
 
-Consult the standard documentation ([official](/index.php/Installation_guide "Installation guide") and [unofficial](/index.php/Beginners%27_guide "Beginners' guide")) on Arch Linux installation for general installation steps. What follows are items of particular interest to U120 owners.
+Consult the standard documentation ([Installation guide](/index.php/Installation_guide "Installation guide")) on Arch Linux installation for general installation steps. What follows are items of particular interest to U120 owners.
 
 ### Dual Boot Windows/Linux
 
@@ -133,7 +133,7 @@ scsi3 : ahci
 
 ### Touchpad
 
-For touchpad functionality, install the Synaptics touchpad drivers as per the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") articles.
+For touchpad functionality, install the Synaptics touchpad drivers as per the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") articles.
 
 ### Hotkeys
 

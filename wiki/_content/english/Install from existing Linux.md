@@ -65,7 +65,7 @@ Then follow [Installation guide#Installation](/index.php/Installation_guide#Inst
 
 **Note:** If you only want to create an exact copy of an existing Arch installation, it is also possible to just copy the filesystem to the new partition. With this method, you will still need to
 
-*   Create [`/etc/fstab`](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") and edit `/etc/hostname`
+*   Create [`/etc/fstab`](/index.php/Installation_guide#Fstab "Installation guide") and edit `/etc/hostname`
 *   Delete `/etc/machine-id` so that a new, unique, one will be regenerated on boot
 *   Make any other changes appropriate to the installation medium
 *   Install the bootloader
@@ -183,7 +183,7 @@ After [selecting a mirror](/index.php/Mirrors#Enabling_a_specific_mirror "Mirror
 
 ### Installation tips
 
-You can now proceed to [preparing the storage devices](/index.php/Beginners%27_guide#Prepare_the_storage_devices "Beginners' guide") and follow the rest of the [installation procedure](/index.php/Installation_guide#Installation "Installation guide").
+You can now proceed to [Installation_guide#Partition_the_disks](/index.php/Installation_guide#Partition_the_disks "Installation guide") and follow the rest of the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 Some host systems or configurations may require certain extra steps. See the sections below for tips.
 
@@ -238,7 +238,7 @@ The solution for *pacstrap* is to manually execute its [various tasks](https://p
 # cp -a /etc/pacman.d/mirrorlist "$newroot/etc/pacman.d/"  ## copy mirrorlist
 ```
 
-Instead of using `arch-chroot` for [configuring the base system](/index.php/Beginners%27_guide#Chroot_and_configure_the_base_system "Beginners' guide"), simply use `chroot "$newroot"`.
+Instead of using `arch-chroot` for [Installation guide#Chroot](/index.php/Installation_guide#Chroot "Installation guide"), simply use `chroot "$newroot"`.
 
 ###### lvmetad
 

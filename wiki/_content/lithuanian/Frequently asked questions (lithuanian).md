@@ -32,10 +32,8 @@ Be atsakytų klausimų apačioje, [The Arch Way](/index.php/The_Arch_Way_(Lietuv
     *   [2.9 Kodėl oficialiose saugyklose yra tik viena kiekvienos pasidalintos bibliotekos versija?](#Kod.C4.97l_oficialiose_saugyklose_yra_tik_viena_kiekvienos_pasidalintos_bibliotekos_versija.3F)
 *   [3 Diegimas](#Diegimas)
     *   [3.1 Iš kur atsisiųsti Arch Linux?](#I.C5.A1_kur_atsisi.C5.B3sti_Arch_Linux.3F)
-    *   [3.2 Arch reikalingas įdiegiklis. Galbūt GUI įdiegiklis?](#Arch_reikalingas_.C4.AFdiegiklis._Galb.C5.ABt_GUI_.C4.AFdiegiklis.3F)
-    *   [3.3 Įsidiegiau Arch Linux, ką daryti toliau?](#.C4.AEsidiegiau_Arch_Linux.2C_k.C4.85_daryti_toliau.3F)
-    *   [3.4 Kurią darbastalio aplinką ar langų tvarkyklę turėčiau naudoti?](#Kuri.C4.85_darbastalio_aplink.C4.85_ar_lang.C5.B3_tvarkykl.C4.99_tur.C4.97.C4.8Diau_naudoti.3F)
-    *   [3.5 Kuo Arch išsiskiria iš kitų "minimalių" distribucijų?](#Kuo_Arch_i.C5.A1siskiria_i.C5.A1_kit.C5.B3_.22minimali.C5.B3.22_distribucij.C5.B3.3F)
+    *   [3.2 Kurią darbastalio aplinką ar langų tvarkyklę turėčiau naudoti?](#Kuri.C4.85_darbastalio_aplink.C4.85_ar_lang.C5.B3_tvarkykl.C4.99_tur.C4.97.C4.8Diau_naudoti.3F)
+    *   [3.3 Kuo Arch išsiskiria iš kitų "minimalių" distribucijų?](#Kuo_Arch_i.C5.A1siskiria_i.C5.A1_kit.C5.B3_.22minimali.C5.B3.22_distribucij.C5.B3.3F)
 
 ## Pagrindinė informacija
 
@@ -75,8 +73,6 @@ Ne, bet [Arch Linux ARM](http://archlinuxarm.org/) projektas teikia Arch Linux p
 
 Šis klausimas susilaukia daugybės debatų. Arch nukreipta į labiau patyrusius GNU/Linux vartotojus, bet kai kurie mano, jog Arch puiki vieta motyvuotam naujokui. Jeigu esate naujokas ir norite naudotis Arch, turite žinoti, jog prireiks daug laiko norint įsisavinti naują sistemą, taip pat priimti tą faktą, kad Arch iš pagrindų yra "pasidaryk-viską-pats" distribucija. Tai vartotojas surenka sistemą ir kontroliuoja kuo ji taps. Prieš prašydami pagalbos, atlikite savo nepriklausomą paiešką su Google, atlikite paiešką forume (taip pat perskaitykite DUK'us kaip šis) ir nuostabioje dokumentacijoje kurią suteikia Arch wiki. *Visa tai juk ir buvo sukurta šiam tikslui.* Praleista tūkstančiai valandų renkant šią informaciją.
 
-Rekomendacija skaitymui: The Arch Linux [Pradedančiojo Vedlys](/index.php/Beginners%27_guide_(Lietuvi%C5%A1kai) "Beginners' guide (Lietuviškai)").
-
 ### Arch įdiegimas ir naudojimas užima per daug laiko ir pastangų.Taip pat bendruomenė vis liepia man RTFM
 
 Arch sukurtas ir naudojamas specifinės vartotojų grupės. Galbūt tai ne jums. Žiūrėkit [aukščiau](#A.C5.A1_visi.C5.A1kas_GNU.2FLinux_pradedantysis._Ar_tur.C4.97.C4.8Diau_naudotis_Arch.3F).
@@ -114,8 +110,6 @@ Arch gauna pakankamai dėmesio. Arch Linux tikslas nėra tapti didžiule, bet gr
 Tikriausiai. Nesivaržykite skirti savo laiką! Aplankykite [forumus](https://bbs.archlinux.org), [IRC kanalus](/index.php/IRC_channel "IRC channel"), ir [pašto sąrašus](https://mailman.archlinux.org/mailman/listinfo/), pažiūrėkite ką reikia apdaryti. Prisijungiant prie bendruomenės indėlio forumo taip pat gera kelio pradžia.
 
 ### Kodėl mano interneto greitis toks lėtas palyginus su kitomis operacinėmis sistemomis?
-
-Ar jūsų tinklas teisingai sukonfgūruotas? Peržvelkite [Hostname](/index.php/Beginners%27_guide#Hostname "Beginners' guide") ir [Configure the network](/index.php/Beginners%27_guide#Configure_the_network "Beginners' guide") iš Pradedančiojo vedlio.
 
 Taip pat reiktų pažymėti, kad Arch Linux nėra įjungtas [srauto valdymas](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping"). Todėl, yra įmanoma, jog programa kažkokiu būdu sugebėjo išnaudoti visą jųsš srautą – nesvarbu ar per P2P ar klasikiniais klientas-serveris prisijungimais – vietinėms programoms tai bus užkimšta, dėl to gali vykti vėlavimas. Kad to neatsitiktų reikėtų pasinaudoti [ugniasienėmis](/index.php/Firewalls "Firewalls") kaip kad Shorewall ar Vuurmuur; taip pat statiniais scenarijais skirtais [iproute2](https://www.archlinux.org/packages/?name=iproute2) (kaip kad [šis](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos)), kurie suteikia galimybes formuoti tinklą.
 
@@ -206,14 +200,6 @@ Ne taip kaip Debian, Arch yra pažangi distribucija. Geriausiai matomas pažangi
 ### Iš kur atsisiųsti Arch Linux?
 
 Tai galite padaryti [čia](https://www.archlinux.org/download/)
-
-### Arch reikalingas įdiegiklis. Galbūt GUI įdiegiklis?
-
-Kadangi diegimas dažnai nepasitaiko, tai nėra aukščiausios svarbos dalykas nei kūrėjams, nei vartotojams. [Installation guide](/index.php/Installation_guide "Installation guide") ir [Pradedančiojo Vedlys](/index.php/Beginners%27_guide_(Lietuvi%C5%A1kai) "Beginners' guide (Lietuviškai)") buvo pilnai atnaujinti naudojimuisi komandinės eilutės metodu. Jeigu vis dar domina įdiegiklis, pagalvokite apie [Archboot](/index.php/Archboot "Archboot").
-
-### Įsidiegiau Arch Linux, ką daryti toliau?
-
-Puiki idėja būtų apsilankyti [čia](/index.php/Beginners%27_guide#Post-installation "Beginners' guide").
 
 ### Kurią darbastalio aplinką ar langų tvarkyklę turėčiau naudoti?
 

@@ -35,7 +35,7 @@ F2FS 파티션을 만들기 위해서는 [공식 저장소](/index.php/Official_
 
 1.  [#F2FS 포맷 파티션 생성](#F2FS_.ED.8F.AC.EB.A7.B7_.ED.8C.8C.ED.8B.B0.EC.85.98_.EC.83.9D.EC.84.B1)에서 기술된 것을 참고하여 F2FS로 루트 파티션을 제작한다.
 2.  ext2 포맷 또는 다른 부트로더가 지원하는 파일시스템으로 `/boot` 파티션을 생성한다.
-3.  [chrooted](/index.php/Change_root "Change root") 전까지 [Beginners' guide#Mount the partitions](/index.php/Beginners%27_guide#Mount_the_partitions "Beginners' guide")에서의 설치 과정을 따른다.
+3.  [chrooted](/index.php/Change_root "Change root") 전까지 [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide")에서의 설치 과정을 따른다.
 4.  [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)를 설치한다.
 5.  chroot 상태에서 [initramfs](/index.php/Initramfs "Initramfs")를 다시 생성한다.
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Ruby](/index.php/Ruby "Ruby") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-30，点击[这里](https://wiki.archlinux.org/index.php?title=Ruby&diff=0&oldid=255726)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Ruby](/index.php/Ruby "Ruby") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-04-30，点击[这里](https://wiki.archlinux.org/index.php?title=Ruby&diff=0&oldid=255724)可以查看翻译后英文页面的改动。
 
 Ruby 是一门专注于简洁和生产里的动态语言, 是解释型语言, 开源编程语言.
 

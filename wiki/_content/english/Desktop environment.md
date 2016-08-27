@@ -154,8 +154,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal) | Deepin File Manager
 [deepin-file-manager](https://www.archlinux.org/packages/?name=deepin-file-manager) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
-[gedit](https://www.archlinux.org/packages/?name=gedit) | [Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")
-[eog](https://www.archlinux.org/packages/?name=eog) | Deepin Movie
+[gedit](https://www.archlinux.org/packages/?name=gedit) | Deepin Image Viewer
+[deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer) | Deepin Movie
 [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie) | [Chromium](/index.php/Chromium "Chromium")
 [chromium](https://www.archlinux.org/packages/?name=chromium) | [LightDM](/index.php/LightDM "LightDM") Deepin Greeter
 [deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui) |

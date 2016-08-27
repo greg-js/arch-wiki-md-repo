@@ -209,7 +209,7 @@ Il [Benchmarking](/index.php/Benchmarking "Benchmarking") è il processo di misu
 
 ### Massimizzare le performance
 
-L'articolo [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") raccoglie molte idee per ottenere un guadagno sulle performance in Arch Linux.
+L'articolo [Improving performance](/index.php/Improving_performance "Improving performance") raccoglie molte idee per ottenere un guadagno sulle performance in Arch Linux.
 
 ## Gestione pacchetti
 

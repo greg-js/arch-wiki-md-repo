@@ -17,7 +17,8 @@ This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html
         *   [4.1.2 gdisk](#gdisk)
     *   [4.2 Create new table](#Create_new_table)
     *   [4.3 Create partitions](#Create_partitions)
-    *   [4.4 Write changes to disk](#Write_changes_to_disk)
+    *   [4.4 Sort partitions](#Sort_partitions)
+    *   [4.5 Write changes to disk](#Write_changes_to_disk)
 *   [5 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
 
 ## Installation
@@ -174,6 +175,26 @@ Select the partition's type id. The default, `Linux filesystem`, should be fine 
 See the above articles for considerations concerning the size and location of these partitions.
 
 Repeat this procedure until you have the partitions you desire.
+
+### Sort partitions
+
+This applies for when a new partition is created in the space between two partitions or a partition is deleted.
+
+MBR
+
+```
+# sfdisk -r */dev/sda*
+
+```
+
+GPT
+
+```
+# sgdisk -s */dev/sda*
+
+```
+
+After sorting the partitions if you are not using [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"), it might be required to adjust the `/etc/fstab` and/or the `/etc/crypttab` configuration files.
 
 ### Write changes to disk
 

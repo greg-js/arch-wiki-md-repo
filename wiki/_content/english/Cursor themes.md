@@ -10,6 +10,7 @@ The display server is accompanied by a *cursor theme* that helps various aspects
     *   [2.2 XDG specification](#XDG_specification)
     *   [2.3 Desktop environments](#Desktop_environments)
         *   [2.3.1 GNOME](#GNOME)
+        *   [2.3.2 MATE](#MATE)
     *   [2.4 X resources](#X_resources)
     *   [2.5 Environment variable](#Environment_variable)
     *   [2.6 Display managers](#Display_managers)
@@ -105,6 +106,29 @@ To change the theme in [GNOME](/index.php/GNOME "GNOME"), use [gnome-tweak-tool]
 
 ```
 gsettings set org.gnome.desktop.interface cursor-theme *theme-name*
+
+```
+
+Change the cursor size with (depending on the theme, sizes are 24, 32, 48, 64):
+
+```
+gsettings set org.gnome.desktop.interface cursor-size *theme-size*
+
+```
+
+#### MATE
+
+In MATE one can use mate-control-center or gsettings. To change the theme:
+
+```
+gsettings set org.mate.peripherals-mouse cursor-theme *theme-name*
+
+```
+
+To change the size:
+
+```
+gsettings set org.mate.peripherals-mouse *theme-size*
 
 ```
 

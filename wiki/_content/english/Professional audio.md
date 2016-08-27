@@ -78,7 +78,7 @@ EDIT: The changelog seems to indicate that this has been fixed in the 3.13.6 van
 
 *   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/) kernel.
 *   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to *performance*.
-*   Add *noatime* to the [filesystem mount options](/index.php/Fstab "Fstab") (see [Maximizing Performance](/index.php/Maximizing_performance#Mount_options "Maximizing performance")).
+*   Add *noatime* to [fstab](/index.php/Fstab "Fstab") (see [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
 
 Realtime configuration has mostly been automated. There is no longer any need to edit files like `/etc/security/limits.conf` for realtime access. However, if you must change the settings, see `/etc/security/limits.d/99-audio.conf` and `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (these files are provided by [jack](https://www.archlinux.org/packages/?name=jack) or [jack2](https://www.archlinux.org/packages/?name=jack2)). Additionaly, you may want to increase the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
 

@@ -104,7 +104,7 @@ Další programy jsou uvedeny v článku [Lightweight Applications](/index.php/L
 
 LXDE lze spustit několika odlišnými způsoby. Pokud používáte přihlašovací manažer - např. [SLiM](/index.php/SLiM "SLiM"), [GDM](/index.php/GDM "GDM") nebo [KDM](/index.php/KDM "KDM"), zvolte si v nich LXDE v možnostech sezení. Pro spuštění z konzole existují další možnosti.
 
-Pro spuštění příkazem **startx** je nutné nadefinovat LXDE v souboru [`~/.xinitrc`](/index.php/Beginners%27_guide#C:_Test_X "Beginners' guide"):
+Pro spuštění příkazem **startx** je nutné nadefinovat LXDE v souboru [`~/.xinitrc`](/index.php/Xinit "Xinit"):
 
 ```
 exec startlxde

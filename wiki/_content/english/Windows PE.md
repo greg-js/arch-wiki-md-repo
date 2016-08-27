@@ -9,13 +9,14 @@ In addition, by downloading the Windows Automated Installation Kit, you may be b
 ## Contents
 
 *   [1 Use cases](#Use_cases)
-*   [2 Creating a bootable Windows PE ISO](#Creating_a_bootable_Windows_PE_ISO)
+*   [2 Creating a bootable Windows PE image](#Creating_a_bootable_Windows_PE_image)
+    *   [2.1 Configure the Windows PE image](#Configure_the_Windows_PE_image)
+    *   [2.2 Make the bootable Windows PE ISO](#Make_the_bootable_Windows_PE_ISO)
 *   [3 Booting Windows PE](#Booting_Windows_PE)
     *   [3.1 In virtual machine](#In_virtual_machine)
     *   [3.2 From CD](#From_CD)
     *   [3.3 From Network](#From_Network)
-    *   [3.4 Network boot performance](#Network_boot_performance)
-*   [4 Customizing Windows PE](#Customizing_Windows_PE)
+*   [4 Installing Windows from Windows PE](#Installing_Windows_from_Windows_PE)
 *   [5 See also](#See_also)
 
 ## Use cases
@@ -25,43 +26,63 @@ Normally, an image of Windows PE can only be created using the Windows Automated
 *   you need to install Windows from the network, or boot Windows PE from the network for system administration, using an Arch Linux-based server. This may be because you do not have a Windows-based server, or you prefer using a Linux server because of its improved security and configurability, or you are already using a Linux server for other purposes.
 *   you need to run a Windows environment to run Win32 programs, you do not have a Windows machine available, and you do not want to use [Wine](/index.php/Wine "Wine") or the programs will not run correctly with [Wine](/index.php/Wine "Wine").
 
-## Creating a bootable Windows PE ISO
-
-Download the Windows Automated Installation Kit (WAIK) from [Microsoft's website](http://www.microsoft.com/en-us/download/details.aspx?id=5753).
-
-**Warning:** The entire download, `KB3AIK_EN.iso`, is 1.7GB.
-
-**Tip:**
-
-*   It may be possible to use [httpfs](http://httpfs.sourceforge.net/) to avoid downloading the entire file. Only around 118MB of it is actually needed.
-*   If you have an installation media of Windows 7 or later versions, you can use that iso file / optical disc instead of WAIK. `mkwinpeimg` accepts both WAIK image and Windows installation media. Note that different versions of Windows installation media contains different versions of Windows PE. For the relationship between Windows versions and Windows PE versions, refer to [Wikipedia](https://en.wikipedia.org/wiki/Windows_Preinstallation_Environment#Versions "wikipedia:Windows Preinstallation Environment").
-*   WAIK has been renamed to WADK since Windows 8 and is now distributed via `adksetup.exe`. In order to get Windows PE 4.0 and later versions, you have to use installation media of Windows 8 and later versions. The installation media iso files are avaiable for MSDN subscribers, but you can download otherwhere and compare the hash value with the those published on MSDN.
+## Creating a bootable Windows PE image
 
 [Install](/index.php/Install "Install") [fuse](https://www.archlinux.org/packages/?name=fuse), [cdrkit](https://www.archlinux.org/packages/?name=cdrkit), and [cabextract](https://www.archlinux.org/packages/?name=cabextract) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 Install [wimlib](https://aur.archlinux.org/packages/wimlib/) from the [AUR](/index.php/AUR "AUR").
 
-Mount the WAIK ISO:
+### Configure the Windows PE image
+
+To boot into a command prompt, create a startup script, which will be included into the bootable image in the next step:
+
+ `start.cmd` 
+```
+cmd.exe
+pause
 
 ```
-# mkdir /media/waik
-# mount KB3AIK_EN.iso /media/waik
+
+The `mkwinpeimg` script supports making further modifications to Windows PE using `--overlay` option. See the manual page for `mkwinpeimg` for more information. You may want to do this to add additional Windows applications that you want to run in Windows PE, or to add any additional drivers that Windows PE needs (drivers can be loaded using the `drvload` command within Windows PE).
+
+### Make the bootable Windows PE ISO
+
+`mkwinpeimg` can create a bootable Windows PE ISO from either Windows installation image / disk for Windows 7 or later or from Windows Automated Installation Kit (WAIK) image. In order to get Windows PE 4.0 and later versions, you have to use installation media of Windows 8 and later versions. Earlier versions of Windows PE can be obtained from [standalone WAIK distribution from Microsoft](http://www.microsoft.com/en-us/download/details.aspx?id=5753). Since Windows 8, WAIK has been renamed to WADK and is distributed via `adksetup.exe`.
+
+The installation media iso files are avaiable for MSDN subscribers, but you can download otherwhere and compare the hash value with the those published on MSDN. Different versions of Windows installation media contains different versions of Windows PE. For the relationship between Windows versions and Windows PE versions, refer to [Wikipedia](https://en.wikipedia.org/wiki/Windows_Preinstallation_Environment#Versions "wikipedia:Windows Preinstallation Environment").
+
+**Tip:** It may be possible to use [httpfs](http://httpfs.sourceforge.net/) to avoid downloading the entire image file. Windows PE occupies only around 118MB of the image.
+
+Mount the source ISO, either Windows installation image or WAIK/WADK, named winimg.iso:
+
+```
+# mkdir /media/winimg
+# mount winimg.iso /media/winimg
 
 ```
 
-Use the `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/) to create a bootable Windows PE ISO `winpe.iso`:
+Use the `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/) to create a bootable Windows PE ISO `winpe.iso`, with the startup script created in the previous section:
+
+**Option A**: source image is Windows installation media
 
 ```
-$ mkwinpeimg --iso --waik-dir=/media/waik winpe.iso
+$ mkwinpeimg --iso --windows-dir=/media/winimg --start-script=start.cmd winpe.iso
+
+```
+
+**Option B**: source image is WAIK/WADK:
+
+```
+$ mkwinpeimg --iso --waik-dir=/media/winimg --start-script=start.cmd winpe.iso
 
 ```
 
 See the `man mkwinpeimg` for more information.
 
-Unmount the WAIK ISO:
+Unmount the source ISO:
 
 ```
-# umount /media/waik
+# umount /media/winimg
 
 ```
 
@@ -86,7 +107,7 @@ Install [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [tftp-
 Copy needed PXELINUX files to the [TFTP server](/index.php/Tftpd_server "Tftpd server") root directory.
 
 ```
-# cp /usr/lib/syslinux/{pxelinux.0,menu.c32,memdisk} /var/tftpboot
+# rsync -aq /usr/lib/syslinux/bios/ /var/tftpboot/
 
 ```
 
@@ -125,17 +146,36 @@ After completing the above steps, you should be able to boot Windows PE from the
 
 **Note:** With the given PXELINUX configuration file, Windows PE will start by default after 5 seconds.
 
-### Network boot performance
+**Tip:** TFTP is not designed to be used to transfer large files, such as `winpe.iso`, which may be 118MB or more and take about 30 seconds to load. Performance may be improved by using the `gpxelinux.0` bootloader instead of `pxelinux.0` and loading `winpe.iso` using HTTP rather than TFTP.
 
-TFTP is not designed to be used to transfer large files, such as `winpe.iso`, which may be 118MB or more. Performance may be improved by using the `gpxelinux.0` bootloader instead of `pxelinux.0` and loading `winpe.iso` using HTTP rather than TFTP.
+## Installing Windows from Windows PE
 
-## Customizing Windows PE
+Once booted into Windows PE, you can install Windows from an installation media.
 
-The `mkwinpeimg` script provided with [wimlib](https://aur.archlinux.org/packages/wimlib/) supports making modifications to Windows PE using the `--start-script` or `--overlay` options. See the manual page for `mkwinpeimg` for more information.
+The installation media can be a network share (Samba). See [Samba](/index.php/Samba "Samba") for seting up a Samba server on another machine on the LAN. To share the installation image mounted at `/media/winimg`, add the following share definition to `/etc/samba/smb.conf`:
 
-You may want to do this to add additional Windows applications that you want to run in Windows PE, or to add any additional drivers that Windows PE needs (drivers can be loaded using the `drvload` command within Windows PE).
+ `/etc/samba/smb.conf` 
+```
+[REMINST]
+browsable = true
+read only = no
+guest ok = yes
+path = /media/winimg
+
+```
+
+Once booted into Windows PE command prompt, run the following command to initialize the network interface, obtain the IP of the Samba server (assuming Windows PE was booted over PXE from a machine that runs the DHCP, TFTP, and Samba server, the server IP will usually be the Gateway IP), mount the share, and launch the GUI setup:
+
+```
+ > wpeinit
+ > ipconfig
+ > net use I: \\IP.ADDRESS.OF.SAMBA.SERVER\REMINST
+ > I:\setup.exe
+
+```
 
 ## See also
 
 *   [Microsoft's documentation for Windows PE](http://technet.microsoft.com/en-us/library/cc766093(v=ws.10).aspx)
 *   [Another article about making Windows PE images on Linux](http://www.thinkwiki.org/wiki/Windows_PE)
+*   [A guide with scripts for unattended installation of Windows 7 from Linux using Windows PE](http://www.ultimatedeployment.org/win7pxelinux1.html)

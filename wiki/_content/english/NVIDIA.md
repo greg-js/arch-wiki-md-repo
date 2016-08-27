@@ -31,7 +31,7 @@ This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s
 
 **Warning:** Avoid installing the NVIDIA driver through the package provided from the NVIDIA website. Installation through [pacman](/index.php/Pacman "Pacman") allows upgrading the driver together with the rest of the system.
 
-These instructions are for those using the stock [linux](https://www.archlinux.org/packages/?name=linux) or [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) packages. For custom kernel setup, skip to the [next](#Alternate_install:_custom_kernel) subsection.
+These instructions are for those using the stock [linux](https://www.archlinux.org/packages/?name=linux) or [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) packages. For custom kernel setup, skip to the [next](#Custom_kernel) subsection.
 
 1\. If you do not know what graphics card you have, find out by issuing:
 

@@ -48,7 +48,7 @@
 
 **注意:** 如果你只想创建当前已经存在的Arch系统的备份, 可能只需要复制文件系统到新分区即可。但是你仍然需要做如下操作：
 
-*   创建 [`/etc/fstab`](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") 并编辑 `/etc/hostname`；
+*   创建 [`/etc/fstab`](/index.php/Installation_guide#Fstab "Installation guide") 并编辑 `/etc/hostname`；
 *   删除 `/etc/machine-id` ，这样在系统启动时将生成一个全新的、独一无二的matchine-id；
 *   对安装媒介做其它相关更改；
 *   安装 bootloader。
@@ -224,7 +224,7 @@ The solution for *pacstrap* is to manually execute its [various tasks](https://p
 # cp -a /etc/pacman.d/mirrorlist "$newroot/etc/pacman.d/"  ## copy mirrorlist
 ```
 
-Instead of using `arch-chroot` for [configuring the base system](/index.php/Beginners%27_guide#Chroot_and_configure_the_base_system "Beginners' guide"), simply use `chroot "$newroot"`.
+Instead of using `arch-chroot` for [Installation guide#Chroot](/index.php/Installation_guide#Chroot "Installation guide"), simply use `chroot "$newroot"`.
 
 ###### lvmetad
 

@@ -375,7 +375,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 	[http://bazaar.canonical.com/en/](http://bazaar.canonical.com/en/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
 
-*   **[Darcs](/index.php/Darcs "Darcs")** — A distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
+*   **Darcs** — A distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
     *   Offline mode.
     *   Easy branching and merging.
     *   Written in Haskell.

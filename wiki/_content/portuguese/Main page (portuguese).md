@@ -24,10 +24,6 @@ Os links abaixo são úteis para os iniciantes no Arch Linux.
 
 	Gerenciador de pacote do pacman
 
-	[Guia para Iniciantes](/index.php/Beginners%27_guide_(Portugu%C3%AAs) "Beginners' guide (Português)")
-
-	Um guia através de todo o processo de instalação e configuração do Arch Linux, escrito para usuários novos ou inexperientes.
-
 	[Guia de instalação](/index.php/Installation_guide_(Portugu%C3%AAs) "Installation guide (Português)")
 
 	Um guia de instalação resumido, dirigido aos usuários experientes do Arch.

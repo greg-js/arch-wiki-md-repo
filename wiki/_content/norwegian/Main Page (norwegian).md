@@ -26,10 +26,6 @@ Følgende lenker kan være nyttige for å komme i gang med Arch Linux:
 
 	Rettningslinjer for Arch forum-medlemmer.
 
-	[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-
-	A guide through the whole process of installing and configuring Arch Linux; written for new or inexperienced users.
-
 	[Installation guide](/index.php/Installation_guide "Installation guide")
 
 	A concise installation guide; aimed at experienced Arch users.

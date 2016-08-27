@@ -35,7 +35,7 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
     *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
     *   [5.7 Rule-based mail processing](#Rule-based_mail_processing)
-    *   [5.8 Dane](#Dane)
+    *   [5.8 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
         *   [5.8.1 Resource Record](#Resource_Record)
         *   [5.8.2 Configuration](#Configuration_2)
 *   [6 See also](#See_also)
@@ -693,11 +693,15 @@ smtpd_recipient_restrictions =
 
 Placing policy services at the end of the queue reduces load, as only legitimate mails are processed. Be sure to place it before the first permit statement to catch all incoming messages.
 
-### Dane
+### DANE (DNSSEC)
 
 #### Resource Record
 
-DANE supports several types of records, however not all of them are suitable in postfix. Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
+**Warning:** This is not a trivial section. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
+
+DANE supports several types of records, however not all of them are suitable in postfix.
+
+Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
 
 #### Configuration
 

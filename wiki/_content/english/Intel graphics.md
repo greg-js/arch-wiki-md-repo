@@ -245,7 +245,7 @@ Option "DRI" "2"
 
 ### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
 
-Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Edit#Append.2C_add.2C_create.2C_edit "Edit") `/etc/environment` to add the following line:
+Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Textedit "Textedit") `/etc/environment` to add the following line:
 
  `/etc/environment`  `COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer` 
 

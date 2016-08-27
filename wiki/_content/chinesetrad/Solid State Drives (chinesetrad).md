@@ -293,7 +293,7 @@ One can place a swap partition on an SSD. Most modern desktops with an excess of
 
 ```
 
-Or one can simply do as recommended in the [Maximizing Performance](/index.php/Maximizing_performance#Swappiness "Maximizing performance") article:
+Or one can simply do as recommended in the [Maximizing Performance](/index.php/Improving_performance#Swappiness "Improving performance") article:
 
  `/etc/sysctl.d/99-sysctl.conf` 
 ```

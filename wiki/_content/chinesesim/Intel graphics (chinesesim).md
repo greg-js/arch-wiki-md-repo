@@ -1,3 +1,5 @@
+[[[Category:Graphics (简体中文)]]
+
 **翻译状态：** 本文是英文页面 [Intel_Graphics](/index.php/Intel_Graphics "Intel Graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-16，点击[这里](https://wiki.archlinux.org/index.php?title=Intel_Graphics&diff=0&oldid=446766)可以查看翻译后英文页面的改动。
 
 由于 Intel 提供和支持 X.Org 开源驱动，Intel 的显卡基本上是即插即用的。
@@ -247,7 +249,7 @@ Option "DRI" "2"
 
 ### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
 
-Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Edit#Append.2C_add.2C_create.2C_edit "Edit") `/etc/environment` to add the following line:
+Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Textedit "Textedit") `/etc/environment` to add the following line:
 
  `/etc/environment`  `COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer` 
 

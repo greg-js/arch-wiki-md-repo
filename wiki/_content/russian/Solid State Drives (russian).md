@@ -232,7 +232,7 @@ $ cat /sys/block/sdX/queue/scheduler   #где X — буква физическ
 
 ```
 
-Или можно просто изменить файл `/etc/sysctl.d/40-swappiness.conf` как рекомендуется в вики-статье [Maximizing Performance](/index.php/Maximizing_performance#Swappiness "Maximizing performance"):
+Или можно просто изменить файл `/etc/sysctl.d/40-swappiness.conf` как рекомендуется в вики-статье [Maximizing Performance](/index.php/Improving_performance#Swappiness "Improving performance"):
 
 ```
 vm.swappiness=1

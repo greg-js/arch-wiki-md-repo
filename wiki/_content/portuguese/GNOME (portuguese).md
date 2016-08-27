@@ -166,7 +166,7 @@ Insirá um "1" de volta /etc/shadow para desabilitar o login do usuário gdm.
 
 #### Alterar o layout do teclado no GDM
 
-Desde do GDM 3 a configuração do layout do teclado não importa o gnome, você tem que configurar no Xorg. Veja aqui: [Beginners' guide#Non-US_keyboard](/index.php/Beginners%27_guide#Non-US_keyboard "Beginners' guide")
+Desde do GDM 3 a configuração do layout do teclado não importa o gnome, você tem que configurar no Xorg.
 
 ### Alterando o GTK3 usando o tema settings.ini
 

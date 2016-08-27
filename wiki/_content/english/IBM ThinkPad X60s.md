@@ -22,7 +22,7 @@ First note that this laptop is available with two different processors.
 
 	This processor can run the x86_64 (64-bit) version of Arch Linux, and this is recommended in this case. The full 4GB RAM will be available with the standard Arch x86_64 kernel.
 
-A basic Arch Linux installation will do just fine for almost everything. Select the i686 or x86_64 version as indicated above. Install from a USB CD drive or a USB flash drive following the instructions in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+A basic Arch Linux installation will do just fine for almost everything. Select the i686 or x86_64 version as indicated above. Install from a USB CD drive or a USB flash drive following the instructions in the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 It is easiest to do the initial installation with a wired ethernet connection which you can set up in the installation menu. In the base install package selection you can install the packages required for the wireless networking
 
@@ -31,8 +31,6 @@ It is easiest to do the initial installation with a wired ethernet connection wh
 [*] iwlwifi-3945-ucode
 
 ```
-
-Follow the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") step by step to install sudo, add users, add to groups, video card driver, then install Xorg, and a desktop environment.
 
 ## Graphics
 

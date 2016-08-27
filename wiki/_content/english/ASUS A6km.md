@@ -2,7 +2,7 @@ This page describes troubleshooting and configuration specific to the **Asus A6k
 
 On this model, a known buggy BIOS problem results in a system hang when any USB device, such as a mouse, is attached at bootup. This can be fixed using a downgraded BIOS version (can be downloaded [here](http://people.bath.ac.uk/enxspd/laptop/Opensuse103_Laptop.html)). The installation described uses this 202 BIOS version and so far no problems have been encountered, even the power management modules behave properly.
 
-See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for installation instructions.
+See the [Installation guide](/index.php/Installation_guide "Installation guide") for installation instructions.
 
 ## Contents
 

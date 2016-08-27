@@ -40,6 +40,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### August 2016
 
+*   [26 August 2016] [ASA-201608-19](https://lists.archlinux.org/pipermail/arch-security/2016-August/000693.html) [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) multiple issues
 *   [22 August 2016] [ASA-201608-18](https://lists.archlinux.org/pipermail/arch-security/2016-August/000692.html) [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) information disclosure
 *   [21 August 2016] [ASA-201608-17](https://lists.archlinux.org/pipermail/arch-security/2016-August/000691.html) [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) information disclosure
 *   [17 August 2016] [ASA-201608-16](https://lists.archlinux.org/pipermail/arch-security/2016-August/000690.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues

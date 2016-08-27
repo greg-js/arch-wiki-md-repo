@@ -66,8 +66,6 @@ The only installation method possible on this computer is from a USB key. Create
 
 In the following the MBR booting mode is assumed (UEFI boot mode was not tested). To turn on the Legacy BIOS boot mode (aka MBR) in the BIOS menu, press F2 at startup. Set secure boot to off and set boot list order to legacy. Also change function keys from the multimedia mode.
 
-Then follow [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
-
 ## Kernel
 
 The standard Arch kernel works fine.
@@ -84,7 +82,7 @@ MODULES="i915"
 and run
 
 ```
-sudo mkinitcpio -p linux
+# mkinitcpio -p linux
 
 ```
 

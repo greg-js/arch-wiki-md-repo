@@ -33,7 +33,7 @@ With its Allwinner SoC, a Banana board usually runs the well documented Sunxi Li
 
 ## Article preface
 
-This article is strongly based on [Raspberry Pi](/index.php/Raspberry_Pi "Raspberry Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before. Arch newbies are encouraged to read the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") if unsure how to preform standard tasks such as creating users, managing the system, etc.
+This article is strongly based on [Raspberry Pi](/index.php/Raspberry_Pi "Raspberry Pi"). Moreover this article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
 
 ## Installation
 

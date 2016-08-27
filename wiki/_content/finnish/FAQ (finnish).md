@@ -25,8 +25,6 @@ Alla katettujen kysymysten lisäksi voit tarkistaa [The Arch Way](/index.php/Arc
 
 **A)** Tämä kysymys on herättänyt paljon keskustelua. Arch on suunnattu kokeneemmille GNU/Linux -käyttäjille, mutta joidenkin mielestä Arch ei ole huono paikka lähteä liikkeelle. Jos olet aloittelija joka haluaisi käyttää Archia, ymmärrä että sinun täytyy oppia ja hyväksyä Archin olevan pitkälti tee-se-itse -jakelu jonka käyttäjä itse kokoaa ja jota hallitsee. Ennen lisäkysymysten esittämistä tee oma tutkimuksesi googlaamalla, Wikiä tutkimalla, keskustelupalstalta etsimällä ja vanhat FAQ:t lukemalla. Näin tehtyäsi tulet pärjäämään hyvin. Yritä myös muistaa että kovin moni ei jaksa vastata uudelleen ja uudelleen samoihin peruskysymyksiin; syyttä ei tätäkään tietolähdettä kirjoitettu ja saatettu luettavaksi.
 
-Suositeltavaa luettavaa: The Arch Linux [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
-
 ## Q) Milloin uusi julkaisu on valmis?
 
 **A)** Arch Linuxin julkaisut tapahtuvat samaan aikaan isompien kernelpäivitysten kanssa. Ne ovat kuitenkin lähinnä /core-pakettivaraston tilannevedoksia ja asennusskriptin ominaisuuspäivityksiä. Rolling release -mallin ansiosta jokainen Arch Linux -järjestelmä pysyy ajan tasalla ja kehityksen kärjessä yhdellä komennolla.

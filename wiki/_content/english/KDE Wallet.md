@@ -97,7 +97,7 @@ There is an addon to make Firefox store passwords with [KDE5 Wallet](https://add
 
 ## KDE Wallet for Chrome and Chromium
 
-Chrome/Chromium has built in wallet integration. To enable it, run Chromium with the `--password-store=kwallet` or `--password-store=detect` argument.
+Chrome/Chromium has built in wallet integration. To enable it, run Chromium with the `--password-store=kwallet` or `--password-store=detect` argument. To make the change persistent, see [Chromium/Tips and tricks#Making_flags_persistent](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"). (Setting CHROMIUM_USER_FLAGS will not work.)
 
 ## See also
 

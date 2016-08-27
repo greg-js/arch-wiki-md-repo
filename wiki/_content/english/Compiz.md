@@ -83,13 +83,13 @@ Optional:
 
 ### Installing the 0.8 series
 
-**Note:** The [compiz-core](https://aur.archlinux.org/packages/compiz-core/) package does not provide the GTK Window Decorator by default. Users of this package should use [emerald](https://aur.archlinux.org/packages/emerald/) for [#Window decoration](#Window_decoration). Alternatively, use [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/) for a Compiz Core package that also provides GTK Window Decorator.
+**Note:** The GTK Window Decorator is provided by [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/), a split package from [compiz-core](https://aur.archlinux.org/packages/compiz-core/).
 
 Required:
 
 *   **Compiz Core** — OpenGL compositing window manager.
 
-	[https://github.com/compiz-reloaded/compiz/](https://github.com/compiz-reloaded/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/), [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/)
+	[https://github.com/compiz-reloaded/compiz/](https://github.com/compiz-reloaded/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/)
 
 Highly recommended:
 

@@ -12,6 +12,7 @@ Before being formatted, a drive should be [partitioned](/index.php/Partitioning 
     *   [1.1 Journaling](#Journaling)
     *   [1.2 Arch Linux support](#Arch_Linux_support)
     *   [1.3 FUSE-based file systems](#FUSE-based_file_systems)
+    *   [1.4 Special purpose file systems](#Special_purpose_file_systems)
 *   [2 Create a file system](#Create_a_file_system)
     *   [2.1 Identify the devices](#Identify_the_devices)
     *   [2.2 Formatting](#Formatting)
@@ -149,6 +150,20 @@ Some FUSE-based file systems:
 	[https://www.presslabs.com/gitfs/](https://www.presslabs.com/gitfs/) || [gitfs](https://aur.archlinux.org/packages/gitfs/)
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
+
+### Special purpose file systems
+
+*   **[CramFS](https://en.wikipedia.org/wiki/cramfs "wikipedia:cramfs")** — **Compressed ROM filesystem** is a read only filesystem designed with simplicity and efficiency in mind. Its maximum file size is less 16MB and the maximum file system size is around 272MB.
+
+	[http://sourceforge.net/projects/cramfs/](http://sourceforge.net/projects/cramfs/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[eCryptfs](/index.php/ECryptfs "ECryptfs")** — **Enterprise Cryptographic Filesystem** is a package of disk encryption software for Linux. It is implemented as a POSIX-compliant filesystem-level encryption layer, aiming to offer functionality similar to that of GnuPG at the operating system level.
+
+	[http://ecryptfs.org](http://ecryptfs.org) || [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils)
+
+*   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — **SquashFS** is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
+
+	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
 
 ## Create a file system
 

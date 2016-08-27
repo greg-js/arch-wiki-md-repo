@@ -71,7 +71,7 @@ Some have other wireless cards:
 
 ## Installing
 
-There are several possible ways to install Arch onto a MSI Wind U100\. The most usual methods are booting from a USB stick/memory card, or from an external CD/DVD drive. Refer to the Beginners' Guide [CD installer](/index.php/Beginners%27_guide#CD_installer "Beginners' guide") part for instructions on obtaining an ISO image and burning to a CD, or consult the [USB stick](/index.php/Beginners%27_guide#USB_stick "Beginners' guide") section for indications on writing the image to a USB device.
+There are several possible ways to install Arch onto a MSI Wind U100\. The most usual methods are booting from a USB stick/memory card, or from an external CD/DVD drive. Refer to [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch").
 
 Regardless of choice, finish by hooking up the external device (CD drive or USB stick) to the notebook. Hold the F11 key while booting in order to get to the boot device menu, then proceed by selecting the appropriate device and install as normal.
 

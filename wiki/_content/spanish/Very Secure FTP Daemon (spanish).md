@@ -68,7 +68,7 @@ pam_service_name=vsftpd
 
 ```
 
-/etc/hosts.allow - agrega las siguientes entradas (por razones de seguridad hosts.allow puede ser configurado de otra forma. [/etc/hosts.deny and /etc/hosts.allow](/index.php/Beginners%27_guide#.2Fetc.2Fhosts.deny_and_.2Fetc.2Fhosts.allow "Beginners' guide")):
+/etc/hosts.allow - agrega las siguientes entradas (por razones de seguridad hosts.allow puede ser configurado de otra forma. /etc/hosts.deny and /etc/hosts.allow
 
 ```
 vsftpd: ALL

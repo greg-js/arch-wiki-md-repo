@@ -123,6 +123,6 @@ Change `verbose` to `quiet` on the bootloader's kernel line. For some systems, p
 *   [udev](/index.php/Udev "Udev")
 *   [Daemon](/index.php/Daemon "Daemon")
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
+*   [Improving performance](/index.php/Improving_performance "Improving performance")
 *   [Bootchart](/index.php/Bootchart "Bootchart") - Tool to assist in profiling the boot process
 *   [Kexec](/index.php/Kexec "Kexec") - Tool to reboot very quickly without waiting for the whole BIOS boot process to finish.

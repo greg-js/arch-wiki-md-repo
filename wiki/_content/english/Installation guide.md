@@ -34,7 +34,7 @@ Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchi
 
 Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-To [edit](/index.php/Edit "Edit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
+To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
 The installation process needs to retrieve packages from a remote repository, therefore a working internet connection is required.
 
@@ -62,16 +62,9 @@ The layout can be changed with [loadkeys(1)](http://man7.org/linux/man-pages/man
 
 ### Connect to the Internet
 
-Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping(8)](http://man7.org/linux/man-pages/man8/ping.8.html).
+Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping](/index.php/Ping "Ping").
 
-For other [network configuration](/index.php/Network_configuration "Network configuration"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are available. See [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) and [netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt) for examples.
-
-When using either service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service`:
-
-```
-# systemctl stop dhcpcd@*interface*.service
-
-```
+If a different [network configuration](/index.php/Network_configuration "Network configuration") tool is needed, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are available. See [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) and [netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt) for examples. When using either service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first.
 
 ### Update the system clock
 
@@ -128,7 +121,7 @@ To [install](/index.php/Install "Install") other packages or groups to the new s
 Generate an [fstab](/index.php/Fstab "Fstab") file (use `-U` or `-L` to define by [UUID](/index.php/UUID "UUID") or labels):
 
 ```
-# genfstab -p /mnt >> /mnt/etc/fstab
+# genfstab -U /mnt >> /mnt/etc/fstab
 
 ```
 
@@ -152,7 +145,7 @@ Set the [time zone](/index.php/Time_zone "Time zone"):
 
 ```
 
-Run [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) to generate `/etc/adjtime`. If the [time standard](/index.php/Time_standard "Time standard") is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be configured accordingly.
+Run [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) to generate `/etc/adjtime`. If the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be [configured accordingly](/index.php/Time_standard "Time standard").
 
 ```
 # hwclock --systohc --*utc*
@@ -161,18 +154,32 @@ Run [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) to generat
 
 ### Locale
 
-Uncomment the needed [locales](/index.php/Locale "Locale") in `/etc/locale.gen`, then generate them with:
+Uncomment `en_US.UTF-8 UTF-8` and other needed [localizations](/index.php/Localization "Localization") in `/etc/locale.gen`, and generate them with:
 
 ```
 # locale-gen
 
 ```
 
-Add `LANG=*your_locale*` to [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html), and if required, [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") to [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).
+Set the `LANG` [variable](/index.php/Variable "Variable") in [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) accordingly, for example:
+
+```
+# echo LANG=*en_US.UTF-8* > /etc/locale.conf
+
+```
+
+If required, set the [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") in [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).
 
 ### Hostname
 
-Create an entry for your [hostname](/index.php/Hostname "Hostname") in `/etc/hostname` and `/etc/hosts`. See [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) and [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) for details.
+Create an entry for your hostname in `/etc/hostname`:
+
+```
+# echo *myhostname* > /etc/hostname
+
+```
+
+A matching entry in `/etc/hosts` is recommended: see [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
 
 ### Network configuration
 
@@ -200,9 +207,9 @@ Set the root [password](/index.php/Password "Password"):
 
 ### Boot loader
 
-See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. Choices include [GRUB](/index.php/GRUB "GRUB") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) and [syslinux](/index.php/Syslinux "Syslinux") (BIOS).
+See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. For example, set up the boot loader with [systemd-boot](/index.php/Systemd-boot "Systemd-boot") if your system supports UEFI, and [GRUB](/index.php/GRUB#BIOS_systems "GRUB") when not.
 
-If you have an Intel CPU, in addition to installing a boot loader, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+If you have an Intel CPU, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package in addition, and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 
 ## Reboot
 

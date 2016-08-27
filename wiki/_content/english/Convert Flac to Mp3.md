@@ -84,7 +84,7 @@ If for some reason FFmpeg is not installed and you do not want to install it, yo
 ```
 #!/bin/bash
 
-for a in *.flac; do
+for a in ./*.flac; do
   # give output correct extension
   OUTF="${a[@]/%flac/mp3}"
 

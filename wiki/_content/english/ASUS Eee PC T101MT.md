@@ -14,10 +14,9 @@
 ## Contents
 
 *   [1 Installing Arch](#Installing_Arch)
-    *   [1.1 Following the Beginners Guide](#Following_the_Beginners_Guide)
-    *   [1.2 Camera](#Camera)
-    *   [1.3 Function Keys](#Function_Keys)
-    *   [1.4 Installing OpenBox](#Installing_OpenBox)
+    *   [1.1 Camera](#Camera)
+    *   [1.2 Function Keys](#Function_Keys)
+    *   [1.3 Installing OpenBox](#Installing_OpenBox)
 *   [2 Rotating the touch screen](#Rotating_the_touch_screen)
     *   [2.1 Xbindkeys](#Xbindkeys)
     *   [2.2 On Screen Keyboard](#On_Screen_Keyboard)
@@ -30,11 +29,7 @@
 
 ## Installing Arch
 
-This wiki page supplements these pages: **[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")**, the **[Official Install Guide](/index.php/Installation_guide "Installation guide")**, and **[Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")**. Please refer to those guides *first* before following the eeepc-specific pointers on this page.
-
-### Following the Beginners Guide
-
-Graphics, Ethernet, Wireless, Audio and the Card Reader work "out of the box".
+This wiki page supplements these pages: **[Official Install Guide](/index.php/Installation_guide "Installation guide")**, and **[Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")**. Please refer to those guides *first* before following the eeepc-specific pointers on this page.
 
 ### Camera
 

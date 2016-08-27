@@ -26,10 +26,6 @@
 
 	포럼 회원이 따라야 할 지침입니다.
 
-	[초보자 안내서](/index.php/Beginners%27_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Beginners' guide (한국어)")
-
-	아치 리눅스를 설치하고 설정하는 전 과정을 설명하는 안내서로 초보자나 익숙한 사용자 모두를 대상으로 합니다.
-
 	[설치 안내서](/index.php/Installation_guide_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Installation guide (한국어)")
 
 	아치 리눅스를 설치하는 방법을 간략하게 설명합니다. 아치 리눅스를 경험한 사용자를 대상으로 합니다.

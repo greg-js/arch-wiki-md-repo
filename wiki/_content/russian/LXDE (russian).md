@@ -96,7 +96,7 @@ export DESKTOP_SESSION=LXDE
 
 ### Консоль
 
-Для использования команды **startx** необходимо добавить в файл [`~/.xinitrc`](/index.php/Beginners%27_guide#C:_Test_X "Beginners' guide") команду запуска LXDE:
+Для использования команды **startx** необходимо добавить в файл [`~/.xinitrc`](/index.php/Xinit "Xinit") команду запуска LXDE:
 
 ```
 exec startlxde

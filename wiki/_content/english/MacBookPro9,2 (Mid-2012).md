@@ -2,7 +2,7 @@ This guide outlines special information on installing and configuring Arch on th
 
 This article is written with a dual-boot setup in mind, and does *not* cover how to replace OSX with Arch.
 
-For general help on the install preocedure see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
+For general help on the install preocedure see the [Installation guide](/index.php/Installation_guide "Installation guide")
 
 **Note:** Remember to back up your pre-existing OSX installation before proceeding!
 
@@ -55,7 +55,7 @@ Although nowadays Boot Camp requires a Windows installation disc before altering
 
 ### Running the Arch Installation
 
-Proceed from the Installation section in either [Beginners' guide/Installation](/index.php/Beginners%27_guide/Installation "Beginners' guide/Installation") or [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide"). Note that you'll need a wired connection to continue for now.
+Proceed from the Installation section in [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide"). Note that you'll need a wired connection to continue for now.
 
 The following differences will apply to MacBooks:
 
@@ -119,7 +119,7 @@ The only difference is installing efibootmgr (required for 9,2) and running grub
 
 ## Post Installation
 
-Continue with [Beginners' guide/Post-installation](/index.php/Beginners%27_guide/Post-installation "Beginners' guide/Post-installation") or [Installation guide#Post-installation](/index.php/Installation_guide#Post-installation "Installation guide"), noting the following modifications:
+Continue with [General recommendations](/index.php/General_recommendations "General recommendations"), noting the following modifications:
 
 ### Users
 

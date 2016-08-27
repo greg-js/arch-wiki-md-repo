@@ -269,9 +269,9 @@ Create an [Arch Linux Installer USB drive](/index.php/USB_flash_installation_med
 *   Plug the USB drive to the Chrome OS device and start SeaBIOS with `Ctrl + L` at the white boot splash screen (if SeaBIOS is not set as default).
 *   Press `Esc` to get a boot menu and select the number corresponding to your USB drive.
 
-The Arch Linux installer boot menu should appear and the installation process can [proceed as normal](/index.php/Beginners%27_guide#Installation "Beginners' guide").
+The Arch Linux installer boot menu should appear and the [installation](/index.php/Installation "Installation") process can proceed as normal.
 
-**Note:** For now choose [GRUB](/index.php/Beginners%27_guide#For_BIOS_motherboards "Beginners' guide") as your bootloader: you can choose MBR or GPT [partitioning schemes](/index.php/Beginners%27_guide#Partition_schemes "Beginners' guide"). If you choose GPT then do not forget to add a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Also see [Known Issues](#Syslinux).
+**Note:** For now choose [GRUB](/index.php/GRUB "GRUB") as your bootloader: you can choose MBR or GPT: [Parttitioning](/index.php?title=Parttitioning&action=edit&redlink=1 "Parttitioning (page does not exist)"). If you choose GPT then do not forget to add a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Also see [Known Issues](#Syslinux).
 
 After finishing installing Arch Linux continue by following the [Post Installation Configuration](#Post_installation_configuration).
 

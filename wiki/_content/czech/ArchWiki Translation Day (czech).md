@@ -50,7 +50,6 @@ Pokud nevíte, jak správně editovat, přečtěte si [ArchWiki tutorial](/index
 Zde je seznam stránek, jejichž překlad je nejnutnější. Tento seznam volně spravujte. Přidávejte sem další stránky o kterých si myslíte, že by bylo dobré je mít i v češtině. Jakmile je daná stránka kompletně přeložena, odstraňte ji, prosím, z tohoto seznamu.
 
 | Anglická verze | Česká verze | Poznámka |
-| [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") | [Beginners' guide (Česky)](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)") | Aktualizovat |
 | [General recommendations](/index.php/General_recommendations "General recommendations") | [General recommendations (Česky)](/index.php/General_recommendations_(%C4%8Cesky) "General recommendations (Česky)") | Aktualizovat |
 | [Network configuration](/index.php/Network_configuration "Network configuration") | [Network configuration (Česky)](/index.php/Network_configuration_(%C4%8Cesky) "Network configuration (Česky)") | Aktualizovat |
 | [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") | [Wireless Setup (Česky)](/index.php/Wireless_Setup_(%C4%8Cesky) "Wireless Setup (Česky)") | Aktualizovat |

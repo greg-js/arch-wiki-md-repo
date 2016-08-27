@@ -268,7 +268,7 @@ This section aims to summarize tweaks, tools and available options useful to imp
 
 ### Maximizing performance
 
-The [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") article gathers information and is a basic rundown about gaining performance in Arch Linux.
+The [Improving performance](/index.php/Improving_performance "Improving performance") article gathers information and is a basic rundown about gaining performance in Arch Linux.
 
 ### Solid state drives
 

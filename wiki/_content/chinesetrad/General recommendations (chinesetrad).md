@@ -222,7 +222,7 @@ Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num 
 
 ### 性能最佳化
 
-[性能最佳化](/index.php/Maximizing_performance "Maximizing performance")一文中收集了增進 Arch Linux 效能的資訊。
+[性能最佳化](/index.php/Improving_performance "Improving performance")一文中收集了增進 Arch Linux 效能的資訊。
 
 ### 固態硬碟
 

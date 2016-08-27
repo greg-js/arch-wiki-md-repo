@@ -9,15 +9,14 @@
 *   [1 启动进入安装](#.E5.90.AF.E5.8A.A8.E8.BF.9B.E5.85.A5.E5.AE.89.E8.A3.85)
     *   [1.1 禁用Secure Boot](#.E7.A6.81.E7.94.A8Secure_Boot)
     *   [1.2 开启Secure Boot启动安装镜像](#.E5.BC.80.E5.90.AFSecure_Boot.E5.90.AF.E5.8A.A8.E5.AE.89.E8.A3.85.E9.95.9C.E5.83.8F)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 额外的步骤](#.E9.A2.9D.E5.A4.96.E7.9A.84.E6.AD.A5.E9.AA.A4)
-    *   [3.1 编译内核](#.E7.BC.96.E8.AF.91.E5.86.85.E6.A0.B8)
-        *   [3.1.1 Surface Pro 3 Linux 其他内核补丁](#Surface_Pro_3_Linux_.E5.85.B6.E4.BB.96.E5.86.85.E6.A0.B8.E8.A1.A5.E4.B8.81)
-    *   [3.2 启用触摸板](#.E5.90.AF.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
-    *   [3.3 重新启用Secure Boot](#.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8Secure_Boot)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Invalid signature detected check secure boot policy in setup](#Invalid_signature_detected_check_secure_boot_policy_in_setup)
-    *   [4.2 Keyboard Cover not working](#Keyboard_Cover_not_working)
+*   [2 额外的步骤](#.E9.A2.9D.E5.A4.96.E7.9A.84.E6.AD.A5.E9.AA.A4)
+    *   [2.1 编译内核](#.E7.BC.96.E8.AF.91.E5.86.85.E6.A0.B8)
+        *   [2.1.1 Surface Pro 3 Linux 其他内核补丁](#Surface_Pro_3_Linux_.E5.85.B6.E4.BB.96.E5.86.85.E6.A0.B8.E8.A1.A5.E4.B8.81)
+    *   [2.2 启用触摸板](#.E5.90.AF.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
+    *   [2.3 重新启用Secure Boot](#.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8Secure_Boot)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Invalid signature detected check secure boot policy in setup](#Invalid_signature_detected_check_secure_boot_policy_in_setup)
+    *   [3.2 Keyboard Cover not working](#Keyboard_Cover_not_working)
 
 ## 启动进入安装
 
@@ -49,10 +48,6 @@ Surface Pro 3有三种启动模式 [详细看这里](http://www.microsoft.com/su
 ### 开启Secure Boot启动安装镜像
 
 看这里[Secure Boot](/index.php/Secure_Boot "Secure Boot").
-
-## 安装
-
-按照[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")正常步骤安装即可.
 
 ## 额外的步骤
 

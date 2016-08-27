@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Maximizing performance/Boot process](/index.php?title=Maximizing_performance/Boot_process&redirect=no "Maximizing performance/Boot process")
+*   [Improving performance/Boot process](/index.php?title=Improving_performance/Boot_process&redirect=no "Improving performance/Boot process")

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Time](/index.php/Time "Time") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-15，点击[这里](https://wiki.archlinux.org/index.php?title=Time&diff=0&oldid=392732)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Time](/index.php/Time "Time") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=Time&diff=0&oldid=442442)可以查看翻译后英文页面的改动。
 
 一个操作系统通过如下内容确定时间：时间数值、时间标准、时区和夏令时调节(中国已经废止)。本文分别介绍各个部分的定义及如何设置他们。要维护准确的系统时间，请参考 [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)") 一文。
 
@@ -7,7 +7,6 @@
 *   [1 硬件时钟和系统时钟](#.E7.A1.AC.E4.BB.B6.E6.97.B6.E9.92.9F.E5.92.8C.E7.B3.BB.E7.BB.9F.E6.97.B6.E9.92.9F)
     *   [1.1 读取时间](#.E8.AF.BB.E5.8F.96.E6.97.B6.E9.97.B4)
     *   [1.2 设置时间](#.E8.AE.BE.E7.BD.AE.E6.97.B6.E9.97.B4)
-    *   [1.3 RTC clock](#RTC_clock)
 *   [2 时间标准](#.E6.97.B6.E9.97.B4.E6.A0.87.E5.87.86)
     *   [2.1 Windows 系统使用 UTC](#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC)
     *   [2.2 UTC 在Ubuntu的设置](#UTC_.E5.9C.A8Ubuntu.E7.9A.84.E8.AE.BE.E7.BD.AE)
@@ -31,12 +30,18 @@
 
 因为系统时间是按 32 为整数保存的，最大只能记到 2038 年，所以 32 位 Linux 系统将在 2038 年停止工作。
 
+大部分操作系统的时间管理包括如下方面：
+
+*   启动时根据硬件时钟设置系统时间
+*   运行时通过时间同步联网校正时间
+*   关机时根据系统时间设置硬件时间
+
 ### 读取时间
 
 下面命令可以获得硬件时间和系统时间(硬件时钟按 localtime 显示):
 
 ```
-$ timedatectl status
+$ timedatectl
 
 ```
 
@@ -57,14 +62,6 @@ $ timedatectl status
 ```
 
 设置时间为2014年，5月26日，11:13分54秒。
-
-### RTC clock
-
-大部分操作系统的时间管理包括如下方面：
-
-*   启动时根据硬件时钟设置系统时间
-*   运行时通过 [NTP](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") 守护进程联网校正时间
-*   关机时根据系统时间设置硬件时间。
 
 ## 时间标准
 
@@ -95,6 +92,8 @@ $ timedatectl status | grep local
 
 上述命令会自动生成`/etc/adjtime`，无需单独设置。
 
+**Note:** 如果不存在 `/etc/adjtime`，[systemd](/index.php/Systemd "Systemd") 会假定硬件时间按 UTC 设置。
+
 系统启动装入 rtc 驱动时可能会根据系统时钟设置硬件时钟。是否设置依赖于平台、内核版本和内核编译选项。如果进行了设置，此时会假定硬件时钟为 UTC 标准，`/sys/class/rtc/rtcN/hctosys`(N=0,1,2,..) 会设置成 1。后面 systemd 会根据`/etc/adjtime`重新设置。
 
 如果设置成本地时间，处理夏令时有些麻烦。如果夏令时调整发生在关机时，下次启动时时间会出现问题（[更多信息](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html)）。最新的内核直接从实时时钟芯片（RTC）读取时间，不使用 `hwclock`，内核把从 RTC 读取的时间当作 UTC 处理。所以如果硬件时间是地方时，系统启动一开始识别的时间是错误的，之后很快会进行矫正。这可能导致一些问题（尤其是时间倒退时）。
@@ -103,24 +102,21 @@ $ timedatectl status | grep local
 
 如果同时安装了 Windows 操作系统（[默认使用地方时](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)），那么一般 RTC 会被设置为地方时。Windows 其实也能处理 UTC，需要[修改注册表](#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC)。建议让 Windows 使用 UTC，而非让 Linux 使用地方时。Windows 使用 UTC 后，请记得禁用 Windows 的时间同步功能，以防 Windows 错误设置硬件时间。如上文所说，Linux 可以使用[NTP服务](/index.php/NTP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NTP (简体中文)")来在线同步硬件时钟。
 
-使用 `regedit`,输入如下 DWORD 值：
+使用 `regedit`,输入如下 DWORD 值。
 
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal
 
 ```
 
-设置成十六进制 或者使用一个reg文件搞定：
+用管理员权限启动命令行：
 
 ```
-Windows Registry Editor Version 5.00
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
-    "RealTimeIsUniversal"=dword:00000001
+reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
 
 ```
 
-If the above appears to have no affect, and a 64-bit variant of Windows is being used, using a `QWORD` value instead of a `DWORD` value may resolve the issue. Windows XP 和 Windows Vista SP1 支持设置系统时间标准为 `UTC` ，但是休眠待机的时候会把系统重新设置为 localtime，这是一个bug。 推荐这些操作系统设置为 `localtime`.
+如果上面命令不起作用，使用的是 Windows 64位系统，将 `DWORD` 修改为 `QWORD`。
 
 如果 Windows 要求根据夏令时更新时钟，可以允许。时钟仍然是 UTC，仅是显示时间会改变。
 
@@ -132,8 +128,6 @@ If the above appears to have no affect, and a 64-bit variant of Windows is being
 # timedatectl set-timezone America/Los_Angeles
 
 ```
-
-最好[禁用](http://www.addictivetips.com/windows-tips/disable-time-synchronization-in-windows-7/)Windows的时间同步功能，否则硬件时间可能混乱。.
 
 ### UTC 在Ubuntu的设置
 
@@ -197,7 +191,6 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 提高系统时间精度的方法有：
 
 *   [NTP](/index.php/NTP "NTP") 可以通过网络时间协议同步 Linux 系统的时间。NTP 也会修正中断频率和每秒滴答数以减少时间偏移。并且每隔 11 分钟同步一次硬件时钟。
-*   [AUR](/index.php/Arch_User_Repository "Arch User Repository") 中的 [adjtimex](https://aur.archlinux.org/packages/adjtimex/) 也可以调整内核时间参数，如中断频率等，提升系统时钟的频率。
 
 ## 时间同步
 
@@ -208,6 +201,7 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 *   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") 是一个简单的 [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") 守护进程。它只实现了客户端，专用于从远程服务器查询时间，更适用于绝大部分安装的情形。
 *   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") 是 OpenBSD 项目的一部分，同时实现了客户端和服务器。
 *   [Chrony](/index.php/Chrony "Chrony") 是一个客户端和服务器，更适合漫游，是为不能始终保持在线的系统而特别设计。
+*   [ntpclient](https://aur.archlinux.org/packages/ntpclient/) 是简单的命令行 NTP 客户端
 
 ## Per-user/会话或临时设置
 
@@ -250,7 +244,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 
 ## 外部资源
 
-*   [Linux Tips - Linux, Clocks, and Time](http://www.linuxsa.org.au/tips/time.html)
+*   [Linux Tips - Linux, Clocks, and Time](http://sunnyan.tistory.com/entry/Linux-Clocks-and-Time)
 *   [Sources for Time Zone and Daylight Saving Time Data](http://www.twinsun.com/tz/tz-link.htm) for [tzdata](https://www.archlinux.org/packages/?name=tzdata)
 *   [Time Scales](http://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")

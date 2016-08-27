@@ -1,11 +1,10 @@
 ## Contents
 
 *   [1 Introduzione](#Introduzione)
-*   [2 Supporto d'avvio](#Supporto_d.27avvio)
-*   [3 Configurare l'ambiente live per usare SSH](#Configurare_l.27ambiente_live_per_usare_SSH)
-*   [4 Collegarsi al PC di destinazione tramite SSH](#Collegarsi_al_PC_di_destinazione_tramite_SSH)
-    *   [4.1 Note](#Note)
-*   [5 Passi successivi](#Passi_successivi)
+*   [2 Configurare l'ambiente live per usare SSH](#Configurare_l.27ambiente_live_per_usare_SSH)
+*   [3 Collegarsi al PC di destinazione tramite SSH](#Collegarsi_al_PC_di_destinazione_tramite_SSH)
+    *   [3.1 Note](#Note)
+*   [4 Passi successivi](#Passi_successivi)
 
 ## Introduzione
 
@@ -18,10 +17,6 @@ Configurare Arch su...
 *   Un PC in cui si preferisca l'installazione da remoto, per esempio, dalla comodità della propria postazione di lavoro con capacità copia/incolla dal wiki di Arch.
 
 **Nota:** I primi due passaggi richiedono l'accesso fisico alla macchina. Ovviamente, se fisicamente localizzata altrove, ciò dovrà essere coordinato con un'altra persona!
-
-## Supporto d'avvio
-
-Avviare in un ambiente Arch live tramite il [live CD/USB image](/index.php/Beginners%27_guide#Obtain_the_latest_installation_media "Beginners' guide") e accedere come **root**.
 
 ## Configurare l'ambiente live per usare SSH
 

@@ -1,3 +1,5 @@
+Begi
+
 **翻译状态：** 本文是英文页面 [GRUB](/index.php/GRUB "GRUB") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-14，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=282734)可以查看翻译后英文页面的改动。
 
 [GRUB](https://www.gnu.org/software/grub/) , 是下一代 GRand Unified Bootloader (请不要和 [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")  混淆了)。 它来自下一代 GRUB 研究项目 [PUPA](http://www.nongnu.org/pupa/)，代码全部重写，实现了模块化和增强了移植性。[[1]](http://www.gnu.org/software/grub/grub-faq.en.html#q1).
@@ -352,7 +354,7 @@ To do so, first create the necessary directory, and then copy across the grub `.
 
 #### 在固件启动管理器中创建GRUB条目
 
-`grub-install`会自动尝试在启动管理器中创建GRUB条目.如果没有成功,请参考[Beginners' guide#GRUB](/index.php/Beginners%27_guide#GRUB "Beginners' guide"),里面有关于使用`efibootmgr`创建启动目录条目的介绍.一般来说,这个问题都是因为你没有以UEFI模式启动CD/USB造成的.请参考[UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
+`grub-install`会自动尝试在启动管理器中创建GRUB条目.如果没有成功,请参考,里面有关于使用`efibootmgr`创建启动目录条目的介绍.一般来说,这个问题都是因为你没有以UEFI模式启动CD/USB造成的.请参考[UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
 
 #### 创建GRUB Standalone模式的UEFI应用程序
 

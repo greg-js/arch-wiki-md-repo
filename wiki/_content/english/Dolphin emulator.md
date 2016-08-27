@@ -144,7 +144,7 @@ Make sure the framelimit is set to a proper value for the game's region; 60 for 
 
 Double-check the [CPU scaling governor](/index.php/Cpu_scaling#Scaling_governors "Cpu scaling"). If using an nvidia graphics card, on nvidia-settings changing the powermizer setting to "Prefer maximum performance"; check its temperature to make sure the card does not overheat, though. Change Dolphin's priority using *nice*. Killing unnecessary processes and disabling compositing also helps. Configuring Dolphin correctly, as described above, is the most important part.
 
-*See also: [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") - most of the advice should be helpful.*
+*See also: [Improving performance](/index.php/Improving_performance "Improving performance") - most of the advice should be helpful.*
 
 ## See also
 

@@ -1,4 +1,4 @@
-This is an install and configuration guide for the Dell Inspiron 15 000 Series (Model 5547) laptop, testing with the manjaro 4.1.15-2-MANJARO kernel.
+This is an install and configuration guide for the Dell Inspiron 15 000 Series (Model 5547) laptop.
 
 See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for information on other Dell laptops.
 
@@ -7,15 +7,10 @@ See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for informatio
 *   [1 Hardware Details](#Hardware_Details)
 *   [2 Installation](#Installation)
 *   [3 Hardware](#Hardware)
-    *   [3.1 Audio](#Audio)
-    *   [3.2 Microphone](#Microphone)
-    *   [3.3 Video](#Video)
-        *   [3.3.1 Toggle between HDMI/Monitor](#Toggle_between_HDMI.2FMonitor)
-    *   [3.4 Keyboard](#Keyboard)
-    *   [3.5 Touchpad](#Touchpad)
-    *   [3.6 Wireless](#Wireless)
-    *   [3.7 USB, SD card slot, ethernet, HDMI, webcam and mediakeys](#USB.2C_SD_card_slot.2C_ethernet.2C_HDMI.2C_webcam_and_mediakeys)
-*   [4 Power Management](#Power_Management)
+    *   [3.1 Microphone](#Microphone)
+    *   [3.2 Video](#Video)
+        *   [3.2.1 Toggle between HDMI/Monitor](#Toggle_between_HDMI.2FMonitor)
+    *   [3.3 Touchpad](#Touchpad)
 
 ## Hardware Details
 
@@ -58,51 +53,22 @@ lsusb output:
 
 ## Installation
 
-Tested with dual boots Windows 10/Manjaro 15-2. Step: Installation from a USB key. Create one following [this page](/index.php/USB_flash_installation_media "USB flash installation media"). Installed with UEFI mode enabled ([Boot installation](/index.php/Beginners%27_guide#Boot_the_installation_medium "Beginners' guide")).
+See [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
 
 ## Hardware
 
-### Audio
-
-Sound should work out of the box with Intel HD Audio and [PulseAudio](/index.php/PulseAudio "PulseAudio").
-
 ### Microphone
 
-Need to configure [PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio "PulseAudio/Troubleshooting") If the built-in microphone is static, [setting the sample rate in PulseAudio](/index.php/PulseAudio/Troubleshooting#Static_noise_in_microphone_recording "PulseAudio/Troubleshooting") may solve the problem.
+See [PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_not_detected_by_PulseAudio "PulseAudio/Troubleshooting") and [PulseAudio/Troubleshooting#Static_noise_in_microphone_recording](/index.php/PulseAudio/Troubleshooting#Static_noise_in_microphone_recording "PulseAudio/Troubleshooting").
 
 ### Video
 
-The notebook comes two GPUs, one power-efficent (Intel Corporation Haswell-ULT Integrated Graphics) and one more powerful and more power-hungry (AMD Radeon R7 M265). Please read this [ATI Dynamic Switchable Graphics](/index.php/Hybrid_graphics#ATI_Dynamic_Switchable_Graphics "Hybrid graphics"). This has not be testing yet.
-
-You can found a topic in the Archlinux forum about the problem [here](https://bbs.archlinux.org/viewtopic.php?id=190236)
+See [ATI Dynamic Switchable Graphics](/index.php/Hybrid_graphics#ATI_Dynamic_Switchable_Graphics "Hybrid graphics") and [forums](https://bbs.archlinux.org/viewtopic.php?id=190236).
 
 #### Toggle between HDMI/Monitor
 
-Create a quick key combination to toggle your monitors by using this script on [github](https://github.com/PeteMo/toggle/blob/master/toggle.sh) that was designed exactly for this purpose Copy the script and place it in your home directory. Make it executable by
-
-```
-chmod +x ~/toggle.sh
-
-```
-
-Add this script to a custom keyboard shortcut using the keyboard system settings dialog. Click on the "Shortcuts" tab and then "Custom Shortcuts" in the left panel. Click the "+" sign to add a new shortcut.
-
-### Keyboard
-
-Keyboard worked out of the box.
+See [xrandr](/index.php/Xrandr "Xrandr").
 
 ### Touchpad
 
-Touchpad worked out of the box. To enable scroll and more, install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics). With the default configuration file it will work well, but if you want to fine tune the behaviour, read [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
-
-### Wireless
-
-Wireless worked out of the box.
-
-### USB, SD card slot, ethernet, HDMI, webcam and mediakeys
-
-**USB:** work out of the box. **SD card slotnor:** not tested **Ethernet:** work out of the box. **HDMI:** work out of the box, need configuration to auto-switch between video/sound laptop/hdmi(TV,...). **Mediakeys:** almost all work. Wifi off/on not working, switch between monitor not working
-
-## Power Management
-
-Not tested.
+See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").

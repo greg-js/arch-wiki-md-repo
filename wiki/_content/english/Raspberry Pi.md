@@ -37,7 +37,7 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
 
 ## Article preface
 
-This article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before. Arch newbies are encouraged to read the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") if unsure how to perform standard tasks such as creating users, managing the system, etc.
+This article is not meant to be an exhaustive setup guide and assumes that the reader has setup an Arch system before.
 
 **Note:** Support for the ARM architecture is provided on [http://archlinuxarm.org](http://archlinuxarm.org) not through posts to the official Arch Linux Forum. Any posts related to ARM specific issues will be promptly closed per the [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct") policy.
 
@@ -53,7 +53,7 @@ The Raspberry Pi is an ARM-based device and therefore needs binaries compiled fo
 
 System responsiveness, particularly during operations involving disk I/O such as updating the system, can be adversely affected by poor quality/slow SD media. This is characterized by [frequent, often extended pauses](http://archlinuxarm.org/forum/viewtopic.php?f=64&t=9467) as pacman writes out files to the file system. The pauses are not due to saturation of the RPi or RPi2 bus, but are likely the bottle-neck due to a slow SD (or micro SD) card. See the [Benchmarking#Flash media](/index.php/Benchmarking#Flash_media "Benchmarking") for more.
 
-Performance and system responsiveness can be generally improved by making adjustments to the system configuration. See [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance").
+Performance and system responsiveness can be generally improved by making adjustments to the system configuration. See [Improving performance](/index.php/Improving_performance "Improving performance").
 
 ### Enable fsck on boot
 
@@ -69,7 +69,7 @@ The fresh install comes preconfigured to use the onboard NIC in dhcp mode via [s
 
 ### Configure WLAN without ethernet
 
-Users needing to establish a wireless internet connection will need to use a wireless daemon such as [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). Consult the [wireless section](/index.php/Beginners%27_guide#Wireless "Beginners' guide") of the Beginner's Guide for additional instruction.
+Users needing to establish a wireless internet connection will need to use a wireless daemon such as [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). See also [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 
 ## Audio
 

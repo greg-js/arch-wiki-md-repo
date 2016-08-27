@@ -45,7 +45,7 @@ This document is an annotated index of popular articles and important informatio
     *   [8.4 TrackPoints](#TrackPoints)
 *   [9 Optimization](#Optimization)
     *   [9.1 Benchmarking](#Benchmarking)
-    *   [9.2 Maximizing performance](#Maximizing_performance)
+    *   [9.2 Improving performance](#Improving_performance)
     *   [9.3 Solid state drives](#Solid_state_drives)
 *   [10 System service](#System_service)
     *   [10.1 File index and search](#File_index_and_search)
@@ -266,9 +266,9 @@ This section aims to summarize tweaks, tools and available options useful to imp
 
 [Benchmarking](/index.php/Benchmarking "Benchmarking") is the act of measuring performance and comparing the results to another system's results or a widely accepted standard through a unified procedure.
 
-### Maximizing performance
+### Improving performance
 
-The [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") article gathers information and is a basic rundown about gaining performance in Arch Linux.
+The [Improving performance](/index.php/Improving_performance "Improving performance") article gathers information and is a basic rundown about gaining performance in Arch Linux.
 
 ### Solid state drives
 

@@ -509,7 +509,7 @@ L'installazione di default setta il pulsante di accensione per sospendere il sys
 
 #### Layout tastiera GDM
 
-GDM non conosce le impostazioni riguardo la vostra tastiera in Gnome3\. Per cambiare le impostazioni della tastiera utilizzata da GDM, modificate il vostro layout utilizzando i file di configurazione di Xorg. Fate riferimento a questa sezione per la modifica : [Beginner's Guide.](/index.php/Beginners%27_guide#Non-US_keyboard "Beginners' guide")
+GDM non conosce le impostazioni riguardo la vostra tastiera in Gnome3\. Per cambiare le impostazioni della tastiera utilizzata da GDM, modificate il vostro layout utilizzando i file di configurazione di Xorg. Fate riferimento a questa sezione per la modifica
 
 ### Altre tips
 

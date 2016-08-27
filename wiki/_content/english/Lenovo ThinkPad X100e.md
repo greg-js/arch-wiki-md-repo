@@ -31,7 +31,7 @@ Upon resume from suspend to ram, there are rare incidents of the filesystem not 
 
 ## Pre-install
 
-For this successful installation, the net install ISO (2010.05, current at time of initial writeup) was used. Many of the issues that the x100e faced with 2.6 kernels have been addressed as of kernel 2.6.35. There is no optical drive in the x100e so you’ll need to use a USB key or network boot. See [Putting installation media on a USB key](/index.php/Putting_installation_media_on_a_USB_key "Putting installation media on a USB key") or the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for more details on booting off a USB key.
+For this successful installation, the net install ISO (2010.05, current at time of initial writeup) was used. Many of the issues that the x100e faced with 2.6 kernels have been addressed as of kernel 2.6.35. There is no optical drive in the x100e so you’ll need to use a USB key or network boot. See [Putting installation media on a USB key](/index.php/Putting_installation_media_on_a_USB_key "Putting installation media on a USB key") for more details on booting off a USB key.
 
 ## Wireless network device
 

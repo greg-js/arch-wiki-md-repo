@@ -12,7 +12,7 @@ This articles details the installation and configuration of Arch Linux on the De
 
 ## Before you begin
 
-This article is intended to assist users with the specifics of installing Arch Linux on the Dell Mini 10v. It is assumed that a user is also following an installation guide such as the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+This article is intended to assist users with the specifics of installing Arch Linux on the Dell Mini 10v. It is assumed that a user is also following the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 Dell Mini 10v hardware may vary, however the following list of hardware has been assumed in this article:
 

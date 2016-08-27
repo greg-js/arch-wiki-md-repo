@@ -53,7 +53,7 @@ See [Secure Boot](/index.php/Secure_Boot "Secure Boot").
 
 ## Installation
 
-I have done the installation with systemd's bootctl [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") (old [Gummiboot](/index.php/Gummiboot "Gummiboot")). After doing all the steps of installation within the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), you should do two more things. Booting in Secure Boot won't work for the new installation, as the vmlinuz hasn't been registered within its loader.
+I have done the installation with systemd's bootctl [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") (old [Gummiboot](/index.php/Gummiboot "Gummiboot")). After doing all the steps of [installation](/index.php/Installation "Installation"), you should do two more things. Booting in Secure Boot won't work for the new installation, as the vmlinuz hasn't been registered within its loader.
 
 The easiest way is to do all the setup is the following, just before rebooting:
 

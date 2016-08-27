@@ -36,7 +36,7 @@ The unit used for testing contained the following hardware:
 
 ## Installation
 
-The best way to ensure that Arch Linux is correctly installed is to follow the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") step by step.
+The best way to ensure that Arch Linux is correctly installed is to follow the [Installation guide](/index.php/Installation_guide "Installation guide") step by step.
 
 In the second configuration your wifi won't work out of the box (connection will drop repeatedly). There is a work-around: unload iwlmvm and iwlwifi kernel modules (iwlwifi needs iwlmvm)
 
@@ -98,7 +98,7 @@ At the time of this writing (Dec. 2013), Intel has just released [extensive info
 
 ### Touchpad
 
-Install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) as explained in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+[Install](/index.php/Install "Install") [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
 This will make sure that the touchpad works correctly and will also provide two-finger scrolling.
 

@@ -20,10 +20,6 @@ Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/i
 
 	Mit mondanak rólunk.
 
-	[Útmutató kezdőknek](/index.php/Beginners%27_guide_(Magyar) "Beginners' guide (Magyar)")
-
-	Részletes kalauz, mely végigvezet az Arch Linux teljes telepítési és beállítási folyamatán.
-
 	[Telepítési útmutató](/index.php/Installation_guide_(Magyar) "Installation guide (Magyar)")
 
 	Egy tömör telepítési útmutató, amely a tapasztalt Arch felhasználókat célozza.

@@ -52,13 +52,11 @@ LibreOffice includes support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/inde
 As of LibreOffice v3.5.x toolkit libraries are checked in the following order:
 
 ```
-gtk > kde4 > generic
+gtk3 > gtk > kde4 > generic
 
 ```
 
 To force the use of a certain VCL UI interface, use one of the `SAL_USE_VCLPLUGIN=gen`, `SAL_USE_VCLPLUGIN=kde4`, `SAL_USE_VCLPLUGIN=gtk` or `SAL_USE_VCLPLUGIN=gtk3` [environment variables](/index.php/Environment_variables "Environment variables"). These variables can be uncommented in `/etc/profile.d/libreoffice-fresh.sh` or `/etc/profile.d/libreoffice-still.sh`.
-
-**Note:** The new GTK3 UI is experimental and will only be available if you enable "experimental features" in LibreOffice main configuration dialog.
 
 However, if it looks like it is using Windows 95/98 icons, go to *Tools > Options...* in the menus (which presents the Options Dialog), then select *LibreOffice > Accessibility* and uncheck "Automatically detect high-contrast mode of operating system".
 

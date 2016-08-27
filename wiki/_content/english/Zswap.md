@@ -1,6 +1,6 @@
 "Zswap is a Linux kernel feature providing a compressed write-back cache for swapped pages. Instead of moving memory pages to a swap device when they are to be swapped out, zswap performs their compression and then stores them into a memory pool dynamically allocated inside system's RAM." - Wikipedia
 
-zswap is a compressed RAM cache for swap devices. Pages which would otherwise be swapped out to disk will instead be compressed and maintained in RAM until RAM is exhausted, after which the least recently used (LRU) pages will be sent to disk. This is [in contrast to zram](/index.php/Maximizing_performance#Zram_or_zswap "Maximizing performance"), which is a swap device in RAM and does not require a backing swap device. The long and the short of it is that you need to set up a [Swap](/index.php/Swap "Swap") device in order to use zswap.
+zswap is a compressed RAM cache for swap devices. Pages which would otherwise be swapped out to disk will instead be compressed and maintained in RAM until RAM is exhausted, after which the least recently used (LRU) pages will be sent to disk. This is [in contrast to zram](/index.php/Improving_performance#Zram_or_zswap "Improving performance"), which is a swap device in RAM and does not require a backing swap device. The long and the short of it is that you need to set up a [Swap](/index.php/Swap "Swap") device in order to use zswap.
 
 ## Contents
 

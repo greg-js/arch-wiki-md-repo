@@ -16,32 +16,27 @@ This article describes both the 1005HA and the 1005HAB. The functional differenc
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 Boot Booster](#Boot_Booster)
-    *   [1.2 Wireless/rfkill](#Wireless.2Frfkill)
-*   [2 Display and input settings](#Display_and_input_settings)
-*   [3 Powersaving and ACPI](#Powersaving_and_ACPI)
-    *   [3.1 laptop-mode-tools](#laptop-mode-tools)
-    *   [3.2 Gmabooster](#Gmabooster)
-    *   [3.3 CPU frequency scaling](#CPU_frequency_scaling)
-    *   [3.4 Hotkeys](#Hotkeys)
-        *   [3.4.1 Wifi toggle](#Wifi_toggle)
-        *   [3.4.2 Sound volume hotkeys](#Sound_volume_hotkeys)
-        *   [3.4.3 Sleep](#Sleep)
-        *   [3.4.4 Display Panel](#Display_Panel)
-        *   [3.4.5 Trackpad Toggle](#Trackpad_Toggle)
-    *   [3.5 Display settings](#Display_settings)
-*   [4 Hardware](#Hardware)
-    *   [4.1 Ethernet](#Ethernet)
-    *   [4.2 WiFi](#WiFi)
-    *   [4.3 Camera](#Camera)
-    *   [4.4 Microphone](#Microphone)
-*   [5 Hardware Info](#Hardware_Info)
-    *   [5.1 lspci](#lspci)
-
-# Installation
-
-For an in-depth guide on the installation see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+*   [1 Boot Booster](#Boot_Booster)
+*   [2 Wireless/rfkill](#Wireless.2Frfkill)
+*   [3 Display and input settings](#Display_and_input_settings)
+*   [4 Powersaving and ACPI](#Powersaving_and_ACPI)
+    *   [4.1 laptop-mode-tools](#laptop-mode-tools)
+    *   [4.2 Gmabooster](#Gmabooster)
+    *   [4.3 CPU frequency scaling](#CPU_frequency_scaling)
+    *   [4.4 Hotkeys](#Hotkeys)
+        *   [4.4.1 Wifi toggle](#Wifi_toggle)
+        *   [4.4.2 Sound volume hotkeys](#Sound_volume_hotkeys)
+        *   [4.4.3 Sleep](#Sleep)
+        *   [4.4.4 Display Panel](#Display_Panel)
+        *   [4.4.5 Trackpad Toggle](#Trackpad_Toggle)
+    *   [4.5 Display settings](#Display_settings)
+*   [5 Hardware](#Hardware)
+    *   [5.1 Ethernet](#Ethernet)
+    *   [5.2 WiFi](#WiFi)
+    *   [5.3 Camera](#Camera)
+    *   [5.4 Microphone](#Microphone)
+*   [6 Hardware Info](#Hardware_Info)
+    *   [6.1 lspci](#lspci)
 
 ## Boot Booster
 

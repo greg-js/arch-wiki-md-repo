@@ -40,7 +40,7 @@ Udev loads kernel modules by utilizing coding parallelism to provide a potential
 
 ## Installation
 
-Udev is now part of [systemd](https://www.archlinux.org/packages/?name=systemd) and is installed by default. See the `systemd-udevd.service(8)` [man page](/index.php/Man_page "Man page") for information.
+Udev is now part of [systemd](https://www.archlinux.org/packages/?name=systemd) and is installed by default. See [systemd-udevd.service(8)](http://man7.org/linux/man-pages/man8/systemd-udevd.service.8.html) for information.
 
 A standalone fork is available in AUR: [eudev](/index.php/Eudev "Eudev").
 

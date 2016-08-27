@@ -1,6 +1,6 @@
 This wiki page documents the configuration and troubleshooting specific to the Alienware M14xR2 laptop.
 
-See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for installation instructions.
+See the [Installation guide](/index.php/Installation_guide "Installation guide") for installation instructions.
 
 ## Contents
 

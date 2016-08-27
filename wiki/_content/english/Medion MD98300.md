@@ -1,34 +1,19 @@
 ## Contents
 
-*   [1 Introduction](#Introduction)
-*   [2 Hardware information](#Hardware_information)
-    *   [2.1 lspci](#lspci)
-    *   [2.2 lsusb](#lsusb)
-*   [3 W-LAN](#W-LAN)
-*   [4 Soundcard](#Soundcard)
-    *   [4.1 Compile the newest Alsa-driver](#Compile_the_newest_Alsa-driver)
-    *   [4.2 Unmute channels](#Unmute_channels)
-    *   [4.3 Mute your speakers and use your headset](#Mute_your_speakers_and_use_your_headset)
-    *   [4.4 Recording](#Recording)
-*   [5 Graphicscard](#Graphicscard)
-    *   [5.1 Nv (free driver)](#Nv_.28free_driver.29)
-    *   [5.2 Nvidia (non-free driver)](#Nvidia_.28non-free_driver.29)
-        *   [5.2.1 Xorg.conf](#Xorg.conf)
-*   [6 Tweaks](#Tweaks)
-    *   [6.1 Cpufrequtils](#Cpufrequtils)
-    *   [6.2 Disk related tweaks](#Disk_related_tweaks)
-        *   [6.2.1 Disable file access time](#Disable_file_access_time)
-        *   [6.2.2 Laptop mode tools](#Laptop_mode_tools)
-        *   [6.2.3 Ionice](#Ionice)
-    *   [6.3 Touchpad tweaks](#Touchpad_tweaks)
-
-# Introduction
-
-Since I had a hard time getting my Laptop working with Arch (especially sound drivers) I decided to write this wiki entry to make it easier for people with the same problem. You can buy Medion Laptops at ALDI. This report is listed at [TuxMobil](http://tuxmobil.org/medion.html).
-
-# Hardware information
-
-Just for people who own similar hardware.
+*   [1 lspci](#lspci)
+*   [2 lsusb](#lsusb)
+*   [3 Soundcard](#Soundcard)
+*   [4 Mute your speakers and use your headset](#Mute_your_speakers_and_use_your_headset)
+*   [5 Recording](#Recording)
+*   [6 Graphicscard](#Graphicscard)
+*   [7 Nvidia (non-free driver)](#Nvidia_.28non-free_driver.29)
+    *   [7.1 Xorg.conf](#Xorg.conf)
+*   [8 Cpufrequtils](#Cpufrequtils)
+*   [9 Disk related tweaks](#Disk_related_tweaks)
+    *   [9.1 Disable file access time](#Disable_file_access_time)
+    *   [9.2 Laptop mode tools](#Laptop_mode_tools)
+    *   [9.3 Ionice](#Ionice)
+*   [10 Touchpad tweaks](#Touchpad_tweaks)
 
 ## lspci
 
@@ -77,11 +62,7 @@ Bus 002 Device 001: ID 1d6b:0001
 
 ```
 
-# W-LAN
-
-Wireless LAN should work out of the box. I didn't test it so far as I prefer a wired connection.
-
-# Soundcard
+## Soundcard
 
 This Notebook has a Realtek ALC 833. Run
 
@@ -99,38 +80,6 @@ Advanced Linux Sound Architecture Driver Version 1.0.17.
 
 (or a higher version) then continue reading at *Edit modprobe.conf*
 
-## Compile the newest Alsa-driver
-
-Go to the [AlsaProject download-page](http://alsa-project.org/main/index.php/Download) and download the **Stable Release** of alsa-driver. Then unpack and compile the package:
-
-```
-tar -xf alsa-driver-xxx
-cd alsa-driver-xxx
-./configure --with-cards=hda-intel --with-sequencer=yes
-make
-
-```
-
-Finally run this as root:
-
-```
-make install
-
-```
-
-**Note:** You must do this everytime you (re-)install or your kernel, because its (old) alsa-module overwrites the one you just installed.
-
-## Unmute channels
-
-Open a terminal and type
-
-```
-alsamixer
-
-```
-
-Use the arrow keys to turn up volume where you need it.
-
 ## Mute your speakers and use your headset
 
 You might have noticed that your speakers do not get muted automatically when you put in your earphones. Here's my solution to do that manually: Open up alsamixer (like described before) Mute **Surround** by pressing **M** (for mute), so it says **MM** instead of **00**. Now you won't hear anything from the built-in speakers, but you can use your earphones.
@@ -139,29 +88,11 @@ You might have noticed that your speakers do not get muted automatically when yo
 
 Start alsamixer, navigate to 'mic' and set it to capture by pressing the 'spacebar' key on keyboard; the word 'capture' will appear at the bottom of the 'Mic' control when capture is set.[[1]](http://home.cfl.rr.com/infofiles/record.html)
 
-# Graphicscard
+## Graphicscard
 
 There are two possible drivers you can use for the Nvidia 6150 Geforce Go. I recommend the non-free driver, because the open one had no mouse cursor as I tried it (which was really annoying). If you want 3d-allocation, you must use the closed source one.
 
-## Nv (free driver)
-
-Installation:
-
-```
-pacman -S nv
-
-```
-
-Here's no customized xorg.conf yet. Go make one yourself following [this guide](/index.php/Beginners%27_guide#Create_.2Fetc.2FX11.2Fxorg.conf "Beginners' guide") and post it here.
-
 ## Nvidia (non-free driver)
-
-Installation:
-
-```
-pacman -S nvidia
-
-```
 
 **Note:** The xorg.conf is based on [this one](http://blackwiki.bl.ohost.de/upload/xorg.conf) which was made for gentoo.[[2]](http://blackwiki.bl.ohost.de/wiki/doku.php?id=md98300)
 
@@ -297,8 +228,6 @@ EndSection
 
 ```
 
-# Tweaks
-
 ## Cpufrequtils
 
 [Cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils") is a CPU Frequency Scaling, a technology used primarily by notebooks which enables the OS to scale the CPU speed up or down, depending on the current system load and/or power scheme. Note that the module you need to load at the *CPU Frequency Driver* part is **powernow-k8**.
@@ -316,15 +245,6 @@ They allow your HD to spin down when it isn't used. See [here](/index.php/Laptop
 ### Ionice
 
 If you plan to copy a big file or do some other hard-disk-stressing operation, your MD98300 will totally hang until its done under linux (thats at least my experience). With ionice, you can start applications with a different read/write scheduling class so it doesn't hang anymore.
-
-Installation:
-
-```
-pacman -S ionice
-
-```
-
-(I'm not sure about that because it seems to be in a group - but pacman knows everything so it should point you to the right way)
 
 Here's an example how to use it:
 

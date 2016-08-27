@@ -44,7 +44,7 @@ Heinz Maulshagen created the dmraid tool to detect RAID sets and create mappings
 
 **Warning:** Backup all data before playing with RAID. What you do with your hardware is only your own fault. Data on RAID stripes is highly vulnerable to disc failures. Create regular backups or consider using mirror sets. **Consider yourself warned!**
 
-*   Open up any needed guides (e.g. [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), [Installation guide](/index.php/Installation_guide "Installation guide")) on another machine. If you do not have access to another machine, print it out.
+*   Open up any needed guides ([Installation guide](/index.php/Installation_guide "Installation guide")) on another machine. If you do not have access to another machine, print it out.
 *   Download the latest Arch Linux install image.
 *   Backup all important files since everything on the target partitions will be destroyed.
 

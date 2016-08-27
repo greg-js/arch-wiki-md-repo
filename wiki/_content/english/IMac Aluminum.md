@@ -95,9 +95,7 @@ This is not necessary when booting through EFI.
 
 ## Install Arch
 
-I used both the **Arch Beginners Guide** [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") & the **Official Install Guide** [Installation guide](/index.php/Installation_guide "Installation guide"). I used the **Core** install from the CD & updated later. (The FTP install is a quicker method as it installs the latest packages directly over the internet.)
-
-The CD install & network setup went perfectly for me. The Beginners Guide has all that was necessary for my install, though I used the Official Guide to further my understanding, as well as other pages in the Arch wiki & elsewhere.
+[Installation guide](/index.php/Installation_guide "Installation guide"). I used the **Core** install from the CD & updated later. (The FTP install is a quicker method as it installs the latest packages directly over the internet.)
 
 ## Installing & Configuring X
 

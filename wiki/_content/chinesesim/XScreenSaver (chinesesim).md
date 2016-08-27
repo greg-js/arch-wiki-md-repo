@@ -143,7 +143,7 @@ $ xwinwrap -b -fs -sp -fs -nf -ov  -- /usr/lib/xscreensaver/glslideshow -root -w
 
 ## 主题设置
 
-XScreenSaver的解锁屏幕可以用[X resources](/index.php/X_resources "X resources")设置主题效果（参考[XScreenSaver resources](/index.php/X_resources#XScreenSaver_resources "X resources")）
+XScreenSaver的解锁屏幕可以用[X resources](/index.php/X_resources "X resources")设置主题效果.
 
 ## 从锁屏画面切换登录用户
 

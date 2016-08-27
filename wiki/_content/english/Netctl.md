@@ -489,9 +489,7 @@ WPAConfigSection=(
 
 ```
 
-**Note:** If trying to connect to an SSID with non-ASCII characters (unicode, emoji, etc), you can specify the SSID as hex instead of as a string, e.g.`
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-`for "🐺". When unsure on the hex encoding, run *wifi-menu* (be sure to remove the \ and x characters).
+**Note:** If trying to connect to an SSID with non-ASCII characters (unicode, emoji, etc), you can specify the SSID as hex instead of as a string, e.g. `ssid=F09F90BA` for "🐺". When unsure on the hex encoding, run *wifi-menu* (be sure to remove the \ and x characters).
 
 ## Troubleshooting
 

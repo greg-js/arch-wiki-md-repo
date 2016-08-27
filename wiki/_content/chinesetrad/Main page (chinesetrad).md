@@ -22,10 +22,6 @@
 
 	別人對我們有何看法。
 
-	[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")
-
-	安裝與設定 Arch Linux 的全過程詳盡教學。
-
 	[安裝指南](/index.php/Installation_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Installation guide (正體中文)")
 
 	進階 Arch 使用者適用的簡明安裝指南。

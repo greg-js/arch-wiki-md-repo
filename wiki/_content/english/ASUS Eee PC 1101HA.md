@@ -9,33 +9,16 @@
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Video](#Video)
-*   [3 Sound](#Sound)
-*   [4 Camera](#Camera)
-*   [5 Hotkeys](#Hotkeys)
-*   [6 Fan](#Fan)
-
-## Installation
-
-For an in-depth guide on the installation see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+*   [1 Video](#Video)
+*   [2 Camera](#Camera)
+*   [3 Hotkeys](#Hotkeys)
+*   [4 Fan](#Fan)
 
 ## Video
 
-The GMA 500 in the 1101HAb works well with the gma500_gfx driver included in the kernel and the fbdev driver. Install the fbdev driver via pacman:
-
-```
-   # pacman -Syu xf86-video-fbdev
-
-```
+The GMA 500 in the 1101HAb works well with the gma500_gfx driver included in the kernel and the fbdev driver. Install the fbdev driver via pacman: xf86-video-fbdev
 
 As of linux-2.6, the user can no longer control the backlight. This can be remedied by adding `acpi_osi=Linux` to the KERNEL line in your bootloader.
-
-(TODO: Add xorg configuration how-to)
-
-## Sound
-
-In at least one instance, sound worked out of the box. Just unmute and adjust the Master mixer using something like alsamixer.
 
 ## Camera
 

@@ -30,7 +30,7 @@ The BIOS firmware has got a lot of bugs. If anything related to it doesn't work,
 
 ## Installation
 
-Follow the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") until bootloader installation.
+Follow the [Installation guide](/index.php/Installation_guide "Installation guide") until bootloader installation.
 
 You can not use the GUID Partition Table and still boot using legacy BIOS. If your desired partition layout doesn't work for MBR you must use UEFI.
 

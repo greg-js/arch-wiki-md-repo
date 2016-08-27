@@ -1,6 +1,6 @@
 How to setup archlinux on Lenovo ThinkPad Edge 13\. This guide has been written aside the ThinkPad Edge AMD version with ATI-graphics.
 
-This article was written to assist you with getting archlinux run on the Lenovo ThinkPad Edge 13\. It is meant to be help you with some tricky points aside to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"): A guide through the whole process of installing and configuring Arch Linux; written for new or inexperienced users.
+This article was written to assist you with getting archlinux run on the Lenovo ThinkPad Edge 13.
 
 ## Contents
 
@@ -75,8 +75,6 @@ To create a bootable USB-Stick with the archlinux*.iso you downloaded, simply:
 which will/should behave like a regular bootable CD-Rom in addition to a capable BIOS and the <u>correct bootsequence</u>! In doubt or in case of problems see [Install from a USB flash drive](/index.php/Install_from_a_USB_flash_drive "Install from a USB flash drive") for more detailed instructions.
 
 ## Installation
-
-After that it is recommended to follow the usual installation procedure described in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") up to the part 2, as the installation of the wireless lan card needs some further work.
 
 ### WLAN driver installation
 

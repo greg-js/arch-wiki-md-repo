@@ -115,7 +115,7 @@ For the root filesystem, follow the instructions from [Dm-crypt/TRIM support for
 
 ### Maximizing performance
 
-Follow the tips in [Maximizing performance#Storage devices](/index.php/Maximizing_performance#Storage_devices "Maximizing performance") to maximize the performance of your drives.
+Follow the tips in [Improving performance#Storage devices](/index.php/Improving_performance#Storage_devices "Improving performance") to maximize the performance of your drives.
 
 ### Security
 

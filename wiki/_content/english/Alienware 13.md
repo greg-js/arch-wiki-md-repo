@@ -1,6 +1,6 @@
 This article documents configuration and troubleshooting specific to the Alienware 13 laptop.
 
-See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for general installation instructions.
+See the [Installation guide](/index.php/Installation_guide "Installation guide") for general installation instructions.
 
 ## Contents
 
@@ -15,8 +15,6 @@ See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for
 First of all we must create a [bootable usb](/index.php/USB_flash_installation_media "USB flash installation media"), after that we must reboot the computer and press `F12` button while the bios is loading to access to the boot menu, from there we select the USB and boot from there.
 
 The first issue that we can find is that the distribution does not boot but gets stuck into a nouveau loop or a black screen. If this happens, we must change the kernel parameters to get ArchLinux to boot. Try to erase all default parameters and use only `nomodeset`.
-
-From this point onwards, you may follow the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") to install, taking care of the laptop specific points noted in the sections below.
 
 ## Touchpad
 

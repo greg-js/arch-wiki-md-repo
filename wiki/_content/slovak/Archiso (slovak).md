@@ -29,8 +29,6 @@
         *   [5.2.5 Zmazanie špeciálnych skriptov live prostredia](#Zmazanie_.C5.A1peci.C3.A1lnych_skriptov_live_prostredia)
         *   [5.2.6 Opravenie prístupových práv k domovskému adresáru roota](#Opravenie_pr.C3.ADstupov.C3.BDch_pr.C3.A1v_k_domovsk.C3.A9mu_adres.C3.A1ru_roota)
         *   [5.2.7 Nastavte archu heslo](#Nastavte_archu_heslo)
-        *   [5.2.8 Vytvorenie inicializačného prostredia ramdisku](#Vytvorenie_inicializa.C4.8Dn.C3.A9ho_prostredia_ramdisku)
-        *   [5.2.9 Normálna konfigurácia](#Norm.C3.A1lna_konfigur.C3.A1cia)
 *   [6 Pozrite tiež](#Pozrite_tie.C5.BE)
     *   [6.1 Dokumentácia a tutoriály](#Dokument.C3.A1cia_a_tutori.C3.A1ly)
     *   [6.2 Príklad šablony na prispôsobenie](#Pr.C3.ADklad_.C5.A1ablony_na_prisp.C3.B4sobenie)
@@ -260,8 +258,6 @@ Podľa potreby zmeňte časť `x86_64` a doplňte **skutočnú** menovku usb.
 
 Ak si želáte nainštalovať archiso v stave akom je bez internetového pripojenia (napr. [oficiálne mesačné vydanie](https://www.archlinux.org/download/)), alebo ak si neželáte opätovne sťahovať balíčky:
 
-Tak si prosím najprv prečítajte [začiatočnícku príručku](/index.php/Beginners%27_guide "Beginners' guide") a vynechajte časti od [vytvorenia internetového pripojenia](/index.php/Beginners%27_guide#Establish_an_internet_connection "Beginners' guide") až po krok [inštalácie základného systému](/index.php/Beginners%27_guide#Install_the_base_system "Beginners' guide").
-
 ### Inštalácia archisa do nového koreňového adresára
 
 Miesto inštalácie balíčkov za pomoci utilitky `pacstrap`(ktorá sťahuje všetky balíčky zo vzdialených repozitárov a my teraz nemáme na internet prístup) skopírujte prosím *všetko* v Live prostredí do nového koreňového adresára:
@@ -282,8 +278,6 @@ Potom vytvorte pár adresárov a do koreňového adresára nakopírujte obraz ke
 # mkdir -vm555 /mnt/{sys,proc}
 
 ```
-
-Ďalej prosím vygenerujte fstab, ktorý je popísaný v [začiatočníckej príručke](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide").
 
 ### Zmena práv (chroot) a konfigurácia základného systému
 
@@ -380,14 +374,6 @@ Ak však nechcete používať toto používateľské meno, zmažte ho:
 # userdel -r arch
 
 ```
-
-#### Vytvorenie inicializačného prostredia ramdisku
-
-Inicializačný ramdisk je možné vytvoriť podľa návodu v [začiatočníckej príručke](/index.php/Beginners%27_guide#Create_an_initial_ramdisk_environment "Beginners' guide").
-
-#### Normálna konfigurácia
-
-Po všetkých týchto krokoch môžete pokračovať podľa [beginners' guide|začiatočníckej príručky](/index.php/Beginners%27_guide#Locale "Beginners' guide") a dokončiť inštaláciu.
 
 ## Pozrite tiež
 

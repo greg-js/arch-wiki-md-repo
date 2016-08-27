@@ -45,7 +45,7 @@ According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gromacs](https://aur.archlinux.org/packages/gromacs/) or [gromacs-mpi](https://aur.archlinux.org/packages/gromacs-mpi/) package. Be sure to [edit](/index.php/Edit "Edit") the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to suit your system. Some of the [cmake](https://en.wikipedia.org/wiki/cmake "wikipedia:cmake") options you may want to add/modify in the PKGBUILD are:
+[Install](/index.php/Install "Install") the [gromacs](https://aur.archlinux.org/packages/gromacs/) or [gromacs-mpi](https://aur.archlinux.org/packages/gromacs-mpi/) package. Be sure to [edit](/index.php/Textedit "Textedit") the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to suit your system. Some of the [cmake](https://en.wikipedia.org/wiki/cmake "wikipedia:cmake") options you may want to add/modify in the PKGBUILD are:
 
 *   `-DGMX_DOUBLE=ON` - Add if you need [double precision](https://en.wikipedia.org/wiki/Double-precision_floating-point_format "wikipedia:Double-precision floating-point format"). According to the [GROMACS install guide](http://www.gromacs.org/Documentation/Installation_Instructions_5.0), double precision is "slower, and not normally useful." If you set this flag, the default suffix for all GROMACS programs is set to `_d`.
 *   `-DGMX_GPU=ON` - Add in order to build with [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit "wikipedia:Graphics processing unit") support.

@@ -16,10 +16,9 @@ GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified
     *   [4.1 gdisk basic](#gdisk_basic)
     *   [4.2 gdisk basic (with hybrid MBR)](#gdisk_basic_.28with_hybrid_MBR.29)
     *   [4.3 parted basic (via command line options)](#parted_basic_.28via_command_line_options.29)
-    *   [4.4 sgdisk basic (auto discover)](#sgdisk_basic_.28auto_discover.29)
-    *   [4.5 Convert from MBR to GPT](#Convert_from_MBR_to_GPT)
-    *   [4.6 Resize a partition](#Resize_a_partition)
-    *   [4.7 Sort the partitions](#Sort_the_partitions)
+    *   [4.4 Convert from MBR to GPT](#Convert_from_MBR_to_GPT)
+    *   [4.5 Resize a partition](#Resize_a_partition)
+    *   [4.6 Sort the partitions](#Sort_the_partitions)
 *   [5 See also](#See_also)
 
 ## About the GUID Partition Table
@@ -96,14 +95,7 @@ Examples of various partitioning setups.
 
 ### gdisk basic
 
-```
-# gdisk /dev/sdX
-o  # create new empty GUID partition table
-n  # partition 1 [enter], from beginning [enter], to 100GiB [+100GiB], linux fs type [enter]
-n  # partition 2 [enter], from beginning [enter], to 108GiB [+8GiB],   linux swap    [8200]
-w  # write table to disk and exit
-
-```
+See [Fdisk#Create partitions](/index.php/Fdisk#Create_partitions "Fdisk").
 
 ### gdisk basic (with hybrid MBR)
 
@@ -128,32 +120,7 @@ w  # write table to disk and exit
 
 ### parted basic (via command line options)
 
-```
-parted --script /dev/sda mklabel gpt
-parted --script --align optimal /dev/sda mkpart primary ext4 0% -8GiB mkpart primary linux-swap -8GiB 100%
-
-```
-
-### sgdisk basic (auto discover)
-
-Get the values of: **disk space** and **swap space**, then set **root partition** space.
-
-*   **Disk space** is rounded **down** to nearest mebibyte, and the header GPT metadata space is deducted (1 MiB).
-*   **Swap space** is rounded **up** to nearest mebibyte based on memory.
-
-```
-diskspace=$(( $(grep sda$ /proc/partitions | awk '{print $3}') * 2 / 2048 - 1 ))
-swapspace=$(( $(head -n1 /proc/meminfo | awk '{print $2}') / 1024 + 1 ))
-rootspace=$(( $diskspace - $swapspace ))
-
-```
-
-Then run this (this is a **dry-run** used for testing, remove **--pretend** to alter partition table):
-
-```
-sgdisk --clear --new 1:0:+${rootspace}MiB --new 2:0:+${swapspace}MiB --typecode 2:8200 --pretend --print /dev/sda
-
-```
+See [GNU Parted#Command line mode](/index.php/GNU_Parted#Command_line_mode "GNU Parted").
 
 ### Convert from MBR to GPT
 
@@ -165,16 +132,7 @@ See [GNU Parted#Resizing Partitions](/index.php/GNU_Parted#Resizing_Partitions "
 
 ### Sort the partitions
 
-This applies for when a new partition is created in the space between two partitions, after one of them is [resized](#Resize_a_partition).
-
-```
-# gdisk /dev/sdX
-s # this will sort the partitions
-w
-
-```
-
-After sorting the partitions, it might be required to adjust the `/etc/fstab` and/or the `/etc/crypttab` configuration files, the latter only in case of [encrypted](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") partitions.
+See [fdisk#Sort partitions](/index.php/Fdisk#Sort_partitions "Fdisk").
 
 ## See also
 

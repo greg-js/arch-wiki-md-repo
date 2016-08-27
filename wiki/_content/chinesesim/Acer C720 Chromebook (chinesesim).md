@@ -66,12 +66,12 @@
 
 ### 安装 Arch Linux
 
-您需要创建一个 [USB Installation Media (简体中文)](/index.php/USB_Installation_Media_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "USB Installation Media (简体中文)")，然后把 USB 插入本子的 USB 口，开机并启动 SeaBIOS，按 `Esc` 进入 SeaBIOS 菜单，选择您的 USB，启动。接着您就可以看到 Arch 的安装菜单了。您可以参照 [Beginners' guide (简体中文)](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)") 来进行安装。
+您需要创建一个 [USB Installation Media (简体中文)](/index.php/USB_Installation_Media_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "USB Installation Media (简体中文)")，然后把 USB 插入本子的 USB 口，开机并启动 SeaBIOS，按 `Esc` 进入 SeaBIOS 菜单，选择您的 USB，启动。接着您就可以看到 Arch 的安装菜单了
 
 几点安装提示：
 
 *   使用内核版本 > 4.0 的 ISO，可以开箱即用。相关触摸板补丁已经合并。
-*   建议选择 [GRUB](/index.php/Beginners%27_guide#GRUB "Beginners' guide") 作为您的引导程序，而非 Syslinux。
+*   建议选择 [GRUB](/index.php/GRUB "GRUB") 作为您的引导程序，而非 Syslinux。
 *   安装完成之后，开机启动是要按 `Ctrl-L` 而非 `Ctrl-D`。
 
 ### Xorg Video 驱动

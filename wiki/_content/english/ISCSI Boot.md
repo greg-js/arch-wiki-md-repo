@@ -227,7 +227,7 @@ Change the echo 90 part of the line to the value that you want.
 
 The default timeout for normal File System commands is 30 seconds when udev is not being used.
 
-Since low level I/O commands will go through the IO scheduler on the target it is recommended for performance to use elevator=noop on the diskless system, see [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") to set the elevator.
+Since low level I/O commands will go through the IO scheduler on the target it is recommended for performance to use elevator=noop on the diskless system, see [Improving performance](/index.php/Improving_performance "Improving performance") to set the elevator.
 
 ## Troubleshooting
 

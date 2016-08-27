@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=336204)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=447662)可以查看翻译后英文页面的改动。
 
 本文探讨如何制作能在 UEFI 和 BIOS 系统上启动的 Arch Linux 安装 USB 驱动器（也被称为*“闪存驱动器”，“USB记忆棒"，“U盘”等）。制作好的U盘被称为 LiveUSB 系统（类似 LiveCD 系统），因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的性质，关机后所有的更改都会丢失。这样的系统可用于安装 Arch Linux、系统维护或者系统恢复。*
 
@@ -15,13 +15,14 @@
             *   [1.1.2.3 Cygwin](#Cygwin)
             *   [1.1.2.4 dd for Windows](#dd_for_Windows)
         *   [1.1.3 Mac OS X](#Mac_OS_X)
-        *   [1.1.4 如何恢复U盘](#.E5.A6.82.E4.BD.95.E6.81.A2.E5.A4.8DU.E7.9B.98)
     *   [1.2 手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95)
         *   [1.2.1 GNU/Linux](#GNU.2FLinux_2)
         *   [1.2.2 Windows](#Windows_2)
 *   [2 BIOS 系统的其他方法](#BIOS_.E7.B3.BB.E7.BB.9F.E7.9A.84.E5.85.B6.E4.BB.96.E6.96.B9.E6.B3.95)
     *   [2.1 GNU/Linux](#GNU.2FLinux_3)
-        *   [2.1.1 UNetbootin](#UNetbootin)
+        *   [2.1.1 Using GNOME Disk Utility](#Using_GNOME_Disk_Utility)
+        *   [2.1.2 Making an USB-ZIP drive](#Making_an_USB-ZIP_drive)
+        *   [2.1.3 UNetbootin](#UNetbootin)
     *   [2.2 Windows](#Windows_3)
         *   [2.2.1 Win32 Disk Imager](#Win32_Disk_Imager)
         *   [2.2.2 USBWriter for Windows](#USBWriter_for_Windows)
@@ -40,7 +41,7 @@
 
 **注意:** 推荐该方法是因为它简单。如果没有效果，请使用下面介绍的方法 [#手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95)。
 
-**警告:** 这种方法会删除 `/dev/sd**x**` 上的所有数据且不可逆
+**警告:** 这种方法会删除 `/dev/sd**x**` 上的所有数据且不可逆。要在使用 Arch ISO 之后释放空间，还原 USB 为原始状态，需要以 root 权限执行`wipefs --all /dev/**sdx**` 命令删除 iso9660 文件系统标记，然后再 [重新分区](/index.php/Repartition "Repartition") 和 [重新格式化](/index.php/Reformat "Reformat") USB。
 
 #### GNU/Linux
 
@@ -49,9 +50,11 @@
 用U盘替换 `/dev/**sdx**`，如 `/dev/sdb`。（**不要**加上数字，也就是说，**不要**键入 `/dev/sdb**1**` 之类的东西)
 
 ```
-# dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** && sync
+ # dd bs=4M if=/path/to/archlinux.iso of=/dev/**sdx** status=progress && sync
 
 ```
+
+`status=progress` 选项会更新传输进度。[coreutils](https://www.archlinux.org/packages/?name=coreutils) 8.24 版本以后支持此选项，如果使用的发行版比较老，可以删除此选项。
 
 #### Windows
 
@@ -114,9 +117,11 @@ dd if=image.iso of=/dev/sdb bs=4M
 如果你的 Arch Linux ISO 在别的地方，你可能需要列出完整路径。方便起见，你可能会把它放在 dd 程序的同一目录中。命令的基本格式像这样：
 
 ```
-dd if=archlinux-2014-XX-xx-dual.iso of=\\.\x: bs=4m
+# dd if=*archlinux-2015-XX-YY-dual.iso* od=\\.\*x*: bs=4M
 
 ```
+
+**Note:** The Windows drive letters are linked to a partition. To allow selecting the entire disk, *dd for Windows* provides the `od` parameter, which is used in the commands above. Note however that this parameter is specific to *dd for Windows* and cannot be found in other implementations of *dd*.
 
 **警告:** 这条命令会把驱动器的格式和内容按照 ISO 中的来填充。误操作后很可能无法恢复其原先的内容，在执行命令以前要确保你dd 中使用的是正确的驱动器！
 
@@ -125,7 +130,7 @@ dd if=archlinux-2014-XX-xx-dual.iso of=\\.\x: bs=4m
 下面是一个实例：
 
 ```
-dd if=ISOs\archlinux-2014.09.03-dual.iso of=\\.\d: bs=4M
+# dd if=ISOs\archlinux-2015.01.01-dual.iso od=\\.\d: bs=4M
 
 ```
 
@@ -138,16 +143,16 @@ $ diskutil list
 
 ```
 
-用 `mount` 或者 `sudo dmesg | tail`（例如 `/dev/disk1`）来找出 USB 设备的名称，卸载设备上的分区（即，/dev/disk1s1）同时保留设备本身（即，/dev/disk1）：
+用 `mount` 或者 `sudo dmesg | tail`（例如 `/dev/disk2`）来找出 USB 设备的名称，卸载设备上的分区（即，/dev/disk2s1）同时保留设备本身（即，/dev/disk2）：
 
 ```
-$ diskutil unmountDisk /dev/disk1
+$ diskutil unmountDisk /dev/disk2
 
 ```
 
 接着我们可以依照上面介绍的方法继续操作（如果用的是 OS X `dd`，用 `/dev/rdisk` 替代 `/dev/disk`，且 `bs=1m`。`rdisk`指的是“raw disk”，在 OS X 上比较快，而 `bs=1m`表示 1 MB 块大小）。
 
- `# dd if=image.iso of=/dev/rdisk1 bs=1m` 
+ `# dd if=image.iso of=/dev/rdisk2 bs=1m` 
 ```
 20480+0 records in
 20480+0 records out
@@ -158,34 +163,9 @@ $ diskutil unmountDisk /dev/disk1
 此时，在物理拔出U盘前，弹出您的USB驱动器可能是个好主意。
 
 ```
-$ diskutil eject /dev/disk1
+$ diskutil eject /dev/disk2
 
 ```
-
-#### 如何恢复U盘
-
-ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所以它不包含一个标准的分区表。
-
-安装 Arch Linux 后，就不需要 USB 安装盘了。你需要往U盘的前 512 字节写零*（表示主引导记录中的引导代码和非标准的分区表）*来恢复它完整的容量。
-
-```
-# dd count=1 bs=512 if=/dev/zero of=/dev/sd**x** && sync
-
-```
-
-然后用 [gparted](https://www.archlinux.org/packages/?name=gparted) 创建一个新的分区表（如"msdos"）和文件系统（如 EXT4，FAT32），或者在终端中：
-
-*   对于 EXT2/3/4 （相应地调整），命令是：
-
-1.  cfdisk /dev/sd**x**
-2.  mkfs.ext4 /dev/sd**x1**
-3.  e2label /dev/sd**x1** USB_STICK
-
-*   对于 FAT32，安装 [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) 软件包并运行：
-
-1.  cfdisk /dev/sd**x**
-2.  mkfs.vfat -F32 /dev/sd**x1**
-3.  dosfslabel /dev/sd**x1** USB_STICK
 
 ### 手动方法
 
@@ -203,7 +183,7 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 
 ```
 # mkdir -p /mnt/{iso,usb}
-# mount -o loop archlinux-2014.09.03-dual.iso /mnt/iso
+# mount -o loop archlinux-2016.04.01-dual.iso /mnt/iso
 # mount /dev/sd**Xn** /mnt/usb
 # cp -a /mnt/iso/* /mnt/usb
 # sync
@@ -212,7 +192,7 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 ```
 
 *   **注意:** 如果用的是 [Archboot](/index.php/Archboot "Archboot")，以下步骤可省略；如果是[Archiso](/index.php/Archiso "Archiso") 则不可。
-    卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2014**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用*gparted*）。 要修改识别的卷标，可以编辑 */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg*、*archiso_sys64.cfg*和*/mnt/usb/loader/entries/archiso-x86_64.conf*中的 `archisolabel=ARCH_2014**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
+    卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2016**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用*gparted*）。 要修改识别的卷标，可以编辑 */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg*、*archiso_sys64.cfg*和*/mnt/usb/loader/entries/archiso-x86_64.conf*中的 `archisolabel=ARCH_2016**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
 
 **警告:** 错误的卷标或 UUID 会导致启动失败。
 
@@ -281,6 +261,29 @@ ISO 镜像是多功能镜像，既可以烧到光盘也能直接写入 USB，所
 ## BIOS 系统的其他方法
 
 ### GNU/Linux
+
+#### Using GNOME Disk Utility
+
+```
+	+	
+
+```
+
+Linux distributions running GNOME can easily make a live CD through [nautilus](https://www.archlinux.org/packages/?name=nautilus) and [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Simply right-click on the .iso file, and select "Open With Disk Image Writer." When GNOME Disk Utility opens, specify the flash drive from the "Destination" drop-down menu and click "Start Restoring."
+
+#### Making an USB-ZIP drive
+
+For some old BIOS systems, only booting from USB-ZIP drives is supported. This method allows you to still boot from a USB-HDD drive.
+
+**Warning:** This will destroy all information on your USB flash drive!
+
+*   Download [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [mtools](https://www.archlinux.org/packages/?name=mtools) from the official repositories.
+*   Find your usb drive with `lsblk`.
+*   Type `mkdiskimage -4 /dev/sd**x** 0 64 32` (replace x with the letter of your drive). This will take a while.
+
+From here continue with the manual formatting method. The partition will be /dev/sd**x**4 due to the way ZIP drives work.
+
+**Note:** Do not format the drive as FAT32 keep it as FAT16.
 
 #### UNetbootin
 
@@ -357,7 +360,7 @@ C:\>flashnul **E:** -L *path\to\arch.iso*
 
 #### 在内存加载安装介质
 
-这个方法使用 [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和一个 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) 来把整个 Arch Linux ISO 镜像加载到内存中。因为它将完全运行于系统内存中，您要确保使用这种方法安装的系统有足够的内存。至少 500MB 到 1G 内存就足以在 MEMDISK 上安装 Arch Linux。 Arch Linux 和 MEMDISK 系统要求参见[新手指南](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)")和[这里](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。[论坛参考贴](https://bbs.archlinux.org/viewtopic.php?id=135266)。
+这个方法使用 [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和一个 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) 来把整个 Arch Linux ISO 镜像加载到内存中。因为它将完全运行于系统内存中，您要确保使用这种方法安装的系统有足够的内存。至少 500MB 到 1G 内存就足以在 MEMDISK 上安装 Arch Linux。 Arch Linux 和 MEMDISK 系统要求参见[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")和[这里](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。[论坛参考贴](https://bbs.archlinux.org/viewtopic.php?id=135266)。
 
 **小贴士:** 一旦安装程序加载完毕，您就可以移除 U 盘，甚至再在另一台机器上用它开始执行整个安装步骤。使用 MEMDISK 还允许你在同一个 U 盘中引导并安装 Arch Linux 到它上面。
 
@@ -388,7 +391,7 @@ DEFAULT arch_iso
  LABEL arch_iso
          MENU LABEL Arch Setup
          LINUX memdisk
-         INITRD /Boot/ISOs/archlinux-2013.08.01-dual.iso
+         INITRD /Boot/ISOs/archlinux-2015.01.01-dual.iso
          APPEND iso
 ```
 
@@ -408,7 +411,7 @@ DEFAULT arch_iso
 
 *   对于 [MEMDISK 方法](#.E5.9C.A8.E5.86.85.E5.AD.98.E5.8A.A0.E8.BD.BD.E5.AE.89.E8.A3.85.E4.BB.8B.E8.B4.A8)，如果你尝试引导 i686 版本的系统时碰到了著名的 *30 seconds error*，那么在 `Boot Arch Linux (i686)` 条目上按 `Tab` 键，然后在末尾添加 `vmalloc=448M`。参考： *如果你的映像大于 128MiB 且你使用的是32位操作系统，你必须增加最大内存使用参数vmalloc*。[(*)](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
-*   如果你碰到因 `/dev/disk/by-label/ARCH_XXXXXX` 未挂载而导致的 *30 seconds error*，可尝试重命名你的 USB 媒介为 `ARCH_XXXXXX`（例如 `ARCH_201409`）。
+*   如果你碰到因 `/dev/disk/by-label/ARCH_XXXXXX` 未挂载而导致的 *30 seconds error*，可尝试重命名你的 USB 媒介为 `ARCH_XXXXXX`（例如 `ARCH_201501`）。
 
 ## 参见
 

@@ -119,7 +119,7 @@ $ pacman -Ql systemd | grep '\.mount$'
 *   [udev](/index.php/Udev "Udev")
 *   [Daemon](/index.php/Daemon "Daemon")
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
+*   [Improving performance](/index.php/Improving_performance "Improving performance")
 *   [Systemd](/index.php/Systemd "Systemd") - An alternative init process
 *   [Bootchart](/index.php/Bootchart "Bootchart") - A tool to assist in profiling the boot process
 *   [Kexec](/index.php/Kexec "Kexec") A tool to reboot very quickly without waiting for the whole BIOS boot process to finish.

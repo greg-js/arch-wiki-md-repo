@@ -417,7 +417,7 @@ Istruzioni dettagliate per [GRUB](/index.php/GRUB "GRUB") e [LILO](/index.php/LI
 
 ### Ritocchi finali
 
-Consultare [Beginners Guide:Configure your System](/index.php/Beginners%27_guide#Configure_the_System "Beginners' guide"). È possibile ignorare il punto 2.11, ma il resto della guida dovrebbe essere utile nelle configurazioni post-installazione del sistema.
+È possibile ignorare il punto 2.11, ma il resto della guida dovrebbe essere utile nelle configurazioni post-installazione del sistema.
 
 [Uscire da chroot](/index.php/Change_root#Cleaning_up "Change root"):
 

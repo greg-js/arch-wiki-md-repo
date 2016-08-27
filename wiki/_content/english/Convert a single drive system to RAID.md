@@ -163,7 +163,7 @@ If the chroot command gives you an error like `chroot: failed to run command `/b
 
 #### Record mdadm's config
 
-[Edit](/index.php/Edit "Edit") `/etc/mdadm.conf` and change the `MAILADDR` line to be your email address, if you want emailed alerts of problems with the RAID 1.
+[Edit](/index.php/Textedit "Textedit") `/etc/mdadm.conf` and change the `MAILADDR` line to be your email address, if you want emailed alerts of problems with the RAID 1.
 
 Then save the array configuration with UUIDs to make it easier for the system to find `/dev/md0` at boot. If you do not do this, you can get an `ALERT! /dev/md0 does not exist` error when booting:
 

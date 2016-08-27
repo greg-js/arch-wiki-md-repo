@@ -1,4 +1,4 @@
-在MacBook上安装Arch Linux与在其他电脑上安装Arch Linux非常相似。然而，由于MacBook的特殊硬件配置，需要一些特殊的考虑，因此建立MacBook专页。更多背景信息，可以从[官方安装指南](/index.php/Official_Arch_Linux_Install_Guide "Official Arch Linux Install Guide")、[新手指南](/index.php/Beginners_Guide "Beginners Guide")、[新手指南扩展](/index.php/Beginners_Guide_Appendix "Beginners Guide Appendix")以及[安装后小贴士](/index.php/Post_Installation_Tips "Post Installation Tips")上获取。本文同样适用于MacBook Pro系列机型，也支持32位及64位版本。如果您正在使用MacBook 5,2并且有其他疑问，请猛击[MacBook5,2](/index.php/Macbook5,2 "Macbook5,2")获取帮助。
+在MacBook上安装Arch Linux与在其他电脑上安装Arch Linux非常相似。然而，由于MacBook的特殊硬件配置，需要一些特殊的考虑，因此建立MacBook专页。更多背景信息，可以从[官方安装指南](/index.php/Official_Arch_Linux_Install_Guide "Official Arch Linux Install Guide")以及[安装后小贴士](/index.php/Post_Installation_Tips "Post Installation Tips")上获取。本文同样适用于MacBook Pro系列机型，也支持32位及64位版本。如果您正在使用MacBook 5,2并且有其他疑问，请猛击[MacBook5,2](/index.php/Macbook5,2 "Macbook5,2")获取帮助。
 
 ## Contents
 

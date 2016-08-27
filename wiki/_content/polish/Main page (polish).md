@@ -24,10 +24,6 @@ Odwiedź **[Spis treści](/index.php/Table_of_contents_(Polski) "Table of conten
 
 	Wskazówki dla użytkowników forum.
 
-	[Poradnik początkującego](/index.php/Beginners%27_guide_(Polski) "Beginners' guide (Polski)")
-
-	Przewodnik opisujący szczegółowo proces instalacji oraz podstawowej konfiguracji Arch Linuksa.
-
 	[Oficialny Przewodnik Instalacyjny](/index.php/Installation_guide_(Polski) "Installation guide (Polski)")
 
 	Tłumaczenie oficjalnej instrukcji instalacji systemu.

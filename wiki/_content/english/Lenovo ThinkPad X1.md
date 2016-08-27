@@ -26,7 +26,7 @@ Due to the fact that there is no optical drive, you need to [install Arch from U
 
 This procedure is far less involved then UEFI and works perfectly.
 
-In order to turn off UEFI booting you will need to boot into your BIOS and change the boot mode to Legacy. Afterward, follow the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for standard installation instructions.
+In order to turn off UEFI booting you will need to boot into your BIOS and change the boot mode to Legacy. Afterward, follow the [Installation guide](/index.php/Installation_guide "Installation guide") for standard installation instructions.
 
 ### UEFI
 

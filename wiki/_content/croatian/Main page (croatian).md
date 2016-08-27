@@ -26,10 +26,6 @@ Idući su linkovi korisni za one koji se kreću upoznavati s Arch Linuxom.
 
 	Upute za korisnike foruma Arch Linuxa.
 
-	[Vodič za početnike](/index.php/Beginners%27_guide_(Hrvatski) "Beginners' guide (Hrvatski)")
-
-	Vodič kroz potpuni proces instalacije i konfiguracije Arch Linuxa; pisan za nove i neupućene korisnike.
-
 	[Službeni vodič kroz instalaciju](/index.php?title=Official_Installation_Guide_(Hrvatski)&action=edit&redlink=1 "Official Installation Guide (Hrvatski) (page does not exist)")
 
 	Općenitiji instalacijski vodič; pretpostavlja veću razinu korisničkog iskustva s UNIX/GNU/Linux metodologijom.

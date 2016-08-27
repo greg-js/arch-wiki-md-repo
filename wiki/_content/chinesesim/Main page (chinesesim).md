@@ -16,17 +16,9 @@
 
 	Arch 和其他发行版的相似点和不同点。
 
-	[Arch Linux 新闻报道](/index.php/Arch_Linux_press_coverage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux press coverage (简体中文)")
-
-	别人怎么看我们。
-
-	[新手指南](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)")
-
-	从安装到配置，为新手所写的 Arch Linux 详细指南。
-
 	[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")
 
-	更加简明的安装指南，为有经验的 UNIX/GNU/Linux 用户提供。
+	Arch linux 的完整安装指南。
 
 	[建议阅读](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
 

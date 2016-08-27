@@ -31,6 +31,7 @@
     *   [4.4 Modify nginx.service to start chroot](#Modify_nginx.service_to_start_chroot)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Running unprivileged using systemd](#Running_unprivileged_using_systemd)
+    *   [5.2 Nginx Beautifier](#Nginx_Beautifier)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Configuration validation](#Configuration_validation)
     *   [6.2 Accessing local IP redirects to localhost](#Accessing_local_IP_redirects_to_localhost)
@@ -778,6 +779,10 @@ ExecStart=/usr/bin/nginx -g 'pid /run/nginx/nginx.pid; error_log stderr;' # copi
 Now we should be good to go. Go ahead and [start](/index.php/Start "Start") nginx, and enjoy your completely rootless nginx.
 
 **Tip:** The same setup may be desirable for your [FastCGI server](#FastCGI) as well.
+
+#### Nginx Beautifier
+
+Nginx beautifier is a commandline tool used to beautify and format nginx configuration files, it is available on AUR [nginxbeautifier](https://aur.archlinux.org/packages/nginxbeautifier/)
 
 ## Troubleshooting
 

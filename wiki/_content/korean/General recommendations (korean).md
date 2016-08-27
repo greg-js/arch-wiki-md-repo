@@ -275,7 +275,7 @@ Trackpoint 장치를 설정하려면 다음 [ThinkWiki](http://www.thinkwiki.org
 
 ### 성능 극대화하기
 
-[Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") 문서는 아치 리눅스 성능에 대한 정보를 모으고, 성능 향상을 위하여 기본적으로 할 수 있는 일의 목록을 제시하는 문서입니다.
+[Improving performance](/index.php/Improving_performance "Improving performance") 문서는 아치 리눅스 성능에 대한 정보를 모으고, 성능 향상을 위하여 기본적으로 할 수 있는 일의 목록을 제시하는 문서입니다.
 
 ### SSD
 

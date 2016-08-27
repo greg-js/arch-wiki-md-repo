@@ -1,4 +1,4 @@
-This article was written to assist you with getting archlinux run on the Lenovo ThinkPad S440\. It is meant to be help you with some tricky points aside to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"): A guide through the whole process of installing and configuring Arch Linux; written for new or inexperienced users.
+This article was written to assist you with getting archlinux run on the Lenovo ThinkPad S440.
 
 ## Contents
 
@@ -37,7 +37,7 @@ On boot press F12 to enter the BIOS menu and choose your USB-Stick to boot from.
 
 ## Installation
 
-After that it is recommended to follow the usual installation procedure described in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+After that it is recommended to follow the usual installation procedure described in the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### LAN
 

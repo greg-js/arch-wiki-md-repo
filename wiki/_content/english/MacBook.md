@@ -1,4 +1,6 @@
-Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
+Begi
+
+Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
 
 ## Contents
 
@@ -6,18 +8,17 @@ Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to inst
 *   [2 Updating OS X](#Updating_OS_X)
 *   [3 Partitions](#Partitions)
     *   [3.1 Arch Linux only](#Arch_Linux_only)
-        *   [3.1.1 Option 1: EFI (recommended)](#Option_1:_EFI_.28recommended.29)
-        *   [3.1.2 Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility)
     *   [3.2 OS X with Arch Linux](#OS_X_with_Arch_Linux)
         *   [3.2.1 Option 1: EFI](#Option_1:_EFI)
-        *   [3.2.2 Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility_2)
+        *   [3.2.2 Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility)
     *   [3.3 OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
 *   [4 Setup bootloader](#Setup_bootloader)
-    *   [4.1 Using the native Apple bootloader with GRUB](#Using_the_native_Apple_bootloader_with_GRUB)
-    *   [4.2 Other methods](#Other_methods)
-    *   [4.3 Installing GRUB to EFI partition directly](#Installing_GRUB_to_EFI_partition_directly)
-    *   [4.4 Using blessing](#Using_blessing)
-    *   [4.5 Compilation](#Compilation)
+    *   [4.1 Using the native Apple bootloader with systemd-boot (Recommended)](#Using_the_native_Apple_bootloader_with_systemd-boot_.28Recommended.29)
+    *   [4.2 Using the native Apple bootloader with GRUB](#Using_the_native_Apple_bootloader_with_GRUB)
+    *   [4.3 Other methods](#Other_methods)
+    *   [4.4 Installing GRUB to EFI partition directly](#Installing_GRUB_to_EFI_partition_directly)
+    *   [4.5 Using blessing](#Using_blessing)
+    *   [4.6 Compilation](#Compilation)
 *   [5 Installation](#Installation)
 *   [6 Post-installation](#Post-installation)
     *   [6.1 Video](#Video)
@@ -127,69 +128,43 @@ How to partition depends on how many operating systems you want install. The fol
 
 ### Arch Linux only
 
-This situation is the easiest to deal with. Partitioning is the same as any other hardware that Arch Linux can be installed on.
+This situation is the easiest to deal with. Partitioning is the same as any other hardware that Arch Linux can be installed on. Please refer to the standard [Installation guide](/index.php/Installation_guide "Installation guide") for details.
 
-The only special consideration is the MacBook firmware boot sound. To ensure that this sound is off: **mute** the volume in OS X before continuing further. The MacBook firmware relies on the value in OS X, if available. Note that if you choose to get rid of the OS X partition, there is no easy way to update your machine's firmware unless you use an external drive to boot OS X. You can boot in EFI mode (recommended) or bios-compatibility mode, if in doubt choose EFI.
+**Note:** It is advisable to **disable** the MacBook startup sound before proceeding with partitioning. Just boot in OS X, mute your system sound and reboot again to the Arch Linux Installation media. Please keep in mind that the volume of the startup sound can only be modified reliably in OS X.
 
-#### Option 1: EFI (recommended)
+If you want to configure you system in order to have full-disk encryption, please look at the [following](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system) page for details.
 
-*   Run **cgdisk** ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package).
-*   Create the necessary partitions.
-
-**Note:**
-
-*   The swap partition is optional, on machines with a RAM of size 4GB or more, good performance can be expected without a swap partition. Also, a **swap file** can be created later, see [Swap file](/index.php/Swap_file "Swap file"). You'll need a swap partition/file if you expect to [Hibernate](/index.php/Hibernate "Hibernate") your machine in future.
-*   For more information on partitioning, see [Partitioning hard disks: General information](/index.php/Beginners%27_guide#Partitioning_hard_disks:_General_information "Beginners' guide").
-*   As of Aug 2014 [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) has a bug that does not allow to run `refind-install` if EFI partition is mounted to `/boot`. Other bootloaders (like [systemd-boot](/index.php/Systemd-boot "Systemd-boot")) have no such problem and thus there is no need to split `/boot/efi` from `/boot`.
-
-Simple example (no LVM, crypto):
+An example for a very basic partitioning, that does not consider a separate `/home` partition nor encryption or LVM, is the following:
 
 ```
 partition  mountpoint  size    type  label
-/dev/sda1  /boot/efi   200MiB  vfat  EFI
-/dev/sda2  /boot       100MiB  ext2  boot
-/dev/sda3  -           adjust  swap  swap
-/dev/sda4  /           10GiB   ext4  root
-/dev/sda5  /home       remain. ext4  home
+/dev/sda1  /boot       200MiB  vfat  EFI
+/dev/sda2  /swap       adjust  swap  swap
+/dev/sda3  /           remain  ext4  root
 
 ```
-
-*   Done, you can continue to [#Installation](#Installation)
-
-#### Option 2: BIOS-compatibility
-
-*   Boot installation medium and switch to a free tty.
-*   Run **parted**. The simplest way is to change the partition table to **msdos** and then partition as normal. GRUB is compatible with GPT.
-
-*   Create the necessary partitions.
 
 *   Done, you can continue to [#Installation](#Installation)
 
 ### OS X with Arch Linux
 
-The easiest way to partition your hard drive, so that OS X and Arch Linux will co-exist, is to use partitioning tools in OS X and then finish with Arch Linux tools.
+The easiest way to partition your hard drive, so that OS X and Arch Linux will co-exist, is to use partitioning tools in OS X and then finish with Arch Linux tools. It is highly recommended that this only be attempted after a clean install of OS X.
 
-**Warning:** It is highly recommended that this only be attempted after a clean install of OS X. Using these methods on a pre-existing system may have undesired results.
+**Warning:** If you OS X partition is encrypted with FileVault 2, you **must** disable the disk encryption before proceeding. After the OS X partition has been resized, FileVault 2 can be re-enabled.
 
 **Procedure**:
 
 *   In OS X, run *Disk Utility.app* (located in `/Applications/Utilities`)
-
-*   Select the drive to be partitioned in the left-hand column (not the partitions!). Click on the **partition** tab on the right.
-
-*   Select the volume to be resized in the **Volume scheme**.
-
-*   Decide how much space you wish to have for your OS X partition, and how much for Arch Linux. Remember that a typical installation of OS X requires around 15-20 GiB, depending on the number of software applications and files.
-
-*   Finally, in the size box, type the smaller size to which you want to resize your OS X partition, and click **Apply**. This will create a new partition out of the empty space. You will delete this partition later.
-
-**Note:** If you wish to have a shared partition between OS X and Arch Linux, then additional steps will need to happen here. Please see [#HFS partition sharing](#HFS_partition_sharing).
-
+*   Select the drive to be partitioned in the left-hand column (not the partitions!). Click on the **Partition** button.
+*   Add a new partition by pressing the **+** button and choose how much space you want to leave for OS X, and how much for the new partition. Keep in mind the new partition will be formatted in Arch Linux, so you can choose any partition type you want.
 *   If the above completed successfully, then you can continue. If not, then you may need to fix your partitions from within OS X first.
+*   Boot the Arch installation media or [LiveUSB](/index.php/USB_flash_installation_media "USB flash installation media") by holding down the `Alt` **during boot**. Proceed with [#Installation](#Installation).
+
+**Note:** If you wish to have a shared partition between OS X and Arch Linux, remember to add another partition that will be used for sharing. Please see [#HFS partition sharing](#HFS_partition_sharing).
 
 **Note:** If you have any problems, try using the [gparted](http://gparted.sourceforge.net/) live CD (i.e. *instead* of using *Disk Utility* and/or *cgdisk*). It is capable of shrinking the OS X partition and creating Linux partitions ready for installation.
 
-*   Boot the Arch installation [LiveCD](/index.php/Beginners%27_guide#Prepare_the_latest_installation_medium "Beginners' guide") or [LiveUSB](/index.php/USB_flash_installation_media "USB flash installation media") by holding down the `Alt` **during boot**. Follow **one** of the procedures below according to your choice of boot method.
+**Tip:** This method does not create a dedicated [swap](/index.php/Swap "Swap") partition. It is possible to create another separate partition to be used for swapping. An alternative method can be using a [swapfile](/index.php/Swap#Swap_file "Swap") or setting up [LVM](/index.php/LVM "LVM") in order to use the newly-created partition as a container. Please refer to the linked articles.
 
 #### Option 1: EFI
 
@@ -296,6 +271,24 @@ cd /efi/refit
 *   Done! You can continue to [#Installation](#Installation) but make sure you read [#Booting directly from GRUB](#Booting_directly_from_GRUB) for the stage "* (for booting with EFI) After the install boot loader stage, exit the installer and install GRUB."
 
 ## Setup bootloader
+
+### Using the native Apple bootloader with systemd-boot (Recommended)
+
+Apple's native EFI bootloader reads `.efi` files located inside the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") at `/EFI/BOOT/BOOTX64.EFI`. Luckly, this is also the default install location the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") binary. This means that booting linux using *systemd-boot* is very simple.
+
+*   First, make sure you mounted the EFI System Partition at `/boot`
+*   Proceed with [#Installation](#Installation) normally
+*   Once inside the chrooted enviroment, type the following command to install *systemd-boot*:
+
+ `# bootctl --path=/boot install` 
+
+The above command will copy the *systemd-boot* binary to `/boot/EFI/Boot/BOOTX64.EFI` and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+
+*   Proceed to [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") in order to correctly set up the bootloader
+
+At the next reboot, the Apple Boot Manager, shown when holding down the option key when booting the MacBook, should display Arch Linux (it will be displayed as `EFI Boot` as a possible boot option.
+
+**Tip:** If you installed Arch Linux alongside OS X, you will be able to change the default boot location from system Settings inside OS X. If Arch Linux does not show up as a possible boot option, you will have to mount the EFI System Partition inside OS X before selecting your boot option: `$ diskutil mount disk0s1` 
 
 ### Using the native Apple bootloader with GRUB
 
@@ -1398,7 +1391,7 @@ Haptic feedback works out of the box due to the trackpad's built-in firmware.
 
 There are several drivers available that provide multitouch support. The following have been confirmed working with the MacBookPro12,1.
 
-For [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) the following configuration emulates some features from the OS X functionality. For more options see the `libinput` [man page](/index.php/Man_page "Man page").
+For [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) the following configuration emulates some features from the OS X functionality. For more options see [libinput(4)](https://www.mankier.com/4/libinput).
 
  `/etc/X11/xorg.conf.d/90-libinput.conf` 
 ```
@@ -1510,7 +1503,7 @@ Format and mount:
 
 ```
 
-Finish the installation according to the [Beginner's Guide](https://wiki.archlinux.org/index.php/Beginners'_Guide#Select_a_mirror) and skip anything after the bootloader. After you have generated your initramfs and set root passwd follow below to setup grub:
+Finish the installation according to the [Installation guide](/index.php/Installation_guide "Installation guide") and skip anything after the bootloader. After you have generated your initramfs and set root passwd follow below to setup grub:
 
 ```
  pacman -S grub efibootmgr

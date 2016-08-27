@@ -16,12 +16,14 @@
 
 ## 安装
 
-Install the [rsync](https://www.archlinux.org/packages/?name=rsync) package using [pacman](/index.php/Pacman "Pacman"):
+使用[pacman](/index.php/Pacman "Pacman")安装[rsync](https://www.archlinux.org/packages/?name=rsync):
 
 ```
 # pacman -S rsync
 
 ```
+
+**注意:** *rsync* 必须同时安装在源(服务器)和目的(客户端)的机器上．
 
 ## 使用方法
 

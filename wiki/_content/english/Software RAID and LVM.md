@@ -61,7 +61,7 @@ Many tutorials treat the swap space differently, either by creating a separate R
 
 See also [Wikipedia:GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table").
 
-The widespread [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) partitioning scheme, dating from the early 1980s, imposed limitations which affected the use of modern hardware. [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) is a new standard for the layout of the partition table based on the [UEFI](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface "wikipedia:Unified Extensible Firmware Interface") specification derived from Intel. Although GPT provides a significant improvement over a MBR, it does require the additional step of creating an additional partition at the beginning of each disk for GRUB2 (see: [GPT specific instructions](/index.php/GRUB2#GPT_specific_instructions "GRUB2")).
+The widespread [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) partitioning scheme, dating from the early 1980s, imposed limitations which affected the use of modern hardware. [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) is a new standard for the layout of the partition table based on the [UEFI](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface "wikipedia:Unified Extensible Firmware Interface") specification derived from Intel. Although GPT provides a significant improvement over a MBR, it does require the additional step of creating an additional partition at the beginning of each disk for GRUB2 (see: [GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")).
 
 ### Boot loader
 
@@ -73,7 +73,7 @@ Some boot loaders (e.g. [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), [LI
 
 ## Installation
 
-Obtain the latest installation media and boot the Arch Linux installer as outlined in the [Beginners' Guide](/index.php/Beginners%27_guide#Preparation "Beginners' guide"), or alternatively, in the [Official Arch Linux Install Guide](/index.php/Installation_guide#Pre-installation "Installation guide"). Follow the directions outlined there until you have [configured your network](/index.php/Beginners%27_guide#Configure_Network_.28netinstall.29 "Beginners' guide").
+Obtain the latest installation media and boot the Arch Linux installer as outlined in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch").
 
 #### Load kernel modules
 
@@ -313,7 +313,7 @@ Confirm that LVM has added the VG with:
 
 #### Create logical volumes
 
-Now we need to create logical volumes (LVs) on the VG, much like we would normally [prepare a hard drive](/index.php/Beginners%27_guide#Prepare_the_storage_devices "Beginners' guide"). In this example we will create separate `/`, `/var`, `/swap`, `/home` LVs. The LVs will be accessible as `/dev/mapper/VolGroupArray-<lvname>` or `/dev/VolGroupArray/<lvname>`.
+In this example we will create separate `/`, `/var`, `/swap`, `/home` LVs. The LVs will be accessible as `/dev/mapper/VolGroupArray-<lvname>` or `/dev/VolGroupArray/<lvname>`.
 
 Create a **/** LV:
 
@@ -364,7 +364,7 @@ Since the installer builds the initrd using `/etc/mdadm.conf` in the target syst
 
 ### Prepare hard drive
 
-Follow the directions outlined the [Installation](/index.php/Beginners%27_guide#Installation "Beginners' guide") section until you reach the *Prepare Hard Drive* section. Skip the first two steps and navigate to the *Manually Configure block devices, filesystems and mountpoints* page. Remember to only configure the PVs (e.g. `/dev/mapper/VolGroupArray-lvhome`) and **not** the actual disks (e.g. `/dev/sda1`).
+Follow the directions outlined the in [Installation](/index.php/Installation "Installation") section until you reach the *Prepare Hard Drive* section. Skip the first two steps and navigate to the *Manually Configure block devices, filesystems and mountpoints* page. Remember to only configure the PVs (e.g. `/dev/mapper/VolGroupArray-lvhome`) and **not** the actual disks (e.g. `/dev/sda1`).
 
 **Warning:** `mkfs.xfs` will not align the chunk size and stripe size for optimum performance (see: [Optimum RAID](http://www.linuxpromagazine.com/Issues/2009/108/RAID-Performance)).
 

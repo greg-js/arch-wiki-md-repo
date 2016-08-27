@@ -30,9 +30,8 @@ Selain membaca pertanyan-pertanyaan dibawah ini,Anda juga dapat langsung membaca
     *   [2.9 Q) Saya baru saja menginstall paket/aplikasi "nama_paket/aplikasi".Bagaimana cara membukanya?](#Q.29_Saya_baru_saja_menginstall_paket.2Faplikasi_.22nama_paket.2Faplikasi.22.Bagaimana_cara_membukanya.3F)
 *   [3 Proses Instalasi](#Proses_Instalasi)
     *   [3.1 Q) Archlinux membutuhkan proses installasi yang lebih baik.Mungkin installasi dengan GUI ketimbang mode teks?](#Q.29_Archlinux_membutuhkan_proses_installasi_yang_lebih_baik.Mungkin_installasi_dengan_GUI_ketimbang_mode_teks.3F)
-    *   [3.2 Q) Saya berhasil menginstall Archlinux,namun saya hanya melihat bash/teks mode tanpa GUI.Lalu selanjutnya?](#Q.29_Saya_berhasil_menginstall_Archlinux.2Cnamun_saya_hanya_melihat_bash.2Fteks_mode_tanpa_GUI.Lalu_selanjutnya.3F)
-    *   [3.3 Q) Desktop Environment/Window Manager manakah yang seharusnya Saya gunakan?](#Q.29_Desktop_Environment.2FWindow_Manager_manakah_yang_seharusnya_Saya_gunakan.3F)
-    *   [3.4 Q) Apa yang membedakan Archlinux dengan distro "minimalis" lainnya?](#Q.29_Apa_yang_membedakan_Archlinux_dengan_distro_.22minimalis.22_lainnya.3F)
+    *   [3.2 Q) Desktop Environment/Window Manager manakah yang seharusnya Saya gunakan?](#Q.29_Desktop_Environment.2FWindow_Manager_manakah_yang_seharusnya_Saya_gunakan.3F)
+    *   [3.3 Q) Apa yang membedakan Archlinux dengan distro "minimalis" lainnya?](#Q.29_Apa_yang_membedakan_Archlinux_dengan_distro_.22minimalis.22_lainnya.3F)
 *   [4 Pertanyaan Lainnya](#Pertanyaan_Lainnya)
     *   [4.1 Q) Pesan error 'warning: current locale is invalid; using default "C" locale' saat menggunakan Pacman.Apa yang harus Saya lakukan?](#Q.29_Pesan_error_.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27_saat_menggunakan_Pacman.Apa_yang_harus_Saya_lakukan.3F)
     *   [4.2 Q) Bagaimana cara terhubung ke koneksi nirkabel seperti wifi?](#Q.29_Bagaimana_cara_terhubung_ke_koneksi_nirkabel_seperti_wifi.3F)
@@ -83,8 +82,6 @@ Jika pernyataan diatas sesuai dengan Anda,mungkin Archlinux kurang cocok dengan 
 
 Jika Anda ingin melakukan sesuatu dengan Archlinux Anda,alangkah lebih baiknya Anda mencari info tentang hal tersebut diinternet seperti melalui *mesin pencari*,*Wiki* dan *Forum (membaca FAQ terkini)*.Sehingga Anda tidak akan tersesat nantinya saat mulai bermain dengan Archlinux.Dan perlu diketahui banyak kejadian di forum dimana ada beberapa pertanyaan tidak dijawab.Alasannya sangat klasik,pertanyaan tersebut bersifat **mendasar dan itu-itu saja**. *There is a reason these resources were created/made available to you in the first place.* Banyak sukarelawan telah meluangkan waktu berjam-jam untuk mengompilasi informasi yang baik ini.
 
-Wajib Anda baca : [Petunjuk Arch Linux untuk Pemula](/index.php/Beginners%27_guide_(Indonesia) "Beginners' guide (Indonesia)").
-
 ## Q) Apakah Arch didesain sebagai sebuah server? Desktop? *Workstation*?
 
 **A)** Archlinux tidak didesain untuk suatu fungsi khusus.Namun Archlinux didesain agar sesuai dengan berbagai macam tipe pengguna.Archlinux menargetkan pengguna yang menyukai tantangan dan cocok dengan konsep *do-it yourself* atau *mengerjakannya sendiri* serta mereka yang suka mengekplorasi sehingga menjadikannya sesuai dengan kebutuhan pengguna.Oleh karena itu,Archlinux akan menjadi sistem operasi yang mampu mencakup segala kebutuhan pengguna jika dikelola oleh pengguna yang tepat.Contohnya saja,Archlinux banyak digunakan pada PC,laptop,notebook,netbook serta komputer kerja.Dan pastinya,server archlinux.org berjalan diatas mesin Archlinux :).
@@ -129,11 +126,9 @@ A SysV init, on the other hand, would use a system of multiple directories (usua
 
 **A)** Pastikan bahwa *hostname* sudah diatur dengan benar.Silahkan cek di `/etc/hosts`.Jika Anda tidak mengaturnya dengan benar makan pada saat membuka aplikasi akan terasa lebih lambat dari biasanya.
 
-Cek juga artikel tentang [Konfigurasi sistem](/index.php/Beginners%27_guide#F:_Configure_the_System "Beginners' guide") untuk info lebih lanjut.
-
 ## Q) Kenapa koneksi internet Saya lebih lambat dari sistem operasi lainnya?
 
-**A)** Apakah pengaturan jaringan Anda sudah benar?Sudahkan Anda cek pengaturan pada `/etc/rc.conf` `/etc/hosts` dan `/etc/resolv.conf`?Lihat juga "Konfigurasi sistem" pada artikel ["Petunjuk Archlinux untuk Pemula : Konfigurasi sistem"](/index.php/Beginners%27_guide#F:_Configure_the_System "Beginners' guide").
+**A)** Apakah pengaturan jaringan Anda sudah benar?Sudahkan Anda cek pengaturan pada `/etc/rc.conf` `/etc/hosts` dan `/etc/resolv.conf`?
 
 ## Q) Kenapa Archlinux banyak menggunakan kapasitas RAM saat masuk desktop hingga 2Gb?
 
@@ -221,10 +216,6 @@ Semenjak kita tidak akan sering menginstall ulang Archlinux karena Archlinux ber
 Namun,jika Anda ingin menginstall Archlinux dengan cara yang lebih user friendly,Anda bisa cek 2 cara tidak resmi yaitu [Archie Live CD](http://archie.dotsrc.org/) untuk DE [XFCE](/index.php/Xfce "Xfce") (DE lain dalam pengembangan) dan [Arch Linux Office Install CD](http://user-contributions.org/wikis/userwiki/index.php?title=Arch_Linux_Office_Install_CD) untuk DE KDE.
 
 **Warning:** Archie live CD serta kawan-kawannya sudah kadaluarsa.Silahkan gunakan [archiso](/index.php/Archiso "Archiso") atau [larch](/index.php/Larch "Larch") sebagai alternatif.
-
-## Q) Saya berhasil menginstall Archlinux,namun saya hanya melihat bash/teks mode tanpa GUI.Lalu selanjutnya?
-
-**A)** Silahkan baca artikel berikut tentang [Petunjuk Archlinux bagi Pemula](/index.php/Beginners%27_guide "Beginners' guide").
 
 ## Q) Desktop Environment/Window Manager manakah yang seharusnya Saya gunakan?
 

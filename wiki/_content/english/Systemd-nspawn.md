@@ -243,7 +243,7 @@ If both the host and the container are Arch Linux, then one could, for example, 
 
 Note the canonical [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") host and container .network files are from [https://github.com/systemd/systemd/tree/master/network](https://github.com/systemd/systemd/tree/master/network)
 
-You need to set up the container .network manually after pacstrapping and `# systemctl enable [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")` (your dhcp client) with systemd-nspawn's -n switch to ensure a virtual Ethernet link is setup. Don't forget to set up DNS, e.g. by either 1) edit your container's `/etc/resolv.conf` by adding your DNS server's IP address, or have 2) [systemd-resolved](/index.php?title=Systemd-resolved&action=edit&redlink=1 "Systemd-resolved (page does not exist)") manage `/etc/resolv.conf` for you.
+You need to set up the container .network manually after pacstrapping and `# systemctl enable [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")` (your dhcp client) with systemd-nspawn's -n switch to ensure a virtual Ethernet link is setup. Don't forget to set up DNS, e.g. by either 1) [edit](/index.php/Textedit "Textedit") your container's `/etc/resolv.conf` by adding your DNS server's IP address, or have 2) [systemd-resolved](/index.php?title=Systemd-resolved&action=edit&redlink=1 "Systemd-resolved (page does not exist)") manage `/etc/resolv.conf` for you.
 
 See [systemd-networkd#Usage with containers](/index.php/Systemd-networkd#Usage_with_containers "Systemd-networkd") for more complex examples.
 

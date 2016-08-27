@@ -22,14 +22,18 @@ Locales are used by [glibc](https://www.archlinux.org/packages/?name=glibc) and 
 
 ## Generating locales
 
-Before a locale can be enabled on the system, it has to be generated. The current generated/available locales can be viewed with:
+Locale names are typically of the form `language[_territory][.codeset][@modifier]`, where *language* is an [ISO 639 language code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes "w:List of ISO 639-1 codes"), *territory* is an [ISO 3166 country code](https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes "w:ISO 3166-1"), and *codeset* is a [character set](https://en.wikipedia.org/wiki/Character_encoding "w:Character encoding") or encoding identifier like [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1 "w:ISO/IEC 8859-1") or [UTF-8](https://en.wikipedia.org/wiki/UTF-8 "w:UTF-8"). See [setlocale(3)](http://man7.org/linux/man-pages/man3/setlocale.3.html).
+
+For a list of enabled locales, run:
 
 ```
 $ locale -a
 
 ```
 
-The locales that can be generated are listed in the `/etc/locale.gen` file: their names are defined using the format `[language][_TERRITORY][.CODESET][@modifier]`. To generate a locale, first uncomment the corresponding line in the file (or comment to remove); when doing this, also consider localizations needed by other users on the system and specific [#Variables](#Variables). For example, for American-English uncomment `en_US.UTF-8 UTF-8`.
+Before a locale can be enabled on the system, it must be generated. This can be achieved by uncommenting applicable entries in `/etc/locale.gen`, and running *locale-gen*. Equivalently, commenting entries disables their respective locales. While making changes, consider any localisations required by other users on the system, as well as specific [#Variables](#Variables).
+
+For example, uncomment `en_US.UTF-8 UTF-8` for American-English:
 
  `/etc/locale.gen` 
 ```
@@ -41,7 +45,7 @@ en_US.UTF-8 UTF-8
 
 ```
 
-When done, save the file and generate the uncommented locale(s) by executing:
+Save the file, and generate the locale:
 
 ```
 # locale-gen
@@ -51,7 +55,7 @@ When done, save the file and generate the uncommented locale(s) by executing:
 **Note:**
 
 *   `locale-gen` also runs with every update of [glibc](https://www.archlinux.org/packages/?name=glibc). [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/glibc.install?h=packages/glibc#n5)
-*   `UTF-8` is recommended over other options. [[2]](http://utf8everywhere.org/)
+*   `UTF-8` is recommended over other character sets. [[2]](http://utf8everywhere.org/)
 
 ## Setting the locale
 
@@ -92,8 +96,6 @@ Alternatively, run:
 ```
 
 See [#Variables](#Variables) and [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) for details.
-
-**Note:** *localectl* cannot be used to set the system locale in the installation chroot environment.
 
 ### Overriding system locale per user session
 

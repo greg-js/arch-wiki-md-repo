@@ -5,7 +5,6 @@ This page lists the articles in the wiki that are linked from the website, so as
 *   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") - [https://aur.archlinux.org/](https://aur.archlinux.org/)
 *   [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") - [https://aur.archlinux.org/](https://aur.archlinux.org/)
 *   [AUR User Guidelines](/index.php/AUR_User_Guidelines "AUR User Guidelines") - [https://aur.archlinux.org/](https://aur.archlinux.org/)
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") - [https://www.archlinux.org/](https://www.archlinux.org/)
 *   [DeveloperWiki](/index.php/DeveloperWiki "DeveloperWiki") - [https://www.archlinux.org/](https://www.archlinux.org/)
 *   [DeveloperWiki:releng testimages feedback](/index.php/DeveloperWiki:releng_testimages_feedback "DeveloperWiki:releng testimages feedback") - [https://www.archlinux.org/releng/feedback/](https://www.archlinux.org/releng/feedback/)
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy") - [https://www.archlinux.org/](https://www.archlinux.org/)

@@ -270,7 +270,7 @@ Esta sección pretende resumir ajustes, herramientas y opciones útiles para mej
 
 ### Maximizar el rendimiento
 
-El artículo [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") recoge información y constituye un resumen básico sobre cómo ganar rendimiento en Arch Linux.
+El artículo [Improving performance](/index.php/Improving_performance "Improving performance") recoge información y constituye un resumen básico sobre cómo ganar rendimiento en Arch Linux.
 
 ### Unidades de estado sólido (SSD)
 

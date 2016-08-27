@@ -31,7 +31,7 @@
 
 ## Installation
 
-See [Install from USB stick](/index.php/Install_from_USB_stick "Install from USB stick"). There is out-of-the-box support for the wired and wireless NICs. There are no special instructions for installation. For an in-depth guide on the installation see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+See [Install from USB stick](/index.php/Install_from_USB_stick "Install from USB stick"). There is out-of-the-box support for the wired and wireless NICs. There are no special instructions for installation.
 
 ## Xorg
 

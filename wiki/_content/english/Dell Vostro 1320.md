@@ -29,7 +29,7 @@ It is highly recommendable to setup Windows Vista first, because during the setu
 
 If you want to install Arch Linux over a wireless connection you have to setup the connection [manually](/index.php/Wireless_network_configuration#Manual_setup "Wireless network configuration"). Since kernel 2.6.24 and above are containing the appropriate drivers already, it should work with both the "Netinstall ISO" as well as the "Core ISO", although using the "Netinstall ISO" is the preferred install media for Arch Linux. Don't forget to choose the source "net" and the wlan interface (normally wlan0).
 
-Apart from that you can follow the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), which should deliver you a good insight how to install Arch Linux.
+Apart from that you can follow the [Installation guide](/index.php/Installation_guide "Installation guide"), which should deliver you a good insight how to install Arch Linux.
 
 Further attention has to be drawn during the partitioning, as Dell uses an uncommon partition table, which may you run into some trouble. You'll get a "FATAL ERROR", whenever you try to partition "/dev/sda" using the setup. Therefore switch to another terminal (Ctrl + Alt + F2, for instance) and delete the partition table using "fdisk /dev/sda". Follow the program options. More instructions can be found in the man page or the help option (m). It is sufficient to delete all partitions (and writing the table to the disc), from there on you can use the setup in the first terminal again (Ctrl + Alt + F1).
 

@@ -1,4 +1,4 @@
-This page assumes that you will be using it as a reference along with the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). In addition, a discussion of general setup is available from the main article on the [Acer Aspire One](/index.php/Acer_Aspire_One "Acer Aspire One"), although the hardware is quite different. A discussion of various other issues and tweaks is available in the [Ubuntu forums](http://ubuntuforums.org/showthread.php?t=1811178).
+In addition, a discussion of general setup is available from the main article on the [Acer Aspire One](/index.php/Acer_Aspire_One "Acer Aspire One"), although the hardware is quite different. A discussion of various other issues and tweaks is available in the [Ubuntu forums](http://ubuntuforums.org/showthread.php?t=1811178).
 
 ## Contents
 
@@ -6,7 +6,7 @@ This page assumes that you will be using it as a reference along with the [Begin
     *   [1.1 lspci](#lspci)
     *   [1.2 lsusb](#lsusb)
     *   [1.3 lsmod](#lsmod)
-*   [2 Setup Issues](#Setup_Issues)
+*   [2 Configuration](#Configuration)
     *   [2.1 Video](#Video)
     *   [2.2 Networking](#Networking)
     *   [2.3 Audio](#Audio)
@@ -142,9 +142,7 @@ usbcore               142576  8 uas,ums_realtek,usb_storage,uvcvideo,usbhid,ohci
 
 ```
 
-## Setup Issues
-
-Most things on the Acer Aspire One 722 work more or less out of the box, as long as you do what the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") says to do. There are however some special steps required.
+## Configuration
 
 ### Video
 

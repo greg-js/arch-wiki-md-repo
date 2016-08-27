@@ -26,7 +26,7 @@ Intel® Core™ i7-740QM Processor ( 1.73GHz 1333MHz 6MB )
 
 ## Initial Installation
 
-Lenovo's default partitioning scheme thankfully included an extended partition. Using a utility such as gparted, it is recommended to shrink your windows partitions to at least half the size of the drive and increase the extended partition to fill in the gap, then installing Arch within new logical partitions inside. Installing the bootloader to /dev/sda will allow it to boot into all of the operating systems, though you will need to chainload windows (chainloader +1 boot option, see the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for an example).
+Lenovo's default partitioning scheme thankfully included an extended partition. Using a utility such as gparted, it is recommended to shrink your windows partitions to at least half the size of the drive and increase the extended partition to fill in the gap, then installing Arch within new logical partitions inside. Installing the bootloader to /dev/sda will allow it to boot into all of the operating systems, though you will need to chainload windows (chainloader +1 boot option)
 
 ## Graphics
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Users_and_Groups](/index.php/Users_and_Groups "Users and Groups") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-12-14，点击[这里](https://wiki.archlinux.org/index.php?title=Users_and_Groups&diff=0&oldid=410430)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Users_and_Groups](/index.php/Users_and_Groups "Users and Groups") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=Users_and_Groups&diff=0&oldid=445643)可以查看翻译后英文页面的改动。
 
 GNU/Linux 通过用户和用户组实现[访问控制](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") —— 包括对文件访问、设备使用的控制。Linux 默认的访问控制机制相对简单直接，不过还有一些更加高级的机制，包括 [ACL](/index.php/ACL "ACL") 和 [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
 
@@ -17,9 +17,8 @@ GNU/Linux 通过用户和用户组实现[访问控制](https://en.wikipedia.org/
 *   [6 群组列表](#.E7.BE.A4.E7.BB.84.E5.88.97.E8.A1.A8)
     *   [6.1 用户组](#.E7.94.A8.E6.88.B7.E7.BB.84)
     *   [6.2 系统组](#.E7.B3.BB.E7.BB.9F.E7.BB.84)
-    *   [6.3 程序专用组](#.E7.A8.8B.E5.BA.8F.E4.B8.93.E7.94.A8.E7.BB.84)
+    *   [6.3 systemd 之前的群组](#systemd_.E4.B9.8B.E5.89.8D.E7.9A.84.E7.BE.A4.E7.BB.84)
     *   [6.4 不再使用的组](#.E4.B8.8D.E5.86.8D.E4.BD.BF.E7.94.A8.E7.9A.84.E7.BB.84)
-    *   [6.5 systemd 之前的群组](#systemd_.E4.B9.8B.E5.89.8D.E7.9A.84.E7.BE.A4.E7.BB.84)
 
 ## 概览
 
@@ -95,7 +94,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 
 ## 用户管理
 
-使用`who`命令，可以查看目前已登陆的用户。
+使用`who`命令，可以查看目前已登陆的用户。要查看系统上的用户，以 root 执行 `passwd -Sa` 输出的数据格式可以参考 `passwd(1)`。
 
 使用`useradd`命令添加用户：
 
@@ -109,7 +108,7 @@ drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 *   **`-G`**：用户要加入的附加组列表；使用逗号分隔多个组，不要添加空格；如果不设置，用户仅仅加入初始组。
 *   **`-s`**：用户默认登录shell的路径；启动过程结束后，默认启动的登录shell在此处设定；请确保使用的shell已经安装，默认是 [Bash](/index.php/Bash "Bash")。
 
-**警告:** 为了登录，登录 shell 必须位于 `/etc/shells` 中, 否则 `pam_shell` 模块会阻止登录请求。不要使用 `/usr/bin/bash` 替代 `/bin/bash`, 除非这个路径已经在 `/etc/shells`中正确配置.
+**警告:** 为了登录，登录 shell 必须位于 `/etc/shells` 中, 否则 [PAM](/index.php/PAM "PAM") 的 `pam_shell` 模块会阻止登录请求。不要使用 `/usr/bin/bash` 替代 `/bin/bash`, 除非这个路径已经在 `/etc/shells`中正确配置.
 
 *   有时候需要禁止某些用户执行登录动作，例如用来执行系统服务的用户。将shell设置成 `/usr/bin/nologin` 就可以禁止用户登录。(`nologin(8)`).
 
@@ -145,6 +144,8 @@ $ man useradd
 
 ```
 
+If a GID change is required temporarily you can also use the *newgrp* command to change the user's default GID to another GID at runtime. For example, after executing `newgrp *groupname*` files created by the user will be associated with the `*groupname*` GID, without requiring a re-login. To change back to the default GID, execute *newgrp* without a groupname.
+
 ### 添加系统用户
 
 为进程、守护进程分配不同的系统用户可以更安全的管控目录及文件的访问。下面命令创建一个不创建 `home` 目录的非登录用户(可以加入 `-U` 参数创建一个和用户名相同的群组):
@@ -166,7 +167,7 @@ $ man useradd
 更改用户主目录：
 
 ```
-# usermod -dm /my/new/home *username*
+# usermod -d /my/new/home -m *username*
 
 ```
 
@@ -213,6 +214,8 @@ $ man useradd
 
 `-r`选项表示一并删除用户主目录和邮件。
 
+**Tip:** [adduser](https://aur.archlinux.org/packages/adduser/) 可以以交互的方式执行 *useradd*, *chfn* 和 *passwd*，参考 [FS#32893](https://bugs.archlinux.org/task/32893).
+
 ### 用户名修改经验
 
 **警告:** 确保你不是使用你要修改的用户名登录，同时按下(`Ctrl`+`Alt`+`F1`)打开一个新的终端，使用root用户登录，或用其他用户登录后使用su命令登录为root用户。
@@ -220,9 +223,7 @@ $ man useradd
 操作得当的话，在Arch（或其他Linux发行版）中更改用户名是安全的，并且很简单。你可以更改用户所属的组。按照以下步骤进行，可以保留受影响用户的UID和GID，而不会搞乱你已经设置好的文件权限。还有一种方法是手动编辑 `/etc/passwd` 文件。
 
 *   如果要使用[sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")，请更新文件`/etc/sudoers`把新的用户（以root登录使用visudo命令）添加进去。
-*   如果修改了`~/.bashrc`的PATH环境变量，并把新的用户添加进去。
-*   同样的，记得更改配置文件`/etc/rc.local`或者任何配置文件里用到的，放在旧的用户主目录里的脚本或者挂载点。
-*   我不得不重复[Firefox拼写校正](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.8B.BC.E5.86.99.E6.A3.80.E6.9F.A5.E5.AD.97.E5.85.B8 "Firefox (简体中文)")里的步骤，否则更改用户名后拼写校正就不再起作用了。
+*   如果修改了`~/.bashrc`的PATH环境变量，并把新的用户添加进去。。
 *   更改用户名后，我不得不重新安装Thunderbird扩展（[Enigmail](http://enigmail.mozdev.org/home/index.php)）。
 *   系统（桌面快捷方式，脚本等）里使用了旧的用户主目录的地方，都需要进行修改。要在脚本中避免这样的问题，可以使用`~`或`$HOME`变量来表示主目录。
 
@@ -261,6 +262,15 @@ jack:x:1001:100:Jack Smith,some comment here,,:/home/jack:/bin/bash
 ```
 
 示例分解说明：用户登录名为jack，密码保存在`/etc/shadow`，UID为1001，首要组的ID是100 (users组)，全名Jack Smith并加了一些注释，主目录是`/home/jack`，使用Bash作为默认shell。
+
+The *pwck* command can be used to verify the integrity of the user database. It can sort the user list by GID at the same time, which can be helpful for comparison:
+
+```
+# pwck -s
+
+```
+
+Note that the Arch Linux defaults of the files are created as .pacnew files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added automatically by the packages' install script.
 
 ## 用户组管理
 
@@ -326,6 +336,10 @@ $ cat /etc/group
 
 如果用户已登录，必须重新登录使更改生效。
 
+The *grpck* command can be used to verify the integrity of the system's group files.
+
+Updates to the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package create .pacnew files. Alike the .pacnew files for the [#User database](#User_database), these can be disregarded/removed, because the install script adds any new required groups.
+
 ## 文件列表
 
 **警告:** 不要手动编辑这些文件。有些工具可以更好的处理锁定、避免数据库错误。
@@ -340,14 +354,24 @@ $ cat /etc/group
 
 ## 群组列表
 
+This section explains the purpose of the essential groups from the [core/filesystem](https://git.archlinux.org/svntogit/packages.git/tree/trunk/group?h=packages/filesystem) package. There are many other groups, which will be created with [correct GID](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") when the relevant package is installed. See the main page for the software for details.
+
+**Note:** A later removal of a package does not remove the automatically created user/group (UID/GID) again. This is intentional because any files created during its usage would otherwise be left orphaned as a potential security risk.
+
 ### 用户组
 
 | 组 | 影响文件 | 作用 |
+| adm | 类似 `wheel` 的管理器群组. |
+| ftp | `/srv/ftp/` | 访问 [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") 服务器. |
 | games | `/var/games` | 访问一些游戏。 |
+| log | 访问 [syslog-ng](/index.php/Syslog-ng "Syslog-ng") 创建的 `/var/log/` 日志文件. |
+| http | `/srv/http/` | 访问 [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP") 服务器文件. |
 | rfkill | **不再使用!** 控制无线设备的电源 (可能被 [rfkill](https://www.archlinux.org/packages/?name=rfkill) 使用). |
+| sys | Right to administer printers in [CUPS](/index.php/CUPS "CUPS"). |
+| systemd-journal | `/var/log/journal/*` | 以只读方式访问系统日志，和 `adm` 和 `wheel` 不同 [[1]](https://cgit.freedesktop.org/systemd/systemd/tree/README?id=fdbbf0eeda929451e2aaf34937a72f03a225e315#n190). 不在此组中的用户仅能访问自己生成的信息。 |
 | users | 标准用户组. |
-| uucp | `/dev/ttyS[0-9]`, `/dev/tts/[0-9]` | 串口和 USB 设备，例如猫、手柄 RS-232/串口。 |
-| wheel | 管理组，通常用于　sudo　和 su 命令权限。systemd 会允许非　root 的 wheel 组用户启动服务。[[1]](http://cgit.freedesktop.org/systemd/systemd/tree/TODO#n79) |
+| uucp | `/dev/ttyS[0-9]+`, `/dev/tts/[0-9]+`, `/dev/ttyUSB[0-9]+`, `/dev/ttyACM[0-9]+` | 串口和 USB 设备，例如猫、手柄 RS-232/串口。 |
+| wheel | 管理组，通常用于　sudo　和 su 命令权限。systemd 会允许非　root 的 wheel 组用户启动服务。[[2]](http://cgit.freedesktop.org/systemd/systemd/tree/TODO#n79) |
 
 ### 系统组
 
@@ -355,49 +379,26 @@ $ cat /etc/group
 
 | 组 | 影响文件 | 作用 |
 | avahi |
-| bin | `/usr/bin/*` | 以只读权限访问 `/usr/bin/` 中的二进制文件. |
 | clamav | `/var/lib/clamav/*`, `/var/log/clamav/*` | [Clam AntiVirus](/index.php/Clam_AntiVirus "Clam AntiVirus") 使用. |
-| daemon |
 | dbus | `/var/run/dbus/*` |
-| ftp | `/srv/ftp` | [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP") 服务器，例如 [Proftpd](/index.php/Proftpd "Proftpd") |
-| gdm | X 认证目录 (ServAuthDir) | [GDM](/index.php/GDM "GDM") 组. |
-| hal | `/var/run/hald`, `/var/cache/hald` |
-| http |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | See [Core utilities#locate](/index.php/Core_utilities#locate "Core utilities"). |
+| lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*`, `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups` | Access to parallel port devices (printers and others) and read-only access to [CUPS](/index.php/CUPS "CUPS") files. If you run a non-printer parallel port device, see [FS#50009](https://bugs.archlinux.org/task/50009) for implied problems. |
 | mail | `/usr/bin/mail` |
-| mem |
 | mpd | `/var/lib/mpd/*`, `/var/log/mpd/*`, `/var/run/mpd/*`, 可选的音乐目录 | [MPD](/index.php/MPD "MPD") 组. |
 | nobody | 无权限的组。 |
 | ntp | `/var/lib/ntp/*` | [NTPd](/index.php/NTPd "NTPd") 组. |
-| policykit | [PolicyKit](/index.php/PolicyKit "PolicyKit") 组. |
 | root | `/*` | 完全的系统管理和控制 (root, admin) |
-| smmsp | [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") 组. |
-| systemd-journal | `/var/log/journal/*` | 访问完整系统日志，不在此组中的用户仅能访问自己生成的信息。 |
+| smmsp | [sendmail](/index.php/Sendmail "Sendmail") 群组. |
 | tty | `/dev/tty`, `/dev/vcc`, `/dev/vc`, `/dev/ptmx` | 访问 `/dev/ACMx` |
+| utmp | `/run/utmp`, `/var/log/btmp`, `/var/log/wtmp` |
 | vboxsf | 虚拟系统的共享目录 | [VirtualBox](/index.php/VirtualBox "VirtualBox")使用. |
 
-### 程序专用组
-
-如下组中的成员可以执行特定程序：
-
-| 组 | 影响文件 | 作用 |
-| adbusers | `/dev/`中的设备节点 | 访问 [Android](/index.php/Android "Android") 调试桥。 |
-| cdemu | `/dev/vhba_ctl` | 使用 [CDemu](/index.php/CDemu "CDemu") 模拟驱动. |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | 使用 [updatedb](https://en.wikipedia.org/wiki/updatedb "wikipedia:updatedb") 命令。 |
-| networkmanager | 通过 [NetworkManager](/index.php/NetworkManager "NetworkManager") 连接无线网的权限。这个组在默认的Arch设置里没有，需要手动添加 |
-| thinkpad | `/dev/misc/nvram` | ThinkPad 用户访问 [tpb](/index.php/Tpb "Tpb") 等工具。 |
-| vboxusers | `/dev/vboxdrv` | 使用Virtualbox软件 |
-| vmware | 使用 [VMware](/index.php/VMware "VMware") 软件。 |
-
-### 不再使用的组
-
-| 群组 | 目的 |
-| log | `/var/log/*` | 访问 `/var/log` 中的日志. |
-| ssh | 默认不创建，不是标准组。 |
-| stb-admin | **不再使用!** 曾经用来控制 [system-tools-backends](http://system-tools-backends.freedesktop.org/) 的访问。 |
-| kvm | 用户空间软件可以访问 `/dev/kvm` 接口 | 使用 [KVM](/index.php/KVM "KVM") 的硬件虚拟化。 |
-
 ### systemd 之前的群组
+
+Before arch migrated to [systemd](/index.php/Systemd "Systemd"), users had to be manually added to these groups in order to be able to access the corresponding devices. This way has been deprecated in favour of [udev](/index.php/Udev "Udev") marking the devices with a `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules) and *logind* assigning the permissions to users dynamically via [ACLs](/index.php/ACL "ACL") according to which session is currently active. Note that the session must not be broken for this to work (see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") to check it).
+
+There are some notable exceptions which require adding a user to some of these groups: for example if you want to allow users to access the device even when they are not logged in. However, note that adding users to the groups can even cause some functionality to break (for example, the `audio` group will break fast user switching and allows applications to block software mixing).
 
 如下组是 systemd 之前使用，目前已经没有任何作用，使用后还可能对功能有影响:
 
@@ -414,3 +415,14 @@ $ cat /etc/group
 | storage | 访问可移动储存器，例如 USB 硬盘、flash 存储器、MP3 播放器等；用户可以通过 [D-Bus](/index.php/D-Bus "D-Bus") 挂载设备。 |
 | sys | 管理 [CUPS](/index.php/CUPS "CUPS") 中的打印机. |
 | video | `/dev/fb/0`, `/dev/misc/agpgart` | 访问视频捕获和硬件加速设备。例如framebuffer ([X](/index.php/Xorg "Xorg") 不属于这个组也能使用). |
+
+### 不再使用的组
+
+| Group | Affected files | Purpose |
+| bin | none | Historical |
+| daemon |
+| lock |
+| mem |
+| network | Unused by default. Can be used e.g. for granting access to NetworkManager (see [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
+| power |
+| uuidd |

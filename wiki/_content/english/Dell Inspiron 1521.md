@@ -1,17 +1,11 @@
-The following is what I have found while using Arch on my Inspiron 1521\. User experience may vary.
-
 ## Contents
 
 *   [1 Hardware Specifications](#Hardware_Specifications)
     *   [1.1 lspci Output](#lspci_Output)
     *   [1.2 lsusb Output](#lsusb_Output)
-*   [2 Installation](#Installation)
-*   [3 Kernel](#Kernel)
-*   [4 Networking](#Networking)
-    *   [4.1 Wired](#Wired)
-    *   [4.2 Wireless](#Wireless)
-        *   [4.2.1 Broadcom Corporation BCM4311](#Broadcom_Corporation_BCM4311)
-    *   [4.3 Modem](#Modem)
+*   [2 Networking](#Networking)
+    *   [2.1 Wireless](#Wireless)
+        *   [2.1.1 Broadcom Corporation BCM4311](#Broadcom_Corporation_BCM4311)
 
 ## Hardware Specifications
 
@@ -60,14 +54,6 @@ Bus 004 Device 001: ID 1d6b:0001
 
 ```
 
-## Installation
-
-I worked through this HowTo: [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-
-## Kernel
-
-The stock Arch kernel works just fine.
-
 ## Networking
 
 My Network was extremely slow. This was caused by an IPv6 problem. After adding the following line in the `/etc/modprobe.d/modprobe.conf` everything was ok.
@@ -77,30 +63,8 @@ alias net-pf-10 off
 
 ```
 
-### Wired
-
-Works out of the box.
-
 ### Wireless
 
 #### Broadcom Corporation BCM4311
 
 Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from [AUR](/index.php/AUR "AUR").
-
-For getting the network up automatically, I copied the file `/etc/network.d/examples/wpa.example` (take the example file for your use case) into the directory `/etc/network.d/` and renamed it (e.g. `wlan_profile`) and edited it. Then I added the following line to `/etc/rc.conf`:
-
-```
-NETWORKS=(wlan_profile)
-
-```
-
-And added the following daemon in the `/etc/rc.conf`:
-
-```
-DAEMONS=( ... net-profiles ... )
-
-```
-
-### Modem
-
-I have not tried the modem to see if it works.

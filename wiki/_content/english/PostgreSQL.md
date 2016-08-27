@@ -253,6 +253,13 @@ PIDFile=*/pathto/pgroot/*data/postmaster.pid
 
 ```
 
+If you want to use `/home` directory for default directory or for tablespaces, add one more line in this file:
+
+```
+ProtectHome=false
+
+```
+
 ### Change default encoding of new databases to UTF-8
 
 **Note:** If you ran `initdb` with `-E UTF8` these steps are not required.

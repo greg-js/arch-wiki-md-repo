@@ -30,7 +30,7 @@ All configuration is done on the server computer, except for the final step of [
 
 ### Static IP address
 
-On the server computer, assign a static IPv4 address to the interface connected to the other machines. The first 3 bytes of this address cannot be exactly the same as those of another interface.
+On the server computer, assign a static IPv4 address to the interface connected to the other machines. The first 3 bytes of this address cannot be exactly the same as those of another interface, unless both interfaces have netmasks strictly greater than /24.
 
 ```
 # ip link set up dev net0

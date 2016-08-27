@@ -208,7 +208,7 @@ Btrfs支持透明压缩，这意味着分区里的每个文件都被自动压缩
 
 **Tip:** 通过 `chattr +c` ,也可以在不使用 `compress` 选项的情况下为单个文件启用压缩属性.对目录启用会使这个目录下新文件自动压缩.
 
-在一个新的 btrfs 分区上安装 Arch Linux 时,要充分利用压缩特性，最好安装时就启用压缩功能。在[挂载分区](/index.php/Beginners%27_guide#Format_the_file_systems_and_enable_swap "Beginners' guide") 时使用 `compress` 参数: `mount -o compress=lzo /dev/sd*xY* /mnt/`.在 [设置](/index.php/Beginners%27_guide#Configuration "Beginners' guide")时把 `compress=lzo` 添加到 [fstab](/index.php/Fstab "Fstab") 中的根目录中的选项上.
+在一个新的 btrfs 分区上安装 Arch Linux 时,要充分利用压缩特性，最好安装时就启用压缩功能。在[File systems](/index.php/File_systems "File systems") 时使用 `compress` 参数: `mount -o compress=lzo /dev/sd*xY* /mnt/`.在 时把 `compress=lzo` 添加到 [fstab](/index.php/Fstab "Fstab") 中的根目录中的选项上.
 
 ### 子卷
 

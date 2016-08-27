@@ -236,9 +236,10 @@ There you can also directly download and install more themes with one click, and
 
 #### Icon themes
 
-Icon-themes can be installed and changed on *System Settings > Icons*.
+Icon themes can be installed and changed on *System Settings > Icons*.
 
-**Note:** [GNOME](/index.php/GNOME "GNOME") and KDE4 installed icon-themes may not be (fully) compatible with Plasma. It's recommended to install Plasma compatible icon-themes instead.
+**Note:** Although all modern Linux desktops share the same icon theme format, desktops like [GNOME](/index.php/GNOME "GNOME") use fewer icons (esp. in menus and toolbars). Themes developed for such desktops usually lack icons required by Plasma 5 and KDE apps.
+It is recommended to install Plasma compatible icon themes instead.
 
 #### Fonts
 

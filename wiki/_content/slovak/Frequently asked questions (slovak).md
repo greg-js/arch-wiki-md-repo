@@ -22,7 +22,7 @@ Najprv si prečítajte [The Arch Way](/index.php/The_Arch_Way "The Arch Way") a 
 
 ## Q) Som úplný začiatočník v Linuxe. Mal by som používať Arch?
 
-**A)** Táto otázka bola (a stále je) dosť diskutovaná. Arch je určený pokročilejším používateľom Linuxu, ale niektorí ľudia cítia, že "Arch je dobré miesto na začatie". Ak ste začiatočník a chcete používať Arch, varujeme vás, že MUSÍTE mať vôľu učiť sa. Prv než budete klásť akékoľvek otázky, urobte vlastný nezávislý prieskum cez google, prehľadajte Wiki, a hľadajte na fóre (a čítajte minulé otázky FAQ). Ak to urobíte, mali by ste byť OK. Taktiež majte na pamäti, že mnoho ľudí nechce stále dookola odpovedať na tie isté základné otázky, takže sa vystavujete tomuto prostrediu. Existuje dôvod prečo tieto prostriedky boli vytvorené/urobené dostupnými pre vás. Mohli by ste sa tiež pozrieť na [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
+**A)** Táto otázka bola (a stále je) dosť diskutovaná. Arch je určený pokročilejším používateľom Linuxu, ale niektorí ľudia cítia, že "Arch je dobré miesto na začatie". Ak ste začiatočník a chcete používať Arch, varujeme vás, že MUSÍTE mať vôľu učiť sa. Prv než budete klásť akékoľvek otázky, urobte vlastný nezávislý prieskum cez google, prehľadajte Wiki, a hľadajte na fóre (a čítajte minulé otázky FAQ). Ak to urobíte, mali by ste byť OK. Taktiež majte na pamäti, že mnoho ľudí nechce stále dookola odpovedať na tie isté základné otázky, takže sa vystavujete tomuto prostrediu. Existuje dôvod prečo tieto prostriedky boli vytvorené/urobené dostupnými pre vás.
 
 ## Q) Našiel som chybu v balíčku X, čo by som mal urobiť?
 

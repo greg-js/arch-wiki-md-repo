@@ -87,7 +87,7 @@ Mentre UDisks include dei semplici metodi di mount(ed umount) delle periferiche 
 
 ### Mount automatico delle periferiche USB
 
-**Nota:** Nelle seguenti regole, le opzioni per il comando mount sono definite con `ENV{mount_options}="relatime"`, consultare `man mount`(ed eventualmente `man ntfs-3g`) per tutte le possibili opzioni, leggere [Maximizing performance#Mount options](/index.php/Maximizing_performance#Mount_options "Maximizing performance") per informazioni relative alle performance.
+**Nota:** Nelle seguenti regole, le opzioni per il comando mount sono definite con `ENV{mount_options}="relatime"`, consultare `man mount`(ed eventualmente `man ntfs-3g`) per tutte le possibili opzioni, leggere [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance") per informazioni relative alle performance.
 
 **Nota:** L'opzione `users` per il comando mount **non** permetterà comunque agli utenti di smontare il filesystem.
 

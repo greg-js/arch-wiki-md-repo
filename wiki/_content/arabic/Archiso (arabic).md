@@ -15,7 +15,6 @@
     *   [4.1 CD](#CD)
     *   [4.2 USB](#USB)
     *   [4.3 grub4dos](#grub4dos)
-    *   [4.4 التنصيب](#.D8.A7.D9.84.D8.AA.D9.86.D8.B5.D9.8A.D8.A8)
 *   [5 See also](#See_also)
 
 ## الإعداد
@@ -218,14 +217,6 @@ initrd /arch/boot/x86_64/archiso.img
 ```
 
 قم بتعديل x86_64 حسب المعمارية التي تستخدمها و قم بوضع اسم قرص USB الخاص بك عوضاً عن <your usb label> .
-
-### التنصيب
-
-Boot the created CD/DVD/USB. If you wish to install the Archiso you created **-as it is-**, there are several ways to do this, but either way we're following the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") mostly.
-
-If you don't have an internet connection on that PC, or if you don't want to download every packages you want again, follow the guide, and when you get to [Beginners' guide#Install_the_base_system](/index.php/Beginners%27_guide#Install_the_base_system "Beginners' guide"), instead of downloading, use this: [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync"). (more info here: [Talk:Archiso](/index.php/Talk:Archiso "Talk:Archiso"))
-
-You can also try: [Archboot](/index.php/Archboot "Archboot"), GUI installer.
 
 ## See also
 

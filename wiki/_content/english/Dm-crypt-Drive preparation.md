@@ -48,7 +48,7 @@ First, create a temporary encrypted container on the partition (`sdXY`) or the f
 
 ```
 
-Second, check it exists
+Second, check it exists:
 
  `# fdisk -l` 
 ```
@@ -65,7 +65,7 @@ Wipe the container with zeros. A use of `if=/dev/urandom` is not required as the
 *   Using *dd* with the `bs=` option, e.g. `bs=1M`, is frequently used to increase disk throughput of the operation.
 *   To perform a check of the operation, zero the partition before creating the wipe container. After the wipe command `blockdev --getsize64 */dev/mapper/container*` can be used to get the exact container size as root. Now *od* can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. `od -j *containersize - blocksize*` to view the wipe completed to the end.
 
-Finally, close the temporary container
+Finally, close the temporary container:
 
 ```
 # cryptsetup close container

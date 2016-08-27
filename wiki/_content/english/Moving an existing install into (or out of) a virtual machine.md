@@ -30,7 +30,7 @@ Moving out of a virtual environment is relatively easy.
 
 Setting up a shared folder between the guest virtual machine and the host depends on the hypervisor you use. Please thus refer to their specific wiki page or manual.
 
-If you do not already have an ext4 partition, see [Beginners' guide#Prepare the storage devices](/index.php/Beginners%27_guide#Prepare_the_storage_devices "Beginners' guide").
+If you do not already have an ext4 partition, see [File systems](/index.php/File_systems "File systems").
 
 If you are on Windows, install [Ext2Fsd](http://www.ext2fsd.com/) to be able to mount ext volumes.
 
@@ -45,9 +45,9 @@ From the virtual machine, open a terminal and [transfer](/index.php/Full_system_
 
 ### Chroot and reinstall the bootloader
 
-Boot a "live" GNU/Linux distribution, mount the root partition and [chroot](/index.php/Chroot "Chroot") into it. See [Beginners' guide#Configure the base system](/index.php/Beginners%27_guide#Configure_the_base_system "Beginners' guide").
+Boot a "live" GNU/Linux distribution, mount the root partition and [chroot](/index.php/Chroot "Chroot") into it.
 
-Reinstall your bootloader/boot manager: either [Syslinux](/index.php/Syslinux "Syslinux"), [GRUB](/index.php/GRUB "GRUB") or [Gummiboot](/index.php/Gummiboot "Gummiboot"), following [Beginners' guide#Install and configure a bootloader](/index.php/Beginners%27_guide#Install_and_configure_a_bootloader "Beginners' guide"). Do not forget to update the configuration file: `syslinux.cfg` for Syslinux, `grub.cfg` for Grub, or the Gummiboot boot entries located in `/boot/loader/entries/`.
+Reinstall your bootloader/boot manager: either [Syslinux](/index.php/Syslinux "Syslinux"), [GRUB](/index.php/GRUB "GRUB") or [Gummiboot](/index.php/Gummiboot "Gummiboot"). Do not forget to update the configuration file: `syslinux.cfg` for Syslinux, `grub.cfg` for Grub, or the Gummiboot boot entries located in `/boot/loader/entries/`.
 
 ### Adjust the fstab
 
@@ -66,7 +66,7 @@ Because the hardware has changed, while you are still in the chroot, re-generate
 
 And that is about it.
 
-You will most likely need to set up the network, since the virtual machine was probably piggybacking on the host OS's network settings. See [Beginners' guide#Configure the network](/index.php/Beginners%27_guide#Configure_the_network "Beginners' guide").
+You will most likely need to set up the network, since the virtual machine was probably piggybacking on the host OS's network settings. See [Network configuration](/index.php/Network_configuration "Network configuration").
 
 ## Moving into a VM
 
@@ -134,7 +134,7 @@ Connect the container to the VM, along with a Linux LiveCD (e.g. the latest Arch
 
 ```
 
-Reinstall either Syslinux or GRUB, following [Beginners' guide#Install and configure a bootloader](/index.php/Beginners%27_guide#Install_and_configure_a_bootloader "Beginners' guide"). Do not forget to update its configuration file:
+Reinstall either [Syslinux](/index.php/Syslinux "Syslinux") or [GRUB](/index.php/GRUB "GRUB"). Do not forget to update its configuration file:
 
 *   For Syslinux, it should be `APPEND root=/dev/sda1 ro` in `syslinux.cfg`.
 

@@ -70,7 +70,7 @@ $ xrandr --output LVDS --off --output HDMI-0 --auto
 **Note:**
 
 *   Changes you make using *xrandr* will only last through the current session.
-*   *xrandr* has a lot more capabilities - see `man xrandr` for details.
+*   *xrandr* has a lot more capabilities - see [xrandr(1)](https://www.x.org/archive/X11R7.5/doc/man/man1/xrandr.1.html) for details.
 
 ## Configuration
 

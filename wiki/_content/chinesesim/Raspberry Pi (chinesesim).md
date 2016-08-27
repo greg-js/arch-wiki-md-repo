@@ -33,7 +33,7 @@
 
 ## 前言
 
-这篇文章并不是详尽的安装指南，我们假设读者已经成功在树梅派上部署了ArchLinux系统。建议初次使用ArchLinux的用户通过阅读[Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")来了解如何在Arch Linux上执行一些如创建用户、设置系统的一般性任务。
+这篇文章并不是详尽的安装指南，我们假设读者已经成功在树梅派上部署了ArchLinux系统。
 
 **Note:** ArchLinux的ARM架构支持由 [http://archlinuxarm.org](http://archlinuxarm.org) 社区提供，而非Arch Linux社区官方支持。任何关于ARM架构下特有问题的讨论将会被关闭，详见[Arch Linux distribution support ONLY](/index.php/Forum_etiquette#Arch_Linux_distribution_support_.2Aonly.2A "Forum etiquette") 政策
 
@@ -193,7 +193,7 @@ $ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
 
 ## Tips for maximizing SD card performance
 
-See [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance") for the general performance improvements.
+See [Improving performance](/index.php/Improving_performance "Improving performance") for the general performance improvements.
 
 ### Enable fsck on boot
 

@@ -29,7 +29,7 @@ When you turn on the computer, to enter the BIOS settings menu, press the F2 key
 
 ## Installing the Base System
 
-Please refer to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for a detailed step-by-step guide for installing Arch to your Eee PC. If you are more technically inclined, refer to the short [Installation guide](/index.php/Installation_guide "Installation guide").
+See [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Configuring Xorg for Intel Graphics and Synaptics Touchpad
 

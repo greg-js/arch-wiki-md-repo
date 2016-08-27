@@ -26,10 +26,6 @@
 
 	Οδηγίες για τα μέλη του φόρουμ του Arch Linux.
 
-	[Beginners' Guide](/index.php/Beginners%27_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Beginners' guide (Ελληνικά)")
-
-	Ένας οδηγός για την πλήρη διαδικασία της εγκατάστασης και της ρύθμισης του Arch Linux. Έχει γραφτεί για αρχάριους και νέους χρήστες.
-
 	[Installation Guide](/index.php/Installation_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Installation guide (Ελληνικά)")
 
 	Ένας συνοπτικός οδηγός εγκατάστασης. Απευθύνεται σε πεπειραμένους χρήστες του Arch.

@@ -30,10 +30,6 @@ Sekančios nuorodos yra naudingos pradedantiems dirbti su Arch Linux.
 
 	Trumpas vadovas kaip redaguoti ir prisidėti prie Arch Linux wiki.
 
-	[Beginners' guide (Lietuviškai)](/index.php/Beginners%27_guide_(Lietuvi%C5%A1kai) "Beginners' guide (Lietuviškai)")
-
-	Arch Linux vadovas per visus įdiegimo ir konfigūravimo žingsnius; parašytas naujiems, nepatyrusiems vartotojams.
-
 	[Official Arch Linux Install Guide (Lietuviškai)](/index.php?title=Official_Arch_Linux_Install_Guide_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Official Arch Linux Install Guide (Lietuviškai) (page does not exist)")
 
 	Daug bendresnis įdiegimo vadovas; darant prielaidą, kad vartotojas yra patyręs UNIX/GNU/Linux metodikoje.

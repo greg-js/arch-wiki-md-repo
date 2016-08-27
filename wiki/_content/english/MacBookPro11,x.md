@@ -13,9 +13,8 @@ This wiki page should help you in getting your MacBook Pro from Late 2013 or Mid
     *   [2.4 Bootloader](#Bootloader)
         *   [2.4.1 Using the MacBook's native EFI bootloader (recommended)](#Using_the_MacBook.27s_native_EFI_bootloader_.28recommended.29)
             *   [2.4.1.1 Method 1: creating an extra apple-format bootable partition with GRUB](#Method_1:_creating_an_extra_apple-format_bootable_partition_with_GRUB)
-            *   [2.4.1.2 Method 2: Using the default EFI System Partition with Grub](#Method_2:_Using_the_default_EFI_System_Partition_with_Grub)
         *   [2.4.2 Direct EFI booting (rEFInd)](#Direct_EFI_booting_.28rEFInd.29)
-        *   [2.4.3 Direct EFI booting (gummiboot)](#Direct_EFI_booting_.28gummiboot.29)
+        *   [2.4.3 Direct EFI booting (systemd-boot)](#Direct_EFI_booting_.28systemd-boot.29)
         *   [2.4.4 GRUB (with OS X)](#GRUB_.28with_OS_X.29)
 *   [3 Post installation](#Post_installation)
     *   [3.1 Console](#Console_2)
@@ -62,7 +61,7 @@ Dual booting with OS X may be desirable if you wish to update firmware. If this 
 
 ### Booting the live image
 
-To begin your installation, download the current [Archboot](/index.php/Archboot "Archboot") ISO and write it to your USB drive according to the [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") instructions. Boot from the created USB drive by selecting it in the Apple boot manager which is accessible by holding `Alt` on power on.
+To begin your installation, download the current Arch Linux ISO and write it to your USB drive according to the [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") instructions. Boot from the created USB drive by selecting it in the Apple boot manager which is accessible by holding `Alt` on power on.
 
 rEFIt and [REFInd](/index.php/REFInd "REFInd") depending on how they are configured can also allow you to boot from the media.
 
@@ -109,11 +108,7 @@ This will give you a package (`broadcom-wl-*.pkg.tar.xz`) which can be installed
 
 You may now use `wifi-menu` to connect to your network of choice.
 
-**Note:** You need to repeat this process when you have finished your installation and booting into the system for the first time. If kernel versions differ, you may want to ensure to install a number of essential packages while you have connectivity and before you boot into your system ,
-
-these allow you to build the broadcom driver again and connect (provided you put the AUR tarball for the driver on USB drive too):
-
-[dkms](https://www.archlinux.org/packages/?name=dkms),[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) ([dialog](https://www.archlinux.org/packages/?name=dialog) and [netctl](https://www.archlinux.org/packages/?name=netctl) are needed if you want to use `wifi-menu` again after you boot)
+**Note:** You need to repeat this process when you have finished your installation and booting into the system for the first time. If kernel versions differ, you may want to ensure to install a number of essential packages while you have connectivity and before you boot into your system, these allow you to build the broadcom driver again and connect (provided you put the AUR tarball for the driver on USB drive too): [dkms](https://www.archlinux.org/packages/?name=dkms),[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) ([dialog](https://www.archlinux.org/packages/?name=dialog) and [netctl](https://www.archlinux.org/packages/?name=netctl) are needed if you want to use `wifi-menu` again after you boot)
 
 ### Bootloader
 
@@ -213,17 +208,15 @@ Generate `grub.cfg` and `boot.efi` from Arch Linux:
 
 ```
 
-##### Method 2: Using the default EFI System Partition with Grub
-
 #### Direct EFI booting (rEFInd)
 
 See: [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders")
 
-As of April 2016, rEFInd(0.10.2) can automatically detect the Arch kernel. So this is should be the easiest way. Simply install rEFInd. If you follow [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), you can simply skip [Beginners' guide#Install_a_boot_loader](/index.php/Beginners%27_guide#Install_a_boot_loader "Beginners' guide").
+As of April 2016, rEFInd(0.10.2) can automatically detect the Arch kernel. So this is should be the easiest way. Simply install rEFInd. When following the [Installation guide](/index.php/Installation_guide "Installation guide"), you can skip [Installation guide#Boot loader](/index.php/Installation_guide#Boot_loader "Installation guide").
 
-#### Direct EFI booting (gummiboot)
+#### Direct EFI booting (systemd-boot)
 
-See [Beginners' guide#For_UEFI_motherboards](/index.php/Beginners%27_guide#For_UEFI_motherboards "Beginners' guide")
+See [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
 #### GRUB (with OS X)
 
@@ -234,7 +227,7 @@ Another solution is to install [GRUB](/index.php/GRUB "GRUB"). Edit `/tmp/instal
 Now cd into `/tmp/install/` and create the GRUB image by running:
 
 ```
-grub-mkstandalone -o bootx64.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
+$ grub-mkstandalone -o bootx64.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
 
 ```
 
@@ -245,10 +238,10 @@ Copy this file to the MacBook's EFI partition. The downside of this method is th
 To generate a nicer config use: `grub-mkconfig`, remove `quiet` if you like the text, then to update your GRUB post-installation, do this to make the GRUB EFI file and put it in the EFI partition:
 
 ```
-cd /
-grub-mkstandalone -o bootx64.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
-sudo mount /dev/sda1 /mnt
-sudo cp bootx64.efi /mnt/EFI/boot/bootx64.efi
+# cd /
+# grub-mkstandalone -o bootx64.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
+# mount /dev/sda1 /mnt
+# cp bootx64.efi /mnt/EFI/boot/bootx64.efi
 
 ```
 
@@ -375,9 +368,12 @@ I'm not sure if the vgaswitcheroo commands actually do anything, I need somebody
 
 To see if you dedicated GPU is actually disabled, run:
 
-`sudo cat /sys/kernel/debug/vgaswitcheroo/switch`
+```
+# cat /sys/kernel/debug/vgaswitcheroo/switch
 
-NOTICE: gpu-switch has been tested only on a select few models, those being MacBookPro9,1, MacBookPro10,1, and MacBookPro11,3\. Use at your own risk.
+```
+
+**Note:** gpu-switch has been tested only on a select few models, those being MacBookPro9,1, MacBookPro10,1, and MacBookPro11,3\. Use at your own risk.
 
 ### Sound
 

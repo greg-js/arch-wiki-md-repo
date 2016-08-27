@@ -105,7 +105,7 @@ $ ssh *myserver*
 
 ```
 
-See the `ssh_config` [man page](/index.php/Man_page "Man page") for more information.
+See [ssh_config(5)](http://man7.org/linux/man-pages/man5/ssh_config.5.html) for more information.
 
 Some options do not have command line switch equivalents, but you can specify config options on the command line with `-o`. For example `-oKexAlgorithms=+diffie-hellman-group1-sha1`.
 
@@ -136,7 +136,7 @@ PermitRootLogin no
 
 ```
 
-**Note:** `PermitRootLogin prohibit-password` is the default since version 7.0p1\. See `man sshd_config`.
+**Note:** `PermitRootLogin prohibit-password` is the default since version 7.0p1\. See [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html).
 
 To add a nice welcome message (e.g. from the `/etc/issue` file), configure the `Banner` option:
 
@@ -450,7 +450,7 @@ Enjoy your secure tunnel!
 
 X11 forwarding is a mechanism that allows graphical interfaces of X11 programs running on a remote system to be displayed on a local client machine. For X11 forwarding the remote host does not need to have a full X11 system installed, however it needs at least to have *xauth* installed. *xauth* is a utility that maintains `Xauthority` configurations used by server and client for authentication of X11 session ([source](http://xmodulo.com/2012/11/how-to-enable-x11-forwarding-using-ssh.html)).
 
-**Warning:** X11 forwarding has important security implications which should be at least acknowledged by reading relevant sections of `ssh`, `sshd_config` and `ssh_config` manual pages. See also [a short writeup](https://security.stackexchange.com/questions/14815/security-concerns-with-x11-forwarding)
+**Warning:** X11 forwarding has important security implications which should be at least acknowledged by reading relevant sections of [ssh(1)](http://man7.org/linux/man-pages/man1/ssh.1.html), [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html), and [ssh_config(5)](http://man7.org/linux/man-pages/man5/ssh_config.5.html) manual pages. See also [a short writeup](https://security.stackexchange.com/questions/14815/security-concerns-with-x11-forwarding)
 
 #### Setup
 
@@ -458,7 +458,7 @@ On the remote system:
 
 *   [install](/index.php/Pacman#Installing_specific_packages "Pacman") [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) and [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) from the [official repositories](/index.php/Official_repositories "Official repositories")
 *   in `/etc/ssh/ssh**d**_config`:
-    *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to *yes*, and that `X11DisplayOffset` is set to *10* (those are the default values if nothing has been changed, see `man sshd_config`)
+    *   verify that `AllowTcpForwarding` and `X11UseLocalhost` options are set to *yes*, and that `X11DisplayOffset` is set to *10* (those are the default values if nothing has been changed, see [sshd_config(5)](http://man7.org/linux/man-pages/man5/sshd_config.5.html))
     *   set `X11Forwarding` to *yes*
 *   then [restart](/index.php/Restart "Restart") the [*sshd* daemon](#Daemon_management).
 
@@ -503,7 +503,7 @@ $ xhost +hostname
 
 ```
 
-where hostname is the name of the particular host you want to forward to. See `man xhost` for more details.
+where hostname is the name of the particular host you want to forward to. See [xhost(1)](https://docs.oracle.com/cd/E36784_01/html/E36870/xhost-1.html) for more details.
 
 Be careful with some applications as they check for a running instance on the local machine. [Firefox](/index.php/Firefox "Firefox") is an example: either close the running Firefox instance or use the following start parameter to start a remote instance on the local machine:
 
@@ -577,7 +577,7 @@ However, it is likely that port 443 is already in use by a web server serving HT
 
 **Tip:** If you intend to use SSH for SFTP or SCP, installing [openssh-hpn-git](https://aur.archlinux.org/packages/openssh-hpn-git/) can significantly increase throughput.[[7]](https://www.psc.edu/index.php/hpn-ssh)
 
-There are several [client configuration](#Configuration) options which can speed up connections either globally or for specific hosts. See the `ssh_config(5)` manual page for full description of these options.
+There are several [client configuration](#Configuration) options which can speed up connections either globally or for specific hosts. See [ssh_config(5)](http://man7.org/linux/man-pages/man5/ssh_config.5.html) for full descriptions of these options.
 
 You can make all sessions to the same host share a single connection using these options:
 
@@ -592,7 +592,7 @@ where `~/.ssh/sockets` can be any directory not writable by other users.
 
 Another option to improve speed is to enable compression with the `Compression yes` option or the `-C` flag.
 
-**Warning:** `man ssh` states that "*Compression is desirable on modem lines and other slow connections, but will only slow down things on fast networks*". This tip might be counterproductive depending on your network configuration.
+**Warning:** [ssh(1)](http://man7.org/linux/man-pages/man1/ssh.1.html) states that "*Compression is desirable on modem lines and other slow connections, but will only slow down things on fast networks*". This tip might be counterproductive depending on your network configuration.
 
 Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily inet` option or `-4` flag.
 
@@ -819,7 +819,7 @@ Also make sure that other "Port" configuration lines in the file are commented o
 
 #### Read from socket failed: connection reset by peer
 
-Recent versions of openssh sometimes fail with the above error message when connecting to older ssh servers. This can be worked around by setting various [client options](#Configuration) for that host. See the `ssh_config` manual page for more information about the following options.
+Recent versions of openssh sometimes fail with the above error message when connecting to older ssh servers. This can be worked around by setting various [client options](#Configuration) for that host. See [ssh_config(5)](http://man7.org/linux/man-pages/man5/ssh_config.5.html) for more information about the following options.
 
 The problem could be the `ecdsa-sha2-nistp*-cert-v01@openssh` elliptical host key algorithms. These can be disabled by setting `HostKeyAlgorithms` to a list excluding those algorithms.
 

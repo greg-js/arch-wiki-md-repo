@@ -3,8 +3,6 @@ There are a lot of netbooks under the Aspire One banner. Here's a third-party we
 *   Booted with acpi=off to keep from hanging on acpi module loading
 *   Had to drop to other console, wipe partition table with fdisk before cfdisk would work
 
-See the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") for more information.
-
 ## Contents
 
 *   [1 Wifi](#Wifi)

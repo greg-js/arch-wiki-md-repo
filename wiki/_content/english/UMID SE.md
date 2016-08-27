@@ -1,4 +1,4 @@
-This guide assumes that you are experienced in installing Archlinux. If you are not experienced, please read this guide in parallel with the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or the [Installation guide](/index.php/Installation_guide "Installation guide"). No assumptions are made on your desired environment (DE/WM). Note that the SSD will completely be wiped if you follow this guide without alterations.
+This guide assumes that you are experienced in installing Archlinux. If you are not experienced, please read this guide in parallel with the [Installation guide](/index.php/Installation_guide "Installation guide"). No assumptions are made on your desired environment (DE/WM). Note that the SSD will completely be wiped if you follow this guide without alterations.
 
 ## Contents
 

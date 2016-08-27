@@ -51,7 +51,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 ## Usage
 
-What follows is just a small sample of the operations that *pacman* can perform. To read more examples, refer to [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
+What follows is just a small sample of the operations that *pacman* can perform. To read more examples, refer to [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html#_examples).
 
 **Tip:** For those who have used other Linux distributions before, there is a helpful [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") article.
 
@@ -441,11 +441,11 @@ Use `--asexplicit` to do the opposite operation.
 
 ## Configuration
 
-*pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html).
+*pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html).
 
 ### General options
 
-General options are in the `[options]` section. Read the [man page](/index.php/Man_page "Man page") or look in the default `pacman.conf` for information on what can be done here.
+General options are in the `[options]` section. Read [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) or look in the default `pacman.conf` for information on what can be done here.
 
 #### Comparing versions before updating
 
@@ -723,7 +723,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 ## See also
 
 *   [Pacman's homepage](https://www.archlinux.org/pacman/)
-*   [libalpm(3) Manual Page](https://www.archlinux.org/pacman/libalpm.3.html)
-*   [pacman(8) Manual Page](https://www.archlinux.org/pacman/pacman.8.html)
-*   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
-*   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
+*   [libalpm(3)](https://www.archlinux.org/pacman/libalpm.3.html)
+*   [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)
+*   [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html)
+*   [repo-add(8)](https://www.archlinux.org/pacman/repo-add.8.html)

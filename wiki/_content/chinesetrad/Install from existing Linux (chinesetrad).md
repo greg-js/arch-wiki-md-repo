@@ -297,8 +297,6 @@ Detailed instructions for [GRUB](/index.php/GRUB "GRUB") and [LILO](/index.php/L
 
 ### Finishing touches
 
-See [Beginners Guide:Configure your System](/index.php/Beginners%27_guide#Configure_the_System "Beginners' guide"). You can ignore 2.11, but the rest of that guide should be of use to you in post-installation configuration of your system.
-
 [Exit your chroot](/index.php/Change_root#Cleaning_up "Change root"):
 
 ```

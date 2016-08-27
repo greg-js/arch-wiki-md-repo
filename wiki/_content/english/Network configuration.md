@@ -90,16 +90,22 @@ If not, check for cable issues before diagnosing further.
 
 ## Set the hostname
 
-A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network: it is configured in `/etc/hostname`. The file can contain the system's domain name, if any. To set the hostname, do:
+A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network, configured in `/etc/hostname`—see [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) for details. The file can contain the system's domain name, if any. To set the hostname, edit `/etc/hostname` to contain a single line containing `*myhostname*`:
+
+ `/etc/hostname` 
+```
+*myhostname*
+
+```
+
+**Tip:** For advice on choosing a hostname, see [RFC 1178](https://tools.ietf.org/html/rfc1178).
+
+Alternatively, using [hostnamectl(1)](http://man7.org/linux/man-pages/man1/hostnamectl.1.html):
 
 ```
 # hostnamectl set-hostname *myhostname*
 
 ```
-
-This will put `*myhostname*` into `/etc/hostname`. See `man 5 hostname` and `man 1 hostnamectl` for details.
-
-**Note:** *hostnamectl* does not work in the Arch Linux installation chroot environment. To set the hostname in the installation chroot environment, manually [edit](/index.php/Edit "Edit") `/etc/hostname` to contain a single line containing `*myhostname*`.
 
 It is recommended to also set the hostname in `/etc/hosts`:
 
@@ -114,16 +120,18 @@ It is recommended to also set the hostname in `/etc/hosts`:
 ::1		localhost.localdomain	localhost	 *myhostname*
 ```
 
+See [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) for details.
+
 **Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module (enabled by default in `/etc/nsswitch.conf`), which means that changing hostnames in `/etc/hosts` is normally not necessary. However several users have reported bugs such as delays in network-based applications when the hostname was not set correctly in `/etc/hosts`. See [#Local network hostname resolution](#Local_network_hostname_resolution) for details.
 
-To temporarily set the hostname (until reboot), use *hostname* from [inetutils](https://www.archlinux.org/packages/?name=inetutils):
+To temporarily set the hostname (until reboot), use [hostname(1)](http://man7.org/linux/man-pages/man1/hostname.1.html) from [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
 # hostname *myhostname*
 
 ```
 
-To set the "pretty" hostname and other machine metadata, see the manpage for `machine-info`.
+To set the "pretty" hostname and other machine metadata, see [machine-info(5)](http://man7.org/linux/man-pages/man5/machine-info.5.html#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
 
 ## Device driver
 
@@ -294,7 +302,7 @@ If you are running a private network, it is safe to use IP addresses in `192.168
 
 **Warning:**
 
-*   Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797)
+*   Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
 *   If you share your Internet connection from a Windows machine without a router, be sure to use static IP addresses on both computers to avoid LAN problems.
 
 #### netctl

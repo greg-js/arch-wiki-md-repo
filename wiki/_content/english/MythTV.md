@@ -250,7 +250,7 @@ The kernel takes time to register the frontend devices (such as those of TurboSi
 
 The solution consists in starting the `mythbackend.service` only after the devices are available:
 
-*   [Create](/index.php/Edit "Edit") file `/etc/udev/rules.d/99-mythbackend.rules`:
+*   [Create](/index.php/Textedit "Textedit") file `/etc/udev/rules.d/99-mythbackend.rules`:
 
 ```
 #
@@ -283,7 +283,7 @@ One problem I encountered running mythfrontend 0.20.0.2007013 on fglrx was that 
 
 ### Nvidia XvMC Setup
 
-Assuming you have loaded the proprietary Nvidia drivers from pacman you may need to [create](/index.php/Edit "Edit") `/etc/X11/XvMCConfig` with the following line:
+Assuming you have loaded the proprietary Nvidia drivers from pacman you may need to [create](/index.php/Textedit "Textedit") `/etc/X11/XvMCConfig` with the following line:
 
  `libXvMCNVIDIA_dynamic.so.1` 
 

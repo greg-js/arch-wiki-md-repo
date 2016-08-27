@@ -28,10 +28,6 @@ De følgende links er nyttige til at få godt begyndt med Arch Linux.
 
 	En kort vejledning til redigering og bidrag til wikien.
 
-	[Begynderguiden](/index.php/Beginners%27_guide_(Dansk) "Beginners' guide (Dansk)")
-
-	En guide gennem en komplet installation og konfiguration af Arch Linux; skrevet for nye eller uerfarne brugere.
-
 	[Installation guide](/index.php/Installation_guide "Installation guide")
 
 	En mere generel installationsguide som går ud fra at brugeren er mere erfaren med UNIX/GNU/Linux metoder. Officiel og derfor på engelsk.

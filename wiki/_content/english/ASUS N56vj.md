@@ -3,10 +3,9 @@ This page is a set of instructions, known issues, tips and workarounds for insta
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuring](#Configuring)
+*   [2 Configuration](#Configuration)
     *   [2.1 Video](#Video)
     *   [2.2 Desktop Environment](#Desktop_Environment)
-    *   [2.3 Sound](#Sound)
 
 ## Installation
 
@@ -14,19 +13,17 @@ This page is a set of instructions, known issues, tips and workarounds for insta
 
 **Note:** To choose a boot device: please press `Escape` after machine starts and then choose the suitable installation source e.g. [USB Installation Media](/index.php/USB_Installation_Media "USB Installation Media").
 
-An installation process is quite common. Please refer to [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or [Installation guide](/index.php/Installation_guide "Installation guide") regarding installation on machines with UEFI motherboards. Please be advised that you **do not need** to create/format EFI partition in case you want to keep Windows 8 installed.
+An installation process is quite common. Please refer to the [Installation guide](/index.php/Installation_guide "Installation guide") regarding installation on machines with UEFI motherboards. Please be advised that you **do not need** to create/format EFI partition in case you want to keep Windows 8 installed.
 
-* * *
-
-## Configuring
-
-Thus, post-installation steps are very-well described in [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and most features will work out of the box, there are some specific tips for ASUS N-series laptops (N56/76).
+## Configuration
 
 ### Video
 
 **Note:** You may want to read more about benchmark tools in the [Benchmarking](/index.php/Benchmarking "Benchmarking") article.
 
-Disabling a discrete GPU is well-written described in [Bumblebee](/index.php/Bumblebee "Bumblebee") article. However, there is a poorly explored issue with
+Disabling a discrete GPU is well-written described in [Bumblebee](/index.php/Bumblebee "Bumblebee") article.
+
+However, there is a poorly explored issue with
 
 ```
 $ optirun *command1*
@@ -61,8 +58,4 @@ Since the issue is not resoloved, you will help the community if you post your w
 
 ### Desktop Environment
 
-As Arch Linux is all about [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and you are free to choose whatever DE you want. However you should keep in mind that ASUS N56-VJ laptops have a high pixel density for a 15,6" displays. In this case you may want to consider DE's supporting such density, e.g. GNOME 3.10.x or later.
-
-### Sound
-
-In development
+However you should keep in mind that ASUS N56-VJ laptops have a high pixel density for a 15,6" displays. In this case you may want to consider DE's supporting such density, e.g. GNOME 3.10.x or later.

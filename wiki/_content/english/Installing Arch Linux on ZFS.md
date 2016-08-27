@@ -1,4 +1,4 @@
-This article details the steps required to install Arch Linux onto a ZFS root filesystem. It is a supplement to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+This article details the steps required to install Arch Linux onto a ZFS root filesystem.
 
 ## Contents
 
@@ -35,7 +35,7 @@ Manually installing Arch using ZFS is quite an involved undertaking but thankful
 
 ## Partition the destination drive
 
-Review [Beginners' guide#Prepare the storage devices](/index.php/Beginners%27_guide#Prepare_the_storage_devices "Beginners' guide") for information on determining the partition table type to use for ZFS. ZFS supports GPT and MBR partition tables.
+Review [Partitioning](/index.php/Partitioning "Partitioning") for information on determining the partition table type to use for ZFS. ZFS supports GPT and MBR partition tables.
 
 ZFS manages its own partitions, so only a basic partition table scheme is required. The partition that will contain the ZFS filesystem should be of the type `bf00`, or "Solaris Root".
 
@@ -225,13 +225,13 @@ if you do not have `/etc/zfs/zpool.cache`, create it:
 
 ## Install and configure Arch Linux
 
-Follow the following steps using the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). It will be noted where special consideration must be taken for ZFSonLinux.
+Follow the following steps using the [Installation guide](/index.php/Installation_guide "Installation guide"). It will be noted where special consideration must be taken for ZFSonLinux.
 
 *   First mount any legacy or non-ZFS boot or system partitions using the mount command.
 
 *   Install the base system.
 
-*   The procedure described in [Beginners' guide#Generate an fstab](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") is usually overkill for ZFS. ZFS usually auto mounts its own partitions, so we do not need ZFS partitions in `fstab` file, unless the user made legacy datasets of system directories. To generate the `fstab` for filesystems, use:
+*   The procedure described in [Installation guide#Fstab](/index.php/Installation_guide#Fstab "Installation guide") is usually overkill for ZFS. ZFS usually auto mounts its own partitions, so we do not need ZFS partitions in `fstab` file, unless the user made legacy datasets of system directories. To generate the `fstab` for filesystems, use:
 
 ```
 # genfstab -U -p /mnt >> /mnt/etc/fstab
@@ -318,7 +318,7 @@ Until this gets fixed, the easiest workaround is to create a symbolic link from 
 
 ### For UEFI motherboards
 
-Use `EFISTUB` and `rEFInd` for the UEFI boot loader. See [Beginners' guide#For UEFI motherboards](/index.php/Beginners%27_guide#For_UEFI_motherboards "Beginners' guide"). The kernel parameters in `refind_linux.conf` for ZFS should include `zfs=bootfs` or `zfs=zroot` so the system can boot from ZFS. The `root` and `rootfstype` parameters are not needed.
+Use `EFISTUB` and `rEFInd` for the UEFI boot loader. The kernel parameters in `refind_linux.conf` for ZFS should include `zfs=bootfs` or `zfs=zroot` so the system can boot from ZFS. The `root` and `rootfstype` parameters are not needed.
 
 ## Unmount and restart
 

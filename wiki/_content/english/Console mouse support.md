@@ -40,4 +40,4 @@ GPM_ARGS="-m /dev/input/mice -t ps2"
 
 Once a suitable configuration has been found, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `gpm.service`.
 
-For more information see [man page](/index.php/Man_page "Man page") `gpm (8)`.
+For more information see [gpm(8)](http://linux.die.net/man/8/gpm).

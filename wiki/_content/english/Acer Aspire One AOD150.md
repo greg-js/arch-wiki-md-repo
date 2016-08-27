@@ -39,7 +39,7 @@ The AOD150 series netbook is known to be available in the following configuratio
 
 ## Arch Installation
 
-There are plenty of resources available to help new users install and configure a basic Arch Linux installation, including the [Installation guide](/index.php/Installation_guide "Installation guide") and the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+There are plenty of resources available to help new users install and configure a basic Arch Linux installation, including the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 The obvious consideration for netbooks in general is the lack of CD/DVD drives. Unless you are using an external optical drive you will want to stick to the USB image of the Arch snapshots.
 

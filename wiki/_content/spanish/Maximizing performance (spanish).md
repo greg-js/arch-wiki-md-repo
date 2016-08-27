@@ -102,7 +102,7 @@ Los efectos de la optimizacion son en su mayoría difíciles de juzgar. Sin emba
 
 ### Eligiendo y optimizando es sistema de archivos
 
-Elegir el mejor sistema de archivos para un sistema especifico es muy importante por que cada uno tiene su fuerte. La [guiá para principiantes](/index.php/Beginners%27_guide#Filesystem_Types "Beginners' guide") da un pequeño sumario de los mas populares.
+Elegir el mejor sistema de archivos para un sistema especifico es muy importante por que cada uno tiene su fuerte.
 
 #### Sumario
 

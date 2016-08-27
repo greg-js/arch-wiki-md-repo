@@ -12,6 +12,9 @@
     *   [4.2 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_2)
     *   [4.3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
         *   [4.3.1 XWayland](#XWayland)
+        *   [4.3.2 Запись скринкаста](#.D0.97.D0.B0.D0.BF.D0.B8.D1.81.D1.8C_.D1.81.D0.BA.D1.80.D0.B8.D0.BD.D0.BA.D0.B0.D1.81.D1.82.D0.B0)
+        *   [4.3.3 High DPI дисплеи](#High_DPI_.D0.B4.D0.B8.D1.81.D0.BF.D0.BB.D0.B5.D0.B8)
+        *   [4.3.4 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
 *   [5 GUI библиотеки](#GUI_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8)
     *   [5.1 GTK+](#GTK.2B)
     *   [5.2 Qt5](#Qt5)
@@ -119,30 +122,28 @@ $ weston-image image1.jpg image2.jpg...
 
 ### Настройка
 
-Пример конфигурационного файла для раскладки клавиатуры, выбранных модулей и видоизмененного интерфейса. Подробности смотрите в `man weston.ini`:
+Пример конфигурационного файла для раскладки клавиатуры, выбранных модулей и видоизмененного интерфейса. Подробности смотрите в [странице справочного руководства](/index.php/%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0 "Страница справочного руководства") `weston.ini`:
 
  `~/.config/weston.ini` 
 ```
 [core]
-shell=desktop-shell.so
-### для поддержки xwayland следущая строка должна быть раскоментирована ###
+# поддержка xwayland
 modules=xwayland.so
 
 [libinput]
 enable_tap=true
 
 [shell]
-background-image=/usr/share/archlinux/wallpaper/archlinux-simplyblack.png
-### цвета в формате AARRGGBB ###
-background-color=0x00ffffff
-panel-color=0x00ffffff
+background-image=/usr/share/backgrounds/gnome/Aqua.jpg
+background-color=0xff002244
+panel-color=0x90ff0000
 locking=true
 animation=zoom
 close-animation=fade
 focus-animation=dim-layer
 #binding-modifier=ctrl
-num-workspaces=6
-### для выбора темы курсора нужно установить xcursor-themes из Extra. ###
+#num-workspaces=6
+### для поддержки тем курсоров установите xcursor-themes из репозитория Extra. ###
 #cursor-theme=whiteglass
 #cursor-size=24
 
@@ -152,45 +153,10 @@ num-workspaces=6
 #homescreen=/usr/share/backgrounds/gnome/Blinds.jpg
 #animation=fade
 
-[keyboard]
-keymap_rules=evdev
-keymap_layout=us,ru
-keymap_options=grp:caps_toggle
-### keymap_options из /usr/share/X11/xkb/rules/base.lst ###
-
-[terminal]
-font=Terminus
-font-size=14
-#term=rxvt-unicode
-
-[launcher]
-icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
-path=/usr/bin/weston-terminal
-
-[launcher]
-icon=/usr/share/icons/hicolor/32x32/apps/wireshark.png
-path=/usr/bin/wireshark
-
-[launcher]
-icon=/usr/share/icons/hicolor/32x32/apps/firefox.png
-path=/usr/bin/firefox
-
-[launcher]
-icon=/usr/share/icons/gnome/32x32/apps/arts.png
-path=/usr/bin/weston-flower
-
-[screensaver]
-# Раскоментируйте путь, чтобы отключить заставку
-path=/usr/libexec/weston-screensaver
-duration=600
-
-[input-method]
-path=/usr/libexec/weston-keyboard
-
-###  для дисплея ноутбука  ###
-[output]
-name=LVDS1
-mode=1280x800
+### для дисплея ноутбука ###
+#[output]
+#name=LVDS1
+#mode=1680x1050
 #transform=90
 
 #[output]
@@ -204,20 +170,84 @@ mode=1280x800
 #mode=1024x768
 #transform=flipped-270
 
+[input-method]
+#path=/usr/lib/weston/weston-keyboard
+
+[keyboard]
+keymap_rules=evdev
+#keymap_layout=gb,de
+#keymap_options=caps:ctrl_modifier,shift:both_capslock_cancel
+### keymap_options from /usr/share/X11/xkb/rules/base.lst ###
+numlock-on=true
+
+[terminal]
+#font=DroidSansMono
+#font-size=14
+
+[launcher]
+icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
+path=/usr/bin/weston-terminal
+
+[launcher]
+icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
+path=/usr/bin/gnome-terminal
+
+[launcher]
+icon=/usr/share/icons/hicolor/24x24/apps/firefox.png
+path=/usr/bin/firefox
+
+[launcher]
+icon=/usr/share/weston/icon_flower.png
+path=/usr/bin/weston-flower
+
+[screensaver]
+# Uncomment path to disable screensaver
+path=/usr/libexec/weston-screensaver
+duration=600
+
 ```
 
 #### XWayland
 
-Пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) доступен в официальных репозиториях.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland).
 
 Если вам понадобится запускать X-приложения из Weston, он будет вызывать Xwayland для обслуживания запросов. Для этого добавьте следующие строки в файл конфигурации:
 
  `~/.config/weston.ini` 
 ```
 [core]
-modules=xwayland.so,desktop-shell.so
+modules=xwayland.so
 
 ```
+
+#### Запись скринкаста
+
+У Weston есть встроенный записыватель скринкастов, который может быть запущен и остановлен посредством комбинации клавиш `Super+r`. Скринкасты сохраняются в файл `capture.wcap` в текущей рабочей директории Weston.
+
+Формат WCAP - особый lossless видео формат, который записывает только разницу между кадрами, характерный для Weston. Чтобы просмотреть записанный скринкаст, файл WCAP нужно преобразовать в формат, который сможет понять медиаплеер. Сначала преобразуем картинку в формат пикселей YUV:
+
+```
+$ wcap-decode capture.wcap --yuv4mpeg2 > capture.y4m
+
+```
+
+Файл YUV может быть преобразован в другие форматы используя [FFmpeg](/index.php/FFmpeg "FFmpeg").
+
+#### High DPI дисплеи
+
+Для [Retina](https://en.wikipedia.org/wiki/ru:Retina "wikipedia:ru:Retina") или [HiDPI](/index.php/HiDPI "HiDPI") дисплеев, используйте:
+
+ `~/.config/weston.ini` 
+```
+[output]
+name=...
+scale=2
+
+```
+
+#### Шрифты
+
+Weston использует стандартный шрифт sans-serif для заголовков окон, часов и прочих. Смотрите [Font configuration (Русский)#Заменить или установить шрифты по умолчанию](/index.php/Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.B8.D0.BB.D0.B8_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.B8.D1.82.D1.8C_.D1.88.D1.80.D0.B8.D1.84.D1.82.D1.8B_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E "Font configuration (Русский)") для получения инструкций о том, как изменить этот шрифт.
 
 ## GUI библиотеки
 

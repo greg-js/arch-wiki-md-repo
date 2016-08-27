@@ -20,10 +20,6 @@
 
 	คนอื่นพูดถึงเราอย่างไร
 
-	[สำหรับมือใหม่](/index.php/Beginners%27_guide "Beginners' guide")
-
-	คู่มือแบบละเอียดสำหรับการติดตั้งและตั้งค่า Arch Linux
-
 	[คู่มือการติดตั้ง](/index.php/Installation_guide_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Installation guide (ไทย)")
 
 	คู่มือการติดตั้งฉบับกระชับสำหรับผู้มีประสบการณ์การใช้ Arch อยู่แล้ว

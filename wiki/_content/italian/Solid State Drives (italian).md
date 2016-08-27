@@ -463,7 +463,7 @@ E' possibile posizionare la partizione di swap su un SSD. Considerare comunque c
 
 ```
 
-O più semplicemente modificare `/etc/sysctl.d/99-sysctl.conf` come indicato nell'articolo del wiki [Maximizing Performance](/index.php/Maximizing_performance#Swappiness "Maximizing performance").
+O più semplicemente modificare `/etc/sysctl.d/99-sysctl.conf` come indicato nell'articolo del wiki [Maximizing Performance](/index.php/Improving_performance#Swappiness "Improving performance").
 
 ```
 vm.swappiness=1

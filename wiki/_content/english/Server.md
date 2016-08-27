@@ -52,7 +52,7 @@ In most GNU/Linux server operating systems, you have two options:
 
 **Note:** If you have services on your server that need to be administered using a GUI and cannot be done remotely, you must choose the second option.
 
-For the installation of Arch Linux, please refer to the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [General recommendations](/index.php/General_recommendations "General recommendations") articles, but do not go any further than [this section](/index.php/General_recommendations#Graphical_user_interface "General recommendations") unless you require a GUI.
+For the installation of Arch Linux, please refer to the [Installation guide](/index.php/Installation_guide "Installation guide") and [General recommendations](/index.php/General_recommendations "General recommendations") articles, but do not go any further than [this section](/index.php/General_recommendations#Graphical_user_interface "General recommendations") unless you require a GUI.
 
 For remote access to this server, you need a static IP address/ domain name, or something like [No-Ip](http://www.noip.com).
 

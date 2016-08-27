@@ -262,7 +262,7 @@ ctl.!default {
 *   Reboot.
 *   After logging in, you will see QjackCtl in your system tray. Left-click on it.
 *   Start tweaking in the QjackCtl GUI. The info embedded in the shell-script setup above may be of some help :-) As may be the info in [this article](http://www.linuxjournal.com/article/8354). Just remember that you have to get your latency down to less than 5ms for live tone production or filtration of any sort, or the delay will be obvious to player and listener alike.
-*   From the [AUR](/index.php/AUR "AUR"), install [non-daw](https://aur.archlinux.org/packages/non-daw/). One of the components of this package is called non-session-manager; it has the function of setting up "sessions": sets of other audio software items which Jack (through the QjackCtl patchbay or not!) will wire together. NSM can handle as many different sessions as you wish to set up; and as a result, it's all GUI, apart from the one rc.local edit in the beginning.
+*   From the [AUR](/index.php/AUR "AUR"), install [non-sessionmanager-git](https://aur.archlinux.org/packages/non-sessionmanager-git/); it has the function of setting up "sessions": sets of other audio software items which Jack (through the QjackCtl patchbay or not!) will wire together. NSM can handle as many different sessions as you wish to set up; and as a result, it's all GUI, apart from the one rc.local edit in the beginning.
 
 ### Playing nice with ALSA
 

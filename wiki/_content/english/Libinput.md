@@ -8,13 +8,11 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Graphical tools](#Graphical_tools)
+    *   [2.1 Common options](#Common_options)
+    *   [2.2 Graphical tools](#Graphical_tools)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Touchpad tapping](#Touchpad_tapping)
-    *   [3.2 Natural scrolling](#Natural_scrolling)
-    *   [3.3 Edge Scrolling](#Edge_Scrolling)
-    *   [3.4 Mouse button re-mapping](#Mouse_button_re-mapping)
-    *   [3.5 Gestures](#Gestures)
+    *   [3.1 Mouse button re-mapping](#Mouse_button_re-mapping)
+    *   [3.2 Gestures](#Gestures)
 *   [4 Debugging](#Debugging)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
 *   [5 See also](#See_also)
@@ -82,6 +80,33 @@ is a notebok without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. de
 
 Of course you can elect to use an alternative driver for one device and libinput for others. A number of factors may influence which driver to use. For example, in comparison to [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the libinput driver has fewer options to customize touchpad behaviour to one's own taste, but far more programmatic logic to process multitouch events (e.g. palm detection as well). Hence, it makes sense to try the alternative, if you are experiencing problems on your hardware with one driver or the other.
 
+### Common options
+
+Custom configuration files should be placed in `/etc/X11/xorg.conf.d/` and following a widely used naming schema `30-touchpad.conf` is often chosen as filename.
+
+**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/60-libinput.conf` for guidance and refer to the `libinput(4)` manual page for a detailed description of available configuration options.
+
+A basic configuration should have the following structure:
+
+ `/etc/X11/xorg.conf.d/30-touchpad.conf` 
+```
+Section "InputDevice"
+    Identifier "devname"
+    Driver "libinput"
+    Option "Device"   "devpath"
+    ...
+EndSection
+
+```
+
+You may define as many sections as you like in a single configuration file. To configure the device of your choice specify a filter by using `MatchIsPointer "on"`, `MatchIsKeyboard "on"`, `MatchIsTouchpad "on"` or `MatchIsTouchscreen "on"` and add your desired option. Common options include:
+
+*   `"Tapping" "on"`: tapping a.k.a. tap-to-click
+*   `"NaturalScrolling" "true"`: natural (reverse) scrolling
+*   `"ScrollMethod" "edge"`: edge (vertical) scrolling
+
+Bear in mind that some of them may only apply to certain devices.
+
 ### Graphical tools
 
 There are different GUI tools:
@@ -95,59 +120,6 @@ There are different GUI tools:
     *   [pointing-devices-kcm](https://github.com/amezin/pointing-devices-kcm) ([kcm-pointing-devices-git](https://aur.archlinux.org/packages/kcm-pointing-devices-git/)) is a new and rewritten KCM for all input devices supported by libinput.
 
 ## Tips and tricks
-
-### Touchpad tapping
-
-Tapping may be disabled by default. To enable it, add a configuration file:
-
- `/etc/X11/xorg.conf.d/30-touchpad.conf` 
-```
-Section "InputClass"
-        Identifier "MyTouchpad"
-        MatchIsTouchpad "on"
-        Driver "libinput"
-        Option "Tapping" "on"
-EndSection
-```
-
-### Natural scrolling
-
-To set up natural (reverse) scrolling, add the following configuration file:
-
- `/etc/X11/xorg.conf.d/20-natural-scrolling.conf` 
-```
-Section "InputClass"
-        Identifier "libinput pointer catchall"
-        MatchIsPointer "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-	Option "NaturalScrolling" "true"
-EndSection
-
-Section "InputClass"
-        Identifier "libinput touchpad catchall"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-	Option "NaturalScrolling" "true"
-EndSection
-```
-
-This will enable natural scrolling for any mice or touchpads.
-
-### Edge Scrolling
-
-To set up edge (vertical) scrolling, add the following configuration file:
-
- `/etc/X11/xorg.conf.d/30-touchpad.conf` 
-```
-Section "InputClass"
-        Identifier "MyTouchpad"
-        MatchIsTouchpad "on"
-        Driver "libinput"
-        Option "ScrollMethod" "edge"
-EndSection
-```
 
 ### Mouse button re-mapping
 

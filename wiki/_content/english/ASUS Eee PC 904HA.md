@@ -12,7 +12,10 @@
 
 # Installing Arch
 
-The installation process for the 904HA consists of a standard [USB stick installation](/index.php/Beginners%27_guide#USB_stick "Beginners' guide"). With installation version 2008.06, wifi will not work after installing, and ethernet may not either. To be safe for now, you may want to download the Core installation image and transfer the latest kernel sources to your Eee through some means after installing Arch - reuse your USB stick. You could then proceed to compiling a custom kernel following the instructions on this page.
+```
+With installation version 2008.06, wifi will not work after installing, and ethernet may not either. To be safe for now, you may want to download the Core installation image and transfer the latest kernel sources to your Eee through some means after installing Arch - reuse your USB stick. You could then proceed to compiling a custom kernel following the instructions on this page.
+
+```
 
 # Custom Kernel
 

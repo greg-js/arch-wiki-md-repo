@@ -24,10 +24,6 @@ Berikut adalah daftar artikel yang dapat Anda baca agar lebih paham tentang Arch
 
 ## Mulai menginstall Archlinux
 
-**[Panduan Archlinux (untuk pengguna pemula)](/index.php/Beginners%27_guide_(Indonesia) "Beginners' guide (Indonesia)")**
-
-	Panduan yang meliputi seluruh proses instalasi dan konfigurasi Archlinux diperuntukkan bagi **pemula**.
-
 **[Panduan Archlinux (untuk pengguna berpengalaman)](/index.php/Installation_guide "Installation guide")**
 
 	Panduan yang meliputi seluruh proses instalasi dan konfigurasi Archlinux diperuntukkan bagi **pengguna mahir**.

@@ -26,6 +26,8 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.7 Disable GTK+ 3](#Disable_GTK.2B_3)
     *   [4.8 White on white quick outline and type hierarchy](#White_on_white_quick_outline_and_type_hierarchy)
     *   [4.9 Freshplayerplugin](#Freshplayerplugin)
+    *   [4.10 Eclipse 4.6 may not open the marketplace properly](#Eclipse_4.6_may_not_open_the_marketplace_properly)
+    *   [4.11 Show in System Explorer does not work](#Show_in_System_Explorer_does_not_work)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -290,6 +292,20 @@ For GTK3 backend this should already be fixed. See [https://bugs.eclipse.org/bug
 ### Freshplayerplugin
 
 Eclipse is not compatible with [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/). See [https://github.com/i-rinat/freshplayerplugin/issues/298](https://github.com/i-rinat/freshplayerplugin/issues/298).
+
+### Eclipse 4.6 may not open the marketplace properly
+
+See [this](https://bugs.eclipse.org/bugs/show_bug.cgi?id=497729) bug. You can take following two steps to fix it:
+
+```
+eclipse -consoleLog -application org.eclipse.equinox.p2.director -uninstallIU org.apache.httpcomponents.httpclient/4.3.6.v201411290715
+cd /usr/lib/eclipse/ && sudo rm plugins/org.apache.httpcomponents.httpclient_4.3.6.v201411290715.jar
+
+```
+
+### Show in System Explorer does not work
+
+See [this](http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Freference%2Fref-9.htm&cp=0_4_1_52) guide. Go to **Window** > **Preferences** > **General** > **Workspace** and change the command launching system explorer. As Xfce user you may like to change it with `xfce4-terminal --working-directory ${selected_resource_loc`} to open a folder with the xfce4-terminal.
 
 ## See also
 

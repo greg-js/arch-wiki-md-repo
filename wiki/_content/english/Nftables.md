@@ -22,7 +22,8 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
             *   [5.2.1.1 Types](#Types)
             *   [5.2.1.2 Hooks](#Hooks)
             *   [5.2.1.3 Priorities](#Priorities)
-    *   [5.3 Deletion](#Deletion_2)
+    *   [5.3 Editing](#Editing)
+    *   [5.4 Deletion](#Deletion_2)
 *   [6 Rules](#Rules)
     *   [6.1 Listing](#Listing_3)
     *   [6.2 Creation](#Creation_3)
@@ -238,6 +239,22 @@ The ingress hook is an alternative to the existing `tc` utility.
 **Note:** Since the priority seems to be an unsigned integer, negative priorities will be converted into very high priorities.
 
 Priorities tell nftables which chains packets should pass through first. They are integers, and the higher the integer, the higher the priority.
+
+### Editing
+
+To edit a chain, simply call it by its name and define the rules you want to change.
+
+```
+# nft chain <table> <family> <chain> { [ type <type> hook <hook> device <device> priority <priority> \; policy <policy> \; ] }
+
+```
+
+If for example, you just want to change the input chain policy of the default table from "accept" to "drop"
+
+```
+# nft chain inet filter input { policy drop \; }
+
+```
 
 ### Deletion
 

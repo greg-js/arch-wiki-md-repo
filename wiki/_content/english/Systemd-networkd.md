@@ -7,10 +7,8 @@
     *   [1.2 Configuration examples](#Configuration_examples)
         *   [1.2.1 Wired adapter using DHCP](#Wired_adapter_using_DHCP)
         *   [1.2.2 Wired adapter using a static IP](#Wired_adapter_using_a_static_IP)
-        *   [1.2.3 Wired adapter using both DHCP and a static IP](#Wired_adapter_using_both_DHCP_and_a_static_IP)
-        *   [1.2.4 Wireless adapter](#Wireless_adapter)
-        *   [1.2.5 Wired and wireless adapters on the same machine](#Wired_and_wireless_adapters_on_the_same_machine)
-        *   [1.2.6 IPv6 privacy extensions](#IPv6_privacy_extensions)
+        *   [1.2.3 Wireless adapter](#Wireless_adapter)
+        *   [1.2.4 Wired and wireless adapters on the same machine](#Wired_and_wireless_adapters_on_the_same_machine)
 *   [2 Configuration files](#Configuration_files)
     *   [2.1 network files](#network_files)
         *   [2.1.1 [Match] section](#.5BMatch.5D_section)
@@ -81,7 +79,7 @@ Systemd/udev automatically assigns predictable, stable network interface names f
 
 After making changes to a configuration file, [restart](/index.php/Restart "Restart") `systemd-networkd.service`.
 
-**Note:** In the examples below, **enp1s0** is the wired adapter and **wlp2s0** is the wireless adapter. These names can be different on different systems.
+**Note:** In the examples below, `enp1s0` is the wired adapter and `wlp2s0` is the wireless adapter. These names can be different on different systems.
 
 #### Wired adapter using DHCP
 
@@ -110,25 +108,9 @@ Gateway=10.1.10.1
 
 You may specify multiple IP addresses. Add an IPv6 address with another Address= line. See the `systemd.network(5)` man page for more network options such as specifying DNS servers and a broadcast address.
 
-#### Wired adapter using both DHCP and a static IP
-
- `/etc/systemd/network/*wired*.network` 
-```
-[Match]
-Name=eth0
-
-[Network]
-DHCP=ipv4
-
-[Address]
-Label=eth0:0
-Address=192.168.144.120/24
-
-```
-
 #### Wireless adapter
 
-In order to connect to a wireless network with *systemd-networkd*, a wireless adapter configured with another service such as [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") is required. In this example, the corresponding systemd service file that needs to be enabled is `wpa_supplicant@wlp2s0.service`.
+In order to connect to a wireless network with *systemd-networkd*, a wireless adapter configured with another service such as [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") is required. In this example, the corresponding systemd service file that needs to be enabled is `wpa_supplicant@wlp2s0.service`. This service will run *wpa_supplicant* with the configuration file `/etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf`. If this file does not exist, the service will not start.
 
  `/etc/systemd/network/*wireless*.network` 
 ```
@@ -168,24 +150,6 @@ Name=wlp2s0
 
 [Network]
 DHCP=ipv4
-
-[DHCP]
-RouteMetric=20
-
-```
-
-#### IPv6 privacy extensions
-
-If you are using IPv6 you might also want to set the `IPv6PrivacyExtensions` option as settings placed in `/etc/sysctl.d/40-ipv6.conf` are not honored.
-
- `/etc/systemd/network/*wireless*.network` 
-```
-[Match]
-Name=wlp2s0
-
-[Network]
-DHCP=yes
-IPv6PrivacyExtensions=true
 
 [DHCP]
 RouteMetric=20

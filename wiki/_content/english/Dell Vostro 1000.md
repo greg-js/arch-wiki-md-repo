@@ -60,7 +60,7 @@ This is because the CPU frequency is at full usage always... so before continuin
 
 ## Installation
 
-Follow the [Installation guide](/index.php/Installation_guide "Installation guide") or the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
+Follow the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Xorg
 

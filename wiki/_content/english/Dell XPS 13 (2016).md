@@ -11,7 +11,7 @@
 
 The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. The laptop is available in both a standard edition with Windows installed as well as a Developer Edition which only differs in that it comes with Ubuntu installed as well as the Broadcom WiFi card replaced with an Intel WiFi card. Just like the older versions ([Dell XPS 13](/index.php/Dell_XPS_13 "Dell XPS 13") and [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)")) it can be bought in different hardware configurations.
 
-The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
+The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
 As of kernel 4.3, the Intel Skylake architecture is supported.
 
@@ -19,7 +19,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 *   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
 *   [2 BIOS updates](#BIOS_updates)
-*   [3 Thunderbolt Firmware Updates](#Thunderbolt_Firmware_Updates)
+*   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
 *   [4 SATA controller](#SATA_controller)
     *   [4.1 Dual booting Linux and Windows](#Dual_booting_Linux_and_Windows)
 *   [5 NVM Express SSD](#NVM_Express_SSD)
@@ -59,9 +59,15 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 [BIOS update 1.4.4](http://downloads.dell.com/FOLDER03769593M/1/XPS_9350_1.4.4.exe) was released on 2016-06-30\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
-## Thunderbolt Firmware Updates
+## Thunderbolt 3 / USB 3.1
 
-[Thunderbolt 3 Firmware Update 2.12.07 ,A03](http://downloads.dell.com/FOLDER03585171M/1/Intel_TBT3_FW_UPDATE_NVM16_A03_02.12.07.exe) was released on 2016-03-18\. Unlike the BIOS update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice).
+The USB-C port supports Thunderbolt 3, Displayport-over-USB-C and USB power delivery as well as USB 3.1.
+
+In the event of devices not working correctly, ensure that you have updated to the latest BIOS (above) and Thunderbolt firmware (below).
+
+[Thunderbolt 3 Firmware Update 2.16.01.003, A04](http://downloads.dell.com/FOLDER03798029M/1/Intel_TBT3_FW_UPDATE_NVM16_A04_2.16.01.003.exe) was released on 2016-08-10\. Unlike the BIOS update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice).
+
+Hotplug support for this port requires a [bug fix](https://bugzilla.kernel.org/show_bug.cgi?id=115121) which landed in kernel version 4.7\. It also requires the kernel to be built with <tt>CONFIG_PCI_HOTPLUG=y</tt>.
 
 ## SATA controller
 
@@ -320,6 +326,17 @@ Linux marv 4.5.4-1-ARCH #1 SMP PREEMPT Wed May 11 22:21:28 CEST 2016 x86_64 GNU/
 ```
 
 [Full output from sudo lspci -v](https://gist.github.com/mgalgs/a903e3528f48aa25b5c0b9ae9c09a07f)
+
+After plugging in a USB-C hub, a number of new PCI devices appear:
+
+```
+01:00.0 PCI bridge: Intel Corporation Device 1576
+02:00.0 PCI bridge: Intel Corporation Device 1576
+02:01.0 PCI bridge: Intel Corporation Device 1576
+02:02.0 PCI bridge: Intel Corporation Device 1576
+39:00.0 USB controller: Intel Corporation Device 15b5
+
+```
 
 ### lsusb
 

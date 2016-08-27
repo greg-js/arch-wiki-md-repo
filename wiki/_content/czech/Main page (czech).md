@@ -26,10 +26,6 @@ Následující odkazy jsou užitečné pro ty, kteří začínají s Arch Linuxe
 
 	Řád pro členy Arch fóra.
 
-	[Průvodce začátečníka](/index.php/Beginners%27_guide_(%C4%8Cesky) "Beginners' guide (Česky)")
-
-	Kompletní průvodce instalačním a konfiguračním procesem; psáno pro nové a nezkušené uživatele.
-
 	[Instalační příručka](/index.php/Installation_guide_(%C4%8Cesky) "Installation guide (Česky)")
 
 	Stručný průvodce instalací; psáno pro zběhlé uživatele Archu.

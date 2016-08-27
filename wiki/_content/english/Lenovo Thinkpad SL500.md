@@ -34,7 +34,7 @@ With the Intel WiFi Link 5100 series all functionality is supported out of the b
 
 ## Sound
 
-The sound card is supported in the kernel, and following the instructions in the [Beginner's guide](/index.php/Beginners%27_guide#Step_1:_Configure_sound_with_alsamixer "Beginners' guide") and also the [ALSA](/index.php/ALSA "ALSA") guide should be sufficient to get sound working.
+See [ALSA](/index.php/ALSA "ALSA").
 
 ## lenovo-sl-laptop Kernel Module
 
