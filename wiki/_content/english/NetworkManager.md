@@ -53,6 +53,8 @@
     *   [5.18 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
+        *   [6.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
+        *   [6.1.2 Using KDE Wallet](#Using_KDE_Wallet)
     *   [6.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
         *   [6.2.1 Ad-hoc](#Ad-hoc)
         *   [6.2.2 Real AP](#Real_AP)
@@ -634,13 +636,19 @@ By default, NetworkManager stores passwords in clear text in the connection file
 
 The passwords are accessible to the root user in the filesystem and to users with access to settings via the GUI (e.g. `nm-applet`).
 
-If it is preferable to save the passwords in encrypted form instead of clear text, this can be achieved by storing them in a keyring which NetworkManager then queries for the passwords. A suggested keyring daemon is [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") or (for KDE specifically) [KDE Wallet](/index.php/KDE_Wallet "KDE Wallet"). The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
+If it is preferable to save the passwords in encrypted form in a keyring instead of clear text. The downside of using a keyring is that the connections have to be set up for each user.
 
-Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password for this user`. Using KDE's [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm), click the applet, click on the top right `Settings` icon, double click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
+#### Using Gnome-Keyring
+
+The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
+
+Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password for this user`.
+
+#### Using KDE Wallet
+
+Using KDE's [kdeplasma-applets-plasma-nm](https://www.archlinux.org/packages/?name=kdeplasma-applets-plasma-nm), click the applet, click on the top right `Settings` icon, double click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
 
 If the option was selected previously and you un-tick it, you may have to use the `reset` option first to make the password disappear from the file. Alternatively, delete the connection first and set it up again.
-
-The downside of using the keyring is that the connections have to be set up for each user.
 
 ### Sharing internet connection over Wi-Fi
 

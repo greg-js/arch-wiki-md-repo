@@ -1,4 +1,4 @@
-The Lenovo ThinkPad X200 is a high-quality laptop featuring a 12.1" widescreen WXGA display, an Intel Core 2 Duo processor (2.26 - 2.66GHz), an Intel Graphics Media Accelerator 4500MHD and up to 8GB of RAM whilst still maintaining impressive battery life.
+The Lenovo ThinkPad X200 is a high-quality laptop featuring a 12.1" widescreen WXGA display, an Intel Core 2 Duo processor (2.26 - 2.8GHz), an Intel Graphics Media Accelerator 4500MHD and up to 8GB of RAM whilst still maintaining impressive battery life.
 
 ## Contents
 

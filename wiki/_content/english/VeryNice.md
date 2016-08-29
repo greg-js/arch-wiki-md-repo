@@ -2,7 +2,7 @@ VeryNice is a daemon, available in the [AUR](/index.php/AUR "AUR"), for dynamica
 
 ## Installation
 
-**Note:** VeryNice hasn't been updated since 2014 and the official homepage is down.
+**Note:** VeryNice hasn't been updated since 2014 and the official homepage is down. Try [ananicy-git](https://aur.archlinux.org/packages/ananicy-git/) for alternative.
 
 Install [verynice](https://aur.archlinux.org/packages/verynice/).
 

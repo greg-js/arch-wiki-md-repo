@@ -1,11 +1,9 @@
-Begi
-
 Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
 
 ## Contents
 
 *   [1 Overview](#Overview)
-*   [2 Updating OS X](#Updating_OS_X)
+*   [2 Firmware updates](#Firmware_updates)
 *   [3 Partitions](#Partitions)
     *   [3.1 Arch Linux only](#Arch_Linux_only)
     *   [3.2 OS X with Arch Linux](#OS_X_with_Arch_Linux)
@@ -87,13 +85,13 @@ Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to inst
 
 Specifically, the procedure for installing Arch Linux on a MacBook is:
 
-1.  **[Update OS X](#Updating_OS_X)**: It always helps to start from a clean, backed up, and up-to-date install of OS X.
+1.  **[Firmware updates](#Firmware_updates)**: It always helps to start from a clean, backed up, and up-to-date install of OS X.
 2.  **[Partition](#Partitions)**: Resizing or deleting the OS X partition to create partitions for Arch Linux.
 3.  **[Setup bootloader](#Setup_bootloader)**: Making sure that the new partition is bootable.
 4.  **[Install Arch Linux](#Installation)**: Actually installing Arch Linux.
 5.  **[Post-installation](#Post-installation)**: MacBook-specific configuration.
 
-## Updating OS X
+## Firmware updates
 
 Before proceeding with the installation of Arch Linux, it is important to ensure that the latest firmware updates for you MacBook are installed. This procedure requires OS X. In OS X, open the App Store and check for updates. If your mac finds and installs any updates, make sure to **reboot** your computer, and then check again for updates to make sure that you installed everything.
 
@@ -110,21 +108,19 @@ Continue to [#Partitions](#Partitions)
 
 ## Partitions
 
-The next step in the installation is to re-partition the hard drive. If OS X was installed using the typical procedure, then your drive should have a GPT format and the following partitions:
+Partitioning of the storage drive is no different from any other laptop. However, if you plan on keeping OS X for dual booting, you should consider that, by default, a MacBook's drive is formatted using GPT and contains at least 3 partitions:
 
-*   **EFI**: a 200 MB partition at the beginning of the disk. It is often read as **msdos** or **FAT** by some partitioning tools and usually labeled *#1*.
-*   **OS X**: the *(HFS+)* partition that should take up all of the remaining disk space. Usually labeled *#2*.
-*   **Recovery**: A recovery partition (only for OS X 10.7+).
+*   **EFI**: the ~200 MB [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   **OS X**: the main partition containing your OS X installation. It is formatted using [HFS+](/index.php/File_systems "File systems").
+*   **Recovery**: A recovery partition present in almost all MacBooks running OS X 10.7 or newer. It is usually hidden from OS X but can be viewed with partitioning tools.
 
-**Note:** If your hardware includes a Fusion Drive you might have a look at the [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive") page.
+**Note:** In Macs that use the [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive"), the partition scheme could be different.
 
 How to partition depends on how many operating systems you want install. The following options will be explained:
 
 *   Single boot: [#Arch Linux only](#Arch_Linux_only)
 *   Dual boot: [#OS X with Arch Linux](#OS_X_with_Arch_Linux) *(recommended so you can still return to OS X when needed)*
 *   Triple boot: [#OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
-
-* * *
 
 ### Arch Linux only
 
@@ -881,9 +877,22 @@ and the pressing the s key to take a snapshot. Files are of the format `shot\d\d
 
 #### Facetime HD
 
-The Facetime HD webcam (included on 2013 MBAs onwards) [is no longer UVC device](http://mactaris.blogspot.co.uk/2013/07/webcam-settings-20-will-support.html), and therefore, does not work out of the box. It is actually a PCIE device. Though it will work on many scenarios, the [bcwc_pcie](https://github.com/patjak/bcwc_pcie) driver is being developed and still experimental. It is available in the [AUR](https://aur.archlinux.org/packages/bcwc-pcie-git) and you may try at your own risk. Please keep in mind that it does not yet support suspension.
+According to Apple, all recent MacBook models contain a Facetime HD camera instead of the iSight. The following list is an example:
 
-See also [Linux bug #71131](https://bugzilla.kernel.org/show_bug.cgi?id=71131) and [Ubuntu bug #1276711](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1276811).
+*   iMac (21,5" mid 2011)
+*   iMac (27" mid 2011)
+*   MacBook Air (mid 2011)
+*   MacBook Pro (15" early 2011)
+*   MacBook Pro (17" early 2011)
+*   MacBook Pro (13" early 2011)
+
+If your MacBook is more recent than the models listed above, it is likely equipped with the Facetime HD camera as well.
+
+In order to make the camera work, you need to install the [bcwc-pcie-dkms](https://aur.archlinux.org/packages/bcwc-pcie-dkms/) and [bcwc-pcie-firmware](https://aur.archlinux.org/packages/bcwc-pcie-firmware/) packages. This will enable camera video support through the `facetimehd` kernel module.
+
+In order to verify if the Facetime camera is working after the installation of both packages, you'll need to reboot your system.
+
+**Note:** Keep in mind that, although working, this is a reverse-engineered driver. PC suspension is not supported if a program that is keeping the camera active is running.
 
 ### Temperature Sensors
 

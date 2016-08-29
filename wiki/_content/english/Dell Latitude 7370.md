@@ -35,12 +35,14 @@ The Broadcom reader is currently not supported via [ccid](https://www.archlinux.
 
 ## displays
 
-The display is a hidpi display. If experiencing screen flashes during boot it could be advised to add the "i915" driver to the MODULES in mkinitcpio.conf and regenerate
+The display is a HiDPI display. If experiencing screen flashes during boot it could be advised to add the "i915" driver to the MODULES in mkinitcpio.conf and regenerate
 
 ```
  sudo mkinitcpio -p linux
 
 ```
+
+Due to being HiDPI it is also common to notice latency when using desktop environments like Gnome-Shell. Installing "vulkan-intel" appears to alleviate some of these issues.
 
 ## lspci and lsusb
 

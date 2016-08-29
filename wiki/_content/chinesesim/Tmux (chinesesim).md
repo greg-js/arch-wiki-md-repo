@@ -7,7 +7,7 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 快捷键前缀](#.E5.BF.AB.E6.8D.B7.E9.94.AE.E5.89.8D.E7.BC.80)
-        *   [2.1.1 Scrolling](#Scrolling)
+        *   [2.1.1 滚动](#.E6.BB.9A.E5.8A.A8)
     *   [2.2 Browsing URL's](#Browsing_URL.27s)
     *   [2.3 Setting the correct term](#Setting_the_correct_term)
     *   [2.4 Other Settings](#Other_Settings)
@@ -50,11 +50,13 @@
 | , | 重新命令当前窗口 |
 | o | 移动至下一个面板 |
 
-默认绑定的前缀按键为Ctrl-b. 比如说垂直分割窗口的快捷键就是 `Ctrl-b %`。 使用多个面板分割窗口后, 先按前缀快捷键(比如说：`Ctrl-b`)然后按住Ctrl键就可以使用方向键调整面板大小。 如果要交换面板也是采用同样的方式，只是按键由方向键换成“O“键。
+默认绑定的前缀按键为Ctrl-b. 比如说垂直分割窗口的快捷键就是 `Ctrl-b %`。
 
-**Tip:** To mimic screen key bindings copy `/usr/share/tmux/screen-keys.conf` to either of the configuration locations.
+使用多个面板分割窗口后, 先按前缀快捷键(比如说：`Ctrl-b`)然后按住Ctrl键就可以使用方向键调整面板大小。 如果要交换面板也是采用同样的方式，只是按键由方向键换成“O“键。
 
-Key bindings may be changed with the bind and unbind commands in `tmux.conf`. For example, you can change the prefix key (i.e. `Ctrl-b`) to `Ctrl-a` by adding the following commands in your configuration file:
+**Tip:** 如果想要模仿screen的快捷键前缀配置, 可以把 `/usr/share/tmux/screen-keys.conf` 拷贝到上述提到的任一配置文件位置.
+
+快捷键前缀可能会随着`tmux.conf`中的bind和unbind命令而改变. 比如你可以通过在配置文件中增加下面命令,把前缀从(i.e. `Ctrl-b`) 改成 `Ctrl-a` :
 
 ```
 unbind C-b
@@ -63,41 +65,41 @@ bind C-a send-prefix
 
 ```
 
-Additional ways to move between windows include:
+其他几种在窗口间移动的快捷键:
 
 ```
-Ctrl-b l (Move to the previously selected window)
-Ctrl-b w (List all windows / window numbers)
-Ctrl-b <window number> (Move to the specified window number, the default bindings are from 0 – 9)
-Ctrl-b q  (Show pane numbers, when the numbers show up type the key to goto that pane)
-
-```
-
-What if you have 10+ windows open? Tmux has a find-window option & keybinding.
-
-```
-Ctrl-b f <window name> (Search for window name)
-Ctrl-b w (Select from interactive list of windows)
+Ctrl-b l (回到上一个选定的窗口)
+Ctrl-b w (显示所有的窗口和窗口序号)
+Ctrl-b <window number> (移动到指定序号的窗口, 默认序号是 0 – 9)
+Ctrl-b q  (显示当前面板号时, 输入指定的面板号可跳转.)
 
 ```
 
-#### Scrolling
+如果你打开10个以上的面板怎么办? tmux有寻找窗口的选项和快捷键.
 
-To enter scroll mode do the either of the following:
+```
+Ctrl-b f <window name> (寻找指定名字的窗口)
+Ctrl-b w (从交互式列表中选择窗口)
+
+```
+
+#### 滚动
+
+使用下列快捷键可以进入滚动模式:
 
 ```
 Ctrl-b [
 
 ```
 
-This will put you in scroll mode and then you can use arrow keys or page up and page down keys.
+这会使你进入滚动模式,然后你可以使用上下键或翻页键进行滚动,翻页.
 
 ```
 Ctrl-b PageUp
 
 ```
 
-This will immediately put you in scroll mode and page up.
+这个快捷键会使你立即进入滚动模式,并向上翻页.
 
 ### Browsing URL's
 

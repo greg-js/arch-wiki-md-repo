@@ -81,7 +81,7 @@ Wiimote.Button = KEY_ON_KEYBOARD
 
 ```
 
-All possible values for Wiimote.Buttons can be found here: [[2]](http://abstrakraft.org/cwiid/browser/doc/wminput.list), the possible values for KEY_ON_KEYBOARD in `/usr/include/linux/input.h`.
+All possible values for Wiimote.Buttons can be found here: [[2]](http://abstrakraft.org/cwiid/browser/doc/wminput.list), the possible values for KEY_ON_KEYBOARD in `/usr/include/linux/input-event-codes.h`.
 
 ## Troubleshooting
 

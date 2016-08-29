@@ -11,14 +11,15 @@ This article details how to install and setup a Broadcom wireless network device
         *   [3.3.1 Offline installation](#Offline_installation)
         *   [3.3.2 Manually](#Manually)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Setting broadcom-wl in monitor mode](#Setting_broadcom-wl_in_monitor_mode)
-    *   [4.2 Device inaccessible after kernel upgrade](#Device_inaccessible_after_kernel_upgrade)
-    *   [4.3 Device with broadcom-wl driver not working/showing](#Device_with_broadcom-wl_driver_not_working.2Fshowing)
-    *   [4.4 Interfaces swapped with broadcom-wl](#Interfaces_swapped_with_broadcom-wl)
-    *   [4.5 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
-    *   [4.6 Suppressing console messages](#Suppressing_console_messages)
-    *   [4.7 Device BCM43241 non-detected](#Device_BCM43241_non-detected)
-    *   [4.8 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
+    *   [4.1 Broadcom-wl not working with networkmanager 1.4.0](#Broadcom-wl_not_working_with_networkmanager_1.4.0)
+    *   [4.2 Setting broadcom-wl in monitor mode](#Setting_broadcom-wl_in_monitor_mode)
+    *   [4.3 Device inaccessible after kernel upgrade](#Device_inaccessible_after_kernel_upgrade)
+    *   [4.4 Device with broadcom-wl driver not working/showing](#Device_with_broadcom-wl_driver_not_working.2Fshowing)
+    *   [4.5 Interfaces swapped with broadcom-wl](#Interfaces_swapped_with_broadcom-wl)
+    *   [4.6 Interface is showing but not allowing connections](#Interface_is_showing_but_not_allowing_connections)
+    *   [4.7 Suppressing console messages](#Suppressing_console_messages)
+    *   [4.8 Device BCM43241 non-detected](#Device_BCM43241_non-detected)
+    *   [4.9 Connection is unstable with some routers](#Connection_is_unstable_with_some_routers)
 
 ## History
 
@@ -107,6 +108,23 @@ If the driver does not work at this point, you may need to update dependencies:
 To make the module load at boot, refer to [Kernel modules](/index.php/Kernel_modules "Kernel modules"). It is recommending that you [blacklist](/index.php/Blacklist "Blacklist") conflicting modules.
 
 ## Troubleshooting
+
+### Broadcom-wl not working with networkmanager 1.4.0
+
+If you use [NetworkManager](/index.php/NetworkManager "NetworkManager") 1.4.0 and you are not able to connect to any wifi network, you are probably affected by [this bug](https://bugzilla.gnome.org/show_bug.cgi?id=770456). A patch has already been submitted [upstream](https://cgit.freedesktop.org/NetworkManager/NetworkManager/commit/?h=th/platform-set-address-enfile-bgo770456&id=1902c0b88f52302a1b5e253a7352577e7e5ff682) and the issue will likely be resolved in the next networkmanager update. In the meantime, a workaround can be applied by disabling MAC address randomization during wireless network scanning. Add the following lines to /etc/NetworkManager/NetworkManager.conf
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[device]
+wifi.scan-rand-mac-address=no
+```
+
+After that, reboot your system or restart NetworkManager:
+
+```
+# systemctl restart NetworkManager
+
+```
 
 ### Setting broadcom-wl in monitor mode
 

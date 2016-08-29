@@ -84,7 +84,7 @@ Of course you can elect to use an alternative driver for one device and libinput
 
 Custom configuration files should be placed in `/etc/X11/xorg.conf.d/` and following a widely used naming schema `30-touchpad.conf` is often chosen as filename.
 
-**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/60-libinput.conf` for guidance and refer to the `libinput(4)` manual page for a detailed description of available configuration options.
+**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/60-libinput.conf` for guidance and refer to the [libinput(4)](https://www.mankier.com/4/libinput) manual page for a detailed description of available configuration options.
 
 A basic configuration should have the following structure:
 

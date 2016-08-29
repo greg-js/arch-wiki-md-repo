@@ -79,9 +79,8 @@ A *bootloader* is the first software program that runs when a computer starts. I
 GRUB has a few root file system-specific limitations:
 
 *   [F2FS](/index.php/F2FS "F2FS") is not supported
-*   File systems on [NVMe](https://en.wikipedia.org/wiki/NVMe "wikipedia:NVMe") devices are not supported
 
-If your root partition is on an unsupported file system, you must create a separate `/boot` partition with a supported file system. In some cases (such as NVMe devices) the development version of GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) has native support.
+If your root partition is on an unsupported file system, you must create a separate `/boot` partition with a supported file system. In some cases, the development version of GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) has native support.
 
 ## BIOS systems
 

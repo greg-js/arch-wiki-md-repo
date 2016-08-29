@@ -26,6 +26,7 @@ These options are explained in detail below.
     *   [3.1 Tearing/Broken VSync](#Tearing.2FBroken_VSync)
     *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
     *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)
+    *   [3.4 NVIDIA provider in xrandr does not have the Source Output capability](#NVIDIA_provider_in_xrandr_does_not_have_the_Source_Output_capability)
 *   [4 Using nouveau](#Using_nouveau)
 *   [5 Using Bumblebee](#Using_Bumblebee)
 
@@ -300,6 +301,19 @@ EndSection
 If Xorg wont start try swapping out all references of CRT to DFB. card0 is the identifier for the intel card to which the display is connected via LVDS. The edid binary is in this directory. If the hardware arrangement is different, the value for CustomEDID might vary but yet this has to be confirmed. The path will start in any case with /sys/class/drm.
 
 Alternatively you can generate your edid with tools like [read-edid](https://www.archlinux.org/packages/?name=read-edid) and point the driver to this file. Even modelines can be used, but then be sure to change "UseEDID" and "IgnoreEDID".
+
+### NVIDIA provider in xrandr does not have the Source Output capability
+
+An example of this problem is the following:
+
+```
+$ xrand --listproviders
+Provider 0: id: 0x261 cap: 0x0 crtcs: 4 outputs: 6 associated providers: 1 name:NVIDIA-0
+Provider 1: id: 0x43 cap: 0xf, Source Output, Sink Output, Source Offload, Sink Offload crtcs: 3 outputs: 1 associated providers: 1 name:modesetting
+
+```
+
+This will prevent you from doing `xrandr --setprovideroutputsource X Y`. If this is the case for you, check if the `nvidia_drm` module is loaded. If not, and you have the [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) package installed, it might be blacklisting the nvidia modules and prevent all the modules from being loaded. In that case, try uninstalling [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) or manually load the `nvidia_drm` module.
 
 ## Using nouveau
 

@@ -64,6 +64,8 @@ To use the biosdisk utility to create a BIOS flash image, first download the lat
 
 [Flashrom](http://www.flashrom.org/Flashrom)is a utility for identifying, reading, writing, verifying and erasing flash chips. It is designed to flash BIOS/EFI/coreboot/firmware/optionROM images on mainboards, network/graphics/storage controller cards, and various programmer devices.
 
+**Warning:** If you have a laptop/notebook/netbook, please do NOT try flashrom because interactions with the EC on these machines might crash your machine during flashing. flashrom tries to detect if a machine is a laptop, but not all laptops follow the standard, so this is not 100% reliable.[[1]](https://www.flashrom.org/Board_Testing_HOWTO)
+
 ### Installation
 
 [Install](/index.php/Install "Install") the [flashrom](https://www.archlinux.org/packages/?name=flashrom) or [flashrom-svn](https://aur.archlinux.org/packages/flashrom-svn/) package.
@@ -105,7 +107,7 @@ If you want to flash other flash chips on your mainboard, you will find all opti
 
 ```
 
-**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[1]](https://www.flashrom.org/FAQ﻿).
+**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ﻿).
 
 ## FreeDOS
 

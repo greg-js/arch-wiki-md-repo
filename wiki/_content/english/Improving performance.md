@@ -158,6 +158,8 @@ There are several key tunables affecting the performance of block devices, see [
 
 If USB drives like pendrives are slow to copy files, append these three lines in a [systemd](/index.php/Systemd "Systemd") tmpfile:
 
+(this should not be needed anymore: [[1]](https://lwn.net/Articles/475405/))
+
  `/etc/tmpfiles.d/local.conf` 
 ```
 w /sys/kernel/mm/transparent_hugepage/enabled - - - - madvise
@@ -166,7 +168,7 @@ w /sys/kernel/mm/transparent_hugepage/khugepaged/defrag - - - - 0
 
 ```
 
-See also [[1]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive) and [[2]](http://lwn.net/Articles/572911/).
+See also [[2]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive), [[3]](http://lwn.net/Articles/572911/) and [[4]](http://lwn.net/Articles/467328/).
 
 ### Tuning IO schedulers
 
@@ -263,7 +265,7 @@ When dealing with traditional rotational disks (HDD's) you may want to [lower or
 
 Avoiding unnecessary access to slow storage drives is good for performance and also increasing lifetime of the devices, although on modern hardware the difference in life expectancy is usually negligible.
 
-**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[4]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
+**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[6]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
 
 #### Show disk writes
 

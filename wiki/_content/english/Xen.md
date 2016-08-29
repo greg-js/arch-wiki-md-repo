@@ -151,7 +151,7 @@ More information on using the GRUB bootloader is available at [GRUB](/index.php/
 
 #### Syslinux
 
-For [syslinux](/index.php/Syslinux "Syslinux") users, add a stanza like this to your `/boot/syslinux/syslinux.cfg`:
+For [Syslinux](/index.php/Syslinux "Syslinux") users, add a stanza like this to your `/boot/syslinux/syslinux.cfg`:
 
 ```
 LABEL xen
@@ -163,7 +163,7 @@ LABEL xen
 
 where `X.Y.Z` is your xen version and `/dev/sdaX` is your [root partition](/index.php/Fstab#Identifying_filesystems "Fstab").
 
-This also requires `mboot.c32` to be in the same directory as `syslinux.cfg`. If you do not have `mboot.c32` in `/boot/syslinux`, copy it from:
+This also requires `mboot.c32` (and `libcom32.c32`) to be in the same directory as `syslinux.cfg`. If you do not have `mboot.c32` in `/boot/syslinux`, copy it from:
 
 ```
 # cp /usr/lib/syslinux/bios/mboot.c32 /boot/syslinux

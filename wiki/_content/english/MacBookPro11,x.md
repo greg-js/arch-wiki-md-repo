@@ -1,9 +1,12 @@
-This wiki page should help you in getting your MacBook Pro from Late 2013 or Mid 2014 to work with Arch Linux. (This includes models 1-3 in the 11,x series).
+The MacBook Pro 11,x consists of models with Retina display shipped by Apple In Late 2013 and Mid 2014\. Like its predecessors, it is based on Intel chipset, although some manual configuration might be required in specific cases in order to deal with Apple-related features.
+
+Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will cover the current status of hardware support on Arch Linux, as well as post-installation recommendations.
 
 ## Contents
 
 *   [1 Preparing for the Installation](#Preparing_for_the_Installation)
-    *   [1.1 Preparing the hard drive](#Preparing_the_hard_drive)
+    *   [1.1 Firmware updates](#Firmware_updates)
+    *   [1.2 Partitioning](#Partitioning)
 *   [2 Installation](#Installation)
     *   [2.1 Booting the live image](#Booting_the_live_image)
     *   [2.2 Console](#Console)
@@ -51,23 +54,40 @@ This wiki page should help you in getting your MacBook Pro from Late 2013 or Mid
 
 ## Preparing for the Installation
 
-### Preparing the hard drive
+### Firmware updates
 
-Dual booting with OS X may be desirable if you wish to update firmware. If this is the case, in order to carry out the installation you will need to shrink the main OS X HFS+ partition from within OS X's Disk Utility program, this will also move the OS X Recovery partition to the end of the OS X partition.
+Before proceeding with the installation of Arch Linux, it is important to ensure that the latest firmware updates for you MacBook are installed. This procedure requires OS X. In OS X, open the App Store and check for updates. If your mac finds and installs any updates, make sure to **reboot** your computer, and then check again for updates to make sure that you installed everything.
 
-**Note:** Please note you may need to disable Filevault encryption before you can resize the partition, feel free to reinitialize this after you perform the partition resize
+**Note:** If you uninstalled OS X or want to reinstall it, [Apple](https://support.apple.com/en-us/HT204904) has great instructions.
+
+It is advisable to keep OS X installed, because MacBook firmware updates can only be installed using OS X. However, if you plan to remove OS X completely, make backups of these files, which you will need in Linux for adjusting the [color profile](#Color_Profile):
+
+```
+/Library/ColorSync/Profiles/Displays/*
+
+```
+
+### Partitioning
+
+By default, the MacBook's drive is formatted using GPT and contains at least 3 partitions:
+
+*   **EFI**: the ~200 MB [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   **OS X**: the main partition containing your OS X installation. It is formatted using [HFS+](/index.php/File_systems "File systems").
+*   **Recovery**: A recovery partition used for special purposes.
+
+As a general rule, partitioning is no different from any other hardware that Arch Linux can be installed on. If you plan on keeping OS X for the purpose of dual booting, you need to manually shrink the main OS X HFS+ partition from within OS X's Disk Utility program.
+
+**Note:** The OS X **Recovery partition** is not visible inside OS X `Disk Utility`. However, the partition will be automatically moved after the OS X partition if you resize it.
+
+**Warning:** If you OS X partition is encrypted with FileVault 2, you **must** disable the disk encryption before proceeding. After the OS X partition has been resized, FileVault 2 can be re-enabled.
+
+**Note:** If you plan to remove OS X, it is advisable to **disable** the MacBook startup sound before proceeding with partitioning. Just boot in OS X, mute your system sound and reboot again to the Arch Linux Installation media. Please keep in mind that the volume of the startup sound can only be modified reliably in OS X.
 
 ## Installation
 
 ### Booting the live image
 
-To begin your installation, download the current Arch Linux ISO and write it to your USB drive according to the [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media") instructions. Boot from the created USB drive by selecting it in the Apple boot manager which is accessible by holding `Alt` on power on.
-
-rEFIt and [REFInd](/index.php/REFInd "REFInd") depending on how they are configured can also allow you to boot from the media.
-
-If the install media you are using has a kernel version earlier than 3.13 you will need to edit the boot entry in the syslinux boot loader. This can be accomplished by pressing `Tab` to edit the entry and append `nomodeset` this will prevent visible screen corruption.
-
-If the install media you are using has a kernel version later than 3.13 **do not** use `nomodeset` as it is not needed and will break [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+The Apple boot manager is accessible by holding the `Alt` button during power on. As any other computer that does not have a CDROM drive, you need to use an [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). After booting, please refer to the official [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ### Console
 
@@ -75,6 +95,13 @@ As this model of notebook has a high DPI display, the console font displayed wil
 
 ```
 $ setfont sun12x22
+
+```
+
+If you want to make this change permanent, add the following line to `/etc/vconsole.conf`
+
+```
+ FONT=sun12x22
 
 ```
 

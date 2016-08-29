@@ -4,6 +4,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
 
 *   [1 Check the connection](#Check_the_connection)
 *   [2 Set the hostname](#Set_the_hostname)
+    *   [2.1 Local network hostname resolution](#Local_network_hostname_resolution)
 *   [3 Device driver](#Device_driver)
     *   [3.1 Check the status](#Check_the_status)
     *   [3.2 Load the module](#Load_the_module)
@@ -25,7 +26,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
         *   [5.2.3 dhcpcd](#dhcpcd_2)
         *   [5.2.4 Manual assignment](#Manual_assignment)
         *   [5.2.5 Calculating addresses](#Calculating_addresses)
-*   [6 Additional settings](#Additional_settings)
+*   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 ifplugd for laptops](#ifplugd_for_laptops)
     *   [6.2 Bonding or LAG](#Bonding_or_LAG)
     *   [6.3 IP address aliasing](#IP_address_aliasing)
@@ -33,8 +34,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
     *   [6.4 Change MAC/hardware address](#Change_MAC.2Fhardware_address)
     *   [6.5 Internet sharing](#Internet_sharing)
     *   [6.6 Router configuration](#Router_configuration)
-    *   [6.7 Local network hostname resolution](#Local_network_hostname_resolution)
-    *   [6.8 Promiscuous mode](#Promiscuous_mode)
+    *   [6.7 Promiscuous mode](#Promiscuous_mode)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
     *   [7.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
@@ -90,7 +90,7 @@ If not, check for cable issues before diagnosing further.
 
 ## Set the hostname
 
-A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network, configured in `/etc/hostname`—see [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) for details. The file can contain the system's domain name, if any. To set the hostname, edit `/etc/hostname` to contain a single line containing `*myhostname*`:
+A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network, configured in `/etc/hostname`—see [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) for details. The file can contain the system's domain name, if any. To set the hostname, [edit](/index.php/Textedit "Textedit") `/etc/hostname` to include a single line with `*myhostname*`:
 
  `/etc/hostname` 
 ```
@@ -107,23 +107,6 @@ Alternatively, using [hostnamectl(1)](http://man7.org/linux/man-pages/man1/hostn
 
 ```
 
-It is recommended to also set the hostname in `/etc/hosts`:
-
- `/etc/hosts` 
-```
-#
-# /etc/hosts: static lookup table for host names
-#
-
-#<ip-address>	<hostname.domain.org>	<hostname>
-127.0.0.1	localhost.localdomain	localhost	 *myhostname*
-::1		localhost.localdomain	localhost	 *myhostname*
-```
-
-See [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) for details.
-
-**Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module (enabled by default in `/etc/nsswitch.conf`), which means that changing hostnames in `/etc/hosts` is normally not necessary. However several users have reported bugs such as delays in network-based applications when the hostname was not set correctly in `/etc/hosts`. See [#Local network hostname resolution](#Local_network_hostname_resolution) for details.
-
 To temporarily set the hostname (until reboot), use [hostname(1)](http://man7.org/linux/man-pages/man1/hostname.1.html) from [inetutils](https://www.archlinux.org/packages/?name=inetutils):
 
 ```
@@ -132,6 +115,46 @@ To temporarily set the hostname (until reboot), use [hostname(1)](http://man7.or
 ```
 
 To set the "pretty" hostname and other machine metadata, see [machine-info(5)](http://man7.org/linux/man-pages/man5/machine-info.5.html#https%3A%2F%2Fwww.freedesktop.org%2Fsoftware%2Fsystemd%2Fman%2Fmachine-info.html).
+
+### Local network hostname resolution
+
+The pre-requisite is to [#Set the hostname](#Set_the_hostname), after which hostname resolution works on the local system itself:
+
+ `$ ping *myhostname*` 
+```
+PING myhostname (192.168.1.2) 56(84) bytes of data.
+64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
+```
+
+To allow other machines to address the host by name, it is necessary to either:
+
+*   Configure the [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) file, or
+*   Enable a service which resolves the hostname.
+
+**Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module, enabled by default in `/etc/nsswitch.conf`. However, clients may still rely on `/etc/hosts`, see: [[1]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
+
+To configure the hosts file, add the following line to `/etc/hosts`:
+
+```
+127.0.1.1	*myhostname*.localdomain	*myhostname*
+
+```
+
+As a result the system resolves to both entries:
+
+```
+$ getent hosts 
+127.0.0.1       localhost
+127.0.1.1       myhostname.localdomain myhostname
+
+```
+
+For a system with a permanent IP address, that permanent IP address should be used instead of `127.0.1.1`.
+
+**Note:** Another option is to set up a full DNS server such as [BIND](/index.php/BIND "BIND") or [Unbound](/index.php/Unbound "Unbound"), but that is overkill and too complex for most systems. For small networks and dynamic flexibility with hosts joining and leaving the network [zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") services may be more applicable:
+
+*   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmbd.service` service. Computers running Windows, OS X, or Linux with `nmbd` running, will be able to find your machine.
+*   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly more complex configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running OS X, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have an built-in Avahi client or daemon.
 
 ## Device driver
 
@@ -398,7 +421,7 @@ Hosts/Net: 2                     Class A, Private Internet
 
 ```
 
-## Additional settings
+## Tips and tricks
 
 ### ifplugd for laptops
 
@@ -447,42 +470,6 @@ See [Internet sharing](/index.php/Internet_sharing "Internet sharing").
 ### Router configuration
 
 See [Router](/index.php/Router "Router").
-
-### Local network hostname resolution
-
-The pre-requisite is to [#Set the hostname](#Set_the_hostname) after which hostname resolution works on the local system itself:
-
- `$ ping *myhostname*` 
-```
-PING myhostname (192.168.1.2) 56(84) bytes of data.
-64 bytes from myhostname (192.168.1.2): icmp_seq=1 ttl=64 time=0.043 ms
-```
-
-To enable other machines to address the host by name, either a manual configuration of the respective `/etc/hosts` files or a service to propagate/resolve the name is required. With systemd the latter is done via the `myhostname` nss module. However, not all network services (on the same system; examples: [[1]](https://bbs.archlinux.org/viewtopic.php?id=176761), [[2]](https://bbs.archlinux.org/viewtopic.php?id=186967)) or other clients with different operating systems use the same methods to try resolve the hostname.
-
-A first work-around that can be tried is to add the following line to `/etc/hosts`:
-
-```
-127.0.1.1	*myhostname*.localdomain	*myhostname*	
-
-```
-
-As a result the system resolves to both entries:
-
-```
-$ getent hosts 
-127.0.0.1       localhost
-127.0.1.1       myhostname.localdomain myhostname
-
-```
-
-For a system with a permanent IP address, that permanent IP address should be used instead of `127.0.1.1`.
-
-Another possibility is to set up a full DNS server such as [BIND](/index.php/BIND "BIND") or [Unbound](/index.php/Unbound "Unbound"), but that is overkill and too complex for most systems. For small networks and dynamic flexibility with hosts joining and leaving the network [zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") services may be more applicable. There are two options available:
-
-*   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmbd.service` service. Computers running Windows, OS X, or Linux with `nmbd` running, will be able to find your machine.
-
-*   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly more complex configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running OS X, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have an built-in Avahi client or daemon.
 
 ### Promiscuous mode
 

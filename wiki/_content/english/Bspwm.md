@@ -118,12 +118,7 @@ done &
 
 ### Scratchpad
 
-You can emulate a dropdown terminal (like i3's scratchpad feature if you put a terminal in it) using bspwm's window flags.
-
-```
-Append the following to the end of the bspwm config file (adapt to your own terminal emulator):
-
-```
+You can emulate a dropdown terminal (like i3's scratchpad feature if you put a terminal in it) using bspwm's window flags. Append the following to the end of the bspwm config file (adapt to your own terminal emulator):
 
 ```
 bspc rule -a scratchpad sticky=on state=floating hidden=on

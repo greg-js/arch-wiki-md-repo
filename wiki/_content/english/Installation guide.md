@@ -172,14 +172,19 @@ If required, set the [console keymap](/index.php/Keyboard_configuration_in_conso
 
 ### Hostname
 
-Create an entry for your hostname in `/etc/hostname`:
+Create an entry for the [hostname](/index.php/Hostname "Hostname") in `/etc/hostname`:
 
 ```
 # echo *myhostname* > /etc/hostname
 
 ```
 
-A matching entry in `/etc/hosts` is recommended: see [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
+Add a matching line to `/etc/hosts`:
+
+```
+127.0.1.1	*myhostname*.localdomain	*myhostname*
+
+```
 
 ### Network configuration
 

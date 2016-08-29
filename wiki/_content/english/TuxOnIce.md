@@ -111,7 +111,7 @@ Next, we need to create the file, something like [[2]](http://www.gentoo-wiki.in
 
 ```
 
-The output of `/sys/power/tuxonice/resume` is what you need to pass to your kernel. You should see something like `file:/dev/sda2:0xdc008`, in which case you should append `resume=file:/dev/sda2:0xdc008` as a kernel parameter in your `/etc/lilo.conf` file (for [LILO](/index.php/LILO "LILO")), `/boot/syslinux/syslinux.cfg` (for syslinux) or `/boot/grub/grub.cfg` (for [Grub2](/index.php/Grub2 "Grub2")).
+The output of `/sys/power/tuxonice/resume` is what you need to pass to your kernel. You should see something like `file:/dev/sda2:0xdc008`, in which case you should append `resume=file:/dev/sda2:0xdc008` as a kernel parameter in your `/etc/lilo.conf` file (for [LILO](/index.php/LILO "LILO")), `/boot/syslinux/syslinux.cfg` (for [Syslinux](/index.php/Syslinux "Syslinux")) or `/boot/grub/grub.cfg` (for [Grub2](/index.php/Grub2 "Grub2")).
 
 ## Suspending and resuming
 

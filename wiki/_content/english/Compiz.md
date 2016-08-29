@@ -7,6 +7,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
 *   [1 Installation](#Installation)
     *   [1.1 Installing the 0.9 series](#Installing_the_0.9_series)
     *   [1.2 Installing the 0.8 series](#Installing_the_0.8_series)
+    *   [1.3 Extras](#Extras)
 *   [2 Starting Compiz](#Starting_Compiz)
     *   [2.1 Enabling important plugins](#Enabling_important_plugins)
         *   [2.1.1 Window decoration](#Window_decoration)
@@ -52,34 +53,15 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
 
 ## Installation
 
-As of May 2013, Compiz is [no longer available](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-May/024956.html) in the [official repositories](/index.php/Official_repositories "Official repositories"). Packages for installing both the 0.9 and 0.8 series are available in the [AUR](/index.php/AUR "AUR"). The two series are **not parallel installable.**
+There are two versions of Compiz available, the 0.8 series which is written in C and the 0.9 series which is a complete re-write of Compiz in C++. As of August 2016, both series are actively developed. Compiz 0.9 is developed by the [Compiz Maintainers on Launchpad](https://code.launchpad.net/~compiz-team) whilst Compiz 0.8 is developed by the [Compiz Reloaded project](https://github.com/compiz-reloaded) on GitHub. The two series cannot be installed side by side.
 
 ### Installing the 0.9 series
 
-**Note:**
-
-*   From Compiz 0.9.8 onwards, all Compiz components are developed and distributed as a single project. This means that a single package can provide all of the Compiz components.
-*   To have *emerald-themes* with *emerald0.9*, first install [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/) and then install [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/). Doing the opposite will resolve the wrong dependencies and cause conflicts.
-
-Required:
+**Note:** From Compiz 0.9.8 onwards, all Compiz components are developed and distributed as a single project. This means that a single package can provide all of the Compiz components.
 
 *   **Compiz** — OpenGL compositing window manager with CCSM, Plugins and GTK Window Decorator.
 
 	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
-
-Optional:
-
-*   **Emerald** — A standalone window decorator for Compiz.
-
-	[http://www.compiz.org/](http://www.compiz.org/) || [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/)
-
-*   **Emerald Themes** — Extra themes for the Emerald window decorator.
-
-	[https://github.com/compiz-reloaded/emerald-themes](https://github.com/compiz-reloaded/emerald-themes) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
-
-*   **Fusion Icon** — A tray applet for starting Compiz and switching window managers and decorators on the fly.
-
-	[https://github.com/kozec/fusion-icon-gtk3](https://github.com/kozec/fusion-icon-gtk3) || [fusion-icon0.9](https://aur.archlinux.org/packages/fusion-icon0.9/)
 
 ### Installing the 0.8 series
 
@@ -107,9 +89,13 @@ Highly recommended:
 
 Optional:
 
-*   **Compiz Fusion Plugins Experimental** — Experimental Compiz plugins.
+*   **Compiz Fusion Plugins Experimental** — Experimental Compiz plugins (known as Plugins Unsupported prior to version 0.8.12).
 
 	[https://github.com/compiz-reloaded/compiz-plugins-experimental](https://github.com/compiz-reloaded/compiz-plugins-experimental) || [compiz-fusion-plugins-experimental](https://aur.archlinux.org/packages/compiz-fusion-plugins-experimental/)
+
+### Extras
+
+**Note:** Emerald since 0.8.12 and Fusion Icon since 0.1.2 support Compiz 0.9 as well as Compiz 0.8\. Compiz 0.9 users using the older Emerald 0.9.5 release are recommended to switch to Emerald 0.8.12 or a higher version in the 0.8 series as Emerald 0.9 is not actively developed.
 
 *   **Emerald** — A standalone window decorator for Compiz.
 

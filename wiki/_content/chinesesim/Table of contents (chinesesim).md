@@ -16,7 +16,7 @@
 | <small>2.1.</small> [程序启动器](/index.php/Category:Application_launchers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Application launchers (简体中文)") <small>(2)</small> |
 | <small>2.2.</small> [数据压缩和归档](/index.php/Category:Data_compression_and_archiving_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Data compression and archiving (简体中文)") <small>(4)</small> |
 | <small>2.3.</small> [数据库管理](/index.php/Category:Database_management_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Database management systems (简体中文)") <small>(3)</small> |
-| <small>2.4.</small> [Dictionaries](/index.php/Category:Dictionaries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dictionaries (简体中文)") <small>(1)</small> |
+| <small>2.4.</small> [字典](/index.php/Category:Dictionaries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dictionaries (简体中文)") <small>(1)</small> |
 | <small>2.5.</small> [模拟器](/index.php/Category:Emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Emulators (简体中文)") <small>(7)</small> |
 | <small>2.6.</small> [文件管理器](/index.php/Category:File_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File managers (简体中文)") <small>(3)</small> |
 | <small>2.7.</small> [游戏娱乐](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)") <small>(6)</small> |
@@ -73,7 +73,7 @@
 | <small>6.4.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
 | <small>6.4.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
 | <small>6.5.</small> [邮件服务器](/index.php/Category:Mail_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mail server (简体中文)") <small>(1)</small> |
-| <small>6.6.</small> [Network sharing](/index.php/Category:Network_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network sharing (简体中文)") <small>(2)</small> |
+| <small>6.6.</small> [网络共享](/index.php/Category:Network_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network sharing (简体中文)") <small>(2)</small> |
 | <small>6.7.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.8.</small> [远程桌面](/index.php/Category:Remote_desktop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Remote desktop (简体中文)") <small>(2)</small> |
 | <small>6.9.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |

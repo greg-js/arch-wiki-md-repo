@@ -202,7 +202,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
 *   Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
-    *   Overwrite the existing syslinux modules (`*.c32` files) present in the USB (from the ISO) with the ones from the syslinux package. This is necessary to avoid boot failure because of a possible version mismatch.
+    *   Overwrite the existing Syslinux modules (`*.c32` files) present in the USB (from the ISO) with the ones from the syslinux package. This is necessary to avoid boot failure because of a possible version mismatch.
     *   Run:
 
 ```
@@ -234,7 +234,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 
 *   Extract the ISO (similar to extracting ZIP archive) to the USB flash drive (using [7-Zip](http://7-zip.org/).
 
-*   Download official syslinux 6.xx binaries (zip file) from [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) and extract it. The version of Syslinux should be the same version used in the ISO image.
+*   Download official Syslinux 6.xx binaries (zip file) from [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) and extract it. The version of Syslinux should be the same version used in the ISO image.
 
 *   Run the following command (in Windows cmd prompt, as admin):
 

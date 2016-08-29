@@ -179,7 +179,7 @@ Device    Boot     Start       End    Blocks  Id System
 
 	Загрузочный раздел
 
-	Загрузочный раздел UEFI называется "[EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI")", он же ESP, он же EFISYS. На каждом диске может быть не более одного такого раздела.
+	Загрузочный раздел UEFI называется "[EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")", он же ESP, он же EFISYS. На каждом диске может быть не более одного такого раздела.
 
 *   В GPT он должен иметь тип **EF00** (`GUID=C12A7328-F81F-11D2-BA4B-00A0C93EC93B`), и может располагаться в любом месте диска под любым номером.
 *   К загрузочному разделу в MBR требования более жесткие: он должен одновременно иметь тип **EF**, флаг "**bootable**", и быть **первым**.
@@ -312,7 +312,7 @@ grub-install --grub-setup=/bin/true /dev/sda
 
 ##### В режиме UEFI
 
-Если Arch x86_64 уже загружен в режиме UEFI, [системный загрузочный раздел EFI](/index.php/UEFI#EFI_System_Partition "UEFI") уже создан и смонтирован в `/boot/efi`, а [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") уже установлен и работает, для установки загрузчика остаётся выполнить команду
+Если Arch x86_64 уже загружен в режиме UEFI, [системный загрузочный раздел EFI](/index.php/EFI_System_Partition "EFI System Partition") уже создан и смонтирован в `/boot/efi`, а [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") уже установлен и работает, для установки загрузчика остаётся выполнить команду
 
 ```
 grub-install
@@ -947,7 +947,7 @@ submenu "Windows 7" {
 
 Загрузчик Windows, установленной в режиме [UEFI](/index.php/UEFI "UEFI"), поддерживает только одну таблицу разделов – [GPT](/index.php/GPT "GPT"), и не поддерживает MBR.
 
-Если GRUB2 установлен в режиме UEFI, его стартовый образ лежит в том же [ESP/EFISYS](/index.php/UEFI#EFI_System_Partition "UEFI") разделе, что загрузчик Windows. Полный путь к стартовому образу GRUB2 режима UEFI указывает переменная `$cmdpath` с содержимым вида `(диск,раздел)/EFI/каталог/grubx64.efi`. Чтобы из этого пути получить диск и раздел, можно регулярным выражением обрезать скобки и путь, и записать результат в переменную `$root`. После этого загрузчик Windows запускается командой `chainloader`, как обычное EFI-приложение:
+Если GRUB2 установлен в режиме UEFI, его стартовый образ лежит в том же [ESP/EFISYS](/index.php/EFI_System_Partition "EFI System Partition") разделе, что загрузчик Windows. Полный путь к стартовому образу GRUB2 режима UEFI указывает переменная `$cmdpath` с содержимым вида `(диск,раздел)/EFI/каталог/grubx64.efi`. Чтобы из этого пути получить диск и раздел, можно регулярным выражением обрезать скобки и путь, и записать результат в переменную `$root`. После этого загрузчик Windows запускается командой `chainloader`, как обычное EFI-приложение:
 
 ```
 submenu "Windows 8" {

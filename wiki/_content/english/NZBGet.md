@@ -71,7 +71,7 @@ After adding a system user, update the main configuration file using the webinte
 ..
 DaemonUsername=nzbget # system user
 MainDir=/home/myuser/Downloads/NZBGet
-UMask=0022 # 755 for dirs - 644 for files
+UMask=0002 # 775 for dirs - 664 for files
 ```
 
 Create and set permissions for the desired directories:

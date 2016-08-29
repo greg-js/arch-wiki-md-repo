@@ -810,3 +810,4 @@ You need to [regenerate your initramfs](/index.php/Mkinitcpio#Image_creation_and
 *   [Fedora's SysVinit to systemd cheatsheet](http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
 *   [Gentoo Wiki systemd page](http://wiki.gentoo.org/wiki/Systemd)
 *   [Emacs Syntax highlighting for Systemd files](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
+*   [digital ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)

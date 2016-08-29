@@ -275,7 +275,7 @@ If you are lucky, you will be dropped to a Meterpreter session where you can do 
 
 ### Search does not filter properly
 
-Currently the `search` command in `msfconsole` does not properly filter the results if more than 1 filters are specified. See [the bug report](https://dev.metasploit.com/redmine/issues/8822) for details.
+Currently the `search` command in `msfconsole` does not properly filter the results if more than 1 filters are specified. See [the bug report](https://github.com/rapid7/metasploit-framework/issues/3809) for details.
 
 See [#Searching from the database](#Searching_from_the_database) for a workaround.
 

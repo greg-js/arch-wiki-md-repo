@@ -39,7 +39,8 @@ Some of the major libvirt features are:
     *   [4.7 Other management](#Other_management)
 *   [5 Python connectivity code](#Python_connectivity_code)
 *   [6 UEFI Support](#UEFI_Support)
-*   [7 See also](#See_also)
+*   [7 PulseAudio](#PulseAudio)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -146,7 +147,7 @@ While some guides mention changed permissions of certain libvirt directories to 
 
 ### Unencrypt TCP/IP sockets
 
-**Warning:** This method is used to help remote domain, connection speed for trusted networks. This is the least secure connection method. This should *only* be used for testing or use over a secure, private, and trusted network. SASL is not enabled here, so all TCP traffic is *cleartext*. For real world *always* use enable SASL.
+**Warning:** This method is used to help remote domain, connection speed for trusted networks. This is the least secure connection method. This should *only* be used for testing or use over a secure, private, and trusted network. SASL is not enabled here, so all TCP traffic is *cleartext*. For real world use *always* enable SASL.
 
 Edit `/etc/libvirt/libvirtd.conf`:
 
@@ -601,6 +602,27 @@ Then restart libvirtd:
 systemctl restart libvirtd.service
 
 ```
+
+## PulseAudio
+
+The PulseAudio daemon normally runs under your regular user account, and will only accept connections from the same user. This can be a problem if QEMU is being run as root through **libvirt**. To run QEMU as a regular user, edit `/etc/libvirt/qemu.conf` and set the `user` option to your username.
+
+```
+user = "dave"
+
+```
+
+You will also need to tell QEMU to use the PulseAudio backend and identify the server to connect to. Add the following section to your domain configuration using `virsh edit`.
+
+```
+ <qemu:commandline>
+   <qemu:env name='QEMU_AUDIO_DRV' value='pa'/>
+   <qemu:env name='QEMU_PA_SERVER' value='/run/user/1000/pulse/native'/>
+ </qemu:commandline>
+
+```
+
+`1000` is your user id. Change it if necessary.
 
 ## See also
 

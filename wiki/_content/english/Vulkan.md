@@ -4,6 +4,13 @@ From [wikipedia:Vulkan (API)](https://en.wikipedia.org/wiki/Vulkan_(API) "wikipe
 
 Learn more at [Khronos](https://www.khronos.org/vulkan/).
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Error - vulkan: No DRI3 support](#Error_-_vulkan:_No_DRI3_support)
+    *   [2.2 Nvidia - vulkan is not working and can not initialize](#Nvidia_-_vulkan_is_not_working_and_can_not_initialize)
+
 ## Installation
 
 To run a Vulkan application, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package, as well as the Vulkan drivers for your graphics card(s):
@@ -35,3 +42,7 @@ Section "Device"
    Option      "DRI"    "3"
 EndSection
 ```
+
+### Nvidia - vulkan is not working and can not initialize
+
+Check if you have [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) installed, it may prevent Nvidia's vulkan driver from being detected.

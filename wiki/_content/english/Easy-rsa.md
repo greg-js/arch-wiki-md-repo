@@ -44,18 +44,18 @@ easyrsa build-ca
 
 ## OpenVPN server files
 
-A functional OpenVPN server requires the following:
+A functional OpenVPN server requires the following (in alphabetical order):
 
-1.  The CA's public certificate.
-2.  The server key pair (a public certificate and a private key).
-3.  The Diffie-Hellman (DH) parameters file (needed for TLS mode which is recommended).
+1.  The CA's public certificate
+2.  The Diffie-Hellman (DH) parameters file (needed for TLS mode which is recommended).
+3.  The server key pair (a public certificate and a private key).
 4.  The Hash-based Message Authentication Code (HMAC) key.
 
-Upon completing the steps outlined in this article, users will have generated the following corresponding files:
+Upon completing the steps outlined in this article, users will have generated the following files on the server:
 
 1.  `/etc/openvpn/ca.crt`
-2.  `/etc/openvpn/server.key` and `/etc/openvpn/server.crt`
-3.  `/etc/openvpn/dh.pem`
+2.  `/etc/openvpn/dh.pem`
+3.  `/etc/openvpn/servername.crt` and `/etc/openvpn/servername.key`
 4.  `/etc/openvpn/ta.key`
 
 ### CA public certificate
@@ -91,6 +91,7 @@ On the **OpenVPN server machine**, install [easy-rsa](https://www.archlinux.org/
 cd /etc/easy-rsa
 easyrsa init-pki
 easyrsa gen-req servername nopass
+cp /etc/easy-rsa/pki/private/servername.key /etc/openvpn
 
 ```
 

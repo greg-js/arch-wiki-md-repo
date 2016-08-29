@@ -62,6 +62,10 @@ $ git commit -a
 
 	[https://github.com/andsens/homeshick](https://github.com/andsens/homeshick) || [homeshick-git](https://aur.archlinux.org/packages/homeshick-git/)
 
+*   **dotbot** — A minimalist dotfiles manager that can be installed as a git submodule of your dotfiles repository.
+
+	[https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot)
+
 ### Maintaining dotfiles across multiple machines
 
 One way of maintaining dotfiles across various machines across various hosts while still allowing for per-host customizations, is by maintaining a master-branch for all shared configuration, while each individual machine has a machine-specific branch checked out. Host-specific configuration can be committed to the machine-specific branch; as shared configuration is added to the master-branch, the per-machine branches are then rebased on top of the updated master.

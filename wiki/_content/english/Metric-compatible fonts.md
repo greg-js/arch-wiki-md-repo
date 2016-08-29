@@ -11,8 +11,11 @@
     *   [3.2 GNU FreeFont](#GNU_FreeFont)
     *   [3.3 Liberation](#Liberation)
     *   [3.4 Google](#Google)
-    *   [3.5 Chrome OS](#Chrome_OS)
-        *   [3.5.1 Noto](#Noto)
+        *   [3.4.1 Chrome OS](#Chrome_OS)
+        *   [3.4.2 Noto](#Noto)
+    *   [3.5 Other metric-compatible fonts](#Other_metric-compatible_fonts)
+        *   [3.5.1 Selawik](#Selawik)
+        *   [3.5.2 Wine Tahoma](#Wine_Tahoma)
 *   [4 Example configuration](#Example_configuration)
     *   [4.1 Example for binding method](#Example_for_binding_method)
     *   [4.2 Example for prefer method](#Example_for_prefer_method)
@@ -23,7 +26,7 @@
 In the following table, commonly-specified families are shown in **bold**. This table is mainly based on [<tt>30-metric-aliases.conf</tt>](https://cgit.freedesktop.org/fontconfig/tree/conf.d/30-metric-aliases.conf) from [fontconfig](/index.php/Fontconfig "Fontconfig").
 
 <caption>"Core fonts for the web" compatibilities</caption>
-| [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Windows](#Microsoft) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | StarOffice | Other |
+| [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Windows](#Microsoft) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | StarOffice |
 | **Helvetica** | Nimbus Sans | TeX Gyre Heros | FreeSans | MS Sans Serif (Helv) | **Arial** | Liberation Sans | Arimo | Albany |
 | **Times** | Nimbus Roman | TeX Gyre Termes | FreeSerif | MS Serif (Tms Rmn) | **Times New Roman** | Liberation Serif | Tinos | Thorndale |
 | **Courier** | Nimbus Mono | TeX Gyre Cursor | FreeMono | **Courier New** | Liberation Mono | Cousine | Cumberland |
@@ -35,6 +38,11 @@ In the following table, commonly-specified families are shown in **bold**. This 
 | **Cambria** | Caladea |
 | **Calibri** | Carlito |
 | **Symbol** | SymbolNeu |
+
+<caption>Microsoft UI fonts</caption>
+| [Microsoft](#Microsoft) | FOSS |
+| **Segoe UI** | [Selawik](#Selawik) |
+| **Tahoma** | [Wine Tahoma](#Wine_Tahoma) |
 
 <caption>Other PostScript core families</caption>
 | [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [Windows](#Microsoft) |
@@ -74,13 +82,23 @@ Older, GPL-licensed versions of this font is based on Ascender Corporation's fon
 
 Google provides a high number of [fonts](https://www.google.com/fonts), including different metric-compatible font families.
 
-### Chrome OS
+#### Chrome OS
 
 Google ships open-source metric-compatible fonts with its operating system, Chrome OS, under the Apache License 2.0\. CrOS core (croscore, [ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) is a collection of Arimo (sans), Tinos (serif) and Cousine (mono), also licensed from Ascender Corporation. A set of extra fonts, CrOS extra (crosextra) provides Carlito ([ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/)) and Caladea ([ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/)) to match default fonts for Microsoft Word.
 
 #### Noto
 
 [Google's Noto Fonts](https://www.google.com/get/noto/) are available via [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts). They are licensed under SIL OFL. Noto Fonts are designed to supplement glyph coverage for Roboto, the standard typeface for Android, and are vertically (i.e. same line height for the same font size) metric-compatible with Roboto.
+
+### Other metric-compatible fonts
+
+#### Selawik
+
+[Selawik](https://github.com/Microsoft/Selawik) is an open source replacement for Microsoft's [Segoe UI](https://en.wikipedia.org/wiki/Segoe_UI "wikipedia:Segoe UI") by Microsoft.
+
+#### Wine Tahoma
+
+The [Wine](/index.php/Wine "Wine") project developed a metric-compatible font to replace Microsoft's [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)"), available as [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/).
 
 ## Example configuration
 

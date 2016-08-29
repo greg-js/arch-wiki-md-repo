@@ -4,9 +4,9 @@
 
 *   [1 Installation](#Installation)
 *   [2 Rebooting using kexec](#Rebooting_using_kexec)
-    *   [2.1 Systemd](#Systemd)
-        *   [2.1.1 Separate /boot partition](#Separate_.2Fboot_partition)
-    *   [2.2 Manually](#Manually)
+    *   [2.1 Manually](#Manually)
+    *   [2.2 Systemd](#Systemd)
+        *   [2.2.1 Separate /boot partition](#Separate_.2Fboot_partition)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -14,6 +14,26 @@
 [Install](/index.php/Install "Install") the [kexec-tools](https://www.archlinux.org/packages/?name=kexec-tools) package.
 
 ## Rebooting using kexec
+
+### Manually
+
+You can manually invoke kexec using:
+
+```
+# kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline
+# kexec -e
+
+```
+
+**Warning:** Running `kexec -e` directly will not unmount active filesystemd or terminate any running services gracefully.
+
+It is also possible to load kernel manually and then let systemd handle service shutdown and kexec for you:
+
+```
+# kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline
+# systemctl kexec
+
+```
 
 ### Systemd
 
@@ -101,26 +121,6 @@ WantedBy=basic.target
 ```
 
 Note that Conflicts=shutdown.target is not really needed, as it's implicitly guaranteed by strict ordering on systinit.target which itself Conflicts= with shutdown.target.
-
-### Manually
-
-It is also perfectly legal to invoke kexec manually:
-
-```
-# kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline
-# kexec -e
-
-```
-
-**Warning:** Running `kexec -e` directly will not unmount active filesystemd or terminate any running services gracefully.
-
-It is also possible to load kernel manually and then let systemd handle service shutdown and kexec for you:
-
-```
-# kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline
-# systemctl kexec
-
-```
 
 ## See also
 

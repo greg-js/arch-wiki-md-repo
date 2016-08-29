@@ -99,6 +99,8 @@ To run `mkinitcpio -p linux` from the chroot, and exit again:
 
 ### Using chroot
 
+**Warning:** When using `--rbind`, some subdirectories of `dev/` and `sys/` will not be unmountable. Attempting to unmount with `umount -l` in this situation will break your session, requiring a reboot. If possible, use `-o bind` instead.
+
 Mount the temporary api filesystems:
 
 ```

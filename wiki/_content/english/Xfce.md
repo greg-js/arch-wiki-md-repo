@@ -85,9 +85,9 @@ Xfce stores configuration options in [Xfconf](http://docs.xfce.org/xfce/xfconf/s
 
 A number of graphical tools are available for this task:
 
-*   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments.
+*   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments. (Discontinued)
 
-	[http://www.redsquirrel87.com/XAME.html](http://www.redsquirrel87.com/XAME.html) || [xame](https://aur.archlinux.org/packages/xame/)
+	[http://www.redsquirrel87.com/XAME.php](http://www.redsquirrel87.com/XAME.php) || [xame](https://aur.archlinux.org/packages/xame/)
 
 *   **MenuLibre** — An advanced menu editor that provides modern features in a clean, easy-to-use interface.
 
