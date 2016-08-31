@@ -90,7 +90,7 @@ If not, check for cable issues before diagnosing further.
 
 ## Set the hostname
 
-A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network, configured in `/etc/hostname`—see [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) for details. The file can contain the system's domain name, if any. To set the hostname, [edit](/index.php/Textedit "Textedit") `/etc/hostname` to include a single line with `*myhostname*`:
+A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a unique name created to identify a machine on a network, configured in `/etc/hostname`—see [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) and [hostname(7)](http://man7.org/linux/man-pages/man7/hostname.7.html) for details. The file can contain the system's domain name, if any. To set the hostname, [edit](/index.php/Textedit "Textedit") `/etc/hostname` to include a single line with `*myhostname*`:
 
  `/etc/hostname` 
 ```
@@ -131,7 +131,7 @@ To allow other machines to address the host by name, it is necessary to either:
 *   Configure the [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html) file, or
 *   Enable a service which resolves the hostname.
 
-**Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module, enabled by default in `/etc/nsswitch.conf`. However, clients may still rely on `/etc/hosts`, see: [[1]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
+**Note:** [systemd](https://www.archlinux.org/packages/?name=systemd) provides hostname resolution via the `myhostname` nss module, enabled by default in `/etc/nsswitch.conf`. However, clients may still rely on `/etc/hosts`, see [[1]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
 
 To configure the hosts file, add the following line to `/etc/hosts`:
 

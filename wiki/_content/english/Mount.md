@@ -1,59 +1,48 @@
-[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) is an application used to access file systems, partition tables, and shared folders. It can mount file systems supported by the Linux kernel, but can be extended with other drivers or applications, such as [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) for mounting [NTFS](/index.php/NTFS "NTFS") filesystems.
+[mount](https://en.wikipedia.org/wiki/Mount_(Unix) "w:Mount (Unix)") is an application used to access file systems, partition tables, and shared folders. It can mount file systems supported by the Linux kernel, but can be extended with other drivers or applications, such as [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) for mounting [NTFS](/index.php/NTFS "NTFS") filesystems. See [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html).
 
 ## Contents
 
-*   [1 Supported file systems](#Supported_file_systems)
-*   [2 Mounting a file system](#Mounting_a_file_system)
-*   [3 Listing mounted file systems](#Listing_mounted_file_systems)
-    *   [3.1 mtab](#mtab)
-*   [4 Alternatives to change the default mount options](#Alternatives_to_change_the_default_mount_options)
-*   [5 Some other file systems](#Some_other_file_systems)
-    *   [5.1 VFAT, FAT, DOS](#VFAT.2C_FAT.2C_DOS)
-    *   [5.2 NTFS](#NTFS)
-*   [6 See also](#See_also)
+*   [1 Usage](#Usage)
+    *   [1.1 Listing mounted file systems](#Listing_mounted_file_systems)
+    *   [1.2 Alternatives to change the default mount options](#Alternatives_to_change_the_default_mount_options)
+*   [2 Some other file systems](#Some_other_file_systems)
+    *   [2.1 VFAT, FAT, DOS](#VFAT.2C_FAT.2C_DOS)
+    *   [2.2 NTFS](#NTFS)
+*   [3 See also](#See_also)
 
-## Supported file systems
+## Usage
 
-To view the supported file systems by your kernel and their configurations:
+The [fstab](/index.php/Fstab "Fstab") file may contain lines describing what devices are usually mounted where, using which options. A [file system](/index.php/File_system "File system") specified in `/etc/fstab` will be mounted at boot time, with some exceptions. For example, any device whose line contains the `noauto` option will not be mounted. This is useful for things like partitions for other OSes.
 
-```
-$ zgrep -e 'FS_' -e _FS -e 'CONFIG_ISO' -e  '_NLS=' -e CONFIG_NLS_ISO /proc/config.gz
+External devices that are to be mounted when present, but ignored if absent, may require the `nofail` option. See [external devices](/index.php/Fstab#External_devices "Fstab") for more information.
 
-```
+**Note:** Supported file systems are listed in `/proc/filesystems`.
 
-You can read about supported file systems by the mount command in the manual: `man mount`.
-
-## Mounting a file system
-
-The [fstab](/index.php/Fstab "Fstab") file (see [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html)), may contain lines describing what devices are usually mounted where, using which options. A filesystem specified in `/etc/fstab` will be mounted at boot time, with some exceptions. For example, any device whose line contains the `noauto` option will not be mounted. This is useful for things like partitions for other OSes. External devices that are to be mounted when present, but ignored if absent, may require the `nofail` option. See [external devices](/index.php/Fstab#External_devices "Fstab") for more information.
-
-When mounting a filesystem mentioned in fstab or mtab, it is sufficient to give only the device, or only the mount point.
+When mounting a file system mentioned in fstab or mtab, it is sufficient to give only the device, or only the mount point. For example, to mount `/dev/sdb1`:
 
 ```
-# mount /dev/sdXY 
+# mount /dev/*sdb1*
 
 ```
 
-The mount program does not read the /etc/fstab file if device (or LABEL/UUID) and dir (mount point) are specified. For example:
+The mount program does not read the `/etc/fstab` file if device (or [LABEL/UUID](/index.php/Persistent_block_device_naming "Persistent block device naming")) and directory (mount point) are specified. For example:
 
 ```
-# mount /dev/foo /dir
-
-```
-
-If the mount point does not exist, it may be necessary to create it first. To mount to MYDIR1:
-
-```
-# mkdir /mnt/mydir1
-# mount /dev/sdXY /mnt/mydir1
+# mount /dev/*sdb1* */mnt/mydir*
 
 ```
 
-## Listing mounted file systems
+If the mount point does not exist, it may be necessary to create it first. For example:
 
-You can see the mounted file systems by looking at the `/etc/mtab` and `/proc/mounts` files.
+```
+# mkdir */mnt/mydir*
+# mount /dev/*sdb1* */mnt/mydir*
 
-### mtab
+```
+
+### Listing mounted file systems
+
+Mounted file systems are visible from [/etc/mtab](https://en.wikipedia.org/wiki/Mtab "wikipedia:Mtab"), which is a symbolic link to `/proc/self/mounts`. See also [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html).
 
 The [/etc/mtab](https://en.wikipedia.org/wiki/Mtab "wikipedia:Mtab") is a system-generated file created and updated by the **mount** application whenever any [file system](/index.php/File_system "File system") is mounted or unmounted.
 
@@ -66,7 +55,7 @@ Whenever the `mount` program is executed without any arguments, this file is pri
 
 **Note:** The `/etc/mtab` file is meant to be used to display the status of currently mounted file systems only. It should not be modified manually.
 
-## Alternatives to change the default mount options
+### Alternatives to change the default mount options
 
 A few examples about how to extend mount functionality and modify default options:
 
@@ -159,6 +148,5 @@ You can add more actions for when an external storage device, such as a USB driv
 ## See also
 
 *   Documentation of file systems supported by kernel: [kernel.org](https://www.kernel.org/doc/Documentation/filesystems/)
-*   Manual for the *mount* command: [linux.die.net](http://linux.die.net/man/8/mount)
 *   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")
 *   Creating and using disk images mini-howto: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto)

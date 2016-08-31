@@ -25,7 +25,7 @@ You can manually invoke kexec using:
 
 ```
 
-**Warning:** Running `kexec -e` directly will not unmount active filesystemd or terminate any running services gracefully.
+**Warning:** Running `kexec -e` directly will not unmount active filesystems or terminate any running services gracefully.
 
 It is also possible to load kernel manually and then let systemd handle service shutdown and kexec for you:
 

@@ -9,26 +9,27 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
     *   [4.1 Standard error](#Standard_error)
 *   [5 find](#find)
 *   [6 locate](#locate)
-*   [7 iconv](#iconv)
-    *   [7.1 Convert a file in place](#Convert_a_file_in_place)
-*   [8 ip](#ip)
-*   [9 less](#less)
-    *   [9.1 Vim as alternative pager](#Vim_as_alternative_pager)
-*   [10 ls](#ls)
-    *   [10.1 Long format](#Long_format)
-    *   [10.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
-*   [11 mkdir](#mkdir)
-*   [12 mv](#mv)
-*   [13 od](#od)
-*   [14 pv](#pv)
-*   [15 rm](#rm)
-*   [16 sed](#sed)
-*   [17 seq](#seq)
-*   [18 ss](#ss)
-*   [19 tar](#tar)
-*   [20 which](#which)
-*   [21 wipefs](#wipefs)
-*   [22 See also](#See_also)
+*   [7 lsblk](#lsblk)
+*   [8 iconv](#iconv)
+    *   [8.1 Convert a file in place](#Convert_a_file_in_place)
+*   [9 ip](#ip)
+*   [10 less](#less)
+    *   [10.1 Vim as alternative pager](#Vim_as_alternative_pager)
+*   [11 ls](#ls)
+    *   [11.1 Long format](#Long_format)
+    *   [11.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
+*   [12 mkdir](#mkdir)
+*   [13 mv](#mv)
+*   [14 od](#od)
+*   [15 pv](#pv)
+*   [16 rm](#rm)
+*   [17 sed](#sed)
+*   [18 seq](#seq)
+*   [19 ss](#ss)
+*   [20 tar](#tar)
+*   [21 which](#which)
+*   [22 wipefs](#wipefs)
+*   [23 See also](#See_also)
 
 ## Basic commands
 
@@ -138,6 +139,24 @@ Before *locate* can be used, the database will need to be created. To do this, e
 
 See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
 
+## lsblk
+
+[lsblk(8)](http://man7.org/linux/man-pages/man8/lsblk.8.html) will show all available block devices along with their partitioning schemes:
+
+ `$ lsblk` 
+```
+NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda               8:0    0    80G  0 disk
+└─sda1            8:1    0    80G  0 part
+
+```
+
+The beginning of the device name specifies the type of block device. Most modern hard disks/[SSD](/index.php/SSD "SSD") are recognised as SCSI (**s**) storage **d**evices. The type is followed by a lower-case letter listed as `sd**x**`, where `**x**` starts from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on those devices will be listed as `sdx**Y**`, where `**Y**` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example above, only one device is available (`sda`), and that device has only one partition (`sda1`).
+
+Other common block device types include flash memory, starting with, for example `mmcblk` for memory cards, or `nvme` for [NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") devices. Unknown types can be searched in the [kernel's documentation](https://www.kernel.org/doc/Documentation/devices.txt).
+
+Note that on [installation](/index.php/Installation "Installation") of Arch Linux, the output includes devices used to host and boot the Arch live media, such as an USB drive. Not all devices listed are therefore viable or appropriate mediums for installation; results ending in `rom`, `loop` or `airoot` can be ignored in this case.
+
 ## iconv
 
 *iconv* converts the encoding of characters from one codeset to another.
@@ -170,24 +189,24 @@ See `man sponge` for details.
 
 **Note:** The *ip* utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
-| Object | Purpose | Manual Page Name |
+| Object | Purpose | Manual page |
 | ip addr | protocol address management | ip-address |
-| ip addrlabel | protocol address label management | ip-addrlabel |
-| ip l2tp | tunnel Ethernet over IP (L2TPv3) | ip-l2tp |
+| ip addrlabel | protocol address label management | [ip-addrlabel(8)](http://man7.org/linux/man-pages/man8/ip-addrlabel.8.html) |
+| ip l2tp | tunnel Ethernet over IP (L2TPv3) | [ip-l2tp(8)](http://man7.org/linux/man-pages/man8/ip-l2tp.8.html) |
 | ip link | network device configuration | ip-link |
-| ip maddr | multicast addresses management | ip-maddress |
-| ip monitor | watch for netlink messages | ip-monitor |
-| ip mroute | multicast routing cache management | ip-mroute |
+| ip maddr | multicast addresses management | [ip-maddress(8)](http://man7.org/linux/man-pages/man8/ip-maddress.8.html) |
+| ip monitor | watch for netlink messages | [ip-monitor(8)](http://man7.org/linux/man-pages/man8/ip-monitor.8.html) |
+| ip mroute | multicast routing cache management | [ip-mroute(8)](http://man7.org/linux/man-pages/man8/ip-mroute.8.html) |
 | ip mrule | rule in multicast routing policy db |
-| ip neigh | neighbour/ARP tables management | ip-neighbour |
-| ip netns | process network namespace management | ip-netns |
-| ip ntable | neighbour table configuration | ip-ntable |
+| ip neigh | neighbour/ARP tables management | [ip-neighbour(8)](http://man7.org/linux/man-pages/man8/ip-neighbour.8.html) |
+| ip netns | process network namespace management | [ip-netns(8)](http://man7.org/linux/man-pages/man8/ip-netns.8.html) |
+| ip ntable | neighbour table configuration | [ip-ntable(8)](http://man7.org/linux/man-pages/man8/ip-ntable.8.html) |
 | ip route | routing table management | ip-route |
-| ip rule | routing policy database management | ip-rule |
-| ip tcp_metrics | management for TCP Metrics | ip-tcp_metrics |
-| ip tunnel | tunnel configuration | ip-tunnel |
+| ip rule | routing policy database management | [ip-rule(8)](http://man7.org/linux/man-pages/man8/ip-rule.8.html) |
+| ip tcp_metrics | management for TCP Metrics | [ip-tcp_metrics(8)](http://man7.org/linux/man-pages/man8/ip-tcp_metrics.8.html) |
+| ip tunnel | tunnel configuration | [ip-tunnel(8)](http://man7.org/linux/man-pages/man8/ip-tunnel.8.html) |
 | ip tuntap | manage TUN/TAP devices |
-| ip xfrm | manage IPsec policies | ip-xfrm |
+| ip xfrm | manage IPsec policies | [ip-xfrm(8)](http://man7.org/linux/man-pages/man8/ip-xfrm.8.html) |
 
 The `help` command is available for all objects. For example, typing `ip addr help` will show you the command syntax available for the address object. For advanced usage see the [iproute2 documentation](http://www.policyrouting.org/iproute2.doc.html).
 
@@ -369,7 +388,7 @@ $ ss -au
 
 ```
 
-For more information see `man ss` or [introductory examples](http://www.cyberciti.biz/files/ss.html).
+For more information see [ss(8)](http://man7.org/linux/man-pages/man8/ss.8.html) or [introductory examples](http://www.cyberciti.biz/files/ss.html).
 
 ## tar
 
@@ -409,7 +428,7 @@ The construction of some of these *tar* arguments may be considered legacy, but 
 
 *wipefs* can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
 
-See wipefs(8) for more information.
+See [wipefs(8)](http://man7.org/linux/man-pages/man8/wipefs.8.html) for more information.
 
 For example, to erase all signatures from the device `/dev/sdb` and create a signature backup `~/wipefs-sdb-*offset*.bak` file for each signature:
 

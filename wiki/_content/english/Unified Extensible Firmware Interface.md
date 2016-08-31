@@ -45,8 +45,9 @@ It is distinct from the commonly used "[MBR](/index.php/MBR "MBR") boot code" me
 *   UEFI started as Intel's EFI in versions 1.x.
 *   Later, a group of companies called the UEFI Forum took over its development, which renamed it as Unified EFI starting with version 2.0.
 *   Unless specified as EFI 1.x, EFI and UEFI terms are used interchangeably to denote UEFI 2.x firmware.
-*   As of 15 April 2015, UEFI Specification 2.5 is the most recent version.
 *   Apple's EFI implementation is neither a EFI 1.x version nor UEFI 2.x version but mixes up both. This kind of firmware does not fall under any one (U)EFI specification and therefore is not a standard UEFI firmware. Unless stated explicitly, these instructions are general and some of them may not work or may be different in [Apple Macs](/index.php/MacBook "MacBook").
+
+The latest UEFI Specification can be found at [http://uefi.org/specifications](http://uefi.org/specifications).
 
 ## UEFI Firmware bitness
 
@@ -244,7 +245,7 @@ You can download a BSD licensed UEFI Shell from Intel's Tianocore UDK/EDK2 Sourc
 *   There are copies of Shell v1 and Shell v2 in the EFI directory on the Arch install media image.
 *   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/master/ShellBinPkg) (may not be up-to-date)
 *   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream)
-*   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](http://dl.dropbox.com/u/17629062/Shell2.zip) - from Clover EFI bootloader
+*   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](http://dl.dropbox.com/u/17629062/Shell2.zip) - from Clover EFI bootloader
 
 Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=ShellPkg) and [this mail](http://sourceforge.net/mailarchive/message.php?msg_id=28690732)
 

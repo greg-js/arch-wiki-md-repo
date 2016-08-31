@@ -2,7 +2,7 @@
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes |
 | [Wireless](/index.php/Wireless "Wireless") | Yes |
 | [ALSA](/index.php/ALSA "ALSA") | no beep |
-| [TrackPoint](/index.php/TrackPoint "TrackPoint") | with linux-4.5.1 |
+| [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Fingerprint Sensor | No |
@@ -61,4 +61,5 @@ This can be worked around by using the `i915.enable_rc6=0` kernel parameter [[3]
 
 ## See also
 
-[Dual boot install with bootctl](https://www.youtube.com/watch?v=fnYZAr-BaK0&list=PLiKgVPlhUNuxgKwoVH4MMUy5MLqjAE2ux&index=3)
+*   [Lenovo Support Page](http://support.lenovo.com/us/en/products/Laptops-and-netbooks/ThinkPad-T-Series-laptops/ThinkPad-T460s?beta=false)
+*   [Dual boot install with bootctl](https://www.youtube.com/watch?v=fnYZAr-BaK0&list=PLiKgVPlhUNuxgKwoVH4MMUy5MLqjAE2ux&index=3)

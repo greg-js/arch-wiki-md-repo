@@ -22,7 +22,7 @@ See [List of applications#Network managers](/index.php/List_of_applications#Netw
 
 ### wpa_supplicant
 
-[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly and used in combination with a dhcp client or with systemd, e.g. for a [dynamic address](/index.php/Wireless_network_configuration#Manual_wireless_connection_at_boot_using_systemd_and_dhcpcd "Wireless network configuration"). See the examples in `/etc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
+[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly and used in combination with a dhcp client or with systemd. See the examples in `/etc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
 
 Once the connection configuration is complete, you can use the dhcp client to test them. For example:
 
@@ -96,8 +96,7 @@ Alternatively, adapt an example configuration from [[3]](https://gist.githubuser
 
 **Tip:**
 
-*   To prevent storing your password as plaintext, you can generate a password hash with `$ tr -d '
-' | iconv -t utf16le | openssl md4`. Type your password, press `Enter` and then `Ctrl+d`. Store the hashed password as `'password=hash:<hash>'`. This password hash is only available for MSCHAPV2 or MSCHAP, when using PAP use a plaintext password.
+*   To prevent storing your password as plaintext, you can generate a password hash with `$ echo -n *yourpassword* | iconv -t utf16le | openssl md4`. Store the hashed password as `'password=hash:*yourhash'*`. This password hash is only available for MSCHAPV2 or MSCHAP, when using PAP use a plaintext password.
 *   Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
 
 ## Troubleshooting

@@ -27,8 +27,8 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
     *   [3.7 Initramfs](#Initramfs)
     *   [3.8 Contraseña de root](#Contrase.C3.B1a_de_root)
     *   [3.9 Instalar un gestor de arranque](#Instalar_un_gestor_de_arranque)
-    *   [3.10 Reiniciar](#Reiniciar)
-*   [4 Posinstalación](#Posinstalaci.C3.B3n)
+*   [4 Reiniciar](#Reiniciar)
+*   [5 Posinstalación](#Posinstalaci.C3.B3n)
 
 ## Preinstalación
 
@@ -146,7 +146,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Contraseña de root
 
-*   Establezca la [password](/index.php/Password "Password") de root: `# passwd` 
+*   Establezca la [contraseña](/index.php/Password "Password") de root: `# passwd` 
 
 ### Instalar un gestor de arranque
 
@@ -154,7 +154,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Si tiene una CPU Intel, además de instalar un gestor de arranque, instale el paquete [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) y [active las actualizaciones del microcódigo](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 
-### Reiniciar
+## Reiniciar
 
 *   Salga del entorno chroot escribiendo `exit` o presionando `Ctrl+D`.
 

@@ -489,3 +489,4 @@ SUBSYSTEMS=="scsi", KERNEL=="s[rg][0-9]*", ATTRS{type}=="5", GROUP="optical"
 *   [udev mailing list information](http://vger.kernel.org/vger-lists.html#linux-hotplug)
 *   [Scripting with udev](http://jasonwryan.com/blog/2014/01/20/udev/)
 *   [Writing udev rules](http://www.reactivated.net/writing_udev_rules.html)
+*   [Device and Module Handling on an LFS System](http://www.linuxfromscratch.org/lfs/view/6.1/chapter07/udev.html)

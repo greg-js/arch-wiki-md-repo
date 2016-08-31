@@ -9,8 +9,9 @@ This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html
 *   [1 Installation](#Installation)
 *   [2 List partitions](#List_partitions)
 *   [3 Backup and restore partition table](#Backup_and_restore_partition_table)
-    *   [3.1 Using sfdisk](#Using_sfdisk)
-    *   [3.2 Using sgdisk](#Using_sgdisk)
+    *   [3.1 Using dd](#Using_dd)
+    *   [3.2 Using sfdisk](#Using_sfdisk)
+    *   [3.3 Using sgdisk](#Using_sgdisk)
 *   [4 Create a partition table and partitions](#Create_a_partition_table_and_partitions)
     *   [4.1 Start the partition manipulator](#Start_the_partition_manipulator)
         *   [4.1.1 fdisk](#fdisk)
@@ -47,7 +48,34 @@ Or for the *gdisk*:
 
 ## Backup and restore partition table
 
-Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive. You can also use a backup to copy the same partition layout to numerous drives. See also [Master Boot Record#Backup and restoration](/index.php/Master_Boot_Record#Backup_and_restoration "Master Boot Record").
+Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive. You can also use a backup to copy the same partition layout to numerous drives.
+
+### Using dd
+
+Because the MBR is located on the disk it can be backed up and later recovered.
+
+To backup the MBR:
+
+```
+# dd if=/dev/sda of=/path/mbr-backup bs=512 count=1
+
+```
+
+Restore the MBR:
+
+```
+# dd if=/path/mbr-backup of=/dev/sda bs=512 count=1
+
+```
+
+**Warning:** Restoring the MBR with a mismatching partition table will make your data unreadable and nearly impossible to recover. If you simply need to reinstall the bootloader see their respective pages as they also employ the [DOS compatibility region](http://www.pixelbeat.org/docs/disk/): [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux").
+
+To erase the MBR (may be useful if you have to do a full reinstall of another operating system) only the first 446 bytes are zeroed because the rest of the data contains the partition table:
+
+```
+# dd if=/dev/zero of=/dev/sda bs=446 count=1
+
+```
 
 ### Using sfdisk
 

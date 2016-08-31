@@ -23,6 +23,11 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
         *   [2.3.2 Problems](#Problems_2)
         *   [2.3.3 Possible trackpad solution](#Possible_trackpad_solution_2)
 *   [3 Razer keyboards](#Razer_keyboards)
+    *   [3.1 Blackwidow Control](#Blackwidow_Control)
+        *   [3.1.1 Features](#Features)
+        *   [3.1.2 How to Use](#How_to_Use)
+    *   [3.2 Blackwidow macro scripts](#Blackwidow_macro_scripts)
+        *   [3.2.1 Features](#Features_2)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Mouse randomly stops working](#Mouse_randomly_stops_working)
 
@@ -236,17 +241,34 @@ Feature still not working: pinch to zoom, 3rd mouse button
 
 There are currently two Python scripts available to enable macro keys under Linux:
 
-*   [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/)
-    *   works with regular BlackWidow and BlackWidow 2013
-    *   might work with BlackWidow Ultimate (2013), too
-    *   does not work with BlackWidow (Ultimate) 2016 yet
-    *   uses Python 3
-    *   does not bundle any scripts to create macros (use hot key configuration tool from your desktop environment)
-    *   allows to control the status of the LED
-*   [razer-blackwidow-macro-scripts](https://aur.archlinux.org/packages/razer-blackwidow-macro-scripts/)
-    *   works with BlackWidow Ultimate 2013 (unknown whether it works with other versions)
-    *   uses Python 2
-    *   also bundles scripts to create and execute macros
+### Blackwidow Control
+
+#### Features
+
+*   works with regular BlackWidow and BlackWidow 2013
+*   might work with BlackWidow Ultimate (2013), too
+*   does not work with BlackWidow (Ultimate) 2016 yet
+*   uses Python 3
+*   allows to control the status of the LED
+
+#### How to Use
+
+Install it from AUR [blackwidowcontrol](https://aur.archlinux.org/packages/blackwidowcontrol/) After install run as root
+
+```
+$ blackwidowcontrol -i
+
+```
+
+Then use the shortcut utility of your Desktop Enviroment to map the keys
+
+### Blackwidow macro scripts
+
+#### Features
+
+*   Works with BlackWidow Ultimate 2013 (unknown whether it works with other versions)
+*   Uses Python 2
+*   Bundles scripts to create and execute macros
 
 ## Troubleshooting
 

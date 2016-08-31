@@ -195,6 +195,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 ## Casual games
 
+*   **Atanks** — A multi-platform Scorched Earth clone similar to the Worms series of games
+
+	|| [atanks](https://www.archlinux.org/packages/?name=atanks)
+
 *   **bs** — Battleships based shooter for the console
 
 	[http://www.catb.org/~esr/bs/](http://www.catb.org/~esr/bs/) || [bs](https://aur.archlinux.org/packages/bs/)

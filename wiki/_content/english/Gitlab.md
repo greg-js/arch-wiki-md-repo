@@ -106,7 +106,7 @@ http_settings:
 ...
 ```
 
-Update the `/usr/share/webapps/gitlab/unicorn.rb` configuration if the port and/or hostname is different from the default:
+Update the `/etc/webapps/gitlab/unicorn.rb` configuration if the port and/or hostname is different from the default:
 
  `/etc/webapps/gitlab/unicorn.rb`  `listen "127.0.0.1:8080", :tcp_nopush => true # <<-- right here` 
 
@@ -374,13 +374,13 @@ With the following commands we check if the steps we followed so far are configu
 
 ```
 # cd /usr/share/webapps/gitlab
-# sudo -u gitlab bundle-2.1 exec rake gitlab:env:info RAILS_ENV=production
-# sudo -u gitlab bundle-2.1 exec rake gitlab:check RAILS_ENV=production
+# sudo -u gitlab bundle exec rake gitlab:env:info RAILS_ENV=production
+# sudo -u gitlab bundle exec rake gitlab:check RAILS_ENV=production
 
 ```
 
 **Note:** These gitlab:env:info and gitlab:check commands will show a fatal error related to git. This is OK.
- `$ sudo -u gitlab bundle-2.1 exec rake gitlab:env:info RAILS_ENV=production` 
+ `$ sudo -u gitlab bundle exec rake gitlab:env:info RAILS_ENV=production` 
 ```
 fatal: Not a git repository (or any of the parent directories): .git
 
@@ -414,7 +414,7 @@ Git:		/usr/bin/git
 ```
 
 **Note:** `gitlab:check` will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
- `$ sudo -u gitlab bundle-2.1 exec rake gitlab:check RAILS_ENV=production` 
+ `$ sudo -u gitlab bundle exec rake gitlab:check RAILS_ENV=production` 
 ```
 fatal: Not a git repository (or any of the parent directories): .git
 Checking Environment ...
@@ -1038,14 +1038,14 @@ First, move to the gitlab installation directory.
 If every gitlab page gives a 500 error, then the database migrations and the assets are probably stale. If not, skip this step.
 
 ```
-# sudo -u gitlab -H bundle-2.1 exec rake db:migrate RAILS_ENV=production
+# sudo -u gitlab -H bundle exec rake db:migrate RAILS_ENV=production
 
 ```
 
 If gitlab is constantly waiting for the deployment to finish, then the assets have probably not been recompiled.
 
 ```
-# sudo -u gitlab -H bundle-2.1 exec rake assets:clean assets:precompile cache:clear RAILS_ENV=production
+# sudo -u gitlab -H bundle exec rake assets:clean assets:precompile cache:clear RAILS_ENV=production
 
 ```
 

@@ -40,6 +40,8 @@ Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to inst
     *   [6.12 Apple Remote](#Apple_Remote)
     *   [6.13 HFS partition sharing](#HFS_partition_sharing)
     *   [6.14 HFS+ Partitions](#HFS.2B_Partitions)
+        *   [6.14.1 Journaling](#Journaling)
+        *   [6.14.2 Yosemite and later](#Yosemite_and_later)
     *   [6.15 Home Sharing](#Home_Sharing)
         *   [6.15.1 In OS X](#In_OS_X)
             *   [6.15.1.1 Step 1: change UID and GID(s)](#Step_1:_change_UID_and_GID.28s.29)
@@ -1035,6 +1037,8 @@ ls /media/mac
 
 ### HFS+ Partitions
 
+#### Journaling
+
 HFS+ partitions, now the default in OS X, are not fully supported by Linux and are mounted as read-only by default. In order to write to an HFS+ partition, the safe way is to disable journaling. This can be accomplished using the OS X Disk Utility. Refer to this [Apple support page](http://support.apple.com/kb/ht2355) for more information or try to do it from the command line:
 
 Find your partition:
@@ -1078,9 +1082,61 @@ $
 
 ```
 
-If you get noting as output, then jounrnaling is disabled.
+If you get noting as output, then journaling is disabled.
 
-However, if you fail to disable jounrnaling. You can change "auto,user,rw,exec" in "/etc/fstab" to "auto,user,force,rw,exec" and mount it.
+However, if you fail to disable journaling. You can change "auto,user,rw,exec" in "/etc/fstab" to "auto,user,force,rw,exec" and mount it.
+
+#### Yosemite and later
+
+Since Yosemite, HFS+ partitions are now wrapped a CoreStorage volume. Verify that you have an CoreStorage volume.
+
+```
+# fdisk -l /dev/sdX
+ Disk /dev/sdX: 298.1 GiB, 320072933376 bytes, 625142448 sectors
+ Units: sectors of 1* 512 = 512 bytes
+ Sector size (logical/physical): 512 bytes / 4096 bytes
+ I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+ Disklabel type: gpt
+ Device      Start      End         Sectors    Size     Type
+ /dev/sdX1   40         409639      409600     200M     EFI System
+ /dev/sdX2   409640     623872871   623463232  297.3G   Apple Core storage
+ /dev/sdX3   623872872  625142407   1269536    916.0M   Apple boot
+
+```
+
+HFS+ uses two volume headers, one 1024 bytes into the device and one 1024 from the end of the device. With the HFS+ partition wrapped in the CoreStorage volume the end of the partition is not actually 1024 bytes from the end of the `/dev/sdX2` partition. To fix this you need to specify `sizelimit=X` when mounting.
+
+To determine `sizelimit` do the following:
+
+1.  Run `testdisk /dev/sdX` and select your drive
+2.  Select `EFI GPT`
+3.  Select `Analyse` and then `Quick Search`
+
+Sample output:
+
+```
+ TestDisk 7.0, Data Recovery Utility, April 2015
+ Christophe GRENIER <grenier@cgsecurity.org>
+ [http://www.cgsecurity.org](http://www.cgsecurity.org)
+
+ Disk /dev/sdX  - 320 GB / 298 GiB - CHS 38913 255 63
+     Partition     Start      End        Size in sectors
+ P  EFI System     40         409639     409600  [EFI]
+ P  Mac HFS        409640     623147815  622738176
+ P  Mac HFS        623872872  625142407  1269536
+
+```
+
+What you see now is the output of the HFS partition itself without the CoreStorage volume. Take the size in sectors (622738176 in this example) and multiply by the number of bytes in your logical sector size (512 in this example).
+
+622738176 * 512 = 318841946112
+
+Finally, mount your disk with the `sizelimit=X` option.
+
+```
+ mount /dev/sdX -t hfsplus -o ro,sizelimit=318841946112
+
+```
 
 ### Home Sharing
 

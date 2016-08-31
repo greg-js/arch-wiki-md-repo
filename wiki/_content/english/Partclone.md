@@ -9,7 +9,7 @@
 
 ## Installation
 
-Install [partclone](https://www.archlinux.org/packages/?name=partclone) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [partclone](https://www.archlinux.org/packages/?name=partclone) package.
 
 ## Using Partclone with an ext4-formatted partition
 

@@ -18,6 +18,7 @@ This is a simple article detailing different methods of Arch/Windows coexistence
     *   [2.3 Troubleshooting](#Troubleshooting)
         *   [2.3.1 Couldn't create a new partition or locate an existing one](#Couldn.27t_create_a_new_partition_or_locate_an_existing_one)
         *   [2.3.2 Cannot boot Linux after installing Windows](#Cannot_boot_Linux_after_installing_Windows)
+        *   [2.3.3 Restoring a Windows boot record](#Restoring_a_Windows_boot_record)
 *   [3 Time standard](#Time_standard)
 *   [4 See also](#See_also)
 
@@ -179,6 +180,37 @@ The usb-stick for installing Windows 8.1 seems to need a MBR partition table (no
 #### Cannot boot Linux after installing Windows
 
 See [UEFI#Windows changes boot order](/index.php/UEFI#Windows_changes_boot_order "UEFI").
+
+#### Restoring a Windows boot record
+
+By convention (and for ease of installation), Windows is usually installed on the first partition and installs its partition table and reference to its bootloader to the first sector of that partition. If you accidentally install a bootloader like GRUB to the Windows partition or damage the boot record in some other way, you will need to use a utility to repair it. Microsoft includes a boot sector fix utility `FIXBOOT` and an MBR fix utility called `FIXMBR` on their recovery discs, or sometimes on their install discs. Using this method, you can fix the reference on the boot sector of the first partition to the bootloader file and fix the reference on the MBR to the first partition, respectively. After doing this you will have to [reinstall GRUB](/index.php/GRUB#Bootloader_installation "GRUB") to the MBR as was originally intended (that is, the GRUB bootloader can be assigned to chainload the Windows bootloader).
+
+If you wish to revert back to using Windows, you can use the `FIXBOOT` command which chains from the MBR to the boot sector of the first partition to restore normal, automatic loading of the Windows operating system.
+
+Of note, there is a Linux utility called `ms-sys` (package [ms-sys](https://aur.archlinux.org/packages/ms-sys/) in AUR) that can install MBR's. However, this utility is only currently capable of writing new MBRs (all OS's and file systems supported) and boot sectors (a.k.a. boot record; equivalent to using `FIXBOOT`) for FAT file systems. Most LiveCDs do not have this utility by default, so it will need to be installed first, or you can look at a rescue CD that does have it, such as [Parted Magic](http://partedmagic.com/).
+
+First, write the partition info (table) again by:
+
+```
+# ms-sys --partition /dev/sda1
+
+```
+
+Next, write a Windows 2000/XP/2003 MBR:
+
+```
+# ms-sys --mbr /dev/sda  # Read options for different versions
+
+```
+
+Then, write the new boot sector (boot record):
+
+```
+# ms-sys -(1-6)          # Read options to discover the correct FAT record type
+
+```
+
+`ms-sys` can also write Windows 98, ME, Vista, and 7 MBRs as well, see `ms-sys -h`.
 
 ## Time standard
 

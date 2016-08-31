@@ -1,5 +1,3 @@
-B
-
 **Note:** This page refers to the early 2015 model of XPS 13\. For the late 2015 model, see [Dell XPS 13 (2016)](/index.php/Dell_XPS_13_(2016) "Dell XPS 13 (2016)").
 
 | **Device** | **Status** |
@@ -82,7 +80,7 @@ Some higher-end models do not use the Dell-branded Broadcom adapter but instead 
 
 **Note:** **Intel WiFi users:** If your WiFi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-The Broadcom Bluetooth firmware is not available in the kernel ([source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will need to install [bt-dw1560-firmware](https://aur.archlinux.org/packages/bt-dw1560-firmware/) and reboot if you want to use bluetooth.
+The Broadcom Bluetooth firmware is not available in the kernel ([source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you will need to install [bcm20702a1-firmware](https://aur.archlinux.org/packages/bcm20702a1-firmware/) and reboot if you want to use bluetooth.
 
 Alternatively, you can retrieve it from the [Windows driver](http://catalog.update.microsoft.com/v7/site/ScopedViewRedirect.aspx?updateid=87a7756f-1451-45da-ba8a-55f8aa29dfee) yourself. You need to extract the `.cab` file with [cabextract](https://www.archlinux.org/packages/?name=cabextract) and then convert it to a `.hcd` file with *hex2hcd* from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils):
 

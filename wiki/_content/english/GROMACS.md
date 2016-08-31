@@ -45,12 +45,12 @@ According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gromacs](https://aur.archlinux.org/packages/gromacs/) or [gromacs-mpi](https://aur.archlinux.org/packages/gromacs-mpi/) package. Be sure to [edit](/index.php/Textedit "Textedit") the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to suit your system (i.e. for MPI or GPU support). Some of the [cmake](https://en.wikipedia.org/wiki/cmake "wikipedia:cmake") options you may want to add/modify in the PKGBUILD are:
+[Install](/index.php/Install "Install") the [gromacs](https://aur.archlinux.org/packages/gromacs/) or [gromacs-mpi](https://aur.archlinux.org/packages/gromacs-mpi/) package. Be sure to [edit](/index.php/Textedit "Textedit") the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to suit your system (i.e. for MPI or GPU support). Some of the [cmake](https://en.wikipedia.org/wiki/cmake "wikipedia:cmake") options you may want to add/modify in the PKGBUILD are (cf.[the latest GROMACS installation guide](http://manual.gromacs.org/documentation/)):
 
-*   `-DGMX_DOUBLE=ON` - Add if you need [double precision](https://en.wikipedia.org/wiki/Double-precision_floating-point_format "wikipedia:Double-precision floating-point format"). According to the [GROMACS install guide](http://www.gromacs.org/Documentation/Installation_Instructions_5.0), double precision is "slower, and not normally useful." If you set this flag, the default suffix for all GROMACS programs is set to `_d`.
-*   `-DGMX_GPU=ON` - Add in order to build with [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit "wikipedia:Graphics processing unit") support. Several [other flags](http://manual.gromacs.org/documentation/2016/install-guide/index.html#cuda-gpu-acceleration) may be necessary.
+*   `-DGMX_DOUBLE=ON` - Add if you need [double precision](https://en.wikipedia.org/wiki/Double-precision_floating-point_format "wikipedia:Double-precision floating-point format"). According to the GROMACS install guide, double precision is "slower, and not normally useful." If you set this flag, the default suffix for all GROMACS programs is set to `_d`.
+*   `-DGMX_GPU=ON` - Add in order to build with [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit "wikipedia:Graphics processing unit") support. Several other flags may be necessary; refer to the latest GROMACS installation guide.
 *   `-DGMX_MPI=ON` - Add to create a build able to run across multiple compute nodes. You will also need to have an [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface "wikipedia:Message Passing Interface") library such as [openmpi](https://www.archlinux.org/packages/?name=openmpi) or [mpich](https://aur.archlinux.org/packages/mpich/). If you do not need MPI support (*i.e.*, you just run on a single computer), you do not need this flag. If you set this flag, the default suffix for all GROMACS programs is set to `_mpi`.
-*   `-DGMX_SIMD=*xxx*` - GROMACS should detect the best [SIMD](https://en.wikipedia.org/wiki/simd "wikipedia:simd") instructions for your processor, so this flag should not be needed. But if you have some kind of compilation error, you can specify the SIMD level here. A list of available options for `*xxx*` is [here](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#simd-support).
+*   `-DGMX_SIMD=*xxx*` - GROMACS should detect the best [SIMD](https://en.wikipedia.org/wiki/simd "wikipedia:simd") instructions for your processor, so this flag should not be needed. But if you have some kind of compilation error, you can specify the SIMD level here. A list of available options for `*xxx*` is listed in the latest GROMACS installation guide.
 
 **Note:** If you are compiling on a Haswell processor, you may need to configure [makepkg](/index.php/Makepkg "Makepkg") to use `-march=native` to successfully compile with AVX2_256 instructions.
 
@@ -61,8 +61,9 @@ According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 Some other packages that may increase performance are:
 
-*   [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) - "An external [Boost library](https://en.wikipedia.org/wiki/Boost_(C%2B%2B_libraries) can be used to provide better implementation support for smart pointers and exception handling." [[1]](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#optional-build-components)
-*   [lapack](https://www.archlinux.org/packages/?name=lapack) - "Hardware-optimized BLAS and LAPACK libraries are useful for a few of the GROMACS utilities focused on normal modes and matrix manipulation, but they do not provide any benefits for normal simulations." [[2]](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#optional-build-components)
+*   [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) - An external [Boost library](https://en.wikipedia.org/wiki/Boost_(C%2B%2B_libraries) can be used to provide better implementation support for smart pointers and exception handling.
+*   [hwloc](https://www.archlinux.org/packages/?name=hwloc) - Run-time detection of hardware capabilities can be improved by linking with hwloc
+*   [lapack](https://www.archlinux.org/packages/?name=lapack) - Hardware-optimized BLAS and LAPACK libraries are useful for a few of the GROMACS utilities focused on normal modes and matrix manipulation, but they do not provide any benefits for normal simulations.
 
 The [gromacs-git](https://aur.archlinux.org/packages/gromacs-git/) package contains the latest development source, and should not be used in production.
 
@@ -72,7 +73,7 @@ By default the top-level force field directory is located at `/usr/share/gromacs
 
 ## Usage
 
-Below is a basic workflow with most of the major commands mentioned. Every command should begin with `gmx`. In the current version, 5.0, this is optional, but beginning in 5.1 this will be required. For more details on using GROMACS [find a good tutorial and read the manual](#See_also). A helpful flow chart is [here](http://manual.gromacs.org/online/flow.html).
+Below is a basic workflow with most of the major commands mentioned. Every command should begin with `gmx`. For more details on using GROMACS [find a good tutorial and read the manual](#See_also). A helpful flow chart is [here](http://manual.gromacs.org/online/flow.html).
 
 **Tip:** Each command has its own [man page](/index.php/Man_page "Man page"), with a hyphen substituted for the space in between `gmx` and the command. For example, the man page for *gmx pdb2gmx* is located at `gmx-pdb2gmx`.
 

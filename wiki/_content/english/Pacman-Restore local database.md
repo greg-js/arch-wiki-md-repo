@@ -77,7 +77,7 @@ Define bash alias for recovery purposes:
     --dbonly          \
     --force           \
     --nodeps          \
-    --needed          \
+    --needed
 }
 
 ```

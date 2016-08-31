@@ -32,7 +32,7 @@ See [Advanced Format#How to determine if HDD employ a 4k sector](/index.php/Adva
 
 Discards are disabled by default on typical setups that use [ext4](/index.php/Ext4 "Ext4") and [LVM](/index.php/LVM "LVM"), but other filesystems might need discards to be disabled explicitly.
 
-Intel, as one device manufacturer, recommends not to enable discards at the filesystem level, but suggests the [Solid State Drives#Apply periodic TRIM via fstrim](/index.php/Solid_State_Drives#Apply_periodic_TRIM_via_fstrim "Solid State Drives") method, or apply *fstrim* manually.[[1]](https://communities.intel.com/thread/75161?start=0&tstart=0)
+Intel, as one device manufacturer, recommends not to enable discards at the filesystem level, but suggests the [Solid State Drives#Periodic TRIM](/index.php/Solid_State_Drives#Periodic_TRIM "Solid State Drives") method, or apply *fstrim* manually.[[1]](https://communities.intel.com/thread/75161?start=0&tstart=0)
 
 ### Airflow
 
@@ -49,4 +49,4 @@ Raw device performance tests can be run with [hdparm](https://www.archlinux.org/
 
 ## References
 
-*   [Intel Linux NVMe driver reference](http://downloadmirror.intel.com/23929/eng/Intel_Linux_NVMe_Driver_Reference_Guide_330602-002.pdf)
+*   [Intel Linux NVMe driver reference](http://www.intel.com/content/dam/support/us/en/documents/ssdc/data-center-ssds/Intel_Linux_NVMe_Guide_330602-002.pdf)

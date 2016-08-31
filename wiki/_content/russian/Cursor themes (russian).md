@@ -10,6 +10,7 @@
     *   [2.2 Спецификация XDG](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_XDG)
     *   [2.3 Среда рабочего стола](#.D0.A1.D1.80.D0.B5.D0.B4.D0.B0_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
         *   [2.3.1 GNOME](#GNOME)
+        *   [2.3.2 Mate](#Mate)
     *   [2.4 X resources](#X_resources)
     *   [2.5 Переменные окружения](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
     *   [2.6 Менеджеры дисплея](#.D0.9C.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D1.8B_.D0.B4.D0.B8.D1.81.D0.BF.D0.BB.D0.B5.D1.8F)
@@ -101,10 +102,33 @@ ln -s /usr/share/icons/*имя-темы*/cursors ~/.icons/default/cursors
 
 #### GNOME
 
-Тема курсоров в [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") изменяется посредством [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) или gsettings:
+Тема курсора в [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") изменяется посредством [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) или gsettings:
 
 ```
 gsettings set org.gnome.desktop.interface cursor-theme *имя-темы*
+
+```
+
+Также изменение размера курсора (зависит от темы. Размеры: 24, 32, 48, 64):
+
+```
+gsettings set org.gnome.desktop.interface cursor-size *размер*
+
+```
+
+#### Mate
+
+В MATE можно использовать mate-control-center или gsettings, чтобы изменить тему:
+
+```
+gsettings set org.mate.peripherals-mouse cursor-theme *имя-темы*
+
+```
+
+Для изменения размера:
+
+```
+gsettings set org.mate.peripherals-mouse *размер*
 
 ```
 

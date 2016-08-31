@@ -12,14 +12,7 @@ GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified
 *   [3 Partitioning Utilities](#Partitioning_Utilities)
     *   [3.1 fdisk and gdisk](#fdisk_and_gdisk)
     *   [3.2 GNU Parted](#GNU_Parted)
-*   [4 Partitioning examples](#Partitioning_examples)
-    *   [4.1 gdisk basic](#gdisk_basic)
-    *   [4.2 gdisk basic (with hybrid MBR)](#gdisk_basic_.28with_hybrid_MBR.29)
-    *   [4.3 parted basic (via command line options)](#parted_basic_.28via_command_line_options.29)
-    *   [4.4 Convert from MBR to GPT](#Convert_from_MBR_to_GPT)
-    *   [4.5 Resize a partition](#Resize_a_partition)
-    *   [4.6 Sort the partitions](#Sort_the_partitions)
-*   [5 See also](#See_also)
+*   [4 See also](#See_also)
 
 ## About the GUID Partition Table
 
@@ -55,14 +48,7 @@ All UEFI Bootloaders support GPT disks since GPT is a part of UEFI Specification
 
 While GPT support on BIOS systems is theoretically possible it sometimes isn't practical and other times there are complete incompatibilities. Technically the BIOS is only supposed to execute the code on the MBR, therefore leaving the possibility of differing partitioning schemes... However a BIOS may do additional checks including: checking a MBR's integrity, and possibly even for a MBR partition table (though usually only the first partition). If this is a case, a number of workarounds exist that may be able to repair the problem (listed below).
 
-**Warning:** For Windows, there is **no** support for booting from a BIOS/GPT partitioning scheme. If you have already installed Windows with a BIOS/MBR partitioning scheme **do not** convert the drive to GPT! Windows will fail to boot if this is done - irrespective of the bootloader used to chainload Windows. One can either install Windows in UEFI mode and use an [UEFI bootloader](/index.php/UEFI_Bootloaders "UEFI Bootloaders") (which uses GPT), or possibly restore/install Windows on a BIOS/GPT hybrid MBR (see partitioning examples).
-
-Bootloaders that support GPT/BIOS partitioning scheme bootloading:
-
-*   [GRUB](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")
-*   [Syslinux](/index.php/Syslinux#GUID_partition_table "Syslinux")
-
-Not suported: [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") and [LILO](/index.php/LILO "LILO").
+See also [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") and [Boot loaders](/index.php/Boot_loaders "Boot loaders").
 
 #### Workarounds
 
@@ -88,51 +74,6 @@ See the [fdisk](/index.php/Fdisk "Fdisk") article.
 [GNU Parted](/index.php/GNU_Parted "GNU Parted") is a full-featured command line program for creating and manipulating partition tables. It can be used interactively and is the backend for the popular [GParted](/index.php/GParted "GParted") GUI partitioning tool.
 
 It supports GPT as well as MBR.
-
-## Partitioning examples
-
-Examples of various partitioning setups.
-
-### gdisk basic
-
-See [Fdisk#Create partitions](/index.php/Fdisk#Create_partitions "Fdisk").
-
-### gdisk basic (with hybrid MBR)
-
-Tip: use MiB, GiB to align to 2048 sectors:
-
-```
-# gdisk /dev/sdX
-o  # create new empty GUID partition table
-n  # partition 1 [enter], from beginning [enter], to 100GiB [+100GiB], linux fs type [enter]
-n  # partition 2 [enter], from beginning [enter], to 108GiB [+8GiB],   linux swap    [8200]
-n  # partition 3 [enter], from beginning [enter],           [+1MiB],   linux fs type [enter]
-r  # recovery/transformation menu
-h  # make hybrid mbr
-3  # add partition 3 to hybrid mbr
-Place EFI GPT (0xEE) partition first in MBR (good for GRUB)? (Y/N): **N**
-Enter an MBR hex code (default 83): [enter]
-Set the bootable flag? (Y/N): Y
-Unused partition space(s) found. Use one to protect more partitions? (Y/N): N
-w  # write table to disk and exit
-
-```
-
-### parted basic (via command line options)
-
-See [GNU Parted#Command line mode](/index.php/GNU_Parted#Command_line_mode "GNU Parted").
-
-### Convert from MBR to GPT
-
-See [fdisk#Convert between MBR and GPT](/index.php/Fdisk#Convert_between_MBR_and_GPT "Fdisk").
-
-### Resize a partition
-
-See [GNU Parted#Resizing Partitions](/index.php/GNU_Parted#Resizing_Partitions "GNU Parted").
-
-### Sort the partitions
-
-See [fdisk#Sort partitions](/index.php/Fdisk#Sort_partitions "Fdisk").
 
 ## See also
 

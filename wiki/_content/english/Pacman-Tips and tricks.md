@@ -499,14 +499,14 @@ To install packages from the list backup, run:
 In case the list includes foreign packages, such as [AUR](/index.php/AUR "AUR") packages, remove them first:
 
 ```
-# pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist))
+# pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
 
 ```
 
 To remove all the packages on your system that are not mentioned in the list.
 
 ```
-# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist))
+# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
 
 ```
 

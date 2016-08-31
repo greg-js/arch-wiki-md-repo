@@ -14,11 +14,6 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
         *   [2.3.1 Wired](#Wired)
         *   [2.3.2 Wireless](#Wireless)
     *   [2.4 Bootloader](#Bootloader)
-        *   [2.4.1 Using the MacBook's native EFI bootloader (recommended)](#Using_the_MacBook.27s_native_EFI_bootloader_.28recommended.29)
-            *   [2.4.1.1 Method 1: creating an extra apple-format bootable partition with GRUB](#Method_1:_creating_an_extra_apple-format_bootable_partition_with_GRUB)
-        *   [2.4.2 Direct EFI booting (rEFInd)](#Direct_EFI_booting_.28rEFInd.29)
-        *   [2.4.3 Direct EFI booting (systemd-boot)](#Direct_EFI_booting_.28systemd-boot.29)
-        *   [2.4.4 GRUB (with OS X)](#GRUB_.28with_OS_X.29)
 *   [3 Post installation](#Post_installation)
     *   [3.1 Console](#Console_2)
     *   [3.2 Graphics](#Graphics)
@@ -139,153 +134,43 @@ You may now use `wifi-menu` to connect to your network of choice.
 
 ### Bootloader
 
-**Note:** Refer to the [MacBook](/index.php/MacBook "MacBook") page if you do not want to have a separate partition for GRUB but rather prefer to use [rEFInd](http://www.rodsbooks.com/refind/) (or [rEFIt](/index.php/MacBook#rEFIt "MacBook")).
+MacBooks can be easily configured to use [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [GRUB](/index.php/GRUB "GRUB") directly from the Apple bootloader, without the need for third-party tools such as [rEFInd](/index.php/REFInd "REFInd"). Systemd-boot is the recommended way for systems that support UEFI.
 
-**Tip:** If you want to use the native MacBook bootloader, you need an extra partition of at least 128 MiB.
+*   First, make sure you mounted the EFI System Partition at `/boot`
+*   Proceed with [Installation](/index.php/Installation_guide "Installation guide") normally
+*   Once inside the chrooted enviroment, type the following command to install *systemd-boot*:
 
-#### Using the MacBook's native EFI bootloader (recommended)
+ `# bootctl --path=/boot install` 
 
-##### Method 1: creating an extra apple-format bootable partition with GRUB
+The above command will copy the *systemd-boot* binary to `/boot/EFI/Boot/BOOTX64.EFI` and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
-This method uses the MacBook's native EFI bootloader, i.e. the one the can be reached when holding the alt-key during boot. For additional info, see [GRUB EFI Examples#Apple Mac EFI systems](/index.php/GRUB_EFI_Examples#Apple_Mac_EFI_systems "GRUB EFI Examples").
+*   Proceed to [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") in order to correctly set up the bootloader
 
-**Note:** For this method you need an extra partition of at least 128 MiB. This partition will be used by the MacBook's native bootloader to launch Arch. It also assumes that you are dual-booting OS X and Arch.
+At the next reboot, the Apple Boot Manager, shown when holding down the option key when booting the MacBook, should display Arch Linux (it will be displayed as `EFI Boot` as a possible boot option).
 
-**Note:** It is possible to avoid the HFS+ partition by using FAT32, this way you can do all the bootloader stuff right from the LiveCD.
+**Note:** If you wish to use GRUB, have a look at the [MacBook](/index.php/MacBook#Using_the_native_Apple_bootloader_with_GRUB "MacBook") page.
 
-At the end of the Arch Linux install process we would normally install GRUB (or a variation) to a partition on the drive. For this method we will place a `boot.efi` file on an extra partition used by the MacBook's native bootloader.
+**Tip:** If you installed Arch Linux alongside OS X, you will be able to change the default boot location from system Settings inside OS X. If Arch Linux does not show up as a possible boot option, you will have to mount the EFI System Partition inside OS X before selecting your boot option: `$ diskutil mount disk0s1` 
 
-First, [install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Make sure to follow the steps for setting up grub on a partition using the `grub-install` and `grub-mkconfig` commands, like normal. We will use the config file that `grub-mkconfig` creates to generate a standalone `boot.efi` file using the `grub-mkstandalone` command, then we will wipe your just-created grub partition and set it up for Mac's native bootloader (or you can simply create a new partition and leave the grub partition alone, it is up to you).
-
-When generating a grub config file, GRUB looks to `/etc/default/grub` for its configuration. Edit the parameter `GRUB_CMDLINE_LINUX_DEFAULT` to look something like this:
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet rootflags=data=writeback libata.force=noncq"
-
-```
-
-The `libata.force=noncq` parameter will prevent SSD lockups and the `rootflags` option is used for SSD-performance.
-
-**Note:** Do not use the `rootflags` option on Btrfs. It is not supported.
-
-Now we generate the `boot.efi` file (in our current working directory):
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-# grub-mkstandalone -o boot.efi -d /usr/lib/grub/x86_64-efi -O x86_64-efi /boot/grub/grub.cfg
-
-```
-
-Put this file on a USB (or other OS X accessible media) and reboot into OS X.
-
-Launch `DiskUtility.app` and reformat the extra partition (or just make a new one) as HFS+ (in the "Erase" tab of Disk Utility), mount it, then create the following directory structure and file:
-
-```
-$ mount -t hfs /dev/diskXsY <Path to root of extra partition>
-$ mkdir -p <Path to root of extra partition>/System/Library/CoreServices
-$ touch <Path to root of extra partition>/mach_kernel
-
-```
-
-where `diskXsy` is the disk your partition is on (e.g. disk0s1). You can use `diskutil list` to list your disks and partitions.
-
-Copy the `boot.efi` file to the `<Path to extra partition>/System/Library/CoreServices/` directory. Using your editor of choice, create a `SystemVersion.plist` file in the CoreServices directory, which is located here:
-
-```
-*<path to extra partition>*/System/Library/CoreServices/SystemVersion.plist
-
-```
-
-Edit that file to look like this:
-
-```
-<?xml version="1.0" encoding="utf-8"?>
-<plist version="1.0">
-<dict>
-    <key>ProductBuildVersion</key>
-    <string></string>
-    <key>ProductName</key>
-    <string>Linux</string>
-    <key>ProductVersion</key>
-    <string>Arch Linux</string>
-</dict>
-</plist>
-```
-
-**Note:** It is possible to do the above modifications to/on the extra partition from within Linux (if you have installed the proper HFS tools), but the following bless commands have to be executed from within OS X.
-
-The last step is then to bless (make bootable) the extra partition (as root):
-
-```
-# bless --folder=<Path to root of extra partition> --file=<Path to root of extra partition>/System/Library/CoreServices/boot.efi --setBoot
-# bless --mount=<Path to root of extra partition> --file=<Path to root of extra partition>/System/Library/CoreServices/boot.efi --setBoot
-
-```
-
-**Note:** It might not be necessary to execute both commands, but to be sure it worked it will not do any harm to execute both.
-
-**Note:** In order to change grub settings both `grub.cfg` and `boot.efi` will have to be generated. This can be done from in Linux, without booting OS X.
-
-Generate `grub.cfg` and `boot.efi` from Arch Linux:
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-# mount -t hfsplus -o force,rw /dev/sdXY /mnt # mount the HFS+ partition
-# grub-mkstandalone -o /mnt/System/Library/CoreServices/boot.efi -d /usr/lib/grub/x86_64-efi -O x86_64-efi /boot/grub/grub.cfg
-
-```
-
-#### Direct EFI booting (rEFInd)
-
-See: [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders")
-
-As of April 2016, rEFInd(0.10.2) can automatically detect the Arch kernel. So this is should be the easiest way. Simply install rEFInd. When following the [Installation guide](/index.php/Installation_guide "Installation guide"), you can skip [Installation guide#Boot loader](/index.php/Installation_guide#Boot_loader "Installation guide").
-
-#### Direct EFI booting (systemd-boot)
-
-See [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
-
-#### GRUB (with OS X)
-
-Another solution is to install [GRUB](/index.php/GRUB "GRUB"). Edit `/tmp/install/boot/grub/grub.cfg` and edit the boot entry to load Linux mainline instead of the normal one.
-
-**Note:** `libata.force=noncq` helps with hangs due to SSD speed.
-
-Now cd into `/tmp/install/` and create the GRUB image by running:
-
-```
-$ grub-mkstandalone -o bootx64.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
-
-```
-
-This will create file called `boot64.efi` which contains GRUB and the configuration file incorporated inside. It is important to `cd` into the right directory to make it pick up the configuration file and put it into the right place within the image.
-
-Copy this file to the MacBook's EFI partition. The downside of this method is that you need to repeat this step whenever you want to change the GRUB config. Reboot the machine and you should be able to select your installed Arch Linux by keeping the `Alt` button pressed. It should appear as `EFI boot`.
-
-To generate a nicer config use: `grub-mkconfig`, remove `quiet` if you like the text, then to update your GRUB post-installation, do this to make the GRUB EFI file and put it in the EFI partition:
-
-```
-# cd /
-# grub-mkstandalone -o bootx64.efi -d usr/lib/grub/x86_64-efi -O x86_64-efi -C xz boot/grub/grub.cfg
-# mount /dev/sda1 /mnt
-# cp bootx64.efi /mnt/EFI/boot/bootx64.efi
-
-```
-
-**Note:** You will need `hfsprogs` to run the above commands
+Keep in mind, however, it is also possible to load OS X from [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
 ## Post installation
 
 ### Console
 
-Largest console font (although ugly) achieved by adding `FONT=sun12x22` to `/etc/vconsole.conf` It is still tiny but is at least readable.
+Largest console font can be achieved by adding `FONT=sun12x22` to `/etc/vconsole.conf`:
+
+ `# nano /etc/vconsole.conf` 
+```
+...
+FONT=sun12x22
+```
 
 ### Graphics
 
 ###### MacBook Pro 11,1
 
-*   Intel works on 3.12 with nomodeset
-*   Intel works from 3.13.4-1-ARCH
+*   Works, see [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 
 ###### MacBook Pro 11,2
 

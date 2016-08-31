@@ -7,13 +7,14 @@ These laptops are a part of the Latitude 13 7000 Series featuring Intel Skylake 
 *   [3 bios](#bios)
     *   [3.1 updating](#updating)
 *   [4 card reader](#card_reader)
-*   [5 displays](#displays)
-*   [6 lspci and lsusb](#lspci_and_lsusb)
-    *   [6.1 lspci](#lspci)
-    *   [6.2 lsusb](#lsusb)
-*   [7 known issues](#known_issues)
-    *   [7.1 suspend](#suspend)
-    *   [7.2 no keyboard](#no_keyboard)
+*   [5 touchpad](#touchpad)
+*   [6 displays](#displays)
+*   [7 lspci and lsusb](#lspci_and_lsusb)
+    *   [7.1 lspci](#lspci)
+    *   [7.2 lsusb](#lsusb)
+*   [8 known issues](#known_issues)
+    *   [8.1 suspend](#suspend)
+    *   [8.2 no keyboard](#no_keyboard)
 
 ## kernel
 
@@ -32,6 +33,10 @@ Download the BIOS update from the dell site and place it at the root of a FAT-fo
 ## card reader
 
 The Broadcom reader is currently not supported via [ccid](https://www.archlinux.org/packages/?name=ccid) and [pcsclite](https://www.archlinux.org/packages/?name=pcsclite). It may also require a firmware/BIOS update : [https://bugs.launchpad.net/ubuntu/+source/pcsc-lite/+bug/1596662](https://bugs.launchpad.net/ubuntu/+source/pcsc-lite/+bug/1596662)
+
+## touchpad
+
+There is a known issue where the touchpad is detected as "ImPS/2 BYD TouchPad", a patch is in the works [[4]](https://patchwork.kernel.org/patch/9204273/).
 
 ## displays
 
@@ -85,7 +90,7 @@ On kernel '4.8.0-rc1-mainline' via [linux-mainline](https://aur.archlinux.org/pa
 
 ### suspend
 
-It appears the system can get into a state in which suspend will stop working (system will suspend but upon attempt to resume will cold boot)[[4]](https://bbs.archlinux.org/viewtopic.php?id=207543). Current resolution appears to be to perform a shutdown within the system and suspend should start working again.
+It appears the system can get into a state in which suspend will stop working (system will suspend but upon attempt to resume will cold boot)[[5]](https://bbs.archlinux.org/viewtopic.php?id=207543). Current resolution appears to be to perform a shutdown within the system and suspend should start working again.
 
 ### no keyboard
 

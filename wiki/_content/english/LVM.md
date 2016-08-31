@@ -680,9 +680,18 @@ The fast method is creating a PV (if necessary) on the fast disk and add it to t
 Create a cache pool with automatic meta data on sdb, and convert the existing logical volume (dataLV) to a cached volume, all in one step:
 
 ```
-# lvcreate --type cache -L 19.9G -n dataLV_cachepool dataVG/dataLV /dev/sdx
+# lvcreate --type cache --cachemode writethrough -L 20G -n dataLV_cachepool dataVG/dataLV /dev/sdx
 
 ```
+
+Obviously, if you want your cache to be bigger, you can change the `-L` parameter to a different size.
+
+**Note:** Cachemode has two possible options:
+
+*   `Writethrough` ensures that any data written will be stored both in the cache pool LV and on the origin LV. The loss of a device associated with the cache pool LV in this case would not mean the loss of any data;
+*   `Writeback` ensures better performance, but at the cost of a higher risk of data loss in case the drive used for cache fails.
+
+If a specific `--cachemode` is not indicated, the system will assume `writetrough` as default.
 
 #### Remove
 

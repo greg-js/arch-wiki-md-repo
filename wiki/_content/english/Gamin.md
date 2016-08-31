@@ -8,6 +8,6 @@ Install the [gamin](https://www.archlinux.org/packages/?name=gamin) package.
 
 If FAM is installed, first [disable](/index.php/Disable "Disable") `fam.service` and then install [gamin](https://www.archlinux.org/packages/?name=gamin); you will be prompted to remove the [fam](https://aur.archlinux.org/packages/fam/) package during the installation.
 
-## External links
+## See also
 
 *   [FAM, Gamin and inotify](http://www.noah.org/wiki/FAM,_Gamin,_inotify)

@@ -774,7 +774,14 @@ cryptdevice=/dev/sda3:root cryptkey=/dev/sdb1:vfat:/keys/secretkey
 
 ```
 
-Choosing a plain filename for your key provides a bit of 'security through obscurity'. The keyfile can not be a hidden file, that means the filename must not start with a dot, or the `encrypt` hook will fail to find the keyfile during the boot process.
+Choosing a plain filename for your key provides a bit of 'security through obscurity', but be aware the kernel command line is recorded in the kernel's log (*dmesg*). The keyfile can not be a hidden file, that means the filename must not start with a dot, or the `encrypt` hook will fail to find the keyfile during the boot process. Alternatively, one could hide the keyfile between the partitions and use:
+
+```
+cryptkey=/dev/sdb1:offset:size
+
+```
+
+As an advantage, it is harder to accidentally delete the key.
 
 The naming of device nodes like `/dev/sdb1` is not guaranteed to stay the same across reboots. It is more reliable to access the device with udev's [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") instead. To assure that the `encrypt` hook finds your keyfile when reading it from an external storage device, persistent block device names must be used. See the article [persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 

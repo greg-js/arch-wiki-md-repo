@@ -9,7 +9,7 @@
 
 ## Installation
 
-tmsu can be installed with the [tmsu](https://aur.archlinux.org/packages/tmsu/) or [tmsu-bin](https://aur.archlinux.org/packages/tmsu-bin/) packages.
+[Install](/index.php/Install "Install") the [tmsu](https://aur.archlinux.org/packages/tmsu/) package.
 
 ## Usage
 

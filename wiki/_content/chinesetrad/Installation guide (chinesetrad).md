@@ -1,117 +1,240 @@
-**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2015-05-13。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=310158)查看英文頁面之後的變更。
+**翻譯狀態：** 本文章是 [Installation_guide](/index.php/Installation_guide "Installation guide") 的翻譯版本。最近一次的翻譯時間：2016-08-27。點擊[本連結](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=000000)查看英文頁面之後的變更。
 
-這份文件是[Arch Linux](/index.php/Arch_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Arch Linux (正體中文)")從官方安裝映像檔啟動Live系統後的安裝指南。 開始之前建議您大略瀏覽一下 [FAQ](/index.php/FAQ_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "FAQ (正體中文)") 。 如果需要更詳細、更清楚的安裝指南，可以參考[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)") 。 [獲取並安裝 Arch](/index.php/Category:Getting_and_installing_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (正體中文)") 分類下也有幾份針對特殊狀況的安裝指南。
+本文將指引您使用由官方安裝映像檔啟動的 live system 安裝 [Arch Linux](/index.php/Arch_Linux "Arch Linux")。安裝之前請先閱讀 [FAQ](/index.php/FAQ "FAQ")。For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading")。
 
-若您碰到任何問題，社群維護的 [Arch 維基](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")是主要的資料來源，請多加利用。若無法自行解決，也歡迎到 [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") 頻道 ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) 和[論壇](https://bbs.archlinux.org/) 還有 [Arch Linux 臺灣社群](http://archlinux.tw/) 問問。 若您碰到不熟悉的指令，可以呼叫 `man **指令**` 查看該指令的 `man` 說明文件。
+更詳細的資源，可以參考 [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") 文章（安裝過程中可以使用 [ELinks](/index.php/ELinks "ELinks") 瀏覽），或者閱讀該命令的 [man page](/index.php/Man_page "Man page") ，參考 [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. 如需要互動式幫助，可透過 [IRC channel](/index.php/IRC_channel "IRC channel") 及 [forums](https://bbs.archlinux.org/)。
 
 ## Contents
 
-*   [1 下載](#.E4.B8.8B.E8.BC.89)
-*   [2 前期安裝流程](#.E5.89.8D.E6.9C.9F.E5.AE.89.E8.A3.9D.E6.B5.81.E7.A8.8B)
-    *   [2.1 鍵盤配置](#.E9.8D.B5.E7.9B.A4.E9.85.8D.E7.BD.AE)
-    *   [2.2 分割硬碟](#.E5.88.86.E5.89.B2.E7.A1.AC.E7.A2.9F)
-    *   [2.3 格式化分割區](#.E6.A0.BC.E5.BC.8F.E5.8C.96.E5.88.86.E5.89.B2.E5.8D.80)
-    *   [2.4 掛載分割區](#.E6.8E.9B.E8.BC.89.E5.88.86.E5.89.B2.E5.8D.80)
-    *   [2.5 連接網路](#.E9.80.A3.E6.8E.A5.E7.B6.B2.E8.B7.AF)
-    *   [2.6 無線網路](#.E7.84.A1.E7.B7.9A.E7.B6.B2.E8.B7.AF)
-    *   [2.7 安裝基本系統](#.E5.AE.89.E8.A3.9D.E5.9F.BA.E6.9C.AC.E7.B3.BB.E7.B5.B1)
-    *   [2.8 設定系統](#.E8.A8.AD.E5.AE.9A.E7.B3.BB.E7.B5.B1)
-    *   [2.9 安裝並設定開機載入程式](#.E5.AE.89.E8.A3.9D.E4.B8.A6.E8.A8.AD.E5.AE.9A.E9.96.8B.E6.A9.9F.E8.BC.89.E5.85.A5.E7.A8.8B.E5.BC.8F)
-    *   [2.10 卸載並重啟系統](#.E5.8D.B8.E8.BC.89.E4.B8.A6.E9.87.8D.E5.95.9F.E7.B3.BB.E7.B5.B1)
-*   [3 安裝完成後](#.E5.AE.89.E8.A3.9D.E5.AE.8C.E6.88.90.E5.BE.8C)
+*   [1 Pre-installation (安裝前)](#Pre-installation_.28.E5.AE.89.E8.A3.9D.E5.89.8D.29)
+    *   [1.1 Verify the boot mode (驗證開機模式)](#Verify_the_boot_mode_.28.E9.A9.97.E8.AD.89.E9.96.8B.E6.A9.9F.E6.A8.A1.E5.BC.8F.29)
+    *   [1.2 Set the keyboard layout (設定鍵盤配置)](#Set_the_keyboard_layout_.28.E8.A8.AD.E5.AE.9A.E9.8D.B5.E7.9B.A4.E9.85.8D.E7.BD.AE.29)
+    *   [1.3 Connect to the Internet (連接到網際網路)](#Connect_to_the_Internet_.28.E9.80.A3.E6.8E.A5.E5.88.B0.E7.B6.B2.E9.9A.9B.E7.B6.B2.E8.B7.AF.29)
+    *   [1.4 Update the system clock (更新系統時間)](#Update_the_system_clock_.28.E6.9B.B4.E6.96.B0.E7.B3.BB.E7.B5.B1.E6.99.82.E9.96.93.29)
+    *   [1.5 Partition the disks (分割磁碟)](#Partition_the_disks_.28.E5.88.86.E5.89.B2.E7.A3.81.E7.A2.9F.29)
+    *   [1.6 Format the partitions (格式化磁碟)](#Format_the_partitions_.28.E6.A0.BC.E5.BC.8F.E5.8C.96.E7.A3.81.E7.A2.9F.29)
+    *   [1.7 Mount the partitions (掛載磁碟)](#Mount_the_partitions_.28.E6.8E.9B.E8.BC.89.E7.A3.81.E7.A2.9F.29)
+*   [2 Installation (安裝系統)](#Installation_.28.E5.AE.89.E8.A3.9D.E7.B3.BB.E7.B5.B1.29)
+    *   [2.1 Select the mirrors (選擇映射站)](#Select_the_mirrors_.28.E9.81.B8.E6.93.87.E6.98.A0.E5.B0.84.E7.AB.99.29)
+    *   [2.2 Install the base packages (安裝基本套件)](#Install_the_base_packages_.28.E5.AE.89.E8.A3.9D.E5.9F.BA.E6.9C.AC.E5.A5.97.E4.BB.B6.29)
+*   [3 Configure the system (配置系統)](#Configure_the_system_.28.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.B5.B1.29)
+    *   [3.1 Fstab (檔案系統列表)](#Fstab_.28.E6.AA.94.E6.A1.88.E7.B3.BB.E7.B5.B1.E5.88.97.E8.A1.A8.29)
+    *   [3.2 Chroot (改變根目錄)](#Chroot_.28.E6.94.B9.E8.AE.8A.E6.A0.B9.E7.9B.AE.E9.8C.84.29)
+    *   [3.3 Time zone (時區)](#Time_zone_.28.E6.99.82.E5.8D.80.29)
+    *   [3.4 Locale (語系)](#Locale_.28.E8.AA.9E.E7.B3.BB.29)
+    *   [3.5 Hostname (主機名稱)](#Hostname_.28.E4.B8.BB.E6.A9.9F.E5.90.8D.E7.A8.B1.29)
+    *   [3.6 Network configuration (網路設定)](#Network_configuration_.28.E7.B6.B2.E8.B7.AF.E8.A8.AD.E5.AE.9A.29)
+    *   [3.7 Initramfs](#Initramfs)
+    *   [3.8 Root password (Root 密碼)](#Root_password_.28Root_.E5.AF.86.E7.A2.BC.29)
+    *   [3.9 Boot loader (開機管理程式)](#Boot_loader_.28.E9.96.8B.E6.A9.9F.E7.AE.A1.E7.90.86.E7.A8.8B.E5.BC.8F.29)
+*   [4 Reboot (重新啟動)](#Reboot_.28.E9.87.8D.E6.96.B0.E5.95.9F.E5.8B.95.29)
+*   [5 Post-installation (安裝後)](#Post-installation_.28.E5.AE.89.E8.A3.9D.E5.BE.8C.29)
 
-## 下載
+## Pre-installation (安裝前)
 
-在 [Arch Linux 下載頁面](https://www.archlinux.org/download/)，下載最新的 Arch Linux ISO：這是可以依系統架構和使用者選擇啟動於 i686 和 x86_64 模式的混合映象檔。 請注意映象檔內不包含任何套件包：安裝程序必須從套件庫取得套件包，所以必須擁有能夠運行的網路環境。 下載後，用下載頁提供的 PGP 或 CHECKSUM 簽證碼 檢驗映像檔 (例如 `pacman-key -v *inst-image.iso*.sig`、`md5sum *inst-image.iso*`) 。 最後映像檔可以燒製成 CD、以 ISO 檔型式掛載，或是[直接寫入 USB 碟](/index.php/USB_Installation_Media_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "USB Installation Media (正體中文)")。
+Arch Linux 可以運行在任何記憶體不小於 256MB 的相容裝置上。最基本的 [base](https://www.archlinux.org/groups/x86_64/base/) 套件組需要至少 800MB 的磁碟空間。安裝過程需要從遠端的repo取得套件，因此必須確定網路正常運作。
 
-## 前期安裝流程
+[Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") 包含了下載並啟動安裝媒體的說明。啟動後您會以 root 的身份登入並進入 [Zsh](/index.php/Zsh "Zsh") 命令列，常見的指令例如 [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) 可以使用 Tab 鍵自動補齊。
 
-啟動安裝映象後，必須執行下列步驟來初始化安裝程序。
+編輯配置文件可用 [nano](/index.php/Nano#Usage "Nano")，[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim")。
 
-### 鍵盤配置
+### Verify the boot mode (驗證開機模式)
 
-預設鍵盤配置是 US. 其它的鍵盤配置可以 `loadkeys *keymap_file*` 改變: keymap 檔存放在 `/usr/share/kbd/keymaps/` (路徑和副檔名可以省略)。
+As instructions differ for [UEFI](/index.php/UEFI "UEFI") systems，檢查 [efivars](/index.php/Efivars "Efivars") 檔案以確認開機模式：
 
-### 分割硬碟
+```
+# ls /sys/firmware/efi/efivars
 
-詳情請參閱[硬碟分割](/index.php/Partitioning "Partitioning")。
+```
 
-如果您想要建立給 [LVM](/index.php/LVM "LVM")、[硬碟加密](/index.php/Disk_encryption "Disk encryption")或 [RAID](/index.php/RAID "RAID") 的堆疊區塊設備，請先完成它。
+### Set the keyboard layout (設定鍵盤配置)
 
-若您使用的是 (U)EFI，很可能需要另一個 UEFI 系統分割區。請參閱 [Linux 下建立 UEFI 系統分割區](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface")。
+默認的鍵盤配置([console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"))為 [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg")。`ls /usr/share/kbd/keymaps/**/*.map.gz` 可列出可用的键盘布局。
 
-### 格式化分割區
+配置可用 [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html) 改變，加上檔案名稱（可以忽略路徑及副檔名）。例如：
 
-詳情請參閱[檔案系統](/index.php/File_systems#Step_2:_create_the_new_file_system "File systems")。
+```
+# loadkeys *de-latin1*
 
-### 掛載分割區
+```
 
-現在您必須將根目錄分割區掛載至 `/mnt`。接著，您也需要為其他分割區 (`/mnt/boot`, `/mnt/home`, ...) 建立目錄並掛載，並記得掛載您的 "swap" 分割區，如此一來 "genfstab" 才偵測得到它們。
+[Console fonts](/index.php/Console_fonts "Console fonts") 位於 `/usr/share/kbd/consolefonts/`，設置方式請參考 [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html)。
 
-### 連接網路
+### Connect to the Internet (連接到網際網路)
 
-預設對所有可用的裝置啟用了 DHCP 服務。若您需要設定固定 IP，或是使用 [Netctl](/index.php/Netctl "Netctl") ，都應該先暫停此服務：`systemctl stop dhcpcd.service`。更多資訊請參閱[網路設定](/index.php/Network_configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network configuration (正體中文)")。
+所有支援的有線網路在 live system 啟動後皆會啟用 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")，可以用 [ping](/index.php/Ping "Ping") 等工具檢查網路連接。
 
-### 無線網路
+如欲使用其他網路配置（[network configuration](/index.php/Network_configuration "Network configuration")）工具，可以使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")及[netctl](/index.php/Netctl "Netctl")。範例請參考[systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html)和[netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt)。
 
-執行 `wifi-menu` 以設定無線網路。詳情請參閱[無線網路設定](/index.php/Wireless_Setup "Wireless Setup")與 [Netctl](/index.php/Netctl "Netctl")。
+使用兩個網路服務（service）之一時，請先 [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service`。
 
-### 安裝基本系統
+### Update the system clock (更新系統時間)
 
-在安裝之前，請先編輯 `/etc/pacman.d/mirrorlist` ，將適當的[鏡像站](/index.php/Mirrors "Mirrors")放在檔案的最前面。`pacstrap` 會在安裝過程中複製一份 mirrorlist 文件到新系統內，所以最好現在就把它設定好。
+用[timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html)確保系統時間為正確的：
 
-我們將使用 [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 這支腳本來安裝基本系統。
+```
+# timedatectl set-ntp true
+
+```
+
+他 用`timedatectl status`檢查服務狀態。
+
+### Partition the disks (分割磁碟)
+
+使用 [fdisk](/index.php/Fdisk "Fdisk") 和 [parted](/index.php/Parted "Parted") 製作 [MBR](/index.php/MBR "MBR") 或 [GPT](/index.php/GPT "GPT") 磁碟分割表(partition table)，或使用 [gdisk](/index.php/Gdisk "Gdisk") 製作 [GPT](/index.php/GPT "GPT") 磁碟分割表。
+
+至建立一個 `/` 分割區。[UEFI](/index.php/UEFI "UEFI") 系統另外需要一個 EPS分割區([EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"))。Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+
+If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
+
+### Format the partitions (格式化磁碟)
+
+使用 [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html) 建立檔案系統([File systems](/index.php/File_systems "File systems"))，或者使用 [mkswap(8)](http://man7.org/linux/man-pages/man8/mkswap.8.html) 建立 [swap](/index.php/Swap "Swap") 區。詳細請參考 [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems")。
+
+### Mount the partitions (掛載磁碟)
+
+掛載([mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)) root 分割區到 `/mnt`。例如：
+
+```
+# mount /dev/*sda1* /mnt 
+
+```
+
+之後請為其他分割區創建目錄(directory)並掛載他們 (`/mnt/boot`, `/mnt/home`, ...)，並用 [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) 啟動 *swap* 分割區，如此才能被 *genfstab* 偵測到。
+
+## Installation (安裝系統)
+
+### Select the mirrors (選擇映射站)
+
+編輯 `/etc/pacman.d/mirrorlist` 並選擇您的映射站(mirror)。Regional mirrors usually work best; however, other criteria may be necessary to discern, read more on [Mirrors](/index.php/Mirrors "Mirrors").
+
+此檔案(mirror 列表)也會被*pacstrap*複製到新系統中，所以請確保設置正確。
+
+### Install the base packages (安裝基本套件)
+
+執行 [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) 腳本安裝 [base](https://www.archlinux.org/groups/x86_64/base/) 套件組：
 
 ```
 # pacstrap /mnt base
 
 ```
 
-在上述的指令後面加上其他軟體包的名稱來安裝 (用空白分隔)，例如開機載入程式。
+此套件組並無包含全部 live 安裝環境的中所有工具，例如 [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 或特定的無線韌體。[packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) 包含了他們的差異。
 
-### 設定系統
+To [install](/index.php/Install "Install") other packages or groups to the new system, append their names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
 
-*   使用以下指令產生 [fstab](/index.php/Fstab "Fstab") (若您偏好使用 UUID 或標籤，請分別加上 `-U` 或 `-L` 選項，擇一即可)：
+## Configure the system (配置系統)
 
-	 `# genfstab -p /mnt >> /mnt/etc/fstab` 
+### Fstab (檔案系統列表)
 
-*   用 [chroot](/index.php/Chroot "Chroot") 切換至全新安裝的系統：
-
-	 `# arch-chroot /mnt` 
-
-*   在 `/etc/hostname` 裡寫入指定的主機名稱。
-
-*   建立軟連結 `/etc/localtime`，連向 `/usr/share/zoneinfo/Zone/SubZone`。將 `Zone` 和 `Subzone` 換成您所在的時區。例如：
-
-	 `# ln -s /usr/share/zoneinfo/Asia/Taipei /etc/localtime` 
-
-*   取消 `/etc/locale.gen` 內的註解以選擇語系，並使用 `locale-gen` 產生它們。
-*   在 `/etc/locale.conf` 內設定[本地化](/index.php/Locale#Setting_the_system_locale "Locale")。
-*   在 `/etc/vconsole.conf` 內新增[終端機鍵盤布局](/index.php/KEYMAP "KEYMAP")與[終端機字型](/index.php/Fonts_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)#.E7.B5.82.E7.AB.AF.E6.A9.9F.E5.AD.97.E5.9E.8B "Fonts (正體中文)")的偏好設定。
-*   依需求設定 `/etc/mkinitcpio.conf` (參閱 [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") )，並建立一個初始 RAM 碟：
-
-	 `# mkinitcpio -p linux` 
-
-*   用 `passwd` 設定 root 帳號的密碼。
-*   為新安裝的系統設定網路。參閱[網路設定](/index.php/Network_configuration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Network configuration (正體中文)")和[無線網路設定](/index.php/Wireless_Setup "Wireless Setup")。
-
-### 安裝並設定開機載入程式
-
-有數種選擇可供使用；參閱[開機載入程式](/index.php/Boot_loaders "Boot loaders")。
-
-### 卸載並重啟系統
-
-如果您還在 chroot 的環境內，請先輸入 `exit` 或按下 `Ctrl+D` 來離開 chroot 環境。 為了卸載先前我們在 `/mnt` 下所掛載的分割區。透過以下步驟來卸載它們：
+建立 [fstab](/index.php/Fstab "Fstab") 檔案 (使用 `-U` 或 `-L` 選項設置 [UUID](/index.php/UUID "UUID") 或 labels)：
 
 ```
-# umount -R /mnt
+# genfstab -U /mnt >> /mnt/etc/fstab
 
 ```
 
-現在請重啟系統，並使用 root 帳號來登入新的系統。
+接下來請檢查生成的檔案 `/mnt/etc/fstab`，如有錯誤請更正。
 
-## 安裝完成後
+### Chroot (改變根目錄)
 
-安裝好 Arch 以後，也請參考[一般建議](/index.php/General_recommendations_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "General recommendations (正體中文)")內的設定教學，例如設定圖形界面、音效、觸控板等等。
+[Change root](/index.php/Change_root "Change root") 進入新的系統：
 
-好奇 Arch 下有什麼吸引人的應用程式嗎？請參考[應用程式清單](/index.php/List_of_applications "List of applications")。
+```
+# arch-chroot /mnt
+
+```
+
+### Time zone (時區)
+
+設定 [time zone](/index.php/Time_zone "Time zone"):
+
+```
+# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
+
+```
+
+使用 [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) 建立 `/etc/adjtime`。If the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be [configured accordingly](/index.php/Time_standard "Time standard").
+
+```
+# hwclock --systohc --*utc*
+
+```
+
+### Locale (語系)
+
+在 `/etc/locale.gen` 移除 `en_US.UTF-8 UTF-8` 及其他需要的 [localization](/index.php/Localization "Localization") 前的註釋符號(#)，接著生成 locale 訊息：
+
+```
+# locale-gen
+
+```
+
+创建 locale.conf 并提交您的本地化选项 在 [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) 中設定您的語系選項。例如：
+
+```
+# echo LANG=*en_US.UTF-8* > /etc/locale.conf
+
+```
+
+If required, set the [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") in [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).
+
+### Hostname (主機名稱)
+
+在 `/etc/hostname` 建立新的項目 [hostname](/index.php/Hostname "Hostname")：
+
+```
+# echo *myhostname* > /etc/hostname
+
+```
+
+Add a matching line to `/etc/hosts`:
+
+```
+127.0.1.1  *myhostname*.localdomain  *myhostname*
+
+```
+
+### Network configuration (網路設定)
+
+需要對新安裝的系統設置網路配置請參考 [Network configuration](/index.php/Network_configuration "Network configuration")。
+
+對於無線網路配置([Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"))，安裝 [iw](https://www.archlinux.org/packages/?name=iw)， [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) 和 [dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的韌體套件([firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"))。
+
+### Initramfs
+
+When making configuration changes to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), create a new initial RAM disk with:
+
+```
+# mkinitcpio -p linux
+
+```
+
+### Root password (Root 密碼)
+
+設定 root [password](/index.php/Password "Password"):
+
+```
+# passwd
+
+```
+
+### Boot loader (開機管理程式)
+
+可用的選擇和配置請參考 [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")。例如，如果您的系統支援 UEFI，使用 [systemd-boot](/index.php/Systemd-boot "Systemd-boot") 建立開機管理，反之則用 [GRUB](/index.php/GRUB#BIOS_systems "GRUB")。
+
+如果您與用 Intel CPU，請另外安裝 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 並啟用 Intel microcode Updates([enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode"))。
+
+## Reboot (重新啟動)
+
+輸入 `exit` 或按下 `Ctrl+D` 以離開 chroot 環境。
+
+Optionally manually unmount all the partitions with `umount -R /mnt`: this allows noticing any "busy" partitions, and finding the cause with [fuser(1)](http://man7.org/linux/man-pages/man1/fuser.1.html).
+
+最後，輸入`reboot` 以重新啟動裝置，所有未卸載的磁碟分割區將會自動由 *systemd* 卸載。記得移除安裝媒體並以 root 身份登入新系統。
+
+## Post-installation (安裝後)
+
+系統管理和安裝後的相關教學（例如：圖形化使用者界面，聲音，觸控板）請參考 [General recommendations](/index.php/General_recommendations "General recommendations")。
+
+感興趣的各類應用程式，請參考 [List of applications](/index.php/List_of_applications "List of applications")。

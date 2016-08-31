@@ -2,7 +2,7 @@ The `~/.xinitrc` file is a shell script read by *xinit* and by its front-end *st
 
 One of the main functions of `~/.xinitrc` is to dictate which client for the X Window System is invoked with *startx* or *xinit* programs on a per-user basis. There exists numerous additional specifications and commands that may also be added to `~/.xinitrc` as you further customize your system.
 
-Most DMs also source the similar [xprofile](/index.php/Xprofile "Xprofile") before xinit.
+Most display managers also source the similar [xprofile](/index.php/Xprofile "Xprofile") before xinit.
 
 ## Contents
 
@@ -15,7 +15,7 @@ Most DMs also source the similar [xprofile](/index.php/Xprofile "Xprofile") befo
     *   [4.1 Automatic login to the virtual console](#Automatic_login_to_the_virtual_console)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Override xinitrc from command line](#Override_xinitrc_from_command_line)
-    *   [5.2 Making a DE/WM choice](#Making_a_DE.2FWM_choice)
+    *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
     *   [5.3 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
 
 ## Installation
@@ -147,7 +147,7 @@ This method can be combined with [automatic login to virtual console](/index.php
 
 ### Override xinitrc from command line
 
-If you have a working `~/.xinitrc`, but just want to try other WM/DE, you can run it by issuing *startx* followed by the path to the window manager:
+If you have a working `~/.xinitrc`, but just want to try other window manager or desktop environment, you can run it by issuing *startx* followed by the path to the window manager:
 
 ```
 $ startx /full/path/to/window-manager
@@ -172,11 +172,11 @@ See also `man startx`.
 
 **Tip:** This can be used even to start a regular GUI programs but without any of the window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
 
-### Making a DE/WM choice
+### Switching between desktop environments/window managers
 
-If you are frequently switching between different DEs/WMs, it is recommended to either use a [Display manager](/index.php/Display_manager "Display manager") or add code to `.xinitrc`. The code described next consists of a simple few lines, which will take the argument and load the desired desktop environment or window manager.
+If you are frequently switching between different desktop environments or window managers, it is convenient to either use a [display manager](/index.php/Display_manager "Display manager") or expand `.xinitrc` to make the switching possible.
 
-The following example `~/.xinitrc` shows how to start a particular DE/WM with an argument:
+The following example `~/.xinitrc` shows how to start a particular desktop environment or window manager with an argument:
 
  `~/.xinitrc` 
 ```
@@ -213,7 +213,7 @@ esac
 
 ```
 
-After that, you can easily start a particular DE/WM by passing an argument, e.g.:
+To pass the argument:
 
 ```
 $ xinit

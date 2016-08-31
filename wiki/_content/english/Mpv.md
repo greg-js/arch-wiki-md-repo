@@ -34,7 +34,7 @@
 
 *   **Baka MPlayer** — Free and open source, cross-platform, *libmpv* based multimedia player (Qt 5).
 
-	[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
+	[http://bakamplayer.u8sand.net/](http://bakamplayer.u8sand.net/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
 
 *   **bomi** — Powerful and easy to use multimedia player (Qt 5).
 
@@ -42,7 +42,7 @@
 
 *   **GNOME MPV** — A simple frontend for *mpv* (GTK+ 3).
 
-	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/), [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/)
+	[http://gnome-mpv.github.io/](http://gnome-mpv.github.io/) || [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
 

@@ -40,6 +40,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### August 2016
 
+*   [30 August 2016] [ASA-201608-22](https://lists.archlinux.org/pipermail/arch-security/2016-August/000696.html) [mupdf](https://www.archlinux.org/packages/?name=mupdf) arbitrary code execution
+*   [30 August 2016] [ASA-201608-21](https://lists.archlinux.org/pipermail/arch-security/2016-August/000695.html) [mupdf](https://www.archlinux.org/packages/?name=mupdf) arbitrary code execution
 *   [27 August 2016] [ASA-201608-20](https://lists.archlinux.org/pipermail/arch-security/2016-August/000694.html) [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) denial of service
 *   [26 August 2016] [ASA-201608-19](https://lists.archlinux.org/pipermail/arch-security/2016-August/000693.html) [mediawiki](https://www.archlinux.org/packages/?name=mediawiki) multiple issues
 *   [22 August 2016] [ASA-201608-18](https://lists.archlinux.org/pipermail/arch-security/2016-August/000692.html) [libgcrypt](https://www.archlinux.org/packages/?name=libgcrypt) information disclosure

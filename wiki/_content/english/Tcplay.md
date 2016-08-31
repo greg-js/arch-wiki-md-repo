@@ -12,7 +12,7 @@ Source: [github project home](https://github.com/bwalex/tc-play)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [tcplay](https://www.archlinux.org/packages/?name=tcplay) or [tcplay-git](https://aur.archlinux.org/packages/tcplay-git/).
+[Install](/index.php/Install "Install") the [tcplay](https://www.archlinux.org/packages/?name=tcplay) package.
 
 ## Encrypting a file as a virtual volume
 

@@ -1,4 +1,4 @@
-An xprofile file, `~/.xprofile` and `/etc/xprofile`, allows you to execute commands at the beginning of the X user session - before the [Window manager](/index.php/Window_manager "Window manager") is started.
+An xprofile file, `~/.xprofile` and `/etc/xprofile`, allows you to execute commands at the beginning of the X user session - before the [window manager](/index.php/Window_manager "Window manager") is started.
 
 The xprofile file is similar in style to [xinitrc](/index.php/Xinitrc "Xinitrc").
 

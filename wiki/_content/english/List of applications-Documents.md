@@ -375,23 +375,23 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Atom](/index.php/Atom "Atom")** — A promising text editor developed by GitHub. With support for plug-ins written in Node.js and embedded [Git](/index.php/Git "Git") Control.
 
-	[https://atom.io/](https://atom.io/) || [atom-editor](https://aur.archlinux.org/packages/atom-editor/)
+	[https://atom.io](https://atom.io) || [atom](https://www.archlinux.org/packages/?name=atom)
 
 *   **Beaver** — A GTK+ editor designed to be modular, lightweight and stylish.
 
-	[http://beaver-editor.sourceforge.net/](http://beaver-editor.sourceforge.net/) || [beaver](https://www.archlinux.org/packages/?name=beaver)
+	[http://beaver-editor.sourceforge.net](http://beaver-editor.sourceforge.net) || [beaver](https://www.archlinux.org/packages/?name=beaver)
 
 *   **[Brackets](https://en.wikipedia.org/wiki/Brackets_(text_editor) "w:Brackets (text editor)")** — An open source code editor for the web, written in JavaScript, HTML and CSS.
 
-	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)
+	[http://brackets.io](http://brackets.io) || [brackets](https://aur.archlinux.org/packages/brackets/)
 
 *   **[Cream](https://en.wikipedia.org/wiki/Cream_(software) "wikipedia:Cream (software)")** — A user-friendly editor atop of gVim.
 
-	[http://cream.sourceforge.net/](http://cream.sourceforge.net/) || [cream](https://aur.archlinux.org/packages/cream/)
+	[http://cream.sourceforge.net](http://cream.sourceforge.net) || [cream](https://aur.archlinux.org/packages/cream/)
 
 *   **Edile** — PyGTK code and scripting editor implemented in one file.
 
-	[https://code.google.com/p/edile/](https://code.google.com/p/edile/) || [edile](https://aur.archlinux.org/packages/edile/)
+	[https://code.google.com/p/edile](https://code.google.com/p/edile) || [edile](https://aur.archlinux.org/packages/edile/)
 
 *   **ePad** — A simple text editor written in Python and EFL.
 
@@ -399,7 +399,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — A text editor using the GTK2 toolkit with basic features of an integrated development environment. It has support for TeX-based documents.
 
-	[http://www.geany.org/](http://www.geany.org/) || [geany](https://www.archlinux.org/packages/?name=geany)
+	[https://www.geany.org](https://www.geany.org) || [geany](https://www.archlinux.org/packages/?name=geany)
 
 *   **[Gedit](https://en.wikipedia.org/wiki/Gedit "wikipedia:Gedit")** — GTK+ editor for the GNOME desktop with syntax highlighting, automatic indentation, matching brackets, etc., and a number of add-ons to increase functionality.
 
@@ -411,11 +411,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim.
 
-	[http://www.vim.org/](http://www.vim.org/) || [gvim](https://www.archlinux.org/packages/?name=gvim)
+	[http://www.vim.org](http://www.vim.org) || [gvim](https://www.archlinux.org/packages/?name=gvim)
 
 *   **Jedit** — Text editor for programmers, written in Java.
 
-	[http://www.jedit.org/](http://www.jedit.org/) || [jedit](https://www.archlinux.org/packages/?name=jedit)
+	[http://www.jedit.org](http://www.jedit.org) || [jedit](https://www.archlinux.org/packages/?name=jedit)
 
 *   **[JuffEd](https://en.wikipedia.org/wiki/JuffEd "wikipedia:JuffEd")** — Simple tabbed text editor with syntax highlighting, written in Qt.
 
@@ -423,15 +423,15 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Kate](https://en.wikipedia.org/wiki/Kate_(text_editor) "wikipedia:Kate (text editor)")** — Full-featured programmer's editor for the KDE desktop with MDI and a filesystem browser.
 
-	[http://kate-editor.org/](http://kate-editor.org/) || [kate](https://www.archlinux.org/packages/?name=kate)
+	[https://kate-editor.org](https://kate-editor.org) || [kate](https://www.archlinux.org/packages/?name=kate)
 
 *   **[KWrite](https://en.wikipedia.org/wiki/KWrite "wikipedia:KWrite")** — Lightweight text editor for the KDE desktop that uses the same editor widget as Kate.
 
-	[http://kde.org/applications/utilities/kwrite/](http://kde.org/applications/utilities/kwrite/) || [kwrite](https://www.archlinux.org/packages/?name=kwrite)
+	[https://kde.org/applications/utilities/kwrite](https://kde.org/applications/utilities/kwrite) || [kwrite](https://www.archlinux.org/packages/?name=kwrite)
 
 *   **[Leafpad](https://en.wikipedia.org/wiki/Leafpad "wikipedia:Leafpad")** — Notepad clone for GTK+ that emphasizes simplicity.
 
-	[http://tarot.freeshell.org/leafpad/](http://tarot.freeshell.org/leafpad/) || [leafpad](https://www.archlinux.org/packages/?name=leafpad)
+	[http://tarot.freeshell.org/leafpad](http://tarot.freeshell.org/leafpad) || [leafpad](https://www.archlinux.org/packages/?name=leafpad)
 
 *   **L3afpad** — Simple text editor forked from Leafpad, supports GTK+ 3.
 
@@ -439,15 +439,15 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Medit** — Programming and around-programming text editor.
 
-	[http://mooedit.sourceforge.net/](http://mooedit.sourceforge.net/) || [medit](https://www.archlinux.org/packages/?name=medit)
+	[http://mooedit.sourceforge.net](http://mooedit.sourceforge.net) || [medit](https://www.archlinux.org/packages/?name=medit)
 
 *   **[Mousepad](https://en.wikipedia.org/wiki/Xfce#Mousepad "wikipedia:Xfce")** — Fast text editor for the Xfce Desktop Environment.
 
-	[http://www.xfce.org/](http://www.xfce.org/) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
+	[https://www.xfce.org](https://www.xfce.org) || [mousepad](https://www.archlinux.org/packages/?name=mousepad)
 
 *   **[Nedit](https://en.wikipedia.org/wiki/NEdit "wikipedia:NEdit")** — Text editor for the [lesstif](https://www.archlinux.org/packages/?name=lesstif) environment.
 
-	[http://www.nedit.org/](http://www.nedit.org/) || [nedit](https://www.archlinux.org/packages/?name=nedit)
+	[http://www.nedit.org](http://www.nedit.org) || [nedit](https://www.archlinux.org/packages/?name=nedit)
 
 *   **[Pluma](/index.php/MATE "MATE")** — A powerful text editor for MATE.
 
@@ -455,7 +455,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[PyRoom](https://en.wikipedia.org/wiki/PyRoom "wikipedia:PyRoom")** — Great distractionless PyGTK text editor, a clone of the infamous WriteRoom.
 
-	[http://pyroom.org/](http://pyroom.org/) || [pyroom](https://aur.archlinux.org/packages/pyroom/)
+	[http://pyroom.org](http://pyroom.org) || [pyroom](https://aur.archlinux.org/packages/pyroom/)
 
 *   **QEdit** — A multi-purpose text editor based on NEdit using Qt.
 
@@ -463,11 +463,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **QSciTE** — Qt clone of the SciTE text and code editor.
 
-	[http://code.google.com/p/qscite/](http://code.google.com/p/qscite/) || [qscite](https://aur.archlinux.org/packages/qscite/)
+	[https://code.google.com/p/qscite](https://code.google.com/p/qscite) || [qscite](https://aur.archlinux.org/packages/qscite/)
 
 *   **QXmlEdit** — Simple Qt XML editor and XSD viewer.
 
-	[http://qxmledit.org/](http://qxmledit.org/) || [qxmledit](https://aur.archlinux.org/packages/qxmledit/)
+	[http://qxmledit.org](http://qxmledit.org) || [qxmledit](https://aur.archlinux.org/packages/qxmledit/)
 
 *   **[Sam](https://en.wikipedia.org/wiki/Sam_(text_editor) "wikipedia:Sam (text editor)")** — Minimalist text editor with a graphical user interface, a very powerful command language and remote editing capabilities, developed by Rob Pike.
 
@@ -483,33 +483,33 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
 
-	[http://sublimetext.com](http://sublimetext.com) || [sublime-text](https://aur.archlinux.org/packages/sublime-text/)
+	[https://www.sublimetext.com](https://www.sublimetext.com) || [sublime-text](https://aur.archlinux.org/packages/sublime-text/)
 
 *   **[Sublime Text 3](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
 
-	[http://sublimetext.com](http://sublimetext.com) || [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/)
+	[https://www.sublimetext.com](https://www.sublimetext.com) || [sublime-text-dev](https://aur.archlinux.org/packages/sublime-text-dev/)
 
 *   **Tea** — Qt-based feature rich text editor.
 
-	[http://semiletov.org/tea/](http://semiletov.org/tea/) || [tea](https://www.archlinux.org/packages/?name=tea)
+	[http://semiletov.org/tea](http://semiletov.org/tea) || [tea](https://www.archlinux.org/packages/?name=tea)
 
 *   **[Textadept](/index.php/Textadept "Textadept")** — Lua-extensible feature rich text editor based on Scintilla and written in C.
 
-	[http://foicica.com/textadept/](http://foicica.com/textadept/) || [textadept](https://aur.archlinux.org/packages/textadept/)
+	[http://foicica.com/textadept](http://foicica.com/textadept) || [textadept](https://aur.archlinux.org/packages/textadept/)
 
 *   **[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com/](https://code.visualstudio.com/) || [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)/[visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/) (open-source version)
+	[https://code.visualstudio.com](https://code.visualstudio.com) || [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)/[visual-studio-code-oss](https://aur.archlinux.org/packages/visual-studio-code-oss/) (open-source version)
 
 *   **XEdit** — Simple text editor for the X Window System.
 
-	[http://www.x.org/wiki/](http://www.x.org/wiki/) || [xorg-xedit](https://www.archlinux.org/packages/?name=xorg-xedit)
+	[https://www.x.org/wiki](https://www.x.org/wiki) || [xorg-xedit](https://www.archlinux.org/packages/?name=xorg-xedit)
 
 ##### Collaborative text editors
 
 *   **Gobby** — Collaborative editor supporting multiple documents in one session and a multi-user chat.
 
-	[http://gobby.0x539.de](http://gobby.0x539.de) || [gobby](https://www.archlinux.org/packages/?name=gobby)
+	[https://gobby.github.io](https://gobby.github.io) || [gobby](https://www.archlinux.org/packages/?name=gobby)
 
 ### Readers and Viewers
 

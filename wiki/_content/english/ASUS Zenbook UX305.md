@@ -62,6 +62,8 @@ synclient TapButton1=1 TapButton2=3 TapButton3=2
 
 ```
 
+Edit by Ouafnico (30 Aug 2016) : Touchpad works well with xf86-input-libinput (and removing xf86-input-synaptics ; because libinput replace old synaptics), except the middle click. If someone got a solution...
+
 ### Wifi
 
 Intel Dual Band wifi. Should work with recent kernels. 3.10+ with iwlwifi. See [Wireless network configuration#iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") for details.

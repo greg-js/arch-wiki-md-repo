@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [MTP](/index.php/MTP "MTP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-05-20，点击[这里](https://wiki.archlinux.org/index.php?title=MTP&diff=0&oldid=374097)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [MTP](/index.php/MTP "MTP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-30，点击[这里](https://wiki.archlinux.org/index.php?title=MTP&diff=0&oldid=447354)可以查看翻译后英文页面的改动。
 
 [MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol") 是 "Media Transfer Protocol" (媒体传输协议)的缩写,很多移动和多媒体设备都支持这个协议.
 
@@ -19,13 +19,14 @@
         *   [3.1.1 Unknown device](#Unknown_device)
         *   [3.1.2 不能列举USB设备](#.E4.B8.8D.E8.83.BD.E5.88.97.E4.B8.BEUSB.E8.AE.BE.E5.A4.87)
     *   [3.2 gvfs-mtp](#gvfs-mtp)
-    *   [3.3 kio-mtp](#kio-mtp)
+    *   [3.3 jmtpfs Input/output error upon first access](#jmtpfs_Input.2Foutput_error_upon_first_access)
+    *   [3.4 kio-mtp](#kio-mtp)
 
 ## 安装
 
 ### 功能
 
-[libmtp](http://libmtp.sourceforge.net/) 提供了 Linux 下的 MTP 支持，可以从 [official repositories](/index.php/Official_repositories "Official repositories") [直接安装](/index.php/Pacman "Pacman") [libmtp](https://www.archlinux.org/packages/?name=libmtp)。仅安装 [libmtp](http://libmtp.sourceforge.net/) 就已经可以正确的访问设备。为了添加与文件管理器的集成或者是提高传输和访问的速度，还可以安装以下的软件包：
+[直接安装](/index.php/Pacman "Pacman") 软件包 [libmtp](https://www.archlinux.org/packages/?name=libmtp)。仅安装 [libmtp](http://libmtp.sourceforge.net/) 就已经可以正确的访问设备。为了添加与文件管理器的集成或者是提高传输和访问的速度，还可以安装以下的软件包：
 
 These packages to choose from all implement a [Wikipedia:Filesystem in Userspace](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace"):
 
@@ -33,6 +34,7 @@ These packages to choose from all implement a [Wikipedia:Filesystem in Userspace
 *   [jmtpfs](https://aur.archlinux.org/packages/jmtpfs/) - 据说对 Android 4+ 以上的设备支持更好
 *   [go-mtpfs-git](https://aur.archlinux.org/packages/go-mtpfs-git/) - 据说对 Android 3+ 以上的设备支持更好
 *   [simple-mtpfs](https://aur.archlinux.org/packages/simple-mtpfs/)
+*   [android-file-transfer](https://www.archlinux.org/packages/?name=android-file-transfer) - MTP 客户端，有精简的 UI
 
 以上的这些都旨在提供比 `libmtp` 更好的使用体验。因为 USB 设备实在是太多，所以你可能需要先研究一下哪个更加适合于你的设备。
 
@@ -42,8 +44,8 @@ These packages to choose from all implement a [Wikipedia:Filesystem in Userspace
 
 为了能够直接在文件管理器中通过 MTP 查看 Android 设备，需要安装以下插件：
 
-*   如果文件管理器使用 [GVFS](/index.php/GVFS "GVFS") （[GNOME Files](/index.php/GNOME_Files "GNOME Files"), Xfce 的 [Thunar](/index.php/Thunar "Thunar")），安装 [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) 提供 MTP 支持或者是安装 [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) 提供 PTP 支持。
-*   如果文件管理器使用 KIO （KDE 的 Dolphin），安装 [kio-mtp](https://www.archlinux.org/packages/?name=kio-mtp) （自带 PTP 支持）。
+*   如果文件管理器使用 [GVFS](/index.php/GVFS "GVFS") （GNOME Files)，安装 [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) 提供 MTP 支持或者是安装 [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) 提供 PTP 支持。
+*   如果文件管理器使用 KIO （KDE 的 Dolphin），安装 [kio-extras](https://www.archlinux.org/packages/?name=kio-extras) （KIO 的依赖包）。
 
 当所需要的软件包已经安装，就可以通过链接访问设备了。比如 `mtp://[usb:002,013]/`。
 
@@ -82,8 +84,6 @@ These packages to choose from all implement a [Wikipedia:Filesystem in Userspace
 
 ```
 
-**警告:** 部分指令可能会损坏您的设备!!!
-
 ### mtpfs
 
 **警告:** 以下的操作可能不能正常的工作，你必须求助于 [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") 或者是其他基于 gvfs 的文件管理器(如[PCManFM](/index.php/PCManFM "PCManFM")。
@@ -109,6 +109,34 @@ $ fusermount -u ~/mnt
 
 ```
 
+Make this cohere to the rest of Linux (use regular mount/umount commands) by doing two steps
+
+```
+$# ln -s <actual mount command's path/name>  <a name consistent with Linux's mount convention>
+$  ln -s /sbin/jmtpfs                        /sbin/mount.jmtpfs
+
+```
+
+add this line to /etc/fstab;
+
+```
+ #jmtpfs <mount path>        fuse nodev,allow_other,<other options>                             0    0
+  jmtpfs /home/sam/run/motog fuse nodev,allow_other,rw,user,noauto,noatime,uid=1000,gid=1000    0    0
+
+```
+
+Now mount the device and see if the options "took"
+
+```
+ $ mount /home/sam/run/motog
+ Device 0 (VID=22b8 and PID=2e82) is a Motorola Moto G (ID2).
+ Android device detected, assigning default bug flags
+ $ mount 
+  ...
+  jmtpfs on /home/sam/run/motog type fuse.jmtpfs (rw,nosuid,nodev,noexec,noatime,user_id=1000,group_id=1000,allow_other,user=sam)
+
+```
+
 ### jmtpfs
 
 使用此命令挂载设备(需要确保挂载点可用):
@@ -127,36 +155,9 @@ $ fusermount -u ~/mtp
 
 ### go-mtpfs
 
-**Note:** Go-mtpfs 相较于 mtpfs/jmtpfs ,对某些设备的文件写入更加的高效. 您的设备的写入速度太慢可以尝试下这个.
+**Note:** Mounting with `go-mtpfs` might fail if an external SD Card is present. If you try to access your device while having an SD card and go-mtpfs complains, try removing the SD card and mounting again.
 
-If the above instructions don't show any positive results one should try [go-mtpfs-git](https://aur.archlinux.org/packages/go-mtpfs-git/) from the [AUR](/index.php/AUR "AUR"). The following has been tested on a Samsung Galaxy Nexus GSM, Asus/Google Nexus 7 (2012 1st gen model) and Samsung Galaxy S 3 mini. (This is the only mtp software which worked for me on nexus 4\. Settings are usb debugging enabled, connected as media device.)
-
-If you want do it simpler, install [go](https://www.archlinux.org/packages/?name=go), [libmtp](https://www.archlinux.org/packages/?name=libmtp) and [git](https://www.archlinux.org/packages/?name=git) from the [official repositories](/index.php/Official_repositories "Official repositories"). After that install [go-mtpfs-git](https://aur.archlinux.org/packages/go-mtpfs-git/) from the [AUR](/index.php/AUR "AUR").
-
-As in the section above install [android-udev](https://www.archlinux.org/packages/?name=android-udev) which will provide you with "/usr/lib/udev/rules.d/51-android.rules" edit it to apply to your vendorID and productID, which you can see after running mtp-detect. To the end of the line add with a comma OWNER="yourusername". Save the file.
-
-*   将用户添加到 "fuse" 组:
-
-```
-gpasswd -a [user] fuse
-
-```
-
-*   如果该组不存在,请用以下的命令创建:
-
-```
-groupadd fuse
-
-```
-
-注销用户或者重启计算机以使得更改生效.
-
-*   建立名为 "Android" 的挂载点:
-
-```
-mkdir Android
-
-```
+Install [android-udev](https://www.archlinux.org/packages/?name=android-udev), which will allow you to edit `/etc/udev/rules.d/51-android.rules` and apply to your `idVendor` and `idProduct`, which you can see after running *mtp-detect*. To the end of the line, add your user `OWNER="<user>"`.
 
 *   挂载设备:
 
@@ -317,6 +318,17 @@ ATTR{idVendor}=="YOUR VENDOR ID HERE", ATTR{idProduct}=="YOUR PRODUCT ID HERE", 
 ```
 
 And reboot the system. Now file managers (like Thunar) should be able to automount the MTP Device. [[1]](https://bbs.archlinux.org/viewtopic.php?id=180719)
+
+### jmtpfs Input/output error upon first access
+
+Symptoms: jmtpfs successfully mounts, but as soon as one attempts to access files on the device (e.g. via `ls`), an error is reported:
+
+```
+ cannot access <mount-point>: Input/output error
+
+```
+
+This appears to be a security feature: MTP does not work when the phone is locked by the lockscreen. Unlock the phone and it should work again as long as the cord remains connected.
 
 ### kio-mtp
 

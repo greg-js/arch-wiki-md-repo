@@ -15,6 +15,7 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
     *   [5.1 Configure WLAN without ethernet](#Configure_WLAN_without_ethernet)
 *   [6 Audio](#Audio)
     *   [6.1 Caveats for HDMI audio](#Caveats_for_HDMI_audio)
+    *   [6.2 Caveats for Analogue audio](#Caveats_for_Analogue_audio)
 *   [7 Video](#Video)
     *   [7.1 HDMI / analog TV-Out](#HDMI_.2F_analog_TV-Out)
     *   [7.2 Caveats for analog TV-Out](#Caveats_for_analog_TV-Out)
@@ -103,6 +104,15 @@ Some applications require a setting in `/boot/config.txt` to force audio over HD
 
 ```
 hdmi_drive=2
+
+```
+
+### Caveats for Analogue audio
+
+Sometimes audio from the 3.5mm analogue output can be terribly distorted. Adding the following to `/boot/config.txt` may fix the problem.
+
+```
+audio_pwm_mode=2
 
 ```
 

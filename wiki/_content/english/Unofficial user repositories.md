@@ -190,7 +190,7 @@ Server = http://xyne.archlinux.ca/repos/xyne
 
 ```
 [youtube-dl]
-Server = http://youtube-dl.tk
+Server = https://youtube-dl.tk
 
 ```
 

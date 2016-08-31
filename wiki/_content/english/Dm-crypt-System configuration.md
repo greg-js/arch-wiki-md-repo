@@ -21,7 +21,7 @@ When encrypting a system it is necessary to regenerate the initial ramdisk after
 
 *   `encrypt`: always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` hook, if that is used.
 *   `shutdown`: deprecated, not necessary [anymore](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html).
-*   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook.
+*   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Setting your keymap is done in [`/etc/vconsole.conf`](/index.php/Keymap#Persistent_configuration "Keymap").
 *   `keyboard`: needed to make USB keyboards work in early userspace.
 *   `usbinput`: deprecated, but can be given a try in case `keyboard` does not work.
 

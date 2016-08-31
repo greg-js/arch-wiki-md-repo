@@ -94,7 +94,7 @@ Examples in the following subsections will have the same effect, they will set `
 
 ### Using setxkbmap
 
-*setxkbmap* sets the keyboard layout for the current X session only, but can be made persistent in [~/.xinitrc](/index.php/~/.xinitrc "~/.xinitrc"). This overrides system-wide configuration specified following [#Using X configuration files](#Using_X_configuration_files).
+*setxkbmap* sets the keyboard layout for the current X session only, but can be made persistent in [xinitrc](/index.php/Xinitrc "Xinitrc") or [xprofile](/index.php/Xprofile "Xprofile"). This overrides system-wide configuration specified following [#Using X configuration files](#Using_X_configuration_files).
 
 The usage is as follows (see `man 1 setxkbmap`):
 
