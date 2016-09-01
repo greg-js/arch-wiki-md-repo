@@ -12,6 +12,7 @@
 The following packages provide Atom:
 
 *   [atom](https://www.archlinux.org/packages/?name=atom)
+*   [atom-bleeding](https://aur.archlinux.org/packages/atom-bleeding/)
 *   [atom-editor](https://aur.archlinux.org/packages/atom-editor/)
 *   [atom-editor-arch](https://aur.archlinux.org/packages/atom-editor-arch/)
 *   [atom-editor-bin](https://aur.archlinux.org/packages/atom-editor-bin/)
@@ -21,7 +22,7 @@ The following packages provide Atom:
 *   *atom* from the unofficial [atom](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") repository.
     **Note:** Bugs regarding binary packages from the *atom* repository can be reported on [GitHub](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
 
-*   *atom-bleeding*/*atom-editor*/*atom-editor-base* from the unofficial [pkgbuild-current](/index.php/Unofficial_user_repositories#pkgbuild-current "Unofficial user repositories") repository. Further details can be found in its README [here](https://github.com/fusion809/arch-atom/blob/master/README.md).
+*   *atom-bleeding*/*atom-editor-base* from the unofficial [pkgbuild-current](/index.php/Unofficial_user_repositories#pkgbuild-current "Unofficial user repositories") repository. Further details can be found in its README [here](https://github.com/fusion809/arch-atom/blob/master/README.md).
     **Note:** Bugs regarding binary packages from the *pkgbuild-current* repository can be reported on [GitHub](https://github.com/fusion809/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
 
 ## Packages

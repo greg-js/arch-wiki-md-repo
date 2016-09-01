@@ -97,7 +97,7 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
 
 ### Plasma 桌面
 
-KDE 4 Plasma 已经停止维护，而且不能和 Plasma 5 同时安装。
+Plasma 4 已经停止维护，而且不能和 Plasma 5 同时安装。
 
 在安装Plasma之前，请确保[Xorg](/index.php/Xorg "Xorg")已经被安装到您的系统中
 

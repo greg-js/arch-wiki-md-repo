@@ -1,19 +1,58 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
-	A file system (or filesystem) is a means to organize data expected to be retained after a program terminates by providing procedures to store, retrieve and update data, as well as manage the available space on the device(s) which contain it. A file system organizes data in an efficient manner and is tuned to the specific characteristics of the device.
+	In computing, a file system (or filesystem) is used to control how data is stored and retrieved. Without a file system, information placed in a storage medium would be one large body of data with no way to tell where one piece of information stops and the next begins. By separating the data into pieces and giving each piece a name, the information is easily isolated and identified.
+
+	Taking its name from the way paper-based information systems are named, each group of data is called a "file". The structure and logic rules used to manage the groups of information and their names is called a "file system".
 
 Individual drive partitions can be setup using one of the many different available filesystems. Each has its own advantages, disadvantages, and unique idiosyncrasies. A brief overview of supported filesystems follows; the links are to Wikipedia pages that provide much more information.
 
-Before being formatted, a drive should be [partitioned](/index.php/Partitioning "Partitioning").
-
 ## Contents
 
-*   [1 Types of file systems](#Types_of_file_systems)
-    *   [1.1 Journaling](#Journaling)
-    *   [1.2 FUSE-based file systems](#FUSE-based_file_systems)
-    *   [1.3 Special purpose file systems](#Special_purpose_file_systems)
-*   [2 Create a file system](#Create_a_file_system)
-*   [3 See also](#See_also)
+*   [1 Create a file system](#Create_a_file_system)
+*   [2 Types of file systems](#Types_of_file_systems)
+    *   [2.1 Journaling](#Journaling)
+    *   [2.2 FUSE-based file systems](#FUSE-based_file_systems)
+    *   [2.3 Special purpose file systems](#Special_purpose_file_systems)
+
+## Create a file system
+
+**Note:** A drive must be [partitioned](/index.php/Partitioning "Partitioning") before creating file systems.
+
+Identify the device where the file system will be created, for example with [lsblk](/index.php/Lsblk "Lsblk"):
+
+```
+$ lsblk -f
+
+```
+
+File systems are usually created on a partition, but they can also be created inside of logical containers like [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
+
+To create a new file system on a partition, the existing file system located on the partition must not be mounted. If the partition you want to format contains a mounted filesystem, it will show up in the *MOUNTPOINT* column of lsblk.
+
+To unmount it, you can use *umount* on the directory where the filesystem was mounted to:
+
+```
+# umount */mountpoint*
+
+```
+
+To create a new file system of type *fstype* on a partition do:
+
+**Warning:** After creating a new filesystem, data previously stored on this partition can likely not be recovered. Make a backup of any data you want to keep.
+
+```
+# mkfs.*fstype* /dev/*partition*
+
+```
+
+See the article in [#Types of file systems](#Types_of_file_systems) corresponding to file system you wish to create for the exact command as well as userspace utilities you may wish to install for a particular file system.
+
+For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") on a partition, run:
+
+```
+# mkfs.ext4 /dev/*partition*
+
+```
 
 ## Types of file systems
 
@@ -144,43 +183,3 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 *   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — **SquashFS** is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
 
 	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
-
-## Create a file system
-
-**Note:**
-
-*   If you want to change the partition layout, see [Partitioning](/index.php/Partitioning "Partitioning").
-*   If you want to create a swap partition, see [Swap](/index.php/Swap "Swap").
-
-First, identify the device where the file system will be created, for example with [lsblk](/index.php/Lsblk "Lsblk"). File systems are usually created on a partition, but they can also be created inside of logical containers like [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
-To create a new filesystem on a partition, the existing filesystem located on the partition must not be mounted. If the partition you want to format contains a mounted filesystem, it will show up in the *MOUNTPOINT* column of lsblk.
-
-To unmount it, you can use *umount* on the directory where the filesystem was mounted to:
-
-```
-# umount /mountpoint
-
-```
-
-To create a new file system of type *fstype* on a partition do:
-
-**Warning:** After creating a new filesystem, data previously stored on this partition can likely not be recovered. Make a backup of any data you want to keep.
-
-```
-# mkfs.*fstype* /dev/*partition*
-
-```
-
-See the article in [#Types of file systems](#Types_of_file_systems) corresponding to file system you wish to create for the exact command as well as userspace utilities you may wish to install for a particular file system.
-
-For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") on a partition do:
-
-```
-# mkfs.ext4 /dev/*partition*
-
-```
-
-## See also
-
-*   [wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems")

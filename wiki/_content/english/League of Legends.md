@@ -212,7 +212,7 @@ Make sure to remember to make the file executable
 Alias example: **$HOME/.bashrc**
 
 ```
-# alias League_of_Legends='popd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/RADS/system/ && wine32 rads_user_kernel.exe run lol_launcher $(ls ../projects/lol_launcher/releases/) LoLLauncher.exe && pushd'
+# alias League_of_Legends='pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/RADS/system/ && wine32 rads_user_kernel.exe run lol_launcher $(ls ../projects/lol_launcher/releases/) LoLLauncher.exe && popd'
 
 ```
 

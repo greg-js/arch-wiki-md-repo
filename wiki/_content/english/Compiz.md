@@ -5,8 +5,8 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Installing the 0.9 series](#Installing_the_0.9_series)
-    *   [1.2 Installing the 0.8 series](#Installing_the_0.8_series)
+    *   [1.1 0.9 series](#0.9_series)
+    *   [1.2 0.8 series](#0.8_series)
     *   [1.3 Extras](#Extras)
 *   [2 Starting Compiz](#Starting_Compiz)
     *   [2.1 Enabling important plugins](#Enabling_important_plugins)
@@ -55,7 +55,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
 
 There are two versions of Compiz available, the 0.8 series which is written in C and the 0.9 series which is a complete re-write of Compiz in C++. As of August 2016, both series are actively developed. Compiz 0.9 is developed by the [Compiz Maintainers on Launchpad](https://code.launchpad.net/~compiz-team) whilst Compiz 0.8 is developed by the [Compiz Reloaded project](https://github.com/compiz-reloaded) on GitHub. The two series cannot be installed side by side.
 
-### Installing the 0.9 series
+### 0.9 series
 
 **Note:** From Compiz 0.9.8 onwards, all Compiz components are developed and distributed as a single project. This means that a single package can provide all of the Compiz components.
 
@@ -63,7 +63,7 @@ There are two versions of Compiz available, the 0.8 series which is written in C
 
 	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
 
-### Installing the 0.8 series
+### 0.8 series
 
 **Note:** The GTK Window Decorator is provided by [compiz-gtk](https://aur.archlinux.org/packages/compiz-gtk/), a split package from [compiz-core](https://aur.archlinux.org/packages/compiz-core/).
 
@@ -467,5 +467,6 @@ When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use
 ## See also
 
 *   [Compiz in Launchpad](https://launchpad.net/compiz)
+*   [Compiz in GitHub](https://github.com/compiz-reloaded)
 *   [Compiz Home](http://compiz.org), including wiki and forum (website and wiki are unmaintained)
 *   [Troubleshooting - Compiz Wiki](http://wiki.compiz.org/Troubleshooting), (wiki is unmaintained)

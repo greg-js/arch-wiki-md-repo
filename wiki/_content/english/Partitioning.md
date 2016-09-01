@@ -1,16 +1,22 @@
-*Partitioning* a hard drive divides the available space into sections that can be accessed independently.
+[Partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "w:Disk partitioning") a hard drive divides the available space into sections that can be accessed independently. An entire drive may be allocated to a single partition, or multiple ones for cases such as dual-booting, maintaining a [swap](/index.php/Swap "Swap") partition, or to logically separate data such as audio and video files.
 
-An entire hard drive may be allocated to a single partition, or one may divide the available storage space across multiple partitions. A number of scenarios require creating multiple partitions: dual- or multi-booting, for example, or maintaining a [swap](/index.php/Swap "Swap") partition. In other cases, partitioning is used as a means of logically separating data, such as creating separate partitions for audio and video files. Common partitioning schemes are discussed in detail below.
+The required information is stored in a [#Partition table](#Partition_table) using a type such as MBR or GPT.
 
-Each partition should be formatted to a [file system type](/index.php/File_systems "File systems") before being used.
+Tables are modified using a [#Partitioning tool](#Partitioning_tool) which must be compatible to the chosen type of partitioning table.
+
+Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted).
 
 ## Contents
 
 *   [1 Partition table](#Partition_table)
-    *   [1.1 Master Boot Record](#Master_Boot_Record)
-    *   [1.2 GUID Partition Table](#GUID_Partition_Table)
-    *   [1.3 Btrfs Partitioning](#Btrfs_Partitioning)
-    *   [1.4 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
+    *   [1.1 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
+    *   [1.2 Master Boot Record](#Master_Boot_Record)
+        *   [1.2.1 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
+        *   [1.2.2 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
+    *   [1.3 GUID Partition Table](#GUID_Partition_Table)
+        *   [1.3.1 Advantages of GPT](#Advantages_of_GPT)
+    *   [1.4 Partitionless disk](#Partitionless_disk)
+        *   [1.4.1 Btrfs partitioning](#Btrfs_partitioning)
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
@@ -31,11 +37,28 @@ Each partition should be formatted to a [file system type](/index.php/File_syste
 
 ## Partition table
 
-Partition information is stored in the partition table; today, there are 2 main formats in use: the classic [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record"), and the modern [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The latter is an improved version that does away with several limitations of MBR style.
+**Note:** To print existing tables, run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
 
-**Note:** Existing tables can be printed with `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
+### Choosing between GPT and MBR
+
+GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
+
+One should consider these to choose between GPT and MBR:
+
+*   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, one must use MBR.
+*   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") instead of BIOS, one must use GPT.
+*   If you are installing on the older hardware, especially laptop, consider choosing MBR because its BIOS might not support GPT.
+*   If you are partitioning a disk of 2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB") or larger, you need to use GPT.
+*   It is recommended to use always GPT for [UEFI](/index.php/UEFI "UEFI") boot as some UEFI firmwares do not allow UEFI-MBR boot.
+*   If none of the above apply, choose freely between GPT and MBR; since GPT is more modern, it is recommended in this case.
+
+**Note:** For GRUB to boot from a GPT partitioned disk on a BIOS based system, one has to create a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Please note this partition is unrelated to the `/boot` mountpoint, and will be used by GRUB directly. Do not create a filesystem on it, and do not mount it.
 
 ### Master Boot Record
+
+The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table. It plays an important role in the [boot process](/index.php/Boot_process "Boot process") under [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Wikipedia:Master boot record#Sector layout](https://en.wikipedia.org/wiki/Master_boot_record#Sector_layout "wikipedia:Master boot record") for the MBR structure.
+
+#### Master Boot Record (partition table)
 
 MBR originally only supported up to 4 partitions. Later on, extended and logical partitions were introduced to get around this limitation.
 
@@ -51,34 +74,32 @@ Extended partitions can be thought of as containers for logical partitions. A ha
 
 The customary numbering scheme is to create primary partitions *sda1* through *sda3* followed by an extended partition *sda4*. The logical partitions on *sda4* are numbered *sda5*, *sda6*, etc.
 
-See also [Wikipedia:Master boot record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record").
+#### Master Boot Record (bootstrap code)
+
+The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader.
 
 ### GUID Partition Table
 
-There is only one type of partition, **primary**. The amount of partitions per disk or RAID volume is unlimited.
+[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) uses [GUIDs](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (or UUIDs in linux world) to define partitions and its [types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table").
 
-See also [Wikipedia:GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table").
+#### Advantages of GPT
 
-### Btrfs Partitioning
+*   Provides a unique disk GUID and unique [partition GUID](/index.php/Persistent_block_device_naming#by-partuuid "Persistent block device naming") (`PARTUUID`) for each partition - A good filesystem-independent way of referencing partitions and disks.
+*   Provides a filesystem-independent [partition name](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") (`PARTLABEL`).
+*   Arbitrary number of partitions - depends on space allocated for the partition table - No need for extended and logical partitions. By default the GPT table contains space for defining 128 partitions. However if you want to define more partitions, you can allocate more space to the partition table (currently only *gdisk* is known to support this feature).
+*   Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 [ZiB](https://en.wikipedia.org/wiki/ZiB "wikipedia:ZiB"). MBR is limited to addressing 2 TiB of space per drive.
+*   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Fdisk#Recover_GPT_header "Fdisk") in case the primary ones are damaged.
+*   CRC32 checksums to detect errors and corruption of the header and partition table.
+
+### Partitionless disk
+
+Partitionless disk (a.k.a. superfloppy) refers to using a storage device without a partition table and having a file system directly on the storage device.
+
+#### Btrfs partitioning
 
 Btrfs can occupy an entire data storage device and replace the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
 
 See also [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs").
-
-### Choosing between GPT and MBR
-
-[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
-
-One should consider these to choose between GPT and MBR:
-
-*   If using GRUB legacy as the bootloader, one must use MBR.
-*   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, one must use MBR.
-*   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") instead of BIOS, one must use GPT.
-*   If you are installing on the older hardware, especially laptop, consider choosing MBR because its BIOS might not support GPT.
-*   If none of the above apply, choose freely between GPT and MBR; since GPT is more modern, it is recommended in this case.
-*   It is recommended to use always GPT for [UEFI](/index.php/UEFI "UEFI") boot as some UEFI firmwares do not allow UEFI-MBR boot.
-
-**Note:** For GRUB to boot from a GPT partitioned disk on a BIOS based system, one has to create a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Please note this partition is unrelated to the `/boot` mountpoint, and will be used by GRUB directly. Do not create a filesystem on it, and do not mount it.
 
 ## Partition scheme
 

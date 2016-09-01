@@ -4,6 +4,8 @@
 
 *   [1 获得](#.E8.8E.B7.E5.BE.97)
 *   [2 安装](#.E5.AE.89.E8.A3.85)
+    *   [2.1 GTK+ 3 版本](#GTK.2B_3_.E7.89.88.E6.9C.AC)
+    *   [2.2 MATE 不稳定版本](#MATE_.E4.B8.8D.E7.A8.B3.E5.AE.9A.E7.89.88.E6.9C.AC)
 *   [3 启动](#.E5.90.AF.E5.8A.A8)
     *   [3.1 图形方式](#.E5.9B.BE.E5.BD.A2.E6.96.B9.E5.BC.8F)
     *   [3.2 手动](#.E6.89.8B.E5.8A.A8)
@@ -64,6 +66,16 @@ Server = http://packages.mate-desktop.org/repo/archlinux/$arch
 You are very likely to get file conflicts when installing. Simply rename the offending files or install with the `--force` flag. You will also require [dbus](/index.php/Dbus "Dbus").
 
 **Note:** Currently, many MATE packages do not provide, conflict or replace any GNOME packages.
+
+### GTK+ 3 版本
+
+An experimental GTK+ 3 build of MATE can be installed with [mate-gtk3](https://www.archlinux.org/groups/x86_64/mate-gtk3/) and [mate-extra-gtk3](https://www.archlinux.org/groups/x86_64/mate-extra-gtk3/) groups. While it works mostly, there are few known issues with [caja](https://github.com/mate-desktop/caja/milestones/Gtk+3), [eom](https://github.com/mate-desktop/eom/milestones/Gtk+3), [marco](https://github.com/mate-desktop/marco/milestones/Gtk+3), [mate-control-center](https://github.com/mate-desktop/mate-control-center/milestones/Gtk+3), [mate-netbook](https://github.com/mate-desktop/mate-netbook/milestones/Gtk+3), [mate-notification-daemon](https://github.com/mate-desktop/mate-notification-daemon/milestones/Gtk+3), [mate-panel](https://github.com/mate-desktop/mate-panel/milestones/Gtk+3) and [pluma](https://github.com/mate-desktop/pluma/milestones/Gtk+3).
+
+### MATE 不稳定版本
+
+Consider the following community efforts, cf. [forum](https://bbs.archlinux.org/viewtopic.php?pid=1624557#p1624557):
+
+*   [mate-desktop-dev](https://aur.archlinux.org/packages/mate-desktop-dev/) ([https://github.com/nicman23/arch_mate](https://github.com/nicman23/arch_mate))
 
 ## 启动
 

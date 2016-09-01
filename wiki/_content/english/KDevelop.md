@@ -17,10 +17,7 @@
 Install plugins to provide autocompletion and other language-specific features:
 
 *   For PHP, install the [kdevelop-php](https://www.archlinux.org/packages/?name=kdevelop-php) package
-*   For Python 2, install the [kdevelop-python2](https://www.archlinux.org/packages/?name=kdevelop-python2) package
-*   For QML/JavaScript, install the [kdevelop-qmljs](https://www.archlinux.org/packages/?name=kdevelop-qmljs) package
-
-Other plugins are available from the [AUR](/index.php/AUR "AUR"): [search the AUR](https://aur.archlinux.org/packages/?O=0&K=kdevelop-).
+*   For Python, install the [kdevelop-python](https://www.archlinux.org/packages/?name=kdevelop-python) package
 
 ## Building additional plugins
 

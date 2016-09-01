@@ -91,7 +91,7 @@ For more information about all available options see `man 5 exports`.
 
 #### Starting the server
 
-[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`. The `rpcbind.service` is also needed for older V2 and V3 exports. To run a V4-only setup, be sure to explicitly disable V2 and V3 using [[1]](https://bbs.archlinux.org/viewtopic.php?id=193629): `/etc/sysconfig/nfs`  `NFSD_OPTS="-N 2 -N 3"` 
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`. The `rpcbind.service` is also needed for older V2 and V3 exports. To run a V4-only setup, be sure to explicitly disable V2 and V3 using [[1]](https://bbs.archlinux.org/viewtopic.php?id=193629): `/etc/sysconfig/nfs`  `RPCNFSDARGS="-N 2 -N 3"` 
 
 otherwise the `rpcbind.service` is required.
 
@@ -103,13 +103,13 @@ otherwise the `rpcbind.service` is required.
 
 ##### Static ports for NFSv3
 
-Users needing support for NFSv3 clients, may wish to consider using static ports. By default, for NFSv3 operation `rpc.statd` and `lockd` use random ephemeral ports; in order to allow NFSv3 operations through a firewall static ports need to be defined. Edit `/etc/conf.d/nfs-common.conf` to set `STATD_OPTS`:
+Users needing support for NFSv3 clients, may wish to consider using static ports. By default, for NFSv3 operation `rpc.statd` and `lockd` use random ephemeral ports; in order to allow NFSv3 operations through a firewall static ports need to be defined. Edit `/etc/sysconfig/nfs` to set `STATDARGS`:
 
- `/etc/conf.d/nfs-common.conf`  `STATD_OPTS="-p 32765 -o 32766 -T 32803"` 
+ `/etc/sysconfig/nfs`  `STATDARGS="-p 32765 -o 32766 -T 32803"` 
 
-The `rpc.mountd` should consult `/etc/services` and bind to the same static port 20048 under normal operation; however, if it needs to be explicity defined edit `/etc/sysconfig/nfs` to set `MOUNTD_OPTS`:
+The `rpc.mountd` should consult `/etc/services` and bind to the same static port 20048 under normal operation; however, if it needs to be explicity defined edit `/etc/sysconfig/nfs` to set `RPCMOUNTDARGS`:
 
- `/etc/sysconfig/nfs`  `MOUNTD_OPTS="-p 20048"` 
+ `/etc/sysconfig/nfs`  `RPCMOUNTDARGS="-p 20048"` 
 
 After making these changes, several services need to be restarted; the first writes the configuration options out to `/run/sysconfig/nfs-utils` (see `/usr/lib/systemd/scripts/nfs-utils_env.sh`), the second restarts `rpc.statd` with the new ports, the last reloads `lockd` (kernel module) with the new ports. [Restart](/index.php/Restart "Restart") these services now: `nfs-config`, `rpcbind`, `rpc-statd`, and `nfs-server`.
 
@@ -117,7 +117,7 @@ After the restarts, use `rpcinfo -p` on the server to examine the static ports a
 
 ##### NFSv2 compatibility
 
-Users needing to support clients using NFSv2 (for example U-Boot), should set NFSD_OPTS="-V 2" in /etc/sysconfig/nfs.
+Users needing to support clients using NFSv2 (for example U-Boot), should set RPCNFSDARGS="-V 2" in /etc/sysconfig/nfs.
 
 ##### Firewall configuration
 
@@ -231,7 +231,7 @@ Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always o
 
  `/etc/fstab` 
 ```
-servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=14,_netdev	0 0
+servername:/music   /mountpoint/on/client   nfs   rsize=8192,wsize=8192,timeo=14,_netdev	0 0
 
 ```
 

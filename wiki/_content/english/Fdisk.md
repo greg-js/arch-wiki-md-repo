@@ -12,6 +12,7 @@ This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html
     *   [3.1 Using dd](#Using_dd)
     *   [3.2 Using sfdisk](#Using_sfdisk)
     *   [3.3 Using sgdisk](#Using_sgdisk)
+    *   [3.4 Recover GPT header](#Recover_GPT_header)
 *   [4 Create a partition table and partitions](#Create_a_partition_table_and_partitions)
     *   [4.1 Start the partition manipulator](#Start_the_partition_manipulator)
         *   [4.1.1 fdisk](#fdisk)
@@ -137,6 +138,22 @@ If both drives will be in the same computer, you need to randomize the GUID's:
 # sgdisk -G /dev/sdc
 
 ```
+
+### Recover GPT header
+
+In case main GPT header or backup GPT header gets damaged, you can recover one from the other with *gdisk*.
+
+```
+# gdisk */dev/sda*
+
+```
+
+choose `r` for recovery and transformation options (experts only). From there choose either
+
+*   `b`: use backup GPT header (rebuilding main)
+*   `d`: use main GPT header (rebuilding backup)
+
+When done write the table to disk and exit via the `w` command.
 
 ## Create a partition table and partitions
 

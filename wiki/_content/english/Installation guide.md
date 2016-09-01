@@ -11,7 +11,7 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
     *   [1.4 Update the system clock](#Update_the_system_clock)
     *   [1.5 Partition the disks](#Partition_the_disks)
     *   [1.6 Format the partitions](#Format_the_partitions)
-    *   [1.7 Mount the partitions](#Mount_the_partitions)
+    *   [1.7 Mount the file systems](#Mount_the_file_systems)
 *   [2 Installation](#Installation)
     *   [2.1 Select the mirrors](#Select_the_mirrors)
     *   [2.2 Install the base packages](#Install_the_base_packages)
@@ -32,7 +32,7 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 
 Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "w:P6 (microarchitecture)") or [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. The installation process needs to retrieve packages from a remote repository, therefore a working internet connection is required.
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
 To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
@@ -58,7 +58,7 @@ The layout can be changed with [loadkeys(1)](http://man7.org/linux/man-pages/man
 
 ```
 
-[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/`, and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
 ### Connect to the Internet
 
@@ -84,7 +84,7 @@ To modify and print [partition tables](/index.php/Partition_table "Partition tab
 *   [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or
 *   [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
 
-At least one partition must be available for the `/` directory. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+At least one partition must be available for the `/` (*root*) directory. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
@@ -92,16 +92,16 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 [File systems](/index.php/File_systems "File systems") are created using [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html), or [mkswap(8)](http://man7.org/linux/man-pages/man8/mkswap.8.html) in case of the [swap](/index.php/Swap "Swap") area. See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for details.
 
-### Mount the partitions
+### Mount the file systems
 
-[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) the root partition on `/mnt`, for example:
+[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) the root file system on `/mnt`, for example:
 
 ```
 # mount /dev/*sda1* /mnt 
 
 ```
 
-After that, create directories for and mount any other partitions (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* partition with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html), if you want them to be detected later by *genfstab*.
+After that, create directories for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* device with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html), if you want them to be detected later by *genfstab*.
 
 ## Installation
 

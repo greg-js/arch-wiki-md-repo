@@ -46,7 +46,7 @@
 | <small>4.3.</small> [CPU](/index.php/Category:CPU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:CPU (简体中文)") <small>(3)</small> |
 | <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(12)</small> |
 | <small>4.5.</small> [硬件检测和疑难排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (简体中文)") <small>(4)</small> |
-| <small>4.6.</small> [影像设备](/index.php/Category:Imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Imaging (简体中文)") <small>(3)</small> |
+| <small>4.6.</small> [影像设备](/index.php/Category:Imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Imaging (简体中文)") <small>(2)</small> |
 | <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(3)</small> |
 | <small>4.7.1.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(6)</small> |
 | <small>4.7.2.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(2)</small> |
@@ -60,11 +60,11 @@
 | <small>4.10.</small> [移动设备](/index.php/Category:Mobile_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mobile devices (简体中文)") <small>(4)</small> |
 | <small>4.11.</small> [其他硬件](/index.php/Category:Other_hardware_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Other hardware (简体中文)") <small>(1)</small> |
 | <small>4.12.</small> [打印设备](/index.php/Category:Printers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Printers (简体中文)") <small>(2)</small> |
-| <small>4.13.</small> [声音](/index.php/Category:Sound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sound (简体中文)") <small>(6)</small> |
+| <small>4.13.</small> [声音](/index.php/Category:Sound_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Sound (简体中文)") <small>(5)</small> |
 | <small>4.14.</small> [存储设备](/index.php/Category:Storage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Storage (简体中文)") <small>(6)</small> |
 | <small>4.14.1.</small> [光存储设备](/index.php/Category:Optical_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Optical (简体中文)") <small>(2)</small> |
 | <small>5.</small> [帮助](/index.php/Category:Help_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Help (简体中文)") <small>(10)</small> |
-| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(29)</small> |
+| <small>6.</small> [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)") <small>(30)</small> |
 | <small>6.1.</small> [域名解析](/index.php/Category:Domain_Name_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Domain Name System (简体中文)") <small>(5)</small> |
 | <small>6.2.</small> [FTP](/index.php/Category:File_Transfer_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File Transfer Protocol (简体中文)") <small>(2)</small> |
 | <small>6.3.</small> [防火墙](/index.php/Category:Firewalls_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Firewalls (简体中文)") <small>(4) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
@@ -85,7 +85,7 @@
 | <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(25)</small> |
 | <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(10)</small> |
 | <small>7.1.2.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)"))</small> |
-| <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(5)</small> |
+| <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(6)</small> |
 | <small>7.3.</small> [系统服务和守护进程](/index.php/Category:Daemons_and_system_services_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Daemons and system services (简体中文)") <small>(17)</small> |
 | <small>7.4.</small> [桌面环境](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)") <small>(18)</small> |
 | <small>7.4.1.</small> [登录管理器](/index.php/Category:Display_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Display managers (简体中文)") <small>(8)</small> |
@@ -101,7 +101,7 @@
 | <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(24)</small> |
 | <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(4)</small> |
 | <small>8.1.</small> [音频/视频](/index.php/Category:Audio/Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio/Video (简体中文)") <small>(12)</small> |
-| <small>8.2.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(12)</small> |
+| <small>8.2.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(13)</small> |
 | <small>8.2.1.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)"))</small> |
 | <small>8.2.2.</small> [字体](/index.php/Category:Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Fonts (简体中文)") <small>(4)</small> |
 | <small>8.3.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(4)</small> |

@@ -64,11 +64,11 @@ Profiles are specific to the backend you are using. For instance, if you are usi
 
 ### Emerald
 
-**Tip:** For installing Emerald, see [Compiz#Installation](/index.php/Compiz#Installation "Compiz").
+**Tip:** For installing Emerald, see [Compiz#Extras](/index.php/Compiz#Extras "Compiz").
 
 **Note:** Some themes may cause Emerald to crash if they are selected. See [Compiz#Emerald crashes when selecting a theme](/index.php/Compiz#Emerald_crashes_when_selecting_a_theme "Compiz").
 
-Many Emerald themes are available for download on [compiz-themes.org](http://compiz-themes.org/index.php?xcontentmode=103). Emerald themes can be installed, selected, removed and edited using the *emerald-theme-manager* program. For downloaded themes, unzip the tarball and then install it using the *Import* option in the theme manager.
+Many Emerald themes are available for download on [compiz-themes.org](https://www.compiz-themes.org/browse/cat/117/ord/latest/). Emerald themes can be installed, selected, removed and edited using the *emerald-theme-manager* program. For downloaded themes, unzip the tarball and then install it using the *Import* option in the theme manager.
 
 Emerald themes are store in two locations:
 
@@ -83,9 +83,11 @@ Emerald settings such as window button pulse can be configured in `emerald-theme
 
 **Note:** It is not necessary for Compiz to be using the GConf or GSettings backends in order for Compiz to read Metacity settings stored in the GConf or GSettings databases.
 
-Many Metacity themes are available for download on [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=101&PHPSESSID=4f445abca9b58ff018024a7581ce7085). Once downloaded, they should be unpacked into a directory such as `/usr/local/share/themes` (create it if it does not exist).
+Many Metacity themes are available for download on [gnome-look.org](https://www.gnome-look.org/browse/cat/125/ord/latest/). Once downloaded, they should be unpacked into a directory such as `/usr/local/share/themes` (create it if it does not exist).
 
-*   **Selecting the theme in Compiz 0.9**: The 0.9 version of GTK Window Decorator will read Metacity's theme settings from GSettings.
+	Compiz 0.9
+
+*   In a GNOME Flashback session
 
 Firstly, ensure that the theme type is set to metacity:
 
@@ -101,16 +103,32 @@ $ gsettings set org.gnome.metacity.theme name *theme-name*
 
 ```
 
-where *theme-name* is the name of the theme you wish to use.
+*   In a MATE session
 
-*   **Selecting the theme in Compiz 0.8**: The 0.8 version of GTK Window Decorator expects Metacity's theme settings to be stored in GConf. Despite the fact that Metacity no longer uses GConf, the GTK Window Decorator theme can still be set using the following command:
+Use the following command:
+
+```
+$ gsettings set org.mate.Marco.general theme *theme-name*
+
+```
+
+*   In any other session
+
+Use the following command:
+
+```
+$ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
+
+```
+
+	Compiz 0.8
+
+The 0.8 version of GTK Window Decorator expects Metacity's theme settings to be stored in GConf. Despite the fact that Metacity no longer uses GConf, the GTK Window Decorator theme can still be set using the following command:
 
 ```
 $ gconftool-2 -s /apps/metacity/general/theme -t string *theme-name*
 
 ```
-
-where *theme-name* is the name of the theme you wish to use.
 
 ### KDE Window Decorator
 

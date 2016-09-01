@@ -11,8 +11,9 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [2.1 Common options](#Common_options)
     *   [2.2 Graphical tools](#Graphical_tools)
 *   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Mouse button re-mapping](#Mouse_button_re-mapping)
-    *   [3.2 Gestures](#Gestures)
+    *   [3.1 Button re-mapping](#Button_re-mapping)
+    *   [3.2 Manual button re-mapping](#Manual_button_re-mapping)
+    *   [3.3 Gestures](#Gestures)
 *   [4 Debugging](#Debugging)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
 *   [5 See also](#See_also)
@@ -60,7 +61,7 @@ See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for perma
 
 Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
 
-**Tip:** You might have to manually remove the synaptics configuration, probably at `/etc/X11/xorg.conf.d/50-synaptics.conf`, to make a touchpad work correctly with libinput.
+**Tip:** You might have to manually remove the synaptics configuration, probably at `/etc/X11/xorg.conf.d/70-synaptics.conf`, to make a touchpad work correctly with libinput. You might also need to override the default configuration on `/usr/share/X11/xorg.conf.d/70-synaptics.conf` or uninstall [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
 One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
 
@@ -121,7 +122,24 @@ There are different GUI tools:
 
 ## Tips and tricks
 
-### Mouse button re-mapping
+### Button re-mapping
+
+Swapping two- and three-finger tap for a touchpad is a straight forward example. Instead of the default three-finger tap for pasting you can configure two-finger tap pasting by swapping the buttons with a button map of *1 3 2*. To store the new button map permanently, set the `ButtonMapping` option in your [Xorg](/index.php/Xorg "Xorg") configuration file. For swapping two- and three-finger tap the file should contain a section similar to the following one:
+
+ `/etc/X11/xorg.conf.d/30-touchpad.conf` 
+```
+ Section "InputClass"
+     Identifier "touchpad"
+     Driver "libinput"
+     MatchIsTouchpad "on"
+     Option "Tapping" "on"
+     Option "ButtonMapping" "1 3 2 4 5 6"
+ EndSection
+```
+
+Remember to remove `MatchIsTouchpad "on"` if your device is not a touchpad and adjust the `Identifier` accordingly.
+
+### Manual button re-mapping
 
 For some devices it is desirable to change the button mapping. A common example is the use of a thumb button instead of the middle button (used in X11 for pasting) on mice where the middle button is part of the mouse wheel. You can query the current button mapping via:
 

@@ -63,7 +63,7 @@ The following table lists basic shell commands every Linux user should be famili
 
 *   Because *cat* is not a built-in shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
 
-*   *cat* is able to work with multiple lines, although this is sometimes regarded as bad practice:
+*   *cat* is able to work with multiple lines:
 
 ```
 $ cat << EOF >> *path/file*
@@ -74,14 +74,11 @@ EOF
 
 ```
 
-	A better alternative is the *echo* command:
+Alternatively, using `printf`:
 
 ```
-$ echo "\
-*first line*
-...
-*last line*" \
->> *path/file*
+$ printf '%s
+' 'first line' ... 'last line'
 
 ```
 
@@ -323,14 +320,7 @@ You can use [pv](https://www.archlinux.org/packages/?name=pv) (*pipe viewer*) to
 
 ```
 
-In most cases `pv` functions as a drop-in replacement for `cat`, however there are undocumented differences. For example, under both Zsh and Bash, the following command hangs forever:
-
-```
-# cat <(pv /usr/share/dict/words)
-
-```
-
-Use of *strace* shows that `pv` is stopped with `SIGTTOU`.
+In most cases `pv` functions as a drop-in replacement for `cat`.
 
 ## rm
 

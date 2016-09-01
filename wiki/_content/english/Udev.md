@@ -165,35 +165,12 @@ See [Udisks](/index.php/Udisks "Udisks").
 
 ### Accessing firmware programmers and USB virtual comm devices
 
-The following ruleset will allow normal users (within the "users" group) the ability to access the [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) USB programmer for AVR microcontrollers and a generic (SiLabs [CP2102](http://www.silabs.com/products/interface/usbtouart)) USB to UART adapter, the [Atmel AVR Dragon](http://www.atmel.com/tools/AVRDRAGON.aspx?tab=overview) programmer, and the [Atmel AVR ISP mkII](http://www.atmel.com/tools/AVRISPMKII.aspx). Adjust the permissions accordingly. Verified as of 31-10-2012.
+The following rule will allow users in the `users` group to access the [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) USB programmer for AVR microcontrollers. Use *lsusb* to get the vendor and product IDs for other devices.
 
- `/etc/udev/rules.d/50-embedded_devices.rules` 
+ `/etc/udev/rules.d/50-usbtinyisp.rules` 
 ```
-# USBtinyISP Programmer rules
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0666"
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0479", GROUP="users", MODE="0666"
-
-# USBasp Programmer rules http://www.fischl.de/usbasp/
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", GROUP="users", MODE="0666"
-
-# Mdfly.com Generic (SiLabs CP2102) 3.3v/5v USB VComm adapter
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", GROUP="users", MODE="0666"
-
-#Atmel AVR Dragon (dragon_isp) rules
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2107", GROUP="users", MODE="0666"
-
-#Atmel AVR JTAGICEMKII rules
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2103", GROUP="users", MODE="0666"
-
-#Atmel Corp. AVR ISP mkII
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2104", GROUP="users", MODE="0666"
-
-#Atmel Copr. JTAGICE3
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2140", GROUP="users", MODE="0666"
-
-#Atmel Corp. ATMEL ICE  
-SUBSYSTEM=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2141", GROUP="users", MODE="0666"
-
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c9f", GROUP="users", MODE="0660"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0479", GROUP="users", MODE="0660"
 ```
 
 ### Execute on USB insert

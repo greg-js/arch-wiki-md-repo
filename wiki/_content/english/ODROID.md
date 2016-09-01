@@ -147,4 +147,5 @@ Values range from 0 (0%) to 255 (100%)
 
 ## See also
 
-*   [Hardkernel Product Page](http://www.hardkernel.com/main/main.php)
+*   [Hardkernel product page](http://www.hardkernel.com/main/main.php)
+*   [Support forums](http://forum.odroid.com/index.php)

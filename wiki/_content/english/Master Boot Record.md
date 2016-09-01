@@ -5,8 +5,7 @@ The [Master Boot Record](https://en.wikipedia.org/wiki/Master_Boot_Record "w:Mas
 *   [1 Introduction](#Introduction)
     *   [1.1 Problems with MBR](#Problems_with_MBR)
 *   [2 Backup and restoration](#Backup_and_restoration)
-*   [3 TestDisk MBRCode](#TestDisk_MBRCode)
-*   [4 See also](#See_also)
+*   [3 See also](#See_also)
 
 ## Introduction
 
@@ -31,12 +30,9 @@ The entire information about the primary partitions is limited to the 64 bytes a
 
 ## Backup and restoration
 
-See [fdisk#Backup and restore](/index.php/Fdisk#Backup_and_restore "Fdisk").
-
-## TestDisk MBRCode
-
-[testdisk](https://www.archlinux.org/packages/?name=testdisk) from the [official repositories](/index.php/Official_repositories "Official repositories") can write the MBR with its own [code](http://www.cgsecurity.org/wiki/Menu_MBRCode) (which should be able to boot Windows). The package is also included in the installation media.
+See [fdisk#Backup and restore](/index.php/Fdisk#Backup_and_restore "Fdisk") and [File recovery#Testdisk and PhotoRec](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery").
 
 ## See also
 
 *   [What is a Master Boot Record (MBR)?](http://kb.iu.edu/data/aijw.html)
+*   [Understanding Disk Drive Terminology](http://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)

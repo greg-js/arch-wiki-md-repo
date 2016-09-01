@@ -5,14 +5,7 @@ GUID Partition Table (GPT) is a partitioning scheme that is part of the [Unified
 *   [1 About the GUID Partition Table](#About_the_GUID_Partition_Table)
     *   [1.1 Advantages of GPT](#Advantages_of_GPT)
     *   [1.2 Kernel Support](#Kernel_Support)
-*   [2 Bootloader Support](#Bootloader_Support)
-    *   [2.1 UEFI systems](#UEFI_systems)
-    *   [2.2 BIOS systems](#BIOS_systems)
-        *   [2.2.1 Workarounds](#Workarounds)
-*   [3 Partitioning Utilities](#Partitioning_Utilities)
-    *   [3.1 fdisk and gdisk](#fdisk_and_gdisk)
-    *   [3.2 GNU Parted](#GNU_Parted)
-*   [4 See also](#See_also)
+*   [2 See also](#See_also)
 
 ## About the GUID Partition Table
 
@@ -37,43 +30,6 @@ GUID Partition Table (GPT) uses GUIDs (or UUIDs in linux world) to define partit
 ### Kernel Support
 
 `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name EFI PARTITION). This options must be built-in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in Arch's [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels in [core] repo. In case of a custom kernel enable this option by doing `CONFIG_EFI_PARTITION=y`.
-
-## Bootloader Support
-
-### UEFI systems
-
-All UEFI Bootloaders support GPT disks since GPT is a part of UEFI Specification and thus mandatory for UEFI boot. See [Boot loaders](/index.php/Boot_loaders "Boot loaders") for more information.
-
-### BIOS systems
-
-While GPT support on BIOS systems is theoretically possible it sometimes isn't practical and other times there are complete incompatibilities. Technically the BIOS is only supposed to execute the code on the MBR, therefore leaving the possibility of differing partitioning schemes... However a BIOS may do additional checks including: checking a MBR's integrity, and possibly even for a MBR partition table (though usually only the first partition). If this is a case, a number of workarounds exist that may be able to repair the problem (listed below).
-
-See also [Partitioning#Choosing between GPT and MBR](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") and [Boot loaders](/index.php/Boot_loaders "Boot loaders").
-
-#### Workarounds
-
-A few workarounds may help boot a BIOS/GPT partitioning scheme; however, before trying these, try booting a BIOS/GPT partitioning scheme with the bootloaders standard procedure. If it doesn't work, these may help boot them ([read this](http://www.rodsbooks.com/gdisk/bios.html#bios) for full reference):
-
-*   Set the boot flag on the protective MBR partition (type 0xEE) . This can be done with `parted /dev/sdX` and `disk_toggle pmbr_boot` or using `sgdisk /dev/sdX --attributes=1:set:2`.
-*   Be sure there is no EFI system partition
-*   Create a hybrid MBR. This will be needed for a BIOS that looks for a valid MBR partition (see example below).
-*   Recompute CHS (Cylinder/Head/Sector) values in the protective MBR. GPT does not use these values but the protective MBR may need to be calibrated to them to work for those BIOS that test them.
-*   A second disk that has a valid MBR table may signify to the BIOS that it is alright to execute the code on the protective MBR.
-*   Many computers since 2011 may have support for an EFI booting if wanting from a BIOS option.
-
-## Partitioning Utilities
-
-Several partitioning utilities exists.
-
-### fdisk and gdisk
-
-See the [fdisk](/index.php/Fdisk "Fdisk") article.
-
-### GNU Parted
-
-[GNU Parted](/index.php/GNU_Parted "GNU Parted") is a full-featured command line program for creating and manipulating partition tables. It can be used interactively and is the backend for the popular [GParted](/index.php/GParted "GParted") GUI partitioning tool.
-
-It supports GPT as well as MBR.
 
 ## See also
 

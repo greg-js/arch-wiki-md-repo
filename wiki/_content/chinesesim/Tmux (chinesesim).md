@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Tmux](/index.php/Tmux "Tmux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-6-29，点击[这里](https://wiki.archlinux.org/index.php?title=Tmux&diff=0&oldid=321396)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Tmux](/index.php/Tmux "Tmux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-8-31，点击[这里](https://wiki.archlinux.org/index.php?title=Tmux&diff=0&oldid=445584)可以查看翻译后英文页面的改动。
 
 [Tmux](http://tmux.github.io/) 是一个终端复用器: 可以激活多个终端或窗口, 在每个终端都可以单独访问，每一个终端都可以访问，运行和控制各自的程序.tmux类似于screen，可以关闭窗口将程序放在后台运行，需要的时候再重新连接。 Tmux是于基于BSD协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen Tips"). 虽然两者类似，但是还是有不同的地方，详情点击 [tmux FAQ page](https://raw.githubusercontent.com/tmux/tmux/master/FAQ)。
 
@@ -54,9 +54,9 @@
 
 使用多个面板分割窗口后, 先按前缀快捷键(比如说：`Ctrl-b`)然后按住Ctrl键就可以使用方向键调整面板大小。 如果要交换面板也是采用同样的方式，只是按键由方向键换成“O“键。
 
-**Tip:** 如果想要模仿screen的快捷键前缀配置, 可以把 `/usr/share/tmux/screen-keys.conf` 拷贝到上述提到的任一配置文件位置.
+**提示:** 如果想要模仿screen的快捷键前缀配置, 可以把 `/usr/share/tmux/screen-keys.conf` 拷贝到上述提到的任一配置文件位置.
 
-快捷键前缀可能会随着`tmux.conf`中的bind和unbind命令而改变. 比如你可以通过在配置文件中增加下面命令,把前缀从(i.e. `Ctrl-b`) 改成 `Ctrl-a` :
+快捷键前缀可以用`tmux.conf`中的bind和unbind命令修改。比如你可以在配置文件中增加下面命令,把前缀`Ctrl-b`改成`Ctrl-a`：
 
 ```
 unbind C-b

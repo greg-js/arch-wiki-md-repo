@@ -2,7 +2,7 @@
 
 若有空不妨協助翻譯各類文件，謝謝。
 
-| [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") <small>(73)</small> |
+| [正體中文](/index.php/Category:%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87 "Category:正體中文") <small>(72)</small> |
 | <small>1.</small> [關於 Arch](/index.php/Category:About_Arch_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:About Arch (正體中文)") <small>(8)</small> |
 | <small>1.1.</small> [Arch 開發](/index.php/Category:Arch_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Arch development (正體中文)") <small>(0) (還在 [開發](/index.php/Category:Development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Development (正體中文)"))</small> |
 | <small>1.1.1.</small> [軟體包開發](/index.php/Category:Package_development_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package development (正體中文)") <small>(5)</small> |

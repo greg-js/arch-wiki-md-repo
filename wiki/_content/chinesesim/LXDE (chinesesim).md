@@ -5,6 +5,7 @@
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
+    *   [1.1 GTK+ 3 版本](#GTK.2B_3_.E7.89.88.E6.9C.AC)
 *   [2 运行 LXDE](#.E8.BF.90.E8.A1.8C_LXDE)
     *   [2.1 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
     *   [2.2 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
@@ -16,15 +17,6 @@
 *   [4 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
 
 ## 安装
-
-LXDE是模块化的，所以LXDE至少需要安装一个窗口管理器才能运行，譬如 [lxde-common](https://www.archlinux.org/packages/?name=lxde-common) 和 [openbox](https://www.archlinux.org/packages/?name=openbox) (或者其他的窗口管理器）。 这个[lxde](https://www.archlinux.org/groups/x86_64/lxde/) 页面包含了所有的LXDE组件。
-
-你可以安装LXDE软件包组:
-
-```
-# pacman -S lxde
-
-```
 
 LXDE 是模块化的. 你可以从下面的列表中挑选你需要的包，最少要安装 [lxde-common](https://www.archlinux.org/packages/?name=lxde-common), [lxsession](https://www.archlinux.org/packages/?name=lxsession), [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) 和一个窗口管理器。
 
@@ -56,6 +48,12 @@ LXDE在arch中已经有一个软件包组，可以这样安装LXDE桌面环境�
 *   [menu-cache](https://www.archlinux.org/packages/?name=menu-cache): 一个创建菜单的守护进程
 *   [openbox](https://www.archlinux.org/packages/?name=openbox): LXDE 默认目前使用的一个轻量级的、基本兼容并且高度可配置的窗口管理器）。
 *   [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm): LXDE 默认使用的轻量级文件管理程序，提供了桌面整合。which also provides desktop integration
+
+### GTK+ 3 版本
+
+你可以安装 [lxde-gtk3](https://www.archlinux.org/groups/x86_64/lxde-gtk3/) 软件包组来试用这个尚在实验阶段的版本.
+
+它几乎可以正常工作，但是可能会有一些问题，包括： [gpicview](https://sourceforge.net/p/lxde/bugs/769/), [lxappearance-obconf](https://sourceforge.net/p/lxde/bugs/768/), [lxlauncher](https://sourceforge.net/p/lxde/bugs/803/) 和 [lxpanel](https://sourceforge.net/p/lxde/bugs/773/).
 
 安装完成后, 复制3个文件到`~/.config/openbox`:
 

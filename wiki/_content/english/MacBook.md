@@ -6,7 +6,7 @@ Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to inst
 *   [2 Firmware updates](#Firmware_updates)
 *   [3 Partitions](#Partitions)
     *   [3.1 Arch Linux only](#Arch_Linux_only)
-    *   [3.2 OS X with Arch Linux](#OS_X_with_Arch_Linux)
+    *   [3.2 Arch Linux with OS X or other operative systems](#Arch_Linux_with_OS_X_or_other_operative_systems)
         *   [3.2.1 Option 1: EFI](#Option_1:_EFI)
         *   [3.2.2 Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility)
     *   [3.3 OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
@@ -144,9 +144,9 @@ partition  mountpoint  size    type  label
 
 *   Done, you can continue to [#Installation](#Installation)
 
-### OS X with Arch Linux
+### Arch Linux with OS X or other operative systems
 
-The easiest way to partition your hard drive, so that OS X and Arch Linux will co-exist, is to use partitioning tools in OS X and then finish with Arch Linux tools. It is highly recommended that this only be attempted after a clean install of OS X.
+You need to partition your hard drive while keeping the partitions used for OS X/Windows. If you wish to keep OS X, the easiest way is to use partitioning tools in OS X and then finish with Arch Linux tools.
 
 **Warning:** If you OS X partition is encrypted with FileVault 2, you **must** disable the disk encryption before proceeding. After the OS X partition has been resized, FileVault 2 can be re-enabled.
 
@@ -158,11 +158,9 @@ The easiest way to partition your hard drive, so that OS X and Arch Linux will c
 *   If the above completed successfully, then you can continue. If not, then you may need to fix your partitions from within OS X first.
 *   Boot the Arch installation media or [LiveUSB](/index.php/USB_flash_installation_media "USB flash installation media") by holding down the `Alt` **during boot**. Proceed with [#Installation](#Installation).
 
-**Note:** If you wish to have a shared partition between OS X and Arch Linux, remember to add another partition that will be used for sharing. Please see [#HFS partition sharing](#HFS_partition_sharing).
+It is possible to resize the newly created partition from within the Arch installation media, or delete it in order to proceed with the creation of other partitions (eg. swap).
 
-**Note:** If you have any problems, try using the [gparted](http://gparted.sourceforge.net/) live CD (i.e. *instead* of using *Disk Utility* and/or *cgdisk*). It is capable of shrinking the OS X partition and creating Linux partitions ready for installation.
-
-**Tip:** This method does not create a dedicated [swap](/index.php/Swap "Swap") partition. It is possible to create another separate partition to be used for swapping. An alternative method can be using a [swapfile](/index.php/Swap#Swap_file "Swap") or setting up [LVM](/index.php/LVM "LVM") in order to use the newly-created partition as a container. Please refer to the linked articles.
+**Tip:** Instead of cluttering your drive with different partition, it is possible to use a [swapfile](/index.php/Swap#Swap_file "Swap") instead of a dedicated partition. Another solution can be setting up [LVM](/index.php/LVM "LVM") in order to use the newly-created partition as a container. Please refer to the linked articles.
 
 #### Option 1: EFI
 

@@ -9,3 +9,9 @@ The following packages provide VSCode:
 *   [visual-studio-code-git](https://aur.archlinux.org/packages/visual-studio-code-git/)
 *   *code-oss* from the unofficial [pkgbuild-current](/index.php/Unofficial_user_repositories#pkgbuild-current "Unofficial user repositories") repository. Further details can be found in its README [here](https://github.com/fusion809/PKGBUILDs/blob/master/README.md).
     **Note:** Bugs regarding binary packages from the *pkgbuild-current* repository can be reported on [GitHub](https://github.com/fusion809/PKGBUILDs/issues). Bugs regarding Atom itself should be reported upstream.
+
+## Usage
+
+Run `code`.
+
+If for any reason you wish to launch multiple instances of Visual Studio Code, the `-n` flag can be used.
