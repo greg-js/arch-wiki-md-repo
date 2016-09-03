@@ -364,7 +364,7 @@ The artifacting disappears when you transform one of the monitors by either rota
 
 ## Xorg repositories
 
-Catalyst is notorious for its slow update process. As such, it is common that a new Xorg version is pushed down from upstream that will break compatibility for Catalyst. This means that Catalyst users either have to build Xorg packages on their own, or use a backported repository that only contains the Xorg packages that should be hold back. Vi0L0 has stepped in to fulfil this task and provides several backported repositories.
+Catalyst is notorious for its slow update process. As such, it is common that a new Xorg version is pushed down from upstream that will break compatibility for Catalyst. This means that Catalyst users either have to build Xorg packages on their own, or use a backported repository that only contains the Xorg packages that should be held back. Vi0L0 has stepped in to fulfil this task and provides several backported repositories.
 
 To enable one of these, follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") (use the same PGP key as for the [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") repository). Remember to add the chosen repository **above all other repositories** in `pacman.conf`, even above your *catalyst* repository, should you use one.
 

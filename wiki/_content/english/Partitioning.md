@@ -2,7 +2,7 @@
 
 The required information is stored in a [#Partition table](#Partition_table) using a type such as MBR or GPT.
 
-Tables are modified using a [#Partitioning tool](#Partitioning_tool) which must be compatible to the chosen type of partitioning table.
+Tables are modified using a [#Partitioning tool](#Partitioning_tool) which must be compatible to the chosen type of partitioning table. Choices include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
 Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted).
 

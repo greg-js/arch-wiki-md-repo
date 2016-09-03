@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-16，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=417725)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd](/index.php/Systemd "Systemd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=448461)可以查看翻译后英文页面的改动。
 
 摘自[项目主页](http://freedesktop.org/wiki/Software/systemd):
 
@@ -24,25 +24,31 @@
     *   [3.5 修改默认启动级别/目标](#.E4.BF.AE.E6.94.B9.E9.BB.98.E8.AE.A4.E5.90.AF.E5.8A.A8.E7.BA.A7.E5.88.AB.2F.E7.9B.AE.E6.A0.87)
 *   [4 临时文件](#.E4.B8.B4.E6.97.B6.E6.96.87.E4.BB.B6)
 *   [5 定时器](#.E5.AE.9A.E6.97.B6.E5.99.A8)
-*   [6 日志](#.E6.97.A5.E5.BF.97)
-    *   [6.1 过滤输出](#.E8.BF.87.E6.BB.A4.E8.BE.93.E5.87.BA)
-    *   [6.2 日志大小限制](#.E6.97.A5.E5.BF.97.E5.A4.A7.E5.B0.8F.E9.99.90.E5.88.B6)
-    *   [6.3 配合 syslog 使用](#.E9.85.8D.E5.90.88_syslog_.E4.BD.BF.E7.94.A8)
-    *   [6.4 手动清理日志](#.E6.89.8B.E5.8A.A8.E6.B8.85.E7.90.86.E6.97.A5.E5.BF.97)
-    *   [6.5 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
-    *   [6.6 转发 journald 到 /dev/tty12](#.E8.BD.AC.E5.8F.91_journald_.E5.88.B0_.2Fdev.2Ftty12)
-    *   [6.7 查看特定位置的日志](#.E6.9F.A5.E7.9C.8B.E7.89.B9.E5.AE.9A.E4.BD.8D.E7.BD.AE.E7.9A.84.E6.97.A5.E5.BF.97)
-*   [7 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
-    *   [7.1 寻找错误](#.E5.AF.BB.E6.89.BE.E9.94.99.E8.AF.AF)
-    *   [7.2 诊断启动问题](#.E8.AF.8A.E6.96.AD.E5.90.AF.E5.8A.A8.E9.97.AE.E9.A2.98)
-    *   [7.3 诊断一个特定服务](#.E8.AF.8A.E6.96.AD.E4.B8.80.E4.B8.AA.E7.89.B9.E5.AE.9A.E6.9C.8D.E5.8A.A1)
-    *   [7.4 关机/重启十分缓慢](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E5.8D.81.E5.88.86.E7.BC.93.E6.85.A2)
-    *   [7.5 短时进程无日志记录](#.E7.9F.AD.E6.97.B6.E8.BF.9B.E7.A8.8B.E6.97.A0.E6.97.A5.E5.BF.97.E8.AE.B0.E5.BD.95)
-    *   [7.6 禁止在程序崩溃时转储内存](#.E7.A6.81.E6.AD.A2.E5.9C.A8.E7.A8.8B.E5.BA.8F.E5.B4.A9.E6.BA.83.E6.97.B6.E8.BD.AC.E5.82.A8.E5.86.85.E5.AD.98)
-    *   [7.7 启动的时间太长](#.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E9.97.B4.E5.A4.AA.E9.95.BF)
-    *   [7.8 systemd-tmpfiles-setup.service 在启动时启动失败](#systemd-tmpfiles-setup.service_.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
-    *   [7.9 不能设定在开机时启动软链接到 /etc/systemd/system 的服务](#.E4.B8.8D.E8.83.BD.E8.AE.BE.E5.AE.9A.E5.9C.A8.E5.BC.80.E6.9C.BA.E6.97.B6.E5.90.AF.E5.8A.A8.E8.BD.AF.E9.93.BE.E6.8E.A5.E5.88.B0_.2Fetc.2Fsystemd.2Fsystem_.E7.9A.84.E6.9C.8D.E5.8A.A1)
-*   [8 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
+*   [6 挂载](#.E6.8C.82.E8.BD.BD)
+*   [7 日志](#.E6.97.A5.E5.BF.97)
+    *   [7.1 Facility](#Facility)
+    *   [7.2 Priority level](#Priority_level)
+    *   [7.3 过滤输出](#.E8.BF.87.E6.BB.A4.E8.BE.93.E5.87.BA)
+    *   [7.4 日志大小限制](#.E6.97.A5.E5.BF.97.E5.A4.A7.E5.B0.8F.E9.99.90.E5.88.B6)
+    *   [7.5 配合 syslog 使用](#.E9.85.8D.E5.90.88_syslog_.E4.BD.BF.E7.94.A8)
+    *   [7.6 手动清理日志](#.E6.89.8B.E5.8A.A8.E6.B8.85.E7.90.86.E6.97.A5.E5.BF.97)
+    *   [7.7 Journald in conjunction with syslog](#Journald_in_conjunction_with_syslog)
+    *   [7.8 转发 journald 到 /dev/tty12](#.E8.BD.AC.E5.8F.91_journald_.E5.88.B0_.2Fdev.2Ftty12)
+    *   [7.9 查看特定位置的日志](#.E6.9F.A5.E7.9C.8B.E7.89.B9.E5.AE.9A.E4.BD.8D.E7.BD.AE.E7.9A.84.E6.97.A5.E5.BF.97)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
+*   [9 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+    *   [9.1 寻找错误](#.E5.AF.BB.E6.89.BE.E9.94.99.E8.AF.AF)
+    *   [9.2 诊断启动问题](#.E8.AF.8A.E6.96.AD.E5.90.AF.E5.8A.A8.E9.97.AE.E9.A2.98)
+    *   [9.3 诊断一个特定服务](#.E8.AF.8A.E6.96.AD.E4.B8.80.E4.B8.AA.E7.89.B9.E5.AE.9A.E6.9C.8D.E5.8A.A1)
+    *   [9.4 关机/重启十分缓慢](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E5.8D.81.E5.88.86.E7.BC.93.E6.85.A2)
+    *   [9.5 短时进程无日志记录](#.E7.9F.AD.E6.97.B6.E8.BF.9B.E7.A8.8B.E6.97.A0.E6.97.A5.E5.BF.97.E8.AE.B0.E5.BD.95)
+    *   [9.6 禁止在程序崩溃时转储内存](#.E7.A6.81.E6.AD.A2.E5.9C.A8.E7.A8.8B.E5.BA.8F.E5.B4.A9.E6.BA.83.E6.97.B6.E8.BD.AC.E5.82.A8.E5.86.85.E5.AD.98)
+    *   [9.7 启动的时间太长](#.E5.90.AF.E5.8A.A8.E7.9A.84.E6.97.B6.E9.97.B4.E5.A4.AA.E9.95.BF)
+    *   [9.8 systemd-tmpfiles-setup.service 在启动时启动失败](#systemd-tmpfiles-setup.service_.E5.9C.A8.E5.90.AF.E5.8A.A8.E6.97.B6.E5.90.AF.E5.8A.A8.E5.A4.B1.E8.B4.A5)
+    *   [9.9 不能设定在开机时启动软链接到 /etc/systemd/system 的服务](#.E4.B8.8D.E8.83.BD.E8.AE.BE.E5.AE.9A.E5.9C.A8.E5.BC.80.E6.9C.BA.E6.97.B6.E5.90.AF.E5.8A.A8.E8.BD.AF.E9.93.BE.E6.8E.A5.E5.88.B0_.2Fetc.2Fsystemd.2Fsystem_.E7.9A.84.E6.9C.8D.E5.8A.A1)
+    *   [9.10 启动时显示的 systemd 版本和安装版本不一致](#.E5.90.AF.E5.8A.A8.E6.97.B6.E6.98.BE.E7.A4.BA.E7.9A.84_systemd_.E7.89.88.E6.9C.AC.E5.92.8C.E5.AE.89.E8.A3.85.E7.89.88.E6.9C.AC.E4.B8.8D.E4.B8.80.E8.87.B4)
+*   [10 相关资源](#.E7.9B.B8.E5.85.B3.E8.B5.84.E6.BA.90)
 
 ## systemd 基本工具
 
@@ -108,7 +114,7 @@ $ systemctl list-unit-files
 **Tip:**
 
 *   下面的大部分命令都可以跟多个单元名, 详细信息参见 `man systemctl`。
-*   从[systemd 220版本](https://github.com/systemd/systemd/blob/master/NEWS#L323-L326)开始, `systemctl`命令在`enable`、`disable`和`mask`子命令中增加了`--now`选项，可以实现激活的同时启动服务，取消激活的同时停止服务。
+*   `systemctl`命令在`enable`、`disable`和`mask`子命令中增加了`--now`选项，可以实现激活的同时启动服务，取消激活的同时停止服务。
 *   一个软件包可能会提供多个不同的单元。如果你已经安装了软件包，可以通过`pacman -Qql *package* | grep systemd`命令检查这个软件包提供了哪些单元。
 
 立即激活单元：
@@ -289,7 +295,7 @@ ExecStart=
 ExecStart=*new command*
 ```
 
-想知道为什么修改 `ExecStart` 前必须将其置空，参见 ([[1]](https://bugzilla.redhat.com/show_bug.cgi?id=756787#c9)).
+修改 `ExecStart` 前必须将其置空，参见 ([[1]](https://bugzilla.redhat.com/show_bug.cgi?id=756787#c9). 所有可能多次赋值的变量都需要这个操作，例如定时器的 `OnCalendar`.
 
 下面是自动重启服务的一个例子:
 
@@ -404,6 +410,10 @@ w /proc/acpi/wakeup - - - - USBE
 
 定时器是以 *.timer* 为后缀的配置文件，记录由system的里面由时间触发的动作, 定时器可以替代 *cron* 的大部分功能。详情参阅 [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)").
 
+## 挂载
+
+因为 systemd 替代了 System V init, 所以也负责按 `/etc/fstab` 定义挂载目录。除此之外，还实现了以 `x-systemd.` 开头的挂载选项. [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") 包含了使用此扩展的 *automounting* (按需挂载)。完整扩展请参考 [[2]](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#fstab)。
+
 ## 日志
 
 systemd 提供了自己日志系统（logging system），称为 journal. 使用 systemd 日志，无需额外安装日志服务（syslog）。读取日志的命令：
@@ -416,6 +426,69 @@ systemd 提供了自己日志系统（logging system），称为 journal. 使用
 默认情况下（当 `Storage=` 在文件 `/etc/systemd/journald.conf` 中被设置为 `auto`），日志记录将被写入 `/var/log/journal/`。该目录是 [systemd](https://www.archlinux.org/packages/?name=systemd) 软件包的一部分。若被删除，systemd **不会**自动创建它，直到下次升级软件包时重建该目录。如果该目录缺失，systemd 会将日志记录写入 `/run/systemd/journal`。这意味着，系统重启后日志将丢失。
 
 **Tip:** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 文件系统，应该考虑对这个目录禁用写入时复制，方法参阅[Btrfs#Copy-On-Write (CoW)](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs").
+
+The systemd journal event notification message logging classification corresponds to classical BSD syslog protocol style ([Wikipedia](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog"), [RFC 5424](https://tools.ietf.org/html/rfc5424)). For more info see subsections [Facility](#Facility), [Priority level](#Priority_level), and for examples on how to use it in [Filtering output](#Filtering_output).
+
+### Facility
+
+A syslog facility code is used to specify the type of program that is logging the message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
+
+| Facility code | Keyword | Description | Info |
+| 0 | kern | kernel messages |
+| 1 | user | user-level messages |
+| 2 | mail | mail system | Archaic POSIX still supported and sometimes used system, for more `man mail`) |
+| 3 | daemon | system daemons | All deamons, including systemd and its subsystems |
+| 4 | auth | security/authorization messages | Also watch for different facility 10 |
+| 5 | syslog | messages generated internally by syslogd | As it standartized for syslogd, not used by systemd (see facility 3) |
+| 6 | lpr | line printer subsystem (archaic subsystem) |
+| 7 | news | network news subsystem (archaic subsystem) |
+| 8 | uucp | UUCP subsystem (archaic subsystem) |
+| 9 | clock daemon | systemd-timesyncd |
+| 10 | authpriv | security/authorization messages | Also watch for different facility 4 |
+| 11 | ftp | FTP daemon |
+| 12 | - | NTP subsystem |
+| 13 | - | log audit |
+| 14 | - | log alert |
+| 15 | cron | scheduling daemon |
+| 16 | local0 | local use 0 (local0) |
+| 17 | local1 | local use 1 (local1) |
+| 18 | local2 | local use 2 (local2) |
+| 19 | local3 | local use 3 (local3) |
+| 20 | local4 | local use 4 (local4) |
+| 21 | local5 | local use 5 (local5) |
+| 22 | local6 | local use 6 (local6) |
+| 23 | local7 | local use 7 (local7) |
+
+So, useful facilities to watch: 0,1,3,4,9,10,15.
+
+### Priority level
+
+A syslog severity code (in systemd called priority) is used to mark the importance of a message [RFC 5424 Section 6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1).
+
+| Value | Severity | Keyword | Description | Examples |
+| 0 | Emergency | emerg | System is unusable | Severe Kernel BUG, systemd dumped core.
+This level should not be used by applications. |
+| 1 | Alert | alert | Should be corrected immediately | Vital subsystem goes out of work. Data loss.
+`kernel: BUG: unable to handle kernel paging request at ffffc90403238ffc`. |
+| 2 | Critical | crit | Critical conditions | Crashes, coredumps. Like familiar flash:
+`systemd-coredump[25319]: Process 25310 (plugin-containe) of user 1000 dumped core`
+Failure in the system primary application, like X11. |
+| 3 | Error | err | Error conditions | Not severe error reported:
+`kernel: usb 1-3: 3:1: cannot get freq at ep 0x84`,
+`systemd[1]: Failed unmounting /var.`,
+`libvirtd[1720]: internal error: Failed to initialize a valid firewall backend`). |
+| 4 | Warning | warning | May indicate that an error will occur if action is not taken. | A non-root file system has only 1GB free.
+`org.freedesktop. Notifications[1860]: (process:5999): Gtk-WARNING **: Locale not supported by C library. Using the fallback 'C' locale`. |
+| 5 | Notice | notice | Events that are unusual, but not error conditions. | `systemd[1]: var.mount: Directory /var to mount over is not empty, mounting anyway`. `gcr-prompter[4997]: Gtk: GtkDialog mapped without a transient parent. This is discouraged`. |
+| 6 | Informational | info | Normal operational messages that require no action. | `lvm[585]: 7 logical volume(s) in volume group "archvg" now active`. |
+| 7 | Debug | debug | Information useful to developers for debugging the application. | `kdeinit5[1900]: powerdevil: Scheduling inhibition from ":1.14" "firefox" with cookie 13 and reason "screen"`. |
+
+If issue you are looking for, was not found on according level, search it on couple of priority levels above and below. This rules are recommendations. Some errors considered a normal occasion for program so they marked low in priority by developer, and on the contrary, sometimes too many messages plaques too high priorities for them, but often it's an arguable situation. And often you really should solve an issue, also to understand architecture and adopt best practices.
+
+Examples:
+
+*   Info message: `pulseaudio[2047]: W: [pulseaudio] alsa-mixer.c: Volume element Master has 8 channels. That's too much! I can't handle that!` It is an warning or error by definition.
+*   Plaguing alert message: `sudo[21711]:     user : a password is required ; TTY=pts/0 ; PWD=/home/user ; USER=root ; COMMAND=list /usr/bin/pacman --color auto -Sy` The [reason](https://bbs.archlinux.org/viewtopic.php?id=184455) - user was manually added to sudoers file, not to wheel group, which is arguably normal action, but sudo produced an alert on every occasion.
 
 ### 过滤输出
 
@@ -435,6 +508,7 @@ systemd 提供了自己日志系统（logging system），称为 journal. 使用
 *   `journalctl -b -0` 显示本次启动的信息
 *   `journalctl -b -1` 显示上次启动的信息
 *   `journalctl -b -2` 显示上上次启动的信息 `journalctl -b -2`
+*   Show only error, critical, and alert priority messages `# journalctl -p err..alert` Numbers also can be used, `journalctl -p 3..1`. If single number/keyword used, `journalctl -p 3` - all higher priority levels also included.
 
 *   显示从某个日期 ( 或时间 ) 开始的消息: `# journalctl --since="2012-10-30 18:17:16"` 
 *   显示从某个时间 ( 例如 20分钟前 ) 的消息: `# journalctl --since "20 min ago"` 
@@ -453,13 +527,21 @@ systemd 提供了自己日志系统（logging system），称为 journal. 使用
 
  `/etc/systemd/journald.conf`  `SystemMaxUse=50M` 
 
+还可以通过配置片段而不是全局配置文件进行设置：
+
+ `/etc/systemd/journald.conf.d/00-journal-size.conf` 
+```
+[Journal]
+SystemMaxUse=50M
+```
+
 详情参见 `man journald.conf`.
 
 ### 配合 syslog 使用
 
 systemd 提供了 socket `/run/systemd/journal/syslog`，以兼容传统日志服务。所有系统信息都会被传入。要使传统日志服务工作，需要让服务链接该 socket，而非 `/dev/log`（[官方说明](http://lwn.net/Articles/474968/)）。Arch 软件仓库中的 [syslog-ng](https://www.archlinux.org/packages/?name=syslog-ng) 已经包含了需要的配置。
 
-*systemd* 216 开始,`journald.conf` 使用 `no` 转发socket . 为了使 *syslog-ng* 配合 *journald* , 你需要在 `/etc/systemd/journald.conf` 中设置 `ForwardToSyslog=yes` . 参阅 [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") 了解更多细节.
+`journald.conf` 使用 `no` 转发socket . 为了使 *syslog-ng* 配合 *journald* , 你需要在 `/etc/systemd/journald.conf` 中设置 `ForwardToSyslog=yes` . 参阅 [Syslog-ng#Overview](/index.php/Syslog-ng#Overview "Syslog-ng") 了解更多细节.
 
 如果你选择使用 [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) , 因为 [rsyslog](/index.php/Rsyslog "Rsyslog") 从日志中 [直接](http://lists.freedesktop.org/archives/systemd-devel/2014-August/022295.html#journald) 传出消息,所以不再必要改变那个选项..
 
@@ -515,6 +597,16 @@ MaxLevelConsole=info
 $ journalctl -D */mnt*/var/log/journal -xe
 
 ```
+
+## Tips and tricks
+
+### Enable installed units by default
+
+Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` containing `disable *`. This causes *systemctl preset* to disable all units by default, such that when a new package is installed, the user must manually enable the unit.
+
+If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See the manpage for `systemd.preset` for more information.
+
+**Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
 
 ## 疑难解答
 
@@ -685,6 +777,12 @@ Failed to issue method call: No such file or directory
 # systemctl enable */absolute/path/foo*.service
 
 ```
+
+### 启动时显示的 systemd 版本和安装版本不一致
+
+需要 [重新生成 initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")。
+
+**Tip:** 可以使用 pacman 钩子在更新 [systemd](https://www.archlinux.org/packages/?name=systemd)时重新生成 initramfs。参考 [这个帖子](https://bbs.archlinux.org/viewtopic.php?id=215411) 和 [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
 ## 相关资源
 

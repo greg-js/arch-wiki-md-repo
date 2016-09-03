@@ -30,7 +30,7 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 
 ## Pre-installation
 
-Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "w:P6 (microarchitecture)") or [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. The installation process needs to retrieve packages from a remote repository, therefore a working internet connection is required.
+Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "w:P6 (microarchitecture)") or [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, a working internet connection is required.
 
 Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
@@ -45,7 +45,7 @@ If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archi
 
 ```
 
-If it does not exist, the system is booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") (or CSM) mode.
+If the directory does not exist, the system is booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") (or CSM) mode.
 
 ### Set the keyboard layout
 
@@ -84,6 +84,8 @@ To modify and print [partition tables](/index.php/Partition_table "Partition tab
 *   [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or
 *   [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
 
+When displaying partitions with [lsblk](/index.php/Lsblk "Lsblk") or `fdisk -l`, note that not all devices are viable mediums for installation; results ending in `rom`, `loop` or `airoot` may be ignored.
+
 At least one partition must be available for the `/` (*root*) directory. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
@@ -107,7 +109,9 @@ After that, create directories for and mount any other file systems (`/mnt/boot`
 
 ### Select the mirrors
 
-Edit `/etc/pacman.d/mirrorlist` and select a download mirror(s). Regional mirrors usually work best; however, other criteria may be necessary to discern, read more on [Mirrors](/index.php/Mirrors "Mirrors").
+Packages to be installed must be downloaded from [mirror](/index.php/Mirror "Mirror") servers, which are defined in `/etc/pacman.d/mirrorlist`. On the live system, all mirrors are enabled, and sorted by their synchronization status and speed at the time the installation image was created.
+
+The higher a mirror is placed in the list, the more priority it is given when downloading a package. You may want to edit the file accordingly, and move the geographically closest mirrors to the top of the list, although other criteria should be taken into account.
 
 This file will later be copied to the new system by *pacstrap*, so it is worth getting right.
 
@@ -120,7 +124,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 ```
 
-The group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
+This group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
 
 To [install](/index.php/Install "Install") other packages or groups to the new system, append their names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
 
@@ -128,7 +132,7 @@ To [install](/index.php/Install "Install") other packages or groups to the new s
 
 ### Fstab
 
-Generate an [fstab](/index.php/Fstab "Fstab") file (use `-U` or `-L` to define by [UUID](/index.php/UUID "UUID") or labels):
+Generate an [fstab](/index.php/Fstab "Fstab") file (use `-U` or `-L` to define by [UUID](/index.php/UUID "UUID") or labels, respectively):
 
 ```
 # genfstab -U /mnt >> /mnt/etc/fstab

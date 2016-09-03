@@ -31,7 +31,7 @@ The RT-Preempt patch converts Linux into a fully preemptible kernel. This is don
 
 ## Installation
 
-There are many -rt patched kernels available from the [AUR](/index.php/AUR "AUR"). The main two are [linux-rt](https://aur.archlinux.org/packages/linux-rt/) and [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/). Both are also available from the unsigned [archaudio-production](/index.php/Unofficial_user_repositories#archaudio "Unofficial user repositories") repository. Both have a configuration based on the main [linux](https://www.archlinux.org/packages/?name=linux) kernel package, linux-rt follows the development branch of the -rt patch, while linux-rt-lts tracks a stable branch of the rt patchset.
+There are many -rt patched kernels available from the [AUR](/index.php/AUR "AUR"). The main two are [linux-rt](https://aur.archlinux.org/packages/linux-rt/) and [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/). Both have a configuration based on the main [linux](https://www.archlinux.org/packages/?name=linux) kernel package, linux-rt follows the development branch of the -rt patch, while linux-rt-lts tracks a stable branch of the rt patchset.
 
 **Note:** Don't forget to add the newly installed kernel to your boot manager.
 

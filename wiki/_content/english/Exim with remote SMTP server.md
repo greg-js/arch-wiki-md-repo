@@ -203,6 +203,16 @@ I.e. just comment out the dnslookup block and add the smarthost block plus the s
 
 ## Using Gmail as smarthost
 
+In the beginning of the exim conf file, you must enable TLS using
+
+ `tls_advertise_hosts = +local_network : *.gmail.com` 
+
+or to advertise tls to all hosts
+
+ `tls_advertise_hosts = *` 
+
+More information about TLS can be found in the [exim documentation](http://www.exim.org/exim-html-current/doc/html/spec_html/ch-encrypted_smtp_connections_using_tlsssl.html).
+
 **Note:** The following must be put in the appropriate sections of the configuration file, eg, after **begin authenticators**.
 
 Add a router before or instead of the dnslookup router:
@@ -220,11 +230,18 @@ Add a transport:
 gmail_relay:
   driver = smtp
   port = 587
+  tls_verify_certificates = /etc/ssl/certs/ca-certificates.crt
+  # this forces host verification.
+  tls_verify_hosts = smtp.gmail.com
   hosts_require_auth = <; $host_address
   hosts_require_tls = <; $host_address
 ```
 
-Add an authenticator (replacing myaccount@gmail.com and mypassword with your own account details):
+Because of host verification, your exim log might contain
+
+ `SSL verify error: certificate name mismatch: "/C=US/ST=California/L=Mountain View/O=Google Inc/CN=smtp.gmail.com"` 
+
+But this has no effect on mail-delivery and can be ignored. Add an authenticator (replacing myaccount@gmail.com and mypassword with your own account details):
 
 ```
 gmail_login:

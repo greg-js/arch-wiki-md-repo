@@ -2610,6 +2610,10 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder](https://www.archlinux.org/packages/?name=spyder)
 
+*   **Thonny** — Python IDE for beginners.
+
+	[http://thonny.cs.ut.ee/](http://thonny.cs.ut.ee/) || [thonny](https://aur.archlinux.org/packages/thonny/)
+
 ### Build automation
 
 See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").

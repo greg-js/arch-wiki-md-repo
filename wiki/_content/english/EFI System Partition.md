@@ -23,9 +23,9 @@ The following two sections show how to create an EFI System Partition (ESP).
 
 **Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI-MBR boot.
 
-It is recommended to keep ESP size at 512 MiB although smaller/larger sizes are fine.
+It is recommended to keep ESP size at 512 MiB although smaller/larger sizes are fine. [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html)
 
-According to a Microsoft note[[1]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
+According to a Microsoft note[[2]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
 
 ### GPT partitioned disks
 
@@ -61,7 +61,7 @@ Also see [#Using bind mount](#Using_bind_mount).
 
 ### ESP on RAID
 
-It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
+It is possible to make the ESP part of a RAID1 array, but doing so brings the risk of data corruption, and further considerations need to be taken when creating the ESP. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710) and [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741) for details.
 
 ## Tips and tricks
 

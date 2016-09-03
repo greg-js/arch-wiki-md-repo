@@ -19,7 +19,7 @@ Just install [lattice-diamond](https://aur.archlinux.org/packages/lattice-diamon
 
 ### Licensing
 
-You can request a free license to [Lattice Semiconductor](http://www.latticesemi.com/Support/Licensing.aspx) (registration needed). These licenses are node-locked (tied to the MAC or your Ethernet card). Once you have the license file, copy it to `/usr/local/diamond/3.7_x64/license/license.dat`, or you will not be able to start the suite.
+You can request a free license to [Lattice Semiconductor](http://www.latticesemi.com/Support/Licensing.aspx) (registration needed). These licenses are node-locked (tied to the MAC of your Ethernet card). Once you have the license file, copy it to `/usr/local/diamond/3.7_x64/license/license.dat`, or you will not be able to start the suite.
 
 ## Troubleshooting
 

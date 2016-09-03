@@ -37,14 +37,13 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
     *   [2.8 Powersaving](#Powersaving)
     *   [2.9 Calibrated ICC profile for QHD+ models](#Calibrated_ICC_profile_for_QHD.2B_models)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Random hangs after login with external monitor](#Random_hangs_after_login_with_external_monitor)
-    *   [3.2 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
-    *   [3.3 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
-    *   [3.4 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
-    *   [3.5 rfkill issues with Broadcom wireless](#rfkill_issues_with_Broadcom_wireless)
-    *   [3.6 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [3.7 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
-    *   [3.8 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
+    *   [3.1 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
+    *   [3.2 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
+    *   [3.3 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
+    *   [3.4 rfkill issues with Broadcom wireless](#rfkill_issues_with_Broadcom_wireless)
+    *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [3.6 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
+    *   [3.7 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -57,7 +56,7 @@ There are no exclusive hardware differences between the Developer Edition and th
 
 ### BIOS updates
 
-[BIOS update A10](http://downloads.dell.com/FOLDER03901193M/1/9343A09.exe) was released on 2016-08-30\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+[BIOS update A09](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=MNWHN&fileId=3564153400) was released on 2016-08-30\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ### Backlight
 
@@ -182,10 +181,6 @@ This profile has been made with the spectrophotometer's high resolution spectral
 *   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
 
 ## Troubleshooting
-
-### Random hangs after login with external monitor
-
-Very often, three-quarters of times, if I boot up the machine with an external monitor connected (I use a miniDP to HDMI cable), the computer hangs after I login in through graphical display manager. i.e. in my case, using GDM to login in into gnome desktop, after I enter the password, cursor disappears and system becomes totally unresponsive; the only way to "continue" is to force a reboot by pressing the power button. I don't know if it was only a problem of mine due to a strange hardware/software combination but, anyway and fortunately, it seems fixed *starting from May 2016*, likely thanks to a kernel bug fix. This mean `kernel-lts` users may still suffer of this issue.
 
 ### Pink & green artifacts in video or webcam output
 

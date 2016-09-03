@@ -1,5 +1,12 @@
 **Visual Studio Code** (**VSCode**) is a cross-platform, free and open-source (licensed under the MIT License) text editor developed by Microsoft and written in JavaScript and TypeScript. It is built on the Electron framework and is extensible using extensions, which can be browsed from within the text editor itself (via its extension gallery) or from [https://marketplace.visualstudio.com/VSCode](https://marketplace.visualstudio.com/VSCode). While open-source, a proprietary build (licensed under an End-User License Agreement) provided by Microsoft is available and used as the basis for the [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/) AUR package.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Integrated Terminal](#Integrated_Terminal)
+
 ## Installation
 
 The following packages provide VSCode:
@@ -15,3 +22,20 @@ The following packages provide VSCode:
 Run `code`.
 
 If for any reason you wish to launch multiple instances of Visual Studio Code, the `-n` flag can be used.
+
+## Configuration
+
+Visual Studio Code settings are stored in `~/.config/Code/User/settings.json`.
+
+### Integrated Terminal
+
+`View > Integrated Terminal` or `Ctrl + `` opens up an integrated terminal. By default, [Bash](/index.php/Bash "Bash") is used with no additional arguments, although this can be changed. `terminal.integrated.shell.linux` sets the default shell to be used and `terminal.integrated.shellArgs.linux` sets the arguments to be passed to the shell.
+
+Example:
+
+ `~/.config/Code/User/settings.json` 
+```
+"terminal.integrated.shell.linux": "/usr/bin/fish",
+"terminal.integrated.shellArgs.linux": ["-l","-d 3"]
+
+```

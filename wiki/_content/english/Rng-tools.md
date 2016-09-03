@@ -6,11 +6,11 @@ While Linux itself uses the result from TRNG in `/dev/random`, if available, the
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) package.
+[Install](/index.php/Install "Install") the [rng-tools](https://www.archlinux.org/packages/?name=rng-tools) package. [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rngd.service`.
 
 ## Configuration
 
-The configuration file is located in `/etc/conf.d/rngd`. There is only one option though, that is `RNGD_OPTS`, the parameters to be passed to the daemon when running it with the included [systemd](/index.php/Systemd "Systemd") service (`rngd.service`). The default parameter (`""`, or blank) should work in the majority of cases.
+The configuration file is located in `/etc/conf.d/rngd`. There is only one option though, that is `RNGD_OPTS`, the parameters to be passed to the daemon when running it with the included `rngd.service`. The default parameter (`""`, or blank) should work in the majority of cases.
 
 By default, *rngd* will try to automatically detect your TRNG and use it. This is reported to work for Raspberry Pi and Intel Ivy Bridge CPU using the lastest versions of *rng-tools*. If this does not work, you may manually pass the [device file](https://en.wikipedia.org/wiki/Device_file "wikipedia:Device file") used by your TRNG, as in the below example:
 

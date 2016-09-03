@@ -67,7 +67,8 @@
         *   [6.6.3 Troubleshooting](#Troubleshooting_2)
     *   [6.7 Ignore specific devices](#Ignore_specific_devices)
     *   [6.8 Enable DNS Caching](#Enable_DNS_Caching)
-    *   [6.9 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+    *   [6.9 Configuring MAC Address Randomization](#Configuring_MAC_Address_Randomization)
+    *   [6.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -771,6 +772,36 @@ After you have put this in, [restart](/index.php/Daemon "Daemon") NetworkManager
 ### Enable DNS Caching
 
 See [dnsmasq#NetworkManager](/index.php/Dnsmasq#NetworkManager "Dnsmasq") to enable the plugin that allows DNS caching using [dnsmasq](/index.php/Dnsmasq "Dnsmasq").
+
+### Configuring MAC Address Randomization
+
+As of version 1.4.0, NetworkManager supports two types MAC Address Randomization: randomization during scanning, and stable randomization. Both modes can be configured by modifying `/etc/networkManager/NetworkManager.conf`.
+
+Randomization during Wi-Fi scanning is enabled by default starting on version 1.2.0, and it can be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf`:
+
+```
+[device]
+wifi.scan-rand-mac-address=no
+
+```
+
+In contrast, stable randomization generates a different MAC address for each different connection. This is specially useful when, for example, a portal remembers your login status based on your MAC address. To enable this mode, you can use the option
+
+```
+[connection]
+wifi.cloned-mac-address=random
+
+```
+
+or
+
+```
+[connection]
+ethernet.cloned-mac-address=random
+
+```
+
+You can read more about it [here](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/)
 
 ### Enable IPv6 Privacy Extensions
 

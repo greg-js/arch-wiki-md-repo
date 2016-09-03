@@ -128,7 +128,9 @@ Make sure that *startx* is properly [configured](#Configuration).
 For [Bash](/index.php/Bash "Bash"), add the following to the bottom of `~/.bash_profile`. If the file does not exist, copy a skeleton version from `/etc/skel/.bash_profile`. For [Zsh](/index.php/Zsh "Zsh"), add it to `~/.zprofile`.
 
 ```
-[ -z "$DISPLAY" -a "$(fgconsole)" -eq 1 ] && exec startx
+if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
+  exec startx
+fi
 
 ```
 

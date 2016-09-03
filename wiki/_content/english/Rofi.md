@@ -1,7 +1,3 @@
-[Rofi](https://davedavenport.github.io/rofi/) is a window switcher and application launcher.
+Redirect to:
 
-## Installation
-
-[Install](/index.php/Install "Install") the [rofi](https://www.archlinux.org/packages/?name=rofi) or [rofi-git](https://aur.archlinux.org/packages/rofi-git/) package.
-
-Rofi can also be built from source, [instructions](https://davedavenport.github.io/rofi/p08-INSTALL.html) and the source are available on the [Rofi Github](https://github.com/DaveDavenport/rofi).
+*   [List of applications/Other#Application launchers](/index.php?title=List_of_applications/Other&redirect=no#Application_launchers "List of applications/Other")

@@ -50,7 +50,7 @@ Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Sc
 
 ## Configuration
 
-A user-specific configuration file should be located at `~/.tmux.conf`, while a global configuration file should be located at `/etc/tmux.conf`. Default configuration files can be found in `/usr/share/tmux/`.
+A user-specific configuration file should be located at `~/.tmux.conf`, while a global configuration file should be located at `/etc/tmux.conf`.
 
 ### Key bindings
 

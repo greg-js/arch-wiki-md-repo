@@ -61,6 +61,7 @@ Some modifications are required to use the correct paths for Arch packages:
 assets_directory = "/usr/share/libretro/assets"
 libretro_info_path = "/usr/share/libretro/info"
 libretro_directory = "/usr/lib/libretro"
+joypad_autoconfig_dir = "/usr/share/libretro/autoconfig"
 
 ```
 

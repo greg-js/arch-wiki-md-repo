@@ -185,7 +185,7 @@ FONT=sun12x22
 ###### MacBook Pro 11,5
 
 *   The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package seems to be stable. Switching to VTs and back works fine from MATE and GNOME. SOmetimes Chromium causes a "kernele rejected pixbuf" error which freezes the desktop.
-*   The [nvidia-dkms](https://aur.archlinux.org/packages/nvidia-dkms/) driver has been crashing a lot.
+*   The [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) driver has been crashing a lot.
 *   The [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver seems to be super stable, but GNOME desktop won't like to start, showing you a "Oh no! Something has gone wrong" message. Cinnamon Desktop is buttery smooth with the nvidia driver, and if you want your GNOME desktop, you can run `gnome-shell --relace &` while in cinnamon desktop to switch to Gnome Shell as a workaround.
 
 ###### Microcode

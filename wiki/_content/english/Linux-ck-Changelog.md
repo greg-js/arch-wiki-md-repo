@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.7.2-2**
+
+*   Changelog: bfs480 and ck2, see: [http://ck-hack.blogspot.com/2016/09/bfs-480-linux-47-ck2.html](http://ck-hack.blogspot.com/2016/09/bfs-480-linux-47-ck2.html)
+*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+
 **Bump to v4.7.2-1**
 
 *   LinuxChanges: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.2](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.2)

@@ -13,6 +13,9 @@ The official client is called **Certbot**, which allows to request valid X.509 c
         *   [1.2.2 Webroot](#Webroot)
             *   [1.2.2.1 Multiple domains](#Multiple_domains)
             *   [1.2.2.2 Automatic renewal](#Automatic_renewal)
+                *   [1.2.2.2.1 Service](#Service)
+                *   [1.2.2.2.2 Standonly service](#Standonly_service)
+                *   [1.2.2.2.3 Automatic renewal timer](#Automatic_renewal_timer)
 *   [2 See also](#See_also)
 
 ## Certbot
@@ -113,7 +116,9 @@ The chosen path has then to be writable for the chosen letsencrypt client. It al
 
 When running `certbot certonly`, Certbot stores the domains and webroot directories in `/etc/letsencrypt/renewal`, so the certificates can be renewed later automatically by running `certbot renew`.
 
-You can fully automate this by creating the following systemd service file:
+###### Service
+
+You can fully automate this by creating a systemd service
 
  `/etc/systemd/system/certbot.service` 
 ```
@@ -122,12 +127,40 @@ Description=Let's Encrypt renewal
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/certbot renew
+ExecStart=/usr/bin/certbot renew --quiet --agree-tos
 ```
 
-Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything.
+###### Standonly service
 
-Then, you can add a timer to renew the certificates daily. Include a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load.
+When using the standalone method you'll want to stop your webserver before executing the renew request and start your webserver when certbot is finished, luckily certbot provides some hooks that do just that.
+
+**Nginx**
+
+ `/etc/systemd/system/certbot.service` 
+```
+[Unit]
+Description=Let's Encrypt renewal
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop nginx.service" --post-hook "/usr/bin/systemctl start nginx.service" --quiet --agree-tos
+```
+
+**Apache**
+
+ `/etc/systemd/system/certbot.service` 
+```
+[Unit]
+Description=Let's Encrypt renewal
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/certbot renew --pre-hook "/usr/bin/systemctl stop httpd.service" --post-hook "/usr/bin/systemctl start httpd.service" --quiet --agree-tos
+```
+
+###### Automatic renewal timer
+
+Before adding a [timer](/index.php/Systemd/Timers "Systemd/Timers"), check that the service is working correctly and is not trying to prompt anything. Then, you can add a timer to renew the certificates daily. Include a randomized delay so that everyone's requests for renewal will be evenly spread over the day to lighten the Let's Encrypt server load.
 
  `/etc/systemd/system/certbot.timer` 
 ```
@@ -145,7 +178,7 @@ WantedBy=timers.target
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `certbot.timer`.
 
-You'll probably want your web server to be restarted after each certificate renewal. You can realize that by adding one of these lines to the `certbot.service` file:
+You'll probably want your web server to reload the certificates after each time they're renewed. You can realize that by adding one of these lines to the `certbot.service` file:
 
 *   Apache: `ExecStartPost=/bin/systemctl reload httpd.service`
 *   nginx: `ExecStartPost=/bin/systemctl reload nginx.service`

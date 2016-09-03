@@ -205,7 +205,7 @@ Permissions to access video devices (e.g. `/dev/video0`) are handled by [udev](/
 
 ## Webcam configuration
 
-If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use [GTK+ UVC Viewer](http://guvcview.berlios.de/) (guvcview), available in the [Official repositories](/index.php/Official_repositories "Official repositories") as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
+If you want to configure brightness, color and other webcam parameters (e.g. in the case when out-of-the-box colors are too bluish/reddish/greenish) you may use [GTK+ UVC Viewer](http://guvcview.sourceforge.net/) (guvcview), available in the [Official repositories](/index.php/Official_repositories "Official repositories") as package [guvcview](https://www.archlinux.org/packages/?name=guvcview). Just install it and launch, and it will present you a list of configurable settings. Changing these settings will affect all applications (e.g. Skype).
 
 ### Webcam resolution
 

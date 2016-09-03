@@ -93,7 +93,7 @@ $ pacman -Ss php-
 
 ```
 
-**Tip:** Instead of editing `/etc/php/php.ini`, a extension may be enabled/configured in the `/etc/php/conf.d` directory instead (e.g. `/etc/php/conf.d/gd.ini`)
+**Tip:** Instead of editing `/etc/php/php.ini`, an extension may be enabled/configured in the `/etc/php/conf.d` directory instead (e.g. `/etc/php/conf.d/gd.ini`)
 
 Extensions for older versions of PHP can be found in the AUR, under the prefix php56-*, eg. [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)
 

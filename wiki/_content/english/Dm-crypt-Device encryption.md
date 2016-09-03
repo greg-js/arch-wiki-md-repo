@@ -160,7 +160,7 @@ Executing it will prompt for a password, which should have very high entropy. Be
 | **--hash** | `ripemd160` | - | The hash is used to create the key from the passphrase; it is not used on a keyfile. |
 | **--cipher** | `aes-cbc-essiv:sha256` | `twofish-xts-plain64` | The cipher consists of three parts: cipher-chainmode-IV generator. Please see [Disk encryption#Ciphers and modes of operation](/index.php/Disk_encryption#Ciphers_and_modes_of_operation "Disk encryption") for an explanation of these settings, and the [DMCrypt documentation](https://gitlab.com/cryptsetup/cryptsetup/wikis/DMCrypt) for some of the options available. |
 | **--key-size** | `256` | `512` | The key size (in bits). The size will depend on the cipher being used and also the chainmode in use. Xts mode requires twice the key size of cbc. |
-| **--offset** | `0` | `0` | The offset from the beginning of the target disk from which to start the mapping |
+| **--offset** | `0` | `0` | The offset from the beginning of the target disk (in bytes) from which to start the mapping |
 | **--key-file** | default uses a passphrase | `/dev/sd*Z*` (or e.g. /boot/keyfile.enc) | The device or file to be used as a key. See [#Keyfiles](#Keyfiles) for further details. |
 | **--keyfile-offset** | `0` | `0` | Offset from the beginning of the file where the key starts (in bytes). This option is supported from *cryptsetup* 1.6.7 onwards. |
 | **--keyfile-size** | `8192kB` | - (default applies) | Limits the bytes read from the key file. This option is supported from *cryptsetup* 1.6.7 onwards. |

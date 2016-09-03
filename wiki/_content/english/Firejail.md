@@ -60,7 +60,7 @@ $ ln -s /usr/bin/firejail /usr/local/bin/firefox
 
 The *firecfg* tool can be used to automate this process.
 
-**Tip:** To open the application with your custom Firejail options, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file instead for Firefox and make it executable: `/usr/local/bin/firefox`  `firejail --seccomp /usr/bin/firefox $@` 
+**Tip:** To open the application with your custom Firejail options, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file instead for Firefox and make it [executable](/index.php/File_permissions_and_attributes "File permissions and attributes"): `/usr/local/bin/firefox`  `firejail --seccomp /usr/bin/firefox $@` 
 
 #### Desktop files
 

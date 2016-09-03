@@ -9,7 +9,8 @@ Sender Policy Framework (SPF) is a protocol to indentify qualified servers, whic
     *   [2.3 Postfix integration](#Postfix_integration)
     *   [2.4 Testing](#Testing)
 *   [3 Sender Rewrite Scheme (SRS)](#Sender_Rewrite_Scheme_.28SRS.29)
-*   [4 Known problems](#Known_problems)
+*   [4 Remarks](#Remarks)
+*   [5 Known problems](#Known_problems)
 
 ## Record
 
@@ -108,6 +109,10 @@ recipient_canonical_classes= envelope_recipient,header_recipient
 
 Restart postfix and start forwarding mail.
 
+## Remarks
+
+SPF can even be helpful for domains not supposed to send email. Publishing a policy like `v=spfv -all` prevents anyone from sending in this domains name thus preventing misuse.
+
 ## Known problems
 
-Some contact form providers send mails impersonating the sender using its email address in FROM-field. This is bad practise but still used, and leads to rejected emails with strict SPF policies (such als `v=spf1 a -all`).
+Some contact form providers send mails impersonating the sender using its email address in FROM-field. This is bad practice but still used, and leads to rejected emails with strict SPF policies (such als `v=spf1 a -all`).

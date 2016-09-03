@@ -152,8 +152,6 @@ The beginning of the device name specifies the type of block device. Most modern
 
 Other common block device types include flash memory, starting with, for example `mmcblk` for memory cards, or `nvme` for [NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") devices. Unknown types can be searched in the [kernel's documentation](https://www.kernel.org/doc/Documentation/devices.txt).
 
-Note that on [installation](/index.php/Installation "Installation") of Arch Linux, the output includes devices used to host and boot the Arch live media, such as an USB drive. Not all devices listed are therefore viable or appropriate mediums for installation; results ending in `rom`, `loop` or `airoot` can be ignored in this case.
-
 ## iconv
 
 *iconv* converts the encoding of characters from one codeset to another.

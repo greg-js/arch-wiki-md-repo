@@ -50,50 +50,30 @@ If UFW is installed and enabled, it must be given the ability to pass along DROP
 
 #### iptables
 
-The main configuration required is creating a chain named "sshguard" in the INPUT chain of iptables where sshguard automatically inserts rules to drop packets coming from bad hosts:
+**Note:** See [iptables](/index.php/Iptables "Iptables") and [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") first to set up a firewall.
+
+The main configuration required is creating a chain named `sshguard`, where sshguard automatically inserts rules to drop packets coming from bad hosts:
 
 ```
 # iptables -N sshguard
+
+```
+
+Then add a rule to jump to the `sshguard` chain from the `INPUT` chain. This rule must be added **before** any other rules processing the ports that sshguard is protecting. See [this example](http://www.sshguard.net/docs/setup/#netfilter-iptables).
+
+```
 # iptables -A INPUT -p tcp --dport 22 -j sshguard
+
+```
+
+To save the rules:
+
+```
 # iptables-save > /etc/iptables/iptables.rules
 
 ```
 
-If you use IPv6:
-
-```
-# ip6tables -N sshguard
-# ip6tables -A INPUT -p tcp --dport 22 -j sshguard
-# ip6tables-save > /etc/iptables/ip6tables.rules
-
-```
-
-If you do not use IPv6, create and empty file "ip6tables.rules" with:
-
-```
-# touch /etc/iptables/ip6tables.rules
-
-```
-
-Finally, [reload](/index.php/Reload "Reload") the `iptables` service.
-
-If you do not currently use iptables and just want to get sshguard up and running without any further impact on your system, these commands will create and save an iptables configuration that does absolutely nothing except allowing sshguard to work:
-
-```
-# iptables -F
-# iptables -X
-# iptables -P INPUT ACCEPT
-# iptables -P FORWARD ACCEPT
-# iptables -P OUTPUT ACCEPT
-# iptables -N sshguard
-# iptables -A INPUT -j sshguard 
-# iptables-save > /etc/iptables/iptables.rules    
-
-```
-
-To finish saving your iptables configuration. Repeat above steps with `ip6tables` to configure the firewall rules for IPv6 and save them with `ip6tables-save` to `/etc/iptables/ip6tables.rules`.
-
-For more information on using iptables to create powerful firewalls, see [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
+**Note:** For IPv6, repeat the same steps with *ip6tables* and save the rules with *ip6tables-save* to `/etc/iptables/ip6tables.rules`.
 
 ## Usage
 

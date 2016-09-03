@@ -1,4 +1,4 @@
-This is a simple article detailing different methods of Arch/Windows coexistence.
+This is an article detailing different methods of Arch/Windows coexistence.
 
 ## Contents
 

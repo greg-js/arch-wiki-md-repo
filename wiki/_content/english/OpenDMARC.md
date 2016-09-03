@@ -8,6 +8,7 @@ Domain-based Message Authentication, Reporting and Conformance (DMARC) is a poli
     *   [2.2 Basic configuration](#Basic_configuration)
     *   [2.3 Postfix integration](#Postfix_integration)
 *   [3 Security](#Security)
+*   [4 Weblinks](#Weblinks)
 
 ## Record
 
@@ -22,8 +23,11 @@ An example Record looks like this: `v=DMARC1;p=quarantine;pct=100;rua=mailto:pos
 | sp | Policy for subdomains of the | sp=reject |
 | adkim | Alignment mode for DKIM | adkim=s |
 | aspf | Alignment mode for SPF | aspf=r |
+| fo | Forensic report options | fo=1 |
+| rf | Reporting format. either afrf or iodef | rf=afrf |
+| ri | Reporting interval of aggregate reports. Often disregarded | ri=86400 |
 
-The alignment modes for DKIM and SPF can be s for strict and r for relaxed, where the latter allows a subdomain in the From header while the former does not. The policies for domain (p) and subdomain might be one of `monitor`, `quarantine` or `reject`.
+The alignment modes for DKIM and SPF can be s for strict and r for relaxed, where the latter allows a subdomain in the From header while the former does not. The policies for domain (p) and subdomain might be one of `monitor`, `quarantine` or `reject`. The forensic report option are "0" to generate reports if all underlying authentication mechanisms fail to produce a DMARC pass result, "1" to generate reports if any mechanisms fail, "d" to generate report if DKIM signature failed to verify, "s" if SPF failed.
 
 ## Validator
 
@@ -80,3 +84,7 @@ ExecStart=/usr/bin/opendmarc -c /etc/opendkim/opendmarc.conf
 WantedBy=multi-user.target
 
 ```
+
+## Weblinks
+
+*   [DMARC Inspector](https://dmarcian.com/dmarc-inspector/)

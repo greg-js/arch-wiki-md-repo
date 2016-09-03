@@ -274,7 +274,7 @@ $ vncviewer -passwd /path/to/server-passwd-file
 ### Example GUI-based clients
 
 *   [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc)
-*   [kdenetwork-krdc](https://www.archlinux.org/packages/?name=kdenetwork-krdc)
+*   [krdc](https://www.archlinux.org/packages/?name=krdc)
 *   [rdesktop](https://www.archlinux.org/packages/?name=rdesktop)
 *   [vinagre](https://www.archlinux.org/packages/?name=vinagre)
 *   [remmina](https://www.archlinux.org/packages/?name=remmina)

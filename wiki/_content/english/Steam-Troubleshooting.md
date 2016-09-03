@@ -346,6 +346,8 @@ Make sure you are mounting the filesystem with the correct flags in your `/etc/f
 
 This error might also occur if you are readding a library folder and Steam is unable to find a contained `steamapps` folder. Previous versions used `SteamApps` instead, so ensure the name is fully lowercase.
 
+This error can also occur because of steam runtime issues and may be fixed following the [#Dynamic linker](#Dynamic_linker) section.
+
 ## Steam controller not being detected correctly
 
 See [Gamepad#Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad").

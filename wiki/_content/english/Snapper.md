@@ -219,7 +219,7 @@ Multiple snapshots can be deleted at one time. For example, to delete snapshots 
 
 Each config is created with the root user, and by default, only root can see and access it.
 
-To be able to list the snapshots for a given config for a specific user, simply change the value of `ALLOW_USERS` in your `/etc/snapper/configs/<config_name>` file. You should now be able to run `snapper -c <config_name> list` as a normal user.
+To be able to list the snapshots for a given config for a specific user, simply change the value of `ALLOW_USERS` in your `/etc/snapper/configs/*config*` file. You should now be able to run `snapper -c *config*list` as a normal user.
 
 Eventually, you want to be able to browse the `.snapshots` directory with a user, but the owner of this directory must stay root. Therefore, you should change the group owner by a group containing the user you are interested in, such as `users` for example:
 
@@ -253,7 +253,7 @@ Description=Take snapper snapshot of root on boot
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/snapper -c root create --description "boot"
+ExecStart=/usr/bin/snapper --config root create --cleanup-algorithm number --description "boot"
 ```
 
 ### Wrapping pacman transactions in snapshots

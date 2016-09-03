@@ -61,7 +61,7 @@ See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for perma
 
 Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
 
-**Tip:** You might have to manually remove the synaptics configuration, probably at `/etc/X11/xorg.conf.d/70-synaptics.conf`, to make a touchpad work correctly with libinput. You might also need to override the default configuration on `/usr/share/X11/xorg.conf.d/70-synaptics.conf` or uninstall [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
+**Tip:** To ensure that libinput takes precedence over a previous synaptics configuration, its configuration file has to start with a smaller number, e.g. `/etc/X11/xorg.conf.d/60-libinput.conf` since the default for synaptics is `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Alternatively you could delete any synaptics configuration files you might have in `/etc/X11/xorg.conf.d` altogether and uninstall [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
 One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
 

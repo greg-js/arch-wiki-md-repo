@@ -72,7 +72,7 @@ This completes the required installation and setup of PostgreSQL for use with Od
 
 ### Configuring Odoo to run with PostgreSQL
 
-The configuration file of Odoo is located at `/etc/odo/odoo.conf`. Specify the `db_user` and `db_password` according to the username and password you specified at previous step. If the PostgreSQL server is on a different machine, also edit `db_host`.
+The configuration file of Odoo is located at `/etc/odoo/odoo.conf`. Specify the `db_user` and `db_password` according to the username and password you specified at previous step. If the PostgreSQL server is on a different machine, also edit `db_host`.
 
 ```
 [options]

@@ -315,9 +315,6 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/curl -o /etc/unbound/root.hints https://www.internic.net/domain/named.cache
-
-[Install]
-WantedBy=multi-user.target
 ```
  `/etc/systemd/system/roothints.timer` 
 ```

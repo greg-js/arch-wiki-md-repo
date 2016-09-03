@@ -918,7 +918,7 @@ Server = http://repo.markzz.com/arch/$repo/$arch
 
 *   **Maintainer:** [The Compiler](http://blog.the-compiler.org/?page_id=36)
 *   **Description:** Qt/PyQt builds with debug symbols
-*   **Upstream page:** [https://github.com/The-Compiler/qt-debug-pkgbuild](https://github.com/The-Compiler/qt-debug-pkgbuild)
+*   **Upstream page:** [https://github.com/qutebrowser/qt-debug-pkgbuild](https://github.com/qutebrowser/qt-debug-pkgbuild)
 *   **Key-ID:** D6A1C70FE80A0C82
 
 ```

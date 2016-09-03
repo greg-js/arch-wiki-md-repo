@@ -156,7 +156,7 @@ Delete/move /etc/X11/xorg.conf file and any other files relating to GPUs in /etc
 
 If the video driver is blacklisted in `/etc/modprobe.d/`, load the module and restart X. This may be the case if you use the bbswitch module for Nvidia GPUs.
 
-Since kernel version 3.19.0 the nouveau kernel module cannot be loaded under certain circumstances. Dmesg will throw an error with `invalid rom content`. The bug as has been patched, but hasnt yet reached mainline. [Freedesktop Bug Thread](https://bugs.freedesktop.org/show_bug.cgi?id=89047) In the meantime, applying the patches to a custom kernel before compiling seems to be the only fix.
+Since kernel version 3.19.0 the nouveau kernel module cannot be loaded under certain circumstances. Dmesg will throw an error with `invalid rom content`. The bug as has been patched, but hasn't yet reached mainline. [Freedesktop Bug Thread](https://bugs.freedesktop.org/show_bug.cgi?id=89047) In the meantime, applying the patches to a custom kernel before compiling seems to be the only fix.
 
 ### When an application is rendered with the discrete card, it only renders a black screen
 
