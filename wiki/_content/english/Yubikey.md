@@ -27,6 +27,7 @@ One of its strengths is that it emulates a USB keyboard to send the OTP as text,
     *   [5.1 Chromium/Chrome](#Chromium.2FChrome)
     *   [5.2 Firefox](#Firefox)
 *   [6 Enabling OpenPGP smartcard mode](#Enabling_OpenPGP_smartcard_mode)
+*   [7 Troubleshooting](#Troubleshooting)
 
 ## Introduction
 
@@ -229,3 +230,7 @@ These steps will allow you to use the OpenPGP functionality of your YubiKey.
 2.  Install [pcsc-tools](https://www.archlinux.org/packages/?name=pcsc-tools),[ccid](https://www.archlinux.org/packages/?name=ccid) and [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat)
 3.  Enable and start `pcscd` with `sudo systemctl enable pcscd.service`and `sudo systemctl start pcscd.service`
 4.  To verify that your YubiKey is ready to be used run `pcsc_scan` which will provide some informations about the connected device. Further you can use `gpg --card-status` to verify that GPG can interact with the card.
+
+## Troubleshooting
+
+Restart, especially if you have completed updates since your Yubikey last worked. Do this even if some functions appear to be functioning.

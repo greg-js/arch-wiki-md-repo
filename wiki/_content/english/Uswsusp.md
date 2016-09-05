@@ -2,7 +2,7 @@
 
 *   **s2ram** - a wrapper around the kernel's suspend-to-RAM mechanism allowing the user to perform some graphics adapter manipulations from the user land before suspending and after resuming that may help to bring the graphics (and the entire system) back to life after the resume. Incorporates the functionality of vbetool and radeontool as well as some tricks of its own. Includes a list of working hardware configurations along with the appropriate sets of operations to be performed to resume them successfully. This is accomplished by a hardware whitelist maintained by HAL - **s2ram** translates the HAL database options into **s2ram** parameters.
 
-**Note:** Since HAL is deprecated and KMS drivers can save the state of the grahic card directly without userspace quirks, **s2ram** development is discontinued and no further whitelist entries are accepted. If a KMS driver is in use, **s2ram** will directly suspend the machine.
+**Note:** Since HAL is deprecated and KMS drivers can save the state of the graphics card directly without userspace quirks, **s2ram** development is discontinued and no further whitelist entries are accepted. If a KMS driver is in use, **s2ram** will directly suspend the machine.
 
 *   **s2disk** - the reference implementation of the userspace software suspend (µswsusp); it coordinates the steps necessary to suspend the system (such as freezing the processes, preparing the swap space, etc.) and handles image writing and reading. s2disk already supports compression and encryption of the image and other features (e.g. a nice progress bar, saving the image on a remote disk, playing tetris while resuming, etc.) can be easily added.
 

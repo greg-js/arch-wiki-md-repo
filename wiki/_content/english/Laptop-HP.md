@@ -129,6 +129,17 @@ Webcam: yes
 Card reader: yes | -- |
 | [HP ENVY TouchSmart 17-j113tx](/index.php/HP_ENVY_TouchSmart_17-j113tx "HP ENVY TouchSmart 17-j113tx") | 2014.11 | Intel HD 4600 (*i915*) + NVIDIA GeForce GT 740M (*nouveau* or proprietary *NVIDIA*) as an Optimus setup. | Intel HD Audio (*snd_hda_intel*) | Realtek, exact model is unclear (*r8169*) | Intel 7260 (*iwlwifi*) | Intel Bluetooth, works | ACPI: Yes, Suspend to RAM: Yes, Suspend to Disk: Yes, Battery: Yes, Display Dimming: Yes, CPU Frequency Scaling: Yes | Not included. | Optical Disk Drive, TouchScreen, Webcam, SD Card Reader | See article. |
 | HP Pavilion Ultrabook 15-b030st | 2015.05 | Intel Core i5-3317U + NVIDIA GeForce GT 630M (*nouveau* or proprietary *NVIDIA*) as an Optimus setup. | Intel HD Audio (*snd_hda_intel*) |  ??? | Ralink RT3290 | Not working | -- | Works | -- | -- |
+| HP Pavilion g6-2379sr | 2016.09 | Intel Core i5-3230M, Intel HD 4000 (*i915*) + AMD Radeon 7670M HD (*radeon*)
+Needs [PRIME](https://wiki.archlinux.org/index.php/PRIME/) configuration to use hybrid graphics | Intel sound card: *snd-hda-intel* | RTL8101\. Driver: *r8169* | Ralink RT3290\. Works very bad with driver *rt2800pci* and stop work after installing *[rt3290sta-dkms](https://aur.archlinux.org/packages/rt3290sta-dkms/)* | Not work even after installing [rtbth-dkms](https://aur.archlinux.org/packages/rtbth-dkms/) | ACPI: Works
+Suspend to RAM: Working properly
+Suspend to Disk: Not work (don't turn off pc, just freeze on black screen)
+Battery: Works
+Display dimming: Works
+CPU frequency scaling: Works | No modem installed | Hot keys: Works
+LightScribe: Works
+Webcam: Works
+Card reader: Works | Big problems with WiFi card RT3290\. Best choice it's to use LAN Internet, or change WiFi card.
+Poor sound quality when using *snd-hda-intel*, but can't do anythink with it on any Linux distributions. |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

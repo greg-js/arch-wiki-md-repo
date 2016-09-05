@@ -13,10 +13,13 @@ Once the partitions have been created, each must be formatted with an appropriat
     *   [1.2 Master Boot Record](#Master_Boot_Record)
         *   [1.2.1 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
         *   [1.2.2 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
+        *   [1.2.3 Problems with MBR](#Problems_with_MBR)
     *   [1.3 GUID Partition Table](#GUID_Partition_Table)
         *   [1.3.1 Advantages of GPT](#Advantages_of_GPT)
+        *   [1.3.2 Kernel Support](#Kernel_Support)
     *   [1.4 Partitionless disk](#Partitionless_disk)
         *   [1.4.1 Btrfs partitioning](#Btrfs_partitioning)
+    *   [1.5 Backup and restoration](#Backup_and_restoration)
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
@@ -56,7 +59,9 @@ One should consider these to choose between GPT and MBR:
 
 ### Master Boot Record
 
-The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table. It plays an important role in the [boot process](/index.php/Boot_process "Boot process") under [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Wikipedia:Master boot record#Sector layout](https://en.wikipedia.org/wiki/Master_boot_record#Sector_layout "wikipedia:Master boot record") for the MBR structure.
+The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table. It plays an important role in the [boot process](/index.php/Boot_process "Boot process") under [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record") for the MBR structure.
+
+**Note:** The MBR is not located in a partition; it is located at a first sector of the device (physical offset 0), preceding the first partition. (The boot sector present on a non-partitioned device or within an individual partition is called a [Volume boot record](https://en.wikipedia.org/wiki/Volume_boot_record "w:Volume boot record") instead.)
 
 #### Master Boot Record (partition table)
 
@@ -78,9 +83,18 @@ The customary numbering scheme is to create primary partitions *sda1* through *s
 
 The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader.
 
+#### Problems with MBR
+
+*   Only 4 primary partitions or 3 primary + 1 extended partitions (with arbitrary number of logical partitions within the extended partition) can be defined. If you have 3 primary + 1 extended partitions, and you have some free space outside the extended partition area, you cannot create a new partition over that free space.
+*   Within the extended partition, the logical partitions' meta-data is stored in a linked-list structure. If one link is lost, all the logical partitions following that metadata are lost.
+*   MBR supports only 1 byte partition type codes which leads to many collisions.
+*   MBR stores partition sector information using 32-bit LBA values. This LBA length along with 512 byte sector size (more commonly used) limits the maximum addressable size of the disk to be 2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB"). Any space beyond 2 TiB cannot be defined as a partition if MBR partitioning is used.
+
+GUID Partition Table is the next generation partitioning scheme designed to succeed the Master Boot Record partitioning scheme method to fix above problems.
+
 ### GUID Partition Table
 
-[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) uses [GUIDs](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (or UUIDs in linux world) to define partitions and its [types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table").
+[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [#Master Boot Record](#Master_Boot_Record) partitioning scheme method.
 
 #### Advantages of GPT
 
@@ -91,6 +105,10 @@ The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usual
 *   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Fdisk#Recover_GPT_header "Fdisk") in case the primary ones are damaged.
 *   CRC32 checksums to detect errors and corruption of the header and partition table.
 
+#### Kernel Support
+
+`CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name EFI PARTITION). This options must be built-in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in Arch's [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels in [core] repo. In case of a custom kernel enable this option by doing `CONFIG_EFI_PARTITION=y`.
+
 ### Partitionless disk
 
 Partitionless disk (a.k.a. superfloppy) refers to using a storage device without a partition table and having a file system directly on the storage device.
@@ -100,6 +118,10 @@ Partitionless disk (a.k.a. superfloppy) refers to using a storage device without
 Btrfs can occupy an entire data storage device and replace the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
 
 See also [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs").
+
+### Backup and restoration
+
+See [fdisk#Backup and restore](/index.php/Fdisk#Backup_and_restore "Fdisk") and [File recovery#Testdisk and PhotoRec](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery").
 
 ## Partition scheme
 
@@ -286,5 +308,9 @@ On an already partitioned disk, you can use [parted](/index.php/Parted "Parted")
 ## See also
 
 *   [Wikipedia:Disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "wikipedia:Disk partitioning")
-*   [Manually Partitioning Your Hard Drive with fdisk](http://www.novell.com/coolsolutions/feature/19350.html)
+*   [Understanding Disk Drive Terminology](http://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)
+*   [What is a Master Boot Record (MBR)?](http://kb.iu.edu/data/aijw.html)
+*   Rod Smith's page on [What's a GPT?](http://www.rodsbooks.com/gdisk/whatsgpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)
+*   [Make the most of large drives with GPT and Linux - IBM Developer Works](http://www.ibm.com/developerworks/linux/library/l-gpt/index.html?ca=dgr-lnxw07GPT-Storagedth-lx&S_TACT=105AGY83&S_CMP=grlnxw07)
+*   [Microsoft's Windows and GPT FAQ](http://www.microsoft.com/whdc/device/storage/GPT_FAQ.mspx)
 *   [Partition Alignment](http://www.thomas-krenn.com/en/wiki/Partition_Alignment) (with examples)

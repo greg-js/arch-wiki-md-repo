@@ -66,6 +66,12 @@ You can find it in [AUR](/index.php/AUR "AUR").
 
 Open jEdit and go to *Plugins > Plugin Manager*. Select the *Install* tab and click on *LilyPondTools*. Hit the *Install* button.
 
+*   Emacs
+
+Lilypond includes an emacs mode. Add the following line to your `~/.emacs`:
+
+ `~/.emacs`  `(load-library "lilypond-init.el")` 
+
 ### Speed up writing notes
 
 LilyComp [[3]](http://lilycomp.sourceforge.net/) can be used to speed up writing notes. It requires [python](/index.php/Python "Python") and tk. Lines 67 and 68 in `lilycomp.py` should be edited to enable `deutsch.ly` dictionary for sharp and flat symbols. It uses absolute notation (\relative is not used.)

@@ -23,16 +23,6 @@
     *   [5.5 glfw](#glfw)
     *   [5.6 EFL](#EFL)
 *   [6 Оконные менеджеры и оболочки рабочего стола](#.D0.9E.D0.BA.D0.BE.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D1.8B_.D0.B8_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0)
-    *   [6.1 GNOME](#GNOME)
-    *   [6.2 Hawaii](#Hawaii)
-    *   [6.3 sway](#sway)
-    *   [6.4 KDE](#KDE)
-    *   [6.5 Orbment](#Orbment)
-    *   [6.6 Velox](#Velox)
-    *   [6.7 Orbital](#Orbital)
-    *   [6.8 Papyros Shell](#Papyros_Shell)
-    *   [6.9 Maynard](#Maynard)
-    *   [6.10 Motorcar](#Motorcar)
 *   [7 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [7.1 LLVM assertion failure](#LLVM_assertion_failure)
     *   [7.2 Не запускается Weston после обновления до 1.7](#.D0.9D.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_Weston_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BE_1.7)
@@ -289,49 +279,21 @@ EFL полностью поддерживает Wayland. Для запуска E
 
 ## Оконные менеджеры и оболочки рабочего стола
 
-### GNOME
+| Имя | Тип | Описание |
+| GNOME | Композитный | Смотрите [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
+| Hawaii | *(Неопределенный)* | Смотрите [Hawaii](/index.php/Hawaii "Hawaii"). |
+| sway | Тайловый | [Sway](/index.php/Sway "Sway") - совместимый с i3 менеджер окон для Wayland. [Github](https://github.com/SirCmpwn/sway) |
+| Enlightenment | *(Неопределенный)* | Минималистический оконный менеджер Wayland с возможностью переключать композитинг. Изначально в E19 была поддержка Wayland, но была удалена и только в E20+ поддержка признана достаточно стабильной для регулярного использования. [Больше информации](https://www.enlightenment.org/about-wayland). |
+| KDE Plasma | Композитный | Смотрите [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
+| Orbment | Тайловый | [orbment](https://github.com/Cloudef/orbment) (раньше loliwm) - тайловый менеджер окон для Wayland. |
+| Velox | Тайловый | [Velox](/index.php/Velox "Velox") - простой оконный менеджер, основанный на swc. Он вдохновлен [dwm](/index.php/Dwm "Dwm") и [xmonad](/index.php/Xmonad "Xmonad"). |
+| Orbital | Композитный | [Orbital](https://github.com/giucam/orbital) - композитор и оболочка Wayland, использующая Qt5 и Weston. Целью проекта является создание простой, но гибкой и красивой среды рабочего стола Wayland. Orbital не есть полноценная среда рабочего стола, а скорее всего является аналогом оконных менеджеров в мире X11, таких как [Awesome](/index.php/Awesome "Awesome") или [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
+| Papyros Shell | *(Неопределенный)* | [Papyros Shell](https://github.com/papyros/papyros-shell) является оболочкой рабочего стола для [Papyros](/index.php/Papyros "Papyros"), созданная посредством QtQuick и QtCompositor в качестве композитора для Wayland. |
+| Maynard | *(Неопределенный)* | [Maynard](https://github.com/raspberrypi/maynard) - оболочка рабочего стола для Weston, основанная на GTK. Она была основана на weston-gtk-shell - проекте Tiago Vignatti. |
+| Motorcar | *(Неопределенный)* | [Motorcar](https://github.com/evil0sheep/motorcar) - композитор Wayland для исследования 3D окон. |
+| Way Cooler | Тайловый | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) является настраиваемым (через конфигурационный файлы lua) композитором Wayland, написанным на Rust. Вдохновленный i3 и awesome. |
 
-**Важно:** Сеанс Gnome Wayland не запустится, если [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) не установлен .
-
-Начиная с версии 3.14, Gnome поддерживает запуск рабочего стола используя Wayland. Gnome compositor может быть запущен без использования X, и будет выступать в качестве композитного менеджера Wayland.Он достаточно стабильный для повседневного использования, однако есть некоторые особенности, которые пока что не поддерживаются (см. документацию Gnome). Поэтому рабочий стол, приложения, использующие X будет работать с использованием XWayland.
-
-Для запуска сеанса Gnome Wayland нужно использовать gdm login manager, в котором требуется выбрать "Gnome on Wayland".
-
-### Hawaii
-
-[см. страницу Hawaii](/index.php/Hawaii "Hawaii")
-
-### sway
-
-[Sway](https://github.com/SirCmpwn/sway) - это совместимый с i3 фреймовый оконный менеджер для Wayland.
-
-### KDE
-
-Начиная с KDE 4.11 beta поддерживается [KWin как композитный менеджер Wayland](http://blog.martin-graesslin.com/blog/2013/06/starting-a-full-kde-plasma-session-in-wayland/). При этом в настоящее время нет возможности использовать KWin в качестве менеджера сессии. Поддержка клиентов Wayland планируется с версии KDE 5.4.
-
-### Orbment
-
-[orbment](https://github.com/Cloudef/orbment) (ранее loliwm) - фреймовый оконный менеджер для Wayland.
-
-### Velox
-
-[velox](https://github.com/michaelforney/velox) простой фреймовый оконный менеджер, основанный на swc. Базируется на [dwm](/index.php/Dwm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dwm (Русский)") и [xmonad](/index.php/Xmonad_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xmonad (Русский)").
-
-### Orbital
-
-[Orbital](https://github.com/giucam/orbital) это композитный менеджер Wayland и пользовательская оболочка, использующая Qt5 и Weston. Цель проекта заключается в создании простого, но гибкого и привлекательного рабочего стола Wayland рабочий. Это не полноценное окружение рабочего стола, а скорее аналог оконного менеджера для X11, такого как [Awesome](/index.php/Awesome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Awesome (Русский)") или [Fluxbox](/index.php/Fluxbox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fluxbox (Русский)").
-
-### Papyros Shell
-
-[Papyros Shell](https://github.com/papyros/papyros-shell) это оболочка рабочего стола проекта [Papyros](http://papyros.io), построенная с использованием QtQuick и использущая QtCompositor в качестве композитного менеджера Wayland.
-
-### Maynard
-
-[Maynard](https://github.com/raspberrypi/maynard) это GTK клиент рабочего стола для Weston . Оболочка основана на наработках Weston gtk-shell.
-
-### Motorcar
-
-[Motorcar](https://github.com/evil0sheep/motorcar) - композитный менеджер и прототип интерфейса трёхмерного рабочего стола.
+Некоторые из установленных клиентов рабочего стола Wayland могут хранить информацию в файлах `/usr/share/wayland-sessions/*.desktop` для того, чтобы запускать их в Wayland.
 
 ## Решение проблем
 

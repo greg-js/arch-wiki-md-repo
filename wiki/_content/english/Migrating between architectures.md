@@ -114,12 +114,7 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ```
 
-	11\. After rebooting to your new 64-bit system, edit and then move `/etc/makepkg.conf.pacnew` to `/etc/makepkg.conf`, to migrate the cpu architecture. Then rebuild the "foreign" packages, which will include packages from the AUR, as for instance, with:
-
-```
- $ pacman -Qmq | pacaur -S -
-
-```
+	11\. After rebooting to your new 64-bit system, edit and then move `/etc/makepkg.conf.pacnew` to `/etc/makepkg.conf`, to migrate the cpu architecture. Then rebuild the "foreign" packages, which will include packages from the AUR.
 
 	You might first want to remove certain orphaned foreign packages before trying to rebuild them. Run this command to find out what 32-bit binaries you still have and reinstall them:
 

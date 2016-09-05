@@ -22,6 +22,7 @@ This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html
     *   [4.4 Sort partitions](#Sort_partitions)
     *   [4.5 Write changes to disk](#Write_changes_to_disk)
 *   [5 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -272,3 +273,7 @@ To convert GPT to MBR use the `m` option. Note that it is not possible to conver
 ```
 
 If the device will be bootable you will need to set the bootable flag with *fdisk*.
+
+## See also
+
+*   [Manually Partitioning Your Hard Drive with fdisk](http://www.novell.com/coolsolutions/feature/19350.html)

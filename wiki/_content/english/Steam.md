@@ -9,7 +9,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Big Picture Mode](#Big_Picture_Mode)
-    *   [2.2 Steam runtime](#Steam_runtime)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Launching games with custom commands](#Launching_games_with_custom_commands)
     *   [3.2 Skins for Steam](#Skins_for_Steam)
@@ -32,6 +31,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 
 Steam is not supported on this distribution. As such some fixes are needed on the users part to get things functioning properly:
 
+*   Steam may fail to start due to broken/missing libraries. See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
 *   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
 *   If you have a 64-bit system, you **must** install the 32-bit Multilib version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg"), [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) to enable sound, and [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) to enable update at first run.
 *   Several games have dependencies which may be missing from your system. If a game fails to launch (often without error messages) then make sure all of the libraries listed in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") are installed.
@@ -52,10 +52,6 @@ TryExec=/usr/bin/steam
 Icon=
 Type=Application
 ```
-
-### Steam runtime
-
-See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
 
 ## Tips and tricks
 

@@ -61,7 +61,11 @@ See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for perma
 
 Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
 
-**Tip:** To ensure that libinput takes precedence over a previous synaptics configuration, its configuration file has to start with a smaller number, e.g. `/etc/X11/xorg.conf.d/60-libinput.conf` since the default for synaptics is `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Alternatively you could delete any synaptics configuration files you might have in `/etc/X11/xorg.conf.d` altogether and uninstall [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
+**Tip:** If you have libinput and synaptics installed in parallel with default configuration (i.e. no files in `/etc/X11/xorg.conf.d` for both), synaptics will take precedence due to its `70-synaptics.conf` file name. To avoid this, you can symlink the default libinput configuration:
+```
+# ln -s /usr/share/X11/xorg.conf.d/60-libinput.conf /etc/X11/xorg.conf.d/60-libinput.conf
+
+```
 
 One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
 

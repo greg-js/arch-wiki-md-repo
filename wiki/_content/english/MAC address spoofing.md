@@ -225,6 +225,14 @@ macchanger -e $1
 ip link set dev $1 up
 ```
 
+As of NetworkManager 1.2 it supports this randomization natively:
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[connection]
+wifi.mac-address-randomization=2
+```
+
 ## Troubleshooting
 
 ### Connection to DHCPv4 network fails

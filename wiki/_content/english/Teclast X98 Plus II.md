@@ -8,7 +8,7 @@ The tablet can run the x86_64 version of Archlinux, but at the time of writing t
 *   [2 What works out of the box](#What_works_out_of_the_box)
 *   [3 What does not work](#What_does_not_work)
     *   [3.1 Power management](#Power_management)
-    *   [3.2 Touchscreen (needs hacking, works)](#Touchscreen_.28needs_hacking.2C_works.29)
+    *   [3.2 Touchscreen (works)](#Touchscreen_.28works.29)
     *   [3.3 WiFi (needs hacking)](#WiFi_.28needs_hacking.29)
     *   [3.4 Power and volume buttons](#Power_and_volume_buttons)
     *   [3.5 Sound card](#Sound_card)
@@ -30,11 +30,9 @@ A way to boot Linux automatically or from the graphical bootloader is yet to be 
 
 ## What works out of the box
 
-*   Video output (see below)
+*   Video output
 *   Screen backlight slider (the one inside KDE at least)
 *   USB OTG
-
-With kernel 4.6 some crashes in the i915 driver were encountered, upgrading to Linux-git (4.7) solved the issue, this renders unusable any form of graphical installation based on older kernels (an issue for other distributions)
 
 ## What does not work
 
@@ -48,15 +46,17 @@ Probably related bug reports:
 
 [https://bugzilla.redhat.com/show_bug.cgi?id=1337627](https://bugzilla.redhat.com/show_bug.cgi?id=1337627)
 
+[https://bugzilla.kernel.org/show_bug.cgi?id=88471](https://bugzilla.kernel.org/show_bug.cgi?id=88471)
+
+[https://bugzilla.kernel.org/show_bug.cgi?id=150821](https://bugzilla.kernel.org/show_bug.cgi?id=150821)
+
 Some ACPI-related warnings in the [dmesg output](https://gist.githubusercontent.com/Keziolio/bfc782b534daef1f2d9849380179908c/raw/7fc408eeae363b6c2a90fddb195cf0bf779efd2a/dmesg%2520-%2520teclast) may be related
 
-### Touchscreen (needs hacking, works)
+### Touchscreen (works)
 
-The touchscreen does not work out of the box, but it can be made to work with the following driver:
+The touchscreen driver is mainlined in the linux kernel.
 
-[https://github.com/sigboe/gslX68X](https://github.com/sigboe/gslX68X)
-
-For a working touchscreen you need also a firmware, you can get it by executing this command, it just downloads it as a base64 string from a temporarily link:
+You may need a firmware, you can get it by executing this command, it just downloads it as a base64 string from a temporarily link:
 
 ```
 $ wget -qO- [https://gist.githubusercontent.com/Keziolio/caed197e8cff640b00e766aa55c7bea6/raw/104dde63bae574acf8143a7080bd7c95629e02df/firmware.base64](https://gist.githubusercontent.com/Keziolio/caed197e8cff640b00e766aa55c7bea6/raw/104dde63bae574acf8143a7080bd7c95629e02df/firmware.base64) | base64 -d > firm.fw
@@ -69,9 +69,9 @@ If it doesn't, uninstall `xf86-input-libinput` and use `xf86-input-evdev`.
 
 Xorg should work, wayland is more problematic, weston can have proper support and calibration, but other compositors do lack some features.
 
-If you have another tablet with silead based touchscreen, read carefully the driver's readme and follow its links, it explains how to handle drivers and firmwares for various devices.
+If you have another tablet with silead based touchscreen, read carefully the [driver's readme](https://github.com/sigboe/gslX68X) and follow its links, it explains how to handle drivers and firmwares for various devices.
 
-The touchscreen will not be precise out of the box, [touchscreen calibration](/index.php/Touchscreen#Calibration "Touchscreen") is needed to get proper functionality. After the calibration it should work without major issues. Maybe this can be solved at the firmware level with another driver.
+The touchscreen will not be precise out of the box, [touchscreen calibration](/index.php/Touchscreen#Calibration "Touchscreen") is needed to get proper functionality. After the calibration it should work.
 
 ### WiFi (needs hacking)
 

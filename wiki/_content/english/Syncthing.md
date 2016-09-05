@@ -4,8 +4,9 @@
 
 *   [1 Installation](#Installation)
 *   [2 Starting Syncthing](#Starting_Syncthing)
-    *   [2.1 System service](#System_service)
-    *   [2.2 User service](#User_service)
+    *   [2.1 Run binary](#Run_binary)
+    *   [2.2 System service](#System_service)
+    *   [2.3 User service](#User_service)
 *   [3 Accessing the web-interface](#Accessing_the_web-interface)
 *   [4 Configuration](#Configuration)
 *   [5 Use Inotify](#Use_Inotify)
@@ -18,11 +19,15 @@
 
 Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package. This latter includes additional features such as synchronization by inotify, desktop notifications and integration with Nautilus, Nemo and Caja.
 
-After installing, you can either run the *syncthing* binary manually from a terminal, or start it as a [systemd/User](/index.php/Systemd/User "Systemd/User") instance using the provided `syncthing.service`. The systemd services need to be started for a specific user in any case, see [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
+After installing, you can [start Syncthing](#Starting_Syncthing).
 
 ## Starting Syncthing
 
 **Tip:** You can run multiple copies of syncthing, but only one instance per user as syncthing locks the database to it. Check logs for errors related to locked database.
+
+### Run binary
+
+Run the `syncthing` binary manually from a terminal.
 
 ### System service
 
@@ -38,13 +43,15 @@ Enable and start the service. Replace *myuser* with the actual Syncthing user af
 
 ### User service
 
-Running Syncthing as a user service ensures that Syncthing only starts after the user has logged into the sytem (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. It avoids unnecessarily running Syncthing instances:
+Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. It avoids unnecessarily running Syncthing instances. Run this provided `syncthing.service`:
 
 ```
 $ systemctl --user enable syncthing.service
 $ systemctl --user start syncthing.service
 
 ```
+
+The systemd services need to be started for a specific user in any case, see [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
 
 ## Accessing the web-interface
 

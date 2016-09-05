@@ -93,7 +93,7 @@ Download the bootstrap image from a [mirror](https://www.archlinux.org/download)
 
 ```
 # cd /tmp
-# curl -O [https://mirrors.kernel.org/archlinux/iso/2016.08.01/archlinux-bootstrap-2016.08.01-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/2016.08.01/archlinux-bootstrap-2016.08.01-x86_64.tar.gz)
+# curl -O [https://mirrors.kernel.org/archlinux/iso/2016.09.03/archlinux-bootstrap-2016.09.03-x86_64.tar.gz](https://mirrors.kernel.org/archlinux/iso/2016.09.03/archlinux-bootstrap-2016.09.03-x86_64.tar.gz)
 
 ```
 
@@ -102,7 +102,7 @@ You can also download the signature (same URL with `.sig` added) and [verify it 
 Extract the tarball:
 
 ```
-# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2016.08.01-x86_64.tar.gz
+# tar xzf <path-to-bootstrap-image>/archlinux-bootstrap-2016.09.03-x86_64.tar.gz
 
 ```
 

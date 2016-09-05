@@ -307,9 +307,9 @@ In the meantime, you can try updating the package yourself by editing the PKGBUI
 
 You are probably missing something trivial.
 
-1.  Run `pacman -Syyu` before compiling anything with `makepkg` as the problem may be that your system is not up-to-date.
-2.  Ensure you have both "base" and "base-devel" groups installed.
-3.  Try using the "`-s`" option with `makepkg` to check and install all the dependencies needed before starting the build process.
+1.  [Upgrade the system](/index.php/Pacman#Upgrading_packages "Pacman") before compiling anything with `makepkg` as the problem may be that your system is not up-to-date.
+2.  Ensure you have both [base](https://www.archlinux.org/groups/x86_64/base/) and [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) groups installed.
+3.  Try using the `-s` option with `makepkg` to check and install all the dependencies needed before starting the build process.
 
 Be sure to first read the PKGBUILD and the comments on the AUR page of the package in question. The reason might not be trivial after all. Custom CFLAGS, LDFLAGS and MAKEFLAGS can cause failures. It is also possible that the PKGBUILD is broken for everyone. If you cannot figure it out on your own, just report it to the maintainer e.g. by posting the errors you are getting in the comments on the AUR page.
 

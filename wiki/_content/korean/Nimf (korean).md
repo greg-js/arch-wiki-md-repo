@@ -17,6 +17,8 @@
 *   nimf-libhangul, [libhangul](https://www.archlinux.org/packages/?name=libhangul) 기반의 한국어 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
 *   nimf-sunpinyin, [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin) 기반의 중국어 병음 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
 *   nimf-anthy, [anthy](https://www.archlinux.org/packages/?name=anthy) 기반의 일본어 입력 엔진(개발중) ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
+*   nimf-chewing, [libchewing](https://www.archlinux.org/packages/?name=libchewing) 기반의 중국어 주음 입력 엔진(개발중) ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
+*   nimf-rime, [librime](https://www.archlinux.org/packages/?name=librime) 기반의 중국어 입력 엔진(개발중) ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
 
 ### 초기 설정
 

@@ -73,7 +73,7 @@ See `man systemd-resolved` and `man resolved.conf` and [Systemd README](https://
 
 ### Configuration examples
 
-All configurations in this section are stored as `foo.network` in `/etc/systemd/network`. For a full listing of options and processing order, see [#Configuration files](#Configuration_files) and the `systemd.network` man page.
+All configurations in this section are stored as `foo.network` in `/etc/systemd/network`. For a full listing of options and processing order, see [#Configuration files](#Configuration_files) and [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html).
 
 Systemd/udev automatically assigns predictable, stable network interface names for all local Ethernet, WLAN, and WWAN interfaces. Use `networkctl list` to list the devices on the system.
 

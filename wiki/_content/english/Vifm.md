@@ -17,6 +17,7 @@ If you use vi, Vifm gives you complete keyboard control over your files without 
         *   [3.4.1 Creating symbolic links](#Creating_symbolic_links)
         *   [3.4.2 Torrent creation](#Torrent_creation)
     *   [3.5 Marks](#Marks)
+    *   [3.6 previews](#previews)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Useful key mappings](#Useful_key_mappings)
     *   [4.2 Non-vim Users](#Non-vim_Users)
@@ -24,12 +25,6 @@ If you use vi, Vifm gives you complete keyboard control over your files without 
 ## Installation
 
 [Install](/index.php/Install "Install") [vifm](https://www.archlinux.org/packages/?name=vifm) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-Optional, for file previews:
-
-*   [tree](https://www.archlinux.org/packages/?name=tree) for directory previews
-*   [mp3info](https://www.archlinux.org/packages/?name=mp3info) for viewing information about mp3 files
-*   [poppler](https://www.archlinux.org/packages/?name=poppler) for pdf previews
 
 ## Help file
 
@@ -185,6 +180,53 @@ Go to a file set for mark:
 ```
 
 Vifm will remember the marks between the sessions.
+
+### previews
+
+Provided [Poppler](https://www.archlinux.org/packages/?name=Poppler) is installed, putting
+
+```
+fileviewer *.pdf
+  \ pdftotext %c -
+
+```
+
+into vifmrc enables pdf-previewing using pdftotext. The %c is a vifm macro for the current file under the cursor. The preview is activated with
+
+```
+:view
+
+```
+
+Neat image previewing can be achieved using img2txt from [libcaca](https://www.archlinux.org/packages/?name=libcaca)
+
+```
+fileviewer *.png,*.jpeg,*.jpg
+ \ img2txt %c 
+
+```
+
+Previewing the contents of tar-archives:
+
+```
+fileviewer *.tar,*.tar.gz
+ \ tar -tvf %c
+
+```
+
+For previewing html documents suitable programs are text based browsers including [lynx](https://www.archlinux.org/packages/?name=lynx), [links](https://www.archlinux.org/packages/?name=links) or [w3m](https://www.archlinux.org/packages/?name=w3m)
+
+```
+fileviewer *.html
+ \ w3m %c
+
+```
+
+Further useful programs for previews include
+
+*   [tree](https://www.archlinux.org/packages/?name=tree) for directory previews
+*   [mp3info](https://www.archlinux.org/packages/?name=mp3info) for viewing information about mp3 files
+*   [libmediainfo](https://www.archlinux.org/packages/?name=libmediainfo) for the mediainfo program (audio and video information)
 
 ## Tips and tricks
 

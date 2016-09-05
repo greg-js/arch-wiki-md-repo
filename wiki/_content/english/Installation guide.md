@@ -5,8 +5,8 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 ## Contents
 
 *   [1 Pre-installation](#Pre-installation)
-    *   [1.1 Verify the boot mode](#Verify_the_boot_mode)
-    *   [1.2 Set the keyboard layout](#Set_the_keyboard_layout)
+    *   [1.1 Set the keyboard layout](#Set_the_keyboard_layout)
+    *   [1.2 Verify the boot mode](#Verify_the_boot_mode)
     *   [1.3 Connect to the Internet](#Connect_to_the_Internet)
     *   [1.4 Update the system clock](#Update_the_system_clock)
     *   [1.5 Partition the disks](#Partition_the_disks)
@@ -36,17 +36,6 @@ Download and boot the installation medium as explained in [Category:Getting and 
 
 To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
-### Verify the boot mode
-
-If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archiso](/index.php/Archiso "Archiso") will launch Arch Linux accordingly via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). To verify this, list the [efivars](/index.php/Efivars "Efivars") directory:
-
-```
-# ls /sys/firmware/efi/efivars
-
-```
-
-If the directory does not exist, the system is booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") (or CSM) mode.
-
 ### Set the keyboard layout
 
 The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available choices can be listed with `ls /usr/share/kbd/keymaps/**/*.map.gz`.
@@ -58,13 +47,24 @@ The layout can be changed with [loadkeys(1)](http://man7.org/linux/man-pages/man
 
 ```
 
-[Console fonts](/index.php/Console_fonts "Console fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+[Console fonts](/index.php/Fonts#Console_fonts "Fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
+
+### Verify the boot mode
+
+If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archiso](/index.php/Archiso "Archiso") will launch Arch Linux accordingly via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). To verify this, list the [efivars](/index.php/UEFI#UEFI_Variables "UEFI") directory:
+
+```
+# ls /sys/firmware/efi/efivars
+
+```
+
+If the directory does not exist, the system is booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") (or CSM) mode.
 
 ### Connect to the Internet
 
-Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping](/index.php/Ping "Ping").
+Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping](/index.php/Network_configuration#Check_the_connection "Network configuration"). For [wireless](/index.php/Wireless "Wireless") connection use the *wifi-menu* tool.
 
-If a different [network configuration](/index.php/Network_configuration "Network configuration") tool is needed, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are available. See [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) and [netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt) for examples. When using either service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first.
+If a different [network configuration](/index.php/Network_configuration "Network configuration") tool is needed, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are available. When using either service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first.
 
 ### Update the system clock
 
@@ -84,9 +84,9 @@ To modify and print [partition tables](/index.php/Partition_table "Partition tab
 *   [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or
 *   [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
 
-When displaying partitions with [lsblk](/index.php/Lsblk "Lsblk") or `fdisk -l`, note that not all devices are viable mediums for installation; results ending in `rom`, `loop` or `airoot` may be ignored.
+When displaying partitions with `fdisk -l` or [lsblk](/index.php/Core_utilities#lsblk "Core utilities"), note that not all devices are viable mediums for installation; results ending in `rom`, `loop` or `airoot` may be ignored.
 
-At least one partition must be available for the `/` (*root*) directory. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+At least one partition must be available for the root directory `/`. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
@@ -103,13 +103,13 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 ```
 
-After that, create directories for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* device with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html), if you want them to be detected later by *genfstab*.
+After that, [create directories](/index.php/Core_utilities#mkdir "Core utilities") for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* device with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html), if you want them to be detected later by *genfstab*.
 
 ## Installation
 
 ### Select the mirrors
 
-Packages to be installed must be downloaded from [mirror](/index.php/Mirror "Mirror") servers, which are defined in `/etc/pacman.d/mirrorlist`. On the live system, all mirrors are enabled, and sorted by their synchronization status and speed at the time the installation image was created.
+Packages to be installed must be downloaded from [mirror servers](/index.php/Mirrors "Mirrors"), which are defined in `/etc/pacman.d/mirrorlist`. On the live system, all mirrors are enabled, and sorted by their synchronization status and speed at the time the installation image was created.
 
 The higher a mirror is placed in the list, the more priority it is given when downloading a package. You may want to edit the file accordingly, and move the geographically closest mirrors to the top of the list, although other criteria should be taken into account.
 
@@ -152,14 +152,14 @@ Check the resulting file in `/mnt/etc/fstab` afterwards, and edit it in case of 
 
 ### Time zone
 
-Set the [time zone](/index.php/Time_zone "Time zone"):
+Set the [time zone](/index.php/Time#Time_zone "Time"):
 
 ```
-# ln -s /usr/share/zoneinfo/*zone*/*subzone* /etc/localtime
+# ln -s /usr/share/zoneinfo/*Region*/*City* /etc/localtime
 
 ```
 
-Run [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) to generate `/etc/adjtime`. If the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be [configured accordingly](/index.php/Time_standard "Time standard").
+Run [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) to generate `/etc/adjtime`. If the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be [configured accordingly](/index.php/Time#Time_standard "Time").
 
 ```
 # hwclock --systohc --*utc*
@@ -182,11 +182,16 @@ Set the `LANG` [variable](/index.php/Variable "Variable") in [locale.conf(5)](ht
 
 ```
 
-If required, set the [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") in [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).
+If required, set the [console keymap](/index.php/Keyboard_configuration_in_console#Persistent_configuration "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") in [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
+
+```
+# echo KEYMAP=*de-latin1* > /etc/vconsole.conf
+
+```
 
 ### Hostname
 
-Create an entry for the [hostname](/index.php/Hostname "Hostname") in `/etc/hostname`:
+Create an entry for the [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") in `/etc/hostname`:
 
 ```
 # echo *myhostname* > /etc/hostname

@@ -242,7 +242,9 @@ At this point it would be good to reboot the machine to ensure that the ZFS pool
 
 ### GRUB-compatible pool creation
 
-By default, *zpool* will enable all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable read-only, or non-read-only features supported by GRUB (`lz4_compress` as of version 2.02.beta2). Otherwise GRUB will not be able to read the pool.
+By default, *zpool* will enable all features on a pool. If `/boot` resides on ZFS and when using [GRUB](/index.php/GRUB "GRUB"), you must only enable read-only, or non-read-only features supported by GRUB, otherwise GRUB will not be able to read the pool. As of GRUB 2.02.beta3, GRUB supports all features in ZFS-on-Linux 0.6.5.7\. However, the Git master branch of ZoL contains one extra feature, `large_dnodes` that is not yet supported by GRUB.
+
+This example line is only necessary if you are using the Git branch of ZoL:
 
 ```
  # zpool create -f -d \
@@ -251,24 +253,14 @@ By default, *zpool* will enable all features on a pool. If `/boot` resides on ZF
                 -o feature@lz4_compress=enabled \
                 -o feature@spacemap_histogram=enabled \
                 -o feature@enabled_txg=enabled \
+                -o feature@hole_birth=enabled \
+                -o feature@bookmarks=enabled \
+                -o feature@filesystem_limits \
+                -o feature@embedded_data=enabled \
+                -o feature@large_blocks=enabled \
                 <pool_name> <vdevs>
 
 ```
-
-To create a mirrored vdev for GRUB you would use a command like this:
-
-```
- # zpool create <pool_name> mirror -f -d \
-               -o feature@async_destroy=enabled \
-               -o feature@empty_bpobj=enabled \
-               -o feature@lz4_compress=enabled \
-               -o feature@spacemap_histogram=enabled \
-               -o feature@enabled_txg=enabled \
-               /dev/disk/by-id/ata-disk-part2 /dev/disk/by-id/ata-disk-part2
-
-```
-
-**Tip:** As of September 2015, GRUB's development tree supports `extensible_dataset`, `hole_birth`, `embedded_data`, and `large_blocks`, making it viable to use a pool with all features enabled, either at create time or by using `zpool upgrade <pool_name>`, if [grub-git](https://aur.archlinux.org/packages/grub-git/) is installed.
 
 ### Importing a pool created by id
 

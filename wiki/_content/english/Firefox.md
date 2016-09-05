@@ -4,14 +4,14 @@
 
 *   [1 Installing](#Installing)
 *   [2 Add-ons](#Add-ons)
+    *   [2.1 Adding search engines](#Adding_search_engines)
+        *   [2.1.1 arch-firefox-search](#arch-firefox-search)
+    *   [2.2 GNOME Keyring integration](#GNOME_Keyring_integration)
 *   [3 Configuration](#Configuration)
+    *   [3.1 Multimedia playback](#Multimedia_playback)
+    *   [3.2 Dictionaries for spell checking](#Dictionaries_for_spell_checking)
+    *   [3.3 KDE integration](#KDE_integration)
 *   [4 Plugins](#Plugins)
-    *   [4.1 GNOME Keyring integration](#GNOME_Keyring_integration)
-    *   [4.2 KDE integration](#KDE_integration)
-    *   [4.3 Dictionaries for spell checking](#Dictionaries_for_spell_checking)
-    *   [4.4 Adding search engines](#Adding_search_engines)
-        *   [4.4.1 arch-firefox-search](#arch-firefox-search)
-    *   [4.5 Multimedia playback](#Multimedia_playback)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Screenshot of webpage](#Screenshot_of_webpage)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -75,6 +75,22 @@ Firefox is well known for its large library of add-ons which can be used to add 
 
 For a list of popular add-ons, see [Mozilla's add-on list sorted by popularity](https://addons.mozilla.org/firefox/extensions/?sort=popular). See also [List of Firefox extensions](https://en.wikipedia.org/wiki/List_of_Firefox_extensions "wikipedia:List of Firefox extensions") on Wikipedia.
 
+### Adding search engines
+
+Search engines can be added to Firefox through normal add-ons, see [this page](https://addons.mozilla.org/firefox/search-tools/) for a list of available search engines.
+
+A very extensive list of search engines can be found [here](http://mycroft.mozdev.org/).
+
+Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting *Add to Search Bar...*
+
+#### arch-firefox-search
+
+Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
+
+### GNOME Keyring integration
+
+Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
+
 ## Configuration
 
 Firefox exposes a number of configuration options. To examine them, enter:
@@ -121,34 +137,13 @@ pref("general.config.filename", "mozilla.cfg");
 
 Please note that the first line must contain exactly `//`. The syntax of the file is similar to that of `user.js`.
 
-## Plugins
+### Multimedia playback
 
-See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
+Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package needs to be installed.
 
-To find out what plugins are installed/enabled, enter:
+Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](http://www.quirksmode.org/html5/tests/video.html) or [audio-test page](http://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
-```
-about:plugins
-
-```
-
-in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and select the *Plugins* tab.
-
-### GNOME Keyring integration
-
-Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
-
-### KDE integration
-
-**Warning:** Since GTK3 was updated to 3.20.x, there are several broken themes. Including **Breeze**, the recommended theme for integration between KDE and GTK styles. Some of the issues are invisible scroll bars, no text highlight on selection, invisible checkboxes, among others. As a workaround while the themes are upgraded you can do the following after installing [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config), go to `System Settings` -> `Application Style` -> `GNOME Application Style (GTK)` and choose in the **Select a GTK3 Theme** dropdown choose the **Default** theme, also make sure **Show icons in GTK buttons** and **Show icons in GTK** are checked. For further information on the compatibility issue above visit the [GTK3 3.20 upgrade thread](https://bbs.archlinux.org/viewtopic.php?pid=1619076) in the Arch Forums.
-
-*   To bring the KDE look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
-
-*   To use KDE's KPart technology with Firefox, by embedding different KDE file viewers into the browser, you can install [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
-
-*   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
-
-*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde-wallet-password-integratio/), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
+See also [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration.
 
 ### Dictionaries for spell checking
 
@@ -162,25 +157,32 @@ By default, Firefox will try to symlink all your hunspell dictionaries in `/usr/
 
 When your default language choice does not stick, see [#Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language).
 
-### Adding search engines
+### KDE integration
 
-Search engines can be added to Firefox through normal add-ons, see [this page](https://addons.mozilla.org/firefox/search-tools/) for a list of available search engines.
+**Warning:** Since GTK3 was updated to 3.20.x, there are several broken themes. Including **Breeze**, the recommended theme for integration between KDE and GTK styles. Some of the issues are invisible scroll bars, no text highlight on selection, invisible checkboxes, among others. As a workaround while the themes are upgraded you can do the following after installing [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config), go to `System Settings` -> `Application Style` -> `GNOME Application Style (GTK)` and choose in the **Select a GTK3 Theme** dropdown choose the **Default** theme, also make sure **Show icons in GTK buttons** and **Show icons in GTK** are checked. For further information on the compatibility issue above visit the [GTK3 3.20 upgrade thread](https://bbs.archlinux.org/viewtopic.php?pid=1619076) in the Arch Forums.
 
-A very extensive list of search engines can be found [here](http://mycroft.mozdev.org/).
+*   To bring the KDE look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 
-Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting *Add to Search Bar...*
+*   To use KDE's KPart technology with Firefox, by embedding different KDE file viewers into the browser, you can install [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
 
-#### arch-firefox-search
+*   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
-Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
+*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde-wallet-password-integratio/), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
 
-### Multimedia playback
+## Plugins
 
-Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package needs to be installed.
+**Note:** Firefox will remove support for plugins (except for Flash) in Firefox 52 (March 2017).[[1]](https://blog.mozilla.org/futurereleases/2015/10/08/npapi-plugins-in-firefox/)[[2]](https://blog.mozilla.org/futurereleases/2016/07/20/reducing-adobe-flash-usage-in-firefox/)
 
-Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](http://www.quirksmode.org/html5/tests/video.html) or [audio-test page](http://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
+See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 
-See also [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration.
+To find out what plugins are installed/enabled, enter:
+
+```
+about:plugins
+
+```
+
+in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and select the *Plugins* tab.
 
 ## Tips and tricks
 
@@ -226,7 +228,7 @@ See [Default applications](/index.php/Default_applications "Default applications
 
 For non-[GNOME](/index.php/GNOME "GNOME") users, Firefox may not associate file types properly or at all (in the "Open With" part of the download dialog). Installing [libgnome](https://www.archlinux.org/packages/?name=libgnome) amends the problem.
 
-See also [[2]](http://alien.slackbook.org/blog/make-firefox-understand-downloaded-files/).
+See also [[4]](http://alien.slackbook.org/blog/make-firefox-understand-downloaded-files/).
 
 ### Firefox keeps creating ~/Desktop even when this is not desired
 
@@ -340,7 +342,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Javascript context menu does not appear on some sites
 
@@ -356,13 +358,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[4]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[5]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[6]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[6]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[7]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 
@@ -383,7 +385,7 @@ If you are using the Xorg Intel or Nouveau drivers and experience tearing video 
 
 ### Firefox looks bad with GTK+ >=3.20
 
-Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-gtk2](https://aur.archlinux.org/packages/firefox-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") for pre-built GTK2 Firefox packages.
+Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-gtk2](https://aur.archlinux.org/packages/firefox-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") or [archlinuxcn's](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") (x86_64 only) for pre-built GTK2 Firefox packages.
 
 ## See also
 

@@ -63,6 +63,8 @@ $ pacmd "set-default-source alsa_output.pci-0000_04_01.0.analog-stereo.monitor"
 
 ```
 
+**Tip:** The default source can be referred as `@DEFAULT_SOURCE@` in commands, for example: `$ pactl set-source-mute @DEFAULT_SOURCE@ toggle`.
+
 ## Set the default output source
 
 Determine the name of the new source, which has a * in front of index:
@@ -98,6 +100,8 @@ When done then you can logout/login or restart PulseAudio manually for these cha
     ```
 
 *   To avoid unnecessary overriding of 100% normal volume it is better to use alternative utilities for managing of sound. See the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=124513) for more information.
+
+**Tip:** The default sink can be referred as `@DEFAULT_SINK@` in commands, for example: `$ pactl set-sink-volume @DEFAULT_SINK@ +5%`.
 
 ## Simultaneous HDMI and analog output
 

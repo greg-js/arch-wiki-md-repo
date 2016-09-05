@@ -6,8 +6,8 @@
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | Fingerprint Sensor | No |
-| Mobile Broadband | Yes |
-| Bluetooth | Yes |
+| [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes |
+| [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T460s laptop.
 

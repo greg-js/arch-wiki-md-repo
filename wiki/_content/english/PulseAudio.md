@@ -522,6 +522,8 @@ pactl set-source-mute 1 toggle
 
 ```
 
+**Tip:** To have keyboard shortcuts operate always on the default sink, specify `@DEFAULT_SINK@` as the sink number, for example `pactl set-sink-mute @DEFAULT_SINK@ toggle`.
+
 ### Play sound from a non-interactive shell (systemd service, cron)
 
 Set `XDG_RUNTIME_DIR` before the command (replace `*user_id*` with the ID of the user running PulseAudio):

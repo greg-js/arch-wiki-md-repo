@@ -10,7 +10,6 @@ Web is the default web browser for [GNOME](https://live.gnome.org/). Web provide
         *   [2.1.1 Managing Subscriptions](#Managing_Subscriptions)
     *   [2.2 Web Apps](#Web_Apps)
 *   [3 Plugins](#Plugins)
-    *   [3.1 Flash](#Flash)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Pixelated fonts](#Pixelated_fonts)
     *   [4.2 Font hinting](#Font_hinting)
@@ -58,10 +57,6 @@ Web can add *web app* launchers to GNOME Shell. To manage and remove them, navig
 See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 
 To find out what plugins are installed/enabled, enter `about:plugins` in the address bar.
-
-### Flash
-
-The [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) package provides an experimental adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with Web, see [Browser plugins#Flash Player](/index.php/Browser_plugins#Flash_Player "Browser plugins") for details.
 
 ## Troubleshooting
 

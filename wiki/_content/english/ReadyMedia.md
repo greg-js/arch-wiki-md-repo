@@ -172,7 +172,7 @@ This is very useful if you want to automate the server. See [udev#Automounting u
 
 Media server based on MiniDLNA could face the drive re-scan issue. Ex.: external HDD you have plugged will be scanned each time again and again. This happens due to MiniDLNA removes DB records for unplugged drive. If your drive plugged all the time it is not a problem, but if you have "pluggable" media library on large external drives this could take a big while till you start watching your video.
 
-As solution for rescan issue could be used minidlna [fork](https://code.google.com/p/minidlna-fastscan). It creates metadata file next to each video file. That significantly increase scan time for large media.
+One can resolve the rescan issue by using [this minidlna fork](https://code.google.com/p/minidlna-fastscan). It creates a metadata file next to each video file. This can significantly decrease the scan time for large media.
 
 ## Troubleshooting
 

@@ -12,9 +12,8 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
         *   [1.1.1 Installation](#Installation)
         *   [1.1.2 Upgrade](#Upgrade)
         *   [1.1.3 Configuration](#Configuration)
-        *   [1.1.4 Disable the "Press ESC to exit full screen mode" message](#Disable_the_.22Press_ESC_to_exit_full_screen_mode.22_message)
-        *   [1.1.5 Multiple monitor full-screen fix](#Multiple_monitor_full-screen_fix)
-        *   [1.1.6 Playing DRM-protected content](#Playing_DRM-protected_content)
+        *   [1.1.4 Multiple monitor full-screen fix](#Multiple_monitor_full-screen_fix)
+        *   [1.1.5 Playing DRM-protected content](#Playing_DRM-protected_content)
     *   [1.2 Shumway](#Shumway)
     *   [1.3 Gnash](#Gnash)
     *   [1.4 Lightspark](#Lightspark)
@@ -57,12 +56,12 @@ The package you will need to install depends on the browser you use.
 
 *   The NPAPI version can be [installed](/index.php/Pacman "Pacman") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package. This plugin was [discontinued by Adobe](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html) and is stuck at version 11.2; although, Adobe will provide security updates for 5 years after its release (i.e. until March 2017[[1]](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)[[2]](http://helpx.adobe.com/flash-player/release-note/release-notes-developer-flash-player.html)).
 
-*   The PPAPI version is shipped with Google Chrome and is also available on [https://get.adobe.com/flashplayer/?no_redirect](https://get.adobe.com/flashplayer/?no_redirect) and on [https://get.adobe.com/flashplayer/otherversions/](https://get.adobe.com/flashplayer/otherversions/). If you are using Chromium or any other browser using the PPAPI interface such as [Opera](/index.php/Opera "Opera"), see [Chromium#Flash Player plugin](/index.php/Chromium#Flash_Player_plugin "Chromium") for more information.
+*   The PPAPI version can be [installed](/index.php/Install "Install") with the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package. Note that it is already included with Google Chrome.
 
 **Note:**
 
 *   Some Flash apps may require the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package in order to properly render text.
-*   The [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) package provides an *experimental* adapter to use [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) with NPAPI based browsers like Firefox. It can be configured (e.g. for enabling HW-acceleration) by copying `/usr/share/freshplayerplugin/freshwrapper.conf.example` to `~/.config/freshwrapper.conf`.
+*   The [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) package provides an *experimental* adapter to use [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) with NPAPI based browsers like Firefox. It can be configured (e.g. for enabling HW-acceleration) by copying `/usr/share/freshplayerplugin/freshwrapper.conf.example` to `~/.config/freshwrapper.conf`.
 
 #### Upgrade
 
@@ -87,28 +86,6 @@ It might also be required to add/uncomment the following line:
 OverrideGPUValidation = 1
 
 ```
-
-#### Disable the "Press ESC to exit full screen mode" message
-
-There is no solution other than patching the Flash plugin. Please note only the NPAPI plugin is supported. Install [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/) which provides wine as a required dependency since the patch has been initially made for Windows.
-
-After the package has been installed, backup `libflashplayer.so`:
-
-```
-# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup 
-
-```
-
-Then, patch `libflashplayer.so`:
-
-```
-# flash-fullscreen-patcher.sh -f /usr/lib/mozilla/plugins/libflashplayer.so
-
-```
-
-If you use Firefox and want to remove the message *Press ESC to exit full screen mode in HTML5 videos* too, go to about:config and set `full-screen-api.warning.timeout` to `0`.
-
-Alternatively, install Firefox extension [Disable HTML5 Fullscreen Alert](https://addons.mozilla.org/firefox/addon/disable-html5-fullscreen-alert/), which will suppress full screen warnings for HTML5 content.
 
 #### Multiple monitor full-screen fix
 

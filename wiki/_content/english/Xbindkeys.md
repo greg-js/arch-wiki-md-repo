@@ -1,10 +1,10 @@
-Xbindkeys is a program that allows to bind commands to certain keys or key combinations on the keyboard. Xbindkeys works with multimedia keys and is window manager / DE independent, so if you switch much, xbindkeys is very handy.
+Xbindkeys is a program that allows to bind commands to certain keys or key combinations on the keyboard. Xbindkeys works with multimedia keys and is independent of the window manager and desktop environment.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Xbindkeysrc](#Xbindkeysrc)
+    *   [2.1 Volume control](#Volume_control)
     *   [2.2 GUI method](#GUI_method)
 *   [3 Identifying keycodes](#Identifying_keycodes)
 *   [4 Making changes permanent](#Making_changes_permanent)
@@ -13,9 +13,7 @@ Xbindkeys is a program that allows to bind commands to certain keys or key combi
 
 ## Installation
 
-[Install](/index.php/Install "Install") Xbindkeys with the package [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), available in the [official repositories](/index.php/Official_repositories "Official repositories").
-
-For those who prefer a GUI, there is the [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) package in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) package.
 
 ## Configuration
 
@@ -35,9 +33,11 @@ $ xbindkeys -d > ~/.xbindkeysrc
 
 Now you can either edit `~/.xbindkeysrc` to set keybindings, or you can do that with the GUI.
 
-### Xbindkeysrc
+**Tip:** After you made a change, execute `xbindkeys -p` to reload the configuration file and apply the changes.
 
-The first line represents a command. The second contains the state (0x8) and keycode (32) as reported by `xev`. The third line contains the keysyms associated with the given keycodes. To use this output, copy either one of the last two lines to `~/.xbindkeysrc` and replace "(Scheme function)" with the command you wish to perform. Here is an example configuration file that binds Fn key combos on a laptop to [pamixer](https://www.archlinux.org/packages/?name=pamixer) commands that adjust sound volume. Note that pound (#) symbols can be used to create comments.
+### Volume control
+
+Here is an example configuration file that binds Fn key combos on a laptop to [pamixer](https://www.archlinux.org/packages/?name=pamixer) commands that adjust sound volume. Note that pound (#) symbols can be used to create comments.
 
 ```
 # Increase volume
@@ -49,50 +49,15 @@ The first line represents a command. The second contains the state (0x8) and key
 ```
 # Decrease volume
 "pamixer --decrease 5"
-   m:0x0 + c:122
-
-```
-
-or
-
-```
-"pamixer --decrease 5"
    XF86AudioLowerVolume
 
 ```
 
-Alternatively, instead of [pamixer](https://www.archlinux.org/packages/?name=pamixer) it is also possible to use *pactl* to control a running [PulseAudio](/index.php/PulseAudio "PulseAudio") and to change volume level (replace above *pamixer* command with the following):
-
-```
-pactl set-sink-volume 0 +2%
-pactl set-sink-volume 0 -2%
-pactl set-sink-mute 0 toggle
-
-```
-
-Instead of setting forcefully sink number it is possible to use `@DEFAULT_SINK@`:
-
-```
-pactl set-sink-volume @DEFAULT_SINK@ +2%
-pactl set-sink-volume @DEFAULT_SINK@ -2%
-pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-```
-
-Another possibility is to use amixer (part of the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package)
-
-```
-amixer -c 0 sset Master 3+
-amixer -c 0 sset Master 3-
-amixer -c 0 sset Master toggle
-
-```
-
-**Tip:** After you made a change, execute `xbindkeys -p` to reload the configuration file and apply the changes.
+For alternative commands to control volume, see [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio") or [ALSA#Keyboard volume control](/index.php/ALSA#Keyboard_volume_control "ALSA").
 
 ### GUI method
 
-If you installed the [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) package, just run:
+For graphical configuration [install](/index.php/Install "Install") the [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) package and run:
 
 ```
 $ xbindkeys_config
@@ -116,6 +81,8 @@ A blank window will pop up. Press the key(s) to which you wish to assign a comma
     Alt + o
 
 ```
+
+The first line represents a command. The second contains the state (0x8) and keycode (32) as reported by `xev`. The third line contains the keysyms associated with the given keycodes. To use this output, copy either one of the last two lines to `~/.xbindkeysrc` and replace "(Scheme function)" with the command you wish to perform.
 
 **Tip:** Use `xbindkeys -mk` to keep the key prompt open for multiple keypresses. Press `q` to quit.
 

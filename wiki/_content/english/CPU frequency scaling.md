@@ -106,21 +106,22 @@ To set the CPU to run at a specified frequency:
 
 ## Scaling governors
 
-**Note:** The modern pstate driver only supports the performance and powersave governors and the performance governor [should give better power saving functionality than the old ondemand governor](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
-
 Governors (see table below) are power schemes for the CPU. Only one may be active at a time. For details, see the [kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) in the kernel source.
 
 | Governor | Description |
-| ondemand | Dynamically switch between CPU(s) available if at 95% cpu load |
-| performance | Run the cpu at max frequency |
-| conservative | Dynamically switch between CPU(s) available if at 75% load |
-| powersave | Run the cpu at the minimum frequency |
-| userspace | Run the cpu at user specified frequencies |
+| performance | Run the CPU at max frequency. |
+| powersave | Run the CPU at the minimum frequency. |
+| userspace | Run the CPU at user specified frequencies. |
+| ondemand | Scales the frequency dynamically according to current load. Jumps to the highest frequency and then possibly back off as the idle time increases. |
+| conservative | Scales the frequency dynamically according to current load. Scales the frequency more gradually than ondemand. |
+| schedutil | Scheduler-driven CPU frequency selection [[1]](http://lwn.net/Articles/682391/), [[2]](https://lkml.org/lkml/2016/3/17/420). |
 
 Depending on the scaling driver, one of these governors will be loaded by default:
 
 *   `ondemand` for AMD and older Intel CPU.
-*   `powersave` for Intel Sandy Bridge and newer CPU.
+*   `powersave` for Intel CPUs using the `intel_pstate` driver (Sandy Bridge and newer).
+
+**Note:** The `intel_pstate` driver supports only the performance and powersave governors, but they both provide dynamic scaling. The performance governor [should give better power saving functionality than the old ondemand governor](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
 
 To activate a particular governor, run:
 
@@ -231,7 +232,7 @@ ac_adapter)
 
 ## Privilege granting under GNOME
 
-**Note:** systemd introduced logind which handles consolekit and policykit actions. The following code below does not work. With logind, simply edit in the file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` the <defaults> elements according to your needs and the polkit manual [[1]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
+**Note:** systemd introduced logind which handles consolekit and policykit actions. The following code below does not work. With logind, simply edit in the file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` the <defaults> elements according to your needs and the polkit manual [[3]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
 
 [GNOME](/index.php/GNOME "GNOME") has a nice applet to change the governor on the fly. To use it without the need to enter the root password, simply create following file:
 

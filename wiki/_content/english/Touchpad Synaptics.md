@@ -443,6 +443,13 @@ SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="add", ENV{DISPLAY}=":0", ENV
 SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/*username*/.Xauthority", RUN+="/usr/bin/synclient TouchpadOff=0"
 ```
 
+If the touchpad is always deactivated at startup, even when no mouse is plugged in, try adding the following criteria between the KERNEL and ACTION parameters above:
+
+```
+ATTRS{name}!="*TouchPad", ATTRS{name}!="*Stick",
+
+```
+
 #### GDM
 
 GDM usually stores the Xauthority files in `/var/run/gdm` in a randomly-named directory. You should find your actual path to the Xauthority file which can be done using `ps ax`. For some reason multiple authority files may appear for a user, so a rule like will be necessary:

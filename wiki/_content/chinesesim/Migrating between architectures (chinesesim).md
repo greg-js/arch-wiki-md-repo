@@ -40,7 +40,7 @@
 为了运行64位软件，你必须有一个64位兼容的cpu。大多数现代cpu可以运行64位软件。你可以通过以下命令检查你的cpu：
 
 ```
-grep --color '\<lm\>' /proc/cpuinfo
+ grep --color -w lm /proc/cpuinfo
 
 ```
 

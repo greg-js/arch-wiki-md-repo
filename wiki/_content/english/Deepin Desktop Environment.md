@@ -8,6 +8,7 @@
     *   [2.2 Using xinitrc](#Using_xinitrc)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Does not start](#Does_not_start)
+    *   [3.2 No background after resuming from standby](#No_background_after_resuming_from_standby)
 *   [4 Bug Reporting](#Bug_Reporting)
 
 ## Installation
@@ -56,6 +57,49 @@ Execute `startx` or `xinit` to start DDE.
 ### Does not start
 
 Type `startdde` in virtual console and see the output. If you see error with file mentioned `libgo.so.9` - ensure you have installed **the latest** [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) package.
+
+### No background after resuming from standby
+
+Because of the way the NVIDIA driver stores its FBOs [[1]](https://devtalk.nvidia.com/default/topic/787748/linux/-nvidia340xx-archlinux64-gnome3-14-the-background-of-desktop-and-lockscreen-mess-after-resume-from-/post/4367179/#4367179), it happens that after resuming from standby the background suddenly disappears, leaving only a white screen with possibly some color noise on it. The bug appears to be fixed in GNOME upstream, but the Deepin desktop environment still has it.
+
+A possible workaround would be restarting the window manager every time the computer resumes from suspension. A way to do that would be creating the following systemd service
+
+ `/etc/systemd/system/resume@.service` 
+```
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=%I
+Type=simple
+ExecStart=/usr/bin/deepin-wm-restart.sh
+
+[Install]
+WantedBy=suspend.target
+
+```
+
+That executes the following script
+
+ `/usr/bin/deepin-wm-restart.sh` 
+```
+#!/bin/bash
+export DISPLAY=:0
+deepin-wm --replace
+
+```
+
+Once those two files are created in the correct directories, in order to enable the script it's sufficient to run these commands:
+
+```
+# chmod +x /usr/bin/deepin-wm-restart.sh
+# systemctl enable resume@*user*
+# systemctl start resume@*user* 
+
+```
+
+The first command makes the script you created executable, the second makes sure that the service always start at boot and the last one starts the service immediately so you can test the workaround without having to reboot the system.
 
 ## Bug Reporting
 

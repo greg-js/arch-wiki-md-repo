@@ -4,8 +4,7 @@
 
 *   [1 Installation](#Installation)
 *   [2 Plugins](#Plugins)
-    *   [2.1 Adobe Flash](#Adobe_Flash)
-    *   [2.2 Adblock](#Adblock)
+    *   [2.1 Adblock](#Adblock)
 *   [3 Performance tweaks](#Performance_tweaks)
     *   [3.1 Disabling features and services](#Disabling_features_and_services)
     *   [3.2 Profile in tmpfs](#Profile_in_tmpfs)
@@ -39,12 +38,6 @@ The 12.16 Presto version is also available from the [opera-legacy](https://aur.a
 ## Plugins
 
 For details about different plugins and installation instructions see [Browser plugins](/index.php/Browser_plugins "Browser plugins"). Note that Opera no longer supports the Netscape plugin API (NPAPI), but only the newer Pepper plugin API (PPAPI).
-
-### Adobe Flash
-
-Opera no longer supports the Netscape plugin API (NPAPI), so [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) should be used instead of [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). Make sure the plugin is enabled in `opera://plugins`.
-
-See [Browser plugins#Flash Player](/index.php/Browser_plugins#Flash_Player "Browser plugins") for details.
 
 ### Adblock
 

@@ -52,7 +52,7 @@ The primary root certificate used has a CN of "DoD Root CA 2": this certificate 
 4\. Unzip the DoD PKI zip, change directory to the new folder, and install:
 
 ```
- for n in (ls * | grep Chrome); do certutil -d sql:$HOME/.pki/nssdb -A -t TC -n $n -i $n; done
+ for n in $(ls * | grep Chrome); do certutil -d sql:$HOME/.pki/nssdb -A -t TC -n $n -i $n; done
 
 ```
 

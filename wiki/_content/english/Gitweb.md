@@ -130,18 +130,21 @@ You may also need to add `".css" => "text/css"` to the `mimetype.assign` line fo
 
 ### Nginx
 
-Consider you have symlinked `ln -s /usr/share/gitweb /srv/http`, append this location to your nginx configuration:
+Append this location to your nginx configuration (you might want to change the location):
 
  `/etc/nginx/nginx.conf` 
 ```
-location /gitweb/ {
-        index gitweb.cgi;
-        include fastcgi_params;
-        gzip off;
-        fastcgi_param   GITWEB_CONFIG  /etc/conf.d/gitweb.conf;
-        if ($uri ~ "/gitweb/gitweb.cgi") {
-                fastcgi_pass    unix:/var/run/fcgiwrap.sock;
-        }
+location /gitweb.cgi {
+    include fastcgi_params;
+    gzip off;
+    fastcgi_param   SCRIPT_FILENAME  /usr/share/gitweb/gitweb.cgi;
+    fastcgi_param   GITWEB_CONFIG  /etc/conf.d/gitweb.conf;
+    fastcgi_pass    unix:/var/run/fcgiwrap.sock;
+}
+
+location / {
+    root /usr/share/gitweb;
+    index gitweb.cgi;
 }
 
 ```

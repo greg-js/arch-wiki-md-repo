@@ -53,6 +53,19 @@ If using PulseAudio (more info [here](/index.php/Xbindkeys#Xbindkeysrc "Xbindkey
 
 ```
 
+If you prefer to get a visual feedback on how the volume level changes you could use the following lines instead (Might work in GNOME too but I have only tested on KDE)
+
+```
+# thumb wheel up => increase volume
+"xte 'key XF86AudioRaiseVolume'"
+   b:6
+
+# thumb wheel down => lower volume
+"xte 'key XF86AudioLowerVolume'"
+   b:7
+
+```
+
 Now start `xbindkeys`, preferably add that to the autostart list of your desktop environment.
 
 The thumb button is special, with the Logitech software available for Windows and Mac, you would be able to map up to 5 actions to it: by pressing the button or by pressing the button and moving the mouse in one of four directions. As of November 2015, there is no way to enable the direction feature using Arch.

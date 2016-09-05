@@ -213,7 +213,7 @@ Build Debian image with [debootstrap](https://www.archlinux.org/packages/?name=d
 
 ## Arch Linux image with snapshot repository
 
-Archlinux on Docker can become problematic when multiple images are created and updated each having different package versions. To keep Docker containers with consistent package versions a [Docker image with a snapshot repository](https://registry.hub.docker.com/u/pritunl/archlinux/) is available. This allows installing new packages from the official repository as it was on the day that the snapshot was created.
+Arch Linux on Docker can become problematic when multiple images are created and updated each having different package versions. To keep Docker containers with consistent package versions, a [Docker image with a snapshot repository](https://registry.hub.docker.com/u/pritunl/archlinux/) is available. This allows installing new packages from the official repository as it was on the day that the snapshot was created.
 
 ```
 $ docker pull pritunl/archlinux:latest
@@ -234,49 +234,49 @@ In case you want to remove Docker entirely you can do this by following the step
 
 **Note:** Don't just copy paste those commands without making sure you know what you are doing!
 
-Check for running containers
+Check for running containers:
 
 ```
 # docker ps
 
 ```
 
-Killing still running containers
+Killing still running containers:
 
 ```
 # docker kill <CONTAINER ID>
 
 ```
 
-List all containers running on the host for deletion
+List all containers running on the host for deletion:
 
 ```
 # docker ps -a
 
 ```
 
-Delete all containers listed by ID
+Delete all containers listed by ID:
 
 ```
 # docker rm <CONTAINER ID>
 
 ```
 
-List all Docker images
+List all Docker images:
 
 ```
 # docker images
 
 ```
 
-Delete all images by ID
+Delete all images by ID:
 
 ```
 # docker rmi <IMAGE ID>
 
 ```
 
-Disable Docker
+Disable Docker:
 
 ```
 # systemctl disable docker
@@ -284,28 +284,28 @@ Disable Docker
 
 ```
 
-Remove Docker/Compose from the system
+Remove Docker/Compose from the system:
 
 ```
 # pacman -Rs docker docker-compose
 
 ```
 
-Remove users from docker group
+Remove users from docker group:
 
 ```
 # gpasswd -d <user> docker
 
 ```
 
-Delete docker group from system
+Delete docker group from system:
 
 ```
 # groupdel docker
 
 ```
 
-Delete all Docker data (folder).
+Delete all Docker data (purge directory):
 
 ```
 # rm -R /var/lib/docker

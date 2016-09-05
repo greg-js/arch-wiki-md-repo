@@ -28,7 +28,7 @@ This article is about the Nintendo Wii Remote Linux kernel driver. This driver i
 
 The most important software required is [Bluetooth](/index.php/Bluetooth "Bluetooth"), please make sure you have read the [relative wiki page](/index.php/Bluetooth "Bluetooth") to configure it before proceeding.
 
-**NOTE:** most recent bluez package in Arch Linux includes the wiimote plugin, if you are using an older version please see [Troubleshooting BlueZ](#BlueZ_does_not_include_the_wiimote_plugin).
+**NOTE:** The most recent BlueZ package in Arch Linux includes the wiimote plugin. If you are using an older version please see [Troubleshooting BlueZ](#BlueZ_does_not_include_the_wiimote_plugin).
 
 The user-space utilities are available in [AUR](/index.php/AUR "AUR") [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/) package; there is also a git-package [xwiimote-tools-git](https://aur.archlinux.org/packages/xwiimote-tools-git/) if you want the most recent development revision.
 

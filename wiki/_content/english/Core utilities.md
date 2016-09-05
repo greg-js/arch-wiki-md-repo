@@ -8,16 +8,16 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [4 grep](#grep)
     *   [4.1 Standard error](#Standard_error)
 *   [5 find](#find)
-*   [6 locate](#locate)
-*   [7 lsblk](#lsblk)
-*   [8 iconv](#iconv)
-    *   [8.1 Convert a file in place](#Convert_a_file_in_place)
-*   [9 ip](#ip)
-*   [10 less](#less)
-    *   [10.1 Vim as alternative pager](#Vim_as_alternative_pager)
-*   [11 ls](#ls)
-    *   [11.1 Long format](#Long_format)
-    *   [11.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
+*   [6 iconv](#iconv)
+    *   [6.1 Convert a file in place](#Convert_a_file_in_place)
+*   [7 ip](#ip)
+*   [8 locate](#locate)
+*   [9 less](#less)
+    *   [9.1 Vim as alternative pager](#Vim_as_alternative_pager)
+*   [10 ls](#ls)
+    *   [10.1 Long format](#Long_format)
+    *   [10.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
+*   [11 lsblk](#lsblk)
 *   [12 mkdir](#mkdir)
 *   [13 mv](#mv)
 *   [14 od](#od)
@@ -35,27 +35,27 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 
 The following table lists basic shell commands every Linux user should be familiar with. Commands in **bold** are part of the shell, others are separate programs called from the shell. See the below sections and *Related articles* for details.
 
-| Command | Description | Example |
-| man | Show manual page for a command | man ed |
-| **cd** | Change directory | cd /etc/pacman.d |
-| mkdir | Create a directory | mkdir ~/newfolder |
-| rmdir | Remove empty directory | rmdir ~/emptyfolder |
-| rm | Remove a file | rm ~/file.txt |
+| Command | Description | Manual page | Example |
+| man | Show manual page for a command | [man(7)](http://man7.org/linux/man-pages/man7/man.7.html) | man ed |
+| **cd** | Change directory | [cd(1)](http://man7.org/linux/man-pages/man1/cd.1.html) | cd /etc/pacman.d |
+| mkdir | Create a directory | [mkdir(1)](http://man7.org/linux/man-pages/man1/mkdir.1.html) | mkdir ~/newfolder |
+| rmdir | Remove empty directory | [rmdir(1)](http://man7.org/linux/man-pages/man1/rmdir.1.html) | rmdir ~/emptyfolder |
+| rm | Remove a file | [rm(1)](http://man7.org/linux/man-pages/man1/rm.1.html) | rm ~/file.txt |
 | rm -r | Remove directory and contents | rm -r ~/.cache |
-| ls | List files | ls *.mkv |
+| ls | List files | [ls(1)](http://man7.org/linux/man-pages/man1/ls.1.html) | ls *.mkv |
 | ls -a | List hidden files | ls -a /home/archie |
 | ls -al | List hidden files and file properties |
-| mv | Move a file | mv ~/compressed.zip ~/archive/compressed2.zip |
-| cp | Copy a file | cp ~/.bashrc ~/.bashrc.bak |
-| chmod +x | Make a file executable | chmod +x ~/.local/bin/myscript.sh |
-| cat | Show file contents | cat /etc/hostname |
-| strings | Show printable characters in binary files | strings /usr/bin/free |
-| find | Search for a file | find ~ -name myfile |
-| mount | Mount a partition | mount /dev/sdc1 /media/usb |
-| df -h | Show remaining space on all partitions |
-| ps -A | Show all running processes |
-| killall | Kill all running instances of a process |
-| ss -at | Display a list of open TCP sockets |
+| mv | Move a file | [mv(1)](http://man7.org/linux/man-pages/man1/mv.1.html) | mv ~/compressed.zip ~/archive/compressed2.zip |
+| cp | Copy a file | [cp(1)](http://man7.org/linux/man-pages/man1/cp.1.html) | cp ~/.bashrc ~/.bashrc.bak |
+| chmod +x | Make a file executable | [chmod(1)](http://man7.org/linux/man-pages/man1/chmod.1.html) | chmod +x ~/.local/bin/myscript.sh |
+| cat | Show file contents | [cat(1)](http://man7.org/linux/man-pages/man1/cat.1.html) | cat /etc/hostname |
+| strings | Show printable characters in binary files | [strings(1)](http://man7.org/linux/man-pages/man1/strings.1.html) | strings /usr/bin/free |
+| find | Search for a file | [find(1)](http://man7.org/linux/man-pages/man1/find.1.html) | find ~ -name myfile |
+| mount | Mount a partition | [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) | mount /dev/sdc1 /media/usb |
+| df -h | Show remaining space on all partitions | [df(1)](http://man7.org/linux/man-pages/man1/df.1.html) |
+| ps -A | Show all running processes | [ps(1)](http://man7.org/linux/man-pages/man1/ps.1.html) |
+| killall | Kill all running instances of a process | [killall(1)](http://man7.org/linux/man-pages/man1/killall.1.html) |
+| ss -at | Display a list of open TCP sockets | [ss(8)](http://man7.org/linux/man-pages/man8/ss.8.html) |
 
 ## cat
 
@@ -126,32 +126,6 @@ One would probably expect a *find* command to take as argument a file name and s
 
 Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [UsingFind](http://mywiki.wooledge.org/UsingFind) for usage details.
 
-## locate
-
-[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. After installation a script is automatically scheduled to run a daily task to update its database. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(1)](http://man7.org/linux/man-pages/man1/updatedb.1.html) for details.
-
-The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*. This problem is minimised by regular, typically scheduled use of the *updatedb* command, which (as the name suggests) updates the database.
-
-Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
-
-See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
-
-## lsblk
-
-[lsblk(8)](http://man7.org/linux/man-pages/man8/lsblk.8.html) will show all available block devices along with their partitioning schemes:
-
- `$ lsblk` 
-```
-NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sda               8:0    0    80G  0 disk
-└─sda1            8:1    0    80G  0 part
-
-```
-
-The beginning of the device name specifies the type of block device. Most modern hard disks/[SSD](/index.php/SSD "SSD") are recognised as SCSI (**s**) storage **d**evices. The type is followed by a lower-case letter listed as `sd**x**`, where `**x**` starts from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on those devices will be listed as `sdx**Y**`, where `**Y**` is a number starting from `1` for the first partition, `2` for the second, and so on. In the example above, only one device is available (`sda`), and that device has only one partition (`sda1`).
-
-Other common block device types include flash memory, starting with, for example `mmcblk` for memory cards, or `nvme` for [NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") devices. Unknown types can be searched in the [kernel's documentation](https://www.kernel.org/doc/Documentation/devices.txt).
-
 ## iconv
 
 *iconv* converts the encoding of characters from one codeset to another.
@@ -208,6 +182,16 @@ The `help` command is available for all objects. For example, typing `ip addr he
 The [Network configuration](/index.php/Network_configuration "Network configuration") article shows how the *ip* command is used in practice for various common tasks.
 
 **Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which was used in older versions of Linux for interface configuration. It is now deprecated in Arch Linux; you should use *ip* instead.
+
+## locate
+
+[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. After installation a script is automatically scheduled to run a daily task to update its database. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(1)](http://man7.org/linux/man-pages/man1/updatedb.1.html) for details.
+
+The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find "wikipedia:Find") tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*. This problem is minimised by regular, typically scheduled use of the *updatedb* command, which (as the name suggests) updates the database.
+
+Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
+
+See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
 
 ## less
 
@@ -274,6 +258,24 @@ Below, each file and subdirectory is represented by a line divided into 7 metada
 ### File names containing spaces enclosed in quotes
 
 By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
+
+## lsblk
+
+[lsblk(8)](http://man7.org/linux/man-pages/man8/lsblk.8.html) will show all available block devices along with their partitioning schemes, for example:
+
+ `$ lsblk -f` 
+```
+NAME   FSTYPE   LABEL       UUID                                 MOUNTPOINT
+sda
+├─sda1 vfat                 C4DA-2C4D                            /boot
+├─sda2 swap                 5b1564b2-2e2c-452c-bcfa-d1f572ae99f2 [SWAP]
+└─sda3 ext4                 56adc99b-a61e-46af-aab7-a6d07e504652 /
+
+```
+
+The beginning of the device name specifies the type of block device. Most modern storage devices (e.g. hard disks, [SSDs](/index.php/SSD "SSD") and USB flash drives) are recognised as SCSI disks (`sd`). The type is followed by a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on each device will be listed with a number starting from `1` for the first partition (`sda1`), `2` for the second (`sda2`), and so on. In the example above, only one device is available (`sda`), and that device has three partitions (`sda1` to `sda3`), each with a different [file system](/index.php/File_system "File system").
+
+Other common block device types include for example `mmcblk` for memory cards and `nvme` for [NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe") devices. Unknown types can be searched in the [kernel documentation](https://www.kernel.org/doc/Documentation/devices.txt).
 
 ## mkdir
 

@@ -178,7 +178,7 @@ Once the kernel has been compiled, the modules for it must follow. As root or wi
 
 This will copy the compiled modules into `/lib/modules/<kernel version>-<config local version>`. For example, for kernel version 3.18 installed above, they would be copied to `/lib/modules/3.18.28-ARCH`. This keeps the modules for individual kernels used separated.
 
-**Tip:** If your system requires modules which are not distributed with the regular Linux kernel, you need to compile them for your custom kernel when it is finished. Such modules are typically those which you explicitly installed seperately for your running system. See [NVIDIA#Alternate install: custom kernel](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA") for an example.
+**Tip:** If your system requires modules which are not distributed with the regular Linux kernel, you need to compile them for your custom kernel when it is finished. Such modules are typically those which you explicitly installed seperately for your running system. See [NVIDIA#Custom kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA") for an example.
 
 ### Copy the kernel to /boot directory
 

@@ -305,16 +305,15 @@ In this sceneario, after the initial setup, snapper needs no changes, and will w
 
 #### Configuration of snapper and mount point
 
-Make sure `/.snapshots` does *not* exist. Then [#Create a new configuration](#Create_a_new_configuration) for `/`.
-
-Now that snapper is happy, delete the `/.snapshots` subvolume:
+Make sure `/.snapshots` is *not* mounted and does *not* exist as folder.
 
 ```
- # btrfs subvolume delete /.snapshots
+ # umount /.snapshots
+ # rm -r /.snapshots
 
 ```
 
-Create the `/.snapshots` folder to use as a mount point. Give the folder `750` [permissions](/index.php/Permissions#Numeric_method "Permissions").
+Then [#Create a new configuration](#Create_a_new_configuration) for `/`.
 
 Now [mount](/index.php/Mount "Mount") `@snapshots` to `/.snapshots`. For example, for a file system located on `/dev/sda1`:
 
@@ -324,6 +323,15 @@ Now [mount](/index.php/Mount "Mount") `@snapshots` to `/.snapshots`. For example
 ```
 
 To make this mount permanent, add an entry to your [fstab](/index.php/Fstab "Fstab").
+
+Or if you have an existing fstab entry remount the snapshot subvolume:
+
+```
+ # mount -a
+
+```
+
+Give the folder `750` [permissions](/index.php/Permissions#Numeric_method "Permissions").
 
 This will make all snapshots that snapper creates be stored outside of the `@` subvolume, so that `@` can easily be replaced anytime without losing the snapper snapshots.
 
@@ -375,6 +383,14 @@ By default, `updatedb` will also index the `.snapshots` directory created by sna
 #### Incremental backup to external drive
 
 This [script](https://gist.githubusercontent.com/wesbarnett/c9d12e60d17cf8a73c485ad4bb9037e9/raw/4f74040ea8a0b0cca73305550681b8c2b2669f89/backup) can be used to perform incremental backups to an external drive mounted on the system.
+
+As an alternative you can use [buttersink-git](https://aur.archlinux.org/packages/buttersink-git/) to transfer the whole set of snapshots to a local backup drive or to an external backup location via ssh. Buttersink will optimize the snyc between the source and destination automatically in a way that it only sends the diff between the snapshots. Make sure to protect the backup location from external access as it may contain sensible data that has already been deleted on the running system. been
+
+```
+# sudo mkdir -p -m 750 /run/media/hdd/backup
+# sudo buttersink /.snapshots/ /run/media/hdd/backup
+
+```
 
 ### Preserving log files
 
