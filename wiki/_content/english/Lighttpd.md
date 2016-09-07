@@ -48,7 +48,7 @@ Example configuration files are available in `/usr/share/doc/lighttpd/`.
 
 #### Basic logging
 
-Lighttpd can write out both errors and access to log files. To enabled both or of the logging options, simply edit `/etc/lighttpd/lighttpd.conf` as follows:
+Lighttpd can write out both errors and access to log files. To enable both of the logging options, edit `/etc/lighttpd/lighttpd.conf` as follows:
 
 ```
 server.modules = (

@@ -189,7 +189,7 @@ The table below gives an overview of comparable commands for *iw* and *wireless_
 
 **Note:**
 
-*   [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) are provided on the installation medium.
+*   [iw](https://www.archlinux.org/packages/?name=iw), [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) are provided on the installation medium.
 *   Examples in this section assume that your wireless device interface is `wlan0` and that you are connecting to `*your_essid*` wifi access point. Replace both accordingly. To find your wireless device interface, see [#Getting some useful information](#Getting_some_useful_information).
 *   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. *iwlist*), will exit without error but not produce the correct output either, which can be confusing.
 
@@ -381,23 +381,23 @@ for static IP addressing.
 Here is a complete example of setting up a wireless network with WPA supplicant and DHCP.
 
 ```
-# ip link set dev wlp13s1 up
-# wpa_supplicant -B -i wlp13s1 -c /etc/wpa_supplicant/wpa_supplicant.conf
-# dhcpcd wlp13s1
+# ip link set dev wlan0 up
+# wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+# dhcpcd wlan0
 
 ```
 
 And then to close the connection, you can simply disable the interface:
 
 ```
-# ip link set dev wlp13s1 down
+# ip link set dev wlan0 down
 
 ```
 
 For a static IP, you would replace the dhcpcd command with
 
 ```
-# ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlp13s1
+# ip addr add 192.168.0.10/24 broadcast 192.168.0.255 dev wlan0
 # ip route add default via 192.168.0.1
 
 ```
@@ -405,8 +405,8 @@ For a static IP, you would replace the dhcpcd command with
 And before disabling the interface you would first flush the IP address and gateway:
 
 ```
-# ip addr flush dev wlp13s1
-# ip route flush dev wlp13s1
+# ip addr flush dev wlan0
+# ip route flush dev wlan0
 
 ```
 

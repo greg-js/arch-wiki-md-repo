@@ -19,7 +19,7 @@ Using Privoxy is necessary when they use a [SOCKS](https://en.wikipedia.org/wiki
 
 When Privoxy is used in conjunction with [Tor](/index.php/Tor "Tor") the two applications need to exchange information through a chain, which requires the specification of forwarding rules.
 
-Finally, if you plan to make Privoxy available to other computers in your network, just add:
+Finally, if you plan to make Privoxy available to other computers in your network, just add the following to `/etc/privoxy/config`:
 
 ```
 listen-address [SERVER-IP]:[PORT]

@@ -397,6 +397,22 @@ xboxdrv is an alternative to `xpad` which provides more functionality and might 
 
 Install it with the [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/) package. Then [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `xboxdrv.service`.
 
+If you have issues with the controller being recognized but not working in steam games or working but with incorrect mappings, it may be required to modify you config as such:
+
+ `/etc/default/xboxdrv/` 
+```
+[xboxdrv]
+silent = true
+device-name = "Xbox 360 Wireless Receiver"
+mimic-xpad = true
+deadzone = 4000
+
+[xboxdrv-daemon]
+dbus = disabled
+```
+
+Then [restart](/index.php/Restart "Restart") `xboxdrv.service`.
+
 ##### Multiple controllers
 
 xboxdrv supports a multitude of controllers, but they need to be set up in `/etc/default/xboxdrv`. For each extra controller, add an `next-controller = true` line. For example, when using 4 controllers, add it 3 times:

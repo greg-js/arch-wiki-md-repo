@@ -48,7 +48,7 @@
 
 不同的浏览器需要安装不同的插件。
 
-*   NPAPI 插件可以通过软件包 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")，[Adobe 已经停止开发此插件](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)，版本固定到 11.2 但是会提供 5 年安全支持，直到 2017 年 3 月.[[1]](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)[[2]](http://helpx.adobe.com/flash-player/release-note/release-notes-developer-flash-player.html)).
+*   NPAPI 插件可以通过软件包 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装")，[Adobe 已经停止开发此插件](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)，版本固定到 11.2 但是会提供 5 年安全支持，直到 2017 年 3 月.[[1]](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)[[2]](http://helpx.adobe.com/flash-player/release-note/release-notes-developer-flash-player.html)).当前版本为11.2, 但未来可能会更新.[[3]](https://blogs.adobe.com/flashplayer/2016/08/beta-news-flash-player-npapi-for-linux.html#sthash.3gR3RhEv.gSTeJKBM.dpbs)
 
 *   PPAPI 版本和 Google Chrome 一起发布. 详情参考 [Chromium#Flash Player plugin](/index.php/Chromium#Flash_Player_plugin "Chromium").
 

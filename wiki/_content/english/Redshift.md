@@ -229,3 +229,6 @@ You can add this to your i3 config file.
 
 *   [Redshift website](http://jonls.dk/redshift)
 *   [Redshift on github](http://github.com/jonls/redshift)
+*   **sct** — set color temperature
+
+	[https://aur.archlinux.org/packages/sct/](https://aur.archlinux.org/packages/sct/) || [sct](https://aur.archlinux.org/packages/sct/)

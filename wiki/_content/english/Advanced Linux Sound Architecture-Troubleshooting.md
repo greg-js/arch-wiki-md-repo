@@ -699,7 +699,7 @@ Found hardware: "ICH" "SigmaTel STAC9700,83,84" "AC97a:83847600" "0x8086" "0x000
 Hardware is initialized using a generic method
 ```
 
-You might need to activate the ALSA output in your audio software as well.
+You might need to activate the ALSA output in your audio software as well. You might also try selecting different sound devices in your virtual machine settings to find one that works.
 
 ### Others: General application problems
 

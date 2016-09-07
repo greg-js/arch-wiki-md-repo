@@ -62,9 +62,9 @@ If the directory does not exist, the system is booted in [BIOS](https://en.wikip
 
 ### Connect to the Internet
 
-Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping](/index.php/Network_configuration#Check_the_connection "Network configuration"). For [wireless](/index.php/Wireless "Wireless") connection use the *wifi-menu* tool.
+Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping](/index.php/Network_configuration#Check_the_connection "Network configuration"). If none was established, [stop](/index.php/Systemd#Using_units "Systemd") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
-If a different [network configuration](/index.php/Network_configuration "Network configuration") tool is needed, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [netctl](/index.php/Netctl "Netctl") are available. When using either service, [stop](/index.php/Stop "Stop") `dhcpcd@*interface*.service` first.
+For [wireless](/index.php/Wireless "Wireless") connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration#Wireless management](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration").
 
 ### Update the system clock
 
@@ -79,20 +79,20 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-To modify and print [partition tables](/index.php/Partition_table "Partition table"), use:
+At least one [partition](/index.php/Partition "Partition") for the root directory `/` is required. If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is also required. Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
-*   [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both [MBR](/index.php/MBR "MBR") and [GPT](/index.php/GPT "GPT"), or
-*   [gdisk](/index.php/Gdisk "Gdisk") for GPT only.
+Not all devices are viable mediums for installation; when listing devices with `fdisk -l` or [lsblk](/index.php/Core_utilities#lsblk "Core utilities"), results ending in `rom`, `loop` or `airoot` may be ignored.
 
-When displaying partitions with `fdisk -l` or [lsblk](/index.php/Core_utilities#lsblk "Core utilities"), note that not all devices are viable mediums for installation; results ending in `rom`, `loop` or `airoot` may be ignored.
+To modify and print [partition tables](/index.php/Partitioning#Partition_table "Partitioning"), use:
 
-At least one partition must be available for the root directory `/`. [UEFI](/index.php/UEFI "UEFI") systems additionally require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"). Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+*   [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both *MBR* and *GPT*
+*   [gdisk](/index.php/Gdisk "Gdisk") for *GPT* only.
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
 ### Format the partitions
 
-[File systems](/index.php/File_systems "File systems") are created using [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html), or [mkswap(8)](http://man7.org/linux/man-pages/man8/mkswap.8.html) in case of the [swap](/index.php/Swap "Swap") area. See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for details.
+Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). See [Swap](/index.php/Swap "Swap") and [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for details.
 
 ### Mount the file systems
 
@@ -103,7 +103,7 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 ```
 
-After that, [create directories](/index.php/Core_utilities#mkdir "Core utilities") for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate your *swap* device with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html), if you want them to be detected later by *genfstab*.
+After that, create directories for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate the *swap* space with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html), if you want them to be detected later by *genfstab*.
 
 ## Installation
 
@@ -126,7 +126,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 This group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
 
-To [install](/index.php/Install "Install") other packages or groups to the new system, append their names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
+To build packages from the [AUR](/index.php/AUR "AUR") or with the [ABS](/index.php/ABS "ABS"), the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is also required. To [install](/index.php/Install "Install") this or another group, or other individual packages, to the new system, append the names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
 
 ## Configure the system
 

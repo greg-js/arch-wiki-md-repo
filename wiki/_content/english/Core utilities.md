@@ -284,7 +284,7 @@ Other common block device types include for example `mmcblk` for memory cards an
 To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
 
 ```
-alias mkdir='mkdir -p -v
+alias mkdir='mkdir -p -v'
 
 ```
 

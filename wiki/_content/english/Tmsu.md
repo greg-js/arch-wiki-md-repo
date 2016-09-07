@@ -13,7 +13,7 @@
 
 ## Usage
 
-The tmsu [website](http://tmsu.org) provides an excellent short quick tour on the basic usage.
+The tmsu [website](http://tmsu.org) provides an excellent short quick tour on the basic usage and it's [wiki](https://github.com/oniony/TMSU/wiki) per subject information.
 
 ## Obstacles
 

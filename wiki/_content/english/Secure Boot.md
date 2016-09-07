@@ -129,7 +129,10 @@ Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check wit
 
 ## Using your own keys
 
-**Tip:** It is advised to read [Rod Smith's Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html).
+**Tip:**
+
+*   It is advised to read [Rod Smith's Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html).
+*   You can use `cryptboot-efikeys` script from [cryptboot](https://aur.archlinux.org/packages/cryptboot/) package for simplified creating keys, enrolling keys, signing bootloader and verifying signatures.
 
 Secure Boot implementations use these keys:
 

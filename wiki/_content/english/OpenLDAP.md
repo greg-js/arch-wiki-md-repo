@@ -55,17 +55,13 @@ Now we delete the default root password and create a strong one:
 
 You will likely want to add some typically used [schemas](http://www.openldap.org/doc/admin24/schema.html) to the top of `slapd.conf`:
 
-```
-   cp /usr/share/doc/samba/examples/LDAP/samba.schema /etc/openldap/schema
+**Note:** currently missing: cp /usr/share/doc/samba/examples/LDAP/samba.schema /etc/openldap/schema
 
 ```
-
-```
-include         /etc/openldap/schema/core.schema
 include         /etc/openldap/schema/cosine.schema
 include         /etc/openldap/schema/inetorgperson.schema
 include         /etc/openldap/schema/nis.schema
-include         /etc/openldap/schema/samba.schema
+#include         /etc/openldap/schema/samba.schema
 
 ```
 

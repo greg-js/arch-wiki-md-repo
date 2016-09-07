@@ -54,7 +54,7 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
 
 The package you will need to install depends on the browser you use.
 
-*   The NPAPI version can be [installed](/index.php/Pacman "Pacman") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package. This plugin was [discontinued by Adobe](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html) and is stuck at version 11.2; although, Adobe will provide security updates for 5 years after its release (i.e. until March 2017[[1]](https://blogs.adobe.com/flashplayer/2012/02/adobe-and-google-partnering-for-flash-player-on-linux.html)[[2]](http://helpx.adobe.com/flash-player/release-note/release-notes-developer-flash-player.html)).
+*   The NPAPI version can be [installed](/index.php/Pacman "Pacman") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package. This plugin is currently at version 11.2, but will be updated in the future.[[1]](https://blogs.adobe.com/flashplayer/2016/08/beta-news-flash-player-npapi-for-linux.html#sthash.3gR3RhEv.gSTeJKBM.dpbs)
 
 *   The PPAPI version can be [installed](/index.php/Install "Install") with the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package. Note that it is already included with Google Chrome.
 
@@ -119,19 +119,13 @@ See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content").
 
 ### Shumway
 
-[Shumway](http://mozilla.github.io/shumway/) is an HTML5 technology experiment that explores building a faithful and efficient renderer for the SWF file format without native code assistance. The plugin may be installed directly from [Mozilla's github.io site](http://mozilla.github.io/shumway/). According to the [Shumway wiki](https://github.com/mozilla/shumway/wiki), "Integration with Firefox is a possibility if the experiment proves successful."
-
-Shumway is also embedded in Firefox Nightly/Aurora builds.
+[Shumway](http://mozilla.github.io/shumway/) is a [discontinued](https://github.com/mozilla/shumway/issues/2420) HTML5 technology experiment that explores building a faithful and efficient renderer for the SWF file format without native code assistance. The plugin may be installed directly from [Mozilla's github.io site](http://mozilla.github.io/shumway/).
 
 ### Gnash
 
-See also [Wikipedia:Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash").
-
-[GNU Gnash](http://www.gnu.org/software/gnash/) is a free (libre) alternative to Adobe Flash Player. It is available both as a standalone player for desktop computers and embedded devices, as well as a browser plugin, and supports the SWF format up to version 7 (with versions 8 and 9 under development) and about 80% of ActionScript 2.0.
+[Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash") is a free (libre) alternative to Adobe Flash Player. It is available both as a standalone player for desktop computers and embedded devices, as well as a browser plugin, and supports the SWF format up to version 7 (with versions 8 and 9 under development) and about 80% of ActionScript 2.0.
 
 There is a packages available: [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
-
-**Note:** If you find that Gnash does not work properly right out of the box, then you may also need to [install](/index.php/Install "Install") the [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) package.
 
 ### Lightspark
 

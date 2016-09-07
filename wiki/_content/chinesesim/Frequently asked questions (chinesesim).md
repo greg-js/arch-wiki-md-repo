@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Frequently_asked_questions](/index.php/Frequently_asked_questions "Frequently asked questions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=441711)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Frequently_asked_questions](/index.php/Frequently_asked_questions "Frequently asked questions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=447663)可以查看翻译后英文页面的改动。
 
 除了本文，还建议你阅读一下[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)") 和 [Arch terminology](/index.php/Arch_terminology "Arch terminology")。
 
@@ -80,7 +80,7 @@ Arch Linux 支持 i686 和 x86_64 (有时称为amd64) 架构.
 
 在开始问任何问题之前，自己先通过Google、Wiki或者论坛进行搜索。我们为你创建了这些资源并让你可以随时访问，上千**志愿者**为你提供了大量的信息资源。
 
-推荐阅读：Arch Linux的[新手指南](/index.php/Beginners_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners Guide (简体中文)") 和 [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") 。
+推荐阅读: [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") 。
 
 ### Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些TMD死长死长的手册。
 
@@ -116,7 +116,7 @@ Arch使用滚动升级模式，只需执行一条命令，便可升级系统到�
 
 ### Q) 为什么Arch下网速比其他系统慢？
 
-**A)**网络是否正确配置，读一读新手指南中的[网络配置](/index.php/Beginners_Guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.9C.89.E7.BA.BF.E7.BD.91.E7.BB.9C "Beginners Guide (简体中文)")。
+**A)**网络是否正确配置，读一读[网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")。
 
 ### Q) Arch为什么用了我的所有内存？
 
@@ -239,7 +239,7 @@ libbaz=1.5
 
 ### Q) Arch需要安装程序，比如带图形界面的。
 
-**A)** 由于Arch通常不需要多次安装（采取滚动升级），安装程序并不是开发者和用户关注的重点。[Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)") 和 [Beginners' guide (简体中文)](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)") 已经完全更新到使用命令行的版本。如果想使用安装程序，可以试试[Archboot](/index.php/Archboot "Archboot").
+**A)** 由于Arch通常不需要多次安装（采取滚动升级），安装程序并不是开发者和用户关注的重点。[Installation guide (简体中文)](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)") 已经完全更新到使用命令行的版本。如果想使用安装程序，可以试试[Archboot](/index.php/Archboot "Archboot").
 
 ### 我安装了Arch，现在正面对一个命令行登陆界面，怎么办？
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Environment_variables](/index.php/Environment_variables "Environment variables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-31，点击[这里](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=436135)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Environment_variables](/index.php/Environment_variables "Environment variables") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=436138)可以查看翻译后英文页面的改动。
 
 环境变量是一个有名称的对象，包含可被其它程序使用的数据。简单的说，它是一个名称和数值对。环境变量的值可以是文件系统上所有执行程序的位置，默认的编辑器，系统本地化设置等。Linux 新用户可能觉得这种管理变量的方式有点混乱。但是环境变量提供了一种在多个程序和进程间共享配置的方式。
 
@@ -10,8 +10,8 @@
     *   [2.2 按用户](#.E6.8C.89.E7.94.A8.E6.88.B7)
         *   [2.2.1 图形程序](#.E5.9B.BE.E5.BD.A2.E7.A8.8B.E5.BA.8F)
     *   [2.3 按会话](#.E6.8C.89.E4.BC.9A.E8.AF.9D)
-*   [3 Examples](#Examples)
-    *   [3.1 Using pam_env](#Using_pam_env)
+*   [3 示例](#.E7.A4.BA.E4.BE.8B)
+    *   [3.1 使用 pam_env](#.E4.BD.BF.E7.94.A8_pam_env)
 *   [4 参阅](#.E5.8F.82.E9.98.85)
 
 ## 工具
@@ -90,16 +90,14 @@ export GUIVAR=value
 
 ### 按会话
 
-Sometimes even stricter definitions are required. One might want to temporarily run executables from a specific directory created without having to type the absolute path to each one, or editing `~/.bash_profile` for the short time needed to run them.
-
-In this case, you can define the `PATH` variable in your current session, combined with the *export* command. As long as you do not log out, the `PATH` variable will be using the temporary settings. To add a session-specific directory to `PATH`, issue:
+如果需要更严格的定义，例如在运行程序时临时修改路径，在短时间改变 `~/.bash_profile` 等。这时，可以用 export 命令在当前会话修改 `PATH`，只要不退出登录，`PATH` 变量就会一直生效。增加 `PATH` 到一个会话:
 
 ```
 $ export PATH="${PATH}:/home/my_user/tmp/usr/bin"
 
 ```
 
-## Examples
+## 示例
 
 The following section lists a number of common environment variables used by a Linux system and describes their values.
 
@@ -171,7 +169,7 @@ http_proxy="http://192.168.0.1:80"
 
 *   `TZ` can be used to to set a time zone different to the system zone for a user. The zones listed in `/usr/share/zoneinfo/` can be used as reference, for example `TZ="/usr/share/zoneinfo/Pacific/Fiji"`
 
-### Using pam_env
+### 使用 pam_env
 
 Using `/etc/environment` and `~/.pam_environment` can be a little tricky, and the man pages (`pam_env(8)` and `pam_env.conf(5)`) are not particularly clear. So, here's an example:
 

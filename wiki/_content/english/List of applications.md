@@ -260,6 +260,9 @@ This article is a general list of applications sorted by category, as a referenc
         *   [7.5.1 Consoles](#Consoles)
         *   [7.5.2 Other](#Other_3)
     *   [7.6 Amateur radio](#Amateur_radio)
+    *   [7.7 Display calibration](#Display_calibration)
+        *   [7.7.1 Console](#Console_18)
+        *   [7.7.2 Graphical](#Graphical_17)
 *   [8 See also](#See_also)
 
 ## Internet
@@ -5890,6 +5893,20 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 See the main article: [Amateur radio#Software list](/index.php/Amateur_radio#Software_list "Amateur radio").
 
 See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wiki/List_of_software-defined_radios "wikipedia:List of software-defined radios").
+
+### Display calibration
+
+#### Console
+
+*   **Argyll CMS** — An ICC compatible color management system with support for different colorimeter hardware.
+
+	[http://www.argyllcms.com/](http://www.argyllcms.com/) || [argyllcms](https://www.archlinux.org/packages/?name=argyllcms)
+
+#### Graphical
+
+*   **DisplayCAL** — A graphical user interface for the display calibration and profiling tools of Argyll CMS.
+
+	[http://displaycal.net/](http://displaycal.net/) || [displaycal](https://www.archlinux.org/packages/?name=displaycal)
 
 ## See also
 

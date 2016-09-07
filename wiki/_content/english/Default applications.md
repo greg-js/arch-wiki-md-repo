@@ -396,6 +396,8 @@ $ xdg-mime default netsurf.desktop text/html
 
 ```
 
+It is important to note that if the envirnoment variable *BROWSER* is set, xdg will not be able to override it, which means *xdg-open* will use the browser set in the *BROWSER* env var rather than the one you specified with one of the commands above.
+
 ## Troubleshooting
 
 ### Variables in .desktop files that affect application launch

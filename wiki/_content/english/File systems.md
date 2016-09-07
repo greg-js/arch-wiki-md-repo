@@ -12,7 +12,7 @@ Individual drive partitions can be setup using one of the many different availab
 *   [2 Types of file systems](#Types_of_file_systems)
     *   [2.1 Journaling](#Journaling)
     *   [2.2 FUSE-based file systems](#FUSE-based_file_systems)
-    *   [2.3 Special purpose file systems](#Special_purpose_file_systems)
+    *   [2.3 Special-type file systems](#Special-type_file_systems)
 
 ## Create a file system
 
@@ -27,16 +27,14 @@ $ lsblk -f
 
 File systems are usually created on a partition, but they can also be created inside of logical containers like [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
-To create a new file system on a partition, the existing file system located on the partition must not be mounted. If the partition you want to format contains a mounted filesystem, it will show up in the *MOUNTPOINT* column of lsblk.
-
-To unmount it, you can use *umount* on the directory where the filesystem was mounted to:
+To create a new file system on a partition, the existing file system located on the partition must not be [mounted](/index.php/Mount "Mount"). If the partition you want to format contains a mounted filesystem, it will appear in the *MOUNTPOINT* column of lsblk. To unmount it, use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html) on the directory where the file system was mounted to:
 
 ```
 # umount */mountpoint*
 
 ```
 
-To create a new file system of type *fstype* on a partition do:
+Create a new file system of type *fstype* on a partition with [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html):
 
 **Warning:** After creating a new filesystem, data previously stored on this partition can likely not be recovered. Make a backup of any data you want to keep.
 
@@ -45,9 +43,7 @@ To create a new file system of type *fstype* on a partition do:
 
 ```
 
-See the article in [#Types of file systems](#Types_of_file_systems) corresponding to file system you wish to create for the exact command as well as userspace utilities you may wish to install for a particular file system.
-
-For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") on a partition, run:
+See [#Types of file systems](#Types_of_file_systems) corresponding to file system you wish to create for the exact type, as well as userspace utilities you may wish to install for a particular file system. For example, use mkfs.ext4(8) to create a new file system of type [ext4](/index.php/Ext4 "Ext4"):
 
 ```
 # mkfs.ext4 /dev/*partition*
@@ -170,7 +166,7 @@ Some FUSE-based file systems:
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 
-### Special purpose file systems
+### Special-type file systems
 
 *   **[CramFS](https://en.wikipedia.org/wiki/cramfs "wikipedia:cramfs")** — **Compressed ROM filesystem** is a read only filesystem designed with simplicity and efficiency in mind. Its maximum file size is less 16MB and the maximum file system size is around 272MB.
 

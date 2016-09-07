@@ -19,7 +19,8 @@ This page explains how to set up a **wired** connection to a network. If you nee
     *   [5.1 Dynamic IP address](#Dynamic_IP_address)
         *   [5.1.1 systemd-networkd](#systemd-networkd)
         *   [5.1.2 dhcpcd](#dhcpcd)
-        *   [5.1.3 netctl](#netctl)
+        *   [5.1.3 dhclient](#dhclient)
+        *   [5.1.4 netctl](#netctl)
     *   [5.2 Static IP address](#Static_IP_address)
         *   [5.2.1 netctl](#netctl_2)
         *   [5.2.2 systemd-networkd](#systemd-networkd_2)
@@ -57,7 +58,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
 
 ## Check the connection
 
-The basic installation procedure typically has a functional network configuration. Use *ping* to check the connection:
+The basic installation procedure typically has a functional network configuration. Use [ping(8)](http://man7.org/linux/man-pages/man8/ping.8.html) to check the connection:
 
  `$ ping www.google.com` 
 ```
@@ -194,7 +195,7 @@ If udev is not detecting and loading the proper module automatically during boot
 
 For computers with multiple NICs, it is important to have fixed device names. Many configuration problems are caused by interface name changing.
 
-[udev](/index.php/Udev "Udev") is responsible for which device gets which name. Systemd v197 introduced [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (ethernet), `wl` (WLAN), or `ww` (WWAN) followed by an automatically generated identifier, creating an entry such as `enp0s25`. This behavior may be disabled by adding `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+[udev](/index.php/Udev "Udev") is responsible for which device gets which name. Systemd v197 introduced [Predictable Network Interface Names](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames), which automatically assigns static names to network devices. Interfaces are now prefixed with `en` (wired/[Ethernet](https://en.wikipedia.org/wiki/Ethernet "w:Ethernet")), `wl` (wireless/WLAN), or `ww` ([WWAN](https://en.wikipedia.org/wiki/Wireless_WAN "w:Wireless WAN")) followed by an automatically generated identifier, creating an entry such as `enp0s25`. This behavior may be disabled by adding `net.ifnames=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 **Note:** When changing the interface naming scheme, do not forget to update all network-related configuration files and custom systemd unit files to reflect the change. Specifically, if you have [netctl static profiles](/index.php/Netctl#Basic_method "Netctl") enabled, run `netctl reenable *profile*` to update the generated service file.
 
@@ -307,6 +308,10 @@ An easy way to setup DHCP for simple requirements is to use [systemd-networkd](/
 
 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is the default client in Arch Linux to setup DHCP on the installation ISO. It is a powerful tool with many configurable DHCP client options. See [dhcpcd#Running](/index.php/Dhcpcd#Running "Dhcpcd") on how to activate it for an interface.
 
+#### dhclient
+
+[dhclient](https://www.archlinux.org/packages/?name=dhclient) is the Internet Systems Consortium DHCP client. [Enable](/index.php/Enable "Enable") the `dhclient@*interface*.service`, where `*interface*` is a wired [#Device name](#Device_name). See dhclient(8) and dhclient.conf(5) for details.
+
 #### netctl
 
 [netctl](/index.php/Netctl "Netctl") is a CLI-based tool for configuring and managing network connections through user-created profiles. Create a profile as shown in [netctl#Example profiles](/index.php/Netctl#Example_profiles "Netctl"), then enable it as described in [netctl#Basic method](/index.php/Netctl#Basic_method "Netctl").
@@ -327,6 +332,8 @@ If you are running a private network, it is safe to use IP addresses in `192.168
 
 *   Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
 *   If you share your Internet connection from a Windows machine without a router, be sure to use static IP addresses on both computers to avoid LAN problems.
+
+**Tip:** Addresses can be calculated with the [ipcalc](https://www.archlinux.org/packages/?name=ipcalc) package; see [#Calculating addresses](#Calculating_addresses).
 
 #### netctl
 

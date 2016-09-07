@@ -3,16 +3,20 @@ As it pertains to general desktop use, an ICC profile is a binary file which con
 ## Contents
 
 *   [1 Profile Generation](#Profile_Generation)
-    *   [1.1 File Transfer](#File_Transfer)
-    *   [1.2 Gnome Color Manager](#Gnome_Color_Manager)
-        *   [1.2.1 Manually](#Manually)
-    *   [1.3 LPROF ICC Profiler](#LPROF_ICC_Profiler)
-        *   [1.3.1 Monitor Calibration](#Monitor_Calibration)
-            *   [1.3.1.1 Contrast/Brightness](#Contrast.2FBrightness)
-            *   [1.3.1.2 Color Temperature](#Color_Temperature)
-        *   [1.3.2 Monitor Profiling](#Monitor_Profiling)
-    *   [1.4 Argyll CMS](#Argyll_CMS)
-    *   [1.5 ThinkPads](#ThinkPads)
+    *   [1.1 Calorimeter or Spectrometer](#Calorimeter_or_Spectrometer)
+    *   [1.2 Argyll CMS](#Argyll_CMS)
+    *   [1.3 Monitor calibration and profiling with additional calibration hardware](#Monitor_calibration_and_profiling_with_additional_calibration_hardware)
+    *   [1.4 Scanner calibration](#Scanner_calibration)
+    *   [1.5 Printer calibration](#Printer_calibration)
+    *   [1.6 File Transfer](#File_Transfer)
+    *   [1.7 Gnome Color Manager](#Gnome_Color_Manager)
+        *   [1.7.1 Manually](#Manually)
+    *   [1.8 LPROF ICC Profiler](#LPROF_ICC_Profiler)
+        *   [1.8.1 Monitor Calibration](#Monitor_Calibration)
+            *   [1.8.1.1 Contrast/Brightness](#Contrast.2FBrightness)
+            *   [1.8.1.2 Color Temperature](#Color_Temperature)
+        *   [1.8.2 Monitor Profiling without additional calibration hardware](#Monitor_Profiling_without_additional_calibration_hardware)
+    *   [1.9 ThinkPads](#ThinkPads)
 *   [2 Loading ICC Profiles](#Loading_ICC_Profiles)
     *   [2.1 xcalib](#xcalib)
         *   [2.1.1 Xinitrc Example](#Xinitrc_Example)
@@ -25,9 +29,33 @@ As it pertains to general desktop use, an ICC profile is a binary file which con
 
 ## Profile Generation
 
+Color management is a workflow of hardware calibration, software profiling and embedding the profile into the picture or video. It's all based on using an [ICC_profile](https://en.wikipedia.org/wiki/ICC_profile).
+
+### Calorimeter or Spectrometer
+
+It's highly recommended to use a calorimeter or spectrometer device for hardware assisted display, printer and scanner calibration. For home use there are several affordable calorimeters available. Some are well or even better supported under Linux than on other operation systems. Recommended devices are [X-Rite ColorMunki Display](http://www.xrite.com/colormunki-display), [DataColor Spyder5 Express](http://spyder.datacolor.com/portfolio-view/spyder5express/) and the open Source Hardware [ColorHug](http://www.hughski.com/). You can find more Linux supported devices at the [AgyllCMS documentation](http://www.argyllcms.com/doc/instruments.html).
+
+### Argyll CMS
+
+The [Argyll Color Management System](http://www.argyllcms.com/) is a complete suite of command-line profile creation and loading tools listed under [argyllcms](https://www.archlinux.org/packages/?name=argyllcms).
+
+*   Review the official [Argyll CMS documentation](http://www.argyllcms.com/doc/ArgyllDoc.html) for details on how to profile selected devices.
+
+### Monitor calibration and profiling with additional calibration hardware
+
+There's a gui frontend for ArgyllCMS called [DisplayCal](http://displaycal.net). You can install the package from the Arch Linux reposotories [displaycal](https://www.archlinux.org/packages/?name=displaycal). In most common cases you will want to use its default settings. It's a common way to calibrate to a daylight color of 6500K and gamma 2,2\. Read the DispalGui documentation for more. Many tutorials are available over the net.
+
+### Scanner calibration
+
+Follow the scanner part of this tutorial: [[Scanner calibration](https://blog.simon-dreher.de/color-management.html)].
+
+### Printer calibration
+
+See [[Cups-calibrate](http://linux.die.net/man/8/cups-calibrate)].
+
 ### File Transfer
 
-Profile generation on a Windows 7/Vista/XP, or [Mac OS X](http://www.apple.com/macosx/) system is one of the easiest and most widely recommended methods to obtain a ICC monitor profile. Since ICC color profiles are written to an open specification, they are compatible across operating systems. Transferring profiles from one OS to another can be used as a workaround for the lack of support for certain spectrophotometers, or colorimeters under [Linux](http://www.linux.org/): one can simply produce a profile on a different OS and then use it in a Linux workflow ([Source](https://en.wikipedia.org/wiki/Linux_color_management "wikipedia:Linux color management")). Recommended colorimeters include the [X-Rite i1Display 2](http://www.xrite.com/product_overview.aspx?ID=788), the [Spyder3 Pro](http://spyder.datacolor.com/product-mc-s3pro.php) and the open Source Hardware [ColorHug](http://www.hughski.com/). Note that the system on which the profile is generated must host the exact same video card and monitor for which the profile is to be used. Once generation of an ICC profile, or a series of profiles is complete on a Windows 7/Vista/XP system, copy the file(s) from the default path:
+Profile generation on a Windows 7/Vista/XP, or [Mac OS X](http://www.apple.com/macosx/) system is one of the easiest and most widely recommended methods to obtain a ICC monitor profile. Since ICC color profiles are written to an open specification, they are compatible across operating systems. Transferring profiles from one OS to another can be used as a workaround for the lack of support for certain spectrophotometers or colorimeters under [Linux](http://www.linux.org/): one can simply produce a profile on a different OS and then use it in a Linux workflow ([Source](https://en.wikipedia.org/wiki/Linux_color_management "wikipedia:Linux color management")). Note that the system on which the profile is generated must host the exact same video card and monitor for which the profile is to be used. Once generation of an ICC profile, or a series of profiles is complete on a Windows 7/Vista/XP system, copy the file(s) from the default path:
 
 ```
 C:\WINDOWS\System32\spool\drivers\color
@@ -103,7 +131,7 @@ Place your monitor so that you can see outside the window *and* your screen at t
 
 Take your time with the steps described above. It is essential to get it right.
 
-#### Monitor Profiling
+#### Monitor Profiling without additional calibration hardware
 
 Start lprof. You will be presented by a fairly large window with multiple tabs on the right.
 
@@ -122,12 +150,6 @@ When you are finished entering monitor values, you might want to enter some info
 3.  Click *OK* to finish.
 
 After you are all done, click on the '...' button next to *Output Profile File* box. Enter the name of your profile: *somemonitor.icc*. Click *Create Profile* button, and you are done.
-
-### Argyll CMS
-
-The [Argyll Color Management System](http://www.argyllcms.com/) is a complete suite of command-line profile creation and loading tools listed under [argyllcms](https://www.archlinux.org/packages/?name=argyllcms).
-
-*   Review the official [Argyll CMS documentation](http://www.argyllcms.com/doc/ArgyllDoc.html) for details on how to profile selected devices.
 
 ### ThinkPads
 
@@ -187,9 +209,13 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 
 ```
 
+You can easily use one of these loaders to apply the color profile in early boot stage when starting a display manager, e.g. using [[LightDM startup script](https://wiki.ubuntu.com/LightDM#Adding_System_Hooks)]. This allows to load a single icc profile file. This won't work with loading several profile files when using a multi monitopr setup.
+
 ## Applications that can use ICC profiles
 
-*   [GIMP](/index.php/GIMP "GIMP") can use ICC profiles for color-corrected display of the image being edited. The use of the installed ICC profile has to be explicitly enabled in the settings dialog, though.
+*   [[Xsane](http://www.xsane.org/doc/sane-xsane-color-management-doc.html)] can use ICC profiles for color-corrected scanning.
+*   [[Cups](https://www.cups.org/)] can use ICC profiles for color-corrected printing using [[Colord](https://www.freedesktop.org/software/colord/faq.html#cups)]
+*   [GIMP](/index.php/GIMP "GIMP") can use ICC profiles for display of the image being edited. The use of the installed ICC profile has to be explicitly enabled in the settings dialog, though.
 *   [mpv](/index.php/Mpv "Mpv") can take an ICC profile into account when playing a video. The command line argument is: `--vo=opengl:icc-profile=/path/to/profile.icc`.
 *   [Firefox](/index.php/Firefox "Firefox"), by default, uses the system-wide ICC profile only when displaying images that are already tagged with an ICC profile. To assume that untagged images use sRGB and apply color correction also to them, set the `gfx.color_management.mode` preference to 1.
 *   Both [Eye of Gnome](https://www.archlinux.org/packages/?name=eog) and [Eye of MATE](https://www.archlinux.org/packages/?name=eom) automatically use the system-installed ICC profile.
@@ -200,5 +226,5 @@ Load Argyll calibration file `906w-7000K.cal` in `/usr/local/share/color/icc` on
 *   [Linux Color Management](https://en.wikipedia.org/wiki/Linux_color_management "wikipedia:Linux color management") - Wikipedia
 *   [Argyll Color Management System](http://www.argyllcms.com/) - Official Site
 *   [LPROF Main Help Window](http://lprof.sourceforge.net/help/lprof-help.html) - Details on profiling printers and scanners
-*   [dispcalGUI: Basic concept of display calibration and profiling](http://dispcalgui.hoech.net/#concept)
+*   [DisplayCal: Basic concept of display calibration and profiling](http://displaycal.net/#concept)
 *   [Display color profiling on Linux (XFCE)](https://encrypted.pcode.nl/blog/2013/11/24/display-color-profiling-on-linux/)

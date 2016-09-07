@@ -2,42 +2,49 @@ This page was created to consolidate colorization of CLI outputs.
 
 ## Contents
 
-*   [1 diff](#diff)
-*   [2 grep](#grep)
-*   [3 less](#less)
-    *   [3.1 Environment variables](#Environment_variables)
-    *   [3.2 Wrappers](#Wrappers)
-    *   [3.3 Reading from stdin](#Reading_from_stdin)
-*   [4 ls](#ls)
-*   [5 man](#man)
-    *   [5.1 Using less](#Using_less)
-    *   [5.2 Using most](#Using_most)
-    *   [5.3 Using X resources](#Using_X_resources)
-        *   [5.3.1 xterm](#xterm)
-        *   [5.3.2 rxvt-unicode](#rxvt-unicode)
-*   [6 pacman](#pacman)
-*   [7 Wrappers for other programs](#Wrappers_for_other_programs)
-    *   [7.1 Universal wrappers with multiple preconfigured presets](#Universal_wrappers_with_multiple_preconfigured_presets)
-    *   [7.2 Compilers](#Compilers)
-    *   [7.3 Ping](#Ping)
-    *   [7.4 Make](#Make)
-    *   [7.5 Libraries](#Libraries)
-*   [8 Shells](#Shells)
-    *   [8.1 bash](#bash)
-    *   [8.2 zsh](#zsh)
-    *   [8.3 Fish](#Fish)
-*   [9 Terminal emulators](#Terminal_emulators)
-    *   [9.1 Virtual console](#Virtual_console)
-        *   [9.1.1 Login screen](#Login_screen)
-    *   [9.2 X window system](#X_window_system)
-    *   [9.3 Display all 256 colors](#Display_all_256_colors)
-    *   [9.4 Display tput escape codes](#Display_tput_escape_codes)
-    *   [9.5 Enumerate supported colors](#Enumerate_supported_colors)
-    *   [9.6 Enumerate terminal capabilities](#Enumerate_terminal_capabilities)
-    *   [9.7 Color scheme scripts](#Color_scheme_scripts)
-*   [10 See also](#See_also)
+*   [1 Applications](#Applications)
+    *   [1.1 diff](#diff)
+    *   [1.2 grep](#grep)
+    *   [1.3 less](#less)
+        *   [1.3.1 Environment variables](#Environment_variables)
+        *   [1.3.2 Reading from stdin](#Reading_from_stdin)
+    *   [1.4 ls](#ls)
+    *   [1.5 man](#man)
+        *   [1.5.1 Using less](#Using_less)
+        *   [1.5.2 Using most](#Using_most)
+        *   [1.5.3 Using X resources](#Using_X_resources)
+            *   [1.5.3.1 xterm](#xterm)
+            *   [1.5.3.2 rxvt-unicode](#rxvt-unicode)
+    *   [1.6 pacman](#pacman)
+*   [2 Wrappers](#Wrappers)
+    *   [2.1 Universal wrappers](#Universal_wrappers)
+    *   [2.2 Libraries for colorizing an output](#Libraries_for_colorizing_an_output)
+    *   [2.3 Application specific](#Application_specific)
+        *   [2.3.1 Compilers](#Compilers)
+        *   [2.3.2 diff](#diff_2)
+        *   [2.3.3 less](#less_2)
+            *   [2.3.3.1 source-highlight](#source-highlight)
+            *   [2.3.3.2 lesspipe](#lesspipe)
+        *   [2.3.4 Make](#Make)
+        *   [2.3.5 Ping](#Ping)
+*   [3 Shells](#Shells)
+    *   [3.1 bash](#bash)
+    *   [3.2 zsh](#zsh)
+    *   [3.3 Fish](#Fish)
+*   [4 Terminal emulators](#Terminal_emulators)
+    *   [4.1 Virtual console](#Virtual_console)
+        *   [4.1.1 Login screen](#Login_screen)
+    *   [4.2 X window system](#X_window_system)
+    *   [4.3 Display all 256 colors](#Display_all_256_colors)
+    *   [4.4 Display tput escape codes](#Display_tput_escape_codes)
+    *   [4.5 Enumerate supported colors](#Enumerate_supported_colors)
+    *   [4.6 Enumerate terminal capabilities](#Enumerate_terminal_capabilities)
+    *   [4.7 Color scheme scripts](#Color_scheme_scripts)
+*   [5 See also](#See_also)
 
-## diff
+## Applications
+
+### diff
 
 diffutils from version 3.4 includes the `--color` option ([GNU mailing list](https://lists.gnu.org/archive/html/info-gnu/2016-08/msg00004.html)).
 
@@ -46,17 +53,7 @@ $ alias diff 'diff --color=auto'
 
 ```
 
-Alternatively, the following wrappers can be used:
-
-*   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting
-
-	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
-
-*   **cwdiff** — A (w)diff wrapper to support directories and colorize the output
-
-	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
-
-## grep
+### grep
 
 `grep`'s color output can be helpful for learning [regexp](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") and additional `grep` functionality.
 
@@ -75,9 +72,9 @@ export GREP_COLOR="1;32"
 
 `GREP_COLORS` may be used to define specific searches.
 
-## less
+### less
 
-### Environment variables
+#### Environment variables
 
 Add the following lines to your shell configuration file:
 
@@ -97,34 +94,7 @@ Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_
 
 **Note:** The `LESS_TERMCAL_*xx*` variables is currently undocumented in less(1), for a detailed explanation on these sequences, see this [answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
 
-### Wrappers
-
-You can enable code syntax coloring in *less*. First, [install](/index.php/Install "Install") [source-highlight](https://www.archlinux.org/packages/?name=source-highlight), then add these lines to your shell configuration file:
-
- `~/.bashrc` 
-```
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-export LESS='-R '
-
-```
-
-Frequent users of the command line interface might want to install [lesspipe](https://www.archlinux.org/packages/?name=lesspipe).
-
-Users may now list the compressed files inside of an archive using their pager:
-
- `$ less *compressed_file*.tar.gz` 
-```
-==> use tar_file:contained_file to view a file in the archive
--rw------- *username*/*group*  695 2008-01-04 19:24 *compressed_file*/*content1*
--rw------- *username*/*group*   43 2007-11-07 11:17 *compressed_file*/*content2*
-*compressed_file*.tar.gz (END)
-```
-
-*lesspipe* also grants *less* the ability of interfacing with files other than archives, serving as an alternative for the specific command associated for that file-type (such as viewing HTML via [python-html2text](https://www.archlinux.org/packages/?name=python-html2text)).
-
-Re-login after installing *lesspipe* in order to activate it, or source `/etc/profile.d/lesspipe.sh`.
-
-### Reading from stdin
+#### Reading from stdin
 
 **Note:** It is recommended to add colored output through [#Environment variables](#Environment_variables) to your `~/.bashrc` or `~/.zshrc`, as the below is based on `export LESS=R`
 
@@ -186,7 +156,7 @@ $ pty *program* | less
 
 ```
 
-## ls
+### ls
 
 Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
 
@@ -202,11 +172,11 @@ eval $(dircolors -b)
 
 ```
 
-## man
+### man
 
 Color-enabled man pages allow for a clearer presentation and easier digestion of the content. There are two prevalent methods for achieving colored man pages: using `less`, or opting for `most`.
 
-### Using less
+#### Using less
 
 You can set various `LESS_TERMCAP_***` environment variables to change how it highlights text. For example, `LESS_TERMCAP_md` is used for bold text and `LESS_TERMCAP_me` is used to reset to normal text formatting[[2]](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized).
 
@@ -243,7 +213,7 @@ Remember to source your config or restart your shell to make the changes take ef
 
 For a detailed explanation on these variables, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840). [Bash/Prompt customization#Examples](/index.php/Bash/Prompt_customization#Examples "Bash/Prompt customization") has some (non-Bash-specific) examples of escape sequences that can be used.
 
-### Using most
+#### Using most
 
 The basic function of 'most' is similar to `less` and `more`, but it has a smaller feature set. Configuring most to use colors is easier than using less, but additional configuration is necessary to make most behave like less. Install the [most](https://www.archlinux.org/packages/?name=most) package.
 
@@ -314,11 +284,11 @@ setkey edit "v"
 
 ```
 
-### Using X resources
+#### Using X resources
 
 A quick way to add color to manual pages viewed on [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` or [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) is to modify `~/.Xresources`.
 
-#### xterm
+##### xterm
 
 ```
 *VT100.colorBDMode:     true
@@ -337,7 +307,7 @@ which *replaces* the decorations with the colors. Also add:
 
 if you want colors and decorations (bold or underline) *at the same time*. See `man xterm` for a description of the `veryBoldColors` resource.
 
-#### rxvt-unicode
+##### rxvt-unicode
 
 ```
 URxvt.colorIT:      #87af5f
@@ -357,15 +327,17 @@ Launch a new `xterm/uxterm` or `rxvt-unicode` and you should see colorful man pa
 
 This combination puts colors to **bold** and <u>underlined</u> words in `xterm/uxterm` or to **bold**, <u>underlined</u>, and *italicized* text in `rxvt-unicode`. You can play with different combinations of these attributes (see the [sources](http://pub.ligatura.org/fs/xfree86/xresources/xterm) of this item).
 
-## pacman
+### pacman
 
 [Pacman](/index.php/Pacman "Pacman") has a color option. Uncomment the `Color` line in `/etc/pacman.conf`.
 
-## Wrappers for other programs
+## Wrappers
+
+### Universal wrappers
 
 (most of them outdated but still functioning)
 
-### Universal wrappers with multiple preconfigured presets
+They go with multiple preconfigured presets that can be changed, and new can be created/contributed.
 
 *   **rainbow** — Colorize commands output or STDIN using patterns.
     Presets: df, diff, env, host, ifconfig, java-stack-trace, jboss, jonas, md5sum, mvn2, mvn3, ping, tomcat, top, traceroute.
@@ -392,25 +364,7 @@ This combination puts colors to **bold** and <u>underlined</u> words in `xterm/u
 
 	[http://cwrapper.sourceforge.net/](http://cwrapper.sourceforge.net/) || [cw](https://aur.archlinux.org/packages/cw/)
 
-### Compilers
-
-*   **colorgcc** — A Perl wrapper to colorize the output of compilers with warning/error messages matching the gcc output format
-
-	[https://schlueters.de/colorgcc.html](https://schlueters.de/colorgcc.html) || [colorgcc](https://www.archlinux.org/packages/?name=colorgcc)
-
-### Ping
-
-*   **prettyping** — Add some great features to ping monitoring. A wrapper around the standard ping tool with the objective of making the output prettier, more colorful, more compact, and easier to read.
-
-	[http://denilson.sa.nom.br/prettyping/](http://denilson.sa.nom.br/prettyping/) || [prettyping](https://aur.archlinux.org/packages/prettyping/)
-
-### Make
-
-*   **colormake** — A simple wrapper around make to make it's output more readable.
-
-	[http://bre.klaki.net/programs/colormake/](http://bre.klaki.net/programs/colormake/) || [colormake](https://aur.archlinux.org/packages/colormake/), [colormake-git](https://aur.archlinux.org/packages/colormake-git/)
-
-### Libraries
+### Libraries for colorizing an output
 
 *   **ruby-rainbow** — Rainbow is extension to ruby's String class adding support for colorizing text on ANSI terminal
 
@@ -419,6 +373,69 @@ This combination puts colors to **bold** and <u>underlined</u> words in `xterm/u
 *   **python-blessings** — A thin, practical wrapper around terminal coloring, styling, and positioning
 
 	[https://pypi.python.org/pypi/blessings](https://pypi.python.org/pypi/blessings) || [python-blessings](https://www.archlinux.org/packages/?name=python-blessings), [python2-blessings](https://www.archlinux.org/packages/?name=python2-blessings)
+
+### Application specific
+
+#### Compilers
+
+*   **colorgcc** — A Perl wrapper to colorize the output of compilers with warning/error messages matching the gcc output format
+
+	[https://schlueters.de/colorgcc.html](https://schlueters.de/colorgcc.html) || [colorgcc](https://www.archlinux.org/packages/?name=colorgcc)
+
+#### diff
+
+Alternatively to built-in color output, the following wrappers can be used:
+
+*   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting
+
+	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
+
+*   **cwdiff** — A (w)diff wrapper to support directories and colorize the output
+
+	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
+
+#### less
+
+##### source-highlight
+
+You can enable code syntax coloring in *less*. First, [install](/index.php/Install "Install") [source-highlight](https://www.archlinux.org/packages/?name=source-highlight), then add these lines to your shell configuration file:
+
+ `~/.bashrc` 
+```
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESS='-R '
+
+```
+
+##### lesspipe
+
+Frequent users of the command line interface might want to install [lesspipe](https://www.archlinux.org/packages/?name=lesspipe).
+
+Users may now list the compressed files inside of an archive using their pager:
+
+ `$ less *compressed_file*.tar.gz` 
+```
+==> use tar_file:contained_file to view a file in the archive
+-rw------- *username*/*group*  695 2008-01-04 19:24 *compressed_file*/*content1*
+-rw------- *username*/*group*   43 2007-11-07 11:17 *compressed_file*/*content2*
+*compressed_file*.tar.gz (END)
+```
+
+*lesspipe* also grants *less* the ability of interfacing with files other than archives, serving as an alternative for the specific command associated for that file-type (such as viewing HTML via [python-html2text](https://www.archlinux.org/packages/?name=python-html2text)).
+
+Re-login after installing *lesspipe* in order to activate it, or source `/etc/profile.d/lesspipe.sh`.
+
+#### Make
+
+*   **colormake** — A simple wrapper around make to make it's output more readable.
+
+	[http://bre.klaki.net/programs/colormake/](http://bre.klaki.net/programs/colormake/) || [colormake](https://aur.archlinux.org/packages/colormake/), [colormake-git](https://aur.archlinux.org/packages/colormake-git/)
+
+#### Ping
+
+*   **prettyping** — Add some great features to ping monitoring. A wrapper around the standard ping tool with the objective of making the output prettier, more colorful, more compact, and easier to read.
+
+	[http://denilson.sa.nom.br/prettyping/](http://denilson.sa.nom.br/prettyping/) || [prettyping](https://aur.archlinux.org/packages/prettyping/)
 
 ## Shells
 

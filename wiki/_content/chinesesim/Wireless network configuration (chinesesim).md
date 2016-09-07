@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-12，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=437081)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=449561)可以查看翻译后英文页面的改动。
 
 配置无线网络一般分两步：第一步是识别硬件、安装正确的驱动程序并进行配置，安装盘中已经包含驱动，但是通常需要额外安装；第二步是选择一种管理无线连接的方式。这篇文章涵盖了这两方面，并提供了无线管理工具的链接地址。
 
@@ -36,7 +36,7 @@
         *   [3.8.2 Cause #2](#Cause_.232)
         *   [3.8.3 Cause #3](#Cause_.233)
         *   [3.8.4 Cause #4](#Cause_.234)
-*   [4 驱动与固件排错Troubleshooting drivers and firmware](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99Troubleshooting_drivers_and_firmware)
+*   [4 驱动与固件排错](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99)
     *   [4.1 Ralink](#Ralink)
         *   [4.1.1 rt2x00](#rt2x00)
         *   [4.1.2 rt3090](#rt3090)
@@ -76,7 +76,7 @@
 
 有些无线芯片需要额外的固件，默认安装的 [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) 提供了很多固件。如果缺失需要的固件，请查看 [#安装 driver/firmware](#.E5.AE.89.E8.A3.85_driver.2Ffirmware).
 
-Udev 不是完美的，有些内核模块需要[手动安装](/index.php/Kernel_modules#Loading "Kernel modules"). 有些时候 Udev 会同时加载相互冲突的多个模块，就需要[屏蔽](/index.php/Kernel_modules#Blacklisting "Kernel modules") 不需要的模块。
+Udev 不是完美的，有些内核模块需要[手动安装](/index.php/Kernel_modules#Manual_module_handling "Kernel modules"). 有些时候 Udev 会同时加载相互冲突的多个模块，就需要[屏蔽](/index.php/Kernel_modules#Blacklisting "Kernel modules") 不需要的模块。
 
 ### 检查设备状态
 
@@ -187,7 +187,7 @@ WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%
 
 **Note:**
 
-*   安装介质上包含 [iw](https://www.archlinux.org/packages/?name=iw) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
+*   安装介质上包含 [iw](https://www.archlinux.org/packages/?name=iw)，[wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
 *   示例中使用网络接口 `wlan0` 和热点 `*your_essid*`.
 *   大部分命令需要以 [root 权限](/index.php/Users_and_groups "Users and groups")执行，否则会无输出就退出。
 
@@ -280,7 +280,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-如果出现错误 `RTNETLINK answers: Operation not possible due to RF-kill`, 请确保硬件开关已经打开。参阅 [#Rfkill caveat](#Rfkill_caveat)。
+如果出现错误 `RTNETLINK answers: Operation not possible due to RF-kill`, 请确保硬件开关已经打开。参阅 [#Rfkill 警告](#Rfkill_.E8.AD.A6.E5.91.8A)。
 
 要验证接口确实打开：
 
@@ -474,7 +474,7 @@ WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无
 
 ## 排错
 
-This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware).
+This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#驱动与固件排错](#.E9.A9.B1.E5.8A.A8.E4.B8.8E.E5.9B.BA.E4.BB.B6.E6.8E.92.E9.94.99).
 
 ### Temporary internet access
 
@@ -556,7 +556,7 @@ $ iw list | grep -A 15 Frequencies:
 
 ```
 
-A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain. `wpa_supplicant` can also use a regdomain in the `country=` line of `/etc/wpa_supplicant.conf`.
+A more permanent configuration of the regdomain can be achieved through editing `/etc/conf.d/wireless-regdom` and uncommenting the appropriate domain. `wpa_supplicant` can also use a regdomain in the `country=` line of `/etc/wpa_supplicant/wpa_supplicant.conf`.
 
 It is also possible to configure the [cfg80211](http://wireless.kernel.org/en/developers/Documentation/cfg80211) kernel module to use a specific regdomain by adding, for example, `options cfg80211 ieee80211_regdom=EU` as [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). However, this is part of the [old regulatory implementation](http://wireless.kernel.org/en/developers/Regulatory#The_ieee80211_regdom_module_parameter).
 
@@ -593,7 +593,7 @@ The individual tools used in this article further provide options for more detai
 
 ### Failed to get IP address
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#Automatic_setup)!
+*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in your [connection manager](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)!
 
 *   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
@@ -664,7 +664,7 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 *   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
 *   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
 
-## 驱动与固件排错Troubleshooting drivers and firmware
+## 驱动与固件排错
 
 This section covers methods and procedures for installing kernel modules and *firmware* for specific chipsets, that differ from generic method.
 
@@ -752,6 +752,8 @@ Some users may encounter errors with powersave on this card. This is shown with 
 or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
+
+如果信号质量很差，可能是一个天线不工作，无法运行在自动模式。可以用 `ant_sel=1` 或 `ant_sel=2` 内核选项强制选择天线。
 
 ### Atheros
 
@@ -845,7 +847,7 @@ The solution is to set the `ps_enable=1` option for the `ath9k` module:
 
 [iwlegacy](http://wireless.kernel.org/en/users/Drivers/iwlegacy) is the wireless driver for Intel's 3945 and 4965 wireless chips. The firmware is included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
-[udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules") for details.
+[udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details.
 
 If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n:
 
@@ -971,7 +973,7 @@ depmod -a
 
 ```
 
-现在基本上就要安装完ndiswrapper了; 依照 [这里](/index.php/Kernel_modules#Loading "Kernel modules")设置启动时加载这个模块。
+现在基本上就要安装完ndiswrapper了; 依照 [这里](/index.php/Kernel_modules "Kernel modules")设置启动时加载这个模块。
 
 ```
 modprobe ndiswrapper

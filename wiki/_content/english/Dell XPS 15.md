@@ -287,7 +287,7 @@ Regardless, for now, it is recommended that you don't/reduce hot-plugging headph
 
 ### Graphics
 
-By default, both Intel and NVidia cards are active, which can consume a lot of power. Using the Intel-only setup below, you can reduce your battery usage due to disabling the Nvidia card. The Intel and Nvidia setup describes how to utilize both cards and save power using [Bumblebee](/index.php/Bumblebee "Bumblebee").
+By default, both Intel and NVidia cards are active, which can consume a lot of power. Using the Intel-only setup below, you can reduce your battery usage due to disabling the Nvidia card. The Intel and Nvidia setup describes how to utilize both cards and save power using [Bumblebee](/index.php/Bumblebee "Bumblebee"). See also [Hybrid_graphics](/index.php/Hybrid_graphics "Hybrid graphics").
 
 #### Intel only
 

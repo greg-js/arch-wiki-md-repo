@@ -216,22 +216,7 @@ Source: [akendo.eu](https://blog.akendo.eu/archlinux-random-mac-for-new-wireless
 
 ### Method 5: NetworkManager
 
-You can use a script which networkmanager invokes before to bring the interface up. The path to place the script may be `/usr/local/etc/NetworkManager/dispatcher.d/pre-up.d/macspoof.sh` or `/etc/NetworkManager/dispatcher.d/pre-up.d/macpoof.sh`. The first argument `$1` is the interface name.
-
-```
-#!/bin/bash
-ip link set dev $1 down
-macchanger -e $1
-ip link set dev $1 up
-```
-
-As of NetworkManager 1.2 it supports this randomization natively:
-
- `/etc/NetworkManager/NetworkManager.conf` 
-```
-[connection]
-wifi.mac-address-randomization=2
-```
+See [NetworkManager#Configuring MAC Address Randomization](/index.php/NetworkManager#Configuring_MAC_Address_Randomization "NetworkManager").
 
 ## Troubleshooting
 

@@ -115,7 +115,7 @@ Partitionless disk (a.k.a. superfloppy) refers to using a storage device without
 
 #### Btrfs partitioning
 
-Btrfs can occupy an entire data storage device and replace the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
+Btrfs can occupy an entire data storage device and replace the [MBR](#Master_Boot_Record) or [GPT](#GUID_Partition_Table) partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
 
 See also [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs").
 
@@ -131,7 +131,7 @@ There are no strict rules for partitioning a hard drive, although one may follow
 
 This scheme is the simplest and should be enough for most use cases. A [swapfile](/index.php/Swapfile "Swapfile") can be created and easily resized as needed. It usually makes sense to start by considering a single `/` partition and then separate out others based on specific use cases like RAID, encryption, a shared media partition, etc.
 
-Note that [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"), and installing [GRUB](/index.php/GRUB "GRUB") on a BIOS system partitioned with [GPT](/index.php/GPT "GPT") requires an additional BIOS boot partition.
+Note that [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"), and installing [GRUB](/index.php/GRUB "GRUB") on a BIOS system partitioned with [GPT](#GUID_Partition_Table) requires an additional BIOS boot partition.
 
 ### Discrete partitions
 
@@ -230,7 +230,7 @@ The size of the partitions depends on personal preference, but the following inf
 
 	|| [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](/index.php/GPT "GPT") version of fdisk.
+*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](#GUID_Partition_Table) version of fdisk.
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 

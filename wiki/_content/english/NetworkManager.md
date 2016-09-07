@@ -169,7 +169,7 @@ The following applications can be useful for configuring and managing networks w
 
 A command line frontend, *nmcli*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-For usage information, see `man nmcli`. Examples:
+For usage information, see [nmcli(1)](https://www.mankier.com/1/nmcli). Examples:
 
 *   To connect to a wifi network: `nmcli dev wifi connect <name> password <password>` 
 *   To connect to a wifi on the `wlan1` wifi interface: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
@@ -183,7 +183,7 @@ For usage information, see `man nmcli`. Examples:
 
 A curses based graphical frontend, *nmtui*, is included with [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
 
-For usage information, see `man nmtui`.
+For usage information, see [nmtui(1)](https://www.mankier.com/1/nmtui).
 
 #### nmcli-dmenu
 

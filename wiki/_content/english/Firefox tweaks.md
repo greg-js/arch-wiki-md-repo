@@ -6,12 +6,11 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [1.1 Advanced Firefox options](#Advanced_Firefox_options)
         *   [1.1.1 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
         *   [1.1.2 Network settings](#Network_settings)
-        *   [1.1.3 Turn off anti-phishing](#Turn_off_anti-phishing)
-        *   [1.1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-        *   [1.1.5 Turn off OCSP validation](#Turn_off_OCSP_validation)
-        *   [1.1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
-        *   [1.1.7 Longer interval to save session](#Longer_interval_to_save_session)
-        *   [1.1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
+        *   [1.1.3 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+        *   [1.1.4 Turn off OCSP validation](#Turn_off_OCSP_validation)
+        *   [1.1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
+        *   [1.1.6 Longer interval to save session](#Longer_interval_to_save_session)
+        *   [1.1.7 Immediate rendering of pages](#Immediate_rendering_of_pages)
     *   [1.2 Other modifications](#Other_modifications)
         *   [1.2.1 Enable firefox optional tracking protection](#Enable_firefox_optional_tracking_protection)
         *   [1.2.2 Referer header control](#Referer_header_control)
@@ -91,23 +90,6 @@ Advanced network settings can be found on the `about:config` page (try searching
 | Key | Value | Description |
 | network.http.pipelining | true | Enable [pipelining](http://www-archive.mozilla.org/projects/netlib/http/pipelining-faq.html) for normal connections |
 | network.http.proxy.pipelining | true | Enable pipelining for proxy connections |
-
-#### Turn off anti-phishing
-
-**Note:** Deleting files from your profile folder is potentially dangerous, so it is recommended that you back it up first.
-
-The anti-phishing features of Firefox may cause Firefox to become slow to start or exit. The problem is that Firefox maintains an [SQLite](/index.php/SQLite "SQLite") database that can grow quite big which makes reading and writing slower after repeated use. If you feel that you do not need Firefox to tell you which sites may be suspect you can disable this feature:
-
-*   Turn off the following options under the security tab in preferences: *"Block reported attack sites"* and *"Block reported web forgeries"*.
-
-*   Delete all files beginning with `urlclassifier` in your profile folder (`~/.mozilla/firefox/<profile_dir>/`):
-
-```
-$ rm -i ~/.mozilla/firefox/<profile_dir>/urlclassifier*
-
-```
-
-	Some of these files might be recreated by Firefox, but they will not grow any larger than their initial size.
 
 #### Stop urlclassifier3.sqlite from being created again
 
@@ -613,9 +595,9 @@ Now scrolling should flow smoothly.
 
 ### WebRTC exposes LAN IP address
 
-**Warning:** This method disables WebRTC.
+To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.ice.default_address_only` to **true** (or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/)).
 
-To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.enabled` to **false** (or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/)).
+You can use this [WebRTC test page](http://net.ipcalf.com/) to confirm that your internal IP address is no longer leaked.
 
 ### Run Firefox inside an nspawn container
 

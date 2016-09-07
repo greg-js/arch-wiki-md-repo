@@ -13,6 +13,7 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Pass 4 fails when launching](#Pass_4_fails_when_launching)
     *   [5.2 System.map is missing](#System.map_is_missing)
+    *   [5.3 Process return probes not available](#Process_return_probes_not_available)
 
 ## SystemTap
 
@@ -120,3 +121,19 @@ Alternately,
    sudo cp /proc/kallsyms /boot/System.map-`uname -r`
 
 ```
+
+### Process return probes not available
+
+If you are sure that your kernel configuration is correct, but on launching `stap` you get **both** of the following messages:
+
+```
+   WARNING: Kernel function symbol table missing [man warning::symbols]
+
+```
+
+```
+   semantic error: process return probes not available [man error::inode-uprobes]
+
+```
+
+then SystemTap may have failed to verify support for this feature. You can fix this by following the steps in [System.map is missing](#System.map_is_missing).

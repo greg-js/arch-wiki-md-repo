@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-08，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=437642)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=449127)可以查看翻译后英文页面的改动。
 
 [PHP](http://www.php.net/)是一种广泛使用的通用脚本语言，特别适合于Web开发，可嵌入到HTML。
 
@@ -28,8 +28,8 @@
     *   [6.5 PhpStorm](#PhpStorm)
     *   [6.6 Zend Studio](#Zend_Studio)
 *   [7 Commandline tools](#Commandline_tools)
-    *   [7.1 Box](#Box)
-    *   [7.2 Composer](#Composer)
+    *   [7.1 Composer](#Composer)
+    *   [7.2 Box](#Box)
     *   [7.3 PDepend](#PDepend)
     *   [7.4 PHP Coding Standards Fixer](#PHP_Coding_Standards_Fixer)
     *   [7.5 PHP-CodeSniffer](#PHP-CodeSniffer)
@@ -40,6 +40,7 @@
     *   [7.10 phptok](#phptok)
     *   [7.11 PHPUnit](#PHPUnit)
     *   [7.12 PHPUnit Skeleton Generator](#PHPUnit_Skeleton_Generator)
+    *   [7.13 Producer](#Producer)
 *   [8 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [8.1 PHP Fatal error: Class 'ZipArchive' not found](#PHP_Fatal_error:_Class_.27ZipArchive.27_not_found)
     *   [8.2 /etc/php/php.ini not parsed](#.2Fetc.2Fphp.2Fphp.ini_not_parsed)
@@ -48,7 +49,7 @@
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源")安装[php](https://www.archlinux.org/packages/?name=php) 。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源")安装[php](https://www.archlinux.org/packages/?name=php)。AUR 中也提供了老的版本，例如 [php56](https://aur.archlinux.org/packages/php56/).
 
 注意：要想像纯CGI那样运行PHP，你需要安装 [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) 。
 
@@ -94,6 +95,8 @@ $ pacman -Ss php-
 
 **Tip:** 不要编辑`/etc/php/php.ini`，扩展的启停可在 `/etc/php/conf.d` 中设置，如： (e.g. `/etc/php/conf.d/gd.ini`)
 
+要安装 PHP 老版本的扩展，可以在 AUR 中搜索 php56-*, 例如 [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)。
+
 ### gd
 
 欲使用 [php-gd](https://www.archlinux.org/packages/?name=php-gd) 在 `/etc/php/php.ini`中取消下列内容的注释:
@@ -120,7 +123,7 @@ extension=imagick.so
 
 ### PCNTL
 
-利用 PCNTL 可以在服务器上直接创建进程。虽然这可能是你想要的，但是这样也会让 PHP 有能力把机器搞的一团糟。所以 PHP 不能和其他扩展一样加载，要启用此扩展，需要重新编译PHP。
+利用 PCNTL 可以在服务器上直接创建进程。虽然这可能是你想要的，但是这样也会让 PHP 有能力把机器搞的一团糟。所以 PHP 不能和其他扩展一样加载，要启用此扩展，需要重新编译PHP。ArchLinux 的 PHP 已经加入 "--enable-pcntl"选项，默认已经启用。
 
 ### MySQL/MariaDB
 
@@ -201,20 +204,20 @@ OPCache随PHP发布，因此在[PHP configuration file](#Configuration)中开启
 
 ### APCu
 
-APCu can be installed with the [php-apcu](https://www.archlinux.org/packages/?name=php-apcu) package. You can then enable it by uncommenting the following line in `/etc/php/conf.d/apcu.ini`, or adding it to your [PHP configuration file](#Configuration):
+通过 [php-apcu](https://www.archlinux.org/packages/?name=php-apcu) 软件包安装 APCu, 然后在 `/etc/php/conf.d/apcu.ini` 中取消下面行的注释：
 
 ```
 extension=apcu.so
 
 ```
 
-Its author recommends a few [suggested settings](https://github.com/krakjoe/apcu/blob/master/INSTALL), among which:
+作者 [建议进行一些设置](https://github.com/krakjoe/apcu/blob/master/INSTALL):
 
-*   `apc.enabled=1` and `apc.shm_size=32M` are not really required as they represent the [default values](https://secure.php.net/manual/en/apc.configuration.php);
-*   `apc.ttl=7200` on the other hand seems [rather beneficial](https://secure.php.net/manual/en/apc.configuration.php#ini.apc.ttl);
-*   finally, `apc.enable_cli=1`, which although [not recommended](https://secure.php.net/manual/en/apc.configuration.php#ini.apc.enable-cli) by the manual may be required by some software such as [ownCloud](https://github.com/owncloud/core/issues/17329#issuecomment-119248944).
+*   `apc.enabled=1` 和 `apc.shm_size=32M` 并不是必须的，因为这已经是 [默认值](https://secure.php.net/manual/en/apc.configuration.php);
+*   `apc.ttl=7200` 看上去 [很有效](https://secure.php.net/manual/en/apc.configuration.php#ini.apc.ttl);
+*   最后, `apc.enable_cli=1`, 虽然手册上 [不建议启用](https://secure.php.net/manual/en/apc.configuration.php#ini.apc.enable-cli)，有些软件比如 [ownCloud](https://github.com/owncloud/core/issues/17329#issuecomment-119248944) 需要这个选项.
 
-**Tip:** You can add those settings either to APCu's own `/etc/php/conf.d/apcu.ini` **or** directly to your [PHP configuration file](#Configuration). Just make sure not to enable the extension twice as it will result in errors being diplayed in the system logs.
+**Tip:** 可以将设置加入 APCu 自己的 `/etc/php/conf.d/apcu.ini` 或直接加到住配置文件，只需要注意不要同时加入。
 
 ## 开发工具
 
@@ -246,13 +249,13 @@ You would need other plugins for JavaScript support and DB query.
 
 ## Commandline tools
 
-### Box
-
-[Box](http://box-project.github.io/box2/) is an application for building and managing Phars. It can be installed with the [php-box](https://aur.archlinux.org/packages/php-box/) package.
-
 ### Composer
 
 [Composer](https://getcomposer.org/) is a dependency manager for PHP. It can be installed with the [php-composer](https://www.archlinux.org/packages/?name=php-composer) package.
+
+### Box
+
+[Box](http://box-project.github.io/box2/) is an application for building and managing Phars. It can be installed with the [php-box](https://aur.archlinux.org/packages/php-box/) package.
 
 ### PDepend
 
@@ -294,6 +297,12 @@ You would need other plugins for JavaScript support and DB query.
 
 [PHPUnit Skeleton Generator](https://github.com/sebastianbergmann/phpunit-skeleton-generator) is a tool that can generate skeleton test classes from production code classes and vice versa. It can be installed with the [phpunit-skeleton-generator](https://aur.archlinux.org/packages/phpunit-skeleton-generator/) package.
 
+### Producer
+
+[Producer](http://getproducer.org/) is a command-line quality-assurance tool to validate, and then release, your PHP library package.
+
+It can be installed with the [producer](https://aur.archlinux.org/packages/producer/) package.
+
 ## 故障排除
 
 ### PHP Fatal error: Class 'ZipArchive' not found
@@ -318,4 +327,4 @@ If it applies, flag the outdated [AUR](/index.php/AUR "AUR") package as *outdate
 
 ## 参见
 
-*   [PHP Official Website](http://www.php.net/)
+*   [PHP 官方网站](http://www.php.net/)

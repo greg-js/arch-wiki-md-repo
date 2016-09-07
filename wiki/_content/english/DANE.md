@@ -34,3 +34,4 @@ The RR can also easily be generated with the tools `ldns-dane` from [ldns](https
 
 *   [DANE Validator](https://danetools.com/dane)
 *   [Common implementation mistakes](https://dane.sys4.de/common_mistakes)
+*   [Generate TLSA records online](https://www.huque.com/bin/gen_tlsa)

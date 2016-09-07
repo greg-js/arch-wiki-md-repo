@@ -341,7 +341,7 @@ autospawn = no
 
 In order to prevent ALSA from messing around with your firewire devices you have to blacklist all firewire related kernel modules. This also prevents PulseAudio from using firewire. Create the following file:
 
- `/etc/modprove.d/alsa-no-jack.conf` 
+ `/etc/modprobe.d/alsa-no-jack.conf` 
 ```
 blacklist snd-fireworks
 blacklist snd-bebob

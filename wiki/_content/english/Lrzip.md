@@ -19,7 +19,7 @@
 
 ### Compression
 
-Compression of directories (recursive) requires *lrztar*, which first tars the directory, then compresses the single file just like *tar* does when users compress with *gzip* or *xz* (`tar zcf ...` and `tar Jcz ...`, respectively).
+Compression of directories (recursive) requires *lrztar*, which first tars the directory, then compresses the single file just like *tar* does when users compress with *gzip* or *xz* (`tar zcf ...` and `tar Jcz ...`, respectively). Note that the compression algorithms are used after the rzip-like precompressing of the archive, instead of e.g. plain LZMA compression in normal "LZMA compressed archives".
 
 This will produce an [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA") compressed archive `foo.tar.lrz` from a directory named `foo`:
 

@@ -2,7 +2,9 @@
 
 [GPT fdisk](http://www.rodsbooks.com/gdisk/), as implemented in the *gdisk* program and its associated utilities, works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables."
 
-This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html) its related [sfdisk(8)](http://man7.org/linux/man-pages/man8/sfdisk.8.html) and [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html) utilities, as well as the analogous [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html), [sgdisk(8)](http://www.rodsbooks.com/gdisk/sgdisk.html) and [cgdisk(8)](http://www.rodsbooks.com/gdisk/cgdisk.html) utilities.
+This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html) and its related [sfdisk(8)](http://man7.org/linux/man-pages/man8/sfdisk.8.html) utility, as well as the analogous [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html) and [sgdisk(8)](http://www.rodsbooks.com/gdisk/sgdisk.html) utilities.
+
+**Tip:** For basic partitioning functionality with a graphical interface, [cfdisk(8)](http://man7.org/linux/man-pages/man8/cfdisk.8.html) and [cgdisk(8)](http://www.rodsbooks.com/gdisk/cgdisk.html) can be used.
 
 ## Contents
 
@@ -12,16 +14,17 @@ This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html
     *   [3.1 Using dd](#Using_dd)
     *   [3.2 Using sfdisk](#Using_sfdisk)
     *   [3.3 Using sgdisk](#Using_sgdisk)
-    *   [3.4 Recover GPT header](#Recover_GPT_header)
 *   [4 Create a partition table and partitions](#Create_a_partition_table_and_partitions)
     *   [4.1 Start the partition manipulator](#Start_the_partition_manipulator)
         *   [4.1.1 fdisk](#fdisk)
         *   [4.1.2 gdisk](#gdisk)
     *   [4.2 Create new table](#Create_new_table)
     *   [4.3 Create partitions](#Create_partitions)
-    *   [4.4 Sort partitions](#Sort_partitions)
-    *   [4.5 Write changes to disk](#Write_changes_to_disk)
-*   [5 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
+    *   [4.4 Write changes to disk](#Write_changes_to_disk)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
+    *   [5.2 Sort partitions](#Sort_partitions)
+    *   [5.3 Recover GPT header](#Recover_GPT_header)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -140,22 +143,6 @@ If both drives will be in the same computer, you need to randomize the GUID's:
 
 ```
 
-### Recover GPT header
-
-In case main GPT header or backup GPT header gets damaged, you can recover one from the other with *gdisk*.
-
-```
-# gdisk */dev/sda*
-
-```
-
-choose `r` for recovery and transformation options (experts only). From there choose either
-
-*   `b`: use backup GPT header (rebuilding main)
-*   `d`: use main GPT header (rebuilding backup)
-
-When done write the table to disk and exit via the `w` command.
-
 ## Create a partition table and partitions
 
 The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
@@ -222,6 +209,40 @@ See the above articles for considerations concerning the size and location of th
 
 Repeat this procedure until you have the partitions you desire.
 
+### Write changes to disk
+
+Write the table to disk and exit via the `w` command.
+
+## Tips and tricks
+
+### Convert between MBR and GPT
+
+*gdisk*, *sgdisk* and *cgdisk* have the ability to convert MBR and [BSD disklabels](https://en.wikipedia.org/wiki/BSD_disklabel "wikipedia:BSD disklabel") to GPT without data loss. Upon conversion, all the MBR primary partitions and the logical partitions become GPT partitions with the correct partition type GUIDs and Unique partition GUIDs created for each partition. See Rod Smith's [Converting to or from GPT](http://www.rodsbooks.com/gdisk/mbr2gpt.html) for more info.
+
+After conversion, the bootloaders will need to be reinstalled to configure them to boot from GPT.
+
+**Note:**
+
+*   GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR doesn't have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion and resize the final partition.
+*   If your boot loader is GRUB, it needs a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+*   There are known corruption issues with the backup GPT table on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
+
+To convert an MBR partition table to GPT, use *sgdisk*.
+
+```
+# sgdisk -g /dev/sda
+
+```
+
+To convert GPT to MBR use the `m` option. Note that it is not possible to convert more than four partitions from GPT to MBR.
+
+```
+# sgdisk -m /dev/sda
+
+```
+
+If the device will be bootable you will need to set the bootable flag with *fdisk*.
+
 ### Sort partitions
 
 This applies for when a new partition is created in the space between two partitions or a partition is deleted.
@@ -242,37 +263,21 @@ GPT
 
 After sorting the partitions if you are not using [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"), it might be required to adjust the `/etc/fstab` and/or the `/etc/crypttab` configuration files.
 
-### Write changes to disk
+### Recover GPT header
 
-Write the table to disk and exit via the `w` command.
-
-## Convert between MBR and GPT
-
-One of the best features of *gdisk* (and *sgdisk* and *cgdisk* too) is its ability to convert MBR and BSD disklabels to GPT without data loss. Upon conversion, all the MBR primary partitions and the logical partitions become GPT partitions with the correct partition type GUIDs and Unique partition GUIDs created for each partition. See [http://www.rodsbooks.com/gdisk/mbr2gpt.html](http://www.rodsbooks.com/gdisk/mbr2gpt.html) for more info.
-
-After conversion, the bootloaders will need to be reinstalled to configure them to boot from GPT.
-
-**Note:**
-
-*   Remember that GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR doesn't have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion, resize the final partition, or convert everything but the final partition.
-*   Keep in mind that if your Boot-Manager is GRUB, it needs a [BIOS Boot Partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). If your MBR Partitioning Layout isn't too old, there is a good chance that the first partition starts at sector 2048 for alignment reasons. That means at the beginning will be 1007 [KiB](https://en.wikipedia.org/wiki/KiB "wikipedia:KiB") of empty space where this bios-boot partition can be created. To do this, first do the mbr->gpt conversion with gdisk as described below. Afterwards, create a new partition with gdisk and manually specify its position to be sectors 34 - 2047, and set the `ef02` partition type.
-*   There are known corruption issues with the backup GPT table on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
-
-To convert an MBR partition table to GPT, you need the tool *sgdisk* (part of [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)).
+In case main GPT header or backup GPT header gets damaged, you can recover one from the other with *gdisk*.
 
 ```
-# sgdisk -g /dev/sda
+# gdisk */dev/sda*
 
 ```
 
-To convert GPT to MBR use the `m` option. Note that it is not possible to convert more than four partitions from GPT to MBR.
+choose `r` for recovery and transformation options (experts only). From there choose either
 
-```
-# sgdisk -m /dev/sda
+*   `b`: use backup GPT header (rebuilding main)
+*   `d`: use main GPT header (rebuilding backup)
 
-```
-
-If the device will be bootable you will need to set the bootable flag with *fdisk*.
+When done write the table to disk and exit via the `w` command.
 
 ## See also
 

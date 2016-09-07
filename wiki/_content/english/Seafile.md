@@ -19,7 +19,7 @@ This article covers the installation of the Seafile server. If you only require 
 
 ## Installation
 
-Install [seafile-server](https://aur.archlinux.org/packages/seafile-server/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+Install [seafile-server](https://aur.archlinux.org/packages/seafile-server/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). It is part of the split package [seafile](https://aur.archlinux.org/packages/seafile/) which produces more than one package, but not all of them are necessarily needed in your case.
 
 As root, add a new user to run seafile server instances under:
 
