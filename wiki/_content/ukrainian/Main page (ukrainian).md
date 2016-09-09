@@ -10,37 +10,37 @@
 
 	Короткий огляд Arch Linux, який описує чого слід очікувати від системи.
 
-	[Шлях Arch](/index.php/The_Arch_Way_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "The Arch Way (Українська)")
+	[Часті питання (Англійською)](/index.php/Frequently_asked_questions "Frequently asked questions")
 
-	Пояснює принципи та філософію Arch Linux.
+	Список поширених питань, що часто виникають.
 
 	[Порівняння Arch з іншими дистрибутивами](/index.php/Arch_compared_to_other_distributions_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Arch compared to other distributions (Українська)")
 
 	Узагальнює подібності та відмінності між Arch та іншими дистрибутивами.
 
-	[Arch Linux в пресі (Англійською)](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
-
-	Що про нас кажуть.
-
 	[Посібник зі встановлення](/index.php/Installation_guide_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Installation guide (Українська)")
 
 	Короткий посібник зі встановлення, призначений для досвідчених користувачів Arch Linux.
 
-	[Загальні рекомендації](/index.php?title=General_recommendations_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "General recommendations (Українська) (page does not exist)")
+	[Загальні рекомендації (Англійською)](/index.php/General_recommendations "General recommendations")
 
 	Список рекомендацій після встановлення та інших популярних статей.
 
-	[Часті питання](/index.php?title=FAQ_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "FAQ (Українська) (page does not exist)")
+	[Список програм](/index.php/List_of_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications (Українська)")
 
-	Список поширених питань, що часто виникають.
+	Категоризований спільний список офіційних та AUR програм.
 
 ## Наша спільнота
 
-	[Взяти участь](/index.php/Getting_involved_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Getting involved (Українська)")
+	[Норми поведінки (Англійською)](/index.php/Code_of_conduct "Code of conduct")
 
-	Описує різні способи внеску до спільноти Arch.
+	Керівні принципи для спільноти Arch.
 
-	[ArchWiki:Співпраця](/index.php?title=ArchWiki:Contributing_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "ArchWiki:Contributing (Українська) (page does not exist)")
+	[Брати участь (Англійською)](/index.php/Getting_involved "Getting involved")
+
+	Описує різні шляхи внеску до спільноти Arch
+
+	[ArchWiki:Співпраця (Англійською)](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
 
 	Якщо бажаєте і можете зробити свій внесок у вікі - перегляньте цю статтю.
 
@@ -52,16 +52,12 @@
 
 	Колекція посилань на спільноти Arch Linux у всьому світі.
 
-	[Правила форуму (Англійською)](/index.php/Forum_etiquette "Forum etiquette")
-
-	Керівні принципи для учасників форуму Arch.
-
 	[Канали IRC (Англійською)](/index.php/IRC_channels "IRC channels")
 
 	Зберіться разом з користувачами Arch для хорошої бесіди.
 
 ## Допомога
 
-Сторінки ArchWiki відповідають певним правилам. Якщо у вас виникли проблеми при читанні ArchWiki або розумінні деяких вказівок, перегляньте [Допомога:Читання](/index.php?title=Help:Reading_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "Help:Reading (Українська) (page does not exist)") для отримання роз'яснень.
+Сторінки ArchWiki відповідають певним правилам. Якщо у вас виникли проблеми при читанні ArchWiki або розумінні деяких вказівок, перегляньте [Допомога:Читання (Англійською)](/index.php/Help:Reading "Help:Reading") для отримання роз'яснень.
 
-Якщо ви шукаєте конкретну інформацію — спробуйте скористатись полем пошуку ліворуч. Також ви можете використати ваш улюблений пошуковий механізм (зазвичай достатньо додати `site:wiki.archlinux.org` для пошукового запиту). Перегляньте [Допомога:Пошук](/index.php?title=Help:Searching_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)&action=edit&redlink=1 "Help:Searching (Українська) (page does not exist)") для інших трюків.
+Якщо ви шукаєте конкретну інформацію — спробуйте скористатись полем пошуку ліворуч. Також ви можете використати ваш улюблений пошуковий механізм (зазвичай достатньо додати `site:wiki.archlinux.org` для пошукового запиту). Перегляньте [Допомога:Пошук (Англійською)](/index.php/Help:Searching "Help:Searching") для інших трюків.

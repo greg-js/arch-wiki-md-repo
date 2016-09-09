@@ -278,7 +278,7 @@ This method does not allow you to span the logical volumes over multiple disks, 
 **Tip:** Two variants of this setup:
 
 *   Instructions at [Dm-crypt/Specialties#Encrypted system using a remote LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties") use this setup with a remote LUKS header on a USB device to achieve a two factor authentication with it.
-*   Instructions at [Pavel Kogan's blog](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB, but be aware of [FS#43663](https://bugs.archlinux.org/task/43663).
+*   Instructions at [Pavel Kogan's blog](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/) show how to encrypt the `/boot` partition while keeping it on the main LUKS partition when using GRUB.
 
 ### Preparing the disk
 
@@ -389,10 +389,10 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ### Configuring the boot loader
 
-In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
+In order to unlock the encrypted root partition at boot, the following kernel parameter needs to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*device-UUID*:lvm root=/dev/mapper/MyVol-root
+cryptdevice=UUID=*device-UUID*:lvm
 
 ```
 
@@ -809,7 +809,7 @@ Configure GRUB to recognize the LUKS encrypted `/boot` partition and unlock the 
 
  `/etc/default/grub` 
 ```
-GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*<device-UUID>*:lvm root=/dev/mapper/MyStorage-rootvol ..."
+GRUB_CMDLINE_LINUX="... cryptdevice=UUID=*<device-UUID>*:lvm ..."
 GRUB_ENABLE_CRYPTODISK=y
 ```
 

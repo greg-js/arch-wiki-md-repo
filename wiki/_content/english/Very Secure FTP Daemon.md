@@ -269,24 +269,30 @@ pasv_max_port=65534
 Often the server running the FTP daemon is protected by an [iptables](/index.php/Iptables "Iptables") firewall. To allow access to the FTP server the corresponding port needs to be opened using something like
 
 ```
-# iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 2211 -j ACCEPT
+# iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT
 
 ```
 
 This article won't provide any instruction on how to set up iptables but here is an example: [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall").
 
-There are some kernel modules needed for proper FTP connection handling by iptables that should be referenced here. Among those especially *ip_conntrack_ftp*. It is needed as FTP uses the given *listen_port* (21 by default) for commands only; all the data transfer is done over different ports. These ports are chosen by the FTP daemon at random and for each session (also depending on whether active or passive mode is used). To tell iptables that packets on ports should be accepted, *ip_conntrack_ftp* is required. To load it automatically on boot create a new file in `/etc/modules-load.d` e.g.:
+There are some kernel modules needed for proper FTP connection handling by iptables that should be referenced here. Among those especially *nf_conntrack_ftp*. It is needed as FTP uses the given *listen_port* (21 by default) for commands only; all the data transfer is done over different ports. These ports are chosen by the FTP daemon at random and for each session (also depending on whether active or passive mode is used). To tell iptables that packets on ports should be accepted, *nf_conntrack_ftp* is required. To load it automatically on boot create a new file in `/etc/modules-load.d` e.g.:
 
 ```
 # echo nf_conntrack_ftp > /etc/modules-load.d/nf_conntrack_ftp.conf
 
 ```
 
-If you changed the *listen_port* you also need to configure the conntrack module accordingly:
+If the kernel >= 4.7 you either need to set *net.netfilter.nf_conntrack_helper=1* via *sysctl* e.g.
 
- `/etc/modprobe.d/ip_conntrack_ftp.conf` 
 ```
-options nf_conntrack_ftp ports=2211
+# echo net.netfilter.nf_conntrack_helper=1 > /etc/sysctl.d/70-conntrack.conf
+
+```
+
+or use
+
+```
+# iptables -A PREROUTING -t raw -p tcp --dport 21 -j CT --helper ftp
 
 ```
 

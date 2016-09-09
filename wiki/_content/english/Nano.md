@@ -116,9 +116,10 @@ set nowrap
 
 Casual users may prefer to use `nano` over `vi` for its simplicity and ease of use, and may opt to replace vi with nano as the default text editor for commands such as [visudo](/index.php/Sudo#Using_visudo "Sudo").
 
-Setting the `EDITOR` [environment variable](/index.php/Environment_variable#Defining_variables "Environment variable") will work for many applications, for example:
+Setting the `VISUAL` and `EDITOR` [environment variables](/index.php/Environment_variable#Defining_variables "Environment variable") will work for many applications, for example:
 
 ```
+export VISUAL=nano
 export EDITOR=nano
 
 ```

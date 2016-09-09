@@ -60,7 +60,7 @@ You can refresh the data by right-clicking the ArchMap folder and selecting *Ref
 
 ### Daily updated map
 
-[This map](http://dopsi.ch/archmap) is updated daily (around 10:00am UTC) using the [ArchMap](http://github.com/maelstrom59/ArchMap) script. The KML data used to render the map is available [here](http://dopsi.ch/archmap/archmap.kml).
+[This map](https://data.dopsi.ch/archmap) is updated daily (around 10:00am UTC) using the [ArchMap](http://github.com/maelstrom59/ArchMap) script. The KML data used to render the map is available [here](https://data.dopsi.ch/archmap/archmap.kml), the raw users list [here](https://data.dopsi.ch/archmap/users.txt).
 
 ### User Generated Maps
 

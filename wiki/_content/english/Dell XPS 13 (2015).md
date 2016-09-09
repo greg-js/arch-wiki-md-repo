@@ -44,6 +44,7 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
     *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [3.6 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
     *   [3.7 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
+    *   [3.8 Loud cracks/noise during boot or audio playback](#Loud_cracks.2Fnoise_during_boot_or_audio_playback)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -213,6 +214,10 @@ See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems
 You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode.
 
 Refer to the Audio section above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch bug report](https://bugs.archlinux.org/task/47989).
+
+### Loud cracks/noise during boot or audio playback
+
+Some users have reported above sound outputs, as described e.g. in [this BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208496). [Disabling audio powersafe](https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback) may work for people using the **HDA** audio mode. However, it is still unknown how to solve this issue for the **I2S** audio mode. For further reference, see the corresponding [kernel bug record](https://bugzilla.kernel.org/show_bug.cgi?id=112611).
 
 ## See also
 

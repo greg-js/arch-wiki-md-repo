@@ -27,10 +27,9 @@
         *   [5.2.3 Disable and remove the services created by archiso](#Disable_and_remove_the_services_created_by_archiso)
         *   [5.2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
         *   [5.2.5 Configure the system](#Configure_the_system)
-*   [6 Testing iso file by Virtualbox](#Testing_iso_file_by_Virtualbox)
-*   [7 See also](#See_also)
-    *   [7.1 Documentation and tutorials](#Documentation_and_tutorials)
-    *   [7.2 Example customization template](#Example_customization_template)
+*   [6 See also](#See_also)
+    *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
+    *   [6.2 Example customization template](#Example_customization_template)
 
 ## Setup
 
@@ -421,19 +420,6 @@ There are some scripts installed in the live system by archiso scripts, which ar
 #### Configure the system
 
 Now you can follow the skipped steps of the [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") section (setting a locale, timezone, hostname, etc.) and finish the installation by creating an initial ramdisk as described in [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide").
-
-## Testing iso file by Virtualbox
-
-*   add `virtualbox-guest-modules-arch` and `virtualbox-guest-utils` into `packages.both`
-*   add the following three Virtualbox modules into `airootfs/etc/modules-load.d/virtualbox.conf`:
-
-	`vboxguest`
-
-	`vboxsf`
-
-	`vboxvideo`
-
-*   in your `.xinitrc` add `/usr/bin/VBoxClient-all`
 
 ## See also
 

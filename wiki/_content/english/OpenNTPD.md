@@ -32,6 +32,8 @@ $ ntpd -n
 
 ```
 
+**Note:** [HTTPS constraint feature](https://marc.info/?l=openbsd-tech&m=142356166731390&w=2) is not supported by [openntpd](https://www.archlinux.org/packages/?name=openntpd), it requires OpenNTPD to be built with LibreSSL. [openntpd](https://www.archlinux.org/packages/?name=openntpd) is built with OpenSSL.
+
 ### Client
 
 To sync to a single particular server, uncomment and edit the "server" directive.

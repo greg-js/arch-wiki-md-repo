@@ -125,7 +125,7 @@ Quick overview:
 *   Continue with [Installation guide#Format the partitions](/index.php/Installation_guide#Format_the_partitions "Installation guide").
 *   When you reach the “Create initial ramdisk environment” step in the Installation guide, add the `lvm` hook to `/etc/mkinitcpio.conf` (see below for details).
 
-**Warning:** `/boot` cannot reside in LVM when using [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), which does not support LVM. [GRUB](/index.php/GRUB "GRUB") users do not have this limitation. If you need to use GRUB Legacy, you must create a separate `/boot` partition and format it directly.
+**Warning:** `/boot` cannot reside in LVM when using a boot loader, which does not support LVM, you must create a separate `/boot` partition and format it directly. Only [GRUB](/index.php/GRUB "GRUB") is known to support LVM.
 
 ### Create partitions
 
@@ -296,25 +296,28 @@ For example:
 
 ### Add lvm2 hook to mkinitcpio.conf for root on LVM
 
-In case your root filesystem is on LVM, you will need to make sure the `udev` and `lvm2` [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hooks are enabled.
+In case your root filesystem is on LVM, you will need to enable the apropriate [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hooks, otherwise your system might not boot. Enable:
+
+*   `udev` and `lvm2` for the default busybox based initramfs
+*   `systemd` and `sd-lvm2` for systemd based initramfs
 
 `udev` is there by default. Edit the file and insert `lvm2` between `block` and `filesystems` like so:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev ... block **lvm2** filesystems"` 
 
+For systemd based initramfs:
+
+ `/etc/mkinitcpio.conf`  `HOOKS="base systemd ... block **sd-lvm2** filesystems"` 
+
 Afterwards, you can continue in normal installation instructions with the [create an initial ramdisk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") step.
 
-**Tip:** The `lvm2` hook is installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
+**Tip:** The `lvm2` and `sd-lvm2` hooks are installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` or `sd-lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
 
 **Tip:** If your root filesystem is on a mirrored logical volume with type raid1, you will also need to add `dm_mod`, `dm_raid` and `raid1` to the MODULES section of mkinitcpio.conf.
-
-**Warning:** When using the `systemd` mkinitcpio hook you should use the `sd-lvm2` hook instead of the `lvm2` hook. Otherwise your system might not boot. See [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio")
 
 ### Kernel options
 
 If the root file system resides in a logical volume, the `root=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") must be pointed to the mapped device, e.g `/dev/mapper/*vg-name*-*lv-name*`.
-
-You may also need `dolvm`.
 
 ## Volume operations
 

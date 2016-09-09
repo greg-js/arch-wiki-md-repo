@@ -33,7 +33,7 @@ The BIOS loads the beginning 512 bytes ([Master Boot Record](/index.php/Master_B
 
 UEFI has support for reading both the partition table as well as understanding filesystems. Hence it is not limited by 440 byte code limitation (MBR boot code) as in BIOS systems. It does not use the MBR boot code at all.
 
-The commonly used UEFI firmwares support both MBR and GPT partition table. EFI in Apple-Intel Macs are known to also support Apple Partition Map besides MBR and GPT. Most UEFI firmwares have support for accessing FAT12 (floppy disks), FAT16 and FAT32 filesystems in HDDs and ISO9660 (and UDF) in CD/DVDs. EFI in Intel Macs can also access HFS/HFS+ filesystems, in addition to the mentioned ones.
+The commonly used UEFI firmwares support both MBR and GPT [partition table](/index.php/Partitioning#Partition_table "Partitioning"). EFI in Apple-Intel Macs are known to also support Apple Partition Map besides MBR and GPT. Most UEFI firmwares have support for accessing FAT12 (floppy disks), FAT16 and FAT32 filesystems in HDDs and ISO9660 (and UDF) in CD/DVDs. EFI in Intel Macs can also access HFS/HFS+ filesystems, in addition to the mentioned ones.
 
 UEFI does not launch any boot code in the MBR whether it exists or not. Instead it uses a special partition in the partition table called **EFI System Partition** in which files required to be launched by the firmware are stored. Each vendor can store its files under `<EFI SYSTEM PARTITION>/EFI/<VENDOR NAME>/` folder and can use the firmware or its shell (UEFI shell) to launch the boot program. An EFI System Partition is usually formatted as FAT32 or (less commonly) FAT16.
 

@@ -29,6 +29,7 @@ GNOME (pronounced *gah-nohm* or *nohm*) is a [desktop environment](/index.php/De
                 *   [5.2.1.2.2 Titlebar button order](#Titlebar_button_order)
                 *   [5.2.1.2.3 Hide titlebar when maximized](#Hide_titlebar_when_maximized)
             *   [5.2.1.3 GNOME Shell themes](#GNOME_Shell_themes)
+            *   [5.2.1.4 Icons on menu](#Icons_on_menu)
         *   [5.2.2 Desktop](#Desktop)
             *   [5.2.2.1 Icons on the Desktop](#Icons_on_the_Desktop)
             *   [5.2.2.2 Lock screen and background](#Lock_screen_and_background)
@@ -317,6 +318,15 @@ There are a number of GNOME Shell themes available [in the AUR](https://aur.arch
 
 Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
 
+##### Icons on menu
+
+The default GNOME schema doesn't display any icon on menus. To display icons on menus, issue the following command.
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
+
+```
+
 #### Desktop
 
 Various Desktop settings can be applied.
@@ -345,7 +355,7 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/pi
 
 #### Extensions
 
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) is not compatible with Chrome/Chromium. Users wishing to install extensions from the webpage will have to use a compatible browser such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web").
+**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/).
 
 GNOME Shell can be customized with extensions per user or system-wide.
 

@@ -16,7 +16,7 @@
     *   [5.3 wpa_cli action script](#wpa_cli_action_script)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 nl80211 driver not supported on some hardware](#nl80211_driver_not_supported_on_some_hardware)
-    *   [6.2 Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)](#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown_.28Date:_1st_Oct._2015.29)
+    *   [6.2 Problem with mounted network shares (cifs) and shutdown](#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown)
     *   [6.3 Password-related problems](#Password-related_problems)
 *   [7 See also](#See_also)
 
@@ -303,31 +303,26 @@ This indicates that the standard `nl80211` driver does not support the given har
 
 ```
 
-If the command works to connect, and the user wishes to use [systemd](/index.php/Systemd "Systemd") to manage the wireless connection, it is necessary to [edit](/index.php/Systemd#Editing_provided_units "Systemd") the `wpa_supplicant@.service` unit provided by the package and modify the `ExecStart` line accordingly:
+If the command works to connect, and the user wishes to use [systemd](/index.php/Systemd "Systemd") to manage the wireless connection, it is necessary to [edit](/index.php/Systemd#Drop-in_files "Systemd") the `wpa_supplicant@.service` unit provided by the package and modify the `ExecStart` line accordingly:
 
  `/etc/systemd/system/wpa_supplicant@.service.d/wext.conf` 
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I **-Dwext**
+ExecStart=/usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I **-Dnl80211,wext**
 ```
 
-### Problem with mounted network shares (cifs) and shutdown (Date: 1st Oct. 2015)
+**Note:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
 
-When you use **WPA supplicant** (wlan) to connect to your network you might have the problem that the shutdown takes a very long time. That is because systemd runs against a 3 minute timeout. The reason is that WPA supplicant is shut down to early and you do not have the network online when systemd tries to unmount your share(-s). As a workaround (fix) you can add the following settings to the `wpa_supplicant.service` file. This can be done by [Systemd#Drop-in snippets](/index.php/Systemd#Drop-in_snippets "Systemd"). The result looks like this:
+### Problem with mounted network shares (cifs) and shutdown
+
+When you use wireless to connect to network shares you might have the problem that the shutdown takes a very long time. That is because systemd runs against a 3 minute timeout. The reason is that WPA supplicant is shut down too early, i.e. before systemd tries to unmount the share(s). A [bug report](https://github.com/systemd/systemd/issues/1435) suggests a work-around by [editing](/index.php/Systemd#Drop-in_files "Systemd") the `wpa_supplicant@.service` as follows:
 
  `/etc/systemd/system/wpa_supplicant.service.d/override.conf` 
 ```
 [Unit]
 After=dbus.service
-Before=network.target
-Wants=network.target
-
 ```
-
-See more about this bug here: [https://github.com/systemd/systemd/issues/1435](https://github.com/systemd/systemd/issues/1435)
-
-This bug is not fixed in version 2.3 of [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant). In version 2.5 they added `Before=network.target` and `Wants=network.target` but still miss `After=dbus.service`. So after an update to 2.5 you can remove the `Before=network.target` and `Wants=network.target` from your `/etc/systemd/system/wpa_supplicant.service.d/override.conf`. After this bug has been fixed you can just remove `/etc/systemd/system/wpa_supplicant.service.d/override.conf`.
 
 ### Password-related problems
 

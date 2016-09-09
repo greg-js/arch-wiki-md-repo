@@ -110,7 +110,7 @@ Vea también [Comparación de gestores de ventanas de X (en Inglés)](https://en
 
 #### Basado en tiles (baldosas)
 
-*   **[PyTyle3](/index.php/PyTyle "PyTyle")** — Un tiler automático que es compatible con Openbox Multihead y de mayor rápidez y con menor consumo de recursos.
+*   **PyTyle3** — Un tiler automático que es compatible con Openbox Multihead y de mayor rápidez y con menor consumo de recursos.
 
 	[https://github.com/BurntSushi/pytyle3](https://github.com/BurntSushi/pytyle3) || [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/)
 

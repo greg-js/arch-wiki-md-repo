@@ -108,7 +108,7 @@ See [man chown](http://linux.die.net/man/1/chown), [man chmod](http://linux.die.
 
 ## User management
 
-To list users currently logged on the system, the *who* command can be used. To list all existing user accounts including their properties stored in the [user database](#User_database), run `passwd -Sa` as root. See `passwd(1)` for the description of the output format.
+To list users currently logged on the system, the *who* command can be used. To list all existing user accounts including their properties stored in the [user database](#User_database), run `passwd -Sa` as root. See [passwd(1)](http://man7.org/linux/man-pages/man1/passwd.1.html) for the description of the output format.
 
 To add a new user, use the *useradd* command:
 
@@ -126,7 +126,7 @@ To add a new user, use the *useradd* command:
 
 **Note:** The password for the newly created user must then be defined, using *passwd* as shown in [#Example adding a user](#Example_adding_a_user).
 
-When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see `nologin(8)`).
+When the login shell is intended to be non-functional, for example when the user account is created for a specific service, `/usr/bin/nologin` may be specified in place of a regular shell to politely refuse a login (see [nologin(8)](http://man7.org/linux/man-pages/man8/nologin.8.html)).
 
 ### Example adding a user
 
@@ -148,7 +148,7 @@ Although it is not required to protect the newly user `archie` with a password, 
 
 **Tip:** Bash is the default value for the shell (as indicated by `useradd -D`), so you can omit the `-s` option except if you want to use something else.
 
-The above "useradd" command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
+The above *useradd* command will also automatically create a group called `archie` with the same GID as the UID of the user `archie` and makes this the default group for `archie` on login. Making each user have their own group (with group name same as user name and GID same as UID) is the preferred way to add users.
 
 You could also make the default group something else, e.g. `study`:
 
@@ -268,12 +268,11 @@ Alternatively, the `/etc/passwd` file can be edited directly, see [#User databas
 Also keep in mind the following notes:
 
 *   If you are using [sudo](/index.php/Sudo "Sudo") make sure you update your `/etc/sudoers` to reflect the new username(s) (via the visudo command as root).
-*   If you modified your PATH statement in your `~/.bashrc`, make sure you change it to reflect the new username.
 *   Personal [crontabs](/index.php/Cron#Crontab_format "Cron") need to be adjusted by renaming the user's file in `/var/spool/cron` from the old to the new name, and then opening `crontab -e` to change any relevant paths and have it adjust the file permissions accordingly.
 *   [Wine's](/index.php/Wine "Wine") personal folders/files' contents in `~/.wine/drive_c/users`, `~/.local/share/applications/wine/Programs` and possibly more need to be manually renamed/edited.
 *   Certain Thunderbird addons, like [Enigmail](http://enigmail.mozdev.org/home/index.php), may need to be reinstalled.
 *   Anything on your system (desktop shortcuts, shell scripts, etc.) that uses an absolute path to your home dir (i.e. `/home/oldname`) will need to be changed to reflect your new name. To avoid these problems in shell scripts, simply use the `~` or `$HOME` variables for home directories.
-*   Also do not forget to edit accordingly the configuration files in `/etc` that relies on your absolute path (i.e. Samba, CUPS, so on). A nice way to learn what files you need to update involves using the grep command this way: `# grep -r {old_user} *`
+*   Also do not forget to edit accordingly the configuration files in `/etc` that relies on your absolute path (i.e. Samba, CUPS, so on). A nice way to learn what files you need to update involves using the grep command this way: `grep -r {old_user} *`
 
 ## User database
 
@@ -312,11 +311,11 @@ The *pwck* command can be used to verify the integrity of the user database. It 
 
 ```
 
-Note that the Arch Linux defaults of the files are created as .pacnew files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added automatically by the packages' install script.
+Note that the Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added automatically by the packages' install script.
 
 ## Group management
 
-`/etc/group` is the file that defines the groups on the system (`man group` for details).
+`/etc/group` is the file that defines the groups on the system (see [group(5)](http://man7.org/linux/man-pages/man5/group.5.html) for details).
 
 Display group membership with the `groups` command:
 
@@ -378,11 +377,11 @@ To remove users from a group:
 
 ```
 
-If the user is currently logged in, he/she must log out and in again for the change to take effect.
+If the user is currently logged in, he must log out and in again for the change to take effect.
 
 The *grpck* command can be used to verify the integrity of the system's group files.
 
-Updates to the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package create .pacnew files. Alike the .pacnew files for the [#User database](#User_database), these can be disregarded/removed, because the install script adds any new required groups.
+Updates to the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package create *.pacnew* files. Alike the *.pacnew* files for the [#User database](#User_database), these can be disregarded/removed, because the install script adds any new required groups.
 
 ## Group list
 

@@ -33,7 +33,7 @@ Primeiramente leia o [O Jeito Arch](/index.php/The_Arch_Way_(Portugu%C3%AAs) "Th
 1.  Procurar informações no fórum. Veja se alguém teve o mesmo problema.
 2.  Informar o mantenedor do pacote. Rode um "pacman -Qi <nome do pacote>" para obter esta informação.
 3.  Relatar o bug, com informações detalhadas, em [https://bugs.archlinux.org](https://bugs.archlinux.org)
-4.  Se desejar, você pode criar um tópico no forum descrevendo o problema e informando que você já relatou o mesmo. Isto ajuda a prevenir que várias pessoas relatem o mesmo erro.
+4.  Se desejar, você pode criar um tópico no fórum descrevendo o problema e informando que você já relatou o mesmo. Isto ajuda a prevenir que várias pessoas relatem o mesmo erro.
 
 * * *
 
@@ -73,7 +73,7 @@ Além do mais, isso não é uma pergunta e sim uma afirmação; ;-)
 
 ## P) O pacman precisa do recurso X!
 
-**R)** Você leu o [The Arch Way](/index.php/The_Arch_Way "The Arch Way"), o [Arch Linux](/index.php/Arch_Linux "Arch Linux")? A filosofia do Arch é "Keep It Simple". Se você acha que sua idéia tem fundamento, e que ela não viola esta filosofia, então você pode discuti-la no [forum](https://bbs.archlinux.org/). Você pode, também, verificar [isso](https://bugs.archlinux.org), um lugar onde você pode fazer pedidos, caso você os considere importantes.
+**R)** Você leu o [The Arch Way](/index.php/The_Arch_Way "The Arch Way"), o [Arch Linux](/index.php/Arch_Linux "Arch Linux")? A filosofia do Arch é "Keep It Simple". Se você acha que sua ideia tem fundamento, e que ela não viola esta filosofia, então você pode discuti-la no [fórum](https://bbs.archlinux.org/). Você pode, também, verificar [isso](https://bugs.archlinux.org), um lugar onde você pode fazer pedidos, caso você os considere importantes.
 
 * * *
 

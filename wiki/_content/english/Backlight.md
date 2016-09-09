@@ -14,10 +14,11 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
     *   [5.1 xbacklight](#xbacklight)
     *   [5.2 light](#light)
     *   [5.3 acpilight](#acpilight)
-    *   [5.4 relight](#relight)
-    *   [5.5 setpci (use with great care)](#setpci_.28use_with_great_care.29)
-    *   [5.6 Calise](#Calise)
-    *   [5.7 brightd](#brightd)
+    *   [5.4 illum](#illum)
+    *   [5.5 relight](#relight)
+    *   [5.6 setpci (use with great care)](#setpci_.28use_with_great_care.29)
+    *   [5.7 Calise](#Calise)
+    *   [5.8 brightd](#brightd)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
@@ -215,6 +216,12 @@ See the [GitHub page](http://haikarainen.github.io/light/) for more information.
 [acpilight](https://aur.archlinux.org/packages/acpilight/) contains an "xbacklight" compatibile utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console.
 
 See the [acpilight repository](https://github.com/wavexx/acpilight/) for more information.
+
+### illum
+
+[illum-git](https://aur.archlinux.org/packages/illum-git/) monitors the brightness up and brightness down keys on all input devices (via libevdev) and adjusts the backlight when they are pressed (via sysfs).
+
+Written for newer BIOS/UEFI that doesn't automatically handle those buttons for you. This is an alternate to handling those buttons via acpi handlers or via x11/wm hotkeys.
 
 ### relight
 

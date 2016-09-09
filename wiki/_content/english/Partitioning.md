@@ -51,7 +51,7 @@ One should consider these to choose between GPT and MBR:
 *   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, one must use MBR.
 *   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") instead of BIOS, one must use GPT.
 *   If you are installing on the older hardware, especially laptop, consider choosing MBR because its BIOS might not support GPT.
-*   If you are partitioning a disk of 2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB") or larger, you need to use GPT.
+*   If you are partitioning a disk of 2 TiB or larger, you need to use GPT.
 *   It is recommended to use always GPT for [UEFI](/index.php/UEFI "UEFI") boot as some UEFI firmwares do not allow UEFI-MBR boot.
 *   If none of the above apply, choose freely between GPT and MBR; since GPT is more modern, it is recommended in this case.
 
@@ -88,7 +88,7 @@ The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usual
 *   Only 4 primary partitions or 3 primary + 1 extended partitions (with arbitrary number of logical partitions within the extended partition) can be defined. If you have 3 primary + 1 extended partitions, and you have some free space outside the extended partition area, you cannot create a new partition over that free space.
 *   Within the extended partition, the logical partitions' meta-data is stored in a linked-list structure. If one link is lost, all the logical partitions following that metadata are lost.
 *   MBR supports only 1 byte partition type codes which leads to many collisions.
-*   MBR stores partition sector information using 32-bit LBA values. This LBA length along with 512 byte sector size (more commonly used) limits the maximum addressable size of the disk to be 2 [TiB](https://en.wikipedia.org/wiki/TiB "wikipedia:TiB"). Any space beyond 2 TiB cannot be defined as a partition if MBR partitioning is used.
+*   MBR stores partition sector information using 32-bit LBA values. This LBA length along with 512 byte sector size (more commonly used) limits the maximum addressable size of the disk to be 2 TiB. Any space beyond 2 TiB cannot be defined as a partition if MBR partitioning is used.
 
 GUID Partition Table is the next generation partitioning scheme designed to succeed the Master Boot Record partitioning scheme method to fix above problems.
 
@@ -101,7 +101,7 @@ GUID Partition Table is the next generation partitioning scheme designed to succ
 *   Provides a unique disk GUID and unique [partition GUID](/index.php/Persistent_block_device_naming#by-partuuid "Persistent block device naming") (`PARTUUID`) for each partition - A good filesystem-independent way of referencing partitions and disks.
 *   Provides a filesystem-independent [partition name](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") (`PARTLABEL`).
 *   Arbitrary number of partitions - depends on space allocated for the partition table - No need for extended and logical partitions. By default the GPT table contains space for defining 128 partitions. However if you want to define more partitions, you can allocate more space to the partition table (currently only *gdisk* is known to support this feature).
-*   Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 [ZiB](https://en.wikipedia.org/wiki/ZiB "wikipedia:ZiB"). MBR is limited to addressing 2 TiB of space per drive.
+*   Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 ZiB. MBR is limited to addressing 2 TiB of space per drive.
 *   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Fdisk#Recover_GPT_header "Fdisk") in case the primary ones are damaged.
 *   CRC32 checksums to detect errors and corruption of the header and partition table.
 
@@ -308,6 +308,7 @@ On an already partitioned disk, you can use [parted](/index.php/Parted "Parted")
 ## See also
 
 *   [Wikipedia:Disk partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "wikipedia:Disk partitioning")
+*   [Wikipedia:Binary prefix](https://en.wikipedia.org/wiki/Binary_prefix "wikipedia:Binary prefix")
 *   [Understanding Disk Drive Terminology](http://thestarman.pcministry.com/asm/mbr/DiskTerms.htm)
 *   [What is a Master Boot Record (MBR)?](http://kb.iu.edu/data/aijw.html)
 *   Rod Smith's page on [What's a GPT?](http://www.rodsbooks.com/gdisk/whatsgpt.html) and [Booting OSes from GPT](http://rodsbooks.com/gdisk/booting.html)

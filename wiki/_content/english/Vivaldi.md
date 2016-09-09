@@ -16,7 +16,7 @@ Vivaldi can be [installed](/index.php/Installed "Installed") with [vivaldi](http
 
 For additional support concerning audio and video playback, install corresponding package for your version of choice: [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/), [vivaldi-beta-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-beta-ffmpeg-codecs/) or [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/).
 
-You may install [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) to play flash media
+You may install [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) to play flash media
 
 ## Troubleshooting
 

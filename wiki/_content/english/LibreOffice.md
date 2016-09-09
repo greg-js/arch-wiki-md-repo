@@ -28,6 +28,7 @@ From [Home - LibreOffice](http://www.libreoffice.org/):
     *   [7.8 Media support](#Media_support)
     *   [7.9 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
     *   [7.10 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
+*   [8 LibreOffice Impress presentation won't show slideshow and notes on correctly on multidisplay setup](#LibreOffice_Impress_presentation_won.27t_show_slideshow_and_notes_on_correctly_on_multidisplay_setup)
 
 ## Installation
 
@@ -241,3 +242,17 @@ See [https://bugs.documentfoundation.org/show_bug.cgi?id=94632](https://bugs.doc
 To use toolbar icons compatible with dark themes, set [environment variable](/index.php/Environment_variable "Environment variable") `VCL_ICONS_FOR_DARK_THEME=1`
 
 As an alternative workaround, run *libreoffice* with a light theme (e.g. with environment variable `GTK_THEME=Adwaita:light`).
+
+## LibreOffice Impress presentation won't show slideshow and notes on correctly on multidisplay setup
+
+Not sure if this is because of a bug or something, but if the slideshow won't show on your additional display in a multimonitor setup, you can add this to your i3 config file:
+
+```
+   assign [class=".*libreoffice-impress.*"] 8
+   workspace 8 output eDP1
+   assign [class="Soffice"] 9
+   workspace 9 output HDMI1
+
+```
+
+Change the outputs to what you actually use. Check output of xrandr for this. When starting the presentation, you can move the notes/slides-window to the main display, and the slideshow will be visible underneath. Make the slideshow fullscreen.

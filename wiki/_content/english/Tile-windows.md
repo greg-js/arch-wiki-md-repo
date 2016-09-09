@@ -1,4 +1,4 @@
-The **Tile-windows** application is a tool which allows for the tiling of windows within non-tiling window manager. It is similar in nature to the application [PyTyle](/index.php/PyTyle "PyTyle"). As an alternative one can use a native tiling window manager, as explained in the article [Window manager#Tiling window managers](/index.php/Window_manager#Tiling_window_managers "Window manager").
+The **Tile-windows** application is a tool which allows for the tiling of windows within non-tiling window manager. It is similar to the [PyTyle](https://code.google.com/archive/p/pytyle/) window manager. As an alternative one can use a native tiling window manager, as explained in the article [Window manager#Tiling window managers](/index.php/Window_manager#Tiling_window_managers "Window manager").
 
 ## Installation
 

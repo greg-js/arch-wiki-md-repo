@@ -1,23 +1,25 @@
 This tutorial shows how to download, install, and configure the following software from Altera:
 
-*   Quartus Prime Standard Edition v15.1
+*   Quartus Prime Standard Edition
     *   USB-Blaster (I and II) Download Cable Driver
-*   ModelSim-Altera Edition (Included with Quartus Prime Standard Edition v15.1)
-
-**Note:** The following tutorial works for older Quartus II and ModelSim versions, including both Subscription Editions and Web Editions, from at-least v13.0 through v15.0.
+*   ModelSim-Altera Edition (Included with Quartus Prime Standard Edition)
 
 ## Contents
 
 *   [1 Quartus Prime Standard Edition](#Quartus_Prime_Standard_Edition)
-    *   [1.1 Get Quartus Prime](#Get_Quartus_Prime)
-    *   [1.2 Install dependencies](#Install_dependencies)
-    *   [1.3 Installing](#Installing)
-    *   [1.4 Launching Quartus Prime](#Launching_Quartus_Prime)
-    *   [1.5 Integrating Quartus Prime with the system](#Integrating_Quartus_Prime_with_the_system)
-        *   [1.5.1 PATH variable](#PATH_variable)
-        *   [1.5.2 Application menu entry - Quartus Prime](#Application_menu_entry_-_Quartus_Prime)
-    *   [1.6 Standard Edition License Validation](#Standard_Edition_License_Validation)
-    *   [1.7 USB-Blaster Download Cable Driver](#USB-Blaster_Download_Cable_Driver)
+    *   [1.1 Installation via AUR](#Installation_via_AUR)
+    *   [1.2 Manual installation](#Manual_installation)
+        *   [1.2.1 Get Quartus Prime](#Get_Quartus_Prime)
+        *   [1.2.2 Install dependencies](#Install_dependencies)
+        *   [1.2.3 Installing](#Installing)
+        *   [1.2.4 Launching Quartus Prime](#Launching_Quartus_Prime)
+        *   [1.2.5 Integrating Quartus Prime with the system](#Integrating_Quartus_Prime_with_the_system)
+            *   [1.2.5.1 PATH variable](#PATH_variable)
+            *   [1.2.5.2 Application menu entry - Quartus Prime](#Application_menu_entry_-_Quartus_Prime)
+        *   [1.2.6 USB-Blaster Download Cable Driver](#USB-Blaster_Download_Cable_Driver)
+    *   [1.3 Standard Edition License Validation](#Standard_Edition_License_Validation)
+    *   [1.4 Troubleshooting](#Troubleshooting)
+        *   [1.4.1 Empty (greyish) windows inside quartus (XMonad)](#Empty_.28greyish.29_windows_inside_quartus_.28XMonad.29)
 *   [2 ModelSim-Altera Edition](#ModelSim-Altera_Edition)
     *   [2.1 Install](#Install)
     *   [2.2 Compatibility with Archlinux](#Compatibility_with_Archlinux)
@@ -31,6 +33,18 @@ This tutorial shows how to download, install, and configure the following softwa
 
 ## Quartus Prime Standard Edition
 
+### Installation via AUR
+
+To install the latest version of Quartus Prime and Modelsim install the package [quartus-free](https://aur.archlinux.org/packages/quartus-free/).
+
+**Note:** This package will install all the devices supported by Quartus Prime. To do a minimal installation see the manual installation instruction.
+
+To start Quartus Prime execute `quartus`.
+
+To program a FPGA (via the USB-Blaster) the user needs to be part of the `plugdev` group.
+
+### Manual installation
+
 The following procedure shows how to download, install, and configure Altera Quartus Prime Standard Edition v15.1 for Arch Linux.
 
 **Note:** The following tutorial works for older Quartus II and ModelSim versions, including both Subscription Editions and Web Editions, from at-least v13.0 through v15.0.
@@ -41,11 +55,11 @@ The procedure focuses on Arch Linux 64-bit systems, although 32-bit installation
 
 Quartus Prime Standard Edition v15.1 is [officially supported](http://www.altera.com/download/os-support/oss-index.html) for RHEL 5 and RHEL 6, but since it is one of those huge collections of proprietary software that does not interact so much with the distribution, it is fairly easy to install on Arch Linux.
 
-### Get Quartus Prime
+#### Get Quartus Prime
 
 In [Altera's Downloads section](http://dl.altera.com/?edition=standard), select Linux as the operating system and get the *Combined Files* tar archive (something like `Quartus-15.1.2.193-linux-complete.tar`).
 
-### Install dependencies
+#### Install dependencies
 
 Although the main Quartus Prime software is 64-bit, alot of Altera tools shipped with Quartus Prime are still 32-bit software. Those include the Nios II EDS and Qsys, for example. This is why we need to install lots of `lib32-` libraries and other programs from the Arch Linux Multilib repo. Obviously, if you have a 32-bit Arch Linux system, you do not need the Multilib versions.
 
@@ -59,7 +73,7 @@ And the Multilib versions: [lib32-expat](https://www.archlinux.org/packages/?nam
 
 You are now ready to install and launch Quartus Prime.
 
-### Installing
+#### Installing
 
 To install, first extract the downloaded tar archive:
 
@@ -81,7 +95,7 @@ The default install path is `/root/altera/15.1`, but some prefer `/opt/altera/15
 
 **Make sure to include** the 64-bit option of Quartus Prime when installing.
 
-### Launching Quartus Prime
+#### Launching Quartus Prime
 
 Assuming you installed Quartus Prime in `/opt/altera/15.1`, Quartus Prime binaries are located into `/opt/altera/15.1/quartus/bin`. Run Quartus Prime (64-bit version):
 
@@ -99,11 +113,11 @@ $ /opt/altera/15.1/quartus/bin/quartus
 
 All other Altera tools, like Qsys, the Nios II EDS, Chip Planner and SignalTap II may be launched without any problem from the *Tools* menu of Quartus Prime.
 
-### Integrating Quartus Prime with the system
+#### Integrating Quartus Prime with the system
 
 Quartus Prime can be integrated with the system in several ways, but those are optional.
 
-#### `PATH` variable
+##### `PATH` variable
 
 Let us now add the Quartus `bin` folder to the `PATH` variable so it can be executed without specifying its absolute path. Create a `quartus.sh` file in the `/etc/profile.d` directory
 
@@ -135,7 +149,7 @@ Other environment variables related to Quartus can be found in [the official ins
 
 Even if `quartus` is now a command known by Bash, you still need to add the `--64bit` argument in order to launch the 64-bit version. A shell alias, like `quartus64`, is a great solution to avoid typing it each time.
 
-#### Application menu entry - Quartus Prime
+##### Application menu entry - Quartus Prime
 
 A freedesktop.org application menu entry (which a lot of desktop environments and window managers follow) can be added to the system by creating a `quartus.desktop` file in your `~/.local/share/applications` directory:
 
@@ -157,58 +171,7 @@ Categories=Development
 
 ```
 
-### Standard Edition License Validation
-
-Configuring the path to your Quartus Prime Standard Edition license file from the Quartus Prime settings interface is not enough for successful license validation. The license validation routine looks for your MAC address on device `eth0`. This was the legacy name for your ethernet controller; now `systemd` dynamically allocates a name to your device on boot - this can be different from machine to machine. We need to rename that device back to the expected `eth0`.
-
-Create a new udev rule:
-
-```
-/etc/udev/rules.d/10-network.rules
-
-```
-
-```
-SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="xx:xx:xx:xx:xx:xx", NAME="eth0"
-
-```
-
-where `xx:xx:xx:xx:xx:xx` is your networking device's MAC address. Then, *reload* that file using `udevadm`:
-
-```
-# udevadm control --reload
-
-```
-
-Alternatively a dummy `eth0` network interface can be created by `systemd-networkd` daemon dynamically at boot. Create the file `25-dummy.netdev` in the `/etc/systemd/network/` directory
-
-```
-/etc/systemd/network/25-dummy.netdev
-
-```
-
-```
-[Match]
-Host=hostname
-
-[NetDev]
-Name=eth0
-Kind=dummy
-MACAddress=xx:xx:xx:xx:xx:xx
-
-```
-
-where `xx:xx:xx:xx:xx:xx` is the licensed networking device's MAC address and `hostname` is your machine's hostname. Finally ensure `systemd-networkd` service is enabled and started:
-
-```
-# systemctl enable systemd-networkd.service
-# systemctl start systemd-networkd.service
-
-```
-
-The Quartus Prime Standard Edition license validation routine also uses the deprecated networking tool `ifconfig` to validate your networking devices MAC address as per your Quartus Prime license. The deprecated networking package `net-tools` contains the `ifconfig` tool. Thus one must also install the `net-tools` package for Quartus Prime Standard Edition licensing validation success.
-
-### USB-Blaster Download Cable Driver
+#### USB-Blaster Download Cable Driver
 
 The USB-Blaster (I and II) Download Cable is a cable that allows you to download configuration data from your computer to your FPGA, CPLD or EEPROM configuration device. However, Altera only provides official support for RHEL, SUSE Entreprise and CentOS, so we are required to do a little bit of work to make it work with Arch Linux. If you want some more detail about this cable, please refer to the [USB-Blaster Download Cable User Guide](http://www.altera.com/literature/ug/ug_usb_blstr.pdf).
 
@@ -278,6 +241,63 @@ If there seems to be an error message about "linux64" and you did not install th
 # ln -s /opt/altera/15.1/quartus/linux /opt/altera/15.1/quartus/linux64
 
 ```
+
+### Standard Edition License Validation
+
+Configuring the path to your Quartus Prime Standard Edition license file from the Quartus Prime settings interface is not enough for successful license validation. The license validation routine looks for your MAC address on device `eth0`. This was the legacy name for your ethernet controller; now `systemd` dynamically allocates a name to your device on boot - this can be different from machine to machine. We need to rename that device back to the expected `eth0`.
+
+Create a new udev rule:
+
+```
+/etc/udev/rules.d/10-network.rules
+
+```
+
+```
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="xx:xx:xx:xx:xx:xx", NAME="eth0"
+
+```
+
+where `xx:xx:xx:xx:xx:xx` is your networking device's MAC address. Then, *reload* that file using `udevadm`:
+
+```
+# udevadm control --reload
+
+```
+
+Alternatively a dummy `eth0` network interface can be created by `systemd-networkd` daemon dynamically at boot. Create the file `25-dummy.netdev` in the `/etc/systemd/network/` directory
+
+```
+/etc/systemd/network/25-dummy.netdev
+
+```
+
+```
+[Match]
+Host=hostname
+
+[NetDev]
+Name=eth0
+Kind=dummy
+MACAddress=xx:xx:xx:xx:xx:xx
+
+```
+
+where `xx:xx:xx:xx:xx:xx` is the licensed networking device's MAC address and `hostname` is your machine's hostname. Finally ensure `systemd-networkd` service is enabled and started:
+
+```
+# systemctl enable systemd-networkd.service
+# systemctl start systemd-networkd.service
+
+```
+
+The Quartus Prime Standard Edition license validation routine also uses the deprecated networking tool `ifconfig` to validate your networking devices MAC address as per your Quartus Prime license. The deprecated networking package `net-tools` contains the `ifconfig` tool. Thus one must also install the `net-tools` package for Quartus Prime Standard Edition licensing validation success.
+
+### Troubleshooting
+
+#### Empty (greyish) windows inside quartus (XMonad)
+
+Some of the built-in editors in quartus such as ip editors and qsys only show a blank window. To workaround this issue change the name that is reported by your window manager to for example [`LG3D`](http://stackoverflow.com/questions/14486147/java-web-start-application-shows-empty-window-on-xmonad). To change the name reported by XMonad see the [documentation](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-SetWMName.html).
 
 ## ModelSim-Altera Edition
 

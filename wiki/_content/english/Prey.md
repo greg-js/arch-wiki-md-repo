@@ -23,7 +23,7 @@ Install [prey-node-client](https://aur.archlinux.org/packages/prey-node-client/)
 
 First you must to have a Prey's account, if you don't have it, you can create it on the [website](https://panel.preyproject.com/signup/). To add your device, run `prey_project config account setup` and type your email account and password. Or use the [the GUI](#GUI_config) to set your account.
 
-Run `prey_project config activate` as prey user to ensure that the configuration is correct.
+Run `prey_project config activate` as prey user to ensure that the configuration is correct. One way to accomplish this is with `sudo -u prey prey_project config activate`.
 
 The installer enable automatically the [systemd](/index.php/Systemd "Systemd") service **prey-agent** to start Prey at boot. You can check if it's loaded and running with `systemctl status prey-agent`
 

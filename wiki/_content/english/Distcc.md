@@ -84,6 +84,13 @@ DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
 
 ```
 
+While editing the `/etc/makepkg.conf` file, make sure that it does not have *-march=native* in the *CFLAGS* or *CXXFLAGS* variables. distccd will not distribute work to other machines if march is set to native. The appropriate *-march=* value can be obtained by running the following command:
+
+```
+$ gcc -v -E -x c -march=native -mtune=native - < /dev/null 2>&1 | grep cc1 | perl -pe 's/ -mno-\S+//g; s/^.* - //g;'
+
+```
+
 If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not setup on the systems, set the DISTCC_SSH variable to ignore checking for authenticated hosts, i.e. DISTCC_SSH="ssh -i"
 
 #### For use without makepkg

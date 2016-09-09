@@ -522,17 +522,6 @@ menuentry "[loopback]KNOPPIX_V7.4.2DVD-2014-09-28-EN" {
 *   Init system: *RFD*
 
 ```
-menuentry "[loopback]linuxmint-201403-cinnamon-dvd-**32**bit" {
-	set isofile="/boot/iso/linuxmint-201403-cinnamon-dvd-**32**bit.iso"
-	loopback loop $isofile
-	linux (loop)/live/vmlinuz isofrom=**/dev/sdb2**/iso/$isofile boot=live live-config live-media-path=/live quiet splash noeject noprompt
-	initrd (loop)/live/initrd.img
-}
-```
-
-If you boot with the above configuration and get the error message '/live/vmlinuz not found' try the below
-
-```
 menuentry "Linux Mint 17.2 Cinnamon LTS RC (x64)" {
     set iso=/boot/iso/linuxmint-17.2-cinnamon-64bit.iso
     loopback loop $iso

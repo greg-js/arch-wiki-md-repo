@@ -5,9 +5,6 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Command not found](#Command_not_found)
-    *   [3.1 Bash](#Bash)
-    *   [3.2 Zsh](#Zsh)
-    *   [3.3 Fish](#Fish)
 *   [4 Automatic updates](#Automatic_updates)
 
 ## Installation
@@ -44,28 +41,7 @@ Latter is comparable to `pacman -Ql` (see [pacman#Querying package databases](/i
 
 ## Command not found
 
-[pkgfile](https://www.archlinux.org/packages/?name=pkgfile) includes a "command not found" hook for [Bash](/index.php/Bash "Bash") and [Zsh](/index.php/Zsh "Zsh") that will automatically search the official repositories, when entering an unrecognized command:
-
- `$ abiword` 
-```
-abiword may be found in the following packages:
-  extra/abiword 2.8.6-7 usr/bin/abiword
-
-```
-
-To enable it in all children shells, you need to source the hook from one of your shell initialization files.
-
-### Bash
-
- `~/.bashrc`  `source /usr/share/doc/pkgfile/command-not-found.bash` 
-
-### Zsh
-
- `~/.zshrc`  `source /usr/share/doc/pkgfile/command-not-found.zsh` 
-
-### Fish
-
-[Fish](/index.php/Fish "Fish") provides its own "command not found" hook for [pkgfile](https://www.archlinux.org/packages/?name=pkgfile): [Add command-not-found handler for Arch Linux #1925](https://github.com/fish-shell/fish-shell/pull/1925)
+See [Bash#Command not found](/index.php/Bash#Command_not_found "Bash").
 
 ## Automatic updates
 

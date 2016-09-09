@@ -137,3 +137,4 @@ vsftpd-ssl.socket (on-demand)
 | [x11vnc](/index.php/X11vnc "X11vnc") | x11vnc | x11vnc.service | VNC remote desktop daemon. |
 | [XDM](/index.php/XDM "XDM") | xdm | xdm.service | X display manager. |
 | [xdm-archlinux](/index.php/XDM "XDM") | xdm-archlinux | xdm-archlinux.service | X display manager with Arch Linux theme. |
+| [IPFS](/index.php/IPFS "IPFS") | ipfs daemon |  ? | A peer-to-peer hypermedia protocol node |

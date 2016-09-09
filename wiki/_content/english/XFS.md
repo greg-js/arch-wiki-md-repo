@@ -33,7 +33,7 @@ First unmount the XFS filesystem.
 
 ```
 
-Once unmounted, run the *xfs_repair* tool.
+Once unmounted, run the [xfs_repair(8)](http://man7.org/linux/man-pages/man8/xfs_repair.8.html) tool.
 
 ```
 # xfs_repair -v /dev/sda3
@@ -42,7 +42,7 @@ Once unmounted, run the *xfs_repair* tool.
 
 ## Integrity
 
-xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling *mkfs.xfs*.
+xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html).
 
 ```
 # mkfs.xfs -m crc=0 /dev/*target_partition*
@@ -66,11 +66,11 @@ Yep, so simple - since all of the ["boost knobs" are already "on" by default](ht
 
 **Warning:** Disabling barriers, disabling atime, and other performance enhancements make data corruption and failure much more likely.
 
-As per [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E), consider changing the default CFQ [I/O scheduler](/index.php/Solid_State_Drives#I.2FO_scheduler "Solid State Drives") (for example to [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"), [Noop](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck")) to enjoy all of the benefits of XFS, especially on [SSDs](/index.php/SSD "SSD").
+As per [XFS wiki](http://xfs.org/index.php/XFS_FAQ#Q:_I_want_to_tune_my_XFS_filesystems_for_.3Csomething.3E), consider changing the default CFQ [I/O scheduler](/index.php/Improving_performance#Tuning_IO_schedulers "Improving performance") (for example to [Deadline](https://en.wikipedia.org/wiki/Deadline_scheduler "wikipedia:Deadline scheduler"), [Noop](https://en.wikipedia.org/wiki/NOOP_scheduler "wikipedia:NOOP scheduler") or [BFQ](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck")) to enjoy all of the benefits of XFS, especially on [SSDs](/index.php/SSD "SSD").
 
 ### Stripe size and width
 
-If this filesystem will be on a striped RAID you can gain significant speed improvements by specifying the stripe size to the `mkfs.xfs` command.
+If this filesystem will be on a striped RAID you can gain significant speed improvements by specifying the stripe size to the [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html) command.
 
 See [How to calculate the correct sunit,swidth values for optimal performance](http://xfs.org/index.php/XFS_FAQ#Q:_How_to_calculate_the_correct_sunit.2Cswidth_values_for_optimal_performance)
 
@@ -86,9 +86,9 @@ Also, `noatime` implies `nodiratime`, so there is never a need to specify **nodi
 
 ### Defragmentation
 
-Although the extent-based nature of XFS and the delayed allocation strategy it uses significantly improves the file system's resistance to fragmentation problems, XFS provides a filesystem defragmentation utility (xfs_fsr, short for XFS filesystem reorganizer) that can defragment the files on a mounted and active XFS filesystem. It can be useful to view XFS fragmentation periodically.
+Although the extent-based nature of XFS and the delayed allocation strategy it uses significantly improves the file system's resistance to fragmentation problems, XFS provides a filesystem defragmentation utility (*xfs_fsr*, short for XFS filesystem reorganizer) that can defragment the files on a mounted and active XFS filesystem. It can be useful to view XFS fragmentation periodically.
 
-**xfs_fsr** improves the organization of mounted filesystems. The reorganization algorithm operates on one file at a time, compacting or otherwise improving the layout of the file extents (contiguous blocks of file data).
+[xfs_fsr(8)](http://man7.org/linux/man-pages/man8/xfs_fsr.8.html) improves the organization of mounted filesystems. The reorganization algorithm operates on one file at a time, compacting or otherwise improving the layout of the file extents (contiguous blocks of file data).
 
 #### Inspect fragmentation levels
 
@@ -101,7 +101,7 @@ To see how much fragmentation your file system currently has:
 
 #### Perform defragmentation
 
-To begin defragmentation, use the `xfs_fsr` command which is included with the *xfsprogs* package.
+To begin defragmentation, use the [xfs_fsr(8)](http://man7.org/linux/man-pages/man8/xfs_fsr.8.html) command:
 
 ```
 # xfs_fsr /dev/sda3

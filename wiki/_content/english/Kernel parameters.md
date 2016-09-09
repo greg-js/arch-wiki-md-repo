@@ -15,7 +15,7 @@ This page now explains in more detail the second method and shows a list of most
     *   [1.4 GRUB Legacy](#GRUB_Legacy)
     *   [1.5 LILO](#LILO)
     *   [1.6 rEFInd](#rEFInd)
-    *   [1.7 EFISTUB/efibootmgr](#EFISTUB.2Fefibootmgr)
+    *   [1.7 EFISTUB](#EFISTUB)
     *   [1.8 Hijacking cmdline](#Hijacking_cmdline)
 *   [2 Parameter list](#Parameter_list)
 *   [3 See also](#See_also)
@@ -107,24 +107,26 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 
 ### rEFInd
 
-*   To make the change persistent after reboot, edit `/boot/EFI/arch/refind_linux.conf` (ie. refind_linux.conf in the folder your kernel is located in) and append them to all/required lines, for example
+*   To make the change persistent after reboot, edit `/boot/refind_linux.conf` and append them to all/required lines, for example
 
-	 `"Boot to X"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff *quiet splash*"` 
+	 `"Boot using default options"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw *quiet splash*"` 
 
-*   If you have disabled auto-detection of OSes in rEFInd and are defining OS stanzas instead in `/boot/EFI/refind/refind.conf` to load your OSes, you can edit it like:
+*   If you have disabled auto-detection of OSes in rEFInd and are defining OS stanzas instead in `*esp*/refind/refind.conf` to load your OSes, you can edit it like:
 
 ```
-menuentry "Arch" {
-	loader /EFI/arch/vmlinuz-arch.efi
-	options "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff quiet splash"
+menuentry "Arch Linux" {
+	...
+	options  "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw quiet splash"
+	...
+}
 
 ```
 
 For more information on configuring kernel parameters in rEFInd, see [Configuring the rEFInd Bootmanager](http://www.rodsbooks.com/refind/linux.html)
 
-### EFISTUB/efibootmgr
+### EFISTUB
 
-See [EFISTUB#Using UEFI directly (efibootmgr)](/index.php/EFISTUB#Using_UEFI_directly_.28efibootmgr.29 "EFISTUB").
+See [EFISTUB#Using UEFI directly](/index.php/EFISTUB#Using_UEFI_directly "EFISTUB").
 
 ### Hijacking cmdline
 
@@ -151,14 +153,13 @@ Parameters always come in `parameter` or `parameter=value`. All of these paramet
 
 | parameter | Description |
 | root= | Root filesystem. |
+| rootflags= | Root filesystem mount options. |
 | ro | Mount root device read-only on boot (default). |
 | rw | Mount root device read-write on boot. |
 | initrd= | Specify the location of the initial ramdisk. |
 | init= | Run specified binary instead of `/sbin/init` (symlinked to [systemd](/index.php/Systemd "Systemd") in Arch) as init process. |
 | init=/bin/sh | Boot to shell. |
-| systemd.unit= |
-| systemd.unit=multi-user.target | Boot to a specified runlevel. |
-| systemd.unit=rescue.target | Boot to single-user mode (root). |
+| systemd.unit= | Boot to a [specified target](/index.php/Systemd#Targets_table "Systemd"). |
 | nomodeset | Disable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). |
 | zswap.enabled | Enable [Zswap](/index.php/Zswap "Zswap"). |
 | video=<videosetting> | Override framebuffer video defaults. |

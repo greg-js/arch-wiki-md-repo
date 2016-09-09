@@ -37,11 +37,13 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 
 [sidewinderd](https://aur.archlinux.org/packages/sidewinderd/) supports:
 
-*   Logitech 710+ (And Microsoft Sidewinder X4 / X6 hence name)
+*   G710 / G710+
+*   G105
+*   (and Microsoft SideWinder X4 / X6, hence name)
 
 [hid-lg-g710-plus-dkms-git](https://aur.archlinux.org/packages/hid-lg-g710-plus-dkms-git/) supports:
 
-*   Logitech G710+
+*   Logitech G710 / G710+
 
 ## G510 on g15daemon
 

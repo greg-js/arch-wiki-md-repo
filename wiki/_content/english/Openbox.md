@@ -763,11 +763,7 @@ While Openbox provides better than average multihead support on its own, [openbo
 
 Openbox Multihead will function like normal Openbox when only a single head is available.
 
-A downside to using Openbox Multihead is that it breaks the EWMH assumption that one and only one desktop is visible at any time. Thus, existing pagers will not work well with it. To remedy this, you can install [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/) alongside Openbox Multihead.
-
-Finally, [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/) is a new version of [PyTyle](/index.php/PyTyle "PyTyle") that will work with Openbox Multihead.
-
-Both *pytyle3* and *pager-multihead-git* will work without Openbox Multihead if only one monitor is active.
+A downside to using Openbox Multihead is that it breaks the EWMH assumption that one and only one desktop is visible at any time. Thus, existing pagers will not work well with it. To remedy this, you can install [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/) alongside Openbox Multihead. It will work without Openbox Multihead if only one monitor is active.
 
 ## Tips and tricks
 

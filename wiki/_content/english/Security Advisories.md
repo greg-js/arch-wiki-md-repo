@@ -35,6 +35,8 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
+*   [09 September 2016] [ASA-201609-4](https://lists.archlinux.org/pipermail/arch-security/2016-September/000700.html) [wordpress](https://www.archlinux.org/packages/?name=wordpress) multiple issues
+
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.

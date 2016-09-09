@@ -19,14 +19,15 @@
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Snapshots on boot](#Snapshots_on_boot)
     *   [8.2 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
-    *   [8.3 Suggested filesystem layout](#Suggested_filesystem_layout)
-        *   [8.3.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
-        *   [8.3.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
-    *   [8.4 Deleting files from snapshots](#Deleting_files_from_snapshots)
-    *   [8.5 Preventing slowdowns](#Preventing_slowdowns)
-        *   [8.5.1 updatedb](#updatedb)
-        *   [8.5.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
-    *   [8.6 Preserving log files](#Preserving_log_files)
+    *   [8.3 Backup boot partition](#Backup_boot_partition)
+    *   [8.4 Suggested filesystem layout](#Suggested_filesystem_layout)
+        *   [8.4.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
+        *   [8.4.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
+    *   [8.5 Deleting files from snapshots](#Deleting_files_from_snapshots)
+    *   [8.6 Preventing slowdowns](#Preventing_slowdowns)
+        *   [8.6.1 updatedb](#updatedb)
+        *   [8.6.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
+    *   [8.7 Preserving log files](#Preserving_log_files)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Snapper logs](#Snapper_logs)
     *   [9.2 IO error](#IO_error)
@@ -267,6 +268,25 @@ There are a couple of packages used for automatically creating snapshots upon a 
 *   **pacupg** — "Script that wraps package and AUR upgrades in btrfs snapshots and provides an easy way to roll them back."
 
 	[https://github.com/crossroads1112/bin/tree/master/pacupg](https://github.com/crossroads1112/bin/tree/master/pacupg) || [pacupg](https://aur.archlinux.org/packages/pacupg/)
+
+### Backup boot partition
+
+If your `/boot` partition is on a non btrfs filesystem you are not able to do snapper backups with it. You can copy the boot partition automatically on a kernel update to your btrfs root with a hook. This also plays nice together with [snap-pac](https://aur.archlinux.org/packages/snap-pac/).
+
+ `/usr/share/libalpm/hooks/50_bootbackup.hook` 
+```
+[Trigger]
+Operation = Upgrade
+Operation = Install
+Operation = Remove
+Type = Package
+Target = linux
+
+[Action]
+Description = Backing up /boot...
+When = PreTransaction
+Exec = /usr/bin/rsync -avzq --delete /boot /.bootbackup
+```
 
 ### Suggested filesystem layout
 

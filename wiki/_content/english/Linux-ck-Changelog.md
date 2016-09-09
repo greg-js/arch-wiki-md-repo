@@ -2,19 +2,37 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.7.3-3**
+
+*   Changelog: Fix config.x86_64 (my mistake), otherwise unchanged from 4.7.3-2.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=1afb3c897982ed61c6a4dbca953007ad8c691800](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=1afb3c897982ed61c6a4dbca953007ad8c691800)
+
+**Bump to v4.7.3-2**
+
+*   Changelog: update bfq v8r2-->v8r3 and incorporate Arch upstream changes to kernel config
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=e182d71b9bb2bec05a7a8091f40e0a5ea1bae2e4](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=e182d71b9bb2bec05a7a8091f40e0a5ea1bae2e4)
+
+**Bump to v4.7.3-1**
+
+*   Changelog: bfs490/ck3[1] and upstream release 4.7.3[2]
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=30bd1b18a40d11e243bfe06362a2ecc5885de37f](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=30bd1b18a40d11e243bfe06362a2ecc5885de37f)
+
+*   1\. [http://ck-hack.blogspot.com/2016/09/bfs-490-linux-47-ck3.html](http://ck-hack.blogspot.com/2016/09/bfs-490-linux-47-ck3.html)
+*   2\. [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.3)
+
 **Bump to v4.7.2-2**
 
-*   Changelog: bfs480 and ck2, see: [http://ck-hack.blogspot.com/2016/09/bfs-480-linux-47-ck2.html](http://ck-hack.blogspot.com/2016/09/bfs-480-linux-47-ck2.html)
-*   Commit: [https://wiki.archlinux.org/index.php/Linux-ck/Changelog](https://wiki.archlinux.org/index.php/Linux-ck/Changelog)
+*   Changelog: bfs480/ck2, see: [http://ck-hack.blogspot.com/2016/09/bfs-480-linux-47-ck2.html](http://ck-hack.blogspot.com/2016/09/bfs-480-linux-47-ck2.html)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=dca76d6612b6972cb6cf03a72e34c0327387bcdf](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=dca76d6612b6972cb6cf03a72e34c0327387bcdf)
 
 **Bump to v4.7.2-1**
 
-*   LinuxChanges: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.2](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.2)
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.2](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.2)
 *   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=691a4b83000c09abbd93ea09549e5b4213348e4c](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=691a4b83000c09abbd93ea09549e5b4213348e4c)
 
 **Bump to v4.7.1-1**
 
-*   LinuxChanges: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.1](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.1)
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.1](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.1)
 *   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c9035f668ee2dc319e01aa63386d783bd6c9eafc](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c9035f668ee2dc319e01aa63386d783bd6c9eafc)
 
 **Bump to v4.7.0-1**

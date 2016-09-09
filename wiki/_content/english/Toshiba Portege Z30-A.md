@@ -67,8 +67,6 @@ EndSection
 
 ```
 
-In gnome-shell, after the 3.16 version, this solution is not working, because gnome does not check the X11.conf. For solving this problem, the best way is using the [gnome-settings-daemon-backlight-toshiba](https://aur.archlinux.org/packages/gnome-settings-daemon-backlight-toshiba/) package.
-
 ### Keyboard Backlight control
 
 The backlight works correctly if it is configured on BIOS. `toshiba_acpi` kernel module add support for configuring the backlit of the keyboard. However, Fn-Z does not work. The modules can be changed in `/sys/devices/LNXSYSTM:00/LNXSYBUS:00/TOS6208:00/kbd_backlight_mode` with the modes: 2,8,16.

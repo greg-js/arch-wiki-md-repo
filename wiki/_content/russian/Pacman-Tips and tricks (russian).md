@@ -15,17 +15,17 @@
         *   [2.1.1 С размером](#.D0.A1_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.BE.D0.BC)
         *   [2.1.2 Последние установленные пакеты](#.D0.9F.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BD.D0.B8.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B)
         *   [2.1.3 Все пакеты, которые не зависят от других](#.D0.92.D1.81.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B.2C_.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D1.8F.D1.82_.D0.BE.D1.82_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85)
-        *   [2.1.4 Установленные пакеты, которые не из определенной группы или репозитория](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.8B.2C_.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D0.B5_.D0.BD.D0.B5_.D0.B8.D0.B7_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B_.D0.B8.D0.BB.D0.B8_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8F)
-    *   [2.2 Просмотр файлов принадлежащих пакету с размером](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83_.D1.81_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.BE.D0.BC)
-    *   [2.3 Найти файлы не принадлежащие любому пакету](#.D0.9D.D0.B0.D0.B9.D1.82.D0.B8_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D0.B5_.D0.BB.D1.8E.D0.B1.D0.BE.D0.BC.D1.83_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83)
+        *   [2.1.4 Поиск установленных пакетов, не принадлежащих определенной группе или репозиторию](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2.2C_.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B5_.D0.B8.D0.BB.D0.B8_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D1.8E)
+    *   [2.2 Просмотр файлов, принадлежащих пакету с определенным размером](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.2C_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83_.D1.81_.D0.BE.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.BE.D0.BC)
+    *   [2.3 Поиск файлов, не принадлежащих ни одному пакету](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.2C_.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.BD.D0.B0.D0.B4.D0.BB.D0.B5.D0.B6.D0.B0.D1.89.D0.B8.D1.85_.D0.BD.D0.B8_.D0.BE.D0.B4.D0.BD.D0.BE.D0.BC.D1.83_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D1.83)
     *   [2.4 Удаление неиспользуемых пакетов](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B5.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC.D1.8B.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
         *   [2.4.1 Сироты](#.D0.A1.D0.B8.D1.80.D0.BE.D1.82.D1.8B)
-        *   [2.4.2 Explicitly installed](#Explicitly_installed)
-    *   [2.5 Removing everything but base group](#Removing_everything_but_base_group)
-    *   [2.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
-    *   [2.7 Listing changed backup files](#Listing_changed_backup_files)
-    *   [2.8 Создание резервной копии базы данных pacman](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B9_.D0.BA.D0.BE.D0.BF.D0.B8.D0.B8_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_pacman)
-    *   [2.9 Check changelogs easily](#Check_changelogs_easily)
+        *   [2.4.2 Явно установленные](#.D0.AF.D0.B2.D0.BD.D0.BE_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8B.D0.B5)
+    *   [2.5 Удаление всех пакетов, кроме группы base](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.81.D0.B5.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2.2C_.D0.BA.D1.80.D0.BE.D0.BC.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B_base)
+    *   [2.6 Получения списка зависимостей нескольких пакетов](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B5.D0.B9_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.B8.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+    *   [2.7 Построение списка изменённых файлов из резервного копирования](#.D0.9F.D0.BE.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B8.D0.B7_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
+    *   [2.8 Создание резервной копии базы данных Pacman](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B9_.D0.BA.D0.BE.D0.BF.D0.B8.D0.B8_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_Pacman)
+    *   [2.9 Лёгкий способ проверки списка изменений](#.D0.9B.D1.91.D0.B3.D0.BA.D0.B8.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B9)
 *   [3 Installation and recovery](#Installation_and_recovery)
     *   [3.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
     *   [3.2 Custom local repository](#Custom_local_repository)
@@ -200,16 +200,16 @@ expac -HM "%-20n\t%10d" $( comm -23 <(pacman -Qqt|sort) <(pacman -Qqg base base-
 
 ```
 
-#### Установленные пакеты, которые не из определенной группы или репозитория
+#### Поиск установленных пакетов, не принадлежащих определенной группе или репозиторию
 
-Следующая команда выведет список всех установленных пакетов, которые не из [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), и как таковые, вероятно, были установлены пользователем вручную:
+Следующая команда выведет список всех установленных пакетов, которые не принадлежат [base](https://www.archlinux.org/groups/x86_64/base/) или [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), и как таковые, вероятно, были установлены пользователем вручную:
 
 ```
 $ comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)
 
 ```
 
-Список всех установленных пакетов, которые не из указанного репозитория (`*repo_name*` в примере):
+Список всех установленных пакетов, установленных не из указанного репозитория (`*repo_name*` в примере):
 
 ```
 $ comm -23 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
@@ -223,7 +223,7 @@ $ comm -12 <(pacman -Qtq | sort) <(pacman -Slq *repo_name* | sort)
 
 ```
 
-### Просмотр файлов принадлежащих пакету с размером
+### Просмотр файлов, принадлежащих пакету с определенным размером
 
 Это может пригодиться, если вы обнаружили что конкретный пакет использует огромное количество места, и вы хотите выяснить, какие файлы занимают больше всего.
 
@@ -232,71 +232,69 @@ $ pacman -Qlq *package* | grep -v '/$' | xargs du -h | sort -h
 
 ```
 
-### Найти файлы не принадлежащие любому пакету
+### Поиск файлов, не принадлежащих ни одному пакету
 
-If your system has stray files not owned by any package (a common case if you do not [use the package manager to install software](/index.php/Enhance_system_stability#Use_the_package_manager_to_install_software "Enhance system stability")), you may want to find such files in order to clean them up. The general process for doing so is:
+Если в вашей системе присутствуют "беспризорные" файлы, не принадлежащие ни одному пакету (например, в случае установки программного обеспечения в обход пакетного менеджера), вам может потребоваться найти такие файлы для очистки системы. В таком случае необходимо выполнить следующую последовательность действий:
 
-1.  Create a sorted list of the files you want to check ownership of: `$ find /etc /opt /usr | sort > all_files.txt` 
-2.  Create a sorted list of the files tracked by pacman (and remove the trailing slashes from directories): `$ pacman -Qlq | sed 's|/$||' | sort > owned_files.txt` 
-3.  Find lines in the first list that are not in the second: `$ comm -23 all_files.txt owned_files.txt` 
+1.  Создайте отсортированный список файлов, чью принадлежность конкретному пакету вы хотите проверить: `$ find /etc /opt /usr | sort > all_files.txt` 
+2.  Создайте отсортированный список файлов, отслеживаемых пакетным менеджером (с удалением замыкающих слэшей из названий директорий): `$ pacman -Qlq | sed 's|/$||' | sort > owned_files.txt` 
+3.  Найдите строки в первом списке, отсутствующие во втором: `$ comm -23 all_files.txt owned_files.txt` 
 
-This process is tricky in practice because many important files are not part of any package (e.g. files generated at runtime, custom configs) and so will be included in the final output, making it difficult to pick out the files that can be safely deleted.
+На практике применение этого приёмы осложняется тем, что многие важные файлы не принадлежат какому-либо пакету (к примеру, файлы, сгенерированные в процессе выполнения каких-либо приложений, пользовательские конфигурационные файлы, и т. д.) и будут включены в список "беспризорных", поэтому не стоит слепо полагаться исключительно на автоматику и пренебрегать ручной очисткой системы.
 
-The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
+Скрипт [lostfiles](https://aur.archlinux.org/packages/lostfiles/) совершает схожие действия, но дополнительно сверяется с встроенным обширным перечнем файлов, необходимых системе, но не принадлежащих ни одному пакету.
 
 ### Удаление неиспользуемых пакетов
 
 #### Сироты
 
-For *recursively* removing orphans and their configuration files:
+Для *рекурсивного* удаления пакетов-сирот, от которых не зависят другие пакеты, и их конфигурационных файлов:
 
 ```
 # pacman -Rns $(pacman -Qtdq)
 
 ```
 
-If no orphans were found, pacman errors with `error: no targets specified`. This is expected as no arguments were passed to `pacman -Rns`.
+Если сироты не найдены, Pacman завершает работу с ошибкой `error: no targets specified`. Это работает так же, как если бы никакие аргумены не были переданы в `pacman -Rns`.
 
-**Примечание:** Since pacman version 4.2.0 only true orphans are listed. To make pacman also list packages which are only optionally required by another package, pass the `-t`/`--unrequired` flag twice:
+**Примечание:** С версии Pacman 4.2.0 в список выводятся только настоящие сироты. Для добавления в список также пакетов, от которых опционально зависят другие пакеты, передайте флаг `-t`/`--unrequired` дважды:
 ```
 $ pacman -Qdttq
 
 ```
-Use this carefully, as it is not taken into account whether the package is an optional dependency and therefore bears the risk to remove packages which actually are not real orphans.
+Используйте эту команду с осторожностью, поскольку в результате её выполнения могут быть удалены пакеты, не являющиеся на самом деле сиротами.
 
-#### Explicitly installed
+#### Явно установленные
 
-Because a lighter system is easier to maintain, occasionally looking through explicitly installed packages and *manually* selecting unused packages to be removed can be helpful.
-
-To list explicitly installed packages available in the official repositories:
+Поскольку более легковесную систему проще поддерживать, зачастую бывает полезно просмотреть список установленных пакетов и *вручную* удалить неиспользуемые. Для вывода списка явно установленных пакетов, доступных через официальные репозитории:
 
 ```
 $ pacman -Qen
 
 ```
 
-To list explicitly installed packages not available in official repositories:
+Для вывода списка явно установленных пакетов, не доступных через официальные репозитории:
 
 ```
 $ pacman -Qem
 
 ```
 
-### Removing everything but base group
+### Удаление всех пакетов, кроме группы base
 
-If it is ever necessary to remove all packages except the base group, try this one liner:
+Если существует необходимость удалить все пакеты, кроме принадлежащих к группе *base*, это можно сделать командой в одну строку:
 
 ```
 # pacman -R $(comm -23 <(pacman -Qq|sort) <((for i in $(pacman -Qqg base); do pactree -ul $i; done)|sort -u|cut -d ' ' -f 1))
 
 ```
 
-The one-liner was originally devised in [this discussion](https://bbs.archlinux.org/viewtopic.php?id=130176), and later improved in this article.
+Этак команда была изначально разработана в [this discussion](https://bbs.archlinux.org/viewtopic.php?id=130176) и позднее доработана для этой статьи.
 
-Notes:
+Замечания:
 
-1.  `comm` requires sorted input otherwise you get e.g. `comm: file 1 is not in sorted order`.
-2.  `pactree` prints the package name followed by what it provides. For example:
+1.  `comm` требует отсортированного ввода, иначе вы получите что-то вроде `comm: file 1 is not in sorted order`.
+2.  `pactree` выводит название пакета исходя из того, что его предоставляет. Например:
 
  `$ pactree -lu logrotate` 
 ```
@@ -312,11 +310,11 @@ ncurses
 gzip
 ```
 
-The `dcron cron` line seems to cause problems, that is why `cut -d ' ' -f 1` is needed - to keep just the package name.
+Строка `dcron cron` выглядит проблемной, так что необходимо включить `cut -d ' ' -f 1` для сохранения обычного названия пакета.
 
-### Getting the dependencies list of several packages
+### Получения списка зависимостей нескольких пакетов
 
-Dependencies are alphabetically sorted and doubles are removed. Note that you can use `pacman -Qi` to improve response time a little. But you will not be able to query as many packages. Unfound packages are simply skipped (hence the `2>/dev/null`).
+Во многих случаях вы можете использовать `pacman -Qi` для того, чтобы сократить время выполнения поискового запроса. Но вы не можете использовать эту команду в случае, если требуется выявить зависимости нескольких пакетов. Ненайденные пакеты легко отбрасываются (hence the `2>/dev/null`).
 
 ```
 $ pacman -Si $@ 2>/dev/null | awk -F ": " -v filter="^Depends" \ '$0 ~ filter {gsub(/[>=<][^ ]*/,"",$2) ; gsub(/ +/,"
@@ -324,47 +322,49 @@ $ pacman -Si $@ 2>/dev/null | awk -F ": " -v filter="^Depends" \ '$0 ~ filter {g
 
 ```
 
-Alternatively, you can use `expac`: `expac -l '
+Зависимости сортируются в алфавитном порядке, дубликаты удаляются из списка.
+
+Также вы можете использовать `expac`: `expac -l '
 ' %E -S $@ | sort -u`.
 
-### Listing changed backup files
+### Построение списка изменённых файлов из резервного копирования
 
-If you want to backup your system configuration files you could copy all files in `/etc/`, but usually you are only interested in the files that you have changed. Modified [backup files](/index.php/Pacnew_and_Pacsave_files#Package_backup_files "Pacnew and Pacsave files") can be viewed with the following command:
+Если вы хотите сделать резервное копирование ваших системных конфигурационных файлов, вы можете копировать все файлы из `/etc/`, но, скорее всего, вас интересуют только те файлы, в которых были сделаны изменения. Список модифицированных [заархивированных файлов](/index.php/Pacnew_and_Pacsave_files#Package_backup_files "Pacnew and Pacsave files") может быть построен следующей командой:
 
 ```
 # pacman -Qii | awk '/^MODIFIED/ {print $2}'
 
 ```
 
-Running this command with root permissions will ensure that files readable only by root (such as `/etc/sudoers`) are included in the output.
+Запуск этой команды с root-привилегиями даёт гарантию того, что файлы, доступные для просмотра только от root-а (такие, как `/etc/sudoers`), будут включены в список.
 
-**Совет:** See [#Listing all changed files from packages](#Listing_all_changed_files_from_packages) to list all changed files pacman knows, not only backup files.
+**Совет:** Для построения списка всех изменённых файлов из базы данных Pacman (не только из резервного копирования) смотрите [#Listing all changed files from packages](#Listing_all_changed_files_from_packages).
 
-### Создание резервной копии базы данных pacman
+### Создание резервной копии базы данных Pacman
 
-The following command can be used to back up the local pacman database:
+Следующая команда может быть использована для резервного копирования локальной базы данных Pacman:
 
 ```
 $ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
 
 ```
 
-Store the backup pacman database file on one or more offline media, such as a USB stick, external hard drive, or CD-R.
+Храните заархивированную базу данных на одном или нескольких внешних хранилищах, таких, как USB-накопитель, внешний жёсткий диск или диск CD-R.
 
-The database can be restored by moving the `pacman_database.tar.bz2` file into the `/` directory and executing the following command:
+База данных может быть восстановлена путём перемещения `pacman_database.tar.bz2` в `/` и последующего выполнения команды:
 
 ```
 # tar -xjvf pacman_database.tar.bz2
 
 ```
 
-**Примечание:** If the pacman database files are corrupted, and there is no backup file available, there exists some hope of rebuilding the pacman database. Consult [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman.27s_local_database "Pacman tips").
+**Примечание:** Если файл с базой данных Pacman повреждён и нет других доступных резервных копий, есть надежда исправить ситуацию путём пересоздания базы данных. Подробнее смотрите тут: [Pacman tips#Restore pacman's local database](/index.php/Pacman_tips#Restore_pacman.27s_local_database "Pacman tips").
 
-**Совет:** The [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) package provides a script and a [systemd](/index.php/Systemd "Systemd") service to automate the task. Configuration is possible in `/etc/pakbak.conf`.
+**Совет:** Пакет [pakbak-git](https://aur.archlinux.org/packages/pakbak-git/) предоставляет скрипт и сервис [systemd](/index.php/Systemd "Systemd") для автоматизации этой задачи. Конфигурация доступна в `/etc/pakbak.conf`.
 
-### Check changelogs easily
+### Лёгкий способ проверки списка изменений
 
-When maintainers update packages, commits are often commented in a useful fashion. Users can quickly check these from the command line by installing [paclog](https://aur.archlinux.org/packages/paclog/). This utility lists recent commit messages for packages from the official repositories or the AUR, by using `paclog package`.
+Когда мейнтейнеры обновляют пакеты, правки часто комментируются в удобной форме. Пользователи могут легко просмотреть их из командной строки с помощью [paclog](https://aur.archlinux.org/packages/paclog/). Эта утилита выводит список последних комментариев мейнтейнеров к правкам для пакетов из официальных репозиториев или AUR, используя `paclog package`.
 
 ## Installation and recovery
 

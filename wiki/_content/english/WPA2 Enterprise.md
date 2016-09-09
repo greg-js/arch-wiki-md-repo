@@ -77,9 +77,7 @@ Passphrase=*password*
 
 #### Wicd
 
-The [wicd-eduroam](https://aur.archlinux.org/packages/wicd-eduroam/) package contains configuration templates which will appear to wicd as *eduroam*.
-
-Alternatively, see [[2]](https://gist.githubusercontent.com/anonymous/0fa3b2c2b2a34c68a6f1/raw/9b8fdb7301182d18b6cd5068a7dbdfc57e5ba430/gistfile1.txt) for an example of a **TTLS** profile. To activate the profile, run:
+See [[2]](https://gist.githubusercontent.com/anonymous/0fa3b2c2b2a34c68a6f1/raw/9b8fdb7301182d18b6cd5068a7dbdfc57e5ba430/gistfile1.txt) for an example of a **TTLS** profile. To activate the profile, run:
 
 ```
 # echo ttls-80211 >> /etc/wicd/encryption/templates/active

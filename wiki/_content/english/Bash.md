@@ -17,7 +17,7 @@
 *   [3 Aliases](#Aliases)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Prompt customization](#Prompt_customization)
-    *   [4.2 Command-not-found (AUR)](#Command-not-found_.28AUR.29)
+    *   [4.2 Command not found](#Command_not_found)
     *   [4.3 Disable Ctrl+z in terminal](#Disable_Ctrl.2Bz_in_terminal)
     *   [4.4 Clear the screen after logging out](#Clear_the_screen_after_logging_out)
     *   [4.5 Auto "cd" when entering just a path](#Auto_.22cd.22_when_entering_just_a_path)
@@ -169,9 +169,22 @@ For functions, see [Bash/Functions](/index.php/Bash/Functions "Bash/Functions").
 
 See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization").
 
-### Command-not-found (AUR)
+### Command not found
 
-[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/). Usage example:
+[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command.
+
+ `$ abiword` 
+```
+abiword may be found in the following packages:
+  extra/abiword 3.0.1-2	/usr/bin/abiword
+
+```
+
+To enable it in all children shells, you need to [source](/index.php/Source "Source") the hook, for example:
+
+ `~/.bashrc`  `source /usr/share/doc/pkgfile/command-not-found.bash` 
+
+An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/). Usage example:
 
  `$ abiword` 
 ```

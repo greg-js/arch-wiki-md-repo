@@ -102,7 +102,7 @@ For each of these settings the following options are available:
 *   *no*: The user is not authorized to carry out the action. There is therefore no need for authentication.
 *   *yes*: The user is authorized to carry out the action without any authentication.
 *   *auth_self*: Authentication is required but the user need not be an administrative user.
-*   *auth_admin*: Authentication as an administrative user is require.
+*   *auth_admin*: Authentication as an administrative user is required.
 *   *auth_self_keep*: The same as auth_self but, like sudo, the authorization lasts a few minutes.
 *   *auth_admin_keep*: The same as auth_admin but, like sudo, the authorization lasts a few minutes.
 

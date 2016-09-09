@@ -756,6 +756,7 @@ Make sure you add following command to ~/.rtorrent.rc, which makes the asterisk 
 Also set "pyro.extended" to 1 to activate rTorrent-PS features.
 
  `system.method.insert = pyro.extended, value|const, 1` 
+**Note:** You may notice that some systemd service scripts for rtorrent do not work with rtorrent-ps installed. If you are using tmux or screen this may because it is exiting with the error, "your terminal only supports 8 colors". To fix this make sure your tmux/screen config sets the TERM variable to a 256 color variant, or change your rtorrent theme to an 8 color one such as [https://github.com/pyroscope/rtorrent-ps/blob/master/docs/examples/color_scheme8.rc](https://github.com/pyroscope/rtorrent-ps/blob/master/docs/examples/color_scheme8.rc).
 
 ### PyroScope
 

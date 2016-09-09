@@ -79,6 +79,22 @@ xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -114
 
 ```
 
+Similarly, to set tap actions with 1/2/3 fingers:
+
+```
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Tap Action" 0 0 0 0 1 3 2
+
+```
+
+and enable two-finger scrolling in all directions:
+
+```
+xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Scrolling" 1 1
+
+```
+
+To enable the above settings on login, put all those "set-prop" commands into your **~/.xprofile**.
+
 ### Audio
 
 Works with [PulseAudio](/index.php/PulseAudio "PulseAudio") and [ALSA](/index.php/ALSA "ALSA") installed. The built-in speakers, headphone, and mic all work.

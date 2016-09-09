@@ -193,7 +193,7 @@ This will create an `/etc/localtime` symlink that points to a zoneinfo file unde
 
 **Tip:** The time zone can also be selected interactively with *tzselect*.
 
-See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for details.
+See [timedatectl(1)](http://man7.org/linux/man-pages/man1/timedatectl.1.html), [localtime(5)](http://man7.org/linux/man-pages/man5/localtime.5.html) and archlinux(7) for details.
 
 **Note:** If the pre-systemd configuration file `/etc/timezone` still exists in your system, you can remove it safely, since it is no longer used.
 

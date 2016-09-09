@@ -8,6 +8,7 @@
 | Fingerprint Sensor | No |
 | [Mobile Broadband](/index.php/ThinkPad_mobile_internet "ThinkPad mobile internet") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
+| Smartcard Reader | Yes |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T460s laptop.
 
@@ -15,15 +16,59 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Contents
 
-*   [1 Configuration](#Configuration)
-    *   [1.1 Touchpad/TrackPoint](#Touchpad.2FTrackPoint)
-    *   [1.2 Suspend / Resume](#Suspend_.2F_Resume)
-    *   [1.3 Hibernate / Resume](#Hibernate_.2F_Resume)
-    *   [1.4 Fingerprint Sensor](#Fingerprint_Sensor)
-    *   [1.5 ALSA Beep](#ALSA_Beep)
-    *   [1.6 Function keys](#Function_keys)
-    *   [1.7 Video Issues](#Video_Issues)
-*   [2 See also](#See_also)
+*   [1 Hardware](#Hardware)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Touchpad/TrackPoint](#Touchpad.2FTrackPoint)
+    *   [2.2 Suspend / Resume](#Suspend_.2F_Resume)
+    *   [2.3 Hibernate / Resume](#Hibernate_.2F_Resume)
+    *   [2.4 Fingerprint Sensor](#Fingerprint_Sensor)
+    *   [2.5 ALSA Beep](#ALSA_Beep)
+    *   [2.6 Function keys](#Function_keys)
+    *   [2.7 Video Issues](#Video_Issues)
+    *   [2.8 Smartcard Reader](#Smartcard_Reader)
+*   [3 See also](#See_also)
+
+## Hardware
+
+`lspci` returns something like:
+
+```
+00:00.0 Host bridge: Intel Corporation Skylake Host Bridge/DRAM Registers (rev 08)
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 520 (rev 07)
+00:08.0 System peripheral: Intel Corporation Skylake Gaussian Mixture Model
+00:14.0 USB controller: Intel Corporation Sunrise Point-LP USB 3.0 xHCI Controller (rev 21)
+00:14.2 Signal processing controller: Intel Corporation Sunrise Point-LP Thermal subsystem (rev 21)
+00:16.0 Communication controller: Intel Corporation Sunrise Point-LP CSME HECI #1 (rev 21)
+00:16.3 Serial controller: Intel Corporation Device 9d3d (rev 21)
+00:1c.0 PCI bridge: Intel Corporation Device 9d10 (rev f1)
+00:1c.2 PCI bridge: Intel Corporation Device 9d12 (rev f1)
+00:1c.4 PCI bridge: Intel Corporation Sunrise Point-LP PCI Express Root Port #5 (rev f1)
+00:1f.0 ISA bridge: Intel Corporation Sunrise Point-LP LPC Controller (rev 21)
+00:1f.2 Memory controller: Intel Corporation Sunrise Point-LP PMC (rev 21)
+00:1f.3 Audio device: Intel Corporation Sunrise Point-LP HD Audio (rev 21)
+00:1f.4 SMBus: Intel Corporation Sunrise Point-LP SMBus (rev 21)
+00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection I219-LM (rev 21)
+02:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS522A PCI Express Card Reader (rev 01)
+04:00.0 Network controller: Intel Corporation Wireless 8260 (rev 3a)
+05:00.0 Non-Volatile memory controller: Samsung Electronics Co Ltd NVMe SSD Controller (rev 01)
+
+```
+
+`lsusb` returns something like:
+
+```
+Bus 002 Device 002: ID 17ef:1012 Lenovo 
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 008: ID 138a:0090 Validity Sensors, Inc. 
+Bus 001 Device 007: ID 04f2:b52c Chicony Electronics Co., Ltd 
+Bus 001 Device 005: ID 8087:0a2b Intel Corp. 
+Bus 001 Device 003: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
+Bus 001 Device 006: ID 192f:0416 Avago Technologies, Pte. ADNS-5700 Optical Mouse Controller (3-button)
+Bus 001 Device 004: ID 17ef:1011 Lenovo 
+Bus 001 Device 002: ID 17ef:1012 Lenovo 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
 
 ## Configuration
 
@@ -58,6 +103,28 @@ Fn+Esc to enable FnLk which will make your function keys work.
 With newer kernels (>= 4.5), there seems to be video flickering, i.e. the screen occasionally goes black for what seems to be a single frame. See bug reports: [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=91393).
 
 This can be worked around by using the `i915.enable_rc6=0` kernel parameter [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=95010) (cf. [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics"))
+
+### Smartcard Reader
+
+```
+Bus 001 Device 003: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
+
+```
+[Install](/index.php/Install "Install") the [ccid](https://www.archlinux.org/packages/?name=ccid) and [pscs-tools](https://www.archlinux.org/packages/?name=pscs-tools) packages, and [enable](/index.php/Enable "Enable") the `pcscd` service. The reader should be visible when running `pcsc_scan`:
+```
+pcsc_scan
+PC/SC device scanner
+V 1.4.27 (c) 2001-2011, Ludovic Rousseau <ludovic.rousseau@free.fr>
+Compiled with PC/SC lite version: 1.8.16
+Using reader plug'n play mechanism
+Scanning present readers...
+0: Alcor Micro AU9560 00 00
+
+Wed Sep  7 16:48:42 2016
+Reader 0: Alcor Micro AU9560 00 00
+  Card state: Card removed,
+
+```
 
 ## See also
 

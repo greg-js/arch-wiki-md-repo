@@ -1,5 +1,3 @@
-Besides the questions covered below, you may find [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux") helpful. Both articles contain a good deal of information about Arch Linux.
-
 ## Contents
 
 *   [1 General](#General)
@@ -7,16 +5,17 @@ Besides the questions covered below, you may find [The Arch Way](/index.php/The_
     *   [1.2 Why would I not want to use Arch?](#Why_would_I_not_want_to_use_Arch.3F)
     *   [1.3 What architectures does Arch support?](#What_architectures_does_Arch_support.3F)
     *   [1.4 Does Arch support ARM CPUs?](#Does_Arch_support_ARM_CPUs.3F)
-    *   [1.5 I am a complete GNU/Linux beginner. Should I use Arch?](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F)
-    *   [1.6 Is Arch designed to be used as a server? A desktop? A workstation?](#Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
-    *   [1.7 I really like Arch, except the development team needs to implement feature X](#I_really_like_Arch.2C_except_the_development_team_needs_to_implement_feature_X)
-    *   [1.8 When will the new release be made available?](#When_will_the_new_release_be_made_available.3F)
-    *   [1.9 Is Arch Linux a stable distribution? Will I get frequent breakage?](#Is_Arch_Linux_a_stable_distribution.3F_Will_I_get_frequent_breakage.3F)
-    *   [1.10 Arch needs more press (i.e. advertisement)](#Arch_needs_more_press_.28i.e._advertisement.29)
-    *   [1.11 Arch needs more developers](#Arch_needs_more_developers)
-    *   [1.12 Why is my internet so slow compared to other operating systems?](#Why_is_my_internet_so_slow_compared_to_other_operating_systems.3F)
-    *   [1.13 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
-    *   [1.14 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
+    *   [1.5 Does Arch follow the FHS?](#Does_Arch_follow_the_FHS.3F)
+    *   [1.6 I am a complete GNU/Linux beginner. Should I use Arch?](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F)
+    *   [1.7 Is Arch designed to be used as a server? A desktop? A workstation?](#Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
+    *   [1.8 I really like Arch, except the development team needs to implement feature X](#I_really_like_Arch.2C_except_the_development_team_needs_to_implement_feature_X)
+    *   [1.9 When will the new release be made available?](#When_will_the_new_release_be_made_available.3F)
+    *   [1.10 Is Arch Linux a stable distribution? Will I get frequent breakage?](#Is_Arch_Linux_a_stable_distribution.3F_Will_I_get_frequent_breakage.3F)
+    *   [1.11 Arch needs more press (i.e. advertisement)](#Arch_needs_more_press_.28i.e._advertisement.29)
+    *   [1.12 Arch needs more developers](#Arch_needs_more_developers)
+    *   [1.13 Why is my internet so slow compared to other operating systems?](#Why_is_my_internet_so_slow_compared_to_other_operating_systems.3F)
+    *   [1.14 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
+    *   [1.15 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
 *   [2 Package management](#Package_management)
     *   [2.1 In which package is X?](#In_which_package_is_X.3F)
     *   [2.2 I've found an error with Package X. What should I do?](#I.27ve_found_an_error_with_Package_X._What_should_I_do.3F)
@@ -48,7 +47,7 @@ Besides the questions covered below, you may find [The Arch Way](/index.php/The_
 
 ### What is Arch Linux?
 
-See the article entitled [Arch Linux](/index.php/Arch_Linux "Arch Linux").
+See the [Arch Linux](/index.php/Arch_Linux "Arch Linux") article.
 
 ### Why would I not want to use Arch?
 
@@ -68,6 +67,10 @@ Arch supports the i686 and x86_64 (sometimes called amd64) architectures.
 ### Does Arch support ARM CPUs?
 
 No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port of Arch Linux to several ARM platforms. See [[1]](http://ix.io/73w/irc).
+
+### Does Arch follow the [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)?
+
+Arch Linux follows the *file system hierarchy* for operating systems using the [systemd](/index.php/Systemd "Systemd") service manager. See [file-hierarchy(7)](http://man7.org/linux/man-pages/man7/file-hierarchy.7.html) for an explanation of each directory along with their designations. In particular, `/bin`, `/sbin`, and `/usr/sbin` are symbolic links to `/usr/bin`, and `/lib` (and `/lib64` if applicable) are symbolic links to `/usr/lib`.
 
 ### I am a complete GNU/Linux beginner. Should I use Arch?
 

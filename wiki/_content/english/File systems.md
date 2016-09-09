@@ -16,37 +16,41 @@ Individual drive partitions can be setup using one of the many different availab
 
 ## Create a file system
 
-**Note:** A drive must be [partitioned](/index.php/Partitioning "Partitioning") before creating file systems.
+File systems are usually created on a [partition](/index.php/Partition "Partition"), inside logical containers such as [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), or on a regular file (see [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). This section describe the partition case.
 
-Identify the device where the file system will be created, for example with [lsblk](/index.php/Lsblk "Lsblk"):
+**Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless_Btrfs_disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
+
+**Warning:** After creating a new filesystem, data previously stored on this partition can unlikely be recovered. Make a backup of any data you want to keep.
+
+Identify the partition where the file system will be created, for example with [lsblk](/index.php/Lsblk "Lsblk"):
+
+ `$ lsblk -f` 
+```
+NAME   FSTYPE LABEL     UUID                                 MOUNTPOINT
+sdb                                                          
+└─sdb1 vfat   Transcend 4A3C-A9E9
+```
+
+If there is an existing file system, it must **not** be [mounted](/index.php/Mount "Mount"). Check if the respective `MOUNTPOINT` column of *lsblk* is empty, or if [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html) has no output. For example:
 
 ```
-$ lsblk -f
+$ findmnt */dev/sdb1*
 
 ```
 
-File systems are usually created on a partition, but they can also be created inside of logical containers like [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt").
-
-To create a new file system on a partition, the existing file system located on the partition must not be [mounted](/index.php/Mount "Mount"). If the partition you want to format contains a mounted filesystem, it will appear in the *MOUNTPOINT* column of lsblk. To unmount it, use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html) on the directory where the file system was mounted to:
+To unmount it, use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html) on the directory where the file system was mounted to:
 
 ```
 # umount */mountpoint*
 
 ```
 
-Create a new file system of type *fstype* on a partition with [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html):
+Create a new file system on a partition with [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
 
-**Warning:** After creating a new filesystem, data previously stored on this partition can likely not be recovered. Make a backup of any data you want to keep.
-
-```
-# mkfs.*fstype* /dev/*partition*
+For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions), run:
 
 ```
-
-See [#Types of file systems](#Types_of_file_systems) corresponding to file system you wish to create for the exact type, as well as userspace utilities you may wish to install for a particular file system. For example, use mkfs.ext4(8) to create a new file system of type [ext4](/index.php/Ext4 "Ext4"):
-
-```
-# mkfs.ext4 /dev/*partition*
+# mkfs.*ext4* /dev/*sdb1*
 
 ```
 
@@ -70,7 +74,7 @@ See also [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison
 
 	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
 
-*   **[ext](https://en.wikipedia.org/wiki/Extended_file_system "w:Extended file system")** — **Second Extended Filesystem** does not have journaling support or barriers. Lack of journaling can result in data loss in the event of a power failure or system crash. When used on larger partitions, file/system checks may take a long time. An ext2 filesystem can be [converted to ext3](/index.php/Convert_ext2_to_ext3 "Convert ext2 to ext3"). **Third Extended Filesystem** is essentially the ext2 system with journaling support and write barriers. It is backward compatible with ext2\. **Fourth Extended Filesystem** is a newer filesystem that is also compatible with ext2 and ext3\. It provides support for volumes with sizes up to 1 exabyte (i.e. 1,048,576 terabytes) and files sizes up to 16 terabytes. It increases the 32,000 subdirectory limit in ext3 to unlimited. It also offers online defragmentation capability.
+*   **[ext](https://en.wikipedia.org/wiki/Extended_file_system "w:Extended file system")** — **Fourth Extended Filesystem** is a newer filesystem that is also compatible with ext2 and ext3\. It provides support for volumes with sizes up to 1 exabyte (i.e. 1,048,576 terabytes) and files sizes up to 16 terabytes. It increases the 32,000 subdirectory limit in ext3 to unlimited. It also offers online defragmentation capability.
 
 	[http://e2fsprogs.sourceforge.net](http://e2fsprogs.sourceforge.net) || [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
 

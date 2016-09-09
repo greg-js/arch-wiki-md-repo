@@ -205,7 +205,7 @@ Select the partition's type id. The default, `Linux filesystem`, should be fine 
 *   [GRUB](/index.php/GRUB "GRUB") requires a BIOS boot partition with code `ef02` with *gdisk* and `BIOS boot` with *fdisk* when installing GRUB to a disk.
 *   It is recommended to use `8200` with *gdisk* and `Linux swap` with *fdisk* for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
 
-See the above articles for considerations concerning the size and location of these partitions.
+See the respective articles for considerations concerning the size and location of these partitions.
 
 Repeat this procedure until you have the partitions you desire.
 

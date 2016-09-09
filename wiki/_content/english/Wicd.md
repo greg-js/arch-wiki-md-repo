@@ -211,9 +211,9 @@ See [Network configuration#Troubleshooting](/index.php/Network_configuration#Tro
 
 ### Autoconnect on resume from hibernation/suspension
 
-If for some reasons autoconnect on resume from hibernation or suspension does not work automatically, you can manually restart Wicd by enabling the following service file for your user.
+If for some reasons autoconnect on resume from hibernation or suspension does not work automatically, you can manually restart Wicd by enabling the following service file for your user; see [systemd/User#Basic setup](/index.php/Systemd/User#Basic_setup "Systemd/User").
 
- `/etc/systemd/system/wicd-resume@.service` 
+ `~/.config/systemd/user/wicd@resume.service` 
 ```
 [Unit]
 Description=Restart Wicd autoconnect service on resume

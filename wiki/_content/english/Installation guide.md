@@ -1,6 +1,6 @@
 This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles (accessible from the installation environment with [ELinks](/index.php/ELinks "ELinks")), or the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
+For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles, or the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
 ## Contents
 
@@ -32,9 +32,9 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 
 Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "w:P6 (microarchitecture)") or [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, a working internet connection is required.
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
+Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
+To switch to a different console—for example, to view this guide in [elinks](/index.php/Elinks "Elinks") alongside the installation—use the `Alt+arrow` shortcut. To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
 ### Set the keyboard layout
 
@@ -79,14 +79,16 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-At least one [partition](/index.php/Partition "Partition") for the root directory `/` is required. If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is also required. Other partitions may be needed, such as a [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+To list present block devices, run `fdisk -l` or [lsblk](/index.php/Core_utilities#lsblk "Core utilities"). Results ending in `rom`, `loop` or `airoot` are unsuitable for installation and may be ignored.
 
-Not all devices are viable mediums for installation; when listing devices with `fdisk -l` or [lsblk](/index.php/Core_utilities#lsblk "Core utilities"), results ending in `rom`, `loop` or `airoot` may be ignored.
+At least one [disk partition](/index.php/Disk_partition "Disk partition") is required for the root directory `/`. If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is also required. BIOS systems with [GPT](/index.php/GPT "GPT") may further need a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
-To modify and print [partition tables](/index.php/Partitioning#Partition_table "Partitioning"), use:
+[Swap](/index.php/Swap "Swap") space can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a swap file. See [Partitioning#Partition_scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
 
-*   [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") for both *MBR* and *GPT*
-*   [gdisk](/index.php/Gdisk "Gdisk") for *GPT* only.
+To modify and create partitions, use one of the following tools:
+
+*   [fdisk](/index.php/Fdisk "Fdisk"), *cfdisk* or [parted](/index.php/Parted "Parted") for both *MBR* and *GPT*
+*   [gdisk](/index.php/Gdisk "Gdisk") or *cgdisk* for *GPT* only.
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
@@ -103,7 +105,7 @@ Once the partitions have been created, each must be formatted with an appropriat
 
 ```
 
-After that, create directories for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate the *swap* space with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html), if you want them to be detected later by *genfstab*.
+After that, create directories for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate the *swap* space with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html). Mounted file systems will later be detected by *genfstab*.
 
 ## Installation
 
@@ -126,7 +128,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 This group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
 
-To build packages from the [AUR](/index.php/AUR "AUR") or with the [ABS](/index.php/ABS "ABS"), the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group is also required. To [install](/index.php/Install "Install") this or another group, or other individual packages, to the new system, append the names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
+To [install](/index.php/Install "Install") packages and other groups such as [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), append the names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
 
 ## Configure the system
 
