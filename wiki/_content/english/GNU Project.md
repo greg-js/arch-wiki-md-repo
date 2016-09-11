@@ -23,31 +23,31 @@ While [Hurd](http://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under acti
 
 ### Software Collection
 
-*   **[GRUB](/index.php/GRUB "GRUB")** — bootloader
+*   **[GRUB](/index.php/GRUB "GRUB")** — GRUB is the bootloader from the GNU project.
 
 	[http://www.gnu.org/software/grub/](http://www.gnu.org/software/grub/) || [grub](https://www.archlinux.org/packages/?name=grub)
 
-*   **[glibc](https://en.wikipedia.org/wiki/glibc "wikipedia:glibc")** — C library. "defines the 'system calls' and other basic facilities such as open, malloc, printf, exit..."
+*   **[glibc](https://en.wikipedia.org/wiki/glibc "wikipedia:glibc")** — glibc is GNU's implementation of the C library. Despite its name, it also supports C++ and indirectly other languages. It defines the system calls and other basic facilities such as open, malloc, printf, exit.
 
 	[http://www.gnu.org/software/libc/](http://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc)
 
-*   **[binutils](https://en.wikipedia.org/wiki/binutils "wikipedia:binutils")** — "a collection of binary tools"
+*   **[binutils](https://en.wikipedia.org/wiki/binutils "wikipedia:binutils")** — It is a collection of binary tools.
 
 	[https://www.gnu.org/software/binutils/](https://www.gnu.org/software/binutils/) || [binutils](https://www.archlinux.org/packages/?name=binutils)
 
-*   **[bash](/index.php/Bash "Bash")** — "an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh)"
+*   **[bash](/index.php/Bash "Bash")** — It is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh).
 
 	[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/) || [bash](https://www.archlinux.org/packages/?name=bash)
 
-*   **[coreutils](/index.php/Coreutils "Coreutils")** — "the basic file, shell and text manipulation utilities of the GNU operating system."
+*   **[coreutils](/index.php/Coreutils "Coreutils")** — coreutils provides the basic file, shell and text manipulation utilities of the GNU operating system.
 
 	[https://www.gnu.org/software/coreutils/](https://www.gnu.org/software/coreutils/) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
 
-*   **[gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip")** — "popular data compression program"
+*   **[gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip")** — gzip is both a file format and a software for compression and decompression.
 
 	[https://www.gnu.org/software/gzip/](https://www.gnu.org/software/gzip/) || [gzip](https://www.archlinux.org/packages/?name=gzip)
 
-*   **[tar](/index.php/Tar "Tar")** — "provides the ability to create tar archives, as well as various other kinds of manipulation"
+*   **[tar](/index.php/Core_utilities#tar "Core utilities")** — It provides the ability to create or decompress tar archives, as well as various other kinds of manipulation.
 
 	[https://www.gnu.org/software/tar/](https://www.gnu.org/software/tar/) || [tar](https://www.archlinux.org/packages/?name=tar)
 
@@ -81,15 +81,17 @@ Among **base-devel** are several members of the [GNU toolchain](https://en.wikip
 
 Many other optional GNU tools are available in the [official repositories](/index.php/Official_repositories "Official repositories"):
 
-**widget toolkit:** [GTK+](/index.php/GTK%2B "GTK+")
+**Desktop environment:** [GNOME](/index.php/GNOME "GNOME")
 
-**desktop environment:** [GNOME](/index.php/GNOME "GNOME")
+**Full-screen window manager:** [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 
-**spreadsheet:** [Gnumeric](/index.php/Gnumeric "Gnumeric")
+**Partition Manager:** [GNU Parted](/index.php/GNU_Parted "GNU Parted")
 
-**image editor:** [GIMP](/index.php/GIMP "GIMP")
+**Image editor:** [GIMP](/index.php/GIMP "GIMP")
 
-**full-screen window manager:** [GNU Screen](/index.php/GNU_Screen "GNU Screen")
+**Spreadsheet:** [Gnumeric](/index.php/Gnumeric "Gnumeric")
+
+**Widget toolkit:** [GTK+](/index.php/GTK%2B "GTK+")
 
 ## See also
 

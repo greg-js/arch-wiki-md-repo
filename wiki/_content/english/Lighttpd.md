@@ -7,6 +7,8 @@
     *   [2.1 Basic setup](#Basic_setup)
         *   [2.1.1 Basic logging](#Basic_logging)
         *   [2.1.2 Enabling https via SSL](#Enabling_https_via_SSL)
+            *   [2.1.2.1 Self-signed](#Self-signed)
+            *   [2.1.2.2 Let's Encrypt](#Let.27s_Encrypt)
         *   [2.1.3 Password protecting a directory](#Password_protecting_a_directory)
     *   [2.2 CGI](#CGI)
     *   [2.3 FastCGI](#FastCGI)
@@ -65,6 +67,8 @@ accesslog.filename = "/var/log/lighttpd/access.log"
 
 **Warning:** Users planning to implementing SSL/TLS, should know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how they apply to Lighttpd and other services (such as email) visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
+##### Self-signed
+
 Self-signed SSL Certificates can be generated assuming [openssl](https://www.archlinux.org/packages/?name=openssl) is installed on the system as follows:
 
 ```
@@ -81,6 +85,26 @@ $SERVER["socket"] == ":443" {
     ssl.engine                  = "enable" 
     ssl.pemfile                 = "/etc/lighttpd/certs/server.pem" 
  }
+
+```
+
+##### Let's Encrypt
+
+Alternatively, generate a certificate signed by [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt"). After following the instruction for manual certificate generation, combine the generated `privkey.pem` and `cert.pem` into one file:
+
+```
+# cat /etc/letsencrypt/live/*domain*/{privkey.pem,cert.pem} > /etc/letsencrypt/live/*domain*/combined.pem
+
+```
+
+[Edit](/index.php/Edit "Edit") `/etc/lighttpd/lighttpd.conf` by adding the following lines:
+
+```
+$SERVER["socket"] == ":443" {
+    ssl.engine                  = "enable" 
+    ssl.pemfile                 = "/etc/letsencrypt/live/*domain*/combined.pem"
+    ssl.ca-file                 = "/etc/letsencrypt/live/*domain*/chain.pem"
+}
 
 ```
 

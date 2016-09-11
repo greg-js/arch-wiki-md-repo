@@ -232,10 +232,9 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
 In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, NOT compiled as a module. This will enable the "Early load microcode" prompt which should be set to "Y".
 
 ```
+CONFIG_BLK_DEV_INITRD=Y
 CONFIG_MICROCODE=y
-CONFIG_MICROCODE_INTEL=y
-CONFIG_MICROCODE_INTEL_EARLY=y
-CONFIG_MICROCODE_EARLY=y
+CONFIG_MICROCODE_INTEL=Y
 
 ```
 

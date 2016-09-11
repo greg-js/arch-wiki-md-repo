@@ -240,6 +240,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 *   [http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/) - *NAra Institute of Science and Technology*
 *   [http://ftp.kddilabs.jp/Linux/packages/archlinux/](http://ftp.kddilabs.jp/Linux/packages/archlinux/)
 *   [http://srv2.ftp.ne.jp/Linux/packages/archlinux/](http://srv2.ftp.ne.jp/Linux/packages/archlinux/)
+*   [http://mirror.archlinuxjp.org/](http://mirror.archlinuxjp.org/)
 
 ### Malaysia
 

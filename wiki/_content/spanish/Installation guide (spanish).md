@@ -102,7 +102,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Utilice el script [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) para instalar el grupo de paquetes [base](https://www.archlinux.org/groups/x86_64/base/): `# pacstrap /mnt base` 
 
-*   Este grupo de paquetes no incluye todas las herramientas desponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware de wireless específicas ; consulte [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) para ver la comparación.
+*   Este grupo de paquetes no incluye todas las herramientas disponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware de wireless específicas ; consulte [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) para ver la comparación.
 
 *   Para [instalar](/index.php/Install "Install") otros paquetes o grupos de paquetes en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por espacios) o posteriormente a la etapa de [#Chroot](#Chroot) con órdenes individuales [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html).
 

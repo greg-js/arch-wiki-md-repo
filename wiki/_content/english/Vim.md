@@ -57,7 +57,6 @@ To get some commonly expected behaviors (such as syntax highlighting), add the V
 
  `/etc/vimrc/` 
 ```
-...
 
 runtime! vimrc_example.vim
 

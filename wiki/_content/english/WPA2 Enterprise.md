@@ -16,7 +16,7 @@ The Enterprise mode enables users to log onto the Wi-Fi network with a username 
 
 ## Supported clients
 
-**Note:** [NetworkManager](/index.php/NetworkManager "NetworkManager") can generate WPA2 Enterprise profiles with [graphical front ends](/index.php/NetworkManager#Graphical_front-ends "NetworkManager"). *nmcli* and *nmtui* do not support this, but may use existing profiles.
+**Note:** [NetworkManager](/index.php/NetworkManager "NetworkManager") can generate WPA2 Enterprise profiles with [graphical front ends](/index.php/NetworkManager#Front-ends "NetworkManager"). *nmcli* and *nmtui* do not support this, but may use existing profiles.
 
 See [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications") for an overview.
 
@@ -51,6 +51,8 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 *   Check connection details **first** with your institution before applying any profiles listed in this section. Example profiles are not guaranteed to work or match any security requirements.
 *   When storing connection profiles unencrypted, restrict read access to the root account by specifying `chmod 600 *profile*` as root.
+
+**Tip:** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") and [#wpa_supplicant](#wpa_supplicant) can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
 
 #### connman
 

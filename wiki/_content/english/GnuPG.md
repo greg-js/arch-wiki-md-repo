@@ -51,10 +51,11 @@ According to the [official website](http://www.gnupg.org):
     *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
     *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
     *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
-    *   [9.6 mutt and gpg](#mutt_and_gpg)
-    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
-    *   [9.9 Smartcard not detected](#Smartcard_not_detected)
+    *   [9.6 GNOME on Wayland overrides SSH agent socket](#GNOME_on_Wayland_overrides_SSH_agent_socket)
+    *   [9.7 mutt and gpg](#mutt_and_gpg)
+    *   [9.8 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
+    *   [9.9 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [9.10 Smartcard not detected](#Smartcard_not_detected)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -499,7 +500,7 @@ $ gpg --pinentry-mode loopback ...
 
 ### SSH agent
 
-*gpg-agent* has OpenSSH agent emulation. If you already use the GnuPG suite, you might consider using its agent to also cache your SSH keys. Additionally, some users may prefer the PIN entry dialog GnuPG agent provides as part of its passphrase management.
+*gpg-agent* has OpenSSH agent emulation. If you already use the GnuPG suite, you might consider using its agent to also cache your [SSH keys](/index.php/SSH_keys "SSH keys"). Additionally, some users may prefer the PIN entry dialog GnuPG agent provides as part of its passphrase management.
 
 To start using GnuPG agent for your SSH keys, enable SSH support in the `~/.gnupg/gpg-agent.conf` file:
 
@@ -745,6 +746,19 @@ However, since version 0.9.6 the package [pinentry](https://www.archlinux.org/pa
 in order to make use of that pinentry program.
 
 Since version 0.9.2 all pinentry programs can be configured to optionally save a passphrase with libsecret. For example, when the user is asked for a passphrase via `pinentry-gnome3`, a checkbox is shown whether to save the passphrase using a password manager. Unfortunately, the package [pinentry](https://www.archlinux.org/packages/?name=pinentry) does not have this feature enabled (see [FS#46059](https://bugs.archlinux.org/task/46059) for the reasons). You may use [pinentry-libsecret](https://aur.archlinux.org/packages/pinentry-libsecret/) as a replacement for it, which has support for libsecret enabled.
+
+### GNOME on Wayland overrides SSH agent socket
+
+For Wayland sessions, `gnome-session` sets `SSH_AUTH_SOCK` to the standard gnome-keyring socket, `$XDG_RUNTIME_DIR/keyring/ssh`. This overrides any value set in `~/.pam_environmment` or systemd unit files.
+
+To disable this behavior, set the `GSM_SKIP_AGENT_WORKAROUND` variable:
+
+ `~/.pam_environment` 
+```
+SSH_AGENT_PID	DEFAULT=
+SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+GSM_SKIP_SSH_AGENT_WORKAROUND	DEFAULT="true"
+```
 
 ### mutt and gpg
 

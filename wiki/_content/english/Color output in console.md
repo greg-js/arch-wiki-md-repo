@@ -55,13 +55,17 @@ $ alias diff 'diff --color=auto'
 
 ### grep
 
-`grep`'s color output can be helpful for learning [regexp](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") and additional `grep` functionality.
+Key `--color=auto` enables color highlighting. `--color=auto` emits color codes only when standard output is connected to a terminal. Pipe or redirection, any other use cases - stay clean.
 
-To enable *grep* coloring write the following entry to the shell configuration file (e.g. if using [Bash](/index.php/Bash "Bash")):
+Color output in `grep` is useful, also handy in [regexp](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") tasks.
 
- `~/.bashrc`  `alias grep='grep --color=auto'` 
+To permanently use `--color=auto` write [alias(1)](http://man7.org/linux/man-pages/man1/alias.1.html) to shell configuration file (`[~/.bashrc](/index.php/Bash#Configuration_files "Bash")` in *Bash*):
 
-To include file line numbers in the output, add the option `-n` to the line.
+ `alias grep='grep --color=auto'` 
+
+`GREP_COLORS` variable used to define colors, and configures various parts of highlighting.
+
+See [grep(1)](http://man7.org/linux/man-pages/man1/grep.1.html)
 
 The environment variable `GREP_COLOR` can be used to define the default highlight color (the default is red). To change the color find the [ANSI escape sequence](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) for the color liked and add it:
 
@@ -70,7 +74,7 @@ export GREP_COLOR="1;32"
 
 ```
 
-`GREP_COLORS` may be used to define specific searches.
+Key `-n` include file line numbers in the output.
 
 ### less
 
@@ -158,19 +162,20 @@ $ pty *program* | less
 
 ### ls
 
-Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
+Key `--color=auto` enables color highlighting. `--color=auto` emits color codes only when standard output is connected to a terminal. Pipe or redirection, any other cases - stay clean.
+
+To permanently use `--color=auto` write [alias(1)](http://man7.org/linux/man-pages/man1/alias.1.html) to shell configuration file ([~/.bashrc](/index.php/Bash#Configuration_files_if_using "Bash") in *Bash*):
 
 ```
 alias ls='ls --color=auto'
 
 ```
 
-The next step will further enhance the colored *ls* output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
+`LS_COLORS` variable used to define colors, and configures various parts of highlighting. Use [dircolors(1)](http://man7.org/linux/man-pages/man1/dircolors.1.html) command to set it.
 
-```
-eval $(dircolors -b)
+**Note:** Using the `--color` option may incur a noticeable performance penalty when ls run in a directory with very many entries. The default settings require ls stat every single file it lists. However, if you would like most of the file-type coloring but can live without the other coloring options (e.g., executable, orphan, sticky, other-writable, capability), use dircolors to set the LS_COLORS environment variable like this, eval $(dircolors -p
 
-```
+See [ls(1)](http://man7.org/linux/man-pages/man1/ls.1.html)
 
 ### man
 
@@ -384,13 +389,13 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 
 #### diff
 
-Alternatively to built-in color output, the following wrappers can be used:
+Besides built-in color output, the following wrappers can be used:
 
-*   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting
+*   **colordiff** — Perl script for *diff* highlighting.
 
 	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
 
-*   **cwdiff** — A (w)diff wrapper to support directories and colorize the output
+*   **cwdiff** — *(w)diff* wrapper with directories support and highlighting.
 
 	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
 

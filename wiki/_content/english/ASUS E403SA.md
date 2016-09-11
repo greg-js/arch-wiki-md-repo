@@ -52,7 +52,7 @@ The touch works out of the box, read the [Touchpad Synaptics](/index.php/Touchpa
 
 Connecting wirelessly works out of the box with the `ath9k` driver, but times out sometimes during the DHCP lease process. Configuration can be done by editing the `/etc/modprobe.d/ath9k.conf` file. For example:
 
- `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=0 bt_ant_diversity=1 nohwencrypt=1` 
+ `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=0 bt_ant_diversity=1 nohwcrypt=1` 
 
 The `ps_enable=0` option disables power saving mode. `bt_ant_diversity=1` enables [antenna diversity](https://wireless.wiki.kernel.org/en/users/drivers/ath9k/antennadiversity). `nohwcrypt=1` disables encryption and decryption with hardware which may solve some connection issues.
 

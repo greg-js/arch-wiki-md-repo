@@ -34,7 +34,7 @@ Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchi
 
 Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-To switch to a different console—for example, to view this guide in [elinks](/index.php/Elinks "Elinks") alongside the installation—use the `Alt+arrow` shortcut. To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
+To switch to a different console—for example, to view this guide in [elinks](/index.php/Elinks "Elinks") alongside the installation—use the `Alt+*arrow*` shortcut. To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
 ### Set the keyboard layout
 
@@ -51,7 +51,7 @@ The layout can be changed with [loadkeys(1)](http://man7.org/linux/man-pages/man
 
 ### Verify the boot mode
 
-If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archiso](/index.php/Archiso "Archiso") will launch Arch Linux accordingly via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). To verify this, list the [efivars](/index.php/UEFI#UEFI_Variables "UEFI") directory:
+If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archiso](/index.php/Archiso "Archiso") will [boot](/index.php/Boot "Boot") Arch Linux accordingly via [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). To verify this, list the [efivars](/index.php/UEFI#UEFI_Variables "UEFI") directory:
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -62,7 +62,14 @@ If the directory does not exist, the system is booted in [BIOS](https://en.wikip
 
 ### Connect to the Internet
 
-Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for supported wired devices; check the connection using a tool such as [ping](/index.php/Network_configuration#Check_the_connection "Network configuration"). If none was established, [stop](/index.php/Systemd#Using_units "Systemd") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
+Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for [supported wired devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules); check the connection using a tool such as [ping](/index.php/Network_configuration#Check_the_connection "Network configuration"):
+
+```
+# ping archlinux.org
+
+```
+
+If none was established, [stop](/index.php/Systemd#Using_units "Systemd") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
 For [wireless](/index.php/Wireless "Wireless") connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration#Wireless management](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration").
 
@@ -83,7 +90,7 @@ To list present block devices, run `fdisk -l` or [lsblk](/index.php/Core_utiliti
 
 At least one [disk partition](/index.php/Disk_partition "Disk partition") is required for the root directory `/`. If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is also required. BIOS systems with [GPT](/index.php/GPT "GPT") may further need a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
-[Swap](/index.php/Swap "Swap") space can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a swap file. See [Partitioning#Partition_scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
+[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or—unless formatting with [Btrfs](/index.php/Btrfs "Btrfs")—a swap file. See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
 
 To modify and create partitions, use one of the following tools:
 
@@ -128,7 +135,7 @@ Use the [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/
 
 This group does not include all tools from the live installation, such as [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) or specific wireless firmware; see [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) for comparison.
 
-To [install](/index.php/Install "Install") packages and other groups such as [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), append the names to *pacstrap* (space separated) or to individual [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html) commands after the [#Chroot](#Chroot) step.
+To [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") packages and other groups such as [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), append the names to *pacstrap* (space separated) or to individual [pacman](/index.php/Pacman "Pacman") commands after the [#Chroot](#Chroot) step.
 
 ## Configure the system
 
@@ -193,7 +200,7 @@ If required, set the [console keymap](/index.php/Keyboard_configuration_in_conso
 
 ### Hostname
 
-Create an entry for the [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") in `/etc/hostname`:
+Create `/etc/hostname` with the desired [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration"):
 
 ```
 # echo *myhostname* > /etc/hostname
@@ -211,7 +218,7 @@ Add a matching line to `/etc/hosts`:
 
 Configure the network for the newly installed environment: see [Network configuration](/index.php/Network_configuration "Network configuration").
 
-For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Install "Install") the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and [dialog](https://www.archlinux.org/packages/?name=dialog) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
+For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and [dialog](https://www.archlinux.org/packages/?name=dialog) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
 
 ### Initramfs
 

@@ -9,11 +9,11 @@ GPM, short for General Purpose Mouse, is a daemon that provides mouse support fo
 The `-m` parameter precedes the declaration of the mouse to be used. The `-t` parameter precedes the type of mouse. To get a list of available types for the `-t` option, run `gpm` with `-t help`.
 
 ```
-$ gpm -m /dev/input/mice -t help
+# gpm -m /dev/input/mice -t help
 
 ```
 
-The [gpm](https://www.archlinux.org/packages/?name=gpm) package needs to be started with a few parameters. These parameters can be added in the file `/etc/conf.d/gpm` or used when running *gpm* directly. Recently, the `gpm.service` file for [systemd](/index.php/Systemd "Systemd") is using the 2nd approach. Since it is geared for a USB mice, it should be edited if this is not the case.
+The [gpm](https://www.archlinux.org/packages/?name=gpm) package needs to be started with a few parameters. These parameters can be added in the file `/etc/conf.d/gpm`, or used when running *gpm* directly. As of 2016, the `gpm.service` file for [systemd](/index.php/Systemd "Systemd") includes the parameters for a USB mice. Obviously, it should be edited if there is another mice type, and the file is used.
 
 *   For PS/2 mice, replace the existing line with:
 

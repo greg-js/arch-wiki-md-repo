@@ -173,6 +173,12 @@ See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Promp
 
 [pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command.
 
+You need to [source](/index.php/Source "Source") the hook to enable it, for example:
+
+ `~/.bashrc`  `source /usr/share/doc/pkgfile/command-not-found.bash` 
+
+Then attempting to run an unavailable command will show the following info:
+
  `$ abiword` 
 ```
 abiword may be found in the following packages:
@@ -180,29 +186,17 @@ abiword may be found in the following packages:
 
 ```
 
-To enable it in all children shells, you need to [source](/index.php/Source "Source") the hook, for example:
-
- `~/.bashrc`  `source /usr/share/doc/pkgfile/command-not-found.bash` 
-
-An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/). Usage example:
+An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/), which looks like this:
 
  `$ abiword` 
 ```
-The command 'abiword' is been provided by the following packages:
+The command 'abiword' is provided by the following packages:
 **abiword** (2.8.6-7) from extra
 	[ abiword ]
 **abiword** (2.8.6-7) from staging
 	[ abiword ]
 **abiword** (2.8.6-7) from testing
 	[ abiword ]
-
-```
-
-To load it automatically:
-
- `*~/.bashrc* or *~/.zshrc*` 
-```
-[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
 ```
 

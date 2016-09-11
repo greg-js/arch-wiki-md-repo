@@ -36,18 +36,14 @@ ExecStart=/usr/sbin/lvcreate -L10G -n snap-root -s lvmvolume/root
 
 Adapt the `lvcreate` command to match your root volume group and volume name. Adjust the snapshot size if necessary. If additional filesystems should be snapshotted during startup you may extend the `ExecStart` property with addtional lvcreate commands, separated with ` ;` (consider there is a space before and after the semicolon, see [systemd service manual](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Command%20lines) for details).
 
-**Note:** You should test the `# lvcreate` command in the running system until it works as desired.
-
-Remove the test snapshots with `# lvremove`. The snapshots taken from a running system are
-
-not as consistent as snapshots taken in single user mode or during startup.
+**Note:** You should test the `# lvcreate` command in the running system until it works as desired. Remove the test snapshots with `# lvremove`. The snapshots taken from a running system are not as consistent as snapshots taken in single user mode or during startup.
 
 Create a new systemd target `/etc/systemd/system/make-snapshots.target`:
 
 ```
 [Unit]
 Description=Make Snapshots
-Requires=multi-user.target
+Requires=*multi-user.target*
 ```
 
 Adapt the base target, if `multi-user.target` is not your default target.

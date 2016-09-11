@@ -108,7 +108,7 @@ To enable one of these, follow the instructions in [Unofficial user repositories
 
 **Note:** The *catalyst* and *catalyst-stable* repositories share the same URL. To enable *catalyst-stable*, follow the instructions for enabling *catalyst* and replace `[catalyst]` with `[catalyst-stable]` in `pacman.conf`. If you need to stick with an old version, there are also some versioned repositories using the same URL (for example *catalyst-stable-13.4*).
 
-**Tip:** Because catalyst.wirephire.com will go down if a certain bandwidth limit is exceeded (this happened in the past) or may be too slow at your location, repository mirror is provided by goll at [[1]](http://mirror.hactar.bz/Vi0L0/) (DE). This mirror however come with no warranty and is not guaranteed to always be operational.
+**Tip:** Because catalyst.wirephire.com will go down if a certain bandwidth limit is exceeded (this happened in the past) or may be too slow at your location, repository mirror is provided by goll at [[1]](http://mirror.hactar.xyz/Vi0L0/) (DE). This mirror however come with no warranty and is not guaranteed to always be operational.
 
 Once you have added some Catalyst repository, update pacman's database and [install](/index.php/Install "Install") these packages (see [#Tools](#Tools) for more information):
 
@@ -376,7 +376,7 @@ Catalyst does not support xorg-server 1.18
 [xorg117]
 Server = http://catalyst.wirephire.com/repo/xorg117/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/xorg117/$arch
+#Server = http://mirror.hactar.xyz/Vi0L0/xorg117/$arch
 
 ```
 
@@ -388,7 +388,7 @@ Catalyst < 15.7 does not support xorg-server 1.17
 [xorg116]
 Server = http://catalyst.wirephire.com/repo/xorg116/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/xorg116/$arch
+#Server = http://mirror.hactar.xyz/Vi0L0/xorg116/$arch
 
 ```
 
@@ -400,7 +400,7 @@ Catalyst < 14.9 does not support xorg-server 1.16
 [xorg115]
 Server = http://catalyst.wirephire.com/repo/xorg115/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/xorg115/$arch
+#Server = http://mirror.hactar.xyz/Vi0L0/xorg115/$arch
 
 ```
 
@@ -412,7 +412,7 @@ Catalyst < 14.1 does not support xorg-server 1.15.
 [xorg114]
 Server = http://catalyst.wirephire.com/repo/xorg114/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/xorg114/$arch
+#Server = http://mirror.hactar.xyz/Vi0L0/xorg114/$arch
 
 ```
 
@@ -424,7 +424,7 @@ Catalyst < 13.6 does not support xorg-server 1.14.
 [xorg113]
 Server = http://catalyst.wirephire.com/repo/xorg113/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/xorg113/$arch
+#Server = http://mirror.hactar.xyz/Vi0L0/xorg113/$arch
 
 ```
 
@@ -436,7 +436,7 @@ Catalyst < 12.10 and Catalyst Legacy do not support xorg-server 1.13.
 [xorg112]
 Server = http://catalyst.wirephire.com/repo/xorg112/$arch
 ## Mirrors, if the primary server does not work or is too slow:
-#Server = http://mirror.hactar.bz/Vi0L0/xorg112/$arch
+#Server = http://mirror.hactar.xyz/Vi0L0/xorg112/$arch
 
 ```
 

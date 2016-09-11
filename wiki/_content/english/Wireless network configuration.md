@@ -194,14 +194,14 @@ The table below gives an overview of comparable commands for *iw* and *wireless_
 *   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. *iwlist*), will exit without error but not produce the correct output either, which can be confusing.
 
 | *iw* command | *wireless_tools* command | Description |
-| iw dev wlan0 link | iwconfig wlan0 | Getting link status. |
-| iw dev wlan0 scan | iwlist wlan0 scan | Scanning for available access points. |
-| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | Setting the operation mode to *ad-hoc*. |
-| iw dev wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | Connecting to open network. |
-| iw dev wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
-| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
-| iwconfig wlan0 essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
-| iw dev wlan0 set power_save on | iwconfig wlan0 power on | Enabling power save. |
+| iw dev *wlan0* link | iwconfig *wlan0* | Getting link status. |
+| iw dev *wlan0* scan | iwlist *wlan0* scan | Scanning for available access points. |
+| iw dev *wlan0* set type ibss | iwconfig *wlan0* mode ad-hoc | Setting the operation mode to *ad-hoc*. |
+| iw dev *wlan0* connect *your_essid* | iwconfig *wlan0* essid *your_essid* | Connecting to open network. |
+| iw dev *wlan0* connect *your_essid* 2432 | iwconfig *wlan0* essid *your_essid* freq 2432M | Connecting to open network specifying channel. |
+| iw dev *wlan0* connect *your_essid* key 0:*your_key* | iwconfig *wlan0* essid *your_essid* key *your_key* | Connecting to WEP encrypted network using hexadecimal key. |
+| iwconfig *wlan0* essid *your_essid* key s:*your_key* | Connecting to WEP encrypted network using ASCII key. |
+| iw dev *wlan0* set power_save on | iwconfig *wlan0* power on | Enabling power save. |
 
 **Note:** Depending on your hardware and encryption type, some of these steps may not be necessary. Some cards are known to require interface activation and/or access point scanning before being associated to an access point and being given an IP address. Some experimentation may be required. For instance, WPA/WPA2 users may try to directly activate their wireless network from step [#Association](#Association).
 
@@ -225,7 +225,7 @@ phy#0
 
 *   To check link status, use following command. Example output when not connected to an AP:
 
- `$ iw dev wlan0 link` 
+ `$ iw dev *wlan0* link` 
 ```
 Not connected.
 
@@ -233,7 +233,7 @@ Not connected.
 
 When connected to an AP, you will see something like:
 
- `$ iw dev wlan0 link` 
+ `$ iw dev *wlan0* link` 
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -251,7 +251,7 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 
 *   You can get statistic information, such as the amount of tx/rx bytes, signal strength etc., with following command:
 
- `$ iw dev wlan0 station dump` 
+ `$ iw dev *wlan0* station dump` 
 ```
 Station 12:34:56:78:9a:bc (on wlan0)
 	inactive time:	1450 ms
@@ -280,7 +280,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 Some cards require that the kernel interface be activated before you can use *iw* or *wireless_tools*:
 
 ```
-# ip link set wlan0 up
+# ip link set *wlan0* up
 
 ```
 
@@ -288,7 +288,7 @@ Some cards require that the kernel interface be activated before you can use *iw
 
 To verify that the interface is up, inspect the output of the following command:
 
- `# ip link show wlan0` 
+ `# ip link show *wlan0*` 
 ```
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
@@ -302,7 +302,7 @@ The `UP` in `<BROADCAST,MULTICAST,UP,LOWER_UP>` is what indicates the interface 
 See what access points are available:
 
 ```
-# iw dev wlan0 scan | less
+# iw dev *wlan0* scan | less
 
 ```
 
@@ -328,7 +328,7 @@ The important points to check:
 You might need to set the proper operating mode of the wireless card. More specifically, if you are going to connect an [ad-hoc network](/index.php/Ad-hoc_networking "Ad-hoc networking"), you need to set the operating mode to `ibss`:
 
 ```
-# iw dev wlan0 set type ibss
+# iw dev *wlan0* set type ibss
 
 ```
 
@@ -349,7 +349,7 @@ If this does not work, you may need to adjust the options. If connected successf
 Regardless of the method used, you can check if you have associated successfully:
 
 ```
-# iw dev wlan0 link
+# iw dev *wlan0* link
 
 ```
 
@@ -360,14 +360,14 @@ Regardless of the method used, you can check if you have associated successfully
 Finally, provide an IP address to the network interface. Simple examples are:
 
 ```
-# dhcpcd wlan0
+# dhcpcd *wlan0*
 
 ```
 
 for DHCP, or
 
 ```
-# ip addr add 192.168.0.2/24 dev wlan0
+# ip addr add 192.168.0.2/24 dev *wlan0*
 # ip route add default via 192.168.0.1
 
 ```

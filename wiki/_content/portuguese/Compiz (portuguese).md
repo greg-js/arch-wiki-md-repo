@@ -1,3 +1,7 @@
+Segundo a [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
+
+	O Compiz é um gerenciador de janela de composição para o [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)"), que utiliza aceleração 3D para criar efeitos compostos rápidos de desktop para o gerenciador de janelas. Efeitos como minimizar e maximizar ou a área de trabalho em cubo são implementados como plugins carregáveis.
+
 ## Contents
 
 *   [1 Instalação](#Instala.C3.A7.C3.A3o)

@@ -2,7 +2,9 @@ SSH keys serve as a means of identifying yourself to an SSH server using [public
 
 As well as offering additional security, SSH key authentication can be more convenient than the more traditional password authentication. When used with a program known as an SSH agent, SSH keys can allow you to connect to a server, or multiple servers, without having to remember or enter your password for each system.
 
-SSH keys are not without their drawbacks and may not be appropriate for all environments, but in many circumstances they can offer some strong advantages. A general understanding of how SSH keys work will help you decide how and when to use them to meet your needs. This article assumes you already have a basic understanding of the [Secure Shell](/index.php/Secure_Shell "Secure Shell") protocol and have [installed](/index.php/Install "Install") the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
+SSH keys are not without their drawbacks and may not be appropriate for all environments, but in many circumstances they can offer some strong advantages. A general understanding of how SSH keys work will help you decide how and when to use them to meet your needs.
+
+This article assumes you already have a basic understanding of the [Secure Shell](/index.php/Secure_Shell "Secure Shell") protocol and have [installed](/index.php/Install "Install") the [openssh](https://www.archlinux.org/packages/?name=openssh) package.
 
 ## Contents
 

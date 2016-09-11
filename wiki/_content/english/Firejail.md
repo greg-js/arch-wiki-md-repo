@@ -16,6 +16,8 @@
 
 ## Installation
 
+**Note:** The User-namespace (`CONFIG_USER_NS=Y`) isn't set in the [kernel](/index.php/Kernel "Kernel") configuration, but may be required for Firejail to function properly. See [bug #36969](https://bugs.archlinux.org/task/36969) for details why this namespace is disabled by default.
+
 [Install](/index.php/Install "Install") the [firejail](https://www.archlinux.org/packages/?name=firejail) or [firejail-git](https://aur.archlinux.org/packages/firejail-git/) package which provide all of the requirements out of the box.
 
 ## Configuration

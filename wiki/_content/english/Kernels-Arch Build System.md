@@ -57,7 +57,7 @@ Depending on the PKGBUILD you may have to also rename `linux.install` to match t
 
 In prepare function, you can apply needed kernel patch or change kernel build configuration.
 
-If you need to change a few config options you can edit config file in the source. Change or copy existing cofig file to `config.x86_64` for 64bit system and `config` for 32bit system.
+If you need to change a few config options you can edit config file in the source. Change or copy existing config file to `config.x86_64` for 64bit system and `config` for 32bit system.
 
 Or you can use GUI tool to tweak the options. Uncomment one of the possibilities shown in the prepare() function of the PKGBUILD, e.g.:
 

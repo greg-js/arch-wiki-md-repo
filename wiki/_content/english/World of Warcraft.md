@@ -12,10 +12,11 @@ Some of this information was provided by [http://wowpedia.org/World_of_Warcraft_
         *   [2.1.1 Downloading the Client](#Downloading_the_Client)
         *   [2.1.2 Installing the Game](#Installing_the_Game_2)
         *   [2.1.3 Troubleshooting](#Troubleshooting)
-            *   [2.1.3.1 Not able to agree to terms](#Not_able_to_agree_to_terms)
-            *   [2.1.3.2 Wine crashes while reading terms](#Wine_crashes_while_reading_terms)
-            *   [2.1.3.3 Battle.net cannot connect](#Battle.net_cannot_connect)
-            *   [2.1.3.4 Error Message: This application failed to start because it could not find or load the qt platform plugin windows](#Error_Message:_This_application_failed_to_start_because_it_could_not_find_or_load_the_qt_platform_plugin_windows)
+            *   [2.1.3.1 Installer starts, but crashes](#Installer_starts.2C_but_crashes)
+            *   [2.1.3.2 Not able to agree to terms](#Not_able_to_agree_to_terms)
+            *   [2.1.3.3 Wine crashes while reading terms](#Wine_crashes_while_reading_terms)
+            *   [2.1.3.4 Battle.net cannot connect](#Battle.net_cannot_connect)
+            *   [2.1.3.5 Error Message: This application failed to start because it could not find or load the qt platform plugin windows](#Error_Message:_This_application_failed_to_start_because_it_could_not_find_or_load_the_qt_platform_plugin_windows)
     *   [2.2 Copying the CDs to a folder](#Copying_the_CDs_to_a_folder)
     *   [2.3 Copying an Existing Installation](#Copying_an_Existing_Installation)
     *   [2.4 New Installation from CD](#New_Installation_from_CD)
@@ -66,13 +67,21 @@ wine World-of-Warcraft-Setup-enGB.exe
 
 #### Troubleshooting
 
+##### Installer starts, but crashes
+
+Error message: `Unimplemented function msvcp140.dll`
+
+Solution is to install winetricks, select the default wineprefix then -> Install a Windows DLL or component -> vcrun 2015
+
+Credit: Minizarbi[[1]](https://www.reddit.com/r/hearthstone/comments/4uspc8/are_other_linux_users_having_problems_with/d5sq7u6) over at reddit.
+
 ##### Not able to agree to terms
 
 In case you can not see the license text, you probably have to install gecko, since the license is rendered as HTML.
 
 To install it (on 64 bit enable [multilib]), [install](/index.php/Install "Install") the [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) package.
 
-In some versions of Wine, you can not agree to the terms even though you scrolled down. Try to compile the latest Wine from source. Or use a version of Wine it is known to work with, i.e. 1.1.39, **1.7.10** (please add more here).
+In some versions of Wine, you can not agree to the terms even though you scrolled down. Try to compile the latest Wine from source. Or use a version of Wine it is known to work with, i.e. 1.1.39, 1.7.10, **1.9.18 (Staging)** (please add more here).
 
 ##### Wine crashes while reading terms
 

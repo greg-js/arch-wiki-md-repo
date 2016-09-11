@@ -104,7 +104,10 @@ GNOME provides a disk utility to manipulate storage drive settings. These are so
 
 ## Hiding applications from the menu
 
-**Tip:** Desktop entries can be hidden by editing the `.desktop` files themselves. See [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries").
+**Tip:**
+
+*   Desktop entries can be hidden by editing the `.desktop` files themselves. See [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries").
+*   [Menulibre](https://aur.archlinux.org/packages/Menulibre/) provides a menu editor without GNOME dependencies.
 
 Use the *Main Menu* application (provided by the [alacarte](https://www.archlinux.org/packages/?name=alacarte) package) to hide any applications you do not wish to show in the menu.
 

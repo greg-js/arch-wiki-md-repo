@@ -94,11 +94,15 @@ By default, *dd* outputs nothing until the task has finished. To monitor the pro
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")'s *g/re/p*, *global/regular expression/print*) is a command line text search utility originally written for Unix. The *grep* command searches files or standard input globally for lines matching a given regular expression, and prints them to the program's standard output.
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")'s *g/re/p*, *global/regular expression/print*) - prints lines that contain a match for a pattern.
+
+Command line utility. Originally written for Unix. Parses files or standard input for a regular expression in lines, and prints matched lines to the program's standard output.
 
 *   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
+*   There are *grep* alternatives optimized for VCS source code, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
+*   Key `-n` include file line numbers in the output.
 
-*   *grep* alternatives optimized for VCS source code do exist, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
+For color support, see [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
 
 ### Standard error
 

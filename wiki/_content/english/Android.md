@@ -360,6 +360,12 @@ To build any version of Android, you need to install these packages:
 
 *   AUR Packages 64-bit systems only: [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
+**Note:** The PGP signatures for [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) may cause errors, that can be solved by manually importing the needed signature:
+```
+$ gpg --recv-keys 702353E0F7E48EDB
+
+```
+
 To build Android 6+, you need to install these additional packages:
 
 *   32-bit and 64-bit systems: [rsync](https://www.archlinux.org/packages/?name=rsync)

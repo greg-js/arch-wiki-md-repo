@@ -103,8 +103,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.8 pkgbuild-current](#pkgbuild-current)
         *   [5.2.9 pnsft-pur](#pnsft-pur)
         *   [5.2.10 rakudo](#rakudo)
-        *   [5.2.11 rightlink](#rightlink)
-        *   [5.2.12 zrootfs](#zrootfs)
+        *   [5.2.11 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -1069,7 +1068,7 @@ Server = http://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 #### pkgbuild-current
 
 *   **Maintainer**: [Brenton Horne](https://fusion809.github.io) (fusion809)
-*   **Description**: most of the packages in the [fusion809/PKGBUILDs](https://github.com/fusion809/PKGBUILDs) GitHub repository. Full list of packages can be found [here](https://github.com/fusion809/PKGBUILDs/releases/tag/current).
+*   **Description**: most of the packages in the [fusion809/PKGBUILDs](https://github.com/fusion809/PKGBUILDs) GitHub repository (please report bugs here). Full list of packages can be found [here](https://github.com/fusion809/PKGBUILDs/releases/tag/current).
 *   **Upstream page**: [https://fusion809.github.io/PKGBUILDs](https://fusion809.github.io/PKGBUILDs)
 
 ```
@@ -1097,17 +1096,6 @@ Server = http://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
 ```
 [rakudo]
 Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
-
-```
-
-#### rightlink
-
-*   **Maintainer:** Chris Fordham <chris@fordham-nagy.id.au>
-*   **Description:** RightLink version 10 (RL10) is a new version of RightScale's server agent that connects servers managed through RightScale to the RightScale cloud management platform.
-
-```
-[rightlink]
-Server = https://s3-ap-southeast-2.amazonaws.com/archlinux.rightscale.me/repo
 
 ```
 

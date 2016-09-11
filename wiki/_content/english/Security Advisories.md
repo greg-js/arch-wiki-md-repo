@@ -35,14 +35,16 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
-*   [09 September 2016] [ASA-201609-4](https://lists.archlinux.org/pipermail/arch-security/2016-September/000700.html) [wordpress](https://www.archlinux.org/packages/?name=wordpress) multiple issues
-
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
 ### September 2016
 
+*   [10 September 2016] [ASA-201609-7](https://lists.archlinux.org/pipermail/arch-security/2016-September/000703.html) [tomcat8](https://www.archlinux.org/packages/?name=tomcat8) proxy injection
+*   [09 September 2016] [ASA-201609-6](https://lists.archlinux.org/pipermail/arch-security/2016-September/000702.html) [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick) multiple issues
+*   [09 September 2016] [ASA-201609-5](https://lists.archlinux.org/pipermail/arch-security/2016-September/000701.html) [file-roller](https://www.archlinux.org/packages/?name=file-roller) directory traversal
+*   [09 September 2016] [ASA-201609-4](https://lists.archlinux.org/pipermail/arch-security/2016-September/000700.html) [wordpress](https://www.archlinux.org/packages/?name=wordpress) multiple issues
 *   [04 September 2016] [ASA-201609-3](https://lists.archlinux.org/pipermail/arch-security/2016-September/000699.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) arbitrary code execution
 *   [01 September 2016] [ASA-201609-2](https://lists.archlinux.org/pipermail/arch-security/2016-September/000698.html) [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk) multiple issues
 *   [01 September 2016] [ASA-201609-1](https://lists.archlinux.org/pipermail/arch-security/2016-September/000697.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues

@@ -33,12 +33,11 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [5.5 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
     *   [5.6 Deactivate volume group](#Deactivate_volume_group)
     *   [5.7 Snapshots](#Snapshots)
-        *   [5.7.1 Introduction](#Introduction)
-        *   [5.7.2 Configuration](#Configuration)
+        *   [5.7.1 Configuration](#Configuration)
     *   [5.8 LVM Cache (lvmcache)](#LVM_Cache_.28lvmcache.29)
         *   [5.8.1 Create](#Create)
         *   [5.8.2 Remove](#Remove)
-*   [6 Graphical Configuration](#Graphical_Configuration)
+*   [6 Graphical configuration](#Graphical_configuration)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Changes that could be required due to changes in the Arch-Linux defaults](#Changes_that_could_be_required_due_to_changes_in_the_Arch-Linux_defaults)
     *   [7.2 LVM commands do not work](#LVM_commands_do_not_work)
@@ -470,7 +469,7 @@ Set `vg1/lv1` to 15GB and resize its file sytem *all at once*:
 
 ```
 
-**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. If different look for the [appropriate utility](/index.php/File_systems#Arch_Linux_support "File systems").
+**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. If different look for the [appropriate utility](/index.php/File_systems#Types_of_file_systems "File systems").
 
 If you want to fill all the free space on a volume group, use the following command:
 
@@ -479,7 +478,7 @@ If you want to fill all the free space on a volume group, use the following comm
 
 ```
 
-See `man lvresize` for more detailed options.
+See [lvresize(8)](http://man7.org/linux/man-pages/man8/lvresize.8.html) for more detailed options.
 
 ##### Resizing the file system separately
 
@@ -618,8 +617,6 @@ This will deactivate the volume group and allow you to unmount the container it 
 
 ### Snapshots
 
-#### Introduction
-
 LVM allows you to take a snapshot of your system in a much more efficient way than a traditional backup. It does this efficiently by using a COW (copy-on-write) policy. The initial snapshot you take simply contains hard-links to the inodes of your actual data. So long as your data remains unchanged, the snapshot merely contains its inode pointers and not the data itself. Whenever you modify a file or directory that the snapshot points to, LVM automatically clones the data, the old copy referenced by the snapshot, and the new copy referenced by your active system. Thus, you can snapshot a system with 35GB of data using just 2GB of free space so long as you modify less than 2GB (on both the original and snapshot).
 
 #### Configuration
@@ -655,19 +652,17 @@ It is important to have the *dm_snapshot* module listed in the MODULES variable 
 
 ```
 
-Todo: scripts to automate snapshots of root before updates, to rollback... updating `menu.lst` to boot snapshots (separate article?)
-
-snapshots are primarily used to provide a frozen copy of a file system to make backups; a backup taking two hours provides a more consistent image of the file system than directly backing up the partition.
+Snapshots are primarily used to provide a frozen copy of a file system to make backups; a backup taking two hours provides a more consistent image of the file system than directly backing up the partition.
 
 See [Create root filesystem snapshots with LVM](/index.php/Create_root_filesystem_snapshots_with_LVM "Create root filesystem snapshots with LVM") for automating the creation of clean root file system snapshots during system startup for backup and rollback.
 
 [Dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") and [Dm-crypt/Encrypting an entire system#LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system").
 
-If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "Initramfs"), [enable](/index.php/Enable "Enable") the **lvm-monitoring** service, which is provided by the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package.
+If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "Initramfs"), [enable](/index.php/Enable "Enable") `lvm-monitoring.service`, which is provided by the [lvm2](https://www.archlinux.org/packages/?name=lvm2) package.
 
 ### LVM Cache (lvmcache)
 
-From [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html):
+From [lvmcache(7)](http://man7.org/linux/man-pages/man7/lvmcache.7.html):
 
 	*The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG.*
 
@@ -707,11 +702,9 @@ If you ever need to undo the one step creation operation above:
 
 This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html).
 
-## Graphical Configuration
+## Graphical configuration
 
 There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/) covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
-
-system-config-lvm requires root access, so the .desktop launcher will not work, and you must launch it with sudo. It does not support thin provisioning pools, and will crash on start-up if you have any.
 
 ## Troubleshooting
 
@@ -806,7 +799,7 @@ To fix this, prior to extending the logical volume, change its allocation policy
 
 ### Command "grub-mkconfig" reports "unknown filesystem" errors
 
-Make sure to remove snapshot volumes before generating grub.cfg.
+Make sure to remove snapshot volumes before [generating grub.cfg](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
 
 ### Thinly-provisioned root volume device times out
 
@@ -815,7 +808,6 @@ With a large number of snapshots, `thin_check` runs for a long enough time so th
 ## See also
 
 *   [LVM2 Resource Page](http://sourceware.org/lvm2/) on SourceWare.org
-*   [LVM HOWTO](http://tldp.org/HOWTO/LVM-HOWTO/) article at The Linux Documentation project
 *   [LVM](http://wiki.gentoo.org/wiki/LVM) article at Gentoo wiki
-*   [LVM2 Mirrors vs. MD Raid 1](http://www.joshbryan.com/blog/2008/01/02/lvm2-mirrors-vs-md-raid-1/) post by Josh Bryan
 *   [Ubuntu LVM Guide Part 1](http://www.tutonics.com/2012/11/ubuntu-lvm-guide-part-1.html)[Part 2 detals snapshots](http://www.tutonics.com/2012/12/lvm-guide-part-2-snapshots.html)
+*   [Red Hat: Logical Volume Manager Administration](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html)

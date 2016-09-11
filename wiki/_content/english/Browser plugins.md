@@ -17,34 +17,30 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [1.2 Shumway](#Shumway)
     *   [1.3 Gnash](#Gnash)
     *   [1.4 Lightspark](#Lightspark)
-    *   [1.5 Video players workarounds](#Video_players_workarounds)
-        *   [1.5.1 Open-with Firefox extension](#Open-with_Firefox_extension)
 *   [2 PDF viewer](#PDF_viewer)
     *   [2.1 PDF.js](#PDF.js)
     *   [2.2 External PDF viewers](#External_PDF_viewers)
-    *   [2.3 Adobe Reader](#Adobe_Reader)
-        *   [2.3.1 64-bit](#64-bit)
 *   [3 Citrix](#Citrix)
 *   [4 Java (IcedTea)](#Java_.28IcedTea.29)
 *   [5 Pipelight](#Pipelight)
 *   [6 Multimedia playback](#Multimedia_playback)
     *   [6.1 Other plugins](#Other_plugins)
-*   [7 Other](#Other)
-    *   [7.1 Hangouts](#Hangouts)
-    *   [7.2 MozPlugger](#MozPlugger)
-    *   [7.3 kpartsplugin](#kpartsplugin)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Flash Player: no sound](#Flash_Player:_no_sound)
-    *   [8.2 Flash Player: blocking sound for other applications or delayed playback](#Flash_Player:_blocking_sound_for_other_applications_or_delayed_playback)
-    *   [8.3 Flash Player: performance](#Flash_Player:_performance)
-    *   [8.4 Flash Player: low webcam resolution](#Flash_Player:_low_webcam_resolution)
-    *   [8.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
-    *   [8.6 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
-    *   [8.7 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
-        *   [8.7.1 Firefox](#Firefox)
-    *   [8.8 Plugins are installed but not working](#Plugins_are_installed_but_not_working)
-    *   [8.9 Gecko Media Player will not play Apple trailers](#Gecko_Media_Player_will_not_play_Apple_trailers)
-*   [9 See also](#See_also)
+    *   [6.2 Open-with Firefox extension](#Open-with_Firefox_extension)
+*   [7 Google Hangouts](#Google_Hangouts)
+*   [8 Other](#Other)
+    *   [8.1 MozPlugger](#MozPlugger)
+    *   [8.2 kpartsplugin](#kpartsplugin)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Flash Player: no sound](#Flash_Player:_no_sound)
+    *   [9.2 Flash Player: blocking sound for other applications or delayed playback](#Flash_Player:_blocking_sound_for_other_applications_or_delayed_playback)
+    *   [9.3 Flash Player: performance](#Flash_Player:_performance)
+    *   [9.4 Flash Player: low webcam resolution](#Flash_Player:_low_webcam_resolution)
+    *   [9.5 Flash Player: black bars in full screen playback on multi-headed setups](#Flash_Player:_black_bars_in_full_screen_playback_on_multi-headed_setups)
+    *   [9.6 Flash Player: videos not working on older systems](#Flash_Player:_videos_not_working_on_older_systems)
+    *   [9.7 Flash Player: plugin version still shown older version after upgrade](#Flash_Player:_plugin_version_still_shown_older_version_after_upgrade)
+        *   [9.7.1 Firefox](#Firefox)
+    *   [9.8 Plugins are installed but not working](#Plugins_are_installed_but_not_working)
+    *   [9.9 Gecko Media Player will not play Apple trailers](#Gecko_Media_Player_will_not_play_Apple_trailers)
 
 ## Flash Player
 
@@ -133,19 +129,6 @@ There is a packages available: [gnash-git](https://aur.archlinux.org/packages/gn
 
 Lightspark can be [installed](/index.php/Install "Install") with the [lightspark-git](https://aur.archlinux.org/packages/lightspark-git/) package.
 
-### Video players workarounds
-
-#### Open-with Firefox extension
-
-1.  Install [Open-with](https://addons.mozilla.org/firefox/addon/open-with/) add-on.
-2.  Open `about:openwith`, select *Add...*
-3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
-4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
-5.  (Optional step) Choose how to display the dialogs using the left panel.
-6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
-
-The same procedure can be used to associate video downloaders such as *youtube-dl*.
-
 ## PDF viewer
 
 ### PDF.js
@@ -175,27 +158,6 @@ If this is not enough, you may need to change 2 values in `about:config`:
 *   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
 
 Restart and it should work like a charm!
-
-### Adobe Reader
-
-Adobe Acrobat Reader is only available as a 32-bit binary. It can be installed with the [acroread](https://aur.archlinux.org/packages/acroread/) package. This package installs the Acrobat Reader application as well as the NPAPI plugin.
-
-Also, there are [localizations](https://aur.archlinux.org/packages.php?O=0&K=acroread-&do_Search=Go) available in many languages.
-
-#### 64-bit
-
-There is no 64-bit version of Adobe Reader available. To use it in a 64-bit environment, you can:
-
-*   Follow [this guide](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") originally posted in the forums. It involves creating a chrooted environment that could be reused for other 32-bit only applications.
-
-*   Install the [acroread](https://aur.archlinux.org/packages/acroread/) package (with all its 32-bit dependencies). Be advised that the [Firefox](/index.php/Firefox "Firefox") plugin cannot be used *directly* with this binary -- it will not load in the 64-bit browser. To load it install the [nspluginwrapper](https://www.archlinux.org/packages/?name=nspluginwrapper) package from the official [multilib](/index.php/Multilib "Multilib") repository and run:
-
-```
-$ nspluginwrapper -v -a -i
-
-```
-
-as a normal user. This checks the plugin directory and links the plugins as needed.
 
 ## Citrix
 
@@ -241,11 +203,24 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 	[https://code.videolan.org/videolan/npapi-vlc](https://code.videolan.org/videolan/npapi-vlc) || [npapi-vlc](https://www.archlinux.org/packages/?name=npapi-vlc)
 
+### Open-with Firefox extension
+
+1.  Install [Open-with](https://addons.mozilla.org/firefox/addon/open-with/) add-on.
+2.  Open `about:openwith`, select *Add...*
+3.  In the dialog select a video streaming capable player (e.g. [/usr/bin/mpv](/index.php/Mpv "Mpv")).
+4.  (Optional step) Add needed arguments to the player (e.g. you may want `--force-window --ytdl` for *mpv*)
+5.  (Optional step) Choose how to display the dialogs using the left panel.
+6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
+
+The same procedure can be used to associate video downloaders such as *youtube-dl*.
+
+## Google Hangouts
+
+**Note:** This plugin is not required when using Chromium
+
+Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously. While using "new" version, you can share your screen with others like in Skype, but if you switch to "old" version, it will be possible to do the following things together: watching YouTube, making diagrams, editing documents, playing games and other things.
+
 ## Other
-
-### Hangouts
-
-Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Installing this plugin is not necessary for fresh version of chromium browser. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously. While using "new" version, you can share your screen with others like in Skype, but if you switch to "old" version, it will be possible to do the following things together: watching YouTube, making diagrams, editing documents, playing games and other things.
 
 ### MozPlugger
 
@@ -457,7 +432,3 @@ If Apple Trailers appear to start to play and then fail, try setting the user ag
 QuickTime/7.6.2 (qtver=7.6.2;os=Windows NT 5.1Service Pack 3)
 
 ```
-
-## See also
-
-*   [Play videos without using Flash](https://trisquel.info/en/wiki/play-videos-without-using-flash) at the Trisquel Wiki

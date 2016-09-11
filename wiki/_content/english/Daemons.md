@@ -49,6 +49,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
  ifplugd | ifplugd@.service | Start/stop network on network cable plugged in/out. |
 | [iptables](/index.php/Iptables "Iptables") | iptables | iptables.service | Load firewall rules for IPv4. |
 | ip6tables | ip6tables.service | Load firewall rules for IPv6. |
+| [IPFS](/index.php/IPFS "IPFS") | ipfs daemon |  ? | A peer-to-peer hypermedia protocol node |
  irqbalance | irqbalance.service | Irqbalance is the Linux utility tasked with making sure that interrupts from your hardware devices are handled in as efficient a manner as possible. |
 | [KDE](/index.php/KDE "KDE") | kdm | kdm.service | KDE Display Manager. |
 | [krb5](https://www.archlinux.org/packages/?name=krb5) | krb5-kadmind | krb5-kadmind.service | Kerberos 5 administration server. |
@@ -137,4 +138,3 @@ vsftpd-ssl.socket (on-demand)
 | [x11vnc](/index.php/X11vnc "X11vnc") | x11vnc | x11vnc.service | VNC remote desktop daemon. |
 | [XDM](/index.php/XDM "XDM") | xdm | xdm.service | X display manager. |
 | [xdm-archlinux](/index.php/XDM "XDM") | xdm-archlinux | xdm-archlinux.service | X display manager with Arch Linux theme. |
-| [IPFS](/index.php/IPFS "IPFS") | ipfs daemon |  ? | A peer-to-peer hypermedia protocol node |

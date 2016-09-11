@@ -213,7 +213,7 @@ For more details see [https://phab.enlightenment.org/w/elementary/](https://phab
 To scale SDDM you have to change the following properties in `/etc/sddm.conf`. It is recommended to make a backup of your config before editing it.
 
 ```
-[XDisplay]
+[X11]
 # X server arguments
 ServerArguments=-dpi 144
 

@@ -247,7 +247,7 @@ Simply invoke the script with 5 tokens:
 Example:
 
 ```
-# ovpngen titty.nipples.org /etc/openvpn/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/ta.key > iphone.ovpn
+# ovpngen example.org /etc/openvpn/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/ta.key > iphone.ovpn
 
 ```
 

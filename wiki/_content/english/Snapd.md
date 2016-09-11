@@ -73,13 +73,6 @@ The *snap* tool is used to manage the snaps.
 To find snaps to install, you can query the Ubuntu Store with:
 
 ```
-$ snap find .
-
-```
-
-which will list every snap that is available to install. To search for a specific snap use:
-
-```
 $ snap find *searchterm*
 
 ```

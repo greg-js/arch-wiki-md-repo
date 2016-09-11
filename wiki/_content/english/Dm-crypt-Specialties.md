@@ -233,12 +233,12 @@ If you want to be able to reboot a fully LUKS-encrypted system remotely, or star
 
 1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine).
 2.  If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of using [Ed25519 keys](/index.php/SSH_keys#Choosing_the_type_of_encryption "SSH keys").
-3.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key or /etc/tinyssh/root_key` file using the method of your choice, e.g.:
+3.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key` or `/etc/tinyssh/root_key` file using the method of your choice, e.g.:
     *   [copy the public key to the remote system](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
     *   then enter the following command (on the remote system): `# cat /home/<user>/.ssh/authorized_keys > /etc/<dropbear or tinyssh>/root_key` 
         **Tip:** This method can later be used to add other SSH public keys as needed; in that case verify the content of remote `~/.ssh/authorized_keys` contains only keys you agree to be used to unlock the remote machine. When adding additional keys, also regenerate your initrd with mkinitcpio. See also [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell").
 
-4.  Add the `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` can be used to replace the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+4.  Add the `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` replaces the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
     **Note:** The `net` hook provided with [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed
 
     **Note:** It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.

@@ -841,7 +841,6 @@ You can use the following website to get your device's coordinates along with a 
 40.89483,0.842743 "ivoarch" # L' Ametlla de Mar, Spain
 53.213023,45.014992 "VlaoMao" # Penza, Russia
 38.537697,-89.702551 "fresham" # New Baden, IL, USA
-41.797475,-80.05435 "czubek" # Alliance College, PA, USA
 -26.821974,-65.196242 "jorges" # Tucumán, Argentina
 9.951597,-84.075534 "Sebas" # San José, Costa Rica
 45.487937,-122.748213 "MicahElliott" # Portland, OR, USA

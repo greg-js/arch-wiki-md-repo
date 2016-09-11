@@ -6,7 +6,7 @@ The audit framework works by listening to the event reported by the kernel and l
 
 **Note:** as of linux 3.12, the audit framework is not yet compatible with the namespace implementation, if you use namespaces, do not use the audit framework.
 
-**Note:** It may also affect the performance of the system.
+**Note:** Depending on your configuration, it may affect the performance of the system.
 
 ## Contents
 
@@ -100,9 +100,9 @@ auditctl -a entry,always -S chmod
 
 ```
 
-For a list of all syscalls : man syscalls
+For a list of all syscalls : [syscalls(7)](http://man7.org/linux/man-pages/man2/syscalls.2.html)
 
-A lot of rules and posibilities are available, see man auditctl and man audit.rules
+A lot of rules and posibilities are available, see [auditctl(8)](http://linux.die.net/man/8/auditctl) and [audit.rules(7)](http://linux.die.net/man/7/audit.rules).
 
 ## Search the logs
 
@@ -148,13 +148,13 @@ The easiest way to use `aureport` is :
 
 ```
 
-aureport can be used to generate custom report, see man aureport.
+aureport can be used to generate custom report, see [aureport(8)](http://linux.die.net/man/8/aureport).
 
 ## Which files or syscalls are worth-auditing ?
 
 Keep in mind that each audit rule added will generate logs, so you must be ready to treat this amount of information. Basically, each security-related event/file must be monitored, like ids, ips, anti-rootkits etc. On the other side, it's totally useless to track every write syscall, the smallest compilation will fill your logs with this event.
 
-More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, the man pages of auditctl are worth-reading.
+More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, see [auditctl(8)](http://linux.die.net/man/8/auditctl) are worth-reading.
 
 ## Gather logs from different hosts
 

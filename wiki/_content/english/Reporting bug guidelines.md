@@ -133,8 +133,6 @@ When you are sure it is a bug or a feature and you gathered all useful informati
 
 You have to create an account on [Arch's bug tracker system](https://bugs.archlinux.org/). This is as easy as creating an account on a wiki or a forum and there is nothing particular to mention here.
 
-Do not be afraid of giving the email address you currently use: it will be hidden and you will receive mails only for bugs you follow.
-
 ### Projects
 
 Once you have determined your feature or bug is related to Arch and not an upstream issue, you will need to file your problem in the correct project. Select the project in the drop down list *to the left of the "Switch" button* in the top left corner of the bug report creation page (*not* to the right of "Category"). There are five projects:

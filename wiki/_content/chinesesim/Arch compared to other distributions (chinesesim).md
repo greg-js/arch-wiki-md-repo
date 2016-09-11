@@ -45,7 +45,7 @@
 ### Gentoo/Funtoo Linux
 
 *   Arch Linux 和 Gentoo Linux 都是滚动升级的发行版，所以在上游软件发布很短时间后，其上就会有软件包可用。
-*   Gentoo 的基础系统和软件包都是根据用户指定的 USE 标识直接从源代码构建。Arch 提供了一个类 ports 系统（ Ports 是 BSD 上的一个系统工具）来从源代码编译软件包，而 Arch 基础系统被设计为“直接由预构建好的 i686/x86_64 二进制软件包组成”。一般来说，Arch 更易于构建和升级，而 Gentoo 更易于进行系统化的定制。
+*   Gentoo 的基础系统和软件包都是根据用户指定的 USE 标识直接从源代码构建。Gentoo 提供了一个类 ports 系统（ Ports 是 BSD 上的一个系统工具）来从源代码编译软件包，而 Arch 基础系统被设计为“直接由预构建好的 i686/x86_64 二进制软件包组成”。一般来说，Arch 更易于构建和升级，而 Gentoo 更易于进行系统化的定制。
 *   Arch 支持 i686 和 x86_64 架构，Gentoo对x86、ppc、sparc、alpha、amd64、arm、mips、hppa、s390、sh和 itanium 架构都提供官方支持。
 *   Gentoo 的官方包管理工具比 ArchLinux 的更复杂和强大，而且一些在 Gentoo 中处于核心位置的特性（比如 UES标记、SLOTs 等等）在 Arch 中并没有相对应的功能。究其原因，一是因为 ArchLinux 主要是一个二进制发行版，第二是因为 Gentoo 和 Arch 在设计哲学上有些差别。Arch 在原则上更偏向于架构的简洁性和避免过度设计。
 *   因为 Gentoo 和 Arch 的安装包都只包含基本系统，所以它们两者都被认为是需要高度定制化的系统。一般来说，Gentoo 用户如果习惯于 systemd 的话，对Arch的大多数方面都会感到满意。

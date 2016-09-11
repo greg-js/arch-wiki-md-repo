@@ -1,10 +1,10 @@
 [Partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "w:Disk partitioning") a hard drive divides the available space into sections that can be accessed independently. An entire drive may be allocated to a single partition, or multiple ones for cases such as dual-booting, maintaining a [swap](/index.php/Swap "Swap") partition, or to logically separate data such as audio and video files.
 
-The required information is stored in a [#Partition table](#Partition_table) using a type such as MBR or GPT.
+The required information is stored in a [#Partition table](#Partition_table) scheme such as MBR or GPT.
 
-Tables are modified using a [#Partitioning tool](#Partitioning_tool) which must be compatible to the chosen type of partitioning table. Choices include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
+Tables are modified using a [#Partitioning tool](#Partitioning_tool) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
-Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted).
+Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted) before data can be written to the newly-formatted file system volume.
 
 ## Contents
 
@@ -13,7 +13,6 @@ Once the partitions have been created, each must be formatted with an appropriat
     *   [1.2 Master Boot Record](#Master_Boot_Record)
         *   [1.2.1 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
         *   [1.2.2 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
-        *   [1.2.3 Problems with MBR](#Problems_with_MBR)
     *   [1.3 GUID Partition Table](#GUID_Partition_Table)
         *   [1.3.1 Advantages of GPT](#Advantages_of_GPT)
         *   [1.3.2 Kernel Support](#Kernel_Support)
@@ -40,57 +39,46 @@ Once the partitions have been created, each must be formatted with an appropriat
 
 ## Partition table
 
-**Note:** To print existing tables, run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
+**Note:** To print/list existing tables (of a specific device), run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
 
 ### Choosing between GPT and MBR
 
 GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
 
-One should consider these to choose between GPT and MBR:
+Some points to consider when choosing:
 
-*   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, one must use MBR.
-*   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") instead of BIOS, one must use GPT.
-*   If you are installing on the older hardware, especially laptop, consider choosing MBR because its BIOS might not support GPT.
+*   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, the MBR scheme is required.
+*   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") mode instead of BIOS, the GPT scheme is required.
+*   If you are installing on older hardware, especially on old laptops, consider choosing MBR because its BIOS might not support GPT.
 *   If you are partitioning a disk of 2 TiB or larger, you need to use GPT.
-*   It is recommended to use always GPT for [UEFI](/index.php/UEFI "UEFI") boot as some UEFI firmwares do not allow UEFI-MBR boot.
-*   If none of the above apply, choose freely between GPT and MBR; since GPT is more modern, it is recommended in this case.
+*   It is recommended to always use GPT for [UEFI](/index.php/UEFI "UEFI") boot, as some UEFI implementations do not support booting to the MBR while in UEFI mode.
+*   If none of the above apply, choose freely between GPT and MBR. Since GPT is more modern, it is recommended in this case.
 
-**Note:** For GRUB to boot from a GPT partitioned disk on a BIOS based system, one has to create a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB"). Please note this partition is unrelated to the `/boot` mountpoint, and will be used by GRUB directly. Do not create a filesystem on it, and do not mount it.
+**Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") is required. Please note that this partition is unrelated to the `/boot` mountpoint, and will be used by GRUB directly. Do not create a filesystem on it, and do not mount it.
 
 ### Master Boot Record
 
 The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table. It plays an important role in the [boot process](/index.php/Boot_process "Boot process") under [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record") for the MBR structure.
 
-**Note:** The MBR is not located in a partition; it is located at a first sector of the device (physical offset 0), preceding the first partition. (The boot sector present on a non-partitioned device or within an individual partition is called a [Volume boot record](https://en.wikipedia.org/wiki/Volume_boot_record "w:Volume boot record") instead.)
+**Note:** The MBR is not located in a partition; it is located at the first sector of the device (physical offset 0), preceding the first partition. (The boot sector present on a partitionless device or within an individual partition is called a [Volume boot record](https://en.wikipedia.org/wiki/Volume_boot_record "w:Volume boot record") instead.)
 
 #### Master Boot Record (partition table)
 
-MBR originally only supported up to 4 partitions. Later on, extended and logical partitions were introduced to get around this limitation.
-
-There are 3 types of partitions:
+There are 3 types of partitions in the MBR scheme:
 
 *   Primary
 *   Extended
     *   Logical
 
-**Primary** partitions can be bootable and are limited to four partitions per disk or RAID volume. If a partitioning scheme requires more than four partitions, an **extended** partition containing **logical** partitions is used.
+**Primary** partitions can be bootable and are limited to four partitions per disk or RAID volume. If the MBR partition table requires more than four partitions, then one of the primary partitions needs to be replaced by an **extended** partition containing **logical** partitions within it.
 
-Extended partitions can be thought of as containers for logical partitions. A hard disk can contain no more than one extended partition. The extended partition is also counted as a primary partition so if the disk has an extended partition, only three additional primary partitions are possible (i.e. three primary partitions and one extended partition). The number of logical partitions residing in an extended partition is unlimited. A system that dual boots with Windows will require that Windows reside in a primary partition.
+Extended partitions can be thought of as containers for logical partitions. A hard disk can contain no more than one extended partition. The extended partition is also counted as a primary partition so if the disk has an extended partition, only three additional primary partitions are possible (i.e. three primary partitions and one extended partition). The number of logical partitions residing in an extended partition is unlimited. A system that dual boots with Windows will require for Windows to reside in a primary partition.
 
 The customary numbering scheme is to create primary partitions *sda1* through *sda3* followed by an extended partition *sda4*. The logical partitions on *sda4* are numbered *sda5*, *sda6*, etc.
 
 #### Master Boot Record (bootstrap code)
 
 The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader.
-
-#### Problems with MBR
-
-*   Only 4 primary partitions or 3 primary + 1 extended partitions (with arbitrary number of logical partitions within the extended partition) can be defined. If you have 3 primary + 1 extended partitions, and you have some free space outside the extended partition area, you cannot create a new partition over that free space.
-*   Within the extended partition, the logical partitions' meta-data is stored in a linked-list structure. If one link is lost, all the logical partitions following that metadata are lost.
-*   MBR supports only 1 byte partition type codes which leads to many collisions.
-*   MBR stores partition sector information using 32-bit LBA values. This LBA length along with 512 byte sector size (more commonly used) limits the maximum addressable size of the disk to be 2 TiB. Any space beyond 2 TiB cannot be defined as a partition if MBR partitioning is used.
-
-GUID Partition Table is the next generation partitioning scheme designed to succeed the Master Boot Record partitioning scheme method to fix above problems.
 
 ### GUID Partition Table
 
@@ -107,11 +95,11 @@ GUID Partition Table is the next generation partitioning scheme designed to succ
 
 #### Kernel Support
 
-`CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name EFI PARTITION). This options must be built-in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in Arch's [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels in [core] repo. In case of a custom kernel enable this option by doing `CONFIG_EFI_PARTITION=y`.
+The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in Arch's [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels in the [core] repo. In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
 
 ### Partitionless disk
 
-Partitionless disk (a.k.a. superfloppy) refers to using a storage device without a partition table and having a file system directly on the storage device.
+Partitionless disk (a.k.a. superfloppy) refers to using a storage device without using a partition table, having one file system volume occupying the whole storage device.
 
 #### Btrfs partitioning
 
