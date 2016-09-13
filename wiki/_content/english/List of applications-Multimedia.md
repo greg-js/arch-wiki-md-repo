@@ -29,21 +29,22 @@
         *   [1.3.5 Visualization](#Visualization)
         *   [1.3.6 Audio tag editors](#Audio_tag_editors)
         *   [1.3.7 Sound editing](#Sound_editing)
-    *   [1.4 Mobile phone managers](#Mobile_phone_managers)
-    *   [1.5 Video](#Video)
-        *   [1.5.1 Video players](#Video_players)
-            *   [1.5.1.1 Console](#Console_2)
-            *   [1.5.1.2 Graphical](#Graphical_2)
-        *   [1.5.2 Subtitles](#Subtitles)
-        *   [1.5.3 DVD ripping](#DVD_ripping)
-        *   [1.5.4 Video editors](#Video_editors)
-            *   [1.5.4.1 Console](#Console_3)
-            *   [1.5.4.2 Graphical](#Graphical_3)
-        *   [1.5.5 Screencast](#Screencast)
-    *   [1.6 Optical media burning](#Optical_media_burning)
-    *   [1.7 Podcasts](#Podcasts)
-    *   [1.8 Collection managers](#Collection_managers)
-    *   [1.9 Lyrics fetchers](#Lyrics_fetchers)
+    *   [1.4 Video](#Video)
+        *   [1.4.1 Video players](#Video_players)
+            *   [1.4.1.1 Console](#Console_2)
+            *   [1.4.1.2 Graphical](#Graphical_2)
+        *   [1.4.2 Subtitles](#Subtitles)
+        *   [1.4.3 DVD ripping](#DVD_ripping)
+        *   [1.4.4 Video editors](#Video_editors)
+            *   [1.4.4.1 Console](#Console_3)
+            *   [1.4.4.2 Graphical](#Graphical_3)
+        *   [1.4.5 Screencast](#Screencast)
+    *   [1.5 Mobile phone managers](#Mobile_phone_managers)
+    *   [1.6 Digital camera managers](#Digital_camera_managers)
+    *   [1.7 Optical media burning](#Optical_media_burning)
+    *   [1.8 Podcasts](#Podcasts)
+    *   [1.9 Collection managers](#Collection_managers)
+    *   [1.10 Lyrics fetchers](#Lyrics_fetchers)
 
 ## Multimedia
 
@@ -77,21 +78,29 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 ##### Graphical
 
+*   **Deepin Image Viewer** — Image viewer for the Deepin desktop environment.
+
+	[https://github.com/linuxdeepin/deepin-image-viewer](https://github.com/linuxdeepin/deepin-image-viewer) || [deepin-image-viewer](https://www.archlinux.org/packages/?name=deepin-image-viewer)
+
+*   **Ephoto** — A light image viewer based on EFL.
+
+	[https://www.enlightenment.org/about-ephoto](https://www.enlightenment.org/about-ephoto) || [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/)
+
 *   **[Eye of GNOME](https://en.wikipedia.org/wiki/Eye_of_GNOME "wikipedia:Eye of GNOME")** — Image viewing and cataloging program, which is a part of the GNOME desktop environment.
 
 	[https://wiki.gnome.org/Apps/EyeOfGnome](https://wiki.gnome.org/Apps/EyeOfGnome) || [eog](https://www.archlinux.org/packages/?name=eog)
 
 *   **Eye of MATE** — Simple graphics viewer for the MATE desktop.
 
-	[https://github.com/mate-desktop/eom](https://github.com/mate-desktop/eom) || [eom](https://www.archlinux.org/packages/?name=eom)
+	[https://github.com/mate-desktop/eom](https://github.com/mate-desktop/eom) || GTK+ 2: [eom](https://www.archlinux.org/packages/?name=eom), GTK+ 3: [eom-gtk3](https://www.archlinux.org/packages/?name=eom-gtk3)
+
+*   **EyeSight** — Image viewer for the Hawaii desktop environment.
+
+	[http://hawaiios.org/projects/eyesight/](http://hawaiios.org/projects/eyesight/) || [eyesight](https://aur.archlinux.org/packages/eyesight/)
 
 *   **[feh](/index.php/Feh "Feh")** — Fast, lightweight image viewer that uses imlib2.
 
 	[http://feh.finalrewind.org](http://feh.finalrewind.org) || [feh](https://www.archlinux.org/packages/?name=feh)
-
-*   **meh** — meh is a small, simple, super fast image viewer using raw XLib.
-
-	[http://www.johnhawthorn.com/meh/](http://www.johnhawthorn.com/meh/) || [meh-git](https://aur.archlinux.org/packages/meh-git/)
 
 *   **GalaPix** — OpenGL-based image viewer for simultaneously viewing and zooming large collections of image files,
 
@@ -99,15 +108,19 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[Geeqie](https://en.wikipedia.org/wiki/Geeqie "wikipedia:Geeqie")** — Image browser and viewer (fork of GQview) that adds additional functionality such as support for RAW files.
 
-	[http://geeqie.sourceforge.net/](http://geeqie.sourceforge.net/) || [geeqie](https://www.archlinux.org/packages/?name=geeqie)
+	[http://geeqie.org/](http://geeqie.org/) || [geeqie](https://www.archlinux.org/packages/?name=geeqie)
 
 *   **Gimmage** — Gtkmm image viewer.
 
-	[http://gimmage.berlios.de/](http://gimmage.berlios.de/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+	[https://sourceforge.net/projects/gimmage.berlios/](https://sourceforge.net/projects/gimmage.berlios/) || [gimmage](https://www.archlinux.org/packages/?name=gimmage)
+
+*   **GNOME Photos** — Access, organize, and share your photos on GNOME.
+
+	[https://wiki.gnome.org/Apps/Photos](https://wiki.gnome.org/Apps/Photos) || [gnome-photos](https://www.archlinux.org/packages/?name=gnome-photos)
 
 *   **GPicView** — Simple and fast image viewer for X, which is part of the [LXDE](/index.php/LXDE "LXDE") desktop.
 
-	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || [gpicview](https://www.archlinux.org/packages/?name=gpicview)
+	[http://lxde.sourceforge.net/gpicview/](http://lxde.sourceforge.net/gpicview/) || GTK+ 2: [gpicview](https://www.archlinux.org/packages/?name=gpicview), GTK+ 3: [gpicview-gtk3](https://aur.archlinux.org/packages/gpicview-gtk3/)
 
 *   **[GQview](https://en.wikipedia.org/wiki/GQview "wikipedia:GQview")** — Image browser that features single click access to view images and move around the directory tree
 
@@ -125,25 +138,33 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://aur.archlinux.org/packages/imv/)
 
+*   **LxImage-Qt** — The LXQt image viewer.
+
+	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)
+
+*   **meh** — meh is a small, simple, super fast image viewer using raw XLib.
+
+	[http://www.johnhawthorn.com/meh/](http://www.johnhawthorn.com/meh/) || [meh-git](https://aur.archlinux.org/packages/meh-git/)
+
 *   **Mirage** — PyGTK image viewer featuring support for crop and resize, custom actions and a thumbnail panel.
 
-	[http://mirageiv.berlios.de](http://mirageiv.berlios.de) || [mirage](https://www.archlinux.org/packages/?name=mirage)
+	[https://sourceforge.net/projects/mirageiv.berlios/](https://sourceforge.net/projects/mirageiv.berlios/) || [mirage](https://www.archlinux.org/packages/?name=mirage)
 
 *   **nomacs** — Free (GPLv3) Qt image viewer for many operating systems. It is feature-rich but starts fast and can be configured to show additional widgets or only the image.
 
 	[http://www.nomacs.org/](http://www.nomacs.org/) || [nomacs](https://www.archlinux.org/packages/?name=nomacs)
 
+*   **Pantheon Photos** — Image viewer for Pantheon.
+
+	[https://launchpad.net/pantheon-photos](https://launchpad.net/pantheon-photos) || [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos)
+
 *   **Phototonic** — Fast and functional image viewer and organizer (Qt).
 
-	[https://github.com/oferkv/phototonic](https://github.com/oferkv/phototonic) || [phototonic](https://aur.archlinux.org/packages/phototonic/)
+	[http://oferkv.github.io/phototonic/](http://oferkv.github.io/phototonic/) || [phototonic](https://aur.archlinux.org/packages/phototonic/)
 
 *   **PhotoQt** — Fast and highly configurable image viewer with a simple and nice interface.
 
 	[http://photoqt.org/](http://photoqt.org/) || [photoqt](https://aur.archlinux.org/packages/photoqt/)
-
-*   **[Picasa](https://en.wikipedia.org/wiki/Picasa "wikipedia:Picasa")** — Image organizer and viewer from Google that has editing capabilities and integration with the photo-sharing website.
-
-	[http://picasa.google.com/](http://picasa.google.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=picasa)</small>
 
 *   **Quick Image Viewer** — Very small and fast image viewer based on GTK+ and imlib2.
 
@@ -169,11 +190,11 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://sioseis.ucsd.edu/xloadimage.html](http://sioseis.ucsd.edu/xloadimage.html) || [xloadimage](https://www.archlinux.org/packages/?name=xloadimage)
 
-*   **[XnView MP](https://en.wikipedia.org/wiki/XnView "wikipedia:XnView")** — Efficient image viewer, browser and converter.
+*   **[XnView MP](https://en.wikipedia.org/wiki/XnView "wikipedia:XnView")** — Efficient proprietary image viewer, browser and converter.
 
-	[http://www.xnview.com/en/index.html](http://www.xnview.com/en/index.html) || [xnviewmp](https://aur.archlinux.org/packages/xnviewmp/)
+	[http://www.xnview.com/en/xnviewmp/](http://www.xnview.com/en/xnviewmp/) || [xnviewmp](https://aur.archlinux.org/packages/xnviewmp/)
 
-*   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Shareware program written by John Bradley to display and modify digital images under the X Window System.
+*   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Shareware program written by John Bradley to display and modify digital images under the X Window System. Last released in 1994.
 
 	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://www.archlinux.org/packages/?name=xv)
 
@@ -182,10 +203,6 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 ##### Raster editors
 
 See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.org/wiki/Comparison_of_raster_graphics_editors "wikipedia:Comparison of raster graphics editors").
-
-*   **AfterShot Pro** — Professional workflow and RAW conversion. Successor of Bibble Pro.
-
-	[http://www.aftershotpro.com/en/products/aftershot-pro/](http://www.aftershotpro.com/en/products/aftershot-pro/) || [aftershotpro](https://aur.archlinux.org/packages/aftershotpro/)
 
 *   **AzPainter** — A Painting software.
 
@@ -221,11 +238,11 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[KolourPaint](https://en.wikipedia.org/wiki/KolourPaint "wikipedia:KolourPaint")** — Free raster graphics editor for KDE, similar to Microsoft's Paint application before Windows 7, but with some additional features such as support for transparency. Part of [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) and [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/) groups.
 
-	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
+	[http://kolourpaint.org](http://kolourpaint.org) || [kolourpaint](https://www.archlinux.org/packages/?name=kolourpaint)
 
-*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Digital painting and illustration software included based on the KDE platform and Calligra libraries. Part of [calligra](https://www.archlinux.org/groups/x86_64/calligra/) group.
+*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Digital painting and illustration software included based on the KDE platform.
 
-	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
+	[http://krita.org/](http://krita.org/) || [krita](https://www.archlinux.org/packages/?name=krita)
 
 *   **Luminance HDR** — Open source graphical user interface application that aims to provide a workflow for HDR imaging.
 
@@ -243,13 +260,11 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://pinta-project.com/](http://pinta-project.com/) || [pinta](https://www.archlinux.org/packages/?name=pinta)
 
-*   **[Shotwell](https://en.wikipedia.org/wiki/Shotwell_(software) "wikipedia:Shotwell (software)")** — Image organizer with a small set of image manipulation features (rotate, crop, color adjust, and red eye removal). It can import photos directly from digital cameras and export them to social media sites (Facebook, Flickr, Picasa Web Albums, etc.).
-
-	[http://yorba.org/shotwell/](http://yorba.org/shotwell/) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
-
 *   **[XPaint](https://en.wikipedia.org/wiki/XPaint "wikipedia:XPaint")** — Color image editing tool which features most standard paint program options.
 
 	[http://sourceforge.net/projects/sf-xpaint/](http://sourceforge.net/projects/sf-xpaint/) || [xpaint](https://aur.archlinux.org/packages/xpaint/)
+
+Some image viewers like Ephoto, GNOME Photos, [gThumb](https://en.wikipedia.org/wiki/GThumb and [XnView MP](https://en.wikipedia.org/wiki/XnView "wikipedia:XnView") also provide some basic image manipulation functionality.
 
 ##### Vector graphics - illustration
 
@@ -703,24 +718,6 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 	[http://www.xcfa.tuxfamily.org/](http://www.xcfa.tuxfamily.org/) || [xcfa](https://aur.archlinux.org/packages/xcfa/)
 
-### Mobile phone managers
-
-*   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.
-
-	[http://www.gnokii.org/](http://www.gnokii.org/) || [gnokii](https://www.archlinux.org/packages/?name=gnokii)
-
-*   **GNOME Phone Manager** — Control your mobile phone from your GNOME desktop.
-
-	[https://wiki.gnome.org/PhoneManager](https://wiki.gnome.org/PhoneManager) || [gnome-phone-manager](https://www.archlinux.org/packages/?name=gnome-phone-manager)
-
-*   **KDE Connect** — A project that aims to communicate all your devices.
-
-	[http://community.kde.org/KDEConnect](http://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
-
-*   **Moto4Lin** — File manager and seem editor for Motorola P2K phones (like C380/C650).
-
-	[http://sourceforge.net/projects/moto4lin/](http://sourceforge.net/projects/moto4lin/) || [moto4lin](https://aur.archlinux.org/packages/moto4lin/)
-
 ### Video
 
 #### Video players
@@ -928,6 +925,28 @@ Screencast utilities allow you to create a video of your desktop or individual w
 *   **FFcast** — FFmpeg-based screencast tool written in Bash.
 
 	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
+
+### Mobile phone managers
+
+*   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.
+
+	[http://www.gnokii.org/](http://www.gnokii.org/) || [gnokii](https://www.archlinux.org/packages/?name=gnokii)
+
+*   **GNOME Phone Manager** — Control your mobile phone from your GNOME desktop.
+
+	[https://wiki.gnome.org/PhoneManager](https://wiki.gnome.org/PhoneManager) || [gnome-phone-manager](https://www.archlinux.org/packages/?name=gnome-phone-manager)
+
+*   **KDE Connect** — A project that aims to communicate all your devices.
+
+	[http://community.kde.org/KDEConnect](http://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
+
+*   **Moto4Lin** — File manager and seem editor for Motorola P2K phones (like C380/C650).
+
+	[http://sourceforge.net/projects/moto4lin/](http://sourceforge.net/projects/moto4lin/) || [moto4lin](https://aur.archlinux.org/packages/moto4lin/)
+
+### Digital camera managers
+
+See [Digital Cameras#Other frontend applications for libgphoto2](/index.php/Digital_Cameras#Other_frontend_applications_for_libgphoto2 "Digital Cameras").
 
 ### Optical media burning
 

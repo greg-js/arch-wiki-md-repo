@@ -380,7 +380,7 @@ bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 ```
 # Vim style
 bind-key -t vi-copy y copy-pipe "xclip -i -sel clip > /dev/null"
-bind-key p run "xclip -o -sel clip | tmux load-buffer -"
+bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
 
 ```
 

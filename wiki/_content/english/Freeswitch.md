@@ -20,7 +20,7 @@ Also, you may wish to configure FreeSWITCH build options. Edit the PKGBUILD and 
 
 The FreeSWITCH configuration files with the custom modules.conf and modules.conf.xml reside in /etc/freeswitch. For following FreeSWITCH documentation, the base directory is /var/lib/freeswitch (generallly seen as /usr/local/freeswitch in FreeSWITCH documentation).
 
-FreeSWITCH comes out of the box with a default password for registrations to users 1000-1019 as '1234'. You are advised to change this before running it. This variable is set in /etc/freeswitch/vars.xml. The overall default configuration given is a kitchen sink featured PBX, likely many more things than are typically used. Customizing the PBX (or non-PBX) features of FreeSWITCH is beyond the scope of this document; see the [FreeSWITCH Wiki](http://wiki.freeswitch.org) for in-depth documentation.
+FreeSWITCH comes out of the box with a default password for registrations to users 1000-1019 as '1234'. You are advised to change this before running it. This variable is set in /etc/freeswitch/vars.xml. The overall default configuration given is a kitchen sink featured PBX, likely many more things than are typically used. Customizing the PBX (or non-PBX) features of FreeSWITCH is beyond the scope of this document; see the [FreeSWITCH Wiki](https://freeswitch.org/confluence/) for in-depth documentation.
 
 Upstream documentation as well as the original conf/ directory are provided in /usr/share/doc/freeswitch.
 

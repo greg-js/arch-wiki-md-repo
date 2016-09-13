@@ -227,8 +227,8 @@ Examples
 
 ```
 $ lsdesktopf
-$ lsdesktopf --less
-$ lsdesktopf --less gtk zh_TW,zh_CN,en_GB
+$ lsdesktopf --list
+$ lsdesktopf --list gtk zh_TW,zh_CN,en_GB
 
 ```
 

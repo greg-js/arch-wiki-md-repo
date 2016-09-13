@@ -1368,16 +1368,16 @@ If you use Intel video card, just disable S3TC in DriConf.
 
 ### No sound
 
-If [libpulse](https://www.archlinux.org/packages/?name=libpulse) is installed, Unity may try to use that library for sound and fail. To test if this is the problem, try removing [libpulse](https://www.archlinux.org/packages/?name=libpulse) or renaming the package files that are named `libpulse-simple*`. To see which [libpulse](https://www.archlinux.org/packages/?name=libpulse) files are relevant, run:
+If using [native libraries](/index.php/Steam/Troubleshooting#Native_runtime "Steam/Troubleshooting") and [libpulse](https://www.archlinux.org/packages/?name=libpulse) is installed, Unity may try to use that library for sound and fail. To test if this is the problem, try removing [libpulse](https://www.archlinux.org/packages/?name=libpulse) or renaming the package files that are named `libpulse-simple*`. To see which [libpulse](https://www.archlinux.org/packages/?name=libpulse) files are relevant, run:
 
- `$ pacman -Ql libpulse | awk '{print $2}' | grep /usr/lib/libpulse-simple` 
+ `$ pacman -Qql libpulse | grep /usr/lib/libpulse-simple` 
 ```
 /usr/lib/libpulse-simple.so
 /usr/lib/libpulse-simple.so.0
 /usr/lib/libpulse-simple.so.0.1.0
 ```
 
-If renaming any of those files works for you, you can proceed with the following instructions (don't forget to revert any renaming you just did!). Browse to the game's directory:
+If renaming any of those files works for you, you can proceed with the following instructions (revert any renaming you just did). Browse to the game's directory:
 
 ```
 $ cd "$HOME/.local/share/Steam/steamapps/common/Stephen's Sausage Roll"
@@ -1398,7 +1398,7 @@ $ touch noload/{libpulse-simple.so,libpulse-simple.so.0,libpulse-simple.so.0.1.0
 
 ```
 
-**Note:** I only had to create a 0-byte `libpulse-simple.so.0` file for the following trick to work.
+**Note:** Only a 0-byte `libpulse-simple.so.0` file may be required.
 
 After you have created these 0-byte files, you can now attempt to run the game binary directly, telling the dynamic linker to use our 0-byte files:
 
@@ -1406,8 +1406,6 @@ After you have created these 0-byte files, you can now attempt to run the game b
 $ LD_LIBRARY_PATH="noload/:$LD_LIBRARY_PATH" ./Sausage.x86_64
 
 ```
-
-Hopefully you now have sound!
 
 If everything works up to this point, you can amend the launch options in Steam to be:
 

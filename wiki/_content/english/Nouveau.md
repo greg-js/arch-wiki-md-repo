@@ -83,7 +83,7 @@ EndSection
 
 ```
 
-**Tip:** You can use [these scripts](/index.php/NVIDIA/Tips_and_tricks#Switching_between_NVIDIA_and_nouveau_drivers "NVIDIA/Tips and tricks") if you are switching between open and closed drivers often.
+**Tip:** You can use [these scripts](/index.php/NVIDIA#Switching_between_NVIDIA_and_nouveau_drivers "NVIDIA") if you are switching between open and closed drivers often.
 
 If you already used the NVIDIA driver, and want to test Nouveau without reboot, make sure the 'nvidia' module is no longer loaded:
 

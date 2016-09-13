@@ -213,7 +213,7 @@ The dark theme uses its own colours rather than the GTK theme colours, if you pr
 
 ### Tooltips have dark background color with Adwaita theme
 
-You can first follow the [#Disable gtk3](#Disable_gtk3) section disable the SWT_GTK3 and then install the [webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) package from the official repository to use the old theme.
+You can first follow the [#Disable GTK+ 3](#Disable_GTK.2B_3) section disable the SWT_GTK3 and then install the [webkitgtk2](https://www.archlinux.org/packages/?name=webkitgtk2) package from the official repository to use the old theme.
 
 ### Toggle buttons states are the same for selected/not selected
 

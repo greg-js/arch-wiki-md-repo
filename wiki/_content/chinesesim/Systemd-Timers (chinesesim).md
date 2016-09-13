@@ -10,7 +10,7 @@ Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") �
 *   [4 示例](#.E7.A4.BA.E4.BE.8B)
     *   [4.1 单调定时器](#.E5.8D.95.E8.B0.83.E5.AE.9A.E6.97.B6.E5.99.A8)
     *   [4.2 实时定时器](#.E5.AE.9E.E6.97.B6.E5.AE.9A.E6.97.B6.E5.99.A8)
-*   [5 替换 cron](#.E6.9B.BF.E6.8D.A2_cron)
+*   [5 替代 cron](#.E6.9B.BF.E4.BB.A3_cron)
     *   [5.1 优势](#.E4.BC.98.E5.8A.BF)
     *   [5.2 注意事项](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)
     *   [5.3 发送邮件](#.E5.8F.91.E9.80.81.E9.82.AE.E4.BB.B6)
@@ -89,7 +89,7 @@ WantedBy=timers.target
 
 **提示:** 特殊的事件表达式如 `daily` 和 `weekly` 表示 *特定的启动时间*，因此任何共享该日历事件的定时器将同时启动。如果该定时器的服务会计算系统资源，那么定时器共享启动事件可能会引起系统性能下降。可以考虑手动错开该定时器运行特定事件的时间，如 `OnCalendar=Wed, 23:15`。参见 [#注意事项](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9).
 
-## 替换 cron
+## 替代 cron
 
 尽管 [cron](/index.php/Cron "Cron") 毋庸置疑是最有名的计划任务管理器， 但 *systemd* 定时器仍可以作为一个替代品。
 

@@ -323,7 +323,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
 | [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | `~/.toprc` | [[76]](https://bugzilla.redhat.com/show_bug.cgi?id=1155265) |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
-| [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history` |
+| [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history` | [[77]](http://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[78]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) |
 | [vim](/index.php/Vim "Vim") | `~/.vim` `~/.vimrc` `~/.viminfo` | Since [7.3.1178](https://github.com/vim/vim/commit/6a459902592e2a4ba68) vim will search for `~/.vim/vimrc` if `~/.vimrc` is not found. `~/.vim/vimrc` 
 ```
 set undodir=~/.cache/vim/undo " vim will not create this directory.
@@ -336,16 +336,16 @@ set viminfo+=n~/.cache/vim/viminfo
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[77]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[79]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
 | [wpa_cli](http://w1.fi/) | `~/.wpa_cli_history` |
 | [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
-| [xmonad](/index.php/Xmonad "Xmonad") | `~/.xmonad` | [[78]](https://code.google.com/p/xmonad/issues/detail?id=484) |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[79]](https://github.com/conformal/xombrero/issues/74) |
-| [zsh](/index.php/Zsh "Zsh") | `~/.zshrc` `~/.zprofile` `~/.zshenv` `~/.zlogin` `~/.zlogout` `~/.histfile` | [[80]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+| [xmonad](/index.php/Xmonad "Xmonad") | `~/.xmonad` | [[80]](https://code.google.com/p/xmonad/issues/detail?id=484) |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[81]](https://github.com/conformal/xombrero/issues/74) |
+| [zsh](/index.php/Zsh "Zsh") | `~/.zshrc` `~/.zprofile` `~/.zshenv` `~/.zlogin` `~/.zlogout` `~/.histfile` | [[82]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 

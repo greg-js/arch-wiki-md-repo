@@ -79,12 +79,6 @@ Now your local host connects to the drive of target host (see dmesg output).
 
 4\. [Install](/index.php/Install "Install") the [open-iscsi](https://www.archlinux.org/packages/?name=open-iscsi) package in the "future" root file system.
 
-```
-pacman -Sy
-pacman -S open-iscsi
-
-```
-
 5\. Before doing [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") in the "future" root file system, you have to prepare the following two files.
 
 i) `/mnt/usr/lib/initcpio/install/iscsi`
@@ -108,7 +102,6 @@ cat <<HELPEOF
   This hook allows you to boot from an iSCSI target.
 HELPEOF
 }
-
 ```
 
 #### Using an iBFT Compatible Rom
@@ -116,21 +109,6 @@ HELPEOF
 If using a iBFT compatible NIC or boot device (such as ipxe) you can use auto configuration to set the network configuration and iscsi target.
 
 ii) `/mnt/usr/lib/initcpio/hooks/iscsi`
-
-```
-run_hook ()
-{
-    modprobe iscsi_tcp 
-    modprobe iscsi_ibft
-
-    echo "Network configuration based on iBFT"
-    iscsistart -N || echo "Unable to configure network"
-
-    echo "iSCSI auto connect based on iBFT"
-    iscsistart -b || echo "Unable to auto connect"
-}
-
-```
 
 #### Manually Setting the iSCSI Target
 
@@ -146,7 +124,6 @@ run_hook ()
     sleep 2
     iscsistart -i iSCSI.Initiator.Name -t iSCSI.Target.Name -g 1 -a 192.168.1.100
 }
-
 ```
 
 #### Using DHCP
@@ -164,7 +141,6 @@ run_hook ()
     sleep 2
     iscsistart -i iSCSI.Initiator.Name -t iSCSI.Target.Name -g 1 -a 192.168.1.100
 }
-
 ```
 
 Add "iscsi" to the HOOKS line in [/etc/mkinitcpio.conf](/index.php/Mkinitcpio "Mkinitcpio").
@@ -200,7 +176,10 @@ node.session.timeo.replacement_timeout = 86400
 
 If a network problem is detected by the initiator, the running commands are failed immediately. There is one exception to this and that is when the SCSI layer's error handler is running. To check if the SCSI error handler is running iscsiadm can be run as:
 
+```
 iscsiadm -m session -P 3
+
+```
 
 You will then see:
 

@@ -408,7 +408,9 @@ w /proc/acpi/wakeup - - - - USBE
 
 ## 定时器
 
-定时器是以 *.timer* 为后缀的配置文件，记录 system 里由时间触发的动作，定时器可以替代 *cron* 的大部分功能。详情参阅 [systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)")。
+一个定时器是一个以 `.timer` 为结尾的单元配置文件并包含由 `systemd` 控制和监督的信息。[systemd/Timers (简体中文)](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/Timers (简体中文)")
+
+**注意:** 定时器很大程度上可取代 `cron`。[systemd/Timers (简体中文)#替代 cron](/index.php/Systemd/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.9B.BF.E4.BB.A3_cron "Systemd/Timers (简体中文)")
 
 ## 挂载
 

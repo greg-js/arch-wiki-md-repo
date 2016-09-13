@@ -6,7 +6,6 @@ This article deals with so-called *core* utilities on a GNU/Linux system, such a
 *   [2 cat](#cat)
 *   [3 dd](#dd)
 *   [4 grep](#grep)
-    *   [4.1 Standard error](#Standard_error)
 *   [5 find](#find)
 *   [6 iconv](#iconv)
     *   [6.1 Convert a file in place](#Convert_a_file_in_place)
@@ -86,41 +85,44 @@ $ printf '%s
 
 ## dd
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) is a command on Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
+[dd](https://en.wikipedia.org/wiki/dd_(Unix) is an utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
 
-By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. See the [manual](http://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html#dd-invocation) for more information.
+By default *dd* makes a bit to bit copy of file. Which is similar to what *cp* doing. But besides *cp*, *dd* can connect receive and wait bit input from devices. *dd* also has many additional flow control features.
+
+**Note:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. See the [man dd](http://www.gnu.org/software/coreutils/dd) for more information.
+
+It can be used to:
+
+*   'dd' can be used in [drive related](/index.php/Disk_cloning#Using_dd "Disk cloning") tasks to:
+    *   Create an image.
+    *   Write an image.
+    *   Clone whole drive, or partition.
+    *   Wipe drive or partition.
+    *   Erase partition table or boot sector.
+    *   Backup boot sector.
+    *   Restore system.
+*   Get stream from device, `dd /dev/random`, or some input device.
+*   Create load on CPU (example: `dd if=/dev/zero of=/dev/null`).
+*   Create load on disc (example: `dd if=/dev/zero of=/*path*/*testfile* bs=*number_of*G count=*times* oflag=*fdatasync*`).
+*   Create I/O load on disk (many rapid read/writes) (example above with little block size (*bs*) and big amount of cycles (*count*) and needed *oflag*, basing on what and how you want to test).
+*   As a backup utility or part of solution.
+*   Convert a file to upper/lower case.
+
+[dd man(1)](http://man7.org/linux/man-pages/man1/dd+man.1.html) can be hard to understand, to few words, better see comprehensive [Full documentation](http://www.gnu.org/software/coreutils/dd).
 
 **Note:** *cp* does the same as *dd* without any operands but is not designed for more versatile disk wiping procedures.
 
 ## grep
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")'s *g/re/p*, *global/regular expression/print*) - prints lines that contain a match for a pattern.
-
-Command line utility. Originally written for Unix. Parses files or standard input for a regular expression in lines, and prints matched lines to the program's standard output.
+[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (from [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed")'s *g/re/p*, *global/regular expression/print*) is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to the program's standard output.
 
 *   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
 *   There are *grep* alternatives optimized for VCS source code, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
-*   Key `-n` include file line numbers in the output.
+*   To include file line numbers in the output, add the option `-n` to the line.
+
+**Note:** Some commands send their output to [stderr(3)](http://man7.org/linux/man-pages/man3/stderr.3.html), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 For color support, see [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
-
-### Standard error
-
-Some commands send their output to standard error, and grep has no apparent effect. In this case, redirect standard error next to standard out:
-
-```
-$ *command* 2>&1 | grep *args*
-
-```
-
-or Bash 4 shorthand:
-
-```
-$ *command* |& grep *args*
-
-```
-
-See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 ## find
 
@@ -265,7 +267,7 @@ By default, file and directory names that contain spaces are displayed surrounde
 
 ## lsblk
 
-[lsblk(8)](http://man7.org/linux/man-pages/man8/lsblk.8.html) will show all available block devices along with their partitioning schemes, for example:
+[lsblk(8)](http://man7.org/linux/man-pages/man8/lsblk.8.html) will show all available [block devices](https://en.wikipedia.org/wiki/Device_file#Block_devices "w:Device file") along with their partitioning schemes, for example:
 
  `$ lsblk -f` 
 ```

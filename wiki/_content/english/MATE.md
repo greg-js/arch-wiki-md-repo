@@ -90,10 +90,6 @@ There are a number of other unofficial MATE applications that are contributed to
 
 	[https://git.javispedro.com/cgit/topmenu-gtk.git/about/](https://git.javispedro.com/cgit/topmenu-gtk.git/about/) || [topmenu-gtk](https://aur.archlinux.org/packages/topmenu-gtk/)
 
-*   **MATE HUD** — Much like the Unity Heads-Up Display (HUD).
-
-	[https://bitbucket.org/ubuntu-mate/mate-hud](https://bitbucket.org/ubuntu-mate/mate-hud) || [mate-hud](https://aur.archlinux.org/packages/mate-hud/)
-
 Additional packages need to be installed to take advantage of some of Caja's advanced features - see [File manager functionality](/index.php/File_manager_functionality "File manager functionality").
 
 ### GTK+ 3 version

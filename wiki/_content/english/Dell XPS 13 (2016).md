@@ -18,7 +18,10 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 ## Contents
 
 *   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
-*   [2 BIOS updates](#BIOS_updates)
+*   [2 BIOS](#BIOS)
+    *   [2.1 USB not found](#USB_not_found)
+    *   [2.2 No UEFI system found](#No_UEFI_system_found)
+    *   [2.3 Updates](#Updates)
 *   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
 *   [4 SATA controller](#SATA_controller)
     *   [4.1 Dual booting Linux and Windows](#Dual_booting_Linux_and_Windows)
@@ -56,7 +59,17 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightness embedded in the panel firmware, this "content adaptive brightness control" (usually referred to as CABC or DBC) will adjust the screen brightness depending on the content displayed on the screen and will generally be found undesirable, especially for Linux users who are likely to be switching between dark and light screen content. Dell has issued a fix for this however it is only available to run in Windows and for the QHD+ model of the laptop so this precaution should be taken before installing Linux, the FHD model of the XPS 13 (9350) cannot be fixed. This is not a problem with the panel but rather a problem with the way the panels are configured for the XPS 13, as the same panel exists in the Dell's Latitude 13 7000 series (e7370) FHD model but with CABC disabled. The fix is available directly from [Dell](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=PWD5K&fileId=3505631210&osCode=WT64A&productCode=xps-13-9350-laptop&languageCode=EN&categoryId=AP&dgc=BA&cid=299605&lid=5718620&acd=123092226602942957c94940922&ven3=120619725550599228).
 
-## BIOS updates
+## BIOS
+
+### USB not found
+
+It may happen that the Arch Linux USB won't be recognized. You have to disable secure boot (Secure Boot > Disable) and then enable the legacy (General > Advanced Boot Options > Enable Legacy Option ROMs).
+
+### No UEFI system found
+
+Sometimes the BIOS UEFI does not respect the efivars. In this case you have manually add your efi file in BIOS boot options by going to General > Boot Sequence > Add Boot Option.
+
+### Updates
 
 [BIOS update 1.4.4](http://downloads.dell.com/FOLDER03769593M/1/XPS_9350_1.4.4.exe) was released on 2016-06-30\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 

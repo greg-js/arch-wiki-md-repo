@@ -560,6 +560,7 @@ Listed below are you may encounter with the XPS 9550 4K:
 
 **01.02.14** *[Download](http://downloads.dell.com/FOLDER03906910M/1/Precision_5510_1.2.14.exe)*
 • User [report](https://www.reddit.com/r/Dell/comments/51wr31/dell_xps15_9550_bios_1214_fixes_battery_at_60/) that the issue with the battery is fixed
+• Still has black screen upon resume issue. To turn screen on, increase brightness to maximum using keyboard. It is not possible to decrease brightness after resume, either maximum or off.
 
 Many users have recommend the 01.02.00 BIOS, as it proves to be the most balanced out of all of the updates.
 

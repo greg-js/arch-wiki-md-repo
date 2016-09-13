@@ -56,7 +56,7 @@
 | <small>6.</small> [Amministrazione del Sistema](/index.php/Category:System_administration_(Italiano) "Category:System administration (Italiano)") <small>(3)</small> |
 | <small>6.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(Italiano) "Category:Audio/Video (Italiano)") <small>(15)</small> |
 | <small>6.2.</small> [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)") <small>(19)</small> |
-| <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Italiano) "Category:Boot loaders (Italiano)") <small>(4)</small> |
+| <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Italiano) "Category:Boot loaders (Italiano)") <small>(3)</small> |
 | <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)"))</small> |
 | <small>6.3.</small> [Shell dei comandi](/index.php/Category:Command_shells_(Italiano) "Category:Command shells (Italiano)") <small>(4)</small> |
 | <small>6.4.</small> [Demoni e servizi di sistema](/index.php/Category:Daemons_and_system_services_(Italiano) "Category:Daemons and system services (Italiano)") <small>(12)</small> |
@@ -65,7 +65,7 @@
 | <small>6.5.2.</small> [Gestori delle finestre Dinamici](/index.php/Category:Dynamic_WMs_(Italiano) "Category:Dynamic WMs (Italiano)") <small>(1)</small> |
 | <small>6.5.3.</small> [KDE](/index.php/Category:KDE_(Italiano) "Category:KDE (Italiano)") <small>(1)</small> |
 | <small>6.5.4.</small> [Gestore delle finestre Statici](/index.php/Category:Stacking_WMs_(Italiano) "Category:Stacking WMs (Italiano)") <small>(14)</small> |
-| <small>6.6.</small> [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)") <small>(11)</small> |
+| <small>6.6.</small> [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)") <small>(10)</small> |
 | <small>6.6.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)"))</small> |
 | <small>6.6.2.</small> [Caratteri](/index.php/Category:Fonts_(Italiano) "Category:Fonts (Italiano)") <small>(2)</small> |
 | <small>6.7.</small> [File system](/index.php/Category:File_systems_(Italiano) "Category:File systems (Italiano)") <small>(17)</small> |

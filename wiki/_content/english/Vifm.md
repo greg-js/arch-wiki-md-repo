@@ -183,7 +183,7 @@ Vifm will remember the marks between the sessions.
 
 ### previews
 
-Provided [Poppler](https://www.archlinux.org/packages/?name=Poppler) is installed, putting
+Provided [poppler](https://www.archlinux.org/packages/?name=poppler) is installed, putting
 
 ```
 fileviewer *.pdf

@@ -53,14 +53,7 @@ Vim includes a broad help system that can be accessed with the `:h *subject*` co
 
 Vim's user-specific configuration file is located in the home directory: `~/.vimrc`, and Vim files of current user are located inside `~/.vim/`. The global configuration file is located at `/etc/vimrc`. Global Vim files are located inside `/usr/share/vim/`.
 
-To get some commonly expected behaviors (such as syntax highlighting), add the Vim example configuration to `/etc/vimrc`:
-
- `/etc/vimrc/` 
-```
-
-runtime! vimrc_example.vim
-
-```
+**Note:** Commonly expected behavior such as syntax highlighting is enabled in `defaults.vim`, which is loaded when no `~/.vimrc` is present. Add `let skip_defaults_vim=1` to `/etc/vimrc` to disable loading of `defaults.vim` completely. [[1]](https://github.com/vim/vim/issues/1033)
 
 ### Syntax highlighting
 

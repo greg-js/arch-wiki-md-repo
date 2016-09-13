@@ -437,7 +437,7 @@ The snapshot that is sent *must* be readonly. The above command is useful for co
 You can also send only the difference between two snapshots. For example, if you have already sent a copy of `root_backup` above and have made a new readonly snapshot on your system named `root_backup_new`, then to send only the incremental difference to `/backup` do:
 
 ```
- # btrfs send -p /root_backup /root_backup_new | btrfs send /backup
+ # btrfs send -p /root_backup /root_backup_new | btrfs receive /backup
 
 ```
 

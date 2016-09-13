@@ -6,6 +6,7 @@
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Build error with libpng 1.2.x](#Build_error_with_libpng_1.2.x)
     *   [2.2 Segfaults with qtcurve-gtk2](#Segfaults_with_qtcurve-gtk2)
+    *   [2.3 Tooltips unreadable with KDE Plasma](#Tooltips_unreadable_with_KDE_Plasma)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -37,6 +38,10 @@ You should be able to solve that by simply commenting the two mentioned Lines in
 ### Segfaults with qtcurve-gtk2
 
 There is a problem with qtcurve-gtk2 1.8.18-3 that makes inkscape segfault shortly after launch. The bug is fixed upstream ([Bug 343704](https://bugs.kde.org/show_bug.cgi?id=343704#c3)) but no release is yet available and the AUR package qtcurve-git is not compatible with KDE Frameworks 5\. Best option today to use qtcurve and inkscape is to use speps patched packages from [FS#43631](https://bugs.archlinux.org/task/43631#comment132113).
+
+### Tooltips unreadable with KDE Plasma
+
+Under KDE's system settings go to colors > options and disable "Apply colors to non-QT-applications". Restart Inkscape if was running before the change.
 
 ## See also
 

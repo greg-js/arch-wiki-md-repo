@@ -287,6 +287,8 @@ First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. 
 
 The `--bootloader-id` is what appears in the boot options to identify the GRUB EFI boot option; make sure this is something you will recognize later. The install will create a directory of the same name under `*esp*/EFI/` where the EFI binary bootloader will be placed.
 
+**Tip:** If you use `boot` as your bootloader-id then you will have the additional ability of being able to boot from the drive in case EFI variables are reset or you move the drive to another computer. Usually you can do this by selecting the drive itself similar to how you would using BIOS. If dual booting with Windows, be aware Windows usually has a folder called boot inside the EFI folder of the EFI partition, but the only purpose this serves is to recreate the EFI boot option for Windows.
+
 After the above install finished the main GRUB directory is located at `/boot/grub/`.
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing further setup dependant [#Configuration](#Configuration).

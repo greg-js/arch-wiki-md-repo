@@ -4,8 +4,9 @@ The [up-board](http://up-board.org) is a Intel based SOC.
 
 *   [1 Installation](#Installation)
 *   [2 Sound](#Sound)
-    *   [2.1 Manual Compilation](#Manual_Compilation)
-    *   [2.2 Arch Build System](#Arch_Build_System)
+    *   [2.1 Compilation](#Compilation)
+        *   [2.1.1 Manual](#Manual)
+        *   [2.1.2 Arch Build System](#Arch_Build_System)
 
 ## Installation
 
@@ -17,7 +18,11 @@ The up-board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emula
 
 As of August 2016, the mainline kernel does not support sound through HDMI for cherry trail based devices like the up-board. There are plans on adding support to the mainline kernel as noted [here](https://bugzilla.kernel.org/show_bug.cgi?id=113971#c6), but in the mean time if you wish to have sound you will need to patch your kernel.
 
-### Manual Compilation
+### Compilation
+
+Without any optimisations, compilation on the up-board takes around 5-6 hours. Setting your `MAKEFLAGS` beforehand will drastically improve the compilation time. If you're using the ABS the [makepkg](/index.php/Makepkg "Makepkg") page has information on how to set the variable in there.
+
+#### Manual
 
 *   Download a copy of the patched kernel from [here](https://github.com/plbossart/sound/archive/byt-cht-hdmi-v4.7.tar.gz) and the latest kernel sources from [http://www.kernel.org](http://www.kernel.org).
 
@@ -45,8 +50,6 @@ $ patch -p1 < cherry.patch
 
 *   Lastly, you'll need to make sure that `CONFIG_SUPPORT_HDMI=y` option is in the `.config`.
 
-Compilation on the up-board takes a few hours. If you have a desktop or laptop it will take a lot less time to compile it there.
-
-### Arch Build System
+#### Arch Build System
 
 If you wish to build the kernel using the ABS, follow the steps provided in [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Remember to add the patch to the prepare function and run *updpkgsums* to update the checksum for the changed config file.

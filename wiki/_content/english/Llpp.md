@@ -1,4 +1,4 @@
-**llpp** is a lightweight, fast and featureful PDF, EPUB, XPS and CBZ viewer based on MuPDF.
+**llpp** is a lightweight, fast and featureful PDF, EPUB, XPS and CBZ viewer based on [MuPDF](/index.php/MuPDF "MuPDF").
 
 ## Contents
 
@@ -10,13 +10,13 @@
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Reload File](#Reload_File)
     *   [4.2 Remote Interface](#Remote_Interface)
-    *   [4.3 Cleanup history](#Cleanup_history)
+    *   [4.3 Clean up history](#Clean_up_history)
     *   [4.4 Inverse search using Synctex and Vim](#Inverse_search_using_Synctex_and_Vim)
 *   [5 See also](#See_also)
 
 ## Installation
 
-llpp can be installed from the [AUR](/index.php/AUR "AUR") using the stable [llpp](https://aur.archlinux.org/packages/llpp/), or the latest repo version [llpp-git](https://aur.archlinux.org/packages/llpp-git/).
+[Install](/index.php/Install "Install") the [llpp](https://aur.archlinux.org/packages/llpp/) package, or [llpp-git](https://aur.archlinux.org/packages/llpp-git/) for the development version.
 
 ## Usage
 
@@ -71,7 +71,7 @@ A document can be reloaded in three ways:
 *   Sending a HUP signal to the llpp process
 
 ```
-# killall -SIGHUP llpp
+$ killall -SIGHUP llpp
 
 ```
 
@@ -82,10 +82,10 @@ A document can be reloaded in three ways:
 The following commands will setup the remote interface and use it to reload the file "image.pdf".
 
 ```
-# mkfifo /tmp/llpp.remote
-# llpp -remote /tmp/llpp.remote image.pdf & disown
-# sleep 1
-# echo reload >/tmp/llpp.remote
+$ mkfifo /tmp/llpp.remote
+$ llpp -remote /tmp/llpp.remote image.pdf & disown
+$ sleep 1
+$ echo reload >/tmp/llpp.remote
 
 ```
 
@@ -100,7 +100,7 @@ There are eight remote commands:
 *   `rect <pageno> <color> <x0> <y0> <x1> <y1>` - draw a rectangle
 *   `activatewin` - raise and switch to llpp's window
 
-### Cleanup history
+### Clean up history
 
 Files that no longer exist can be cleaned from llpp's history by using a "garbage collecting" script, such as the upstream python2 script [here](http://repo.or.cz/w/llpp.git/blob/HEAD:/misc/gc.py). Use the `-gc` flag:
 

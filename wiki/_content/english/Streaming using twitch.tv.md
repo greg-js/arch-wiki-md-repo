@@ -31,7 +31,7 @@ Not listed on their page is a requirement of the [Y'UV420p pixel format](https:/
 
 *   Castawesome ([castawesome](https://aur.archlinux.org/packages/castawesome/) from the [AUR](/index.php/AUR "AUR")) is a Gtk3 frontend for ffmpeg streaming with builtin Twitch.tv support.
 
-*   Alpha Linux builds of Open Broadcaster Studio ([obs-studio-git](https://aur.archlinux.org/packages/obs-studio-git/) from the [AUR](/index.php/AUR "AUR")) are also available for compiling & testing.
+*   Open Broadcaster Software ([obs-studio](https://www.archlinux.org/packages/?name=obs-studio)) is a popularly used software on Windows. *Note that the package is **not an official build**.* Alpha Linux builds ([obs-studio-git](https://aur.archlinux.org/packages/obs-studio-git/) from the [AUR](/index.php/AUR "AUR")) are also available for compiling & testing.
 
 *   SimpleScreenRecorder ([lib32-simplescreenrecorder](https://www.archlinux.org/packages/?name=lib32-simplescreenrecorder) from the [official repositories](/index.php/Official_repositories "Official repositories")) can be configured to stream to twitch.
     *   For this to work:

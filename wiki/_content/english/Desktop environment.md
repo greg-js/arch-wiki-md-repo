@@ -171,14 +171,14 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [flmusic](https://aur.archlinux.org/packages/flmusic/) | [Dillo](/index.php/Dillo "Dillo")
 [dillo](https://www.archlinux.org/packages/?name=dillo) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [Enlightenment](/index.php/Enlightenment "Enlightenment") | [Elementary](https://www.enlightenment.org/about-efl)
-[elementary](https://www.archlinux.org/packages/?name=elementary) | Enlightenment
-[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Enlightenment
+| [Enlightenment](/index.php/Enlightenment "Enlightenment") | [EFL](https://www.enlightenment.org/about-efl)
+[efl](https://www.archlinux.org/packages/?name=efl) | [Enlightenment](https://www.enlightenment.org/about-enlightenment)
+[enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Enlightenment](https://www.enlightenment.org/about-enlightenment)
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Terminology](https://www.enlightenment.org/about-terminology)
-[terminology](https://www.archlinux.org/packages/?name=terminology) | Enligthenment
+[terminology](https://www.archlinux.org/packages/?name=terminology) | [Enlightenment](https://www.enlightenment.org/about-enlightenment)
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Equate
 [equate-git](https://aur.archlinux.org/packages/equate-git/) | Ecrire
-[ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) | Ephoto
+[ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) | [Ephoto](https://www.enlightenment.org/about-ephoto)
 [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) | [Rage](https://www.enlightenment.org/about-rage)
 [rage](https://aur.archlinux.org/packages/rage/) | Elbow
 [elbow-git](https://aur.archlinux.org/packages/elbow-git/) | [XDM](/index.php/XDM "XDM")

@@ -119,7 +119,10 @@ There are no strict rules for partitioning a hard drive, although one may follow
 
 This scheme is the simplest and should be enough for most use cases. A [swapfile](/index.php/Swapfile "Swapfile") can be created and easily resized as needed. It usually makes sense to start by considering a single `/` partition and then separate out others based on specific use cases like RAID, encryption, a shared media partition, etc.
 
-Note that [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"), and installing [GRUB](/index.php/GRUB "GRUB") on a BIOS system partitioned with [GPT](#GUID_Partition_Table) requires an additional BIOS boot partition.
+**Note:**
+
+*   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   Installing [GRUB](/index.php/GRUB "GRUB") on a BIOS system partitioned with [GPT](#GUID_Partition_Table) requires an additional [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
 
 ### Discrete partitions
 

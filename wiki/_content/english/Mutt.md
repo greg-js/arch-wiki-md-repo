@@ -95,7 +95,7 @@ Or (if using POP3) [getmail](https://www.archlinux.org/packages/?name=getmail), 
 
 ### NeoMutt
 
-The [NeoMutt](http://www.neomutt.org/) Project aims to bring together all the patches for Mutt. It adds a large set of features such as a [sidebar](http://www.neomutt.org/feature/sidebar/), now obsoleted by improved sidebar support in upstream mutt since version 1.7.0, support for [notmuch](https://notmuchmail.org/) and [NNTP](https://en.wikipedia.org/wiki/Network_News_Transfer_Protocol "wikipedia:Network News Transfer Protocol"). Lots of old Mutt patches have been brought up-to-date, tidied and documented. See [here](http://www.neomutt.org/features.html) for an outdated list of features added on top of vanilla Mutt.
+The [NeoMutt](http://www.neomutt.org/) project aims to bring together all the patches for Mutt. It adds a large set of [features](http://www.neomutt.org/features.html). Lots of old Mutt patches have been brought up-to-date, tidied and documented.
 
 While there are many different packages of mutt in the AUR, each of them providing another set of patches, NeoMutt aims to replace them in the future by implementing appropriate compile options. For now, you can find NeoMutt in the AUR at [neomutt](https://aur.archlinux.org/packages/neomutt/) and [neomutt-git](https://aur.archlinux.org/packages/neomutt-git/).
 
@@ -528,7 +528,7 @@ If `enter-command` is available from the UI, it is possible to see the password 
 
 Guides to get you started with using & customizing Mutt :
 
-*   [My first Mutt](http://mutt.blackfish.org.uk/) (maintained by Bruno Postle)
+*   [My first Mutt](http://mutt.postle.net/) (maintained by Bruno Postle)
 *   [The Woodnotes Guide to the Mutt Email Client](http://www.therandymon.com/woodnotes/mutt/using-mutt.html) (maintained by Randall Wood)
 *   [The Homely Mutt](http://stevelosh.com/blog/2012/10/the-homely-mutt) (by Steve Losh)
 *   [Everything You Need To Know To Start Using GnuPG with Mutt](http://codesorcery.net/old/mutt/mutt-gnupg-howto) (by Justin R. Miller)

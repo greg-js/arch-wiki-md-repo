@@ -2,7 +2,7 @@
 
 目前因为中文文档和分类尚不齐全，有需要的请浏览英语语种的网页。
 
-| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(164)</small> |
+| [简体中文](/index.php/Category:%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87 "Category:简体中文") <small>(163)</small> |
 | <small>1.</small> [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)") <small>(22)</small> |
 | <small>1.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(2) (同时还属于 [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)"))</small> |
 | <small>1.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(17)</small> |
@@ -82,7 +82,7 @@
 | <small>6.13.</small> [无线网络](/index.php/Category:Wireless_networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wireless networking (简体中文)") <small>(7)</small> |
 | <small>7.</small> [软件](/index.php/Category:Software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Software (简体中文)") <small>(4)</small> |
 | <small>7.1.</small> [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)") <small>(25)</small> |
-| <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(10)</small> |
+| <small>7.1.1.</small> [引导器](/index.php/Category:Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot loaders (简体中文)") <small>(9)</small> |
 | <small>7.1.2.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)"))</small> |
 | <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(6)</small> |
 | <small>7.3.</small> [系统服务和守护进程](/index.php/Category:Daemons_and_system_services_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Daemons and system services (简体中文)") <small>(17)</small> |
@@ -100,7 +100,7 @@
 | <small>7.9.</small> [X server](/index.php/Category:X_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:X server (简体中文)") <small>(24)</small> |
 | <small>8.</small> [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)") <small>(5)</small> |
 | <small>8.1.</small> [音频/视频](/index.php/Category:Audio/Video_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Audio/Video (简体中文)") <small>(12)</small> |
-| <small>8.2.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(13)</small> |
+| <small>8.2.</small> [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)") <small>(12)</small> |
 | <small>8.2.1.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [启动过程](/index.php/Category:Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Boot process (简体中文)"))</small> |
 | <small>8.2.2.</small> [字体](/index.php/Category:Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Fonts (简体中文)") <small>(4)</small> |
 | <small>8.3.</small> [国际化](/index.php/Category:Internationalization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internationalization (简体中文)") <small>(4)</small> |

@@ -34,7 +34,7 @@ Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchi
 
 Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in as the root user on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-To switch to a different console—for example, to view this guide in [elinks](/index.php/Elinks "Elinks") alongside the installation—use the `Alt+*arrow*` shortcut. To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
+To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` shortcut. To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 
 ### Set the keyboard layout
 
@@ -62,16 +62,16 @@ If the directory does not exist, the system is booted in [BIOS](https://en.wikip
 
 ### Connect to the Internet
 
-Internet service via [dhcpcd](/index.php/Dhcpcd "Dhcpcd") is enabled on boot for [supported wired devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules); check the connection using a tool such as [ping](/index.php/Network_configuration#Check_the_connection "Network configuration"):
+The [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon is [enabled](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot for **wired** devices, and will attempt to start a connection. Verify a connection was established, for example with [ping](/index.php/Ping "Ping"):
 
 ```
 # ping archlinux.org
 
 ```
 
-If none was established, [stop](/index.php/Systemd#Using_units "Systemd") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
+If none is available, [stop](/index.php/Systemd#Using_units "Systemd") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
-For [wireless](/index.php/Wireless "Wireless") connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration#Wireless management](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration").
+For **wireless** connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration").
 
 ### Update the system clock
 
@@ -88,9 +88,11 @@ To check the service status, use `timedatectl status`.
 
 To list present block devices, run `fdisk -l` or [lsblk](/index.php/Core_utilities#lsblk "Core utilities"). Results ending in `rom`, `loop` or `airoot` are unsuitable for installation and may be ignored.
 
-At least one [disk partition](/index.php/Disk_partition "Disk partition") is required for the root directory `/`. If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is also required. BIOS systems with [GPT](/index.php/GPT "GPT") may further need a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+*   At least one [disk partition](/index.php/Disk_partition "Disk partition") is required for the root directory `/`.
+*   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is also required.
+*   [Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a [swap file](/index.php/Swap#Swap_file "Swap").
 
-[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or—unless formatting with [Btrfs](/index.php/Btrfs "Btrfs")—a swap file. See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
+See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
 
 To modify and create partitions, use one of the following tools:
 
@@ -101,14 +103,14 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 ### Format the partitions
 
-Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). See [Swap](/index.php/Swap "Swap") and [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for details.
+Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for details.
 
 ### Mount the file systems
 
 [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) the root file system on `/mnt`, for example:
 
 ```
-# mount /dev/*sda1* /mnt 
+# mount /dev/*sda1* /mnt
 
 ```
 
@@ -210,7 +212,7 @@ Create `/etc/hostname` with the desired [hostname](/index.php/Network_configurat
 Add a matching line to `/etc/hosts`:
 
 ```
-127.0.1.1	*myhostname*.localdomain	*myhostname*
+127.0.1.1 *myhostname*.localdomain *myhostname*
 
 ```
 

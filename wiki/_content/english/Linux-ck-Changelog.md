@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.7.3-4**
+
+*   Changelog: Disable CONFIG_CGROUP_SCHED per CK's suggestion.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=db392c89bc1581fd60b576dd04f9442c58351013](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=db392c89bc1581fd60b576dd04f9442c58351013)
+
 **Bump to v4.7.3-3**
 
 *   Changelog: Fix config.x86_64 (my mistake), otherwise unchanged from 4.7.3-2.

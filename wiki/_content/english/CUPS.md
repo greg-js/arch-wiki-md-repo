@@ -43,7 +43,7 @@ Additional steps for printer detection are listed below for various connection i
 *   Adding extra users to the `lp` group will allow those users to read CUPS files, and
 *   CUPS helpers may gain access to any non-printer parallel port devices.
 
-If this is a concern, consider using an [Udev](/index.php/Udev "Udev") rule to assign a different group for any non-printer parallel port device ([FS#50009](https://bugs.archlinux.org/task/50009)). The group and user that CUPS uses can be changed, but the permissions of some files may need to be manually fixed.
+If this is a concern, consider using a [Udev](/index.php/Udev "Udev") rule to assign a different group for any non-printer parallel port device ([FS#50009](https://bugs.archlinux.org/task/50009)). The group and user that CUPS uses can be changed, but the permissions of some files may need to be manually fixed.
 
 ### USB
 

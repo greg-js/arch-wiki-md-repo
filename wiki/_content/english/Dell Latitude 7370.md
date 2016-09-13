@@ -2,23 +2,18 @@ These laptops are a part of the Latitude 13 7000 Series featuring Intel Skylake 
 
 ## Contents
 
-*   [1 kernel](#kernel)
-*   [2 dock](#dock)
-*   [3 bios](#bios)
-    *   [3.1 updating](#updating)
-*   [4 card reader](#card_reader)
-*   [5 touchpad](#touchpad)
-*   [6 displays](#displays)
-*   [7 lspci and lsusb](#lspci_and_lsusb)
-    *   [7.1 lspci](#lspci)
-    *   [7.2 lsusb](#lsusb)
-*   [8 known issues](#known_issues)
-    *   [8.1 suspend](#suspend)
-    *   [8.2 no keyboard](#no_keyboard)
-
-## kernel
-
-It is highly suggest to run a 4.6 (or greater) kernel (currently outside of [core](/index.php/Official_repositories#core "Official repositories")) via something like [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
+*   [1 dock](#dock)
+*   [2 bios](#bios)
+    *   [2.1 updating](#updating)
+*   [3 card reader](#card_reader)
+*   [4 touchpad](#touchpad)
+*   [5 displays](#displays)
+*   [6 lspci and lsusb](#lspci_and_lsusb)
+    *   [6.1 lspci](#lspci)
+    *   [6.2 lsusb](#lsusb)
+*   [7 known issues](#known_issues)
+    *   [7.1 suspend](#suspend)
+    *   [7.2 no keyboard](#no_keyboard)
 
 ## dock
 
@@ -39,13 +34,6 @@ The Broadcom reader is currently not supported via [ccid](https://www.archlinux.
 There is a known issue where the touchpad is detected as "ImPS/2 BYD TouchPad", a patch is in the works [[4]](https://patchwork.kernel.org/patch/9204273/).
 
 ## displays
-
-The display is a HiDPI display. If experiencing screen flashes during boot it could be advised to add the "i915" driver to the MODULES in mkinitcpio.conf and regenerate
-
-```
- sudo mkinitcpio -p linux
-
-```
 
 Due to being HiDPI it is also common to notice latency when using desktop environments like Gnome-Shell. Installing "vulkan-intel" appears to alleviate some of these issues.
 
@@ -90,7 +78,7 @@ On kernel '4.8.0-rc1-mainline' via [linux-mainline](https://aur.archlinux.org/pa
 
 ### suspend
 
-It appears the system can get into a state in which suspend will stop working (system will suspend but upon attempt to resume will cold boot)[[5]](https://bbs.archlinux.org/viewtopic.php?id=207543). Current resolution appears to be to perform a shutdown within the system and suspend should start working again.
+It appears the system can get into a state in which suspend will stop working (system will suspend but upon attempt to resume will cold boot)[[5]](https://bbs.archlinux.org/viewtopic.php?id=207543). Current resolution appears to be to perform a shutdown within the system and suspend should start working again. Newer bios versions also have improved this issue, though it can still occur.
 
 ### no keyboard
 

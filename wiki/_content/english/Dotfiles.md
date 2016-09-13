@@ -64,7 +64,7 @@ $ git commit -a
 
 *   **dotbot** — A minimalist dotfiles manager that can be installed as a git submodule of your dotfiles repository.
 
-	[https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot)
+	[https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot) ||
 
 ### Maintaining dotfiles across multiple machines
 

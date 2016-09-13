@@ -124,7 +124,7 @@ When using *ibus-pinyin*,
 
 ### Plasma 5
 
-Plasma 5 applications may not accept Japanese (i.e. non-"direct input") text from Mozc using IBus. In order to resolve this problem add
+Some applications may not accept non-"direct input" text (e.g. Japanese and Chinese) from Mozc using IBus. In order to resolve this problem add
 
 ```
 export QT_IM_MODULE=ibus

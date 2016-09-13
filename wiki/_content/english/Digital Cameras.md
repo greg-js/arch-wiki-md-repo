@@ -41,15 +41,41 @@ For advanced file manipulation, use
 
 #### Other frontend applications for libgphoto2
 
-*   [gphotofs](http://www.gphoto.org/proj/gphotofs/) - [gphotofs](https://aur.archlinux.org/packages/gphotofs/) - FUSE ([fuse](https://www.archlinux.org/packages/?name=fuse)) module to mount camera as a filesystem
-*   [darktable](http://darktable.org/) - [darktable](https://www.archlinux.org/packages/?name=darktable) - utility to organize and develop raw images
-*   [Digikam](/index.php/Digikam "Digikam") - [digikam](https://www.archlinux.org/packages/?name=digikam) - digital photo management application for [KDE](/index.php/KDE "KDE")
-*   [F-Spot](http://f-spot.org/) - photo management [Mono](/index.php/Mono "Mono") application for [GNOME](/index.php/GNOME "GNOME")
-*   [Gthumb](http://live.gnome.org/gthumb) - [gthumb](https://www.archlinux.org/packages/?name=gthumb) - image browser and viewer for [GNOME](/index.php/GNOME "GNOME")
-*   [GTKam](http://www.gphoto.org/proj/gtkam/) - [gtkam](https://aur.archlinux.org/packages/gtkam/) - graphical [GTK](/index.php/GTK "GTK") front-end to gphoto2
-*   [Pantheon Photos](https://launchpad.net/pantheon-photos) - [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) - "continuation" of Shotwell for [Pantheon](/index.php/Pantheon "Pantheon")
-*   [Shotwell](http://wiki.gnome.org/Apps/Shotwell) - [shotwell](https://www.archlinux.org/packages/?name=shotwell) - digital photo organizer designed for [GNOME](/index.php/GNOME "GNOME")
-*   [GNOME Files](/index.php/GNOME_Files "GNOME Files") - Supports accessing digital cameras and smartphones using MTP, and has two backends: the new [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) using libmtp, and the old [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) using libgphoto2.
+*   **darktable** — Utility to organize and develop raw images.
+
+	[http://darktable.org/](http://darktable.org/) || [darktable](https://www.archlinux.org/packages/?name=darktable)
+
+*   **[Digikam](/index.php/Digikam "Digikam")** — Digital photo management application for [KDE](/index.php/KDE "KDE").
+
+	[https://www.digikam.org/](https://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
+
+*   **gphotofs** — FUSE ([fuse](https://www.archlinux.org/packages/?name=fuse)) module to mount camera as a filesystem.
+
+	[http://www.gphoto.org/proj/gphotofs/](http://www.gphoto.org/proj/gphotofs/) || [gphotofs](https://aur.archlinux.org/packages/gphotofs/)
+
+*   **gThumb** — Image browser and viewer for [GNOME](/index.php/GNOME "GNOME").
+
+	[http://wiki.gnome.org/gthumb](http://wiki.gnome.org/gthumb) || [gthumb](https://www.archlinux.org/packages/?name=gthumb)
+
+*   **GTKam** — Graphical [GTK+](/index.php/GTK%2B "GTK+") 2 front-end to gphoto2.
+
+	[http://www.gphoto.org/proj/gtkam/](http://www.gphoto.org/proj/gtkam/) || [gtkam](https://aur.archlinux.org/packages/gtkam/)
+
+*   **Kamera** — [KDE](/index.php/KDE "KDE") integration for gphoto2 cameras.
+
+	[https://github.com/KDE/kamera](https://github.com/KDE/kamera) || [kamera](https://www.archlinux.org/packages/?name=kamera)
+
+*   **Pantheon Photos** — Image viewer for Pantheon.
+
+	[https://launchpad.net/pantheon-photos](https://launchpad.net/pantheon-photos) || [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos)
+
+*   **Rawstudio** — An open source raw-image converter written in GTK+. Supports tethered shooting with gphoto2.
+
+	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://www.archlinux.org/packages/?name=rawstudio)
+
+*   **Shotwell** — Digital photo organizer designed for [GNOME](/index.php/GNOME "GNOME").
+
+	[http://wiki.gnome.org/Apps/Shotwell](http://wiki.gnome.org/Apps/Shotwell) || [shotwell](https://www.archlinux.org/packages/?name=shotwell)
 
 ## See also
 

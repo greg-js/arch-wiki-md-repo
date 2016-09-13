@@ -55,7 +55,7 @@ The benefits to using the Rustup toolchain manager instead of the standalone pre
 
 One has 2 choices for a rustup installation, one is officially supported by Rust, while the other is supported by archlinux wiki
 
-1.  `curl -sSf [https://static.rust-lang.org/rustup.sh](https://static.rust-lang.org/rustup.sh) && sh rustup.sh` This will start rustup installation. To update rustup afterwards, one only needs to do `rustup self update`.
+1.  Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `vim ./rust.sh`, and run the script `./rust.sh` to start rustup installation. To update rustup afterwards, run `rustup self update`.
 2.  [rustup](https://aur.archlinux.org/packages/rustup/) is also available on the AUR. Note that `rustup self update` will **not** work when installed from the AUR, the package needs to be updated from the AUR directly.
 
 By default, only the stable channel from your architecture will be installed. It will however not be usable right away, you need to specify the installed stable channel as default for it to work.
@@ -196,11 +196,11 @@ The [Racer](https://github.com/phildawes/racer) autocomplete engine is the curre
 
 #### Atom
 
-Atom has the best support for Rust programming as of this moment with the available [Tokamak IDE](https://vertexclique.github.io/tokamak/) plugin.
+Atom supports Rust programming with the available [Tokamak IDE](https://vertexclique.github.io/tokamak/) plugin.
 
 #### Visual Studio Code
 
-Visual Studio Code also provides support for Rust, although it is not as great as Atom's support. Support for Rust can be obtained by installing [RustyCode](https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode).
+Support for Rust can be obtained by installing [RustyCode](https://marketplace.visualstudio.com/items?itemName=saviorisdead.RustyCode).
 
 #### Vim
 

@@ -18,6 +18,7 @@
     *   [4.3 Force 3D acceleration](#Force_3D_acceleration)
     *   [4.4 WebGL](#WebGL)
     *   [4.5 Distorted GUI](#Distorted_GUI)
+    *   [4.6 Disable keyring password prompt](#Disable_keyring_password_prompt)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -124,9 +125,7 @@ First follow [Hardware video acceleration](/index.php/Hardware_video_acceleratio
 
 **Warning:** [Catalyst](/index.php/Catalyst "Catalyst") does not support the `GL_ARB_robustness` extension. When using this driver, it is possible that a malicious site could use WebGL to perform a DoS attack on your graphic card.
 
-Chromium will sometimes disable WebGL with certain graphics card configurations. To remedy this, enter `chrome://flags` into the URL bar and *disable* the *Disable WebGL* flag. Alternatively, pass the command-line flag `--enable-webgl` to Chromium in the terminal.
-
-There is also the possibility that your graphics card has been blacklisted by Chromium. See [#Force 3D acceleration](#Force_3D_acceleration).
+There is the possibility that your graphics card has been blacklisted by Chromium. See [#Force 3D acceleration](#Force_3D_acceleration).
 
 If you are using Chromium with [Bumblebee](/index.php/Bumblebee "Bumblebee"), WebGL might crash due to GPU sandboxing. In this case, you can disable GPU sandboxing with `optirun chromium --disable-gpu-sandbox`.
 
@@ -135,6 +134,10 @@ If none of the above solves your problem, you may be able to visit `chrome://gpu
 ### Distorted GUI
 
 Chromium's graphical interface may look unsightly, distorted and zoomed in on high-DPI displays. To disable any attempts to scale display according to device DPI, use `--force-device-scale-factor=1`.
+
+### Disable keyring password prompt
+
+See [GNOME/Keyring#Passwords are not remembered](/index.php/GNOME/Keyring#Passwords_are_not_remembered "GNOME/Keyring"). You may also need to edit the Chromium command line to append `--password-store=gnome`.
 
 ## See also
 

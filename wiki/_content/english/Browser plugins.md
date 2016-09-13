@@ -27,9 +27,7 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [6.1 Other plugins](#Other_plugins)
     *   [6.2 Open-with Firefox extension](#Open-with_Firefox_extension)
 *   [7 Google Hangouts](#Google_Hangouts)
-*   [8 Other](#Other)
-    *   [8.1 MozPlugger](#MozPlugger)
-    *   [8.2 kpartsplugin](#kpartsplugin)
+*   [8 MozPlugger](#MozPlugger)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Flash Player: no sound](#Flash_Player:_no_sound)
     *   [9.2 Flash Player: blocking sound for other applications or delayed playback](#Flash_Player:_blocking_sound_for_other_applications_or_delayed_playback)
@@ -141,7 +139,7 @@ For [Chromium](/index.php/Chromium "Chromium") and Google Chrome it is available
 
 ### External PDF viewers
 
-To use an external PDF viewer you need [#MozPlugger](#MozPlugger) or [#kpartsplugin](#kpartsplugin).
+To use an external PDF viewer you need [#MozPlugger](#MozPlugger).
 
 If you want to use MozPlugger with Evince, for example, you have to find the lines containing `pdf` in the `/etc/mozpluggerrc` file and modify the corresponding line after `GV()` as below:
 
@@ -220,9 +218,7 @@ The same procedure can be used to associate video downloaders such as *youtube-d
 
 Hangouts plugin can be installed with the [google-talkplugin](https://aur.archlinux.org/packages/google-talkplugin/) package. Hangouts is a messenger by Google, that allows you to make video call between 15 people simultaneously. While using "new" version, you can share your screen with others like in Skype, but if you switch to "old" version, it will be possible to do the following things together: watching YouTube, making diagrams, editing documents, playing games and other things.
 
-## Other
-
-### MozPlugger
+## MozPlugger
 
 MozPlugger can be installed with the [mozplugger](https://aur.archlinux.org/packages/mozplugger/) package.
 
@@ -294,12 +290,6 @@ define(MP_AUDIO_STREAM,[controls stream noisy ignore_errors: mpv -really-quiet $
 ```
 
 For a more complete list of MozPlugger options see [this page](http://www.linuxmanpages.com/man7/mozplugger.7.php).
-
-### kpartsplugin
-
-[The KParts plugin](http://www.unix-ag.uni-kl.de/~fischer/kpartsplugin/) is a plugin that uses KDE's KPart technology to embed different file viewers in the browser, such as Okular (for PDF), Ark (for different archives), Calligra Words (for ODF), etc. It cannot use applications that are not based on the KPart technology.
-
-The KParts plugin can be installed with the package [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
 
 ## Troubleshooting
 

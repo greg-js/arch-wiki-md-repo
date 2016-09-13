@@ -156,14 +156,14 @@ $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qq
 To list the 20 last installed packages with [expac](https://www.archlinux.org/packages/?name=expac), run:
 
 ```
-$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -20
+$ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 
 ```
 
 or, with seconds since the epoch (1970-01-01 UTC):
 
 ```
-$ expac --timefmt=%s '%l\t%n' | sort -n | tail -20
+$ expac --timefmt=%s '%l\t%n' | sort -n | tail -n 20
 
 ```
 

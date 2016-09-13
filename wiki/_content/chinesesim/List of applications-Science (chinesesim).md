@@ -125,7 +125,7 @@
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — Giac的用戶界面。（Giac是一个自由，基础的计算机代数系统）
 
-	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://aur.archlinux.org/packages/xcas/)
+	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://www.archlinux.org/packages/?name=xcas)
 
 *   **[Sympy](https://en.wikipedia.org/wiki/SymPy "wikipedia:SymPy")** — 支持符号计算的Python函式库(以x,y等名称作运算工具，这是mathemetica有而scipy欠缺的功能)，可求出不定积分(indefinite integral)和导数。显示结果的方式有：ascii art、python expression、Latex，或透过matplotlib绘图。
 
