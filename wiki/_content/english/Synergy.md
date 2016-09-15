@@ -6,7 +6,7 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
 
 *   [1 Installation](#Installation)
     *   [1.1 Arch Linux](#Arch_Linux)
-    *   [1.2 Windows and OS X](#Windows_and_OS_X)
+    *   [1.2 Windows and macOS](#Windows_and_macOS)
 *   [2 Pre-configuration](#Pre-configuration)
     *   [2.1 Arch Linux](#Arch_Linux_2)
         *   [2.1.1 Enable Encryption](#Enable_Encryption)
@@ -14,14 +14,14 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
     *   [3.1 Arch Linux](#Arch_Linux_3)
         *   [3.1.1 Use Encryption](#Use_Encryption)
     *   [3.2 Windows](#Windows)
-    *   [3.3 OS X](#OS_X)
+    *   [3.3 macOS](#macOS)
     *   [3.4 Configuration examples](#Configuration_examples)
 *   [4 Clients configuration](#Clients_configuration)
     *   [4.1 Arch Linux](#Arch_Linux_4)
         *   [4.1.1 Use Encryption](#Use_Encryption_2)
         *   [4.1.2 Autostart](#Autostart)
     *   [4.2 Windows](#Windows_2)
-    *   [4.3 OS X](#OS_X_2)
+    *   [4.3 macOS](#macOS_2)
 *   [5 Known Issues](#Known_Issues)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Keyboard AltGr](#Keyboard_AltGr)
@@ -37,7 +37,7 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
 
 You can [install](/index.php/Install "Install") the [synergy](https://www.archlinux.org/packages/?name=synergy) package.
 
-### Windows and OS X
+### Windows and macOS
 
 [Download](http://synergy-project.org/download/) and run the newest installer from the official website.
 
@@ -47,7 +47,7 @@ First determine the IP addresses and [host names](/index.php/Network_configurati
 
 *   Arch Linux - `/etc/hosts`
 *   Windows - `C:\WINDOWS\system32\drivers\etc\hosts`
-*   OS X - [How to Add Hosts to Local Hosts File](http://support.apple.com/kb/TA27291).
+*   macOS - [How to Add Hosts to Local Hosts File](http://support.apple.com/kb/TA27291).
 
  `/etc/hosts` 
 ```
@@ -160,9 +160,9 @@ C:\Program Files\Synergy+\bin\synergys.exe  -f --debug ERROR --name left --log c
 
 ```
 
-### OS X
+### macOS
 
-OS X has a similar configuration as Unix: check [the official documentation](http://synergy-project.org/wiki/Developer) for more information.
+macOS has a similar configuration as Unix: check [the official documentation](http://synergy-project.org/wiki/Developer) for more information.
 
 ### Configuration examples
 
@@ -384,7 +384,7 @@ If you want to start the client from the command-line, here is a Windows command
 
  `START /MIN /D"C:\Program Files\Synergy+\bin" synergys.exe -d ERROR -n m6300 -c C:\synergy.sgc -a 10.66.66.2:24800` 
 
-### OS X
+### macOS
 
 Locate the synergyc program in the synergyc folder and drag it onto the terminal window: the full path will appear in the terminal. Now append the host name of the server, so that the complete command will look like this:
 

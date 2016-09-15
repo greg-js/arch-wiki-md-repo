@@ -4,29 +4,31 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
 
 *   [1 Installation](#Installation)
 *   [2 Spellcheck](#Spellcheck)
-*   [3 Sound fix](#Sound_fix)
-*   [4 Browser error](#Browser_error)
-*   [5 QIP encoding bug](#QIP_encoding_bug)
-*   [6 ICQ](#ICQ)
-*   [7 IRC](#IRC)
-*   [8 Xfire](#Xfire)
-*   [9 Web QQ](#Web_QQ)
-*   [10 Facebook XMPP](#Facebook_XMPP)
-*   [11 Security](#Security)
-*   [12 Privacy](#Privacy)
-    *   [12.1 Pidgin-OTR](#Pidgin-OTR)
-    *   [12.2 Pidgin-Encryption](#Pidgin-Encryption)
-    *   [12.3 Pidgin-GPG](#Pidgin-GPG)
-*   [13 Sametime protocol](#Sametime_protocol)
-*   [14 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
-*   [15 Other packages](#Other_packages)
-*   [16 Skype plugin](#Skype_plugin)
-*   [17 Auto logout on suspend](#Auto_logout_on_suspend)
-*   [18 Minimize to tray](#Minimize_to_tray)
-*   [19 Troubleshooting](#Troubleshooting)
-    *   [19.1 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
-*   [20 History import Kopete to Pidgin](#History_import_Kopete_to_Pidgin)
-*   [21 See also](#See_also)
+*   [3 Services](#Services)
+    *   [3.1 Facebook XMPP](#Facebook_XMPP)
+    *   [3.2 IRC](#IRC)
+    *   [3.3 Sametime protocol](#Sametime_protocol)
+    *   [3.4 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
+    *   [3.5 Skype plugin](#Skype_plugin)
+    *   [3.6 Web QQ](#Web_QQ)
+    *   [3.7 Xfire](#Xfire)
+*   [4 Security](#Security)
+*   [5 Privacy](#Privacy)
+    *   [5.1 Pidgin-OTR](#Pidgin-OTR)
+    *   [5.2 Pidgin-Encryption](#Pidgin-Encryption)
+    *   [5.3 Pidgin-GPG](#Pidgin-GPG)
+*   [6 Other packages](#Other_packages)
+*   [7 Auto logout on suspend](#Auto_logout_on_suspend)
+*   [8 Minimize to tray](#Minimize_to_tray)
+*   [9 History import Kopete to Pidgin](#History_import_Kopete_to_Pidgin)
+*   [10 Backup](#Backup)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 Browser error](#Browser_error)
+    *   [11.2 ICQ Buddy Information encoding fix](#ICQ_Buddy_Information_encoding_fix)
+    *   [11.3 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
+    *   [11.4 QIP encoding bug](#QIP_encoding_bug)
+    *   [11.5 Sound fix](#Sound_fix)
+*   [12 See also](#See_also)
 
 ## Installation
 
@@ -44,60 +46,19 @@ The [aspell](https://www.archlinux.org/packages/?name=aspell) package will be in
 
 **Note:** The **switch spell** plugin is included in the [purple-plugin-pack](https://www.archlinux.org/packages/?name=purple-plugin-pack). It allows you to switch between multiple languages.
 
-## Sound fix
+## Services
 
-To have event sounds working, install the [gstreamer0.10-good](https://www.archlinux.org/packages/?name=gstreamer0.10-good) package. Alternatively, in the "Sounds" preferences tab, the method can be set to 'command' and one of the following sound commands used.
+### Facebook XMPP
 
-After configuring [ALSA](/index.php/ALSA "ALSA"):
+Facebook XMPP is not working since April 30th, 2015\. See [[1]](https://developers.facebook.com/docs/chat?_fb_noscript=1)
 
-```
-$ aplay %s
+An alternative is to use a ThirdPartyPlugin that uses Facebook IM, see [[2]](https://github.com/jgeboski/purple-facebook)
 
-```
+You can get the plugin from either [purple-facebook](https://aur.archlinux.org/packages/purple-facebook/) or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/)
 
-If using [OSS](/index.php/OSS "OSS"):
+Then add a new account, select Facebook as the protocol, enter your [Facebook username](https://www.facebook.com/help/211813265517027) and password and login.
 
-```
-$ ossplay %s
-
-```
-
-And for [PulseAudio](/index.php/PulseAudio "PulseAudio"):
-
-```
-$ paplay %s
-
-```
-
-## Browser error
-
-If clicking a link within Pidgin creates an error message about trying to use 'sensible-browser' to open a link, try editing `~/.purple/prefs.xml`. Find the line referencing 'sensible-browser' and change it to this:
-
-```
-<pref name='command' type='path' value='firefox'/>
-
-```
-
-This example assumes you use [Firefox](/index.php/Firefox "Firefox").
-
-As an alternative if the method above does not work you can set the desired browser in the pidgin preferences in the section "Browser".
-
-## QIP encoding bug
-
-There is another bug in character encoding when communicating between Pidgin and QIP, which especially affects Czech language, but there are also other languages affected. There are two possible solutions. The better one is to upgrade from QIP to QIP 2012 or QIP Infium, second solution is to install and enable plugin from [pidgin-qip-decoder](https://aur.archlinux.org/packages/pidgin-qip-decoder/) package currently available from [AUR](/index.php/AUR "AUR").
-
-## ICQ
-
-You can change encoding for ICQ account if encoding in Buddy Information is not correct:
-
-```
-Account > *your ICQ account* > Edit account > Advanced tab
-
-```
-
-Select `Encoding: CP1251` (for Cyrillic).
-
-## IRC
+### IRC
 
 This is a small tutorial for connecting to Freenode. It should work for other IRC networks as long as you substitute the port numbers and other specific settings.
 
@@ -135,23 +96,30 @@ Follow the instructions from the registration mail. For further help type:
 
 This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, fill the correct channel in the textbox named channel (#archlinux).
 
-## Xfire
+### Sametime protocol
 
-Simply install [pidgin-gfire](https://www.archlinux.org/packages/?name=pidgin-gfire) and then add a new account, selecting xfire as protocol.
+Sametime support is available by installing two packages from [AUR](/index.php/AUR "AUR"):
 
-## Web QQ
+*   [meanwhile](https://aur.archlinux.org/packages/meanwhile/)
+*   [libpurple-meanwhile](https://aur.archlinux.org/packages/libpurple-meanwhile/)
+
+Previously it was required to rebuild Pidgin to remove the `--disable-meanwhile` flag from compilation, this is no longer needed. Once these two packages are installed the 'Sametime' protocol will be available when creating an account.
+
+### SIP/Simple protocol for Live Communications Server 2003/2005/2007
+
+The [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) plugin is available in [official repositories](/index.php/Official_repositories "Official repositories").
+
+### Skype plugin
+
+Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) package.
+
+### Web QQ
 
 Simply install [pidgin-lwqq](https://www.archlinux.org/packages/?name=pidgin-lwqq) and then add a new account, selecting webQQ as the protocol. QQ is a proprietary chat protocol/IM service mainly used in Asia, particularly China.
 
-## Facebook XMPP
+### Xfire
 
-Facebook XMPP is not working since April 30th, 2015\. See [[1]](https://developers.facebook.com/docs/chat?_fb_noscript=1)
-
-An alternative is to use a ThirdPartyPlugin that uses Facebook IM, see [[2]](https://github.com/jgeboski/purple-facebook)
-
-You can get the plugin from either [purple-facebook](https://aur.archlinux.org/packages/purple-facebook/) or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/)
-
-Then add a new account, select Facebook as the protocol, enter your [Facebook username](https://www.facebook.com/help/211813265517027) and password and login.
+Simply install [pidgin-gfire](https://www.archlinux.org/packages/?name=pidgin-gfire) and then add a new account, selecting xfire as protocol.
 
 ## Security
 
@@ -193,19 +161,6 @@ Pidgin-GPG transparently encrypt conversations using GPG, and taking advantage o
 
 The plugin is available on AUR as [pidgin-gpg](https://aur.archlinux.org/packages/pidgin-gpg/). It can be enabled the same way as the previously mentioned ones.
 
-## Sametime protocol
-
-Sametime support is available by installing two packages from [AUR](/index.php/AUR "AUR"):
-
-*   [meanwhile](https://aur.archlinux.org/packages/meanwhile/)
-*   [libpurple-meanwhile](https://aur.archlinux.org/packages/libpurple-meanwhile/)
-
-Previously it was required to rebuild Pidgin to remove the `--disable-meanwhile` flag from compilation, this is no longer needed. Once these two packages are installed the 'Sametime' protocol will be available when creating an account.
-
-## SIP/Simple protocol for Live Communications Server 2003/2005/2007
-
-The [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) plugin is available in [official repositories](/index.php/Official_repositories "Official repositories").
-
 ## Other packages
 
 Arch has other Pidgin-related packages. Here are the most popular (for a thorough list, search the AUR):
@@ -214,10 +169,6 @@ Arch has other Pidgin-related packages. Here are the most popular (for a thoroug
 *   [guifications](https://www.archlinux.org/packages/?name=guifications) - Toaster-style popup notifications
 *   [microblog-purple](https://aur.archlinux.org/packages/microblog-purple/) - Libpurple plug-in supporting microblog services like Twitter
 *   [pidgin-latex](https://aur.archlinux.org/packages/pidgin-latex/) - A small latex plugin for pidgin. Put math between $$ and have it rendered (recepient also needs to have this installed)
-
-## Skype plugin
-
-Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-skypeweb) or [skype4pidgin-git](https://aur.archlinux.org/packages/skype4pidgin-git/) package.
 
 ## Auto logout on suspend
 
@@ -267,25 +218,6 @@ esac
 ## Minimize to tray
 
 To make use of the [Xfce](/index.php/Xfce "Xfce") system tray go to preferences and enable the system tray in the section "Interface". You can now close the main window and run pidgin minimized. You will also be able to see message notifications in the tray.
-
-## Troubleshooting
-
-### Installing Pidgin after a Carrier installation
-
-If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps *before* installing Pidgin:
-
-*   Quit Carrier
-*   Delete your `~/.purple` directory.
-
-**Warning:** This will remove all your user settings for any programs that use libpurple, i.e. Pidgin, Carrier, etc.
-
-```
-rm -r ~/.purple
-
-```
-
-*   Uninstall **carrier** and **libpurple**.
-*   Install **pidgin** and **libpurple**.
 
 ## History import Kopete to Pidgin
 
@@ -394,7 +326,84 @@ chmod +x ~/bin/history_import_kopete2pidgin.sh
 
 ```
 
+## Backup
+
+Save `~/.purple` to backup all message logs, accounts and other application data.
+
+## Troubleshooting
+
+### Browser error
+
+If clicking a link within Pidgin creates an error message about trying to use 'sensible-browser' to open a link, try editing `~/.purple/prefs.xml`. Find the line referencing 'sensible-browser' and change it to this:
+
+```
+<pref name='command' type='path' value='firefox'/>
+
+```
+
+This example assumes you use [Firefox](/index.php/Firefox "Firefox").
+
+As an alternative if the method above does not work you can set the desired browser in the pidgin preferences in the section "Browser".
+
+### ICQ Buddy Information encoding fix
+
+You can change encoding for ICQ account if encoding in Buddy Information is not correct:
+
+```
+Account > *your ICQ account* > Edit account > Advanced tab
+
+```
+
+Select `Encoding: CP1251` (for Cyrillic).
+
+### Installing Pidgin after a Carrier installation
+
+If you previously installed [carrier](https://aur.archlinux.org/packages/carrier/) (aka [FunPidgin](http://funpidgin.sourceforge.net/)), follow these steps *before* installing Pidgin:
+
+*   Quit Carrier
+*   Delete your `~/.purple` directory.
+
+**Warning:** This will remove all your user settings for any programs that use libpurple, i.e. Pidgin, Carrier, etc.
+
+```
+rm -r ~/.purple
+
+```
+
+*   Uninstall **carrier** and **libpurple**.
+*   Install **pidgin** and **libpurple**.
+
+### QIP encoding bug
+
+There is another bug in character encoding when communicating between Pidgin and QIP, which especially affects Czech language, but there are also other languages affected. There are two possible solutions. The better one is to upgrade from QIP to QIP 2012 or QIP Infium, second solution is to install and enable plugin from [pidgin-qip-decoder](https://aur.archlinux.org/packages/pidgin-qip-decoder/) package currently available from [AUR](/index.php/AUR "AUR").
+
+### Sound fix
+
+To have event sounds working, install the [gstreamer0.10-good](https://www.archlinux.org/packages/?name=gstreamer0.10-good) package. Alternatively, in the "Sounds" preferences tab, the method can be set to 'command' and one of the following sound commands used.
+
+After configuring [ALSA](/index.php/ALSA "ALSA"):
+
+```
+$ aplay %s
+
+```
+
+If using [OSS](/index.php/OSS "OSS"):
+
+```
+$ ossplay %s
+
+```
+
+And for [PulseAudio](/index.php/PulseAudio "PulseAudio"):
+
+```
+$ paplay %s
+
+```
+
 ## See also
 
+*   [Pidgin How To](https://developer.pidgin.im/wiki/Using%20Pidgin)
 *   [Pidgin homepage](http://pidgin.im)
 *   [History import Kopete to Pidgin](http://lukav.com/wordpress/2008/03/30/history-import-kopete-to-pidgin)

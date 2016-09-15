@@ -35,12 +35,18 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
+*   [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) ASA-201609-12
+*   [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) ASA-201609-11
+
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
 ### September 2016
 
+*   [14 September 2016] [ASA-201609-10](https://lists.archlinux.org/pipermail/arch-security/2016-September/000706.html) [mariadb](https://www.archlinux.org/packages/?name=mariadb) multiple issues
+*   [13 September 2016] [ASA-201609-9](https://lists.archlinux.org/pipermail/arch-security/2016-September/000705.html) [powerdns](https://www.archlinux.org/packages/?name=powerdns) denial of service
+*   [13 September 2016] [ASA-201609-8](https://lists.archlinux.org/pipermail/arch-security/2016-September/000704.html) [libtorrent-rasterbar](https://www.archlinux.org/packages/?name=libtorrent-rasterbar) denial of service
 *   [10 September 2016] [ASA-201609-7](https://lists.archlinux.org/pipermail/arch-security/2016-September/000703.html) [tomcat8](https://www.archlinux.org/packages/?name=tomcat8) proxy injection
 *   [09 September 2016] [ASA-201609-6](https://lists.archlinux.org/pipermail/arch-security/2016-September/000702.html) [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick) multiple issues
 *   [09 September 2016] [ASA-201609-5](https://lists.archlinux.org/pipermail/arch-security/2016-September/000701.html) [file-roller](https://www.archlinux.org/packages/?name=file-roller) directory traversal

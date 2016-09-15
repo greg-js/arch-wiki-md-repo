@@ -166,7 +166,7 @@ If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` the
 
 ```
 
-If using V4-only setup, only tcp port 2049 need to be opened. Therefore only one line need.
+If using V4-only setup, only tcp port 2049 need to be opened. Therefore only one line needed.
 
  `/etc/iptables/iptables.rules` 
 ```

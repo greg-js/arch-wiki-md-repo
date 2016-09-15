@@ -1,4 +1,4 @@
-**BUS1** is a work-in-progress in-kernel IPC mechanism.
+BUS1 is a work-in-progress in-kernel IPC mechanism.
 
 ## Trying it out
 

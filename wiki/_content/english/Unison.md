@@ -1,4 +1,4 @@
-**Unison** is a bidirectional file synchronization tool that runs on Unix-like operating systems (including Linux, Mac OS X, and Solaris) and Windows. It allows two replicas of a collection of files and directories to be stored on different hosts (or different disks on the same host), modified separately, and then brought up to date by propagating the changes in each replica to the other. It also unrestricted in terms of which system can be the host.
+**Unison** is a bidirectional file synchronization tool that runs on Unix-like operating systems (including Linux, macOS, and Solaris) and Windows. It allows two replicas of a collection of files and directories to be stored on different hosts (or different disks on the same host), modified separately, and then brought up to date by propagating the changes in each replica to the other. It also unrestricted in terms of which system can be the host.
 
 ## Contents
 
@@ -17,7 +17,7 @@
 
 ## Installation
 
-[Installing](/index.php/Installing "Installing") [unison](https://www.archlinux.org/packages/?name=unison) from the [official repositories](/index.php/Official_repositories "Official repositories"), which provides CLI, GTK+ and GTK+ 2.0 interfaces. For offline documentation install [unison-doc](https://aur.archlinux.org/packages/unison-doc/) from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [unison](https://www.archlinux.org/packages/?name=unison) package, which provides CLI, GTK+ and GTK+ 2.0 interfaces.
 
 ## Configuration
 

@@ -305,7 +305,7 @@ The official MPlayer homepage has a comprehensive list of available front-ends [
 
 *   [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)
 
-    	Hybrid is a multi platform (Linux/Mac OS X/Windows) Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an avi/mp4/m2ts/mkv/webm container, a BluRay or an AVCHD structure.
+    	Hybrid is a multi platform (Linux/macOS/Windows) Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an avi/mp4/m2ts/mkv/webm container, a BluRay or an AVCHD structure.
 
 *   [hypervc-qt4](https://aur.archlinux.org/packages/hypervc-qt4/)
 

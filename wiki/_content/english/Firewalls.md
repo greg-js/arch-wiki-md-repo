@@ -73,7 +73,7 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 	[http://www.fs-security.com/](http://www.fs-security.com/) || [Firestarter](https://aur.archlinux.org/packages/Firestarter/)
 
-*   **Firewall Builder** — GUI firewall configuration and management tool that supports iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA) and Cisco routers extended access lists. The program runs on Linux, FreeBSD, OpenBSD, Windows and Mac OS X and can manage both local and remote firewalls.
+*   **Firewall Builder** — GUI firewall configuration and management tool that supports iptables (netfilter), ipfilter, pf, ipfw, Cisco PIX (FWSM, ASA) and Cisco routers extended access lists. The program runs on Linux, FreeBSD, OpenBSD, Windows and macOS and can manage both local and remote firewalls.
 
 	[http://www.fwbuilder.org/](http://www.fwbuilder.org/) || [fwbuilder](https://www.archlinux.org/packages/?name=fwbuilder)
 

@@ -62,7 +62,7 @@ Display dimming: Yes
 CPU frequency scaling: Yes (*p4-clockmod*) | not tested | Hot keys: Yes *(HP keymap)*
 Remote: Yes, *except for DVD, Quickplay, and Windows MCE buttons*
 LightScribe: not tested | -- |
-| HP Pavilion dv9530em | 2009.06 | nVidia GeForce 8400M GS | Realtek ALC268 | RTL8168b/8111b | Intel 3945 *(iwl3945)* | yes | Suspend to RAM: Yes
+| HP Pavilion dv9530em | 2009.06 | nVidia GeForce 8400M GS | Realtek ALC268 | RTL8168b/8111b | Intel 3945 *(iwl3945)* | Yes | Suspend to RAM: Yes
 Suspend to Disk: Yes
 Battery: Yes
 Dimming of display: Yes
@@ -72,7 +72,7 @@ LightScribe: not tested | -- |
 Remote: not working
 Hot keys: not tested
 LightScribe: not tested | People with this same laptop have gotten the hot keys and touch screen to work on other distributions. |
-| HP Elitebook 8560w | 2012 | NVIDIA quadro 1000M (*nvidia/nouveau driver*) | Intel sound card: *snd-hda-intel* | *e1000e* | Intel wireless: *iwlwifi* | -- | ACPI: Yes
+| HP Elitebook 8560w | 2012 | NVIDIA quadro 1000M (*nvidia/nouveau driver*) | Intel sound card: *snd-hda-intel* | *e1000e* | Intel wireless: *iwlwifi* | Yes | ACPI: Yes
 Suspend to RAM: No
 Suspend to Disk: Yes
 Battery: Yes

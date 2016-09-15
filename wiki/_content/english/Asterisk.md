@@ -1,4 +1,4 @@
-[Asterisk](http://www.asterisk.org) is a complete PBX (private branch exchange) in software. It runs on Linux, BSD, Windows and OS X and provides all of the features you would expect from a PBX and more. Asterisk does voice over IP in four protocols, and can interoperate with almost all standards-based telephony equipment using relatively inexpensive hardware.
+[Asterisk](http://www.asterisk.org) is a complete PBX (private branch exchange) in software. It runs on Linux, BSD, Windows and macOS and provides all of the features you would expect from a PBX and more. Asterisk does voice over IP in four protocols, and can interoperate with almost all standards-based telephony equipment using relatively inexpensive hardware.
 
 Asterisk provides voice-mail services with directory, call conferencing, interactive voice response and call queuing. It has support for three-way calling, caller ID services, ADSI, IAX, SIP, H.323 (as both client and gateway), MGCP (call manager only) and SCCP/Skinny.
 

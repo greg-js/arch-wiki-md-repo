@@ -85,15 +85,15 @@ $ printf '%s
 
 ## dd
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) is an utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
+[dd](https://en.wikipedia.org/wiki/dd_(Unix) is a utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
 
-By default *dd* makes a bit to bit copy of file. Which is similar to what *cp* doing. But besides *cp*, *dd* can connect receive and wait bit input from devices. *dd* also has many additional flow control features.
+Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with lower-level I/O flow control features.
 
-**Note:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. See the [man dd](http://www.gnu.org/software/coreutils/dd) for more information.
+**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
 
-It can be used to:
+'dd' can be used to:
 
-*   'dd' can be used in [drive related](/index.php/Disk_cloning#Using_dd "Disk cloning") tasks to:
+*   [drive-related](/index.php/Disk_cloning#Using_dd "Disk cloning") tasks:
     *   Create an image.
     *   Write an image.
     *   Clone whole drive, or partition.
@@ -103,14 +103,12 @@ It can be used to:
     *   Restore system.
 *   Get stream from device, `dd /dev/random`, or some input device.
 *   Create load on CPU (example: `dd if=/dev/zero of=/dev/null`).
-*   Create load on disc (example: `dd if=/dev/zero of=/*path*/*testfile* bs=*number_of*G count=*times* oflag=*fdatasync*`).
-*   Create I/O load on disk (many rapid read/writes) (example above with little block size (*bs*) and big amount of cycles (*count*) and needed *oflag*, basing on what and how you want to test).
+*   Create load on disk (example: `dd if=/dev/zero of=/*path*/*testfile* bs=*number_of*G count=*times* oflag=*fdatasync*`).
+*   Create I/O load on disk (many rapid read/writes) (example above with little block size (`bs`) and big amount of cycles (`count`) and needed `oflag`, based on what and how you want to test).
 *   As a backup utility or part of solution.
 *   Convert a file to upper/lower case.
 
-[dd man(1)](http://man7.org/linux/man-pages/man1/dd+man.1.html) can be hard to understand, to few words, better see comprehensive [Full documentation](http://www.gnu.org/software/coreutils/dd).
-
-**Note:** *cp* does the same as *dd* without any operands but is not designed for more versatile disk wiping procedures.
+For more information see [dd(1)](http://man7.org/linux/man-pages/man1/dd.1.html) or the [full documentation](http://www.gnu.org/software/coreutils/dd).
 
 ## grep
 
@@ -118,7 +116,7 @@ It can be used to:
 
 *   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
 *   There are *grep* alternatives optimized for VCS source code, such as [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) and [ack](https://www.archlinux.org/packages/?name=ack).
-*   To include file line numbers in the output, add the option `-n` to the line.
+*   To include file line numbers in the output, use the `-n` option.
 
 **Note:** Some commands send their output to [stderr(3)](http://man7.org/linux/man-pages/man3/stderr.3.html), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 

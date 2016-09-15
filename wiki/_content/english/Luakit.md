@@ -1,4 +1,4 @@
-[Luakit](http://mason-larobina.github.io/luakit/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts.
+[Luakit](http://luakit.github.io/luakit/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts.
 
 ## Contents
 
@@ -476,5 +476,5 @@ domain_props = {
 
 ## See also
 
-*   [Home page](http://mason-larobina.github.com/luakit/)
+*   [Home page](http://luakit.github.io/luakit/)
 *   [Cheatsheet](http://shariebeth.com/computers/luakitcheatsheet.txt)

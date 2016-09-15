@@ -1,4 +1,4 @@
-[CUPS](http://www.cups.org/) is the standards-based, open source printing system developed by Apple Inc. for OS X® and other UNIX®-like operating systems.
+[CUPS](http://www.cups.org/) is the standards-based, open source printing system developed by Apple Inc. for macOS® and other UNIX®-like operating systems.
 
 ## Contents
 

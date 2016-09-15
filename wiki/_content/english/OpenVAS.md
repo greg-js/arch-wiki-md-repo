@@ -109,43 +109,6 @@ Point your web browser to [http://127.0.0.1](http://127.0.0.1) and login with yo
 
 Redhat based systemd units are in an AUR package named [openvas-systemd](https://aur.archlinux.org/packages/openvas-systemd/). The contain a few tweaks such as better TLS settings.
 
-At the time of writing, there are no service files provided with the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) that will maintain `openvasmd` or `gsad`. Until they are added, consider using and customizing the following service files to ease the deployment of a streamlined OpenVAS system:
-
-```
-$ cat /usr/lib/systemd/system/openvas-manager.service 
-[Unit]
-Description = OpenVAS Manager
-Wants = openvas-scanner.service
-After = network.target
-
-[Service]
-ExecStart = /usr/bin/openvasmd --foreground -p 9390 -a 127.0.0.1
-
-[Install]
-WantedBy = multi-user.target
-
-```
-
-```
-$ cat /usr/lib/systemd/system/gsa.service 
-[Unit]
-Description = Greenbone Security Assistant
-After = network.target
-
-[Service]
-ExecStart = /usr/bin/gsad --foreground
-
-[Install]
-WantedBy = multi-user.target
-
-```
-
-**Note:** `--foreground` is needed and not optional.
-
-Finally, [start/enable](/index.php/Systemd "Systemd") your newly created `openvas-manager` and `gsa` services in addition to `openvas-scanner` if you haven't already started it.
-
-**Note:** `openvas-manager` should start immediately but will take time to load NVTs. You won't be able to start scanning until all NVTs are loaded.
-
 ## Migration to new major versions
 
 The database needs to be migrated when moving to a new major version:

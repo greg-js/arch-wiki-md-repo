@@ -16,7 +16,6 @@
         *   [3.4.2 CLI Examples](#CLI_Examples)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
-    *   [4.2 UDP Failed to set receive/sent buffer](#UDP_Failed_to_set_receive.2Fsent_buffer)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -212,20 +211,6 @@ The daemon is started after `network.service` was initialised. However, if you e
 [Unit]
 Requires=network.target
 ```
-
-### UDP Failed to set receive/sent buffer
-
-The error messages `UDP Failed to set receive buffer` and `UDP Failed to set sent buffer` mean that Transmission would like a bigger sent and receive buffer. These buffers can be changed by adding the following file:
-
- `/etc/sysctl.d/60-net_buffer.conf` 
-```
-
-net.core.rmem_max = 16777216
-net.core.wmem_max = 4194304
-
-```
-
-To load the new configuration run `# sysctl --system` and then reload Transmission.
 
 ## See also
 

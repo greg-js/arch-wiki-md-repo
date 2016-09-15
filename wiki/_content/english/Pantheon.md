@@ -1,4 +1,4 @@
-[Pantheon](http://elementary.io/) is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and Mac OS X.
+[Pantheon](http://elementary.io/) is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and macOS.
 
 ## Contents
 
@@ -71,7 +71,7 @@ However,it is recommended to install the following packages to get a fully worki
 *   [lightdm-pantheon-greeter-bzr](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-bzr/): LightDM greeter
 *   [maya-calendar-bzr](https://aur.archlinux.org/packages/maya-calendar-bzr/): Calendar
 *   [midori-granite-bzr](https://aur.archlinux.org/packages/midori-granite-bzr/): Web browser
-*   [noise-bzr](https://aur.archlinux.org/packages/noise-bzr/): Audio player
+*   [noise-player-bzr](https://aur.archlinux.org/packages/noise-player-bzr/): Audio player
 *   [pantheon-backgrounds-bzr](https://aur.archlinux.org/packages/pantheon-backgrounds-bzr/): Wallpaper collection
 *   [pantheon-calculator-bzr](https://aur.archlinux.org/packages/pantheon-calculator-bzr/): Calculator
 *   [pantheon-default-settings-bzr](https://aur.archlinux.org/packages/pantheon-default-settings-bzr/): Pantheon default's settings (appearance, etc.)

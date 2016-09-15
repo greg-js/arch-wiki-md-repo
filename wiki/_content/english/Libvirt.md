@@ -576,32 +576,7 @@ if (__name__ == "__main__"):
 
 ## UEFI Support
 
-For UEFI support you need to install the OVMF packages [Gerd Hoffman's repository](https://www.kraxel.org/repos/jenkins/edk2/).
-
-Download and extract edk2.git-ovmf-x64 to /usr.
-
-[Install](/index.php/Install "Install") [rpmextract](https://www.archlinux.org/packages/?name=rpmextract).
-
-```
-# rpmextract.sh edk2.git-ovmf-x64-0-20150223.b877.ga8577b3.noarch.rpm
-# cp -R ./usr/share/* /usr/share
-```
-
-Then you will have to source the OVMF files in `/etc/libvirt/qemu.conf`. Set the following details:
-
-```
-nvram = [
-  "/usr/share/edk2.git/ovmf-x64/OVMF_CODE-pure-efi.fd:/usr/share/edk2.git/ovmf-x64/OVMF_VARS-pure-efi.fd",
-]
-
-```
-
-Then restart libvirtd:
-
-```
-systemctl restart libvirtd.service
-
-```
+[Install](/index.php/Install "Install") the [ovmf](https://www.archlinux.org/packages/?name=ovmf) package.
 
 ## PulseAudio
 

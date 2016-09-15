@@ -76,7 +76,7 @@ There's a good list of software with Avahi support at their website: [http://ava
 
 #### NFS
 
-If you have an [NFS](/index.php/NFS "NFS") share set up, you can use Avahi to be able to automount them in Zeroconf-enabled browsers (such as Konqueror on KDE and Finder on OS X).
+If you have an [NFS](/index.php/NFS "NFS") share set up, you can use Avahi to be able to automount them in Zeroconf-enabled browsers (such as Konqueror on KDE and Finder on macOS).
 
 Create a `.service` file in `/etc/avahi/services` with the following contents:
 
@@ -94,7 +94,7 @@ Create a `.service` file in `/etc/avahi/services` with the following contents:
 </service-group>
 ```
 
-The port is correct if you have *insecure* as an option in your `/etc/exports`; otherwise, it needs to be changed (note that *insecure* is needed for OS X clients). The path is the path to your export, or a subdirectory of it. For some reason the automount functionality has been removed from Leopard, however [a script is available](http://www.macosxhints.com/article.php?story=20071116042238744). This was based upon [this post](http://ubuntuforums.org/showthread.php?p=4387032#post4387032).
+The port is correct if you have *insecure* as an option in your `/etc/exports`; otherwise, it needs to be changed (note that *insecure* is needed for macOS clients). The path is the path to your export, or a subdirectory of it. For some reason the automount functionality has been removed from Leopard, however [a script is available](http://www.macosxhints.com/article.php?story=20071116042238744). This was based upon [this post](http://ubuntuforums.org/showthread.php?p=4387032#post4387032).
 
 #### Samba
 
@@ -171,7 +171,7 @@ Avahi along with CUPS also provides the capability to print to just about any pr
 
 ```
 
-Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py](https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py) can be used to generate Avahi service files. It depends on python2 and pycups. The script can be run using:
+Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py](https://raw.github.com/tjfontaine/airprint-generate/master/airprint-generate.py) can be used to generate Avahi service files. It depends on [python2](https://www.archlinux.org/packages/?name=python2) and [python2-pycups](https://www.archlinux.org/packages/?name=python2-pycups). The script can be run using:
 
 ```
 # python2 airprint-generate.py -d /etc/avahi/services

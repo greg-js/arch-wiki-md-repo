@@ -129,7 +129,10 @@ $ cat test.mail | msmtp -a default <username>@domain.com
 
 ```
 
-**Tip:** If using Gmail you'll need to allow "Less Secure Apps" in *Settings* > *Security*. Make sure to sign out of your other Gmail accounts first because the security settings part of Google Accounts can not manage concurrent sessions of more than one account.
+**Tip:** If using Gmail you'll need to either
+
+*   Allow "Less Secure Apps" in *Settings* > *Security*. Make sure to sign out of your other Gmail accounts first because the security settings part of Google Accounts can not manage concurrent sessions of more than one account.
+*   Enable two factor authemtication and create an app password.
 
 **Tip:** You can use *--read-envelope-from* instead of *-a default* to automatically chose account by *From:* field in message you are going to send.
 

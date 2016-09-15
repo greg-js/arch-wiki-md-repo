@@ -8,7 +8,8 @@ The ArmStone A9 is an ARM developement platform board in PicoITX form factor wit
     *   [1.3 Serial console access](#Serial_console_access)
 *   [2 Setup](#Setup)
     *   [2.1 Install kernel](#Install_kernel)
-    *   [2.2 Booting from USB](#Booting_from_USB)
+    *   [2.2 Install device tree file](#Install_device_tree_file)
+    *   [2.3 Booting from USB](#Booting_from_USB)
 *   [3 See also](#See_also)
 
 ## Prerequisites
@@ -38,6 +39,15 @@ armStoneA9 # usb start
 armStoneA9 # ext2load usb 0:1 $(loadaddr) /boot/uImage-fsimx6
 armStoneA9 # nand erase.part Kernel
 armStoneA9 # nand write $loadaddr Kernel $filesize
+
+```
+
+### Install device tree file
+
+```
+tftp armstonea9q.dtb
+nand erase.part FDT
+nand write $loadaddr FDT $filesize
 
 ```
 

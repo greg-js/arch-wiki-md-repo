@@ -130,7 +130,7 @@ This line will look the same in both files. Repeat the process for all the 3 var
 
 To finish you will have to select the skin in Steam: *Settings > Interface* and *<default skin>* in the drop-down menu.
 
-You can use these files across distributions and even between Windows and Linux (OS X has its own entry for the desktop notification placement)
+You can use these files across distributions and even between Windows and Linux (macOS has its own entry for the desktop notification placement)
 
 #### On-the-fly patch
 

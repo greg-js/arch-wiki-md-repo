@@ -63,7 +63,7 @@ sets the time to May 26th, year 2014, 11:13 and 54 seconds.
 
 There are two time standards: **localtime** and [Coordinated Universal Time](https://en.wikipedia.org/wiki/Coordinated_Universal_Time "wikipedia:Coordinated Universal Time") (**UTC**). The localtime standard is dependent on the current *time zone*, while UTC is the *global* time standard and is independent of time zone values. Though conceptually different, UTC is also known as GMT (Greenwich Mean Time).
 
-The standard used by hardware clock (CMOS clock, the time that appears in BIOS) is defined by the operating system. By default, Windows uses localtime, Mac OS uses UTC, and UNIX-like operating systems vary. An OS that uses the UTC standard, generally, will consider CMOS (hardware clock) time a UTC time (GMT, Greenwich time) and make an adjustment to it while setting the System time on boot according to your time zone.
+The standard used by hardware clock (CMOS clock, the time that appears in BIOS) is defined by the operating system. By default, Windows uses localtime, macOS uses UTC, and UNIX-like operating systems vary. An OS that uses the UTC standard, generally, will consider CMOS (hardware clock) time a UTC time (GMT, Greenwich time) and make an adjustment to it while setting the System time on boot according to your time zone.
 
 **Note:** If `/etc/adjtime` is not present, [systemd](/index.php/Systemd "Systemd") assumes the hardware clock is set to UTC.
 
@@ -205,7 +205,7 @@ When the hardware clock is set with `hwclock`, a new drift value is calculated i
 
 **Note:** If the hwclock has been set again less than 24 hours after a previous set, the drift is not recalculated as `hwclock` considers the elapsed time period too short to accurately calculate the drift.
 
-If the hardware clock keeps losing or gaining time in large increments, it is possible that an invalid drift has been recorded (but only applicable, if the hwclock daemon is running). This can happen if you have set the hardware clock time incorrectly or your [time standard](#Time_standard) is not synchronized with a Windows or Mac OS install. The drift value can be removed by removing the file `/etc/adjtime`, then set the correct hardware clock and system clock time, and check if your time standard is correct.
+If the hardware clock keeps losing or gaining time in large increments, it is possible that an invalid drift has been recorded (but only applicable, if the hwclock daemon is running). This can happen if you have set the hardware clock time incorrectly or your [time standard](#Time_standard) is not synchronized with a Windows or macOS install. The drift value can be removed by removing the file `/etc/adjtime`, then set the correct hardware clock and system clock time, and check if your time standard is correct.
 
 **Note:** For those using systemd, but wish to make use of the drift value stored in `/etc/adjtime` (i.e. perhaps cannot or do not want to use NTP); they need to call `hwclock --adjust` on a regular basis, perhaps by creating a cron job.
 

@@ -1,6 +1,6 @@
 According to the [official website](http://www.gnupg.org):
 
-	GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as PGP). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
+	GnuPG is a complete and free implementation of the [OpenPGP](http://openpgp.org/about/) standard as defined by [RFC4880](https://tools.ietf.org/html/rfc4880) (also known as PGP). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
 
 ## Contents
 
@@ -803,6 +803,7 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 ## See also
 
 *   [GNU Privacy Guard Homepage](https://gnupg.org/)
+*   [RFC4880 "OpenPGP Message Format"](https://tools.ietf.org/html/rfc4880)
 *   [Creating GPG Keys (Fedora)](https://fedoraproject.org/wiki/Creating_GPG_Keys)
 *   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
 *   [A more comprehensive gpg Tutorial](http://blog.sanctum.geek.nz/series/linux-crypto/)

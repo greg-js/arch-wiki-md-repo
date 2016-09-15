@@ -39,14 +39,12 @@
     *   [4.3 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
     *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
     *   [4.5 Trouble accessing a password-protected share from Windows](#Trouble_accessing_a_password-protected_share_from_Windows)
-    *   [4.6 Getting a dialog box up takes a long time](#Getting_a_dialog_box_up_takes_a_long_time)
-    *   [4.7 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
-    *   [4.8 Sharing a folder fails](#Sharing_a_folder_fails)
-    *   [4.9 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
-    *   [4.10 You are not the owner of the folder](#You_are_not_the_owner_of_the_folder)
-    *   [4.11 protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.6 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
+    *   [4.7 Sharing a folder fails](#Sharing_a_folder_fails)
+    *   [4.8 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.9 protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
+    *   [4.10 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
+    *   [4.11 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -788,24 +786,6 @@ client ntlmv2 auth = no
 
 ```
 
-### Getting a dialog box up takes a long time
-
-I had a problem that it took ~30 seconds to get a password dialog box up when trying to connect from both Windows XP/Windows 7\. Analyzing the error.log on the server I saw:
-
-```
-[2009/11/11 06:20:12,  0] printing/print_cups.c:cups_connect(103)
-Unable to connect to CUPS server localhost:631 - Interrupted system call
-
-```
-
-This keeps samba from asking cups and also from complaining about /etc/printcap missing:
-
-```
-printing = bsd
-printcap name = /dev/null
-
-```
-
 ### Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL
 
 If you are a home user and using samba purely for file sharing from a server or NAS, you are probably not interested in sharing printers through it. If so, you can prevent this error from occurring by adding the following lines to your `/etc/samba/smb.conf`:
@@ -844,10 +824,6 @@ iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
 ```
 
 to your iptables setup.
-
-### You are not the owner of the folder
-
-Simply try to reboot the system.
 
 ### protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE
 

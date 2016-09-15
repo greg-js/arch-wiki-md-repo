@@ -2,6 +2,12 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.7.3-5**
+
+*   Changelog: update to ck4/bfs497 and reenable CONFIG_CGROUP_SCHED.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=501fa0a760e49b7f8f40b02133a72d78f878aae6](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=501fa0a760e49b7f8f40b02133a72d78f878aae6)
+*   Note: I am waiting to hear back from CK before I build the repo packages since he may suggest disabling CONFIG_CGROUP_SCHED. I like to think that the Arch community plays a large role in helping CK to refine bfs so AUR users please continue provide feedback to ck's blog as usual: [http://ck-hack.blogspot.com/2016/09/bfs-497-linux-47-ck4.html](http://ck-hack.blogspot.com/2016/09/bfs-497-linux-47-ck4.html)
+
 **Bump to v4.7.3-4**
 
 *   Changelog: Disable CONFIG_CGROUP_SCHED per CK's suggestion.

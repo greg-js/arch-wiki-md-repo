@@ -79,7 +79,7 @@ There are a variety of ways to acquire bitcoins:
 *   There are several services where you can trade them for [traditional currency](https://en.bitcoin.it/wiki/Buying_bitcoins).
 *   Find someone to trade cash for bitcoins in-person through a local directory. To find traders near you, you can use [bitcoin.local](http://www.tradebitcoin.com/) or a [bitcoin map](http://www.bitcoinmap.com/).
 *   Participate in a [mining pool](https://en.bitcoin.it/wiki/Pooled_mining).
-*   If you have very good hardware, you can solo mine and attempt to create a new block (currently yields 25 bitcoins).
+*   If you have very good hardware, you can solo mine and attempt to create a new block (currently yields 12 bitcoins).
 
 For those who are just getting started, you can visit [BitcoinReward](http://www.bitcoinreward.net/) to get some free coins. For more details and other ways of making Bitcoins see [We Use Coins](http://www.weusecoins.com/getting-started.php).
 

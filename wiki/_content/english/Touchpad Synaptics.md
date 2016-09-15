@@ -150,7 +150,7 @@ EndSection
 
 	**VertScrollDelta** and **HorizScrollDelta**
 
-	(integer) configures the speed of scrolling, it is a bit counter-intuitive because higher values produce greater precision and thus slower scrolling. Negative values cause natural scrolling like in OS X.
+	(integer) configures the speed of scrolling, it is a bit counter-intuitive because higher values produce greater precision and thus slower scrolling. Negative values cause natural scrolling like in macOS.
 
 **Note:**
 

@@ -271,7 +271,7 @@ before starting it.
 
 ### Cheese
 
-[cheese](https://www.archlinux.org/packages/?name=cheese) is the GNOME photo/video taking client. It is similar to Photo Booth in Mac OS X. It is in the official repositories.
+[cheese](https://www.archlinux.org/packages/?name=cheese) is the GNOME photo/video taking client. It is similar to Photo Booth in macOS. It is in the official repositories.
 
 In case of the following error:
 

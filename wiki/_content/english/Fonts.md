@@ -39,7 +39,7 @@ Note that certain font licenses may impose some legal limitations.
         *   [4.3.13 Tibetan](#Tibetan)
     *   [4.4 Math](#Math)
     *   [4.5 Metric-compatible fonts](#Metric-compatible_fonts)
-    *   [4.6 Apple OS X fonts](#Apple_OS_X_fonts)
+    *   [4.6 Apple macOS fonts](#Apple_macOS_fonts)
     *   [4.7 Monospaced](#Monospaced)
         *   [4.7.1 TrueType](#TrueType)
         *   [4.7.2 Bitmap](#Bitmap)
@@ -477,9 +477,9 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 
 See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts"), which lists available alternatives for [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
 
-### Apple OS X fonts
+### Apple macOS fonts
 
-*   [ttf-mac-fonts](https://aur.archlinux.org/packages/ttf-mac-fonts/) - Mac OS X TrueType fonts
+*   [ttf-mac-fonts](https://aur.archlinux.org/packages/ttf-mac-fonts/) - macOS TrueType fonts
 
 ### Monospaced
 

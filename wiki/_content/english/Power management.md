@@ -168,10 +168,7 @@ ExecStart=/usr/bin/mysql -e 'slave start'
 WantedBy=suspend.target
 ```
 
-**Note:**
-
-*   When using [slock](/index.php/Slock "Slock"), do not start service before sleep. Use the default simple service type. Otherwise, **slock** holds the service from finishing, and the system will only enter sleeping once unlocked. Specifying type as forking does not help here.
-*   As screen lockers may return before the screen is "locked", the screen may flash on resuming from suspend. Adding a small delay via `ExecStartPost=/usr/bin/sleep 1` helps prevent this.
+**Note:** As screen lockers may return before the screen is "locked", the screen may flash on resuming from suspend. Adding a small delay via `ExecStartPost=/usr/bin/sleep 1` helps prevent this.
 
 For root/system actions ([enable](/index.php/Enable "Enable") the `root-resume` and `root-suspend` services to have them started at boot):
 

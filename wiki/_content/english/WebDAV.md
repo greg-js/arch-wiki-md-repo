@@ -55,7 +55,7 @@ Alias /dav "/home/httpd/html/dav"
 
 ```
 
-Check the permissions of DavLockDB's directory and insure it is writable by the apache user (http):
+Check the permissions of DavLockDB's directory and ensure it is writable by the apache user (http):
 
 ```
 # chown -R http:http /home/httpd/DAV # Otherwise you wouldn't be able to upload files

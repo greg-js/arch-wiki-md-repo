@@ -23,7 +23,7 @@
 
 ### Kernel
 
-**Note:** The User-namespace (`CONFIG_USER_NS=Y`) isn't set in the [kernel](/index.php/Kernel "Kernel") configuration, but may be required for AppArmor to function properly. See [bug #36969](https://bugs.archlinux.org/task/36969) for details.
+**Note:** The highly disputed user namespace (`CONFIG_USER_NS=Y`) isn't set in the [kernel](/index.php/Kernel "Kernel") configuration, but may bring additional functionality to AppArmor. See [FS#36969](https://bugs.archlinux.org/task/36969) for details on user namespaces.
 
 When compiling the kernel, it is required to at least set the following options:
 
@@ -34,6 +34,8 @@ When compiling the kernel, it is required to at least set the following options:
  CONFIG_AUDIT=y
 
 ```
+
+For those new or altered variables to not get overridden, place them at the bottom of the config file or adjust the previous invocations accordingly.
 
 Instead of setting `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE` and `CONFIG_DEFAULT_SECURITY_APPARMOR`, you can also set [kernel boot parameters](/index.php/Kernel_parameters "Kernel parameters"): `apparmor=1 security=apparmor`.
 

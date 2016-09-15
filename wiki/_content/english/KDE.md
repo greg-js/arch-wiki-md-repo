@@ -187,13 +187,9 @@ In some themes, tooltips in GTK+ applications have white text on white backgroun
 
 Plasmoids are little scripted (plasmoid scripts) or coded (plasmoid binaries) KDE applications designed to enhance the functionality of your desktop.
 
-Plasmoid binaries can be installed using PKGBUILDs from [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v), or you can write your own PKGBUILD.
+The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*. This will present a nice frontend for [kde-look.org](http://www.kde-look.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
-The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*.
-
-This will present a nice frontend for [kde-look.org](http://www.kde-look.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
-
-Most plasmoids are not created officially by KDE developers. You can also try installing Mac OS X widgets, Microsoft Windows Vista/7 widgets, Google Widgets, and even SuperKaramba widgets.
+Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v).
 
 ##### Sound applet in the system tray
 

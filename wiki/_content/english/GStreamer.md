@@ -2,7 +2,7 @@ GStreamer is a pipeline-based multimedia framework written in the C programming 
 
 GStreamer allows a programmer to create a variety of media-handling components, including simple audio playback, audio and video playback, recording, streaming and editing. The pipeline design serves as a base to create many types of multimedia applications such as video editors, streaming media broadcasters, and media players.
 
-Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and ARM), Solaris (Intel and SPARC), Mac OS X, Microsoft Windows and OS/400\. GStreamer has bindings for programming-languages like [Python](/index.php/Python "Python"), C++, Perl, GNU Guile ([guile](https://www.archlinux.org/packages/?name=guile)), and [Ruby](/index.php/Ruby "Ruby"). GStreamer is free software, licensed under the GNU Lesser General Public License.
+Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and ARM), Solaris (Intel and SPARC), macOS, Microsoft Windows and OS/400\. GStreamer has bindings for programming-languages like [Python](/index.php/Python "Python"), C++, Perl, GNU Guile ([guile](https://www.archlinux.org/packages/?name=guile)), and [Ruby](/index.php/Ruby "Ruby"). GStreamer is free software, licensed under the GNU Lesser General Public License.
 
 ## Contents
 

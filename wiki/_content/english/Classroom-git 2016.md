@@ -40,7 +40,6 @@ Add the nick you want to use on git and a link to your public key to the table.
 | cirrusUK | [public key](https://ptpb.pw/6di9/sh) |
 | 5225225 | [public key](https://ptpb.pw/TVjm/sh) |
 | merriment | [public key](https://ptpb.pw/OtzU/sh) |
-| respiranto | [public key](https://respiranto.de/clr_key.pub) |
 | nick | key |
 
 ### Help

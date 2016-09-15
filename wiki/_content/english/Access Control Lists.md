@@ -6,11 +6,6 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Enabling ACL](#Enabling_ACL)
     *   [2.2 Set ACL](#Set_ACL)
-        *   [2.2.1 Set permissions for a user](#Set_permissions_for_a_user)
-        *   [2.2.2 Set permissions for a group](#Set_permissions_for_a_group)
-        *   [2.2.3 Allow all files or directories to inherit ACL entries from the directory it is within](#Allow_all_files_or_directories_to_inherit_ACL_entries_from_the_directory_it_is_within)
-        *   [2.2.4 Remove a specific entry](#Remove_a_specific_entry)
-        *   [2.2.5 Remove all entries](#Remove_all_entries)
     *   [2.3 Show ACL](#Show_ACL)
 *   [3 Examples](#Examples)
     *   [3.1 Output of ls command](#Output_of_ls_command)
@@ -53,51 +48,37 @@ Using the default mount options instead of an entry in `/etc/fstab` is very usef
 
 ### Set ACL
 
-To modify ACL use `setfacl` command. To add permissions use `setfacl -m`.
+The ACL can be modified using the *setfacl* command.
 
-#### Set permissions for a user
-
-```
-# setfacl -m "u:username:permissions" <file/dir>
+To add permissions for a user (`*user*` is either the user name or ID):
 
 ```
-
-or
-
-```
-# setfacl -m "u:uid:permissions" <file/dir>
+# setfacl -m "u:*user:permissions*" <file/dir>
 
 ```
 
-#### Set permissions for a group
+To add permissions for a group (`*group*` is either the group name or ID):
 
 ```
-# setfacl -m "g:groupname:permissions" <file/dir>
-
-```
-
-or
-
-```
-# setfacl -m "g:gid:permissions" <file/dir>
+# setfacl -m "g:*group:permissions*" <file/dir>
 
 ```
 
-#### Allow all files or directories to inherit ACL entries from the directory it is within
+To allow all files or directories to inherit ACL entries from the directory it is within:
 
 ```
-# setfacl -dm "entry" <dir>
-
-```
-
-#### Remove a specific entry
-
-```
-# setfacl -x "entry" <file/dir>
+# setfacl -dm "*entry*" <dir>
 
 ```
 
-#### Remove all entries
+To remove a specific entry:
+
+```
+# setfacl -x "*entry*" <file/dir>
+
+```
+
+To remove all entries:
 
 ```
 # setfacl -b <file/dir>
@@ -244,6 +225,6 @@ As the above output shows, `other`'s no longer have any permissions, but `webser
 
 ## See also
 
-*   Man Page - `man getfacl`
-*   Man Page - `man setfacl`
+*   [getfacl(1)](http://man7.org/linux/man-pages/man1/getfacl.1.html)
+*   [setfacl(1)](http://man7.org/linux/man-pages/man1/setfacl.1.html)
 *   An old but still relevant (and thorough) [guide](http://www.vanemery.com/Linux/ACL/linux-acl.html) to ACL

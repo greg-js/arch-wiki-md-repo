@@ -98,7 +98,7 @@ Google ships open-source metric-compatible fonts with its operating system, Chro
 
 #### Wine Tahoma
 
-The [Wine](/index.php/Wine "Wine") project developed a metric-compatible font to replace Microsoft's [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)"), available as [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/).
+The [Wine](/index.php/Wine "Wine") project developed a metric-compatible font to replace Microsoft's [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)"), available as [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/). Its name in TTF data is simply "Tahoma", so there is no configuration needed.
 
 ## Example configuration
 

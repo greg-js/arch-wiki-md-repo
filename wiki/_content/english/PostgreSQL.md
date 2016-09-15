@@ -170,7 +170,8 @@ The PostgreSQL database server configuration file is `postgresql.conf`. This fil
 Edit the file `/var/lib/postgres/data/postgresql.conf`. In the connections and authentications section, add the `listen_addresses` line to your needs:
 
 ```
-listen_addresses = 'localhost,my_remote_client_ip_address'
+listen_addresses = 'localhost,*my_local_ip_address'*
+#You can use '*' to listen on all local addresses
 
 ```
 

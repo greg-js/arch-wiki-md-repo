@@ -123,10 +123,7 @@ URxvt.font: xft:monaco:bold:size=10
 
 ```
 
-**Note:**
-
-*   If there is a hyphen(-) in an Xft font name, it must be escaped with backslash(\) twice. It's different from the usage of urxvt -fn option and the result that fc-list returns, where backslash present only once
-*   You will see a new font only after restart X
+**Note:** If there is a hyphen(-) in an Xft font name, it must be escaped with backslash(\) twice. It's different from the usage of urxvt -fn option and the result that fc-list returns, where backslash present only once
 
 A nice method for testing out fonts in a live terminal before committing to the config is by printing escape codes in the terminal, for example:
 

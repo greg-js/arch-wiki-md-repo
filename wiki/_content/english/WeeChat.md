@@ -33,7 +33,7 @@
 
 ## Installing
 
-[Install](/index.php/Install "Install") [weechat](https://www.archlinux.org/packages/?name=weechat) from the [official repositories](/index.php/Official_repositories "Official repositories"). The development version [weechat-git](https://aur.archlinux.org/packages/weechat-git/) is available in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [weechat](https://www.archlinux.org/packages/?name=weechat) package, or [weechat-git](https://aur.archlinux.org/packages/weechat-git/) for the development version.
 
 ## Running WeeChat
 

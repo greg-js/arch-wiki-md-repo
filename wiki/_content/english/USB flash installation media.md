@@ -12,7 +12,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
             *   [1.1.2.2 Using USBwriter](#Using_USBwriter)
             *   [1.1.2.3 Using Cygwin](#Using_Cygwin)
             *   [1.1.2.4 dd for Windows](#dd_for_Windows)
-        *   [1.1.3 In Mac OS X](#In_Mac_OS_X)
+        *   [1.1.3 In macOS](#In_macOS)
     *   [1.2 Using manual formatting](#Using_manual_formatting)
         *   [1.2.1 In GNU/Linux](#In_GNU.2FLinux_2)
         *   [1.2.2 In Windows](#In_Windows_2)
@@ -139,9 +139,9 @@ You can find out the physical drive number by typing `wmic diskdrive list brief`
 
 Any Explorer window must be closed or dd will report an error.
 
-#### In Mac OS X
+#### In macOS
 
-To be able to use `dd` on your USB device on a Mac you have to do some special maneuvers. First of all insert your usb device, OS X will automount it, and in `Terminal.app` run:
+To be able to use `dd` on your USB device on a Mac you have to do some special maneuvers. First of all insert your usb device, macOS will automount it, and in `Terminal.app` run:
 
 ```
 $ diskutil list
@@ -155,7 +155,7 @@ $ diskutil unmountDisk /dev/disk2
 
 ```
 
-Now we can continue in accordance with the instructions above (but, if you are using the OS X `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1m`. `rdisk` means "raw disk" and is much faster on OS X, and `bs=1m` indicates a 1 MB block size).
+Now we can continue in accordance with the instructions above (but, if you are using the macOS `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1m`. `rdisk` means "raw disk" and is much faster on macOS, and `bs=1m` indicates a 1 MB block size).
 
  `# dd if=image.iso of=/dev/rdisk2 bs=1m` 
 ```

@@ -487,7 +487,7 @@ And activate it in `/etc/postfix/main.cf`:
 
 Set up the LMTP and Sieve as described in [Dovecot#Sieve](/index.php/Dovecot#Sieve "Dovecot").
 
-Edit `/etc/dovecot/conf.d/90-sieve.conf` and add:
+Edit `/etc/dovecot/conf.d/90-plugins.conf` and add:
 
 ```
  sieve_before = /etc/dovecot/sieve.before.d/

@@ -11,10 +11,9 @@
         *   [3.1.2 dhcpcd](#dhcpcd)
         *   [3.1.3 dhclient](#dhclient)
     *   [3.2 NetworkManager](#NetworkManager)
-        *   [3.2.1 Usage with libvirt](#Usage_with_libvirt)
-        *   [3.2.2 Custom configuration](#Custom_configuration)
-        *   [3.2.3 IPv6](#IPv6)
-        *   [3.2.4 Other methods](#Other_methods)
+        *   [3.2.1 Custom configuration](#Custom_configuration)
+        *   [3.2.2 IPv6](#IPv6)
+        *   [3.2.3 Other methods](#Other_methods)
     *   [3.3 Test](#Test)
 *   [4 DHCP server setup](#DHCP_server_setup)
     *   [4.1 Test](#Test_2)
@@ -159,59 +158,6 @@ dns=dnsmasq
 
 Now restart NetworkManager or reboot. NetworkManager will automatically start dnsmasq and add 127.0.0.1 to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/dnsmasq.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ dig example.com` that can be installed with [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) and verifying the server and query times.
 
-#### Usage with libvirt
-
-Network-manager think if there is one running libvirt that he run this before. To fix conflicts between other dnsmasq, eg: used in [libvirt](/index.php/Libvirt "Libvirt"), you must run it externally.
-
-We do **not** want change our resolv.conf automaticly.
-
- `/etc/NetworkManager/NetworkManager.conf` 
-```
-[main]
-...
-dns=none
-
-```
-
-We put it manually here.
-
- `/etc/resolv.conf.head`  `nameserver 127.0.0.1` 
-
-The interface to bind and bind it even if there is second dnsmasq runned on computer.
-
- `/etc/NetworkManager/dnsmasq.d/bind-interface.conf` 
-```
-interface=lo
-bind-interface
-```
-
-This start service if interface is up. This service can start only once before stop which will be initiate by systemd on restart/shutdown.
-
- `/etc/NetworkManager/dispatcher.d/10_dnsmasq` 
-```
-#!/bin/sh
-if [ -n "$2" ] && [ "$2" = "up" ]; then # $INTERFACE is up
-	systemctl start NetworkManager-dnsmasq.service
-fi
-```
-
-Systemd service.
-
- `/etc/systemd/system/NetworkManager-dnsmasq.service` 
-```
-[Unit]
-Description=A lightweight DHCP and caching DNS server
-After=network.target
-Documentation=man:dnsmasq(8)
-
-[Service]
-Type=dbus
-BusName=uk.org.thekelleys.dnsmasq
-ExecStartPre=/usr/bin/dnsmasq --test
-ExecStart=/usr/bin/dnsmasq -k --enable-dbus --user=dnsmasq --pid-file --conf-dir=/etc/NetworkManager/dnsmasq.d/
-ExecReload=/bin/kill -HUP $MAINPID
-```
-
 #### Custom configuration
 
 Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
@@ -331,7 +277,7 @@ pxe-service=X86-64_EFI, "PXELINUX (EFI)", "efi64/syslinux.efi"
 
 ```
 
-**Note:** In case `pxe-service` doesn't work (especially for UEFI-based clients), combination of `dhcp-match` and `dhcp-boot` can be used. See [RFC4578](https://tools.ietf.org/html/rfc4578#section-2.1) for more `client-arch` numbers for use with dhcp boot protocol.
+**Note:** In case `pxe-service` does not work (especially for UEFI-based clients), combination of `dhcp-match` and `dhcp-boot` can be used. See [RFC4578](https://tools.ietf.org/html/rfc4578#section-2.1) for more `client-arch` numbers for use with dhcp boot protocol.
 
 ```
 dhcp-match=set:efi-x86_64,option:client-arch,7
@@ -387,7 +333,7 @@ expand-hosts
 
 ```
 
-Without this setting, you'll have to add the domain to entries of /etc/hosts.
+Without this setting, you will have to add the domain to entries of /etc/hosts.
 
 ### Override addresses
 

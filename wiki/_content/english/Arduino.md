@@ -111,14 +111,7 @@ If you prefer working from terminal, below there are some other options to choos
 
 Using [arduino-cmake](https://github.com/queezythegreat/arduino-cmake) and [CMake](http://www.cmake.org/cmake/resources/software.html) you can build Arduino firmware from the command line using multiple build systems. CMake lets you generate the build system that fits your needs, using the tools you like. It can generate any type of build system, from simple Makefiles, to complete projects for Eclipse, Visual Studio, XCode, etc.
 
-Requirements:
-
-*   [CMake](https://www.archlinux.org/packages/?sort=&q=cmake)
-*   [Arduino SDK](https://aur.archlinux.org/packages/arduino/)
-*   [avr-gcc](https://www.archlinux.org/packages/?sort=&q=avr-gcc)
-*   [avr-binutils](https://www.archlinux.org/packages/?sort=&q=avr-binutils)
-*   [avr-libc](https://www.archlinux.org/packages/?sort=&q=avr-libc)
-*   [avrdude](https://www.archlinux.org/packages/?sort=&q=avrdude)
+Requirements: [cmake](https://www.archlinux.org/packages/?name=cmake), [arduino](https://aur.archlinux.org/packages/arduino/), [avr-gcc](https://www.archlinux.org/packages/?name=avr-gcc), [avr-binutils](https://www.archlinux.org/packages/?name=avr-binutils), [avr-libc](https://www.archlinux.org/packages/?name=avr-libc), [avrdude](https://www.archlinux.org/packages/?name=avrdude).
 
 ### Ino
 
@@ -194,16 +187,7 @@ $ scons upload         # This will upload the project to your Arduino
 
 #### Installation
 
-Its recommended to use a virtual environment because platformio uses python2 because its based on SCons which does not support python3\.
-
-```
-$ virtualenv --python=python2 venv
-$ source ./venv/bin/activate
-$ pip install platformio
-
-```
-
-another option is to use platformio as an [Atom](/index.php/Atom "Atom") plugin, using [Atom Package Manager](http://docs.platformio.org/en/latest/ide/atom.html#manual-installation).
+Install the [platformio](https://aur.archlinux.org/packages/platformio/) or [platformio-git](https://aur.archlinux.org/packages/platformio-git/) package.
 
 #### Usage
 

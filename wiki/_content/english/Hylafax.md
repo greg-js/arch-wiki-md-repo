@@ -121,6 +121,7 @@ For more options please read the manpages of each program.
 
 GNU/Linux Apps:
 
+*   Avantfax is PHP7, MySQL enterprise class frontend to HylaFAX (by one of the HylaFAX developers David Mimms). Get it here: [http://www.avantfax.com/download.php](http://www.avantfax.com/download.php)
 *   kfax is a nice app to view the received tiff files.
 *   KDE has a printer to send your document to fax, change it to use the HylaFAX backend.
 

@@ -118,7 +118,7 @@ For some users under constant attack, it may be beneficial to enable a more aggr
 ```
 [Service]
 ExecStart=
-ExecStart=/usr/lib/systemd/scripts/sshguard-journalctl "-a 1 -b 10:/var/db/sshguard/blacklist.db" SYSLOG_FACILITY=4 SYSLOG_FACILITY=10
+ExecStart=/usr/lib/systemd/scripts/sshguard-journalctl "-a 10 -b 10:/var/db/sshguard/blacklist.db" SYSLOG_FACILITY=4 SYSLOG_FACILITY=10
 
 ```
 

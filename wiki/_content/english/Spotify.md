@@ -23,6 +23,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [3.4 Mute commercials](#Mute_commercials)
         *   [3.4.1 blockify](#blockify)
         *   [3.4.2 spotblock](#spotblock)
+        *   [3.4.3 Spotify-AdKiller](#Spotify-AdKiller)
     *   [3.5 Remote Control](#Remote_Control)
         *   [3.5.1 Send commands via SSH](#Send_commands_via_SSH)
         *   [3.5.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
@@ -288,6 +289,10 @@ By placing this script at `/usr/local/bin/spotify`, it gets preferred to `/usr/b
 #### spotblock
 
 [spotblock](https://github.com/mahkoh/spotblock) ([spotblock-git](https://aur.archlinux.org/packages/spotblock-git/)) is a resource-efficient ad blocker that runs as a systemd daemon.
+
+#### Spotify-AdKiller
+
+[Spotify-AdKiller](https://github.com/SecUpwN/Spotify-AdKiller) ([spotify-adkiller](https://aur.archlinux.org/packages/spotify-adkiller/)) is another alternative to block Spotify adds.
 
 ### Remote Control
 

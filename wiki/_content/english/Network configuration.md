@@ -154,8 +154,8 @@ For a system with a permanent IP address, that permanent IP address should be us
 
 **Note:** Another option is to set up a full DNS server such as [BIND](/index.php/BIND "BIND") or [Unbound](/index.php/Unbound "Unbound"), but that is overkill and too complex for most systems. For small networks and dynamic flexibility with hosts joining and leaving the network [zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") services may be more applicable:
 
-*   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmbd.service` service. Computers running Windows, OS X, or Linux with `nmbd` running, will be able to find your machine.
-*   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly more complex configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running OS X, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have an built-in Avahi client or daemon.
+*   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmbd.service` service. Computers running Windows, macOS, or Linux with `nmbd` running, will be able to find your machine.
+*   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly more complex configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running macOS, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have an built-in Avahi client or daemon.
 
 ## Device driver
 
