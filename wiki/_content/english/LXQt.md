@@ -45,7 +45,7 @@ For additional functionality, you may wish to install the following:
 
 *   **LXAppearance** — Easy to use GTK+ configuration tool. Part of LXDE.
 
-	[git://lxde.git.sourceforge.net/gitroot/lxde/lxappearance](git://lxde.git.sourceforge.net/gitroot/lxde/lxappearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
+	[https://sourceforge.net/projects/lxde/files/LXAppearance/](https://sourceforge.net/projects/lxde/files/LXAppearance/) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
 
 *   **QTerminal** — Lightweight Qt-based terminal emulator.
 

@@ -9,7 +9,7 @@ This article is about basic sound management. For advanced topics see [professio
 
 ## General information
 
-Arch sound system consists of several levels:
+The Arch sound system consists of several levels:
 
 *   Drivers and interface – hardware support and control
 
@@ -19,7 +19,7 @@ Arch sound system consists of several levels:
 
 *   **(optional)** Sound frameworks – higher-level application environments not involving server processes
 
-Default Arch installation already includes kernel sound system, namely [ALSA](/index.php/ALSA "ALSA"), and lots of utilities for it, to be installed from [official repositories](/index.php/Official_repositories "Official repositories"). Ones who want additional features can switch to another one (namely [OSS](/index.php/OSS "OSS")) or install one of several [sound servers](https://en.wikipedia.org/wiki/sound_server "wikipedia:sound server").
+A default Arch installation already includes the kernel sound system ([ALSA](/index.php/ALSA "ALSA")), and lots of utilities for it can be installed from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want additional features you can switch to [OSS](/index.php/OSS "OSS") or install one of several [sound servers](https://en.wikipedia.org/wiki/sound_server "wikipedia:sound server").
 
 ## Drivers and Interface
 

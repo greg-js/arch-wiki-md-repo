@@ -15,7 +15,7 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
 *   [6 Enable amdgpu for Sea Islands Cards](#Enable_amdgpu_for_Sea_Islands_Cards)
-*   [7 Disable AMDGPU driver](#Disable_AMDGPU_driver)
+*   [7 Disable radeon driver](#Disable_radeon_driver)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
 
@@ -114,11 +114,11 @@ CONFIG_DRM_AMDGPU_CIK=Y
 
 It may also be needed to use the `amdgpu.exp_hw_support=1` [[2]](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-Iceland-Experimental) as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or by setting the [kernel module](/index.php/Kernel_modules#Using_files_in_.2Fetc.2Fmodprobe.d.2F "Kernel modules") options.
 
-## Disable AMDGPU driver
+## Disable radeon driver
 
-To prevent `amdgpu` from loading, you can disable it in the Kconfig or [blacklist](/index.php/Blacklist "Blacklist") the `amdgpu` module.
+To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
 
- `/etc/modprobe.d/radeon.conf`  `blacklist amdgpu` 
+ `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
 
 ## Troubleshooting
 

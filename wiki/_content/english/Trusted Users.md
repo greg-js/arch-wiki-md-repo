@@ -67,6 +67,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [Lordheavy](https://aur.archlinux.org/packages.php?K=lordheavy&SeB=m) | [Laurent Carlier](/index.php/User:Lordheavy "User:Lordheavy") | lordheavym at gmail com |
 | [mtorromeo](https://aur.archlinux.org/packages.php?K=mtorromeo&SeB=m) | Massimiliano Torromeo | massimiliano.torromeo@gmail.com |
 | [Muflone](https://aur.archlinux.org/packages.php?K=Muflone&SeB=m) | Fabio Castelli | webreg (at) vbsimple.net |
+| [NicoHood](https://aur.archlinux.org/packages.php?K=NicoHood&SeB=m) | NicoHood | archlinux (cat) nicohood (dog) de |
 | [schivmeister](https://aur.archlinux.org/packages.php?K=schivmeister&SeB=m) | [Ray Rashif](/index.php/User:Schivmeister "User:Schivmeister") | schiv archlinux org |
 | [schuay](https://aur.archlinux.org/packages.php?K=schuay&SeB=m) | Jakob Gruber | jakob.gruber@gmail.com |
 | [seblu](https://aur.archlinux.org/packages.php?K=seblu&SeB=m) | Sébastien Luttringer | s е b l u *at* a r c h l і n ux *dot* o r g |

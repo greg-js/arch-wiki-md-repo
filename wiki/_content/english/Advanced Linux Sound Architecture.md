@@ -180,7 +180,7 @@ If that does not work, consult the [#Configuration](#Configuration) section or t
 
 ## Configuration
 
-The system configuration file is `/etc/asound.conf`, and the per-user configuration file is `~/.asoundrc`. [ALSA](/index.php/ALSA "ALSA") does not create these files by default, however they may be generated and/or modified during the installation of other packages ([PulseAudio](/index.php/PulseAudio "PulseAudio") modifies `/etc/asound.conf` for example.)
+The system configuration file is `/etc/asound.conf`, and the per-user configuration file is `~/.asoundrc`.
 
 ### Basic syntax
 

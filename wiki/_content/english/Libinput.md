@@ -57,7 +57,7 @@ $ xinput set-prop *device-number* *option-number* *setting*
 
 to change a setting.
 
-See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Touchpad tapping](#Touchpad_tapping) illustrate examples.
+See [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg") for permanent option settings. [Logitech Marble Mouse#Using libinput](/index.php/Logitech_Marble_Mouse#Using_libinput "Logitech Marble Mouse") and [#Button re-mapping](#Button_re-mapping) illustrate examples.
 
 Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg") can generally be installed in parallel. If you intend to switch driver for a device to use libinput, ensure no legacy configuration files `/etc/X11/xorg.conf.d/` for other drivers take precedence.
 
@@ -69,7 +69,7 @@ Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg
 
 One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
 
- `$ grep -e "Using input driver 'libinput'" ~/.local/share/xorg/Xorg.0.log` 
+ `$ grep -e "Using input driver 'libinput'" /var/log/Xorg.0.log` 
 ```
 [    28.799] (II) Using input driver 'libinput' for 'Power Button'
 [    28.847] (II) Using input driver 'libinput' for 'Video Bus'
@@ -95,7 +95,7 @@ A basic configuration should have the following structure:
 
  `/etc/X11/xorg.conf.d/30-touchpad.conf` 
 ```
-Section "InputDevice"
+Section "InputClass"
     Identifier "devname"
     Driver "libinput"
     Option "Device"   "devpath"

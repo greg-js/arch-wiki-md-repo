@@ -74,6 +74,8 @@
 
 ## soyuz.archlinux.org ([[2]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))
 
+NOTE: Talk to heftig about server specs before ordering.
+
 *   pkgbuild.com
 *   releng stuff. no idea
 *   tracker

@@ -2,16 +2,16 @@ RethinkDB is a document-oriented database similar to [MongoDB](/index.php/MongoD
 
 ## Installing RethinkDB
 
-Install [rethinkdb](https://www.archlinux.org/packages/?name=rethinkdb) from official repository.
+Install [rethinkdb](https://www.archlinux.org/packages/?name=rethinkdb) from the official repositories.
 
-Now you can start rethinkdb from command-line:
+Now you can start `rethinkdb` from the command-line:
 
 ```
 # rethinkdb
 
 ```
 
-Or instead you can run it as systemd service. Enable default rethinkdb instance as
+Or instead you can run it as a `systemd` service. Enable the default `rethinkdb` instance as
 
 ```
 # systemctl enable rethinkdb@default
@@ -25,13 +25,13 @@ and start it:
 
 ```
 
-Admin UI will be available at [8080](http://localhost:8080) port.
+RethinkDB's admin UI is now available on port [8080](http://localhost:8080).
 
 ## Configuring RethinkDB
 
-RethinkDB has multi-instance support, which means you can run several independent database instances at the same machine. Systemd service also supports multi-instance configuration.
+RethinkDB has multi-instance support, which means you can run several independent database instances on the same machine. The `systemd` service also supports multi-instance configuration.
 
-To create a new RethinkDB instance create its configuration file:
+To create a new RethinkDB instance, create its configuration file:
 
 ```
 # cd /etc/rethinkdb
@@ -39,12 +39,12 @@ To create a new RethinkDB instance create its configuration file:
 
 ```
 
-where <NAME> is the name of you configuration that you'll going to use later. Change configuration options in the new config file. Then start the service:
+where <NAME> represents the configuration you'll be using later. Change the configuration options in the new config file. Then start the service:
 
 ```
-# systectl enable rethinkdb@<NAME>
-# systectl start rethinkdb@<NAME>
+# systemctl enable rethinkdb@<NAME>
+# systemctl start rethinkdb@<NAME>
 
 ```
 
-'default' instance is created at installation time for your convinence. Its data is stored in /var/lib/rethinkdb/default
+The 'default' instance is created at installation time for your convenience. Its data is stored in `/var/lib/rethinkdb/default`.

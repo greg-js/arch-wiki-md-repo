@@ -38,13 +38,13 @@
     *   [4.2 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
     *   [4.3 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
     *   [4.4 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
-    *   [4.5 Trouble accessing a password-protected share from Windows](#Trouble_accessing_a_password-protected_share_from_Windows)
-    *   [4.6 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
-    *   [4.7 Sharing a folder fails](#Sharing_a_folder_fails)
-    *   [4.8 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
-    *   [4.9 protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.10 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.11 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.5 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
+    *   [4.6 Sharing a folder fails](#Sharing_a_folder_fails)
+    *   [4.7 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.8 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
+    *   [4.9 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
+    *   [4.10 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.11 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -772,20 +772,6 @@ Do one of the following for the settings to take effect:
 
 [Original article](http://alan.lamielle.net/2009/09/03/windows-7-nonpaged-pool-srv-error-2017).
 
-### Trouble accessing a password-protected share from Windows
-
-**Note:** This needs to be added to the **local smb.conf**, not to the server's smb.conf
-
-For trouble accessing a password protected share from Windows, try adding this to `/etc/samba/smb.conf`:[[1]](http://blogs.computerworld.com/networking_nightmare_ii_adding_linux)
-
-```
-[global]
-# lanman fix
-client lanman auth = yes
-client ntlmv2 auth = no
-
-```
-
 ### Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL
 
 If you are a home user and using samba purely for file sharing from a server or NAS, you are probably not interested in sharing printers through it. If so, you can prevent this error from occurring by adding the following lines to your `/etc/samba/smb.conf`:
@@ -825,7 +811,7 @@ iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns
 
 to your iptables setup.
 
-### protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE
+### Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE
 
 The client probably does not have access to shares. Make sure clients' IP address is in `hosts allow =` line in `/etc/samba/smb.conf`.
 
@@ -836,6 +822,19 @@ You are probably passing wrong server name to `smbclient`. To find out the serve
 ### Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)
 
 Make sure that the server has started. The shared directories should exist and be accessible.
+
+### Password Error when correct credentials are given (error 1326)
+
+[Samba 4.5](https://www.samba.org/samba/history/samba-4.5.0.html) has NTLMv1 authentication disabled by default. On very old clients without NTLMv2 support (e.g. Windows XP), it may cause login issues.
+
+It is possible to force enable NTLMv1, although this is **not recommend** for security reasons:
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+   lanman auth = yes
+   ntlm auth = yes
+```
 
 ## See also
 

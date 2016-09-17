@@ -186,6 +186,8 @@ wine ~/.wine/drive_c/Program Files/Steam/Steam.exe -no-cef-sandbox
 
 ```
 
+If this does not work, open winecfg, "Add application...", navigate to ~/.wine/Program Files/Steam/bin/, choose steamwebhelper.exe, and set its "Windows Version" at the bottom to Windows XP.
+
 ### No text rendered problem
 
 **Note:** This should no longer be an issue with Wine 1.7.50 and up since the implementation of dwrite has progressed sufficiently.

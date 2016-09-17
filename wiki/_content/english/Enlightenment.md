@@ -22,12 +22,12 @@
         *   [1.7.2 Unreadable fonts](#Unreadable_fonts)
         *   [1.7.3 Backlight always dimmed](#Backlight_always_dimmed)
         *   [1.7.4 Inconsistent cursor theme](#Inconsistent_cursor_theme)
+        *   [1.7.5 Background images](#Background_images)
 *   [2 Enlightenment DR16](#Enlightenment_DR16)
     *   [2.1 To install E16](#To_install_E16)
     *   [2.2 Basic Configuration](#Basic_Configuration)
-        *   [2.2.1 Background images](#Background_images)
-        *   [2.2.2 Start/Restart/Stop Scripts](#Start.2FRestart.2FStop_Scripts)
-        *   [2.2.3 Compositor](#Compositor)
+        *   [2.2.1 Start/Restart/Stop Scripts](#Start.2FRestart.2FStop_Scripts)
+        *   [2.2.2 Compositor](#Compositor)
 *   [3 See also](#See_also)
 
 ## Enlightenment
@@ -268,6 +268,14 @@ You may find that Enlightenment routinely dims the backlight to 30% on logout an
 
 You may find that the cursor theme for the desktop is different to the one used in applications such as [Firefox](/index.php/Firefox "Firefox"). This is because desktop applications are using X cursor themes whilst Enlightenment has its own set of cursor themes. For consistency, you can set Enlightenment to always use the X cursor theme. To do this, open the Enlightenment *Settings Panel* and click on the *Input* tab. Click on the *Mouse* option. Change the theme from *Enlightenment* to *X* and click *OK*. You should now find that the same cursor theme is used everywhere. If the X cursor theme itself is not always consistent, see [Cursor themes#XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes").
 
+#### Background images
+
+You have to copy the desired wallpapers into `~/.e/e/backgrounds/`
+
+MMB or RMB anywhere on the desktop will give access to the settings, select `/Desktop/Backgrounds/`
+
+Any new image copied in the `~/.e/e/backgrounds/` folder will get the list of available backgrounds auto-updated. Select desired wallpaper from drop-down menu. Inside the appropriate tabs in the global settings, you can adjust things like tiling of the background image, filling screen and such.
+
 ## Enlightenment DR16
 
 Enlightenment, Development Release 16 was first released in 2000, and reached version 1.0 in 2009\. Originally, the DR16 stood for the 0.16 version of the Enlightenment project. You'll find it as "Enlightenment16" now in the Arch repositories, it is still under development today, regularly updated by its maintainer Kim 'kwo' Woelders. With compositing, shadows and transparencies, E16 kept all of the speed that presided over its foundation by original author Carsten "Rasterman" Haitzler but with up to date refinement.
@@ -288,14 +296,6 @@ Shortcut keys can be either modified by hand, or with the e16keyedit software pr
 $ cp /usr/share/e16/config/bindings.cfg ~/.e16
 
 ```
-
-#### Background images
-
-You have to copy the desired wallpapers into `~/.e16/backgrounds/`
-
-MMB or RMB anywhere on the desktop will give access to the settings, select `/Desktop/Backgrounds/`
-
-Any new image copied in the `~/.e16/backgrounds/` folder will get the list of available backgrounds auto-updated. Select desired wallpaper from drop-down menu. Inside the appropriate tabs in the global e16 settings, you can adjust things like tiling of the background image, filling screen and such.
 
 #### Start/Restart/Stop Scripts
 

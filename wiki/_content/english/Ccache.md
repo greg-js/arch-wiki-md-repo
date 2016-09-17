@@ -39,6 +39,8 @@ $ export PATH="/usr/lib/ccache/bin/:$PATH"
 
 You may want to add this line to your `~/.bashrc` file for regular usage.
 
+**Note:** This will inevitably enable ccache for makepkg as well if invoked with this PATH.
+
 ### Enable with colorgcc
 
 Since colorgcc is also a compiler wrapper, some care needs to be taken to ensure each wrapper is called in the correct sequence.

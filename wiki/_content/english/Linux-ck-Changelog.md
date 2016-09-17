@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.7.4-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.4](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.4)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=3ef1eec4121ba0325b6d8c8582ad3b0374a90db0](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=3ef1eec4121ba0325b6d8c8582ad3b0374a90db0)
+
 **Bump to v4.7.3-5**
 
 *   Changelog: update to ck4/bfs497 and reenable CONFIG_CGROUP_SCHED.

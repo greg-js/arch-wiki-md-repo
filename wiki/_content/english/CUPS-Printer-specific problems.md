@@ -67,13 +67,28 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
 | MFC-J650DW | Install Brother's driver. |
 | MFC-L2700DW | [brother-mfc-l2700dw](https://aur.archlinux.org/packages/brother-mfc-l2700dw/) | Please look also at the comments section of the AUR package page. |
+| QL-500 | [brother-ql500](https://aur.archlinux.org/packages/brother-ql500/) |
+| QL-570 | [brother-ql570](https://aur.archlinux.org/packages/brother-ql570/) |
+| QL-580N | [brother-ql580n](https://aur.archlinux.org/packages/brother-ql580n/) |
+| QL-650TD | [brother-ql650td](https://aur.archlinux.org/packages/brother-ql650td/) |
+| QL-700 | [brother-ql700](https://aur.archlinux.org/packages/brother-ql700/) |
+| QL-710W | [brother-ql710w](https://aur.archlinux.org/packages/brother-ql710w/) |
+| QL-720NW | [brother-ql720nw](https://aur.archlinux.org/packages/brother-ql720nw/) |
+| QL-1050 | [brother-ql1050](https://aur.archlinux.org/packages/brother-ql1050/) |
+| QL-1050N | [brother-ql1050n](https://aur.archlinux.org/packages/brother-ql1050n/) |
+| QL-1060 | [brother-ql1060n](https://aur.archlinux.org/packages/brother-ql1060n/) |
+| TD-2020 | [brother-td2020](https://aur.archlinux.org/packages/brother-td2020/) |
+| TD-2120N | [brother-td2120n](https://aur.archlinux.org/packages/brother-td2120n/) |
+| TD-2130N | [brother-td2130n](https://aur.archlinux.org/packages/brother-td2130n/) |
+| TD-4000 | [brother-td4000](https://aur.archlinux.org/packages/brother-td4000/) |
+| TD-4100N | [brother-td4100n](https://aur.archlinux.org/packages/brother-td4100n/) |
 | Printer | Driver/filter | Notes |
 
 ### Network printers
 
 For network printers, use `ipp://**printer_ip**/ipp/port1` as printer address. For some older printers, this might not work. If not, try `lpd://**printer_ip**/BINARY_P1` instead.
 
-Some printers use the socket protocol. For these printers, use `socket:**printer_ip**:9100`. For http, use `http://**printer_ip**/POSTSCRIPT_P1`.
+Some printers use the socket protocol. For these printers, use `socket://**printer_ip**:9100`. For http, use `http://**printer_ip**/POSTSCRIPT_P1`.
 
 ### Custom drivers
 

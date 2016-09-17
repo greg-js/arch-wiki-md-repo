@@ -307,7 +307,7 @@ To specify per-container settings and not overrides for all (e.g. bind a directo
 
 ### Use Btrfs subvolume as container root
 
-To use a btrfs subvolume as a template for the container's root, use the `--template` flag. This takes a snapshot of the subvolume and populates the root directory for the container with it.
+To use a [Btrfs subvolume](/index.php/Btrfs#Subvolumes "Btrfs") as a template for the container's root, use the `--template` flag. This takes a snapshot of the subvolume and populates the root directory for the container with it.
 
 **Note:** If the template path specified is not the root of a subvolume, the **entire** tree is copied. This will be very time consuming.
 

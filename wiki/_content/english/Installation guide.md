@@ -71,7 +71,7 @@ The [dhcpcd](/index.php/Dhcpcd "Dhcpcd") daemon is [enabled](https://git.archlin
 
 If none is available, [stop](/index.php/Systemd#Using_units "Systemd") the *dhcpcd* service with `systemctl stop dhcpcd@<TAB>` and see [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
-For **wireless** connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration").
+For **wireless** connections, iw(8), wpa_supplicant(8) and [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") are available. See [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 
 ### Update the system clock
 
@@ -86,18 +86,21 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-To list present block devices, run `fdisk -l` or [lsblk](/index.php/Core_utilities#lsblk "Core utilities"). Results ending in `rom`, `loop` or `airoot` are unsuitable for installation and may be ignored.
+[Identify the devices](/index.php/Core_utilities#lsblk "Core utilities") where the new system will be installed (results ending in `rom`, `loop` or `airoot` may be ignored):
 
-*   At least one [disk partition](/index.php/Disk_partition "Disk partition") is required for the root directory `/`.
-*   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") is also required.
-*   [Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a [swap file](/index.php/Swap#Swap_file "Swap").
+```
+# fdisk -l
 
-See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
+```
 
-To modify and create partitions, use one of the following tools:
+The following [partitions](/index.php/Partition "Partition") (disk sections) are required for a chosen device:
 
-*   [fdisk](/index.php/Fdisk "Fdisk"), *cfdisk* or [parted](/index.php/Parted "Parted") for both *MBR* and *GPT*
-*   [gdisk](/index.php/Gdisk "Gdisk") or *cgdisk* for *GPT* only.
+*   One partition for the root directory `/`.
+*   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+
+[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a [swap file](/index.php/Swap#Swap_file "Swap"). See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
+
+The used partitioning tool depends on the choice of *partitioning table*, where required information is stored. The **GPT** format is commonly associated with UEFI systems, and likewise **MBR** with BIOS systems. [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted") support both formats, while *gdisk* only supports GPT.
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 

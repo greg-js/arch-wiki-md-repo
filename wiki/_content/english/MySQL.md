@@ -62,7 +62,7 @@ Now the `mariadb.service` can be started and/or enabled with [systemd](/index.ph
 
 **Tip:** If you use something other than `/var/lib/mysql` for datadir, you need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") `mariadb.service` and append the same `--datadir` parameter to the `ExecStart` line.
 
-It is recommended to secure the MySQL installation by running the following command:
+The following command will interactively guide you through a number of recomended security measures at the database level:
 
 ```
 # mysql_secure_installation

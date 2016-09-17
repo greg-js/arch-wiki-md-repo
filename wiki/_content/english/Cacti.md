@@ -24,6 +24,7 @@ Cacti uses PHP, an SQL database (MySQL or MariaDB) and SNMP, so enable the requi
 ```
 extension=mysqli.so
 extension=sockets.so
+extension=pdo_mysql.so
 extension=snmp.so
 ```
 

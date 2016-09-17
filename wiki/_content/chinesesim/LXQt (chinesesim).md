@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-08，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=415023)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [LXQt](/index.php/LXQt "LXQt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-15，点击[这里](https://wiki.archlinux.org/index.php?title=LXQt&diff=0&oldid=446770)可以查看翻译后英文页面的改动。
 
 2013年间，洪任諭（“PCMan”）启动了将 LXDE 移植到 Qt 的项目。LXDE-Qt 的首个预览版发布于2013年7月3日。而在2013年7月21日，Razor-qt（一个与LXDE类似的桌面）与 LXDE 宣布合并，产生了 LXQt。这个桌面集合了 Razor-qt 和 LXDE 的组件。尽管 LXDE 目前的精力已经集中到 LXQt，GTK+ 2 的版本依然在维护。
 
@@ -11,9 +11,12 @@
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 替换 Openbox](#.E6.9B.BF.E6.8D.A2_Openbox)
     *   [3.2 自动启动应用程序](#.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [3.3 编辑应用程序菜单](#.E7.BC.96.E8.BE.91.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E8.8F.9C.E5.8D.95)
+    *   [3.3 设置环境变量](#.E8.AE.BE.E7.BD.AE.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F)
+    *   [3.4 编辑应用程序菜单](#.E7.BC.96.E8.BE.91.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E8.8F.9C.E5.8D.95)
 *   [4 建议应用](#.E5.BB.BA.E8.AE.AE.E5.BA.94.E7.94.A8)
-*   [5 参阅](#.E5.8F.82.E9.98.85)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Desktop icons are grouped together](#Desktop_icons_are_grouped_together)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
@@ -95,7 +98,15 @@ lxqt-config-session
 
 ```
 
-从这个窗口中,点击左侧的"自动启动"，添加程序到全局自动启动（使用这个规范的所有会话都将启动此程序） 或本地自动启动（标签 LXQt 自动启动）（这个选项有个 Bug，见[issue 746](https://github.com/lxde/lxqt/issues/746)).
+从这个窗口中,点击左侧的"自动启动"，添加程序到全局自动启动（使用这个规范的所有会话都将启动此程序） 或本地自动启动（标签 LXQt 自动启动）（这个选项有个 Bug，见[issue 746](https://github.com/lxde/lxqt/issues/746)）。
+
+`lxqt-config-session` 会在 `~/.config/autostart` 目录中为每个自启动项创建一个桌面配置项文件（.desktop）。登录时自启动的预安装应用位于 `/etc/xdg/autostart` 目录。所以你可以自己修改这些文件满足自己的配置需求。Besides, the distinction between "Global Autostart" and "LXQt Autostart" does not depend on the directory in which the corresponding .desktop-file is located, but rather on the `OnlyShowIn`-setting. If it is `OnlyShowIn=true`, it is considered an "LXQt Autostart". Furthermore, if `X-LXQt-Module=true`, the item is not shown in `lxqt-config-session`.
+
+### 设置环境变量
+
+LXQt 会话的环境变量在“会话设置”中定义。
+
+例如：用 `SAL_USE_VCLPLUGIN=gtk` 可以强制 libreoffice 以 gtk2 启动。
 
 ### 编辑应用程序菜单
 
@@ -104,6 +115,12 @@ lxqt-config-session
 ## 建议应用
 
 LXQt是一个轻量级桌面，作为一个简单的安装不会提供很多桌面应用程序。它留给用户选择他们想要安装的应用程序。[Razor-qt wiki](https://github.com/Razor-qt/razor-qt/wiki/3rd-party-applications) 上有一个网页，其中列出了一些有用的 Qt 应用程序可按需选装。另请参阅[应用程序清单](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")页面中 Arch 可用应用程序的完整列表。
+
+## Troubleshooting
+
+### Desktop icons are grouped together
+
+When moving icons on the desktop it is possible to place them a bit too close to each other making them connected. If unable to separate them Stop Desktop from Session Settings, remove `.config/pcmanfm-qt/lxqt/desktop-items-0.conf` and Start Desktop again.
 
 ## 参阅
 

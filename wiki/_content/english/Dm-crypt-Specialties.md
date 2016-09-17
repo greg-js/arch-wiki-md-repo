@@ -227,6 +227,10 @@ Features provided by the included service units:
 
 **Tip:** please study project [README](https://github.com/random-archer/mkinitcpio-systemd-tool/blob/master/README.md) as well as provided default [systemd service unit files](https://github.com/random-archer/mkinitcpio-systemd-tool) to get you started.
 
+Recommended hooks are: base autodetect modconf block filesystems keyboard fsck systemd systemd-tool
+
+Please keep in mind: initrd-network.network from systemd-network still uses eth0 instead of enp?s? or similar.
+
 ### Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)
 
 If you want to be able to reboot a fully LUKS-encrypted system remotely, or start it with a [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") service, you will need a way to enter a passphrase for the root partition/volume at startup. This can be achieved by running a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that configures a network interface, such as [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server in initrd. You have the option of using either [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) or [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/). Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://aur.archlinux.org/packages/mkinitcpio-utils/) package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.

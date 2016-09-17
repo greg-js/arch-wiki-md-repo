@@ -374,12 +374,14 @@ To build Android 6+, you need to install these additional packages:
 
 ### Java Development Kit
 
-Android 5 (Lollipop) can be built with [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk).
+Android 7 (Nougat) can be built with [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk).[[1]](https://source.android.com/source/requirements.html)
+
+*   For Android 5 and 6 (Lollipop and Marshmallow), OpenJDK 7 is required, which is available with the [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) package.
 
 Older versions [require](http://source.android.com/source/initializing.html) a working **Oracle JDK** installed on your build system. It **will not** work with OpenJDK.
 
 *   For Gingerbread through KitKat (2.3 - 4.4), Java 6 is required, which is available as [jdk6](https://aur.archlinux.org/packages/jdk6/) from the AUR. See [Java](/index.php/Java "Java") if you want to use it besides another (newer) JDK version.
-*   For Cupcake through Froyo (1.5 - 2.2), Java 5 is required, which is no longer available for Arch Linux.
+*   For Cupcake through Froyo (1.5 - 2.2), Java 5 is required, which is available as [jdk5](https://aur.archlinux.org/packages/jdk5/) from the AUR.
 
 ### Setting up the build environment
 

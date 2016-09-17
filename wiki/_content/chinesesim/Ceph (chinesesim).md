@@ -73,3 +73,5 @@ As an example, for a monitor named `node1` start and enable `ceph-mon@node1.serv
 *   官方源码下载
     *   [GitHub organization](https://github.com/ceph)
     *   [Ceph](https://github.com/ceph/ceph)
+
+*   [Ceph中国社区](http://ceph.org.cn/)

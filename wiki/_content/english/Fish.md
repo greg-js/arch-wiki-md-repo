@@ -8,19 +8,19 @@
     *   [2.2 Command completion](#Command_completion)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 History substitution](#History_substitution)
-    *   [3.2 Not setting fish as default shell](#Not_setting_fish_as_default_shell)
-        *   [3.2.1 Modify .bashrc to drop into fish](#Modify_.bashrc_to_drop_into_fish)
-        *   [3.2.2 Use terminal emulator options](#Use_terminal_emulator_options)
-        *   [3.2.3 Use terminal multiplexer options](#Use_terminal_multiplexer_options)
-        *   [3.2.4 Working with fish as default shell](#Working_with_fish_as_default_shell)
-    *   [3.3 /etc/profile and ~/.profile compatibility](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Disable greeting](#Disable_greeting)
-    *   [4.2 Make su launch fish](#Make_su_launch_fish)
-    *   [4.3 Start X at login](#Start_X_at_login)
-    *   [4.4 Use liquidprompt](#Use_liquidprompt)
-    *   [4.5 Put git status in prompt](#Put_git_status_in_prompt)
-    *   [4.6 Evaluate ssh-agent](#Evaluate_ssh-agent)
+    *   [4.1 Not setting fish as default shell](#Not_setting_fish_as_default_shell)
+        *   [4.1.1 Modify .bashrc to drop into fish](#Modify_.bashrc_to_drop_into_fish)
+        *   [4.1.2 Use terminal emulator options](#Use_terminal_emulator_options)
+        *   [4.1.3 Use terminal multiplexer options](#Use_terminal_multiplexer_options)
+    *   [4.2 Setting fish as default shell](#Setting_fish_as_default_shell)
+        *   [4.2.1 /etc/profile and ~/.profile compatibility](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility)
+    *   [4.3 Disable greeting](#Disable_greeting)
+    *   [4.4 Make su launch fish](#Make_su_launch_fish)
+    *   [4.5 Start X at login](#Start_X_at_login)
+    *   [4.6 Use liquidprompt](#Use_liquidprompt)
+    *   [4.7 Put git status in prompt](#Put_git_status_in_prompt)
+    *   [4.8 Evaluate ssh-agent](#Evaluate_ssh-agent)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -67,6 +67,8 @@ Context-aware completions for Arch Linux-specific commands like *pacman*, *pacma
 
 Fish does not implement history substitution (e.g. `sudo !!`), and the fish developers have said that they [do not plan to](http://fishshell.com/docs/current/faq.html#faq-history). Still, this is an essential piece of many users' workflow. Reddit user, [crossroads1112](http://www.reddit.com/u/crossroads1112), created a function that regains some of the functionality of history substitution and with another syntax. The function is on [github](https://gist.github.com/crossroads1112/77badb2c3455e23b873b) and instructions are included as comments in it. There is a [forked version](https://gist.github.com/b-/981892a65837ab0a387e) that is closer to the original syntax and allows for `command !!` if you specify the command in the helper function.
 
+## Tips and tricks
+
 ### Not setting fish as default shell
 
 In Arch, some shell scripts are written for [Bash](/index.php/Bash "Bash") and are not fully compatible with fish. Not setting fish as system wide or user default allows the Bash scripts to run on startup, ensures the environment variables are set correctly, and generally reduces the issues associated with using a non-Bash compatible terminal like fish. You may see some script errors if your default shell is set as fish. Below are several options for using fish without setting it as your default shell.
@@ -108,7 +110,7 @@ set-option -g default-shell "/usr/bin/fish"
 
 Whenever you run *tmux*, you will be dropped into fish.
 
-#### Working with fish as default shell
+### Setting fish as default shell
 
 If you decide to set fish as your default shell, you may find that you no longer have very much in your path. You can add a section to your `~/.config/fish/config.fish` file that will set your path correctly on login. This is much like `.profile` or `.bash_profile` as it is only executed for login shells.
 
@@ -121,27 +123,29 @@ end
 
 Note that this route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be to [source /etc/profile and ~/.profile](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility).
 
-### /etc/profile and ~/.profile compatibility
+#### /etc/profile and ~/.profile compatibility
 
-Since standard POSIX `sh` syntax is not compatible with fish, fish will not be able to source `/etc/profile` and thus all `*.sh` in `/etc/profile.d`) and `~/.profile`. If you have fish as your default shell, you can work around this by doing the following:
+Since standard POSIX `sh` syntax is not compatible with fish, fish will not be able to source `/etc/profile` and thus all `*.sh` in `/etc/profile.d` and `~/.profile`. If you have fish as your default login shell, you can work around this by doing the following:
 
 Install [dash](https://www.archlinux.org/packages/?name=dash) and add this line to your `config.fish`:
 
 ```
-env -i HOME=$HOME dash -l -c printenv | sed -e '/PWD/d; /PATH/s/:/ /g;s/=/ /;s/^/set -x /' | source
+if status --is-login
+       env -i HOME=$HOME dash -l -c printenv | sed -e '/PWD/d;/PATH/s/:/ /g;s/=/ /;s/^/set -x /' | source
+end
 
 ```
 
 an alternative variant will save you one executable invocation by using a builtin command:
 
 ```
-env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d; /PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+if status --is-login
+       env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d;/PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
+end
 
 ```
 
 Also consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
-
-## Tips and tricks
 
 ### Disable greeting
 

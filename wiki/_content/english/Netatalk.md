@@ -6,6 +6,7 @@ Netatalk is a free, open-source implementation of the Apple Filing Protocol (AFP
     *   [1.1 Choosing Features](#Choosing_Features)
 *   [2 Configuration](#Configuration)
     *   [2.1 Netatalk](#Netatalk)
+        *   [2.1.1 Guest access](#Guest_access)
     *   [2.2 Netatalk-ddp](#Netatalk-ddp)
         *   [2.2.1 System](#System)
         *   [2.2.2 Volumes](#Volumes)
@@ -60,6 +61,27 @@ Netatalk 3.x uses a single configuration file, `/etc/afp.conf`. See `man afp.con
 ```
 
 **Warning:** Avoid using symbolic links in `afp.conf`
+
+#### Guest access
+
+In order to allow guest **read-only** access to your shared folders, add following line to the `[Global]` section:
+
+ `/etc/afp.conf` 
+```
+[Global]
+uam list = uams_guest.so
+
+```
+
+To allow guest **read/write** access, first, allow read-only access as in the previous example and then add following lines to a particular share section:
+
+ `/etc/afp.conf` 
+```
+[Your Share]
+path = /mnt/public/share
+rwlist = nobody
+
+```
 
 ### Netatalk-ddp
 

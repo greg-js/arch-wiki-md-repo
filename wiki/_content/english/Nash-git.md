@@ -41,7 +41,7 @@ Nash only has 2 special variables:
 *   PROMPT variable stores the unicode string used for ... you know
 *   IFS is a list containing the set of character delimiters used internally to split command output into lists.
 
-*Nash* doesn't have a *cd* builtin, but a builtin function *chdir*. In nash you cannot create aliases by matching string to strings, but only binding function to command names. The *init* below creates a *cd* alias:
+*Nash* default *cd* is a very simple alias to the builtin function *chdir*, then you may find odd using it. To improve your usage you must create your own *cd* alias. In nash you cannot create aliases by matching string to strings, but only binding function to command names. The *init* below creates a *cd* alias as example:
 
 ```
 defPROMPT = "λ> "

@@ -189,7 +189,7 @@ The table below gives an overview of comparable commands for *iw* and *wireless_
 
 **Note:**
 
-*   [iw](https://www.archlinux.org/packages/?name=iw), [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) are provided on the installation medium.
+*   Tools for manual management and [netctl](https://www.archlinux.org/packages/?name=netctl) are provided on the [installation medium](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch").
 *   Examples in this section assume that your wireless device interface is `wlan0` and that you are connecting to `*your_essid*` wifi access point. Replace both accordingly. To find your wireless device interface, see [#Getting some useful information](#Getting_some_useful_information).
 *   Note that most of the commands have to be executed with [root permissions](/index.php/Users_and_groups "Users and groups"). Executed with normal user rights, some of the commands (e.g. *iwlist*), will exit without error but not produce the correct output either, which can be confusing.
 

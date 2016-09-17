@@ -491,6 +491,13 @@ In the past other backends were developed as well but are no longer maintained a
 *   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Phonon > Backend*. For Plasma 5 this would be *System Settings > Multimedia > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
 
+**Note:**
+
+*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[7]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
+*   A possible fix is to run
+
+/usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
+
 ## Useful applications
 
 The official set of KDE applications may be found [here](http://www.kde.org/applications/).
@@ -647,7 +654,7 @@ Now go back to the System Settings page and carefully add the necessary resource
 
 ### Fix empty IMAP inbox
 
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[7]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
+For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[8]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
 
 ### Getting current state of KWin for support and debug purposes
 

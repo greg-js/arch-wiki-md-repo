@@ -102,6 +102,8 @@ Nothing happens if usb stick is plugged in or used as device.
 
 Home/windows-button, sound volume and power button are dead. However the power button is recognized during boot by [ACPI](/index.php/Acpid "Acpid")
 
+Sound volume keys work in systemd-boot to choose an entry.
+
 ### Power management
 
 Hibernate and pm-suspend crashes.

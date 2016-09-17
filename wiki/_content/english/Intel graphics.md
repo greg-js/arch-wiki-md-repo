@@ -37,6 +37,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.11 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
     *   [6.12 Skylake support](#Skylake_support)
     *   [6.13 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.14 Screen flickering](#Screen_flickering)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -424,6 +425,10 @@ Another option that seems to work for some users is to add the `i915.enable_rc6=
 ### Lag in Windows guests
 
 The video output of a Windows guest in VirtualBox sometimes hangs until the host forces a screen update (e.g. by moving the mouse cursor). Removing the `enable_fbc=1` option fixes this issue.
+
+### Screen flickering
+
+A temporary solution is to add the `i915.enable_rc6=0` [kernel boot parameter](/index.php/Kernel_parameters "Kernel parameters") .
 
 ## See also
 

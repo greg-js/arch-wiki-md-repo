@@ -10,7 +10,7 @@ Brother supplies Linux drivers for its printers, however they are not in an easi
 
 ## Really short overview of CUPS
 
-[CUPS](/index.php/CUPS "CUPS") handles printers using a `.ppd` file and a filter binary. Once those two files are installed, the printer can be [registered](/index.php/CUPS#Print_Queues "CUPS") in CUPS. A simple example PKGBUILD that does this is [samsung2010p](https://aur.archlinux.org/packages/samsung2010p/).
+[CUPS](/index.php/CUPS "CUPS") handles printers using a `.ppd` file and a filter binary. Once those two files are installed, the printer can be [added](/index.php/CUPS#Usage "CUPS") in CUPS. A simple example PKGBUILD that does this is [samsung2010p](https://aur.archlinux.org/packages/samsung2010p/).
 
 ## About Brother drivers
 
