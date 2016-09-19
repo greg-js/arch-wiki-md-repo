@@ -10,29 +10,37 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 *   [1 Installation](#Installation)
 *   [2 Managing plugins](#Managing_plugins)
     *   [2.1 Plug-in(s) not visible in Mozilla Firefox](#Plug-in.28s.29_not_visible_in_Mozilla_Firefox)
-*   [3 User Agent](#User_Agent)
+*   [3 User agent](#User_agent)
 *   [4 Verification](#Verification)
 *   [5 GPU Acceleration in Silverlight](#GPU_Acceleration_in_Silverlight)
     *   [5.1 Default behavior](#Default_behavior)
     *   [5.2 Force hardware acceleration](#Force_hardware_acceleration)
     *   [5.3 Disable graphics card verification](#Disable_graphics_card_verification)
-*   [6 Custom variables](#Custom_variables)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Pipelight stopped working after upgrade of chromium (version 35+)](#Pipelight_stopped_working_after_upgrade_of_chromium_.28version_35.2B.29)
-    *   [7.2 Silverlight plug-in error with Firefox and apparmor](#Silverlight_plug-in_error_with_Firefox_and_apparmor)
-    *   [7.3 Videos playing very fast and no sound / bad sound quality](#Videos_playing_very_fast_and_no_sound_.2F_bad_sound_quality)
-    *   [7.4 GNOME 3/Firefox fullscreen issues](#GNOME_3.2FFirefox_fullscreen_issues)
-    *   [7.5 Pipelight renders all Chinese characters as squares](#Pipelight_renders_all_Chinese_characters_as_squares)
-    *   [7.6 No sound when using PulseAudio](#No_sound_when_using_PulseAudio)
-*   [8 Tips](#Tips)
-    *   [8.1 Test 1080p video playback](#Test_1080p_video_playback)
-*   [9 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Silverlight plug-in error with Firefox and apparmor](#Silverlight_plug-in_error_with_Firefox_and_apparmor)
+    *   [6.2 Videos playing very fast and no sound / bad sound quality](#Videos_playing_very_fast_and_no_sound_.2F_bad_sound_quality)
+    *   [6.3 GNOME 3/Firefox fullscreen issues](#GNOME_3.2FFirefox_fullscreen_issues)
+    *   [6.4 Pipelight renders all Chinese characters as squares](#Pipelight_renders_all_Chinese_characters_as_squares)
+    *   [6.5 No sound when using PulseAudio](#No_sound_when_using_PulseAudio)
+*   [7 Tips](#Tips)
+    *   [7.1 Test 1080p video playback](#Test_1080p_video_playback)
+*   [8 See also](#See_also)
 
 ## Installation
 
 **Warning:** Pipelight requires a browser with NPAPI support, e.g. Firefox. NPAPI support is **not** present in Chrome/Chromium or Opera.
 
 Pipelight can be [installed](/index.php/Install "Install") with the [pipelight](https://aur.archlinux.org/packages/pipelight/) package.
+
+If you want to use Pipelight with a non-standard version of Wine, or want to install it somewhere else, modify the following variables in the PKGBUILD:
+
+*   `_prefix`
+
+	Allows setting a custom location. Default is `/usr`.
+
+*   `_wine`
+
+	Location of Wine-Silverlight.
 
 ## Managing plugins
 
@@ -75,9 +83,9 @@ If upon starting [Firefox](/index.php/Firefox "Firefox") the enabled plugin does
 
 ```
 
-## User Agent
+## User agent
 
-Since some sites (e.g. Netflix) refuse to stream to a Linux browser, the user agent may have to be [changed](https://answers.launchpad.net/pipelight/+faq/2351).
+Since some sites refuse to stream to a Linux browser, the user agent may have to be [changed](https://answers.launchpad.net/pipelight/+faq/2351).
 
 ## Verification
 
@@ -128,36 +136,7 @@ silverlightGraphicDriverCheck = false
 
 ```
 
-## Custom variables
-
-The selection of custom variables found in Wine-Silverlight and Pipelight are as following:
-
-*   [wine-silverlight](https://aur.archlinux.org/packages/wine-silverlight/)
-
-1.  `customprefix`
-    *   Installs Wine to `/opt` instead of `/usr` (to not conflict with [wine](https://www.archlinux.org/packages/?name=wine)).
-2.  `_prefix`
-    *   Allows setting a custom location.
-
-*   [pipelight](https://aur.archlinux.org/packages/pipelight/)
-
-1.  `_prefix`
-    *   Allows setting a custom location. Default is `/usr`.
-2.  `_wine`
-    *   Location of Wine-Silverlight.
-
-For example, to install Wine-Silverlight in `/opt`:
-
-*   **wine-silverlight:** set `customprefix=1`.
-*   **pipelight**: set `_wine=/opt/wine-silverlight`.
-
-**Warning:** Failure to do this in the PKGBUILD will result in the files having to be modified manually.
-
 ## Troubleshooting
-
-### Pipelight stopped working after upgrade of chromium (version 35+)
-
-NPAPI support has now been dropped from chromium. If you want to recompile in NPAPI support yourself, patches from Michael Müller are attached to this bug [[2]](https://bugs.archlinux.org/task/40676?string=chromium&project=1&search_name=&only_watched=1&type%5B0%5D=&sev%5B0%5D=&pri%5B0%5D=&due%5B0%5D=&reported%5B0%5D=&cat%5B0%5D=&status%5B0%5D=open&percent%5B0%5D=&opened=&dev=&closed=&duedatefrom=&duedateto=&changedfrom=&changedto=&openedfrom=&openedto=&closedfrom=&closedto=) The patches are originally from: [[3]](https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1307989)
 
 ### Silverlight plug-in error with Firefox and apparmor
 

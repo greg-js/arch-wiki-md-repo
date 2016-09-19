@@ -80,8 +80,6 @@ In order to launch VirtualBox virtual machines on your Arch Linux box, follow th
 
 To compile the virtualbox modules provided by [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms), it will also be necessary to install the appropriate headers package(s) for your installed kernel(s) (e.g. [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) for [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)). [[1]](https://lists.archlinux.org/pipermail/arch-dev-public/2016-March/027808.html) When either VirtualBox or the kernel is updated, the kernel modules will be automatically recompiled thanks to the [DKMS](/index.php/DKMS "DKMS") Pacman hook.
 
-You can also install the [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras) optional dependency in order to use the graphical interface which is based on [Qt](/index.php/Qt "Qt"). This is not required if you intend to use VirtualBox in command-line only. [See below to learn the differences](#Use_the_right_front-end).
-
 ### Sign modules
 
 When using a custom kernel with `CONFIG_MODULE_SIG_FORCE` option enabled, you must sign your modules with a key generated during kernel compilation.
@@ -138,12 +136,11 @@ If you prefer to use the traditional and manual way: download the extension manu
 
 Now, you are ready to use VirtualBox. Congratulations!
 
-Multiple front-ends are available to you of which two are available by default:
+Multiple front-ends are available to you of which three are available by default:
 
 *   If you want to use VirtualBox in command-line only (only launch and change settings of existing virtual machines), you can use the `VBoxSDL` command. VBoxSDL does only provide a simple window that contains only the *pure* virtual machine, without menus or other controls.
 *   If you want to use VirtualBox in command-line without any GUI running (e.g. on a server) to create, launch and configure virtual machines, use the `VBoxHeadless` which produces no visible output on the host at all, but instead only delivers VRDP data (note: VRDP is only enabled if the extension pack is installed).
-
-If you installed the [qt5-x11extras](https://www.archlinux.org/packages/?name=qt5-x11extras) optional dependency, you can run `VirtualBox` and have a nice-looking GUI interface with menus usable via the mouse.
+*   If you want to use VirtualBox with a GUI with menus usable via the mouse, you can run `VirtualBox`.
 
 Finally, you can use [PhpVirtualBox](/index.php/PhpVirtualBox "PhpVirtualBox") to administrate your virtual machines via a web interface.
 

@@ -35,9 +35,10 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
     *   to give you TU status on the AUR.
     *   to open a new task in the "Keyring" project of the bug tracker following the instructions in [this message](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) in order to have your PGP key signed by three master key holders.
 12.  Install the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
-13.  Make the directories `~/staging/community` and `~/staging/community-testing` (and `~/staging/multilib` if you are interested in maintaining multilib packages) on nymeria.archlinux.org. This step is **important** as the devtools scripts use this directory to process incoming packages.
-14.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
-15.  Start contributing!
+13.  [Configure your private ssh key](/index.php/Arch_User_Repository#Authentication "Arch User Repository") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
+14.  Ssh to yourname@orion.archlinux.org (once you have permissions). Make the directories `~/staging/community` and `~/staging/community-testing` (and `~/staging/multilib` if you are interested in maintaining multilib packages). This step is **important** as the devtools scripts use this directory to process incoming packages.
+15.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
+16.  Start contributing!
 
 ## The TU and [unsupported]
 
@@ -75,11 +76,11 @@ The [community] repository now uses **devtools** which is the same system used f
 Initially you should do a **non-recursive checkout** of the [community] repository:
 
 ```
-svn checkout -N svn+ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn
+svn checkout -N svn+ssh://svn-community@repos.archlinux.org/srv/repos/svn-community/svn svn-community
 
 ```
 
-This creates a directory named "svn" which contains nothing but a ".svn" folder.
+This creates a directory named "svn-community" which contains nothing but a ".svn" folder.
 
 For **checking** out, **updating** all packages or **adding** a package see the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager").
 
@@ -96,7 +97,7 @@ When you are done with editing the PKGBUILD, etc., you should **commit** the cha
 
 Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and `extra-x86_64-build`.
 
-Sign the package with `gpg --detach-sign *.pkg.tar.xz`.
+Sign the package with `gpg --detach-sign *.pkg.tar.xz`. If you are using a different PGP key for package signing you can add it to `~/.makepkg.conf` with `GPGKEY=<identifier>`.
 
 When you want to **release** a package, first copy the package along with its signatures to the *staging/community* directory on *nymeria.archlinux.org* using `scp` and then **tag** the package by going to the *pkgname/trunk* directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named *community-i686* or *community-x86_64* indicating that this package is in the community repository for that architecture.
 

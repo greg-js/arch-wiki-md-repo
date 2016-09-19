@@ -110,7 +110,7 @@ error: failed to prepare transaction (package architecture is not valid)
 
 #### Avoid installation of packages belonging to base group
 
-By, default `/usr/bin/mkarchiso`, a script which is used by `~/archlive/build.sh`, calls one of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) named `pacstrap` without the `-i` flag, which causes [Pacman](/index.php/Pacman "Pacman") to not wait for user input during the installation process.
+By default, `/usr/bin/mkarchiso`, a script which is used by `~/archlive/build.sh`, calls one of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) named `pacstrap` without the `-i` flag, which causes [Pacman](/index.php/Pacman "Pacman") to not wait for user input during the installation process.
 
 When blacklisting base group packages by adding them to the `IgnorePkg` line in `~/archlive/pacman.conf`, [Pacman](/index.php/Pacman "Pacman") asks if they still should be installed, which means they will when user input is bypassed. To get rid of these packages there are several options:
 
@@ -118,7 +118,7 @@ When blacklisting base group packages by adding them to the `IgnorePkg` line in 
 
 *   **Clean**: Create a copy of `/usr/bin/mkarchiso` in which you add the flag and adapt `~/archlive/build.sh` so that it calls the modified version of the mkarchiso script.
 
-*   **Advanced**: Create a function for `~/archlive//build.sh` which explicitly removes the packages after the base installation. This would leave you the comfort of not having to type enter so much during the installation process.
+*   **Advanced**: Create a function for `~/archlive/build.sh` which explicitly removes the packages after the base installation. This would leave you the comfort of not having to type enter so much during the installation process.
 
 #### Installing packages from multilib
 

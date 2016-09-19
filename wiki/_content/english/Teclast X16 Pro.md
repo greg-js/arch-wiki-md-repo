@@ -110,22 +110,22 @@ Hibernate and pm-suspend crashes.
 
 ### Camera
 
-According to /sys/bus/i2c/devices there is an OVTI2680 (OV2680) and INT5648 (this might be an OV5648)
+According to /sys/bus/i2c/devices there is an OVTI2680 (front camera unicam OV2680) and INT5648 (rear camera unicam OV5648)
 
 ### Devices on i2c bus
 
 /sys/bus/i2c/devices
 
-| i2c-10EC5645:00 | rt5645 | sound card |
-| i2c-BMA250E:00 | bmc150_accel_i2c | acceleration sensor |
-| i2c-FGCW2015:00 | unknown |
+| i2c-10EC5645:00 | rt5645 | Sound card |
+| i2c-BMA250E:00 | bmc150_accel_i2c | Acceleration sensor |
+| i2c-FGCW2015:00 | Maybe CW2015 battery monitoring ic |
 | i2c-GDIX1001:00 | Goodix-TS | touchscreen |
 | i2c-INT33FD:00 | intel_soc_pmic_i2c |
-| i2c-INT5648:00 | unknown, might be camera |
+| i2c-INT5648:00 | Rear camera sensor unicam ov5648 |
 | i2c-LNXVIDEO:00 |
-| i2c-OVTI2680:00 | unknown, might be ov2680 camera |
-| i2c-TBQ24297:00 | unknown |
-| i2c-XXVM149C:00 | unknown |
+| i2c-OVTI2680:00 | Front camera sensor unicam ov2680 |
+| i2c-TBQ24297:00 | Charge controller see doc here [http://www.ti.com/product/bq24297/description](http://www.ti.com/product/bq24297/description) |
+| i2c-XXVM149C:00 | Maybe current sinking see doc here [http://www.siti.com.tw/product/spec/Motor/SP-VM149C-A.002.pdf](http://www.siti.com.tw/product/spec/Motor/SP-VM149C-A.002.pdf) |
 
 ## Tips and ticks
 

@@ -16,7 +16,7 @@ The up-board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emula
 
 ## Sound
 
-As of August 2016, the mainline kernel does not support sound through HDMI for cherry trail based devices like the up-board. There are plans on adding support to the mainline kernel as noted [here](https://bugzilla.kernel.org/show_bug.cgi?id=113971#c6), but in the mean time if you wish to have sound you will need to patch your kernel.
+As of August 2016, the mainline kernel does not support sound through HDMI for cherry trail based devices like the up-board. There are plans on adding support to the mainline kernel as noted [here](https://bugzilla.kernel.org/show_bug.cgi?id=113971#c6), but in the mean time if you wish to have sound you will need to patch your kernel. The package [linux-ct](https://aur.archlinux.org/packages/linux-ct/) is available on the AUR, or alternatively you can follow the instructions below to generate and apply the patch yourself.
 
 ### Compilation
 

@@ -20,7 +20,11 @@ File systems are usually created on a [partition](/index.php/Partition "Partitio
 
 **Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless_Btrfs_disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
 
-**Warning:** After creating a new filesystem, data previously stored on this partition can unlikely be recovered. Make a backup of any data you want to keep.
+**Warning:**
+
+*   After creating a new filesystem, data previously stored on this partition can unlikely be recovered. Make a backup of any data you want to keep.
+
+*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders").
 
 Identify the partition where the file system will be created, for example with [lsblk](/index.php/Lsblk "Lsblk"):
 
@@ -31,21 +35,21 @@ sdb
 └─sdb1 vfat   Transcend 4A3C-A9E9
 ```
 
-If there is an existing file system, it must **not** be [mounted](/index.php/Mount "Mount"). Check if the respective `MOUNTPOINT` column of *lsblk* is empty, or if [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html) has no output. For example:
+An existing file system, if present, will be shown in the `FSTYPE` column. If [mounted](/index.php/Mount "Mount"), it will appear in the `MOUNTPOINT` column or in the output of [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html). For example:
 
 ```
 $ findmnt */dev/sdb1*
 
 ```
 
-To unmount it, use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html) on the directory where the file system was mounted to:
+Mounted file systems **must** be unmounted with [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html) before proceeding:
 
 ```
 # umount */mountpoint*
 
 ```
 
-Create a new file system on a partition with [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
+To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
 
 For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions), run:
 
@@ -53,6 +57,10 @@ For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") 
 # mkfs.*ext4* /dev/*sdb1*
 
 ```
+
+**Tip:** Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e4label* can be used to change the label on an existing file system.
+
+The new file system can now be mounted to a directory of choice.
 
 ## Types of file systems
 

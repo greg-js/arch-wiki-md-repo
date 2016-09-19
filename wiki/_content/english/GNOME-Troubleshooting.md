@@ -6,26 +6,27 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [2 Incorrect application defaults](#Incorrect_application_defaults)
 *   [3 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
 *   [4 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
-*   [5 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
-*   [6 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
-*   [7 Extensions do not work after GNOME 3 update](#Extensions_do_not_work_after_GNOME_3_update)
-*   [8 Extensions disabled at every system startup](#Extensions_disabled_at_every_system_startup)
-*   [9 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
-*   [10 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
-*   [11 Consistent cursor theme](#Consistent_cursor_theme)
-*   [12 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
-*   [13 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
-*   [14 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
-*   [15 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
-*   [16 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
-*   [17 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
-*   [18 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
-*   [19 Mouse cursor missing](#Mouse_cursor_missing)
-*   [20 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
-*   [21 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
-*   [22 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
-*   [23 Setting global Wayland environment with an environment variable](#Setting_global_Wayland_environment_with_an_environment_variable)
-*   [24 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
+*   [5 Empathy does not use GNOME Online Accounts](#Empathy_does_not_use_GNOME_Online_Accounts)
+*   [6 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
+*   [7 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
+*   [8 Extensions do not work after GNOME 3 update](#Extensions_do_not_work_after_GNOME_3_update)
+*   [9 Extensions disabled at every system startup](#Extensions_disabled_at_every_system_startup)
+*   [10 Keyboard shortcut do not work with only conky running](#Keyboard_shortcut_do_not_work_with_only_conky_running)
+*   [11 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
+*   [12 Consistent cursor theme](#Consistent_cursor_theme)
+*   [13 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
+*   [14 Slow loading of system icons/slow GDM login](#Slow_loading_of_system_icons.2Fslow_GDM_login)
+*   [15 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
+*   [16 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
+*   [17 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
+*   [18 Lock button fails to re-enable touchpad](#Lock_button_fails_to_re-enable_touchpad)
+*   [19 GNOME Shell keyboard sources menu not visible](#GNOME_Shell_keyboard_sources_menu_not_visible)
+*   [20 Mouse cursor missing](#Mouse_cursor_missing)
+*   [21 No restart button in session menu when screen is locked](#No_restart_button_in_session_menu_when_screen_is_locked)
+*   [22 PulseAudio system-wide causes delay in GNOME and GDM](#PulseAudio_system-wide_causes_delay_in_GNOME_and_GDM)
+*   [23 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
+*   [24 Setting global Wayland environment with an environment variable](#Setting_global_Wayland_environment_with_an_environment_variable)
+*   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
 
 ## Shell freezes
 
@@ -63,6 +64,10 @@ You can also configure Tracker to recursively search inside specific directories
 Empathy, the engine behind integrated messaging, GNOME Online Accounts, and all other system settings based on messaging accounts will not function correctly unless the [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) group of packages or at least one of the backends ([telepathy-gabble](https://www.archlinux.org/packages/?name=telepathy-gabble), or [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), for example) is [installed](/index.php/Install "Install"). View descriptions of *telepathy* components on the [freedesktop.org telepathy wiki](http://telepathy.freedesktop.org/wiki/Components).
 
 **Note:** [Avahi](/index.php/Avahi "Avahi") daemon is required for connecting with the People Nearby account, and also in order for some desktop extensions to work correctly like [Chat Status](https://extensions.gnome.org/extension/746/chat-status/)
+
+## Empathy does not use GNOME Online Accounts
+
+Restart is necessary to enable Empathy to recognize and use GNOME Online Accounts.
 
 ## Cannot change settings in dconf-editor
 

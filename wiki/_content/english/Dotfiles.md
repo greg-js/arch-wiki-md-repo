@@ -70,6 +70,8 @@ $ git commit -a
 
 One way of maintaining dotfiles across various machines across various hosts while still allowing for per-host customizations, is by maintaining a master-branch for all shared configuration, while each individual machine has a machine-specific branch checked out. Host-specific configuration can be committed to the machine-specific branch; as shared configuration is added to the master-branch, the per-machine branches are then rebased on top of the updated master.
 
+Another approach is to put machine-specific configuration into specially commented blocks and to use [qualia](https://pypi.python.org/pypi/mir.qualia/) to automatically uncomment them on each machine. This approach requires less manual work and doesn't cause merge conflicts.
+
 ### Confidential information
 
 Occasionally, software may keep plain-text passwords in configuration files, as opposed to hooking into a keyring. In these cases, git clean-filters may be handy to avoid accidentally commiting confidential information. E. g., the following .gitattributes file assigns a filter to the file “some-dotfile”:

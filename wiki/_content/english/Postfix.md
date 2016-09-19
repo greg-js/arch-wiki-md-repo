@@ -344,6 +344,10 @@ smtpd_tls_cert_file = **/path/to/cert.pem**
 smtpd_tls_key_file = **/path/to/key.pem**
 ```
 
+Also in `master.cf` find and remove the comment from the following line to enable the service on that port:
+
+ `/etc/postfix/master.cf`  `submission inet n       -       n       -       -       smtpd` 
+
 If you need support for the deprecated SMTPS port 465, read the next section.
 
 #### SMTPS (port 465)

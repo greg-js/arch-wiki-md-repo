@@ -127,9 +127,9 @@ exec openbox
 
 *   `OLDPWD` contains the path to your previous working directory, that is, the value of `PWD` before last *cd* was executed.
 
-*   `SHELL` contains the name of the running, interactive shell, e.g., `bash`
+*   `SHELL` contains the path to the user's [preferred shell](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Note that this is not necessarily the shell that is currently running, although [Bash](/index.php/Bash "Bash") sets this variable on startup.
 
-*   `TERM` contains the name of the running terminal, e.g., `xterm`
+*   `TERM` contains the type of the running terminal, e.g. `xterm-256color`. It is used by programs running in the terminal that wish to use terminal-specific capabilities.
 
 *   `PAGER` contains command to run the program used to list the contents of files, e.g., `/bin/less`.
 

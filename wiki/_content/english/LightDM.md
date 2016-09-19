@@ -35,6 +35,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.10 Default session](#Default_session)
     *   [5.11 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
         *   [5.11.1 GTK+ greeter](#GTK.2B_greeter_2)
+    *   [5.12 VNC Server](#VNC_Server)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
@@ -137,7 +138,7 @@ background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jp
 
 ##### GTK3 Dark Theme
 
-GTK3 introduced "dark" alternate color pallets for themes, but lightdm-gtk-greeter does not yet support specifing one natively. A workaround is to override the theme with an evironment variable in `/usr/share/xgreeters/lightdm-gtk-greeter.desktop` For example:
+GTK3 introduced "dark" alternate color palettes for themes, but lightdm-gtk-greeter does not yet support specifing one natively. A workaround is to override the theme with an evironment variable in `/usr/share/xgreeters/lightdm-gtk-greeter.desktop` For example:
 
  `/usr/share/xgreeters/lightdm-gtk-greeter.desktop` 
 ```
@@ -326,6 +327,33 @@ Example:
 position=200,start 50%,center
 
 ```
+
+### VNC Server
+
+Lightdm can also be used to connec to via vnc. Make sure to install [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) on the server side and optional as your vncclient on the client PC.
+
+Setup an authentification password on the server as root:
+
+```
+# vncpasswd /etc/vncpasswd
+
+```
+
+Edit the lightdm configuration file as shown below. Note that `listen-address` configures the vnc to only listen to connections from localhost. This is used to only allow connections via [ssh and port forwarding](https://wiki.archlinux.org/index.php/TigerVNC#On_the_client). If you want to allow insecure connections you can disable this setting.
+
+ `/etc/lightdm/lightdm.conf` 
+```
+[VNCServer]
+enabled=true
+command=Xvnc -rfbauth /etc/vncpasswd
+port=5900
+listen-address=localhost
+width=1024
+height=768
+depth=24
+```
+
+Now open an ssh tunnel and connect to localhost as described in [TigerVNC#On_the_client](/index.php/TigerVNC#On_the_client "TigerVNC").
 
 ## Troubleshooting
 

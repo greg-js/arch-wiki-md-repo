@@ -42,6 +42,7 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
         *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
         *   [3.11.2 Right Click Menu Key](#Right_Click_Menu_Key)
         *   [3.11.3 Blackborders are transparent](#Blackborders_are_transparent)
+        *   [3.11.4 USB DAC not working](#USB_DAC_not_working)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -132,9 +133,9 @@ WantedBy=sockets.target
 
 #### Start from remote control with LIRC / irexec
 
-With the help of the packages [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) and [lirc](https://www.archlinux.org/packages/?name=lirc) you can setup a configuration where you can start Kodi by pressing a key on your remote. This can be useful on a Raspberry Pi if you want to have it running 24/7 but do not want Kodi to be open 24/7, for instance if you use the Pi as Wifi-Access Point and PVR-Client. This way you can close Kodi and allow your PVR-Server to suspend/hibernate but still have your Wifi accessible - and start Kodi again without the need of a keyboard.
+Kodi can be configured to start via a key press. Users will need [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) and [lirc](https://www.archlinux.org/packages/?name=lirc). This can be useful on setups running 24/7 and having kodi up on demand.
 
-You need to have a working setup of [LIRC](/index.php/LIRC "LIRC"), the package [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) has to be installed.
+See the corresponding [LIRC](/index.php/LIRC "LIRC") article and create a functional setup with a remote. Also, the package [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) has to be installed.
 
 Generate the file `/var/lib/kodi/.lircrc` with the following content:
 
@@ -151,7 +152,7 @@ end
 
 ```
 
-Adopt `button` to whatever button on your remote you want to assign to start Kodi. You can use *irw* (see [LIRC#Usage](/index.php/LIRC#Usage "LIRC")) to find out the correct values for `remote` and `button`.
+Adopt `button` to whatever button on the remote is to start Kodi. One can use *irw* (see [LIRC#Usage](/index.php/LIRC#Usage "LIRC")) to find out the correct values for `remote` and `button`.
 
 Next copy `kodi.service` from `/usr/lib/systemd/system/` to `/etc/systemd/system/` and change the line
 
@@ -492,7 +493,7 @@ SDL_VIDEO_FULLSCREEN_HEAD=0
 
 Users observing tearing when watching a movie try this: [https://bbs.archlinux.org/viewtopic.php?id=176651](https://bbs.archlinux.org/viewtopic.php?id=176651)
 
-As an alternative with [Xfce](/index.php/Xfce "Xfce") you can use a different X11 compositor like [compton](https://www.archlinux.org/packages/?name=compton) which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
+Try a different X11 compositor like [compton](https://www.archlinux.org/packages/?name=compton) as an alternative with [Xfce](/index.php/Xfce "Xfce") which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
 
 ### Slowing down CD/DVD drive speed
 
@@ -548,9 +549,9 @@ Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful t
 
 #### Run kodi in a window manager
 
-If you run kodi in a [Window manager](/index.php/Window_manager "Window manager") you may come across a black screen at exit, to fix you have to switch tty, a possible solution is to run kodi with this script (if you use [sudo](/index.php/Sudo "Sudo")):
+Users running kodi in a [Window manager](/index.php/Window_manager "Window manager") may see a black screen at exit. To fix this, try switching to another tty. A possible solution is to run kodi with this script (running as the root user):
 
- `~/bin/kodi.sh` 
+ `kodi.sh` 
 ```
 #!/bin/bash
 kodi-standalone
@@ -570,11 +571,31 @@ To make sure that [sudo](/index.php/Sudo "Sudo") does not ask for password for `
 
 #### Right Click Menu Key
 
-On the Raspberry Pi the physical keyboard "Menu Key" does not work with kodi. As an alternative you can hold the "Enter Key" longer to access submenus in kodi. This bug seems to be exclusive to the Raspberry Pi as it is run in a standalone environment.
+On the Raspberry Pi the physical keyboard "Menu Key" does not work with kodi. As an alternative hold the "Enter Key" longer to access submenus in kodi. This bug seems to be exclusive to the Raspberry Pi as it is run in a standalone environment.
 
 #### Blackborders are transparent
 
-If you use the kodi-standalone mode as systemd service you will notice that in the transparent screensaver and cropped videos with black borders the console is visible behind. This is a bug of the systemd script in the alarm repository and will hopefully get fixed soon. Further details and a fix can be found on [Github](https://github.com/archlinuxarm/PKGBUILDs/pull/1379).
+Some users have reported that running in kodi-standalone mode as systemd service causes cropped videos with black borders the console.
+
+This is a bug of the systemd script in the alarm repository and will hopefully get fixed soon. Further details and a fix can be found on [Github](https://github.com/archlinuxarm/PKGBUILDs/pull/1379).
+
+#### USB DAC not working
+
+Users of USB DAC/sound cards may experience distorted sound/clicks/pops or no sound at all when selecting it from Audio settings. A possible fix:
+
+Open `guisettings.xml` (it should be under `/var/lib/kodi/.kodi/userdata/` if using the supplied `kodi.service`) and change
+
+```
+<processquality default="**true**">**101**</processquality>
+
+```
+
+to
+
+```
+<processquality default="**false**">**100**</processquality>
+
+```
 
 ## See also
 

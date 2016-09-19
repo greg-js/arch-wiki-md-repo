@@ -18,7 +18,7 @@
 
 	[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")
 
-	Arch linux 的完整安装指南。
+	Arch Linux 的完整安装指南。
 
 	[建议阅读](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
 

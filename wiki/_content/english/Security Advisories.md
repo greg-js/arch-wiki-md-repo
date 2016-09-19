@@ -41,6 +41,10 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### September 2016
 
+*   [18 September 2016] [ASA-201609-16](https://lists.archlinux.org/pipermail/arch-security/2016-September/000712.html) [php](https://www.archlinux.org/packages/?name=php) multiple issues.
+*   [17 September 2016] [ASA-201609-15](https://lists.archlinux.org/pipermail/arch-security/2016-September/000711.html) [jansson](https://www.archlinux.org/packages/?name=jansson) denial of service
+*   [17 September 2016] [ASA-201609-14](https://lists.archlinux.org/pipermail/arch-security/2016-September/000710.html) [lib32-libgcrypt](https://www.archlinux.org/packages/?name=lib32-libgcrypt) information disclosure
+*   [17 September 2016] [ASA-201609-13](https://lists.archlinux.org/pipermail/arch-security/2016-September/000709.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [15 September 2016] [ASA-201609-12](https://lists.archlinux.org/pipermail/arch-security/2016-September/000708.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
 *   [15 September 2016] [ASA-201609-11](https://lists.archlinux.org/pipermail/arch-security/2016-September/000707.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
 *   [14 September 2016] [ASA-201609-10](https://lists.archlinux.org/pipermail/arch-security/2016-September/000706.html) [mariadb](https://www.archlinux.org/packages/?name=mariadb) multiple issues

@@ -14,7 +14,6 @@
         *   [4.1.2 Use terminal emulator options](#Use_terminal_emulator_options)
         *   [4.1.3 Use terminal multiplexer options](#Use_terminal_multiplexer_options)
     *   [4.2 Setting fish as default shell](#Setting_fish_as_default_shell)
-        *   [4.2.1 /etc/profile and ~/.profile compatibility](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility)
     *   [4.3 Disable greeting](#Disable_greeting)
     *   [4.4 Make su launch fish](#Make_su_launch_fish)
     *   [4.5 Start X at login](#Start_X_at_login)
@@ -75,9 +74,9 @@ In Arch, some shell scripts are written for [Bash](/index.php/Bash "Bash") and a
 
 #### Modify .bashrc to drop into fish
 
-Keep your default shell as Bash and simply add the line `fish && exit` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. When you exit *fish* you will seamlessly exit *bash* as well. Compared to the following options, this is the most universal solution, since it works both on a local machine and on an SSH server.
+Keep your default shell as Bash and simply add the line `exec fish` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. Because *fish* replaces the bash process, exiting *fish* will also exit the terminal. Compared to the following options, this is the most universal solution, since it works both on a local machine and on an SSH server.
 
-**Tip:** Use `bash --norc` to enter bash manually without dropping to fish after setting up as above.
+**Tip:** Use `bash` to enter bash manually without dropping to fish after setting up as above.
 
 #### Use terminal emulator options
 
@@ -121,31 +120,7 @@ end
 
 ```
 
-Note that this route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be to [source /etc/profile and ~/.profile](#.2Fetc.2Fprofile_and_.7E.2F.profile_compatibility).
-
-#### /etc/profile and ~/.profile compatibility
-
-Since standard POSIX `sh` syntax is not compatible with fish, fish will not be able to source `/etc/profile` and thus all `*.sh` in `/etc/profile.d` and `~/.profile`. If you have fish as your default login shell, you can work around this by doing the following:
-
-Install [dash](https://www.archlinux.org/packages/?name=dash) and add this line to your `config.fish`:
-
-```
-if status --is-login
-       env -i HOME=$HOME dash -l -c printenv | sed -e '/PWD/d;/PATH/s/:/ /g;s/=/ /;s/^/set -x /' | source
-end
-
-```
-
-an alternative variant will save you one executable invocation by using a builtin command:
-
-```
-if status --is-login
-       env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PWD/d;/PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source
-end
-
-```
-
-Also consider [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
+**Note:** This route requires you to manually add various other environment variables, such as `$MOZ_PLUGIN_PATH`. It is a huge amount of work to get a seamless experience with fish as your default shell using this method. A better idea would be [#Not setting fish as default shell](#Not_setting_fish_as_default_shell).
 
 ### Disable greeting
 

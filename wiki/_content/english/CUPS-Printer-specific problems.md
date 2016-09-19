@@ -53,7 +53,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/) |
 | HL-3045CN | Install Brother's driver. |
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
-| HL-3170CDW | [brother-cups-wrapper-ac](https://aur.archlinux.org/packages/brother-cups-wrapper-ac/) | Use BRScript3 Driver for HL-4070CDW |
+| HL-3170CDW | [brother-hl3170cdw](https://aur.archlinux.org/packages/brother-hl3170cdw/) |
 | HL-5140 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |

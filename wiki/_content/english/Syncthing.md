@@ -12,8 +12,9 @@
 *   [5 Use Inotify](#Use_Inotify)
     *   [5.1 Custom Settings](#Custom_Settings)
 *   [6 Run a Relay](#Run_a_Relay)
-*   [7 Discovery Server](#Discovery_Server)
-*   [8 Troubleshooting](#Troubleshooting)
+*   [7 Stop journal spam](#Stop_journal_spam)
+*   [8 Discovery Server](#Discovery_Server)
+*   [9 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
@@ -107,6 +108,17 @@ ExecStart=/usr/bin/syncthing-relaysrv FLAGS
 ```
 
 A traffic statistics page is available at port 22070, e.g. [http://78.47.248.86:22070/status](http://78.47.248.86:22070/status).
+
+## Stop journal spam
+
+Syncthing can be quite noise even while it isn't doing anything. The service ExecStart can be overridden like this to filter output directly without an extra script (adjust "grep" as needed):
+
+ `/etc/systemd/system/syncthing@.service.d/nospam.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=/bin/bash -c 'set -o pipefail; /usr/bin/syncthing -no-browser -no-restart -logflags=0 | grep -v "INFO: "'
+```
 
 ## Discovery Server
 

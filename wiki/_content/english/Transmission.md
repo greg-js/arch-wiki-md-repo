@@ -7,13 +7,14 @@
     *   [2.1 GTK+ temporary cosmetic fix](#GTK.2B_temporary_cosmetic_fix)
 *   [3 Transmission daemon and CLI](#Transmission_daemon_and_CLI)
     *   [3.1 Starting and stopping the daemon](#Starting_and_stopping_the_daemon)
-    *   [3.2 Run only while connected to network](#Run_only_while_connected_to_network)
-        *   [3.2.1 Netctl](#Netctl)
-        *   [3.2.2 Wicd](#Wicd)
-    *   [3.3 Choosing a user](#Choosing_a_user)
-    *   [3.4 Configuring the daemon](#Configuring_the_daemon)
-        *   [3.4.1 Watch dir](#Watch_dir)
-        *   [3.4.2 CLI Examples](#CLI_Examples)
+    *   [3.2 Reducing journal spam](#Reducing_journal_spam)
+    *   [3.3 Run only while connected to network](#Run_only_while_connected_to_network)
+        *   [3.3.1 Netctl](#Netctl)
+        *   [3.3.2 Wicd](#Wicd)
+    *   [3.4 Choosing a user](#Choosing_a_user)
+    *   [3.5 Configuring the daemon](#Configuring_the_daemon)
+        *   [3.5.1 Watch dir](#Watch_dir)
+        *   [3.5.2 CLI Examples](#CLI_Examples)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Cannot access the daemon over the network](#Cannot_access_the_daemon_over_the_network)
 *   [5 See also](#See_also)
@@ -85,6 +86,29 @@ An alternative option to stop transmission is to use the *transmission-remote* c
 
 ```
 $ transmission-remote --exit
+
+```
+
+### Reducing journal spam
+
+Running transmission-daemon can lead to a lot of unwanted journal entries. Output can be filtered by starting it with a small wrapper script. The following example also provides some notifications:
+
+ `transwrap.sh` 
+```
+#!/bin/zsh
+killall transmission-daemon 2> /dev/null
+transmission-daemon --foreground --log-info 2>&1 | while read line; do
+	echo $line |
+		grep -v "announcer.c:\|platform.c:\|announce done (tr-dht.c:" |
+		grep -v "Saved.*variant.c:" |
+		while read line; do
+			echo $line | grep -q "Queued for verification (verify.c:" &&
+				notify-send --app-name="Transmission Started" "${line#* * }"
+			echo $line | grep -q "changed from .Incomplete. to .Complete." &&
+				notify-send --app-name="Transmission Complete" "${line#* * }"
+			echo $line | systemd-cat --identifier="TransWrap" --priority=5
+		done 2>&1 > /dev/null
+	done&disown
 
 ```
 

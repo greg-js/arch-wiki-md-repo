@@ -1,4 +1,4 @@
-[Power management](https://en.wikipedia.org/wiki/Power_management "wikipedia:Power management") is a feature that turns off the power or switches the system to a low-power state when inactive.
+[Power management](https://en.wikipedia.org/wiki/Power_management "wikipedia:Power management") is a feature that turns off the power or switches system's components to a low-power state when inactive.
 
 In Arch linux, power management consists of two main parts:
 

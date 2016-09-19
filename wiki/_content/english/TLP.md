@@ -26,8 +26,10 @@ To complete TLP's install, you must [enable](/index.php/Enable "Enable") the sys
 
 For advanced battery functions, i.e. charge thresholds and recalibration, install the following package(s):
 
-*   [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) – needed for X220, T420 and older models
-*   [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) – needed for X220, T420 and newer models
+*   [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) – tp-smapi is needed for battery charge thresholds, recalibration and specific status output of tlp-stat
+*   [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) – acpi-call is needed for battery charge thresholds and recalibration on Sandy Bridge and newer models (X220/T420, X230/T430 et al.)
+
+See the TLP FAQ, section ["Which kernel module?"](http://linrunner.de/en/tlp/docs/tlp-faq.html#kernmod), for details.
 
 ## Start
 

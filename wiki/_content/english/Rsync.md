@@ -136,7 +136,7 @@ If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this scrip
  `/etc/cron.daily/backup` 
 ```
 #!/bin/bash
-rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/to/backup &> /dev/null
+rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/of/backup &> /dev/null
 ```
 
 	`-e ssh` 

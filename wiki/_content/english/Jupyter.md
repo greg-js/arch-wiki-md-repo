@@ -8,7 +8,8 @@
     *   [3.1 Haskell](#Haskell)
     *   [3.2 Julia](#Julia)
     *   [3.3 Python](#Python)
-    *   [3.4 Sage math](#Sage_math)
+    *   [3.4 R](#R)
+    *   [3.5 Sage math](#Sage_math)
 
 ## Installation
 
@@ -45,6 +46,10 @@ See the [Julia manual](http://docs.julialang.org/en/release-0.4/manual/packages/
 ### Python
 
 Install [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) for Python 2\. Python 3 support (via [python-ipykernel](https://www.archlinux.org/packages/?name=python-ipykernel)) is included when installing [jupyter](https://www.archlinux.org/packages/?name=jupyter).
+
+### R
+
+Follow the installation instructions in [IR Kernel](https://github.com/IRkernel/IRkernel).
 
 ### Sage math
 

@@ -103,4 +103,4 @@ You can use it via uim. Choose "Google-CGIAPI-Jp" on uim-im-switcher-gtk/gtk3/qt
 
 #### Anthy
 
-Anthy is factually dead project.
+Anthy is a factually dead project.

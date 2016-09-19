@@ -67,9 +67,9 @@ Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg
 
 ```
 
-One way to check which devices are managed by libinput is the *xorg* logfile. For example, the following:
+One way to check which devices are managed by libinput is the [xorg logfile](/index.php/Xorg#General "Xorg"). For example, the following:
 
- `$ grep -e "Using input driver 'libinput'" /var/log/Xorg.0.log` 
+ `$ grep -e "Using input driver 'libinput'" */path/to/Xorg.0.log*` 
 ```
 [    28.799] (II) Using input driver 'libinput' for 'Power Button'
 [    28.847] (II) Using input driver 'libinput' for 'Video Bus'

@@ -106,7 +106,14 @@ If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), 
 
 ### Format the partitions
 
-Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for details.
+Once the partitions have been created, each must be formatted with an appropriate [file system](/index.php/File_system "File system"). For example, to format the root partition on `/dev/*sda1*` with `*ext4*`, run:
+
+```
+# mkfs.*ext4* /dev/*sda1*
+
+```
+
+See [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for details.
 
 ### Mount the file systems
 
@@ -212,7 +219,7 @@ Create `/etc/hostname` with the desired [hostname](/index.php/Network_configurat
 
 ```
 
-Add a matching line to `/etc/hosts`:
+Consider adding a [matching entry](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") to `/etc/hosts`:
 
 ```
 127.0.1.1 *myhostname*.localdomain *myhostname*
