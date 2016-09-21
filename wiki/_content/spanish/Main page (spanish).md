@@ -32,7 +32,7 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	[Código de conducta](/index.php/Forum_etiquette_(Espa%C3%B1ol) "Forum etiquette (Español)")
 
-	Conozca las normas de conducta para los miembros del foro de Arch.
+	Conozca las normas de conducta para los miembros de la comunidad de Arch.
 
 	[Colaborar con la comunidad](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)")
 

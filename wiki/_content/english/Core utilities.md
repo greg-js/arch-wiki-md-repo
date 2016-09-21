@@ -163,10 +163,10 @@ See `man sponge` for details.
 **Note:** The *ip* utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 | Object | Purpose | Manual page |
-| ip addr | protocol address management | ip-address |
+| ip addr | protocol address management | ip-address(8) |
 | ip addrlabel | protocol address label management | [ip-addrlabel(8)](http://man7.org/linux/man-pages/man8/ip-addrlabel.8.html) |
 | ip l2tp | tunnel Ethernet over IP (L2TPv3) | [ip-l2tp(8)](http://man7.org/linux/man-pages/man8/ip-l2tp.8.html) |
-| ip link | network device configuration | ip-link |
+| ip link | network device configuration | ip-link(8) |
 | ip maddr | multicast addresses management | [ip-maddress(8)](http://man7.org/linux/man-pages/man8/ip-maddress.8.html) |
 | ip monitor | watch for netlink messages | [ip-monitor(8)](http://man7.org/linux/man-pages/man8/ip-monitor.8.html) |
 | ip mroute | multicast routing cache management | [ip-mroute(8)](http://man7.org/linux/man-pages/man8/ip-mroute.8.html) |
@@ -174,7 +174,7 @@ See `man sponge` for details.
 | ip neigh | neighbour/ARP tables management | [ip-neighbour(8)](http://man7.org/linux/man-pages/man8/ip-neighbour.8.html) |
 | ip netns | process network namespace management | [ip-netns(8)](http://man7.org/linux/man-pages/man8/ip-netns.8.html) |
 | ip ntable | neighbour table configuration | [ip-ntable(8)](http://man7.org/linux/man-pages/man8/ip-ntable.8.html) |
-| ip route | routing table management | ip-route |
+| ip route | routing table management | ip-route(8) |
 | ip rule | routing policy database management | [ip-rule(8)](http://man7.org/linux/man-pages/man8/ip-rule.8.html) |
 | ip tcp_metrics | management for TCP Metrics | [ip-tcp_metrics(8)](http://man7.org/linux/man-pages/man8/ip-tcp_metrics.8.html) |
 | ip tunnel | tunnel configuration | [ip-tunnel(8)](http://man7.org/linux/man-pages/man8/ip-tunnel.8.html) |

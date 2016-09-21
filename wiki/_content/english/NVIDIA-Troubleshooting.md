@@ -470,6 +470,18 @@ export KWIN_TRIPLE_BUFFER=1
 
 If you enable triple buffering make sure to enable `TripleBuffering` for the driver itself.
 
+ `/etc/X11/xorg.conf or /etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "Device"
+    [...]
+    Option         "TripleBuffer" "True"
+    [...]
+EndSection
+
+```
+
+Also make sure to select OpenGL >= 2.0 as rendering backend under Systemsettings > Display and Monitor > Compositor.
+
 In some cases neither of the above fixes work. A possible fix is to configure [ForceFullCompositionPipeline](#Avoid_screen_tearing).
 
 Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)

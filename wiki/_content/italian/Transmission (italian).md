@@ -36,13 +36,16 @@ Editare `/etc/conf.d/transmissiond` e modificare l'utente usato per scaricare:
 Quindi avviare il demone:
 
 ```
-# rc.d start transmissiond
+# systemctl start transmission
 
 ```
 
 Navigate su `[http://127.0.0.1:9091](http://127.0.0.1:9091)` nel vostro browser web e potete vedere il Web client.
 
-Potete anche editare il file di configurazione principale `~/.config/transmission-daemon/settings.json` per aggiustare le vostre preferenze.
+Per modificare le vostre preferenze, editare il file di configurazione principale in:
+
+*   `/var/lib/transmission/.config/transmission-daemon/settings.json` se transmission è stato avviato con lo username di default `transmission`;
+*   `~/.config/transmission-daemon/settings.json` se transmission è stato avviato con un diverso utente.
 
 **Note:**
 

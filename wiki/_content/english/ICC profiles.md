@@ -1,4 +1,4 @@
-As it pertains to general desktop use, an ICC profile is a binary file which contains precise data regarding the color attributes of an input, or output device ([Source](https://en.wikipedia.org/wiki/ICC_profile "wikipedia:ICC profile")). Single, or multiple profiles can be applied across a system and its devices to produce consistent and repeatable results for graphic and document editing and publishing. ICC profiles are typically calibrated with a [(tristimulus) colorimeter](https://en.wikipedia.org/wiki/Tristimulus_colorimeter "wikipedia:Tristimulus colorimeter"), or a spectrophotometer when absolute color accuracy is required.
+As it pertains to general desktop use, an [ICC profile](https://en.wikipedia.org/wiki/ICC_profile "wikipedia:ICC profile") is a binary file which contains precise data regarding the color attributes of an input, or output device. Single, or multiple profiles can be applied across a system and its devices to produce consistent and repeatable results for graphic and document editing and publishing. ICC profiles are typically calibrated with a [(tristimulus) colorimeter](https://en.wikipedia.org/wiki/Tristimulus_colorimeter "wikipedia:Tristimulus colorimeter"), or a spectrophotometer when absolute color accuracy is required.
 
 ## Contents
 
@@ -29,7 +29,7 @@ As it pertains to general desktop use, an ICC profile is a binary file which con
 
 ## Profile generation
 
-Color management is a workflow of hardware calibration, software profiling and embedding the profile into the picture or video. It's all based on using an [ICC_profile](https://en.wikipedia.org/wiki/ICC_profile).
+Color management is a workflow of hardware calibration, software profiling and embedding the profile into the picture or video. It's all based on using an [ICC profile](https://en.wikipedia.org/wiki/ICC_profile "wikipedia:ICC profile").
 
 ### Calorimeter or spectrometer
 
@@ -55,14 +55,14 @@ See [cups-calibrate(8)](http://linux.die.net/man/8/cups-calibrate).
 
 ### File transfer
 
-Profile generation on a Windows 7/Vista/XP, or [Mac OS X](http://www.apple.com/macosx/) system is one of the easiest and most widely recommended methods to obtain a ICC monitor profile. Since ICC color profiles are written to an open specification, they are compatible across operating systems. Transferring profiles from one OS to another can be used as a workaround for the lack of support for certain spectrophotometers or colorimeters under [Linux](http://www.linux.org/): one can simply produce a profile on a different OS and then use it in a Linux workflow ([Source](https://en.wikipedia.org/wiki/Linux_color_management "wikipedia:Linux color management")). Note that the system on which the profile is generated must host the exact same video card and monitor for which the profile is to be used. Once generation of an ICC profile, or a series of profiles is complete on a Windows 7/Vista/XP system, copy the file(s) from the default path:
+Profile generation on a Windows or macOS system is one of the easiest and most widely recommended methods to obtain a ICC monitor profile. Since ICC color profiles are written to an open specification, they are compatible across operating systems. Transferring profiles from one OS to another can be used as a workaround for the lack of support for certain spectrophotometers or colorimeters under Linux: one can simply produce a profile on a different OS and then use it in a Linux workflow. Note that the system on which the profile is generated must host the exact same video card and monitor for which the profile is to be used. Once generation of an ICC profile, or a series of profiles is complete on a Windows system, copy the file(s) from the default path:
 
 ```
 C:\WINDOWS\System32\spool\drivers\color
 
 ```
 
-Mac OS X generally stores saved ICC profiles in one of two locations:
+macOS generally stores saved ICC profiles in one of two locations:
 
 ```
 /Library/ColorSync/Profiles
@@ -223,7 +223,7 @@ You can easily use one of these loaders to apply the color profile in early boot
 ## See also
 
 *   [Using LPROF to profile monitors](/index.php/Using_LPROF_to_profile_monitors "Using LPROF to profile monitors") - Additional details on how to profile monitors
-*   [Linux Color Management](https://en.wikipedia.org/wiki/Linux_color_management "wikipedia:Linux color management") - Wikipedia
+*   [Wikipedia:Linux color management](https://en.wikipedia.org/wiki/Linux_color_management "wikipedia:Linux color management")
 *   [Argyll Color Management System](http://www.argyllcms.com/) - Official Site
 *   [LPROF Main Help Window](http://lprof.sourceforge.net/help/lprof-help.html) - Details on profiling printers and scanners
 *   [DisplayCal: Basic concept of display calibration and profiling](http://displaycal.net/#concept)

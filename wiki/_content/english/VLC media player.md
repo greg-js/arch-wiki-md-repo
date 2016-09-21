@@ -32,6 +32,7 @@ From the project [home page](http://www.videolan.org/vlc/):
 Notable variants are:
 
 *   [vlc-git](https://aur.archlinux.org/packages/vlc-git/) - Development branch.
+*   [vlc-nox](https://aur.archlinux.org/packages/vlc-nox/) - Without X support.
 
 Notable optional dependencies are:
 

@@ -17,7 +17,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
     *   [3.3 Getting completion in Python2 shell](#Getting_completion_in_Python2_shell)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
-    *   [4.2 Python, ViM and UTF-8](#Python.2C_ViM_and_UTF-8)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -207,10 +206,6 @@ Do not forget to make it executable:
 ```
 
 Afterwards scripts within the specified project trees will be run with Python 2.
-
-### Python, ViM and UTF-8
-
-When executing `:!python -c "import sys; print(sys.stdout.encoding)"` in ViM, the output may be `ANSI_X3.4-1968`, even if the locale is set correctly everyhere. Set the `PYTHONIOENCODING` environment variable to `utf-8` to remedy the situation.
 
 ## See also
 

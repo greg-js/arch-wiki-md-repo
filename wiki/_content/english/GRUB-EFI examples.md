@@ -2,8 +2,7 @@ It is well known that different motherboard manufactures implement UEFI differen
 
 ## Contents
 
-*   [1 Apple Mac EFI systems](#Apple_Mac_EFI_systems)
-    *   [1.1 Generic Macs](#Generic_Macs)
+*   [1 Apple Macs](#Apple_Macs)
 *   [2 Asus](#Asus)
     *   [2.1 Z68 Family and U47 Family](#Z68_Family_and_U47_Family)
     *   [2.2 ux32vd](#ux32vd)
@@ -20,11 +19,9 @@ It is well known that different motherboard manufactures implement UEFI differen
     *   [6.2 M92p ThinkCentre](#M92p_ThinkCentre)
 *   [7 VirtualBox](#VirtualBox)
 
-## Apple Mac EFI systems
+## Apple Macs
 
-### Generic Macs
-
-Use bless command from within Mac OS X to set `grubx64.efi` as the default boot option. You can also boot from the Mac OS X install disc and launch a Terminal there if you only have Linux installed. In the Terminal, create a directory and mount the EFI System Partition:
+Use bless command from within macOS to set `grubx64.efi` as the default boot option. You can also boot from the macOS install disc and launch a Terminal there if you only have Linux installed. In the Terminal, create a directory and mount the EFI System Partition:
 
 ```
 # cd /Volumes

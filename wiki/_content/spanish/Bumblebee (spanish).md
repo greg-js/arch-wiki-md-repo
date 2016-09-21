@@ -61,7 +61,7 @@ Varios paquetes están disponibles para una configuración completa:
 
 ### Instalar Bumblebee con Intel/NVIDIA
 
-*   Instale [intel-dri](https://www.archlinux.org/packages/?name=intel-dri), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) y [nvidia](https://www.archlinux.org/packages/?name=nvidia).
+*   Instale [mesa](https://www.archlinux.org/packages/?name=mesa), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) y [nvidia](https://www.archlinux.org/packages/?name=nvidia).
 
 Si desea ejecutar las aplicaciones de 32 bits (como los juegos con wine) en un sistema de 64 bits necesita también el paquete [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils).
 

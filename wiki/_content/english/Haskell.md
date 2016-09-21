@@ -12,6 +12,7 @@
         *   [2.3.1 Preparation and $PATH](#Preparation_and_.24PATH)
         *   [2.3.2 Installing packages](#Installing_packages)
         *   [2.3.3 Removing packages](#Removing_packages)
+*   [3 See also](#See_also)
 
 ## Installation
 
@@ -107,3 +108,8 @@ It is possible to install a package system–wide with the `--global` flag, but 
 #### Removing packages
 
 There is no easy way to do it.
+
+## See also
+
+*   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+*   [Real World Haskell](http://book.realworldhaskell.org/)

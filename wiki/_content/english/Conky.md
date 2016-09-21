@@ -615,6 +615,6 @@ conky -d; sleep 1 && transset-df .5 -n Conky
 *   [Official Conky variables for configuration](http://conky.sourceforge.net/config_settings.html)
 *   [Official Conky objects](http://conky.sourceforge.net/variables.html)
 *   [Conky Configs on arch forums](https://bbs.archlinux.org/viewtopic.php?id=39906)
-*   [Conky](http://freshmeat.net/projects/conky/) on [Freshmeat](https://en.wikipedia.org/wiki/Freshmeat "wikipedia:Freshmeat")
+*   [Conky](http://freecode.com/projects/conky/) on [Freecode](https://en.wikipedia.org/wiki/Freecode "wikipedia:Freecode")
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
 *   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)

@@ -20,11 +20,7 @@ File systems are usually created on a [partition](/index.php/Partition "Partitio
 
 **Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless_Btrfs_disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
 
-**Warning:**
-
-*   After creating a new filesystem, data previously stored on this partition can unlikely be recovered. Make a backup of any data you want to keep.
-
-*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders").
+**Warning:** After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
 
 Identify the partition where the file system will be created, for example with [lsblk](/index.php/Lsblk "Lsblk"):
 
@@ -51,6 +47,8 @@ Mounted file systems **must** be unmounted with [umount(8)](http://man7.org/linu
 
 To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
 
+**Warning:** The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders").
+
 For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions), run:
 
 ```
@@ -58,7 +56,10 @@ For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") 
 
 ```
 
-**Tip:** Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e4label* can be used to change the label on an existing file system.
+**Tip:**
+
+*   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e4label* can be used to change the label on an existing file system.
+*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") volume can be increased, but not reduced in size. See [resize2fs(8)](http://man7.org/linux/man-pages/man8/resize2fs.8.html), [fsadm(8)](http://man7.org/linux/man-pages/man8/fsadm.8.html) and the respective file system documentation for details.
 
 The new file system can now be mounted to a directory of choice.
 
@@ -132,17 +133,9 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 Some FUSE-based file systems:
 
-*   **acd-fuse** — FUSE filesystem driver for Amazon's Cloud Drive.
-
-	[https://github.com/handyman5/acd_fuse](https://github.com/handyman5/acd_fuse) || [acdfuse-git](https://aur.archlinux.org/packages/acdfuse-git/)
-
 *   **adbfs-git** — Mount an Android device filesystem.
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
-
-*   **cddfs** — Mount audio CDs.
-
-	[http://castet.matthieu.free.fr/](http://castet.matthieu.free.fr/) || [cddfs](https://aur.archlinux.org/packages/cddfs/)
 
 *   **fuseiso** — Mount an ISO as a regular user.
 
@@ -152,10 +145,6 @@ Some FUSE-based file systems:
 
 	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
 
-*   **wiifuse** — Mount a Gamecube or Wii DVD disc image read-only.
-
-	[http://wiibrew.org/wiki/Wiifuse](http://wiibrew.org/wiki/Wiifuse) || [wiifuse](https://aur.archlinux.org/packages/wiifuse/)
-
 *   **xbfuse-git** — Mount an Xbox (360) ISO.
 
 	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)
@@ -163,10 +152,6 @@ Some FUSE-based file systems:
 *   **xmlfs** — Represent an XML file as a directory structure for easy access.
 
 	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)
-
-*   **zfs-fuse** — [ZFS support via FUSE](/index.php/ZFS_on_FUSE "ZFS on FUSE").
-
-	[http://zfs-fuse.net/](http://zfs-fuse.net/) || [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)
 
 *   **[EncFS](/index.php/EncFS "EncFS")** — EncFS is a userspace stackable cryptographic file-system.
 

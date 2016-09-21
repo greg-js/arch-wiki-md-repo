@@ -23,6 +23,7 @@
     *   [6.1 cups-browsed](#cups-browsed)
     *   [6.2 Printer sharing](#Printer_sharing)
     *   [6.3 Without a local CUPS server](#Without_a_local_CUPS_server)
+        *   [6.3.1 client.conf](#client.conf)
 *   [7 Troubleshooting](#Troubleshooting)
 *   [8 See also](#See_also)
 
@@ -49,7 +50,7 @@ If this is a concern, consider using a [Udev](/index.php/Udev "Udev") rule to as
 
 To see if your USB printer is detected:
 
- `lsusb` 
+ `$ lsusb` 
 ```
 (...)
 Bus 001 Device 007: ID 03f0:1004 Hewlett-Packard DeskJet 970c/970cse
@@ -60,7 +61,7 @@ Bus 001 Device 007: ID 03f0:1004 Hewlett-Packard DeskJet 970c/970cse
 
 To use a parallel port printer, the `lp`, `parport` and `parport_pc` [kernel modules](/index.php/Kernel_modules "Kernel modules") are required.
 
- `dmesg | grep -i parport` 
+ `$ dmesg | grep -i parport` 
 ```
  parport0: Printer, Hewlett-Packard HP LaserJet 2100 Series
  lp0: using parport0 (polling)
@@ -324,22 +325,23 @@ See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing
 
 ### Without a local CUPS server
 
-CUPS can be configured to directly connect to remote printer servers instead of running a local print server.
+CUPS can be configured to directly connect to remote printer servers instead of running a local print server. This requires [installation](/index.php/Install "Install") of the [libcups](https://www.archlinux.org/packages/?name=libcups) package. Some applications will still require the [cups](https://www.archlinux.org/packages/?name=cups) package for printing.
 
-**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers [[4]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
+**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers.[[4]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
 
-Install [libcups](https://www.archlinux.org/packages/?name=libcups). To print from some applications, you will also need to install [cups](https://www.archlinux.org/packages/?name=cups).
-
-There are two methods for accessing a remote print server. The first method involves setting `CUPS_SERVER` for each application, for instance for [Firefox](/index.php/Firefox "Firefox"):
+To use a remote CUPS server, set the `CUPS_SERVER` [environment variable](/index.php/Environment_variable "Environment variable") to `printerserver.mydomain:port`. For instance, if you want to use a different print server for a single [Firefox](/index.php/Firefox "Firefox") instance (substitute `printserver.mydomain:port` with your print server name/port):
 
 ```
-# (Substitute printserver.mydomain with your print server name)
-CUPS_SERVER=printserver.mydomain:port firefox
+$ CUPS_SERVER=printserver.mydomain:port firefox
+
 ```
 
-The second method involves editing `/etc/cups/client.conf` and setting the `ServerName` directive:
+#### client.conf
 
-**Warning:** `/etc/cups/client.conf` is [deprecated](https://www.cups.org/doc/man-client.conf.html)
+**Note:** `/etc/cups/client.conf` is [deprecated](https://www.cups.org/doc/man-client.conf.html), it is removed in [cups 2.2.0](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=41fefa22ac5189d726e0e35e2f87ad12fa2855f3)
+
+An alternative, deprecated method, involves editing `/etc/cups/client.conf` and setting the `ServerName` directive:
+
  `/etc/cups/client.conf` 
 ```
 # (Substitute printserver.mydomain with your print server name)

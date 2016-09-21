@@ -218,6 +218,8 @@ ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 *   My BT keyboard still does not work. What to do?
     *   Check: Does it have power?
     *   Check: Did it connect to the BT controller? If not, try with another controller or your smart phone.
+*   All went fine but when I type I'm getting "Bluetooth: hci0 ACL packet for unknown connection handle 4"
+    *   Try reset: hciconfig hci0 reset
 
 ## Xorg
 

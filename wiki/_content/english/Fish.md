@@ -145,7 +145,7 @@ Add the following to the bottom of your `~/.config/fish/config.fish`.
 # start X at login
 if status --is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" -eq "1"
-        exec startx -- -keeptty
+        exec startx
     end
 end
 
@@ -154,8 +154,6 @@ end
 ### Use liquidprompt
 
 [Liquidprompt](https://github.com/nojhan/liquidprompt) is a popular "full-featured & carefully designed adaptive prompt for Bash & Zsh" and has no plans to make it compatible with fish [[1]](https://github.com/nojhan/liquidprompt/pull/230). [This project](https://github.com/wesbarnett/fish-lp) implements it for fish.
-
-**Note:** See [this issue](https://github.com/fish-shell/fish-shell/issues/1772) for reasons why `startx` requires the `-keeptty` flag when using fish.
 
 ### Put git status in prompt
 

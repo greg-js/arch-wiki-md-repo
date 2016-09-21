@@ -195,18 +195,19 @@ To remove these mappings automatically at startup you may add the two preceding 
 
 *   With tmux (Restart rtorrent if crashed)
 
- `/etc/systemd/user/rt.service` 
+ `~/.config/systemd/user/rt.service` 
 ```
 [Unit]
-Description=rTorrent
+Description=rtorrent
 After=network.target
 
 [Service]
 Type=forking
 KillMode=none
-ExecStart=/usr/bin/tmux new-session -s rt -n rtorrent -d rtorrent
-ExecStop=/usr/bin/bash -c "/usr/bin/tmux send-keys -t rt:rtorrent.0 C-q && while pidof rtorrent > /dev/null; do sleep 0.5; echo rtorrent still running...; done"
-WorkingDirectory=%h
+ExecStartPre=/usr/bin/bash -c "if test -e ~/.session/rtorrent.lock && test -z `pidof rtorrent`; then rm -f ~/.session/rtorrent.lock; fi"
+ExecStart=/usr/bin/bash -c "/usr/bin/tmux new-session -s rt -n rtorrent -d rtorrent && tmux list-panes -t rt:rtorrent.0 -F \"#{pid}\" > /tmp/rt.service.pid"
+ExecStop=/usr/bin/bash -c "/usr/bin/tmux send-keys -t rt:rtorrent.0 C-q; while pidof rtorrent > /dev/null; do echo stopping rtorrent...; sleep 1; done"
+PIDFile=/tmp/rt.service.pid
 Restart=on-failure
 
 [Install]

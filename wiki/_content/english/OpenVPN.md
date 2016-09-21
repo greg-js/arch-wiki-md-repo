@@ -212,9 +212,9 @@ tls-auth /etc/openvpn/ta.key **1**
 
 #### Drop root privileges after connecting
 
-Using the options `user nobody` and `group nobody` in the configuration file makes *openvpn* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, this may be advantageous. However, it requires manual action to delete the routes and will, hence, often be undesired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
+Using the options `user nobody` and `group nobody` in the configuration file makes *openvpn* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes are not desired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
 
-Depending on setup, there are four ways to handle these situations:
+As it could seem to require manual action to manage the routes, the options `user nobody` and `group nobody` might seem undesirable. Depending on setup, however, there are four ways to handle these situations:
 
 *   For errors of the unit, a simple way is to [edit](/index.php/Edit "Edit") it and add a `Restart=on-failure` to the `[Service]` section. Though, this alone will not delete any obsoleted routes, so it may happen that the restarted tunnel is not routed properly.
 *   The package contains the `/usr/lib/openvpn/plugins/openvpn-plugin-down-root.so` (see README in its directory), which can be used to let *openvpn* fork a process with root privileges with the only task to execute a custom script when receiving a down signal from the main process, which is handling the tunnel with dropped privileges.[[1]](https://community.openvpn.net/openvpn/browser/plugin/down-root/README?rev=d02a86d37bed69ee3fb63d08913623a86c88da15)

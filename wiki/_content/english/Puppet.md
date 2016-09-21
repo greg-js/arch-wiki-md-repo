@@ -35,6 +35,14 @@ Puppet will look for node configuration in `/etc/puppetlabs/code/environments/pr
 
 After starting puppet by daemon/cron/standalone, it will generate certificates in `/etc/puppetlabs/puppet/ssl/` directory. You need to accept this certificate in the puppet master with: `sudo puppet cert sign <name>`.
 
+Notes on *bindaddress* for puppet master.
+
+The default value for *bindaddress* is "0.0.0.0", which makes puppet listen on IPv4 only: `bindaddress = 0.0.0.0`
+
+To make puppet master listen on IPv6, set the *binaddress* value to: `bindaddress = ::`
+
+To make puppet listen on both interface, set the value to: `bindaddress = *`
+
 ## Facter
 
 Facter is a companion program of puppet that gathers facts about the system it runs on.

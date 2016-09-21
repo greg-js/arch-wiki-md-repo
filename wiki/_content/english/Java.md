@@ -37,6 +37,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
     *   [7.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
     *   [7.3 GTK LookAndFeel](#GTK_LookAndFeel)
     *   [7.4 Non-reparenting window managers](#Non-reparenting_window_managers)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -324,3 +325,7 @@ Non-reparenting window managers user should set the following environment variab
  export _JAVA_AWT_WM_NONREPARENTING=1
 
 ```
+
+## See also
+
+*   [Introduction to Programming Using Java](http://math.hws.edu/javanotes/)

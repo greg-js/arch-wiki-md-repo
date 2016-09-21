@@ -90,3 +90,4 @@ The following information is required:
 *   [Arch Linux forum discussion](https://bbs.archlinux.org/viewtopic.php?id=143671)
 *   [Administration page on Arch Women wiki](https://archwomen.org/wiki/projects:classroom:start)
 *   [Teaching materials git repository](https://github.com/archwomen/classroom-media)
+*   [Open Source Society University](https://github.com/open-source-society/computer-science#introduction-to-computer-science)

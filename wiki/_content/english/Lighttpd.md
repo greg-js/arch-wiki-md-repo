@@ -67,6 +67,11 @@ accesslog.filename = "/var/log/lighttpd/access.log"
 
 **Warning:** Users planning to implementing SSL/TLS, should know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how they apply to Lighttpd and other services (such as email) visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
+**Tip:**
+
+*   Mozilla has an SSL [configuration generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/) that can be used with lighttpd.
+*   After setting up SSL, you can use Qualys SSL Labs' [SSL Server Check](https://www.ssllabs.com/ssltest/index.html) to check your configuration.
+
 ##### Self-signed
 
 Self-signed SSL Certificates can be generated assuming [openssl](https://www.archlinux.org/packages/?name=openssl) is installed on the system as follows:

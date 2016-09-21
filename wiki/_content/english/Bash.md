@@ -296,7 +296,7 @@ For example:
 *   [BashGuide on Greg's Wiki](http://mywiki.wooledge.org/BashGuide)
 *   [BashFAQ on Greg's Wiki](http://mywiki.wooledge.org/BashFAQ)
 *   [Bash Hackers Wiki](http://wiki.bash-hackers.org/doku.php)
-*   [Advanced Bash Scripting Guide](http://tldp.org/LDP/abs/html/)
+*   [Bash Hackers: List of Bash online-tutorials](http://wiki.bash-hackers.org/scripting/tutoriallist)
 *   [Quote Tutorial](http://www.grymoire.com/Unix/Quote.html)
 
 ### Community

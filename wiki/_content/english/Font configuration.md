@@ -528,7 +528,7 @@ Those still having problems can fall back to manually setting the DPI used by fo
 
 Some scalable fonts have embedded bitmap versions which are rendered instead, mainly at smaller sizes. Using [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") as replacements can improve the rendering in these cases.
 
-You can also force using scalable fonts at all sizes by [#Disabling embedded bitmap](#EmbeddedBitmap), sacrificing some rendering quality.
+You can also force using scalable fonts at all sizes by [disabling embedded bitmap](#Disable_bitmap_fonts), sacrificing some rendering quality.
 
 ### Applications overriding hinting
 

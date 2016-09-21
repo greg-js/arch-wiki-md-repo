@@ -318,6 +318,8 @@ Where *uid* and *gid* are values corresponding to the users we want to give acce
 
 #### Automounting
 
+**Note:** Automounting requires the `vboxservice` to be enabled/started.
+
 In order for the automounting feature to work you must have checked the auto-mount checkbox in the GUI or used the optional `--automount` argument with the command `VBoxManage sharedfolder`.
 
 The shared folder should now appear in `/media/sf_*shared_folder_name*`. If users in `media` cannot access the shared folders, check that `media` has permissions 755 or has group ownership `vboxsf` if using permission 750\. This is currently not the default if media is created by installing the `virtualbox-guest-utils`.

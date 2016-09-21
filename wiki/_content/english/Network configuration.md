@@ -55,6 +55,7 @@ This page explains how to set up a **wired** connection to a network. If you nee
     *   [7.5 Broadcom BCM57780](#Broadcom_BCM57780)
     *   [7.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
     *   [7.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+*   [8 See also](#See_also)
 
 ## Check the connection
 
@@ -667,3 +668,8 @@ Another fault in the drivers for some revisions of this adapter is poor IPv6 sup
 With motherboards such as the Gigabyte GA-990FXA-UD3, booting with IOMMU off (which can be the default) will cause the network interface to be unreliable, often failing to connect or connecting but allowing no throughput. This will apply not only to the onboard NIC, but any other pci-NIC you put in the box because the IOMMU setting affects the entire network interface on the board. Enabling IOMMU and booting with the install media will throw AMD I-10/xhci page faults for a second, but then boot normally, resulting in a fully functional onboard NIC (even with the r8169 module).
 
 When configuring the boot process for your installation, add `iommu=soft` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to eliminate the error messages on boot and restore USB3.0 functionality.
+
+## See also
+
+*   [Debian Reference: Network setup](https://www.debian.org/doc/manuals/debian-reference/ch05.en.html)
+*   [RHEL7: Networking Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/)

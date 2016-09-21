@@ -88,18 +88,19 @@ Add the following lines to your shell configuration file:
  `~/.bashrc` 
 ```
 export LESS=-R
-export LESS_TERMCAP_mb=$'\E[1;31m'
-export LESS_TERMCAP_md=$'\E[1;36m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[1;32m'
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+# and so on
 ```
 
-Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like.
+Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like. [This blog post](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized) and the page [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") (not bash-specific!) also help.
 
-**Note:** The `LESS_TERMCAL_*xx*` variables is currently undocumented in less(1), for a detailed explanation on these sequences, see this [answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
+**Note:** The `LESS_TERMCAP_*xx*` variables are currently undocumented in less (1). For a detailed explanation, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
 
 #### Reading from stdin
 
@@ -186,13 +187,13 @@ See [ls(1)](http://man7.org/linux/man-pages/man1/ls.1.html) for more information
 
 ### man
 
-Color-enabled man pages allow for a clearer presentation and easier digestion of the content. There are two prevalent methods for achieving colored man pages: using `less`, or opting for `most`.
+To enable colored `man`, two main pagers, `less` and `most`, are hacked here.
 
 #### Using less
 
-You can set various `LESS_TERMCAP_***` environment variables to change how it highlights text. For example, `LESS_TERMCAP_md` is used for bold text and `LESS_TERMCAP_me` is used to reset to normal text formatting[[2]](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized).
+See [#less](#less) for a more detailes description.
 
-In Bash, the escape sequences you can use are the same ones from [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") and these variables can be defined in a function wrapping the `man` command:
+A `less` wrapper of `man` for bash would look like this:
 
  `~/.bashrc` 
 ```
@@ -222,8 +223,6 @@ set -xU LESS_TERMCAP_us (printf "\e[01;32m")
 ```
 
 Remember to source your config or restart your shell to make the changes take effect.
-
-For a detailed explanation on these variables, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840). [Bash/Prompt customization#Examples](/index.php/Bash/Prompt_customization#Examples "Bash/Prompt customization") has some (non-Bash-specific) examples of escape sequences that can be used.
 
 #### Using most
 
@@ -624,7 +623,7 @@ cnorm	dl1	invis	kcuu1	kf20	kf35	kf5	kf7	rc	setaf	vpa
 
 ### Color scheme scripts
 
-See [[3]](https://paste.xinu.at/m-dAiJ/) for scripts which display a chart of your current terminal scheme.
+See [[2]](https://paste.xinu.at/m-dAiJ/) for scripts which display a chart of your current terminal scheme.
 
 ## See also
 

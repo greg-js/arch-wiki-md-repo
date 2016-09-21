@@ -1,4 +1,4 @@
-**Samba** is a re-implementation of the [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol. It facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). Some users say that Samba is easily configured and that operation is very straight-forward. However, many new users run into problems with its complexity and non-intuitive mechanism. This article provides instructions for users on how to setup Samba. It is strongly suggested that the user sticks close to the following directions.
+**Samba** is a re-implementation of the [SMB](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") networking protocol. It facilitates file and printer sharing among Linux and Windows systems as an alternative to [NFS](/index.php/NFS "NFS"). Some users say that Samba is easily configured and that operation is very straight-forward. However, many new users run into problems with its complexity and non-intuitive mechanism. This article provides instructions for users on how to setup Samba.
 
 ## Contents
 
@@ -825,15 +825,24 @@ Make sure that the server has started. The shared directories should exist and b
 
 ### Password Error when correct credentials are given (error 1326)
 
-[Samba 4.5](https://www.samba.org/samba/history/samba-4.5.0.html) has NTLMv1 authentication disabled by default. On very old clients without NTLMv2 support (e.g. Windows XP), it may cause login issues.
+[Samba 4.5](https://www.samba.org/samba/history/samba-4.5.0.html) has NTLMv1 authentication disabled by default. It is recommend to install the latest available upgrades on clients and deny access for unsupported clients.
 
-It is possible to force enable NTLMv1, although this is **not recommend** for security reasons:
+If you still need support for very old clients without NTLMv2 support (e.g. Windows XP), it is possible force enable NTLMv1, although this is **not recommend** for security reasons:
 
  `/etc/samba/smb.conf` 
 ```
 [global]
    lanman auth = yes
    ntlm auth = yes
+```
+
+If NTLMv2 clients are unable to authenticate when NTLMv1 has been enabled, create the following file on the client:
+
+ `/home/user/.smb/smb.conf` 
+```
+[global]
+   sec = ntlmv2
+   client ntlmv2 auth = yes
 ```
 
 ## See also

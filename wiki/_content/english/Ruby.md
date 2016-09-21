@@ -211,3 +211,5 @@ If you have bugreports or code improvements - file at github [https://github.com
 *   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
 *   Ruby - [http://ruby-lang.org/](http://ruby-lang.org/)
 *   Bundler - [http://bundler.io/](http://bundler.io/)
+*   [why's (poignant) Guide to Ruby](https://en.wikipedia.org/wiki/Why%27s_(poignant)_Guide_to_Ruby "wikipedia:Why's (poignant) Guide to Ruby")
+*   [[http://ruby.learncodethehardway.org/](http://ruby.learncodethehardway.org/) Learn Ruby The H

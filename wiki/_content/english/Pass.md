@@ -70,7 +70,7 @@ There are multiple scripts listed on the [pass-project page](http://www.zx2c4.co
 
 ## GUI
 
-There is now a stable release of [qtpass](https://aur.archlinux.org/packages/qtpass/) available on the AUR.
+There is now a stable release of [qtpass](https://www.archlinux.org/packages/?name=qtpass) available on the AUR.
 
 ## See also
 

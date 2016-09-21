@@ -67,6 +67,8 @@ Other alternatives include:
 
 Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases).
 
+[Experimental features in Firefox Nightly](https://developer.mozilla.org/en-US/Firefox/Experimental_features?utm_source=firefox&utm_medium=whatsnew&utm_campaign=nightly)
+
 There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-languagecode` (where `languagecode` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [this](https://www.archlinux.org/packages/?sort=&q=firefox-i18n&maintainer=&last_update=&flagged=&limit=100).
 
 ## Add-ons

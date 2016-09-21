@@ -59,7 +59,7 @@ Since it uses the CalDav and CardDav protocols, it should support most clients. 
 *   [GNOME/Evolution](/index.php/GNOME/Evolution "GNOME/Evolution")
 *   KOrganizer [korganizer](https://www.archlinux.org/packages/?name=korganizer)
 *   InfCloud [infcloud](https://aur.archlinux.org/packages/infcloud/), CalDavZAP [caldavzap](https://aur.archlinux.org/packages/caldavzap/), CardDavMATE [carddavmate](https://aur.archlinux.org/packages/carddavmate/)
-*   syncEvolution [syncrevolution](https://aur.archlinux.org/packages/syncrevolution/)
+*   syncEvolution [syncevolution](https://aur.archlinux.org/packages/syncevolution/)
 *   aCal, ContactSync, CalendarSync, CalDAV-Sync CardDAV-Sync and DAVdroid for Google Android
 *   Apple iOS
 *   Mac OSX Calendar/Contacts

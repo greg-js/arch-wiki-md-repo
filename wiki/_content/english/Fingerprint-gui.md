@@ -22,6 +22,8 @@ polkit-kde-authentication-agent-1.desktop
 
 ```
 
+If you are using a [window manager](/index.php/Window_manager "Window manager"), you may need an [authentication agent](/index.php/Polkit#Authentication_agents "Polkit").
+
 ## Registering Fingerprints
 
 After installation, test if your hardware is recognized and correctly working by launching the configuration utility:
@@ -41,7 +43,7 @@ To start registering your fingerprints with the configuration utility, select th
 
 Once your fingerprints have been registered, you may notice that in the setup procedure that the "test" section does not yet work. This is because the necessary authentication has not been approved in the appropriate `pam.d` files.
 
-As an example of how to set up fingerprint authetication for a given service, we will first start with [sudo](/index.php/Sudo "Sudo"). Open `/etc/pam.d/sudo` in your [text editor](/index.php/Common_Applications#Text_Editor "Common Applications") and insert the following **bold text**:
+As an example of how to set up fingerprint authetication for a given service, we will first start with [sudo](/index.php/Sudo "Sudo"). Open `/etc/pam.d/sudo` in your [text editor](/index.php/List_of_applications#Text_editors "List of applications") and insert the following **bold text**:
 
  `/etc/pam.d/sudo` 
 ```

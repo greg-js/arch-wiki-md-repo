@@ -942,7 +942,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — Программа чтения новостей Usenet на GTK2, отлично работающая как с текстом, так и с двоичными файлами
 
-	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://aur.archlinux.org/packages/pan/)
+	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
 
 *   **[slrn](https://en.wikipedia.org/wiki/ru:slrn "wikipedia:ru:slrn")** — Текстовый клиент новостей с открытым исходным кодом
 

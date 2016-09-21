@@ -12,6 +12,9 @@ This article describes how to set up a mail server suitable for personal or smal
     *   [2.4 PAM Authentication](#PAM_Authentication)
     *   [2.5 PAM Authentication with LDAP](#PAM_Authentication_with_LDAP)
     *   [2.6 Sieve](#Sieve)
+        *   [2.6.1 Sieve Interpreter Plugin](#Sieve_Interpreter_Plugin)
+            *   [2.6.1.1 Example: SpamAssassin - move spam to "Junk" folder](#Example:_SpamAssassin_-_move_spam_to_.22Junk.22_folder)
+        *   [2.6.2 ManageSieve Server](#ManageSieve_Server)
 *   [3 Starting the server](#Starting_the_server)
 *   [4 Tricks](#Tricks)
 
@@ -109,58 +112,105 @@ By using the `pam_mkhomedir.so` module and by adding the `session` part in the `
 
 [Sieve](https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language) is a programming language that can be used to create filters for email on mail server.
 
+#### Sieve Interpreter Plugin
+
+This facilitates the actual Sieve filtering upon delivery.
+
 *   Install [pigeonhole](https://www.archlinux.org/packages/?name=pigeonhole).
-*   Add "sieve" to "protocols" in dovecot.conf (and the lines from the next points)
+*   Depending on your usage, add `sieve` to `mail_plugins` in
+    *   `/etc/dovecot/conf.d/15-lda.conf`
+        ```
+        protocol lda {
+          mail_plugins = $mail_plugins sieve
+        }
 
-```
-protocols = imap pop3 sieve
+        ```
 
-```
+    *   and/or `/etc/dovecot/conf.d/20-lmtp.conf`
+        ```
+        protocol lmtp {
+          mail_plugins = $mail_plugins sieve
+        }
 
-*   Add minimal 80-sieve.conf in `/etc/dovecot/conf.d/`
-
-```
-service managesieve-login {
-  inet_listener sieve {
-    port = 4190
-  }
-}
-
-service managesieve {
-}
-
-protocol sieve {
-}
-
-```
-
-*   Add "sieve" as "mail_plugins" in "protocol lda" section of `/etc/dovecot/conf.d/15-lda.conf`
-
-```
-protocol lda {
-  mail_plugins = sieve
-}
-
-```
-
-*   Specify sieve storage location in "plugin" section of `/etc/dovecot/conf.d/90-plugin.conf`:
-
-```
-plugin {
-  sieve=/var/mail/%u/dovecot.sieve
-  sieve_dir=/var/mail/%u/sieve
-}
-
-```
+        ```
 
 **Note:** Nowadays it is recommended to use LMTP instead of LDA. Nevertheless the Dovecot LDA can still be used for small mailservers. More information can be found in the [Dovecot Wiki](http://wiki2.dovecot.org/LMTP)
 
-*   Ensure that your MTA uses dovecot for delivery. For example: postfix's main.cf and dovecot-lda:
+*   Optionally, add configuration in `plugin` section. See [Sieve Interpreter Documentation](http://wiki2.dovecot.org/Pigeonhole/Sieve/Configuration) for configuration options and default values.
+    Example:
+    ```
+    plugin {
+      sieve = file:~/sieve;active=~/.dovecot.sieve 
+    }
+
+    ```
+
+###### Example: SpamAssassin - move spam to "Junk" folder
+
+*   Add spamtest configuration
+
+ `/etc/dovecot/conf.d/90-sieve.conf` 
+```
+plugin {
+  sieve_extensions = +spamtest +spamtestplus
+
+  sieve_spamtest_status_type = score
+  sieve_spamtest_status_header = \ 
+    X-Spam_score: (-?[[:digit:]]+\.[[:digit:]]).* 
+  sieve_spamtest_max_value = 5.0 
+
+  sieve_before = /var/lib/dovecot/sieve/global_sieves/move_to_spam_folder.sieve
+}
 
 ```
- mailbox_command = /usr/lib/dovecot/dovecot-lda -f "$SENDER" -a "$RECIPIENT"
+
+*   Create sieve script
+
+ `/var/lib/dovecot/sieve/global_sieves/move_to_spam_folder.sieve` 
+```
+require "spamtestplus";
+require "fileinto";
+require "relational";
+require "comparator-i;ascii-numeric";
+
+if spamtest :value "ge" :comparator "i;ascii-numeric" "5" {
+  fileinto "Junk";
+}
 
 ```
+
+*   To compile sieve, execute in shell
+    ```
+    sievec /var/lib/dovecot/sieve/global_sieves
+
+    ```
+    and make sure the `move_to_spam_folder.sieve` and the resulting `move_to_spam_folder.svbin` files are world readable.
+
+#### ManageSieve Server
+
+This implements the ManageSieve protocol through which users can remotely manage Sieve scripts on the server.
+
+*   Follow the steps in **Sieve Interpreter Plugin** above.
+*   Add `sieve` to `protocols` in `dovecot.conf`
+    ```
+    protocols = imap pop3 sieve
+
+    ```
+
+*   Add minimal `/etc/dovecot/conf.d/20-managesieve.conf`
+    ```
+    service managesieve-login {
+    }
+
+    service managesieve {
+    }
+
+    protocol sieve {
+    }
+
+    ```
+
+*   Restart `dovecot`. The managesieve daemon will listen on port 4190 by default.
 
 ## Starting the server
 

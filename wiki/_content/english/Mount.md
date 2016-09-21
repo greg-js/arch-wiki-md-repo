@@ -16,7 +16,7 @@ The [fstab](/index.php/Fstab "Fstab") file may contain lines describing what dev
 
 External devices that are to be mounted when present, but ignored if absent, may require the `nofail` option. See [external devices](/index.php/Fstab#External_devices "Fstab") for more information.
 
-**Note:** Supported file systems are listed in `/proc/filesystems`.
+**Note:** File systems supported by the kernel are listed in `/proc/filesystems`. See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for more information.
 
 When mounting a file system mentioned in fstab or mtab, it is sufficient to give only the device, or only the mount point. For example, to mount `/dev/sdb1`:
 

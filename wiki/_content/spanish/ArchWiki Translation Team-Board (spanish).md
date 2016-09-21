@@ -43,6 +43,7 @@
 | [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") | Recuperación del sistema | `2013-09` |
 | [ClamAV (Español)](/index.php/ClamAV_(Espa%C3%B1ol) "ClamAV (Español)") | Seguridad/Antivirus | `2013-09` |
 | [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)") | Audio/vídeo | `2013-09` |
+| [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | Información/Foro | `2016-09` |
 | [CUPS (Español)](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") | Periféricos/Impresoras | `2013-09` |
 | [Daemons List (Español)](/index.php/Daemons_List_(Espa%C3%B1ol) "Daemons List (Español)") | Configuración del sistema/Demonios | `2013-09` |
 | [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") | GUI | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") |
@@ -57,7 +58,6 @@
 | [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)") | Información/General | `2013-09` |
 | [File systems (Español)](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | Configuración del sistema/Sistema archivos | `2014-11` |
 | [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | Tipos de letras | `2008-06` |
-| [Forum etiquette (Español)](/index.php/Forum_etiquette_(Espa%C3%B1ol) "Forum etiquette (Español)") | Información/Foro | `2014-04` |
 | [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
 | [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información | `2016-04` |
 | [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2016-11` |
@@ -65,7 +65,6 @@
 | [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
 | [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | Gestor de arranque | `2015-06` |
 | [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") | Tabla de particionado | `2013-09` |
-| [Gummiboot (Español)](/index.php/Gummiboot_(Espa%C3%B1ol) "Gummiboot (Español)") | Gestor de arranque | `2014-12` |
 | [Help:Category (Español)](/index.php/Help:Category_(Espa%C3%B1ol) "Help:Category (Español)") | Ayuda/Edición wiki | `2014-04` |
 | [Help:Article naming guidelines (Español)](/index.php/Help:Article_naming_guidelines_(Espa%C3%B1ol) "Help:Article naming guidelines (Español)") | Ayuda/Edición wiki | `2014-04` |
 | [Cheatsheet (Español)](/index.php/Help:Cheatsheet_(Espa%C3%B1ol) "Help:Cheatsheet (Español)") | Ayuda/Edición wiki | `2014-04` |
@@ -129,6 +128,7 @@
 | [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") | Gestor de arranque | `2015-01` |
 | [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [systemd FAQ (Español)](/index.php/Systemd_FAQ_(Espa%C3%B1ol) "Systemd FAQ (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
+| [systemd-boot (Español)](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") | Gestor de arranque | `2016-09` |
 | [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)")
 <small>**Remitido desde Beginners' guide (Español)**</small> | Configuración del sistema/Gestión redes | `--` | Sin traducir |
 | [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |

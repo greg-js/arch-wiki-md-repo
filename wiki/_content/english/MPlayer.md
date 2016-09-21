@@ -61,10 +61,6 @@ Notable variants are:
 
 ## Frontends/GUIs
 
-*   **Deepin Media Player** — Rich GTK2/Python interface for the Deepin desktop.
-
-	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-media-player](https://aur.archlinux.org/packages/deepin-media-player/)
-
 *   **GNOME MPlayer** — Simple GTK+-based GUI for MPlayer.
 
 	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
@@ -84,10 +80,6 @@ Notable variants are:
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.).
 
 	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
-
-*   **Xt7-Player** — Graphical user interface for MPlayer written in Gambas, with a huge list of features.
-
-	[http://xt7-player.sourceforge.net/xt7forum/](http://xt7-player.sourceforge.net/xt7forum/) || [xt7-player](https://aur.archlinux.org/packages/xt7-player/)
 
 ## Browser integration
 

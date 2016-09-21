@@ -41,6 +41,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### September 2016
 
+*   [20 September 2016] [ASA-201609-19](https://lists.archlinux.org/pipermail/arch-security/2016-September/000715.html) [curl](https://www.archlinux.org/packages/?name=curl) denial of service.
+*   [20 September 2016] [ASA-201609-18](https://lists.archlinux.org/pipermail/arch-security/2016-September/000714.html) [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) denial of service.
+*   [20 September 2016] [ASA-201609-17](https://lists.archlinux.org/pipermail/arch-security/2016-September/000713.html) [lib32-jansson](https://www.archlinux.org/packages/?name=lib32-jansson) denial of service.
 *   [18 September 2016] [ASA-201609-16](https://lists.archlinux.org/pipermail/arch-security/2016-September/000712.html) [php](https://www.archlinux.org/packages/?name=php) multiple issues.
 *   [17 September 2016] [ASA-201609-15](https://lists.archlinux.org/pipermail/arch-security/2016-September/000711.html) [jansson](https://www.archlinux.org/packages/?name=jansson) denial of service
 *   [17 September 2016] [ASA-201609-14](https://lists.archlinux.org/pipermail/arch-security/2016-September/000710.html) [lib32-libgcrypt](https://www.archlinux.org/packages/?name=lib32-libgcrypt) information disclosure

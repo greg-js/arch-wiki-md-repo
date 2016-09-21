@@ -751,6 +751,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Aukey EP-B26** | bluez 5.39-1, pulseaudio 8.0-3 | Fully working on both headset(poor quality) and a2dp(good quality) profiles. Pause button pauses the player, back/forth goes to previous/next song. (Tested in mpv) Microphone works only in HSP/HFP mode. | Yes |
 | **Plantronics BackBeat Pro** | bluez5, pulseaudio 9.0 | Fully working on both headset and a2dp profiles. Pause button as well as removing the headset from the ears pauses the player. | Yes |
 | **Bose QuietComfort 35** | bluez 5.41, pulseaudio 9.0 | Set `ControllerMode=bredr` to successfully pair. | Yes |
+| **Sennheiser Momentum 2** | bluez5, pulseaudio 9.0-1 | The A2DP profile change may fail if not avoided gdm to start fix is applied | Yes |
 
 ## See also
 
