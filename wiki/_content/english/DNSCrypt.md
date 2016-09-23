@@ -12,6 +12,11 @@
     *   [3.2 Enable EDNS0](#Enable_EDNS0)
         *   [3.2.1 Test EDNS0](#Test_EDNS0)
     *   [3.3 Redundant DNSCrypt providers](#Redundant_DNSCrypt_providers)
+        *   [3.3.1 Add new forward address](#Add_new_forward_address)
+        *   [3.3.2 Create instanced systemd service](#Create_instanced_systemd_service)
+        *   [3.3.3 Add first dnscrypt-socket](#Add_first_dnscrypt-socket)
+        *   [3.3.4 Add additional dyscrypt-sockets](#Add_additional_dyscrypt-sockets)
+        *   [3.3.5 Apply new systemd configuration](#Apply_new_systemd_configuration)
 *   [4 Known issues](#Known_issues)
     *   [4.1 dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges)
 
@@ -173,9 +178,11 @@ rst.x4055.x4049.x3827.rs.dns-oarc.net.
 
 ### Redundant DNSCrypt providers
 
-Obtaining redundancy requires a simple edit to the above Unbound example and the addition of a second instance of the dnscrypt-proxy and service. Please be sure that the above Unbound example is working prior to proceeding, as this tip extends the previous example.
+#### Add new forward address
 
-Extend the above [Unbound](/index.php/Unbound "Unbound") configuration in `/etc/unbound/unbound.conf` to include an additional forward address that uses a different port. Port 41 is used in the below example:
+**Note:** Obtaining redundancy requires a simple edit to the above Unbound example and the addition of a second instance of the dnscrypt-proxy and service. Please be sure that the above Unbound example is working prior to proceeding, as this tip extends the previous example.
+
+Extend the previous [Unbound](/index.php/Unbound "Unbound") configuration in `/etc/unbound/unbound.conf` to include an additional forward address that uses a different port. Port 41 is used in the below example:
 
 ```
 do-not-query-localhost: no
@@ -186,73 +193,83 @@ forward-zone:
 
 ```
 
-We will use an instanced systemd service to accomplish this. This will use one dnscrypt-proxy@.service systemd service to handle as many distinct DNSCrypt resolves as we want.
+#### Create instanced systemd service
 
-First, we need /etc/systemd/system/dnscrypt-proxy@.service, containing:
+We will use an instanced systemd service to accomplish this. This will use one `dnscrypt-proxy@.service` systemd service to handle as many distinct DNSCrypt resolves as we want.
+
+First, we need `/etc/systemd/system/dnscrypt-proxy@.service` containing:
 
 ```
-[Unit]
-Description=DNSCrypt client proxy
-Documentation=man:dnscrypt-proxy(8)
-Requires=dnscrypt-proxy@%i.socket
+ [Unit]
+ Description=DNSCrypt client proxy
+ Documentation=man:dnscrypt-proxy(8)
+ Requires=dnscrypt-proxy@%i.socket
 
-[Service]
-Type=notify
-NonBlocking=true
-ExecStart=/usr/sbin/dnscrypt-proxy \
-    --resolver-name=%i
-Restart=always
+ [Service]
+ Type=notify
+ NonBlocking=true
+ ExecStart=/usr/sbin/dnscrypt-proxy \
+     --resolver-name=%i
+ Restart=always
 
 ```
 
 This specifies an instanced systemd service that starts a dnscrypt-proxy using the service name specified after the @ symbol of a corresponding .socket file.
 
+#### Add first dnscrypt-socket
+
 You can now create two (or more!) socket files, specifying different DNSCrypt providers.
 
-For the first proxy, listening on 127.0.0.1@40 and connecting to the default dnscrypt.eu-nl provider, copy /lib/systemd/system/dnscrypt-proxy.socket to /etc/systemd/system/dnscrypt-proxy@dnscrypt.eu-nl.socket.
+For the first dnscrypt-proxy socket, listening on 127.0.0.1@40 and connecting to the example dnscrypt.eu-nl provider, copy `/lib/systemd/system/dnscrypt-proxy.socket` to `/etc/systemd/system/dnscrypt-proxy@dnscrypt.eu-nl.socket`.
 
-For the second proxy, copy /lib/systemd/system/dnscrypt-proxy.socket /etc/systemd/system/dnscrypt-proxy@cloudns-syd.socket (you can replace **cloudns-syd** with any of the provider names in /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv; choosing a provider geographically close is generally a good idea) and edit it to specify port 41 instead of port 40:
+#### Add additional dyscrypt-sockets
 
-```
-[Unit]
-Description=dnscrypt-proxy-secondary listening socket
+For the second (or more) dnscrypt-proxy socket, copy `/lib/systemd/system/dnscrypt-proxy.socket` to eg. `/etc/systemd/system/dnscrypt-proxy@cloudns-syd.socket`
 
-[Socket]
-ListenStream=127.0.0.1:41
-ListenDatagram=127.0.0.1:41
-
-[Install]
-WantedBy=sockets.target
+Here you can replace the socket instance name to eg. **cloudns-syd** as one of those listed in `providers name` column in `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` and edit it to eg. port 41 and so forth.
 
 ```
+ [Unit]
+ Description=dnscrypt-proxy-secondary listening socket
+
+ [Socket]
+ ListenStream=127.0.0.1:41
+ ListenDatagram=127.0.0.1:41
+
+ [Install]
+ WantedBy=sockets.target
+
+```
+
+#### Apply new systemd configuration
 
 Now we need to reload the systemd configuration.
 
 ```
-systemctl daemon-reload
+# systemctl daemon-reload
 
 ```
 
 Since we are replacing the default service with a different name, we need to explicitly stop and disable the default service:
 
 ```
-systemctl disable dnscrypt-proxy dnscrypt-proxy.socket
-systemctl stop dnscrypt-proxy dnscrypt-proxy.socket
+# systemctl disable dnscrypt-proxy dnscrypt-proxy.socket
+# systemctl stop dnscrypt-proxy dnscrypt-proxy.socket
 
 ```
 
 Now we enable and start the sockets:
 
 ```
-systemctl enable dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
-systemctl start dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
+# systemctl enable dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
+# systemctl start dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
 
 ```
 
 Finally Restart Unbound:
 
 ```
-systemctl restart unbound
+# systemctl restart unbound
 
 ```
 

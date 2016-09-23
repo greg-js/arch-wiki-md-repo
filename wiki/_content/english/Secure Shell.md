@@ -303,7 +303,7 @@ It is generally considered bad practice to allow the root user to log in without
 
 Sudo selectively provides root rights for actions requiring these without requiring authenticating against the root account. This allows locking the root account against access via SSH and potentially functions as a security measure against brute force attacks, since now an attacker must guess the account name in addition to the password.
 
-SSH can be configured to deny remote logins with the root user by editing the "Authentication" section in `/etc/ssh/sshd_config`. Simply change `#PermitRootLogin yes` to `no` and uncomment the line:
+SSH can be configured to deny remote logins with the root user by editing the "Authentication" section in `/etc/ssh/sshd_config`. Simply change `#PermitRootLogin prohibit-password` to `no` and uncomment the line:
 
  `/etc/ssh/sshd_config` 
 ```

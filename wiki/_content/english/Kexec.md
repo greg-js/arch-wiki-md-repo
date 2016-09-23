@@ -85,28 +85,6 @@ The above systemd unit file will fail if /boot is not on the root file system, a
 Description=hook to load vmlinuz-%i kernel upon kexec
 Documentation=man:kexec(8)
 DefaultDependencies=no
-RequiresMountsFor=/boot/vmlinuz-%i
-Conflicts=kexec.target
-
-[Service]
-Type=oneshot
-ExecStart=-/usr/bin/true
-RemainAfterExit=yes
-ExecStop=/usr/bin/kexec -l /boot/vmlinuz-%i --initrd=/boot/initramfs-%i.img --reuse-cmdline
-
-[Install]
-WantedBy=basic.target
-```
-
-Unfortunately, while the above file works reliably on some machines, the ExecStop command seems to fail to run on others.
-
-Stronger alternative with sysinit based ordering (guaranteeing proper service shutdown before any unmount action could even take place) is:
-
-```
-[Unit]
-Description=hook to load vmlinuz-%i kernel upon kexec
-Documentation=man:kexec(8)
-DefaultDependencies=no
 Requires=sysinit.target
 After=sysinit.target
 

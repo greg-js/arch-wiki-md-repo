@@ -102,6 +102,7 @@ NOTE: Talk to heftig about server specs before ordering.
 
 *   Set up orion
     *   Migrate archive from seblu's server
+    *   Set up automatic updates
 
 *   Migrate patchwork. Reference: [https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md](https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md)
     *   Add automatic updates when patches are pushed to a repo (at the bottom of the above link)

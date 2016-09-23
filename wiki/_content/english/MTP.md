@@ -1,4 +1,4 @@
-[MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol"), or the *Media Transfer Protocol*, is a USB device class which is used by many mobile phones (e.g. Samsung Galaxy S4) and media players (e.g. Creative Zen).
+[MTP](https://en.wikipedia.org/wiki/Media_Transfer_Protocol "wikipedia:Media Transfer Protocol"), or the *Media Transfer Protocol*, is a USB device class which is used by many mobile phones (all Windows Phone 7/8/10 devices, most newer Android devices) and media players (e.g. Creative Zen).
 
 ## Contents
 

@@ -84,7 +84,7 @@ $ localectl list-locales
 
 ### Setting the system locale
 
-To set the system locale, write the `LANG` variable to `/etc/locale.conf`, where `en_US.UTF-8` belongs to the **first column** of an uncommented entry in `/etc/locale.gen`:
+To set the system locale, write the `LANG` variable to `/etc/locale.conf`, where `*en_US.UTF-8*` belongs to the **first column** of an uncommented entry in `/etc/locale.gen`:
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 

@@ -29,6 +29,7 @@ This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retin
         *   [3.2.5 Graphic artifacting under b43-firmware](#Graphic_artifacting_under_b43-firmware)
     *   [3.3 Sound](#Sound)
     *   [3.4 Touchpad](#Touchpad)
+    *   [3.5 Memory Card (SDHCI/SDX) Reader](#Memory_Card_.28SDHCI.2FSDX.29_Reader)
 *   [4 What does not work (early August 2013, 3.10.3-1)](#What_does_not_work_.28early_August_2013.2C_3.10.3-1.29)
     *   [4.1 General](#General)
     *   [4.2 Graphics](#Graphics_2)
@@ -277,6 +278,19 @@ To use natural scrolling, also add the following inside this section:
 For more configurations, check the document of [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/).
 
 To disable the trackpad when typing, install the [dispad-git](https://aur.archlinux.org/packages/dispad-git/) utility.
+
+### Memory Card (SDHCI/SDX) Reader
+
+There is currently a bug in the kernel (4.7.x) where the internal SD card reader times out.
+
+As a workaround you will need to reload the sdhci kernel modules, as per: [https://bugzilla.kernel.org/show_bug.cgi?id=73241#c55](https://bugzilla.kernel.org/show_bug.cgi?id=73241#c55)
+
+```
+ sudo rmmod sdhci-pci sdhci
+ sudo modprobe sdhci debug_quirks2=4
+ sudo modprobe sdhci-pci
+
+```
 
 ## What does not work (early August 2013, 3.10.3-1)
 

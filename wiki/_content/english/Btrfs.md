@@ -666,7 +666,7 @@ See the [Btrfs Problem FAQ](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ)
 
 #### Partition offset
 
-**Note:** The offset problem may happen when you try to embed `core.img` into a partitioned disk. It means that [it is OK](https://wiki.archlinux.org/index.php?title=Talk:Btrfs&diff=319474&oldid=292530) to embed grub's `corg.img` into a Btrfs pool on a partitionless disk (e.g. `/dev/sd*X*`) directly.
+**Note:** The offset problem may happen when you try to embed `core.img` into a partitioned disk. It means that [it is OK](https://wiki.archlinux.org/index.php?title=Talk:Btrfs&diff=319474&oldid=292530) to embed grub's `core.img` into a Btrfs pool on a partitionless disk (e.g. `/dev/sd*X*`) directly.
 
 [GRUB](/index.php/GRUB "GRUB") can boot Btrfs partitions however the module may be larger than other [file systems](/index.php/File_systems "File systems"). And the `core.img` file made by `grub-install` may not fit in the first 63 sectors (31.5KiB) of the drive between the MBR and the first partition. Up-to-date partitioning tools such as `fdisk` and `gdisk` avoid this issue by offsetting the first partition by roughly 1MiB or 2MiB.
 

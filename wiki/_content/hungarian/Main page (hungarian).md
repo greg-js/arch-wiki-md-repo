@@ -8,31 +8,31 @@ Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/i
 
 	Tömör áttekintés az Arch Linuxról, amely leírja, mi várható egy Arch Linux rendszertől.
 
-	[Az Arch Módszer](/index.php/The_Arch_Way_(Magyar) "The Arch Way (Magyar)")
+	[Gyakran ismételt kérdések](/index.php/Frequently_asked_questions "Frequently asked questions")
 
-	Szemlélteti az Arch Linux alapelveit és filozófiáját.
+	Főbb kérdések és tények a disztribúcióról.
 
 	[Az Arch más disztribúciókkal összehasonlítva](/index.php/Arch_compared_to_other_distributions_(Magyar) "Arch compared to other distributions (Magyar)")
 
 	Összefoglalja az Arch Linux és más disztribúciók közti hasonlóságokat és különbségeket.
 
-	[Az Arch Linux sajtóvisszhangja](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage")
-
-	Mit mondanak rólunk.
-
 	[Telepítési útmutató](/index.php/Installation_guide_(Magyar) "Installation guide (Magyar)")
 
-	Egy tömör telepítési útmutató, amely a tapasztalt Arch felhasználókat célozza.
+	Végigvezet az Arch Linux telepítésének folyamatán.
 
 	[Általános ajánlások](/index.php/General_recommendations "General recommendations")
 
 	Telepítés utáni útmutatók és más népszerű cikkek rövid magyarázatokkal tűzdelt jegyzéke.
 
-	[GYIK](/index.php/FAQ "FAQ")
+	[Alkalmazások listája](/index.php/List_of_applications "List of applications")
 
-	Általános és gyakran feltett kérdések listája.
+	A jelentősebb hivatalos és AUR csomagok kategorizált bemutatása.
 
 ## Közösségünk
+
+	[Magatartási kódex](/index.php/Code_of_conduct "Code of conduct")
+
+	Útmutatók az Arch közösségnek.
 
 	[Vegyél részt benne!](/index.php/Getting_involved "Getting involved")
 
@@ -40,7 +40,7 @@ Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/i
 
 	[ArchWiki:Hozzájárulás](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
 
-	Ha szeretnél és tudsz is hozzájárulni a wikihez, akkor kérjük, nézd meg ezt a cikket az ötletekért.
+	Ha szeretnél és tudsz is hozzájárulni a wikihez, akkor kérünk, nézd meg ezt a cikket ötletekért.
 
 	[Segítség:Szerkesztés](/index.php/Help:Editing "Help:Editing")
 
@@ -49,10 +49,6 @@ Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/i
 	[Nemzetközi közösségek](/index.php/International_communities "International communities")
 
 	Hivatkozások gyűjteménye az Arch Linux közösségekhez szerte a világon.
-
-	[Fórum etikett](/index.php/Forum_etiquette "Forum etiquette")
-
-	Útmutató az Arch fórum tagjainak.
 
 	[IRC csatornák](/index.php/IRC_channels "IRC channels")
 

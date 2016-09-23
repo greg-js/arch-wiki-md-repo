@@ -21,6 +21,7 @@
         *   [3.2.1 Adding CAcert certificates for self-signed certificates](#Adding_CAcert_certificates_for_self-signed_certificates)
         *   [3.2.2 Example 1: Using a shell script to isolate the certificate from TomatoUSB](#Example_1:_Using_a_shell_script_to_isolate_the_certificate_from_TomatoUSB)
         *   [3.2.3 Example 2: Using Firefox to isolate the certificate from TomatoUSB](#Example_2:_Using_Firefox_to_isolate_the_certificate_from_TomatoUSB)
+    *   [3.3 Canvas Fingerprinting](#Canvas_Fingerprinting)
 *   [4 Making flags persistent](#Making_flags_persistent)
 *   [5 See also](#See_also)
 
@@ -257,6 +258,12 @@ $ certutil -d sql:$HOME/.pki/nssdb -A -t TC -n "easy" -i /tmp/easy.pem
 Reference:
 
 *   [http://sahissam.blogspot.com/2012/06/new-ssl-certificates-for-tomatousb-and.html](http://sahissam.blogspot.com/2012/06/new-ssl-certificates-for-tomatousb-and.html)
+
+### Canvas Fingerprinting
+
+Canvas fingerprinting is a technique that allows websites to identify users by detecting differences when rendering to an HTML5 canvas. This information can be made inaccessible by using the `--disable-reading-from-canvas` flag.
+
+To confirm this is working run [this test](https://panopticlick.eff.org) and make sure "hash of canvas fingerprint" is reported as undetermined in the full results.
 
 ## Making flags persistent
 

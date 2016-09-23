@@ -63,7 +63,7 @@
 
 其它[网络配置方式](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")可以使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 和 [netctl](/index.php/Netctl "Netctl")。参考[netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt).
 
-使用则两个方式时，需要 [停止](/index.php/Stop "Stop") `dhcpcd@*interface*.service`:
+使用这两个方式时，需要 [停止](/index.php/Stop "Stop") `dhcpcd@*interface*.service`:
 
 ```
 # systemctl stop dhcpcd@*interface*.service

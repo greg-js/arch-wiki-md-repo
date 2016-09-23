@@ -13,8 +13,10 @@ Support for swap is provided by the Linux kernel and user-space utilities from t
     *   [2.1 Activation by systemd](#Activation_by_systemd)
     *   [2.2 Disabling swap](#Disabling_swap)
 *   [3 Swap file](#Swap_file)
-    *   [3.1 Swap file creation](#Swap_file_creation)
-    *   [3.2 Remove swap file](#Remove_swap_file)
+    *   [3.1 Manually](#Manually)
+        *   [3.1.1 Swap file creation](#Swap_file_creation)
+        *   [3.1.2 Remove swap file](#Remove_swap_file)
+    *   [3.2 systemd-swap](#systemd-swap)
 *   [4 Swap with USB device](#Swap_with_USB_device)
 *   [5 Swap encryption](#Swap_encryption)
 *   [6 Performance Tuning](#Performance_Tuning)
@@ -114,7 +116,9 @@ As an alternative to creating an entire partition, a swap file offers the abilit
 
 **Warning:** [Btrfs](/index.php/Btrfs "Btrfs") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
 
-### Swap file creation
+### Manually
+
+#### Swap file creation
 
 As root use `fallocate` to create a swap file the size of your choosing (M = Megabytes, G = Gigabytes). For example, creating a 512 MB swap file:
 
@@ -150,7 +154,7 @@ Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap fil
 
  `/etc/fstab`  `/swapfile none swap defaults 0 0` 
 
-### Remove swap file
+#### Remove swap file
 
 To remove a swap file, the current swap file must be turned off.
 
@@ -169,6 +173,10 @@ Remove swap file:
 ```
 
 Finally remove the relevant entry from `/etc/fstab`.
+
+### systemd-swap
+
+[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Uncomment the lines containing `swapf` in the swap file section of `/etc/systemd-swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service.
 
 ## Swap with USB device
 

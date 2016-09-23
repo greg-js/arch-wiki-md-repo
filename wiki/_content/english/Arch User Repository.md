@@ -37,6 +37,7 @@ A good number of new packages that enter the official repositories start in the 
     *   [9.12 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages.3F)
     *   [9.13 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR.3F)
     *   [9.14 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR.3F)
+    *   [9.15 How can I obtain a list of all AUR packages?](#How_can_I_obtain_a_list_of_all_AUR_packages.3F)
 *   [10 See also](#See_also)
 
 ## Getting started
@@ -365,6 +366,11 @@ done
 ```
 
 If you use an [AUR helper](/index.php/AUR_helper "AUR helper"), you can shorten this script by replacing the curl command with whatever command queries the AUR for a package.
+
+### How can I obtain a list of all AUR packages?
+
+*   [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz)
+*   Use `aurpkglist` from [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
 
 ## See also
 

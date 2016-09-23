@@ -14,6 +14,7 @@
     *   [3.7 ner](#ner)
 *   [4 Integrating with mutt](#Integrating_with_mutt)
     *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
+*   [5 Integrating with NeoMutt / mutt-kz](#Integrating_with_NeoMutt_.2F_mutt-kz)
 
 ## Overview
 
@@ -122,3 +123,71 @@ Gnu.c: loadable library and perl binaries are mismatched (got handshake key 0xdb
 ```
 
 can indicate that some of the notmuch-mutt dependencies are installed via cpan while some are installed and managed via pacman, and that you should install all dependencies via one or the other method.
+
+## Integrating with NeoMutt / mutt-kz
+
+If you use either [neomutt](https://aur.archlinux.org/packages/neomutt/), [mutt-kz](https://aur.archlinux.org/packages/mutt-kz/) or mutt with notmuch-patches, the [notmuch-mutt](https://www.archlinux.org/packages/?name=notmuch-mutt) package is not needed. Instead, create a `~/.mailboxes` with some basic (virtual) mailboxes. A virtual mailbox is not an actual folder, but the result of a notmuch query for a specific tag:
+
+ `~/.mailboxes` 
+```
+virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
+virtual-mailboxes "archive" "notmuch://?query=tag:archive"
+virtual-mailboxes "sent" "notmuch://?query=tag:sent"
+virtual-mailboxes "newsletters" "notmuch://?query=tag:newsletters"
+```
+
+Next, make mutt aware of your virtual mailboxes by enabling virtual spoolfile and sourcing the latter:
+
+ `~/.muttrc` 
+```
+set virtual_spoolfile=yes
+source ~/.mailboxes
+```
+
+At this point, mutt will still list your mailboxes as empty, because your mails are not yet tagged and thus, notmuch querys are empty. To fill your vitual mailboxes, you need to initially tag the messages in your maildir. A very simple approach is to create a shell script like the following:
+
+ `~/.scripts/notmuch-hook.sh` 
+```
+#!/bin/sh
+notmuch new
+# retag all "new" messages "inbox" and "unread"
+notmuch tag +inbox +unread -new -- tag:new
+# tag all messages from "me" as sent and remove tags inbox and unread
+notmuch tag -new -inbox +sent -- from:me@example.org or from:me@myself.com
+# tag newsletters, but dont show them in inbox
+notmuch tag +newsletters +unread -new -- from:newsletter@example.org or subject:'newsletter*'
+```
+
+Make the shell script executable and run it:
+
+```
+ chmod +x ~/.scripts/notmuch-hook.sh
+ ~/.scripts/notmuch-hook.sh
+
+```
+
+For the above example to work, make sure that notmuch tags new messages as 'new':
+
+ `~/.notmuch-config` 
+```
+[new]
+tags=new
+```
+
+Finally, your hook script needs to rerun on new mail arrival. If you use [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) to sync IMAP to a local maildir, create a post sync hook:
+
+ `~/.offlineimaprc` 
+```
+[Account myaccount]
+postsynchook = ~/.scripts/notmuch-hook.sh
+```
+
+Some useful key bindings:
+
+ `~/.muttrc` 
+```
+macro index A "<modify-labels>+archive -unread -inbox\
+" "Archive message"
+macro index c "<change-vfolder>?" "Change to vfolder overview"
+macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+```

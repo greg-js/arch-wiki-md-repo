@@ -614,7 +614,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 #### CD ripping
 
-See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive").
+See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc drive").
 
 #### Visualization
 
@@ -689,6 +689,10 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 *   **Bitwig Studio** — Proprietary professional digital audio workstation.
 
 	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio-demo](https://aur.archlinux.org/packages/bitwig-studio-demo/)
+
+*   **Gnac** — Audio converter for GNOME.
+
+	[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
 
 *   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
 
@@ -808,6 +812,10 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 	[http://home.gna.org/gaupol](http://home.gna.org/gaupol) || [gaupol](https://www.archlinux.org/packages/?name=gaupol)
 
+*   **[Gnome Subtitles](https://en.wikipedia.org/wiki/Gnome_Subtitles "wikipedia:Gnome Subtitles")** — Video subtitle editor for GNOME.
+
+	[http://www.gnomesubtitles.org/](http://www.gnomesubtitles.org/) || [gnome-subtitles](https://www.archlinux.org/packages/?name=gnome-subtitles)
+
 *   **Penguin Subtitle Player** — Penguin Subtitle Player is an open-source, cross-platform standalone subtitle player, as an alternative to Greenfish Subtitle Player, SrtViewer (Mac), SRTPlayer, JustSubsPlayer and Free Subtitle Player.
 
 	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
@@ -826,7 +834,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 #### DVD ripping
 
-See [Optical disc drive#DVD_2](/index.php/Optical_disc_drive#DVD_2 "Optical disc drive").
+See [Optical disc drive#DVD 2](/index.php/Optical_disc_drive#DVD_2 "Optical disc drive").
 
 #### Video editors
 

@@ -182,7 +182,7 @@ authors = ["Your Name <you@example.com>"]
 
 #### Racer
 
-The [Racer](https://github.com/phildawes/racer) autocomplete engine is the current best method of gaining autocomplete support. However, it requires that you also install a copy of the Rust source code, which you can obtain either directly or from the AUR ([rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/)). After installing the source code, you can either use `Cargo` to install racer or obtain it from the AUR ([rust-racer](https://aur.archlinux.org/packages/rust-racer/)).
+The [Racer](https://github.com/phildawes/racer) autocomplete engine is the current best method of gaining autocomplete support. However, it requires that you also install a copy of the Rust source code, which you can obtain either directly or from the AUR ([rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/)). After installing the source code, you can either use `Cargo` to install racer or obtain it from the repos ([rust-racer](https://www.archlinux.org/packages/?name=rust-racer)).
 
  `cargo install racer` 
 

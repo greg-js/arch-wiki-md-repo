@@ -1,4 +1,8 @@
-En biología, [mutualismo](https://en.wikipedia.org/wiki/es:Mutualismo_(biolog%C3%ADa) es la interacción entre dos organismos de la cual cada uno se beneficia. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no sólo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
+**Estado de la traducción:** este artículo es una versión traducida de [Getting involved](/index.php/Getting_involved "Getting involved"). Fecha de la última traducción/revisión: **2016-09-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=445655).
+
+En biología evolutiva, la [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) describe las interacciones donde un individuo que paga un pequeño coste produce un beneficio mayor para otro u otros. Si es correspondido, de esta contribución costosa pueden beneficiarse todos los involucrados enormemente. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no solo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
+
+En este artículo se describe cómo, tanto los nuevos como experimentados usuarios de Arch, pueden contribuir a la comunidad. Tenga en cuenta que esto no es una lista exhaustiva.
 
 ## Contents
 
@@ -15,8 +19,9 @@ En biología, [mutualismo](https://en.wikipedia.org/wiki/es:Mutualismo_(biolog%C
 *   [2 Proyectos de la comunidad](#Proyectos_de_la_comunidad)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
-    *   [2.3 Servicios](#Servicios)
-    *   [2.4 Otros](#Otros)
+    *   [2.3 Navegar por ArchWiki](#Navegar_por_ArchWiki)
+    *   [2.4 Servicios](#Servicios)
+    *   [2.5 Otros](#Otros)
 *   [3 FAQ](#FAQ)
     *   [3.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#.C2.BFC.C3.B3mo_puedo_convertirme_en_un_desarrollador_de_Arch.3F)
     *   [3.2 ¿Cómo puedo ser un Trusted User?](#.C2.BFC.C3.B3mo_puedo_ser_un_Trusted_User.3F)
@@ -24,11 +29,11 @@ En biología, [mutualismo](https://en.wikipedia.org/wiki/es:Mutualismo_(biolog%C
 
 ## Proyectos oficiales de Arch Linux
 
+Por favor, familiarícese con el [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)").
+
 ### Publicar en los foros
 
 Una de las maneras más fáciles de colaborar es participando en los [Foros de Arch Linux](https://bbs.archlinux.org/), que permiten conocer a la comunidad y ayudar a los nuevos usuarios.
-
-Por favor familiarícese con [Forum etiquette](/index.php/Forum_etiquette "Forum etiquette"). El personal del foro puede ser contactado a través de [forum@archlinux.org](mailto:forum@archlinux.org).
 
 ### Mejorar esta wiki
 
@@ -36,7 +41,7 @@ Por favor familiarícese con [Forum etiquette](/index.php/Forum_etiquette "Forum
 
 ### Unirse a la sala de chat
 
-Usted puede ayudar a otros usuarios a resolver problemas a través del canal [IRC](/index.php/IRC_channel "IRC channel"). Es muy importante, sin embargo, que lea las secciones dedicadas a las [reglas](/index.php/IRC_channel#.23archlinux_rules "IRC channel") y a las [directrices](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel") antes de participar. Hay [más canales](/index.php/IRC_channels "IRC channels") disponibles para temas específicos.
+Usted puede ayudar a otros usuarios a resolver problemas a través del [canal IRC](/index.php/IRC_channel "IRC channel"). Es muy importante, sin embargo, que lea las secciones dedicadas a las [reglas de los canales](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de participar. Hay [más canales](/index.php/IRC_channel#Other_channels "IRC channel") disponibles para temas específicos.
 
 ### Informar sobre los paquetes instalados
 
@@ -46,7 +51,7 @@ Usted puede ayudar a otros usuarios a resolver problemas a través del canal [IR
 
 Informar y corregir errores en el [bug tracker](https://bugs.archlinux.org/) es una de las posibles formas de ayudar a la comunidad.
 
-Sin embargo, su uso ineficaz puede ser contraproducente. Para evitar esto, por favor, lea las [directrices para informar errores](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
+Sin embargo, su uso ineficaz puede ser contraproducente. Para evitar esto, por favor, lea las [directrices para informar de errores](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
 ### Crear y adoptar paquetes de AUR
 
@@ -88,6 +93,10 @@ Grupos específicos de Arch en los que puede participar.
 
 	Lugar para usuarios de reddit para discutir temas relacionados con Arch.
 
+	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
+
+	Una comunidad de Google Plus para que los usuarios de Arch Linux puedan interactuar, hacer preguntas o conversaciones generales de noticias de Arch Linux.
+
 	[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
 
 	Reunión local de seguimiento para los usuarios.
@@ -104,45 +113,63 @@ Grupos específicos de Arch en los que puede participar.
 
 Software desarrollado por la comunidad centrado en Arch Linux.
 
+	[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+
+	Un gran repositorio impulsado por la comunidad de usuarios de Arch.
+
+	[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
+
+	Repositorios de binarios no oficiales mantenidos por miembros de la comunidad.
+
 	[AUR helpers](/index.php/AUR_helpers "AUR helpers")
 
-	Utilidades para ayudar a los usuarios finales en el uso de los paquetes disponibles en [AUR](/index.php/Arch_User_Repository "Arch User Repository").
+	Utilidades para ayudar a los usuarios finales en el uso de los paquetes disponibles en [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
 	Interfaces gráficas para [pacman](/index.php/Pacman "Pacman").
 
-	[WiFiz](http://www.github.com/codywd/wifiz)
+	[NetGUI](http://www.github.com/codywd/NetGUI)
 
-	Frontend gráfico para [Netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)").
+	Interfaz gráfica para [Netctl](/index.php/Netctl "Netctl").
 
-#### Servicios
+### Navegar por ArchWiki
+
+He aquí algunos métodos diferentes para visitar ArchWiki.
+
+	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
+
+	Páginas de Arch Wiki optimizadas para navegar fuera de línea. Paquete: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
+
+	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
+
+	Arch-wiki-lite está diseñado para ofrecer una experiencia lo más cómoda posible para aquellos sin acceso a Internet o sin poder iniciar un navegador gráfico. Paquete: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
+
+	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
+
+	Un visor simple para la Wiki de ArchLinux en línea. El contenido de la página está formateado para una visualización óptima en el móvil.
+
+	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
+
+	Una sencilla interfaz para los sitios MediaWiki, como lo son ArchWiki o Wikipedia. Paquete: [wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
+
+### Servicios
 
 Servicios específicamente diseñados para usuarios de Arch.
 
-	[ArchLinux.us](http://archlinux.us)
+	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
 
-	Emails @archlinux.us basados en gmail.
+	Correos electrónicos @archlinux.info basados en VPS.
 
-	Acceso para el móvil en [archlinux.mobi](http://archlinux.mobi).
+	[ProjectArch.tk](https://bbs.archlinux.org/viewtopic.php?id=206735&)
 
-	[ArchLinux.me](http://archlinux.me)
+	Cuentas gratis de ZNC para los usuarios de Arch Linux.
 
-	Blogs de Arch Linux, para regitrarse lea [este post del foro](https://bbs.archlinux.org/viewtopic.php?id=73622).
-
-#### Otros
+### Otros
 
 	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
 
 	Un usuario de confianza de los proyectos relacionados con Arch.
-
-	[Repo-CK](http://repo-ck.com)
-
-	Repositorio no oficial destinado a optimizar la CPU con los paquetes [linux-ck](https://aur.archlinux.org/packages/linux-ck/) para Arch Linux.
-
-	[infinality-bundle](http://bohoomil.cu.cc)
-
-	Repositorio no oficial que proporciona freetype compilado a medida, fontconfig y bibliotecas cairo, cuyo objetivo es proporcionar la máxima renderización de texto en Linux.
 
 ## FAQ
 

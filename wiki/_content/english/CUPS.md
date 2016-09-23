@@ -82,7 +82,7 @@ To drive a printer, CUPS needs a PPD file and, for most printers, some [filters]
 
 The [OpenPrinting Printer List](http://www.openprinting.org/printers) provides driver recommendations for many printers. It also supplies PPD files for each printer, but most are available through foomatic or the recommended driver package.
 
-Even when a PPD file is provided to CUPS, the CUPS server will regenerate the PPD files and save them in `/etc/cups/ppd/`.
+When a PPD file is provided to CUPS, the CUPS server will regenerate the PPD files and save them in `/etc/cups/ppd/`.
 
 ### CUPS
 

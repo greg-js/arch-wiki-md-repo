@@ -230,6 +230,7 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 ### Iran
 
 *   [http://mirror.yazd.ac.ir/arch/](http://mirror.yazd.ac.ir/arch/)
+*   [http://repo.sadjad.ac.ir/arch/](http://repo.sadjad.ac.ir/arch/)
 
 ### Italy
 

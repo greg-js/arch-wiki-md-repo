@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [GNOME](/index.php/GNOME "GNOME") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-10-05，点击[这里](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=400254)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GNOME](/index.php/GNOME "GNOME") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=451075)可以查看翻译后英文页面的改动。
 
 GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)") .它由[The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") 设计并且完全自由和开源. GNOME是[GNU Project](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project")的一部分.
 
@@ -33,6 +33,7 @@ GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/i
                 *   [5.2.1.2.2 标题栏按钮重新排序](#.E6.A0.87.E9.A2.98.E6.A0.8F.E6.8C.89.E9.92.AE.E9.87.8D.E6.96.B0.E6.8E.92.E5.BA.8F)
                 *   [5.2.1.2.3 最大化时隐藏标题栏](#.E6.9C.80.E5.A4.A7.E5.8C.96.E6.97.B6.E9.9A.90.E8.97.8F.E6.A0.87.E9.A2.98.E6.A0.8F)
             *   [5.2.1.3 GNOME Shell主题](#GNOME_Shell.E4.B8.BB.E9.A2.98)
+            *   [5.2.1.4 Icons on menu](#Icons_on_menu)
         *   [5.2.2 桌面](#.E6.A1.8C.E9.9D.A2)
             *   [5.2.2.1 桌面上的图标](#.E6.A1.8C.E9.9D.A2.E4.B8.8A.E7.9A.84.E5.9B.BE.E6.A0.87)
             *   [5.2.2.2 锁屏和背景](#.E9.94.81.E5.B1.8F.E5.92.8C.E8.83.8C.E6.99.AF)
@@ -44,63 +45,17 @@ GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/i
             *   [5.2.7.1 配置合上盖子时的行为](#.E9.85.8D.E7.BD.AE.E5.90.88.E4.B8.8A.E7.9B.96.E5.AD.90.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
             *   [5.2.7.2 修改电池电量严重不足时的行为](#.E4.BF.AE.E6.94.B9.E7.94.B5.E6.B1.A0.E7.94.B5.E9.87.8F.E4.B8.A5.E9.87.8D.E4.B8.8D.E8.B6.B3.E6.97.B6.E7.9A.84.E8.A1.8C.E4.B8.BA)
         *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
-*   [6 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [6.1 键盘](#.E9.94.AE.E7.9B.98)
-        *   [6.1.1 登陆打开NumLock键](#.E7.99.BB.E9.99.86.E6.89.93.E5.BC.80NumLock.E9.94.AE)
-        *   [6.1.2 热键选择](#.E7.83.AD.E9.94.AE.E9.80.89.E6.8B.A9)
-        *   [6.1.3 打开键盘开关命令](#.E6.89.93.E5.BC.80.E9.94.AE.E7.9B.98.E5.BC.80.E5.85.B3.E5.91.BD.E4.BB.A4)
-        *   [6.1.4 XkbOptions键盘选项](#XkbOptions.E9.94.AE.E7.9B.98.E9.80.89.E9.A1.B9)
-        *   [6.1.5 De-bind Windows key](#De-bind_Windows_key)
-    *   [6.2 磁盘](#.E7.A3.81.E7.9B.98)
-    *   [6.3 从菜单隐藏的应用程序](#.E4.BB.8E.E8.8F.9C.E5.8D.95.E9.9A.90.E8.97.8F.E7.9A.84.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [6.4 截屏记录](#.E6.88.AA.E5.B1.8F.E8.AE.B0.E5.BD.95)
-    *   [6.5 截图](#.E6.88.AA.E5.9B.BE)
-    *   [6.6 注销延迟](#.E6.B3.A8.E9.94.80.E5.BB.B6.E8.BF.9F)
-    *   [6.7 禁用动画](#.E7.A6.81.E7.94.A8.E5.8A.A8.E7.94.BB)
-    *   [6.8 Retina (HiDPI) display support](#Retina_.28HiDPI.29_display_support)
-    *   [6.9 密码和密钥 (PGP Keys)](#.E5.AF.86.E7.A0.81.E5.92.8C.E5.AF.86.E9.92.A5_.28PGP_Keys.29)
-    *   [6.10 终端](#.E7.BB.88.E7.AB.AF)
-        *   [6.10.1 更改默认的终端大小](#.E6.9B.B4.E6.94.B9.E9.BB.98.E8.AE.A4.E7.9A.84.E7.BB.88.E7.AB.AF.E5.A4.A7.E5.B0.8F)
-        *   [6.10.2 新终端采用当前目录](#.E6.96.B0.E7.BB.88.E7.AB.AF.E9.87.87.E7.94.A8.E5.BD.93.E5.89.8D.E7.9B.AE.E5.BD.95)
-        *   [6.10.3 Pad the terminal](#Pad_the_terminal)
-        *   [6.10.4 禁用光标闪烁](#.E7.A6.81.E7.94.A8.E5.85.89.E6.A0.87.E9.97.AA.E7.83.81)
-        *   [6.10.5 关闭终端时，禁用确认窗口](#.E5.85.B3.E9.97.AD.E7.BB.88.E7.AB.AF.E6.97.B6.EF.BC.8C.E7.A6.81.E7.94.A8.E7.A1.AE.E8.AE.A4.E7.AA.97.E5.8F.A3)
-    *   [6.11 鼠标中键](#.E9.BC.A0.E6.A0.87.E4.B8.AD.E9.94.AE)
-    *   [6.12 启用按钮和菜单图标](#.E5.90.AF.E7.94.A8.E6.8C.89.E9.92.AE.E5.92.8C.E8.8F.9C.E5.8D.95.E5.9B.BE.E6.A0.87)
-    *   [6.13 使用自定义的色彩和渐变色的桌面背景](#.E4.BD.BF.E7.94.A8.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9A.84.E8.89.B2.E5.BD.A9.E5.92.8C.E6.B8.90.E5.8F.98.E8.89.B2.E7.9A.84.E6.A1.8C.E9.9D.A2.E8.83.8C.E6.99.AF)
-    *   [6.14 渐变背景](#.E6.B8.90.E5.8F.98.E8.83.8C.E6.99.AF)
-    *   [6.15 自定义 GNOME 会话](#.E8.87.AA.E5.AE.9A.E4.B9.89_GNOME_.E4.BC.9A.E8.AF.9D)
-*   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 Gnome Shell 界面卡死](#Gnome_Shell_.E7.95.8C.E9.9D.A2.E5.8D.A1.E6.AD.BB)
-    *   [7.2 Incorrect application defaults](#Incorrect_application_defaults)
-    *   [7.3 Tracker & Documents do not list any local files](#Tracker_.26_Documents_do_not_list_any_local_files)
-    *   [7.4 Unable to add accounts in Empathy and GNOME Online Accounts](#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts)
-    *   [7.5 Cannot change settings in dconf-editor](#Cannot_change_settings_in_dconf-editor)
-    *   [7.6 When an extension breaks the shell](#When_an_extension_breaks_the_shell)
-    *   [7.7 扩展在 GNOME 3 升级后不工作了](#.E6.89.A9.E5.B1.95.E5.9C.A8_GNOME_3_.E5.8D.87.E7.BA.A7.E5.90.8E.E4.B8.8D.E5.B7.A5.E4.BD.9C.E4.BA.86)
-    *   [7.8 只有 conky 运行时键盘快捷方式不工作](#.E5.8F.AA.E6.9C.89_conky_.E8.BF.90.E8.A1.8C.E6.97.B6.E9.94.AE.E7.9B.98.E5.BF.AB.E6.8D.B7.E6.96.B9.E5.BC.8F.E4.B8.8D.E5.B7.A5.E4.BD.9C)
-    *   [7.9 Unable to apply stored configuration for monitors](#Unable_to_apply_stored_configuration_for_monitors)
-    *   [7.10 一致的光标主题](#.E4.B8.80.E8.87.B4.E7.9A.84.E5.85.89.E6.A0.87.E4.B8.BB.E9.A2.98)
-    *   [7.11 Windows cannot be modified with Alt-Key + mouse-button](#Windows_cannot_be_modified_with_Alt-Key_.2B_mouse-button)
-    *   [7.12 加载速度慢的系统图标/慢GDM登录](#.E5.8A.A0.E8.BD.BD.E9.80.9F.E5.BA.A6.E6.85.A2.E7.9A.84.E7.B3.BB.E7.BB.9F.E5.9B.BE.E6.A0.87.2F.E6.85.A2GDM.E7.99.BB.E5.BD.95)
-    *   [7.13 Artifacts when maximizing windows](#Artifacts_when_maximizing_windows)
-    *   [7.14 Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics)
-    *   [7.15 Window opens behind other windows when using multiple monitors](#Window_opens_behind_other_windows_when_using_multiple_monitors)
-    *   [7.16 锁定按钮无法重新启用触摸板](#.E9.94.81.E5.AE.9A.E6.8C.89.E9.92.AE.E6.97.A0.E6.B3.95.E9.87.8D.E6.96.B0.E5.90.AF.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
-    *   [7.17 GNOME Shell键盘源菜单不可见](#GNOME_Shell.E9.94.AE.E7.9B.98.E6.BA.90.E8.8F.9C.E5.8D.95.E4.B8.8D.E5.8F.AF.E8.A7.81)
-    *   [7.18 鼠标指针丢失](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E4.B8.A2.E5.A4.B1)
-    *   [7.19 在会话菜单中没有重启按钮时，屏幕被锁定](#.E5.9C.A8.E4.BC.9A.E8.AF.9D.E8.8F.9C.E5.8D.95.E4.B8.AD.E6.B2.A1.E6.9C.89.E9.87.8D.E5.90.AF.E6.8C.89.E9.92.AE.E6.97.B6.EF.BC.8C.E5.B1.8F.E5.B9.95.E8.A2.AB.E9.94.81.E5.AE.9A)
-    *   [7.20 pulseaudio系统原因延误GNOME和GDM](#pulseaudio.E7.B3.BB.E7.BB.9F.E5.8E.9F.E5.9B.A0.E5.BB.B6.E8.AF.AFGNOME.E5.92.8CGDM)
-    *   [7.21 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
-*   [8 参见](#.E5.8F.82.E8.A7.81)
+*   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-以下两个软件包（组）均包含 GNOME 的组件：
+以下两个软件组均包含 GNOME 的组件：
 
-**gnome** 包组包含基本桌面环境和软件，以提供标准的 GNOME 体验。
+*   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 组包含基本桌面环境和精选的[应用程序](https://wiki.gnome.org/Apps).
 
-**gnome-extra** 包组包含剩余的可选工具，例如文本编辑器、压缩文件管理器、光盘烧录工具、邮件客户端、游戏、开发工具及其它非必需的软件。这些软件与 GNOME 桌面的集成很好。假如您不想安装 GNOME 全部的软件包，在安装它的时候注意看软件包描述（或者你可以先安装再删除他们）。
+*   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) 包组包含剩余的可选工具，例如[文本编辑器](/index.php/Gedit "Gedit")、压缩文件管理器、光盘烧录工具、邮件客户端、游戏、开发工具及其它非必需的软件。 [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 软件组是这个组的基础。
+
+The base desktop consists of [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell window manager. It can be installed separately with [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell).
 
 **Note:** *mutter* acts as a composite manager for the desktop, employing hardware graphics acceleration to provide effects aimed at reducing screen clutter. The GNOME session manager automatically detects if your video driver is capable of running GNOME Shell and if not, falls back to software rendering using *llvmpipe*.
 
@@ -108,23 +63,23 @@ GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/i
 
 上面提到的包组不包括这些包：
 
-*   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — A simple user interface to access [libvirt](/index.php/Libvirt "Libvirt") virtual machines.
+*   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — 访问 [libvirt](/index.php/Libvirt "Libvirt") 虚拟机的用户接口.
 
 	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
 
-*   **GNOME Initial Setup** — A simple, easy, and safe way to prepare a new system.
+*   **GNOME Initial Setup** — 准备新系统的简单、易用和安全的工具。
 
 	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
 
-*   **GNOME PackageKit** — Collection of graphical tools for PackageKit to be used in the GNOME desktop.
+*   **GNOME PackageKit** — GNOME 使用 PackageKit 的工具集。
 
 	[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
-*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — A C/C++ debugger.
+*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — C/C++ 调试器.
 
 	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
 
-*   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — Lets you install and update applications and system extensions.
+*   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — 安装和更新软件和系统扩展.
 
 	[https://wiki.gnome.org/Apps/Software/](https://wiki.gnome.org/Apps/Software/) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
@@ -149,7 +104,12 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 ### 手动启动
 
 *   对于标准的GNOME会话， 在`~/.xinitrc` 中添加：`exec gnome-session`.
-*   对于经典的gnome会话，在 `~/.xinitrc` 中添加：{bc|export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME export GNOME_SHELL_SESSION_MODE=classic exec gnome-session --session=gnome-classic}}
+*   对于经典的gnome会话，在 `~/.xinitrc` 中添加：
+    ```
+    export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
+    export GNOME_SHELL_SESSION_MODE=classic
+    exec gnome-session --session=gnome-classic
+    ```
 
 **注意:** 最好把gnome--session之前的应用注释掉，我之前因为没有注释掉`twm`（另一个窗口管理器）导致启动gnome失败
 
@@ -166,13 +126,13 @@ exec gnome-session
 
 改完`~/.xinitrc` ，即可用`startx` 启动Gnome (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
-**Note:** Wayland 上的Gnome需要r [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 包， 不能使用 *startx* 和`~/.xinitrc`，而是要运行 `gnome-session --session=gnome-wayland`. 更多参见 [Wayland](/index.php/Wayland "Wayland").
+**Note:** Wayland 上的 Gnome 需要安装 [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 包， 不能使用 *startx* 和`~/.xinitrc`，而是要运行 `gnome-session --session=gnome-wayland`. 更多参见 [Wayland](/index.php/Wayland "Wayland").
 
 ### Wayland 中的 GNOME 应用程序
 
 根据当前的默认情况，GNOME 应用程序会利用 XWayland，以传统 X 应用程序的方式运行。若需在 Wayland 下测试 GNOME 应用，请以命令行方式运行程序，并加上以下前缀： `env GDK_BACKEND=wayland <command>`。
 
-**Note:** 可以设置全局的 Wayland 环境，使用 `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`。 但是现在无法工作—— *gnome-session* 会立即闪退.
+**Note:** 可以设置全局的 Wayland 环境，使用 `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`。 但是现在无法工作 [GNOME/Troubleshooting#Setting global Wayland environment with an environment variable](/index.php/GNOME/Troubleshooting#Setting_global_Wayland_environment_with_an_environment_variable "GNOME/Troubleshooting") 提供了一个临时解决方案.
 
 请查看以下页面以了解开发进展： [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
 
@@ -266,6 +226,8 @@ For other protocols and methods see [Default applications](/index.php/Default_ap
 *   禁用滚动
 *   禁用点击
 
+**Note:** GNOME 目前不再支持 [synaptics](/index.php/Synaptics "Synaptics")，请使用 [libinput](/index.php/Libinput "Libinput"). 参考 [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
+
 #### 网络
 
 [NetworkManager](/index.php/NetworkManager "NetworkManager") is the native tool of the GNOME project to control network settings from the shell. It is installed by default as a dependency for [tracker](https://www.archlinux.org/packages/?name=tracker) package, which is a part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group, and just needs to be [enabled](/index.php/NetworkManager#Enable_NetworkManager "NetworkManager").
@@ -340,30 +302,24 @@ $ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
 
 ###### 标题栏的高度
 
-**注意:** 在GNOME 3.16中，Mutter不再使用metacity主题。相反，标题栏的装饰主题使用GTK+。
-
-改变标题栏的高度，创建以下文件，调整填充所需：
-
+**Note:** 下面配置会修改 GNOME 终端和 Chromium 的标题栏高度，但是不会影响 Nautilus。
  `~/.config/gtk-3.0/gtk.css` 
 ```
-.header-bar.default-decoration {
-    padding-top: 3px;
-    padding-bottom: 3px;
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ min-height: 0px;
+ font-size: 0.6em;
 }
 
-.header-bar.default-decoration .button.titlebutton {
-    padding-top: 2px;
-    padding-bottom: 2px;
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ min-height: 0px;
 }
 
 ```
 
-标题栏的高度也可以通过选择一个较小的字体。默认情况下，字体设置为Cantarell Bold 11。您可能希望将字体设置为较小的，例如Sans Bold 10\. 你可以这样使用以下GSettings命令来完成：
-
-```
-$ gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Sans Bold 10'
-
-```
+更多信息请阅读 [[3]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149).
 
 ###### 标题栏按钮重新排序
 
@@ -378,6 +334,8 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 ###### 最大化时隐藏标题栏
 
+*   [Install](/index.php/Install "Install") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) or [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Maximized windows get the title bar merged into the activity bar, saving precious pixels.
+
 *   [Install](/index.php/Install "Install") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). It changes a default setting in the window manager, so as to automatically hide the titlebar on legacy (non-headerbar) apps when they are maximized or tiled to the side.
 
 *   [Install](/index.php/Install "Install") [maximus](https://aur.archlinux.org/packages/maximus/). To start the application, execute *maximus* from a terminal. When running, the daemon will automatically maximize windows. It will undecorate maximized windows and redecorate them when they are unmaximized. If you do not want all windows to start maximized, run `maximus -m` instead. Note that this will only work with windows decorated by the window manager; applications that use client-side decoration such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") will not be undecorated when maximized.
@@ -389,6 +347,15 @@ The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly e
 There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
 Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+
+##### Icons on menu
+
+The default GNOME schema doesn't display any icon on menus. To display icons on menus, issue the following command.
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
+
+```
 
 #### 桌面
 
@@ -418,7 +385,7 @@ $ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/pi
 
 #### 扩展
 
-**注意:** 通过 The GNOME Shell browser plugin（即 [extensions.gnome.org](https://extensions.gnome.org)）安装扩展的方法暂时无法在 Chrome/Chromium 35 或更高的版本上进行。用户应当采用其它对网页安装更兼容的浏览器进行安装，如 [Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)") 或 [GNOME/Web](/index.php/GNOME/Web "GNOME/Web")。
+**注意:** GNOME Shell browser 插件可以让用户从[extensions.gnome.org](https://extensions.gnome.org)安装扩展，支持 [Firefox (简体中文)](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)") 和 [GNOME/Web](/index.php/GNOME/Web "GNOME/Web")，要在 Google Chrome/Chromium, Opera 和 Vivaldi 中使用，需要安装 [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/).
 
 GNOME Shell 可以使用第三方扩展来定制。这些扩展提供了一些额外的功能，如：提供一个可以一直显示的 Dock、更换 Shell 的主题，等等。
 
@@ -457,7 +424,7 @@ For hinting, RGBA will likely be desired as this fits most monitors types, and i
 
 #### 启动应用程序
 
-要启动登录某些应用程序, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`. 可以使用Tweak Tool.来达到同样的效果。
+要启动登录某些应用程序, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`. [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) 支持管理 autostart-entries。
 
 **Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
 
@@ -486,13 +453,21 @@ $ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup 
 
 ##### 配置合上盖子时的行为
 
-GNOME TWEAK Tool 自 3.17.1 开始，可以**阻止** *systemd* 在“合上盖子”这一 ACPI 事件发生后采取默认行动。[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) 若想要**阻止** *systemd* 的默认行为，打开 Tweak Tool，在“电源”标签页下选择“合上盖子后不待机”的选项。此选项意味着在盖子合上后，系统将不会默认待机，而是不采取任何措施。如果选择了此选项，一个自启动项目`~/.config/autostart/ignore-lid-switch-tweak.desktop`将会被创建，用于阻止*systemd*的默认行为。
+GNOME TWEAK Tool 自 3.17.1 开始，可以**阻止** *systemd* 在“合上盖子”这一 ACPI 事件发生后采取默认行动。[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) 若想要**阻止** *systemd* 的默认行为，打开 Tweak Tool，在“电源”标签页下选择“合上盖子后不待机”的选项。此选项意味着在盖子合上后，系统将不会默认待机，而是不采取任何措施。如果选择了此选项，一个自启动项目`~/.config/autostart/ignore-lid-switch-tweak.desktop`将会被创建，用于阻止*systemd*的默认行为。
 
 如果你在合上盖子后既不希望系统待机，也不希望系统不动于衷，你首先要确保你并没有打开上述的选项，然后再配置*systemd*的`HandleLidSwitch=*默认行为*`选项，详见[Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management")中的说明。
 
 ##### 修改电池电量严重不足时的行为
 
-系统设置面板只允许用户在电量不足时，要么“待机”要么“休眠”。如果要选择其他的行为，比如“不采取任何措施”，打开`dconf-editor`，转到`org.gnome.settings-daemon.plugins.power`中，并编辑`"critical-battery-action"`，将其值设置为`"nothing"`。
+The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+
+ `/etc/UPower/UPower.conf` 
+```
+PercentageLow=10
+PercentageCritical=3
+PercentageAction=2
+CriticalPowerAction=HybridSleep
+```
 
 #### Sort applications into application (app) folders
 
@@ -537,492 +512,17 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 
 For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in.in).
 
-## 提示与技巧
-
-其他GNOME系统设置和提示。
-
-### 键盘
-
-#### 登陆打开NumLock键
-
-运行以下命令：
-
-```
-$ gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state on
-
-```
-
-#### 热键选择
-
-很多的快捷键可以通过系统设置菜单中更改. 例如，重新启用“显示桌面快捷键：
-
-*System settings* > *Keyboard* > *Shortcuts* > *Navigation* > *Hide all normal windows*
-
-However, certain hotkeys cannot be changed directly via system settings. In order to change these keys, use *dconf-editor*. An example of particular note is the hotkey `Alt-` + ``` (the key above `Tab` on US keyboard layouts). In GNOME Shell it is pre-configured to cycle through windows of an application, however it is also a hotkey often used in the [Emacs](/index.php/Emacs "Emacs") editor. It can be changed by opening *dconf-editor* and modifying the *switch-group* key found in `org.gnome.desktop.wm.keybindings`.
-
-It is possible to manually change the keys via an application's so-called **accel** map file. Where it is to be found is up to the application: For instance, Thunar's is at `~/.config/Thunar/accels.scm`, whereas Files's is located at `~/.config/nautilus/accels` and `~/.gnome2/accels/nautilus` on old release.
-
-The file should contain a list of possible hotkeys, each unchanged line commented out with a leading ";" that has to be removed for a change to become active. For example to replace the hotkey used by Files to move files to the trash folder, change the line:
-
-```
-; (gtk_accel_path "<Actions>/DirViewActions/Trash" "<Primary>Delete")
-
-```
-
-to this:
-
-```
-(gtk_accel_path "<Actions>/DirViewActions/Trash" "Delete")
-
-```
-
-The file is regenerated regularly so do not comment the file. The uncommented line will stay but every comment you add will be lost.
-
-#### 打开键盘开关命令
-
-To have keyboard shortcut **Alt** + **Shift** switch keyboards:
-
-Open Gnome-Tweak-Tool (or Keyboard Settings, in GNOME 3.16) and set *Typing* > *Modifiers-only input sources* > *select Alt-shift*. For more information see also the forum [thread](https://bbs.archlinux.org/viewtopic.php?id=152127).
-
-#### XkbOptions键盘选项
-
-Using the **dconf-editor**, navigate to the key named `org.gnome.desktop.input-sources.xkb-options` and add desired XkbOptions (e.g. *caps:swapescape*) to the list.
-
-See `/usr/share/X11/xkb/rules/xorg` for all XkbOptions and `/usr/share/X11/xkb/symbols/*` for the respective descriptions.
-
-**Note:** To enable the `Ctrl+Alt+Backspace` combination to terminate Xorg, use the [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool). Within the **Tweak Tool**, navigate to *Typing > Key sequence to kill the X server* and select the option `Ctrl+Alt+Backspace` from the dropdown menu.
-
-#### De-bind Windows key
-
-默认情况下，“Windows键”将打开GNOMEshelly预览模式。 You can unbind this key by running the command below
-
-```
-$ gsettings set org.gnome.mutter overlay-key 'Foo'
-
-```
-
-### 磁盘
-
-GNOME提供磁盘实用程序来操作的存储驱动器设置。这是它的一些特点：
-
-*   **Enable write cache** is a feature that most hard drives provide. Data is cached and allocated at chosen times to improve system performance. Not recommended unless the computer has a backup battery pack or is a laptop as data would be lost on power failure.
-
-	*Settings* > *Drive Settings* > *Write Cache* > **On**
-
-*   **Automatic Mount Options** can mount drives and partitions that are GPT based - will use default, recommended options.
-
-**Warning:** This setting erases related [fstab](/index.php/Fstab "Fstab") entries
-
-	*Partition Settings* > *Edit Mount Options* > *Automatic Mount Options* > **On**
-
-### 从菜单隐藏的应用程序
-
-**Tip:** Desktop entries can be hidden by editing the `.desktop` files themselves. See [Desktop entries#Hide desktop entries](/index.php/Desktop_entries#Hide_desktop_entries "Desktop entries").
-
-Use the *Main Menu* application (provided by the [alacarte](https://www.archlinux.org/packages/?name=alacarte) package) to hide any applications you do not wish to show in the menu.
-
-### 截屏记录
-
-GNOME features built-in screencast recording with the **Ctrl** + **Shift** + **Alt** + **R** key combination. A red circle is displayed in the bottom right corner of the screen when the recording is in progress. After the recording is finished, a file named `Screencast from %d%u-%c.webm` is saved in the Videos directory. In order to use the screencast feature the gst plugins need to be installed.
-
-### 截图
-
-默认保存目录:
-
-```
-$ gsettings set org.gnome.gnome-screenshot auto-save-directory file:///home/*USER*/Desktop
-
-```
-
-Check the *gnome-screenshot* manual page for more options.
-
-### 注销延迟
-
-去掉注销的确认和 60 秒的延迟： 这个对话框一般出现在你用状态菜单注销的时候。这个修改对于 关机 也生效。这个不是全局修改，只对使用该命令的用户生效。使用该命令立即生效。
-
-```
-$ gsettings set org.gnome.SessionManager logout-prompt false
-
-```
-
-### 禁用动画
-
-To disable Shell animations (such as "Show Applications" and the wave animation in the top left activities hot corner), run:
-
-```
-$ gsettings set org.gnome.desktop.interface enable-animations false
-
-```
-
-### Retina (HiDPI) display support
-
-GNOME introduced HiDPI support in version 3.10\. If your display does not provide the correct screen size through EDID, this can lead to incorrectly scaled UI elements. As a workaround you can open *dconf-editor* and find the key `scaling-factor` in `org.gnome.desktop.interface`. Set it to `1` to get the standard scale.
-
-Also see [HiDPI](/index.php/HiDPI "HiDPI").
-
-### 密码和密钥 (PGP Keys)
-
-You can use the Passwords and Keys program (*seahorse*) to create a PGP key as it is a front end for [GnuPG](/index.php/GnuPG "GnuPG") and installs it as dependency. This may be useful in the future (for instance if to encrypt a file). Create a key as shown below (the process may take about 10 minutes):
-
-*File* > *New* > *PGP Key* > *Name* > *Email* > *Defaults* > *Passphrase*.
-
-### 终端
-
-#### 更改默认的终端大小
-
-新终端的默认大小可以在*编辑 > 配置文件首选项* 中调整
-
-#### 新终端采用当前目录
-
-By default new terminals open in the `$HOME` directory. To have new terminals adopt the current working directory: `source /etc/profile.d/vte.sh`. Add the command to the shell configuration to retain the behaviour.
-
-#### Pad the terminal
-
-To pad the terminal (create a small, invisible border between the window edges and the terminal contents) create the file below:
-
- `~/.config/gtk-3.0/gtk.css` 
-```
-VteTerminal,
-TerminalScreen {
-    padding: 10px 10px 10px 10px;
-    -VteTerminal-inner-border: 10px 10px 10px 10px;
-}
-```
-
-#### 禁用光标闪烁
-
-Since GNOME 3.8 and the migration to GSettings and DConf the key required to modify in order to disable the blinking cursor in the Terminal differs slightly in contrast to the old GConf key. To disable the blinking cursor in GNOME 3.8 and above use:
-
-```
-$ gsettings set org.gnome.desktop.interface cursor-blink false
-
-```
-
-To disable the blinking cursor in Terminal only use (make sure profile uid is correct one):
-
-```
-$ dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/cursor-blink-mode "'off'"
-
-```
-
-Note that `gnome-settings-daemon`, from the package of the same name, must be running for this and other settings changes to take effect in GNOME applications - see [GNOME#Configuration](/index.php/GNOME#Configuration "GNOME").
-
-#### 关闭终端时，禁用确认窗口
-
-试图关闭该窗口，而一个以root身份登录时，终端将始终显示一个确认窗口。为了避免这种情况，执行以下命令：
-
-```
-$ gsettings set org.gnome.Terminal.Legacy.Settings confirm-close false
-
-```
-
-### 鼠标中键
-
-By default, GNOME 3 disables middle mouse button emulation regardless of [Xorg](/index.php/Xorg "Xorg") settings (**Emulate3Buttons**). To enable middle mouse button emulation use:
-
-```
-$ gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
-
-```
-
-### 启用按钮和菜单图标
-
-Since GTK+ 3.10, the GSettings key 'menus-have-icons' has been deprecated. Icons in buttons and menus can still be enabled by setting the following overrides:
-
-```
-$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
-
-```
-
-### 使用自定义的色彩和渐变色的桌面背景
-
-使用自定义颜色和渐变为您的桌面背景，您首先需要设置一个透明的图片或其他不存在的图片作为您的桌面背景。例如，下面的命令将设置一个不存在的图片为背景。
-
-```
-$ gsettings set org.gnome.desktop.background picture-uri none
-
-```
-
-在这一点上，桌面背景应该是一个平坦的颜色-默认的颜色设置为深蓝色。
-
-对于不同的平面彩色你只需要改变的主要颜色设置：
-
-```
-$ gsettings set org.gnome.desktop.background primary-color <my color>
-
-```
-
-where <my color> is a hex value (such as *ffffff* for white).
-
-对于颜色渐变，你也需要改变次要颜色设置 `org.gnome.desktop.background secondary-color` 并选择一个阴影类型。举例来说，如果你想有一个horizontal gradient，执行以下命令：
-
-```
-$ gsettings set org.gnome.desktop.background color-shading-type horizontal
-
-```
-
-如果你是使用一个透明的图片作为你的背景，你可以通过执行以下设置的透明度：
-
-```
-$ gsettings set org.gnome.desktop.background picture-opacity <value>
-
-```
-
-数值在100和1之间（最大不透明度为100）。
-
-### 渐变背景
-
-GNOME 可以在特定的时间间隔之间的使用不同的壁纸。 这是通过创建一个XML文件，指定要使用的图片和时间间隔完成的。有关创建这些文件的详细信息，请参阅下面的 [article](http://www.linuxjournal.com/content/create-custom-transitioning-background-your-gnome-228-desktop).
-
-可替代地，一些工具可用自动化过程：
-
-*   **mkwlppr** — This script creates XML files that can act as dynamic wallpapers for GNOME by referring to multiple wallpapers.
-
-	[http://pastebin.com/019G2rCy](http://pastebin.com/019G2rCy) || see [mkwlppr](http://pastebin.com/019G2rCy)
-
-*   **[Wallpapoz](/index.php/Wallpapoz "Wallpapoz")** — Wallpapoz is a tool that provides dynamic wallpapers for GNOME and Xfce desktops.
-
-	[https://vajrasky.wordpress.com/](https://vajrasky.wordpress.com/) || [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)
-
-*   **CreBS** — A Python/GTK application used to create and set desktop wallpaper slideshows for GNOME.
-
-	[http://www.obfuscatepenguin.net/](http://www.obfuscatepenguin.net/) || [crebs](https://aur.archlinux.org/packages/crebs/)
-
-对于设置XML文件作为默认的背景，参阅 [#Lock screen and background](#Lock_screen_and_background).
-
-### 自定义 GNOME 会话
-
-It is possible to create custom GNOME sessions which use the GNOME session manager but start different sets of components ([Openbox](/index.php/Openbox "Openbox") with [tint2](/index.php/Tint2 "Tint2") instead of GNOME Shell for example).
-
-Two files are required for a custom GNOME session: a session file in `/usr/share/gnome-session/sessions/` which defines the components to be started and a [desktop entry](/index.php/Desktop_entry "Desktop entry") in `/usr/share/xsessions` which is read by the [display manager](/index.php/Display_manager "Display manager"). An example session file is provided below:
-
- `/usr/share/gnome-session/sessions/gnome-openbox.session` 
-```
-[GNOME Session]
-Name=GNOME Openbox
-RequiredComponents=openbox;tint2;gnome-settings-daemon;
-
-```
-
-And an example desktop file:
-
- `/usr/share/xsessions/gnome-openbox.desktop` 
-```
-[Desktop Entry]
-Name=GNOME Openbox
-Exec=gnome-session --session=gnome-openbox
-
-```
-
-**Note:** GNOME Session calls upon the `.desktop` files of each of the components to be started. If a component you wish to start does not provide a `.desktop` file, you must create a suitable desktop entry in a directory such as `/usr/local/share/applications`.
-
-## 故障排除
-
-### Gnome Shell 界面卡死
-
-如果 Gnome Shell 的界面卡死了（可能是由于某些外观调整异常、某个扩展出问题，或内存不足），你可能就连按下 `Alt` + `F2` 并输入 **r** 的机会都没有。这时，请试着切换到另一个 TTY（**Ctrl** + **Alt** + **F2**） 上，并输入命令`pkill -HUP gnome-shell`。Gnome Shell 将重新启动，可能需要个几十秒。这样的重启方式不会注销已登录的用户，因此所有的程序也将继续运行。不过，保存你正在编辑文件总是个好主意。
-
-如果这也不行，那你可能得重新启动 [Xorg](/index.php/Xorg "Xorg") 服务器。如果你通过终端登录，输入 `pkill X`；如果你通过 GDM 登录，输入 `systemctl restart gdm`。但需要注意的是，重启 Xorg 服务器会导致已登录的用户被注销，因此请确保在这之前已经设法保存你所有的文件。
-
-### Incorrect application defaults
-
-When installing applications for the first time you may find that GNOME has the wrong application associated to a certain protocols - for instance, *easytag* becomes the folder handler instead of [GNOME Files](/index.php/GNOME_Files "GNOME Files").
-
-For GNOME Files see the following page: [GNOME Files#Files is no longer the default file manager](/index.php/GNOME_Files#Files_is_no_longer_the_default_file_manager "GNOME Files").
-
-For Document Viewer, run the following command:
-
-```
-$ xdg-mime default evince.desktop application/pdf
-
-```
-
-For other applications, default handler settings are detailed on the following page: [Default applications](/index.php/Default_applications "Default applications").
-
-Optionally, you can [install](/index.php/Install "Install") [gnome-defaults-list](https://aur.archlinux.org/packages/gnome-defaults-list/). It will place your configuration file at `/etc/gnome/defaults.list`.
-
-### Tracker & Documents do not list any local files
-
-In order for Tracker (and, therefore, Documents) to detect your local files, they must be stored in an [XDG compliant directory](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html) (such as 'Documents' or 'Music'). For more information, see [Xdg user directories](/index.php/Xdg_user_directories "Xdg user directories").
-
-You can also configure Tracker to recursively search inside specific directories such as your home directory. These settings can be made using `tracker-preferences`.
-
-### Unable to add accounts in Empathy and GNOME Online Accounts
-
-Empathy, the engine behind integrated messaging, GNOME Online Accounts, and all other system settings based on messaging accounts will not function correctly unless the [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) group of packages or at least one of the backends ([telepathy-gabble](https://www.archlinux.org/packages/?name=telepathy-gabble), or [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), for example) is [installed](/index.php/Install "Install"). View descriptions of *telepathy* components on the [freedesktop.org telepathy wiki](http://telepathy.freedesktop.org/wiki/Components).
-
-**Note:** [Avahi](/index.php/Avahi "Avahi") daemon is required for connecting with the People Nearby account, and also in order for some desktop extensions to work correctly like [Chat Status](https://extensions.gnome.org/extension/746/chat-status/)
-
-### Cannot change settings in dconf-editor
-
-When one cannot set settings in [dconf](https://www.archlinux.org/packages/?name=dconf), it is possible their dconf user settings are corrupt. In this case it is best to delete the user dconf files in `~/.config/dconf/user*` and set the settings in dconf-editor after.
-
-### When an extension breaks the shell
-
-When enabling shell extensions causes GNOME breakage, you should first remove the *user-theme* and *auto-move-windows* extensions from their installation directory.
-
-The installation directory could be one of `~/.local/share/gnome‑shell/extensions`, `/usr/share/gnome‑shell/extensions` or `/usr/local/share/gnome‑shell/extensions`. Removing these two extension-containing folders may fix the breakage. Otherwise, isolate the problem extension with trial‑and‑error.
-
-Removing or adding an extension-containing folder to the aforementioned directories removes or adds the corresponding extension to your system. Details on GNOME Shell extensions are available at the [GNOME web site.](https://live.gnome.org/GnomeShell/Extensions)
-
-If you have trouble with uninstalling an extension via [extensions.gnome.org/local](https://extensions.gnome.org/local/), then probably they have been installed as system-wide extensions with the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package. Removing the package again obviously affects all user accounts.
-
-### 扩展在 GNOME 3 升级后不工作了
-
-**Note:** Please bear in mind that whilst the methods below will allow you to **try** and activate an extension with an unsupported version of GNOME Shell, it is by no means a guarantee that the extension will work successfully. The most likely outcome of trying to activate such an extension is that GNOME Shell will crash and then restart.
-
-Before trying the workarounds below, check if an update is available for the extension by visiting [extensions.gnome.org/local](https://extensions.gnome.org/local).
-
-If there is no update for your current GNOME version yet, use the following command to disable version validation for extensions:
-
-```
-$ gsettings set org.gnome.shell disable-extension-version-validation true
-
-```
-
-Alternatively, you could modify the extension itself, changing the supported shell version to satisfy the version validation. See the method below.
-
-找到扩展的安装目录，可能是 `~/.local/share/gnome-shell/extensions` 或 `/usr/share/gnome-shell/extensions`.
-
-编辑扩展子文件夹中的每一个 **`metadata.json`**
-
-| Insert: | `"shell-version": ["3.x"]` |
-| Instead of (for example): | `"shell-version": ["3.4"]` |
-
-`"3.x"` 是最好的选择，这个表示扩展能在所有 ***3.x*** GNOME Shell版本下工作。
-
-### 只有 conky 运行时键盘快捷方式不工作
-
-gnome-shell 键盘快捷方式(如 Alt+F2,Alt+F1 和多媒体键快捷方式)当只有 conky 运行时不会工作。然而如果另一个程序(例如 gedit)在运行，键盘快捷方式就可以工作了。
-
-解决方式：编辑 .conkyrc
-
-```
-own_window yes
-own_window_transparent yes
-own_window_argb_visual yes
-own_window_type dock
-own_window_class Conky
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-
-```
-
-### Unable to apply stored configuration for monitors
-
-If you encounter this message try to disable the *xrandr* `gnome-settings-daemon plugin`:
-
-```
-$ dconf write /org/gnome/settings-daemon/plugins/xrandr/active false
-
-```
-
-### 一致的光标主题
-
-See [Cursor themes#Desktop environments](/index.php/Cursor_themes#Desktop_environments "Cursor themes").
-
-### Windows cannot be modified with Alt-Key + mouse-button
-
-In GNOME 3.6 and above, the mouse button modifier (the key that allows you to drag a window from a location other than the titlebar) is the `Super` key instead of the `Alt` key which was used in the past. The change was made in response to the following [bug report](https://bugzilla.gnome.org/show_bug.cgi?id=607797).
-
-To change the mouse button modifier back to the `Alt` key, execute the following:
-
-```
-$ gsettings set org.gnome.desktop.wm.preferences mouse-button-modifier '<Alt>'  
-
-```
-
-**Note:** It is not possible to change this with *System settings* > *Keyboard* > *Shortcuts*
-
-### 加载速度慢的系统图标/慢GDM登录
-
-Problems with the loading of system icons, such the ones in the title bar of Files, might be solved by [installing](/index.php/Pacman#Installing_specific_packages "Pacman") (or re-installing) the [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) package.
-
-Re-installing the aforementioned package may also fix repeated occurrences of the "Oh no! Something has gone wrong!" error screen and/or very slow loading and login with GDM as described in the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1414157).
-
-### Artifacts when maximizing windows
-
-Maximizing windows may cause artifacts as of GNOME 3.12.0 - see the following [forum thread](https://bbs.archlinux.org/viewtopic.php?id=183617) and [bug report](https://bugzilla.gnome.org/show_bug.cgi?id=728385). A solution is detailed in the following section: [#Tear-free video with Intel HD Graphics](#Tear-free_video_with_Intel_HD_Graphics).
-
-### Tear-free video with Intel HD Graphics
-
-	Intel TearFree
-
-Enabling the [Xorg Intel TearFree option](/index.php/Intel_Graphics#Tear-free_video "Intel Graphics") is a known workaround for tearing problems on Intel adapters. However, the way this option acts makes it redundant with the use of a compositor (it increases memory consumption and lowers performance, see [the original bug report's final comment](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)).
-
-	DRI3
-
-According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c2), DRI3 includes the `buffer_age` extension that allows GNOME Shell's Mutter compositor to sync windows to vblank in an efficient way. DRI3 support is not compiled in to the mesa package, so you have to recompile [mesa](https://www.archlinux.org/packages/?name=mesa) with `--enable-dri3` in the `./configure` flags (see [ABS](/index.php/ABS "ABS")). Then enable it in the Xorg driver:
-
- `/etc/X11/xorg.conf.d/20-intel.conf` 
-```
-Section "Device"
-   Identifier  "Intel Graphics"
-   Driver      "intel"
-   Option      "DRI"    "3"
-EndSection
-```
-
-	Mutter tweaks
-
-**Note:** This workaround has been [reported](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c0) to have side effects and may not fix tearing in all cases.
-
-GNOME Shell's Mutter compositor has a tweak known to address tearing problems (see [the original suggestion for this fix](https://bugzilla.gnome.org/show_bug.cgi?id=657071#c1) and its mention in [the Freedesktop bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c59)). To enable this tweak, append the following line to `/etc/environment`: `CLUTTER_PAINT=disable-clipped-redraws:disable-culling`. Then restart the Xorg server.
-
-### Window opens behind other windows when using multiple monitors
-
-This is possibly a bug in GNOME Shell which causes new windows to open behind others. To fix this issue, one can run the following command:
-
-```
-$ gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
-
-```
-
-### 锁定按钮无法重新启用触摸板
-
-Some laptops have a touchpad lock button that disables the touchpad so that users can type without worrying about touching the touchpad. Currently, it appears that although GNOME can lock the touchpad by pressing this button, it cannot unlock it. If the touchpad gets locked you can run the following to unlock it:
-
-```
-$ xinput set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
-
-```
-
-### GNOME Shell键盘源菜单不可见
-
-A menu showing the keyboard input sources (for example 'en' for an English keyboard layout) should be visible next to the status area containing icons for network, volume and power sources. If the keyboard sources menu is not visible, this is probably because you have configured your [Xorg](/index.php/Xorg "Xorg") keyboard layout in a way which GNOME does not recognise.
-
-To ensure that the menu is visible, remove any Xorg keyboard configuration you might have created and set the keyboard locale using [localectl](/index.php/Keyboard_configuration_in_Xorg#Using_localectl "Keyboard configuration in Xorg").
-
-Upon running the command and then logging out, you should find that the keyboard input sources menu is visible in GDM and in the GNOME Shell desktop. See [Input sources in GNOME](http://blogs.gnome.org/mclasen/2012/09/21/input-sources-in-gnome/) for more information.
-
-### 鼠标指针丢失
-
-When using a separate [window manager](/index.php/Window_manager "Window manager") with *gnome-settings-daemon*, the mouse cursor may vanish. Run:
-
-```
-$ gsettings set org.gnome.settings-daemon.plugins.cursor active false
-
-```
-
-### 在会话菜单中没有重启按钮时，屏幕被锁定
-
-If [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") is installed, ensure that it is not running at startup, see [GNOME#Startup applications](/index.php/GNOME#Startup_applications "GNOME").
-
-### pulseaudio系统原因延误GNOME和GDM
-
-If you are running [PulseAudio](/index.php/PulseAudio "PulseAudio") in system-wide mode, the PulseAudio 7.0 upgrade breaks [GDM](/index.php/GDM "GDM") and GNOME. See [this forum post](https://bbs.archlinux.org/viewtopic.php?id=203051) for more information.
-
-### GNOME crashes when trying to reorder applications in the GNOME Shell Dash
-
-The dash is the "toolbar" that appears, by default, [on the left](https://en.wikipedia.org/wiki/GNOME_Shell#Design_components "wikipedia:GNOME Shell") when you click Activities. Applications can be reordered in the dash by dragging and dropping. If this fails, and/or causes GNOME to crash, try [changing your icon theme](https://bbs.archlinux.org/viewtopic.php?id=171689).
-
 ## 参见
 
 *   [官方网站](http://www.gnome.org/)
 *   [GNOME-shell扩展](http://extensions.gnome.org/)
 *   主题、图标和壁纸：
     *   [GNOME Art](http://art.gnome.org/)
-    *   [GNOME Look](http://www.gnome-look.org/)
+    *   [GNOME 外观](http://www.gnome-look.org/)
 *   GTK/GNOME 程序：
-    *   [GNOME Files](http://www.gnomefiles.org/)
-    *   [GNOME Project Listing](http://www.gnome.org/projects/)
-*   [自定义GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
+    *   [GNOME 文件管理](http://www.gnomefiles.org/)
+    *   [GNOME 项目列表](http://www.gnome.org/projects/)
+*   [自定义 GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)
+*   GNOME 代码和镜像:
+    *   [GNOME Git 仓库](https://git.gnome.org/browse/)
+    *   [GNOME Github 镜像](https://github.com/GNOME)

@@ -258,7 +258,7 @@ $ systemctl hybrid-sleep
 
 ### 处理依赖关系
 
-使用 systemd 时，可通过正确编写单元配置文件来解决其依赖关系。典型的情况是，单元 `A` 要求单元 `B` 在{ {ic|A}} 启动之前运行。在此情况下，向单元 `A` 配置文件中的 `[Unit]` 段添加 `Requires=B` 和 `After=B` 即可。若此依赖关系是可选的，可添加 `Wants=B` 和 `After=B` 。请注意 `Wants=` 和 `Requires=` 并不意味着 `After=` ，即如果 `After=` 选项没有制定，这两个单元将被并行启动。
+使用 systemd 时，可通过正确编写单元配置文件来解决其依赖关系。典型的情况是，单元 `A` 要求单元 `B` 在 `A` 启动之前运行。在此情况下，向单元 `A` 配置文件中的 `[Unit]` 段添加 `Requires=B` 和 `After=B` 即可。若此依赖关系是可选的，可添加 `Wants=B` 和 `After=B` 。请注意 `Wants=` 和 `Requires=` 并不意味着 `After=` ，即如果 `After=` 选项没有制定，这两个单元将被并行启动。
 
 依赖关系通常被用在服务（service）而不是[目标（target）](#.E7.9B.AE.E6.A0.87.EF.BC.88target.EF.BC.89)上。例如， `network.target` 一般会被某个配置网络接口的服务引入，所以，将自定义的单元排在该服务之后即可，因为 `network.target` 已经启动。
 

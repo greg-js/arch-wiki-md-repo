@@ -55,7 +55,7 @@ Other alternatives include:
 
 	[https://www.mozilla.org/firefox/channel/#developer](https://www.mozilla.org/firefox/channel/#developer) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)
 
-*   **Firefox Nightly** — nightly builds for testing
+*   **Firefox Nightly** — nightly builds for testing ([experimental features](https://developer.mozilla.org/Firefox/Experimental_features))
 
 	[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
@@ -66,8 +66,6 @@ Other alternatives include:
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
 Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases).
-
-[Experimental features in Firefox Nightly](https://developer.mozilla.org/en-US/Firefox/Experimental_features?utm_source=firefox&utm_medium=whatsnew&utm_campaign=nightly)
 
 There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-languagecode` (where `languagecode` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [this](https://www.archlinux.org/packages/?sort=&q=firefox-i18n&maintainer=&last_update=&flagged=&limit=100).
 

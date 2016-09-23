@@ -81,9 +81,12 @@ This article is a general list of applications sorted by category, as a referenc
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
         *   [1.6.4 Blog software](#Blog_software)
         *   [1.6.5 Microblogging clients](#Microblogging_clients)
-    *   [1.7 Pastebin clients](#Pastebin_clients)
-    *   [1.8 Bitcoin](#Bitcoin)
-    *   [1.9 Surveying](#Surveying)
+    *   [1.7 Remote desktop](#Remote_desktop)
+        *   [1.7.1 Remote desktop clients](#Remote_desktop_clients)
+        *   [1.7.2 Remote desktop servers](#Remote_desktop_servers)
+    *   [1.8 Pastebin clients](#Pastebin_clients)
+    *   [1.9 Bitcoin](#Bitcoin)
+    *   [1.10 Surveying](#Surveying)
 *   [2 Multimedia](#Multimedia)
     *   [2.1 Codecs](#Codecs)
     *   [2.2 Image](#Image)
@@ -267,8 +270,6 @@ This article is a general list of applications sorted by category, as a referenc
 *   [8 See also](#See_also)
 
 ## Internet
-
-**Note:** For possibly more up to date selection of applications, try checking the [AUR 'network' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=13&SeB=nd&SB=n&SO=a&PP=50)
 
 ### Network managers
 
@@ -1370,10 +1371,6 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird-git](https://aur.archlinux.org/packages/corebird-git/)
 
-*   **[Gwibber](https://en.wikipedia.org/wiki/Gwibber "wikipedia:Gwibber")** — GTK-based microblogging client with support for Facebook, Identi.ca, Twitter, Flickr, Foursquare, Sina and Sohu.
-
-	[http://gwibber.com/](http://gwibber.com/) || [gwibber](https://aur.archlinux.org/packages/gwibber/)
-
 *   **Polly** — Linux Twitter client designed for multiple columns of multiple accounts.
 
 	[https://launchpad.net/polly/](https://launchpad.net/polly/) || [polly](https://aur.archlinux.org/packages/polly/)
@@ -1397,6 +1394,66 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 *   **turses** — Twitter client for the console based off *tyrs* with major improvements.
 
 	[http://turses.rtfd.org/](http://turses.rtfd.org/) || [turses](https://aur.archlinux.org/packages/turses/)
+
+### Remote desktop
+
+See also [Wikipedia:Remote desktop software](https://en.wikipedia.org/wiki/Remote_desktop_software "wikipedia:Remote desktop software") and [Wikipedia:Comparison of remote desktop software](https://en.wikipedia.org/wiki/Comparison_of_remote_desktop_software "wikipedia:Comparison of remote desktop software").
+
+#### Remote desktop clients
+
+*   **[GNOME Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — A simple GNOME 3 application to access remote or virtual systems. Supports VNC and SPICE.
+
+	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
+
+*   **GVncViewer** — Simple VNC Client on Gtk-VNC.
+
+	[https://wiki.gnome.org/Projects/gtk-vnc](https://wiki.gnome.org/Projects/gtk-vnc) || [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc)
+
+*   **[KRDC](https://en.wikipedia.org/wiki/KRDC "wikipedia:KRDC")** — Remote Desktop Client for KDE. Supports RDP and VNC. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
+
+	[https://www.kde.org/applications/internet/krdc/](https://www.kde.org/applications/internet/krdc/) || [krdc](https://www.archlinux.org/packages/?name=krdc)
+
+*   **[Remmina](/index.php/Remmina "Remmina")** — Remote desktop client written in GTK+. Supports RDP, VNC, NX, XDMCP and SSH.
+
+	[http://www.remmina.org/](http://www.remmina.org/) || [remmina](https://www.archlinux.org/packages/?name=remmina)
+
+*   **[vncviewer (TigerVNC)](/index.php/TigerVNC "TigerVNC")** — VNC viewer for X.
+
+	[http://tigervnc.org/](http://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)
+
+*   **[Vinagre](https://en.wikipedia.org/wiki/Vinagre "wikipedia:Vinagre")** — Remote desktop viewer for GNOME. Supports RDP, VNC, SPICE and SSH. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
+
+	[https://wiki.gnome.org/Apps/Vinagre](https://wiki.gnome.org/Apps/Vinagre) || [vinagre](https://www.archlinux.org/packages/?name=vinagre)
+
+*   **xfreerdp** — FreeRDP X11 client.
+
+	[http://www.freerdp.com/](http://www.freerdp.com/) || [freerdp](https://www.archlinux.org/packages/?name=freerdp)
+
+*   **[X2Go](/index.php/X2Go "X2Go") Client** — A graphical client (Qt4) for the X2Go system that uses the [NX technology](https://en.wikipedia.org/wiki/NX_technology "w:NX technology") protocol.
+
+	[http://wiki.x2go.org/doku.php](http://wiki.x2go.org/doku.php) || [x2goclient](https://www.archlinux.org/packages/?name=x2goclient)
+
+#### Remote desktop servers
+
+*   **Krfb** — VNC server for KDE. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
+
+	[https://www.kde.org/applications/system/krfb](https://www.kde.org/applications/system/krfb) || [krfb](https://www.archlinux.org/packages/?name=krfb)
+
+*   **[Vino](/index.php/Vino "Vino")** — VNC server for GNOME. Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
+
+	[https://wiki.gnome.org/Projects/Vino](https://wiki.gnome.org/Projects/Vino) || [vino](https://www.archlinux.org/packages/?name=vino)
+
+*   **[x0vncserver (TigerVNC)](/index.php/TigerVNC "TigerVNC")** — VNC Server for X displays.
+
+	[http://tigervnc.org/](http://tigervnc.org/) || [tigervnc](https://www.archlinux.org/packages/?name=tigervnc)
+
+*   **[x11vnc](/index.php/X11vnc "X11vnc")** — VNC server for real X displays.
+
+	[http://www.karlrunge.com/x11vnc/](http://www.karlrunge.com/x11vnc/) || [x11vnc](https://www.archlinux.org/packages/?name=x11vnc)
+
+*   **[X2Go](/index.php/X2Go "X2Go") Server** — An open source remote desktop software that uses the [NX technology](https://en.wikipedia.org/wiki/NX_technology "w:NX technology") protocol.
+
+	[http://wiki.x2go.org/doku.php](http://wiki.x2go.org/doku.php) || [x2goserver](https://www.archlinux.org/packages/?name=x2goserver)
 
 ### Pastebin clients
 
@@ -2070,7 +2127,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 #### CD ripping
 
-See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive").
+See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc drive").
 
 #### Visualization
 
@@ -2145,6 +2202,10 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 *   **Bitwig Studio** — Proprietary professional digital audio workstation.
 
 	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio-demo](https://aur.archlinux.org/packages/bitwig-studio-demo/)
+
+*   **Gnac** — Audio converter for GNOME.
+
+	[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
 
 *   **GNOME Sound Recorder** — The Sound Recorder application enables you to record and play .flac, .ogg (OGG audio, or .oga), and .wav sound files.
 
@@ -2264,6 +2325,10 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 	[http://home.gna.org/gaupol](http://home.gna.org/gaupol) || [gaupol](https://www.archlinux.org/packages/?name=gaupol)
 
+*   **[Gnome Subtitles](https://en.wikipedia.org/wiki/Gnome_Subtitles "wikipedia:Gnome Subtitles")** — Video subtitle editor for GNOME.
+
+	[http://www.gnomesubtitles.org/](http://www.gnomesubtitles.org/) || [gnome-subtitles](https://www.archlinux.org/packages/?name=gnome-subtitles)
+
 *   **Penguin Subtitle Player** — Penguin Subtitle Player is an open-source, cross-platform standalone subtitle player, as an alternative to Greenfish Subtitle Player, SrtViewer (Mac), SRTPlayer, JustSubsPlayer and Free Subtitle Player.
 
 	[https://github.com/carsonip/Penguin-Subtitle-Player](https://github.com/carsonip/Penguin-Subtitle-Player) || [penguin-subtitle-player-git](https://aur.archlinux.org/packages/penguin-subtitle-player-git/)
@@ -2282,7 +2347,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 #### DVD ripping
 
-See [Optical disc drive#DVD_2](/index.php/Optical_disc_drive#DVD_2 "Optical disc drive").
+See [Optical disc drive#DVD 2](/index.php/Optical_disc_drive#DVD_2 "Optical disc drive").
 
 #### Video editors
 

@@ -27,7 +27,7 @@
 
 ## 安装
 
-安装 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的 [mentohust-bin](https://aur.archlinux.org/packages/mentohust-bin/) 即可。
+安装 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的 [mentohust-git](https://aur.archlinux.org/packages/mentohust-git/) 即可。
 
 ## 配置与运行
 

@@ -59,65 +59,37 @@ For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") 
 **Tip:**
 
 *   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e4label* can be used to change the label on an existing file system.
-*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") volume can be increased, but not reduced in size. See [resize2fs(8)](http://man7.org/linux/man-pages/man8/resize2fs.8.html), [fsadm(8)](http://man7.org/linux/man-pages/man8/fsadm.8.html) and the respective file system documentation for details.
+*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") volume can be increased, but not reduced in size. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Features "w:Comparison of file systems") and the respective file system documentation for details.
 
 The new file system can now be mounted to a directory of choice.
 
 ## Types of file systems
 
-See also [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "w:Comparison of file systems").
+See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for a general overview, and [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "w:Comparison of file systems") for a detailed feature comparison.
 
-*   **[Btrfs](/index.php/Btrfs "Btrfs")** — the B-tree file system is "a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration." [[1]](https://btrfs.wiki.kernel.org/index.php/Main_Page) It has been merged into the mainline kernel Btrfs and has a stable filesystem disk format. [[2]](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status)
+| File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
+| [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](http://man7.org/linux/man-pages/man8/mkfs.btrfs.8.html) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
+| [VFAT](https://en.wikipedia.org/wiki/File_Allocation_Table#VFAT "w:File Allocation Table") | mkfs.vfat(8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
+| [exFAT](https://en.wikipedia.org/wiki/exFAT "w:exFAT") | mkfs.exfat(8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Optional | N/A (FUSE-based) |
+| [F2FS](/index.php/F2FS "F2FS") | mkefs.f2fs(8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Yes | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Flash-based devices |
+| [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
+| [ext4](/index.php/Ext4 "Ext4") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
+| [HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System") | mkfs.hfsplus(8) | [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs) | Optional | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | [macOS](https://en.wikipedia.org/wiki/macOS "w:macOS") file system |
+| [JFS](/index.php/JFS "JFS") | mkfs.jfs(8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
+| [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") | mkfs.nilfs2(8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Yes | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
+| [NTFS](/index.php/NTFS "NTFS") | mkfs.ntfs(8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Yes | N/A (FUSE-based) | [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "w:Microsoft Windows") file system |
+| [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | No |
+| [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "w:ReiserFS") | mkfs.reiserfs(8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) |
+| [XFS](/index.php/XFS "XFS") | [mkfs.xfs(8)](http://man7.org/linux/man-pages/man8/mkfs.xfs.8.html) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
 
-	[http://btrfs.wiki.kernel.org/](http://btrfs.wiki.kernel.org/) || [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
+[xfs.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs.txt)
+[xfs-delayed-logging-design.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-delayed-logging-design.txt)
+[xfs-self-describing-metadata.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt)
 
-*   **[VFAT](https://en.wikipedia.org/wiki/File_Allocation_Table#VFAT "w:File Allocation Table")** — **Virtual File Allocation Table** is technically simple and supported by virtually all existing operating systems. This makes it a useful format for solid-state memory cards and a convenient way to share data between operating systems. VFAT supports long file names.
+ |
+| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) | No | N/A ([OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS") port) |
 
-	[https://github.com/dosfstools/dosfstools](https://github.com/dosfstools/dosfstools) || [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
-
-*   **[exFAT](https://en.wikipedia.org/wiki/exFAT "w:exFAT")** — **Microsoft file system optimized for flash drives**. Like NTFS, exFAT can pre-allocate disk space for a file by just marking arbitrary space on disk as 'allocated'.
-
-	[https://github.com/relan/exfat](https://github.com/relan/exfat) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
-
-*   **[F2FS](/index.php/F2FS "F2FS")** — **Flash-Friendly File System** is a flash file system created by Kim Jaegeuk (Hangul: 김재극) at Samsung for the Linux operating system kernel. The motivation for F2FS was to build a file system which takes into account the characteristics of NAND flash memory-based storage devices (such as solid-state disks, eMMC, and SD cards).
-
-	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
-
-*   **[ext](https://en.wikipedia.org/wiki/Extended_file_system "w:Extended file system")** — **Fourth Extended Filesystem** is a newer filesystem that is also compatible with ext2 and ext3\. It provides support for volumes with sizes up to 1 exabyte (i.e. 1,048,576 terabytes) and files sizes up to 16 terabytes. It increases the 32,000 subdirectory limit in ext3 to unlimited. It also offers online defragmentation capability.
-
-	[http://e2fsprogs.sourceforge.net](http://e2fsprogs.sourceforge.net) || [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
-
-*   **[HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System")** — **Hierarchical File System** is a proprietary file system developed by Apple Inc. for use in computer systems running Mac OS.
-
-	[http://www.opensource.apple.com](http://www.opensource.apple.com) || [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs)
-
-*   **[JFS](/index.php/JFS "JFS")** — IBM's **Journaled File System** was the first filesystem to offer journaling. It was developed in the IBM AIX® operating system before being ported to GNU/Linux.
-
-	[http://jfs.sourceforge.net](http://jfs.sourceforge.net) || [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
-
-*   **[NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS")** — **New Implementation of a Log-structured File System** was developed by NTT. It records all data in a continuous log-like format that is only appended to and never overwritten. It is designed to reduce seek times and minimize the type of data loss that occurs after a crash with conventional Linux filesystems.
-
-	[http://nilfs.sourceforge.net/](http://nilfs.sourceforge.net/) || [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils)
-
-*   **[NTFS](/index.php/NTFS "NTFS")** — **File system used by Windows**. NTFS has several technical improvements over FAT and HPFS (High Performance File System), such as improved support for metadata, and the use of advanced data structures to improve performance, reliability, and disk space utilization, plus additional extensions, such as security access control lists (ACL) and file system journaling.
-
-	[http://www.tuxera.com/community/ntfs-3g-download/](http://www.tuxera.com/community/ntfs-3g-download/) || [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
-
-*   **[Reiser4](/index.php/Reiser4 "Reiser4")** — **Successor to the ReiserFS file system**, developed from scratch by Namesys and sponsored by DARPA as well as Linspire, it uses B*-trees in conjunction with the dancing tree balancing approach, in which underpopulated nodes will not be merged until a flush to disk except under memory pressure or when a transaction completes. Such a system also allows Reiser4 to create files and directories without having to waste time and space through fixed blocks.
-
-	[https://reiser4.wiki.kernel.org/index.php/Main_Page](https://reiser4.wiki.kernel.org/index.php/Main_Page) || [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)
-
-*   **[ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "w:ReiserFS")** — **Hans Reiser's high-performance journaling FS (v3)** is touted as very fast, especially when dealing with many small files. ReiserFS is fast at formatting, yet comparatively slow at mounting. ReiserFSv3 is not being actively developed at this time. Generally regarded as a good choice for `/var`.
-
-	[https://reiser4.wiki.kernel.org/index.php/Main_Page](https://reiser4.wiki.kernel.org/index.php/Main_Page) || [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
-
-*   **[XFS](/index.php/XFS "XFS")** — **Early journaling filesystem originally developed by Silicon Graphics** for the IRIX operating system and ported to GNU/Linux. It provides very fast throughput on large files and filesystems and is very fast at formatting and mounting. Comparative benchmark testing has shown it to be slower when dealing with many small files. XFS is very mature and offers online defragmentation capability.
-
-	[http://oss.sgi.com/projects/xfs/](http://oss.sgi.com/projects/xfs/) || [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
-
-*   **[ZFS](/index.php/ZFS "ZFS")** — **Combined file system and logical volume manager designed by Sun Microsystems**. The features of ZFS include protection against data corruption, support for high storage capacities, integration of the concepts of filesystem and volume management, snapshots and copy-on-write clones, continuous integrity checking and automatic repair, RAID-Z and native NFSv4 ACLs.
-
-	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/), [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/)
+**Note:** The kernel has its own NTFS driver (see [ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt)), but it has limited support for writing files.
 
 ### Journaling
 

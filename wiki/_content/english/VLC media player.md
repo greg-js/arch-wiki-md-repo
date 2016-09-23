@@ -146,9 +146,14 @@ VLC automatically tries to use an available API, but you can override it by goin
 
 ### systemd service
 
-**Note:** *cvlc* is the *Console VLC Player*, or VLC without graphical interface.
+VLC's web interface can be started from systemd. First, we need to create a default user. We'll use UID 75 in this example since it's not in use according to [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database").
 
-Change the `User=` parameter.
+```
+# useradd -c "VLC daemon" -d / -G audio -M -p \! -r -s /bin/false -u 75 -U vlcd
+
+```
+
+Now we create the systemd service file:
 
  `/etc/systemd/system/vlc.service` 
 ```
@@ -158,14 +163,16 @@ After=network.target
 
 [Service]
 Type=forking
-User=nobody
-ExecStart=/usr/bin/cvlc --intf=lua --lua-intf=http --daemon --http-port 8090
+User=vlcd
+ExecStart=/usr/bin/vlc --daemon --syslog -I http --http-port 8090 --http-password *password* 
 Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
 
 ```
+
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `vlc.service`. Log in to http://*yourmachine*:8090/ with no username and with the password you put in the service file.
 
 ## Troubleshooting
 

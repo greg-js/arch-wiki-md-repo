@@ -39,6 +39,7 @@ This page contains advanced Firefox configuration options and performance tweaks
 *   [3 Miscellaneous](#Miscellaneous)
     *   [3.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [3.1.1 WebM and Youtube](#WebM_and_Youtube)
+        *   [3.1.2 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
     *   [3.2 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
     *   [3.3 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
     *   [3.4 How to open a *.doc automatically with Abiword or LibreOffice Writer](#How_to_open_a_.2A.doc_automatically_with_Abiword_or_LibreOffice_Writer)
@@ -490,6 +491,18 @@ Before continuing, remember there is a reason some of these variables are not en
 If WebM MSE is enabled when Youtube is set to use the HTML5 player by default, Youtube will use [VP9](https://en.wikipedia.org/wiki/VP9 "wikipedia:VP9") video by default to save bandwidth. However, hardware acceleration is not available for VP9, if you want to use hardware acceleration with youtube video especially if you have less capable hardware consider setting `media.mediasource.webm.enabled` to false to make youtube stream H.264 video for which hardware acceleration is widely available.
 
 To verify if WebM (VP9) is enabled go to [youtube.com/html5](https://youtube.com/html5). If "MSE & WebM VP9" is not supported, youtube will use H264.
+
+#### Widevine and Netflix/Amazon Video
+
+Starting with version 49, Firefox can play Widevine videos, such as you'll find on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
+
+*   **Allow Firefox to install DRM.** The first time you visit a widevine-enabled page, firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
+
+*   **Forge a Chrome user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox it will try to use Silverlight. Use a user agent string from Chrome linux, such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.93 Safari/537.36`. This can be configured using the [User Agent Switcher addon](https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/?src=search) or with `general.useragent.override` in *about:config*
+
+*   **Run firefox with the sandboxes turned off.** Some part of the widevine cdm tries to violate [the seccomp sandbox](https://wiki.mozilla.org/Security/Sandbox/Seccomp), which will crash playback. Launch firefox with sandbox-disabling environment variables:
+
+ `MOZ_DISABLE_GMP_SANDBOX=1 firefox` 
 
 ### Mouse wheel scroll speed
 

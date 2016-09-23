@@ -9,21 +9,21 @@ From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software)
     *   [2.1 Hostname resolution](#Hostname_resolution)
         *   [2.1.1 Additional info about mdns](#Additional_info_about_mdns)
         *   [2.1.2 Tools](#Tools)
-    *   [2.2 File sharing](#File_sharing)
-        *   [2.2.1 NFS](#NFS)
-        *   [2.2.2 Samba](#Samba)
-        *   [2.2.3 Vsftpd](#Vsftpd)
+    *   [2.2 Firewall](#Firewall)
     *   [2.3 Link-Local (Bonjour/Zeroconf) chat](#Link-Local_.28Bonjour.2FZeroconf.29_chat)
-    *   [2.4 Airprint from Mobile Devices](#Airprint_from_Mobile_Devices)
-    *   [2.5 Firewall](#Firewall)
-    *   [2.6 Obtaining IPv4LL IP address](#Obtaining_IPv4LL_IP_address)
-    *   [2.7 Customizing Avahi](#Customizing_Avahi)
-        *   [2.7.1 Adding Services](#Adding_Services)
-        *   [2.7.2 Modifying the service-types database](#Modifying_the_service-types_database)
-            *   [2.7.2.1 Getting the Sources](#Getting_the_Sources)
-            *   [2.7.2.2 Modify the Sources](#Modify_the_Sources)
-            *   [2.7.2.3 Build and Install the New Database](#Build_and_Install_the_New_Database)
-*   [3 See also](#See_also)
+    *   [2.4 Obtaining IPv4LL IP address](#Obtaining_IPv4LL_IP_address)
+*   [3 Adding services](#Adding_services)
+    *   [3.1 SSH](#SSH)
+    *   [3.2 File sharing](#File_sharing)
+        *   [3.2.1 NFS](#NFS)
+        *   [3.2.2 Samba](#Samba)
+        *   [3.2.3 Vsftpd](#Vsftpd)
+    *   [3.3 Airprint from Mobile Devices](#Airprint_from_Mobile_Devices)
+*   [4 Modifying the service-types database](#Modifying_the_service-types_database)
+    *   [4.1 Getting the sources](#Getting_the_sources)
+    *   [4.2 Modify the sources](#Modify_the_sources)
+        *   [4.2.1 Build and install the new database](#Build_and_install_the_new_database)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -71,6 +71,83 @@ to discover services in your network.
 The Avahi Zeroconf Browser (`avahi-discover` – note that it needs avahi's optional dependencies [pygtk](https://www.archlinux.org/packages/?name=pygtk) and [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus)) shows the various services on your network. You can also browse SSH and VNC Servers using `bssh` and `bvnc` respectively.
 
 There's a good list of software with Avahi support at their website: [http://avahi.org/wiki/Avah4users](http://avahi.org/wiki/Avah4users)
+
+### Firewall
+
+Be sure to open UDP port 5353 if you're using iptables:
+
+```
+ # iptables -A INPUT -p udp -m udp --dport 5353 -j ACCEPT
+
+```
+
+If you're following the more-than-useful [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") format for your firewall:
+
+```
+ # iptables -A UDP -p udp -m udp --dport 5353 -j ACCEPT
+
+```
+
+### Link-Local (Bonjour/Zeroconf) chat
+
+Avahi can be used for bonjour protocol support under linux. Check [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients") or [List of applications#Instant messaging](/index.php/List_of_applications#Instant_messaging "List of applications") for a list of clients supporting the bonjour protocol.
+
+### Obtaining IPv4LL IP address
+
+By default, if you are getting IP using DHCP, you are using the [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package. It can attempt to obtain an IPv4LL address if it failed to get one via DHCP. By default this option is disabled. To enable it, comment noipv4ll string:
+
+ `/etc/dhcpcd.conf` 
+```
+...
+#noipv4ll
+...
+```
+
+Alternatively, run `avahi-autoipd`:
+
+```
+# avahi-autoipd -D
+
+```
+
+## Adding services
+
+Avahi advertises the services whose `*.service` files are found in `/etc/avahi/services`. If you want to advertise a service for which there is no `*.service` file, it is very easy to create your own.
+
+As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per [RFC865](http://tools.ietf.org/html/rfc865) on TCP port 17 which you are running on your machine
+
+The first thing to do is to determine the `<type>`. `man avahi.service` indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and RFC865) is 17.
+
+Our service file is thus:
+
+ `qotd.service` 
+```
+<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+
+<service-group>
+
+  <name replace-wildcards="yes">%h</name>
+
+  <service>
+    <type>_qotd._tcp</type>
+    <port>17</port>
+  </service>
+
+</service-group>
+
+```
+
+For more complicated scenarios, such as advertising services running on a different server, DNS sub-types and so on, consult `man avahi.service`.
+
+### SSH
+
+Avahi comes with an example service file to advertise a SSH server. To enable it:
+
+```
+# cp /usr/share/doc/avahi/ssh.service /etc/avahi/services/
+
+```
 
 ### File sharing
 
@@ -120,19 +197,13 @@ Create a `.service` file in `/etc/avahi/services` with the following contents:
 
 ```
 
-When you are done, [restart](/index.php/Restart "Restart") the `avahi-daemon.service` and `vsftpd.service` services.
-
 The FTP server should now be advertised by Avahi. You should now be able to find the FTP server from a file manager on another computer in your network. You might need to enable [#Hostname resolution](#Hostname_resolution) on the client.
-
-### Link-Local (Bonjour/Zeroconf) chat
-
-Avahi can be used for bonjour protocol support under linux. Check [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients") or [List of applications#Instant messaging](/index.php/List_of_applications#Instant_messaging "List of applications") for a list of clients supporting the bonjour protocol.
 
 ### Airprint from Mobile Devices
 
-Avahi along with CUPS also provides the capability to print to just about any printer from airprint compatible mobile devices. In order to enable print capability from your device, simply create an avahi service file for your printer in /etc/avahi/services and restart avahi. An example of a generic services file for an HP-Laserjet printer would be similar to the following with the `name`, `rp`, `ty`, `adminurl` and `note` fields changed.
+Avahi along with CUPS also provides the capability to print to just about any printer from airprint compatible mobile devices. In order to enable print capability from your device, simply create an Avahi service file for your printer in `/etc/avahi/services/`. An example of a generic services file for an HP-Laserjet printer would be similar to the following with the `name`, `rp`, `ty`, `adminurl` and `note` fields changed.
 
- `/etc/avahi/services/youFileName.service` 
+ `/etc/avahi/services/airprint.service` 
 ```
 <?xml version="1.0" standalone='no'?><!--*-nxml-*-->
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
@@ -180,93 +251,7 @@ Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airpr
 
 **Note:** If your printer under [http://localhost:631/printers](http://localhost:631/printers) is "Not Shared", this python script won't output any file to /etc/avahi/services; in that case, you'll need to "Modify Printer" under one of the CUPS drop-down menus to turn sharing on. If that doesn't work, check out the ArchWiki on [CUPS printer sharing](/index.php/CUPS_printer_sharing "CUPS printer sharing").
 
-### Firewall
-
-Be sure to open UDP port 5353 if you're using iptables:
-
-```
- # iptables -A INPUT -p udp -m udp --dport 5353 -j ACCEPT
-
-```
-
-If you're following the more-than-useful [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") format for your firewall:
-
-```
- # iptables -A UDP -p udp -m udp --dport 5353 -j ACCEPT
-
-```
-
-### Obtaining IPv4LL IP address
-
-By default, if you are getting IP using DHCP, you are using the [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package. It can attempt to obtain an IPv4LL address if it failed to get one via DHCP. By default this option is disabled. To enable it, comment noipv4ll string:
-
- `/etc/dhcpcd.conf` 
-```
-...
-#noipv4ll
-...
-```
-
-Alternatively, run `avahi-autoipd`:
-
-```
-# avahi-autoipd -D
-
-```
-
-### Customizing Avahi
-
-#### Adding Services
-
-Avahi advertises the services whose `*.service` files are found in `/etc/avahi/services`. If you want to advertise a service for which there is no `*.service` file, it is very easy to create your own.
-
-As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per [RFC865](http://tools.ietf.org/html/rfc865) on TCP port 17 which you are running on your machine
-
-The first thing to do is to determine the `<type>`. `man avahi.service` indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and RFC865) is 17.
-
-Our `qotd.service` file is thus:
-
-```
-<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
-<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
-
-<!--
-  This file is part of avahi.
-
-  avahi is free software; you can redistribute it and/or modify it
-  under the terms of the GNU Lesser General Public License as
-  published by the Free Software Foundation; either version 2 of the
-  License, or (at your option) any later version.
-
-  avahi is distributed in the hope that it will be useful, but
-  WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-  General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public
-  License along with avahi; if not, write to the Free Software
-  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-  02111-1307 USA.
--->
-
-<!-- See avahi.service(5) for more information about this configuration file -->
-
-<service-group>
-
-  <name replace-wildcards="yes">%h</name>
-
-  <service>
-    <type>_qotd._tcp</type>
-    <port>17</port>
-  </service>
-
-</service-group>
-
-```
-
-For more complicated scenarios, such as advertising services running on a different server, DNS sub-types and so on, consult `man avahi.service`.
-
-#### Modifying the service-types database
+## Modifying the service-types database
 
 As noted above, avahi comes with tools to browse advertised services. Both `avahi-browse` and `avahi-discover` use a database file to furnish descriptions of the relevant service. That database contains the names of many, but not all, services.
 
@@ -277,7 +262,7 @@ Sadly, it doesn't contain the QOTD service we just created. Thus `avahi-browse -
 
 ```
 
-##### Getting the Sources
+### Getting the sources
 
 First, download the files `build-db.in` and `service-types` files from the `service-type-database` subdirectory in the [the avahi github mirror](https://github.com/lathiat/avahi) to a build directory.
 
@@ -287,7 +272,7 @@ wget [https://raw.githubusercontent.com/lathiat/avahi/master/service-type-databa
 
 ```
 
-##### Modify the Sources
+### Modify the sources
 
 Second, create the following script:
 
@@ -317,7 +302,7 @@ _qotd._tcp:Quote of the Day (QOTD) Server
 
 ```
 
-##### Build and Install the New Database
+#### Build and install the new database
 
 Now run the `build-db` python script (be sure to use python2 not python3). This will build the `service-types.db` file. Check to make sure it's been built and use `gdbmtools` to make sure the new database is loadable and contains the new entry:
 

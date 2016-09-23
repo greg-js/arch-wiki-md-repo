@@ -39,7 +39,7 @@ $ vagrant plugin install vagrant-vbguest vagrant-share
 
 This plugin adds a libvirt provider to Vagrant. The gcc and make packages must be installed before this plugin can be installed, and [libvirt](/index.php/Libvirt "Libvirt") and related packages must be installed and configured before using the libvirt provider.
 
-At the time of writing (using Vagrant version 1.8.5), a normal installation of this plugin fails on Arch Linux. The plugin can be successfully installed with this workaround:
+As of September 2016 (Vagrant version 1.8.5), a normal installation of this plugin fails on Arch Linux. The plugin can be successfully installed with this workaround:
 
 ```
 $ CONFIGURE_ARGS='with-ldflags=-L/opt/vagrant/embedded/lib with-libvirt-include=/usr/include/libvirt with-libvirt-lib=/usr/lib' \
@@ -47,6 +47,8 @@ $ CONFIGURE_ARGS='with-ldflags=-L/opt/vagrant/embedded/lib with-libvirt-include=
   vagrant plugin install vagrant-libvirt
 
 ```
+
+A normal `vagrant up` fails with `incompatible library version` due to [bug #541](https://github.com/vagrant-libvirt/vagrant-libvirt/issues/541). As a workaround, create and run [reinstall-vagrant-libvirt.sh](https://gist.github.com/robled/070e1922816bbe983623#file-reinstall-vagrant-libvirt-sh).
 
 Once the plugin is installed the `libvirt` provider will be available:
 

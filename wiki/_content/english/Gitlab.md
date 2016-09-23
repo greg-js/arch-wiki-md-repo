@@ -149,6 +149,13 @@ $ mysql -u **gitlab** -p -D gitlabhq_production
 
 ```
 
+Copy the MySQL template file before configuring it:
+
+```
+# cp /usr/share/doc/gitlab/database.yml.mysql /etc/webapps/gitlab/database.yml
+
+```
+
 Next you will need to open `/etc/webapps/gitlab/database.yml` and set `username:` and `password:` for the `gitlabhq_production`:
 
  `/etc/webapps/gitlab/database.yml` 

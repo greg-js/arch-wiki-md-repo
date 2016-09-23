@@ -18,6 +18,7 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Exit to the current directory](#Exit_to_the_current_directory)
     *   [5.2 Garbled screen](#Garbled_screen)
+        *   [5.2.1 $COLUMNS not set in subshell](#.24COLUMNS_not_set_in_subshell)
     *   [5.3 Opening files](#Opening_files)
     *   [5.4 Find file shows no results](#Find_file_shows_no_results)
     *   [5.5 Terminfo](#Terminfo)
@@ -153,6 +154,10 @@ Another simple workaround is to use the subshell (`Ctrl+o`). This may however in
 ### Garbled screen
 
 Press `Ctrl+l` to redraw the display. This only redraws, but does not refresh (`Ctrl+r`) the file list.
+
+#### $COLUMNS not set in subshell
+
+As of v4.8.17, resizing the terminal when inside the mc subshell does not update the `COLUMNS` variable. As a result, terminal applications such as [vim](/index.php/Vim "Vim") will be unusable. [FS#50862](https://bugs.archlinux.org/task/50862) This is fixed in the [mc-git](https://aur.archlinux.org/packages/mc-git/) package.
 
 ### Opening files
 

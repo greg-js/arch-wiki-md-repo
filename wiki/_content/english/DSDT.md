@@ -107,7 +107,14 @@ There are at least three ways to use a custom DSDT:
 
 ### Using a CPIO archive
 
-This method has the advantage that you do not need to recompile your kernel, and updating the kernel will not make it necessary to repeat these steps. This solution should work for all kernels that have the `CONFIG_ACPI_INITRD_TABLE_OVERRIDE=y` option, which is true for the Arch kernel.
+This method has the advantage that you do not need to recompile your kernel, and updating the kernel will not make it necessary to repeat these steps.
+
+This method requires the following kernel config to be enabled (true for the [linux](https://www.archlinux.org/packages/?name=linux) package):
+
+*   `ACPI_TABLE_UPGRADE=y` (Linux kernel 4.6+)
+*   `CONFIG_ACPI_INITRD_TABLE_OVERRIDE=y` (Linux kernel <=4.5)
+
+See [[1]](https://www.kernel.org/doc/Documentation/acpi/initrd_table_override.txt) for details.
 
 First, create the following folder structure:
 
@@ -161,7 +168,7 @@ You'll want to be familiar with [compiling your own kernel](/index.php/Kernels "
 
 ### Loading at runtime
 
-**Warning:** The mkinitcpio method is no longer supported, since the DSDT hook has been removed, see [[1]](https://bugs.archlinux.org/task/27906).
+**Warning:** The mkinitcpio method is no longer supported, since the DSDT hook has been removed, see [[2]](https://bugs.archlinux.org/task/27906).
 
 Luckily the Arch stock kernel supports using a custom DSDT so, first copy the **.aml** file compiled by iasl to:
 

@@ -29,15 +29,16 @@ Spotify also offers free users the ability to create playlist which can be shuff
         *   [3.5.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
     *   [3.6 HiDPI Mode](#HiDPI_Mode)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
-    *   [4.2 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
-    *   [4.3 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
-    *   [4.4 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
-    *   [4.5 Deadlock GUI Thread](#Deadlock_GUI_Thread)
-    *   [4.6 Pulseaudio](#Pulseaudio)
-    *   [4.7 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [4.8 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
-    *   [4.9 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
+    *   [4.1 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
+    *   [4.2 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
+    *   [4.3 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
+    *   [4.4 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
+    *   [4.5 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
+    *   [4.6 Deadlock GUI Thread](#Deadlock_GUI_Thread)
+    *   [4.7 Pulseaudio](#Pulseaudio)
+    *   [4.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [4.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [4.10 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -408,6 +409,15 @@ Exec=spotify --force-device-scale-factor=2 %U
 Please keep in mind you need to relaunch your Desktop Manager once, before these override changes will be effective.
 
 ## Troubleshooting
+
+### Using search causes the whole interface to blink and then crash
+
+Spotify is using an old version of Chromium Embedded Framework and hits a bug causing it to crash repeatedly when trying to use the search. This can be worked around by using the following command line option:
+
+```
+ --force-device-scale-factor=1.0000001
+
+```
 
 ### Blinking images and improper rendering while using Spotify Linux with DWM
 

@@ -61,7 +61,7 @@
 | [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
 | [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información | `2016-04` |
 | [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2016-11` |
-| [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2014-04` |
+| [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2016-09` |
 | [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
 | [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | Gestor de arranque | `2015-06` |
 | [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") | Tabla de particionado | `2013-09` |

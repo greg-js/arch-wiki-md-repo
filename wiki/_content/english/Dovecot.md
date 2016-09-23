@@ -163,6 +163,7 @@ plugin {
 }
 
 ```
+**Note:** This tests for "X-Spam_score" (which is the spam header format in default Exim configuration). Your header might look different, ie "X-Spam-Score".
 
 *   Create sieve script
 

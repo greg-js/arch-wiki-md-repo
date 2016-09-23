@@ -11,19 +11,20 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [3 Connect to a VPN provided by a third party](#Connect_to_a_VPN_provided_by_a_third_party)
 *   [4 Create a Public Key Infrastructure (PKI) from scratch](#Create_a_Public_Key_Infrastructure_.28PKI.29_from_scratch)
 *   [5 A basic L3 IP routing configuration](#A_basic_L3_IP_routing_configuration)
-    *   [5.1 The server configuration file](#The_server_configuration_file)
-        *   [5.1.1 Hardening the server](#Hardening_the_server)
-        *   [5.1.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
-            *   [5.1.2.1 TCP vs UDP](#TCP_vs_UDP)
-    *   [5.2 The client config profile (OpenVPN)](#The_client_config_profile_.28OpenVPN.29)
-        *   [5.2.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
-    *   [5.3 The client profile (generic for Linux, iOS, or Android)](#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29)
-    *   [5.4 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
-    *   [5.5 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
-    *   [5.6 Configure the MTU with Fragment and MSS](#Configure_the_MTU_with_Fragment_and_MSS)
-    *   [5.7 IPv6](#IPv6)
-        *   [5.7.1 Connect to the server via IPv6](#Connect_to_the_server_via_IPv6)
-        *   [5.7.2 Provide IPv6 inside the tunnel](#Provide_IPv6_inside_the_tunnel)
+    *   [5.1 Example configuration](#Example_configuration)
+    *   [5.2 The server configuration file](#The_server_configuration_file)
+        *   [5.2.1 Hardening the server](#Hardening_the_server)
+        *   [5.2.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
+            *   [5.2.2.1 TCP vs UDP](#TCP_vs_UDP)
+    *   [5.3 The client config profile (OpenVPN)](#The_client_config_profile_.28OpenVPN.29)
+        *   [5.3.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
+    *   [5.4 The client profile (generic for Linux, iOS, or Android)](#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29)
+    *   [5.5 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
+    *   [5.6 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
+    *   [5.7 Configure the MTU with Fragment and MSS](#Configure_the_MTU_with_Fragment_and_MSS)
+    *   [5.8 IPv6](#IPv6)
+        *   [5.8.1 Connect to the server via IPv6](#Connect_to_the_server_via_IPv6)
+        *   [5.8.2 Provide IPv6 inside the tunnel](#Provide_IPv6_inside_the_tunnel)
 *   [6 Starting OpenVPN](#Starting_OpenVPN)
     *   [6.1 Manual startup](#Manual_startup)
     *   [6.2 systemd service configuration](#systemd_service_configuration)
@@ -90,9 +91,11 @@ When setting up an OpenVPN server, users need to create a [Public Key Infrastruc
 
 OpenVPN is an extremely versatile piece of software and many configurations are possible, in fact machines can be both "servers" and "clients", blurring the distinction between server and client.
 
-What really distinguishes a server from a client (apart from the type of certificate used) is the configuration file itself. The OpenVPN daemon start-up script reads all the .conf configuration files it finds in `/etc/openvpn` on start-up and acts accordingly. If it finds more than one configuration file, it will start one OpenVPN process per configuration file.
+What really distinguishes a server from a client (apart from the type of certificate used) is the configuration file itself. The OpenVPN daemon start-up script reads all the *.conf configuration files it finds in `/etc/openvpn` on start-up and acts accordingly. If it finds more than one configuration file, it will start one OpenVPN process per configuration file.
 
-This article explains how to set up a server named elmer and a client that connects to it named bugs. More servers and clients can easily be added by creating more key/certificate pairs and adding more server and client configuration files.
+This article explains how to set up a server named `elmer` and a client that connects to it named `bugs`. More servers and clients can easily be added by creating more key/certificate pairs and adding more server and client configuration files.
+
+### Example configuration
 
 The OpenVPN package comes with a collection of example configuration files for different purposes. The sample server and client configuration files make an ideal starting point for a basic OpenVPN setup with the following features:
 
@@ -145,7 +148,7 @@ tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA2
 
 ```
 
-**Note:** The .ovpn client profile MUST contain a matching cipher and auth line to work properly (at least with the iOS client)!
+**Note:** The .ovpn client profile MUST contain a matching cipher and auth line to work properly (at least with the iOS and Android client)!
 
 #### Deviating from the standard port and/or protocol
 

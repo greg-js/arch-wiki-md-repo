@@ -66,6 +66,7 @@ Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg
 # ln -s /usr/share/X11/xorg.conf.d/60-libinput.conf /etc/X11/xorg.conf.d/60-libinput.conf
 
 ```
+If you *do* have `/etc/X11/xorg.conf.d/` configuration files for both, the libinput file must be ordered second; see [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg").
 
 One way to check which devices are managed by libinput is the [xorg logfile](/index.php/Xorg#General "Xorg"). For example, the following:
 

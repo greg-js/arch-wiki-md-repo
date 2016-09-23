@@ -86,6 +86,8 @@ Google provides a high number of [fonts](https://www.google.com/fonts), includin
 
 Google ships open-source metric-compatible fonts with its operating system, Chrome OS, under the Apache License 2.0\. CrOS core (croscore, [ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) is a collection of Arimo (sans), Tinos (serif) and Cousine (mono), also licensed from Ascender Corporation. A set of extra fonts, CrOS extra (crosextra) provides Carlito ([ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/)) and Caladea ([ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/)) to match default fonts for Microsoft Word.
 
+Since glyph mappings from [Symbol](https://en.wikipedia.org/wiki/Symbol_(typeface)#HTML are usually implemented in browsers, Google no longer ships SymbolNeu in croscore > 1.23.0\. You can get this font from [croscorefonts-1.23.0.tar.gz](https://gsdview.appspot.com/chromeos-localmirror/distfiles/croscorefonts-1.23.0.tar.gz).
+
 #### Noto
 
 [Google's Noto Fonts](https://www.google.com/get/noto/) are available via [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts). They are licensed under SIL OFL. Noto Fonts are designed to supplement glyph coverage for Roboto, the standard typeface for Android, and are vertically (i.e. same line height for the same font size) metric-compatible with Roboto.

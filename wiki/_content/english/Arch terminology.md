@@ -24,12 +24,11 @@ This page is intended to be a page to demystify common terms used among the Arch
 *   [20 PKGBUILD](#PKGBUILD)
 *   [21 repository/repo](#repository.2Frepo)
 *   [22 RTFM](#RTFM)
-*   [23 taurball](#taurball)
-*   [24 testing/[testing]](#testing.2F.5Btesting.5D)
-*   [25 The Arch Way](#The_Arch_Way)
-*   [26 TU, Trusted User](#TU.2C_Trusted_User)
-*   [27 udev](#udev)
-*   [28 wiki](#wiki)
+*   [23 testing/[testing]](#testing.2F.5Btesting.5D)
+*   [24 The Arch Way](#The_Arch_Way)
+*   [25 TU, Trusted User](#TU.2C_Trusted_User)
+*   [26 udev](#udev)
+*   [27 wiki](#wiki)
 
 ## ABS
 
@@ -177,10 +176,6 @@ If you do not find the answer to your question in the program manual, there are 
 *   search the [forum](https://bbs.archlinux.org)
 *   search the [mailing lists](https://www.google.com/#hl=en&q=arch+site:archlinux.org%2Fpipermail%2F)
 *   search the [web](https://www.google.com)
-
-## taurball
-
-The tarballed [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and local source files that are required by makepkg to create an installable binary package. The name is derived from the practice of uploading such tarballs to the [AUR](/index.php/AUR "AUR"), hence "tAURball".
 
 ## testing/[testing]
 

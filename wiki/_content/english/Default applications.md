@@ -1,15 +1,11 @@
-Setting default applications per file type involves detection of the file type as the first step. Since the application launcher cannot fully understand all file types, the detection is based on reading only a small part of the file. There are two common ways to determine the file type:
+Before setting the default application per file type, the file type must be detected. There are two common ways that this detection is done:
 
-*   using the file name extension, for example *.html* or *.jpeg*
-*   using the so-called "magic bytes" at the start of the file
+*   using the file name extension e.g. *.html* or *.jpeg*
+*   using a [magic number](https://en.wikipedia.org/wiki/List_of_file_signatures "w:List of file signatures") in the first few bytes of the file
 
-The first method is very simple and fast, but inaccurate if the file is not named "correctly". The second is more accurate, but slower.
+However it is possible that a single file type is identified by several different magic numbers and file name extensions, therefore [MIME types](https://en.wikipedia.org/wiki/MIME_type "w:MIME type") are used to represent a distinct file type (regardless of its representation). In Arch, tools from the [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) package are used to maintain the MIME type database, which is used by other packages to register new MIME types. Each package can also use [desktop entries](/index.php/Desktop_entries "Desktop entries") to provide information about the MIME types that can be handled by the packaged software.
 
-Since files are not required to have an extension and multiple file name extensions can be used for the same file type, [MIME types](https://en.wikipedia.org/wiki/MIME_type "w:MIME type") are commonly used instead to uniquely represent the type of a file. In Arch, tools from the [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) package are used to maintain the MIME type database, which is used by other packages to register new MIME types. Each package can also use the [Desktop entries](/index.php/Desktop_entries "Desktop entries") to provide information about the MIME types that can be handled by the packaged software. There is frequently more than one application able to handle data of a certain MIME type, so users and even some packages (e.g. [desktop environments](/index.php/Desktop_environments "Desktop environments")) assemble lists of default applications for each MIME type.
-
-Note that while Arch Linux does not provide custom presets for default applications, the [desktop environment](/index.php/Desktop_environment "Desktop environment") you install may do so. Some desktop environments also provide a GUI or a file-manager which enables to interactively configure default applications for certain file extensions. If this suffices for your system usage, you may not need to configure anything further.
-
-The scope of this article are the freedesktop [Association between MIME types and applications](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) specification and related parts of the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176) specification.
+While Arch Linux does not provide custom presets for default applications, [desktop environments](/index.php/Desktop_environments "Desktop environments") you install may do so. Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
 
 ## Contents
 
@@ -35,27 +31,9 @@ The scope of this article are the freedesktop [Association between MIME types an
 
 ## MIME types and desktop entries
 
-MIME-types are specified by two slash (`/`) parts: *Type/Extension*, for example `video/x-ms-wmv`. The second part of the MIME-type is expanding faster, for example with new applications or data encoding standards.
+MIME-types are specified by two parts separated by a slash: `*type*/*subtype*`. The type describes the general category of the content, while the subtype identifies the specific data type. For example, `image/jpeg` is the MIME-type for [JPEG](https://en.wikipedia.org/wiki/JPEG "w:JPEG") images, while `video/H264` is the MIME-type for [H.264](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC "w:H.264/MPEG-4 AVC") video. Technically, every MIME-type should be registered with the [IANA](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority "w:Internet Assigned Numbers Authority")[[1]](http://www.iana.org/assignments/media-types/media-types.xhtml), however many applications use unofficial MIME-types; these often have a type starting with `x-`, for example `x-scheme-handler/https` for a HTTPS URL.
 
-The default applications to open a MIME-type are usually stored in [mimeapps.list](#Default_mimeapps.list_files) files, but some programs store MIME-type associations in their own custom configuration files. If a MIME-type association is not found in the default configuration, the program should look for the first match of the MIME-type in *.desktop* files.
-
-Description of some MIME-type first part and examples of second parts:
-
-| Type of MIME (1st part) | Description | Examples of extension (2nd part) |
-| application | Files with binary content such, e.g.: documents,archives,... | epub+zip, ereader, excel, gbr, gzip |
-| audio | Audio files that that can be played by a music player or audio editor | flac, m4a, midi |
-| chemical | Chemical information, molecular and other chemical data | x-cif, x-cml, x-daylight-smiles, x-gamess-input, x-gamess-output, x-gaussian-checkpoint, x-gaussian-cube, x-gaussian-log, x-mopac-out, x-pdb, x-qchem-output, x-xyz |
-| image | Image files that can be opened by image editor or image viewer | bmp, crw, g3fax, gif, jp2, jpeg, jpeg2000, jpg |
-| inode | Can be opened by a file manager | blockdevice, chardevice, directory, fifo, mount-point, socket, symlink |
-| message | Message protocols | delivery-status, disposition-notification, external-body, news, partial, rfc822, x-gnu-rmail |
-| misc | Streaming meta data | ultravox |
-| text | Text documents that can be viewed (e.g. with command *less*) or opened with a text editor | html, javascript, mathml, mml, plain |
-| video | Video files that can be played or edited with a video editor | flv, mp2t, mp4 |
-| x-content | Content on disks such as e.g. Audio,Video,Image or blank disk | audio-cdda, audio-player, blank-bd, blank-cd, blank-dvd, blank-hddvd, image-picturecd, video-dvd, video-svcd, video-vcd |
-| x-scheme-handler | Internet protocol | ftp, geo, ghelp, help, http, https, hwplay, icy, icyx, info, irc, magnet, mailto, man, mms, mmsh, net, pnm, rtmp, rtp, rtsp, skype, uvox, vnc, xmpp |
-| x-epoc | SISX package | x-sisx-app |
-| multipart | Multi-part mime messages | alternative, appledouble, digest, encrypted, mixed, related, report, signed, x-mixed-replace |
-| model | such as 3D model | x-kpovmodeler, vrml, x-modelica |
+Each MIME-type is associated with a [desktop entry](/index.php/Desktop_entry "Desktop entry"), specifying which application should open files of that type. These associations are usually stored in [mimeapps.list](#Default_mimeapps.list_files) files, but some programs store them in their own custom configuration files. Additionally, `.desktop` files may list the MIME-types that they are able to open.
 
 For the description of MIME-types you can search in XDG database:
 

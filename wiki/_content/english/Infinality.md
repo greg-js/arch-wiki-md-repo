@@ -36,7 +36,8 @@ Variables should be set in `/etc/profile.d/infinality-settings.sh`. See [infinal
     *   [3.4 GIMP](#GIMP)
     *   [3.5 Language specifics diacritics / glyphs](#Language_specifics_diacritics_.2F_glyphs)
     *   [3.6 Firefox/Chrome browsers rendering monospaced with proportional font](#Firefox.2FChrome_browsers_rendering_monospaced_with_proportional_font)
-    *   [3.7 General problems with fonts](#General_problems_with_fonts)
+    *   [3.7 CJK character distortion](#CJK_character_distortion)
+    *   [3.8 General problems with fonts](#General_problems_with_fonts)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -291,6 +292,20 @@ you probably should run
 
 ```
  # fc-presets set
+
+```
+
+### CJK character distortion
+
+Some CJK characters like "的" "照" "吧" are likely to deform under certain sizes[[3]](https://github.com/bohoomil/fontconfig-ultimate/issues/182). Disabling certain aspects of the autohinter can help:
+
+```
+export INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=0
+export INFINALITY_FT_STEM_FITTING_STRENGTH=0
+export INFINALITY_FT_STEM_SNAPPING_SLIDING_SCALE=0
+export INFINALITY_FT_AUTOHINT_SNAP_STEM_HEIGHT=0
+export INFINALITY_FT_AUTOHINT_HORIZONTAL_STEM_DARKEN_STRENGTH=0
+export INFINALITY_FT_AUTOHINT_INCREASE_GLYPH_HEIGHTS=false
 
 ```
 

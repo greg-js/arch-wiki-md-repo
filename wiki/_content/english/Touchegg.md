@@ -11,7 +11,7 @@
 
 Install [touchegg](https://aur.archlinux.org/packages/touchegg/) package. Alternatively, it is also available [touchegg-git](https://aur.archlinux.org/packages/touchegg-git/).
 
-You can also install [touchegg-gce-git](https://aur.archlinux.org/packages/touchegg-gce-git/) - [Touchegg-GCE](https://github.com/Raffarti/Touchegg-gce) (GUI configuration editor).
+Touchegg comes with its own minimal GUI, but you can also install [touchegg-gce-git](https://aur.archlinux.org/packages/touchegg-gce-git/) - [Touchegg-GCE](https://github.com/Raffarti/Touchegg-gce) (GUI configuration editor).
 
 ## Configuration
 

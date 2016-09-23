@@ -241,7 +241,7 @@ $ chmod *xxx* *filename*
 
 ```
 
-Where `**xxx**` is a 3-digit number where each digit can be anything from 1 to 7\. The first digit applies to permissions for owner, the second digit applies to permissions for group, and the third digit applies to permissions for all others.
+Where `**xxx**` is a 3-digit number where each digit can be anything from 0 to 7\. The first digit applies to permissions for owner, the second digit applies to permissions for group, and the third digit applies to permissions for all others.
 
 In this number notation, the values `r`, `w`, and `x` have their own number value:
 

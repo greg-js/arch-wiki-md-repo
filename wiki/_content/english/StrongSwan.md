@@ -76,7 +76,7 @@ subjkey:   45:30:11:da:a4:0e:0b:0a:a3:41:a5:81:41:ab:d8:04:7a:40:6c:c0
 
 ```
 
-**Warning:** The private key `/etc/ipsec.d/private/strongswanKey.pem` of the CA should be moved somewhere safe, ossibly to a special signing host without access to the Internet. Theft of this master signing key would completely compromise your public key infrastructure.
+**Warning:** The private key `/etc/ipsec.d/private/strongswanKey.pem` of the CA should be moved somewhere safe, possibly to a special signing host without access to the Internet. Theft of this master signing key would completely compromise your public key infrastructure.
 
 ### Host Certificate
 

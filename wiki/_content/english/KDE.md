@@ -37,12 +37,16 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [5.1.2 How do I index a removable device?](#How_do_I_index_a_removable_device.3F)
     *   [5.2 Web browsers](#Web_browsers)
         *   [5.2.1 Konqueror and Rekonq](#Konqueror_and_Rekonq)
-        *   [5.2.2 Firefox](#Firefox)
-        *   [5.2.3 Qupzilla](#Qupzilla)
+        *   [5.2.2 Chromium and Chrome](#Chromium_and_Chrome)
+        *   [5.2.3 Firefox](#Firefox)
+        *   [5.2.4 Qupzilla](#Qupzilla)
 *   [6 PIM](#PIM)
     *   [6.1 Akonadi](#Akonadi)
-        *   [6.1.1 Disabling Akonadi](#Disabling_Akonadi)
-        *   [6.1.2 Database configuration](#Database_configuration)
+        *   [6.1.1 Installation](#Installation_2)
+        *   [6.1.2 Disabling Akonadi](#Disabling_Akonadi)
+        *   [6.1.3 Database configuration](#Database_configuration)
+            *   [6.1.3.1 Configuring Akonadi to use PostgreSQL Server](#Configuring_Akonadi_to_use_PostgreSQL_Server)
+            *   [6.1.3.2 Configuring Akonadi to use SQLite](#Configuring_Akonadi_to_use_SQLite)
 *   [7 Phonon](#Phonon)
     *   [7.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
 *   [8 Useful applications](#Useful_applications)
@@ -414,9 +418,13 @@ By default every removable device is blacklisted. You just have to remove your d
 
 #### Konqueror and Rekonq
 
-Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is currently not supported by either Konqueror or Rekonq.
+Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is currently not supported by either Konqueror or Rekonq. There is a [community continuation](http://qtwebkit.blogspot.com/2016/08/qtwebkit-im-back.html) of QtWebKit.
 
 A successor named Fiber is currently in development, which will use Chromium's engine.
+
+#### Chromium and Chrome
+
+[Chromium](/index.php/Chromium "Chromium") and its proprietary variant Google Chrome have limited Plasma integration. [They can use KWallet](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") and KDE Open/Save windows.
 
 #### Firefox
 
@@ -424,7 +432,7 @@ Firefox can be configured to better integrate with Plasma. See [Firefox KDE inte
 
 #### Qupzilla
 
-Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) is a Qt web browser with Plasma integration features. Qupzilla 2.0 will use Qt WebEngine intead of WebKit.
+Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) is a Qt web browser with Plasma integration features. Qupzilla 2.0 uses Qt WebEngine intead of WebKit. The WebKit variant is also available as [qupzilla-qtwebkit-git](https://aur.archlinux.org/packages/qupzilla-qtwebkit-git/).
 
 ## PIM
 
@@ -435,6 +443,16 @@ KDE offers its own stack for personal information management. This includes emai
 Akonadi is a system meant to act as a local cache for PIM data, regardless of its origin, which can be then used by other applications. This includes the user's emails, contacts, calendars, events, journals, alarms, notes, and so on.
 
 Akonadi does not store any data by itself: the storage format depends on the nature of the data (for example, contacts may be stored in vCard format).
+
+#### Installation
+
+Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons). For EWS support, install [akonadi-ews-git](https://aur.archlinux.org/packages/akonadi-ews-git/).
+
+**Note:** If you wish to use a database engine other than MariaDB/MySQL, then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies:
+```
+pacman -S akonadi --assume-installed mariadb
+
+```
 
 #### Disabling Akonadi
 
@@ -455,9 +473,36 @@ innodb_use_native_aio = 0
 
 Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL")
 
-*   Configuring Akonadi to use PostgreSQL Server
-*   Configuring Akonadi to use SQLite
-    *   Edit `~/.config/akonadi/akonadiserverrc` to match the below
+##### Configuring Akonadi to use PostgreSQL Server
+
+1.  Install and setup PostgreSQL (see [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"))
+    *   Enable the `postgresql` [systemd](/index.php/Systemd "Systemd") service: `systemctl enable postgresql.service`.
+2.  Create the `~/.config/akonadi/akonadiserverrc` file if it does not exist.
+3.  Edit `~/.config/akonadi/akonadiserverrc` file so that it has the following contents:
+    ```
+    [General]
+    Driver=QPSQL
+
+    [QPSQL]
+    Host=/run/postgresql/
+    InitDbPath=/usr/bin/initdb
+    Name=akonadi
+    Options=
+    Password=
+    Port=5432
+    ServerPath=/usr/bin/pg_ctl
+    StartServer=true
+    User=postgres
+
+    ```
+
+    **Note:** If your PostgreSQL database username, password, and port differ from `postgres`, (nothing), and `5432`, then make sure you respectively change the configuration options, `User=`, `Password=`, and `Port=`.
+
+4.  Start Akonadi: `akonadictl start`, and check its status: `akonadictl status`.
+
+##### Configuring Akonadi to use SQLite
+
+Edit `~/.config/akonadi/akonadiserverrc` to match the configuration below:
 
 ```
 [General]
@@ -661,7 +706,7 @@ For some IMAP accounts, kmail will show the inbox as a container with all other 
 This command prints out a wonderful summary of the current state of KWin including used options, used compositing backend and relevant OpenGL driver capabilities. See more on [Martin's blog](http://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/).
 
 ```
-$ qdbus org.kde.kwin /KWin supportInformation
+$ qdbus org.kde.KWin /KWin supportInformation
 
 ```
 

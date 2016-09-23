@@ -655,10 +655,6 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[http://xiph.org/paranoia/index.html](http://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
 
-*   **Gnac** — Audio converter for GNOME.
-
-	[http://gnac.sourceforge.net/](http://gnac.sourceforge.net/) || [gnac](https://www.archlinux.org/packages/?name=gnac)
-
 *   **Goobox** — CD player and ripper for GNOME.
 
 	[https://people.gnome.org/~paobac/goobox/](https://people.gnome.org/~paobac/goobox/) || [goobox](https://www.archlinux.org/packages/?name=goobox)

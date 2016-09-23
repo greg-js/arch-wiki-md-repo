@@ -1353,7 +1353,7 @@ Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot t
 
 *   Suspend-to-RAM works out of the box.
 
-*   The built-in flash drive does *not* work with kernel 4.5.4-1-ARCH, but it *does* work with kernel 4.6.0-mainline (install [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)). As long as a [rather trivial patch](http://lists.infradead.org/pipermail/linux-nvme/2016-May/004618.html) is not merged into the kernel, either this patch must be applied locally or one puts `modprobe nvme; echo 106b 2003 > /sys/bus/pci/devices/nvme/new_id` into a mkinitcpio hook (to be started after the udev hook). The reason is that the NVMe controller of the flash drive doesn't advertise itself with the correct PCI device class. Note that with the patch, a short sleep still seems to be necessary.
+*   The built-in flash drive does *not* work with kernel 4.5.4-1-ARCH, but it *does* work with kernel 4.6.0-mainline (install [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)). As long as a [rather trivial patch](http://lists.infradead.org/pipermail/linux-nvme/2016-May/004618.html) is not merged into the kernel, either this patch must be applied locally or one puts `modprobe nvme; echo 106b 2003 > /sys/bus/pci/drivers/nvme/new_id` into a mkinitcpio hook (to be started after the udev hook). The reason is that the NVMe controller of the flash drive doesn't advertise itself with the correct PCI device class. Note that with the patch, a short sleep still seems to be necessary.
 
 *   Audio recording works out of the box. Audio playback doesn't work (still looking for a solution).
 

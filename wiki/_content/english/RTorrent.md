@@ -193,7 +193,7 @@ To remove these mappings automatically at startup you may add the two preceding 
 
 ### systemd service file with tmux or screen
 
-*   With tmux (Restart rtorrent if crashed)
+*   With independent tmux server (restart rtorrent if crashed)
 
  `~/.config/systemd/user/rt.service` 
 ```
@@ -203,11 +203,9 @@ After=network.target
 
 [Service]
 Type=forking
-KillMode=none
 ExecStartPre=/usr/bin/bash -c "if test -e ~/.session/rtorrent.lock && test -z `pidof rtorrent`; then rm -f ~/.session/rtorrent.lock; fi"
-ExecStart=/usr/bin/bash -c "/usr/bin/tmux new-session -s rt -n rtorrent -d rtorrent && tmux list-panes -t rt:rtorrent.0 -F \"#{pid}\" > /tmp/rt.service.pid"
-ExecStop=/usr/bin/bash -c "/usr/bin/tmux send-keys -t rt:rtorrent.0 C-q; while pidof rtorrent > /dev/null; do echo stopping rtorrent...; sleep 1; done"
-PIDFile=/tmp/rt.service.pid
+ExecStart=/usr/bin/tmux -L rt new-session -s rt -n rtorrent -d rtorrent 
+ExecStop=/usr/bin/bash -c "/usr/bin/tmux -L rt send-keys -t rt:rtorrent.0 C-q; while pidof rtorrent > /dev/null; do echo stopping rtorrent...; sleep 1; done"
 Restart=on-failure
 
 [Install]
@@ -215,7 +213,7 @@ WantedBy=default.target
 
 ```
 
-*   With tmux running as user rtorrent (Restart rtorrent if crashed)
+*   With tmux running as user rtorrent (restart rtorrent if crashed)
 
  `/etc/systemd/system/rtorrent.service` 
 ```
@@ -281,6 +279,7 @@ $ systemctl --user stop rt
 Attach to rtorrent's session:
 
 ```
+tmux -L rt attach -t rt
 tmux attach -t rt
 
 ```
