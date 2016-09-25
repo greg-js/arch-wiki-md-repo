@@ -143,7 +143,9 @@ Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multime
 
 Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](http://www.quirksmode.org/html5/tests/video.html) or [audio-test page](http://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
-See also [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration.
+Since Firefox 49 HTML5 DRM playback is supported by the Google Widevine CDM, it is however not enabled by default. See *Preferences > Content > DRM content* if you want to learn more.
+
+See [Firefox tweaks#Enable additional media codecs](/index.php/Firefox_tweaks#Enable_additional_media_codecs "Firefox tweaks") for advanced configuration and enabling support for Widevine (Netflix, Amazon Video, etc.).
 
 ### Dictionaries for spell checking
 

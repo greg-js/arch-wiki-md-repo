@@ -453,10 +453,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ### Sample .zshrc files
 
 *   A package in offical repository named [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) comes from [https://grml.org/zsh](https://grml.org/zsh) and provides a zshrc file that includes many tweaks for Zshell. This is the default configuration for the [monthly ISO releases](https://www.archlinux.org/download/).
-*   Basic setup, with dynamic prompt and window title/hardinfo => [http://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](http://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc);
+*   [https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc) - basic setup, with dynamic prompt and window title/hardinfo.
 *   [https://github.com/slashbeast/things/blob/master/configs/DOTzshrc](https://github.com/slashbeast/things/blob/master/configs/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
 
-See [Dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
+See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
 
 ### Configuration Frameworks
 

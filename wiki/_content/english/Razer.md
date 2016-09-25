@@ -1,4 +1,4 @@
-There are currently no official drivers for any Razer peripherals in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux. There also exist scripts to enable macro keys of Razer keyboards.
+There are currently no official drivers for any Razer peripherals in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux. There also exist scripts to enable macro keys of Razer keyboards. A relatively new package, [razer-driver-meta](https://aur.archlinux.org/packages/razer-driver-meta/) can be used to enable Razer support. Supported devices are [listed here](http://github.com/terrycain/razer-drivers)
 
 ## Contents
 

@@ -49,7 +49,7 @@ This page was created to consolidate colorization of CLI outputs.
 diffutils from version 3.4 includes the `--color` option ([GNU mailing list](https://lists.gnu.org/archive/html/info-gnu/2016-08/msg00004.html)).
 
 ```
-$ alias diff 'diff --color=auto'
+$ alias diff='diff --color=auto'
 
 ```
 

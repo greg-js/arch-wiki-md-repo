@@ -146,7 +146,7 @@ The laptop manufacturers developed new technologies involving two graphic cards 
 
 ## Network time syncing
 
-For a laptop, it may be a good idea to use [Chrony](/index.php/Chrony "Chrony") as an alternative to [NTPd](/index.php/NTPd "NTPd") or [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") to sync your clock over the network. Chrony is designed to work well even on systems with no permanent network connection (such as laptops), and is capable of much faster time synchronisation than standard ntp. Chrony has several advantages when used in systems running on virtual machines, such as a larger range for frequency correction to help correct quickly drifting clocks, and better response to rapid changes in the clock frequency. It also has a smaller memory footprint and no unnecessary process wakeups, improving power efficiency.
+For a laptop, it may be a good idea to use [Chrony](/index.php/Chrony "Chrony") as an alternative to [NTPd](/index.php/NTPd "NTPd"), [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") or [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") to sync your clock over the network. Chrony is designed to work well even on systems with no permanent network connection (such as laptops), and is capable of much faster time synchronisation than standard ntp. Chrony has several advantages when used in systems running on virtual machines, such as a larger range for frequency correction to help correct quickly drifting clocks, and better response to rapid changes in the clock frequency. It also has a smaller memory footprint and no unnecessary process wakeups, improving power efficiency.
 
 ## See also
 

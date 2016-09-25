@@ -3,19 +3,21 @@
 *   [1 Что это?](#.D0.A7.D1.82.D0.BE_.D1.8D.D1.82.D0.BE.3F)
 *   [2 Установка Archiso](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_Archiso)
 *   [3 Конфигурация создаваемой системы](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D0.B5.D0.BC.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-    *   [3.1 Makefile](#Makefile)
-    *   [3.2 mkinitcpio.conf](#mkinitcpio.conf)
-    *   [3.3 packages.list](#packages.list)
-    *   [3.4 isomounts](#isomounts)
-    *   [3.5 boot-files](#boot-files)
-        *   [3.5.1 Использование isolinux](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_isolinux)
-    *   [3.6 overlay](#overlay)
-        *   [3.6.1 Добавление fstab](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_fstab)
-        *   [3.6.2 Добавление пользователя](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
-            *   [3.6.2.1 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
-            *   [3.6.2.2 Используя useradd](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_useradd)
-        *   [3.6.3 Добавление чего-либо в домашнюю директорию пользователя при загрузке](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B5.D0.B3.D0.BE-.D0.BB.D0.B8.D0.B1.D0.BE_.D0.B2_.D0.B4.D0.BE.D0.BC.D0.B0.D1.88.D0.BD.D1.8E.D1.8E_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D1.8E_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
-        *   [3.6.4 Закрытие темы оверлея](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B_.D0.BE.D0.B2.D0.B5.D1.80.D0.BB.D0.B5.D1.8F)
+    *   [3.1 Установка пакетов](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+        *   [3.1.1 Пользовательский локальный репозиторий](#.D0.9F.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.B8.D0.B9_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9)
+    *   [3.2 Makefile](#Makefile)
+    *   [3.3 mkinitcpio.conf](#mkinitcpio.conf)
+    *   [3.4 packages.list](#packages.list)
+    *   [3.5 isomounts](#isomounts)
+    *   [3.6 boot-files](#boot-files)
+        *   [3.6.1 Использование isolinux](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_isolinux)
+    *   [3.7 overlay](#overlay)
+        *   [3.7.1 Добавление fstab](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_fstab)
+        *   [3.7.2 Добавление пользователя](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+            *   [3.7.2.1 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
+            *   [3.7.2.2 Используя useradd](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_useradd)
+        *   [3.7.3 Добавление чего-либо в домашнюю директорию пользователя при загрузке](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.87.D0.B5.D0.B3.D0.BE-.D0.BB.D0.B8.D0.B1.D0.BE_.D0.B2_.D0.B4.D0.BE.D0.BC.D0.B0.D1.88.D0.BD.D1.8E.D1.8E_.D0.B4.D0.B8.D1.80.D0.B5.D0.BA.D1.82.D0.BE.D1.80.D0.B8.D1.8E_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5)
+        *   [3.7.4 Закрытие темы оверлея](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D1.82.D0.B5.D0.BC.D1.8B_.D0.BE.D0.B2.D0.B5.D1.80.D0.BB.D0.B5.D1.8F)
 *   [4 Генерация образа](#.D0.93.D0.B5.D0.BD.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0)
 *   [5 Links](#Links)
 
@@ -27,28 +29,64 @@
 
 ## Установка Archiso
 
-Archiso можно поставить двумя способами:
+**Примечание:** Archiso должен быть установлен для платформы x86_64\. [1] В противном случае, скорее всего, возможны проблемы, решение которых будет рассмотрено дальше.
 
-*   Через [AUR](https://aur.archlinux.org/packages.php?ID=25996) (рекомендуется использовать [yaourt](/index.php/Yaourt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Yaourt (Русский)"))(рекомендуется):
+Для начала нужно установить пакет [archiso](https://www.archlinux.org/packages/?name=archiso) или [archiso-git](https://aur.archlinux.org/packages/archiso-git/).
+
+Archiso поставляется с двумя профилями "profiles": *releng* и *baseline*.
+
+*   Если вы хотите создать полностью индивидуальную версию Arch Linux, предварительно установленной со всеми вашими любимыми программами и конфигурациями, используйте профиль "releng".
+
+*   Если вы просто хотите создать оптимальную для существования, без предварительно установленных пакетов и минимальной конфигурацией, используйте "baseline".
+
+Теперь скопируйте профиль на Ваш выбор, в каталог, в котором вы можете вносить корректировки (мы будем использовать `~/archlive`). Выполните следующую команду, заменив `**profile**` на `releng` или `baseline`.
 
 ```
-$ yaourt -S archiso-git
-
-```
-
-*   Самостоятельно поставить из Git:
-
-```
-$ git clone [git://projects.archlinux.org/archiso.git](git://projects.archlinux.org/archiso.git)
-$ cd archiso/archiso
-$ sudo make install
-$ sudo pacman -S mkinitcpio cdrkit squashfs-tools devtools syslinux mkinitcpio-nfs-utils nbd
+# cp -r /usr/share/archiso/configs/**profile**/* ~/archlive
 
 ```
 
-**Примечание:** Сейчас Archiso, содержащийся в [extra](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#extra "Official repositories (Русский)"), устарел и не соответствует данной статье.
+*   Если вы используете `releng` профиль, создавая полностью индивидуальный образ, вы можете переходить к [#Настройка Live носителя](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Live_.D0.BD.D0.BE.D1.81.D0.B8.D1.82.D0.B5.D0.BB.D1.8F).
+*   Если вы используете `baseline` профиль для создания голого образа, у вас не будет времени на настройку и можно переходить на [#Создать ISO](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_ISO).
 
 ## Конфигурация создаваемой системы
+
+В этом разделе подробно описывается настройка создаваемого вами образа, определение пакетов и конфигурация. Внутри каталога `~/archlive` есть ряд файлов и каталогов; мы рассмотрим лишь несколько из них, в основном:
+
+*   `packages.*` - это где вы перечисляете построчно пакеты, которые вы хотите установить, и
+*   `airootfs` каталог - это каталог выступает в качестве оверлея, это где вы делаете все настройки.
+
+Как правило, любые административные задачи, которые вы обычно делаете после новой установки, могут быть выполнены в скрипте `~/archlive/airootfs/root/customize_airootfs.sh`, за исключением установки пакетов. Скрипт должен быть написан с точки зрения новой среды, поэтому `/` в скрипте означает корень ISO-образа, который создается.
+
+### Установка пакетов
+
+Желаете создать список пакетов, которые хотите установить на вашу систему прямо с компакт-диска. Формат файл содержит полные названия пакетов, каждый пакет с новой строки. Это очень удобно для создания собственного интереса LiveCD, просто укажите нужные пакеты и создавайте образ. Файлы packages.i686 и packages.x86_64 позволяют установить программное обеспечение на только 32-бит или 64-бит систему соответственно.
+
+**Примечание:** Если вы хотите использовать [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер") в Live CD, то вы должны добавить необходимые и правильные [видео драйвера](/index.php/Video_drivers "Video drivers"), или WM может зависнуть при загрузке.
+
+#### Пользовательский локальный репозиторий
+
+Вы также можете [создать пользовательский локальный репозиторий](/index.php/Custom_local_repository "Custom local repository") в целях подготовки пакетов из [AUR](/index.php/AUR "AUR") или [ABS](/index.php/ABS "ABS"). При этом пакеты для обеих архитектур, должны следовать в определенном порядке каталогов, чтобы не столкнуться с проблемами. Например:
+
+*   `~/customrepo`
+    *   `~/customrepo/x86_64`
+        *   `~/customrepo/x86_64/foo-x86_64.pkg.tar.xz`
+        *   `~/customrepo/x86_64/customrepo.db.tar.gz`
+        *   `~/customrepo/x86_64/customrepo.db` (симлинк создается `repo-add`)
+    *   `~/customrepo/i686`
+        *   `~/customrepo/i686/foo-i686.pkg.tar.xz`
+        *   `~/customrepo/i686/customrepo.db.tar.gz`
+        *   `~/customrepo/i686/customrepo.db` (симлинк создается `repo-add`)
+
+Затем вы можете добавить ваш репозиторий внеся изменения в файле `~/archlive/pacman.conf`, поставив его над другой записью репозитория (для более высшего приоритета):
+
+```
+# custom repository
+[customrepo]
+SigLevel = Optional TrustAll
+Server = file:///home/**user**/customrepo/$arch
+
+```
 
 ### Makefile
 

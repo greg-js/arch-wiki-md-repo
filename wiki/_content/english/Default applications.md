@@ -3,162 +3,99 @@ Before setting the default application per file type, the file type must be dete
 *   using the file name extension e.g. *.html* or *.jpeg*
 *   using a [magic number](https://en.wikipedia.org/wiki/List_of_file_signatures "w:List of file signatures") in the first few bytes of the file
 
-However it is possible that a single file type is identified by several different magic numbers and file name extensions, therefore [MIME types](https://en.wikipedia.org/wiki/MIME_type "w:MIME type") are used to represent a distinct file type (regardless of its representation). In Arch, tools from the [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) package are used to maintain the MIME type database, which is used by other packages to register new MIME types. Each package can also use [desktop entries](/index.php/Desktop_entries "Desktop entries") to provide information about the MIME types that can be handled by the packaged software.
+However it is possible that a single file type is identified by several different magic numbers and file name extensions, therefore [MIME types](https://en.wikipedia.org/wiki/MIME_type "w:MIME type") are used to represent distinct file types (regardless of the representation). In Arch, tools from the [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) package are used to maintain the [#MIME database](#MIME_database), which is used by other packages to register new MIME types. Each package can also use [desktop entries](/index.php/Desktop_entries "Desktop entries") to provide information about the MIME types that can be handled by the packaged software.
 
-While Arch Linux does not provide custom presets for default applications, [desktop environments](/index.php/Desktop_environments "Desktop environments") you install may do so. Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
+While the base install of Arch Linux does not define default applications, [desktop environments](/index.php/Desktop_environments "Desktop environments") you install may do so. Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
+
+**Note:** If you are looking for default applications in the sense of "default shell", "default text editor", etc. see [Environment variables#Examples](/index.php/Environment_variables#Examples "Environment variables").
 
 ## Contents
 
 *   [1 MIME types and desktop entries](#MIME_types_and_desktop_entries)
-*   [2 Set default applications](#Set_default_applications)
-    *   [2.1 Default mimeapps.list files](#Default_mimeapps.list_files)
-    *   [2.2 Configuration of the mimeapps.list file](#Configuration_of_the_mimeapps.list_file)
-    *   [2.3 Shared MIME-info database](#Shared_MIME-info_database)
-        *   [2.3.1 Example: .xml and related .desktop configuration](#Example:_.xml_and_related_.desktop_configuration)
-*   [3 Utilities to manage MIME types](#Utilities_to_manage_MIME_types)
-    *   [3.1 Examples of usage](#Examples_of_usage)
-        *   [3.1.1 Detect MIME-type](#Detect_MIME-type)
-        *   [3.1.2 Set use of MIME-type by default](#Set_use_of_MIME-type_by_default)
-    *   [3.2 Application launchers](#Application_launchers)
-        *   [3.2.1 xdg-open](#xdg-open)
-        *   [3.2.2 mimeopen](#mimeopen)
-        *   [3.2.3 mailcap](#mailcap)
-    *   [3.3 Extended practical examples](#Extended_practical_examples)
-        *   [3.3.1 xdg-open](#xdg-open_2)
-            *   [3.3.1.1 Set the default browser](#Set_the_default_browser)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Variables in .desktop files that affect application launch](#Variables_in_.desktop_files_that_affect_application_launch)
+*   [2 mimeapps.list](#mimeapps.list)
+    *   [2.1 Format](#Format)
+*   [3 MIME database](#MIME_database)
+    *   [3.1 New MIME types](#New_MIME_types)
+*   [4 Utilities to manage MIME types](#Utilities_to_manage_MIME_types)
+    *   [4.1 Examples of usage](#Examples_of_usage)
+        *   [4.1.1 Detect MIME type](#Detect_MIME_type)
+        *   [4.1.2 Set use of MIME type by default](#Set_use_of_MIME_type_by_default)
+    *   [4.2 Application launchers](#Application_launchers)
+        *   [4.2.1 xdg-open](#xdg-open)
+        *   [4.2.2 mimeopen](#mimeopen)
+        *   [4.2.3 mailcap](#mailcap)
+    *   [4.3 Extended practical examples](#Extended_practical_examples)
+        *   [4.3.1 xdg-open](#xdg-open_2)
+            *   [4.3.1.1 Set the default browser](#Set_the_default_browser)
+    *   [4.4 lsdesktopf](#lsdesktopf)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Missing .desktop file](#Missing_.desktop_file)
+    *   [5.2 Missing association](#Missing_association)
+    *   [5.3 Non-default application](#Non-default_application)
+    *   [5.4 Nonstandard association](#Nonstandard_association)
+    *   [5.5 Variables in .desktop files that affect application launch](#Variables_in_.desktop_files_that_affect_application_launch)
 
 ## MIME types and desktop entries
 
-MIME-types are specified by two parts separated by a slash: `*type*/*subtype*`. The type describes the general category of the content, while the subtype identifies the specific data type. For example, `image/jpeg` is the MIME-type for [JPEG](https://en.wikipedia.org/wiki/JPEG "w:JPEG") images, while `video/H264` is the MIME-type for [H.264](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC "w:H.264/MPEG-4 AVC") video. Technically, every MIME-type should be registered with the [IANA](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority "w:Internet Assigned Numbers Authority")[[1]](http://www.iana.org/assignments/media-types/media-types.xhtml), however many applications use unofficial MIME-types; these often have a type starting with `x-`, for example `x-scheme-handler/https` for a HTTPS URL.
+MIME types are specified by two parts separated by a slash: `*type*/*subtype*`. The type describes the general category of the content, while the subtype identifies the specific data type. For example, `image/jpeg` is the MIME type for [JPEG](https://en.wikipedia.org/wiki/JPEG "w:JPEG") images, while `video/H264` is the MIME type for [H.264](https://en.wikipedia.org/wiki/H.264/MPEG-4_AVC "w:H.264/MPEG-4 AVC") video. Technically, every MIME type should be registered with the [IANA](https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority "w:Internet Assigned Numbers Authority")[[1]](http://www.iana.org/assignments/media-types/media-types.xhtml), however many applications use unofficial MIME types; these often have a type starting with `x-`, for example `x-scheme-handler/https` for a HTTPS URL.
 
-Each MIME-type is associated with a [desktop entry](/index.php/Desktop_entry "Desktop entry"), specifying which application should open files of that type. These associations are usually stored in [mimeapps.list](#Default_mimeapps.list_files) files, but some programs store them in their own custom configuration files. Additionally, `.desktop` files may list the MIME-types that they are able to open.
+Each MIME type is associated with a [desktop entry](/index.php/Desktop_entry "Desktop entry"), specifying which application should open files of that type. These associations are usually stored in [#mimeapps.list](#mimeapps.list) files, but some programs store them in their own custom configuration files. Additionally, `.desktop` files may list the MIME types that they are able to open.
 
-For the description of MIME-types you can search in XDG database:
+If you ever require to create a custom association of a new file extension to a MIME type, see the the short [#Example: .xml and related .desktop configuration](#Example:_.xml_and_related_.desktop_configuration) and the [Association between MIME types and applications](http://standards.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) standard.
 
-```
-$ grep -e 'mime-type type=' -e '<comment>'  /usr/share/mime/packages/freedesktop.org.xml
+## mimeapps.list
 
-```
-
-**Tip:** To see all MIME extensions in the system's *.desktop* files that belongs to a MIME-type you can use [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/), for example `lsdesktopf --gm -gx video`, to search available in *.xml* configuration/database files use `lsdesktopf --gdx -gx video`.
-
-If you ever require to create a custom association of a new file extension to a MIME-type, see the the short [#Example: .xml and related .desktop configuration](#Example:_.xml_and_related_.desktop_configuration) and the [Association between MIME types and applications](http://standards.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html) standard.
-
-## Set default applications
-
-In order to set a default application, you need to
-
-*   decide which of the [#Default mimeapps.list files](#Default_mimeapps.list_files) is applicable for your case and,
-*   change the [#Configuration of the mimeapps.list file](#Configuration_of_the_mimeapps.list_file) accordingly.
-
-Any manual configuration of the [#Shared MIME-info database](#Shared_MIME-info_database) is only required, if the application is not setup correctly or desktop does not comply to the standard yet.
-
-### Default mimeapps.list files
-
-The `mimeapps.list` file stores the configuration for the default application to open a MIME-type. There are different locations for it:
-
-*   system-wide,
-*   per-user,
-*   custom locations used by some programs.
-
-The `*$desktop*` in the following list denotes the name of the related desktop environment or window manager. The search order of paths is:
+Default applications for each MIME type are stored in `mimeapps.list` files. These files can be stored in several locations. They are searched in the following order, with earlier associations taking precedence over later ones:
 
 | Path | Usage |
-| `$HOME/.config/*$desktop*-mimeapps.list` | user overrides, desktop-specific |
-| `$HOME/.config/mimeapps.list` | user overrides |
-| `/etc/xdg/*$desktop*-mimeapps.list` | sysadmin and vendor overrides, desktop-specific |
-| `/etc/xdg/mimeapps.list` | sysadmin and vendor overrides |
-| `$HOME/.local/share/applications/*$desktop*-mimeapps.list` | for compatibility but now deprecated, desktop-specific |
-| `$HOME/.local/share/applications/mimeapps.list` | for compatibility but now deprecated |
-| `/usr/local/share/applications/*$desktop*-mimeapps.list`
-`/usr/share/applications/$desktop-mimeapps.list` | distribution-provided defaults, desktop-specific |
+| `~/.config/mimeapps.list` | user overrides |
+| `/etc/xdg/mimeapps.list` | system-wide overrides |
+| `~/.local/share/applications/mimeapps.list` | (**deprecated**) user overrides |
 | `/usr/local/share/applications/mimeapps.list`
 `/usr/share/applications/mimeapps.list` | distribution-provided defaults |
 
-### Configuration of the mimeapps.list file
+Additionally, it is possible to define [desktop-environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [XFCE](/index.php/XFCE "XFCE"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
 
-The file contains two main sections for default and additional alternatives to open files of a MIME-type. The second and the third section (`[Removed Associations]`) are optional.
-
-If the application installed a correct [desktop entry](/index.php/Desktop_entry "Desktop entry") file (examples used below `default1.desktop`, `foo1.desktop`, etc.), it contains the registered MIME-types it can handle. To **set a default application**, all you need to do is adjust the associations in the respective `mimeapps.list` (see also the freedesktop [specification](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-1.0.html#associations)).
-
-For example, the following sets `default1.desktop` to open `mimetype1`:
-
+**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it to the non-deprecated one:
 ```
-[Default Applications]
-mimetype1=default1.desktop
+$ ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
 
 ```
 
-Defined additional associations of applications to MIME-types (these might appear in file manager *Open with* GUI, for example):
+**Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
 
+### Format
+
+Consider the following example:
+
+ `mimeapps.list` 
 ```
 [Added Associations]
-mimetype1=foo1.desktop;foo2.desktop;foo3.desktop;
-mimetype2=foo4.desktop;
-
-```
-
-Removed associations of applications with MIME-types (blacklisting a MIME-type association of an application in its *.desktop* file):
-
-```
+image/jpeg=bar.desktop;baz.desktop
+video/H264=bar.desktop
 [Removed Associations]
-mimetype1=foo5.desktop
-
+video/H264=baz.desktop
+[Default Applications]
+image/jpeg=foo.desktop
 ```
 
-Multiple *.desktop* files for a single MIME-type must be semicolon-separated. Not supported entries are ignored in `mimeapps.list`. The DE/WM then searches for the first match to the needed MIME-type them in the default path for *.desktop* files.
+Each section assigns one or more desktop entries to MIME types.
 
-**Tip:** To get a quick overview of how many and which *.desktop* files can be associated with a certain MIME-type, you can use the [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) utility, e.g. `lsdesktopf --gen-mimeapps`.
+*   **Added Associations** indicates that the applications support opening that MIME type. For example, `bar.desktop` and `baz.desktop` can open JPEG images. This might affect the application list you see when right-clicking a file in a file browser.
+*   **Removed Associations** indicates that the applications *do not* support that MIME type. For example, `baz.desktop` cannot open H.264 video.
+*   **Default Applications** indicates that the applications should be the default choice for opening that MIME type. For example, JPEG images should be opened with `foo.desktop`. This implicitly adds an association between the application and the MIME type. If there are multiple applications, they are tried in order.
 
-**Note:** Arch Linux itself does not provide system-wide presets for associations, but other distributions and specific desktop environments may do so via packaged `mimeapps.list` files, or the older and deprecated `defaults.list` files.
+Each section is optional and can be omitted if unneeded.
 
-Your choice of desktop environment, or none, will affect how your default applications are associated. Further, note that some packages use additional work-around presets, for example Mozilla's packages install a `/etc/mime.types` file.
+## MIME database
 
-### Shared MIME-info database
+The system maintains a database of recognized MIME types: the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). The database is automatically built from the XML files installed by packages in `/usr/share/mime/packages` and `/usr/share/mimelnk/application`. These XML files should not be directly edited, however it is possible to define new MIME types on a per-user basis.
 
-In background to the `mimeapps.list` files, the system holds a database of MIME-type information registered via the installed applications' *.desktop* files, the [Shared MIME-info Database](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176). It is created automatically as soon as an application depending on it is installed, via the following [pacman#Hooks](/index.php/Pacman#Hooks "Pacman"):
+### New MIME types
 
-*   `/usr/share/libalpm/hooks/update-mime-database.hook` from [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info)
+This example defines a new MIME type `application/x-foobar` and assigns it to any file with a name ending in *.foo*. Simply create the following file:
 
-	updates the MIME-info database in `/usr/share/mime`, in particular also the *.xml* specification in `/usr/share/mime/packages/freedesktop.org.xml` for the MIME-types standards
-
-*   `/usr/share/libalpm/hooks/update-desktop-database.hook` from [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)
-
-	updates the `mimeinfo.cache` located (per default) in `/usr/share/applications`
-
-These files keep track of which MIME-types are associated with which *.desktop* files overall. When an application is installed, updated or removed, the pacman hooks keep the database updated accordingly.
-
-**Warning:** The database files are not meant to be edited directly.
-
-Application specific configuration is stored in *.xml* files and further files of the database (see [.xml source files](https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.11.html#idm139839923550176)) are stored in *.keys* and *.mime* files that are located in `/usr/share/mime-info/`.
-
-Global directories for the *.xml* files are:
-
-```
-/usr/share/mimelnk/application/
-/usr/share/mime/packages/ 
-
-```
-
-**Warning:** Above should not be modified, for user-specific configuration see below.
-
-Any user-specific *.xml* configuration may be stored in:
-
-```
-~/.local/share/mime/packages/
-
-```
-
-#### Example: .xml and related .desktop configuration
-
-The following is a short example to *create* files to associate an application with a MIME-type. It only needs to be followed, if the application has **not** setup and registered its configuration sufficiently.
-
-User-specific paths are used to override system defaults, while keeping the integrity of the rest of the system-wide configuration.
-
-Create and edit `~/.local/share/mime/packages/application-x-foobar.xml`:
-
+ `~/.local/share/mime/packages/application-x-foobar.xml` 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
@@ -171,34 +108,14 @@ Create and edit `~/.local/share/mime/packages/application-x-foobar.xml`:
 </mime-info>
 ```
 
-**Tip:** To see all file name extensions in *.xml* configuration or database files, that available in *glob pattern*, with their description in *comment* use [lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/): `lsdesktopf --gdx -gfx`.
-
-Create a related [desktop entry](/index.php/Desktop_entry "Desktop entry") file:
-
- `~/.local/share/applications/foobar.desktop` 
-```
-[Desktop Entry]
-Name=Foobar
-Exec=/usr/bin/foobar
-**MimeType=application/x-foobar**
-Icon=foobar
-Terminal=false
-Type=Application
-Categories=AudioVideo;Player;Video;
-Comment=
-```
-
-Now update the application and mime database with:
+And then update the MIME database
 
 ```
-$ update-desktop-database ~/.local/share/applications
-$ update-mime-database    ~/.local/share/mime
+$ update-mime-database ~/.local/share/mime
 
 ```
 
-Programs that use MIME-types, such as file managers, should now open `*.foo` files with foobar (you may need to restart your file manager to see the change.)
-
-See also [Environment variables#Examples](/index.php/Environment_variables#Examples "Environment variables") about global variables that can be used in start-up scripts to set default applications for specific actions.
+Of course this will not have any affect if no desktop entries are associated with the MIME type. You may need to create new [desktop entries](/index.php/Desktop_entries "Desktop entries") or modify [#mimeapps.list](#mimeapps.list).
 
 ## Utilities to manage MIME types
 
@@ -210,24 +127,24 @@ It can be done by using:
 *   File manager configuration menu
 *   External program for a specific file manager
 
-Other utilities to manage MIME-types are:
+Other utilities to manage MIME types are:
 
 | Name/Package | Method | Based on | xdg-utils replacement | Configuration file |
-| [mime-editor](https://www.archlinux.org/packages/?name=mime-editor) | MIME-type | Utility for [ROX](http://rox.sourceforge.net/desktop/home.html) applications |
+| [mime-editor](https://www.archlinux.org/packages/?name=mime-editor) | MIME type | Utility for [ROX](http://rox.sourceforge.net/desktop/home.html) applications |
 | [busking-git](https://aur.archlinux.org/packages/busking-git/) | regex | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | yes | custom |
 | [linopen](https://aur.archlinux.org/packages/linopen/) | [file](https://www.archlinux.org/packages/?name=file) | custom |
-| [mimeo](https://aur.archlinux.org/packages/mimeo/) | MIME-type
+| [mimeo](https://aur.archlinux.org/packages/mimeo/) | MIME type
 regex | [file](https://www.archlinux.org/packages/?name=file) | [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) | `mimeapps.list`
 `defaults.list`
 custom is optional |
 | [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | [file](https://www.archlinux.org/packages/?name=file) | yes | custom |
 | `rifle`
-part of [ranger](https://www.archlinux.org/packages/?name=ranger) | MIME-type
+part of [ranger](https://www.archlinux.org/packages/?name=ranger) | MIME type
 name
 regex | [file](https://www.archlinux.org/packages/?name=file) | custom |
 | [sx-open](https://aur.archlinux.org/packages/sx-open/) | regex | [file](https://www.archlinux.org/packages/?name=file)
 bash regex | yes | custom |
-| [whippet](https://aur.archlinux.org/packages/whippet/) | MIME-type
+| [whippet](https://aur.archlinux.org/packages/whippet/) | MIME type
 name
 regex | SQLite database
 [file](https://www.archlinux.org/packages/?name=file)
@@ -238,17 +155,17 @@ regex | SQLite database
 
 ### Examples of usage
 
-Here is a short description about how to use command line tools to show MIME-type of a file or set preferred program as default to open MIME-type.
+Here is a short description about how to use command line tools to show MIME type of a file or set preferred program as default to open MIME type.
 
-#### Detect MIME-type
+#### Detect MIME type
 
-Tools detecting MIME-type by reading meta-data from header of the file or detecting by magic number that is in two bytes identifier in the begin of the file. See [File header](https://en.wikipedia.org/wiki/File_format#File_header "wikipedia:File format").
+Tools detecting MIME type by reading meta-data from header of the file or detecting by magic number that is in two bytes identifier in the begin of the file. See [File header](https://en.wikipedia.org/wiki/File_format#File_header "wikipedia:File format").
 
-Many programs are using command *file* to detect correct MIME-type. For detection it uses compiled database that is stored in the `/usr/share/misc/magic/` directory. It has many options to determinate correct MIME-type and for showing output.
+Many programs are using command *file* to detect correct MIME type. For detection it uses compiled database that is stored in the `/usr/share/misc/magic/` directory. It has many options to determinate correct MIME type and for showing output.
 
-In Linux it is two standards to detect MIME-type that can affect which program will start and open the file, e.g. extension is associated with one program but content is associated with another MIME-type. The simplest way to see what is your system prioritizes is by renaming file extension and check again with tools that can use custom [*.xml](#Associate_file_extensions_with_applications_MIME-type) configuration files.
+In Linux it is two standards to detect MIME type that can affect which program will start and open the file, e.g. extension is associated with one program but content is associated with another MIME type. The simplest way to see what is your system prioritizes is by renaming file extension and check again with tools that can use custom [*.xml](#Associate_file_extensions_with_applications_MIME_type) configuration files.
 
-Here is examples of utility *xdg-mime* that first checking association of extension in [*.xml](#Associate_file_extensions_with_applications_MIME-type) configuration files.
+Here is examples of utility *xdg-mime* that first checking association of extension in [*.xml](#Associate_file_extensions_with_applications_MIME_type) configuration files.
 
 | Without extension | With extension |
 | xdg-mime query filetype *foo-file* | xdg-mime query filetype *foo-file*.*jpg* |
@@ -264,7 +181,7 @@ Here is shown options only for simple or multiple checks of a file, for more opt
 | mimetype | -i *(*.xml)* -M *(Magic)* | *.xml -> Magic | Show only | script | terminal |
 | mimeo | -m | *.xml -> Magic | Show / Set / Launch | script | terminal |
 
-#### Set use of MIME-type by default
+#### Set use of MIME type by default
 
 Comparison functionality of the tools
 
@@ -336,7 +253,7 @@ $ xdg-mime default Thunar.desktop inode/directory
 
 Note that you should not specify the complete path, but only the name of the *.desktop* file.
 
-This command can take multiple mime-types, allowing related files to be handled by the same program. The example below associates [Emacs](/index.php/Emacs "Emacs") to all known source files:
+This command can take multiple MIME types, allowing related files to be handled by the same program. The example below associates [Emacs](/index.php/Emacs "Emacs") to all known source files:
 
 ```
 $ xdg-mime default emacs.desktop $(grep '^text/x-*' /usr/share/mime/types)
@@ -376,17 +293,41 @@ $ xdg-mime default netsurf.desktop text/html
 
 It is important to note that if the envirnoment variable *BROWSER* is set, xdg will not be able to override it, which means *xdg-open* will use the browser set in the *BROWSER* env var rather than the one you specified with one of the commands above.
 
+### lsdesktopf
+
+[lsdesktopf](https://aur.archlinux.org/packages/lsdesktopf/) provides several methods of searching the MIME database and desktop MIME entries.
+
+For example, to see all MIME extensions in the system's *.desktop* files that have MIME type `video` you can use `lsdesktopf --gm -gx video` or to search in the XML database files use `lsdesktopf --gdx -gx video`. To get a quick overview of how many and which *.desktop* files can be associated with a certain MIME type, use `lsdesktopf --gen-mimeapps`. To see all file name extensions in XML database files, use `lsdesktopf --gdx -gfx`.
+
 ## Troubleshooting
+
+If a file is not being opened by your desired default application, there are several possible causes. You may need to check each case.
+
+### Missing .desktop file
+
+A [desktop entry](/index.php/Desktop_entry "Desktop entry") is required in order to associate an application with a MIME type. Ensure that such an entry exists and can be used to (manually) open files in the application.
+
+### Missing association
+
+If the application's desktop entry does not specify the MIME type under its `MimeType` key, it will not be considered when an application is needed to open that type. Edit [#mimeapps.list](#mimeapps.list) to add an association between the .desktop file and the MIME type.
+
+### Non-default application
+
+If the desktop entry is associated with the MIME type, it may simply not be set as the default. Edit [#mimeapps.list](#mimeapps.list) to set the default association.
+
+### Nonstandard association
+
+The formats and procedures described in this article are merely a standard defined by freedesktop.org; applications are free to ignore or only partially implement the standard. Check for usage of deprecated files such as `~/.local/share/applications/mimeapps.list` and `~/.local/share/applications/defaults.list`. If you are attempting to open the file from another application (e.g. a web browser or file manager) check if that application has its own method of selecting default applications.
 
 ### Variables in .desktop files that affect application launch
 
 Desktop environments and file managers supporting the specifications launch programs according to definition in the *.desktop* files. See [Desktop entries#Application entry](/index.php/Desktop_entries#Application_entry "Desktop entries").
 
-Usually, configuration of the packaged *.desktop* files is not required, but it may not be bug-free. Even if an application containing necessary MIME-type description in the *.desktop* file `MimeType` variable that is used for association, it can fail to start correctly, not start at all or start without opening a file.
+Usually, configuration of the packaged *.desktop* files is not required, but it may not be bug-free. Even if an application containing necessary MIME type description in the *.desktop* file `MimeType` variable that is used for association, it can fail to start correctly, not start at all or start without opening a file.
 
 This may happen, for example, if the `Exec` variable is missing internal options needed for how to open a file, or how the application is shown in the menu. The `Exec` variable usually begins with `%`; for its currently supported options, see [exec-variables](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#exec-variables).
 
-The following table lists the main variable entries of *.desktop* files that affect how an application starts, if it has a MIME-type associated with it.
+The following table lists the main variable entries of *.desktop* files that affect how an application starts, if it has a MIME type associated with it.
 
 | Variable names | Example 1 content | Example 2 content | Description |
 | DBusActivatable | DBusActivatable=true | DBusActivatable=false | Application interact with [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/).

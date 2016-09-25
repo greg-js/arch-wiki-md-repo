@@ -250,30 +250,11 @@ Now we need to reload the systemd configuration.
 
 ```
 
-Since we are replacing the default service with a different name, we need to explicitly stop and disable the default service:
+Since we are replacing the default service with a different name, we need to explicitly [stop](/index.php/Stop "Stop") and [disable](/index.php/Disable "Disable") `dnscrypt-proxy` and `dnscrypt-proxy.socket`.
 
-```
-# systemctl disable dnscrypt-proxy dnscrypt-proxy.socket
-# systemctl stop dnscrypt-proxy dnscrypt-proxy.socket
+Now [start/enable](/index.php/Start/enable "Start/enable") the new sockets, `dnscrypt-proxy@dnscrypt.eu-nl.socket` and `dnscrypt-proxy@cloudns-syd.socket`.
 
-```
-
-Now we enable and start the sockets:
-
-```
-# systemctl enable dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
-# systemctl start dnscrypt-proxy@dnscrypt.eu-nl.socket dnscrypt-proxy@cloudns-syd.socket
-
-```
-
-Finally Restart Unbound:
-
-```
-# systemctl restart unbound
-
-```
-
-If successful, your two selected dns providers should be the only ones found when using one of the dns leak test websites.
+Finally [restart](/index.php/Restart "Restart") `unbound.service`
 
 ## Known issues
 

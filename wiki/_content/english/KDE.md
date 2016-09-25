@@ -45,8 +45,10 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.1.1 Installation](#Installation_2)
         *   [6.1.2 Disabling Akonadi](#Disabling_Akonadi)
         *   [6.1.3 Database configuration](#Database_configuration)
-            *   [6.1.3.1 Configuring Akonadi to use PostgreSQL Server](#Configuring_Akonadi_to_use_PostgreSQL_Server)
-            *   [6.1.3.2 Configuring Akonadi to use SQLite](#Configuring_Akonadi_to_use_SQLite)
+            *   [6.1.3.1 MariaDB/MySQL](#MariaDB.2FMySQL)
+                *   [6.1.3.1.1 Using ZFS](#Using_ZFS)
+            *   [6.1.3.2 PostgreSQL](#PostgreSQL)
+            *   [6.1.3.3 SQLite](#SQLite)
 *   [7 Phonon](#Phonon)
     *   [7.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
 *   [8 Useful applications](#Useful_applications)
@@ -460,10 +462,11 @@ See this [section in the KDE userbase](http://userbase.kde.org/Akonadi#Disabling
 
 #### Database configuration
 
-Start `akonaditray` from package [kdepim-runtime](https://www.archlinux.org/packages/?name=kdepim-runtime). Right click on it and select **configure**. In the Akonadi server configure tab, you can:
+##### MariaDB/MySQL
 
-*   Configuring Akonadi to use MySQL/MariaDB Server
-    *   If your home directory is on a ZFS pool, you will need to create `~/.config/akonadi/mysql-local.conf` with the following contents:
+###### Using ZFS
+
+If your home directory is on a ZFS pool, you will need to create `~/.config/akonadi/mysql-local.conf` with the following contents:
 
 ```
 [mysqld]
@@ -473,7 +476,7 @@ innodb_use_native_aio = 0
 
 Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL")
 
-##### Configuring Akonadi to use PostgreSQL Server
+##### PostgreSQL
 
 1.  Install and setup PostgreSQL (see [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"))
     *   Enable the `postgresql` [systemd](/index.php/Systemd "Systemd") service: `systemctl enable postgresql.service`.
@@ -500,7 +503,7 @@ Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_runni
 
 4.  Start Akonadi: `akonadictl start`, and check its status: `akonadictl status`.
 
-##### Configuring Akonadi to use SQLite
+##### SQLite
 
 Edit `~/.config/akonadi/akonadiserverrc` to match the configuration below:
 

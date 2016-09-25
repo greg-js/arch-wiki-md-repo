@@ -2,6 +2,16 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.7.5-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.5](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.5)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=bf197cd11a0153fdb67c071269eb95a62402d84e](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=bf197cd11a0153fdb67c071269eb95a62402d84e)
+
+**Bump to v4.7.4-2**
+
+*   Changelog: Update to [ck5/BFS502](http://ck-hack.blogspot.com/2016/09/bfs-502-linux-47-ck5.html)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=bf197cd11a0153fdb67c071269eb95a62402d84e](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=bf197cd11a0153fdb67c071269eb95a62402d84e)
+
 **Bump to v4.7.4-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.4](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.4)

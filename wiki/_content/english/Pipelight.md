@@ -2,7 +2,7 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 
 **Tip:**  
 
-*   If you are here because you want to watch **Netflix** or **Amazon Instant Videos**, you do not need to install Silverlight/Pipelight. It is easier to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/), which includes the Widevine content decryption plugin which satisfies Netflix's DRM requirements. You can also use Firefox 49 (currently you will need to fake a Chrome user agent string).
+*   If you are here because you want to watch **Netflix** or **Amazon Instant Videos**, you do not need to install Silverlight/Pipelight. It is easier to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/), which includes the Widevine content decryption plugin which satisfies Netflix's DRM requirements. You can also use Firefox 49 [with tweaks](/index.php/Firefox_tweaks#Widevine_and_Netflix.2FAmazon_Video "Firefox tweaks").
 *   If you are here because you want to watch **BlinkBox** (UK) you need to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/) and use the [User-Agent Switcher for Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg) extension with a Mac UA string `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36`. Windows UA strings will result in WP209 playback errors due to HDCP.
 
 ## Contents

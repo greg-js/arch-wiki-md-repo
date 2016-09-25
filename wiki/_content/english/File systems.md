@@ -18,7 +18,7 @@ Individual drive partitions can be setup using one of the many different availab
 
 File systems are usually created on a [partition](/index.php/Partition "Partition"), inside logical containers such as [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), or on a regular file (see [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). This section describe the partition case.
 
-**Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless_Btrfs_disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
+**Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
 
 **Warning:** After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
 

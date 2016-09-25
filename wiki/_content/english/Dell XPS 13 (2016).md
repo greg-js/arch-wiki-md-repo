@@ -1,3 +1,5 @@
+**Note:** This page refers to the early 2016 model of XPS 13\. For the late 2016 model see [Dell XPS 13 (4th Gen)](/index.php/Dell_XPS_13_(4th_Gen) "Dell XPS 13 (4th Gen)").
+
 | **Device** | **Status** | **Modules** |
 | Video | Works after configuration | i915 |
 | Wireless | Works after configuration | brcmfmac |

@@ -198,6 +198,13 @@ foo             /home/foo/EncryptedFolder             /home/foo/DecryptedFolder 
 
 ```
 
+Also, if you see the following line, remove `allow_root` from the options. Otherwise, it will be in conflict with `allow_other` defined above.
+
+```
+fuse_default allow_root,nonempty
+
+```
+
 Next, edit `/etc/fuse.conf`: Uncomment:
 
 ```

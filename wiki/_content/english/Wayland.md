@@ -24,6 +24,7 @@
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 LLVM assertion failure](#LLVM_assertion_failure)
     *   [7.2 Weston fails to launch after update to 1.7](#Weston_fails_to_launch_after_update_to_1.7)
+    *   [7.3 Applications using dbus crashes on startup](#Applications_using_dbus_crashes_on_startup)
 *   [8 See also](#See_also)
 
 ## Requirements
@@ -348,6 +349,15 @@ So that you end up with:
 ```
 [core]
 modules=xwayland.so
+
+```
+
+### Applications using dbus crashes on startup
+
+For a temporary solution, use `dbus-launch` to run the application. For example, to launch [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) inside a weston session, this command is sufficient.
+
+```
+ dbus-launch gnome-terminal
 
 ```
 

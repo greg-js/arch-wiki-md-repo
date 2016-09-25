@@ -9,6 +9,7 @@
 | <small>4.1.</small> [Display managers](/index.php/Category:Display_managers_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Display managers (한국어)") <small>(1)</small> |
 | <small>4.2.</small> [Dynamic WMs](/index.php/Category:Dynamic_WMs_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Dynamic WMs (한국어)") <small>(2)</small> |
 | <small>4.3.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Tiling WMs (한국어)") <small>(2)</small> |
+| <small>4.4.</small> [Window managers](/index.php/Category:Window_managers_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Window managers (한국어)") <small>(1)</small> |
 | <small>5.</small> [Development](/index.php/Category:Development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Development (한국어)") <small>(0)</small> |
 | <small>5.1.</small> [Arch development](/index.php/Category:Arch_development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Arch development (한국어)") <small>(0) (또한 에 [아치에 대하여](/index.php/Category:About_Arch_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:About Arch (한국어)"))</small> |
 | <small>5.1.1.</small> [Package development](/index.php/Category:Package_development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Package development (한국어)") <small>(1)</small> |

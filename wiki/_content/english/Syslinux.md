@@ -2,7 +2,10 @@
 
 **Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[1]](http://www.syslinux.org/wiki/index.php/Filesystem) for more information.
 
-**Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading). For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
+**Note:**
+
+*   Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading). For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
+*   In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
 
 ## Contents
 
@@ -204,11 +207,9 @@ If this does not work, you can also try:
 
 **Note:**
 
-*   `$esp` is the mountpoint of the [ESP](/index.php/ESP "ESP") (EFI System Partition) in the below commands.
-
 *   `efi64` denotes x86_64 UEFI systems, for IA32 (32-bit) EFI replace `efi64` with `efi32` in the below commands.
 
-*   For Syslinux, the kernel and initramfs files need to be in the ESP, as Syslinux does not (currently) have the ability to access files outside its own partition (i.e. outside ESP in this case). For this reason, it is recommended to mount ESP at `/boot`.
+*   For Syslinux, the kernel and initramfs files need to be in the [ESP](/index.php/ESP "ESP"), as Syslinux does not (currently) have the ability to access files outside its own partition (i.e. outside ESP in this case). For this reason, it is recommended to mount ESP at `/boot`.
 
 *   The automatic install script `/usr/bin/syslinux-install_update` does not support UEFI install.
 
@@ -226,11 +227,11 @@ If this does not work, you can also try:
 
 *   Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). Then setup Syslinux in the EFI System Partition (ESP) as follows:
 
-*   Copy Syslinux files to ESP (replace `$esp` by the mount point of the ESP, usually `/boot`):
+*   Copy Syslinux files to ESP:
 
 ```
-# mkdir -p $esp/EFI/syslinux
-# cp -r /usr/lib/syslinux/efi64/* $esp/EFI/syslinux/
+# mkdir -p *esp*/EFI/syslinux
+# cp -r /usr/lib/syslinux/efi64/* *esp*/EFI/syslinux/
 
 ```
 
@@ -243,15 +244,15 @@ If this does not work, you can also try:
 
 where `/dev/sdXY` is the partition containing the bootloader.
 
-*   Create or edit `$esp/EFI/syslinux/syslinux.cfg` by following [#Configuration](#Configuration).
+*   Create or edit `*esp*/EFI/syslinux/syslinux.cfg` by following [#Configuration](#Configuration).
 
-**Note:** The config file for UEFI is `$esp/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI Syslinux.
+**Note:** The config file for UEFI is `*esp*/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI Syslinux.
 
-**Note:** When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/efi/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `$esp/efi/syslinux/* -> $esp/efi/boot/*` and `$esp/efi/syslinux/syslinux.efi -> $esp/efi/boot/bootx64.efi`
+**Note:** When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/efi/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `*esp*/EFI/syslinux/* -> *esp*/EFI/BOOT/*` and `*esp*/EFI/syslinux/syslinux.efi -> *esp*/EFI/BOOT/bootx64.efi`
 
 ## Configuration
 
-The Syslinux configuration file, `syslinux.cfg`, should be created in the same directory where you installed Syslinux. In our case, `/boot/syslinux/` for BIOS systems and `$esp/EFI/syslinux/` for UEFI systems.
+The Syslinux configuration file, `syslinux.cfg`, should be created in the same directory where you installed Syslinux. In our case, `/boot/syslinux/` for BIOS systems and `*esp*/EFI/syslinux/` for UEFI systems.
 
 The bootloader will look for either `syslinux.cfg` (preferred) or `extlinux.conf`
 

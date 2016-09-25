@@ -62,7 +62,7 @@
 | <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(64)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(1)</small> |
-| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(49)</small> |
+| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(50)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(49)</small> |
@@ -97,7 +97,7 @@
 | <small>5.9.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small> |
 | <small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(13)</small> |
 | <small>5.11.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
-| <small>5.12.</small> [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop") <small>(9)</small> |
+| <small>5.12.</small> [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop") <small>(10)</small> |
 | <small>5.13.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.14.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(10)</small> |
 | <small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |

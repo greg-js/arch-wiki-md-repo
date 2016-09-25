@@ -84,14 +84,9 @@ DISTCC_HOSTS="192.168.0.2/5 192.168.0.3/3 192.168.0.4/3"
 
 ```
 
-While editing the `/etc/makepkg.conf` file, make sure that it does not have *-march=native* in the *CFLAGS* or *CXXFLAGS* variables. distccd will not distribute work to other machines if march is set to native. The appropriate *-march=* value can be obtained by running the following command:
-
-```
-$ gcc -v -E -x c -march=native -mtune=native - < /dev/null 2>&1 | grep cc1 | perl -pe 's/ -mno-\S+//g; s/^.* - //g;'
-
-```
-
 If users wish to use distcc through SSH, add an "@" symbol in front of the IP address in this section. If key-based auth is not setup on the systems, set the DISTCC_SSH variable to ignore checking for authenticated hosts, i.e. DISTCC_SSH="ssh -i"
+
+**Warning:** Make sure that neither the **CFLAGS** and **CXXFLAGS** have -march=native set or else distccd will not distribute work to other machines! Using the Arch defaults for these variables is recommended.
 
 #### For use without makepkg
 
@@ -215,7 +210,7 @@ A [discussion thread](https://bbs.archlinux.org/viewtopic.php?id=129762) has bee
 
 **Note:** This method works, but is not very elegant requiring duplication of distccd on all nodes AND need to have a 32-bit chroots on all nodes.
 
-Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot command](/index.php/Install_bundled_32-bit_system_in_Arch64#Executing_32-bit_applications_from_a_64-bit_environment "Install bundled 32-bit system in Arch64") invoking makepkg.
+Assuming the user has a [32-bit chroot](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64") setup and configured on **each node** of the distcc cluster, the strategy is to have two separate instances of distccd running on different ports on each node -- one runs in the native x86_64 environment and the other in the x86 chroot on a modified port. Start makepkg via a [schroot command](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") invoking makepkg.
 
 ##### Add port numbers to DISTCC_HOSTS on the i686 chroot
 

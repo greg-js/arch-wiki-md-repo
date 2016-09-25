@@ -86,7 +86,7 @@
 | <small>7.1.2.</small> [图形启动界面](/index.php/Category:Bootsplash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bootsplash (简体中文)") <small>(2) (同时还属于 [美化](/index.php/Category:Eye_candy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Eye candy (简体中文)"))</small> |
 | <small>7.2.</small> [命令行](/index.php/Category:Command_shells_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command shells (简体中文)") <small>(6)</small> |
 | <small>7.3.</small> [系统服务和守护进程](/index.php/Category:Daemons_and_system_services_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Daemons and system services (简体中文)") <small>(17)</small> |
-| <small>7.4.</small> [桌面环境](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)") <small>(18)</small> |
+| <small>7.4.</small> [桌面环境](/index.php/Category:Desktop_environments_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Desktop environments (简体中文)") <small>(20)</small> |
 | <small>7.4.1.</small> [登录管理器](/index.php/Category:Display_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Display managers (简体中文)") <small>(8)</small> |
 | <small>7.4.2.</small> [动态窗口管理器](/index.php/Category:Dynamic_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dynamic WMs (简体中文)") <small>(3)</small> |
 | <small>7.4.3.</small> [KDE](/index.php/Category:KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:KDE (简体中文)") <small>(2)</small> |

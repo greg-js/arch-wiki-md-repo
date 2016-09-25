@@ -73,6 +73,10 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
 
+*   **cylon** — Updates, Maintenance , backups and system checks in a menu driven Bash script.
+
+	[https://github.com/whitelight999/cylon](https://github.com/whitelight999/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
+
 *   **Lostfiles** — Script that identifies files not owned by any package.
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)

@@ -38,8 +38,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.3.5 Block ads](#Block_ads)
 *   [3 Miscellaneous](#Miscellaneous)
     *   [3.1 Enable additional media codecs](#Enable_additional_media_codecs)
-        *   [3.1.1 WebM and Youtube](#WebM_and_Youtube)
-        *   [3.1.2 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
+        *   [3.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
     *   [3.2 Mouse wheel scroll speed](#Mouse_wheel_scroll_speed)
     *   [3.3 Change the order of search engines in the Firefox Search Bar](#Change_the_order_of_search_engines_in_the_Firefox_Search_Bar)
     *   [3.4 How to open a *.doc automatically with Abiword or LibreOffice Writer](#How_to_open_a_.2A.doc_automatically_with_Abiword_or_LibreOffice_Writer)
@@ -126,6 +125,10 @@ The Firefox session store automatically saves the current status (opened urls, c
 This setting can be found on the `about:config` page (try searching for *sessionstore*).
 
 *   browser.sessionstore.interval 300000
+
+If you want to disable this feature, then you will need to change the following setting from true to false.
+
+*   browser.sessionstore.resume_from_crash false
 
 #### Immediate rendering of pages
 
@@ -481,28 +484,18 @@ Before continuing, remember there is a reason some of these variables are not en
 | Key | Value | Description |
 | media.mediasource.enabled | true (default) | Enable [Media Source Extensions](https://en.wikipedia.org/wiki/Media_Source_Extensions "wikipedia:Media Source Extensions") (MSE) |
 | media.mediasource.mp4.enabled | true (default) | Enable [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") MSE |
-| media.mediasource.webm.enabled | true (default) | Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. If you use Youtube see [WebM and Youtube](#WebM_and_Youtube). |
+| media.mediasource.webm.enabled | true (default) | Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. |
 | media.fragmented-mp4.exposed | true | Enable fragmented MP4 segments |
 | media.fragmented-mp4.ffmpeg.enabled | true | Enable fragmented MP4 ffmpeg |
 | media.mediasource.ignore_codecs | true | Enable H.264 MSE, amongst other things (This boolean key has to be created!) |
 
-#### WebM and Youtube
-
-If WebM MSE is enabled when Youtube is set to use the HTML5 player by default, Youtube will use [VP9](https://en.wikipedia.org/wiki/VP9 "wikipedia:VP9") video by default to save bandwidth. However, hardware acceleration is not available for VP9, if you want to use hardware acceleration with youtube video especially if you have less capable hardware consider setting `media.mediasource.webm.enabled` to false to make youtube stream H.264 video for which hardware acceleration is widely available.
-
-To verify if WebM (VP9) is enabled go to [youtube.com/html5](https://youtube.com/html5). If "MSE & WebM VP9" is not supported, youtube will use H264.
-
 #### Widevine and Netflix/Amazon Video
 
-Starting with version 49, Firefox can play Widevine videos, such as you'll find on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
+Starting with version 49, Firefox can play Widevine videos, such as you will find on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
 
-*   **Allow Firefox to install DRM.** The first time you visit a widevine-enabled page, firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
-
-*   **Forge a Chrome user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox it will try to use Silverlight. Use a user agent string from Chrome linux, such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.93 Safari/537.36`. This can be configured using the [User Agent Switcher addon](https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher/?src=search) or with `general.useragent.override` in *about:config*
-
-*   **Run firefox with the sandboxes turned off.** Some part of the widevine cdm tries to violate [the seccomp sandbox](https://wiki.mozilla.org/Security/Sandbox/Seccomp), which will crash playback. Launch firefox with sandbox-disabling environment variables:
-
- `MOZ_DISABLE_GMP_SANDBOX=1 firefox` 
+1.  **Allow Firefox to install DRM.** The first time you visit a widevine-enabled page, firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
+2.  **Forge a Chrome user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox it will try to use Silverlight. Use a user agent string from Chrome for linux, such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.93 Safari/537.36`. This can be configured using the [User Agent Switcher extension](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) or with `general.useragent.override` in *about:config*
+3.  **Run firefox with the sandboxes turned off.** Some part of the widevine cdm tries to violate [the seccomp sandbox](https://wiki.mozilla.org/Security/Sandbox/Seccomp), which will crash playback. Launch firefox with the media plugin sandbox disabled using an environment variable: `MOZ_DISABLE_GMP_SANDBOX=1 firefox`
 
 ### Mouse wheel scroll speed
 
@@ -608,11 +601,18 @@ Now scrolling should flow smoothly.
 
 ### WebRTC exposes LAN IP address
 
-To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.ice.default_address_only` to **true** (or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/)).
+To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
+
+*   `media.peerconnection.ice.default_address_only` to **true** (Firefox < 51)
+*   `media.peerconnection.ice.no_host` to **true** (Firefox >= 51)
+
+or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/).
 
 You can use this [WebRTC test page](http://net.ipcalf.com/) to confirm that your internal IP address is no longer leaked.
 
 ### Run Firefox inside an nspawn container
+
+Note: on newer systems, you must enable local access to the user xserver with 'xhost local:root'
 
 To run as PID 1
 

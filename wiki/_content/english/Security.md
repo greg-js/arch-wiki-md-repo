@@ -211,7 +211,7 @@ If you want to permanently lockout a user after 3 failed login attempts remove t
 
 ### Limit amount of processes
 
-On systems with many, or untrusted users, it is important to limit the number of processes each can run at once, therefore preventing [fork bombs](https://en.wikipedia.org/wiki/Fork_bomb "wikipedia:Fork bomb") and other denial of service attacks. `/etc/security/limits.conf` determines how many processes each user, or group can have open, and is empty (except for useful comments) by default. adding the following lines to this file will limit all users to 100 active processes, unless they use the ulimit command to explicitly raise their maximum to 200 for one session. These values can be changed according to the appropriate number of processes a user should have running, or the hardware of the box you are administrating.
+On systems with many, or untrusted users, it is important to limit the number of processes each can run at once, therefore preventing [fork bombs](https://en.wikipedia.org/wiki/Fork_bomb "wikipedia:Fork bomb") and other denial of service attacks. `/etc/security/limits.conf` determines how many processes each user, or group can have open, and is empty (except for useful comments) by default. adding the following lines to this file will limit all users to 100 active processes, unless they use the `prlimit` command to explicitly raise their maximum to 200 for that session. These values can be changed according to the appropriate number of processes a user should have running, or the hardware of the box you are administrating.
 
 ```
 * soft nproc 100

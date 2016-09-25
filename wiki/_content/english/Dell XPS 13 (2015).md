@@ -1,4 +1,4 @@
-**Note:** This page refers to the early 2015 model of XPS 13\. For the late 2015 model, see [Dell XPS 13 (2016)](/index.php/Dell_XPS_13_(2016) "Dell XPS 13 (2016)").
+**Note:** This page refers to the early 2015 model of XPS 13\. For the late 2015 model, see [Dell XPS 13 (2016)](/index.php/Dell_XPS_13_(2016) "Dell XPS 13 (2016)"), and late 2016 model see [Dell XPS 13 (4th Gen)](/index.php/Dell_XPS_13_(4th_Gen) "Dell XPS 13 (4th Gen)").
 
 | **Device** | **Status** |
 | Video | Working |
@@ -130,6 +130,8 @@ In I2S mode, the built-in microphone is muted by default. To enable it you have 
 *   press `F6` and select the ***broadwell-rt286*** sound card
 *   press `F4` to switch to the *Capture view* and ensure that **ADC0** has the *CAPTURE* label. If it doesn't, toggle over to it with your arrow keys and press the spacebar to turn it on *CAPTURE*
 *   finally, toggle over to the **Mic** item and raise the volume to 100.
+
+**Note:** Switching the **port** (from Main Microphone and Headset Microphone (unplugged)) of the only `Input Devices` tab entry in the `pavucontrol` application, has the same effect of the above instructions.
 
 ### Touchpad
 

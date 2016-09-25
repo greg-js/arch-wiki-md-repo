@@ -617,7 +617,7 @@ $ mv ~/.config/xfce4/ ~/.config/xfce4-bak
 
 ```
 
-그 후에 다시 로그인하면 기본설정으로 복구된 것을 확인할 수 있다. 만약에 로그인 도중 `Unable to load a failsafe session` 메세지가 출력되었다면 [#Session failure](#Session_failure)을 참고한다.
+그 후에 다시 로그인하면 기본설정으로 복구된 것을 확인할 수 있다. 만약에 로그인 도중 `Unable to load a failsafe session` 메세지가 출력되었다면 [#세션 실패](#.EC.84.B8.EC.85.98_.EC.8B.A4.ED.8C.A8)를 참고한다.
 
 ### 세션 실패
 

@@ -127,9 +127,8 @@ audio_output {
 
 # Need this so that mpd still works if icecast is not running
 audio_output {
-    type "alsa"
+    type "null"
     name "fake out"
-    driver "null"
 }
 
 ```

@@ -246,7 +246,7 @@ menuentry "Arch Linux" {
 
 ```
 
-It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Ext3#Assigning a label](/index.php/Ext3#Assigning_a_label "Ext3") as an example of assigning a volume label.
+It is likely that you will need to change `volume` to match either a filesystem's LABEL, a PARTLABEL, or a PARTUUID of the partition where the kernel image resides. See [Persistent block device naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming") for examples of assigning a volume label.
 
 **Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
 

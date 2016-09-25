@@ -18,7 +18,7 @@ Web is the default web browser for [GNOME](https://live.gnome.org/). Web provide
 
 ## Installation
 
-Web can be installed by [installing](/index.php/Install "Install") the [epiphany](https://www.archlinux.org/packages/?name=epiphany) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want to save login passwords, install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
+Web can be installed by [installing](/index.php/Install "Install") the [epiphany](https://www.archlinux.org/packages/?name=epiphany) package. If you want to save login passwords, install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
 
 ## Configuration
 

@@ -235,7 +235,7 @@ After these steps, the framebuffer resolution should be optimized for the GRUB m
 
 ### Load the Virtualbox kernel modules
 
-To load the modules automatically, [enable](/index.php/Enable "Enable") the `vboxservice` service which loads the modules and synchronizes the guest's system time with the host.
+To load the modules automatically, [enable](/index.php/Enable "Enable") `vboxservice.service` which loads the modules and synchronizes the guest's system time with the host.
 
 To load the modules manually, type:
 

@@ -108,7 +108,7 @@ To check which options are currently enabled, run
 
 ```
 
-You will note that the `i915.powersave` option which "enable[s] powersavings, fbc, downclocking, etc." is enabled by default, resulting in per-chip powersaving defaults. It is however possible to configure more aggressive powersaving by using [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules").
+You will note that many options default to -1, resulting in per-chip powersaving defaults. It is however possible to configure more aggressive powersaving by using [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules").
 
 **Warning:** Diverting from the defaults will mark the kernel as [tainted](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fc9740cebc3ab7c65f3c5f6ce0caf3e4969013ca) from Linux 3.18 onwards. This basically implies using other options than the per-chip defaults is considered experimental and not supported by the developers.
 
@@ -116,7 +116,7 @@ The following set of options should be generally safe to enable:
 
  `/etc/modprobe.d/i915.conf` 
 ```
-options i915 enable_rc6=1 enable_fbc=1 lvds_downclock=1 semaphores=1
+options i915 enable_rc6=1 enable_fbc=1 semaphores=1
 
 ```
 
