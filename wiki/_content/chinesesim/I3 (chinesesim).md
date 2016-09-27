@@ -2,127 +2,128 @@
 
 [i3](http://i3wm.org/) 是一套动态[平铺式窗口管理器](https://en.wikipedia.org/wiki/Tiling_window_manager "wikipedia:Tiling window manager")，灵感来自针对开发者与资深用户的 [wmii](/index.php/Wmii "Wmii")。
 
-一棵包含容器的树形数据结构组织在一起就变成了客户端（桌面）。树枝由水平或垂直分割而产生，且容器可以被布局成分页式（Tabbed），或叠放式（Stacked）。当窗口的平铺式效果不太好时，可以改为浮动式窗口，不过会被放到独立于平铺式窗口之外的分层上。
+i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的树形数据结构，和多种的模式，例如 [vim](/index.php/Vim "Vim")。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 通过 xinitrc 运行 i3](#.E9.80.9A.E8.BF.87_xinitrc_.E8.BF.90.E8.A1.8C_i3)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-    *   [3.1 默认键绑定](#.E9.BB.98.E8.AE.A4.E9.94.AE.E7.BB.91.E5.AE.9A)
+    *   [1.1 显示管理器](#.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [1.2 xinitrc](#xinitrc)
+*   [2 使用](#.E4.BD.BF.E7.94.A8)
+*   [3 键盘映射](#.E9.94.AE.E7.9B.98.E6.98.A0.E5.B0.84)
+    *   [3.1 容器](#.E5.AE.B9.E5.99.A8)
     *   [3.2 程序启动器](#.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E5.99.A8)
 *   [4 设置](#.E8.AE.BE.E7.BD.AE)
-    *   [4.1 状态栏](#.E7.8A.B6.E6.80.81.E6.A0.8F)
-        *   [4.1.1 新方案：i3bar](#.E6.96.B0.E6.96.B9.E6.A1.88.EF.BC.9Ai3bar)
-        *   [4.1.2 更多可选方案](#.E6.9B.B4.E5.A4.9A.E5.8F.AF.E9.80.89.E6.96.B9.E6.A1.88)
-        *   [4.1.3 面板可选方案](#.E9.9D.A2.E6.9D.BF.E5.8F.AF.E9.80.89.E6.96.B9.E6.A1.88)
-        *   [4.1.4 Iconic fonts in the status bar](#Iconic_fonts_in_the_status_bar)
-    *   [4.2 在窗口之间快速跳转](#.E5.9C.A8.E7.AA.97.E5.8F.A3.E4.B9.8B.E9.97.B4.E5.BF.AB.E9.80.9F.E8.B7.B3.E8.BD.AC)
-    *   [4.3 i3status](#i3status)
-        *   [4.3.1 添加温度状态](#.E6.B7.BB.E5.8A.A0.E6.B8.A9.E5.BA.A6.E7.8A.B6.E6.80.81)
-    *   [4.4 修改工作区的名称](#.E4.BF.AE.E6.94.B9.E5.B7.A5.E4.BD.9C.E5.8C.BA.E7.9A.84.E5.90.8D.E7.A7.B0)
-    *   [4.5 让程序启动时，只出现在指定工作区](#.E8.AE.A9.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E6.97.B6.EF.BC.8C.E5.8F.AA.E5.87.BA.E7.8E.B0.E5.9C.A8.E6.8C.87.E5.AE.9A.E5.B7.A5.E4.BD.9C.E5.8C.BA)
-    *   [4.6 标签式或层叠式的网络浏览器](#.E6.A0.87.E7.AD.BE.E5.BC.8F.E6.88.96.E5.B1.82.E5.8F.A0.E5.BC.8F.E7.9A.84.E7.BD.91.E7.BB.9C.E6.B5.8F.E8.A7.88.E5.99.A8)
-    *   [4.7 虚拟终端](#.E8.99.9A.E6.8B.9F.E7.BB.88.E7.AB.AF)
-    *   [4.8 便笺本](#.E4.BE.BF.E7.AC.BA.E6.9C.AC)
-    *   [4.9 主题与配色方案](#.E4.B8.BB.E9.A2.98.E4.B8.8E.E9.85.8D.E8.89.B2.E6.96.B9.E6.A1.88)
-    *   [4.10 关机，重启和锁屏](#.E5.85.B3.E6.9C.BA.EF.BC.8C.E9.87.8D.E5.90.AF.E5.92.8C.E9.94.81.E5.B1.8F)
-    *   [4.11 屏幕保护器及电源管理](#.E5.B1.8F.E5.B9.95.E4.BF.9D.E6.8A.A4.E5.99.A8.E5.8F.8A.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
+    *   [4.1 配置助手和可选键盘布局](#.E9.85.8D.E7.BD.AE.E5.8A.A9.E6.89.8B.E5.92.8C.E5.8F.AF.E9.80.89.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
+    *   [4.2 颜色主题](#.E9.A2.9C.E8.89.B2.E4.B8.BB.E9.A2.98)
+    *   [4.3 i3bar](#i3bar)
+    *   [4.4 i3bar可选方案 =](#i3bar.E5.8F.AF.E9.80.89.E6.96.B9.E6.A1.88_.3D)
+    *   [4.5 i3status](#i3status)
+        *   [4.5.1 i3status可选方案](#i3status.E5.8F.AF.E9.80.89.E6.96.B9.E6.A1.88)
+        *   [4.5.2 i3status 包装器](#i3status_.E5.8C.85.E8.A3.85.E5.99.A8)
+        *   [4.5.3 状态栏中的图标字体](#.E7.8A.B6.E6.80.81.E6.A0.8F.E4.B8.AD.E7.9A.84.E5.9B.BE.E6.A0.87.E5.AD.97.E4.BD.93)
+    *   [4.6 在窗口之间快速跳转](#.E5.9C.A8.E7.AA.97.E5.8F.A3.E4.B9.8B.E9.97.B4.E5.BF.AB.E9.80.9F.E8.B7.B3.E8.BD.AC)
+    *   [4.7 i3status](#i3status_2)
+        *   [4.7.1 添加温度状态](#.E6.B7.BB.E5.8A.A0.E6.B8.A9.E5.BA.A6.E7.8A.B6.E6.80.81)
+    *   [4.8 修改工作区的名称](#.E4.BF.AE.E6.94.B9.E5.B7.A5.E4.BD.9C.E5.8C.BA.E7.9A.84.E5.90.8D.E7.A7.B0)
+    *   [4.9 让程序启动时，只出现在指定工作区](#.E8.AE.A9.E7.A8.8B.E5.BA.8F.E5.90.AF.E5.8A.A8.E6.97.B6.EF.BC.8C.E5.8F.AA.E5.87.BA.E7.8E.B0.E5.9C.A8.E6.8C.87.E5.AE.9A.E5.B7.A5.E4.BD.9C.E5.8C.BA)
+    *   [4.10 标签式或层叠式的网络浏览器](#.E6.A0.87.E7.AD.BE.E5.BC.8F.E6.88.96.E5.B1.82.E5.8F.A0.E5.BC.8F.E7.9A.84.E7.BD.91.E7.BB.9C.E6.B5.8F.E8.A7.88.E5.99.A8)
+    *   [4.11 虚拟终端](#.E8.99.9A.E6.8B.9F.E7.BB.88.E7.AB.AF)
+    *   [4.12 便笺本](#.E4.BE.BF.E7.AC.BA.E6.9C.AC)
+    *   [4.13 主题与配色方案](#.E4.B8.BB.E9.A2.98.E4.B8.8E.E9.85.8D.E8.89.B2.E6.96.B9.E6.A1.88)
+    *   [4.14 关机，重启和锁屏](#.E5.85.B3.E6.9C.BA.EF.BC.8C.E9.87.8D.E5.90.AF.E5.92.8C.E9.94.81.E5.B1.8F)
+    *   [4.15 屏幕保护器及电源管理](#.E5.B1.8F.E5.B9.95.E4.BF.9D.E6.8A.A4.E5.99.A8.E5.8F.8A.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
 *   [5 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
     *   [5.1 鼠标指针总处于忙碌状态](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E6.80.BB.E5.A4.84.E4.BA.8E.E5.BF.99.E7.A2.8C.E7.8A.B6.E6.80.81)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-请通过 [官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库") 安装 [i3](https://www.archlinux.org/groups/x86_64/i3/) [软件包](/index.php/Pacman#Installing_package_groups "Pacman")，其中包含了 [i3lock](https://www.archlinux.org/packages/?name=i3lock), [i3status](https://www.archlinux.org/packages/?name=i3status) 和 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 程序包。`i3-wm` 是一套独立的桌面管理器，`i3status` 则是用于通过 [stdout](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29 "wikipedia:Standard streams") 向 i3bar 写入一条状态行，`i3lock` 则专于锁屏。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [i3](https://www.archlinux.org/groups/x86_64/i3/) [软件包](/index.php/Pacman#Installing_package_groups "Pacman")，其中包含了 [i3lock](https://www.archlinux.org/packages/?name=i3lock), [i3status](https://www.archlinux.org/packages/?name=i3status) 和 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 程序包。`i3-wm` 是一套独立的桌面管理器，`i3status` 则是用于通过 [stdout](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29 "wikipedia:Standard streams") 向 i3bar 写入一条状态行，`i3lock` 则专于锁屏。
 
-[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中还提供了不少附加程序包。[i3-git](https://aur.archlinux.org/packages/i3-git/) 面向开发者。
+[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 中还提供了不少附加程序包。例子可参考[#补丁](#.E8.A1.A5.E4.B8.81)章节。
 
-[i3-gnome](https://aur.archlinux.org/packages/i3-gnome/) 则可安装 [GNOME](/index.php/GNOME "GNOME") 以及以 [i3](https://www.archlinux.org/groups/x86_64/i3/) 作为窗口管理器的Ｘ会话。
+### 显示管理器
 
-## 通过 xinitrc 运行 i3
+[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 软件包包括了作为[Xsession](/index.php/Xsession "Xsession")的`i3.desktop`,用于启动窗口管理器。 `i3-with-shmlog.desktop` 启用了日志（对于调试很有用）。[i3-nome](https://aur.archlinux.org/packages/i3-nome/) 软件包在 [GNOME](/index.php/GNOME "GNOME") 中集成了 `i3-wm`。
 
-请编辑`~/.xinitrc`，首先添加：
+### xinitrc
+
+编辑 [Xinitrc](/index.php/Xinitrc "Xinitrc") ，添加：
 
 ```
 exec i3
 
 ```
 
-现在您可以直接在 tty 上执行 `startx` 启动 i3 了。
-
-如果您想记录 i3 所有的输出日志，可以往 `~/.xinitrc` 中添加以下行，在排错时会很有用：
+如果您想记录 i3 所有的输日志，则添加：
 
 ```
-exec i3 -V >> ~/.i3/i3log 2>&1
-
-```
-
-如果您在用 Nvidia 闭源驱动 **<302.17**，您得在 `~/.xinitrc` 中添加 `--force-xinerama` 标志。[i3wm.org](http://i3wm.org/docs/multi-monitor.html) 上对此作出了详细的解释。
-
-```
-exec i3 --force-xinerama
-
-```
-
-如果您在键盘映射上遇到了麻烦，请用 [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev), 或是阅读 [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
-
-```
-$ xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
+exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 
 ```
 
 ## 使用
 
-在此章节下，请在 [official documentation](http://i3wm.org/docs) 索取更多细节 [i3 User’s Guide](http://i3wm.org/docs/userguide.html).
+可在 [official documentation](http://i3wm.org/docs) 获取更多细节 [i3 User’s Guide](http://i3wm.org/docs/userguide.html).
 
-在 i3 里，一切命令均以「修饰键」开头，即 `$mod`. 默认上来说是 Alt 键 (Mod1),但开始键 (Mod4) 也更为广泛接受。
+## 键盘映射
 
-### 默认键绑定
+在 i3 里，一切命令均以「修饰键」开头，即 `$mod`. 默认上来说是 Alt 键 `alt`(Mod1),但开始键 `Super`(Mod4) 也更为广泛接受。Super 键往往带有 Windows 图标，在苹果键盘上则是 Command 键。
 
-(谢谢 Funtoo Linux 团队作出了这么出色的维基 [http://www.funtoo.org/I3_Tiling_Window_Manager](http://www.funtoo.org/I3_Tiling_Window_Manager))
+见 [i3 偏好](http://i3wm.org/docs/refcard.html) 和 [Using i3](http://i3wm.org/docs/userguide.html#_using_i3) 以获取默认映射表。见 [Keyboard 绑定](http://i3wm.org/docs/userguide.html#keybindings) 以获取添加新快捷键的说明。
 
-| Key | Command |
-| $mod + Enter | 启动虚拟终端 |
-| $mod + A | 焦点转义到父窗口上 |
-| $mod + S | 堆叠布局 |
-| $mod + W | 标签布局 |
-| $mod + E | 默认布局 |
-| $mod + SpaceBar | 焦点在平铺式／浮动式转换 |
-| $mod + D | 启动 dmenu |
-| $mod + H | 水平分割窗口 |
-| $mod + V | 垂直分割窗口 |
-| $mod + J | 焦点往左窗口移 |
-| $mod + K | 焦点往下窗口移 |
-| $mod + L | 焦点往上窗口移 |
-| $mod + ; | 焦点往右窗口移 |
-| $mod + Shift + Q | 杀死当前窗口的进程 |
-| $mod + Shift + E | 退出 i3 |
-| $mod + Shift + C | 当场重新加载 i3config, 无需重启 |
-| $mod + Shift + R | 重启 i3 （还重新加载了 i3config, 又没有退出过程） |
-| $mod + Shift + J | 窗口左移 |
-| $mod + Shift + K | 窗口下移 |
-| $mod + Shift + L | 窗口上移 |
-| $mod + Shift + : | 窗口右移 |
-| $mod + Shift + SpaceBar | 窗口在平铺式／浮动式转换 |
+非Qwerty键盘布局的用户可能会希望跳过 [以下](#.E9.85.8D.E7.BD.AE.E5.8A.A9.E6.89.8B.E5.92.8C.E5.8F.AF.E9.80.89.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)所说的“配置助手”。
+
+### 容器
+
+i3 以树形结构的方式管理窗口，容器是最小的单位。这种结构可以被水平或竖式分割。容器默认是平铺的，但可以设置为标签式或栈式布局，同样也可以设置为浮动式（适用于对话窗口）。浮动的窗口总是显示在顶部。
 
 ### 程序启动器
 
-i3 目前用 [dmenu](/index.php/Dmenu "Dmenu") 作为首席程序启动器，键绑定默认为 `$Mod+d`.
+i3 使用 [dmenu](/index.php/Dmenu "Dmenu") 作为首席程序启动器，键绑定默认为 `$Mod+d`.
 
-默认上， i3-dmenu-desktop 被用来当 dmenu 的包装器。前者通过现成的所有程序 .desktop 文件，生成名单。 不过有 [j4-dmenu-desktop-git](https://aur.archlinux.org/packages/j4-dmenu-desktop-git/) 重写了此包装器，但更快得许多，将来有望取代 i3-dmenu-desktop.
+[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 包含了 i3-dmenu-desktop ——— 一个 "dmenu" 的[Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") 包装器，它通过现成的所有程序 .desktop 文件，生成名单。 不或者 [j4-dmenu-desktop-git](https://aur.archlinux.org/packages/j4-dmenu-desktop-git/) 软件包也是一个不错的选择。
 
 ## 设置
 
-### 状态栏
+见 [Configuring i3](http://i3wm.org/docs/userguide.html#configuring) 以获取更多细节。此文章余下部分假设 i3 的配置文件位于 `~/.config` 目录。
 
-在 i3 的版本 v4.0 中，原本内置的状态栏 i3-wsbar 已被抛弃，改换为 i3bar.
+### 配置助手和可选键盘布局
 
-#### 新方案：i3bar
+当 i3 首次启动时，它会启动配置助手 *i3-config-wizard*。此工具会通过重写位于 `/etc/i3/config.keycodes` 的模板配置文件来创建 `~/.config/i3/config`。他会对默认模板造成两次修改。
 
-不像需要额外安装 dzen2 的 i3-wsbar, i3bar 除了 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 之外就没有其他依赖。它还可以接收由 [conky](/index.php/Conky "Conky") 或 i3status 输出的信息。示例（版本为4.1）：
+1.  It asks the user to choose a default modifier key, which it adds to the template as a single line, like `set $mod Mod1`; and
+2.  it replaces all *bindcode* lines with *bindsym* lines corresponding to the user's current keyboard layout.
 
- `~/.i3/config` 
+Step 2 is designed to ensure that the four navigation shortcuts, `j`, `k`, `l` and "semicolon" on a Qwerty keyboard, will be mapped to keysyms which have the same location, e.g. `h`, `t`, `n`, `s` on a [Dvorak](/index.php/Dvorak "Dvorak") keyboard. The side-effect of this magic is that up to fifteen other keysyms may be remapped in ways which break the mnemonics - so that, for a Dvorak user, "restart" is bound to `$mod1+p` instead of `$mod1+r`, "split horizontally" is bound to `$mod1+d` instead of `$mod1+h`, and so on.
+
+Therefore, users of alternate keyboard layouts who want straightforward key bindings, which match the bindings given in tutorials, may prefer to circumvent the "config wizard". This can be done by just copying `/etc/i3/config` into `~/.config/i3/config` (or `~/.i3/config`), and editing that file.
+
+Note that a keycode-based configuration is also possible, e.g. for users who often switch between keyboard layouts, but want the i3 bindings to stay the same.
+
+### 颜色主题
+
+The configuration file allows for customization of window decoration colors, but the syntax makes it impractical to create or share themes. There are several projects which make this easier and include a variety of user-contributed themes.
+
+*   **i3-style** — Modifies your config in place from a theme stored in a JSON object, designed for frequently tweaking or changing a colorscheme
+
+	[https://github.com/acrisci/i3-style](https://github.com/acrisci/i3-style) || [nodejs-i3-style](https://aur.archlinux.org/packages/nodejs-i3-style/)
+
+```
+	+	
+
+```
+
+*   **j4-make-config** — Merge your config with a collection of themes or personal config parts, for example host-specific configuration, allowing quick changing of the theme and flexible, dynamic customization of the configuration
+
+	[https://github.com/okraits/j4-make-config](https://github.com/okraits/j4-make-config) || [j4-make-config-git](https://aur.archlinux.org/packages/j4-make-config-git/)
+
+### i3bar
+
+除了显示工作区信息外，i3bar 也可以作为 i3status 的输入，或是替代品。下一章节会对此进行详细描述。示例：
+
+ `~/.config/i3/config` 
 ```
 bar {
     output            LVDS1
@@ -144,57 +145,121 @@ bar {
         urgent_workspace   #ffffff #900000
     }
 }
+```
+
+更多细节，见[Configuring i3bar](http://i3wm.org/docs/userguide.html#_configuring_i3bar) 。
+
+### i3bar可选方案 =
+
+一些用户可能更偏好于类似于常规 [桌面环境](/index.php/Desktop_environment "Desktop environment") 提供的面板。这可以通过在 i3 启动时运行面板程序达成。
+
+例如 [XFCE 面板](/index.php/Xfce#Panel "Xfce")，在 `~/.config/i3/config` 的任何处添加以为行：
+
+```
+exec --no-startup-id xfce4-panel --disable-wm-check
 
 ```
 
-更多细节，请在官方用户指南查询 [Configuring i3bar](http://i3wm.org/docs/userguide.html#_configuring_i3bar) 条目。
+i3bar 可以通过注释掉 `~/.config/i3/config` 中的 `bar{ }` 段落禁用，或者定义一个按键以切换 i3bar 显示状态：
 
-#### 更多可选方案
-
-*   [i3blocks](https://github.com/vivien/i3blocks) - Define the status line blocks with shell commands. It handles clicks, signals and different time intervals, in respect to the [i3bar protocol](http://i3wm.org/docs/i3bar-protocol.html). (AUR: [i3blocks](https://aur.archlinux.org/packages/i3blocks/))
-*   [i3pystatus](https://github.com/enkore/i3pystatus) - i3status 可代替扩展，有更多的模块以及更灵活的设置。且为多线程，可快速锁屏。(AUR: [i3pystatus-git](https://aur.archlinux.org/packages/i3pystatus-git/))
-*   [i3situation](https://github.com/HarveyHunt/i3situation) - 一个完全用 Python 3 编写而成的替代方案，集成众多插件从而有丰富功能。
-*   [py3status](https://github.com/ultrabug/py3status) – 用 Python 编写成的 i3status 扩展
-*   [conky](/index.php/Conky "Conky") – 经常被用来配合 [dzen](/index.php/Dzen "Dzen"), 以造出高度可定制的状态栏。
-*   [j4status](http://j4status.j4tools.org/) - j4status 提供了用了很多若干插件的状态栏，以返回来自您计算机的信息。j4status 从属 [j4tools](http://www.j4tools.org/), 后者是配合 i3 使用的工具。
-*   [h2status](/index.php/H2status "H2status") - trivial bash wrapper to i3status that nevertheless allows to conveniently write custom json entries, handle click events and asynchronously update the status bar.
-
-#### 面板可选方案
-
-也许有不少用户更偏好 [Desktop Environments](/index.php/Desktop_environment "Desktop environment") 所提供的面板方案。这可以在 i3 里通过启动特定的面板程序而实现。
-
-至于 [XFCE panel](/index.php/Xfce#Panel "Xfce"), 直接添加以下进 `~/.i3/config` 即可：
-
+ `~/.config/i3/config` 
 ```
-exec --no-startup-id xfce4-panel
+# bar toggle, hide or show 	
+bindsym $mod+m bar mode toggle
 
 ```
 
-**注意:** 面板上，有些针对 [Desktop environment](/index.php/Desktop_environment "Desktop environment") 而产生的特殊功能（比如，管理工作区的窗口部件）不会正常工作，尽管不会对 i3 本身造成任何影响。
+### i3status
 
-想禁用 i3bar, 直接在 `~/.i3/config` 注释掉 `bar{ }` 即可。
+Copy over the default configuration files to the home directory:
 
-#### Iconic fonts in the status bar
+```
+$ cp /etc/i3status.conf ~/.config/i3status/config
 
-i3bar 有个补丁负责实现对图标的支持，不过我们也可以在状态栏上直接用图像字符。AUR 上的图像字符有如下：
+```
 
-*   [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/) 上的表格列出了图形字符以及对应的 Unicode 编码 [[1]](http://fortawesome.github.io/Font-Awesome/cheatsheet/).
-*   [ttf-font-icons](https://aur.archlinux.org/packages/ttf-font-icons/) 也提供了全面的图像字符，包括彼此毫无重叠的 Awesome 和 Ionicons, 甚至也很好地避免了 Awesome 与 DejaVu Sans 的微秒重叠。总之它提供了在您的状态栏上的极佳图像字符解决方案，且展示表格如下： [[2]](https://www.dropbox.com/s/9iysh2i0gadi4ic/icons.pdf).
+Not all plugins are defined in the default configuration and some configuration values may be invalid for your system, so the need to be updated accordingly. See `man i3status` for details.
 
-接着您可以在 `~/.i3/config` 上这样地调用它们，即追加一种字体属性的后缀:
+#### i3status可选方案
 
+*   **[conky](/index.php/Conky "Conky")** — 高度可扩展系统监视器。配合 i3 的使用方法见 [this tutorial](http://i3wm.org/docs/user-contributed/conky-i3bar.html)
+
+	[https://github.com/brndnmtthws/conky](https://github.com/brndnmtthws/conky) || [conky](https://www.archlinux.org/packages/?name=conky)
+
+*   **[i3blocks](/index.php/I3blocks "I3blocks")** — 通过 shell 脚本扩展。 它可以处理点击事件，中断，和定义或更在块的基础上更新间隔。
+
+	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://aur.archlinux.org/packages/i3blocks/)
+
+*   {{App|i3pystatus|默认带有许多插件和选项的可扩展 Python 3 状态栏 |[https://github.com/enkore/i3pystatus](https://github.com/enkore/i3pystatus) i3pystatus|[i3pystatus-git](https://aur.archlinux.org/packages/i3pystatus-git/)}
+
+```
+	+	
+
+```
+
+*   **i3situation** — 另一个 Python 3 状态栏生成器。
+
+	[https://github.com/HarveyHunt/i3situation](https://github.com/HarveyHunt/i3situation) || [i3situation-git](https://aur.archlinux.org/packages/i3situation-git/)
+
+```
+	+	
+
+```
+
+*   **j4status** — 提供了状态栏，可以通过插件扩展，且是用 C 写成的。额外的插件由[j4status-plugins-git](https://aur.archlinux.org/packages/j4status-plugins-git/).
+
+	[http://j4status.j4tools.org/](http://j4status.j4tools.org/) || [j4status-git](https://aur.archlinux.org/packages/j4status-git/)提供
+
+```
+	+	
+
+```
+
+*   **goi3bar** — Go 写的 i3status 替代品。配置文件同时还有各种插件，并发选项和丰富的插件支持。
+
+	[https://github.com/denbeigh2000/goi3bar/](https://github.com/denbeigh2000/goi3bar/) || [goi3bar-git](https://aur.archlinux.org/packages/goi3bar-git/)
+
+#### i3status 包装器
+
+*   **i3cat** — A [go](/index.php/Go "Go") based wrapper which can concatenate inputs from multiple external sources. It can handle click events and forwarding user specified signals to its subprocesses.
+
+	[http://vincent-petithory.github.io/i3cat/](http://vincent-petithory.github.io/i3cat/) || [i3cat-git](https://aur.archlinux.org/packages/i3cat-git/)
+
+*   **py3status** — An extensible i3status wrapper written in Python.
+
+	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://aur.archlinux.org/packages/py3status/)
+
+#### 状态栏中的图标字体
+
+'i3bar' 有个[补丁](#.E8.A1.A5.E4.B8.81)负责实现对 XBM 图标的支持，不过我们也可以使用图标字体。
+
+*   **ttf-font-awesome** — 可以通过 CSS定制的可缩放矩阵字体。[[1]](http://fortawesome.github.io/Font-Awesome/cheatsheet/)显示了每个图像的 Unicode 值。
+
+	[http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/) || [ttf-font-awesome](https://aur.archlinux.org/packages/ttf-font-awesome/)
+
+*   **ttf-font-icons** — 也提供了全面的图像字符，包括彼此毫无重叠的 Awesome 和 Ionicons, 也很好地避免了 Awesome 与 DejaVu Sans 的微秒重叠。
+
+	[http://kageurufu.net/icons.pdf](http://kageurufu.net/icons.pdf) || [ttf-font-icons](https://aur.archlinux.org/packages/ttf-font-icons/).
+
+要结合这些字体，在配置文件中一种字体属性的后缀用`,`分割字体。示例：
+
+ `~/.config/i3/config` 
 ```
 bar {
-  ...
-  font pango:DejaVu Sans Mono, **Icons** 8
-  ...
-}
-
+   ...
+   font pango:DejaVu Sans Mono, **Icons** 8
+   ...
+ }
 ```
 
-注意，您首先要用逗号分割字体与 Icons, 并在尾部加上字体大小。不用对每个字体都一一定义大小，哪怕字体大小全一样，也别指望用多字体也能有同样效果。总之正确的语法就应该像上面那样子。
+In accordance with [pango syntax](https://developer.gnome.org/pango/stable/pango-Fonts.html#pango-font-description-from-string), font size is specified only once, at the end of the comma-separated list of font families. Setting a size for each font would cause all but the last font to be ignored.
 
-最后，您终于可以在 `~/.i3status.conf` 上输进您想要的图像字符了。方法是找出所期望图像字符对应的 Unicode 编码。比如您在 Vim 里，就可以输入 <C-v>uXXXX, XXXX 就是图像字符的 Unicode 十六进制编码了。
+Add icons to the format strings in `~/.config/i3status/config` using the unicode numbers given in the cheatsheets linked above. The input method will vary between text editors. For instance, to insert the "heart" icon (unicode number f004):
+
+*   in various gui text editors (e.g. [gedit](/index.php/Gedit "Gedit"), Leafpad) and terminals (e.g. GNOME Terminal, xfce4-terminal): `ctrl+shift+u`, `f004`, `Enter`
+*   in [Emacs](/index.php/Emacs "Emacs"): `ctrl+x`, `8`, `Enter`, `f004`, `Enter`
+*   in [Vim](/index.php/Vim "Vim") (while in insert mode): `Ctrl+v`, `uf004`
+*   in [urxvt](/index.php/Urxvt "Urxvt"): while holding `Ctrl+Shift`, type `f004`
 
 ### 在窗口之间快速跳转
 

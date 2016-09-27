@@ -5,13 +5,14 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 ## Contents
 
 *   [1 Headset via Bluez5/PulseAudio](#Headset_via_Bluez5.2FPulseAudio)
-    *   [1.1 Troubleshooting](#Troubleshooting)
-        *   [1.1.1 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
-        *   [1.1.2 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
-        *   [1.1.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
-        *   [1.1.4 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
-        *   [1.1.5 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
-        *   [1.1.6 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
+    *   [1.1 Setting up auto connection](#Setting_up_auto_connection)
+    *   [1.2 Troubleshooting](#Troubleshooting)
+        *   [1.2.1 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
+        *   [1.2.2 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
+        *   [1.2.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
+        *   [1.2.4 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
+        *   [1.2.5 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+        *   [1.2.6 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -98,6 +99,38 @@ You can now disable scanning again and exit the program:
 
 ```
 
+#### Setting up auto connection
+
+To make your headset auto connect you need to enable PulseAudio's switch-on-connect module. Do this by adding the following lines to your the following to your `/etc/pulse/default.pa`:
+
+ `/etc/pulse/default.pa` 
+```
+# automatically switch to newly-connected devices
+load-module module-switch-on-connect
+
+```
+
+Now make *bluetoothctl* trust your Bluetooth headset by running *trust 00:1D:43:6D:03:26* inside the *bluetoothctl* console to prevent errors similar to:
+
+```
+bluetoothd[487]: Authentication attempt without agent
+bluetoothd[487]: Access denied: org.bluez.Error.Rejected
+
+```
+
+```
+[bluetooth]# trust 00:1D:43:6D:03:26
+
+```
+
+By default, your Bluetooth adapter will not power on after a reboot. To make it power on after a reboot, add a udev rule:
+
+ `/etc/udev/rules.d/10-local.rules` 
+```
+# Set bluetooth power up
+ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
+```
+
 ### Troubleshooting
 
 Many users report frustration with getting A2DP/Bluetooth Headsets to work.
@@ -163,36 +196,6 @@ module-bluetooth-policy
 module-bluez5-device
 module-bluez5-discover
 
-```
-
-To have your headset auto connect you need to enable PulseAudio's switch-on-connect module. Add the following:
-
- `/etc/pulse/default.pa` 
-```
-# automatically switch to newly-connected devices
-load-module module-switch-on-connect
-
-```
-
-You then need to tell *bluetoothctl* to trust your Bluetooth headset, or you will see errors like this:
-
-```
-bluetoothd[487]: Authentication attempt without agent
-bluetoothd[487]: Access denied: org.bluez.Error.Rejected
-
-```
-
-```
-[bluetooth]# trust 00:1D:43:6D:03:26
-
-```
-
-After a reboot, your Bluetooth adapter will not power on by default. You need to add a udev rule to power it on:
-
- `/etc/udev/rules.d/10-local.rules` 
-```
-# Set bluetooth power up
-ACTION=="add", SUBSYSTEM=="bluetooth", KERNEL=="hci[0-9]*", RUN+="/usr/bin/hciconfig %k up"
 ```
 
 #### Connecting works, but I cannot play sound

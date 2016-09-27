@@ -155,7 +155,7 @@ However, discerning between FakeRAID and true hardware RAID can be more difficul
 
 ## Installation
 
-Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [official repositories](/index.php/Official_repositories "Official repositories"). *mdadm* is used for administering pure software RAID using plain block devices: the underlying hardware does not provides any RAID logic, just a supply of disks. *mdadm* will work with any collection of block devices. Even if unusual. For example, one can thus make a RAID array from a collection of thumb drives.
+Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [official repositories](/index.php/Official_repositories "Official repositories"). *mdadm* is used for administering pure software RAID using plain block devices: the underlying hardware does not provide any RAID logic, just a supply of disks. *mdadm* will work with any collection of block devices. Even if unusual. For example, one can thus make a RAID array from a collection of thumb drives.
 
 ### Prepare the Devices
 

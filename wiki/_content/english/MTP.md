@@ -37,6 +37,8 @@ These packages to choose from all implement a [Wikipedia:Filesystem in Userspace
 
 All of them aim at better functionality and performance over `libmtp`. Since there are a lot of different USB devices, you might want to research first which one looks most suitable for yours.
 
+**Warning:** `libmtp` does not handle newer Android devices well - hanging transfers and problems with remote file system browsing are very common, poor performance is expected with most devices. Furthermore, if you have a damaged USB cable, programs utilizing libmtp may crash or hang indefinitely until you disconnect the device. It is recommended to connect your device with the USB Mass Storage (if available), or using [ADB](/index.php/ADB "ADB") (for example [adbfs-rootless-git](https://aur.archlinux.org/packages/adbfs-rootless-git/)) to transfer files, which performs better on most devices and supports additional Android-specific features (like installing APKs, managing packages on the device, backing up data or accessing the device's shell).
+
 **Tip:** It is recommended to reboot your computer after installing MTP related packages.
 
 ### Integration with file managers

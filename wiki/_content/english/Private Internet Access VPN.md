@@ -4,11 +4,12 @@ PIA is a subscription based service provided from [PIA](https://www.privateinter
 
 *   [1 Requirements](#Requirements)
 *   [2 Installation](#Installation)
+    *   [2.1 After Installation](#After_Installation)
 *   [3 Usage](#Usage)
     *   [3.1 Enabling auto-login](#Enabling_auto-login)
     *   [3.2 Manually Connecting to VPN](#Manually_Connecting_to_VPN)
     *   [3.3 Automatically connect to VPN](#Automatically_connect_to_VPN)
-    *   [3.4 WIP: Advanced Options](#WIP:_Advanced_Options)
+    *   [3.4 Advanced Options](#Advanced_Options)
 *   [4 Example Configuration](#Example_Configuration)
 *   [5 See also](#See_also)
 
@@ -25,6 +26,10 @@ PIA supports nearly any operating system and solution any user would need. This 
 The package downloads the [OPENVPN CONFIGURATION FILES (DEFAULT)](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
 
 Configuration for the package is stored in `/etc/private-internet-access`
+
+### After Installation
+
+If there are any issues with connectivity and you are running [connman](https://www.archlinux.org/packages/?name=connman), please [restart](/index.php/Restart "Restart") `connman-vpn.service`.
 
 ## Usage
 
@@ -74,7 +79,7 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 
 *   For [openvpn](https://www.archlinux.org/packages/?name=openvpn) you can look here: [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
 
-### WIP: Advanced Options
+### Advanced Options
 
 *   Create `/etc/private-internet-access/pia.conf`
 *   For the `[pia]` section:

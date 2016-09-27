@@ -253,7 +253,7 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 
 ### Using an Experimental GUI
 
-If you want a graphical user interface to manage *netctl* and your connections and you are not afraid of highly experimental unofficial packages you can install [netgui](https://aur.archlinux.org/packages/netgui/) from [AUR](/index.php/AUR "AUR"). Note, however, that *netgui* is still in beta status and you should be familiar with the general *netctl* syntax to debug possible issues. Another GUI alternative is [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/) which provides a Qt-based graphical interface, DBus daemon and KDE widget. A third alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/), which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
+If you want a graphical user interface to manage *netctl* and your connections and you are not afraid of highly experimental unofficial packages, there are some options available. [netctl-gui](https://aur.archlinux.org/packages/netctl-gui/) provides a Qt-based graphical interface, DBus daemon and KDE widget. An alternative is [netmenu](https://aur.archlinux.org/packages/netmenu/), which uses [dmenu](https://www.archlinux.org/packages/?name=dmenu) as its graphical interface.
 
 ### Eduroam
 

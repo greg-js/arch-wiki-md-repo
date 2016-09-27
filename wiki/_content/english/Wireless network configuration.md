@@ -54,6 +54,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [4.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
         *   [4.4.2 iwlegacy](#iwlegacy)
         *   [4.4.3 iwlwifi](#iwlwifi)
+            *   [4.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
         *   [4.4.4 Disabling LED blink](#Disabling_LED_blink)
     *   [4.5 Broadcom](#Broadcom)
     *   [4.6 Other drivers/devices](#Other_drivers.2Fdevices)
@@ -853,6 +854,12 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 **Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[6]](https://bbs.archlinux.org/viewtopic.php?id=190757)
 
+##### Bluetooth coexistence
+
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[7]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+
+ `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
+
 #### Disabling LED blink
 
 **Note:** This works with the `iwlegacy` and `iwlwifi` drivers.
@@ -908,7 +915,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[7]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[8]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

@@ -430,6 +430,63 @@ Certain setups require specific configuration tweaks in order to work properly. 
 
 Due to how both pci-stub and vfio-pci use your vendor and device id pair to identify which device they need to bind to at boot, if you have two GPUs sharing such an ID pair you won't be able to get your passthough driver to bind with just one of them. This sort of setup makes it necessary to use a script, so that whichever driver you're using is instead assigned by pci bus address using the `driver_override` mechanism.
 
+Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Create the script "/sbin/vfio-pci-override.sh":
+
+```
+   #!/bin/sh
+
+   for i in $(find /sys/devices/pci* -name boot_vga); do
+           if [ $(cat $i) -eq 0 ]; then
+                   GPU=$(dirname $i)
+                   AUDIO=$(echo $GPU | sed -e "s/0$/1/")
+                   echo "vfio-pci" > $GPU/driver_override
+                   if [ -d $AUDIO ]; then
+                           echo "vfio-pci" > $AUDIO/driver_override
+                   fi
+           fi
+   done
+
+   modprobe -i vfio-pci
+
+```
+
+Create /etc/modprobe.d/vfio.conf with the following:
+
+```
+   install vfio-pci /sbin/vfio-pci-override.sh
+
+```
+
+Edit /etc/mkinitcpio.conf
+
+Remove any video drivers from MODULES, and add vfio-pci, and vfio_iommu_type1
+
+```
+   MODULES="ext4 vfat vfio-pci vfio_iommu_type1"
+
+```
+
+Add "find" and "dirname" to BINARIES:
+
+```
+   BINARIES="find dirname"
+
+```
+
+Add "/etc/modprobe.d/vfio.conf" and "/sbin/vfio-pci-override.sh" to FILES:
+
+```
+   FILES="/etc/modprobe.d/vfio.conf /sbin/vfio-pci-override.sh"
+
+```
+
+Regenerate your initramfs, and reboot:
+
+```
+   mkinitcpio -p linux
+
+```
+
 ### Passing the boot GPU to the guest
 
 The GPU marked as `boot_vga` is a special case when it comes to doing PCI passthroughs, since the BIOS needs to use it in order to display things like boot messages or the BIOS configuration menu. To do that, it makes [a copy of the VGA boot ROM which can then be freely modified](https://www.redhat.com/archives/vfio-users/2016-May/msg00224.html). This modified copy is the version the system gets to see, which the passthrough driver may reject as invalid. As such, it is generally reccomanded to change the boot GPU in the BIOS configuration so the host GPU is used instead or, if that's not possible, to swap the host and guest cards in the machine itself.

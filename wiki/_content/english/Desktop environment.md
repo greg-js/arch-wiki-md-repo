@@ -79,10 +79,6 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)
 
-*   **GNUstep** — GNUstep is a free, object-oriented, cross-platform development environment that strives for simplicity and elegance.
-
-	[http://gnustep.org/](http://gnustep.org/) || [windowmaker](https://www.archlinux.org/packages/?name=windowmaker)
-
 *   **[Hawaii](/index.php/Hawaii "Hawaii")** — Hawaii is a lightweight, coherent and fast desktop environment that relies on Qt 5, QtQuick and Wayland and is designed to offer the best UX for the device where it is running.
 
 	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/)
@@ -207,18 +203,6 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
 [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
 [gdm](https://www.archlinux.org/packages/?name=gdm) |
-| GNUstep | [GNUstep](http://gnustep.org/)
-[gnustep-core](https://www.archlinux.org/groups/x86_64/gnustep-core/) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Window Maker](/index.php/Window_Maker "Window Maker")
-[windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Terminal](http://gap.nongnu.org/terminal/index.html)
-[gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/) | [GWorkspace](http://www.gnustep.org/experience/GWorkspace.html)
-[gworkspace](https://aur.archlinux.org/packages/gworkspace/) | [Calculator](http://www.gnustep.org/experience/examples.html)
-[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [Ink](http://www.gnustep.org/experience/examples.html)
-[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [LaternaMagica](http://gap.nongnu.org/laternamagica/index.html)
-[laternamagica](https://aur.archlinux.org/packages/laternamagica/) | [Cynthiune](http://gap.nongnu.org/cynthiune/index.html)
-[cynthiune](https://aur.archlinux.org/packages/cynthiune/) | [SWK Browser](http://wiki.gnustep.org/index.php/SimpleWebKit)
-[swkbrowser-svn](https://aur.archlinux.org/packages/swkbrowser-svn/) | [XDM](/index.php/XDM "XDM")
-[xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [Hawaii](/index.php/Hawaii "Hawaii") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
 [greenisland](https://aur.archlinux.org/packages/greenisland/) | Hawaii Shell

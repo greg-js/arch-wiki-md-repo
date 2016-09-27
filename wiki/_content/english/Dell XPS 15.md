@@ -353,7 +353,7 @@ See the [Bumblebee](/index.php/Bumblebee "Bumblebee") page [set of instructions]
 
 **9550 Flickering Screen:**
 
-As of 08/2016, the A10 BIOS causes the screen to flicker even worse then the A06 BIOS. The **best** fix is to downgrade to the A06 BIOS. A10 BIOS also breaks suspend/resume, unless if you have your brightness set to max. Please take a read here for more information: [Fixing 9550 screen flickering and black screen on resume from suspend](https://blog.spirotot.com/2016/08/11/xps-9550-arch-linux-fix-screen-flickering/) (thank you Spirotot)
+To fix screen flickering issues add `i915.edp_vswing=2` [to your boot parameters](https://blog.spirotot.com/2016/08/11/xps-9550-arch-linux-fix-screen-flickering/).
 
 ### External Display
 
@@ -561,6 +561,7 @@ Listed below are you may encounter with the XPS 9550 4K:
 **01.02.14** *[Download](http://downloads.dell.com/FOLDER03906910M/1/Precision_5510_1.2.14.exe)*
 • User [report](https://www.reddit.com/r/Dell/comments/51wr31/dell_xps15_9550_bios_1214_fixes_battery_at_60/) that the issue with the battery is fixed
 • Still has black screen upon resume issue. To turn screen on, increase brightness to maximum using keyboard. It is not possible to decrease brightness after resume, either maximum or off.
+• Increasing the brightness (eg, with xbacklight) by less than 9% does not have any effect. Decreasing by less than 9% always results in a decrease of 9%.
 
 Many users have recommend the 01.02.00 BIOS, as it proves to be the most balanced out of all of the updates.
 

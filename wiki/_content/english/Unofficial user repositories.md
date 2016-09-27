@@ -55,14 +55,15 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.2.6 cinnamon](#cinnamon)
         *   [3.2.7 heftig](#heftig)
         *   [3.2.8 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
-        *   [3.2.9 mesa-git](#mesa-git)
-        *   [3.2.10 noware](#noware)
-        *   [3.2.11 openrc-eudev](#openrc-eudev)
-        *   [3.2.12 pantheon](#pantheon)
-        *   [3.2.13 pietma](#pietma)
-        *   [3.2.14 trinity](#trinity)
-        *   [3.2.15 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.16 QOwnNotes](#QOwnNotes)
+        *   [3.2.9 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
+        *   [3.2.10 mesa-git](#mesa-git)
+        *   [3.2.11 noware](#noware)
+        *   [3.2.12 openrc-eudev](#openrc-eudev)
+        *   [3.2.13 pantheon](#pantheon)
+        *   [3.2.14 pietma](#pietma)
+        *   [3.2.15 trinity](#trinity)
+        *   [3.2.16 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.17 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 xyne-i686](#xyne-i686)
@@ -563,6 +564,18 @@ Server = http://pkgbuild.com/~heftig/repo/$arch
 [home_Minerva_W_Science_Arch_Extra]
 SigLevel = Never
 Server = http://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
+
+```
+
+#### home_Pival81_arch_xapps_Arch_Extra
+
+*   **Maintainer:** Valerio Pizzi ([Pival81](https://github.com/Pival81) <pival801@gmail.com>)
+*   **Description:** [XApps](https://github.com/linuxmint/xapps) packages.
+
+```
+[home_Pival81_arch_xapps_Arch_Extra]
+SigLevel = Never
+Server = http://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
 
 ```
 

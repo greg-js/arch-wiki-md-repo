@@ -104,7 +104,7 @@ The OpenVPN package comes with a collection of example configuration files for d
 *   Listens for client connections on UDP port 1194 (OpenVPN's [official IANA port number](https://en.wikipedia.org/wiki/Port_number "wikipedia:Port number")).
 *   Distributes virtual addresses to connecting clients from the 10.8.0.0/24 subnet.
 
-For more advanced configurations, please see the official [OpenVPN 2.2 man page](http://openvpn.net/index.php/manuals/427-openvpn-22.html) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
+For more advanced configurations, please see the official [OpenVPN 2.3 man page](https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
 
 ### The server configuration file
 

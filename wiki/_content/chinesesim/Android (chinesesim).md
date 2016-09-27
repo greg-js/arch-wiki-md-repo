@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Android](/index.php/Android "Android") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-03，点击[这里](https://wiki.archlinux.org/index.php?title=Android&diff=0&oldid=406154)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Android](/index.php/Android "Android") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-26，点击[这里](https://wiki.archlinux.org/index.php?title=Android&diff=0&oldid=451481)可以查看翻译后英文页面的改动。
 
 ## Contents
 
@@ -10,11 +10,14 @@
         *   [2.3.1 Android Studio](#Android_Studio)
         *   [2.3.2 Eclipse](#Eclipse)
         *   [2.3.3 Netbeans](#Netbeans)
-    *   [2.4 连接一台真实设备 —— 安卓调试桥 (ADB)](#.E8.BF.9E.E6.8E.A5.E4.B8.80.E5.8F.B0.E7.9C.9F.E5.AE.9E.E8.AE.BE.E5.A4.87_.E2.80.94.E2.80.94_.E5.AE.89.E5.8D.93.E8.B0.83.E8.AF.95.E6.A1.A5_.28ADB.29)
-        *   [2.4.1 手动查找设备 ID](#.E6.89.8B.E5.8A.A8.E6.9F.A5.E6.89.BE.E8.AE.BE.E5.A4.87_ID)
-        *   [2.4.2 添加 udev 规则](#.E6.B7.BB.E5.8A.A0_udev_.E8.A7.84.E5.88.99)
-        *   [2.4.3 配置 adb](#.E9.85.8D.E7.BD.AE_adb)
-        *   [2.4.4 它有效吗？](#.E5.AE.83.E6.9C.89.E6.95.88.E5.90.97.EF.BC.9F)
+    *   [2.4 安卓调试桥 (ADB)](#.E5.AE.89.E5.8D.93.E8.B0.83.E8.AF.95.E6.A1.A5_.28ADB.29)
+        *   [2.4.1 连接设备](#.E8.BF.9E.E6.8E.A5.E8.AE.BE.E5.A4.87)
+        *   [2.4.2 手动查找设备 ID](#.E6.89.8B.E5.8A.A8.E6.9F.A5.E6.89.BE.E8.AE.BE.E5.A4.87_ID)
+        *   [2.4.3 添加 udev 规则](#.E6.B7.BB.E5.8A.A0_udev_.E8.A7.84.E5.88.99)
+        *   [2.4.4 配置 adb](#.E9.85.8D.E7.BD.AE_adb)
+        *   [2.4.5 检测设备](#.E6.A3.80.E6.B5.8B.E8.AE.BE.E5.A4.87)
+        *   [2.4.6 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
+        *   [2.4.7 注意事项和疑难杂症](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.E5.92.8C.E7.96.91.E9.9A.BE.E6.9D.82.E7.97.87)
     *   [2.5 NVIDIA Tegra 平台专用工具](#NVIDIA_Tegra_.E5.B9.B3.E5.8F.B0.E4.B8.93.E7.94.A8.E5.B7.A5.E5.85.B7)
 *   [3 构建 Android](#.E6.9E.84.E5.BB.BA_Android)
     *   [3.1 OS 位数](#OS_.E4.BD.8D.E6.95.B0)
@@ -31,28 +34,32 @@
         *   [4.2.1 Heimdall](#Heimdall)
         *   [4.2.2 Odin (Virtualbox)](#Odin_.28Virtualbox.29)
 *   [5 其它连接方法](#.E5.85.B6.E5.AE.83.E8.BF.9E.E6.8E.A5.E6.96.B9.E6.B3.95)
-    *   [5.1 AirDroid](#AirDroid)
-    *   [5.2 FTP](#FTP)
-    *   [5.3 SSH 服务器](#SSH_.E6.9C.8D.E5.8A.A1.E5.99.A8)
-    *   [5.4 Samba](#Samba)
+    *   [5.1 adb-sync](#adb-sync)
+    *   [5.2 AirDroid](#AirDroid)
+    *   [5.3 AndroidScreencast](#AndroidScreencast)
+    *   [5.4 FTP](#FTP)
+    *   [5.5 KDE Connect](#KDE_Connect)
+    *   [5.6 SSH 服务器](#SSH_.E6.9C.8D.E5.8A.A1.E5.99.A8)
+    *   [5.7 Samba](#Samba)
 *   [6 技巧和提示](#.E6.8A.80.E5.B7.A7.E5.92.8C.E6.8F.90.E7.A4.BA)
     *   [6.1 调试时出现 "Source not found"](#.E8.B0.83.E8.AF.95.E6.97.B6.E5.87.BA.E7.8E.B0_.22Source_not_found.22)
     *   [6.2 在 sd 卡上安装 Linux 发行版](#.E5.9C.A8_sd_.E5.8D.A1.E4.B8.8A.E5.AE.89.E8.A3.85_Linux_.E5.8F.91.E8.A1.8C.E7.89.88)
 *   [7 疑难杂症](#.E7.96.91.E9.9A.BE.E6.9D.82.E7.97.87)
-    *   [7.1 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
-    *   [7.2 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
+    *   [7.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_.27failed_to_load.27.)
+    *   [7.2 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
+    *   [7.3 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
 
 ## 浏览安卓设备
 
 有多种方法浏览安卓设备：
 
 *   [MTP](/index.php/MTP "MTP") 协议可以用USB传输文件。
-*   [其他连接方法](#Alternative_connection_methods) (比如 FTP, SSH)。
+*   [其它连接方法](#.E5.85.B6.E5.AE.83.E8.BF.9E.E6.8E.A5.E6.96.B9.E6.B3.95) (比如 FTP, SSH)。
 
 更高阶的用法，开发、刷机和恢复等：
 
-*   [ADB 工具包](#.E8.BF.9E.E6.8E.A5.E4.B8.80.E5.8F.B0.E7.9C.9F.E5.AE.9E.E8.AE.BE.E5.A4.87_.E2.80.94.E2.80.94_.E5.AE.89.E5.8D.93.E8.B0.83.E8.AF.95.E6.A1.A5_.28ADB.29) 广泛用于开发。
-*   [恢复系统](#Restoring_Android) 用于刷机和恢复安卓固件（包括 fastboot）。
+*   [ADB 工具包](#.E5.AE.89.E5.8D.93.E8.B0.83.E8.AF.95.E6.A1.A5_.28ADB.29) 广泛用于开发。
+*   [恢复 Android](#.E6.81.A2.E5.A4.8D_Android) 用于刷机和恢复安卓固件（包括 fastboot）。
 
 ## 安卓开发
 
@@ -64,7 +71,9 @@
 
 ### 安卓 SDK 核心组件
 
-**注意:** 如果运行 64 位操作系统，你需要启用[pacman.conf](/index.php/Pacman#Repositories_and_mirrors "Pacman")中的[multilib](/index.php/Multilib "Multilib")软件源。否则，安装时出现的"error: target not found: lib32-zlib"报错信息会烦死你。
+**注意:** 如果运行 64 位操作系统，你需要启用[multilib](/index.php/Multilib "Multilib")软件源以避免安装时出现"error: target not found: lib32-zlib"报错信息。
+
+**注意:** 如果你想要安装 [#Android Studio](#Android_Studio) 且使用其来管理你的SDK安装，你不需要安装以下软件包。
 
 在开发安卓程序之前，需要安装安卓 SDK。它由下列三组软件包组成，均可从 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装：
 
@@ -72,7 +81,7 @@
 2.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)
 3.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)
 
-软件包会安装到`/opt/android-sdk`。 这个目录需要 root 权限，所以你需要以 root 用户运行 sdk manager，否则你将无法安装/更新/修改 /opt/android-sdk 中的内容。 如果打算以一般用户权限来访问，需要创建一个 android sdk 用户组（名称任意）：
+对于旧设备的支持， [android-support](https://aur.archlinux.org/packages/android-support/) 软件包是必需的。 软件包会安装到`/opt/android-sdk`。 这个目录需要 root 权限，所以你需要以 root 用户运行 sdk manager，否则你将无法修改这个目录中的内容。 如果打算以一般用户权限来访问，需要创建 android sdk 用户组（名称任意）：
 
 ```
 # groupadd sdkusers
@@ -107,15 +116,12 @@ $ newgrp sdkusers
 
 ```
 
-**注意:** 除了上述 [AUR](/index.php/AUR "AUR") 全局安装的方式，还可以参考[上游说明](https://developer.android.com/sdk/index.html)将 SDK 安装到用户 home 目录。
+**注意:** 除了上述 [AUR](/index.php/AUR "AUR") 全局安装的方式，还可以参考[上游说明](https://developer.android.com/sdk/index.html)将 SDK 安装到用户 home 目录。你也可以使用[AUR](/index.php/AUR "AUR")中的 android-*-dummy 软件包来解决系统依赖。
 
 ### 获取 Android SDK 特定平台 API
 
 从[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")安装所需的 Android SDK 特定平台软件包：
 
-*   [android-platform](https://aur.archlinux.org/packages/android-platform/) (最新)
-*   [android-platform-23](https://aur.archlinux.org/packages/android-platform-23/)
-*   [android-platform-22](https://aur.archlinux.org/packages/android-platform-22/)
 *   [android-platform-21](https://aur.archlinux.org/packages/android-platform-21/)
 *   [android-platform-20](https://aur.archlinux.org/packages/android-platform-20/)
 *   [android-platform-19](https://aur.archlinux.org/packages/android-platform-19/)
@@ -124,19 +130,6 @@ $ newgrp sdkusers
 *   [android-platform-16](https://aur.archlinux.org/packages/android-platform-16/)
 *   [android-platform-15](https://aur.archlinux.org/packages/android-platform-15/)
 *   [android-platform-14](https://aur.archlinux.org/packages/android-platform-14/)
-*   [android-platform-13](https://aur.archlinux.org/packages/android-platform-13/)
-*   [android-platform-12](https://aur.archlinux.org/packages/android-platform-12/)
-*   [android-platform-11](https://aur.archlinux.org/packages/android-platform-11/)
-*   [android-platform-10](https://aur.archlinux.org/packages/android-platform-10/)
-*   [android-platform-9](https://aur.archlinux.org/packages/android-platform-9/)
-*   [android-platform-8](https://aur.archlinux.org/packages/android-platform-8/)
-*   [android-platform-7](https://aur.archlinux.org/packages/android-platform-7/)
-*   [android-platform-7](https://aur.archlinux.org/packages/android-platform-7/)
-*   [android-platform-6](https://aur.archlinux.org/packages/android-platform-6/)
-*   [android-platform-5](https://aur.archlinux.org/packages/android-platform-5/)
-*   [android-platform-4](https://aur.archlinux.org/packages/android-platform-4/)
-*   [android-platform-3](https://aur.archlinux.org/packages/android-platform-3/)
-*   [android-platform-2](https://aur.archlinux.org/packages/android-platform-2/)
 
 ### 开发环境
 
@@ -167,17 +160,7 @@ export ANDROID_HOME=/opt/android-sdk
 
 **注意:** 自 2014-12-08 起，官方已经不再建议使用 ADT 插件，官方的开发环境是 Android Studio。
 
-在 Eclipse 中开发 Android 所需的大部分软件在 AUR 已经有了：
-
-谷歌官方插件 – [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html)：
-
-1.  [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/)
-
-依赖:
-
-1.  [eclipse-emf](https://aur.archlinux.org/packages/eclipse-emf/)
-2.  [eclipse-gef](https://aur.archlinux.org/packages/eclipse-gef/)
-3.  [eclipse-wtp](https://aur.archlinux.org/packages/eclipse-wtp/)
+官方的但已经废弃的 [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html) 插件可以通过 [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/) 软件包安装。
 
 **注意:**
 
@@ -215,20 +198,24 @@ Tools -> Options -> Miscellaneous -> Android
 
 设置 SDK 安装路径（默认是 /opt/android-sdk）。这样就行了，现在你可以在 Netbeans 里面创建和开发新的 Android 项目。
 
-### 连接一台真实设备 —— 安卓调试桥 (ADB)
+### 安卓调试桥 (ADB)
 
 **小贴士:** 有些设备需要先启用 MTP 才能使用 ADB，而另一些设备需要启用 PTP。
 
+**小贴士:** 许多设备的 udev 规则被包含在 [libmtp](https://www.archlinux.org/packages/?name=libmtp)，所以如果你已经安装此软件包，以下步骤是不必要的。
+
+#### 连接设备
+
 要使用 安卓调试桥(ADB) 在 Arch 下连接真实设备，必须：
 
-*   安装 [android-tools](https://www.archlinux.org/packages/?name=android-tools)。
-*   在手机或设备上启用 USB 调试：
-    *   Jelly Bean （4.2）或更新版本：访问 `Settings（设置） --> About Phone（关于手机）`，不停点击 “Build Number（版本号）” （约10次），直到弹出消息提示开启了开发者选项。然后访问 `Settings（设置） --> Developer（开发者选项） --> USB debugging（USB 调式）` 并启用它。
-    *   旧版本： 通常能通过 `Settings（设置） --> Applications （应用程序）--> Development（开发者选项） --> USB debugging（USB调试）`。勾选后重启手机，确保 USB 调试已启用。
-*   安装软件包 [android-udev](https://www.archlinux.org/packages/?name=android-udev)，为设备在 `/dev/` 中建立正确的节点。
-*   将用户加入组 *adbusers*。 （`gpasswd -a *username* adbusers`）
+1.  安装 [android-tools](https://www.archlinux.org/packages/?name=android-tools)。除此之外，如果希望为设备在 `/dev/` 中建立正确的节点,需安装 [android-udev](https://www.archlinux.org/packages/?name=android-udev) 软件包。
+2.  在手机或设备上启用 USB 调试：
+3.  Jelly Bean （4.2）或更新版本：访问 `Settings（设置） --> About Phone（关于手机）`，不停点击 “Build Number（版本号）” （7次），直到弹出消息提示开启了开发者选项。然后访问 `Settings（设置） --> Developer（开发者选项） --> USB debugging（USB 调式）` 并启用它。
+4.  旧版本： 通常能通过 `Settings（设置） --> Applications （应用程序）--> Development（开发者选项） --> USB debugging（USB调试）`。勾选后重启手机，确保 USB 调试已启用。
+5.  将用户加入组 *adbusers*。
+6.  gpasswd -a *username* adbusers
 
-如果 [ADB 能识别你的设备](#Does_it_work.3F) (在IDE中可以看见和访问）就行了，否则见下面的内容。
+如果 [ADB 能识别你的设备](#.E6.A3.80.E6.B5.8B.E8.AE.BE.E5.A4.87) (在IDE中可以看见和访问）就行了，否则见下面的内容。
 
 #### 手动查找设备 ID
 
@@ -272,6 +259,8 @@ SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",S
 
 ```
 
+确保你是 `adbusers` [group](/index.php/Group "Group") 的成员，以访问 `adb` 设备。
+
 #### 配置 adb
 
 除了使用 udev 规则外，也可以创建/编辑 `~/.android/adb_usb.ini`，里面包含了一个 vendor ID 的列表。
@@ -282,7 +271,7 @@ $ cat ~/.android/adb_usb.ini
 
 ```
 
-#### 它有效吗？
+#### 检测设备
 
 配置了 udev 规则之后，拔掉设备然后重新连接，再运行：
 
@@ -299,6 +288,8 @@ HT07VHL00676    device
 
 ```
 
+#### 使用方法
+
 现在可以通过 adb 在设备和计算机间传输文件了。使用：
 
 ```
@@ -313,7 +304,11 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 ```
 
-从设备获取文件。 如果没有找到 **adb** 程序，可能是因为没有安装 [平台工具](#Android_SDK_platform_API)（通常位于`/opt/android-sdk/platform-tools/`）及 [android-tools](https://www.archlinux.org/packages/?name=android-tools)（位于`/usr/bin/`）。
+从设备获取文件。
+
+#### 注意事项和疑难杂症
+
+*   **ADB** 也可以通过 [platform tools](#Android_SDK_platform_API)（通常位于 `/opt/android-sdk/platform-tools/`）， 所以可能没有必要安装 [android-tools](https://www.archlinux.org/packages/?name=android-tools)（位于 `/usr/bin/`）
 
 如果列表为空（设备没有找到），可能是因为设备上没有启用 USB 调试。可以到 设置 => 应用程序 => 开发 (Settings => Applications => Development) 来启用 USB 调试。Android 4.2 (Jelly Bean) 隐藏了开发者选项菜单，到 设置 => 关于手机 (Settings => About phone)，然后点击 Build number （版本号） 7 次来启用它。
 
@@ -350,24 +345,36 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 
 *   仅64位系统：[gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline)
 
-*   AUR 软件包：[libtinfo](https://aur.archlinux.org/packages/libtinfo/)
+*   AUR 软件包 32位和64位系统： [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
 
-**注意:** 由于 ncurses 已经更新到 ncurses6，而 android 预编译的 clang 还依赖于 ncurses5，现在还必须安装 [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)。通过
+*   AUR 软件包 仅64位系统： [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
-`ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` 和 ``ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` 能查看还需要哪些库。
+**注意:** [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) 和 [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) 的 PGP 签名可能会引起错误，可以通过手动导入以下签名解决：
+
+$ gpg --recv-keys 702353E0F7E48EDB
+
+要编译 Android 6+，你需要安装以下额外的软件包：
+
+*   32位和64位系统： [rsync](https://www.archlinux.org/packages/?name=rsync)
+
+**Note:** CyanogenMod 从13.0版本起使用了Maven构建工具，要编译 CyanogenMod，需要安装 [maven](https://www.archlinux.org/packages/?name=maven)软件包
 
 ### Java Development Kit
 
-Android 5 (Lollipop) 可以使用 [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) 编译。
+Android 7 (Nougat) 可以使用 [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) 编译。[[1]](https://source.android.com/source/requirements.html)
+
+*   Android 5 和 6 （Lollipop 和 Marshmallow）需要OpenJDK 7，可以通过 [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) 软件包安装。
 
 旧版本 [需要](http://source.android.com/source/initializing.html) **Oracle JDK** 才能编译，**不支持** OpenJDK。
 
 *   Gingerbread 到 KitKat (2.3 - 4.4) 需要 Java 6，可以通过 [AUR](/index.php/AUR "AUR") 软件包 [jdk6](https://aur.archlinux.org/packages/jdk6/) 安装，详情参阅 [Java](/index.php/Java "Java")。
-*   Cupcake 到 Froyo (1.5 - 2.2) 需要 Java 5， Arch Linux 已经不再支持。
+*   Cupcake 到 Froyo (1.5 - 2.2) 需要 Java 5，可以通过 [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) 软件包安装。。
+
+。
 
 ### 配置构建环境
 
-按 [Android Downloading the Source guide](https://source.android.com/source/downloading.html) 下载 `repo` 工具。
+安装 [repo](https://www.archlinux.org/packages/?name=repo) 软件包，然后：
 
 ```
 $ mkdir ~/bin
@@ -483,55 +490,73 @@ make -j8 updatepackage
 
 [official repositories](/index.php/Official_repositories "Official repositories") 中的 [android-tools](https://www.archlinux.org/packages/?name=android-tools) 软件包提供了 Fastboot（以及[ADB](#Connecting_to_a_real_device_-_Android_Debug_Bridge_.28ADB.29)）。
 
-**注意:** Restoring firmwares using `fastboot` can be quite tricky, but you might want to browse [XDA developers forums](http://www.xda-developers.com/) for a stock firmware, which is mostly a `*.zip` file, but inside of it, comes with the firmware files and `flash-all.sh` script. For example, [Google Nexus](https://developers.google.com/android/nexus/images) firmwares include `flash-all.sh` script or another example could be for OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541), where you can find firmwares with included `flash-all.sh` script.
+**注意:** 通过 `fastboot` 重置固件是十分需要技巧的。你可以浏览 [XDA developers forums](http://www.xda-developers.com/) 以获取官方固件,通常是一个 `*.zip` 文件，但其中包含着固件文件和 `flash-all.sh` 脚本。例如，[Google Nexus](https://developers.google.com/android/nexus/images) 附件包括 `flash-all.sh` 脚本.另一个例子， OnePlus One - [XDA thread](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541)，其中你可以找到包含着 `flash-all.sh` 脚本的固件。
 
 ### Samsung
 
-Samsung 不支持 fastboot。Odin 比 Heimdall 用起来更容易安全和容易.
+Samsung 设备不支持通过 **Fastboot' *工具烧录。可选择的工具只有* Heimdall** 和 **Odin** （通过使用 Windows 和 VirtualBox）。
 
 #### Heimdall
 
-[Heimdall](http://glassechidna.com.au/heimdall/) is a cross-platform open-source tool suite used to flash firmware (also known as ROMs) onto Samsung mobile devices and is also known as an alternative to [Odin](http://odindownload.com/). It can be installed as [heimdall](https://www.archlinux.org/packages/?name=heimdall) or [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/).
+[Heimdall](http://glassechidna.com.au/heimdall/) 是一个跨平台用于在三星移动设备上烧录固件（也称作ROMS）的开源工具，它也是以[Odina](http://odindownload.com/) 的备选方案为人而知。 它可以通过 [heimdall](https://www.archlinux.org/packages/?name=heimdall) 或 [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/) 软件包被安装。
 
-The flashing instructions can be found on Heimdall's [GitHub page](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) or on [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461).
+烧路说明位于 Heimdall 的 [GitHub page](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) 或 [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461)。
 
 #### Odin (Virtualbox)
 
-It is also possible to restore stock Android on the Samsung devices using [Odin](http://odindownload.com/), but inside the [VirtualBox](/index.php/VirtualBox "VirtualBox"). For more information, see [XDA thread](http://forum.xda-developers.com/showthread.php?t=758634).
+[Heimdall](http://glassechidna.com.au/heimdall/) 是一个跨平台用于在三星移动设备上烧录固件（也称作ROMS）的开源工具，它也是以[Odina](http://odindownload.com/) 的备选方案为人而知。 它可以通过 [heimdall](https://www.archlinux.org/packages/?name=heimdall) 或 [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/) 软件包被安装。
 
-Arch Linux related steps:
+烧路说明位于 Heimdall 的 [GitHub page](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) 或 [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461)。
 
-1.  Install [VirtualBox](/index.php/VirtualBox "VirtualBox") together with its [extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox"). Optionally, install [guest additions](/index.php/VirtualBox#Guest_additions_disc "VirtualBox").
-2.  Install your preferred, but compatible with Odin, Windows operating system into a virtual hard drive using VirtualBox. Optionally, install guest additions to the Windows operating system.
-3.  Open VirtualBox settings of your Windows operating system, navigate to **USB**, then tick (or make sure it is ticked) **Enable USB 2.0 (EHCI) Controller**.
-4.  At VirtualBox running Windows operating system, click in the menu bar **Devices**, then **USB Devices**, then click on your Samsung mobile device connected to your computer via USB.
+Arch Linux 相关步骤：
 
-Windows related links:
+1.  一同安装 [VirtualBox](/index.php/VirtualBox "VirtualBox") 和它的 [extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox") 和 [guest additions](/index.php/VirtualBox#Guest_additions_disc "VirtualBox").
+2.  使用 VirtualBox 在虚拟硬盘中安装你偏好的且与 Odin 适配的 Windows 操作系统（安装了 VirtualBox guest additions的）。
+3.  打开 VirtualBox 中 Windows 操作系统的设置，跳转至**USB**，然后勾选（或者确保它是被勾选的）**Enable USB 2.0 (EHCI) Controller**。
+4.  在 VirtualBox 中运行 Windows 操作系统，点击菜单栏中的**Device** ---> **USB Devices**，然后点击你已通过USB连接到电脑的 Samsung 移动设备。
 
-1.  Samsung drivers can be downloaded from [here](http://androidxda.com/download-samsung-usb-drivers).
-2.  Odin can be downloaded from [here](https://www.androidfilehost.com/?fid=23501681358557126).
-3.  Samsung Android firmwares can be downloaded from [here](http://www.sammobile.com/firmwares/).
+Windows 相关链接：
 
-If you want to make sure that everything is working and ready, connect your Samsung device turned on into a Download mode, and open Odin. The white box (a big one at the bottom-left) named **Message**, should print a line similar to this:
+*   Samsung 驱动可以从 [here](http://androidxda.com/download-samsung-usb-drivers) 下载。
+*   Odin can 可以从 [here](https://www.androidfilehost.com/?fid=23501681358557126) 下载。
+*   Samsung 安卓固件可以从 [here](http://www.sammobile.com/firmwares/) 下载。
+
+如果你想确保一切都正常工作且准备就绪：
+
+1.  切换你的设备至下载模式,连接到你的 Linux 机器。
+2.  在虚拟机工具栏中， 选择 `devices` --> `USB` --> `...Samsung...` 设备。
+3.  打开 Odin.名为**Message**的对话框，将打印类似于。
 
 ```
 <ID:0/003> Added!!
 
 ```
 
-which means that your device is visible to Odin and is ready to be flashed.
+的信息 这意味着你的设备对于 Odin 是可见的，且是准备就绪烧录的。
 
-**注意:** There are no general instructions of restoring stock firmware on Samsung mobile devices. You have to use [Google](https://www.google.com) and [XDA developers forums](http://www.xda-developers.com) to find a flashing instructions for specific device. For example, this is how the [thread](http://goo.gl/cZLyF8) about the Samsung Galaxy S4 looks like
+{{注意|不存在关于重置 Samsung 移动设备固件的通用说明。你必须通过 [Google](https://www.google.com) 和 [XDA developers forums](http://www.xda-developers.com) 来找到特定设备的烧录说明。例如， 这个[帖子](http://goo.gl/cZLyF8) 是关于Samsung Galaxy S4 设备的。
 
 ## 其它连接方法
+
+### adb-sync
+
+[adb-sync](https://github.com/google/adb-sync) （可通过 [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/) 安装）是一个使用 ADB 协议，用于在 PC 和安卓设备间同步文件的工具。
 
 ### AirDroid
 
 [AirDroid](http://goo.gl/EZQ9GQ) 可以通过网页浏览器访问设备。
 
+### AndroidScreencast
+
+[AndroidScreencast](http://xsavikx.github.io/AndroidScreencast) 是被开发用于从 PC 显示和控制你的安卓设备（使用ADB）。
+
 ### FTP
 
 在 Arch 上建立 FTP 服务器并通过手机访问，或者在手机上运行 FTP 服务并在 Arch 上连接。 参阅 [List of applications/Internet#FTP](/index.php/List_of_applications/Internet#FTP "List of applications/Internet")。Android 上有许多 FTP 客户端/服务端应用。
+
+### KDE Connect
+
+[kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) 集成了你的安卓设备和 KDE 桌面，它的功能包括同步通知，同步剪贴板，多媒体控制，和文件/URL共享。
 
 ### SSH 服务器
 
@@ -561,6 +586,10 @@ Window -> Preferences -> Java -> Debug -> Step Filtering
 可以参照这篇 [贴子](http://forum.xda-developers.com/showthread.php?t=631389) 安装 Debian，[archlinuxarm.org上](http://archlinuxarm.org/forum/viewtopic.php?f=27&t=1361&start=40)有在 chroot 环境下安装（与 Android 并存）的详细介绍。
 
 ## 疑难杂症
+
+### Android Studio: Android Virtual Devices show 'failed to load'.
+
+确保你已经设置了 [#Android Studio](#Android_Studio) 中说明的 `ANDROID_HOME` 环境变量。
 
 ### aapt: No such file or directory
 

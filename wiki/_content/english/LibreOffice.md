@@ -28,6 +28,7 @@ From [Home - LibreOffice](http://www.libreoffice.org/):
     *   [7.8 Media support](#Media_support)
     *   [7.9 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
     *   [7.10 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
+    *   [7.11 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze.2FPlasma_5_theme)
 
 ## Installation
 
@@ -241,3 +242,11 @@ See [https://bugs.documentfoundation.org/show_bug.cgi?id=94632](https://bugs.doc
 To use toolbar icons compatible with dark themes, set [environment variable](/index.php/Environment_variable "Environment variable") `VCL_ICONS_FOR_DARK_THEME=1`
 
 As an alternative workaround, run *libreoffice* with a light theme (e.g. with environment variable `GTK_THEME=Adwaita:light`).
+
+### LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme
+
+[Install](/index.php/Install "Install") the Breeze theme for [GTK+](/index.php/GTK%2B "GTK+"), [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and the Breeze dark icons for LibreOffice, [libreoffice-breeze-icons](https://aur.archlinux.org/packages/libreoffice-breeze-icons/).
+
+Then ensure that LibreOffice starts using the `gtk` interface - see [#Theme](#Theme).
+
+If this does not work correctly, try using the `gen` interface instead. [[2]](https://bbs.archlinux.org/viewtopic.php?id=206813)

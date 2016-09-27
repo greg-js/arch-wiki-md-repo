@@ -41,6 +41,11 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### September 2016
 
+*   [26 September 2016] [ASA-201609-27](https://lists.archlinux.org/pipermail/arch-security/2016-September/000723.html) [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) denial of service
+*   [26 September 2016] [ASA-201609-26](https://lists.archlinux.org/pipermail/arch-security/2016-September/000722.html) [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) certificate verification bypass
+*   [26 September 2016] [ASA-201609-25](https://lists.archlinux.org/pipermail/arch-security/2016-September/000721.html) [gnutls](https://www.archlinux.org/packages/?name=gnutls) certificate verification bypass
+*   [26 September 2016] [ASA-201609-24](https://lists.archlinux.org/pipermail/arch-security/2016-September/000720.html) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) multiple issues
+*   [26 September 2016] [ASA-201609-23](https://lists.archlinux.org/pipermail/arch-security/2016-September/000719.html) [openssl](https://www.archlinux.org/packages/?name=openssl) multiple issues
 *   [22 September 2016] [ASA-201609-22](https://lists.archlinux.org/pipermail/arch-security/2016-September/000718.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
 *   [22 September 2016] [ASA-201609-21](https://lists.archlinux.org/pipermail/arch-security/2016-September/000717.html) [tomcat7](https://www.archlinux.org/packages/?name=tomcat7) proxy injection
 *   [22 September 2016] [ASA-201609-20](https://lists.archlinux.org/pipermail/arch-security/2016-September/000716.html) [irssi](https://www.archlinux.org/packages/?name=irssi) arbitrary code execution

@@ -273,7 +273,7 @@ The disk layout in this example is:
 
 ```
 
-This method does not allow you to span the logical volumes over multiple disks, even in the future. The [#LUKS on LVM](#LUKS_on_LVM) method does not have this limitation.
+**Warning:** This method does not allow you to span the logical volumes over multiple disks, even in the future. The [#LUKS on LVM](#LUKS_on_LVM) method does not have this limitation.
 
 **Tip:** Two variants of this setup:
 
@@ -402,7 +402,9 @@ See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_confi
 
 ## LUKS on LVM
 
-To use encryption on top of [LVM](/index.php/LVM "LVM"), the LVM volumes are set up first and then used as the base for the encrypted partitions. This way, a mixture of encrypted and non-encrypted volumes/partitions is possible as well. Unlike [#LVM on LUKS](#LVM_on_LUKS), this method allows normally spanning the logical volumes over multiple disks.
+To use encryption on top of [LVM](/index.php/LVM "LVM"), the LVM volumes are set up first and then used as the base for the encrypted partitions. This way, a mixture of encrypted and non-encrypted volumes/partitions is possible as well.
+
+**Tip:** Unlike [#LVM on LUKS](#LVM_on_LUKS), this method allows normally spanning the logical volumes over multiple disks.
 
 The following short example creates a LUKS on LVM setup and mixes in the use of a key-file for the /home partition and temporary crypt volumes for `/tmp` and `/swap`. The latter is considered desirable from a security perspective, because no potentially sensitive temporary data survives the reboot, when the encryption is re-initialised. If you are experienced with LVM, you will be able to ignore/replace LVM and other specifics according to your plan. If you want to span a logical volume over multiple disks during setup already, a procedure to do so is described in [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 

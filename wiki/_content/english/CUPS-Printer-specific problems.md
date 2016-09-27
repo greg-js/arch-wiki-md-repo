@@ -1,5 +1,7 @@
 This article contains printer or manufacturer-specific instructions for [CUPS](/index.php/CUPS "CUPS"). See [OpenPrinting](http://www.openprinting.org/printers) if your printer is not already listed here, or if none of the listed drivers work.
 
+**Note:** If you add a printer to this list, consider contributing your entry to [OpenPrinting](https://wiki.linuxfoundation.org/openprinting/database/databaseintro) - that way users of other distributions will also benefit!
+
 ## Contents
 
 *   [1 Brother](#Brother)
@@ -243,13 +245,13 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | Printer | Driver/filter | Notes |
 | Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/CUPS#Foomatic "CUPS"). |
 | DeskJet 710C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
-| DeskJet 712C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
-| DeskJet 720C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
-| DeskJet 722C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
-| DeskJet 820se | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
-| DeskJet 820Cxi | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
-| DeskJet 1000Cse | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
-| DeskJet 1000Cxi | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 712C |
+| DeskJet 720C |
+| DeskJet 722C |
+| DeskJet 820se |
+| DeskJet 820Cxi |
+| DeskJet 1000Cse |
+| DeskJet 1000Cxi |
 | Printer | Driver/filter | Notes |
 
 ###### HPLIP Driver
@@ -299,12 +301,12 @@ For printers that require the proprietary HP plugin (like the Laserjet Pro P1102
 
 | Printer | Driver/filter | Notes |
 | Minolta Magicolor 1600W | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Minolta Magicolor 1680MF | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Minolta Magicolor 1690MF | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Minolta Magicolor 2480MF | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Minolta Magicolor 2490MF | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Minolta Magicolor 2530DL | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Minolta Magicolor 4690MF | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
+| Minolta Magicolor 1680MF |
+| Minolta Magicolor 1690MF |
+| Minolta Magicolor 2480MF |
+| Minolta Magicolor 2490MF |
+| Minolta Magicolor 2530DL |
+| Minolta Magicolor 4690MF |
 | Printer | Driver/filter | Notes |
 
 ## Lexmark

@@ -15,6 +15,7 @@
     *   [3.2 Window box larger than the actual application!](#Window_box_larger_than_the_actual_application.21)
     *   [3.3 Problems with Java applications](#Problems_with_Java_applications)
     *   [3.4 Problems with keybindings using fish](#Problems_with_keybindings_using_fish)
+    *   [3.5 Error messages "Could not grab key 43 with modfield 68" on start](#Error_messages_.22Could_not_grab_key_43_with_modfield_68.22_on_start)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -28,6 +29,8 @@ sxhkd &
 exec bspwm
 
 ```
+
+The first line should be omitted if you have a command for running sxhkd in your bspwmrc config file (it is this way in the example config).
 
 ## Configuration
 
@@ -249,6 +252,10 @@ $ set -U SXHKD_SHELL /usr/bin/bash
 ```
 
 Alternatively, the ^ character may be escaped with a backslash in your sxhkdrc file.
+
+### Error messages "Could not grab key 43 with modfield 68" on start
+
+Either you try to use the same key twice, or you start sxhkd twice. Check bspwmrc and `~/.profile` or `~/.bash_profile` for excessive commands starting sxhkd.
 
 ## See also
 

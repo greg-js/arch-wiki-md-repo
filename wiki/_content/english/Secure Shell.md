@@ -235,6 +235,21 @@ AuthenticationMethods publickey,keyboard-interactive:pam
 
 ```
 
+With required pubkey **and** pam authentication you may wish to disable the password requirement:
+
+ `/etc/pam.d/sshd` 
+```
+auth      required  pam_securetty.so     #disable remote root
+#Require google authenticator
+auth      required  pam_google_authenticator.so
+#But not password
+#auth      include   system-remote-login
+account   include   system-remote-login
+password  include   system-remote-login
+session   include   system-remote-login
+
+```
+
 ##### Protecting against brute force attacks
 
 Brute forcing is a simple concept: One continuously tries to log in to a webpage or server log-in prompt like SSH with a high number of random username and password combinations.

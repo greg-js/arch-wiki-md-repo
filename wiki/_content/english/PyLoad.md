@@ -1,6 +1,6 @@
-[pyLoad](http://pyload.org/) is a fast, lightweight and full featured download manager for many One-Click-Hoster, container formats like DLC, video sites or just plain http/ftp links ([supported hosts](http://pyload.org/hoster)). It aims for low hardware requirements and platform independence to be runnable on all kind of systems (desktop pc, netbook, NAS, router). Despite its strict restriction it is packed full of features just like webinterface, captcha recognition, unrar and much more.
+[pyLoad](https://pyload.net) is a fast, lightweight and full featured download manager for many One-Click-Hoster, container formats like DLC, video sites or just plain http/ftp links ([supported hosts](https://github.com/pyload/pyload/wiki/Supported-Hoster)). It aims for low hardware requirements and platform independence to be runnable on all kind of systems (desktop pc, netbook, NAS, router). Despite its strict restriction it is packed full of features just like webinterface, captcha recognition, unrar and much more.
 
-pyLoad is divided into core and clients, to make it easily remote accessible. Currently there are ([screenshots](http://pyload.org/screenshots)):
+pyLoad is divided into core and clients, to make it easily remote accessible. Currently there are ([screenshots](https://github.com/pyload/pyload/wiki/Screenshots)):
 
 *   a **webinterface**;
 *   a **command line interface**;

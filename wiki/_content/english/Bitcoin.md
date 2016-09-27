@@ -1,4 +1,4 @@
-[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (i.e. '144 BTC'), can also be exchanged for traditional currencies like US dollars.
+[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (e.g. 150 BTC), can also be exchanged for traditional currencies like US dollars.
 
 ## Contents
 
@@ -6,7 +6,7 @@
 *   [2 Installation](#Installation)
 *   [3 How to get Bitcoins?](#How_to_get_Bitcoins.3F)
     *   [3.1 Mining](#Mining)
-*   [4 Sample config file](#Sample_config_file)
+*   [4 Configuration](#Configuration)
 *   [5 See also](#See_also)
 
 ## Introduction
@@ -19,41 +19,21 @@ A variation in difficulty is achieved by requiring that this integer is below a 
 
 ## Installation
 
-The original/official Bitcoin application from [bitcoin.org](https://bitcoin.org) is now called "Bitcoin Core" (originally it was called "bitcoin-qt" upstream) and can be installed in Arch with either: (a) the [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt) or (b) the [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) **and** [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli) packages, available in the [official repositories](/index.php/Official_repositories "Official repositories"). Until release of version 0.10 of Bitcoin Core, bitcoind in [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) served as both RPC server **and** RPC client. But with 0.10, the Bitcoin Core RPC [client is a separate binary (bitcoin-cli)](http://bitcoin.stackexchange.com/a/13369/3005). Both bitcoin-qt and bitcoind operate as RPC server, and bitcoin-cli will correctly query whichever server is running. There is no problem with installing all three of these Bitcoin Core packages on one machine, but it is [possible to run](https://en.bitcoin.it/wiki/Running_Bitcoin) only one of the bitcoind **or** bitcoin-qt binaries at once.
+Install [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt), [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) and [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli).
 
-This gets the software installed on the computer, however this is just part of the problem; the *quick* part. The time-consuming part of using Bitcoin Core involves getting the entire BTC block chain, currently (Feb [02015](https://longnow.org/about)) a 22GB data file, downloaded onto the same machine. If you start either bitcoin-qt or bitcoind then one of the first tasks of the software will be to download the entire BTC block chain. A quicker (and nicer to the Bitcoin network) way to get the entire BTC block chain is using [this bootstrap BitTorrent file](https://en.bitcoin.it/wiki/Data_directory#Bootstrapping_the_blockchain_from_a_snapshot_distributed_through_BitTorrent) that is updated by the Bitcoin community from time to time. With this entire bootstrap.dat file located in ~/.bitcoin, one of the first tasks of bitcoind/bitcoin-qt will be to *import* this bootstrap BTC block chain and *then* (using much less bandwidth than downloading the entire block chain with bitcoind/bitcoin-qt) *update* and *validate* against the Bitcoin network this mostly imported BTC block chain. If you choose this option, then please consider seeding the BitTorrent bootstrap.dat file after downloading it by keeping your BitTorrent application open well after the *download* completes and at least until *seeding* is complete (which may be several hours later depending on your upload data rate). Before beginning to download bootstrap.dat over the BitTorrent network, you should also verify the integrity of the torrent bootstrap.dat.torrent and related files using GnuPG.
+**Note:** Bitcoin Core requires syncing the blockchain (current size is about 90GB as of Sept. 2016); each transaction in a block gets verified by verifying the ECDSA signatures that spend each transaction, which is a time-consuming mathematical operation, so having a good CPU, sufficient storage and bandwidth is highly recommended.
 
-This is one procedure that worked in release 2015.02.01 of Arch:
+Some good practices to consider:
 
-1.  Verify at least 80GB (22GB * 3 copies + 14GB worth of additional blocks via bitcoind/bitcoin-qt) of free disk space is available
-2.  Install [gnupg](https://www.archlinux.org/packages/?name=gnupg), [deluge](https://www.archlinux.org/packages/?name=deluge), [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt), [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon), and [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli) from the official repositories
-3.  Using a browser, download [README.txt, bootstrap.dat.torrent, bootstrap.dat.torrent.gpg, and bootstrap.txt](https://bitcoin.org/bin/block-chain/)
-4.  Using gnupg, verify the downloaded files as having good signatures (you will need to first import the signer's public key ID A2DB9CCA)
-5.  Using deluge, download the 22GB bootstrap.dat (perhaps hours depending on your download data rate)
-6.  When bootstrap.dat *download* is complete:
-    1.  leave deluge running until *seeding* is complete (optional but it helps the community; may require hours or days depending on your upload data rate)
-    2.  *copy* (do not move or you will interrupt seeding) bootstrap.dat to ~/.bitcoin (do not use a symbolic link as this file will get renamed by bitcoin-qt after it is fully imported, and that too will interrupt seeding)
-7.  start bitcoind for background import or bitcoin-qt for import with feedback on progress
-    1.  bitcoin-qt begins importing the block chain from bootstrap.dat, giving visual and text feedback as to import progress ("Importing from disk..." and eg. "4 years and 24 weeks behind", etc.; this import from disk may require more than one hour)
-    2.  the import process duplicates the 22GB bootstrap.dat file into ~/.bitcoin/blocks/, thus roughly doubling the size of ~/.bitcoin from 22GB before starting Bitcoin Core to 44GB after import is complete.
-8.  After import from disk is complete
-    1.  bitcoin-qt will show "Synchronizing with network..." and eg. "22 weeks behind..." (a wired network connection here will speed this part of the process but several hours to complete synchronization with network is typical)
-    2.  the bootstrap.dat file gets renamed to bootstrap.dat.old
-    3.  it should now be safe to remove bootstrap.dat.old from ~/.bitcoin, but a cautious approach would be to
-        1.  wait until your locally stored block chain is fully synchronized with the network
-        2.  quit bitcoin-qt
-        3.  then remove ~/.bitcoin/bootstrap.dat.old
-9.  After bitcoin-qt indicates that the local copy of the block chain is fully synchronized with the network (~/.bitcoin/blocks filled 34GB in Feb [02015](https://longnow.org/about), then consider quitting bitcoin-qt and do either one of the following:
-    1.  start bitcoind to keep the block chain synchronized; feedback as to block chain status can then be had using bitcoin-cli without the additional memory required of bitcoin-qt.
-    2.  restart bitcoin-qt running as a minimized window ($ bitcoin-qt -min). Note however that [some people](https://bbs.archlinux.org/viewtopic.php?id=175249) have found this commandline argument does not work as advertised.
-10.  Consider making a backup of your wallet.dat file using bitcoin-qt.
-11.  See the [official Bitcoin wiki](https://en.bitcoin.it/wiki/Main_Page) for additional guidance.
+1.  Encrypt your wallet with a strong password.
+2.  Backup your wallet.dat file using bitcoin-qt.
+3.  See the [official Bitcoin wiki](https://en.bitcoin.it/wiki/Main_Page) for additional guidance.
 
 Lighter software includes [multibit](https://www.archlinux.org/packages/?name=multibit) and [electrum](https://www.archlinux.org/packages/?name=electrum), available in the [official repositories](/index.php/Official_repositories "Official repositories") too.
 
-You can use this **Systemd service file** for [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon)
+You can use this **systemd service file** for [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon)
 
-(you will probably need to change 'User=' or create bitcoin user)
+(You will probably need to change `User=` or create a bitcoin user.)
 
  `/etc/systemd/system/bitcoind.service` 
 ```
@@ -77,150 +57,42 @@ There are a variety of ways to acquire bitcoins:
 
 *   Accept bitcoins as payment for goods or services.
 *   There are several services where you can trade them for [traditional currency](https://en.bitcoin.it/wiki/Buying_bitcoins).
-*   Find someone to trade cash for bitcoins in-person through a local directory. To find traders near you, you can use [bitcoin.local](http://www.tradebitcoin.com/) or a [bitcoin map](http://www.bitcoinmap.com/).
+*   Find someone to trade cash for bitcoins in-person through a local directory. To find traders near you, you can use [LocalBitcoins](https://localbitcoins.com/) or a [bitcoin map](https://coinmap.org/).
 *   Participate in a [mining pool](https://en.bitcoin.it/wiki/Pooled_mining).
-*   If you have very good hardware, you can solo mine and attempt to create a new block (currently yields 12 bitcoins).
-
-For those who are just getting started, you can visit [BitcoinReward](http://www.bitcoinreward.net/) to get some free coins. For more details and other ways of making Bitcoins see [We Use Coins](http://www.weusecoins.com/getting-started.php).
+*   If you have very good hardware, you can solo mine and attempt to create a new block (currently yields 12.5 BTC plus fees).
 
 ### Mining
 
-**Note:** Mining is only really commercially viable with decent hardware, for a comparison of hardware and their performance see the [bitcoin.it wiki](https://en.bitcoin.it/wiki/Mining_hardware_comparison). To see if your setup is viable use a [Profit Calculator](http://bitcoinx.com/profit/).
+**Note:** Mining is only really commercially viable with decent hardware, for a comparison of hardware and their performance see the [bitcoin.it wiki](https://en.bitcoin.it/wiki/Mining_hardware_comparison). To see if your setup is viable use a [Profit Calculator](https://en.bitcoin.it/wiki/Profitability_Calculator).
 
-The basic concept of Bitcoin mining is that there is a little chunk of each block that contains meaningless random data. Bitcoin miners take all the data in the current top block, shuffle up that random chunk and calculate the hash of the whole thing, repeating this until they obtain a valid block. While hashes are easy to reproduce, they are impossible to predict and they seem to function completely randomly, so the miner has no way of predicting what chunk of random data will produce what hash.
+The concept of Bitcoin mining is based on searching for an input that is hard to find but easy to prove the existence of. Bitcoin miners construct blocks that consist of a set of transactions users are trying to make and link them to the previously solved block. Miners add a random piece of data to this, and hash a summary of the block. If the hash of this summary is below the desired target of the network, the block is considered valid. Since it is easy to reproduce any individual hash, they are impossible to predict, so the miner does not know which piece of data will create a desirable hash.
 
-Mining requires the use of a *miner*, which is program used compute the required hashes and thus to create Bitcoins. To learn more about mining please read this [article](https://www.weusecoins.com/en/mining-guide/).
+Mining requires the use of a *miner*, which is a program used to compute the required hashes and thus create Bitcoins. To learn more about mining please read this [article](https://en.bitcoin.it/wiki/Mining).
 
-There are several Bitcoin miners in the [AUR](/index.php/AUR "AUR"):
+There are several Bitcoin miners in the [official repositories](/index.php/Official_repositories "Official repositories") as well as in the [AUR](/index.php/AUR "AUR"):
+
+*   **bfgminer** — Bitcoin miner featuring overclocking, monitoring, fan speed control and remote management. For FPGA/GPU/CPU Bitcoin mining.
+
+	[http://bfgminer.org/](http://bfgminer.org/) || [bfgminer](https://www.archlinux.org/packages/?name=bfgminer)
 
 *   **CGMiner** — Multi-threaded multi-pool CPU miner.
 
 	[https://github.com/ckolivas/cgminer](https://github.com/ckolivas/cgminer) || [cgminer](https://www.archlinux.org/packages/?name=cgminer) (Note: use [cgminer-gpu](https://aur.archlinux.org/packages/cgminer-gpu/) for GPU mining as its version was the last to support it).
 
-**Tip:** you need corresponding opencl package to enable GPU mining, [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia) for Nvidia, and [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/) in AUR for Intel.
+## Configuration
 
-*   **cpuminer** — Multi-threaded CPU Miner.
-
-	[http://yyz.us/bitcoin/](http://yyz.us/bitcoin/) || [cpuminer](https://aur.archlinux.org/packages/cpuminer/)
-
-*   **MiningBeast** — Multi-platform mining software.
-
-	[http://miningbeast.com/](http://miningbeast.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **Phoenix Miner** — Efficient, fast, modular, python-based, OpenCL GPU miner.
-
-	[https://github.com/jedi95/Phoenix-Miner](https://github.com/jedi95/Phoenix-Miner) || [phoenix-miner-svn](https://aur.archlinux.org/packages/phoenix-miner-svn/)
-
-## Sample config file
-
-An example of a configuration file for **bitcoin-qt** can be seen below. Make sure to set the mode of the file to `600` using:
-
-```
-# chmod 600 ~/.bitcoin/bitcoin.conf
-
-```
- `~/.bitcoin/bitcoin.conf` 
-```
-# bitcoin.conf configuration file. Lines beginning with # are comments.
-
-# Network-related settings:
-
-# Run on the test network instead of the real bitcoin network.
-#testnet=1
-
-# Connect via a socks4 proxy
-#proxy=127.0.0.1:9050
-
-# Use as many addnode= settings as you like to connect to specific peers
-#addnode=69.164.218.197
-#addnode=10.0.0.2:8333
-
-# … or use as many connect= settings as you like to connect ONLY
-# to specific peers:
-#connect=69.164.218.197
-#connect=10.0.0.1:8333
-
-# Do not use Internet Relay Chat (irc.lfnet.org #bitcoin channel) to
-# find other peers.
-#noirc=1
-
-# Maximum number of inbound+outbound connections.
-#maxconnections=
-
-# JSON-RPC options (for controlling a running Bitcoin/bitcoind process)
-
-# server=1 tells Bitcoin to accept JSON-RPC commands.
-#server=1
-
-# You must set rpcuser and rpcpassword to secure the JSON-RPC api
-#rpcuser=user
-#rpcpassword=password
-
-# How many seconds bitcoin will wait for a complete RPC HTTP request.
-# after the HTTP connection is established.
-rpctimeout=30
-
-# By default, only RPC connections from localhost are allowed. Specify
-# as many rpcallowip= settings as you like to allow connections from
-# other hosts (and you may use * as a wildcard character):
-#rpcallowip=10.1.1.34
-#rpcallowip=192.168.1.*
-
-# Listen for RPC connections on this TCP port:
-rpcport=8332
-
-# You can use Bitcoin or bitcoind to send commands to Bitcoin/bitcoind
-# running on another host using this option:
-rpcconnect=127.0.0.1
-
-# Use Secure Sockets Layer (also known as TLS or HTTPS) to communicate
-# with Bitcoin -server or bitcoind
-#rpcssl=1
-
-# OpenSSL settings used when rpcssl=1
-rpcsslciphers=TLSv1+HIGH:!SSLv2:!aNULL:!eNULL:!AH:!3DES:@STRENGTH
-rpcsslcertificatechainfile=server.cert
-rpcsslprivatekeyfile=server.pem
-
-# Miscellaneous options
-
-# Set gen=1 to attempt to generate bitcoins
-gen=0
-
-# Use SSE instructions to try to generate bitcoins faster. For muliple core processors.
-#4way=1
-
-# Pre-generate this many public/private key pairs, so wallet backups will be valid for
-# both prior transactions and several dozen future transactions.
-keypool=100
-
-# Pay an optional transaction fee every time you send bitcoins. Transactions with fees
-# are more likely than free transactions to be included in generated blocks, so may
-# be validated sooner.
-paytxfee=0.00
-
-# Allow direct connections for the ‘pay via IP address’ feature.
-#allowreceivebyip=1
-
-# User interface options
-
-# Start Bitcoin minimized
-#min=1
-
-# Minimize to the system tray
-#minimizetotray=1
-
-```
+**bitcoin-qt** should run fine with minimal or no configuration file; however, for a list of configuration parameters that can be added to your `~/.bitcoin/bitcoin.conf`, see: `bitcoind --help`.
 
 ## See also
 
 *   [Official Bitcoin website](http://www.bitcoin.org/)
 *   [Bitcoin.it wiki](https://en.bitcoin.it/wiki/Main_Page)
-*   [Bitcoin forum](http://forum.bitcoin.org/)
-*   IRC Channels on Freenode :
-    *   **#bitcoin** - (General Bitcoin-related)
-    *   **#bitcoin-dev** - (Development and technical)
-    *   **#bitcoin-otc** - (Over The Counter exchange)
-    *   **#bitcoin-market** - (Live quotes from markets)
-    *   **#bitcoin-mining** - (GPU mining related)
+*   [Bitcoin forum](https://bitcointalk.org/)
+*   IRC Channels on Freenode:
+    *   **#bitcoin** - General Bitcoin-related.
+    *   **##bitcoin** - Price talk discussion, etc.
+    *   **#bitcoin-dev** - Development and technical.
+    *   **#bitcoin-otc** - Over The Counter exchange.
+    *   **#bitcoin-market** - Live quotes from markets.
+    *   **#bitcoin-mining** - Mining discussion.
 *   [blockparser](https://github.com/znort987/blockparser) — Fast, quick and dirty bitcoin blockchain parser.

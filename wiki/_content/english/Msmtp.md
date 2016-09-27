@@ -181,7 +181,7 @@ $ gpg --default-recipient-self -e */path/to/plain/password*
 
 Remove the plain text file and move the encrypted file to the final location, e.g. `~/.mail/.msmtp-credentials.gpg`. In `~/.msmtprc` add:
 
- `~/.msmtprc`  `paswordeval  "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail/.msmtp-credentials.gpg"` 
+ `~/.msmtprc`  `passwordeval  "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.mail/.msmtp-credentials.gpg"` 
 
 Normally this is sufficient for a GUI password prompt to appear when, for example, sending a message from [Mutt](/index.php/Mutt "Mutt"). If gpg prompt for the passphrase cannot be issued, then start the [gpg-agent](/index.php/GPG#gpg-agent "GPG") before. A simple hack to start the agent is to execute a external command in your muttrc using the backtick `` command `` syntax. For example, you can put something like the following in your muttrc
 

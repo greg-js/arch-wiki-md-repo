@@ -39,7 +39,7 @@ If a cursor theme is not available in the official repositories or the AUR, it c
 
 Some websites that have cursor themes:
 
-*   [GNOME Look](http://gnome-look.org/index.php?xcontentmode=36)
+*   [GNOME Look](https://www.gnome-look.org/browse/cat/107/ord/latest/)
 *   [Customize.org](http://www.customize.org/list/xcursors)
 *   [Deviant Art](http://www.deviantart.com/browse/all/customization/skins/linuxutil/x11cursors/)
 

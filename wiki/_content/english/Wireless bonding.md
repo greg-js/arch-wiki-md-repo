@@ -6,7 +6,8 @@
 *   [4 wpa_supplicant configuration](#wpa_supplicant_configuration)
 *   [5 Slave configuration](#Slave_configuration)
 *   [6 Master configuration](#Master_configuration)
-*   [7 Testing the result](#Testing_the_result)
+*   [7 Enabling/Installing the Service Units](#Enabling.2FInstalling_the_Service_Units)
+*   [8 Testing the result](#Testing_the_result)
 
 ## Network Interface Bonding with Removable Device Support
 
@@ -15,11 +16,11 @@
 
 The Linux kernel bonding driver can be used to provide parallel network connections to maximize throughput, or to allow redundant network connections to maximize network availability. Here is an example of using the kernel bonding driver to maximize availability, by allowing network connections to "failover" between a primary network device and any number of secondary devices. This approach provides Automatic Wired and Wireless Network Configuration with Removable Device Support, using only the kernel bonding module in "active-backup" mode, the sysfs, the [iproute2](https://www.archlinux.org/packages/?name=iproute2) commands, and [systemd](https://www.archlinux.org/packages/?name=systemd) "template" Unit files, **without** using systemd-networkd.
 
-This example will run wpa_supplicant continuously on any interface, as needed, and DHCP and DHCPv6 clients on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be applied to wired or wireless interfaces, and extended to more than two physical network interfaces.
+This example will run wpa_supplicant continuously on any interface, as needed, and DHCP and DHCPv6 clients on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be applied to wired or wireless interfaces, or any other type of network interface, and extended to more than two physical or virtual network interfaces.
 
 Note that no other "connection manager" is used here, providing a more direct approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), to scan for, select, and connect to new wireless access points/base stations.
 
-In this example, there are five [systemd](/index.php/Systemd "Systemd") service unit files needed, along with four associated configuration files, for [kernel bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), and [dhclient](https://www.archlinux.org/packages/?name=dhclient). Only the Master systemd service unit file is customized, to specify the primary slave network interface name. The other four unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
+In this example, there are five [systemd](/index.php/Systemd "Systemd") service unit files needed, along with four associated configuration files, for [kernel bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), and [dhclient](https://www.archlinux.org/packages/?name=dhclient). Only the Master systemd service unit file is customized, to specify the primary slave network interface name, though a separate configuration file could be used instead. The other four unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
 
 **Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch Linux packages. Edit as required.
 
@@ -70,7 +71,7 @@ These are only issues with dhclient and IPv4\. Fortunately, on a dhclient DHCP r
 
 This problem **cannot** be solved by configuring the bonding driver with the default `fail_over_mac=none`. Almost all network interface devices will not pass traffic with a MAC address which is not their own. An example of this kind of warning can be seen [here](http://www.ibm.com/developerworks/linux/linux390/development_restrictions.html#net). Strange network behavior will be the result, where broadcast packets will pass, but ping/icmp packets will only pass in some circumstances and not others.
 
-Ideally, dhclient would re-determine the bond0 MAC address each time it initially retried contacting the DHCP server. Without that, a different approach is to simply delay the start of dhclient until after the kernel bonding driver has configured an active slave. If the active slave is to be the wireless interface, then wpa_supplicant will first have authenticated, associated, and authorized with the access point/base station, and dhclient will adopt the correct MAC address. If the active slave is the primary slave, again dhclient will adopt the correct MAC address. This delay is imposed with the simple "ExecStartPre= /usr/bin/sleep 8" line in the dhclient service unit file, a conservatively long delay between the time systemd starts dhclient and the supplicant and the bonding driver selects the active interface. This selection time is longest during system boot, when many processes are starting. On faster hardware, a shorter delay may still be effective.
+Ideally, dhclient would re-determine the bonding interface MAC address each time it initially retried contacting the DHCP server. Without that, a different approach is to simply delay the start of dhclient until after the kernel bonding driver has configured an active slave. If the active slave is to be the wireless interface, then wpa_supplicant will first have authenticated, associated, and authorized with the access point/base station, and dhclient will adopt the correct MAC address. If the active slave is the primary slave, again dhclient will adopt the correct MAC address. This delay is imposed with the simple `ExecStartPre= /usr/bin/sleep 8` line in the dhclient service unit file, a conservatively long delay between the time systemd starts dhclient and the supplicant and the bonding driver selects the active interface. This selection time is longest during system boot, when many processes are starting. On faster hardware, a shorter delay, perhaps `sleep 4`, may still be effective.
 
 ## DHCPv6 configuration
 
@@ -237,12 +238,19 @@ This "slave@.service" unit file will be *hard* linked to files having the same n
 
  `/etc/modprobe.d/bonding.conf` 
 ```
-# The primary slave will be configured in the systemd unit file.
-# Currently, the kernel bonding module supports link detection methods only one at a time, and
-# there is no IPv6 Neighbor Solicitation/Advertisement link detection method available.
+# The primary slave will be configured from the systemd master unit file.
 
-options bonding max_bonds=0 miimon=100 mode=active-backup fail_over_mac=active
+options bonding max_bonds=0 miimon=100 mode=active-backup fail_over_mac=active primary_reselect=always
 ```
+
+> [Linux Ethernet Bonding Driver HOWTO](https://www.kernel.org/doc/Documentation/networking/bonding.txt)
+> primary_reselect - Specifies the reselection policy for the primary slave.
+> always or 0 (default) - The primary slave becomes the active slave whenever it comes back up.
+> better or 1 - The primary slave becomes the active slave when it comes back up, if the speed and duplex of the primary slave is better than the speed and duplex of the current active slave.
+> failure or 2 - The primary slave becomes the active slave only if the current active slave fails and the primary slave is up.
+
+The `primary_reselect=better` mode might be desired here, to always select the slave interface with the best speed. If the primary slave is the slave with the best speed anyway, the effect is the same. If there is a preferred slave interface, perhaps for security, then use `primary_reselect=always`.
+
  `/etc/systemd/system/master@.service` 
 ```
 [Unit]
@@ -261,6 +269,7 @@ BindsTo= sys-subsystem-net-devices-%i.device
 [Service]
 Environment= PRI=enp3s0
 # Environment= PRI=wlp2s0
+EnvironmentFile=-/etc/primary.conf
 
 Type= oneshot
 RemainAfterExit= yes
@@ -284,11 +293,13 @@ RequiredBy= dhcp6c@%i.service
 
 The "RequiredBy" dependencies here activate the "stop" ordering during bonding "restart". When the "master@.service" unit stops, then the DHCP and DHCPv6 clients will be stopped also.
 
-Remember to edit the "PRI" environment variable to provide the correct wired or wireless interface name, to select the primary slave interface. This will be the one interface used when other interfaces are also available.
+Remember to edit the "PRI" environment variable to provide the correct interface name, to select the primary slave interface. This will be the one interface used when other interfaces are also available. Of course, an Environment file could be used here instead, to provide a generic master service unit file.
 
-## Testing the result
+Alternatively, when using `primary_reselect=better` in `/etc/modprobe.d/bonding.conf`, the "PRI" environment variable can be left entirely unset, and no primary slave configuration will be required.
 
-With those preliminaries, the systemd Unit dependencies must be specified on the command line.
+## Enabling/Installing the Service Units
+
+With those preliminaries, the interface names must be specified on the command line.
 
 Whenever a unit file is edited, afterward run:
 
@@ -297,7 +308,7 @@ Whenever a unit file is edited, afterward run:
 
 ```
 
-Next, observe the available network interface names:
+Next, observe the available network interface names, after inserting any removable devices:
 
 ```
 # ip address
@@ -312,14 +323,14 @@ For each interface which will be enslaved, hard link "slave@.service" to "*inter
 
 ```
 
-Now, determine which network interface devices will need a supplicant to access the network. Typically this will just be the wireless interface. [Enable](/index.php/Enable "Enable")/Install and start the supplicant@.service unit for each interface, as needed:
+Now, determine which network interface devices will need a supplicant to access the network. Typically this will just be the wireless interface. Enable/Install and start the supplicant@.service unit for each interface, as needed:
 
 ```
 # systemctl --now enable supplicant@wlp2s0
 
 ```
 
-Then, [Enable](/index.php/Enable "Enable")/Install the slave and master units, using any desired interface name. Here, the default bonding interface name "bond0" is used:
+Then, Enable/Install the slave and master units, using any desired interface name. Here, the default bonding interface name "bond0" is used:
 
 ```
 # systemctl enable enp3s0@ wlp2s0@ master@
@@ -333,7 +344,9 @@ And finally, activate the bonding interface and the DHCP and DHCPv6 clients by s
 
 ```
 
-The master and supplicant units will be started automatically when any configured slave device appears, and in particular, when the system boots.
+The master and supplicant units will be started automatically when any configured slave device appears, and in particular, when the system boots. Were any of the DHCP, DHCPv6, or slave units to be started independently, the master unit would also be started, but normally these units will have already been started at boot.
+
+## Testing the result
 
 Check the results:
 
@@ -430,6 +443,20 @@ Slave queue ID: 0
 
 ```
 
+To tear-down the bonding interface and shutdown the master, slave, DHCP, and DHCPv6 units, simply run:
+
+```
+# systemctl stop master@bond0
+
+```
+
+The supplicant units can be stopped independently with
+
+```
+# systemctl stop supplicant@*interface_name*
+
+```
+
 This approach to bonded wireless networking leaves wpa_supplicant running continuously on whatever interfaces it is started. By running [htop](https://www.archlinux.org/packages/?name=htop), it can be seen that wpa_supplicant, and the DHCP and DHCPv6 client daemons, seem to behave well, and do not use any noticeable CPU time.
 
 Still, a hardware switch or [rfkill](/index.php/Rfkill "Rfkill") can be used to actually disable the radio when desired.
@@ -448,19 +475,7 @@ Similarly, an address may be released and a new address acquired with
 
 ```
 
-And wpa_supplicant could be temporarily disabled when only the wired interface is being used with
-
-```
-# systemctl stop supplicant@wlp2s0.service
-
-```
-
-then started again later with
-
-```
-# systemctl start supplicant@wlp2s0.service
-
-```
+Also, wpa_supplicant could be temporarily disabled when only the wired interface is being used, and then started again later.
 
 This bonding interface will function properly even with only one interface available, for instance, when only a wired interface is being used. And then, simply inserting a configured wireless network card, this new wireless interface will be automatically added to the bonded interface pool, and wpa_supplicant started. Removing this wireless card again will remove the slave interface and stop wpa_supplicant.
 

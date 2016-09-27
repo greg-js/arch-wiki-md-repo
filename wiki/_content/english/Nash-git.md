@@ -1,22 +1,23 @@
-[Nash](https://github.com/NeowayLabs/nash) is a minimalist and yet powerful shell with focus on readability and security of scripts. It's inspired by Plan9 [rc](https://en.wikipedia.org/wiki/rc) shell and brings to linux a similar approach to [namespace](http://man7.org/linux/man-pages/man7/namespaces.7.html) creation. There's a *nashfmt* program to correctly format nash scripts in a readable manner (much like Golang [gofmt](https://golang.org/cmd/gofmt/) program).
+[Nash](https://github.com/NeowayLabs/nash) is a minimalist yet powerful shell with focus on readability and security of scripts. It is inspired by Plan9 [rc](https://en.wikipedia.org/wiki/rc) shell and brings to Linux a similar approach to [namespaces(7)](http://man7.org/linux/man-pages/man7/namespaces.7.html) creation. There is a *nashfmt* program to correctly format nash scripts in a readable manner, much like the Golang [gofmt](https://golang.org/cmd/gofmt/) program.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Initial configuration](#Initial_configuration)
-*   [3 Organizing the init](#Organizing_the_init)
-*   [4 Configuring $PATH](#Configuring_.24PATH)
-*   [5 Making nash your default shell](#Making_nash_your_default_shell)
-*   [6 Keybindings](#Keybindings)
-*   [7 See also](#See_also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Organizing the init](#Organizing_the_init)
+    *   [2.2 Configuring $PATH](#Configuring_.24PATH)
+    *   [2.3 Making nash your default shell](#Making_nash_your_default_shell)
+*   [3 Usage](#Usage)
+    *   [3.1 Keybindings](#Keybindings)
+*   [4 See also](#See_also)
 
-### Installation
+## Installation
 
 Install the [nash-git](https://aur.archlinux.org/packages/nash-git/) package.
 
-### Initial configuration
+## Configuration
 
-Make sure that nash has been successfull installed issuing the command below in your current shell:
+Make sure that nash has been successfully installed issuing the command below in your current shell:
 
 ```
 $ nash
@@ -24,9 +25,9 @@ $ nash
 
 ```
 
-If you got a lambda prompt, the everything is fine.
+If it returned a lambda prompt, then everything is fine.
 
-When first executed, nash will create a .nash directory in $HOME. Enter the command below to discover by yourself what is this directory:
+When first executed, nash will create a `~/.nash/` directory in the user's homepath. Enter the command below to discover by yourself what is this directory:
 
 ```
 λ> echo $NASHPATH
@@ -34,14 +35,14 @@ When first executed, nash will create a .nash directory in $HOME. Enter the comm
 
 ```
 
-Put a file called init inside this directory to configure it.
+Put a file called `init` inside this directory to configure it.
 
 Nash only has 2 special variables:
 
-*   PROMPT variable stores the unicode string used for ... you know
-*   IFS is a list containing the set of character delimiters used internally to split command output into lists.
+*   `PROMPT` variable stores the unicode string used for the shell prompt.
+*   `IFS` is a list containing the set of character delimiters used internally to split command output into lists.
 
-*Nash* default *cd* is a very simple alias to the builtin function *chdir*, then you may find odd using it. To improve your usage you must create your own *cd* alias. In nash you cannot create aliases by matching string to strings, but only binding function to command names. The *init* below creates a *cd* alias as example:
+*Nash* default *cd* is a very simple alias to the builtin function *chdir*; you may find it odd to use. To improve your usage you can create your own *cd* alias. In nash you cannot create aliases by matching string to strings, but only binding function to command names. The *init* below creates a *cd* alias as example:
 
 ```
 defPROMPT = "λ> "
@@ -60,7 +61,7 @@ fn cd(path) {
 bindfn cd cd
 ```
 
-After saving the init file, simple start a new shell and now you can use cd as if it were a builtin keyword.
+After saving the init file, simply start a new shell and now you can use *cd* as if it were a builtin keyword.
 
 ```
 git:(master)λ> nash
@@ -74,7 +75,7 @@ For a more elaborated *cd* or other aliases implementation, see the project [dot
 
 ### Organizing the init
 
-*Nash* scripts can be modular, but there's no concept of package. You can use the *import* keyword to load other files inside the current script session. For an example, see [dotnash init](https://github.com/tiago4orion/dotnash/blob/master/init).
+*Nash* scripts can be modular, but there is no concept of package. You can use the *import* keyword to load other files inside the current script session. For an example, see [dotnash init](https://github.com/tiago4orion/dotnash/blob/master/init).
 
 ### Configuring $PATH
 
@@ -99,7 +100,9 @@ setenv PATH
 
 ### Making nash your default shell
 
-See [https://wiki.archlinux.org/index.php/Command-line_shell#Changing_your_default_shell](https://wiki.archlinux.org/index.php/Command-line_shell#Changing_your_default_shell)
+See [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell").
+
+## Usage
 
 ### Keybindings
 
@@ -110,7 +113,7 @@ The *cli* supports *emacs* and *vi* modes for common buffer editing. Default mod
 
 ```
 
-### See also
+## See also
 
 [nash](https://github.com/NeowayLabs/nash)
 

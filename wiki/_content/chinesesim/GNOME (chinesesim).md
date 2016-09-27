@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [GNOME](/index.php/GNOME "GNOME") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-21，点击[这里](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=451075)可以查看翻译后英文页面的改动。
 
-GNOME (pronounced *gah-nohm* or *nohm*)是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)") .它由[The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") 设计并且完全自由和开源. GNOME是[GNU Project](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project")的一部分.
+GNOME (读音是*gah-nohm* 或 *nohm*)是一个简单易用的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)"). 它由[GNOME 项目组](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project")设计，完全自由和开源. GNOME是[GNU 项目](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project")的一部分.
 
 ## Contents
 
