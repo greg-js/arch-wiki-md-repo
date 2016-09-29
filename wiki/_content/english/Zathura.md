@@ -10,7 +10,7 @@ Available plugin packages are:
 
 [zathura-djvu](https://www.archlinux.org/packages/?name=zathura-djvu) for DjVu support
 
-[zathura-ps](https://www.archlinux.org/packages/?name=zathura-ps) for PostScipt support
+[zathura-ps](https://www.archlinux.org/packages/?name=zathura-ps) for PostScript support
 
 [zathura-cb](https://www.archlinux.org/packages/?name=zathura-cb) for comic book support
 

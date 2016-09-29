@@ -81,6 +81,8 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 
 ### Advanced Options
 
+**Warning:** Protocols and port combinations no longer work as of Version 3.1\. See [Issue #17](https://github.com/flamusdiu/python-pia/issues/17) on Github
+
 *   Create `/etc/private-internet-access/pia.conf`
 *   For the `[pia]` section:
 
@@ -91,7 +93,7 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 *   For the `[configure]` section:
 
 | option | option values | description |
-| port | 80, 443, 110, 53, 8080, 9201 | Default: 1194; This configures which port and protocol the VPN uses. 80,443,110=TCP; 53,8080,9201=UDP |
+| port | 501, 502, 1197, 1198 | Default: 1198; This configures which port and protocol the VPN uses. 501,502=TCP; 1197,1198=UDP |
 | cipher | aes-128-cbc, aes-256-cbc, bf-cbc, None | Default: aes-128-cbc; This configures the data encryption cipher. |
 | auth | sha1, sha256, None | Default: sha1; This configures the data authentication. |
 

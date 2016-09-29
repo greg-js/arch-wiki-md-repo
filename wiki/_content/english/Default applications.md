@@ -13,17 +13,12 @@ There is frequently more than one application able to handle data of a certain t
     *   [2.3 mailcap](#mailcap)
 *   [3 Utilities](#Utilities)
     *   [3.1 xdg-utils](#xdg-utils)
-    *   [3.2 xdg-open replacements](#xdg-open_replacements)
-    *   [3.3 Examples of usage](#Examples_of_usage)
-        *   [3.3.1 Detect MIME type](#Detect_MIME_type)
-        *   [3.3.2 Set use of MIME type by default](#Set_use_of_MIME_type_by_default)
-    *   [3.4 Application launchers](#Application_launchers)
-        *   [3.4.1 xdg-open](#xdg-open)
-        *   [3.4.2 mimeopen](#mimeopen)
-    *   [3.5 Extended practical examples](#Extended_practical_examples)
-        *   [3.5.1 xdg-open](#xdg-open_2)
-            *   [3.5.1.1 Set the default browser](#Set_the_default_browser)
-    *   [3.6 lsdesktopf](#lsdesktopf)
+    *   [3.2 xdg-open alternatives](#xdg-open_alternatives)
+        *   [3.2.1 perl-file-mimeinfo](#perl-file-mimeinfo)
+        *   [3.2.2 mimeo](#mimeo)
+        *   [3.2.3 whippet](#whippet)
+        *   [3.2.4 Naive replacements](#Naive_replacements)
+    *   [3.3 lsdesktopf](#lsdesktopf)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Missing .desktop file](#Missing_.desktop_file)
     *   [4.2 Missing association](#Missing_association)
@@ -88,7 +83,7 @@ The most common standards are explained below for manual editing. You can also u
 
 ### Environment variables
 
-Especially console programs are configured by setting an appropriate [environment variable](/index.php/Environment_variable "Environment variable"), e.g. `BROWSER` or `EDITOR`. See [Environment variables#Examples](/index.php/Environment_variables#Examples "Environment variables") for more examples.
+Console programs in particular are configured by setting an appropriate [environment variable](/index.php/Environment_variable "Environment variable"), e.g. `BROWSER` or `EDITOR`. See [Environment variables#Examples](/index.php/Environment_variables#Examples "Environment variables").
 
 ### XDG standard
 
@@ -103,11 +98,13 @@ The [XDG standard](https://specifications.freedesktop.org/mime-apps-spec/mime-ap
 
 Additionally, it is possible to define [desktop-environment](/index.php/Desktop_environment "Desktop environment")-specific default applications in a file named `*desktop*-mimeapps.list` where `*desktop*` is the name of the desktop environment (from the `XDG_CURRENT_DESKTOP` environment variable). For example, `/etc/xdg/xfce-mimeapps.list` defines system-wide default application overrides for [XFCE](/index.php/XFCE "XFCE"). These desktop-specific overrides take precedence over the corresponding non-desktop-specific file. For example, `/etc/xdg/xfce-mimeapps.list` takes precedence over `/etc/xdg/mimeapps.list` but is still overridden by `~/.config/mimeapps.list`.
 
-**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it to the non-deprecated one:
+**Tip:** Although deprecated, several applications still read/write to `~/.local/share/applications/mimeapps.list`. To simplify maintenance, simply symlink it
 ```
-$ ln -s ~/.config/mimeapps.list ~/.local/share/applications/mimeapps.list
+$ ln -s ~/.local/share/applications/mimeapps.list ~/.config/mimeapps.list 
 
 ```
+
+the reverse symlink unfortunately does not work because of how `xdg-mime` writes to this file.
 
 **Note:** You might also find files in these locations named `defaults.list`. This file is similar to `mimeapps.list` except it only lists default applications (not added/removed associations). It is now deprecated and should be manually merged with `mimeapps.list`.
 
@@ -136,15 +133,15 @@ Each section is optional and can be omitted if unneeded.
 
 ### mailcap
 
-The [mailcap](http://linux.die.net/man/4/mailcap) file.
-
-The *.mailcap* file format is used by mail programs such as [mutt](https://www.archlinux.org/packages/?name=mutt) and [sylpheed](https://www.archlinux.org/packages/?name=sylpheed). To have those programs use *xdg-open*, edit `~/.mailcap`:
+The [mailcap(4)](http://linux.die.net/man/4/mailcap) file format is used by mail programs such as [mutt](https://www.archlinux.org/packages/?name=mutt) and [sylpheed](https://www.archlinux.org/packages/?name=sylpheed) to open non-text files. To have those programs use [xdg-open](#xdg-utils), edit `~/.mailcap`:
 
  `~/.mailcap` 
 ```
 */*; xdg-open "%s"
 
 ```
+
+**Warning:** If you use [run-mailcap](https://aur.archlinux.org/packages/run-mailcap/), it is possible for `xdg-open` to delegate to it. This will cause an infinite loop if you configured your `.mailcap` as described above.
 
 ## Utilities
 
@@ -154,7 +151,7 @@ If you use a [desktop environment](/index.php/Desktop_environment "Desktop envir
 
 ### xdg-utils
 
-[xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) provides the official utilities for managing MIME types and default applications. Most importantly, it provides `/usr/bin/xdg-open` which many applications use to open a file with its default application. It is desktop-environment-independent in the sense that it attempts to use each environment's native default application tool and provides its own mechanism if no known environment is detected. Examples of it use:
+[xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) provides the official utilities for managing MIME types and default applications according to the [#XDG standard](#XDG_standard). Most importantly, it provides `/usr/bin/xdg-open` which many applications use to open a file with its default application. It is desktop-environment-independent in the sense that it attempts to use each environment's native default application tool and provides its own mechanism if no known environment is detected. Examples:
 
 ```
 # determine a file's MIME type
@@ -171,161 +168,103 @@ $ xdg-mime default feh.desktop image/jpeg
 # open a file with its default application
 $ xdg-open photo.jpeg
 
-```
+# shortcut to open all web MIME types with a single application
+$ xdg-settings set default-web-browser firefox.desktop
 
-### xdg-open replacements
-
-Other utilities to manage MIME types are:
-
-| Name/Package | Method | Based on | xdg-utils replacement | Configuration file |
-| [mime-editor](https://www.archlinux.org/packages/?name=mime-editor) | MIME type | Utility for [ROX](http://rox.sourceforge.net/desktop/home.html) applications |
-| [busking-git](https://aur.archlinux.org/packages/busking-git/) | regex | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | yes | custom |
-| [linopen](https://aur.archlinux.org/packages/linopen/) | [file](https://www.archlinux.org/packages/?name=file) | custom |
-| [mimeo](https://aur.archlinux.org/packages/mimeo/) | MIME type
-regex | [file](https://www.archlinux.org/packages/?name=file) | [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) | `mimeapps.list`
-`defaults.list`
-custom is optional |
-| [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | [file](https://www.archlinux.org/packages/?name=file) | yes | custom |
-| `rifle`
-part of [ranger](https://www.archlinux.org/packages/?name=ranger) | MIME type
-name
-regex | [file](https://www.archlinux.org/packages/?name=file) | custom |
-| [sx-open](https://aur.archlinux.org/packages/sx-open/) | regex | [file](https://www.archlinux.org/packages/?name=file)
-bash regex | yes | custom |
-| [whippet](https://aur.archlinux.org/packages/whippet/) | MIME type
-name
-regex | SQLite database
-[file](https://www.archlinux.org/packages/?name=file)
-[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), etc | xdg-open | custom SQLite database
-`mimeapps.list` |
-
-### Examples of usage
-
-Here is a short description about how to use command line tools to show MIME type of a file or set preferred program as default to open MIME type.
-
-#### Detect MIME type
-
-Tools detecting MIME type by reading meta-data from header of the file or detecting by magic number that is in two bytes identifier in the begin of the file. See [File header](https://en.wikipedia.org/wiki/File_format#File_header "wikipedia:File format").
-
-Many programs are using command *file* to detect correct MIME type. For detection it uses compiled database that is stored in the `/usr/share/misc/magic/` directory. It has many options to determinate correct MIME type and for showing output.
-
-In Linux it is two standards to detect MIME type that can affect which program will start and open the file, e.g. extension is associated with one program but content is associated with another MIME type. The simplest way to see what is your system prioritizes is by renaming file extension and check again with tools that can use custom [*.xml](#Associate_file_extensions_with_applications_MIME_type) configuration files.
-
-Here is examples of utility *xdg-mime* that first checking association of extension in [*.xml](#Associate_file_extensions_with_applications_MIME_type) configuration files.
-
-| Without extension | With extension |
-| xdg-mime query filetype *foo-file* | xdg-mime query filetype *foo-file*.*jpg* |
-| application/vnd.oasis.opendocument.text | image/jpeg |
-
-Comparison functionality of the tools
-
-Here is shown options only for simple or multiple checks of a file, for more options read their own documentation.
-
-| Tool | Option | Detection order | Functionality | Type | Interface |
-| file | *(has many)* | Magic(Byte/Pattern) | Show only | binary | terminal |
-| xdg-mime | query filetype | *.xml -> Magic | Show / Set | script | terminal |
-| mimetype | -i *(*.xml)* -M *(Magic)* | *.xml -> Magic | Show only | script | terminal |
-| mimeo | -m | *.xml -> Magic | Show / Set / Launch | script | terminal |
-
-#### Set use of MIME type by default
-
-Comparison functionality of the tools
-
-Here is shown options only for single file associations, for more options read their own documentation.
-
-| Tool | Option | Functionality | Type | Interface |
-| xdg-mime | default **.desktop* Type1/Extension1 Type2/Extension2 | Show / Set | script | terminal |
-| mimeo | --prefer 'regex:^Type/(Extension**1** |Extension?**2**)$' **.desktop* | Show / Set / Launch | script | terminal |
-| mimeopen | --ask-default *(interactive)* | Set / Launch | script | terminal |
-
-### Application launchers
-
-#### xdg-open
-
-*xdg-open* (from the [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) package) uses [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) as a fallback ("generic") method if no [desktop environment](/index.php/Desktop_environment "Desktop environment") is detected. It is a desktop-independent tool. Many applications invoke the `xdg-open` command internally. Inside a [desktop environment](/index.php/Desktop_environment "Desktop environment") it passes the arguments to desktop supported environment's file-opener applications (e.g. *gvfs-open*, *kde-open*, or *exo-open*). When no desktop environment is detected the *xdg-open* will use its own configuration files.
-
-#### mimeopen
-
-*mimeopen* (from the [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) package) can launch applications from command line. It can use custom database and prompt user to chose default application from a list of detected relevant and offers to chose own alternative.
-
-Example of the prompt:
-
- `$ mimeopen -d /path/to/foo-file` 
-```
- Please choose a default application for files of type *Type*/*Extension*
-        1) notepad  (wine-extension-txt)
-        2) Leafpad  (leafpad)
-        3) OpenOffice.org Writer  (writer)
-        4) gVim  (gvim)
-        5) Other...
+# shortcut for setting the default application for a URL scheme
+$ xdg-settings set default-url-scheme-handler irc xchat.desktop
 
 ```
 
-Your answer becomes the default handler for that type of file. Mimeopen is installed as `/usr/bin/vendor_perl/mimeopen`.
+**Tip:** If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) to work properly without a desktop environment, you will need to install [#perl-file-mimeinfo](#perl-file-mimeinfo) or another [xdg-open alternative](#xdg-open_alternatives).
 
-If you run *xdg-open* without a desktop environment, you should also install [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo), or [xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) and [mimeo](https://aur.archlinux.org/packages/mimeo/) from the [AUR](/index.php/AUR "AUR") for a faster alternative.
+### xdg-open alternatives
 
-### Extended practical examples
+Because of the complexity of the [#xdg-utils](#xdg-utils) version of `xdg-open`, it can be difficult to debug when the wrong default application is being opened. Because of this, there are many alternatives that attempt to improve upon it. Several of these alternatives replace the `/usr/bin/xdg-open` binary, thus changing the default application behavior of most applications. Others simply provide an alternative method of choosing default applications.
 
-#### xdg-open
+#### perl-file-mimeinfo
 
-*xdg-mime* modifies the local file `~/.local/share/applications/mimeapps.list` (deprecated).
-
-To **query** the mime type used by an existing file, use
+[perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) provides the tools `mimeopen` and `mimetype`. These have a slightly nicer interface than their [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) equivalents:
 
 ```
-$ xdg-mime query filetype *file.ext*
+# determine a file's MIME type
+$ mimetype photo.jpeg
+photo.jpeg: image/jpeg
 
-```
+# choose the default application for this file
+$ mimeopen -d photo.jpeg
+Please choose an application
 
-To change an associated desktop entry by setting [Thunar](/index.php/Thunar "Thunar") as the default file browser:
+    1) Feh (feh)
+    2) GNU Image Manipulation Program (gimp)
+    3) Pinta (pinta)
 
-```
-$ xdg-mime default Thunar.desktop inode/directory
+use application #
 
-```
-
-Note that you should not specify the complete path, but only the name of the *.desktop* file.
-
-This command can take multiple MIME types, allowing related files to be handled by the same program. The example below associates [Emacs](/index.php/Emacs "Emacs") to all known source files:
-
-```
-$ xdg-mime default emacs.desktop $(grep '^text/x-*' /usr/share/mime/types)
+# open a file with its default application
+$ mimeopen -n photo.jpeg
 
 ```
 
-##### Set the default browser
+Most importantly, [#xdg-utils](#xdg-utils) apps will actually call `mimetype` instead of `file` for MIME type detection, if possible. This is important because `file` does not follow the [#XDG standard](#XDG_standard).
 
-To set the default application for `http(s)://` internet protocols:
+**Note:** But [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) does not *entirely* follow the [#XDG standard](#XDG_standard). For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
 
-```
-$ xdg-mime default midori.desktop x-scheme-handler/http
-$ xdg-mime default midori.desktop x-scheme-handler/https
+#### mimeo
 
-```
-
-As an alternative try:
+[mimeo](https://aur.archlinux.org/packages/mimeo/) provides the tool `mimeo`, which unifies the functionality of `xdg-open` and `xdg-mime`.
 
 ```
-$ xdg-settings set default-web-browser netsurf.desktop
+# determine a file's MIME type
+$ mimeo -m photo.jpeg
+photo.jpeg
+  image/jpeg
 
-```
+# choose the default application for this MIME type
+$ mimeo --add image/jpeg feh.desktop
 
-To verify if the URLs opens correctly:
-
-```
-$ xdg-open https://archlinux.org
+# open a file with its default application
+$ mimeo photo.jpeg
 
 ```
 
-To associate *.html* files with the [netsurf](https://www.archlinux.org/packages/?name=netsurf) web-browser:
+However a big difference with *xdg-utils* is that mimeo also supports custom "association files" that allow for more complex associations. For example, passing specific command line arguments based on a regular expression match:
 
 ```
-$ xdg-mime default netsurf.desktop text/html
+# open youtube links in VLC without opening a new instance
+vlc --one-instance --playlist-enqueue %U
+  ^https?://(www.)?youtube.com/watch\?.*v=
 
 ```
 
-It is important to note that if the envirnoment variable *BROWSER* is set, xdg will not be able to override it, which means *xdg-open* will use the browser set in the *BROWSER* env var rather than the one you specified with one of the commands above.
+[xdg-utils-mimeo](https://aur.archlinux.org/packages/xdg-utils-mimeo/) patches *xdg-utils* so that `xdg-open` falls back to mimeo if no desktop environment is detected.
+
+#### whippet
+
+[whippet](https://aur.archlinux.org/packages/whippet/) provides the tool `whippet`, which is similar to `xdg-open`. It has X11 integration by using [libnotify](https://www.archlinux.org/packages/?name=libnotify) to display errors and [dmenu](https://www.archlinux.org/packages/?name=dmenu) to display choices between applications to open.
+
+```
+# open a file with its default application
+$ whippet -M photo.jpeg
+
+# choose from all possible applications for opening a file (without setting a default)
+$ whippet -m photo.jpeg
+
+```
+
+In addition to the standard [mimeapps.list](#XDG_standard), *whippet* can also use a SQlite database of weighted application/MIME type/regex associations to determine which app to use.
+
+#### Naive replacements
+
+The following packages replace [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) however they only provide an `xdg-open` script. These versions of `xdg-open` do not do any delegation to desktop-environment-specific tools and do not read/write the standard [mimeapps.list](#XDG_standard) config file (each has its own custom config), so they may not integrate well with other programs that manipulate default applications. However you may find them simpler to use if you do not use a desktop environment.
+
+**Warning:** If you need any `xdg-*` binaries from [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) other than `xdg-open` you should not use these applications, since they do not provide them.
+
+| Package | Features |
+| [linopen](https://aur.archlinux.org/packages/linopen/) | Allows regex rules, can specify fallback file opener |
+| [mimi-git](https://aur.archlinux.org/packages/mimi-git/) | Can change command arguments for each MIME type |
+| [busking-git](https://aur.archlinux.org/packages/busking-git/) | similar to *mimi* but also supports regex rules |
+| [sx-open](https://aur.archlinux.org/packages/sx-open/) | uses a simple shell-based config file |
 
 ### lsdesktopf
 
@@ -351,7 +290,7 @@ If the desktop entry is associated with the MIME type, it may simply not be set 
 
 ### Nonstandard association
 
-The formats and procedures described in this article are merely a standard defined by freedesktop.org; applications are free to ignore or only partially implement the standard. Check for usage of deprecated files such as `~/.local/share/applications/mimeapps.list` and `~/.local/share/applications/defaults.list`. If you are attempting to open the file from another application (e.g. a web browser or file manager) check if that application has its own method of selecting default applications.
+Applications are free to ignore or only partially implement the [#XDG standard](#XDG_standard). Check for usage of deprecated files such as `~/.local/share/applications/mimeapps.list` and `~/.local/share/applications/defaults.list`. If you are attempting to open the file from another application (e.g. a web browser or file manager) check if that application has its own method of selecting default applications.
 
 ### Variables in .desktop files that affect application launch
 

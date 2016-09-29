@@ -81,7 +81,7 @@ There are several Bitcoin miners in the [official repositories](/index.php/Offic
 
 ## Configuration
 
-**bitcoin-qt** should run fine with minimal or no configuration file; however, for a list of configuration parameters that can be added to your `~/.bitcoin/bitcoin.conf`, see: `bitcoind --help`.
+**bitcoin-qt** should run fine with minimal or no configuration file. For a list of configuration parameters that can be added to your `~/.bitcoin/bitcoin.conf`, see: `bitcoind --help`.
 
 ## See also
 

@@ -874,6 +874,8 @@ While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param 
 
 If the password are not saved and asked on every startup try to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), helped under xfce4.
 
+Optional dependencies for gnome-keyring: [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring). This worked under [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
+
 ## Upload and Share from File Manager
 
 You can use the following script to quickly upload and share files to your ownCloud installation from Thunar (and possibly other filemanagers): [https://github.com/schiesbn/shareLinkCreator](https://github.com/schiesbn/shareLinkCreator) You need to edit the file with the proper configuration settings. **Note: password is stored as plain text.**

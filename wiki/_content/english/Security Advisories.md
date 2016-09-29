@@ -41,6 +41,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### September 2016
 
+*   [28 September 2016] [ASA-201609-30](https://lists.archlinux.org/pipermail/arch-security/2016-September/000726.html) [openssl](https://www.archlinux.org/packages/?name=openssl) denial of service
+*   [28 September 2016] [ASA-201609-29](https://lists.archlinux.org/pipermail/arch-security/2016-September/000725.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
+*   [27 September 2016] [ASA-201609-28](https://lists.archlinux.org/pipermail/arch-security/2016-September/000724.html) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) denial of service
 *   [26 September 2016] [ASA-201609-27](https://lists.archlinux.org/pipermail/arch-security/2016-September/000723.html) [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) denial of service
 *   [26 September 2016] [ASA-201609-26](https://lists.archlinux.org/pipermail/arch-security/2016-September/000722.html) [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls) certificate verification bypass
 *   [26 September 2016] [ASA-201609-25](https://lists.archlinux.org/pipermail/arch-security/2016-September/000721.html) [gnutls](https://www.archlinux.org/packages/?name=gnutls) certificate verification bypass

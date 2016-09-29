@@ -14,7 +14,7 @@ From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
     *   [2.2 Converting ext2/ext3 partitions to ext4](#Converting_ext2.2Fext3_partitions_to_ext4)
         *   [2.2.1 Rationale](#Rationale_2)
         *   [2.2.2 Procedure](#Procedure_2)
-*   [3 Using ext4 per directory encryption](#Using_ext4_per_directory_encryption)
+*   [3 Using ext4 file-based encryption](#Using_ext4_file-based_encryption)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 E4rat](#E4rat)
     *   [4.2 Barriers and performance](#Barriers_and_performance)
@@ -171,39 +171,44 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
     *   Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the extent option of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. Use *e4defrag* to take care of this problem.
 9.  Reboot Arch Linux!
 
-## Using ext4 per directory encryption
+## Using ext4 file-based encryption
 
-Linux comes with an Ext4 feature to encrypt directories of a filesystem. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the features, an overview of the implementation state and practical test results with kernel 4.1\.
+Since Linux 4.1, ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
 
-Encryption keys are stored in the keyring. To get started, make sure you have enabled `CONFIG_KEYS` and `CONFIG_EXT4_ENCRYPTION` kernel options and you have kernel 4.1 or higher. Note the Arch default [linux](https://www.archlinux.org/packages/?name=linux) does not have `CONFIG_EXT4_ENCRYPTION` set yet.
+First, you will need a kernel with `CONFIG_EXT4_ENCRYPTION` enabled. Since the Arch default [linux](https://www.archlinux.org/packages/?name=linux) does not yet have this option enabled, you will need to compile your own kernel.
 
-First of all, you need to update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43.
+Second, update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43.
 
-Let us make a directory that we will encrypt. Encryption policy can be set only on new empty directories. For example, if we are to encrypt `/encrypted/dir`, create the upper level directory:
+Third, enable the encryption feature flag on your filesystem:
+
+```
+# tune2fs -O encrypt /dev/sdb
+
+```
+
+Next, make a directory to encrypt:
 
 ```
 # mkdir /encrypted
 
 ```
 
-First generate a random salt value and store it in a safe place:
+Note that encryption can only be applied to an empty directory. The encryption setting (or "encryption policy") is inherited by new files and subdirectories. Encrypting existing files is not yet supported.
+
+Now generate and add a new key to your keyring. This step must be repeated every time you flush your keyring (reboot):
 
 ```
-# head -c 16 /dev/random | xxd -p
-877282f53bd0adbbef92142fc4cac459
-
-```
-
-Now generate and add a new key into your keyring: this step should be repeated every time you flush your keychain (reboot)
-
-```
-# e4crypt add_key -S 0x877282f53bd0adbbef92142fc4cac459
+# e4crypt add_key
 Enter passphrase (echo disabled): 
 Added key with descriptor [f88747555a6115f5]
 
 ```
 
-Now you know a descriptor for your key. Make sure you have added a key into your keychain:
+**Warning:** If you forget your passphrase, there will be no way to decrypt your files! It also isn't yet possible to change a passphrase after you've set it.
+
+**Note:** To help prevent [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack is automatically generated and stored in the ext4 filesystem superblock. Both the passphrase *and* the salt are used to derive the actual encryption key. As a consequence of this, if you have multiple ext4 filesystems with encryption enabled mounted, then `e4crypt add_key` will actually add multiple keys, one per filesystem. Although any key can be used on any filesystem, it would be wise to only use, on a given filesystem, keys using that filesystem's salt. Otherwise, you risk being unable to decrypt files on filesystem A if filesystem B is unmounted. Alternatively, you can use the `-S` option to `e4crypt add_key` to specify a salt yourself.
+
+Now you know the descriptor for your key. Make sure the key is in your session keyring:
 
 ```
 # keyctl show
@@ -213,14 +218,14 @@ Session Keyring
 
 ```
 
-Almost done. Now set an encryption policy for a directory:
+Almost done. Now set an encryption policy on the directory (assign the key to it):
 
 ```
-# e4crypt set_policy f88747555a6115f5 /encrypted/dir
+# e4crypt set_policy f88747555a6115f5 /encrypted
 
 ```
 
-That is all. If you try accessing the disk without adding a key into keychain, filenames and their contents will be seen as encrypted gibberish. Be careful running old versions of e2fsck on your filesystem - it will treat encrypted filenames as invalid.
+That is all. If you try accessing the directory without adding the key into your keyring, filenames and their contents will be seen as encrypted gibberish.
 
 ## Tips and tricks
 

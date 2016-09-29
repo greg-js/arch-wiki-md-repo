@@ -7,7 +7,7 @@
 *   [2 X.org](#X.org)
     *   [2.1 startx](#startx)
     *   [2.2 KDM](#KDM)
-    *   [2.3 KDE4 Users](#KDE4_Users)
+    *   [2.3 KDE Plasma Users](#KDE_Plasma_Users)
         *   [2.3.1 Alternate Method](#Alternate_Method)
         *   [2.3.2 Alternate Method 2](#Alternate_Method_2)
     *   [2.4 GDM](#GDM)
@@ -108,7 +108,7 @@ NoUpgrade = usr/share/config/kdm/Xsetup
 
 ```
 
-### KDE4 Users
+### KDE Plasma Users
 
 Go to System Settings, under the Hardware/Input Devices/Keyboard item you will find an option to select the behavior of NumLock.
 

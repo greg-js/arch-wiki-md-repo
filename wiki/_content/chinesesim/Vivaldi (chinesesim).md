@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Vivaldi](/index.php/Vivaldi "Vivaldi") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-01，点击[这里](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=439501)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Vivaldi](/index.php/Vivaldi "Vivaldi") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-28，点击[这里](https://wiki.archlinux.org/index.php?title=Vivaldi&diff=0&oldid=449900)可以查看翻译后英文页面的改动。
 
 [Vivaldi](http://vivaldi.com/) 是由前 [Opera](/index.php/Opera "Opera") 团队成员新近开发的一款浏览器。Vivaldi 基于 Chromium 开发，专注于个性化体验。
 
@@ -18,7 +18,7 @@ Vivaldi 可以从 AUR 安装 [vivaldi](https://aur.archlinux.org/packages/vivald
 
 为支持额外的音视频播放功能，可以安装相应版本的 [vivaldi-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-ffmpeg-codecs/) 或 [vivaldi-beta-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-beta-ffmpeg-codecs/) 或 [vivaldi-snapshot-ffmpeg-codecs](https://aur.archlinux.org/packages/vivaldi-snapshot-ffmpeg-codecs/) 。
 
-要播放 flash 媒体文件应当安装 [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) 。
+要播放 flash 媒体文件应当安装 [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) 。
 
 ## 排错
 

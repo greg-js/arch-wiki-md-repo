@@ -3,14 +3,25 @@ The HP Zbook Studio G3 is a workstation replacement laptop.
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Disabling the nouveau driver](#Disabling_the_nouveau_driver)
-    *   [1.2 Dual boot with windows](#Dual_boot_with_windows)
+    *   [1.1 Disabling Hybrid graphics](#Disabling_Hybrid_graphics)
+    *   [1.2 Font size during installation](#Font_size_during_installation)
+    *   [1.3 Disabling the nouveau driver](#Disabling_the_nouveau_driver)
+    *   [1.4 Dual boot with windows](#Dual_boot_with_windows)
 *   [2 Configuration](#Configuration)
-    *   [2.1 HiDPI configuration](#HiDPI_configuration)
+    *   [2.1 X config](#X_config)
+    *   [2.2 HiDPI configuration](#HiDPI_configuration)
 
 ## Installation
 
-Installation is quite straight forward. However, you may need to disable the nouveau driver. After this, follow the general instructions of the [[guide](https://wiki.archlinux.org/index.php/Installation_guide%7Cinstallation)]
+Installation is generally pretty straight forward, however, there are some things to consider. Follow the general instructions of the [[guide](https://wiki.archlinux.org/index.php/Installation_guide%7Cinstallation)]
+
+### Disabling Hybrid graphics
+
+The hybrid graphics DO WORK, however, there is currently no way to make an external display work in a hybrid setup. If you do not intend to use an external display, then you can skip this step.
+
+In the BIOS settings, (which you enter by pressing Escape during boot) change the graphics mode from Auto/Hybrid to discrete.
+
+### Font size during installation
 
 Due to the high screen resolution if this machine, you may want to change the font of your terminal during installation:
 
@@ -41,6 +52,10 @@ blacklist nouveau
 This laptop usually comes pre-loaded with windows 7. Although the laptop boots in [UEFI](/index.php/UEFI "UEFI") mode, it appears as though the Windows bootloader is present in the MBR of the hard drive (there is no EFI system partition). It may be wise to install Arch with an MBR bootloader if you wish to preserve the [windows installation](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
 ## Configuration
+
+### X config
+
+Install the [nvidia](/index.php/NVIDIA "NVIDIA") driver. If you are using the system in discrete graphics mode, you may need to run nvidia-xconfig as root to be able to run [X](/index.php/X "X").
 
 ### HiDPI configuration
 

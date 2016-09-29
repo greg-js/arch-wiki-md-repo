@@ -490,9 +490,9 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 ## See also
 
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - Debugging with GRUB
-*   Linux Kernel documentation on [initramfs](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/ramfs-rootfs-initramfs.txt;hb=HEAD)
-*   Linux Kernel documentation on [initrd](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
+*   Linux Kernel documentation on [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD)
+*   Linux Kernel documentation on [initrd](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/initrd.txt?id=HEAD)
 *   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
 *   **[dracut](https://en.wikipedia.org/wiki/dracut_(software) "w:dracut (software)")** — A cross-distribution initramfs generation tool.
 
-	[https://dracut.wiki.kernel.org/index.php/Main_Page](https://dracut.wiki.kernel.org/index.php/Main_Page) || [dracut](https://aur.archlinux.org/packages/dracut/)
+	[https://dracut.wiki.kernel.org/](https://dracut.wiki.kernel.org/) || [dracut](https://aur.archlinux.org/packages/dracut/)

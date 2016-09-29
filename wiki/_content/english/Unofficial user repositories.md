@@ -279,7 +279,7 @@ Server = http://repo.herecura.be/$repo/$arch
 
 ```
 [catalyst]
-Server = http://mirror.hactar.bz/Vi0L0/catalyst/$arch
+Server = http://mirror.hactar.xyz/Vi0L0/catalyst/$arch
 
 ```
 
@@ -292,7 +292,7 @@ Server = http://mirror.hactar.bz/Vi0L0/catalyst/$arch
 
 ```
 [catalyst-hd234k]
-Server = http://mirror.hactar.bz/Vi0L0/catalyst-hd234k/$arch
+Server = http://mirror.hactar.xyz/Vi0L0/catalyst-hd234k/$arch
 
 ```
 

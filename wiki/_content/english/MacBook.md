@@ -694,6 +694,8 @@ iwconfig wlp2s0 power off
 
 [Powerdown](/index.php/Powerdown "Powerdown") is a very simple to set up set of scripts what will maximize your battery duration. A MacBook Air 2013 with powerdown provides about 11 hours of light usage with just powerdown installed. All the usual [power management](/index.php/Power_management "Power management") recomendations apply as well.
 
+Adding 'acpi_osi=' to kernel parameters reportedly (as well as for me) brings the battery life of a Mac book Air 2013 from 5 hours to 11-12 hours. See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1530283#p1530283) for more information.
+
 #### Suspend and Hibernate
 
 Suspending (suspend to ram) and hibernating (suspend to disk) work fine out of the box:

@@ -83,7 +83,7 @@ lsblk -no UUID /dev/sda2
 **Note:**
 
 *   The fstab-entry is optional if the swap partition is located on a device using GPT. See the next subsection.
-*   If using an SSD with [TRIM](/index.php/TRIM "TRIM") support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d` or `--discard` parameter achieves the same. See `man 8 swapon` for details.
+*   If using an SSD with [TRIM](/index.php/TRIM "TRIM") support, consider using `defaults,discard` in the swap line in [fstab](/index.php/Fstab "Fstab"). If activating swap manually with *swapon*, using the `-d` or `--discard` parameter achieves the same. See [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) for details.
 
 **Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
 

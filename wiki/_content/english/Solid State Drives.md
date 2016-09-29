@@ -103,7 +103,7 @@ Using the default mount options instead of an entry in `/etc/fstab` is useful fo
 
 Change the value of `issue_discards` option from 0 to 1 in `/etc/lvm/lvm.conf`.
 
-**Note:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. *lvremove*, *lvreduce*, etc)" (see `man lvm.conf` and/or inline comments in `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
+**Note:** Enabling this option will "issue discards to a logical volumes's underlying physical volume(s) when the logical volume is no longer using the physical volumes' space (e.g. *lvremove*, *lvreduce*, etc)" (see [lvm.conf(5)](http://man7.org/linux/man-pages/man5/lvm.conf.5.html) and/or inline comments in `/etc/lvm/lvm.conf`). As such it does not seem to be required for "regular" TRIM requests (file deletions inside a filesystem) to be functional.
 
 #### dm-crypt
 
@@ -123,7 +123,7 @@ Follow the tips in [Improving performance#Storage devices](/index.php/Improving_
 
 Some motherboard BIOS' issue a "security freeze" command to attached storage devices on initialization. Likewise some SSD (and HDD) BIOS' are set to "security freeze" in the factory already. Both result in the device's password security settings to be set to **frozen**, as shown in below output:
 
- `:~# hdparm -I /dev/sda` 
+ `# hdparm -I /dev/sda` 
 ```
 Security: 
  	Master password revision code = 65534

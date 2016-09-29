@@ -155,9 +155,9 @@ $ diskutil unmountDisk /dev/disk2
 
 ```
 
-Now we can continue in accordance with the instructions above (but, if you are using the macOS `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1m`. `rdisk` means "raw disk" and is much faster on macOS, and `bs=1m` indicates a 1 MB block size).
+Now we can continue in accordance with the instructions above (but, if you are using the macOS `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1M`. `rdisk` means "raw disk" and is much faster on macOS, and `bs=1M` indicates a 1 MB block size).
 
- `# dd if=image.iso of=/dev/rdisk2 bs=1m` 
+ `# dd if=image.iso of=/dev/rdisk2 bs=1M` 
 ```
 20480+0 records in
 20480+0 records out

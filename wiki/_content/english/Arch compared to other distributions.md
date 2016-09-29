@@ -9,7 +9,7 @@ For a more complete comparison, see [w:Comparison of operating systems](https://
     *   [1.2 LFS](#LFS)
     *   [1.3 Gentoo/Funtoo Linux](#Gentoo.2FFuntoo_Linux)
 *   [2 General](#General)
-    *   [2.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
+    *   [2.1 Debian](#Debian)
     *   [2.2 Fedora](#Fedora)
     *   [2.3 Slackware](#Slackware)
 *   [3 Beginner-friendly](#Beginner-friendly)
@@ -51,7 +51,7 @@ Source-based distributions are highly portable, giving the advantage of controll
 
 These distributions offer a broad range of advantages and strengths, and can be made to serve most operating system uses.
 
-### Debian GNU/Linux
+### Debian
 
 *   Debian is the largest upstream Linux distribution with a bigger community and features stable, testing, and unstable branches, offering over 43,000 packages. The available number of Arch binary packages is more modest. However, when including the AUR, the quantities are comparable.
 

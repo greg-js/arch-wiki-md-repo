@@ -198,7 +198,7 @@ sudo systemctl start php-fpm nginx
 
 ```
 
-*   Consider using [rtorrent with tmux](https://wiki.archlinux.org/index.php/RTorrent#systemd_service_file_with_tmux_or_screen)
+*   Consider using [rtorrent with tmux](/index.php/RTorrent#systemd_service_file_with_tmux_or_screen "RTorrent")
 *   Navigate to [http://localhost/rutorrent/](http://localhost/rutorrent/)
 
 ## ruTorrent Configuration

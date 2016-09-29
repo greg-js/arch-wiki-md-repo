@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [NFS](/index.php/NFS "NFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-15，点击[这里](https://wiki.archlinux.org/index.php?title=NFS&diff=0&oldid=435597)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [NFS](/index.php/NFS "NFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-29，点击[这里](https://wiki.archlinux.org/index.php?title=NFS&diff=0&oldid=451084)可以查看翻译后英文页面的改动。
 
 来自[维基百科](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System")：NFS 网络文件系统(Network File System) 是由Sun公司1984年发布的分布式文件系统协议。它允许客户端上的用户像访问本地文件一样地访问网络上的文件。
 
@@ -87,7 +87,7 @@ NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表
 
 #### 开始运行服务
 
-[启用](/index.php/Enable "Enable")并[运行](/index.php/Start "Start") `nfs-server.service` 服务。对于较老的 V2 和 V3 版也要开启 `rpcbind.service` 服务。如果仅运行 V4 版，请参阅[这里](https://bbs.archlinux.org/viewtopic.php?id=193629)的讨论确认完全禁用 V2 和 V3 版：
+[启用](/index.php/Enable "Enable")并[运行](/index.php/Start "Start") `nfs-server.service` 服务。对于较老的 V2 和 V3 版还要开启 `rpcbind.service` 服务。如果仅运行 V4 版，请参阅[这里](https://bbs.archlinux.org/viewtopic.php?id=193629)的讨论确认完全禁用 V2 和 V3 版：
 
  `/etc/conf.d/nfs-server.conf`  `NFSD_OPTS="-N 2 -N 3"` 
 
@@ -97,17 +97,17 @@ NFS 需要查看 `/etc/exports` 文件中定义的共享（“导出”）列表
 
 ##### 可选配置
 
-`/etc/conf.d/nfs-server.conf` holds optional configurations for options to pass to rpc.nfsd, rpc.mountd, or rpc.svcgssd. Users setting up a simple configuration may not need to edit this file.
+`/etc/sysconfig/nfs` holds optional configurations for options to pass to rpc.nfsd, rpc.mountd, or rpc.svcgssd. Users setting up a simple configuration may not need to edit this file.
 
 ##### NFSv3 版静态导出
 
-Users needing support for NFSv3 clients, may wish to consider using static ports. By default, for NFSv3 operation `rpc.statd` and `lockd` use random ephemeral ports; in order to allow NFSv3 operations through a firewall static ports need to be defined. Edit `/etc/conf.d/nfs-common.conf` to set `STATD_OPTS`:
+Users needing support for NFSv3 clients, may wish to consider using static ports. By default, for NFSv3 operation `rpc.statd` and `lockd` use random ephemeral ports; in order to allow NFSv3 operations through a firewall static ports need to be defined. Edit `/etc/sysconfig/nfs` to set `STATDARGS`:
 
- `/etc/conf.d/nfs-common.conf`  `STATD_OPTS="-p 32765 -o 32766 -T 32803"` 
+ `/etc/sysconfig/nfs`  `STATDARGS="-p 32765 -o 32766 -T 32803"` 
 
-The `rpc.mountd` should consult `/etc/services` and bind to the same static port 20048 under normal operation; however, if it needs to be explicity defined edit `/etc/conf.d/nfs-server.conf` to set `MOUNTD_OPTS`:
+The `rpc.mountd` should consult `/etc/services` and bind to the same static port 20048 under normal operation; however, if it needs to be explicity defined edit `/etc/sysconfig/nfs` to set `RPCMOUNTDARGS`:
 
- `/etc/conf.d/nfs-server.conf`  `MOUNTD_OPTS="-p 20048"` 
+ `/etc/sysconfig/nfs`  `RPCMOUNTDARGS="-p 20048"` 
 
 After making these changes, several services need to be restarted; the first writes the configuration options out to `/run/sysconfig/nfs-utils` (see `/usr/lib/systemd/scripts/nfs-utils_env.sh`), the second restarts `rpc.statd` with the new ports, the last reloads `lockd` (kernel module) with the new ports. [Restart](/index.php/Restart "Restart") these services now: `nfs-config`, `rpcbind`, `rpc-statd`, and `nfs-server`.
 
@@ -164,7 +164,7 @@ If using NFSv3 and the above listed static ports for `rpc.statd` and `lockd` the
 
 ```
 
-If using V4-only setup, only tcp port 2049 need to be opened. Therefore only one line need.
+If using V4-only setup, only tcp port 2049 need to be opened. Therefore only one line needed.
 
  `/etc/iptables/iptables.rules` 
 ```
@@ -229,7 +229,7 @@ Using [fstab](/index.php/Fstab "Fstab") is useful for a server which is always o
 
  `/etc/fstab` 
 ```
-servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=14,_netdev	0 0
+servername:/music   /mountpoint/on/client   nfs   rsize=8192,wsize=8192,timeo=14,_netdev	0 0
 
 ```
 
@@ -265,7 +265,7 @@ One might have to reboot the client to make systemd aware of the changes to fsta
     If experiencing any issues with the mount failing due to the network not being up/available, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service`. It will ensure that `network.target` has all the links available prior to being active.
 *   The `users` mount option would allow user mounts, but be aware it implies further options as `noexec` for example.
 *   The `x-systemd.idle-timeout=1min` option will unmount the NFS share automatically after 1 minute of non-use. Good for laptops which might suddenly disconnect from the network.
-*   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted.
+*   If shutdown/reboot holds too long because of NFS, [enable](/index.php/Enable "Enable") `NetworkManager-wait-online.service` to ensure that NetworkManager is not exited before the NFS volumes are unmounted. You may also try to add the `x-systemd.requires=network.target` mount option if shutdown takes too long.
 
 **Note:** Users trying to automount a NFS-share via systemd which is mounted the same way on the server may experience a freeze when handling larger amounts of data.
 

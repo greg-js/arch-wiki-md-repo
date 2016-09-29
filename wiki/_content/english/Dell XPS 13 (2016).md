@@ -52,6 +52,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [13.1 XPS 12](#XPS_12)
     *   [13.2 Dell XPS 15](#Dell_XPS_15)
     *   [13.3 Dell XPS 13 (2015)](#Dell_XPS_13_.282015.29)
+    *   [13.4 Dell XPS 13 9360 (4th Gen - late 2016)](#Dell_XPS_13_9360_.284th_Gen_-_late_2016.29)
 *   [14 lspci and lsusb](#lspci_and_lsusb)
     *   [14.1 lspci](#lspci)
     *   [14.2 lsusb](#lsusb)
@@ -305,6 +306,10 @@ Despite the similarities between the two devices they have quite different solut
 ### Dell XPS 13 (2015)
 
 Information about the predecessor is available at [Dell XPS 13 (2015)](/index.php/Dell_XPS_13_(2015) "Dell XPS 13 (2015)").
+
+### Dell XPS 13 9360 (4th Gen - late 2016)
+
+Information about the successor is available at [Dell XPS 13 (4th Gen)](/index.php/Dell_XPS_13_(4th_Gen) "Dell XPS 13 (4th Gen)").
 
 ## lspci and lsusb
 

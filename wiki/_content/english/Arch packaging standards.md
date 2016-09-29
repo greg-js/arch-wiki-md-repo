@@ -135,19 +135,13 @@ When [makepkg](/index.php/Makepkg "Makepkg") is used to build a package, it does
 3.  **Checks the integrity** of source files
 4.  **Unpacks** source files
 5.  Does any necessary **patching**
-6.  **Builds** the software and installs it in a fake
-
-```
-root
-
-```
-
-1.  **Strips** symbols from binaries
-2.  **Strips** debugging symbols from libraries
-3.  **Compresses** manual and, or info pages
-4.  Generates the **package meta file** which is included with each package
-5.  **Compresses** the fake root into the package file
-6.  **Stores** the package file in the configured destination directory (cwd by default)
+6.  **Builds** the software and installs it in a fake root
+7.  **Strips** symbols from binaries
+8.  **Strips** debugging symbols from libraries
+9.  **Compresses** manual and, or info pages
+10.  Generates the **package meta file** which is included with each package
+11.  **Compresses** the fake root into the package file
+12.  **Stores** the package file in the configured destination directory (cwd by default)
 
 ## Architectures
 

@@ -8,6 +8,7 @@
     *   [3.1 devmon](#devmon)
     *   [3.2 udevadm monitor](#udevadm_monitor)
     *   [3.3 udiskie](#udiskie)
+    *   [3.4 udisksvm](#udisksvm)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
     *   [4.2 Mount loop devices](#Mount_loop_devices)
@@ -76,6 +77,10 @@ done < <(stdbuf -o L udevadm monitor --udev -s block)
 ### udiskie
 
 [udiskie](https://github.com/coldfix/udiskie) is a mount helper using either [udisks](https://www.archlinux.org/packages/?name=udisks) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [usage details](https://github.com/coldfix/udiskie/wiki/Usage).
+
+### udisksvm
+
+[udisksvm](https://aur.archlinux.org/packages/udisksvm) is a graphical udisks2 wrapper application written in Python3 and using the Qt5 framework. It uses only mouse clicks to mount, unmount removable devices or eject a CD/DVD. It is well adapted to light weight graphical environments, like Openbox with Tint2. It is a stand-alone mounting/automounting application running in background (see the README file in the package for details).
 
 ## Tips and tricks
 

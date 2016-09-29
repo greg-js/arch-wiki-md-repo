@@ -5813,7 +5813,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **Hamster** — Time tracking application that helps you to keep track on how much time you have spent during the day on activities you choose to track.
 
-	[http://projecthamster.wordpress.com/](http://projecthamster.wordpress.com/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
+	[http://projecthamster.org/](http://projecthamster.org/) || [hamster-time-tracker](https://www.archlinux.org/packages/?name=hamster-time-tracker)
 
 *   **[KOrganizer](https://en.wikipedia.org/wiki/Kontact#Organizer "wikipedia:Kontact")** — Calendar and scheduling program, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
 

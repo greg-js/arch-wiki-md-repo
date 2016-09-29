@@ -712,13 +712,19 @@ To solve it, remember you do not often need to create keys and best just do what
 When using `pinentry`, you must have the proper permissions of the terminal device (e.g. `/dev/tty1`) in use. However, with *su* (or *sudo*), the ownership stays with the original user, not the new one. This means that pinentry will fail, even as root. The fix is to change the permissions of the device at some point before the use of pinentry (i.e. using gpg with an agent). If doing gpg as root, simply change the ownership to root right before using gpg:
 
 ```
-chown root /dev/ttyN  # where N is the current tty
+# chown root /dev/ttyN  # where N is the current tty
 
 ```
 
 and then change it back after using gpg the first time. The equivalent is likely to be true with `/dev/pts/`.
 
 **Note:** The owner of tty *must* match with the user for which pinentry is running. Being part of the group `tty` **is not** enough.
+
+**Tip:** If you run gpg with `script` it will use a new tty with the correct ownership:
+```
+# script -q -c "gpg --gen-key" /dev/null
+
+```
 
 ### Agent complains end of file
 

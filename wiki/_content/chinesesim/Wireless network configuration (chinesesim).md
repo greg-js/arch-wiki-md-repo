@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=449561)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-28，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=449561)可以查看翻译后英文页面的改动。
 
 配置无线网络一般分两步：第一步是识别硬件、安装正确的驱动程序并进行配置，安装盘中已经包含驱动，但是通常需要额外安装；第二步是选择一种管理无线连接的方式。这篇文章涵盖了这两方面，并提供了无线管理工具的链接地址。
 

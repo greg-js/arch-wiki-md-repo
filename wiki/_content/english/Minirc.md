@@ -2,13 +2,20 @@
 
 [Minirc](https://github.com/hut/minirc) is a init script for busybox init maintained by some people on github. Minirc is script based and does not work with other init systems.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+*   [3 Gettys](#Gettys)
+    *   [3.1 Custom daemons](#Custom_daemons)
+
 ## Installation
 
 Minirc is available in the [AUR](/index.php/AUR "AUR"). For details on init components, see [Init](/index.php/Init "Init").
 
 Install the [minirc-git](https://aur.archlinux.org/packages/minirc-git/) package. Minirc replaces /sbin/init so it removes systemd-sysvcompat. It will also conflict with [SysVinit](/index.php/SysVinit "SysVinit"), if you have it installed.
 
-Also if you are using a desktop environment, It might help to install [ConsoleKit](/index.php/ConsoleKit "ConsoleKit").
+Also if you are using a desktop environment, It might help to install [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") or [elogind](https://aur.archlinux.org/packages/elogind/).
 
 ## Configuration
 
@@ -29,6 +36,19 @@ chmod +X /etc/minirc.local.shutdown
 The daemons enabled by default are syslog-ng, crond, dhcpcd, and sshd.
 
 If the packages aren't installed then you will get a warning on bootup unless you disable them.
+
+## Gettys
+
+The gettys are defined in the file /etc/inittab, By default getty is started on ttys 1 through 4.
+
+In order to enable/disable gettys, you just put this line in /etc/inittab.
+
+```
+tty2::respawn:/sbin/agetty -8 -s 38400 tty2 linux
+
+```
+
+Just replace tty2 with the tty, you want getty to start on. If you want init to ask you before starting the gettty, then replace respawn with askfirst.
 
 ### Custom daemons
 

@@ -109,6 +109,14 @@ Optional:
 
 	[https://github.com/compiz-reloaded/fusion-icon](https://github.com/compiz-reloaded/fusion-icon) || [fusion-icon](https://aur.archlinux.org/packages/fusion-icon/)
 
+*   **Compiz Manager** — A wrapper script to start Compiz.
+
+	[https://github.com/compiz-reloaded/compiz-manager](https://github.com/compiz-reloaded/compiz-manager) || [compiz-manager](https://aur.archlinux.org/packages/compiz-manager/)
+
+*   **Simple CCSM** — Simplified graphical settings manager for Compiz 0.8.
+
+	[https://github.com/compiz-reloaded/simple-ccsm](https://github.com/compiz-reloaded/simple-ccsm) || [simple-ccsm](https://aur.archlinux.org/packages/simple-ccsm/)
+
 ## Starting Compiz
 
 ### Enabling important plugins

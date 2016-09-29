@@ -14,7 +14,7 @@
         *   [2.2.4 Длительные задания cron](#.D0.94.D0.BB.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.B4.D0.B0.D0.BD.D0.B8.D1.8F_cron)
 *   [3 Формат crontab](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82_crontab)
 *   [4 Базовые команды](#.D0.91.D0.B0.D0.B7.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.8B)
-*   [5 Examples](#Examples)
+*   [5 Примеры](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B)
 *   [6 Default editor](#Default_editor)
 *   [7 run-parts issue](#run-parts_issue)
 *   [8 Running X.org server-based applications](#Running_X.org_server-based_applications)
@@ -283,34 +283,34 @@ $ crontab -
 
 Этот же формат (присоединяя `-u *username*` к команде) работает так же для чтения и удаления crontabs.
 
-## Examples
+## Примеры
 
-The entry:
+Запись:
 
 ```
 01 * * * * /bin/echo Hello, world!
 
 ```
 
-runs the command `/bin/echo Hello, world!` on the first minute of every hour of every day of every month (i.e. at 12:01, 1:01, 2:01, etc.).
+выполняет команду `/bin/echo Hello, world!` в первую минуту каждого часа каждого дня (т.е. в 12:01, 1:01, 2:01, etc.).
 
-Similarly:
+Аналогично:
 
 ```
 */5 * * jan mon-fri /bin/echo Hello, world!
 
 ```
 
-runs the same job every five minutes on weekdays during the month of January (i.e. at 12:00, 12:05, 12:10, etc.).
+выполняет то же действие каждые пять минут по будним дням в течение Января (т.е. в 12:00, 12:05, 12:10, etc.).
 
-The line (as noted in "man 5 crontab"):
+Строка (как указано в "man 5 crontab"):
 
 ```
 *0,*5 9-16 * 1-5,9-12 1-5 /home/user/bin/i_love_cron.sh
 
 ```
 
-will execute the script `i_love_cron.sh` at five minute intervals from 9 AM to 5 PM (excluding 5 PM itself) every weekday (Mon-Fri) of every month except during the summer (June, July, and August).
+вызывает скрипт `i_love_cron.sh` в пятиминутные интервалы с 9 AM до 5 PM (не включая 5 PM) каждый будний день каждого месяца, кроме летних.
 
 Periodical settings can also be entered as in this crontab template:
 

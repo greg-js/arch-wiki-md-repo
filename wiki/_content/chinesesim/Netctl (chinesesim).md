@@ -17,7 +17,7 @@ Netctl 是基于命令行的网络管理器，支持场景配置。它是 Arch L
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 使用体验版图形用户界面](#.E4.BD.BF.E7.94.A8.E4.BD.93.E9.AA.8C.E7.89.88.E5.9B.BE.E5.BD.A2.E7.94.A8.E6.88.B7.E7.95.8C.E9.9D.A2)
     *   [4.2 Eduroam](#Eduroam)
-    *   [4.3 绑定（Bonding）](#.E7.BB.91.E5.AE.9A.EF.BC.88Bonding.EF.BC.89)
+    *   [4.3 绑定](#.E7.BB.91.E5.AE.9A)
         *   [4.3.1 负载均衡](#.E8.B4.9F.E8.BD.BD.E5.9D.87.E8.A1.A1)
         *   [4.3.2 有线 -> 无线故障切换](#.E6.9C.89.E7.BA.BF_-.3E_.E6.97.A0.E7.BA.BF.E6.95.85.E9.9A.9C.E5.88.87.E6.8D.A2)
     *   [4.4 使用任意接口](#.E4.BD.BF.E7.94.A8.E4.BB.BB.E6.84.8F.E6.8E.A5.E5.8F.A3)
@@ -252,7 +252,7 @@ Key=\"64cf3ced850ecef39197bb7b7b301fc39437a6aa6c6a599d0534b16af578e04a
 
 参阅 [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise")
 
-### 绑定（Bonding）
+### 绑定
 
 引自 [内核文档](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
 

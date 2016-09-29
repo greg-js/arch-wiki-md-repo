@@ -378,7 +378,7 @@ For LUKS devices unlocked manually on the console or via `/etc/crypttab` either 
 
 ## The encrypt hook and multiple disks
 
-The `encrypt` hook only allows for a **single** `cryptdevice=` entry. In system setups with multiple drives this may be limiting, because *dm-crypt* has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
+The `encrypt` hook only allows for a **single** `cryptdevice=` entry ([FS#23182](https://bugs.archlinux.org/task/23182)). In system setups with multiple drives this may be limiting, because *dm-crypt* has no feature to exceed the physical device. For example, take "LVM on LUKS": The entire LVM exists inside a LUKS mapper. This is perfectly fine for a single-drive system, since there is only one device to decrypt. But what happens when you want to increase the size of the LVM? You cannot, at least not without modifying the `encrypt` hook.
 
 The following sections briefly show alternatives to overcome the limitation. The first deals with how to expand a [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system") setup to a new disk. The second with modifying the `encrypt` hook to unlock multiple disks in LUKS setups without LVM. The third section then again uses LVM, but modifies the `encrypt` hook to unlock the encrypted LVM with a remote LUKS header.
 
@@ -510,7 +510,7 @@ There are two options for initramfs to support a detached LUKS header.
 
 #### Using systemd hook
 
-First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](http://www.freedesktop.org/software/systemd/man/crypttab.html)
+First create `/etc/crypttab.initramfs` and add the encrypted device to it. The syntax is defined in [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html)
 
  `/etc/crypttab.initramfs`  `MyStorage    PARTUUID=00000000-0000-0000-0000-000000000000    none    header=/boot/header.img` 
 
@@ -525,11 +525,11 @@ HOOKS="... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ..."
 
 [Recreate the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and you are done.
 
-**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [systemd-cryptsetup-generator(8)](http://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for the supported options.
+**Note:** No cryptsetup parameters need to be passed to the kernel command line, since`/etc/crypttab.initramfs` will be added as `/etc/crypttab` in the initramfs. If you wish to specify them in the kernel command line see [systemd-cryptsetup-generator(8)](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for the supported options.
 
 #### Modifying encrypt hook
 
-This method shows how to modify the `encrypt` hook in order to use a remote LUKS header. Now the `encrypt` hook has to be modified to let `cryptsetup` use the separate header (base source and idea for these changes [published on the BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Make a copy so it is not overwritten on a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") update:
+This method shows how to modify the `encrypt` hook in order to use a remote LUKS header. Now the `encrypt` hook has to be modified to let `cryptsetup` use the separate header ([FS#42851](https://bugs.archlinux.org/task/42851); base source and idea for these changes [published on the BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Make a copy so it is not overwritten on a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") update:
 
 ```
 # cp /lib/initcpio/hooks/encrypt{,2}

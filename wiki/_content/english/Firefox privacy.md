@@ -2,23 +2,27 @@ This article overviews some useful extensions which enhance security and privacy
 
 ## Contents
 
-*   [1 HTTPS Everywhere](#HTTPS_Everywhere)
-*   [2 uBlock](#uBlock)
-*   [3 Adblock Plus](#Adblock_Plus)
-*   [4 Privacy Badger](#Privacy_Badger)
-*   [5 Disconnect](#Disconnect)
-*   [6 Ghostery](#Ghostery)
-*   [7 NoScript](#NoScript)
-*   [8 uMatrix](#uMatrix)
-*   [9 Cookie Monster](#Cookie_Monster)
-*   [10 RefControl](#RefControl)
-*   [11 RequestPolicy](#RequestPolicy)
-*   [12 Configuration Tweaks](#Configuration_Tweaks)
-    *   [12.1 Enable Tracking Protection](#Enable_Tracking_Protection)
-    *   [12.2 Change browser time zone](#Change_browser_time_zone)
-    *   [12.3 Change user agent and platform](#Change_user_agent_and_platform)
+*   [1 Extensions](#Extensions)
+    *   [1.1 HTTPS Everywhere](#HTTPS_Everywhere)
+    *   [1.2 uBlock Origin](#uBlock_Origin)
+    *   [1.3 Adblock Plus](#Adblock_Plus)
+    *   [1.4 Privacy Badger](#Privacy_Badger)
+    *   [1.5 Disconnect](#Disconnect)
+    *   [1.6 Ghostery](#Ghostery)
+    *   [1.7 NoScript](#NoScript)
+    *   [1.8 uMatrix](#uMatrix)
+    *   [1.9 Cookie Monster](#Cookie_Monster)
+    *   [1.10 Self-Destructing Cookies](#Self-Destructing_Cookies)
+    *   [1.11 RefControl](#RefControl)
+    *   [1.12 RequestPolicy](#RequestPolicy)
+*   [2 Configuration tweaks](#Configuration_tweaks)
+    *   [2.1 Enable tracking protection](#Enable_tracking_protection)
+    *   [2.2 Change browser time zone](#Change_browser_time_zone)
+    *   [2.3 Change user agent and platform](#Change_user_agent_and_platform)
 
-## HTTPS Everywhere
+## Extensions
+
+### HTTPS Everywhere
 
 [HTTPS Everywhere](https://www.eff.org/https-everywhere) is an extension which encrypts your communication with a website. It forces a connection over HTTPS instead of HTTP wherever possible.
 
@@ -26,17 +30,15 @@ HTTPS Everywhere will be automatically configured and enabled upon restarting Fi
 
 **Note:** HTTPS Everywhere does not magically enable HTTPS for every site on the internet. The site needs to support HTTPS and HTTPS Everywhere should have a ruleset configured for that site.
 
-## uBlock
+### uBlock Origin
 
-uBlock (previously μBlock) is a lightweight, efficient blocker which is easy on [memory and CPU](https://github.com/gorhill/uBlock#performance). It comes with several filter lists ready to use out-of-the-box (including EasyList, Peter Lowe's, several malware filter lists).
+uBlock Origin is a lightweight, efficient blocker which is easy on [memory and CPU](https://github.com/gorhill/uBlock#performance). It comes with several filter lists ready to use out-of-the-box (including EasyList, Peter Lowe's, several malware filter lists).
 
-The lead developer forked the project and created uBlock Origin. As of July 2015, most of the development is being done on uBlock Origin and the codebases are deviating substantially.
+The lead developer of uBlock forked the project and created uBlock Origin. As of July 2015, most of the development is being done on uBlock Origin and the codebases are deviating substantially.
 
-uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/).
+uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/ublock-origin/).
 
-uBlock: [Github](https://github.com/chrisaljoudi/uBlock); [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/ublock/).
-
-## Adblock Plus
+### Adblock Plus
 
 [Adblock Plus](https://adblockplus.org/en/) can be used to stop intrusive advertisements but it can also be configured to block websites from tracking you.
 
@@ -46,11 +48,11 @@ EasyList is the primary subscription that removes adverts from English webpages,
 
 EasyPrivacy is a supplementary subscription for EasyList which removes all forms of tracking from the internet, including web bugs, tracking scripts and information collectors.
 
-## Privacy Badger
+### Privacy Badger
 
 [Privacy Badger](https://www.eff.org/privacybadger) is an extension that monitors third-party trackers loaded with web content. It blocks trackers once they appear on different sites. It does not block advertisements in the first place, but since a lot of ads are served based on tracking information these are blocked as well. For more information on the mechanism, see its [FAQ](https://www.eff.org/privacybadger#faq-How-is-Privacy-Badger-different-to-Disconnect,-Adblock-Plus,-Ghostery,-and-other-blocking-extensions?).
 
-## Disconnect
+### Disconnect
 
 Disconnect is a open source project aimed at stopping 2,000 third-party sites from tracking a user. It encrypts data sent to popular sites and claims to loads web pages 27 percent faster. Disconnect shows its users, in real time, how many tracking attempts from Google, Twitter, Facebook, and more are stopped. It categorizes tracking attempts into advertising, analytical, social, and content, which makes it easy to monitor how one is being tracked.
 
@@ -58,7 +60,7 @@ Disconnect can also stop side-jacking, which utilizes stolen cookies to steal pe
 
 **Note:** Firefox gained a feature based on the Disconnect list. See [Firefox tweaks#Enable firefox optional tracking protection](/index.php/Firefox_tweaks#Enable_firefox_optional_tracking_protection "Firefox tweaks").
 
-## Ghostery
+### Ghostery
 
 [Ghostery](https://www.ghostery.com/) is similar to Disconnect, but is a proprietary project which employ the use of website trackers to track businesses. There is controversy due to Ghostery, Inc. being formerly known as The Better Advertising Project, and being in the business of online-advertising and market intelligence in addition to internet privacy. From the website:
 
@@ -67,18 +69,18 @@ Disconnect can also stop side-jacking, which utilizes stolen cookies to steal pe
 Ghostery can be installed from the Firefox add-on manager or from the [official website](https://www.ghostery.com/download). Once installed, Ghostery can be configured by selecting preferences from the Add-ons Manager in Firefox which will bring you to the configuration page. It may also be configured from:
 
 ```
- [https://extension.ghostery.com/settings](https://extension.ghostery.com/settings)
+[https://extension.ghostery.com/settings](https://extension.ghostery.com/settings)
 
 ```
 
 Alternatively you can configure Ghostery through the included wizard:
 
 ```
- [https://extension.ghostery.com/intro#start](https://extension.ghostery.com/intro#start)
+[https://extension.ghostery.com/intro#start](https://extension.ghostery.com/intro#start)
 
 ```
 
-## NoScript
+### NoScript
 
 [NoScript](http://noscript.net/) is an extension which disables JavaScript, Java, Flash and other plugins on any website not specifically whitelisted by the user. This extension will protect you from exploitation of security vulnerabilities by not letting anything but trusted sites (e.g: your bank, webmail) serve you executable content.
 
@@ -88,19 +90,23 @@ Be aware a lot of modern websites use scripts for layout purposes, hence content
 
 For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
 
-## uMatrix
+### uMatrix
 
-[uMatrix](https://addons.mozilla.org/de/firefox/addon/umatrix/) is forked and refactored from HTTP Switchboard. It allows you to selectively block Javascript, plugins or other resources and control third-party resources. It also features extensive privacy features like user-agent masquerading, referering blocking and so on. It effectively replaces NoScript and RequestPolicy. See the [old HTTP Switchboard wiki](https://github.com/gorhill/httpswitchboard/wiki/How-to-use-HTTP-Switchboard:-Two-opposing-views) for different ways how to use it.
+[uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/) is forked and refactored from HTTP Switchboard. It allows you to selectively block Javascript, plugins or other resources and control third-party resources. It also features extensive privacy features like user-agent masquerading, referering blocking and so on. It effectively replaces NoScript and RequestPolicy. See the [old HTTP Switchboard wiki](https://github.com/gorhill/httpswitchboard/wiki/How-to-use-HTTP-Switchboard:-Two-opposing-views) for different ways how to use it.
 
 For more Information visit the [project site](https://github.com/gorhill/uMatrix).
 
-## Cookie Monster
+### Cookie Monster
 
-[Cookie Monster](https://addons.mozilla.org/en-US/firefox/addon/cookie-monster/) is a similar extension to NoScript but will the goal of managing cookies.
+[Cookie Monster](https://addons.mozilla.org/firefox/addon/cookie-monster/) is a similar extension to NoScript but will the goal of managing cookies.
 
 From the preferences for Cookie Monster select "Block All Cookies". Once this is done, just as with NoScript, you can enable the use of cookies for specific pages from either the Cookie Monster icon on the toolbar or by right clicking the page and navigating to Cookie Monster. You have the option to accept cookies from the website in question or alternatively to only temporarily allow cookies for the current session.
 
-## RefControl
+### Self-Destructing Cookies
+
+[Self-Destructing Cookies](https://addons.mozilla.org/firefox/addon/self-destructing-cookies/) gets rid of a site's cookies and LocalStorage as soon as you close its tabs. Protects against trackers and zombie-cookies.
+
+### RefControl
 
 [RefControl](http://www.stardrifter.org/refcontrol/) is an extension to control what gets sent as the HTTP Referer. Once installed RefControl can be configured so that no referer gets sent when navigating to a new webpage. This prevents the server from knowing which website you originated from.
 
@@ -108,22 +114,22 @@ To do this open RefControl's preferences and change the setting for "Default for
 
 **Note:** Firefox has options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referer header control](/index.php/Firefox_tweaks#Referer_header_control "Firefox tweaks").
 
-## RequestPolicy
+### RequestPolicy
 
 [RequestPolicy](https://www.requestpolicy.com/) is an extension for Mozilla browsers which lets you have control over cross-site requests. The latest development version lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
 
 For more information on cross-site requests and RequestPolicy visit [here](https://www.requestpolicy.com/faq.html).
 
-## Configuration Tweaks
+## Configuration tweaks
 
 The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
 
-### Enable Tracking Protection
+### Enable tracking protection
 
 Mozilla's built-in tracking protection may be enabled in `about:config` by setting the following preference to `true`:
 
 ```
- privacy.trackingprotection.enabled
+privacy.trackingprotection.enabled
 
 ```
 
@@ -145,7 +151,7 @@ Or, set a script to launch the above (for example, at `/usr/local/bin/firefox`).
 To change the user agent in firefox, add the following `string` key in `about:config`:
 
 ```
- general.useragent.override
+general.useragent.override
 
 ```
 
@@ -158,7 +164,7 @@ The value for the key is your browser's user agent. Select a known common one.
 To change the platform for firefox, add the following `string` key in `about:config`:
 
 ```
- general.platform.override
+general.platform.override
 
 ```
 

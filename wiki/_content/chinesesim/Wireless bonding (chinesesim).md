@@ -1,15 +1,15 @@
 ## Contents
 
-*   [1 Network Interface Bonding with Removable Device Support](#Network_Interface_Bonding_with_Removable_Device_Support)
-*   [2 DHCP configuration](#DHCP_configuration)
-*   [3 DHCPv6 configuration](#DHCPv6_configuration)
-*   [4 wpa_supplicant configuration](#wpa_supplicant_configuration)
-*   [5 Slave configuration](#Slave_configuration)
-*   [6 Master configuration](#Master_configuration)
-*   [7 Enabling/Installing the Service Units](#Enabling.2FInstalling_the_Service_Units)
-*   [8 Testing the result](#Testing_the_result)
+*   [1 支持可移除设备的网络接口绑定](#.E6.94.AF.E6.8C.81.E5.8F.AF.E7.A7.BB.E9.99.A4.E8.AE.BE.E5.A4.87.E7.9A.84.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3.E7.BB.91.E5.AE.9A)
+*   [2 DHCP 配置](#DHCP_.E9.85.8D.E7.BD.AE)
+*   [3 DHCPv6 配置](#DHCPv6_.E9.85.8D.E7.BD.AE)
+*   [4 wpa_supplicant 配置](#wpa_supplicant_.E9.85.8D.E7.BD.AE)
+*   [5 从属设备配置](#.E4.BB.8E.E5.B1.9E.E8.AE.BE.E5.A4.87.E9.85.8D.E7.BD.AE)
+*   [6 主设备配置](#.E4.B8.BB.E8.AE.BE.E5.A4.87.E9.85.8D.E7.BD.AE)
+*   [7 启用/安装服务单元](#.E5.90.AF.E7.94.A8.2F.E5.AE.89.E8.A3.85.E6.9C.8D.E5.8A.A1.E5.8D.95.E5.85.83)
+*   [8 测试成果](#.E6.B5.8B.E8.AF.95.E6.88.90.E6.9E.9C)
 
-## Network Interface Bonding with Removable Device Support
+## 支持可移除设备的网络接口绑定
 
 > The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface.
 > [Linux Ethernet Bonding Driver HOWTO](https://www.kernel.org/doc/Documentation/networking/bonding.txt)
@@ -24,7 +24,7 @@ In this example, there are five [systemd](/index.php/Systemd "Systemd") service 
 
 **Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch Linux packages. Edit as required.
 
-## DHCP configuration
+## DHCP 配置
 
  `/etc/dhclient.conf` 
 ```
@@ -73,7 +73,7 @@ This problem **cannot** be solved by configuring the bonding driver with the def
 
 Ideally, dhclient would re-determine the bonding interface MAC address each time it initially retried contacting the DHCP server. Without that, a different approach is to simply delay the start of dhclient until after the kernel bonding driver has configured an active slave. If the active slave is to be the wireless interface, then wpa_supplicant will first have authenticated, associated, and authorized with the access point/base station, and dhclient will adopt the correct MAC address. If the active slave is the primary slave, again dhclient will adopt the correct MAC address. This delay is imposed with the simple `ExecStartPre= /usr/bin/sleep 8` line in the dhclient service unit file, a conservatively long delay between the time systemd starts dhclient and the supplicant and the bonding driver selects the active interface. This selection time is longest during system boot, when many processes are starting. On faster hardware, a shorter delay, perhaps `sleep 4`, may still be effective.
 
-## DHCPv6 configuration
+## DHCPv6 配置
 
  `/etc/wide-dhcpv6/dhcp6c.conf` 
 ```
@@ -127,7 +127,7 @@ Restart=on-abnormal
 WantedBy=sys-subsystem-net-devices-%i.device
 ```
 
-## wpa_supplicant configuration
+## wpa_supplicant 配置
 
  `/etc/wpa_supplicant/wpa_supplicant.conf` 
 ```
@@ -188,7 +188,7 @@ WantedBy= sys-subsystem-net-devices-%I.device
 
 Remember that the `iw` commands do not work with the wired interface drivers or with older wireless drivers which rely upon the Wireless Extensions user-space driver, and will be ignored in those cases.
 
-## Slave configuration
+## 从属设备配置
 
  `/etc/systemd/system/slave@.service` 
 ```
@@ -234,7 +234,7 @@ There is a "trick" which will be used here, in the naming of the slave service t
 
 This "slave@.service" unit file will be *hard* linked to files having the same name as the network interfaces, such as "wlp2s0@.service" and "enp3s0@.service". Note that symbolic links cannot be used here, since systemd would then set %p/%P to the target file name "slave", instead of the desired network interface name.
 
-## Master configuration
+## 主设备配置
 
  `/etc/modprobe.d/bonding.conf` 
 ```
@@ -297,7 +297,7 @@ Remember to edit the "PRI" environment variable to provide the correct interface
 
 Alternatively, when using `primary_reselect=better` in `/etc/modprobe.d/bonding.conf`, the "PRI" environment variable can be left entirely unset, and no primary slave configuration will be required.
 
-## Enabling/Installing the Service Units
+## 启用/安装服务单元
 
 With those preliminaries, the interface names must be specified on the command line.
 
@@ -346,7 +346,7 @@ And finally, activate the bonding interface and the DHCP and DHCPv6 clients by s
 
 The master and supplicant units will be started automatically when any configured slave device appears, and in particular, when the system boots. Were any of the DHCP, DHCPv6, or slave units to be started independently, the master unit would also be started, but normally these units will have already been started at boot.
 
-## Testing the result
+## 测试成果
 
 Check the results:
 

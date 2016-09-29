@@ -5,12 +5,13 @@ This page contains advanced Firefox configuration options and performance tweaks
 *   [1 Performance](#Performance)
     *   [1.1 Advanced Firefox options](#Advanced_Firefox_options)
         *   [1.1.1 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
-        *   [1.1.2 Network settings](#Network_settings)
-        *   [1.1.3 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-        *   [1.1.4 Turn off OCSP validation](#Turn_off_OCSP_validation)
-        *   [1.1.5 Turn off the disk cache](#Turn_off_the_disk_cache)
-        *   [1.1.6 Longer interval to save session](#Longer_interval_to_save_session)
-        *   [1.1.7 Immediate rendering of pages](#Immediate_rendering_of_pages)
+        *   [1.1.2 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
+        *   [1.1.3 Network settings](#Network_settings)
+        *   [1.1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+        *   [1.1.5 Turn off OCSP validation](#Turn_off_OCSP_validation)
+        *   [1.1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
+        *   [1.1.7 Longer interval to save session](#Longer_interval_to_save_session)
+        *   [1.1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
     *   [1.2 Other modifications](#Other_modifications)
         *   [1.2.1 Enable firefox optional tracking protection](#Enable_firefox_optional_tracking_protection)
         *   [1.2.2 Referer header control](#Referer_header_control)
@@ -71,16 +72,31 @@ This section contains advanced Firefox options for performance tweaking. For add
 
 **Note:** Since Firefox version 40 basic software OMTC is enabled by default.
 
-To check if OpenGL OMTC is enabled, go to `about:support` and under the "Graphics" section look for "GPU Accelerated Windows". If it reports "0/1 Basic (OMTC)" (possibly 0/2), OpenGL OMTC is disabled; if it reports "1/1 OpenGL (OMTC)" (possibly 1/2 or 2/2) it is enabled.
-
 To enable OpenGL OMTC go to `about:config` and set:
 
 *   `layers.acceleration.force-enabled true`
-*   `layers.offmainthreadcomposition.enabled true` (default)
 
-Restart Firefox for changes to take effect. If the above changes do not enable GPU acceleration, try setting the environment variable as follows: `export MOZ_USE_OMTC=1`. Then run Firefox [[1]](http://featherweightmusings.blogspot.se/2013/11/no-more-main-thread-opengl-in-firefox.html).
+Restart Firefox for changes to take effect.
+
+To check if OpenGL OMTC is enabled, go to `about:support` and under the "Graphics" section look for "Compositing". If it reports "Basic", OpenGL OMTC is disabled; if it reports "OpenGL" it is enabled.
+
+If the above changes do not enable GPU acceleration, try setting the environment variable as follows: `export MOZ_USE_OMTC=1`. Then run Firefox [[1]](http://featherweightmusings.blogspot.se/2013/11/no-more-main-thread-opengl-in-firefox.html).
 
 For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing](https://wiki.mozilla.org/Platform/GFX/OffMainThreadCompositing)
+
+#### Set AzureContentBackend to Skia instead of Cairo
+
+**Warning:** You may come across visual errors by enabling skia instead of cairo.
+
+[Skia](https://skia.org/) is a 2D open-source graphics library to eventually supersede Cairo as the default Azure backend on Linux.
+
+To set Skia as the default go to `about:config` and set:
+
+*   `gfx.content.azure.backends skia,cairo`
+
+Restart Firefox for changes to take effect.
+
+To confirm the default Azure backend go to `about:support` and under the "Graphics" section look for "AzureContentBackend" and check if it reports "skia".
 
 #### Network settings
 
@@ -485,13 +501,11 @@ Before continuing, remember there is a reason some of these variables are not en
 | media.mediasource.enabled | true (default) | Enable [Media Source Extensions](https://en.wikipedia.org/wiki/Media_Source_Extensions "wikipedia:Media Source Extensions") (MSE) |
 | media.mediasource.mp4.enabled | true (default) | Enable [MP4](https://en.wikipedia.org/wiki/MPEG-4_Part_14 "wikipedia:MPEG-4 Part 14") MSE |
 | media.mediasource.webm.enabled | true (default) | Enable [WebM](https://en.wikipedia.org/wiki/WebM "wikipedia:WebM") MSE. |
-| media.fragmented-mp4.exposed | true | Enable fragmented MP4 segments |
-| media.fragmented-mp4.ffmpeg.enabled | true | Enable fragmented MP4 ffmpeg |
 | media.mediasource.ignore_codecs | true | Enable H.264 MSE, amongst other things (This boolean key has to be created!) |
 
 #### Widevine and Netflix/Amazon Video
 
-Starting with version 49, Firefox can play Widevine videos, such as you will find on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
+Starting with version 49, Firefox can play Widevine videos, such as those on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
 
 1.  **Allow Firefox to install DRM.** The first time you visit a widevine-enabled page, firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
 2.  **Forge a Chrome user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox it will try to use Silverlight. Use a user agent string from Chrome for linux, such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.93 Safari/537.36`. This can be configured using the [User Agent Switcher extension](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) or with `general.useragent.override` in *about:config*

@@ -559,7 +559,7 @@ You may be concerned with sending e-mail in a decent character set (charset for 
 When using Mutt there are two levels where the charset must be specified:
 
 *   The text editor used to write the e-mail must save it in the desired encoding.
-*   Mutt will then check the e-mail and determine which encoding is the more apropriate according to the priority you specified in the `send_charset` variable. Default: "us-ascii:iso-8859-1:utf-8".
+*   Mutt will then check the e-mail and determine which encoding is the more appropriate according to the priority you specified in the `send_charset` variable. Default: "us-ascii:iso-8859-1:utf-8".
 
 So if you write an e-mail with characters allowed in ISO-8859-1 (like 'résumé'), but without characters specific to Unicode, then Mutt will set the encoding to ISO-8859-1.
 
@@ -853,32 +853,9 @@ See the [Mutt Reference](http://www.mutt.org/doc/manual/#index-format), `man 3 s
 
 #### Display recipient instead of sender in "Sent" folder view
 
-By default Mutt will display the sender in the index view. It is fine for most folders, but rather useless for the one were you store a copy of your sent e-mails since it will always display your name.
+By default Mutt will display the sender in the index view. It is fine for most folders, but rather useless for the one where you store a copy of your sent e-mails since it will always display your name.
 
-The "columns" of the index can be configured through the `index_format` variable. Its syntax is documented in the `muttrc` man page. The values of our concern are `%t` (recipient) and `%F` (sender).
-
-To change the columns according to the current folder, we need to use a hook:
-
- `muttrc` 
-```
-folder-hook   *[sS]ent* 'set index_format="%2C | %Z [%d] %-30.30t (%-4.4c) %?M?<%M> ?%s"'
-folder-hook ! *[sS]ent* 'set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %?M?<%M> ?%s"'
-
-```
-
-The exclamation mark means *everything that does not match the following regex*. Of course you can change the index_format following your taste, and the regular expression if the folder does not have *Sent* not *sent* in its name.
-
-Let us centralize the settings, it will simplify future tweaking.
-
- `muttrc` 
-```
-set my_index_format_pre='set index_format="%2C | %Z [%d] %-30.30'
-set my_index_format_post=' (%-4.4c) %?M?<%M> ?%s"'
-
-folder-hook .*[sS]ent.* "$my_index_format_pre"t"$my_index_format_post"
-folder-hook ! .*[sS]ent.* "$my_index_format_pre"F"$my_index_format_post"
-
-```
+The easiest way to fix this is to set up your [alternative email addresses](https://dev.mutt.org/trac/wiki/UseCases/MultiAccounts#Settinguptheaddresses:alternates) in muttrc. If the sender address matches with one of your alternative email addresses, Mutt will automatically display "To <recipient>" in the index.
 
 #### Variable column width
 
