@@ -94,8 +94,10 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 
 | Author | Shell | WM / DE | Editor | Terminal | Multiplexer | Audio | Monitor | Mail | IRC |
 | [Ambrevar](https://bitbucket.org/ambrevar/dotfiles) | zsh | awesome | emacs | rxvt-unicode | cmus | htop/vicious | mutt |
+| [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | sakura | tmux | i3status | The Lounge |
 | [bamos](https://github.com/bamos/dotfiles) | zsh | i3/xmonad | vim/emacs | rxvt-unicode | tmux | mpv/cmus | conky/xmobar | mutt | ERC |
 | [brisbin33](https://github.com/pbrisbin/dotfiles) | [zsh](https://github.com/pbrisbin/oh-my-zsh) | [xmonad](https://github.com/pbrisbin/xmonad-config) | [vim](https://github.com/pbrisbin/vim-config) | rxvt-unicode | screen | dzen | [mutt](https://github.com/pbrisbin/mutt-config) | [irssi](https://github.com/pbrisbin/irssi-config) |
+| [bstaletic](https://github.com/bstaletic) | [zsh](https://github.com/bstaletic/dotfiles/blob/master/.zshrc) | [dwm](https://github.com/bstaletic/dotfiles/blob/master/dwm/config.h) | [vim](https://github.com/bstaletic/dotfiles/blob/master/.vimrc) | terminator | screen | [ncmpcpp](https://github.com/bstaletic/blob/master/.ncmpcpp/config) | [conky](https://github.com/bstaletic/dotfiles/blob/master/.conkyrc) |
 | [cinelli](https://github.com/cinelli/dotfiles) | zsh | dwm | vim | termite-git | pianobar | htop | mutt-kz | weechat |
 | [drkhsh](https://github.com/drkh5h/dotfiles) | zsh | dwm | vim | st | screen | cmus | conky | mutt | weechat |
 | [Earnestly](https://github.com/Earnestly/dotfiles) | zsh | i3/orbment | vim/emacs | termite | tmux | mpd | conky | mutt | weechat |
@@ -112,17 +114,16 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
 | [pid1](https://github.com/pid1/dotfiles) | zsh | dwm | neovim | termite | tmux | custom | mutt | weechat |
+| [polyzen](https://github.com/polyzen/dotfiles) | zsh | i3 | vim | termite | tmux | i3status | weechat |
+| [swalladge](https://bitbucket.org/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | i3status |
+| [thiagowfx](https://github.com/thiagowfx/dotfiles) | bash/zsh | i3 | vim/emacs | rxvt-unicode | ncmpcpp | i3blocks |
 | [unexist](http://hg.subtle.de/dotfiles/file) | zsh | subtle | vim | rxvt-unicode | ncmpcpp | mutt | irssi |
 | [vodik](https://github.com/vodik/dotfiles) | zsh | xmonad | vim | termite-git | tmux | ncmpcpp | custom | mutt | weechat |
 | [w0ng](https://github.com/w0ng/dotfiles) | zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | custom | mutt | irssi |
 | [Wintervenom](https://github.com/Wintervenom/Configuration) | bash | herbstluftwm | vim | rxvt-unicode | screen | mpd ([mpc-utils](https://github.com/Wintervenom/Scripts/tree/master/audio/mpd)) | [hlwm-dzen2](https://github.com/Wintervenom/Scripts/blob/master/wm/herbstluftwm/hlwm-dzen2https://github.com/wolfcore/dotfiles) | mutt | weechat |
 | [wolfcore](https://github.com/wolfcore/dotfiles) | bash | dwm | vim | rxvt-unicode | tmux | cmus | custom | weechat |
 | [xfausto](https://github.com/xfausto/dotfiles) | zsh | dwm | vim | st | ncmpcpp | conky |
-| [thiagowfx](https://github.com/thiagowfx/dotfiles) | bash/zsh | i3 | vim/emacs | rxvt-unicode | ncmpcpp | i3blocks |
 | [zendeavor](https://github.com/zendeavor) | [zsh](https://github.com/zendeavor/config-stuff/tree/sandbag/zsh) | [i3](https://github.com/zendeavor/config-stuff/blob/sandbag/i3/config) | [vim](https://github.com/zendeavor/dotvim/tree/sandbag) | [rxvt-unicode](https://github.com/zendeavor/config-stuff/blob/sandbag/X11/Xresources#L14) | [tmux](https://github.com/zendeavor/config-stuff/tree/sandbag/tmux) | [ncmpcpp](https://github.com/zendeavor/config-stuff/blob/sandbag/ncmpcpp/config) | [i3status](https://github.com/zendeavor/config-stuff/blob/sandbag/i3/i3status.conf) | [weechat](https://github.com/zendeavor/config-stuff/tree/kiwi/weechat) |
-| [bstaletic](https://github.com/bstaletic) | [zsh](https://github.com/bstaletic/dotfiles/blob/master/.zshrc) | [dwm](https://github.com/bstaletic/dotfiles/blob/master/dwm/config.h) | [vim](https://github.com/bstaletic/dotfiles/blob/master/.vimrc) | terminator | screen | [ncmpcpp](https://github.com/bstaletic/blob/master/.ncmpcpp/config) | [conky](https://github.com/bstaletic/dotfiles/blob/master/.conkyrc) |
-| [swalladge](https://bitbucket.org/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | i3status |
-| [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | sakura | tmux | i3status | The Lounge |
 
 ## See also
 

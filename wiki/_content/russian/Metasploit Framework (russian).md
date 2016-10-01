@@ -30,7 +30,7 @@
 
 ## Установка
 
-Установите пакет [metasploit](https://aur.archlinux.org/packages/metasploit/) из [AUR](/index.php/AUR "AUR").
+Установите пакет [metasploit](https://www.archlinux.org/packages/?name=metasploit) из [AUR](/index.php/AUR "AUR").
 
 Для использования нестабильной версии установите [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/).
 

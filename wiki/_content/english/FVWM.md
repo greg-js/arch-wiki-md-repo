@@ -1,4 +1,4 @@
-FVWM is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create modules - separate programs that are spawned by FVWM and provide extra functionality. FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[1]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
+FVWM is an ICCCM-compliant multiple virtual desktop window manager for the X Window system. It is configured by editing text-based configuration files. Although using FVWM does not require any knowledge of programming languages, it is possible to extend FVWM with [M4](http://www.fvwm.org/documentation/manpages/stable/FvwmM4.php), [C](http://www.fvwm.org/documentation/manpages/stable/FvwmCpp.php), and [Perl](http://www.fvwm.org/documentation/manpages/stable/FvwmPerl.php) preprocessing. FVWM also has a [Perl library](http://www.fvwm.org/documentation/perllib/) which allows one to create [modules](#Modules). FVWM stands for F Virtual Window Manager. The official stance is that the F does not stand for anything in particular [[1]](http://fvwm.org/documentation/faq/#what-does-fvwm-stand-for).
 
 ## Contents
 
@@ -35,9 +35,9 @@ FVWM is an ICCCM-compliant multiple virtual desktop window manager for the X Win
 
 ## Installing
 
-[Install](/index.php/Install "Install") the package [fvwm](https://www.archlinux.org/packages/?name=fvwm). For a desktop environment like experience with FVWM at its core, install [fvwm-crystal](https://www.archlinux.org/packages/?name=fvwm-crystal).
+[Install](/index.php/Install "Install") [fvwm](https://www.archlinux.org/packages/?name=fvwm) or [fvwm-cvs](https://aur.archlinux.org/packages/fvwm-cvs/) (for the development version). Alternatively, you can install [fvwm+](https://aur.archlinux.org/packages/fvwm%2B/) which provides a patched version of FVWM.
 
-You can also install [fvwm-patched](https://aur.archlinux.org/packages/fvwm-patched/) which provides a modified version of FVWM - see [[2]](http://web.archive.org/web/20070912061152/abdn.ac.uk/~u15dm4/fvwm/) (outdated) and also the package's PKGBUILD for more details.
+The following packages provide themes and icons for FVWM: [fvwm-crystal](https://www.archlinux.org/packages/?name=fvwm-crystal), [fvwm-icons](https://aur.archlinux.org/packages/fvwm-icons/), [fvwm-themes](https://aur.archlinux.org/packages/fvwm-themes/), [fvwm-themes-extra](https://aur.archlinux.org/packages/fvwm-themes-extra/). FVWM Crystal provides a separate session for a desktop environment like experience.
 
 ## Starting
 
@@ -95,7 +95,7 @@ FVWM will no longer ship sample configuration files as of version 2.6.7\. Noneth
 
 ### The virtual desktop
 
-For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[3]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
+For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[2]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
 
 Pages in FVWM are arranged in a grid. The number of pages used can be defined with the `DesktopSize` command. For instance, adding `DesktopSize 3x3` to your configuration file will give you 9 pages, arranged in a 3x3 grid. Pages can be navigated using the [pager module](#FvwmPager) or with the `MoveToPage` command which could be mapped to a keyboard shortcut or menu entry. For instance, the command `MoveToPage -1p +0p` will move the viewport 1 page to the left of the current page.
 
@@ -260,7 +260,7 @@ AddToFunc MyFunc
 
 ### Modules
 
-**Note:** Several modules are being considered for considered for deprecation. [[4]](https://www.mail-archive.com/fvwm-workers@fvwm.org/msg03971.html)
+**Note:** Several modules are being considered for considered for deprecation. [[3]](https://www.mail-archive.com/fvwm-workers@fvwm.org/msg03971.html)
 
 Modules are separate programs, spawned by FVWM that can add extra functionality. Modules can be spawned using the following syntax: `Module *ModuleName* (*identifier*) *ModuleArgs*`.
 

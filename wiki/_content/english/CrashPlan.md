@@ -11,6 +11,7 @@ CrashPlan is a [backup program](/index.php/Backup_program "Backup program") that
     *   [4.3 Desktop GUI Crashes on startup](#Desktop_GUI_Crashes_on_startup)
     *   [4.4 Out of Memory](#Out_of_Memory)
     *   [4.5 Real time protection](#Real_time_protection)
+    *   [4.6 JRE Version Update](#JRE_Version_Update)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -99,6 +100,20 @@ For backup sets containing large numbers of files (more than 100,000 or so), the
 ### Real time protection
 
 If you use real time protection for your backup set and have a lot of files to backup, the default system configuration might not be able to allocate all required handle to follow all files in real time. This issue can manifest itself with logs like "inotify_add_watch: No space left on device" in the syslog journal. You can follow instruction [here](http://support.code42.com/CrashPlan/Latest/Troubleshooting/Real-Time_Backup_For_Network-Attached_Drives) and configure inotify max_user_watches to a bigger value to fix the iusse.
+
+### JRE Version Update
+
+If, during upgrade, CrashPlan is attempting to upgrade the self-installed JRE version and the upgrade never gets passed downloading the JRE from CrashPlan (checking in logs/upgrade<unique_number>.log, the last message is a curl/wget for the "latest" JRE tgz), it's possible to stop CrashPlan, download the JRE (from the ugprade log) manually and replace the jre folder in the CrashPlan install with the upgrade version. This should allow CrashPlan to get past being stuck trying to upgrade the JRE.
+
+```
+ cd <crashplan/install/dir>
+ ./bin/CrashPlanEngine stop
+ rm -rf jre
+ curl <jre url from crashplan log>
+ tar xzvf <jre.tgz>
+ ./bin/CrashPlanEngine start
+
+```
 
 ## See also
 

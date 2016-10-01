@@ -14,7 +14,7 @@ Window Maker is a [window manager](/index.php/Window_manager "Window manager") (
 *   [4 Dock](#Dock)
 *   [5 Clip](#Clip)
 *   [6 Dockapps](#Dockapps)
-*   [7 System-tray](#System-tray)
+*   [7 System tray](#System_tray)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Removing unwanted application icons](#Removing_unwanted_application_icons)
 *   [9 Troubleshooting](#Troubleshooting)
@@ -162,21 +162,21 @@ Dockapps are small applications that run in the dock. They can be useful for sho
 
 See the Window Maker website for more information about dockapps.
 
-## System-tray
+## System tray
 
-There is no native system-tray for the windowmaker but there are one or two options around. This is potentially helpful if you want to have let's say nm-applet or so in your desktop.
+Window Maker does not ship with a system tray however there are a number of standalone trays that can be used with Window Maker.
 
-The first one is **stalonetray** which Prior to version 0.8, stalonetray does not work as a dockapp in WindowMaker, use Docker instead. Moreover, NW is the only grow gravity that works reliably in WindowMaker for those versions.
+	stalonetray
 
-Starting from version 0.8, there is very basic support for WindowMaker dockapp mode which can be enabled via `--dockapp-mode wmaker`. Following options are also required: `--slot-size 32 --geometry 2x2 --parent-bg --scrollbars none`.
+Prior to version 0.8, [stalonetray](https://www.archlinux.org/packages/?name=stalonetray) did not work as a dockapp in Window Maker, use Docker instead. However, starting from version 0.8, there is very basic dockapp support for Window Maker which can be enabled using the `--dockapp-mode wmaker` command line option. The following options should also be used: `--slot-size 32 --geometry 2x2 --parent-bg --scrollbars none`.
 
-But also there are some easy ways, too:
+	System tray dockapps for Window Maker
 
-*   [wmsystray](https://aur.archlinux.org/packages/wmsystray/) : which practically do the job for you.
-*   [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/) : The same but with no border and it suppose to work nicely on other desktops too.
-*   [Peksystray](https://aur.archlinux.org/packages/Peksystray/) : which is a small system tray (also called notification tray) designed for all the light window managers *supporting docking*.
+[wmsystray](https://aur.archlinux.org/packages/wmsystray/) and [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/) are both system tray dockapps designed for Window Maker; the latter is also reported to work well in other desktops.
 
-Peksystray provides a window where icons will automatically add up depending on the requests from the applications. Both the size of the window and the size of the icons can be selected by the user. If the window is full, it can automatically display another window in order to display more icons.
+	Peksystray
+
+[Peksystray](https://aur.archlinux.org/packages/Peksystray/) is a system tray designed for all the light window managers that support docking. Peksystray provides a window where icons will automatically add up depending on the requests from the applications. Both the size of the window and the size of the icons can be selected by the user. If the window is full, it can automatically display another window in order to display more icons.
 
 ## Tips and tricks
 

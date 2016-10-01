@@ -278,7 +278,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [Openbox](/index.php/Openbox "Openbox")
 [openbox](https://www.archlinux.org/packages/?name=openbox) | LXQt Panel
 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) | QTerminal
-[qterminal](https://aur.archlinux.org/packages/qterminal/) | PCManFM-Qt
+[qterminal](https://www.archlinux.org/packages/?name=qterminal) | PCManFM-Qt
 [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [SpeedCrunch](http://speedcrunch.org/)
 [speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
 [juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | LxImage-Qt

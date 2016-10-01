@@ -42,7 +42,7 @@
 
 *   **QTerminal** — 基于 Qt 的轻量级终端模拟器。
 
-	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://aur.archlinux.org/packages/qterminal/)
+	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — LXQt 推荐的显示管理器。
 

@@ -760,7 +760,7 @@ Generate a new initramfs image:
 
 ##### Configuring the kernel parameters
 
-Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
+Add the following options to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") if using the `encrypt` hook. If using `sd-encrypt` see [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration").
 
 ```
 cryptdevice=/dev/*<partition1>*:root cryptkey=/dev/*<partition2>*:<fstype>:<path>
@@ -791,7 +791,9 @@ The naming of device nodes like `/dev/sdb1` is not guaranteed to stay the same a
 
 This method allows to use a specially named keyfile that will be embedded in the [initramfs](/index.php/Initramfs "Initramfs") and picked up by the `encrypt` [hook](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to unlock the root filesystem (`cryptdevice`) automatically. It may be useful to apply when using the [GRUB early cryptodisk](/index.php/GRUB#Boot_partition "GRUB") feature, in order to avoid entering two passphrases during boot.
 
-The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`, see [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, the code defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
+The `encrypt` hook lets the user specify a keyfile with the `cryptkey` kernel parameter: in the case of initramfs, the syntax is `rootfs:*path*`. See [Dm-crypt/System configuration#cryptkey](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration"). Besides, this kernel parameter defaults to use `/crypto_keyfile.bin`, and if the initramfs contains a valid key with this name, decryption will occur automatically without the need to configure the `cryptkey` parameter.
+
+If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile with the `luks.cryptkey` kernel parameter. See [Dm-crypt/System configuration#luks.key](/index.php/Dm-crypt/System_configuration#luks.key "Dm-crypt/System configuration").
 
 [Generate the keyfile](#Creating_a_keyfile_with_random_characters), give it suitable permissions and [add it as a LUKS key](#Adding_LUKS_keys):
 

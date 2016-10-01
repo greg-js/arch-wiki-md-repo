@@ -45,7 +45,7 @@ i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的
 
 ### 显示管理器
 
-[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 软件包包括了作为[Xsession](/index.php/Xsession "Xsession")的`i3.desktop`,用于启动窗口管理器。 `i3-with-shmlog.desktop` 启用了日志（对于调试很有用）。[i3-nome](https://aur.archlinux.org/packages/i3-nome/) 软件包在 [GNOME](/index.php/GNOME "GNOME") 中集成了 `i3-wm`。
+[i3-wm](https://www.archlinux.org/packages/?name=i3-wm) 软件包包括了作为[Xsession](/index.php/Xsession "Xsession")的`i3.desktop`,用于启动窗口管理器。 `i3-with-shmlog.desktop` 启用了日志（对于调试很有用）。[i3-gnome](https://aur.archlinux.org/packages/i3-gnome/) 软件包在 [GNOME](/index.php/GNOME "GNOME") 中集成了 `i3-wm`。
 
 ### xinitrc
 

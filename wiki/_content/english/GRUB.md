@@ -666,11 +666,17 @@ For tips on managing multiple GRUB entries, for example when using both [linux](
 
 #### Root partition
 
-To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
+To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
 
-Then add `cryptdevice` to `/etc/default/grub`: In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
+If using the `encrypt` hook, add `cryptdevice` to `/etc/default/grub`. In the example below, the `sda2` partition has been encrypted as `/dev/mapper/cryptroot`:
 
  `/etc/default/grub`  `GRUB_CMDLINE_LINUX="cryptdevice=/dev/sda2:cryptroot"` 
+
+If using the `sd-encrypt` hook, add `luks.uuid`:
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX="luks.uuid=*UUID*"` 
+
+where *UUID* is the UUID of the LUKS-encrypted device.
 
 Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) when done.
 

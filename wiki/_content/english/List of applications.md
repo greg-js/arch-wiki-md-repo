@@ -1543,7 +1543,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 *   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Official tool to manage Bitcoins, a P2P currency.
 
-	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt)
+	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt) [bitcoin-tx](https://www.archlinux.org/packages/?name=bitcoin-tx)
 
 *   **Electrum** — An easy to use Bitcoin client.
 
@@ -2769,7 +2769,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **QTerminal** — A lightweight Qt-based terminal emulator.
 
-	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal-git](https://aur.archlinux.org/packages/qterminal-git/)
+	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://www.archlinux.org/packages/?name=qterminal)
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for the xterm.
 
@@ -4481,7 +4481,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[Metasploit Framework](/index.php/Metasploit_Framework "Metasploit Framework")** — An advanced open-source platform for developing, testing, and using exploit code.
 
-	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://aur.archlinux.org/packages/metasploit/)
+	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://www.archlinux.org/packages/?name=metasploit)
 
 *   **[Nessus](/index.php/Nessus "Nessus")** — Comprehensive vulnerability scanning program.
 
@@ -4859,7 +4859,7 @@ See also [Wikipedia:Comparison of computer algebra systems](https://en.wikipedia
 
 *   **[Maple](/index.php/Maple "Maple")** — Famous commercial CAS. Often used in education.
 
-	[http://www.maplesoft.com/products/maple/](http://www.maplesoft.com/products/maple/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=maple)</small>
+	[http://www.maplesoft.com/products/maple/](http://www.maplesoft.com/products/maple/) ||
 
 *   **Mathics** — A free CAS for symbolic mathematical computations which uses [Python](/index.php/Python "Python") as its main language. It aims at achieving a Mathematica-compatible syntax and functions. It relies mostly on Sympy for most mathematical tasks and, optionally, Sage for more advanced functionality.
 
@@ -4967,7 +4967,7 @@ See also [Wikipedia:List of information graphics software](https://en.wikipedia.
 
 *   **[LabPlot](https://en.wikipedia.org/wiki/LabPlot "wikipedia:LabPlot")** — Free software data analysis and visualization application, similar to SciDAVis.
 
-	[http://labplot.sourceforge.net/](http://labplot.sourceforge.net/) || [labplot2](https://aur.archlinux.org/packages/labplot2/)
+	[https://labplot.kde.org/](https://labplot.kde.org/) || [labplot-kf5](https://aur.archlinux.org/packages/labplot-kf5/)
 
 *   **[QtiPlot](https://en.wikipedia.org/wiki/QtiPlot or [SigmaPlot](https://en.wikipedia.org/wiki/SigmaPlot "wikipedia:SigmaPlot").
 

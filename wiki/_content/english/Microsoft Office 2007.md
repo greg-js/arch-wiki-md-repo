@@ -18,7 +18,7 @@
 create a 32 bit wineprefix e.g. directory win32
 
 ```
-# WINEARCH=win32 WINEPREFIX=~/win32 winecfg
+$ WINEARCH=win32 WINEPREFIX=~/win32 winecfg
 
 ```
 
@@ -29,28 +29,28 @@ A pop up will appear, set it to Windows XP.
 Install msxml3
 
 ```
-# WINEPREFIX=~/win32 winetricks msxml3
+$ WINEPREFIX=~/win32 winetricks msxml3
 
 ```
 
 Install office
 
 ```
-# WINEPREFIX=~/win32 wine /path/to/office2007image/setup.exe
+$ WINEPREFIX=~/win32 wine /path/to/office2007image/setup.exe
 
 ```
 
 Install SP
 
 ```
-# WINEPREFIX=~/win32 wine /path/to/office2007sp3-kb2526086-fullfile-en-us.exe
+$ WINEPREFIX=~/win32 wine /path/to/office2007sp3-kb2526086-fullfile-en-us.exe
 
 ```
 
 Set riched20 to native
 
 ```
-# WINEPREFIX=~/win32 winecfg
+$ WINEPREFIX=~/win32 winecfg
 
 ```
 

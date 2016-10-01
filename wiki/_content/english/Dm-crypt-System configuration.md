@@ -6,11 +6,17 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 *   [1 mkinitcpio](#mkinitcpio)
 *   [2 Boot loader](#Boot_loader)
-    *   [2.1 cryptdevice](#cryptdevice)
-    *   [2.2 root](#root)
-    *   [2.3 resume](#resume)
-    *   [2.4 cryptkey](#cryptkey)
-    *   [2.5 crypto](#crypto)
+    *   [2.1 Using encrypt hook](#Using_encrypt_hook)
+        *   [2.1.1 cryptdevice](#cryptdevice)
+        *   [2.1.2 root](#root)
+        *   [2.1.3 resume](#resume)
+        *   [2.1.4 cryptkey](#cryptkey)
+        *   [2.1.5 crypto](#crypto)
+    *   [2.2 Using sd-encrypt hook](#Using_sd-encrypt_hook)
+        *   [2.2.1 luks.uuid](#luks.uuid)
+        *   [2.2.2 luks.name](#luks.name)
+        *   [2.2.3 luks.options](#luks.options)
+        *   [2.2.4 luks.key](#luks.key)
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
@@ -20,7 +26,7 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 When encrypting a system it is necessary to regenerate the initial ramdisk after properly configuring [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). Depending on the particular scenarios, a subset of the following hooks will have to be enabled:
 
 *   `encrypt`: always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` hook, if that is used.
-*   `shutdown`: deprecated, not necessary [anymore](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html).
+*   `sd-encrypt`: systemd version of `encrypt` hook and used instead of `encrypt` hook. Must be used with `systemd` hook.
 *   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Setting your keymap is done in [`/etc/vconsole.conf`](/index.php/Keymap#Persistent_configuration "Keymap").
 *   `keyboard`: needed to make USB keyboards work in early userspace.
 
@@ -28,11 +34,15 @@ Other hooks needed should be clear from other manual steps followed during the i
 
 ## Boot loader
 
-In order to enable booting an encrypted root partition, a subset of the following kernel parameters need to be set: see [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for instructions specific to your [boot loader](/index.php/Boot_loader "Boot loader").
+In order to enable booting an encrypted root partition, a subset of the following kernel parameters need to be set. See [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for instructions specific to your [boot loader](/index.php/Boot_loader "Boot loader").
 
 For example using [GRUB](/index.php/GRUB#Root_partition "GRUB") the relevant parameters are best added to `/etc/default/grub` before generating the boot configuration. See also [GRUB#Warning when installing in chroot](/index.php/GRUB#Warning_when_installing_in_chroot "GRUB") as another point to be aware of when installing the GRUB loader.
 
-### cryptdevice
+The kernel parameters you need to specify depend on whether or not you are using the `encrypt` hook or the `sd-encrypt` hook.
+
+### Using encrypt hook
+
+#### cryptdevice
 
 This parameter will make the system prompt for the passphrase to unlock the device containing the encrypted root on a cold boot. It is parsed by the `encrypt` hook to identify which device contains the encrypted system:
 
@@ -45,9 +55,7 @@ cryptdevice=*device*:*dmname*
 *   `*dmname*` is the **d**evice-**m**apper name given to the device after decryption, which will be available as `/dev/mapper/*dmname*`.
 *   If a LVM contains the [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system"), the LVM gets activated first and the volume group containing the logical volume of the encrypted root serves as *device*. It is then followed by the respective volume group to be mapped to root. The parameter follows the form of `cryptdevice=*/dev/vgname/lvname*:*dmname*`.
 
-**Note:** When using systemd & sd-encrypt hooks, use `*luks.uuid*` instead of cryptdevice, see *systemd-cryptsetup-generator(8)*.
-
-### root
+#### root
 
 The `root=` parameter specifies the `*device*` of the actual (decrypted) root file system:
 
@@ -62,7 +70,7 @@ root=*device*
 
 **Tip:** This parameter is not needed to be specified manually when using [GRUB](/index.php/GRUB "GRUB"). Executing *grub-mkconfig* is meant to determine the correct UUID of the decrypted root filesystem and specify it in the generated `grub.cfg` automatically.
 
-### resume
+#### resume
 
 ```
 resume=*device*
@@ -71,9 +79,9 @@ resume=*device*
 
 *   `*device*` is the device file of the decrypted (swap) filesystem used for suspend2disk. If swap is on a separate partition, it will be in the form of `/dev/mapper/swap`. See also [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
-### cryptkey
+#### cryptkey
 
-This parameter is required by the `*encrypt*` hook for reading a keyfile to unlock the `*cryptdevice*`. It can have three parameter sets, depending on whether the keyfile exists as a file in a particular device, a bitstream starting on a specific location, or a file in the initramfs.
+This parameter specifies the location of a keyfile and is required by the `*encrypt*` hook for reading such a keyfile to unlock the `*cryptdevice*` (unless a key is in the default location, see below). It can have three parameter sets, depending on whether the keyfile exists as a file in a particular device, a bitstream starting on a specific location, or a file in the initramfs.
 
 For a file in a device the format is:
 
@@ -110,7 +118,7 @@ Also note that if `cryptkey` is not specified, it defaults to `/crypto_keyfile.b
 
 See also [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
 
-### crypto
+#### crypto
 
 This parameter is specific to pass *dm-crypt* plain mode options to the *encrypt* hook.
 
@@ -127,6 +135,57 @@ For a disk encrypted with just *plain* default options, the `crypto` arguments m
 A specific example of arguments is
 
  `crypto=sha512:twofish-xts-plain64:512:0:` 
+
+### Using sd-encrypt hook
+
+In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator(8)](http://man7.org/linux/man-pages/man8/systemd-cryptsetup-generator.8.html) for more options and more details.
+
+#### luks.uuid
+
+```
+luks.uuid=*UUID*
+
+```
+
+Specify the UUID of the device to be decrypted on boot with this flag. If the UUID is in `/etc/crypttab`, the options listed there will be used.
+
+#### luks.name
+
+```
+luks.name=*cryptroot*
+
+```
+
+Specify the name of the mapped device after the LUKS partition is open. For example, specifying `cryptroot` causes the unlocked device to be located at `/dev/mapper/cryptroot`. If this is not specified the mapped device will be located at `/dev/mapper/luks-*UUID*` where *UUID* is the UUID of the LUKS partition.
+
+This is equivalent to the second parameter of `encrypt`'s `cryptdevice`.
+
+#### luks.options
+
+```
+luks.options=UUID=*options*
+
+```
+
+or
+
+```
+luks.options=*options*
+
+```
+
+Specify options for the device listed after `UUID` or, if not specified, for all UUIDs not specified elsewhere (e.g., cryptab).
+
+This is roughly equivalent to the third parameter of `encrypt`'s `cryptdevice`.
+
+#### luks.key
+
+```
+luks.key=*mykeyfile*
+
+```
+
+Specify the location of a password file used to decrypt the device specified in `luks.UUID`. There is no default location like there is with the `encrypt` hook parameter `cryptkey`.
 
 ## crypttab
 

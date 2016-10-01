@@ -8,64 +8,20 @@ Individual drive partitions can be setup using one of the many different availab
 
 ## Contents
 
-*   [1 Create a file system](#Create_a_file_system)
-*   [2 Types of file systems](#Types_of_file_systems)
-    *   [2.1 Journaling](#Journaling)
-    *   [2.2 FUSE-based file systems](#FUSE-based_file_systems)
-    *   [2.3 Special-type file systems](#Special-type_file_systems)
-
-## Create a file system
-
-File systems are usually created on a [partition](/index.php/Partition "Partition"), inside logical containers such as [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), or on a regular file (see [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). This section describe the partition case.
-
-**Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
-
-**Warning:** After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
-
-Identify the partition where the file system will be created, for example with [lsblk](/index.php/Lsblk "Lsblk"):
-
- `$ lsblk -f` 
-```
-NAME   FSTYPE LABEL     UUID                                 MOUNTPOINT
-sdb                                                          
-└─sdb1 vfat   Transcend 4A3C-A9E9
-```
-
-An existing file system, if present, will be shown in the `FSTYPE` column. If [mounted](/index.php/Mount "Mount"), it will appear in the `MOUNTPOINT` column or in the output of [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html). For example:
-
-```
-$ findmnt */dev/sdb1*
-
-```
-
-Mounted file systems **must** be unmounted with [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html) before proceeding:
-
-```
-# umount */mountpoint*
-
-```
-
-To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
-
-**Warning:** The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders").
-
-For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions), run:
-
-```
-# mkfs.*ext4* /dev/*sdb1*
-
-```
-
-**Tip:**
-
-*   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e4label* can be used to change the label on an existing file system.
-*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") volume can be increased, but not reduced in size. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Features "w:Comparison of file systems") and the respective file system documentation for details.
-
-The new file system can now be mounted to a directory of choice.
+*   [1 Types of file systems](#Types_of_file_systems)
+    *   [1.1 Journaling](#Journaling)
+    *   [1.2 FUSE-based file systems](#FUSE-based_file_systems)
+    *   [1.3 Special-type file systems](#Special-type_file_systems)
+*   [2 Identify existing file systems](#Identify_existing_file_systems)
+*   [3 Create a file system](#Create_a_file_system)
+*   [4 Mount a filesystem](#Mount_a_filesystem)
+*   [5 List mounted file systems](#List_mounted_file_systems)
+*   [6 Umount a file system](#Umount_a_file_system)
+*   [7 See also](#See_also)
 
 ## Types of file systems
 
-See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for a general overview, and [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "w:Comparison of file systems") for a detailed feature comparison.
+See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for a general overview, and [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "w:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
 
 | File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
 | [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](http://man7.org/linux/man-pages/man8/mkfs.btrfs.8.html) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
@@ -87,7 +43,7 @@ See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) fo
 [xfs-self-describing-metadata.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt)
 
  |
-| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) | No | N/A ([OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS") port) |
+| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | No | N/A ([OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS") port) |
 
 **Note:** The kernel has its own NTFS driver (see [ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt)), but it has limited support for writing files.
 
@@ -148,3 +104,133 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 *   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — **SquashFS** is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
 
 	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
+
+## Identify existing file systems
+
+To identify existing file systems, you can use [lsblk](/index.php/Lsblk "Lsblk"):
+
+ `$ lsblk -f` 
+```
+NAME   FSTYPE LABEL     UUID                                 MOUNTPOINT
+sdb                                                          
+└─sdb1 vfat   Transcend 4A3C-A9E9
+```
+
+An existing file system, if present, will be shown in the `FSTYPE` column. If [mounted](/index.php/Mount "Mount"), it will appear in the `MOUNTPOINT` column.
+
+## Create a file system
+
+File systems are usually created on a [partition](/index.php/Partition "Partition"), inside logical containers such as [LVM](/index.php/LVM "LVM"), [RAID](/index.php/RAID "RAID") and [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), or on a regular file (see [w:Loop device](https://en.wikipedia.org/wiki/Loop_device "w:Loop device")). This section describe the partition case.
+
+**Note:** File systems can be written directly to a disk, known as a [superfloppy](https://msdn.microsoft.com/en-us/library/windows/hardware/dn640535(v=vs.85).aspx#gpt_faq_superfloppy) or *partitionless disk*. Certain limitations are involved with this method, particularly if [booting](/index.php/Arch_boot_process "Arch boot process") from such a drive. See [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") for an example.
+
+**Warning:**
+
+*   After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
+*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders").
+
+Before continuing, [identify the device](/index.php/Lsblk "Lsblk") where the file system will be created using and whether or not it is mounted. For example:
+
+ `$ lsblk -f` 
+```
+NAME   FSTYPE   LABEL       UUID                                 MOUNTPOINT
+sda
+├─sda1                      C4DA-2C4D                            
+├─sda2 ext4                 5b1564b2-2e2c-452c-bcfa-d1f572ae99f2 /mnt
+└─sda3                      56adc99b-a61e-46af-aab7-a6d07e504652 
+
+```
+
+Mounted **must** be [unmounted](#Unmount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
+
+```
+# umount /dev/sda2
+
+```
+
+To find just mounted file systems, see [#Listing mounted file systems](#Listing_mounted_file_systems).
+
+To create a new file system, use [mkfs(8)](http://man7.org/linux/man-pages/man8/mkfs.8.html). See [#Types of file systems](#Types_of_file_systems) for the exact type, as well as userspace utilities you may wish to install for a particular file system.
+
+For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") (common for Linux data partitions) on `/dev/*sda1*`, run:
+
+```
+# mkfs.*ext4* /dev/*sda1*
+
+```
+
+**Tip:**
+
+*   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e4label* can be used to change the label on an existing file system.
+*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") volume can be increased, but not reduced in size. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Features "w:Comparison of file systems") and the respective file system documentation for details.
+
+The new file system can now be mounted to a directory of choice.
+
+## Mount a filesystem
+
+To manually mount a filesystem on a device (e.g., a partition) use [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html):
+
+```
+# mount */dev/sda1* */mnt*
+
+```
+
+This attached the filesystem on `*/dev/sda1*` at the directory `*/mnt*`, making the contents of the filesystem visible. Any data that existed at `*/mnt*` before this action is made invisible until the device is unmounted.
+
+[fstab](/index.php/Fstab "Fstab") contains information on how devices should be automatically mounted if present. See the [fstab](/index.php/Fstab "Fstab") article for more information on how to modify this behavior.
+
+If a device is specified in `/etc/fstab` and only the device or mount point is given on the command line, that information will be used in mounting. For example, if `/etc/fstab` contains a line indicating that `*/dev/sda1*` should be mounted to `*/mnt*`, then the following will automatically mount the device to that location:
+
+```
+# mount */dev/sda1*
+
+```
+
+Or
+
+```
+# mount */mnt*
+
+```
+
+*mount* contains several options, many of which depend on the file system specified. The options can be changed by using flags on the command line with *mount*, by editing [fstab](/index.php/Fstab "Fstab"), by creating [udev](/index.php/Udev "Udev") rules, by [compiling the kernel yourself](/index.php/Arch_Build_System "Arch Build System"), or by using filesystem-specific mount scripts (located at `/usr/bin/mount.*`). See these related articles and the article of the filesystem of interest for more information.
+
+## List mounted file systems
+
+To list all mounted file systems, use [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html):
+
+```
+$ findmnt
+
+```
+
+*findmnt* takes a variety of arguments which can filter the output and show additional information. For example, it can take a device or mount point as an argument to show only information on what is specified:
+
+```
+$ findmnt */dev/sda1*
+
+```
+
+*findmnt* gathers information from `/etc/fstab`, `/etc/mtab`, and `/proc/self/mounts`.
+
+## Umount a file system
+
+To unmount a file system use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html). Either the device containting the file system or the mount point can be specified:
+
+```
+# umount */dev/sda1*
+
+```
+
+Or
+
+```
+# umount */mnt*
+
+```
+
+## See also
+
+*   Documentation of file systems supported by kernel: [kernel.org](https://www.kernel.org/doc/Documentation/filesystems/)
+*   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")
+*   Creating and using disk images mini-howto: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto)

@@ -46,6 +46,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [4.2.2 rtl8192e](#rtl8192e)
         *   [4.2.3 rtl8188eu](#rtl8188eu)
         *   [4.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [4.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
     *   [4.3 Atheros](#Atheros)
         *   [4.3.1 ath5k](#ath5k)
         *   [4.3.2 ath9k](#ath9k)
@@ -730,7 +731,7 @@ and reload the module (after a pause):
 
 #### rtl8188eu
 
-Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses the rtl8179 chipset), use chipsets compatible with this driver. In Linux 3.12 the driver [has been moved](http://lwn.net/Articles/564798/) to kernel staging source tree. For older kernels use out-of-tree driver sources built with [dkms](/index.php/Dkms "Dkms") - install [8188eu-dkms](https://aur.archlinux.org/packages/8188eu-dkms/). At the times of 3.15 kernel rtl8188eu driver is buggy and has many stability issues.
+Some dongles, like the TP-Link TL-WN725N v2 (not sure, but it seems that uses the rtl8179 chipset), use chipsets compatible with this driver. In Linux 3.12 the driver [has been moved](http://lwn.net/Articles/564798/) to kernel staging source tree. For older kernels use out-of-tree driver sources built with [DKMS](/index.php/DKMS "DKMS") - install [8188eu-dkms](https://aur.archlinux.org/packages/8188eu-dkms/). At the times of 3.15 kernel rtl8188eu driver is buggy and has many stability issues.
 
 #### rtl8723ae/rtl8723be
 
@@ -744,7 +745,27 @@ or
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-If you have very poor signal maybe your device has only one antenna connected and auto mode doesn't work. You can force the antenna with `ant_sel=1` or `ant_sel=2` kernel option.
+If you have very poor signal maybe your device has only one antenna connected and auto mode does not work. You can force the antenna with `ant_sel=1` or `ant_sel=2` kernel option.
+
+#### rtl8812au/rtl8821au
+
+Newer 802.11 a/b/g/n usb adapters, such as the Glam Hobby AC600 (Ourlink) may require rtl8812 or rtl8821 drivers before working.
+
+The 8812 driver can be found as [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/).
+
+```
+# modprobe 8812au
+
+```
+
+If that does not work (like for the AC600 dongles), try the 8812/8821 module [rtl8812au_rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/).
+
+```
+# modprobe rtl8812au_rtl8821au
+
+```
+
+These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
 
 ### Atheros
 

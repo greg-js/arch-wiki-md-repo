@@ -3,8 +3,6 @@
 ## Contents
 
 *   [1 Usage](#Usage)
-    *   [1.1 Listing mounted file systems](#Listing_mounted_file_systems)
-    *   [1.2 Alternatives to change the default mount options](#Alternatives_to_change_the_default_mount_options)
 *   [2 Some other file systems](#Some_other_file_systems)
     *   [2.1 VFAT, FAT, DOS](#VFAT.2C_FAT.2C_DOS)
     *   [2.2 NTFS](#NTFS)
@@ -12,67 +10,7 @@
 
 ## Usage
 
-The [fstab](/index.php/Fstab "Fstab") file may contain lines describing what devices are usually mounted where, using which options. A [file system](/index.php/File_system "File system") specified in `/etc/fstab` will be mounted at boot time, with some exceptions. For example, any device whose line contains the `noauto` option will not be mounted. This is useful for things like partitions for other OSes.
-
-External devices that are to be mounted when present, but ignored if absent, may require the `nofail` option. See [external devices](/index.php/Fstab#External_devices "Fstab") for more information.
-
-**Note:** File systems supported by the kernel are listed in `/proc/filesystems`. See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for more information.
-
-When mounting a file system mentioned in fstab or mtab, it is sufficient to give only the device, or only the mount point. For example, to mount `/dev/sdb1`:
-
-```
-# mount /dev/*sdb1*
-
-```
-
-The mount program does not read the `/etc/fstab` file if device (or [LABEL/UUID](/index.php/Persistent_block_device_naming "Persistent block device naming")) and directory (mount point) are specified. For example:
-
-```
-# mount /dev/*sdb1* */mnt/mydir*
-
-```
-
-If the mount point does not exist, it may be necessary to create it first. For example:
-
-```
-# mkdir */mnt/mydir*
-# mount /dev/*sdb1* */mnt/mydir*
-
-```
-
-### Listing mounted file systems
-
-Mounted file systems are visible from [/etc/mtab](https://en.wikipedia.org/wiki/Mtab "wikipedia:Mtab"), which is a symbolic link to `/proc/self/mounts`. See also [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html).
-
-The [/etc/mtab](https://en.wikipedia.org/wiki/Mtab "wikipedia:Mtab") is a system-generated file created and updated by the **mount** application whenever any [file system](/index.php/File_system "File system") is mounted or unmounted.
-
-Whenever the `mount` program is executed without any arguments, this file is printed. Each line in the file represents a file system that is currently mounted and displays the following information:
-
-*   device node
-*   mount point
-*   file system type
-*   Mount options used while mounting the file system.
-
-**Note:** The `/etc/mtab` file is meant to be used to display the status of currently mounted file systems only. It should not be modified manually.
-
-### Alternatives to change the default mount options
-
-A few examples about how to extend mount functionality and modify default options:
-
-*   [By editing fstab](/index.php/Fstab "Fstab") to include the desired mount options
-*   [By creating udev / udisks rules](/index.php/Udev "Udev") - mostly useful for removable devices
-*   Mounting manually / by using scripts
-
-	The *mount.X* scripts or symbolic links, where *X* is the name of a file system, can be used to alter the default *mount* options for almost any of its supported file systems. Option `-i` is used to let the *mount* command ignore *mount.X* scripts and must also be used inside *mount.X* scripts for any *mount* command.
-
-	There are two ways to list the available scripts:
-
-*   Write *mount* and press a `Tab` key.
-*   Execute `ls /usr/bin/mount.*`.
-
-*   [By compiling the kernel yourself](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System")
-
-	To change the default settings in the kernel, you will need to compile it yourself.
+See [File systems#Mount a file system](/index.php/File_systems#Mount_a_file_system "File systems").
 
 ## Some other file systems
 

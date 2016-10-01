@@ -845,6 +845,15 @@ If NTLMv2 clients are unable to authenticate when NTLMv1 has been enabled, creat
    client ntlmv2 auth = yes
 ```
 
+This change also affects samba shares mounted with **mount.cifs**. If after upgrade to Samba 4.5 your mount fails, add the **sec=ntlmssp** option to your mount command, e.g.
+
+```
+mount.cifs //server/share /mnt/point -o sec=ntlmssp,...
+
+```
+
+See: [man 8 mount.cifs](https://www.samba.org/samba/docs/man/manpages-3/mount.cifs.8.html) **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
+
 ## See also
 
 *   [Samba: An Introduction](http://www.samba.org/samba/docs/SambaIntro.html)

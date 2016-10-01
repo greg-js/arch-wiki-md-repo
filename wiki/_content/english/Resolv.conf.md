@@ -247,8 +247,8 @@ options timeout:1
 If you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line to `resolv.conf` with the local domain such as:
 
 ```
-domain localdomain.com
+domain example.com
 
 ```
 
-That way you can refer to local hosts such as `mainmachine1.localdomain.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.
+That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.

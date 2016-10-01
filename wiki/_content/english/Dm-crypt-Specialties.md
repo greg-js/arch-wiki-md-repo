@@ -445,14 +445,14 @@ and now includes the span to the new disk. Note that the `cryptsetup resize` act
 It is possible to modify the encrypt hook to allow multiple hard drive decrypt root (`/`) at boot. One way:
 
 ```
-# cp /usr/lib/initcpio/install/encrypt /usr/lib/initcpio/install/encrypt2
-# cp /usr/lib/initcpio/hooks/encrypt  /usr/lib/initcpio/hooks/encrypt2
-# sed -i "s/cryptdevice/cryptdevice2/" /usr/lib/initcpio/hooks/encrypt2
-# sed -i "s/cryptkey/cryptkey2/" /usr/lib/initcpio/hooks/encrypt2
+# cp /usr/lib/initcpio/install/encrypt /etc/initcpio/install/encrypt2
+# cp /usr/lib/initcpio/hooks/encrypt  /etc/initcpio/hooks/encrypt2
+# sed -i "s/cryptdevice/cryptdevice2/" /etc/initcpio/hooks/encrypt2
+# sed -i "s/cryptkey/cryptkey2/" /etc/initcpio/hooks/encrypt2
 
 ```
 
-Add `cryptdevice2=` to your boot options (and `cryptkey2=` if needed), see [Dm-crypt/System_configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration")
+Add `cryptdevice2=` to your boot options (and `cryptkey2=` if needed), and add the `encrypt2` hook to your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") before rebuilding it. See [Dm-crypt/System_configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration").
 
 #### Multiple non-root partitions
 
@@ -532,11 +532,11 @@ HOOKS="... **systemd** ... block **sd-encrypt** sd-lvm2 filesystems ..."
 This method shows how to modify the `encrypt` hook in order to use a remote LUKS header. Now the `encrypt` hook has to be modified to let `cryptsetup` use the separate header ([FS#42851](https://bugs.archlinux.org/task/42851); base source and idea for these changes [published on the BBS](https://bbs.archlinux.org/viewtopic.php?pid=1076346#p1076346)). Make a copy so it is not overwritten on a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") update:
 
 ```
-# cp /lib/initcpio/hooks/encrypt{,2}
-# cp /usr/lib/initcpio/install/encrypt{,2}
+# cp /usr/lib/initcpio/hooks/encrypt /etc/initcpio/hooks/encrypt2
+# cp /usr/lib/initcpio/install/encrypt /etc/initcpio/install/encrypt2
 
 ```
- `/lib/initcpio/hooks/encrypt2 (around line 52)` 
+ `/etc/initcpio/hooks/encrypt2 (around line 52)` 
 ```
 warn_deprecated() {
     echo "The syntax 'root=${root}' where '${root}' is an encrypted volume is deprecated"

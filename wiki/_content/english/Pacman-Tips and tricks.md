@@ -75,7 +75,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 *   **cylon** — Updates, Maintenance , backups and system checks in a menu driven Bash script.
 
-	[https://github.com/whitelight999/cylon](https://github.com/whitelight999/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
+	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 
 *   **Lostfiles** — Script that identifies files not owned by any package.
 

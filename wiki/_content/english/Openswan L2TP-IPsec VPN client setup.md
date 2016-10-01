@@ -110,7 +110,6 @@ mru 1410
 defaultroute
 usepeerdns
 debug
-lock
 connect-delay 5000
 name **your_vpn_username**
 password **your_password**

@@ -23,7 +23,7 @@ PIA supports nearly any operating system and solution any user would need. This 
 
 [Install](/index.php/Install "Install") the [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/) or [private-internet-access-vpn-dev](https://aur.archlinux.org/packages/private-internet-access-vpn-dev/)package.
 
-The package downloads the [OPENVPN CONFIGURATION FILES (DEFAULT)](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
+The package provides a tool that downloads the [OPENVPN CONFIGURATION FILES (DEFAULT)](https://www.privateinternetaccess.com/openvpn/openvpn.zip) and stores them in `/etc/openvpn`. However, it updates the file names to better support using them on the command line.
 
 Configuration for the package is stored in `/etc/private-internet-access`
 
@@ -59,8 +59,9 @@ PASSWORD
 This secures the access to the file from non-root users. Read more on [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes"). It is **required** when activating auto-login.
 
 *   Run `pia -a` as root.
-    *   If you have [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) installed, it will created the configuration files for [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). Make sure to [restart](/index.php/Restart "Restart") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to see them.
+    *   If you have [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) installed, it will create the configuration files for [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). Make sure to [restart](/index.php/Restart "Restart") [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) to see them.
     *   If you have [connman](https://www.archlinux.org/packages/?name=connman) installed, it will create the configuration files for [connman](https://www.archlinux.org/packages/?name=connman). [Start](/index.php/Start "Start") `connman-vpn.service` if not running already. It will auto load the profiles.
+    *   Regardless, it will create the OpenVPN `.conf` files in `/etc/openvpn`.
 
 **Tip:** Disable auto-login in configurations by adding `openvpn_auto_login = False` to `/etc/private-internet-access/pia.conf` and running `pia -a`
 
@@ -93,6 +94,7 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 *   For the `[configure]` section:
 
 | option | option values | description |
+| apps | cm, nm | Default: all; This configures which applications are configured. The application will configure all applications installed; however, if a user only needed configurations for Conman, then setting this to 'cm' would generate only those configurations even if they had NetworkManager installed. OpenVPN configurations are always generated. cm = Conman; nm = NetworkManager |
 | port | 501, 502, 1197, 1198 | Default: 1198; This configures which port and protocol the VPN uses. 501,502=TCP; 1197,1198=UDP |
 | cipher | aes-128-cbc, aes-256-cbc, bf-cbc, None | Default: aes-128-cbc; This configures the data encryption cipher. |
 | auth | sha1, sha256, None | Default: sha1; This configures the data authentication. |

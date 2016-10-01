@@ -25,7 +25,7 @@ Si desea disfrutar de todas las características extendidas de Emacs sin la nece
 
 ```
 
-Otra variante común es [xemacs](https://www.archlinux.org/packages/?name=xemacs).
+Otra variante común es [xemacs](https://aur.archlinux.org/packages/xemacs/).
 
 ## Ejecutando Emacs
 

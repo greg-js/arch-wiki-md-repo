@@ -273,7 +273,7 @@ The default X shaped Xcursor appears in window managers that do not set the defa
 To fix this simply add the following to your `~/.xinitrc` , xsession or window managers startup configuration if possible (for example bspwm's bspwmrc).
 
 ```
-$ xsetroot -cursor_name left_ptr&
+$ xsetroot -cursor_name left_ptr
 
 ```
 

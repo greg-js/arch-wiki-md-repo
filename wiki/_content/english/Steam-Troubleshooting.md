@@ -136,11 +136,11 @@ The minimum required libraries needed on an x86_64 system are
 *   [lib32-gconf](https://www.archlinux.org/packages/?name=lib32-gconf)
 *   [lib32-dbus-glib](https://www.archlinux.org/packages/?name=lib32-dbus-glib)
 *   [lib32-libnm-glib](https://www.archlinux.org/packages/?name=lib32-libnm-glib)
-*   [lib32-libudev0](https://aur.archlinux.org/packages/lib32-libudev0/)
+*   [lib32-libudev0-shim](https://www.archlinux.org/packages/?name=lib32-libudev0-shim)
 
 Some games may require additional libraries in order to launch without the runtime. See [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").
 
-The meta-package [steam-libs](https://aur.archlinux.org/packages/steam-libs/) includes all of these libraries (as well as some game-specific libraries) as dependencies, to simplify the install process. You can also use the unofficial [alucryd-multilib](/index.php/Unofficial_user_repositories#alucryd-multilib "Unofficial user repositories") repository to install prebuilt versions of the AUR packages.
+The meta-package [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) includes all of these libraries (as well as some game-specific libraries) as dependencies, to simplify the install process.
 
 ## Multiple monitors setup
 

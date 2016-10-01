@@ -4,7 +4,7 @@
 
 由于 Intel 提供和支持 X.Org 开源驱动，Intel 的显卡基本上是即插即用的。
 
-Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units")。
+Intel显卡和相应芯片组、cpu的完整型号参考[维基百科上的 Intel 显卡处理单元对比](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units")。
 
 **注意:**
 
@@ -19,10 +19,10 @@ Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wiki
     *   [3.1 启用 early KMS](#.E5.90.AF.E7.94.A8_early_KMS)
 *   [4 基于模块的省电选项](#.E5.9F.BA.E4.BA.8E.E6.A8.A1.E5.9D.97.E7.9A.84.E7.9C.81.E7.94.B5.E9.80.89.E9.A1.B9)
     *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)
-    *   [4.2 Framebuffer compression (enable_fbc)](#Framebuffer_compression_.28enable_fbc.29)
+    *   [4.2 帧缓冲压缩 (enable_fbc)](#.E5.B8.A7.E7.BC.93.E5.86.B2.E5.8E.8B.E7.BC.A9_.28enable_fbc.29)
 *   [5 技巧](#.E6.8A.80.E5.B7.A7)
     *   [5.1 避免播放视频时屏幕撕裂](#.E9.81.BF.E5.85.8D.E6.92.AD.E6.94.BE.E8.A7.86.E9.A2.91.E6.97.B6.E5.B1.8F.E5.B9.95.E6.92.95.E8.A3.82)
-    *   [5.2 禁用 VSYNC](#.E7.A6.81.E7.94.A8_VSYNC)
+    *   [5.2 禁用垂直同步 (VSYNC)](#.E7.A6.81.E7.94.A8.E5.9E.82.E7.9B.B4.E5.90.8C.E6.AD.A5_.28VSYNC.29)
     *   [5.3 设置自动缩放模式](#.E8.AE.BE.E7.BD.AE.E8.87.AA.E5.8A.A8.E7.BC.A9.E6.94.BE.E6.A8.A1.E5.BC.8F)
     *   [5.4 KMS 问题: 终端面积很小](#KMS_.E9.97.AE.E9.A2.98:_.E7.BB.88.E7.AB.AF.E9.9D.A2.E7.A7.AF.E5.BE.88.E5.B0.8F)
     *   [5.5 在 GMA 4500 硬解 H.264](#.E5.9C.A8_GMA_4500_.E7.A1.AC.E8.A7.A3_H.264)
@@ -45,9 +45,9 @@ Intel显卡和相应芯片组、cpu的完整型号参考[this comparison on wiki
 
 ## 安装
 
-先安装 [Xorg](/index.php/Xorg "Xorg")，然后[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 软件包。它提供了用于2D加速的DDX驱动和旧显卡的[XvMC](/index.php/XvMC "XvMC")视频解码驱动。它依赖于3D加速的DRI驱动 [mesa](https://www.archlinux.org/packages/?name=mesa)。
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的 [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 软件包。它提供了用于2D加速的DDX驱动。并且它依赖于3D加速的DRI驱动 [mesa](https://www.archlinux.org/packages/?name=mesa)。
 
-启用OpenGL支持, 安装 [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl)。64位系统需要安装[multilib](/index.php/Multilib "Multilib") 仓库中的 [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) 才能在 32 位程序中使用加速功能。
+要启用OpenGL支持, 需要安装 [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl)。如果你使用的是64位系统并且需要 32 位程序中使用加速功能，还需要安装[multilib](/index.php/Multilib "Multilib") 仓库中的 [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl)。
 
 参考 [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
@@ -55,7 +55,7 @@ Ivy-Bridge以及更新的GPU支持 [Vulkan](/index.php/Vulkan "Vulkan") ，要�
 
 ## 配置
 
-没必要做任何形式的配置来运行 [Xorg](/index.php/Xorg "Xorg")（不需要`xorg.conf`，但若有则要正确配置）。
+要运行 [Xorg](/index.php/Xorg "Xorg")，没有必要做任何形式的配置（不需要`xorg.conf`，但若有则需要正确配置）。
 
 **注意:** 一些最新型号的核心显卡（例如Skylake/HD 530）可能需要额外的设置，参见[#Skylake 支持](#Skylake_.E6.94.AF.E6.8C.81)
 
@@ -80,7 +80,7 @@ EndSection
 
 ## 加载
 
-英特尔内核模块在系统启动时自动加载. 如果它不启动，则:
+英特尔内核模块在系统启动时自动加载. 如果它不启动，请检查:
 
 *   首先，确认你 **没有** 在 [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") 中添加 `nomodeset` 或 `vga=`选项， 因为Intel显示驱动需要 [KMS](/index.php/KMS "KMS").
 *   其次，检查你没有把Intel列入 `/etc/modprobe.d/` 或 `/usr/lib/modprobe.d/` 中的modprobe的黑名单文件中。
@@ -141,9 +141,9 @@ To confirm the current running RC6 level, you can look in sysfs:
 
 ```
 
-### Framebuffer compression (enable_fbc)
+### 帧缓冲压缩 (enable_fbc)
 
-Framebuffer compression may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
+在 Sandy Bridge之前世代的 Intel GPU （第六代）上使用帧缓冲压缩可能会导致 GPU 的不稳定，甚至不可用。这时系统日志里可能会出现类似于下面的消息：
 
 ```
 kernel: drm: not enough stolen space for compressed buffer, disabling.
@@ -154,23 +154,23 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 
 ### 避免播放视频时屏幕撕裂
 
-若使用 SNA，将下列内容添加到 `/etc/X11/xorg.conf.d/20-intel.conf` 的 `Device` 段可杜绝屏幕撕裂问题。
+若使用 SNA，将下列内容添加到 `/etc/X11/xorg.conf.d/20-intel.conf` 的 `Device` 部分可杜绝屏幕撕裂问题。
 
 ```
 Option "TearFree" "true"
 
 ```
 
-See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686) for more info.
+参见 [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686) 以获取更多信息.
 
-**Note:**
+**注意:**
 
-*   This option may not work when `SwapbuffersWait` is `false`.
-*   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
-*   This option does not work with UXA acceleration method, only with SNA.
-*   This option should not be needed with DRI3 enabled.
+*   如果 `SwapbuffersWait` 被设定为 `false`，这个选项可能不会生效。
+*   这个选项对一些非常挑剔垂直同步时间的程序会产生很多问题，例如 [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy")。
+*   这个选项对 UXA 的加速方式不起作用，它仅仅作用于 SNA 的加速方式。
+*   当 DRI3 被启用时，这个选项应该是不需要的。
 
-### 禁用 VSYNC
+### 禁用垂直同步 (VSYNC)
 
 在`/etc/X11/xorg.conf.d/20-intel.conf` 的 `Section "Device"` 段添加 `Option "SwapbuffersWait" "false"` 可禁用 VSYNC.
 

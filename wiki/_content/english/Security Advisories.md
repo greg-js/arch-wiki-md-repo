@@ -41,6 +41,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### September 2016
 
+*   [30 September 2016] [ASA-201609-32](https://lists.archlinux.org/pipermail/arch-security/2016-September/000728.html) [wordpress](https://www.archlinux.org/packages/?name=wordpress) multiple issues
+*   [30 September 2016] [ASA-201609-31](https://lists.archlinux.org/pipermail/arch-security/2016-September/000727.html) [c-ares](https://www.archlinux.org/packages/?name=c-ares) arbitrary code execution
 *   [28 September 2016] [ASA-201609-30](https://lists.archlinux.org/pipermail/arch-security/2016-September/000726.html) [openssl](https://www.archlinux.org/packages/?name=openssl) denial of service
 *   [28 September 2016] [ASA-201609-29](https://lists.archlinux.org/pipermail/arch-security/2016-September/000725.html) [bind](https://www.archlinux.org/packages/?name=bind) denial of service
 *   [27 September 2016] [ASA-201609-28](https://lists.archlinux.org/pipermail/arch-security/2016-September/000724.html) [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl) denial of service

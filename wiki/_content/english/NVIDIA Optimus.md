@@ -268,7 +268,7 @@ $ glxinfo | grep NVIDIA
 
 ### Further Information
 
-For more information, look at NVIDIA's official page on the topic [[3]](http://http.download.nvidia.com/XFree86/Linux-x86_64/340.32/README/randr14.html).
+For more information, look at NVIDIA's official page on the topic [[3]](http://us.download.nvidia.com/XFree86/Linux-x86/370.28/README/randr14.html).
 
 ## Troubleshooting
 

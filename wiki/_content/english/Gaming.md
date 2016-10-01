@@ -225,7 +225,6 @@ Pulseaudio on Arch uses speex-float-0 by default to remix channels, which is con
 
 ```
 resample-method = speex-float-10
-resample-method = src-sinc-best-quality
 
 ```
 

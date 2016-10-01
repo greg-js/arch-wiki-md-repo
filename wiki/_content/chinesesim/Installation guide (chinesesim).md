@@ -101,7 +101,7 @@
 
 ### 挂载分区
 
-将分区[挂载(8)](http://man7.org/linux/man-pages/man8/%E6%8C%82%E8%BD%BD.8.html)到 `/mnt`，如果使用多个分区，还需要为其他分区创建目录并挂载它们（`/mnt/boot`、`/mnt/home`、……）。激活 [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) 分区，这样 `genfstab` 才能自动检测到它们。
+将分区[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)到 `/mnt`，如果使用多个分区，还需要为其他分区创建目录并挂载它们（`/mnt/boot`、`/mnt/home`、……）。激活 [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) 分区，这样 `genfstab` 才能自动检测到它们。
 
 ## 安装
 

@@ -12,8 +12,7 @@ This page lists and compares applications that synchronize data between two or m
 *   [4 Cloud storage](#Cloud_storage)
     *   [4.1 Third-party services](#Third-party_services)
         *   [4.1.1 Multi-service clients](#Multi-service_clients)
-    *   [4.2 Cooperative](#Cooperative)
-    *   [4.3 Custom infrastructure](#Custom_infrastructure)
+    *   [4.2 Custom infrastructure](#Custom_infrastructure)
 *   [5 Version control systems](#Version_control_systems)
 *   [6 See also](#See_also)
 
@@ -312,24 +311,6 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 *   **rclone** — Rclone is a command line program to sync files and directories to and from Google Drive, Amazon S3, Openstack Swift / Rackspace cloud files / Memset Memstore, Dropbox, Google Cloud Storage and The local filesystem.
 
 	[http://rclone.org/](http://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
-
-### Cooperative
-
-A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_cloud "wikipedia:Cooperative storage cloud") is a decentralized model of networked online storage where data is stored on multiple computers, hosted by the participants cooperating in the cloud.
-
-*   **[Symform](http://www.symform.com)** — A peer-to-peer cloud backup service.
-    *   Unlimited free backup in exchange for 2:1 storage space contribution with an always-connected device (at least 80% uptime).
-    *   [Payment options exist](http://www.symform.com/our-solutions/pricing/).
-    *   First 10GB of backup storage is free (no contribution needed).
-    *   In addition to paid support, support plans in exchange for extended contribution (300GB+) exist.
-    *   Automatic and incremental backups.
-    *   Data is encrypted before leaving the computer, though keys are also stored on the Symform's servers.[[38]](http://virtualserverguy.com/blog/2012/12/19/symform-security-analysis)
-    *   Customizable limits for bandwidth consumption.
-    *   Ability to have a local copy ("Hot Copy") of the backed up data on a different disk or computer.
-    *   Ability to have synchronized folders between nodes (Dropbox-like).
-    *   Closed source, using mono. Windows clients available.
-
-	[http://www.symform.com/](http://www.symform.com/) || [symform](https://aur.archlinux.org/packages/symform/)
 
 ### Custom infrastructure
 

@@ -801,7 +801,13 @@ For more information, please see issue [#6100](https://github.com/gitlabhq/gitla
 
 ### Gitlab-workhorse
 
-Since 8.0 GitLab uses separate HTTP server `gitlab-workhorse` for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this.
+Since 8.0 GitLab uses separate HTTP server [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this.
+
+Please note that [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) should now be preferred over [gitlab-unicorn](https://www.archlinux.org/packages/?name=gitlab-unicorn) according to the GitLab team: [https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216](https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216)
+
+GitLab v8.12 somehow broke [gitlab-unicorn](https://www.archlinux.org/packages/?name=gitlab-unicorn) web server. Using [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) instead fixes issues about unreachable assets and consequently broken display/broken CSS.
+
+By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `127.0.0.1:8181`. You should consider [editing](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` according to your LAN IP address, for example `-listenAddr 192.168.0.1:8181`.
 
 ### GitLab CI
 

@@ -16,14 +16,17 @@
 | <small>2.4.</small> [Sistemas de gestión de bases de datos](/index.php/Category:Database_management_systems_(Espa%C3%B1ol) "Category:Database management systems (Español)") <small>(1)</small> |
 | <small>2.5.</small> [Emuladores](/index.php/Category:Emulators_(Espa%C3%B1ol) "Category:Emulators (Español)") <small>(4)</small> |
 | <small>2.6.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(2)</small> |
-| <small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(4)</small> |
-| <small>2.8.</small> [Gráficos y autoedición](/index.php/Category:Graphics_and_desktop_publishing_(Espa%C3%B1ol) "Category:Graphics and desktop publishing (Español)") <small>(4)</small> |
+| <small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(5)</small> |
+| <small>2.8.</small> [Gráficos y autoedición](/index.php/Category:Graphics_and_desktop_publishing_(Espa%C3%B1ol) "Category:Graphics and desktop publishing (Español)") <small>(0)</small> |
 | <small>2.9.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>2.9.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
 | <small>2.9.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |
 | <small>2.9.3.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(5)</small> |
 | <small>2.10.</small> [Ciencia y matemáticas](/index.php/Category:Mathematics_and_science_(Espa%C3%B1ol) "Category:Mathematics and science (Español)") <small>(1)</small> |
-| <small>2.11.</small> [Reproductores](/index.php/Category:Multimedia_players_(Espa%C3%B1ol) "Category:Multimedia players (Español)") <small>(3)</small> |
+| <small>2.11.</small> [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)") <small>(6)</small> |
+| <small>2.11.1.</small> [Image manipulation](/index.php/Category:Image_manipulation_(Espa%C3%B1ol) "Category:Image manipulation (Español)") <small>(3)</small> |
+| <small>2.11.2.</small> [Reproductores](/index.php/Category:Multimedia_players_(Espa%C3%B1ol) "Category:Multimedia players (Español)") <small>(5)</small> |
+| <small>2.11.3.</small> [Streaming](/index.php/Category:Streaming_(Espa%C3%B1ol) "Category:Streaming (Español)") <small>(2)</small> |
 | <small>2.12.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(5)</small> |
 | <small>2.12.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
 | <small>2.13.</small> [Monitorización y notificación de estados](/index.php/Category:Status_monitoring_and_notification_(Espa%C3%B1ol) "Category:Status monitoring and notification (Español)") <small>(2)</small> |
@@ -53,7 +56,7 @@
 | <small>4.8.</small> [Placas base y BIOS](/index.php/Category:Mainboards_and_BIOS_(Espa%C3%B1ol) "Category:Mainboards and BIOS (Español)") <small>(2)</small> |
 | <small>4.9.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(5) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>4.10.</small> [Impresoras](/index.php/Category:Printers_(Espa%C3%B1ol) "Category:Printers (Español)") <small>(2)</small> |
-| <small>4.11.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(4)</small> |
+| <small>4.11.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(5)</small> |
 | <small>4.12.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(1)</small> |
 | <small>4.12.1.</small> [Dispositivos ópticos](/index.php/Category:Optical_(Espa%C3%B1ol) "Category:Optical (Español)") <small>(1)</small> |
 | <small>5.</small> [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(12)</small> |
@@ -72,8 +75,7 @@
 | <small>5.10.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(8)</small> |
 | <small>5.11.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
 | <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(5)</small> |
-| <small>6.1.</small> [Audio/Vídeo](/index.php/Category:Audio/Video_(Espa%C3%B1ol) "Category:Audio/Video (Español)") <small>(15)</small> |
-| <small>6.1.1.</small> [Streaming](/index.php/Category:Streaming_(Espa%C3%B1ol) "Category:Streaming (Español)") <small>(1)</small> |
+| <small>6.1.</small> [Audio/Vídeo](/index.php/Category:Audio/Video_(Espa%C3%B1ol) "Category:Audio/Video (Español)") <small>(0)</small> |
 | <small>6.2.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(25)</small> |
 | <small>6.2.1.</small> [Cargadores de arranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)") <small>(8)</small> |
 | <small>6.2.2.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(3) (también en [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)"))</small> |

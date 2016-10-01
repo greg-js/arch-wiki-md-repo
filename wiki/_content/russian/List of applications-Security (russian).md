@@ -79,7 +79,7 @@
 
 *   **[Metasploit Framework](/index.php/Metasploit_Framework "Metasploit Framework")** — Расширенная платформа с открытым исходным кодом для разработки, тестирования и использования эксплоитов
 
-	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://aur.archlinux.org/packages/metasploit/)
+	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://www.archlinux.org/packages/?name=metasploit)
 
 *   **[Nessus](/index.php/Nessus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nessus (Русский)")** — Комплексная программа поиска уязвимостей
 

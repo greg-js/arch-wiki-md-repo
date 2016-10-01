@@ -60,7 +60,7 @@ If you want to fully enjoy all the extended features of Emacs without installing
 
 ```
 
-Another common variant is [xemacs](https://www.archlinux.org/packages/?name=xemacs).
+Another common variant is [xemacs](https://aur.archlinux.org/packages/xemacs/).
 
 ## Running Emacs
 

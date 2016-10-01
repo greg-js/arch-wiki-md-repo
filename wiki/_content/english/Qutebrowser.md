@@ -1,5 +1,7 @@
 [qutebrowser](https://github.com/The-Compiler/qutebrowser) is a lightweight keyboard-driven, vim-like browser based on PyQt5 and QtWebKit.
 
+**Warning:** qutebrowser is based on a WebKit port that is considered insecure and outdated. qutebrowser is in the process of switching to the more secure qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/). Also see [#Use experimental webengine backend](#Use_experimental_webengine_backend).
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -7,6 +9,8 @@
     *   [2.1 User Configuration](#User_Configuration)
     *   [2.2 Keybindings](#Keybindings)
     *   [2.3 Video playback](#Video_playback)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Use experimental webengine backend](#Use_experimental_webengine_backend)
 
 ## Installation
 
@@ -45,3 +49,16 @@ You can edit the keybindings directly from the browser with the command `:bind *
 ### Video playback
 
 See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_playback "Browser plugins").
+
+## Tips and tricks
+
+### Use experimental webengine backend
+
+To use the more secure webengine backend, use the `--backend` flag:
+
+```
+ $ qutebrowser --backend webengine
+
+```
+
+**Note:** The qutebrowser implementation of webengine is experimental and may be missing features.

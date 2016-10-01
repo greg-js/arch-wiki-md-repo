@@ -47,10 +47,6 @@ For additional functionality, you may wish to install the following:
 
 	[https://sourceforge.net/projects/lxde/files/LXAppearance/](https://sourceforge.net/projects/lxde/files/LXAppearance/) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
 
-*   **QTerminal** — Lightweight Qt-based terminal emulator.
-
-	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://aur.archlinux.org/packages/qterminal/)
-
 *   **[SDDM](/index.php/SDDM "SDDM")** — The recommended display manager for LXQt.
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)

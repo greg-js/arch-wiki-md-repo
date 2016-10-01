@@ -273,7 +273,7 @@ The disk layout in this example is:
 
 ```
 
-**Warning:** This method does not allow you to span the logical volumes over multiple disks, even in the future. The [#LUKS on LVM](#LUKS_on_LVM) method does not have this limitation.
+**Warning:** This method does not allow you to span the logical volumes over multiple disks easily; see [Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions](/index.php/Dm-crypt/Specialties#Modifying_the_encrypt_hook_for_multiple_partitions "Dm-crypt/Specialties").
 
 **Tip:** Two variants of this setup:
 

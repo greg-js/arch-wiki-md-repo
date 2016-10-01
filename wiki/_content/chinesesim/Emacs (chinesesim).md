@@ -81,7 +81,7 @@ $ pacman -S emacs
 
 ```
 
-另外一个常见的变体就是[xemacs](https://www.archlinux.org/packages/?name=xemacs).
+另外一个常见的变体就是[xemacs](https://aur.archlinux.org/packages/xemacs/).
 
 ## 快速入门
 

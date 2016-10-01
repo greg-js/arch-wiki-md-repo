@@ -1,14 +1,14 @@
 | **Device** | **Status** | **Modules** |
 | Intel | Working | i915 |
 | Ethernet | Working | r8168 |
-| Wireless | Working | ath10k_pci (Workaround, see below) |
+| Wireless | Working | ath10k_pci |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | (see below) |
-| Camera | Untested | uvcvideo |
+| Camera | Working | uvcvideo |
 | Card Reader | Untested | rtsx_usb |
 | Bluetooth | Working |
 
-Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD). Because the device is rather new many drivers still need to be developed for it (*05\. November 2015*).
+Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD).
 
 ## Contents
 
@@ -18,7 +18,6 @@ Information for the Acer Aspire V3-372 51EK (Core i5-6200U, 4GiB RAM, 128GB SSD)
     *   [2.2 Video](#Video)
     *   [2.3 Solid State Drive](#Solid_State_Drive)
     *   [2.4 Touchpad](#Touchpad)
-    *   [2.5 Wireless](#Wireless)
 
 ## Devices
 
@@ -63,28 +62,3 @@ For tips visit [SSD](/index.php/SSD "SSD").
 ### Touchpad
 
 Set the touchpad to basic in the BIOS to get it working. Then enable it by pressing *FN + F7*.
-
-### Wireless
-
-**Note:** I got the device to work by following [these instructions](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1520343/comments/19) on the Ubuntu bugtracker. Please note that this is only a workaround. A fix is ready by the official maintainer ([https://github.com/kvalo/ath10k-firmware/commit/6162bf1d7782520ffe79945bb9677648e496dc5e](https://github.com/kvalo/ath10k-firmware/commit/6162bf1d7782520ffe79945bb9677648e496dc5e)) but not yet in the linux-firmware tree
-
-By enabling [testing] and updating the linux-firmware package the device is visible:
-
- `# ip link` 
-```
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-2: enp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
-    link/ether 30:65:ec:87:7f:4e brd ff:ff:ff:ff:ff:ff
-3: wlp3s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-    link/ether b8:86:87:fd:61:23 brd ff:ff:ff:ff:ff:ff
-
-```
-
-Enabling it doesn't work though and gives the following output
-
- `# ip link set wlp3s0 up` 
-```
-RTNETLINK answers: Resource temporarily unavailable
-
-```

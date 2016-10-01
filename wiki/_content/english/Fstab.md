@@ -44,13 +44,17 @@ A simple `/etc/fstab`, using kernel name descriptors:
 
 **Note:** If the root file system is [btrfs](/index.php/Btrfs "Btrfs"), the fsck order should be set to `0` instead of `1`.
 
+All specified devices within `/etc/fstab` will be automatcially mounted on startup and when the `-a` flag is used with [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) unless the `noauto` option is specified. Devices that are listed and not present will result in an error unless the `nofail` option is used.
+
 See [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html#DESCRIPTION) for details.
 
 ## Identifying filesystems
 
-There are different ways to identify filesystems that will be mounted. `/etc/fstab` does support several methods: kernel name descriptor, label or UUID, and GPT labels and UUID for GPT disks. UUID must be privileged over kernel name descriptors and labels. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for more explanations. It is recommended to read that article first before continuing with this article.
+There are different ways to identify filesystems that will be mounted in `/etc/fstab`: kernel name descriptor, label or UUID, and GPT labels and UUID for GPT disks. UUID must be privileged over kernel name descriptors and labels. See [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for more explanations. It is recommended to read that article first before continuing with this article.
 
-In this section, we will describe how to mount filesystems using all the mount methods available via examples. The output of the commands `lsblk -f` and `blkid` used in the following examples are available in the article [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"). If you have not read that article yet, please read it now.
+In this section, we will describe how to mount filesystems using all the mount methods available via examples. The output of the commands `lsblk -f` and `blkid` used in the following examples are available in the article [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+
+To use kernel name descriptors, use /dev/sd*xy* in the first colun.
 
 ### Kernel name descriptors
 

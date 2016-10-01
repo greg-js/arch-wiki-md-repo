@@ -185,6 +185,9 @@ Reboot and verify that vfio-pci has loaded properly and that it is now bound to 
 [    0.354704] vfio_pci: add [10de:0fbb[ffff:ffff]] class 0x000000/00000000
 [    2.061326] vfio-pci 0000:06:00.0: enabling device (0100 -> 0103)
 ```
+
+It isn't necessary for all devices (or even expected device) from vfio.conf to be in dmesg output. Sometimes device doesn't appear in output at boot but actually is able to be visible and operatable in guest VM.
+
  `$ lspci -nnk -d 10de:13c2` 
 ```
 06:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] [10de:13c2] (rev a1)

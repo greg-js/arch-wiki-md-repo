@@ -105,6 +105,7 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.9 pnsft-pur](#pnsft-pur)
         *   [5.2.10 rakudo](#rakudo)
         *   [5.2.11 zrootfs](#zrootfs)
+        *   [5.2.12 arch-binaries](#arch-binaries)
 
 ## Adding your repository to this page
 
@@ -1120,5 +1121,17 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 ```
 [zrootfs]
 Server = http://www.izzette.com/izzi/zrootfs-old
+
+```
+
+#### arch-binaries
+
+*   **Maintainer:** GRV <grvconstanta@gmail.com>
+*   **Description:** Important AUR packages that are pre-compiled and ready to install with pacman.
+
+```
+[arch-binaries]
+SigLevel = Never
+Server = https://sourceforge.net/projects/arch-binaries/files/$repo/$arch
 
 ```

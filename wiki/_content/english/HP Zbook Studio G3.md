@@ -2,14 +2,19 @@ The HP Zbook Studio G3 is a workstation replacement laptop.
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 Disabling Hybrid graphics](#Disabling_Hybrid_graphics)
-    *   [1.2 Font size during installation](#Font_size_during_installation)
-    *   [1.3 Disabling the nouveau driver](#Disabling_the_nouveau_driver)
-    *   [1.4 Dual boot with windows](#Dual_boot_with_windows)
-*   [2 Configuration](#Configuration)
-    *   [2.1 X config](#X_config)
-    *   [2.2 HiDPI configuration](#HiDPI_configuration)
+*   [1 Status=](#Status.3D)
+*   [2 Installation](#Installation)
+    *   [2.1 Disabling Hybrid graphics](#Disabling_Hybrid_graphics)
+    *   [2.2 Font size during installation](#Font_size_during_installation)
+    *   [2.3 Disabling the nouveau driver](#Disabling_the_nouveau_driver)
+    *   [2.4 Dual boot with windows](#Dual_boot_with_windows)
+*   [3 Configuration](#Configuration)
+    *   [3.1 X config](#X_config)
+    *   [3.2 HiDPI configuration](#HiDPI_configuration)
+
+## Status=
+
+This laptop is currently very difficult to get working with Arch. Despite the progress described below, it sometimes stops working, and it is unclear exactly why. At this moment I would NOT reccommend buying this laptop unless you want a challenge.
 
 ## Installation
 

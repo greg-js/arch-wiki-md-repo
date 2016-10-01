@@ -273,6 +273,13 @@ $ chmod 0600 private/key.pem
 
 ```
 
+Alternatively set [umask](/index.php/Umask "Umask") to restrict permissions of newly created files and directories:
+
+```
+umask 077
+
+```
+
 An example `genpkey` key generation:
 
 ```

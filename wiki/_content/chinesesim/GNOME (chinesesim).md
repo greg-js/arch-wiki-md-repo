@@ -57,7 +57,7 @@ GNOME (读音是*gah-nohm* 或 *nohm*)是一个简单易用的[桌面环境](/in
 
 The base desktop consists of [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell window manager. It can be installed separately with [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell).
 
-**Note:** *mutter* acts as a composite manager for the desktop, employing hardware graphics acceleration to provide effects aimed at reducing screen clutter. The GNOME session manager automatically detects if your video driver is capable of running GNOME Shell and if not, falls back to software rendering using *llvmpipe*.
+**Note:** *mutter* 是gnome桌面的混合管理器, 利用硬件加速防止屏幕撕裂. *mutter*自动检测显卡驱动是否足以运行gnome, 不足以胜任就用*llvmpipe*软件绘制.
 
 ### 附加的软件包
 
@@ -99,7 +99,7 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 
 ### 图形界面登录
 
-可以在登录管理器中选择 *GNOME',* GNOME Classic *或* GNOME on Wayland *作为登录选项。*
+可以在登录管理器中选择 *GNOME*, *GNOME Classic* 或 *GNOME on Wayland* 作为登录选项。
 
 ### 手动启动
 

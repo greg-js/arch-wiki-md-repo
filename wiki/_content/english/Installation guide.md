@@ -117,7 +117,7 @@ See [File systems#Create a file system](/index.php/File_systems#Create_a_file_sy
 
 ### Mount the file systems
 
-[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) the root file system on `/mnt`, for example:
+[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) the file system on the root partition to `/mnt`, for example:
 
 ```
 # mount /dev/*sda1* /mnt

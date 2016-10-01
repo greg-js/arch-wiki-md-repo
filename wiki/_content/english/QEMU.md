@@ -1020,7 +1020,18 @@ Although it is a bit buggy, it performs better than std and cirrus. Install the 
 
 ### virtio
 
-`virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests.
+`virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests with [mesa](https://www.archlinux.org/packages/?name=mesa) (>=11.2) compiled with the option `--with-gallium-drivers=virgl`.
+
+To enable 3D acceleration on the guest system select this vga with `-vga virtio` and enable the opengl context in the display device with `-display sdl,gl=on` or `-display gtk,gl=on` for the sdl and gtk display output respectively. Successful configuration can be confirmed looking at the kernel log in the guest:
+
+ `$ dmesg | grep drm ` 
+```
+[drm] pci: virtio-vga detected
+[drm] virgl 3d acceleration enabled
+
+```
+
+As of September 2016, support for the spice protocol is under development and can be tested installing the development release of [spice](https://www.archlinux.org/packages/?name=spice) (>= 0.13.2).
 
 ### cirrus
 

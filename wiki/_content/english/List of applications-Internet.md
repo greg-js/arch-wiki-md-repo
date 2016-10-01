@@ -1352,7 +1352,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 *   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Official tool to manage Bitcoins, a P2P currency.
 
-	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt)
+	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt) [bitcoin-tx](https://www.archlinux.org/packages/?name=bitcoin-tx)
 
 *   **Electrum** — An easy to use Bitcoin client.
 
