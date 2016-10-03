@@ -20,7 +20,7 @@ This example will run wpa_supplicant continuously on any interface, as needed, a
 
 Note that no other "connection manager" is used here, providing a more direct approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), to scan for, select, and connect to new wireless access points/base stations.
 
-In this example, there are five [systemd](/index.php/Systemd "Systemd") service unit files needed, along with four associated configuration files, for [kernel bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), and [dhclient](https://www.archlinux.org/packages/?name=dhclient). The bonding "master" systemd service unit file may be customized, or a separate configuration file may be used, to specify the primary slave network interface name, but this is not necessary. The other four unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
+In this example, there are five [systemd](/index.php/Systemd "Systemd") service unit files needed, along with four associated configuration files, for [kernel bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), and [dhclient](https://www.archlinux.org/packages/?name=dhclient). The bonding "master" systemd service unit file may be customized, or a separate configuration file may be used, to specify the primary slave network interface name. The other four unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
 
 **Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch Linux packages. Edit as required.
 
@@ -240,17 +240,8 @@ This "slave@.service" unit file will be *hard* linked to files having the same n
 ```
 # The primary slave will be configured from the systemd master unit file.
 
-options bonding max_bonds=0 miimon=100 mode=active-backup fail_over_mac=active primary_reselect=always
+options bonding max_bonds=0 miimon=100 mode=active-backup fail_over_mac=active
 ```
-
-> [Linux Ethernet Bonding Driver HOWTO](https://www.kernel.org/doc/Documentation/networking/bonding.txt)
-> primary_reselect - Specifies the reselection policy for the primary slave.
-> always or 0 (default) - The primary slave becomes the active slave whenever it comes back up.
-> better or 1 - The primary slave becomes the active slave when it comes back up, if the speed and duplex of the primary slave is better than the speed and duplex of the current active slave.
-> failure or 2 - The primary slave becomes the active slave only if the current active slave fails and the primary slave is up.
-
-The `primary_reselect=better` mode might be desired here, to always select the slave interface with the best speed. If the primary slave is the slave with the best speed anyway, the effect is the same. If there is a preferred slave interface, perhaps for security, then use `primary_reselect=always`.
-
  `/etc/systemd/system/master@.service` 
 ```
 [Unit]
@@ -294,8 +285,6 @@ RequiredBy= dhcp6c@%i.service
 The "RequiredBy" dependencies here activate the "stop" ordering during bonding "restart". When the "master@.service" unit stops, then the DHCP and DHCPv6 clients will be stopped also.
 
 Remember to edit the "PRI" environment variable to provide the correct interface name, to select the primary slave interface. This will be the one interface used when other interfaces are also available. Of course, an Environment file could be used here instead, to provide a generic master service unit file.
-
-Alternatively, when using `primary_reselect=better` in `/etc/modprobe.d/bonding.conf`, the "PRI" environment variable can be left entirely unset, and no primary slave configuration will be required.
 
 ## 启用/安装服务单元
 

@@ -43,6 +43,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"
     *   [5.13 Windows lose focus when unminimised](#Windows_lose_focus_when_unminimised)
     *   [5.14 Popout windows are offset when Compiz is running](#Popout_windows_are_offset_when_Compiz_is_running)
     *   [5.15 Alt-Tab switcher has no background (Emerald)](#Alt-Tab_switcher_has_no_background_.28Emerald.29)
+    *   [5.16 Mouse cursor invisible or X shaped on startup](#Mouse_cursor_invisible_or_X_shaped_on_startup)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Plugins in Compiz 0.8 are not present in Compiz 0.9](#Plugins_in_Compiz_0.8_are_not_present_in_Compiz_0.9)
     *   [6.2 Xfce panel window buttons are not refreshed when a window changes viewport](#Xfce_panel_window_buttons_are_not_refreshed_when_a_window_changes_viewport)
@@ -441,6 +442,10 @@ For more information, see the following [upstream bug report](https://bugs.launc
 You may find that the `Alt-Tab` switcher (provided by the staticswitcher or switcher plugins) has a completely transparent background when using Emerald as well. This can make it hard to differentiate window thumbnails from the desktop background behind them. As of Compiz 0.9.12 ([revision 3975](http://bazaar.launchpad.net/~compiz-team/compiz/0.9.12/revision/3975)) a workaround is available. In CCSM, navigate to *Application Switcher* or *Static Application Switcher* depending on which plugin you are using. For the former, the *Background* settings are located under *General* and for the latter the settings are located under *Appearance*. Once you have found the settings, ensure that the *Set background color* box is ticked. The default is a dark grey which can be optionally changed.
 
 Alternatively, use GTK Window Decorator instead of Emerald or use a different window switcher altogether such as the shift switcher. Note that even if you are using the GTK Window Decorator, you can still change the background color as described above.
+
+### Mouse cursor invisible or X shaped on startup
+
+See [Cursor themes#Change X shaped default cursor](/index.php/Cursor_themes#Change_X_shaped_default_cursor "Cursor themes").
 
 ## Known issues
 

@@ -364,7 +364,7 @@ then restart Pulseaudio.
 
 ### Binaural Headphones
 
-[ladsp-bs2b](https://aur.archlinux.org/packages/ladsp-bs2b/) provides a plugin to simulate surround sound on stereo headphones. To use it, find your headphones with:
+[ladspa-bs2b](https://aur.archlinux.org/packages/ladspa-bs2b/) provides a plugin to simulate surround sound on stereo headphones. To use it, find your headphones with:
 
  `$ pacmd list-sinks | grep -e 'name:'` 
 ```

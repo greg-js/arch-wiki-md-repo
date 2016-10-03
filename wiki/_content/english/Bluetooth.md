@@ -89,6 +89,10 @@ Request PIN code
 [CHG] Device 00:12:34:56:78:90 Paired: yes
 Pairing successful
 [CHG] Device 00:12:34:56:78:90 Connected: no
+[bluetooth]# connect 00:12:34:56:78:90
+Attempting to connect to 00:12:34:56:78:90
+[CHG] Device 00:12:34:56:78:90 Connected: yes
+Connection successful
 
 ```
 

@@ -1,222 +1,264 @@
-**翻译状态：** 本文是英文页面 [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-04-21，点击[这里](https://wiki.archlinux.org/index.php?title=WPA_Supplicant&diff=0&oldid=307229)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [WPA_Supplicant](/index.php/WPA_Supplicant "WPA Supplicant") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-01，点击[这里](https://wiki.archlinux.org/index.php?title=WPA_Supplicant&diff=0&oldid=450471)可以查看翻译后英文页面的改动。
 
-[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) 是跨平台的 WPA [supplicant](https://en.wikipedia.org/wiki/Supplicant_(computer) "wikipedia:Supplicant (computer)")，支持 WEP, WPA 和 WPA2 ([IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN (Robust Secure Network)). 可以在桌面、笔记本甚至嵌入式系统中使用。
+[wpa_supplicant](http://hostap.epitest.fi/wpa_supplicant/) 是跨平台的 WPA [请求者程序（supplicant）](https://en.wikipedia.org/wiki/Supplicant_(computer) "wikipedia:Supplicant (computer)")，支持 WEP、WPA 和 WPA2（[IEEE 802.11i](https://en.wikipedia.org/wiki/IEEE_802.11i "wikipedia:IEEE 802.11i") / RSN （健壮安全网络-Robust Secure Network））。可以在桌面、笔记本甚至嵌入式系统中使用。
 
-*wpa_supplicant* 是在客户端使用的 IEEE 802.1X/WPA 组件， 支持与 WPA Authenticator 的交互，控制漫游和无线驱动的 IEEE 802.11 验证和关联。
+*wpa_supplicant* 是在客户端使用的 IEEE 802.1X/WPA 组件，支持与 WPA Authenticator 的交互，控制漫游和无线驱动的 IEEE 802.11 验证和关联。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 启动](#.E5.90.AF.E5.8A.A8)
-    *   [2.1 systemd](#systemd)
-    *   [2.2 dhcpcd](#dhcpcd)
-    *   [2.3 Manually](#Manually)
-*   [3 Configuration](#Configuration)
-    *   [3.1 wpa_passphrase](#wpa_passphrase)
-    *   [3.2 Specifying driver](#Specifying_driver)
-*   [4 Using wpa_cli](#Using_wpa_cli)
-    *   [4.1 Adding a new network using wpa_cli](#Adding_a_new_network_using_wpa_cli)
-    *   [4.2 Action script](#Action_script)
-*   [5 See also](#See_also)
+*   [2 概览](#.E6.A6.82.E8.A7.88)
+*   [3 用 wpa_cli 连接](#.E7.94.A8_wpa_cli_.E8.BF.9E.E6.8E.A5)
+*   [4 带 wpa_passphrase 连接](#.E5.B8.A6_wpa_passphrase_.E8.BF.9E.E6.8E.A5)
+*   [5 高级用法](#.E9.AB.98.E7.BA.A7.E7.94.A8.E6.B3.95)
+    *   [5.1 配置](#.E9.85.8D.E7.BD.AE)
+    *   [5.2 连接](#.E8.BF.9E.E6.8E.A5)
+        *   [5.2.1 手动连接](#.E6.89.8B.E5.8A.A8.E8.BF.9E.E6.8E.A5)
+        *   [5.2.2 引导时连接（systemd）](#.E5.BC.95.E5.AF.BC.E6.97.B6.E8.BF.9E.E6.8E.A5.EF.BC.88systemd.EF.BC.89)
+    *   [5.3 wpa_cli 操作脚本](#wpa_cli_.E6.93.8D.E4.BD.9C.E8.84.9A.E6.9C.AC)
+*   [6 排错](#.E6.8E.92.E9.94.99)
+    *   [6.1 某些硬件上 nl80211 驱动不支持](#.E6.9F.90.E4.BA.9B.E7.A1.AC.E4.BB.B6.E4.B8.8A_nl80211_.E9.A9.B1.E5.8A.A8.E4.B8.8D.E6.94.AF.E6.8C.81)
+    *   [6.2 挂载了网络共享（CIFS）时的关机问题](#.E6.8C.82.E8.BD.BD.E4.BA.86.E7.BD.91.E7.BB.9C.E5.85.B1.E4.BA.AB.EF.BC.88CIFS.EF.BC.89.E6.97.B6.E7.9A.84.E5.85.B3.E6.9C.BA.E9.97.AE.E9.A2.98)
+    *   [6.3 口令相关的问题](#.E5.8F.A3.E4.BB.A4.E7.9B.B8.E5.85.B3.E7.9A.84.E9.97.AE.E9.A2.98)
+*   [7 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
-从 [官方软件仓库](/index.php/Official_repositories "Official repositories") 中安装软件包 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)。
+[安装](/index.php/Install "Install") [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) 软件包。
 
 此外软件包 [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui) 提供了图形界面 *wpa_gui*。
 
-## 启动
+## 概览
 
-This section describes common methods of starting *wpa_supplicant*, pick one that suits you best.
+The first step to connect to an encrypted wireless network is having *wpa_supplicant* obtain authentication from a WPA authenticator. In order to do this, *wpa_supplicant* must be configured so that it will be able to submit the correct credentials to the authenticator.
 
-### systemd
+Once the authentication is successful, it will be possible to connect to the network by normally obtaining an IP address by setting it manually with the [iproute2](/index.php/Core_utilities#ip "Core utilities") suite or using some networking program, like [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), to configure an *interface* to obtain an IP address automatically via DHCP. See also the [wireless](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration") and [wired](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") network configuration articles for methods and examples.
 
-*wpa_supplicant* provides multiple service files:
+## 用 wpa_cli 连接
+
+This connection method allows scanning for the available networks, making use of *wpa_cli*, a command line tool which can be used to interactively configure *wpa_supplicant* at runtime. See [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli) for details.
+
+In order to use *wpa_cli*, a control interface must be specified for *wpa_supplicant*, and it must be given the rights to update the configuration. Do this by creating a minimal configuration file:
+
+ `/etc/wpa_supplicant/example.conf` 
+```
+ctrl_interface=/run/wpa_supplicant
+update_config=1
+```
+
+Now start *wpa_supplicant* with:
+
+```
+# wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/example.conf
+
+```
+
+**提示:** To discover your wireless network interface name, issue the `ip link` command.
+
+At this point run:
+
+```
+# wpa_cli
+
+```
+
+This will present an interactive prompt (`>`), which has tab completion and descriptions of completed commands.
+
+**提示:** The default location of the control socket is `/var/run/wpa_supplicant/`, custom path can be set manually with the `-p` option to match the *wpa_supplicant* configuration. It is also possible to specify the interface to be configured with the `-i` option, otherwise the first found wireless interface managed by *wpa_supplicant* will be used.
+
+Use the `scan` and `scan_results` commands to see the available networks:
+
+```
+> scan
+OK
+<3>CTRL-EVENT-SCAN-RESULTS
+> scan_results
+bssid / frequency / signal level / flags / ssid
+00:00:00:00:00:00 2462 -49 [WPA2-PSK-CCMP][ESS] MYSSID
+11:11:11:11:11:11 2437 -64 [WPA2-PSK-CCMP][ESS] ANOTHERSSID
+
+```
+
+To associate with `MYSSID`, add the network, set the credentials and enable it:
+
+```
+> add_network
+0
+> set_network 0 ssid "MYSSID"
+> set_network 0 psk "passphrase"
+> enable_network 0
+<2>CTRL-EVENT-CONNECTED - Connection to 00:00:00:00:00:00 completed (reauth) [id=0 id_str=]
+
+```
+
+If the SSID does not have password authentication, you must explicitly configure the network as keyless by replacing the command `set_network 0 psk "passphrase"` with `set_network 0 key_mgmt NONE`.
+
+**注意:**
+
+*   Each network is indexed numerically, so the first network will have index 0.
+*   The [PSK](https://en.wikipedia.org/wiki/Pre-shared_key "wikipedia:Pre-shared key") is computed from the *quoted* "passphrase" string, as also shown by the [wpa_passphrase](#Connecting_with_wpa_passphrase) command. Nonetheless, you can enter the PSK directly by passing it to `psk` *without* quotes.
+
+Finally save this network in the configuration file:
+
+```
+> save_config
+OK
+
+```
+
+Once association is complete, all that is left to do is obtain an IP address as indicated in the [#Overview](#Overview), for example:
+
+```
+# dhcpcd *interface*
+
+```
+
+## 带 wpa_passphrase 连接
+
+This connection method allows quickly connecting to a network whose SSID is already known, making use of *wpa_passphrase*, a command line tool which generates the minimal configuration needed by *wpa_supplicant*. For example:
+
+ `$ wpa_passphrase MYSSID passphrase` 
+```
+network={
+    ssid="MYSSID"
+    #psk="passphrase"
+    psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
+}
+```
+
+This means that *wpa_supplicant* can be associated with *wpa_passphrase* and simply started with:
+
+```
+# wpa_supplicant -B -i *interface* -c <(wpa_passphrase MYSSID passphrase)
+
+```
+
+**注意:** Because of the process substitution, you **cannot** run this command with [sudo](/index.php/Sudo "Sudo") - you will need a root shell. Just pre-pending *sudo* will lead to the following error:
+```
+Successfully initialized wpa_supplicant
+Failed to open config file '/dev/fd/63', error: No such file or directory
+Failed to read or parse configuration '/dev/fd/63'
+
+```
+See also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_user_or_root "Help:Reading").
+
+**提示:**
+
+*   Use quotes, if the input contains spaces. For example: `"secret passphrase"`
+*   To discover your wireless network interface name, issue the `ip link` command.
+*   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase MYSSID < passphrase.txt`, or here strings, e.g. `wpa_passphrase MYSSID <<< "passphrase"`.
+
+Finally, you should obtain an IP address as indicated in the [#Overview](#Overview), for example:
+
+```
+# dhcpcd *interface*
+
+```
+
+## 高级用法
+
+For networks of varying complexity, possibly employing extensive use of [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), it will be useful to maintain a customised configuration file. For an overview of the configuration with examples, refer to [wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf); for details on all the supported configuration parameters, refer to the example file `/etc/wpa_supplicant/wpa_supplicant.conf`.
+
+### 配置
+
+As is clear after reading [#Connecting with wpa_passphrase](#Connecting_with_wpa_passphrase), a basic configuration file can be generated with:
+
+```
+# wpa_passphrase MYSSID passphrase > /etc/wpa_supplicant/example.conf
+
+```
+
+This will only create a `network` section. A configuration file with some more common options may look like:
+
+ `/etc/wpa_supplicant/example.conf` 
+```
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=wheel
+update_config=1
+fast_reauth=1
+ap_scan=1
+
+network={
+    ssid="MYSSID"
+    psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
+}
+```
+
+The passphrase can alternatively be defined in clear text by enclosing it in quotes, if the resulting security problems are not of concern:
+
+```
+network={
+    ssid="MYSSID"
+    psk="passphrase"
+}
+```
+
+If the network does not have a passphrase, e.g. a public Wi-Fi:
+
+```
+network={
+    ssid="MYSSID"
+    key_mgmt=NONE
+}
+```
+
+Further `network` blocks may be added manually, or using *wpa_cli* as illustrated in [#Connecting with wpa_cli](#Connecting_with_wpa_cli). In order to use *wpa_cli*, a control interface must be set with the `ctrl_interface` option. Setting `ctrl_interface_group=wheel` allows users belonging to such group to execute *wpa_cli*. This setting can be used to enable users without root access (or equivalent via sudo etc) to connect to wireless networks. Also add `update_config=1` so that changes made with *wpa_cli* to `example.conf` can be saved. Note that any user that is a member of the `ctrl_interface_group` group will be able to make changes to the file if this is turned on.
+
+`fast_reauth=1` and `ap_scan=1` are the *wpa_supplicant* options active globally at the time of writing. Whether you need them, or other global options too for that matter, depends on the type of network to connect to. If you need other global options, simply copy them over to the file from `/etc/wpa_supplicant/wpa_supplicant.conf`.
+
+Alternatively, `wpa_cli set` can be used to see options' status or set new ones. Multiple network blocks may be appended to this configuration: the supplicant will handle association to and roaming between all of them. The strongest signal defined with a network block usually is connected to by default, one may define `priority=` to influence behaviour.
+
+An advantage to be mentioned in using a customized configuration file at `/etc/wpa_supplicant/wpa_supplicant.conf` is that it is used by default by [dhcpcd](/index.php/Dhcpcd "Dhcpcd"). If you do so, you might want to make a backup of the original and delete the extensive network block examples in it. Otherwise, do not be surprised if your device suddenly connects to networks defined in them. In any case, changes to new versions of the configuration file should of course be [merged](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files").
+
+**提示:** To configure a network block to a hidden wireless *SSID*, which by definition will not turn up in a regular scan, the option `scan_ssid=1` has to be defined in the network block.
+
+### 连接
+
+#### 手动连接
+
+First start *wpa_supplicant* command, whose most commonly used arguments are:
+
+*   `-B` - Fork into background.
+*   `-c *filename*` - Path to configuration file.
+*   `-i *interface*` - Interface to listen on.
+*   `-D *driver*` - Optionally specify the driver to be used. For a list of supported drivers see the output of `wpa_supplicant -h`.
+    *   `nl80211` is the current standard, but not all wireless chip's modules support it.
+    *   `wext` is currently deprecated, but still widely supported.
+
+See [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant) for the full argument list. For example:
+
+```
+# wpa_supplicant -B -i *interface* -c /etc/wpa_supplicant/example.conf
+
+```
+
+followed by a method to obtain an ip address manually as indicated in the [#Overview](#Overview), for example:
+
+```
+# dhcpcd *interface*
+
+```
+
+**提示:** *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
+
+#### 引导时连接（systemd）
+
+The *wpa_supplicant* package provides multiple [systemd](/index.php/Systemd "Systemd") service files:
 
 *   `wpa_supplicant.service` - uses [D-Bus](/index.php/D-Bus "D-Bus"), recommended for [NetworkManager](/index.php/NetworkManager "NetworkManager") users.
 *   `wpa_supplicant@.service` - accepts the interface name as an argument and starts the *wpa_supplicant* daemon for this interface. It reads the configuration file in `/etc/wpa_supplicant/wpa_supplicant-*interface*.conf`.
 *   `wpa_supplicant-nl80211@.service` - also interface specific, but explicitly forces the `nl80211` driver (see below). The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-nl80211-*interface*.conf`.
 *   `wpa_supplicant-wired@.service` - also interface specific, uses the `wired` driver. The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-wired-*interface*.conf`.
 
-### dhcpcd
+To enable wireless at boot, enable an instance of one of the above services on a particular wireless interface. For example, [enable](/index.php/Enable "Enable") the `wpa_supplicant@*interface*` systemd unit.
 
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") contains a hook (enabled by default) to automatically launch *wpa_supplicant* on wireless interfaces. It is started only if:
+Now choose and [enable](/index.php/Enable "Enable") an instance of a service to obtain an ip address for the particular *interface* as indicated in the [#Overview](#Overview). For example, [enable](/index.php/Enable "Enable") the `dhcpcd@*interface*` systemd unit.
 
-*   no *wpa_supplicant* process is already listening on that interface.
-*   a *wpa_supplicant* configuration file exists. *dhcpcd* checks `/etc/wpa_supplicant.conf` and `/etc/wpa_supplicant/wpa_supplicant.conf` by default, but a custom path can be set by adding `env wpa_supplicant_conf=*configuration_file_path*` into `/etc/dhcpcd.conf`.
+**提示:** *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
 
-### Manually
+### wpa_cli 操作脚本
 
-*wpa_supplicant* accepts multiple command line arguments, notably:
-
-*   `-B` - fork into background
-*   `-c *filename*` - path to configuration file
-*   `-i *interface*` - interface to listen on
-
-See `man 8 wpa_supplicant` for the full argument list. For example, the common usage is:
-
-```
-# wpa_supplicant -B -i *interface* -c *configuration_file*
-
-```
-
-## Configuration
-
-[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) provides a reference configuration file located at `/etc/wpa_supplicant/wpa_supplicant.conf` which contains detailed documentation for all the available options and their utilisation, as well as examples. Consider making a backup of it first, because some of the methods decribed below for automatically adding network configurations to `wpa_supplicant.conf` will strip all comments from the file.
-
-In its simplest form, a configuration file requires only a network configuration block. For example:
-
- `/etc/wpa_supplicant/foobar.conf` 
-```
-network={
-    ssid="..."
-}
-```
-
-Once you have a configuration file, you can [start](#Starting) the *wpa_supplicant* daemon as described in the previous section and connect to the wireless network, using a [static IP](/index.php/Network_configuration#Static_IP_address "Network configuration") or [DHCP](/index.php/Network_configuration#Dynamic_IP_address "Network configuration").
-
-### wpa_passphrase
-
-A network configuration can be automatically generated using the *wpa_passphrase* tool and added to the configuration file. This is useful for connecting to secured networks requiring a passphrase. For example:
-
- `$ wpa_passphrase *essid* *passphrase*` 
-```
-network={
-    ssid="*essid*"
-    #psk="*passphrase*"
-    psk=f5d1c49e15e679bebe385c37648d4141bc5c9297796a8a185d7bc5ac62f954e3
-}
-```
-
-Some unusually complex passphrases may require input from a file:
-
-```
-$ wpa_passphrase *essid* < *passphrase.txt*
-
-```
-
-**Tip:** Both *wpa_supplicant* and *wpa_passphrase* can be combined to associate with almost all WPA2 (Personal) networks:
-```
-# wpa_supplicant -B -i *interface* -c <(wpa_passphrase *essid* *passphrase*)
-
-```
-
-### Specifying driver
-
-You might need to specify a driver to be used. For a list of supported drivers see the output of `wpa_supplicant -h`.
-
-*   `nl80211` is the current standard, but not all wireless chip's modules support it.
-*   `wext` is currently deprecated, but still widely supported.
-
-Use the `-D` switch to specify the driver:
-
-```
-# wpa_supplicant -B -i *interface* -c *configuration_file* -D *driver*
-
-```
-
-## Using wpa_cli
-
-*Wpa_supplicant* can be controlled manually at runtime, by using the *wpa_cli* utility. To enable *wpa_cli*, the *wpa_supplicant* daemon must be configured to create a "control interface" (socket) by setting the *ctrl_interface* variable in the *wpa_supplicant* configuration file (default location `/etc/wpa_supplicant/wpa_supplicant.conf`).
-
-The user will also need to be given access to this socket, by specifying which [group](/index.php/Users_and_groups "Users and groups") has access to it. A new group might be created for this purpose, and users added to it, or an already existing group can be used - typically `wheel`.
-
-The following setting will create the socket in `/run/wpa_supplicant/` and allow the members of group `wheel` to access it:
-
-```
-ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
-
-```
-
-It is possible to modify the *wpa_supplicant* configuration file itself through the *wpa_cli*. This is useful for manually adding new networks to the roaming configuration file without needing to restart the *wpa_supplicant* daemon. To enable this, in the configuration file set the *update_config* variable to 1:
-
-```
-update_config=1
-
-```
-
-The *wpa_supplicant* daemon must be running, before *wpa_cli* can start (see [#Starting](#Starting) for details). Then start
-
-```
-$ wpa_cli
-
-```
-
-It will look for the control socket at the location given in the configuration file, or the location can be set manually with the `-p` option). You can specify the interface that will be configured with the `-i` option, otherwise the first found wireless interface managed by *wpa_supplicant* will be used.
-
-When *wpa_cli* is invoked, an interactive prompt (`>`) will appear. The prompt has tab completion and descriptions of completed commands.
-
-### Adding a new network using wpa_cli
-
-To scan for available networks, enter "scan" at the `>` prompt. A notification will appear when the scan is complete:
-
-```
-> scan
-OK
-<3>CTRL-EVENT-SCAN-RESULTS
->
-
-```
-
-Then enter "scan_results" to display them:
-
-```
-> scan_results
-bssid / frequency / signal level / flags / ssid
-00:00:00:00:00:00 2462 -49 [WPA2-PSK-CCMP][ESS] MYSSID
-11:11:11:11:11:11 2437 -64 [WPA2-PSK-CCMP][ESS] ANOTHERSSID
->
-
-```
-
-To associate with *MYSSID*, tell *wpa_supplicant* about it. Each network in the configuration file is indexed numerically, beginning with zero. If you add a new network, it will be assigned a new number accordingly.
-
-```
-> add_network
-0
->
-
-```
-
-Use this number to specify which network your settings apply to. For a new network, set its SSID, in quotes:
-
-```
-> set_network 0 ssid "*MYSSID*"
-OK
->
-
-```
-
-Even if your access point is not is protected, the cli apparently still requires a [PSK](https://en.wikipedia.org/wiki/Pre-shared_key "wikipedia:Pre-shared key"), again in quotes. The passkey must be 8-63 characters.:
-
-```
-> set_network 0 psk "*passkey*"
-OK
->
-
-```
-
-Enable it:
-
-```
-> enable_network 0
-OK
->
-
-```
-
-And write the changes to the configuration file:
-
-```
-> save_config
-OK
->
-
-```
-
-### Action script
-
-*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see `man 8 wpa_cli` for details.
+*wpa_cli* can run in daemon mode and execute a specified script based on events from *wpa_supplicant*. Two events are supported: `CONNECTED` and `DISCONNECTED`. Some [environment variables](/index.php/Environment_variables "Environment variables") are available to the script, see [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli) for details.
 
 The following example will use [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") to notify the user about the events:
 
@@ -234,13 +276,74 @@ esac
 
 ```
 
-Remember to make the script executable, then use the `-a` to pass the script path to *wpa_cli*:
+Remember to make the script executable, then use the `-a` flag to pass the script path to *wpa_cli*:
 
 ```
-$ wpa_cli -a *path_to_script*
+$ wpa_cli -a */path/to/script*
 
 ```
 
-## See also
+## 排错
 
-*   [Kernel.org wpa_supplicant documentation](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)
+**警告:** Make sure that you are **not** using the default configuration file at `/etc/wpa_supplicant/wpa_supplicant.conf`, which is filled with uncommented examples that will lead to lots of random errors in practice. This is a known packaging bug of the [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) package: [FS#40661](https://bugs.archlinux.org/task/40661).
+
+### 某些硬件上 nl80211 驱动不支持
+
+On some (especially old) hardware, *wpa_supplicant* may fail with the following error:
+
+```
+Successfully initialized wpa_supplicant
+nl80211: Driver does not support authentication/association or connect commands
+wlan0: Failed to initialize driver interface
+
+```
+
+This indicates that the standard `nl80211` driver does not support the given hardware. The deprecated `wext` driver might still support the device:
+
+```
+# wpa_supplicant -B -i wlan0 **-D wext** -c /etc/wpa_supplicant/example.conf
+
+```
+
+If the command works to connect, and the user wishes to use [systemd](/index.php/Systemd "Systemd") to manage the wireless connection, it is necessary to [edit](/index.php/Systemd#Drop-in_files "Systemd") the `wpa_supplicant@.service` unit provided by the package and modify the `ExecStart` line accordingly:
+
+ `/etc/systemd/system/wpa_supplicant@.service.d/wext.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant-%I.conf -i%I **-Dnl80211,wext**
+```
+
+**注意:** Multiple comma separated driver wrappers in option `-Dnl80211,wext` makes *wpa_supplicant* use the first driver wrapper that is able to initialize the interface (see [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant)). This is useful when using mutiple or removable (e.g. USB) wireless devices which use different drivers.
+
+### 挂载了网络共享（CIFS）时的关机问题
+
+When you use wireless to connect to network shares you might have the problem that the shutdown takes a very long time. That is because systemd runs against a 3 minute timeout. The reason is that WPA supplicant is shut down too early, i.e. before systemd tries to unmount the share(s). A [bug report](https://github.com/systemd/systemd/issues/1435) suggests a work-around by [editing](/index.php/Systemd#Drop-in_files "Systemd") the `wpa_supplicant@.service` as follows:
+
+ `/etc/systemd/system/wpa_supplicant.service.d/override.conf` 
+```
+[Unit]
+After=dbus.service
+```
+
+### 口令相关的问题
+
+[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) may not work properly if directly passed via stdin particularly long or complex passphrases which include special characters. This may lead to errors such as `failed 4-way WPA handshake, PSK may be wrong` when launching [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
+
+In order to solve this try using here strings `wpa_passphrase <MYSSID> <<< "<passphrase>"` or passing a file to the `-c` flag instead:
+
+```
+$ wpa_supplicant -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+```
+
+In some instances it was found that storing the passphrase cleartext in the `psk` key of the `wpa_supplicant.conf` `network` block gave positive results (see [[1]](http://www.linuxquestions.org/questions/linux-wireless-networking-41/wpa-4-way-handshake-failed-843394/)). However, this approach is rather insecure. Using `wpa_cli` to create this file instead of manually writing it gives the best results most of the time and therefore is the recommended way to proceed.
+
+## 参阅
+
+*   [WPA Supplicant 主页](http://hostap.epitest.fi/wpa_supplicant/)
+*   [wpa_cli 用例](https://gist.github.com/buhman/7162560)
+*   [wpa_supplicant(8)](http://linux.die.net/man/8/wpa_supplicant)
+*   [wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf)
+*   [wpa_cli(8)](http://linux.die.net/man/8/wpa_cli)
+*   [Kernel.org wpa_supplicant 文档](http://wireless.kernel.org/en/users/Documentation/wpa_supplicant)

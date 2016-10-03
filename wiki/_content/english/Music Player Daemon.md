@@ -309,6 +309,18 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 	[https://github.com/CDrummond/cantata](https://github.com/CDrummond/cantata) || [cantata](https://www.archlinux.org/packages/?name=cantata)
 
+*   **Xfmpc** — A graphical GTK+ MPD client focusing on low footprint
+
+	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [xfmpc](https://www.archlinux.org/packages/?name=xfmpc)
+
+*   **pymp'd** — A GTK+ front end client for the music playing daemon MPD
+
+	[http://pympd.sourceforge.net](http://pympd.sourceforge.net) || [pympd](https://www.archlinux.org/packages/?name=pympd)
+
+*   **Quimup** — A client for the music player daemon (MPD) written in C++ and QT3
+
+	[http://goodies.xfce.org/projects/applications/xfmpc](http://goodies.xfce.org/projects/applications/xfmpc) || [quimup](https://aur.archlinux.org/packages/quimup/)
+
 ## See also
 
 *   [MPD Forum](http://forum.musicpd.org/)

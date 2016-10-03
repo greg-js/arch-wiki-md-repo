@@ -67,7 +67,7 @@ This secures the access to the file from non-root users. Read more on [File perm
 
 ### Manually Connecting to VPN
 
-Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_name} will be listed in the /etc/openvpn directory.
+Run `openvpn --config /etc/openvpn/{config_file_name}` as root. `{config_file_name}` will be listed in the /etc/openvpn directory or run `pia -l`.
 
 ### Automatically connect to VPN
 
@@ -82,7 +82,7 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. {config_file_nam
 
 ### Advanced Options
 
-**Warning:** Protocols and port combinations no longer work as of Version 3.1\. See [Issue #17](https://github.com/flamusdiu/python-pia/issues/17) on Github
+**Warning:** Protocols and port combinations no longer work as of Version 3.1\. See [Github Issue #17](https://github.com/flamusdiu/python-pia/issues/17) or PIA's Support - [Which encryption/auth settings should I use for ports on your gateways?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/225274288-Which-encryption-auth-settings-should-I-use-for-ports-on-your-gateways-)
 
 *   Create `/etc/private-internet-access/pia.conf`
 *   For the `[pia]` section:

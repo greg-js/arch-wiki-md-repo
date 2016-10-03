@@ -1026,5 +1026,6 @@ You can use the following website to get your device's coordinates along with a 
 44.231338, -76.508145 "propheis" # Kingston, Ontario, Canada
 44.373300,0.733741 "Damien Flament" # Pujols, Aquitaine, France
 -20.240991, -70.138735 "Iván Ramírez Paz" #Iquique, Tarapaca, Chile
+-35.211579, 149.009614 "Max Chesterfield" #Canberra, Australia
 
 ```

@@ -396,3 +396,5 @@ Alternative window managers cannot be used with [Cinnamon](/index.php/Cinnamon "
 *   LXDE - See [LXDE#Replace Openbox](/index.php/LXDE#Replace_Openbox "LXDE").
 
 *   LXQt - See [LXQt#Replace Openbox](/index.php/LXQt#Replace_Openbox "LXQt").
+
+*   Budgie - See [Budgie Desktop#Replace Budgie WM](/index.php/Budgie_Desktop#Replace_Budgie_WM "Budgie Desktop").

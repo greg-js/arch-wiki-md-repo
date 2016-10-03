@@ -44,7 +44,6 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [Frugalware](http://frugalware.org/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
 *   [PacBang](https://sourceforge.net/projects/architect-linux/)
-*   [Papyros](http://papyros.io/)
 *   [Obarun](http://www.obarun.org/index.html)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)

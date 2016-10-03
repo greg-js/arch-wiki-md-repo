@@ -97,15 +97,15 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
         *   [5.2.3 andrwe](#andrwe_2)
-        *   [5.2.4 brtln](#brtln)
-        *   [5.2.5 jkanetwork](#jkanetwork)
-        *   [5.2.6 mikroskeem](#mikroskeem)
-        *   [5.2.7 mingw-w64](#mingw-w64)
-        *   [5.2.8 pkgbuild-current](#pkgbuild-current)
-        *   [5.2.9 pnsft-pur](#pnsft-pur)
-        *   [5.2.10 rakudo](#rakudo)
-        *   [5.2.11 zrootfs](#zrootfs)
-        *   [5.2.12 arch-binaries](#arch-binaries)
+        *   [5.2.4 arch-binaries](#arch-binaries)
+        *   [5.2.5 brtln](#brtln)
+        *   [5.2.6 jkanetwork](#jkanetwork)
+        *   [5.2.7 mikroskeem](#mikroskeem)
+        *   [5.2.8 mingw-w64](#mingw-w64)
+        *   [5.2.9 pkgbuild-current](#pkgbuild-current)
+        *   [5.2.10 pnsft-pur](#pnsft-pur)
+        *   [5.2.11 rakudo](#rakudo)
+        *   [5.2.12 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -1032,6 +1032,18 @@ Server = http://repo.andrwe.org/x86_64
 
 ```
 
+#### arch-binaries
+
+*   **Maintainer:** GRV <grvconstanta@gmail.com>
+*   **Description:** Important AUR packages that are pre-compiled and ready to install with pacman.
+
+```
+[arch-binaries]
+SigLevel = Never
+Server = https://sourceforge.net/projects/arch-binaries/files/$repo/$arch
+
+```
+
 #### brtln
 
 *   **Maintainer:** [Bartłomiej Piotrowski](https://www.archlinux.org/trustedusers/#bpiotrowski)
@@ -1121,17 +1133,5 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 ```
 [zrootfs]
 Server = http://www.izzette.com/izzi/zrootfs-old
-
-```
-
-#### arch-binaries
-
-*   **Maintainer:** GRV <grvconstanta@gmail.com>
-*   **Description:** Important AUR packages that are pre-compiled and ready to install with pacman.
-
-```
-[arch-binaries]
-SigLevel = Never
-Server = https://sourceforge.net/projects/arch-binaries/files/$repo/$arch
 
 ```

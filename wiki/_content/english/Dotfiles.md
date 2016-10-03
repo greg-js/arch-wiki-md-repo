@@ -105,6 +105,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [falconindy](https://github.com/falconindy/dotfiles) | bash | i3 | vim | rxvt-unicode | ncmpcpp | conky | mutt |
 | [graysky](https://github.com/graysky2/configs/tree/master/dotfiles) | zsh | xfce4 | vim | terminal | ncmpcpp | custom | thunderbird |
 | [gtmanfred](http://code.gtmanfred.com/cgit/dotfiles.git/tree/?h=tower) | zsh | dwm | vim | termite-git | tmux | mpd | conky | mutt | weechat |
+| [hugdru](https://github.com/hugdru/dotfiles) | zsh | awesome | neovim | rxvt-unicode | tmux | thunderbird | weechat |
 | [insanum](https://github.com/insanum/dotfiles) | bash | herbstluftwm | vim | evilvte | tmux | dzen | mutt-kz |
 | [izmntuk](https://github.com/izmntuk/archiso/tree/testing/configs/alter/airootfs/) | zsh | xfce4 | vim | rxvt-unicode/yaft | tmux | cmus | xfce4-panel | irssi |
 | [jasonwryan](https://bitbucket.org/jasonwryan/shiv/src) | bash/zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | custom | mutt | irrsi |

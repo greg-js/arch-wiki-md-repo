@@ -9,16 +9,15 @@
 *   [4 Installation examples](#Installation_examples)
 *   [5 BFQ I/O scheduler](#BFQ_I.2FO_scheduler)
 *   [6 Repository statistics](#Repository_statistics)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Support](#Support)
-    *   [7.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
-    *   [7.3 Error: signature from "graysky (used to sign repo-ck packages) <graysky@archlinux.us>" is unknown trust](#Error:_signature_from_.22graysky_.28used_to_sign_repo-ck_packages.29_.3Cgraysky.40archlinux.us.3E.22_is_unknown_trust)
+*   [7 Mirrors](#Mirrors)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Support](#Support)
+    *   [8.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
+    *   [8.3 Error: signature from "graysky (used to sign repo-ck packages) <graysky@archlinux.us>" is unknown trust](#Error:_signature_from_.22graysky_.28used_to_sign_repo-ck_packages.29_.3Cgraysky.40archlinux.us.3E.22_is_unknown_trust)
 
 ## Installation
 
 Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial user repositories") repository to `pacman.conf` and [sign](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") [Graysky](http://repo-ck.com/)'s key.
-
-**Note:** Recent changes have made the virtualbox modules within the AUR and repo redundant since a hard dependency in virtualbox itself will result in pacman building the modules via a hook. Therefore, the precompiled virtualbox modules have been temporarily removed from the repo until Arch upstream fixes this.
 
 ## Kernels and related packages
 
@@ -92,7 +91,7 @@ For further help, see:
 
 ### Speed benefits of CPU optimized packages
 
-Extensive testing comparing the effect of GCC compile options show varying results, from no change to rather significant speed ups. [[1]](http://www.phoronix.com/scan.php?page=home) [[2]](https://bbs.archlinux.org/viewtopic.php?id=154333)
+Extensive testing comparing the effect of GCC compile options show varying results, from no change to rather significant speed ups. [[1]](https://bbs.archlinux.org/viewtopic.php?id=154333) [[2]](https://www.phoronix.com/scan.php?page=news_item&px=GCC-Optimizations-E3V5-Levels) [[3]](https://www.phoronix.com/scan.php?page=article&item=intel_core_avx2&num=2)
 
 ## Installation examples
 
@@ -120,6 +119,12 @@ See [Linux-ck#How to enable the BFQ I/O Scheduler](/index.php/Linux-ck#How_to_en
 **Note:** The statistics are not updated daily but do give a snapshot of the data.
 
 Repo [statistics](http://repo-ck.com/stats.pdf) are available (package and CPU popularity, number of downloads, and so forth).
+
+## Mirrors
+
+There is at least one mirror available:
+
+*   [https://mirror.archlinux.no/repo-ck/](https://mirror.archlinux.no/repo-ck/)
 
 ## Troubleshooting
 

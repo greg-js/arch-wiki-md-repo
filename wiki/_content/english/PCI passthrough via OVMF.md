@@ -54,7 +54,7 @@ A VGA Passthrough relies on a number of technologies that are not ubiquitous as 
 *   Your guest GPU ROM must support UEFI
     *   If you can find [any ROM in this list](https://www.techpowerup.com/vgabios/) that applies to your specific GPU and is said to support UEFI, you are generally in the clear. If not, you might want to try anyway if you have a recent GPU.
 
-You will probably want to have a spare monitor (the GPU will not display anything if there is no screen plugged it and using a VNC or Spice connection will not help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you will at least have a way to control your host machine this way.
+You will probably want to have a spare monitor (the GPU will not display anything if there is no screen plugged in and using a VNC or Spice connection will not help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you will at least have a way to control your host machine this way.
 
 ## Setting up IOMMU
 
@@ -706,15 +706,15 @@ Since version 337.88, Nvidia drivers on Windows check if an hypervisor is runnin
 <features>
 	<hyperv>
 		...
-		<nowiki><vendor_id state='on' value='whatever'/>
+		<vendor_id state='on' value='whatever'/>
 		...
 	</hyperv>
 	...
 	<kvm>
 	<hidden state='on'/>
 	</kvm>
-</features>...
-</nowiki>
+</features>
+...
 
 ```
 

@@ -1,4 +1,4 @@
-This document describes how to set up your Arch system so MySQL Databases can be accessed via Java programs.
+This document describes how to set up your Arch system so that MySQL databases can be accessed via Java programs.
 
 ## Contents
 
@@ -16,32 +16,48 @@ This document describes how to set up your Arch system so MySQL Databases can be
 
 [Install](/index.php/Install "Install") a [MySQL](/index.php/MySQL "MySQL") implementation.
 
-There are now two "fixes" you have to make. Firstly edit the file `/etc/mysql/my.cnf` to allow network access. Find the line with skip_networking in and comment it out so it looks like this:
+To allow for network access, make sure that `/etc/mysql/my.cnf` has the following line commented out, as shown here:
 
 ```
 #skip-networking
 
 ```
 
-Finally start *mysql* [service](/index.php/Daemon "Daemon") up.
+Then, start the MySQL [service](/index.php/Daemon "Daemon").
 
 ### Installing JDBC
 
 Install a JDBC driver according to your MySQL variant:
 
-*   [mariadb-jdbc](https://aur.archlinux.org/packages/mariadb-jdbc/) - For the Arch Linux endorsed server.
-*   [mysql-jdbc](https://aur.archlinux.org/packages/mysql-jdbc/) - For the Oracle variant.
+*   [mariadb-jdbc](https://aur.archlinux.org/packages/mariadb-jdbc/) - for the Arch Linux endorsed server
+*   [mysql-jdbc](https://aur.archlinux.org/packages/mysql-jdbc/) - for the Oracle variant
 
-You can also download the latter from [http://www.mysql.com/products/connector-j/](http://www.mysql.com/products/connector-j/) and
+You can also download the latter from [http://www.mysql.com/products/connector-j/](http://www.mysql.com/products/connector-j/), followed by running:
 
 ```
 ( x=mysql-connector-java-*-bin.jar; install -D $x /usr/lib/jvm/default/jre/lib/ext/${x##*/} )
 
 ```
 
+If you use the AUR packages, you will need to link the driver(s) to your JRE's external libraries directory, as follows:
+
+For mariadb-jdbc:
+
+```
+# ln -s /usr/share/java/mariadb-jdbc/mariadb-java-client.jar /usr/lib/jvm/default/jre/lib/ext/
+
+```
+
+For mysql-jdbc:
+
+```
+# ln -s /usr/share/java/mysql-jdbc/mysql-connector-java-bin.jar /usr/lib/jvm/default/jre/lib/ext/
+
+```
+
 ## Testing
 
-To access MySQL's command line tool,
+To access MySQL's command line tool, run:
 
 ```
 $ mysql
@@ -50,69 +66,57 @@ $ mysql
 
 ### Creating the test database
 
-The following commands create a database and allow a user *user*. You will need to change the user name to whatever yours is.
+The following commands create a database *test*, and grant all privileges to user *foo* identified by password *bar*. Change the variables at your discretion.
 
 ```
-create database emotherearth;
-grant all privileges on emotherearth.* to *user*@localhost identified by "*user*";
+create database *test*;
+grant all privileges on *test*.* to *user*@localhost identified by "*bar*";
 flush privileges;
 
 ```
 
-Now press `Ctrl+d` to exit the command line tool.
+Afterwards, use `Ctrl + d` to exit the command line tool.
 
 ### Creating the test program
 
-Use an editor to create a file `DBDemo.java` with the following code in it. You will need to change the username and password appropriately.
+Use a text editor to create the file `DBDemo.java` with the following code in it. You will need to change the username and password accordingly.
 
 ```
 import java.sql.*;
-import java.util.Properties;
-public class DBDemo
-{
-    // The JDBC Connector Class.
-    private static final String dbClassName = "com.mysql.jdbc.Driver";
-    // Connection string. emotherearth is the database the program
-    // is connecting to. You can include user and password after this
-    // by adding (say) ?user=paulr&password=paulr. Not recommended!
-    private static final String CONNECTION =
-                          "jdbc:mysql://127.0.0.1/emotherearth";
-    public static void main(String[] args) throws
-                             ClassNotFoundException,SQLException
-    {
-        System.out.println(dbClassName);
-        // Class.forName(xxx) loads the jdbc classes and
-        // creates a drivermanager class factory
-        Class.forName(dbClassName);
-        // Properties for user and password. Here the user and password are both 'paulr'
-        Properties p = new Properties();
-        p.put("user","paulr");
-        p.put("password","paulr");
-        // Now try to connect
-        Connection c = DriverManager.getConnection(CONNECTION,p);
-        System.out.println("It works !");
-        c.close();
-    }
+
+public class DBDemo {
+  public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    // Load the JDBC driver
+    Class.forName("org.mariadb.jdbc.Driver");
+    System.out.println("Driver loaded");
+
+    // Try to connect
+    Connection connection = DriverManager.getConnection
+      ("jdbc:mysql://localhost/*test*", "*foo*", "*bar*");
+
+    System.out.println("It works!");
+
+    connection.close();
+  }
 }
 ```
 
-If mariadb is used, then the above class name has to be set to `org.mariadb.jdbc.Driver`.
+If using Oracle MySQL (as opposed to MariaDB), the above class name should be set to `com.mysql.jdbc.Driver`.
 
 ### Running the program
 
-To compile and run the program enter:
+To compile and run the program, execute:
 
 ```
-javac DBDemo.java
-java DBDemo
+$ javac DBDemo.java
+$ java DBDemo
 
 ```
 
-and hopefully, it should print out:
+If all was configured correctly, you should see:
 
 ```
-This is the database connection
-com.mysql.jdbc.Driver
-It works !
+Driver loaded
+It works!
 
 ```

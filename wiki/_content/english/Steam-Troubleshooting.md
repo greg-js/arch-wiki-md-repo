@@ -103,11 +103,15 @@ LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so
 To force Steam to use only your system libraries, run it with
 
 ```
-$ STEAM_RUNTIME=0 steam
+$ steam-native
 
 ```
 
-This variable can also be set in a wrapper script or .desktop file, as with the [#Dynamic linker](#Dynamic_linker) solution. However, if you are missing any libraries from the Steam runtime, individual games or Steam itself may fail to launch. To find the required libraries run:
+Or through the menu entry "Steam (Native)" provided by the steam-native.desktop file.
+
+**Note:** Always use this wrapper as (besides setting STEAM_RUNTIME=0) it also ensures to contain common workarounds and roundups like DBUS_FATAL_WARNINGS=0 to avoid coredumps on shutdown
+
+This wrapper can be called in another wrapper script or .desktop file, as with the [#Dynamic linker](#Dynamic_linker) solution. However, if you are missing any libraries from the Steam runtime, individual games or Steam itself may fail to launch. To find the required libraries run:
 
 ```
 $ cd ~/.local/share/Steam/ubuntu12_32

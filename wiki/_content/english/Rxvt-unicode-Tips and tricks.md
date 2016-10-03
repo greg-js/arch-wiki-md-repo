@@ -20,6 +20,7 @@ See [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode") for the main article.
 *   [5 Set icon](#Set_icon)
 *   [6 Use urxvt as application launcher](#Use_urxvt_as_application_launcher)
 *   [7 Xterm escape sequences](#Xterm_escape_sequences)
+*   [8 Bidirectional support](#Bidirectional_support)
 
 ## Improved Kuake-like behavior in Openbox
 
@@ -411,3 +412,24 @@ URxvt.keysym.Control-Right:    \033[1;5C
 ```
 
 For more information, see ascii(7) and the keysym section of the urxvt(1) man page.
+
+## Bidirectional support
+
+It is possible to add bidirectional support for languages like Hebrew or Arabic using the extension: [urxvt-bidi](https://aur.archlinux.org/packages/urxvt-bidi/).
+
+After installing it use it by either adding to your [Xresources](/index.php/Xresources "Xresources") file:
+
+```
+URxvt.perl-ext: [other extensions],bidi
+URxvt.bidi.enabled: 1
+
+```
+
+Or run urxvt as follows:
+
+```
+urxvt -pe bidi
+
+```
+
+**Note:** The font you're using should support your language. For example, for viewing Hebrew you should a font like terminus.

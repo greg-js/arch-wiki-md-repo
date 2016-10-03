@@ -87,7 +87,7 @@ style=GTK+
 ...
 ```
 
-*   For Qt 5, it can be enabled by installing [qt5-styleplugins](https://aur.archlinux.org/packages/qt5-styleplugins/) and setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_STYLE_OVERRIDE='gtk2'`
+*   For Qt 5, it can be enabled by installing [qt5-styleplugins](https://aur.archlinux.org/packages/qt5-styleplugins/) and setting the following [environment variable](/index.php/Environment_variables#Graphical_applications "Environment variables"): `QT_QPA_PLATFORMTHEME='gtk2'`
 
 For full uniformity, make sure that the configured [GTK+ theme](/index.php/GTK%2B#Themes "GTK+") supports both GTK+ 2 and GTK+ 3.
 

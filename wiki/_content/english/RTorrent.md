@@ -39,7 +39,10 @@ Alternatively, install [rtorrent-git](https://aur.archlinux.org/packages/rtorren
 
 ## Configuration
 
-**Note:** See the rTorrent wiki article on this subject for more information: [Common Tasks in rTorrent for Dummies](http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks).
+**Note:**
+
+*   See the rTorrent wiki article on this subject for more information: [Common Tasks in rTorrent for Dummies](http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks).
+*   Vim may mistake the syntax of the config file, causing errors in the highlighting. To resolve this you can [append](/index.php/Append "Append") a modeline `# vim: set syntax\=conf:` to `~/.rtorrent.rc`.
 
 Before running rTorrent, find the example configuration file `/usr/share/doc/rtorrent/rtorrent.rc` and copy it to `~/.rtorrent.rc`:
 

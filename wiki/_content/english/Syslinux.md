@@ -2,10 +2,7 @@
 
 **Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[1]](http://www.syslinux.org/wiki/index.php/Filesystem) for more information.
 
-**Note:**
-
-*   Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading). For an alternative bootloader with the multi-filesystem feature see [GRUB](/index.php/GRUB "GRUB").
-*   In the entire article `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
+**Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading).
 
 ## Contents
 
@@ -209,7 +206,7 @@ If this does not work, you can also try:
 
 *   `efi64` denotes x86_64 UEFI systems, for IA32 (32-bit) EFI replace `efi64` with `efi32` in the below commands.
 
-*   For Syslinux, the kernel and initramfs files need to be in the [ESP](/index.php/ESP "ESP"), as Syslinux does not (currently) have the ability to access files outside its own partition (i.e. outside ESP in this case). For this reason, it is recommended to mount ESP at `/boot`.
+*   For Syslinux, the kernel and initramfs files need to be in the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (aka ESP), as Syslinux does not (currently) have the ability to access files outside its own partition (i.e. outside ESP in this case). For this reason, it is recommended to mount ESP at `/boot`.
 
 *   The automatic install script `/usr/bin/syslinux-install_update` does not support UEFI install.
 
@@ -225,7 +222,9 @@ If this does not work, you can also try:
 
 ### Installation on UEFI
 
-*   Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). Then setup Syslinux in the EFI System Partition (ESP) as follows:
+**Note:** In the commands related to UEFI, `*esp*` denotes the mountpoint of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") aka ESP.
+
+*   Install the [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). Then setup Syslinux in the ESP as follows:
 
 *   Copy Syslinux files to ESP:
 
@@ -941,8 +940,6 @@ btrfs: found compressed data, cannot continue!
 invalid or corrupt kernel image.
 
 ```
-
-[GRUB](/index.php/GRUB "GRUB") supports btrfs with compression.
 
 ### Btrfs multi-device
 

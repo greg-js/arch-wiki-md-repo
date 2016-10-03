@@ -133,7 +133,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [44 Lethal League](#Lethal_League)
     *   [44.1 Dependencies](#Dependencies_22)
 *   [45 Life is Strange](#Life_is_Strange)
-    *   [45.1 Game does not start](#Game_does_not_start_6)
+    *   [45.1 Dependencies](#Dependencies_23)
 *   [46 Mark of the Ninja](#Mark_of_the_Ninja)
     *   [46.1 Bad sound](#Bad_sound)
 *   [47 Metro: Last Light](#Metro:_Last_Light)
@@ -143,45 +143,45 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [48 Middle-earth: Shadow of Mordor](#Middle-earth:_Shadow_of_Mordor)
     *   [48.1 Floating heads](#Floating_heads)
 *   [49 Multiwinia](#Multiwinia)
-    *   [49.1 Dependencies](#Dependencies_23)
+    *   [49.1 Dependencies](#Dependencies_24)
     *   [49.2 Crash on startup](#Crash_on_startup)
 *   [50 Natural Selection 2](#Natural_Selection_2)
     *   [50.1 No Sound](#No_Sound_4)
 *   [51 Penumbra: Overture](#Penumbra:_Overture)
-    *   [51.1 Dependencies](#Dependencies_24)
+    *   [51.1 Dependencies](#Dependencies_25)
     *   [51.2 Windowed mode](#Windowed_mode_2)
 *   [52 The Polynomial](#The_Polynomial)
-    *   [52.1 Dependencies](#Dependencies_25)
+    *   [52.1 Dependencies](#Dependencies_26)
     *   [52.2 Segfaults during program start on 64-bit systems](#Segfaults_during_program_start_on_64-bit_systems)
 *   [53 Portal 2](#Portal_2)
-    *   [53.1 Game does not start](#Game_does_not_start_7)
+    *   [53.1 Game does not start](#Game_does_not_start_6)
 *   [54 Prison Architect](#Prison_Architect)
     *   [54.1 ALSA error when using PulseAudio](#ALSA_error_when_using_PulseAudio)
 *   [55 Project Zomboid](#Project_Zomboid)
-    *   [55.1 Dependencies](#Dependencies_26)
+    *   [55.1 Dependencies](#Dependencies_27)
     *   [55.2 No sound](#No_sound_5)
 *   [56 Redshirt](#Redshirt)
-    *   [56.1 Dependencies](#Dependencies_27)
+    *   [56.1 Dependencies](#Dependencies_28)
 *   [57 Revenge of the Titans](#Revenge_of_the_Titans)
-    *   [57.1 Dependencies](#Dependencies_28)
+    *   [57.1 Dependencies](#Dependencies_29)
 *   [58 Rock Boshers DX: Directors Cut](#Rock_Boshers_DX:_Directors_Cut)
-    *   [58.1 Dependencies](#Dependencies_29)
+    *   [58.1 Dependencies](#Dependencies_30)
 *   [59 Saints Row IV](#Saints_Row_IV)
     *   [59.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
     *   [59.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
 *   [60 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [60.1 Dependencies](#Dependencies_30)
+    *   [60.1 Dependencies](#Dependencies_31)
     *   [60.2 No audio](#No_audio_2)
 *   [61 Sir, You Are Being Hunted](#Sir.2C_You_Are_Being_Hunted)
-    *   [61.1 Dependencies](#Dependencies_31)
+    *   [61.1 Dependencies](#Dependencies_32)
 *   [62 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [62.1 Dependencies](#Dependencies_32)
+    *   [62.1 Dependencies](#Dependencies_33)
     *   [62.2 No audio](#No_audio_3)
 *   [63 Spacechem](#Spacechem)
-    *   [63.1 Dependencies](#Dependencies_33)
+    *   [63.1 Dependencies](#Dependencies_34)
     *   [63.2 Game crash](#Game_crash)
 *   [64 Splice](#Splice)
-    *   [64.1 Dependencies](#Dependencies_34)
+    *   [64.1 Dependencies](#Dependencies_35)
 *   [65 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
 *   [66 The Stanley Parable](#The_Stanley_Parable)
     *   [66.1 Game won't start](#Game_won.27t_start)
@@ -191,11 +191,11 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [68 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
     *   [68.1 No sound](#No_sound_6)
 *   [69 Strike Suite Zero](#Strike_Suite_Zero)
-    *   [69.1 Dependencies](#Dependencies_35)
+    *   [69.1 Dependencies](#Dependencies_36)
 *   [70 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-    *   [70.1 Dependencies](#Dependencies_36)
+    *   [70.1 Dependencies](#Dependencies_37)
 *   [71 Team Fortress 2](#Team_Fortress_2)
-    *   [71.1 Dependencies](#Dependencies_37)
+    *   [71.1 Dependencies](#Dependencies_38)
     *   [71.2 Making HRTF work](#Making_HRTF_work)
     *   [71.3 Loading screen freeze](#Loading_screen_freeze)
     *   [71.4 No audio](#No_audio_4)
@@ -212,14 +212,14 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [76.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
 *   [77 Transmissions: Element 120](#Transmissions:_Element_120)
     *   [77.1 Troubleshooting](#Troubleshooting)
-    *   [77.2 Dependencies](#Dependencies_38)
+    *   [77.2 Dependencies](#Dependencies_39)
 *   [78 Trine 2](#Trine_2)
-    *   [78.1 Dependencies](#Dependencies_39)
+    *   [78.1 Dependencies](#Dependencies_40)
     *   [78.2 Colors](#Colors)
     *   [78.3 Sound](#Sound)
     *   [78.4 Resolution](#Resolution)
 *   [79 Unity of Command](#Unity_of_Command)
-    *   [79.1 Dependencies](#Dependencies_40)
+    *   [79.1 Dependencies](#Dependencies_41)
     *   [79.2 Squares](#Squares)
     *   [79.3 No audio](#No_audio_5)
 *   [80 Unity3D](#Unity3D)
@@ -227,23 +227,23 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [80.2 Unity 5 sound problems](#Unity_5_sound_problems)
     *   [80.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
 *   [81 Unrest](#Unrest)
-    *   [81.1 Dependencies](#Dependencies_41)
+    *   [81.1 Dependencies](#Dependencies_42)
 *   [82 War Thunder](#War_Thunder)
     *   [82.1 Blank screen](#Blank_screen)
 *   [83 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-    *   [83.1 Dependencies](#Dependencies_42)
+    *   [83.1 Dependencies](#Dependencies_43)
     *   [83.2 Blank screen](#Blank_screen_2)
 *   [84 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [84.1 Dependencies](#Dependencies_43)
-    *   [84.2 Game does not start](#Game_does_not_start_8)
+    *   [84.1 Dependencies](#Dependencies_44)
+    *   [84.2 Game does not start](#Game_does_not_start_7)
 *   [85 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [85.1 Dependencies](#Dependencies_44)
+    *   [85.1 Dependencies](#Dependencies_45)
 *   [86 World of Goo](#World_of_Goo)
     *   [86.1 Changing resolution](#Changing_resolution)
 *   [87 Worms Reloaded](#Worms_Reloaded)
-    *   [87.1 Dependencies](#Dependencies_45)
+    *   [87.1 Dependencies](#Dependencies_46)
 *   [88 XCOM](#XCOM)
-    *   [88.1 Dependencies](#Dependencies_46)
+    *   [88.1 Dependencies](#Dependencies_47)
     *   [88.2 Hangs on startup](#Hangs_on_startup)
     *   [88.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
@@ -335,6 +335,8 @@ If that does not fix the issue, unplug any joystick or joystick adapter devices 
 ## Binding of Isaac: Rebirth
 
 ### No sound
+
+**Note:** This also helps with Never Alone (Kisima Ingitchuna)
 
 Right click on `Binding of Isaac: Rebirth` on your game list, click on `Properties`, click on `SET LAUNCH OPTIONS`, then add this:
 
@@ -1073,14 +1075,9 @@ KillingFloor comes with its own libopenal.so (called openal.so). To use system l
 
 ## Life is Strange
 
-### Game does not start
+### Dependencies
 
-Error about missing librtmp.so.0 might appear, solution:
-
-```
- # ln -s /usr/lib/librtmp.so /usr/lib/librtmp.so.0
-
-```
+*   [lib32-librtmp0](https://www.archlinux.org/packages/?name=lib32-librtmp0)
 
 ## Mark of the Ninja
 
@@ -1805,7 +1802,7 @@ exec dosbox -conf dosbox_wiz6.conf -conf dosbox_wiz6_launch_linux.conf -noconsol
 ### Dependencies
 
 *   [sdl2_image](https://www.archlinux.org/packages/?name=sdl2_image) (Required to enable keyboard functionality in-game)
-*   [librtmp0](https://aur.archlinux.org/packages/librtmp0/) (Required to run the game)
+*   [librtmp0](https://www.archlinux.org/packages/?name=librtmp0) (Required to run the game)
 
 ### Hangs on startup
 

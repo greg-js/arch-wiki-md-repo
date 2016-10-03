@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-28，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=449561)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Wireless_network_configuration](/index.php/Wireless_network_configuration "Wireless network configuration") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-01，点击[这里](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=452586)可以查看翻译后英文页面的改动。
 
 配置无线网络一般分两步：第一步是识别硬件、安装正确的驱动程序并进行配置，安装盘中已经包含驱动，但是通常需要额外安装；第二步是选择一种管理无线连接的方式。这篇文章涵盖了这两方面，并提供了无线管理工具的链接地址。
 
@@ -16,13 +16,13 @@
         *   [2.1.5 关联](#.E5.85.B3.E8.81.94)
         *   [2.1.6 获取 IP 地址](#.E8.8E.B7.E5.8F.96_IP_.E5.9C.B0.E5.9D.80)
         *   [2.1.7 示例](#.E7.A4.BA.E4.BE.8B)
-        *   [2.1.8 自动设置](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
-        *   [2.1.9 Connman](#Connman)
-        *   [2.1.10 Netctl](#Netctl)
-            *   [2.1.10.1 Wicd](#Wicd)
-            *   [2.1.10.2 NetworkManager](#NetworkManager)
-            *   [2.1.10.3 Wifi Radar](#Wifi_Radar)
-    *   [2.2 节电](#.E8.8A.82.E7.94.B5)
+    *   [2.2 自动设置](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
+        *   [2.2.1 Connman](#Connman)
+        *   [2.2.2 Netctl](#Netctl)
+            *   [2.2.2.1 Wicd](#Wicd)
+            *   [2.2.2.2 NetworkManager](#NetworkManager)
+            *   [2.2.2.3 Wifi Radar](#Wifi_Radar)
+    *   [2.3 节电](#.E8.8A.82.E7.94.B5)
 *   [3 排错](#.E6.8E.92.E9.94.99)
     *   [3.1 Temporary internet access](#Temporary_internet_access)
     *   [3.2 Rfkill 警告](#Rfkill_.E8.AD.A6.E5.91.8A)
@@ -48,6 +48,7 @@
         *   [4.2.2 rtl8192e](#rtl8192e)
         *   [4.2.3 rtl8188eu](#rtl8188eu)
         *   [4.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [4.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
     *   [4.3 Atheros](#Atheros)
         *   [4.3.1 ath5k](#ath5k)
         *   [4.3.2 ath9k](#ath9k)
@@ -57,7 +58,8 @@
         *   [4.4.1 ipw2100 与 ipw2200](#ipw2100_.E4.B8.8E_ipw2200)
         *   [4.4.2 iwlegacy](#iwlegacy)
         *   [4.4.3 iwlwifi](#iwlwifi)
-            *   [4.4.3.1 禁用 LED 闪烁](#.E7.A6.81.E7.94.A8_LED_.E9.97.AA.E7.83.81)
+            *   [4.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
+            *   [4.4.3.2 禁用 LED 闪烁](#.E7.A6.81.E7.94.A8_LED_.E9.97.AA.E7.83.81)
     *   [4.5 Broadcom](#Broadcom)
         *   [4.5.1 Tenda w322u](#Tenda_w322u)
         *   [4.5.2 orinoco](#orinoco)
@@ -142,26 +144,26 @@ Ndiswrapper 可以在 Linux 中使用 Windows 驱动。兼容性列表在 [这�
 
 为了管理已经安装好的无线驱动，并且使无线能正常工作，需要安装一个无线连接管理工具。下面章节将帮助您确定一个最佳管理方法。
 
-过程和需要使用的工具，将依赖于下面几个因素:
+过程和需要使用的工具，将依赖于下面几个因素：
 
 *   配置方式，从完全手动执行每一步到软件自动管理、自动启动
 *   是否使用加密及加密类型
-*   是否需要区分网络配置,是否经常切换不同网络（比如手提电脑）。
-*   如果要在不同网络间切换，使用工具会更方便。
+*   是否需要区分网络配置，是否经常切换不同网络（比如手提电脑）
+*   如果要在不同网络间切换，使用工具会更方便
 
 无论选的那个方案，最好先尝试手动方法。这将有助于您了解不同步骤的意义，并在出问题时解决之。 如果可以的话（比如说你在管理你自己的无线接入点），尝试连接一个开放的无线网络来检查是否所有的配置都在正常工作。然后再尝试加密的无线接入点，比如WEP（更易于配置）或者WPA。
 
-此表列出可以使用的激活和管理无线网络的方法，按照加密和管理方式分类，给出了需要的工具。虽然还有其他办法，但这些是最常使用的:
+此表列出可以使用的激活和管理无线网络的方法，按照加密和管理方式分类，给出了需要的工具。虽然还有其他办法，但这些是最常使用的：
 
 | 管理方法 | 接口激活 | 无线连接管理
 (/=alternatives) | IP 地址分配
 (/=alternatives) |
-| [手动设置](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE),
+| [手动设置](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE)
 无加密或 WEP 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw)/[iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)")/[dhcpcd](/index.php/Dhcpcd "Dhcpcd")/[dhclient](https://www.archlinux.org/packages/?name=dhclient)/[networkd](/index.php/Networkd "Networkd") |
-| [手动管理](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE),
+| [手动管理](#.E6.89.8B.E5.8A.A8.E8.AE.BE.E7.BD.AE)
 WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") | [iw](https://www.archlinux.org/packages/?name=iw)/[iwconfig](https://www.archlinux.org/packages/?name=wireless_tools) + [wpa_supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)") | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)")/[dhcpcd](/index.php/Dhcpcd "Dhcpcd")/[dhclient](https://www.archlinux.org/packages/?name=dhclient) |
-| [自动管理](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE),
-支持网络配置 | [netctl](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)"), [Wicd](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)"), [NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)"), etc.
+| [自动管理](#.E8.87.AA.E5.8A.A8.E8.AE.BE.E7.BD.AE)
+支持网络配置 | [netctl](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")、[Wicd](/index.php/Wicd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wicd (简体中文)")、[NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") 等等
 
 这些工具会自动安装手动配置需要的工具。
 
@@ -179,27 +181,27 @@ WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%
 
 基本的工具如下，这些用户空间工具可以对无线连接进行完整控制。
 
-*   [iw](https://www.archlinux.org/packages/?name=iw) - 仅支持 nl80211 标准，不支持老的 WEXT (Wireless EXTentions) 标准. 如果 *iw* 没有显示网卡，可能是这个原因。
-*   [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) - 已经过时，但是依然广泛使用。WEXT 设备使用此工具.
-*   [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) - 提供 WPA/WPA2 加密支持,同时支持 nl80211 和 WEXT。
+*   [iw](https://www.archlinux.org/packages/?name=iw) - 仅支持 nl80211 标准，不支持老的 WEXT (Wireless EXTentions) 标准。如果 *iw* 没有显示网卡，可能是这个原因。
+*   [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) - 已经过时，但是依然广泛使用。WEXT 设备使用此工具。
+*   [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) - 提供 WPA/WPA2 加密支持，同时支持 nl80211 和 WEXT。
 
-下面表格给出了 `iw` 和 `wireless_tools` 命令的对比(更多示例参阅 [这里](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig)).
+下面表格给出了 `iw` 和 `wireless_tools` 命令的对比（更多示例参阅 [这里](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig)）。
 
 **Note:**
 
-*   安装介质上包含 [iw](https://www.archlinux.org/packages/?name=iw)，[wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) 和 [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant).
-*   示例中使用网络接口 `wlan0` 和热点 `*your_essid*`.
+*   [安装介质](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")上提供了手工管理和 [netctl](https://www.archlinux.org/packages/?name=netctl) 管理的工具
+*   示例中使用网络接口 `wlan0` 和热点 `*your_essid*`。
 *   大部分命令需要以 [root 权限](/index.php/Users_and_groups "Users and groups")执行，否则会无输出就退出。
 
 | *iw* 命令 | *wireless_tools* 命令 | 描述 |
-| iw dev wlan0 link | iwconfig wlan0 | 获取连接状态 |
-| iw dev wlan0 scan | iwlist wlan0 scan | 扫描可用热点 |
-| iw dev wlan0 set type ibss | iwconfig wlan0 mode ad-hoc | 设置操作模式为 *ad-hoc*. |
-| iw dev wlan0 connect *your_essid* | iwconfig wlan0 essid *your_essid* | 连接到开放网络 |
-| iw dev wlan0 connect *your_essid* 2432 | iwconfig wlan0 essid *your_essid* freq 2432M | 连接到开放网络的一个频道 |
-| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key *your_key* | 用16进制加密密码访问 WEP 加密网络 |
-| iw dev wlan0 connect *your_essid* key 0:*your_key* | iwconfig wlan0 essid *your_essid* key s:*your_key* | 用 ASCII 密码访问 WEP 加密网络. |
-| iw dev wlan0 set power_save on | iwconfig wlan0 power on | 启用省电模式 |
+| iw dev *wlan0* link | iwconfig *wlan0* | 获取连接状态 |
+| iw dev *wlan0* scan | iwlist *wlan0* scan | 扫描可用热点 |
+| iw dev *wlan0* set type ibss | iwconfig *wlan0* mode ad-hoc | 设置操作模式为 *ad-hoc*. |
+| iw dev *wlan0* connect *your_essid* | iwconfig *wlan0* essid *your_essid* | 连接到开放网络 |
+| iw dev *wlan0* connect *your_essid* 2432 | iwconfig *wlan0* essid *your_essid* freq 2432M | 连接到开放网络的一个频道 |
+| iw dev *wlan0* connect *your_essid* key 0:*your_key* | iwconfig *wlan0* essid *your_essid* key *your_key* | 用16进制加密密码访问 WEP 加密网络 |
+| iw dev *wlan0* connect *your_essid* key 0:*your_key* | iwconfig *wlan0* essid *your_essid* key s:*your_key* | 用 ASCII 密码访问 WEP 加密网络. |
+| iw dev *wlan0* set power_save on | iwconfig *wlan0* power on | 启用省电模式 |
 
 **注意:** 根据硬件和加密设备的不同，有些步骤可以跳过。一些网卡需要在关联到热点前先激活或扫描热点，需要一些实验才能确定。WPA/WPA2 用户可以按照[#关联](#.E5.85.B3.E8.81.94)中的步骤激活网络。
 
@@ -223,7 +225,7 @@ phy#0
 
 *   检查连接状态，未连接时，可以看到：
 
- `$ iw dev wlan0 link` 
+ `$ iw dev *wlan0* link` 
 ```
 Not connected.
 
@@ -231,7 +233,7 @@ Not connected.
 
 连接到 AP 后可以看到：
 
- `$ iw dev wlan0 link` 
+ `$ iw dev *wlan0* link` 
 ```
 Connected to 12:34:56:78:9a:bc (on wlan0)
 	SSID: MyESSID
@@ -249,7 +251,7 @@ Connected to 12:34:56:78:9a:bc (on wlan0)
 
 *   获取统计数据:
 
- `$ iw dev wlan0 station dump` 
+ `$ iw dev *wlan0* station dump` 
 ```
 Station 12:34:56:78:9a:bc (on wlan0)
 	inactive time:	1450 ms
@@ -276,7 +278,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 (可能需要) 一些无线网卡在使用 [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools)前需要激活内核接口:
 
 ```
-# ip link set wlan0 up
+# ip link set *wlan0* up
 
 ```
 
@@ -284,7 +286,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 要验证接口确实打开：
 
- `# ip link show wlan0` 
+ `# ip link show *wlan0*` 
 ```
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether 12:34:56:78:9a:bc brd ff:ff:ff:ff:ff:ff
@@ -296,7 +298,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 #### 查看接入点
 
 ```
-# iw dev wlan0 scan |less
+# iw dev *wlan0* scan |less
 
 ```
 
@@ -312,7 +314,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
     *   在 `RSN` 和 `WPA` 信息块中，可能看到如下信息：
         *   **Group cipher:** 数值包括 TKIP, CCMP, both, others.
         *   **Pairwise ciphers:** 数值包括 TKIP, CCMP, both, others. 可能和 Group cipher 数值不同.
-        *   **Authentication suites:** 数值包括 PSK, 802.1x, others. 家用路由器通常可以看到 PSK (*i.e.* 密码). 在大学中，通常会链接到需要登录名和密码的 802.1x 网络。需要知道其使用的密码管理方式(例如 EAP), 封装方法 (例如 PEAP). 详情请参考 [Wikipedia:Authentication protocol](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol").
+        *   **Authentication suites:** 数值包括 PSK, 802.1x, others. 家用路由器通常可以看到 PSK (*i.e.* 密码). 在大学中，通常会链接到需要登录名和密码的 802.1x 网络。需要知道其使用的密码管理方式(例如 EAP), 封装方法 (例如 PEAP). 详情请参考 [这里](/index.php/WPA2_Enterprise "WPA2 Enterprise") 和 [这里](https://en.wikipedia.org/wiki/Authentication_protocol "wikipedia:Authentication protocol").
     *   如果没有看到 `RSN` 或 `WPA`，但是看到了 `Privacy`, 表示使用的是 WEP.
 
 #### 运行模式
@@ -362,9 +364,9 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-假设设备使用 `wext` 驱动。如果无法工作，可能需要调整选项，参见 [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")。
+假设设备使用 `wext` 驱动。如果无法工作，可能需要调整选项，参见 [WPA supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)")。
 
-如果连接成功，在新终端中执行后续命令或(或者通过 `Ctrl+c` 退出并使用 `-B` 参数在后台再次执行上述命令。[WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") 页面包含更多参数和配置文件的信息。
+如果连接成功，在新终端中执行后续命令或(或者通过 `Ctrl+c` 退出并使用 `-B` 参数在后台再次执行上述命令。[WPA supplicant](/index.php/WPA_supplicant_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "WPA supplicant (简体中文)") 页面包含更多参数和配置文件的信息。
 
 通过下面命令确认是否连接成功：
 
@@ -426,7 +428,7 @@ Station 12:34:56:78:9a:bc (on wlan0)
 
 ```
 
-#### 自动设置
+### 自动设置
 
 有许多可选方法，但是注意它们是互斥的，不能同时运行两个守护进程。下面是比较表格：
 
@@ -755,6 +757,26 @@ or
 
 如果信号质量很差，可能是一个天线不工作，无法运行在自动模式。可以用 `ant_sel=1` 或 `ant_sel=2` 内核选项强制选择天线。
 
+#### rtl8812au/rtl8821au
+
+Newer 802.11 a/b/g/n usb adapters, such as the Glam Hobby AC600 (Ourlink) may require rtl8812 or rtl8821 drivers before working.
+
+The 8812 driver can be found as [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/).
+
+```
+# modprobe 8812au
+
+```
+
+If that does not work (like for the AC600 dongles), try the 8812/8821 module [rtl8812au_rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8812au_rtl8821au-dkms-git/).
+
+```
+# modprobe rtl8812au_rtl8821au
+
+```
+
+These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
+
 ### Atheros
 
 ```
@@ -877,6 +899,12 @@ In case this does not work for you, you may try disabling [power saving](/index.
 
 **Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[4]](https://bbs.archlinux.org/viewtopic.php?id=190757)
 
+##### Bluetooth coexistence
+
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[5]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+
+ `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
+
 ##### 禁用 LED 闪烁
 
 **Note:** This works with the `iwlegacy` and `iwlwifi` drivers.
@@ -935,7 +963,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) 是ZyDAS ZD1211 802.11b/g USB WLAN芯片的驱动，最近的版本的内核已经包括了。[zd1211rw](http://zd1211.wiki.sourceforge.net/) [[5]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices｜这里)有被支持的设备列表。 你只需要这样安装固件[zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware)。
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) 是ZyDAS ZD1211 802.11b/g USB WLAN芯片的驱动，最近的版本的内核已经包括了。[zd1211rw](http://zd1211.wiki.sourceforge.net/) [[6]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices｜这里)有被支持的设备列表。 你只需要这样安装固件[zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware)。
 
 #### hostap_cs
 

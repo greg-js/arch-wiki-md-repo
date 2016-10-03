@@ -226,6 +226,8 @@ $ sbverify --list */path/to/binary*
 
 ```
 
+**Tip:** You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
+
 ### Put firmware in "Setup Mode"
 
 Secure Boot is in Setup Mode when the Platform Key is removed. To put firmware in Setup Mode, enter firmware setup utility and find an option to delete or clear certificates.

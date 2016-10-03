@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Plymouth](/index.php/Plymouth "Plymouth") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-07，点击[这里](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=437067)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Plymouth](/index.php/Plymouth "Plymouth") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-07，点击[这里](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=445529)可以查看翻译后英文页面的改动。
 
 [Plymouth](http://fedoraproject.org/wiki/Releases/FeatureBetterStartup) 是一个来自于Fedora社区的提供美化启动图形界面的功能的项目。它依靠[KMS](/index.php/KMS "KMS")尽可能早的设置显示器的原始分辨率显示，之后产生美化的启动引导界面直至登陆界面。
 
@@ -14,12 +14,10 @@
     *   [3.3 更改主题](#.E6.9B.B4.E6.94.B9.E4.B8.BB.E9.A2.98)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 显示内核消息](#.E6.98.BE.E7.A4.BA.E5.86.85.E6.A0.B8.E6.B6.88.E6.81.AF)
-    *   [4.2 Replacing the Arch Logo](#Replacing_the_Arch_Logo)
+    *   [4.2 替换Arch Logo和创建自定义主题](#.E6.9B.BF.E6.8D.A2Arch_Logo.E5.92.8C.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E4.B8.BB.E9.A2.98)
 *   [5 请参阅](#.E8.AF.B7.E5.8F.82.E9.98.85)
 
 ## 准备
-
-**警告:** Plymouth目前正在开发中，可能存在严重问题。
 
 Plymouth 依靠 [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) 显示图形界面。如果你无法使用KMS(例如使用闭源驱动)，那么就需要使用[framebuffer](/index.php/Framebuffer#Framebuffer_Resolution "Framebuffer")代替。EFI/UEFI 系统中，plymouth 可以使用 EFI framebuffer, 否则就使用[Uvesafb](/index.php/Uvesafb "Uvesafb")。
 
@@ -31,9 +29,11 @@ Plymouth 依靠 [KMS](/index.php/KMS "KMS") (Kernel Mode Setting) 显示图形�
 
 如果你使用的是[GDM](/index.php/GDM "GDM"),那么你需要安装[gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/),这个版本编译时加入了 plymouth 支持。
 
+在非官方源[nullptr_t](/index.php/Unofficial_user_repositories#nullptr_t "Unofficial user repositories")也有支持。
+
 ### plymouth 钩子
 
-把 `plymouth` 添加到 [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") 的 HOOKS行，且"必须"在"base","udev"之后"：
+把 `plymouth` 添加到 [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") 的 HOOKS行，且**必须**在"base","udev"**之后**：
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth [...] "` 
 **警告:**
@@ -127,11 +127,11 @@ ShowDelay=5
 
 启动时按 "Home" 或 "Escape" 按键会显示内核消息。
 
-### Replacing the Arch Logo
+### 替换Arch Logo和创建自定义主题
 
-The following themes use the Arch Linux logo supplied by Plymouth in `/usr/share/plymouth/arch-logo.png`: fade-in, script, solar, spinfinity. If you want to use another logo, you can take one of them or one of the plymouth themes in [AUR](/index.php/AUR "AUR"), edit the file `*.plymouth` (and maybe `*.script`, too) and replace this image with one of your choice. You should create a package from your newly created theme, because changes in `/usr/share/plymouth` may not be persistent across package upgrades.
+fade-in, script, solar, spinfinity这些主题使用的Logo是由Plymouth在`/usr/share/plymouth/arch-logo.png`提供的。如果你想使用其他Logo，你可以从这些主题中选取或者从[AUR](/index.php/AUR "AUR")的Plymouth主题中选取，然后编辑*.plymouth（有时会编辑*.script），最后用所选择的图片替换。你应该创建一个新的主题安装包，因为`/usr/share/plymouth`中的文件可能不会通过升级软件而改变。
 
-After installing and selecting your theme, you should rebuild the initrd image to use the new splash.
+安装或者选择主题之后，应该重建initrd映像，使得新的闪屏生效。
 
 ## 请参阅
 

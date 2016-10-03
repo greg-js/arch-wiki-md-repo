@@ -9,6 +9,7 @@ At this time Budgie is heavily under development, so you can expect minor bugs a
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
     *   [3.1 Changing button layout](#Changing_button_layout)
+    *   [3.2 Replace Budgie WM](#Replace_Budgie_WM)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -45,6 +46,10 @@ gsettings set com.solus-project.budgie-wm button-layout 'close,minimize,maximize
 gsettings set com.solus-project.budgie-helper.workarounds fix-button-layout 'close,minimize,maximize:menu'
 
 ```
+
+### Replace Budgie WM
+
+It is possible to use an alternative [window manager](/index.php/Window_manager "Window manager") with the Budgie. Either define a [custom session](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") which replaces *budgie-wm* with a window manager of choice or else [autostart](/index.php/GNOME#Startup_applications "GNOME") `*my-wm* --replace` where *my-wm* is the executable name of the window manager you wish to use.
 
 ## See also
 

@@ -283,6 +283,6 @@ After completing all steps above, you should have the following 3 files and 1 so
 
 ## Bootloader configuration
 
-Add an entry for your new kernel in your bootloader's configuration file - see [GRUB](/index.php/GRUB "GRUB"), [LILO](/index.php/LILO "LILO"), [GRUB2](/index.php/GRUB2 "GRUB2"), [Syslinux](/index.php/Syslinux "Syslinux"), [Gummiboot](/index.php/Gummiboot "Gummiboot") or [REFInd](/index.php/REFInd "REFInd") for examples.
+Add an entry for your new kernel in your bootloader's configuration file - see [GRUB](/index.php/GRUB "GRUB"), [LILO](/index.php/LILO "LILO"), [GRUB2](/index.php/GRUB2 "GRUB2"), [Syslinux](/index.php/Syslinux "Syslinux"), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [REFInd](/index.php/REFInd "REFInd") for examples.
 
 **Tip:** Kernel sources include a script to automate the process for LILO: `$ arch/x86/boot/install.sh`. Remember to type `lilo` as root at the prompt to update it.

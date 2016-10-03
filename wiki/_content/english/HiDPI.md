@@ -110,7 +110,7 @@ To enlarge icons in system tray, right-click on it (aim for empty space / top pi
 
 ### Cinnamon
 
-Supports HiDPI since 2.2\. Even without rebuilding GTK3, the support is pretty good (e.g. window borders are correctly sized, which is not the case under Xfce).
+Supports HiDPI since 2.2\. The support is pretty good (e.g. window borders are correctly sized, which is not the case under Xfce).
 
 ### Enlightenment
 

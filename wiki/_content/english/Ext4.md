@@ -186,6 +186,8 @@ Third, enable the encryption feature flag on your filesystem:
 
 ```
 
+**Warning:** Once the encryption feature flag is enabled, kernels older than 4.1 will be unable to mount the filesystem.
+
 Next, make a directory to encrypt:
 
 ```

@@ -428,7 +428,11 @@ The video output of a Windows guest in VirtualBox sometimes hangs until the host
 
 ### Screen flickering
 
-A temporary solution is to add the `i915.enable_rc6=0` [kernel boot parameter](/index.php/Kernel_parameters "Kernel parameters") .
+The following power saving features used by intel iGPUs are known to cause flickering in some instances. A temporary solution is to disable one of them using the appropriate [kernel boot parameter](/index.php/Kernel_parameters "Kernel parameters") option:
+
+*   Rc6 sleep modes (see [intel#RC6_sleep_modes_(enable_rc6)](/index.php/Intel#RC6_sleep_modes_.28enable_rc6.29 "Intel")), can be disabled with `i915.enable_rc6=0`.
+
+*   Panel Self Refresh (PSR) [FS#49628](https://bugs.archlinux.org/task/49628) [FS#49371](https://bugs.archlinux.org/task/49371) [FS#50605](https://bugs.archlinux.org/task/50605), enabled by default since kernel mainline 4.6\. To disable this feature use the option `i915.enable_psr=0`.
 
 ## See also
 

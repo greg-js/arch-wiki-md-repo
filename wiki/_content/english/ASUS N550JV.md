@@ -29,6 +29,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
         *   [2.1.1 Dual boot](#Dual_boot)
         *   [2.1.2 Bug](#Bug)
         *   [2.1.3 Sound pops twice during shutdown and sleep](#Sound_pops_twice_during_shutdown_and_sleep)
+            *   [2.1.3.1 Crackling sound](#Crackling_sound)
     *   [2.2 Messages during console login](#Messages_during_console_login)
     *   [2.3 USB devices and sleep](#USB_devices_and_sleep)
         *   [2.3.1 Battery charging issues](#Battery_charging_issues)
@@ -212,6 +213,10 @@ WantedBy=suspend.target
 ```
 
 Then [enable](/index.php/Enable "Enable") `beep-disable.service` and `beep-disable-wakeup.service` as root.
+
+##### Crackling sound
+
+Add `tsched=0` to pulseaudio config file as per instructions at [PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting").
 
 ### Messages during console login
 

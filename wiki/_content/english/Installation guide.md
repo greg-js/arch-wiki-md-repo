@@ -98,9 +98,9 @@ The following [partitions](/index.php/Partition "Partition") (disk sections) are
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
-[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a [swap file](/index.php/Swap#Swap_file "Swap"). See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a drive.
+[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a [swap file](/index.php/Swap#Swap_file "Swap"). See [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") for other considerations when partitioning a disk.
 
-The used partitioning tool depends on the choice of *partitioning table*, where required information is stored. The **GPT** format is commonly associated with UEFI systems, and likewise **MBR** with BIOS systems. [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted") support both formats, while *gdisk* only supports GPT.
+The used partitioning tool depends on the choice of *partition table*. The **GPT** format is commonly associated with UEFI systems and **MBR** with BIOS systems, though [other factors](/index.php/Partitioning#Choosing_between_GPT_and_MBR "Partitioning") such as disk size may apply. [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted") support both formats, while *gdisk* only supports GPT.
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 

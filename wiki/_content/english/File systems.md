@@ -15,9 +15,9 @@ Individual drive partitions can be setup using one of the many different availab
 *   [2 Identify existing file systems](#Identify_existing_file_systems)
 *   [3 Create a file system](#Create_a_file_system)
 *   [4 Mount a filesystem](#Mount_a_filesystem)
-*   [5 List mounted file systems](#List_mounted_file_systems)
-*   [6 Umount a file system](#Umount_a_file_system)
-*   [7 See also](#See_also)
+    *   [4.1 List mounted file systems](#List_mounted_file_systems)
+    *   [4.2 Umount a file system](#Umount_a_file_system)
+*   [5 See also](#See_also)
 
 ## Types of file systems
 
@@ -25,7 +25,7 @@ See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) fo
 
 | File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
 | [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](http://man7.org/linux/man-pages/man8/mkfs.btrfs.8.html) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
-| [VFAT](https://en.wikipedia.org/wiki/File_Allocation_Table#VFAT "w:File Allocation Table") | mkfs.vfat(8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
+| [VFAT](/index.php/VFAT "VFAT") | mkfs.vfat(8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
 | [exFAT](https://en.wikipedia.org/wiki/exFAT "w:exFAT") | mkfs.exfat(8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Optional | N/A (FUSE-based) |
 | [F2FS](/index.php/F2FS "F2FS") | mkefs.f2fs(8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Yes | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | Flash-based devices |
 | [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
@@ -195,7 +195,7 @@ Or
 
 *mount* contains several options, many of which depend on the file system specified. The options can be changed by using flags on the command line with *mount*, by editing [fstab](/index.php/Fstab "Fstab"), by creating [udev](/index.php/Udev "Udev") rules, by [compiling the kernel yourself](/index.php/Arch_Build_System "Arch Build System"), or by using filesystem-specific mount scripts (located at `/usr/bin/mount.*`). See these related articles and the article of the filesystem of interest for more information.
 
-## List mounted file systems
+### List mounted file systems
 
 To list all mounted file systems, use [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html):
 
@@ -213,7 +213,7 @@ $ findmnt */dev/sda1*
 
 *findmnt* gathers information from `/etc/fstab`, `/etc/mtab`, and `/proc/self/mounts`.
 
-## Umount a file system
+### Umount a file system
 
 To unmount a file system use [umount(8)](http://man7.org/linux/man-pages/man8/umount.8.html). Either the device containting the file system or the mount point can be specified:
 

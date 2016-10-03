@@ -925,6 +925,8 @@ Finally you can activate it by running
 
 **Note:** Previous command set the color profile only for the current session; this mean that you must run it every time you login in your system. For automating it you can execute the command by **Autostart Application**, concording with your DE (or add the command to your login manager's initialization script, e.g. /etc/gdm/Init/Default).
 
+**Warning:** GNOME will revert the profile set by xcalib. It's preferable to set the profile using **Color** in settings.
+
 ### Apple Remote
 
 First, to correctly install and configure the **lirc** software that control IR see [LIRC](/index.php/LIRC "LIRC") wiki.

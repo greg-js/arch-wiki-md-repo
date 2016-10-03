@@ -17,6 +17,7 @@
     *   [6.1 Damaged NTFS filesystems](#Damaged_NTFS_filesystems)
     *   [6.2 Metadata kept in Windows cache, refused to mount](#Metadata_kept_in_Windows_cache.2C_refused_to_mount)
     *   [6.3 Mount failure](#Mount_failure)
+    *   [6.4 Kernel parameters and other configuration](#Kernel_parameters_and_other_configuration)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -209,6 +210,38 @@ You can check the current settings on *Control Panel > Hardware and Sound > Powe
 ### Mount failure
 
 If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. Here's an fstab [example](/index.php/Fstab#UUIDs "Fstab").
+
+### Kernel parameters and other configuration
+
+The default configuration:
+
+ `$ zgrep ^CONFIG_NTFS  /proc/config.gz` 
+```
+CONFIG_NTFS_FS=m
+CONFIG_NTFS_RW=y
+```
+
+The kernel config option `CONFIG_NTFS_RW=y` enables read-write support for [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") file systems. It also means the kernel is predefined to use the [ntfs-3g](/index.php/Ntfs "Ntfs") driver in read-write mode. The build in support of the NTFS file systems by the kernel is *read-only* even if read-write is activated by an option.
+
+**Note:**
+
+*   When [ntfs-3g](/index.php/Ntfs "Ntfs") is being installed it might create a symlink `/usr/bin/mount.ntfs` to the `/usr/bin/ntfs-3g`.
+*   The [ntfs-3g](/index.php/Ntfs "Ntfs") mount tool supports many of the same command line options as the linux standard *mount* utility, but is specialized on mounting of the [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") formated partitions.
+*   By default on mounting the [ntfs-3g](/index.php/Ntfs "Ntfs") driver gives the full read-write permissions to the all users. In some situations access with a full permission rights can cause the damage, see [NTFS troubleshooting](/index.php/Ntfs#Troubleshooting "Ntfs").
+
+The default mount options can be altered when running `mount.ntfs` by renaming the `/usr/bin/mount.ntfs` symlink if exists and creating a script in its place with a preferred options or use the *-i* option (`mount -i -t ntfs`) to ignore all the *mount.X* files and use the natively supported functionality by the kernel. This example will mount NTFS as a read-only:
+
+ `/usr/bin/mount.ntfs` 
+```
+#!/bin/bash
+#mount -i -oro "$@"
+#mount with a read-only rights
+ntfs-3g -oro  "$@" & disown
+```
+
+See `man 8 ntfs-3g` for more information about the ntfs-3g driver.
+
+You can add more actions for when an external storage device, such as a USB drive or image file (ISO, img, dd), is mounted by using scripts.
 
 ## See also
 

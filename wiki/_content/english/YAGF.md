@@ -1,4 +1,4 @@
-[YAGF](http://sourceforge.net/projects/yagf-ocr/) is a graphical interface for the [cuneiform](https://en.wikipedia.org/wiki/CuneiForm_(software) OCR program on the Linux platform. With YAGF you can scan images via XSane, perform images preprocessing and recognize texts using cuneiform from a single command centre. YAGF also makes it easy to scan and recognize several images sequentially.
+[YAGF](http://sourceforge.net/projects/yagf-ocr/) is a graphical interface for the [cuneiform](https://en.wikipedia.org/wiki/CuneiForm_(software) and [tesseract](https://en.wikipedia.org/wiki/Tesseract_(software) OCR programs on the Linux platform. With YAGF you can scan images via XSane, perform images preprocessing and recognize texts using cuneiform or tesseract from a single command centre. YAGF also makes it easy to scan and recognize several images sequentially.
 
 ## Contents
 
@@ -12,13 +12,13 @@
 
 ## Installation
 
-YAGF requires Qt 4 and the [aspell](https://www.archlinux.org/packages/?name=aspell) spellchecking package. If you want to acquire images from a scanner into YAGF directly, you should install [XSane](/index.php/SANE "SANE") software. And of course you will need cuneiform for the text recognition.
+YAGF requires Qt 4 and the [aspell](https://www.archlinux.org/packages/?name=aspell) spellchecking package. If you want to acquire images from a scanner into YAGF directly, you should install [XSane](/index.php/SANE "SANE") software. And of course you will need [cuneiform](https://www.archlinux.org/packages/?name=cuneiform) or [tesseract](https://www.archlinux.org/packages/?name=tesseract) for the text recognition.
 
 [Install](/index.php/Install "Install") [yagf](https://www.archlinux.org/packages/?name=yagf) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Supported languages
 
-Next languages are available for recognition: Czech,Danish, Dutch, English, Estonian, French, German, Hungarian, Italian, Latvian, Lithuanian, Polish, Portuguese, Romanian, Russian Spanish, Swedish, Ukrainian
+These languages are available for recognition: Czech, Danish, Dutch, English, Estonian, French, German, Hungarian, Italian, Latvian, Lithuanian, Polish, Portuguese, Romanian, Russian, Spanish, Swedish, Ukrainian
 
 ## Usage
 
@@ -28,7 +28,7 @@ Digitizing text with YAGF consists of several stages: images acquisition, images
 
 You can recognize text from the images stored on your hard drive, or you can scan new images and pass them to YAGF directly. Use File/Open Image... command to load an image from your hard drive. YAGF supports all major raster graphics formats (JPEG, PNG, BMP, TIFF, GIF, PNM, PPM, PBM). If the loaded file's name is in the form *nameXXX.ext*, where *XXX* is some number, you can move between previous/next file in the series with the navigation buttons. For example, if you have loaded the file named *MyPage06.jpg*, the "Move to next image" button will try to open the file *MyPage07.jpg*. All the opened images will be displayed on the image bar.
 
-You can acquire images direct;y from a scanner using XSane. While in YAGF, choose File/Scan command. XSane program will be started. Set up the scanning options with XSane and press XSane's *Scan* button. When the scanning is done the scanned image is opened in the YAGF image viewing window. If you want to scan several pages, you can repeat these operation several times. Each time the last scanned image will be shown in the YAGF image viewing window. You can move to previous images using navigation buttons. You can keep XSane window open while working with YAGF. When you exit YAGF this window will be closed automatically. In order to navigate between scanned images use navigation buttons as it was described above. All acquired images are shown as thumbnails on the image bar on the left. You can save these images into a separate directory using Save button on the image bar.
+You can acquire images directly from a scanner using XSane. While in YAGF, choose File/Scan command. XSane program will be started. Set up the scanning options with XSane and press XSane's *Scan* button. When the scanning is done the scanned image is opened in the YAGF image viewing window. If you want to scan several pages, you can repeat these operation several times. Each time the last scanned image will be shown in the YAGF image viewing window. You can move to previous images using navigation buttons. You can keep XSane window open while working with YAGF. When you exit YAGF this window will be closed automatically. In order to navigate between scanned images use navigation buttons as it was described above. All acquired images are shown as thumbnails on the image bar on the left. You can save these images into a separate directory using Save button on the image bar.
 
 ### Images preprocessing
 

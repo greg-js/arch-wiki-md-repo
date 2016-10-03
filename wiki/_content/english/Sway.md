@@ -171,13 +171,15 @@ swaymsg -t get_outputs
 
  `~/.config/sway/config` 
 ```
- bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +15%
- bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -15%
+ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
  bindsym XF86AudioToggle exec pactl set-sink-mute 0 toggle
  bindsym XF86MonBrightnessDown exec dsplight down 5
  bindsym XF86MonBrightnessUp exec dsplight up 5
 
 ```
+
+You many need to change the sound card index to 1 or 2 depending on your system configuration. See [Backlight](/index.php/Backlight "Backlight") for a list of utilities to control brightness and color correction.
 
 ## Known issues
 

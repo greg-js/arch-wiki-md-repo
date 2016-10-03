@@ -8,7 +8,7 @@ Evince uses the poppler library as a backend.
 
 [Install](/index.php/Install "Install") the [evince](https://www.archlinux.org/packages/?name=evince) package, or [evince-git](https://aur.archlinux.org/packages/evince-git/) for the development version. Evince installs the gnome-desktop as a dependency
 
-For a standalone version install [evince-no-gnome](https://aur.archlinux.org/packages/evince-no-gnome/) or the light version [evince](https://www.archlinux.org/packages/?name=evince) for pdf support only.
+For a standalone version install [evince-no-gnome](https://aur.archlinux.org/packages/evince-no-gnome/) or the light version [evince-light](https://aur.archlinux.org/packages/evince-light/) for pdf support only.
 
 ## See also
 

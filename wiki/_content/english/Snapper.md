@@ -19,14 +19,14 @@
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Snapshots on boot](#Snapshots_on_boot)
     *   [8.2 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
-    *   [8.3 Backup boot partition](#Backup_boot_partition)
+        *   [8.2.1 Backup non-btrfs boot partition on pacman transactions](#Backup_non-btrfs_boot_partition_on_pacman_transactions)
+    *   [8.3 Incremental backup to external drive](#Incremental_backup_to_external_drive)
     *   [8.4 Suggested filesystem layout](#Suggested_filesystem_layout)
         *   [8.4.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
         *   [8.4.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
     *   [8.5 Deleting files from snapshots](#Deleting_files_from_snapshots)
     *   [8.6 Preventing slowdowns](#Preventing_slowdowns)
         *   [8.6.1 updatedb](#updatedb)
-        *   [8.6.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
     *   [8.7 Preserving log files](#Preserving_log_files)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Snapper logs](#Snapper_logs)
@@ -269,9 +269,9 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 	[https://github.com/crossroads1112/bin/tree/master/pacupg](https://github.com/crossroads1112/bin/tree/master/pacupg) || [pacupg](https://aur.archlinux.org/packages/pacupg/)
 
-### Backup boot partition
+#### Backup non-btrfs boot partition on pacman transactions
 
-If your `/boot` partition is on a non btrfs filesystem you are not able to do snapper backups with it. You can copy the boot partition automatically on a kernel update to your btrfs root with a hook. This also plays nice together with [snap-pac](https://aur.archlinux.org/packages/snap-pac/).
+If your `/boot` partition is on a non btrfs filesystem (e.g. an [ESP](/index.php/ESP "ESP")) you are not able to do snapper backups with it. You can copy the boot partition automatically on a kernel update to your btrfs root with a hook. This also plays nice together with [snap-pac](https://aur.archlinux.org/packages/snap-pac/).
 
  `/usr/share/libalpm/hooks/50_bootbackup.hook` 
 ```
@@ -287,6 +287,18 @@ Description = Backing up /boot...
 When = PreTransaction
 Exec = /usr/bin/rsync -avzq --delete /boot /.bootbackup
 ```
+
+### Incremental backup to external drive
+
+The following packages use `btrfs send` and `btrfs receive` to send backups incrementally to an external drive. Refer to their documenation to see differences in implementation, features, and requirements.
+
+*   **snap-sync** — "Use snapper snapshots to backup to external drive."
+
+	[https://github.com/wesbarnett/snap-sync.git](https://github.com/wesbarnett/snap-sync.git) || [snap-sync](https://aur.archlinux.org/packages/snap-sync/)
+
+*   **buttersink** — "Buttersink is like rsync for btrfs snapshots."
+
+	[https://github.com/AmesCornish/buttersink.git](https://github.com/AmesCornish/buttersink.git) || [buttersink-git](https://aur.archlinux.org/packages/buttersink-git/)
 
 ### Suggested filesystem layout
 
@@ -399,18 +411,6 @@ Keeping many of snapshots for a large timeframe on a busy filesystem like `/`, w
 By default, `updatedb` will also index the `.snapshots` directory created by snapper, which can cause serious slowdown and excessive memory usage if you have many snapshots. You can prevent `updatedb` from indexing over it by editing:
 
  `/etc/updatedb.conf`  `PRUNENAMES = ".snapshots"` 
-
-#### Incremental backup to external drive
-
-This [script](https://gist.githubusercontent.com/wesbarnett/c9d12e60d17cf8a73c485ad4bb9037e9/raw/4f74040ea8a0b0cca73305550681b8c2b2669f89/backup) can be used to perform incremental backups to an external drive mounted on the system.
-
-As an alternative you can use [buttersink-git](https://aur.archlinux.org/packages/buttersink-git/) to transfer the whole set of snapshots to a local backup drive or to an external backup location via ssh. Buttersink will optimize the snyc between the source and destination automatically in a way that it only sends the diff between the snapshots. Make sure to protect the backup location from external access as it may contain sensible data that has already been deleted on the running system. been
-
-```
-# sudo mkdir -p -m 750 /run/media/hdd/backup
-# sudo buttersink /.snapshots/ /run/media/hdd/backup
-
-```
 
 ### Preserving log files
 

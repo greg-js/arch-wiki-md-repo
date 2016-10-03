@@ -11,7 +11,7 @@
 *   [3 配置](#.E9.85.8D.E7.BD.AE)
     *   [3.1 Cinnamon系统设置](#Cinnamon.E7.B3.BB.E7.BB.9F.E8.AE.BE.E7.BD.AE)
     *   [3.2 应用程序和扩展](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E5.92.8C.E6.89.A9.E5.B1.95)
-    *   [3.3 Pressing power buttons suspend the system](#Pressing_power_buttons_suspend_the_system)
+    *   [3.3 按下电源按钮睡眠](#.E6.8C.89.E4.B8.8B.E7.94.B5.E6.BA.90.E6.8C.89.E9.92.AE.E7.9D.A1.E7.9C.A0)
     *   [3.4 管理 Cinnamon 使用的语言](#.E7.AE.A1.E7.90.86_Cinnamon_.E4.BD.BF.E7.94.A8.E7.9A.84.E8.AF.AD.E8.A8.80)
 *   [4 小贴士](#.E5.B0.8F.E8.B4.B4.E5.A3.AB)
     *   [4.1 创建自定义应用程序](#.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
@@ -111,9 +111,9 @@ $ cinnamon-settings extensions
 
 **Note:** 如果你安装后没有发现这些拓展或者是应用程序, 用 `Alt+F2` 并在对话框键入 `r` 重启 Cinnamon .
 
-### Pressing power buttons suspend the system
+### 按下电源按钮睡眠
 
-This is the default behaviour. To change the setting open the `cinnamon-settings` panel and click on the "Power Management" option. Change the "When the power button is pressed" option to your desired behaviour.
+这是电源按钮默认的操作。更改设置，打开`cinnamon-settings`设置面板，点击“电源管理”选项。更改“当按下电源按钮”选项，选择你希望的操作。
 
 ### 管理 Cinnamon 使用的语言
 

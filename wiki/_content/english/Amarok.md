@@ -52,7 +52,7 @@ You can get back SHOUTcast by using the "SHOUTcast service" script. Start Amarok
 
 [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4") and [VLC](/index.php/VLC "VLC") continue to support the SHOUTcast Internet radio station index and streaming as before.
 
-See also: [How can I use Amarok to stream to my own radio station?](http://amarok.kde.org/wiki/FAQ#How_can_I_use_Amarok_to_stream_to_my_own_radio_station.3F), which recommends [Internet DJ Console](http://giss.tv/sahabuntu/doc/idjc.html), available in the AUR ([idjc](https://aur.archlinux.org/packages/idjc/)).
+See also: [How can I use Amarok to stream to my own radio station?](https://userbase.kde.org/Amarok/Manual/Various/FAQ/en#How_can_I_use_Amarok_to_stream_to_my_own_radio_station.3F), which recommends [Internet DJ Console](http://giss.tv/sahabuntu/doc/idjc.html), available in the AUR ([idjc](https://aur.archlinux.org/packages/idjc/)).
 
 ## Ampache/MP3 Streaming
 
