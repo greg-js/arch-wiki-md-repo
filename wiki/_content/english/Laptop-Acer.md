@@ -73,5 +73,11 @@ Synaptic Touchpad: OK | Live Media boots in Gummiboot and attempts to load EFI m
 Synaptic Touchpad: OK
 Webcam: OK
 HDMI: untested |
-| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
-| Hardware support |
+| Acer Aspire V3-572G | Current | Intel HD 5500
+NVIDIA GeForce 840M working with bumblebee | OK | Realtek: OK | OK | Not tested | Suspend to RAM: Yes
+Disk: Yes
+Battery: Yes
+CPU frequency scaling: untested | Untested | Webcam: untested
+Hotkeys: OK
+Synaptic Touchpad: OK
+HDMI: OK |

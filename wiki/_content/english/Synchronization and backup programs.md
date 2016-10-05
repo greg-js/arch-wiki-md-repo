@@ -163,6 +163,7 @@ These applications have been designed to centralize the backup of several machin
 | [SafeKeep](http://safekeep.sourceforge.net/) | [safekeep](https://aur.archlinux.org/packages/safekeep/) | rdiff-backup | No | No |  ? | Yes |  ? |  ? |  ? |  ? | chunk-based [[37]](http://safekeep.sourceforge.net/safekeep.html) | Yes | No | GPL | No | Integrates with [LVM](/index.php/LVM "LVM") and databases to create consistent backups. Bandwidth throttling. |
 | [Snebu](http://www.snebu.com) | [snebu](https://aur.archlinux.org/packages/snebu/) | C | Yes | No |  ? | Yes |  ? |  ? |  ? |  ? |  ? | Yes | No | GPLv3 |  ? | Supports arbitrary retention schedules. |
 | [Synbak](http://www.initzero.it/portal/soluzioni/software-open-source/synbak-universal-backup-system_2623.html) | [synbak](https://www.archlinux.org/packages/?name=synbak) | Multitool wrapper | Yes | No | Yes | Yes | Yes |  ? |  ? |  ? |  ? | No | Web | GPLv3 | Yes | Unifies several backup methods. |
+| [UrBackup](https://www.urbackup.org) | [urbackup*](https://aur.archlinux.org/packages/?K=urbackup) in [AUR](/index.php/AUR "AUR") | C++ | No | No | Yes | Yes | Yes | Yes | Yes | Yes | file-based,hard-links and symlinks[[38]](http://blog.urbackup.org/156/symbolically-linking-directories-during-incremental-file-backups)/chunk-based CoW-Snapshots[[39]](http://blog.urbackup.org/83/file-backup-storage-with-btrfs-snapshots) | Yes (client) | GUI, Web | AGPLv3+ | Windows, macOS | Yes | Identical files across backups of the same or different clients are stored only once. Integrates with LVM, dattobd and btrfs for file system snapshots. |
 | Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | Easy access | Resumable | Handles renames | Increment type | CLI | Other interfaces | Licence | Other platforms | Active | Specificity |
 
 ## Cloud storage
@@ -325,6 +326,10 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 *   **[ownCloud](/index.php/OwnCloud "OwnCloud")** — Software suite that provides a location-independent storage area for data.
 
 	[http://owncloud.org/](http://owncloud.org/) || [owncloud](https://www.archlinux.org/packages/?name=owncloud)
+
+*   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — Fork of ownCloud.
+
+	[http://nextcloud.com/](http://nextcloud.com/) || [nextcloud](https://aur.archlinux.org/packages/nextcloud/)
 
 *   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
 

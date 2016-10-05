@@ -162,7 +162,7 @@ Note that `root=**UUID**=` is used instead of `root=**PARTUUID**=`, which is use
 
 #### Encrypted Root Installations
 
-Here is an example configuration file for an encrypted root partition ([DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt")):
+Here is an example configuration file for an encrypted root partition ([DM-Crypt / LUKS](/index.php/Dm-crypt "Dm-crypt")) using the `encrypt` [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook:
 
  `*esp*/loader/entries/arch-encrypted.conf` 
 ```

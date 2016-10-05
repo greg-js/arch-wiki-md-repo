@@ -37,18 +37,18 @@ This section outlines how to apply patches you created or downloaded from the In
 5.  Now you simply need to apply the patch from within this directory. This is very simply done by adding
 
 ```
-patch -p1 <pkgname.patch 
+patch -p1 -i *pkgname*.patch 
 
 ```
 
-to your `prepare()` function, changing `pkgname.patch` to the name of the file containing the diff (the file that was automatically copied into your `src` directory because it was in the `source` array of the `PKGBUILD` file).
+to your `prepare()` function, changing `*pkgname*.patch` to the name of the file containing the diff (the file that was automatically copied into your `src` directory because it was in the `source` array of the `PKGBUILD` file).
 
 An example prepare-function:
 
 ```
 prepare() {
  cd $pkgname-$pkgver
- patch -Np1 <../eject.patch
+ patch -Np1 -i "${srcdir}/eject.patch"
 }
 
 ```

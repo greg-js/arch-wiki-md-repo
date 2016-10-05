@@ -1,10 +1,8 @@
-**翻译状态：** 本文是英文页面 [Fonts](/index.php/Fonts "Fonts") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-05-24，点击[这里](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=312432)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Fonts](/index.php/Fonts "Fonts") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-14，点击[这里](https://wiki.archlinux.org/index.php?title=Fonts&diff=0&oldid=450802)可以查看翻译后英文页面的改动。
 
-引自 [维基百科](https://en.wikipedia.org/wiki/zh:%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%97%E4%BD%93 "wikipedia:zh:计算机字体"):
+引自 [维基百科](https://en.wikipedia.org/wiki/zh:%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AD%97%E4%BD%93 "wikipedia:zh:计算机字体")："**计算机字体**（computer font），简称**字体**（font），是包含有一套字形与字符的电子数据文件。"
 
-	「**计算机字体**（computer font），简称**字体**（font），是包含有一套字形与字符的电子数据文件。」
-
-注意，部分字体在许可协议中规定了使用时的法律限制。
+注意：部分字体在许可协议中规定了使用时的法律限制。
 
 ## Contents
 
@@ -55,6 +53,7 @@
 *   [7 小提示](#.E5.B0.8F.E6.8F.90.E7.A4.BA)
     *   [7.1 列出已安装字体](#.E5.88.97.E5.87.BA.E5.B7.B2.E5.AE.89.E8.A3.85.E5.AD.97.E4.BD.93)
     *   [7.2 应用程序专用的字体高速缓冲](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F.E4.B8.93.E7.94.A8.E7.9A.84.E5.AD.97.E4.BD.93.E9.AB.98.E9.80.9F.E7.BC.93.E5.86.B2)
+*   [8 参见](#.E5.8F.82.E8.A7.81)
 
 ## 字体类型
 
@@ -544,7 +543,7 @@ Github用户Ternstor编写了一段python脚本，可以通过在 AUR 和官方�
 
 ### Microsoft 字体
 
-参阅[微软字体](/index.php?title=Microsoft_Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Microsoft Fonts (简体中文) (page does not exist)")。
+参阅[微软字体](/index.php/Microsoft_fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Microsoft fonts (简体中文)")。
 
 ### Apple OS X 字体
 
@@ -706,3 +705,7 @@ $ fc-list
 ### 应用程序专用的字体高速缓冲
 
 Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) 或 [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) 使用自己的字体高速缓冲，因此更新字体后记得删除 `$HOME/.matplotlib/fontList.cache`，`$HOME/.cache/matplotlib/fontList.cache`, `$HOME/.sage/matplotlib-1.2.1/fontList.cache` 等文件。这样它才会再一次产生高速缓冲并找到新字体 [[4]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html)。
+
+## 参见
+
+*   [State of Text Rendering](http://behdad.org/text/)

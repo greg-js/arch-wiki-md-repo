@@ -1016,7 +1016,7 @@ For improved support for multiple monitors, clipboard sharing, etc. the followin
 
 ### vmware
 
-Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers ([xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.
+Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.
 
 ### virtio
 
@@ -1275,14 +1275,20 @@ If that does not work, try the tip at [#Mouse cursor is jittery or erratic](#Mou
 
 ### Pass-through host USB device
 
-To access physical USB device connected to host from VM, you can start QEMU with following option:
-
-```
-$ qemu-system-i386 -usbdevice host:*vendor_id*:*product_id* *disk_image*
-
-```
+To access physical USB device connected to host from VM, you can use the option: `-usbdevice host:*vendor_id*:*product_id*`.
 
 You can find `vendor_id` and `product_id` of your device with `lsusb` command.
+
+Since the default I440FX chipset emulated by qemu feature a single UHCI controller (USB 1), the `-usbdevice` option will try to attach your physical device to it. In some cases this may cause issues with newer devices. A possible solution is to emulate the [ICH9](http://wiki.qemu.org/Features/Q35) chipset, which offer an EHCI controller supporting up to 12 devices, using the option `-machine type=q35`.
+
+A less invasive solution is to emulate an EHCI (USB 2) or XHCI (USB 3) controller with the option `-device usb-ehci,id=ehci` or `-device nec-usb-xhci,id=xhci` respectively and then attach your physical device to it with the option `-device usb-host,..` as follows:
+
+```
+-device usb-host,bus=**controller_id**.0,vendorid=0x**vendor_id**,productid=0x**product_id**
+
+```
+
+You can also add the `...,port=*<n>*` setting to the previous option to specify in which physical port of the virtual controller you want to attach your device, useful in the case you want to add multiple usb devices to the VM.
 
 **Note:** If you encounter permission errors when running QEMU, see [Udev#Writing udev rules](/index.php/Udev#Writing_udev_rules "Udev") for information on how to set permissions of the device.
 

@@ -116,7 +116,7 @@ Xorg should run smoothly without closed source drivers, which are typically need
 | TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/Catalyst "Catalyst") legacy |
 | Older | X1000 and older | *not available* |
 
-	: [experimental AMDGPU support coming in Linux 4.8](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code)
+	: [experimental AMDGPU support coming in Linux 4.9](http://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Next-4.9)
 
 	: [experimental AMDGPU support](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released)
 

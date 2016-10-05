@@ -281,4 +281,5 @@ When done write the table to disk and exit via the `w` command.
 
 ## See also
 
+*   [GPT fdisk Tutorial](http://www.rodsbooks.com/gdisk/index.html) - offical webpage of gdisk with detailed walkthroughs.
 *   [Manually Partitioning Your Hard Drive with fdisk](http://www.novell.com/coolsolutions/feature/19350.html)

@@ -30,7 +30,7 @@ Currently, Metasploit requires to setup and configure Postgresql on target syste
 
 ## Installation
 
-Install [metasploit](https://www.archlinux.org/packages/?name=metasploit) from [AUR](/index.php/AUR "AUR"). Note that you will have to follow the RVM setup instructions below first or it may not build.
+Install package [metasploit](https://www.archlinux.org/packages/?name=metasploit) from the official repositories. Note that you will have to follow the RVM setup instructions below for it to be able to function properly.
 
 For latest development version, install [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/) instead.
 

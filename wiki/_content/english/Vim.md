@@ -111,7 +111,6 @@ Vim includes a diff editor (a program that shows differences between two or more
 | fold open | `zo` |
 | fold close | `zc` |
 | rescan files | `:diffupdate` |
-| switch windows | `Ctrl+w+w` |
 
 ## Tips and tricks
 

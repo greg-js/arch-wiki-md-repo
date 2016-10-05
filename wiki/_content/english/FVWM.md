@@ -378,6 +378,8 @@ All colorsets are identified by a number. The first 40 colorsets, 0-39, are rese
 
 Colorsets can be created with the `ColorSet` command - syntax: `ColorSet *number* *options*`. See `man fvwm` - the Colorsets section - for more information.
 
+**Tip:** Using `Style "*" Colorset *num*` overrides the `Color` style and using `Style "*" HilightColorset *num*` overrides the `HilightFore` and `HilightBack` styles.
+
 ### Fonts
 
 For styles such as `Font`, use [xorg-xfontsel](https://www.archlinux.org/packages/?name=xorg-xfontsel) to determine the correct font names for X11 fonts - see [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description") and [Font configuration](/index.php/Font_configuration "Font configuration") for more information. You can also specify xft fonts, for example: `"xft:DejaVu Sans:size=10"`.

@@ -53,8 +53,6 @@ Now you can create an ad-hoc network. Replace *your_ssid* with the name of the n
 
 ### WPA supplicant
 
-**Note:** This method creates ad-hoc network using WPA encryption. WPA2 is currently not supported (August 2013).
-
 Ensure that [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) is [installed](/index.php/Pacman "Pacman"), and create a configuration file for it (see [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") for details).
 
  `/etc/wpa_supplicant-adhoc.conf` 
@@ -62,16 +60,17 @@ Ensure that [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_suppli
 ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
 
 # use 'ap_scan=2' on all devices connected to the network
+# this is unnecessary if you only want the network to be created when no other networks are available
 ap_scan=2
 
 network={
     ssid="MySSID"
     mode=1
     frequency=2432
-    proto=WPA
-    key_mgmt=WPA-NONE
-    pairwise=NONE
-    group=TKIP
+    proto=RSN
+    key_mgmt=WPA-PSK
+    pairwise=CCMP
+    group=CCMP
     psk="secret passphrase"
 }
 

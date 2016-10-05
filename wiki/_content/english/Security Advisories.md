@@ -4,31 +4,32 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 *   [1 Scheduled Advisories](#Scheduled_Advisories)
 *   [2 Recent Advisories](#Recent_Advisories)
-    *   [2.1 September 2016](#September_2016)
-    *   [2.2 August 2016](#August_2016)
-    *   [2.3 July 2016](#July_2016)
-    *   [2.4 June 2016](#June_2016)
-    *   [2.5 May 2016](#May_2016)
-    *   [2.6 April 2016](#April_2016)
-    *   [2.7 March 2016](#March_2016)
-    *   [2.8 February 2016](#February_2016)
-    *   [2.9 January 2016](#January_2016)
-    *   [2.10 December 2015](#December_2015)
-    *   [2.11 November 2015](#November_2015)
-    *   [2.12 October 2015](#October_2015)
-    *   [2.13 September 2015](#September_2015)
-    *   [2.14 August 2015](#August_2015)
-    *   [2.15 July 2015](#July_2015)
-    *   [2.16 June 2015](#June_2015)
-    *   [2.17 May 2015](#May_2015)
-    *   [2.18 Apr 2015](#Apr_2015)
-    *   [2.19 Mar 2015](#Mar_2015)
-    *   [2.20 Feb 2015](#Feb_2015)
-    *   [2.21 Jan 2015](#Jan_2015)
-    *   [2.22 Dec 2014](#Dec_2014)
-    *   [2.23 Nov 2014](#Nov_2014)
-    *   [2.24 Oct 2014](#Oct_2014)
-    *   [2.25 Sep 2014](#Sep_2014)
+    *   [2.1 October 2016](#October_2016)
+    *   [2.2 September 2016](#September_2016)
+    *   [2.3 August 2016](#August_2016)
+    *   [2.4 July 2016](#July_2016)
+    *   [2.5 June 2016](#June_2016)
+    *   [2.6 May 2016](#May_2016)
+    *   [2.7 April 2016](#April_2016)
+    *   [2.8 March 2016](#March_2016)
+    *   [2.9 February 2016](#February_2016)
+    *   [2.10 January 2016](#January_2016)
+    *   [2.11 December 2015](#December_2015)
+    *   [2.12 November 2015](#November_2015)
+    *   [2.13 October 2015](#October_2015)
+    *   [2.14 September 2015](#September_2015)
+    *   [2.15 August 2015](#August_2015)
+    *   [2.16 July 2015](#July_2015)
+    *   [2.17 June 2015](#June_2015)
+    *   [2.18 May 2015](#May_2015)
+    *   [2.19 Apr 2015](#Apr_2015)
+    *   [2.20 Mar 2015](#Mar_2015)
+    *   [2.21 Feb 2015](#Feb_2015)
+    *   [2.22 Jan 2015](#Jan_2015)
+    *   [2.23 Dec 2014](#Dec_2014)
+    *   [2.24 Nov 2014](#Nov_2014)
+    *   [2.25 Oct 2014](#Oct_2014)
+    *   [2.26 Sep 2014](#Sep_2014)
 *   [3 Publishing a new advisory](#Publishing_a_new_advisory)
     *   [3.1 Templates](#Templates)
     *   [3.2 Vim-Snippet](#Vim-Snippet)
@@ -38,6 +39,12 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
+
+### October 2016
+
+*   [03 October 2016] [ASA-201610-3](https://lists.archlinux.org/pipermail/arch-security/2016-October/000731.html) [hostapd](https://www.archlinux.org/packages/?name=hostapd) multiple issues
+*   [03 October 2016] [ASA-201610-2](https://lists.archlinux.org/pipermail/arch-security/2016-October/000730.html) [systemd](https://www.archlinux.org/packages/?name=systemd) denial of service
+*   [03 October 2016] [ASA-201610-1](https://lists.archlinux.org/pipermail/arch-security/2016-October/000729.html) [chromium](https://www.archlinux.org/packages/?name=chromium) arbitrary code execution
 
 ### September 2016
 

@@ -113,14 +113,14 @@ Patches distributions like Ubuntu have applied to their kernels as workarounds a
 
 ### Get desktop notification on DENIED actions
 
-To get a notification on your desktop whenever AppArmor enters a "DENIED" log entry start the notify daemon by
+The notify daemon displays desktop notifications whenever AppArmor denies a program access. The script must be started at each boot and needs a few additional parameters:
 
 ```
-# aa-notify -p --display $DISPLAY
+# aa-notify -p -f /var/log/audit/audit.log --display $DISPLAY
 
 ```
 
-This daemon must be started at each boot.
+The daemon relies on the auditing events being logged to a text file which can be specified using `-f`. To circumvent [systemd](/index.php/Systemd "Systemd") not logging to a file it is necessary to [enable](/index.php/Enable "Enable") `auditd.service` and pass its log file to `aa-notify`. No special auditing rules are necessary for this to work, therefore the overhead is not as significant as it was when [#Creating new profiles](#Creating_new_profiles).
 
 ### Cache profiles
 
@@ -130,7 +130,7 @@ To circumvent some of those problems AppArmor can cache profiles in `/etc/apparm
 
 ## More Info
 
-AppArmor, like most other LSMs, supplements rather than replaces the default Discretionary access control. As such it's impossible to grant a process more privileges than it had in the first place.
+AppArmor, like most other LSMs, supplements rather than replaces the default Discretionary Access Control (DAC). As such it's impossible to grant a process more privileges than it had in the first place.
 
 Ubuntu, SUSE and a number of other distributions use it by default. RHEL (and it's variants) use SELinux which requires good userspace integration to work properly. People tend to agree that it is also much much harder to configure correctly.
 

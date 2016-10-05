@@ -1,6 +1,6 @@
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
-At the moment there is support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/), some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family and the [Southern Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) family (more experimental than Sea Islands and coming only in Linux 4.8). AMD has absolutely no plans for supporting the pre-GCN GPUs.
+At the moment there is support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/), some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family and the [Southern Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) family (more experimental than Sea Islands and coming only in Linux 4.9). AMD has absolutely no plans for supporting the pre-GCN GPUs.
 
 Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
@@ -14,7 +14,7 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
     *   [4.1 Enable early KMS](#Enable_early_KMS)
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
-*   [6 Enable amdgpu for Sea Islands Cards](#Enable_amdgpu_for_Sea_Islands_Cards)
+*   [6 Enable amdgpu for Sea Islands or Southern Islands cards](#Enable_amdgpu_for_Sea_Islands_or_Southern_Islands_cards)
 *   [7 Disable radeon driver](#Disable_radeon_driver)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
@@ -99,16 +99,23 @@ The change takes effect at the next reboot.
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-## Enable amdgpu for Sea Islands Cards
+## Enable amdgpu for Sea Islands or Southern Islands cards
 
-`amdgpu` has experimental support for Sea Islands (CI) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[1]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf).
+`amdgpu` has experimental support for Sea Islands (CIK) and Southern Islands (SI; since Linux 4.9) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[1]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf).
 
-If you want to enable `amdgpu` and use it with your Sea Islands product, you have to recompile your kernel. Probably the easiest way to setup a custom kernel is using the ABS, described in [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). You can also uncomment `make menuconfig` or `make nconfig` in the PKGBUILD, which will allow you to verify that the CIK option is selected by following the instructions from [Gentoo wiki](https://wiki.gentoo.org/wiki/Amdgpu#Feature_support).
+If you want to enable `amdgpu` and use it with your Sea Islands or Southern Islands product, you have to recompile your kernel. Probably the easiest way to setup a custom kernel is using the ABS, described in [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). You can also uncomment `make menuconfig` or `make nconfig` in the PKGBUILD, which will allow you to verify that the CIK option is selected by following the instructions from [Gentoo wiki](https://wiki.gentoo.org/wiki/Amdgpu#Feature_support).
 
-Set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
+For Sea Islands (CIK), set "Enable amdgpu support for SI parts" to "yes", then compile and install your kernel.
 
 ```
 CONFIG_DRM_AMDGPU_CIK=Y
+
+```
+
+For Southern Islands (SI; since Linux 4.9), set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
+
+```
+CONFIG_DRM_AMDGPU_SI=Y
 
 ```
 

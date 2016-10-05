@@ -22,7 +22,7 @@ Install the [tint2](https://www.archlinux.org/packages/?name=tint2) package.
 
 ## Configuration
 
-tint2 has a configuration file in `~/.config/tint2/tint2rc`. A skeleton configuration file with the default settings is created the first time you run tint2\. You can then change this file to your liking. Full documentation on how to configure tint2 is found [here](https://gitlab.com/o9000/tint2/wikis/Configure). You can configure the fonts, colors, looks, location and more in this file. The tint2 package also contains a GUI configuration tool that can be launched by running *tint2conf*.
+tint2 has a configuration file in `~/.config/tint2/tint2rc`. A skeleton configuration file with the default settings is created the first time you run tint2\. You can then change this file to your liking. Full documentation on how to configure tint2 is found [here](https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md#configuration). You can configure the fonts, colors, looks, location and more in this file. The tint2 package also contains a GUI configuration tool that can be launched by running *tint2conf*.
 
 ### Application launchers
 

@@ -1,4 +1,4 @@
-[Guake](http://guake.org) is a top-down terminal for [GNOME](/index.php/GNOME "GNOME") (in the style of [Yakuake](/index.php/Yakuake "Yakuake") for [KDE](/index.php/KDE "KDE"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake).
+[Guake](http://guake-project.org/) is a top-down terminal for [GNOME](/index.php/GNOME "GNOME") (in the style of [Yakuake](/index.php/Yakuake "Yakuake") for [KDE](/index.php/KDE "KDE"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake).
 
 ## Contents
 

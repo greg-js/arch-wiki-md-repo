@@ -1,16 +1,16 @@
-[acpid](http://acpid.sourceforge.net/) es un "demonio" flexible y extensible para entregar for delivering [eventos ACPI](/index.php?title=ACPI_modules_(Espa%C3%B1ol)&action=edit&redlink=1 "ACPI modules (Español) (page does not exist)"). Vigila `/proc/acpi/event` y cuando hay un evento, ejecuta programas para manejarlo. when an event occurs, executes programs to handle the event. Estos eventos se activan mediante ciertas acciones, como:
+[acpid](http://acpid.sourceforge.net/) es un "demonio" flexible y extensible para entregar [eventos ACPI](/index.php?title=ACPI_modules_(Espa%C3%B1ol)&action=edit&redlink=1 "ACPI modules (Español) (page does not exist)"). Vigila `/proc/acpi/event` y cuando hay un evento, ejecuta programas para manejarlo. Estos eventos se activan mediante ciertas acciones, como:
 
-*   Apretar teclas especiales, incluyendo el boton de Encendido/Hibernar/Suspender.
-*   Closing a notebook lid
-*   (Des)conectar un adaptador de Corriente Alterna a un portátil.
-*   (Des)conectar un jack de un teléfono, etc.
+*   Presionar teclas especiales, incluyendo el botón de Encendido/Hibernar/Suspender.
+*   Cerrando la tapa del portátil
+*   Desconectar un adaptador de Corriente Alterna a un portátil.
+*   Desconectar un jack de un teléfono, etc.
 
-acpid puede ser usado asi mismo, o combinado con un sistema más robusto como [pm-utils](/index.php?title=Pm-utils_(Espa%C3%B1ol)&action=edit&redlink=1 "Pm-utils (Español) (page does not exist)") y [cpufrequtils](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") para una mayor solución del control de energía.
+**acpid** puede ser usado así mismo, o combinado con un sistema más robusto como [pm-utils](/index.php?title=Pm-utils_(Espa%C3%B1ol)&action=edit&redlink=1 "Pm-utils (Español) (page does not exist)") y [cpufrequtils](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") para una mayor solución del control de energía.
 
 **Nota:**
 
 *   [Entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), gestor de inicio de sesión de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#ACPI_administraci.C3.B3n_de_la_energ.C3.ADa "Systemd (Español)") y algunos demonios [manejadores de teclas extra](/index.php?title=Extra_Keyboard_Keys_(Espa%C3%B1ol)&action=edit&redlink=1 "Extra Keyboard Keys (Español) (page does not exist)") pueden implementar métodos propios de manejo de eventos, independientemente de acpid. Usar más de un sistema a la vez puede provocar un comportamiento inesperado, como suspenderse dos veces de una, tras apretar una vez el botón de hibernar. Ten esto en cuenta y activa solo manejadores deseados.
-*   Ya que por defecto el script que provee acpid, **/etc/acpi/handler.sh**, sobreescribirá la funcionalidad del botón de encendido/apagado de tu entorno de escritorio, seguramente querrás cambiar la rutina de apagado de acpid para evitar apagar el ordenador cuando apretes de golpe cuando apretes el botón de encendido/apagado (ver instrucciones a continuación).
+*   Ya que por defecto el script que provee acpid, **/etc/acpi/handler.sh**, sobrescribirá la funcionalidad del botón de encendido/apagado de tu entorno de escritorio, seguramente querrás cambiar la rutina de apagado de acpid para evitar apagar el ordenador cuando presiones de golpe el botón de encendido/apagado (ver instrucciones a continuación).
 
 ## Contents
 
@@ -31,16 +31,16 @@ acpid puede ser usado asi mismo, o combinado con un sistema más robusto como [p
 
 [Instala](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") el paquete [acpid](https://www.archlinux.org/packages/?name=acpid), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
 
-Para que inicie al arranque :
+Para que empiece el arranque :
 
-*   Si usas [systemd](/index.php/Systemd "Systemd") (seguramente), pon en un terminal `systemctl enable acpid` ;
+*   Si usas [systemd](/index.php/Systemd "Systemd") (seguramente), ingresa en un terminal `systemctl enable acpid` ;
 *   Si usas [initscripts](/index.php/Rc.conf "Rc.conf"), edita `/etc/rc.conf` como superusuario y añade `acpid` a la variable DAEMONS.
 
 ## Configuración
 
-[acpid](https://www.archlinux.org/packages/?name=acpid) viene con un número de acciones predefinidas para eventos activos, como lo qué debería occurrir cuando apretas el botón de encendido/apagado en tu ordenador. Por defecto, esas acciones están definidas en `/etc/acpi/handler.sh`, que se ejecuta después de que se detecta un evento ACPI (según determine `/etc/acpi/events/anything`).
+[acpid](https://www.archlinux.org/packages/?name=acpid) viene con un número de acciones predefinidas para eventos activos, como lo qué debería occurrir cuando se presiona el botón de encendido/apagado en el ordenador. Por defecto, esas acciones están definidas en `/etc/acpi/handler.sh`, que se ejecuta después de que se detecta un evento ACPI (según determine `/etc/acpi/events/anything`).
 
-Lo siguiente es un ejemplo de una acción. En este caso, cuando se apreta el botón de Hibernar, acpid ejecuta el comando `echo -n mem >/sys/power/state`, que *debería* poner el ordenador en un estado de hibernación (suspendido):
+Lo siguiente es un ejemplo de una acción. En este caso, cuando se presiona el botón de Hibernar, acpid ejecuta el comando `echo -n mem >/sys/power/state`, que *debería* poner el ordenador en un estado de hibernación (suspendido):
 
 ```
 button/sleep)
@@ -54,14 +54,14 @@ button/sleep)
 
 Desafortunadamente, no todos los ordenadores etiquetan los eventos ACPI de la misma forma. Por ejemplo, el botón Hibernar puede identificarse en un PC como *SLPB* y en otra como *SBTN*.
 
-Para determinar como son reconocidos tus botones o atajos de `teclado`, ejecuta el diguiente comando en un terminal como root:
+Para determinar como son reconocidos tus botones o atajos de `teclado`, ejecuta el siguiente comando en un terminal como root:
 
 ```
 # tail -f /var/log/messages.log
 
 ```
 
-Ahora apreta el botón de Encendido y/o el botón de Hibernar (p. ej. `Ctrl+Alt+Supr`) de tu PC. El resultado debería ser algo asi:
+Ahora presione el botón de Encendido y/o el botón de Hibernar (p. ej. `Ctrl+Alt+Supr`) de la PC. El resultado debería ser algo asi:
 
 ```
 logger: ACPI action undefined: PBTN
@@ -69,14 +69,14 @@ logger: ACPI action undefined: SBTN
 
 ```
 
-Si no funciona, pon:
+Si no funciona, intenta:
 
 ```
 # acpi_listen
 
 ```
 
-Entonces apreta el botón de Encendido/Apagado y verás algo así:
+Entonces presione el botón de Encendido/Apagado y se verá algo así:
 
 ```
 power/button PBTN 00000000 00000b31
@@ -93,9 +93,9 @@ $4 00000b31
 
 ```
 
-Como ya te habrás dado cuando, el botón de Hibernar en la salida de ejemplo es reconocido como *SBTN*, en lugar de la etiqueta *SLPB* especificada en archivo `/etc/acpi/handler.sh` por defecto. Para hacer que el botón de Hibernar funcione correctamente en este PC, necesitaremos reemplazar *SLPB)* con *SBTN)*.
+Como se puede observar, el botón de Hibernar en la salida de ejemplo es reconocido como *SBTN*, en lugar de la etiqueta *SLPB* especificada en archivo `/etc/acpi/handler.sh` por defecto. Para hacer que el botón de Hibernar funcione correctamente en el PC, necesitaremos reemplazar *SLPB)* con *SBTN)*.
 
-Usando esto como base, puedes personalizar fácilmente el archivo `/etc/acpi/handler.sh` para ejecutar una variedad de comandos dependiendo de que evento es ejecutado. Mira la sección [#Trucos y Sugerencias](#Trucos_y_Sugerencias) a continuación para otros comandos usados comúnmente.
+Usando esto como base, se puede personalizar fácilmente el archivo `/etc/acpi/handler.sh` para ejecutar una variedad de comandos dependiendo de que evento es ejecutado. Mira la sección [#Trucos y Sugerencias](#Trucos_y_Sugerencias) a continuación para otros comandos usados comúnmente.
 
 ### Configuración alternativa
 
@@ -142,17 +142,17 @@ Usando este método, es fácil crear los scripts de eventos/acciones individuale
 
 ## Trucos y Sugerencias
 
-**Sugerencia:** Algunas acciones descritas aquí, como el control del Wi-Fi y del brillo, pueden ser controlados directamente por tus drivers. Deberías consultas la documentación de los módulos del kernel correspondientes cuando este sea el caso.
+**Sugerencia:** Algunas acciones descritas aquí, como el control del Wi-Fi y del brillo, pueden ser controlados directamente por los drivers. Deberías consultar la documentación de los módulos del kernel correspondientes cuando este sea el caso.
 
 ### Ampliando acpid con pm-utils
 
-Aunque [acpid](https://www.archlinux.org/packages/?name=acpid) puede proveer una función de suspendido básica, podrías desear un sistema más robusto. [pm-utils](/index.php?title=Pm-utils_(Espa%C3%B1ol)&action=edit&redlink=1 "Pm-utils (Español) (page does not exist)") provee una estructura muy flexible suspender e hibernar, incluyendo soluciones para hardware y drivers tercos (p. ej. módulos fglrx). pm-utils provee dos scripts, `pm-suspend` y `pm-hibernate`, los cuales pueden ser insertados como eventos en acpid. Para más informacón lee el wiki [pm-utils](/index.php/Pm-utils "Pm-utils") wiki.
+Aunque [acpid](https://www.archlinux.org/packages/?name=acpid) puede proveer una función de suspendido básica, se podría desear un sistema más robusto. [pm-utils](/index.php?title=Pm-utils_(Espa%C3%B1ol)&action=edit&redlink=1 "Pm-utils (Español) (page does not exist)") provee una estructura muy flexible suspender e hibernar, incluyendo soluciones para hardware y drivers tercos (p. ej. módulos fglrx). pm-utils provee dos scripts, `pm-suspend` y `pm-hibernate`, los cuales pueden ser insertados como eventos en acpid. Para más información lee el wiki [pm-utils](/index.php/Pm-utils "Pm-utils") wiki.
 
 ### Eventos de Ejemplo
 
-Los siguientes son ejemplos de eventos que pueden ser usados en el script `/etc/acpi/handler.sh`. Estos ejemplos deberían ser modificados para que se ajusten a tu entorno específico, por ejemplo cambiando los nombres de las variables de evento tal y como las interprete `acpi_listen`.
+Los siguientes son ejemplos de eventos que pueden ser usados en el script `/etc/acpi/handler.sh`. Estos ejemplos deberían ser modificados para que se ajusten a el entorno específico, por ejemplo cambiando los nombres de las variables de evento tal y como las interprete `acpi_listen`.
 
-Para bloquear la pantalla con `xscreensaver` cuando cierres la tapa del portátil pon:
+Para bloquear la pantalla con `xscreensaver` cuando se cierra la tapa del portátil intenta:
 
 ```
 button/lid)
@@ -180,7 +180,7 @@ button/lid)
 
 ```
 
-Execute `pm-suspend` when the sleep button is pressed:
+Ejecuta `pm-suspend` cuando se presiona el botón de suspensión.
 
 ```
 button/sleep)
@@ -192,7 +192,7 @@ button/sleep)
 
 ```
 
-Para ajustar el brillo del portátil según este conectado a la corriente o no (deberías ajustar los números, mira `/sys/class/backlight/acpi_video0/max_brightness`):
+Para ajustar el brillo del portátil según este conectado a la corriente o no (se debería ajustar los números, mira `/sys/class/backlight/acpi_video0/max_brightness`):
 
 ```
 ac_adapter)
@@ -211,7 +211,7 @@ ac_adapter)
 
 ### Activar el control del volumen
 
-Descubre la identificación de acpi de los botones del volunes (mira a continuación) y sustituye los eventos acpi en los archivos a continuación. Creamos un script para controlar el volumen (asumiendo que usas una tarjeta de sonido con [ALSA (Español)](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)")):
+Descubre la identificación de acpi de los botones de volumen (mira a continuación) y sustituye los eventos acpi en los archivos a continuación. Creamos un script para controlar el volumen (asumiendo que se usa una tarjeta de sonido con [ALSA (Español)](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)")):
 
  `/etc/acpi/handlers/vol` 
 ```
@@ -251,7 +251,7 @@ action=/usr/bin/amixer set Master toggle
 
 ### Activar el control del brillo
 
-Parecido al control del volumen, acpid también te permite controlar el brillo de tu pantalla. Para conseguir esto escribe algún script, como este:
+Parecido al control del volumen, acpid también permite controlar el brillo de la pantalla. Para conseguir esto escribe un script como el siguiente:
 
  `/etc/acpi/handlers/bl` 
 ```
@@ -283,7 +283,7 @@ action=/etc/acpi/handlers/bl +
 
 ### Habilitar el control del Wi-Fi
 
-También puedes crear un sencillo controlador wireless apretando los botones WLAN. Un ejemplo de evento:
+También se puede crear un sencillo controlador wireless presionando los botones WLAN. Un ejemplo de evento:
 
  `/etc/acpi/events/wlan` 
 ```
@@ -318,7 +318,7 @@ esac
 
 ```
 
-Si quieres incrementar/disminuir el brillo o algo que dependa de X, debes especificarel monitor con X y también el archivo MIT magic cookie (via XAUTHORITY). Lo último es una credencial de seguridad que provee acceso de escritura y lectura al servidor X, monitor, y dispositivos de entrada.
+Si se quiere incrementar/disminuir el brillo o algo que dependa de X, se debe especificar el monitor con X y también el archivo MIT magic cookie (via XAUTHORITY). Lo último es una credencial de seguridad que provee acceso de escritura y lectura al servidor X, monitor, y dispositivos de entrada.
 
 Aquí hay otro script que no usa XAUTHORITY sino sudo:
 
@@ -344,7 +344,7 @@ Si el monitor se apaga solo brevemente y después se enciende, seguramente sea e
 
 ### Sacar el nombre de usuario del monitor actual
 
-Puedes usar la función `getuser` para descubrir el usuario del monitor actual:
+Se puede usar la función `getuser` para descubrir el usuario del monitor actual:
 
 ```
 getuser ()
@@ -357,7 +357,7 @@ getuser ()
 
 ```
 
-Se puede usar esta función, por ejemplo, cuando apretas el botón de Encendido/Apagado, y quieres apagar [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") correctamente:
+Se puede usar esta función, por ejemplo, cuando se presiona el botón de Encendido/Apagado, y se requiere apagar [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") correctamente:
 
 ```
 button/power)
@@ -373,7 +373,7 @@ button/power)
 
 ```
 
-En sistemas más nuevos usando systemd, los accesos a X11 no son necesariamente mostrados en `who`, de manera que la función `getuser` no funciona. Una alternativa es usar `loginctl` para obtener la información requerida (p.ej. usando [xuserrun](https://github.com/rephorm/xuserrun).
+En sistemas más nuevos usando systemd, los accesos a X11 no son necesariamente mostrados en `who`, de manera que la función `getuser` no sirve. Una alternativa es usar `loginctl` para obtener la información requerida (p.ej. usando [xuserrun](https://github.com/rephorm/xuserrun).
 
 ## Ver también
 

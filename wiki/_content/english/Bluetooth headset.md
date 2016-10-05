@@ -755,6 +755,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Plantronics BackBeat Pro** | bluez5, pulseaudio 9.0 | Fully working on both headset and a2dp profiles. Pause button as well as removing the headset from the ears pauses the player. | Yes |
 | **Bose QuietComfort 35** | bluez 5.41, pulseaudio 9.0 | Set `ControllerMode=bredr` to successfully pair. | Yes |
 | **Sennheiser Momentum 2** | bluez5, pulseaudio 9.0-1 | The A2DP profile change may fail if not avoided gdm to start fix is applied | Yes |
+| **Blue Tiger Dual Elite** | bluez-5.42-1, pulseaudio 9.0-1 | Connects with `pulseaudio-bluetooth` package, mic & controls not tested | Yes |
 
 ## See also
 

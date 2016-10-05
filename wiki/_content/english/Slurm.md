@@ -24,7 +24,7 @@ By default the slurm user, which was introduced to your system in the installati
 
 ### Client (compute node) configuration
 
-On the client-side one may now safely start `slurmd.service` (enable the service to make it start at bootup).
+On the client-side one may now safely [start](/index.php/Start "Start") `slurmd.service` (enable the service to make it start at bootup).
 
 To validate that slurmd is up and running, use
 
@@ -35,9 +35,9 @@ systemctl status slurmd
 
 ### Server (head node) configuration
 
-Start/enable the `slurmctld.service`.
+[Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `slurmctld.service`.
 
-To complete an entrerprise like solution you may want to start/enable `slurmdbd.service`, which handles a mysql database for easier management thereby logging somewhat essential process information.
+To complete an entrerprise like solution you may want to [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `slurmdbd.service`, which handles a mysql database for easier management thereby logging somewhat essential process information.
 
 **Note:** Additional arguments may be passed to the program by adapting `/etc/default/slurm-llnl` though still utilizing the power of systemd. This file is handled as the environment file for the various services and simply passes any arguments on to the program.
 

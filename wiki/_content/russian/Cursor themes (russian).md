@@ -273,7 +273,7 @@ $ ln -s /usr/share/icons/$THEME/cursors/fc618c00da110f0034fd0e004e082400 ~/.icon
 Чтобы исправить это, просто добавьте следующее в `~/.xinitrc`, файлы конфигурации xsession или оконного менеджера, которые выполняются при запуске, если это возможно (например, bspwmrc оконного менеджера bspwm):
 
 ```
-$ xsetroot -cursor_name left_ptr&
+$ xsetroot -cursor_name left_ptr
 
 ```
 

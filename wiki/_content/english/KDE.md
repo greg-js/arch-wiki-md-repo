@@ -138,7 +138,7 @@ Alternatively, to start Plasma with *startx*, append `exec startkde` to your `.x
 
 ### Wayland
 
-As of Plasma 5.6, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable but still buggy.[[3]](https://blog.martin-graesslin.com/blog/2016/03/february-kwinwayland-update-all-about-input/) Multi-monitor support is broken.
+As of Plasma 5.8, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, although there are a [few known problems](https://community.kde.org/Plasma/5.8_Errata#Wayland).
 
 *   To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
 *   To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
@@ -205,14 +205,14 @@ Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/pa
 
 ##### Disable panel shadow
 
-As the plasma panel is on top of other windows, its shadow is drawn over them. [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+As the plasma panel is on top of other windows, its shadow is drawn over them. [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-then select the panel with the plus-sized cursor. [[5]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
+then select the panel with the plus-sized cursor. [[4]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
 
  `/usr/local/bin/kde-no-shadow` 
 ```
@@ -541,7 +541,7 @@ In the past other backends were developed as well but are no longer maintained a
 
 **Note:**
 
-*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[7]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
+*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[6]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
 *   A possible fix is to run
 
 /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
@@ -702,7 +702,7 @@ Now go back to the System Settings page and carefully add the necessary resource
 
 ### Fix empty IMAP inbox
 
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[8]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
+For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[7]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
 
 ### Getting current state of KWin for support and debug purposes
 

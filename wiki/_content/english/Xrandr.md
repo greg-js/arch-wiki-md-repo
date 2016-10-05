@@ -8,8 +8,7 @@
     *   [3.1 Scripts](#Scripts)
         *   [3.1.1 Toggle external monitor](#Toggle_external_monitor)
         *   [3.1.2 Example 3](#Example_3)
-        *   [3.1.3 Example 3a](#Example_3a)
-        *   [3.1.4 Avoid X crash with xrasengan](#Avoid_X_crash_with_xrasengan)
+        *   [3.1.3 Avoid X crash with xrasengan](#Avoid_X_crash_with_xrasengan)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Adding undetected resolutions](#Adding_undetected_resolutions)
         *   [4.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
@@ -160,61 +159,6 @@ else
 fi
 echo -e "
 $(xrandr)"
-
-```
-
-#### Example 3a
-
-This script iterates over all xrandr outputs. If anything is connected it tries to figure out the best possible resolution places that right-of the previous display.
-
-The following uses it with [srandrd](https://aur.archlinux.org/packages/srandrd/) and [i3-wm](https://www.archlinux.org/packages/?name=i3-wm):
-
- `~/.xprofile` 
-```
-srandrd ~/.i3/detect_displays.sh
-
-```
-
-```
-#!/bin/bash
-
-XRANDR="xrandr"
-CMD="${XRANDR}"
-declare -A VOUTS
-eval VOUTS=$(${XRANDR}|awk 'BEGIN {printf("(")} /^\S.*connected/{printf("[%s]=%s ", $1, $2)} END{printf(")")}')
-declare -A POS
-#XPOS=0
-#YPOS=0
-#POS="${XPOS}x${YPOS}"
-
-POS=([X]=0 [Y]=0)
-
-find_mode() {
-  echo $(${XRANDR} |grep ${1} -A1|awk '{FS="[ x]"} /^\s/{printf("WIDTH=%s
-HEIGHT=%s", $4,$5)}')
-}
-
-xrandr_params_for() {
-  if [ "${2}" == 'connected' ]
-  then
-    eval $(find_mode ${1})  #sets ${WIDTH} and ${HEIGHT}
-    MODE="${WIDTH}x${HEIGHT}"
-    CMD="${CMD} --output ${1} --mode ${MODE} --pos ${POS[X]}x${POS[Y]}"
-    POS[X]=$((${POS[X]}+${WIDTH}))
-    return 0
-  else
-    CMD="${CMD} --output ${1} --off"
-    return 1
-  fi
-}
-
-for VOUT in ${!VOUTS[*]}
-do
-  xrandr_params_for ${VOUT} ${VOUTS[${VOUT}]}
-done
-set -x
-${CMD}
-set +x
 
 ```
 

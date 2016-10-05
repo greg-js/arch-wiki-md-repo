@@ -17,21 +17,21 @@
     *   [4.1 创建自定义应用程序](#.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
     *   [4.2 默认的桌面背景壁纸路径](#.E9.BB.98.E8.AE.A4.E7.9A.84.E6.A1.8C.E9.9D.A2.E8.83.8C.E6.99.AF.E5.A3.81.E7.BA.B8.E8.B7.AF.E5.BE.84)
     *   [4.3 添加“计算机”“主目录”“回收站”等常用图标与新的启动器](#.E6.B7.BB.E5.8A.A0.E2.80.9C.E8.AE.A1.E7.AE.97.E6.9C.BA.E2.80.9D.E2.80.9C.E4.B8.BB.E7.9B.AE.E5.BD.95.E2.80.9D.E2.80.9C.E5.9B.9E.E6.94.B6.E7.AB.99.E2.80.9D.E7.AD.89.E5.B8.B8.E7.94.A8.E5.9B.BE.E6.A0.87.E4.B8.8E.E6.96.B0.E7.9A.84.E5.90.AF.E5.8A.A8.E5.99.A8)
-    *   [4.4 Menu editor](#Menu_editor)
+    *   [4.4 菜单编辑器](#.E8.8F.9C.E5.8D.95.E7.BC.96.E8.BE.91.E5.99.A8)
     *   [4.5 工作区](#.E5.B7.A5.E4.BD.9C.E5.8C.BA)
     *   [4.6 隐藏桌面图标](#.E9.9A.90.E8.97.8F.E6.A1.8C.E9.9D.A2.E5.9B.BE.E6.A0.87)
     *   [4.7 图标和主题](#.E5.9B.BE.E6.A0.87.E5.92.8C.E4.B8.BB.E9.A2.98)
-    *   [4.8 音效](#.E9.9F.B3.E6.95.88)
+    *   [4.8 声音效果](#.E5.A3.B0.E9.9F.B3.E6.95.88.E6.9E.9C)
     *   [4.9 调整窗口的大小](#.E8.B0.83.E6.95.B4.E7.AA.97.E5.8F.A3.E7.9A.84.E5.A4.A7.E5.B0.8F)
     *   [4.10 截图](#.E6.88.AA.E5.9B.BE)
 *   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [5.1 cinnamon设置无法找到一个特定的模块](#cinnamon.E8.AE.BE.E7.BD.AE.E6.97.A0.E6.B3.95.E6.89.BE.E5.88.B0.E4.B8.80.E4.B8.AA.E7.89.B9.E5.AE.9A.E7.9A.84.E6.A8.A1.E5.9D.97)
     *   [5.2 Video tearing](#Video_tearing)
-    *   [5.3 Disable the NetworkManager applet](#Disable_the_NetworkManager_applet)
+    *   [5.3 禁用*网络管理*小程序](#.E7.A6.81.E7.94.A8.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86.E5.B0.8F.E7.A8.8B.E5.BA.8F)
 
 ## 安装
 
-Cinnamon通 过包 [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装").
+Cinnamon 通过包 [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) 进行 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装").
 
 ## 启动 Cinnamon
 
@@ -57,7 +57,7 @@ Cinnamon很容易配置，大部分的配置都是在图形化界面下完成。
 
 ### Cinnamon系统设置
 
-启动*cinnamon系统设置* 、
+启动*cinnamon系统设置*：
 
 ```
 $ cinnamon-settings
@@ -113,7 +113,7 @@ $ cinnamon-settings extensions
 
 ### 按下电源按钮睡眠
 
-这是电源按钮默认的操作。更改设置，打开`cinnamon-settings`设置面板，点击“电源管理”选项。更改“当按下电源按钮”选项，选择你希望的操作。
+这是电源按钮默认的操作。如需更改，打开`cinnamon-settings`**系统设置**，点击**电源管理**。更改**按下电源按钮时**选项，选择你所希望使用的操作。
 
 ### 管理 Cinnamon 使用的语言
 
@@ -137,9 +137,9 @@ $ cinnamon-settings extensions
 
 你可以在“设置”=>“桌面”添加部分常有图标，如“计算机”“主目录”“回收站”等。如要添加其它的启动器，右击桌面并选择“在此创建一个新的启动器”即可。
 
-### Menu editor
+### 菜单编辑器
 
-The Menu applet supports launching custom commands. Right click on the applet, click on *Configure...* and then *Open the menu editor*. Select a sub-menu (or create a new one) and select *New Item*. Set *Name*, *Command* and *Comment*. Check the launch in terminal checkbox if needed. Leave unchecked for graphical applications. Click *OK* and close the menu editor afterwards. The launcher is added to the menu.
+菜单小程序支持自定义命令。右键单击"菜单"小程序，然后点击"配置..."，然后点击“打开菜单编辑器”。选择一个子菜单（或者创建一个新的子菜单），然后选择“新建项目”。填好名称、命令和备注。如果需要在终端运行，选中“在终端运行”复选框，图形化应用程序不选中“在终端运行”复选框。然后点击”确定“并关闭菜单编辑器。启动器就添加到了菜单。
 
 ### 工作区
 
@@ -156,17 +156,22 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### 图标和主题
 
-Linux Mint风格的主题和图标可以在AUR安装： [mint-x-theme](https://aur.archlinux.org/packages/mint-x-theme/) and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/). 可以在 `Settings → Themes → Other settings`编辑主题.
+Linux Mint风格的主题和图标可以在AUR安装： [mint-x-theme](https://aur.archlinux.org/packages/mint-x-theme/)和[mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/). 可以在 `Settings → Themes → Other settings`编辑主题.
 
 Linux Mint Cinnamon 官方主题可以通过 [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/) 软件包进行安装.
 
-### 音效
+### 声音效果
 
-Cinnamon does not come with sounds used for events like the startup of the desktop that are also used in Linux Mint by default. These sound effects can be installed with the [cinnamon-sound-effects](https://aur.archlinux.org/packages/cinnamon-sound-effects/) and [mint-sounds](https://aur.archlinux.org/packages/mint-sounds/) packages. The sound events can be edited in `Settings → Sound → Sound Effects`.
+Cinnamon没有附带那些Linux Mint默认使用的像桌面启动之类声音事件。这些声音效果可与安装[cinnamon-sound-effects](https://aur.archlinux.org/packages/cinnamon-sound-effects/)和[mint-sounds](https://aur.archlinux.org/packages/mint-sounds/)。声音事件可以在`Settings → Sound → Sound Effects`编辑。
 
 ### 调整窗口的大小
 
-用Alt+右键调整窗口的大小，使用gsettings：gsettings set org.cinnamon.desktop.wm.preferences resize-with-right-button true
+用Alt+右键调整窗口的大小，使用gsettings：
+
+```
+$ gsettings set org.cinnamon.desktop.wm.preferences resize-with-right-button true
+
+```
 
 ### 截图
 
@@ -187,11 +192,11 @@ If *cinnamon-settings* does not start with the message that it cannot find a cer
 
 Because [muffin](https://www.archlinux.org/packages/?name=muffin) is based upon [mutter](https://www.archlinux.org/packages/?name=mutter), video tearing fixes for [GNOME](/index.php/GNOME "GNOME") should also work in Cinnamon. See [GNOME/Troubleshooting#Tear-free video with Intel HD Graphics](/index.php/GNOME/Troubleshooting#Tear-free_video_with_Intel_HD_Graphics "GNOME/Troubleshooting") for more information.
 
-### Disable the NetworkManager applet
+### 禁用*网络管理*小程序
 
-Even if you do not use [NetworkManager](/index.php/NetworkManager "NetworkManager") and remove the *Network Manager* applet from the default panel, Cinnamon will still load *nm-applet* and display it in the system tray. You cannot uninstall the package, because it is required by [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) and [cinnamon-control-center](https://www.archlinux.org/packages/?name=cinnamon-control-center), but you can still easily disable it. To do so copy the autostart file from `/etc/xdg/autostart/nm-applet.desktop` to `~/.config/autostart/nm-applet.desktop`. Open it with your favorite text editor and add at the end `X-GNOME-Autostart-enabled=false`.
+即使你不使用[NetworkManager](/index.php/NetworkManager "NetworkManager")或者从默认面板删除*网络管理*小程序，Cinnamon依然会载入*nm-applet* 并显示在系统托盘上。你**不能**卸载[NetworkManager](/index.php/NetworkManager "NetworkManager")，因为[NetworkManager](/index.php/NetworkManager "NetworkManager")被[cinnamon](https://www.archlinux.org/packages/?name=cinnamon)和[cinnamon-control-center](https://www.archlinux.org/packages/?name=cinnamon-control-center)需要，但是你可以很容易将其禁用。首先，你应该把自启动文件从`/etc/xdg/autostart/nm-applet.desktop`复制到`~/.config/autostart/nm-applet.desktop`。然后用你喜欢的文本编辑器打开，并在最后加上`X-GNOME-Autostart-enabled=false`。
 
-Alternatively you can disable it is by creating the following symlink:
+另外，你也可以通过创建以下符号链接来禁用：
 
 ```
 $ ln -s /bin/true /usr/local/bin/nm-applet

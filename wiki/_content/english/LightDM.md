@@ -355,6 +355,8 @@ depth=24
 
 Now open an ssh tunnel and connect to localhost as described in [TigerVNC#On_the_client](/index.php/TigerVNC#On_the_client "TigerVNC").
 
+**Note:** If you get a blank screen upon opening the VNC connection, try a different lightdm greeter.
+
 ## Troubleshooting
 
 If you encounter consistent screen flashing and ultimately no LightDM on boot, ensure that you have defined the greeter correctly in LightDM's config file. And if you have correctly defined the GTK greeter, make sure the `xsessions-directory` (default: `/usr/share/xsessions`) exists and contains at least one .desktop file.

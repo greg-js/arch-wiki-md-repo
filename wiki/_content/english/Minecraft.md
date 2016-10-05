@@ -9,6 +9,10 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
 *   [2 Server](#Server)
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Setup](#Setup)
+        *   [2.2.1 Introduction](#Introduction)
+        *   [2.2.2 Starting the server](#Starting_the_server)
+        *   [2.2.3 Server management script](#Server_management_script)
+        *   [2.2.4 Tweaking](#Tweaking)
     *   [2.3 Spigot (respectively Craftbukkit)](#Spigot_.28respectively_Craftbukkit.29)
     *   [2.4 Cuberite](#Cuberite)
     *   [2.5 Additional notes](#Additional_notes)
@@ -23,7 +27,7 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
 
 **Note:** Minecraft requires [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
 
-[minecraft](https://aur.archlinux.org/packages/minecraft/) includes the official game launcher and a script to launch it. Otherwise, just get the launcher on the [official download site](https://minecraft.net/download).
+[minecraft](https://aur.archlinux.org/packages/minecraft/) includes the official game launcher, a script to launch it and a proper `.desktop` file. Alternatively the plain minecraft launcher can be found at their [download page](https://minecraft.net/download).
 
 ### Running
 
@@ -61,7 +65,13 @@ The simplest way to install the Minecraft server on an Arch Linux system is by u
 
 ### Setup
 
-In the installation process the `minecraft` user and group is introduced. Establishing a Minecraft-specific user is recommended for security reasons. By running Minecraft under an unprivileged user account, anyone who successfully exploits your Minecraft server will only get access to that user account, and not yours. However you may safely add your user to the `minecraft` group and add group write permission to the directory `/srv/minecraft` to modify Minecraft server settings. Make sure that all files in the `/srv/minecraft` directory are either owned by the `minecraft` user, or that the user has by other means r/w permissions. The server will error out if it is unable to access certain files and might even have insufficient rights to write an according error message to the log.
+#### Introduction
+
+In the installation process the `minecraft` user and group is introduced. Establishing a Minecraft-specific user is recommended for security reasons. By running Minecraft under an unprivileged user account, anyone who successfully exploits your Minecraft server will only get access to that user account, and not yours. However you may safely add your user to the `minecraft` group and add group write permission to the directory `/srv/minecraft` (default) to modify Minecraft server settings. Make sure that all files in the `/srv/minecraft` directory are either owned by the `minecraft` user, or that the user has by other means r/w permissions. The server will error out if it is unable to access certain files and might even have insufficient rights to write an according error message to the log.
+
+The package provides a systemd service and timer to take automatic backups. The backups are located in the `backup` folder under the server root directory by default. The related systemd files reside under `/usr/lib/systemd/system/minecraftd-backup.timer` and `/usr/lib/systemd/system/minecraftd-backup.service`. They may easily be adapted to your liking, e.g. a custom backup interval.
+
+#### Starting the server
 
 To start the server you may either use systemd or run it directly from the command line. Either way the server is encapsulated in a [screen](/index.php/Screen "Screen") session which is owned by the `minecraft` user. Using systemd you may [start](/index.php/Start "Start") and enable the included `minecraftd.service`. Alternatively run
 
@@ -72,29 +82,37 @@ To start the server you may either use systemd or run it directly from the comma
 
 **Note:** The first time you run the server, `/srv/minecraft/eula.txt` will be created. You will need to edit this file to state that you have agreed to the EULA to run the server.
 
-To easily control the server you may use the provided `minecraftd` script. It is capable of doing the basic commands like `start`, `stop`, `restart` or attaching to the session with `console`. Moreover it may be used to display status information with `status`, backup the server world directory with `backup`, restore world data from backups `restore` or run single commands in the server console with `command <server command>`.
+#### Server management script
+
+To easily control the server you may use the provided `minecraftd` script. It is capable of doing the basic commands like `start`, `stop`, `restart` or attaching to the session with `console`. Moreover it may be used to display status information with `status`, backup the server world directory with `backup`, restore world data from backups with `restore` or run single commands in the server console with `command <server command>`.
 
 **Note:** Regarding the server `console`, remember that you can exit any screen session with `ctrl+a` `d`.
 
+#### Tweaking
+
 To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edit the file `/etc/conf.d/minecraft`.
 
-The server provides a service and timer for systemd to take automatic backups. The backups are located in the `backup` folder under the server root directory. The related systemd files reside under `/usr/lib/systemd/system/minecraftd-backup.timer` and `/usr/lib/systemd/system/minecraftd-backup.service`. They may easily be adapted to your liking, e.g. a custom backup interval.
+More advanced users may wish enable `IDLE_SERVER` by setting it to true in `/etc/conf.d/minecraft`. This will enable the management script to suspend the server if no player was online for at least `IDLE_IF_TIME` (defaults to 20 minutes). When the server is suspended an `idle_server` will listen on the minecraft port using `netcat` and will immediately start the server at the first incoming connection. Though this obviously delays joining for the first time, it significantly decreases the CPU and memory usage, leading to more reasonably resource/power consumption.
 
 ### Spigot (respectively Craftbukkit)
 
 Spigot is the most widely-used **modded** Minecraft server in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/) package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/spigot`.
 
+Be sure read [#Setup](#Setup) and replace `minecraftd` with `spigot` wherever you encounter it.
+
 It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in popularity since Bukkit's demise.
 
 ### Cuberite
 
-[Cuberite](http://cuberite.org/) is a highly efficient minecraft compatible server written in C++ and Lua. It achieves better performances than the vanilla minecraft server plus it is extensively moddable. The [cuberite](https://aur.archlinux.org/packages/cuberite/) package is available in the [AUR](/index.php/AUR "AUR"). The program provides a simple web interface by default at `port 8080` with which most server operations can easily be done through the browser. Therefore there is no need for a management script. Additionally two systemd files for starting (`cuberite.service`) and backing up (`cuberite-backup.service`) the server are provided by the package.
+[Cuberite](http://cuberite.org/) is a highly efficient minecraft compatible server written in C++ and Lua. It achieves better performances than the vanilla minecraft server plus it is extensively moddable. The [cuberite](https://aur.archlinux.org/packages/cuberite/) package is available in the [AUR](/index.php/AUR "AUR"). The program provides a simple web interface by default at `port 8080` with which most server operations can easily be done through the browser. The cuberite PKGBUILD as well builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the cuberite server provides its own systemd unit files, cuberite script and the corresponding script configuration file. The binary is called `cuberite` and is capable of fulfilling the same commands as `minecraftd` and the configuration file resides under `/etc/conf.d/cuberite`.
+
+Be sure read [#Setup](#Setup) and replace `minecraftd` with `cuberite` wherever you encounter it.
 
 ### Additional notes
 
-*   You may wish to modify your server, to provide additional features, e.g. [Server Wrappers](http://www.minecraftwiki.net/wiki/Programs_and_editors#Server_Wrappers)
-*   You might even set up a cron job with a [mapper](http://www.minecraftwiki.net/wiki/Programs_and_editors#Mappers) to generate periodic maps of your world.
-*   ...or you could use [rsync](/index.php/Rsync "Rsync") to perform routine backups.
+*   There are several server wrappers available providing everything from automatic backup to managing dozens of servers in parallel, refer to [Server Wrappers](http://www.minecraftwiki.net/wiki/Programs_and_editors#Server_Wrappers) for more information. However the management script provided by the AUR packages should suffice most needs.
+*   You might want to set up a [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") with e.g. [mapper](http://www.minecraftwiki.net/wiki/Programs_and_editors#Mappers) to generate periodic maps of your world.
+*   Remember to take periodic backups, e.g. using [rsync](/index.php/Rsync "Rsync") or the provided management script.
 
 ## Minecraft Mod Launchers
 

@@ -469,30 +469,31 @@ Although I have not tested this, you could also set this parameter live without 
 
 ### Blank screen when waking from suspend
 
-Some laptops (e.g. Dell Inspiron Mini 1018) will just show a black screen with no backlight after resuming from suspend. If this happens to you, try going into the BIOS of the laptop and disabling Intel SpeedStep if it is present.
+Some laptops will just show a black screen with no backlight after resuming from suspend. There are several workaround that may solve this issue:
 
-You could also try, without disabling SpeedStep, creating a quirk in `/etc/pm/sleep.d/` with this content (requires [vbetool](https://www.archlinux.org/packages/?name=vbetool)):
+*   In computers with multiplexed PS/2 controller that supports a Y adapter for using both keyboard and mouse (some laptops use this system internally) try to add `i8042.nomux=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (you may also need `i8042.reset=1`). Alternatively, you may be able to disable the PS/2 Y adapter in your BIOS settings.
 
-```
-#!/bin/sh
-#
-case "$1" in
-    suspend)
-    ;;
-    resume)
-        sleep 5
-        vbetool dpms off
-        vbetool dpms on
-    ;;
-    *) exit $NA
-    ;;
-esac
+*   Disabling the [Intel SpeedStep](https://en.wikipedia.org/wiki/SpeedStep "wikipedia:SpeedStep") feature in the BIOS settings may help (e.g. Dell Inspiron Mini 1018). You could also try, without disabling SpeedStep, creating a quirk in `/etc/pm/sleep.d/` with this content (requires [vbetool](https://www.archlinux.org/packages/?name=vbetool)):
+    ```
+    #!/bin/sh
+    #
+    case "$1" in
+        suspend)
+        ;;
+        resume)
+            sleep 5
+            vbetool dpms off
+            vbetool dpms on
+        ;;
+        *) exit $NA
+        ;;
+    esac
 
-```
+    ```
+    save it as you want but with a `00` in front of the name so this is called last when resuming; remember to `chmod +x` the script.
+    Try adjusting the `sleep` time if the other commands are called too soon, or if it works well, you can also try removing that line.
 
-save it as you want but with a `00` in front of the name so this is called last when resuming; remember to `chmod +x` the script. Try adjusting the `sleep` time if the other commands are called too soon, or if it works well, you can also try removing that line.
-
-Some other laptops (e.g. Toshiba Portégé R830) will just show a black screen with no backlight after resuming from suspend, with fans blowing at top speed. If this is what you're seeing, try going into the BIOS and disable the VT-d virtualization setting by switching to "VT-x only".
+*   Disable the VT-d virtualization setting in your BIOS by switching to "VT-x only" (e.g. Toshiba Portégé R830).
 
 ### VirtualBox problems
 

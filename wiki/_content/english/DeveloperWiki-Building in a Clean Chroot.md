@@ -85,7 +85,7 @@ Edit `~/.makepkg.conf` to set the packager name and any makeflags. Also adjust t
 Alternatively, provide a custom `pacman.conf` and `makepkg.conf` with the following:
 
 ```
-# mkarchroot -C <pacman.conf> -M <makepkg.conf> $CHROOT/root base base-devel
+# mkarchroot -C <pacman.conf> -M <makepkg.conf> $CHROOT/root base-devel
 
 ```
 
