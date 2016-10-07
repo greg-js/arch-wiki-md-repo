@@ -151,20 +151,21 @@ This article is a general list of applications sorted by category, as a referenc
     *   [3.9 Disk cleaning](#Disk_cleaning)
     *   [3.10 Disk usage display](#Disk_usage_display)
     *   [3.11 Clock synchronization](#Clock_synchronization)
-    *   [3.12 System monitoring](#System_monitoring)
-    *   [3.13 System information viewers](#System_information_viewers)
-        *   [3.13.1 Console](#Console_12)
-        *   [3.13.2 Graphical](#Graphical_11)
-        *   [3.13.3 Others](#Others_2)
-    *   [3.14 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [3.15 Power management](#Power_management)
-    *   [3.16 Clipboard managers](#Clipboard_managers)
-    *   [3.17 Wallpaper setters](#Wallpaper_setters)
-    *   [3.18 Package management](#Package_management)
-    *   [3.19 Input method editor](#Input_method_editor)
-    *   [3.20 Trash management](#Trash_management)
-    *   [3.21 File synchronization](#File_synchronization)
-    *   [3.22 Finders](#Finders)
+    *   [3.12 System maintenance](#System_maintenance)
+    *   [3.13 System monitoring](#System_monitoring)
+    *   [3.14 System information viewers](#System_information_viewers)
+        *   [3.14.1 Console](#Console_12)
+        *   [3.14.2 Graphical](#Graphical_11)
+        *   [3.14.3 Others](#Others_2)
+    *   [3.15 Keyboard layout switchers](#Keyboard_layout_switchers)
+    *   [3.16 Power management](#Power_management)
+    *   [3.17 Clipboard managers](#Clipboard_managers)
+    *   [3.18 Wallpaper setters](#Wallpaper_setters)
+    *   [3.19 Package management](#Package_management)
+    *   [3.20 Input method editor](#Input_method_editor)
+    *   [3.21 Trash management](#Trash_management)
+    *   [3.22 File synchronization](#File_synchronization)
+    *   [3.23 Finders](#Finders)
 *   [4 Documents and texts](#Documents_and_texts)
     *   [4.1 Office suites](#Office_suites)
     *   [4.2 Word processors](#Word_processors)
@@ -833,6 +834,10 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 	[http://trojita.flaska.net/](http://trojita.flaska.net/) || [trojita](https://www.archlinux.org/packages/?name=trojita)
 
+*   **WMail** — The missing desktop client for Gmail & Google Inbox
+
+	[http://thomas101.github.io/wmail/](http://thomas101.github.io/wmail/) || [wmail-bin](https://aur.archlinux.org/packages/wmail-bin/)
+
 #### Instant messaging
 
 See also [Wikipedia:Comparison of instant messaging protocols](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_protocols "wikipedia:Comparison of instant messaging protocols").
@@ -1033,10 +1038,6 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 ###### Graphical
 
-*   **[Emesene](https://en.wikipedia.org/wiki/Emesene "wikipedia:Emesene")** — PyGTK instant messenger for the Windows Live Messenger network, also compatible with Jabber, Facebook and Google Talk.
-
-	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
-
 *   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) framework.
 
 	[https://wiki.gnome.org/Apps/Empathy](https://wiki.gnome.org/Apps/Empathy) || [empathy](https://www.archlinux.org/packages/?name=empathy)
@@ -1115,10 +1116,6 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 	[http://www.minisip.org/](http://www.minisip.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=minisip)</small>
 
-*   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Softphone which allows you to make free PC to PC video and voice calls, and to integrate all your IM contacts in one place (formerly Wengo Phone).
-
-	[http://trac.qutecom.org/](http://trac.qutecom.org/) || [qutecom-hg](https://aur.archlinux.org/packages/qutecom-hg/)
-
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 
 	[http://www.twinklephone.com/](http://www.twinklephone.com/) || [twinkle](https://aur.archlinux.org/packages/twinkle/)
@@ -1176,10 +1173,6 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 *   **SIPp** — Open source test tool and traffic generator for the SIP protocol.
 
 	[http://sipp.sourceforge.net/](http://sipp.sourceforge.net/) || [sipp](https://aur.archlinux.org/packages/sipp/)
-
-*   **Sipsak** — Small command-line tool for developers and administrators of SIP applications.
-
-	[http://sipsak.org/](http://sipsak.org/) || [sipsak](https://aur.archlinux.org/packages/sipsak/)
 
 #### Speech recognition
 
@@ -1253,7 +1246,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Urssus** — Cross platform GUI news aggregator.
 
-	[https://code.google.com/p/urssus/](https://code.google.com/p/urssus/) || [urssus](https://aur.archlinux.org/packages/urssus/)
+	[https://code.google.com/archive/p/urssus/](https://code.google.com/archive/p/urssus/) || [urssus](https://aur.archlinux.org/packages/urssus/)
 
 *   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
 
@@ -1475,7 +1468,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 *   **Gist** — Command-line interface for the [gist.github.com](https://gist.github.com/) pastebin service.
 
-	[http://github.com/defunkt/gist](http://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
+	[https://github.com/defunkt/gist](https://github.com/defunkt/gist) || [gist](https://www.archlinux.org/packages/?name=gist)
 
 *   **Haste** — Universal pastebin tool, written in Haskell. Servers: [hpaste.org](http://hpaste.org/), [paste2.org](http://paste2.org/), [pastebin.com](http://pastebin.com/) and others.
 
@@ -1617,7 +1610,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **GalaPix** — OpenGL-based image viewer for simultaneously viewing and zooming large collections of image files,
 
-	[http://code.google.com/p/galapix/](http://code.google.com/p/galapix/) || [galapix](https://aur.archlinux.org/packages/galapix/)
+	[https://github.com/Galapix/galapix](https://github.com/Galapix/galapix) || [galapix](https://aur.archlinux.org/packages/galapix/)
 
 *   **[Geeqie](https://en.wikipedia.org/wiki/Geeqie "wikipedia:Geeqie")** — Image browser and viewer (fork of GQview) that adds additional functionality such as support for RAW files.
 
@@ -1931,7 +1924,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **MPFC** — Gstreamer-based audio player with curses interface.
 
-	[http://code.google.com/p/mpfc/](http://code.google.com/p/mpfc/) || [mpfc](https://aur.archlinux.org/packages/mpfc/)
+	[https://code.google.com/archive/p/mpfc/](https://code.google.com/archive/p/mpfc/) || [mpfc](https://aur.archlinux.org/packages/mpfc/)
 
 *   **[mpg123](https://en.wikipedia.org/wiki/Mpg123 "wikipedia:Mpg123")** — Fast free MP3 console audio player for Linux, FreeBSD, Solaris, HP-UX and nearly all other UNIX systems (also decodes MP1 and MP2 files).
 
@@ -1967,10 +1960,6 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
 
-*   **[aTunes](https://en.wikipedia.org/wiki/aTunes "wikipedia:aTunes")** — Audio player written in Java.
-
-	[http://www.atunes.org/](http://www.atunes.org/) || [atunes](https://aur.archlinux.org/packages/atunes/)
-
 *   **[Audacious](/index.php/Audacious "Audacious")** — [Winamp](https://en.wikipedia.org/wiki/Winamp "wikipedia:Winamp") clone like Beep and old XMMS versions.
 
 	[http://audacious-media-player.org/](http://audacious-media-player.org/) || [audacious](https://www.archlinux.org/packages/?name=audacious)
@@ -1985,7 +1974,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Cuberok** — Music player and collection manager with a lightweight interface.
 
-	[http://code.google.com/p/cuberok/](http://code.google.com/p/cuberok/) || [cuberok](https://aur.archlinux.org/packages/cuberok/)
+	[https://code.google.com/archive/p/cuberok/](https://code.google.com/archive/p/cuberok/) || [cuberok](https://aur.archlinux.org/packages/cuberok/)
 
 *   **DeaDBeeF** — Light and fast music player with many features, no GNOME or KDE dependencies, supports console-only, as well as a GTK+ GUI, comes with many plugins, and has a metadata editor.
 
@@ -2061,7 +2050,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[Quod Libet](https://en.wikipedia.org/wiki/Quod_Libet_(software) "wikipedia:Quod Libet (software)")** — Audio player written with PyGTK and GStreamer with support for regular expressions in playlists.
 
-	[http://code.google.com/p/quodlibet/](http://code.google.com/p/quodlibet/) || [quodlibet](https://www.archlinux.org/packages/?name=quodlibet)
+	[https://github.com/quodlibet/quodlibet/](https://github.com/quodlibet/quodlibet/) || [quodlibet](https://www.archlinux.org/packages/?name=quodlibet)
 
 *   **[Rhythmbox](https://en.wikipedia.org/wiki/Rhythmbox "wikipedia:Rhythmbox")** — GTK+ clone of iTunes, used by default in GNOME.
 
@@ -2095,7 +2084,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **GVTray** — A master volume mixer for the system tray.
 
-	[http://code.google.com/p/gtk-tray-utils/](http://code.google.com/p/gtk-tray-utils/) || [gvtray](https://aur.archlinux.org/packages/gvtray/)
+	[https://code.google.com/archive/p/gtk-tray-utils/](https://code.google.com/archive/p/gtk-tray-utils/) || [gvtray](https://aur.archlinux.org/packages/gvtray/)
 
 *   **pa-applet** — PulseAudio system tray applet with volume bar.
 
@@ -2115,7 +2104,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **Volti** — A GTK application for controlling audio volume from system tray with an internal mixer and support for multimedia keys that uses only ALSA.
 
-	[http://code.google.com/p/volti/](http://code.google.com/p/volti/) || [volti](https://aur.archlinux.org/packages/volti/)
+	[https://github.com/gen2brain/volti](https://github.com/gen2brain/volti) || [volti](https://aur.archlinux.org/packages/volti/)
 
 *   **VolumeIcon** — Another volume control for your system tray with channel selection, themes and an external mixer.
 
@@ -2155,7 +2144,7 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 *   **[Ex Falso](https://en.wikipedia.org/wiki/Ex_Falso_(software) "wikipedia:Ex Falso (software)")** — Cross-platform free and open source audio tag editor and library organizer.
 
-	[http://code.google.com/p/quodlibet/](http://code.google.com/p/quodlibet/) || [exfalso](https://aur.archlinux.org/packages/exfalso/)
+	[https://github.com/quodlibet/quodlibet/](https://github.com/quodlibet/quodlibet/) || [exfalso](https://aur.archlinux.org/packages/exfalso/)
 
 *   **ID3 Mass Tagger** — Command-line utility to edit ID3 1.x and 2.x tags.
 
@@ -2179,11 +2168,11 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 *   **taffy** — Simple command-line tag editor for many audio formats.
 
-	[http://github.com/jangler/taffy](http://github.com/jangler/taffy) || [taffy](https://aur.archlinux.org/packages/taffy/)
+	[https://github.com/jangler/taffy](https://github.com/jangler/taffy) || [taffy](https://aur.archlinux.org/packages/taffy/)
 
 *   **Tag Editor** — A tag editor with Qt 5 GUI and command-line interface supporting MP4/AAC (iTunes), ID3v1, ID3v2, Ogg/Vorbis and Matroska.
 
-	[http://github.com/Martchus/tageditor](http://github.com/Martchus/tageditor) || [tageditor](https://aur.archlinux.org/packages/tageditor/)
+	[https://github.com/Martchus/tageditor](https://github.com/Martchus/tageditor) || [tageditor](https://aur.archlinux.org/packages/tageditor/)
 
 *   **Qoobar** — Universal QT-based audio tagger (specialized for classical music)
 
@@ -2833,7 +2822,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **Terra** — is a GTK+3.0 based terminal emulator with useful user interface, it also supports multiple terminals with splitting screen horizontally or vertically -- (similar to guake).
 
-	[https://github.com/ozcanesen/terra-terminal](https://github.com/ozcanesen/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
+	[https://github.com/ozcan/terra-terminal](https://github.com/ozcan/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
 
 *   **[LilyTerm](/index.php/LilyTerm "LilyTerm")** — Very light and easy to use X Terminal Emulator
 
@@ -2861,7 +2850,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **Stjerm** — GTK+-based drop-down terminal emulator that provides a minimalistic interface combined with a small file size, lightweight memory usage and easy integration with composite window managers such as Compiz.
 
-	[https://code.google.com/p/stjerm-terminal-emulator/](https://code.google.com/p/stjerm-terminal-emulator/) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
+	[https://code.google.com/archive/p/stjerm-terminal-emulator/](https://code.google.com/archive/p/stjerm-terminal-emulator/) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
 
 *   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
 
@@ -2873,7 +2862,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **Termit** — Simple terminal emulator based on the vte library that includes tabs, bookmarks, and the ability to switch encodings.
 
-	[https://wiki.github.com/nonstop/termit/](https://wiki.github.com/nonstop/termit/) || [termit](https://aur.archlinux.org/packages/termit/)
+	[https://github.com/nonstop/termit/wiki](https://github.com/nonstop/termit/wiki) || [termit](https://aur.archlinux.org/packages/termit/)
 
 *   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
@@ -2897,7 +2886,7 @@ In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer 
 
 *   **[fbterm](/index.php/Fbterm "Fbterm")** — A fast framebuffer-based terminal emulator with many amazing features. Development stopped.
 
-	[http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/) || [fbterm](https://www.archlinux.org/packages/?name=fbterm)
+	[https://code.google.com/archive/p/fbterm/](https://code.google.com/archive/p/fbterm/) || [fbterm](https://www.archlinux.org/packages/?name=fbterm)
 
 *   **yaft** — A simple terminal emulator for living without X, with UCS2 glyphs, wallpaper and 256color support.
 
@@ -3071,7 +3060,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 *   **Pinot** — Personal search and metasearch tool
 
-	[http://code.google.com/p/pinot-search/](http://code.google.com/p/pinot-search/) || [pinot](https://www.archlinux.org/packages/?name=pinot)
+	[https://code.google.com/archive/p/pinot-search/](https://code.google.com/archive/p/pinot-search/) || [pinot](https://www.archlinux.org/packages/?name=pinot)
 
 *   **Recoll** — Full text search tool based on Xapian backend
 
@@ -3121,7 +3110,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **lz4** — A file compressor using lz4 - An extremely fast compression algorithm.
 
-	[https://code.google.com/p/lz4/](https://code.google.com/p/lz4/) || [lz4](https://www.archlinux.org/packages/?name=lz4)
+	[https://github.com/lz4/lz4](https://github.com/lz4/lz4) || [lz4](https://www.archlinux.org/packages/?name=lz4)
 
 *   **lzop** — Fast file compressor using lzo lib.
 
@@ -3145,7 +3134,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **zopfli** — High compress ratio file compressor from Google, using a deflate-compatible algorithm called zopfli.
 
-	[https://code.google.com/p/zopfli](https://code.google.com/p/zopfli) || [zopfli-git](https://aur.archlinux.org/packages/zopfli-git/)
+	[https://github.com/google/zopfli](https://github.com/google/zopfli) || [zopfli-git](https://aur.archlinux.org/packages/zopfli-git/)
 
 *   **[zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) "wikipedia:Zoo (file format)")** — Rarely used archiver that was mostly used in VMS world before PKZIP became popular.
 
@@ -3249,7 +3238,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **gconf-cleaner** — cleans up the unknown/invalid gconf keys that still sitting down on your gconf database
 
-	[https://code.google.com/p/gconf-cleaner/](https://code.google.com/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
+	[https://code.google.com/archive/p/gconf-cleaner/](https://code.google.com/archive/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
 
 ### Disk usage display
 
@@ -3286,6 +3275,12 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 *   **[OpenNTPD](/index.php/OpenNTPD "OpenNTPD")** — Free, easy to use implementation of the Network Time Protocol.
 
 	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
+
+### System maintenance
+
+*   **cylon** — Updates, Maintenance , anti-malware , backups and system checks in a menu driven Bash script.
+
+	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 
 ### System monitoring
 
@@ -3389,7 +3384,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **inxi** — A script to get system information.
 
-	[https://code.google.com/p/inxi](https://code.google.com/p/inxi) || [inxi](https://www.archlinux.org/packages/?name=inxi)
+	[https://github.com/smxi/inxi](https://github.com/smxi/inxi) || [inxi](https://www.archlinux.org/packages/?name=inxi)
 
 *   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
 
@@ -3435,7 +3430,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **qxkb** — A keyboard switcher written in Qt.
 
-	[http://code.google.com/p/qxkb/](http://code.google.com/p/qxkb/) || [qxkb](https://aur.archlinux.org/packages/qxkb/)
+	[https://github.com/disels/qxkb](https://github.com/disels/qxkb) || [qxkb](https://aur.archlinux.org/packages/qxkb/)
 
 *   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — A text analyser, it detects the language of the input and corrects the keyboard layout if needed.
 
@@ -3453,7 +3448,7 @@ See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_manager
 
 *   **bgs** — An extremely fast and small background setter for X based on imlib2.
 
-	[http://github.com/Gottox/bgs/](http://github.com/Gottox/bgs/) || [bgs-git](https://aur.archlinux.org/packages/bgs-git/)
+	[https://github.com/Gottox/bgs/](https://github.com/Gottox/bgs/) || [bgs-git](https://aur.archlinux.org/packages/bgs-git/)
 
 *   **esetroot** — Eterm's root background setter, packaged separately
 
@@ -3511,17 +3506,17 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 *   **[Rime IME](/index.php/Rime_IME "Rime IME")** — Rime input method engine.
 
-	[http://code.google.com/p/rimeime/](http://code.google.com/p/rimeime/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
+	[http://rime.im/](http://rime.im/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
 
 *   **[UIM](/index.php/UIM "UIM")** — Multilingual input method library.
 
-	[http://code.google.com/p/uim/](http://code.google.com/p/uim/) || [uim](https://www.archlinux.org/packages/?name=uim)
+	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
 
 ### Trash management
 
 *   **trash-cli** — A command-line interface implementing FreeDesktop.org's Trash specification.
 
-	[http://github.com/andreafrancia/trash-cli](http://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
+	[https://github.com/andreafrancia/trash-cli](https://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
 
 ### File synchronization
 
@@ -3745,10 +3740,6 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 	[http://www.emacswiki.org/emacs/WhizzyTeX/](http://www.emacswiki.org/emacs/WhizzyTeX/) || [whizzytex](https://aur.archlinux.org/packages/whizzytex/)
 
-*   **Winefish** — A very lightweight LaTeX editing suite. It supports highlighting and code completion, compile-from-editor, among other things.
-
-	[http://winefish.berlios.de/](http://winefish.berlios.de/) || [winefish](https://aur.archlinux.org/packages/winefish/)
-
 *   **Zotero** — This is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
 
 	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
@@ -3893,7 +3884,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Edile** — PyGTK code and scripting editor implemented in one file.
 
-	[https://code.google.com/p/edile](https://code.google.com/p/edile) || [edile](https://aur.archlinux.org/packages/edile/)
+	[https://code.google.com/archive/p/edile/](https://code.google.com/archive/p/edile/) || [edile](https://aur.archlinux.org/packages/edile/)
 
 *   **ePad** — A simple text editor written in Python and EFL.
 
@@ -3965,7 +3956,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **QSciTE** — Qt clone of the SciTE text and code editor.
 
-	[https://code.google.com/p/qscite](https://code.google.com/p/qscite) || [qscite](https://aur.archlinux.org/packages/qscite/)
+	[https://code.google.com/archive/p/qscite/](https://code.google.com/archive/p/qscite/) || [qscite](https://aur.archlinux.org/packages/qscite/)
 
 *   **QXmlEdit** — Simple Qt XML editor and XSD viewer.
 
@@ -4156,7 +4147,6 @@ See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager
 
 	[http://www.gnu.org/software/less](http://www.gnu.org/software/less) || [less](https://www.archlinux.org/packages/?name=less)
 
-*   **less-mouse** — less with mouse scrolling support. It is present in the AUR as [less-mouse](https://aur.archlinux.org/packages/less-mouse/).
 *   **[most](https://en.wikipedia.org/wiki/Most_(Unix) "wikipedia:Most (Unix)")** — A pager with support for multiple windows, left and right scrolling, and built-in colour support
 
 	[http://www.jedsoft.org/most/](http://www.jedsoft.org/most/) || [most](https://www.archlinux.org/packages/?name=most)
@@ -4175,7 +4165,7 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **ChmSee** — CHM viewer based on xulrunner.
 
-	[https://code.google.com/p/chmsee/](https://code.google.com/p/chmsee/) || [chmsee](https://aur.archlinux.org/packages/chmsee/)
+	[https://code.google.com/archive/p/chmsee/](https://code.google.com/archive/p/chmsee/) || [chmsee](https://aur.archlinux.org/packages/chmsee/)
 
 *   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
 
@@ -4193,7 +4183,7 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **QComicBook** — Lightweight comic book viewer written in C++ and Qt4.
 
-	[http://qcomicbook.org/](http://qcomicbook.org/) || [qcomicbook](https://aur.archlinux.org/packages/qcomicbook/)
+	[https://github.com/stolowski/QComicBook](https://github.com/stolowski/QComicBook) || [qcomicbook](https://aur.archlinux.org/packages/qcomicbook/)
 
 *   **YACReader** — Comic book viewer written in C++ and Qt5\. Comes with YACReaderLibrary for managing comics.
 
@@ -4531,7 +4521,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **OpenDLP** — OpenDLP is a free and open source, agent- and agentless-based, centrally-managed, massively distributable data loss prevention tool.
 
-	[https://code.google.com/p/opendlp/](https://code.google.com/p/opendlp/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://code.google.com/archive/p/opendlp/](https://code.google.com/archive/p/opendlp/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Swatch** — Utility that can monitor just about any type of log.
 
@@ -4579,7 +4569,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **i3lock-blur** — Fork of *i3lock* which can use your desktop with the blur effect applied as a background.
 
-	[http://github.com/karulont/i3lock-blur](http://github.com/karulont/i3lock-blur) || [i3lock-blur](https://aur.archlinux.org/packages/i3lock-blur/)
+	[https://github.com/karulont/i3lock-blur](https://github.com/karulont/i3lock-blur) || [i3lock-blur](https://aur.archlinux.org/packages/i3lock-blur/)
 
 *   **i3lock-wrapper** — A simple wrapper around *i3lock* which sets up a blurred screenshot of the desktop as a background image.
 
@@ -4701,7 +4691,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Console Password Manager** — Curses based password manager using PGP-encryption.
 
-	[http://github.com/comotion/cpm](http://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)
+	[https://github.com/comotion/cpm](https://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)
 
 *   **Enpass** — A multiplatform password manager
 
@@ -4893,10 +4883,6 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[http://englab.bugfest.net](http://englab.bugfest.net) || [englab](https://aur.archlinux.org/packages/englab/)
 
-*   **[Euler](https://en.wikipedia.org/wiki/Euler_(software) "wikipedia:Euler (software)")** — Numerical application designed for higher level math such as calculus, optimization, and statistics that uses Maxima for symbolic operations.
-
-	[http://euler.sourceforge.net](http://euler.sourceforge.net) || [euler](https://aur.archlinux.org/packages/euler/)
-
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Matlab-like program that supports many of its functions and features a codeless interface to external C, C++, and Fortran code, further parallel distributed algorithm development (via MPI), and 3D visualization capabilities.
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
@@ -4931,7 +4917,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[Python Data Analysis Library (pandas)](https://en.wikipedia.org/wiki/Pandas_(software) "wikipedia:Pandas (software)")** — Providing high-performance, easy-to-use data structures and data analysis tools with Python programming language.
 
-	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python2-pandas-git](https://aur.archlinux.org/packages/python2-pandas-git/)
+	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python2-pandas](https://www.archlinux.org/packages/?name=python2-pandas) [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
 
 *   **[PSPP](https://en.wikipedia.org/wiki/PSPP "wikipedia:PSPP")** — Free SPSS implementation.
 
@@ -4952,10 +4938,6 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 #### Data evaluation
 
 See also [Wikipedia:List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
-
-*   **Extrema** — Visualization and data analysis tool.
-
-	[http://sourceforge.net/projects/extrema](http://sourceforge.net/projects/extrema) || [extrema](https://aur.archlinux.org/packages/extrema/)
 
 *   **[Fityk](https://en.wikipedia.org/wiki/Fityk "wikipedia:Fityk")** — Curve fitting and data analysis application, predominantly used to fit analytical, bell-shaped functions to experimental data.
 
@@ -5065,10 +5047,6 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://gabedit.sourceforge.net/](http://gabedit.sourceforge.net/) || [gabedit](https://aur.archlinux.org/packages/gabedit/)
 
-*   **[XDrawChem](https://en.wikipedia.org/wiki/XDrawChem "wikipedia:XDrawChem")** — Extensive skeletal formula molecule drawing program (includes spectroscopy prediction).
-
-	[http://xdrawchem.sourceforge.net/](http://xdrawchem.sourceforge.net/) || [xdrawchem](https://aur.archlinux.org/packages/xdrawchem/)
-
 ##### Modeling
 
 *   **[GROMACS](/index.php/GROMACS "GROMACS") (GROningen MAchine for Chemical Simulations)** — Versatile package to perform molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
@@ -5129,7 +5107,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **Open PHD Guiding** — Telescope autoguiding software based on the famous PHD Guiding.
 
-	[http://code.google.com/p/open-phd-guiding/](http://code.google.com/p/open-phd-guiding/) || [open-phd-guiding-svn](https://aur.archlinux.org/packages/open-phd-guiding-svn/)
+	[http://openphdguiding.org/](http://openphdguiding.org/) || [open-phd-guiding-svn](https://aur.archlinux.org/packages/open-phd-guiding-svn/)
 
 *   **Qastrocam-g2** — Webcam acquisition software for planetary imaging.
 
@@ -5165,29 +5143,9 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 Digital logic software are mainly simple educational tools that intended for only designing and simulating logic circuits.
 
-*   **atanua** — Real time logic simulator.
-
-	[http://sol.gfxile.net/atanua/](http://sol.gfxile.net/atanua/) || [atanua](https://aur.archlinux.org/packages/atanua/)
-
-*   **eqntott** — Utility to convert a set of boolean logic equations to a PLA-esque truth table.
-
-	[https://code.google.com/p/eqntott/](https://code.google.com/p/eqntott/) || [eqntott](https://aur.archlinux.org/packages/eqntott/)
-
-*   **espresso** — Heuristic logic minimizer, reduces the amount of gates required for digital circuits.
-
-	[https://code.google.com/p/eqntott/](https://code.google.com/p/eqntott/) || [espresso](https://aur.archlinux.org/packages/espresso/)
-
-*   **giraffe** — A simple logic circuit simulator written in Java.
-
-	[http://nbenoit.tuxfamily.org/](http://nbenoit.tuxfamily.org/) || [giraffe](https://aur.archlinux.org/packages/giraffe/)
-
 *   **glogic** — An educational graphical logic circuit simulator.
 
 	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
-
-*   **KLogic** — Digital logic design and simulation software for KDE which also simulate karnaugh diagrams.
-
-	[http://www.a-rostin.de/](http://www.a-rostin.de/) || [klogic](https://aur.archlinux.org/packages/klogic/)
 
 *   **Logisim** — Educational digital logic design and simulation software, written in Java, officially its development has stopped.
 
@@ -5195,7 +5153,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **Logisim Evolution** — Project which continue the development of the original Logisim with new features, written in Java.
 
-	[https://github.com/reds-heig/logisim-evolution](https://github.com/reds-heig/logisim-evolution) || [logisim-evolution](https://aur.archlinux.org/packages/logisim-evolution/)
+	[https://github.com/reds-heig/logisim-evolution](https://github.com/reds-heig/logisim-evolution) || [logisim-evolution-git](https://aur.archlinux.org/packages/logisim-evolution-git/)
 
 *   **SmartSim** — Simple and beautiful digital logic circuit design and simulation software, mainly target teachers and students, very lightweight and cross platform, GPL licensed, written in Vala.
 
@@ -5216,10 +5174,6 @@ Digital logic software are mainly simple educational tools that intended for onl
 *   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
 
 	[http://arduino.cc/en/Main/Software](http://arduino.cc/en/Main/Software) || [arduino](https://aur.archlinux.org/packages/arduino/)
-
-*   **[KTechLab](https://en.wikipedia.org/wiki/KTechLab "wikipedia:KTechLab")** — IDE for electronic and PIC microcontroller circuit design and simulation featuring an extensive circuit designer with autorouting and simulation of all common electronic components and logic elements.
-
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab-zoltan_p-git](https://aur.archlinux.org/packages/ktechlab-zoltan_p-git/)
 
 ##### Schematic capture editor
 
@@ -5381,7 +5335,7 @@ See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wi
 
 *   **PyWO** — Allows you to easily organize windows on the desktop using keyboard shortcuts.
 
-	[https://code.google.com/p/pywo/](https://code.google.com/p/pywo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://code.google.com/archive/p/pywo/](https://code.google.com/archive/p/pywo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **QuickTile** — Lightweight standalone alternative to Compiz Grid plugin.
 
@@ -5394,10 +5348,6 @@ See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wi
 *   **[Tile-windows](/index.php/Tile-windows "Tile-windows")** — Tool for tiling windows horizontally or vertically.
 
 	[http://www.sourcefiles.org/Utilities/Miscellaneous/tile_0.7.4.tar.gz.shtml](http://www.sourcefiles.org/Utilities/Miscellaneous/tile_0.7.4.tar.gz.shtml) || [tile-windows](https://aur.archlinux.org/packages/tile-windows/)
-
-*   **whaw** — Window manager independent window layout tool.
-
-	[http://repetae.net/computer/whaw/](http://repetae.net/computer/whaw/) || [whaw](https://aur.archlinux.org/packages/whaw/)
 
 *   **wumwum** — The Window Manager manager. It can turn emwh compliant window managers into a tiling window manager while retaining all initial functionalities.
 
@@ -5421,7 +5371,7 @@ See also [Wikipedia:Pager (GUI)](https://en.wikipedia.org/wiki/Pager_(GUI) "wiki
 
 *   **Neap** — An non-intrusive and light pager that runs in the notification area of your panel.
 
-	[http://code.google.com/p/neap/](http://code.google.com/p/neap/) || [neap](https://aur.archlinux.org/packages/neap/)
+	[https://github.com/vzxwco/neap](https://github.com/vzxwco/neap) || [neap](https://aur.archlinux.org/packages/neap/)
 
 *   **Netwmpager** — A NetWM/EWMH compatible pager.
 
@@ -5453,7 +5403,7 @@ See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_
 
 *   **[Bmpanel](/index.php/Bmpanel "Bmpanel")** — Lightweight, NETWM compliant panel.
 
-	[http://code.google.com/p/bmpanel2/](http://code.google.com/p/bmpanel2/) || [bmpanel2](https://aur.archlinux.org/packages/bmpanel2/)
+	[https://github.com/nsf/bmpanel2](https://github.com/nsf/bmpanel2) || [bmpanel2](https://aur.archlinux.org/packages/bmpanel2/)
 
 *   **[Cairo-Dock](/index.php/Cairo-Dock "Cairo-Dock")** — Highly customizable dock and launcher application.
 
@@ -5924,7 +5874,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
 
-	[http://code.google.com/p/higan/](http://code.google.com/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
+	[https://code.google.com/archive/p/higan/](https://code.google.com/archive/p/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
 *   **mednafen** — Command line driven multi system emulator.
 

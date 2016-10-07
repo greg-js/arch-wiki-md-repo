@@ -78,7 +78,7 @@ Create the zm database and user with appropriate permissions and password :
 ```
 CREATE DATABASE zm;
 CREATE USER 'zmuser'@'localhost' IDENTIFIED BY 'choose_password';
-GRANT CREATE, INSERT, SELECT, DELETE, UPDATE ON zm.* TO 'zmuser'@'localhost';
+GRANT ALL ON zm.* TO 'zmuser'@'localhost';
 exit
 ```
 

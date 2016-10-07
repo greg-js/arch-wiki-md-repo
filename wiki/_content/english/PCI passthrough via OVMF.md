@@ -821,6 +821,8 @@ If your motherboard has multiple USB controllers mapped to multiple groups, it i
 
 Unlike with GPUs, drivers for most USB controllers do not require any specific configuration to work on a VM and control can normally be passed back and forth between the host and guest systems with no side effects.
 
+**Warning:** Make sure your USB controller supports resetting :[#Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+
 You can find out which PCI devices correspond to which controller and how various ports and devices are assigned to each one of them using this command :
 
  `$ for usb_ctrl in $(find /sys/bus/usb/devices/usb* -maxdepth 0 -type l); do pci_path="$(dirname "$(realpath "${usb_ctrl}")")"; echo "Bus $(cat "${usb_ctrl}/busnum") --> $(basename $pci_path) (IOMMU group $(basename $(realpath $pci_path/iommu_group)))"; lsusb -s "$(cat "${usb_ctrl}/busnum"):"; echo; done` 

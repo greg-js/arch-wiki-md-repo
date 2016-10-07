@@ -546,13 +546,13 @@ Server = http://archlinux.zoelife4u.org/cinnamon/$arch
 
 #### heftig
 
-*   **Maintainer:** [Jan Steffens](https://www.archlinux.org/trustedusers/#heftig)
+*   **Maintainer:** [Jan Steffens](https://www.archlinux.org/developers/#heftig)
 *   **Description:** Includes pulseaudio-git, pavucontrol-git, and firefox-developer-edition
 *   **Upstream page:** [https://bbs.archlinux.org/viewtopic.php?id=117157](https://bbs.archlinux.org/viewtopic.php?id=117157)
 
 ```
 [heftig]
-Server = http://pkgbuild.com/~heftig/repo/$arch
+Server = https://pkgbuild.com/~heftig/repo/$arch
 
 ```
 

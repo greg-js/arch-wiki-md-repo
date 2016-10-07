@@ -82,7 +82,7 @@
 
 **Примечание:** Драйвер Nvidia **не** предоставляет драйвер `fbdev` для высокого разрешения в консоли для скомпилированного модуля ядра `vesafb`. Тем не менее, скомпилированный в ядро модуль `efifb` поддерживает высокое разрешение в консоли на EFI системах.[[1]](http://forums.fedoraforum.org/showthread.php?t=306271)
 
-Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 добавляет поддержку DRM [Kernel mode setting](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"). Чтобы включить эту особенность, добавьте {{ic|1=nvidia-drm.modeset=1} в [параметры ядра](/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel parameters (Русский)"), а также: nvidia, nvidia_modeset, nvidia_uvm и nvidia_drm в [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs")
+Пакет [nvidia](https://www.archlinux.org/packages/?name=nvidia) 364.16 добавляет поддержку DRM [Kernel mode setting](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"). Чтобы включить эту особенность, добавьте `nvidia-drm.modeset=1` в [параметры ядра](/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel parameters (Русский)"), а также: nvidia, nvidia_modeset, nvidia_uvm и nvidia_drm в [initramfs#MODULES](/index.php/Initramfs#MODULES "Initramfs")
 
 **Важно:** Не забывайте запускать `mkinitcpio` каждый раз после обновления драйвера.
 

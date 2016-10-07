@@ -80,6 +80,8 @@ See [Power management#xss-lock](/index.php/Power_management#xss-lock "Power mana
 
 By default, XScreenSaver's *New Login* button in the lock screen will call `/usr/bin/gdmflexiserver` to switch users. Other [display managers](/index.php/Display_manager "Display manager") than [GDM](/index.php/GDM "GDM") or [KDM](/index.php/KDM "KDM") that support user switching (such as [LightDM](/index.php/LightDM "LightDM")) require a different command.
 
+**Tip:** Adding *xscreensaver.newLoginCommand:* to `~/.Xresources` whilst leaving the argument blank will make the *New Login* button disappear.
+
 As modifications in `~/.xscreensaver` are [discarded](#Configuration) by *xscreensaver-demo*, `~/.Xresources` is used in this section.
 
 #### LXDM

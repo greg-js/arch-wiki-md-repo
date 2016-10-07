@@ -111,7 +111,7 @@ For example use `SAL_USE_VCLPLUGIN=gtk` to force starting libreoffice with gtk2 
 
 ### Editing the Application Menu
 
-It is possible to edit menu entries by editing their .desktop files stored in `/usr/share/applications/lxqt-*.desktop` files. See [Desktop entries](/index.php/Desktop_entries "Desktop entries").
+It is possible to edit menu entries by editing their *.desktop* files stored in `/usr/share/applications/lxqt-*.desktop` files. See [Desktop entries](/index.php/Desktop_entries "Desktop entries").
 
 ### Compton
 

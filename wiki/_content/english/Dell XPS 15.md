@@ -282,6 +282,7 @@ Workarounds:
 *   Suspend and resume your computer [(thank you spheenik)](https://www.reddit.com/r/Dell/comments/4y1svp/gnulinux_on_xps_9550_questions_arch/)
 *   Restart your computer
 *   Disable sound BIOS, powerboot into Arch, enable sound in BIOS, start Arch with sound back
+*   Connect external sound card via USB
 
 Regardless, for now, it is recommended that you don't/reduce hot-plugging headphones as it makes ALSA/PulseAudio break/very unstable.
 

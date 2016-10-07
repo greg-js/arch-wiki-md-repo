@@ -8,8 +8,9 @@
     *   [1.3 Testing](#Testing)
 *   [2 Disabling](#Disabling)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Creating new profiles](#Creating_new_profiles)
-    *   [3.2 Parsing profiles](#Parsing_profiles)
+    *   [3.1 Auditing and generating profiles](#Auditing_and_generating_profiles)
+    *   [3.2 Editing and understanding profiles](#Editing_and_understanding_profiles)
+    *   [3.3 Parsing profiles](#Parsing_profiles)
 *   [4 Security considerations](#Security_considerations)
     *   [4.1 Preventing circumvention of path-based MAC via links](#Preventing_circumvention_of_path-based_MAC_via_links)
 *   [5 Tips and tricks](#Tips_and_tricks)
@@ -77,7 +78,7 @@ Alternatively you may choose to disable the kernel modules required by AppArmor 
 
 ## Configuration
 
-### Creating new profiles
+### Auditing and generating profiles
 
 To create new profiles using `aa-genprof`, `auditd.service` from the package [audit](https://www.archlinux.org/packages/?name=audit) must be running. This is because Arch Linux adopted systemd and doesn't do kernel logging to file by default. Apparmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile. To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](http://linux.die.net/man/8/auditctl) will suffice:
 
@@ -89,6 +90,39 @@ To create new profiles using `aa-genprof`, `auditd.service` from the package [au
 but be sure to read [Audit framework#Adding rules](/index.php/Audit_framework#Adding_rules "Audit framework") if this is unfamiliar to you.
 
 **Note:** Remember to stop the service afterwards (and maybe clear `/var/log/audit/audit.log`) because it may cause overhead depending on your rules.
+
+### Editing and understanding profiles
+
+Profiles are human readable text files residing under `/etc/apparmor.d/` describing how binaries should be treated when executed. A basic profile looks similar to this:
+
+ `/etc/apparmor.d/usr.bin.test` 
+```
+#include <tunables/global>
+
+profile test /usr/lib/test/test_binary {
+    #include <abstractions/base>
+
+    # Main libraries and plugins
+    /usr/share/TEST/** r,
+    /usr/lib/TEST/** rm,
+
+    # Configuration files and logs
+    @{HOME}/.config/ r,
+    @{HOME}/.config/TEST/** rw,
+}
+
+```
+
+Text preceded by a `@` symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`) and or tunables (`/etc/apparmor.d/tunables/`) or within the profile. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax). Most common use cases are covered by the following statements:
+
+*   `r` — read: read data
+*   `w` — write: create, delete, write to a file and extend it
+*   `m` — memory map executable: memory map a file executable
+*   `x` — execute: execute file; needs to be preceded by a [qualifier](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#Execute_rules)
+
+Remember that those permission do not allow binaries to exceed the permission dictated by the Discretionary Access Control (DAC).
+
+This is merely a short overview, for a more detailed guide be sure to have a look at the [documentation](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference).
 
 ### Parsing profiles
 

@@ -194,6 +194,13 @@ The Ethernet adapter functions thanks to the `r8169` module present in kernels 2
 
 The multi-card reader appears to work automatically.
 
+In some cases udev might be failing to update block device tree even after the memory card has been removed. The solution is to manually force udev to update:
+
+```
+# udevadm trigger
+
+```
+
 ## Power management
 
 pm-utils usually works without issues. However, some users have reported that it may require adding the [resume hook](/index.php/Pm-utils#Resume_Hook "Pm-utils") and removing the [autodetect hook](/index.php/Pm-utils#Blank_screen_issue "Pm-utils") before working correctly.

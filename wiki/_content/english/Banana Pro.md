@@ -6,12 +6,19 @@ The Banana Pro (also often referred to as Banana Pi Pro) is a SBC from the manuf
 *   [2 Installation](#Installation)
     *   [2.1 Install base system to a SD card](#Install_base_system_to_a_SD_card)
     *   [2.2 Install base system to a SD card and SATA/USB device](#Install_base_system_to_a_SD_card_and_SATA.2FUSB_device)
-    *   [2.3 Login](#Login)
-*   [3 See also](#See_also)
+*   [3 Network](#Network)
+    *   [3.1 LAN](#LAN)
+    *   [3.2 WLAN](#WLAN)
+*   [4 Login](#Login)
+*   [5 See also](#See_also)
 
 ## Information prior to installing
 
 This article is very similar to [Banana Pi](/index.php/Banana_Pi "Banana Pi"), though the description there doesn't apply fully to the Banana Pro. Also, users have to be familiar with installing an Arch system ([Partitioning](/index.php/Partitioning "Partitioning"), [formatting](/index.php/File_systems "File systems"), etc.), as this will only cover the installation of the base system. Further configuration won't be covered here.
+
+**Note:** If you use an Linux installation with `e2fsprogs < 1.43` omit the extra options `-O ^metadata_csum,^64bit` below to format the root file system
+
+**Note:** Ensure to install the root file system to a partition number 1 otherwise it will not boot
 
 ## Installation
 
@@ -37,15 +44,15 @@ Use `fdisk` to partition the SD card and format it with `mkfs.ext4`.
 
 ```
 # fdisk /dev/sdX
-# mkfs.ext4 /dev/sdXn
+# mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1
 
 ```
 
-Create a mountpoint if needed and mount the root partition, replacing `sdXn` with the root partition on your SD card, on which you want to have Arch Linux installed. (e.g. `sdc1`)
+Create a mountpoint if needed and mount the root partition on which Arch Linux will installed. (e.g. `sdc1`)
 
 ```
 # mkdir [mountpoint]
-# mount /dev/sdXn [mountpoint]
+# mount /dev/sdX1 [mountpoint]
 
 ```
 
@@ -102,14 +109,14 @@ Use `fdisk` to partition the *SATA/USB device* and format it with `mkfs.ext4`.
 
 ```
 # fdisk /dev/*sdY*
-# mkfs.ext4 /dev/*sdYn*
+# mkfs.ext4 -O ^metadata_csum,^64bit /dev/*sdY1*
 
 ```
 
-Create a mountpoint if needed and mount the root partition. Again, `*sdYn*` is the partition, on which you want to have Arch Linux installed later on.
+Create a mountpoint if needed and mount the root partition on which Arch Linux will installed.
 
 ```
-# mount /dev/*sdYn* [mountpoint]                                                         # Mount the root partition
+# mount /dev/*sdY1* [mountpoint]                                                         # Mount the root partition
 # bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C [mountpoint]                         # Extract the root filesystem to your root partition
 # cp /path/to/boot.scr [mountpoint]/boot
 # umount [mountpoint]
@@ -118,13 +125,32 @@ Create a mountpoint if needed and mount the root partition. Again, `*sdYn*` is t
 
 This whole guide is inspired by the installation procedure for the [OlinuXino Lime2](https://archlinuxarm.org/platforms/armv7/allwinner/a20-olinuxino-lime2) with a few adaptations.
 
-### Login
+## Network
+
+The network is by default configured by [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").
+
+### LAN
+
+Ethernet will work out if the box when connect to a DHCP server.
+
+### WLAN
+
+To become wlan working you have to install the needed firmware and [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") which use the kernel module `brcmfmac`.
+
+```
+# pacman -S firmware-ap6210 wpa_supplicant
+
+```
+
+## Login
 
 These are the default logins for a new installation.
 
 | Type | Username | Password |
 | Root | `root` | `root` |
 | User | `alarm` | `alarm` |
+
+The root account is by default locked for shh login. Login as normal user and use `su -` to become root.
 
 ## See also
 

@@ -78,6 +78,8 @@ Once the modules are loaded, you should be able to find a new device: `/dev/inpu
 
 Both interfaces are also supported in wine and reported as separate devices. You can test them with `wine control joy.cpl`.
 
+**Tip:** Input devices by default have **input** group, for example [pcsx2](https://www.archlinux.org/packages/?name=pcsx2) have no access to gamepad without rights. Make sure your user in **input** group.
+
 ### Joystick API
 
 There are a lot of applications that can test this old API, `jstest` from the [joyutils](https://www.archlinux.org/packages/?name=joyutils) package is the simplest one. If the output is unreadable because the line printed is too long you can also use graphical tools. KDE4 has a built in one in Input Devices panel in System Settings or [jstest-gtk-git](https://aur.archlinux.org/packages/jstest-gtk-git/) is an alternative.

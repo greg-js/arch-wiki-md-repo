@@ -27,23 +27,6 @@ Window Maker is a [window manager](/index.php/Window_manager "Window manager") (
 
 [Install](/index.php/Install "Install") the [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) package. You may also wish to install the [windowmaker-extra](https://www.archlinux.org/packages/?name=windowmaker-extra) package which contains a number of extra icons and themes.
 
-Before starting Window Maker, take some time to setup GNUstep and the default Window Maker settings. Create a directory for your Window Maker settings. Traditionally, it is in `$HOME/GNUstep`.
-
- `$ mkdir ~/GNUstep` 
-
-Set the `GNUSTEP_USER_ROOT` variable to your GNUstep settings directory. You can set this variable in a file such as `$HOME/.bashrc`.
-
-```
-export GNUSTEP_USER_ROOT="${HOME}/GNUstep"
-
-```
-
-Make sure the file is sourced, for example, by logging out and back in.
-
-Run the Window Maker settings installation program to setup the default settings.
-
- `$ wmaker.inst` 
-
 ## Starting Window Maker
 
 ### Graphically

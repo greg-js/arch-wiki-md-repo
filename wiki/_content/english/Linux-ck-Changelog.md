@@ -5,13 +5,14 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 **Bump to v4.7.6-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.6](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.6)
-*   Note: This release allows AUR users to optionally build CK's [MuQSS](http://ck-hack.blogspot.com/2016/10/muqss-multiple-queue-skiplist-scheduler.html) (Multiple Queue Skiplist Scheduler). See the commented lines in the PKGBUILD.
+*   Note: This release allows AUR users to optionally build CK's [MuQSS](http://ck-hack.blogspot.com/2016/10/muqss-multiple-queue-skiplist-scheduler_5.html) (Multiple Queue Skiplist Scheduler). See the commented lines in the PKGBUILD.
 *   Commit1: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9ce039c1541608432af09485a5e9879d14fbc717](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9ce039c1541608432af09485a5e9879d14fbc717)
 *   Commit2: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=3dbc32942e77e3ab2146410896cac6ed08b31da1](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=3dbc32942e77e3ab2146410896cac6ed08b31da1)
 *   Commit3: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=6fa691f6efdc3c86c91c5d08e6e27bbf6d902281](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=6fa691f6efdc3c86c91c5d08e6e27bbf6d902281)
 *   Commit4: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=401f6fe05bd395ee702030ad0f6857e48fa76c23](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=401f6fe05bd395ee702030ad0f6857e48fa76c23)
 *   Commit5: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=60ca8db11655b201fb394cae19187a85dbc1278e](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=60ca8db11655b201fb394cae19187a85dbc1278e)
 *   Commit6: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=59e165585deb594cc111109d6a6bb442ba66326c](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=59e165585deb594cc111109d6a6bb442ba66326c)
+*   Commit7: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=6e7541a75a6b682fd87671844bc4fd319fffad26](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=6e7541a75a6b682fd87671844bc4fd319fffad26)
 
 **Bump to v4.7.5-1**
 

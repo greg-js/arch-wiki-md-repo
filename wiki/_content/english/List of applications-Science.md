@@ -140,10 +140,6 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[http://englab.bugfest.net](http://englab.bugfest.net) || [englab](https://aur.archlinux.org/packages/englab/)
 
-*   **[Euler](https://en.wikipedia.org/wiki/Euler_(software) "wikipedia:Euler (software)")** — Numerical application designed for higher level math such as calculus, optimization, and statistics that uses Maxima for symbolic operations.
-
-	[http://euler.sourceforge.net](http://euler.sourceforge.net) || [euler](https://aur.archlinux.org/packages/euler/)
-
 *   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — Matlab-like program that supports many of its functions and features a codeless interface to external C, C++, and Fortran code, further parallel distributed algorithm development (via MPI), and 3D visualization capabilities.
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
@@ -178,7 +174,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 *   **[Python Data Analysis Library (pandas)](https://en.wikipedia.org/wiki/Pandas_(software) "wikipedia:Pandas (software)")** — Providing high-performance, easy-to-use data structures and data analysis tools with Python programming language.
 
-	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python2-pandas-git](https://aur.archlinux.org/packages/python2-pandas-git/)
+	[http://pandas.pydata.org/](http://pandas.pydata.org/) || [python2-pandas](https://www.archlinux.org/packages/?name=python2-pandas) [python-pandas](https://www.archlinux.org/packages/?name=python-pandas)
 
 *   **[PSPP](https://en.wikipedia.org/wiki/PSPP "wikipedia:PSPP")** — Free SPSS implementation.
 
@@ -199,10 +195,6 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 #### Data evaluation
 
 See also [Wikipedia:List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
-
-*   **Extrema** — Visualization and data analysis tool.
-
-	[http://sourceforge.net/projects/extrema](http://sourceforge.net/projects/extrema) || [extrema](https://aur.archlinux.org/packages/extrema/)
 
 *   **[Fityk](https://en.wikipedia.org/wiki/Fityk "wikipedia:Fityk")** — Curve fitting and data analysis application, predominantly used to fit analytical, bell-shaped functions to experimental data.
 
@@ -312,10 +304,6 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://gabedit.sourceforge.net/](http://gabedit.sourceforge.net/) || [gabedit](https://aur.archlinux.org/packages/gabedit/)
 
-*   **[XDrawChem](https://en.wikipedia.org/wiki/XDrawChem "wikipedia:XDrawChem")** — Extensive skeletal formula molecule drawing program (includes spectroscopy prediction).
-
-	[http://xdrawchem.sourceforge.net/](http://xdrawchem.sourceforge.net/) || [xdrawchem](https://aur.archlinux.org/packages/xdrawchem/)
-
 ##### Modeling
 
 *   **[GROMACS](/index.php/GROMACS "GROMACS") (GROningen MAchine for Chemical Simulations)** — Versatile package to perform molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
@@ -376,7 +364,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **Open PHD Guiding** — Telescope autoguiding software based on the famous PHD Guiding.
 
-	[http://code.google.com/p/open-phd-guiding/](http://code.google.com/p/open-phd-guiding/) || [open-phd-guiding-svn](https://aur.archlinux.org/packages/open-phd-guiding-svn/)
+	[http://openphdguiding.org/](http://openphdguiding.org/) || [open-phd-guiding-svn](https://aur.archlinux.org/packages/open-phd-guiding-svn/)
 
 *   **Qastrocam-g2** — Webcam acquisition software for planetary imaging.
 
@@ -412,29 +400,9 @@ See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Co
 
 Digital logic software are mainly simple educational tools that intended for only designing and simulating logic circuits.
 
-*   **atanua** — Real time logic simulator.
-
-	[http://sol.gfxile.net/atanua/](http://sol.gfxile.net/atanua/) || [atanua](https://aur.archlinux.org/packages/atanua/)
-
-*   **eqntott** — Utility to convert a set of boolean logic equations to a PLA-esque truth table.
-
-	[https://code.google.com/p/eqntott/](https://code.google.com/p/eqntott/) || [eqntott](https://aur.archlinux.org/packages/eqntott/)
-
-*   **espresso** — Heuristic logic minimizer, reduces the amount of gates required for digital circuits.
-
-	[https://code.google.com/p/eqntott/](https://code.google.com/p/eqntott/) || [espresso](https://aur.archlinux.org/packages/espresso/)
-
-*   **giraffe** — A simple logic circuit simulator written in Java.
-
-	[http://nbenoit.tuxfamily.org/](http://nbenoit.tuxfamily.org/) || [giraffe](https://aur.archlinux.org/packages/giraffe/)
-
 *   **glogic** — An educational graphical logic circuit simulator.
 
 	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
-
-*   **KLogic** — Digital logic design and simulation software for KDE which also simulate karnaugh diagrams.
-
-	[http://www.a-rostin.de/](http://www.a-rostin.de/) || [klogic](https://aur.archlinux.org/packages/klogic/)
 
 *   **Logisim** — Educational digital logic design and simulation software, written in Java, officially its development has stopped.
 
@@ -442,7 +410,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **Logisim Evolution** — Project which continue the development of the original Logisim with new features, written in Java.
 
-	[https://github.com/reds-heig/logisim-evolution](https://github.com/reds-heig/logisim-evolution) || [logisim-evolution](https://aur.archlinux.org/packages/logisim-evolution/)
+	[https://github.com/reds-heig/logisim-evolution](https://github.com/reds-heig/logisim-evolution) || [logisim-evolution-git](https://aur.archlinux.org/packages/logisim-evolution-git/)
 
 *   **SmartSim** — Simple and beautiful digital logic circuit design and simulation software, mainly target teachers and students, very lightweight and cross platform, GPL licensed, written in Vala.
 
@@ -463,10 +431,6 @@ Digital logic software are mainly simple educational tools that intended for onl
 *   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
 
 	[http://arduino.cc/en/Main/Software](http://arduino.cc/en/Main/Software) || [arduino](https://aur.archlinux.org/packages/arduino/)
-
-*   **[KTechLab](https://en.wikipedia.org/wiki/KTechLab "wikipedia:KTechLab")** — IDE for electronic and PIC microcontroller circuit design and simulation featuring an extensive circuit designer with autorouting and simulation of all common electronic components and logic elements.
-
-	[http://sourceforge.net/projects/ktechlab/](http://sourceforge.net/projects/ktechlab/) || [ktechlab-zoltan_p-git](https://aur.archlinux.org/packages/ktechlab-zoltan_p-git/)
 
 ##### Schematic capture editor
 

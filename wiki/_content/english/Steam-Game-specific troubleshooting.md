@@ -38,6 +38,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [13.1 Textures not rendering properly](#Textures_not_rendering_properly)
 *   [14 Civilization V](#Civilization_V)
     *   [14.1 Stuttering sound with PulseAudio](#Stuttering_sound_with_PulseAudio)
+    *   [14.2 Extra LD_PRELOAD variable](#Extra_LD_PRELOAD_variable)
 *   [15 The Clockwork Man](#The_Clockwork_Man)
     *   [15.1 Dependencies](#Dependencies_7)
 *   [16 Company of Heroes 2](#Company_of_Heroes_2)
@@ -444,6 +445,17 @@ UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes %command%
 ### Stuttering sound with PulseAudio
 
 See [PulseAudio/Troubleshooting#Laggy sound](/index.php/PulseAudio/Troubleshooting#Laggy_sound "PulseAudio/Troubleshooting").
+
+### Extra LD_PRELOAD variable
+
+If the game seems to start and close, consider using the following as launch options for the game:
+
+```
+env LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%
+
+```
+
+as seen here [https://github.com/ValveSoftware/steam-for-linux/issues/4379](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
 ## The Clockwork Man
 

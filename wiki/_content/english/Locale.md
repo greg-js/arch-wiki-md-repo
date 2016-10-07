@@ -168,7 +168,7 @@ Programs which use gettext for translations respect the `LANGUAGE` option in add
 
  `locale.conf` 
 ```
-LANG=en_AU
+LANG=en_AU.UTF-8
 LANGUAGE=en_AU:en_GB:en
 ```
 

@@ -31,20 +31,21 @@
     *   [1.9 Disk cleaning](#Disk_cleaning)
     *   [1.10 Disk usage display](#Disk_usage_display)
     *   [1.11 Clock synchronization](#Clock_synchronization)
-    *   [1.12 System monitoring](#System_monitoring)
-    *   [1.13 System information viewers](#System_information_viewers)
-        *   [1.13.1 Console](#Console_3)
-        *   [1.13.2 Graphical](#Graphical_3)
-        *   [1.13.3 Others](#Others)
-    *   [1.14 Keyboard layout switchers](#Keyboard_layout_switchers)
-    *   [1.15 Power management](#Power_management)
-    *   [1.16 Clipboard managers](#Clipboard_managers)
-    *   [1.17 Wallpaper setters](#Wallpaper_setters)
-    *   [1.18 Package management](#Package_management)
-    *   [1.19 Input method editor](#Input_method_editor)
-    *   [1.20 Trash management](#Trash_management)
-    *   [1.21 File synchronization](#File_synchronization)
-    *   [1.22 Finders](#Finders)
+    *   [1.12 System maintenance](#System_maintenance)
+    *   [1.13 System monitoring](#System_monitoring)
+    *   [1.14 System information viewers](#System_information_viewers)
+        *   [1.14.1 Console](#Console_3)
+        *   [1.14.2 Graphical](#Graphical_3)
+        *   [1.14.3 Others](#Others)
+    *   [1.15 Keyboard layout switchers](#Keyboard_layout_switchers)
+    *   [1.16 Power management](#Power_management)
+    *   [1.17 Clipboard managers](#Clipboard_managers)
+    *   [1.18 Wallpaper setters](#Wallpaper_setters)
+    *   [1.19 Package management](#Package_management)
+    *   [1.20 Input method editor](#Input_method_editor)
+    *   [1.21 Trash management](#Trash_management)
+    *   [1.22 File synchronization](#File_synchronization)
+    *   [1.23 Finders](#Finders)
 
 ## Utilities
 
@@ -362,7 +363,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **Terra** — is a GTK+3.0 based terminal emulator with useful user interface, it also supports multiple terminals with splitting screen horizontally or vertically -- (similar to guake).
 
-	[https://github.com/ozcanesen/terra-terminal](https://github.com/ozcanesen/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
+	[https://github.com/ozcan/terra-terminal](https://github.com/ozcan/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
 
 *   **[LilyTerm](/index.php/LilyTerm "LilyTerm")** — Very light and easy to use X Terminal Emulator
 
@@ -390,7 +391,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **Stjerm** — GTK+-based drop-down terminal emulator that provides a minimalistic interface combined with a small file size, lightweight memory usage and easy integration with composite window managers such as Compiz.
 
-	[https://code.google.com/p/stjerm-terminal-emulator/](https://code.google.com/p/stjerm-terminal-emulator/) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
+	[https://code.google.com/archive/p/stjerm-terminal-emulator/](https://code.google.com/archive/p/stjerm-terminal-emulator/) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
 
 *   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
 
@@ -402,7 +403,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **Termit** — Simple terminal emulator based on the vte library that includes tabs, bookmarks, and the ability to switch encodings.
 
-	[https://wiki.github.com/nonstop/termit/](https://wiki.github.com/nonstop/termit/) || [termit](https://aur.archlinux.org/packages/termit/)
+	[https://github.com/nonstop/termit/wiki](https://github.com/nonstop/termit/wiki) || [termit](https://aur.archlinux.org/packages/termit/)
 
 *   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
@@ -426,7 +427,7 @@ In GNU/Linux world, the [framebuffer](https://en.wikipedia.org/wiki/Framebuffer 
 
 *   **[fbterm](/index.php/Fbterm "Fbterm")** — A fast framebuffer-based terminal emulator with many amazing features. Development stopped.
 
-	[http://code.google.com/p/fbterm/](http://code.google.com/p/fbterm/) || [fbterm](https://www.archlinux.org/packages/?name=fbterm)
+	[https://code.google.com/archive/p/fbterm/](https://code.google.com/archive/p/fbterm/) || [fbterm](https://www.archlinux.org/packages/?name=fbterm)
 
 *   **yaft** — A simple terminal emulator for living without X, with UCS2 glyphs, wallpaper and 256color support.
 
@@ -600,7 +601,7 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 *   **Pinot** — Personal search and metasearch tool
 
-	[http://code.google.com/p/pinot-search/](http://code.google.com/p/pinot-search/) || [pinot](https://www.archlinux.org/packages/?name=pinot)
+	[https://code.google.com/archive/p/pinot-search/](https://code.google.com/archive/p/pinot-search/) || [pinot](https://www.archlinux.org/packages/?name=pinot)
 
 *   **Recoll** — Full text search tool based on Xapian backend
 
@@ -650,7 +651,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **lz4** — A file compressor using lz4 - An extremely fast compression algorithm.
 
-	[https://code.google.com/p/lz4/](https://code.google.com/p/lz4/) || [lz4](https://www.archlinux.org/packages/?name=lz4)
+	[https://github.com/lz4/lz4](https://github.com/lz4/lz4) || [lz4](https://www.archlinux.org/packages/?name=lz4)
 
 *   **lzop** — Fast file compressor using lzo lib.
 
@@ -674,7 +675,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **zopfli** — High compress ratio file compressor from Google, using a deflate-compatible algorithm called zopfli.
 
-	[https://code.google.com/p/zopfli](https://code.google.com/p/zopfli) || [zopfli-git](https://aur.archlinux.org/packages/zopfli-git/)
+	[https://github.com/google/zopfli](https://github.com/google/zopfli) || [zopfli-git](https://aur.archlinux.org/packages/zopfli-git/)
 
 *   **[zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) "wikipedia:Zoo (file format)")** — Rarely used archiver that was mostly used in VMS world before PKZIP became popular.
 
@@ -778,7 +779,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **gconf-cleaner** — cleans up the unknown/invalid gconf keys that still sitting down on your gconf database
 
-	[https://code.google.com/p/gconf-cleaner/](https://code.google.com/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
+	[https://code.google.com/archive/p/gconf-cleaner/](https://code.google.com/archive/p/gconf-cleaner/) || [gconf-cleaner](https://aur.archlinux.org/packages/gconf-cleaner/)
 
 ### Disk usage display
 
@@ -815,6 +816,12 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 *   **[OpenNTPD](/index.php/OpenNTPD "OpenNTPD")** — Free, easy to use implementation of the Network Time Protocol.
 
 	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
+
+### System maintenance
+
+*   **cylon** — Updates, Maintenance , anti-malware , backups and system checks in a menu driven Bash script.
+
+	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 
 ### System monitoring
 
@@ -918,7 +925,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **inxi** — A script to get system information.
 
-	[https://code.google.com/p/inxi](https://code.google.com/p/inxi) || [inxi](https://www.archlinux.org/packages/?name=inxi)
+	[https://github.com/smxi/inxi](https://github.com/smxi/inxi) || [inxi](https://www.archlinux.org/packages/?name=inxi)
 
 *   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
 
@@ -964,7 +971,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **qxkb** — A keyboard switcher written in Qt.
 
-	[http://code.google.com/p/qxkb/](http://code.google.com/p/qxkb/) || [qxkb](https://aur.archlinux.org/packages/qxkb/)
+	[https://github.com/disels/qxkb](https://github.com/disels/qxkb) || [qxkb](https://aur.archlinux.org/packages/qxkb/)
 
 *   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — A text analyser, it detects the language of the input and corrects the keyboard layout if needed.
 
@@ -982,7 +989,7 @@ See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_manager
 
 *   **bgs** — An extremely fast and small background setter for X based on imlib2.
 
-	[http://github.com/Gottox/bgs/](http://github.com/Gottox/bgs/) || [bgs-git](https://aur.archlinux.org/packages/bgs-git/)
+	[https://github.com/Gottox/bgs/](https://github.com/Gottox/bgs/) || [bgs-git](https://aur.archlinux.org/packages/bgs-git/)
 
 *   **esetroot** — Eterm's root background setter, packaged separately
 
@@ -1040,17 +1047,17 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 *   **[Rime IME](/index.php/Rime_IME "Rime IME")** — Rime input method engine.
 
-	[http://code.google.com/p/rimeime/](http://code.google.com/p/rimeime/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
+	[http://rime.im/](http://rime.im/) || [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) or [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime)
 
 *   **[UIM](/index.php/UIM "UIM")** — Multilingual input method library.
 
-	[http://code.google.com/p/uim/](http://code.google.com/p/uim/) || [uim](https://www.archlinux.org/packages/?name=uim)
+	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
 
 ### Trash management
 
 *   **trash-cli** — A command-line interface implementing FreeDesktop.org's Trash specification.
 
-	[http://github.com/andreafrancia/trash-cli](http://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
+	[https://github.com/andreafrancia/trash-cli](https://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
 
 ### File synchronization
 

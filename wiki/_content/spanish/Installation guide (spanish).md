@@ -56,7 +56,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   El servicio de Internet a través del demonio [dhcpcd](/index.php/Dhcpcd "Dhcpcd") está [activado](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) en el arranque para los dispositivos **cableados**. Compruebe que su conexión se ha establecido, usando, por ejemplo, la herramienta [ping](/index.php/Ping "Ping"): `# ping archlinux.org` 
 
-*   Si no dispone de ninguna conexión, [detenga](/index.php/Systemd#Using_units "Systemd") el servicio *dhcpcd* con la orden `dhcpcd@@<TAB>` y eche un vistazo al artículo [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
+*   Si no dispone de ninguna conexión, [detenga](/index.php/Systemd#Using_units "Systemd") el servicio *dhcpcd* con la orden `systemctl stop dhcpcd@<TAB>` y eche un vistazo al artículo [Network configuration](/index.php/Network_configuration#Device_driver "Network configuration").
 
 *   Para realizar conexiones **inalámbricas**, dispone de iw(8), wpa_supplicant(8) y [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl"). Vea [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration").
 

@@ -8,13 +8,14 @@ This article overviews some useful extensions which enhance security and privacy
     *   [1.3 Adblock Plus](#Adblock_Plus)
     *   [1.4 Privacy Badger](#Privacy_Badger)
     *   [1.5 Disconnect](#Disconnect)
-    *   [1.6 Ghostery](#Ghostery)
-    *   [1.7 NoScript](#NoScript)
-    *   [1.8 uMatrix](#uMatrix)
-    *   [1.9 Cookie Monster](#Cookie_Monster)
-    *   [1.10 Self-Destructing Cookies](#Self-Destructing_Cookies)
-    *   [1.11 RefControl](#RefControl)
-    *   [1.12 RequestPolicy](#RequestPolicy)
+    *   [1.6 NoScript](#NoScript)
+    *   [1.7 uMatrix](#uMatrix)
+    *   [1.8 Cookie Monster](#Cookie_Monster)
+    *   [1.9 Self-Destructing Cookies](#Self-Destructing_Cookies)
+    *   [1.10 RefControl](#RefControl)
+    *   [1.11 RequestPolicy](#RequestPolicy)
+    *   [1.12 Decentraleyes](#Decentraleyes)
+    *   [1.13 CanvasBlocker](#CanvasBlocker)
 *   [2 Configuration tweaks](#Configuration_tweaks)
     *   [2.1 Enable tracking protection](#Enable_tracking_protection)
     *   [2.2 Change browser time zone](#Change_browser_time_zone)
@@ -40,13 +41,7 @@ uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](ht
 
 ### Adblock Plus
 
-[Adblock Plus](https://adblockplus.org/en/) can be used to stop intrusive advertisements but it can also be configured to block websites from tracking you.
-
-Once installed visit the [Easy List website](https://easylist.adblockplus.org/en/) and add the EasyList and EasyPrivacy lists to your Adblock Plus filter subscriptions. This is done by simply clicking any of the "Add [filter] to Adblock Plus" on the webpage. This will bring up the add filter prompt. Review the details and click "Add Subscription".
-
-EasyList is the primary subscription that removes adverts from English webpages, including unwanted frames, images and objects.
-
-EasyPrivacy is a supplementary subscription for EasyList which removes all forms of tracking from the internet, including web bugs, tracking scripts and information collectors.
+[Adblock Plus](https://adblockplus.org/en/) was a popular exstension to block ads. Now that it is not blocking some ads on purpose [[1]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
 
 ### Privacy Badger
 
@@ -59,26 +54,6 @@ Disconnect is a open source project aimed at stopping 2,000 third-party sites fr
 Disconnect can also stop side-jacking, which utilizes stolen cookies to steal personal data. It is easy to use and well supported. It can be added to Firefox at the [official website](https://disconnect.me/).
 
 **Note:** Firefox gained a feature based on the Disconnect list. See [Firefox tweaks#Enable firefox optional tracking protection](/index.php/Firefox_tweaks#Enable_firefox_optional_tracking_protection "Firefox tweaks").
-
-### Ghostery
-
-[Ghostery](https://www.ghostery.com/) is similar to Disconnect, but is a proprietary project which employ the use of website trackers to track businesses. There is controversy due to Ghostery, Inc. being formerly known as The Better Advertising Project, and being in the business of online-advertising and market intelligence in addition to internet privacy. From the website:
-
-*Ghostery tracks over 1,000 trackers and gives you a roll-call of the ad networks, behavioural data providers, web publishers, and other companies interested in your activity.*
-
-Ghostery can be installed from the Firefox add-on manager or from the [official website](https://www.ghostery.com/download). Once installed, Ghostery can be configured by selecting preferences from the Add-ons Manager in Firefox which will bring you to the configuration page. It may also be configured from:
-
-```
-[https://extension.ghostery.com/settings](https://extension.ghostery.com/settings)
-
-```
-
-Alternatively you can configure Ghostery through the included wizard:
-
-```
-[https://extension.ghostery.com/intro#start](https://extension.ghostery.com/intro#start)
-
-```
 
 ### NoScript
 
@@ -119,6 +94,14 @@ To do this open RefControl's preferences and change the setting for "Default for
 [RequestPolicy](https://www.requestpolicy.com/) is an extension for Mozilla browsers which lets you have control over cross-site requests. The latest development version lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
 
 For more information on cross-site requests and RequestPolicy visit [here](https://www.requestpolicy.com/faq.html).
+
+### Decentraleyes
+
+[Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/) protects you against tracking through "free", centralized, content delivery. It prevents a lot of requests from reaching networks like Google Hosted Libraries, and serves local files to keep sites from breaking. Complements regular content blockers.
+
+### CanvasBlocker
+
+[CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting.</canvas>
 
 ## Configuration tweaks
 

@@ -4,7 +4,7 @@ AMD's Linux driver package *catalyst* was previously named *fglrx* (**F**ire**GL
 
 **Catalyst packages are no longer offered in the official repositories.** In the past, Catalyst [has been dropped](https://www.archlinux.org/news/ati-catalyst-support-dropped/) from official Arch support because of dissatisfaction with the quality and speed of development. After a brief return they were dropped again in April 2013 and they have not returned since.
 
-Compared with the open source driver, Catalyst performs better in both 2D and 3D rendering, also having better power management, but it lacks efficient multi-head support. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with chipset R600 and newer (Radeon HD 2xxx and newer). See the Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/Comparison_of_AMD_graphics_processing_units "wikipedia:Comparison of AMD graphics processing units"), to translate *model* names (X1900, HD4850) to/from *chip* names (R580, RV770 respectively).
+Compared with the open source driver, Catalyst performs better in both 2D and 3D rendering, also having better power management, but it lacks efficient multi-head support. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with chipset R600 and newer (Radeon HD 2xxx and newer). See the Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units"), to translate *model* names (X1900, HD4850) to/from *chip* names (R580, RV770 respectively).
 
 ## Contents
 

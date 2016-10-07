@@ -36,13 +36,13 @@ modify IgnorePkg array | dnf.conf <--”exclude” option (add/amend) | apt-mark
 | Provide a list of all system checkpoints | N/A | dnf history list | n/a |
 | Rolls entire packages back to a certain date or checkpoint. | N/A | dnf history rollback | n/a |
 | Undo a single specified transaction. | N/A | dnf history undo | n/a |
-| Mark a package previously installed as a dependency as explicitly required. | pacman -D --asexplicit | apt-mark manual | emerge --select |
-| Install package(s) as dependency / without marking as explicitly required. | pacman -S --asdeps | aptitude install 'pkg&M' | emerge -1 |
+| Mark a package previously installed as a dependency as explicitly required. | pacman -D --asexplicit | dnf mark install | apt-mark manual | emerge --select |
+| Install package(s) as dependency / without marking as explicitly required. | pacman -S --asdeps | dnf install => dnf mark remove | aptitude install 'pkg&M' | emerge -1 |
 | ***Package information management*** |
 | Get a dump of the whole system information - Prints, Saves or similar the current state of the package management system. Preferred output is text or XML. (Note: Why either-or here? No tool offers the option to choose the output format.) | (see /var/lib/pacman/local) | (see /var/lib/rpm/Packages) | apt-cache stats | n/a | emerge --info |
 | Show all or most information about a package. The tools' verbosity for the default command vary. But with options, the tools are on par with each other. | pacman -[S|Q]i | dnf list, dnf info | apt show / apt-cache policy | zypper info zypper if | emerge -S; emerge -pv; eix |
 | Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt search | zypper search zypper se [-s] | emerge -S |
-| Display changelogs | apt-get changelog |
+| Display changelogs | apt-get changelog | rpm -q --changelog |
 | e-mail delivery of package changes | apt-get install apt-listchanges |
 | Lists packages which have an update available. Note: Some provide special commands to limit the output to certain installation sources, others use options. | pacman -Qu | dnf list updates, dnf check-update | apt-get upgrade -> n | zypper list-updates zypper patch-check (just for patches) | emerge -uDNp world |
 | Display a list of all packages in all installation sources that are handled by the packages management. Some tools provide options or additional commands to limit the output to a specific installation source. | pacman -Sl | dnf list available | apt-cache dumpavail apt-cache dump (Cache only) apt-cache pkgnames | zypper packages | emerge -ep world |

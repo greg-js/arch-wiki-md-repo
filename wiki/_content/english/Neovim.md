@@ -16,21 +16,9 @@ Neovim is a fork of [Vim](/index.php/Vim "Vim") aiming to improve user experienc
 
 ### Transition from vim
 
-Neovim uses `$XDG_CONFIG_HOME/nvim` instead of `~/.vim` as its main configuration directory and `$XDG_CONFIG_HOME/nvim/init.vim` instead of `~/.vimrc` as its main configuration file. To use your vim configuration in neovim execute the following commands which will create the appropriate symlinks:
+Neovim uses `$XDG_CONFIG_HOME/nvim` instead of `~/.vim` as its main configuration directory and `$XDG_CONFIG_HOME/nvim/init.vim` instead of `~/.vimrc` as its main configuration file.
 
-```
-$ mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-$ ln -s ~/.vim $XDG_CONFIG_HOME/nvim
-$ ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
-
-```
-
-To get more info about the transition run the following command in neovim:
-
-```
-:help nvim-from-vim
-
-```
+See [nvim-from-vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim) or the `:help nvim-from-vim` neovim command to use your vim configuration in neovim.
 
 #### Loading vim addons
 

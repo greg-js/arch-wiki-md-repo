@@ -89,16 +89,16 @@ To check the service status, use `timedatectl status`.
 [Identify the devices](/index.php/Core_utilities#lsblk "Core utilities") where the new system will be installed (results ending in `rom`, `loop` or `airoot` may be ignored):
 
 ```
-# fdisk -l
+# lsblk -f
 
 ```
 
-The following [partitions](/index.php/Partition "Partition") (disk sections) are required for a chosen device:
+The following [partitions](/index.php/Partition "Partition") are required for a chosen device:
 
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
-[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or, unless formatting with [Btrfs](/index.php/Btrfs "Btrfs"), a [swap file](/index.php/Swap#Swap_file "Swap"). See also [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning").
+[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap#Swap_file "Swap"). See also [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning").
 
 The used partitioning tool depends on the choice of [partition table](/index.php/Partitioning#Partition_table "Partitioning"):
 

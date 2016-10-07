@@ -19,7 +19,7 @@ A comprehensive list of features are documented at the [official Openbox website
         *   [4.1.1 Modifiers](#Modifiers)
         *   [4.1.2 Multimedia keys](#Multimedia_keys)
         *   [4.1.3 Navigation keys](#Navigation_keys)
-    *   [4.2 Volume Control](#Volume_Control)
+    *   [4.2 Volume control](#Volume_control)
         *   [4.2.1 ALSA](#ALSA)
         *   [4.2.2 Pulseaudio](#Pulseaudio)
         *   [4.2.3 OSS](#OSS)
@@ -262,10 +262,10 @@ The volume and brightness multimedia codes are as follows (note that commands wi
 *   `XF86AudioRaiseVolume`: Increase volume
 *   `XF86AudioLowerVolume`: Decrease volume
 *   `XF86AudioMute`: Mute / unmute volume
-*   `XF86MonBrightnessUp`: Increase screen brightess
+*   `XF86MonBrightnessUp`: Increase screen brightness
 *   `XF86MonBrightnessDown`: Decrease screen brightness
 
-Examples of how these may be used in `~/.config/openbox/rc.xml` have been provided below.
+Examples of how these may be used in `~/.config/openbox/rc.xml` have been provided in the [#Volume control](#Volume_control) section.
 
 #### Navigation keys
 
@@ -276,7 +276,7 @@ These are the directional / arrow keys, usually used to move the cursor up, down
 *   `Left`: Left
 *   `Right`: Right
 
-### Volume Control
+### Volume control
 
 What commands should be used for controlling the volume will depend on whether [ALSA](/index.php/ALSA "ALSA"), [PulseAudio](/index.php/PulseAudio "PulseAudio"), or [OSS](/index.php/OSS "OSS") is used for sound.
 

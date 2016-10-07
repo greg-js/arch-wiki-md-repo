@@ -55,6 +55,7 @@
     *   [5.11 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
     *   [5.12 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
     *   [5.13 Rendering issues with Adwaita theme](#Rendering_issues_with_Adwaita_theme)
+    *   [5.14 Fix 2 fingers click to middle click on touchpad](#Fix_2_fingers_click_to_middle_click_on_touchpad)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -664,6 +665,31 @@ $ wget https://archive.archlinux.org/repos/2016/04/08/extra/os/$(uname -m)/gnome
 ```
 
 and installed via pacman's `-U` option.
+
+### Fix 2 fingers click to middle click on touchpad
+
+If you want the 2 finger click on the touchpad to do a middle click, you have to edit directly the configuration xml file (`~/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml`) to add (or modify) this part :
+
+```
+<channel name="pointers" version="1.0">
+  <property name="SynPS2_Synaptics_TouchPad" type="empty">
+    <property name="Properties" type="empty">
+      <property name="Synaptics_Tap_Action" type="array">
+        <value type="int" value="0"/>
+        <value type="int" value="0"/>
+        <value type="int" value="0"/>
+        <value type="int" value="0"/>
+        <value type="int" value="1"/>
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+      </property>
+    </property>
+  </property>
+</channel>
+
+```
+
+The 2 in the array is the middle click.
 
 ## See also
 

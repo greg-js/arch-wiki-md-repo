@@ -33,15 +33,17 @@ To enable OpenGL support, also install [mesa-libgl](https://www.archlinux.org/pa
 
 Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
 
+**Note:** The [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) package is only used for Xorg acceleration and not strictly required.
+
 ### AMDGPU PRO
 
-**Warning:** This is still highly experimental, no official Arch Linux package exists yet
+**Warning:** AMDGPU PRO is still in beta. Arch Linux is not officially supported.
 
-AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. This hybrid approach allows the in-kernel component to be recompiled by the Arch Linux maintainers when required (e.g. on a kernel or Xorg update), while keeping the same binary userspace part. This should remedy the problem where the driver provided by AMD is out of date and incompatible with newer kernels or Xorg versions (a problem that was very common with the old [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver). You do not need to have [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) installed to use *AMDGPU PRO*. For an detailed overview of the hybrid system, see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
+AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. This hybrid approach allows the in-kernel component to be recompiled by the Arch Linux maintainers when required (e.g. on a kernel or Xorg update), while keeping the same binary userspace part. This should remedy the problem where the driver provided by AMD is out of date and incompatible with newer kernels or Xorg versions (a problem that was very common with the old [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver). For an detailed overview of the hybrid system, see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTgwODA).
 
 The AMDGPU PRO driver provides OpenGL, OpenCL, Vulkan and VDPAU support. It aims to provide better performance than the open-source driver.
 
-See the [initial release notes](http://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Beta-Driver-for-Vulkan-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
+See the [release notes](http://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver%E2%80%93Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
 
 There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)), visit [https://github.com/Corngood/archlinux-amdgpu](https://github.com/Corngood/archlinux-amdgpu) for issues or pull requests.
 
@@ -105,14 +107,14 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 If you want to enable `amdgpu` and use it with your Sea Islands or Southern Islands product, you have to recompile your kernel. Probably the easiest way to setup a custom kernel is using the ABS, described in [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). You can also uncomment `make menuconfig` or `make nconfig` in the PKGBUILD, which will allow you to verify that the CIK option is selected by following the instructions from [Gentoo wiki](https://wiki.gentoo.org/wiki/Amdgpu#Feature_support).
 
-For Sea Islands (CIK), set "Enable amdgpu support for SI parts" to "yes", then compile and install your kernel.
+For Sea Islands (CIK), set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
 
 ```
 CONFIG_DRM_AMDGPU_CIK=Y
 
 ```
 
-For Southern Islands (SI; since Linux 4.9), set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
+For Southern Islands (SI; since Linux 4.9), set "Enable amdgpu support for SI parts" to "yes", then compile and install your kernel.
 
 ```
 CONFIG_DRM_AMDGPU_SI=Y

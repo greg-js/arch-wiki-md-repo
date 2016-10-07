@@ -2,7 +2,7 @@
 
 [infinality](http://www.infinality.net/)补丁集可以显著改善 freetype2 字体渲染。另外也新增了一些新功能。
 
-Infinality可以通过动态设置环境变量来启用功能。设置如下：
+Infinality 可以通过修改环境变量来启用一些功能：
 
 *   **加粗增强 (Emboldening Enhancement)**：禁用Y加粗可以（使用原生 TrueType 微调器或者自动微调器）使得没有加粗版本的字体的显示得以改善。
 *   **自动微调 (Auto-Autohint)**：强制那些不含 TrueType 信息的字体使用自动微调。
@@ -12,13 +12,13 @@ Infinality可以通过动态设置环境变量来启用功能。设置如下：
 *   **伪伽玛校正 (Pseudo Gamma Correction)**：（使用原生 TrueType 微调器或者自动微调器）亮化和暗化给定大小的字形达到规定的值。
 *   **加粗细体字体 (Embolden Thin Fonts)**：加粗细体字体，使得他们更加好看（自动微调）。
 *   **强制微少微调 (Force Slight Hinting)**：强制微少微调甚至程序希望饱和微调。
-*   **ChromeOS 风格锐化 (ChromeOS Style Sharpening)**: ChromeOS 所使用的锐化字体渲染的补丁现在包含在当infinality补丁集里。
+*   **ChromeOS 锐化 (ChromeOS Style Sharpening)**: ChromeOS 所使用的锐化字体渲染的补丁现在包含在当infinality补丁集里。
 
 具体详见 [README](http://www.infinality.net/forum/viewtopic.php?f=2&t=18)。
 
-内置了一些预设置，可以通过设置那些在 `/etc/X11/xinit/xinitrc.d/xft-settings.sh` 中的 USE_STYLE 变量在来使用。
+Infinality 内置了一些预设置，可以通过在 `/etc/X11/xinit/xinitrc.d/xft-settings.sh` 设置 USE_STYLE 环境变量来使用。
 
-变量应该在 `/etc/profile.d/infinality-settings.sh` 里进行设置。模板详见 [infinality-settings.sh](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/infinality-settings.sh)。
+Infinality 的环境变量应该在 `/etc/profile.d/infinality-settings.sh` 里进行设置。模板详见 [infinality-settings.sh](https://github.com/bohoomil/fontconfig-ultimate/blob/master/freetype/infinality-settings.sh)。
 
 ## Contents
 
@@ -26,11 +26,11 @@ Infinality可以通过动态设置环境变量来启用功能。设置如下：
     *   [1.1 Infinality-bundle](#Infinality-bundle)
         *   [1.1.1 附加字体](#.E9.99.84.E5.8A.A0.E5.AD.97.E4.BD.93)
     *   [1.2 AUR](#AUR)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Fonts with restricted licenses](#Fonts_with_restricted_licenses)
-    *   [2.2 Xft and FreeType settings](#Xft_and_FreeType_settings)
-    *   [2.3 Fontconfig settings](#Fontconfig_settings)
-        *   [2.3.1 Font substitutions](#Font_substitutions)
+*   [2 设置](#.E8.AE.BE.E7.BD.AE)
+    *   [2.1 许可限制字体](#.E8.AE.B8.E5.8F.AF.E9.99.90.E5.88.B6.E5.AD.97.E4.BD.93)
+    *   [2.2 Xft 和 FreeType 设置](#Xft_.E5.92.8C_FreeType_.E8.AE.BE.E7.BD.AE)
+    *   [2.3 Fontconfig 设置](#Fontconfig_.E8.AE.BE.E7.BD.AE)
+        *   [2.3.1 字体替换](#.E5.AD.97.E4.BD.93.E6.9B.BF.E6.8D.A2)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Spotify](#Spotify)
     *   [3.2 Google Chrome](#Google_Chrome)
@@ -44,7 +44,7 @@ Infinality可以通过动态设置环境变量来启用功能。设置如下：
 
 ## 安装
 
-**Warning:** 上游 infinality 补丁为早于2.4x的freetype2使用的。建议用户使用*Bohoomil*的[infinality-bundle](#Infinality-bundle)。
+**Warning:** 上游 infinality 补丁为早于 2.4x 的 freetype2 使用的。建议用户使用*Bohoomil*的[infinality-bundle](#Infinality-bundle)。
 
 ### Infinality-bundle
 
@@ -69,7 +69,7 @@ Infinality可以通过动态设置环境变量来启用功能。设置如下：
 
 **Note:**
 
-*   不要忘记向pacman密钥环导入密钥 **962DDE58**。详细介绍详见 [Pacman-key (简体中文)#.E5.AF.BC.E5.85.A5.E9.9D.9E.E5.AE.98.E6.96.B9.E5.AF.86.E9.92.A5](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AF.BC.E5.85.A5.E9.9D.9E.E5.AE.98.E6.96.B9.E5.AF.86.E9.92.A5 "Pacman-key (简体中文)")。
+*   不要忘记向pacman密钥环导入密钥 **962DDE58**。详细介绍详见 [导入非官方密钥](/index.php/Pacman-key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AF.BC.E5.85.A5.E9.9D.9E.E5.AE.98.E6.96.B9.E5.AF.86.E9.92.A5 "Pacman-key (简体中文)")。
 *   当pacman解决软件包依赖和冲突时，例如：
     ```
     resolving dependencies...
@@ -81,49 +81,49 @@ Infinality可以通过动态设置环境变量来启用功能。设置如下：
 
 #### 附加字体
 
-如果想要安装更多字体，还有一个额外字体集合 *infinality-bundle-fonts-extra* 。运行
+如果想要安装更多字体，还有一个额外字体集合 *infinality-bundle-fonts-extra* 可供安装。运行
 
 ```
 $ pacman -Ss infinality-bundle-fonts-extra
 
 ```
 
-列出可用的安装包。
+可以列出所有可用的字体包。
 
 **Warning:** **不要**尝试安装 *infinality-bundle-fonts* 组或者 *infinality-bundle-fonts-extra* 组的全部包。除非你确信你需要有可用的字体在其中，否则你只会无缘无故地塞满你的硬盘以及降低字体缓存性能。*ibfonts-meta-extended* 大多数情况下甚至复杂的应用场景应该是够用的。此外，一些字体家族有多种字体格式（T1、TTF、OTF）可供选择。尝试安装所有的字体包可能会导致无法解决安装包的冲突。如果是这种情况，你应该坚持每个字体家族只使用一种字体格式。
 
-**Tip:** 从 [official repositories (简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 或 [AUR](/index.php/AUR "AUR") 安装第三方字体之前，应该检查该字体是否包含在 *infinality-bundle-fonts* 里。
+**Tip:** 从 [官方源](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)") 或 [AUR](/index.php/AUR "AUR") 安装第三方字体之前，应该检查该字体是否包含在 *infinality-bundle-fonts* 里。
 
 **Note:** 当**报告错误**时，所有与代码相关的问题（如不正确渲染、fontconfig 的问题等）请在GitHub [Issues * bohoomil/fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate/issues) 上提交，其他具体问题（包括有关维护、打包和一般性问题）请在Arch论坛反应。提交报告之前，请确保正确安装或定制 [infinality-bundle]。
 
 ### AUR
 
-As of 2016-04, the following AUR packages containing (mainly Bohoomil's) Infinality patches are available:
+截至 2016年04月，以下是可用的包含 （大部分是 Bohoomil 的）Infinality 补丁的 AUR 包：
 
 *   [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/)
 *   [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/)
 *   [cairo-infinality](https://aur.archlinux.org/packages/cairo-infinality/)
 *   [jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/)
-    *   In [jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/) (IcedTea JDK7), the Infinality patch is already included, so all the maintainer did was setting <tt>--enable-infinality=yes</tt>.
+    *   [jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/) (IcedTea JDK7) 已经包含 Infinality 补丁，所以维护者只要设置 <tt>--enable-infinality=yes</tt> 即可。
 
-Although these packages are using the same source of patches as Bohoomil's repo does, they often target a specific commit in Bohoomil's repo and can be lagging behind. The packagers may also have their own ideas on what patches to apply.
+虽然这些软件包是使用和 Bohoomil 库相同的补丁源码，但是他们通常以 Bohoomil 库中的一个具体的提交，所以可能有些延迟。打包者对于打什么补丁可能有自己的想法。
 
-Besides [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/), it is recommended to also install [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) to enable selection of predefined font substitution styles and antialiasing settings, apart from the rendering settings of the engine itself.
+除了 [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) 以外，建议同时安装 [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/)，使得除了系统渲染引擎的设置以外的预定义字体替换样式和抗锯齿的设置能够启用。
 
-## Configuration
+## 设置
 
-### Fonts with restricted licenses
+### 许可限制字体
 
-Below you will find a list of fonts that cannot be freely redistributed and thus could not be included in the *infinality-bundle-fonts* collection as binary packages. However, they can still be installed and used free of charge under specified conditions. Source packages can be found in the [AUR](/index.php/AUR "AUR"). Please, read the EULAs for details before you use the fonts!
+你会发现下列字体是不能自由分发的，所以这些字体并不在 *infinality-bundle-fonts* 的字体包里。但是，它们仍然可以在指定的条件下免费安装和使用。源包可以在[AUR](/index.php/AUR "AUR")中找到。在使用的这些字体之前，请认真阅读**最终用户许可协议**！
 
 *   [ttf-brill](https://aur.archlinux.org/packages/ttf-brill/)
 *   [otf-neris](https://aur.archlinux.org/packages/otf-neris/)
 *   [ttf-aller](https://aur.archlinux.org/packages/ttf-aller/)
 *   [ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)
 
-### Xft and FreeType settings
+### Xft 和 FreeType 设置
 
-Settings should duplicate those found in the [Xft](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration") configuration file (`/etc/X11/xinit/xinitrc.d/xft-settings.sh`):
+[Xft](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration") 的配置文件 (`/etc/X11/xinit/xinitrc.d/xft-settings.sh`) 不应该重复设置：
 
 ```
 Xft.antialias: 1
@@ -136,24 +136,24 @@ Xft.rgba: rgb
 
 ```
 
-Aside from these values you can modify `INFINALITY_FT` [environment variables](/index.php/Environment_variable "Environment variable"). For example:
+除了上述这些值以外，你可以修改 `INFINALITY_FT` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")。 例如：
 
 ```
-# Makes fonts darker and thicker
+# 使字体更粗或者更细
 export INFINALITY_FT_BRIGHTNESS="-10"
 
-# Not too sharp, not too smooth
+# 不要太锐利，也不要太平滑
 export INFINALITY_FT_FILTER_PARAMS="16 20 28 20 16"
 
 ```
 
-**Note:** Customisations will be saved in a `.pacsave` file on an update of the infinality package.
+**Note:** 在升级 infinality 包过后，自定义设置 将被保存在 `.pacsave` 文件中。
 
-### Fontconfig settings
+### Fontconfig 设置
 
-Infinality-patched [fontconfig](/index.php/Fontconfig "Fontconfig") provides a different set of example/avail and default configurations. There are also multiple presets available. Run `fc-presets help` for more information.
+Infinality 补丁 [fontconfig](/index.php/Fontconfig "Fontconfig") 提供一组不同的示例配置和一个默认配置。 [fontconfig](/index.php/Fontconfig "Fontconfig") 提供多种预设配置，运行 `fc-presets help` 以获取更多信息。
 
-For example, it is possible to skip installation of *infinality-bundle-fonts* if you want to use Microsoft proprietary font collection instead. If this is the case, you have to activate fontconfig MS preset to ensure the correct set of fonts is selected. To do so, issue
+譬如，如果你想使用微软专有字体集，可以不安装 *infinality-bundle-fonts* ，但是必须选择 fontconfig 的 ms 预设配置保证正确的字体集被选中，执行
 
  `# fc-presets set` 
 ```
@@ -166,18 +166,18 @@ Enter your choice...
 
 ```
 
-and select `3`.
+然后选择 `3`。
 
-If you would rather use a custom font collection, there is a `combi` preset available that should let you adjust fontconfig parameters accordingly. When you activate the `combi` preset, the content of 'custom' configuration files (`/etc/fonts/conf.avail.infinality/combi`) can be freely modified. When you are done, do not forget to create a backup copy of the 'combi' directory.
+如果你希望使用自定义字体集合，`combi` 预设配置可让你调整相应的 fontconfig 参数。当选择 `combi` 预设配置时，combi 配置文件(`/etc/fonts/conf.avail.infinality/combi`) 的内容可以随意修改。当完成修改之后，不要忘记创建 combi 目录的备份。
 
 **Note:**
 
 *   Install [grip-git](https://aur.archlinux.org/packages/grip-git/) from the AUR to have a realtime font preview.
 *   The `README` for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that `/etc/fonts/local.conf` should either not exist, or have no infinality-related configurations in it. The `local.conf` is now obsolete and completely replaced by this configuration.
 
-#### Font substitutions
+#### 字体替换
 
-To override default font substitutions set in `/etc/fonts/conf.d/37-repl-global-*preset*.conf` or add new ones, use `/etc/fonts/conf.d/35-repl-custom.conf` to do so. You will need to duplicate the template (16 lines of code) for each font family to be replaced and provide appropriate font names.
+想要覆盖在 `/etc/fonts/conf.d/37-repl-global-*preset*.conf` 中设置的默认字体替换，或者想要添加新的字体替换，请使用 `/etc/fonts/conf.d/35-repl-custom.conf` 。你需要复制每个字体家族模板（16行代码），在此基础上进行更换为适当的字体名称。
 
 ## Troubleshooting
 

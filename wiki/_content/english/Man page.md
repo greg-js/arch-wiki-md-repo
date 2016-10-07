@@ -226,11 +226,11 @@ if (!fork) {
 There are several online databases of man pages, including:
 
 *   [Man7.org.](http://man7.org/linux/man-pages/index.html) Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
+*   [*Arch Linux man pages*](https://manned.org/pkg/arch)
 *   [*Debian GNU/Linux man pages*](http://manpages.debian.net/)
 *   [*DragonFlyBSD manual pages*](http://leaf.dragonflybsd.org/cgi/web-man)
 *   [*FreeBSD Hypertext Man Pages*](http://www.freebsd.org/cgi/man.cgi)
 *   [*Linux and Solaris 10 Man Pages*](http://www.manpages.spotlynx.com/)
-*   [*Linux/FreeBSD Man Pages*](http://manpagehelp.net) with user comments
 *   [*Linux man pages at die.net*](http://linux.die.net/man/)
 *   [The Linux man-pages project at kernel.org](http://www.kernel.org/doc/man-pages/)
 *   [*NetBSD manual pages*](http://netbsd.gw.com/cgi-bin/man-cgi)
@@ -249,23 +249,23 @@ There are several online databases of man pages, including:
 
 Here follows a non-exhaustive list of noteworthy pages that might help you understand a lot of things more in-depth. Some of them might serve as a good reference (like the ascii table).
 
-*   ascii(7)
-*   boot(7)
-*   charsets(7)
-*   chmod(1)
-*   credentials(7)
-*   fstab(5)
-*   hier(7)
-*   systemd(1)
-*   locale(1P)(5)(7)
-*   printf(3)
-*   proc(5)
-*   regex(7)
-*   signal(7)
-*   term(5)(7)
-*   termcap(5)
-*   terminfo(5)
-*   utf-8(7)
+*   [ascii(7)](http://man7.org/linux/man-pages/man7/ascii.7.html)
+*   [boot(7)](http://man7.org/linux/man-pages/man7/boot.7.html)
+*   [charsets(7)](http://man7.org/linux/man-pages/man7/charsets.7.html)
+*   [chmod(1)](http://man7.org/linux/man-pages/man1/chmod.1.html)
+*   [credentials(7)](http://man7.org/linux/man-pages/man7/credentials.7.html)
+*   [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html)
+*   [hier(7)](http://man7.org/linux/man-pages/man7/hier.7.html)
+*   [systemd(1)](http://man7.org/linux/man-pages/man1/systemd.1.html)
+*   [locale(1p)](http://man7.org/linux/man-pages/man1/locale.1p.html), [locale(5)](http://man7.org/linux/man-pages/man5/locale.5.html), [locale(7)](http://man7.org/linux/man-pages/man7/locale.7.html)
+*   [printf(3)](http://man7.org/linux/man-pages/man3/printf.3.html)
+*   [proc(5)](http://man7.org/linux/man-pages/man5/proc.5.html)
+*   [regex(7)](http://man7.org/linux/man-pages/man7/regex.7.html)
+*   [signal(7)](http://man7.org/linux/man-pages/man7/signal.7.html)
+*   [term(5)](http://man7.org/linux/man-pages/man5/term.5.html), [term(7)](http://man7.org/linux/man-pages/man7/term.7.html)
+*   [termcap(5)](http://man7.org/linux/man-pages/man5/termcap.5.html)
+*   [terminfo(5)](http://man7.org/linux/man-pages/man5/terminfo.5.html)
+*   [utf-8(7)](http://man7.org/linux/man-pages/man7/utf-8.7.html)
 
 More generally, have a look at category 7 pages:
 
@@ -278,9 +278,9 @@ Arch Linux specific pages:
 
 *   archlinux(7)
 *   mkinitcpio(8)
-*   pacman(8)
-*   pacman-key(8)
-*   pacman.conf(5)
+*   [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)
+*   [pacman-key(8)](https://www.archlinux.org/pacman/pacman-key.8.html)
+*   [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html)
 
 ## See also
 

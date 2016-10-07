@@ -27,7 +27,7 @@ In the following table, commonly-specified families are shown in **bold**. This 
 
 <caption>"Core fonts for the web" compatibilities</caption>
 | [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Windows](#Microsoft) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | StarOffice |
-| **Helvetica** | Nimbus Sans | TeX Gyre Heros | FreeSans | MS Sans Serif (Helv) | **Arial** | Liberation Sans | Arimo | Albany |
+| **Helvetica** | Nimbus Sans, A030 | TeX Gyre Heros | FreeSans | MS Sans Serif (Helv) | **Arial** | Liberation Sans | Arimo | Albany |
 | **Times** | Nimbus Roman | TeX Gyre Termes | FreeSerif | MS Serif (Tms Rmn) | **Times New Roman** | Liberation Serif | Tinos | Thorndale |
 | **Courier** | Nimbus Mono | TeX Gyre Cursor | FreeMono | **Courier New** | Liberation Mono | Cousine | Cumberland |
 | **Helvetica Condensed** | Nimbus Sans Narrow | TeX Gyre Heros Cn | **Arial Narrow** | Liberation Sans Narrow |
@@ -49,14 +49,28 @@ In the following table, commonly-specified families are shown in **bold**. This 
 | ITC Avant Garde Gothic | URW Gothic | TeX Gyre Adventor |
 | ITC Bookman | Bookman URW | TeX Gyre Bonum | Bookman Old Style |
 | ITC Zapf Chancery | Chancery URW | TeX Gyre Chorus |
-| Palatino | Palladio URW | TeX Gyre Pagella | Palatino Linotype |
+| **Palatino** | Palladio URW | TeX Gyre Pagella | Palatino Linotype |
 | New Century Schoolbook | Century SchoolBook URW | TeX Gyre Schola | Century Schoolbook |
+
+<caption>PostScript 3 Fonts</caption>
+| [PostScript](#PostScript) | [URW](#PostScript) |
+| Optima | URW Classico |
+| Antique Olive | Antique Olive |
+| Univers | U001 |
+| Clarendon Bold Condensed | Clarendon URW Bold Condensed |
+| Coronet | Coronet |
+| Letter Gothic | Letter Gothic |
+| Marigold | Mauritius |
+| Albertus | A028 |
+| Garamond | Garamond No. 8 |
 
 ## Generic Families
 
 ### PostScript
 
 The PostScript language defines [35 core fonts](https://en.wikipedia.org/wiki/PostScript_fonts#Core_Font_Set "wikipedia:PostScript fonts") in PostScript 2\. URW released open-source versions of these 35 fonts for [w:ghostscript](https://en.wikipedia.org/wiki/ghostscript "w:ghostscript"). Projects including GUST's [TeX Gyre](#TeX_Gyre) and [GNU FreeFont](#GNU_FreeFont) release enhanced versions of these fonts.
+
+PostScript 3 defines an additional 101 fonts, many of which are made available by URW in [GhostPDL](http://svn.ghostscript.com/ghostscript/trunk/ghostpdl/urwfonts/).
 
 ### Microsoft
 

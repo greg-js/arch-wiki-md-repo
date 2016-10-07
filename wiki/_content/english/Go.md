@@ -6,7 +6,9 @@
     *   [1.1 Test your installation](#Test_your_installation)
     *   [1.2 $GOPATH](#.24GOPATH)
     *   [1.3 Enable cross compilation for other platforms](#Enable_cross_compilation_for_other_platforms)
-*   [2 See also](#See_also)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Jetbrains Go Plugin](#Jetbrains_Go_Plugin)
+*   [3 See also](#See_also)
 
 ## Installation
 
@@ -127,6 +129,12 @@ You can now build your system Go using the downloaded Go as bootstrap with this 
 **Note:** These commands will need to be run following each Go package update.
 
 For more information, see [FS#30287](https://bugs.archlinux.org/task/30287).
+
+## Troubleshooting
+
+### Jetbrains Go Plugin
+
+If you are using a Jetbrains IDE and the Go plugin cannot find your Go SDK path, you might be using an incompatible package. Remove the `gcc-go` package and replace it with `go`. If your GOPATH is set, the IDE should now be able to find your Go SDK at `/usr/lib/go`.
 
 ## See also
 

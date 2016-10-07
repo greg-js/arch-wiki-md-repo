@@ -2,7 +2,7 @@
 
 [i3](http://i3wm.org/) 是一套动态[平铺式窗口管理器](https://en.wikipedia.org/wiki/Tiling_window_manager "wikipedia:Tiling window manager")，灵感来自针对开发者与资深用户的 [wmii](/index.php/Wmii "Wmii")。
 
-i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的树形数据结构，和多种的模式，例如 [vim](/index.php/Vim "Vim")。
+i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的树形数据结构，和多种的模式，例如 [vim](/index.php/Vim "Vim") 模式。
 
 ## Contents
 
@@ -93,14 +93,14 @@ i3 使用 [dmenu](/index.php/Dmenu "Dmenu") 作为首席程序启动器，键绑
 
 当 i3 首次启动时，它会启动配置助手 *i3-config-wizard*。此工具会通过重写位于 `/etc/i3/config.keycodes` 的模板配置文件来创建 `~/.config/i3/config`。他会对默认模板造成两次修改。
 
-1.  It asks the user to choose a default modifier key, which it adds to the template as a single line, like `set $mod Mod1`; and
-2.  it replaces all *bindcode* lines with *bindsym* lines corresponding to the user's current keyboard layout.
+1.  它会询问用户以选择默认的修饰建。它会在模板文件中添加一行，类似于 `set $mod Mod1`; 然后
+2.  它会用用户设置的键盘布局相应的 *bindsyn* 行替换所有 *bindcode* 行。
 
-Step 2 is designed to ensure that the four navigation shortcuts, `j`, `k`, `l` and "semicolon" on a Qwerty keyboard, will be mapped to keysyms which have the same location, e.g. `h`, `t`, `n`, `s` on a [Dvorak](/index.php/Dvorak "Dvorak") keyboard. The side-effect of this magic is that up to fifteen other keysyms may be remapped in ways which break the mnemonics - so that, for a Dvorak user, "restart" is bound to `$mod1+p` instead of `$mod1+r`, "split horizontally" is bound to `$mod1+d` instead of `$mod1+h`, and so on.
+第二步是设计用于确保 Qwerty 键盘上的四个导航键 `j`， `k`， `l` 和 "分号" on a Qwerty keyboard会被映射在拥有相同位置的按键上，举例说，[Dvorak](/index.php/Dvorak "Dvorak") 键盘上的 `h`， `t`， `n`， `s`。这个小戏法的副作用是 最多十五个按键会被以一种破话位置记忆的方式被映射 - 所以，对于 Dvorak 用户， “重启”被绑定于 `$mod1+p` 而不是 `$mod1+r`，“竖直分割”被绑定于 `$mod1+d` 而不是 `$mod1+h`,类似的还有更多。
 
-Therefore, users of alternate keyboard layouts who want straightforward key bindings, which match the bindings given in tutorials, may prefer to circumvent the "config wizard". This can be done by just copying `/etc/i3/config` into `~/.config/i3/config` (or `~/.i3/config`), and editing that file.
+因此，其他键盘布局的用户若是想要直截了当的，符合教程中给出的按键绑定的键盘绑定，可能更倾向于不去使用 "config wizard" 。这可以拷贝 `/etc/i3/config` 到 `~/.config/i3/config` （或 `~/.i3/config`），然后编辑此文件。
 
-Note that a keycode-based configuration is also possible, e.g. for users who often switch between keyboard layouts, but want the i3 bindings to stay the same.
+注意，用户也可以建立一份以键码为基础的配置。例如，对于那些经常切换键盘布局，但是想要 i3 的键盘绑定保持相同的用户。
 
 ### 颜色主题
 
@@ -171,14 +171,14 @@ bindsym $mod+m bar mode toggle
 
 ### i3status
 
-Copy over the default configuration files to the home directory:
+拷贝默认的配置文件到家目录：
 
 ```
 $ cp /etc/i3status.conf ~/.config/i3status/config
 
 ```
 
-Not all plugins are defined in the default configuration and some configuration values may be invalid for your system, so the need to be updated accordingly. See `man i3status` for details.
+不是所有的插件都被在默认配置文件中被定义，一些配置值对于系统也可能是无效的，所以需要相应的更新。具体见 `man i3status` 。
 
 #### i3status可选方案
 
