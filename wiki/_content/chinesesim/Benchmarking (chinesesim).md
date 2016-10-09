@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Benchmarking](/index.php/Benchmarking "Benchmarking") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-08，点击[这里](https://wiki.archlinux.org/index.php?title=Benchmarking&diff=0&oldid=453268)可以查看翻译后英文页面的改动。
+
 基准测试是性能测试，与其他的系统进行比较，通过统一的流程，是一个被广泛接受的标准。评估系统性能可以解答如下问题：
 
 *   系统性能应该是这样？
@@ -23,6 +25,7 @@
     *   [2.3 HardInfo](#HardInfo)
     *   [2.4 Phoronix测试集](#Phoronix.E6.B5.8B.E8.AF.95.E9.9B.86)
 *   [3 闪存介质](#.E9.97.AA.E5.AD.98.E4.BB.8B.E8.B4.A8)
+*   [4 参阅](#.E5.8F.82.E9.98.85)
 
 ## 独立工具
 
@@ -30,11 +33,11 @@
 
 glxgears是流行的OpenGL测试，渲染非常简单的齿轮，输出帧率。尽管glxgears可以测试显卡驱动直接渲染能力，但是它已经过时，不能代表GNU/Linux图形显示的现状以及OpenGL的全部能力。glxgears仅测试了一小部分OpenGL功能。在glxgears中体现的性能提升在游戏中并不能感受到。更多信息请看[这里](http://wiki.cchtml.com/index.php/Glxgears_is_not_a_Benchmark)。
 
-可以通过[mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos)和[lib32-mesa-demos](https://www.archlinux.org/packages/?name=lib32-mesa-demos)（针对 [Multilib](/index.php/Multilib "Multilib")）安装glxgears。
+可以通过[mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) 安装 64 位版本，通过 [Multilib](/index.php/Multilib "Multilib") 中的 [lib32-mesa-demos](https://www.archlinux.org/packages/?name=lib32-mesa-demos)安装 32 位版本。
 
 ### UnixBench
 
-unixbench的包在[AUR](/index.php/AUR "AUR"): [unixbench](https://aur.archlinux.org/packages/unixbench/)中。 在终端中运行*ubench*跑评测。
+unixbench [unixbench](https://aur.archlinux.org/packages/unixbench/)中。 在终端中运行*ubench*跑评测。
 
 请看：
 
@@ -43,10 +46,7 @@ unixbench的包在[AUR](/index.php/AUR "AUR"): [unixbench](https://aur.archlinux
 
 ### interbench
 
-interbench用来评测Linux交互性。测试Linux内核设计改变后，或系统配置改变后的效果，例如CPU、I/O调度、文件系统的改变，以及参数的改变。
-**Tip:** 使用仔细的评测，可以比较不同的硬件。
-
-interbench在[AUR](/index.php/AUR "AUR"): [interbench](https://aur.archlinux.org/packages/interbench/)。
+[interbench](https://aur.archlinux.org/packages/interbench/) 可以评测 Linux 的交互性。测试 Linux 内核设计或系统配置改变后的效果，例如 CPU、I/O调度、文件系统，以及参数的改变。使用仔细的评测，可以比较不同的硬件。
 
 请看：
 
@@ -84,7 +84,7 @@ $ time tar -zxvf archive.tar.gz
 
 ### hdparm
 
-可以用[Hdparm](/index.php/Hdparm "Hdparm")（[hdparm](https://www.archlinux.org/packages/?name=hdparm)）评测存储介质。
+可以用 [Hdparm](/index.php/Hdparm "Hdparm") 评测存储介质。
 
 请看[Benchmarking/Data storage devices#Using hdparm](/index.php/Benchmarking/Data_storage_devices#Using_hdparm "Benchmarking/Data storage devices")。
 
@@ -136,7 +136,7 @@ IOzone用来测试文件系统性能。
 
 [hardinfo](https://www.archlinux.org/packages/?name=hardinfo)可以收集系统硬件和操作系统信息，性能评测，生成HTML或纯文本格式的可打印的报表。hardinfo评测CPU和FPU，有清爽的Gtk界面。
 
-请看[[1]](http://wiki.hardinfo.org/HomePage作者网站)。
+请看[作者网站](http://wiki.hardinfo.org/HomePage)。
 
 ### Phoronix测试集
 
@@ -144,7 +144,7 @@ IOzone用来测试文件系统性能。
 
 *Phoronix测试集基于广泛的测试，内部工具从2004年起由Phoronix.com开发，获得一线硬件和软件公司的支持。该软件开源采用GPLv3。*
 
-*原先开发用于Linux自动化测试，后来加入了OpenSolaris、苹果Mac OS X、微软Windows和BSD操作系统。Phoronix测试集由轻量的处理核心（pts-core）组成，每个评测由基于XML的总述、相关的资源脚本组成。从安装评测，到实际评测、到解析重要硬件和软件组件，都是全自动化的，完全可复用的，仅询问用户是否执行操作。*
+*原先开发用于Linux自动化测试，后来加入了OpenSolaris、苹果 macOS、微软 Windows 和 BSD 操作系统。Phoronix 测试集由轻量的处理核心（pts-core）组成，每个评测由基于XML的总述、相关的资源脚本组成。从安装评测，到实际评测、到解析重要硬件和软件组件，都是全自动化的，完全可复用的，仅询问用户是否执行操作。*
 
 *Phoronix测试集使用OpenBenchmarking.org接口用于存储测试结果，分享测试总述和结果，高级的分析特性，以及其他功能。Phoromatic是在多系统编排测试执行的企业组件，具有远程管理的功能。*
 
@@ -171,7 +171,7 @@ $ iozone -e -I -a -s 10M -r 4k -i 0 -i 1 -i 2
 *   单位是KB/s。
 *   SD卡和其他闪存介质的性能图表[Tom's Hardware](http://www.tomshardware.com/charts/memory-cards,39.html)。
 
-请看
+## 参阅
 
 *   [Linux评测主页](http://lbs.sourceforge.net/)
 *   [Phoronix.com](http://www.phoronix.com/)

@@ -113,7 +113,7 @@ profile test /usr/lib/test/test_binary {
 
 ```
 
-Text preceded by a `@` symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`) and or tunables (`/etc/apparmor.d/tunables/`) or within the profile. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax). Most common use cases are covered by the following statements:
+Text preceded by a `@` symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`), tunables (`/etc/apparmor.d/tunables/`) or by the profile itself. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax). Most common use cases are covered by the following statements:
 
 *   `r` — read: read data
 *   `w` — write: create, delete, write to a file and extend it

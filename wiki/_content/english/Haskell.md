@@ -109,6 +109,8 @@ It is possible to install a package system–wide with the `--global` flag, but 
 
 There is no easy way to do it.
 
+One thing to make your life easier is use zsh auto completion to find all the haskell packages.
+
 ## See also
 
 *   [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

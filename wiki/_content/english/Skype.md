@@ -6,7 +6,7 @@ There are two official Linux versions of Skype available:
 
 *   The old Skype (last release in June 2014): see [#Legacy Skype](#Legacy_Skype)
 
-Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working voice chat, at least with Chromium/Chrome.
+Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working voice chat, at least with Chromium/Chrome. In recent versions of Firefox voice and video chat are working.
 
 ## Contents
 

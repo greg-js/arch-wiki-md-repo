@@ -209,7 +209,7 @@ See [Pkgfile#Command not found](/index.php/Pkgfile#Command_not_found "Pkgfile").
 
 ### Key bindings
 
-Zsh does not use readline, instead it uses its own and more powerful zle. It does not read `/etc/inputrc` or `~/.inputrc`. Zle has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
+Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful zle. It does not read `/etc/inputrc` or `~/.inputrc`. Zle has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
 See also [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
 

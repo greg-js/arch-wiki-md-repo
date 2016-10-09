@@ -118,7 +118,7 @@ There are no strict rules for partitioning a hard drive, although one may follow
 **Note:**
 
 *   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
-*   Installing [GRUB](/index.php/GRUB "GRUB") on a BIOS system partitioned with [GPT](#GUID_Partition_Table) requires an additional [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+*   BIOS systems which are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
 
 ### Single root partition
 
@@ -207,31 +207,39 @@ The size of the partitions depends on personal preference, but the following inf
 
 ## Partitioning tools
 
+The following programs can be used to create and/or manipulate device partition tables and partitions. See the linked articles for the exact commands to be used.
+
 **Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
 
-*   **[fdisk](/index.php/Fdisk "Fdisk")** — Terminal partitioning tools included in Linux.
+**fdisk**
+
+*   **[fdisk](/index.php/Fdisk "Fdisk")** — Dialog-driven program for creation and manipulation of partition tables.
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Terminal partitioning tool written with ncurses libraries.
+*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Curses version of fdisk.
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 *   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — Scriptable version of fdisk.
 
-	|| [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+**gdisk**
 
 *   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](#GUID_Partition_Table) version of fdisk.
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
-*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — GPT version of cfdisk.
+*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — Curses version of gdisk.
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
 *   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable version of gdisk.
 
 	[http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
+
+**parted**
 
 *   **[GNU Parted](/index.php/GNU_Parted "GNU Parted")** — Terminal partitioning tool.
 
@@ -240,6 +248,8 @@ The size of the partitions depends on personal preference, but the following inf
 *   **[GParted](/index.php/GParted "GParted")** — Graphical tool written in GTK.
 
 	[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
+
+**partitionmanager**
 
 *   **Partitionmanager** — Graphical tool written in Qt.
 

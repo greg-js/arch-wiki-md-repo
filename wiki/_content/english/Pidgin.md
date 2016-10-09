@@ -159,7 +159,7 @@ Now you can open conversation window and new icon should appear beside menu. Pre
 
 Pidgin-GPG transparently encrypt conversations using GPG, and taking advantage of all the features of a pre-existing WoT.
 
-The plugin is available on AUR as [pidgin-gpg](https://aur.archlinux.org/packages/pidgin-gpg/). It can be enabled the same way as the previously mentioned ones.
+The plugin is available on AUR as [pidgin-gpg-git](https://aur.archlinux.org/packages/pidgin-gpg-git/). It can be enabled the same way as the previously mentioned ones.
 
 ## Other packages
 

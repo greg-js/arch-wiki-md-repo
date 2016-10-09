@@ -197,7 +197,7 @@ Where `*<id>*` is:
 
 ### Lightweight monitoring suite
 
-[monitorix](https://aur.archlinux.org/packages/monitorix/) has specific support for the RPi since v3.2.0\. Screenshots available [here](http://www.monitorix.org/screenshots.html).
+[monitorix](https://aur.archlinux.org/packages/monitorix/) has specific support for the RPi since v3.2.0 through the `raspberrypi = y` setting in `/etc/monitorix/monitorix.conf`. Temperature, voltages, and frequencies are logged; screenshots available [here](http://www.monitorix.org/screenshots.html).
 
 ## Overclocking/underclocking
 

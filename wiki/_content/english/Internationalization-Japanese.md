@@ -38,6 +38,7 @@ Recommended Japanese fonts are as follows.
 If you want to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly, use one of the following fonts:
 
 *   ipamona font (AUR: [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/))
+*   Mona font (AUR: [ttf-mona](https://aur.archlinux.org/packages/ttf-mona/))
 *   Monapo font (AUR: [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/))
 
 ## Locale

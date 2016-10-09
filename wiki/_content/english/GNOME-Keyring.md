@@ -73,13 +73,13 @@ Add `auth optional pam_gnome_keyring.so` at the end of the `auth` section and `s
 ```
 #%PAM-1.0
 
- auth       required     pam_securetty.so
- auth       requisite    pam_nologin.so
- auth       include      system-local-login
- auth       optional     pam_gnome_keyring.so
- account    include      system-local-login
- session    include      system-local-login
- session    optional     pam_gnome_keyring.so        auto_start
+auth       required     pam_securetty.so
+auth       requisite    pam_nologin.so
+auth       include      system-local-login
+**auth       optional     pam_gnome_keyring.so**
+account    include      system-local-login
+session    include      system-local-login
+**session    optional     pam_gnome_keyring.so        auto_start**
 ```
 
 Next, add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/passwd`.
@@ -88,10 +88,10 @@ Next, add `password optional pam_gnome_keyring.so` to the end of `/etc/pam.d/pas
 ```
 #%PAM-1.0
 
- #password	required	pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
- #password	required	pam_unix.so sha512 shadow use_authtok
- password	required	pam_unix.so sha512 shadow nullok
- password	optional	pam_gnome_keyring.so
+#password	required	pam_cracklib.so difok=2 minlen=8 dcredit=2 ocredit=2 retry=3
+#password	required	pam_unix.so sha512 shadow use_authtok
+password	required	pam_unix.so sha512 shadow nullok
+**password	optional	pam_gnome_keyring.so**
 ```
 
 **Note:**

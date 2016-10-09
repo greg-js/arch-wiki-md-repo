@@ -20,6 +20,7 @@ This article overviews some useful extensions which enhance security and privacy
     *   [2.1 Enable tracking protection](#Enable_tracking_protection)
     *   [2.2 Change browser time zone](#Change_browser_time_zone)
     *   [2.3 Change user agent and platform](#Change_user_agent_and_platform)
+    *   [2.4 Disable battery api](#Disable_battery_api)
 
 ## Extensions
 
@@ -154,3 +155,7 @@ general.platform.override
 Select a known common platform that corresponds with your user agent.
 
 **Tip:** The value `Win32` is used as the platform for the Tor browser, corresponding with the user agent provided above.
+
+### Disable battery api
+
+Battery status api may be used to fingerprint the user[[2]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.

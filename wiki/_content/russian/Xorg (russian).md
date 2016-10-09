@@ -3,7 +3,7 @@
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-    *   [1.1 Driver installation](#Driver_installation)
+    *   [1.1 Установка драйвера](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0)
 *   [2 Запуск](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA)
 *   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [3.1 Устройства ввода](#.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
@@ -17,7 +17,7 @@
         *   [3.2.5 Модель клавиатуры](#.D0.9C.D0.BE.D0.B4.D0.B5.D0.BB.D1.8C_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
     *   [3.3 InputClasses](#InputClasses)
 *   [4 Графика](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.B0)
-    *   [4.1 Установка драйвера](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0)
+    *   [4.1 Установка драйвера](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0_2)
     *   [4.2 Настройка монитора](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
         *   [4.2.1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
         *   [4.2.2 Несколько мониторов](#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
@@ -71,29 +71,29 @@
 
 **Совет:** Вам, скорее всего, понадобится установить [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер") или [среду рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") для X.
 
-### Driver installation
+### Установка драйвера
 
-The Linux kernel includes open-source video drivers and support for hardware accelerated framebuffers. However, userland support is required for OpenGL and 2D acceleration in X11.
+Ядро Linux включает в себя видеодрайверы с открытым исходным кодом и поддержку аппаратного ускорения буфера кадров. Однако, для работы OpenGL и двухмерного ускорения в X11 требуется поддержка пользовательского ПО.
 
-First, identify your card:
+Сперва определите вашу видеокарту:
 
 ```
 $ lspci | grep -e VGA -e 3D
 
 ```
 
-Then install an appropriate driver. You can search the package database for a complete list of open-source video drivers:
+Затем установите соответствующий драйвер. Вы можете поискать в базе данных пакетов полный список видеодрайверов с открытым исходным кодом:
 
 ```
 $ pacman -Ss xf86-video
 
 ```
 
-The default graphics driver is [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), which handles a large number of chipsets but does not include any 2D or 3D acceleration. If a better driver cannot be found or fails to load, Xorg will fall back to *vesa*.
+Стандартный графический драйвер — [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), который поддерживает огромное число чипсетов, но не включает в себя ни 2D, ни 3D ускорение. Если более подходящий драйвер отсутствует или не загружается, X будет использовать *vesa*.
 
-In order for video acceleration to work, and often to expose all the modes that the GPU can set, a proper video driver is required:
+Для того, чтобы ускорение видео работало, и часто для того, чтобы разблокировать все режимы, в которых может работать GPU, требуется правильный видеодрайвер:
 
-**Note:** If you have a NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [Bumblebee](/index.php/Bumblebee "Bumblebee").
+**Примечание:** Если Вы пользуетесь ноутбуком с разрешённым NVIDIA Optimus, который использует интегрированную видеокарту вместе с дискретной видеокартой, обратитесь к статье [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
 | Бренд | Тип | Драйвер | [Multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)") | Документация |
 | **AMD/ATI** | Свободный | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") |
@@ -106,7 +106,7 @@ In order for video acceleration to work, and often to expose all the modes that 
 
 Другие видео драйверы можно найти в группе [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
 
-Xorg should run smoothly without closed source drivers, which are typically needed only for advanced features such as fast 3D-accelerated rendering for games.
+Во избежание проблем X следует запускать без драйверов с закрытым исходным кодом, которые обычно требуются только для расширенных возможностей, таких, как быстрый 3D рендеринг в играх.
 
 ## Запуск
 

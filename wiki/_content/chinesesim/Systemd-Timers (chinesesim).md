@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-10-25，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd/Timers&diff=0&oldid=340100)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-10-25，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd%2FTimers&diff=0&oldid=340100)可以查看翻译后英文页面的改动。
 
 Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") 单元文件，用于控制 `.service` 文件或事件。Timers 可用来替换 [cron](/index.php/Cron "Cron")（阅读 [#替换 cron](#.E6.9B.BF.E6.8D.A2_cron)）。Timers 内置了日历定时事件和单调定时事件的支持，并可以异步执行这些事件。
 

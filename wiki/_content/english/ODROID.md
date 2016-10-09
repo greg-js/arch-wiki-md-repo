@@ -10,19 +10,21 @@ There are several supported ODROID ARM boards available to consumers. This wiki 
     *   [3.1 Headless mode for the C2](#Headless_mode_for_the_C2)
     *   [3.2 CPU frequency scaling](#CPU_frequency_scaling)
         *   [3.2.1 Show online/offline cores](#Show_online.2Foffline_cores)
-        *   [3.2.2 Read CPU temperature](#Read_CPU_temperature)
-        *   [3.2.3 Read CPU frequency](#Read_CPU_frequency)
-        *   [3.2.4 Read CPU governor](#Read_CPU_governor)
-*   [4 Hardware tweaks](#Hardware_tweaks)
-    *   [4.1 LEDs](#LEDs)
-        *   [4.1.1 Blue LED](#Blue_LED)
-            *   [4.1.1.1 List available triggers](#List_available_triggers)
-            *   [4.1.1.2 Temporary configuration](#Temporary_configuration)
-            *   [4.1.1.3 Permanent configuration](#Permanent_configuration)
-    *   [4.2 CPU Fan](#CPU_Fan)
-        *   [4.2.1 Fan Mode](#Fan_Mode)
-        *   [4.2.2 Fan Speed (Manual Only)](#Fan_Speed_.28Manual_Only.29)
-*   [5 See also](#See_also)
+*   [4 Onboard hardware sensors](#Onboard_hardware_sensors)
+    *   [4.1 CPU temperature](#CPU_temperature)
+    *   [4.2 CPU frequency](#CPU_frequency)
+    *   [4.3 CPU governor](#CPU_governor)
+    *   [4.4 Lightweight monitoring suite](#Lightweight_monitoring_suite)
+*   [5 Hardware tweaks](#Hardware_tweaks)
+    *   [5.1 LEDs](#LEDs)
+        *   [5.1.1 Blue LED](#Blue_LED)
+            *   [5.1.1.1 List available triggers](#List_available_triggers)
+            *   [5.1.1.2 Temporary configuration](#Temporary_configuration)
+            *   [5.1.1.3 Permanent configuration](#Permanent_configuration)
+    *   [5.2 CPU Fan](#CPU_Fan)
+        *   [5.2.1 Fan Mode](#Fan_Mode)
+        *   [5.2.2 Fan Speed (Manual Only)](#Fan_Speed_.28Manual_Only.29)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -79,7 +81,9 @@ lscpu |grep line
 
 ```
 
-#### Read CPU temperature
+## Onboard hardware sensors
+
+### CPU temperature
 
 ```
 awk '{printf "%3.1f°C
@@ -87,7 +91,7 @@ awk '{printf "%3.1f°C
 
 ```
 
-#### Read CPU frequency
+### CPU frequency
 
 ```
 awk '{printf "%3.1f MHz
@@ -95,12 +99,16 @@ awk '{printf "%3.1f MHz
 
 ```
 
-#### Read CPU governor
+### CPU governor
 
 ```
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
 ```
+
+### Lightweight monitoring suite
+
+[monitorix](https://aur.archlinux.org/packages/monitorix/) has specific support for the the ODROID since v3.8.2 through the `gensens = y` setting in `/etc/monitorix/monitorix.conf`. Core temperature and CPU frequency are logged; screenshots available [here](http://www.monitorix.org/screenshots.html).
 
 ## Hardware tweaks
 

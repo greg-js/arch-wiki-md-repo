@@ -152,10 +152,24 @@ $ npm uninstall packageName
 
 #### Listing packages
 
-To show a tree view of the installed packages use:
+To show a tree view of the installed globally packages use:
 
 ```
 $ npm -g list
+
+```
+
+This tree is often quite deep. To only display the top level packages use:
+
+```
+$ npm list --depth=0
+
+```
+
+To display obsolete packages that may need to be updated:
+
+```
+$ npm outdated
 
 ```
 

@@ -221,7 +221,7 @@ Users **not** wishing to have the passphrase to their wireless network stored in
 
 Calculate your 256-bit PSK using [wpa_passphrase](/index.php/WPA_supplicant#Connecting_with_wpa_passphrase "WPA supplicant"):
 
- `$ wpa_passphrase *your_essid* *passphrase*` 
+ `$ wpa_passphrase *your_essid*` 
 ```
 network={
   ssid="*your_essid*"

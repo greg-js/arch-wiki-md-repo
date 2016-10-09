@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [GNU_Parted](/index.php/GNU_Parted "GNU Parted") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-09，点击[这里](https://wiki.archlinux.org/index.php?title=GNU_Parted&diff=0&oldid=440534)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GNU_Parted](/index.php/GNU_Parted "GNU Parted") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-07，点击[这里](https://wiki.archlinux.org/index.php?title=GNU_Parted&diff=0&oldid=440534)可以查看翻译后英文页面的改动。
 
 GNU Parted 是创建和处理分区表的工具，[GParted](/index.php/GParted "GParted") 是图形前端.
 
@@ -17,8 +17,8 @@ GNU Parted 是创建和处理分区表的工具，[GParted](/index.php/GParted "
     *   [4.3 Resizing Partitions](#Resizing_Partitions)
         *   [4.3.1 Growing partitions](#Growing_partitions)
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
-*   [5 Warnings](#Warnings)
-    *   [5.1 Alignment](#Alignment)
+*   [5 警告](#.E8.AD.A6.E5.91.8A)
+    *   [5.1 分区对齐](#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -163,7 +163,7 @@ Ignore/Cancel?
 
 ```
 
-表示分区没 [对齐](/index.php/Partitioning#Partition_alignment "Partitioning")，请按照 [GNU Parted#Alignment](/index.php/GNU_Parted#Alignment "GNU Parted") 进行修正。
+表示分区没 [对齐](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90 "Partitioning (简体中文)")，请按照 [分区对齐](/index.php/GNU_Parted_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.86.E5.8C.BA.E5.AF.B9.E9.BD.90 "GNU Parted (简体中文)") 进行修正。
 
 下面命令设置 `/boot` 为启动目录：
 
@@ -301,11 +301,11 @@ When done, use the *resizepart* command from [util-linux](https://www.archlinux.
 
 Where `*device*` is the device that holds the partition, `*number*` is the number of the partition and `*size*` is the new size of the partition.
 
-## Warnings
+## 警告
 
 Parted will always warn you before doing something that is potentially dangerous, unless the command is one of those that is inherently dangerous (viz., rm, mklabel and mkpart).
 
-### Alignment
+### 分区对齐
 
 When creating a partition, *parted* might warn about improper partition alignment but does not hint about proper alignment. For example:
 

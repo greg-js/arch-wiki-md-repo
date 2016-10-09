@@ -41,6 +41,7 @@
     *   [4.7 SSH agents](#SSH_agents)
     *   [4.8 Scroll a background window without shifting focus on it](#Scroll_a_background_window_without_shifting_focus_on_it)
     *   [4.9 Mouse button modifier](#Mouse_button_modifier)
+    *   [4.10 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Action buttons are missing icons](#Action_buttons_are_missing_icons)
     *   [5.2 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
@@ -55,7 +56,6 @@
     *   [5.11 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
     *   [5.12 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
     *   [5.13 Rendering issues with Adwaita theme](#Rendering_issues_with_Adwaita_theme)
-    *   [5.14 Fix 2 fingers click to middle click on touchpad](#Fix_2_fingers_click_to_middle_click_on_touchpad)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -494,6 +494,32 @@ $ xfconf-query -c xfwm4 -p /general/easy_click -n -t string -s "Ctrl><Alt"
 
 ```
 
+### Set the two fingers click to middle click for a touchpad
+
+If you want the 2 finger click on the touchpad to do a middle click, create or edit the following file:
+
+ `~/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml` 
+```
+<channel name="pointers" version="1.0">
+  <property name="SynPS2_Synaptics_TouchPad" type="empty">
+    <property name="Properties" type="empty">
+      <property name="Synaptics_Tap_Action" type="array">
+        <value type="int" value="0"/>
+        <value type="int" value="0"/>
+        <value type="int" value="0"/>
+        <value type="int" value="0"/>
+        <value type="int" value="1"/>
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+      </property>
+    </property>
+  </property>
+</channel>
+
+```
+
+The 2 in the array is the middle click.
+
 ## Troubleshooting
 
 ### Action buttons are missing icons
@@ -665,31 +691,6 @@ $ wget https://archive.archlinux.org/repos/2016/04/08/extra/os/$(uname -m)/gnome
 ```
 
 and installed via pacman's `-U` option.
-
-### Fix 2 fingers click to middle click on touchpad
-
-If you want the 2 finger click on the touchpad to do a middle click, you have to edit directly the configuration xml file (`~/.config/xfce4/xfconf/xfce-perchannel-xml/pointers.xml`) to add (or modify) this part :
-
-```
-<channel name="pointers" version="1.0">
-  <property name="SynPS2_Synaptics_TouchPad" type="empty">
-    <property name="Properties" type="empty">
-      <property name="Synaptics_Tap_Action" type="array">
-        <value type="int" value="0"/>
-        <value type="int" value="0"/>
-        <value type="int" value="0"/>
-        <value type="int" value="0"/>
-        <value type="int" value="1"/>
-        <value type="int" value="2"/>
-        <value type="int" value="3"/>
-      </property>
-    </property>
-  </property>
-</channel>
-
-```
-
-The 2 in the array is the middle click.
 
 ## See also
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [GRUB/EFI_examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-28，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB/EFI_examples&diff=0&oldid=362948)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GRUB/EFI_examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-02-28，点击[这里](https://wiki.archlinux.org/index.php?title=GRUB%2FEFI_examples&diff=0&oldid=362948)可以查看翻译后英文页面的改动。
 
 我们都知道不同的主板制造商有不同的 UEFI 实现。本文介绍了一些针对不同硬件来以 EFI 模式安装/恢复 GRUB 的可行方法。
 

@@ -31,7 +31,7 @@ Tenha em mente sempre seguir a [etiqueta do fórum](/index.php/Forum_etiquette "
 
 ### Melhore esta Wiki
 
-A [ArchWiki](/index.php/AboutWiki "AboutWiki") é colaborativa e todos os usuários são incentivados a interagir, sendo a documentação principal da comunidade Arch Linux. Por favor, leia [contribuindo - inglês](/index.php/ArchWiki:Contributing "ArchWiki:Contributing").
+A [ArchWiki](/index.php/AboutWiki "AboutWiki") é colaborativa e todos os usuários são incentivados a interagir, sendo a documentação principal da comunidade Arch Linux. Por favor, leia [contribuindo](/index.php/ArchWiki:Contribuiting_(Portugu%C3%AAs) "ArchWiki:Contribuiting (Português)").
 
 ### Ingresse nas salas de chat
 

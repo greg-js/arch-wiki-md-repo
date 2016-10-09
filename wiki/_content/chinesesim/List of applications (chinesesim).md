@@ -1059,7 +1059,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for high-quality voice communication.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 ###### 其它
 
@@ -1193,7 +1193,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 *   **[pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — A GTK2 Usenet newsreader that's good at both text and binaries.
 
-	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://aur.archlinux.org/packages/pan/)
+	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
 
 *   **[slrn](https://en.wikipedia.org/wiki/slrn "wikipedia:slrn")** — An open source text-based news client.
 
@@ -3762,7 +3762,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[Metasploit Framework](/index.php/Metasploit_Framework "Metasploit Framework")** — An advanced open-source platform for developing, testing, and using exploit code.
 
-	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://aur.archlinux.org/packages/metasploit/)
+	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://www.archlinux.org/packages/?name=metasploit)
 
 *   **[Nessus](/index.php/Nessus "Nessus")** — Comprehensive vulnerability scanning program.
 
@@ -4140,7 +4140,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — Giac的用戶界面。（Giac是一个自由，基础的计算机代数系统）
 
-	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://aur.archlinux.org/packages/xcas/)
+	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://www.archlinux.org/packages/?name=xcas)
 
 *   **[Sympy](https://en.wikipedia.org/wiki/SymPy "wikipedia:SymPy")** — 支持符号计算的Python函式库(以x,y等名称作运算工具，这是mathemetica有而scipy欠缺的功能)，可求出不定积分(indefinite integral)和导数。显示结果的方式有：ascii art、python expression、Latex，或透过matplotlib绘图。
 
@@ -4494,7 +4494,7 @@ See also [Wikipedia:Comparison of X window managers](https://en.wikipedia.org/wi
 
 #### Window tilers
 
-*   **[PyTyle3](/index.php/PyTyle "PyTyle")** — An automatic tiler that is compatible with Openbox Multihead with faster action and lower memory footprint.
+*   **PyTyle3** — An automatic tiler that is compatible with Openbox Multihead with faster action and lower memory footprint.
 
 	[https://github.com/BurntSushi/pytyle3](https://github.com/BurntSushi/pytyle3) || [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/)
 

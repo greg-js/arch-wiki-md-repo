@@ -7,6 +7,8 @@
     *   [3.1 Crash when some game load](#Crash_when_some_game_load)
     *   [3.2 Login Region Select](#Login_Region_Select)
     *   [3.3 White Flashing](#White_Flashing)
+    *   [3.4 Login Screen Stuck at Loading Spinner (Input fields disabled/greyed out)](#Login_Screen_Stuck_at_Loading_Spinner_.28Input_fields_disabled.2Fgreyed_out.29)
+*   [4 See Also](#See_Also)
 
 ## Installation
 
@@ -38,3 +40,18 @@ When logging in, you must move the mouse over where the dropdown would be for 'R
 ### White Flashing
 
 The client often flashes when the window is moved, or other windows are moved over it. This should not affect the running of the app.
+
+### Login Screen Stuck at Loading Spinner (Input fields disabled/greyed out)
+
+There are two possible causes for this:
+
+1.  Missing lib32-gnutls (cannot connect due to no HTTPS)
+2.  Battle.net's "Browser Acceleration" has been enabled
+
+To fix #1, install lib32-gnutls package. If wine still complains about it not being found, you may need to remove `.wine` folder and restart the whole installtion process (if you do this, remember to rerun `winetricks corefonts vcrun2005 vcrun2008 vcrun2015` to install the runtime files.
+
+To fix #2, disconnect from the internet and relaunch Battle.net Launcher. The email/password field should now be enabled and you can click the little gear icon beside the fields to configure options. Go to 'Advanced' and disable browser acceleration.
+
+## See Also
+
+[Battle.net App (WineHQ AppDB)](https://appdb.winehq.org/objectManager.php?iId=28855&sClass=version)

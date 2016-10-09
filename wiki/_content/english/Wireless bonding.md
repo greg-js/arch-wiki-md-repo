@@ -20,7 +20,7 @@ This example will run wpa_supplicant continuously on any interface, as needed, a
 
 Note that no other "connection manager" is used here, providing a more direct approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), to scan for, select, and connect to new wireless access points/base stations.
 
-In this example, there are five [systemd](/index.php/Systemd "Systemd") service unit files needed, along with four associated configuration files, for [kernel bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), and [dhclient](https://www.archlinux.org/packages/?name=dhclient). The bonding "master" systemd service unit file may be customized, or a separate configuration file may be used, to specify the primary slave network interface name. The other four unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
+In this example, there are five [systemd](/index.php/Systemd "Systemd") service unit files needed, along with four associated configuration files, for [kernel bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), and [dhclient](https://www.archlinux.org/packages/?name=dhclient). The five unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The bonding "master" systemd service unit file may be customized, or a separate fifth configuration file may be used, to specify the primary slave network interface name. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
 
 **Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch Linux packages. Edit as required.
 
@@ -44,25 +44,28 @@ Make sure that the DHCP Client Identifier and the DHCPv6 Client Identifier are t
  `/etc/systemd/system/dhclient@.service` 
 ```
 [Unit]
-Description=ISC dhclient on interface %I
-Documentation=man:dhclient(8) man:dhclient.conf(5)
+Description= ISC dhclient on interface %I
+Documentation= man:dhclient(8) man:dhclient.conf(5)
 
 Documentation= [https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/)
-Wants=network.target
-Before=network.target
+Wants= network.target
+Before= network.target
+After= network-pre.target
 
-BindsTo=sys-subsystem-net-devices-%i.device
+BindsTo= sys-subsystem-net-devices-%i.device
 
 [Service]
 ExecStartPre= /usr/bin/sleep 8
-ExecStart=/usr/bin/dhclient -d -pf /run/dhclient-%i -i %I
+ExecStart= /usr/bin/dhclient -d -pf /run/dhclient-%i -i %I
 
 # Release the current lease and ensure that dhclient has actually stopped.
-ExecStop=/usr/bin/dhclient -r -pf /run/dhclient-%i
-Restart=on-abnormal
+ExecStop= /usr/bin/dhclient -r -pf /run/dhclient-%i
+ExecStop= /usr/bin/sleep 1
+
+Restart= on-abnormal
 
 [Install]
-WantedBy=sys-subsystem-net-devices-%i.device
+WantedBy= sys-subsystem-net-devices-%i.device
 ```
 
 There is a particular issue to address. When *starting* kernel bonding, where the only working interface is the *non*-primary slave - for instance, starting with only a wireless interface available when the wired interface is the primary - then dhclient will quickly start and adopt the MAC address of the initial primary slave, and use that MAC address when attempting to communicate with the DHCP server. When the wireless interface, some short time later, is authenticated, associated, and authorized with the access point/base station, establishing a connection to the network, the bonding driver will make the wireless interface the new active interface, and change the active MAC address on the bond0 interface, to match the wireless MAC address. Because dhclient will continue to use the MAC address from the wired interface, and that MAC address is no longer accepted by the bond0 interface, all DHCP communication will fail. If there is no saved lease file in /var/lib/dhclient/dhclient.leases, then no IPv4 address will be configured, and no IPv4 traffic will be possible. It can also be seen that when dhclient starts quickly, it can read the primary slave's firmware MAC address, rather than any MAC address assigned to the device interface. If the firmware MAC address is "null", then dhclient assigns a random MAC address. BOOTP/DHCP packets using these firmware or random MAC addresses may "succeed" in gaining a reply on the primary slave device and fail on the non-primary slave device. That can be confusing and annoying.
@@ -105,26 +108,30 @@ A simple example configuration file, with no Prefix Delegation being requested. 
  `/etc/systemd/system/dhcp6c@.service` 
 ```
 [Unit]
-Description=WIDE-DHCPv6 dhcp6c on interface %I
-Documentation=man:dhcp6c(8) man:dhcp6c.conf(5) man:dhcp6ctl(8)
+Description= WIDE-DHCPv6 dhcp6c on interface %I
+Documentation= man:dhcp6c(8) man:dhcp6c.conf(5) man:dhcp6ctl(8)
 
 Documentation= [https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/)
-Wants=network.target
-Before=network.target
+Wants= network.target
+Before= network.target
+After= network-pre.target
 
-BindsTo=sys-subsystem-net-devices-%i.device
+BindsTo= sys-subsystem-net-devices-%i.device
 
 [Service]
-ExecStart=/usr/bin/dhcp6c -f -P default -c /etc/wide-dhcpv6/dhcp6c.conf %I
+ExecStart= /usr/bin/dhcp6c -f -P default -c /etc/wide-dhcpv6/dhcp6c.conf %I
 
 # Configure keyinfo in /etc/wide-dhcpv6/dhcp6c.conf
 ExecReload= /usr/bin/dhcp6ctl reload
 ExecReload= /usr/bin/dhcp6ctl start interface %I
+
 ExecStop= /usr/bin/dhcp6ctl stop
-Restart=on-abnormal
+ExecStop= /usr/bin/sleep 1
+
+Restart= on-abnormal
 
 [Install]
-WantedBy=sys-subsystem-net-devices-%i.device
+WantedBy= sys-subsystem-net-devices-%i.device
 ```
 
 ## wpa_supplicant configuration
@@ -160,8 +167,8 @@ Description= wpa_supplicant on %P
 Documentation= man:wpa_supplicant(8) man:wpa_cli(8) man:wpa_supplicant.conf(5) man:wpa_passphrase(8)
 
 Documentation= [https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/)
-Wants= network.target
-Before= network.target
+Wants= network-pre.target
+Before= network-pre.target
 
 BindsTo= sys-subsystem-net-devices-%i.device
 
@@ -185,6 +192,8 @@ Restart= on-abnormal
 [Install]
 WantedBy= sys-subsystem-net-devices-%I.device
 ```
+
+The supplicants and the DHCP and DHCPv6 clients are ordered relative to the network-pre.target on shutdown. The supplicants must not be stopped before the DHCP and DHCPv6 clients release their address leases.
 
 Remember that the `iw` commands do not work with the wired interface drivers or with older wireless drivers which rely upon the Wireless Extensions user-space driver, and will be ignored in those cases.
 

@@ -1,4 +1,4 @@
-**Metric-compatible fonts** are fonts that match the metrics of another font (often generics such as Helvetica, Times or Courier). Due to their matching metrics, replacing a font with a [metric-compatible](https://en.wikipedia.org/wiki/metric-compatible "wikipedia:metric-compatible") alternative does not change the formatting of the document or a web page. Such fonts are often developed for FOSS systems to display pages correctly.
+**Metric-compatible fonts** are fonts that match the metrics (i.e. glyph dimensions) of another font (often generics such as Helvetica, Times or Courier). Due to their matching metrics, replacing a font with a [metric-compatible](https://en.wikipedia.org/wiki/metric-compatible "wikipedia:metric-compatible") alternative does not change the formatting of the document or a web page. Such fonts are often developed for FOSS systems to display pages correctly.
 
 ## Contents
 

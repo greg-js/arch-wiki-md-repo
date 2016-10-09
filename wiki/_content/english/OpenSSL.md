@@ -1,7 +1,4 @@
-**Warning:**
-
-*   A serious vulnerability was discovered affecting some of the OpenSSL 1.0.1 releases in April 2014\. The vulnerability leaves private keys compromised and it is advisable to regenerate these and the corresponding certificates if an affected version of OpenSSL was deployed. Cf. [http://heartbleed.com/](http://heartbleed.com/) and [FS#39775](https://bugs.archlinux.org/task/39775).
-*   Collaborated research into OpenSSL protocol usage, published in May 2015, showed further significant risks for SSL connections; named "Logjam" attack. See [https://weakdh.org/](https://weakdh.org/) for results and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html) for suggested server-side configuration changes.
+**Warning:** Collaborated research into OpenSSL protocol usage, published in May 2015, showed further significant risks for SSL connections; named "Logjam" attack. See [https://weakdh.org/](https://weakdh.org/) for results and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html) for suggested server-side configuration changes.
 
 [OpenSSL](http://www.openssl.org) is an open-source implementation of the SSL and TLS protocols, dual-licensed under the OpenSSL (Apache License 1.0) and the SSLeay (4-clause BSD) licenses. It is supported on a variety of platforms, including BSD, Linux, OpenVMS, Solaris and Windows. It is designed to be as flexible as possible, and is free to use for both personal and commercial uses. It is based on the earlier SSLeay library. Version 1.0.0 of OpenSSL was released on March 29, 2010.
 

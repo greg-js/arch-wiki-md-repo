@@ -1,6 +1,6 @@
 This document is a guide for installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") from the live system booted with the official installation image. Before installing, it would be advised to view the [FAQ](/index.php/FAQ "FAQ"). For conventions used in this document, see [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
-For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles, or the various programs' [man pages](/index.php/Man_page "Man page"); see [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
+For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") articles or the various programs' [man pages](/index.php/Man_page "Man page"), both linked from this guide. See [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) for an overview of the configuration. For interactive help, the [IRC channel](/index.php/IRC_channel "IRC channel") and the [forums](https://bbs.archlinux.org/) are also available.
 
 ## Contents
 
@@ -38,14 +38,9 @@ To switch to a different console—for example, to view this guide with [ELinks]
 
 ### Set the keyboard layout
 
-The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Available choices can be listed with `ls /usr/share/kbd/keymaps/**/*.map.gz`.
+The default [console keymap](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") is [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). To list available layouts, run `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-The layout can be changed with [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), appending a file name (path and file extension can be omitted). For example:
-
-```
-# loadkeys *de-latin1*
-
-```
+To modify the layout, append a file name to [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), omitting path and file extension. For example, run `loadkeys de-latin1` to set a [German](https://en.wikipedia.org/wiki/File:KB_Germany.svg "w:File:KB Germany.svg") keyboard layout.
 
 [Console fonts](/index.php/Fonts#Console_fonts "Fonts") are located in `/usr/share/kbd/consolefonts/` and can likewise be set with [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
@@ -86,26 +81,20 @@ To check the service status, use `timedatectl status`.
 
 ### Partition the disks
 
-[Identify the devices](/index.php/Core_utilities#lsblk "Core utilities") where the new system will be installed (results ending in `rom`, `loop` or `airoot` may be ignored):
+When recognized by the live system, disks are assigned to a *block device* such as `/dev/sda`. To identify these devices, use [lsblk](/index.php/Core_utilities#lsblk "Core utilities") or *fdisk* — results ending in `rom`, `loop` or `airoot` may be ignored:
 
 ```
-# lsblk -f
+# fdisk -l
 
 ```
 
-The following [partitions](/index.php/Partition "Partition") are required for a chosen device:
+The following *partitions* (shown with a numerical suffix) are required for a chosen device:
 
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
+*   [Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap#Swap_file "Swap").
 
-[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap#Swap_file "Swap"). See also [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning").
-
-The used partitioning tool depends on the choice of [partition table](/index.php/Partitioning#Partition_table "Partitioning"):
-
-*   **GPT:** newer format for UEFI systems or >2 TiB disks;
-*   **MBR:** legacy format for BIOS systems.
-
-[fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted") support both GPT and MBR, while *gdisk* only supports GPT.
+To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted"). See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
 
 If wanting to create any stacked block devices for [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") or [RAID](/index.php/RAID "RAID"), do it now.
 
@@ -122,14 +111,22 @@ See [File systems#Create a file system](/index.php/File_systems#Create_a_file_sy
 
 ### Mount the file systems
 
-[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) the file system on the root partition to `/mnt`, for example:
+[Mount](/index.php/File_systems#Mount_a_filesystem "File systems") the file system on the root partition to `/mnt`, for example:
 
 ```
 # mount /dev/*sda1* /mnt
 
 ```
 
-After that, create directories for and mount any other file systems (`/mnt/boot`, `/mnt/home`, ...) and activate the *swap* space with [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html). Mounted file systems will later be detected by *genfstab*.
+Create mount points for any remaining partitions and mount them accordingly, for example:
+
+```
+# mkdir /mnt/*boot*
+# mount /dev/*sda2* /mnt/*boot*
+
+```
+
+[genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) will later detect mounted file systems and swap space.
 
 ## Installation
 
@@ -185,12 +182,14 @@ Set the [time zone](/index.php/Time#Time_zone "Time"):
 
 ```
 
-Run [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) to generate `/etc/adjtime`. If the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), other operating systems should be [configured accordingly](/index.php/Time#Time_standard "Time").
+Run [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) to generate `/etc/adjtime`:
 
 ```
-# hwclock --systohc --*utc*
+# hwclock --systohc
 
 ```
+
+This command assumes the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). See [Time#Time standard](/index.php/Time#Time_standard "Time") for details.
 
 ### Locale
 
@@ -203,24 +202,19 @@ Uncomment `en_US.UTF-8 UTF-8` and other needed [localizations](/index.php/Locali
 
 Set the `LANG` [variable](/index.php/Variable "Variable") in [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) accordingly, for example:
 
-```
-# echo LANG=*en_US.UTF-8* > /etc/locale.conf
+ `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-```
+If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes persistent in [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
 
-If required, set the [console keymap](/index.php/Keyboard_configuration_in_console#Persistent_configuration "Keyboard configuration in console") and [font](/index.php/Fonts#Console_fonts "Fonts") in [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html):
-
-```
-# echo KEYMAP=*de-latin1* > /etc/vconsole.conf
-
-```
+ `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 
 ### Hostname
 
-Create `/etc/hostname` with the desired [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration"):
+Create the [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) file with the desired [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration"):
 
+ `/etc/hostname` 
 ```
-# echo *myhostname* > /etc/hostname
+*myhostname*
 
 ```
 

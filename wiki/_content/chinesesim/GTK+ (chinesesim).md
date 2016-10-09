@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [GTK+](/index.php/GTK%2B "GTK+") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-02-18，点击[这里](https://wiki.archlinux.org/index.php?title=GTK+&diff=0&oldid=247172)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GTK+](/index.php/GTK%2B "GTK+") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-02-18，点击[这里](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=247172)可以查看翻译后英文页面的改动。
 
 摘自[GTK+ 官方网站](http://www.gtk.org)：
 

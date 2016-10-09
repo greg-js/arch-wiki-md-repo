@@ -301,6 +301,13 @@ Ctrl-b d
 
 ```
 
+Or if you use screen:
+
+```
+Ctrl-a d
+
+```
+
 ### systemd service file with dtach
 
 When running dtach from systemd unit, the `TERM` environment variable [has to be set explicitly](/index.php/Systemd/User#Environment_variables "Systemd/User") for rtorrent to work.

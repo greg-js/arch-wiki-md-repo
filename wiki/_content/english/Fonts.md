@@ -17,36 +17,35 @@ Note that certain font licenses may impose some legal limitations.
     *   [3.1 Previewing and testing](#Previewing_and_testing)
     *   [3.2 Persistent configuration](#Persistent_configuration)
 *   [4 Font packages](#Font_packages)
-    *   [4.1 Ancient Scripts](#Ancient_Scripts)
-    *   [4.2 Braille](#Braille)
+    *   [4.1 Latin script](#Latin_script)
+        *   [4.1.1 Monospaced](#Monospaced)
+            *   [4.1.1.1 TrueType](#TrueType)
+            *   [4.1.1.2 Bitmap](#Bitmap)
+        *   [4.1.2 Sans-serif](#Sans-serif)
+        *   [4.1.3 Serif](#Serif)
+        *   [4.1.4 Unsorted](#Unsorted)
+    *   [4.2 Non-latin scripts](#Non-latin_scripts)
+        *   [4.2.1 Ancient Scripts](#Ancient_Scripts)
+        *   [4.2.2 Arabic](#Arabic)
+        *   [4.2.3 Braille](#Braille)
+        *   [4.2.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
+            *   [4.2.4.1 Pan-CJK](#Pan-CJK)
+            *   [4.2.4.2 Chinese](#Chinese)
+            *   [4.2.4.3 Japanese](#Japanese)
+            *   [4.2.4.4 Korean](#Korean)
+            *   [4.2.4.5 Vietnamese](#Vietnamese)
+        *   [4.2.5 Cyrillic](#Cyrillic)
+        *   [4.2.6 Greek](#Greek)
+        *   [4.2.7 Hebrew](#Hebrew)
+        *   [4.2.8 Indic](#Indic)
+        *   [4.2.9 Khmer](#Khmer)
+        *   [4.2.10 Mongolic and Tungusic](#Mongolic_and_Tungusic)
+        *   [4.2.11 Persian](#Persian)
+        *   [4.2.12 Tai–Kadai](#Tai.E2.80.93Kadai)
+        *   [4.2.13 Tibeto-Burman](#Tibeto-Burman)
     *   [4.3 Emoji and symbols](#Emoji_and_symbols)
-        *   [4.3.1 Arabic & Urdu](#Arabic_.26_Urdu)
-        *   [4.3.2 Burmese](#Burmese)
-        *   [4.3.3 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
-            *   [4.3.3.1 Pan-CJK](#Pan-CJK)
-            *   [4.3.3.2 (Mainly) Chinese](#.28Mainly.29_Chinese)
-            *   [4.3.3.3 Japanese](#Japanese)
-            *   [4.3.3.4 Korean](#Korean)
-        *   [4.3.4 Cyrillic](#Cyrillic)
-        *   [4.3.5 Greek](#Greek)
-        *   [4.3.6 Hebrew](#Hebrew)
-        *   [4.3.7 Indic](#Indic)
-        *   [4.3.8 Khmer](#Khmer)
-        *   [4.3.9 Lao](#Lao)
-        *   [4.3.10 Persian](#Persian)
-        *   [4.3.11 Sinhala](#Sinhala)
-        *   [4.3.12 Thai](#Thai)
-        *   [4.3.13 Tibetan](#Tibetan)
     *   [4.4 Math](#Math)
-    *   [4.5 Metric-compatible fonts](#Metric-compatible_fonts)
-    *   [4.6 Apple macOS fonts](#Apple_macOS_fonts)
-    *   [4.7 Monospaced](#Monospaced)
-        *   [4.7.1 TrueType](#TrueType)
-        *   [4.7.2 Bitmap](#Bitmap)
-    *   [4.8 Sans-serif](#Sans-serif)
-    *   [4.9 Script](#Script)
-    *   [4.10 Serif](#Serif)
-    *   [4.11 Unsorted](#Unsorted)
+    *   [4.5 Other operating system fonts](#Other_operating_system_fonts)
 *   [5 Fallback font order with X11](#Fallback_font_order_with_X11)
 *   [6 Font alias](#Font_alias)
 *   [7 Tips and tricks](#Tips_and_tricks)
@@ -321,167 +320,9 @@ This is a selective list that includes many font packages from the [AUR](/index.
 
 Github user Ternstor has created a python script that generates HTML documents with PNG images of all the fonts in the AUR and the official repositories: [[3]](https://github.com/ternstor/distrofonts/blob/master/archfonts.py).
 
-### Ancient Scripts
+### Latin script
 
-*   [ttf-ancient-fonts](https://aur.archlinux.org/packages/ttf-ancient-fonts/) - Font containing Unicode symbols for Aegean, Egyptian, Cuneiform, Anatolian, Maya, and Analecta scripts
-
-### Braille
-
-*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font containing Unicode symbols for *braille*
-
-### Emoji and symbols
-
-A section of the Unicode standard is designated for pictographic characters called "emoji".
-
-*   [emojione-color-font](https://aur.archlinux.org/packages/emojione-color-font/) - a complete, independent, open-source emoji set focused on design correctness
-*   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter's open-sourced emoji glyphs
-*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style
-*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts. Some newer additions to Unicode appear to render poorly with Noto fonts.
-
-[Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
-
-#### Arabic & Urdu
-
-*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - A classical Arabic typeface in Naskh style poineered by Amiria Press
-*   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - Fonts by King Fahd Glorious Quran Printing Complex in al-Madinah al-Munawwarah
-*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - Collection of free Arabic fonts
-*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - Unicode Arabic font from SIL
-*   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - Unicode Arabic font from SIL
-*   [ttf-urdufonts](https://aur.archlinux.org/packages/ttf-urdufonts/) - Urdu fonts (Jameel Noori Nastaleeq (+kasheeda), Nafees Web Naskh, PDMS Saleem Quran Font) and font configuration to set Jameel Noori Nastaleeq as default font for Urdu
-
-#### Burmese
-
-*   [ttf-my-paduk](https://aur.archlinux.org/packages/ttf-my-paduk/) - Padauk font for Myanmar/Birmania
-*   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 121 Fonts from myordbok.com
-
-#### Chinese, Japanese, Korean, Vietnamese
-
-##### Pan-CJK
-
-*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look. It is currently a rebadged version of [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
-*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
-
-##### (Mainly) Chinese
-
-*   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - Simplified Chinese OpenType/CFF fonts
-*   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Traditional Chinese OpenType/CFF fonts
-*   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - A Sans-Serif style high quality CJKV outline font.
-*   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
-*   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - *Kaiti* (brush stroke) Unicode font (enabling anti-aliasing is suggested)
-*   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - *Mingti* (printed) Unicode font
-*   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - *New Sung* font, previously is ttf-fireflysung package
-*   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Bitmapped Song Ti (serif) Chinese font
-*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Chinese and Vietnamese TrueType font
-*   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - CJK serif font that emphasis on an old-style typeface
-*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Kai and Song traditional Chinese font from the Ministry of Education of Taiwan
-
-##### Japanese
-
-*   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - Japanese OpenType/CFF fonts
-*   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - Formal style Japanese Gothic (sans-serif) and Mincho (serif) fonts set; one of the highest quality open source font. Default of openSUSE-ja.
-*   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - Japanese free TrueType font. This is outdated and not maintained any more, but may be defined as a fallback font on several environments.
-*   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - A free Japanese kanji font, style Mincho (serif).
-*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - Japanese Gothic fonts. Default of Debian/Fedora/Vine Linux
-*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - Modern Gothic style Japanese outline fonts. It includes all of Japanese Hiragana/Katakana, Basic Latin, Latin-1 Supplement, Latin Extended-A, IPA Extensions and most of Japanese Kanji, Greek, Cyrillic, Vietnamese with 7 weights (proportional) or 5 weights (monospace).
-*   [ttf-koruri](https://aur.archlinux.org/packages/ttf-koruri/) - Japanese TrueType font obtained by mixing [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) and Open Sans
-*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Japanese fonts to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly.
-
-##### Korean
-
-*   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - Korean OpenType/CFF fonts
-*   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - Collection of Korean TrueType fonts
-*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - Nanum series TrueType fonts
-*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - Nanum series fixed width TrueType fonts
-*   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/) - D2Coding fixed width TrueType font made by Naver
-*   [spoqa-han-sans](https://aur.archlinux.org/packages/spoqa-han-sans/) - Source Han Sans customized by Spoqa
-
-#### Cyrillic
-
-See also [#Monospaced](#Monospaced), [#Sans-serif](#Sans-serif) and [#Serif](#Serif).
-
-*   [otf-russkopis](https://aur.archlinux.org/packages/otf-russkopis/) - A free OpenType cursive font for Cyrillic script
-*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - Font family by ParaType: sans, serif, mono, extended cyrillic and latin, OFL license
-
-#### Greek
-
-Almost all Unicode fonts contain the Greek character set (polytonic included). Some additional font packages, which might not contain the complete Unicode set but utilize high quality Greek (and Latin, of course) typefaces are:
-
-*   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - Selection of OpenType fonts from the Greek Font Society
-*   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - Professional TrueType fonts from Magenta
-
-#### Hebrew
-
-*   [culmus](https://aur.archlinux.org/packages/culmus/) - Nice collection of free Hebrew fonts
-
-#### Indic
-
-*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Font for Bangla
-*   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Indic OpenType Fonts collection (containing ttf-freebanglafont)
-
-	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
-
-*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - Indic TrueType fonts from Fedora Project (containing Oriya Fonts and more)
-*   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - Devanagari TrueType fonts (contains 283 fonts)
-*   [ttf-gujrati-fonts](https://aur.archlinux.org/packages/ttf-gujrati-fonts/) - TTF Gujarati fonts (Avantika,Gopika,Shree768)
-*   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - TrueType Gurmukhi fonts (gurbaniwebthick,prabhki)
-*   [ttf-gurmukhi_punjabi](https://aur.archlinux.org/packages/ttf-gurmukhi_punjabi/) - TTF Gurmukhi / Punjabi (contains 252 fonts)
-*   [ttf-kannada-font](https://aur.archlinux.org/packages/ttf-kannada-font/) - Kannada, the language of Karnataka state in India
-*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Tamil Unicode fonts
-
-#### Khmer
-
-*   [ttf-khmer](https://www.archlinux.org/packages/?name=ttf-khmer) - Font covering glyphs for Khmer language
-*   [Hanuman](https://www.google.com/fonts/specimen/Hanuman) ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
-
-#### Lao
-
-*   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/) - Lao TTF font (Phetsarath_OT)
-*   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/) - Lao TTF fonts, both Unicode and non-Unicode for Windows
-
-#### Persian
-
-*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts series.
-*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series.
-*   [ttf-sina](https://aur.archlinux.org/packages/ttf-sina/) - Sina Pardazesh Persian font series.
-*   [ttf-yas](https://aur.archlinux.org/packages/ttf-yas/) - The Yas Persian font series (with **hollow zero**).
-*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
-*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
-*   [ttf-vazir](https://aur.archlinux.org/packages/ttf-vazir/), [ttf-samim](https://aur.archlinux.org/packages/ttf-samim/), [ttf-tanha](https://aur.archlinux.org/packages/ttf-tanha/), [ttf-shabnam](https://aur.archlinux.org/packages/ttf-shabnam/), [ttf-gandom](https://aur.archlinux.org/packages/ttf-gandom/), [ttf-parastoo](https://aur.archlinux.org/packages/ttf-parastoo/) - Beautiful Persian fonts made by Ali Rasti Kerdar.
-*   [ttf-persian-hm-xs2](https://aur.archlinux.org/packages/ttf-persian-hm-xs2/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series with Kashida feature.
-*   [ttf-persian-hm-ftx](https://aur.archlinux.org/packages/ttf-persian-hm-ftx/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series, Metafont and FarsiTeX fonts with Kashida feature.
-*   [ttf-iranian-sans](https://aur.archlinux.org/packages/ttf-iranian-sans/) and [ttf-iranian-serif](https://aur.archlinux.org/packages/ttf-iranian-serif/) - A family of fonts, designed by support from Iranian National Initiative for Free and Open Source Software to provide a good looking and free font for Persian script.
-*   [persian-fonts](https://aur.archlinux.org/packages/persian-fonts/) - Meta package for installing all Persian fonts in AUR.
-
-#### Sinhala
-
-*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - Sinhala Unicode font
-
-#### Thai
-
-*   [ttf-tlwg](https://www.archlinux.org/packages/?name=ttf-tlwg) - Collection of scalable Thai fonts
-
-#### Tibetan
-
-*   [ttf-tibetan-machine](https://www.archlinux.org/packages/?name=ttf-tibetan-machine) - Tibetan Machine TTFont
-
-### Math
-
-*   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.
-*   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType fonts
-*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
-*   [otf-latin-modern](https://aur.archlinux.org/packages/otf-latin-modern/), [otf-latinmodern-math](https://aur.archlinux.org/packages/otf-latinmodern-math/) - Improved version of Computer Modern fonts as used in LaTeX
-*   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) and [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) contain many math fonts such as Latin Modern Math and [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project"). See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for configuration.
-*   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with support for maths written from right to left.
-
-### Metric-compatible fonts
-
-See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts"), which lists available alternatives for [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
-
-### Apple macOS fonts
-
-*   [ttf-mac-fonts](https://aur.archlinux.org/packages/ttf-mac-fonts/) - macOS TrueType fonts
-
-### Monospaced
+#### Monospaced
 
 Here are some suggestions. Every user has their own favorite, so experiment to find yours. If you are in a hurry, you read Dan Benjamin's blog post: [*Top 10 Programming Fonts*](http://hivelogic.com/articles/top-10-programming-fonts).
 
@@ -491,7 +332,7 @@ A comparison with images on Slant: [What are the best programming fonts?](http:/
 
 And a Stack Overflow question with some images: [Recommended fonts for programming](http://stackoverflow.com/questions/4689/recommended-fonts-for-programming)
 
-#### TrueType
+##### TrueType
 
 *   [Andalé Mono](https://en.wikipedia.org/wiki/Andal%C3%A9_Mono "wikipedia:Andalé Mono") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Anonymous Pro](http://www.marksimonson.com/fonts/view/anonymous-pro) ([ttf-anonymous-pro](https://www.archlinux.org/packages/?name=ttf-anonymous-pro), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
@@ -513,7 +354,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Source Code Pro](https://en.wikipedia.org/wiki/Source_Code_Pro "wikipedia:Source Code Pro") ([adobe-source-code-pro-fonts](https://www.archlinux.org/packages/?name=adobe-source-code-pro-fonts))
 *   [Fira Mono](https://en.wikipedia.org/wiki/Fira_Sans "wikipedia:Fira Sans") ([ttf-fira-mono](https://www.archlinux.org/packages/?name=ttf-fira-mono))
 
-#### Bitmap
+##### Bitmap
 
 *   Default 8x16
 *   Dina ([dina-font](https://www.archlinux.org/packages/?name=dina-font))
@@ -526,7 +367,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/))
 *   Unifont (glyphs like (look of disapproval)) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))
 
-### Sans-serif
+#### Sans-serif
 
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/))
 *   [Arial](https://en.wikipedia.org/wiki/Arial "wikipedia:Arial") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
@@ -534,6 +375,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   Arimo ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS replacement for Arial (metric-compatible)
 *   [Calibri](https://en.wikipedia.org/wiki/Calibri "wikipedia:Calibri") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Candara](https://en.wikipedia.org/wiki/Candara "wikipedia:Candara") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
+*   [Comic Sans](https://en.wikipedia.org/wiki/Comic_Sans "wikipedia:Comic Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Corbel](https://en.wikipedia.org/wiki/Corbel_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [DejaVu Sans](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
 *   [Droid Sans](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
@@ -550,11 +392,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Ubuntu Font Family](https://en.wikipedia.org/wiki/Ubuntu_Font_Family "wikipedia:Ubuntu Font Family") ([ttf-ubuntu-font-family](https://www.archlinux.org/packages/?name=ttf-ubuntu-font-family))
 *   [Verdana](https://en.wikipedia.org/wiki/Verdana "wikipedia:Verdana") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 
-### Script
-
-*   [Comic Sans](https://en.wikipedia.org/wiki/Comic_Sans "wikipedia:Comic Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-
-### Serif
+#### Serif
 
 *   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Constantia](https://en.wikipedia.org/wiki/Constantia_(typeface) ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
@@ -568,15 +406,173 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   Tinos ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS replacement for Times New Roman (metric-compatible)
 
-### Unsorted
+#### Unsorted
 
-*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
-*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
 *   [font-bh-ttf](https://www.archlinux.org/packages/?name=font-bh-ttf) - X.Org Luxi fonts
 *   [ttf-cheapskate](https://www.archlinux.org/packages/?name=ttf-cheapskate) - Font collection from *dustismo.com*
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Junius font containing almost complete medieval latin script glyphs
+*   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 *   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
+*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
+
+### Non-latin scripts
+
+#### Ancient Scripts
+
+*   [ttf-ancient-fonts](https://aur.archlinux.org/packages/ttf-ancient-fonts/) - Font containing Unicode symbols for Aegean, Egyptian, Cuneiform, Anatolian, Maya, and Analecta scripts
+
+#### Arabic
+
+*   [ttf-amiri](https://aur.archlinux.org/packages/ttf-amiri/) - A classical Arabic typeface in Naskh style poineered by Amiria Press
+*   [ttf-arabeyes-fonts](https://aur.archlinux.org/packages/ttf-arabeyes-fonts/) - Collection of free Arabic fonts
+*   [ttf-qurancomplex-fonts](https://aur.archlinux.org/packages/ttf-qurancomplex-fonts/) - Fonts by King Fahd Glorious Quran Printing Complex in al-Madinah al-Munawwarah
+*   [ttf-sil-lateef](https://aur.archlinux.org/packages/ttf-sil-lateef/) - Unicode Arabic font from SIL
+*   [ttf-sil-scheherazade](https://aur.archlinux.org/packages/ttf-sil-scheherazade/) - Unicode Arabic font from SIL
+
+#### Braille
+
+*   [ttf-ubraille](https://www.archlinux.org/packages/?name=ttf-ubraille) - Font containing Unicode symbols for *braille*
+
+#### Chinese, Japanese, Korean, Vietnamese
+
+##### Pan-CJK
+
+*   [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look.
+*   [noto-fonts-cjk](https://www.archlinux.org/packages/?name=noto-fonts-cjk) - Large collection of fonts which comprehensively support Simplified Chinese, Traditional Chinese, Japanese, and Korean, with a consistent design and look. It is currently a rebadged version of [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts).
+
+##### Chinese
+
+*   [adobe-source-han-sans-cn-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-cn-fonts) - Simplified Chinese OpenType/CFF fonts
+*   [adobe-source-han-sans-tw-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-tw-fonts) - Traditional Chinese OpenType/CFF fonts
+*   [ttf-arphic-ukai](https://www.archlinux.org/packages/?name=ttf-arphic-ukai) - *Kaiti* (brush stroke) Unicode font (enabling anti-aliasing is suggested)
+*   [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming) - *Mingti* (printed) Unicode font
+*   [opendesktop-fonts](https://www.archlinux.org/packages/?name=opendesktop-fonts) - *New Sung* font, previously is ttf-fireflysung package
+*   [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) - A Sans-Serif style high quality CJKV outline font.
+*   [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) - Hei Ti Style (sans-serif) Chinese Outline font embedded with bitmapped Song Ti (also supporting Japanese (partial) and Korean characters).
+*   [wqy-bitmapfont](https://www.archlinux.org/packages/?name=wqy-bitmapfont) - Bitmapped Song Ti (serif) Chinese font
+*   [ttf-i.bming](https://aur.archlinux.org/packages/ttf-i.bming/) - CJK serif font that emphasis on an old-style typeface
+*   [ttf-tw](https://aur.archlinux.org/packages/ttf-tw/) - Kai and Song traditional Chinese font from the Ministry of Education of Taiwan
+
+##### Japanese
+
+*   [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) - Japanese OpenType/CFF fonts
+*   [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont) - Formal style Japanese Gothic (sans-serif) and Mincho (serif) fonts set; one of the highest quality open source font. Default of openSUSE-ja.
+*   [ttf-hanazono](https://www.archlinux.org/packages/?name=ttf-hanazono) - A free Japanese kanji font, style Mincho (serif).
+*   [ttf-sazanami](https://www.archlinux.org/packages/?name=ttf-sazanami) - Japanese free TrueType font. This is outdated and not maintained any more, but may be defined as a fallback font on several environments.
+*   [ttf-koruri](https://aur.archlinux.org/packages/ttf-koruri/) - Japanese TrueType font obtained by mixing [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) and Open Sans
+*   [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/) - Japanese fonts to show [2channel Shift JIS art](https://en.wikipedia.org/wiki/2channel_Shift_JIS_art "wikipedia:2channel Shift JIS art") properly.
+*   [ttf-mplus](https://aur.archlinux.org/packages/ttf-mplus/) - Modern Gothic style Japanese outline fonts. It includes all of Japanese Hiragana/Katakana, Basic Latin, Latin-1 Supplement, Latin Extended-A, IPA Extensions and most of Japanese Kanji, Greek, Cyrillic, Vietnamese with 7 weights (proportional) or 5 weights (monospace).
+*   [ttf-vlgothic](https://aur.archlinux.org/packages/ttf-vlgothic/) - Japanese Gothic fonts. Default of Debian/Fedora/Vine Linux
+
+##### Korean
+
+*   [adobe-source-han-sans-kr-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-kr-fonts) - Korean OpenType/CFF fonts
+*   [ttf-baekmuk](https://www.archlinux.org/packages/?name=ttf-baekmuk) - Collection of Korean TrueType fonts
+*   [spoqa-han-sans](https://aur.archlinux.org/packages/spoqa-han-sans/) - Source Han Sans customized by Spoqa
+*   [ttf-d2coding](https://aur.archlinux.org/packages/ttf-d2coding/) - D2Coding fixed width TrueType font made by Naver
+*   [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) - Nanum series TrueType fonts
+*   [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) - Nanum series fixed width TrueType fonts
+
+##### Vietnamese
+
+*   [ttf-hannom](https://www.archlinux.org/packages/?name=ttf-hannom) - Vietnamese TrueType font for chữ Nôm characters
+
+#### Cyrillic
+
+See also [#Latin script](#Latin_script).
+
+*   [ttf-paratype](https://aur.archlinux.org/packages/ttf-paratype/) - Font family by ParaType: sans, serif, mono, extended cyrillic and latin, OFL license
+*   [otf-russkopis](https://aur.archlinux.org/packages/otf-russkopis/) - A free OpenType cursive font for Cyrillic script
+
+#### Greek
+
+Almost all Unicode fonts contain the Greek character set (polytonic included). Some additional font packages, which might not contain the complete Unicode set but utilize high quality Greek (and Latin, of course) typefaces are:
+
+*   [otf-gfs](https://aur.archlinux.org/packages/otf-gfs/) - Selection of OpenType fonts from the Greek Font Society
+*   [ttf-mgopen](https://aur.archlinux.org/packages/ttf-mgopen/) - Professional TrueType fonts from Magenta
+
+#### Hebrew
+
+*   [culmus](https://aur.archlinux.org/packages/culmus/) - Nice collection of free Hebrew fonts
+
+#### Indic
+
+*   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Font for Bangla
+*   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Indic OpenType Fonts collection (containing ttf-freebanglafont)
+
+	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
+
+*   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - Indic TrueType fonts from Fedora Project (containing Oriya Fonts and more)
+*   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - Devanagari TrueType fonts (contains 283 fonts)
+*   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - TrueType Gurmukhi fonts (gurbaniwebthick,prabhki)
+*   [ttf-gurmukhi_punjabi](https://aur.archlinux.org/packages/ttf-gurmukhi_punjabi/) - TTF Gurmukhi / Punjabi (contains 252 fonts)
+*   [ttf-gujrati-fonts](https://aur.archlinux.org/packages/ttf-gujrati-fonts/) - TTF Gujarati fonts (Avantika,Gopika,Shree768)
+*   [ttf-kannada-font](https://aur.archlinux.org/packages/ttf-kannada-font/) - Kannada, the language of Karnataka state in India
+*   [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) - Sinhala Unicode font
+*   [ttf-tamil](https://aur.archlinux.org/packages/ttf-tamil/) - Tamil Unicode fonts
+*   [ttf-urdufonts](https://aur.archlinux.org/packages/ttf-urdufonts/) - Urdu fonts (Jameel Noori Nastaleeq (+kasheeda), Nafees Web Naskh, PDMS Saleem Quran Font) and font configuration to set Jameel Noori Nastaleeq as default font for Urdu
+
+#### Khmer
+
+*   [ttf-khmer](https://www.archlinux.org/packages/?name=ttf-khmer) - Font covering glyphs for Khmer language
+*   [Hanuman](https://www.google.com/fonts/specimen/Hanuman) ([ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
+
+#### Mongolic and Tungusic
+
+*   [ttf-abkai](https://aur.archlinux.org/packages/ttf-abkai/) - Fonts for Sibe, Manchu and Daur scripts (incomplete, currently in development)
+
+#### Persian
+
+*   [persian-fonts](https://aur.archlinux.org/packages/persian-fonts/) - Meta package for installing all Persian fonts in AUR.
+*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series.
+*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
+*   [ttf-iranian-sans](https://aur.archlinux.org/packages/ttf-iranian-sans/) and [ttf-iranian-serif](https://aur.archlinux.org/packages/ttf-iranian-serif/) - A family of fonts, designed by support from Iranian National Initiative for Free and Open Source Software to provide a good looking and free font for Persian script.
+*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts series.
+*   [ttf-persian-hm-ftx](https://aur.archlinux.org/packages/ttf-persian-hm-ftx/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series, Metafont and FarsiTeX fonts with Kashida feature.
+*   [ttf-persian-hm-xs2](https://aur.archlinux.org/packages/ttf-persian-hm-xs2/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series with Kashida feature.
+*   [ttf-sina](https://aur.archlinux.org/packages/ttf-sina/) - Sina Pardazesh Persian font series.
+*   [ttf-vazir](https://aur.archlinux.org/packages/ttf-vazir/), [ttf-samim](https://aur.archlinux.org/packages/ttf-samim/), [ttf-tanha](https://aur.archlinux.org/packages/ttf-tanha/), [ttf-shabnam](https://aur.archlinux.org/packages/ttf-shabnam/), [ttf-gandom](https://aur.archlinux.org/packages/ttf-gandom/), [ttf-parastoo](https://aur.archlinux.org/packages/ttf-parastoo/) - Beautiful Persian fonts made by Ali Rasti Kerdar.
+*   [ttf-yas](https://aur.archlinux.org/packages/ttf-yas/) - The Yas Persian font series (with **hollow zero**).
+*   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
+
+#### Tai–Kadai
+
+*   [ttf-tlwg](https://www.archlinux.org/packages/?name=ttf-tlwg) - Collection of scalable Thai fonts
+*   [ttf-lao](https://aur.archlinux.org/packages/ttf-lao/) - Lao TTF font (Phetsarath_OT)
+*   [ttf-lao-fonts](https://aur.archlinux.org/packages/ttf-lao-fonts/) - Lao TTF fonts, both Unicode and non-Unicode for Windows
+
+#### Tibeto-Burman
+
+*   [ttf-tibetan-machine](https://www.archlinux.org/packages/?name=ttf-tibetan-machine) - Tibetan Machine TTFont
+*   [ttf-my-paduk](https://aur.archlinux.org/packages/ttf-my-paduk/) - Padauk font for Myanmar/Birmania
+*   [ttf-myanmar-fonts](https://aur.archlinux.org/packages/ttf-myanmar-fonts/) - 121 Fonts from myordbok.com
+
+### Emoji and symbols
+
+A section of the Unicode standard is designated for pictographic characters called "emoji".
+
+*   [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) - Google's own emoji font, like on Android or Google Hangouts. Some newer additions to Unicode appear to render poorly with Noto fonts.
+*   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) - provides many Unicode symbols, including emoji, in outline style
+*   [emojione-color-font](https://aur.archlinux.org/packages/emojione-color-font/) - a complete, independent, open-source emoji set focused on design correctness
+*   [twemoji-color-font](https://aur.archlinux.org/packages/twemoji-color-font/) - Twitter's open-sourced emoji glyphs
+
+[Kaomoji](https://en.wikipedia.org/wiki/Emoticon#Japanese_style "wikipedia:Emoticon") are sometimes referred to as "Japanese emoticons" and are composed of characters from various character sets, including CJK and Indic fonts. For example, the following set of packages covers most of existing kaomoji: [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), [ttf-arphic-uming](https://www.archlinux.org/packages/?name=ttf-arphic-uming), and [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf).
+
+### Math
+
+*   [font-mathematica](https://www.archlinux.org/packages/?name=font-mathematica) - Mathematica fonts by Wolfram Research, Inc.
+*   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) and [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra) contain many math fonts such as Latin Modern Math and [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project"). See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for configuration.
+*   [otf-latin-modern](https://aur.archlinux.org/packages/otf-latin-modern/), [otf-latinmodern-math](https://aur.archlinux.org/packages/otf-latinmodern-math/) - Improved version of Computer Modern fonts as used in LaTeX
+*   [otf-xits](https://aur.archlinux.org/packages/otf-xits/) - An OpenType implementation of [STIX Fonts](https://en.wikipedia.org/wiki/STIX_Fonts_project "wikipedia:STIX Fonts project") with support for maths written from right to left.
+*   [ttf-computer-modern-fonts](https://aur.archlinux.org/packages/ttf-computer-modern-fonts/), [otf-cm-unicode](https://aur.archlinux.org/packages/otf-cm-unicode/) - [Computer Modern](https://en.wikipedia.org/wiki/Computer_Modern "wikipedia:Computer Modern") (of TeX fame)
+*   [ttf-mathtype](https://aur.archlinux.org/packages/ttf-mathtype/) - MathType fonts
+
+### Other operating system fonts
+
+*   [ttf-mac-fonts](https://aur.archlinux.org/packages/ttf-mac-fonts/) - Apple MacOS TrueType fonts
+
+See [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts"), which lists available alternatives for [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts").
 
 ## Fallback font order with X11
 

@@ -86,13 +86,12 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.10 holo](#holo)
         *   [5.1.11 infinality-bundle-multilib](#infinality-bundle-multilib)
         *   [5.1.12 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.13 nullptr_t](#nullptr_t)
-        *   [5.1.14 markzz](#markzz)
-        *   [5.1.15 qt-debug](#qt-debug)
-        *   [5.1.16 quarry](#quarry)
-        *   [5.1.17 siosm-aur](#siosm-aur)
-        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.13 markzz](#markzz)
+        *   [5.1.14 qt-debug](#qt-debug)
+        *   [5.1.15 quarry](#quarry)
+        *   [5.1.16 siosm-aur](#siosm-aur)
+        *   [5.1.17 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.18 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -222,11 +221,11 @@ Repositories with both i686 and x86_64 versions. The `$arch` variable will be se
 
 ```
 [arcanisrepo]
-Server = ftp://repo.arcanis.me/repo/$arch
+Server = http://repo.arcanis.me/repo/$arch
 
 ```
 
-(It is also available via HTTP with the same url.)
+(It is also available via FTP with the same url.)
 
 #### arch-openrc
 
@@ -897,18 +896,6 @@ Server = http://bohoomil.com/repo/multilib/$arch
 ```
 [linux-kalterfx]
 Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
-
-```
-
-#### nullptr_t
-
-*   **Maintainers:** nullptr_t,
-*   **Description:** Cherry-picked non-properitary packages and admin tools from AUR (e.g. [plymouth](/index.php/Plymouth "Plymouth"), nemo-extensions and a few more)
-*   **Key-ID:** B4767A17CEC5B4E9
-
-```
-[nullptr_t]
-Server = https://archlinux.0ptr.de/mirrors/$repo/$arch
 
 ```
 

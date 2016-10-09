@@ -1,4 +1,4 @@
-**fish** (the **friendly interactive shell**) is a user friendly command line shell intended mostly for interactive use.
+**fish** (the **friendly interactive shell**) is a user friendly [command-line shell](/index.php/Command-line_shell "Command-line shell") intended mostly for interactive use.
 
 ## Contents
 

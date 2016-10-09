@@ -182,7 +182,7 @@ The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/s
 </device>
 ```
 
-**Warning:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file, it is buggy and will set the wrong driver.
+**Warning:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file. It is buggy and will set the wrong driver.
 
 ### Setting scaling mode
 

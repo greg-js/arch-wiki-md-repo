@@ -1,71 +1,59 @@
 uWSGI is a fast, self-healing and developer/sysadmin-friendly application container server coded in pure C.
 
+There are alternatives written in Python such as [gunicorn](https://aur.archlinux.org/packages/gunicorn/).
+
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Starting service](#Starting_service)
-*   [3 Configuring](#Configuring)
-    *   [3.1 Application configuration](#Application_configuration)
-    *   [3.2 Php applications](#Php_applications)
-        *   [3.2.1 Nginx configuration](#Nginx_configuration)
-    *   [3.3 Nginx configuration (with chrooted Nginx)](#Nginx_configuration_.28with_chrooted_Nginx.29)
-*   [4 See Also](#See_Also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Web applications](#Web_applications)
+        *   [2.1.1 Python](#Python)
+        *   [2.1.2 Php](#Php)
+    *   [2.2 Web server](#Web_server)
+        *   [2.2.1 Nginx](#Nginx)
+        *   [2.2.2 Nginx (in chroot)](#Nginx_.28in_chroot.29)
+*   [3 Running uWSGI](#Running_uWSGI)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Socket activation](#Socket_activation)
+    *   [4.2 Hardening uWSGI](#Hardening_uWSGI)
+*   [5 See Also](#See_Also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") package [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) in the [official repositories](/index.php/Official_repositories "Official repositories"). Note, the package does not come with plugins as it is just a compact package. External plugins have to be installed separately. It is a very efficient software due to the reason it is written in C. There are alternatives written in Python like [gunicorn](https://aur.archlinux.org/packages/gunicorn/), but they are slower inherently.
+[Install](/index.php/Install "Install") the package [uwsgi](https://www.archlinux.org/packages/?name=uwsgi) from the [official repositories](/index.php/Official_repositories "Official repositories"). Note, that the package does not come with plugins. They have to be installed separately:
 
-## Starting service
+*   [uwsgi-plugin-cgi](https://www.archlinux.org/packages/?name=uwsgi-plugin-cgi) for CGI support
+*   [uwsgi-plugin-jvm](https://www.archlinux.org/packages/?name=uwsgi-plugin-jvm) for [Java](/index.php/Java "Java") support
+*   [uwsgi-plugin-lua51](https://www.archlinux.org/packages/?name=uwsgi-plugin-lua51) for Lua support
+*   [uwsgi-plugin-mono](https://www.archlinux.org/packages/?name=uwsgi-plugin-mono) for [Mono](/index.php/Mono "Mono") support
+*   [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php) for [PHP](/index.php/PHP "PHP") support
+*   [uwsgi-plugin-psgi](https://www.archlinux.org/packages/?name=uwsgi-plugin-psgi) for Perl support
+*   [uwsgi-plugin-pypy](https://www.archlinux.org/packages/?name=uwsgi-plugin-pypy) for [PyPy](/index.php/PyPy "PyPy") support
+*   [uwsgi-plugin-python](https://www.archlinux.org/packages/?name=uwsgi-plugin-python) for [Python](/index.php/Python "Python") support
+*   [uwsgi-plugin-python2](https://www.archlinux.org/packages/?name=uwsgi-plugin-python2) for Python2 support
+*   [uwsgi-plugin-rack](https://www.archlinux.org/packages/?name=uwsgi-plugin-rack) for [Ruby](/index.php/Ruby "Ruby") Rack support
+*   [uwsgi-plugin-webdav](https://www.archlinux.org/packages/?name=uwsgi-plugin-webdav) for [WebDAV](/index.php/WebDAV "WebDAV") support
 
-**Note:** In the most simple configuration each application (i.e. python application) will get its own instance of uWSGI service.
+## Configuration
 
-Before uWSGI service can be enabled/started a configuration file with the same name must be created within `/etc/uwsgi/`
+Web applications (e.g. [Wordpress](/index.php/Wordpress "Wordpress"), [ownCloud](/index.php/OwnCloud "OwnCloud"), [Mailman](/index.php/Mailman "Mailman"), [cgit](/index.php/Cgit "Cgit")) served by uWSGI are configured in `/etc/uwsgi/`, where each of them requires its own configuration file (ini-style). Details can be found [in the uWSGI documentation](http://uwsgi-docs.readthedocs.org/en/latest/).
 
-When reading following lines assume that `/etc/uwsgi/helloworld.ini` was created.
+Alternatively, you can run uWSGI in [Emperor mode](http://uwsgi-docs.readthedocs.org/en/latest/Emperor.html) (configured in `/etc/uwsgi/emperor.ini`). It enables a single uWSGI instance to run a set of different apps (called vassals) using a single main supervisor (called emperor).
 
-To enable the uWSGI service by default at start-up, run:
+### Web applications
 
+uWSGI supports many different languages and thus also many web applications. As an example the configuration file `/etc/uwsgi/example.ini` and the prior installation of the plugin needed for your web application is assumed. For further common configuration examples, have a look at this [blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/).
+
+#### Python
+
+The following is a simple example for a [Python](/index.php/Python "Python") application.
+
+ `/etc/uwsgi/example.ini` 
 ```
-# systemctl enable uwsgi@helloworld
-
-```
-
-This will enable the service for the application configured in `/etc/uwsgi/helloworld.ini`. Otherwise, you can also enable it through the socket interface with the following command:
-
-```
-# systemctl enable uwsgi@helloworld.socket
-
-```
-
-Alternatively, you can run the [Emperor mode](http://uwsgi-docs.readthedocs.org/en/latest/Emperor.html) service. This mode enables a single uWSGI instance to run a bunch of different apps (called vassals) using a single main supervisor (called emperor). To enable it, type:
-
-```
-# systemctl enable emperor.uwsgi
-
-```
-
-You can also use the socket:
-
-```
-# systemctl enable emperor.uwsgi.socket
-
-```
-
-The configuration for this sits in `/etc/uwsgi/emperor.ini`.
-
-## Configuring
-
-uWSGI is configured in `/etc/uwsgi/`. Details can be found [in the uWSGI documentation](http://uwsgi-docs.readthedocs.org/en/latest/).
-
-##### Application configuration
-
-The following is a simple example to get python support. You may need to [install](/index.php/Install "Install") the [uwsgi-plugin-python](https://www.archlinux.org/packages/?name=uwsgi-plugin-python) or [uwsgi-plugin-python2](https://www.archlinux.org/packages/?name=uwsgi-plugin-python2) plugin.
-
-```
-[uwsgi]
-chdir = /srv/http/helloworld
-module = helloworld
-plugins = python
+ [uwsgi]
+ chdir = /srv/http/example
+ module = example
+ plugins = python
 
 ```
 
@@ -80,11 +68,11 @@ uwsgi --socket 127.0.0.1:3031 --plugin python2 --wsgi-file ~/foo.py --master --p
 
 **Note:** You should avoid running this command as root
 
-#### Php applications
+#### Php
 
-Install the php plugin for uWSGI: [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php)
+The following is a simple example for a [PHP](/index.php/PHP "PHP") based website.
 
- `/etc/uwsgi/mysite.ini` 
+ `/etc/uwsgi/example.ini` 
 ```
 [uwsgi]
 ; maximum number of worker processes
@@ -105,31 +93,36 @@ vacuum = true
 
 ```
 
-Nginx configuration
+### Web server
 
+uWSGI can be the backend to many web servers, that support the forwarding of access. The following are examples for configurations.
+
+#### Nginx
+
+[nginx](/index.php/Nginx "Nginx") can redirect access towards unix sockets or ports (on localhost or remote machine), depending on your web application.
+
+ `/etc/nginx/example.conf` 
 ```
-location = /index.php {
-    include uwsgi_params;
-    uwsgi_modifier1 14;
-    uwsgi_pass unix:/run/uwsgi/mysite.sock;
-}
-
-```
-
-##### Nginx configuration
-
-```
+# ...
+# forward all access to / towards 
 location / {
-    root   /usr/share/nginx/html;
-    index  index.html index.htm;
-    include uwsgi_params;
-    # uwsgi_pass unix:/var/run/uwsgi/helloworld.sock;
-    uwsgi_pass 127.0.0.1:3031;
+  root /usr/share/nginx/html;
+  index index.html index.htm;
+  include uwsgi_params;
+  # this is the correct uwsgi_modifier1 parameter for a php based application
+  uwsgi_modifier1 14;
+  # uncomment the following if you want to use the unix socket instead
+  # uwsgi_pass unix:/var/run/uwsgi/example.sock;
+  # access is redirected to localhost:3031
+  uwsgi_pass 127.0.0.1:3031;
 }
+# ...
 
 ```
 
-#### Nginx configuration (with chrooted Nginx)
+**Tip:** Have a look at [the documentation](https://uwsgi-docs.readthedocs.io/en/latest/Protocol.html#packet-descriptions) for the list of `uwsgi_modifier1` parameters fitting to your web application.
+
+#### Nginx (in chroot)
 
 **Note:** Please refer to the below tips if you have deployed Nginx as described here: [Nginx#Installation in a chroot](/index.php/Nginx#Installation_in_a_chroot "Nginx")
 
@@ -194,26 +187,9 @@ WantedBy=multi-user.target
 
 **Note:** PID file will be created within `/run` rather than `/srv/http/run`
 
-Once modified run:
+After modification make sure to [reload](/index.php/Reload "Reload") to incorporate the new or changed units.
 
-```
-# systemctl daemon-reload
-
-```
-
-Enable your service:
-
-```
-# systemctl enable uwsgi@application1
-
-```
-
-Start the service:
-
-```
-# systemctl start uwsgi@application1
-
-```
+You are then free to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `uwsgi@application1.service`.
 
 Edit `/srv/http/etc/nginx/nginx.conf` and add new `server` section within it that would contain at least following:
 
@@ -241,19 +217,111 @@ Edit `/srv/http/etc/nginx/nginx.conf` and add new `server` section within it tha
 
 ```
 
-Restart nginx
+Make sure to now [restart](/index.php/Restart "Restart") `nginx.service` to have your `application1` be served at `127.0.0.1`.
+
+## Running uWSGI
+
+**Note:** This assumes the used web application has been properly configured, is being served by your web server, which redirects towards the socket or port it is using and was configured in `/etc/uwsgi/`.
+
+If you plan on using a web application all the time (without it being activated on demand), you can simply [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `uwsgi@example`.
+
+If you plan on having your web application be started on demand you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `uwsgi@example.socket`.
+
+To use the Emperor mode, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `emperor.uwsgi.service`.
+
+To use socket activation of this mode [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `emperor.uwsgi.socket`.
+
+## Tips and tricks
+
+Some functionality, that uWSGI offers is not accessible by using the [systemd](/index.php/Systemd "Systemd") service files provided in the [official repositories](/index.php/Official_repositories "Official repositories"). Changes to them are explained in the following sections. For further information about this, [read this blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/).
+
+### Socket activation
+
+Using socket activation, you want to
+
+*   direct your web server to a unix socket and thereby start your uWSGI instance running the application
+*   you most likely want to have the application be closed by uWSGI after a certain idle time
+*   you want your web server be able to start the application again, once it is accessed
+
+uWSGI offers settings, with which you can have the instance close the application:
+
+ `/etc/uwsgi/example.ini` 
+```
+[uwsgi]
+# ...
+
+# set idle time in seconds
+idle = 600
+# kill the application after idle time was reached
+kill-on-idle = true
+
+# ...
 
 ```
-# systemctl restart nginx
+
+The current `uwsgi@.service` file however doesn't allow this, because [systemd](/index.php/Systemd "Systemd") treats non-zero exit codes as failure and thereby marking the unit as failed and additionally the `Restart=always` directive makes a closing after idle time useless. A fix for this is to add the exit codes, that uWSGI may provide after closing an application by itself to a list, that [systemd](/index.php/Systemd "Systemd") will treat as success by using the `SuccessExitStatus` directive (for further information [read this blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/))
+
+ `/etc/systemd/system/uwsgi-socket@.service` 
+```
+[Unit]
+Description=uWSGI service unit
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/uwsgi --ini /etc/uwsgi/%I.ini
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -INT $MAINPID
+Type=notify
+SuccessExitStatus=15 17 29 30
+StandardError=syslog
+NotifyAccess=all
+KillSignal=SIGQUIT
+
+[Install]
+WantedBy=multi-user.target
 
 ```
 
-At this point your application should be served, issue `127.0.0.1` on your browser.
+This will allow for proper socket activation with kill-after-idle functionality.
+
+### Hardening uWSGI
+
+Web applications are exposed to the wild and depending on their quality and the security of their underlying languages, some are more dangerous to run, than others. A good way to start dealing with possible unsafe web applications is to jail them. [systemd](/index.php/Systemd "Systemd") has some functionality, that can be put to use. Have a look at the following example (and for further information read the [systemd.exec manual](https://www.freedesktop.org/software/systemd/man/systemd.exec.html) and [this blog post](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)):
+
+ `/etc/systemd/system/uwsgi-secure@.service` 
+```
+[Unit]
+Description=uWSGI service unit
+After=syslog.target
+
+[Service]
+ExecStart=/usr/bin/uwsgi --ini /etc/uwsgi/%I.ini
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -INT $MAINPID
+Type=notify
+SuccessExitStatus=15 17 29 30
+StandardError=syslog
+NotifyAccess=all
+KillSignal=SIGQUIT
+PrivateDevices=yes
+PrivateTmp=yes
+ProtectSystem=full
+ReadWriteDirectories=/etc/webapps /var/lib/
+ProtectHome=yes
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+**Note:** Using `NoNewPrivileges=yes` doesn't work with [Mailman](/index.php/Mailman "Mailman")'s cgi frontend! Remove this setting, if you want to use it in conjunction with it.
 
 ## See Also
 
 *   [Official Documentation](http://uwsgi-docs.readthedocs.org/en/latest)
 *   [uWSGI Github](https://github.com/unbit/uwsgi-docs)
+*   [Securely serving webapps using uWSGI](https://sleepmap.de/2016/securely-serving-webapps-using-uwsgi/)
 *   [Fluffy White Stuff Benchmark](http://blog.kgriffs.com/)
 *   [Flask uWSGI deploying](http://flask.pocoo.org/docs/deploying/uwsgi/)
 *   [Django and uWSGI](https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/uwsgi/)

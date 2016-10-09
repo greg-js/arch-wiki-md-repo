@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Kernels/Traditional_compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-20，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels/Traditional_compilation&diff=0&oldid=442198)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernels/Traditional_compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-20，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels%2FTraditional_compilation&diff=0&oldid=442198)可以查看翻译后英文页面的改动。
 
 以下的一些步骤有助于你从 **kernel.org 源代码** 编译自己的内核。这种方法是一种对所有发行版均适用的传统方法；但同时，本文也包含了用 makepkg 和 pacman 干净安装自己的内核的优秀方法。
 

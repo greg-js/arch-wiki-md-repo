@@ -42,6 +42,10 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### October 2016
 
+*   [09 October 2016] [ASA-201610-7](https://lists.archlinux.org/pipermail/arch-security/2016-October/000735.html) [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) multiple issues
+*   [08 October 2016] [ASA-201610-6](https://lists.archlinux.org/pipermail/arch-security/2016-October/000734.html) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) multiple issues
+*   [07 October 2016] [ASA-201610-5](https://lists.archlinux.org/pipermail/arch-security/2016-October/000733.html) [messagelib](https://www.archlinux.org/packages/?name=messagelib) multiple issues
+*   [07 October 2016] [ASA-201610-4](https://lists.archlinux.org/pipermail/arch-security/2016-October/000732.html) [kcoreaddons](https://www.archlinux.org/packages/?name=kcoreaddons) insufficient validation
 *   [03 October 2016] [ASA-201610-3](https://lists.archlinux.org/pipermail/arch-security/2016-October/000731.html) [hostapd](https://www.archlinux.org/packages/?name=hostapd) multiple issues
 *   [03 October 2016] [ASA-201610-2](https://lists.archlinux.org/pipermail/arch-security/2016-October/000730.html) [systemd](https://www.archlinux.org/packages/?name=systemd) denial of service
 *   [03 October 2016] [ASA-201610-1](https://lists.archlinux.org/pipermail/arch-security/2016-October/000729.html) [chromium](https://www.archlinux.org/packages/?name=chromium) arbitrary code execution

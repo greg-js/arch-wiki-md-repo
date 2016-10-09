@@ -17,11 +17,14 @@ GNU Parted is a program for creating and manipulating partition tables. [GParted
         *   [4.3.2 Shrinking partitions](#Shrinking_partitions)
 *   [5 Warnings](#Warnings)
     *   [5.1 Alignment](#Alignment)
-*   [6 See also](#See_also)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Dual booting with Windows XP](#Dual_booting_with_Windows_XP)
+    *   [6.2 Fixing messed-up partition order](#Fixing_messed-up_partition_order)
+*   [7 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [parted](https://www.archlinux.org/packages/?name=parted) package.
+[Install](/index.php/Install "Install") the [parted](https://www.archlinux.org/packages/?name=parted) package. For a graphical interface, [install](/index.php/Install "Install") the [gparted](https://www.archlinux.org/packages/?name=gparted) package, the graphical frontend to *parted*.
 
 ## Usage
 
@@ -316,8 +319,28 @@ If you want *parted* to attempt to calculate the correct alignment for you, spec
 
 ```
 
+## Tips and tricks
+
+### Dual booting with Windows XP
+
+If you have a Windows XP partition that you would like to move from drive-to-drive that also happens to be your boot partition, you can do so easily with GParted and keep Windows happy simply by deleting the following registry key PRIOR to the partition move:
+
+```
+HKEY_LOCAL_MACHINE\SYSTEM\MountedDevices
+
+```
+
+Reference to this little gem [here](http://gparted-forum.surf4.info/viewtopic.php?pid=8347#p8347).
+
+### Fixing messed-up partition order
+
+See [Fdisk#Sort_partitions](/index.php/Fdisk#Sort_partitions "Fdisk").
+
+**Note:** You must run **partprobe** as root or reboot the system in order for the kernel to read the new partition table!
+
 ## See also
 
 *   [GNU parted - Parted User's Manual](https://www.gnu.org/software/parted/manual/)
 *   [How to align partitions for best performance using parted](http://rainbow.chard.org/2013/01/30/how-to-align-partitions-for-best-performance-using-parted/)
 *   [Resize an ext3/ext4 partition](http://positon.org/resize-an-ext3-ext4-partition)
+*   [Official GParted forums](http://gparted-forum.surf4.info/)

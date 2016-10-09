@@ -78,8 +78,8 @@ The official Arch kernel's PKGBUILD does not have native support for this, but i
   # get kernel version
   make prepare
 
-  sudo /usr/bin/modprobed-db recall         <---- insert this line
-  make localmodconfig                       <---- insert this line
+  sudo /usr/bin/modprobed-db recall        # <---- insert this line
+  make localmodconfig                      # <---- insert this line
 
   # load configuration
   # Configure the kernel. Replace the line below with one of your choice.

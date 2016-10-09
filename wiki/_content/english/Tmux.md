@@ -32,7 +32,6 @@ Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Sc
     *   [6.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
     *   [6.3 Start tmux on every shell login](#Start_tmux_on_every_shell_login)
         *   [6.3.1 Bash](#Bash)
-        *   [6.3.2 Fish](#Fish)
     *   [6.4 Start a non-login shell](#Start_a_non-login_shell)
     *   [6.5 Use tmux windows like tabs](#Use_tmux_windows_like_tabs)
     *   [6.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
@@ -574,37 +573,6 @@ if [[ -z "$TMUX" ]] ;then
 fi
 
 ```
-
-#### Fish
-
-To start tmux on every shell login with fish, use the following:
-
- `~/.config/fish/config.fish` 
-```
-# If not running interactively, do not do anything
-if status --is-interactive
-    if test -z (echo $TMUX)
-        tmux
-    end
-end
-
-```
-
-Alternatively, to start only one tmux session, or try to attach to another session on launch:
-
- `~/.config/fish/config.fish` 
-```
-if status --is-interactive
-    if test -z (echo $TMUX)
-        if not test (tmux attach)
-            tmux new-session
-        end
-    end
-end
-
-```
-
-**Note:** Instead of using the shell config file, you can launch tmux when you start your terminal emulator. (i. e. urxvt -e tmux)
 
 ### Start a non-login shell
 

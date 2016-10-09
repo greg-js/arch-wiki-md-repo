@@ -169,9 +169,23 @@ You can also pass the resolution to nouveau with the `video=` kernel line option
 
 ### Power Management
 
-GPU Scaling is in various stages of readiness depending on the GPU. After kernel 3.18 there's power management available in kernel. If you plan to play games you need to enable the power state on the module configuration by adding `nouveau.pstate=1` to the module configuration. This will result in higher clocks when required.
+The lack of proper power management in the nouveau driver is one of the most important causes of performance issue, since most card will remain in their lower power state with lower clocks during their use. Experimental support for GPU reclocking is available for some cards (See the [Nouveau PowerManagement page](http://nouveau.freedesktop.org/wiki/PowerManagement)) and since kernel 4.5 can be controlled through a debugfs interface located at `/sys/kernel/debug/dri/*/pstate`.
 
-See the [Nouveau PowerManagement page](http://nouveau.freedesktop.org/wiki/PowerManagement) for more details.
+For example, to check the available power states and the current setting for the first card in your system, run:
+
+```
+# cat /sys/kernel/debug/dri/0/pstate
+
+```
+
+It's also possible to manually set/force a certain power state by writing to said interface:
+
+```
+# echo *pstate* > /sys/kernel/debug/dri/0/pstate
+
+```
+
+**Warning:** The support for reclocking is highly experimental. Manually setting the power state may hang your system, cause corruption or overheat your card.
 
 #### Fan Control
 

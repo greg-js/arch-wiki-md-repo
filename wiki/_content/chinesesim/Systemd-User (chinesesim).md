@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Systemd/User](/index.php/Systemd/User "Systemd/User") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-25，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd/User&diff=0&oldid=401745)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Systemd/User](/index.php/Systemd/User "Systemd/User") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-09-25，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd%2FUser&diff=0&oldid=401745)可以查看翻译后英文页面的改动。
 
 [systemd (简体中文)](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 会给每个用户生成一个systemd实例，用户可以在这个实例下管理服务，启动、停止、启用以及禁用他们自己的单元。 这个能力大大方便了那些通常在特定用户下运行的守护进程和服务，比如 [mpd](/index.php/Mpd "Mpd"), 还有像拉取邮件等需要自动执行的任务。 在某些场景下，它甚至可以在指定用户下运行xorg以及整个窗口管理系统。
 

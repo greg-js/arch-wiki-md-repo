@@ -55,9 +55,9 @@ GNOME (读音是*gah-nohm* 或 *nohm*)是一个简单易用的[桌面环境](/in
 
 *   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) 包组包含剩余的可选工具，例如[文本编辑器](/index.php/Gedit "Gedit")、压缩文件管理器、光盘烧录工具、邮件客户端、游戏、开发工具及其它非必需的软件。 [gnome](https://www.archlinux.org/groups/x86_64/gnome/) 软件组是这个组的基础。
 
-The base desktop consists of [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell window manager. It can be installed separately with [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell).
+基础桌面环境包含了 [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell 窗口管理器的插件，可以通过软件包 [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) 单独安装。
 
-**Note:** *mutter* 是gnome桌面的混合管理器, 利用硬件加速防止屏幕撕裂. *mutter*自动检测显卡驱动是否足以运行gnome, 不足以胜任就用*llvmpipe*软件绘制.
+**Note:** *mutter* 是 gnome 桌面的混合管理器, 利用硬件加速防止屏幕撕裂. *mutter*自动检测显卡驱动是否足以运行gnome, 不足以胜任就用*llvmpipe*软件绘制.
 
 ### 附加的软件包
 
@@ -87,15 +87,15 @@ The base desktop consists of [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_S
 
 GNOME 有三个可用的会话，都使用 GNOME Shell
 
-*   **GNOME** 是默认会话, 有创新的布局
-*   **GNOME Classic** 的桌面布局类似于传统的GNOME 2, using pre-activated extensions and parameters. [[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) Hence it is more a customized GNOME Shell than a truly distinct mode
-*   **GNOME on Wayland** GNOME Shell 在新的Wayland协议上运行. 而传统的 X 应用程序在Xwayland上运行
+*   **GNOME** 是默认会话, 有创新的布局。
+*   **GNOME Classic** 的桌面布局类似于传统的GNOME 2, 使用预先激活的插件和参数。[[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) 所以它只是一个定制的 GNOME Shell，并不是完全独立的模式。
+*   **GNOME on Wayland** GNOME Shell 在新的 Wayland 协议上运行. 而传统的 X 应用程序在 Xwayland 上运行。
 
 ## 运行 GNOME
 
 GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")以图形方式启动,或者从控制台手动启动。 为优化桌面整合, 建议使用[GDM (简体中文)](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") (GNOME显示管理器)。 注意 [启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") 一个显示管理器(例如GDM)意味着Xorg将会以root权限运行.
 
-**注意:** 如果不使用 GDM，你将无法体验到对锁屏的原生支持，因此你不得不使用另一个屏幕锁来提供类似功能，参见[Xmonad (简体中文)#GNOME 3 and xmonad](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GNOME_3_and_xmonad "Xmonad (简体中文)").
+**注意:** 不使用 GDM 将无法体验到原生的锁屏支持，需要使用其它屏幕锁来提供类似功能，参见[Xmonad (简体中文)#GNOME 3 and xmonad](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GNOME_3_and_xmonad "Xmonad (简体中文)").
 
 ### 图形界面登录
 
@@ -113,7 +113,7 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 
 **注意:** 最好把gnome--session之前的应用注释掉，我之前因为没有注释掉`twm`（另一个窗口管理器）导致启动gnome失败
 
-我现在的`/etc/X11/xinit/xinitrc`如下：
+现在的`/etc/X11/xinit/xinitrc`如下：
 
 ```
 #twm &

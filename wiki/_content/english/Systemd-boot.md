@@ -17,7 +17,8 @@ It is simple to configure, but can only start EFI executables, such as the Linux
         *   [2.2.2 LVM root installations](#LVM_root_installations)
         *   [2.2.3 Encrypted Root Installations](#Encrypted_Root_Installations)
         *   [2.2.4 btrfs subvolume root installations](#btrfs_subvolume_root_installations)
-        *   [2.2.5 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
+        *   [2.2.5 ZFS root installations](#ZFS_root_installations)
+        *   [2.2.6 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
     *   [2.3 Support hibernation](#Support_hibernation)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -199,6 +200,20 @@ options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw rootflags=s
 ```
 
 A failure to do so will otherwise result in the following error message: `ERROR: Root device mounted successfully, but /sbin/init does not exist.`
+
+#### ZFS root installations
+
+When booting from a [ZFS](/index.php/ZFS "ZFS") dataset, add `zfs=<root dataset>` to the `options` line. Here the root dataset has been set to 'zroot/ROOT/default':
+
+ `*esp*/loader/entries/arch-zfs.conf` 
+```
+title          Arch Linux ZFS
+linux          /vmlinuz-linux
+initrd         /initramfs-linux.img
+options        zfs=zroot/ROOT/default rw
+```
+
+When booting off of a ZFS dataset ensure that it has had the `bootfs` property set with `zpool set bootfs=<root dataset> <zpool>`.
 
 #### EFI Shells or other EFI apps
 
