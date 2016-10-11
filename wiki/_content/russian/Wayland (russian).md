@@ -90,14 +90,7 @@ $ weston-terminal
 Чтобы разместить цветы по всему экрану:
 
 ```
-$ weston-flower 
-
-```
-
-Для проверки протокола передачи кадров (запускает `glxgears`):
-
-```
-$ weston-gears
+$ weston-flower
 
 ```
 

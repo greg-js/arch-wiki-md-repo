@@ -47,7 +47,6 @@ Also uncomment the following required modules for [mariadb](/index.php/Mariadb "
 
 ```
 extension=pdo_mysql.so
-extension=mysqli.so
 
 ```
 
@@ -67,6 +66,8 @@ Add the following to open_basedir:
 /usr/share/webapps/nextcloud:/dev/urandom
 
 ```
+
+**Note:** You may also need to add :/tmp here if you find that Apache only displays a blank page. Check /var/log/httpd/error_log to confirm this problem
 
 ## Setup mariadb and nextcloud DB
 
@@ -194,7 +195,7 @@ Log onto Nextcloud and set it up by pointing your browser to: `[http://localhost
 
 **Note:** Remember to use the DB username/password you set up above
 
-After nextcloud is set up, add the following line to `/etc/webapps/nextcloud/config/config.php`:
+After nextcloud is set up, add the following line to `/usr/share/webapps/nextcloud/config/config.php`:
 
 ```
 'memcache.local’ => ‘\OC\Memcache\APCu’,

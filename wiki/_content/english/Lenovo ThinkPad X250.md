@@ -46,7 +46,7 @@ The fingerprint reader works out of the box with [fprintd](https://www.archlinux
 
 #### Backlight and Keyboard
 
-In order to get the backlight to work, I added `options thinkpad_acpi force-load=1` to `/etc/modprobe.d/x250.conf`. This forces the thinkpad_acpi module to load, which is needed for controlling the backlight vPkgia [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) as well as enable some of the extra media keys.
+In order to get the backlight to work, I added `options thinkpad_acpi force-load=1` to `/etc/modprobe.d/x250.conf`. This forces the thinkpad_acpi module to load, which is needed for controlling the backlight via [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) as well as enable some of the extra media keys.
 
 **Note:** Not all X250 keyboards have backlight
 

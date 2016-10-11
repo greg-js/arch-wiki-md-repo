@@ -374,14 +374,23 @@ To build Android 6+, you need to install these additional packages:
 
 ### Java Development Kit
 
-Android 7 (Nougat) can be built with [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk).[[1]](https://source.android.com/source/requirements.html)
-
+*   For Android 7 (Nougat), OpenJDK 8 is required, which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk).[[1]](https://source.android.com/source/requirements.html) package.
 *   For Android 5 and 6 (Lollipop and Marshmallow), OpenJDK 7 is required, which is available with the [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) package.
 
 Older versions [require](http://source.android.com/source/initializing.html) a working **Oracle JDK** installed on your build system. It **will not** work with OpenJDK.
 
-*   For Gingerbread through KitKat (2.3 - 4.4), Java 6 is required, which is available as [jdk6](https://aur.archlinux.org/packages/jdk6/) from the AUR. See [Java](/index.php/Java "Java") if you want to use it besides another (newer) JDK version.
+*   For Gingerbread through KitKat (2.3 - 4.4), Java 6 is required, which is available as [jdk6](https://aur.archlinux.org/packages/jdk6/) from the AUR.
 *   For Cupcake through Froyo (1.5 - 2.2), Java 5 is required, which is available as [jdk5](https://aur.archlinux.org/packages/jdk5/) from the AUR.
+
+**Note:** Android expect java in /usr/lib/jvm/java-x-openjdk-amd64, where x is the java version.
+
+Set JAVA_HOME to avoid this requirement and match archlinux installation path. Example:
+
+```
+$ export JAVA_HOME=/usr/lib/jvm/java-x-openjdk
+
+```
+This change will be valid only for the current terminal session.
 
 ### Setting up the build environment
 

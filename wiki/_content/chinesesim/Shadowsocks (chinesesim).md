@@ -118,7 +118,7 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 ### 加密
 
-**注意:** 默认加密方法`table`速度很快，但很不安全。推荐使用`aes-256-cfb`或者`bf-cfb`，照目前的趋势，ChaCha20是占用最小速度最快的一种方式。请不要使用`rc4`，它不安全。
+**注意:** 默认加密方法`table`速度很快，但很不安全。如果CPU支持AES硬件加速的话，推荐使用`aes-128-cfb`。如果是旧CPU（不支持AES硬件加速），ChaCha20是占用最小速度最快的一种方式。请不要使用`rc4`，它不安全。
 
 **提示:** 安装`M2Crypto`可略微提升加密速度，对于Python2来说，安装[python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto)即可。
 

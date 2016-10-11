@@ -81,3 +81,11 @@ CPU frequency scaling: untested | Untested | Webcam: untested
 Hotkeys: OK
 Synaptic Touchpad: OK
 HDMI: OK |
+| Acer Nitro VN7-792G-710p | archlinux-2016.10.01-dual | Intel HD 530
+Nvidia GeForce GTX 960M 2GB VRAM | OK | Realtek: OK | OK | OK | Suspend to RAM: Yes
+Disk: Yes
+Battery: Yes
+CPU frequency scaling: untested | Untested | Webcam: untested
+Hotkeys: OK
+Synaptic Touchpad: OK
+HDMI: untested |

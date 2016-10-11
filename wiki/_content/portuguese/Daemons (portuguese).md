@@ -66,3 +66,75 @@ freshclamd.service | Anti-virus para Unix. |
 | [MySQL](/index.php/MySQL "MySQL") | mysqld | mysqld.service | Servidor de banco de dados MySQL. |
 | [MythTV](/index.php/MythTV "MythTV") | mythbackend | mythbackend.service | Backend para o gravador de vídeo e home theater MythTV. |
 | [BIND](/index.php/BIND "BIND") | named | named.service | Servidor DNS "de facto" Berkeley Internet Name Daemon (BIND) |
+| [netctl](/index.php/Netctl "Netctl") | netctl@.service | Ativação manual de perfil de rede. |
+ netctl-ifplugd@.service | Inicia automaticamente perfil de rede caso o cabo esteja plugado. |
+ netctl-auto@.service | Inicia automaticamente perfis de rede sem fio caso haja uma rede na distância adequada. |
+ network | dhcpcd@.service | Ativa conexões Ethernet dinamicamente. |
+| [NetworkManager](/index.php/NetworkManager "NetworkManager") | networkmanager | NetworkManager.service
+NetworkManager-wait-online.service | Daemon que provê a configuração e conexão automática em redes conhecidas. |
+| [Nginx](/index.php/Nginx "Nginx") | nginx | nginx.service | Servidor HTTP, IMAP e POP3 Nginx(Web Server). |
+ nscd | nscd.service | Serviço de cache de nomes(dns cache). |
+| [ntpd](/index.php/Ntpd "Ntpd") | ntpd | ntpd.service | Daemon NTP(Network Time Protocol). Cliente e servidor. |
+| [Ntop](/index.php/Ntop "Ntop") | ntop | ntop.service | Analisador de tráfego ntop, baseado na libpcap. |
+| [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") | openntpd | openntpd.service | Daemon alternativo NTP(Network Time Protocol). Cliente e servidor. |
+ osspd | osspd.service | Ponte de userspace do OSS(open sound system). |
+| [OpenVPN](/index.php/OpenVPN "OpenVPN") | openvpn | openvpn@.service | Serviço de VPN SSL padrão 'de facto' OpenVPN. |
+| [OSS](/index.php/OSS "OSS") | oss | oss.service | Open Sound System. Alternativa ao [ALSA](/index.php/ALSA "ALSA"). |
+| [Pdnsd](/index.php/Pdnsd "Pdnsd") | pdnsd | pdnsd.service | Proxy DNS com cache permanente. |
+| [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) | php-fpm | php-fpm.service | Gerenciador de processos FastCGI para PHP. |
+| [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") | postgresql | postgresql.service | Banco de dados PostgreSQL. |
+| [Postfix](/index.php/Postfix "Postfix") | postfix | postfix.service | Servidor de email que é alternativa ao [sendmail](/index.php/Sendmail "Sendmail"). |
+| [Postgrey](/index.php/Postgrey "Postgrey") | postgrey | postgrey.service | Serviço de listas cinzas(greylisting) utilizado em conjunto ao postfix. |
+| [PPTP server](/index.php/PPTP_server "PPTP server") | pptpd | pptpd.service | Serviço de VPN baseada no PPTP(Point-to-Point tunneling protocol. |
+| [pppd](/index.php/Pppd "Pppd") | pppd | ppp@.service | Daemon que implementa o PPTP, para discagens automáticas. |
+| [preload](/index.php/Preload "Preload") | preload | preload.service | Faz aplicações carregarem mais rápido, fazendo a pré-carga de bibliotecas compartilhadas. |
+| [Prosody](/index.php/Prosody "Prosody") | prosody | prosody.service | Servidor XMPP. |
+| [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") | psd | psd.service | Mantém os temporários do navegador no tmpfs, e periodicamente efetua a sincronização com um disco. |
+ pure-ftpd | pure-ftpd.servicecups.service | Servidor FTP rápido, de alta qualidade e que obedece aos padrões(standards-compliant). |
+| [rfkill](https://www.archlinux.org/packages/?name=rfkill) | rfkill | rfkill-block@.service
+rfkill-unblock@.service | Serviço de bloqueio e ativação de dispositivos que usam tecnologia a rádio(wireless, bluetooth, antenas...) |
+| [Rsync](/index.php/Rsync "Rsync") | rsyncd | rsyncd.service | Daemon rsync |
+| [Rsyslog](/index.php/Rsyslog "Rsyslog") | rsyslogd | rsyslog.service | Alternativa ao log de sistema. |
+| [redis](https://www.archlinux.org/packages/?name=redis) | redis-server | redis.service | Armazenamento de chaves. |
+| [samba](/index.php/Samba "Samba") | samba | smbd.service
+nmbd.service
+winbindd.service | Serviço de arquivos e impressão para redes Microsoft Windows. |
+| [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
+lvm2-lvmetad.service
+lvm2-monitor.service
+lvm2-pvscan.service | LVM é o sistema de gerenciamento de volumes lógicos do kernel Linux; Gerencia discos e dispositivos de armazenamento que usam esta tecnologia. |
+| [SANE](/index.php/SANE "SANE") | saned | saned@.service | Daemon de mapeamento de scaners. |
+ saslauthd | saslauthd.service | Daemon de autenticação SASL. |
+| [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Daemon de coleta de informação de sensores. |
+| sensors | lm_sensors.service | Inicializador de sensores (carregamento dos módulos de Kernel necessários). |
+| [SLiM](/index.php/SLiM "SLiM") | slim | slim.service | Simple Login Manager. |
+| [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Self-Monitoring, Analysis, and Reporting Technology (S.M.A.R.T.). Tecnologia de monitoramento de discos. |
+| [smbnetfs](/index.php/Samba#smbnetfs "Samba") | smbnetfs | smbnetfs.service | Montador automático de compartilhamentos Windows. |
+| [snmpd](/index.php/Snmpd "Snmpd") | snmpd | snmpd.service | Suite de aplicações para fornecimento e recebimento de instruções codificadas no protocolo SNMP. |
+ soundmodem | soundmodem.service | Sistema de modem de rádio de bolso |
+| [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) | spamd | spamassassin.service | Serviço de filtragem de spam. |
+| [openssh](/index.php/Openssh "Openssh") | sshd | sshd.service | OpenSSH. Daemon famoso de provimento de conexões do protocolo Secure Shell(ssh). |
+ stunnel | stunnel.service | Permite encriptação arbitrária de conexões tcp dentro de um túnel SSL. |
+ svnserve | svnserve.service | Servidor Subversion. |
+| [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | Log de sistema de próxima geração. |
+| [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Sintetizador de MIDI através de software. |
+| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | Serviço de leitura e conexão vpn baseado no diretório /etc/tinc/*<nome_da_vpn>*/ |
+| [Tor](/index.php/Tor "Tor") | tor | tor.service | Onion routing, para comunicação anônima com a internet. |
+| [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | Daemon BitTorrent. |
+| [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |
+| [Urxvtd](/index.php/Urxvt "Urxvt") |  ? | urxvtd.service | Daemon urxvt. |
+| [VirtualBox](/index.php/VirtualBox "VirtualBox") | vboxservice | vboxservice.service | VirtualBox Guest Service. |
+| [vnStat](/index.php/VnStat "VnStat") | vnstat | vnstat.service | Monitor leve de redes. |
+| [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") | vsftpd | vsftpd.service (permanent)
+
+vsftpd.socket (on-demand)
+
+vsftpd-ssl.service (permanent)
+
+vsftpd-ssl.socket (on-demand)
+
+ | Servidor FTP. |
+| [wicd](/index.php/Wicd "Wicd") | wicd | wicd.service | Gerenciador de conexões. Leve alternativa ao NetworkManager. |
+| [x11vnc](/index.php/X11vnc "X11vnc") | x11vnc | x11vnc.service | Daemon de desktop remoto VNC. |
+| [XDM](/index.php/XDM "XDM") | xdm | xdm.service | X display manager. |
+| [xdm-archlinux](/index.php/XDM "XDM") | xdm-archlinux | xdm-archlinux.service | X display manager com temas do Arch Linux. |

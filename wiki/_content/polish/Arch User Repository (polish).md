@@ -1,6 +1,6 @@
 ## Czym jest AUR?
 
-ArchLinux User Community Repository (AUR) - po polsku oznacza repozytorium społeczności użytkowników Arch Linuksa. Jest zbiorem PKGBUILDów pisanych przez użytkowników Arch Linuksa. Mówiąc prostym językiem, AUR to pakiety, których nie dołączono jeszcze do oficjalnego repozytorium [community], a do tego kandydują. Użytkownicy głosują na poszczególne pakiety, które po osiągnięciu pozytywnej opinii społeczności trafiają do zbioru pakietów oficjalnych.
+ArchLinux User Community Repository (AUR) - po polsku oznacza repozytorium społeczności użytkowników Arch Linuksa. Jest zbiorem [PKGBUILDów](/index.php/PKGBUILD_(Polski) "PKGBUILD (Polski)") pisanych przez użytkowników Arch Linuksa. Mówiąc prostym językiem, AUR to pakiety, których nie dołączono jeszcze do oficjalnego repozytorium [community], a do tego kandydują. Użytkownicy głosują na poszczególne pakiety, które po osiągnięciu pozytywnej opinii społeczności trafiają do zbioru pakietów oficjalnych.
 
 ## Jak zacząć korzystanie z AUR?
 
@@ -11,36 +11,17 @@ Jeżeli zamierzasz korzystać z pakietów z AUR, zainstaluj grupę `base-devel`:
 
 ```
 
-Aby zainstalować pakiet z AUR, należy pobrać archiwum `*.tar.gz`, rozpakować je (`tar -xvzf nazwa_pakietu.tar.gz`), następnie sprawdzić `PKGBUILD` i `*.install`. Jeżeli wszystko jest w porządku, wykonujemy polecenie (będąc w katalogu rozpakowanego pakietu):
-
-```
-# makepkg
-
-```
-
-Nazwa pakietu do instalacji powinna wyglądać:
-
-```
-<nazwa_pakietu>-<wersja>-<architektura>.pkg.tar.xz
-
-```
-
-Na koniec pozostaje wydać polecenie:
-
-```
-# pacman -U <nazwa_pakietu>-<wersja>-<architektura>.pkg.tar.xz
-
-```
-
-Kompilacja pakietu również jest prosta i wygląda następująco:
+Aby zainstalować pakiet z AUR, należy go pobrać, rozpakować, skompilować i zainstalować. Robią to poniższe komendy:
 
 ```
 wget [https://aur.archlinux.org/packages/nazwa_pakietu/nazwa_pakietu.tar.gz](https://aur.archlinux.org/packages/nazwa_pakietu/nazwa_pakietu.tar.gz)
 tar zxvf nazwa_pakietu.tar.gz
 cd nazwa_pakietu
-makepkg -si
+makepkg -sri
 
 ```
+
+[makepkg -sri](/index.php?title=Makepkg_(Polski)&action=edit&redlink=1 "Makepkg (Polski) (page does not exist)") spowoduje ściągnięcie kodu, rozwiązanie zależności przy pomocy [pacman](/index.php/Pacman_(Polski) "Pacman (Polski)"), skompilowanie i zapakowanie go, zainstalowanie paczki. Na samym końcu usuwane są zależności, które były potrzebne tylko na czas instalacji.
 
 Jeśli znasz już zasadę budowania pakietów, możesz zainstalować [program](/index.php/Pacman_(Polski)#Nak.C5.82adki_na_Pacmana "Pacman (Polski)"), który wykona część niezbędnej pracy.
 

@@ -2,7 +2,7 @@
 
 The required information is stored in a [#Partition table](#Partition_table) scheme such as MBR or GPT.
 
-Tables are modified using a [#Partitioning tool](#Partitioning_tool) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
+Partition tables are created and modified using one of many [#Partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
 Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted) before data can be written to the newly-formatted file system volume.
 
@@ -118,7 +118,7 @@ There are no strict rules for partitioning a hard drive, although one may follow
 **Note:**
 
 *   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
-*   BIOS systems which are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
+*   BIOS systems that are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
 
 ### Single root partition
 
@@ -207,7 +207,7 @@ The size of the partitions depends on personal preference, but the following inf
 
 ## Partitioning tools
 
-The following programs can be used to create and/or manipulate device partition tables and partitions. See the linked articles for the exact commands to be used.
+The following programs are used to create and/or manipulate device partition tables and partitions. See the linked articles for the exact commands to be used. Most tools fall under the [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") articles.
 
 **Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
 
@@ -215,27 +215,27 @@ The following programs can be used to create and/or manipulate device partition 
 
 *   **[fdisk](/index.php/Fdisk "Fdisk")** — Dialog-driven program for creation and manipulation of partition tables.
 
-	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Curses version of fdisk.
+*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Curses-based variant of fdisk.
 
-	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-*   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — Scriptable version of fdisk.
+*   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — Scriptable variant of fdisk.
 
-	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 **gdisk**
 
-*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](#GUID_Partition_Table) version of fdisk.
+*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](#GUID_Partition_Table) alternative to fdisk.
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
-*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — Curses version of gdisk.
+*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — Curses-based variant of gdisk.
 
 	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
-*   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable version of gdisk.
+*   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable variant of gdisk.
 
 	[http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 

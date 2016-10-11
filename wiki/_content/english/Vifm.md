@@ -1,8 +1,8 @@
 From the [Vifm](http://vifm.info/) home page:
 
-	*Vifm is an ncurses based file manager with vi like keybindings/modes/options/commands/configuration, which also borrows some useful ideas from mutt.*
+	*Vifm is an ncurses based file manager with vi like keybindings/modes/options/commands/configuration, which also borrows some useful ideas from [mutt](/index.php/Mutt "Mutt").*
 
-If you use vi, Vifm gives you complete keyboard control over your files without having to learn a new set of commands.
+If you use [vi](/index.php/Vi "Vi"), Vifm gives you complete keyboard control over your files without having to learn a new set of commands.
 
 ## Contents
 

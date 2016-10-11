@@ -200,7 +200,7 @@ They can be added through the web interface (as well as updated) through the Adm
 
 ### Backing Up
 
-It is very trivial to backup DokuWiki, since there is no database. All pages are in plain text, and require only a simple tar, or rsync.
+It is very trivial to backup DokuWiki, since there is no database. All pages are in plain text, and require only a simple tar, or [rsync](/index.php/Rsync "Rsync").
 
 A quick breakdown of the directories of interest in the current (2015-08-10a) version:
 

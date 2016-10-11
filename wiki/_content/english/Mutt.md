@@ -1001,7 +1001,7 @@ Add this to your `.muttrc`:
 
 ### Use Mutt to send mail from command line
 
-Man pages will show all available commands and how to use them, but here are a couple of examples. You could use Mutt to send alerts, logs or some other system information, triggered by login through .bash_profile, or as a regular cron job.
+Man pages will show all available commands and how to use them, but here are a couple of examples. You could use Mutt to send alerts, logs or some other system information, triggered by login through .bash_profile, or as a regular [cron](/index.php/Cron "Cron") job.
 
 Send a message:
 

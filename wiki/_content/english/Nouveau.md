@@ -1,6 +1,6 @@
-This article covers installing and configuring the [Nouveau](http://nouveau.freedesktop.org/) open-source driver for NVIDIA graphic cards. For information about the official proprietary driver, see [NVIDIA](/index.php/NVIDIA "NVIDIA").
+This article covers the open-source [Nouveau](http://nouveau.freedesktop.org/) driver for NVIDIA graphics cards. For information about the proprietary driver, see [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
-Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.
+Find your card's [code name](http://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.
 
 ## Contents
 
@@ -31,8 +31,8 @@ For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages
 The Nouveau kernel module should load automatically on system boot. If it does not happen, then:
 
 *   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since Nouveau requires kernel mode-setting.
-*   Also, check that you do not have disabled Nouveau by using any modprobe blacklisting technique within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
-*   If all above still fails to load nouveau check dmesg for opcode error. Add `nouveau.config=NvBios=PRAMIN` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent module unloading.[[1]](http://nouveau.freedesktop.org/wiki/TroubleShooting/#index10h3)
+*   Also, check that you do not have Nouveau disabled using any modprobe blacklisting technique within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
+*   If all above still fails to load nouveau check dmesg for an opcode error. Add `nouveau.config=NvBios=PRAMIN` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent module unloading.[[1]](http://nouveau.freedesktop.org/wiki/TroubleShooting/#index10h3)
 
 ### Enable early KMS
 

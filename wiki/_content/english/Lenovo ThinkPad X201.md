@@ -34,7 +34,7 @@ As of [linux](https://www.archlinux.org/packages/?name=linux) 3.16, backlight ke
 
 ### Hibernation
 
-Hibernation works with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) 4.1\. See [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate").
+See [Power management/Suspend and hibernate#Hibernation](/index.php/Power_management/Suspend_and_hibernate#Hibernation "Power management/Suspend and hibernate"). Hibernation works with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (up to [4.1.21](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/linux-lts&id=c9883bea839496e92108533914e6b428c3f5f0a8)).
 
 ## Troubleshooting
 
@@ -74,7 +74,7 @@ Other issues include the yellow USB port not being powered.
 
 ### Display issues
 
-See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
+See [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") and [Intel graphics#DRI3 issues](/index.php/Intel_graphics#DRI3_issues "Intel graphics").
 
 ### Hardware virtualization
 

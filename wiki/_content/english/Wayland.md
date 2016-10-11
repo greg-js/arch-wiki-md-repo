@@ -95,13 +95,6 @@ $ weston-flower
 
 ```
 
-To test the frame protocol (runs `glxgears`):
-
-```
-$ weston-gears
-
-```
-
 To display images:
 
 ```
@@ -111,7 +104,20 @@ $ weston-image image1.jpg image2.jpg...
 
 ### Configuration
 
-Example configuration file for keyboard layout, module selection and UI modifications. See `man weston.ini` for full details:
+Example configuration file for keyboard layout, module selection and UI modifications. See `man weston.ini` for full details. The Weston outputs differ slightly from <tt>xorg.conf</tt>'s Monitors:
+
+```
+$ ls /sys/class/drm
+card0
+card0-VGA-1
+card1
+card1-DVI-I-1
+card1-HDMI-A-1
+card1-VGA-2
+
+```
+
+<tt>card0</tt> is the unused built-in video adapter. The add-on adapter <tt>card1</tt> is cabled to one HDMI and one DVI monitor, so the output names are <tt>HDMI-A-1</tt> and <tt>DVI-I-1</tt>.
 
  `~/.config/weston.ini` 
 ```

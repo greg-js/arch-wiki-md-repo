@@ -23,7 +23,7 @@
 
 ## List of metric-compatible fonts
 
-In the following table, commonly-specified families are shown in **bold**. This table is mainly based on [<tt>30-metric-aliases.conf</tt>](https://cgit.freedesktop.org/fontconfig/tree/conf.d/30-metric-aliases.conf) from [fontconfig](/index.php/Fontconfig "Fontconfig").
+In the following table, commonly-specified families are shown in **bold**. This table is roughly based on [fontconfig](/index.php/Fontconfig "Fontconfig")'s [<tt>30-metric-aliases.conf</tt>](https://cgit.freedesktop.org/fontconfig/tree/conf.d/30-metric-aliases.conf) and Wikipedia pages for individual fonts.
 
 <caption>"Core fonts for the web" compatibilities</caption>
 | [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [GNU](#GNU_FreeFont) | [Windows](#Microsoft) | [Microsoft](#Microsoft) | [Liberation](#Liberation) | [CrOS](#Chrome_OS) | StarOffice |
@@ -46,23 +46,23 @@ In the following table, commonly-specified families are shown in **bold**. This 
 
 <caption>Other PostScript core families</caption>
 | [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [Windows](#Microsoft) |
-| ITC Avant Garde Gothic | URW Gothic | TeX Gyre Adventor |
+| ITC Avant Garde Gothic | URW Gothic | TeX Gyre Adventor | **Century Gothic** |
 | ITC Bookman | Bookman URW | TeX Gyre Bonum | Bookman Old Style |
-| ITC Zapf Chancery | Chancery URW | TeX Gyre Chorus |
-| **Palatino** | Palladio URW | TeX Gyre Pagella | Palatino Linotype |
+| ITC Zapf Chancery | Chancery URW | TeX Gyre Chorus | Monotype Corsiva |
+| **Palatino** | Palladio URW | TeX Gyre Pagella | Palatino Linotype, Book Antiqua |
 | New Century Schoolbook | Century SchoolBook URW | TeX Gyre Schola | Century Schoolbook |
 
 <caption>PostScript 3 Fonts</caption>
 | [PostScript](#PostScript) | [URW](#PostScript) |
-| Optima | URW Classico |
+| **Optima** | URW Classico |
 | Antique Olive | Antique Olive |
-| Univers | U001 |
+| **Univers** | U001 |
 | Clarendon Bold Condensed | Clarendon URW Bold Condensed |
 | Coronet | Coronet |
 | Letter Gothic | Letter Gothic |
 | Marigold | Mauritius |
 | Albertus | A028 |
-| Garamond | Garamond No. 8 |
+| **Garamond** | Garamond No. 8 |
 
 ## Generic Families
 

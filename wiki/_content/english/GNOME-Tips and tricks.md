@@ -172,10 +172,10 @@ To pad the terminal (create a small, invisible border between the window edges a
 
  `~/.config/gtk-3.0/gtk.css` 
 ```
-VteTerminal,
-TerminalScreen {
+vte-terminal,
+terminal-window {
     padding: 10px 10px 10px 10px;
-    -VteTerminal-inner-border: 10px 10px 10px 10px;
+    -vte-terminal-inner-border: 10px 10px 10px 10px;
 }
 ```
 

@@ -223,35 +223,18 @@ xrandr --auto
 
 For the [GDM](/index.php/GDM "GDM") display manager create a new .desktop file:
 
- `/usr/share/gdm/greeter/autostart/display_setup.desktop` 
+ `/usr/share/gdm/greeter/autostart/optimus.desktop` 
 ```
 [Desktop Entry]
 Type=Application
-Name=Display setup
+Name=Optimus
 Exec=sh -c "xrandr --setprovideroutputsource modesetting NVIDIA-0; xrandr --auto"
 NoDisplay=true
-X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Phase=DisplayServer
 
 ```
 
-If it is not working, you must add a script to `/etc/X11/xinit/xinitrc.d` directory, as below:
-
- `/etc/X11/xinit/xinitrc.d/nvidia-optimus.sh` 
-```
-#!/bin/sh
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-
-```
-
-Then run:
-
-```
-# chmod +x /etc/X11/xinit/xinitrc.d/nvidia-optimus.sh
-
-```
-
-And make sure that GDM use [X as default backend](/index.php/GDM#Use_Xorg_backend "GDM").
+Make sure that GDM use [X as default backend](/index.php/GDM#Use_Xorg_backend "GDM").
 
 #### KDM
 

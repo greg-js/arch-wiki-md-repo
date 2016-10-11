@@ -1,4 +1,4 @@
-This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s *proprietary* graphic card driver. For information about the open-source drivers, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead.
+This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics card driver. For the open-source driver, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead.
 
 ## Contents
 

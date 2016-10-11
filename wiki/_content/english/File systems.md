@@ -129,7 +129,7 @@ File systems are usually created on a [partition](/index.php/Partition "Partitio
 *   After creating a new filesystem, data previously stored on this partition can unlikely be recovered. **Create a backup of any data you want to keep**.
 *   The purpose of a given partition may restrict the choice of file system. For example, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") must contain a FAT32 (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders").
 
-Before continuing, [identify the device](/index.php/Lsblk "Lsblk") where the file system will be created using and whether or not it is mounted. For example:
+Before continuing, [identify the device](/index.php/Lsblk "Lsblk") where the file system will be created and whether or not it is mounted. For example:
 
  `$ lsblk -f` 
 ```
@@ -141,7 +141,7 @@ sda
 
 ```
 
-Mounted **must** be [unmounted](#Unmount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
+Mounted file systems **must** be [unmounted](#Unmount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
 
 ```
 # umount /dev/sda2
@@ -162,7 +162,7 @@ For example, to create a new file system of type [ext4](/index.php/Ext4 "Ext4") 
 **Tip:**
 
 *   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e4label* can be used to change the label on an existing file system.
-*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") volume can be increased, but not reduced in size. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Features "w:Comparison of file systems") and the respective file system documentation for details.
+*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") filesystem's size can be increased, but it cannot reduced. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Features "w:Comparison of file systems") and the respective file system documentation for details.
 
 The new file system can now be mounted to a directory of choice.
 
@@ -175,7 +175,7 @@ To manually mount a filesystem on a device (e.g., a partition) use [mount(8)](ht
 
 ```
 
-This attached the filesystem on `*/dev/sda1*` at the directory `*/mnt*`, making the contents of the filesystem visible. Any data that existed at `*/mnt*` before this action is made invisible until the device is unmounted.
+This attaches the filesystem on `*/dev/sda1*` at the directory `*/mnt*`, making the contents of the filesystem visible. Any data that existed at `*/mnt*` before this action is made invisible until the device is unmounted.
 
 [fstab](/index.php/Fstab "Fstab") contains information on how devices should be automatically mounted if present. See the [fstab](/index.php/Fstab "Fstab") article for more information on how to modify this behavior.
 
@@ -193,7 +193,15 @@ Or
 
 ```
 
-*mount* contains several options, many of which depend on the file system specified. The options can be changed by using flags on the command line with *mount*, by editing [fstab](/index.php/Fstab "Fstab"), by creating [udev](/index.php/Udev "Udev") rules, by [compiling the kernel yourself](/index.php/Arch_Build_System "Arch Build System"), or by using filesystem-specific mount scripts (located at `/usr/bin/mount.*`). See these related articles and the article of the filesystem of interest for more information.
+*mount* contains several options, many of which depend on the file system specified. The options can be changed, either by:
+
+*   using flags on the command line with *mount*
+*   editing [fstab](/index.php/Fstab "Fstab")
+*   creating [udev](/index.php/Udev "Udev") rules
+*   [compiling the kernel yourself](/index.php/Arch_Build_System "Arch Build System")
+*   or using filesystem-specific mount scripts (located at `/usr/bin/mount.*`).
+
+See these related articles and the article of the filesystem of interest for more information.
 
 ### List mounted file systems
 

@@ -1031,7 +1031,9 @@ To enable 3D acceleration on the guest system select this vga with `-vga virtio`
 
 ```
 
-As of September 2016, support for the spice protocol is under development and can be tested installing the development release of [spice](https://www.archlinux.org/packages/?name=spice) (>= 0.13.2).
+As of September 2016, support for the spice protocol is under development and can be tested installing the development release of [spice](https://www.archlinux.org/packages/?name=spice) (>= 0.13.2) and recompiling qemu.
+
+For more information visit [kraxel's blog](https://www.kraxel.org/blog/tag/virgl/).
 
 ### cirrus
 

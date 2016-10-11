@@ -87,7 +87,7 @@ anonymous_enable=YES
 ...
 ```
 
-You may also add e.g. the following options (see `[man](/index.php/Man "Man") vsftp.conf` for more):
+You may also add e.g. the following options (see `man vsftpd.conf` for more):
 
  `/etc/vsftpd.conf` 
 ```

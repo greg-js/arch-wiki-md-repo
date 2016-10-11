@@ -20,6 +20,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [4.4 Elementary (EFL)](#Elementary_.28EFL.29)
 *   [5 Display managers](#Display_managers)
     *   [5.1 SDDM](#SDDM)
+        *   [5.1.1 Alternative way using Xrandr](#Alternative_way_using_Xrandr)
 *   [6 Boot managers](#Boot_managers)
     *   [6.1 GRUB](#GRUB)
 *   [7 Applications](#Applications)
@@ -213,11 +214,34 @@ For more details see [https://phab.enlightenment.org/w/elementary/](https://phab
 To scale SDDM you have to change the following properties in `/etc/sddm.conf`. It is recommended to make a backup of your config before editing it.
 
 ```
-[X11]
+[XDisplay]
 # X server arguments
-ServerArguments=-dpi 144
+ServerArguments=-nolisten tcp -dpi 144
 
 ```
+
+#### Alternative way using Xrandr
+
+If setting ServerArguments fails, it is possible to directly change the DPI setting via xrandr. Modify `/etc/sddm.conf` and add the following section into file:
+
+```
+[XDisplay]
+# script to execute when starting the display server
+# default to /usr/share/sddm/scripts/Xsetup
+DisplayCommand=/etc/sddm/Xsetup
+
+```
+
+Then copy `/usr/share/sddm/scripts/Xsetup` into `/etc/sddm/Xsetup` with the following lines:
+
+```
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
+/usr/bin/xrandr --dpi 144
+
+```
+
+Please read `sddm.conf(5)` for detailed configuration parameters.
 
 ## Boot managers
 

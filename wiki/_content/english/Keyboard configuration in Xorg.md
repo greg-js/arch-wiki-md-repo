@@ -201,6 +201,8 @@ $ grep "compose:" /usr/share/X11/xkb/rules/base.lst
 
 ```
 
+If the desired mapping is not found in that file, an alternative is to use [xmodmap](/index.php/Xmodmap "Xmodmap") to map the desired key to the `Multi_key` keysym, which acts as a compose key by default (note that *xmodmap* settings are reset by *setxkbmap*).
+
 #### Key combinations
 
 The default combinations for the compose keys depend on the [locale](/index.php/Locale "Locale") configured for the session and are stored in `/usr/share/X11/locale/*used_locale*/Compose`, where `*used_locale*` is for example `en_US.UTF-8`.

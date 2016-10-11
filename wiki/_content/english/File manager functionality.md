@@ -110,6 +110,8 @@ afp://<server name>/<share name>
 
 Some file managers may not support thumbnailing, even when the packages listed have been installed. Check the documentation for the relevant file manager.
 
+You may not see thumbnails for remote storage, including [MTP](/index.php/MTP "MTP"). Check your file manager's settings, e.g. for [Thunar](/index.php/Thunar "Thunar") one have to set "Show thumbnails: always".
+
 #### File managers other than Dolphin and Konqueror
 
 These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") and [xfe](https://www.archlinux.org/packages/?name=xfe). The exceptions are Dolphin and Konqueror, used in the [KDE](/index.php/KDE "KDE") desktop environment.

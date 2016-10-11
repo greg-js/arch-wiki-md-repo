@@ -25,7 +25,7 @@ One should also note that the option of turning off a particular instance of a s
 
 ## Globally
 
-The PC speaker can be disabled by [unloading](/index.php/Kernel_modules#Removal "Kernel modules") the `pcspkr` module:
+The PC speaker can be disabled by [unloading](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") the `pcspkr` module:
 
 ```
 # rmmod pcspkr

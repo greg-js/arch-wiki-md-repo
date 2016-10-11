@@ -179,9 +179,11 @@ Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history a
 
 ### WebRTC
 
-WebRTC is a communication protocol that relies on JavaScript that can leak one's actual IP address from behind a VPN. While software like NoScript prevents this, it's probably a good idea to block this protocol directly as well, just to be safe. An [option to disable it](https://code.google.com/p/chromium/issues/detail?id=457492) is available via an [extension](https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia).
+WebRTC is a communication protocol that relies on JavaScript that can leak one's actual IP address and hardware hash from behind a VPN. While some software may prevent the leaking scripts from running, it's probably a good idea to block this protocol directly as well, just to be safe. As of October 2016, there is no way to disable WebRTC on Chromium on desktop, there are extensions available to disable local IP address leak, one is this [extension](https://chrome.google.com/webstore/detail/webrtc-network-limiter/npeicpdbkakmehahjeeohfdhnlpdklia).
 
-One can test this via [this page](https://www.privacytools.io/webrtc.html).
+One can test WebRTC via [this page](https://www.privacytools.io/webrtc.html).
+
+**Warning:** Even though IP leak can be prevented, Chromium still sends your unique hash, and there is no way to prevent this. Read more on [https://www.browserleaks.com/webrtc#webrtc-disable](https://www.browserleaks.com/webrtc#webrtc-disable)
 
 ### SSL certificates
 
