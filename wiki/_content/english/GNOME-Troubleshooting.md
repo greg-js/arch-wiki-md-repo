@@ -27,6 +27,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [23 GNOME crashes when trying to reorder applications in the GNOME Shell Dash](#GNOME_crashes_when_trying_to_reorder_applications_in_the_GNOME_Shell_Dash)
 *   [24 Setting global Wayland environment with an environment variable](#Setting_global_Wayland_environment_with_an_environment_variable)
 *   [25 Gnome Crashes while installing gnome-extra](#Gnome_Crashes_while_installing_gnome-extra)
+*   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
 
 ## Shell freezes
 
@@ -259,3 +260,7 @@ Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-
 ## Gnome Crashes while installing gnome-extra
 
 Attempting to install the gnome-extra group while a gnome environment is running will crash gnome while installing gnome-getting-started-docs. X will continue to run, but gnome will not work until fixed. To fix, simply install gnome-extra from a terminal rather than inside gnome. When complete, gnome should work again.
+
+## No H264 Video in Gnome Video Player (Totem)
+
+[See Codecs](/index.php/Codecs#Tips_and_tricks "Codecs")

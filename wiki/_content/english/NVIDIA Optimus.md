@@ -12,22 +12,34 @@ These options are explained in detail below.
 
 ## Contents
 
-*   [1 Disabling switchable graphics](#Disabling_switchable_graphics)
-*   [2 Using nvidia](#Using_nvidia)
-    *   [2.1 Alternative configuration](#Alternative_configuration)
-    *   [2.2 Display Managers](#Display_Managers)
-        *   [2.2.1 LightDM](#LightDM)
-        *   [2.2.2 SDDM](#SDDM)
-        *   [2.2.3 GDM](#GDM)
-        *   [2.2.4 KDM](#KDM)
-    *   [2.3 Checking 3D](#Checking_3D)
-    *   [2.4 Further Information](#Further_Information)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Tearing/Broken VSync](#Tearing.2FBroken_VSync)
-    *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
-    *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)
-*   [4 Using nouveau](#Using_nouveau)
-*   [5 Using Bumblebee](#Using_Bumblebee)
+*   [1 Detecting Optimus](#Detecting_Optimus)
+*   [2 Disabling switchable graphics](#Disabling_switchable_graphics)
+*   [3 Using nvidia](#Using_nvidia)
+    *   [3.1 Alternative configuration](#Alternative_configuration)
+    *   [3.2 Display Managers](#Display_Managers)
+        *   [3.2.1 LightDM](#LightDM)
+        *   [3.2.2 SDDM](#SDDM)
+        *   [3.2.3 GDM](#GDM)
+        *   [3.2.4 KDM](#KDM)
+    *   [3.3 Checking 3D](#Checking_3D)
+    *   [3.4 Further Information](#Further_Information)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Tearing/Broken VSync](#Tearing.2FBroken_VSync)
+    *   [4.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
+    *   [4.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)
+*   [5 Using nouveau](#Using_nouveau)
+*   [6 Using Bumblebee](#Using_Bumblebee)
+
+## Detecting Optimus
+
+To determine whether your hardware uses Optimus, run the following:
+
+```
+$ lspci | grep -E "VGA|3D"
+
+```
+
+If you see another graphics card apart from your NVIDIA card and you've been having difficulties getting hardware rendering to work, your system probably uses Optimus.
 
 ## Disabling switchable graphics
 
@@ -186,6 +198,7 @@ For the [LightDM](/index.php/LightDM "LightDM") display manager:
 
  `/etc/lightdm/display_setup.sh` 
 ```
+#!/bin/sh
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 

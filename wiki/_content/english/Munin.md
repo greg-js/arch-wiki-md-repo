@@ -484,7 +484,7 @@ Then restart the webserver
 
 ```
 
-If all goes well, point your browser to your host **[http://yourhost.example.com/munin/](http://yourhost.example.com/munin/)** and should the Munin Overview page being served.
+If all goes well, point your browser to your host **[http://yourhost.example.com/munin/](http://yourhost.example.com/munin/)** and you should see the Munin Overview page.
 
 #### Munin 2.1.x
 

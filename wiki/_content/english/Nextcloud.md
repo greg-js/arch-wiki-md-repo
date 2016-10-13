@@ -204,7 +204,7 @@ After nextcloud is set up, add the following line to `/usr/share/webapps/nextclo
 
 ## (Optional) Enable SSL with a self signed certificate plus hardening
 
-**Note:** See the [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") for details about free, automated ssl certificates.
+**Tip:** See the [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") for details about free, automated ssl certificates.
 
 Edit `/etc/httpd/conf/httpd.conf` and uncomment the following lines:
 

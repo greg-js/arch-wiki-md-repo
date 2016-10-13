@@ -188,6 +188,8 @@ in the Firefox address bar or go to the *Add-ons* entry in the Firefox Menu and 
 
 ## Tips and tricks
 
+For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks"), for privacy related enhancements see [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy").
+
 ### Screenshot of webpage
 
 To use Firefox to take a screenshot of a webpage open the developer console using `Shift+F2`. Then type in:

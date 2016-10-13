@@ -4,17 +4,15 @@
 
 *   [1 Reasoning](#Reasoning)
 *   [2 Requirements](#Requirements)
-*   [3 Partition(s) mount](#Partition.28s.29_mount)
-*   [4 Change root](#Change_root)
-    *   [4.1 Using arch-chroot](#Using_arch-chroot)
-    *   [4.2 Using chroot](#Using_chroot)
-    *   [4.3 Using systemd-nspawn](#Using_systemd-nspawn)
-*   [5 Run graphical applications from chroot](#Run_graphical_applications_from_chroot)
-*   [6 Exit from the chroot environment](#Exit_from_the_chroot_environment)
-*   [7 Without root privileges](#Without_root_privileges)
-    *   [7.1 Proot](#Proot)
-    *   [7.2 Fakechroot](#Fakechroot)
-*   [8 See also](#See_also)
+*   [3 Usage](#Usage)
+    *   [3.1 Using arch-chroot](#Using_arch-chroot)
+    *   [3.2 Using chroot](#Using_chroot)
+    *   [3.3 Using systemd-nspawn](#Using_systemd-nspawn)
+*   [4 Run graphical applications from chroot](#Run_graphical_applications_from_chroot)
+*   [5 Without root privileges](#Without_root_privileges)
+    *   [5.1 Proot](#Proot)
+    *   [5.2 Fakechroot](#Fakechroot)
+*   [6 See also](#See_also)
 
 ## Reasoning
 
@@ -41,36 +39,14 @@ See also [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Lim
 
 *   Internet connection established if needed.
 
-## Partition(s) mount
+## Usage
 
-The root partition of the Linux system that you are trying to chroot into needs to be mounted first. To find out the device name assigned by the kernel, run:
+**Note:**
 
-```
-# lsblk
+*   Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* can not be used inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
+*   The file system that will serve as `/` of your chroot must accessible (i.e., decrypted, mounted).
 
-```
-
-Then create a directory for mounting the root partition to, and mount it:
-
-```
-# mkdir /mnt/arch
-# mount /dev/sdx1 /mnt/arch
-
-```
-
-Next, if there are separate filesystems for other system directories (e.g. `/boot`, `/home`...) mount them too:
-
-```
-# mount /dev/sdx2 /mnt/arch/boot/
-# mount /dev/sdx3 /mnt/arch/home/
-
-```
-
-**Note:** If trying to access an [encrypted](/index.php/Disk_encryption "Disk encryption") filesystem, do not forget to first unlock its container (e.g. with `# cryptsetup open /dev/sdX# *name*` for [dm-crypt/LUKS](/index.php/Disk_encryption#Block_device_encryption "Disk encryption")-based encryption), then mount the device using its previously supplied device-mapper *name* (under the form `# mount /dev/mapper/*name* /mnt/arch/...`). More info: [Unlocking/Mapping LUKS partitions with the device mapper](/index.php/Dm-crypt/Device_encryption#Unlocking.2FMapping_LUKS_partitions_with_the_device_mapper "Dm-crypt/Device encryption").
-
-## Change root
-
-**Note:** Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* can not be used inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
+There are several options for using chroot, described below. To exit any of these simply use the `exit` command.
 
 ### Using arch-chroot
 
@@ -149,7 +125,7 @@ After chrooting it may be necessary to load the local bash configuration:
 
 ### Using systemd-nspawn
 
-systemd-nspawn may be used to run a command or OS in a light-weight namespace container. In many ways it is similar to chroot, but more powerful since it fully virtualizes the file system hierarchy, as well as the process tree, the various IPC subsystems and the host and domain name.
+[systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") may be used to run a command or OS in a light-weight namespace container. In many ways it is similar to chroot, but more powerful since it fully virtualizes the file system hierarchy, as well as the process tree, the various IPC subsystems and the host and domain name.
 
 Change directory to the mountpoint of the root partition and run systemd-nspawn:
 
@@ -159,9 +135,9 @@ Change directory to the mountpoint of the root partition and run systemd-nspawn:
 
 ```
 
-It is not necessary to mount api filesystems like `/proc` manually, as systemd-nspawn starts a new init process in the contained environment which takes care of everything. It is like booting up a second Linux OS on the same machine, but it is not a virtual machine.
+It is not necessary to mount api filesystems like `/proc` manually, since systemd-nspawn starts a new init process in the contained environment which takes care of everything.
 
-To quit, just log out or issue the poweroff command. You can then unmount the partitions as described in [#Exit from the chroot environment](#Exit_from_the_chroot_environment).
+See [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") for more detailed examples and other uses.
 
 ## Run graphical applications from chroot
 
@@ -187,25 +163,6 @@ as the user that owns the X server to see the value of DISPLAY. If the value is 
 # export DISPLAY=:0
 
 ```
-
-## Exit from the chroot environment
-
-When you are finished with system maintenance, exit from the chroot:
-
-```
-# exit
-
-```
-
-Last, unmount the temporary filesystems and the root partition:
-
-```
-# cd /
-# umount --recursive /mnt/arch/
-
-```
-
-**Note:** If there is an error mentioning something like: `umount: /path: device is busy` this usually means that either: a program (even a shell) was left running in the chroot or that a sub-mount still exists. Quit the program and use `mount` to find and `umount` sub-mounts). It may be tricky to `umount` some things and one can hopefully have `umount --force` work, as a last resort use `umount --lazy` which just releases them. In either case to be safe, `reboot` as soon as possible if these are unresolved to avoid future, possible conflicts.
 
 ## Without root privileges
 

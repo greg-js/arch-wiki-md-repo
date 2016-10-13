@@ -82,9 +82,9 @@ These packages are not in the above mentioned groups:
 
 GNOME has three available sessions, all using GNOME Shell.
 
-*   **GNOME** is the default, innovative layout.
+*   **GNOME** is the default which uses Wayland. Traditional X applications are run through Xwayland.
 *   **GNOME Classic** is a traditional desktop layout with a similar interface to GNOME 2, using pre-activated extensions and parameters. [[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) Hence it is more a customized GNOME Shell than a truly distinct mode.
-*   **GNOME on Wayland** runs GNOME Shell using the new Wayland protocol. Traditional X applications are run through Xwayland.
+*   **GNOME on Xorg** runs GNOME Shell using Xorg.
 
 ## Starting GNOME
 
@@ -94,11 +94,11 @@ GNOME can be started either graphically, using a [display manager](/index.php/Di
 
 ### Graphically
 
-Select the session: *GNOME*, *GNOME Classic* or *GNOME on Wayland* from the display manager's session menu.
+Select the session: *GNOME*, *GNOME Classic* or *GNOME on Xorg* from the display manager's session menu.
 
 ### Manually
 
-*   For the standard GNOME session, add to the `~/.xinitrc` file: `exec gnome-session`.
+*   For the GNOME on Xorg session, add to the `~/.xinitrc` file: `exec gnome-session`.
 *   For the GNOME Classic session, add to the `~/.xinitrc` file:
     ```
     export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
@@ -108,13 +108,13 @@ Select the session: *GNOME*, *GNOME Classic* or *GNOME on Wayland* from the disp
 
 After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` command (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
-**Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using *startx* and `~/.xinitrc`. Instead, run `gnome-session --session=gnome-wayland`. For more information, see [Wayland](/index.php/Wayland "Wayland").
+**Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using *startx* and `~/.xinitrc`. Instead, simply run `gnome-session`. For more information, see [Wayland](/index.php/Wayland "Wayland").
 
 ### GNOME applications in Wayland
 
 Currently, by default, GNOME applications will be run as traditional X applications through Xwayland. To test GNOME applications with Wayland, use the command line to run the application and prefix the command with `env GDK_BACKEND='wayland,x11' <command>`.
 
-**Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session --session=gnome-wayland`, currently does not work. For workarounds, see [GNOME/Troubleshooting#Setting global Wayland environment with an environment variable](/index.php/GNOME/Troubleshooting#Setting_global_Wayland_environment_with_an_environment_variable "GNOME/Troubleshooting").
+**Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session`, currently does not work. For workarounds, see [GNOME/Troubleshooting#Setting global Wayland environment with an environment variable](/index.php/GNOME/Troubleshooting#Setting_global_Wayland_environment_with_an_environment_variable "GNOME/Troubleshooting").
 
 See the current status of Wayland on GNOME at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
 

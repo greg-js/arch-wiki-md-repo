@@ -8,6 +8,8 @@ You may find it very convenient to drop into a shell quickly without wasting scr
 
 [tilda](https://www.archlinux.org/packages/?name=tilda) is available in the [community] repository.
 
+***Tilda is not compatible with Wayland*** see: [Github](https://github.com/lanoxx/tilda/issues/150)
+
 ## Using with dwm
 
 [dwm](/index.php/Dwm "Dwm") is a tiling [window manager](/index.php/Window_manager "Window manager"), which manages placement of windows automatically, so it takes some configuration to make Tilda work properly.

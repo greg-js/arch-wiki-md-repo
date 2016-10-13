@@ -92,9 +92,11 @@ Alternatively, use [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin") to achieve t
 Add the database access details to `/usr/share/webapps/cacti/include/config.php`:
 
 ```
+$database_type = "mysqli";
 $database_default = "cactidb";
 $database_username = "cactiuser";
 $database_password = "some_password";
+
 ```
 
 ## Spine

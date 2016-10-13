@@ -85,7 +85,7 @@ Quite simple app, just [install](/index.php/Install "Install") [cryptkeeper](htt
 
 ### Mount using encfsui
 
-A bash script [encfsui](http://github.com/bulletmark/encfsui) provides a simple zenity gui around the EncFS command line utility to mount and unmount an encrypted directory. It includes a desktop launcher. Install it from [encfsui](https://aur.archlinux.org/packages/encfsui/).
+A bash script [encfsui](http://github.com/bulletmark/encfsui) provides a simple [zenity](https://www.archlinux.org/packages/?name=zenity) gui around the EncFS command line utility to mount and unmount an encrypted directory. It includes a desktop launcher. Install it from [encfsui](https://aur.archlinux.org/packages/encfsui/).
 
 ### Mount at login using pam_encfs
 

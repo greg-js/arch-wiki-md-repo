@@ -141,9 +141,9 @@ There are several key parameters to tune the operation of the virtual memory (VM
 
 As noted in the comments for the parameters, one needs to consider the total amount of RAM when setting these values. For example, simplifying by taking the installed system RAM instead of available memory:
 
-*   If `vm.dirty_ratio` is set to 10 (percent of RAM). Consensus is that 10% of RAM when RAM is say half a GB (so 10% is 50 MB) is a sane value on spinning disks. But if the machine has much more RAM, say 16 GB (10% is 1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case is 3 (16*0.03 ~ 491 MB).
+*   If `vm.dirty_ratio` is set to 10 (percentage of total, available to the system, RAM). Consensus is that 10% of RAM when RAM is say half a GB (so 10% is 50 MB) is a sane value on spinning disks. But if the machine has much more RAM, say 16 GB (10% is 1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case is 3 (16*0.03 ~ 491 MB).
 
-*   A `vm.dirty_background_ratio` setting of 5 (% of RAM) may, similarly, be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
+*   A `vm.dirty_background_ratio` setting of 5 (*same as above*) may, similarly, be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
 
 ## MDADM
 

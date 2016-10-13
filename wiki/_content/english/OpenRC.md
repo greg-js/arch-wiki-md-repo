@@ -20,6 +20,7 @@
     *   [3.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
     *   [3.3 During shutdown remounting root as read-only fails](#During_shutdown_remounting_root_as_read-only_fails)
     *   [3.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
+    *   [3.5 X server does not start unless user is root](#X_server_does_not_start_unless_user_is_root)
 *   [4 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
 *   [5 See also](#See_also)
 
@@ -172,6 +173,18 @@ To prevent a missing file error, create the file:
 
 ```
 # touch /etc/sysctl.conf
+
+```
+
+### X server does not start unless user is root
+
+With the Xorg release 1.16, X was made rootless by relying on systemd-login. Using `startx` will not work when running OpenRC as init system.
+
+This can be solved by creating the `/etc/X11/Xwrapper.config` file with the contents:
+
+```
+# Xorg.wraper configuration file
+needs_root_rights = yes
 
 ```
 

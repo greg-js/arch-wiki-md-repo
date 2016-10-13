@@ -10,6 +10,7 @@
 | MicroSD Reader | Partially Working | sdhci |
 | Power Management | Not working |
 | Accelerometer | Working, with external kernel module | bmc150_accel_i2c |
+| Hardware Buttons | Working, kernel module has to be enabled | soc_button_array gpio_keys |
 
 The Teclast X16 [Pro](http://www.teclast.com/en/zt/X16Pro/) and [Power](http://www.teclast.com/en/zt/X16Power/) are two 2 in 1 [Tablet PC](/index.php/Tablet_PC "Tablet PC") devices, equipped with a 11.6 inch display that supports for 1920 x 1080 pixels. Besides, the Teclast X16 Pro and Power support dual OS that allows users to take advantage of both Windows 10 and Android 5.1 operating systems on the device. They are powered by fifth-generation Intel Atom Z8500 (Pro) and Intel Atom Z8700 (Power) CPUs, aka Cherry Trail-Braswell, and by eighth-generation Intel HD graphics (12EUs Pro, 16EUs Power), coupled with 4GB of RAM (Pro) or 8GB of RAM (Power), both DDR3-1066 (due to a BIOS bug).
 

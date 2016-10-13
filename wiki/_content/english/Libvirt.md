@@ -198,8 +198,6 @@ $ virsh -c qemu:///session
 
 Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)).
 
-**Note:** [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) may misbehave if it cannot find the correct version of Python. Try running it with `PYTHONAPTH=/usr/bin/python2 virt-manager` if necessary
-
 ### virsh
 
 The virsh program is for managing guest *domains* (virtual machines) and works well for scripting, virtualization administration. Though most virsh commands require root privileges to run due to the communication channels used to talk to the hypervisor, typical management, creation, and running of domains (like that done with VirtualBox) can be done as a regular user.
@@ -310,8 +308,6 @@ Then you can use this image as the base for your new domain and it will use the 
 ### Domains
 
 Virtual machines are called *domains*. If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program that is part of the [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) package).
-
-**Note:** [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) and [virt-install](https://www.archlinux.org/packages/?name=virt-install) require to be run with Python 2\. If either complains on startup, try to run the with `$ PYTHONAPTH=/usr/bin/python2 virt-[install, manager]`
 
 Creating a new domain typically involves using some installation media, such as an `.iso` from the storage pool or an optical drive.
 

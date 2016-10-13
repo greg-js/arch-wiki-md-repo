@@ -61,7 +61,7 @@ GRUB_GFXPAYLOAD_LINUX=keep
 
 Multiple resolutions can be specified, including the default `auto`, so it is recommended that you edit the line to resemble `GRUB_GFXMODE=<desired resolution>,<fallback such as 1024x768>,auto`. For more information, refer to [the GRUB gfxmode documentation](https://www.gnu.org/software/grub/manual/html_node/gfxmode.html#gfxmode). The [gfxpayload](https://www.gnu.org/software/grub/manual/html_node/gfxpayload.html#gfxpayload) property will make sure the kernel keeps the resolution.
 
-**Note:** Only the modes supported by the graphics card via [VESA BIOS Extensions](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions "wikipedia:VESA BIOS Extensions") can be used. To view the list of supported modes, install [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) and run `hwinfo --framebuffer` as root. Alternatively, enter the GRUB command line and run the command `vbeinfo`.
+**Note:** Only the modes supported by the graphics card via [VESA BIOS Extensions](https://en.wikipedia.org/wiki/VESA_BIOS_Extensions "wikipedia:VESA BIOS Extensions") can be used. To view the list of supported modes, install [hwinfo](https://www.archlinux.org/packages/?name=hwinfo) and run `hwinfo --framebuffer` as root. Alternatively, enter the GRUB command line and run the command `videoinfo`.
 
 **Note:** Make sure to run `grub-mkconfig -o /boot/grub/grub.cfg` after making changes.
 
@@ -69,7 +69,7 @@ If this method does not work for you, the deprecated `vga=` method will still wo
 
 ### 915resolution hack
 
-Some times for Intel graphic adapters neither `# hwinfo --framebuffer` nor `vbeinfo` will show you the desired resolution. In this case you can use `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)
+Some times for Intel graphic adapters neither `# hwinfo --framebuffer` nor `videoinfo` will show you the desired resolution. In this case you can use `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)
 
 First you need to find a video mode which will be modified later. For that we need the GRUB command shell:
 

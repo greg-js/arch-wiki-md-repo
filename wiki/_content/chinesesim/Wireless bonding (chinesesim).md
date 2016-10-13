@@ -3,11 +3,12 @@
 *   [1 支持可移除设备的网络接口绑定](#.E6.94.AF.E6.8C.81.E5.8F.AF.E7.A7.BB.E9.99.A4.E8.AE.BE.E5.A4.87.E7.9A.84.E7.BD.91.E7.BB.9C.E6.8E.A5.E5.8F.A3.E7.BB.91.E5.AE.9A)
 *   [2 DHCP 配置](#DHCP_.E9.85.8D.E7.BD.AE)
 *   [3 DHCPv6 配置](#DHCPv6_.E9.85.8D.E7.BD.AE)
-*   [4 wpa_supplicant 配置](#wpa_supplicant_.E9.85.8D.E7.BD.AE)
-*   [5 从属设备配置](#.E4.BB.8E.E5.B1.9E.E8.AE.BE.E5.A4.87.E9.85.8D.E7.BD.AE)
-*   [6 主设备配置](#.E4.B8.BB.E8.AE.BE.E5.A4.87.E9.85.8D.E7.BD.AE)
-*   [7 启用/安装服务单元](#.E5.90.AF.E7.94.A8.2F.E5.AE.89.E8.A3.85.E6.9C.8D.E5.8A.A1.E5.8D.95.E5.85.83)
-*   [8 测试成果](#.E6.B5.8B.E8.AF.95.E6.88.90.E6.9E.9C)
+*   [4 静态网络配置](#.E9.9D.99.E6.80.81.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
+*   [5 wpa_supplicant 配置](#wpa_supplicant_.E9.85.8D.E7.BD.AE)
+*   [6 从属设备配置](#.E4.BB.8E.E5.B1.9E.E8.AE.BE.E5.A4.87.E9.85.8D.E7.BD.AE)
+*   [7 主设备配置](#.E4.B8.BB.E8.AE.BE.E5.A4.87.E9.85.8D.E7.BD.AE)
+*   [8 启用/安装服务单元](#.E5.90.AF.E7.94.A8.2F.E5.AE.89.E8.A3.85.E6.9C.8D.E5.8A.A1.E5.8D.95.E5.85.83)
+*   [9 测试成果](#.E6.B5.8B.E8.AF.95.E6.88.90.E6.9E.9C)
 
 ## 支持可移除设备的网络接口绑定
 
@@ -18,9 +19,9 @@ The Linux kernel bonding driver can be used to provide parallel network connecti
 
 This example will run wpa_supplicant continuously on any interface, as needed, and DHCP and DHCPv6 clients on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be applied to any other type of network interface, and extended to more than two physical or virtual network interfaces.
 
-Note that no other "connection manager" is used here, providing a more direct approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), to scan for, select, and connect to new wireless access points/base stations.
+Note that host networking is managed directly with [systemd](/index.php/Systemd "Systemd"), and that no other "connection manager" is used here, providing a more basic approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), to scan for, select, and connect to new wireless access points/base stations.
 
-In this example, there are five [systemd](/index.php/Systemd "Systemd") service unit files needed, along with four associated configuration files, for [kernel bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), and [dhclient](https://www.archlinux.org/packages/?name=dhclient). The five unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The bonding "master" systemd service unit file may be customized, or a separate fifth configuration file may be used, to specify the primary slave network interface name. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
+In this example, there are six [systemd](/index.php/Systemd "Systemd") service unit files used, along with five associated configuration files, for the [kernel bonding module](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), [dhclient](https://www.archlinux.org/packages/?name=dhclient), and for static network configuration and specifying the primary slave network interface name. The six unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
 
 **Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch Linux packages. Edit as required.
 
@@ -134,6 +135,73 @@ Restart= on-abnormal
 WantedBy= sys-subsystem-net-devices-%i.device
 ```
 
+## 静态网络配置
+
+ `/etc/conf.d/network.conf` 
+```
+# These Environment names are formed by prefixing the base variable name with the interface names.
+# Remember, here, these are systemd.service Environment variables, not shell variables.
+# Variables that are not set or that are set to the empty string will have no effect.
+# Add a list of interface names here, in the form of a comment, for reference.
+# wlp2s0 enp3s0 bond0
+
+# PRIMARY is the name of the preferred network interface in the bonded group of interfaces.
+bond0PRIMARY='enp3s0'
+
+# ADDRS is a single-quoted space separated list of IPv4 and IPv6 addresses to apply to the interface.
+# The ADDRESS must be followed by a slash and a decimal number which encodes the network prefix length.
+# interfaceADDRS='address1/length address2/length ...'
+bond0ADDRS='192.168.0.2/24'
+wlp2s0ADDRS=
+enp3s0ADDRS=
+
+# ROUTES is a single-quoted space separated list of double-quoted ip-route ROUTE specifications.
+# A PREFIX must be followed by a slash and a decimal number which encodes the network prefix length.
+# Remember, to be able to add a route, the host must first be able to reach the gateway.
+# interfaceROUTES='"to prefix1/length] via gateway1" "to prefix2/length via gateway2" ...'
+bond0ROUTES=
+```
+
+Here, for instance, a static private IPv4 address will be assigned to the bonding interface as a "fail-safe", were the DHCP server to fail or be otherwise inaccessible. The primary slave interface is also specified in this file.
+
+ `/etc/systemd/system/static@.service` 
+```
+[Unit]
+Description= Static Network Configuration on %I
+Documentation= man:systemd.service(5) man:bash(1) man:ip-address(8) man:ip-route(8)
+
+Documentation= [https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/)
+Wants= network.target
+Before= network.target
+
+BindsTo= sys-subsystem-net-devices-%i.device
+
+[Service]
+EnvironmentFile= /etc/conf.d/network.conf
+
+Type= oneshot
+RemainAfterExit= yes
+
+# Apparently, "ip" is not synchronous/atomic, so allow some time.
+ExecStart=-/usr/bin/ip link set %I up
+ExecStart=-/usr/bin/sh -c '[ "$%IADDRS" ] && \
+        for a in $%IADDRS;do /usr/bin/ip address add local $$a dev %I;done'
+ExecStart= /usr/bin/sleep 1
+ExecStart=-/usr/bin/sh -c '[ "$%IROUTES" ] && \
+        for r in ${%IROUTES};do /usr/bin/ip route replace $$r dev %I;done'
+
+ExecStop=-/usr/bin/sh -c '[ "$%IROUTES" ] && \
+        for r in ${%IROUTES};do /usr/bin/ip route del $$r dev %I;done'
+ExecStop= /usr/bin/sleep 1
+ExecStop=-/usr/bin/sh -c '[ "$%IADDRS" ] && \
+        for a in $%IADDRS;do /usr/bin/ip address del local $$a dev %I;done'
+
+[Install]
+WantedBy= sys-subsystem-net-devices-%i.device
+```
+
+Of course, static network configuration may be used as an alternative to, or in addition to, dynamic network configuration, or not at all.
+
 ## wpa_supplicant 配置
 
  `/etc/wpa_supplicant/wpa_supplicant.conf` 
@@ -190,7 +258,7 @@ ExecStopPost=-/usr/bin/iw %I set bitrates
 Restart= on-abnormal
 
 [Install]
-WantedBy= sys-subsystem-net-devices-%I.device
+WantedBy= sys-subsystem-net-devices-%i.device
 ```
 
 The supplicants and the DHCP and DHCPv6 clients are ordered relative to the network-pre.target on shutdown. The supplicants must not be stopped before the DHCP and DHCPv6 clients release their address leases.
@@ -267,9 +335,9 @@ Wants= dhcp6c@%i.service
 BindsTo= sys-subsystem-net-devices-%i.device
 
 [Service]
-Environment= PRI=enp3s0
+# Environment= PRI=enp3s0
 # Environment= PRI=wlp2s0
-EnvironmentFile=-/etc/primary.conf
+EnvironmentFile=-/etc/conf.d/network.conf
 
 Type= oneshot
 RemainAfterExit= yes
@@ -277,7 +345,7 @@ RemainAfterExit= yes
 # Apparently, "ip" is not synchronous/atomic, so allow some time.
 ExecStart=\
 -/usr/bin/ip link add %I type bond ;\
- /usr/bin/sh -c 'echo -n $PRI > /sys/devices/virtual/net/%I/bonding/primary' ;\
+ /usr/bin/sh -c 'echo -n $%IPRIMARY > /sys/devices/virtual/net/%I/bonding/primary' ;\
 -/usr/bin/ip link set %I up ;\
  /usr/bin/sleep 1 ;\
 
@@ -293,7 +361,7 @@ RequiredBy= dhcp6c@%i.service
 
 The "RequiredBy" dependencies here activate the "stop" ordering during bonding "restart". When the "master@.service" unit stops, then the DHCP and DHCPv6 clients will be stopped also.
 
-Remember to edit the "PRI" environment variable to provide the correct interface name, to select the primary slave interface. This will be the one interface used when other interfaces are also available. Of course, an Environment file could be used here instead, to provide a generic master service unit file.
+Of course, "Environment=" could be used here instead of the Environment file, if static network configuration is not used, and then the Environment file could be avoided. Settings from Environment files override settings made with "Environment=".
 
 ## 启用/安装服务单元
 
@@ -335,7 +403,14 @@ Then, Enable/Install the slave and master units, using any desired interface nam
 
 ```
 
-And finally, activate the bonding interface and the DHCP and DHCPv6 clients by starting "master@bond0.service":
+If static network configuration is desired, Enable/Install the static unit, specifying the interface name:
+
+```
+# systemctl enable static@bond0
+
+```
+
+And finally, activate the bonding interface, the DHCP and DHCPv6 clients, and any static network configuration, by starting "master@bond0.service":
 
 ```
 # systemctl start master@bond0
@@ -363,6 +438,7 @@ dhclient@bond0.service                 loaded active   running ISC dhclient on i
 dhcp6c@bond0.service                   loaded active   running WIDE-DHCPv6 dhcp6c on interface bond0
 enp3s0@bond0.service                   loaded active   exited  enp3s0@bond0 Slave
 master@bond0.service                   loaded active   exited  bond0 Interface Master
+static@bond0.service                   loaded active   exited  Static Network Configuration on bond0
 supplicant@enp3s0.service              loaded inactive dead    wpa_supplicant on enp3s0
 supplicant@wlp2s0.service              loaded active   running wpa_supplicant on wlp2s0
 wlp2s0@bond0.service                   loaded active   exited  wlp2s0@bond0 Slave
@@ -373,7 +449,7 @@ LOAD   = Reflects whether the unit definition was properly loaded.
 ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
 SUB    = The low-level unit activation state, values depend on unit type.
 
-11 loaded units listed.
+12 loaded units listed.
 To show all installed unit files use 'systemctl list-unit-files'.
 ```
 
@@ -470,6 +546,20 @@ Similarly, an address may be released and a new address acquired with
 
 ```
 # systemctl restart dhclient@bond0.service
+
+```
+
+And a static address or default gateway may be changed by stopping the static service unit:
+
+```
+# systemctl stop static@bond0.service
+
+```
+
+editing the network.conf file, and then starting the static service unit again:
+
+```
+# systemctl start static@bond0.service
 
 ```
 

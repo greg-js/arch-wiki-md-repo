@@ -27,6 +27,7 @@ Udev loads kernel modules by utilizing coding parallelism to provide a potential
         *   [4.6.3 USB flash device](#USB_flash_device)
     *   [4.7 Waking from suspend with USB device](#Waking_from_suspend_with_USB_device)
     *   [4.8 Triggering events](#Triggering_events)
+    *   [4.9 Triggering desktop notifications from a udev rule](#Triggering_desktop_notifications_from_a_udev_rule)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Blacklisting modules](#Blacklisting_modules)
     *   [5.2 Debug output](#Debug_output)
@@ -347,6 +348,46 @@ It can be useful to trigger various udev events. For example, you might want to 
 ```
 
 This command will trigger a USB remove event on all USB devices with vendor ID `abcd`.
+
+### Triggering desktop notifications from a udev rule
+
+Invoking an external script containing calls to `notify-send` via udev [can sometimes be challenging](https://bbs.archlinux.org/viewtopic.php?id=212364) since the notification(s) never display on the Desktop. Here is an example of what commands and environmental variables need to be included in which files for `notify-send` to successfully be executed from a udev rule. NOTE: a number of variables are hardcoded in this example, thus consider making them portable (i.e., $USER rather than user's shortname) once you understand the example.
+
+1) The following udev rule executes a script that plays a notification sound and sends a desktop notification when screen brightness is changed according to power state on a laptop. Create the file:
+
+ `/etc/udev/rules.d/99-backlight_notification.rules` 
+```
+Play a notification sound and send a desktop notification when screen brightness is changed according to power state on a laptop (a second udev rule actually changes the screen brightness)
+# Rule for when switching to battery
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/USERNAME/.Xauthority" RUN+="/usr/bin/su USERNAME_TO_RUN_SCRIPT_AS -c /usr/local/bin/brightness_notification.sh"
+# Rule for when switching to AC
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/USERNAME/.Xauthority" RUN+="/usr/bin/su USERNAME_TO_RUN_SCRIPT_AS -c /usr/local/bin/brightness_notification.sh"
+
+```
+
+Note: 1) `USERNAME_TO_RUN_SCRIPT_AS` and `USERNAME` need to be changed to that of the shortname for the user of the graphical session where the notification will be displayed and 2) the script needs to be executed with `/usr/bin/su`, which will place its ownership under the user of the graphical session (rather than root/the system) where the notification will be displayed.
+
+2) Contents of the executable script to be run on trigger of the udev rule:
+
+ `/usr/local/bin/brightness_notification.sh` 
+```
+#!/usr/bin/env bash
+
+export XAUTHORITY=/home/USERNAME_TO_RUN_SCRIPT_AS/.Xauthority
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/UID_OF_USER_TO_RUN_SCRIPT_AS/bus"
+
+/usr/bin/sudo -u USERNAME_TO_RUN_SCRIPT_AS /usr/bin/paplay --server /run/user/UID_OF_USER_TO_RUN_SCRIPT_AS/pulse/native /home/USERNAME/.i3/sounds/Click1.wav > /dev/null 2>&1
+
+/usr/bin/notify-send -i /usr/share/icons/gnome/256x256/status/battery-full-charging.png 'Changing Power States' --expire-time=4000
+
+```
+
+Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNAME` needs to be changed to that of the shortname for the user and user's UID of the graphical session where the notification will be displayed; 2) `/usr/bin/sudo` is needed when playing audio via pulseaudio; and, 3) three environmental variables (i.e., `XAUTHORITY, DISPLAY` and `DBUS_SESSION_BUS_ADDRESS`) for the user of the graphical session where the notification will be displayed need to be defined and exported.
+
+**Warning:** The `XAUTHORITY, DISPLAY` and `DBUS_SESSION_BUS_ADDRESS` environment variables must be defined correctly.
+
+3) Load/reload the new udev rule (see above) and test it by unplugging the power supply to the laptop.
 
 ## Troubleshooting
 

@@ -66,7 +66,7 @@ See the [Arch Linux ARM Pi documentation](http://archlinuxarm.org/platforms/armv
 
 ## Network
 
-The fresh install comes preconfigured to use the onboard NIC in dhcp mode via [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") which should allow access to an official installation through [Secure Shell](/index.php/Secure_Shell "Secure Shell"). The root user's password is "root" and it is highly recommended to change the password and optionally set up [SSH keys](/index.php/SSH_keys "SSH keys").
+The fresh install comes preconfigured to use the onboard NIC in dhcp mode via [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd"). This should allow access to an official installation through [Secure Shell](/index.php/Secure_Shell "Secure Shell"). The default hostname is **alarmpi**. The root user's password is "root" and it is highly recommended to change the password and optionally set up [SSH keys](/index.php/SSH_keys "SSH keys").
 
 ### Configure WLAN without ethernet
 

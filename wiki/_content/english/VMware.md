@@ -40,6 +40,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.12 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
     *   [5.13 Kernel modules fail to build after Linux 4.7](#Kernel_modules_fail_to_build_after_Linux_4.7)
+    *   [5.14 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -136,6 +137,7 @@ After=vmware.service
 ExecStart=/etc/init.d/vmware-workstation-server start
 ExecStop=/etc/init.d/vmware-workstation-server stop
 PIDFile=/var/lock/subsys/vmware-workstation-server
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
@@ -517,6 +519,23 @@ As of VMware Workstation Pro 12.1, the module source needs to be modified to be 
 # sed -i -e 's/dev->trans_start = jiffies/netif_trans_update\(dev\)/g' vmnet-only/netif.c
 # tar cf vmnet.tar vmnet-only
 # rm -r vmnet-only
+
+```
+
+### Workstation Server service does not start
+
+If you see this error ( *Could not find administrative user. Error 127* ) in the output of
+
+```
+# systemctl status vmware-workstation-server
+
+```
+
+You may need to execute the following:
+
+```
+$ ln -s /usr/lib/vmware/bin/wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
+$ chmod +x /usr/lib/vmware/bin/wssc-adminTool
 
 ```
 

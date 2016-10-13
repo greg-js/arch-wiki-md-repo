@@ -1,5 +1,3 @@
-**Tip:** A much easier approach to setting up Flashcache is using [EnhanceIO](/index.php/EnhanceIO "EnhanceIO")
-
 ## Contents
 
 *   [1 Introduction](#Introduction)

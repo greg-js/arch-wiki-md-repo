@@ -81,7 +81,14 @@ See [Environment variables](/index.php/Environment_variables "Environment variab
 
 ## Command line
 
-Bash command line is managed by the separate library called [Readline](/index.php/Readline "Readline"). Readline provides a lot of shortcuts for interacting with the command line i.e. moving back and forth on the word basis, deleting words etc. It is also Readline's responsibility to manage [history](/index.php/Readline#History "Readline") of input commands. Last, but not least, it allows you to create [macros](/index.php/Readline#Macros "Readline").
+Bash command line is managed by the separate library called [Readline](/index.php/Readline "Readline"). Readline provides a lot of shortcuts for interacting with the command line i.e. moving back and forth on the word basis, deleting words etc. It is also Readline's responsibility to manage [history](/index.php/Readline#History "Readline") of input commands. Readline also allows you to create [macros](/index.php/Readline#Macros "Readline").
+
+By default [Readline](/index.php/Readline "Readline") and Bash use Emacs style shortcuts for interacting with command line. However, most [vi](/index.php/Vi "Vi") or [vim](/index.php/Vim "Vim") users will likely want to put the following line in their `~/.inputrc` to enable vi-like keybindings in all [Readline](/index.php/Readline "Readline") based programs, including Bash:
+
+```
+set editing-mode vi
+
+```
 
 ### Tab completion
 

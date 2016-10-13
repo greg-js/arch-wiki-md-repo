@@ -144,6 +144,8 @@ Swapping two- and three-finger tap for a touchpad is a straight forward example.
 
 Remember to remove `MatchIsTouchpad "on"` if your device is not a touchpad and adjust the `Identifier` accordingly.
 
+There exists option `TappingButtonMap`, but using it prevents touchpad from working (see [Bug 97989](https://bugs.freedesktop.org/show_bug.cgi?id=97989)).
+
 ### Manual button re-mapping
 
 For some devices it is desirable to change the button mapping. A common example is the use of a thumb button instead of the middle button (used in X11 for pasting) on mice where the middle button is part of the mouse wheel. You can query the current button mapping via:

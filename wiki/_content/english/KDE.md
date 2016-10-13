@@ -542,7 +542,7 @@ In the past other backends were developed as well but are no longer maintained a
 **Note:**
 
 *   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[6]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
-*   A possible fix is to run as root
+*   A possible fix is to run
 
  `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
 

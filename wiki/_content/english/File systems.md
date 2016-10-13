@@ -11,7 +11,8 @@ Individual drive partitions can be setup using one of the many different availab
 *   [1 Types of file systems](#Types_of_file_systems)
     *   [1.1 Journaling](#Journaling)
     *   [1.2 FUSE-based file systems](#FUSE-based_file_systems)
-    *   [1.3 Special-type file systems](#Special-type_file_systems)
+    *   [1.3 Stackable file systems](#Stackable_file_systems)
+    *   [1.4 Other file systems](#Other_file_systems)
 *   [2 Identify existing file systems](#Identify_existing_file_systems)
 *   [3 Create a file system](#Create_a_file_system)
 *   [4 Mount a filesystem](#Mount_a_filesystem)
@@ -91,15 +92,21 @@ Some FUSE-based file systems:
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 
-### Special-type file systems
+### Stackable file systems
 
-*   **[CramFS](https://en.wikipedia.org/wiki/cramfs "wikipedia:cramfs")** — **Compressed ROM filesystem** is a read only filesystem designed with simplicity and efficiency in mind. Its maximum file size is less 16MB and the maximum file system size is around 272MB.
-
-	[http://sourceforge.net/projects/cramfs/](http://sourceforge.net/projects/cramfs/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-*   **[eCryptfs](/index.php/ECryptfs "ECryptfs")** — **Enterprise Cryptographic Filesystem** is a package of disk encryption software for Linux. It is implemented as a POSIX-compliant filesystem-level encryption layer, aiming to offer functionality similar to that of GnuPG at the operating system level.
+*   **[eCryptfs](/index.php/ECryptfs "ECryptfs")** — The Enterprise Cryptographic Filesystem is a package of disk encryption software for Linux. It is implemented as a POSIX-compliant filesystem-level encryption layer, aiming to offer functionality similar to that of GnuPG at the operating system level.
 
 	[http://ecryptfs.org](http://ecryptfs.org) || [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils)
+
+*   **[overlayfs](/index.php/Overlayfs "Overlayfs")** — OverlayFS is a filesystem service for Linux which implements a union mount for other file systems.
+
+	[https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt) || [linux](https://www.archlinux.org/packages/?name=linux)
+
+*   **Unionfs** — Unionfs is a filesystem service for Linux, FreeBSD and NetBSD which implements a union mount for other file systems.
+
+	[http://unionfs.filesystems.org/](http://unionfs.filesystems.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
+
+### Other file systems
 
 *   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — **SquashFS** is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
 

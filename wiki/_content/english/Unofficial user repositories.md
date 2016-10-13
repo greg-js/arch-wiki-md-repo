@@ -903,7 +903,6 @@ Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
 
 *   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
 *   **Description:** Packages that markzz maintains or uses on the AUR; this includes Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)), and packages to maintain a Debian package repository.
-*   **Sources:** [http://git.markzz.net/markzz/repositories/markzz.git/tree](http://git.markzz.net/markzz/repositories/markzz.git/tree)
 *   **Key ID:** 3CADDFDD
 
 **Note:** If you want to add the key by installing the *markzz-keyring* package, temporarily add `SigLevel = Never` into the repository section.

@@ -9,20 +9,20 @@ Support for swap is provided by the Linux kernel and user-space utilities from t
 ## Contents
 
 *   [1 Swap space](#Swap_space)
-*   [2 Swap partition](#Swap_partition)
-    *   [2.1 Activation by systemd](#Activation_by_systemd)
-    *   [2.2 Disabling swap](#Disabling_swap)
-*   [3 Swap file](#Swap_file)
-    *   [3.1 Manually](#Manually)
-        *   [3.1.1 Swap file creation](#Swap_file_creation)
-        *   [3.1.2 Remove swap file](#Remove_swap_file)
-    *   [3.2 systemd-swap](#systemd-swap)
-*   [4 Swap with USB device](#Swap_with_USB_device)
-*   [5 Swap encryption](#Swap_encryption)
-*   [6 Performance Tuning](#Performance_Tuning)
-    *   [6.1 Swappiness](#Swappiness)
-    *   [6.2 Priority](#Priority)
-*   [7 Striping](#Striping)
+    *   [1.1 Swap partition](#Swap_partition)
+        *   [1.1.1 Activation by systemd](#Activation_by_systemd)
+        *   [1.1.2 Disabling swap](#Disabling_swap)
+    *   [1.2 Swap file](#Swap_file)
+        *   [1.2.1 Manually](#Manually)
+            *   [1.2.1.1 Swap file creation](#Swap_file_creation)
+            *   [1.2.1.2 Remove swap file](#Remove_swap_file)
+        *   [1.2.2 systemd-swap](#systemd-swap)
+*   [2 Swap with USB device](#Swap_with_USB_device)
+*   [3 Swap encryption](#Swap_encryption)
+*   [4 Performance Tuning](#Performance_Tuning)
+    *   [4.1 Swappiness](#Swappiness)
+    *   [4.2 Priority](#Priority)
+*   [5 Striping](#Striping)
 
 ## Swap space
 
@@ -44,7 +44,7 @@ $ free -h
 
 **Note:** There is no performance advantage to either a contiguous swap file or a partition, both are treated the same way.
 
-## Swap partition
+### Swap partition
 
 A swap partition can be created with most GNU/Linux [partitioning tools](/index.php/Partitioning_tools "Partitioning tools"). Swap partitions are typically designated as type `82`. Even though it is possible to use any partition type as swap, it is recommended to use type `82` in most cases since systemd will automatically detect it and mount it (see below).
 
@@ -87,7 +87,7 @@ lsblk -no UUID /dev/sda2
 
 **Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
 
-### Activation by systemd
+#### Activation by systemd
 
 systemd activates swap partitions based on two different mechanisms. Both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type code `82`.
 
@@ -97,7 +97,7 @@ This can be solved by one of the following options:
 *   Changing the swap partition's type code from `82` to an arbitrary type code
 *   Setting the attribute of the swap partition to "**63**: do not automount"
 
-### Disabling swap
+#### Disabling swap
 
 To deactivate specific swap space:
 
@@ -110,15 +110,15 @@ Alternatively use the `-a` switch to deactivate all swap space.
 
 Since swap is managed by systemd, it will be activated again on the next system startup. To disable the automatic activation of detected swap space permanently, run `systemctl --type swap` to find the responsible *.swap* unit and [mask](/index.php/Mask "Mask") it.
 
-## Swap file
+### Swap file
 
 As an alternative to creating an entire partition, a swap file offers the ability to vary its size on-the-fly, and is more easily removed altogether. This may be especially desirable if disk space is at a premium (e.g. a modestly-sized SSD).
 
 **Warning:** [Btrfs](/index.php/Btrfs "Btrfs") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.
 
-### Manually
+#### Manually
 
-#### Swap file creation
+##### Swap file creation
 
 As root use `fallocate` to create a swap file the size of your choosing (M = Megabytes, G = Gigabytes). For example, creating a 512 MB swap file:
 
@@ -154,7 +154,7 @@ Finally, edit [fstab](/index.php/Fstab "Fstab") to add an entry for the swap fil
 
  `/etc/fstab`  `/swapfile none swap defaults 0 0` 
 
-#### Remove swap file
+##### Remove swap file
 
 To remove a swap file, the current swap file must be turned off.
 
@@ -174,7 +174,7 @@ Remove swap file:
 
 Finally remove the relevant entry from `/etc/fstab`.
 
-### systemd-swap
+#### systemd-swap
 
 [Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Uncomment the lines containing `swapf` in the swap file section of `/etc/systemd-swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service.
 

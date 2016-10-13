@@ -11,8 +11,8 @@
     *   [2.1 Windows 系统使用 UTC](#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC)
     *   [2.2 UTC 在Ubuntu的设置](#UTC_.E5.9C.A8Ubuntu.E7.9A.84.E8.AE.BE.E7.BD.AE)
 *   [3 时区](#.E6.97.B6.E5.8C.BA)
-*   [4 时间偏移](#.E6.97.B6.E9.97.B4.E5.81.8F.E7.A7.BB)
-*   [5 时间同步](#.E6.97.B6.E9.97.B4.E5.90.8C.E6.AD.A5)
+*   [4 时钟偏移](#.E6.97.B6.E9.92.9F.E5.81.8F.E7.A7.BB)
+*   [5 时钟同步](#.E6.97.B6.E9.92.9F.E5.90.8C.E6.AD.A5)
 *   [6 Per-user/会话或临时设置](#Per-user.2F.E4.BC.9A.E8.AF.9D.E6.88.96.E4.B8.B4.E6.97.B6.E8.AE.BE.E7.BD.AE)
 *   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [7.1 时间显示的既不是UTC也不是本地时间](#.E6.97.B6.E9.97.B4.E6.98.BE.E7.A4.BA.E7.9A.84.E6.97.A2.E4.B8.8D.E6.98.AFUTC.E4.B9.9F.E4.B8.8D.E6.98.AF.E6.9C.AC.E5.9C.B0.E6.97.B6.E9.97.B4)
@@ -178,7 +178,7 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 
 **Note:** 如果pre-systemd配置的/etc/timezone仍然存在于你的系统，你可以放心地将其删除，因为它不再使用。
 
-## 时间偏移
+## 时钟偏移
 
 最能代表“真实时间”的是[国际原子时钟](https://en.wikipedia.org/wiki/International_Atomic_Time "wikipedia:International Atomic Time"))，所有的时钟都是有误差的。电子时钟的时间是不准的，但是一般有固定的偏移。这种于基值的差称为“time skew”或“时间偏移”。用 `hwclock` 设置硬件时间时，会计算每天偏移的秒数。偏移值是原硬件时间与新设置硬件时间的差，并且考虑上次硬件时间设置时的偏移。新的偏移值会在设置时钟时写到文件 `/etc/adjtime` 。
 
@@ -192,7 +192,7 @@ See `man 1 timedatectl`, `man 5 localtime`, and `man 7 archlinux` for more detai
 
 *   [NTP](/index.php/NTP "NTP") 可以通过网络时间协议同步 Linux 系统的时间。NTP 也会修正中断频率和每秒滴答数以减少时间偏移。并且每隔 11 分钟同步一次硬件时钟。
 
-## 时间同步
+## 时钟同步
 
 [网络时间协议](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) 是一个通过包交换和可变延迟网络来同步计算机系统时间的协议。下列为这个协议的实现：
 

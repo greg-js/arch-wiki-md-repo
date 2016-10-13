@@ -22,9 +22,10 @@ This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html
     *   [4.3 Create partitions](#Create_partitions)
     *   [4.4 Write changes to disk](#Write_changes_to_disk)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
-    *   [5.2 Sort partitions](#Sort_partitions)
-    *   [5.3 Recover GPT header](#Recover_GPT_header)
+    *   [5.1 Alignment](#Alignment)
+    *   [5.2 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
+    *   [5.3 Sort partitions](#Sort_partitions)
+    *   [5.4 Recover GPT header](#Recover_GPT_header)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -201,6 +202,7 @@ Select the partition's type id. The default, `Linux filesystem`, should be fine 
 
 **Tip:**
 
+*   When partitioning it is always a good idea to follow the default values for first and last partition sectors. Additionally, specify partition sizes with the *+<size>{M,G,...}* notation. Such partitions are always aligned according to the device properties.
 *   [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") requires code `ef00` with *gdisk* and `EFI System` with *fdisk*.
 *   [GRUB](/index.php/GRUB "GRUB") requires a BIOS boot partition with code `ef02` with *gdisk* and `BIOS boot` with *fdisk* when installing GRUB to a disk.
 *   It is recommended to use `8200` with *gdisk* and `Linux swap` with *fdisk* for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
@@ -214,6 +216,10 @@ Repeat this procedure until you have the partitions you desire.
 Write the table to disk and exit via the `w` command.
 
 ## Tips and tricks
+
+### Alignment
+
+With both *fdisk* and *gdisk* manual alignment is probably not necessary since they attempt to align partitions on 1 MiB boundaries by default which optimizes performance for most disk types (including [SSD](/index.php/SSD "SSD")'s) which need proper alignment to in order avoid performance problems.
 
 ### Convert between MBR and GPT
 

@@ -20,6 +20,7 @@ GNU Parted is a program for creating and manipulating partition tables. [GParted
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Dual booting with Windows XP](#Dual_booting_with_Windows_XP)
     *   [6.2 Fixing messed-up partition order](#Fixing_messed-up_partition_order)
+    *   [6.3 Check alignment](#Check_alignment)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -337,6 +338,17 @@ Reference to this little gem [here](http://gparted-forum.surf4.info/viewtopic.ph
 See [Fdisk#Sort_partitions](/index.php/Fdisk#Sort_partitions "Fdisk").
 
 **Note:** You must run **partprobe** as root or reboot the system in order for the kernel to read the new partition table!
+
+### Check alignment
+
+On an already partitioned disk, you can use *parted* to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on `/dev/sda`:
+
+```
+# parted /dev/sda
+(parted) align-check optimal 1
+1 aligned
+
+```
 
 ## See also
 

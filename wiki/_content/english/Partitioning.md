@@ -4,57 +4,42 @@ The required information is stored in a [#Partition table](#Partition_table) sch
 
 Partition tables are created and modified using one of many [#Partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
-Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted) before data can be written to the newly-formatted file system volume.
+Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") (*swap* excepted) before data can be written to it.
 
 ## Contents
 
 *   [1 Partition table](#Partition_table)
-    *   [1.1 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
-    *   [1.2 Master Boot Record](#Master_Boot_Record)
-        *   [1.2.1 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
-        *   [1.2.2 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
-    *   [1.3 GUID Partition Table](#GUID_Partition_Table)
-        *   [1.3.1 Advantages of GPT](#Advantages_of_GPT)
-        *   [1.3.2 Kernel Support](#Kernel_Support)
+    *   [1.1 Master Boot Record](#Master_Boot_Record)
+        *   [1.1.1 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
+        *   [1.1.2 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
+    *   [1.2 GUID Partition Table](#GUID_Partition_Table)
+    *   [1.3 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
     *   [1.4 Partitionless disk](#Partitionless_disk)
         *   [1.4.1 Btrfs partitioning](#Btrfs_partitioning)
-    *   [1.5 Backup and restoration](#Backup_and_restoration)
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
-    *   [2.3 Mount points](#Mount_points)
-        *   [2.3.1 Root partition](#Root_partition)
-        *   [2.3.2 /boot](#.2Fboot)
-        *   [2.3.3 /home](#.2Fhome)
-        *   [2.3.4 /var](#.2Fvar)
-        *   [2.3.5 /tmp](#.2Ftmp)
-        *   [2.3.6 Swap](#Swap)
-        *   [2.3.7 How big should my partitions be?](#How_big_should_my_partitions_be.3F)
+        *   [2.2.1 Root partition](#Root_partition)
+        *   [2.2.2 /boot](#.2Fboot)
+        *   [2.2.3 /home](#.2Fhome)
+        *   [2.2.4 /var](#.2Fvar)
+        *   [2.2.5 /data](#.2Fdata)
+        *   [2.2.6 /tmp](#.2Ftmp)
+        *   [2.2.7 Swap](#Swap)
 *   [3 Partitioning tools](#Partitioning_tools)
 *   [4 Partition alignment](#Partition_alignment)
     *   [4.1 Hard disk drives](#Hard_disk_drives)
     *   [4.2 Solid state drives](#Solid_state_drives)
     *   [4.3 Partitioning tools](#Partitioning_tools_2)
-*   [5 See also](#See_also)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 GPT Kernel Support](#GPT_Kernel_Support)
+*   [6 See also](#See_also)
 
 ## Partition table
 
 **Note:** To print/list existing tables (of a specific device), run `parted */dev/sda* print` or `fdisk -l */dev/sda*`, where `*/dev/sda*` is a device name.
 
-### Choosing between GPT and MBR
-
-GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
-
-Some points to consider when choosing:
-
-*   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, the MBR scheme is required.
-*   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") mode instead of BIOS, the GPT scheme is required.
-*   If you are installing on older hardware, especially on old laptops, consider choosing MBR because its BIOS might not support GPT.
-*   If you are partitioning a disk of 2 TiB or larger, you need to use GPT.
-*   It is recommended to always use GPT for [UEFI](/index.php/UEFI "UEFI") boot, as some UEFI implementations do not support booting to the MBR while in UEFI mode.
-*   If none of the above apply, choose freely between GPT and MBR. Since GPT is more modern, it is recommended in this case.
-
-**Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") is required. Please note that this partition is unrelated to the `/boot` mountpoint, and will be used by GRUB directly. Do not create a filesystem on it, and do not mount it.
+There are two main types of partition table available: Master Boot Record (MBR), and GUID Partition Table (GPT). These are described below along with a discussion on how to choose between the two. A third, less common alternative is using a partitionless disk, which is also discussed.
 
 ### Master Boot Record
 
@@ -84,7 +69,20 @@ The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usual
 
 [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [#Master Boot Record](#Master_Boot_Record) partitioning scheme method.
 
-#### Advantages of GPT
+### Choosing between GPT and MBR
+
+GUID Partition Table (GPT) is an alternative, contemporary, partitioning style; it is intended to replace the old Master Boot Record (MBR) system. GPT has several advantages over MBR which has quirks dating back to MS-DOS times. With the recent developments to the formatting tools *fdisk* (MBR) and *gdisk* (GPT), it is equally easy to get good dependability and performance for GPT or MBR.
+
+Some points to consider when choosing:
+
+*   To dual-boot with Windows (both 32-bit and 64-bit) using Legacy BIOS, the MBR scheme is required.
+*   To dual-boot Windows 64-bit using [UEFI](/index.php/UEFI "UEFI") mode instead of BIOS, the GPT scheme is required.
+*   If you are installing on older hardware, especially on old laptops, consider choosing MBR because its BIOS might not support GPT.
+*   If you are partitioning a disk of 2 TiB or larger, you need to use GPT.
+*   It is recommended to always use GPT for [UEFI](/index.php/UEFI "UEFI") boot, as some UEFI implementations do not support booting to the MBR while in UEFI mode.
+*   If none of the above apply, choose freely between GPT and MBR. Since GPT is more modern, it is recommended in this case.
+
+Some advantages of GPT over MBR are:
 
 *   Provides a unique disk GUID and unique [partition GUID](/index.php/Persistent_block_device_naming#by-partuuid "Persistent block device naming") (`PARTUUID`) for each partition - A good filesystem-independent way of referencing partitions and disks.
 *   Provides a filesystem-independent [partition name](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") (`PARTLABEL`).
@@ -93,23 +91,19 @@ The first 446 bytes of MBR are **bootstrap code area**. On BIOS systems it usual
 *   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Fdisk#Recover_GPT_header "Fdisk") in case the primary ones are damaged.
 *   CRC32 checksums to detect errors and corruption of the header and partition table.
 
-#### Kernel Support
+**Note:** For GRUB to boot from a GPT-partitioned disk on a BIOS-based system, a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") is required. Please note that this partition is unrelated to the `/boot` mountpoint, and will be used by GRUB directly. Do not create a filesystem on it, and do not mount it.
 
-The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in Arch's [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels in the [core] repo. In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
+The section on [#Partitioning tools](#Partitioning_tools) contains a table indicating which tools are available for creating and modifying GPT and MBR tables.
 
 ### Partitionless disk
 
-Partitionless disk (a.k.a. superfloppy) refers to using a storage device without using a partition table, having one file system volume occupying the whole storage device.
+Partitionless disk (a.k.a. superfloppy) refers to using a storage device without using a partition table, having one file system occupying the whole storage device.
 
 #### Btrfs partitioning
 
 Btrfs can occupy an entire data storage device and replace the [MBR](#Master_Boot_Record) or [GPT](#GUID_Partition_Table) partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
 
 See also [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs").
-
-### Backup and restoration
-
-See [fdisk#Backup and restore](/index.php/Fdisk#Backup_and_restore "Fdisk") and [File recovery#Testdisk and PhotoRec](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery").
 
 ## Partition scheme
 
@@ -119,6 +113,7 @@ There are no strict rules for partitioning a hard drive, although one may follow
 
 *   [UEFI](/index.php/UEFI "UEFI") systems require an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 *   BIOS systems that are partitioned with [GPT](#GUID_Partition_Table) require a [BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB") if [GRUB](/index.php/GRUB "GRUB") is used as the bootloader.
+*   If using [Btrfs](/index.php/Btrfs "Btrfs"), subvolumes can be treated as partitions. See the [Btrfs#Mounting subvolumes](/index.php/Btrfs#Mounting_subvolumes "Btrfs") section.
 
 ### Single root partition
 
@@ -128,9 +123,23 @@ This scheme is the simplest and should be enough for most use cases. A [swapfile
 
 Separating out a path as a partition allows for the choice of a different filesystem and mount options. In some cases like a media partition, they can also be shared between operating systems.
 
-### Mount points
+Below are some example layouts that can be used when partitioning, and the following subsections detail a few of the directories which can be placed on their own separate partition and then [mounted](/index.php/Mount "Mount") at mount points under `/`. See [file-hierarchy(7)](http://man7.org/linux/man-pages/man7/file-hierarchy.7.html) for a full description of the contents of these directories.
 
-The following mount points are possible choices for separate partitions, you can make your decision based on actual needs.
+| UEFI/GPT example layout |
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
+| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | 260–512 MiB |
+| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| / | /dev/sd**x**3 | Linux | No | Remainder of the device |
+| MBR/BIOS example layout |
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
+| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| / | /dev/sd**x**2 | Linux | Yes | Remainder of the device |
+| UEFI separate /home example layout |
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
+| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | More than 512 MiB |
+| / | /dev/sd**x**2 | Linux | No | 15 - 20 GiB |
+| [SWAP] | /dev/sd**x**3 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
 
 #### Root partition
 
@@ -140,6 +149,8 @@ The `/` partition or root partition is necessary and it is the most important. T
 
 **Warning:** Directories essential for booting (except for `/boot`) **must** be on the same partition as `/` or mounted in early userspace by the [initramfs](/index.php/Initramfs "Initramfs"). These essential directories are: `/etc` and `/usr` [[1]](http://freedesktop.org/wiki/Software/systemd/separate-usr-is-broken).
 
+`/` traditionally contains the `/usr` directory, which can grow significantly depending upon how much software is installed. 15–20 GB should be sufficient for most users with modern hard disks. If you plan to store a swap file here, you might need a larger partition size.
+
 #### /boot
 
 The `/boot` directory contains the kernel and ramdisk images as well as the bootloader configuration file and bootloader stages. It also stores data that is used before the kernel begins executing user-space programs. `/boot` is not required for normal system operation, but only during boot and kernel upgrades (when regenerating the initial ramdisk).
@@ -148,13 +159,15 @@ A separate `/boot` partition is needed if installing a software RAID0 (stripe) s
 
 **Note:** It is recommended to mount [ESP](/index.php/ESP "ESP") to `/boot` if booting using UEFI boot loaders that do not contain drivers for other filesystems. Such loaders are for example [EFISTUB](/index.php/EFISTUB "EFISTUB") and [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
+A suggested size for `/boot` is 200 MiB unless using [UEFI](/index.php/UEFI "UEFI"), in which case greater than 512 MiB is needed.
+
 #### /home
 
 The `/home` directory contains user-specific configuration files, caches, application data and media files.
 
-Separating out `/home` allows `/` to be re-partitioned separately, but note that you can still reinstall Arch with `/home` untouched even if it is not separate - the other top-level directories just need to be removed, and then pacstrap can be run.
+Separating out `/home` allows `/` to be re-partitioned separately, but note that you can still reinstall Arch with `/home` untouched even if it is not separate—the other top-level directories just need to be removed, and then pacstrap can be run.
 
-You should not share home directories between users on different distributions, because they use incompatible software versions and patches. Instead, consider sharing a media partition or at least using different home directories on the same `/home` partition.
+You should not share home directories between users on different distributions, because they use incompatible software versions and patches. Instead, consider sharing a media partition or at least using different home directories on the same `/home` partition. The size of this partition varies.
 
 #### /var
 
@@ -164,46 +177,21 @@ It exists to make it possible to mount `/usr` as read-only. Everything that hist
 
 **Note:** `/var` contains many small files. The choice of file system type should consider this fact if a separate partition is used.
 
+`/var` will contain, among other data, the [ABS](/index.php/ABS "ABS") tree and the [pacman](/index.php/Pacman "Pacman") cache. Retaining these packages is helpful in case a package upgrade causes instability, requiring a [downgrade](/index.php/Downgrade "Downgrade") to an older, archived package. The pacman cache in particular will grow as the system is expanded and updated, but it can be safely cleared if space becomes an issue. 8–12 GB on a desktop system should be sufficient for `/var`, depending on how much software will be installed.
+
+#### /data
+
+One can consider mounting a "data" partition to cover various files to be shared by all users. Using the `/home` partition for this purpose is fine as well. The size of this partition varies.
+
 #### /tmp
 
-This is already a separate partition by default, by virtue of being mounted as *tmpfs* by systemd.
+This is already a separate partition by default, by virtue of being mounted as *tmpfs* by systemd; therefore, there is no need to create a partition for it.
 
 #### Swap
 
 A [swap](/index.php/Swap "Swap") partition provides memory that can be used as virtual RAM. A [swap file](/index.php/Swap_file "Swap file") should be considered too, as they don't have any performance overhead compared to a partition but are much easier to resize as needed. A swap partition can *potentially* be shared between operating systems, but not if hibernation is used.
 
-#### How big should my partitions be?
-
-**Note:**
-
-*   The below are simply recommendations; there is no hard rule dictating partition size.
-*   If available, an extra 25% of space added to each filesystem will provide a cushion for future expansion and help protect against fragmentation.
-
-The size of the partitions depends on personal preference, but the following information may be helpful:
-
-	/boot - 200 MB 
-
-	It requires only about 100 MB, but if multiple kernels/boot images are likely to be in use, 200 or 300 MB is a better choice.
-
-	/ - 15–20 GB 
-
-	It traditionally contains the `/usr` directory, which can grow significantly depending upon how much software is installed. 15–20 GB should be sufficient for most users with modern hard disks. If you plan to store a swap file here, you might need a larger partition size.
-
-	/var - 8–12 GB 
-
-	It will contain, among other data, the [ABS](/index.php/ABS "ABS") tree and the [pacman](/index.php/Pacman "Pacman") cache. Retaining these packages is helpful in case a package upgrade causes instability, requiring a [downgrade](/index.php/Downgrade "Downgrade") to an older, archived package. The pacman cache in particular will grow as the system is expanded and updated, but it can be safely cleared if space becomes an issue. 8–12 GB on a desktop system should be sufficient for `/var`, depending on how much software will be installed.
-
-	/home - [varies] 
-
-	It is typically where user data, downloads, and multimedia reside. On a desktop system, `/home` is typically the largest filesystem on the drive by a large margin.
-
-	swap - [varies] 
-
-	Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MB) is available, it may be possible to have a smaller swap partition. See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
-
-	/data - [varies] 
-
-	One can consider mounting a "data" partition to cover various files to be shared by all users. Using the `/home` partition for this purpose is fine as well.
+Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MB) is available, it may be possible to have a smaller swap partition. See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
 
 ## Partitioning tools
 
@@ -288,23 +276,13 @@ Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Fla
 
 ### Partitioning tools
 
-In the past, proper alignment required manual calculation and intervention when partitioning. Many of the common partition tools now handle partition alignment automatically:
+[fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted") handle alignment automatically.
 
-*   *fdisk*
-*   *gdisk*
-*   *gparted*
-*   *parted*
+## Tips and tricks
 
-On an already partitioned disk, you can use [parted](/index.php/Parted "Parted") to verify the alignment of a partition on a device. For instance, to verify alignment of partition 1 on `/dev/sda`:
+#### GPT Kernel Support
 
-```
-# parted /dev/sda
-(parted) align-check optimal 1
-1 aligned
-
-```
-
-**Warning:** Using `/usr/bin/blockdev` with option `--getalignoff` to check if a the partition is aligned has been reported to be [unreliable](https://bbs.archlinux.org/viewtopic.php?id=174141).
+The `CONFIG_EFI_PARTITION` option in the kernel config enables GPT support in the kernel (despite the name, EFI PARTITION). This option must be built in the kernel and not compiled as a loadable module. This option is required even if GPT disks are used only for data storage and not for booting. This option is enabled by default in Arch's [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels in the [core] repo. In case of a custom kernel, enable this option by doing `CONFIG_EFI_PARTITION=y`.
 
 ## See also
 

@@ -10,11 +10,12 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
     *   [2.1 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
         *   [2.1.1 Killer Wireless Network Adapter](#Killer_Wireless_Network_Adapter)
         *   [2.1.2 Touchpad](#Touchpad)
-        *   [2.1.3 Graphics Drivers](#Graphics_Drivers)
-        *   [2.1.4 Hybrid graphics](#Hybrid_graphics)
-        *   [2.1.5 Suspend Loop](#Suspend_Loop)
-        *   [2.1.6 Tweaking](#Tweaking)
-        *   [2.1.7 Unresolved Issues](#Unresolved_Issues)
+        *   [2.1.3 Touchscreen](#Touchscreen)
+        *   [2.1.4 Graphics Drivers](#Graphics_Drivers)
+        *   [2.1.5 Hybrid graphics](#Hybrid_graphics)
+        *   [2.1.6 Suspend Loop](#Suspend_Loop)
+        *   [2.1.7 Tweaking](#Tweaking)
+        *   [2.1.8 Unresolved Issues](#Unresolved_Issues)
     *   [2.2 2014 version](#2014_version)
         *   [2.2.1 Problems](#Problems)
         *   [2.2.2 Possible trackpad solution](#Possible_trackpad_solution)
@@ -113,29 +114,17 @@ The normal installation process works in general with the exceptions enumerated 
 
 #### Killer Wireless Network Adapter
 
-The wireless adapter won't work without proprietary firmware. You will require a USB ethernet adapter to do the installation or an ISO with the proprietary driver installed. The wireless adapter presents itself as
-
-```
-01:00.0 Network controller: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter (rev 32)
-
-```
-
-It is a [Killer Wireless-AC 1535](http://www.killernetworking.com/product-support/knowledge-base/17-linux/20-killer-wireless-ac-in-linux-ubuntu-debian) which requires proprietary firmware for the board. The latest 4.4.1 kernel only requires the *board.bin* to be overwritten.
-
-```
-# wget -O /lib/firmware/ath10k/QCA6174/hw3.0/board.bin http://www.killernetworking.com/support/K1535_Debian/board.bin
-
-```
-
-Or use the [Installer Script](https://github.com/stuartwells4/razer-laptop/tree/master/stealth) at your own risk.
-
-To improve WiFi stability, go into the BIOS and ENABLE WiFi Firmware loading. This loads the wireless firmware at boot, which prevents the WiFi from failing to initiate at boot.
+Killer Wireless adapters no longer require special firmware to function, and will work right out of the box.
 
 #### Touchpad
 
 [Install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package. See [Libinput](/index.php/Libinput "Libinput") for more information on this driver.
 
 Alternatively, if you prefer using the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") driver, [install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package.
+
+#### Touchscreen
+
+While the touchscreen will provide basic functionality out of the box, it is best to use [touchegg](https://aur.archlinux.org/packages/touchegg/) to configure multitouch gestures. These include two-finger scrolling, right-click, etc.
 
 #### Graphics Drivers
 
@@ -160,12 +149,20 @@ If the discrete Nvidia GPU is switched off before starting Xorg or Wayland, then
 
 #### Suspend Loop
 
-Suspending (Close laptop lid) does not seem to work with a basic installation. You can suspend but once the system resumes it suffers from random suspends or the screen going blank for no apparent reason.
+Suspending (Close laptop lid) does not seem to work with a basic installation. There is a bug in the linux kernel which causes the ACPI "lid open" event to be dropped and not modify the stored state of the lid switch. Since systemd monitors the lid switch state, it will eventually check and see that it is "closed" and resuspend the laptop. The correct fix is to not drop the ACPI event in the kernel, but for now a workaround is possible.
 
-A temporary fix is to disable the automatic systemd suspend action by chaning the *HandleLidSwitch* value in the */etc/systemd/logind.conf* file:
+The only known workaround until the kernel is fixed, is to disable the automatic systemd suspend action by changing the *HandleLidSwitch* value in the */etc/systemd/logind.conf* file:
 
 ```
 HandleLidSwitch=ignore
+
+```
+
+After this, install [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) and [acpid](https://www.archlinux.org/packages/?name=acpid), use *systemctl* to enable acpid at boot, and create a file named */etc/acpi/events/lid* with the following contents:
+
+```
+event=button/lid
+action=/usr/bin/pm-suspend
 
 ```
 
@@ -177,7 +174,7 @@ If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI
 
 #### Unresolved Issues
 
-*   the webcam does not seem to work with a basic installation. External webcams work fine. It seems to fail when the resolution is anything but 640x480\. [guvcview](https://www.archlinux.org/packages/?name=guvcview) works because it defaults to the resolution. [cheese](https://www.archlinux.org/packages/?name=cheese) and [Google Hangouts](https://hangouts.google.com) do not because they default to the max resolution.
+*   the webcam does not seem to work well with a basic installation. External webcams work fine. It seems to fail when the resolution is anything but 640x480\. [guvcview](https://www.archlinux.org/packages/?name=guvcview) works because it defaults to the resolution. [cheese](https://www.archlinux.org/packages/?name=cheese) and [Google Hangouts](https://hangouts.google.com) do not because they default to the max resolution. your mileage may vary.
 
 ### 2014 version
 
@@ -245,11 +242,12 @@ There are currently two Python scripts available to enable macro keys under Linu
 
 #### Features
 
-*   works with regular BlackWidow and BlackWidow 2013
-*   might work with BlackWidow Ultimate (2013), too
+*   confirmed to work with regular BlackWidow, BlackWidow 2013 and BlackWidow Ultimate Stealth 2014
+*   should also work with BlackWidow Ultimate, BlackWidow Ultimate 2013 and BlackWidow 2014
 *   does not work with BlackWidow (Ultimate) 2016 yet
 *   uses Python 3
 *   allows to control the status of the LED
+*   contains a file with udev rule so macro keys will be enabled automatically when the keyboard is plugged in
 
 #### How to Use
 
