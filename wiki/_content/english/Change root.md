@@ -6,8 +6,9 @@
 *   [2 Requirements](#Requirements)
 *   [3 Usage](#Usage)
     *   [3.1 Using arch-chroot](#Using_arch-chroot)
+        *   [3.1.1 Enter a chroot](#Enter_a_chroot)
+        *   [3.1.2 Run a single command and exit](#Run_a_single_command_and_exit)
     *   [3.2 Using chroot](#Using_chroot)
-    *   [3.3 Using systemd-nspawn](#Using_systemd-nspawn)
 *   [4 Run graphical applications from chroot](#Run_graphical_applications_from_chroot)
 *   [5 Without root privileges](#Without_root_privileges)
     *   [5.1 Proot](#Proot)
@@ -44,32 +45,50 @@ See also [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Lim
 **Note:**
 
 *   Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* can not be used inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
-*   The file system that will serve as `/` of your chroot must accessible (i.e., decrypted, mounted).
+*   The file system that will serve as the new root (`/`) of your chroot must accessible (i.e., decrypted, mounted).
 
-There are several options for using chroot, described below. To exit any of these simply use the `exit` command.
+There are two main options for using chroot, described below.
 
 ### Using arch-chroot
 
-The bash script `arch-chroot` is part of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package. Before running `/usr/bin/chroot` the script mounts api filesystems like `/proc` and makes `/etc/resolv.conf` available from the chroot.
+The bash script `arch-chroot` is part of the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package. Before it runs `/usr/bin/chroot`, the script mounts api filesystems like `/proc` and makes `/etc/resolv.conf` available from the chroot.
+
+#### Enter a chroot
 
 Run arch-chroot with the new root directory as first argument:
 
 ```
-# arch-chroot /mnt/arch
+# arch-chroot */location/of/new/root*
 
 ```
 
-To run a bash shell instead of the default sh:
+For example, in the [installation guide](/index.php/Installation_guide "Installation guide") this directory would be `/mnt`:
 
 ```
-# arch-chroot /mnt/arch /bin/bash
+# arch-chroot /mnt
 
 ```
 
-To run `mkinitcpio -p linux` from the chroot, and exit again:
+To exit the chroot simply use:
 
 ```
-# arch-chroot /mnt/arch /usr/bin/mkinitcpio -p linux
+# exit
+
+```
+
+#### Run a single command and exit
+
+To run a command from the chroot, and exit again append the command to the end of the line:
+
+```
+# arch-chroot */location/of/new/root* *mycommand*
+
+```
+
+For example, to run `mkinitcpio -p linux` for a chroot located at `/mnt/arch` do:
+
+```
+# arch-chroot /mnt/arch mkinitcpio -p linux
 
 ```
 
@@ -77,10 +96,12 @@ To run `mkinitcpio -p linux` from the chroot, and exit again:
 
 **Warning:** When using `--rbind`, some subdirectories of `dev/` and `sys/` will not be unmountable. Attempting to unmount with `umount -l` in this situation will break your session, requiring a reboot. If possible, use `-o bind` instead.
 
-Mount the temporary api filesystems:
+In the following example */location/of/new/root* is the directory where the new root resides.
+
+First, mount the temporary api filesystems:
 
 ```
-# cd /mnt/arch
+# cd */location/of/new/root*
 # mount -t proc proc proc/
 # mount --rbind /sys sys/
 # mount --rbind /dev dev/
@@ -94,17 +115,17 @@ And optionally:
 
 ```
 
-To use an internet connection in the chroot environment copy over the DNS details:
+Next, in order to use an internet connection in the chroot environment copy over the DNS details:
 
 ```
 # cp /etc/resolv.conf etc/resolv.conf
 
 ```
 
-To change root into a bash shell:
+Finally, to change root into */location/of/new/root* using a bash shell:
 
 ```
-# chroot /mnt/arch /bin/bash
+# chroot */location/of/new/root* /bin/bash
 
 ```
 
@@ -123,21 +144,22 @@ After chrooting it may be necessary to load the local bash configuration:
 
 **Tip:** Optionally, create a unique prompt to be able to differentiate your chroot environment: `# export PS1="(chroot) $PS1"` 
 
-### Using systemd-nspawn
-
-[systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") may be used to run a command or OS in a light-weight namespace container. In many ways it is similar to chroot, but more powerful since it fully virtualizes the file system hierarchy, as well as the process tree, the various IPC subsystems and the host and domain name.
-
-Change directory to the mountpoint of the root partition and run systemd-nspawn:
+When finished with the chroot, you can exit it via:
 
 ```
-# cd /mnt/arch
-# systemd-nspawn
+# exit
 
 ```
 
-It is not necessary to mount api filesystems like `/proc` manually, since systemd-nspawn starts a new init process in the contained environment which takes care of everything.
+Then unmount the temporary file systems:
 
-See [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") for more detailed examples and other uses.
+```
+# cd /
+# umount --recursive */location/of/new/root*
+
+```
+
+**Note:** If there is an error mentioning something like: `umount: /path: device is busy` this usually means that either: a program (even a shell) was left running in the chroot or that a sub-mount still exists. Quit the program and use `mount` to find and `umount` sub-mounts). It may be tricky to `umount` some things and one can hopefully have `umount --force` work, as a last resort use `umount --lazy` which just releases them. In either case to be safe, `reboot` as soon as possible if these are unresolved to avoid future, possible conflicts.
 
 ## Run graphical applications from chroot
 

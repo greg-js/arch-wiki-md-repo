@@ -2,7 +2,7 @@
 
 **Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[1]](http://www.syslinux.org/wiki/index.php/Filesystem) for more information.
 
-**Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading) on how to work around this. Additionally see the [Boot loaders](/index.php/Boot_loaders "Boot loaders") article for alternatives.
+**Note:** Syslinux, by itself, cannot access files from partitions other than its own. See [#Chainloading](#Chainloading) on how to work around this.
 
 ## Contents
 

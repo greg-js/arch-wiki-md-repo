@@ -83,7 +83,7 @@ Update [GRUB](/index.php/GRUB "GRUB"). `grub-mkconfig` should detect the new par
 
 ```
 
-Reboot and test the new configuration. Remember to set your device boot order accordingly in your [BIOS](/index.php?title=BIOS&action=edit&redlink=1 "BIOS (page does not exist)") or [UEFI](/index.php/UEFI "UEFI"). If the system fails to boot, you should still be able to boot from the hard drive in order to correct the problem.
+Reboot and test the new configuration. Remember to set your device boot order accordingly in your BIOS or [UEFI](/index.php/UEFI "UEFI"). If the system fails to boot, you should still be able to boot from the hard drive in order to correct the problem.
 
 ### chkboot
 

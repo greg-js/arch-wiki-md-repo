@@ -175,6 +175,8 @@ This is really quite simple, use Evolution's Account Assistant and select the Se
 
 ## GMAIL Setup
 
+**Note:** Evolution automatically configures your settings in order to receive and send mails via GMail if you enter your address during the initial setup.
+
 To setup a GMail account, go to `Edit > Preferences > Mail Accounts` and enter your mail account details.
 
 **Tip:** In [GNOME](/index.php/GNOME "GNOME") you can add a Google account in *Gnome Settings > Online Account* instead.

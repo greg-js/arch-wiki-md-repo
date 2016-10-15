@@ -56,7 +56,7 @@ The benefits to using the Rustup toolchain manager instead of the standalone pre
 One has 2 choices for a rustup installation, one is officially supported by Rust, while the other is supported by archlinux wiki
 
 1.  Download the file with `curl -f https://sh.rustup.rs > rust.sh`, view it: `vim ./rust.sh`, and run the script `./rust.sh` to start rustup installation. To update rustup afterwards, run `rustup self update`.
-2.  [rustup](https://aur.archlinux.org/packages/rustup/) is also available on the AUR. Note that `rustup self update` will **not** work when installed from the AUR, the package needs to be updated from the AUR directly.
+2.  [rustup](https://www.archlinux.org/packages/?name=rustup) is also available on the AUR. Note that `rustup self update` will **not** work when installed from the AUR, the package needs to be updated from the AUR directly.
 
 By default, only the stable channel from your architecture will be installed. It will however not be usable right away, you need to specify the installed stable channel as default for it to work.
 
@@ -156,7 +156,7 @@ The [unofficial repo archlinuxcn](/index.php/Unofficial_user_repositories#archli
 
 ## Cargo
 
-[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/). If you use [rustup](https://aur.archlinux.org/packages/rustup/), it already includes cargo.
+[Cargo](https://crates.io/), Rust's package manager, can be [installed](/index.php/Installed "Installed") as [cargo](https://www.archlinux.org/packages/?name=cargo). The nightly version is available in the AUR as [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/). If you use [rustup](https://www.archlinux.org/packages/?name=rustup), it already includes cargo.
 
 Cargo is a tool that allows Rust projects to declare their various dependencies, and ensure that you'll always get a repeatable build. You're encouraged to read the [official guide](http://doc.crates.io/guide.html).
 

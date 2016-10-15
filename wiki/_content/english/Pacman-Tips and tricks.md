@@ -107,7 +107,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 *   **repose** — An Arch Linux repository building tool.
 
-	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://aur.archlinux.org/packages/repose/)
+	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
 
 *   **srcpac** — Simple tool that automates rebuilding packages from source.
 

@@ -775,6 +775,14 @@ print "Arch is the best!
 
 ```
 
+	Perl6
+
+```
+#!/usr/bin/env perl6
+say 'Arch is the best!';
+
+```
+
 	PHP
 
 	A general-purpose scripting language.
@@ -934,19 +942,6 @@ fn main() {
 
 ```
 
-or in XunDu style
-
-```
-#!/usr/bin/guile1.8 -s
-!#
-(define 节 or)
-(define 哀 #t)
-(define (xi) (display "Arch is the best!
-"))
-(节 (xi) 哀 (wen) 顺 (le) 变 (jian) )
-
-```
-
 	Seed
 
 	A library and interpreter, dynamically bridging the WebKit JavaScriptCore engine, with the GNOME platform.
@@ -1037,6 +1032,15 @@ Arch is the best!
 
 ");
 }
+
+```
+
+	var'aq
+
+	[A warrior's programming language](http://www.reocities.com/connorbd/varaq/index.html)
+
+```
+"Arch is the best!" cha'
 
 ```
 
@@ -1189,13 +1193,6 @@ Arch 最棒了！
 
 ```
 Arch 好棒棒！
-
-```
-
-	Chinese (Taobao Style - 淘宝体)
-
-```
-Arch，好评哦，亲！
 
 ```
 

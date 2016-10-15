@@ -498,10 +498,11 @@ Edit `/etc/dovecot/conf.d/90-plugins.conf` and add:
 
 ```
 
-Create the directory:
+Create the directory and put spamassassin in as a binary that can be ran by dovecot:
 
 ```
- # mkdir /etc/dovecot/sieve.d/
+ # mkdir /etc/dovecot/sieve-filter
+ # ln -s /usr/bin/vendor_perl/spamc /etc/dovecot/sieve-filter/spamc
 
 ```
 
@@ -509,7 +510,7 @@ Create a new file, `/etc/dovecot/sieve.before.d/spamassassin.sieve` which contai
 
 ```
  require [ "vnd.dovecot.filter" ];
- filter "spamc" [ "-d", "127.0.0.1', "--no-safe-fallback" ];
+ filter "spamc" [ "-d", "127.0.0.1", "--no-safe-fallback" ];
 
 ```
 

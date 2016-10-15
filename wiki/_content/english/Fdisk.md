@@ -22,10 +22,9 @@ This article covers [fdisk(8)](http://man7.org/linux/man-pages/man8/fdisk.8.html
     *   [4.3 Create partitions](#Create_partitions)
     *   [4.4 Write changes to disk](#Write_changes_to_disk)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Alignment](#Alignment)
-    *   [5.2 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
-    *   [5.3 Sort partitions](#Sort_partitions)
-    *   [5.4 Recover GPT header](#Recover_GPT_header)
+    *   [5.1 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
+    *   [5.2 Sort partitions](#Sort_partitions)
+    *   [5.3 Recover GPT header](#Recover_GPT_header)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -39,7 +38,7 @@ To use *gdisk* and its associated utilities, [install](/index.php/Install "Insta
 To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`:
 
 ```
-# fdisk -l */dev/sda*
+# fdisk -l /dev/sda
 
 ```
 
@@ -48,7 +47,7 @@ To list partition tables and partitions on a device, you can run the following, 
 Or for the *gdisk*:
 
 ```
-# gdisk -l */dev/sda*
+# gdisk -l /dev/sda
 
 ```
 
@@ -160,9 +159,7 @@ Start either *fdisk* or *gdisk* as instructed in the following sections. Then co
 
 Using [MBR](/index.php/MBR "MBR"), the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. The latest *fdisk* automatically aligns all partitions to 2048 sectors, or 1024 KiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
 
-Note that in the olden days, *fdisk* used cylinders as the default display unit, and retained an MS-DOS compatibility quirk that messed with SSD alignment. Therefore one will find many guides around the internet from around 2008-2009 making a big deal out of getting everything correct. With the latest *fdisk*, things are much simpler, as reflected in this guide.
-
-Start *fdisk* against your drive as root, in this example we are using `/dev/sda`:
+Start *fdisk* against your drive as root. In this example we are using `/dev/sda`:
 
 ```
 # fdisk /dev/sda
@@ -175,7 +172,7 @@ This opens the *fdisk* dialogue where you can type in commands.
 
 Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See [cgdisk(8)](http://www.rodsbooks.com/gdisk/cgdisk.html) for its usage.
 
-*gdisk* can perform partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
+*gdisk* performs partition alignment automatically on a 2048 sector (or 1024KiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
 
 To use *gdisk*, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`:
 
@@ -216,10 +213,6 @@ Repeat this procedure until you have the partitions you desire.
 Write the table to disk and exit via the `w` command.
 
 ## Tips and tricks
-
-### Alignment
-
-With both *fdisk* and *gdisk* manual alignment is probably not necessary since they attempt to align partitions on 1 MiB boundaries by default which optimizes performance for most disk types (including [SSD](/index.php/SSD "SSD")'s) which need proper alignment to in order avoid performance problems.
 
 ### Convert between MBR and GPT
 

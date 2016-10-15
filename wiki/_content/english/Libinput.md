@@ -133,13 +133,13 @@ Swapping two- and three-finger tap for a touchpad is a straight forward example.
 
  `/etc/X11/xorg.conf.d/30-touchpad.conf` 
 ```
- Section "InputClass"
-     Identifier "touchpad"
-     Driver "libinput"
-     MatchIsTouchpad "on"
-     Option "Tapping" "on"
-     Option "ButtonMapping" "1 3 2 4 5 6"
- EndSection
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "libinput"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+    Option "ButtonMapping" "1 3 2 4 5 6"
+EndSection
 ```
 
 Remember to remove `MatchIsTouchpad "on"` if your device is not a touchpad and adjust the `Identifier` accordingly.
@@ -201,7 +201,7 @@ Compare the output of [software supported input trackpad driver](http://ix.io/m6
 Ensure the touchpad events are being sent to the GNOME desktop by running the following command:
 
 ```
- $ gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
+$ gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 
 ```
 

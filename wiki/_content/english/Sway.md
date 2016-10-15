@@ -74,7 +74,7 @@ XKB_DEFAULT_LAYOUT=gb XKB_DEFAULT_VARIANT=colemak XKB_DEFAULT_MODEL=pc101 sway
 
 Then, create a `sway-gb-ck.desktop` file that starts the above script:
 
- `/usr/share/wayland-sessions/sway.desktop` 
+ `/usr/share/wayland-sessions/sway-gb-ck.desktop` 
 ```
 [Desktop Entry]
 Name=Sway British(Colemak)

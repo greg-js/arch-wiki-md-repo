@@ -415,7 +415,7 @@ Partitioning scheme:
 *   `/dev/sda1` -> `/boot`
 *   `/dev/sda2` -> LVM
 
-Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe before installation](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_before_installation "Dm-crypt/Drive preparation").
+Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on an empty disk or partition](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation").
 
 ### Preparing the logical volumes
 
@@ -590,7 +590,7 @@ Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device,
 
 ```
 
-We format and mount them and activate swap, see [File systems#Format a device](/index.php/File_systems#Format_a_device "File systems") for further details:
+We format and mount them and activate swap, see [File systems#Create a file system](/index.php/File_systems#Create_a_file_system "File systems") for further details:
 
 ```
 # mkfs.ext4 /dev/store/root

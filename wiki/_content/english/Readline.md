@@ -13,14 +13,14 @@
 
 By default Readline uses Emacs style shortcuts for interacting with command line. However, vi style editing interface is also supported. Either way, rich sets of shortcut keys are provided for editing [without using the far-away cursor keys](/index.php/Keyboard_without_cursor_keys "Keyboard without cursor keys").
 
-If you are a [vi](/index.php/Vi "Vi") or [vim](/index.php/Vim "Vim") user, you likely want to put the following line in your `~/.inputrc` to enable vi-like keybindings in all Readline based programs, including bash:
+If you are a [vi](/index.php/Vi "Vi") or [vim](/index.php/Vim "Vim") user, you may want to put the following line in your `~/.inputrc` to enable vi-like keybindings in all Readline based programs:
 
 ```
 set editing-mode vi
 
 ```
 
-If you don't want to set it globally above, you can set it for bash only by adding the following line in your `~/.bashrc`:
+Alternatively, you can set it only for Bash by adding the following line to `~/.bashrc`:
 
 ```
 set -o vi

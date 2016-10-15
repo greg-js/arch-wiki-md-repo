@@ -120,10 +120,18 @@ $ source /usr/bin/virtualenvwrapper.sh
 
 ```
 
-If you are not using python3 by default (check the output of `python --version`) you also need to add the following line to your `~/.bashrc` prior sourcing the `virtualenvwrapper.sh` script. The current version of the [python-virtualenvwrapper](https://www.archlinux.org/packages/?name=python-virtualenvwrapper) package only works with python3\. It can create python2 virtual environments fine though.
+Since python3 is a system-wide default in Arch, in order to be able to create python2 environments, you need to set `VIRTUALENVWRAPPER_PYTHON` and `VIRTUALENVWRAPPER_VIRTUALENV` prior to sourcing `virtualenvwrapper.sh` in your `~/.bashrc`:
 
 ```
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+
+```
+
+If you are not using python3 by default (check the output of `python --version`) you need to add the following line to your `~/.bashrc` prior sourcing the `virtualenvwrapper.sh` script.
+
+```
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 ```
 

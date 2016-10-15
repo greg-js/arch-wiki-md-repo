@@ -29,6 +29,7 @@ In Linux console, some *keysyms* (e.g. `F1` to `F246`) can be mapped to certain 
 *   [4 Laptops](#Laptops)
     *   [4.1 Asus M series](#Asus_M_series)
     *   [4.2 Asus N56VJ (or possibly others)](#Asus_N56VJ_.28or_possibly_others.29)
+    *   [4.3 Lenovo T460p (or possibly others)](#Lenovo_T460p_.28or_possibly_others.29)
 *   [5 Gaming Keyboards](#Gaming_Keyboards)
     *   [5.1 Cooler Master CM Storm QuickFire TK](#Cooler_Master_CM_Storm_QuickFire_TK)
 *   [6 See also](#See_also)
@@ -167,6 +168,12 @@ If most of your special keys do not work, try loading the asus-nb-wmi kernel mod
 ```
 
 then check xev again. If you combine this with the acpi_osi="!Windows 2012" boot option, you may get weird results in xev, so try not using it. If this did fix things, make sure to make the module load at boot with methods described [here](/index.php/Kernel_modules "Kernel modules").
+
+### Lenovo T460p (or possibly others)
+
+Out of the box, the backlight keys (on F5, F6) might not be available, even via the /dev/input interface. To fix this, try adding the following option to your boot parameters:
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT="... video.use_native_backlight=1 ..."` 
 
 ## Gaming Keyboards
 

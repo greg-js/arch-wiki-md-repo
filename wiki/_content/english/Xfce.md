@@ -42,6 +42,7 @@
     *   [4.8 Scroll a background window without shifting focus on it](#Scroll_a_background_window_without_shifting_focus_on_it)
     *   [4.9 Mouse button modifier](#Mouse_button_modifier)
     *   [4.10 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
+    *   [4.11 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Action buttons are missing icons](#Action_buttons_are_missing_icons)
     *   [5.2 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
@@ -56,6 +57,7 @@
     *   [5.11 Fonts in window title crashing xfce4-title](#Fonts_in_window_title_crashing_xfce4-title)
     *   [5.12 Laptop lid settings ignored](#Laptop_lid_settings_ignored)
     *   [5.13 Rendering issues with Adwaita theme](#Rendering_issues_with_Adwaita_theme)
+    *   [5.14 Power Manager Plugin shows battery time and remaining percentage](#Power_Manager_Plugin_shows_battery_time_and_remaining_percentage)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -520,6 +522,10 @@ If you want the 2 finger click on the touchpad to do a middle click, create or e
 
 The 2 in the array is the middle click.
 
+### Limit the minimum brightness of the brightness-slider
+
+Limiting the minimum brightness can be useful for displays which turn off backlight on a brightness level of 0\. In `xfce4-power-manager 1.3.2` a new hidden option had been introduced to set a minimum brightness value with a xfconf4-property. Add `brightness-slider-min-level` as an int property in xfconf4\. Adjust the int value to get a suitable minimum brightness level.
+
 ## Troubleshooting
 
 ### Action buttons are missing icons
@@ -691,6 +697,12 @@ $ wget https://archive.archlinux.org/repos/2016/04/08/extra/os/$(uname -m)/gnome
 ```
 
 and installed via pacman's `-U` option.
+
+### Power Manager Plugin shows battery time and remaining percentage
+
+Since 1.5.1 an hidden option has been introduced to configure a label on the statusbar. The new xfconf4 option `show-panel-label` of type `int` can be configured for different label formats. `show-panel-label` can be set to 0 (no label), 1 (percentage), 2 (remaining time) or 3 (both).
+
+Source: [1.5.1 release notes](https://mail.xfce.org/pipermail/xfce-announce/2015-June/000424.html)
 
 ## See also
 

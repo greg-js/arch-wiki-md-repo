@@ -460,12 +460,19 @@ See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for mor
 
 ### Configuration Frameworks
 
-*   [Antigen](https://github.com/zsh-users/antigen) (available as [antigen-git](https://aur.archlinux.org/packages/antigen-git/)) - A plugin manager for zsh, inspired by oh-my-zsh and vundle.
-*   [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) is a popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
+*   **Antigen** — A plugin manager for zsh, inspired by oh-my-zsh and vundle.
+
+	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
+
+*   **oh-my-zsh** — A popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
+
+	[https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) || [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/)
 
 **Note:** For themes to work you may need to set `setopt NO_GLOBAL_RCS` in the `~/.zshenv` file, otherwise changes to some variables (such as `$PROMPT`) may be overwritten.
 
-*   [Prezto - Instantly Awesome Zsh](https://github.com/sorin-ionescu/prezto) (available as [prezto-git](https://aur.archlinux.org/packages/prezto-git/)) is a configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
+*   **Prezto** — A configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
+
+	[https://github.com/sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto) || [prezto-git](https://aur.archlinux.org/packages/prezto-git/)
 
 ### Persistent rehash
 
@@ -521,5 +528,5 @@ To this:
 *   [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html)
 *   [zsh-lovers(1)](https://grml.org/zsh/zsh-lovers.html) (available as [zsh-lovers](https://www.archlinux.org/packages/?name=zsh-lovers) package)
 *   [Zsh Wiki](http://zshwiki.org/home/)
-*   [Gentoo Wiki: Zsh/HOWTO](https://wiki.gentoo.org/wiki/Zsh/HOWTO)
+*   [Gentoo: Zsh/Guide](https://wiki.gentoo.org/wiki/Zsh/Guide "gentoo:Zsh/Guide")
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)

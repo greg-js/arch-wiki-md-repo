@@ -94,7 +94,7 @@ GNOME can be started either graphically, using a [display manager](/index.php/Di
 
 ### Graphically
 
-Select the session: *GNOME*, *GNOME Classic* or *GNOME on Xorg* from the display manager's session menu.
+Select the session: *GNOME*, *GNOME Classic*, or *GNOME on Xorg* from the display manager's session menu.
 
 ### Manually
 
@@ -112,11 +112,7 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 ### GNOME applications in Wayland
 
-Currently, by default, GNOME applications will be run as traditional X applications through Xwayland. To test GNOME applications with Wayland, use the command line to run the application and prefix the command with `env GDK_BACKEND='wayland,x11' <command>`.
-
-**Note:** Setting a global Wayland environment, by running `env GDK_BACKEND=wayland gnome-session`, currently does not work. For workarounds, see [GNOME/Troubleshooting#Setting global Wayland environment with an environment variable](/index.php/GNOME/Troubleshooting#Setting_global_Wayland_environment_with_an_environment_variable "GNOME/Troubleshooting").
-
-See the current status of Wayland on GNOME at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
+When the *GNOME* session is used, GNOME applications will be run using Wayland. See the current status of Wayland for GNOME applications at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
 
 ## Navigation
 

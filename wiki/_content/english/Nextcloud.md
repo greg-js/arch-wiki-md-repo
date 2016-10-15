@@ -1,4 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "Nextcloud is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrary to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications.Nextcloud is an actively maintained fork of ownCloud."
+From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): Nextcloud is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrary to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications.Nextcloud is an actively maintained fork of ownCloud.
 
 ## Contents
 
@@ -9,7 +9,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
 *   [3 Setup mariadb and nextcloud DB](#Setup_mariadb_and_nextcloud_DB)
 *   [4 Setup Apache](#Setup_Apache)
 *   [5 Enable memcache](#Enable_memcache)
-*   [6 (Optional) Enable SSL with a self signed certificate plus hardening](#.28Optional.29_Enable_SSL_with_a_self_signed_certificate_plus_hardening)
+*   [6 (Optional) SSL Setup and its hardening plus SSL hardening](#.28Optional.29_SSL_Setup_and_its_hardening_plus_SSL_hardening)
+    *   [6.1 Enable SSL with a self signed certificate](#Enable_SSL_with_a_self_signed_certificate)
+    *   [6.2 SSL hardening](#SSL_hardening)
 
 ## Installation
 
@@ -27,7 +29,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "
 
 For file preview generation [Install](/index.php/Install "Install") the following packages:
 
-[ffmepg](https://www.archlinux.org/packages/?name=ffmepg) [libreoffice](https://www.archlinux.org/packages/?name=libreoffice) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) and either [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 [php-imagick](https://aur.archlinux.org/packages/php-imagick/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
@@ -60,53 +62,48 @@ mcrypt.so
 
 ```
 
-Add the following to open_basedir:
+Add the following to `open_basedir`:
 
 ```
 /usr/share/webapps/nextcloud:/dev/urandom
 
 ```
 
-**Note:** You may also need to add :/tmp here if you find that Apache only displays a blank page. Check /var/log/httpd/error_log to confirm this problem
+**Note:** You may also need to add the `/tmp` directory in `open_basedir` if Apache only displays a blank page. Check `/var/log/httpd/error_log` file to confirm this problem
 
 ## Setup mariadb and nextcloud DB
 
 Configure [mariadb](/index.php/Mariadb "Mariadb"):
 
 ```
-#mysql_install_db –user=mysql –basedir=/usr –datadir=/var/lib/mysql
+# mysql_install_db –user=mysql –basedir=/usr –datadir=/var/lib/mysql
 
 ```
 
-Enable and start [mariadb](/index.php/Mariadb "Mariadb") service:
-
-```
-#systemctl enable mariadb.service && systemctl start mariadb.service
-
-```
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mariadb.service`.
 
 Secure [mariadb](/index.php/Mariadb "Mariadb"):
 
 ```
-#mysql_secure_installation
+# mysql_secure_installation
 
 ```
 
-Create nextcloud DB:
+Create `nextcloud` database:
 
 ```
-$mysql -u root -p
+$ mysql -u root -p
 
 ```
 
 At the prompt, insert the following lines (make sure to enter them separately).
 
-**Note:** Change ‘username’ and ‘password’ to your specific ones and note them down as you will need them later.
+**Note:** Change `*username*` and `*password*` to your specific values and note them down as you will need them later.
 
 ```
 CREATE DATABASE IF NOT EXISTS nextcloud;
-CREATE USER ‘username’@’localhost’ IDENTIFIED BY ‘password’;
-GRANT ALL PRIVILEGES ON nextcloud.* TO ‘username’@’localhost’ IDENTIFIED BY ‘password’;
+CREATE USER ‘*username*’@’localhost’ IDENTIFIED BY ‘*password*’;
+GRANT ALL PRIVILEGES ON nextcloud.* TO ‘*username*’@’localhost’ IDENTIFIED BY ‘*password*’;
 quit
 
 ```
@@ -116,11 +113,11 @@ quit
 Copy Nextcloud’s [Apache](/index.php/Apache "Apache") configuration file to [Apache](/index.php/Apache "Apache") configuration directory:
 
 ```
-#cp /etc/webapps/nextcloud/apache.example.conf /etc/httpd/conf/extra/nextcloud.conf
+# cp /etc/webapps/nextcloud/apache.example.conf /etc/httpd/conf/extra/nextcloud.conf
 
 ```
 
-Edit /etc/httpd/conf/httpd.conf and:
+Edit `/etc/httpd/conf/httpd.conf` and:
 
 Comment the line:
 
@@ -175,12 +172,7 @@ mime
 
 ```
 
-[Enable](/index.php/Enable "Enable") and [restart](/index.php/Restart "Restart") [apache](https://www.archlinux.org/packages/?name=apache):
-
-```
-#systemctl enable httpd && systemctl start httpd
-
-```
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the [apache](https://www.archlinux.org/packages/?name=apache) service `httpd`
 
 ## Enable memcache
 
@@ -195,16 +187,20 @@ Log onto Nextcloud and set it up by pointing your browser to: `[http://localhost
 
 **Note:** Remember to use the DB username/password you set up above
 
-After nextcloud is set up, add the following line to `/usr/share/webapps/nextcloud/config/config.php`:
+After Nextcloud is set up, add the following line to `/usr/share/webapps/nextcloud/config/config.php`:
 
 ```
 'memcache.local’ => ‘\OC\Memcache\APCu’,
 
 ```
 
-## (Optional) Enable SSL with a self signed certificate plus hardening
+[Restart](/index.php/Restart "Restart") the [apache](https://www.archlinux.org/packages/?name=apache) `httpd` service.
+
+## (Optional) SSL Setup and its hardening plus SSL hardening
 
 **Tip:** See the [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") for details about free, automated ssl certificates.
+
+### Enable SSL with a self signed certificate
 
 Edit `/etc/httpd/conf/httpd.conf` and uncomment the following lines:
 
@@ -222,14 +218,15 @@ Listen 443
 
 ```
 
-Create the certificate
+Create the certificate issuing the following commands:
 
 ```
 # cd /etc/httpd/conf
 # openssl req -new -x509 -nodes -newkey rsa:4096 -keyout server.key -out server.crt -days 1095
 # chmod 400 server.key
-
 ```
+
+### SSL hardening
 
 Edit `/etc/httpd/conf/extra/httpd-ssl.conf` and under the `VirtualHost:443` section add the following section:
 
@@ -240,11 +237,4 @@ Header always set Strict-Transport-Security “max-age=15768000; includeSubDomai
 
 ```
 
-[Restart](/index.php/Restart "Restart") [apache](https://www.archlinux.org/packages/?name=apache):
-
-```
-#systemctl restart httpd
-
-```
-
-Enjoy Nextcloud!
+[Restart](/index.php/Restart "Restart") the [apache](https://www.archlinux.org/packages/?name=apache) `httpd` service.

@@ -19,18 +19,25 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
-        *   [2.2.1 Root partition](#Root_partition)
+        *   [2.2.1 /](#.2F)
         *   [2.2.2 /boot](#.2Fboot)
         *   [2.2.3 /home](#.2Fhome)
         *   [2.2.4 /var](#.2Fvar)
         *   [2.2.5 /data](#.2Fdata)
         *   [2.2.6 /tmp](#.2Ftmp)
         *   [2.2.7 Swap](#Swap)
+    *   [2.3 Example layouts](#Example_layouts)
+        *   [2.3.1 UEFI/GPT example layout](#UEFI.2FGPT_example_layout)
+        *   [2.3.2 MBR/BIOS example layout](#MBR.2FBIOS_example_layout)
+        *   [2.3.3 UEFI separate /home example layout](#UEFI_separate_.2Fhome_example_layout)
 *   [3 Partitioning tools](#Partitioning_tools)
+    *   [3.1 fdisk/gdisk](#fdisk.2Fgdisk)
+    *   [3.2 GNU Parted](#GNU_Parted)
+    *   [3.3 partitionmanager](#partitionmanager)
 *   [4 Partition alignment](#Partition_alignment)
     *   [4.1 Hard disk drives](#Hard_disk_drives)
     *   [4.2 Solid state drives](#Solid_state_drives)
-    *   [4.3 Partitioning tools](#Partitioning_tools_2)
+    *   [4.3 Verify alignment](#Verify_alignment)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 GPT Kernel Support](#GPT_Kernel_Support)
 *   [6 See also](#See_also)
@@ -101,9 +108,7 @@ Partitionless disk (a.k.a. superfloppy) refers to using a storage device without
 
 #### Btrfs partitioning
 
-Btrfs can occupy an entire data storage device and replace the [MBR](#Master_Boot_Record) or [GPT](#GUID_Partition_Table) partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
-
-See also [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs").
+[Btrfs](/index.php/Btrfs "Btrfs") can occupy an entire data storage device and replace the [MBR](#Master_Boot_Record) or [GPT](#GUID_Partition_Table) partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
 
 ## Partition scheme
 
@@ -125,23 +130,7 @@ Separating out a path as a partition allows for the choice of a different filesy
 
 Below are some example layouts that can be used when partitioning, and the following subsections detail a few of the directories which can be placed on their own separate partition and then [mounted](/index.php/Mount "Mount") at mount points under `/`. See [file-hierarchy(7)](http://man7.org/linux/man-pages/man7/file-hierarchy.7.html) for a full description of the contents of these directories.
 
-| UEFI/GPT example layout |
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | 260–512 MiB |
-| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**3 | Linux | No | Remainder of the device |
-| MBR/BIOS example layout |
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
-| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | Yes | Remainder of the device |
-| UEFI separate /home example layout |
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | No | 15 - 20 GiB |
-| [SWAP] | /dev/sd**x**3 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
-
-#### Root partition
+#### /
 
 The root directory is the top of the hierarchy, the point where the primary filesystem is mounted and from which all other filesystems stem. All files and directories appear under the root directory `/`, even if they are stored on different physical devices. The contents of the root filesystem must be adequate to boot, restore, recover, and/or repair the system. Therefore, certain directories under `/` are not candidates for separate partitions.
 
@@ -193,59 +182,36 @@ A [swap](/index.php/Swap "Swap") partition provides memory that can be used as v
 
 Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MB) is available, it may be possible to have a smaller swap partition. See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") to hibernate into a swap partition or file.
 
+### Example layouts
+
+#### UEFI/GPT example layout
+
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
+| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | 260–512 MiB |
+| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| / | /dev/sd**x**3 | Linux | No | Remainder of the device |
+
+#### MBR/BIOS example layout
+
+| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
+| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| / | /dev/sd**x**2 | Linux | Yes | Remainder of the device |
+
+#### UEFI separate /home example layout
+
+| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
+| /boot | /dev/sd**x**1 | [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") | Yes | More than 512 MiB |
+| / | /dev/sd**x**2 | Linux | No | 15 - 20 GiB |
+| [SWAP] | /dev/sd**x**3 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
+
 ## Partitioning tools
 
-The following programs are used to create and/or manipulate device partition tables and partitions. See the linked articles for the exact commands to be used. Most tools fall under the [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted") articles.
-
-**Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
-
-**fdisk**
-
-*   **[fdisk](/index.php/Fdisk "Fdisk")** — Dialog-driven program for creation and manipulation of partition tables.
-
-	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Curses-based variant of fdisk.
-
-	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-*   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — Scriptable variant of fdisk.
-
-	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-**gdisk**
-
-*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](#GUID_Partition_Table) alternative to fdisk.
-
-	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
-
-*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — Curses-based variant of gdisk.
-
-	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
-
-*   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable variant of gdisk.
-
-	[http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
-
-**parted**
-
-*   **[GNU Parted](/index.php/GNU_Parted "GNU Parted")** — Terminal partitioning tool.
-
-	[https://www.gnu.org/software/parted/parted.html](https://www.gnu.org/software/parted/parted.html) || [parted](https://www.archlinux.org/packages/?name=parted)
-
-*   **[GParted](/index.php/GParted "GParted")** — Graphical tool written in GTK.
-
-	[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
-
-**partitionmanager**
-
-*   **Partitionmanager** — Graphical tool written in Qt.
-
-	[http://sourceforge.net/projects/partitionman/](http://sourceforge.net/projects/partitionman/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
+The following programs are used to create and/or manipulate device partition tables and partitions. See the linked articles for the exact commands to be used.
 
 This table will help you to choose utility for your needs:
 
-| User interaction | MBR | GPT |
+ MBR | GPT |
 | Dialog | fdisk
 parted | fdisk
 gdisk
@@ -259,6 +225,54 @@ parted |
 | Graphical | GParted
 partitionmanager | GParted
 partitionmanager |
+
+**Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
+
+### fdisk/gdisk
+
+These group of tools fall under *fdisk* or *gdisk* and are described in the [fdisk](/index.php/Fdisk "Fdisk") article.
+
+*   **[fdisk](/index.php/Fdisk "Fdisk")** — Dialog-driven program for creation and manipulation of partition tables.
+
+	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Curses-based variant of fdisk.
+
+	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[sfdisk](/index.php/Sfdisk "Sfdisk")** — Scriptable variant of fdisk.
+
+	[https://www.kernel.org/pub/linux/utils/util-linux/](https://www.kernel.org/pub/linux/utils/util-linux/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+*   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](#GUID_Partition_Table) alternative to fdisk.
+
+	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
+
+*   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — Curses-based variant of gdisk.
+
+	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
+
+*   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable variant of gdisk.
+
+	[http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
+
+### GNU Parted
+
+These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GNU Parted") article.
+
+*   **[GNU Parted](/index.php/GNU_Parted "GNU Parted")** — Terminal partitioning tool.
+
+	[https://www.gnu.org/software/parted/parted.html](https://www.gnu.org/software/parted/parted.html) || [parted](https://www.archlinux.org/packages/?name=parted)
+
+*   **[GParted](/index.php/GParted "GParted")** — Graphical tool written in GTK.
+
+	[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
+
+### partitionmanager
+
+*   **Partitionmanager** — Graphical tool written in Qt.
+
+	[http://sourceforge.net/projects/partitionman/](http://sourceforge.net/projects/partitionman/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
 
 ## Partition alignment
 
@@ -274,9 +288,11 @@ The standard *sector size* is 512B, but modern high-capacity hard drives use gre
 
 Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the *erase block size* (EBS) are significantly greater than regular *block size*, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS. Some [NVMe](/index.php/NVMe "NVMe") drives should be aligned to 4KiB, but not all. To find the sector size of your SSD, see [Advanced Format#How to determine if HDD employ a 4k sector](/index.php/Advanced_Format#How_to_determine_if_HDD_employ_a_4k_sector "Advanced Format").
 
-### Partitioning tools
+### Verify alignment
 
-[fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted") handle alignment automatically.
+[fdisk/gdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted#Alignment "Parted") handle alignment automatically.
+
+See [GNU Parted#Check alignment](/index.php/GNU_Parted#Check_alignment "GNU Parted").
 
 ## Tips and tricks
 

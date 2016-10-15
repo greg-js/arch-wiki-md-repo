@@ -1,4 +1,4 @@
-[xmonad](http://xmonad.org/) is a tiling window manager for X. Windows are arranged automatically to tile the screen without gaps or overlap, maximizing screen use. Window manager features are accessible from the keyboard: a mouse is optional.
+[xmonad](http://xmonad.org/) is a tiling [window manager](/index.php/Window_manager "Window manager") for [X](/index.php/X "X"). Windows are arranged automatically to tile the screen without gaps or overlap, maximizing screen use. Window manager features are accessible from the keyboard: a mouse is optional.
 
 xmonad is written, configured and extensible in [Haskell](http://haskell.org/). Custom layout algorithms, key bindings and other extensions may be written by the user in configuration files.
 

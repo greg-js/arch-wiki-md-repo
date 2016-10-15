@@ -218,7 +218,7 @@ This list includes modules transitively depending on broken modules (i.e. some o
 *   gtk-vnc requires [perl-text-csv](https://aur.archlinux.org/packages/perl-text-csv/)
 *   latexila requires [lcov](https://aur.archlinux.org/packages/lcov/)
 *   pango requires [libpthread-stubs](https://aur.archlinux.org/packages/libpthread-stubs/)
-*   totem-pl-parser requires [libgcrypt15](https://aur.archlinux.org/packages/libgcrypt15/)
+*   totem-pl-parser requires [libgcrypt15](https://www.archlinux.org/packages/?name=libgcrypt15)
 *   xf86-video-intel requires [xorg-server-devel](https://www.archlinux.org/packages/?name=xorg-server-devel)
 *   xwayland requires [xtrans](https://www.archlinux.org/packages/?name=xtrans), [xcmiscproto](https://www.archlinux.org/packages/?name=xcmiscproto), and [bigreqsproto](https://www.archlinux.org/packages/?name=bigreqsproto)
 *   zeitgeist requires [python2-rdflib](https://www.archlinux.org/packages/?name=python2-rdflib)

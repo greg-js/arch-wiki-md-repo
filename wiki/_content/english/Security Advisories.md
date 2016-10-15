@@ -42,6 +42,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### October 2016
 
+*   [13 October 2016] [ASA-201610-9](https://lists.archlinux.org/pipermail/arch-security/2016-October/000737.html) [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) arbitrary code execution
 *   [11 October 2016] [ASA-201610-8](https://lists.archlinux.org/pipermail/arch-security/2016-October/000736.html) [crypto++](https://www.archlinux.org/packages/?name=crypto%2B%2B) information disclosure
 *   [09 October 2016] [ASA-201610-7](https://lists.archlinux.org/pipermail/arch-security/2016-October/000735.html) [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) multiple issues
 *   [08 October 2016] [ASA-201610-6](https://lists.archlinux.org/pipermail/arch-security/2016-October/000734.html) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) multiple issues

@@ -31,7 +31,7 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
     "local_port":1080,
     "password":"mypassword",
     "timeout":300,
-    "method":"aes-128-cfb",
+    "method":"aes-128-ctr",
     "fast_open": false,
     "workers": 1
 }

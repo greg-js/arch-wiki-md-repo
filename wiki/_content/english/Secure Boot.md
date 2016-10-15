@@ -15,6 +15,7 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
         *   [2.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
         *   [2.4.2 Using KeyTool](#Using_KeyTool)
 *   [3 Disable Secure Boot](#Disable_Secure_Boot)
+*   [4 See also](#See_also)
 
 ## Using a signed boot loader
 
@@ -266,3 +267,12 @@ The Secure Boot feature can be disabled via the UEFI firmware interface. You may
 If using a hotkey did not work and you can boot Windows, you can force a reboot into the firmware configuration in the following way (for Windows 10): *Settings > Update & Security > Recovery > Advanced startup (Restart now) > Troubleshoot > Advanced options > UEFI Firmware settings > restart*.
 
 Note that some motherboards (this is the case in a Packard Bell laptop) only allow to disable secure boot if you have set an administrator password (that can be removed afterwards). See also [Rod Smith's Disabling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html#disable).
+
+## See also
+
+*   [Wikipedia:Unified Extensible Firmware Interface#Secure boot](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface#Secure_boot "wikipedia:Unified Extensible Firmware Interface")
+*   [Dealing with Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) by Rod Smith
+*   [Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html) by Rod Smith
+*   [UEFI secure booting (part 2)](https://mjg59.dreamwidth.org/5850.html) by Matthew Garrett
+*   [Will your computer's "Secure Boot" turn out to be "Restricted Boot"?](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot) — Free Software Foundation
+*   [Free Software Foundation recommendations for free operating system distributions considering Secure Boot](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/statement/campaigns/secure-boot-vs-restricted-boot/whitepaper-web)

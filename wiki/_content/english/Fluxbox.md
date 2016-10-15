@@ -1,4 +1,4 @@
-Fluxbox is a window manager for X11\. It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox is very light on resources and fast, yet provides interesting window management tools such as tabbing and grouping. Its configuration files are easy to understand and edit with hundreds of Fluxbox "styles" to make your desktop look great. Arch Linux with Fluxbox can turn an old Pentium 800 box with just 256MB of RAM into a very usable computer.
+Fluxbox is a [window manager](/index.php/Window_manager "Window manager") for [X11](/index.php/X11 "X11"). It is based on the (now abandoned) Blackbox 0.61.1 code, but with significant enhancements and continued development. Fluxbox is very light on resources and fast, yet provides interesting window management tools such as tabbing and grouping. Its configuration files are easy to understand and edit with hundreds of Fluxbox "styles" to make your desktop look great. Arch Linux with Fluxbox can turn an old Pentium 800 box with just 256MB of RAM into a very usable computer.
 
 ## Contents
 

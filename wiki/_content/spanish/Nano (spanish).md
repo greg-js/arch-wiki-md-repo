@@ -217,7 +217,7 @@ export EDITOR=nano
 
 ### Conflictos combinaciones de teclas
 
-Algunos administradores de ventanas tienen algunas combinaciones de teclas que coinciden con nano, por ejemplo `Alt+Enter`. Boreelas o reasignelas por ejemplo `Super` (con [dconf](https://www.archlinux.org/packages/?name=dconf) por [mutter](https://www.archlinux.org/packages/?name=mutter), [muffin](https://www.archlinux.org/packages/?name=muffin) y [marco](https://www.archlinux.org/packages/?name=marco)) y reinicie el administrador de ventanas.
+Algunos administradores de ventanas tienen algunas combinaciones de teclas que coinciden con nano, por ejemplo `Alt+Enter`. Borrarlas o reasignelas por ejemplo `Super` (con [dconf](https://www.archlinux.org/packages/?name=dconf) por [mutter](https://www.archlinux.org/packages/?name=mutter), [muffin](https://www.archlinux.org/packages/?name=muffin) y [marco](https://www.archlinux.org/packages/?name=marco)) y reinicie el administrador de ventanas.
 
 ## Véase también
 

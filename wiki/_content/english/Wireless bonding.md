@@ -168,7 +168,7 @@ Here, for instance, a static private IPv4 address will be assigned to the bondin
 ```
 [Unit]
 Description= Static Network Configuration on %I
-Documentation= man:systemd.service(5) man:bash(1) man:ip-address(8) man:ip-route(8)
+Documentation= man:ip-address(8) man:ip-route(8) man:systemd.service(5)
 
 Documentation= [https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/)
 Wants= network.target
@@ -245,7 +245,7 @@ BindsTo= sys-subsystem-net-devices-%i.device
 ExecStartPre=-/usr/bin/iw %I set bitrates legacy-2.4  6 9 12 18 24 36 48 54
 
 ExecStart= /usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -Dnl80211,wext,wired -i %I
-ExecStartPost=-/usr/bin/bash -c "/usr/bin/iw phy phy`iw dev %I info|grep wiphy|cut -d' ' -f2` set distance 10"
+ExecStartPost=-/usr/bin/sh -c "/usr/bin/iw phy phy`iw dev %I info|grep wiphy|cut -d' ' -f2` set distance 10"
 
 ExecReload= /usr/bin/wpa_cli -i %I reconfigure
 ExecReload= /usr/bin/wpa_cli -i %I reassociate

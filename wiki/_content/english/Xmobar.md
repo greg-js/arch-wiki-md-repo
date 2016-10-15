@@ -261,7 +261,7 @@ Then add the command to the template
 
 ```
 
-### MPD integration
+### [MPD](/index.php/MPD "MPD") integration
 
 Assuming you have [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/) installed (with [haskell-libmpd](https://aur.archlinux.org/packages/haskell-libmpd/)), there is a plugin to pull information to display on the status bar about the currently playing song. To add a simple plugin displaying the artist and song of the current track, add this line to your commands list in your `~/.xmobarrc`:
 

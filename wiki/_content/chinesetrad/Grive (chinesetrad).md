@@ -41,4 +41,4 @@ Grive 並不支援背景運行，每當你要同步時都要重複執行上方�
 
 Grive Tools 透過GTK界面幫助您設定Google 雲端硬碟的同步。 Grive Tools 包括以下功能: Grive Setup （主要設定，可以設定基本功能已完成執行同步）、 Grive Indicator （應用程式在系統托盤內的設定） 。
 
-注意：在KED中使用 Grive Indicator必須安裝[AUR](/index.php/AUR "AUR")中的 [libappindicator-gtk3](https://aur.archlinux.org/packages/libappindicator-gtk3/)。
+注意：在KED中使用 Grive Indicator必須安裝[AUR](/index.php/AUR "AUR")中的 [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3)。

@@ -7,12 +7,13 @@ Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point. For th
 *   [1 GUI configuration](#GUI_configuration)
 *   [2 Middle button scroll](#Middle_button_scroll)
     *   [2.1 Xorg configuration](#Xorg_configuration)
-*   [3 Tap to select](#Tap_to_select)
-*   [4 udev configuration rule (but see "TrackPoint configuration by systemd.path unit" below)](#udev_configuration_rule_.28but_see_.22TrackPoint_configuration_by_systemd.path_unit.22_below.29)
-*   [5 TrackPoint configuration by systemd.path unit](#TrackPoint_configuration_by_systemd.path_unit)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
-*   [7 See also](#See_also)
+*   [3 Sysfs attributes](#Sysfs_attributes)
+    *   [3.1 Configuration at boot](#Configuration_at_boot)
+        *   [3.1.1 udev rule](#udev_rule)
+        *   [3.1.2 systemd.path unit](#systemd.path_unit)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Trackpoint is not detected or is detected after X minutes](#Trackpoint_is_not_detected_or_is_detected_after_X_minutes)
+*   [5 See also](#See_also)
 
 ## GUI configuration
 
@@ -58,84 +59,52 @@ EndSection
 
 ```
 
-## Tap to select
+## Sysfs attributes
 
-The TrackPoint supports tap-to-click functionality just as most touchpads do. To enable it manually:
+TrackPoints expose their attributes as files in `/sys/devices/platform/i8042/serio1/`. For example, to manually enable the tap-to-click functionality:
 
 ```
 # echo -n 1 > /sys/devices/platform/i8042/serio1/press_to_select
 
 ```
 
-**Note:** The location of the `press_to_select` file may be different depending on the device you are using. Systems with both a TrackPoint and a touchpad device will use the `/sys/devices/platform/i8042/serio1/serio2/` path, whereas systems with only a TrackPoint device will use the `/sys/devices/platform/i8042/serio1/` path.
+**Note:** The location of the attribute files may be different depending on the device you are using. Systems with both a TrackPoint and a touchpad device will use the `/sys/devices/platform/i8042/serio1/serio2/` path, whereas systems with only a TrackPoint device will use the `/sys/devices/platform/i8042/serio1/` path.
 
-## udev configuration rule (but see "TrackPoint configuration by systemd.path unit" below)
+### Configuration at boot
 
-This rule increases the trackpoint **speed** and enables **tap to select** (see above) on boot. Feel free to alter the values and add other modifications to files in /sys/devices/platform/i8042/serio1/serio2/. The rule also works for trackpoint-only devices.
+#### udev rule
+
+This rule increases the trackpoint **speed** and enables **tap to select** (see above) on boot.
 
  `/etc/udev/rules.d/10-trackpoint.rules`  `ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 IBM TrackPoint", ATTR{device/sensitivity}="240", ATTR{device/press_to_select}="1"` 
 
-## TrackPoint configuration by systemd.path unit
+#### systemd.path unit
 
-There have been [reports on the forums](https://bbs.archlinux.org/viewtopic.php?id=199998) that the attributes/files under /sys/devices/platform/i8042/serio1/serio2/ appear too late in the boot process for the above (or similar) udev rule(s) to have an effect on them. Instead, a systemd.path unit can be used to configure attributes of the TrackPoint in the following manner:
+There have been [reports on the forums](https://bbs.archlinux.org/viewtopic.php?id=199998) that the attributes/files under `/sys/devices/platform/i8042/serio1/serio2/` appear too late in the boot process for the above (or similar) udev rule(s) to have an effect on them. Instead, a *systemd.path* unit can be used to configure attributes of the TrackPoint.
 
-1) Add the following content to an executable script in `/usr/local/bin/` named:
+First create an executable script named e.g. `/usr/local/bin/trackpoint_configuration.sh` that sets the TrackPoint attributes as shown in the [#Sysfs attributes](#Sysfs_attributes) section. Then create the following systemd units. Make sure that all attributes modified by the script are listed with `PathExists`.
 
- `trackpoint_configuration.sh` 
-```
-#!/usr/bin/env bash
-
-/usr/bin/echo -n "1" > /sys/devices/platform/i8042/serio1/serio2/press_to_select
-/usr/bin/echo -n "235" > /sys/devices/platform/i8042/serio1/serio2/sensitivity
-/usr/bin/echo -n "90" > /sys/devices/platform/i8042/serio1/serio2/speed
-/usr/bin/echo -n "200" > /sys/devices/platform/i8042/serio1/serio2/rate
-/usr/bin/echo -n "25" > /sys/devices/platform/i8042/serio1/serio2/drift_time
-/usr/bin/echo -n "6" > /sys/devices/platform/i8042/serio1/serio2/inertia
-```
-
-Adjust the above attributes and their parameters to your preferences and/or remove those that you don't need.
-
-2) Add the following content to a systemd.path unit file in `/etc/systemd/system/` named:
-
- `trackpoint_tweaked_parameters.path` 
+ `/etc/systemd/system/trackpoint_parameters.path` 
 ```
 [Unit]
 Description=Watch for, and modify, Trackpoint attributes
 
 [Path]
-PathExists=/sys/devices/platform/i8042/serio1/serio2/press_to_select
-PathExists=/sys/devices/platform/i8042/serio1/serio2/sensitivity
-PathExists=/sys/devices/platform/i8042/serio1/serio2/speed
-PathExists=/sys/devices/platform/i8042/serio1/serio2/rate
-PathExists=/sys/devices/platform/i8042/serio1/serio2/drift_time
-PathExists=/sys/devices/platform/i8042/serio1/serio2/inertia
+PathExists=/sys/devices/platform/i8042/serio1/press_to_select
 
 [Install]
 WantedBy=default.target
 ```
-
-Adjust the above list of attributes to reflect those given in the script from #1.
-
-3) Add the following content to a systemd.service unit file in `/etc/systemd/system/` named:
-
- `trackpoint_tweaked_parameters.service` 
+ `/etc/systemd/system/trackpoint_parameters.service` 
 ```
 [Unit]
-Description=Watch for, and modify, Trackpoint attributes
+Description=Set TrackPoint attributes
 
 [Service]
-Type=simple
 ExecStart=/usr/local/bin/trackpoint_configuration.sh
 ```
 
-4) Enable and start the new systemd.path unit with systemctl:
-
-```
-# systemctl enable trackpoint_tweaked_parameters.path && systemctl start trackpoint_tweaked_parameters.path
-
-```
-
-5) Check the parameters of the attributes in /sys/devices/platform/i8042/serio1/serio2/ at your next reboot, which should now be modified according to the script from #1.
+Finally, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `trackpoint_parameters.path` systemd unit.
 
 ## Troubleshooting
 

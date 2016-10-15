@@ -195,43 +195,34 @@ There are few tools that can access/modify the UEFI variables, namely
 
 **Note:**
 
-*   If `efibootmgr` completely fails to work in your system, you can reboot into UEFI Shell v2 and use `bcfg` command to create a boot entry for the bootloader.
-*   If you are unable to use `efibootmgr`, some UEFI firmwares allow users to directly manage uefi boot entries from within its boot-time interface. For example, some ASUS firmwares have an "Add New Boot Option" choice which enables you to select a local EFI System Partition and manually enter the EFI stub location. (for example `\EFI\refind\refind_x64.efi`).
-*   The below commands use [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) boot-loader as example.
+*   If *efibootmgr* does not work on your system, you can reboot into [#UEFI Shell](#UEFI_Shell) and use `bcfg` to create a boot entry for the bootloader.
+*   If you are unable to use `efibootmgr`, some UEFI firmwares allow users to directly manage uefi boot entries from within its boot-time interface. For example, some ASUS firmwares have an "Add New Boot Option" choice which enables you to select a local EFI System Partition and manually enter the EFI application location e.g. `\EFI\refind\refind_x64.efi`.
+*   The below commands use [rEFInd](/index.php/REFInd "REFInd") boot-loader as example.
 
-Assuming the boot-loader file to be launched is `/boot/efi/EFI/refind/refind_x64.efi`, `/boot/efi/EFI/refind/refind_x64.efi` can be split up as `/boot/efi` and `/EFI/refind/refind_x64.efi`, wherein `/boot/efi` is the mountpoint of the EFI System Partition, which is assumed to be `/dev/sdXY` (here `X` and `Y` are just placeholders for the actual values - eg:- in `/dev/sda1` , `X==a` `Y==1`).
+To add a new boot option using *efibootmgr* you need to know three things:
 
-To determine the actual device path for the EFI System Partition (assuming mountpoint `/boot/efi` for example) (should be in the form `/dev/sdXY`), try :
+1.  The disk containing the ESP: `/dev/sd*X*`
+2.  The partition number of the ESP on that disk: the `*Y*` in `/dev/sdX*Y*`
+3.  The path to the UEFI application (relative to the root of the ESP)
 
- `# findmnt /boot/efi` 
+For example, if you want to add a boot option for `/boot/efi/EFI/refind/refind_x64.efi` where `/boot/efi` is the mount point of the ESP, run
+
+ `$ findmnt /boot/efi` 
 ```
-TARGET SOURCE  FSTYPE OPTIONS
- /boot/efi  /dev/sdXY  vfat         rw,flush,tz=UTC
-```
-
-Verify that uefi variables support in kernel is working properly by running:
-
-```
-# efivar -l
-
+TARGET    SOURCE     FSTYPE OPTIONS
+/boot/efi /dev/sda1  vfat   rw,flush,tz=UTC
 ```
 
-If efivar lists the uefi variables without any error, then you can proceed. If not, check whether all the conditions in [#Requirements for UEFI variable support](#Requirements_for_UEFI_variable_support) are met.
-
-Then create the boot entry using efibootmgr as follows:
+In this example, this indicates that the ESP is on disk `/dev/sda` and has partition number 1\. The path to the UEFI application relative to the root of the ESP is `/EFI/refind/refind_x64.efi`. So you would create the boot entry as follows:
 
 ```
-# efibootmgr --create --disk /dev/sdX --part Y --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
+# efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/refind/refind_x64.efi --label "rEFInd Boot Manager"
 
 ```
 
-**Note:** UEFI uses backward slash `\` as path separator (similar to Windows paths), but the official [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) pkg support passing unix-style paths with forward-slash `/` as path-separator for the `-l`/`--loader` option. Efibootmgr internally converts `/` to `\` before encoding the loader path.
+See efibootmgr(8) or [efibootmgr README](https://raw.githubusercontent.com/rhinstaller/efibootmgr/master/README) for more info.
 
-In the above command `/boot/efi/EFI/refind/refind_x64.efi` translates to `/boot/efi` and `/EFI/refind/refind_x64.efi` which in turn translate to drive `/dev/sdX` -> partition `Y` -> file `/EFI/refind/refind_x64.efi`.
-
-The 'label' is the name of the menu entry shown in the UEFI boot menu. This name is user's choice and does not affect the booting of the system. More info can be obtained from [efibootmgr GIT README](http://linux.dell.com/cgi-bin/cgit.cgi/efibootmgr.git/plain/README) .
-
-FAT32 filesystem is case-insensitive since it does not use UTF-8 encoding by default. In that case the firmware uses capital 'EFI' instead of small 'efi', therefore using `\EFI\refind\refindx64.efi` or `\efi\refind\refind_x64.efi` does not matter (this will change if the filesystem encoding is UTF-8).
+**Note:** UEFI uses backward slash `\` as path separator but *efibootmgr* automatically converts UNIX-style `/` path separators.
 
 ## UEFI Shell
 

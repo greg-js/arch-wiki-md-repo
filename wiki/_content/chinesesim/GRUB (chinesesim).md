@@ -322,7 +322,7 @@ Installation finished. No error reported.
 
 #### 其他方法
 
-通常，不管 EFI 系统分区是否挂载，GRUB 多会将所有文件放到 `/boot`。
+通常，不管 EFI 系统分区是否挂载，GRUB 都会将所有文件放到 `/boot`。
 
 如果你想将所有的文件放在 ESP 中,请给grub-install命令添加 `--boot-directory=*esp*` 选项:
 

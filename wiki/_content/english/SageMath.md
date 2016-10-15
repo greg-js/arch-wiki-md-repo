@@ -100,7 +100,7 @@ Cantor can be installed with the [cantor](https://www.archlinux.org/packages/?na
 
 ### SageTeX
 
-If you have installed [TeX Live](/index.php/TeX_Live "TeX Live") on your system, you may be interested in [using SageTeX](http://doc.sagemath.org/html/en/tutorial/sagetex.html), a package that makes the inclusion of SageMath code in LaTeX files possible. TeX Live is made aware of SageTeX automatically so you can start using it straight away.
+If you have [TeX Live](/index.php/TeX_Live "TeX Live") installed on your system, you may be interested in [using SageTeX](http://doc.sagemath.org/html/en/tutorial/sagetex.html), a package that makes the inclusion of SageMath code in LaTeX files possible. TeX Live is made aware of SageTeX automatically so you can start using it straight away.
 
 As a simple example, here is how you include a Sage 2D plot in your TEX document (assuming you use `pdflatex`):
 

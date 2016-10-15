@@ -2128,6 +2128,10 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 	[http://www.vsxu.com/](http://www.vsxu.com/) || [vsxu](https://aur.archlinux.org/packages/vsxu/)
 
+*   **cava** — Console-based audio visualizer for Alsa, MPD and PulseAudio.
+
+	[https://karlstav.github.io/cava/](https://karlstav.github.io/cava/) || [cava](https://aur.archlinux.org/packages/cava/)
+
 #### Audio tag editors
 
 *   **Audio Tag Tool** — Tool to edit tags in MP3 and Ogg Vorbis files.
@@ -5752,6 +5756,10 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 *   **etm (Event and Task Manager)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects.
 
 	[http://duke.edu/~dgraham/ETM/](http://duke.edu/~dgraham/ETM/) || [etm](https://aur.archlinux.org/packages/etm/)
+
+*   **etmtk (Event and Task Manager second generation)** — Simple application with a "Getting Things Done!" approach to handling events, tasks, activities, reminders and projects. A newer version of etm.
+
+	[http://duke.edu/~dgraham/ETMtk/](http://duke.edu/~dgraham/ETMtk/) || [etmtk](https://aur.archlinux.org/packages/etmtk/)
 
 *   **Glista** — Simple GTK+ To-do list manager with notes support.
 

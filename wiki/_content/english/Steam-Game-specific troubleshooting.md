@@ -1611,7 +1611,7 @@ look for entries that say `not found`
 
 ### Dependencies
 
-*   [lib32-libgcrypt15](https://aur.archlinux.org/packages/lib32-libgcrypt15/)
+*   [lib32-libgcrypt15](https://www.archlinux.org/packages/?name=lib32-libgcrypt15)
 *   [lib32-libpng12](https://www.archlinux.org/packages/?name=lib32-libpng12)
 
 ## Trine 2
@@ -1720,7 +1720,7 @@ If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRI
 ### Dependencies
 
 *   [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib)
-*   [librtmp0](https://aur.archlinux.org/packages/librtmp0/)
+*   [librtmp0](https://www.archlinux.org/packages/?name=librtmp0)
 
 ### Blank screen
 

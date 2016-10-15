@@ -42,14 +42,14 @@ The virus definition updater service is called `freshclamd.service`. Consider st
 
 Consider updating the database before starting the service for the first time or you will run into troubles/errors which will prevent ClamAV to start correctly.
 
-The service is called `clamd.service`. Read [Daemons](/index.php/Daemons "Daemons") for more information about starting it and enabling it to start at boot. You will need to run `freshclam` prior to starting the service.
+The service is called `clamd.service`. [Start](/index.php/Start "Start") it or [enable](/index.php/Enable "Enable") it to start at boot. You will need to run `freshclam` prior to starting the service.
 
 ## Testing the software
 
 In order to make sure ClamAV and the definitions are installed correctly, scan the [EICAR test file](http://www.eicar.org/86-0-Intended-use.html) (a harmless signature with no virus code) with clamscan.
 
 ```
-$ wget -O- [http://www.eicar.org/download/eicar.com.txt](http://www.eicar.org/download/eicar.com.txt) | clamscan -
+$ curl [http://www.eicar.org/download/eicar.com.txt](http://www.eicar.org/download/eicar.com.txt) | clamscan -
 
 ```
 
@@ -76,8 +76,8 @@ This will add signatures/databases from e.g. MalwarePatrol, SecuriteInfo, Yara, 
 
 ```
 $ clamscan myfile
-$ clamscan --recursive=yes --infected /home # or -r -i
-$ clamscan --recursive=yes --infected --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /
+$ clamscan --recursive --infected /home # or -r -i
+$ clamscan --recursive --infected --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /
 
 ```
 

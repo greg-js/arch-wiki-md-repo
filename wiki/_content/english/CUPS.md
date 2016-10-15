@@ -35,6 +35,8 @@ If you intend to "print" into a PDF document, also install the [cups-pdf](https:
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `org.cups.cupsd.service`.
 
+As of [gtk3](https://www.archlinux.org/packages/?name=gtk3) 3.22, in order to print from GTK3 applications you will need to additionally install the [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) package.
+
 ## Connection Interfaces
 
 Additional steps for printer detection are listed below for various connection interfaces.

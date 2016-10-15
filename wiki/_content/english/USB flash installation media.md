@@ -141,36 +141,30 @@ Any Explorer window must be closed or dd will report an error.
 
 #### In macOS
 
-To be able to use `dd` on your USB device on a Mac you have to do some special maneuvers. First of all insert your usb device, macOS will automount it, and in `Terminal.app` run:
+First, you need to identify the USB device. Open `/Applications/Utilities/Terminal` and list all storage devices with the command:
 
 ```
 $ diskutil list
 
 ```
 
-Figure out what your USB device is called with `mount` or `sudo dmesg | tail` (e.g. `/dev/disk2`) and unmount the partitions on the device (i.e., /dev/disk2s1) while keeping the device proper (i.e., /dev/disk2):
+Your USB device will appear as something like `/dev/disk2 (external, physical)`. Verify that this is the device you want to erase by checking its name and size and then use its identifier for the commands below instead of /dev/diskX.
+
+A USB device is normally auto-mounted in Mac OS, and you have to unmount (not eject) it before block-writing to it with `dd`. In Terminal, do:
 
 ```
-$ diskutil unmountDisk /dev/disk2
-
-```
-
-Now we can continue in accordance with the instructions above (but, if you are using the macOS `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1M`. `rdisk` means "raw disk" and is much faster on macOS, and `bs=1M` indicates a 1 MB block size).
-
- `# dd if=image.iso of=/dev/rdisk2 bs=1M` 
-```
-20480+0 records in
-20480+0 records out
-167772160 bytes transferred in 220.016918 secs (762542 bytes/sec)
+$ diskutil unmountDisk /dev/diskX
 
 ```
 
-It is probably a good idea to eject your drive before physical removal at this point:
+Now copy the ISO image file to the device. The `dd` command is similar to its Linux counterpart, but notice the 'r' before 'disk' for raw mode which makes the transfer much faster:
 
 ```
-$ diskutil eject /dev/disk2
+$ sudo dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 ```
+
+After completion, Mac OS may complain that "The disk you inserted was not readable by this computer". Select 'Ignore'. The USB device will be bootable.
 
 ### Using manual formatting
 

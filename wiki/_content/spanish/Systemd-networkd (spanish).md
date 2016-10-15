@@ -10,18 +10,18 @@
     *   [2.3 Adaptador Inalámbrico](#Adaptador_Inal.C3.A1mbrico)
     *   [2.4 Adaptador Alámbrico e Inalámbrico en la misma máquina](#Adaptador_Al.C3.A1mbrico_e_Inal.C3.A1mbrico_en_la_misma_m.C3.A1quina)
     *   [2.5 IPv6 privacy extensions](#IPv6_privacy_extensions)
-*   [3 Configuration files](#Configuration_files)
-    *   [3.1 network files](#network_files)
-        *   [3.1.1 [Match] section](#.5BMatch.5D_section)
-        *   [3.1.2 [Network] section](#.5BNetwork.5D_section)
-        *   [3.1.3 [Address] section](#.5BAddress.5D_section)
-        *   [3.1.4 [Route] section](#.5BRoute.5D_section)
-    *   [3.2 netdev files](#netdev_files)
-        *   [3.2.1 [Match] section](#.5BMatch.5D_section_2)
+*   [3 Archivos de Configuración](#Archivos_de_Configuraci.C3.B3n)
+    *   [3.1 Archivos de Red](#Archivos_de_Red)
+        *   [3.1.1 Sección [Match]](#Secci.C3.B3n_.5BMatch.5D)
+        *   [3.1.2 Sección [Network]](#Secci.C3.B3n_.5BNetwork.5D)
+        *   [3.1.3 Sección [Address]](#Secci.C3.B3n_.5BAddress.5D)
+        *   [3.1.4 Sección [Route]](#Secci.C3.B3n_.5BRoute.5D)
+    *   [3.2 Archivos netdev](#Archivos_netdev)
+        *   [3.2.1 Sección [Match]](#Secci.C3.B3n_.5BMatch.5D_2)
         *   [3.2.2 [Netdev] section](#.5BNetdev.5D_section)
-    *   [3.3 link files](#link_files)
-        *   [3.3.1 [Match] section](#.5BMatch.5D_section_3)
-        *   [3.3.2 [Link] section](#.5BLink.5D_section)
+    *   [3.3 Archivos Link](#Archivos_Link)
+        *   [3.3.1 Sección [Match]](#Secci.C3.B3n_.5BMatch.5D_3)
+        *   [3.3.2 Sección [Link]](#Secci.C3.B3n_.5BLink.5D)
 *   [4 Usage with containers](#Usage_with_containers)
     *   [4.1 Basic DHCP network](#Basic_DHCP_network)
     *   [4.2 DHCP with two distinct IP](#DHCP_with_two_distinct_IP)
@@ -177,147 +177,148 @@ RouteMetric=20
 
 ```
 
-## Configuration files
+## Archivos de Configuración
 
-Configuration files are located in `/usr/lib/systemd/network`, the volatile runtime network directory `/run/systemd/network` and, the local administration network directory `/etc/systemd/network`. Files in `/etc/systemd/network` have the highest priority.
+Los archivos de configuración están localizados en `/usr/lib/systemd/network`, el directorio volatil de ejecución de red `/run/systemd/network` y la carpeta local de administración de red `/etc/systemd/network`. Los archivos en `/etc/systemd/network` tienen la mayor prioridad.
 
-There are three types of configuration files.
+Hay tres tipos de archivos de configuración.
 
-*   **.network** files. They will apply a network configuration for a *matching* device
-*   **.netdev** files. They will create a *virtual network device* for a *matching* environment
-*   **.link** files. When a network device appears, [udev](/index.php/Udev "Udev") will look for the first *matching* **.link** file
+*   Archivos **.network**. Se aplicarán a la configuración de la red por un dispositivo *acoplado*.
+*   Archivos **.netdev**. Estos crean un *dispositivo de red virtual* para un entorno *acoplado*.
+*   Archivos **.link'*. Cuando un dispositivo de red aparece, [[udev] buscará el primer archivo* .link** *acoplado*.
 
-They all follow the same rules:
+Todos ellos singuen las siguientes reglas:
 
-*   If **all** conditions in the `[Match]` section are matched, the profile will be activated
-*   an empty `[Match]` section means the profile will apply in any case (can be compared to the `*` joker)
-*   each entry is a key with the `NAME=VALUE` syntax
-*   all configuration files are collectively sorted and processed in lexical order, regardless of the directory in which they live
-*   files with identical name replace each other
+*   Si **todas** las condiciones en la sección de `acoplamiento` coincidan, el perfil será activado.
+*   Una sección de `acoplamiento` vacia hace que el perfil se aplique de cualquier manera (puede compararse con el comodin `*`).
+*   Cada entrada es una clave con la sintaxis `NAME=VALUE`.
+*   Todos los archivos de configuración son colectivamente almacenados y procesados en orden léxico, independientemente del directorio donde esté almacenado.
+*   Los archivos con nombres identicos se reemplazan con el otro
 
 **Tip:**
 
-*   to override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
-*   the `*` joker can be used in `VALUE` (e.g `en*` will match any Ethernet device)
-*   following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
+*   Para sobreescribir un archivo proporcionado por el sistema en `/usr/lib/systemd/network` de forma permanente (ejemplo incluso despues de actualizar), coloca el archivo con el mismo nombre en `/etc/systemd/network` y un enlace simbolico a `/dev/null`.
+*   El comodin `*` se puede usar en `VALOR` (ejemplo `en*`) hará coincidir en cualquier dispositivo Ethernet.
+*   Según este [hilo Arch-general](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), la mejor forma es establecer un contenedor de ajustes de red especificos *dentro del contenedor* con los archivos de configuración de **networkd**.
 
-### network files
+### Archivos de Red
 
-These files are aimed at setting network configuration variables, especially for servers and containers.
+Estos archivos son dorogodos a establecer variables de configuración de red, en especial a servidores y contenedores.
 
-Below is a basic structure of a `*MyProfile*.network` file:
+A continuación se muestra una estructura básica de un archivo `*MiPerfil*.network`:
 
- `/etc/systemd/network/*MyProfile*.network` 
+ `/etc/systemd/network/*MiPerfil*.network` 
 ```
 [Match]
-*a vertical list of keys*
+*una lista vertical de claves*
 
 [Network]
-*a vertical list of keys*
+*una lista vertical de claves*
 
 [Address]
-*a vertical list of keys*
+*una lista vertical de claves*
 
 [Route]
-*a vertical list of keys*
+*una lista vertical de claves*
 
 ```
 
-#### [Match] section
+#### Sección [Match]
 
-Most common keys are:
+Las claves más comunes son:
 
-*   `Name=` the device name (e.g Br0, enp4s0)
-*   `Host=` the machine hostname
-*   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
+*   `Name=` el nombre del dispositivo (ejemplo Br0, enp4s0).
+*   `Host=` el nombre de red del ordenador.
+*   `Virtualization=` revisa lo que el sistema ejecuta en un entorno virtualizado o no. Una clave `Virtualization=no` sólo se aplicará en el ordenador anfitrion, mientras `Virtualization=yes` se aplica a cualquier contenedor o máquina virtual.
 
-#### [Network] section
+#### Sección [Network]
 
-Most common keys are:
+Las claves más comunes son:
 
-*   `DHCP=` enables [DHCPv4](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") and/or DHCPv6 support. Accepts `yes`, `no`, `ipv4` or `ipv6`
-*   `DNS=` is a [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") server address. You can specify this option more than once
-*   `Bridge=` is the name of the bridge to add the link to
-*   `IPForward=` enables IP forwarding, performing the forwarding according to the routing table, and is required for setting up [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Accepts `yes`, `no`, `ipv4`, `ipv6` or `kernel`. Note that `IPForward` defaults to 0, which means that if you do not specify a setting for `IPForward` in your .network file, your interface will have IP forwarding turned off even if you turned it on with `sysctl` or by writing into `/proc/sys`.
+*   `IPForward` por defecto es 0,
 
-#### [Address] section
+lo cual significa que si no se especifica una configuración para {ic|1=IPForward}} en el archivo .network, la interface tendrá el seguimiento IP deshabilitado aún si se habilitó con `sysctl` o escribiendo en `/proc/sys`.
 
-Most common key in the `[Address]` section is:
+#### Sección [Address]
 
-*   `Address=` is a static **IPv4** or **IPv6** address and its prefix length, separated by a `/` character (e.g `192.168.1.90/24`). This option is **mandatory** unless DHCP is used.
+Las claves más comunes en la sección `[Address]` son:
 
-#### [Route] section
+*   `Address=` es una dirección **IPv4** o **IPv6** estática y su longitud prefija, separada por un `/` (ejemplo
 
-Most common key in the `[Route]` section is:
+`192.168.1.92/24`). Ésta opción es **obligatoria** a menos que el DHCP sea usado.
 
-*   `Gateway=` is the address of your machine gateway. This option is **mandatory** unless DHCP is used.
+#### Sección [Route]
 
-For an exhaustive key list, please refer to `systemd.network(5)`
+Las claves más comunes en la sección `[Route]` son:
 
-**Tip:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `Address=` contains only an Address key and `Gateway=` section contains only a Gateway key
+*   {{ic|1=Gateway=} es la dirección o la puerta de acceso del ordenador. ésta opción es **obligatoria** a menos que se use DHCP.
 
-### netdev files
+Para una exhaustiva lista de claves, por favor refiérase a`systemd.network(5)`
 
-These files will create virtual network devices.
+**Tip:** Se puede poner las claves `Address=` y `Gateway=` en la sección `[Network]` como un atajo si `Address=` contiene sólo una regla de dirección y la sección `Gateway=` contiene sólo una clave Gateway
 
-Below is a basic structure of a *Mydevice*.netdev file:
+### Archivos netdev
 
- `/etc/systemd/network/*MyDevice*.netdev` 
+Estos archivos crean dispositivos virtuales de red.
+
+A continuación se muestra la estructyura básica de un archivo *MiDispositivo*.netdev:
+
+ `/etc/systemd/network/*MiDispositivo*.netdev` 
 ```
 [Match]
-*a vertical list of keys*
+*Una lista vertical de claves*
 
 [Netdev]
-*a vertical list of keys*
+*Una lista vertical de claves*
 
 ```
 
-#### [Match] section
+#### Sección [Match]
 
-Most common keys are `Host=` and `Virtualization=`
+Las claves más comunes son `Host=` y`Virtualization=`
 
 #### [Netdev] section
 
-Most common keys are:
+Las claves más comunes son:
 
-*   `Name=` is the interface name used when creating the netdev. This option is **compulsory**
-*   `Kind=` is the netdev kind. For example, *bridge*, *bond*, *vlan*, *veth*, *sit*, etc. are supported. This option is **compulsory**
+*   `Name=` es el nombre de la interface cuando se crea el netdev. Esta opción es **Obligatoria**
+*   `Kind=` es el tipo de netdev. Por ejemplo *bridge*, *bond*, *vlan*, *sit*, etc. son soportados. Esta opción es **Obligatoria**
 
-For an exhaustive key list, please refer to `systemd.netdev(5)`
+Para una lista exhaustiva lista de claves, por favor refiérase a `systemd.netdev(5)`
 
-### link files
+### Archivos Link
 
-These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears.
+Estos archivos son una alternativa para personalizar las reglas udev y son aplicados por [udev](/index.php/Udev "Udev") a medida que el dispositivo aparece.
 
-Below is a basic structure of a *Mydevice*.link file:
+A continuación se muestra la estructura básica de un archivo *MiDispositivo*.link:
 
- `/etc/systemd/network/*MyDevice*.link` 
+ `/etc/systemd/network/*MiDispositivo*.link` 
 ```
 [Match]
-*a vertical list of keys*
+*Una lista vertical de claves*
 
 [Link]
-*a vertical list of keys*
+*Una lista vertical de claves*
 
 ```
 
-The `[Match]` section will determine if a given link file may be applied to a given device, when the `[Link]` section specifies the device configuration.
+La sección `[Match]` determinará si un archivo link dado puede aplicarse a un dispositivo dado, mientras la sección `[Link]` especifica la configuración del dispositivo.
 
-#### [Match] section
+#### Sección [Match]
 
-Most common keys are `MACAddress=`, `Host=` and `Virtualization=`.
+Las claves más comunes son `MACAddress=`, `Host=` y `Virtualization=`.
 
-`Type=` is the device type (e.g. vlan)
+`Type=` es el tipo de dispositivo (e.g. vlan)
 
-#### [Link] section
+#### Sección [Link]
 
-Most common keys are:
+Las claves más usadas son:
 
-`MACAddressPolicy=` is either *persistent* when the hardware has a persistent MAC address (as most hardware should) or *random* , which allows to give a random MAC address when the device appears.
+`MACAddressPolicy=` ya sea *persistente* cuando el hardware tiene una dirección MAC persistente (cómo la mayoría del hardware suele ser) o *random*, lo cual permite darle una dirección MAC aleatoria cuando aparece el dispositivo.
 
-`MACAddress=` shall be used when no `MACAddressPolicy=` is specified.
+`MACAddress=` suele usarse cuando no se especifica `MACAddressPolicy=`.
 
-**Note:** the system `/usr/lib/systemd/network/99-default.link` is generally sufficient for most of the basic cases.
+**Note:** el sistema `/usr/lib/systemd/network/99-default.link` es generalmente suficiente para la mayoría de los casos básicos
 
 ## Usage with containers
 

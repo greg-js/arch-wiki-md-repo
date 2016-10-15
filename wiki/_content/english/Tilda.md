@@ -6,9 +6,9 @@ You may find it very convenient to drop into a shell quickly without wasting scr
 
 ## Installation
 
-[tilda](https://www.archlinux.org/packages/?name=tilda) is available in the [community] repository.
+Install the [tilda](https://www.archlinux.org/packages/?name=tilda) package.
 
-***Tilda is not compatible with Wayland*** see: [Github](https://github.com/lanoxx/tilda/issues/150)
+**Note:** Tilda is not compatible with Wayland, see [Github](https://github.com/lanoxx/tilda/issues/150).
 
 ## Using with dwm
 

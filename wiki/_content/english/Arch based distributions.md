@@ -8,18 +8,19 @@ This is a listing of Linux distributions which are derived from Arch Linux eithe
     *   [1.1 Desktop](#Desktop)
     *   [1.2 Others](#Others)
 *   [2 Inactive](#Inactive)
-    *   [2.1 2015](#2015)
-    *   [2.2 2014](#2014)
-    *   [2.3 2013](#2013)
-    *   [2.4 2012](#2012)
-    *   [2.5 2011](#2011)
-    *   [2.6 2010](#2010)
-    *   [2.7 2009](#2009)
-    *   [2.8 2008](#2008)
-    *   [2.9 2007](#2007)
-    *   [2.10 2006](#2006)
-    *   [2.11 2005](#2005)
-    *   [2.12 2004](#2004)
+    *   [2.1 2016](#2016)
+    *   [2.2 2015](#2015)
+    *   [2.3 2014](#2014)
+    *   [2.4 2013](#2013)
+    *   [2.5 2012](#2012)
+    *   [2.6 2011](#2011)
+    *   [2.7 2010](#2010)
+    *   [2.8 2009](#2009)
+    *   [2.9 2008](#2008)
+    *   [2.10 2007](#2007)
+    *   [2.11 2006](#2006)
+    *   [2.12 2005](#2005)
+    *   [2.13 2004](#2004)
 
 ## Active
 
@@ -43,7 +44,6 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [DidJiX](http://easy.open.and.free.fr/didjix/)
 *   [Frugalware](http://frugalware.org/)
 *   [KaOS](https://sourceforge.net/projects/kaosx/)
-*   [PacBang](https://sourceforge.net/projects/architect-linux/)
 *   [Obarun](http://www.obarun.org/index.html)
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
@@ -63,6 +63,10 @@ The following distributions include a pre-installed [Desktop environment](/index
 ## Inactive
 
 These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
+
+### 2016
+
+*   [PacBang](https://sourceforge.net/projects/architect-linux/)
 
 ### 2015
 

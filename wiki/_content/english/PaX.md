@@ -6,15 +6,34 @@ Using PaX alone is not recommended as the synergies with other grsecurity featur
 
 ## Contents
 
-*   [1 Performance](#Performance)
-    *   [1.1 Tunable parameters](#Tunable_parameters)
-    *   [1.2 Custom kernel](#Custom_kernel)
-*   [2 PaX exceptions](#PaX_exceptions)
-    *   [2.1 Using the paxd package](#Using_the_paxd_package)
-        *   [2.1.1 User exceptions](#User_exceptions)
-    *   [2.2 Soft mode](#Soft_mode)
-*   [3 Testing the userspace features](#Testing_the_userspace_features)
-*   [4 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Performance](#Performance)
+    *   [2.1 Tunable parameters](#Tunable_parameters)
+    *   [2.2 Custom kernel](#Custom_kernel)
+*   [3 PaX exceptions](#PaX_exceptions)
+    *   [3.1 Using the paxd daemon](#Using_the_paxd_daemon)
+        *   [3.1.1 User exceptions](#User_exceptions)
+    *   [3.2 Manually](#Manually)
+    *   [3.3 Soft mode](#Soft_mode)
+*   [4 Testing the userspace features](#Testing_the_userspace_features)
+*   [5 See also](#See_also)
+
+## Installation
+
+The Pax subset is installed with the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package; however, it is set to soft mode by default, meaning it is opt-in rather than opt-out.
+
+The recommended way to switch to opt-in is to [install](/index.php/Install "Install") the [paxd](https://www.archlinux.org/packages/?name=paxd) package.
+
+**Note:** After installing [paxd](https://www.archlinux.org/packages/?name=paxd) the system must be rebooted to apply the changes. Alternatively apply the [sysctl](/index.php/Sysctl "Sysctl") configuration to the running system using `sysctl -p usr/lib/sysctl.d/10-enable-pax.conf`
+
+It is also possible to temporarily disable soft mode:
+
+```
+# kernel.pax.softmode=0
+
+```
+
+Note that this will only work until the next reboot.
 
 ## Performance
 
@@ -34,7 +53,27 @@ Building a custom kernel allows full control over the compromise between perform
 
 ## PaX exceptions
 
-Some of the PaX exploit mitigations prevent certain applications from running and require the executables to be marked with exceptions. Extended attributes can be used to exclude executables from one or more of the features. For example, to disable the MPROTECT and RANDMMAP features:
+Some of the PaX exploit mitigations prevent certain applications from running and require the executables to be marked with exceptions. The MPROTECT feature is by far the most common source of issues, and [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) defaults to [logging violations](/index.php/Grsecurity#Auditing "Grsecurity") to the kernel log. It is more difficult to identify these issues with PaX installed on a vanilla kernel.
+
+Extended attributes can be used to exclude executables from one or more of the features. This can be done in multiple ways.
+
+### Using the paxd daemon
+
+The [paxd](https://www.archlinux.org/packages/?name=paxd) package provided in the official repositories includes a daemon that automatically applies PaX exceptions from `/etc/paxd.conf` whenever an executable is updated or the configuration file is modified. This is the officially supported way of applying these exceptions for binaries provided by packages. To start / enable the daemon:
+
+```
+# systemctl start paxd
+# systemctl enable paxd
+
+```
+
+#### User exceptions
+
+[paxd](https://www.archlinux.org/packages/?name=paxd) also provides a user service so that individual users can apply exceptions, primarily to files in their home directory. It can be started / enabled with `systemctl --user` and will apply exceptions from `$XDG_CONFIG_HOME/paxd.conf` (falling back to `~/.config/paxd.conf`).
+
+### Manually
+
+The setfattr command can be used to manually set exclusions for a problematic binary. For example, to disable the MPROTECT and RANDMMAP features:
 
 ```
 $ setfattr -n user.pax.flags -v "emr" /usr/bin/problematic_binary
@@ -43,24 +82,14 @@ $ setfattr -n user.pax.flags -v "emr" /usr/bin/problematic_binary
 
 **Note:** The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package *only* supports the extended attributes, and does not include support for the ELF exception markers. The extended attributes do not require special tooling and leave the binaries unaltered, making them a far better option.
 
-The MPROTECT feature is by far the most common source of issues, and [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) defaults to [logging violations](/index.php/Grsecurity#Auditing "Grsecurity") to the kernel log. It is more difficult to identify these issues with only the PaX subset of [grsecurity](/index.php/Grsecurity "Grsecurity").
-
 The [pax-utils](https://www.archlinux.org/packages/?name=pax-utils) package includes some useful tools. For example, the `pspax` utility can display PaX permissions from the kernel's perspective along with capabilities. The `scanelf` tool can be used to query attributes of binaries.
 
-One might also use getfattr to retrieve extended attributes set above (or set by paxd described below) if they choose not to run pax-utils or if they want to check the attributes of a process not running:
+One might also use getfattr to retrieve extended attributes set above (or set by paxd described above) if they choose not to run pax-utils or if they want to check the attributes of a process not running:
 
 ```
 $ getfattr -n user.pax.flags /usr/bin/problematic_binary
 
 ```
-
-### Using the paxd package
-
-The [paxd](https://www.archlinux.org/packages/?name=paxd) package provided in the official repositories uses a daemon to automatically apply PaX exceptions from `/etc/paxd.conf` whenever an executable is updated or the configuration file is modified. This is the officially supported way of applying these exceptions for binaries provided by packages.
-
-#### User exceptions
-
-A user service is provided for users to apply exceptions, primarily to files in their home directory. It can be started / enabled with `systemctl --user` and will apply exceptions from `$XDG_CONFIG_HOME/paxd.conf` (falling back to `~/.config/paxd.conf`).
 
 ### Soft mode
 

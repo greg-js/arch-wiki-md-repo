@@ -119,7 +119,7 @@ Currently, the following browsers are auto-detected and managed:
 *   [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
 *   [Qutebrowser](/index.php/Qutebrowser "Qutebrowser")
 *   [palemoon](https://aur.archlinux.org/packages/palemoon/) / [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
-*   [Qupzilla](https://www.archlinux.org/packages/?name=Qupzilla)
+*   [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 *   [rekonq](https://www.archlinux.org/packages/?name=rekonq)
 *   [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 *   [surf](https://www.archlinux.org/packages/?name=surf)

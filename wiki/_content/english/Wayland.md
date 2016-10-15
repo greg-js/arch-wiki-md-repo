@@ -25,6 +25,7 @@
     *   [7.1 LLVM assertion failure](#LLVM_assertion_failure)
     *   [7.2 Weston fails to launch after update to 1.7](#Weston_fails_to_launch_after_update_to_1.7)
     *   [7.3 Applications using dbus crashes on startup](#Applications_using_dbus_crashes_on_startup)
+    *   [7.4 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
 *   [8 See also](#See_also)
 
 ## Requirements
@@ -368,6 +369,10 @@ For a temporary solution, use `dbus-launch` to run the application. For example,
  dbus-launch gnome-terminal
 
 ```
+
+### Slow motion, graphical glitches, and crashes
+
+Gnome-shell users may experience display issues when they switch to Wayland from X. One of the root cause might be the `CLUTTER_PAINT=disable-clipped-redraws:disable-culling` set by yourself for Xorg-based gnome-shell. Just try to remove it from `/etc/environment` or other rc files to see if everything goes back to normal.
 
 ## See also
 

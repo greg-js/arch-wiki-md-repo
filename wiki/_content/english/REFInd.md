@@ -37,6 +37,8 @@
 
 *rEFInd* has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, and NTFS. Additionally *rEFInd* can use drivers from the UEFI firmware i.e. FAT (or HFS+ on Macs or ISO-9660 on some systems).
 
+**Warning:** rEFInd before version 0.10.4 does not support the `64bit` feature of Ext4 file system.
+
 To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](http://www.rodsbooks.com/refind/drivers.html#finding).
 
 ### Scripted installation

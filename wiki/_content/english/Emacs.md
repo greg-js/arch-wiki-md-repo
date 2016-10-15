@@ -27,6 +27,7 @@
     *   [6.2 Menus appear empty](#Menus_appear_empty)
     *   [6.3 Problems displaying characters in X Windows](#Problems_displaying_characters_in_X_Windows)
     *   [6.4 Slow startup](#Slow_startup)
+        *   [6.4.1 When network is limited](#When_network_is_limited)
     *   [6.5 Cannot open load file: ...](#Cannot_open_load_file:_...)
     *   [6.6 Dead-accent keys problem: '<dead-acute> is undefined'](#Dead-accent_keys_problem:_.27.3Cdead-acute.3E_is_undefined.27)
     *   [6.7 C-M-% and some other bindings do not work in emacs nox](#C-M-.25_and_some_other_bindings_do_not_work_in_emacs_nox)
@@ -35,7 +36,6 @@
     *   [6.10 Shift + Arrow keys not working in emacs within tmux](#Shift_.2B_Arrow_keys_not_working_in_emacs_within_tmux)
     *   [6.11 Improper window resizing in KDE](#Improper_window_resizing_in_KDE)
     *   [6.12 Invalid font name for Oxygen-Sans](#Invalid_font_name_for_Oxygen-Sans)
-    *   [6.13 Slow startup if helm-mode is enabled](#Slow_startup_if_helm-mode_is_enabled)
 *   [7 Alternatives](#Alternatives)
     *   [7.1 mg](#mg)
     *   [7.2 zile](#zile)
@@ -643,6 +643,18 @@ you might use:
 
 ```
 
+#### When network is limited
+
+Some packages depending on Tramp (e.g. Helm, Magit) will cause slow startup on limited network connections.
+
+Add the following to your `.emacs` *before* loading the offending packages:
+
+```
+(setq tramp-ssh-controlmaster-options
+      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+
+```
+
 ### Cannot open load file: ...
 
 The most common cause of this error is the 'load-path' variable not including the path to the directory within which the extension is located. To solve this, add the appropriate path to the list to be searched prior to attempting to load the extension:
@@ -832,18 +844,6 @@ Error:invalid font name.-unknown-Oxygen-Sans-nolmal-normal--15----*-0-iso10646-1
 ```
 
 when setting font attributes. This seems to be a bug in emacs, which is fixed in [emacs-git](https://aur.archlinux.org/packages/emacs-git/) (25.1.50.r125104-1).
-
-### Slow startup if helm-mode is enabled
-
-When `helm-mode` is enabled and causes Emacs slow to startup, we can edit the `.emacs` file by adding
-
-```
-(setq tramp-ssh-controlmaster-options
-      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
-(require 'tramp)
-; before (helm-mode 1)
-
-```
 
 ## Alternatives
 

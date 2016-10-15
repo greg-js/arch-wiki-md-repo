@@ -491,18 +491,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ```
 
-Or as a preemptive alternative to [localepurge](https://aur.archlinux.org/packages/localepurge/), to avoid installing non-English localizations:
-
-```
-NoExtract = usr/share/help/* !usr/share/help/en*
-NoExtract = usr/share/locale/* usr/share/X11/locale/* usr/share/i18n/locales/* opt/google/chrome/locales/*
-NoExtract = !*locale*/en* !usr/share/*locale*/locale.alias !usr/share/*locales/i18n !usr/share/*locales/iso* !usr/share/*locales/trans*
-NoExtract = usr/share/man/* !usr/share/man/man*
-NoExtract = usr/share/vim/vim74/lang/*
-
-```
-
-Later rules override previous ones, and you can negate a rule by prepending `!` — this allows you to keep the locales you need.
+Later rules override previous ones, and you can negate a rule by prepending `!`.
 
 **Tip:** *pacman* issues warning messages about missing locales when updating a package for which locales have been cleared by *localepurge* or *bleachbit*. Commenting the `CheckSpace` option in `pacman.conf` suppresses such warnings, but consider that the space-checking functionality will be disabled for all packages.
 

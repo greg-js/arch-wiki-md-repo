@@ -622,6 +622,10 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 	[http://www.vsxu.com/](http://www.vsxu.com/) || [vsxu](https://aur.archlinux.org/packages/vsxu/)
 
+*   **cava** — Console-based audio visualizer for Alsa, MPD and PulseAudio.
+
+	[https://karlstav.github.io/cava/](https://karlstav.github.io/cava/) || [cava](https://aur.archlinux.org/packages/cava/)
+
 #### Audio tag editors
 
 *   **Audio Tag Tool** — Tool to edit tags in MP3 and Ogg Vorbis files.

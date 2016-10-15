@@ -48,7 +48,7 @@ You can use rsync directly or [this script](https://git.server-speed.net/users/f
 
 **Note:** We are not accepting new ftp mirrors.
 
-Go to [https://bugs.archlinux.org](https://bugs.archlinux.org) and create a feature-request (category: mirrors) containing the following information:
+Go to [https://bugs.archlinux.org](https://bugs.archlinux.org/newtask/proj1) and create a feature-request (category: mirrors) containing the following information:
 
 *   Mirror domain name
 *   Geographical location of the mirror (country)

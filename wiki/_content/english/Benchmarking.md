@@ -59,14 +59,11 @@ See also:
 
 ### ttcp
 
-(n)(nu)ttcp measures point-to-point bandwidth over any network connection. The program must be provided on both nodes between which bandwidth is to be determined.
+ttcp (Test TCP) measures point-to-point bandwidth over any network connection. The program must be provided on both nodes between which bandwidth is to be determined.
 
-Various flavors of ttcp can be found in the [AUR](/index.php/AUR "AUR") (see links below).
-
-See also:
+Various flavors of ttcp can be found in the [AUR](/index.php/AUR "AUR"):
 
 *   [ttcp](https://aur.archlinux.org/packages/ttcp/)
-*   [nttcp](https://aur.archlinux.org/packages/nttcp/)
 *   [nuttcp](https://aur.archlinux.org/packages/nuttcp/)
 
 ### iperf

@@ -33,7 +33,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 *   **aurel** — Search, vote and download AUR packages from Emacs. ([Forum page](https://bbs.archlinux.org/viewtopic.php?id=177142))
 
-	[https://github.com/alezost/aurel](https://github.com/alezost/aurel) || [aurel](https://aur.archlinux.org/packages/aurel/)
+	[https://github.com/alezost/aurel](https://github.com/alezost/aurel) || [aurel-git](https://aur.archlinux.org/packages/aurel-git/)
 
 *   **aurget** — pacman-like interface to the AUR, without wrapping pacman commands.
 

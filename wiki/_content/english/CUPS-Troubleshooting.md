@@ -8,6 +8,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [2.2 All jobs are "stopped"](#All_jobs_are_.22stopped.22)
     *   [2.3 All jobs are "The printer is not responding"](#All_jobs_are_.22The_printer_is_not_responding.22)
     *   [2.4 The PPD version is not compatible with gutenprint](#The_PPD_version_is_not_compatible_with_gutenprint)
+    *   [2.5 Printers are not present in the print dialog for GTK3 applications](#Printers_are_not_present_in_the_print_dialog_for_GTK3_applications)
 *   [3 Networking issues](#Networking_issues)
     *   [3.1 Unable to locate printer](#Unable_to_locate_printer)
     *   [3.2 Old CUPS server](#Old_CUPS_server)
@@ -120,6 +121,10 @@ Run:
 ```
 
 And restart CUPS (as pointed out in gutenprint's post-install message)
+
+### Printers are not present in the print dialog for GTK3 applications
+
+A recent upgrade of GTK3 (3.22) requires the [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) package for printers to be listed in GTK3 print dialogs. This stops printing from applications like [gedit](/index.php/Gedit "Gedit") and [Firefox](/index.php/Firefox "Firefox"), but printers still appear in the CUPS web interface and lpstat, and you can print from the command line and GTK2 applications like GIMP.
 
 ## Networking issues
 
