@@ -230,25 +230,6 @@ The essence of QJackCtl is described fairly well in [this article.](http://www.l
 The shell-based example above, lays out in detail lots of things you may well need to know, and it does work well. If you want something much more GUI, however, do this:
 
 *   Install [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus).
-
-*   Copy `/etc/asound.conf` to `/etc/asound.conf.ORIGINAL`, and replace it with this:
-
-```
-pcm.pulse {
-    type pulse
-}
-ctl.pulse {
-    type pulse
-}
-pcm.!default {
-    type pulse
-}
-ctl.!default {
-    type pulse
-}
-
-```
-
 *   Install [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio).
 *   Install [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).
 *   Install [qjackctl](https://www.archlinux.org/packages/?name=qjackctl), and tell your GUI window/desktop system to run it at startup.

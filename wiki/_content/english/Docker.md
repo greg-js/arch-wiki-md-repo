@@ -60,7 +60,7 @@ $ newgrp docker
 
 ### Opening remote API
 
-To opening the Remote API to port `4243` manually.
+To open the Remote API to port `4243` manually, run:
 
 ```
  # docker daemon -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock

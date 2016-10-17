@@ -21,11 +21,11 @@
 
 ## Installing
 
-msmtp can be [installed](/index.php/Installed "Installed") with the package [msmtp](https://www.archlinux.org/packages/?name=msmtp). Additionally install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) that creates a sendmail alias to msmtp.
+msmtp can be [installed](/index.php/Installed "Installed") with the package [msmtp](https://www.archlinux.org/packages/?name=msmtp). Additionally, install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta), which creates a sendmail alias to msmtp.
 
 ## Basic setup
 
-The following is an example of a msmtp configuration (the file is based on the packaged, regular-user, example located at `/usr/share/doc/msmtp/msmtprc-user.example`; the system configuration file belongs at `/etc/msmtprc` and it's example is located at `/usr/share/doc/msmtp/msmtprc-system.example`):
+The following is an example of a msmtp configuration (the file is based on the per-user example file located at `/usr/share/doc/msmtp/msmtprc-user.example`; the system configuration file belongs at `/etc/msmtprc` and its corresponding example file is located at `/usr/share/doc/msmtp/msmtprc-system.example`):
 
  `~/.msmtprc` 
 ```
@@ -57,14 +57,14 @@ account default : gmail
 
 **Note:** If you are using SSL/TLS and receive a "Server sent empty reply" error message, see [#Server sent empty reply](#Server_sent_empty_reply).
 
-The *user* configuration file must be explicitly readable/writeable to only it's owner or msmtp will fail:
+The *user* configuration file must be explicitly readable/writeable by its owner or msmtp will fail:
 
 ```
 $ chmod 600 ~/.msmtprc
 
 ```
 
-To avoid saving the password in plain text in the configuration file, use *passwordeval* to launch an external program. This example using Gnu PG is commonly used to perform decryption of a password:
+To avoid saving the password in plain text in the configuration file, use *passwordeval* to launch an external program, or see the [#Password_management](#Password_management) section below. This example using Gnu PG is commonly used to perform decryption of a password:
 
 ```
  echo -e "password

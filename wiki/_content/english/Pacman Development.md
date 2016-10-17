@@ -48,7 +48,7 @@ Before using these tips, it is highly recommended to read the [Super Quick Git G
 Clone git repo - only needed once
 
 ```
- git clone [git://projects.archlinux.org/pacman.git](git://projects.archlinux.org/pacman.git) pacman
+ git clone [https://projects.archlinux.org/pacman.git](https://projects.archlinux.org/pacman.git) pacman
 
 ```
 

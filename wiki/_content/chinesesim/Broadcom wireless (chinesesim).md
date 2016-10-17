@@ -1,9 +1,9 @@
 ## Contents
 
 *   [1 介绍](#.E4.BB.8B.E7.BB.8D)
-*   [2 Determine which driver you need/can use](#Determine_which_driver_you_need.2Fcan_use)
-*   [3 Getting the driver](#Getting_the_driver)
-    *   [3.1 brcmsmac/brcmfmac](#brcmsmac.2Fbrcmfmac)
+*   [2 查看你可以使用何种驱动](#.E6.9F.A5.E7.9C.8B.E4.BD.A0.E5.8F.AF.E4.BB.A5.E4.BD.BF.E7.94.A8.E4.BD.95.E7.A7.8D.E9.A9.B1.E5.8A.A8)
+*   [3 获取驱动](#.E8.8E.B7.E5.8F.96.E9.A9.B1.E5.8A.A8)
+    *   [3.1 brcmsmac/brcmfmac（brcm80211）](#brcmsmac.2Fbrcmfmac.EF.BC.88brcm80211.EF.BC.89)
     *   [3.2 b43/b43legacy](#b43.2Fb43legacy)
         *   [3.2.1 Loading the b43/b43legacy kernel module](#Loading_the_b43.2Fb43legacy_kernel_module)
     *   [3.3 broadcom-wl](#broadcom-wl)
@@ -33,36 +33,38 @@
 | b43 | 逆向工程内核驱动 |
 | broadcom-wl | 专有的 Broadcom STA 驱动 |
 
-## Determine which driver you need/can use
+## 查看你可以使用何种驱动
 
-First, determine your card's [PCI-ID](https://en.wikipedia.org/wiki/PCI_configuration_space "wikipedia:PCI configuration space"). Type the following (case-sensitive) command into a console:
+首先，向你的终端输入以下内容来检测网卡的 [PCI-ID](https://en.wikipedia.org/wiki/PCI_configuration_space "wikipedia:PCI configuration space"):
 
 ```
 $ lspci -vnn | grep 14e4:
 
 ```
 
-Then check your card against this [list of supported b43 devices](http://linuxwireless.org/en/users/Drivers/b43#Supported_devices) and this [list of supported brcm80211 devices](http://linuxwireless.org/en/users/Drivers/brcm80211#Supported_Chips).
+然后在以下列表中检查 [[2]](http://linuxwireless.org/en/users/Drivers/b43#b43驱动的支持设备列表) 以及 [[3]](http://linuxwireless.org/en/users/Drivers/brcm80211#brcm80211的支持设备列表).
 
-## Getting the driver
+## 获取驱动
 
-### brcmsmac/brcmfmac
+### brcmsmac/brcmfmac（brcm80211）
 
-The `brcm80211` drivers have been included in the kernel since 2.6.37\. Since the release of 2.6.39, they have been renamed to `brcmsmac` (for PCI cards) and `brcmfmac` (for SDIO).
+`brcm80211` 驱动自内核2.6.37起包含于内核中. 并且于内核2.6.39起,他们被重命名为`brcmsmac` (针对PCI卡) 以及 `brcmfmac` (针对 SDIO).
 
-These drivers should be automatically loaded during startup and no further action should be required of the user. If the driver doesn't auto load, try the following commands.
+这些驱动应该会在启动时自行加载，如果不奏效，可以尝试以下命令
 
 ```
 # modprobe brcmsmac
 
 ```
 
-or
+或
 
 ```
 # modprobe brcmfmac
 
 ```
+
+有时则可能是因为没有合适的固件，可以使用`dmesg`观察启动时可能的报错。
 
 **Note:** The `bcma` module can prevent some cards from showing up and may need to be [blacklisted](#Wi-Fi_card_does_not_work.2Fshow_up_since_kernel_upgrade_.28brcmsmac.29).
 

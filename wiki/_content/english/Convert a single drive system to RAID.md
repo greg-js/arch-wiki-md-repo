@@ -137,6 +137,17 @@ See [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") for more information.
 
 Please refer to [GRUB](/index.php/GRUB#Other_Options "GRUB") article.
 
+To boot the system from your degraded array, you will need to (1) add the **mdadm_udev** hook to the HOOKS line in **/etc/mkinitcpio.conf** (after the entry for **block**) and (2) regenerate the initramfs and generate a new **grub.cfg**. You can then add a menu entry in **/boot/grub/grub.cfg** pointing to the raid partitions for boot. This is complicated by the default config generation making use of a primary boot entry, and placing the remaining boot entries in **submenues**. To restore generation of a single entry per-line for each boot option, simply add:
+
+```
+   GRUB_DISABLE_SUBMENU=y
+
+```
+
+in **/etc/default/grub** and regenerate **grub.cfg**. Now you can simply add an entry containing either the device files (e.g. **/dev/md0**, **/dev/md1** or simply use the **UUID** for each of the raid filesystems. After having done so, the easiest way to add an entry to boot from the degraded arrays is simply to copy the *"Arch Linux, with Linux linux"* entry and change the UUID's to match your arrays as shown in **/dev/disk/by-uuid**.
+
+**Note:** Another alternative that avoids the uuid-shuffle, is to chroot your degraded array after it has been created and file copied to each of the respective arrays (e.g. /, /boot, and /home). You can add the **mdadm_udev** hook in **/etc/mkinitcpio.conf**, regenerate the initramfs. install the bootloader and generate a **grub.cfg** within the chroot environment. If you then toggle the primary drive for boot, you can boot onto your degraded array without any more fuss
+
 ### Alter fstab
 
 You need to tell fstab on the **new** disk where to find the new device. It is recommended to use [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").

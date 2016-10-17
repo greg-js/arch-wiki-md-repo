@@ -48,7 +48,7 @@ Add the following to the end of your `/etc/httpd/conf/httpd.conf`
    <Files gitweb.cgi>
    SetHandler cgi-script
    </Files>
-   SetEnv  GITWEB_CONFIG  /etc/conf.d/gitweb.conf
+   SetEnv  GITWEB_CONFIG  /etc/gitweb.conf
 </Directory>
 
 ```
@@ -89,7 +89,7 @@ Create `/etc/httpd/conf/extra/httpd-gitweb.conf`
         AddHandler perl-script .cgi
         PerlResponseHandler ModPerl::Registry
         PerlOptions +ParseHeaders
-        SetEnv  GITWEB_CONFIG  /etc/conf.d/gitweb.conf
+        SetEnv  GITWEB_CONFIG  /etc/gitweb.conf
     </Directory>
 </IfModule>
 
@@ -116,7 +116,7 @@ Add the following to `/etc/lighttpd/lighttpd.conf`:
 
 ```
 server.modules += ( "mod_alias", "mod_cgi", "mod_redirect", "mod_setenv" )
-setenv.add-environment = ( "GITWEB_CONFIG" => "/etc/conf.d/gitweb.conf" )
+setenv.add-environment = ( "GITWEB_CONFIG" => "/etc/gitweb.conf" )
 url.redirect += ( "^/gitweb$" => "/gitweb/" )
 alias.url += ( "/gitweb/" => "/usr/share/gitweb/" )
 $HTTP["url"] =~ "^/gitweb/" {
@@ -138,7 +138,7 @@ location /gitweb.cgi {
     include fastcgi_params;
     gzip off;
     fastcgi_param   SCRIPT_FILENAME  /usr/share/gitweb/gitweb.cgi;
-    fastcgi_param   GITWEB_CONFIG  /etc/conf.d/gitweb.conf;
+    fastcgi_param   GITWEB_CONFIG  /etc/gitweb.conf;
     fastcgi_pass    unix:/var/run/fcgiwrap.sock;
 }
 
@@ -180,9 +180,9 @@ systemctl start nginx fcgiwrap
 
 ### Gitweb config
 
-Next we need to make a gitweb config file. Open (or create if it does not exist) the file `/etc/conf.d/gitweb.conf` and place this in it:
+Next we need to make a gitweb config file. Open (or create if it does not exist) the file `/etc/gitweb.conf` and place this in it:
 
- `/etc/conf.d/gitweb.conf` 
+ `/etc/gitweb.conf` 
 ```
 our $git_temp = "/tmp";
 

@@ -1,3 +1,5 @@
+**Warning:** UZBL-Browser is based on a WebKit port that is today considered insecure and outdated. It's recommended to use [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
 [Uzbl](http://www.uzbl.org/) is a lightweight browser based on **uzbl-core**. **Uzbl** adheres to the UNIX philosophy of "Write programs that do one thing and do it well". The uzbl-browser package includes uzbl-core, uzbl-browser and uzbl-event-manager. Most users will want to use **uzbl-browser** or **uzbl-tabbed** as they provide the fullest set of tools for browsing. Uzbl-browser allows for a single page per window (with as many windows as you want), while uzbl-tabbed provides a wrapper for uzbl-browser and implements basic tabs with multiple pages per window.
 
 ## Contents

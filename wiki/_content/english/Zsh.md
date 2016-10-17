@@ -199,7 +199,11 @@ See [Xinitrc#Autostart X at login](/index.php/Xinitrc#Autostart_X_at_login "Xini
 
 ### The "command not found" hook
 
-See [Pkgfile#Command not found](/index.php/Pkgfile#Command_not_found "Pkgfile").
+[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command.
+
+You need to [source](/index.php/Source "Source") the hook to enable it, for example:
+
+ `~/.zshrc`  `source /usr/share/doc/pkgfile/command-not-found.zsh` 
 
 ### The ttyctl command
 

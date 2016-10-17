@@ -52,7 +52,7 @@ You can then manually configure your web server to use the key and certificate i
 
 #### Webroot
 
-The webroot method lets the client place a challenge response at `yourdomain.tld/.well-known/acme-challenge/`. You can use it to get/renew certificates with a running webserver (e.g. Apache/nginx).
+The webroot method lets the client place a challenge response at `yourdomain.tld/.well-known/acme-challenge/`. You can use it to get/renew certificates with a running webserver.
 
 ```
 # certbot certonly --email *email@example.com* --webroot -w */path/to/html/* -d *your.domain*
@@ -60,6 +60,8 @@ The webroot method lets the client place a challenge response at `yourdomain.tld
 ```
 
 Make sure the server configuration for the certificates points to `/etc/letsencrypt/live/*your.domain*/`.
+
+**Note:** For apache or nginx, use --apache or --nginx respectively instead of --webroot. If you require the verification through port 80 instead of port 443, use --webroot.
 
 ##### Multiple domains
 

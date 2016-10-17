@@ -29,9 +29,8 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [4.3.4 Mounting subvolumes](#Mounting_subvolumes)
             *   [4.3.4.1 Mount options](#Mount_options)
         *   [4.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
-    *   [4.4 Commit interval settings](#Commit_interval_settings)
-    *   [4.5 Checkpoint interval](#Checkpoint_interval)
-    *   [4.6 SSD TRIM](#SSD_TRIM)
+    *   [4.4 Commit Interval](#Commit_Interval)
+    *   [4.5 SSD TRIM](#SSD_TRIM)
 *   [5 Usage](#Usage)
     *   [5.1 Displaying used/free space](#Displaying_used.2Ffree_space)
     *   [5.2 Defragmentation](#Defragmentation)
@@ -282,20 +281,16 @@ where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 **Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible when the default subvolume is mounted . Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
-### Commit interval settings
+### Commit Interval
 
-The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This is tuneable using mount options (see below)
-
-System-wide settings also affect commit intervals. They include the files under `/proc/sys/vm/*` and are out-of-scope of this wiki article. The kernel documentation for them resides in `Documentation/sysctl/vm.txt`.
-
-### Checkpoint interval
-
-Users are able to change the checkpoint interval from the default 30 s to any value by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
+The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This can be changed by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
 
 ```
 LABEL=arch64 / btrfs defaults,noatime,ssd,compress=lzo,commit=120 0 0
 
 ```
+
+System-wide settings also affect commit intervals. They include the files under `/proc/sys/vm/*` and are out-of-scope of this wiki article. The kernel documentation for them resides in `Documentation/sysctl/vm.txt`.
 
 ### SSD TRIM
 

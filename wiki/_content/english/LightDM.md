@@ -313,7 +313,7 @@ You can also switch users from the [XScreenSaver](/index.php/XScreenSaver "XScre
 
 ### Default session
 
-Lightdm, like other DMs, stores the last-selected xsession in `~/.dmrc`. See [Display manager#Session list](/index.php/Display_manager#Session_list "Display manager") for more info.
+Lightdm, like other DMs, stores the last-selected xsession in `~/.dmrc`. See [Display manager#Session configuration](/index.php/Display_manager#Session_configuration "Display manager") for more info.
 
 ### Adjusting the login window's position
 
@@ -330,9 +330,9 @@ position=200,start 50%,center
 
 ### VNC Server
 
-Lightdm can also be used to connec to via vnc. Make sure to install [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) on the server side and optional as your vncclient on the client PC.
+Lightdm can also be used to connect to via vnc. Make sure to install [tigervnc](https://www.archlinux.org/packages/?name=tigervnc) on the server side and optional as your vncclient on the client PC.
 
-Setup an authentification password on the server as root:
+Setup an authentication password on the server as root:
 
 ```
 # vncpasswd /etc/vncpasswd

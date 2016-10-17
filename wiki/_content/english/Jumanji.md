@@ -1,3 +1,5 @@
+**Warning:** jumanji is based on a WebKit port that is today considered insecure and outdated. It's recommended to use [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
 [jumanji](http://pwmt.org/projects/jumanji/) is a web browser that provides a minimalistic and space saving interface as well as an easy usage that mainly focuses on keyboard interaction like *vimperator* does.
 
 ## Contents

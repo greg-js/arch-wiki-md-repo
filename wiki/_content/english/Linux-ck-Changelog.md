@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.7.8-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.8](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.8)
+*   Commit: [https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog)
+
 **Bump to v4.7.7-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.7](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.7)

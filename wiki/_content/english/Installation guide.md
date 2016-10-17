@@ -218,10 +218,13 @@ Create the [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) f
 
 ```
 
-Consider adding a [matching entry](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") to `/etc/hosts`:
+Consider adding a [matching entry](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") to [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
 
+ `/etc/hosts` 
 ```
-127.0.1.1 *myhostname*.localdomain *myhostname*
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+**127.0.1.1	*myhostname*.localdomain	*myhostname***
 
 ```
 
@@ -233,7 +236,9 @@ For [Wireless configuration](/index.php/Wireless_configuration "Wireless configu
 
 ### Initramfs
 
-When making configuration changes to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), create a new initial RAM disk with:
+Creating a new *initramfs* is usually not required, because [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") was run on installation of the [linux](https://www.archlinux.org/packages/?name=linux) package with *pacstrap*.
+
+For special configurations, modify the mkinitcpio.conf(5) file and recreate the initramfs image:
 
 ```
 # mkinitcpio -p linux

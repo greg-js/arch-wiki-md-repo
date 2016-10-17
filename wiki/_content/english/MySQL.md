@@ -5,8 +5,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Upgrade MariaDB](#Upgrade_MariaDB)
-    *   [1.2 Upgrade from Oracle MySQL to MariaDB](#Upgrade_from_Oracle_MySQL_to_MariaDB)
+    *   [1.1 Upgrade from Oracle MySQL to MariaDB](#Upgrade_from_Oracle_MySQL_to_MariaDB)
 *   [2 Configuration](#Configuration)
     *   [2.1 Add user](#Add_user)
     *   [2.2 Configuration files](#Configuration_files)
@@ -16,21 +15,24 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
     *   [2.6 Using UTF-8](#Using_UTF-8)
     *   [2.7 Using a TMPFS for tmpdir](#Using_a_TMPFS_for_tmpdir)
     *   [2.8 Time zone tables](#Time_zone_tables)
-*   [3 Backup](#Backup)
-    *   [3.1 Compression](#Compression)
-    *   [3.2 Non-interactive](#Non-interactive)
-        *   [3.2.1 Example script](#Example_script)
-    *   [3.3 Holland Backup](#Holland_Backup)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 MySQL daemon cannot start](#MySQL_daemon_cannot_start)
-    *   [4.2 Unable to run mysql_upgrade because MySQL cannot start](#Unable_to_run_mysql_upgrade_because_MySQL_cannot_start)
-    *   [4.3 Reset the root password](#Reset_the_root_password)
-    *   [4.4 Check and repair all tables](#Check_and_repair_all_tables)
-    *   [4.5 Optimize all tables](#Optimize_all_tables)
-    *   [4.6 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
-    *   [4.7 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
-    *   [4.8 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
-*   [5 See also](#See_also)
+*   [3 Database maintenance](#Database_maintenance)
+    *   [3.1 Upgrade databases on major releases](#Upgrade_databases_on_major_releases)
+    *   [3.2 Checking, optimizing and repairing databases](#Checking.2C_optimizing_and_repairing_databases)
+*   [4 Backup](#Backup)
+    *   [4.1 Compression](#Compression)
+    *   [4.2 Non-interactive](#Non-interactive)
+        *   [4.2.1 Example script](#Example_script)
+    *   [4.3 Holland Backup](#Holland_Backup)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 MySQL daemon cannot start](#MySQL_daemon_cannot_start)
+    *   [5.2 Unable to run mysql_upgrade because MySQL cannot start](#Unable_to_run_mysql_upgrade_because_MySQL_cannot_start)
+    *   [5.3 Reset the root password](#Reset_the_root_password)
+    *   [5.4 Check and repair all tables](#Check_and_repair_all_tables)
+    *   [5.5 Optimize all tables](#Optimize_all_tables)
+    *   [5.6 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
+    *   [5.7 Cannot login through CLI, but phpmyadmin works well](#Cannot_login_through_CLI.2C_but_phpmyadmin_works_well)
+    *   [5.8 MySQL binary logs are taking up huge disk space](#MySQL_binary_logs_are_taking_up_huge_disk_space)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -70,15 +72,6 @@ The following command will interactively guide you through a number of recomende
 ```
 
 To simplify administration, you might want to install a front-end such as [dbeaver](https://aur.archlinux.org/packages/dbeaver/), [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), [Adminer](/index.php/Adminer "Adminer") or [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) is not completely compatible with MariaDB but can be used for basic tasks.
-
-### Upgrade MariaDB
-
-You might consider running the following command after a (major) version upgrade (such as from 5.5 to 10.0, or from 10.0 to 10.1):
-
-```
-# mysql_upgrade -u root -p
-
-```
 
 ### Upgrade from Oracle MySQL to MariaDB
 
@@ -239,6 +232,49 @@ Optionally, you may populate the table with specific time zone files:
 
 ```
 $ mysql_tzinfo_to_sql <timezone_file> <timezone_name> | mysql -u root -p mysql
+
+```
+
+## Database maintenance
+
+### Upgrade databases on major releases
+
+Upon a major version release of [mariadb](https://www.archlinux.org/packages/?name=mariadb) (for example mariadb-10.1.10-1 to mariadb-10.1.18-1), it is wise to upgrade databases:
+
+```
+$ mysql_upgrade -u root -p
+
+```
+
+### Checking, optimizing and repairing databases
+
+[mariadb](https://www.archlinux.org/packages/?name=mariadb) ships with `mysqlcheck` which can be used to check, repair, and optimize tables within databases from the shell. See the mysqlcheck man page for more. Several command tasks are shown:
+
+To check all tables in all databases:
+
+```
+$ mysqlcheck --all-databases -u root -p -c
+
+```
+
+To analyze all tables in all databases:
+
+```
+$ mysqlcheck --all-databases -u root -p -a
+
+```
+
+To repair all tables in all databases:
+
+```
+$ mysqlcheck --all-databases -u root -p -r
+
+```
+
+To optimize all tables in all databases:
+
+```
+$ mysqlcheck --all-databases -u root -p -o
 
 ```
 

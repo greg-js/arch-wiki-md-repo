@@ -7,10 +7,10 @@
     *   [1.2 Integration with file managers](#Integration_with_file_managers)
 *   [2 Usage](#Usage)
     *   [2.1 libmtp](#libmtp)
-    *   [2.2 mtpfs](#mtpfs)
+    *   [2.2 simple-mtpfs](#simple-mtpfs)
     *   [2.3 jmtpfs](#jmtpfs)
     *   [2.4 go-mtpfs](#go-mtpfs)
-    *   [2.5 simple-mtpfs](#simple-mtpfs)
+    *   [2.5 mtpfs](#mtpfs)
     *   [2.6 Android File Transfer](#Android_File_Transfer)
     *   [2.7 Media players](#Media_players)
     *   [2.8 gvfs-mtp](#gvfs-mtp)
@@ -85,21 +85,19 @@ If connection is successful, there are several switch options to use in conjunct
 
 ```
 
-### mtpfs
+### simple-mtpfs
 
-**Note:** The following is likely to not work and you might have to resort to [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").
-
-First edit your `/etc/fuse.conf` and uncomment the following line:
+List MTP devices:
 
 ```
-user_allow_other
+$ simple-mtpfs --list-devices
 
 ```
 
 Mount your device on `~/mnt`:
 
 ```
-$ mtpfs -o allow_other ~/mnt
+$ simple-mtpfs ~/mnt
 
 ```
 
@@ -174,19 +172,21 @@ $ fusermount -u ~/mnt
 
 ```
 
-### simple-mtpfs
+### mtpfs
 
-List MTP devices:
+**Note:** The following is likely to not work and you might have to resort to [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").
+
+First edit your `/etc/fuse.conf` and uncomment the following line:
 
 ```
-$ simple-mtpfs --list-devices
+user_allow_other
 
 ```
 
 Mount your device on `~/mnt`:
 
 ```
-$ simple-mtpfs ~/mnt
+$ mtpfs -o allow_other ~/mnt
 
 ```
 

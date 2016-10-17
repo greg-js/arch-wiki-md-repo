@@ -87,9 +87,9 @@ GNOME (读音是*gah-nohm* 或 *nohm*)是一个简单易用的[桌面环境](/in
 
 GNOME 有三个可用的会话，都使用 GNOME Shell
 
-*   **GNOME** 是默认会话, 有创新的布局。
+*   **GNOME** 是默认会话, 有创新的布局，默认在 Wayland 协议上运行。
 *   **GNOME Classic** 的桌面布局类似于传统的GNOME 2, 使用预先激活的插件和参数。[[1]](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/) 所以它只是一个定制的 GNOME Shell，并不是完全独立的模式。
-*   **GNOME on Wayland** GNOME Shell 在新的 Wayland 协议上运行. 而传统的 X 应用程序在 Xwayland 上运行。
+*   **GNOME on Xorg** 曾经的默认选项，在 Xorg 上运行。
 
 ## 运行 GNOME
 

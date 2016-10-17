@@ -6,7 +6,7 @@
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
     *   [1.1 Не поддерживаемые драйвера](#.D0.9D.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.B8.D0.B2.D0.B0.D0.B5.D0.BC.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0)
-    *   [1.2 Альтернативная установка: собственное ядро](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0:_.D1.81.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE)
+    *   [1.2 Собственное ядро](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE)
     *   [1.3 Pure Video HD](#Pure_Video_HD)
     *   [1.4 DRM kernel mode setting](#DRM_kernel_mode_setting)
         *   [1.4.1 Pacman hook](#Pacman_hook)
@@ -32,7 +32,7 @@
 
 **Важно:** Избегайте установки пакета драйвера с сайта NVIDIA. Установка через [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") позволяет обновлять драйвер вместе с остальной системой.
 
-Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) или [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для пользователей ядра, собранного самостоятельно, следует обратится к [следующему](#.D0.90.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.B0.D1.8F_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0:_.D1.81.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE) подразделу.
+Данные инструкции предназначены для предоставляемых в дистрибутиве пакетов ядра [linux](https://www.archlinux.org/packages/?name=linux) или [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). Для пользователей ядра, собранного самостоятельно, следует обратится к [следующему](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.8F.D0.B4.D1.80.D0.BE) подразделу.
 
 1\. Если вы не знаете модель графической карты, установленной у вас, для поиска используйте данный запрос:
 
@@ -68,11 +68,11 @@
 
 **Совет:** Устаревшие драйвера nvidia-96xx-dkms и nvidia-173xx-dkms также можно установить с неофициального [репозитория [city]](http://pkgbuild.com/~bgyorgy/city.html). (Настоятельно рекомендуется использовать данный способ, который поможет избежать любых проблем с зависимостями после установки.)
 
-### Альтернативная установка: собственное ядро
+### Собственное ядро
 
 Если вы используете собственной ядро, то сборка модулей Nvidia может быть автоматизированна при помощи [DKMS](/index.php/Dynamic_Kernel_Module_Support_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dynamic Kernel Module Support (Русский)").
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (или специфичную ветку, например, [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). Модуль будет пересобираться после каждого обновления Nvidia или ядра благодаря DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) (или специфичную ветку, например, [nvidia-340xx-dkms](https://www.archlinux.org/packages/?name=nvidia-340xx-dkms)). Модуль будет пересобираться после каждого обновления драйвера или ядра благодаря DKMS [Pacman Hook](/index.php/Pacman#Hooks "Pacman").
 
 ### Pure Video HD
 

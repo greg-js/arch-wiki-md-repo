@@ -127,7 +127,7 @@ Your boot partition, on which you plan to install Syslinux, must contain a FAT, 
 
 ```
 # mkdir /boot/syslinux
-# cp -r /usr/lib/syslinux/bios/*.c32 /boot/syslinux/                           ## copy ALL the *.c32 files from /usr/lib/syslinux/bios/, DO NOT SYMLINK
+# cp /usr/lib/syslinux/bios/*.c32 /boot/syslinux/                           ## copy ALL the *.c32 files from /usr/lib/syslinux/bios/, DO NOT SYMLINK
 # extlinux --install /boot/syslinux/
 
 ```

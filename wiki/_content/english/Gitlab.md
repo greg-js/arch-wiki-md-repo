@@ -710,7 +710,7 @@ Enable your Gitlab virtual host and reload [Apache](/index.php/Apache "Apache"):
 Copy the Apache gitlab.conf file
 
 ```
-# cp /etc/webapps/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf
+# cp /usr/share/doc/gitlab/apache.conf.example /etc/httpd/conf/extra/gitlab.conf
 
 ```
 

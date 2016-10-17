@@ -37,20 +37,29 @@
 *   [ardour](https://www.archlinux.org/packages/?name=ardour)
 *   [qtractor](https://www.archlinux.org/packages/?name=qtractor)
 *   [hydrogen](https://www.archlinux.org/packages/?name=hydrogen)
+*   [musescore](https://www.archlinux.org/packages/?name=musescore)
 *   [rosegarden](https://www.archlinux.org/packages/?name=rosegarden)
 *   [qsynth](https://www.archlinux.org/packages/?name=qsynth)
 *   [jsampler](https://www.archlinux.org/packages/?name=jsampler)
 *   [lmms](https://www.archlinux.org/packages/?name=lmms)
+*   [calf](https://www.archlinux.org/packages/?name=calf)
 *   [dssi](https://www.archlinux.org/packages/?name=dssi)
+*   [guitarix2](https://www.archlinux.org/packages/?name=guitarix2)
 
 Остальные пакеты, которые вам могут понадобиться доступны в [AUR](/index.php/AUR "AUR"):
 
 *   [traverso](https://aur.archlinux.org/packages/traverso/)
 *   [qsampler](https://aur.archlinux.org/packages/qsampler/) (смотрите также [Linuxsampler](/index.php/Linuxsampler "Linuxsampler"))
+*   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
+*   [carla](https://aur.archlinux.org/packages/carla/)
+*   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
+*   [XCFA](https://aur.archlinux.org/packages/XCFA/)
+*   [yoshimi](https://aur.archlinux.org/packages/yoshimi/)
 *   [fsthost](https://aur.archlinux.org/packages/fsthost/)
-*   [jost](https://aur.archlinux.org/packages/jost/)
 *   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
+
+См. также [Список приложений аудио](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D1.83.D0.B4.D0.B8.D0.BE "List of applications (Русский)") и [Список редакторов аудио](/index.php/List_of_applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80.D1.8B_.D0.B0.D1.83.D0.B4.D0.B8.D0.BE "List of applications (Русский)").
 
 ### Настройка системы
 

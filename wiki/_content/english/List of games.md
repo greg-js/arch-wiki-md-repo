@@ -69,6 +69,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   The open-source Unix port of the Haaf's Game Engine is available at [icculus.org](https://icculus.org/hge-unix/).
 
+*   **KSpaceDuel** — Player attempts to destroy opponent’s satellite and controll their own one to keep it orbiting. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
+
+	[https://kde.org/applications/games/kspaceduel/](https://kde.org/applications/games/kspaceduel/) || [kdegames-kspaceduel](https://www.archlinux.org/packages/?name=kdegames-kspaceduel)
+
 *   **[Liquid War](https://en.wikipedia.org/wiki/Liquid_War "wikipedia:Liquid War")** — 2D multiplayer game with a simple and unique game mechanic. It could be classified as a fast-paced strategy.
 
 	[http://www.ufoot.org/liquidwar/](http://www.ufoot.org/liquidwar/) || [liquidwar](https://aur.archlinux.org/packages/liquidwar/)
@@ -92,6 +96,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 	[http://www.t3-i.com/pages/project.php?id=paintball_party_2](http://www.t3-i.com/pages/project.php?id=paintball_party_2) || [paintball-party-2](https://aur.archlinux.org/packages/paintball-party-2/)
 
 ## Arcade
+
+*   **Bomber** — A 2D game with a goal by hitting targets with bombs before their plane crashes into them. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/bomber/](https://www.kde.org/applications/games/bomber/) || [bomber](https://www.archlinux.org/packages/?name=bomber)
 
 *   **Bomberclone** — Free Bomberman-like game for Linux and Windows. The rules of the game are simple: run though a level and bomb other players.
 
@@ -125,13 +133,33 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://frozen-bubble.org](http://frozen-bubble.org) || [frozen-bubble](https://www.archlinux.org/packages/?name=frozen-bubble)
 
+*   **Granatier** — A clone of *Bomberman*. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
+
+	[https://www.kde.org/applications/games/granatier/](https://www.kde.org/applications/games/granatier/) || [granatier](https://www.archlinux.org/packages/?name=granatier)
+
 *   **[Hedgewars](https://en.wikipedia.org/wiki/Hedgewars "wikipedia:Hedgewars")** — Yet another Worms clone, considered to be better than its predecessor by many. Take turns to blast your opponents into oblivion with comedic results! Best in Multiplayer.
 
 	[http://hedgewars.org/](http://hedgewars.org/) || [hedgewars](https://www.archlinux.org/packages/?name=hedgewars)
 
+*   **kapman** — A clone of *PacMan*. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kapman/](https://www.kde.org/applications/games/kapman/) || [kapman](https://www.archlinux.org/packages/?name=kapman)
+
+*   **kbreakout** — *Breakout*-style game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kbreakout/](https://www.kde.org/applications/games/kbreakout/) || [kbreakout](https://www.archlinux.org/packages/?name=kbreakout)
+
 *   **lbreakout2** — Breakout-style arcade game in the manner of Arkanoid
 
 	[http://lgames.sourceforge.net/index.php?project=LBreakout2](http://lgames.sourceforge.net/index.php?project=LBreakout2) || [lbreakout2](https://www.archlinux.org/packages/?name=lbreakout2)
+
+*   **kbounce** — Building walls to limit amount of space occupied by two balls bouncing off the walls. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kbounce/](https://www.kde.org/applications/games/kbounce/) || [kbounce](https://www.archlinux.org/packages/?name=kbounce)
+
+*   **ksnakeduel** — *Snake*-like game for 2 players which compete to survive longer than the opponent. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/ksnakeduel/](https://www.kde.org/applications/games/ksnakeduel/) || [kdegames-ksnakeduel](https://www.archlinux.org/packages/?name=kdegames-ksnakeduel)
 
 *   **LTris** — Arcade version of Tetris
 
@@ -195,6 +223,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 ## Casual games
 
+*   **Aisleriot** — A collection of solitaire card games.
+
+	[https://wiki.gnome.org/Apps/Aisleriot](https://wiki.gnome.org/Apps/Aisleriot) || [aisleriot](https://www.archlinux.org/packages/?name=aisleriot)
+
 *   **Atanks** — A multi-platform Scorched Earth clone similar to the Worms series of games
 
 	|| [atanks](https://www.archlinux.org/packages/?name=atanks)
@@ -210,6 +242,14 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   **[Fortune](https://en.wikipedia.org/wiki/Fortune_(Unix) "w:Fortune (Unix)")** — Displays Random messages/quotes/jokes when invoked
 
 	|| [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)
+
+*   **Kajongg** — An implementation of [Mahjong](https://en.wikipedia.org/wiki/Mahjong) for 4 players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kajongg/](https://www.kde.org/applications/games/kajongg/) || [kdegames-kajongg](https://www.archlinux.org/packages/?name=kdegames-kajongg)
+
+*   **Lskat** — A variation of [Skat](https://en.wikipedia.org/wiki/Skat) card game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
+
+	[https://www.kde.org/applications/games/lskat/](https://www.kde.org/applications/games/lskat/) || [kdegames-lskat](https://www.archlinux.org/packages/?name=kdegames-lskat)
 
 *   **Mah-Jong** — Chinese Classical mahjong (not solitaire) with network support
 
@@ -255,9 +295,17 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 ## Education
 
+*   **Blinken** — A sequence-remembering game for training memory. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/blinken/](https://www.kde.org/applications/education/blinken/) || [blinken](https://www.archlinux.org/packages/?name=blinken)
+
 *   **GCompris** — Educational software suite comprising of numerous activities for children aged 2 to 10.
 
 	[http://gcompris.net/-en-](http://gcompris.net/-en-) || [gcompris](https://www.archlinux.org/packages/?name=gcompris)
+
+*   **katomic** — Slide elements so they resemble a chemical molecule. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/katomic/](https://www.kde.org/applications/games/katomic/) || [katomic](https://www.archlinux.org/packages/?name=katomic)
 
 *   **Tux Paint** — Free drawing program designed for young children.
 
@@ -341,6 +389,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[http://frogatto.com](http://frogatto.com) || [frogatto](https://www.archlinux.org/packages/?name=frogatto)
 
+*   **KGoldrunner** — A platform game with the goal of collecting gold. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kgoldrunner/](https://www.kde.org/applications/games/kgoldrunner/) || [kdegames-kgoldrunner](https://www.archlinux.org/packages/?name=kdegames-kgoldrunner)
+
 *   **Knyttstories** — Platformer with adventure elements, heavy exploration and downloadable levels.
 
 	[http://nifflas.ni2.se/](http://nifflas.ni2.se/) || [knyttstories](https://aur.archlinux.org/packages/knyttstories/)
@@ -367,6 +419,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[http://www.blockout.net/blockout2/](http://www.blockout.net/blockout2/) || [blockout2](https://aur.archlinux.org/packages/blockout2/)
 
+*   **Bovo** — [Gomoku](https://en.wikipedia.org/wiki/Gomoku)-like game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/bovo/](https://www.kde.org/applications/games/bovo/) || [bovo](https://www.archlinux.org/packages/?name=bovo)
+
 *   **Cgoban3** — Kiseido Go and SGF client.
 
 	[http://www.igoweb.org/~wms/comp/cgoban/](http://www.igoweb.org/~wms/comp/cgoban/) || [cgoban](https://www.archlinux.org/packages/?name=cgoban)
@@ -379,13 +435,41 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[http://www.aluminumangel.org/attack/](http://www.aluminumangel.org/attack/) || [crack-attack](https://aur.archlinux.org/packages/crack-attack/)
 
+*   **Gnu Go** — A terminal-based implementation of Go from GNU.
+
+	[https://www.gnu.org/software/gnugo/](https://www.gnu.org/software/gnugo/) || [gnugo](https://www.archlinux.org/packages/?name=gnugo)
+
+*   **gweled** — Eliminating tiles by joining them in groups of three.
+
+	[https://launchpad.net/gweled/](https://launchpad.net/gweled/) || [gweled](https://www.archlinux.org/packages/?name=gweled)
+
 *   **Hitori** — Small application written to allow one to play the eponymous puzzle game, which is similar in theme to more popular puzzles such as Sudoku.
 
 	[https://wiki.gnome.org/Apps/Hitori](https://wiki.gnome.org/Apps/Hitori) || [hitori](https://www.archlinux.org/packages/?name=hitori)
 
+*   **kblackbox** — Finding positions of hidden balls by using hints. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kblackbox/](https://www.kde.org/applications/games/kblackbox/) || [kblackbox](https://www.archlinux.org/packages/?name=kblackbox)
+
+*   **kblocks** — *Tetris* clone. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kblacks/](https://www.kde.org/applications/games/kblacks/) || [kblocks](https://www.archlinux.org/packages/?name=kblocks)
+
+*   **Kigo** — *Go* for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kigo/](https://www.kde.org/applications/games/kigo/) || [kdegames-kigo](https://www.archlinux.org/packages/?name=kdegames-kigo)
+
+*   **Kolf** — A minigolf game with 2D overhead view. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kolf/](https://www.kde.org/applications/games/kolf/) || [kdegames-kolf](https://www.archlinux.org/packages/?name=kdegames-kolf)
+
 *   **Ksudoku** — Sudoku game and more for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[http://ksudoku.sourceforge.net/](http://ksudoku.sourceforge.net/) || [kdegames-ksudoku](https://www.archlinux.org/packages/?name=kdegames-ksudoku)
+
+*   **Kubrick** — A Rubik’s cube solving game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kubrick/](https://www.kde.org/applications/games/kubrick/) || [kdegames-kubrick](https://www.archlinux.org/packages/?name=kdegames-kubrick)
 
 *   **Netris** — Unfinished developmental version of Netris, a free networked version of Tetris.
 
@@ -502,6 +586,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Dwarf Fortress](https://en.wikipedia.org/wiki/Dwarf_Fortress "wikipedia:Dwarf Fortress")** — Single-player fantasy game. You control a dwarven outpost or an adventurer in a randomly generated persistent world.
 
 	[http://www.bay12games.com/dwarves/](http://www.bay12games.com/dwarves/) || [dwarffortress](https://www.archlinux.org/packages/?name=dwarffortress)
+
+*   **glHack** — An OpenGL-based clone of NetHack.
+
+	[http://glhack.sourceforge.net/](http://glhack.sourceforge.net/) || [glhack](https://www.archlinux.org/packages/?name=glhack)
 
 *   **[Nethack](https://en.wikipedia.org/wiki/NetHack "wikipedia:NetHack")** — Single player dungeon exploration game.
 
@@ -886,6 +974,14 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://heroesofnewerth.com/](http://heroesofnewerth.com/) || [hon](https://aur.archlinux.org/packages/hon/)
 
+*   **KReversi** — A *reversi* implementation. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kreversi/](https://www.kde.org/applications/games/kreversi/) || [kdegames-kreversi](https://www.archlinux.org/packages/?name=kdegames-kreversi)
+
+*   **KsirK** — A *risk*-styled game in which players try to conquer the world by deciding which area to be invaded next. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/ksirk/](https://www.kde.org/applications/games/ksirk/) || [kdegames-ksirk](https://www.archlinux.org/packages/?name=kdegames-ksirk)
+
 *   **Lgeneral** — Turn-based strategy engine heavily inspired by Panzer General.
 
 	[http://lgames.sourceforge.net/index.php?project=LGeneral](http://lgames.sourceforge.net/index.php?project=LGeneral) || [lgeneral](https://aur.archlinux.org/packages/lgeneral/)
@@ -935,6 +1031,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **Lincity-ng** — City simulation game in which you are required to build and maintain a city. You can win the game either by building a sustainable economy or by evacuating all citizens with spaceships.
 
 	[https://fedorahosted.org/LinCity-NG/](https://fedorahosted.org/LinCity-NG/) || [lincity-ng](https://www.archlinux.org/packages/?name=lincity-ng)
+
+*   **Konquest** — A turn-based game in which the player wage wars by managing a fleet of spaceships and conquering other planets. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/konquest/](https://www.kde.org/applications/games/konquest/) || [kdegames-konquest](https://www.archlinux.org/packages/?name=kdegames-konquest)
 
 *   **[Simutrans](https://en.wikipedia.org/wiki/Simutrans "wikipedia:Simutrans")** — Another Transport simulation that works on linux with sdl.
 

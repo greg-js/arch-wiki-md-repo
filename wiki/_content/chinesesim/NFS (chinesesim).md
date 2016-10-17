@@ -494,7 +494,7 @@ See also: [NetworkManager#Use dispatcher to handle mounting of CIFS shares](/ind
 
 ## 排错
 
-参阅 [NFS 排错](/index.php?title=NFS_%E6%8E%92%E9%94%99&action=edit&redlink=1 "NFS 排错 (page does not exist)")。
+参阅 [NFS排错](/index.php/NFS%E6%8E%92%E9%94%99 "NFS排错")。
 
 ## 参阅
 

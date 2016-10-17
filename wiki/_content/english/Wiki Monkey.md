@@ -1,4 +1,4 @@
-[Wiki Monkey](https://github.com/kynikos/wiki-monkey/wiki) is a MediaWiki-compatible bot and editor assistant that can be used directly within wiki pages in the browser as a user script. Currently it is tested on [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and [Opera](/index.php/Opera "Opera"), but it is very likely to work also on other browsers out of the box or with minor adaptations. Wiki Monkey can also be easily extended through the creation of plugins, exploiting its API.
+[Wiki Monkey](https://github.com/kynikos/wiki-monkey/wiki) is a MediaWiki-compatible bot and editor assistant that can be used directly within wiki pages in the browser as a user script. It is developed and tested on [Firefox](/index.php/Firefox "Firefox"), and designed to work also on [Chromium](/index.php/Chromium "Chromium") and [Opera](/index.php/Opera "Opera"), for which full support is given; it is very likely to work also on other browsers out of the box or with minor adaptations. Wiki Monkey can also be easily extended through the creation of plugins, exploiting its API.
 
 The project is currently focused on ArchWiki, and as such most plugins address ArchWiki-specific problems.
 
@@ -16,15 +16,7 @@ The project is currently focused on ArchWiki, and as such most plugins address A
 
 ## Installation
 
-Start by installing a user script engine for your browser:
-
-*   **Firefox:** [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
-*   **Chromium:** [Tampermonkey](https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-*   **Opera:** [Violentmonkey](https://addons.opera.com/en/extensions/details/violent-monkey)
-
-Now just click on the following link and your browser should ask you to install the ArchWiki version of Wiki Monkey: [install](https://raw.github.com/kynikos/wiki-monkey/master/scripts/WikiMonkey-ArchWiki.user.js).
-
-Follow [Getting started](https://github.com/kynikos/wiki-monkey/wiki/Getting-started) for more information.
+Follow the instructions at [Getting started](https://github.com/kynikos/wiki-monkey/wiki/Getting-started).
 
 ## Tour of the features
 

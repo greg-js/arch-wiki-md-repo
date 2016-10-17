@@ -1,3 +1,5 @@
+**Warning:** Midori is based on a WebKit port that is today considered insecure and outdated. It's recommended to use [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
 [Midori](http://midori-browser.org) is a lightweight Webkit-based web browser developed by Christian Dywan. It is part of the [Xfce](/index.php/Xfce "Xfce") Goodies project.
 
 Some of its features are:

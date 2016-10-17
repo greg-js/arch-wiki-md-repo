@@ -1,3 +1,5 @@
+**Warning:** Vimprobable is based on a WebKit port that is today considered insecure and outdated. It's recommended to use [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
 [Vimprobable](http://www.vimprobable.org/) is a WWW browser that behaves like the Vimperator plugin available for Mozilla [Firefox](/index.php/Firefox "Firefox"). It is based on the WebKit engine (using GTK bindings). It is a fork of the currently abandoned vimpression.
 
 ## Contents

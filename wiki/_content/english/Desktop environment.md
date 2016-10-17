@@ -176,8 +176,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [equate-git](https://aur.archlinux.org/packages/equate-git/) | Ecrire
 [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) | [Ephoto](https://www.enlightenment.org/about-ephoto)
 [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) | [Rage](https://www.enlightenment.org/about-rage)
-[rage](https://aur.archlinux.org/packages/rage/) | Elbow
-[elbow-git](https://aur.archlinux.org/packages/elbow-git/) | [XDM](/index.php/XDM "XDM")
+[rage](https://aur.archlinux.org/packages/rage/) | [Links](https://en.wikipedia.org/wiki/Links_(web_browser) "wikipedia:Links (web browser)")
+[links](https://www.archlinux.org/packages/?name=links) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [GNOME](/index.php/GNOME "GNOME") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")
@@ -208,7 +208,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [greenisland](https://aur.archlinux.org/packages/greenisland/) | Hawaii Shell
 [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/) | Terminal
 [hawaii-terminal](https://aur.archlinux.org/packages/hawaii-terminal/) | Swordfish
-[swordfish-git](https://aur.archlinux.org/packages/swordfish-git/) | [SpeedCrunch](http://speedcrunch.org/)
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=swordfish-git)</small> | [SpeedCrunch](http://speedcrunch.org/)
 [speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
 [juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | EyeSight
 [eyesight](https://aur.archlinux.org/packages/eyesight/) | SMPlayer
@@ -272,20 +272,20 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | pluma
 [pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
 [eom](https://www.archlinux.org/packages/?name=eom) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[parole](https://www.archlinux.org/packages/?name=parole) | [Firefox](/index.php/Firefox "Firefox")
+[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [MATE](/index.php/MATE "MATE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
 [marco-gtk3](https://www.archlinux.org/packages/?name=marco-gtk3) | MATE Panel
 [mate-panel-gtk3](https://www.archlinux.org/packages/?name=mate-panel-gtk3) | MATE Terminal
-[mate-terminal-gtk3](https://www.archlinux.org/packages/?name=mate-terminal-gtk3) | Caja
+[mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
 [caja-gtk3](https://www.archlinux.org/packages/?name=caja-gtk3) | [Galculator](http://galculator.sourceforge.net/)
 [galculator](https://www.archlinux.org/packages/?name=galculator) | pluma
 [pluma-gtk3](https://www.archlinux.org/packages/?name=pluma-gtk3) | Eye of MATE
 [eom-gtk3](https://www.archlinux.org/packages/?name=eom-gtk3) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[parole](https://www.archlinux.org/packages/?name=parole) | [Firefox](/index.php/Firefox "Firefox")
+[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
@@ -296,8 +296,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) | [Scratch](https://launchpad.net/scratch)
 [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [Pantheon Photos](https://launchpad.net/pantheon-photos)
 [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) | [Audience](https://launchpad.net/audience)
-[audience](https://www.archlinux.org/packages/?name=audience) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
+[audience](https://www.archlinux.org/packages/?name=audience) | [Epiphany](/index.php/Epiphany "Epiphany")
+[epiphany](https://www.archlinux.org/packages/?name=epiphany) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
 [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
 | [Papyros](/index.php/Papyros "Papyros") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
@@ -344,8 +344,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [galculator](https://www.archlinux.org/packages/?name=galculator) | Mousepad
 [mousepad](https://www.archlinux.org/packages/?name=mousepad) | [Ristretto](http://goodies.xfce.org/projects/applications/ristretto)
 [ristretto](https://www.archlinux.org/packages/?name=ristretto) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
-[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[parole](https://www.archlinux.org/packages/?name=parole) | [Firefox](/index.php/Firefox "Firefox")
+[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 
 ### Resource use

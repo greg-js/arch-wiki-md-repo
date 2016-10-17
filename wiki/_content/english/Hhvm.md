@@ -12,7 +12,7 @@ HHVM runs much of the world’s existing PHP. Developers and hosts are adopting 
 
 ## Installation
 
-[Install](/index.php/Install "Install") package [hhvm](https://aur.archlinux.org/packages/hhvm/) in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") package [hhvm-git](https://aur.archlinux.org/packages/hhvm-git/) in the [AUR](/index.php/AUR "AUR").
 
 ## Running
 

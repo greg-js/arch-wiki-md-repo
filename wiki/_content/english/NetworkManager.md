@@ -643,7 +643,7 @@ If it is preferable to save the passwords in encrypted form in a keyring instead
 
 The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
 
-Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password for this user`.
+Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password only for this user`.
 
 #### Using KDE Wallet
 

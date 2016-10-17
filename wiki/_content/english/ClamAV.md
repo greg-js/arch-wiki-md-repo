@@ -77,7 +77,7 @@ This will add signatures/databases from e.g. MalwarePatrol, SecuriteInfo, Yara, 
 ```
 $ clamscan myfile
 $ clamscan --recursive --infected /home # or -r -i
-$ clamscan --recursive --infected --exclude-dir='^/sys|^/proc|^/dev|^/lib|^/bin|^/sbin' /
+$ clamscan --recursive --infected --exclude-dir='^/sys|^/dev' /
 
 ```
 

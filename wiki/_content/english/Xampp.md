@@ -7,6 +7,7 @@
     *   [1.2 Manual Installation](#Manual_Installation)
     *   [1.3 Removal](#Removal)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Autostart on boot](#Autostart_on_boot)
 *   [3 Usage](#Usage)
 *   [4 Hosting files outside the htdocs directory](#Hosting_files_outside_the_htdocs_directory)
 *   [5 Debugging and profiling with Xdebug and Xampp](#Debugging_and_profiling_with_Xdebug_and_Xampp)
@@ -71,6 +72,36 @@ If you would like to set up security of server, you can do it simply by this com
 ```
 
 You will be asked step by step to choose passwords for web page's access, user "pma" for phpMyAdmin, user "root" for MySQL and user "nobody" for proFTP.
+
+### Autostart on boot
+
+In order to start Xampp at boot, service needs to be created, in the following file:
+
+```
+# vim /etc/systemd/system/xampp.service
+
+```
+
+Put these lines:
+
+```
+[Unit]
+Description=XAMPP
+
+[Service]
+ExecStart=/opt/lampp/lampp start
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+Enable autostart like this:
+
+```
+# systemctl enable xampp.service
+
+```
 
 ## Usage
 

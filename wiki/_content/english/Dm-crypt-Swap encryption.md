@@ -56,7 +56,7 @@ After a reboot to activate the encrypted swap, you will note that running `swapo
 
 It's dangerous to use crypttab swap with simple kernel device names like `/dev/sdX#` or even `/dev/disk/by-id/ata-SERIAL-partX`. A small change in your device names or partitioning layout and `/etc/crypttab` will see your valuable data formatted on the next boot. Same if you use PARTUUID and then decide to use that partition for something else without removing the crypttab entry first.
 
-It is more reliable to identify the correct partition by giving it a genuine UUID or LABEL. By default that does not work because dm-crypt and `mkswap` would simply overwrite any content on that partition which would remove the LABEL too; however, it is possible to specify a swap offset. This allows you to create a very small, empty, bogus filesystem with no other purpose than providing a persistant UUID or LABEL for the swap encryption.
+It is more reliable to identify the correct partition by giving it a genuine UUID or LABEL. By default that does not work because dm-crypt and `mkswap` would simply overwrite any content on that partition which would remove the UUID and LABEL too; however, it is possible to specify a swap offset. This allows you to create a very small, empty, bogus filesystem with no other purpose than providing a persistent UUID or LABEL for the swap encryption.
 
 Create a filesystem with label of your choice:
 

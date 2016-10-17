@@ -75,6 +75,17 @@ Install [postgresql](https://www.archlinux.org/packages/?name=postgresql) and se
 
 #### MariaDB
 
+Install [mariadb](https://www.archlinux.org/packages/?name=mariadb) and setup a user and database:
+
+```
+# CREATE DATABASE `ishouldchangethisdatabasename` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
+# CREATE USER 'ishouldchangethisusername'@'localhost' IDENTIFIED BY 'ishouldchangethispassword';
+# GRANT ALL ON `ishouldchangethisdatabasename`.* TO 'ishouldchangethisusername'@'localhost';
+
+```
+
+On the installation page select **mysql** and insert your configured user, password and database name.
+
 ### SMTP
 
 ### oAuth

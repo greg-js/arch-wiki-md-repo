@@ -177,6 +177,7 @@ LANGUAGE=en_AU:en_GB:en
 If `LC_TIME` is set to `en_US.UTF-8`, for example, the date format will be "MM/DD/YYYY". If wanting to use the the ISO 8601 date format of "YYYY-MM-DD" use:
 
  `locale.conf`  `LC_TIME=en_DK.UTF-8` 
+**Note:** Programs do not necessarily respect this variable to format the date. For example, [date(1)](http://man7.org/linux/man-pages/man1/date.1.html) uses its own parameters to do so.
 
 ### LC_COLLATE: collation
 

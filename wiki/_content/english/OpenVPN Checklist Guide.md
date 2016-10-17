@@ -14,34 +14,31 @@ This article summarizes the install process required for OpenVPN. See [OpenVPN](
 
 ## Prepare data
 
-*   Copy `/usr/share/easy-rsa/` to `/etc/openvpn/easy-rsa` and cd there
-*   Edit the `vars` file with the information you want, then source it. Read [Create a Public Key Infrastructure Using the easy-rsa Scripts](/index.php/Create_a_Public_Key_Infrastructure_Using_the_easy-rsa_Scripts "Create a Public Key Infrastructure Using the easy-rsa Scripts") for details.
-
- `# source ./vars` 
-
+*   Copy `/etc/easy-rsa` to `/etc/openvpn/easy-rsa` and cd there
+*   Edit the `vars` file with the information you want. Read [Create a Public Key Infrastructure Using the easy-rsa Scripts](/index.php/Create_a_Public_Key_Infrastructure_Using_the_easy-rsa_Scripts "Create a Public Key Infrastructure Using the easy-rsa Scripts") for details.
 *   Clean up any previous keys:
 
- `# ./clean-all` 
+ `# easyrsa clean-all` 
 
 ## Generate the certificates
 
 *   Create the "certificate authority" key
 
- `#  ./build-ca` 
+ `# easyrsa build-ca` 
 
 *   Create certificate and private key for the server
 
- `#  ./build-key-server *<server-name>*` 
+ `# easyrsa build-server-full *<server-name>*` 
 
 *   Create the Diffie-Hellman pem file for the server. Do not enter a challenge password or company name when you set these up.
 
- `#  ./build-dh` 
+ `# easyrsa gen-dh` 
 
 *   Create a certificate for each client.
 
- `# ./build-key *<client-name>*` 
+ `# easyrsa build-client-full *<client-name>*` 
 
-All certificates are stored in `keys` directory. If you mess up, you can start all over by doing a `./clean-all`
+All certificates are stored in `keys` directory. If you mess up, you can start all over by doing a `easyrsa clean-all`
 
 Copy to each client the `ca.crt`, and their respective crt and key files.
 
