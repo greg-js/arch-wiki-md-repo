@@ -24,7 +24,7 @@
 
 ## Testing configuration
 
-When run without any option, *xrandr* shows the names of different outputs available on the system (`LVDS`, `VGA-0`, etc.) and resolutions available on each:
+When run without any option, *xrandr* shows the names of different outputs available on the system (`LVDS`, `VGA-0`, etc.) and resolutions available on each, with a ***** after the current one and a **+** after the preferred one :
 
  `xrandr` 
 ```

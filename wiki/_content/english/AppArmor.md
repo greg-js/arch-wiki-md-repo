@@ -1,5 +1,13 @@
 [AppArmor](https://en.wikipedia.org/wiki/AppArmor "wikipedia:AppArmor") is a [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
 
+AppArmor, like most other LSMs, supplements rather than replaces the default Discretionary Access Control (DAC). As such it's impossible to grant a process more privileges than it had in the first place.
+
+Ubuntu, SUSE and a number of other distributions use it by default. RHEL (and it's variants) use SELinux which requires good userspace integration to work properly. SELinux attaches labels to all files, processes and objects and is therefore very flexible. However configuring SELinux is considered to be very complicated and requires a supported filesystem. AppArmor on the other hand works using file paths and its configuration can be easily adapted.
+
+AppArmor proactively protects the operating system and applications from external or internal threats and even zero-day attacks by enforcing a specific rule set on a per application basis. Security policies completely define what system resources individual applications can access, and with what privileges. Access is denied by default if no profile says otherwise. A few default policies are included with AppArmor and using a combination of advanced static analysis and learning-based tools, AppArmor policies for even very complex applications can be deployed successfully in a matter of hours.
+
+Every breach of policy triggers a message in the system log, and AppArmor can be configured to notify users with real-time violation warnings popping up on the desktop.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -16,9 +24,7 @@
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Get desktop notification on DENIED actions](#Get_desktop_notification_on_DENIED_actions)
     *   [5.2 Cache profiles](#Cache_profiles)
-*   [6 More Info](#More_Info)
-*   [7 Links](#Links)
-*   [8 See also](#See_also)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -29,10 +35,10 @@
 When compiling the kernel, it is required to at least set the following options:
 
 ```
- CONFIG_SECURITY_APPARMOR=y
- CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=1
- CONFIG_DEFAULT_SECURITY_APPARMOR=y
- CONFIG_AUDIT=y
+CONFIG_SECURITY_APPARMOR=y
+CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=1
+CONFIG_DEFAULT_SECURITY_APPARMOR=y
+CONFIG_AUDIT=y
 
 ```
 
@@ -60,11 +66,11 @@ To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `
 
 ### Testing
 
-After reboot you can test if AppArmor is really enabled using this command as root:
+After a reboot you can test if AppArmor is really enabled using this command as root:
 
+ `# cat /sys/module/apparmor/parameters/enabled` 
 ```
- # cat /sys/module/apparmor/parameters/enabled 
- Y
+Y
 
 ```
 
@@ -72,7 +78,7 @@ After reboot you can test if AppArmor is really enabled using this command as ro
 
 ## Disabling
 
-To disable AppArmor for the current session, [stop](/index.php/Stop "Stop") `apparmor.service`, or disable it to prevent it from starting at the next boot.
+To disable AppArmor for the current session, [stop](/index.php/Stop "Stop") `apparmor.service`, or [disable](/index.php/Disable "Disable") it to prevent it from starting at the next boot.
 
 Alternatively you may choose to disable the kernel modules required by AppArmor by appending `apparmor=0 security=""` to the [kernel boot parameters](/index.php/Kernel_parameters "Kernel parameters").
 
@@ -113,7 +119,9 @@ profile test /usr/lib/test/test_binary {
 
 ```
 
-Text preceded by a `@` symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`), tunables (`/etc/apparmor.d/tunables/`) or by the profile itself. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax). Most common use cases are covered by the following statements:
+Text preceded by a `@` symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`), tunables (`/etc/apparmor.d/tunables/`) or by the profile itself. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax).
+
+Most common use cases are covered by the following statements:
 
 *   `r` — read: read data
 *   `w` — write: create, delete, write to a file and extend it
@@ -162,19 +170,7 @@ Since AppArmor has to translate the configured profiles into a binary format it 
 
 To circumvent some of those problems AppArmor can cache profiles in `/etc/apparmor.d/cache/`. However this behaviour is disabled by default therefore it must be done manually with `apparmor_parser`. In order to write to the cache use `-W` (overwrite existing profiles with `-T`) and reload the profiles using `-r`. Refer to [#Parsing profiles](#Parsing_profiles) for a brief overview of additional arguments.
 
-## More Info
-
-AppArmor, like most other LSMs, supplements rather than replaces the default Discretionary Access Control (DAC). As such it's impossible to grant a process more privileges than it had in the first place.
-
-Ubuntu, SUSE and a number of other distributions use it by default. RHEL (and it's variants) use SELinux which requires good userspace integration to work properly. People tend to agree that it is also much much harder to configure correctly.
-
-Taking a common example - A new Flash vulnerability: If you were to browse to a malicious website AppArmor can prevent the exploited plugin from accessing anything that may contain private information. In almost all browsers, plugins run out of process which makes isolating them much easier.
-
-AppArmor profiles (usually) get stored in easy to read text files in `/etc/apparmor.d`
-
-Every breach of policy triggers a message in the system log, and many distributions also integrate it into DBUS so that you get real-time violation warnings popping up on your desktop.
-
-## Links
+## See also
 
 *   [Home Page](http://wiki.apparmor.net/index.php/Main_Page)
 *   [AppArmor Core Policy Reference](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference) — Detailed description of available options in a profile
@@ -190,8 +186,3 @@ Every breach of policy triggers a message in the system log, and many distributi
 *   [Launchpad Project Page](https://launchpad.net/apparmor)
 *   [Contributing](http://wiki.apparmor.net/index.php/Gittutorial) — Introduction to git mechanics and on how to contribute
 *   [FS#21406](https://bugs.archlinux.org/task/21406) — Initial discussion about the introduction of AppArmor
-
-## See also
-
-*   [TOMOYO Linux](/index.php/TOMOYO_Linux "TOMOYO Linux")
-*   [SELinux](/index.php/SELinux "SELinux")

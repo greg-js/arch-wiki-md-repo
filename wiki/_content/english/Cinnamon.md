@@ -6,6 +6,7 @@
 *   [2 Starting Cinnamon](#Starting_Cinnamon)
     *   [2.1 Graphical log-in](#Graphical_log-in)
     *   [2.2 Starting Cinnamon manually](#Starting_Cinnamon_manually)
+    *   [2.3 Restarting Cinnamon](#Restarting_Cinnamon)
 *   [3 Configuration](#Configuration)
     *   [3.1 Cinnamon settings](#Cinnamon_settings)
     *   [3.2 Applets and extensions](#Applets_and_extensions)
@@ -49,6 +50,15 @@ If you prefer to start Cinnamon manually from the console, add the following lin
 ```
 
 If the *Cinnamon (Software Rendering)* session is required, use `cinnamon-session-cinnamon2d` instead of `cinnamon-session`.
+
+### Restarting Cinnamon
+
+From a command line, execute the following line:
+
+```
+$ nohup cinnamon --replace > /dev/null 2>&1 &
+
+```
 
 ## Configuration
 

@@ -7,39 +7,31 @@
 ## Contents
 
 *   [1 Список вспомогательных инструментов](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.B2.D1.81.D0.BF.D0.BE.D0.BC.D0.BE.D0.B3.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D1.85_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.BE.D0.B2)
-    *   [1.1 aurbuild](#aurbuild)
-    *   [1.2 aurget](#aurget)
-    *   [1.3 aurora](#aurora)
-    *   [1.4 aurpac](#aurpac)
-    *   [1.5 aurploader](#aurploader)
-    *   [1.6 aursh](#aursh)
-    *   [1.7 autoaur](#autoaur)
-    *   [1.8 burp](#burp)
-    *   [1.9 cower](#cower)
-    *   [1.10 haskell-archlinux](#haskell-archlinux)
-    *   [1.11 makeaur](#makeaur)
-    *   [1.12 Meat ( Alpha / Under development )](#Meat_.28_Alpha_.2F_Under_development_.29)
-    *   [1.13 pacaur](#pacaur)
-    *   [1.14 packer](#packer)
-    *   [1.15 pacmoon](#pacmoon)
-    *   [1.16 paktahn](#paktahn)
-    *   [1.17 pbfetch](#pbfetch)
-    *   [1.18 pbget](#pbget)
-    *   [1.19 pkgman](#pkgman)
-    *   [1.20 powaur](#powaur)
-    *   [1.21 spinach](#spinach)
-    *   [1.22 srcman](#srcman)
-    *   [1.23 yaourt](#yaourt)
+    *   [1.1 aurget](#aurget)
+    *   [1.2 aurora](#aurora)
+    *   [1.3 aurpac](#aurpac)
+    *   [1.4 aurploader](#aurploader)
+    *   [1.5 aursh](#aursh)
+    *   [1.6 autoaur](#autoaur)
+    *   [1.7 burp](#burp)
+    *   [1.8 cower](#cower)
+    *   [1.9 haskell-archlinux](#haskell-archlinux)
+    *   [1.10 makeaur](#makeaur)
+    *   [1.11 Meat ( Alpha / Under development )](#Meat_.28_Alpha_.2F_Under_development_.29)
+    *   [1.12 pacaur](#pacaur)
+    *   [1.13 packer](#packer)
+    *   [1.14 pacmoon](#pacmoon)
+    *   [1.15 paktahn](#paktahn)
+    *   [1.16 pbfetch](#pbfetch)
+    *   [1.17 pbget](#pbget)
+    *   [1.18 pkgman](#pkgman)
+    *   [1.19 powaur](#powaur)
+    *   [1.20 spinach](#spinach)
+    *   [1.21 srcman](#srcman)
+    *   [1.22 yaourt](#yaourt)
 *   [2 Сравнительная таблица](#.D0.A1.D1.80.D0.B0.D0.B2.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D1.82.D0.B0.D0.B1.D0.BB.D0.B8.D1.86.D0.B0)
 
 ## Список вспомогательных инструментов
-
-### aurbuild
-
-aurbuild предназначен для загруки и сборки пакетов из AUR.
-
-*   Сайт: [http://aurbuild.berlios.de/](http://aurbuild.berlios.de/)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=1775](https://aur.archlinux.org/packages.php?ID=1775)
 
 ### aurget
 

@@ -57,9 +57,10 @@ This article is a general list of applications sorted by category, as a referenc
                 *   [1.5.2.1.1 Console](#Console_4)
                 *   [1.5.2.1.2 Graphical](#Graphical_3)
             *   [1.5.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
-                *   [1.5.2.2.1 Console clients](#Console_clients)
-                *   [1.5.2.2.2 Graphical clients](#Graphical_clients)
-                *   [1.5.2.2.3 Servers](#Servers)
+                *   [1.5.2.2.1 Command line](#Command_line)
+                *   [1.5.2.2.2 Console clients](#Console_clients)
+                *   [1.5.2.2.3 Graphical clients](#Graphical_clients)
+                *   [1.5.2.2.4 Servers](#Servers)
             *   [1.5.2.3 Multi-protocol clients](#Multi-protocol_clients)
                 *   [1.5.2.3.1 Console](#Console_5)
                 *   [1.5.2.3.2 Graphical](#Graphical_4)
@@ -916,7 +917,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[Quassel](/index.php/Quassel "Quassel")** — Modern, cross-platform, distributed IRC client.
 
-	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client)
+	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client) [quassel-monolithic](https://www.archlinux.org/packages/?name=quassel-monolithic)
 
 *   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client for the GNOME desktop inspired by [Irssi](/index.php/Irssi "Irssi").
 
@@ -929,6 +930,12 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 ##### XMPP (Jabber)
 
 See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") and [Wikipedia:Comparison of instant messaging clients#XMPP-related features](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#XMPP-related_features "wikipedia:Comparison of instant messaging clients").
+
+###### Command line
+
+*   **jp** — CLI frontend for Salut à Toi, multi-purpose XMPP client
+
+	[https://salut-a-toi.org](https://salut-a-toi.org) || [sat-jp](https://aur.archlinux.org/packages/sat-jp/)
 
 ###### Console clients
 
@@ -944,13 +951,17 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 	[http://mcabber.com/](http://mcabber.com/) || [mcabber](https://www.archlinux.org/packages/?name=mcabber)
 
-*   **Profanity** — A console based Jabber client inspired by Irssi.
-
-	[http://www.profanity.im/](http://www.profanity.im/) || [profanity](https://www.archlinux.org/packages/?name=profanity)
-
 *   **Poezio** — XMPP client with IRC feeling
 
 	[https://poez.io/](https://poez.io/) || [poezio](https://aur.archlinux.org/packages/poezio/)
+
+*   **Primitivus** — Console frontend for Salut à Toi, multi-purpose XMPP client
+
+	[https://salut-a-toi.org](https://salut-a-toi.org) || [sat-primitivus](https://aur.archlinux.org/packages/sat-primitivus/)
+
+*   **Profanity** — A console based Jabber client inspired by Irssi.
+
+	[http://www.profanity.im/](http://www.profanity.im/) || [profanity](https://www.archlinux.org/packages/?name=profanity)
 
 *   **xmpp-client** — A minimalist XMPP client with OTR support.
 

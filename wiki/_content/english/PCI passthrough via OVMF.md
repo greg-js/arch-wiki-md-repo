@@ -760,8 +760,6 @@ Users with older versions of QEMU and/or libvirt will instead have to disable a 
 ...
 ```
 
-As of the latest (currently 368.39 as of adding this) NVIDIA driver, using <hidden state='on'> is required, which does [[1]](https://patchwork.ozlabs.org/patch/355005/) have the effect of disabling the hypervisor extensions for the guest. To counter this, I have attempted to write a windows side patch to the driver[[2]](https://github.com/sk1080/nvidia-kvm-patcher), for those who understand the risks of enabling testsigning or otherwise bypassing driver signature enforcement.
-
 ### Unexpected crashes related to CPU exceptions
 
 In some cases, kvm may react strangely to certain CPU operations, such as GeForce Experience complaining about an unsupported CPU being present or some game crashing for unknown reasons. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs instead of returning an error value.

@@ -17,14 +17,14 @@ Sawfish can be [installed](/index.php/Installed "Installed") with the [sawfish](
 
 ## Starting Sawfish
 
-If you use **startx**, just put
+If you use [startx](/index.php/Startx "Startx"), just put
 
 ```
  exec sawfish
 
 ```
 
-at the end of your `~/.xinitrc`. For other cases, see ... ?
+at the end of your `~/.xinitrc`.
 
 ## Customization
 

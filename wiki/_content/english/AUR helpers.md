@@ -171,7 +171,7 @@ The columns have the following meaning:
 
 | Name | Written In | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Shell completion | Syntax | Specificity |
 | apacman | Bash | No | Yes | No | No | No | No | None | P | Fork of *packer* |
-| aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No [[2]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | P | Backup, downgrade, [ABS](/index.php/ABS "ABS") and [powerpill](/index.php/Powerpill "Powerpill") support, multilingual |
+| aura | Haskell | Yes | Yes | No [[1]](https://github.com/aurapm/aura/issues/14) | No | No [[2]](https://github.com/aurapm/aura/issues/353) | No | bash/zsh | P | Downgrade, [ABS](/index.php/ABS "ABS"), [powerpill](/index.php/Powerpill "Powerpill") support, multilingual, requires [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") |
 | aurel | Emacs Lisp | Yes | N/A | Yes | N/A | N/A | No | N/A | S | Emacs integration, no automatic builds |
 | aurget | Bash | Optional | Yes | No | No | No [[3]](https://github.com/pbrisbin/aurget/issues/40) | No | bash/zsh | P | sort by votes |
 | aurutils | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | zsh | S | [tsort](https://en.wikipedia.org/wiki/Topological_sorting "w:Topological sorting"), [PCRE](https://en.wikipedia.org/wiki/PCRE "w:PCRE"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") support |

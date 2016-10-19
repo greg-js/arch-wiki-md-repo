@@ -581,6 +581,8 @@ The [zfs-auto-snapshot-git](https://aur.archlinux.org/packages/zfs-auto-snapshot
 
 To prevent a dataset from being snapshotted at all, set `com.sun:auto-snapshot=false` on it. Likewise, set more fine-grained control as well by label, if, for example, no monthlies are to be kept on a snapshot, for example, set `com.sun:auto-snapshot:monthly=false`.
 
+**Note:** zfs-auto-snapshot-git will not create snapshots during scrubbing ([scrub](/index.php/ZFS#Scrub "ZFS")). It is possible to override this by editing provided systemd unit ([Systemd#Editing_provided_units](/index.php/Systemd#Editing_provided_units "Systemd")) and removing `--skip-scrub` from `ExecStart` line. Consequences not known, someone please edit.
+
 #### ZFS Snapshot Manager
 
 The [zfs-snap-manager](https://aur.archlinux.org/packages/zfs-snap-manager/) package from [AUR](/index.php/Arch_User_Repository "Arch User Repository") provides a python service that takes daily snapshots from a configurable set of ZFS datasets and cleans them out in a ["Grandfather-father-son"](https://en.wikipedia.org/wiki/Backup_rotation_scheme#Grandfather-father-son "wikipedia:Backup rotation scheme") scheme. It can be configured to e.g. keep 7 daily, 5 weekly, 3 monthly and 2 yearly snapshots.
@@ -948,7 +950,7 @@ WantedBy=local-fs.target
 *   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
 *   [ZFS on Linux](http://zfsonlinux.org/)
 *   [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq)
-*   [FreeBSD Handbook -- The Z File System](http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/filesystems-zfs.html)
+*   [FreeBSD Handbook -- The Z File System](https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/zfs.html)
 *   [Oracle Solaris ZFS Administration Guide](http://docs.oracle.com/cd/E19253-01/819-5461/index.html)
 *   [Solaris Internals -- ZFS Troubleshooting Guide](http://www.solarisinternals.com/wiki/index.php/ZFS_Troubleshooting_Guide)
 *   [Pingdom details how it backs up 5TB of MySQL data every day with ZFS](http://royal.pingdom.com/2013/06/04/zfs-backup/)

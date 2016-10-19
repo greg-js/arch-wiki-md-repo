@@ -69,6 +69,14 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   The open-source Unix port of the Haaf's Game Engine is available at [icculus.org](https://icculus.org/hge-unix/).
 
+*   **kobodeluxe** — An enhanced version of Akira Higuchi's game XKobo, an addictive space shoot'em up
+
+	[http://www.olofson.net/kobodl/](http://www.olofson.net/kobodl/) || [kobodeluxe](https://www.archlinux.org/packages/?name=kobodeluxe)
+
+*   **Kollision** — Moving a ball to avoid other balls. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kollision/](https://www.kde.org/applications/games/kollision/) || [kollission](https://www.archlinux.org/packages/?name=kollission)
+
 *   **KSpaceDuel** — Player attempts to destroy opponent’s satellite and controll their own one to keep it orbiting. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
 
 	[https://kde.org/applications/games/kspaceduel/](https://kde.org/applications/games/kspaceduel/) || [kdegames-kspaceduel](https://www.archlinux.org/packages/?name=kdegames-kspaceduel)
@@ -94,6 +102,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   **Paintball Party 2** — Paintball Party 2 is the sequel to Paintball Party, a multiplayer action platformer for all ages.
 
 	[http://www.t3-i.com/pages/project.php?id=paintball_party_2](http://www.t3-i.com/pages/project.php?id=paintball_party_2) || [paintball-party-2](https://aur.archlinux.org/packages/paintball-party-2/)
+
+*   **XBill** — Kill all instances of a virus before it infects all computers with a malware resembling Microsoft® Windows®.
+
+	[http://www.xbill.org/](http://www.xbill.org/) || [xbill](https://www.archlinux.org/packages/?name=xbill)
 
 ## Arcade
 
@@ -189,6 +201,10 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 	[http://linux.tlk.fr/games/Powermanga/](http://linux.tlk.fr/games/Powermanga/) || [powermanga](https://aur.archlinux.org/packages/powermanga/)
 
+*   **Quadrapassel** — A *Tetris* remake for GNOME.
+
+	[https://wiki.gnome.org/Apps/Quadrapassel](https://wiki.gnome.org/Apps/Quadrapassel) || [quadrapassel](https://www.archlinux.org/packages/?name=quadrapassel)
+
 *   **Streets of Rage Remake** — A remake of the classic Streets of Rage 1, 2 and 3 by Sega.
 
 	[http://sorr.forumotion.net/](http://sorr.forumotion.net/) || [streetsofrageremake](https://aur.archlinux.org/packages/streetsofrageremake/)
@@ -246,6 +262,18 @@ For more about running games, related system configuration tips, see [Gaming](/i
 *   **Kajongg** — An implementation of [Mahjong](https://en.wikipedia.org/wiki/Mahjong) for 4 players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kajongg/](https://www.kde.org/applications/games/kajongg/) || [kdegames-kajongg](https://www.archlinux.org/packages/?name=kdegames-kajongg)
+
+*   **KHangMan** — [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/education/khangman/](https://www.kde.org/applications/education/khangman/) || [khangman](https://www.archlinux.org/packages/?name=khangman)
+
+*   **KPatience** — A set of solitarire card games. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kpatience/](https://www.kde.org/applications/games/kpatience/) || [kpatience](https://www.archlinux.org/packages/?name=kpatience)
+
+*   **KSquares** — A [dots-and-boxes](https://en.wikipedia.org/wiki/Dots_and_Boxes) game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/ksquares/](https://www.kde.org/applications/games/ksquares/) || [ksquares](https://www.archlinux.org/packages/?name=ksquares)
 
 *   **Lskat** — A variation of [Skat](https://en.wikipedia.org/wiki/Skat) card game for two players. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
 
@@ -455,13 +483,49 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://www.kde.org/applications/games/kblacks/](https://www.kde.org/applications/games/kblacks/) || [kblocks](https://www.archlinux.org/packages/?name=kblocks)
 
+*   **KDiamond** — Eliminating tiles by joining them in groups of three. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kdiamond/](https://www.kde.org/applications/games/kdiamond/) || [kdiamond](https://www.archlinux.org/packages/?name=kdiamond)
+
+*   **KFourInLine** — Competition between two players to put a line of four pieces before the opponent. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kfourinline/](https://www.kde.org/applications/games/kfourinline/) || [kfourinline](https://www.archlinux.org/packages/?name=kfourinline)
+
 *   **Kigo** — *Go* for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kigo/](https://www.kde.org/applications/games/kigo/) || [kdegames-kigo](https://www.archlinux.org/packages/?name=kdegames-kigo)
 
+*   **Killbots** — A turn-based game with an objective of avoiding robots that are trying to kill the player. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/killbots/](https://www.kde.org/applications/games/killbots/) || [killbots](https://www.archlinux.org/packages/?name=killbots)
+
+*   **KJumpingCube** — Take-all-tiles game in which one gains fields by increasing value of one’s own nearby fields. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kjumpingcube/](https://www.kde.org/applications/games/kjumpingcube/) || [kjumpingcube](https://www.archlinux.org/packages/?name=kjumpingcube)
+
+*   **Klickety** — Clearing the board by removing aligned tiles. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[klickety](https://www.archlinux.org/packages/?name=klickety) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **KLines** — Moving balls around the board to form a line of 5 of the same color. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/klines/](https://www.kde.org/applications/games/klines/) || [klines](https://www.archlinux.org/packages/?name=klines)
+
+*   **KMines** — [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)), part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kmines/](https://www.kde.org/applications/games/kmines/) || [kmines](https://www.archlinux.org/packages/?name=kmines)
+
+*   **KNetwalk** — Rotating tiles with wires to connect all computers to internet. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/knetwalk/](https://www.kde.org/applications/games/knetwalk/) || [knetwalk](https://www.archlinux.org/packages/?name=knetwalk)
+
 *   **Kolf** — A minigolf game with 2D overhead view. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/kolf/](https://www.kde.org/applications/games/kolf/) || [kdegames-kolf](https://www.archlinux.org/packages/?name=kdegames-kolf)
+
+*   **KShisen** — [Shisen-Sho](https://en.wikipedia.org/wiki/Shisen-Sho). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kshisen/](https://www.kde.org/applications/games/kshisen/) || [kshisen](https://www.archlinux.org/packages/?name=kshisen)
 
 *   **Ksudoku** — Sudoku game and more for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
@@ -474,6 +538,14 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 *   **Netris** — Unfinished developmental version of Netris, a free networked version of Tetris.
 
 	[https://sourceforge.net/projects/netris/](https://sourceforge.net/projects/netris/) || [netris](https://aur.archlinux.org/packages/netris/)
+
+*   **Palapeli** — Jigsaw puzzle game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/palapeli/](https://www.kde.org/applications/games/palapeli/) || [kdegames-palapeli](https://www.archlinux.org/packages/?name=kdegames-palapeli)
+
+*   **Pathological** — Complete all wheels on the board by collecting marbles of the same color in each of them.
+
+	[http://pathological.sourceforge.net/howtoplay.php](http://pathological.sourceforge.net/howtoplay.php) || [pathological](https://www.archlinux.org/packages/?name=pathological)
 
 *   **Picmi** — Nonogram puzzle game
 
@@ -496,6 +568,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 **Tip:** You may want to backup your save file, which is found at `~/.macromedia/Flash_Player/#SharedObjects/*string*/localhost...`.
 
 	[http://thelettervsixtim.es/](http://thelettervsixtim.es/) || [vvvvvv](https://aur.archlinux.org/packages/vvvvvv/)
+
+*   **XMahjongg** — Mahjong solitaire for X.
+
+	[http://www.lcdf.org/xmahjongg/](http://www.lcdf.org/xmahjongg/) || [xmahjongg](https://www.archlinux.org/packages/?name=xmahjongg)
 
 *   **Xscorch** — Clone of the classic DOS game Scorched Earth.
 

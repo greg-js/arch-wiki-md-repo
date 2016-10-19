@@ -42,7 +42,7 @@ If the installer fails saying that DirectX cannot be installed, make sure you in
 
 **Note:** You may need to add your user to `games` group.
 
-[leagueoflegends](https://aur.archlinux.org/packages/leagueoflegends/) from the [AUR](/index.php/AUR "AUR") is available to ease the installation of the game using the method used in the [#Wine Method](#Wine_Method) section. This package will download the game installer in `/var/games/leagueoflegends` and configure the wine environment to run the game. Additionally, it creates a bash script and a `.desktop` file to launch the game.
+[leagueoflegends](https://aur.archlinux.org/packages/leagueoflegends/) from the [AUR](/index.php/AUR "AUR") is available to ease the installation of the game using the method used in the [#Wine Method](#Wine_Method) section. This package will download the game installer in `/opt/games/leagueoflegends` and configure the wine environment to run the game. Additionally, it creates a bash script and a `.desktop` file to launch the game.
 
 ### Wine Method
 

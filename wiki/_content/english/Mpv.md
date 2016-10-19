@@ -46,6 +46,10 @@
 
 	[http://gnome-mpv.github.io/](http://gnome-mpv.github.io/) || [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/), [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)
 
+*   **Media Player Classic Qute Theater** — A clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt.
+
+	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt-git](https://aur.archlinux.org/packages/mpc-qt-git/)
+
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
 
 	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
@@ -58,11 +62,11 @@
 
 ## Configuration
 
-*mpv'*s configuration is read from the files `mpv.conf` ([example](https://raw.githubusercontent.com/mpv-player/mpv/master/etc/mpv.conf)) (settings), `input.conf` (key bindings), and `lua-settings/osc.conf` ([example](https://raw.githubusercontent.com/mpv-player/mpv/master/etc/input.conf)) (on screen display). For a full list of options, see the man page or the github docs [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst), [input.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/input.rst), and [osc.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/osc.rst).
+*mpv'*s configuration is read from the files `mpv.conf` ([example](https://raw.githubusercontent.com/mpv-player/mpv/master/etc/mpv.conf)) (settings), `input.conf` (key bindings), and `lua-settings/osc.conf` ([example](https://raw.githubusercontent.com/mpv-player/mpv/master/etc/input.conf)) (on screen display). For a full list of options, see the [mpv(1)](https://mpv.io/manual/master/) or the github docs [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst), [input.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/input.rst), and [osc.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/osc.rst).
 
 If the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is not set, user configuration files will be read from the `~/.config/mpv` directory. System-wide configuration files are read from the `/etc/mpv` directory.
 
-### An example `input.conf` file
+### An example input.conf file
 
 Copying the following into `~/.config/mpv/input.conf` will add a number of useful keybindings to mpv such as rotating video 90 degrees, zooming and panning.
 
@@ -98,11 +102,13 @@ Change the above to whatever volume keys you use. The above is the default of MP
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") `mpv (1)`. To make this persistent, add the line `hwdec=*method*` to your configuration file.
+Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking for `--hwdec=<api>` in [man page](/index.php/Man_page "Man page") [mpv(1)](https://mpv.io/manual/master/). To make this persistent, add the line `hwdec=*method*` to your configuration file.
 
 When hardware decoding is used, the video output should generally be set to `opengl` or `opengl-hq` (or possibly `vdpau` if using `hwdec=vdpau`). In particular, `hwdec=vaapi` should be used with `vo=opengl` [[1]](https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst) if possible.
 
 If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
+
+By default, hardware decoding is enabled for codecs h264, vc1, wmv3, hevc, mpeg2video and vp9\. It is however possible to specify codecs (e.g. `--hwdec-codecs=h264,mpeg2video`) or allow all codecs (`hwdec-codecs=all`) to use hardware decoding.
 
 ### High quality video output
 
@@ -139,6 +145,8 @@ It may be useful to always show the GUI window, even for audio files, especially
 ### Use as a browser plugin
 
 With the help of [mozplugger](https://aur.archlinux.org/packages/mozplugger/), *mpv* can be used in a supported browser to play video. See [Browser plugins#MozPlugger](/index.php/Browser_plugins#MozPlugger "Browser plugins") for configuration details. This coupled with a user script such as [ViewTube](http://isebaro.com/viewtube/?ln=en), allows you to use *mpv* in place of a site's integrated video player.
+
+It may be needed to specify a valid user agent for HTTP streaming, e.g. `user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0"`.
 
 [Browser plugins#Video players workarounds](/index.php/Browser_plugins#Video_players_workarounds "Browser plugins") page shows other easy ways to watch videos.
 
@@ -223,4 +231,17 @@ $ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 mpv defaults to using the opengl video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the xv (XVideo) video output device may help.
 
- `~/.config/mpv/mpv.conf`  `vo=xv`
+ `~/.config/mpv/mpv.conf`  `vo=xv` 
+
+It is possible to increase decoding performance (especially on lower hardware), but this may affect the video quality. A full overview of settings available can be found on the [mpv(1)](https://mpv.io/manual/master/).
+
+The following options can be considered to increase video performance:
+
+ `~/.config/mpv/mpv.conf` 
+```
+vd-lavc-fast
+vd-lavc-skiploopfilter=<skipvalue>
+vd-lavc-skipframe=<skipvalue>
+vd-lavc-framedrop=<skipvalue>
+vd-lavc-threads=<threads>
+```

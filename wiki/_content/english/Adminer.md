@@ -1,4 +1,4 @@
-[Adminer](http://www.adminer.org/) is a web-based tool for database management. It's possible to manage [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [Sqlite3](/index.php/Sqlite3 "Sqlite3"), MS SQL and [Oracle](/index.php/Oracle "Oracle").
+[Adminer](http://www.adminer.org/) is a web-based tool for database management. It's possible to manage [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [Sqlite3](/index.php/Sqlite3 "Sqlite3"), MS SQL, [Oracle](/index.php/Oracle "Oracle") and [Elasticsearch](/index.php/Elasticsearch "Elasticsearch").
 
 It's a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). You can find more pieces of information about this project at the [official page](http://www.adminer.org/en/) or at [Wikipedia](https://en.wikipedia.org/wiki/Adminer "wikipedia:Adminer").
 
@@ -33,8 +33,6 @@ Include conf/extra/httpd-adminer.conf
 Then [restart](/index.php/Restart "Restart") your [apache](/index.php/Apache "Apache") daemon.
 
 Adminer can now be accessed by browsing to [http://localhost/adminer](http://localhost/adminer).
-
-**Note:** It may be necessary to comment/remove the `php_admin_value` line inside `/etc/httpd/conf/extra/httpd-adminer.conf`, because the PHP-configuration does not allow it.
 
 ### Nginx
 

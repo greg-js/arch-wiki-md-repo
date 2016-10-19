@@ -1,0 +1,53 @@
+[Elasticsearch](https://www.elastic.co/products/elasticsearch) is a search engine based on [Lucene](http://lucene.apache.org/). It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in [Java](/index.php/Java "Java") and is released as open source under the terms of the Apache License.
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Running](#Running)
+*   [3 Configuration](#Configuration)
+*   [4 Usage](#Usage)
+
+## Installation
+
+Elasticsearch requires at least OpenJDK 7, see [Java](/index.php/Java "Java").
+
+Install the [elasticsearch](https://www.archlinux.org/packages/?name=elasticsearch) package.
+
+## Running
+
+[Start/enable](/index.php/Start/enable "Start/enable") `elasticsearch.service`.
+
+Ensure Elasticsearch is running and accessible:
+
+```
+curl -X GET '[http://127.0.0.1:9200'](http://127.0.0.1:9200')
+
+```
+
+## Configuration
+
+The main Elasticsearch configuration file is well-documented and located at `/etc/elasticsearch/elasticsearch.yml`.
+
+*   By default Elasticsearch is public accessible, it may be preferred to allow only access on the host instead:
+
+```
+network.host: 127.0.0.1
+
+```
+
+*   It is possible to use a custom port instead of the default `9200`:
+
+```
+http.port: 9200
+
+```
+
+## Usage
+
+Elasticsearch uses a REST API, see [Wikipedia:RESTful API](https://en.wikipedia.org/wiki/RESTful_API "wikipedia:RESTful API") for more information.
+
+[Talking to Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/guide/current/_talking_to_elasticsearch.html) and the [Getting started](https://www.elastic.co/guide/en/elasticsearch/guide/current/getting-started.html) guide should provide you with basic and detailed usage information.
+
+The Elasticsearch server management (document maintenance, performing search, etc.) is usually done by [clients](https://www.elastic.co/guide/en/elasticsearch/client/index.html), that should provide a seamless integration with the preferred programming language.
+
+Useful tools to manage ElasticSearch instances and clusters like [ElasticHQ](http://www.elastichq.org), [Elasticsearch GUI](https://github.com/jettro/elasticsearch-gui), [Kibana](https://www.elastic.co/products/kibana) and [Adminer](/index.php/Adminer "Adminer") are also available to simplify management.

@@ -51,6 +51,8 @@ Compared with the open source driver, Catalyst performs better in both 2D and 3D
     *   [7.2 Failed to open fglrx_dri.so](#Failed_to_open_fglrx_dri.so)
     *   [7.3 GDM fails to start](#GDM_fails_to_start)
     *   [7.4 3D Wine applications freeze](#3D_Wine_applications_freeze)
+        *   [7.4.1 TLS](#TLS)
+        *   [7.4.2 Compiz](#Compiz)
     *   [7.5 Problems with video colours](#Problems_with_video_colours)
     *   [7.6 KWin and composite](#KWin_and_composite)
     *   [7.7 Black screen with complete lockups and/or hangs after reboot or startx](#Black_screen_with_complete_lockups_and.2For_hangs_after_reboot_or_startx)
@@ -765,7 +767,11 @@ Downgrade the [xorg-server](https://www.archlinux.org/packages/?name=xorg-server
 
 ### 3D Wine applications freeze
 
-If you use a 3D Wine application and it hangs, you have to disable TLS. To do this, either use `aticonfig` or edit `/etc/X11/xorg.conf`. To use `aticonfig`:
+If you use a 3D Wine application and it hangs, watch out for the following workarounds.
+
+#### TLS
+
+One source of problems is TLS. To disable it, either use `aticonfig` or edit `/etc/X11/xorg.conf`. To use `aticonfig`:
 
 ```
 # aticonfig --tls=off
@@ -775,6 +781,15 @@ If you use a 3D Wine application and it hangs, you have to disable TLS. To do th
 Or, to edit `/etc/X11/xorg.conf`; first open the file in an editor as root and then add `Option "UseFastTLS" "off"` to the *Device* section of this file.
 
 After applying either of the solutions, restart X for it to take effect.
+
+#### Compiz
+
+In case you are using compiz as the windows compositer, disable it. For instance, if you are using XFCE as your desktop environment, open a terminal and execute:
+
+```
+$ xfwm4 --replace &
+
+```
 
 ### Problems with video colours
 

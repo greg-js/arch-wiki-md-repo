@@ -748,7 +748,7 @@ AmbientCapabilities=CAP_NET_BIND_SERVICE
 
 	PID file
 
-	[nginx](https://www.archlinux.org/packages/?name=nginx) uses `/run/nginx.pid` by default. We can create a directory that *user* has write access to and place our PID file in there. An example using [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"): `/etc/tmpfiles.d/nginx.conf`  `d /run/nginx 770 *user* *group*` 
+	[nginx](https://www.archlinux.org/packages/?name=nginx) uses `/run/nginx.pid` by default. We can create a directory that *user* has write access to and place our PID file in there. An example using [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"): `/etc/tmpfiles.d/nginx.conf`  `d /run/nginx 0775 root *group* - -` 
 
 Run the configuration:
 

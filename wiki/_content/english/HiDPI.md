@@ -8,6 +8,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [1.1 GNOME](#GNOME)
         *   [1.1.1 How to use non-whole numbers](#How_to_use_non-whole_numbers)
     *   [1.2 KDE](#KDE)
+        *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
     *   [1.5 Enlightenment](#Enlightenment)
@@ -102,6 +103,22 @@ Please follow these guidelines for HiDPI support in KDE plasma 5
 1.  System Settings → Display and Monitor → Display Configuration → Scale Display
 2.  Then drag the slider to 2
 3.  Log out and back in for all applications to take the new setting into account
+
+#### Tray icons with fixed size
+
+If the tray icons are not scaled with the rest of the desktop, the size can be set editing the default value for *iconSize* in `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/config/main.xml` (e.g. the value 2 may be fine):
+
+ `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/config/main.xml` 
+```
+<entry name="iconSize" type="Int">
+    <label>Default icon size for the systray icons, it's an enum which values mean, 
+           Small, SmallMedium, Medium, Large, Huge, Enormous respectively. On low 
+           DPI systems they correspond to 16, 22, 32, 48, 64, 128 pixels. On high
+           DPI systems those values would be scaled up, depending on the DPI.</label>                    
+    <default>**2**</default>
+</entry>
+
+```
 
 ### Xfce
 

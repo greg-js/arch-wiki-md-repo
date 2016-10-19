@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Rsync](/index.php/Rsync "Rsync") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2012-09-15，点击[这里](https://wiki.archlinux.org/index.php?title=Rsync&diff=0&oldid=222954)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Rsync](/index.php/Rsync "Rsync") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-17，点击[这里](https://wiki.archlinux.org/index.php?title=Rsync&diff=0&oldid=450999)可以查看翻译后英文页面的改动。
 
 [rsync](http://samba.anu.edu.au/rsync/) 是一个开源工具，可以进行快速的增量的文件传输。
 
@@ -7,114 +7,168 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
     *   [2.1 作为 cp 的替代](#.E4.BD.9C.E4.B8.BA_cp_.E7.9A.84.E6.9B.BF.E4.BB.A3)
+        *   [2.1.1 注意尾随下划](#.E6.B3.A8.E6.84.8F.E5.B0.BE.E9.9A.8F.E4.B8.8B.E5.88.92)
     *   [2.2 作为备份工具](#.E4.BD.9C.E4.B8.BA.E5.A4.87.E4.BB.BD.E5.B7.A5.E5.85.B7)
         *   [2.2.1 自动备份](#.E8.87.AA.E5.8A.A8.E5.A4.87.E4.BB.BD)
         *   [2.2.2 自动用 SSH 备份](#.E8.87.AA.E5.8A.A8.E7.94.A8_SSH_.E5.A4.87.E4.BB.BD)
-        *   [2.2.3 自动与 NetworkManager 备份](#.E8.87.AA.E5.8A.A8.E4.B8.8E_NetworkManager_.E5.A4.87.E4.BB.BD)
-        *   [2.2.4 Differential backup on a week](#Differential_backup_on_a_week)
-        *   [2.2.5 快照备份](#.E5.BF.AB.E7.85.A7.E5.A4.87.E4.BB.BD)
+        *   [2.2.3 自动使用NetworkManager备份](#.E8.87.AA.E5.8A.A8.E4.BD.BF.E7.94.A8NetworkManager.E5.A4.87.E4.BB.BD)
+        *   [2.2.4 使用systemd和inotify自动备份](#.E4.BD.BF.E7.94.A8systemd.E5.92.8Cinotify.E8.87.AA.E5.8A.A8.E5.A4.87.E4.BB.BD)
+        *   [2.2.5 一个星期差异备份](#.E4.B8.80.E4.B8.AA.E6.98.9F.E6.9C.9F.E5.B7.AE.E5.BC.82.E5.A4.87.E4.BB.BD)
+        *   [2.2.6 快照备份](#.E5.BF.AB.E7.85.A7.E5.A4.87.E4.BB.BD)
+*   [3 图形前端](#.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
 
 ## 安装
 
-使用[pacman](/index.php/Pacman "Pacman")安装[rsync](https://www.archlinux.org/packages/?name=rsync):
+[安装](/index.php/Pacman "Pacman") [rsync](https://www.archlinux.org/packages/?name=rsync) 包。
 
-```
-# pacman -S rsync
-
-```
-
-**注意:** *rsync* 必须同时安装在源(服务器)和目的(客户端)的机器上．
+**Note:** 必须在源计算机和目标计算机上都安装 *rsync*
 
 ## 使用方法
 
-For more examples, search the [Community Contributions](https://bbs.archlinux.org/viewforum.php?id=27) and [General Programming](https://bbs.archlinux.org/viewforum.php?id=33) forums.
+搜索 [Community Contributions](https://bbs.archlinux.org/viewforum.php?id=27) 和 [General Programming](https://bbs.archlinux.org/viewforum.php?id=33) 可以得到更多的例子。
 
 ### 作为 cp 的替代
 
-rsync can be used as an advanced cp alternative, especially for copying larger files:
+rsync 可以作为 `cp` 命令的高级替代品，特别在复制较大的文件的场景中：
 
 ```
 $ rsync -P source destination
 
 ```
 
-The `-P` option is the same as `--partial --progress`, which keeps partially transferred files and shows a progress bar during transfer.
+其中 `-P` 与 `--partial --progress` 选项的作用是相同的，该选项使得文件可以分块传输并显示传输过程中的进度。
 
-You may want to use the `-r --recursive` option to recurse into directories, or the `-R` option for using relative path names (recreating entire folder hierarchy on the destination folder).
+您可能需要使用 `-r --recursive` 选项使目录被递归地传输。
+
+通过 cp 命令，可以本地复制文件，但 rsync 令人激动的一个特性是可以远程复制文件，例如，在两个不同的主机之间。远程位置可以用主机加冒号进行指定：
+
+```
+$ rsync source host:destination
+
+```
+
+或者
+
+```
+$ rsync host:source destination
+
+```
+
+网络文件传输默认使用SSH协议。
+
+无论是本地或远程文件传输， rsync 首先创建每个源文件块校验的索引。此索引用于查找可能存在于目标中的任何相同数据块。一旦这种块存在，块就被就地使用，而不是从源复制。这大大加快了存在小差异的大文件的同步。欲了解更多信息，请参见 [official documentation](https://rsync.samba.org/documentation.html), [how rsync works](https://rsync.samba.org/how-rsync-works.html) 。
+
+#### 注意尾随下划
+
+Arch 默认使用 GNU cp (part of [GNU coreutils](https://www.archlinux.org/packages/?name=coreutils)). 然而，rsync 遵循 BSD cp 的约定, 源目录后面带有一个斜杠“/”有着特定的处理。比如：
+
+```
+$ rsync -r source destination
+
+```
+
+创建一个有着 "source"内容的 "destination/source"目录，命令：
+
+```
+$ rsync -r source/ destination
+
+```
+
+把"source/"目录下的所有文件全部复制到"destination"目录下，而没有中间的子目录 - 就像你调用了：
+
+```
+$ rsync -r source/. destination
+
+```
+
+这与 GNU cp 的行为是不同的，在GNU cp中"source" 与 "source/" 意义相同 (不是"source/.")。此外，一些shell可以在你键入Tab补全的时候自动自动给目录追加尾部下划线。由于这些因素，可以有新的或不熟练的rsync用户倾向于忘记的rsync的不同行为，在命令行上留下了结尾的下划线，从而无意间创造一个烂摊子，甚至覆盖重要文件。
+
+谨慎起见，可以使用包装脚在调用rsync之前自动删除尾部斜杠：
+
+```
+#!/bin/zsh
+new_args=();
+for i in "$@"; do
+    case $i in /) i=/;; */) i=${i%/};; esac
+    new_args+=$i;
+done
+exec rsync "${(@)new_args}"
+
+```
+
+该脚本可以放在某个路径下，并在shell的init文件中把别名改为rsync。
 
 ### 作为备份工具
 
-The rsync protocol can easily be used for backups, only transferring files that have changed since the last backup. This section describes a very simple scheduled backup script using rsync, typically used for copying to removable media. For a more thorough example, see [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync").
+rsync协议可以很容易地用于备份，只传输自上次备份以来已更改的文件。本节将介绍一个非常简单的基于rsync的计划备份脚本，通常用于复制到可移动介质。对于更详尽的例子， **保留一些系统文件所需的附加选项**, 参见 [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync").
 
 #### 自动备份
 
-For the sake of this example, the script is created in the `/etc/cron.daily` directory, and will be run on a daily basis if a cron [daemon](/index.php/Daemon "Daemon") is installed and properly configured. Configuring and using [cron](/index.php/Cron "Cron") is outside the scope of this article.
+以下面的脚本为例，该脚本放置于 `/etc/cron.daily` 目录下，如果 cron [daemon](/index.php/Daemon "Daemon") 被正确安装和配置，它将每天运行。配置和使用 [cron](/index.php/Cron "Cron") 是本文的范围之外。
 
-First, create a script containing the appropriate command options:
+首先，创建一个包含相应命令选项的脚本：
 
  `/etc/cron.daily/backup` 
 ```
 #!/bin/bash
-rsync -a --delete /folder/to/backup /location/to/backup &> /dev/null
+rsync -a --delete /folder/to/backup /location/of/backup &> /dev/null
 ```
 
 	`-a` 
 
-	indicates that files should be archived, meaning that most of their characteristics are preserved (but **not** ACLs, hard links or extended attributes such as capabilities)
+	表示文件应被存档，这意味着他们的大部分特性被保留 (**不**包括ACLs, 硬链接或扩展属性，如capabilities)
 
 	`--delete` 
 
-	means files deleted on the source are to be deleted on the backup aswell
+	指同步源文件的删除操作。
 
-Here, `/folder/to/backup` should be changed to what needs to be backed-up (`/home`, for example) and `/location/to/backup` is where the backup should be saved (`/media/disk`, for instance).
+在这里，`/folder/to/backup` 应该改成需要被备份的路径 (比如 `/home`)，`/location/to/backup` 是备份应存放的位置 (比如 `/media/disk`).
 
-Finally, the script must be executable:
+最后，脚本必须是可执行的：
 
 ```
-# chmod +x /etc/cron.daily/rsync.backup
+# chmod +x /etc/cron.daily/backup
 
 ```
 
 #### 自动用 SSH 备份
 
-If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this script instead:
+如果是通过 [SSH](/index.php/SSH "SSH") 备份到远程主机，改为使用此脚本：
 
  `/etc/cron.daily/backup` 
 ```
 #!/bin/bash
-rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/to/backup &> /dev/null
+rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/of/backup &> /dev/null
 ```
 
 	`-e ssh` 
 
-	tells rsync to use SSH
+	告诉rsync的使用SSH
 
-	`remoteuser` 
-
-	is the user on the host `remotehost`
+	`remoteuser` ：远程主机 `remotehost` 上的用户名
 
 	`-a` 
 
-	groups all these options `-rlptgoD` (recursive, links, perms, times, group, owner, devices)
+	组中的所有这些选项 `-rlptgoD` (recursive, links, perms, times, group, owner, devices)
 
-#### 自动与 NetworkManager 备份
+#### 自动使用NetworkManager备份
 
-This script starts a backup when you plugin your wire.
+该脚本在你接入网络后开始备份。
 
-First, create a script containing the appropriate command options:
+首先，创建一个包含相应命令选项的脚本：
 
  `/etc/NetworkManager/dispatcher.d/backup` 
 ```
 #!/bin/bash
 
 if [ x"$2" = "xup" ] ; then
-  rsync --force --ignore-errors -a --delete --bwlimit=2000 --files-from=files.rsync /folder/to/backup /location/to/backup
+        rsync --force --ignore-errors -a --delete --bwlimit=2000 --files-from=files.rsync /folder/to/backup /location/to/backup
 fi
 ```
 
 	`-a` 
 
-	group all this options `-rlptgoD` recursive, links, perms, times, group, owner, devices
+	组中的所有选项 `-rlptgoD` recursive, links, perms, times, group, owner, devices
 
 	`--files-from` 
 
@@ -122,13 +176,53 @@ fi
 
 	`--bwlimit` 
 
-	limit I/O bandwidth; KBytes per second
+	限I / O带宽;每秒千字节
 
-#### Differential backup on a week
+Also, the script must have write permission for owner (root, of course) only (see [NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
+
+#### 使用systemd和inotify自动备份
+
+**Note:**
+
+*   Due to the limitations of inotify and systemd (see [this question and answer](http://www.quora.com/Linux-Kernel/Inotify-monitoring-of-directories-is-not-recursive-Is-there-any-specific-reason-for-this-design-in-Linux-kernel)), recursive filesystem monitoring is not possible. Although you can watch a directory and its contents, it will not recurse into subdirectories and watch the contents of them; you must explicitly specify every directory to watch, even if that directory is a child of an already watched directory.
+*   This setup is based on a [systemd/User](/index.php/Systemd/User "Systemd/User") instance.
+
+Instead of running time interval backups with time based schedules, such as those implemented in [cron](/index.php/Cron "Cron"), it is possible to run a backup every time one of the files you are backing up changes. `systemd.path` units use `inotify` to monitor the filesystem, and can be used in conjunction with `systemd.service` files to start any process (in this case your [rsync](/index.php/Rsync "Rsync") backup) based on a filesystem event.
+
+First, create the `systemd.path` file that will monitor the files you are backing up:
+
+ `~/.config/systemd/user/backup.path` 
+```
+[Unit]
+Description=Checks if paths that are currently being backed up have changed
+
+[Path]
+PathChanged=%h/documents
+PathChanged=%h/music
+
+[Install]
+WantedBy=default.target
+```
+
+Then create a `systemd.service` file that will be activated when it detects a change. By default a service file of the same name as the path unit (in this case `backup.path`) will be activated, except with the `.service` extension instead of `.path` (in this case `backup.service`).
+
+**Note:** If you need to run multiple rsync commands, use `Type=oneshot`. This allows you to specify multiple `ExecStart=` parameters, one for each [rsync](/index.php/Rsync "Rsync") command, that will be executed. Alternatively, you can simply write a script to perform all of your backups, just like [cron](/index.php/Cron "Cron") scripts.
+ `~/.config/systemd/user/backup.service` 
+```
+[Unit]
+Description=Backs up files
+
+[Service]
+ExecStart=/usr/bin/rsync %h/./documents %h/./music -CERrltm --delete ubuntu:
+```
+
+Now all you have to do is [start](/index.php/Start "Start")/enable `backup.path` like a normal systemd service and it will start monitoring file changes and automatically starting `backup.service`.
+
+#### 一个星期差异备份
 
 This is a useful option of rsync, creating a full backup and a differential backup for each day of a week.
 
-First, create a script containing the appropriate command options:
+首先，创建一个包含相应命令选项的脚本：
 
  `/etc/cron.daily/backup` 
 ```
@@ -151,7 +245,36 @@ rsync -a --delete --inplace --backup --backup-dir=/location/to/backup/incr/$DAY 
 
 The same idea can be used to maintain a tree of snapshots of your files. In other words, a directory with date-ordered copies of the files. The copies are made using hardlinks, which means that only files that did change will occupy space. Generally speaking, this is the idea behind Apple's TimeMachine.
 
-This script implements a simple version of it:
+This basic script is easy to implement and creates quick incremental snapshots using the `--link-dest` option to hardlink unchanged files:
+
+ `/usr/local/bin/snapbackup.sh` 
+```
+#!/bin/bash
+
+# Basic snapshot-style rsync backup script 
+
+# Config
+OPT="-aPh"
+LINK="--link-dest=/snapshots/username/last/" 
+SRC="/home/username/files/"
+SNAP="/snapshots/username/"
+LAST="/snapshots/username/last"
+date=`date "+%Y-%b-%d:_%T"`
+
+# Run rsync to create snapshot
+rsync $OPT $LINK $SRC ${SNAP}$date
+
+# Remove symlink to previous snapshot
+rm -f $LAST
+
+# Create new symlink to latest snapshot for the next backup to hardlink
+ln -s ${SNAP}$date $LAST 
+
+```
+
+There must be a symlink to a full backup already in existence as a target for `--link-dest`. If the most recent snapshot is deleted, the symlink will need to be recreated to point to the most recent snapshot. If `--link-dest` does not find a working symlink, rsync will proceed to copy all source files instead of only the changes.
+
+A more sophisticated version checks to see if a certain number of changes have been made before making the backup and utilizes `cp -al` to hardlink unchanged files:
 
  `/usr/local/bin/rsnapshot.sh` 
 ```
@@ -181,13 +304,19 @@ rsync $OPTS $SRC $SNAP/latest >> $SNAP/rsync.log
 
 COUNT=$( wc -l $SNAP/rsync.log|cut -d" " -f1 )
 if [ $COUNT -gt $MINCHANGES ] ; then
-   DATETAG=$(date +%Y-%m-%d)
-   if [ ! -e $SNAP/$DATETAG ] ; then
-      cp -al $SNAP/latest $SNAP/$DATETAG
-      mv $SNAP/rsync.log $SNAP/$DATETAG
-   fi
+        DATETAG=$(date +%Y-%m-%d)
+        if [ ! -e $SNAP/$DATETAG ] ; then
+                cp -al $SNAP/latest $SNAP/$DATETAG
+                chmod u+w $SNAP/$DATETAG
+                mv $SNAP/rsync.log $SNAP/$DATETAG
+               chmod u-w $SNAP/$DATETAG
+         fi
 fi
 
 ```
 
-To make things really, really simple this script can be run out of `/etc/rc.local`.
+To make things really, really simple this script can be run from a [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") unit.
+
+## 图形前端
+
+[安装](/index.php/Pacman "Pacman") the [grsync](https://www.archlinux.org/packages/?name=grsync) package.

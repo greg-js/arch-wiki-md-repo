@@ -31,8 +31,6 @@ In all three package is sqlite, redis and memcache activate for compile. To use 
 
 Installing Gogs from the [AUR](/index.php/AUR "AUR") instead of manually has the added benefit that lots of steps have been taken care of for you (e.g. permissions and ownership for files, etc).
 
-Make sure you perform a system upgrade (`pacman -Syu`) before installing Gogs from AUR and that you have installed the `base-devel` group, or you may face problems installing Gogs because [base-devel packages are not required to be listed as dependencies in PKGBUILD files](/index.php/Makepkg#Usage "Makepkg").
-
 Also before installing the Gogs package from the [AUR](/index.php/AUR "AUR"), you need to choose a database backend if you're planning to host Gogs it on the same machine as the database:
 
 *   SQLite: [sqlite](https://www.archlinux.org/packages/?name=sqlite) - For configuration of Gogs with SQLite see [#SQLite](#SQLite).
@@ -43,7 +41,7 @@ If you plan to use SSH to interact with your repositories, make sure to add the 
 
 ## First start
 
-After starting of the Gogs service (`systemctl start gogs.service`), you can access the running service over the url `http://[server]:3000`. At the first execute, you will redirect to the installation page. Here you can configure some minor configuration options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
+After [starting](/index.php/Start "Start") `gogs.service`, you can access the running service over the url `http://[server]:3000`. At the first execute, you will redirect to the installation page. Here you can configure some minor configuration options. In the configuration file `/srv/gogs/conf/app.ini`, you can change more values (for example the port number).
 
 ## Configuration
 
@@ -103,14 +101,14 @@ The current package (gogs-git* and gogs>=0.4.2) support custom themes. The locat
 Gogs needs to be restarted after every upgrade because the paths of javascript/css assets will change and therefor break the website. To automate this the following pacman hook can be inserted to `/etc/pacman.d/hooks/gogs.hook`:
 
 ```
- [Trigger]
- Type = File
- Operation = Upgrade
- Target = usr/share/gogs/gogs
- [Action]
- Description = Restart gogs...
- When = PostTransaction
- Exec = /usr/bin/systemctl try-restart gogs.service
+[Trigger]
+Type = File
+Operation = Upgrade
+Target = usr/share/gogs/gogs
+[Action]
+Description = Restart gogs...
+When = PostTransaction
+Exec = /usr/bin/systemctl try-restart gogs.service
 
 ```
 

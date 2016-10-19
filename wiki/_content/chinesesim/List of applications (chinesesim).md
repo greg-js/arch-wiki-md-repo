@@ -184,7 +184,7 @@
     *   [4.12 Mind-mapping tools](#Mind-mapping_tools)
     *   [4.13 字符选择器](#.E5.AD.97.E7.AC.A6.E9.80.89.E6.8B.A9.E5.99.A8)
     *   [4.14 Stylus notes taking](#Stylus_notes_taking)
-    *   [4.15 Bibliographic reference managers](#Bibliographic_reference_managers)
+    *   [4.15 参考书目管理](#.E5.8F.82.E8.80.83.E4.B9.A6.E7.9B.AE.E7.AE.A1.E7.90.86)
 *   [5 安全](#.E5.AE.89.E5.85.A8)
     *   [5.1 防火墙](#.E9.98.B2.E7.81.AB.E5.A2.99)
     *   [5.2 网络安全](#.E7.BD.91.E7.BB.9C.E5.AE.89.E5.85.A8)
@@ -3658,23 +3658,23 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
 
-### Bibliographic reference managers
+### 参考书目管理
 
-See also [Wikipedia:Comparison of reference management software](https://en.wikipedia.org/wiki/Comparison_of_reference_management_software "wikipedia:Comparison of reference management software").
+参见 [Wikipedia:Comparison of reference management software](https://en.wikipedia.org/wiki/Comparison_of_reference_management_software "wikipedia:Comparison of reference management software").
 
-*   **Bibus** — A bibliographic database that can directly insert references in OpenOffice.org/LibreOffice and generate the bibliographic index.
+*   **Bibus** — 一个可以直接在OpenOffice.org/LibreOffice中插入引用并生成文献索引的书目数据库.
 
 	[http://bibus-biblio.sourceforge.net](http://bibus-biblio.sourceforge.net) || [bibus](https://aur.archlinux.org/packages/bibus/)
 
-*   **DocEar** — Docear is an academic literature suite for searching, organizing and creating academic literature, built upon the mind mapping software Freeplane and the reference manager JabRef.
+*   **DocEar** — Docear 是一个学术文献套件, 用于搜索，组织和创造的学术文献, 建立在思维导图软件 Freeplane 和 文件参考管理软件JabRef上.
 
 	[https://www.docear.org](https://www.docear.org) || [docear](https://aur.archlinux.org/packages/docear/)
 
-*   **JabRef** — GUI frontend for BibTeX, written in Java.
+*   **JabRef** — BibTeX的GUI前端, 由Java写成.
 
 	[http://jabref.sourceforge.net](http://jabref.sourceforge.net) || [jabref](https://aur.archlinux.org/packages/jabref/)
 
-*   **Zotero** — Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
+*   **Zotero** — Zotero 单机版. 是一个免费的，易于使用的工具来帮助您收集，整理，引用和共享研究资源.
 
 	[http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)
 

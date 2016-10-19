@@ -5,7 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 As an image viewer](#As_an_image_viewer)
-        *   [2.1.1 File Browser Image Launcher](#File_Browser_Image_Launcher)
+        *   [2.1.1 File browser image launcher](#File_browser_image_launcher)
     *   [2.2 As a desktop wallpaper manager](#As_a_desktop_wallpaper_manager)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Open SVG images](#Open_SVG_images)
@@ -18,7 +18,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [feh](https://www.archlinux.org/packages/?name=feh), which is available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [feh](https://www.archlinux.org/packages/?name=feh) package.
 
 ## Usage
 
@@ -39,37 +39,45 @@ $ feh -g 640x480 -d -S filename /path/to/directory
 
 This is just one example; there are many more options available should you desire more flexibility.
 
-#### File Browser Image Launcher
+#### File browser image launcher
 
 The following script is useful for file browsers. It will display your selected image in feh, but it will enable you to browse all other images in the directory as well, in their default order, i.e. as if you had run "feh *" and cycled through to the selected image.
 
-The script assumes the first argument is the filename.
+The script assumes the first argument is the filename, with other arguments passed on to feh.
 
  `feh_browser.sh` 
 ```
 #!/bin/bash
-
 shopt -s nullglob
+feh_args=(--draw-filename --draw-exif --magick-timeout 10 --image-bg black -g 800x600)
 
 if [[ ! -f $1 ]]; then
-	echo "$0: first argument is not a file" >&2
-	exit 1
+  printf '%s
+' "$0: first argument is not a file" >&2
+  exit 1
 fi
 
 file=$(basename -- "$1")
 dir=$(dirname -- "$1")
-arr=()
 shift
 
-cd -- "$dir"
+cd -- "$dir" || exit
+IFS=$'
+\b'
 
-for i in *; do
-	[[ -f $i ]] || continue
-	arr+=("$i")
-	[[ $i == $file ]] && c=$((${#arr[@]} - 1))
+for i in ./*.{png,jpg,jpeg,gif} ; do
+  if [[ ! -f $i ]]; then
+    continue
+  else
+    arr+=("$i")
+  fi
+
+  if [[ $i == "$file" ]]; then
+    c=$((${#arr[@]} - 1))
+  fi
 done
 
-exec feh "$@" -- "${arr[@]:c}" "${arr[@]:0:c}"
+feh "${feh_args[@]}" "$@" -- "${arr[@]:c}" "${arr[@]:0:c}" >/dev/null 2>&1
 
 ```
 
@@ -93,10 +101,6 @@ This one does not seem to accept options.
 ### As a desktop wallpaper manager
 
 feh can be used to manage the desktop wallpaper for window managers that lack desktop features, such as [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), and [xmonad](/index.php/Xmonad "Xmonad").
-
-When using [GNOME](/index.php/GNOME "GNOME"), you must prevent GNOME Files from controlling the desktop. The easiest way is to run this command:
-
- `$ gconftool-2 --set /apps/nautilus/preferences/show_desktop --type boolean false` 
 
 The following command is an example of how to set the initial background:
 
@@ -124,7 +128,7 @@ To change the background image, edit the file `~/.fehbg` which gets created afte
 
  `$ feh --magick-timeout 1 file.svg` 
 
-Note that you need imagemagick
+Note that you need [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
 ### Random background image
 
@@ -185,7 +189,7 @@ cd ~/.wallpaper
 
 while true; do
 	files=()
-	for i in *.jpg *.png; do
+	for i in ./*.jpg ./*.png; do
 		[[ -f $i ]] && files+=("$i")
 	done
 	range=${#files[@]}

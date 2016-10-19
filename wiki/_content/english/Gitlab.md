@@ -17,10 +17,9 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
         *   [2.3.2 MariaDB](#MariaDB)
         *   [2.3.3 PostgreSQL](#PostgreSQL)
         *   [2.3.4 Firewall](#Firewall)
-        *   [2.3.5 Satellites access](#Satellites_access)
-        *   [2.3.6 Initialize Gitlab database](#Initialize_Gitlab_database)
-        *   [2.3.7 Configure Git User](#Configure_Git_User)
-        *   [2.3.8 Adjust modifier bits](#Adjust_modifier_bits)
+        *   [2.3.5 Initialize Gitlab database](#Initialize_Gitlab_database)
+        *   [2.3.6 Configure Git User](#Configure_Git_User)
+        *   [2.3.7 Adjust modifier bits](#Adjust_modifier_bits)
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
 *   [4 Advanced Configuration](#Advanced_Configuration)
     *   [4.1 Custom SSH Connection](#Custom_SSH_Connection)
@@ -39,7 +38,6 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [4.4 Redis](#Redis)
         *   [4.4.1 Redis Over Unix Socket](#Redis_Over_Unix_Socket)
     *   [4.5 Gitlab-workhorse](#Gitlab-workhorse)
-    *   [4.6 GitLab CI](#GitLab_CI)
 *   [5 Useful Tips](#Useful_Tips)
     *   [5.1 Fix Rake Warning](#Fix_Rake_Warning)
     *   [5.2 Hook into /var](#Hook_into_.2Fvar)
@@ -50,9 +48,10 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [5.7 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
-    *   [6.2 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
-    *   [6.3 Errors after updating](#Errors_after_updating)
-    *   [6.4 /etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty)
+    *   [6.2 401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access)
+    *   [6.3 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
+    *   [6.4 Errors after updating](#Errors_after_updating)
+    *   [6.5 /etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -262,15 +261,6 @@ To enable API-access:
 ```
 
 If you are behind a router, do not forget to forward this port to the running GitLab server host, if you want to allow WAN-access.
-
-#### Satellites access
-
-The folder `satellites` should have the following permissions set:
-
-```
-# chmod 750 /var/lib/gitlab/satellites
-
-```
 
 #### Initialize Gitlab database
 
@@ -534,7 +524,7 @@ See also [Apache HTTP Server#TLS/SSL](/index.php/Apache_HTTP_Server#TLS.2FSSL "A
 
 #### Let's Encrypt
 
-To validate your URL, the Let's Encrypt process will try to access your gitlab server with something like `https://gitlab.*YOUR_SERVER_FQDN*/.well-known/*A_LONG_ID*`. But, due to gitlab configuration, every request to `gitlab.*YOUR_SERVER_FQDN*` will be redirected to a proxy (gitlab-workhorse) that will not be able to deal with this URL.
+To validate your URL, the Let's Encrypt process will try to access your gitlab server with something like `https://gitlab.*YOUR_SERVER_FQDN*/.well-known/acme-challenge/*A_LONG_ID*`. But, due to gitlab configuration, every request to `gitlab.*YOUR_SERVER_FQDN*` will be redirected to a proxy (gitlab-workhorse) that will not be able to deal with this URL.
 
 To bypass this issue, you can use the Let's Encrypt webroot configuration, setting the webroot at `/srv/http/letsencrypt/`.
 
@@ -809,8 +799,6 @@ GitLab v8.12 somehow broke [gitlab-unicorn](https://www.archlinux.org/packages/?
 
 By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `127.0.0.1:8181`. You should consider [editing](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` according to your LAN IP address, for example `-listenAddr 192.168.0.1:8181`.
 
-### GitLab CI
-
 ## Useful Tips
 
 ### Fix Rake Warning
@@ -1018,6 +1006,10 @@ RAILS_ENV=production bundle exec rake cache:clear
 ```
 
 as the gitlab user.
+
+### 401 Unauthorized on all API access
+
+Make 100% sure, that the files `/etc/webapps/gitlab/secret` and `/etc/webapps/gitlab-shell/secret` files contain something!
 
 ### Error at push bad line length character: API
 

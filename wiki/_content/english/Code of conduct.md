@@ -66,7 +66,7 @@ The *minimum necessary standards* when interacting with others in the Arch Linux
 
 #### Respect other users
 
-Simply put, treat others as you would be treated; respect them and their views, even if you disagree with them. When you do find yourself disagreeing; counter the idea or the argument. Do not engage in *ad hominem* attacks.
+Arch Linux is a respectful, inclusive community. Anti-social or offensive behaviour will not be tolerated. Simply put, treat others as you would be treated; respect them and their views, even if you disagree with them. When you do find yourself disagreeing; counter the idea or the argument. Do not engage in *ad hominem* attacks.
 
 #### Respect other operating systems and projects
 

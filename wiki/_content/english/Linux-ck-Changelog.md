@@ -5,7 +5,8 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 **Bump to v4.7.8-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.8](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.8)
-*   Commit: [https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog](https://wiki.archlinux.org/index.php?title=Linux-ck/Changelog)
+*   Commit1: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8d59d79bd80c6fe7c5e10f6cce9bb3ccd0aa927b](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8d59d79bd80c6fe7c5e10f6cce9bb3ccd0aa927b)
+*   Commit2: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=28e74708aa6e406a2a9dc47d407966cb44576dea](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=28e74708aa6e406a2a9dc47d407966cb44576dea)
 
 **Bump to v4.7.7-1**
 

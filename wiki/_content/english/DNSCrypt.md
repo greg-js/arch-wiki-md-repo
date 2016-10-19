@@ -6,9 +6,10 @@
 *   [2 Configuration](#Configuration)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 DNSCrypt as a forwarder for local DNS cache](#DNSCrypt_as_a_forwarder_for_local_DNS_cache)
-        *   [3.1.1 Example: configuration for Unbound](#Example:_configuration_for_Unbound)
-        *   [3.1.2 Example: configuration for dnsmasq](#Example:_configuration_for_dnsmasq)
-        *   [3.1.3 Example: configuration for pdnsd](#Example:_configuration_for_pdnsd)
+        *   [3.1.1 Example: configuration for systemd-resolved](#Example:_configuration_for_systemd-resolved)
+        *   [3.1.2 Example: configuration for Unbound](#Example:_configuration_for_Unbound)
+        *   [3.1.3 Example: configuration for dnsmasq](#Example:_configuration_for_dnsmasq)
+        *   [3.1.4 Example: configuration for pdnsd](#Example:_configuration_for_pdnsd)
     *   [3.2 Enable EDNS0](#Enable_EDNS0)
         *   [3.2.1 Test EDNS0](#Test_EDNS0)
     *   [3.3 Redundant DNSCrypt providers](#Redundant_DNSCrypt_providers)
@@ -66,6 +67,45 @@ ListenDatagram=127.0.0.1:40
 **Note:** The `ListenStream` and `ListenDatagram` options need to be cleared with empty assignment before overriding, otherwise the new address would be *added* to the list of sockets. See [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") for details.
 
 Then restart `dnscrypt-proxy.socket` and *stop* `dnscrypt-proxy.service` if already running to let it be started by the *.socket* unit.
+
+#### Example: configuration for systemd-resolved
+
+First configure dnscrypt-proxy to listen on another loopback address due to the reason that systemd-resolved doesn't allow to specify a port for a dns-server:
+
+ `# systemctl edit dnscrypt-proxy.socket` 
+```
+[Socket]
+ListenStream=
+ListenDatagram=
+ListenStream=127.0.0.54:53
+ListenDatagram=127.0.0.54:53
+```
+
+Now configure `/etc/systemd/resolved.conf` as follows:
+
+ `/etc/systemd/resolved.conf` 
+```
+[Resolve]
+DNS=127.0.0.54
+FallbackDNS=127.0.0.54
+#Domains=
+#LLMNR=yes
+DNSSEC=allow-downgrade
+Cache=yes
+```
+
+Now you can configure `dnscrypt-proxy.service` for your needs. For example:
+
+ `# systemctl edit dnscrypt-proxy.service` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dnscrypt-proxy \
+          --resolver-name=<your-resolver>\
+          --user=<your user>
+```
+
+Last but not least just start and enable both services.
 
 #### Example: configuration for Unbound
 

@@ -147,7 +147,7 @@ If both drives will be in the same computer, you need to randomize the GUID's:
 
 The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
 
-Before beginning, you may wish to [backup](#Backup_and_restore) your current partition table and scheme.
+Before beginning, you may wish to [backup](#Backup_and_restore_partition_table) your current partition table and scheme.
 
 The following shows how to use both *gdisk* and *fdisk* to perform both the creation of a partition table and the creation of the actual partitions. Differences are noted when necessary.
 

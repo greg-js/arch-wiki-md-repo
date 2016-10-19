@@ -26,7 +26,7 @@
 You need to [install](/index.php/Install "Install") [wine](https://www.archlinux.org/packages/?name=wine), [lib32-libjpeg-turbo](https://www.archlinux.org/packages/?name=lib32-libjpeg-turbo), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng) and [lib32-libldap](https://www.archlinux.org/packages/?name=lib32-libldap). If you are using [PulseAudio](/index.php/PulseAudio "PulseAudio"), install [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) available in [multilib](/index.php/Multilib "Multilib"). Optionally, instead of regular [wine](https://www.archlinux.org/packages/?name=wine), you might prefer [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) - [enabling CSMT via the Staging tab in winecfg](/index.php/Wine#CSMT_patch "Wine") may greatly improve performance, but is not required. You'll also need to use [winetricks](https://www.archlinux.org/packages/?name=winetricks) and install the following components (to use the Map Editor and avoid crashes on certain system configurations):
 
 ```
-$ winetricks corefonts vcrun2005 vcrun2008 vcrun2015 vcrun6sp6
+$ winetricks corefonts vcrun2005 vcrun2008 vcrun2015
 
 ```
 

@@ -14,11 +14,11 @@ The Banana Pro (also often referred to as Banana Pi Pro) is a SBC from the manuf
 
 ## Information prior to installing
 
-This article is very similar to [Banana Pi](/index.php/Banana_Pi "Banana Pi"), though the description there doesn't apply fully to the Banana Pro. Also, users have to be familiar with installing an Arch system ([Partitioning](/index.php/Partitioning "Partitioning"), [formatting](/index.php/File_systems "File systems"), etc.), as this will only cover the installation of the base system. Further configuration won't be covered here.
+This article is very similar to the [Banana Pi](/index.php/Banana_Pi "Banana Pi"), though the description there doesn't apply fully to the Banana Pro. Also, users have to be familiar with installing an Arch system ([Partitioning](/index.php/Partitioning "Partitioning"), [formatting](/index.php/File_systems "File systems"), etc.), as this will only cover the installation of the base system. Further configuration won't be covered here.
 
-**Note:** If you use an Linux installation with `e2fsprogs < 1.43` omit the extra options `-O ^metadata_csum,^64bit` below to format the root file system
+**Note:** If you use a Linux installation with `e2fsprogs < 1.43`, omit the extra options `-O ^metadata_csum,^64bit` below to format the root file system.
 
-**Note:** Ensure to install the root file system to a partition number 1 otherwise it will not boot
+**Note:** Ensure to install the **root file system on the first partition**, otherwise it will not boot. (e.g. `sda**1**, sdb**1**, ...`)
 
 ## Installation
 
@@ -40,26 +40,41 @@ Download the root filesystem and the required boot files (will be saved in your 
 
 ```
 
-Use `fdisk` to partition the SD card and format it with `mkfs.ext4`.
+Use `fdisk` to partition the SD card...
 
 ```
 # fdisk /dev/sdX
+
+```
+
+...and format it with `mkfs.ext4`.
+
+For **e2fsprogs < 1.43**:
+
+```
+# mkfs.ext4 /dev/sdX1
+
+```
+
+For **e2fsprogs >= 1.43**:
+
+```
 # mkfs.ext4 -O ^metadata_csum,^64bit /dev/sdX1
 
 ```
 
-Create a mountpoint if needed and mount the root partition on which Arch Linux will installed. (e.g. `sdc1`)
+Create a mountpoint if needed and mount the root partition, on which Arch Linux will be installed later on. Replace `sdX` with the device name of your SD card. (e.g. `sdc`)
 
 ```
-# mkdir [mountpoint]
-# mount /dev/sdX1 [mountpoint]
+# mkdir <mountpoint>                  # create a mountpoint
+# mount /dev/sdX1 <mountpoint>        # replace sdX1 with sda1, sdb1, sdc1, ...
 
 ```
 
 Extract the root file system to the root partition of your SD card:
 
 ```
-# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C [mountpoint]                         # extract to SD card
+# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C <mountpoint>                         # extract to SD card
 
 ```
 
@@ -68,7 +83,7 @@ Copy the bootloader (`u-boot-sunxi-with-spl.bin`) and boot file:
 ```
 # dd if=/path/to/u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8                  # install the bootloader
 # cp /path/to/boot.scr [mountpoint]/boot
-# umount [mountpoint]
+# umount <mountpoint>
 
 ```
 
@@ -105,21 +120,36 @@ Install the bootloader to the (whole) SD card:
 
 ```
 
-Use `fdisk` to partition the *SATA/USB device* and format it with `mkfs.ext4`.
+Use `fdisk` to partition the *SATA/USB device*...
 
 ```
 # fdisk /dev/*sdY*
+
+```
+
+...and format it with `mkfs.ext4`.
+
+For **e2fsprogs < 1.43**:
+
+```
+# mkfs.ext4 /dev/*sdY1*
+
+```
+
+For **e2fsprogs >= 1.43**:
+
+```
 # mkfs.ext4 -O ^metadata_csum,^64bit /dev/*sdY1*
 
 ```
 
-Create a mountpoint if needed and mount the root partition on which Arch Linux will installed.
+Create a mountpoint if needed and mount the root partition. Again, `*sdY1*` is the root partition of the *SATA/USB device* (`*sdY*`), on which Arch Linux will be installed.
 
 ```
-# mount /dev/*sdY1* [mountpoint]                                                         # Mount the root partition
-# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C [mountpoint]                         # Extract the root filesystem to your root partition
-# cp /path/to/boot.scr [mountpoint]/boot
-# umount [mountpoint]
+# mount /dev/*sdY1* <mountpoint>                                                        # Mount the root partition
+# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C <mountpoint>                        # Extract the root filesystem to your root partition
+# cp /path/to/boot.scr <mountpoint>/boot
+# umount <mountpoint>
 
 ```
 
@@ -131,11 +161,11 @@ The network is by default configured by [systemd-networkd](/index.php/Systemd-ne
 
 ### LAN
 
-Ethernet will work out if the box when connect to a DHCP server.
+Ethernet will work out of the box when connected to a DHCP server.
 
 ### WLAN
 
-To become wlan working you have to install the needed firmware and [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") which use the kernel module `brcmfmac`.
+To become wlan working you have to install the needed firmware and [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") which uses the kernel module `brcmfmac`.
 
 ```
 # pacman -S firmware-ap6210 wpa_supplicant
@@ -150,7 +180,7 @@ These are the default logins for a new installation.
 | Root | `root` | `root` |
 | User | `alarm` | `alarm` |
 
-The root account is by default locked for shh login. Login as normal user and use `su -` to become root.
+The root account is locked by default for SSH login. Login as normal user and use `su -` to become root.
 
 ## See also
 
