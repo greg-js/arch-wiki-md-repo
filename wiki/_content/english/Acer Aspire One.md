@@ -2,7 +2,7 @@ This page documents configuration and troubleshooting specific to the Acer Aspir
 
 Some of this information is from the [Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=51796). You can also find a lot of helpful information from the [AspireOneUser Forum](http://www.aspireoneuser.com/forum/viewforum.php?f=5&sid=29c7eef18d2d6477d7f9db91195fb31a) and [Install Ubuntu Hardy Heron (8.04.1) on the Acer Aspire One](https://help.ubuntu.com/community/AspireOne).
 
-General netbook installation hints can be found also in the [Asus EEE PC Wiki article](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")
+General netbook installation hints can be found also in [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701")
 
 Also see the pages on the [Acer Aspire One model AOD250-1613 (Android + XP version)](/index.php/Acer_AOD250-1613 "Acer AOD250-1613") and the [Acer Aspire One model AO722-BZ454](/index.php/Acer_AO722-BZ454 "Acer AO722-BZ454").
 

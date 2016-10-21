@@ -33,7 +33,6 @@ Briefly, the *bootloader* is the first software program that runs when a compute
     *   [5.2 Framebuffer resolution](#Framebuffer_resolution)
         *   [5.2.1 GRUB recognized value](#GRUB_recognized_value)
         *   [5.2.2 hwinfo](#hwinfo)
-        *   [5.2.3 vbetest](#vbetest)
     *   [5.3 Naming partitions](#Naming_partitions)
         *   [5.3.1 By Label](#By_Label)
         *   [5.3.2 By UUID](#By_UUID)
@@ -556,39 +555,6 @@ And the kernel line:
 kernel /vmlinuz-linux root=/dev/sda1 ro **vga=0x0365**
 
 ```
-
-**Note:** *vbetest* gives you VESA mode to which we need to add 512 to get the correct value to use in kernel option line. While *hwinfo* gives you directly the correct value needed by the kernel.
-
-#### vbetest
-
-1.  Install [lrmi](https://aur.archlinux.org/packages/lrmi/) which contains the **vbetest** tool (x86_64 users will need to use [hwinfo](#hwinfo)).
-2.  Run `vbetest` as root
-3.  Then note the number in [ ] corresponding to your desired resolution.
-4.  Press `q` to quit **vbetest** interactive prompt.
-    1.  As an option, in a console as root, you can test the mode you just picked up by running `vbetest -m <yourcode>` and see a pattern like [this one](http://www.phoronix.net/image.php?id=803&image=x_vbespy_5)
-5.  Add **512** to the discovered value picked up above and use the total value to define the `vga=` parameter in the kernel options of `menu.lst`.
-6.  Reboot to enjoy the result
-
-For example **vbetest** on one computer:
-
-```
-[356] 1440x900 (256 color palette)
-[357] 1440x900 (8:8:8)
-
-```
-
-So here the number you want is 357\. Then, 357 + 512 = 869, so you will use **vga=869**. Add your value to the end of the kernel line in `menu.lst` as shown below:
-
-```
-kernel /vmlinuz-linux root=/dev/sda1 ro **vga=869**
-
-```
-
-**Note:**
-
-*   (8:8:8) is for 24-bit color (24bit is 32bit)
-*   (5:6:5) is for 16-bit color
-*   (5:5:5) is for 15-bit color
 
 ### Naming partitions
 

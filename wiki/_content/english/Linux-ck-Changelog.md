@@ -2,6 +2,17 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.3-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.3)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=5e99fc31c58412aad0aac13fdbb36e21ae8028aa](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=5e99fc31c58412aad0aac13fdbb36e21ae8028aa)
+
+**Bump to v4.8.2-1**
+
+*   Changelog: bfs512/ck1, upstream release 4.8.2, and optional (AUR only) MuQSS 0.112
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8a91519b68ce6683a379ea8d37fed029d6de6fcf](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8a91519b68ce6683a379ea8d37fed029d6de6fcf)
+*   Linux changes: [https://kernelnewbies.org/Linux_4.8](https://kernelnewbies.org/Linux_4.8)
+
 **Bump to v4.7.8-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.8](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.7.8)

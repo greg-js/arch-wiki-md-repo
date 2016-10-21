@@ -230,6 +230,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 	[https://github.com/lahwaacz/sxlock](https://github.com/lahwaacz/sxlock) || [sxlock-git](https://aur.archlinux.org/packages/sxlock-git/)
 
+*   **tsscreenlock** — Screen locker used in theShell. Shows music controls, and if used with theShell, also shows desktop notifications.
+
+	[https://github.com/vicr123/tsscreenlock](https://github.com/vicr123/tsscreenlock) || [tsscreenlock](https://aur.archlinux.org/packages/tsscreenlock/)
+
 *   **vlock** — TTY locker. A mirror of the [original vlock](https://lists.archlinux.org/pipermail/aur-general/2013-July/024662.html) is available at [github](https://github.com/WorMzy/vlock).
 
 	[http://www.kbd-project.org](http://www.kbd-project.org) || [kbd](https://www.archlinux.org/packages/?name=kbd)

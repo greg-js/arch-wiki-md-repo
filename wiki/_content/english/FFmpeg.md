@@ -27,21 +27,33 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [2.14 Extracting audio](#Extracting_audio)
     *   [2.15 Stripping audio](#Stripping_audio)
     *   [2.16 Splitting files](#Splitting_files)
+    *   [2.17 Hardware acceleration](#Hardware_acceleration)
+        *   [2.17.1 Intel GPU (VA-API)](#Intel_GPU_.28VA-API.29)
 *   [3 Preset files](#Preset_files)
     *   [3.1 Using preset files](#Using_preset_files)
         *   [3.1.1 libavcodec-vhq.ffpreset](#libavcodec-vhq.ffpreset)
             *   [3.1.1.1 Two-pass MPEG-4 (very high quality)](#Two-pass_MPEG-4_.28very_high_quality.29)
-*   [4 Package removal](#Package_removal)
-*   [5 FFserver](#FFserver)
+*   [4 FFserver](#FFserver)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Output the duration of a video](#Output_the_duration_of_a_video)
+    *   [5.2 Output stream information as JSON](#Output_stream_information_as_JSON)
+    *   [5.3 Create a screen of the video every X frames](#Create_a_screen_of_the_video_every_X_frames)
 *   [6 See also](#See_also)
 
 ## Package installation
 
+**Note:** You may encounter FFmpeg forks like *libav* and *avconv*, see [The FFmpeg/Libav situation](http://blog.pkh.me/p/13-the-ffmpeg-libav-situation.html) for a blog article about the differences between the project and the current status of FFmpeg.
+
 [Install](/index.php/Install "Install") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package.
 
-For the development version, install the [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) package. There is also [ffmpeg-full](https://aur.archlinux.org/packages/ffmpeg-full/), which is built with as many optional features enabled as possible
+For the development version, install the [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) package. There is also [ffmpeg-full](https://aur.archlinux.org/packages/ffmpeg-full/), which is built with as many optional features enabled as possible.
 
 ## Encoding examples
+
+**Note:**
+
+*   It is important parameters are specify in the correct order (e.g. input, video, filters, audio, output), failing to do so may cause parameters being skipped or will prevent FFmpeg to execute.
+*   FFmpeg should automatically choose the number of CPU threads available. However you may want to force the number of threads available by the parameter `-threads <number>`.
 
 ### Screen cast
 
@@ -293,6 +305,13 @@ $ ffmpeg -i foo.mkv foo.ssa
 
 ```
 
+When dealing with multiple subtitles, you may need to specify the stream that needs to be extracted using the `-map <key>:<stream>` parameter:
+
+```
+$ ffmpeg -i foo.mkv -map 0:2 foo.ssa
+
+```
+
 #### Hardsubbing
 
 (instructions based on an [FFmpeg wiki article](http://trac.ffmpeg.org/wiki/How%20to%20burn%20subtitles%20into%20the%20video))
@@ -399,10 +418,27 @@ Input #0, avi, from '*video*.mpg':
 
 ### Splitting files
 
-You can use the `copy` codec to perform operations on a file without changing the encoding. For example, this allows you to easily split any kind of media file into two
+You can use the `copy` codec to perform operations on a file without changing the encoding. For example, this allows you to easily split any kind of media file into two:
 
 ```
 $ ffmpeg -i file.ext -t 00:05:30 -c copy part1.ext -ss 00:05:30 -c copy part2.ext
+
+```
+
+### Hardware acceleration
+
+**Warning:** Encoding may fail when using hardware acceleration, use software encoding as a fallback.
+
+Encoding performance may be improved by using [hardware acceleration API's](https://trac.ffmpeg.org/wiki/HWAccelIntro), however only a specific kind of codec(s) are allowed and/or may not always produce the same result when using software encoding.
+
+#### Intel GPU (VA-API)
+
+See the following [GitHub gist](https://gist.github.com/Brainiarc7/95c9338a737aa36d9bb2931bed379219) and [Libav documentation](https://wiki.libav.org/Hardware/vaapi) for information about available parameters and supported [Intel](/index.php/Intel "Intel") platforms when using [VA-API](/index.php/VA-API "VA-API").
+
+An example of encoding using the supported H.264 codec:
+
+```
+# ffmpeg -i file.ext -vaapi_device /dev/dri/renderD128 -hwaccel vaapi -hwaccel_output_format vaapi -vcodec h264_vaapi -vf format='nv12|vaapi,hwupload' output.mp4
 
 ```
 
@@ -469,10 +505,6 @@ $ ffmpeg -i *video*.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
 
 *   [aoTuV](http://www.geocities.jp/aoyoume/aotuv/) is generally preferred over [libvorbis](http://vorbis.com/) provided by [Xiph.Org](http://www.xiph.org/) and is provided by [libvorbis-aotuv](https://aur.archlinux.org/packages/libvorbis-aotuv/).
 
-## Package removal
-
-[pacman](/index.php/Pacman "Pacman") will not [remove](/index.php/Remove "Remove") configuration files outside of the defaults that were created during package installation. This includes user-created preset files.
-
 ## FFserver
 
 The FFmpeg package includes FFserver, which can be used to stream media over a network. To use it, you first need to create the config file `/etc/ffserver.conf` to define your *feeds* and *streams*. Each feed specifies how the media will be sent to ffserver and each stream specifies how a particular feed will be transcoded for streaming over the network. You can start with the [sample configuration file](https://www.ffmpeg.org/sample.html) or check the `ffserver(1)` man page for feed and stream examples. Here is a simple configuration file for streaming flash video:
@@ -530,6 +562,29 @@ $ ffmpeg -i myvideo.mkv http://localhost:8090/av_feed.ffm
 ```
 
 You can then stream your media using the URL `http://yourserver.net:8090/av_stream.flv`.
+
+## Tips and tricks
+
+### Output the duration of a video
+
+```
+$ ffprobe -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1 file.ext
+
+```
+
+### Output stream information as JSON
+
+```
+$ ffprobe -v quiet -print_format json -show_format -show_streams file.ext
+
+```
+
+### Create a screen of the video every X frames
+
+```
+$ ffmpeg -i file.ext -an -s 319x180 -vf fps=1/**100** -qscale:v 75 %03d.jpg
+
+```
 
 ## See also
 

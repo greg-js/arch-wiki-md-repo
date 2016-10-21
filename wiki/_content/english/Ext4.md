@@ -264,7 +264,7 @@ If this is the root file-system your `crc32c_` module might need to be added to 
 
 And then regenerate the initramfs. See [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
 
-After this, you are ready to enable support for metadata checksums as described in the following two sections. In both cases the device must not be mounted.
+After this, you are ready to enable support for metadata checksums as described in the following two sections. In both cases the file system must not be mounted.
 
 More about metadata checksums can be read on the [ext4 wiki](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums).
 

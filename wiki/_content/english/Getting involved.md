@@ -59,7 +59,7 @@ You can help by creating and adopting packages.
 
 ### Official software projects
 
-You can get involved in the development of [official Arch Linux software projects](https://projects.archlinux.org/).
+You can get involved in the development of [official Arch Linux software projects](https://git.archlinux.org/).
 
 ### Participate in events
 

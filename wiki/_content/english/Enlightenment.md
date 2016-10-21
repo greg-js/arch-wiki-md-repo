@@ -48,16 +48,12 @@ Development PKGBUILDs which download and install the very latest development cod
 
 The following are EFL-based applications, most in an early stage of development and not yet released:
 
-*   [econcentration-git](https://aur.archlinux.org/packages/econcentration-git/) – Econcentration card game
 *   [ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) – Ecrire text editor
 *   [elbow-git](https://aur.archlinux.org/packages/elbow-git/) – Elbow web browser
 *   [eluminance-git](https://aur.archlinux.org/packages/eluminance-git/) – Eluminance photo browser
-*   [emprint-git](https://aur.archlinux.org/packages/emprint-git/) – Emprint screenshot tool
 *   [enjoy-git](https://aur.archlinux.org/packages/enjoy-git/) – [Enjoy](https://trac.enlightenment.org/e/wiki/Enjoy) music player
-*   [epad](https://aur.archlinux.org/packages/epad/) – ePad text editor
 *   [eperiodique](https://aur.archlinux.org/packages/eperiodique/) – [Eperiodique](http://eperiodique.sourceforge.net/) periodic table viewer
 *   [ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) – [Ephoto](https://trac.enlightenment.org/e/wiki/Ephoto) picture viewer
-*   [epour](https://aur.archlinux.org/packages/epour/) and [epour-git](https://aur.archlinux.org/packages/epour-git/) – Epour Bittorrent client
 *   [epymc-git](https://aur.archlinux.org/packages/epymc-git/) – E Python Media Center
 *   [equate-git](https://aur.archlinux.org/packages/equate-git/) – Equate calculator
 *   [eruler-git](https://aur.archlinux.org/packages/eruler-git/) – Eruler on-screen ruler and measurement tools
@@ -65,10 +61,7 @@ The following are EFL-based applications, most in an early stage of development 
 *   [elemines-git](https://aur.archlinux.org/packages/elemines-git/) – [Elemines](http://elemines.sourceforge.net/) minesweeper style game
 *   [espionage-git](https://aur.archlinux.org/packages/espionage-git/) – Espionage D-Bus inspector
 *   [ev-git](https://aur.archlinux.org/packages/ev-git/) – ev simple picture viewer
-*   [e_cho-git](https://aur.archlinux.org/packages/e_cho-git/) – E_Cho simon style game
-*   [e_jeweled-git](https://aur.archlinux.org/packages/e_jeweled-git/) – E_Jeweled bejeweled style game
 *   [rage](https://aur.archlinux.org/packages/rage/) and [rage-git](https://aur.archlinux.org/packages/rage-git/) – Rage video player
-*   [jesus-git](https://aur.archlinux.org/packages/jesus-git/) – A filemanager based on Elementary and EFL
 
 ### Starting Enlightenment
 

@@ -20,7 +20,7 @@
 
 ## Installation
 
-Ratpoison can be [installed](/index.php/Installed "Installed") with package [ratpoison](https://www.archlinux.org/packages/?name=ratpoison) or [ratpoison-git](https://aur.archlinux.org/packages/ratpoison-git/) for the development version.
+Ratpoison can be [installed](/index.php/Installed "Installed") with package [ratpoison](https://www.archlinux.org/packages/?name=ratpoison).
 
 ## Configuration
 

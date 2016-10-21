@@ -107,11 +107,11 @@ Xorg should run smoothly without closed source drivers, which are typically need
 ### ATI
 
 | GPU architecture | Radeon cards | Open-source driver | Proprietary driver |
-| GCN 4 | RX 400 | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
-| GCN 3 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
+| GCN 4 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN_4th_Generation_.28Arctic_Islands.2C_RX_400_and_Vega_10.2F11.29 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
+| GCN 3 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN_3rd_Generation_.28Volcanic_Islands.2C_R9_285.28x.29_and_Fury.2FNano.29 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [Catalyst](/index.php/Catalyst "Catalyst") /
 [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |
-| GCN 2 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
-| GCN 1 | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 2 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN_2nd_Generation_.28Sea_Islands.2C_HD_7790_and_Rx_290.2F260_Series.29 "wikipedia:Graphics Core Next") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
+| GCN 1 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#Graphics_Core_Next_.28Southern_Islands.2C_HD_7000.2FRx_200_Series.29 "wikipedia:Graphics Core Next") | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | TeraScale 2&3 | HD 5000 - HD 6000 | [ATI](/index.php/ATI "ATI") | [Catalyst](/index.php/Catalyst "Catalyst") |
 | TeraScale 1 | HD 2000 - HD 4000 | [Catalyst](/index.php/Catalyst "Catalyst") legacy |
 | Older | X1000 and older | *not available* |

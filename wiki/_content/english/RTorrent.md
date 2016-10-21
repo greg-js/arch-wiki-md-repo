@@ -35,14 +35,14 @@
 
 [Install](/index.php/Install "Install") the [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) package that is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Alternatively, install [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) or [rtorrent-vi-color](https://aur.archlinux.org/packages/rtorrent-vi-color/) or [rtorrent-extended](https://aur.archlinux.org/packages/rtorrent-extended/) from the [AUR](/index.php/AUR "AUR").
+Alternatively, install the [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) or [rtorrent-vi-color](https://aur.archlinux.org/packages/rtorrent-vi-color/) package.
 
 ## Configuration
 
 **Note:**
 
 *   See the rTorrent wiki article on this subject for more information: [Common Tasks in rTorrent for Dummies](http://web.archive.org/web/20140213003955/http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks).
-*   Vim may mistake the syntax of the config file, causing errors in the highlighting. To resolve this you can [append](/index.php/Append "Append") a modeline `# vim: set syntax\=conf:` to `~/.rtorrent.rc`.
+*   Vim may mistake the syntax of the config file, causing errors in the highlighting. To resolve this you can [append](/index.php/Append "Append") a modeline `# vim: set syntax=conf:` to `~/.rtorrent.rc`.
 
 Before running rTorrent, find the example configuration file `/usr/share/doc/rtorrent/rtorrent.rc` and copy it to `~/.rtorrent.rc`:
 

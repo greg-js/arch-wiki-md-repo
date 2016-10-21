@@ -144,7 +144,7 @@ $ wine qq2010.exe
 
 ### Wine QQ 轻聊版
 
-**注意:** 此方案使用QQ轻聊版6.7，更高版本在当前wine版本不能安装
+**注意:** 此方案使用QQ轻聊版6.7，更高版本在当前wine版本需要[额外的调整](http://blog.lilydjwg.me/2015/10/26/run-tencent-qq-lite-with-wine.186640.html)才能安装
 
 安装[winetricks](https://www.archlinux.org/packages/?name=winetricks)、[wine](https://www.archlinux.org/packages/?name=wine)。创建 qqlight.verb 如下，
 
@@ -207,7 +207,7 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 
 ### Wine TM
 
-对于仍然能用的 TM 版本（TM2009Beta3.4、TM2013preview1），使用[以下方案](http://lilydjwg.is-programmer.com/2013/3/24/run-tencent-messenger-with-wine.38382.html)可以成功：
+对于仍然能用的 TM 版本（TM2009Beta3.4、TM2013preview1），使用[以下方案](http://blog.lilydjwg.me/2013/3/24/run-tencent-messenger-with-wine.38382.html)可以成功：
 
 ```
 $ winetricks riched20 ie6 mfc42
@@ -250,7 +250,7 @@ Wine QQ/TM 在平铺式窗口管理器下可能不太听话。以下是一些 [A
 
 *   将所有 TM 的窗口设置为浮动
 *   清除不需要的窗口边框、避免菜单弹出时焦点移动到菜单上
-*   在使用标签式会话窗口时，增加[使用 Alt+数字来切换标签页](http://lilydjwg.is-programmer.com/2013/11/15/switch-tabs-with-alt-num-in-wined-tm-exe-in-awesome.41729.html)的快捷键（需要安装 [xdotool](/index.php?title=Xdotool&action=edit&redlink=1 "Xdotool (page does not exist)")）
+*   在使用标签式会话窗口时，增加[使用 Alt+数字来切换标签页](http://blog.lilydjwg.me/2013/11/15/switch-tabs-with-alt-num-in-wined-tm-exe-in-awesome.41729.html)的快捷键（需要安装 [xdotool](/index.php?title=Xdotool&action=edit&redlink=1 "Xdotool (page does not exist)")）
 *   自动关闭弹出的新闻窗口
 
 ```
@@ -354,3 +354,4 @@ for_window [instance="QQ.exe"] border none
 *   [Web 端的 QQ 群空间](http://qun.qzone.qq.com/) 当所使用 QQ 客户端不支持群空间时，可以此用该服务代替。
 *   [IM QQ-QQ 手机版](http://im.qq.com/mobileqq/) 移动端也未尝不也是一种代替方案。
 *   [hillwoodroc/winetricks-zh](https://github.com/hillwoodroc/winetricks-zh) hillwoodroc/winetricks-zh
+*   [Wine QQ “杂交版”](http://tieba.baidu.com/p/4814636033) huixingjihua@tieba 制作的Wine QQ国际版 2012

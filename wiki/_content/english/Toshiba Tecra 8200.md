@@ -4,8 +4,7 @@
 *   [2 Audio](#Audio)
 *   [3 Video](#Video)
 *   [4 Modem](#Modem)
-*   [5 Some tweaking](#Some_tweaking)
-*   [6 Some references](#Some_references)
+*   [5 Some references](#Some_references)
 
 ## INSTALL in a toshiba tecra 8200
 
@@ -49,35 +48,6 @@ Do not forget to install the window manager of your choice. it could be xfce or 
 ## Modem
 
 The modem appears to be working. The drivers for the modem are no longer available from the official source. You can find a collection of them [here](http://linmodems.technion.ac.il/packages/smartlink/) from an unofficial source.
-
-## Some tweaking
-
-[Install](/index.php/Install "Install") the [hwd](https://www.archlinux.org/packages/?name=hwd) package. This is a nice hardware detection script.
-
-comment or remove in rc.sysinit the last line, it's a screensaver but usually, you have another one
-
-```
-/usr/bin/setterm -blank 15
-
-```
-
-*   permit to the user to halt or reboot the system
-
-*   using nano to change the config file, it's very simple to use but to prevent the problem of wraping add in `/etc/nanorc`
-
-```
-set nowrap
-
-```
-
-*   time
-
-to synchronise your time use ntpclient. install the npt package, then when you want update time
-
-```
-ntpdate pool.ntp.org
-
-```
 
 ## Some references
 

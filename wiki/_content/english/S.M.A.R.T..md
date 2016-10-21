@@ -171,6 +171,17 @@ wall "$SMARTD_MESSAGE"
 
 ```
 
+If you are running a desktop environment, you might also prefer having a popup to appear on your desktop. In this case, you can use this script (replace `*X_user*` and `*X_userid*` with the user and userid running X respectively) :
+
+ `/usr/local/bin/smartdnotify` 
+```
+#!/bin/sh
+
+sudo -u *X_user* DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/*X_userid*/bus notify-send "S.M.A.R.T Error ($SMARTD_FAILTYPE)" "$SMARTD_MESSAGE" --icon=dialog-warning
+```
+
+This requires [libnotify](https://www.archlinux.org/packages/?name=libnotify) and a compatible desktop environment. See [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications") for more details.
+
 #### Power management
 
 If you use a computer under control of power management, you should instruct smartd how to handle disks in low power mode. Usually, in response to SMART commands issued by smartd, the disk platters are spun up. So if this option is not used, then a disk which is in a low-power mode may be spun up and put into a higher-power mode when it is periodically polled by smartd.

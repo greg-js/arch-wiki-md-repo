@@ -38,10 +38,6 @@ Xcompmgr может быть [установлен](/index.php/%D0%A3%D1%81%D1%8
 
 Существуют форки, в которые внесены различные исправления:
 
-*   **xcompmgr-dana** — Один из первых форков Xcompmgr.
-
-	[http://oliwer.net/xcompmgr-dana/](http://oliwer.net/xcompmgr-dana/) || [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)
-
 *   **[Compton](/index.php/Compton_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Compton (Русский)")** — Форк Xcompmgr, содержащий большинство предыдущих исправлений и многие другие.
 
 	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton-git](https://aur.archlinux.org/packages/compton-git/)

@@ -2,41 +2,20 @@ The Ident service as specified by [RFC 1413](//tools.ietf.org/html/rfc1413) is m
 
 So you have two choices:
 
-1.  Tell the truth (see pidentd below)
+1.  Tell the truth (see [#oidentd](#oidentd) below)
 2.  Tell a little white lie (see nullidentmod or nullidentd below)
 
 ## Contents
 
-*   [1 pIdentd](#pIdentd)
+*   [1 oidentd](#oidentd)
 *   [2 nullIdentdMod](#nullIdentdMod)
     *   [2.1 Customization](#Customization)
 *   [3 nullIdent](#nullIdent)
     *   [3.1 systemd activation](#systemd_activation)
 
-## pIdentd
+## oidentd
 
-Like most people, I prefer to run identd from from inetd instead of as a stand-alone service. For this to work you will need to install two packages: xinetd and pidentd. I tried this with oidentd but it does not seem to work with the latest xinetd.
-
-**1.** Install the [xinetd](https://www.archlinux.org/packages/?name=xinetd) and [pidentd](https://aur.archlinux.org/packages/pidentd/) packages.
-
-**2.** Next, you will need to paste the following into a new file and save it as `/etc/xinetd.d/auth`
-
-```
-service auth
-{
-      flags = REUSE
-      socket_type = stream
-      wait = no
-      user = nobody
-      server = /usr/bin/identd
-      server_args = -m -N
-      log*on*failure += USERID
-      disable = no
-}
-
-```
-
-**3.** After you have saved the new file, start **xinetd** [systemd](/index.php/Systemd "Systemd") service.
+See [oidentd](/index.php/Oidentd "Oidentd").
 
 If all went well, you should have the auth service running on port 113\. A good way of checking this is by installing [nmap](https://www.archlinux.org/packages/?name=nmap) (if you do not have it already) and typing
 

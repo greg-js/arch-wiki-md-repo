@@ -4,9 +4,9 @@ The HP Zbook Studio G3 is a workstation replacement laptop.
 
 *   [1 Status=](#Status.3D)
 *   [2 Installation](#Installation)
-    *   [2.1 Disabling Hybrid graphics](#Disabling_Hybrid_graphics)
-    *   [2.2 Font size during installation](#Font_size_during_installation)
-    *   [2.3 Disabling the nouveau driver](#Disabling_the_nouveau_driver)
+    *   [2.1 Using hybrid graphics](#Using_hybrid_graphics)
+    *   [2.2 Disabling Hybrid graphics](#Disabling_Hybrid_graphics)
+    *   [2.3 Font size during installation](#Font_size_during_installation)
     *   [2.4 Dual boot with windows](#Dual_boot_with_windows)
 *   [3 Configuration](#Configuration)
     *   [3.1 X config](#X_config)
@@ -20,9 +20,13 @@ This laptop is currently very difficult to get working with Arch. Despite the pr
 
 Installation is generally pretty straight forward, however, there are some things to consider. Follow the general instructions of the [[guide](https://wiki.archlinux.org/index.php/Installation_guide%7Cinstallation)]
 
+### Using hybrid graphics
+
+Due to a kernel issue, use of nouveau or bbswitch may result in lockups. To prevent this, add `acpi_osi=! acpi_osi="Windows 2009"` to your kernel command line ([source](https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238), [Kernel bug 156341](https://bugzilla.kernel.org/show_bug.cgi?id=156341)).
+
 ### Disabling Hybrid graphics
 
-The hybrid graphics DO WORK, however, there is currently no way to make an external display work in a hybrid setup. If you do not intend to use an external display, then you can skip this step.
+If you do not mind greatly reducing your battery life and would like to use the NVIDIA graphics by default, you can change Hybrid graphisc in the firmware setup.
 
 In the BIOS settings, (which you enter by pressing Escape during boot) change the graphics mode from Auto/Hybrid to discrete.
 
@@ -33,23 +37,6 @@ Due to the high screen resolution if this machine, you may want to change the fo
 ```
 # setfont sun12x22
 
-```
-
-### Disabling the nouveau driver
-
-If you experience problems with loading/unloading kernel modules, and, characteristically lspci never completes, you may need to disable the nouveau driver. The Nouveau driver for the NVIDIA Quatro 1000M graphics card is loaded by default, but it does not always work. Therefore, before installation, you need to blacklist the kernel at boot. Edit the [kernel boot parameters](/index.php/Kernel_modules#Using_kernel_command_line "Kernel modules") to disable this module from being loaded (this can be done in the GRUB menu by pressing 'e'):
-
-```
-# modprobe.blacklist=nouveau
-
-```
-
-After installation, you may want to blacklist it permanently:
-
- `/etc/modprobe.d/nonouveau.conf` 
-```
-#Do not load the nouveau driver
-blacklist nouveau
 ```
 
 ### Dual boot with windows

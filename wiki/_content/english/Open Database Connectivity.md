@@ -12,13 +12,13 @@ Open Database Connectivity, commonly ODBC, is an open specification for providin
     *   [2.2 Myodbc](#Myodbc)
         *   [2.2.1 Installation](#Installation_3)
         *   [2.2.2 Configuration](#Configuration_3)
-        *   [2.2.3 Create A Symbolic Link](#Create_A_Symbolic_Link)
+        *   [2.2.3 Create a symbolic link](#Create_a_symbolic_link)
 *   [3 Databases](#Databases)
     *   [3.1 Microsoft SQL Server 2000](#Microsoft_SQL_Server_2000)
     *   [3.2 Mariadb](#Mariadb)
-        *   [3.2.1 Create A Test Database](#Create_A_Test_Database)
+        *   [3.2.1 Create a test database](#Create_a_test_database)
         *   [3.2.2 Testing the ODBC](#Testing_the_ODBC)
-        *   [3.2.3 A Couple Useful Websites](#A_Couple_Useful_Websites)
+        *   [3.2.3 A couple useful websites](#A_couple_useful_websites)
     *   [3.3 Virtuoso / SPARQL](#Virtuoso_.2F_SPARQL)
 
 ## ODBC engines
@@ -83,7 +83,7 @@ FileUsage       = 1
 
 ```
 
-#### Create A Symbolic Link
+#### Create a symbolic link
 
 Next we need to create a symlink for libmyodbc.so. To do this we need to go to "/usr/lib/" and set up a symlink to libmyodbc.so
 
@@ -141,9 +141,9 @@ Stmt            =
 
 MariaDB ODBC driver connection strings and [configuration guide](https://www.devart.com/odbc/mysql/docs/using_odbc_driver.htm)
 
-#### Create A Test Database
+#### Create a test database
 
-Create a new database "test". You can use one of the MySQL front-ends [mysql-gui-tools](https://aur.archlinux.org/packages/mysql-gui-tools/) [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) or the commandline.
+Create a new database "test". You can use one of the MySQL front-ends such as [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), or the command-line *mysqladmin* command:
 
 ```
 mysqladmin -h localhost -u root -p create test
@@ -181,7 +181,7 @@ isql MySQL-test -v
 
 ```
 
-#### A Couple Useful Websites
+#### A couple useful websites
 
 [http://www.unixodbc.org/doc/OOoMySQL.pdf](http://www.unixodbc.org/doc/OOoMySQL.pdf)
 

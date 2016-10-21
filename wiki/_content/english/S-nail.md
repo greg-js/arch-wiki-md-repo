@@ -66,10 +66,10 @@ To avoid that members of the program environment and settings of configuration f
 
 The sections "A starter", "Sending mail" and "Reading mail" of the manual page should be worth a glance when looking for more "quick shots".
 
-In cases when in the following *USER* and *PASS* are specified as part of an URL (and only then), they must become URL-percent-encoded; S-nail offers the `urlencode` command which does this for you:
+In cases when in the following *USER* and *PASS* are specified as part of an URL (and only then), they must become URL-percent-encoded; S-nail offers the `urlcodec` command which does this for you:
 
 ```
-# printf 'urlencode *USER* *PASS*
+# printf 'urlcodec encode *USER* *PASS*
 x
 ' | mailx -#
 
@@ -79,13 +79,13 @@ printf as well as S-nail / mailx are subject to your locale settings:
 
 ```
 # # In UTF-8:
-# printf 'urlencode SPAß
+# printf 'urlcodec encode SPAß
 x
 ' | mailx -#
   in: <SPAß> (5 bytes)
   out: <SPA%C3%9F> (9 bytes)
 # # In ISO-8859-1:
-# printf 'urlencode SPAß
+# printf 'urlc enc SPAß
 x
 ' | mailx -#
   in: <SPAß> (4 bytes)
@@ -153,11 +153,14 @@ set sendwait
 # mimetype command to ensure this is true for you, too
 set mimetypes-load-control
 
-# Default directory where we act in (relative to $HOME)
+# Default directory where we act in (relative to $HOME if not absolute)
 set folder=mail
 # A leading "+" (often) means: under folder
-# record is used to save copies of sent messages
+# record is used to save copies of sent messages, DEAD is error storage
+# inbox: system mailbox, by default /var/mail/$USER: **file %**
+# MBOX: secondary mailbox: **file &**
 set MBOX=+mbox.mbox record=+sent.mbox DEAD=+dead.mbox
+set inbox=+system.mbox
 
 # Define some shortcuts; now one may say, e.g., file mymbo
 shortcut mymbo %:+mbox.mbox \
@@ -417,7 +420,7 @@ S-nail doesn't yet support OpenPGP. However, using a macro it is possible to at 
 
 ## Using an IMAP mailbox
 
-The following is only a quick hint, it is also possible to define *folder* to point to an IMAP server folder, for example.
+The following is only a quick hint, it is also possible to define *folder* and *inbox* to point to IMAP server folders, for example. Internationalised names are supported.
 
 ```
 set v15-compat
@@ -428,5 +431,6 @@ set imap-cache=~/.imap_cache
 
 # You may want to define shortcuts to folders, for example:
 shortcut myimap "**imaps://USER:PASS@server:port"**
+set inbox=myimap
 
 ```

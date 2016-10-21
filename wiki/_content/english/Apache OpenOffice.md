@@ -22,8 +22,6 @@ From [Why Apache OpenOffice](http://why.openoffice.org/):
     *   [4.2 Anti-aliasing](#Anti-aliasing)
     *   [4.3 Spell checking problems](#Spell_checking_problems)
     *   [4.4 Dark GTK+ themes, icons and GTK-Qt Engine](#Dark_GTK.2B_themes.2C_icons_and_GTK-Qt_Engine)
-        *   [4.4.1 Older OpenOffice versions (< 3.2.x)](#Older_OpenOffice_versions_.28.3C_3.2.x.29)
-        *   [4.4.2 Newer OpenOffice / LibreOffice versions](#Newer_OpenOffice_.2F_LibreOffice_versions)
     *   [4.5 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
     *   [4.6 Fixing Java framework error](#Fixing_Java_framework_error)
     *   [4.7 OpenOffice does not detect my certificates](#OpenOffice_does_not_detect_my_certificates)
@@ -211,14 +209,7 @@ Finally, use the OpenOffice extension manager (available through the *Tools* men
 
 Older OpenOffice/LibreOffice versions would start in *High Contrast Mode* if you use dark [GTK+](/index.php/GTK%2B "GTK+") themes. This might prevent you from changing *High Contrast Icons* or Calc cell background coloring is completely disabled.
 
-#### Older OpenOffice versions (< 3.2.x)
-
-*   For a quick fix, see [openoffice-dark-gtk-fix](https://aur.archlinux.org/packages/openoffice-dark-gtk-fix/). This also sets `OOO_FORCE_DESKTOP=gnome`.
-*   Another fix is to export `SAL_USE_VCLPLUGIN=gen` (generic X11). See [for more info](http://user.services.openoffice.org/en/forum/viewtopic.php?f=16&t=27216#p123942).
-
-#### Newer OpenOffice / LibreOffice versions
-
-In newer version of OpenOffice / LibreOffice ( > 3.2.x), the fixes mentioned above do not seem to work. Possible solutions may be:
+In newer version of OpenOffice / LibreOffice ( > 3.2.x), possible solutions may be:
 
 *   You could manually configure UI colors via *Tools > Options > Appearance*, yet Impress and Calc may stay dark.
 *   Another solution is to disable *Automatically detect high-contrast mode of operation system* in *LibreOffice > Accessibility* (> LO 4.1.x).

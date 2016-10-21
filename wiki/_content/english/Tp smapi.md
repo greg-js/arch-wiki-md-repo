@@ -22,7 +22,7 @@ If you are installing on a recent Thinkpad that has an Ivy Bridge processor or l
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) package that recently moved to the community repository. For the custom [linux-ck](/index.php/Linux-ck "Linux-ck") kernel there exist the [tp_smapi-ck](https://aur.archlinux.org/packages/tp_smapi-ck/) which can be installed from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [tp_smapi](https://www.archlinux.org/packages/?name=tp_smapi) package. For the custom [linux-ck](/index.php/Linux-ck "Linux-ck") kernel there is [tp_smapi-ck](https://aur.archlinux.org/packages/tp_smapi-ck/) in the [AUR](/index.php/AUR "AUR").
 
 It's providing you 3 new [Kernel modules](/index.php/Kernel_modules "Kernel modules").
 

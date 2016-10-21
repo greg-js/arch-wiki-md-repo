@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Network_Time_Protocol_daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-08，点击[这里](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&diff=0&oldid=412005)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Network_Time_Protocol_daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Network_Time_Protocol_daemon&diff=0&oldid=446540)可以查看翻译后英文页面的改动。
 
 [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") （网络时间协议）是 GNU/Linux 系统通过互联网时间服务器同步系统[软件时钟](/index.php/Time_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Time (简体中文)")的最常见方法。设计时考虑到了各种网络延迟，通过公共网络同步时，误差可以降低到10毫秒以内；通过本地网络同步时，误差可以降低到 1 毫秒。
 
@@ -17,7 +17,9 @@
     *   [4.1 Start ntpd on network connection](#Start_ntpd_on_network_connection)
     *   [4.2 Using ntpd with GPS](#Using_ntpd_with_GPS)
     *   [4.3 Running in a chroot](#Running_in_a_chroot)
-*   [5 参见](#.E5.8F.82.E8.A7.81)
+*   [5 排错](#.E6.8E.92.E9.94.99)
+    *   [5.1 无法分配请求地址](#.E6.97.A0.E6.B3.95.E5.88.86.E9.85.8D.E8.AF.B7.E6.B1.82.E5.9C.B0.E5.9D.80)
+*   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
@@ -309,6 +311,28 @@ Finally, restart `ntpd` daemon again. Once it restarted you can verify that the 
 should now link to `/var/lib/ntp` instead of `/`.
 
 It is relatively difficult to be sure that your driftfile configuration is actually working without waiting a while, as *ntpd* does not read or write it very often. If you get it wrong, it will log an error; if you get it right, it will update the timestamp. If you do not see any errors about it after a full day of running, and the timestamp is updated, you should be confident of success.
+
+## 排错
+
+### 无法分配请求地址
+
+如果收到下列*无法分配请求地址*的报错信息：
+
+ `$ journalctl -u ntpd` 
+```
+ntpd[2130]: bind(21) AF_INET6 fe80::6ef0:49ff:fe51:4946%2#123 flags 0x11 failed: Cannot assign requested address
+ntpd[2130]: unable to create socket on eth0 (5) for fe80::6ef0:49ff:fe51:4946%2#123
+ntpd[2130]: failed to init interface for address fe80::6ef0:49ff:fe51:4946%2
+```
+
+可以禁用 IPv6 解决。做法是：[编辑](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)") `ntpd.service` 添加 `-4` 参数：
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/ntpd -g -u ntp:ntp **-4**
+
+```
 
 ## 参见
 

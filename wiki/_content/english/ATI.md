@@ -351,14 +351,6 @@ KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_meth
 
 	[https://github.com/StuntsPT/Radeon-tray](https://github.com/StuntsPT/Radeon-tray) || [radeon-tray](https://aur.archlinux.org/packages/radeon-tray/)
 
-*   **power-play-switcher** — A gui for changing powerplay setting of the open source driver for ati radeon video cards.
-
-	[https://code.google.com/p/power-play-switcher/](https://code.google.com/p/power-play-switcher/) || [power-play-switcher](https://aur.archlinux.org/packages/power-play-switcher/)
-
-*   **Gnome-shell-extension-Radeon-Power-Profile-Manager** — A small extension for Gnome-shell that will allow you to change the power profile of your radeon card when using the open source drivers.
-
-	[https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager](https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager) || [gnome-shell-extension-radeon-ppm](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-ppm/) [gnome-shell-extension-radeon-power-profile-manager-git](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-power-profile-manager-git/)
-
 ### Other notes
 
 To view the speed that the GPU is running at, perform the following command and you will get something like this output:
@@ -457,21 +449,6 @@ To disable the output, do
 xrandr --output S-video --off
 
 ```
-
-Also you may notice that the video is being played on monitor only and not on the TV. Where the Xv overlay is sent is controlled by XV_CRTC attribute.
-
-To send the output to the TV, do:
-
-```
-xvattr -a XV_CRTC -v 1
-
-```
-
-**Note:** you need to install [xvattr](https://aur.archlinux.org/packages/xvattr/) to execute this command.
-
-To switch back to the monitor, I change this to `0`. `-1` is used for automatic switching in dualhead setups.
-
-Please see [Enabling TV-Out Statically](http://www.x.org/wiki/radeonTV) for how to enable TV-out in your xorg configuration file.
 
 ### Force TV-out in KMS
 
@@ -612,7 +589,7 @@ If you experience poor performance and dmesg shows something like this
 
 ```
 
-then check if the agp driver for your motherboard (e.g., `via_agp`, `intel_agp` etc.) is loaded before the `radeon` module, see [Enabling KMS](#Enabling_KMS).
+then check if the agp driver for your motherboard (e.g., `via_agp`, `intel_agp` etc.) is loaded before the `radeon` module, see [#Loading](#Loading).
 
 ### TV showing a black border around the screen
 

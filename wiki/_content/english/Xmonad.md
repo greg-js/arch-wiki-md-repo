@@ -2,7 +2,7 @@
 
 xmonad is written, configured and extensible in [Haskell](http://haskell.org/). Custom layout algorithms, key bindings and other extensions may be written by the user in configuration files.
 
-Layouts are applied dynamically, and different layouts may be used on each workspace. Xinerama is fully supported, allowing windows to be tiled on several physical screens.
+Layouts are applied dynamically, and different layouts may be used on each workspace. [Xinerama](https://en.wikipedia.org/wiki/Xinerama "wikipedia:Xinerama") is fully supported, allowing windows to be tiled on several physical screens.
 
 For more information, please visit the xmonad website: [http://xmonad.org/](http://xmonad.org/)
 
@@ -57,6 +57,8 @@ Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-gi
 Select *Xmonad* from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
 Alternatively, append `exec xmonad` to the `~/.xinitrc` file and then start the session by executing *startx*.
+
+Make sure you have the [Xterm](/index.php/Xterm "Xterm") package installed or have changed the terminal emulator in the configuration. Otherwise you will not be able to do anything in Xmonad.
 
 **Note:** By default, xmonad does not set an X cursor, therefore the "cross" cursor is usually displayed. To set the expected left-pointer, see [Cursor themes#Change X shaped default cursor](/index.php/Cursor_themes#Change_X_shaped_default_cursor "Cursor themes").
 

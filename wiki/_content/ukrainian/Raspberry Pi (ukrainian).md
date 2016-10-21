@@ -362,7 +362,7 @@ RNGD_OPTS="-o /dev/random -r /dev/hwrng"
 
 ### Python
 
-Для використання пінів GPIO з Python, використайте бібліотеку [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO). Встановіть або [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) або [python2-raspberry-gpio](https://aur.archlinux.org/packages/python2-raspberry-gpio/) з [AUR](/index.php/AUR "AUR").
+Для використання пінів GPIO з Python, використайте бібліотеку [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO). Встановіть [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) з [AUR](/index.php/AUR "AUR").
 
 ## I2C
 

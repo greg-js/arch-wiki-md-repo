@@ -1,21 +1,18 @@
+[Ion](http://tuomov.iki.fi/software/) is a tiling window manager with tabbed frames. It uses Lua as an embedded interpreter which handles all of the configuration. It mainly uses the keyboard to access the functions but also supports the mouse for some things.
+
 ## Contents
 
-*   [1 Introduction](#Introduction)
-*   [2 Installation](#Installation)
-*   [3 Configuration](#Configuration)
-    *   [3.1 cfg_ion.lua](#cfg_ion.lua)
-    *   [3.2 cfg_bindings.lua](#cfg_bindings.lua)
-    *   [3.3 cfg_menus.lua](#cfg_menus.lua)
-    *   [3.4 cfg_ionws.lua](#cfg_ionws.lua)
-    *   [3.5 look.lua](#look.lua)
-
-## Introduction
-
-[Ion](http://tuomov.iki.fi/software/)is a tiling window manager with tabbed frames. It uses Lua as an embedded interpreter which handles all of the configuration. It mainly uses the keyboard to access the functions but also supports the mouse for some things.
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+    *   [2.1 cfg_ion.lua](#cfg_ion.lua)
+    *   [2.2 cfg_bindings.lua](#cfg_bindings.lua)
+    *   [2.3 cfg_menus.lua](#cfg_menus.lua)
+    *   [2.4 cfg_ionws.lua](#cfg_ionws.lua)
+    *   [2.5 look.lua](#look.lua)
 
 ## Installation
 
-Ion3 is no longer in any of the repositories as mentioned in this news item [[1]](https://www.archlinux.org/news/374/). So you will have to [install](/index.php/Install "Install") it using the package [ion-3](https://aur.archlinux.org/packages/ion-3/).
+Ion3 is no longer in any of the repositories as mentioned in this news item [[1]](https://www.archlinux.org/news/374/). So you will have to [install](/index.php/Install "Install") it using the package [ion3](https://aur.archlinux.org/packages/ion3/).
 
 Copy the configurationfiles to your home directory:
 

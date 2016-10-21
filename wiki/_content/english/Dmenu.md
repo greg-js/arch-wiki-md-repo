@@ -19,10 +19,6 @@
 
 Various patched variants exist which extend dmenu's default functionality. Consider installing one of the following packages from the [AUR](/index.php/AUR "AUR"):
 
-*   [dmenu-xft](https://aur.archlinux.org/packages/dmenu-xft/): XFT font support
-*   [dmenu-xft-height](https://aur.archlinux.org/packages/dmenu-xft-height/): XFT font support and custom height support
-*   [dmenu-xft-transparency](https://aur.archlinux.org/packages/dmenu-xft-transparency/): XFT font support and transparency
-*   [dmenu-xft-mouse-height](https://aur.archlinux.org/packages/dmenu-xft-mouse-height/): XFT font support, custom height, and mouse support
 *   [dmenu2](https://aur.archlinux.org/packages/dmenu2/): dmenu fork with many useful patches applied and additional capabilities added including dimming, specifying a custom opacity, and underlining.
 
 You may run *dmenu* with:

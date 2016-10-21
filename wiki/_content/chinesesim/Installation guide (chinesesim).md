@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-22，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=446203)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=454634)可以查看翻译后英文页面的改动。
 
 本文将引导您从用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux "Arch Linux")。安装之前请先阅读 [FAQ (简体中文)](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。为了更清楚的阅读此文档，请参考 [Help:Reading](/index.php/Help:Reading "Help:Reading").
 
@@ -22,7 +22,7 @@
 *   [3 配置系统](#.E9.85.8D.E7.BD.AE.E7.B3.BB.E7.BB.9F)
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
-    *   [3.3 Time zone](#Time_zone)
+    *   [3.3 时区](#.E6.97.B6.E5.8C.BA)
     *   [3.4 Locale](#Locale)
     *   [3.5 主机名](#.E4.B8.BB.E6.9C.BA.E5.90.8D)
     *   [3.6 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
@@ -36,11 +36,13 @@
 
 理论上，Arch Linux能在任何内存空间不小于 256MB 的[i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)")兼容机上运行。最基本的[base](https://www.archlinux.org/groups/x86_64/base/)组中包含的包将占用约 800MB 存储空间。
 
-[Category:Getting and installing Arch (简体中文)](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中包含了下载和启动安装介质的说明。建议始终使用最新的 ISO 镜像。启动完成后会自动以 root 登录并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示， [grml config](http://grml.org/zsh/)提供了额外的配置。编辑配置文件时可以使用 [nano](/index.php/Nano#Usage "Nano") 或 [vim](/index.php/Vim#Usage "Vim") 。
+[Category:Getting and installing Arch (简体中文)](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中包含了下载和启动安装介质的说明。建议始终使用最新的 ISO 镜像。启动完成后会自动以 root 登录并进入[zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)")命令提示， [grml config](http://grml.org/zsh/)提供了额外的配置。
+
+如果你想切换至其它的虚拟终端来干点别的事, 例如使用 ELinks 来查看这篇文档，使用 Alt+arrow 快捷键。编辑配置文件时可以使用 [nano](/index.php/Nano#Usage "Nano") 或 [vim](/index.php/Vim#Usage "Vim") 。
 
 ### 验证启动模式
 
-要确认是否已进入[UEFI](/index.php/UEFI "UEFI")模式，检查 [efivars](/index.php/Efivars "Efivars")：
+如果 [UEFI](/index.php/UEFI "UEFI") 模式已经启用, [Archiso](/index.php/Archiso "Archiso") 将会使用 [systemd-boot](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") 来[启动](/index.php/Boot "Boot") Arch Linux . 如果你要验证启动模式, 可以尝试列出 [efivars](/index.php/UEFI#UEFI_Variables "UEFI") 目录:
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -59,16 +61,16 @@
 
 ### 连接到因特网
 
-所有有线网络连接都启用了 `dhcpcd`,可以用 [ping(8)](http://man7.org/linux/man-pages/man8/ping.8.html) 等工具验证。
-
-其它[网络配置方式](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)")可以使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 和 [netctl](/index.php/Netctl "Netctl")。参考[netctl.profile(5)](https://git.archlinux.org/netctl.git/tree/docs/netctl.profile.5.txt).
-
-使用这两个方式时，需要 [停止](/index.php/Stop "Stop") `dhcpcd@*interface*.service`:
+守护进程 [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 已被默认[启用](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules)来探测**有线**设备, 并会尝试连接。如需验证网络是否正常, 可以使用 [ping](/index.php/Ping "Ping"):
 
 ```
-# systemctl stop dhcpcd@*interface*.service
+# ping -c 3 archlinux.org
 
 ```
+
+若发现网络不通,利用 `systemctl stop dhcpcd@<TAB>` [停用](/index.php/Systemd#Using_units "Systemd") *dhcpcd* 进程，然后查看 [网络配置](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)").
+
+对于**无线**连接,iw(8), wpa_supplicant(8) 和 [netctl](/index.php/Netctl#Wireless_.28WPA-PSK.29 "Netctl") 等工具已被提供. 详情查看[无线网络配置](/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)").
 
 ### 更新系统时间
 
@@ -85,23 +87,52 @@
 
 ### 建立硬盘分区
 
-详情参见 [Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")；可能需要一些特别的分区，详情请参阅[在 Linux 上创建 EFI 系统分区](/index.php/UEFI#EFI_System_Partition "UEFI")以及[GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")(英文)；
+磁盘若被系统识别到，就会被分配为一个*块设备*，如`/dev/sda`。识别这些设备，使用[lsblk](/index.php/Core_utilities#lsblk "Core utilities")或*fdisk*。输出中以`rom`, `loop` 或 `airoot` 结尾的可以被忽略。
 
-要修改 [分区表](/index.php/Partition_table "Partition table")，可以使用 [fdisk](/index.php/Fdisk "Fdisk") 或 [parted](/index.php/Parted "Parted")，这两个 Tool 都支持 [MBR](/index.php/MBR "MBR") 和 [GPT](/index.php/GPT "GPT"), [gdisk(8)](http://www.rodsbooks.com/gdisk/gdisk.html) 仅支持 GPT.
+```
+# fdisk -l
 
-至少需要一个 `/` 目录，[UEFI](/index.php/UEFI "UEFI") 系统还需要 [EFI 系统分区](/index.php/EFI_System_Partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "EFI System Partition (简体中文)")。GRUB 还需要一个额外分区，参考 [GRUB BIOS boot partition](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB").
+```
 
-如果需要需要创建多级存储，请参考 [LVM](/index.php/LVM "LVM")、[LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") 或 [RAID](/index.php/RAID "RAID")。
+对于一个选定的设备，以下的*分区*是必须要有的:
+
+*   一个根分区 `/`.
+*   如果 [UEFI](/index.php/UEFI "UEFI") 模式被启用,你还需要一个 [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition").
+*   [Swap](/index.php/Swap_space "Swap space") 可以在一个独立的分区上设置，也可以直接建立 [交换文件](/index.php/Swap#Swap_file "Swap").
+
+如需修改*分区表*,使用 [fdisk](/index.php/Fdisk "Fdisk") 或 [parted](/index.php/Parted "Parted"). 查看[Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")以获得更多详情.
+
+如果需要需要创建多级存储例如 [LVM](/index.php/LVM "LVM")、[LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS") 或 [RAID](/index.php/RAID "RAID")，请在此时完成。
 
 ### 格式化分区
 
-详情参见 [文件系统](/index.php/File_systems#Create_a_file_system "File systems") 和 [swap (简体中文)](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)")。
+当分区配置好了, 这些分区应立即被格式化并使用一个合适的[文件系统](/index.php/File_system "File system"). 例如，如果你想将`/dev/*sda1*`格式化成`*ext4*`, 使用这个命令:
 
-如果您正在使用(U)EFI，您很可能需要另外一个分区来放置UEFI系统分区。请阅读[这篇文章](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface")。
+```
+# mkfs.*ext4* /dev/*sda1*
+
+```
+
+详情参见 [文件系统](/index.php/File_systems#Create_a_file_system "File systems") 和 [swap (简体中文)](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)")。
 
 ### 挂载分区
 
-将分区[mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)到 `/mnt`，如果使用多个分区，还需要为其他分区创建目录并挂载它们（`/mnt/boot`、`/mnt/home`、……）。激活 [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) 分区，这样 `genfstab` 才能自动检测到它们。
+首先将根分区[挂载](/index.php/File_systems#Mount_a_filesystem "File systems")到 `/mnt`，例如：
+
+```
+# mount /dev/*sda1* /mnt
+
+```
+
+如果使用多个分区，还需要为其他分区创建目录并挂载它们（`/mnt/boot`、`/mnt/home`、……）。
+
+```
+# mkdir /mnt/*boot*
+# mount /dev/*sda2* /mnt/*boot*
+
+```
+
+如果你有[swap (简体中文)](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)")分区，你还应该使用 [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html) 激活分区。当此步骤完成，`genfstab` 才能自动检测到它们。
 
 ## 安装
 
@@ -136,7 +167,7 @@
 用以下命令生成 [fstab](/index.php/Fstab "Fstab") 文件 (用 `-U` 或 `-L` 选项设置UUID 或卷标)：
 
 ```
-# genfstab -U -p /mnt >> /mnt/etc/fstab
+# genfstab -U /mnt >> /mnt/etc/fstab
 
 ```
 
@@ -151,7 +182,7 @@
 
 ```
 
-### Time zone
+### 时区
 
 设置 [时区](/index.php/Time_zone "Time zone"):
 
@@ -208,12 +239,26 @@ zh_TW.UTF-8 UTF-8
 
 **警告:** 不推荐在此设置任何中文locale，或导致tty乱码。
 
+另外，如果你需要修改[键盘布局](#Set_the_keyboard_layout), 并想让这个设置持续生效，编辑 [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html)，例如:
+
+ `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
+
 ### 主机名
 
 要设置 [hostname](/index.php/Hostname "Hostname")，将其[添加](/index.php/Add "Add") 到 `/etc/hostname`, *myhostname* 是需要的主机名:
 
 ```
 # echo ***myhostname*** > /etc/hostname
+
+```
+
+建议添加[对应的信息](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration")到[hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+
+ `/etc/hosts` 
+```
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+**127.0.1.1	*myhostname*.localdomain	*myhostname***
 
 ```
 

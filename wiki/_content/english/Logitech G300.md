@@ -1,6 +1,6 @@
 ## How to make G300 work correctly
 
-This Wiki page will show you how to get your G00 mouse working as desired.
+This Wiki page will show you how to get your G300 mouse working as desired.
 
 G300 is recognized as both mouse and keyboard by system, you could check by execute:
 

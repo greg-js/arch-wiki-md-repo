@@ -55,7 +55,7 @@ Of course you have to provide your purchased game archive to the AUR package, so
 
 	It will ask you for your password each time. If complete automation is desired, you can hard-code the password using the `-p` parameter, but for security reason you probably shouldn't do this in the global `/etc/makepkg.conf` which all user accounts can read, but rather create the file `~/.makepkg.conf` and add it there as such:
 
-	 `DLAGENT+=('hib::/usr/bin/hib-dlagent -u USER-EMAIL -p PASSWORD -o %o %u')` 
+	 `DLAGENTS+=('hib::/usr/bin/hib-dlagent -u USER-EMAIL -p PASSWORD -o %o %u')` 
 
 ### Manual installation
 

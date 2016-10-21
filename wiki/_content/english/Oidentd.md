@@ -1,4 +1,4 @@
-oidentd is an ident (rfc1413 compliant) daemon that runs on Linux, Darwin, FreeBSD, OpenBSD, NetBSD and Solaris. oidentd can handle IP masqueraded/NAT connections on Linux, Darwin, FreeBSD (ipf only), OpenBSD and NetBSD. oidentd has a flexible mechanism for specifying ident responses. Users can be granted permission to specify their own ident responses. Responses can be specified according to host and port pairs.
+*oidentd* is an [ident](https://en.wikipedia.org/wiki/Ident_protocol "wikipedia:Ident protocol") ([RFC 1413](//tools.ietf.org/html/rfc1413) compliant) daemon that runs on Linux, Darwin, FreeBSD, OpenBSD, NetBSD and Solaris. *oidentd* can handle IP masqueraded/NAT connections on Linux, Darwin, FreeBSD (ipf only), OpenBSD and NetBSD. *oidentd* has a flexible mechanism for specifying ident responses. Users can be granted permission to specify their own ident responses. Responses can be specified according to host and port pairs.
 
 ## Contents
 
@@ -10,15 +10,15 @@ oidentd is an ident (rfc1413 compliant) daemon that runs on Linux, Darwin, FreeB
 
 ## Installation
 
-[Install](/index.php/Install "Install") [oidentd](https://www.archlinux.org/packages/?name=oidentd), available in the [Official repositories](/index.php/Official_repositories "Official repositories")。
+[Install](/index.php/Install "Install") the [oidentd](https://www.archlinux.org/packages/?name=oidentd) package.
 
 ## Configuration
 
-With no global nor user configuration file(s), the users' ident replies will be that of their login name. This makes configuration files optional. See the [oidentd.conf manual](http://linux.die.net/man/5/oidentd.conf) for more detail.
+With no global nor user configuration file(s), the users' ident replies will be that of their login name. This makes configuration files optional. See [oidentd.conf(5)](http://linux.die.net/man/5/oidentd.conf) for more detail.
 
 ### Global configuration
 
-You may create the global configuration file */etc/oidentd.conf*.
+You may create the global configuration file `/etc/oidentd.conf`.
 
 According to the manual, the following is suitable for a global configuration.
 
@@ -46,7 +46,7 @@ Which says, "Grant all users the ability to generate random numeric ident replie
 
 ### User configuration
 
-Additionally and/or alternatively, each user may create his own local configuration file, *$HOME/.oidentd.conf*.
+Additionally and/or alternatively, each user may create his own local configuration file, `$HOME/.oidentd.conf`.
 
 A possible example follows.
 
@@ -60,18 +60,6 @@ Which says, "Reply with `unknown' to all successful ident lookups, but reply wit
 
 The global configuration file will dictate what works in the user's local configuration file.
 
-# Starting oidentd
+## Starting oidentd
 
-With oidentd installed and configured, you are now ready to start the daemon.
-
-```
-systemctl start oidentd.socket
-
-```
-
-If you want to have oidentd start up automatically every time you start your computer, then you need to enable *oidentd.socket* with systemd. For example:
-
-```
-systemctl enable oidentd.socket
-
-```
+With *oidentd* installed and configured, [start](/index.php/Start "Start") `oidentd.socket` start the daemon. If you want to have *oidentd* start up automatically every time you start your computer, then you need to [enable](/index.php/Enable "Enable") `oidentd.socket`.

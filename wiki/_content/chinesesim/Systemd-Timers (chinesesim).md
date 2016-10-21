@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-10-25，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd%2FTimers&diff=0&oldid=340100)可以查看翻译后英文页面的改动。
 
-Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") 单元文件，用于控制 `.service` 文件或事件。Timers 可用来替换 [cron](/index.php/Cron "Cron")（阅读 [#替换 cron](#.E6.9B.BF.E6.8D.A2_cron)）。Timers 内置了日历定时事件和单调定时事件的支持，并可以异步执行这些事件。
+Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") 单元文件，用于控制 `.service` 文件或事件。Timers 可用来替换 [cron](/index.php/Cron "Cron")（阅读 [#替代 cron](#.E6.9B.BF.E4.BB.A3_cron)）。Timers 内置了日历定时事件和单调定时事件的支持，并可以异步执行这些事件。
 
 ## Contents
 
@@ -19,7 +19,7 @@ Timers 是以 `.timer` 为后缀名的 [systemd](/index.php/Systemd "Systemd") �
 
 ## 定时器单元
 
-Timers 是以 `.timer` 为后缀的 *systemd* 单元文件。Timers 和其他 [单元配置文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.87.AA.E5.B7.B1.E7.BC.96.E5.86.99_.service_.E6.96.87.E4.BB.B6 "Systemd (简体中文)") 是类似的，它通过相同的路径加载，不同的是包含了 `[Timer]` 部分。 `[Timer]` 部分定义了何时以及如何激活定时事件。Timers 可以被定义成以下两种类型：
+Timers 是以 `.timer` 为后缀的 *systemd* 单元文件。Timers 和其他[单元配置文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BC.96.E5.86.99.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)")是类似的，它通过相同的路径加载，不同的是包含了 `[Timer]` 部分。 `[Timer]` 部分定义了何时以及如何激活定时事件。Timers 可以被定义成以下两种类型：
 
 *   **单调定时器** 即从一个时间点过一段时间后激活定时任务。所有的单调计时器都遵循如下形式： `On*Type*Sec=`。 `OnBootSec` 和 `OnActiveSec` 是常用的单调定时器。
 *   **实时定时器** (亦称"挂钟定时器") 通过日历事件激活（类似于 cronjobs ）定时任务。 使用 `OnCalender=` 来定义实时定时器。

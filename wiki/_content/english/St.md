@@ -12,7 +12,6 @@
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Keyboard](#Keyboard)
         *   [3.1.1 DEL-Key not working properly in some Application](#DEL-Key_not_working_properly_in_some_Application)
-        *   [3.1.2 Backspace not working properly](#Backspace_not_working_properly)
     *   [3.2 Vim](#Vim)
         *   [3.2.1 The background colour of text in *vim* will not fill in anything that is not a character](#The_background_colour_of_text_in_vim_will_not_fill_in_anything_that_is_not_a_character)
 *   [4 See also](#See_also)
@@ -128,7 +127,7 @@ To simplify launching *st* with a decent font e.g. [adobe-source-code-pro-fonts]
 Name=Simple Terminal
 GenericName=Terminal
 Comment=standard terminal emulator for the X window system
-Exec=st -t "Suckless Terminal" -f "Source Code Pro:style=Semibold:size=16" -g "80x24"
+Exec=st -t "Suckless Terminal" -f "Source Code Pro:style=Semibold:size=12" -g "80x24"
 Terminal=false
 Type=Application
 Encoding=UTF-8
@@ -151,32 +150,6 @@ add following to *~/.inputrc* or */etc/inputrc*:
  set enable-keypad on
 
 ```
-
-#### Backspace not working properly
-
-**Note:** According to the [FAQ](http://git.suckless.org/st/tree/FAQ), this behavior has been changed in the upstream, and the issue can be fixed upgrading to the latest version.
-
-While virtual terminal and most popular terminal emulator for X bind `backscape` key to `^?` escape sequence, older version of `st` bind it to `^H`, as explained in older version of the FAQ.
-
-If hitting the `backspace` key while typing on standard input of some programs (like `read`) prints `^H` instead of erasing, you can fix that with:
-
-```
-stty erase '^H'
-
-```
-
-This will make the terminal interprets `^H` as an erase command.
-
-If you want to put the above command in a shell profile, you should consider checking the `$TERM` before launch it.
-
-As of version `0-6`, `st` interpret backspace as `^?` by default. An exception is when `Alt+BackSpace` pressed, `st` sends `^[^H` instead of `^[^?` ([FS#50000](https://bugs.archlinux.org/task/50000)). This inconsistent behavior leads to bad experience, especially on Emacs when pressing `Alt+BackSpace` no longer delete a word backwards. To fix this, adding a line on `config.h` is needed.
-
-```
-       { XK_BackSpace,     Mod1Mask,       "\033\177",      0,    0,    0},
-
-```
-
-Rebuild the package to apply the change.
 
 ### Vim
 

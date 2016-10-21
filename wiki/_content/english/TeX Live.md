@@ -14,7 +14,6 @@ TeX Live is one of the most popular distributions for [LaTeX](https://en.wikiped
     *   [3.2 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
     *   [3.3 Fonts](#Fonts)
 *   [4 TeXLive Local Manager](#TeXLive_Local_Manager)
-    *   [4.1 Recent "langukenglish" errors](#Recent_.22langukenglish.22_errors)
 *   [5 Install .sty files](#Install_.sty_files)
     *   [5.1 Manual Installation](#Manual_Installation_2)
     *   [5.2 Using PKGBUILDs](#Using_PKGBUILDs)
@@ -240,26 +239,6 @@ Options:     --help          Shows this help
              --location      #TODO?
              --mirror        CTAN mirror to use (default is mirror.ctan.org)
              --nocolor       #TODO
-
-```
-
-### Recent "langukenglish" errors
-
-For problems involving this error when trying to run `tllocalmgr` commands,
-
-```
-Can't get object for collection-langukenglish at /usr/bin/tllocalmgr line 103
-
-```
-
-See ary0's solution at the AUR: [texlive-localmanager](https://aur.archlinux.org/packages/texlive-localmanager/). In summary, edit `/usr/share/texmf-var/arch/tlpkg/TeXLive/Arch.pm` and remove "langukenglish" from the section of the file shown here:
-
-```
-my @core_colls =
-qw/ basic context genericrecommended fontsrecommended langczechslovak
-langdutch langfrench langgerman langitalian langpolish langportuguese
-langspanish **langukenglish** latex latexrecommended luatex mathextra metapost
-texinfo xetex /;
 
 ```
 

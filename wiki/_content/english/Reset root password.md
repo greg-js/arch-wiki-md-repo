@@ -24,7 +24,7 @@ With a LiveCD a couple methods are available: change root and use the `passwd` c
 
 ## Using GRUB to invoke bash
 
-1.  Select the appropriate boot entry in the GRUB menu and press `e` to edit the line.
+1.  Select the appropriate boot entry in the [GRUB](/index.php/GRUB "GRUB") menu and press `e` to edit the line.
 2.  Select the kernel line and press `e` again to edit it.
 3.  Append `init=/bin/bash` at the end of line.
 4.  Press `b` to boot (this change is only temporary and will not be saved to your menu.lst). After booting you will be at the bash prompt.

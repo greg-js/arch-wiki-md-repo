@@ -13,9 +13,8 @@
     *   [2.2 CGI](#CGI)
     *   [2.3 FastCGI](#FastCGI)
         *   [2.3.1 PHP](#PHP)
-            *   [2.3.1.1 Using php-fpm](#Using_php-fpm)
-            *   [2.3.1.2 eAccelerator](#eAccelerator)
-            *   [2.3.1.3 Try a php page](#Try_a_php_page)
+            *   [2.3.1.1 Using php-cgi](#Using_php-cgi)
+            *   [2.3.1.2 Using php-fpm](#Using_php-fpm)
         *   [2.3.2 Ruby on Rails](#Ruby_on_Rails)
         *   [2.3.3 Python FastCGI](#Python_FastCGI)
             *   [2.3.3.1 Server name indication](#Server_name_indication)
@@ -228,6 +227,8 @@ For PHP or Ruby on Rails see the next sections.
 
 #### PHP
 
+##### Using php-cgi
+
 Install [php](https://www.archlinux.org/packages/?name=php) and [php-cgi](https://www.archlinux.org/packages/?name=php-cgi) (see also [PHP](/index.php/PHP "PHP") and [LAMP](/index.php/LAMP "LAMP")).
 
 Check that php-cgi is working `php-cgi --version`
@@ -319,53 +320,6 @@ fastcgi.server = (
 )
 
 ```
-
-##### eAccelerator
-
-**Note:** As of November 2014, [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/) cannot be compiled.
-
-Install [eaccelerator](https://aur.archlinux.org/packages/eaccelerator/).
-
-Add own config file for eaccelerator:
-
- `/etc/php/conf.d/eaccelerator-own.ini` 
-```
-zlib.output_compression = On
-cgi.fix_pathinfo=1
-eaccelerator.cache_dir="/home/phpuser/eaccelerator/cache"
-```
-
-**Tip:** I additionally set `safe_mod` to `On` in my setup, but this is not required.
-
-##### Try a php page
-
-Create the following php page, name it `index.php`, and place a copy in both `/srv/http/` and `/srv/http-ssl/html/`
-
-```
-<?php
-phpinfo();
-?>
-
-```
-
-Try navigating with a web browser to both the http and https address of your server. You should see the phpinfo page.
-
-Check eaccelerator caching:
-
-```
-# ls -l /home/phpuser/eaccelerator/cache
-
-```
-
-If the above command outputs the following:
-
-```
--rw-------  1 phpuser phpuser 456 2005-05-05 14:53 eaccelerator-277.58081
--rw-------  1 phpuser phpuser 452 2005-05-05 14:53 eaccelerator-277.88081
-
-```
-
-Then eaccelerator is happily caching your php scripts to help speed things up.
 
 #### Ruby on Rails
 

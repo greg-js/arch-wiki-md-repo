@@ -38,10 +38,6 @@ Xcompmgr can be [installed](/index.php/Installed "Installed") with the package [
 
 There are some forks available, with various bugfixes:
 
-*   **xcompmgr-dana** — One of the first forks of Xcompmgr.
-
-	[http://oliwer.net/xcompmgr-dana/](http://oliwer.net/xcompmgr-dana/) || [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)
-
 *   **[Compton](/index.php/Compton "Compton")** — A fork of Xcompmgr that contains most of the previous fixes as well as many others.
 
 	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton-git](https://aur.archlinux.org/packages/compton-git/)

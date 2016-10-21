@@ -365,8 +365,6 @@ The Flash plugin has a known bug where the full screen mode does not really work
 
 To fix this, you can use the "hack" described [here](http://al.robotfuzz.com/content/workaround-fullscreen-flash-linux-multiheaded-desktops). Simply download the source from the link given on the page, and follow the instructions in the README.
 
-**Tip:** The hack is available and can be installed with the [fullscreenhack](https://aur.archlinux.org/packages/fullscreenhack/) package.
-
 **Note:** While the author mentions using NVDIA's TwinView, the hack should work for any multi-monitor setup.
 
 ### Flash Player: videos not working on older systems
@@ -391,10 +389,10 @@ The most recent package without SSE2 is `flashplugin-11.1.102.63-1-i686.pkg.tar.
 Solution for Firefox: delete file "pluginreg.dat" in user's profile directory.
 
 *   Close firefox
-*   Go to /home/<username>/.mozilla/firefox/<profile_folder>/
+*   Go to `/home/*<username>*/.mozilla/firefox/*<profile_folder>*/`
 *   Delete file "pluginreg.dat"
 
-Firefox will automatically rebuild this file once it is started again. Make sure to substitute <username> and <profile_folder> with the appropriate information.
+Firefox will automatically rebuild this file once it is started again. Make sure to substitute *<username>* and *<profile_folder>* with the appropriate information.
 
 ### Plugins are installed but not working
 

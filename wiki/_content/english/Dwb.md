@@ -37,7 +37,7 @@
 
 ## Installation
 
-The [dwb](https://www.archlinux.org/packages/?name=dwb) package can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and can be installed with [pacman](/index.php/Pacman "Pacman"). There are also other versions in the [AUR](/index.php/AUR "AUR"): [dwb-git](https://aur.archlinux.org/packages/dwb-git/), [dwb-gtk3](https://aur.archlinux.org/packages/dwb-gtk3/), and [dwb-gtk3-git](https://aur.archlinux.org/packages/dwb-gtk3-git/).
+[Install](/index.php/Install "Install") the [dwb](https://www.archlinux.org/packages/?name=dwb) package. Alternatively, install the [dwb-git](https://aur.archlinux.org/packages/dwb-git/) package for the development version.
 
 ## Basic usage
 

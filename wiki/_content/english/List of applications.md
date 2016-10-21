@@ -383,6 +383,10 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
 
+*   **theWeb** — A web browser based on Qt using the Chromium Embedded Framework, with Linux integration (such as MPRIS) in mind.
+
+	[https://github.com/vicr123/theweb](https://github.com/vicr123/theweb) || [theweb](https://aur.archlinux.org/packages/theweb/)
+
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 
 	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
@@ -4609,6 +4613,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **sxlock** — Fork of sflock with a few enhancements. Provides basic user feedback, uses PAM authentication, supports DPMS and RandR. Supports `sxlock.service` to lock the screen on suspend/hibernation. See the [README](https://github.com/lahwaacz/sxlock/blob/master/README.md) for more information.
 
 	[https://github.com/lahwaacz/sxlock](https://github.com/lahwaacz/sxlock) || [sxlock-git](https://aur.archlinux.org/packages/sxlock-git/)
+
+*   **tsscreenlock** — Screen locker used in theShell. Shows music controls, and if used with theShell, also shows desktop notifications.
+
+	[https://github.com/vicr123/tsscreenlock](https://github.com/vicr123/tsscreenlock) || [tsscreenlock](https://aur.archlinux.org/packages/tsscreenlock/)
 
 *   **vlock** — TTY locker. A mirror of the [original vlock](https://lists.archlinux.org/pipermail/aur-general/2013-July/024662.html) is available at [github](https://github.com/WorMzy/vlock).
 

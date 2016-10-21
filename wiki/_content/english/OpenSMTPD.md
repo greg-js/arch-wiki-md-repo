@@ -6,12 +6,13 @@ This article explains how to install and configure a simple [OpenSMTPD](https://
 *   [2 Configuration](#Configuration)
     *   [2.1 Local mail](#Local_mail)
         *   [2.1.1 Local-only](#Local-only)
-    *   [2.2 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
-        *   [2.2.1 Create encryption keys](#Create_encryption_keys)
-        *   [2.2.2 Create user accounts](#Create_user_accounts)
-        *   [2.2.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
-        *   [2.2.4 Create tables](#Create_tables)
-    *   [2.3 Test the configuration](#Test_the_configuration)
+    *   [2.2 Hybrid : local mail and relay](#Hybrid_:_local_mail_and_relay)
+    *   [2.3 Simple OpenSMTPD/mbox configuration](#Simple_OpenSMTPD.2Fmbox_configuration)
+        *   [2.3.1 Create encryption keys](#Create_encryption_keys)
+        *   [2.3.2 Create user accounts](#Create_user_accounts)
+        *   [2.3.3 Craft a simple smtpd.conf setup](#Craft_a_simple_smtpd.conf_setup)
+        *   [2.3.4 Create tables](#Create_tables)
+    *   [2.4 Test the configuration](#Test_the_configuration)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Console debugging](#Console_debugging)
     *   [3.2 Subsystem tracing](#Subsystem_tracing)
@@ -31,7 +32,7 @@ This article explains how to install and configure a simple [OpenSMTPD](https://
 
 To have local mail working, for example for [cron](/index.php/Cron "Cron") mails, it is enough to simply [start](/index.php/Start "Start") `smtpd.service`.
 
-[The default configuration](http://man.openbsd.org/smtpd.conf#EXAMPLES) of OpenSMTPD is to do local retrieval and delivery of mail, and also relay outgoing mail.
+The default configuration of OpenSMTPD is to do local retrieval and delivery of mail, and also relay outgoing mail. See [smtpd.conf(5)](http://man.openbsd.org/smtpd.conf).
 
 #### Local-only
 
@@ -43,6 +44,37 @@ listen on localhost
 accept for local alias <aliases> deliver to mbox
 
 ```
+
+### Hybrid : local mail and relay
+
+If you want to :
+
+*   send local email *locally*, I mean without going through a relay (useful for cron & at mail notifications)
+
+*   use a relay to send a mail outside of localhost
+
+You can adapt this `/etc/smtpd/smtpd.conf` to your case :
+
+```
+# This is the smtpd server system-wide configuration file.
+# See smtpd.conf(5) for more information.
+
+# To accept external mail, replace with: listen on all
+listen on localhost
+
+# If you edit the file, you have to run "smtpctl update table aliases"
+table aliases file:/etc/smtpd/aliases
+
+# Uncomment the following to accept external mail for domain "example.org"
+#accept from any for domain "example.org" alias <aliases> deliver to mbox
+
+accept for local alias <aliases> deliver to mbox
+
+accept for any relay via "smtp://smtp.foo.bar" as "@foo.bar"
+
+```
+
+Simply replace *smtp.foo.bar* by your ISP mail server, or another server at your convenience.
 
 ### Simple OpenSMTPD/mbox configuration
 
@@ -69,7 +101,7 @@ Create a private key and self-signed certificate. This is adequate for most inst
 
 ```
 
-*   OpenSMTPD will deliver messages to the user account's mbox file at `/var/spool/mail/<username>`
+*   OpenSMTPD will deliver messages to the user account's mbox file at `/var/spool/mail/*<username>*`
 *   Multiple SMTP email addresses can be routed to a given mbox if desired.
 
 #### Craft a simple smtpd.conf setup
@@ -140,24 +172,23 @@ If you get a message that says 'configuration OK' - you're ready to [rock and ro
 
 ### Console debugging
 
-If you're having problems with mail delivery, try [stopping](/index.php/Stop "Stop") the smtpd.service and launching the daemon manually with the 'do not daemonize' and 'verbose output' options. Then watch the console for errors.
+If you're having problems with mail delivery, try [stopping](/index.php/Stop "Stop") the `smtpd.service` and launching the daemon manually with the 'do not daemonize' and 'verbose output' options. Then watch the console for errors.
 
 ```
-# systemctl stop smtpd.service
 # smtpd -dv
 
 ```
 
 ### Subsystem tracing
 
-Add the '-T' flag to get real-time subsystem tracing
+Add the `-T` flag to get real-time subsystem tracing
 
 ```
 # smtpd -dv -T smtp
 
 ```
 
-Alternately, use the 'smtpctl trace <subsystem>' command if the daemon is already running. The trace output will appear in the console output above as well as the journalctl output for the smtpd.service. For example:
+Alternately, use the `smtpctl trace *<subsystem>*` command if the daemon is already running. The trace output will appear in the console output above as well as the journalctl output for the smtpd.service. For example:
 
 ```
 # smtpctl trace expand && smtpctl trace lookup
@@ -175,14 +206,14 @@ Alternately, use the 'smtpctl trace <subsystem>' command if the daemon is alread
 
 ```
 
-*   Connect to submission port using 'openssl s_client' command
+*   Connect to submission port using `openssl s_client` command
 
 ```
 # openssl s_client -host mx.domain.tld -port 587 -starttls smtp
 
 ```
 
-*   enter 'ehlo myhostname' followed by 'AUTH PLAIN'. Paste in the base64 string from step above after '334' response.
+*   enter `ehlo myhostname` followed by `AUTH PLAIN`. Paste in the base64 string from step above after `334` response.
 
 ```
 250 HELP

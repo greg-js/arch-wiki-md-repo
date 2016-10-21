@@ -19,8 +19,7 @@ This article describes the setup and use of DVB-S (sat TV) cards on Arch Linux.
     *   [6.1 Kaffeine](#Kaffeine)
         *   [6.1.1 Importing channel list](#Importing_channel_list)
     *   [6.2 Me-tv](#Me-tv)
-    *   [6.3 Klear](#Klear)
-    *   [6.4 Xine](#Xine)
+    *   [6.3 Xine](#Xine)
 *   [7 Additional Resources](#Additional_Resources)
 
 ## Load required Modules
@@ -238,11 +237,7 @@ Install it with [kaffeine](https://www.archlinux.org/packages/?name=kaffeine) fr
 
 Me-tv is a simple but powerfull dvb-viewer, supporting EPG, recording and channel-searching with a light-weight gui.
 
-It is available in the [AUR](/index.php/AUR "AUR"): [me-tv](https://aur.archlinux.org/packages/me-tv/) is the stable version, [me-tv-bzr](https://aur.archlinux.org/packages/me-tv-bzr/) is the development branch.
-
-### Klear
-
-[Klear](http://klear.org) is also a really nice player, but more than 4 years old (last release 2006). It supports EPG, time-shifting, and recording, videotext. Channel-searching is still missing. Install it from AUR: [klear](https://aur.archlinux.org/packages/klear/).
+[Install](/index.php/Install "Install") Me-tv with the [me-tv-bzr](https://aur.archlinux.org/packages/me-tv-bzr/) package.
 
 ### Xine
 

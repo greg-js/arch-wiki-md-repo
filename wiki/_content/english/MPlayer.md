@@ -73,10 +73,6 @@ Notable variants are:
 
 	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
-*   **Rosa Media Player** — Multimedia player based on SMPlayer with clean and elegant UI.
-
-	[http://www.rosalab.com/](http://www.rosalab.com/) || [rosa-media-player](https://aur.archlinux.org/packages/rosa-media-player/)
-
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.).
 
 	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)

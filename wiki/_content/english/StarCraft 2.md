@@ -70,7 +70,7 @@ $ wine start /unix /media/dvd/Installer.exe
 
 #### Playing StarCraft II
 
-Launch the game from the Battle.net App. Should the game instacrash, click on the Battle.net logo in the Launcher -> Settings -> Game Settings -> Check `Launch 32-bit client (instead of 64-bit)`. Alternatively, you may `cd ~/.wine/drive_c/Program\ Files/StarCraft\ II\Support` (not `Support64`) and `wine SC2Switcher.exe` to start the game without the launcher - this will make debugging easier, but you may have to select your region in-game.
+Launch the game from the Battle.net App. If the game crashes see troubleshooting section.
 
 ## Hints for Performance Tuning
 
@@ -181,6 +181,8 @@ Then add alternate key SCII hotkeys for:
 
 ## Troubleshooting
 
+*   You may want to start the game without the launcher: `cd ~/.wine/drive_c/Program\ Files/StarCraft\ II\Support` (or `Support64` for the 64-bit version) and `wine SC2Switcher.exe` - this might make debugging easier, but you may have to select your region in-game. Furthermore, if your game is not up-to-date, you'll be unable to log in, and no error message will be shown - simply start the Battle.net Launcher and let the game update completely.
+*   If SC2 instacrashes, or crashes upon game start, try clicking on the Battle.net logo in the Launcher -> Settings -> Game Settings -> Check `Launch 32-bit client (instead of 64-bit)`, or **uncheck** it if it's already checked.
 *   For some, in-game resolution changing does not work. Editing 'width=x' and 'height=y' in Variables.txt in My Documents/Starcraft II solves this issue. Replace x and y with the prefered resolution.
 *   Should you experience graphics problems (no 3D background in menu, blue non-texturized units and other glitches), launch the game without Battle.net App (see above) like this: `force_s3tc_enable=true wine SC2Switcher.exe`. You can also add this option to the .desktop entry in ~/.local/share/applications/wine/Programs/StarCraft II, or edit your `~/.drirc` file to enable this setting permanently for all apps. Using [driconf](https://www.archlinux.org/packages/?name=driconf), you may just enable this setting with a simple GUI.
 

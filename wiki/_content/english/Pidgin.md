@@ -26,8 +26,7 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
     *   [11.1 Browser error](#Browser_error)
     *   [11.2 ICQ Buddy Information encoding fix](#ICQ_Buddy_Information_encoding_fix)
     *   [11.3 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
-    *   [11.4 QIP encoding bug](#QIP_encoding_bug)
-    *   [11.5 Sound fix](#Sound_fix)
+    *   [11.4 Sound fix](#Sound_fix)
 *   [12 See also](#See_also)
 
 ## Installation
@@ -372,10 +371,6 @@ rm -r ~/.purple
 
 *   Uninstall **carrier** and **libpurple**.
 *   Install **pidgin** and **libpurple**.
-
-### QIP encoding bug
-
-There is another bug in character encoding when communicating between Pidgin and QIP, which especially affects Czech language, but there are also other languages affected. There are two possible solutions. The better one is to upgrade from QIP to QIP 2012 or QIP Infium, second solution is to install and enable plugin from [pidgin-qip-decoder](https://aur.archlinux.org/packages/pidgin-qip-decoder/) package currently available from [AUR](/index.php/AUR "AUR").
 
 ### Sound fix
 

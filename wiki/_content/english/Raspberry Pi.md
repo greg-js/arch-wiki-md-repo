@@ -369,7 +369,7 @@ To enable the `/dev/spidev*` devices, uncomment the following line:
 
 ### Python
 
-To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) library. Install either [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) or [python2-raspberry-gpio](https://aur.archlinux.org/packages/python2-raspberry-gpio/) from the [AUR](/index.php/AUR "AUR").
+To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) library. Install the [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) package.
 
 ## I2C
 

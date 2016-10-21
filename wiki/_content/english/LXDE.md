@@ -230,7 +230,7 @@ And then make it executable:
 
 ### LXPanel crashes with some themes or browsing particular web pages
 
-With some gtk themes ([AUR](/index.php/AUR "AUR") - [gtk-theme-greybird](https://aur.archlinux.org/packages/gtk-theme-greybird/)), launch lxpanel will get errors below.
+With some gtk themes, launching lxpanel will lead to the following error:
 
 ```
 lxpanel: cairo-scaled-font.c:459: _cairo_scaled_glyph_page_destroy: Assertion `!scaled_font->cache_frozen' failed.

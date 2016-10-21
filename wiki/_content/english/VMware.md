@@ -39,7 +39,9 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.12 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
-    *   [5.13 Kernel modules fail to build after Linux 4.7](#Kernel_modules_fail_to_build_after_Linux_4.7)
+    *   [5.13 Kernel modules fail to build after Linux kernel 4.7](#Kernel_modules_fail_to_build_after_Linux_kernel_4.7)
+        *   [5.13.1 Linux kernel 4.7](#Linux_kernel_4.7)
+        *   [5.13.2 Linux kernel 4.8](#Linux_kernel_4.8)
     *   [5.14 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
 *   [6 Uninstallation](#Uninstallation)
 
@@ -498,15 +500,40 @@ To make this change permanent only when running VMware Workstation add the follo
 
 For VMware Player make the same change in `/usr/bin/vmplayer`.
 
-### Kernel modules fail to build after Linux 4.7
+### Kernel modules fail to build after Linux kernel 4.7
 
-As of VMware Workstation Pro 12.1, the module source needs to be modified to be successfully compiled [[2]](https://communities.vmware.com/thread/536705?start=0&tstart=0).
+As of VMware Workstation Pro 12.1, the module source needs to be modified to be successfully compiled [[2]](https://communities.vmware.com/thread/536705?start=0&tstart=0)[[3]](http://rglinuxtech.com/?p=1788). Depending on the kernel version, execute the following commands.
+
+#### Linux kernel 4.7
 
 ```
 # cd /usr/lib/vmware/modules/source
 # tar xf vmmon.tar
 # mv vmmon.tar vmmon.old.tar
 # sed -r -i -e 's/get_user_pages(_remote)*/get_user_pages_remote/g' vmmon-only/linux/hostif.c
+# tar cf vmmon.tar vmmon-only
+# rm -r vmmon-only
+
+```
+
+```
+# tar xf vmnet.tar
+# mv vmnet.tar vmnet.old.tar
+# sed -r -i -e 's/get_user_pages(_remote)*/get_user_pages_remote/g' vmnet-only/userif.c
+# sed -i -e 's/dev->trans_start = jiffies/netif_trans_update\(dev\)/g' vmnet-only/netif.c
+# tar cf vmnet.tar vmnet-only
+# rm -r vmnet-only
+
+```
+
+#### Linux kernel 4.8
+
+```
+# cd /usr/lib/vmware/modules/source
+# tar xf vmmon.tar
+# mv vmmon.tar vmmon.old.tar
+# sed -r -i -e 's/get_user_pages(_remote)*/get_user_pages_remote/g' vmmon-only/linux/hostif.c
+# sed -r -i -e 's/NR_ANON_PAGES/NR_ANON_MAPPED/g' vmmon-only/linux/hostif.c
 # tar cf vmmon.tar vmmon-only
 # rm -r vmmon-only
 

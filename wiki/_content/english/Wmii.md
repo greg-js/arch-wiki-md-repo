@@ -25,7 +25,7 @@ Please note that wmii does not appear to be in active development, so any bugs e
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wmii](https://www.archlinux.org/packages/?name=wmii) package or alternatively install [wmii-hg](https://aur.archlinux.org/packages/wmii-hg/) for the latest development version.
+[Install](/index.php/Install "Install") the [wmii](https://www.archlinux.org/packages/?name=wmii) package.
 
 The source can be found on [the project's Google Code page](https://code.google.com/p/wmii/) and is also [mirrored on GitHub](https://github.com/sunaku/wmii).
 

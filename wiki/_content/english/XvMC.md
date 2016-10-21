@@ -15,13 +15,13 @@
 
 Only MPEG-1 and MPEG-2 videos are supported by all driver.
 
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 6 and GeForce 7 series cards are supported by the proprietary [nvidia-304xx-utils](https://www.archlinux.org/packages/?name=nvidia-304xx-utils) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
-*   NVIDIA GeForce 5 FX series cards are supported by the proprietary [nvidia-173xx-utils](https://aur.archlinux.org/packages/nvidia-173xx-utils/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   NVIDIA GeForce4 series cards are supported by the proprietary [nvidia-96xx-utils](https://aur.archlinux.org/packages/nvidia-96xx-utils/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   [Intel](/index.php/Intel "Intel") 810, GMA 950, GMA 3100, GMA 3000, GMA 4500 series and Ironlake GPUs are supported by the open source [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
-*   [AMD](/index.php/ATI_Catalyst "ATI Catalyst") Radeon HD 5000 series and newer GPUs are supported by the proprietary [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   AMD Radeon HD 4000 series GPUs are supported by the proprietary [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) package, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   [S3 Graphics](/index.php/Via_Unichrome "Via Unichrome") UniChrome GPUs are supported by the open source [xf86-video-openchrome](https://www.archlinux.org/packages/?name=xf86-video-openchrome) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
+*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 6 and GeForce 7 series cards are supported by the proprietary [nvidia-304xx-utils](https://www.archlinux.org/packages/?name=nvidia-304xx-utils) package.
+*   NVIDIA GeForce 5 FX series cards are supported by the proprietary [nvidia-173xx-utils](https://aur.archlinux.org/packages/nvidia-173xx-utils/) package.
+*   NVIDIA GeForce4 series cards are supported by the proprietary [nvidia-96xx-utils](https://aur.archlinux.org/packages/nvidia-96xx-utils/) package.
+*   [Intel](/index.php/Intel "Intel") 810, GMA 950, GMA 3100, GMA 3000, GMA 4500 series and Ironlake GPUs are supported by the open source [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.
+*   [AMD](/index.php/ATI_Catalyst "ATI Catalyst") Radeon HD 5000 series and newer GPUs are supported by the proprietary [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) package.
+*   AMD Radeon HD 4000 series GPUs are supported by the proprietary [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) package.
+*   [S3 Graphics](/index.php/Via_Unichrome "Via Unichrome") UniChrome GPUs are supported by the open source [xf86-video-openchrome](https://www.archlinux.org/packages/?name=xf86-video-openchrome) package.
 
 ### Configuration
 

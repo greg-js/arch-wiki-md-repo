@@ -165,8 +165,6 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 *   To bring the KDE look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 
-*   To use KDE's KPart technology with Firefox, by embedding different KDE file viewers into the browser, you can install [kpartsplugin](https://www.archlinux.org/packages/?name=kpartsplugin).
-
 *   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
 *   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde-wallet-password-integratio/), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).

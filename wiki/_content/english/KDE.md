@@ -65,6 +65,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [9.4 Speed up application startup](#Speed_up_application_startup)
     *   [9.5 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
     *   [9.6 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
+    *   [9.7 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 Configuration related](#Configuration_related)
         *   [10.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
@@ -649,7 +650,75 @@ To enable display resolution management and multiple monitors in Plasma 5, insta
 
 ### Open application launcher with Super key (Windows key)
 
+**Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `super` key launches kickstart application launcher as if `alt+F1` keys are pressed.
+
 Install and start [ksuperkey](https://www.archlinux.org/packages/?name=ksuperkey). Now assign Alt + F1 as hot key. The Super Key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
+
+### Enabling touchpad tap to click on plasma wayland session
+
+Currently, it's not possible to [configure tap to click via systemsettings](https://bugs.kde.org/show_bug.cgi?id=363109) on plasma wayland session. [A workaround](https://bugs.kde.org/show_bug.cgi?id=366605#c4) is provided to configure tap to click on plasma wayland session via dbus.
+
+Here are simplified steps to get touchpad tap to click enabled on plasma wayland session.
+
+1\. Identify on which libinput recognizes the touchpad device.
+
+ `# libinput-list-devices` 
+```
+Device:           ETPS/2 Elantech Touchpad
+Kernel:           /dev/input/event14
+Group:            7
+Seat:             seat0, default
+Size:             78.28x38.78mm
+Capabilities:     pointer
+Tap-to-click:     disabled
+Tap-and-drag:     enabled
+Tap drag lock:    disabled
+Left-handed:      disabled
+Nat.scrolling:    disabled
+Middle emulation: n/a
+Calibration:      n/a
+Scroll methods:   *two-finger edge
+Click methods:    none
+Disable-w-typing: enabled
+Accel profiles:   none
+Rotation:         n/a
+
+```
+
+In this case, the touchpad is identified as `event14`
+
+2\. Check whether KDE Dbus recognizes the touchpad. Replace `event14` with the touchpad identifier found from `libinput-list-devices`.
+
+ `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice name` 
+```
+ETPS/2 Elantech Touchpad
+
+```
+
+3\. Check the current value of `tapToClick`.
+
+ `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice tapToClick` 
+```
+false
+
+```
+
+4\. Now set the `tapToClick` value to `true`.
+
+```
+$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Set org.kde.KWin.InputDevice tapToClick true
+
+```
+
+5\. Confirm that `tapToClick` value is `true`.
+
+ `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice tapToClick` 
+```
+true
+
+```
+
+After these steps performed, tap to click should work as expected.
 
 ## Troubleshooting
 

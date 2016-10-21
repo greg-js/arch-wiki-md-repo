@@ -253,6 +253,7 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | DeskJet 820Cxi |
 | DeskJet 1000Cse |
 | DeskJet 1000Cxi |
+| LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs](https://aur.archlinux.org/packages/foo2zjs/). |
 | Printer | Driver/filter | Notes |
 
 ###### HPLIP Driver

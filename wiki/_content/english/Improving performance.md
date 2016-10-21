@@ -79,7 +79,7 @@ $ glxinfo | grep direct
 
 ```
 
-`glxinfo` is part of the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package.
+*glxinfo* is part of the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package.
 
 ### The first thing to do
 
@@ -331,7 +331,7 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 ## Graphics
 
-As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [rovclock](https://aur.archlinux.org/packages/rovclock/), [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI), and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
+As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI) and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
 
 ### Xorg.conf configuration
 

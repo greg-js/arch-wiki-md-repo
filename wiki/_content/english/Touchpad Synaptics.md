@@ -178,7 +178,7 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 	[https://wiki.gnome.org/Attic/GPointingDeviceSettings](https://wiki.gnome.org/Attic/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
 
-*   **kcm_touchpad** — New configuration tool for [KDE](/index.php/KDE "KDE") Plasma 5\. It provides a module under input devices in System Settings. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/) and the old *kcm-touchpad* module.
+*   **kcm_touchpad** — New configuration tool for [KDE](/index.php/KDE "KDE") Plasma 5\. It provides a module under input devices in System Settings. It is to be considered a replacement for *synaptiks* and the old *kcm-touchpad* module.
 
 	[https://quickgit.kde.org/?p=plasma-desktop.git&a=tree&f=kcms%2Ftouchpad](https://quickgit.kde.org/?p=plasma-desktop.git&a=tree&f=kcms%2Ftouchpad) || [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)
 

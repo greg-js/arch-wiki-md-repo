@@ -139,7 +139,7 @@ On a typical desktop system, use the following command to add a new user named `
 
 **Tip:** Do not worry about adding the user to other groups now. If later on you will install a particular application, or perform a specific configuration, that requires explicitly adding the user to a group, the wiki will remind you to do it in the specific article that you will be following.
 
-Although it is not required to protect the newly user `archie` with a password, it is highly recommend to do so:
+Although it is not required to protect the newly created user `archie` with a password, it is highly recommend to do so:
 
 ```
 # passwd archie

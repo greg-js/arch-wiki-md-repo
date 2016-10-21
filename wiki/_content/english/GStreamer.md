@@ -44,9 +44,7 @@ To make GStreamer useful, install the plugins packages you require.
 *   [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) - Essential exemplary set of elements.
 *   [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) - Libav-based plugin containing many decoders and encoders.
 *   [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) - Good-quality plugins under LGPL license.
-*   [gstreamer0.10-good-plugins-slim](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins-slim/) - Good-quality plugins under LGPL license. GNOME and ASCII-art dependency removed.
 *   [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins) - Good-quality plugins that might pose distribution problems.
-*   [gstreamer0.10-plugin-libde265](https://aur.archlinux.org/packages/gstreamer0.10-plugin-libde265/) - [libde265](https://aur.archlinux.org/packages/libde265/) plugin (an open h.265 video codec implementation) for gstreamer0.10.
 
 ## Integration
 

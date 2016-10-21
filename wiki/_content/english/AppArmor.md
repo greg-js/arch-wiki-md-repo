@@ -172,7 +172,7 @@ To circumvent some of those problems AppArmor can cache profiles in `/etc/apparm
 
 ## See also
 
-*   [Home Page](http://wiki.apparmor.net/index.php/Main_Page)
+*   [AppArmor wiki](http://wiki.apparmor.net/)
 *   [AppArmor Core Policy Reference](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference) — Detailed description of available options in a profile
 *   [Ubuntu Tutorial](http://ubuntuforums.org/showthread.php?t=1008906) — General overview of available utilities and profile creation
 *   [Ubuntu Wiki](https://help.ubuntu.com/community/AppArmor) — Basic command overview
@@ -181,8 +181,6 @@ To circumvent some of those problems AppArmor can cache profiles in `/etc/apparm
 *   [apparmor_parse(8)](http://manpages.ubuntu.com/manpages/oneiric/man8/apparmor_parser.8.html) — The most fundamental AppArmor utility to load, unload, cache and stat profiles
 *   [Kernel Interfaces](http://wiki.apparmor.net/index.php/Kernel_interfaces) — Low level interfaces to the AppArmor kernel module
 *   [Apparmor Profile Migration](https://wiki.ubuntu.com/ApparmorProfileMigration) — Emergence of profiles
-*   [Build Instructions for CentOS](http://wiki.apparmor.net/index.php/Distro_CentOS)
 *   [wikipedia:Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") — Linux kernel module on which basis AppArmor is build upon
 *   [Launchpad Project Page](https://launchpad.net/apparmor)
-*   [Contributing](http://wiki.apparmor.net/index.php/Gittutorial) — Introduction to git mechanics and on how to contribute
 *   [FS#21406](https://bugs.archlinux.org/task/21406) — Initial discussion about the introduction of AppArmor

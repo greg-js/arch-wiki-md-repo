@@ -676,4 +676,3 @@ WantedBy=network-online.target
 *   [Initial mailing list announcement](https://lists.archlinux.org/pipermail/arch-projects/2012-December/003473.html)
 *   [Official announcement thread](https://bbs.archlinux.org/viewtopic.php?id=157670)
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
-*   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)

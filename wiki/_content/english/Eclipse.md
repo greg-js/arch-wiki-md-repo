@@ -86,7 +86,7 @@ To receive update notifications, go to *Window > Preferences > Install/Update > 
 
 *   **Aptana** — HTML5/CSS3/JavaScript/Ruby/Rails/PHP/Pydev/Django support. Also available as standalone application.
 
-	[http://www.aptana.com/](http://www.aptana.com/) || [eclipse-aptana](https://aur.archlinux.org/packages/eclipse-aptana/) [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
+	[http://www.aptana.com/](http://www.aptana.com/) || [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
 
 *   **Eclipse CDT** — C/C++ support.
 
@@ -96,17 +96,9 @@ To receive update notifications, go to *Window > Preferences > Install/Update > 
 
 	[https://www.eclipse.org/pdt/](https://www.eclipse.org/pdt/) || [eclipse-pdt](https://aur.archlinux.org/packages/eclipse-pdt/)
 
-*   **EclipseFP** — [Haskell](/index.php/Haskell "Haskell") support.
-
-	[https://eclipsefp.github.io/](https://eclipsefp.github.io/) || [eclipse-eclipsefp](https://aur.archlinux.org/packages/eclipse-eclipsefp/)
-
 *   **EGit** — [Git](/index.php/Git "Git") support.
 
 	[https://www.eclipse.org/egit](https://www.eclipse.org/egit) || [eclipse-egit](https://aur.archlinux.org/packages/eclipse-egit/)
-
-*   **EPIC** — Perl support.
-
-	[http://www.epic-ide.org/](http://www.epic-ide.org/) || [eclipse-epic](https://aur.archlinux.org/packages/eclipse-epic/)
 
 *   **IvyDE** — IvyDE dependency Manager.
 

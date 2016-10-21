@@ -53,14 +53,6 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
 
-*   **maimclip** — Simple bash wrapper for maim screenshot taking tool with OSD notification support
-
-	[https://github.com/orschiro/scriptlets/tree/master/Maimclip](https://github.com/orschiro/scriptlets/tree/master/Maimclip) || [maimclip-git](https://aur.archlinux.org/packages/maimclip-git/)
-
-*   **qscreenshot** — Simple creation and editing of screenshots (Qt).
-
-	[https://code.google.com/p/qscreenshot/](https://code.google.com/p/qscreenshot/) || [qscreenshot-git](https://aur.archlinux.org/packages/qscreenshot-git/)
-
 *   **screencloud** — allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
 
 	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
@@ -88,10 +80,6 @@ This article explains different methods to take [screenshots](https://en.wikiped
 *   **xwd** — X Window System image dumping utility
 
 	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
-
-*   **zscreen** — Lightweight GUI which allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot automatically to [imgur](http://imgur.com). For taking the screenshot it uses scrot and zenity for the GUI.
-
-	[https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI) || [zscreen](https://aur.archlinux.org/packages/zscreen/)
 
 ## Packages including a screenshot utility
 

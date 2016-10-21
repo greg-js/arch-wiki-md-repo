@@ -29,7 +29,7 @@
 
 ## Installing Arch
 
-This wiki page supplements these pages: **[Official Install Guide](/index.php/Installation_guide "Installation guide")**, and **[Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")**. Please refer to those guides *first* before following the eeepc-specific pointers on this page.
+This wiki page supplements these pages: [Installation guide](/index.php/Installation_guide "Installation guide") and [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701"). Please refer to those guides *first* before following the eeepc-specific pointers on this page.
 
 ### Camera
 

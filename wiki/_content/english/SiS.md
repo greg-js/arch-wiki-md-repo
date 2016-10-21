@@ -4,7 +4,7 @@ This page describes how to get [Silicon Integrated Systems (SiS)](http://dri.fre
 
 *   [1 Packages](#Packages)
 *   [2 lspci](#lspci)
-*   [3 Modules & rc.conf](#Modules_.26_rc.conf)
+*   [3 Modules](#Modules)
 *   [4 xorg.conf](#xorg.conf)
     *   [4.1 Enable SSE](#Enable_SSE)
     *   [4.2 SiS 671 card](#SiS_671_card)
@@ -12,7 +12,7 @@ This page describes how to get [Silicon Integrated Systems (SiS)](http://dri.fre
 
 ## Packages
 
-You will need main [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis) with driver and it's good idea to install [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/). You can also check [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/) from [AUR](/index.php/AUR "AUR").
+You will need main [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis) with driver and it's good idea to install [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (gui tool for setting video modes). Some cards not supported by **sis** driver package can work with [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) and [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/).
 
 ## lspci
 
@@ -23,27 +23,22 @@ Output of lspci should look like this (depends on present model):
 
 ```
 
-## Modules & rc.conf
+## Modules
 
-There are couple of modules related to SiS video cards:
+There are couple of [kernel modules](/index.php/Kernel_modules "Kernel modules") related to SiS video cards:
 
 ```
 $ lsmod | grep sis | sed -re 's#^([a-zA-Z0-9_-]*) *.*#\1#g' | xargs modinfo | grep 'filename:'
 ...
-filename:       /usr/lib/modules/*{kernel-version}*/kernel/drivers/char/agp/sis-agp.ko.gz
-filename:       /usr/lib/modules/*{kernel-version}*/kernel/drivers/char/agp/agpgart.ko.gz
+filename:       /usr/lib/modules/*kernel-version*/kernel/drivers/char/agp/sis-agp.ko.gz
+filename:       /usr/lib/modules/*kernel-version*/kernel/drivers/char/agp/agpgart.ko.gz
 ...
 
 ```
 
-*whereas **{kernel-version}** is the kernel version currently installed on your system. For example kernel 3.7.1.1*
+where `*kernel-version*` is the kernel version currently installed on your system. For example kernel 3.7.1.1
 
-You will probably need to load only **sis-agp** (it will probably load the other sis modules as required by your hardware) as first and then the other modules. So the beginning of MODULES array in your `/etc/rc.conf` should look like this:
-
-```
-MODULES=(**sis-agp**)
-
-```
+You will probably need to load only the *sis-agp* [kernel module](/index.php/Kernel_module "Kernel module").
 
 ## xorg.conf
 

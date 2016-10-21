@@ -307,7 +307,7 @@ Then you can use this image as the base for your new domain and it will use the 
 
 ### Domains
 
-Virtual machines are called *domains*. If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program that is part of the [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) package).
+Virtual machines are called *domains*. If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program installed as part of the [virt-install](https://www.archlinux.org/packages/?name=virt-install) package).
 
 Creating a new domain typically involves using some installation media, such as an `.iso` from the storage pool or an optical drive.
 

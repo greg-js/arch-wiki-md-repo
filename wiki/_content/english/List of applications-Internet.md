@@ -191,6 +191,10 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
 
+*   **theWeb** — A web browser based on Qt using the Chromium Embedded Framework, with Linux integration (such as MPRIS) in mind.
+
+	[https://github.com/vicr123/theweb](https://github.com/vicr123/theweb) || [theweb](https://aur.archlinux.org/packages/theweb/)
+
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 
 	[https://vivaldi.com/](https://vivaldi.com/) || [vivaldi](https://aur.archlinux.org/packages/vivaldi/)

@@ -23,15 +23,15 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
         *   [5.1.1 Java SE 9](#Java_SE_9)
         *   [5.1.2 Java SE 6/7](#Java_SE_6.2F7)
         *   [5.1.3 32-bit Java SE](#32-bit_Java_SE)
-    *   [5.2 Oracle JRockit](#Oracle_JRockit)
-    *   [5.3 VMkit](#VMkit)
-    *   [5.4 Parrot VM](#Parrot_VM)
+    *   [5.2 VMkit](#VMkit)
+    *   [5.3 Parrot VM](#Parrot_VM)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 MySQL](#MySQL)
     *   [6.2 Impersonate another window manager](#Impersonate_another_window_manager)
     *   [6.3 Illegible fonts](#Illegible_fonts)
     *   [6.4 Missing text in some applications](#Missing_text_in_some_applications)
     *   [6.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM.2C_menus_immediately_closing)
+    *   [6.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Better font rendering](#Better_font_rendering)
     *   [7.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
@@ -213,17 +213,13 @@ Almost all of the above packages can be found in 32-bit by prefixing `bin32-`, e
 
 **Note:** These packages use `archlinux-java32` ([java32-runtime-common](https://aur.archlinux.org/packages/java32-runtime-common/)), which is separate from `archlinux-java` ([java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common)), but functions the same, by suffixing the Java links with `32`, e.g. `java32`.
 
-### Oracle JRockit
-
-[JRockit](http://www.oracle.com/technetwork/middleware/jrockit/overview/index.html) is Oracle's JIT version of Java, available as [jrockit](https://aur.archlinux.org/packages/jrockit/).
-
 ### VMkit
 
 [VMkit](http://vmkit.llvm.org/index.html) is an LLVM-based framework for JIT virtual machines. J3 is a JVM running on VMkit. The webpage can be found here: [vmkit](http://vmkit.llvm.org/get_started.html). J3 depends on the GNU classpath libraries, but may also work with the Apache class path libraries.
 
 ### Parrot VM
 
-[Parrot](http://www.parrot.org/) is a VM that offers experimental [support for Java](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: Either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/) or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk). [parrot](https://www.archlinux.org/packages/?name=parrot) is available in the [official repositories](/index.php/Official_repositories "Official repositories") and [parrot-git](https://aur.archlinux.org/packages/parrot-git/) in the AUR.
+[Parrot](http://www.parrot.org/) is a VM that offers experimental [support for Java](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: Either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/) or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk). [Install](/index.php/Install "Install") it with the [parrot](https://www.archlinux.org/packages/?name=parrot) package.
 
 ## Troubleshooting
 
@@ -269,6 +265,12 @@ There are several things that may help:
 to the `LogHook` may help.
 
 See [[1]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
+
+### System freezes when debugging JavaFX Applications
+
+If your system freezes while debugging a JavaFX Application, you can try to supply the JVM option `-Dsun.awt.disablegrab=true`.
+
+See [http://bugs.java.com/view_bug.do?bug_id=6714678](http://bugs.java.com/view_bug.do?bug_id=6714678)
 
 ## Tips and tricks
 

@@ -1,4 +1,6 @@
-[Elasticsearch](https://www.elastic.co/products/elasticsearch) is a search engine based on [Lucene](http://lucene.apache.org/). It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in [Java](/index.php/Java "Java") and is released as open source under the terms of the Apache License.
+From [Wikipedia:Elasticsearch](https://en.wikipedia.org/wiki/Elasticsearch "wikipedia:Elasticsearch"):
+
+	*[Elasticsearch](https://www.elastic.co/products/elasticsearch) is a search engine based on [Lucene](http://lucene.apache.org/). It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License.*
 
 ## Contents
 
@@ -17,10 +19,23 @@ Install the [elasticsearch](https://www.archlinux.org/packages/?name=elasticsear
 
 [Start/enable](/index.php/Start/enable "Start/enable") `elasticsearch.service`.
 
-Ensure Elasticsearch is running and accessible:
+Ensure Elasticsearch is running and accessible by using [curl](https://www.archlinux.org/packages/?name=curl), `curl -X GET '<protocol>://<host>:<port>'`:
 
+ `curl -X GET [http://127.0.0.1:9200](http://127.0.0.1:9200)` 
 ```
-curl -X GET '[http://127.0.0.1:9200'](http://127.0.0.1:9200')
+{
+  "name" : "Sunder",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "*cluster-uuid*",
+  "version" : {
+    "number" : "2.4.1",
+    "build_hash" : "c67dc32e24162035d18d6fe1e952c4cbcbe79d16",
+    "build_timestamp" : "2016-09-27T18:57:55Z",
+    "build_snapshot" : false,
+    "lucene_version" : "5.5.2"
+  },
+  "tagline" : "You Know, for Search"
+}
 
 ```
 

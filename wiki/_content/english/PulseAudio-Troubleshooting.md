@@ -704,6 +704,17 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that does not work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
 
+Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
+
+ `/etc/pulse/default.pa` 
+```
+...
+### Should be after module-*-restore but before module-*-detect
+#load-module module-switch-on-port-available
+...
+
+```
+
 ### No cards
 
 If PulseAudio starts, run `pacmd list`. If no cards are reported, make sure that the ALSA devices are not in use:
@@ -938,7 +949,7 @@ As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) o
 
 The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
 
-See also [[1]](https://bbs.archlinux.org/viewtopic.php?id=135955).
+See also [[2]](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
@@ -1146,4 +1157,4 @@ load-module module-stream-restore restore_device=false
 
 ### RTP/UDP packet flood
 
-In some cases the default configuration might flood the network with UDP packets.[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[3]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+In some cases the default configuration might flood the network with UDP packets.[[3]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[4]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

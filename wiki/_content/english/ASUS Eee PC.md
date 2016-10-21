@@ -2,8 +2,6 @@ This should be the page to gather all information on installing and running arch
 
 The 'old' page should be cleaned up and merged into this page, and any future information should also go on this page. If no one that actualy owns an Eee want to do it, then I (Mr.Elendig) can do it, but it will take some time.
 
-Until this page actualy get some contents, go to [Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC").
-
 ## Contents
 
 *   [1 Eee 700 Series and 900](#Eee_700_Series_and_900)
@@ -46,7 +44,7 @@ Until this page actualy get some contents, go to [Installing Arch Linux on the A
 
 # Eee 700 Series and 900
 
-This should be filled with the majority of the content from [Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC").
+This should be filled with the majority of the content from [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701").
 
 ### Installation
 

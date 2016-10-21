@@ -54,10 +54,8 @@ The following packages are a good start to build a full-featured pro audio syste
 Other packages you may need that are available from the [AUR](/index.php/AUR "AUR"):
 
 *   [qsampler](https://aur.archlinux.org/packages/qsampler/) (also see [Linuxsampler](/index.php/Linuxsampler "Linuxsampler"))
-*   [tal-plugins-vst-bin](https://aur.archlinux.org/packages/tal-plugins-vst-bin/)
 *   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
 *   [carla](https://aur.archlinux.org/packages/carla/)
-*   [fluidsynth-dssi](https://aur.archlinux.org/packages/fluidsynth-dssi/)
 *   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
 *   [XCFA](https://aur.archlinux.org/packages/XCFA/)
 *   [yoshimi](https://aur.archlinux.org/packages/yoshimi/)
@@ -180,7 +178,7 @@ $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 #### FireWire
 
-**Note:** Nothing much is needed to be done as most things have been automated, especially with the introduction of the [new FireWire stack](https://ieee1394.wiki.kernel.org/articles/j/u/j/Juju_Migration_e8a6.html), deprecation of HAL and more focus on [udev](/index.php/Udev "Udev"). You should not need to edit device permissions, but if you suspect that your device may not be working due to such issues, see `/lib/udev/rules.d/60-ffado.rules` and if needed, create and put your changes into `/etc/udev/rules.d/60-ffado.rules`. Most often than not, your device will work with the [libffado-svn](https://aur.archlinux.org/packages/libffado-svn/) development version of the driver.
+**Note:** Nothing much is needed to be done as most things have been automated, especially with the introduction of the [new FireWire stack](https://ieee1394.wiki.kernel.org/articles/j/u/j/Juju_Migration_e8a6.html), deprecation of HAL and more focus on [udev](/index.php/Udev "Udev"). You should not need to edit device permissions, but if you suspect that your device may not be working due to such issues, see `/lib/udev/rules.d/60-ffado.rules` and if needed, create and put your changes into `/etc/udev/rules.d/60-ffado.rules`.
 
 JACK(2) is built against FFADO, you only need to install it with the [libffado](https://www.archlinux.org/packages/?name=libffado) package.
 
@@ -259,8 +257,6 @@ A great way to quickly diagnose your system and find out what it is missing in o
 
 [https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl](https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl)
 
-(or just install [realtimeconfigquickscan](https://aur.archlinux.org/packages/realtimeconfigquickscan/) from the [AUR](/index.php/AUR "AUR"))
-
 The output should tell you where your system is lacking and will point you to places to find more information.
 
 #### Desktop Effects vs JACK
@@ -304,7 +300,6 @@ From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
 
 *   [linux-rt](https://aur.archlinux.org/packages/linux-rt/)
 *   [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/) (Long Term Support, stable release)
-*   [linux-rt-ice](https://aur.archlinux.org/packages/linux-rt-ice/)
 
 The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice includes patches some may consider to be nasty, while to others are a blessing.
 

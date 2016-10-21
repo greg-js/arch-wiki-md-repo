@@ -8,10 +8,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): N
 *   [2 PHP Configuration](#PHP_Configuration)
 *   [3 Setup mariadb and nextcloud DB](#Setup_mariadb_and_nextcloud_DB)
 *   [4 Setup Apache](#Setup_Apache)
-*   [5 Enable memcache](#Enable_memcache)
-*   [6 (Optional) SSL Setup and its hardening plus SSL hardening](#.28Optional.29_SSL_Setup_and_its_hardening_plus_SSL_hardening)
-    *   [6.1 Enable SSL with a self signed certificate](#Enable_SSL_with_a_self_signed_certificate)
-    *   [6.2 SSL hardening](#SSL_hardening)
+*   [5 Swithch to Cron from AJAX](#Swithch_to_Cron_from_AJAX)
+*   [6 Enable memcache](#Enable_memcache)
+*   [7 (Optional) SSL Setup and its hardening plus SSL hardening](#.28Optional.29_SSL_Setup_and_its_hardening_plus_SSL_hardening)
+    *   [7.1 Enable SSL with a self signed certificate](#Enable_SSL_with_a_self_signed_certificate)
+    *   [7.2 SSL hardening](#SSL_hardening)
 
 ## Installation
 
@@ -173,6 +174,42 @@ mime
 ```
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the [apache](https://www.archlinux.org/packages/?name=apache) service `httpd`
+
+## Swithch to Cron from AJAX
+
+Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead.
+
+To do so, first install [chrony](https://www.archlinux.org/packages/?name=chrony):
+
+```
+# pacman -S chrony
+
+```
+
+Then create a job for `http` user:
+
+```
+# crontab -u http -e
+
+```
+
+This would open editor, paste this:
+
+```
+*/15  *  *  *  * php -f /usr/share/webapps/nextcloud/cron.php
+
+```
+
+Save the file and exit. Now you should [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `chrony.service`.
+
+You can verify that everything is set by running
+
+```
+# crontab -u http -l
+
+```
+
+Finally, set Cron option in Nextcloud settings to Cron.
 
 ## Enable memcache
 

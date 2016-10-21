@@ -9,14 +9,13 @@ MediaTomb enables users to stream digital media to UPnP compatible devices like 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Usage](#Usage)
-*   [4 Hiding full paths from media players](#Hiding_full_paths_from_media_players)
-*   [5 Playstation 3 Support](#Playstation_3_Support)
-*   [6 Samsung TV Support](#Samsung_TV_Support)
-*   [7 Systemd Integration](#Systemd_Integration)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Mediatomb doesn't provide content even though it is added in the webfrontend](#Mediatomb_doesn.27t_provide_content_even_though_it_is_added_in_the_webfrontend)
-    *   [8.2 The Client loses connection after 30 Minutes](#The_Client_loses_connection_after_30_Minutes)
-*   [9 Bugs](#Bugs)
+    *   [3.1 Hiding full paths from media players](#Hiding_full_paths_from_media_players)
+    *   [3.2 Playstation 3 Support](#Playstation_3_Support)
+    *   [3.3 Samsung TV Support](#Samsung_TV_Support)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Mediatomb doesn't provide content even though it is added in the webfrontend](#Mediatomb_doesn.27t_provide_content_even_though_it_is_added_in_the_webfrontend)
+    *   [4.2 The Client loses connection after 30 Minutes](#The_Client_loses_connection_after_30_Minutes)
+    *   [4.3 Problems with discovery](#Problems_with_discovery)
 
 ## Installation
 
@@ -28,6 +27,8 @@ Mediatomb can use its own database, or your local [MariaDB](/index.php/MariaDB "
 
 ## Configuration
 
+**Warning:** The current version of MediaTomb has a serious bug: The `-i` command-line option to bind to a specific IP address does not work. Bug reported in 2010 to [Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=693301) and [Upstream](http://sourceforge.net/p/mediatomb/bugs/76). The webserver remains accessible on all interfaces, creating a security problem if running on a publically accessible host.
+
 The default settings may be sufficient for many users, though changes are required for PlayStation 3 support. MediaTomb may be configured and run per-user or as a system-wide daemon. Following installation, either run
 
 ```
@@ -35,44 +36,30 @@ $ mediatomb
 
 ```
 
-to start MediaTomb as the current user and generate a default configuration in `~/.mediatomb/config.xml`, or
+to start MediaTomb as the current user and generate a default configuration in `~/.mediatomb/config.xml`, or [start/enable](/index.php/Start/enable "Start/enable") `mediatomb.service` to start the MediaTomb daemon and generate a default configuration in `/var/lib/mediatomb/.mediatomb/config.xml`.
 
-```
-# systemctl start mediatomb
-
-```
-
-to start the MediaTomb daemon and generate a default configuration in `/var/lib/mediatomb/.mediatomb/config.xml`.
-
-If you want to use the [MariaDB](/index.php/MariaDB "MariaDB") database backend, you can alternatively run
-
-```
-# systemctl start mediatomb-mariadb
-
-```
-
-which will ensure that [MariaDB](/index.php/MariaDB "MariaDB") is up and running before MediaTomb is.
+If you want to use the [MariaDB](/index.php/MariaDB "MariaDB") database backend, you can alternatively [start/enable](/index.php/Start/enable "Start/enable") `mediatomb-mariadb.service` which will ensure that [MariaDB](/index.php/MariaDB "MariaDB") is up and running before MediaTomb is.
 
 ## Usage
 
-The daemon listens on port 50500 by default. To access the web interface and begin importing media, navigate to [http://127.0.0.1:50500/](http://127.0.0.1:50500/) in your favorite browser (JavaScript required).
+The daemon listens on port `50500` by default. To access the web interface and begin importing media, navigate to [http://127.0.0.1:50500/](http://127.0.0.1:50500/) in your favorite browser (JavaScript required).
 
-If running per-user instances of MediaTomb, the default port is 49152\. However, it is possible that the port will change upon server restart. The URL for the web interface is output during startup. Users may also specify the port manually:
+If running per-user instances of MediaTomb, the default port is `49152`. However, it is possible that the port will change upon server restart. The URL for the web interface is output during startup. Users may also specify the port manually:
 
 ```
 $ mediatomb -p 50500
 
 ```
 
-## Hiding full paths from media players
+### Hiding full paths from media players
 
 By default, full directory paths will be shown on devices when they are browsing through folders.
 
-For example, if you add the directory /media/my_media/video_data/videos/movies, anyone connecting will have to navigate to the 'movies' directory from the root.
+For example, if you add the directory `/media/my_media/video_data/videos/movies`, anyone connecting will have to navigate to the 'movies' directory from the root.
 
 To hide all of that and only show the directory added, you can change the import script.
 
-For example, this script will automatically truncate the whole directory structure specified in the variable video_root. Any directories added directly under the video root path will show up on UPnP devices starting from the that folder rather than /.
+For example, this script will automatically truncate the whole directory structure specified in the variable video_root. Any directories added directly under the video root path will show up on UPnP devices starting from the that folder rather than `/`.
 
 ```
 function addVideo(obj)
@@ -98,14 +85,14 @@ function addVideo(obj)
 
 ```
 
-To also hide the default PC Directory folder from UPnP device directory listings, add the following directly under the server node of your config.xml file.
+To also hide the default PC Directory folder from UPnP device directory listings, add the following directly under the server node of your `config.xml` file.
 
 ```
 <pc-directory upnp-hide="yes"/>
 
 ```
 
-## Playstation 3 Support
+### Playstation 3 Support
 
 The following notes assume MediaTomb is running as a system-wide daemon. For a per-user install, the locations of the configuration file will be different (see above).
 
@@ -188,14 +175,9 @@ You may have to specify an interface before MediaTomb will be recognized:
 
 ... replacing eth0 with the interface you connect on.
 
-After configuring MediaTomb to your liking, restart the server by running
+After configuring MediaTomb to your liking, [restart](/index.php/Restart "Restart") `mediatomb.service`.
 
-```
-# systemctl restart mediatomb
-
-```
-
-## Samsung TV Support
+### Samsung TV Support
 
 For Samsung TV support users should install [mediatomb-samsung-tv](https://aur.archlinux.org/packages/mediatomb-samsung-tv/) from the [AUR](/index.php/AUR "AUR"), which it's the same as the [mediatomb](https://aur.archlinux.org/packages/mediatomb/) package with a few more patches. Note that the TV must have [DLNA](https://en.wikipedia.org/wiki/Digital_Living_Network_Alliance "wikipedia:Digital Living Network Alliance") support. Also the server and the TV should be connected to the same network.
 
@@ -225,14 +207,6 @@ Some models require changes in config.xml. Users should edit the `<custom-http-h
 
 ```
 
-## Systemd Integration
-
-The mediatomb package comes with two [systemd](/index.php/Systemd "Systemd") service files: mediatomb.service and mediatomb-mariadb.service. They run as 'mediatomb' user, which was created on install, as it isn't secure to run them as root.
-
-Choose which one you want to use, based on whether you want mediatomb to wait for mariadb to be up and running first or not. I.e. if you use a mariadb backend use mediatomb-mariadb.service, and use mediatomb.service otherwise.
-
-If you experience problem with discovery of MediaTomb service on your device, make sure that it binds to interfaces other than 'lo' - check in /etc/default/mediatomb
-
 ## Troubleshooting
 
 ### Mediatomb doesn't provide content even though it is added in the webfrontend
@@ -245,16 +219,15 @@ So if Mediatomb runs under the user 'mediatomb' the (video-)files either have to
 
 Apparently this is related to SSNP message only being sent once which results in the Client dropping its connection in 30 minutes since it thinks the server is gone.
 
-In the config.xml add the alive tag <alive>180</alive>
+In the `config.xml` add the alive tag:
 
-Optional
+```
+<alive>180</alive>
 
-Default: 180, this is according to the UPnP specification.
+```
 
-Interval for broadcasting SSDP:alive messages
+Default is `180`. See [http://mediatomb.cc/pages/documentation#id2856362](http://mediatomb.cc/pages/documentation#id2856362).
 
-From [http://mediatomb.cc/pages/documentation#id2856362](http://mediatomb.cc/pages/documentation#id2856362)
+### Problems with discovery
 
-## Bugs
-
-The "-i" command-line option to bind to a specific IP address does not work. Bug reported in 2010 to [Debian](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=693301) and [Upstream](http://sourceforge.net/p/mediatomb/bugs/76). The webserver remains accessible on all interfaces.
+If you experience problem with discovery of MediaTomb service on your device, make sure that it binds to interfaces other than 'lo' - check in /etc/default/mediatomb

@@ -2,10 +2,9 @@ For now, this is just some notes on the Asus EeePC 1000\. The difference between
 
 For more information, see other pages:
 
-*   [ASUS Eee PC 901](/index.php/ASUS_Eee_PC_901 "ASUS Eee PC 901")
-*   [Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC")
 *   [ASUS Eee PC](/index.php/ASUS_Eee_PC "ASUS Eee PC")
-*   [Asus Eee PC 900A](/index.php/Asus_Eee_PC_900A "Asus Eee PC 900A")
+*   [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701")
+*   [ASUS Eee PC 901](/index.php/ASUS_Eee_PC_901 "ASUS Eee PC 901")
 *   [Array.org EeePC Ubuntu Repository](http://array.org/ubuntu/status.html)
 
 ## Contents

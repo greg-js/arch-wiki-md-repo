@@ -57,4 +57,5 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 *   [MIDI](/index.php/MIDI "MIDI")
 *   [Codecs](/index.php/Codecs "Codecs")
+*   [Professional audio](/index.php/Professional_audio "Professional audio")
 *   [Disable PC speaker beep](/index.php/Disable_PC_speaker_beep "Disable PC speaker beep")

@@ -29,7 +29,7 @@ Most of the article can also be applied to eeepc-models which are similar to the
 
 ## Install tips for the Asus Eee PC
 
-This wiki page supplements these pages: [Installation guide](/index.php/Installation_guide "Installation guide") and [Installing Arch Linux on the Asus EEE PC](/index.php/Installing_Arch_Linux_on_the_Asus_EEE_PC "Installing Arch Linux on the Asus EEE PC"). Please refer to those guides *first* before following the eeepc-specific pointers on this page.
+This wiki page supplements these pages: [Installation guide](/index.php/Installation_guide "Installation guide") and [ASUS Eee PC 701](/index.php/ASUS_Eee_PC_701 "ASUS Eee PC 701"). Please refer to those guides *first* before following the eeepc-specific pointers on this page.
 
 Most of this information is from the Arch Forum EEE 901 [thread](https://bbs.archlinux.org/viewtopic.php?id=53464). Consult this thread, and other resources on the Arch forum, for more details and discussion.
 

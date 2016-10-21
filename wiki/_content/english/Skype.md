@@ -137,7 +137,7 @@ For installation use [upstream instructions](https://github.com/sameersbn/docker
 
 A special user can be used for running Skype within one's normal environment. Permissions will have to be set to ensure your home directory is not readable by the special Skype user (see [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")).
 
-An AUR package, [skype-restricted](https://aur.archlinux.org/packages/skype-restricted/) exists that will run skype as a separate user ("_skype") cleanly. It is heavily based on the information in this section. Alternatively, one can use [skype-secure](https://aur.archlinux.org/packages/skype-secure/), a package that works similarly to skype-restricted, but wraps around already installed Skype binary.
+An AUR package, [skype-secure](https://aur.archlinux.org/packages/skype-secure/) exists that will run skype as a separate user ("_skype") cleanly. It is heavily based on the information in this section.
 
 Create a new group for the skype user:
 

@@ -11,9 +11,9 @@
 
 ## Installation
 
-Before you can use Splashy, you should enable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Please refer to the specific instructions for [ATI cards](/index.php/ATI#Kernel_mode-setting_.28KMS.29 "ATI"), [Intel cards](/index.php/Intel#Enable_early_KMS "Intel") or [Nvidia cards](/index.php/Nouveau#KMS "Nouveau").
+Before you can use Splashy, you should enable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting").
 
-Install [splashy-full](https://aur.archlinux.org/packages/splashy-full/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [splashy-full](https://aur.archlinux.org/packages/splashy-full/) package.
 
 You may also check out [this topic](https://bbs.archlinux.org/viewtopic.php?id=48978) on the [Arch Linux forum](https://bbs.archlinux.org/) for a repository you can add with working splashy packages.
 

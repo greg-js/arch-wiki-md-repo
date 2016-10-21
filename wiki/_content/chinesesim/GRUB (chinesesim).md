@@ -657,7 +657,7 @@ if [ "${grub_platform}" == "pc" ]; then
     insmod search_fs_uuid
     insmod ntldr     
     search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 69B235F6749E84CE
-    ntldr /bootmgr
+    ntldr /ntldr
   }
 fi
 

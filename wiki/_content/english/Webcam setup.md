@@ -183,7 +183,7 @@ Just install [stk11xx-svn](https://aur.archlinux.org/packages/stk11xx-svn/). It 
 
 ## Make sure the module is loaded for your webcam
 
-Add your webcam's [module](/index.php/Kernel_modules#Loading "Kernel modules") in `/etc/modules-load.d/webcam.conf` so it will be loaded into the kernel during init stage bootstrapping.
+Add your webcam's [kernel module](/index.php/Kernel_modules "Kernel modules") in `/etc/modules-load.d/webcam.conf` so it will be loaded into the kernel during init stage bootstrapping.
 
 If your webcam is USB, the kernel *should* automatically load the proper driver. If this is the case, check dmesg after you plug your webcam in. You should see something like this:
 

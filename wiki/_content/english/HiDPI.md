@@ -6,7 +6,6 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
-        *   [1.1.1 How to use non-whole numbers](#How_to_use_non-whole_numbers)
     *   [1.2 KDE](#KDE)
         *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
@@ -59,37 +58,48 @@ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 **Note:** `scaling-factor` only allows whole numbers to be set. 1 = 100%, 2 = 200%, etc...
 
-#### How to use non-whole numbers
-
 A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets).
 
 Alternatively, you can achieve any non-integer scale factor by using a combination of `scaling-factor` and `xrandr`. This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone. You specify zoom-in factor with `gsettings` and zoom-out factor with `xrandr`.
 
 Here is a method to find a comfortable scale factor for your screen:
 
+First scale Gnome up to the minimum size which is too big. Usually "2" is already too big, but if "2" is still small for you, try "3", etc.
+
 ```
-# First scale Gnome up to the minimum size which is too big.
-# Usually "2" is already too big, but if "2" is still small for you, try "3", etc.
 gsettings set org.gnome.desktop.interface scaling-factor 2
-# Now start scaling down by setting zoom-out factor with xrandr.
-# First get the output name:
-xrandr | grep -v disconnected | grep connected | cut -d' ' -f1
-# eDP1
-#
-# Use this value to specify --output further on.
-# If you have two or more screens you can set their scale independently.
-# Now, to zoom-out 1.2 times, run the following:
+
+```
+
+Now start scaling down by setting zoom-out factor with xrandr. First get the output name:
+
+ `xrandr | grep -v disconnected | grep connected | cut -d' ' -f1`  `eDP1` 
+
+Use this value to specify --output further on. If you have two or more screens you can set their scale independently.
+
+Now, to zoom-out 1.2 times, run the following:
+
+```
 xrandr --output eDP1 --scale 1.2x1.2
-# If the UI is still too big, increase the scale:
+
+```
+
+If the UI is still too big, increase the scale:
+
+```
 xrandr --output eDP1 --scale 1.25x1.25
-# If UI becomes too small, decrease the scale factor a bit.
-# Repeat until you find a value which works best for your screen and your eyes.
-# Finally, you need to allow the mouse to navigate the whole screen.
-# To do this you need to get the current scaled resolution:
-xrandr | grep eDP1
-# eDP1 connected primary 2304x1296+0+0 (normal left inverted right x axis y axis) 239mm x 134mm
-#
-# Now use the acquired resolution value to set correct panning:
+
+```
+
+If UI becomes too small, decrease the scale factor a bit. Repeat until you find a value which works best for your screen and your eyes.
+
+Finally, you need to allow the mouse to navigate the whole screen. To do this you need to get the current scaled resolution:
+
+ `xrandr | grep eDP1`  `eDP1 connected primary 2304x1296+0+0 (normal left inverted right x axis y axis) 239mm x 134mm` 
+
+Now use the acquired resolution value to set correct panning:
+
+```
 xrandr --output eDP1 --panning 2304x1296
 
 ```
@@ -396,7 +406,7 @@ The HiDPI setting applies to the whole desktop, so non-HiDPI external displays s
 One workaround is to using [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
 
 ```
-xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
+xrandr --output eDP-1 --auto --output DP-1 --auto --scale 2x2 --right-of eDP-1
 
 ```
 
@@ -407,14 +417,14 @@ You may run into problems with your mouse not being able to reach the whole scre
 An example of the panning syntax for a 4k laptop with an external 1920x1080 monitor to the right:
 
 ```
-xrandr --output eDP1 --auto --output HDMI1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP1
+xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP-1
 
 ```
 
-Generically if your hidpi monitor is AxB pixels and your regular monitor is CxD and you are scaling by [ExF], the commandline for right-of is:
+Generically if your HiDPI monitor is AxB pixels and your regular monitor is CxD and you are scaling by [ExF], the commandline for right-of is:
 
 ```
-xrandr --output eDP1 --auto --output HDMI1 --auto --panning [C*E]x[D*F]+[A]+0 --scale [E]x[F] --right-of eDP1
+xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning [C*E]x[D*F]+[A]+0 --scale [E]x[F] --right-of eDP-1
 
 ```
 
@@ -423,7 +433,7 @@ If panning is not a solution for you it may be better to set position of monitor
 An example of the syntax for a 2560x1440 WQHD 210 DPI laptop monitor (eDP1) using native resolution placed below a 1920x1080 FHD 96 DPI external monitor (HDMI) scaled to match global DPI settings:
 
 ```
-xrandr --output eDP1 --auto --pos 0x1458 --output HDMI --scale 1.35x1.35 --auto --pos 0x0 --fb 2592x2898
+xrandr --output eDP-1 --auto --pos 0x1458 --output HDMI-1 --scale 1.35x1.35 --auto --pos 0x0 --fb 2592x2898
 
 ```
 
@@ -434,7 +444,7 @@ In this case laptop monitor (eDP1) has no scaling and uses native mode for resol
 Generically if your hidpi monitor is AxB pixels and your regular monitor is CxD and you are scaling by [ExF] and hidpi is placed below regular one, the commandline for right-of is:
 
 ```
-xrandr --output eDP1 --auto --pos 0x(DxF) --output HDMI --auto --scale [E]x[F] --pos 0x0 --fb [greater between A and (C*E)]x[B+(D*F)]
+xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F] --pos 0x0 --fb [greater between A and (C*E)]x[B+(D*F)]
 
 ```
 

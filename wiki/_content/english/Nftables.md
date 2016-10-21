@@ -30,6 +30,8 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
         *   [6.2.1 Matches](#Matches)
         *   [6.2.2 Jumps](#Jumps)
     *   [6.3 Insertion](#Insertion)
+        *   [6.3.1 Prepended](#Prepended)
+        *   [6.3.2 At a given position](#At_a_given_position)
     *   [6.4 Deletion](#Deletion_3)
     *   [6.5 Atomic Reloading](#Atomic_Reloading)
 *   [7 File Definitions](#File_Definitions)
@@ -380,10 +382,28 @@ The following is an incomplete list of jumps:
 
 ### Insertion
 
+#### Prepended
+
 Rules can be prepended to chains with the `nft insert rule` command.
 
 ```
 # nft insert rule filter input ct state established,related accept
+
+```
+
+#### At a given position
+
+Nftables uses handles to define the position of a rule. To get this information, you need to list the ruleset with the -a flag:
+
+```
+ # nft list ruleset -a
+
+```
+
+To add a rule *after* another rule with a given handler, you have to type:
+
+```
+ # nft add rule *table_name* *chain_name* position *handler_number* *[rule-definition]*
 
 ```
 

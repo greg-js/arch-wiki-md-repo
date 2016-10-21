@@ -10,11 +10,10 @@
 *   [2 Shock protection](#Shock_protection)
     *   [2.1 hdapsd](#hdapsd)
 *   [3 GUI Utilities](#GUI_Utilities)
-    *   [3.1 gnome-hdaps-applet](#gnome-hdaps-applet)
-    *   [3.2 kdeplasma-applets-hdaps-monitor](#kdeplasma-applets-hdaps-monitor)
-    *   [3.3 xfce4-hdaps](#xfce4-hdaps)
-    *   [3.4 HDAPSicon](#HDAPSicon)
-    *   [3.5 hdaps-gl](#hdaps-gl)
+    *   [3.1 kdeplasma-applets-hdaps-monitor](#kdeplasma-applets-hdaps-monitor)
+    *   [3.2 xfce4-hdaps](#xfce4-hdaps)
+    *   [3.3 HDAPSicon](#HDAPSicon)
+    *   [3.4 hdaps-gl](#hdaps-gl)
 *   [4 See also](#See_also)
 
 ## Shock detection
@@ -60,7 +59,9 @@ hdapsd monitors the output of the HDAPS joystick devices to determine if a shock
 
 You should check your "Load cycle count" in [SMART](/index.php/SMART "SMART") when setting up hdaps, if it is too sensitive the head would park too often and load cycle count would rise too rapidly.
 
-[Install](/index.php/Install "Install") [hdapsd](https://www.archlinux.org/packages/?name=hdapsd). You can [start](/index.php/Start "Start") the hdapsd daemon with `hdapsd.service`.
+[Install](/index.php/Install "Install") [hdapsd](https://www.archlinux.org/packages/?name=hdapsd). You can [start](/index.php/Start "Start") the hdapsd daemon with `hdapsd@device.service`, however you don't need to enable it.
+
+The package installs udev rules. Udev will start one hdapsd instance for each rotational, non-removable disk it finds. For more information, see the [hdapsd github page](https://github.com/evgeni/hdapsd#systemd-and-udev-integration:Link)
 
 You can adjust the parameters, with which hdapsd is run by providing your own unit file as explained in the [systemd article](/index.php/Systemd#Editing_provided_units "Systemd"), for example the following file will adjust sensitivity and logging behaviour of the hdaps daemon:
 
@@ -77,10 +78,6 @@ And reload the configuration.
 ## GUI Utilities
 
 Utilities exist to monitor hdapsd's status so you know what is going on while you are using your laptop. These are entirely optional, but very handy.
-
-### gnome-hdaps-applet
-
-This is a GNOME panel applet (Note: XFCE can use GNOME panel applets) that represents the current status of your hard drive. The package is available in [AUR](/index.php/AUR "AUR"): [gnome-hdaps-applet](https://aur.archlinux.org/packages/gnome-hdaps-applet/). If you do not want to monitor sda or hda by default, edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") before compiling.
 
 ### kdeplasma-applets-hdaps-monitor
 

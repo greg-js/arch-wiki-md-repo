@@ -103,6 +103,10 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[https://wiki.sugarlabs.org/](https://wiki.sugarlabs.org/) || [sugar](https://aur.archlinux.org/packages/sugar/)
 
+*   **theShell** — theShell is a desktop environment that tries to be as transparent as possible. It uses Qt 5 as its widget toolkit and KWin as its window manager. It also incorporates a personal assistant.
+
+	[https://vicr123.github.io/theshell](https://vicr123.github.io/theshell) || [theshell](https://aur.archlinux.org/packages/theshell/)
+
 *   **[Trinity](/index.php/Trinity "Trinity")** — The Trinity Desktop Environment (TDE) project is a computer desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style.
 
 	[http://www.trinitydesktop.org/](http://www.trinitydesktop.org/) || See [Trinity](/index.php/Trinity "Trinity")
@@ -323,6 +327,18 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [sugar-activity-jukebox](https://aur.archlinux.org/packages/sugar-activity-jukebox/) | Browse
 [sugar-activity-browse](https://aur.archlinux.org/packages/sugar-activity-browse/) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
+| theShell | [Qt](/index.php/Qt "Qt") 5
+[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
+[kwin](https://www.archlinux.org/packages/?name=kwin) | theShell
+[theshell](https://aur.archlinux.org/packages/theshell/) | theTerminal
+[theterminal](https://aur.archlinux.org/packages/theterminal/) | theFile
+[thefile](https://aur.archlinux.org/packages/thefile/) | [KCalc](http://www.kde.org/applications/utilities/kcalc/)
+[kcalc](https://www.archlinux.org/packages/?name=kcalc) | [KWrite/Kate](http://kate-editor.org/)
+[kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
+[gwenview](https://www.archlinux.org/packages/?name=gwenview) | theMedia
+[themedia](https://aur.archlinux.org/packages/themedia/) | theWeb
+[theweb](https://aur.archlinux.org/packages/theweb/) | [LightDM](/index.php/LightDM "LightDM") Contemporary Greeter
+[lightdm-webkit-theme-contemporary](https://aur.archlinux.org/packages/lightdm-webkit-theme-contemporary/) |
 | [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
 | [Unity](/index.php/Unity "Unity") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")

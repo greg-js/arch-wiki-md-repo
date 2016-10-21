@@ -21,7 +21,7 @@ If you use IBus, see [IBus](/index.php/IBus "IBus").
         *   [1.3.3 Anthy Kaomoji](#Anthy_Kaomoji)
         *   [1.3.4 Mozc](#Mozc)
             *   [1.3.4.1 Mozc (Vanilla)](#Mozc_.28Vanilla.29)
-            *   [1.3.4.2 mozc-ut and mozc-svn](#mozc-ut_and_mozc-svn)
+            *   [1.3.4.2 mozc-ut](#mozc-ut)
             *   [1.3.4.3 Registering Mozc](#Registering_Mozc)
         *   [1.3.5 Google CGI API for Japanese input](#Google_CGI_API_for_Japanese_input)
 *   [2 Settings](#Settings)
@@ -141,16 +141,6 @@ Modified Anthy consists two different upstreams:
 
 Modified Anthy is available on AUR named [anthy-ut](https://aur.archlinux.org/packages/anthy-ut/).
 
-Get anthy-ut tarball and makepkg to make and install package:
-
-```
-$ wget [https://aur.archlinux.org/packages/anthy-ut/anthy-ut.tar.gz](https://aur.archlinux.org/packages/anthy-ut/anthy-ut.tar.gz)
-$ tar xvf anthy-ut.tar.gz
-$ cd anthy-ut
-$ makepkg -s -i
-
-```
-
 If you already use original Anthy, you have to convert the existing learning data format.
 
 ```
@@ -213,9 +203,9 @@ Or, specify package names directly. For example:
 
 ```
 
-##### mozc-ut and mozc-svn
+##### mozc-ut
 
-[mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) and [mozc-svn](https://aur.archlinux.org/packages/mozc-svn/) can be built uim-mozc.
+[mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) can be built uim-mozc.
 
 **Note:** mozc-ut can work with [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/).
 
@@ -316,7 +306,7 @@ Or, if you use GNOME, KDE or Xfce, you can use uim-toolbar panel applet (Xfce re
 
 ### Using systemd
 
-If you are [using systemd to manage your X session](/index.php/Systemd/User#Using_.2Fusr.2Flib.2Fsystemd.2Fsystemd_--user_To_Manage_Your_Session "Systemd/User"), you'll need to set the environment variables in your systemd session rather than an init script.
+If you are [using systemd to manage your X session](/index.php/Systemd/User#Xorg_and_systemd "Systemd/User"), you'll need to set the environment variables in your systemd session rather than an init script.
 
  `~/.config/systemd/user/uim-env.service` 
 ```
