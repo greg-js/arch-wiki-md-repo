@@ -1,17 +1,6 @@
-Hybrid-graphics is a concept involving two graphics cards on same computer. It was first designed to control power consumption in laptops and is extending to desktop computers as well.
+Hybrid-graphics is a concept involving two graphics cards on same computer. The laptop manufacturers developed new technologies involving two graphic cards in an single computer, with different abilities and power consumptions. Hybrid-graphics is developed to support both high performance and power saving usages.
 
-## Contents
-
-*   [1 About Hybrid-graphics Technologies](#About_Hybrid-graphics_Technologies)
-*   [2 First Generation Hybrid Model (Basic Switching)](#First_Generation_Hybrid_Model_.28Basic_Switching.29)
-*   [3 Dynamic Switching Model](#Dynamic_Switching_Model)
-    *   [3.1 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
-
-## About Hybrid-graphics Technologies
-
-The laptop manufacturers developed new technologies involving two graphic cards in an single computer, enabling both high performance and power saving usages. This technology is well supported on Windows but it's still quite experimental with Linux distributions.
-
-We call hybrid graphics a set of two graphic cards with different abilities and power consumptions. There are a variety of technologies and each manufacturer developed its own solution to this problem. Here we try to explain a little about each approach and models and some community solutions to the lack of GNU/Linux systems support.
+There are a variety of technologies and each manufacturer developed its own solution to this problem. This technology is well supported on Windows but it's still quite experimental with Linux distributions. Here we try to explain a little about each approach and models and some community solutions to the lack of GNU/Linux systems support.
 
 ## First Generation Hybrid Model (Basic Switching)
 

@@ -1,43 +1,29 @@
-**翻译状态：** 本文是英文页面 [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-14，点击[这里](https://wiki.archlinux.org/index.php?title=Hybrid+graphics&diff=0&oldid=453866)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Hybrid+graphics&diff=0&oldid=454661)可以查看翻译后英文页面的改动。
 
-混合图形技术是指在同一个计算机上使用多个显卡，最初是为了控制笔记本的耗电，后来桌面系统也开始使用。
+混合图形技术是指在同一个计算机上使用多个显卡. 笔记本生产商在同一个计算机上使用两个显卡，具有不同的性能和电源消耗，混合图形技术通过控制两个显卡的使用情况实现高性能和低功耗两个目标。
 
-## Contents
+不同的厂商有不同的混合显示解决方案，这个功能在 Windows 上支持的很好，但是在 Linux 上还只是实验性质。我们会简单的介绍各种方式和社区的支持情况。
 
-*   [1 关于混合显示技术](#.E5.85.B3.E4.BA.8E.E6.B7.B7.E5.90.88.E6.98.BE.E7.A4.BA.E6.8A.80.E6.9C.AF)
-*   [2 First Generation Hybrid Model (Basic Switching)](#First_Generation_Hybrid_Model_.28Basic_Switching.29)
-*   [3 Dynamic Switching Model](#Dynamic_Switching_Model)
-    *   [3.1 Fully Power Down Discrete GPU](#Fully_Power_Down_Discrete_GPU)
+## 第一代混合显示模式 (基本切换)
 
-## 关于混合显示技术
+除非笔记本是十年前的产品，否则应该是使用的是动态切换模式。
 
-笔记本生产商在同一个计算机上使用两个显卡，以同时实现高性能和低功耗两个目标。在 Windows 系统上支持很好，在 Linux 系统上的支持只是实验性质。
+第一代使用混合显示技术的笔记本用硬件多路复用 ([MUX](https://en.wikipedia.org/wiki/Multiplexer "wikipedia:Multiplexer"))的方式. 机器可以在低功耗和低性能的集成显卡和高功耗高性能的独立显卡之间进行切换。用户可以在启动或登陆时选择要使用哪个显卡，后面使用的时候就一直不变。基本的切换步骤:
 
-We call hybrid graphics a set of two graphic cards with different abilities and power consumptions. There are a variety of technologies and each manufacturer developed its own solution to this problem. Here we try to explain a little about each approach and models and some community solutions to the lack of GNU/Linux systems support.
+*   关闭显示器
+*   打开独立显卡
+*   切换多路复用电路
+*   关闭集成显卡
+*   重新打开显示器
 
-## First Generation Hybrid Model (Basic Switching)
+这种切换并不平滑，会出现屏幕闪烁或黑屏。后面的切换方式更加用户友好。
 
-**Note:** Unless your notebook is from the last decade, it’s most likely using [dynamic switching](#Dynamic_Switching_Model).
+## 动态切换模式
 
-The first generation of notebooks with hybrid graphics follow an approach that involves a two graphic card setup with a hardware multiplexer ([MUX](https://en.wikipedia.org/wiki/Multiplexer "wikipedia:Multiplexer")). It allows power save and low-end 3D rendering by using an Integrated Graphics Processor (IGP); or a major power consumption with 3D rendering performance using a Dedicated/Discrete Graphics Processor (DGP). This model makes the user choose (at boot time or at login time) within the two power/graphics profiles and is almost fixed through all the user session. The switch is done by a similar workflow:
+2016 年生产的笔记本应该都是这个模式。新的混合显示技术也需要在不同的显卡之间切换，但是现在不再使用硬件多路复用的方式，而是通过一个帧缓存进行协调。集成显卡一直工作，独立显卡会根据显示的需要动态的开关。大部分情况下都无法只使用独立显卡，而且切换是由软件控制。
 
-*   Turn off the display
-*   Turn on the DGP
-*   Switch the multiplexer
-*   Turn off the IGP
-*   Turn on again the display
-
-This switch is somewhat rough and adds some blinks and black screens in laptops that could do it "on the fly". Later approaches made the transition a little more user-friendly.
-
-## Dynamic Switching Model
-
-**Note:** This model is utilized by most manufacturers as of 2016.
-
-Most of the new Hybrid-graphics technologies involve two graphic cards as the basic switching but now the DGP and IGP are plugged to a framebuffer and there is no hardware multiplexer. The IGP is always on and the DGP is switched on/off when there is a need in power-save or performance-rendering. In most cases there is no way to use *only* the DGP and all the switching and rendering is controlled by software. At startup, the Linux kernel starts using a video mode and setting up low-level graphic drivers which will be used by the applications. Most of the Linux distributions then use X.org to create a graphical environment. Finally, a few other softwares are launched, first a login manager and then a window manager, and so on. This hierarchical system has been designed to be used in most of cases on a single graphic card.
-
-**Note:**
-Read [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") and [Bumblebee](/index.php/Bumblebee "Bumblebee") for details about NVidia using hybrid graphics with NVidia’s proprietary driver.
-Read [PRIME](/index.php/PRIME "PRIME") basically everything else (like AMD Radeon and NVidia GPUs with Nouveau driver).
+*   NV 的闭源驱动请参考 [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") 和 [Bumblebee](/index.php/Bumblebee "Bumblebee")
+*   其它驱动，包括 NV Nouveau 开源驱动和 AMD Radeon 请参考 [PRIME](/index.php/PRIME "PRIME")
 
 ### Fully Power Down Discrete GPU
 

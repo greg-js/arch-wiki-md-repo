@@ -153,7 +153,7 @@ The current globally enabled hardening flags:
 *   [lsof](https://www.archlinux.org/packages/?name=lsof)
 *   [procinfo-ng](https://www.archlinux.org/packages/?name=procinfo-ng)
 *   [nethogs](https://www.archlinux.org/packages/?name=nethogs)
-*   [qtchooser](https://www.archlinux.org/packages/?name=qtchooser)
+*   [qtchooser](https://aur.archlinux.org/packages/qtchooser/)
 *   [rust](https://www.archlinux.org/packages/?name=rust)
 
 ### Full RELRO

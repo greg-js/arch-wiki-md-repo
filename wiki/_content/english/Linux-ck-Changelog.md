@@ -2,6 +2,37 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.4-3**
+
+*   Changelog: Added two key pending patches from CK.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=e524729052b90125890d2ec8ff01ce05d8fb4c06](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=e524729052b90125890d2ec8ff01ce05d8fb4c06)
+*   Notes: I suspect CK will ready a ck4 patchset and continue to hold on pushing MuQSS to [repo-ck] a little longer. AUR users are encouraged to test and communicate via CK's blog results as MuQSS matures.
+
+**Bump to v4.8.4-2**
+
+*   Changelog: Fix EXTRAVERSION variable.
+*   Commit1: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=5f35c39c3238c83c22c8df1434a31a1ddd0a59f1](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=5f35c39c3238c83c22c8df1434a31a1ddd0a59f1)
+*   Commit2: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=09dc78a6c77e1cec710b63526e521c181a77d55d](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=09dc78a6c77e1cec710b63526e521c181a77d55d)
+*   Notes: I would like to get some feedback from AUR users around the stability with the MuQSS before I go building [repo-ck] packages with 4.8-ck3\. Please test and report back good or bad.
+
+**Bump to v4.8.4-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.4](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.4)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9f09ca2d5a3b8475952f6777796c91001d563b41](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9f09ca2d5a3b8475952f6777796c91001d563b41)
+*   Notes: I would like to get some feedback from AUR users around the stability with the MuQSS before I go building [repo-ck] packages with 4.8-ck3\. Please test and report back good or bad.
+
+**Bump to v4.8.3-3**
+
+*   Changelog: Included 4.8-ck3 which uses MuQSS v0.115.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=de398dc42046d30ee983f36d98f974863455b8f3](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=de398dc42046d30ee983f36d98f974863455b8f3)
+*   Notes: I would like to get some feedback from AUR users around the stability with the MuQSS before I go building [repo-ck] packages with 4.8-ck3\. Please test and report back good or bad.
+
+**Bump to v4.8.3-2**
+
+*   Changelog: Included 4.8-ck2 which uses MuQSS v0.114.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=cd5fb709858efe8ebc7d45ddfac5e16aba35e8d0](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=cd5fb709858efe8ebc7d45ddfac5e16aba35e8d0)
+*   Notes: I would like to get some feedback from AUR users around the stability with the MuQSS before I go building [repo-ck] packages with 4.8-ck2\. Please test and report back good or bad.
+
 **Bump to v4.8.3-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.3](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.3)

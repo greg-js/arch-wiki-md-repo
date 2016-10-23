@@ -44,20 +44,21 @@
 
 **注意:**
 
-*   安装过程中至少需要安装一种语言包。默认的语言为Afrikaans (这是因为它是提供的libreoffice语言包的字母排序首位)。如果你想使用UK-English语言包，请安装 [libreoffice-en-GB](https://www.archlinux.org/packages/?name=libreoffice-en-GB), 而不是[libreoffice-uk](https://www.archlinux.org/packages/?name=libreoffice-uk) (Ukrainian)或者 [libreoffice-br](https://www.archlinux.org/packages/?name=libreoffice-br) (Breton)!
-*   [libreoffice-still-kde4](https://www.archlinux.org/packages/?name=libreoffice-still-kde4) 和 [libreoffice-still-gnome](https://www.archlinux.org/packages/?name=libreoffice-still-gnome) 分别对应于 Qt 和 GTK+ 可视化工具。详见 [Theme](#Theme) 部分.
+*   安装过程中至少需要安装一种语言包。默认的语言为Afrikaans (这是因为它是提供的libreoffice语言包的字母排序首位)。如果你想使用UK-English语言包，请安装 [libreoffice-fresh-en-GB](https://www.archlinux.org/packages/?name=libreoffice-fresh-en-GB)或[libreoffice-still-en-GB](https://www.archlinux.org/packages/?name=libreoffice-still-en-GB), 而不是[libreoffice-fresh-uk](https://www.archlinux.org/packages/?name=libreoffice-fresh-uk)，[libreoffice-still-uk](https://www.archlinux.org/packages/?name=libreoffice-still-uk) (Ukrainian)或者 [libreoffice-fresh-br](https://www.archlinux.org/packages/?name=libreoffice-fresh-br)，[libreoffice-still-br](https://www.archlinux.org/packages/?name=libreoffice-still-br) (Breton)!
 *   对于 SDK - 根据自己安装的libreoffice包的情况可以选择 [libreoffice-fresh-sdk](https://www.archlinux.org/packages/?name=libreoffice-fresh-sdk) 或 [libreoffice-still-sdk](https://www.archlinux.org/packages/?name=libreoffice-still-sdk)
+
+*   For Qt 和 GTK+ 可视化工具, 详见 [#主题](#.E4.B8.BB.E9.A2.98).
 
 检查一下pacman显示的可以选择安装的依赖包。Java Runtime Environment 并不是必须的除非你想要使用 Libreoffice Base: 详见[Java](/index.php/Java "Java")。你可能需要[hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/) 来使用 [一些模块](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) （在Libreoffice Base当中）。
 
 ## 主题
 
-对于 [Qt](/index.php/Qt "Qt") 用户, 请安装 [libreoffice-still-kde4](https://www.archlinux.org/packages/?name=libreoffice-still-kde4), 对于[GTK+](/index.php/GTK%2B "GTK+") 请安装 [libreoffice-still-gnome](https://www.archlinux.org/packages/?name=libreoffice-still-gnome)。详情请参考 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+详情请参考 [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-LibreOffice v3.5.x 工具包的库按照以下的顺序来检查:
+LibreOffice 工具包的库按照以下的顺序来检查:
 
 ```
-gtk > kde4 > generic
+gtk3 > gtk > kde4 > generic
 
 ```
 
@@ -73,7 +74,7 @@ SAL_USE_VCLPLUGIN=gtk3 lowriter
 
 将 `SAL_USE_VCLPLUGIN` 变量保存到你的shell配置文件在日后将会非常方便, 比如`/etc/bash.bashrc` 或者 `~/.bashrc` 如果你使用的是Bash的话。
 
-**注意:** 新的 GTK3 UI 尚处于试验阶段，只有你在LibreOffice 的主配置栏中将"experimental features"启动之后才会生效。
+**注意:** 新的 GTK3 UI 在 LibreOffice 5.x 中已被默认使用。
 
 然而, 如果它看上去使用的是 Windows 95/98的按钮，请到菜单中的*Tools -> Options...* (将会出现一个选项的窗口), 接着选择*LibreOffice > Accessibility*并且去掉 "Automatically detect high-contrast mode of operating system"前的对勾。
 
@@ -95,8 +96,8 @@ LibreOffice 4.x 系列支持使用 Firefox 主题. 进入 LibreOffice options �
 
 以下插件可以通过 [official repositories](/index.php/Official_repositories "Official repositories") 获得:
 
-*   [libreoffice-still-extension-nlpsolver](https://www.archlinux.org/packages/?name=libreoffice-still-extension-nlpsolver)
-*   [libreoffice-still-extension-wiki-publisher](https://www.archlinux.org/packages/?name=libreoffice-still-extension-wiki-publisher)
+*   [libreoffice-extension-texmaths](https://www.archlinux.org/packages/?name=libreoffice-extension-texmaths)
+*   [libreoffice-extension-writer2latex](https://www.archlinux.org/packages/?name=libreoffice-extension-writer2latex)
 
 对于更多插件, 可以查看 [AUR](/index.php/AUR "AUR"), 内置的 LibreOffice 扩展插件管理, 或者访问 [libreplanet](http://libreplanet.org/wiki/Group:OpenOfficeExtensions/List).
 
@@ -157,9 +158,6 @@ LibreOffice 4.x 系列支持使用 Firefox 主题. 进入 LibreOffice options �
     *   在*图形缓冲区*， 把 Use for LibreOffice 增加到128MB (默认值为20MB)
     *   把*每个对象的内存* 增加到20MB (默认值为5MB)。
     *   如果你经常使用 LibreOffice 的话, 检查 *Enable systray Quickstarter*
-
-**注意:** [libreoffice-still-gnome](https://www.archlinux.org/packages/?name=libreoffice-still-gnome)包必须被安装如果你想启用 quickstarter 选项的话。
-
 *   在 *Advanced* 选项卡下, 取消选择 *Use a Java runtime environment*
 
 **注意:** 如果只想查看用Java写的功能列表的话, 请参考： [https://wiki.documentfoundation.org/Development/Java](https://wiki.documentfoundation.org/Development/Java).

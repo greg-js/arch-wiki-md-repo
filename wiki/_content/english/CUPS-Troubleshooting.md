@@ -375,14 +375,7 @@ Try installing the foomatic packages and use a foomatic driver.
 
 (Also applicable to error "-1 not supported!")
 
-*   Check the `ServerName` in `/etc/cups/client.conf` is written without http://
-
-```
-ServerName localhost:631
-
-```
-
-*   Try to remove Foomatic drivers or refer to [CUPS/Printer-specific problems#HPLIP Driver](/index.php/CUPS/Printer-specific_problems#HPLIP_Driver "CUPS/Printer-specific problems") for a workaround.
+Try to remove Foomatic drivers or refer to [CUPS/Printer-specific problems#HPLIP Driver](/index.php/CUPS/Printer-specific_problems#HPLIP_Driver "CUPS/Printer-specific problems") for a workaround.
 
 ### lp: Error - Scheduler Not Responding
 

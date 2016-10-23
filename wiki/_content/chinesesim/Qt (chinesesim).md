@@ -48,7 +48,7 @@ Qt 框架正在成为主要的开发平台，同时是 [KDE](/index.php/KDE "KDE
 
 ## 默认 Qt 库
 
-安装[qtchooser](https://www.archlinux.org/packages/?name=qtchooser)可以恢复 `/usr/bin/qmake` 并设置要使用的 Qt 版本，默认是使用 Qt5。
+安装[qtchooser](https://aur.archlinux.org/packages/qtchooser/)可以恢复 `/usr/bin/qmake` 并设置要使用的 Qt 版本，默认是使用 Qt5。
 
 ### 修改环境变量
 

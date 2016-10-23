@@ -15,7 +15,10 @@
 
 自alpha18开始，WPS已经有x86_64版本，故所有用户均可直接安装 [AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的 wps-office 即可。
 
-yaourt wps-office
+```
+$ yaourt wps-office
+
+```
 
 当然，你也可以通过添加[archlinuxcn源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/)后用pacman安装(仅限64位arch用户）。
 

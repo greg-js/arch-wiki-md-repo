@@ -215,7 +215,7 @@ This list includes modules transitively depending on broken modules (i.e. some o
 ## Packages needed to build specific modules
 
 *   gitg requires [gtkspell3](https://www.archlinux.org/packages/?name=gtkspell3)
-*   gtk-vnc requires [perl-text-csv](https://aur.archlinux.org/packages/perl-text-csv/)
+*   gtk-vnc requires [perl-text-csv](https://www.archlinux.org/packages/?name=perl-text-csv)
 *   latexila requires [lcov](https://aur.archlinux.org/packages/lcov/)
 *   pango requires [libpthread-stubs](https://aur.archlinux.org/packages/libpthread-stubs/)
 *   totem-pl-parser requires [libgcrypt15](https://www.archlinux.org/packages/?name=libgcrypt15)

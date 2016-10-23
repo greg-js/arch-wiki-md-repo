@@ -89,3 +89,10 @@ CPU frequency scaling: untested | Untested | Webcam: untested
 Hotkeys: OK
 Synaptic Touchpad: OK
 HDMI: untested |
+| [Aspire One Cloudbook 11](/index.php/Acer_Cloudbook "Acer Cloudbook") | archlinux-201608 | Intel HD Graphics 400 | OK, HDA-Intel | N/A | OK, Qualcomm Atheros | OK | Suspend to RAM: Yes
+Disk: Not tested
+Battery: Yes
+CPU frequency scaling: Ok | N/A | Webcam: Ok
+Hotkeys: Some
+Synaptic Touchpad: OK (Set to Basic in BIOS)
+HDMI: untested | First boot after a UEFI install will typically stop with a "No media found" message. Go into BIOS and navigate to "Select an UEFI file as trusted". Note that a Supervisor password must be set to change these parameters. |

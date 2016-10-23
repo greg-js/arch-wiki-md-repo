@@ -246,6 +246,7 @@ Or
 
 ## See also
 
-*   Documentation of file systems supported by kernel: [kernel.org](https://www.kernel.org/doc/Documentation/filesystems/)
+*   [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html)
+*   [Documentation of file systems supported by linux](https://www.kernel.org/doc/Documentation/filesystems/)
+*   [Wikipedia:File systems](https://en.wikipedia.org/wiki/File_systems "wikipedia:File systems")
 *   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")
-*   Creating and using disk images mini-howto: [darkdust.net](http://darkdust.net/writings/diskimagesminihowto)

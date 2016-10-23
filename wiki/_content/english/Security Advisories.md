@@ -42,6 +42,10 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### October 2016
 
+*   [22 October 2016] [ASA-201610-14](https://lists.archlinux.org/pipermail/arch-security/2016-October/000742.html) [linux](https://www.archlinux.org/packages/?name=linux) privilege escalation
+*   [21 October 2016] [ASA-201610-13](https://lists.archlinux.org/pipermail/arch-security/2016-October/000741.html) [python-django](https://www.archlinux.org/packages/?name=python-django) cross-site request forgery
+*   [21 October 2016] [ASA-201610-12](https://lists.archlinux.org/pipermail/arch-security/2016-October/000740.html) [python2-django](https://www.archlinux.org/packages/?name=python2-django) cross-site request forgery
+*   [21 October 2016] [ASA-201610-11](https://lists.archlinux.org/pipermail/arch-security/2016-October/000739.html) [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) privilege escalation
 *   [16 October 2016] [ASA-201610-10](https://lists.archlinux.org/pipermail/arch-security/2016-October/000738.html) [guile](https://www.archlinux.org/packages/?name=guile) multiple issues
 *   [13 October 2016] [ASA-201610-9](https://lists.archlinux.org/pipermail/arch-security/2016-October/000737.html) [gdk-pixbuf2](https://www.archlinux.org/packages/?name=gdk-pixbuf2) arbitrary code execution
 *   [11 October 2016] [ASA-201610-8](https://lists.archlinux.org/pipermail/arch-security/2016-October/000736.html) [crypto++](https://www.archlinux.org/packages/?name=crypto%2B%2B) information disclosure

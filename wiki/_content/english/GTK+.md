@@ -144,10 +144,6 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438](http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438) || [gtk-engine-aurora](https://www.archlinux.org/packages/?name=gtk-engine-aurora)
 
-*   **Openbox Themes** — Various themes for the Openbox window manager.
-
-	[https://www.debian.org/](https://www.debian.org/) || [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes)
-
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
 	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)

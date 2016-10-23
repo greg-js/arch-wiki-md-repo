@@ -335,7 +335,7 @@ In order to use standard applications (those that look for `/dev/video0`) the V4
 
 ## Hardware random number generator
 
-Arch Linux ARM for the Raspberry Pi had the `bcm2708-rng` module set to load at boot (see [this](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=4993#p27708)); starting with kernel 4.4.7 the `bmc2835_rng` module replaces the former on Raspberry Pi 2 and Raspberry Pi 3 units.
+Arch Linux ARM for the Raspberry Pi had the `bcm2708-rng` module set to load at boot (see [this](http://archlinuxarm.org/forum/viewtopic.php?f=31&t=4993#p27708)); starting with kernel 4.4.7 the `bcm2835_rng` module replaces the former on Raspberry Pi 2 and Raspberry Pi 3 units.
 
 Install the *rng-tools* and tell the Hardware RNG Entropy Gatherer Daemon (*rngd*) where to find the hardware random number generator.
 

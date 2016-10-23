@@ -155,7 +155,7 @@ Arch Linux ARM |
 Chromebook 2](/index.php/Toshiba_Chromebook_2 "Toshiba Chromebook 2") | 2.16 GHz Intel BayTrail-M N2840 | 16GB eMMC | No | Requires writing
 SeaBIOS | Custom firmware script
 only writes to BOOT_STUB |
-| Acer | CB3-111
+| Acer | [CB3-111](/index.php/CB3-111 "CB3-111")
 Chromebook 11 | 2.1 GHz Intel BayTrail-M N2830 | 2GB DDR3 | No | 11.6 in
 (29.5 cm) | 1366x768
 (16:9) | Requires writing

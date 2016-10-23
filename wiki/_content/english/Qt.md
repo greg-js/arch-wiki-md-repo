@@ -51,7 +51,7 @@ Two versions of Qt are currently available in the [official repositories](/index
 
 ## Default Qt toolkit
 
-By installing [qtchooser](https://www.archlinux.org/packages/?name=qtchooser) you can restore the usual bins (e.g. *qmake*) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
+By installing [qtchooser](https://aur.archlinux.org/packages/qtchooser/) you can restore the usual bins (e.g. *qmake*) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
 
 ### Using environment variables
 

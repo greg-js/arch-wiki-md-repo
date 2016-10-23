@@ -18,11 +18,14 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
 
 ## Installation
 
-Benjamin's program can directly be installed from AUR: [pairing_tool](https://aur.archlinux.org/packages/pairing_tool/).
+Several solutions are available:
 
-Solaar is also available from the AUR: [solaar](https://aur.archlinux.org/packages/solaar/). At installation the Solaar package is creating the group plugdev. After installation add you user to the plugdev group (`# gpasswd -a $USER plugdev`) to use Solaar as non-root user.
+*   [pairing_tool](https://aur.archlinux.org/packages/pairing_tool/)
 
-ltunify is now also available from the AUR: [ltunify-git](https://aur.archlinux.org/packages/ltunify-git/). Create the plugdev group before installation and add yourself to it (to avoid the need of running ltunify as root). After installation, you can edit the file `/etc/udev/rules.d/42-logitech-unify-permissions.rules` to change the device group (the default group is plugdev).
+The following packages use the [group](/index.php/Group "Group") plugdev, create the group (if doesn't exists), and add users to this group to avoid the need of running these as root:
+
+*   [solaar](https://aur.archlinux.org/packages/solaar/)
+*   [ltunify-git](https://aur.archlinux.org/packages/ltunify-git/)
 
 ## Usage
 
@@ -145,16 +148,16 @@ In this case, you can physically remove the Unifying Receiver and re-insert it, 
 
 While booting it's impossible to input anything with a Logitech wireless Keyboard (e. g. Logitech MK700). The cause of the problem is the own hid module for Logitech devices since Kernel 3.2.
 
-To fix the problem, just add "hid-logitech-hidpp" to MODULES in /etc/mkinitcpio.conf like this:
+A workaround is adding *hid-logitech-hidpp* to MODULES in `/etc/mkinitcpio.conf`:
 
 ```
 MODULES="hid-logitech-hidpp"
 
 ```
 
-and recreate the initrd for the kernel.
+and recreate the initrd for the kernel:
 
 ```
-$ mkinitcpio -p linux
+# mkinitcpio -p linux
 
 ```

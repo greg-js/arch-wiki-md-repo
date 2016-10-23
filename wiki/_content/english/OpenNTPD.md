@@ -24,7 +24,7 @@
 
 ## Configuration
 
-To configure OpenNTPD, you need to edit `/etc/ntpd.conf`.
+To configure OpenNTPD, you need to edit `/etc/ntpd.conf`. See [ntpd.conf(5)](http://man.openbsd.org/ntpd.conf) for all available options.
 
 **Tip:** After configuring, check the configuration file for validity by executing:
 ```
@@ -133,7 +133,7 @@ fi
 
 ```
 
-See dhcpcd-run-hooks(8)
+See [dhcpcd-run-hooks(8)](http://roy.marples.name/man/html8/dhcpcd-run-hooks.html)
 
 ## Troubleshooting
 

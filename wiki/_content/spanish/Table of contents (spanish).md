@@ -59,6 +59,7 @@
 | <small>4.11.</small> [Sonido](/index.php/Category:Sound_(Espa%C3%B1ol) "Category:Sound (Español)") <small>(5)</small> |
 | <small>4.12.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(1)</small> |
 | <small>4.12.1.</small> [Dispositivos ópticos](/index.php/Category:Optical_(Espa%C3%B1ol) "Category:Optical (Español)") <small>(1)</small> |
+| <small>4.13.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(0)</small> |
 | <small>5.</small> [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(5)</small> |
 | <small>5.1.</small> [Sistema de Nombres de Dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(4)</small> |
 | <small>5.2.</small> [Protocolo de Transferencia de Archivos (FTP)](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)") <small>(1)</small> |
@@ -73,8 +74,9 @@
 | <small>5.8.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.9.</small> [Escritorio remoto](/index.php/Category:Remote_desktop_(Espa%C3%B1ol) "Category:Remote desktop (Español)") <small>(1)</small> |
 | <small>5.10.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
-| <small>5.11.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(8)</small> |
-| <small>5.12.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
+| <small>5.11.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(Espa%C3%B1ol) "Category:Telephony and voice (Español)") <small>(0)</small> |
+| <small>5.12.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(8)</small> |
+| <small>5.13.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
 | <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(5)</small> |
 | <small>6.1.</small> [Audio/Vídeo](/index.php/Category:Audio/Video_(Espa%C3%B1ol) "Category:Audio/Video (Español)") <small>(0)</small> |
 | <small>6.2.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(25)</small> |

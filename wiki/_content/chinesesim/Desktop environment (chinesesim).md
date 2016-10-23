@@ -63,11 +63,11 @@
 
 	Deepin桌面界面和应用程序功能的直观和优雅的设计。四处移动，共享和搜索等已经成为一个简单的愉悦体验。[http://www.deepin.org/](http://www.deepin.org/)
 
+	[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")
+
+	Budgie 是一个轻量级桌面环境，它的设计着重于简洁和漂亮，充分考虑了现代用户。此外，它的桌面布局类似于 Chrome/ Chromium OS。[https://solus-project.com/budgie/](https://solus-project.com/budgie/)
+
 ### 非官方支持
-
-*   **[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie 桌面是一个轻量级桌面环境设计充分考虑了现代用户，它着重于简洁和漂亮。此外，它类似于 Chrome/ Chromium OS桌面布局
-
-	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/)
 
 *   **[CDE](/index.php/CDE "CDE")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 

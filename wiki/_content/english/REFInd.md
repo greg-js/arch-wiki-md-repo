@@ -16,7 +16,8 @@
     *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
         *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
         *   [2.1.2 Manual boot stanzas](#Manual_boot_stanzas)
-*   [3 Using rEFInd with an existing UEFI Windows installation](#Using_rEFInd_with_an_existing_UEFI_Windows_installation)
+*   [3 Usage](#Usage)
+    *   [3.1 Using rEFInd with an existing UEFI Windows installation](#Using_rEFInd_with_an_existing_UEFI_Windows_installation)
 *   [4 Tools](#Tools)
     *   [4.1 UEFI shell](#UEFI_shell)
     *   [4.2 Memtest86](#Memtest86)
@@ -77,6 +78,8 @@ By default, *rEFInd* will scan all of your drives (that it has drivers for) and 
 
 #### Secure Boot
 
+See [Managing Secure Boot](http://www.rodsbooks.com/refind/secureboot.html) for [Secure Boot](/index.php/Secure_Boot "Secure Boot") support in rEFInd.
+
 ##### Using PreLoader
 
 See [Secure Boot#Set up PreLoader](/index.php/Secure_Boot#Set_up_PreLoader "Secure Boot") to acquire signed `PreLoader.efi` and `HashTool.efi` binaries.
@@ -84,7 +87,7 @@ See [Secure Boot#Set up PreLoader](/index.php/Secure_Boot#Set_up_PreLoader "Secu
 Execute `refind-install` with the option `--preloader */path/to/preloader*`
 
 ```
-# refind-install --preloader *PreLoader.efi*
+# refind-install --preloader /usr/share/preloader-signed/PreLoader.efi
 
 ```
 
@@ -111,6 +114,8 @@ When running install script add option `--localkeys`, e.g.:
 ```
 
 *rEFInd* EFI binary will be signed with supplied key and certificate.
+
+**Tip:** If you run `refind-install --localkeys` without creating the keys first, *refind-install* will create the keys for you.
 
 ### Manual installation
 
@@ -193,7 +198,7 @@ Where the `Exec=` may need to be changed to the correct update command for your 
 
 ## Configuration
 
-The *rEFInd* configuration `refind.conf` is located in the same directory as the *rEFInd* EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default config contains extensive comments explaining all its options.
+The *rEFInd* configuration `refind.conf` is located in the same directory as the *rEFInd* EFI application (usually `*esp*/EFI/refind` or `*esp*/EFI/BOOT`). The default config contains extensive comments explaining all its options, see [Configuring the Boot Manager](http://www.rodsbooks.com/refind/configfile.html) for more detailed explanations.
 
 ### Passing kernel parameters
 
@@ -228,6 +233,8 @@ If you do not specify an `initrd=` parameter, *rEFInd* will automatically add it
 
 If your kernel is not autodetected, or if you simply want more control over the options for a menu entry, you can manually create boot entries using stanzas in `refind.conf`. Ensure that `scanfor` includes `manual` or these entries will not appear in *rEFInd'*s menu. Kernel parameters are set with the `options` keyword. *rEFInd* will append the `initrd=` parameter using the file specified by the `initrd` keyword in the stanza. If you need additional initrds (e.g. for [Microcode](/index.php/Microcode "Microcode")), you can specify them in `options` (and the one specified by the `initrd` keyword will be added to the end).
 
+Manual boot stanzas are explained in [Creating Manual Boot Stanzas](http://www.rodsbooks.com/refind/configfile.html#stanzas).
+
  `*esp*/EFI/refind/refind.conf` 
 ```
 ...
@@ -252,7 +259,11 @@ It is likely that you will need to change `volume` to match either a filesystem'
 
 **Warning:** `loader` and `initrd` paths are relative to the root of `volume`.
 
-## Using rEFInd with an existing UEFI Windows installation
+## Usage
+
+See [Using rEFInd](http://www.rodsbooks.com/refind/using.html).
+
+### Using rEFInd with an existing UEFI Windows installation
 
 **Note:** The usual caveats of [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") apply.
 
@@ -356,3 +367,4 @@ Currently, VirtualBox will only boot the default `/EFI/BOOT/BOOT*.EFI` path, so 
 
 *   [The rEFInd Boot Manager](http://www.rodsbooks.com/refind/) by Roderick W. Smith.
 *   `/usr/share/refind/docs/README.txt`
+*   [rEFInd discussion forum on Sourceforge](https://sourceforge.net/p/refind/discussion/)

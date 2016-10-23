@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-10，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=413990)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Libvirt](/index.php/Libvirt "Libvirt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-21，点击[这里](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=454633)可以查看翻译后英文页面的改动。
 
 Libvirt 是一组软件的汇集，提供了管理虚拟机和其它虚拟化功能（如：存储和网络接口等）的便利途径。这些软件包括：一个长期稳定的 C 语言 API、一个守护进程（libvirtd）和一个命令行工具（virsh）。Libvirt 的主要目标是提供一个单一途径以管理多种不同虚拟化方案以及虚拟化主机，包括：[KVM/QEMU](/index.php/QEMU "QEMU")，[Xen](/index.php/Xen "Xen")，[LXC](/index.php/LXC "LXC")，[OpenVZ](http://openvz.org) 或 [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") （[详见这里](http://libvirt.org/drivers.html)）。
 
@@ -21,6 +21,7 @@ Libvirt 的一些主要功能如下：
         *   [2.1.2 基于文件的权限授权](#.E5.9F.BA.E4.BA.8E.E6.96.87.E4.BB.B6.E7.9A.84.E6.9D.83.E9.99.90.E6.8E.88.E6.9D.83)
     *   [2.2 守护进程](#.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B)
     *   [2.3 非加密的 TCP/IP sockets](#.E9.9D.9E.E5.8A.A0.E5.AF.86.E7.9A.84_TCP.2FIP_sockets)
+    *   [2.4 用主机名访问虚拟机](#.E7.94.A8.E4.B8.BB.E6.9C.BA.E5.90.8D.E8.AE.BF.E9.97.AE.E8.99.9A.E6.8B.9F.E6.9C.BA)
 *   [3 测试](#.E6.B5.8B.E8.AF.95)
 *   [4 管理](#.E7.AE.A1.E7.90.86)
     *   [4.1 virsh](#virsh)
@@ -39,7 +40,10 @@ Libvirt 的一些主要功能如下：
         *   [4.6.1 创建快照](#.E5.88.9B.E5.BB.BA.E5.BF.AB.E7.85.A7)
     *   [4.7 其他管理操作](#.E5.85.B6.E4.BB.96.E7.AE.A1.E7.90.86.E6.93.8D.E4.BD.9C)
 *   [5 Python 连接代码](#Python_.E8.BF.9E.E6.8E.A5.E4.BB.A3.E7.A0.81)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+*   [6 UEFI 支持](#UEFI_.E6.94.AF.E6.8C.81)
+    *   [6.1 OVMF - QEMU workaround](#OVMF_-_QEMU_workaround)
+*   [7 PulseAudio](#PulseAudio)
+*   [8 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
@@ -49,15 +53,11 @@ Libvirt 的一些主要功能如下：
 
 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [libvirt](https://www.archlinux.org/packages/?name=libvirt) 以及至少一个管理程序（hypervisor）：
 
-*   截至 2015-02-01，启动 `libvirtd` **必须**在系统上安装 [qemu](https://www.archlinux.org/packages/?name=qemu)（参见 [FS#41888](https://bugs.archlinux.org/task/41888)）。幸运的是， [libvirt 的 KVM/QEMU 驱动](http://libvirt.org/drvqemu.html) 是 *libvirt* 的首选驱动，如果 [KVM 功能已启用](/index.php/QEMU#Enabling_KVM "QEMU")，则支持全虚拟化和硬件加速的客户机。详见 [QEMU](/index.php/QEMU "QEMU")。
+*   [libvirt 的 KVM/QEMU 驱动](http://libvirt.org/drvqemu.html) 是 *libvirt* 的首选驱动，如果 [KVM 功能已启用](/index.php/QEMU#Enabling_KVM "QEMU")，则支持全虚拟化和硬件加速的客户机。详见 [QEMU](/index.php/QEMU "QEMU")。
 
-*   其他虚拟机后端，包括 [LXC](/index.php/LXC "LXC"), [VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [Xen](/index.php/Xen "Xen")。请参见它们各自的安装说明。
-
-**注意:** [Libvirt 的 LXC 驱动](http://libvirt.org/drvlxc.html) 并不依赖 [lxc](https://www.archlinux.org/packages/?name=lxc) 提供的用户空间工具，因此，如果计划使用这个驱动并不需要安装该工具。
-
-**警告:** Libvirt 默认未支持 [Xen](/index.php/Xen "Xen")。需要用 [ABS](/index.php/ABS "ABS") 编辑 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") ，去掉 `--without-xen` 选项后重新构建（built）libvirt。
-
-其它虚拟机管理程序列表见[这里](http://libvirt.org/drivers.html)。
+*   其他[受支持的管理程序](http://libvirt.org/drivers.html)，包括 [LXC](/index.php/LXC "LXC")、[VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [Xen](/index.php/Xen "Xen")。请参见它们各自的安装说明。
+    *   [Libvirt 的 LXC 驱动](http://libvirt.org/drvlxc.html) 并不依赖 [lxc](https://www.archlinux.org/packages/?name=lxc) 提供的用户空间工具。因此，即便需要使用这个驱动也并不是必须安装该工具。
+    *   Libvirt 能支持 [Xen](/index.php/Xen "Xen")，但默认未内建支持。需要用 [ABS](/index.php/ABS "ABS") 编辑 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") ，去掉 `--without-xen` 选项后重新构建（built）libvirt。由于 VirtualBox 尚未正式支持 Xen，所以应当用 `--without-vbox` 选项替换前述选项。
 
 对于网络连接，安装这些包：
 
@@ -73,7 +73,7 @@ Libvirt 的一些主要功能如下：
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) 用于管理虚拟机的图形用户界面。
 *   [virtviewer](https://www.archlinux.org/packages/?name=virtviewer) 轻量级界面，用于显示并与虚拟化客户机操作系统进行交互
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes) 简单的 GNOME 3 程序，访问远程虚拟系统
-*   [virt-manager-qt4](https://aur.archlinux.org/packages/virt-manager-qt4/) 和 [virt-manager-qt5](https://aur.archlinux.org/packages/virt-manager-qt5/)
+*   [virt-manager-qt5](https://aur.archlinux.org/packages/virt-manager-qt5/)
 *   [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/) 应用程序沙箱工具包
 
 兼容 libvirt 的软件列表见 [这里](http://libvirt.org/apps.html).
@@ -96,18 +96,18 @@ Libvirt 的一些主要功能如下：
 
 **注意:** 为使 `polkit` 认证工作正常，应该重启一次系统。
 
-*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种 [行为](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.A1.8C.E4.B8.BA "Polkit (简体中文)") 策略：
+*libvirt* 守护进程在 polkit 策略配置文件（`/usr/share/polkit-1/actions/org.libvirt.unix.policy`）中提供了两种 [操作](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E6.93.8D.E4.BD.9C "Polkit (简体中文)")策略：
 
 *   `org.libvirt.unix.manage` 面向完全的管理访问（读写模式后台 socket），以及
 *   `org.libvirt.unix.monitor` 面向仅监视察看访问（只读 socket）。
 
 默认的面向读写模式后台 socket 的策略将请求认证为管理员。这点类似于 [sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)") 认证，但它并不要求客户应用最终以 root 身份运行。默认策略下也仍然允许任何应用连接到只读 socket。
 
-Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅 [管理员标识](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E6.A0.87.E8.AF.86 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
+Arch Linux 默认 `wheel` 组的所有用户都是管理员身份：定义于 `/etc/polkit-1/rules.d/50-default.rules`（参阅[管理员身份认证](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.AE.A1.E7.90.86.E5.91.98.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81 "Polkit (简体中文)")）。这样就不必新建组和规则文件。 **如果用户是 `wheel` 组的成员**：只要连接到了读写模式 socket（例如通过 [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)）就会被提示输入该用户的口令。
 
-**注意:** 要求口令的提示由系统中的 [认证代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86 "Polkit (简体中文)") 给出。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
+**注意:** 要求口令的提示由系统中的[认证代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E7.BB.84.E4.BB.B6 "Polkit (简体中文)")给出。文本控制台默认的认证代理是 `pkttyagent` 它可能因工作不正常而导致各种问题。
 
-**提示:** 如果要配置无口令认证，参阅 [跳过口令提示](/index.php/Polkit#Bypass_password_prompt "Polkit")。
+**提示:** 如果要配置无口令认证，参阅[跳过口令提示](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.B7.B3.E8.BF.87.E5.8F.A3.E4.BB.A4.E6.8F.90.E7.A4.BA "Polkit (简体中文)")。
 
 从 libvirt 1.2.16 版开始（提案见：[[1]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)），`libvirt` 组的成员用户默认可以无口令访问读写模式 socket。最简单的判断方法就是看 libvirt 组是否存在并且用户是否该组成员。如果要把 kvm 组访问读写模式后台 socket 的认证策略改为免认证模式，可创建下面的文件：
 
@@ -124,9 +124,9 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-然后 [添加用户](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)") 到 `kvm` 组并重新登录。*kvm* 也可以是任何其它存在的组并且用户是该组成员（详阅 [用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")）。
+然后[添加用户](/index.php/Users_and_groups_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.85.B6.E5.AE.83.E7.94.A8.E6.88.B7.E7.AE.A1.E7.90.86.E7.A4.BA.E4.BE.8B "Users and groups (简体中文)")到 `kvm` 组并重新登录。*kvm* 也可以是任何其它存在的组并且用户是该组成员（详阅[用户和用户组](/index.php/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84 "用户和用户组")）。
 
-修改组之后别忘了重新登录才能生效。
+修改组之后不要忘记重新登录才能生效。
 
 #### 基于文件的权限授权
 
@@ -146,7 +146,7 @@ polkit.addRule(function(action, subject) {
 
 ### 守护进程
 
-`libvirtd.service` 和 `virtlogd.service`这两个服务单元都要 [启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。可以把 `libvirtd.service` 设置为 [启用](/index.php/Enable "Enable")，这时系统将同时启用 `virtlogd.service` 和 `virtlockd.socket` 两个服务 [单元](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")，因此后二者不必再设置启用。
+`libvirtd.service` 和 `virtlogd.service`这两个服务单元都要[启动](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。可以把 `libvirtd.service` 设置为[启用](/index.php/Enable "Enable")，这时系统将同时启用 `virtlogd.service` 和 `virtlockd.socket` 两个服务[单元](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")，因此后二者不必再设置为**启用**。
 
 ### 非加密的 TCP/IP sockets
 
@@ -166,16 +166,30 @@ It is also necessary to start the server in listening mode by editing `/etc/conf
 
  `/etc/conf.d/libvirtd`  `LIBVIRTD_ARGS="--listen"` 
 
+### 用主机名访问虚拟机
+
+在非隔离的、桥接的网络中从宿主机访问客户机，可以通过启用 [libvirt](https://www.archlinux.org/packages/?name=libvirt) 提供的 `libvirt` NSS 模块实现。
+
+编辑 `/etc/nsswitch.conf`：
+
+ `/etc/nsswitch.conf` 
+```
+hosts: files libvirt dns myhostname
+
+```
+
+**注意:** `ping` 和 `ssh` 这类命令用于虚拟机主机名可以正常工作，但 `host` 和 `nslookup` 这类命令可能会失败或产生非预期结果，因后者依赖 DNS 。应改用 `getent hosts <vm-hostname>` 命令。
+
 ## 测试
 
-To test if libvirt is working properly on a *system* level:
+测试 libvirt 在*系统*级工作是否正常：
 
 ```
 $ virsh -c qemu:///system
 
 ```
 
-To test if libvirt is working properly for a user-*session*:
+测试 libvirt 在用户*会话*级工作是否正常：
 
 ```
 $ virsh -c qemu:///session
@@ -184,11 +198,11 @@ $ virsh -c qemu:///session
 
 ## 管理
 
-Libvirt management is done mostly with three tools: [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) (GUI), `virsh`, and `guestfish` (which is part of [libguestfs](https://aur.archlinux.org/packages/libguestfs/)).
+绝大部分的 libvirt 管理可以通过三个工具实现：[virt-manager](https://www.archlinux.org/packages/?name=virt-manager)（图形界面）、`virsh` 和 `guestfish`（它是 [libguestfs](https://aur.archlinux.org/packages/libguestfs/) 的一部分）。
 
 ### virsh
 
-The virsh program is for managing guest *domains* (virtual machines) and works well for scripting, virtualization administration. Though most virsh commands require root privileges to run due to the communication channels used to talk to the hypervisor, typical management, creation, and running of domains (like that done with VirtualBox) can be done as a regular user.
+Visrsh 用于管理客户*域*（即 虚拟机），在脚本式虚拟化管理环境中工作良好。Though most virsh commands require root privileges to run due to the communication channels used to talk to the hypervisor, typical management, creation, and running of domains (like that done with VirtualBox) can be done as a regular user.
 
 Virsh includes an interactive terminal that can be entered if no commands are passed (options are allowed though): `virsh`. The interactive terminal has support for tab completion.
 
@@ -271,7 +285,8 @@ Once the pool has been created, volumes can be created inside the pool. *If buil
 Create volume, list volumes, resize, and delete:
 
 ```
-$ virsh vol-create-as      *poolname* *volumename* 10GiB
+$ virsh vol-create-as      *poolname* *volumename* 10GiB --format aw|bochs|raw|qcow|qcow2|vmdk
+$ virsh vol-upload  --pool *poolname* *volumename* *volumepath*
 $ virsh vol-list           *poolname*
 $ virsh vol-resize  --pool *poolname* *volumename* 12GiB
 $ virsh vol-delete  --pool *poolname* *volumename*
@@ -294,7 +309,7 @@ Then you can use this image as the base for your new domain and it will use the 
 
 ### 虚拟机
 
-Virtual machines are called *domains*. If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program that is part of the [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) package).
+虚拟机被称作“域”。 If working from the command line, use `virsh` to list, create, pause, shutdown domains, etc. `virt-viewer` can be used to view domains started with `virsh`. Creation of domains is typically done either graphically with `virt-manager` or with `virt-install` (a command line program installed as part of the [virt-install](https://www.archlinux.org/packages/?name=virt-install) package).
 
 Creating a new domain typically involves using some installation media, such as an `.iso` from the storage pool or an optical drive.
 
@@ -309,9 +324,9 @@ Print active and inactive domains:
 
 #### 用 virt-install 新建虚拟机
 
-For an extremely detailed domain (virtual machine) setup, it is easier to [#用 virt-manager 新建虚拟机](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD).
+For an extremely detailed domain (virtual machine) setup, it is easier to [#用 virt-manager 新建虚拟机](#.E7.94.A8_virt-manager_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA). However, basics can easily be done with `virt-install` and still run quite well. Minimum specifications are `--name`, `--memory`, guest storage (`--disk`, `--filesystem`, or `--nodisks`), and an install method (generally an `.iso` or CD).See `man virt-install` for more details and information about unlisted options.
 
-Arch Linux install (two GiB, raw format volume create; user-networking):
+Arch Linux install (two GiB, qcow2 format volume create; user-networking):
 
 ```
 $ virt-install  \
@@ -359,7 +374,7 @@ $ virt-install \
 
 ```
 
-**Tip:** Run `osinfo-query --fields=name,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/*os*.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/). These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
+**Tip:** Run `osinfo-query --fields=name,short-id,version os` to get argument for `--os-variant`; this will help define some specifications for the domain. However, `--memory` and `--disk` will need to be entered; one can look within the appropriate `/usr/share/libosinfo/db/oses/*os*.xml` if needing these specifications. After installing, it will likely be preferable to install the [Spice Guest Tools](http://www.spice-space.org/download.html) that include the [VirtIO drivers](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Virtualization_Host_Configuration_and_Guest_Installation_Guide/form-Virtualization_Host_Configuration_and_Guest_Installation_Guide-Para_virtualized_drivers-Mounting_the_image_with_virt_manager.html). For a Windows VirtIO network driver there is also [virtio-win](https://aur.archlinux.org/packages/virtio-win/). These drivers are referenced by a `<model type='virtio' />` in the guest's `.xml` configuration section for the device. A bit more information can also be found on the [QEMU article](/index.php/QEMU#Preparing_a_Windows_guest "QEMU").
 
 Import existing volume:
 
@@ -422,7 +437,7 @@ $ virsh edit *domain*
 
 [这里](https://jamielinux.com/docs/libvirt-networking-handbook/)是有关 libvirt 网络的一个正宗的概述。
 
-默认情况下，当 `libvird` 服务启动后，即创建了一个名为 *default* 的 NAT 网桥与外部网络联通（警告：参阅 [#"default" 网络的 bug](#.22default.22_.E7.BD.91.E7.BB.9C.E7.9A.84_bug)）。对于其他的网络连接需求，可创建下列四种类型的网络以连接到虚拟机：
+默认情况下，当 `libvirtd` 服务启动后，即创建了一个名为 *default* 的 NAT 网桥与外部网络联通（警告：参阅 [#"default" 网络的 bug](#.22default.22_.E7.BD.91.E7.BB.9C.E7.9A.84_bug)）。对于其他的网络连接需求，可创建下列四种类型的网络以连接到虚拟机：
 
 *   bridge — 这是一个虚拟设备，它通过一个物理接口直接共享数据。使用场景为：宿主机有 *静态* 网络、虚拟机不需与其它虚拟机连接、虚拟机要占用全部进出流量，并且虚拟机运行于 *系统* 层级。有关如何在现有默认网桥时增加另一个网桥的方法，请参阅 [网桥](/index.php/%E7%BD%91%E6%A1%A5 "网桥")。网桥创建后，需要将它指定到相应客户机的 `.xml` 配置文件中。
 *   network — 这是一个虚拟网络，它可以与其它虚拟机共用。使用场景为：宿主机有 *动态* 网络（例如：NetworkManager）或使用无线网络。
@@ -431,7 +446,7 @@ $ virsh edit *domain*
 
 绝大多数用户都可以通过 `virsh` 的各种可选项创建具有各种功能的网络，一般来说比通过 GUI 程序（像 `virt-manager` 之类）更容易做到。也可以按 [#用 virt-install 新建虚拟机](#.E7.94.A8_virt-install_.E6.96.B0.E5.BB.BA.E8.99.9A.E6.8B.9F.E6.9C.BA) 所述实现。
 
-**注意:** libvirt 通过 [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) 处理 DHCP 和 DNS 请求，以启动每个虚拟网络的不同实例。也会为特定的路由添加 iptables 规则并启用 `ip_forward` 内核参数。
+**注意:** libvirt 通过 [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) 处理 DHCP 和 DNS 请求，以启动每个虚拟网络的不同实例。也会为特定的路由添加 iptables 规则并启用 `ip_forward` 内核参数。This also means that having dnsmasq running on the host system is not necessary to support libvirt requirements (and could interfere with libvirt dnsmasq instances).
 
 ### 快照
 
@@ -561,6 +576,71 @@ if (__name__ == "__main__"):
            break
 
 ```
+
+## UEFI 支持
+
+Libvirt can suport UEFI virtual machines through QEMU and [OVMF](https://github.com/tianocore/edk2).
+
+Currently this is possible in Arch Linux through a workaround. [This ovmf packaging bug](https://bugs.archlinux.org/index.php?do=details&action=details.addvote&task_id=47101) needs to be resolved for this to work out of the box or with minimal configuration of `/etc/libvirt/qemu.conf`.
+
+### OVMF - QEMU workaround
+
+*   Build [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the [ABS](/index.php/ABS "ABS") with `makepkg`.
+*   Copy the `OVMF_CODE.fd` and `OVMF_VARS.fd` files either for 64 or 32 bit to the default qemu location.
+
+ `/etc/libvirt/qemu.conf` 
+```
+#nvram = [
+#   "/usr/share/OVMF/OVMF_CODE.fd:/usr/share/OVMF/OVMF_VARS.fd",
+#   "/usr/share/OVMF/OVMF_CODE.secboot.fd:/usr/share/OVMF/OVMF_VARS.fd",
+#   "/usr/share/AAVMF/AAVMF_CODE.fd:/usr/share/AAVMF/AAVMF_VARS.fd"
+#]
+
+```
+
+```
+# mkdir /usr/share/OVMF
+# cp src/edk2/Build/OvmfX64/RELEASE_GCC49/FV/OVMF_CODE.fd src/edk2/Build/OvmfX64/RELEASE_GCC49/FV/OVMF_VARS.fd /usr/share/OVMF/ 
+
+```
+
+*   Restart `libvirtd`
+
+```
+ # systemctl stop libvirtd
+ # systemctl start libvirtd
+
+```
+
+Now you are ready to create a uefi virtual machine. Create a new virtual machine through [virt-manager](https://www.archlinux.org/packages/?name=virt-manager). When you get to the final page of the 'New VM' wizard, do the following:
+
+*   Click 'Customize before install', then select 'Finish'
+*   On the 'Overview' screen, Change the 'Firmware' field to select the 'UEFI x86_64' option.
+*   Click 'Begin Installation'
+*   The boot screen you'll see should use linuxefi commands to boot the installer, and you should be able to run efibootmgr inside that system, to verify that you're running an UEFI OS.
+
+For more information about this, refer to [this fedora wiki page](https://fedoraproject.org/wiki/Using_UEFI_with_QEMU).
+
+## PulseAudio
+
+The PulseAudio daemon normally runs under your regular user account, and will only accept connections from the same user. This can be a problem if QEMU is being run as root through [libvirt](/index.php/Libvirt "Libvirt"). To run QEMU as a regular user, edit `/etc/libvirt/qemu.conf` and set the `user` option to your username.
+
+```
+user = "dave"
+
+```
+
+You will also need to tell QEMU to use the PulseAudio backend and identify the server to connect to. Add the following section to your domain configuration using `virsh edit`.
+
+```
+ <qemu:commandline>
+   <qemu:env name='QEMU_AUDIO_DRV' value='pa'/>
+   <qemu:env name='QEMU_PA_SERVER' value='/run/user/1000/pulse/native'/>
+ </qemu:commandline>
+
+```
+
+`1000` is your user id. Change it if necessary.
 
 ## 参阅
 

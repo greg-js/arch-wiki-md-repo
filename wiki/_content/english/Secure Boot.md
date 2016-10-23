@@ -52,12 +52,12 @@ For a verbose status, another way is to execute:
 
 ### Set up PreLoader
 
-**Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [[1]](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
+**Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
 
-Acquire signed `PreLoader.efi` and `HashTool.efi` and copy them to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+Install [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and copy `PreLoader.efi` and `HashTool.efi` to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
-# cp {PreLoader,HashTool}.efi *esp*/EFI/systemd
+# cp /usr/share/preloader-signed/{PreLoader,HashTool}.efi *esp*/EFI/systemd
 
 ```
 
@@ -84,7 +84,7 @@ This entry should be added to the list as the first to boot; check with the `efi
 If there are problems booting the custom NVRAM entry, copy `HashTool.efi` & `loader.efi` to the default loader location booted automatically by UEFI systems:
 
 ```
-# cp HashTool.efi *esp*/EFI/Boot
+# cp /usr/share/preloader-signed/HashTool.efi *esp*/EFI/Boot
 # cp *esp*/EFI/systemd/systemd-bootx64.efi *esp*/EFI/Boot/loader.efi
 
 ```
@@ -92,7 +92,7 @@ If there are problems booting the custom NVRAM entry, copy `HashTool.efi` & `loa
 Copy over `PreLoader.efi` and rename it:
 
 ```
-# cp PreLoader.efi *esp*/EFI/Boot/bootx64.efi
+# cp /usr/share/preloader-signed/PreLoader.efi *esp*/EFI/Boot/bootx64.efi
 
 ```
 
@@ -100,7 +100,7 @@ For particularly intransigent UEFI implementations, copy `PreLoader.efi` to the 
 
 ```
 # mkdir -p *esp*/EFI/Microsoft/Boot
-# cp PreLoader.efi *esp*/EFI/Microsoft/Boot/bootmgfw.efi
+# cp /usr/share/preloader-signed/PreLoader.efi *esp*/EFI/Microsoft/Boot/bootmgfw.efi
 
 ```
 
@@ -114,7 +114,7 @@ When the system starts with Secure Boot enabled, follow the steps above to enrol
 
 **Note:** Since you are going to remove stuff, is a good idea to backup it.
 
-Simply [remove](/index.php/Remove "Remove") the copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+Uninstall [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and simply [remove](/index.php/Remove "Remove") the copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
 # rm *esp*/EFI/systemd/{PreLoader,HashTool}.efi
@@ -154,6 +154,8 @@ Secure Boot implementations use these keys:
 	Contains keys and/or hashes used to blacklist EFI binaries
 
 To use Secure Boot you need at least **PK**, **KEK** and **db** keys.
+
+Once Secure Boot is in "User Mode" keys can only be updated by signing (using *sign-efi-sig-list*) the update with a higher level key. Platform key can be signed by itself.
 
 ### Creating keys
 
@@ -274,5 +276,6 @@ Note that some motherboards (this is the case in a Packard Bell laptop) only all
 *   [Dealing with Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) by Rod Smith
 *   [Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html) by Rod Smith
 *   [UEFI secure booting (part 2)](https://mjg59.dreamwidth.org/5850.html) by Matthew Garrett
+*   [efitools README](https://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git/tree/README)
 *   [Will your computer's "Secure Boot" turn out to be "Restricted Boot"?](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot) — Free Software Foundation
 *   [Free Software Foundation recommendations for free operating system distributions considering Secure Boot](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/statement/campaigns/secure-boot-vs-restricted-boot/whitepaper-web)

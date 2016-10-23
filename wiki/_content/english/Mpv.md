@@ -15,12 +15,13 @@
     *   [3.5 Quickly cycle between multiple aspect ratio](#Quickly_cycle_between_multiple_aspect_ratio)
     *   [3.6 Drawing to a root window](#Drawing_to_a_root_window)
     *   [3.7 Always show GUI](#Always_show_GUI)
-    *   [3.8 Use as a browser plugin](#Use_as_a_browser_plugin)
-    *   [3.9 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
-    *   [3.10 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
-    *   [3.11 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
-    *   [3.12 youtube-dl audio with search](#youtube-dl_audio_with_search)
-    *   [3.13 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [3.8 Restoring old OSC](#Restoring_old_OSC)
+    *   [3.9 Use as a browser plugin](#Use_as_a_browser_plugin)
+    *   [3.10 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
+    *   [3.11 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
+    *   [3.12 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
+    *   [3.13 youtube-dl audio with search](#youtube-dl_audio_with_search)
+    *   [3.14 Use mpv with a compositor](#Use_mpv_with_a_compositor)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -112,13 +113,17 @@ By default, hardware decoding is enabled for codecs h264, vc1, wmv3, hevc, mpeg2
 
 ### High quality video output
 
-The `opengl-hq` video output is an OpenGL output preconfigured with various options by the mpv developers. To make use of it, specify it in your configuration file.
+The `opengl-hq` profile is a high quality preset which use the OpenGL video driver and enables various options selected by the mpv developers. To make use of it, specify it in your configuration file.
 
- `~/.config/mpv/mpv.conf`  `vo=opengl-hq` 
+ `~/.config/mpv/mpv.conf`  `profile=opengl-hq` 
 
 This comes with a GLSL debanding filter by default, which may lead to bad performance for some users, and can reduce the visual quality of grainy content. You can disable it easily though.
 
- `~/.config/mpv/mpv.conf`  `vo=opengl-hq:deband=no` 
+ `~/.config/mpv/mpv.conf` 
+```
+profile=opengl-hq
+deband=no
+```
 
 ### Automatically resuming from where you left off
 
@@ -142,6 +147,10 @@ Run *mpv* with `--wid=0`. This tells *mpv* to draw onto a window with a window I
 
 It may be useful to always show the GUI window, even for audio files, especially when *mpv* is not started from terminal. This can be done by using `--force-window` option.
 
+### Restoring old OSC
+
+Since version 0.21.0, mpv has replaced the on-screen controls by a bottombar. In case you want on-screen controls back, you can edit the mpv configuration [as described here](https://github.com/mpv-player/mpv/wiki/FAQ#i-want-the-old-osc-back).
+
 ### Use as a browser plugin
 
 With the help of [mozplugger](https://aur.archlinux.org/packages/mozplugger/), *mpv* can be used in a supported browser to play video. See [Browser plugins#MozPlugger](/index.php/Browser_plugins#MozPlugger "Browser plugins") for configuration details. This coupled with a user script such as [ViewTube](http://isebaro.com/viewtube/?ln=en), allows you to use *mpv* in place of a site's integrated video player.
@@ -152,7 +161,7 @@ It may be needed to specify a valid user agent for HTTP streaming, e.g. `user-ag
 
 ### Improving mpv as a music player with Lua scripts
 
-The development of mpv's Lua scripts are documented in [DOCS/man/lua.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst) and examples are shown in [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) of the [mpv repository](https://github.com/mpv-player/mpv). [This blog post](http://bamos.github.io/2014/07/05/mpv-lua-scripting/) introduces the [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/scripts/music.lua) script, which shows how Lua scripts can be used to improve mpv as a music player.
+The development of mpv's Lua scripts are documented in [DOCS/man/lua.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst) and examples are shown in [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) of the [mpv repository](https://github.com/mpv-player/mpv). [This blog post](https://web.archive.org/web/20160320001546/http://bamos.github.io/2014/07/05/mpv-lua-scripting/) introduces the [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/scripts/music.lua) script, which shows how Lua scripts can be used to improve mpv as a music player.
 
 ### Twitch.tv streaming over mpv
 
@@ -203,7 +212,7 @@ To use vapoursynth filters you have to install the [vapoursynth](https://www.arc
 
 ### Debanding (flash3kyuu)
 
-To use the `f3k_db` debanding filter install [vapoursynth-plugin-flash3kyuu_deband-git](https://aur.archlinux.org/packages/vapoursynth-plugin-flash3kyuu_deband-git/) and write a python script that uses the *vapoursynth* extension.
+To use the `f3k_db` debanding filter install [vapoursynth-plugin-f3kdb](https://www.archlinux.org/packages/?name=vapoursynth-plugin-f3kdb) and write a python script that uses the *vapoursynth* extension.
 
 The following sample script can be used to enable debanding in *mpv*.
 
@@ -233,7 +242,7 @@ mpv defaults to using the opengl video output device setting on hardware that su
 
  `~/.config/mpv/mpv.conf`  `vo=xv` 
 
-It is possible to increase decoding performance (especially on lower hardware), but this may affect the video quality. A full overview of settings available can be found on the [mpv(1)](https://mpv.io/manual/master/).
+It is possible to increase decoding performance (especially on lower hardware), but this may affect the video quality. See the [configuration section](/index.php/Mpv#Configuration "Mpv") for information about the available options.
 
 The following options can be considered to increase video performance:
 

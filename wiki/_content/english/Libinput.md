@@ -129,7 +129,7 @@ There are different GUI tools:
 
 ### Button re-mapping
 
-Swapping two- and three-finger tap for a touchpad is a straight forward example. Instead of the default three-finger tap for pasting you can configure two-finger tap pasting by swapping the buttons with a button map of *1 3 2*. To store the new button map permanently, set the `ButtonMapping` option in your [Xorg](/index.php/Xorg "Xorg") configuration file. For swapping two- and three-finger tap the file should contain a section similar to the following one:
+Swapping two- and three-finger tap for a touchpad is a straight forward example. Instead of the default three-finger tap for pasting you can configure two-finger tap pasting by setting the `TappingButtonMap` option in your [Xorg](/index.php/Xorg "Xorg") configuration file. To set 1/2/3-finger taps to left/right/middle set `TappingButtonMap` to `lrm`, for left/middle/right set it to `lmr`.
 
  `/etc/X11/xorg.conf.d/30-touchpad.conf` 
 ```
@@ -138,13 +138,11 @@ Section "InputClass"
     Driver "libinput"
     MatchIsTouchpad "on"
     Option "Tapping" "on"
-    Option "ButtonMapping" "1 3 2 4 5 6"
+    Option "TappingButtonMap" "lmr"
 EndSection
 ```
 
 Remember to remove `MatchIsTouchpad "on"` if your device is not a touchpad and adjust the `Identifier` accordingly.
-
-There exists option `TappingButtonMap`, but using it prevents touchpad from working (see [Bug 97989](https://bugs.freedesktop.org/show_bug.cgi?id=97989)).
 
 ### Manual button re-mapping
 

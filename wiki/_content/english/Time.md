@@ -217,12 +217,29 @@ The software clock is very accurate but like most clocks is not perfectly accura
 
 The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. The following are implementations of such protocol:
 
-*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") is the [reference implementation](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation") of the protocol, especially recommended to be used on time servers. It can also adjust the interrupt frequency and the number of ticks per second to decrease system clock drift, and will cause the hardware clock to be re-synchronised every 11 minutes.
-*   **sntp** is an [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") client that comes with the [ntp](https://www.archlinux.org/packages/?name=ntp) package. It supersedes *ntpdate* and is recommended in non-server environments.
-*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") is a simple [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") daemon that only implements a client side, focusing only on querying time from one remote server. It should be more than appropriate for most installations.
-*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") is part of the OpenBSD project and implements both a client and a server.
-*   [Chrony](/index.php/Chrony "Chrony") is a client and server that is roaming friendly and designed specifically for systems that are not online all the time.
-*   [ntpclient](https://aur.archlinux.org/packages/ntpclient/) is a simple command-line NTP client
+*   **[Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")** — The [reference implementation](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation") of the protocol, especially recommended to be used on time servers. It can also adjust the interrupt frequency and the number of ticks per second to decrease system clock drift, and will cause the hardware clock to be re-synchronised every 11 minutes.
+
+	[http://www.ntp.org/](http://www.ntp.org/) || [ntp](https://www.archlinux.org/packages/?name=ntp)
+
+*   **sntp** — An [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") client that comes with NTPd. It supersedes *ntpdate* and is recommended in non-server environments.
+
+	[http://www.ntp.org/](http://www.ntp.org/) || [ntp](https://www.archlinux.org/packages/?name=ntp)
+
+*   **[systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")** — A simple [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") daemon that only implements a client side, focusing only on querying time from one remote server. It should be more than appropriate for most installations.
+
+	[https://www.freedesktop.org/wiki/Software/systemd/](https://www.freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+
+*   **[OpenNTPD](/index.php/OpenNTPD "OpenNTPD")** — Part of the OpenBSD project and implements both a client and a server.
+
+	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
+
+*   **[Chrony](/index.php/Chrony "Chrony")** — A client and server that is roaming friendly and designed specifically for systems that are not online all the time.
+
+	[http://chrony.tuxfamily.org/](http://chrony.tuxfamily.org/) || [chrony](https://www.archlinux.org/packages/?name=chrony)
+
+*   **ntpclient** — A simple command-line NTP client.
+
+	[http://doolittle.icarus.com/ntpclient/](http://doolittle.icarus.com/ntpclient/) || [ntpclient](https://aur.archlinux.org/packages/ntpclient/)
 
 ## Per-user/session or temporary settings
 

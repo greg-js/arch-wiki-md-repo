@@ -4,19 +4,20 @@
 *   [2 Android development](#Android_development)
     *   [2.1 Android SDK core components](#Android_SDK_core_components)
     *   [2.2 Android SDK platform API](#Android_SDK_platform_API)
-    *   [2.3 Development environment](#Development_environment)
-        *   [2.3.1 Android Studio](#Android_Studio)
-        *   [2.3.2 Eclipse](#Eclipse)
-        *   [2.3.3 Netbeans](#Netbeans)
-    *   [2.4 Android Debug Bridge (ADB)](#Android_Debug_Bridge_.28ADB.29)
-        *   [2.4.1 Connect device](#Connect_device)
-        *   [2.4.2 Figure out device IDs](#Figure_out_device_IDs)
-        *   [2.4.3 Adding udev Rules](#Adding_udev_Rules)
-        *   [2.4.4 Configuring adb](#Configuring_adb)
-        *   [2.4.5 Detect the device](#Detect_the_device)
-        *   [2.4.6 General usage](#General_usage)
-        *   [2.4.7 Notes & Troubleshooting](#Notes_.26_Troubleshooting)
-    *   [2.5 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
+    *   [2.3 Android System Images](#Android_System_Images)
+    *   [2.4 Development environment](#Development_environment)
+        *   [2.4.1 Android Studio](#Android_Studio)
+        *   [2.4.2 Eclipse](#Eclipse)
+        *   [2.4.3 Netbeans](#Netbeans)
+    *   [2.5 Android Debug Bridge (ADB)](#Android_Debug_Bridge_.28ADB.29)
+        *   [2.5.1 Connect device](#Connect_device)
+        *   [2.5.2 Figure out device IDs](#Figure_out_device_IDs)
+        *   [2.5.3 Adding udev Rules](#Adding_udev_Rules)
+        *   [2.5.4 Configuring adb](#Configuring_adb)
+        *   [2.5.5 Detect the device](#Detect_the_device)
+        *   [2.5.6 General usage](#General_usage)
+        *   [2.5.7 Notes & Troubleshooting](#Notes_.26_Troubleshooting)
+    *   [2.6 NVIDIA Tegra platform](#NVIDIA_Tegra_platform)
 *   [3 Building Android](#Building_Android)
     *   [3.1 OS bitness](#OS_bitness)
     *   [3.2 Required packages](#Required_packages)
@@ -135,6 +136,10 @@ Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "
 *   [android-platform-16](https://aur.archlinux.org/packages/android-platform-16/)
 *   [android-platform-15](https://aur.archlinux.org/packages/android-platform-15/)
 *   [android-platform-14](https://aur.archlinux.org/packages/android-platform-14/)
+
+### Android System Images
+
+Install the desired [Android system image](https://aur.archlinux.org/packages/?O=0&K=android+system+image) package from the [AUR](/index.php/AUR "AUR"). This step may not be necessary if installing Android Studio.
 
 ### Development environment
 

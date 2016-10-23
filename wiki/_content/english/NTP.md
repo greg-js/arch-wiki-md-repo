@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Network Time Protocol daemon](/index.php?title=Network_Time_Protocol_daemon&redirect=no "Network Time Protocol daemon")
+*   [Time#Time synchronization](/index.php?title=Time&redirect=no#Time_synchronization "Time")

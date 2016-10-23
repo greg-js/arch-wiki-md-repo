@@ -23,7 +23,6 @@
     *   [6.1 cups-browsed](#cups-browsed)
     *   [6.2 Printer sharing](#Printer_sharing)
     *   [6.3 Without a local CUPS server](#Without_a_local_CUPS_server)
-        *   [6.3.1 client.conf](#client.conf)
 *   [7 Troubleshooting](#Troubleshooting)
 *   [8 See also](#See_also)
 
@@ -132,11 +131,11 @@ See [CUPS/Troubleshooting#Networking issues](/index.php/CUPS/Troubleshooting#Net
 
 ## Usage
 
-CUPS can be fully controlled using the lp* and cups* command-line tools. Alternatively, the web interface or one of several GUI applications can be used.
+CUPS can be fully controlled using the lp* and cups* CLI tools. Alternatively, the [#Web interface](#Web_interface) or one of several [#GUI applications](#GUI_applications) can be used.
 
 *   The *queue* name is a short but descriptive name used on the system to identify the queue. This name should not contain spaces or any special characters. For instance, a print queue corresponding to a HP LaserJet 5P could be named "hpljet5p". More than one queue can be associated with each physical printer.
 *   The *location* is a description of the printer's physical location (for instance "bedroom", or "kitchen"). This is to aid in maintaining several printers.
-*   The *description* is a full description of the printer. A common use is the full printer name (like "HP LaserJet 5P").
+*   The *description* is a full description of the print queue. A common use is a full printer name (like "HP LaserJet 5P").
 
 ### CLI tools
 
@@ -329,7 +328,7 @@ See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing
 
 CUPS can be configured to directly connect to remote printer servers instead of running a local print server. This requires [installation](/index.php/Install "Install") of the [libcups](https://www.archlinux.org/packages/?name=libcups) package. Some applications will still require the [cups](https://www.archlinux.org/packages/?name=cups) package for printing.
 
-**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers.[[4]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
+**Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers. [[4]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
 
 To use a remote CUPS server, set the `CUPS_SERVER` [environment variable](/index.php/Environment_variable "Environment variable") to `printerserver.mydomain:port`. For instance, if you want to use a different print server for a single [Firefox](/index.php/Firefox "Firefox") instance (substitute `printserver.mydomain:port` with your print server name/port):
 
@@ -337,21 +336,6 @@ To use a remote CUPS server, set the `CUPS_SERVER` [environment variable](/index
 $ CUPS_SERVER=printserver.mydomain:port firefox
 
 ```
-
-#### client.conf
-
-**Note:** `/etc/cups/client.conf` is [deprecated](https://www.cups.org/doc/man-client.conf.html), it is removed in [cups 2.2.0](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/cups&id=41fefa22ac5189d726e0e35e2f87ad12fa2855f3)
-
-An alternative, deprecated method, involves editing `/etc/cups/client.conf` and setting the `ServerName` directive:
-
- `/etc/cups/client.conf` 
-```
-# (Substitute printserver.mydomain with your print server name)
-ServerName printserver.mydomain
-
-```
-
-The remote system's default printer setting will be used by default.
 
 ## Troubleshooting
 

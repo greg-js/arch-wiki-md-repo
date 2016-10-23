@@ -89,11 +89,10 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [10.8.1 ALSA related problems](#ALSA_related_problems)
             *   [10.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
             *   [10.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [10.9 Konsole does not save commands' history](#Konsole_does_not_save_commands.27_history)
-    *   [10.10 Inotify folder watch limit](#Inotify_folder_watch_limit)
-    *   [10.11 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [10.12 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
-    *   [10.13 Multi-monitor issues](#Multi-monitor_issues)
+    *   [10.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
+    *   [10.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [10.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
+    *   [10.12 Multi-monitor issues](#Multi-monitor_issues)
 *   [11 Unstable releases](#Unstable_releases)
 *   [12 Bugs](#Bugs)
 *   [13 See also](#See_also)
@@ -650,9 +649,9 @@ To enable display resolution management and multiple monitors in Plasma 5, insta
 
 ### Open application launcher with Super key (Windows key)
 
-**Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `super` key launches kickstart application launcher as if `alt+F1` keys are pressed.
+**Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `Super` key launches kickstart application launcher as if `Alt+F1` keys are pressed.
 
-Install and start [ksuperkey](https://www.archlinux.org/packages/?name=ksuperkey). Now assign Alt + F1 as hot key. The Super Key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
+Install and start [ksuperkey](https://www.archlinux.org/packages/?name=ksuperkey). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
 
 ### Enabling touchpad tap to click on plasma wayland session
 
@@ -660,7 +659,7 @@ Currently, it's not possible to [configure tap to click via systemsettings](http
 
 Here are simplified steps to get touchpad tap to click enabled on plasma wayland session.
 
-1\. Identify on which libinput recognizes the touchpad device.
+Identify on which libinput recognizes the touchpad device.
 
  `# libinput-list-devices` 
 ```
@@ -687,7 +686,7 @@ Rotation:         n/a
 
 In this case, the touchpad is identified as `event14`
 
-2\. Check whether KDE Dbus recognizes the touchpad. Replace `event14` with the touchpad identifier found from `libinput-list-devices`.
+Check whether KDE Dbus recognizes the touchpad. Replace `event14` with the touchpad identifier found from `libinput-list-devices`.
 
  `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice name` 
 ```
@@ -695,7 +694,7 @@ ETPS/2 Elantech Touchpad
 
 ```
 
-3\. Check the current value of `tapToClick`.
+Check the current value of `tapToClick`.
 
  `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice tapToClick` 
 ```
@@ -703,14 +702,14 @@ false
 
 ```
 
-4\. Now set the `tapToClick` value to `true`.
+Now set the `tapToClick` value to `true`.
 
 ```
 $ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Set org.kde.KWin.InputDevice tapToClick true
 
 ```
 
-5\. Confirm that `tapToClick` value is `true`.
+Confirm that `tapToClick` value is `true`.
 
  `$ qdbus org.kde.KWin.InputDevice /org/kde/KWin/InputDevice/event14 org.freedesktop.DBus.Properties.Get org.kde.KWin.InputDevice tapToClick` 
 ```
@@ -889,17 +888,6 @@ Go to *System Settings > Multimedia > Phonon* and set the device named `default`
 ##### MP3 files cannot be played when using the GStreamer Phonon backend
 
 This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via *System Settings > Multimedia > Phonon > Backend (tab)*.
-
-### Konsole does not save commands' history
-
-By default console command history is saved only when you type 'exit' in console. When you close Konsole with 'x' in the corner it does not happen. To enable autosaving after every command execution:
-
- `~/.bashrc` 
-```
-shopt -s histappend
-[[ "${PROMPT_COMMAND}" ]] && PROMPT_COMMAND="$PROMPT_COMMAND;history -a" || PROMPT_COMMAND="history -a"
-
-```
 
 ### Inotify folder watch limit
 

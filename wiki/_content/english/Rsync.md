@@ -13,6 +13,7 @@
         *   [2.2.4 Automated backup with systemd and inotify](#Automated_backup_with_systemd_and_inotify)
         *   [2.2.5 Differential backup on a week](#Differential_backup_on_a_week)
         *   [2.2.6 Snapshot backup](#Snapshot_backup)
+    *   [2.3 rsync daemon](#rsync_daemon)
 *   [3 Graphical frontends](#Graphical_frontends)
 
 ## Installation
@@ -316,6 +317,28 @@ fi
 ```
 
 To make things really, really simple this script can be run from a [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") unit.
+
+### rsync daemon
+
+*rsync* can be run as daemon on a server listening on port `873`.
+
+Edit the template `/etc/rsyncd.conf`, configure a share and [start](/index.php/Start "Start") the `rsyncd.service`.
+
+Usage from client, e.g. list server content:
+
+```
+$ rsync rsync://*server/share*
+
+```
+
+transfer file from client to server:
+
+```
+$ rsync *local-file* rsync://*server/share/*
+
+```
+
+Consider iptables to open port `873` and user authentication.
 
 ## Graphical frontends
 

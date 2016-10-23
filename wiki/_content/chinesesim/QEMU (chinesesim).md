@@ -993,7 +993,7 @@ $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 
 For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
 
-*   [spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/): Spice agent xorg client that enables copy and paste between client and X-session and more
+*   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more
 *   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
 *   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
 
@@ -1289,7 +1289,7 @@ The default VGA memory size for QXL devices is 16M (VRAM size is 64M). This is n
 
 ### Copy and paste
 
-To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://aur.archlinux.org/packages/spice-vdagent/) for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically).
+To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent) for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically).
 
 Start QEMU with the following options:
 

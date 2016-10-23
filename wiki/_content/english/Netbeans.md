@@ -115,7 +115,7 @@ Solution is:
 
 Netbeans may need to store some passwords. It can do that in kwallet. See [this article](http://wiki.netbeans.org/FaqMasterPasswordDialog) in the Netbeans wiki.
 
-However, you need to install and configure [qtchooser](https://www.archlinux.org/packages/?name=qtchooser) so that netbeans find the qdbus command:
+However, you need to install and configure [qtchooser](https://aur.archlinux.org/packages/qtchooser/) so that netbeans find the qdbus command:
 
 ```
 $ ln -s /etc/xdg/qtchooser/4.conf ~/.config/qtchooser/default.conf

@@ -70,7 +70,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Kollision** — Moving a ball to avoid other balls. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://www.kde.org/applications/games/kollision/](https://www.kde.org/applications/games/kollision/) || [kollission](https://www.archlinux.org/packages/?name=kollission)
+	[https://www.kde.org/applications/games/kollision/](https://www.kde.org/applications/games/kollision/) || [kollision](https://www.archlinux.org/packages/?name=kollision)
 
 *   **KSpaceDuel** — Player attempts to destroy opponent’s satellite and controll their own one to keep it orbiting. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)
 

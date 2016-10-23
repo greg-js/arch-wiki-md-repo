@@ -197,7 +197,7 @@ $ ssh-keygen -f ~/.ssh/aur
 
 In order to create a new, empty, local Git repository for a package, simply `git clone` the remote repository with the corresponding name. If the package does not exist on AUR yet, you will see the following warning:
 
- `$ git clone git+ssh://aur@aur.archlinux.org/*package_name*.git` 
+ `$ git clone ssh://aur@aur.archlinux.org/*package_name*.git` 
 ```
 Cloning into '*package_name*'...
 warning: You appear to have cloned an empty repository.
@@ -207,7 +207,7 @@ Checking connectivity... done.
 If you have already created a git repository, you can simply create a remote for the AUR git repository and then fetch it:
 
 ```
-$ git remote add *remote_name* git+ssh://aur@aur.archlinux.org/*package_name*.git
+$ git remote add *remote_name* ssh://aur@aur.archlinux.org/*package_name*.git
 $ git fetch *remote_name*
 
 ```
@@ -259,18 +259,9 @@ Removal requests can be disapproved, in which case you will likely be advised to
 
 ## Git repositories for AUR3 packages
 
-On 08/08/2015 unmaintained packages have been removed from the AUR with the migration to a [Git](/index.php/Git "Git") backend. A [Git](/index.php/Git "Git") repository of the old AUR contents is available at `git://pkgbuild.com/aur-mirror.git`. It was generally updated once per day and is now read-only. If the repository's [commit history](http://git-scm.com/book/en/Git-Basics-Viewing-the-Commit-History) is not needed, then cloning with the `--depth=1` option will be much quicker:
+**Note:** aur-mirror is no longer available
 
-```
-$ git clone --depth=1 git://pkgbuild.com/aur-mirror.git
-
-```
-
-You can also visit `http://pkgbuild.com/git/aur-mirror.git/tree/<packagename>` directly as trying to load `http://pkgbuild.com/git/aur-mirror.git/tree` in a web browser is going to use a lot of time and memory.
-
-For more information, see the following: [Git Web interface](http://pkgbuild.com/git/aur-mirror.git/), [forum thread](https://bbs.archlinux.org/viewtopic.php?id=113099).
-
-There is also the [AUR Archive](https://github.com/aur-archive) on GitHub with a repository for every package that was in AUR 3 during the migration to AUR 4.
+The [AUR Archive](https://github.com/aur-archive) on GitHub has a repository for every package that was in AUR 3 during the migration to AUR 4.
 
 ## Web interface translation
 
