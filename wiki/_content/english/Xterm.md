@@ -6,7 +6,8 @@
     *   [1.1 Resource file settings](#Resource_file_settings)
         *   [1.1.1 TERM Environmental Variable](#TERM_Environmental_Variable)
         *   [1.1.2 UTF-8](#UTF-8)
-        *   [1.1.3 Fix the 'Alt' key](#Fix_the_.27Alt.27_key)
+        *   [1.1.3 Making xterm's 'Alt' key behaves as on other terminal emulators](#Making_xterm.27s_.27Alt.27_key_behaves_as_on_other_terminal_emulators)
+        *   [1.1.4 Fix the backspace key](#Fix_the_backspace_key)
     *   [1.2 Scrolling](#Scrolling)
         *   [1.2.1 The Scrollbar](#The_Scrollbar)
     *   [1.3 Menus](#Menus)
@@ -69,12 +70,27 @@ XTerm*locale: true
 
 ```
 
-#### Fix the 'Alt' key
+#### Making xterm's 'Alt' key behaves as on other terminal emulators
 
-If you use the `Alt` key for keyboard shortcuts, you will need this in your resource file:
+The default `Alt` key behavior on `xterm` is a modifier to send eight bit input characters so that user can insert `æ` by pressing `Alt+f` inside `xterm`.
+
+This behavior is different from terminal emulators such as `gnome-terminal` and `konsole`, which uses `Alt` as modifier to sends `^[` (escape} character.
+
+If you want `Alt` key on `xterm` to behave as on other terminal emulators, i.e. sends `^[` instead of acts as eight bit modifier, you will need to put one of the following line in your resource file.
 
 ```
 XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+
+```
+
+#### Fix the backspace key
+
+On Arch Linux, `xterm` sends `^H` key when backspace is pressed. This breaks `Ctrl+H` key combination on [Emacs](/index.php/Emacs "Emacs"). The workaround is making `xterm` sends `^?` when backspace is pressed, by adding the following lines to X resource file.
+
+```
+XTerm*backarrowKey: false
+XTerm*ttyModes: erase ^?
 
 ```
 
@@ -115,7 +131,7 @@ The scrollbar operates differently from what you may be accustomed to using.
 
 ### Menus
 
-The Archlinux version of xterm is compiled with the *toolbar,* or *menubar,* disabled. The menus are still available as *popups* when you press `Ctrl+MouseButton` within the xterm window. The actions invoked by the menu items can often be accomplished using command line options or by setting resource values.
+The Arch Linux version of xterm is compiled with the *toolbar,* or *menubar,* disabled. The menus are still available as *popups* when you press `Ctrl+MouseButton` within the xterm window. The actions invoked by the menu items can often be accomplished using command line options or by setting resource values.
 
 **Tip:** If the popup menu windows show only as small boxes, it is probably because you have a line similar to this, `xterm*geometry: 80x32`, in your resources file. This *does* start xterm in an 80 column by 32 row main window, but it also forces the menu windows to be 80 pixels by 32 pixels! Replace the incorrect line with this: `xterm*VT100.geometry: 80x32` 
 

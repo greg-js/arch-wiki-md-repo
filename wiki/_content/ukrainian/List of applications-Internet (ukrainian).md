@@ -1,13 +1,13 @@
-**[List of applications](/index.php/List_of_applications "List of applications")**
+**[Список додатків](/index.php/List_of_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications (Українська)")**
 
 * * *
 
-**Internet** – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+**Інтернет** – [Мультимедіа](/index.php/List_of_applications/Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Multimedia (Українська)") – [Утиліти](/index.php/List_of_applications/Utilities_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Utilities (Українська)") – [Документи](/index.php/List_of_applications/Documents_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Documents (Українська)") – [Безпека](/index.php/List_of_applications/Security_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Security (Українська)") – [Наука](/index.php/List_of_applications/Science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Science (Українська)") – [Інше](/index.php/List_of_applications/Other_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Other (Українська)")
 
 ## Contents
 
-*   [1 Internet](#Internet)
-    *   [1.1 Network managers](#Network_managers)
+*   [1 Інтернет](#.D0.86.D0.BD.D1.82.D0.B5.D1.80.D0.BD.D0.B5.D1.82)
+    *   [1.1 Мережеві менеджери](#.D0.9C.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.B2.D1.96_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B8)
     *   [1.2 VPN clients](#VPN_clients)
     *   [1.3 Web browsers](#Web_browsers)
         *   [1.3.1 Console](#Console)
@@ -79,27 +79,27 @@
     *   [1.9 Bitcoin](#Bitcoin)
     *   [1.10 Surveying](#Surveying)
 
-## Internet
+## Інтернет
 
-### Network managers
+### Мережеві менеджери
 
-*   **[Connman](/index.php/Connman "Connman")** — Daemon for managing internet connections within embedded devices running the Linux operating system. Comes with a command-line client, plus Enlightenment, ncurses, GTK and Dmenu clients are available.
+*   **[Connman](/index.php/Connman "Connman")** — Демон для управління інтернет-з'єднаннями в межах вбудованих пристроїв, що працюють під управлінням операційної системи Linux. Поставляється з консольним, Enlightenment, ncurses, GTK і Dmenu клієнтами.
 
 	[https://01.org/connman](https://01.org/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
-*   **[netctl](/index.php/Netctl "Netctl")** — Simple and robust tool to manage network connections via profiles. Intended for use with [systemd](/index.php/Systemd "Systemd").
+*   **[netctl](/index.php/Netctl "Netctl")** — Простий і надійний інструмент для управління мережевими підключеннями за допомогою профілів. Призначений для використання з [systemd](/index.php/Systemd "Systemd").
 
 	[https://projects.archlinux.org/netctl.git/](https://projects.archlinux.org/netctl.git/) || [netctl](https://www.archlinux.org/packages/?name=netctl)
 
-*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Manager that provides wired, wireless, mobile broadband and OpenVPN detection with configuration and automatic connection.
+*   **[NetworkManager](/index.php/NetworkManager "NetworkManager")** — Менеджер, який забезпечує виявлення провідних, бездротових, мобільних широкосмугових з'єднань та OpenVPN, а також їх конфігурацію і автоматичне підключення.
 
 	[https://wiki.gnome.org/Projects/NetworkManager](https://wiki.gnome.org/Projects/NetworkManager) || [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)
 
-*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Native [systemd](/index.php/Systemd "Systemd") daemon that manages network configuration. It includes support for basic network configuration through [udev](/index.php/Udev "Udev").
+*   **[systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")** — Нативний [systemd](/index.php/Systemd "Systemd") демон, який управляє конфігурацією мережі. Він включає в себе підтримку базової конфігурації мережі за допомогою [udev](/index.php/Udev "Udev").
 
 	[http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html](http://www.freedesktop.org/software/systemd/man/systemd-networkd.service.html) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
-*   **[Wicd](/index.php/Wicd "Wicd")** — Wireless and wired connection manager with few dependencies. Comes with an ncurses interface, and a GTK interface [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) is available.
+*   **[Wicd](/index.php/Wicd "Wicd")** — Бездротового і дротового диспетчер з'єднань з невеликою кількістю залежностей. Поставляється з ncurses і GTK [wicd-gtk](https://www.archlinux.org/packages/?name=wicd-gtk) інтерфейсами .
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
 

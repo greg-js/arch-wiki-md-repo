@@ -212,6 +212,8 @@ To use vapoursynth filters you have to install the [vapoursynth](https://www.arc
 
 ### Debanding (flash3kyuu)
 
+**Note:** Mpv already include a debanding shader which is enabled by default with the [opengl-hq profile](/index.php/Mpv#High_quality_video_output "Mpv"). Refer to the manual for more information on how to tune it.
+
 To use the `f3k_db` debanding filter install [vapoursynth-plugin-f3kdb](https://www.archlinux.org/packages/?name=vapoursynth-plugin-f3kdb) and write a python script that uses the *vapoursynth* extension.
 
 The following sample script can be used to enable debanding in *mpv*.

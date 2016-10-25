@@ -194,10 +194,11 @@ It may also be possible that the independant [iscan](https://www.archlinux.org/p
 
 #### Communication via xHCI not working (older scanner models)
 
-Some older Scanner models do not work when connected via an USB3 port. This is not a big issue if USB2 ports are available. In case the machine running arch-linux has only USB3 ports, there are two ways to resolve the issue.
+Some older Scanner models do not work when connected via an USB3 port. This is not a big issue if USB2 ports are available. In case the machine running arch-linux has only USB3 ports, there are several ways to resolve the issue.
 
 *   Disable xHCI via Bios/EFI. eHCI will consequently be used and communication with the scanner will work. On the downside, USB3 speed can not be reached on any port.
 *   On (some) intel chipsets the 'setpci' command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [Here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [Here](http://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
+*   Connect the scanner over the network instead if it is supported.
 
 ### Slow startup
 

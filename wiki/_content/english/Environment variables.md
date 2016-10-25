@@ -212,3 +212,4 @@ The first one **doesn't allow** the use of `${VARIABLES}` , while the second doe
 ## See also
 
 *   [Gentoo Linux Documentation](https://wiki.gentoo.org/wiki/Handbook:X86/Working/EnvVar)
+*   [Ubuntu Community Wiki - Environment Variables](https://help.ubuntu.com/community/EnvironmentVariables)

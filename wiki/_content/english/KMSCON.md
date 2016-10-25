@@ -24,7 +24,7 @@ Kmscon can function as a drop-in replacement for the in-kernel linux-console. Fe
 
 ## Install
 
-Despite its name, kmscon is not a hard requirement for KMS. Kmscon supports the following video backends: fbdev (Linux fbdev video backend), drm2d (Linux DRM software-rendering backend), drm3d (Linux DRM hardware-rendering backend). Make sure one of them is available on your system.
+Despite its name, KMS is not a hard requirement for kmscon. Kmscon supports the following video backends: fbdev (Linux fbdev video backend), drm2d (Linux DRM software-rendering backend), drm3d (Linux DRM hardware-rendering backend). Make sure one of them is available on your system.
 
 Install the [kmscon](https://www.archlinux.org/packages/?name=kmscon) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, you can install the [kmscon-git](https://aur.archlinux.org/packages/kmscon-git/) package from the [AUR](/index.php/AUR "AUR").
 

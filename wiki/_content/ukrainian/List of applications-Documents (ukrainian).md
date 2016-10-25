@@ -1,8 +1,8 @@
-**[List of applications](/index.php/List_of_applications "List of applications")**
+**[Список додатків](/index.php/List_of_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications (Українська)")**
 
 * * *
 
-[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – **Documents** – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Інтернет](/index.php/List_of_applications/Internet_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Internet (Українська)") – [Мультимедіа](/index.php/List_of_applications/Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Multimedia (Українська)") – [Утиліти](/index.php/List_of_applications/Utilities_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Utilities (Українська)") – **Документи** – [Безпека](/index.php/List_of_applications/Security_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Security (Українська)") – [Наука](/index.php/List_of_applications/Science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Science (Українська)") – [Інше](/index.php/List_of_applications/Other_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Other (Українська)")
 
 ## Contents
 

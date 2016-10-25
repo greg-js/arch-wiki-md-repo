@@ -1,4 +1,4 @@
-**WeeChat** is a highly extendable and feature rich IRC Client currently under heavy development.
+**WeeChat** is a highly extendable and feature rich [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") Client currently under heavy development.
 
 ## Contents
 

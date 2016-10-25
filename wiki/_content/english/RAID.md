@@ -16,7 +16,7 @@ This article explains what RAID is and how to create/manage a software RAID arra
     *   [3.4 Update configuration file](#Update_configuration_file)
     *   [3.5 Assemble the Array](#Assemble_the_Array)
     *   [3.6 Format the RAID Filesystem](#Format_the_RAID_Filesystem)
-        *   [3.6.1 Calculating the Stride and Stripe-width](#Calculating_the_Stride_and_Stripe-width)
+        *   [3.6.1 Calculating the Stride and Stripe Width](#Calculating_the_Stride_and_Stripe_Width)
             *   [3.6.1.1 Example 1\. RAID0](#Example_1._RAID0)
             *   [3.6.1.2 Example 2\. RAID5](#Example_2._RAID5)
             *   [3.6.1.3 Example 3\. RAID10,far2](#Example_3._RAID10.2Cfar2)
@@ -221,6 +221,8 @@ The following example shows building a RAID5 array with 4 active devices and 1 s
 
 ```
 
+**Tip:** `--chunk` was used in the previous example to change the chunk size from the default value. See [Chunks: the hidden key to RAID performance](http://www.zdnet.com/article/chunks-the-hidden-key-to-raid-performance/) for more on chunk size optimisation.
+
 The following example shows building a RAID10,far2 array with 2 devices:
 
 ```
@@ -280,47 +282,40 @@ The array can now be formatted like any other disk, just keep in mind that:
 *   The filesystem should support growing and shrinking while online (see: [File system features](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Features "wikipedia:Comparison of file systems")).
 *   One should calculate the correct stride and stripe-width for optimal performance.
 
-#### Calculating the Stride and Stripe-width
+#### Calculating the Stride and Stripe Width
 
-The array will have an entry in
+Two parameters are required to optimise the filesystem structure to fit optimally within the underlying RAID structure: the *stride* and *stripe width*. These are derived from the RAID *chunk size*, the filesystem *block size*, and the *number of "data disks"*.
 
-```
-# /sys/devices/virtual/block/mdX/queue/optimal_io_size
-
-```
-
-(where mdX is the name of your array). It will give the stripe-width in bytes. Divide by the block size to get the stripe width in blocks, then divide by number of data disks to get the stride. The following calculations should match this.
+The chunk size is a property of the RAID array, decided at the time of its creation. `mdadm`'s current default is 512 KiB. It can be found with `mdadm`:
 
 ```
-Stride = (*chunk size*/block size)
+# mdadm --detail /dev/mdX | grep 'Chunk Size'
 
 ```
 
-To calculate the best stride, consider the following:
+The block size is a property of the filesystem, decided at *its* creation. The default for many filesystems, including ext4, is 4 KiB. See `/etc/mke2fs.conf` for details on ext4.
 
-*   Arch's default block size for many filesystems is 4096, see: `/etc/mke2fs.conf` for details.
-*   *chunk size* is a user provided value between 4K (1 block)(512-bytes on Non-Advanced Format disks) and 64K or more. The predominant default chunk size chosen is 64K. If your normal average request is for larger files (such as video editing, graphics processing, etc.) you can reduce the chunk size to one or two blocks to provide more bandwidth for larger files.
+The number of "data disks" is the minimum number of devices in the array required to completely rebuild it without data loss. For example, this is N for a raid0 array of N devices and N-1 for raid5.
 
-**Tip:** See also [Chunks: the hidden key to RAID performance](http://www.zdnet.com/article/chunks-the-hidden-key-to-raid-performance/).
-
-Next, calculate:
+Once you have these three quantities, the stride and the stripe width can be calculated using the following formulas:
 
 ```
-Stripe-width = (# of physical **data** disks * stride)
+stride = chunk size / block size
+stripe width = number of data disks * stride
 
 ```
 
 ##### Example 1\. RAID0
 
-Example formatting to ext4 with the correct stripe-width and stride:
+Example formatting to ext4 with the correct stripe width and stride:
 
 *   Hypothetical RAID0 array is composed of 2 physical disks.
-*   Chunk size is 64k.
-*   Block size is 4k.
+*   Chunk size is 64 KiB.
+*   Block size is 4 KiB.
 
-Stride = (chunk size/block size). In this example, the math is (64/4) so the stride = 16.
+stride = chunk size / block size. In this example, the math is 64/4 so the stride = 16.
 
-Stripe-width = (# of physical **data** disks * stride). In this example, the math is (2*16) so the stripe-width = 32.
+stripe width = # of physical **data** disks * stride. In this example, the math is 2*16 so the stripe width = 32.
 
 ```
 # mkfs.ext4 -v -L myarray -m 0.5 -b 4096 -E stride=16,stripe-width=32 /dev/md0
@@ -329,42 +324,41 @@ Stripe-width = (# of physical **data** disks * stride). In this example, the mat
 
 ##### Example 2\. RAID5
 
-Example formatting to ext4 with the correct stripe-width and stride:
+Example formatting to ext4 with the correct stripe width and stride:
 
 *   Hypothetical RAID5 array is composed of 4 physical disks; 3 data discs and 1 parity disc.
-*   Chunk size is 512k.
-*   Block size is 4k.
+*   Chunk size is 512 KiB.
+*   Block size is 4 KiB.
 
-Stride = (chunk size/block size). In this example, the math is 512/4) so the stride = 128.
+stride = chunk size / block size. In this example, the math is 512/4 so the stride = 128.
 
-Stripe-width = (# of physical **data** disks * stride). In this example, the math is (3*128) so the stripe-width = 384.
+stripe width = # of physical **data** disks * stride. In this example, the math is 3*128 so the stripe width = 384.
 
 ```
 # mkfs.ext4 -v -L myarray -m 0.01 -b 4096 -E stride=128,stripe-width=384 /dev/md0
 
 ```
 
-For more on stride and stripe-width, see: [RAID Math](http://wiki.centos.org/HowTos/Disk_Optimization).
+For more on stride and stripe width, see: [RAID Math](http://wiki.centos.org/HowTos/Disk_Optimization).
 
 ##### Example 3\. RAID10,far2
 
-Example formatting to ext4 with the correct stripe-width and stride:
+Example formatting to ext4 with the correct stripe width and stride:
 
 *   Hypothetical RAID10 array is composed of 2 physical disks. Because of the properties of RAID10 in far2 layout, both count as data disks.
-*   Chunk size is 512k.
-*   Block size is 4k.
+*   Chunk size is 512 KiB.
 
 ```
-# cat /sys/devices/virtual/block/md0/queue/optimal_io_size
-# 1048576
+# mdadm --detail /dev/md0 | grep 'Chunk Size'
+    Chunk Size : 512K
 
 ```
 
-So the stripe-width should match 1048576 / 4096 = 256, and the stride should match 256 / 2 = 128.
+*   Block size is 4 KiB.
 
-Stride = (chunk size/block size). In this example, the math is (512/4) so the stride = 128.
+stride = chunk size / block size. In this example, the math is 512/4 so the stride = 128.
 
-Stripe-width = (# of physical **data** disks * stride). In this example, the math is (2*128) so the stripe-width = 256.
+stripe width = # of physical **data** disks * stride. In this example, the math is 2*128 so the stripe width = 256.
 
 ```
 # mkfs.ext4 -v -L myarray -m 0.01 -b 4096 -E stride=128,stripe-width=256 /dev/md0
@@ -490,7 +484,7 @@ When the scrub is complete, admins may check how many blocks (if any) have been 
 
 **Note:** Users may alternatively echo **repair** to /sys/block/md0/md/sync_action but this is ill-advised since if a mismatch in the data is encountered, it would be automatically updated to be consistent. The danger is that we really don't know whether it's the parity or the data block that's correct (or which data block in case of RAID1). It's luck-of-the-draw whether or not the operation gets the right data instead of the bad data.
 
-It is a good idea to set up a cron job as root to schedule a periodic scrub. See [raid-check](https://aur.archlinux.org/packages/raid-check/) which can assist with this. To perform a periodic scrub using systemd timers instead of cron, See [raid-check-systemd](https://aur.archlinux.org/packages/raid-check-systemd/) which contains the same script along with associated systemd timer unit files.
+It is a good idea to set up a cron job as root to schedule a periodic scrub. See [raid-check](https://aur.archlinux.org/packages/raid-check/) which can assist with this. To perform a periodic scrub using systemd timers instead of cron, See [raid-check-systemd](https://aur.archlinux.org/packages/raid-check-systemd/) which contains the same script along with associated systemd timer unit files. (note: for typical platter drives, scrubbing can take approximately **six seconds per gigabyte** [that's one hour forty-five minutes per terabyte] so plan the start of your cron job or timer appropriately)
 
 #### RAID1 and RAID10 Notes on Scrubbing
 

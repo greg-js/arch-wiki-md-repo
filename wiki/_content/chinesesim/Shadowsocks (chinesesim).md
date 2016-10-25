@@ -9,7 +9,8 @@
     *   [2.3 以守护进程形式运行客户端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E5.AE.A2.E6.88.B7.E7.AB.AF)
     *   [2.4 以守护进程形式运行服务端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E6.9C.8D.E5.8A.A1.E7.AB.AF)
     *   [2.5 加密](#.E5.8A.A0.E5.AF.86)
-    *   [2.6 Chrome/Chromium](#Chrome.2FChromium)
+    *   [2.6 Firefox](#Firefox)
+    *   [2.7 Chrome/Chromium](#Chrome.2FChromium)
 *   [3 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
@@ -124,7 +125,7 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 可选的加密方式：
 
-*   aes-256-cfb
+*   aes-256-cfb（Shadowsocks的作者推荐的加密算法，移动平台可能开销稍高）
 *   aes-128-cfb
 *   aes-192-cfb
 *   aes-256-ofb
@@ -154,15 +155,31 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 **注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
 ,
 
+### Firefox
+
+以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")使用代理服务器的方法示例。
+
+安装代理插件[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile):打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy代理插件，安装完毕后重启浏览器。
+
+设置代理：找到foxyproxy插件，单击进入foxyproxy的设置界面，在代理服务器目录左侧选择添加代理服务器，在代理服务器设置里选择手动设置代理服务器，ip地址栏填写127.0.0.1，勾选SOCKS代理服务器，点选SOCKS V5，然后确定。
+
+开启快速添加：在foxyproxy设置中，选择快速添加，勾选启用，在进入某些需要代理的网站时可以按下Alt+f2将网址添加到设定的代理中（可设置相应匹配）（！此功能需要foxyproxy标准版）。
+
+使用代理：在foxyproxy上鼠标右键点击，指针移动到添加的代理上，就可以选择使用此代理服务器。也可以根据个人需求给某些特定域名添加到代理列表，单独使用某个代理服务器。
+
+更多有关foxyproxy内容，请到[foxyproxy官网](https://getfoxyproxy.org)查看。
+
 ### Chrome/Chromium
 
-至此，本地监听端口`127.0.0.1:1080`已配置完毕。现以[Chrome/Chromium](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")为例，示范使用代理服务器的方法。
+以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Chrome/Chromium](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")使用代理服务器的方法示例。
 
 方法一：
 
 请安装 [Proxy SwitchyOmega插件](https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif)（SwitchySharp已停止开发），若商店打不开的话可以直接下载Github上面的[crx文件](https://github.com/FelisCatus/SwitchyOmega/releases)可参考[该扩展提供的图解流程](https://github.com/FelisCatus/SwitchyOmega)。
 
 另外提供老版[Proxy SwitchySharp扩展](https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm)因为它诞生早，经过了更多用户的考验，且基本功能完备。
+
+也可以选用其他代理扩展，设置方法类似。
 
 方法二：
 

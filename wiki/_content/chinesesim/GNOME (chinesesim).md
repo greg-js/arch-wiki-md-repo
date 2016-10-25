@@ -93,7 +93,7 @@ GNOME 有三个可用的会话，都使用 GNOME Shell
 
 ## 运行 GNOME
 
-GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")以图形方式启动,或者从控制台手动启动。 为优化桌面整合, 建议使用[GDM (简体中文)](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") (GNOME显示管理器)。 注意 [启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") 一个显示管理器(例如GDM)意味着Xorg将会以root权限运行.
+GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")以图形方式启动,或者从控制台手动启动。 为优化桌面整合, 建议使用[GNOME显示管理器](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") 。 注意 [启用](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") 一个显示管理器(例如GDM)意味着Xorg将会以root权限运行.
 
 **注意:** 不使用 GDM 将无法体验到原生的锁屏支持，需要使用其它屏幕锁来提供类似功能，参见[Xmonad (简体中文)#GNOME 3 and xmonad](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GNOME_3_and_xmonad "Xmonad (简体中文)").
 
@@ -124,7 +124,7 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 exec gnome-session
 ```
 
-改完`~/.xinitrc` ，即可用`startx` 启动Gnome (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
+改完`~/.xinitrc` ，即可用`startx` 启动Gnome. [xinitrc](/index.php/Xinitrc "Xinitrc") 包含了保留登陆会话的方式等其他信息。设置完 `~/.xinitrc` 文件后，可以选择[登录时启动X](/index.php/Start_X_at_login "Start X at login").
 
 **Note:** Wayland 上的 Gnome 需要安装 [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) 包， 不能使用 *startx* 和`~/.xinitrc`，而是要运行 `gnome-session --session=gnome-wayland`. 更多参见 [Wayland](/index.php/Wayland "Wayland").
 

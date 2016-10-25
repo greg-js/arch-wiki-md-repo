@@ -6,8 +6,9 @@ Quassel (sometimes referred to as Quassel IRC) is a cross-platform IRC client in
 *   [2 Installation](#Installation)
     *   [2.1 Basic usage](#Basic_usage)
     *   [2.2 Setting up multiple clients to connect through the same core](#Setting_up_multiple_clients_to_connect_through_the_same_core)
-*   [3 Troubleshooting](#Troubleshooting)
-*   [4 See also](#See_also)
+*   [3 Adding users](#Adding_users)
+*   [4 Troubleshooting](#Troubleshooting)
+*   [5 See also](#See_also)
 
 ## Structure
 
@@ -49,6 +50,17 @@ Now set up your IRC-servers and IRC-nicknames on the core.
 **Note:** As this is the first time you connected to the core, you should see a wizard where you can set up the first user-account. If you do not get this wizard, your settings might be messed up, see troubleshooting below.
 
 Once it all works, you can [enable](/index.php/Enable "Enable") `quassel.service` to start automatically on system boot.
+
+## Adding users
+
+If you want additional users to be able to use the same core, run this command to create them:
+
+```
+$ sudo -u quassel quasselcore --configdir=/var/lib/quassel --add-user
+
+```
+
+It will then prompt you for a new account's username and password.
 
 ## Troubleshooting
 

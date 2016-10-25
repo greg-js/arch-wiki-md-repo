@@ -185,7 +185,7 @@ A more contemporary option (since kernel version 3.16) is [Multi-Queue Block IO 
 One can be enable blk-mq by adding the following to the kernel's boot line:
 
 ```
-scsi_mod.use_blk_mq=1
+scsi_mod.use_blk_mq=y dm_mod.use_blk_mq=y
 
 ```
 

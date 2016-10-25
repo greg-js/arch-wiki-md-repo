@@ -188,7 +188,7 @@ Create an initial configuration file by [starting the daemon](#Starting_and_stop
 
 One can customize the daemon by using a Transmission client or using the included web interface accessible via [http://localhost:9091](http://localhost:9091) in a supported browser.
 
-A guide to configuration options can be found on the Transmission web site: [https://trac.transmissionbt.com/wiki/EditConfigFiles#Options](https://trac.transmissionbt.com/wiki/EditConfigFiles#Options)
+A guide to configuration options can be found on the Transmission web site: [https://github.com/transmission/transmission/wiki/Editing-Configuration-Files](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files)
 
 **Note:** If you want to edit the configuration manually using a text editor, [stop the daemon](#Starting_and_stopping_the_daemon) first; otherwise, it would overwrite its configuration file when it closes.
 

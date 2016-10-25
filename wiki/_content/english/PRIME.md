@@ -57,6 +57,8 @@ OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
 GPU-intensive applications should be rendered on the more powerful discrete card. The command `xrandr --setprovideroffloadsink provider sink` can be used to make a render offload provider send its output to the sink provider (the provider which has a display connected). The provider and sink identifiers can be numeric (0x7d, 0x56) or a case-sensitive name (Intel, radeon).
 
+**Please note:** This setting is no longer necessary when using the default intel/modesetting driver from the official repos, as they have DRI3 enabled by default and will therefore automatically make these assignments. Explicitly setting them again does no harm, though.
+
 Example:
 
 ```

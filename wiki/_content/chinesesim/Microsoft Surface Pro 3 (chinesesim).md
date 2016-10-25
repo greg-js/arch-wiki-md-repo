@@ -37,7 +37,7 @@ Surface Pro 3有三种启动模式 [详细看这里](http://www.microsoft.com/su
     2.  按住音量下
     3.  按电源键
     4.  等Surface的LOGO出现
-    5.  放开电源键
+    5.  放开音量下
 
 ### 禁用Secure Boot
 

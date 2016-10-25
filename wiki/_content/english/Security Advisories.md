@@ -42,6 +42,9 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### October 2016
 
+*   [24 October 2016] [ASA-201610-17](https://lists.archlinux.org/pipermail/arch-security/2016-October/000745.html) [ocaml](https://www.archlinux.org/packages/?name=ocaml) information disclosure
+*   [24 October 2016] [ASA-201610-16](https://lists.archlinux.org/pipermail/arch-security/2016-October/000744.html) [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) privilege escalation
+*   [23 October 2016] [ASA-201610-15](https://lists.archlinux.org/pipermail/arch-security/2016-October/000743.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [22 October 2016] [ASA-201610-14](https://lists.archlinux.org/pipermail/arch-security/2016-October/000742.html) [linux](https://www.archlinux.org/packages/?name=linux) privilege escalation
 *   [21 October 2016] [ASA-201610-13](https://lists.archlinux.org/pipermail/arch-security/2016-October/000741.html) [python-django](https://www.archlinux.org/packages/?name=python-django) cross-site request forgery
 *   [21 October 2016] [ASA-201610-12](https://lists.archlinux.org/pipermail/arch-security/2016-October/000740.html) [python2-django](https://www.archlinux.org/packages/?name=python2-django) cross-site request forgery

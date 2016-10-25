@@ -28,7 +28,7 @@ You may also want to install [xorg-xinput](https://www.archlinux.org/packages/?n
 
 ## Configuration
 
-For [Xorg](/index.php/Xorg "Xorg"), a default configuration file is installed in `/usr/share/X11/xorg.conf.d/60-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
+For [Xorg](/index.php/Xorg "Xorg"), a default configuration file is installed in `/usr/share/X11/xorg.conf.d/40-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
 
 First, execute:
 
@@ -42,6 +42,13 @@ It will output the devices on the system and their respective features supported
 After a [restart](/index.php/Restart "Restart") of the graphical environment, the devices should be managed by libinput with default configuration, if no other drivers are configured to take precedence.
 
 See the libinput(4) manual page for general options to set. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
+
+```
+$ xinput list
+
+```
+
+to view all devices and determine their numbers
 
 ```
 $ xinput list-props *device-number* 

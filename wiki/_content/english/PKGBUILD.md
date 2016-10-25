@@ -145,6 +145,8 @@ An array of packages that must be installed before the software can be run. Vers
 
 Dependencies that are provided by other dependencies do not need to be listed. For instance, if a package *foo* depends on both *bar* and *baz*, and the *bar* package depends in turn on *baz* too, *baz* does not need to be included in *foo'*s `depends` array.
 
+If the dependency name appears to be a library, e.g. `depends=('libfoobar.so')`, makepkg will try to find a binary that depends on the library in the built package and append the version needed by the binary. Appending the version yourself disables automatic detection, e.g. `depends=('libfoobar.so=2')`.
+
 ### optdepends
 
 An array of packages that are not needed for the software to function, but provide additional features. This may imply that not all executables provided by a package will function without the respective optdepends.[[1]](https://lists.archlinux.org/pipermail/arch-general/2014-December/038124.html) If the software works on multiple alternative dependencies, all of them can be listed here, instead of the `depends` array.

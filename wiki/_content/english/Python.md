@@ -10,14 +10,15 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
     *   [1.1 Python 3](#Python_3)
     *   [1.2 Python 2](#Python_2)
     *   [1.3 Old versions](#Old_versions)
-*   [2 Widget bindings](#Widget_bindings)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 IPython](#IPython)
-    *   [3.2 Virtual environment](#Virtual_environment)
-    *   [3.3 Getting completion in Python2 shell](#Getting_completion_in_Python2_shell)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
-*   [5 See also](#See_also)
+*   [2 Package management](#Package_management)
+*   [3 Widget bindings](#Widget_bindings)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 IPython](#IPython)
+    *   [4.2 Virtual environment](#Virtual_environment)
+    *   [4.3 Getting completion in Python2 shell](#Getting_completion_in_Python2_shell)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Dealing with version problem in build scripts](#Dealing_with_version_problem_in_build_scripts)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -108,6 +109,22 @@ Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may
 As of October 2016, Python upstream only supports Python 2.7, 3.4, and 3.5 for security fixes. Using older versions for Internet-facing applications or untrusted code may be dangerous and is not recommended.
 
 Extra modules/libraries for old versions of Python may be found on the AUR by searching for `python<*version without period*>`, e.g. searching for "python26" for 2.6 modules.
+
+## Package management
+
+Although a great number of Python packages are readily available in the [official repositories](/index.php/Official_repositories "Official repositories") and the [AUR](/index.php/AUR "AUR"), the Python ecosystem provides its own package managers for use with [PyPI](https://pypi.python.org/), the Python Package Index. The Python Packaging Authority ([PyPA](https://www.pypa.io/)) recommends the following utilities to deal with Python packages:
+
+*   **pip** — The PyPA recommended tool for installing Python packages.
+
+	[https://pip.pypa.io/](https://pip.pypa.io/) || [python-pip](https://www.archlinux.org/packages/?name=python-pip), [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)
+
+*   **setuptools** — Easily download, build, install, upgrade, and uninstall Python packages.
+
+	[https://setuptools.readthedocs.io/](https://setuptools.readthedocs.io/) || [python-setuptools](https://www.archlinux.org/packages/?name=python-setuptools), [python2-setuptools](https://www.archlinux.org/packages/?name=python2-setuptools)
+
+For a brief history and feature comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install).
+
+Authoritative best practices in Python package management are detailed [here](https://packaging.python.org/).
 
 ## Widget bindings
 

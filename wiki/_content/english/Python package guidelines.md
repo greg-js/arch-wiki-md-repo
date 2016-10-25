@@ -10,9 +10,11 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 
 *   [1 Package naming](#Package_naming)
     *   [1.1 Versioned packages](#Versioned_packages)
-*   [2 File placement](#File_placement)
+*   [2 Installation methods](#Installation_methods)
+    *   [2.1 distutils](#distutils)
+    *   [2.2 pip](#pip)
 *   [3 Notes](#Notes)
-*   [4 Example](#Example)
+    *   [3.1 PyPI download URLs](#PyPI_download_URLs)
 
 ## Package naming
 
@@ -24,13 +26,30 @@ Python 2 libraries should instead be named `python2-*modulename*`.
 
 If you need to add a versioned package then use `python-*modulename*-*version*`, e.g. `python-colorama-0.2.5`. So python dependency `colorama==0.2.5` will turn into `python-colorama-0.2.5` Arch package.
 
-## File placement
+## Installation methods
 
-Most Python packages are installed with the [distutils](http://docs.python.org/library/distutils.html) system using **setup.py**, which installs files under `/usr/lib/python*<python version>*/site-packages/*pkgname*` directory.
+Python packages are generally installed using language-specific tools, such as [pip](https://pip.pypa.io/) or [easy_install](https://setuptools.readthedocs.io/en/latest/easy_install.html), which are comparable to dedicated package managers in that they are designed to fetch the source files from an online repository (usually [PyPI](https://pypi.python.org/), the Python Package Index) and track the relevant files (for a detailed comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install)).
 
-*   The `--optimize=1` parameter compiles `.pyo` files so they can be tracked by [pacman](/index.php/Pacman "Pacman").
+However, for managing Python packages from within PKGBUILDs, the standard-provided [distutils](http://docs.python.org/library/distutils.html) proves to be the most convenient solution since it uses the downloaded source package's `setup.py` and easily installs files under `*$pkgdir*/usr/lib/python*<python version>*/site-packages/*$pkgname*` directory.
 
-If using [pip](https://pip.pypa.io/en/stable/) (which is necessary for installing e.g. wheels, and generally preferred by the Python community nowadays), remember to pass the following flags:
+### distutils
+
+A *distutils* example PKGBUILD can be found [here](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto) or at `/usr/share/pacman/PKGBUILD-python.proto`, provided by the [abs](https://www.archlinux.org/packages/?name=abs) package. It follows the form:
+
+```
+*<python version>* setup.py install --root="$pkgdir/" --optimize=1
+
+```
+
+where:
+
+*   *<python version>* is replaced with the proper binary, `python` or `python2`
+*   `--root="$pkgdir/"` prevents trying to directly install in the host system instead of inside the package file, which would result in a permission error
+*   `--optimize=1` compiles `.pyo` files so they can be tracked by [pacman](/index.php/Pacman "Pacman").
+
+### pip
+
+If you need to use *pip* (provided by [python-pip](https://www.archlinux.org/packages/?name=python-pip) and [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)), *e.g.* for installing [wheel](https://bitbucket.org/pypa/wheel/) packages, remember to pass the following flags:
 
 ```
 PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-installed --no-deps *.whl
@@ -40,7 +59,7 @@ PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-insta
 *   `PIP_CONFIG_FILE=/dev/null` ignores `{/etc,~/.config}/pip.conf` that may be appending arbitrary flags to **pip**.
 *   `--isolated` ignores environment variables (and again `{/etc,~/.config}/pip/pip.conf`) that may otherwise also be appending arbitrary flags to **pip**.
 *   `--ignore-installed` is necessary until [https://github.com/pypa/pip/issues/3063](https://github.com/pypa/pip/issues/3063) is resolved (otherwise **pip** skips the install in the presence of an earlier `--user` install).
-*   `--no-deps` ensures, well, that dependencies do not get packaged together with the main package.
+*   `--no-deps` ensures, that dependencies do not get packaged together with the main package.
 
 ## Notes
 
@@ -48,6 +67,8 @@ In most cases, you should put `any` in the `arch` array since most Python packag
 
 Please do not install a directory named just `tests`, as it easily conflicts with other Python packages (for example, `/usr/lib/python2.7/site-packages/tests/`).
 
-## Example
+### PyPI download URLs
 
-A distutils-style example PKGBUILD can be found [here](https://projects.archlinux.org/abs.git/tree/prototypes/PKGBUILD-python.proto) or at `/usr/share/pacman/PKGBUILD-python.proto`, which is in the [abs](https://www.archlinux.org/packages/?name=abs) package.
+PyPI URLs of the form `https://pypi.python.org/packages/source/${pkgname:0:1}/${pkgname}/${pkgname}-${pkgver}.tar.gz` were silently abandoned for new package versions in the course of 2016, replaced by a scheme using an unpredictable hash that needs to be fetched from the PyPI website each time a package must be updated[[1]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package#comment-27230605).
+
+As downstream packagers voiced their concerns to PyPI maintainers[[2]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package), a new stable scheme was provided[[3]](https://bitbucket.org/pypa/pypi/issues/438/backwards-compatible-un-hashed-package#comment-27606213): [PKGBUILD#source](/index.php/PKGBUILD#source "PKGBUILD") `source=()` array should now use `https://files.pythonhosted.org/packages/source/${pkgname:0:1}/${pkgname}/${pkgname}-${pkgver}.tar.gz` as their URL.

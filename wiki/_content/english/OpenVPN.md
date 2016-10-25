@@ -34,8 +34,9 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [7.1 Firewall configuration](#Firewall_configuration)
         *   [7.1.1 ufw](#ufw)
         *   [7.1.2 iptables](#iptables)
-    *   [7.2 Prevent leaks if vpn goes down](#Prevent_leaks_if_vpn_goes_down)
+    *   [7.2 Prevent leaks if VPN goes down](#Prevent_leaks_if_VPN_goes_down)
         *   [7.2.1 ufw](#ufw_2)
+        *   [7.2.2 vpnfailsafe](#vpnfailsafe)
 *   [8 L3 IPv4 routing](#L3_IPv4_routing)
     *   [8.1 Prerequisites for routing a LAN](#Prerequisites_for_routing_a_LAN)
         *   [8.1.1 Routing tables](#Routing_tables)
@@ -215,7 +216,7 @@ tls-auth /etc/openvpn/ta.key **1**
 
 #### Drop root privileges after connecting
 
-Using the options `user nobody` and `group nobody` in the configuration file makes *openvpn* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes are not desired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
+Using the options `user nobody` and `group nobody` in the configuration file makes *OpenVPN* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes are not desired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
 
 As it could seem to require manual action to manage the routes, the options `user nobody` and `group nobody` might seem undesirable. Depending on setup, however, there are four ways to handle these situations:
 
@@ -571,11 +572,11 @@ When you are satisfied make the changes permanent as shown in [iptables#Configur
 
 If you have multiple `tun` or `tap` interfaces, or more than one VPN configuration, you can "pin" the name of your interface by specifying it in the OpenVPN config file, e.g. `tun22` instead of `tun`. This is advantageous if you have different firewall rules for different interfaces or OpenVPN configurations.
 
-### Prevent leaks if vpn goes down
+### Prevent leaks if VPN goes down
 
-The idea is simple: prevent all traffic through our default interface (enp3s0 for example) and only allow tun0. If the openvpn connection drops, your computer will lose its internet access and therefore, avoid your programs to continue connecting through an insecure network adapter.
+The idea is simple: prevent all traffic through our default interface (enp3s0 for example) and only allow tun0. If the OpenVPN connection drops, your computer will lose its internet access and therefore, avoid your programs to continue connecting through an insecure network adapter.
 
-Be sure to set up a script to restart openvpn if it goes down if you do not want to manually restart it.
+Be sure to set up a script to restart OpenVPN if it goes down if you do not want to manually restart it.
 
 #### ufw
 
@@ -608,6 +609,10 @@ Otherwise, you will need to allow dns leak. **Be sure to trust your dns server!*
  ufw allow out from any to any port 53
 
 ```
+
+#### vpnfailsafe
+
+Alternatively, the [vpnfailsafe](https://github.com/wknapik/vpnfailsafe) ([vpnfailsafe-git](https://aur.archlinux.org/packages/vpnfailsafe-git/)) script can be used by the client to prevent DNS leaks and ensure that all traffic to the internet goes over the VPN. If the VPN tunnel goes down, internet access will be cut off, except for connections to the VPN server(s). The script contains the functionality of the [update-resolv-conf](#Update_resolv-conf_script) script, so the two don't need to be combined.
 
 ## L3 IPv4 routing
 
@@ -750,7 +755,7 @@ For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
 
 ### Client daemon not restarting after suspend
 
-If you put your client system to sleep, and on resume openvpn does not restart, resulting in broken connectivity, create the following file:
+If you put your client system to sleep, and on resume OpenVPN does not restart, resulting in broken connectivity, create the following file:
 
  `/usr/lib/systemd/system-sleep/vpn.sh` 
 ```

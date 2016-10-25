@@ -20,6 +20,7 @@
     *   [4.2 jack2-dbus and qjackctl errors](#jack2-dbus_and_qjackctl_errors)
     *   [4.3 Problems with specific applications](#Problems_with_specific_applications)
         *   [4.3.1 VLC - no audio after starting JACK](#VLC_-_no_audio_after_starting_JACK)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -403,3 +404,7 @@ Run VLC and change the following menu options:
 *   Show settings: All
 *   Audio > Output modules > Audio output module: JACK audio output
 *   Audio > Output modules > JACK: Automatically connect to writable clients (enable)
+
+## See also
+
+*   [Differences between JACK 1 and JACK2](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2)

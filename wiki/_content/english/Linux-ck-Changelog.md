@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.4-4**
+
+*   Changelog: Update with ck4/MuQSS v0.116\. Updates to [repo-ck] are building now.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=2eed9580b2688f98a6140d1c9988a79340a1f978](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=2eed9580b2688f98a6140d1c9988a79340a1f978)
+
 **Bump to v4.8.4-3**
 
 *   Changelog: Added two key pending patches from CK.

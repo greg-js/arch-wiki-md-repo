@@ -16,7 +16,10 @@ Go back to [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Da
     *   [6.2 Local (with separate mpd user)](#Local_.28with_separate_mpd_user.29)
     *   [6.3 Remote](#Remote)
 *   [7 Cue Files](#Cue_Files)
-*   [8 HTTP Streaming](#HTTP_Streaming)
+*   [8 HTTP streaming](#HTTP_streaming)
+    *   [8.1 Configuration](#Configuration)
+        *   [8.1.1 Format](#Format)
+    *   [8.2 Use](#Use)
 *   [9 MPRIS2 Support](#MPRIS2_Support)
 
 ## Organizing library
@@ -327,15 +330,19 @@ No additional steps are needed for cue support in mpd since 0.17\. MPD has its o
 
 Client support of CUE files is a bit limited. Two available programs that do support CUE files are [cantata](https://www.archlinux.org/packages/?name=cantata) and [ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp").
 
-## HTTP Streaming
+## HTTP streaming
 
-Since version 0.15 there is a built-in HTTP streaming daemon/server that comes with MPD. To activate this server simply set it as output device in mpd.conf:
+Since version 0.15 there is a built-in HTTP streaming daemon/server that comes with MPD.
+
+### Configuration
+
+To activate this server simply set it as output device in mpd.conf:
 
 ```
-audio_output {    
-	type		"httpd"    
+audio_output {
+	type		"httpd"
 	name		"My HTTP Stream"
-	encoder		"vorbis"		# optional, vorbis or lame
+	encoder		"vorbis"		# optional
 	port		"8000"
 #	quality		"5.0"			# do not define if bitrate is defined
 	bitrate		"128"			# do not define if quality is defined
@@ -346,9 +353,20 @@ audio_output {
 
 ```
 
+#### Format
+
+MPD supports several encoding formats. See what your MPD supports with:
+
+```
+$ mpd --version
+
+```
+
+### Use
+
 Then to listen to this stream simply open the URL of your mpd server (along with the specified port) in your favorite music player. Note: You may have to specify the file format of the stream using an appropriate file extension in the URL. For example, using Winamp 5.5, You would use [http://192.168.1.2:8000/mpd.ogg](http://192.168.1.2:8000/mpd.ogg) rather than [http://192.168.1.2:8000/](http://192.168.1.2:8000/).
 
-To use mpd to connect to the stream from another computer.
+To use mpd to connect to the stream from another computer:
 
 ```
 mpc add [http://192.168.1.2:8000](http://192.168.1.2:8000)

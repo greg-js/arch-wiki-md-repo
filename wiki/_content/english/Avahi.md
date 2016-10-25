@@ -7,7 +7,7 @@ From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software)
 *   [1 Installation](#Installation)
 *   [2 Using Avahi](#Using_Avahi)
     *   [2.1 Hostname resolution](#Hostname_resolution)
-        *   [2.1.1 Additional info about mdns](#Additional_info_about_mdns)
+        *   [2.1.1 Configuring mDNS for custom TLD](#Configuring_mDNS_for_custom_TLD)
         *   [2.1.2 Tools](#Tools)
     *   [2.2 Firewall](#Firewall)
     *   [2.3 Link-Local (Bonjour/Zeroconf) chat](#Link-Local_.28Bonjour.2FZeroconf.29_chat)
@@ -53,9 +53,15 @@ hosts: files mdns_minimal [NOTFOUND=return] dns myhostname
 
 **Note:** If you experience slowdowns in resolving `.local` hosts try to use `mdns4_minimal` instead of `mdns_minimal`.
 
-#### Additional info about mdns
+#### Configuring mDNS for custom TLD
 
-The `mdns_minimal` module handles queries for the `.local` TLD only. Note the `[NOTFOUND=return]`, which specifies that if `mdns_minimal` cannot find `*.local`, it will not continue to search for it in `dns`, `myhostname`, etc. In case you have configured Avahi to use a different TLD, you should replace `mdns_minimal [NOTFOUND=return]` with the full `mdns` module. There also are IPv4-only and IPv6-only modules `mdns[46](_minimal)`.
+The `mdns_minimal` module handles queries for the `.local` TLD only. Note the `[NOTFOUND=return]`, which specifies that if `mdns_minimal` cannot find `*.local`, it will not continue to search for it in `dns`, `myhostname`, etc.
+
+In case you want Avahi to support other TLDs, you should:
+
+*   replace `mdns_minimal [NOTFOUND=return]` with the full `mdns` module. There also are IPv4-only and IPv6-only modules `mdns[46](_minimal)`
+*   customize `/etc/avahi/avahi-daemon.conf` with the `domain-name` of your choice
+*   whitelist Avahi custom TLDs in `/etc/mdns.allow`
 
 #### Tools
 

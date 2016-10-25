@@ -3,10 +3,11 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Arduino Due / Yun](#Arduino_Due_.2F_Yun)
-    *   [1.2 Pinoccio Scout](#Pinoccio_Scout)
-    *   [1.3 Intel Galileo](#Intel_Galileo)
-    *   [1.4 On Arm7 devices](#On_Arm7_devices)
+    *   [1.1 AVR Boards](#AVR_Boards)
+    *   [1.2 Arduino Due / Yun](#Arduino_Due_.2F_Yun)
+    *   [1.3 Pinoccio Scout](#Pinoccio_Scout)
+    *   [1.4 Intel Galileo](#Intel_Galileo)
+    *   [1.5 On Arm7 devices](#On_Arm7_devices)
 *   [2 Configuration](#Configuration)
     *   [2.1 Accessing serial](#Accessing_serial)
 *   [3 stty](#stty)
@@ -34,9 +35,13 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 
 ## Installation
 
-*   Install [arduino](https://aur.archlinux.org/packages/arduino/) from the [AUR](/index.php/AUR "AUR").
+*   Install [arduino](https://aur.archlinux.org/packages/arduino/) from the [AUR](/index.php/AUR "AUR") and [arduino-docs](https://aur.archlinux.org/packages/arduino-docs/) for its offline documentation.
 *   Add yourself to the `uucp` and `lock` [groups](/index.php/Groups "Groups") (more information in the [#Accessing serial](#Accessing_serial) section).
 *   You may need to [load](/index.php/Kernel_modules "Kernel modules") the `cdc_acm` module.
+
+### AVR Boards
+
+To use AVR boards such as the Arduino Uno you can install [arduino-avr-core](https://aur.archlinux.org/packages/arduino-avr-core/) optionally to use archlinux upstream avr-gcc instead of the bundled older avr-core. If you still want to use the older arduino-core you need to [install it in the board manager](https://www.arduino.cc/en/Guide/Cores). You can always switch between the different cores in the "Tools>Board" menu.
 
 ### Arduino Due / Yun
 

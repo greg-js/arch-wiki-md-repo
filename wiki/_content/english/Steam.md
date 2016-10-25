@@ -64,6 +64,13 @@ primusrun %command% -w 1920 -h 1080
 
 ```
 
+The corresponding example for AMD PRIME users is:
+
+```
+DRI_PRIME=1 %command%
+
+```
+
 On some systems optirun gives better performances than primusrun, however some games may crash shortly after the launch. This may be fixed preloading the correct version of libGL. Use:
 
 ```

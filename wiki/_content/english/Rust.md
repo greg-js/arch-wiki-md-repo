@@ -60,6 +60,8 @@ One has 2 choices for a rustup installation, one is officially supported by Rust
 
 By default, only the stable channel from your architecture will be installed. It will however not be usable right away, you need to specify the installed stable channel as default for it to work.
 
+**Note:** Please make sure that you have added the $HOME/.cargo/bin to your PATH before you run the rustup command.
+
 ```
 $ rustup default stable
 

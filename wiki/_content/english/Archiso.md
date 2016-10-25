@@ -215,7 +215,7 @@ Now copy the 'home' files to the skel directory, e.g for `.bashrc`:
 
 When `~/archlive/airootfs/root/customize_airootfs.sh` is executed and a new user is created, the files from the skel directory will automatically be copied over to the new home folder, permissions set right.
 
-Similarly, some care is required for special configuration file that reside somewhere down the hierarchy. As an example the `/etc/X11/xinit/xinitrc` configuration file resides on a path that might be overwritten by installing a package. To place the configuration file one should put into the custom `xinitrc` in `~/archlive/airootfs/etc/skel/` and then modify `customize_airootfs.sh` to move it appropriately.
+Similarly, some care is required for special configuration files that reside somewhere down the hierarchy. As an example the `/etc/X11/xinit/xinitrc` configuration file resides on a path that might be overwritten by installing a package. To place the configuration file one should put the custom `xinitrc` in `~/archlive/airootfs/etc/skel/` and then modify `customize_airootfs.sh` to move it appropriately.
 
 ### Boot Loader
 
@@ -341,7 +341,7 @@ Change the `x86_64` part as necessary and put your **real** usb label there.
 
 ## Installation without Internet access
 
-If you wish to install the archiso (e.g. [the offical monthly release](https://www.archlinux.org/download/)) as it is without an Internet connection, or, if you do not want to download the packages you want again:
+If you wish to install the archiso (e.g. [the official monthly release](https://www.archlinux.org/download/)) as it is without an Internet connection, or, if you do not want to download the packages you want again:
 
 First, follow the [Installation guide](/index.php/Installation_guide "Installation guide"), skipping the [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide") section, until the [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide") step.
 
@@ -378,7 +378,7 @@ Next, chroot into your newly installed system:
 
 #### Restore the configuration of journald
 
-[This customization of archiso](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/root/customize_airootfs.sh#n19) will lead to storing the system journal in RAM, it means that the journal will not available after reboot:
+[This customization of archiso](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/root/customize_airootfs.sh#n19) will lead to storing the system journal in RAM, it means that the journal will not be available after reboot:
 
 ```
 # sed -i 's/Storage=volatile/#Storage=auto/' /etc/systemd/journald.conf
@@ -426,7 +426,7 @@ Now you can follow the skipped steps of the [Installation guide#Configure the sy
 ### Documentation and tutorials
 
 *   [Archiso project page](https://projects.archlinux.org/archiso.git)
-*   [Offical documentation](https://projects.archlinux.org/archiso.git/tree/docs)
+*   [Official documentation](https://projects.archlinux.org/archiso.git/tree/docs)
 
 ### Example customization template
 

@@ -1383,6 +1383,10 @@ If this helps, you can add this to your `~/.bashrc` file.
 
 Add `-show-cursor` to QEMU's options to see a mouse cursor.
 
+If that still doesn't work, make sure you've set your display device appropriately.
+
+For example: `-vga qxl`
+
 ### Keyboard seems broken or the arrow keys do not work
 
 Should you find that some of your keys do not work or "press" the wrong key (in particular, the arrow keys), you likely need to specify your keyboard layout as an option. The keyboard layouts can be found in `/usr/share/qemu/keymaps`.

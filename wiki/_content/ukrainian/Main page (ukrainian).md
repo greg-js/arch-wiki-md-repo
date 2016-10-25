@@ -18,11 +18,11 @@
 
 	Узагальнює подібності та відмінності між Arch та іншими дистрибутивами.
 
-	[Посібник зі встановлення](/index.php/Installation_guide_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Installation guide (Українська)")
+	[Посібник з встановлення](/index.php/Installation_guide_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Installation guide (Українська)")
 
 	Короткий посібник зі встановлення, призначений для досвідчених користувачів Arch Linux.
 
-	[Загальні рекомендації (Англійською)](/index.php/General_recommendations "General recommendations")
+	[Загальні рекомендації](/index.php/General_recommendations_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "General recommendations (Українська)")
 
 	Список рекомендацій після встановлення та інших популярних статей.
 

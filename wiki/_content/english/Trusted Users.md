@@ -5,12 +5,12 @@ The [Trusted Users](https://www.archlinux.org/trustedusers/) serve the following
 
 ## Contents
 
-*   [1 How to become TU?](#How_to_become_TU.3F)
+*   [1 How do I become a TU?](#How_do_I_become_a_TU.3F)
 *   [2 Active Trusted Users](#Active_Trusted_Users)
 *   [3 Inactive Trusted Users](#Inactive_Trusted_Users)
 *   [4 Some Past Trusted Users](#Some_Past_Trusted_Users)
 
-## How to become TU?
+## How do I become a TU?
 
 The *minimum* requirements to becoming a TU are as follows:
 
@@ -26,7 +26,7 @@ Even though you could become a TU by merely fulfilling those minimum requirement
 *   patches for Arch projects
 *   involvement in a few open-source projects (even if they are your own)
 
-In case you still feel up to becoming TU after reading these lists, you should find another TU to sponsor you and write a witty application signed with your GPG key to the aur-general mailing list.
+In case you still feel up to becoming a TU after reading these lists, you should find another TU to sponsor you and write a witty application signed with your GPG key to the aur-general mailing list.
 
 **Note:** Should the TU you contact decline to sponsor your application, you should make this fact known if you seek sponsorship from another TU.
 

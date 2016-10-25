@@ -1283,7 +1283,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Vocal** — Simple Podcast Client for the Modern Desktop (GTK+).
 
-	[https://launchpad.net/vocal](https://launchpad.net/vocal) || [vocal-bzr](https://aur.archlinux.org/packages/vocal-bzr/)
+	[https://launchpad.net/vocal](https://launchpad.net/vocal) || [vocal](https://aur.archlinux.org/packages/vocal/)
 
 #### Usenet newsreaders & newsgrabbers
 
@@ -2093,10 +2093,6 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[http://sourceforge.net/projects/gvolwheel/](http://sourceforge.net/projects/gvolwheel/) || [gvolwheel](https://aur.archlinux.org/packages/gvolwheel/)
 
-*   **GVTray** — A master volume mixer for the system tray.
-
-	[https://code.google.com/archive/p/gtk-tray-utils/](https://code.google.com/archive/p/gtk-tray-utils/) || [gvtray](https://aur.archlinux.org/packages/gvtray/)
-
 *   **pa-applet** — PulseAudio system tray applet with volume bar.
 
 	[https://github.com/fernandotcl/pa-applet](https://github.com/fernandotcl/pa-applet) || [pa-applet-git](https://aur.archlinux.org/packages/pa-applet-git/)
@@ -2148,10 +2144,6 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 *   **Audio Tag Tool** — Tool to edit tags in MP3 and Ogg Vorbis files.
 
 	[http://tagtool.sourceforge.net/](http://tagtool.sourceforge.net/) || [tagtool](https://aur.archlinux.org/packages/tagtool/)
-
-*   **Cowbell** — Elegant music organizer that supports many audio formats including MP3, Ogg/FLAC, and MusePack.
-
-	[http://more-cowbell.org/](http://more-cowbell.org/) || [cowbell](https://aur.archlinux.org/packages/cowbell/)
 
 *   **[EasyTag](https://en.wikipedia.org/wiki/EasyTag "wikipedia:EasyTag")** — Utility for viewing, editing and writing ID3 tags of music files, supports many audio formats.
 
@@ -2477,10 +2469,6 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[http://community.kde.org/KDEConnect](http://community.kde.org/KDEConnect) || [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)
 
-*   **Moto4Lin** — File manager and seem editor for Motorola P2K phones (like C380/C650).
-
-	[http://sourceforge.net/projects/moto4lin/](http://sourceforge.net/projects/moto4lin/) || [moto4lin](https://aur.archlinux.org/packages/moto4lin/)
-
 ### Digital camera managers
 
 See [Digital Cameras#Other frontend applications for libgphoto2](/index.php/Digital_Cameras#Other_frontend_applications_for_libgphoto2 "Digital Cameras").
@@ -2644,10 +2632,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — Text editor using the GTK+ toolkit with basic features of an integrated development environment.
 
 	[https://geany.org](https://geany.org) || [geany](https://www.archlinux.org/packages/?name=geany)
-
-*   **IEP** — Cross-platform Python IDE focused on interactivity and introspection, which makes it very suitable for scientific computing.
-
-	[http://iep-project.org/](http://iep-project.org/) || [iep](https://aur.archlinux.org/packages/iep/)
 
 *   **[IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA "wikipedia:IntelliJ IDEA")** — IDE for Java, Groovy and other programming languages with advanced refactoring features.
 
@@ -2865,7 +2849,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **Stjerm** — GTK+-based drop-down terminal emulator that provides a minimalistic interface combined with a small file size, lightweight memory usage and easy integration with composite window managers such as Compiz.
 
-	[https://code.google.com/archive/p/stjerm-terminal-emulator/](https://code.google.com/archive/p/stjerm-terminal-emulator/) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
+	[https://github.com/stjerm/stjerm](https://github.com/stjerm/stjerm) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
 
 *   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
 
@@ -3073,10 +3057,6 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 
 	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
 
-*   **Pinot** — Personal search and metasearch tool
-
-	[https://code.google.com/archive/p/pinot-search/](https://code.google.com/archive/p/pinot-search/) || [pinot](https://www.archlinux.org/packages/?name=pinot)
-
 *   **Recoll** — Full text search tool based on Xapian backend
 
 	[http://www.lesbonscomptes.com/recoll/](http://www.lesbonscomptes.com/recoll/) || [recoll](https://www.archlinux.org/packages/?name=recoll)
@@ -3084,10 +3064,6 @@ See also [Wikipedia:List of search engines#Desktop search engines](https://en.wi
 *   **Searchmonkey** — A powerful GUI search utility for matching regex patterns
 
 	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
-
-*   **[Strigi](https://en.wikipedia.org/wiki/Strigi "wikipedia:Strigi")** — Fast crawling desktop search engine with a Qt GUI.
-
-	[http://strigi.sourceforge.net/](http://strigi.sourceforge.net/) || [strigi](https://www.archlinux.org/packages/?name=strigi)
 
 *   **[Tracker](https://en.wikipedia.org/wiki/Tracker_(search_software) "wikipedia:Tracker (search software)")** — All-in-one indexer, search tool and metadata database.
 
@@ -3193,10 +3169,6 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
 
-*   **Beyond Compare** — A graphical tool for comparing files and folders, and generating reports.
-
-	[http://www.scootersoftware.com/](http://www.scootersoftware.com/) || [beyond-compare](https://aur.archlinux.org/packages/beyond-compare/)
-
 *   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting.
 
 	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
@@ -3301,10 +3273,6 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification").
 
-*   **adesklet SystemMonitor** — Collection of modular stackable system monitors for [adesklets](https://en.wikipedia.org/wiki/Adesklets "wikipedia:Adesklets").
-
-	[http://adesklets.sourceforge.net/desklets.html](http://adesklets.sourceforge.net/desklets.html) || [adesklet-systemmonitor](https://aur.archlinux.org/packages/adesklet-systemmonitor/)
-
 *   **candybar** — WebKit-based status line for tiling window managers.
 
 	[https://github.com/Lokaltog/candybar](https://github.com/Lokaltog/candybar) || [candybar-git](https://aur.archlinux.org/packages/candybar-git/)
@@ -3324,6 +3292,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **[GKrellM](https://en.wikipedia.org/wiki/GKrellM "wikipedia:GKrellM")** — Simple, flexible system monitor package for [GTK+](/index.php/GTK%2B "GTK+") with many plug-ins.
 
 	[http://billw2.github.io/gkrellm/gkrellm.html](http://billw2.github.io/gkrellm/gkrellm.html) || [gkrellm](https://www.archlinux.org/packages/?name=gkrellm)
+
+*   **glances** — CLI curses-based monitoring tool in Python.
+
+	[http://nicolargo.github.io/glances](http://nicolargo.github.io/glances) || [glances](https://www.archlinux.org/packages/?name=glances)
 
 *   **gnome-system-monitor** — A system monitor for [GNOME](/index.php/GNOME "GNOME").
 
@@ -3381,9 +3353,9 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/djmelik/archey](https://github.com/djmelik/archey) || [archey2](https://aur.archlinux.org/packages/archey2/)
 
-*   **archey3-git** — Python script to display system infomation alongside the Arch Linux logo.
+*   **archey3** — Python script to display system infomation alongside the Arch Linux logo.
 
-	[http://www.generictestdomain.net/archey3/](http://www.generictestdomain.net/archey3/) || [archey3-git](https://aur.archlinux.org/packages/archey3-git/)
+	[http://www.generictestdomain.net/archey3/](http://www.generictestdomain.net/archey3/) || [archey3](https://www.archlinux.org/packages/?name=archey3)
 
 *   **dmidecode** — It reports information about your system's hardware as described in your system BIOS according to the SMBIOS/DMI standard.
 
@@ -3569,10 +3541,6 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 	[http://www.openoffice.org/](http://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
-*   **[Siag Office](https://en.wikipedia.org/wiki/Siag_Office "wikipedia:Siag Office")** — Extremely lightweight office suite that provides a word processor, spreadsheet, text editor, file manager and previewer.
-
-	[http://siag.nu/](http://siag.nu/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
-
 *   **[SoftMaker Office](https://en.wikipedia.org/wiki/SoftMaker_Office "wikipedia:SoftMaker Office")** — A complete, reliable, lightning-fast and Microsoft Office-compatible office suite with a word processor, spreadsheet, and presentation graphics software.
 
 	[http://www.freeoffice.com/](http://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)
@@ -3612,10 +3580,6 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 *   **[OpenOffice Writer](/index.php/OpenOffice "OpenOffice")** — Full-featured word processor included in the OpenOffice suite.
 
 	[http://www.openoffice.org/](http://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
-
-*   **Pathetic Writer** — X-based rich text processor included in Siag Office.
-
-	[http://siag.nu/pw/](http://siag.nu/pw/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
 *   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
 
@@ -3684,10 +3648,6 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 *   **[sc](/index.php?title=Sc&action=edit&redlink=1 "Sc (page does not exist)")** — curses-based lightweight spreadsheet.
 
 	[http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html](http://ibiblio.org/pub/linux/apps/financial/spreadsheet/!INDEX.html) || [sc](https://www.archlinux.org/packages/?name=sc)
-
-*   **Siag** — Spreadsheet application based on the X Window System and the Scheme programming language included in Siag Office.
-
-	[http://siag.nu/siag/](http://siag.nu/siag/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
 ### Scientific documents
 

@@ -47,32 +47,19 @@ accept for local alias <aliases> deliver to mbox
 
 ### Hybrid : local mail and relay
 
-If you want to :
-
-*   send local email *locally*, I mean without going through a relay (useful for cron & at mail notifications)
-
-*   use a relay to send a mail outside of localhost
-
-You can adapt this `/etc/smtpd/smtpd.conf` to your case :
+These two lines in `/etc/smtpd/smtpd.conf` :
 
 ```
-# This is the smtpd server system-wide configuration file.
-# See smtpd.conf(5) for more information.
-
-# To accept external mail, replace with: listen on all
-listen on localhost
-
-# If you edit the file, you have to run "smtpctl update table aliases"
-table aliases file:/etc/smtpd/aliases
-
-# Uncomment the following to accept external mail for domain "example.org"
-#accept from any for domain "example.org" alias <aliases> deliver to mbox
-
 accept for local alias <aliases> deliver to mbox
-
 accept for any relay via "smtp://smtp.foo.bar" as "@foo.bar"
 
 ```
+
+configure OpenSMTPD to :
+
+*   send local email *locally*, without going through a relay (useful for cron & at mail notifications)
+
+*   use a relay to send a mail outside of localhost
 
 Simply replace *smtp.foo.bar* by your ISP mail server, or another server at your convenience.
 

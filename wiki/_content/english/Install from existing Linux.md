@@ -57,7 +57,7 @@ In general, it is a good idea to have a local copy of your original `/etc` direc
 
 Install the [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) package.
 
-Follow [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide"). If you already use the `/mnt` directory for something else, just create another directory such as `/mnt/install`, and use that instead.
+Follow [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide"). If you already use the `/mnt` directory for something else, just create another directory such as `/mnt/install`, and use that instead.
 
 Then follow [Installation guide#Installation](/index.php/Installation_guide#Installation "Installation guide"). You can skip [Installation guide#Select the mirrors](/index.php/Installation_guide#Select_the_mirrors "Installation guide"), since the host should already have a correct mirrorlist.
 

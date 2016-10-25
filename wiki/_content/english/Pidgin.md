@@ -23,10 +23,11 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
 *   [9 History import Kopete to Pidgin](#History_import_Kopete_to_Pidgin)
 *   [10 Backup](#Backup)
 *   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Browser error](#Browser_error)
-    *   [11.2 ICQ Buddy Information encoding fix](#ICQ_Buddy_Information_encoding_fix)
-    *   [11.3 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
-    *   [11.4 Sound fix](#Sound_fix)
+    *   [11.1 Version Match for Sametime](#Version_Match_for_Sametime)
+    *   [11.2 Browser error](#Browser_error)
+    *   [11.3 ICQ Buddy Information encoding fix](#ICQ_Buddy_Information_encoding_fix)
+    *   [11.4 Installing Pidgin after a Carrier installation](#Installing_Pidgin_after_a_Carrier_installation)
+    *   [11.5 Sound fix](#Sound_fix)
 *   [12 See also](#See_also)
 
 ## Installation
@@ -330,6 +331,18 @@ chmod +x ~/bin/history_import_kopete2pidgin.sh
 Save `~/.purple` to backup all message logs, accounts and other application data.
 
 ## Troubleshooting
+
+### Version Match for Sametime
+
+There was an issue if you would connect to the Sametime via Pidgin, it prompt "Version Match". A potential solution on the client side is to fake the version in accounts.xml. Insert/change the lines:
+
+```
+<setting name='fake_client_id' type='bool'>1</setting>
+<setting name='client_minor' type='int'>8511</setting>
+
+```
+
+in the <settings> section of Sametime account in accounts.xml which is located in $HOME/.purple/ folder.
 
 ### Browser error
 

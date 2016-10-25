@@ -554,7 +554,7 @@ ctl.!default {
 
 ```
 
-If it still does not work, check with `pavucontrol` in the playback tab and make sure the relevant programs are outputting to PulseAudio JACK Sink instead of your audio card (which JACK has control of, so it will not work).
+If it still does not work, check with `pavucontrol` in the playback tab and make sure the relevant programs are outputting to PulseAudio JACK Sink instead of your audio card (which JACK has control of, so it will not work). Also ensure that in the JACK graph the PulseAudio JACK Source is connected to the system audio output.
 
 ### The new way
 

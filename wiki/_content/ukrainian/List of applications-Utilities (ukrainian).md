@@ -1,8 +1,8 @@
-**[List of applications](/index.php/List_of_applications "List of applications")**
+**[Список додатків](/index.php/List_of_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications (Українська)")**
 
 * * *
 
-[Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – **Utilities** – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
+[Інтернет](/index.php/List_of_applications/Internet_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Internet (Українська)") – [Мультимедіа](/index.php/List_of_applications/Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Multimedia (Українська)") – **Утиліти** – [Документи](/index.php/List_of_applications/Documents_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Documents (Українська)") – [Безпека](/index.php/List_of_applications/Security_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Security (Українська)") – [Наука](/index.php/List_of_applications/Science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Science (Українська)") – [Інше](/index.php/List_of_applications/Other_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "List of applications/Other (Українська)")
 
 ## Contents
 
@@ -831,10 +831,6 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://billw2.github.io/gkrellm/gkrellm.html](http://billw2.github.io/gkrellm/gkrellm.html) || [gkrellm](https://www.archlinux.org/packages/?name=gkrellm)
 
-*   **glances** — CLI curses-based monitoring tool in Python.
-
-	[http://nicolargo.github.io/glances](http://nicolargo.github.io/glances) || [glances](https://www.archlinux.org/packages/?name=glances)
-
 *   **gnome-system-monitor** — A system monitor for [GNOME](/index.php/GNOME "GNOME").
 
 	[https://help.gnome.org/users/gnome-system-monitor/](https://help.gnome.org/users/gnome-system-monitor/) || [gnome-system-monitor](https://www.archlinux.org/packages/?name=gnome-system-monitor) [gnome-system-monitor-gtk2](https://aur.archlinux.org/packages/gnome-system-monitor-gtk2/)
@@ -891,9 +887,9 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[https://github.com/djmelik/archey](https://github.com/djmelik/archey) || [archey2](https://aur.archlinux.org/packages/archey2/)
 
-*   **archey3** — Python script to display system infomation alongside the Arch Linux logo.
+*   **archey3-git** — Python script to display system infomation alongside the Arch Linux logo.
 
-	[http://www.generictestdomain.net/archey3/](http://www.generictestdomain.net/archey3/) || [archey3](https://www.archlinux.org/packages/?name=archey3)
+	[http://www.generictestdomain.net/archey3/](http://www.generictestdomain.net/archey3/) || [archey3-git](https://aur.archlinux.org/packages/archey3-git/)
 
 *   **dmidecode** — It reports information about your system's hardware as described in your system BIOS according to the SMBIOS/DMI standard.
 

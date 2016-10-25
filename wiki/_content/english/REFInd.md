@@ -44,7 +44,7 @@ To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Find
 
 ### Scripted installation
 
-The rEFInd package includes the `/usr/bin/refind-install` script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, but for many systems it should be sufficient to simply run:
+The rEFInd package includes the `/usr/bin/refind-install` script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations, see [refind-install(8)](http://www.rodsbooks.com/refind/refind-install.html). For many systems it should be sufficient to simply run:
 
 ```
 # refind-install
@@ -219,7 +219,7 @@ If *rEFInd* automatically detects your kernel, you can place a `refind_linux.con
 Alternatively, try running:
 
 ```
-# refind-mkrlconf
+# mkrlconf
 
 ```
 

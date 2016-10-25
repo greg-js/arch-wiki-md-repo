@@ -10,7 +10,6 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
     *   [2.4 xsane crashes](#xsane_crashes)
 *   [3 Canon](#Canon)
     *   [3.1 Scanning over the network with Canon Pixma all-in-one printer/scanners](#Scanning_over_the_network_with_Canon_Pixma_all-in-one_printer.2Fscanners)
-    *   [3.2 Cannot read scanner make and model](#Cannot_read_scanner_make_and_model)
 *   [4 Epson](#Epson)
     *   [4.1 Epson Perfection 1270](#Epson_Perfection_1270)
     *   [4.2 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
@@ -110,18 +109,6 @@ Find out your printer/scanner's IP address, and add it on a new line to `/etc/sa
 
 Sane should now find your device. For more details refer to `man sane-pixma`.
 
-### Cannot read scanner make and model
-
-If you have a Canon multi function printer/scanner and get an error message of the following kind:
-
-```
-Cannot read mac address, skipping this scanner
-Cannot read scanner make & model: bjnp://
-
-```
-
-and the scanner refuses to connect, then it may be because you have a newer scanner using the mfnp, and not the bjnp protocol. Unfortunately, this scanner may not be supported (yet) by the current sane version. However, you can install [sane-git](https://aur.archlinux.org/packages/sane-git/) to get a version supporting mfnp reasonably well. (And make sure that the scanner is in "remote" scanning mode - otherwise it will not communicate it's scanning capabilities over the network at all)
-
 ## Epson
 
 With Epson scanners, you can use "Image Scan! for Linux".
@@ -203,24 +190,19 @@ For the operation of the scanner S300M a firmware file `/usr/share/sane/epjitsu/
 
 ## HP
 
-If your HP device [is supported by hplip](http://hplipopensource.com/hplip-web/supported_devices/index.html), install the [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package.
+If your HP device [is supported by hplip](http://hplipopensource.com/hplip-web/supported_devices/index.html), [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package.
 
 The latter comes with 3 tools:
 
-*   `hp-setup` to add and setup the device
-*   `hp-plugin` is the 'HPLIP Plugin Download and Install Utility'.
-*   `hp-scan` is the 'HPLIP Scan Utility'. If you need that tool, you will need to install [python-pillow](https://www.archlinux.org/packages/?name=python-pillow).
+*   *hp-setup* to add and setup the device
+*   *hp-plugin* is the 'HPLIP Plugin Download and Install Utility'.
+*   *hp-scan* is the 'HPLIP Scan Utility'. If you need that tool, you will need to install [python-pillow](https://www.archlinux.org/packages/?name=python-pillow).
 
-`hp-setup` requires Python Qt4 when run using the GUI (which is the default). To avoid installing the old Qt4 toolchain, you can run hp-setup in CLI using `-i` as argument.
+*hp-setup* requires Python Qt4 when run using the GUI (which is the default). To avoid installing the old Qt4 toolchain, you can run the CLI interface of hp-setup using `-i` as argument.
 
-If your device is plugged as USB, run `hp-setup` as root and follow the on screen instructions.
+If the device is connected by USB, run *hp-setup* as root and follow the on screen instructions.
 
-If your devices is connected on the network, run `hp-setup` like this:
-
-```
-# hp-setup <printer ip>
-
-```
+If your device is connected on the network, use `# hp-setup <printer ip>` instead.
 
 ## Mustek
 
@@ -242,7 +224,7 @@ usb 0x04e8 0x3441
 
 Change the printer model as needed. You can get the idVendor and idProduct code with `lsusb`. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=123934).
 
-When plugging in a usb2 printer/scanner to a usb3 interface there is currently a bug in the xhci kernel code that causes the xsane process to hang when the scanner is connected. In the event of a multi-function Samsung printer having an ethernet or wireless interface then it is possible to access the scanner over the network rather than the usb interface by adding in a line to the file /etc/sane.d/xerox_mfp.conf such as
+To access the scanner over the network rather than the usb interface, add a line to `/etc/sane.d/xerox_mfp.conf` such as
 
 ```
 #Samsung scx4500w wireless ip network address
@@ -251,5 +233,3 @@ tcp xx.xx.xx.xx
 ```
 
 where xx.xx.xx.xx is the static ip address of the printer.
-
-Then when xsane starts up you can choose the network tcp access option instead of the usb line, and the scanner will be accessed via the network instead of the usb port and avoid the current usb3 issues.
