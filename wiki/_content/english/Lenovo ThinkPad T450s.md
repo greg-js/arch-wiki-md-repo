@@ -4,15 +4,18 @@
     *   [1.1 Components](#Components)
     *   [1.2 Support](#Support)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Display](#Display)
-    *   [2.2 Wireless](#Wireless)
-        *   [2.2.1 rtl8192ee](#rtl8192ee)
-    *   [2.3 Touchpad](#Touchpad)
-    *   [2.4 Sound](#Sound)
-    *   [2.5 Fingerprint Reader](#Fingerprint_Reader)
-    *   [2.6 Function Keys](#Function_Keys)
-    *   [2.7 LEDs](#LEDs)
-    *   [2.8 Intel Rapid Start Technology (IRST)](#Intel_Rapid_Start_Technology_.28IRST.29)
+    *   [2.1 Intel ucode](#Intel_ucode)
+    *   [2.2 Display](#Display)
+    *   [2.3 Wireless](#Wireless)
+        *   [2.3.1 rtl8192ee](#rtl8192ee)
+    *   [2.4 Touchpad](#Touchpad)
+    *   [2.5 Sound](#Sound)
+    *   [2.6 Fingerprint Reader](#Fingerprint_Reader)
+    *   [2.7 Function Keys](#Function_Keys)
+    *   [2.8 Power Management](#Power_Management)
+    *   [2.9 SSD](#SSD)
+    *   [2.10 LEDs](#LEDs)
+    *   [2.11 Intel Rapid Start Technology (IRST)](#Intel_Rapid_Start_Technology_.28IRST.29)
 *   [3 See also](#See_also)
 
 ## Model description
@@ -55,6 +58,12 @@ Lenovo ThinkPad T450s
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 
 ## Configuration
+
+### Intel ucode
+
+Be sure to install intel ucode for ucode update on intel CPUs and regenerate your boot loader. See [Microcode](/index.php/Microcode "Microcode") for details.
+
+pacman -S intel-ucode
 
 ### Display
 
@@ -109,7 +118,7 @@ All "special" keys either function or map to Xorg special key classes out of the
 | F10 | 217 | XF86Search | Open "Windows Search" | No |
 | F11 | 120 | XF86LaunchA | View open programs | No |
 | F12 | 144 | XF86Explorer | Open "Computer" | No |
-| Fn+4 | 142 | XF86Sleep | Enters sleep mode | Yes |
+| Fn+4 | 142 | XF86Sleep | Enters sleep mode | NO |
 | Fn+p | 119 | Pause | Pause | Yes |
 | Fn+s | 56+99 | Sys_Req | SysReq | Yes |
 | Fn+K | 70 | Scroll_Lock | Scroll Lock | Yes |
@@ -118,9 +127,21 @@ All "special" keys either function or map to Xorg special key classes out of the
 
 Note that there is a BIOS option to change the function keys so that F1 - F12 are the primary and the listed functions are only triggered by the "Fn" key.
 
+### Power Management
+
+Be sure to install tlp or powertop.
+
+sudo pacman -S tlp sudo systemctl enable tlp.service sudo systemctl start tlp.service
+
+### SSD
+
+If you have an SSD installed be sure to install fstrim and enable it.
+
+sudo systemctl enable fstrim.timer sudo systemctl start fstrim.timer
+
 ### LEDs
 
-There are six LEDs. All work out of the box except for the mic mute LED. See the Lenovo manual for location and functionality of LEDs.
+There are six LEDs. All work out of the box. See the Lenovo manual for location and functionality of LEDs.
 
 ### Intel Rapid Start Technology (IRST)
 

@@ -483,7 +483,7 @@ An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepk
 
 **Tip:**
 
-*   These tasks can be automated, see [plist-gist](https://aur.archlinux.org/packages/plist-gist/) or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) for examples.
+*   These tasks can be automated, see [plist-gist](https://aur.archlinux.org/packages/plist-gist/), [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) or [pacmanity](https://aur.archlinux.org/packages/pacmanity/) for examples.
 *   To skip already installed packages, use `--needed`.
 
 Keeping a list of native, explicitly installed packages can be useful to speed up installation on a new system.

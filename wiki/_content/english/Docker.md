@@ -5,6 +5,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Opening remote API](#Opening_remote_API)
+        *   [2.1.1 Remote API with systemd](#Remote_API_with_systemd)
     *   [2.2 Daemon socket configuration](#Daemon_socket_configuration)
     *   [2.3 Proxies](#Proxies)
         *   [2.3.1 Proxy configuration](#Proxy_configuration)
@@ -71,6 +72,22 @@ To open the Remote API to port `4243` manually, run:
 
 `-H unix:///var/run/docker.sock` part for host machine access via terminal.
 
+##### Remote API with systemd
+
+To start the remote API with the docker daemon modify `/usr/lib/systemd/system/docker.service` and replace the `ExecStart` value.
+
+```
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+
+```
+
+Reload the service-configurations
+
+```
+# systemctl daemon-reload
+
+```
+
 ### Daemon socket configuration
 
 The *docker* daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, edit `/etc/systemd/system/docker.socket`, where `ListenStream` is the used port:
@@ -99,17 +116,17 @@ Environment="HTTP_PROXY=192.168.1.1"
 
 **Note:** This assumes `192.168.1.1` is your proxy server, do not use `127.0.0.1`.
 
-Flush changes: `sudo systemctl daemon-reload`
+Flush changes: `# systemctl daemon-reload`
 
 Verify that the configuration has been loaded:
 
 ```
-sudo systemctl show docker --property Environment
+# systemctl show docker --property Environment
 Environment=HTTP_PROXY=192.168.1.1
 
 ```
 
-Restart Docker: `sudo systemctl restart docker`
+Restart Docker: `# systemctl restart docker`
 
 #### Container configuration
 

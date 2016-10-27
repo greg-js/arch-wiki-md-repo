@@ -178,7 +178,7 @@ Deluge-my                  ALLOW       Anywhere
 
 ## User rules
 
-All user rules are stored in `usr/lib/ufw/user.rules` and `usr/lib/ufw/user6.rules` for IPv4 and IPv6 respectively.
+All user rules are stored in `etc/ufw/user.rules` and `etc/ufw/user6.rules` for IPv4 and IPv6 respectively.
 
 ## Tips and tricks
 

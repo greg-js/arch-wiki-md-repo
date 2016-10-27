@@ -17,6 +17,7 @@
     *   [2.6 Scripts](#Scripts)
         *   [2.6.1 Stop ARP spoofing attacks](#Stop_ARP_spoofing_attacks)
         *   [2.6.2 Change MAC using macchanger](#Change_MAC_using_macchanger)
+        *   [2.6.3 Start/stop openvpn client](#Start.2Fstop_openvpn_client)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Autoconnect on resume from hibernation/suspension](#Autoconnect_on_resume_from_hibernation.2Fsuspension)
     *   [3.2 Importing pynotify failed, notifications disabled](#Importing_pynotify_failed.2C_notifications_disabled)
@@ -201,6 +202,38 @@ elif [[ "${connection_type}" == "wired" ]]; then
         ip link set enp1s0 down
         macchanger -A enp1s0
         ip link set enp1s0 up
+fi
+
+```
+
+#### Start/stop openvpn client
+
+Put the following script in `/etc/wicd/scripts/postconnect/`, to be able to restart openvpn client when wireless connected to specific ESSID, and replace the `YOUR_WIFI_ESSID` with your ESSID.
+
+```
+#!/bin/sh
+
+ESSID="YOUR_WIFI_ESSID"
+
+if [ $1 == "wireless" ]; then
+	if [ $2 == "$ESSID" ]; then
+		systemctl restart openvpn@client
+	fi
+fi
+
+```
+
+Put the following script in `/etc/wicd/scripts/predisconnect/`, to stop openvpn client when wireless disconnected from specific ESSID and replace the `YOUR_WIFI_ESSID` with your ESSID.
+
+```
+#!/bin/sh
+
+ESSID="YOUR_WIFI_ESSID"
+
+if [ $1 == "wireless" ]; then
+	if [ $2 == "$ESSID" ]; then
+		systemctl stop openvpn@client
+	fi
 fi
 
 ```

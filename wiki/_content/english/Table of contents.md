@@ -28,7 +28,7 @@
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(45)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(21)</small> |
-| <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(14)</small> |
+| <small>2.12.3.</small> [Streaming](/index.php/Category:Streaming "Category:Streaming") <small>(15)</small> |
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(19)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(4)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(2)</small> |

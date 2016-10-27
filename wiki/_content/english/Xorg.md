@@ -8,7 +8,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 *   [1 Installation](#Installation)
     *   [1.1 Driver installation](#Driver_installation)
-    *   [1.2 ATI](#ATI)
+    *   [1.2 AMD](#AMD)
 *   [2 Running](#Running)
     *   [2.1 Display manager](#Display_manager)
     *   [2.2 Manually](#Manually)
@@ -104,7 +104,7 @@ Other video drivers can be found in the [xorg-drivers](https://www.archlinux.org
 
 Xorg should run smoothly without closed source drivers, which are typically needed only for advanced features such as fast 3D-accelerated rendering for games.
 
-### ATI
+### AMD
 
 | GPU architecture | Radeon cards | Open-source driver | Proprietary driver |
 | GCN 4 | [various](https://en.wikipedia.org/wiki/Graphics_Core_Next#GCN_4th_Generation_.28Arctic_Islands.2C_RX_400_and_Vega_10.2F11.29 "wikipedia:Graphics Core Next") | [AMDGPU](/index.php/AMDGPU "AMDGPU") | [AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") |

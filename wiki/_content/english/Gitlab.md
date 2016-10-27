@@ -799,8 +799,6 @@ GitLab v8.12 somehow broke [gitlab-unicorn](https://www.archlinux.org/packages/?
 
 By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `127.0.0.1:8181`. You should consider [editing](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` according to your LAN IP address, for example `-listenAddr 192.168.0.1:8181`.
 
----
-
 When using nginx remember to verify your nginx configuration file. To switch from gitlab-unicorn to gitlab-workhorse please see configuration in /etc/webapps/gitlab/nginx.conf.example. To fix not working broken CSS you probably will need to change your upstream to point to workhorse socket.
 
 ## Useful Tips

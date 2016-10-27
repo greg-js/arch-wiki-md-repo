@@ -73,18 +73,20 @@ If you want to reach the Arch Linux staff for questions, you can either use the 
 
 ## Mirror size
 
-To give you an impression how much space will be needed for a mirror here are some numbers (as of 2015-01-21):
+To give you an impression how much space will be needed for a mirror here are some numbers (as of 2016-10-25):
 
 Mandatory:
 
-*   pool (all packages) - 41GB
+*   pool (all packages) - 48GB
 *   repositories (core, community, extra, testing, gnome-unstable, kde-unstable, multilib) - total ~200MB
 
 Optional:
 
-*   iso - 7GB (encouraged)
+*   iso - 9GB (encouraged)
 *   archive - 15GB (permanently frozen)
-*   other - 9GB
-*   sources - 28GB
+*   other - 13GB
+*   sources - 50GB
 
 Most mirrors do not sync archive, other and sources directories, but sync everything else (including temporary repositories), so usually you will need about 50GB reserved for Arch Linux mirror.
+
+However, note that the required space may temporarily increase when a big rebuild happens and thus many packages exist twice in different versions. Please plan in a buffer of 30GB to 50GB on top of the above mentioned values.

@@ -28,11 +28,14 @@ Install [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) an
 
 Generate a certificate (this will be valid for 1 years, after which it needs to be reissued, just change the -days to another value if you so desire):
 
- `# openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /var/lib/quassel/quasselCert.pem -out /var/lib/quassel/quasselCert.pem` 
+```
+# openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /var/lib/quassel/quasselCert.pem -out /var/lib/quassel/quasselCert.pem
+
+```
 
 As this is a self-signed certificate, you can type whatever you want in the fields.
 
-Open port 4242 in your [firewall](/index.php/Firewall "Firewall").
+Open port `4242` in your [firewall](/index.php/Firewall "Firewall").
 
 Start core by [starting](/index.php/Start "Start") `quassel.service`.
 

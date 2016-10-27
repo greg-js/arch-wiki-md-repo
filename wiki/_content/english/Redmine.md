@@ -636,7 +636,7 @@ If you get the following runtime error after upgrading ImageMagick `This install
 
 After thel latest OpenSSL release (version 1.0.2.g-3) the ruby stop to work and you cannot build some ruby versions. You have two way to fix it:
 
-1\. Use ruby-head (if using RVM) or 2.3.0or above (if using arhc package).
+1\. Use ruby-head (if using RVM) or 2.3.0or above (if using Arch package).
 
 2\. Use this patch as noted in [Issue 3529](https://github.com/rvm/rvm/issues/3529#issuecomment-157205030) and [Issue 3548](https://github.com/rvm/rvm/issues/3548)
 

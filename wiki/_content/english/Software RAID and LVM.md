@@ -370,7 +370,7 @@ Follow the directions outlined the in [Installation](/index.php/Installation "In
 
 ### Configure system
 
-**Warning:** Follow the steps in the [LVM#Important](/index.php/LVM#Important "LVM") section before proceeding with the installation.
+**Warning:** Follow the steps in the [LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM](/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM "LVM") section before proceeding with the installation.
 
 #### mkinitcpio.conf
 

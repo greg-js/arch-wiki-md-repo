@@ -37,6 +37,7 @@ The following distributions include a pre-installed [Desktop environment](/index
 *   [ArchBang](https://sourceforge.net/projects/archbang/)
 *   [ArchBox](https://archbox-linux.github.io/)
 *   [ArchEX](https://sourceforge.net/projects/archex/)
+*   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/)
 *   [BBQLinux](https://sourceforge.net/projects/bbqlinux/)
 *   [BlackArch Linux](http://blackarch.org/)
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/)

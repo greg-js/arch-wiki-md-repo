@@ -175,11 +175,7 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
 
 Since Linux 4.1, ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
 
-First, you will need a kernel with `CONFIG_EXT4_ENCRYPTION` enabled. Since the Arch default [linux](https://www.archlinux.org/packages/?name=linux) does not yet have this option enabled, you will need to compile your own kernel.
-
-Second, update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43.
-
-Third, enable the encryption feature flag on your filesystem:
+Make sure you are using a kernel with the option `CONFIG_EXT4_ENCRYPTION` enabled and have the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package updated to at least version 1.43. Then enable the encryption feature flag on your filesystem:
 
 ```
 # tune2fs -O encrypt /dev/sdb

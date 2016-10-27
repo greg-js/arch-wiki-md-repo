@@ -53,7 +53,7 @@ The [Arduino Due](http://arduino.cc/en/Main/arduinoBoardDue) and the [Arduino Yu
 
 ### Intel Galileo
 
-The version of the Arduino IDE that supports the [Intel Galileo](http://arduino.cc/en/ArduinoCertified/IntelGalileo) board can be downloaded [here](https://communities.intel.com/community/makers/software/drivers).
+To use the Intel Galileo boards with Archlinux install the Arduino IDE and download the Galileo tools package via "Tools->Board->Boards Manager". To fix the installation you can follow [this github post](https://github.com/arduino/Arduino/issues/5523).
 
 ### On Arm7 devices
 

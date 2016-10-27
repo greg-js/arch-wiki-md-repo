@@ -33,7 +33,7 @@ which will also output the applied hierarchy. A single parameter file can also b
 
 ```
 
-See [the new configuration files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [systemd's sysctl.d man page](http://0pointer.de/public/systemd-man/sysctl.d.html) for more information.
+See [the new configuration files](http://0pointer.de/blog/projects/the-new-configuration-files) and more specifically [sysctl.d(5)](http://man7.org/linux/man-pages/man5/sysctl.d.5.html) for more information.
 
 The parameters available are those listed under `/proc/sys/`. For example, the `kernel.sysrq` parameter refers to the file `/proc/sys/kernel/sysrq` on the file system. The `sysctl -a` command can be used to display all currently available values.
 
@@ -80,6 +80,7 @@ The following specifies a parameter set to tighten network security options of t
 
 For some usecases, for example using the system as a [router](/index.php/Router "Router"), other parameters may be useful or required as well.
 
+ `/etc/sysctl.d/51-net.conf` 
 ```
 #### ipv4 networking and equivalent ipv6 parameters ####
 
@@ -96,7 +97,9 @@ net.ipv4.tcp_rfc1337 = 1
 ## sets the kernels reverse path filtering mechanism to value 1(on)
 ## will do source validation of the packet's recieved from all the interfaces on the machine
 ## protects from attackers that are using ip spoofing methods to do harm
+net.ipv4.conf.default.rp_filter = 1
 net.ipv4.conf.all.rp_filter = 1
+net.ipv6.conf.default.rp_filter = 1
 net.ipv6.conf.all.rp_filter = 1
 
 ## tcp timestamps
@@ -108,6 +111,7 @@ net.ipv4.tcp_timestamps = 0
 #net.ipv4.tcp_timestamps = 1
 
 ## log martian packets
+net.ipv4.conf.default.log_martians = 1
 net.ipv4.conf.all.log_martians = 1
 
 ## ignore echo broadcast requests to prevent being part of smurf attacks (default)
@@ -117,9 +121,11 @@ net.ipv4.icmp_echo_ignore_broadcasts = 1
 net.ipv4.icmp_ignore_bogus_error_responses = 1
 
 ## send redirects (not a router, disable it)
+net.ipv4.conf.default.send_redirects = 0
 net.ipv4.conf.all.send_redirects = 0
 
 ## ICMP routing redirects (only secure)
+#net.ipv4.conf.default.secure_redirects = 1 (default)
 #net.ipv4.conf.all.secure_redirects = 1 (default)
 net.ipv4.conf.default.accept_redirects=0
 net.ipv4.conf.all.accept_redirects=0
@@ -177,7 +183,7 @@ Try to change `kernel.io_delay_type` (x86 only):
 
 ## See also
 
-*   The [sysctl(8)](http://linux.die.net/man/8/sysctl) and [sysctl.conf(5)](http://www.unixlore.net/cgi-bin/man/man2html?5+sysctl.conf) man pages
+*   [sysctl(8)](http://man7.org/linux/man-pages/man8/sysctl.8.html) and [sysctl.conf(5)](http://man7.org/linux/man-pages/man5/sysctl.conf.5.html)
 *   Linux kernel documentation (`<kernel source dir>/Documentation/sysctl/`)
 *   Kernel Documentation: [IP Sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
 *   SysCtl.conf Tweaked for Security and Cable Speed [[1]](http://blog.gotux.net/code/config/sysctl/)

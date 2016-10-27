@@ -36,6 +36,9 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
+*   [26 October 2016] ASA-201610-18 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) arbitrary code execution
+*   [26 October 2016] ASA-201610-19 [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) arbitrary code execution
+
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.

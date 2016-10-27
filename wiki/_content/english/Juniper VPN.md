@@ -10,7 +10,7 @@
     *   [5.3 Network Connect launched but the VPN does not work](#Network_Connect_launched_but_the_VPN_does_not_work)
     *   [5.4 Network Connect launched and a configuration error message is displayed](#Network_Connect_launched_and_a_configuration_error_message_is_displayed)
     *   [5.5 ncapp.error Failed to connect/authenticate with IVE.](#ncapp.error_Failed_to_connect.2Fauthenticate_with_IVE.)
-    *   [5.6 ncsvc and kernel versions 3.19, 4.5 and 4.6](#ncsvc_and_kernel_versions_3.19.2C_4.5_and_4.6)
+    *   [5.6 ncsvc and kernel versions 3.19 and 4.5 to 4.8](#ncsvc_and_kernel_versions_3.19_and_4.5_to_4.8)
 *   [6 Caveats](#Caveats)
 *   [7 Alternative Method](#Alternative_Method)
 *   [8 Yet Another Method using the Mad Scientist's "msjnc" script](#Yet_Another_Method_using_the_Mad_Scientist.27s_.22msjnc.22_script)
@@ -202,9 +202,9 @@ Check that you have net-tools installed.
 
 See [my post](http://ubuntuforums.org/showthread.php?p=12127450#post12127450) on the ubuntu form. I was trying some of the several 'command-line' options and it turns out that in certain cases, policy will not permit it. It had to install both bin32-jre and bin32-firefox and authenticate through the browser.
 
-### ncsvc and kernel versions 3.19, 4.5 and 4.6
+### ncsvc and kernel versions 3.19 and 4.5 to 4.8
 
-Jupitern VPN does not support [linux](https://www.archlinux.org/packages/?name=linux) 4.5 and 4.6\. [Downgrade](/index.php/Downgrade "Downgrade") to version 4.4, or [install](/index.php/Install "Install") [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). This seems to be a reoccurence of an similar issue with [linux](https://www.archlinux.org/packages/?name=linux) 3.19\. [[1]](http://www.unixgr.com/juniper-ncsvc-and-linux-3-19/)
+Jupitern VPN does not support [linux](https://www.archlinux.org/packages/?name=linux) 4.5 to 4.8\. [Downgrade](/index.php/Downgrade "Downgrade") to version 4.4, or [install](/index.php/Install "Install") [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). This seems to be a reoccurence of an similar issue with [linux](https://www.archlinux.org/packages/?name=linux) 3.19\. [[1]](http://www.unixgr.com/juniper-ncsvc-and-linux-3-19/)
 
 ## Caveats
 

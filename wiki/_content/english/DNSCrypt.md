@@ -46,6 +46,8 @@ nameserver 127.0.0.1
 
 Other programs may overwrite this setting; see [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") for details.
 
+Finally, [start and enable](/index.php/Enable "Enable") the `dnscrypt-proxy.service`.
+
 ## Tips and tricks
 
 ### DNSCrypt as a forwarder for local DNS cache

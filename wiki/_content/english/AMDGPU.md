@@ -21,7 +21,7 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
 
 ## Selecting the right driver
 
-Depending on the card you have, find the right driver in [Xorg#ATI](/index.php/Xorg#ATI "Xorg"). This page has instructions for **AMDGPU** and **AMDGPU PRO**.
+Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/Xorg#AMD "Xorg"). This page has instructions for **AMDGPU** and **AMDGPU PRO**.
 
 ## Installation
 

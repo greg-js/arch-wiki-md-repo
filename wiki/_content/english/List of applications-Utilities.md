@@ -787,6 +787,10 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://dev.yorhel.nl/ncdu](http://dev.yorhel.nl/ncdu) || [ncdu](https://www.archlinux.org/packages/?name=ncdu)
 
+*   **duc** — A library and suite of tools for inspecting disk usage.
+
+	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
+
 ### Clock synchronization
 
 *   **[NTPd](/index.php/NTPd "NTPd")** — Network Time Protocol reference implementation.

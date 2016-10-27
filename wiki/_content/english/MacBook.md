@@ -1228,6 +1228,8 @@ Alternatively, you can use a OS X install disk to mute the chime. Boot from it, 
 
 (or whatever volume you want).
 
+**Note:** Required formatting of the value provided for key SystemAudioVolume may differ depending on MacBook model and perhaps the version of OS X install media. If the above command fails to work, try enclosing the value in double quotes.
+
 ### kworker using high CPU
 
 Sometime with the addition of Yosemite, some users found that kworker CPU usage will spike, as disccused [here](https://bbs.archlinux.org/viewtopic.php?id=171883&p=11). This is sometimes the result of runaway ACPI interrupts.

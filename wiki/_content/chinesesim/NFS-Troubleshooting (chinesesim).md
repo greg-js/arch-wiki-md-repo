@@ -14,7 +14,7 @@
     *   [2.2 mount.nfs4: access denied by server while mounting](#mount.nfs4:_access_denied_by_server_while_mounting)
     *   [2.3 不能连接到 OS X 客户端](#.E4.B8.8D.E8.83.BD.E8.BF.9E.E6.8E.A5.E5.88.B0_OS_X_.E5.AE.A2.E6.88.B7.E7.AB.AF)
     *   [2.4 Unreliable connection from OS X clients](#Unreliable_connection_from_OS_X_clients)
-    *   [2.5 Intermittent client freezes when copying large files](#Intermittent_client_freezes_when_copying_large_files)
+    *   [2.5 拷贝大文件时客户端似乎卡住了](#.E6.8B.B7.E8.B4.9D.E5.A4.A7.E6.96.87.E4.BB.B6.E6.97.B6.E5.AE.A2.E6.88.B7.E7.AB.AF.E4.BC.BC.E4.B9.8E.E5.8D.A1.E4.BD.8F.E4.BA.86)
     *   [2.6 mount.nfs: Operation not permitted](#mount.nfs:_Operation_not_permitted)
     *   [2.7 mount.nfs: Protocol not supported](#mount.nfs:_Protocol_not_supported)
     *   [2.8 Problems with Vagrant and synced_folders](#Problems_with_Vagrant_and_synced_folders)
@@ -112,11 +112,11 @@ When trying to connect from a OS X client, you will see that everything is ok at
 
 OS X's NFS client is optimized for OS X Servers and might present some issues with Linux servers. If you are experiencing slow performance, frequent disconnects and problems with international characters edit the default mount options by adding the line `nfs.client.mount.options = intr,locallocks,nfc` to `/etc/nfs.conf` on your Mac client. More information about the mount options can be found [here](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man8/mount_nfs.8.html#//apple_ref/doc/man/8/mount_nfs).
 
-### Intermittent client freezes when copying large files
+### 拷贝大文件时客户端似乎卡住了
 
-If you copy large files from your client machine to the NFS server, the transfer speed is *very* fast, but after some seconds the speed drops and your client machine intermittently locks up completely for some time until the transfer is finished.
+从客户端向 NFS 服务器拷贝大文件时，传输速度极快，但若干秒钟后速度掉下来了，客户端似乎完全被锁住一段时间直至传输结束。
 
-Try adding <tt>sync</tt> as a mount option on the client (e.g. in <tt>/etc/fstab</tt>) to fix this problem.
+试试在客户端挂载时增加 <tt>sync</tt> 选项（例如在 <tt>/etc/fstab</tt> 中）以修复此问题。
 
 ### mount.nfs: Operation not permitted
 
@@ -535,14 +535,14 @@ A rundown of `/proc/net/rpc/nfsd` (the userspace tool `nfsstat` pretty-prints th
 
 ### 权限问题
 
-If you find that you cannot set the permissions on files properly, make sure the user/group you are chowning are on both the client and server.
+如果发现文件权限无法按需设置成功，请确认在客户端和服务器端同时修改了用户/组权限。
 
-If all your files are owned by `nobody`, and you are using NFSv4, on both the client and server, you should:
+如果所有文件的属主都是 `nobody` 并且使用了 NFSv4，请在客户端和服务器端同时做到：
 
-*   For systemd, ensure that the `nfs-idmapd` service has been started.
-*   For initscripts, ensure that `NEED_IDMAPD` is set to `YES` in `/etc/conf.d/nfs-common.conf`.
+*   在使用 systemd 时，确认 `nfs-idmapd` 服务已启动。
+*   在使用初始化脚本（initscripts）时，确认`/etc/conf.d/nfs-common.conf` 文件中的 `NEED_IDMAPD` 选项已设置为 `YES`。
 
-On some systems detecting the domain from FQDN minus hostname does not seem to work reliably. If files are still showing as `nobody` after the above changes, edit /etc/idmapd.conf, ensure that `Domain` is set to `FQDN minus hostname`. For example:
+某些系统在侦测“FQDN-主机名”这种格式时似乎工作不正常。On some systems detecting the domain from FQDN minus hostname does not seem to work reliably. 如果经过上述更正以后文件仍然显示属主为 `nobody`， 请编辑 /etc/idmapd.conf 文件，确认 `Domain` 选项已设置为 `FQDN-主机名` 形式。例如：
 
  `/etc/idmapd.conf` 
 ```
@@ -562,4 +562,4 @@ Nobody-Group = nobody
 Method = nsswitch
 ```
 
-If nfs-idmapd.service refuses to start because it cannot open the Pipefs-directory (defined in /etc/idmapd.conf and appended with '/nfs'), issue a mkdir-command and restart the daemon.
+如果 nfs-idmapd.service 因无法打开 Pipefs-directory 而拒绝启动，请创建 /etc/idmapd.conf 并添加 '/nfs'，然后重启守护进程。

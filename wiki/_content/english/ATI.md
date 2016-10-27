@@ -54,7 +54,7 @@ If unsure, try the open source driver first, it will suit most needs and is gene
 
 ## Selecting the right driver
 
-Depending on the card you have, find the right driver in [Xorg#ATI](/index.php/Xorg#ATI "Xorg"). This page has instructions for **ATI**.
+Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/Xorg#AMD "Xorg"). This page has instructions for **ATI**.
 
 ## Naming conventions
 

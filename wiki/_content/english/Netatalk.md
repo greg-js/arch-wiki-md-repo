@@ -3,38 +3,20 @@ Netatalk is a free, open-source implementation of the Apple Filing Protocol (AFP
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Choosing Features](#Choosing_Features)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Netatalk](#Netatalk)
-        *   [2.1.1 Guest access](#Guest_access)
-    *   [2.2 Netatalk-ddp](#Netatalk-ddp)
-        *   [2.2.1 System](#System)
-        *   [2.2.2 Volumes](#Volumes)
+    *   [2.1 Guest access](#Guest_access)
 *   [3 IP Tables](#IP_Tables)
 *   [4 Enable Bonjour/Zeroconf](#Enable_Bonjour.2FZeroconf)
 
 ## Installation
 
-Netatalk v3 is availabe as [netatalk](https://aur.archlinux.org/packages/netatalk/) in the [AUR](/index.php/AUR "AUR").
-
-The older version of netatalk, v2, is distributed as [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/) and supports the Apple Macintosh network protocols, including AppleTalk (ATalk), Apple Filing Protocol (AFP), and Printer Access Protocol (PAP).
-
-### Choosing Features
-
-With the deprecation of DDP (and therefore ATalk, PAP, timelord, and a2boot), netatalk also dropped these features in netatalk>=3.0\. The legacy 2.x branch with DDP support is still available in the [AUR](/index.php/AUR "AUR") as [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/). DDP is only necessary to support Mac OS <= 9, but OS X <= 10.3 will also benefit from the integration of SLP since it does not fully support Bonjour/Zeroconf. DDP would network older Macs which ran on AppleTalk instead of TCP/IP, and timelord and a2boot were for time-synchronization and Apple II booting. PAP may still be necessary for users with LaserWriter printers without TCP/IP support.
-
-*   Install [netatalk](https://aur.archlinux.org/packages/netatalk/) if you only need the "modern" features cnid_metad and afpd, with Bonjour/Zeroconf support only.
-*   Install [netatalk-ddp](https://aur.archlinux.org/packages/netatalk-ddp/) to build the full complement of legacy features with SLP support.
+Netatalk can be [installed](/index.php/Install "Install") with the [netatalk](https://aur.archlinux.org/packages/netatalk/) package.
 
 ## Configuration
 
 Enable and/or start `netatalk.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 Besides the configuration files that are installed (and checked during upgrade), netatalk may generate two files `/etc/netatalk/afp_signature.conf` or `/var/state/netatalk/afp_signature.conf` which holds the system UUID, and `/etc/netatalk/afp_voluuid.conf` or `/var/state/netatalk/afp_voluuid.conf` which holds volume UUIDs for TimeMachine. These files may remain after package removal and should be kept in most cases to disambiguate the services broadcast over the local network.
-
-### Netatalk
-
-**Note:** Users moving from 2.x to 3.x should be aware that CNID data is no longer stored in `.AppleDB` directories alongside the hosted data, but in `/var/state/netatalk/CNID`. To upgrade a share, remove any `.AppleDB` directories and rebuild with `dbd -r <path>`.
 
 Netatalk 3.x uses a single configuration file, `/etc/afp.conf`. See `man afp.conf` and the following example (make sure processes have write access to `afpd.log`):
 
@@ -62,7 +44,7 @@ Netatalk 3.x uses a single configuration file, `/etc/afp.conf`. See `man afp.con
 
 **Warning:** Avoid using symbolic links in `afp.conf`
 
-#### Guest access
+### Guest access
 
 In order to allow guest **read-only** access to your shared folders, add following line to the `[Global]` section:
 
@@ -82,35 +64,6 @@ path = /mnt/public/share
 rwlist = nobody
 
 ```
-
-### Netatalk-ddp
-
-#### System
-
-Edit the afpd configuration file (`/etc/netatalk/afpd.conf`), and add a line similar to
-
- `/etc/netatalk/afpd.conf` 
-```
-...
-- -mimicmodel TimeCapsule6,106 -setuplog "default log_warn /var/log/afpd.log"
-```
-
-This tells netatalk to use the system's hostname, mimic a TimeCapsule, and log warnings and errors to file.
-
-#### Volumes
-
-Edit the volumes configuration file `/etc/netatalk/AppleVolumes.default`, and append the following to add a TimeMachine-like share
-
- `/etc/netatalk/AppleVolumes.default` 
-```
-...
-<path_to_share> <sharename> allow:<username> options:usedots,upriv,tm
-```
-
-*   The `volsizelimit:<limit_in_whole_mebibytes>` argument can be useful here to limit the total space reported to TimeMachine.
-*   If you wish to turn off "home" shares, change the `~` line to `#~`.
-
-**Warning:** Avoid nesting volumes, and do not share directories by any other protocol. All file changes must be made via afpd only
 
 ## IP Tables
 

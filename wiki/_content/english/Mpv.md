@@ -22,6 +22,7 @@
     *   [3.12 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
     *   [3.13 youtube-dl audio with search](#youtube-dl_audio_with_search)
     *   [3.14 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [3.15 Creating a single screenshot](#Creating_a_single_screenshot)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -203,6 +204,17 @@ function mm() {
 ### Use mpv with a compositor
 
 If you're using a compositor (e.g. in KDE Plasma 5) and find that composition is disabled (e.g. in Plasma this would make you unable to present windows or see window thumbnails in the default app switcher) when mpv is playing a video, try `x11-bypass-compositor=no`
+
+### Creating a single screenshot
+
+An example of creating a single screenshot, by using a start time (`HH:MM:SS`):
+
+```
+$ mpv --no-audio --vo=image --start=00:01:30 --frames=1 /path/to/video/file
+
+```
+
+Screenshots will be saved as 00000001.jpg in the current directory.
 
 ## Vapoursynth
 

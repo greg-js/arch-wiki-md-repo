@@ -112,9 +112,9 @@ Extra modules/libraries for old versions of Python may be found on the AUR by se
 
 ## Package management
 
-Although a great number of Python packages are readily available in the [official repositories](/index.php/Official_repositories "Official repositories") and the [AUR](/index.php/AUR "AUR"), the Python ecosystem provides its own package managers for use with [PyPI](https://pypi.python.org/), the Python Package Index. The Python Packaging Authority ([PyPA](https://www.pypa.io/)) recommends the following utilities to deal with Python packages:
+Although a great number of Python packages are readily available in the [official repositories](/index.php/Official_repositories "Official repositories") and the [AUR](/index.php/AUR "AUR"), the Python ecosystem provides its own package managers for use with [PyPI](https://pypi.python.org/), the Python Package Index.
 
-*   **pip** — The PyPA recommended tool for installing Python packages.
+*   **pip** — The PyPA tool for installing Python packages.
 
 	[https://pip.pypa.io/](https://pip.pypa.io/) || [python-pip](https://www.archlinux.org/packages/?name=python-pip), [python2-pip](https://www.archlinux.org/packages/?name=python2-pip)
 

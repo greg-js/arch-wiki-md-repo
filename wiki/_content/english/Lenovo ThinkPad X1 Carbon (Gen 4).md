@@ -3,6 +3,7 @@
 *   [1 Model description](#Model_description)
     *   [1.1 UEFI](#UEFI)
     *   [1.2 Support](#Support)
+    *   [1.3 Fingerprint Reader](#Fingerprint_Reader)
 *   [2 Configuration](#Configuration)
     *   [2.1 Display](#Display)
     *   [2.2 OneLink+](#OneLink.2B)
@@ -39,10 +40,14 @@ Updating the UEFI works like described here: [link ThinkWiki BIOS Upgrade/Using 
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | Camera | Yes |
-| Fingerprint Reader |  ?? |
+| Fingerprint Reader | No |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 | microSD card reader | Yes |
+
+### Fingerprint Reader
+
+The fingerprint reader included with this model `138a:0090 Validity Sensors, Inc` currently lacks a linux driver. [Community discussion](https://bugs.freedesktop.org/show_bug.cgi?id=94536) of this issue indicates that preliminary efforts to reverse engineer a driver have failed. Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
 
 ## Configuration
 

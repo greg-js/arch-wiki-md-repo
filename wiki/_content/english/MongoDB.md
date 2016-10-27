@@ -6,6 +6,7 @@ MongoDB (from hu**mongo**us) is an open source document-oriented database system
 *   [2 Usage](#Usage)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 MongoDB won't start](#MongoDB_won.27t_start)
+    *   [3.2 MongoDB complains about transparent_hugepage Kernel Setting](#MongoDB_complains_about_transparent_hugepage_Kernel_Setting)
 
 ## Installation
 
@@ -66,3 +67,22 @@ After running the repair as root, the files will be owned by the root user, whil
 ```
 
 Check that the [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) package is up to date. MongoDB requires a specific version, however, the package does not restrict the version of this dependency.
+
+### MongoDB complains about transparent_hugepage Kernel Setting
+
+After starting the mongoDB, if you see some warnings about the transparent_hugepage i can permanently disable this System Setting by editing the following file (see [FreeDesktop tmpfiles.d Manual](https://www.freedesktop.org/software/systemd/man/tmpfiles.d.html)):
+
+ `/etc/tmpfiles.d/local.conf` 
+```
+w /sys/kernel/mm/transparent_hugepage/enabled - - - - never
+w /sys/kernel/mm/transparent_hugepage/defrag - - - - never
+
+```
+
+if you want to disable only for this boot, you can use SysCtl or by simply echoing in the files like below:
+
+```
+# echo never > /sys/kernel/mm/transparent_hugepage/enabled
+# echo never > /sys/kernel/mm/transparent_hugepage/defrag
+
+```

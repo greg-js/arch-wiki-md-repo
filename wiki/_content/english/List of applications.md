@@ -1099,7 +1099,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 ###### SIP
 
-*   **[Blink](https://en.wikipedia.org/wiki/Blink_(software) "wikipedia:Blink (software)")** — State of the art, easy to use SIP client.
+*   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
 	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink-darcs](https://aur.archlinux.org/packages/blink-darcs/)
 
@@ -1651,7 +1651,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://gwenview.sourceforge.net/](http://gwenview.sourceforge.net/) || [gwenview](https://www.archlinux.org/packages/?name=gwenview)
 
-*   **imv** — Lightweight image viewer with support for Wayland and animated GIFs.
+*   **imv** — Lightweight image viewer with support for Wayland and animated GIFs which uses FreeImage.
 
 	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://aur.archlinux.org/packages/imv/)
 
@@ -3248,6 +3248,10 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 *   **ncdu** — Simple ncurses disk usage analyzer.
 
 	[http://dev.yorhel.nl/ncdu](http://dev.yorhel.nl/ncdu) || [ncdu](https://www.archlinux.org/packages/?name=ncdu)
+
+*   **duc** — A library and suite of tools for inspecting disk usage.
+
+	[http://duc.zevv.nl/](http://duc.zevv.nl/) || [duc](https://aur.archlinux.org/packages/duc/)
 
 ### Clock synchronization
 

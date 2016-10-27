@@ -57,7 +57,7 @@ dhcp-range=192.168.0.1,192.168.0.100,12h
 
 ```
 
-*   [Start](/index.php/Daemons#Managing_daemons "Daemons") the **dnsmasq** daemon.
+*   [Start](/index.php/Systemd#Using_units "Systemd") the **dnsmasq** daemon.
 *   Finally, set firewall to forward connections to and from the Internet for clients connecting to your WLAN. This is done by issuing:
 
 ```
@@ -106,7 +106,7 @@ interface=br0
 
 ```
 
-and [restart](/index.php/Daemons#Managing_daemons "Daemons") the **dnsmasq** daemon.
+and [restart](/index.php/Systemd#Using_units "Systemd") the **dnsmasq** daemon.
 
 Now you should be able to connect to the internet using **eth1** or **eth2**.
 
@@ -152,7 +152,7 @@ dhcp-range=192.168.0.1,192.168.0.100,12h
 
 ```
 
-*   [Start](/index.php/Daemons#Managing_daemons "Daemons") the **dnsmasq** daemon.
+*   [Start](/index.php/Systemd#Using_units "Systemd") the **dnsmasq** daemon.
 *   Finally, set firewall to forward connections to and from the Internet for clients connecting to your WLAN. This is done by issuing:
 
 ```

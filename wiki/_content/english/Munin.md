@@ -16,9 +16,10 @@ Simply put, Munin allows you to make graphs about system statistics. You can che
     *   [2.1 Munin Master](#Munin_Master)
         *   [2.1.1 Directories](#Directories)
         *   [2.1.2 Cron](#Cron)
-        *   [2.1.3 systemd timer](#systemd_timer)
-        *   [2.1.4 Permissions](#Permissions)
-        *   [2.1.5 Testing](#Testing)
+            *   [2.1.2.1 crontab](#crontab)
+            *   [2.1.2.2 systemd timer](#systemd_timer)
+        *   [2.1.3 Permissions](#Permissions)
+        *   [2.1.4 Testing](#Testing)
     *   [2.2 Munin Node](#Munin_Node)
         *   [2.2.1 Daemon](#Daemon)
         *   [2.2.2 IPv6](#IPv6)
@@ -78,6 +79,8 @@ htmldir /srv/http/munin
 
 #### Cron
 
+##### crontab
+
 Run the following to have Munin collect data and update the generated HTML and graph images every 5 minutes:
 
 ```
@@ -100,7 +103,7 @@ And run:
 
 ```
 
-#### systemd timer
+##### systemd timer
 
 Instead of a cron job a systemd timer can be used.
 

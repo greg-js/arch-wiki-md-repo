@@ -19,6 +19,7 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
     *   [5.6 setpci (use with great care)](#setpci_.28use_with_great_care.29)
     *   [5.7 Calise](#Calise)
     *   [5.8 brightd](#brightd)
+    *   [5.9 lux](#lux)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 Xflux](#Xflux)
@@ -252,6 +253,12 @@ The main features of this program are that it is very precise, very light on res
 ### brightd
 
 Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/) automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
+
+### lux
+
+[lux](https://aur.archlinux.org/packages/lux/) is a Bash script to easily control brightness on backlight-controllers.
+
+See the [GitHub page](https://github.com/Ventto/lux) for more information.
 
 ## Color correction
 

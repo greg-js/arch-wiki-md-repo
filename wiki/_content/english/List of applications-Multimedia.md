@@ -134,7 +134,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://gwenview.sourceforge.net/](http://gwenview.sourceforge.net/) || [gwenview](https://www.archlinux.org/packages/?name=gwenview)
 
-*   **imv** — Lightweight image viewer with support for Wayland and animated GIFs.
+*   **imv** — Lightweight image viewer with support for Wayland and animated GIFs which uses FreeImage.
 
 	[https://www.github.com/eXeC64/imv/](https://www.github.com/eXeC64/imv/) || [imv](https://aur.archlinux.org/packages/imv/)
 
