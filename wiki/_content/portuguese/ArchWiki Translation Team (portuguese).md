@@ -111,7 +111,7 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 
 ## Equipe de Traducão:
 
-[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden")
+[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [Tulio Albuquerque](/index.php?title=User:Tuco&action=edit&redlink=1 "User:Tuco (page does not exist)"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden")
 
 ## Equipe de Revisão:
 

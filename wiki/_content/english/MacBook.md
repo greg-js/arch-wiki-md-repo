@@ -1364,7 +1364,7 @@ Reboot. You should see a new entry for Arch Linux in rEFInd and it should boot t
 *   Audio recording works out of the box. Audio playback doesn't work (still looking for a solution).
 
 *   The keyboard and the touchpad do *not* work (still looking for a solution).
-    *   There's a WIP driver [here](https://github.com/cb22/macbook12-spi-driver) that sort of works with a DSDT hack. Comes with a big battery drain penalty, however.
+    *   There's a WIP driver [here](https://github.com/cb22/macbook12-spi-driver) that sort of works with a DSDT hack (the previous problem with this driver related to battery drain has been fixed now).
 
 #### Mid 2007 13" - Version 2,1
 

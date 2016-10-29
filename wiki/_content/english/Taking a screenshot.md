@@ -41,6 +41,10 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 	[http://gnome.org](http://gnome.org) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
 
+*   **gscreenshot** — Simple GTK screenshot utility with delays, selection, and copy-to-clipboard functionality.
+
+	[https://github.com/thenaterhood/gscreenshot](https://github.com/thenaterhood/gscreenshot) || [gscreenshot](https://aur.archlinux.org/packages/gscreenshot/)
+
 *   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
 
 	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)

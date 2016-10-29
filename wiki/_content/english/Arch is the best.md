@@ -789,9 +789,8 @@ say 'Arch is the best!';
 
 ```
 <?php
-   echo "Arch is the best!
+echo "Arch is the best!
 ";
-?>
 
 ```
 

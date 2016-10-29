@@ -775,7 +775,7 @@ See [dnsmasq#NetworkManager](/index.php/Dnsmasq#NetworkManager "Dnsmasq") to ena
 
 ### Configuring MAC Address Randomization
 
-As of version 1.4.0, NetworkManager supports two types MAC Address Randomization: randomization during scanning, and stable randomization. Both modes can be configured by modifying `/etc/networkManager/NetworkManager.conf`.
+As of version 1.4.0, NetworkManager supports two types MAC Address Randomization: randomization during scanning, and stable randomization. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf`.
 
 Randomization during Wi-Fi scanning is enabled by default starting on version 1.2.0, and it can be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf`:
 

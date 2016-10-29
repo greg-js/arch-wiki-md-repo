@@ -154,7 +154,7 @@ Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should autom
 | LBP9100C |
 | Printer | Driver/filter | Notes |
 
-Some Canon printers will use a similar setup to the iP4300, so consider modifying the [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) package for other, similar printers.
+Some Canon printers will use a similar setup to the iP4500, so consider modifying the [cnijfilter-ip4500](https://aur.archlinux.org/packages/cnijfilter-ip4500/) package for other, similar printers.
 
 ### CARPS
 

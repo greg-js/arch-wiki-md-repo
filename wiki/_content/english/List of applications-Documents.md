@@ -351,6 +351,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
 
+*   **[Vis](/index.php?title=Vis&action=edit&redlink=1 "Vis (page does not exist)")** — modern, legacy free, simple yet efficient vim-like editor.
+
+	[http://www.brain-dump.org/projects/vis/](http://www.brain-dump.org/projects/vis/) || [vis](https://www.archlinux.org/packages/?name=vis)
+
 #### Graphical
 
 *   **[Acme](https://en.wikipedia.org/wiki/Acme_(text_editor) "wikipedia:Acme (text editor)")** — Minimalist and flexible programming environment developed by Rob Pike for the Plan 9 operating system.

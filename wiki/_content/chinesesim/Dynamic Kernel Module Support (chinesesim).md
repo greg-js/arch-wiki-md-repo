@@ -1,44 +1,37 @@
-**翻译状态：** 本文是英文页面 [Dynamic_Kernel_Module_Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-17，点击[这里](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=407892)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Dynamic_Kernel_Module_Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-28，点击[这里](https://wiki.archlinux.org/index.php?title=Dynamic_Kernel_Module_Support&diff=0&oldid=455308)可以查看翻译后英文页面的改动。
 
 来自 [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wikipedia:Dynamic Kernel Module Support"):
 
-	**动态内核模块支持** (**DKMS**) 是一个可以从位于内核源码树之外的内核模块源代码编译生成内核模块的程序框架。它可以使得在升级内核时，通过DKMS管理的内核模块自动重新构建以适应新的内核版本。
+	**动态内核模块支持** (**DKMS**) 是一个程序框架，可以编译内核代码树之外的模块。升级内核时，通过 DKMS 管理的内核模块可以被自动重新构建以适应新的内核版本。
+
+这意味这你不再需要等待某个公司，项目组或者包维护者释出新版本的内核模块。自从 Pacman 支持 [钩子](/index.php/Pacman#Hooks "Pacman") 之后，内核更新时就会自动生成和安装新的软件包。
 
 ## Contents
 
-*   [1 影响](#.E5.BD.B1.E5.93.8D)
-*   [2 安装](#.E5.AE.89.E8.A3.85)
-*   [3 升级](#.E5.8D.87.E7.BA.A7)
-*   [4 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
-    *   [4.1 列出内核模块](#.E5.88.97.E5.87.BA.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
-    *   [4.2 重新构建模块](#.E9.87.8D.E6.96.B0.E6.9E.84.E5.BB.BA.E6.A8.A1.E5.9D.97)
-    *   [4.3 移除模块](#.E7.A7.BB.E9.99.A4.E6.A8.A1.E5.9D.97)
-*   [5 创建DKMS包](#.E5.88.9B.E5.BB.BADKMS.E5.8C.85)
-    *   [5.1 包名](#.E5.8C.85.E5.90.8D)
-    *   [5.2 依赖](#.E4.BE.9D.E8.B5.96)
-    *   [5.3 源代码构建位置](#.E6.BA.90.E4.BB.A3.E7.A0.81.E6.9E.84.E5.BB.BA.E4.BD.8D.E7.BD.AE)
-    *   [5.4 打补丁](#.E6.89.93.E8.A1.A5.E4.B8.81)
-    *   [5.5 .install 中模块的自动加载](#.install_.E4.B8.AD.E6.A8.A1.E5.9D.97.E7.9A.84.E8.87.AA.E5.8A.A8.E5.8A.A0.E8.BD.BD)
-    *   [5.6 namcap 输出](#namcap_.E8.BE.93.E5.87.BA)
-    *   [5.7 例子](#.E4.BE.8B.E5.AD.90)
-        *   [5.7.1 PKGBUILD](#PKGBUILD)
-        *   [5.7.2 dkms.conf](#dkms.conf)
-        *   [5.7.3 .install](#.install)
-*   [6 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
-
-## 影响
-
-使用DKMS的*积极作用*是通过DKMS管理的内核模块可以在升级内核时被自动重新编译。这意味这你不再需要等待某个公司，项目组或者包维护者释出新版本的内核模块。
-
-*消极作用*是DKMS破坏了Pacman数据库，因为这样一来重新构建后的内核模块不再属于任何一个包，所以Pacman就不能再追逐它们。不过理论上，可以通过添加钩子函数来对此支持(see: [FS#2985](https://bugs.archlinux.org/task/2985))。
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 升级](#.E5.8D.87.E7.BA.A7)
+*   [3 使用方法](#.E4.BD.BF.E7.94.A8.E6.96.B9.E6.B3.95)
+    *   [3.1 列出内核模块](#.E5.88.97.E5.87.BA.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
+    *   [3.2 重新构建模块](#.E9.87.8D.E6.96.B0.E6.9E.84.E5.BB.BA.E6.A8.A1.E5.9D.97)
+    *   [3.3 移除模块](#.E7.A7.BB.E9.99.A4.E6.A8.A1.E5.9D.97)
+*   [4 创建DKMS包](#.E5.88.9B.E5.BB.BADKMS.E5.8C.85)
+    *   [4.1 包名](#.E5.8C.85.E5.90.8D)
+    *   [4.2 依赖](#.E4.BE.9D.E8.B5.96)
+    *   [4.3 源代码构建位置](#.E6.BA.90.E4.BB.A3.E7.A0.81.E6.9E.84.E5.BB.BA.E4.BD.8D.E7.BD.AE)
+    *   [4.4 打补丁](#.E6.89.93.E8.A1.A5.E4.B8.81)
+    *   [4.5 .install 中模块的自动加载](#.install_.E4.B8.AD.E6.A8.A1.E5.9D.97.E7.9A.84.E8.87.AA.E5.8A.A8.E5.8A.A0.E8.BD.BD)
+    *   [4.6 namcap 输出](#namcap_.E8.BE.93.E5.87.BA)
+    *   [4.7 例子](#.E4.BE.8B.E5.AD.90)
+        *   [4.7.1 PKGBUILD](#PKGBUILD)
+        *   [4.7.2 dkms.conf](#dkms.conf)
+        *   [4.7.3 .install](#.install)
+*   [5 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [dkms](https://www.archlinux.org/packages/?name=dkms) 包
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [dkms](https://www.archlinux.org/packages/?name=dkms) 包和内核的头文件，标准内核的头文件可以用软件包 [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) 安装。
 
-要想使DKMS模块可以在内核升级后重启时被自动重新构建，需要先开启`dkms`系统服务。
-
-有许多位于内核源码树之外的内核模块都有DKMS变体;有一些位于[official repositories](https://www.archlinux.org/packages/?&q=dkms)，大多数可以在这儿[AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms)找到。下面列出的是一小部分有DKMS变体的软件包
+有许多位于内核源码树之外的内核模块都有DKMS变体;有一些位于[官方软件仓库](https://www.archlinux.org/packages/?&q=dkms)，大多数可以在[AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms)找到。下面列出的是一小部分有DKMS变体的软件包
 
 *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"):
@@ -46,12 +39,16 @@
     *   [nvidia-304xx-dkms](https://www.archlinux.org/packages/?name=nvidia-304xx-dkms)
     *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
     *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
-*   [VirtualBox](/index.php/VirtualBox "VirtualBox"), section [VirtualBox#Hosts running a custom kernel](/index.php/VirtualBox#Hosts_running_a_custom_kernel "VirtualBox")
+    *   [nvidia-grsec-dkms](https://aur.archlinux.org/packages/nvidia-grsec-dkms/)
+*   [VirtualBox](/index.php/VirtualBox "VirtualBox"):
+    *   [virtualbox-host-dkms](https://www.archlinux.org/packages/?name=virtualbox-host-dkms)
+    *   [virtualbox-guest-dkms](https://www.archlinux.org/packages/?name=virtualbox-guest-dkms)
+
 *   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 
 ## 升级
 
-即使内核模块经常会在某个内核的大更新时被重新构建，不过也有某些特定时候需要对模块进行升级来处理内核变动，修复bug或者添加必要的新特性，这是可以考虑在重启系统之前升级DKMS包。
+虽然在内核升级是，DKMS 的编译自动执行，但是依然有可能编译报错。所以需要特别注意 pacman 的输出。当系统需要这些模块才能启动，或者使用不在 [官方软件仓库](/index.php/Official_repositories "Official repositories") 中的内核时，需要额外注意。
 
 ## 使用方法
 
@@ -69,7 +66,7 @@
 列出当前模块的状态，版本，包括源码树内的模块：
 
 ```
-$ dkms status
+# dkms status
 
 ```
 
@@ -130,17 +127,17 @@ $ dkms status
 
 ## 创建DKMS包
 
-这儿的一些的指导方针可以在创建一个新的DKMS包时作为参考。
+创建一个新的DKMS包时，可以参考下面的指导方针。
 
 ### 包名
 
 DKMS的包的命名方式是：原始包名加"*-dkms*"后缀。
 
-The variable `$_pkgname` is often used below `$pkgname` to describe the package name minus the "*-dkms*" suffix (e.g. `_pkgname=${pkgname%-*}`). This is useful to help keep similarities between the original package PKGBUILD and the DKMS variant.
+通常在 `$pkgname` 后面使用 `$_pkgname` 记录不包含 "*-dkms*" 后缀的软件包名 (例如 `_pkgname=${pkgname%-*}`). 这样可以在原始的软件包 PKGBUILD 和 DKMS 编译文件之间保持相似性。
 
 ### 依赖
 
-Dependencies should be inherited from the original version with [dkms](https://www.archlinux.org/packages/?name=dkms) added and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) removed (as it is listed by the dkms pacakge as *optional*).
+依赖的包应该是原来软件包的基础上，加上 [dkms](https://www.archlinux.org/packages/?name=dkms)， 删除 [linux-headers](https://www.archlinux.org/packages/?name=linux-headers)，内核头文件已经是 dkms 的可选依赖。
 
 ### 源代码构建位置
 
@@ -151,10 +148,10 @@ Dependencies should be inherited from the original version with [dkms](https://w
 
 ```
 
-In the package directory, a DKMS configuration tells DKMS how to build the module (`dkms.conf`), including the variables `PACKAGE_NAME` and `PACKAGE_VERSION`.
+在软件包目录，要包含一个 `dkms.conf` 配置文件，告诉 DKMS 如何编译。这个配置文件需要包含：
 
-*   `PACKAGE_NAME` - the actual project name (usually `$_pkgname` or `$_pkgbase`).
-*   `PACKAGE_VERSION` - by convention this should also be the `$pkgver`.
+*   `PACKAGE_NAME` - 实际的项目名称，通常使用 `$_pkgname` 或 `$_pkgbase`.
+*   `PACKAGE_VERSION` - 通常使用 `$pkgver`.
 
 ### 打补丁
 
@@ -269,8 +266,8 @@ pre_remove() {
 
 ```
 
-**Tip:** To keep DKMS packages closer to their non-DKMS counterparts: avoid cluttering up package files with DKMS-specific stuff (e.g. version numbers that need updating).
+**Tip:** 为了让软件包和非 DKMS 软件包尽量一致，请避免用使用 DKMS 特有的内容，比如版本号等。
 
 ## 相关链接
 
-*   [Linux Journal: Exploring Dynamic Kernel Module Support](http://www.linuxjournal.com/article/6896)
+*   [Linux Journal: 探寻动态内核模块支持](http://www.linuxjournal.com/article/6896)

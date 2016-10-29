@@ -129,7 +129,7 @@ http://localhost:8080/ipfs/QmWenbjgZnA6UguLtmUYayS6e7UQM7woB15zuEymSRRMoi
 There are public gateways, allowing users with no IPFS node running to access files on the network. For example, the official [website](http://ipfs.io):
 
 ```
-[http://gateway.ipfs.io/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG](http://gateway.ipfs.io/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG)
+[http://ipfs.io/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG](http://ipfs.io/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG)
 
 ```
 

@@ -438,7 +438,7 @@ See the following [GitHub gist](https://gist.github.com/Brainiarc7/95c9338a737aa
 An example of encoding using the supported H.264 codec:
 
 ```
-# ffmpeg -threads 1 -i file.ext -vaapi_device /dev/dri/renderD128 -hwaccel vaapi -hwaccel_output_format vaapi -vcodec h264_vaapi -vf format='nv12|vaapi,hwupload' output.mp4
+# ffmpeg -threads 1 -i file.ext -vaapi_device /dev/dri/renderD128 -vcodec h264_vaapi -vf format='nv12|vaapi,hwupload' output.mp4
 
 ```
 

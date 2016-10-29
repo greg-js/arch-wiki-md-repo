@@ -297,6 +297,10 @@ This article is a general list of applications sorted by category, as a referenc
 
 ### VPN clients
 
+*   **[OpenVPN](/index.php/OpenVPN "OpenVPN")** — To connect to OpenVPN VPNs.
+
+	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)
+
 *   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
 
 	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
@@ -577,6 +581,10 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
 
+*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
+
+	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
+
 *   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
 
 	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
@@ -596,6 +604,10 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 *   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — Free (BSD-licensed), secure, production-quality and standard-compliant FTP server.
 
 	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
+
+*   **[SSH](/index.php/SSH "SSH")** — SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream.
+
+	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
 
 *   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
 
@@ -1307,9 +1319,13 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
 
-*   **[slrn](https://en.wikipedia.org/wiki/slrn "wikipedia:slrn")** — An open source text-based news client.
+*   **[NZBGet](/index.php/NZBGet "NZBGet")** — CLI Utility to grab Usenet binary file using .nzb files.
 
-	[http://www.slrn.org/](http://www.slrn.org/) || [slrn](https://www.archlinux.org/packages/?name=slrn)
+	[http://nzbget.sourceforge.net/](http://nzbget.sourceforge.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
+
+*   **[SABnzbd](/index.php/SABnzbd "SABnzbd")** — SABnzbd is an open-source binary newsreader written in Python.
+
+	[https://sabnzbd.org/](https://sabnzbd.org/) || [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/)
 
 *   **[tin](https://en.wikipedia.org/wiki/Tin_(newsreader) "wikipedia:Tin (newsreader)")** — A cross-platform threaded NNTP and spool based UseNet newsreader.
 
@@ -3267,9 +3283,13 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
 
+*   **[systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")** — A daemon that has been added for synchronizing the system clock across the network.
+
+	[https://www.freedesktop.org/wiki/Software/systemd/](https://www.freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+
 ### System maintenance
 
-*   **cylon** — Updates, Maintenance , anti-malware , backups and system checks in a menu driven Bash script.
+*   **cylon** — Updates, Maintenance, anti-malware, backup and system checks in a menu driven Bash script.
 
 	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 
@@ -3838,6 +3858,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **[Vim](/index.php/Vim "Vim") (Vi IMproved)** — Advanced text editor that seeks to provide the power of the de-facto Unix editor 'vi', with a more complete feature set.
 
 	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
+
+*   **[Vis](/index.php?title=Vis&action=edit&redlink=1 "Vis (page does not exist)")** — modern, legacy free, simple yet efficient vim-like editor.
+
+	[http://www.brain-dump.org/projects/vis/](http://www.brain-dump.org/projects/vis/) || [vis](https://www.archlinux.org/packages/?name=vis)
 
 #### Graphical
 

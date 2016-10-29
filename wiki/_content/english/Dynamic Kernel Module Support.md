@@ -2,33 +2,28 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support "wi
 
 	**Dynamic Kernel Module Support** (**DKMS**) is a program/framework that enables generating Linux kernel modules whose sources generally reside outside the kernel source tree. The concept is to have DKMS modules automatically rebuilt when a new kernel is installed.
 
+This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module. Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuilt of the modules is handled automatically when a kernel is upgraded.
+
 ## Contents
 
-*   [1 Effects](#Effects)
-*   [2 Installation](#Installation)
-*   [3 Upgrades](#Upgrades)
-*   [4 Usage](#Usage)
-    *   [4.1 List modules](#List_modules)
-    *   [4.2 Rebuild modules](#Rebuild_modules)
-    *   [4.3 Remove modules](#Remove_modules)
-*   [5 DKMS package creation](#DKMS_package_creation)
-    *   [5.1 Package name](#Package_name)
-    *   [5.2 Dependencies](#Dependencies)
-    *   [5.3 Build source location](#Build_source_location)
-    *   [5.4 Patching](#Patching)
-    *   [5.5 Module loading automatically in .install](#Module_loading_automatically_in_.install)
-    *   [5.6 namcap output](#namcap_output)
-    *   [5.7 Example](#Example)
-        *   [5.7.1 PKGBUILD](#PKGBUILD)
-        *   [5.7.2 dkms.conf](#dkms.conf)
-        *   [5.7.3 .install](#.install)
-*   [6 See also](#See_also)
-
-## Effects
-
-The *positive effect* of using DKMS is that modules are often able to be rebuilt when the kernel is upgrading. This means that a user does not have to wait for a company, project, or package maintainer to release a new version of the module.
-
-Since the introduction of [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman"), the rebuilt of the modules is handled automatically when a kernel is upgraded. See also [#Upgrades](#Upgrades).
+*   [1 Installation](#Installation)
+*   [2 Upgrades](#Upgrades)
+*   [3 Usage](#Usage)
+    *   [3.1 List modules](#List_modules)
+    *   [3.2 Rebuild modules](#Rebuild_modules)
+    *   [3.3 Remove modules](#Remove_modules)
+*   [4 DKMS package creation](#DKMS_package_creation)
+    *   [4.1 Package name](#Package_name)
+    *   [4.2 Dependencies](#Dependencies)
+    *   [4.3 Build source location](#Build_source_location)
+    *   [4.4 Patching](#Patching)
+    *   [4.5 Module loading automatically in .install](#Module_loading_automatically_in_.install)
+    *   [4.6 namcap output](#namcap_output)
+    *   [4.7 Example](#Example)
+        *   [4.7.1 PKGBUILD](#PKGBUILD)
+        *   [4.7.2 dkms.conf](#dkms.conf)
+        *   [4.7.3 .install](#.install)
+*   [5 See also](#See_also)
 
 ## Installation
 

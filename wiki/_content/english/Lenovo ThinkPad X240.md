@@ -19,20 +19,20 @@ The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is
 
 **Tip:** Below were the tested configurations at the current time.
 
-| Feature | X240 | X240 (20AMS4SM00) |
-| CPU | Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz | Intel(R) Core(TM) i5-4210U CPU @ 2.7GHz |
-| Graphics | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT |
-| Ram | 8 GB | 8 GB |
-| Disk | Samsung 5120 SSD | Seagate ST500LM000-SSHD-8GB |
-| Display | 12.5" IPS FHD (1920x1080) | 12.5" IPS FHD (1920x1080) |
-| Wireless | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 |
-| Built-in Battery | 9 Cell | 9 Cell |
-| Additional Plugable Battery | 6 Cell 19+ | 6 Cell 19+ |
-| Backlight Keyboard | Yes | Yes |
-| ThinkLight | No | No |
-| Fingerprint Scanner | Yes | Yes |
-| Bluetooth | Yes | Yes |
-| Camera | Yes | Yes |
+| Feature | X240 | X240 (20AMS4SM00) | X240 (20ALA0K-WIG) |
+| CPU | Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz | Intel(R) Core(TM) i5-4210U CPU @ 2.7GHz | Inter(R) Core(TM) i5-4200U CPU @ 1.6 GHz |
+| Graphics | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT | Intel HD 4400 - Haswell-ULT |
+| Ram | 8 GB | 8 GB | 4 GB |
+| Disk | Samsung 5120 SSD | Seagate ST500LM000-SSHD-8GB | WDC WD10JPVX-08JC3T5 |
+| Display | 12.5" IPS FHD (1920x1080) | 12.5" IPS FHD (1920x1080) | 12.5" IPS 1366x768 |
+| Wireless | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 |
+| Built-in Battery | 9 Cell | 9 Cell | Not Tested |
+| Additional Plugable Battery | 6 Cell 19+ | 6 Cell 19+ | 6 Cell 19+ |
+| Backlight Keyboard | Yes | Yes | Yes |
+| ThinkLight | No | No | No |
+| Fingerprint Scanner | Yes | Yes | Yes |
+| Bluetooth | Yes | Yes | Yes |
+| Camera | Yes | Yes | Yes |
 
 ### System Configuration
 
@@ -106,7 +106,7 @@ The indicator LED for `XF86AudioMicMute` seems to be broken in some way. Accordi
 
 #### Fingerprint Reader
 
-The fingerprint reader is a Validity Sensors model (138a:0017) also used on the Thinkpad X1 Carbon and T440\. ThinkFinger does NOT support this reader. This fingerprint reader requires libfprint to be build from the current git ([https://github.com/ars3niy/fprint_vfs5011.git](https://github.com/ars3niy/fprint_vfs5011.git) ) as yet no stable fprint release supports it.
+The fingerprint reader is a Validity Sensors model (138a:0017) also used on the Thinkpad X1 Carbon and T440\. ThinkFinger does NOT support this reader. This fingerprint reader requires libfprint to be build from the current git ([https://github.com/ars3niy/fprint_vfs5011.git](https://github.com/ars3niy/fprint_vfs5011.git) ). Alternatively, it can also be done going through Fprint[[1]](https://wiki.archlinux.org/index.php/Fprint), for 20ALA0K-WIG.
 
 ### Caveats
 

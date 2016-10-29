@@ -7,6 +7,7 @@
     *   [2.1 Interactive interpreter](#Interactive_interpreter)
     *   [2.2 Run program from file](#Run_program_from_file)
     *   [2.3 Virtual environment creation](#Virtual_environment_creation)
+    *   [2.4 Installing pip](#Installing_pip)
 *   [3 EasyInstall](#EasyInstall)
     *   [3.1 EasyInstall installation](#EasyInstall_installation)
     *   [3.2 Installing EasyInstall packages](#Installing_EasyInstall_packages)
@@ -59,6 +60,25 @@ $ virtualenv --python=/usr/bin/pypy venv-pypy
 ```
 
 see [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/Virtual environment") for further information
+
+### Installing pip
+
+As python packages for pypy aren't distributed as Arch packages the most convenient thing is to install what you require as your own user.
+
+```
+ $ pypy -m ensurepip --user
+ $ pypy -m pip install --user --upgrade pip
+
+```
+
+Once you have pip you can install any package you need, eg:
+
+```
+ $ pypy -m pip install --user sqlalchemy
+
+```
+
+If you'd prefer to install packages system wide just run the previous commands as root without the --user. Note that this will result in the packages being installed in /opt/pypy without the package manager being aware of them.
 
 ## EasyInstall
 

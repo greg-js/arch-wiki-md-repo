@@ -76,11 +76,10 @@ index   dc              eq
 
 ```
 
-Now prepare the database directory. You will need to copy the default config file and set the proper ownership:
+Now prepare the database directory. You will need to rename the default config:
 
 ```
-# cp /etc/openldap/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
-# chown ldap:ldap /var/lib/openldap/openldap-data/DB_CONFIG
+# mv /var/lib/openldap/openldap-data/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
 
 ```
 

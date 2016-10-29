@@ -19,6 +19,8 @@ PIA supports nearly any operating system and solution any user would need. This 
 
 **Note:** Arch Linux users may set up PIA manually by reading information on [PIA Client Support](https://www.privateinternetaccess.com/pages/client-support/) page.
 
+Be sure to have installed [openvpn](https://www.archlinux.org/packages/?name=openvpn) and if using [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn).
+
 ## Installation
 
 [Install](/index.php/Install "Install") the [private-internet-access-vpn](https://aur.archlinux.org/packages/private-internet-access-vpn/) or [private-internet-access-vpn-dev](https://aur.archlinux.org/packages/private-internet-access-vpn-dev/)package.

@@ -27,7 +27,7 @@
 
 This is a guide on how to configure an Arch Linux installation to authenticate against an LDAP directory. This LDAP directory can be either local (installed on the same computer) or network (e.g. in a lab environment where central authentication is desired).
 
-The guide is divided into two parts. The first part deals with how to setup an [OpenLDAP](/index.php/OpenLDAP "OpenLDAP") server that hosts the authentication directory. The second part deals with how to setup the NSS and PAM modules that are required for the authentication scheme to work on the client computers. If you just want to configure Arch to authenticate against an already existing LDAP server, you can skip to the second part.
+The guide is divided into two parts. The first part deals with how to setup an [OpenLDAP](/index.php/OpenLDAP "OpenLDAP") server that hosts the authentication directory. The second part deals with how to setup the NSS and PAM modules that are required for the authentication scheme to work on the client computers. If you just want to configure Arch to authenticate against an already existing LDAP server, you can skip to the [second part](#Client_Setup).
 
 ### NSS and PAM
 

@@ -805,9 +805,13 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
 
+*   **[systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")** — A daemon that has been added for synchronizing the system clock across the network.
+
+	[https://www.freedesktop.org/wiki/Software/systemd/](https://www.freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+
 ### System maintenance
 
-*   **cylon** — Updates, Maintenance , anti-malware , backups and system checks in a menu driven Bash script.
+*   **cylon** — Updates, Maintenance, anti-malware, backup and system checks in a menu driven Bash script.
 
 	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 

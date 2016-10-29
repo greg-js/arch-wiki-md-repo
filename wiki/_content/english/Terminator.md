@@ -5,10 +5,11 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
 *   [3 Key commands](#Key_commands)
-    *   [3.1 Drag and Drop](#Drag_and_Drop)
-    *   [3.2 More key commands](#More_key_commands)
-*   [4 Plugins](#Plugins)
-*   [5 External resources](#External_resources)
+*   [4 Managing profiles](#Managing_profiles)
+    *   [4.1 Drag and Drop](#Drag_and_Drop)
+    *   [4.2 More key commands](#More_key_commands)
+*   [5 Plugins](#Plugins)
+*   [6 External resources](#External_resources)
 
 ## Installation
 
@@ -44,6 +45,36 @@ User-specific configuration can be found in `~/.config/terminator/config`.
 `Alt + ←` Move to the terminal left of the current one
 
 `Alt + →` Move to the terminal right of the current one
+
+## Managing profiles
+
+It is possible to start terminator with a random profile every time. To avoid unexpected behavior, you should start with a clean `[profiles]` section. You can copy the one from this file: [http://pastebin.com/gGvYH6zD](http://pastebin.com/gGvYH6zD). It contains many well-known color schemes. Copy its contents to your `config` file, which is located in `~/.config/terminator/`. Then, `cat` your list of profiles to a destination of your choice.
+
+```
+cat $HOME/.config/terminator/config | grep -B 1 'background_color' | grep '\]\]' | tr -d '[]' > $HOME/.config/terminator/profiles
+
+```
+
+If you add more profiles in the future and would like to have them included in the startup pool, you will have to reissue the command above. You can create an [alias](/index.php/Bash#Aliases "Bash").
+
+You must now modify Terminator's desktop file so that it selects a random profile from this list at startup.
+
+```
+sudo nano /usr/share/applications/terminator.desktop
+
+```
+
+Find the `Exec` line and comment it out with a `#`. Add your own `Exec` line as follows.
+
+```
+# Exec=terminator
+Exec=sh -c "terminator -p $( shuf -n 1 $HOME/.config/terminator/profiles )"
+
+```
+
+Save the file and restart your [DE](/index.php/Desktop_environment "Desktop environment").
+
+Bonus: Go to the terminator preferences and under the "keybindings" tab, take note of how to switch to the next profile. This way,if the profile Terminator has started with is not your liking, you can quickly change it.
 
 ### Drag and Drop
 

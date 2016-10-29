@@ -4,6 +4,18 @@ From [w:LightScribe](https://en.wikipedia.org/wiki/LightScribe "w:LightScribe"):
 
 Labels burnt using LightScribe are monochromatic, as it works by making a chemical in the media react with the laser beam and change color.
 
+**Note:**
+
+*   The official home of LightScribe [www.lightscribe.com](http://www.lightscribe.com) is discontinued since 2013\. The lightscribe system software is only available from third parties like [pawtec](http://www.pawtec.com/lightscribe/).
+*   x86_64 is only partially supported with [Multilib](/index.php/Multilib "Multilib").
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Labelers](#Labelers)
+*   [3 Enhanced Label Contrast Utility](#Enhanced_Label_Contrast_Utility)
+*   [4 See also](#See_also)
+
 ## Installation
 
 To use LightScribe, regardless of which operating system you are using, you need two pieces of software: the LightScribe System Software and another LightScribe label making software.
@@ -36,3 +48,8 @@ To adjust the contrast which is often too light, run:
 ```
 
 then hit `1` to use the enhanced contrast setting or `2` to reset it. Note that some programs (e.g. LaCie 4L) have this option built-in and it can be changed at runtime.
+
+## See also
+
+*   [http://www.pawtec.com/lightscribe/](http://www.pawtec.com/lightscribe/)
+*   (GER) [https://wiki.ubuntuusers.de/LightScribe/](https://wiki.ubuntuusers.de/LightScribe/)

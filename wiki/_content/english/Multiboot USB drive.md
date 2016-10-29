@@ -331,7 +331,7 @@ menuentry "[loopback]CentOS-7.0-1406-x86_64-**DVD**" {
 *   `LABEL=MYUSBSTICK`
 *   `UUID=00000000-0000-0000-0000-0000deadbeef`
 
-For example, `linux (loop)/isolinux/vmlinuz noeject inst.stage2=hd:**LABEL=MYUSBSTICK**:/$isofile`.
+For example, `linux (loop)/isolinux/vmlinuz noeject inst.stage2=hd:**LABEL=MYUSBSTICK**:/$isofile` or `linux (loop)/isolinux/vmlinuz noeject inst.stage2=hd:**UUID=$rootuuid**:/$isofile`.
 
 When using some special disk label (e.g. GPT), it's also possible to use `PARTUUID=` and/or `PARTLABEL=`.
 

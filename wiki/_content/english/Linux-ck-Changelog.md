@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.5-1**
+
+*   Changelog: NUMA disable is now defaulted and [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.5](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.5)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=df9dbd24d9564e37dbd74a4e1fa55dd9660350ef](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=df9dbd24d9564e37dbd74a4e1fa55dd9660350ef)
+
 **Bump to v4.8.4-4**
 
 *   Changelog: Update with ck4/MuQSS v0.116\. Updates to [repo-ck] are building now.

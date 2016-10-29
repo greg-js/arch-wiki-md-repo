@@ -96,8 +96,8 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
         *   [5.2.3 andrwe](#andrwe_2)
-        *   [5.2.4 arch-binaries](#arch-binaries)
-        *   [5.2.5 brtln](#brtln)
+        *   [5.2.4 brtln](#brtln)
+        *   [5.2.5 imake](#imake)
         *   [5.2.6 jkanetwork](#jkanetwork)
         *   [5.2.7 matrixim](#matrixim)
         *   [5.2.8 mikroskeem](#mikroskeem)
@@ -1019,18 +1019,6 @@ Server = http://repo.andrwe.org/x86_64
 
 ```
 
-#### arch-binaries
-
-*   **Maintainer:** GRV <grvconstanta@gmail.com>
-*   **Description:** Important AUR packages that are pre-compiled and ready to install with pacman.
-
-```
-[arch-binaries]
-SigLevel = Never
-Server = https://sourceforge.net/projects/arch-binaries/files/$repo/$arch
-
-```
-
 #### brtln
 
 *   **Maintainer:** [Bartłomiej Piotrowski](https://www.archlinux.org/trustedusers/#bpiotrowski)
@@ -1039,6 +1027,18 @@ Server = https://sourceforge.net/projects/arch-binaries/files/$repo/$arch
 ```
 [brtln]
 Server = http://pkgbuild.com/~barthalion/brtln/$arch/
+
+```
+
+#### imake
+
+*   **Maintainer:** GRV <grvconstanta@gmail.com>
+*   **Description:** Important AUR packages that are pre-compiled and ready to install with pacman.
+
+```
+[imake]
+SigLevel = Never
+Server = http://imake.ddns.net/$repo/$arch
 
 ```
 

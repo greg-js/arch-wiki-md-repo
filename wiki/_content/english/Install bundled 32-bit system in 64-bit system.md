@@ -155,8 +155,8 @@ case $1 in
 
 		mount -t proc none "$MOUNTPOINT/proc"
 		mount -t sysfs none "$MOUNTPOINT/sys"
-		touch "$PIDFILE"
 		[[ -n "$USEDISTCC" ]] && start_distccd
+		touch "$PIDFILE"
 		;;
 
 	stop)

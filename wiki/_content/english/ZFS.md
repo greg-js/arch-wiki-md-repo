@@ -6,6 +6,14 @@ Described as ["The last word in filesystems"](http://web.archive.org/web/2006042
 
 ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://www.llnl.gov/) to develop a native Linux kernel module for its massive storage requirements and super computers.
 
+**Note:** Due to potential legal incompatibilities between CDDL license of ZFS code, and GPL of Linux kernel ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS development not upstreamed nor supported by kernel. While ZFS, as filesystem, being heavily in need of kernel functionality and work stability.
+
+This results in:
+
+*   ZFS sill resides in [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and unofficial [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
+*   ZFSonLinux project keeping up to Linux kernel versions and making stable releases and Arch ZFS maintainers releasing them while Arch Linux already get next newer version of kernel, perpetually.
+*   This situation locks-down normal rolling update process by unsatisfied dependencies, because new kernel version, proposed by update, most of the time unsupported by ZFS.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -60,9 +68,13 @@ ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://
 
 ### General
 
-Install [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository. This package has [zfs-utils-linux-git](https://aur.archlinux.org/packages/zfs-utils-linux-git/) and [spl-linux-git](https://aur.archlinux.org/packages/spl-linux-git/) as a dependency, which in turn has [spl-utils-linux-git](https://aur.archlinux.org/packages/spl-utils-linux-git/) as dependency. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
+Install from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository:
 
-For users that desire ZFS builds from stable releases, [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository. A script to build ZFS and its dependencies automatically can be found [here](#Automated_build_script).
+*   [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) for [stable](http://zfsonlinux.org/) releases.
+*   [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases (with support of newer kernel versions).
+*   [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) for stable releases for LTS kernels.
+
+These branches have according for them `zfs-utils`, `spl-linux`, `spl-utils-linux` dependencies. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
 
 **Warning:** The ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
 
@@ -922,7 +934,7 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 
 #### systemd mount unit
 
-If it is not possible to bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[2]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
+If it is not possible to bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[4]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
 
  `srv-nfs4-music.mount` 
 ```

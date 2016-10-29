@@ -99,7 +99,7 @@ If you find that changing the `acpi_video0` backlight does not actually change t
 
 ### Udev rule
 
-If the ACPI interface is available, the backlight level can be set at boot using a udev rule:
+If the ACPI interface is available, the backlight level can be set at boot using a [udev](/index.php/Udev "Udev") rule:
 
  `/etc/udev/rules.d/81-backlight.rules` 
 ```

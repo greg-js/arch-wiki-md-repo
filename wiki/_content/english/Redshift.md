@@ -19,6 +19,7 @@ The project is developed on [GitHub](https://github.com/jonls/redshift). At the 
     *   [3.2 redshift-gtk will not start](#redshift-gtk_will_not_start)
     *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
     *   [3.4 If you can't get redshift to autostart in i3](#If_you_can.27t_get_redshift_to_autostart_in_i3)
+    *   [3.5 If you are on Wayland](#If_you_are_on_Wayland)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -224,6 +225,10 @@ You can add this to your i3 config file.
    exec --no-startup-id redshift-gtk
 
 ```
+
+### If you are on Wayland
+
+At the moment running redshift has no effect under Wayland, because gamma correction is not available there[[2]](https://github.com/jonls/redshift/issues/260). There is an open feature request on their issue tracker.[[3]](https://github.com/jonls/redshift/issues/55)
 
 ## See also
 

@@ -216,7 +216,7 @@ If it still doesn't work, you can make further reading in [Xilinx_JTAG_Linux](ht
 
 ### Xilinx Platform Cable USB-JTAG Drivers
 
-Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") . We need to build driver from source (git and some make stuff need to be installed, make will say what programs or libraries are missed):
+Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/) or [fxload-libusb](https://aur.archlinux.org/packages/fxload-libusb/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") . We need to build driver from source (git and some make stuff need to be installed, make will say what programs or libraries are missed):
 
 ```
 $ cd /opt/Xilinx
@@ -240,6 +240,27 @@ $ ./setup_pcusb /opt/Xilinx/14.7/ISE_DS/ISE/
 
 ```
 
+Or in older versions:
+
+```
+$ ./setup_pcusb /opt/Xilinx/10.x/ISE/
+
+```
+
+For the new fxload version: [fxload-libusb](https://aur.archlinux.org/packages/fxload-libusb/), the file /etc/udev/rules.d/xusbdfwu.rules needs to be changed to:
+
+ `$ /etc/udev/rules.d/xusbdfwu.rules` 
+```
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0008", MODE="666"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0007", RUN+="/usr/bin/fxload-libusb -t fx2 -I /usr/share/xusbdfwu.hex -d 03fd:0007"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0009", RUN+="/usr/bin/fxload-libusb -t fx2 -I /usr/share/xusb_xup.hex -d 03fd:0009"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="000d", RUN+="/usr/bin/fxload-libusb -t fx2 -I /usr/share/xusb_emb.hex -d 03fd:000d"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="000f", RUN+="/usr/bin/fxload-libusb -t fx2 -I /usr/share/xusb_xlp.hex -d 03fd:000f"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0013", RUN+="/usr/bin/fxload-libusb -t fx2 -I /usr/share/xusb_xp2.hex -d 03fd:0013"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0015", RUN+="/usr/bin/fxload-libusb -t fx2 -I /usr/share/xusb_xse.hex -d 03fd:0015"
+
+```
+
 When performing this command, the udev rules file will be created. You can reload udev rules to apply changes immidiately:
 
 ```
@@ -248,6 +269,13 @@ $ sudo udevadm control --reload-rules
 ```
 
 If driver installed correctly and udev rule works, STATUS led should turn on (green or red depending on voltage presence on VREF PIN)
+
+**Note:** This step is only required for versions of Xilinx ISE older than 11.1: In older versions, iMPACT doesn't correctly load the right drivers (it still tries to use windrvr6 drivers). To fix this, the environment variable LD_PRELOAD must be set so that the libusb drivers are loaded into iMPACT without recompiling it.
+
+```
+$ export LD_PRELOAD=/opt/Xilinx/usb-driver/libusb-driver.so
+
+```
 
 ### Locale Issues
 

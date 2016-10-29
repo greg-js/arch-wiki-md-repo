@@ -73,7 +73,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
 
-*   **cylon** — Updates, Maintenance , backups and system checks in a menu driven Bash script.
+*   **cylon** — Updates, Maintenance, backup and system checks in a menu driven Bash script.
 
 	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 

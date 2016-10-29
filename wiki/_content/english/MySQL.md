@@ -60,9 +60,11 @@ Install [mariadb](https://www.archlinux.org/packages/?name=mariadb), afterwards 
 
 ```
 
+**Warning:** For security reasons, the Systemd service file for this package will prevent MariaDB from using a `datadir` under the `$HOME` hierarchy
+
 Now the `mariadb.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
 
-**Tip:** If you use something other than `/var/lib/mysql` for datadir, you need to [edit](/index.php/Systemd#Editing_provided_units "Systemd") `mariadb.service` and append the same `--datadir` parameter to the `ExecStart` line.
+**Tip:** If you use something different from `/var/lib/mysql` for your data dir, you need to set `datadir=<YOUR_DATADIR>` under section `[mysqld]` of your `/etc/mysql/my.cnf`
 
 The following command will interactively guide you through a number of recomended security measures at the database level:
 

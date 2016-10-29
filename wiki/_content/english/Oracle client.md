@@ -7,6 +7,7 @@ This document will explain how to install the Oracle database client under Arch 
     *   [2.1 Relevant packages](#Relevant_packages)
     *   [2.2 Installing each package](#Installing_each_package)
     *   [2.3 Installation paths](#Installation_paths)
+*   [3 gqlplus](#gqlplus)
 
 ## Method 1: Unofficial repository
 
@@ -93,3 +94,7 @@ Without this, some programs will complain that they cannot find the Oracle clien
 ### Installation paths
 
 When using the packages in the AUR, the TNSNAMES file should be saved as `/etc/tnsnames.ora`. `ORACLE_HOME` should be set automatically to `/usr` in any new shells opened after the install, courtesy of `/etc/profile.d/oracle.sh`.
+
+## gqlplus
+
+After installing sqlplus, you might also want to install [gqlplus](https://aur.archlinux.org/packages/gqlplus/), a frontend to sqlplus that adds command history and tab completion.

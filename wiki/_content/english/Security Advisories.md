@@ -36,15 +36,14 @@ Security Advisories are published by the community driven [Arch CVE Monitoring T
 
 ## Scheduled Advisories
 
-*   [26 October 2016] ASA-201610-18 [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) arbitrary code execution
-*   [26 October 2016] ASA-201610-19 [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) arbitrary code execution
-
 ## Recent Advisories
 
 Here is an archive of security advisories posted to the [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list.
 
 ### October 2016
 
+*   [26 October 2016] [ASA-201610-19](https://lists.archlinux.org/pipermail/arch-security/2016-October/000747.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) arbitrary code execution
+*   [26 October 2016] [ASA-201610-18](https://lists.archlinux.org/pipermail/arch-security/2016-October/000746.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) arbitrary code execution
 *   [24 October 2016] [ASA-201610-17](https://lists.archlinux.org/pipermail/arch-security/2016-October/000745.html) [ocaml](https://www.archlinux.org/packages/?name=ocaml) information disclosure
 *   [24 October 2016] [ASA-201610-16](https://lists.archlinux.org/pipermail/arch-security/2016-October/000744.html) [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) privilege escalation
 *   [23 October 2016] [ASA-201610-15](https://lists.archlinux.org/pipermail/arch-security/2016-October/000743.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
