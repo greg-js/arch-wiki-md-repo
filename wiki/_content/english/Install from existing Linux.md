@@ -12,7 +12,7 @@ The goal of the bootstrapping procedure is to setup an environment from which th
 
 If the host system runs Arch Linux, this can be achieved by simply installing [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts). If the host system runs another Linux distribution, you will first need to set up an Arch Linux-based chroot.
 
-**Note:** This guide requires that the existing host system be able to execute the new target Arch Linux architecture programs. In the case of an x86_64 host, it is possible to use i686-pacman to build a 32-bit chroot environment. See [Arch64 Install bundled 32bit system](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system"). However it is not so easy to build a 64-bit environment when the host only supports running 32-bit programs.
+**Note:** This guide requires that the existing host system be able to execute the new target Arch Linux architecture programs. In the case of an x86_64 host, it is possible to use i686-pacman to build a 32-bit chroot environment. See [Install bundled 32-bit system in 64-bit system](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system"). However it is not so easy to build a 64-bit environment when the host only supports running 32-bit programs.
 
 **Warning:** Please make sure you understand each step before proceeding. It is easy to destroy your system or to lose critical data, and your service provider will likely charge a lot to help you recover.
 

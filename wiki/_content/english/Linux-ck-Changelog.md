@@ -2,6 +2,17 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.5-3**
+
+*   Changelog: 100Hz is default by CK now so hardset this in PKGBUILD
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=fe703f1de237f7230a03576070d6651196934ab5](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=fe703f1de237f7230a03576070d6651196934ab5)
+
+**Bump to v4.8.5-2**
+
+*   Changelog: Update with ck5/MuQSS v0.120
+*   Commit1: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=7557346fe7e4a0107dee0f036a669b85dfe4bfeb](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=7557346fe7e4a0107dee0f036a669b85dfe4bfeb)
+*   Commit2: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c758454d9e69cc7c839041a45fcbd00e2864a495](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=c758454d9e69cc7c839041a45fcbd00e2864a495)
+
 **Bump to v4.8.5-1**
 
 *   Changelog: NUMA disable is now defaulted and [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.5](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.5)

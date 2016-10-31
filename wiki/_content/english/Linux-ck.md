@@ -10,25 +10,21 @@
 *   [3 How to enable the BFQ I/O Scheduler](#How_to_enable_the_BFQ_I.2FO_Scheduler)
     *   [3.1 Enable BFQ for all devices](#Enable_BFQ_for_all_devices)
     *   [3.2 Enable BFQ for only specified devices](#Enable_BFQ_for_only_specified_devices)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
-        *   [4.1.1 Use the unofficial repo (recommended if linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_.28recommended_if_linux-ck_is_installed_from_Repo-ck.29)
-        *   [4.1.2 The virtualbox-ck-host-modules package (recommended if linux-ck is built by you from the AUR)](#The_virtualbox-ck-host-modules_package_.28recommended_if_linux-ck_is_built_by_you_from_the_AUR.29)
-        *   [4.1.3 Use DKMS (more complicated, recommended with LTS releases)](#Use_DKMS_.28more_complicated.2C_recommended_with_LTS_releases.29)
-    *   [4.2 Downgrading](#Downgrading)
-    *   [4.3 Forum support](#Forum_support)
-*   [5 A little about the BFS](#A_little_about_the_BFS)
-    *   [5.1 BFS design goals](#BFS_design_goals)
-    *   [5.2 An example video about queuing theory](#An_example_video_about_queuing_theory)
-    *   [5.3 Some performance-based metrics: BFS vs. CFS](#Some_performance-based_metrics:_BFS_vs._CFS)
-    *   [5.4 Check if enabled](#Check_if_enabled)
-*   [6 BFS myths](#BFS_myths)
-    *   [6.1 BFS patched kernels CAN in fact use systemd](#BFS_patched_kernels_CAN_in_fact_use_systemd)
-*   [7 Further Reading on BFS and CK Patchset](#Further_Reading_on_BFS_and_CK_Patchset)
+*   [4 More about MuQSS](#More_about_MuQSS)
+    *   [4.1 Check if enabled](#Check_if_enabled)
+    *   [4.2 MuQSS patched kernels CAN in fact use systemd](#MuQSS_patched_kernels_CAN_in_fact_use_systemd)
+    *   [4.3 Further Reading on MuQSS and CK Patchset](#Further_Reading_on_MuQSS_and_CK_Patchset)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Running VirtualBox with Linux-ck](#Running_VirtualBox_with_Linux-ck)
+        *   [5.1.1 Use the unofficial repo (recommended if linux-ck is installed from Repo-ck)](#Use_the_unofficial_repo_.28recommended_if_linux-ck_is_installed_from_Repo-ck.29)
+        *   [5.1.2 The virtualbox-ck-host-modules package (recommended if linux-ck is built by you from the AUR)](#The_virtualbox-ck-host-modules_package_.28recommended_if_linux-ck_is_built_by_you_from_the_AUR.29)
+        *   [5.1.3 Use DKMS (more complicated, recommended with LTS releases)](#Use_DKMS_.28more_complicated.2C_recommended_with_LTS_releases.29)
+    *   [5.2 Downgrading](#Downgrading)
+    *   [5.3 Forum support](#Forum_support)
 
 ## General package details
 
-[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available in the [AUR](/index.php/AUR "AUR") and in the [unofficial linux-ck repo](#Use_pre-compiled_packages) that allows users to run a kernel/headers setup patched with Con Kolivas' ck1 patchset, including the Brain Fuck Scheduler (BFS). Many Archers elect to use this package for the BFS' excellent desktop interactivity and responsiveness under any load situation. Additionally, the bfs imparts performance gains beyond interactivity. For example, see: [CPU_Schedulers_Compared.pdf](http://repo-ck.com/bench/cpu_schedulers_compared.pdf).
+[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available in the [AUR](/index.php/AUR "AUR") and in the [unofficial linux-ck repo](#Use_pre-compiled_packages) that allows users to run a kernel/headers setup patched with Con Kolivas' ck patchset, including MuQSS (Multiple Queue Skiplist Scheduler) which is pronounced "mux" and has replaced the legacy Brain Fuck Scheduler (BFS). Many Archers elect to use this package for its excellent desktop interactivity and responsiveness under any load situation.
 
 ### Release cycle
 
@@ -36,17 +32,16 @@ Linux-ck roughly follows the release cycle of the official ARCH kernel. The foll
 
 *   Corresponding ARCH kernel base must be in [core] or else the corresponding modules such as nvidia, nvidia-304xx, nvidia-340xx, and vbox will not be available to users and will cause version conflicts.
 *   CK's patchset.
-*   BFQ patchset (until it gets mainlined).
 
 ### Package defaults
 
 There are **three** modifications to the config files:
 
 1.  The options that the ck patchset enable/disable.
-2.  The options that the BFQ patchset need to compile without user interaction.
-3.  Apply [GCC patch](https://github.com/graysky2/kernel_gcc_patch) that enables additional CPU optimizations at compile time (these options are not part of the standard linux-ck package and are only available when the user compiles custom options).
+2.  The tickrate is set to 100 Hz (CK's recommendation).
+3.  The extra CPU types optionally available to compile thanks to the [GCC patch](https://github.com/graysky2/kernel_gcc_patch).
 
-**All other options are set to the ARCH defaults outlined in the main kernel's config files.** Users are of course free to modify them! The linux-ck package contains an option to switch on the **nconfig** config editor (see section below). For some suggestions, see CK's [BFS configuration FAQ](http://ck.kolivas.org/patches/bfs/bfs-configuration-faq.txt).
+**All other options are set to the ARCH defaults outlined in the main kernel's config files.** Users are of course free to modify them! The linux-ck package contains an option to switch on the **nconfig** config editor (see section below).
 
 ### Long-Term Support (LTS) CK releases
 
@@ -85,11 +80,11 @@ If users would rather not spend the time to compile on their own, an unofficial 
 
 ## How to enable the BFQ I/O Scheduler
 
-**Note:** Do not confuse BFS (Brain Fuck Scheduler) with BFQ (Budget Fair Queueing). The BFS is a CPU scheduler and is enabled by default whereas BFQ is an I/O scheduler and must explicitly be enabled in order to use it.
+**Note:** Do not confuse MuQSS (Multiple Queue Skiplist Scheduler) with BFQ (Budget Fair Queueing). MuQSS is a CPU scheduler and is enabled by default whereas BFQ is an I/O scheduler and must explicitly be enabled in order to use it.
 
 Budget Fair Queueing is a disk scheduler which allows each process/thread to be assigned a portion of the disk throughput. Its creator has released results of many benchmarks ([results](http://algo.ing.unimo.it/people/paolo/disk_sched/results.php) and [video](http://www.youtube.com/watch?v=KhZl9LjCKuU)) which shows some pretty amazing latency performance.
 
-Since linux-ck-3.0.4-2, the BFQ patchset is applied to the package by default, but the scheduler must be enabled manually. Users have several options to do so.
+Due to CK's patchset, BFQ is built into [linux-ck](/index.php/AUR "AUR"), but the scheduler must be enabled manually. Users have several options to do so.
 
 ### Enable BFQ for all devices
 
@@ -122,6 +117,31 @@ noop deadline cfq [bfq]
 Note that doing it this way will not survive a reboot. To make the change automatically at the next system boot, create the following tmpfile where sdX is the desired device:
 
  `/etc/tmpfiles.d/set_IO_scheduler.conf`  `w /sys/block/sdX/queue/scheduler - - - - bfq` 
+
+## More about MuQSS
+
+See the [LKML announcement](https://lkml.org/lkml/2016/10/29/4) posted by CK.
+
+### Check if enabled
+
+This start-up message should appear in the kernel ring buffer when MuQSS in enabled:
+
+```
+$ dmesg | grep -i muqss
+...
+MuQSS CPU scheduler v0.120 by Con Kolivas.
+
+```
+
+### MuQSS patched kernels CAN in fact use systemd
+
+It is a common mistake to think that MuQSS does not support cgroups. It does support cgroups, just not all the cgroup features (e. g. CPU limiting will not work).
+
+### Further Reading on MuQSS and CK Patchset
+
+*   [Con Kolivas' White Paper on MuQSS](https://raw.githubusercontent.com/ckolivas/linux/4.8-ck/Documentation/scheduler/sched-MuQSS.txt)
+*   [Wikipedia's BFS Article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")
+*   [Con Kolivas' Blog](http://ck-hack.blogspot.com/)
 
 ## Troubleshooting
 
@@ -168,53 +188,3 @@ Users wishing to downgrade to a previous version of linux-ck, have several optio
 ### Forum support
 
 Always feel free to open a thread in the forums for support. Be sure to give the thread a descriptive title to draw attention to the fact that the post relates to the Linux- ck package.
-
-## A little about the BFS
-
-The Brain Fuck Scheduler is a desktop orientated cpu process scheduler with extremely low latencies for excellent interactivity within normal load levels.
-
-### BFS design goals
-
-The BFS has two major design goals:
-
-1.  Achieve excellent desktop interactivity and responsiveness without heuristics and tuning knobs that are difficult to understand, impossible to model and predict the effect of, and when tuned to one workload cause massive detriment to another.
-2.  Completely do away with the complex designs of the past for the cpu process scheduler and instead implement one that is very simple in basic design.
-
-For additional information, see the [#Further Reading on BFS and CK Patchset](#Further_Reading_on_BFS_and_CK_Patchset) section of this article.
-
-### An example video about queuing theory
-
-See [this video](http://www.youtube.com/watch?v=F5Ri_HhziI0) about queuing theory for an interesting parallel with supermarket checkouts. Quote from CK, "the relevance of that video is that BFS uses a single queue, whereas the mainline Linux kernel uses a multiple queue design. The people are tasks, and the checkouts are CPUs. Of course there is a lot more to a CPU scheduler than just the queue design, but I thought this video was very relevant."
-
-### Some performance-based metrics: BFS vs. CFS
-
-A major benefit of using the BFS is increased responsiveness. The benefits however, are not limited to desktop feel. [Graysky](/index.php/User:Graysky "User:Graysky") put together some non-responsiveness based benchmarks to compare it to the CFS contained in the "stock" linux kernel. Seven different machines were used to see if differences exist and, to what degree they scale using performance based metrics. Again, these end-points were never factors in the primary design goals of the bfs. Results were encouraging.
-
-For those not wanting to see the full report, here is the conclusion: Kernels patched with the ck1 patch set including the bfs outperformed the vanilla kernel using the cfs at nearly all the performance-based benchmarks tested. Further study with a larger test set could be conducted, but based on the small test set of 7 PCs evaluated, these increases in process queuing, efficiency/speed are, on the whole, independent of CPU type (mono, dual, quad, hyperthreaded, etc.), CPU architecture (32-bit and 64-bit) and of CPU multiplicity (mono or dual socket).
-
-Moreover, several "modern" CPUs (Intel C2D and Ci7) that represent common workstations and laptops, consistently outperformed the cfs in the vanilla kernel at all benchmarks. Efficiency and speed gains were small to moderate.
-
-[CPU_Schedulers_Compared.pdf](http://repo-ck.com/bench/cpu_schedulers_compared.pdf) is available for download.
-
-### Check if enabled
-
-This start-up message should appear in the kernel ring buffer when BFS in enabled:
-
-```
-# dmesg | grep scheduler
-...
-[    0.380500] BFS CPU scheduler v0.420 by Con Kolivas.
-
-```
-
-## BFS myths
-
-### BFS patched kernels CAN in fact use systemd
-
-It is a common mistake to think that BFS does not support cgroups. It does support cgroups, just not all the cgroup features (e. g. CPU limiting will not work).
-
-## Further Reading on BFS and CK Patchset
-
-*   [Con Kolivas' White Paper on the BFS](http://ck.kolivas.org/patches/bfs/bfs-faq.txt)
-*   [Wikipedia's BFS Article](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")
-*   [Con Kolivas' Blog](http://ck-hack.blogspot.com/)

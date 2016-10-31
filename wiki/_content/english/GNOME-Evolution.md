@@ -8,13 +8,13 @@
     *   [3.1 Offlineimap setup](#Offlineimap_setup)
     *   [3.2 First offlineimap sync and automated sync-ing](#First_offlineimap_sync_and_automated_sync-ing)
     *   [3.3 Evolution setup for offlineimap's maildir](#Evolution_setup_for_offlineimap.27s_maildir)
-*   [4 GMAIL Setup](#GMAIL_Setup)
+*   [4 Gmail Setup](#Gmail_Setup)
     *   [4.1 Receiving Mail](#Receiving_Mail)
     *   [4.2 Sending Mail](#Sending_Mail)
 *   [5 Gmail Calendar](#Gmail_Calendar)
 *   [6 Google Contacts](#Google_Contacts)
 *   [7 Tudelft webmail (Exchange)](#Tudelft_webmail_.28Exchange.29)
-*   [8 Using Evolution Outside Of Gnome](#Using_Evolution_Outside_Of_Gnome)
+*   [8 Using Evolution Outside Of GNOME](#Using_Evolution_Outside_Of_GNOME)
 *   [9 Spell Check](#Spell_Check)
 *   [10 Tips and tricks](#Tips_and_tricks)
     *   [10.1 Changing cipher settings](#Changing_cipher_settings)
@@ -50,17 +50,17 @@ Additional plugins:
 
 ## IMAP Setup
 
-This is the setup for a standard IMAP mail address. Go to Edit -> Preferences -> Mail Accounts. Add a mail account insert your Name and real email adress. Then click 'forward' here you are going to select the server type, this is IMAP. Now fill in the textbox server, for the server adress and username. For the rest of the options just follow the wizard. It is very easy, if you get stuck read this guide [[1]](http://library.gnome.org/users/evolution/stable/).
+This is the setup for a standard IMAP mail address. Go to Edit -> Preferences -> Mail Accounts. Add a mail account insert your Name and real email adress. Then click 'forward' here you are going to select the server type, this is IMAP. Now fill in the textbox server, for the server adress and username. For the rest of the options just follow the wizard. It is very easy, if you get stuck read [this guide](https://help.gnome.org/users/evolution/stable/).
 
 ## Alternative IMAP Setup
 
 An alternative to letting Evolution connect directly to the IMAP server is to sync the IMAP server to your PC. This costs as much hard-disk space as you have mail, though it is possible to limit the folders synced in this manner (see below). An additional benefit (primary inspiration for this app) is that you have a full copy of your email, including attachments, on your PC for retrieval, even if on the move without an internet connection.
 
-To set this up, you will need to [install](/index.php/Install "Install") the [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) package (see also [[2]](http://offlineimap.org/)).
+To set this up, you will need to [install](/index.php/Install "Install") the [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) package (see also [[1]](http://offlineimap.org/)).
 
 ### Offlineimap setup
 
-offlineimap takes its settings from the file ~/.offlineimaprc, which you will need to create. Most users will be able to use the .offlineimaprc below, for the most common case of a Gmail account. The settings for a general account are identical, except remotehost, ssl, and remoteport need to be set appropriately (see the comments below). See the [official README](https://github.com/nicolas33/offlineimap) for more information.
+offlineimap takes its settings from the file `~/.offlineimaprc`, which you will need to create. Most users will be able to use the .offlineimaprc below, for the most common case of a Gmail account. The settings for a general account are identical, except remotehost, ssl, and remoteport need to be set appropriately (see the comments below). See the [official README](https://github.com/nicolas33/offlineimap) for more information.
 
 ```
 [general]
@@ -113,7 +113,7 @@ folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail',
 
 ```
 
-WARNING: Please note that any space indenting a line of code in .offlineimaprc would be considered as appending that line to the previous line. In other words, always make sure there is no space before any lines in your config file.
+**Warning:** Please note that any space indenting a line of code in `~/.offlineimaprc` would be considered as appending that line to the previous line. In other words, always make sure there is no space before any lines in your config file.
 
 Acknowledgement: This config file was done by referring both to the official example as well as to the config file in an article on [http://www.linux.com](http://www.linux.com) (no longer available).
 
@@ -173,13 +173,13 @@ You should now have an automatically synced local copy of your IMAP server. Erro
 
 This is really quite simple, use Evolution's Account Assistant and select the Server Type "Maildir-format mail directories", under the Receiving Email section. Select also the path to your maildir (the 'root' folder if you're using a modified version of the .offlineimaprc above). You can change your 'Checking for New Mail' option to something very short, even 1 minute, since this only checks your local copy and not the server-side copy. SMTP settings are according to normal usage (does not go through offlineimap).
 
-## GMAIL Setup
+## Gmail Setup
 
-**Note:** Evolution automatically configures your settings in order to receive and send mails via GMail if you enter your address during the initial setup.
+**Note:** Evolution automatically configures your settings in order to receive and send mails via Gmail if you enter your address during the initial setup.
 
-To setup a GMail account, go to `Edit > Preferences > Mail Accounts` and enter your mail account details.
+To setup a Gmail account, go to `Edit > Preferences > Mail Accounts` and enter your mail account details.
 
-**Tip:** In [GNOME](/index.php/GNOME "GNOME") you can add a Google account in *Gnome Settings > Online Account* instead.
+**Tip:** In [GNOME](/index.php/GNOME "GNOME") you can add a Google account in *GNOME Settings > Online Account* instead.
 
 ### Receiving Mail
 
@@ -201,17 +201,17 @@ Optionally fill in automatically check for new mail every ** minutes. The rest i
 *   Fill in Username: <username>@gmail.com
 *   Authentication: PLAIN or Login
 
-You are now finished with configuring evolution for gmail. Just hit Send/ Receive in the main screen and wait for new mail. If it still didn't work, go to this link [[3]](http://tuxicity.wordpress.com/2007/03/08/howto-set-up-gmail-in-evolution-gnomes-mail-client-and-organizer/)
+You are now finished with configuring Evolution for Gmail. Just hit Send/Receive in the main screen and wait for new mail. If it still didn't work, go [here](http://tuxicity.wordpress.com/2007/03/08/howto-set-up-gmail-in-evolution-gnomes-mail-client-and-organizer/).
 
 ## Gmail Calendar
 
-You can use your gmail calendar in evolution here's how:
+You can use your Gmail calendar in Evolution here's how:
 
 Go to your calendar in your browser. Click on manage calendars -> the click on the calendar you want to add -> In the Private URL section copy the URL of ICAL (green button).
 
 Now go to Evolution. Click on file -> new -> calendar . In the 'new calendar dialog box' select type: On The Web. You can fill in your own calendar name Then Copy the URL to the URL field
 
-Now you will see your google calendar in your calendar view in Evolution by the name you gave it in the Name field.
+Now you will see your Google calendar in your calendar view in Evolution by the name you gave it in the Name field.
 
 **Variant2 (with evolution-webcal):**
 
@@ -219,15 +219,15 @@ From Evolution click on -> new -> calendar . In the 'new calendar dialog box' se
 
 ## Google Contacts
 
-Simarly with the calendar, you can sync your Google contacts in evolution.
+Simarly with the calendar, you can sync your Google contacts in Evolution.
 
 On Evolution, click on File > New > Address Book . Choose Google as type and add your Google account email as the User.
 
-**Note:** The above does not work since Google has turned off the old developer APIs which Evolution uses. You will need to create a Gnome online account (GOA) for your google account. Install [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) to be able to create a GOA and select what you would like to sync. You can delete/disable any google addressbooks created in evolution directly, else you will see two addressbooks
+**Note:** The above does not work since Google has turned off the old developer APIs which Evolution uses. You will need to create a GNOME online account (GOA) for your Google account. Install [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) to be able to create a GOA and select what you would like to sync. You can delete/disable any Google addressbooks created in Evolution directly, else you will see two addressbooks
 
 ## Tudelft webmail (Exchange)
 
-This is the setup for your tudelft webmail for evolution. It might also work for other webmail based email accounts.
+This is the setup for your tudelft webmail for Evolution. It might also work for other webmail based email accounts.
 
 Go to Edit -> Preferences -> Mail Accounts and make a mail account. For your Email Adress: <netid>@gmail.com . Be carefull your <netid>@student.tudelft.nl must be like this example: E.M.devries@student.tudelft.nl
 
@@ -237,9 +237,9 @@ Click Forward: The receiving options are already correct, you can select the opt
 
 Click Forward: Now just fill in the name of the mailbox and you are done.
 
-## Using Evolution Outside Of Gnome
+## Using Evolution Outside Of GNOME
 
-In order to use Evolution outside of Gnome desktop you must export [gnome-keyring#Using the keyring outside GNOME](/index.php/Gnome-keyring#Using_the_keyring_outside_GNOME "Gnome-keyring") first.
+In order to use Evolution outside of GNOME desktop you must export [gnome-keyring#Using the keyring outside GNOME](/index.php/Gnome-keyring#Using_the_keyring_outside_GNOME "Gnome-keyring") first.
 
 ## Spell Check
 
@@ -249,7 +249,7 @@ You need a local dictionary installed. See the [aspell](/index.php/Aspell "Aspel
 
 ### Changing cipher settings
 
-It is possible to change the advertised ciphers used to secure the connetion to the server. Evolution does not provide a switch to change the settings for the used ciphers, however since evolution uses GnuTLS it is possible to change the settings using environment variables.
+It is possible to change the advertised ciphers used to secure the connetion to the server. Evolution does not provide a switch to change the settings for the used ciphers, however since Evolution uses GnuTLS it is possible to change the settings using environment variables.
 
 One way to change the settings is to set the variable in /usr/share/applications/evolution.desktop
 
@@ -283,7 +283,7 @@ See also: [https://bugzilla.gnome.org/show_bug.cgi?id=738633#c4](https://bugzill
 
 ## Troubleshooting
 
-If after some system upgrade one gets no accounts in Evolution then all is not lost. First, we can see if we got our account files in ~/.evolution/, if so, then the only solution is to just make a new account in Evolution with the same parameters. (I only lost the signatures
+If after some system upgrade one gets no accounts in Evolution then all is not lost. First, we can see if we got our account files in `~/.evolution/`, if so, then the only solution is to just make a new account in Evolution with the same parameters. (I only lost the signatures
 
 ### Failing to Synchronize with Server
 
@@ -293,6 +293,6 @@ A possible solution is to switch to "Work Offline" select "Don't Synchronize” 
 
 ## References
 
-[Gnome Evolution Guide](http://library.gnome.org/users/evolution/stable/)
+[GNOME Evolution Guide](http://library.gnome.org/users/evolution/stable/)
 
 [Tudelft Evolution 2.24 Setup](http://www.tudelft.nl/live/pagina.jsp?id=babae0a3-1479-4501-9ec4-e308153735dc&lang=nl)

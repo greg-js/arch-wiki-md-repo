@@ -87,7 +87,7 @@ If not, check for cable issues before diagnosing further.
 **Note:**
 
 *   If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
-*   The `-c *num*` option can be used to make exactly `*num*` pings, otherwise it pings infinitely and has to be terminated manually. See `man ping` for more information.
+*   The `-c *num*` option can be used to make exactly `*num*` pings, otherwise it pings infinitely and has to be terminated manually. See [ping(8)](http://man7.org/linux/man-pages/man8/ping.8.html) for more information.
 *   `8.8.8.8` is a static address that is easy to remember. It is the address of Google's primary DNS server, therefore it can be considered reliable, and is generally not blocked by content filtering systems and proxies.
 
 ## Set the hostname
@@ -144,8 +144,8 @@ To configure the hosts file, add the following line to `/etc/hosts`:
 
 As a result the system resolves to both entries:
 
+ `$ getent hosts` 
 ```
-$ getent hosts 
 127.0.0.1       localhost
 127.0.1.1       myhostname.localdomain myhostname
 
@@ -175,10 +175,10 @@ For a system with a permanent IP address, that permanent IP address should be us
 
 Next, check that the driver was loaded via `dmesg | grep *module_name*`. For example:
 
+ `$ dmesg | grep atl1` 
 ```
-$ dmesg | grep atl1
-    ...
-    atl1 0000:02:00.0: eth0 link is up 100 Mbps full duplex
+...
+atl1 0000:02:00.0: eth0 link is up 100 Mbps full duplex
 
 ```
 
@@ -408,7 +408,7 @@ And finally disable the interface:
 
 ```
 
-For more options, see the `ip(8)` man page. These commands can be automated using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
+For more options, see the [ip(8)](http://man7.org/linux/man-pages/man8/ip.8.html). These commands can be automated using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd").
 
 #### Calculating addresses
 
@@ -613,8 +613,8 @@ These steps should help if your computer has this chipset:
 
 *   Find your NIC in *lspci* output:
 
+ `$ lspci | grep Ethernet` 
 ```
-$ lspci | grep Ethernet
 02:00.0 Ethernet controller: Broadcom Corporation NetLink BCM57780 Gigabit Ethernet PCIe (rev 01)
 
 ```

@@ -1038,7 +1038,7 @@ Server = http://pkgbuild.com/~barthalion/brtln/$arch/
 ```
 [imake]
 SigLevel = Never
-Server = http://imake.ddns.net/$repo/$arch
+Server = http://imake.ddns.net/$arch
 
 ```
 

@@ -140,6 +140,14 @@ LightScribe: Works
 Webcam: Works
 Card reader: Works | Big problems with WiFi card RT3290\. Best choice it's to use LAN Internet, or change WiFi card.
 Poor sound quality when using *snd-hda-intel*, but can't do anythink with it on any Linux distributions. |
+| HP ProBook 440 G4 | 2016.10 | Intel Core i5-7200U, Intel HD Graphics 620 (*i915*) | Intel sound card: *snd-hda-intel* | RTL8111\. Driver: *r8169* | Intel 7265\. Driver: *iwlwifi* | *not tested as per 30.10.16* | ACPI: Works
+Suspend to RAM: Working properly
+Suspend to Disk: not tested
+Battery: Works
+Display dimming: Works
+CPU frequency scaling: Works | No modem installed | Hot keys: Works
+Webcam: Works
+Card reader: not tested as per 30.10.16 | -- |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

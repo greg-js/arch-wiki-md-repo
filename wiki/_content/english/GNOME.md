@@ -122,7 +122,7 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 *   `Super` + `a`: show applications menu
 *   `Alt-` + `Tab`: cycle active applications
 *   `Alt-` + ``` (the key above `Tab` on US keyboard layouts): cycle windows of the application in the foreground
-*   `Alt` + `F2`, then enter `r` or `restart`: restart the shell in case of graphical shell problems (only in X/legacy mode not in wayland mode).
+*   `Alt` + `F2`, then enter `r` or `restart`: restart the shell in case of graphical shell problems (only in X/legacy mode, not in Wayland mode).
 
 ### Legacy names
 
@@ -233,7 +233,7 @@ Additional theme locations:
 
 *   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
 *   [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=167).
-*   [GTK3 themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
+*   [GTK+ 3 themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
 *   [Cursor themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
 *   [Icon themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
 
@@ -477,7 +477,7 @@ For further information, refer to the [app-folders schema](https://git.gnome.org
 *   Themes, icons, and backgrounds:
     *   [GNOME Art](http://art.gnome.org/)
     *   [GNOME Look](http://www.gnome-look.org/)
-*   GTK/GNOME programs:
+*   GTK+/GNOME programs:
     *   [GNOME Files](http://www.gnomefiles.org/)
     *   [GNOME Project Listing](http://www.gnome.org/projects/)
 *   [Customizing the GNOME Shell](http://blog.fpmurphy.com/2011/03/customizing-the-gnome-3-shell.html)

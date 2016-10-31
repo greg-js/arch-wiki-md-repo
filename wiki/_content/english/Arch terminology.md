@@ -55,7 +55,7 @@ Officially, the 'Arch' in "Arch Linux" is pronounced /ˈɑrtʃ/ as in an "archer
 
 ## Arch Linux Archive
 
-The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (a.k.a ALA), formerly known as Arch Linux Rollback Machine (a.k.a ARM), stores official repositories snapshots, iso images and bootstrap tarballs across time.
+The [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") (a.k.a ALA), formerly known as Arch Linux Rollback Machine (a.k.a ARM), stores official repositories snapshots, ISO images and bootstrap tarballs across time.
 
 ## AUR
 

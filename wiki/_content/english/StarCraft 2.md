@@ -117,7 +117,8 @@ Have a look at projects aiming at creating more ergonomic hotkeys for SCII:
 
 *   [TheCore](http://www.teamliquid.net/forum/sc2-strategy/341878-thecore-advanced-keyboard-layout)
 *   [TheCore Lite](http://www.teamliquid.net/forum/sc2-strategy/333891-thecore-lite-advanced-keyboard-layout)
-*   [Fleet Keys](http://www.teamliquid.net/forum/sc2-strategy/404476-fleet-keys-refined-hotkey-systems). All of them are projects aiming at creating more ergonomic hotkeys for SCII
+*   [Fleet Keys](http://www.teamliquid.net/forum/sc2-strategy/404476-fleet-keys-refined-hotkey-systems).
+*   [DarkGrid](http://www.teamliquid.net/forum/sc2-strategy/257590-darkgrid-layout)
 
 [Rapid Fire](http://www.teamliquid.net/forum/sc2-strategy/446530-rapid-fire-hotkey-trick) Hotkeys are implemented in those hotkeys settings.
 

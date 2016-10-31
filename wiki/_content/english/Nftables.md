@@ -7,7 +7,7 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Basic Implementation](#Basic_Implementation)
+*   [2 Basic implementation](#Basic_implementation)
     *   [2.1 Load the basic default ruleset](#Load_the_basic_default_ruleset)
 *   [3 nft](#nft)
 *   [4 Tables](#Tables)
@@ -33,24 +33,24 @@ You can also visit the [official nftables wiki page](https://wiki.nftables.org/w
         *   [6.3.1 Prepended](#Prepended)
         *   [6.3.2 At a given position](#At_a_given_position)
     *   [6.4 Deletion](#Deletion_3)
-    *   [6.5 Atomic Reloading](#Atomic_Reloading)
-*   [7 File Definitions](#File_Definitions)
-*   [8 Getting Started](#Getting_Started)
+    *   [6.5 Atomic reloading](#Atomic_reloading)
+*   [7 File definitions](#File_definitions)
+*   [8 Getting started](#Getting_started)
 *   [9 Samples](#Samples)
-    *   [9.1 Simple IP/IPv6 Firewall](#Simple_IP.2FIPv6_Firewall)
-    *   [9.2 Limit rate IP/IPv6 Firewall](#Limit_rate_IP.2FIPv6_Firewall)
+    *   [9.1 Simple IP/IPv6 firewall](#Simple_IP.2FIPv6_firewall)
+    *   [9.2 Limit rate IP/IPv6 firewall](#Limit_rate_IP.2FIPv6_firewall)
     *   [9.3 Jump](#Jump)
 *   [10 Practical examples](#Practical_examples)
     *   [10.1 Different rules for different interfaces](#Different_rules_for_different_interfaces)
     *   [10.2 Masquerading](#Masquerading)
-*   [11 Logging to Syslog](#Logging_to_Syslog)
+*   [11 Logging to syslog](#Logging_to_syslog)
 *   [12 See also](#See_also)
 
 ## Installation
 
 The Linux kernel supports nftables since version 3.13 but running the latest kernel is recommended. You will only need to install the userland utilities, which are provided by the package [nftables](https://www.archlinux.org/packages/?name=nftables) or the git-version [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
-## Basic Implementation
+## Basic implementation
 
 Like other firewalls, nftables makes a distinction between temporary rules made in the commandline and permanent ones loaded from or saved to a file. The default file is `/etc/nftables.conf` which already contains a simple ipv4/ipv6 firewall table named "inet filter".
 
@@ -236,9 +236,10 @@ The ingress hook is an alternative to the existing `tc` utility.
 
 ##### Priorities
 
-**Note:** Priorities do not currently appear to have any effect on which chain sees packets first.
+**Note:**
 
-**Note:** Since the priority seems to be an unsigned integer, negative priorities will be converted into very high priorities.
+*   Priorities do not currently appear to have any effect on which chain sees packets first.
+*   Since the priority seems to be an unsigned integer, negative priorities will be converted into very high priorities.
 
 Priorities tell nftables which chains packets should pass through first. They are integers, and the higher the integer, the higher the priority.
 
@@ -314,7 +315,7 @@ The following is an incomplete list of the matches available:
 *   sctp (SCTP protocol)
 *   ct (connection tracking)
 
-The following is an incomplete list of match arguments (for a more complete list, see `man 8 nft`):
+The following is an incomplete list of match arguments (for a more complete list, see [nft(8)](http://www.netfilter.org/projects/nftables/manpage.html)):
 
 ```
 meta:
@@ -440,7 +441,7 @@ All the chains in a table can be flushed with the `nft flush table` command. Ind
 
 The first command flushes all of the chains in the ip `foo` table. The second flushes the `bar` chain in the ip `foo` table. The third deletes all of the rules in `bar` chain in the ip6 `foo` table.
 
-### Atomic Reloading
+### Atomic reloading
 
 Flush the current ruleset:
 
@@ -463,7 +464,7 @@ Now you can edit /tmp/nftables and apply your changes with:
 
 ```
 
-## File Definitions
+## File definitions
 
 File definitions can be used by the `nft -f` command, which acts like the `iptables-restore` command. However, unlike `iptables-restore`, this command does not flush out your existing ruleset, to do so you have to prepend the flush command.
 
@@ -489,7 +490,7 @@ To export your rules (like `iptables-save`):
 
 ```
 
-## Getting Started
+## Getting started
 
 The below example shows *nft* commands to configure a basic **IPv4** only firewall. If you want to filter both IPv4 **and** IPv6 you should look at the other examples in `/usr/share/nftables` or just start with the default provided in `/etc/nftables.conf` which already works with IPv4/IPv6.
 
@@ -530,7 +531,7 @@ Delete all rules in a chain:
 
 ## Samples
 
-### Simple IP/IPv6 Firewall
+### Simple IP/IPv6 firewall
 
  `firewall.rules` 
 ```
@@ -538,100 +539,55 @@ Delete all rules in a chain:
 
 flush ruleset
 
-table firewall {
-  chain incoming {
-    type filter hook input priority 0;
+table inet filter {
+	chain input {
+		type filter hook input priority 0; policy drop;
 
-    # established/related connections
-    ct state established,related accept
+		# established/related connections
+		ct state established,related accept
 
-    # invalid connections
-    ct state invalid drop
+		# invalid connections
+		ct state invalid drop
 
-    # loopback interface
-    iifname lo accept
+		# loopback interface
+		iif lo accept
 
-    # icmp
-    icmp type echo-request accept
+		# ICMP
+		# routers may also want: mld-listener-query, nd-router-solicit
+		ip6 nexthdr icmpv6 icmpv6 type { destination-unreachable, packet-too-big, time-exceeded, parameter-problem, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
+		ip protocol icmp icmp type { destination-unreachable, router-advertisement, time-exceeded, parameter-problem } accept
 
-    # open tcp ports: sshd (22), httpd (80)
-    tcp dport {ssh, http} accept
+		# SSH (port 22)
+		tcp dport ssh accept
 
-    # everything else
-    drop
-  }
-}
-
-table ip6 firewall {
-  chain incoming {
-    type filter hook input priority 0;
-
-    # established/related connections
-    ct state established,related accept
-
-    # invalid connections
-    ct state invalid drop
-
-    # loopback interface
-    iifname lo accept
-
-    # icmp
-    # routers may also want: mld-listener-query, nd-router-solicit
-    icmpv6 type {echo-request,nd-neighbor-solicit} accept
-
-    # open tcp ports: sshd (22), httpd (80)
-    tcp dport {ssh, http} accept
-
-    # everything else
-    drop
-  }
+		# HTTP (ports 80 & 445)
+		tcp dport { http, https } accept
+	}
 }
 
 ```
 
-### Limit rate IP/IPv6 Firewall
+### Limit rate IP/IPv6 firewall
 
  `firewall.2.rules` 
 ```
-table firewall {
-    chain incoming {
-        type filter hook input priority 0;
+table inet filter {
+	chain input {
+		type filter hook input priority 0; policy drop;
 
-        # no ping floods:
-        ip protocol icmp limit rate 10/second accept
-        ip protocol icmp drop
+		# no ping floods:
+		ip6 nexthdr icmpv6 icmpv6 type echo-request limit rate 10/second accept
+		ip protocol icmp icmp type echo-request 10/second accept
 
-        ct state established,related accept
-        ct state invalid drop
+		ct state established,related accept
+		ct state invalid drop
 
-        iifname lo accept
+		iifname lo accept
 
-	# avoid brute force on ssh:
-        tcp dport ssh limit rate 15/minute accept
+		# avoid brute force on ssh:
+		tcp dport ssh limit rate 15/minute accept
 
-        reject
-    }
-}
-
-table ip6 firewall {
-    chain incoming {
-        type filter hook input priority 0;
-
-        # no ping floods:
-        ip6 nexthdr icmpv6 limit rate 10/second accept
-        ip6 nexthdr icmpv6 drop
-
-        ct state established,related accept
-        ct state invalid drop
-
-        # loopback interface
-        iifname lo accept
-
-	# avoid brute force on ssh:
-        tcp dport ssh limit rate 15/minute accept
-
-        reject
-    }
+	}
 }
 
 ```
@@ -731,7 +687,7 @@ table ip nat {
 
 ```
 
-## Logging to Syslog
+## Logging to syslog
 
 If you use a Linux kernel < 3.17, you have to modprobe `xt_LOG` to enable logging.
 
@@ -741,3 +697,4 @@ If you use a Linux kernel < 3.17, you have to modprobe `xt_LOG` to enable loggin
 *   [First release of nftables](https://lwn.net/Articles/324251/)
 *   [nftables quick howto](https://home.regit.org/netfilter-en/nftables-quick-howto/)
 *   [The return of nftables](https://lwn.net/Articles/564095/)
+*   [What comes after ‘iptables’? It’s successor, of course: `nftables`](http://developers.redhat.com/blog/2016/10/28/what-comes-after-iptables-its-successor-of-course-nftables/)

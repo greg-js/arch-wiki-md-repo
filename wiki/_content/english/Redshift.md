@@ -86,7 +86,7 @@ Redshift reads the configuration file `~/.config/redshift.conf`, if it exists. H
 ```
 ; Global settings for redshift
 [redshift]
-; Set the day and night screen temperatures
+; Set the day and night screen temperatures (Neutral is 6500K)
 temp-day=5700
 temp-night=3500
 

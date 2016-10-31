@@ -80,19 +80,7 @@ There's a good list of software with Avahi support at their website: [http://ava
 
 ### Firewall
 
-Be sure to open UDP port 5353 if you're using iptables:
-
-```
- # iptables -A INPUT -p udp -m udp --dport 5353 -j ACCEPT
-
-```
-
-If you're following the more-than-useful [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall") format for your firewall:
-
-```
- # iptables -A UDP -p udp -m udp --dport 5353 -j ACCEPT
-
-```
+Be sure to open UDP port `5353` if you're using a [firewall](/index.php/Firewall "Firewall").
 
 ### Link-Local (Bonjour/Zeroconf) chat
 

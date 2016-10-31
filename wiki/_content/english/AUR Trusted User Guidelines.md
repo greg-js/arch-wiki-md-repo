@@ -71,7 +71,7 @@ TUs are also in an excellent position to document recommended practices.
 
 ### Accessing and Updating the Repository
 
-The [community] repository now uses **devtools** which is the same system used for uploading packages to [core] and [extra], except that it uses another server `nymeria.archlinux.org` instead of `gerolde.archlinux.org`. Thus most of the instructions in [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") work without any change. Information which is specific for the [community] repository (like changed URLs) have been put here. The devtools require packagers to [set the PACKAGER variable](/index.php/Arch_Build_System#Set_the_PACKAGER_variable_in_.2Fetc.2Fmakepkg.conf "Arch Build System"). This is done in `/etc/makepkg.conf` for system-wide configuration, or in `~/.makepkg.conf` for user specific configuration.
+The [community] repository now uses **devtools** which is the same system used for uploading packages to [core] and [extra], except that it uses another server `orion.archlinux.org` instead of `gerolde.archlinux.org`. Thus most of the instructions in [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") work without any change. Information which is specific for the [community] repository (like changed URLs) have been put here. The devtools require packagers to [set the PACKAGER variable](/index.php/Arch_Build_System#Set_the_PACKAGER_variable_in_.2Fetc.2Fmakepkg.conf "Arch Build System"). This is done in `/etc/makepkg.conf` for system-wide configuration, or in `~/.makepkg.conf` for user specific configuration.
 
 Initially you should do a **non-recursive checkout** of the [community] repository:
 
@@ -87,7 +87,7 @@ For **checking** out, **updating** all packages or **adding** a package see the 
 To **remove** a package:
 
 ```
-ssh nymeria.archlinux.org /community/db-repo-remove community arch pkgname
+ssh orion.archlinux.org /community/db-repo-remove community arch pkgname
 
 ```
 
@@ -95,11 +95,11 @@ Here and in the following text, *arch* can be one of *i686* or *x86_64* which ar
 
 When you are done with editing the PKGBUILD, etc., you should **commit** the changes (`svn commit`).
 
-Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and `extra-x86_64-build`.
+Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and `extra-x86_64-build`. If you want to upload to testing you also need to build with the testing scripts `testing-i686-build` and `testing-x86_64-build`.
 
 Sign the package with `gpg --detach-sign *.pkg.tar.xz`. If you are using a different PGP key for package signing you can add it to `~/.makepkg.conf` with `GPGKEY=<identifier>`.
 
-When you want to **release** a package, first copy the package along with its signatures to the *staging/community* directory on *nymeria.archlinux.org* using `scp` and then **tag** the package by going to the *pkgname/trunk* directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named *community-i686* or *community-x86_64* indicating that this package is in the community repository for that architecture.
+When you want to **release** a package, first copy the package along with its signatures to the *staging/community* directory on *orion.archlinux.org* using `scp` and then **tag** the package by going to the *pkgname/trunk* directory and issuing `archrelease community-arch`. This makes an svn copy of the trunk entries in a directory named *community-i686* or *community-x86_64* indicating that this package is in the community repository for that architecture. Note that the staging directory is different from the staging repository and every package needs to be uploaded the to staging directory. This process can be automated with the `communitypkg` script, see the summary below.
 
 ***Note:** In some cases, especially for community packages, an x86_64 TU might bump the pkgrel by .1 (and not +1). This indicates that the change to the PKGBUILD is x86_64 specific and i686 maintainers **should not** rebuild the package for i686\. When the TU decides to bump the pkgrel, it should be done with the usual increment of +1\. However, a previous pkgrel=2.1 must not become pkgrel=3.1 when bumped by the TU and must instead be pkgrel=3\. In a nutshell, leave dot (.) releases exclusive to the x86_64 TU's to avoid confusion.*
 
@@ -113,11 +113,11 @@ When you want to **release** a package, first copy the package along with its si
 *   **Commit**, **Sign**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:
     *   **Commit** the changes to trunk: `svn commit`.
     *   **Sign** the package: `gpg --detach-sign *.pkg.tar.xz`.
-    *   **Copy** the package and its signature to *nymeria.archlinux.org*: `scp *.pkg.tar.xz *.pkg.tar.xz.sig nymeria.archlinux.org:staging/community/`.
+    *   **Copy** the package and its signature to *orion.archlinux.org*: `scp *.pkg.tar.xz *.pkg.tar.xz.sig orion.archlinux.org:staging/community/`.
     *   **Tag** the package: `archrelease community-{i686,x86_64`}.
-*   **Update** the repository: `ssh nymeria.archlinux.org /community/db-update`.
+*   **Update** the repository: `ssh orion.archlinux.org /community/db-update`.
 
-Also see the *Miscellaneous* section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager"). For the section *Avoid having to enter your password all the time* use *nymeria.archlinux.org* instead of *gerolde.archlinux.org*.
+Also see the *Miscellaneous* section in the [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") and [SSH_keys#ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). For the section *Avoid having to enter your password all the time* use *orion.archlinux.org* instead of *gerolde.archlinux.org*.
 
 ### Disowning packages
 

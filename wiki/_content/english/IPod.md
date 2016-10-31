@@ -28,8 +28,9 @@ The purpose of this article is to demonstrate the use of iDevices under Arch Lin
     *   [5.6 Rhythmbox](#Rhythmbox)
 *   [6 iPod Classic/Nano3g](#iPod_Classic.2FNano3g)
 *   [7 iPod Shuffle 1st and 2nd generation](#iPod_Shuffle_1st_and_2nd_generation)
-*   [8 iPod management apps](#iPod_management_apps)
-*   [9 See also](#See_also)
+*   [8 iPod Shuffle 4th generation](#iPod_Shuffle_4th_generation)
+*   [9 iPod management apps](#iPod_management_apps)
+*   [10 See also](#See_also)
 
 ## Required Packages
 
@@ -426,6 +427,10 @@ $ python2 /path/to/rebuild_db.py
 ```
 
 [Source](http://shuffle-db.sourceforge.net/)
+
+## iPod Shuffle 4th generation
+
+To use your ipod shuffle 4g under linux you can use the python based command line tool [ipod-shuffle-4g](https://aur.archlinux.org/packages/ipod-shuffle-4g/). It also provides advanced voiceover and (auto)playlist generation support.
 
 ## iPod management apps
 

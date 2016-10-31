@@ -77,7 +77,7 @@ Add the following to `open_basedir`:
 Configure [mariadb](/index.php/Mariadb "Mariadb"):
 
 ```
-# mysql_install_db –user=mysql –basedir=/usr –datadir=/var/lib/mysql
+# mysql_install_db -–user=mysql -–basedir=/usr -–datadir=/var/lib/mysql
 
 ```
 
@@ -179,10 +179,10 @@ mime
 
 Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead.
 
-To do so, first install [chrony](https://www.archlinux.org/packages/?name=chrony):
+To do so, first install [cronie](https://www.archlinux.org/packages/?name=cronie):
 
 ```
-# pacman -S chrony
+# pacman -S cronie
 
 ```
 
@@ -200,7 +200,7 @@ This would open editor, paste this:
 
 ```
 
-Save the file and exit. Now you should [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `chrony.service`.
+Save the file and exit. Now you should [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `cronie.service`.
 
 You can verify that everything is set by running
 

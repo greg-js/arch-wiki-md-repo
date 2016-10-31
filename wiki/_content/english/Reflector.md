@@ -5,12 +5,12 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
     *   [2.1 Examples](#Examples)
-    *   [2.2 Systemd Service](#Systemd_Service)
-    *   [2.3 Systemd Timer](#Systemd_Timer)
-        *   [2.3.1 Pacman Hook](#Pacman_Hook)
-        *   [2.3.2 AUR package](#AUR_package)
-            *   [2.3.2.1 reflector-timer](#reflector-timer)
-            *   [2.3.2.2 reflector-timer-weekly](#reflector-timer-weekly)
+    *   [2.2 Pacman Hook](#Pacman_Hook)
+    *   [2.3 Systemd Service](#Systemd_Service)
+    *   [2.4 Systemd Timer](#Systemd_Timer)
+        *   [2.4.1 AUR package](#AUR_package)
+            *   [2.4.1.1 reflector-timer](#reflector-timer)
+            *   [2.4.1.2 reflector-timer-weekly](#reflector-timer-weekly)
 
 ## Installation
 
@@ -35,23 +35,46 @@ To see all of the available commands, run the following command:
 Filter the first five mirrors, sort them by download rate and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
-# reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
 Verbosely rate the 200 most recently synchronized HTTP servers, sort them by download rate, and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
-# reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose --latest 200 --protocol http --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
 Verbosely rate the 200 most recently synchronized HTTPS servers located in the US, sort them by download rate, and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
-# reflector --verbose --country 'United States' -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --verbose --country 'United States' --latest 200 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
+
+### Pacman Hook
+
+You can also create a pacman hook that will run *reflector* and remove the `.pacnew` file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
+
+ `/etc/pacman.d/hooks/mirrorupgrade.hook` 
+```
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = pacman-mirrorlist
+
+[Action]
+Description = Updating pacman-mirrorlist with reflector and removing pacnew...
+When = PostTransaction
+Depends = reflector
+Exec = /usr/bin/env sh -c "reflector --country 'United States' --latest 200 --sort rate --save /etc/pacman.d/mirrorlist; if [[ -f /etc/pacman.d/mirrorlist.pacnew ]]; then rm /etc/pacman.d/mirrorlist.pacnew; fi"
+
+```
+
+Make sure to substitute in your desired arguments for *reflector*.
+
+See [User:Allan/Pacman Hooks](/index.php/User:Allan/Pacman_Hooks "User:Allan/Pacman Hooks") and [DeveloperWiki:Pacman Hooks](/index.php/DeveloperWiki:Pacman_Hooks "DeveloperWiki:Pacman Hooks") for more info on pacman hooks.
 
 ### Systemd Service
 
@@ -108,29 +131,6 @@ WantedBy=timers.target
 ```
 
 And then just [start](/index.php/Start "Start") the `reflector.timer`.
-
-#### Pacman Hook
-
-You can also create a pacman hook that will run *reflector* and remove the `.pacnew` file created every time [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) gets an upgrade.
-
- `/etc/pacman.d/hooks/mirrorupgrade.hook` 
-```
-[Trigger]
-Operation = Upgrade
-Type = Package
-Target = pacman-mirrorlist
-
-[Action]
-Description = Updating pacman-mirrorlist with reflector and removing pacnew...
-When = PostTransaction
-Depends = reflector
-Exec = /usr/bin/bash -c "reflector --country 'United States' -l 200 --sort rate --save /etc/pacman.d/mirrorlist && [[ -f /etc/pacman.d/mirrorlist.pacnew ]] && rm /etc/pacman.d/mirrorlist.pacnew"
-
-```
-
-Make sure to substitute in your desired arguments for *reflector*.
-
-See [User:Allan/Pacman Hooks](/index.php/User:Allan/Pacman_Hooks "User:Allan/Pacman Hooks") and [DeveloperWiki:Pacman Hooks](/index.php/DeveloperWiki:Pacman_Hooks "DeveloperWiki:Pacman Hooks") for more info on pacman hooks.
 
 #### AUR package
 

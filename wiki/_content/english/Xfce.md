@@ -82,7 +82,7 @@ Xfce stores configuration options in [Xfconf](http://docs.xfce.org/xfce/xfconf/s
 
 #### Whisker menu
 
-[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching.
+[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace 'Applications Menu' as first item in Panel 1 (in 'Settings/Panel/Items' add 'Whisker Menu'...).
 
 #### Edit entries
 

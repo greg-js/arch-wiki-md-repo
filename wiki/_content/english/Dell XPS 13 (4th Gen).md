@@ -1,7 +1,7 @@
 | **Device** | **Status** | **Modules** |
 | Video | Working | i915 |
 | Wireless | Working - limited | ath10k |
-| Bluetooth | Not tested |  ? |
+| Bluetooth | Working | btusb |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working |  ? |
 | Webcam | Working | uvcvideo |
@@ -24,11 +24,12 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [4 Video](#Video)
     *   [4.1 Blank screen issue after booting](#Blank_screen_issue_after_booting)
 *   [5 Wireless](#Wireless)
-*   [6 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
-*   [7 SATA controller](#SATA_controller)
-*   [8 Touchpad](#Touchpad)
-    *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
-*   [9 Gestures](#Gestures)
+*   [6 Bluetooth](#Bluetooth)
+*   [7 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
+*   [8 SATA controller](#SATA_controller)
+*   [9 Touchpad](#Touchpad)
+    *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
+*   [10 Gestures](#Gestures)
 
 ## Content adaptive brightness control
 
@@ -44,7 +45,7 @@ Andy Lutomirski has released version 4 of his patchset which fixes powersaving f
 
 ## Coil Whine
 
-Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. At least for me it was possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics").
+Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. At least for me it was possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"). The coil whine will then start again under havy graphic load, which means all the time with a 4k montior.
 
 ## Video
 
@@ -56,7 +57,11 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 ## Wireless
 
-The Killer 1535 Wirless Adapter is functional and the ath10k firmware is included in recent linux kernel versions. The connection speed however is limited to 1Mb/s at the moment. This was the case for the Ubuntu 10.04 shipped with the Developer Edition and also with a standard Arch Linux installation.
+The Killer 1535 Wirless Adapter is functional and the ath10k firmware is included in recent linux kernel versions. The connection speed reported by iw is limited to 1-6Mbits/s. However this is just the output being wrong. The real connection speed is not limited to this value.
+
+## Bluetooth
+
+After following the instructions given at [Bluetooth](/index.php/Bluetooth "Bluetooth") tethering of internet connections via phone works immediately.
 
 ## Thunderbolt 3 / USB 3.1
 

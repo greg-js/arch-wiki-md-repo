@@ -81,7 +81,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Hawaii](/index.php/Hawaii "Hawaii")** — Hawaii is a lightweight, coherent and fast desktop environment that relies on Qt 5, QtQuick and Wayland and is designed to offer the best UX for the device where it is running.
 
-	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/)
+	[http://hawaiios.org](http://hawaiios.org) || [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/)
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 

@@ -36,7 +36,8 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
     *   [7.1 Better font rendering](#Better_font_rendering)
     *   [7.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
     *   [7.3 GTK LookAndFeel](#GTK_LookAndFeel)
-    *   [7.4 Non-reparenting window managers](#Non-reparenting_window_managers)
+    *   [7.4 Better 2D performance](#Better_2D_performance)
+    *   [7.5 Non-reparenting window managers](#Non-reparenting_window_managers)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -318,6 +319,15 @@ Some Java programs insist on using the cross platform Metal look and feel. In so
 `swing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel`.
 
 **Note:** Forcing Java to use GTK may break some applications. Currently JRE/JDK (as of 8u60) is linked against GTK2 while many desktop applications start using GTK3\. If a GTK3 app has Java plugins with GUI, the app is likely to crash when opening the Java GUI, as mixing GTK2 and GTK3 in the same process is not supported. Libreoffice 5.0 is an example for this.
+
+### Better 2D performance
+
+Switching to OpenGL-based hardware acceleration pipeline will improve 2D performance
+
+```
+ export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
+
+```
 
 ### Non-reparenting window managers
 

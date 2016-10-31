@@ -530,8 +530,8 @@ user 'gdm': directory '/var/lib/gdm' does not exist
 To remove this warning, login as root and delete the primary user "gdm" and then delete the group "gdm":
 
 ```
-#userdel gdm
-#groupdel gdm
+# userdel gdm
+# groupdel gdm
 
 ```
 

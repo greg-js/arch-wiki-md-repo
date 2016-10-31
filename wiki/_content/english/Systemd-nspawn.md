@@ -365,6 +365,7 @@ It can sometimes be impossible to upgrade some packages on the container, [files
 
 ## See also
 
+*   [Automatic console login](/index.php/Getty#Nspawn_console "Getty")
 *   [machinectl man page](http://www.freedesktop.org/software/systemd/man/machinectl.html)
 *   [systemd-nspawn man page](http://www.freedesktop.org/software/systemd/man/systemd-nspawn.html)
 *   [Creating containers with systemd-nspawn](http://lwn.net/Articles/572957/)

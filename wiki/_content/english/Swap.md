@@ -208,7 +208,7 @@ Swap values can be adjusted to help performance.
 
 ### Swappiness
 
-The *swappiness* [sysctl](/index.php/Sysctl "Sysctl") parameter represents the kernel's preference (or avoidance) of swap space. Swappiness can have a value between 0 and 100, the default value is 60\. Setting this parameter to a low value will reduce swapping from RAM, and is known to improve responsiveness on many systems.
+The *swappiness* [sysctl](/index.php/Sysctl "Sysctl") parameter represents the kernel's preference (or avoidance) of swap space. Swappiness can have a value between 0 and 100, the default value is 60\. A low value causes the kernel to avoid swapping, a higher value causes the kernel to try to use swap space. Using a low value on sufficient memory is known to improve responsiveness on many systems.
 
 To check the current swappiness value:
 

@@ -71,8 +71,8 @@ options=(debug !strip)
 
 **Note:** `debug` in addition to DEBUG_* conterparts, would also add flags from CFLAGS and CXXFLAGS, which might not be what you want, as these flags usually contains optimisations. One way to mitigate this [is by putting](https://bugs.archlinux.org/task/50861#comment151164)
 ```
-`CFLAGS=""` 
-`CXXFLAGS=""`
+CFLAGS=""
+CXXFLAGS=""
 
 ```
 

@@ -17,20 +17,16 @@
     *   [1.14 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
     *   [1.15 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
 *   [2 Package management](#Package_management)
-    *   [2.1 In which package is X?](#In_which_package_is_X.3F)
-    *   [2.2 I've found an error with Package X. What should I do?](#I.27ve_found_an_error_with_Package_X._What_should_I_do.3F)
-    *   [2.3 Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing](#Arch_packages_need_to_use_a_unique_naming_convention._.22.pkg.tar.gz.22_and_.22.pkg.tar.xz.22_are_too_long_and.2For_confusing)
-    *   [2.4 Pacman needs a library so other applications can easily access package information](#Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
-    *   [2.5 Pacman needs feature X!](#Pacman_needs_feature_X.21)
-    *   [2.6 What is the difference between all these repositories?](#What_is_the_difference_between_all_these_repositories.3F)
-    *   [2.7 What is the difference between a repository and a mirror?](#What_is_the_difference_between_a_repository_and_a_mirror.3F)
-    *   [2.8 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
-    *   [2.9 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
-    *   [2.10 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
-    *   [2.11 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
-    *   [2.12 Does Arch use package signing?](#Does_Arch_use_package_signing.3F)
-    *   [2.13 What to do before upgrading?](#What_to_do_before_upgrading.3F)
-    *   [2.14 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
+    *   [2.1 I've found an error with Package X. What should I do?](#I.27ve_found_an_error_with_Package_X._What_should_I_do.3F)
+    *   [2.2 Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing](#Arch_packages_need_to_use_a_unique_naming_convention._.22.pkg.tar.gz.22_and_.22.pkg.tar.xz.22_are_too_long_and.2For_confusing)
+    *   [2.3 Pacman needs a library so other applications can easily access package information](#Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
+    *   [2.4 Pacman needs feature X!](#Pacman_needs_feature_X.21)
+    *   [2.5 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
+    *   [2.6 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
+    *   [2.7 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
+    *   [2.8 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
+    *   [2.9 What to do before upgrading?](#What_to_do_before_upgrading.3F)
+    *   [2.10 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
 *   [3 Installation](#Installation)
     *   [3.1 Arch needs an installer. Maybe a GUI installer?](#Arch_needs_an_installer._Maybe_a_GUI_installer.3F)
     *   [3.2 I installed Arch, and now I am at a shell! What now?](#I_installed_Arch.2C_and_now_I_am_at_a_shell.21_What_now.3F)
@@ -138,16 +134,7 @@ The answer to this question depends on your system. There are some [fine utiliti
 
 ## Package management
 
-### In which package is X?
-
-You can find out with [pkgfile](/index.php/Pkgfile "Pkgfile").
-
-For example:
-
-```
-$ pkgfile *file_name*
-
-```
+See the [pacman](/index.php/Pacman "Pacman"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") and [Official repositories](/index.php/Official_repositories "Official repositories") pages for more answers.
 
 ### I've found an error with Package X. What should I do?
 
@@ -170,14 +157,6 @@ Pacman is a front-end to [libalpm](https://www.archlinux.org/pacman/libalpm.3.ht
 If you think an idea has merit, you may choose to discuss it on [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/). Also check [https://bugs.archlinux.org](https://bugs.archlinux.org) for existing feature requests.
 
 However, the best way to get a feature added to pacman or Arch Linux is to implement it yourself. The patch or code may or may not be officially accepted, but perhaps others will appreciate, test and contribute to your effort.
-
-### What is the difference between all these repositories?
-
-See [Official repositories](/index.php/Official_repositories "Official repositories").
-
-### What is the difference between a repository and a mirror?
-
-See [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman").
 
 ### I just installed Package X. How do I start it?
 
@@ -203,10 +182,6 @@ If `foobaz` is a package that you built yourself and installed from AUR, you sho
 ### Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?
 
 No, it is not possible. Major kernel updates (e.g. *linux 3.5.0-1* to *linux 3.6.0-1*) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/), then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
-
-### Does Arch use package signing?
-
-Yes. Package signing has been implemented in [pacman](/index.php/Pacman "Pacman"). See [package signing](/index.php/Package_signing "Package signing") for more information.
 
 ### What to do before upgrading?
 

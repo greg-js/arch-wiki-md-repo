@@ -37,7 +37,7 @@ $ systemd-analyze blame
 
 ```
 
-En algunos puntos del proceso de arrranque, las cosas no pueden continuarh asta que una determinada unidad tiene éxito. Para ver qué unidades se encuentran en éstos puntos críticos en la cadena de inicio, usamos:
+En algunos puntos del proceso de arranque, las cosas no pueden continuar hasta que una determinada unidad tiene éxito. Para ver qué unidades se encuentran en éstos puntos críticos en la cadena de inicio, usamos:
 
 ```
 $ systemd-analyze critical-chain
@@ -55,7 +55,7 @@ Ver `man systemd-analyze` para más detalles.
 
 ## Usando systemd-bootchart
 
-Bootchart se fusionó con **systemd** desde Octubre de 201 y se puede usar para arrancar tal como lo haría con el bootchart original. Agregamos ésto a nuestro kernel:
+Bootchart se fusionó con **systemd** desde Octubre de 2012 y se puede usar para arrancar tal como lo haría con el bootchart original. Agregamos ésto a nuestro kernel:
 
 ```
 initcall_debug printk.time=y init=/usr/lib/systemd/systemd-bootchart

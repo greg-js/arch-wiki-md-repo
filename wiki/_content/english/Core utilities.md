@@ -309,7 +309,7 @@ alias mv='timeout 8 mv -iv'
 
 ```
 
-This alias suspends *mv* after eight seconds, asks confirmation to delete three or more files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
+This alias suspends *mv* after eight seconds, asks for confirmation before overwriting any existing files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
 
 ## od
 

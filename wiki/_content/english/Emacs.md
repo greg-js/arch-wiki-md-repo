@@ -379,7 +379,7 @@ For example, let's define two configuration files.
 
 ```
 
-This is the full configuration we load for the daemon. But the *plugins* file is huge and slow to load. If we want to spaqn a new Emacs instance that does not need the *plutings* features, it can be cumbersome to load it everytime in the long time.
+This is the full configuration we load for the daemon. But the *plugins* file is huge and slow to load. If we want to spawn a new Emacs instance that does not need the *plugins* features, it can be cumbersome to load it everytime in the long run.
 
  `.emacs-light` 
 ```

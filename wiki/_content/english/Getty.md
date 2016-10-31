@@ -7,6 +7,7 @@ A [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") is the ge
 *   [3 Automatic login to virtual console](#Automatic_login_to_virtual_console)
     *   [3.1 Virtual console](#Virtual_console)
     *   [3.2 Serial console](#Serial_console)
+    *   [3.3 Nspawn console](#Nspawn_console)
 *   [4 Have boot messages stay on tty1](#Have_boot_messages_stay_on_tty1)
 *   [5 See also](#See_also)
 
@@ -69,6 +70,17 @@ Create the following file (and leading directories):
 [Service]
 ExecStart=
 ExecStart=-/usr/bin/agetty --autologin *username* -s %I 115200,38400,9600 vt102
+```
+
+### Nspawn console
+
+To configure auto-login for a [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") container, override *console-getty* service:
+
+ `/etc/systemd/system/console-getty.service.d/override.conf` 
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --noclear --autologin *username* --keep-baud console 115200,38400,9600 $TERM
 ```
 
 ## Have boot messages stay on tty1

@@ -54,7 +54,7 @@ For a verbose status, another way is to execute:
 
 **Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
 
-Install [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and copy `PreLoader.efi` and `HashTool.efi` to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+[Install](/index.php/Install "Install") [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and copy `PreLoader.efi` and `HashTool.efi` to the [boot loader](/index.php/Boot_loader "Boot loader") directory; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
 # cp /usr/share/preloader-signed/{PreLoader,HashTool}.efi *esp*/EFI/systemd
@@ -114,7 +114,7 @@ When the system starts with Secure Boot enabled, follow the steps above to enrol
 
 **Note:** Since you are going to remove stuff, is a good idea to backup it.
 
-Uninstall [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and simply [remove](/index.php/Remove "Remove") the copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+[Uninstall](/index.php/Uninstall "Uninstall") [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and simply [remove](/index.php/Remove "Remove") the copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
 # rm *esp*/EFI/systemd/{PreLoader,HashTool}.efi

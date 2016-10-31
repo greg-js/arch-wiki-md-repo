@@ -39,7 +39,7 @@ Both GUI versions, *transmission-gtk* and *transmission-qt*, can function autono
 
 GUI versions are configured to work out-of-the-box, but the user may wish to change some of the settings. The default path to the GUI configuration files is `~/.config/transmission`.
 
-A guide to configuration options can be found on the Transmission web site: [https://trac.transmissionbt.com/wiki/EditConfigFiles#Options](https://trac.transmissionbt.com/wiki/EditConfigFiles#Options).
+A guide to configuration options can be found on the Transmission web site: [https://github.com/transmission/transmission/wiki/Editing-Configuration-Files](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files).
 
 ### GTK+ temporary cosmetic fix
 

@@ -509,7 +509,7 @@ Starting with version 49, Firefox can play Widevine videos, such as those on Net
 
 1.  **Allow Firefox to install DRM.** The first time you visit a widevine-enabled page, firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
 2.  **Forge a Chrome user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox it will try to use Silverlight. Use a user agent string from Chrome for linux, such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.93 Safari/537.36`. This can be configured using the [User Agent Switcher extension](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) or with `general.useragent.override` in *about:config*
-3.  **Run firefox with the sandboxes turned off.** Some part of the widevine cdm tries to violate [the seccomp sandbox](https://wiki.mozilla.org/Security/Sandbox/Seccomp), which will crash playback (see [bug 1303813](https://bugzilla.mozilla.org/show_bug.cgi?id=1303813)). Launch firefox with the media plugin sandbox disabled using an environment variable: `MOZ_DISABLE_GMP_SANDBOX=1 firefox`
+3.  **Run firefox with the sandboxes turned off. (not needed with Firefox 50+)** Some part of the widevine cdm tries to violate [the seccomp sandbox](https://wiki.mozilla.org/Security/Sandbox/Seccomp), which will crash playback (see [bug 1303813](https://bugzilla.mozilla.org/show_bug.cgi?id=1303813)). Launch firefox with the media plugin sandbox disabled using an environment variable: `MOZ_DISABLE_GMP_SANDBOX=1 firefox`
 
 ### Mouse wheel scroll speed
 

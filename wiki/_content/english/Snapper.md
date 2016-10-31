@@ -263,7 +263,7 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 *   **snap-pac** — "Makes pacman automatically use snapper to create [#Pre/post snapshots](#Pre.2Fpost_snapshots) like openSUSE's YaST". Uses [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
-	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://aur.archlinux.org/packages/snap-pac/)
+	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
 *   **pacupg** — "Script that wraps package and AUR upgrades in btrfs snapshots and provides an easy way to roll them back."
 
@@ -398,6 +398,23 @@ Where `*#*` is the number of the snapper snapshot you wish to restore. Your `/` 
 ### Deleting files from snapshots
 
 If you want to delete a specific file or folder from past snapshots without deleting the snapshots themselves, [snapperS](https://pypi.python.org/pypi/snapperS) is a script that adds this functionality to Snapper. This script can also be used to manipulate past snapshots in a number of other ways that Snapper does not currently support.
+
+If you'd like to do it without a separate script, you just need to [make your snapshot subvolume read-write](http://unix.stackexchange.com/a/149933/3587), which you can do with:
+
+```
+sudo btrfs property set /path/to/.snapshots/<snapshot_num>/snapshot ro false
+
+```
+
+verify that <tt>ro=false</tt>:
+
+```
+sudo btrfs property get /path/to/.snapshots/<snapshot_num>/snapshot
+ro=false
+
+```
+
+You can now modify files in <tt>/path/to/.snapshots/<snapshot_num>/snapshot</tt> like normal. You can use a shell loop to work on your snapshots in bulk.
 
 ### Preventing slowdowns
 

@@ -242,7 +242,15 @@ aliases=32,default
 
 ```
 
-Optionally edit `/etc/schroot/arch32/mount` to match the mounts created within `/usr/local/bin/arch32`.
+**Warning:** This next step is very important if non-standard mounts are to accessed from within the schroot command!
+
+Optionally edit `/etc/schroot/arch32/mount` to match the mounts created within `/usr/local/bin/arch32`. Failure to do can result in errors like:
+
+```
+E: Failed to change to directory ‘/foo’: No such file or directory
+I: The directory does not exist inside the chroot.  Use the --directory option to run the command in a different directory.
+
+```
 
 ### Using Schroot to run a 32-bit application
 

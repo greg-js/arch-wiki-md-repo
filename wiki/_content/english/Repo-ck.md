@@ -1,8 +1,8 @@
-*Repo-ck* is an unofficial Arch Linux repository with generic and CPU-optimized kernels and support packages, featuring [BFS](http://ck-hack.blogspot.com) ([Brain Fuck Scheduler](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler")) and rest of the `-ck` patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas").
+*Repo-ck* is an unofficial Arch Linux repository hosting generic and CPU-optimized kernels and support packages, featuring [MuQSS](http://ck-hack.blogspot.com) (pronounced mux) and rest of the ck patchset by [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas "wikipedia:Con Kolivas"). It has been in operation since 2011 and is maintained by [graysky](/index.php/User:Graysky "User:Graysky").
 
 ## Contents
 
-*   [1 Installation](#Installation)
+*   [1 Setup](#Setup)
 *   [2 Kernels and related packages](#Kernels_and_related_packages)
 *   [3 Selecting the correct CPU optimized package](#Selecting_the_correct_CPU_optimized_package)
     *   [3.1 Speed benefits of CPU optimized packages](#Speed_benefits_of_CPU_optimized_packages)
@@ -13,19 +13,15 @@
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Support](#Support)
     *   [8.2 Downloads interrupt regularly](#Downloads_interrupt_regularly)
-    *   [8.3 Error: signature from "graysky (used to sign repo-ck packages) <graysky@archlinux.us>" is unknown trust](#Error:_signature_from_.22graysky_.28used_to_sign_repo-ck_packages.29_.3Cgraysky.40archlinux.us.3E.22_is_unknown_trust)
+    *   [8.3 Error: signature from graysky is unknown trust](#Error:_signature_from_graysky_is_unknown_trust)
 
-## Installation
+## Setup
 
-Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial user repositories") repository to `pacman.conf` and [sign](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") [Graysky](http://repo-ck.com/)'s key.
+Add the [repo-ck](/index.php/Unofficial_user_repositories#repo-ck "Unofficial user repositories") repository to `pacman.conf` and [sign](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key") [graysky](http://repo-ck.com/)'s key.
 
 ## Kernels and related packages
 
-**Note:** LTS packages are not included.
-
-The official kernel is available in two flavors (either i686 or x86_64) which are *generic* packages, in that i686 will work with *any* compatible x86 CPU and x86_64 will work with *any* compatible x86_64 CPU. Users have a choice between the corresponding generic linux-ck package, or packages optimized for a specific CPU.
-
-CPU-specific optimizations are invoked by selecting *Processor type and features > Processor family* in `make menuconfig`, or by adjusting `.config` accordingly. These changes setup make specific GCC options, including `CFLAGS`.
+The official "ARCH" kernel is available in two flavors (either i686 or x86_64) which are *generic* packages, in that i686 will work with *any* compatible x86 CPU and x86_64 will work with *any* compatible x86_64 CPU. Repo-ck also hosts generic versions of linux-ck but also allows users the choice of packages optimized for specific CPUs too. CPU-specific optimizations are invoked by selecting *Processor type and features > Processor family* in `make nconfig`, or by adjusting `.config` accordingly. These changes setup make specific GCC options, including `CFLAGS`.
 
 Packages marked with `*` are available only for the 64-bit systems, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1423574#p1423574).
 
@@ -97,7 +93,7 @@ Extensive testing comparing the effect of GCC compile options show varying resul
 
 **Note:** As with *any* additional kernel, manually edit the boot loader configuration to make it aware of new kernel images. For example, see [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") for GRUB.
 
-Use the **ck-X** group and select the desired packages for installation. There are 11 groups corresponding to the [package sets](#Kernels_and_related_packages). For example:
+Use the **ck-X** group and select the desired packages for installation. There are 17 groups corresponding to the [package sets](#Kernels_and_related_packages). For example:
 
  `# pacman -S ck-generic` 
 ```
@@ -116,7 +112,7 @@ See [Linux-ck#How to enable the BFQ I/O Scheduler](/index.php/Linux-ck#How_to_en
 
 ## Repository statistics
 
-**Note:** The statistics are not updated daily but do give a snapshot of the data.
+**Note:** The statistics are not updated daily but do give a snapshot of the data based on one mirror only.
 
 Repo [statistics](http://repo-ck.com/stats.pdf) are available (package and CPU popularity, number of downloads, and so forth).
 
@@ -150,6 +146,6 @@ Alternatively, change the [pacman](/index.php/Pacman "Pacman") downloader to [wg
 
 See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1422475#p1422475) for an explanation of these issues.
 
-### Error: signature from "graysky (used to sign repo-ck packages) <graysky@archlinux.us>" is unknown trust
+### Error: signature from graysky is unknown trust
 
-You must import and sign graysky's gpg keys. Instructions along with his key ID are located at [repo-ck.com](http://repo-ck.com/). See also [Pacman/Package signing#Adding unofficial keys](/index.php/Pacman/Package_signing#Adding_unofficial_keys "Pacman/Package signing").
+Users must import and sign graysky's gpg key. Instructions along with his key ID are located at [repo-ck.com](http://repo-ck.com/). See also [Pacman/Package signing#Adding unofficial keys](/index.php/Pacman/Package_signing#Adding_unofficial_keys "Pacman/Package signing").

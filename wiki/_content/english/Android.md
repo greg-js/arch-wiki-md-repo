@@ -80,7 +80,7 @@ Before developing Android applications, you need to install the Android SDK, whi
 2.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)
 3.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)
 
-[android-support](https://aur.archlinux.org/packages/android-support/) is also required if supporting older devices.
+If supporting older devices, or working with older code, [android-support](https://aur.archlinux.org/packages/android-support/) and [android-support-repository](https://aur.archlinux.org/packages/android-support-repository/) might be required.
 
 Android-sdk will be installed on `/opt/android-sdk`. This folder has root permissions, so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
 

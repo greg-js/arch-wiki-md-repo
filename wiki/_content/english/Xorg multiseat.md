@@ -446,7 +446,21 @@ If two users want to use the sound card simultaneously, it is necessary to use a
 *   Create group pulse-access and put users, who will play sound locally into it (Group membership is used for access control for local access to PA daemon.)
 *   In /etc/pulse/default.pa state explicitly the access rights
 
- `load-module module-native-protocol-unix auth-group=pulse-access auth-group-enable=1` Start PA as system-wide, under root: `pulseaudio --system` 
+ `load-module module-native-protocol-unix auth-group=pulse-access auth-group-enable=1` 
+
+Create /etc/dbus-1/system.d/pulseaudio.conf with this content [/etc/dbus-1/system.d/pulseaudio.conf](https://bbs.archlinux.org/viewtopic.php?pid=563481#p563481):
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<busconfig>
+	<policy user="pulse">
+		<allow own="org.pulseaudio.Server"/>
+		<allow send_destination="org.pulseaudio.Server"/>
+		<allow receive_sender="org.pulseaudio.Server"/>
+	</policy>
+</busconfig>
+```
+Start PA as system-wide, under root: `pulseaudio --system` 
 
 In `/var/run/pulse` should appear files for communication with daemon, namely pid and native.
 
@@ -454,7 +468,7 @@ In `/var/run/pulse` should appear files for communication with daemon, namely pi
 
 You can check communication with system daemon as non-root by e.g. `pactl -s "unix:/var/run/pulse/native" list`.
 
-It is possible to enable automatic connection to local daemon in /etc/pulse/client.conf
+It is possible to enable automatic network connection to local daemon in /etc/pulse/client.conf
 
  `auto-connect-localhost = yes` 
 

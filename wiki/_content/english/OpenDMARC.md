@@ -62,7 +62,7 @@ Add the following lines to `main.cf`:
 
 ```
 
-and make sure, that you DMARC is after DKIM milter.
+Make sure that the DMARC milter is declared after the DKIM milter.
 
 ## Security
 
