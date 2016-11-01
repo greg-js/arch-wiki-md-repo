@@ -249,7 +249,7 @@ When building on an Arch ARM device, the developers *highly* recommend using the
 
 Extract the toolchain corresponding to the requisite architecture somewhere on the **slave filesystem** and edit `/etc/conf.d/distccd` adjusting the PATH to allow the toolchain to be used.
 
-Example with the toolchair extracted to `/mnt/data`:
+Example with the toolchain extracted to `/mnt/data`:
 
 ```
 PATH=/mnt/data/x-tools8/aarch64-unknown-linux-gnueabi/bin:$PATH

@@ -92,7 +92,8 @@ The following *partitions* (shown with a numerical suffix) are required for a ch
 
 *   One partition for the root directory `/`.
 *   If [UEFI](/index.php/UEFI "UEFI") is enabled, an [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
-*   [Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap#Swap_file "Swap").
+
+[Swap space](/index.php/Swap_space "Swap space") can be set on a separate partition or a [swap file](/index.php/Swap#Swap_file "Swap").
 
 To modify *partition tables*, use [fdisk](/index.php/Fdisk "Fdisk") or [parted](/index.php/Parted "Parted"). See [Partitioning](/index.php/Partitioning "Partitioning") for more information.
 

@@ -271,7 +271,7 @@ There are a couple of packages used for automatically creating snapshots upon a 
 
 #### Backup non-btrfs boot partition on pacman transactions
 
-If your `/boot` partition is on a non btrfs filesystem (e.g. an [ESP](/index.php/ESP "ESP")) you are not able to do snapper backups with it. You can copy the boot partition automatically on a kernel update to your btrfs root with a hook. This also plays nice together with [snap-pac](https://aur.archlinux.org/packages/snap-pac/).
+If your `/boot` partition is on a non btrfs filesystem (e.g. an [ESP](/index.php/ESP "ESP")) you are not able to do snapper backups with it. You can copy the boot partition automatically on a kernel update to your btrfs root with a hook. This also plays nice together with [snap-pac](https://www.archlinux.org/packages/?name=snap-pac).
 
  `/usr/share/libalpm/hooks/50_bootbackup.hook` 
 ```
@@ -399,17 +399,17 @@ Where `*#*` is the number of the snapper snapshot you wish to restore. Your `/` 
 
 If you want to delete a specific file or folder from past snapshots without deleting the snapshots themselves, [snapperS](https://pypi.python.org/pypi/snapperS) is a script that adds this functionality to Snapper. This script can also be used to manipulate past snapshots in a number of other ways that Snapper does not currently support.
 
-If you'd like to do it without a separate script, you just need to [make your snapshot subvolume read-write](http://unix.stackexchange.com/a/149933/3587), which you can do with:
+If you want to remove a file without using an extra script, you just need to [make your snapshot subvolume read-write](http://unix.stackexchange.com/a/149933/3587), which you can do with:
 
 ```
-sudo btrfs property set /path/to/.snapshots/<snapshot_num>/snapshot ro false
+# btrfs property set /path/to/.snapshots/<snapshot_num>/snapshot ro false
 
 ```
 
 verify that <tt>ro=false</tt>:
 
 ```
-sudo btrfs property get /path/to/.snapshots/<snapshot_num>/snapshot
+# btrfs property get /path/to/.snapshots/<snapshot_num>/snapshot
 ro=false
 
 ```

@@ -4,14 +4,15 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Opening remote API](#Opening_remote_API)
-        *   [2.1.1 Remote API with systemd](#Remote_API_with_systemd)
-    *   [2.2 Daemon socket configuration](#Daemon_socket_configuration)
-    *   [2.3 Proxies](#Proxies)
-        *   [2.3.1 Proxy configuration](#Proxy_configuration)
-        *   [2.3.2 Container configuration](#Container_configuration)
-    *   [2.4 Configuring DNS](#Configuring_DNS)
-    *   [2.5 Images location](#Images_location)
+    *   [2.1 Storage driver](#Storage_driver)
+    *   [2.2 Opening remote API](#Opening_remote_API)
+        *   [2.2.1 Remote API with systemd](#Remote_API_with_systemd)
+    *   [2.3 Daemon socket configuration](#Daemon_socket_configuration)
+    *   [2.4 Proxies](#Proxies)
+        *   [2.4.1 Proxy configuration](#Proxy_configuration)
+        *   [2.4.2 Container configuration](#Container_configuration)
+    *   [2.5 Configuring DNS](#Configuring_DNS)
+    *   [2.6 Images location](#Images_location)
 *   [3 Docker 0.9.0 -- 1.2.x and LXC](#Docker_0.9.0_--_1.2.x_and_LXC)
 *   [4 Images](#Images)
     *   [4.1 Arch Linux](#Arch_Linux)
@@ -58,6 +59,28 @@ $ newgrp docker
 ```
 
 ## Configuration
+
+### Storage driver
+
+Storage driver, a.k.a. graph driver has huge impact on performance. It's job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The default, most compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
+
+As Arch linux ships new kernels, there's no point using the compatibility option. A good, modern choice is `overlay2`.
+
+To see current storage driver, run `docker info | head`.
+
+To set your own choice of storage driver, use `-s` option to `dockerd`, e.g.:
+
+```
+ [root@bmg ~]# cat /etc/systemd/system/docker.service.d/local.conf 
+ [Service]
+ ExecStart=
+ ExecStart=/usr/bin/dockerd -H fd:// -s overlay2
+
+```
+
+Recall that `ExecStart=` line is needed to drop inherited `ExecStart`.
+
+Further information on available options is at [https://docs.docker.com/engine/userguide/storagedriver/selectadriver/](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/)
 
 ### Opening remote API
 

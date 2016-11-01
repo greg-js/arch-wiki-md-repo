@@ -35,13 +35,13 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 
 ## Installation
 
-*   Install [arduino](https://aur.archlinux.org/packages/arduino/) from the [AUR](/index.php/AUR "AUR") and [arduino-docs](https://aur.archlinux.org/packages/arduino-docs/) for its offline documentation.
+*   Install [arduino](https://aur.archlinux.org/packages/arduino/) from the [AUR](/index.php/AUR "AUR") and [arduino-docs](https://www.archlinux.org/packages/?name=arduino-docs) for its offline documentation.
 *   Add yourself to the `uucp` and `lock` [groups](/index.php/Groups "Groups") (more information in the [#Accessing serial](#Accessing_serial) section).
 *   You may need to [load](/index.php/Kernel_modules "Kernel modules") the `cdc_acm` module.
 
 ### AVR Boards
 
-To use AVR boards such as the Arduino Uno you can install [arduino-avr-core](https://aur.archlinux.org/packages/arduino-avr-core/) optionally to use archlinux upstream avr-gcc instead of the bundled older avr-core. If you still want to use the older arduino-core you need to [install it in the board manager](https://www.arduino.cc/en/Guide/Cores). You can always switch between the different cores in the "Tools>Board" menu.
+To use AVR boards such as the Arduino Uno you can install [arduino-avr-core](https://www.archlinux.org/packages/?name=arduino-avr-core) optionally to use archlinux upstream avr-gcc instead of the bundled older avr-core. If you still want to use the older arduino-core you need to [install it in the board manager](https://www.arduino.cc/en/Guide/Cores). You can always switch between the different cores in the "Tools>Board" menu.
 
 ### Arduino Due / Yun
 

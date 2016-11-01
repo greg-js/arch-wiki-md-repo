@@ -204,7 +204,7 @@ See [my post](http://ubuntuforums.org/showthread.php?p=12127450#post12127450) on
 
 ### ncsvc and kernel versions 3.19 and 4.5 to 4.8
 
-Jupitern VPN does not support [linux](https://www.archlinux.org/packages/?name=linux) 4.5 to 4.8\. [Downgrade](/index.php/Downgrade "Downgrade") to version 4.4, or [install](/index.php/Install "Install") [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). This seems to be a reoccurence of an similar issue with [linux](https://www.archlinux.org/packages/?name=linux) 3.19\. [[1]](http://www.unixgr.com/juniper-ncsvc-and-linux-3-19/)
+Juniter VPN does not support [linux](https://www.archlinux.org/packages/?name=linux) 4.5 to 4.8\. [Downgrade](/index.php/Downgrade "Downgrade") to version 4.4, or [install](/index.php/Install "Install") [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). This seems to be a reoccurence of an similar issue with [linux](https://www.archlinux.org/packages/?name=linux) 3.19\. [[1]](http://www.unixgr.com/juniper-ncsvc-and-linux-3-19/)
 
 ## Caveats
 

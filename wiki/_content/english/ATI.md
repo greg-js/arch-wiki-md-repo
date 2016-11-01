@@ -37,20 +37,14 @@ If unsure, try the open source driver first, it will suit most needs and is gene
     *   [12.2 Independent X screens](#Independent_X_screens)
 *   [13 Turn vsync off](#Turn_vsync_off)
 *   [14 Troubleshooting](#Troubleshooting)
-    *   [14.1 Artifacts upon logging in](#Artifacts_upon_logging_in)
-    *   [14.2 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [14.3 AGP is disabled (with KMS)](#AGP_is_disabled_.28with_KMS.29)
-    *   [14.4 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
-    *   [14.5 Black screen with mouse cursor on resume from suspend in X](#Black_screen_with_mouse_cursor_on_resume_from_suspend_in_X)
-    *   [14.6 No desktop effects in KDE4 with X1300 and Radeon driver](#No_desktop_effects_in_KDE4_with_X1300_and_Radeon_driver)
-    *   [14.7 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
-    *   [14.8 2D performance (e.g. scrolling) is slow](#2D_performance_.28e.g._scrolling.29_is_slow)
-    *   [14.9 Monitor rotation works for cursor but not windows/content](#Monitor_rotation_works_for_cursor_but_not_windows.2Fcontent)
-    *   [14.10 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
-    *   [14.11 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
-    *   [14.12 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
-    *   [14.13 Low 2D performance in console and X](#Low_2D_performance_in_console_and_X)
-    *   [14.14 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
+    *   [14.1 Performance and/or artifacts issues when using EXA](#Performance_and.2For_artifacts_issues_when_using_EXA)
+    *   [14.2 Adding undetected/unsupported resolutions](#Adding_undetected.2Funsupported_resolutions)
+    *   [14.3 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
+    *   [14.4 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
+    *   [14.5 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
+    *   [14.6 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
+    *   [14.7 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
+    *   [14.8 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
 
 ## Selecting the right driver
 
@@ -372,28 +366,30 @@ Thermal sensors are implemented via external i2c chips or via the internal therm
 
 While the power saving features above should handle fan speeds quite well, some cards may still be too noisy in their idle state. In this case, and when your card supports it, you can change the fan speed manually.
 
-**Note:**
+**Warning:**
 
-*   Keep in mind that the following method sets the fan speed to a fixed value, hence it will not adjust with the stress of your gpu, which can lead to overheating under heavy load.
-*   Better check your gpu temperature when applying lower than standard values.
+*   Keep in mind that the following method sets the fan speed to a fixed value, hence it will not adjust with the stress of the GPU, which can lead to overheating under heavy load.
+*   Check GPU temperature when applying lower than standard values.
 
-First, issue the following command to enable the manual adjustment of the fan speed of your graphics card (or your first gpu in case of a multi gpu setup).
-
-```
-# echo 1 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
+Issue the following command to enable the manual adjustment of the fan speed of your graphics card (or the first GPU in case of a multi GPU setup).
 
 ```
-
-Then set your desired fan speed from 0 to 255, which corresponds to 0-100% fan speed (The following command sets it to roughly 20%).
+# echo 1 > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1_enable
 
 ```
-# echo 55 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
+
+Then set your desired fan speed from 0 to 255, which corresponds to 0-100% fan speed (the following command sets it to roughly 20%):
+
+```
+# echo 55 > /sys/class/drm/card0/device/hwmon/hwmon0/pwm1
 
 ```
 
 For persistence, use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") as shown above by the example with power profiles.
 
-If a fixed value isn't desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in /sys/class/drm/card0/device/hwmon/hwmon2/temp1_input), preferably with hystereses. There is also a gui solution: [http://github.com/marazmista/radeon-profile](http://github.com/marazmista/radeon-profile)[radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/).
+If a fixed value isn't desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in `/sys/class/drm/card0/device/hwmon/hwmon0/temp1_input`).
+
+A GUI solution is available by installing [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/).
 
 ## TV out
 
@@ -559,66 +555,38 @@ EndSection
 
 ## Troubleshooting
 
-### Artifacts upon logging in
+### Performance and/or artifacts issues when using EXA
 
-If encountering artifacts, first try starting X without `/etc/X11/xorg.conf`. Recent versions of Xorg are capable of reliable auto-detection and auto-configuration for most use cases. Outdated or improperly configured `xorg.conf` files are known to cause trouble.
+**Note:** Glamor is nowadays recommended over EXA, try forcing this acceleration architecture first (if unsupported).
 
-In order to run without a configuration tile, it is recommended that the `xorg-input-drivers` package group be installed.
+If having 2D performance issues, like slow scrolling in a terminal or webbrowser, adding `Option "MigrationHeuristic" "greedy"` as device option may solve the issue.
 
-You may as well try disabling `EXAPixmaps` in `/etc/X11/xorg.conf.d/20-radeon.conf`:
+In addition disabling EXAPixmaps may solve artifacts issues, although this is generally not recommended and may cause other issues.
 
+ `/etc/X11/xorg.conf.d/20-radeon.conf` 
 ```
 Section "Device"
     Identifier "Radeon"
     Driver "radeon"
-    Option "EXAPixmaps" "off"
+    Option "AccelMethod" "exa"
+    Option "MigrationHeuristic" "greedy"
+    #Option "EXAPixmaps" "off"
 EndSection
 
 ```
 
-### Adding undetected resolutions
+### Adding undetected/unsupported resolutions
 
-Please see the [Xrandr page](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
-
-### AGP is disabled (with KMS)
-
-If you experience poor performance and dmesg shows something like this
-
-```
-[drm:radeon_agp_init] *ERROR* Unable to acquire AGP: -19
-
-```
-
-then check if the agp driver for your motherboard (e.g., `via_agp`, `intel_agp` etc.) is loaded before the `radeon` module, see [#Loading](#Loading).
+See [Xrandr#Adding_undetected_resolutions](/index.php/Xrandr#Adding_undetected_resolutions "Xrandr").
 
 ### TV showing a black border around the screen
 
-When I connected my TV to my Radeon HD 5770 using the HDMI port, the TV showed a blurry picture with a 2-3cm border around it. This is not the case when using the proprietary driver. However, this protection against overscanning (see [Wikipedia:Overscan](https://en.wikipedia.org/wiki/Overscan "wikipedia:Overscan")) can be turned off using xrandr:
+**Note:** Make sure the tv has been setup correctly (see manual) before attempting the following solution.
+
+When connecting a TV using the HDMI port, the TV may show a blurry picture with a 2-3cm border around it. This protects against overscanning (see [Wikipedia:Overscan](https://en.wikipedia.org/wiki/Overscan "wikipedia:Overscan")), but can be turned off using xrandr:
 
 ```
 xrandr --output HDMI-0 --set underscan off
-
-```
-
-### Black screen with mouse cursor on resume from suspend in X
-
-Waking from suspend on cards with 32MB or less can result in a black screen with a mouse pointer in X. Some parts of the screen may be redrawn when under the mouse cursor. Forcing `EXAPixmaps` to `"enabled"` in `/etc/X11/xorg.conf.d/20-radeon.conf` may fix the problem. See [performance tuning](#Performance_tuning) for more information.
-
-### No desktop effects in KDE4 with X1300 and Radeon driver
-
-A bug in KDE4 may prevent an accurate video hardware check, thereby deactivating desktop effects despite the X1300 having more than sufficient GPU power. A workaround may be to manually override such checks in KDE4 configuration files `/usr/share/kde-settings/kde-profile/default/share/config/kwinrc` and/or `.kde/share/config/kwinrc`.
-
-Add:
-
-```
-DisableChecks=true
-
-```
-
-To the [Compositing] section. Ensure that compositing is enabled with:
-
-```
-Enabled=true
 
 ```
 
@@ -640,34 +608,6 @@ fbcon=map:0
 
 instead.
 
-### 2D performance (e.g. scrolling) is slow
-
-If you're having problems with 2D performance, like scrolling in terminal or browser, you might need to add `Option "MigrationHeuristic" "greedy"` into the `"Device"` section of your `xorg.conf` file.
-
-**Note:** This only applies to EXA.
-
-Below is a sample configuration file `/etc/X11/xorg.conf.d/**20-radeon.conf**`:
-
-```
-Section "Device"
-        Identifier  "My Graphics Card"
-        Driver  "radeon"
-        Option  "MigrationHeuristic"  "greedy"
-EndSection
-
-```
-
-### Monitor rotation works for cursor but not windows/content
-
-Users with newer graphics boards who have enabled EXA instead of glamor may find that rotating their monitor with xrandr causes the cursor and monitor dimensions to rotate, but windows and other content stay in their normal orientation. Additionally, the cursor moves according to normal rotation when the user moves the mouse. Look for the following line in your `/var/log/Xorg.0.log` when you issue the xrandr rotate command:
-
-```
-(EE) RADEON(0): Rotation requires acceleration!
-
-```
-
-Acceleration is disabled when using EXA on newer graphics cards (source: [comment 17](https://bugs.freedesktop.org/show_bug.cgi?id=73420#c17)). You must choose between enabling EXA ([detailed above in the glamor section](#Glamor)) and the ability to rotate.
-
 ### ATI X1600 (RV530 series) 3D application show black windows
 
 There are three possible solutions:
@@ -678,15 +618,11 @@ There are three possible solutions:
 
 ### Cursor corruption after coming out of sleep
 
-If the cursor becomes corrupted like it's repeating itself vertically after the monitor(s) comes out of sleep, set `"SWCursor" "True"` in the `"Device"` section of the `20-radeon.conf` configuration file.
+If the cursor becomes corrupted like it's repeating itself vertically after the monitor(s) comes out of sleep, set `"SWCursor" "True"` in the `"Device"` section of the `/etc/X11/xorg.conf.d/20-radeon.conf` configuration file.
 
 ### DisplayPort stays black on multimonitor mode
 
 Try booting with the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `radeon.audio=0`.
-
-### Low 2D performance in console and X
-
-Since kernel 4.1.4, [dpm](#Dynamic_power_management) is broken on certain R9 270X cards (chip device number 6810, subsystem 174b:e271, shown as Curacao XT, PC Partner Limited / Sapphire Technology Device e271 in lspci). The regression is caused by a [fix](https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/commit/?id=ea039f927524e36c15b5905b4c9469d788591932) for cards with the same PCI ids. Disabling dpm (add `radeon.dpm=0` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters")) solves the problem.
 
 ### R9-390 Poor Performance and/or Instability
 

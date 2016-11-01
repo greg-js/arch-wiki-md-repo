@@ -36,10 +36,6 @@ In order to use Tox, you should [install](/index.php/Install "Install") a [Tox c
 
 	[http://tox.dhs.org/](http://tox.dhs.org/) || [tox-prpl-git](https://aur.archlinux.org/packages/tox-prpl-git/)
 
-*   **Toxic** — ncurses-based CLI
-
-	[https://wiki.tox.chat/clients/toxic](https://wiki.tox.chat/clients/toxic) || [toxic-git](https://aur.archlinux.org/packages/toxic-git/)
-
 ## Run a node
 
 To be able to connect to others, Tox needs to connect to a [DHT node](https://wiki.tox.chat/users/nodes) first. All DHT nodes are connected to each other, and since everyone is connected to at least one DHT node, you can connect to others one way or the other.

@@ -239,10 +239,11 @@ Arch Linux ARM |
 | Hisense | Chromebook C11 | No | Unavailable
 on ARM | [Supported by
 Arch Linux ARM](http://archlinuxarm.org/platforms/armv7/rockchip/hisense-chromebook-c11) |
-| June 2015 | Asus | C100P
+| June 2015 | Asus | C100PA
 (Chromebook flip) | 2/4GB | No | 10.1 in | 1280 x 800
 (16:10) | Unavailable
 on ARM | [Supported by
-Arch Linux ARM](https://archlinuxarm.org/platforms/armv7/rockchip/asus-chromebook-flip-c100p) |
+Arch Linux ARM](https://archlinuxarm.org/platforms/armv7/rockchip/asus-chromebook-flip-c100p)<small>
+[notes](/index.php/User_talk:Pierro78/Asus_chromebook_flip "User talk:Pierro78/Asus chromebook flip")</small> |
 
 </center>

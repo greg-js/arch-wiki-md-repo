@@ -81,11 +81,11 @@ passwordeval    "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-gm
 
 ## Using the mail command
 
-To send mails using the `mail` command you must install the package [s-nail](https://www.archlinux.org/packages/?name=s-nail). Either install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) or edit `/etc/mail.rc` to set sendmail client:
+To send mails using the `mail` command you must install the package [s-nail](https://www.archlinux.org/packages/?name=s-nail), which also provides the `mailx` command. You will also need to provide a `sendmail`-compatible MTA, either by installing [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) (which symlinks `sendmail` to `msmtp`) or by editing `/etc/mail.rc` to set the sendmail path:
 
  `/etc/mail.rc`  `set sendmail=/usr/bin/msmtp` 
 
-A `.msmtprc` file will need to be in the home of every user who want to send mail or alternatively the system wide `/etc/msmtprc` can be used.
+A `.msmtprc` file will need to be in the home of every user who wants to send mail or alternatively the system wide `/etc/msmtprc` can be used.
 
 msmtp also understands aliases. Add the following line to the defaults section of msmtprc or your local configuration file:
 
@@ -132,7 +132,7 @@ $ cat test.mail | msmtp -a default <username>@domain.com
 **Tip:** If using Gmail you'll need to either
 
 *   Allow "Less Secure Apps" in *Settings* > *Security*. Make sure to sign out of your other Gmail accounts first because the security settings part of Google Accounts can not manage concurrent sessions of more than one account.
-*   Enable two factor authemtication and create an app password.
+*   Enable two factor authentication and create an app password.
 
 **Tip:** You can use *--read-envelope-from* instead of *-a default* to automatically chose account by *From:* field in message you are going to send.
 
@@ -216,7 +216,12 @@ Adding `/usr/local/bin` to your PATH can save you some keystrokes if you're doin
 
 ### Vim syntax highlighting
 
-The msmtp source distribution includes a `msmtprc` highlighting script for [Vim](/index.php/Vim "Vim"). Install it from `./scripts/vim/msmtp.vim`.
+The msmtp source distribution includes an `msmtprc` syntax-highlighting script for [Vim](/index.php/Vim "Vim"), which is available at `/usr/share/vim/vimfiles/syntax/msmtp.vim`. The filetype is not detected automatically. The easiest way to enable it is by adding a [modeline](http://vimdoc.sourceforge.net/htmldoc/options.html#modeline) at the top of the file(s) e.g.:
+
+```
+   # vim:filetype=msmtp
+
+```
 
 ### Send mail with PHP using msmtp
 

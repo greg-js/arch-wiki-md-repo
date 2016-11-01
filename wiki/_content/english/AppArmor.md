@@ -17,7 +17,7 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 *   [2 Disabling](#Disabling)
 *   [3 Configuration](#Configuration)
     *   [3.1 Auditing and generating profiles](#Auditing_and_generating_profiles)
-    *   [3.2 Editing and understanding profiles](#Editing_and_understanding_profiles)
+    *   [3.2 Understanding profiles](#Understanding_profiles)
     *   [3.3 Parsing profiles](#Parsing_profiles)
 *   [4 Security considerations](#Security_considerations)
     *   [4.1 Preventing circumvention of path-based MAC via links](#Preventing_circumvention_of_path-based_MAC_via_links)
@@ -97,7 +97,7 @@ but be sure to read [Audit framework#Adding rules](/index.php/Audit_framework#Ad
 
 **Note:** Remember to stop the service afterwards (and maybe clear `/var/log/audit/audit.log`) because it may cause overhead depending on your rules.
 
-### Editing and understanding profiles
+### Understanding profiles
 
 Profiles are human readable text files residing under `/etc/apparmor.d/` describing how binaries should be treated when executed. A basic profile looks similar to this:
 

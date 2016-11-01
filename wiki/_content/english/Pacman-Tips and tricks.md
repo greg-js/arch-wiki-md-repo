@@ -115,7 +115,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 *   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
 
-	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://aur.archlinux.org/packages/snap-pac/)
+	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
 ## Maintenance
 

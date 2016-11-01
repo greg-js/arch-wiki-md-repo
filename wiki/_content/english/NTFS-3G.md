@@ -221,15 +221,15 @@ CONFIG_NTFS_FS=m
 CONFIG_NTFS_RW=y
 ```
 
-The kernel config option `CONFIG_NTFS_RW=y` enables read-write support for [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") file systems. It also means the kernel is predefined to use the [ntfs-3g](/index.php/Ntfs "Ntfs") driver in read-write mode. The build in support of the NTFS file systems by the kernel is *read-only* even if read-write is activated by an option.
+The kernel config option `CONFIG_NTFS_RW=y` enables read-write support for [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") file systems. It also means the kernel is predefined to use the [ntfs-3g](/index.php/Ntfs "Ntfs") driver in read-write mode. The built-in support of the NTFS file systems by the kernel is *read-only* even if read-write is activated by an option.
 
 **Note:**
 
 *   When [ntfs-3g](/index.php/Ntfs "Ntfs") is being installed it might create a symlink `/usr/bin/mount.ntfs` to the `/usr/bin/ntfs-3g`.
-*   The [ntfs-3g](/index.php/Ntfs "Ntfs") mount tool supports many of the same command line options as the linux standard *mount* utility, but is specialized on mounting of the [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") formated partitions.
-*   By default on mounting the [ntfs-3g](/index.php/Ntfs "Ntfs") driver gives the full read-write permissions to the all users. In some situations access with a full permission rights can cause the damage, see [NTFS troubleshooting](/index.php/Ntfs#Troubleshooting "Ntfs").
+*   The [ntfs-3g](/index.php/Ntfs "Ntfs") mount tool supports many of the same command line options as the linux standard *mount* utility, but is specialized for mounting of [NTFS](https://en.wikipedia.org/wiki/NTFS "wikipedia:NTFS") formatted partitions.
+*   By default on mounting the [ntfs-3g](/index.php/Ntfs "Ntfs") driver gives the full read-write permissions to all users. In some situations access with a full permission rights can cause damage; see [NTFS troubleshooting](/index.php/Ntfs#Troubleshooting "Ntfs").
 
-The default mount options can be altered when running `mount.ntfs` by renaming the `/usr/bin/mount.ntfs` symlink if exists and creating a script in its place with a preferred options or use the *-i* option (`mount -i -t ntfs`) to ignore all the *mount.X* files and use the natively supported functionality by the kernel. This example will mount NTFS as a read-only:
+The default mount options can be altered when running `mount.ntfs` by renaming the `/usr/bin/mount.ntfs` symlink, if it exists, and creating a script in its place with a preferred set of options, or use the *-i* option (`mount -i -t ntfs`) to ignore all the *mount.X* files and use the natively supported functionality by the kernel. This example will mount NTFS as read-only:
 
  `/usr/bin/mount.ntfs` 
 ```

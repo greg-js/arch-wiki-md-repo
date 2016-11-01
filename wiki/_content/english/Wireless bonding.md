@@ -280,9 +280,10 @@ Before= network.target
 Requires= master@%i.service
 After= master@%i.service
 
-Before= supplicant@%p.service
 Before= dhclient@%i.service
 Before= dhcp6c@%i.service
+Before= static@%i.service
+Before= supplicant@%p.service
 
 BindsTo= sys-subsystem-net-devices-%p.device
 BindsTo= sys-subsystem-net-devices-%i.device
@@ -295,14 +296,13 @@ ExecStart=\
  /usr/bin/ip link set %P down ;\
  /usr/bin/ip address flush dev %P ;\
  /usr/bin/ip link set %P master %I ;\
- /usr/bin/ip link set %P up ;\
+ /usr/bin/ip link set %P up
 
 ExecStop=\
 -/usr/bin/ip link set %P nomaster ;\
--/usr/bin/ip link set %P up ;\
+-/usr/bin/ip link set %P up
 
 [Install]
-DefaultInstance= bond0
 WantedBy= master@%i.service
 WantedBy= sys-subsystem-net-devices-%p.device
 ```
@@ -329,9 +329,6 @@ Documentation= [https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/
 Wants= network.target
 Before= network.target
 
-Wants= dhclient@%i.service
-Wants= dhcp6c@%i.service
-
 BindsTo= sys-subsystem-net-devices-%i.device
 
 [Service]
@@ -344,24 +341,31 @@ RemainAfterExit= yes
 
 # Apparently, "ip" is not synchronous/atomic, so allow some time.
 ExecStart=\
--/usr/bin/ip link add %I type bond ;\
- /usr/bin/sh -c 'echo -n $%IPRIMARY > /sys/devices/virtual/net/%I/bonding/primary' ;\
--/usr/bin/ip link set %I up ;\
- /usr/bin/sleep 1 ;\
+-/usr/bin/sh -c ' case %I in \
+ *br*) /usr/bin/ip link add name %I type bridge ;; \
+    *) /usr/bin/ip link add name %I type bond ; \
+       echo -n $%IPRIMARY > /sys/devices/virtual/net/%I/bonding/primary ;; \
+ esac' ;\
+ /usr/bin/ip link set %I up ;\
+ /usr/bin/sleep 1
 
 ExecStop=\
- /usr/bin/ip link delete %I type bond ;\
- /usr/bin/sleep 1 ;\
+ /usr/bin/ip link delete %I ;\
+ /usr/bin/sleep 1
 
 [Install]
-DefaultInstance= bond0
 RequiredBy= dhclient@%i.service
 RequiredBy= dhcp6c@%i.service
+RequiredBy= static@%i.service
 ```
 
-The "RequiredBy" dependencies here activate the "stop" ordering during bonding "restart". When the "master@.service" unit stops, then the DHCP and DHCPv6 clients will be stopped also.
-
 Of course, "Environment=" could be used here instead of the Environment file, if static network configuration is not used, and then the Environment file could be avoided. Settings from Environment files override settings made with "Environment=".
+
+This master service unit file supports creation of a bonding master or a bridging master network interface. The type of master interface created is determined by the name of the interface. A bridging master is created when the interface name includes the character string "br", and a bonding master is created otherwise.
+
+The RequiredBy dependencies are only here to activate the stop ordering of static or dynamic network configuration units during master stop and restart. The network configurations must be taken-down and that process completed before the slave interfaces are freed and the master interface is deleted.
+
+Enable/Install a bonding master unit or bridging master unit *only* when the master interface is also an IP interface for the host, which is to say, when there is a static or dynamic network configuration unit Enabled/Installed on that master interface. If the bonding master or bridging master is *not* also an IP interface, then the master service unit should not be Enabled/Installed, since it will be started manually, or will be started by the slave service units, on boot, or when a network device is plugged.
 
 ## Enabling/Installing the Service Units
 
@@ -396,17 +400,17 @@ Now, determine which network interface devices will need a supplicant to access 
 
 ```
 
-Then, Enable/Install the slave and master units, using any desired interface name. Here, the default bonding interface name "bond0" is used:
+Then, Enable/Install the slave and master units, using any desired interface name. Here, "bond0" is used:
 
 ```
-# systemctl enable enp3s0@ wlp2s0@ master@
+# systemctl enable enp3s0@bond0 wlp2s0@bond0 master@bond0
 
 ```
 
-If static network configuration is desired, Enable/Install the static unit, specifying the interface name:
+Explicitly Enable/Install only the desired network configuration, specifying the interface name, here again, bond0:
 
 ```
-# systemctl enable static@bond0
+# systemctl enable dhclient@bond0 dhcp6c@bond0 static@bond0
 
 ```
 

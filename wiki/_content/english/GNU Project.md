@@ -1,4 +1,4 @@
-From [http://www.gnu.org/](http://www.gnu.org/):
+From [https://www.gnu.org/](https://www.gnu.org/):
 
 	The GNU Project was launched in 1984 to develop the GNU operating system, a complete Unix-like operating system which is free software—software which respects your freedom. Unix-like operating systems are built from a software collection of applications, libraries, and developer tools—plus a program to allocate resources and talk to the hardware, known as a kernel. [...] The combination of GNU and Linux is the GNU/Linux operating system, now used by millions and sometimes incorrectly called simply “Linux”. The name “GNU” is a recursive acronym for “GNU's Not Unix!”
 
@@ -19,17 +19,17 @@ At the end of the installation process, an Arch system is nothing more than the 
 
 ### Kernel
 
-While [Hurd](http://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under active development, there is not yet a stable version. For this reason Arch and most other GNU based systems use the Linux Kernel. The [Arch Hurd Project](/index.php/Arch_Hurd_Project "Arch Hurd Project") aims to port Arch Linux to the Hurd kernel.
+While [Hurd](https://www.gnu.org/s/hurd/hurd.html), the GNU Kernel, is under active development, there is not yet a stable version. For this reason Arch and most other GNU based systems use the Linux Kernel. The [Arch Hurd Project](/index.php/Arch_Hurd_Project "Arch Hurd Project") aims to port Arch Linux to the Hurd kernel.
 
 ### Software Collection
 
 *   **[GRUB](/index.php/GRUB "GRUB")** — GRUB is the bootloader from the GNU project.
 
-	[http://www.gnu.org/software/grub/](http://www.gnu.org/software/grub/) || [grub](https://www.archlinux.org/packages/?name=grub)
+	[https://www.gnu.org/software/grub/](https://www.gnu.org/software/grub/) || [grub](https://www.archlinux.org/packages/?name=grub)
 
 *   **[glibc](https://en.wikipedia.org/wiki/glibc "wikipedia:glibc")** — glibc is GNU's implementation of the C library. Despite its name, it also supports C++ and indirectly other languages. It defines the system calls and other basic facilities such as open, malloc, printf, exit.
 
-	[http://www.gnu.org/software/libc/](http://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc)
+	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc)
 
 *   **[binutils](https://en.wikipedia.org/wiki/binutils "wikipedia:binutils")** — It is a collection of binary tools.
 
@@ -95,4 +95,4 @@ Many other optional GNU tools are available in the [official repositories](/inde
 
 ## See also
 
-For a list of all current GNU projects, see [All GNU Packages](http://www.gnu.org/software/software.html#allgnupkgs).
+For a list of all current GNU projects, see [All GNU Packages](https://www.gnu.org/software/software.html#allgnupkgs).

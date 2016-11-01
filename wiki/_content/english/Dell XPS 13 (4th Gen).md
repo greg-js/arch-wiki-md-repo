@@ -29,7 +29,8 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [8 SATA controller](#SATA_controller)
 *   [9 Touchpad](#Touchpad)
     *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
-*   [10 Gestures](#Gestures)
+*   [10 Touchscreen](#Touchscreen)
+    *   [10.1 Gestures](#Gestures)
 
 ## Content adaptive brightness control
 
@@ -95,6 +96,10 @@ Then add this file to `/etc/mkinitcpio.conf`:
 
 Rebuild your initial ramdisk image (see [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")).
 
-## Gestures
+## Touchscreen
+
+The Touchscreen works out of the box but there is a bug, that makes it disaper after supsend. It looks like there is already a patch on it's way for that. [bugzilla.kernel.org](https://bugzilla.kernel.org/show_bug.cgi?id=176361)
+
+### Gestures
 
 Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for information about the current development state and available methods.

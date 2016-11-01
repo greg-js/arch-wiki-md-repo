@@ -211,7 +211,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
 
-	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://aur.archlinux.org/packages/min/)
+	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://www.archlinux.org/packages/?name=min)
 
 ###### Browsers based on qt5-webengine
 

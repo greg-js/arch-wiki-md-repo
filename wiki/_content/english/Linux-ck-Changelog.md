@@ -2,6 +2,12 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.6-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.6](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.6)
+*   Notes: This release also includes two of CK's pending patches per his recommendation as a ck6 is not on the nearterm horizon.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=6bddf4dc5551ff057fd894f33c46a73f12637b12](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=6bddf4dc5551ff057fd894f33c46a73f12637b12)
+
 **Bump to v4.8.5-3**
 
 *   Changelog: 100Hz is default by CK now so hardset this in PKGBUILD

@@ -136,7 +136,7 @@ pacman содержит операнд `-q` чтобы скрыть столбе
 
 *   **[snap-pac](/index.php/Snapper#snap-pac_pacman_hooks "Snapper")** — Заставить pacman автоматически использовать snapper для создания снимков до/после, как в openSUSE'овском YaST.
 
-	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://aur.archlinux.org/packages/snap-pac/)
+	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
 ## Обслуживание
 

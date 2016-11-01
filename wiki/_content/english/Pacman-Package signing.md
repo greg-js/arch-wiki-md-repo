@@ -149,8 +149,11 @@ There are multiple possible sources of this problem:
 *   Incorrect date.
 *   Your ISP blocked the port used to import PGP keys.
 *   Your *pacman* cache contains copy of unsigned packages from previous attempts.
+*   `dirmngr` is not correctly configured
 
 You might be stuck because of outdated [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package when doing an upgrade synchronization. Try if [upgrading the system](/index.php/Pacman#Upgrading_packages "Pacman") can fix it first.
+
+If you are still having issues, make sure the following file exists `/root/.gnupg/dirmngr_ldapservers.conf` and that you can successfully run `# dirmngr`. Create an empty file if it doesn't and run `# dirmngr` again.
 
 If it does not help and your date is correct, you could try to switch to the MIT keyserver, which provides an alternate port. To do this, edit `/etc/pacman.d/gnupg/gpg.conf` and change the `keyserver` line to:
 

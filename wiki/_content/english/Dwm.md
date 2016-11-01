@@ -65,7 +65,7 @@ Assuming the configuration changes were valid, the command above will compile dw
 
 Finally, restart dwm in order to apply the changes.
 
-**Tip:** To recompile easily, make an alias by putting `alias redwm='cd ~/dwm; updpkgsums; makepkg -fi --noconfirm; killall dwm'` in your `.bashrc` file.
+**Tip:** To recompile easily, make an alias by putting `alias redwm='cd ~/dwm; updpkgsums; makepkg -fi --noconfirm && killall dwm'` in your `.bashrc` file.
 
 ### Patches
 

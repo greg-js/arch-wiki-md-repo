@@ -449,7 +449,7 @@ pinentry-program /usr/bin/pinentry-gtk-2
 
 ```
 
-**Tip:** For using `/usr/bin/pinentry-kwallet` you have to install the [kwalletcli](https://www.archlinux.org/packages/?name=kwalletcli) package.
+**Tip:** For using `/usr/bin/pinentry-kwallet` you have to install the [kwalletcli](https://aur.archlinux.org/packages/kwalletcli/) package.
 
 After making this change, reload the gpg-agent.
 

@@ -157,7 +157,7 @@ wpa_pairwise=TKIP CCMP
 
 ### create_ap
 
-可以用[create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) 脚本[AUR](/index.php/AUR "AUR") [create_ap](https://aur.archlinux.org/packages/create_ap/)融合了 [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") 和 [iptables](/index.php/Iptables "Iptables") 来创建桥接或NAT方式的接入点(在[AUR](/index.php/AUR "AUR") [create_ap](https://aur.archlinux.org/packages/create_ap/)可用)。
+可以用[create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) 脚本[AUR](/index.php/AUR "AUR") [create_ap](https://www.archlinux.org/packages/?name=create_ap)融合了 [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") 和 [iptables](/index.php/Iptables "Iptables") 来创建桥接或NAT方式的接入点(在[AUR](/index.php/AUR "AUR") [create_ap](https://www.archlinux.org/packages/?name=create_ap)可用)。
 
 ### RADIUS
 
