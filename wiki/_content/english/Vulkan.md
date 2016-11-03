@@ -17,7 +17,7 @@ To run a Vulkan application, you will need to [install](/index.php/Install "Inst
 
 *   Intel: [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)
 *   NVIDIA: [nvidia](https://www.archlinux.org/packages/?name=nvidia)
-*   AMD: [amdgpu-pro-vulkan-driver](https://aur.archlinux.org/packages/amdgpu-pro-vulkan-driver/)
+*   AMD: [vulkan-radeon](https://www.archlinux.org/packages/?name=vulkan-radeon) (open-source) or [amdgpu-pro-vulkan-driver](https://aur.archlinux.org/packages/amdgpu-pro-vulkan-driver/) (proprietary)
 
 The other drivers are not packaged yet, so you will have to install them manually:
 

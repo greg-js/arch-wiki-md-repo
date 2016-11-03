@@ -1,6 +1,6 @@
 | **Device** | **Status** | **Modules** |
 | Video | Working | i915 |
-| Wireless | Working - limited | ath10k |
+| Wireless | Working | ath10k |
 | Bluetooth | Working | btusb |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working |  ? |
@@ -98,7 +98,7 @@ Rebuild your initial ramdisk image (see [Mkinitcpio#Image creation and activatio
 
 ## Touchscreen
 
-The Touchscreen works out of the box but there is a bug, that makes it disaper after supsend. It looks like there is already a patch on it's way for that. [bugzilla.kernel.org](https://bugzilla.kernel.org/show_bug.cgi?id=176361)
+The touchscreen works without additional configuration. The bug resulting in a disabled touchscreen after resume was fixed with kernel 4.8.5.
 
 ### Gestures
 

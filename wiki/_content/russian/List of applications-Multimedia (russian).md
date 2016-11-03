@@ -531,6 +531,10 @@
 
 	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
 
+*   **Volctl** — регулировка громкости для каждого приложения для настольных компьютеров GNU / Linux.
+
+	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
+
 *   **Volnoti** — Легковесный демон уведомлений об уровне звука для GNU/Linux и других операционных систем POSIX
 
 	[https://github.com/davidbrazdil/volnoti](https://github.com/davidbrazdil/volnoti) || [volnoti](https://aur.archlinux.org/packages/volnoti/)

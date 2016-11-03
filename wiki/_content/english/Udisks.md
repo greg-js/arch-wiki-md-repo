@@ -8,6 +8,7 @@
     *   [3.1 devmon](#devmon)
     *   [3.2 udevadm monitor](#udevadm_monitor)
     *   [3.3 udiskie](#udiskie)
+        *   [3.3.1 udiskie freezing and configuration](#udiskie_freezing_and_configuration)
     *   [3.4 udisksvm](#udisksvm)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
@@ -76,7 +77,13 @@ done < <(stdbuf -o L udevadm monitor --udev -s block)
 
 ### udiskie
 
-[udiskie](https://github.com/coldfix/udiskie) is a mount helper using either [udisks](https://www.archlinux.org/packages/?name=udisks) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [usage details](https://github.com/coldfix/udiskie/wiki/Usage).
+[udiskie](https://www.archlinux.org/packages/?name=udiskie) is a mount helper using either [udisks](https://www.archlinux.org/packages/?name=udisks) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [usage details](https://github.com/coldfix/udiskie/wiki/Usage). Github is also here: [udiskie](https://github.com/coldfix/udiskie)
+
+#### udiskie freezing and configuration
+
+[udiskie](https://www.archlinux.org/packages/?name=udiskie) may freeze/crash or not work in some situations/setups if you do not have some of the notification support installed. For [instance](https://bbs.archlinux.org/viewtopic.php?id=203164) xfce and udiskie may not work correctly. You may see udiskie freeze in xfce if you do not install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) and [notify-osd](https://www.archlinux.org/packages/?name=notify-osd) also.
+
+If you do not source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh in your .xinitrc you may have issues also.
 
 ### udisksvm
 

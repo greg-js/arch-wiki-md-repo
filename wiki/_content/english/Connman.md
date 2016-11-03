@@ -21,6 +21,7 @@
     *   [3.6 Blacklist interfaces](#Blacklist_interfaces)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Error /net/connman/technology/wifi: Not supported](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_Not_supported)
+    *   [4.2 Error Failed to set hostname/domainname](#Error_Failed_to_set_hostname.2Fdomainname)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -271,25 +272,7 @@ SingleConnectedTechnology=true
 
 ### Connecting to eduroam
 
-To connect to a WPA2 Enterprise network like eduroam, Connman will need a configuration file, for example:
-
- `/var/lib/connman/wifi_eduroam.config` 
-```
-[service_eduroam]
-Type=wifi
-Name=eduroam
-EAP=peap
-CACertFile=/etc/ssl/certs/certificate.cer 
-#For example: AddTrust_External_CA_Root_DER_X.509.cer
-Phase2=MSCHAPV2
-Identity=YOUR_USERNAME
-Passphrase=YOUR_PASSWORD
-
-```
-
-Make sure you use the correct username and password. Also, the institution hosting the eduroam network you want to connect to should have the info available whether `EAP=peap` and `Phase2output=MSCHAPV2` are correct. You also need to supply it with a correct certificate, which the institution hosting the eduroam network should be able to supply you with or point you to. After having set this up, you should be able to connect to the network as you would normally, possibly requiring a restart of the connman service.
-
-Also see [WPA2 Enterprise#connman](/index.php/WPA2_Enterprise#connman "WPA2 Enterprise").
+See [WPA2 Enterprise#connman](/index.php/WPA2_Enterprise#connman "WPA2 Enterprise").
 
 ### Avoiding conflicts with local DNS server
 
@@ -334,6 +317,14 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 ### Error /net/connman/technology/wifi: Not supported
 
 You need to install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then restart connman service: `systemctl restart connman.service`.
+
+### Error Failed to set hostname/domainname
+
+connman can failed to set hostname or domainname due to lack of CAP_SYS_ADMIN.
+
+You will need to edit connman.service (and other like connman-vpn.service , etc ...) to modify the CapabilityBoundingSet line to add CAP_SYS_ADMIN.
+
+See EPERM error of sethostname(2)/setdomainname(2) manpages for more details.
 
 ## See also
 

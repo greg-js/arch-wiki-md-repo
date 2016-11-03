@@ -69,7 +69,6 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [23.2 No sound](#No_sound_2)
 *   [24 Dota 2](#Dota_2)
     *   [24.1 Dependencies](#Dependencies_10)
-        *   [24.1.1 Dota 2 reborn](#Dota_2_reborn)
     *   [24.2 In-game font is unreadable](#In-game_font_is_unreadable)
     *   [24.3 Everything seems OK but the game doesn't start](#Everything_seems_OK_but_the_game_doesn.27t_start)
     *   [24.4 Game runs on the wrong screen](#Game_runs_on_the_wrong_screen_2)
@@ -700,13 +699,8 @@ On the game, go to the option and set all audio to the proper volume.
 
 ### Dependencies
 
-*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
-*   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) (if you use PulseAudio)
-*   [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig)
-
-#### Dota 2 reborn
-
 *   [libpng12](https://www.archlinux.org/packages/?name=libpng12)
+*   [libtxc_dxtn](https://www.archlinux.org/packages/?name=libtxc_dxtn)
 *   [libudev0](https://aur.archlinux.org/packages/libudev0/) or [libudev.so.0](https://aur.archlinux.org/packages/libudev.so.0/)
 
 ### In-game font is unreadable

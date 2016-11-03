@@ -22,7 +22,7 @@
     *   [3.3 Archivos Link](#Archivos_Link)
         *   [3.3.1 Sección [Match]](#Secci.C3.B3n_.5BMatch.5D_3)
         *   [3.3.2 Sección [Link]](#Secci.C3.B3n_.5BLink.5D)
-*   [4 Usage with containers](#Usage_with_containers)
+*   [4 Uso De Contenedores](#Uso_De_Contenedores)
     *   [4.1 Basic DHCP network](#Basic_DHCP_network)
     *   [4.2 DHCP with two distinct IP](#DHCP_with_two_distinct_IP)
         *   [4.2.1 Bridge interface](#Bridge_interface)
@@ -320,31 +320,31 @@ Las claves más usadas son:
 
 **Note:** el sistema `/usr/lib/systemd/network/99-default.link` es generalmente suficiente para la mayoría de los casos básicos
 
-## Usage with containers
+## Uso De Contenedores
 
-The service is available with [systemd](https://www.archlinux.org/packages/?name=systemd) >= 210\. You will want to [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") the `systemd-networkd.service` on the host and container.
+El servicio está disponible con [systemd](https://www.archlinux.org/packages/?name=systemd) >= 210\. Se requiere [habilitar e iniciar](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") el servicio `systemd-networkd.service` en el host y el contenedor
 
-For debugging purposes, it is strongly advised to [install](/index.php/Install "Install") the [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) and [iproute2](https://www.archlinux.org/packages/?name=iproute2) packages.
+Para propositos de debugging, se recomienda [instalar](/index.php/Install "Install") los paquetes [bridge-utils](https://www.archlinux.org/packages/?name=bridge-utils), [net-tools](https://www.archlinux.org/packages/?name=net-tools) y [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
-If you are using *systemd-nspawn*, you may need to modify the `systemd-nspawn@.service` and append boot options to the `ExecStart` line. Please refer to `man 1 systemd-nspawn` for an exhaustive list of options.
+Si se está usando *systemd-nspawn*, se debe modificar el servicio `systemd-nspawn@.service` y añadir la opción boot a la linea `ExecStart`. Para una lista exhaustiva lista de claves, por favor refiérase a `man 1 systemd-nspawn`
 
-Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See `systemd-resolved.service(8)` for more details.
+Note que si se desea tomar ventaja de la configuración automatica DNS desde DHCP, se necesita habilitar `systemd-resolved` y hacer un enlace simbólico `/run/systemd/resolve/resolv.conf` a `/etc/resolv.conf`. Ver `systemd-resolved.service(8)` para más detalles.
 
-**Tip:** Before you start to configure your container network, it is useful to:
+**Tip:** Antes de empezar a configurar el contenedor de red, es util:
 
-*   disable all your [netctl](/index.php/Netctl "Netctl") services. This will avoid any potential conflicts with **systemd-networkd** and make all your configurations easier to test. Furthermore, odds are high you will end with few or even no [netctl](/index.php/Netctl "Netctl") activated profiles. The `netctl list` command will output a list of all your profiles, with the activated one being starred.
-*   disable the `systemd-nspawn@.service` and use the `systemd-nspawn -bnD /path_to/your_container/` command as root to boot the container. To log off and shutdown inside the container `systemctl poweroff` is used as root. Once the network setting meets your requirements, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `systemd-nspawn@.service`
-*   disable the `dhcpcd.service` if enabled on your system, since it activates *dhcpcd* on **all** interfaces
-*   make sure you have no [netctl](/index.php/Netctl "Netctl") profiles activated in the container, and ensure that `systemd-networkd.service` is neither enabled nor started
-*   make sure you do not have any [iptables](/index.php/Iptables "Iptables") rules which can block traffic
-*   make sure *packet forwarding* is [enabled](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") if you want to let containers access the internet. Make sure that your .network file does not accidentally turn off forwarding because if you do not have a IPForward=1 setting in it, systemd-networkd will turn off forwarding on this interface, even if you have it enabled globally.
-*   when the daemon is started the systemd `networkctl` command displays the status of network interfaces.
+*   Deshabilitar todos los servicios [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"). Esto evitará cualquier conflicto potencial con **systemd-networkd** y hace las configuraciones faciles de probar. Además, hay muchas posibilidades de terminar con pocos o incluso ningun perfil [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") activado. el comando `netctl list` imprime una lista de todos los perfiles, con los activados siendo vigilados.
+*   Deshabilita el servicio `systemd-nspawn@.service` y use el comando `systemd-nspawn -bnD /path_to/your_container/` como super usuario para iniciar el contenedor. Para desconectar y apagar dentro del contenedor se usa `systemctl poweroff` como super usuario. Una vez que los ajustes de red encajan con los requerimientos, [habilita e inicia](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") `systemd-nspawn@.service`.
+*   Deshabilita el servicio `dhcpcd.service` si está habilitado en el sistema, ya que habilita *dhcpcd* en **todas** las interfaces.
+*   Asegurese de no tener perfiles [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") activados en el contenedor, y asegurar que `systemd-networkd.service` tanpoco esté habilitado ni iniciado.
+*   Asegurese que no tenga ninguna regla [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") que pueda bloquear el tráfico.
+*   Asegurese que *Reenvio de paquete* esté [habilitado](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") si se desea que los contenedores tengan acceso a internet. Asegurese que el archivo .network no haga accidentalmente apagar el reenvio porque si no se tiene un IPForward=1 en él, systemd-networkd apagará el reenvio en esa interface, incluso si está habilitado globalmente.
+*   Cuando en demonio esté iniciado el comandp systemd `networkctl` muestra el estado de las interfaces de red.
 
-**Note:** For the set-up described below,
+**Note:** Para la intalacion descrita a continuación,
 
-*   we will limit the output of the `ip a` command to the concerned interfaces
-*   we assume the *host* is your main OS you are booting to and the *container* is your guest virtual machine
-*   all interface names and IP addresses are only examples
+*   Se limitará la salida del comando `ip a` para las interfaces interesadas
+*   Se asume que el *anfitrion* es el sistema opertivo principal en el que se está y el *contenedor* es una maquina virtual huésped
+*   Todos los nombres de interfaces y las direcciones IP son sólo ejemplos.
 
 ### Basic DHCP network
 

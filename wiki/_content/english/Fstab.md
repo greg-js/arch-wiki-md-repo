@@ -20,7 +20,6 @@ The `mount` command will use fstab, if just one of either directory or device is
     *   [3.4 atime options](#atime_options)
     *   [3.5 Writing to FAT32 as Normal User](#Writing_to_FAT32_as_Normal_User)
     *   [3.6 Remounting the root partition](#Remounting_the_root_partition)
-    *   [3.7 bind mounts](#bind_mounts)
 *   [4 See also](#See_also)
 
 ## Usage
@@ -44,7 +43,7 @@ A simple `/etc/fstab`, using kernel name descriptors:
 
 **Note:** If the root file system is [btrfs](/index.php/Btrfs "Btrfs"), the fsck order should be set to `0` instead of `1`.
 
-All specified devices within `/etc/fstab` will be automatcially mounted on startup and when the `-a` flag is used with [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) unless the `noauto` option is specified. Devices that are listed and not present will result in an error unless the `nofail` option is used.
+All specified devices within `/etc/fstab` will be automatically mounted on startup and when the `-a` flag is used with [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) unless the `noauto` option is specified. Devices that are listed and not present will result in an error unless the `nofail` option is used.
 
 See [fstab(5)](http://man7.org/linux/man-pages/man5/fstab.5.html#DESCRIPTION) for details.
 
@@ -54,7 +53,7 @@ There are different ways to identify filesystems that will be mounted in `/etc/f
 
 In this section, we will describe how to mount filesystems using all the mount methods available via examples. The output of the commands `lsblk -f` and `blkid` used in the following examples are available in the article [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
-To use kernel name descriptors, use /dev/sd*xy* in the first colun.
+To use kernel name descriptors, use /dev/sd*xy* in the first column.
 
 ### Kernel name descriptors
 
@@ -246,14 +245,6 @@ If for some reason the root partition has been improperly mounted read only, rem
 # mount -o remount,rw /
 
 ```
-
-### bind mounts
-
-**Note:** Binding a directory to a different location is not recognised by almost any program, so for instance careless commands like `rm -r *` will also erase any content from the original location. So softlinks should be the preferable way in most cases. If you need permission to a directory on a Btrfs and softlinks are not sufficient its [subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") faciliate extended capabilities like mount options compared to bind mounting
-
-Sometimes programs or users cannot access one specific directory due to insufficient permissions. One feasable possibility to give the program access to this directory is bind mounting it to a location the program can access. If a program has permission to access directory bar but not to directory foo, under some circumstances the access can be granted without any permission hassle by adding an entry to `/etc/fstab`:
-
- `/etc/fstab`  `/<path to foo>         /<path to bar>     none     bind     0 0` 
 
 ## See also
 

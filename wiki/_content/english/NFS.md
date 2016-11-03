@@ -34,7 +34,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 
 Both client and server only require the [installation](/index.php/Install "Install") of the [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package.
 
-It is **highly** recommended to use a time sync daemon such as [ntp](https://www.archlinux.org/packages/?name=ntp) on all nodes to keep client/server clocks in sync. Without accurate clocks on all nodes, NFS can introduce unwanted delays. The [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") is recommended to sync both the server and the clients to the highly accurate NTP servers available on the Internet.
+It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_synchronization "Time") to keep client/server clocks in sync. Without accurate clocks on all nodes, NFS can introduce unwanted delays.
 
 **Note:** [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) for Arch Linux ARM starting with update 1.3.2-4 (possibly earlier) has been reported by one user to behave differently from the x86_64 or i686 package. See the discussion page for a recipe for client mounts.
 
@@ -44,10 +44,10 @@ It is **highly** recommended to use a time sync daemon such as [ntp](https://www
 
 NFS needs to see the list of shares (referred to as "exports" from here on out), which are defined in `/etc/exports` in order to serve-up the content. The NFS root directory can be any directory on the file system. In the interest of security, it is recommended to use an NFS export root which will keep users limited to that mount point only. The following example illustrates this concept.
 
-Any NFS shares defined in `/etc/exports` are relative to the NFS root. In this example, the NFS root will be `/srv/nfs4` and we are sharing `/mnt/music`.
+Any NFS shares defined in `/etc/exports` are relative to the NFS root. In this example, the NFS root will be `/srv/nfs` and we are sharing `/mnt/music`.
 
 ```
-# mkdir -p /srv/nfs4/music /mnt/music
+# mkdir -p /srv/nfs/music /mnt/music
 
 ```
 
@@ -56,7 +56,7 @@ Read/Write permissions must be set on the music directory so clients may write t
 Now mount the actual target share, `/mnt/music` to the directory under the NFS root via the mount --bind command:
 
 ```
-# mount --bind /mnt/music /srv/nfs4/music
+# mount --bind /mnt/music /srv/nfs/music
 
 ```
 
@@ -64,7 +64,7 @@ To make it stick across server reboots, add the bind mount to `fstab`:
 
  `/etc/fstab` 
 ```
-/mnt/music /srv/nfs4/music  none   bind   0   0
+/mnt/music /srv/nfs/music  none   bind   0   0
 
 ```
 
@@ -74,14 +74,16 @@ Add directories to be shared and an ip address or hostname(s) of client machines
 
  `/etc/exports` 
 ```
-/srv/nfs4/ 192.168.1.0/24(rw,fsid=root,no_subtree_check)
-/srv/nfs4/music 192.168.1.0/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
+/srv/nfs 192.168.1.0/24(rw,fsid=root,no_subtree_check)
+/srv/nfs/music 192.168.1.0/24(rw,no_subtree_check,nohide) # note the nohide option which is applied to mounted directories on the file system.
 
 ```
 
+**Note:** If the target export is a tmpfs filesystem, the `fsid=1` option is required.
+
 Users need-not open the share to the entire subnet; one can specify a single IP address or hostname as well.
 
-For more information about all available options see `man 5 exports`.
+For more information about all available options see [exports(5)](http://man7.org/linux/man-pages/man5/exports.5.html).
 
 **Note:** Modifying `/etc/exports` while the server is running will require a re-export for changes to take effect as noted by the upstream comments in `/etc/exports`:
 ```
@@ -91,7 +93,9 @@ For more information about all available options see `man 5 exports`.
 
 #### Starting the server
 
-[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`. The `rpcbind.service` is also needed for older V2 and V3 exports. To run a V4-only setup, be sure to explicitly disable V2 and V3 using [[1]](https://bbs.archlinux.org/viewtopic.php?id=193629): `/etc/sysconfig/nfs`  `RPCNFSDARGS="-N 2 -N 3"` 
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`. The `rpcbind.service` is also needed for older V2 and V3 exports. To run a V4-only setup, be sure to explicitly disable V2 and V3 using [[1]](https://bbs.archlinux.org/viewtopic.php?id=193629):
+
+ `/etc/sysconfig/nfs`  `RPCNFSDARGS="-N 2 -N 3"` 
 
 otherwise the `rpcbind.service` is required.
 
@@ -99,7 +103,7 @@ otherwise the `rpcbind.service` is required.
 
 ##### Optional configuration
 
-`/etc/sysconfig/nfs` holds optional configurations for options to pass to rpc.nfsd, rpc.mountd, or rpc.svcgssd. Users setting up a simple configuration may not need to edit this file.
+`/etc/sysconfig/nfs` holds optional configurations for options to pass to `rpc.nfsd`, `rpc.mountd`, or `rpc.svcgssd`. Users setting up a simple configuration may not need to edit this file.
 
 ##### Static ports for NFSv3
 
@@ -235,7 +239,7 @@ servername:/music   /mountpoint/on/client   nfs   rsize=8192,wsize=8192,timeo=14
 
 ```
 
-**Note:** Consult the *NFS* and *mount* man pages for more mount options.
+**Note:** Consult [nfs(5)](http://man7.org/linux/man-pages/man5/nfs.5.html) and [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html) for more mount options.
 
 Some additional mount options to consider are include:
 
@@ -251,7 +255,7 @@ Some additional mount options to consider are include:
 
 	The `_netdev` option tells the system to wait until the network is up before trying to mount the share. systemd assumes this for NFS, but anyway it is good practice to use it for all types of networked file systems
 
-**Note:** Setting the sixth field (fs_passno) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
+**Note:** Setting the sixth field (`fs_passno`) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
 
 #### Mount using /etc/fstab with systemd
 

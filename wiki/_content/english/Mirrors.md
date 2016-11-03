@@ -22,14 +22,15 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [5.8 Italy](#Italy)
     *   [5.9 Japan](#Japan)
     *   [5.10 Malaysia](#Malaysia)
-    *   [5.11 New Zealand](#New_Zealand)
-    *   [5.12 Poland](#Poland)
-    *   [5.13 Russia](#Russia)
-    *   [5.14 South Africa](#South_Africa)
-    *   [5.15 Sweden](#Sweden)
-    *   [5.16 Thailand](#Thailand)
-    *   [5.17 United States](#United_States)
-    *   [5.18 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+    *   [5.11 Netherlands](#Netherlands)
+    *   [5.12 New Zealand](#New_Zealand)
+    *   [5.13 Poland](#Poland)
+    *   [5.14 Russia](#Russia)
+    *   [5.15 South Africa](#South_Africa)
+    *   [5.16 Sweden](#Sweden)
+    *   [5.17 Thailand](#Thailand)
+    *   [5.18 United States](#United_States)
+    *   [5.19 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 
 ## Official mirrors
 
@@ -246,6 +247,10 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 ### Malaysia
 
 *   [http://mirror.oscc.org.my/archlinux/](http://mirror.oscc.org.my/archlinux/)
+
+### Netherlands
+
+*   [http://mirror.transip.net/archlinux/](http://mirror.transip.net/archlinux/) *TransIP B.V.*
 
 ### New Zealand
 

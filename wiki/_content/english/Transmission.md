@@ -25,12 +25,12 @@ There are several options in [official repositories](/index.php/Official_reposit
 
 *   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface"), and web client ([http://localhost:9091](http://localhost:9091)) interfaces.
 *   [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli) - Curses interface for the daemon.
-*   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK3 package.
+*   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK+ 3 package.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) - Qt5 package.
 
 **Note:**
 
-*   The GTK client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the remote-cli package for a curses-based GUI.
+*   The GTK+ client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the remote-cli package for a curses-based GUI.
 *   You cannot connect to the daemon over IPv6.[[1]](https://trac.transmissionbt.com/ticket/2236)
 
 ## Configuring the GUI version

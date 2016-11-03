@@ -484,6 +484,10 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
 
+*   **Volctl** — Per-application volume control for GNU/Linux desktops.
+
+	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
+
 *   **Volti** — A GTK application for controlling audio volume from system tray with an internal mixer and support for multimedia keys that uses only ALSA.
 
 	[http://code.google.com/p/volti/](http://code.google.com/p/volti/) || [volti](https://aur.archlinux.org/packages/volti/)

@@ -320,7 +320,7 @@ Multimedia controller
 
 You need Alsa pakages to make sound work so first of all install [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib), [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) and [alsa-oss](https://www.archlinux.org/packages/?name=alsa-oss).
 
-Now edit the file `/etc/modprobe.d/sound` with a text editor if the file does not exist then create one and add the following at the start:
+Now edit the file `/etc/modprobe.d/sound` with a text editor (if the file does not exist, create one) and add the following at the start:
 
 ```
 options snd-hda-intel model=hp-m4

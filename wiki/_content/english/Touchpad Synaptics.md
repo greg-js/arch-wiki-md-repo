@@ -201,7 +201,7 @@ To change these settings in **Cinnamon**:
 It is possible configure the way MATE handles the touchpad:
 
 1.  Run `dconf-editor`
-2.  Edit the keys in the `org.mate.peripherals-touchpad` folder.
+2.  Edit the keys in the `org.mate.desktop.peripherals.touchpad` folder.
 
 To prevent Mate settings daemon from overriding existing settings, do as follows:
 

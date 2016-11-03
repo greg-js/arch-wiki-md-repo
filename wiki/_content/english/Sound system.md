@@ -35,7 +35,7 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 *   **[PulseAudio](/index.php/PulseAudio "PulseAudio")** — A very popular sound server, usable by most common desktop Linux applications today. Very good at handling multiple simultaneous inputs, and can do network audio as well. Very easy to get working, in fact very often all one has to do is install the package and it will automatically run. Not intended for pro audio low-latency applications.
 
-	[http://www.pulseaudio.org/](http://www.pulseaudio.org/) || [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio)
+	[https://www.freedesktop.org/wiki/Software/PulseAudio/](https://www.freedesktop.org/wiki/Software/PulseAudio/) || [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio)
 
 *   **[JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit")** — The older edition of a sound server for pro audio use, especially for low-latency applications including recording, effects, realtime synthesis, and many others. Although this edition is the older, it retains a very active and devoted development team, and which edition to use is not clear, trial and error is often helpful.
 
@@ -51,7 +51,7 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 *   **[NAS](https://en.wikipedia.org/wiki/Network_Audio_System "wikipedia:Network Audio System")** — This is a sound server supported by some major applications.
 
-	[http://www.radscan.com/nas/nas-links.html](http://www.radscan.com/nas/nas-links.html) || [nas](https://aur.archlinux.org/packages/nas/)
+	[https://www.radscan.com/nas/nas-links.html](https://www.radscan.com/nas/nas-links.html) || [nas](https://aur.archlinux.org/packages/nas/)
 
 ## See also
 

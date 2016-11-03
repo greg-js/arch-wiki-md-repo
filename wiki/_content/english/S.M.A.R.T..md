@@ -15,7 +15,7 @@ S.M.A.R.T. (Self-Monitoring, Analysis, and Reporting Technology) is a supplement
         *   [1.2.6 Alert on temperature changes](#Alert_on_temperature_changes)
         *   [1.2.7 Complete smartd.conf example](#Complete_smartd.conf_example)
 *   [2 GUI Applications](#GUI_Applications)
-*   [3 Resources](#Resources)
+*   [3 See also](#See_also)
 
 ## Smartmontools
 
@@ -25,9 +25,9 @@ SMART support must be available and enabled on each storage device to effectivel
 
 ### smartctl
 
-smartctl is a command-line tools that "controls the Self-Monitoring, Analysis and Reporting Technology (SMART) system built into most ATA/SATA and SCSI/SAS hard drives and solid-state drives."
+smartctl is a command-line tool that "controls the Self-Monitoring, Analysis and Reporting Technology (SMART) system built into most ATA/SATA and SCSI/SAS hard drives and solid-state drives."
 
-The `--info` (or `-i`) option prints a variety of information about a device, including whether SMART is available and enabled:
+The `-i`/`--info` option prints a variety of information about a device, including whether SMART is available and enabled:
 
 ```
 # smartctl --info /dev/sda | grep 'SMART support is:'
@@ -53,7 +53,7 @@ There are three types of self-tests that a device can execute (all are safe to u
 *   Extended (or Long; a short check with complete disk surface examination)
 *   Conveyance (identifies if damage incurred during transportation of the device)
 
-The `-c` (or `--capabilities`) flag prints which tests a device supports and the approximate execution time of each test. For example:
+The `-c`/`--capabilities` flag prints which tests a device supports and the approximate execution time of each test. For example:
 
 ```
 # smartctl -c /dev/sda
@@ -68,7 +68,7 @@ recommended polling time:        (   2) minutes.
 
 ```
 
-Use `-t` (or `--test=<test_name>`) flag to run a test:
+Use `-t`/`--test=<test_name>` flag to run a test:
 
 ```
 # smartctl -t short /dev/<device>
@@ -96,7 +96,7 @@ You can also view a list of recent test results and detailed information about a
 
 ### smartd
 
-The smartd daemon monitors SMART statuses and emits notifications when something goes wrong. It can be managed with systemd and configured using the `/etc/smartd.conf` configuration file. The configuration file syntax is esoteric, and this wiki page provides only a quick reference. For more complete information, read the examples and comments within the configuration file, or read the smartd.conf (5) man page. (Execute `man 5 smartd.conf` or visit [this page](http://www.smartmontools.org/browser/trunk/smartmontools/smartd.conf.5.in).)
+The smartd daemon monitors SMART statuses and emits notifications when something goes wrong. It can be managed with systemd and configured using the `/etc/smartd.conf` configuration file. The configuration file syntax is esoteric, and this wiki page provides only a quick reference. For more complete information, read the examples and comments within the configuration file, or read [smartd.conf(5)](https://www.smartmontools.org/browser/trunk/smartmontools/smartd.conf.5.in).
 
 #### daemon management
 
@@ -199,11 +199,11 @@ Device: /dev/sdb [SAT], no ATA CHECK POWER STATUS support, ignoring -n Directive
 
 ```
 
-As an alternative you can user -i option of smartd. It controls how often smartd spins the disks up to check their status. Default is 30 minutes. To change it create and edit /etc/default/smartmontools.
+As an alternative you can user -i option of smartd. It controls how often smartd spins the disks up to check their status. Default is 30 minutes. To change it create and edit `/etc/default/smartmontools`.
 
  `/etc/default/smartmontools`  `SMARTD_ARGS="-i 21600"  Check status every 21600 seconds (3 hours)` 
 
-Mori info on [smartd manpage](http://www.smartmontools.org/browser/trunk/smartmontools/smartd.8.in)
+For more info see [smartd(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartd.8.in).
 
 #### Schedule self-tests
 
@@ -220,7 +220,7 @@ smartd can track disk temperatures and alert if they rise too quickly or hit a h
 
 **Tip:** If you have some disks that run a lot hotter/cooler than others, remove `DEVICESCAN` and define a separate configuration for each device with appropriate temperature settings.
 
-#### Complete `smartd.conf` example
+#### Complete smartd.conf example
 
 Putting together all of the above gives the following example configuration:
 
@@ -241,7 +241,8 @@ Putting together all of the above gives the following example configuration:
 
 	[http://gsmartcontrol.sourceforge.net](http://gsmartcontrol.sourceforge.net) || [gsmartcontrol](https://www.archlinux.org/packages/?name=gsmartcontrol) or [gsmartcontrol-svn](https://aur.archlinux.org/packages/gsmartcontrol-svn/)
 
-## Resources
+## See also
 
-*   [Smartmontools Homepage](http://www.smartmontools.org/)
+*   [Smartmontools Homepage](https://www.smartmontools.org/)
 *   [Smartmontools on Ubuntu Wiki](https://help.ubuntu.com/community/Smartmontools)
+*   [Gentoo: smartmontools](https://wiki.gentoo.org/wiki/smartmontools "gentoo:smartmontools")

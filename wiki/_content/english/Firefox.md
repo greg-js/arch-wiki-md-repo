@@ -336,7 +336,7 @@ From the [Mozilla support](http://support.mozilla.com/en-US/questions/767751) si
 
 ### Silently fails when installing desktop apps from marketplace
 
-Installation of apps from firefox os marketplace will silently fail if there is no `~/.local/share/applications` folder.
+Installation of apps from Firefox OS Marketplace will silently fail if there is no `~/.local/share/applications` folder.
 
 ### Firefox detects the wrong version of my plugin
 

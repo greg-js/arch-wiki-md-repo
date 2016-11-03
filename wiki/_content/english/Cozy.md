@@ -1,4 +1,4 @@
-[Cozy](https://cozy.io) is a personal cloud platform free and self-hostable, written in Node.js.
+[Cozy](https://cozy.io) is a personal cloud platform free and self-hostable, written in [Node.js](/index.php/Node.js "Node.js").
 
 The platform aims at simplifying the use of a personal cloud and allowing the users to take back ownership of their privacy. Its base applications' features include hosting, sharing and synchronising files, picture, contacts and calendars, along with an email client.
 
@@ -27,16 +27,11 @@ Third-party apps are available trhough a marketplace and can be used to extend C
 
 ### Dependencies
 
-The first step in installing Cozy is to install its dependencies. This can be done by installing [cozy-deps](https://aur.archlinux.org/packages/cozy-deps/), which is an empty shell containing all the needed dependencies.
+The first step in installing Cozy is to [install](/index.php/Install "Install") its dependencies. This can be done by installing [cozy-deps](https://aur.archlinux.org/packages/cozy-deps/), which is an empty shell containing all the needed dependencies.
 
-If you don't want to use this package, you can install all the dependencies by hand with
+If you do not want to use this package, you can install all the dependencies by hand: [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates), [couchdb](https://www.archlinux.org/packages/?name=couchdb), [bash](https://www.archlinux.org/packages/?name=bash), [curl](https://www.archlinux.org/packages/?name=curl), [git](https://www.archlinux.org/packages/?name=git), [imagemagick](https://www.archlinux.org/packages/?name=imagemagick), [coffee-script](https://www.archlinux.org/packages/?name=coffee-script), [openssl](https://www.archlinux.org/packages/?name=openssl), [libxml2](https://www.archlinux.org/packages/?name=libxml2), [libxslt](https://www.archlinux.org/packages/?name=libxslt), [sqlite](https://www.archlinux.org/packages/?name=sqlite).
 
-```
-# pacman -S ca-certificates couchdb bash curl git imagemagick coffee-script openssl libxml2 libxslt sqlite
-
-```
-
-**Note:** Both procedures will install Node.js version 6.x or 7.x. While Cozy **may** totally work with these versions, they aren't officially supported, as Cozy offially only supports Node.js v4.x, which can be found in [nodejs-lts-bin](https://aur.archlinux.org/packages/nodejs-lts-bin/). If you still want to use the Node.js version currently in Archlinux's official repository, you will also need [npm](https://www.archlinux.org/packages/?name=npm).
+**Note:** Both procedures will install Node.js version 6.x or 7.x. While Cozy **may** totally work with these versions, they are not officially supported, as Cozy offially only supports Node.js v4.x, which can be found in [nodejs-lts-bin](https://aur.archlinux.org/packages/nodejs-lts-bin/). If you still want to use the Node.js version currently in Archlinux's official repository, you will also need [npm](https://www.archlinux.org/packages/?name=npm).
 
 ### Pre-installation
 
@@ -61,9 +56,9 @@ You will also need to create the `/etc/cozy` repository and give its full owners
 
 ### Configuring CouchDB
 
-We'll now configure the database. Cozy stores almost everything in a [CouchDB](/index.php/CouchDB "CouchDB") database, and needs a CouchDB administrator to manage this database. This administrator's credentials must be placed in `/etc/cozy/couchdb.login` so Cozy can use them.
+We will now configure the database. Cozy stores almost everything in a [CouchDB](/index.php/CouchDB "CouchDB") database, and needs a CouchDB administrator to manage this database. This administrator's credentials must be placed in `/etc/cozy/couchdb.login` so Cozy can use them.
 
-To create an administrator, first generate the credentials (with [pwgen](https://www.archlinux.org/packages/?name=pwgen) for example), store them, and send them to CouchDB. Don't forget to give the appropriate rights to the file.
+To create an administrator, first generate the credentials (with [pwgen](https://www.archlinux.org/packages/?name=pwgen) for example), store them, and send them to CouchDB. Do not forget to give the appropriate rights to the file.
 
 ```
 # pwgen -1 > /etc/cozy/couchdb.login
@@ -221,7 +216,7 @@ server {
 }
 ```
 
-**Note:** Don't forget to include `/etc/nginx/cozy.conf` in `/etc/nginx/nginx.conf`!
+**Note:** Do not forget to include `/etc/nginx/cozy.conf` in `/etc/nginx/nginx.conf`!
 
 ### Caddy
 
@@ -244,7 +239,7 @@ Some users are experiencing issues with CouchDB's 2.0 update.
 
 #### From an old install
 
-If you're updating CouchDB from version 1.x to version 2.x, Cozy may not be able to run because of CouchDB's sharding (which isn't supported by Cozy yet). This updates changes the default database directory, making Cozy's database not found by CouchDB. Here is the path to follow to make Cozy work again.
+If you are updating CouchDB from version 1.x to version 2.x, Cozy may not be able to run because of CouchDB's sharding (which is not supported by Cozy yet). This updates changes the default database directory, making Cozy's database not found by CouchDB. Here is the path to follow to make Cozy work again.
 
 *   Stop the `couchdb` service. Backup `/var/lib/couchdb/cozy.couch` somewhere else and remove everything under `/var/lib/couchdb` (don’t do this if you happen to use couchdb for anything else than Cozy! In that case, you probably need to check carefully what’s in there, and find the appropriate migration process for every database).
 

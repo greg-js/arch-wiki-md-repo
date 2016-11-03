@@ -226,11 +226,9 @@ $ linux32 makepkg --config ~/.makepkg.i686.conf
 
 ### Makepkg sometimes fails to sign a package without asking for signature passphrase
 
-With [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent no longer has to be started manually and will be started automatically on the first invokation of gpg. Thus if you do not manually start gpg-agent, makepkg will start it.
+With [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent no longer has to be started manually and will be started automatically on the first invokation of gpg. Thus if you do not manually start gpg-agent, makepkg will start it. The problem is that makepkg runs gpg inside a fakeroot, so gpg-agent is also started in that same environment. This leads to bad behavior. A possible solution is to manually start the gpg-agent, either on boot or by command (see [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") for ways to do this), before you run makepkg, but this also can be unreliable: [FS#49946](https://bugs.archlinux.org/task/49946).
 
-The problem is that makepkg runs gpg inside a fakeroot, so gpg-agent is also started in that same environment. This leads to bad behavior. The obvious remedy is to manually start the gpg-agent, either on boot or by command, before you run makepkg.
-
-See [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG") for ways to do this.
+In the meantime if you do not wish to experiment with your gpg-agent configuration, simply use makepkg *without* signing, and sign the packages afterwards with `gpg --detach-sign *name*.pkg.tar.xz`.
 
 ### CFLAGS/CXXFLAGS/CPPFLAGS in makepkg.conf do not work for QMAKE based packages
 

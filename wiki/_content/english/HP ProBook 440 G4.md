@@ -6,7 +6,7 @@
 | USB 3.0 | Yes |
 | Ethernet | Yes |
 | WLAN | Yes |
-| Bluetooth | Not tested |
+| Bluetooth | Yes |
 | Touchpad | Yes |
 | Backlight control | Yes |
 | Function keys | Yes |

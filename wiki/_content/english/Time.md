@@ -22,7 +22,7 @@ In an operating system, the time (clock) is determined by four parts: time value
 
 A computer has two clocks that need to be considered: the "Hardware clock" and the "System/software clock".
 
-**Hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores the values of: Year, Month, Day, Hour, Minute, and the Seconds. It does not have the ability to store the time standard (localtime or UTC), nor whether DST is used.
+**Hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores the values of: Year, Month, Day, Hour, Minute, and Seconds. It does not have the ability to store the time standard (localtime or UTC), nor whether DST is used.
 
 **System clock** (a.k.a. the software clock) keeps track of: time, time zone, and DST if applicable. It is calculated by the Linux kernel as the number of seconds since midnight January 1st 1970, UTC. The initial value of the system clock is calculated from the hardware clock, dependent on the contents of `/etc/adjtime`. After boot-up has completed, the system clock runs independently of the hardware clock. The Linux kernel keeps track of the system clock by counting timer interrupts.
 
@@ -235,7 +235,7 @@ The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol 
 
 *   **[Chrony](/index.php/Chrony "Chrony")** — A client and server that is roaming friendly and designed specifically for systems that are not online all the time.
 
-	[http://chrony.tuxfamily.org/](http://chrony.tuxfamily.org/) || [chrony](https://www.archlinux.org/packages/?name=chrony)
+	[https://chrony.tuxfamily.org/](https://chrony.tuxfamily.org/) || [chrony](https://www.archlinux.org/packages/?name=chrony)
 
 *   **ntpclient** — A simple command-line NTP client.
 
@@ -251,8 +251,8 @@ If instead you want an application to "see" a different time zone than the syste
 
  `$ date && export TZ="/usr/share/zoneinfo/Pacific/Fiji" && date` 
 ```
-Sa 24\. Mai 12:38:26 CEST 2014
-Sa 24\. Mai 22:38:26 FJT 2014
+Tue Nov  1 14:34:51 CET 2016
+Wed Nov  2 01:34:51 FJT 2016
 ```
 
 This is different than just setting the time, as for example it allows to test the behaviour of a program with positive or negative UTC offset values, or the effects of DST changes when developing on systems in a non-DST time zone.
@@ -284,5 +284,6 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 
 *   [Linux Tips - Linux, Clocks, and Time](http://sunnyan.tistory.com/entry/Linux-Clocks-and-Time)
 *   [Sources for Time Zone and Daylight Saving Time Data](http://www.twinsun.com/tz/tz-link.htm) for [tzdata](https://www.archlinux.org/packages/?name=tzdata)
-*   [Time Scales](http://www.ucolick.org/~sla/leapsecs/timescales.html)
+*   [Time Scales](https://www.ucolick.org/~sla/leapsecs/timescales.html)
+*   [Gentoo: System time](https://wiki.gentoo.org/wiki/System_time "gentoo:System time")
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")

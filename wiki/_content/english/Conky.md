@@ -136,7 +136,7 @@ The above option is not desired with the `OWN_WINDOW_ARGB_VISUAL yes` option. Th
 In `conky.conf` file:
 
 ```
-background = yes,
+background = true,
 
 ```
 

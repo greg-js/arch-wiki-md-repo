@@ -82,7 +82,7 @@ $ pacman -Ql cinnamon | awk -F'[_.]' '/cs_.+\.py/ {print $2}'
 
 	Printers
 
-	For configure printers, install the [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer) package.
+	For configure printers, install [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer) and the [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) package.
 
 	Networking
 

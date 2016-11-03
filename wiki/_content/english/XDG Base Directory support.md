@@ -126,6 +126,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 | [i3status](http://i3wm.org/i3status/) | `~/.i3status.conf` | [c3f7fc4994](http://code.stapelberg.de/git/i3status/commit/?id=c3f7fc4994) |
 | [imagemagick](http://www.imagemagick.org/script/index.php) |
 | [inkscape](/index.php/Inkscape "Inkscape") | `~/.inkscape` | [0.47](http://wiki.inkscape.org/wiki/index.php/Release_notes/0.47#Preferences) | [[14]](https://bugs.launchpad.net/inkscape/+bug/199720) |
+| [latexmk](https://www.ctan.org/pkg/latexmk?lang=en) | `~/.latexmkrc` | [2016-08-17](ftp://ftp.rrzn.uni-hannover.de/pub/mirror/tex-archive/support/latexmk/latexmk.pl) |
 | [lftp](http://lftp.yar.ru/) | `~/.lftp` | [21dc400](https://github.com/lavv17/lftp/commit/21dc400) | [[15]](https://www.mail-archive.com/lftp@uniyar.ac.ru/msg04301.html) |
 | [lgogdownloader](https://github.com/Sude-/lgogdownloader/) | `~/.gogdownloader` | [d430af63d000](https://github.com/Sude-/lgogdownloader/commit/d430af63d000) | [[16]](https://github.com/Sude-/lgogdownloader/issues/4) |
 | [LibreOffice](/index.php/LibreOffice "LibreOffice") | [a6f56f70](https://cgit.freedesktop.org/libreoffice/ure/commit/?id=a6f56f70a4930d3f71bd9c9b90fdd0ba20e4da5f) [25bd2eec](https://cgit.freedesktop.org/libreoffice/bootstrap/commit/?id=25bd2eec77ed774a37d1cddd0d72312e23d5e9fd) | [[17]](https://bugs.documentfoundation.org/show_bug.cgi?id=32263) |
@@ -309,7 +310,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | [dbus](/index.php/Dbus "Dbus") | `~/.dbus` | [[68]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
 | [eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse` | [[69]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
 | [emacs](https://www.gnu.org/software/emacs/) | `~/.emacs` `~/.emacs.d` | [[70]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583) | It's possible to set `HOME`, but it has unexpected side effects. So far the most promising approach is modifying another Emacs environment variable to alter the load path and author your own site file which can manually load up your init file, but it changes the load process significantly. |
-| [firefox](/index.php/Firefox "Firefox") | `~/.mozilla` | [[71]](https://bugzil.la/259356) |
+| [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla` | [[71]](https://bugzil.la/259356) |
 | [GNU parallel](http://www.gnu.org/software/parallel/) | `~/.parallel` |
 | [gstreamer-0.10](http://gstreamer.freedesktop.org/documentation/gstreamer010.html) | `~/.gstreamer-0.10` | Use [gstreamer-1.0](http://gstreamer.freedesktop.org/) instead. |
 | [idris](http://www.idris-lang.org/) | `~/.idris` |
@@ -323,8 +324,10 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:18](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L18). |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
 | [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | `~/.toprc` | [[77]](https://bugzilla.redhat.com/show_bug.cgi?id=1155265) |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[78]](https://bugzil.la/726939) |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
-| [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history` | [[78]](http://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[79]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) |
+| [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history` | [[79]](http://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[80]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[81]](https://bugzil.la/735285) |
 | [vim](/index.php/Vim "Vim") | `~/.vim` `~/.vimrc` `~/.viminfo` | Since [7.3.1178](https://github.com/vim/vim/commit/6a459902592e2a4ba68) vim will search for `~/.vim/vimrc` if `~/.vimrc` is not found. `~/.vim/vimrc` 
 ```
 set undodir=~/.cache/vim/undo " vim will not create this directory.
@@ -337,16 +340,16 @@ set viminfo+=n~/.cache/vim/viminfo
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[80]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[82]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
 | [wpa_cli](http://w1.fi/) | `~/.wpa_cli_history` |
 | [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
-| [xmonad](/index.php/Xmonad "Xmonad") | `~/.xmonad` | [[81]](https://code.google.com/p/xmonad/issues/detail?id=484) |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[82]](https://github.com/conformal/xombrero/issues/74) |
-| [zsh](/index.php/Zsh "Zsh") | `~/.zshrc` `~/.zprofile` `~/.zshenv` `~/.zlogin` `~/.zlogout` `~/.histfile` | [[83]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+| [xmonad](/index.php/Xmonad "Xmonad") | `~/.xmonad` | [[83]](https://code.google.com/p/xmonad/issues/detail?id=484) |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[84]](https://github.com/conformal/xombrero/issues/74) |
+| [zsh](/index.php/Zsh "Zsh") | `~/.zshrc` `~/.zprofile` `~/.zshenv` `~/.zlogin` `~/.zlogout` `~/.histfile` | [[85]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 

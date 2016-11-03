@@ -103,9 +103,12 @@ See [Openbox Menus](http://openbox.org/wiki/Help:Menus) for further help on crea
 
 ### Volume control
 
-Tint2 does not come with a volume control applet. VolWheel is a simple one that sits in the tray. Install it with [volwheel](https://www.archlinux.org/packages/?name=volwheel) and show it by running `volwheel`.
+Tint2 does not come with a volume control applet. The following programs provide a simple one that sits in the tray:
 
-Another option is [volumeicon](https://www.archlinux.org/packages/?name=volumeicon) or [volumeicon-gtk2](https://aur.archlinux.org/packages/volumeicon-gtk2/).
+*   [volwheel](https://www.archlinux.org/packages/?name=volwheel)
+*   [volumeicon](https://www.archlinux.org/packages/?name=volumeicon)
+*   [volumeicon-gtk2](https://aur.archlinux.org/packages/volumeicon-gtk2/)
+*   [volctl](https://aur.archlinux.org/packages/volctl/)
 
 ## Running tint2
 

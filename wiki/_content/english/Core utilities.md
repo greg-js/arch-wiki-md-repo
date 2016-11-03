@@ -137,7 +137,7 @@ Instead, find takes a set of directories and matches each file under them agains
 The following command will convert the file `foo` from ISO-8859-15 to UTF-8 saving it to `foo.utf`:
 
 ```
-$ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
+$ iconv -f ISO-8859-15 -t UTF-8 foo > foo.utf
 
 ```
 

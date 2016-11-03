@@ -247,7 +247,7 @@ There are several online databases of man pages, including:
 
 ## Noteworthy manpages
 
-Here follows a non-exhaustive list of noteworthy pages that might help you understand a lot of things more in-depth. Some of them might serve as a good reference (like the ascii table).
+Here follows a non-exhaustive list of noteworthy pages that might help you understand a lot of things more in-depth. Some of them might serve as a good reference (like the ASCII table).
 
 *   [ascii(7)](http://man7.org/linux/man-pages/man7/ascii.7.html)
 *   [boot(7)](http://man7.org/linux/man-pages/man7/boot.7.html)
@@ -284,6 +284,6 @@ Arch Linux specific pages:
 
 ## See also
 
-*   [man page - Gentoo wiki article](http://wiki.gentoo.org/wiki/Man_page)
+*   [man page - Gentoo wiki article](https://wiki.gentoo.org/wiki/Man_page)
 *   [Setting colors for less](http://unix.stackexchange.com/a/147) and [solving related problems](http://unix.stackexchange.com/a/6357) (threads on StackExchange)
 *   [Write The Fine Manual with pod2man](https://linuxtidbits.wordpress.com/2013/08/21/wtfm-write-the-fine-manual-with-pod2man-text-converter/)

@@ -130,7 +130,7 @@
 | [systemd FAQ (Español)](/index.php/Systemd_FAQ_(Espa%C3%B1ol) "Systemd FAQ (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [systemd-boot (Español)](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") | Gestor de arranque | `2016-09` |
 | [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)")
-<small>**Remitido desde Beginners' guide (Español)**</small> | Configuración del sistema/Gestión redes | `--` | Sin traducir |
+<small>**Remitido desde Beginners' guide (Español)**</small> | Configuración del sistema/Gestión redes | `2016-10` | [SignoSN](/index.php/User:SignoSN "User:SignoSN") | En proceso de traducción |
 | [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [Table of contents (Español)](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") | Información/Wiki | `2014-04` | Su contenido se actualiza automáticamente (no la traducción de los títulos) |
 | [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | `2013-09` |
@@ -145,7 +145,7 @@
 | [Wayland (Español)](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") | Servidor X | `2014-04` |
 | [Wicd (Español)](/index.php/Wicd_(Espa%C3%B1ol) "Wicd (Español)") | Gestión de redes | `2013-09` |
 | [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") | GUI | `2013-09` |
-| [Windows and Arch Dual Boot (Español)](/index.php/Windows_and_Arch_Dual_Boot_(Espa%C3%B1ol) "Windows and Arch Dual Boot (Español)") | Instalación/Proceso de arranque | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") |
+| [Windows and Arch Dual Boot (Español)](/index.php/Windows_and_Arch_Dual_Boot_(Espa%C3%B1ol) "Windows and Arch Dual Boot (Español)") | Instalación/Proceso de arranque | `2015-07` |
 | [Wireless Setup (Español)](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)") | Gestión de redes | `2013-09` |
 | [WPA supplicant (Español)](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") | Gestión de redes | `2013-09` |
 | [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") | Servidor X (X11) | `2013-09` |

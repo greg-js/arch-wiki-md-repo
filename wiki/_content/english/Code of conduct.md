@@ -2,7 +2,7 @@ The Arch community is a technical community whose shared purpose is to support a
 
 Arch Linux is a community-driven distribution; the developers, support staff and people who provide assistance in the various fora all do so in their own time, motivated by a shared desire to provide a minimal base system that can be configured by an individual to suit their specific requirements. The Code of Conduct here has been developed over a number of years and reflects the community's ethos of a functional support system with a high signal-to-noise ratio and an explicit expectation of self-sufficiency and willingness to learn.
 
-Familiarising yourself with the principles and guidelines here is both a courtesy to the community and an effective way of making your intial interactions with other Arch Linux users mutually beneficial.
+Familiarising yourself with the principles and guidelines here is both a courtesy to the community and an effective way of making your initial interactions with other Arch Linux users mutually beneficial.
 
 ## Contents
 
