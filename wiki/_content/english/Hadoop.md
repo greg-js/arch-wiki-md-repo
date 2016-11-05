@@ -116,7 +116,7 @@ $ hadoop fs -put /etc/hadoop input
 Run some of the examples provided:
 
 ```
-$ hadoop jar /usr/lib/hadoop-2.7.2/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
+$ hadoop jar /usr/lib/hadoop-2.7.3/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar grep input output 'dfs[a-z.]+'
 
 ```
 

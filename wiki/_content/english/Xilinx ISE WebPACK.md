@@ -5,18 +5,23 @@ The Xilinx ISE WebPACK is a complete FPGA/CPLD programmable logic design suite p
 *   Functional (Behavioral) and Timing (post-Place & Route) simulation
 *   Download of configuration data into target device via communications cable
 
+The development of the ISE WebPACK has been stopped in favor of the [Vivaldo Suite](/index.php/Xilinx_Vivado "Xilinx Vivado"), but it is still useful to develop for older devices not supported by the new suite.
+
 While Arch Linux is not one of the officially supported distributions, many features are known to work on Arch Linux.
 
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)
-    *   [1.1 Dependencies](#Dependencies)
-    *   [1.2 Default Shell](#Default_Shell)
+    *   [1.1 Download ISE WebPACK](#Download_ISE_WebPACK)
+    *   [1.2 Dependencies](#Dependencies)
+    *   [1.3 Default Shell](#Default_Shell)
 *   [2 Installation](#Installation)
-    *   [2.1 Launching the ISE design tools](#Launching_the_ISE_design_tools)
-        *   [2.1.1 Launching via desktop icons](#Launching_via_desktop_icons)
-    *   [2.2 License Installation](#License_Installation)
-    *   [2.3 Node-Locked Licenses](#Node-Locked_Licenses)
+    *   [2.1 Install from AUR](#Install_from_AUR)
+    *   [2.2 Manual installation](#Manual_installation)
+    *   [2.3 Launching the ISE design tools](#Launching_the_ISE_design_tools)
+        *   [2.3.1 Launching via desktop icons](#Launching_via_desktop_icons)
+    *   [2.4 License Installation](#License_Installation)
+    *   [2.5 Node-Locked Licenses](#Node-Locked_Licenses)
 *   [3 Post-Installation Fixes and Tweaks](#Post-Installation_Fixes_and_Tweaks)
     *   [3.1 Dynamic Library Fix (libstdc++.so)](#Dynamic_Library_Fix_.28libstdc.2B.2B.so.29)
     *   [3.2 Digilent USB-JTAG Drivers](#Digilent_USB-JTAG_Drivers)
@@ -29,16 +34,19 @@ While Arch Linux is not one of the officially supported distributions, many feat
 
 ## Prerequisites
 
+### Download ISE WebPACK
+
+The Xilinx ISE WebPACK is a freeware software released under a proprietary license which does not allow redistribution. To obtain the install data visit [the official download page](http://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html).
+
 ### Dependencies
 
 If you plan to develop software for an embedded ARM core (e.g. for Xilinx Zynq SoC devices), you will want to install the GCC cross-compiler bundled included with the Xilinx Embedded Development Kit (EDK). This compiler requires the [glibc](https://www.archlinux.org/packages/?name=glibc) and [ncurses](https://www.archlinux.org/packages/?name=ncurses) packages. For i686 installations, these will most likely be already present.
 
-If you are on a 64-bit Arch installation, you need to install [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) from the [multilib](/index.php/Multilib "Multilib") repository. Since the [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) is now version 6, the [ncurses pkgbuild](https://gist.githubusercontent.com/strayArch/cbfbb87a4d0f41f8c5ba/raw/fa063cee8c28e4174e81c670204b18b110337505/ncurses5-PKGBUILD) must be installed manually --- `makepkg -s` and `pacman -U *xz`.
-**Note:** the required gpg can be fetched via `gpg --keyserver [http://pgp.mit.edu/](http://pgp.mit.edu/) --search 0x702353e0f7e48edb`
+If you are on a 64-bit Arch installation, you need to install [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) from the [multilib](/index.php/Multilib "Multilib") repository and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) from the [AUR](/index.php/AUR "AUR").
 
 ### Default Shell
 
-During the installation, the Mentor CodeSourcery toolchains for embedded processors can be installed along with the Xilinx tools. This installation silently fails when the default shell is set to "dash". Make sure `/usr/bin/sh` points to `/usr/bin/bash`.
+During the installation, the Mentor CodeSourcery toolchains for embedded processors can be installed along with the Xilinx tools. This installation silently fails when the default shell is set to [dash](/index.php/Dash "Dash"). Make sure `/usr/bin/sh` points to `/usr/bin/bash`.
 
 This can be checked by running this command:
 
@@ -54,23 +62,26 @@ If the output looks like this:
 
 ```
 
-then `/usr/bin/sh` already points to `/usr/bin/bash` (the default in Arch Linux).
+then `/usr/bin/sh` already points to `/usr/bin/bash`. (the default in Arch Linux).
 
-If not, run the following commands as root:
+If not, link `/usr/bin/sh` to bash:
 
 ```
-$ rm /usr/bin/sh
-$ ln -s bash /usr/bin/sh
+# ln -sfT bash /bin/sh
 
 ```
 
 ## Installation
 
+### Install from AUR
+
+Install the package [xilinx-ise](https://aur.archlinux.org/packages/xilinx-ise/), you will have to place the tarball with the installation data in the same folder of the `PKGBUILD` before starting the building process.
+
+### Manual installation
+
 **Note:** The installation is last known to work with Xilinx ISE 14.7, requiring the dynamic library fix described below.
 
-The ISE Design Tools can be downloaded from [the official download page](http://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html). It requires registration and licensing agreement, but there is no charge, i.e. it's free as in "free beer", but not free as in "free speech".
-
-Once the tarballs has been downloaded, unpack it:
+Extract the tarball containing the installation data:
 
 ```
 $ tar -xvf Xilinx_ISE_DS_Lin_14.7_1015_1.tar
@@ -98,7 +109,7 @@ During installation, uncheck the "Install Cable Drivers" option. Leaving it chec
 
 ### Launching the ISE design tools
 
-The ISE design tools include a shell script that modifies the environment variables (mostly PATH and LD_LIBRARY_PATH). This script must be sourced before starting the ISE tools:
+The ISE design tools include a shell script that modifies the environment variables (mostly `PATH` and `LD_LIBRARY_PATH`). This script must be sourced before starting the ISE tools:
 
 ```
 $ source /opt/Xilinx/14.7/ISE_DS/settings64.sh
@@ -112,14 +123,13 @@ $ source /opt/Xilinx/14.7/ISE_DS/settings32.sh
 
 ```
 
-Then, the ISE design tools will be found in your PATH and can be started by typing their name in the terminal (e.g. `ise`, `planAhead`, `xsdk`, ...)
+Then, the ISE design tools will be found in your `PATH` and can be started by typing their name in the terminal (e.g. `ise`, `planAhead`, `xsdk`, ...)
 
 #### Launching via desktop icons
 
-You can also create files at /usr/share/applications/
+You can also create a [desktop entry](/index.php/Desktop_entries "Desktop entries") at `/usr/share/applications/`
 
-ise.desktop:
-
+ `/usr/share/applications/ise.desktop` 
 ```
 #!/usr/bin/env xdg-open
 [Desktop Entry]
@@ -131,10 +141,9 @@ Icon=/opt/Xilinx/14.7/ISE_DS/ISE/data/images/pn-ise.png
 Categories=Development;
 Comment=Xilinx ISE
 StartupWMClass=_pn
-
 ```
 
-After that you can copy this files to Desktop folder on your home and launch ISE tools from desktop
+After that you can copy this file to the `~/Desktop` folder and launch ISE tools from the desktop.
 
 ### License Installation
 
@@ -146,14 +155,7 @@ Another way to import the license is to simply copy it to the `~/.Xilinx` or `/o
 
 Arch Linux by default uses systemd's [Predictable Network Interface Names](/index.php/Network_configuration#Device_names "Network configuration"). This means that your system will most likely not have its network interfaces named "eth0", "eth1" and so forth.
 
-However, the Xilinx License Manager looks for these names to find out the system's MAC addresses, which are used for node-locked licenses. If you require node-locked licenses, unfortunately you have to disable this feature to re-gain the kernel naming scheme for network interfaces and fix the name of NIC that you obtained your license. The code below will be your help:
-
-```
-# echo 'SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="xx:xx:xx:xx:xx:xx", NAME="eth1"' > /etc/udev/rules.d/10-net-naming.rules
-
-```
-
-For more specific, refer to the page [systemd wiki](http://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames) describes how to work and what you have other(formal) ways.
+However, the Xilinx License Manager looks for these names to find out the system's MAC addresses, which are used for node-locked licenses. If you want to use node-locked licenses, you will have to manually assign to your interface a name in the format expected by the License Manager. The [change device name](/index.php/Network_configuration#Change_device_name "Network configuration") article subsection explain how to write an [udev](/index.php/Udev "Udev") rule to do so.
 
 ## Post-Installation Fixes and Tweaks
 
@@ -161,16 +163,18 @@ After installation, a few manual fixes are required to work around problems caus
 
 ### Dynamic Library Fix (libstdc++.so)
 
+**Note:** This workaround is already applied in the AUR package
+
 The ISE tools supply an outdated version of the libstdc++.so library, which may cause segfaults when using the Xilinx Microprocessor Debugger and prevents the usage of the oxygen-gtk theme. This outdated version is located in two directories within the installation tree: `/opt/Xilinx/14.7/ISE_DS/ISE/lib/lin64/` and `/opt/Xilinx/14.7/ISE_DS/common/lib/lin64`. To use Arch's newer version of libstdc++, rename or delete the original files and replace them with symlinks:
 
 ```
-cd /opt/Xilinx/14.7/ISE_DS/ISE/lib/lin64/
-mv libstdc++.so libstdc++.so-orig
-mv libstdc++.so.6 libstdc++.so.6-orig
-mv libstdc++.so.6.0.8 libstdc++.so.6.0.8-orig
-ln -s /usr/lib/libstdc++.so
-ln -s libstdc++.so libstdc++.so.6
-ln -s libstdc++.so libstdc++.so.6.0.8
+$ cd /opt/Xilinx/14.7/ISE_DS/ISE/lib/lin64/
+$ mv libstdc++.so libstdc++.so.bak
+$ mv libstdc++.so.6 libstdc++.so.6.bak
+$ mv libstdc++.so.6.0.8 libstdc++.so.6.0.8.bak
+$ ln -s /usr/lib/libstdc++.so
+$ ln -s libstdc++.so libstdc++.so.6
+$ ln -s libstdc++.so libstdc++.so.6.0.8
 
 ```
 
@@ -261,7 +265,7 @@ ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="001
 
 ```
 
-When performing this command, the udev rules file will be created. You can reload udev rules to apply changes immidiately:
+When performing this command, the udev rules file will be created. You can reload udev rules to apply changes immediately:
 
 ```
 $ sudo udevadm control --reload-rules

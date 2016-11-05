@@ -24,6 +24,7 @@
 *   [21 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
 *   [22 Avoid screen tearing](#Avoid_screen_tearing)
     *   [22.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
+*   [23 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
 
 ## Wayland (gdm) crashes after nvidia-libgl installation
 
@@ -485,3 +486,33 @@ Also make sure to select OpenGL >= 2.0 as rendering backend under Systemsettings
 In some cases neither of the above fixes work. A possible fix is to configure [ForceFullCompositionPipeline](#Avoid_screen_tearing).
 
 Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)
+
+## Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8
+
+With linux 4.8, one can get the following errors when trying to use the discrete card:
+
+ `$ modprobe nvidia -vv` 
+```
+modprobe: INFO: custom logging function 0x409c10 registered
+modprobe: INFO: Failed to insert module '/lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz': No such device
+modprobe: ERROR: could not insert 'nvidia': No such device
+modprobe: INFO: context 0x24481e0 released
+insmod /lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz 
+
+```
+ `$ dmesg` 
+```
+...
+NVRM: The NVIDIA GPU 0000:01:00.0 (PCI ID: 10de:139b)
+NVRM: installed in this system is not supported by the 370.28
+NVRM: NVIDIA Linux driver release.  Please see 'Appendix
+NVRM: A - Supported NVIDIA GPU Products' in this release's
+NVRM: README, available on the Linux driver download page
+NVRM: at www.nvidia.com.
+...
+
+```
+
+This problem is caused by bad commits pertaining to PCIe power management in the Linux Kernel (as documented in [this NVIDIA DevTalk thread](https://devtalk.nvidia.com/default/topic/971733/-370-28-with-kernel-4-8-on-gt-2015-machines-driver-claims-card-not-supported-if-nvidia-is-not-primary-card/)).
+
+The workaround is to add `pcie_port_pm=off` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Note that this disables PCIe power management for all devices.

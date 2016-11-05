@@ -142,7 +142,7 @@ NAT более универсален, так как он явно раздел�
 
 ### create_ap
 
-Скрипт [create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) включает в себя [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dnsmasq (Русский)") и [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") для создания точки доступа посредством Моста/NAT (доступен в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") [create_ap](https://www.archlinux.org/packages/?name=create_ap)).
+Пакет [create_ap](https://www.archlinux.org/packages/?name=create_ap) включает в себя [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dnsmasq (Русский)") и [iptables](/index.php/Iptables_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Iptables (Русский)") для создания точки доступа посредством Моста/NAT.
 
 ### RADIUS
 

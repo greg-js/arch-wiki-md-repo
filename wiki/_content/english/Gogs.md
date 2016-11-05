@@ -64,10 +64,9 @@ Install [sqlite](https://www.archlinux.org/packages/?name=sqlite) and select SQL
 Install [postgresql](https://www.archlinux.org/packages/?name=postgresql) and select Postgresql on the installation page.
 
 ```
-# su - postgres -c "initdb --locale en_US.UTF-8 -D '/var/lib/postgres/data'"
-# su - postgres -c "createuser --interactive"
-# name: gogs
-# su - postgres -c "createdb -U gogs gogs"
+# su - postgres -c 
+# createuser -P gogs
+# createdb -O gogs gogs
 
 ```
 

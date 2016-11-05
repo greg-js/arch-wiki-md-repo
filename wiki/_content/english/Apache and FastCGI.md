@@ -15,7 +15,7 @@ There are two FastCGI modules for Apache:
 
 They both have permissive licenses (custom for mod_fastcgi and GPL for mod_fcgid) and they are both available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Apache 2.4 (available in the [official repositories](/index.php/Official_repositories "Official repositories") as [apache](https://www.archlinux.org/packages/?name=apache)) now provides an official module, [mod_proxy_fcgi](http://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html). See [configuration example for php-fpm](http://wiki.apache.org/httpd/PHP-FPM).
+Apache 2.4 (available in the [official repositories](/index.php/Official_repositories "Official repositories") as [apache](https://www.archlinux.org/packages/?name=apache)) now provides an official module, [mod_proxy_fcgi](http://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html). See [configuration example for php-fpm](http://wiki.apache.org/httpd/PHP-FPM) and [wiki article on set-up using archlinux](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server").
 
 ## mod_fastcgi
 
@@ -72,3 +72,4 @@ It doesn't work? Apache error log (`/var/log/httpd/error_log`) should help you f
 ## See also
 
 *   [lighttpd#FastCGI](/index.php/Lighttpd#FastCGI "Lighttpd")
+*   [Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi](/index.php/Apache_HTTP_Server#Using_php-fpm_and_mod_proxy_fcgi "Apache HTTP Server")

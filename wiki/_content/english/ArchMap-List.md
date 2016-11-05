@@ -1027,5 +1027,7 @@ You can use the following website to get your device's coordinates along with a 
 44.373300,0.733741 "Damien Flament" # Pujols, Aquitaine, France
 -20.240991, -70.138735 "Iván Ramírez Paz" #Iquique, Tarapaca, Chile
 -35.211579, 149.009614 "Max Chesterfield" #Canberra, Australia
+49.874284, 24.044106 "Michael Lutsiuk" # Lviv, Ukraine
+55.669841, 37.279732 "monory" # Odintsovo, Moscow region, Russia
 
 ```

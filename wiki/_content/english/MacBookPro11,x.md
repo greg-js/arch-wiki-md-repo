@@ -74,7 +74,7 @@ As a general rule, partitioning is no different from any other hardware that Arc
 
 **Note:** The OS X **Recovery partition** is not visible inside OS X `Disk Utility`. However, the partition will be automatically moved after the OS X partition if you resize it.
 
-**Warning:** If you OS X partition is encrypted with FileVault 2, you **must** disable the disk encryption before proceeding. After the OS X partition has been resized, FileVault 2 can be re-enabled.
+**Warning:** If your OS X partition is encrypted with FileVault 2, you **must** disable the disk encryption before proceeding. After the OS X partition has been resized, FileVault 2 can be re-enabled.
 
 **Note:** If you plan to remove OS X, it is advisable to **disable** the MacBook startup sound before proceeding with partitioning. Just boot in OS X, mute your system sound and reboot again to the Arch Linux Installation media. Please keep in mind that the volume of the startup sound can only be modified reliably in OS X.
 

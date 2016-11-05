@@ -98,3 +98,5 @@ autoreconf --install
 ```
 
 to run the autotools scripts. The "--install" command will install any missing files for you, such as the NEWS and README files.
+
+...And that's it! You now have a configure file, ready to be used by the end user.

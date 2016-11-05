@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2016-09-18**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=450042).
+**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2016-11-03**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=455593).
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)").
 
@@ -36,13 +36,13 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Descargue e inicie el soporte de instalación como se explica en [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Iniciará sesión como usuario root en la primera [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), y se le presentará con el intérprete de órdenes [Zsh](/index.php/Zsh "Zsh"); órdenes comunes como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) pueden ser [completadas con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
-*   Para cambiar a una consola diferente —por ejemplo, para ver esta guía con [ELinks](/index.php/ELinks "ELinks") junto con la instalación— utilice el atajo `Alt+*flecha*`. Para [editar/modificar](/index.php/Edit "Edit") los archivos de configuración, dispone de los editores [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") y [vim](/index.php/Vim#Usage "Vim") .
+*   Para cambiar a una consola diferente —por ejemplo, para ver esta guía con [ELinks](/index.php/ELinks "ELinks") junto con la instalación— utilice el [atajo](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*flecha*`. Para [editar/modificar](/index.php/Edit "Edit") los archivos de configuración, dispone de los editores [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi") y [vim](/index.php/Vim#Usage "Vim") .
 
 ### Definir la distribución del teclado en el entorno live
 
 *   Por defecto, [la distribución del teclado de la consola](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") es la de [EE.UU.](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Las opciones disponibles de los archivos de mapas de teclas se pueden enumerar con `ls /usr/share/kbd/keymaps/**/*.map.gz`.
 
-*   La distribución del teclado se puede cambiar con la orden [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), añadiendo el nombre de un archivo (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»). Por ejemplo: `# loadkeys *es*` 
+*   La distribución del teclado se puede cambiar con la orden [loadkeys(1)](http://man7.org/linux/man-pages/man1/loadkeys.1.html), añadiendo el nombre de un archivo (no es necesario especificar la ruta ni la extensión del archivo cuando se usa «loadkeys»). Por ejemplo, ejecute `loadkeys es` para establecer una distribución de teclado [español](https://en.wikipedia.org/wiki/File:KB_Spanish.svg).
 
 *   [Los tipos de letras para la consola](/index.php/Console_fonts "Console fonts") los puede encontrar en `/usr/share/kbd/consolefonts/`, y, como antes, se pueden ajustar con la orden [setfont(8)](http://man7.org/linux/man-pages/man8/setfont.8.html).
 
@@ -70,14 +70,14 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   [Identifique los dispositivos](/index.php/Core_utilities#lsblk "Core utilities") donde se instalará el nuevo sistema (los resultados que terminen en `rom`, `loop` o `airoot` pueden ser ignorados): `# fdisk -l` 
 
-*   Se requieren las siguientes [particiones](/index.php/Partition "Partition") (secciones del disco) para el dispositivo elegido:
+*   Se requieren las siguientes *particiones* (se muestran con un sufijo numérico) para el dispositivo elegido:
 
 *   Una partición para el directorio raíz`/`.
 *   Si [UEFI](/index.php/UEFI "UEFI") está activado, una [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
-*   El [espacio de intercambio (swap)](/index.php/Swap_space "Swap space") puede establecerse en una partición separada o, a menos que haya formateado con [Btrfs](/index.php/Btrfs "Btrfs"), un [archivo swap](/index.php/Swap#Swap_file "Swap"). Vea [Partitioning#Partition scheme](/index.php/Partitioning#Partition_scheme "Partitioning") para tener en cuenta otras consideraciones al particionar una unidad.
+*   El [espacio de intercambio (swap)](/index.php/Swap_space "Swap space") puede establecerse en una partición separada o en un [archivo swap](/index.php/Swap#Swap_file "Swap").
 
-*   La herramienta de particionado que se use, dependerá de la elección de la *tabla de particionado*, donde se almacena la información requerida. El formato **GPT** se asocia comúnmente con los sistemas UEFI y, del mismo modo, el formato **MBR** con sistemas BIOS. [fdisk](/index.php/Fdisk "Fdisk") y [parted](/index.php/Parted "Parted") soportan ambos formatos, mientras que *gdisk* solo soporta GPT.
+*   Para modificar la *tabla de particiones* utilice [fdisk](/index.php/Fdisk "Fdisk") o [parted](/index.php/Parted "Parted"). Vea [Partitioning](/index.php/Partitioning "Partitioning") para obtener más información.
 
 *   En esta fase de la instalación, también hay que crear los dispositivos de bloques apilados —stacked block devices— para [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)"), [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)") o [RAID (Español)](/index.php/RAID_(Espa%C3%B1ol) "RAID (Español)"), si se diera el caso.
 
@@ -91,7 +91,9 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   El siguiente paso es [montar(8)](http://man7.org/linux/man-pages/man8/montar.8.html) la partición del sistema —root— en `/mnt`, por ejemplo: `# mount /dev/*sda1* /mnt` 
 
-*   Después de esto, hay que crear tantos directorios como particiones haya realizado y montarlas (`/mnt/boot`, `/mnt/home`, ...) y activar la partición *swap*, si se dispone de una, con [swapon(8)](http://man7.org/linux/man-pages/man8/swapon.8.html). Los sistemas de archivos montados serán posteriormente detectados por *genfstab*.
+*   Después de esto, hay que crear tantos directorios como particiones haya realizado y montarlas, por ejemplo: `# mkdir /mnt/boot`  `# mount /dev/sda2 /mnt/boot` 
+
+*   Los sistemas de archivos montados serán posteriormente detectados por [genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in).
 
 ## Instalación
 
@@ -109,7 +111,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Este grupo de paquetes no incluye todas las herramientas disponibles en el entorno live de instalación, como son los casos de [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) o firmware de wireless específicas ; consulte [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) para ver la comparación.
 
-*   Para [instalar](/index.php/Install "Install") otros paquetes o grupos de paquetes en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por espacios) o, posteriormente a la etapa de [#Chroot](#Chroot), con órdenes individuales con [pacman](/index.php/Pacman "Pacman").
+*   Para [instalar](/index.php/Install "Install") otros paquetes o grupos de paquetes, como [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), en el nuevo sistema, añada sus nombres a la orden *pacstrap* (separados por espacios) o, posteriormente a la etapa de [#Chroot](#Chroot), con órdenes individuales con [pacman](/index.php/Pacman "Pacman").
 
 ## Configuración del sistema
 
@@ -125,23 +127,43 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Zona horaria
 
-*   Configure la [zona horaria](/index.php/Time_zone "Time zone"): `# ln -s /usr/share/zoneinfo/*zona*/*subzona* /etc/localtime` 
+*   Configure la [zona horaria](/index.php/Time_zone "Time zone"): `# ln -s /usr/share/zoneinfo/*Región*/*Ciudad* /etc/localtime` 
 
-*   Ejecute [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) para generar el archivo `/etc/adjtime`. Si el [horario estándar](/index.php/Time_standard "Time standard") está ajustado a [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"), otros sistemas operativos coexistentes deben estar configurados en concordancia: `# hwclock --systohc --*utc*` 
+*   Ejecute [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) para generar el archivo `/etc/adjtime`: `# hwclock --systohc` 
+
+*   Esta orden presume que le reloj del hardware esta configurada con [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). Vea [Time#Time standard](/index.php/Time#Time_standard "Time") para obtener más detalles.
 
 ### Idioma del sistema
 
-*   Descomente el [locale](/index.php/Locale "Locale") necesario en `/etc/locale.gen` y, después, genérelo con la orden: `# locale-gen` 
+*   Descomente el [locale](/index.php/Locale "Locale") necesario en `/etc/locale.gen`, además de `en_US.UTF-8 UTF-8` y, después, genérelo con la orden: `# locale-gen` 
 
-*   Defina la [variable](/index.php/Variable "Variable") `LANG` en [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) según su caso, por ejemplo: `# echo LANG=*es_ES.UTF-8* > /etc/locale.conf` 
+*   Defina la [variable](/index.php/Variable "Variable") `LANG` en [locale.conf(5)](http://man7.org/linux/man-pages/man5/locale.conf.5.html) según su caso, por ejemplo:
 
-*   Si fuese necesario, defina la [distribución del teclado de la consola](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") y las preferencias del [tipo de letras](/index.php/Fonts#Console_fonts "Fonts") en [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).: `# echo KEYMAP=es > /etc/vconsole.conf` 
+ `/etc/locale.conf`  `LANG=*es_ES.UTF-8*` 
+
+*   Si fuese necesario, defina la [distribución del teclado de la consola](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") y las preferencias del [tipo de letras](/index.php/Fonts#Console_fonts "Fonts") en [vconsole.conf(5)](http://man7.org/linux/man-pages/man5/vconsole.conf.5.html).:
+
+ `/etc/vconsole.conf`  `KEYMAP=*es*` 
 
 ### Nombre del equipo
 
-*   Cree el archivo `/etc/hostname` con el [nombre del equipo](/index.php/Network_configuration#Set_the_hostname "Network configuration") deseado: `# echo *elnombredemiequipo* > /etc/hostname` 
+*   Cree el archivo `/etc/hostname` con el [nombre del equipo](/index.php/Network_configuration#Set_the_hostname "Network configuration") deseado:
 
-*   Añada una línea coincidente en `/etc/hosts`: `127.0.1.1 *elnombredemiequipo*.localdomain *elnombredemiequipo*` 
+ `/etc/hostname` 
+```
+*elnombredemiequipo*
+
+```
+
+*   Considere añadir una [entrada similar](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") en [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+
+ `/etc/hosts` 
+```
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+**127.0.1.1	*elnombredemiequipo*.localdomain	*elnombredemiequipo***
+
+```
 
 ### Configuración de la conexión de red
 
@@ -151,7 +173,9 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Initramfs
 
-*   Cuando haga cambios en la configuración de [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), cree un nuevo disco RAM inicial con: `# mkinitcpio -p linux` 
+*   Normalmente no es necesario crear una imagen *initramfs* nueva, dado que [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") se ejecuta durante la instalación del paquete [linux](https://www.archlinux.org/packages/?name=linux) con *pacstrap*.
+
+*   Cuando haga cambios especiales en la configuración de [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"), cree un nuevo disco RAM inicial con: `# mkinitcpio -p linux` 
 
 ### Contraseña de root
 
@@ -159,7 +183,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Instalar un gestor de arranque
 
-*   Consulte [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)") para conocer las opciones y configuraciones disponibles. Por ejemplo, configure el gestor de arranque con [systemd-boot](/index.php/Systemd-boot "Systemd-boot") si el sistema es compatible con UEFI, y [GRUB](/index.php/GRUB "GRUB") cuando no.
+*   Consulte [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") para conocer las opciones y configuraciones disponibles. Por ejemplo, configure el gestor de arranque con [systemd-boot](/index.php/Systemd-boot "Systemd-boot") si el sistema es compatible con UEFI, y [GRUB](/index.php/GRUB "GRUB") cuando no.
 
 *   Si tiene una CPU Intel, además de instalar un gestor de arranque, instale el paquete [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) y [active las actualizaciones del microcódigo](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 

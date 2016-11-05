@@ -122,11 +122,11 @@ Enlightenment does not ship with a [graphical polkit authentication agent](/inde
 
 #### GNOME Keyring integration
 
-It is possible to use gnome-keyring in Enlightenment. However, at the time of writing, you need a small hack to make it work in full. First, you must tell Enlightenment to autostart gnome-keyring. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate *Certificate and Key Storage*, *GPG Password Agent*, *SSH Key Agent* and "Secret Storage Service". After this, you should edit your `~/.profile` and add the following:
+It is possible to use gnome-keyring in Enlightenment. However, at the time of writing, you need a small hack to make it work in full. First, you must tell Enlightenment to autostart gnome-keyring. For that you should go to *Settings Panel > Apps > Startup Applications > System* and activate *Certificate and Key Storage*, *GPG Password Agent*, *SSH Key Agent* and "Secret Storage Service". After this, you should edit your `~/.pam_environment` and add the following:
 
 ```
        #Set gnome-keyring as the ssh authentication agent
-       export SSH_AUTH_SOCK=/run/user/${UID}/keyring/ssh
+       SSH_AUTH_SOCK=/run/user/${UID}/keyring/ssh
 
 ```
 

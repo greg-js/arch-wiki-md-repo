@@ -32,24 +32,24 @@ To see all of the available commands, run the following command:
 
 ### Examples
 
-Filter the first five mirrors, sort them by download rate and overwrite the file `/etc/pacman.d/mirrorlist`:
+Verbosely rate and sort the five most recently synchronized mirrors by download speed, and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
 # reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
-Verbosely rate the 200 most recently synchronized HTTP servers, sort them by download rate, and overwrite the file `/etc/pacman.d/mirrorlist`:
+Select the 200 most recently synchronized HTTP or HTTPS mirrors, sort them by download speed, and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
-# reflector --verbose --latest 200 --protocol http --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
-Verbosely rate the 200 most recently synchronized HTTPS servers located in the US, sort them by download rate, and overwrite the file `/etc/pacman.d/mirrorlist`:
+Select the HTTPS mirrors synchronized within the last 12 hours and located in the US, sort them by download speed, and overwrite the file `/etc/pacman.d/mirrorlist`:
 
 ```
-# reflector --verbose --country 'United States' --latest 200 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+# reflector --country 'United States' --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 ```
 
@@ -68,7 +68,7 @@ Target = pacman-mirrorlist
 Description = Updating pacman-mirrorlist with reflector and removing pacnew...
 When = PostTransaction
 Depends = reflector
-Exec = /usr/bin/env sh -c "reflector --country 'United States' --latest 200 --sort rate --save /etc/pacman.d/mirrorlist; if [[ -f /etc/pacman.d/mirrorlist.pacnew ]]; then rm /etc/pacman.d/mirrorlist.pacnew; fi"
+Exec = /usr/bin/env sh -c "reflector --country 'United States' --latest 200 --age 24 --sort rate --save /etc/pacman.d/mirrorlist; if [[ -f /etc/pacman.d/mirrorlist.pacnew ]]; then rm /etc/pacman.d/mirrorlist.pacnew; fi"
 
 ```
 

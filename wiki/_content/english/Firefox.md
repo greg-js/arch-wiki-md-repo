@@ -171,7 +171,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 ## Plugins
 
-**Note:** Firefox will remove support for plugins (except for Flash) in Firefox 52 (March 2017).[[1]](https://blog.mozilla.org/futurereleases/2015/10/08/npapi-plugins-in-firefox/)[[2]](https://blog.mozilla.org/futurereleases/2016/07/20/reducing-adobe-flash-usage-in-firefox/)
+**Note:** Firefox will remove support for plugins (except for Flash) in Firefox 52 (March 2017).[[1]](https://blog.mozilla.org/futurereleases/2015/10/08/npapi-plugins-in-firefox/)[[2]](https://blog.mozilla.org/futurereleases/2016/07/20/reducing-adobe-flash-usage-in-firefox/) Firefox 52 ESR will still support plugins.
 
 See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 

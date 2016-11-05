@@ -48,9 +48,9 @@ In the following table, commonly-specified families are shown in **bold**. This 
 | [PostScript](#PostScript) | [URW](#PostScript) | [GUST](#TeX_Gyre) | [Windows](#Microsoft) |
 | ITC Avant Garde Gothic | URW Gothic | TeX Gyre Adventor | **Century Gothic** |
 | ITC Bookman | Bookman URW | TeX Gyre Bonum | Bookman Old Style |
-| ITC Zapf Chancery | Chancery URW | TeX Gyre Chorus | Monotype Corsiva |
-| **Palatino** | Palladio URW | TeX Gyre Pagella | Palatino Linotype, Book Antiqua |
-| New Century Schoolbook | Century SchoolBook URW | TeX Gyre Schola | Century Schoolbook |
+| ITC Zapf Chancery | Chancery URW, Z003 | TeX Gyre Chorus | Monotype Corsiva |
+| **Palatino** | Palladio URW, P052 | TeX Gyre Pagella | Palatino Linotype, Book Antiqua |
+| New Century Schoolbook | Century SchoolBook URW, C059 | TeX Gyre Schola | Century Schoolbook |
 
 <caption>PostScript 3 Fonts</caption>
 | [PostScript](#PostScript) | [URW](#PostScript) |

@@ -15,7 +15,18 @@
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Setting Roundcube up for use with an IMAP server that only allows TLS authentication](#Setting_Roundcube_up_for_use_with_an_IMAP_server_that_only_allows_TLS_authentication)
     *   [4.2 PDF and OpenDocument file preview](#PDF_and_OpenDocument_file_preview)
-    *   [4.3 Synchronize address book with CardDav contacts](#Synchronize_address_book_with_CardDav_contacts)
+        *   [4.2.1 PHP 5](#PHP_5)
+        *   [4.2.2 PHP 7](#PHP_7)
+            *   [4.2.2.1 Build php-kolab](#Build_php-kolab)
+        *   [4.2.3 Enable the Plugins](#Enable_the_Plugins)
+    *   [4.3 Calendar Support](#Calendar_Support)
+        *   [4.3.1 PHP 7](#PHP_7_2)
+        *   [4.3.2 PHP 5](#PHP_5_2)
+        *   [4.3.3 Update the roundcube database](#Update_the_roundcube_database)
+        *   [4.3.4 Configure the calendar service](#Configure_the_calendar_service)
+        *   [4.3.5 Sabre\VObject\Property\Text Not Found](#Sabre.5CVObject.5CProperty.5CText_Not_Found)
+        *   [4.3.6 Enable the Plugin](#Enable_the_Plugin)
+    *   [4.4 Synchronize address book with CardDav contacts](#Synchronize_address_book_with_CardDav_contacts)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 SMTP Error: Authentication failure](#SMTP_Error:_Authentication_failure)
 *   [6 See also](#See_also)
@@ -229,7 +240,35 @@ A complete list of PHP SSL configuration options [can be found here](http://php.
 
 ### PDF and OpenDocument file preview
 
-Following Roundcube extensions enables you to preview PDF or OpenDocument file attachements. Install [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/) from the [AUR](/index.php/AUR "AUR") and adjust following configuration file to enable the extensions:
+The following Roundcube extensions enable you to preview PDF or OpenDocument file attachements.
+
+#### PHP 5
+
+Install [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/) from the [AUR](/index.php/AUR "AUR") and adjust following configuration file to enable the extensions.
+
+#### PHP 7
+
+Since PHP 7 was released [php-kolabformat](https://aur.archlinux.org/packages/php-kolabformat/) will no longer build, thus we must install the plugins manually. This can be done by issuing the following commands.
+
+##### Build php-kolab
+
+This is only required if you wish to use odfviewer, pdfviewer works out of the box
+
+```
+Coming Soon
+
+```
+
+```
+# cd /tmp
+# git clone [https://git.kolab.org/diffusion/RPK/roundcubemail-plugins-kolab.git](https://git.kolab.org/diffusion/RPK/roundcubemail-plugins-kolab.git)
+# cd /usr/share/webapps/roundcubemail/plugins
+# cp -r /tmp/roundcubemail-plugins-kolab/plugins/pdfviewer .
+# cp -r /tmp/roundcubemail-plugins-kolab/plugins/odfviewer .
+
+```
+
+#### Enable the Plugins
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
 ```
@@ -243,6 +282,60 @@ $config['plugins'] = array(
 If you encounter any file permission issues, than try this command:
 
  `chown -R http:http /usr/share/webapps/roundcubemail/plugins/odfviewer/files` 
+
+### Calendar Support
+
+#### PHP 7
+
+With the release of PHP7 [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/) will not successfully build since it depends on [php-kolabformat](https://aur.archlinux.org/packages/php-kolabformat/) which does not build with the PHP7 source. We must manually install these plugins, so execute the following commands.
+
+```
+# cd /tmp
+# git clone [https://git.kolab.org/diffusion/RPK/roundcubemail-plugins-kolab.git](https://git.kolab.org/diffusion/RPK/roundcubemail-plugins-kolab.git)
+# cd /usr/share/webapps/roundcubemail/plugins
+# cp -r /tmp/roundcubemail-plugins-kolab/plugins/calendar .
+# cp -r /tmp/roundcubemail-plugins-kolab/plugins/libcalendaring .
+
+```
+
+#### PHP 5
+
+Install [roundcube-plugins-kolab](https://aur.archlinux.org/packages/roundcube-plugins-kolab/)
+
+#### Update the roundcube database
+
+```
+# mysql -u root -p roundcubemail < /usr/share/webapps/roundcubemail/plugins/calendar/drivers/database/SQL/mysql.initial.sql
+
+```
+
+#### Configure the calendar service
+
+The default configuration should suffice for most applications, however we still need to move it into place.
+
+```
+# cp /usr/share/webapps/roundcubemail/plugins/calendar/config.inc.php.dist /usr/share/webapps/roundcubemail/plugins/calendar/config.inc.php
+
+```
+
+#### Sabre\VObject\Property\Text Not Found
+
+If you get this error, it means that either Sabre was not included with the plugin or it is out of date
+
+```
+# cd /usr/share/webapps/roundcubemail ; composer update ; composer require sabre/dav ~3.1.3
+
+```
+
+#### Enable the Plugin
+
+ `/etc/webapps/roundcubemail/config/config.inc.php` 
+```
+$config['plugins'] = array(
+    'calendar'
+);
+
+```
 
 ### Synchronize address book with CardDav contacts
 

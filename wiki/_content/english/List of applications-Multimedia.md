@@ -850,7 +850,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")** — Free video editor designed for simple cutting, filtering and encoding tasks.
 
-	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-gtk](https://www.archlinux.org/packages/?name=avidemux-gtk) [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
+	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Professional video editing and compositing environment.
 

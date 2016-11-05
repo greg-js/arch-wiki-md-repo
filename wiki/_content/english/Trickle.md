@@ -2,7 +2,7 @@
 
 It works by preloading its own socket library wrappers, that limit traffic by delaying data.
 
-Trickle runs entirely in userspace. [[1]](http://monkey.org/~marius/pages/?page=trickle) 
+Trickle runs entirely in userspace. [[1]](https://github.com/mariusae/trickle)
 
 ## Contents
 
@@ -31,7 +31,7 @@ If you are running the daemon (see below), just start any program with "trickle"
 
 ```
 
-Otherwise also specify upload and download limit as well as other configuration options (see [trickle(1)](http://monkey.org/~marius/trickle/trickle.1.txt) for more information):
+Otherwise also specify upload and download limit as well as other configuration options (see [trickle(1)](https://github.com/mariusae/trickle/blob/master/trickle.1) for more information):
 
 ```
 # trickle -d200 -u50 pacman -Syu
@@ -67,7 +67,7 @@ rsync --rsh="trickle -d 10 -u 10 ssh" SRC DEST
 
 ## Daemon configuration
 
-If you want to have application specific settings with trickled, create the optional `/etc/trickled.conf` file as described in the [trickled.conf(5)](http://monkey.org/~marius/trickle/trickled.conf.5.txt) man page. For example:
+If you want to have application specific settings with trickled, create the optional `/etc/trickled.conf` file as described in the [trickled.conf(5)](https://github.com/mariusae/trickle/blob/master/trickled.conf.5) man page. For example:
 
 ```
 [ssh]

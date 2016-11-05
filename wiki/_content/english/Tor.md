@@ -251,7 +251,7 @@ To use a program over tor, configure it to use 127.0.0.1 or localhost as a SOCKS
 
 The Tor Project currently only supports web browsing with tor through the [Tor Browser Bundle](https://aur.archlinux.org/packages/?K=tor-browser-), which can be downloaded from the AUR. It is built with a patched version of the Firefox extended support releases. Tor can also be used with regular [Firefox](/index.php/Firefox "Firefox"), [Chromium](/index.php/Chromium "Chromium") and other browsers, but this is [not recommended](https://www.torproject.org/docs/faq.html.en#TBBOtherBrowser) by the Tor Project.
 
-**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Import a key](/index.php/GnuPG#Import_a_key "GnuPG").
+**Tip:** For makepkg to verify the signature on the AUR source tarball download for TBB, import the [signing keys from the Tor Project](https://www.torproject.org/docs/signing-keys.html.en) (currently 2E1AC68ED40814E0) as explained in [GnuPG#Import_a_public_key](/index.php/GnuPG#Import_a_public_key "GnuPG").
 
 ### Firefox
 
@@ -366,9 +366,29 @@ For more information check [Accessing freenode Via Tor](http://freenode.net/irc_
 
 ## Pacman
 
-Pacman download operations (repository DBs, packages, and public keys) can be done using the Tor network. Though relatively extreme, this measure is useful to prevent an adversary (most likely at one's LAN or the mirror) from knowing a subset of the packages you have installed, at the cost of longer latency, lower throughput, possible suspicion, and possible failure (if Tor is being filtered via the current connection).
+Pacman download operations (repository DBs, packages, and public keys) can be done using the Tor network.
 
-**Warning:** It would be arguably simpler for an adversary, specifically one who desires to indiscriminately disseminate malware, to perform his/her activity by deploying malicious Tor exit node(s). Always use signed packages and verify new public keys by out-of-band means.
+Advantages:
+
+*   Attackers that can monitor your Internet connection and that specifically targets your machine cannot watch the updates anymore and, because of that, they cannot deduce the packages you have installed, how up to date they are, when or how frequently you update them. An attacker can still learn what software and the versions you use by other means, for instance watching the packets from your http server or probing the machine will show that you have an http server installed and its version.
+*   If the mirror is not an onion, a malicious exit nodes you are going trough can watch the updates, and may decide to attack you, however they probably cannot know who they are attacking.
+*   Attackers trying to make your machine believe that there are no new updates to prevent it from getting security fixes will have a harder time doing it since they cannot target your machine specifically.
+
+Disadvantages:
+
+*   Longer updates times due to Longer latency and lower throughput. This can be a big security risk if/when the updates needs to be done as fast as possible, especially on machines directly connected to the Internet. That is the case when there is a huge security flaw, and that the flaws are fast to probe, easy to exploit, and that attackers have already started targeting as many systems as they can before the systems are updated.
+
+Reliability with Tor:
+
+*   You don't need a working DNS anymore.
+*   You depend on the Tor network and the exit nodes not blocking the updates.
+*   You depend on the Tor daemon to work properly. The Tor daemon may not work if there is no more disk space available to it. "Reserved blocks gid:" in ext4, quotas, or other means can fix that.
+*   If you are in a country where Tor is blocked, or that there are almost or no Tor users at all, you should use bridges.
+
+Note on gpg:
+
+On stock arch, pacman only trust keys which are either signed by you (That can be done with pacman-key --lsign-key) or signed by 2 of 5 Arch master keys. If a malicious exit node replaces pakcages with ones signed by its key, pacman will not let the user install the package.
+**Warning:** This might not be true for other distributions derived from ARCH, for non-official repositories and for AUR
  `/etc/pacman.conf` 
 ```
 ...

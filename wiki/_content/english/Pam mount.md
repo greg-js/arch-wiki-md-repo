@@ -31,7 +31,7 @@ Insert 2 new lines at the end of the file, but **before** the last closing tag, 
 
 ## Login Manager Configuration
 
-In general, you have to edit configuration files in /etc/pam.d so that pam_mount will be called on login. The correct order of entries in each file is important. It is necessary to edit /etc/pam.d/system-auth as shown below. If you use a display manager (e.g., Slim or GDM) edit its file, too. Example configuration files follow, with the added lines in bold.
+In general, you have to edit configuration files in /etc/pam.d so that pam_mount will be called on login. The correct order of entries in each file is important. It is necessary to edit /etc/pam.d/system-auth as shown below. If you use a display manager (e.g., Slim) edit its file, too. Example configuration files follow, with the added lines in bold.
 
  `/etc/pam.d/system-auth` 
 ```

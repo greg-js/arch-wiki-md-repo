@@ -77,12 +77,13 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
     *   [10.2 No visible Cursor](#No_visible_Cursor)
-    *   [10.3 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [10.4 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
-    *   [10.5 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [10.6 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
-    *   [10.7 libgfapi error message](#libgfapi_error_message)
-    *   [10.8 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+    *   [10.3 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
+    *   [10.4 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
+    *   [10.5 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
+    *   [10.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
+    *   [10.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
+    *   [10.8 libgfapi error message](#libgfapi_error_message)
+    *   [10.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
 *   [11 See also](#See_also)
 
 ## Installation
@@ -244,7 +245,12 @@ To enable IOMMU:
 1.  Ensure that AMD-Vi/Intel VT-d is supported by the CPU and is enabled in the BIOS settings.
 2.  Add `intel_iommu=on` if you have an Intel CPU or `amd_iommu=on` if you have an AMD CPU, to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 3.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
-4.  Add `iommu=on` or `q35,iommu=on` depending on the `-machine`, as *option*.
+4.  Add `-device intel-iommu` to create the IOMMU device:
+
+```
+$ qemu-system-i386 -enable-kvm -machine q35,accel=kvm -device intel-iommu ..
+
+```
 
 ## Moving data between host and guest OS
 
@@ -1003,7 +1009,7 @@ $ spicy -h 127.0.0.1 -p 5930
 Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
 
 ```
-$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing,playback-compression=off
+$ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing
 $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 
 ```
@@ -1387,6 +1393,10 @@ If that still doesn't work, make sure you've set your display device appropriate
 
 For example: `-vga qxl`
 
+### Unable to move/attach Cursor
+
+Replace `-usbdevice tablet` with `-usb` as QEMU option.
+
 ### Keyboard seems broken or the arrow keys do not work
 
 Should you find that some of your keys do not work or "press" the wrong key (in particular, the arrow keys), you likely need to specify your keyboard layout as an option. The keyboard layouts can be found in `/usr/share/qemu/keymaps`.
@@ -1398,9 +1408,10 @@ $ qemu-system-i386 -k *keymap* *disk_image*
 
 ### Virtual machine runs too slowly
 
-There are a number of techniques that you can use to improve the performance if your virtual machine. For example:
+There are a number of techniques that you can use to improve the performance of your virtual machine. For example:
 
 *   Use the `-cpu host` option to make QEMU emulate the host's exact CPU. If you do not do this, it may be trying to emulate a more generic CPU.
+*   Especially for Windows guests, enable [Hyper-V enlightenments](http://blog.wikichoon.com/2014/07/enabling-hyper-v-enlightenments-with-kvm.html): `-cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time`.
 *   If the host machine has multiple CPUs, assign the guest more CPUs using the `-smp` option.
 *   Make sure you have assigned the virtual machine enough memory. By default, QEMU only assigns 128 MiB of memory to each virtual machine. Use the `-m` option to assign more memory. For example, `-m 1024` runs a virtual machine with 1024 MiB of memory.
 *   Use KVM if possible: add `-machine type=pc,accel=kvm` to the QEMU start command you use.
@@ -1427,14 +1438,21 @@ $ qemu-system-i386 -drive file=*disk_image*,if=virtio,aio=native
 
 ```
 
-*   If you are running multiple virtual machines concurrently that all have the same operating system installed, you can save memory by enabling [kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_SamePage_Merging_(KSM) "wikipedia:Kernel SamePage Merging (KSM)"):
+*   If you use a qcow2 disk image, I/O performance can be improved considerably by ensuring that the L2 cache is of sufficient size. The [formula](https://blogs.igalia.com/berto/2015/12/17/improving-disk-io-performance-in-qemu-2-5-with-the-qcow2-l2-cache/) to calculate L2 cache is: l2_cache_size = disk_size * 8 / cluster_size. Assuming the qcow2 image was created with the default cluster size of 64K, this means that for every 8 GB in size of the qcow2 image, 1 MB of L2 cache is best for performance. Only 1 MB is used by QEMU by default; specifying a larger cache is done on the QEMU command line. For instance, to specify 4 MB of cache (suitable for a 32 GB disk with a cluster size of 64K):
 
 ```
-# echo 1 > /sys/kernel/mm/ksm/run
+$ qemu-system-i386 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
 
 ```
 
+*   If you are running multiple virtual machines concurrently that all have the same operating system installed, you can save memory by enabling [kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_SamePage_Merging_(KSM) "wikipedia:Kernel SamePage Merging (KSM)"). See [#Enabling KSM](#Enabling_KSM).
 *   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU with the `-balloon virtio` option.
+*   It is possible to use a emulation layer for an ICH-9 AHCI controller (although it may be unstable). The AHCI emulation supports [NCQ](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing"), so multiple read or write requests can be outstanding at the same time:
+
+```
+$ qemu-system-i386 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0
+
+```
 
 See [http://www.linux-kvm.org/page/Tuning_KVM](http://www.linux-kvm.org/page/Tuning_KVM) for more information.
 

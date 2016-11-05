@@ -94,11 +94,11 @@ RuntimeDirectory=syncthing-inotify
 
 ## Run a Relay
 
-Since version 0.12 Syncthing has the ability to connect two devices via a relay when there exists no direct path between them. There is a default set of relays that is used out of the box. Relayed connections are encrypted in the usual manner, end to end, so the relay has no more insight into the connection than any other random eavesdropper on the internet [[1]](https://forum.syncthing.net/t/syncthing-v0-12-beryllium-bedbug-release-notes-v0-12-0-beta1/5480?u=rumpelsepp). To run a relay install [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/) from AUR, then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `syncthing-relaysrv.service` service.
+Since version 0.12 Syncthing has the ability to connect two devices via a relay when there exists no direct path between them. There is a default set of relays that is used out of the box. Relayed connections are encrypted in the usual manner, end to end, so the relay has no more insight into the connection than any other random eavesdropper on the internet [[1]](https://forum.syncthing.net/t/syncthing-v0-12-beryllium-bedbug-release-notes-v0-12-0-beta1/5480?u=rumpelsepp). To run a relay install [syncthing-relaysrv](https://www.archlinux.org/packages/?name=syncthing-relaysrv), then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `syncthing-relaysrv.service` service.
 
-More information about the [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/) package are available in the [Syncthing forum](https://forum.syncthing.net/t/syncthing-relaysrv-for-arch-linux/5862u=rumpelsepp).
+There is also a git version in the [AUR](/index.php/AUR "AUR"). More information about the [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/) package are available in the [Syncthing forum](https://forum.syncthing.net/t/syncthing-relaysrv-for-arch-linux/5862).
 
-Per default the relay joins the [Syncthing relay pool](https://relays.syncthing.net/) and is publicy available. Rate limiting and other options can be configured via command line flags (check `syncthing-relaysrv -help`). To edit the command line flags just create a [drop-in snippet](/index.php/Systemd#Drop-in_snippets "Systemd") for `syncthing-relaysrv.service` and replace the `ExecStart` directive:
+Per default the relay joins the [Syncthing relay pool](https://relays.syncthing.net/) and is publicy available. Rate limiting and other options can be configured via command line flags (check `syncthing-relaysrv -help`). To edit the command line flags just create a [drop-in snippet](/index.php/Systemd#Drop-in_files "Systemd") for `syncthing-relaysrv.service` and replace the `ExecStart` directive:
 
  `/etc/systemd/system/syncthing-relaysrv.service.d/override.conf` 
 ```

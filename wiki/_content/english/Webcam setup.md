@@ -29,12 +29,13 @@ This is a guide to setting up your webcam in Arch Linux.
     *   [6.7 xawtv](#xawtv)
     *   [6.8 VLC](#VLC)
     *   [6.9 MPlayer](#MPlayer)
-    *   [6.10 FFmpeg](#FFmpeg)
-    *   [6.11 ekiga](#ekiga)
-    *   [6.12 Sonic-snap](#Sonic-snap)
-    *   [6.13 Skype](#Skype)
-    *   [6.14 Motion](#Motion)
-    *   [6.15 MJPG-streamer](#MJPG-streamer)
+    *   [6.10 mpv](#mpv)
+    *   [6.11 FFmpeg](#FFmpeg)
+    *   [6.12 ekiga](#ekiga)
+    *   [6.13 Sonic-snap](#Sonic-snap)
+    *   [6.14 Skype](#Skype)
+    *   [6.15 Motion](#Motion)
+    *   [6.16 MJPG-streamer](#MJPG-streamer)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
 
@@ -383,6 +384,17 @@ $ mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0:forceau
 ```
 
 Press `Ctrl+c` to end the recording.
+
+### mpv
+
+To use [mpv](/index.php/Mpv "Mpv") to take snapshots from your webcam run this command from the terminal:
+
+```
+$ mpv tv:// -tv driver=v4l2:device=/dev/video0
+
+```
+
+From here you have to press `s` to take the snapshot. The snapshot will be saved in your current folder as **mpv-shotNNNN.jpg**.
 
 ### FFmpeg
 

@@ -158,4 +158,6 @@ Select a known common platform that corresponds with your user agent.
 
 ### Disable battery api
 
-Battery status api may be used to fingerprint the user[[2]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.
+Firefox is disabling the battery api for web content starting with Firefox 52, the api will still be available for add-ons [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) [[3]](https://www.theguardian.com/technology/2016/nov/01/firefox-disable-battery-status-api-tracking)
+
+Battery status api may be used to fingerprint the user[[4]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.

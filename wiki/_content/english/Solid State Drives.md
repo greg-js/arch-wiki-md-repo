@@ -214,7 +214,7 @@ See the following web pages for firmware updates:
 
 ```
 
-Users seeing this warning are advised to backup all sensible data and **consider upgrading immediately**.
+Users seeing this warning are advised to backup all sensible data and **consider upgrading immediately**. Check [this instructions](http://www.rojtberg.net/1008/updating-crucial-mx100-firmware-with-ubuntu/) to update Crucial MX100 firmware by using the ISO image and Grub.
 
 ### Intel
 

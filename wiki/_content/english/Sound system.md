@@ -47,7 +47,7 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 *   **JACK2 with D-Bus** — This is JACK2 with a different startup architecture, capable of running well at all times in coexistence with PulseAudio and non-JACK applications, which is a problem for the other two categories of JACK setup.
 
-	[http://trac.jackaudio.org/wiki/WalkThrough/User/jack_control](http://trac.jackaudio.org/wiki/WalkThrough/User/jack_control) || [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus)
+	[https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) || [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus)
 
 *   **[NAS](https://en.wikipedia.org/wiki/Network_Audio_System "wikipedia:Network Audio System")** — This is a sound server supported by some major applications.
 

@@ -12,7 +12,7 @@ DASH shines in:
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Use DASH as default shell](#Use_DASH_as_default_shell)
+*   [2 Use DASH as /bin/sh](#Use_DASH_as_.2Fbin.2Fsh)
     *   [2.1 Identifying bashisms](#Identifying_bashisms)
         *   [2.1.1 Common places to check](#Common_places_to_check)
     *   [2.2 Relinking /bin/sh](#Relinking_.2Fbin.2Fsh)
@@ -22,7 +22,7 @@ DASH shines in:
 
 [Install](/index.php/Install "Install") [dash](https://www.archlinux.org/packages/?name=dash) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
-## Use DASH as default shell
+## Use DASH as `/bin/sh`
 
 Most POSIX compliant scripts specify `/bin/sh` at the first line of the script, which means it will run `/bin/sh` as the shell, which by default in Arch is a symlink to `/bin/bash`.
 

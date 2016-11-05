@@ -144,19 +144,21 @@ Modules suffixed with a `?` will not throw errors if they are not found. This mi
 
 ### BINARIES and FILES
 
-These options allow users to add files to the image. Both `BINARIES` and `FILES` are added before hooks are run, and may be used to override files used or provided by a hook. `BINARIES` are auto-located within a standard `PATH` and dependency-parsed, meaning any required libraries will also be added. `FILES` are added *as-is*. For example:
+These options allow users to add files to the image. Both `BINARIES` and `FILES` are added before hooks are run, and may be used to override files used or provided by a hook. `BINARIES` are auto-located within a standard `PATH` and are dependency-parsed, meaning any required libraries will also be added. `FILES` are added *as-is*. For example:
 
 ```
-FILES="/etc/modprobe.d/modprobe.conf"
-
-```
-
-```
-BINARIES="kexec"
+FILES="/etc/modprobe.d/modprobe.conf /etc/another.conf"
 
 ```
 
-For both, `BINARIES` and `FILES`, multiple entries can be added delimited with spaces.
+```
+BINARIES="kexec some_bin"
+
+```
+
+Note that for both `BINARIES` and `FILES`, multiple entries can be added delimited with spaces. The example above will add two regular files, namely `modprobe.conf` and `another.conf` and two binaries, namely `kexec` and `some_bin` to the image.
+
+Within the image, all files will be in an identical location as where they are found on the parent system. In the above example, `modprobe.conf` will be placed in `/etc/modprobe.d/` within the image. The chain of parent directories to the file will be automatically created by mkinitcpio.
 
 ### HOOKS
 

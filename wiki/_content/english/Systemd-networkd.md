@@ -16,6 +16,7 @@
         *   [2.1.3 [Network] section](#.5BNetwork.5D_section)
         *   [2.1.4 [Address] section](#.5BAddress.5D_section)
         *   [2.1.5 [Route] section](#.5BRoute.5D_section)
+        *   [2.1.6 [DHCP] section](#.5BDHCP.5D_section)
     *   [2.2 netdev files](#netdev_files)
         *   [2.2.1 [Match] section](#.5BMatch.5D_section_2)
         *   [2.2.2 [NetDev] section](#.5BNetDev.5D_section)
@@ -202,6 +203,9 @@ Below is a basic structure of a `*MyProfile*.network` file:
 [Route]
 *a vertical list of keys*
 
+[DHCP]
+*a vertical list of keys*
+
 ```
 
 #### [Match] section
@@ -246,6 +250,12 @@ Most common key in the `[Route]` section is:
 For an exhaustive key list, please refer to `systemd.network(5)`
 
 **Tip:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `Address=` contains only an Address key and `Gateway=` section contains only a Gateway key
+
+#### [DHCP] section
+
+A useful key in the `[DHCP]` section is:
+
+*   `UseDomains=true` seems to fix local name resolving when systemd-resolved is used.
 
 ### netdev files
 

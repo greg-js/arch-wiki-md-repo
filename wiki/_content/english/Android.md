@@ -7,8 +7,8 @@
     *   [2.3 Android System Images](#Android_System_Images)
     *   [2.4 Development environment](#Development_environment)
         *   [2.4.1 Android Studio](#Android_Studio)
-        *   [2.4.2 Eclipse](#Eclipse)
-        *   [2.4.3 Netbeans](#Netbeans)
+        *   [2.4.2 Netbeans](#Netbeans)
+        *   [2.4.3 Eclipse](#Eclipse)
     *   [2.5 Android Debug Bridge (ADB)](#Android_Debug_Bridge_.28ADB.29)
         *   [2.5.1 Connect device](#Connect_device)
         *   [2.5.2 Figure out device IDs](#Figure_out_device_IDs)
@@ -143,7 +143,7 @@ Install the desired [Android system image](https://aur.archlinux.org/packages/?O
 
 ### Development environment
 
-Android Studio is the new official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Eclipse](/index.php/Eclipse "Eclipse") with the official but deprecated ADT plugin, or [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid plugin. All are described below.
+Android Studio is the new official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid plugin. All are described below.
 
 #### Android Studio
 
@@ -164,9 +164,29 @@ export ANDROID_HOME=/opt/android-sdk
 
 ```
 
+#### Netbeans
+
+If you prefer using [Netbeans](/index.php/Netbeans "Netbeans") as your IDE and want to develop Android applications, download the [NBAndroid](http://www.nbandroid.org) by going to:
+
+```
+Tools -> Plugins -> Settings
+
+```
+
+Add the following URL: [http://nbandroid.org/release81/updates/updates.xml](http://nbandroid.org/release81/updates/updates.xml)
+
+Then go to **Available Plugins** and install the **Android** and **JUnit** plugins. Once you have installed go to:
+
+```
+Tools -> Options -> Miscellaneous -> Android
+
+```
+
+and select the path where the SDK is installed (/opt/android-sdk by default). That is it, now you can create a new Android project and start developing using Netbeans.
+
 #### Eclipse
 
-**Note:** Since 2014-12-08, the ADT plugin is officially considered deprecated and Android Studio is now the official IDE.
+**Note:** The Eclipse ADT plugin is [no longer supported](http://android-developers.blogspot.nl/2016/11/support-ended-for-eclipse-android.html). Google recommends to use Android Studio instead.
 
 The official, but deprecated, [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html) plugin can be installed with the [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/) package.
 
@@ -187,26 +207,6 @@ Windows -> Preferences -> Android
 **Note:**
 
 If the plugins do not show up in Eclipse after the AUR package has been upgraded, then eclipse probably has out-of-date caches. Running `sudo eclipse -clean` once should clear them. If the problem persists, uninstall eclipse and all the plugins, delete `/usr/share/eclipse`, and reinstall everything.
-
-#### Netbeans
-
-If you prefer using [Netbeans](/index.php/Netbeans "Netbeans") as your IDE and want to develop Android applications, download the [NBAndroid](http://www.nbandroid.org) by going to:
-
-```
-Tools -> Plugins -> Settings
-
-```
-
-Add the following URL: [http://nbandroid.org/release81/updates/updates.xml](http://nbandroid.org/release81/updates/updates.xml)
-
-Then go to **Available Plugins** and install the **Android** and **JUnit** plugins. Once you have installed go to:
-
-```
-Tools -> Options -> Miscellaneous -> Android
-
-```
-
-and select the path where the SDK is installed (/opt/android-sdk by default). That is it, now you can create a new Android project and start developing using Netbeans.
 
 ### Android Debug Bridge (ADB)
 
@@ -357,13 +357,9 @@ Android 2.2.x (Froyo) and below are the only versions of Android that will build
 
 To build any version of Android, you need to install these packages:
 
-*   32-bit and 64-bit systems: [gcc](https://www.archlinux.org/packages/?name=gcc) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk](https://www.archlinux.org/packages/?name=wxgtk) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc)
+*   32-bit and 64-bit systems: [gcc](https://www.archlinux.org/packages/?name=gcc) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk](https://www.archlinux.org/packages/?name=wxgtk) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
 
-*   64-bit systems only: [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline)
-
-*   AUR Packages 32-bit and 64-bit systems: [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
-
-*   AUR Packages 64-bit systems only: [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
+*   64-bit systems only: [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline) [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
 **Note:** The PGP signatures for [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) may cause errors, that can be solved by manually importing the needed signature:
 ```
@@ -379,7 +375,7 @@ To build Android 6+, you need to install these additional packages:
 
 ### Java Development Kit
 
-*   For Android 7 (Nougat), OpenJDK 8 is required, which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk).[[1]](https://source.android.com/source/requirements.html) package.
+*   For Android 7 (Nougat), OpenJDK 8 is [required](https://source.android.com/source/requirements.html), which is available with the [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) package.
 *   For Android 5 and 6 (Lollipop and Marshmallow), OpenJDK 7 is required, which is available with the [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) package.
 
 Older versions [require](http://source.android.com/source/initializing.html) a working **Oracle JDK** installed on your build system. It **will not** work with OpenJDK.

@@ -27,65 +27,46 @@ After yakuake has started you can click on configure yakuake by clicking on the 
 
 Like [Guake](/index.php/Guake "Guake"), Yakuake allows to control itself at runtime by sending the [D-Bus](/index.php/D-Bus "D-Bus") messages. Thus it can be used to start Yakuake in a user defined session. You can create tabs, assign names for them and also ask to run any specific command in any opened tab or just to show/hide Yakuake window, manually in a terminal or by creating a custom script for it.
 
-Example of such a script is given below.
+Example of such a script is given below. This includes opening tabs, renaming tabs, splitting shells, and running commands.
 
 ```
 #!/bin/bash
 # Starting yakuake based on user preferences. Information based on [http://forums.gentoo.org/viewtopic-t-873915-start-0.html](http://forums.gentoo.org/viewtopic-t-873915-start-0.html)
 # Adding sessions from previous website is broken, use this: [http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/](http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/)
+
 # This line is needed in case yakuake does not accept fcitx inputs.
-/usr/bin/yakuake --im /usr/bin/fcitx --inputstyle onthespot
+/usr/bin/yakuake --im /usr/bin/fcitx --inputstyle onthespot &
 
-# Start iotop in its own tab.
+# gives Yakuake a couple seconds before sending dbus commands
+sleep 2      
+
+# Start htop in tab and split to user terminal and run iotop                                                        
+TERMINAL_ID_0=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId 0)
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 0 "user"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 0 "htop"
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_0}
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 1 "iotop
+
+# Start split root sessions (password prompt) top and bottom                                                                                
+SESSION_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
+TERMINAL_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_1})
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 1 "root"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 2 "su"
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalTopBottom ${TERMINAL_ID_1}
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 3 "su" 
+
+# Start irssi in its own tab.                                                                                          
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 0 "iotop" 
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 0 "iotop"
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 2 "irssi"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 4 "ssh home -t 'tmux attach -t irssi; bash -l'" 
 
-# Start htop in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 1 "htop"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 1 "htop"
-
-# Start atop in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 2 "atop"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 2 "atop"
-
-# Start (watching) iptables in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 3 "iptables -nvL"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 3 "~/.iptables.sh"
-
-# Start journalctl --follow --full in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 4 "journalctl"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 4 "journalctl --follow --full"
-
-# Start irssi in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 5 "irssi"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 5 "irssi"
-
-# Start root shell 1 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 6 "rootshell0"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 6 "sudo -i"
-
-# Start root shell 2 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 7 "rootshell1"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 7 "sudo -i"
-
-# Start shell 1 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 8 "shell0"
-
-# Start shell 2 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 9 "shell1"
-
-# Kill default (and now redundant) new shell tab. Already there are two shells each opened for both root and user.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.removeSession 10
+# Start split ssh shells in own tab.                                                                                   
+SESSION_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
+TERMINAL_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_2})
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 3 "work server"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 5 "ssh work"
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_2}
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 6 "ssh work" 
 
 ```
 

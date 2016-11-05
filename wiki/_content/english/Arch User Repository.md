@@ -66,10 +66,9 @@ Queries search package names and descriptions via a MySQL LIKE comparison. This 
 
 Installing packages from the AUR is a relatively simple process. Essentially:
 
-1.  Acquire the tarball which contains the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and possibly other required files, like [systemd](/index.php/Systemd "Systemd") units and patches (but often not the actual code).
-2.  Extract the tarball (preferably in a directory set aside just for builds from the AUR) with `tar -xvf *pkgname*.tar.gz`.
-3.  Verify that the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and accompanying files are not malicious or untrustworthy.
-4.  Run `makepkg -sri` in the directory where the files are saved. This will download the code, resolve the dependencies with [pacman](/index.php/Pacman "Pacman"), compile it, package it, install the package, and finally remove the build-time dependencies, which are no longer needed.
+1.  Acquire the build files, including the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and possibly other required files, like [systemd](/index.php/Systemd "Systemd") units and patches (often not the actual code).
+2.  Verify that the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and accompanying files are not malicious or untrustworthy.
+3.  Run `makepkg -si` in the directory where the files are saved. This will download the code, resolve the dependencies with [pacman](/index.php/Pacman "Pacman"), compile it, package it, and install the package.
 
 ### Prerequisites
 
@@ -90,57 +89,58 @@ Next choose an appropriate build directory. A build directory is simply a direct
 
 Locate the package in the AUR. This is done using the search feature (text field at the top of the [AUR home page](https://aur.archlinux.org/)). Clicking the application's name in the search list brings up an information page on the package. Read through the description to confirm that this is the desired package, note when the package was last updated, and read any comments.
 
-There are three well-known methods to aquire the build files without the use of an AUR helper:
+There are several methods for acquiring the build files:
 
-*   Download the necessary build files by clicking on the "Download snapshot" link under "Package Actions" on the right hand side. This file should be saved to the build directory or otherwise copied to the directory after downloading. In this example, the file is called `foo.tar.gz` (standard format is `*pkgname*.tar.gz`, if it has been properly submitted).
-
-*   Alternatively you can download the tarball from the terminal, changing directories to the build directory first:
+*   Clone the [git](/index.php/Git "Git") repository that is labeled as the "Git Clone URL" in the "Package Details":
 
 ```
-$ cd ~/builds
-$ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/foo.tar.gz
+$ git clone https://aur.archlinux.org/*package_name*.git
 
 ```
 
-*   It is also possible to clone the [Git](/index.php/Git "Git") repository that is labeled as the "Git Clone URL" in the "Package Details":
+	An advantage of this method is that you can easily get updates to the package via `git pull`.
+
+*   Download the build files with your web browser by clicking the "Download snapshot" link under "Package Actions" on the right hand side. This will download a compressed file, which must be extracted (preferably in a directory set aside for AUR builds)
 
 ```
- $ cd ~/build-repos
- $ git clone [https://aur.archlinux.org/foo.git](https://aur.archlinux.org/foo.git)
+$ tar -xvf *package_name*.tar.gz
+
+```
+
+*   Similarly, you can download a tarball from the terminal (and extract it):
+
+```
+$ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*package_name*.tar.gz
 
 ```
 
 ### Build and install the package
 
-Change directories to the build directory if not already there, then extract the previously downloaded package:
+Change directories to the directory containing the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+
+**Warning:** **Carefully check all files.** Carefully check the `PKGBUILD` and any `.install` file for malicious commands. `PKGBUILD`s are [bash](/index.php/Bash "Bash") scripts containing functions to be executed by *makepkg*: these functions can contain *any* valid commands or Bash syntax, so it is totally possible for a `PKGBUILD` to contain dangerous commands through malice or ignorance on the part of the author. Since *makepkg* uses *fakeroot* (and should never be run as root), there is some level of protection but you should never count on it. If in doubt, do not build the package and seek advice on the forums or mailing list.
 
 ```
-$ cd ~/builds
-$ tar -xvf foo.tar.gz
-
-```
-
-This should create a new directory called `foo` in the build directory.
-
-**Note:** In the case of a git clone, the extraction process is unnecessary. The git clone has already created the directory `foo`.
-
-**Warning:** **Carefully check all files.** `cd` to the newly created directory and carefully check the `PKGBUILD` and any `.install` file for malicious commands. `PKGBUILD`s are [bash](/index.php/Bash "Bash") scripts containing functions to be executed by *makepkg*: these functions can contain *any* valid commands or Bash syntax, so it is totally possible for a `PKGBUILD` to contain dangerous commands through malice or ignorance on the part of the author. Since *makepkg* uses *fakeroot* (and should never be run as root), there is some level of protection but you should never count on it. If in doubt, do not build the package and seek advice on the forums or mailing list.
-
-```
-$ cd foo
-$ nano PKGBUILD
-$ nano foo.install
+$ cd *package_name*
+$ less PKGBUILD
+$ less *package_name*.install
 
 ```
 
 Make the package. After manually confirming the integrity of the files, run [makepkg](/index.php/Makepkg "Makepkg") as a normal user:
 
 ```
-$ makepkg -sri
+$ makepkg -si
 
 ```
 
-The `-s`/`--syncdeps` switch will automatically resolve and install any dependencies with [pacman](/index.php/Pacman "Pacman") before building, `-r`/`--rmdeps` removes the build-time dependencies after build, as they are no longer needed, and `-i`/`--install` will install the package itself.
+*   `-s`/`--syncdeps` automatically resolves and install any dependencies with [pacman](/index.php/Pacman "Pacman") before building. If the package depends on other AUR packages, you will need to manually install them first.
+*   `-i`/`--install` installs the package if it is built successfully. Alternatively the built package can be installed with `pacman -U`.
+
+Other useful flags are
+
+*   `-r`/`--rmdeps` removes build-time dependencies after the build, as they are no longer needed. However these dependencies may need to be reinstalled the next time the package is updated.
+*   `-c`/`--clean` cleans up temporary build files after the build, as they are no longer needed. These files are usually needed only when debugging the build process.
 
 **Note:** The above example is only a brief summary of the build process. It is **highly** recommended to read the [makepkg](/index.php/Makepkg "Makepkg") and [ABS](/index.php/ABS "ABS") articles for more details.
 
@@ -204,6 +204,8 @@ warning: You appear to have cloned an empty repository.
 Checking connectivity... done.
 ```
 
+**Note:** When a package on the AUR is deleted, the git repository is not deleted so it is possible for a deleted package's repository to not be empty when cloned if someone is creating a package with the same name.
+
 If you have already created a git repository, you can simply create a remote for the AUR git repository and then fetch it:
 
 ```
@@ -238,7 +240,6 @@ $ git push
 
 ### Maintaining packages
 
-*   If you maintain a package and want to update the PKGBUILD for your package just resubmit it.
 *   Check for feedback and comments from other users and try to incorporate any improvements they suggest; consider it a learning process!
 *   Please do not leave a comment containing the version number every time you update the package. This keeps the comment section usable for valuable content mentioned above. [AUR helpers](/index.php/AUR_helpers "AUR helpers") are suited better to check for updates.
 *   Please do not just submit and forget about packages! It is the maintainer's job to maintain the package by checking for updates and improving the PKGBUILD.

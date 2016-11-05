@@ -25,4 +25,4 @@ Talk should work now.
 
 Starting from inetutils 1.9.1.341-2, talk.service and talk.socket files are provided. Just upgrade and then activate the talk daemon:
 
- `# systemctl start talk`
+ `# systemctl start talk.socket`  `# systemctl start talk.service`

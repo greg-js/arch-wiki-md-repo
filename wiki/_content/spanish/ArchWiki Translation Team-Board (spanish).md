@@ -76,7 +76,7 @@
 | [Improve pacman performance (Español)](/index.php/Improve_pacman_performance_(Espa%C3%B1ol) "Improve pacman performance (Español)") | Gestión de paquetes | `2013-09` |
 | [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)") | Instalación | `2013-11` |
 | [Install from SSH (Español)](/index.php/Install_from_SSH_(Espa%C3%B1ol) "Install from SSH (Español)") | Instalación | `2014-12` |
-| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | Información/Guía/Instalación | `2016-09` | [Pedro](/index.php/User:Pedro "User:Pedro") |
+| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | Información/Guía/Instalación | `2016-11` | [Pedro](/index.php/User:Pedro "User:Pedro") |
 | [Installing Arch Linux on a USB key (Español)](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)") | Instalación | `2013-11` |
 | [Intel graphics (Español)](/index.php/Intel_graphics_(Espa%C3%B1ol) "Intel graphics (Español)") | Tarjeta gráfica | `2013-09` |
 | [Iptables (Español)](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") | Seguridad/Cortaguegos | `2013-09` |

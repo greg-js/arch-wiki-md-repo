@@ -104,7 +104,7 @@ To make this change permanent add it to your `~/.octaverc` file.
 
 ## Graphical interfaces
 
-Since Octave 3.8, Octave has its own (experimental) GUI based on Qt. Since the 4.0.0 release, it is enabled by default. To start the GUI, just run `octave`.
+Since Octave 3.8, Octave has its own (experimental) GUI based on Qt. Since the 4.0.0 release, it is enabled by default. To start the GUI, just run `octave`. To get the old behaviour run `octave-cli`.
 
 The following GUIs are unofficial.
 

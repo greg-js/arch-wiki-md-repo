@@ -100,7 +100,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Arc** — A flat theme with a modern look and transparent elements.
 
-	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || [gtk-theme-arc](https://aur.archlinux.org/packages/gtk-theme-arc/)
+	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme)
 
 *   **Blackbird** — Dark Desktop Suite for Xfce.
 

@@ -167,10 +167,10 @@ $ gsettings set org.gnome.desktop.interface clock-show-date true
 
 ```
 
-Additionally, to show week numbers in the Shell calendar, execute:
+Additionally, to show week numbers in the calendar opened on the top bar, execute:
 
 ```
-$ gsettings set org.gnome.shell.calendar show-weekdate true
+$ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 ```
 

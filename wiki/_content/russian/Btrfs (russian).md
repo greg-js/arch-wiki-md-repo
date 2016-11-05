@@ -61,13 +61,13 @@
 
 ## Подготовка
 
-The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) include support for Btrfs. If you want to boot from a Btrfs file system, check if your [boot loader](/index.php/Boot_loader "Boot loader") supports Btrfs.
+Официальные ядра [linux](https://www.archlinux.org/packages/?name=linux) и [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) содержат поддержку Btrfs. Если вы хотите разместить загрузчик на разделе с файловой системой Btrfs, проверьте, поддерживает ли ваш [boot loader](/index.php/Boot_loader "Boot loader") Btrfs.
 
-User space utilities are available by [installing](/index.php/Installing "Installing") the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет пользовательских утилит [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs).
 
 ## Создание раздела диска Btrfs
 
-Btrfs can occupy an entire data storage device, replacing the [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT") partitioning schemes, using [subvolumes](#Subvolumes) to simulate partitions. However, using a partitionless setup is not required to simply [create a Btrfs filesystem](#Creating_a_new_file_system) on an existing [partition](/index.php/Partition "Partition") that was created using another method. There are some limitations to partitionless single disk setups:
+Btrfs может обладать всем устройством хранения данных, заменяя схемы разбиения [MBR](/index.php/MBR "MBR") или [GPT](/index.php/GPT "GPT"), используя [подтома](#.D0.9F.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0) для имитации разделов. Не нужно разбивать разделы, чтобы просто [создать файловую систему Btrfs](#Creating_a_new_file_system) на существующем [разделе](/index.php/Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Partitioning (Русский)") который был создан с использованием другого метода. There are some limitations to partitionless single disk setups:
 
 *   Cannot use different [file systems](/index.php/File_systems "File systems") for different [mount points](/index.php/Fstab "Fstab").
 *   Cannot use [swap area](/index.php/Swap "Swap") as Btrfs does not support [swap files](/index.php/Swap#Swap_file "Swap") and there is no place to create [swap partition](/index.php/Swap#Swap_partition "Swap"). This also limits the use of hibernation/resume, which needs a swap area to store the hibernation image.
@@ -88,23 +88,23 @@ Install the [boot loader](/index.php/Boot_loader "Boot loader") like you would f
 
 ## Создание файловой системы
 
-A Btrfs file system can either be newly created or have one converted.
+Файловая система Btrfs может быть создана с нуля или конвертирована из имеющейся ext3/ext4.
 
 ### Создание новой файловой системы
 
 #### Файловая система на одном устройстве
 
-To format a partition do:
+Для форматирования раздела:
 
 ```
 # mkfs.btrfs -L *mylabel* /dev/*partition*
 
 ```
 
-The Btrfs default blocksize is 16KB. To use a larger blocksize for data/metadata, specify a value for the `nodesize` via the `-n` switch as shown in this example using 16KB blocks:
+В Btrfs размер блока по умолчанию 16KB. Для того чтобы использовать больший размер блока для данных/метаданных, укажите значение `nodesize` с помощью `-n` как показано в примере с 16KB блоками:
 
 ```
-# mkfs.btrfs -L *mylabel* -n 16k /dev/*partition*
+# mkfs.btrfs -L *МояМетка* -n 16k /dev/*partition*
 
 ```
 
@@ -296,9 +296,9 @@ System-wide settings also affect commit intervals. They include the files under 
 
 ### SSD TRIM
 
-A Btrfs filesystem will automatically free unused blocks from an SSD drive supporting the TRIM command.
+Файловая система Btrfs может освобождать неиспользуемые блоки на диске SSD, поддерживающего команду TRIM.
 
-More information about enabling and using TRIM can be found in [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
+Больше информации о задействовании и использовании TRIM можно найти в разделе [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
 
 ## Использование
 

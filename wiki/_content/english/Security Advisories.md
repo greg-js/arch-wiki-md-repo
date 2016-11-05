@@ -43,6 +43,12 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### November 2016
 
+*   [02 November 2016] [ASA-201611-12](https://lists.archlinux.org/pipermail/arch-security/2016-November/000759.html) [lib32-gdk-pixbuf2](https://www.archlinux.org/packages/?name=lib32-gdk-pixbuf2) arbitrary code execution
+*   [02 November 2016] [ASA-201611-11](https://lists.archlinux.org/pipermail/arch-security/2016-November/000758.html) [tar](https://www.archlinux.org/packages/?name=tar) arbitrary file overwrite
+*   [02 November 2016] [ASA-201611-10](https://lists.archlinux.org/pipermail/arch-security/2016-November/000757.html) [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls) multiple issues
+*   [02 November 2016] [ASA-201611-9](https://lists.archlinux.org/pipermail/arch-security/2016-November/000756.html) [libcurl-gnutls](https://www.archlinux.org/packages/?name=libcurl-gnutls) multiple issues
+*   [02 November 2016] [ASA-201611-8](https://lists.archlinux.org/pipermail/arch-security/2016-November/000755.html) [libcurl-compat](https://www.archlinux.org/packages/?name=libcurl-compat) multiple issues
+*   [02 November 2016] [ASA-201611-7](https://lists.archlinux.org/pipermail/arch-security/2016-November/000754.html) [curl](https://www.archlinux.org/packages/?name=curl) multiple issues
 *   [02 November 2016] [ASA-201611-6](https://lists.archlinux.org/pipermail/arch-security/2016-November/000753.html) [tomcat6](https://www.archlinux.org/packages/?name=tomcat6) proxy injection
 *   [02 November 2016] [ASA-201611-5](https://lists.archlinux.org/pipermail/arch-security/2016-November/000752.html) [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) multiple issues
 *   [02 November 2016] [ASA-201611-4](https://lists.archlinux.org/pipermail/arch-security/2016-November/000751.html) [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) multiple issues

@@ -472,7 +472,7 @@ xfconf-query -c xfce4-session -p /startup/ssh-agent/type -n -t string -s ssh-age
 
 ```
 
-To use [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), simply tick the checkbox *Launch GNOME services on startup* in the *Advanced* tab of *Session Manager* in Xfce's settings. This will also disable gpg-agent and ssh-agent.
+To use [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), simply tick the checkbox *Launch GNOME services on startup* in the *Advanced* tab of *Session and Startup* in Xfce's settings. This will also disable gpg-agent and ssh-agent.
 
 Source: [http://docs.xfce.org/xfce/xfce4-session/advanced](http://docs.xfce.org/xfce/xfce4-session/advanced)
 
