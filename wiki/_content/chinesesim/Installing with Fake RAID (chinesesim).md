@@ -64,13 +64,13 @@ Heinz Maulshagen开发了dmraid工具来检测RAID和创建它们的映射.支�
     *   RAID设置工具通常可以通过启动菜单(通常是F8, F10或CTRL+I)或RAID控制器启动时进入。
 *   使用RAID设置工具来建立所选的条带或镜像的集。
 
-**小贴士:** 详情查看主板文档。具体型号可能不同。
+**提示：** 详情查看主板文档。具体型号可能不同。
 
 ## 从安装盘启动
 
 详情参见[Installation guide#Pre-installation](/index.php/Installation_guide#Pre-installation "Installation guide")。
 
-**小贴士:** 如果您的显示器支持，考虑在启动时加`vga=795`选项以获得更高的framebuffer分辨率。
+**提示：** 如果您的显示器支持，考虑在启动时加`vga=795`选项以获得更高的framebuffer分辨率。
 
 ## 加载dmraid
 
@@ -125,7 +125,7 @@ Heinz Maulshagen开发了dmraid工具来检测RAID和创建它们的映射.支�
 *   选择OTHER，输入您的RAID路径(如`/dev/mapper/sil_aiageicechah`)。切换到**tty1**检查您的输入。
 *   按常规方法分区。
 
-**小贴士:** 如果计划双启动，这时可以安装其它系统。如安装Windows XP到"C:"，则所有Windows分区前的分区应该改为类型[1B](隐藏的FAT32)来在安装windows时隐藏分区.当安装完后再将它们改回为类型[83] (Linux)。当然上述过程需重启。
+**提示：** 如果计划双启动，这时可以安装其它系统。如安装Windows XP到"C:"，则所有Windows分区前的分区应该改为类型[1B](隐藏的FAT32)来在安装windows时隐藏分区.当安装完后再将它们改回为类型[83] (Linux)。当然上述过程需重启。
 
 ### 加载文件系统
 
@@ -152,7 +152,7 @@ Heinz Maulshagen开发了dmraid工具来检测RAID和创建它们的映射.支�
 
 ### 安装和配置Archlinux
 
-**小贴士:** 使用3个终端:一个使用GUI来配置系统,一个使用chroot来安装GRUB,一全使用cfdisk来参考因为RAID盘的名字很奇怪。
+**提示：** 使用3个终端:一个使用GUI来配置系统,一个使用chroot来安装GRUB,一全使用cfdisk来参考因为RAID盘的名字很奇怪。
 
 *   **tty1:** chroot和安装grub
 *   **tty2:** /arch/setup

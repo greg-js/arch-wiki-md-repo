@@ -285,7 +285,7 @@ IP6=stateless
 
 **注意:** 这将使用 `bonding` 驱动的默认策略 round-robin（负载均衡）。详见[官方文档](https://www.kernel.org/doc/Documentation/networking/bonding.txt)。
 
-**提示:** 查看状态和绑定模式： `$ cat /proc/net/bonding/bond0` 
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 #### 有线 -> 无线故障切换
 

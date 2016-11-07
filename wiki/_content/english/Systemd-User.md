@@ -17,6 +17,7 @@
     *   [4.1 Example](#Example)
     *   [4.2 Example with variables](#Example_with_variables)
     *   [4.3 Note about X applications](#Note_about_X_applications)
+    *   [4.4 Reading the journal](#Reading_the_journal)
 *   [5 Some use cases](#Some_use_cases)
     *   [5.1 Persistent terminal multiplexer](#Persistent_terminal_multiplexer)
     *   [5.2 Window manager](#Window_manager)
@@ -243,6 +244,24 @@ As detailed in `man systemd.unit`, the `%h` variable is replaced by the home dir
 ### Note about X applications
 
 Most X apps need a `DISPLAY` variable to run. See [#DISPLAY and XAUTHORITY](#DISPLAY_and_XAUTHORITY) for how to this variable is set for the entire systemd user instance.
+
+### Reading the journal
+
+The journal for the user can be read using the analogous command:
+
+```
+$ journalctl --user
+
+```
+
+To specify a unit, one can use
+
+```
+$ journalctl --user -u myunit.service
+
+```
+
+Note that there seems to be some sort of bug that can sometimes stop output from user services from being properly attributed to their service unit. Therefore, filtering by the `-u` may unwittingly exclude some of the output from the service units.
 
 ## Some use cases
 

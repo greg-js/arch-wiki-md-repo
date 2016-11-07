@@ -228,3 +228,4 @@ As the above output shows, `other`'s no longer have any permissions, but `webser
 *   [getfacl(1)](http://man7.org/linux/man-pages/man1/getfacl.1.html)
 *   [setfacl(1)](http://man7.org/linux/man-pages/man1/setfacl.1.html)
 *   An old but still relevant (and thorough) [guide](http://www.vanemery.com/Linux/ACL/linux-acl.html) to ACL
+*   [How to set default file permissions for all folders/files in a directory?](http://unix.stackexchange.com/questions/1314/how-to-set-default-file-permissions-for-all-folders-files-in-a-directory)

@@ -255,7 +255,7 @@ An [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition"
 
 ```
 
-For GPT, you are looking for "Partition Table: GPT". For EFI, you are looking for a small (512 MiB or less) partition with a vfat file system and the *boot* flag enabled. On it, there should be a directory named "EFI". If these criteria are met, this is your ESP. Make note of the partition number. You will need to know which one it is, so you can mount it later on while installing GRUB to it.
+For GPT, you are looking for "Partition Table: gpt". For EFI, you are looking for a small (512 MiB or less) partition with a vfat/fat32 file system and the *boot* flag enabled. On it, there should be a directory named "EFI". If these criteria are met, this is your ESP. Make note of the partition number. You will need to know which one it is, so you can mount it later on while installing GRUB to it.
 
 ### Create an ESP
 

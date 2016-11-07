@@ -34,7 +34,7 @@ This article covers special topics for operating [w:Solid State Drives](https://
 
 Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. A [techspot](http://www.techspot.com/review/737-ocz-vector-150-ssd/page9.html) article shows performance benchmark examples of before and after filling an SSD with data.
 
-As of Linux kernel version 3.8 onwards, support for TRIM was continually added for the different filesystems. See the following table for an indicative overview and the respective filesystems' articles for further details:
+As of Linux kernel version 3.8 onwards, support for TRIM was continually added for the different [filesystems](/index.php/Filesystems "Filesystems"). See the following table for an indicative overview and the respective filesystems' articles for further details:
 
 | File system | Continuous TRIM
 (`discard` option) | Periodic TRIM
@@ -46,7 +46,7 @@ and notes |
 | [JFS](/index.php/JFS "JFS") | Yes | Yes | [[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTE5ODY) |
 | [XFS](/index.php/XFS "XFS") | Yes | Yes | [[3]](http://xfs.org/index.php/FITRIM/discard) |
 | [F2FS](/index.php/F2FS "F2FS") | Yes | Yes |
-| VFAT | Yes | No |
+| [VFAT](/index.php/VFAT "VFAT") | Yes | No |
 | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | No | Yes | since version 2015.3.14, [[4]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101) |
 
 **Warning:** Users need to be certain that their SSD supports TRIM before attempting to use it. Data loss can occur otherwise!
@@ -63,7 +63,7 @@ To verify TRIM support, run:
 
 #### Periodic TRIM
 
-The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly, which will then trim all mounted filesystems on devices that support the *discard* operation.
+The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides `fstrim.service` and `fstrim.timer` [systemd](/index.php/Systemd "Systemd") unit files. [Enabling](/index.php/Enabling "Enabling") the timer will activate the service weekly. The service executes [fstrim(8)](http://man7.org/linux/man-pages/man8/fstrim.8.html) on all mounted filesystems on devices that support the *discard* operation.
 
 The timer relies on the timestamp of `/var/lib/systemd/timers/stamp-fstrim.timer` (which it will create upon first invocation) to know whether a week has elapsed since it last ran. Therefore there is no need to worry about too frequent invocations, in an *anacron*-like fashion.
 

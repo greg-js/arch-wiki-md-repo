@@ -42,6 +42,8 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [7.11 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
     *   [7.12 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
     *   [7.13 Optirun doesn't work, no debug output](#Optirun_doesn.27t_work.2C_no_debug_output)
+    *   [7.14 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
+    *   [7.15 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
 *   [8 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -88,7 +90,7 @@ Also [enable](/index.php/Enable "Enable") `bumblebeed.service`. Reboot your syst
 
 ### Installing Bumblebee with Intel/Nouveau
 
-**Warning:** This method is deprecated and will most likely not work anymore. Use the nvidia module instead. If you want nouveau, use [PRIME](/index.php/PRIME "PRIME").
+**Warning:** This method is deprecated and [will not work anymore](https://github.com/Bumblebee-Project/Bumblebee/issues/773). Use the nvidia module instead. If you want nouveau, use [PRIME](/index.php/PRIME "PRIME").
 
 Install:
 
@@ -727,6 +729,18 @@ Usually there is no need to display more frames han your monitor can handle, but
 You might want to edit `/etc/bumblebee/bumblebee.conf` to use the primus render as default. If after an update you want to check if the bug has been fixed just use `optirun -b virtualgl`.
 
 See [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1643609) for more information.
+
+### Broken power management with kernel 4.8
+
+If you have a newer laptop (BIOS date 2015 or newer), then Linux 4.8 might break bbswitch ([bbswitch issue 140](https://github.com/Bumblebee-Project/bbswitch/issues/140)) since bbswitch does not support the newer, recommended power management method. As a result, the dGPU may fail to power on, fail to power off or worse.
+
+As a workaround, add `pcie_port_pm=off` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+Alternatively, if you are only interested in power saving (and perhaps use of external monitors), remove bbswitch and rely on [Nouveau](/index.php/Nouveau "Nouveau") runtime power-management (which supports the new method).
+
+### Lockup issue (lspci hangs)
+
+See [NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus")] for an issue that affects new laptops with a GTX 965M (or alike).
 
 ## See also
 

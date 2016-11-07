@@ -151,7 +151,7 @@ Defaults:用户名 timestamp_timeout=20
 
 对该用户，sudo将记录密码20分钟。时间值也可以是小数。
 
-**小贴士:** 如果timestamp_timeout设置为0，sudo总是询问密码。
+**提示：** 如果timestamp_timeout设置为0，sudo总是询问密码。
 
 ## 使用技巧
 

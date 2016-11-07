@@ -419,3 +419,4 @@ See [Xterm modifications](https://bbs.archlinux.org/viewtopic.php?id=146023) for
 
 *   [Hidden gems of Xterm](http://lukas.zapletalovi.com/2013/07/hidden-gems-of-xterm.html)
 *   [Commented XTerm resources](http://www.in-ulm.de/~mascheck/X11/XTerm)
+*   [XTerm introduction and TrueType fonts configuration](http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/)

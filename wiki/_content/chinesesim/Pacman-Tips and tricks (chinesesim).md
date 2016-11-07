@@ -365,13 +365,13 @@ $ repo-add /path/to/repo.db.tar.gz /path/to/packagetoadd-1.0-1-i686.pkg.tar.xz
 
 ### 在网络上共享pacman缓存
 
-**小贴士:** 另外一个方案：[pacserve](http://xyne.archlinux.ca/projects/pacserve/)。
+**提示：** 另外一个方案：[pacserve](http://xyne.archlinux.ca/projects/pacserve/)。
 
 要在多机间共享软件包，使用任何网络协议共享`/var/cache/pacman/`目录即可。本节介绍如何使用shfs或sshfs，在局域网内的多机间分享软件包及相关库文件目录。注意，网络间共享可能速度缓慢，取决于所选文件系统等因素。
 
 首先，在服务器安装任意网络文件系统：[sshfs](/index.php/Sshfs "Sshfs")，[shfs](/index.php/Shfs "Shfs")，[ftpfs](/index.php?title=Ftpfs&action=edit&redlink=1 "Ftpfs (page does not exist)")，[smbfs](/index.php/Smbfs "Smbfs")或[nfs](/index.php/Nfs "Nfs")。
 
-**小贴士:** 使用sshfs或shfs前，先阅读[Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys")。
+**提示：** 使用sshfs或shfs前，先阅读[Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys")。
 
 然后，挂载服务器的`/var/cache/pacman/pkg`到客户端机器上的`/var/cache/pacman/pkg`目录即可。
 

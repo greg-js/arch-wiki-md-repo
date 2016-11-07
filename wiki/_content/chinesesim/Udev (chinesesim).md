@@ -6,7 +6,7 @@
 
 `udev` 取代了`hotplug` 和 `hwdetect`两个工具。
 
-与传统的顺序加载相比，udev 通过并行加载内核模块提供了潜在的性能优势。异步加载模块的方式也有一个天生的缺点：无法保证每次加载模块的顺序，如果机器具有多个块设备，那么它们的设备节点可能随机变化。例如如果有两个硬盘，`/dev/sda` 可能会随机变成`/dev/sdb`。后面有更详细的信息。
+与传统的顺序加载相比，udev 通过并行加载内核模块提供了潜在的性能优势。异步加载模块的方式也有一个天生的缺点：无法保证每次加载模块的顺序，如果机器具有多个块设备，那么它们的设备节点可能随机变化。例如如果有两个硬盘，`/dev/sda` 可能会随机变成`/dev/sdb`。[本文后面](#.E8.AE.BE.E7.BD.AE.E9.9D.99.E6.80.81.E8.AE.BE.E5.A4.87.E5.90.8D)有更详细的信息。
 
 ## Contents
 
@@ -51,7 +51,11 @@ udev 规则以管理员身份编写并保存在 `/etc/udev/rules.d/` 目录，�
 
 ### 编写 udev 规则
 
-**Warning:** To mount removable drives, do not call `mount` from udev rules. In case of FUSE filesystems, you will get `Transport endpoint not connected` errors. Instead, you could use [udisks](/index.php/Udisks "Udisks") that handles automount correctly or to make mount work inside udev rules, copy `/usr/lib/systemd/system/systemd-udevd.service` to `/etc/systemd/system/systemd-udevd.service` and replace `MountFlags=slave` to `MountFlags=shared`.[[3]](http://unix.stackexchange.com/a/154318) Keep in mind though that udev is not intended to invoke long-running processes.
+**警告:** 要挂载可移动设备，请**不要**通过在 udev 规则中调用 `mount` 命令的方法。对 FUSE 文件系统将会导致 `Transport endpoint not connected` 错误。应代之以 [udisks](/index.php/Udisks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udisks (简体中文)") 以正确处理自动挂载。或者把挂载动作放在 udev 规则内部：
+
+将 `/usr/lib/systemd/system/systemd-udevd.service` 复制到 `/etc/systemd/system/systemd-udevd.service`，将 `MountFlags=slave` 替换为 `MountFlags=shared`。[（来源）](http://unix.stackexchange.com/a/154318)
+
+Keep in mind though that udev is not intended to invoke long-running processes.
 
 *   要想学习写udev规则，请访问[编写 udev 规则](http://www.reactivated.net/writing_udev_rules.html)。（译注：[这里](http://www.cnitblog.com/luofuchong/archive/2007/12/18/37831.html)有一篇转载的该文简体中文译本）
 *   要想查看 udev 规则的例子，请查阅上述文章的 [范例](http://www.reactivated.net/writing_udev_rules.html#example-printer) 章节。
@@ -259,13 +263,13 @@ DEVPATH=="/devices/pci0000:00/0000:00:1f.2/host4/*", ENV{UDISKS_SYSTEM}="0"
 
 由于 udev 异步加载所有模块，使得它们被初始化的次序不同。这将导致设备会随机改变名称。可以添加一条 udev 规则使得设备使用静态名称。
 
-对于块设备和网络设备的规则配置，请分别参阅 [块设备持久化命名](/index.php/Persistent_block_device_naming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Persistent block device naming (简体中文)") 和[网络配置-设备名称](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E5.A4.87.E5.90.8D.E7.A7.B0 "Network configuration (简体中文)")。
+对于块设备和网络设备的规则配置，请分别参阅 [块设备持久化命名](/index.php/Persistent_block_device_naming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Persistent block device naming (简体中文)") 和[网络配置-设备命名](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E5.A4.87.E5.91.BD.E5.90.8D "Network configuration (简体中文)")。
 
 #### 视频设备
 
 For setting up the webcam in the first place, refer to [Webcam configuration](/index.php/Webcam_setup#Webcam_configuration "Webcam setup").
 
-Using multiple webcams, useful for example with [motion](https://www.archlinux.org/packages/?name=motion) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#Writing udev rules](#Writing_udev_rules)):
+Using multiple webcams, useful for example with [motion](https://www.archlinux.org/packages/?name=motion) (software motion detector which grabs images from video4linux devices and/or from webcams), will assign video devices as /dev/video0..n randomly on boot. The recommended solution is to create symlinks using an *udev* rule (as in the example in [#编写 udev 规则](#.E7.BC.96.E5.86.99_udev_.E8.A7.84.E5.88.99)：
 
  `/etc/udev/rules.d/83-webcam.rules` 
 ```

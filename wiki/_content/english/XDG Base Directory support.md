@@ -319,6 +319,11 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | [julia](http://julialang.org/) | `~/.juliarc.jl` `~/.julia_history` | [[76]](https://github.com/JuliaLang/julia/issues/4630) [[77]](https://github.com/JuliaLang/julia/issues/10016) |
 | [lldb](http://lldb.llvm.org/) | `~/.lldb` `~/.lldbinit` |
 | [mathomatic](http://www.mathomatic.org/) | `~/.mathomaticrc` `~/.matho_history` | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
+| [Mercurial](/index.php/Mercurial "Mercurial") | `~/.hgrc` | You cannot append to the configuration search paths, just overwrite them completely. That means you need to be careful to add all default folders: `export HGRCPATH=/usr/lib/python2.7/site-packages/mercurial/default.d/:/etc/mercurial/hgrc:"${XDG_CONFIG_HOME}"/mercurial/hgrc`
+
+To find the default configuration paths, use this: `env -u HGRCPATH hg debugconfig --debug | grep "read config"`
+
+ |
 | [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[78]](https://github.com/Deltafire/MilkyTracker/issues/12) |
 | [mongodb](https://www.mongodb.org/) | `~/.mongorc.js` `~/.dbshell` | [[79]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow](http://stackoverflow.com/a/22349050/4200039) thread suggests a partial workaround using command-line switch `--norc`. |
 | [ncmpc](http://www.musicpd.org/clients/ncmpc/) | `~/.ncmpc` |

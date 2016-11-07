@@ -130,7 +130,7 @@ This will give you a package (`broadcom-wl-*.pkg.tar.xz`) which can be installed
 
 You may now use `wifi-menu` to connect to your network of choice.
 
-**Note:** You need to repeat this process when you have finished your installation and booting into the system for the first time. If kernel versions differ, you may want to ensure to install a number of essential packages while you have connectivity and before you boot into your system, these allow you to build the broadcom driver again and connect (provided you put the AUR tarball for the driver on USB drive too): [dkms](https://www.archlinux.org/packages/?name=dkms),[wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) ([dialog](https://www.archlinux.org/packages/?name=dialog) and [netctl](https://www.archlinux.org/packages/?name=netctl) are needed if you want to use `wifi-menu` again after you boot)
+**Note:** You need to repeat this process when you have finished your installation and booting into the system for the first time. If kernel versions differ, you may want to ensure to install a number of essential packages while you have connectivity and before you boot into your system, these allow you to build the broadcom driver again and connect (provided you put the AUR tarball for the driver on USB drive too): [dkms](https://www.archlinux.org/packages/?name=dkms), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) ([dialog](https://www.archlinux.org/packages/?name=dialog) and [netctl](https://www.archlinux.org/packages/?name=netctl) are needed if you want to use `wifi-menu` again after you boot)
 
 ### Bootloader
 

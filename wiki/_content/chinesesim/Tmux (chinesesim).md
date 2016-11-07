@@ -54,7 +54,7 @@
 
 使用多个面板分割窗口后, 先按前缀快捷键(比如说：`Ctrl-b`)然后按住Ctrl键就可以使用方向键调整面板大小。 如果要交换面板也是采用同样的方式，只是按键由方向键换成“O“键。
 
-**提示:** 如果想要模仿screen的快捷键前缀配置, 可以把 `/usr/share/tmux/screen-keys.conf` 拷贝到上述提到的任一配置文件位置.
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 快捷键前缀可以用`tmux.conf`中的bind和unbind命令修改。比如你可以在配置文件中增加下面命令,把前缀`Ctrl-b`改成`Ctrl-a`：
 

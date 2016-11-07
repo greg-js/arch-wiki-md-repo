@@ -25,25 +25,21 @@ The audit framework works by listening to the event reported by the kernel and l
 
 ## Installation
 
-Install a custom kernel with CONFIG_AUDIT enabled. Install [audit](https://www.archlinux.org/packages/?name=audit) and run
+Install a custom kernel with `CONFIG_AUDIT` enabled.
 
-```
-# systemctl enable auditd.service
-# systemctl start auditd.service
-
-```
+Install [audit](https://www.archlinux.org/packages/?name=audit) and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `auditd.service`.
 
 Audit framework is composed of the auditd daemon, responsible for writing the audit messages that were generated through the audit kernel interface and triggered by application and system activity.
 
 This daemon can be controlled by several commands and files:
 
-*   auditctl : to control the behavior of the daemon on the fly, adding rules etc.
-*   /etc/audit/audit.rules : contains the rules and various parameters of the auditd daemon
-*   aureport : generate report of the activity on a system
-*   ausearch : search for various events
-*   auditspd : the daemon which can be used to relay event notifications to other applications instead of writing them to disk in the audit log
-*   autrace : this command can be used to trace a process, in a similar way as strace.
-*   /etc/audit/auditd.conf : configuration file related to the logging.
+*   *auditctl* : to control the behavior of the daemon on the fly, adding rules etc.
+*   `/etc/audit/audit.rules` : contains the rules and various parameters of the auditd daemon
+*   *aureport* : generate report of the activity on a system
+*   *ausearch* : search for various events
+*   *auditspd* : the daemon which can be used to relay event notifications to other applications instead of writing them to disk in the audit log
+*   *autrace* : this command can be used to trace a process, in a similar way as strace.
+*   `/etc/audit/auditd.conf` : configuration file related to the logging.
 
 ## Adding rules
 

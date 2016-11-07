@@ -1,4 +1,4 @@
-| [한국어](/index.php/Category:%ED%95%9C%EA%B5%AD%EC%96%B4 "Category:한국어") <small>(8)</small> |
+| [한국어](/index.php/Category:%ED%95%9C%EA%B5%AD%EC%96%B4 "Category:한국어") <small>(9)</small> |
 | <small>1.</small> [Applications](/index.php/Category:Applications_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Applications (한국어)") <small>(0)</small> |
 | <small>1.1.</small> [Application launchers](/index.php/Category:Application_launchers_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Application launchers (한국어)") <small>(1)</small> |
 | <small>1.2.</small> [File managers](/index.php/Category:File_managers_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:File managers (한국어)") <small>(1)</small> |
@@ -23,7 +23,7 @@
 | <small>9.1.</small> [Web server](/index.php/Category:Web_server_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Web server (한국어)") <small>(1)</small> |
 | <small>10.</small> [Office](/index.php/Category:Office_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Office (한국어)") <small>(1)</small> |
 | <small>11.</small> [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Pages sorted by topic (한국어)") <small>(0)</small> |
-| <small>11.1.</small> [아치에 대하여](/index.php/Category:About_Arch_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:About Arch (한국어)") <small>(4)</small> |
+| <small>11.1.</small> [아치에 대하여](/index.php/Category:About_Arch_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:About Arch (한국어)") <small>(5)</small> |
 | <small>11.1.1.</small> [Arch development](/index.php/Category:Arch_development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Arch development (한국어)") <small>(0) (또한 에 [Development](/index.php/Category:Development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Development (한국어)"))</small> |
 | <small>11.1.1.1.</small> [Package development](/index.php/Category:Package_development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Package development (한국어)") <small>(1)</small> |
 | <small>11.1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:ArchWiki (한국어)") <small>(2)</small> |

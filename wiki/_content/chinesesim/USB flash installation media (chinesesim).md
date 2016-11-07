@@ -45,7 +45,7 @@
 
 #### GNU/Linux
 
-**小贴士:** 用 `lsblk` 找到U盘并确保**没有**挂载
+**提示：** 用 `lsblk` 找到U盘并确保**没有**挂载
 
 用U盘替换 `/dev/**sdx**`，如 `/dev/sdb`。（**不要**加上数字，也就是说，**不要**键入 `/dev/sdb**1**` 之类的东西)
 
@@ -72,7 +72,7 @@ Since Rufus does not care if the drive is properly formatted or not and provides
 
 请确认您安装了[Cygwin](http://www.cygwin.com/)的 `dd` 包。
 
-**小贴士:** 如果您不想安装 Cygwin，您可以直接从 [这里](http://www.chrysocome.net/dd)下载 `dd` for Windows。查看下一节以获得更多信息。
+**提示：** 如果您不想安装 Cygwin，您可以直接从 [这里](http://www.chrysocome.net/dd)下载 `dd` for Windows。查看下一节以获得更多信息。
 
 将您的镜像文件放在您的home目录中：
 
@@ -362,7 +362,7 @@ C:\>flashnul **E:** -L *path\to\arch.iso*
 
 这个方法使用 [Syslinux (简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 和一个 [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) 来把整个 Arch Linux ISO 镜像加载到内存中。因为它将完全运行于系统内存中，您要确保使用这种方法安装的系统有足够的内存。至少 500MB 到 1G 内存就足以在 MEMDISK 上安装 Arch Linux。 Arch Linux 和 MEMDISK 系统要求参见[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")和[这里](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。[论坛参考贴](https://bbs.archlinux.org/viewtopic.php?id=135266)。
 
-**小贴士:** 一旦安装程序加载完毕，您就可以移除 U 盘，甚至再在另一台机器上用它开始执行整个安装步骤。使用 MEMDISK 还允许你在同一个 U 盘中引导并安装 Arch Linux 到它上面。
+**提示：** 一旦安装程序加载完毕，您就可以移除 U 盘，甚至再在另一台机器上用它开始执行整个安装步骤。使用 MEMDISK 还允许你在同一个 U 盘中引导并安装 Arch Linux 到它上面。
 
 ##### 准备 U 盘
 

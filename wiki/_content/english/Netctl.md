@@ -495,7 +495,7 @@ WPAConfigSection=(
 
 ### Job for netctl@wlan(...).service failed
 
-**Warning:** This section assumes that there is no other network service is running before starting a *netctl* profile/service. See [#Installation](#Installation) for details.
+**Warning:** This section assumes that there is no other network service running before starting a *netctl* profile/service. See [#Installation](#Installation) for details.
 
 Some people have an issue when they connect to a network with *netctl*, for example:
 

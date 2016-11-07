@@ -101,7 +101,7 @@ w  # write table to disk and exit
 
 ### gdisk basic (以及混合 MBR)
 
-**提示:** 使用 MB, GB 来对齐 2048 扇区。
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 ```
 # gdisk /dev/sdX

@@ -18,7 +18,7 @@
 
 	다른 배포판과의 유사점과 차이점을 요약합니다.
 
-	[참여하기](/index.php/Getting_involved "Getting involved")
+	[참여하기](/index.php/Getting_involved_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Getting involved (한국어)")
 
 	아처(초보나 능숙한 아치 리눅스 사용자 모두)가 아치 커뮤니티에 기여할 수 있는 방법을 설명합니다.
 

@@ -8,11 +8,9 @@
 *   **非官方软件包**: 开发者构建软件包并签名它。用户需要用自己的密钥签名开发者的密钥，将其变为可信。
 *   **官方软件包**: 开发者构建软件包，而开发者的密钥已经被 Arch 主密钥签名。最终用户用自己的密钥签名主密钥，这样就能信任所有官方开发者。
 
-**提示:** HKP协议使用11371/tcp端口用来通信。为了从服务器得到签署的密钥（使用pacman-key），这个端口必须打开。
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
-**提示:**
-
-关于此问题的背景，请访问博客 [[1]](http://allanmcrae.com/2011/08/pacman-package-signing-1-makepkg-and-repo-add/)[[2]](http://allanmcrae.com/2011/08/pacman-package-signing-2-pacman-key/)[[3]](http://allanmcrae.com/2011/08/pacman-package-signing-3-pacman/)[[4]](http://allanmcrae.com/2011/12/pacman-package-signing-4-arch-linux/) 和 [软件包签名提议](/index.php/Package_Signing_Proposal_for_Pacman "Package Signing Proposal for Pacman") wiki 页面。
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 ## Contents
 
@@ -102,7 +100,7 @@ PGP 通常很长(2048 位或更长)，不太容易使用，所以通常创建一
 
 官方开发者和 TU 的密钥已经被主密钥签名认证，所以不需要用 pacman-key 认证它们。pacman 遇到不认识的签名时，它将会询问是否从密钥服务器（设置在`/etc/pacman.d/gnupg/gpg.conf`文件中，或在命令行中使用`--keyserver`选项）下载。
 
-**提示:** Wikipedia maintains a [list of keyservers](https://en.wikipedia.org/wiki/Key_server_(cryptographic) "wikipedia:Key server (cryptographic)").
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 下载开发者密钥后，以后都不需要下载。以后会用它验证所有这个开发者构建的软件包。
 

@@ -158,7 +158,7 @@ Plasma 5.6 已经可以在 [Wayland](/index.php/Wayland "Wayland") 上使用，�
 
 ### Qt 和 GTK+ 应用外观
 
-**提示:** 为了 Qt 和 GTK 主题的一致性，请参见 [外观统一的 QT 和 GTK 应用](/index.php?title=%E5%A4%96%E8%A7%82%E7%BB%9F%E4%B8%80%E7%9A%84_QT_%E5%92%8C_GTK_%E5%BA%94%E7%94%A8&action=edit&redlink=1 "外观统一的 QT 和 GTK 应用 (page does not exist)")。
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 	Qt4
 
@@ -227,7 +227,7 @@ Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid bi
 
 ### 打印
 
-**小贴士:** 使用 [CUPS](/index.php/CUPS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "CUPS (简体中文)") 的 Web 接口进行快速配置。这种方式配置的打印机可以被 KDE 应用使用。
+**提示：** 使用 [CUPS](/index.php/CUPS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "CUPS (简体中文)") 的 Web 接口进行快速配置。这种方式配置的打印机可以被 KDE 应用使用。
 
 你也可以在 **系统设置 > 打印机配置** 中配置打印机。要使用这种配置方式，必须首先安装 [kdeutils-print-manager](https://www.archlinux.org/packages/?name=kdeutils-print-manager) 和 [cups](https://www.archlinux.org/packages/?name=cups) 软件包。
 
@@ -253,7 +253,7 @@ Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/et
 SystemGroup sys root lpadmin
 ```
 
-**小贴士:** 阅读 [CUPS#CUPS_administration](/index.php/CUPS#CUPS_administration "CUPS") 一文以获取关于如何配置 CUPS 的更多细节。
+**提示：** 阅读 [CUPS#CUPS_administration](/index.php/CUPS#CUPS_administration "CUPS") 一文以获取关于如何配置 CUPS 的更多细节。
 
 ### Samba/Windows 的支持
 

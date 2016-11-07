@@ -352,7 +352,7 @@ set -g mouse-utf8 off
 
 ### Shift+F6 not working in Midnight Commander
 
-See [Midnight Commander#Shift+F6 not working](/index.php/Midnight_Commander#Shift.2BF6_not_working "Midnight Commander").
+See [Midnight Commander#Broken shortcuts](/index.php/Midnight_Commander#Broken_shortcuts "Midnight Commander").
 
 ## X clipboard integration
 

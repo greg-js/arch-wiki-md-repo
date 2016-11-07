@@ -26,6 +26,7 @@ These options are explained in detail below.
     *   [3.1 Tearing/Broken VSync](#Tearing.2FBroken_VSync)
     *   [3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
     *   [3.3 Resolution, screen scan wrong. EDID errors in Xorg.log](#Resolution.2C_screen_scan_wrong._EDID_errors_in_Xorg.log)
+    *   [3.4 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
 *   [4 Using nouveau](#Using_nouveau)
 *   [5 Using Bumblebee](#Using_Bumblebee)
 
@@ -284,6 +285,16 @@ EndSection
 If Xorg wont start try swapping out all references of CRT to DFB. card0 is the identifier for the intel card to which the display is connected via LVDS. The edid binary is in this directory. If the hardware arrangement is different, the value for CustomEDID might vary but yet this has to be confirmed. The path will start in any case with /sys/class/drm.
 
 Alternatively you can generate your edid with tools like [read-edid](https://www.archlinux.org/packages/?name=read-edid) and point the driver to this file. Even modelines can be used, but then be sure to change "UseEDID" and "IgnoreEDID".
+
+### Lockup issue (lspci hangs)
+
+Symptoms: lspci hangs, system suspend fails, shutdown hangs, optirun hangs.
+
+Applies to: newer laptops with GTX 965M or alike when bbswitch (e.g. via Bumblebee) or nouveau is in use.
+
+When the dGPU power resource is turned on, it may fail to do so and hang in ACPI code ([kernel bug 156341](https://bugzilla.kernel.org/show_bug.cgi?id=156341)).
+
+For known model-specific workarounds, see [this issue](https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238). In other cases you can try to boot with `acpi_osi="!Windows 2015"` or `acpi_osi=! acpi_osi="Windows 2009"` added to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). (Consider reporting your laptop to that issue.)
 
 ## Using nouveau
 

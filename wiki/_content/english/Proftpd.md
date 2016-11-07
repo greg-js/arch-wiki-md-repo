@@ -13,7 +13,7 @@
 
 ## Configuration
 
-The [configuration file](http://www.proftpd.org/docs/howto/ConfigFile.html) is available at `/etc/proftp.conf`. The project's website has an extensive [documentation](http://www.proftpd.org/docs/).
+The [configuration file](http://www.proftpd.org/docs/howto/ConfigFile.html) is available at `/etc/proftpd.conf`. The project's website has an extensive [documentation](http://www.proftpd.org/docs/).
 
 ### Anonymous access
 

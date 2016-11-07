@@ -40,9 +40,9 @@ The Xilinx ISE WebPACK is a freeware software released under a proprietary licen
 
 ### Dependencies
 
-If you plan to develop software for an embedded ARM core (e.g. for Xilinx Zynq SoC devices), you will want to install the GCC cross-compiler bundled included with the Xilinx Embedded Development Kit (EDK). This compiler requires the [glibc](https://www.archlinux.org/packages/?name=glibc) and [ncurses](https://www.archlinux.org/packages/?name=ncurses) packages. For i686 installations, these will most likely be already present.
+Several tools included in the ISE Webpack (and the installer itself) depends on [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
 
-If you are on a 64-bit Arch installation, you need to install [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) from the [multilib](/index.php/Multilib "Multilib") repository and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) from the [AUR](/index.php/AUR "AUR").
+If you plan to develop software for an embedded ARM core (e.g. for Xilinx Zynq SoC devices), you will want to install the GCC cross-compiler bundled included with the Xilinx Embedded Development Kit (EDK). This compiler requires the [glibc](https://www.archlinux.org/packages/?name=glibc) and [ncurses](https://www.archlinux.org/packages/?name=ncurses) packages. On 64-bit systems, you also need to install the 32-bit versions [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) from the [multilib](/index.php/Multilib "Multilib") repository and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) from the [AUR](/index.php/AUR "AUR").
 
 ### Default Shell
 
@@ -67,7 +67,7 @@ then `/usr/bin/sh` already points to `/usr/bin/bash`. (the default in Arch Linux
 If not, link `/usr/bin/sh` to bash:
 
 ```
-# ln -sfT bash /bin/sh
+# ln -sfT bash /usr/bin/sh
 
 ```
 

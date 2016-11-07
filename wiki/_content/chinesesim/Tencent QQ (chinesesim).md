@@ -95,7 +95,7 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 **警告:** 由于 QQ for Linux 长时间不更新，导致程序无法适应现有的部分Linux组件，安装后经常崩溃。而据用户报告，如今 QQ for Linux 也已不允许登录，每次登录都提示版本过低
 
-**提示:** 可以在腾讯[投诉](http://support.qq.com/write.shtml)页面呼吁官方提供 Linux 版
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 腾讯在 2008 年底发布了 QQ for Linux 1.0 Preview 3，功能如下：
 

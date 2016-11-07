@@ -89,7 +89,7 @@ One last thing, which is the actual aim, make AWStats read logs and convert them
 
 ### AWStats Configuration
 
-The package comes with an hourly [cron](/index.php/Cron "Cron") script to update stats shown on AWStats. This cron script reads AWStats configuration files in `/etc/awstats` and updates the stats for the sites that are defined in these configuration files. Instead of creating these configuration files, you can use AWStats' configuration tool. Run:
+The package comes with an script to update stats shown on AWStats. This script reads AWStats configuration files in `/etc/awstats` and updates the stats for the sites that are defined in these configuration files. Instead of creating these configuration files, you can use AWStats' configuration tool. Run:
 
 ```
  perl /usr/share/awstats/tools/awstats_configure.pl
@@ -103,7 +103,14 @@ and follow the instructions. If you successfully created config file there is on
 
 ```
 
-You are done, now you can run hourly cron script to test the results.
+Now you can run the script to test the results, e.g. if you have a `/etc/awstats/awstats.apache.conf` then run
+
+```
+ /usr/share/awstats/tools/awstats_buildstaticpages.pl config=apache -update -awstatsprog=/usr/share/webapps/awstats/cgi-bin/awstats.pl -dir=/srv/http/awstats
+
+```
+
+See also AWStats cron template: `/usr/share/doc/awstats-7.5/cron.hourly`
 
 **Warning:** With these settings anyone will be able to reach AWStats. Setting a authentication would help keeping these stats private.
 

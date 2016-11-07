@@ -187,10 +187,6 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 	[https://sites.google.com/site/kdekorte2/gecko-mediaplayer](https://sites.google.com/site/kdekorte2/gecko-mediaplayer) || [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer)
 
-*   **GNOME Videos Plugin** — Browser plugin based on the [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos") media player which uses [GStreamer](/index.php/GStreamer "GStreamer").
-
-	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
-
 *   **Rosa Media Player Plugin** — Qt-based browser plugin also based on MPlayer.
 
 	[https://abf.rosalinux.ru/uxteam/ROSA_Media_Player](https://abf.rosalinux.ru/uxteam/ROSA_Media_Player) || [rosa-media-player-plugin](https://aur.archlinux.org/packages/rosa-media-player-plugin/)

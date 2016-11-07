@@ -10,10 +10,12 @@
     *   [3.1 Devmon](#Devmon)
     *   [3.2 udevadm monitor](#udevadm_monitor)
     *   [3.3 udiskie](#udiskie)
+        *   [3.3.1 udiskie freezing and configuration](#udiskie_freezing_and_configuration)
+    *   [3.4 udisksvm](#udisksvm)
 *   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
     *   [4.1 禁止隐藏设备（udisks2）](#.E7.A6.81.E6.AD.A2.E9.9A.90.E8.97.8F.E8.AE.BE.E5.A4.87.EF.BC.88udisks2.EF.BC.89)
     *   [4.2 挂载到 /media (udisks2)](#.E6.8C.82.E8.BD.BD.E5.88.B0_.2Fmedia_.28udisks2.29)
-    *   [4.3 挂载 ISO 镜像](#.E6.8C.82.E8.BD.BD_ISO_.E9.95.9C.E5.83.8F)
+    *   [4.3 挂载 loop 设备](#.E6.8C.82.E8.BD.BD_loop_.E8.AE.BE.E5.A4.87)
     *   [4.4 隐藏选中的分区](#.E9.9A.90.E8.97.8F.E9.80.89.E4.B8.AD.E7.9A.84.E5.88.86.E5.8C.BA)
 *   [5 排错](#.E6.8E.92.E9.94.99)
     *   [5.1 卸载的设备被自动挂载](#.E5.8D.B8.E8.BD.BD.E7.9A.84.E8.AE.BE.E5.A4.87.E8.A2.AB.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BD)
@@ -28,7 +30,7 @@
 
 ## 配置
 
-用户通过 udisks 可执行的动作 [Polkit](/index.php/Polkit "Polkit") 控制。如果[会话](/index.php/Session "Session")不活跃或不存在，例如通过 [systemd/User](/index.php/Systemd/User "Systemd/User") 控制 udisks 是，需要手动配置 policykit.
+用户通过 udisks 可执行的动作由 [Polkit](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Polkit (简体中文)") 控制。如果[会话](/index.php/Session "Session")不活跃或不存在，例如通过 [systemd/User](/index.php/Systemd/User_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd/User (简体中文)") 控制 udisks 时，需要手动配置 policykit.
 
 [这里](https://github.com/coldfix/udiskie/wiki/Permissions) 包含 `storage` 群组的 udisk 配置， [这里](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js)有一个更严格的版本。
 
@@ -78,7 +80,17 @@ done < <(stdbuf -o L udevadm monitor --udev -s block)
 
 ### udiskie
 
-[udiskie](https://github.com/coldfix/udiskie) 是使用 [udisks](https://www.archlinux.org/packages/?name=udisks) 或 [udisks2](https://www.archlinux.org/packages/?name=udisks2) 的挂载助手，支持密码保护的 [LUKS 设备](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). 请参考[Wiki](https://github.com/coldfix/udiskie/wiki/Usage).
+[udiskie](https://www.archlinux.org/packages/?name=udiskie) 是使用 [udisks](https://www.archlinux.org/packages/?name=udisks) 或 [udisks2](https://www.archlinux.org/packages/?name=udisks2) 的挂载助手，支持密码保护的 [LUKS 设备](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). 请参考[Wiki](https://github.com/coldfix/udiskie/wiki/Usage)。
+
+#### udiskie freezing and configuration
+
+[udiskie](https://www.archlinux.org/packages/?name=udiskie) may freeze/crash or not work in some situations/setups if you do not have some of the notification support installed. For [instance](https://bbs.archlinux.org/viewtopic.php?id=203164) xfce and udiskie may not work correctly. You may see udiskie freeze in xfce if you do not install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) and [notify-osd](https://www.archlinux.org/packages/?name=notify-osd) also.
+
+if you do not source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh in your .xinitrc you may have issues also.
+
+### udisksvm
+
+[udisksvm](https://aur.archlinux.org/packages/udisksvm) is a graphical udisks2 wrapper application written in Python3 and using the Qt5 framework. It uses only mouse clicks to mount, unmount removable devices or eject a CD/DVD. It is well adapted to light weight graphical environments, like Openbox with Tint2. It is a stand-alone mounting/automounting application running in background (see the README file in the package for details)
 
 ## 提示与技巧
 
@@ -109,7 +121,7 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
 ```
 
-### 挂载 ISO 镜像
+### 挂载 loop 设备
 
 要挂载 ISO 镜像，使用下面命令：
 
@@ -119,6 +131,8 @@ $ udisksctl loop-setup -r -f *image.iso*
 ```
 
 这条命令会创建 loop 设备并显示可以挂载的 ISO 镜像，卸载后，loop 设备会被 [udev](/index.php/Udev "Udev") 删除.
+
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 ### 隐藏选中的分区
 
@@ -137,6 +151,25 @@ KERNEL=="sda1", ENV{UDISKS_IGNORE}="1"
 KERNEL=="sda2", ENV{UDISKS_IGNORE}="1"
 
 ```
+
+Because block device names can change between reboots, it is also possible to use UUIDs (as gathered from executing the `blkid /dev/sdX` command) to hide partitions or whole devices:
+
+For example:
+
+```
+# blkid /dev/sdX
+/dev/sdX: LABEL="Filesystem Label" UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX" UUID_SUB="YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY" TYPE="btrfs"
+
+```
+
+Then the following line can be used:
+
+```
+ENV{ID_FS_UUID}=="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX", ENV{UDISKS_IGNORE}="1"
+
+```
+
+The above line is also useful to hide multi device btrfs filesystems, as all the devices from a single btrtfs filesystem will share the same UUID across the devices but will have different SUB_UUID for each individual device.
 
 ## 排错
 

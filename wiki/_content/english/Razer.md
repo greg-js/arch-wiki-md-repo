@@ -15,7 +15,8 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
         *   [2.1.5 Hybrid graphics](#Hybrid_graphics)
         *   [2.1.6 Suspend Loop](#Suspend_Loop)
         *   [2.1.7 Tweaking](#Tweaking)
-        *   [2.1.8 Unresolved Issues](#Unresolved_Issues)
+        *   [2.1.8 Audio](#Audio)
+        *   [2.1.9 Unresolved Issues](#Unresolved_Issues)
     *   [2.2 2014 version](#2014_version)
         *   [2.2.1 Problems](#Problems)
         *   [2.2.2 Possible trackpad solution](#Possible_trackpad_solution)
@@ -172,6 +173,12 @@ If you are using [GNOME](/index.php/GNOME "GNOME"), the *gnome-tweak-tool* can b
 
 If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI"), you can use *xrandr* to alter the scaling of the external monitor using the instructions for [Multiple Displays](/index.php/HiDPI#Multiple_displays "HiDPI"). You may have better results though running [GNOME](/index.php/GNOME "GNOME") on [Wayland](/index.php/Wayland "Wayland"). When installed, clicking the gear icon in [GDM](/index.php/GDM "GDM") will allow you to select *Gnome On Wayland* and will default to that in the future.
 
+A distro that works out-of-the-box without the need of any tweaking is [Antergos](https://antergos.com/) with the default Gnome desktop environment.
+
+#### Audio
+
+On the latest 'KabyLake' Intel CPU, if you also have a dual-boot with Windows, you might experience some audio issues when booting to Windows and restarting on Linux. The problem is no sound from the speakers and some cracking noises on the headphones - especially when using the touchpad -. No official solution has been posted yet, but a quick hack is to completely shut down the computer (so power off, not restart).
+
 #### Unresolved Issues
 
 *   the webcam does not seem to work well with a basic installation. External webcams work fine. It seems to fail when the resolution is anything but 640x480\. [guvcview](https://www.archlinux.org/packages/?name=guvcview) works because it defaults to the resolution. [cheese](https://www.archlinux.org/packages/?name=cheese) and [Google Hangouts](https://hangouts.google.com) do not because they default to the max resolution. your mileage may vary.
@@ -180,7 +187,7 @@ If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI
 
 #### Problems
 
-[Source](http://forum.notebookreview.com/razer/751074-2014-razer-blade-14-linux.html)
+[Source](http://forum.notebookreview.com/razer/751074-2014-razer-blade-14-linux.html) [https://antergos.com/](https://antergos.com/)
 
 *   touchpad (multitouch, although this may be a kernel bug that has since been fixed)
 *   keys to increase/decrease screen illumination not working

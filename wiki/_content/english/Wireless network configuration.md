@@ -20,54 +20,63 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [2.2.3 Wicd](#Wicd)
         *   [2.2.4 NetworkManager](#NetworkManager)
         *   [2.2.5 WiFi Radar](#WiFi_Radar)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Temporary internet access](#Temporary_internet_access)
-    *   [3.2 Rfkill caveat](#Rfkill_caveat)
-    *   [3.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
-    *   [3.4 Observing Logs](#Observing_Logs)
-    *   [3.5 Power saving](#Power_saving)
-    *   [3.6 Failed to get IP address](#Failed_to_get_IP_address)
-    *   [3.7 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
-    *   [3.8 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
-    *   [3.9 Random disconnections](#Random_disconnections)
-        *   [3.9.1 Cause #1](#Cause_.231)
-        *   [3.9.2 Cause #2](#Cause_.232)
-        *   [3.9.3 Cause #3](#Cause_.233)
-        *   [3.9.4 Cause #4](#Cause_.234)
-*   [4 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
-    *   [4.1 Ralink](#Ralink)
-        *   [4.1.1 rt2x00](#rt2x00)
-        *   [4.1.2 rt3090](#rt3090)
-        *   [4.1.3 rt3290](#rt3290)
-        *   [4.1.4 rt3573](#rt3573)
-        *   [4.1.5 rt5572](#rt5572)
-    *   [4.2 Realtek](#Realtek)
-        *   [4.2.1 rtl8192cu](#rtl8192cu)
-        *   [4.2.2 rtl8192e](#rtl8192e)
-        *   [4.2.3 rtl8188eu](#rtl8188eu)
-        *   [4.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
-        *   [4.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
-    *   [4.3 Atheros](#Atheros)
-        *   [4.3.1 ath5k](#ath5k)
-        *   [4.3.2 ath9k](#ath9k)
-            *   [4.3.2.1 Power saving](#Power_saving_2)
-    *   [4.4 Intel](#Intel)
-        *   [4.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
-        *   [4.4.2 iwlegacy](#iwlegacy)
-        *   [4.4.3 iwlwifi](#iwlwifi)
-            *   [4.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
-        *   [4.4.4 Disabling LED blink](#Disabling_LED_blink)
-    *   [4.5 Broadcom](#Broadcom)
-    *   [4.6 Other drivers/devices](#Other_drivers.2Fdevices)
-        *   [4.6.1 Tenda w322u](#Tenda_w322u)
-        *   [4.6.2 orinoco](#orinoco)
-        *   [4.6.3 prism54](#prism54)
-        *   [4.6.4 ACX100/111](#ACX100.2F111)
-        *   [4.6.5 zd1211rw](#zd1211rw)
-        *   [4.6.6 hostap_cs](#hostap_cs)
-    *   [4.7 ndiswrapper](#ndiswrapper)
-    *   [4.8 backports-patched](#backports-patched)
-*   [5 See also](#See_also)
+*   [3 WPA2 Enterprise](#WPA2_Enterprise)
+    *   [3.1 eduroam](#eduroam)
+    *   [3.2 Manual/automatic setup](#Manual.2Fautomatic_setup)
+        *   [3.2.1 wpa_supplicant](#wpa_supplicant)
+        *   [3.2.2 NetworkManager](#NetworkManager_2)
+        *   [3.2.3 connman](#connman_2)
+        *   [3.2.4 netctl](#netctl_2)
+    *   [3.3 Troubleshooting](#Troubleshooting)
+        *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
+*   [4 Troubleshooting](#Troubleshooting_2)
+    *   [4.1 Temporary internet access](#Temporary_internet_access)
+    *   [4.2 Rfkill caveat](#Rfkill_caveat)
+    *   [4.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
+    *   [4.4 Observing Logs](#Observing_Logs)
+    *   [4.5 Power saving](#Power_saving)
+    *   [4.6 Failed to get IP address](#Failed_to_get_IP_address)
+    *   [4.7 Valid IP address but cannot resolve host](#Valid_IP_address_but_cannot_resolve_host)
+    *   [4.8 Setting RTS and fragmentation thresholds](#Setting_RTS_and_fragmentation_thresholds)
+    *   [4.9 Random disconnections](#Random_disconnections)
+        *   [4.9.1 Cause #1](#Cause_.231)
+        *   [4.9.2 Cause #2](#Cause_.232)
+        *   [4.9.3 Cause #3](#Cause_.233)
+        *   [4.9.4 Cause #4](#Cause_.234)
+*   [5 Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware)
+    *   [5.1 Ralink](#Ralink)
+        *   [5.1.1 rt2x00](#rt2x00)
+        *   [5.1.2 rt3090](#rt3090)
+        *   [5.1.3 rt3290](#rt3290)
+        *   [5.1.4 rt3573](#rt3573)
+        *   [5.1.5 rt5572](#rt5572)
+    *   [5.2 Realtek](#Realtek)
+        *   [5.2.1 rtl8192cu](#rtl8192cu)
+        *   [5.2.2 rtl8192e](#rtl8192e)
+        *   [5.2.3 rtl8188eu](#rtl8188eu)
+        *   [5.2.4 rtl8723ae/rtl8723be](#rtl8723ae.2Frtl8723be)
+        *   [5.2.5 rtl8812au/rtl8821au](#rtl8812au.2Frtl8821au)
+    *   [5.3 Atheros](#Atheros)
+        *   [5.3.1 ath5k](#ath5k)
+        *   [5.3.2 ath9k](#ath9k)
+            *   [5.3.2.1 Power saving](#Power_saving_2)
+    *   [5.4 Intel](#Intel)
+        *   [5.4.1 ipw2100 and ipw2200](#ipw2100_and_ipw2200)
+        *   [5.4.2 iwlegacy](#iwlegacy)
+        *   [5.4.3 iwlwifi](#iwlwifi)
+            *   [5.4.3.1 Bluetooth coexistence](#Bluetooth_coexistence)
+        *   [5.4.4 Disabling LED blink](#Disabling_LED_blink)
+    *   [5.5 Broadcom](#Broadcom)
+    *   [5.6 Other drivers/devices](#Other_drivers.2Fdevices)
+        *   [5.6.1 Tenda w322u](#Tenda_w322u)
+        *   [5.6.2 orinoco](#orinoco)
+        *   [5.6.3 prism54](#prism54)
+        *   [5.6.4 ACX100/111](#ACX100.2F111)
+        *   [5.6.5 zd1211rw](#zd1211rw)
+        *   [5.6.6 hostap_cs](#hostap_cs)
+    *   [5.7 ndiswrapper](#ndiswrapper)
+    *   [5.8 backports-patched](#backports-patched)
+*   [6 See also](#See_also)
 
 ## Device driver
 
@@ -459,6 +468,59 @@ See [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 See [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar").
 
+## WPA2 Enterprise
+
+*WPA2 Enterprise* is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
+
+The Enterprise mode enables users to log onto the Wi-Fi network with a username and password and/or a digital certificate. Since each user has a dynamic and unique encryption key, it also helps to prevent user-to-user snooping on the wireless network, and improves encryption strength.
+
+This section describes the configuration of [network clients](/index.php/List_of_applications#Network_managers "List of applications") to connect to a wireless access point with WPA2 Enterprise mode. See [Software access point#RADIUS](/index.php/Software_access_point#RADIUS "Software access point") for information on setting up an access point itself.
+
+**Note:** Enterprise mode requires a more complex client configuration, whereas Personal mode only requires entering a passphrase when prompted. Clients likely need to install the server’s CA certificate (plus per-user certificates if using EAP-TLS), and then manually configure the wireless security and 802.1X authentication settings.
+
+For a comparison of protocols see the following [table](http://deployingradius.com/documents/protocols/compatibility.html).
+
+**Warning:** It is possible to use WPA2 Enterprise without the client checking the server CA certificate. However, you should always seek to do so, because without authenticating the access point the connection can be subject to a man-in-the-middle attack. This may happen because while the connection handshake itself may be encrypted, the most widely used setups transmit the password itself either in plain text or the easily breakable [#MS-CHAPv2](#MS-CHAPv2). Hence, the client might send the password to a malicious access point which then proxies the connection.
+
+### eduroam
+
+[eduroam](https://en.wikipedia.org/wiki/eduroam "wikipedia:eduroam") (education roaming) is an international roaming service for users in research, higher education and further education, based on WPA2 Enterprise.
+
+**Warning:**
+
+*   Check connection details **first** with your institution before applying any profiles listed in this section. Example profiles are not guaranteed to work or match any security requirements.
+*   When storing connection profiles unencrypted, restrict read access to the root account by specifying `chmod 600 *profile*` as root.
+
+**Tip:** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") and [#wpa_supplicant](#wpa_supplicant) can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
+
+### Manual/automatic setup
+
+#### wpa_supplicant
+
+[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly and used in combination with a dhcp client or with systemd. See the examples in `/etc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
+
+#### NetworkManager
+
+[NetworkManager](/index.php/NetworkManager "NetworkManager") can generate WPA2 Enterprise profiles with [graphical front ends](/index.php/NetworkManager#Front-ends "NetworkManager"). *nmcli* and *nmtui* do not support this, but may use existing profiles.
+
+#### connman
+
+[connman](/index.php/Connman "Connman") needs a separate configuration file before [connecting](/index.php/Connman#Wi-Fi "Connman") to the network. See connman-service.config(5) and [Connman#Connecting_to_eduroam](/index.php/Connman#Connecting_to_eduroam "Connman") for details.
+
+#### netctl
+
+[netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See netctl.profile(5) for details.
+
+**Warning:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in netctl.profile(5).
+
+**Tip:** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
+
+### Troubleshooting
+
+#### MS-CHAPv2
+
+WPA2-Enterprise wireless networks demanding MSCHAPv2 type-2 authentication with PEAP sometimes require [pptpclient](https://www.archlinux.org/packages/?name=pptpclient) in addition to the stock [ppp](https://www.archlinux.org/packages/?name=ppp) package. [netctl](/index.php/Netctl "Netctl") seems to work out of the box without ppp-mppe, however. In either case, usage of MSCHAPv2 is discouraged as it is highly vulnerable, although using another method is usually not an option. See also [[1]](https://www.cloudcracker.com/blog/2012/07/29/cracking-ms-chap-v2/) and [[2]](http://research.edm.uhasselt.be/~bbonne/docs/robyns14wpa2enterprise.pdf).
+
 ## Troubleshooting
 
 This section contains general troubleshooting tips, not strictly related to problems with drivers or firmware. For such topics, see next section [#Troubleshooting drivers and firmware](#Troubleshooting_drivers_and_firmware).
@@ -625,7 +687,7 @@ Packet fragmentation improves throughput by splitting up packets with size excee
 
 #### Cause #1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[1]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[3]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
 
 If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
 
@@ -867,17 +929,17 @@ If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[4]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[5]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[6]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[7]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
 In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
 
 [Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
 
-**Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[6]](https://bbs.archlinux.org/viewtopic.php?id=190757)
+**Note:** The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts)-3.14 kernel may take several minutes to load the firmware and make the wireless card ready for use. The issue is reported to be fixed in [linux](https://www.archlinux.org/packages/?name=linux)-3.17 kernel.[[8]](https://bbs.archlinux.org/viewtopic.php?id=190757)
 
 ##### Bluetooth coexistence
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[7]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[9]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
@@ -936,7 +998,7 @@ See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[8]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[10]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://www.archlinux.org/packages/?name=zd1211-firmware) package.
 
 #### hostap_cs
 

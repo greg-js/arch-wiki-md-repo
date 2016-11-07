@@ -112,7 +112,7 @@
 
 ### 创建硬盘镜像
 
-**提示:** [QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images) 提供了 QEMU 镜像的更多信息。
+1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
 
 除非直接从 CD-ROM 或网络引导并且不安装系统到本地，运行 QEMU 时都需要硬盘镜像。硬盘镜像是一个文件，存储虚拟机硬盘上的内容。
 

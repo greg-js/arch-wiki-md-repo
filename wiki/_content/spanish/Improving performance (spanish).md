@@ -6,7 +6,7 @@
     *   [3.1 Compromiso](#Compromiso)
     *   [3.2 Test de rendimiento](#Test_de_rendimiento)
 *   [4 Dispositivos de almacenamiento](#Dispositivos_de_almacenamiento)
-    *   [4.1 Eligiendo y optimizando es sistema de archivos](#Eligiendo_y_optimizando_es_sistema_de_archivos)
+    *   [4.1 Eligiendo y optimizando el sistema de archivos](#Eligiendo_y_optimizando_el_sistema_de_archivos)
         *   [4.1.1 Sumario](#Sumario)
         *   [4.1.2 Opciones de montaje](#Opciones_de_montaje)
         *   [4.1.3 Ext3](#Ext3)
@@ -17,7 +17,7 @@
         *   [4.1.8 BTRFS](#BTRFS)
             *   [4.1.8.1 mkinitcpio.conf para btrfs](#mkinitcpio.conf_para_btrfs)
     *   [4.2 Comprimiendo /usr](#Comprimiendo_.2Fusr)
-    *   [4.3 Tuning for an SSD](#Tuning_for_an_SSD)
+    *   [4.3 Optimizando un disco SSD](#Optimizando_un_disco_SSD)
 *   [5 CPU](#CPU)
     *   [5.1 VeryNice](#VeryNice)
 *   [6 Red](#Red)
@@ -31,7 +31,7 @@
     *   [8.3 Montando /tmp en RAM](#Montando_.2Ftmp_en_RAM)
     *   [8.4 Usando la RAM de la placa de video](#Usando_la_RAM_de_la_placa_de_video)
     *   [8.5 Precarga](#Precarga)
-        *   [8.5.1 Go-preloada](#Go-preloada)
+        *   [8.5.1 Go-preload](#Go-preload)
         *   [8.5.2 Preload](#Preload)
     *   [8.6 Suspender a RAM](#Suspender_a_RAM)
     *   [8.7 Opciones del kernel para el inicio](#Opciones_del_kernel_para_el_inicio)
@@ -92,15 +92,15 @@ La manera mas simple y eficiente de mejorar el desempeño general es correr apli
 
 ### Compromiso
 
-Casi toda optimizacion acarrea inconvenientes. Las aplicaciones livianas usualmente vienen con menos características, algunos ajustes pueden desencadenar en un sistema inestables o simplemente requerir tiempo para implementarlos y mantenerlos. Esta pagina tratara de resaltar esos inconvenientes, pero el juicio final lo debe hacer el usuario.
+Casi toda optimización acarrea inconvenientes. Las aplicaciones livianas usualmente vienen con menos características, algunos ajustes pueden desencadenar en un sistema inestable o simplemente requerir tiempo para implementarlos y mantenerlos. Esta pagina tratara de resaltar esos inconvenientes, pero el juicio final lo debe hacer el usuario.
 
 ### Test de rendimiento
 
-Los efectos de la optimizacion son en su mayoría difíciles de juzgar. Sin embargo pueden ser medidos con [tests de rendimiento](/index.php/Benchmarking "Benchmarking")
+Los efectos de la optimización son en su mayoría difíciles de juzgar. Sin embargo pueden ser medidos con [tests de rendimiento](/index.php/Benchmarking "Benchmarking")
 
 ## Dispositivos de almacenamiento
 
-### Eligiendo y optimizando es sistema de archivos
+### Eligiendo y optimizando el sistema de archivos
 
 Elegir el mejor sistema de archivos para un sistema especifico es muy importante por que cada uno tiene su fuerte.
 
@@ -228,7 +228,7 @@ Ya debería ser posible reiniciar. El autor original sugiere eliminar todo el co
 
 Hay un [bash script](https://bbs.archlinux.org/viewtopic.php?pid=714052) que se diseño para automatizar el proceso de recompresion. Algunas opciones pueden ser no correlativas para Arch.
 
-### Tuning for an SSD
+### Optimizando un disco SSD
 
 [Trucos para maximizar el rendimiento de discos SSD](/index.php/SSD#Tips_for_maximizing_SSD_performance "SSD")
 
@@ -310,9 +310,9 @@ En el desagradable caso de que tenga poca RAM y buena RAM de video, puede usar l
 
 Precargar es seleccionar y mantener determinados archivos en RAM. El uso practico es precargar aplicaciones para que estar carguen rápido, por que leerlas de la RAM es siempre mas rápido que desde el disco rígido. Sin embargo, parte de su RAM sera dedicada a esta tarea, pero no mas de la que utilizaría la aplicación abierta. Por lo tanto la precarga es optima para cargar las aplicaciones que usa con mas frecuencia, como Firefox o Libreoffice.
 
-#### Go-preloada
+#### Go-preload
 
-[Go-preload](https://aur.archlinux.org/packages.php?ID=34207) es un pequeño DEMONIO creado en el [| Foro de Gentoo.](http://forums.gentoo.org/viewtopic-t-789818-view-next.html?sid=5457cff93039fc7d4a3e445ef90f9821). Para usarlo, debe ejecutar este comando por cada programa que se desee precargar, en un terminal_
+[Go-preload](https://aur.archlinux.org/packages.php?ID=34207) es un pequeño DEMONIO creado en el [| Foro de Gentoo.](http://forums.gentoo.org/viewtopic-t-789818-view-next.html?sid=5457cff93039fc7d4a3e445ef90f9821). Para usarlo, debe ejecutar este comando por cada programa que se desee precargar, en un terminal:
 
 ```
 # gopreload-prepare program

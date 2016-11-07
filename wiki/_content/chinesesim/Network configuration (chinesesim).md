@@ -69,7 +69,7 @@ PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
 
 成功时会收到类似上面的 64 bytes 信息，按 `Control-C` 可以停止ping.
 
-**小贴士:** 参数 `-c 3` 表示执行命令 `ping` 3次 。 参见 `man ping`。
+**提示：** 参数 `-c 3` 表示执行命令 `ping` 3次 。 参见 `man ping`。
 
 如果上面的命令说 unknown hosts，意思是你的机器无法进行域名解析。这可能和你的服务提供商或者你的路由器/网关有关。你可以尝试 ping `8.8.8.8` 来验证你的电脑是否能访问 Internet。它是 Google 的主 DNS 服务器，因此它可以视为可信的，通常不会被过滤系统或代理屏蔽。
 

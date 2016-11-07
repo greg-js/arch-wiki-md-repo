@@ -272,7 +272,29 @@ SingleConnectedTechnology=true
 
 ### Connecting to eduroam
 
-See [WPA2 Enterprise#connman](/index.php/WPA2_Enterprise#connman "WPA2 Enterprise").
+[WPA2 Enterprise](/index.php/WPA2_Enterprise "WPA2 Enterprise") networks such as eduroam require a separate configuration file before [connecting](/index.php/Connman#Wi-Fi "Connman") to the network. For example, create `/var/lib/connman/eduroam.config`:
+
+ `eduroam.conf` 
+```
+[service_eduroam]
+Type=wifi
+Name=eduroam
+EAP=peap
+CACertFile=/etc/ssl/certs/*certificate.cer*
+Phase2=*MSCHAPV2*
+Identity=*user@foo.edu*
+AnonymousIdentity=*anonymous@foo.edu*
+Passphrase=*password*
+```
+
+[Restart](/index.php/Restart "Restart") `wpa_supplicant.service` and `connman.service` to connect to the new network.
+
+**Note:**
+
+*   Options are case-sensitive. [[2]](https://together.jolla.com/question/55969/connman-fails-due-to-case-sensitive-settings/)
+*   Consult the institution hosting the eduroam network for various settings such as username, password, `EAP`, `Phase2output`, and needed certificates.
+
+For more information, see connman-service.config(5) and [Wireless network configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").
 
 ### Avoiding conflicts with local DNS server
 

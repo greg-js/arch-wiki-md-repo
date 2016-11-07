@@ -9,7 +9,7 @@
 | Touchpad | Works after configuration |
 | Webcam | Working |
 | Card Reader | Working |
-| Wireless switch | Works (Broadcom WiFi has some [issues](#rfkill_issues_with_Broadcom_wireless)) |
+| Wireless switch | Works ([Some issues with kde](#rfkill_issues_with_KDE)) |
 
 The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of Dell's XPS 13 line. Like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team. They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
 
@@ -40,7 +40,7 @@ As of kernel 4.1.3, a patched kernel is no longer necessary. However, some manua
     *   [3.1 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
     *   [3.2 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
     *   [3.3 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
-    *   [3.4 rfkill issues with Broadcom wireless](#rfkill_issues_with_Broadcom_wireless)
+    *   [3.4 rfkill issues with KDE](#rfkill_issues_with_KDE)
     *   [3.5 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [3.6 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
     *   [3.7 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
@@ -58,6 +58,11 @@ There are no exclusive hardware differences between the Developer Edition and th
 ### BIOS updates
 
 [BIOS update A09](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=MNWHN&fileId=3564153400) was released on 2016-08-30\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+
+Dell does no longer show bios versions higher than A07 on their site. You can download BIOS version A08 and A09 from here:
+
+*   [BIOS A08](https://mega.nz/#!20U2VRBI!FRam__6wjlOjRejd0Oy4Wtof6wdkTkyUUBBz8oTtOno) md5sum: d1df9447f119ce5cb90ebea875a22cd9
+*   [BIOS A09](https://please.insert/link) md5sum: please-insert-link
 
 ### Backlight
 
@@ -197,11 +202,9 @@ If you encounter some artifacts and/or an unusable graphical environment after r
 
 If `wifi-menu` and `iwlist scan` fail after driver installation and reboot, try disabling "Wireless Switch" control in the BIOS.
 
-### rfkill issues with Broadcom wireless
+### rfkill issues with KDE
 
-With kernel 4.4 and Broadcom WiFi card, the wireless switch has no effect except freezing the pointer in the KDE desktop. To unfreeze it, switch to another virtual console and back.
-
-With lower kernel versions, it switches the wireless card on/off at the hardware level, but the Broadcom driver does not not react to it properly: it does not realise the card is off, and only sees a lost connection. It then fails to recover when the card is switched back on. You can work-around this issue by switching WiFi off and on again in the NetworkManager applet or by setting `/sys/class/rfkill/rfkill0/state` to 0 and then 1\. Alternatively, you can disable the "Wireless Switch" control in the firmware setup.
+With recent kernel versions (as from 4.4) the rfkill switch works. Under the KDE desktop, the first time that the rfkill switch is used, the mouse pointer freezes. To unfreeze it, switch to another virtual console and back.
 
 ### EFISTUB does not boot
 

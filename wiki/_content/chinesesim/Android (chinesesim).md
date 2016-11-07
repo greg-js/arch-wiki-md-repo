@@ -200,9 +200,9 @@ Tools -> Options -> Miscellaneous -> Android
 
 ### 安卓调试桥 (ADB)
 
-**小贴士:** 有些设备需要先启用 MTP 才能使用 ADB，而另一些设备需要启用 PTP。
+**提示：** 有些设备需要先启用 MTP 才能使用 ADB，而另一些设备需要启用 PTP。
 
-**小贴士:** 许多设备的 udev 规则被包含在 [libmtp](https://www.archlinux.org/packages/?name=libmtp)，所以如果你已经安装此软件包，以下步骤是不必要的。
+**提示：** 许多设备的 udev 规则被包含在 [libmtp](https://www.archlinux.org/packages/?name=libmtp)，所以如果你已经安装此软件包，以下步骤是不必要的。
 
 #### 连接设备
 

@@ -216,7 +216,7 @@ CONFIG_SECURITY_SELINUX_AVC_STATS=y
 CONFIG_DEFAULT_SECURITY_SELINUX=y
 ```
 
-**Note:** If using proprietary drivers, such as [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics drivers, you may need to [rebuild them](/index.php/NVIDIA#Alternate_install:_custom_kernel "NVIDIA") for custom kernels.
+{{Note|If using proprietary drivers, such as [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics drivers, you may need to [rebuild them](/index.php/NVIDIA#Custom_kernel "NVIDIA")
 
 There are two methods to install the requisite SELinux packages.
 

@@ -76,7 +76,7 @@ GPT fdisk 是编辑 GPT 硬盘的文本模式工具集。由 gdisk, sgdisk 和 c
 
 ```
 
-**小贴士:** 如果 cgdisk 没法把您的硬盘改为 GPT, [parted](https://www.archlinux.org/packages/?name=parted) 能。
+**提示：** 如果 cgdisk 没法把您的硬盘改为 GPT, [parted](https://www.archlinux.org/packages/?name=parted) 能。
 
 **根分区：**
 

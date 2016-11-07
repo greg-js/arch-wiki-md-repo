@@ -63,7 +63,7 @@ $ wget -qO- [https://gist.githubusercontent.com/Keziolio/caed197e8cff640b00e766a
 
 ```
 
-Then copy the firmware in `/lib/firmware/mssl1680.fw` , install the driver and the touchscreen should be working.
+Then copy the firmware in `/lib/firmware/silead/mssl1680.fw` , install the driver and the touchscreen should be working.
 
 If it doesn't, uninstall `xf86-input-libinput` and use `xf86-input-evdev`.
 

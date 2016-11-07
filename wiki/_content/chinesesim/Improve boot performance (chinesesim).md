@@ -28,7 +28,7 @@ $ systemd-analyze
 
 ```
 
-**小贴士:** 如果使用 [UEFI](/index.php/UEFI "UEFI") 引导，且启动引导器实现了 systemd 的 [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface)（目前只有 [Gummiboot](/index.php/Gummiboot "Gummiboot") 实现了），**systemd-analyze** 还可以显示 EFI 固件和启动引导器自身花费的时间。
+**提示：** 如果使用 [UEFI](/index.php/UEFI "UEFI") 引导，且启动引导器实现了 systemd 的 [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface)（目前只有 [Gummiboot](/index.php/Gummiboot "Gummiboot") 实现了），**systemd-analyze** 还可以显示 EFI 固件和启动引导器自身花费的时间。
 
 按照耗费时间顺序，输出启动每个单元耗费的时间：
 

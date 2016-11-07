@@ -100,6 +100,8 @@ ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?na
 
 **Note:** For NVIDIA Optimus enabled laptop which uses an integrated video card combined with a dedicated GPU, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") or [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
+**Tip:** If you are trying to figure out what drivers to install for your card, [this spreadsheet](https://goo.gl/R0Te9T) created by fellow Linux users may help you.
+
 Other video drivers can be found in the [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/) group.
 
 Xorg should run smoothly without closed source drivers, which are typically needed only for advanced features such as fast 3D-accelerated rendering for games.

@@ -18,12 +18,10 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Exit to the current directory](#Exit_to_the_current_directory)
     *   [5.2 Garbled screen](#Garbled_screen)
-        *   [5.2.1 $COLUMNS not set in subshell](#.24COLUMNS_not_set_in_subshell)
     *   [5.3 Opening files](#Opening_files)
     *   [5.4 Find file shows no results](#Find_file_shows_no_results)
-    *   [5.5 Terminfo](#Terminfo)
-        *   [5.5.1 No bold text in urxvt](#No_bold_text_in_urxvt)
-        *   [5.5.2 Shift+F6 not working](#Shift.2BF6_not_working)
+    *   [5.5 Broken shortcuts](#Broken_shortcuts)
+    *   [5.6 No bold text in urxvt](#No_bold_text_in_urxvt)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -44,11 +42,11 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 
 	[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) ||
 
-See also `**Skins**` in `man mc`.
+See also `**Skins**` in mc(1).
 
 ## Usage
 
-The below section provides a short overview on usage of Midnight commander. References to `man mc` and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
+The below section provides a short overview on usage of Midnight commander. References to mc(1) and the Help function (`F1`, available in every dialog) are made in this article as `**Section**`.
 
 **Tip:** All hints are available in `/usr/share/mc/hints/`.
 
@@ -155,20 +153,16 @@ Another simple workaround is to use the subshell (`Ctrl+o`). This may however in
 
 Press `Ctrl+l` to redraw the display. This only redraws, but does not refresh (`Ctrl+r`) the file list.
 
-#### $COLUMNS not set in subshell
-
-As of v4.8.17, resizing the terminal when inside the mc subshell does not update the `COLUMNS` variable. As a result, terminal applications such as [vim](/index.php/Vim "Vim") will be unusable. [FS#50862](https://bugs.archlinux.org/task/50862) This is fixed in the [mc-git](https://aur.archlinux.org/packages/mc-git/) package.
-
 ### Opening files
 
 *mc* reads the `MC_XDG_OPEN` [environment variable](/index.php/Environment_variable "Environment variable") to open files, which defaults to [xdg-open](/index.php/Xdg-open "Xdg-open") when unset. [[3]](https://github.com/MidnightCommander/mc/blob/master/misc/ext.d/misc.sh.in)
 
-if *mc* is blocked until the resulting process ends, or the process exits together with mc, use *nohup &*:
+if *mc* is blocked until the resulting process ends, or the process exits together with mc, use `nohup &`:
 
  `~/bin/nohup-open` 
 ```
 #!/bin/bash
-nohup xdg-open "$@" &
+**nohup** xdg-open "$@" **&**
 
 ```
 
@@ -183,11 +177,42 @@ export MC_XDG_OPEN=~/bin/nohup-open
 
 ### Find file shows no results
 
-If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. Find file does not follow symbolic links, so use bind mounts (see `man mount`) instead, or the *External panelize* command.
+If the *Find file* dialog (accessible with `Alt+?`) shows no results, check the current directory for symbolic links. *Find file* does not follow symbolic links, so use bind mounts (see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)) instead, or the *External panelize* command.
 
-### Terminfo
+### Broken shortcuts
 
-#### No bold text in urxvt
+With certain terminal definitions such as `screen-256color` or `xterm-termite`, shortcuts such as `Shift+F6` may not work or act as different combinations. To remedy his, assign the terminal sequences manually with the `**Learn keys**` dialog.
+
+Settings will be stored in the `~/.config/mc/ini` file, for example for `screen-256color`:
+
+```
+[terminal:screen-256color]
+f1=\\eOP
+f2=\\eOQ
+f3=\\eOR
+f4=\\eOS
+f5=\\e[15~
+f6=\\e[17~
+f7=\\e[18~
+f8=\\e[19~
+f9=\\e[20~
+f10=\\e[21~
+f11=\\e[23~
+f12=\\e[24~
+f13=\\e[1\;2R
+f14=\\e[1\;2S
+f15=\\e[15\;2~
+f16=\\e[17\;2~
+f17=\\e[18\;2~
+f18=\\e[19\;2~
+f19=\\e[20\;2~
+f20=\\e[21\;2~
+complete=\\e^i
+backtab=\\e[Z
+backspace=^?
+```
+
+### No bold text in urxvt
 
 If started under [urxvt](/index.php/Urxvt "Urxvt") with the default `TERM` setting, text that is usually bold in many other terminals will not appear so. The root of the issue is because xterm couples bright text color with the bold attribute (thus, bright colors will always appear as bold in xterm).
 
@@ -205,24 +230,6 @@ sed -i -E 's/^(.* = (gray|brightred|brightgreen|yellow|brightblue|brightmagenta|
 The above will create a copy of the default skin, but with all bright colors having an explicit bold attribute added.
 
 Another common workaround is to set `TERM=xterm`, however this causes other issues due to mismatching termcap/terminfo, such as certain keys not working.
-
-#### Shift+F6 not working
-
-If the `Shift+F6` key combination is not working with either `TERM=screen` or `TERM=screen-256color`, then from inside tmux, run this command:
-
-```
-$ infocmp > screen (or screen-256color)
-
-```
-
-Open the file in a text editor, and add the following to the bottom of that file:
-
-```
-kf16=\E[29~,
-
-```
-
-Then compile the file with `tic`. The keys should be working now.
 
 ## See also
 

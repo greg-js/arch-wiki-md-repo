@@ -17,7 +17,8 @@ SANE ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now
         *   [6.1.3 Multiple backends claim scanner](#Multiple_backends_claim_scanner)
         *   [6.1.4 Communication via xHCI not working (older scanner models)](#Communication_via_xHCI_not_working_.28older_scanner_models.29)
     *   [6.2 Slow startup](#Slow_startup)
-    *   [6.3 Permission problem](#Permission_problem)
+    *   [6.3 Device busy](#Device_busy)
+    *   [6.4 Permission problem](#Permission_problem)
 
 ## Installation
 
@@ -207,6 +208,12 @@ If you encounter slow startup issue (e.g. `xsane` or `scanimage -L` take a lot t
 Have a look at `/etc/sane.d/dll.conf` and try commenting out one (e.g. you may have epson, epson2 and epkowa enabled at the same time, try leaving only epson or epkowa uncommented)
 
 You can also try to comment out "net" driver, if there are no network scanners.
+
+Your webcam might also be listed as scanning device and slow down detection at startup. To blacklist webcam, try commenting out all the lines in `/etc/sane.d/v4l.conf`.
+
+### Device busy
+
+If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the usblp kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents usblp from loading to support scanning, not needed by either CUPS or xsane and related tools). Reboot to finish. [[1]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
 
 ### Permission problem
 

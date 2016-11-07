@@ -161,19 +161,19 @@ $ sudo systemctl restart lxd
 For launching images you must provide `security.privileged=true` during image creation:
 
 ```
-$ lxc launch ubuntu:16.04 test_ubuntu -c security.privileged=true
+$ lxc launch ubuntu:16.04 ubuntu -c security.privileged=true
 
 ```
 
 Or for already existed image you may edit config:
 
 ```
-$ lxc config edit test_ubuntu
+$ lxc config edit ubuntu
 
 ```
 
 ```
-name: test_ubuntu
+name: ubuntu
 profiles:
 - default
 config:

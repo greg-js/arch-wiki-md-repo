@@ -13,6 +13,8 @@ Learn more at [Khronos](https://www.khronos.org/vulkan/).
 
 ## Installation
 
+**Note:** Vulkan is not currently supported by hybrid graphics implementations such as [Bumblebee](/index.php/Bumblebee "Bumblebee"). See [[1]](https://github.com/Bumblebee-Project/Bumblebee/issues/769)
+
 To run a Vulkan application, you will need to [install](/index.php/Install "Install") the [vulkan-icd-loader](https://www.archlinux.org/packages/?name=vulkan-icd-loader) package, as well as the Vulkan drivers for your graphics card(s):
 
 *   Intel: [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel)

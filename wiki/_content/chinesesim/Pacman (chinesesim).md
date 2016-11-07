@@ -6,7 +6,7 @@
 
 *pacman* 用 C 语言编写，使用 `.pkg.tar.xz` 打包格式。
 
-**小贴士:** [pacman](https://www.archlinux.org/packages/?name=pacman) 软件包还提供了其它有用工具，例如**makepkg**、**pactree**、**vercomp**、 [checkupdates](/index.php/Checkupdates "Checkupdates")等。可以通过 `pacman -Ql pacman | grep bin` 获取工具列表。
+**提示：** [pacman](https://www.archlinux.org/packages/?name=pacman) 软件包还提供了其它有用工具，例如**makepkg**、**pactree**、**vercomp**、 [checkupdates](/index.php/Checkupdates "Checkupdates")等。可以通过 `pacman -Ql pacman | grep bin` 获取工具列表。
 
 ## Contents
 
@@ -202,7 +202,7 @@ pacman -Rn package_name
 
 *pacman* 是强大的软件包管理工具，但是不会做所有的事情。遵循[Arch 之道](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")，用户需要负责维护自己的系统。**执行系统升级时，请务必阅读 *pacman* 输出的所有信息。**如果用户修改过的配置文件需要更新，新的配置文件会被保存为 `.pacnew` 文件以免覆盖了用户的配置。*pacman* 会提醒用户合并新旧文件。这些文件需要手动干预。在升级或删除软件包后，应该立即着手处理。参见 [Pacnew 和 pacsave 文件](/index.php/Pacnew_and_Pacsave_files_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacnew and Pacsave files (简体中文)")。
 
-**小贴士:**
+**提示：**
 
 *   *pacman* 输出会记录到 `/var/log/pacman.log`。
 *   你可以使用日志阅读工具，如[wat-git](https://aur.archlinux.org/packages/wat-git/)来搜索pacman的日志。
