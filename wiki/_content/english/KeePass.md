@@ -73,6 +73,10 @@ Modifies window title to assist autotype feature.
 
 Extension allowing Google Chrome and Chromium to form-fill passwords stored in KeePass.
 
+*   [Url in title](https://chrome.google.com/webstore/detail/url-in-title/ignpacbgnbnkaiooknalneoeladjnfgb)
+
+Modifies window title to assist autotype feature. Similar to KeePass Helper for Firefox in function.
+
 ## See Also
 
 *   [Pass](/index.php/Pass "Pass")

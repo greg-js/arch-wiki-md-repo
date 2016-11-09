@@ -6,7 +6,7 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
 *   [2 Firmware updates](#Firmware_updates)
 *   [3 Partitions](#Partitions)
     *   [3.1 Arch Linux only](#Arch_Linux_only)
-    *   [3.2 Arch Linux with OS X or other operative systems](#Arch_Linux_with_OS_X_or_other_operative_systems)
+    *   [3.2 Arch Linux with OS X or other operating systems](#Arch_Linux_with_OS_X_or_other_operating_systems)
         *   [3.2.1 Option 1: EFI](#Option_1:_EFI)
         *   [3.2.2 Option 2: BIOS-compatibility](#Option_2:_BIOS-compatibility)
     *   [3.3 OS X, Windows XP, and Arch Linux triple boot](#OS_X.2C_Windows_XP.2C_and_Arch_Linux_triple_boot)
@@ -21,7 +21,6 @@ Installing Arch Linux on a MacBook (12"/Air/Pro) or an iMac is quite similar to 
 *   [6 Post-installation](#Post-installation)
     *   [6.1 Video](#Video)
         *   [6.1.1 NVIDIA note](#NVIDIA_note)
-        *   [6.1.2 MacBookPro5,5, NVIDIA and secondary display](#MacBookPro5.2C5.2C_NVIDIA_and_secondary_display)
     *   [6.2 Touchpad](#Touchpad)
     *   [6.3 Keyboard](#Keyboard)
         *   [6.3.1 Keyboard Backlight](#Keyboard_Backlight)
@@ -144,7 +143,7 @@ partition  mountpoint  size    type  label
 
 *   Done, you can continue to [#Installation](#Installation)
 
-### Arch Linux with OS X or other operative systems
+### Arch Linux with OS X or other operating systems
 
 You need to partition your hard drive while keeping the partitions used for OS X/Windows. If you wish to keep OS X, the easiest way is to use partitioning tools in OS X and then finish with Arch Linux tools.
 
@@ -278,7 +277,7 @@ Apple's native EFI bootloader reads `.efi` files located inside the [EFI System 
 
  `# bootctl --path=/boot install` 
 
-The above command will copy the *systemd-boot* binary to `/boot/EFI/Boot/BOOTX64.EFI` and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+The above command will copy the *systemd-boot* binary to `/boot/EFI/BOOT/BOOTX64.EFI` and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 *   Proceed to [systemd-boot#Configuration](/index.php/Systemd-boot#Configuration "Systemd-boot") in order to correctly set up the bootloader
 
@@ -537,12 +536,6 @@ For MacBooks with NVIDIA graphics, for the backlight to work properly you may ne
 *   If backlight control does not work after installing nvidia-bl, you should [blacklist](/index.php/Blacklist "Blacklist") apple_bl kernel module.
 *   If backlight control does not work even this way, try setting module parameters, e.g. `options nvidiabl screen_type=3 min=0 max=44000` in `/etc/modprobe.conf` in case of MacBook Air 3.2
 *   Alternatively, you can choose to use the [pommed-light](https://aur.archlinux.org/packages/pommed-light/) package. If you do so, you may wish to change the step settings in `/etc/pommed.conf.mactel` to something around 5000-10000 depending on how many levels of brightness you desire. The max brightness is around 80000, so take that into account.
-
-##### MacBookPro5,5, NVIDIA and secondary display
-
-As of January 1 2011, the latest NVIDIA drivers (290.10) might not work properly when a secondary display is used (tested with TwinView), NVIDIA's current [long-live supported](http://www.nvnews.net/vbulletin/showthread.php?t=122606) 275xx drivers seem to work fine. Install [nvidia-275xx](https://aur.archlinux.org/packages/nvidia-275xx/) and [nvidia-utils-275xx](https://aur.archlinux.org/packages/nvidia-utils-275xx/), and possibly [lib32-nvidia-utils-275xx](https://aur.archlinux.org/packages/lib32-nvidia-utils-275xx/) if you are on x86_64 system and want 32-bits support.
-
-MacBookPro5,5 has an NVIDIA 9400m graphics card. This problem might apply to other devices as well.
 
 #### Touchpad
 

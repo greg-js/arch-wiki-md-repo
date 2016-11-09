@@ -81,7 +81,7 @@ For a more comprehensive tutorial on the Sage Notebook see the [Sage documentati
 
 ### Jupyter Notebook
 
-SageMath also provides a kernel for the [Jupyter](https://jupyter.org/) notebook. To use it, install [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) and [mathjax](https://www.archlinux.org/packages/?name=mathjax), launch the notebook with the command
+SageMath also provides a kernel for the [Jupyter](https://jupyter.org/) notebook in package [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter). To use it, install [ipython2-notebook](https://www.archlinux.org/packages/?name=ipython2-notebook) and [mathjax](https://www.archlinux.org/packages/?name=mathjax), launch the notebook with the command
 
 ```
 $ jupyter notebook

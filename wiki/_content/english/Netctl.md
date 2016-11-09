@@ -34,6 +34,7 @@
     *   [5.6 netctl-auto suddenly stopped working for WiFi adapters](#netctl-auto_suddenly_stopped_working_for_WiFi_adapters)
     *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
     *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
+    *   [5.9 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -672,6 +673,10 @@ ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
 WantedBy=network-online.target
 
 ```
+
+### Problems with eduroam and other MSCHAPv2 connections
+
+See [WPA supplicant#Problems with eduroam and other MSCHAPv2 connections](/index.php/WPA_supplicant#Problems_with_eduroam_and_other_MSCHAPv2_connections "WPA supplicant").
 
 ## See also
 

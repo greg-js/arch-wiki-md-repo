@@ -53,4 +53,4 @@ Follow the installation instructions in [IR Kernel](https://github.com/IRkernel/
 
 ### Sage math
 
-Install [sagemath](https://www.archlinux.org/packages/?name=sagemath).
+Install [sagemath](https://www.archlinux.org/packages/?name=sagemath) and [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath-jupyter).

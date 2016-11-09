@@ -225,7 +225,7 @@ DISTCC_HOSTS="192.168.1.101/5:3692 192.168.1.102/5:3692 192.168.1.103/3:3692"
 
 ##### Invoke makepkg from the Native Environment
 
-Setup [schroot](/index.php/Install_bundled_32-bit_system_in_Arch64#Executing_32-bit_applications_from_a_64-bit_environment "Install bundled 32-bit system in Arch64") on the native x86_64 environment. Invoke makepkg to build an i686 package from the native x86_64 environment, simply by:
+Setup [schroot](/index.php/Install_bundled_32-bit_system_in_64-bit_system#Schroot "Install bundled 32-bit system in 64-bit system") on the native x86_64 environment. Invoke makepkg to build an i686 package from the native x86_64 environment, simply by:
 
 ```
 $ schroot -p -- makepkg -src

@@ -184,7 +184,7 @@ calc() {
 
 Kingbash - menu driven auto-completion (see [BBS#101010](https://bbs.archlinux.org/viewtopic.php?id=101010)).
 
-Install [kingbash](https://aur.archlinux.org/packages/kingbash/) from the [AUR](/index.php/AUR "AUR"), then insert the following into your `~/.bashrc`:
+Install [kingbash-gb-git](https://aur.archlinux.org/packages/kingbash-gb-git/) from the [AUR](/index.php/AUR "AUR"), then insert the following into your `~/.bashrc`:
 
  `~/.bashrc` 
 ```

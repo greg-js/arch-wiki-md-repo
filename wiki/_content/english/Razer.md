@@ -119,7 +119,7 @@ Killer Wireless adapters no longer require special firmware to function, and wil
 
 #### Touchpad
 
-[Install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package. See [Libinput](/index.php/Libinput "Libinput") for more information on this driver.
+[Install](/index.php/Install "Install") the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package: this is also the only one that will enable natural scrolling. See [Libinput](/index.php/Libinput "Libinput") for more information on this driver.
 
 Alternatively, if you prefer using the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") driver, [install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package.
 
@@ -173,8 +173,6 @@ If you are using [GNOME](/index.php/GNOME "GNOME"), the *gnome-tweak-tool* can b
 
 If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI"), you can use *xrandr* to alter the scaling of the external monitor using the instructions for [Multiple Displays](/index.php/HiDPI#Multiple_displays "HiDPI"). You may have better results though running [GNOME](/index.php/GNOME "GNOME") on [Wayland](/index.php/Wayland "Wayland"). When installed, clicking the gear icon in [GDM](/index.php/GDM "GDM") will allow you to select *Gnome On Wayland* and will default to that in the future.
 
-A distro that works out-of-the-box without the need of any tweaking is [Antergos](https://antergos.com/) with the default Gnome desktop environment.
-
 #### Audio
 
 On the latest 'KabyLake' Intel CPU, if you also have a dual-boot with Windows, you might experience some audio issues when booting to Windows and restarting on Linux. The problem is no sound from the speakers and some cracking noises on the headphones - especially when using the touchpad -. No official solution has been posted yet, but a quick hack is to completely shut down the computer (so power off, not restart).
@@ -187,7 +185,7 @@ On the latest 'KabyLake' Intel CPU, if you also have a dual-boot with Windows, y
 
 #### Problems
 
-[Source](http://forum.notebookreview.com/razer/751074-2014-razer-blade-14-linux.html) [https://antergos.com/](https://antergos.com/)
+[Source](http://forum.notebookreview.com/razer/751074-2014-razer-blade-14-linux.html)
 
 *   touchpad (multitouch, although this may be a kernel bug that has since been fixed)
 *   keys to increase/decrease screen illumination not working

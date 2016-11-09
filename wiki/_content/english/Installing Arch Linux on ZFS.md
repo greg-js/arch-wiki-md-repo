@@ -254,6 +254,8 @@ HOOKS="base udev autodetect modconf block keyboard zfs filesystems"
 
 ```
 
+When using systemd in the initrd, you need to install [mkinitcpio-sd-zfs](https://aur.archlinux.org/packages/mkinitcpio-sd-zfs/) and add the `sd-zfs` hook after the `systemd` hook instead of the `zfs` hook. Keep in mind that this hook uses different kernel parameters than the default `zfs` hook, more information can be found at the [project page](https://github.com/dasJ/sd-zfs).
+
 **Note:**
 
 *   If you are using a separate dataset for `/usr` and have followed the instructions below, you must make sure you have the `usr` hook enabled after `zfs`, or your system will not boot.

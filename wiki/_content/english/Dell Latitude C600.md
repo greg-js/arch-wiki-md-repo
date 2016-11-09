@@ -101,7 +101,7 @@ Please anyone feel free to add to this section how you got it working if you hav
 
 This laptop has a great touchpad and has lots of features if used in conjunction with the synaptics driver for xorg.
 
-[Install](/index.php/Install "Install") the [synaptics](https://www.archlinux.org/packages/?name=synaptics) package and use this in your xorg config's mouse section
+[Install](/index.php/Install "Install") the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package and use this in your xorg config's mouse section
 
 ```
 Driver          "synaptics"

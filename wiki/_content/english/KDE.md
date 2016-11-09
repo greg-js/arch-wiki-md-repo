@@ -26,8 +26,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [3.3 Samba/Windows support](#Samba.2FWindows_support)
     *   [3.4 KDE Desktop activities](#KDE_Desktop_activities)
     *   [3.5 Power saving](#Power_saving)
-    *   [3.6 Monitoring changes on local files and directories](#Monitoring_changes_on_local_files_and_directories)
-    *   [3.7 Autostarting applications](#Autostarting_applications)
+    *   [3.6 Autostarting applications](#Autostarting_applications)
 *   [4 System administration](#System_administration)
     *   [4.1 Terminate Xorg server through KDE System Settings](#Terminate_Xorg_server_through_KDE_System_Settings)
     *   [4.2 KCM](#KCM)
@@ -322,10 +321,6 @@ A plasma bar presenting you the current existing Plasma Desktop Activities will 
 Plasma has an integrated power saving service called "**Powerdevil Power Management**" that may adjust the power saving profile of the system and/or the brightness of the screen (if supported).
 
 **Note:** Powerdevil may not [inhibit](/index.php/Power_management#Power_managers "Power management") all logind settings (such as the lid close action for laptops). In these cases, the logind setting itself will need to be changed - see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
-
-### Monitoring changes on local files and directories
-
-KDE now uses **inotify** directly from the kernel with **kdirwatch** (included in kdelibs), so Gamin or FAM are no longer needed. You may want to install this [kdirwatch](https://aur.archlinux.org/packages/kdirwatch/) from AUR which is a GUI frontend for kdirwatch.
 
 ### Autostarting applications
 

@@ -13,6 +13,7 @@ The content of this article was originally written on [this page](https://wiki.u
     *   [3.1 Compilation problems](#Compilation_problems)
     *   [3.2 Runtime problems](#Runtime_problems)
     *   [3.3 C++ code project problems](#C.2B.2B_code_project_problems)
+    *   [3.4 Disable Tooltips](#Disable_Tooltips)
 *   [4 Additional Content](#Additional_Content)
     *   [4.1 Starter Content](#Starter_Content)
     *   [4.2 Marketplace Apps](#Marketplace_Apps)
@@ -45,7 +46,7 @@ To compile manually, refer to [the official instructions to build on Linux](http
 
 ## Troubleshooting
 
-#### Compilation problems
+### Compilation problems
 
 If the compilation fails you should try building the Editor using the Debug profile:
 
@@ -54,7 +55,7 @@ $ make UE4Editor-Linux-Debug
 
 ```
 
-#### Runtime problems
+### Runtime problems
 
 If the editor doesn't start from the menu, or something doesn't work right, start it in a console and check the output for errors.
 
@@ -64,9 +65,15 @@ $ ./UE4Editor
 
 ```
 
-#### C++ code project problems
+### C++ code project problems
 
 After creating a code project, the new project opens in a text editor instead of in UE4Editor as it should. After re-launching the editor, the new project shows up and can be opened, but on the first run, it takes a half-hour or so to compile, and since this happens in the background (no GUI) it might not seem to be doing anything. The CPU usage should show that it's still compiling, and you may want to launch the editor from a console to see progress.
+
+### Disable Tooltips
+
+UE4's mouse-over tooltips might be rendered very slow. They can be disabled by adding to
+
+ `Engine/Config/ConsoleVariables.ini`  `Slate.AllowToolTips=0` 
 
 ## Additional Content
 

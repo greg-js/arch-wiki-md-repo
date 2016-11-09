@@ -26,6 +26,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [5 Wireless](#Wireless)
 *   [6 Bluetooth](#Bluetooth)
 *   [7 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
+    *   [7.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
 *   [8 SATA controller](#SATA_controller)
 *   [9 Touchpad](#Touchpad)
     *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
@@ -67,6 +68,10 @@ After following the instructions given at [Bluetooth](/index.php/Bluetooth "Blue
 ## Thunderbolt 3 / USB 3.1
 
 The USB-C port supports Thunderbolt 3, Displayport-over-USB-C and USB power delivery as well as USB 3.1.
+
+### Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)
+
+Use of a power management package (such as [TLP](/index.php/TLP "TLP")) may cause the ethernet adapter to repeatedly disconnect and reconnect. If this happens, disable/blacklist USB autosuspend for the ethernet adapter. (On my laptop, this is the device <tt>Bus 004 Device 007: ID 0bda:8153 Realtek Semiconductor Corp</tt> in the output of <tt>lsusb</tt>.)
 
 ## SATA controller
 

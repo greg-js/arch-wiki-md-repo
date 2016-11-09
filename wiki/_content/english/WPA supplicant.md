@@ -18,6 +18,7 @@
     *   [6.1 nl80211 driver not supported on some hardware](#nl80211_driver_not_supported_on_some_hardware)
     *   [6.2 Problem with mounted network shares (cifs) and shutdown](#Problem_with_mounted_network_shares_.28cifs.29_and_shutdown)
     *   [6.3 Password-related problems](#Password-related_problems)
+    *   [6.4 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -336,6 +337,22 @@ $ wpa_supplicant -i <interface> -c /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
 In some instances it was found that storing the passphrase cleartext in the `psk` key of the `wpa_supplicant.conf` `network` block gave positive results (see [[1]](http://www.linuxquestions.org/questions/linux-wireless-networking-41/wpa-4-way-handshake-failed-843394/)). However, this approach is rather insecure. Using `wpa_cli` to create this file instead of manually writing it gives the best results most of the time and therefore is the recommended way to proceed.
+
+### Problems with eduroam and other MSCHAPv2 connections
+
+As of [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) 1:2.6-1, following [FS#51358](https://bugs.archlinux.org/task/51358), you should change your configuration from
+
+```
+phase2="auth=MSCHAPv2"
+
+```
+
+by capitalizing the letter "v", to
+
+```
+phase2="auth=MSCHAPV2"
+
+```
 
 ## See also
 

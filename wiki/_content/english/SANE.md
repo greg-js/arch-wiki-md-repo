@@ -122,9 +122,9 @@ localhost
 
 ```
 
-If you use iptables, insert the `nf_conntrack_sane` module to let the firewall track saned connections.
+If you use iptables, [insert](/index.php/Kernel_modules "Kernel modules") the `nf_conntrack_sane` module to let the firewall track saned connections.
 
-Now start/enable `saned.socket` [using systemd](/index.php/Systemd#Using_units "Systemd"). Your scanner is now available over the network. For more information, see `man saned`.
+Now start/enable `saned.socket` [using systemd](/index.php/Systemd#Using_units "Systemd"). Your scanner is now available over the network. For more information, see [saned(8)](https://linux.die.net/man/8/saned).
 
 ### Accessing your scanner from a remote workstation
 
@@ -195,9 +195,9 @@ It may also be possible that the independant [iscan](https://www.archlinux.org/p
 
 #### Communication via xHCI not working (older scanner models)
 
-Some older Scanner models do not work when connected via an USB3 port. This is not a big issue if USB2 ports are available. In case the machine running arch-linux has only USB3 ports, there are several ways to resolve the issue.
+Some older scanner models do not work when connected via an USB3 port. This is not a big issue if USB2 ports are available. If only USB3 ports are available, there are several ways to resolve the issue:
 
-*   Disable xHCI via Bios/EFI. eHCI will consequently be used and communication with the scanner will work. On the downside, USB3 speed can not be reached on any port.
+*   Disable xHCI via BIOS/EFI. eHCI will consequently be used and communication with the scanner will work. On the downside, USB3 speed can not be reached on any port.
 *   On (some) intel chipsets the 'setpci' command can be used to route specific usb ports to either the xHCI or the eHCI controller. See [Here](https://forums.opensuse.org/showthread.php/507627-Suse-13-2-scanner-no-longer-working-on-64-bit-version?p=2714695#post2714695) and [Here](http://superuser.com/questions/812022/force-a-single-usb-3-0-port-to-work-as-usb-2-0) (scroll down to where it says "setpci") for further information. With this it is possible to toggle single USB ports with a simple shell script.
 *   Connect the scanner over the network instead if it is supported.
 

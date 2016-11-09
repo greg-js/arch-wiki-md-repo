@@ -62,7 +62,7 @@ There are other SoundFonts available. To install the [soundfont-fluid](https://w
 
  `/etc/timidity++/timidity.cfg` 
 ```
-soundfont /usr/share/soundfonts/FluidR3_GM2-2.sf2
+soundfont /usr/share/soundfonts/FluidR3_GM.sf2
 
 ```
 

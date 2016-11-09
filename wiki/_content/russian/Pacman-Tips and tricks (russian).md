@@ -26,9 +26,9 @@
     *   [2.7 Построение списка изменённых файлов из резервного копирования](#.D0.9F.D0.BE.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.91.D0.BD.D0.BD.D1.8B.D1.85_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B8.D0.B7_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BA.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
     *   [2.8 Создание резервной копии базы данных Pacman](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B5.D0.B7.D0.B5.D1.80.D0.B2.D0.BD.D0.BE.D0.B9_.D0.BA.D0.BE.D0.BF.D0.B8.D0.B8_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_Pacman)
     *   [2.9 Лёгкий способ проверки списка изменений](#.D0.9B.D1.91.D0.B3.D0.BA.D0.B8.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8_.D1.81.D0.BF.D0.B8.D1.81.D0.BA.D0.B0_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B9)
-*   [3 Installation and recovery](#Installation_and_recovery)
-    *   [3.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
-    *   [3.2 Custom local repository](#Custom_local_repository)
+*   [3 Установка и восстановление](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8_.D0.B2.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [3.1 Установка пакетов с CD/DVD или USB накопителя](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2_.D1.81_CD.2FDVD_.D0.B8.D0.BB.D0.B8_USB_.D0.BD.D0.B0.D0.BA.D0.BE.D0.BF.D0.B8.D1.82.D0.B5.D0.BB.D1.8F)
+    *   [3.2 Собственный локальный репозиторий](#.D0.A1.D0.BE.D0.B1.D1.81.D1.82.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.B9_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.80.D0.B5.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BE.D1.80.D0.B8.D0.B9)
     *   [3.3 Network shared pacman cache](#Network_shared_pacman_cache)
         *   [3.3.1 Read-only cache](#Read-only_cache)
         *   [3.3.2 Read-write cache](#Read-write_cache)
@@ -366,13 +366,13 @@ $ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
 
 Когда мейнтейнеры обновляют пакеты, правки часто комментируются в удобной форме. Пользователи могут легко просмотреть их из командной строки с помощью [paclog](https://aur.archlinux.org/packages/paclog/). Эта утилита выводит список последних комментариев мейнтейнеров к правкам для пакетов из официальных репозиториев или AUR, используя `paclog package`.
 
-## Installation and recovery
+## Установка и восстановление
 
-Alternative ways of getting and restoring packages.
+Альтернативные способы получения и восстановления пакетов.
 
-### Installing packages from a CD/DVD or USB stick
+### Установка пакетов с CD/DVD или USB накопителя
 
-To download packages, or groups of packages:
+Чтобы установить пакеты или группы пакетов, необходимо выполнить:
 
 ```
 # cd ~/Packages
@@ -381,20 +381,20 @@ To download packages, or groups of packages:
 
 ```
 
-Then you can burn the "Packages" folder to a CD/DVD or transfer it to a USB stick, external HDD, etc.
+После этого необходимо записать папку "Packages" на CD/DVD или переместить ее на USB накопитель, внешний HDD, и т.д.
 
-To install:
+Установка:
 
-**1.** Mount the media:
+**1.** Примонтируйте носитель:
 
 ```
 # mkdir /mnt/repo
-# mount /dev/sr0 /mnt/repo    #For a CD/DVD.
-# mount /dev/sdxY /mnt/repo   #For a USB stick.
+# mount /dev/sr0 /mnt/repo    #Для CD/DVD.
+# mount /dev/sdxY /mnt/repo   #Для USB накопителя.
 
 ```
 
-**2.** Edit `pacman.conf` and add this repository *before* the other ones (e.g. extra, core, etc.). This is important. Do not just uncomment the one on the bottom. This way it ensures that the files from the CD/DVD/USB take precedence over those in the standard repositories:
+**2.** Отредактируйте `pacman.conf` и добавьте этот репозиторий *перед* всеми остальными (например extra, core, etc.). Это необходимо сделать для того, чтобы файлы с CD/DVD/USB смогли получить приоритет над теми, которые находятся в стандартных репозиториях. Ни в коем случае не надо оставлять раскомментированный репозиторий в самом низу:
 
  `/etc/pacman.conf` 
 ```
@@ -403,36 +403,36 @@ SigLevel = PackageRequired
 Server = file:///mnt/repo/Packages
 ```
 
-**3.** Finally, synchronize the pacman database to be able to use the new repository:
+**3.** В заключение, синхронизируйте базу данных pacman, чтобы получить возможность использовать подключенный репозиторий:
 
 ```
 # pacman -Syu
 
 ```
 
-### Custom local repository
+### Собственный локальный репозиторий
 
-Use the *repo-add* script included with Pacman to generate a database for a personal repository. Use `repo-add --help` for more details on its usage. Simply store all of the built packages to be included in the repository in one directory, and execute the following command (where *repo* is the name of the custom repository):
-
-```
-$ repo-add /path/to/repo.db.tar.gz /path/to/*.pkg.tar.xz
+Используйте скрипт *repo-add*, идущий в комплекте с Pacman, чтобы сгенерировать базу данных для персонального репозитория. Используйте `repo-add --help`, чтобы узнать больше. Просто убедитесь, что все нужные пакеты расположены в одном каталоге, и выполните команду (где *repo* - имя нового репозитория):
 
 ```
-
-**Примечание:** A package database is a tar file, optionally compressed. Valid extensions are “.db” or “.files” followed by an archive extension of “.tar”, “.tar.gz”, “.tar.bz2”, “.tar.xz”, or “.tar.Z”. The file does not need to exist, but all parent directories must exist. Furthermore when using `repo-add` keep in mind that the database and the packages do not need to be in the same directory. But when using pacman with that database, they should be together.
-
-To add a new package to the database, or to replace the old version of an existing package in the database, run:
-
-```
-$ repo-add /path/to/repo.db.tar.gz /path/to/packagetoadd-1.0-1-i686.pkg.tar.xz
+$ repo-add /путь/до/repo.db.tar.gz /путь/до/*.pkg.tar.xz
 
 ```
 
-*repo-remove* is used in the exact same manner as *repo-add*, except that the packages listed on the command line are removed from the repository database.
+**Примечание:** База данных пакетов - tar файл, обычно сжатый. Он должен иметь расширение “.db” или “.files”, следующее после расширения архива: “.tar”, “.tar.gz”, “.tar.bz2”, “.tar.xz” или “.tar.Z”. Не обязательно, чтобы сам файл существовал, но должны существовать все каталоги. Кроме того, при использовании `repo-add` учтите, что база данных и пакеты не обязательно должны располагаться в одном каталоге. Но при использовании pacman с этой базой данных, убедитесь, что они (база данных и пакеты) расположены рядом.
 
-Once the local repository database has been created, add the repository to `pacman.conf` for each system that is to use the repository. An example of a custom repository is in `pacman.conf`. The repository's name is the database filename with the file extension omitted. In the case of the example above the repository's name would simply be *repo*. Reference the repository's location using a `file://` url, or via FTP using [ftp://localhost/path/to/directory](ftp://localhost/path/to/directory).
+Чтобы добавить новый пакет в существующую базу данных или заменить старую версию уже имеющегося пакета в базе данных, выполните:
 
-If willing, add the custom repository to the [list of unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"), so that the community can benefit from it.
+```
+$ repo-add /путь/до/repo.db.tar.gz /путь/до/имя_пакета-1.0-1-i686.pkg.tar.xz
+
+```
+
+*repo-remove* используется точно таким же образом, как и *repo-add*, но только для удаления выбранных пакетов из базы данных репозитория.
+
+После того, как база данных локального репозитория создана, добавьте репозиторий в `pacman.conf` для каждой системы, которая будет использовать его. Пример собственного репозитория также располагается в файле `pacman.conf`. Имя репозитория это имя файла базы данных (без расширения). Например, для этого примера именем репозитория будет просто *repo*. Для указания расположения репозитория используется url `file://` или FTP [ftp://localhost/путь/до/каталога](ftp://localhost/путь/до/каталога).
+
+При желании добавьте свой репозиторий в [список пользовательских репозиториев](/index.php/Unofficial_user_repositories "Unofficial user repositories"), чтобы сообщество также могло использовать его.
 
 ### Network shared pacman cache
 

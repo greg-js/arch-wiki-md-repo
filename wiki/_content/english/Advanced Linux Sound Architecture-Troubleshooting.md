@@ -205,7 +205,7 @@ Replace "U0x46d0x81d" with your capture device's card name in ALSA. You can use 
 
 ### Internal microphone not working
 
-First make sure the volume is enabled under the `Capture` view in *alsamixer*. In some case, the "Internal Microphone" is not displayed in the capture list available when pressing F4\. If so, specifying the card number given by `aplay -l` to start *alsamixer* (for example `alsamixer -c 0` ) can make it appears.
+First make sure the volume is enabled under the `Capture` view in *alsamixer*. In some case, the "Internal Microphone" is not displayed in the capture list available when pressing F4\. If so, specifying the card number given by `aplay -l` to start *alsamixer* (for example `alsamixer -c 0` ) can make it appear.
 
 Then add the following to `/etc/modprobe.d/snd-hda-intel.conf`:
 

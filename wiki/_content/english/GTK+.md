@@ -33,6 +33,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [6.6 Titlebar background color mismatch](#Titlebar_background_color_mismatch)
     *   [6.7 Wrong focus events with tiling window managers](#Wrong_focus_events_with_tiling_window_managers)
     *   [6.8 Thumbnail support for GTK+ 2 file dialog](#Thumbnail_support_for_GTK.2B_2_file_dialog)
+    *   [6.9 Button/menu icons in some apps in GNOME Wayland session](#Button.2Fmenu_icons_in_some_apps_in_GNOME_Wayland_session)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Enable typeahead search feature of file chooser widget](#Enable_typeahead_search_feature_of_file_chooser_widget)
 *   [8 Examples](#Examples)
@@ -555,6 +556,19 @@ NautilusWindow {
 ### Thumbnail support for GTK+ 2 file dialog
 
 Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) to have the option to view files as thumbnails instead of list in the GTK+ file chooser.
+
+### Button/menu icons in some apps in GNOME Wayland session
+
+Your `~/.config/gtk-3.0/settings.ini` file is misconfigured. This can happend if you try other GTK+ based desktop environments. These are the offending values:
+
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-button-images=1
+gtk-menu-images=1
+```
+
+Simply set them to 0 or remove the whole file to use GNOME defaults.
 
 ## Tips and tricks
 

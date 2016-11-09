@@ -56,6 +56,8 @@ $ { cat pkglist.orig; pacman -Slq; } | sort | uniq -d > pkglist
 
 ```
 
+**Note:** If this fails with *failed to initialise alpm library*, then check if */var/lib/pacman/local/ALPM_DB_VERSION* exists - if not, then run *# pacman-db-upgrade* followed by *# pacman -Sy* and then **retry the previous command**
+
 Check if some important *base* package are missing, and add them to the list:
 
 ```

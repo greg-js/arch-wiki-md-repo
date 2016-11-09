@@ -49,18 +49,18 @@ It can be downloaded by simply right-clicking the `tar.xz` link in your browser 
 
 **Note:** It is a good idea to verify the PGP signature of any downloaded kernel tarball. This ensures that it is legitimate and helps to build the Web of Trust. See [kernel.org/signature](http://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures).
 
-In the following command-line example, [wget](https://www.archlinux.org/packages/?name=wget) has been installed and is used inside the `~/kernelbuild` directory to obtain kernel 4.7.2:
+In the following command-line example, [wget](https://www.archlinux.org/packages/?name=wget) has been installed and is used inside the `~/kernelbuild` directory to obtain kernel 4.8.6:
 
 ```
 $ cd ~/kernelbuild
-$ wget [https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.7.2.tar.xz](https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.7.2.tar.xz)
+$ wget [https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.xz](https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.xz)
 
 ```
 
 If `wget` was not used inside the build directory, it will be necessary to move the tarball into it, e.g.
 
 ```
-$ mv /path/to/linux-4.7.2.tar.xz ~/kernelbuild/
+$ mv /path/to/linux-4.8.6.tar.xz ~/kernelbuild/
 
 ```
 
@@ -69,14 +69,14 @@ $ mv /path/to/linux-4.7.2.tar.xz ~/kernelbuild/
 Within the build directory, unpack the kernel tarball:
 
 ```
-$ tar -xvJf linux-4.7.2.tar.xz
+$ tar -xvJf linux-4.8.6.tar.xz
 
 ```
 
 To finalise the preparation, ensure that the kernel tree is absolutely clean; do not rely on the source tree being clean after unpacking. To do so, first change into the new kernel source directory created, and then run the `make mrproper` command:
 
 ```
-$ cd linux-4.7.2/
+$ cd linux-4.8.6/
 $ make clean && make mrproper
 
 ```
@@ -176,33 +176,33 @@ Once the kernel has been compiled, the modules for it must follow. As root or wi
 
 ```
 
-This will copy the compiled modules into `/lib/modules/<kernel version>-<config local version>`. For example, for kernel version 3.18 installed above, they would be copied to `/lib/modules/3.18.28-ARCH`. This keeps the modules for individual kernels used separated.
+This will copy the compiled modules into `/lib/modules/<kernel version>-<config local version>`. For example, for kernel version 4.8 installed above, they would be copied to `/lib/modules/4.8.6-ARCH`. This keeps the modules for individual kernels used separated.
 
-**Tip:** If your system requires modules which are not distributed with the regular Linux kernel, you need to compile them for your custom kernel when it is finished. Such modules are typically those which you explicitly installed seperately for your running system. See [NVIDIA#Custom kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA") for an example.
+**Tip:** If your system requires modules which are not distributed with the regular Linux kernel, you need to compile them for your custom kernel when it is finished. Such modules are typically those which you explicitly installed separately for your running system. See [NVIDIA#Custom kernel](/index.php/NVIDIA#Custom_kernel "NVIDIA") for an example.
 
 ### Copy the kernel to /boot directory
 
 **Note:** Ensure that the `bzImage` kernel file has been copied from the appropriate directory for your system architecture. See below.
 
-The kernel compilation process will generate a compressed `bzImage` (big zImage) of that kernel, which must be copied to the `/boot` directory and renamed in the process. Provided the name is prefixed with `vmlinuz-`, you may name the kernel as you wish. In the examples below, the installed and compiled 3.18 kernel has been copied over and renamed to `vmlinuz-linux318`:
+The kernel compilation process will generate a compressed `bzImage` (big zImage) of that kernel, which must be copied to the `/boot` directory and renamed in the process. Provided the name is prefixed with `vmlinuz-`, you may name the kernel as you wish. In the examples below, the installed and compiled 4.8 kernel has been copied over and renamed to `vmlinuz-linux48`:
 
 *   32-bit (i686) kernel:
 
 ```
-# cp -v arch/x86/boot/bzImage /boot/vmlinuz-linux318
+# cp -v arch/x86/boot/bzImage /boot/vmlinuz-linux48
 
 ```
 
 *   64-bit (x86_64) kernel:
 
 ```
-# cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-linux318
+# cp -v arch/x86_64/boot/bzImage /boot/vmlinuz-linux48
 
 ```
 
 ### Make initial RAM disk
 
-**Note:** You are free to name the initramfs image file whatever you wish when generating it. However, it is recommended to use the `linux<major revision><minor revision>` convention. For example, the name 'linux318' was given as '3' is the major revision and '18' is the minor revision of the 3.18 kernel. This convention will make it easier to maintain multiple kernels, regularly use mkinitcpio, and build third-party modules.
+**Note:** You are free to name the initramfs image file whatever you wish when generating it. However, it is recommended to use the `linux<major revision><minor revision>` convention. For example, the name 'linux48' was given as '4' is the major revision and '8' is the minor revision of the 4.8 kernel. This convention will make it easier to maintain multiple kernels, regularly use mkinitcpio, and build third-party modules.
 
 **Tip:** If you are using the LILO bootloader and it cannot communicate with the kernel device-mapper driver, you have to run `modprobe dm-mod` first.
 
@@ -210,31 +210,31 @@ If you do not know what making an initial RAM disk is, see [Initramfs on Wikiped
 
 #### Automated preset method
 
-An existing [mkinitcpio preset](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") can be copied and modified so that the custom kernel initramfs images can be generated in the same way as for an official kernel. This is useful where intending to recompile the kernel (e.g. where updated). In the example below, the preset file for the stock Arch kernel will be copied and modified for kernel 3.18, installed above.
+An existing [mkinitcpio preset](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") can be copied and modified so that the custom kernel initramfs images can be generated in the same way as for an official kernel. This is useful where intending to recompile the kernel (e.g. where updated). In the example below, the preset file for the stock Arch kernel will be copied and modified for kernel 4.8, installed above.
 
-First, copy the existing preset file, renaming it to match the name of the custom kernel specified as a suffix to `/boot/vmlinuz-` when copying the `bzImage` (in this case, `linux318`):
+First, copy the existing preset file, renaming it to match the name of the custom kernel specified as a suffix to `/boot/vmlinuz-` when copying the `bzImage` (in this case, `linux48`):
 
 ```
-# cp /etc/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux318.preset
+# cp /etc/mkinitcpio.d/linux.preset /etc/mkinitcpio.d/linux48.preset
 
 ```
 
 Second, edit the file and amend for the custom kernel. Note (again) that the `ALL_kver=` parameter also matches the name of the custom kernel specified when copying the `bzImage`:
 
- `/etc/mkinitcpio.d/linux318.preset` 
+ `/etc/mkinitcpio.d/linux48.preset` 
 ```
 ...
-ALL_kver="/boot/vmlinuz-linux318"
+ALL_kver="/boot/vmlinuz-linux48"
 ...
-default_image="/boot/initramfs-linux318.img"
+default_image="/boot/initramfs-linux48.img"
 ...
-fallback_image="/boot/initramfs-linux318-fallback.img"
+fallback_image="/boot/initramfs-linux48-fallback.img"
 ```
 
 Finally, generate the initramfs images for the custom kernel in the same way as for an official kernel:
 
 ```
-# mkinitcpio -p linux318
+# mkinitcpio -p linux48
 
 ```
 
@@ -250,10 +250,10 @@ Rather than use a preset file, mkinitcpio can also be used to generate an initra
 *   `-k` (--kernel <kernelversion>): Specifies the modules to use when generating the initramfs image. The `<kernelversion>` name will be the same as the name of the custom kernel source directory (and the modules directory for it, located in `/usr/lib/modules/`).
 *   `-g` (--generate <filename>): Specifies the name of the initramfs file to generate in the `/boot` directory. Again, using the naming convention mentioned above is recommended.
 
-For example, the command for the 3.18 custom kernel installed above would be:
+For example, the command for the 4.8 custom kernel installed above would be:
 
 ```
-# mkinitcpio -k linux-3.18.28 -g /boot/initramfs-linux318.img
+# mkinitcpio -k linux-4.8.6 -g /boot/initramfs-linux48.img
 
 ```
 

@@ -54,37 +54,40 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [7.5 cirrus](#cirrus)
     *   [7.6 none](#none)
     *   [7.7 vnc](#vnc)
-*   [8 Installing virtio drivers](#Installing_virtio_drivers)
-    *   [8.1 Preparing an (Arch) Linux guest](#Preparing_an_.28Arch.29_Linux_guest)
-    *   [8.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
-        *   [8.2.1 Block device drivers](#Block_device_drivers)
-            *   [8.2.1.1 New Install of Windows](#New_Install_of_Windows)
-            *   [8.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
-        *   [8.2.2 Network drivers](#Network_drivers)
-    *   [8.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
-*   [9 Tips and tricks](#Tips_and_tricks)
-    *   [9.1 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
-        *   [9.1.1 With libvirt](#With_libvirt)
-        *   [9.1.2 Custom script](#Custom_script)
-    *   [9.2 Mouse integration](#Mouse_integration)
-    *   [9.3 Pass-through host USB device](#Pass-through_host_USB_device)
-    *   [9.4 Enabling KSM](#Enabling_KSM)
-    *   [9.5 Multi-monitor support](#Multi-monitor_support)
-    *   [9.6 Copy and paste](#Copy_and_paste)
-    *   [9.7 Windows-specific notes](#Windows-specific_notes)
-        *   [9.7.1 Fast startup](#Fast_startup)
-        *   [9.7.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
-*   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
-    *   [10.2 No visible Cursor](#No_visible_Cursor)
-    *   [10.3 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
-    *   [10.4 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [10.5 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
-    *   [10.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
-    *   [10.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
-    *   [10.8 libgfapi error message](#libgfapi_error_message)
-    *   [10.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
-*   [11 See also](#See_also)
+*   [8 Audio](#Audio)
+    *   [8.1 Host](#Host)
+    *   [8.2 Guest](#Guest)
+*   [9 Installing virtio drivers](#Installing_virtio_drivers)
+    *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_.28Arch.29_Linux_guest)
+    *   [9.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
+        *   [9.2.1 Block device drivers](#Block_device_drivers)
+            *   [9.2.1.1 New Install of Windows](#New_Install_of_Windows)
+            *   [9.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
+        *   [9.2.2 Network drivers](#Network_drivers)
+    *   [9.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
+*   [10 Tips and tricks](#Tips_and_tricks)
+    *   [10.1 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
+        *   [10.1.1 With libvirt](#With_libvirt)
+        *   [10.1.2 Custom script](#Custom_script)
+    *   [10.2 Mouse integration](#Mouse_integration)
+    *   [10.3 Pass-through host USB device](#Pass-through_host_USB_device)
+    *   [10.4 Enabling KSM](#Enabling_KSM)
+    *   [10.5 Multi-monitor support](#Multi-monitor_support)
+    *   [10.6 Copy and paste](#Copy_and_paste)
+    *   [10.7 Windows-specific notes](#Windows-specific_notes)
+        *   [10.7.1 Fast startup](#Fast_startup)
+        *   [10.7.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
+    *   [11.2 No visible Cursor](#No_visible_Cursor)
+    *   [11.3 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
+    *   [11.4 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
+    *   [11.5 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
+    *   [11.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
+    *   [11.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
+    *   [11.8 libgfapi error message](#libgfapi_error_message)
+    *   [11.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+*   [12 See also](#See_also)
 
 ## Installation
 
@@ -1061,6 +1064,44 @@ $ gvncviewer :0
 
 When using VNC, you might experience keyboard problems described (in gory details) [here](https://www.berrange.com/posts/2010/07/04/more-than-you-or-i-ever-wanted-to-know-about-virtual-keyboard-handling/). The solution is *not* to use the `-k` option on QEMU, and to use `gvncviewer` from [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc). See also [this](http://www.mail-archive.com/libvir-list@redhat.com/msg13340.html) message posted on libvirt's mailing list.
 
+## Audio
+
+### Host
+
+The audio driver used by QEMU is set with the `QEMU_AUDIO_DRV` environment variable:
+
+```
+$ export QEMU_AUDIO_DRV=pa
+
+```
+
+Run the following command to get QEMU's configuration options related to PulseAudio:
+
+```
+$ qemu-system-x86_64 -audio-help | awk '/Name: pa/' RS=
+
+```
+
+The listed options can be exported as environment variables, for example:
+
+```
+$ export QEMU_PA_SINK=alsa_output.pci-0000_04_01.0.analog-stereo.monitor
+$ export QEMU_PA_SOURCE=input
+```
+
+### Guest
+
+To get list of the supported emulation audio drivers:
+
+```
+$ qemu-system-x86_64 -soundhw help
+
+```
+
+To use e.g. `hda` driver for the guest use the `-soundhw hda` command with QEMU.
+
+**Note:** Video graphic card emulated drivers for the guest machine may also cause a problem with the sound quality. Test one by one to make it work. You can list possible options with `qemu-system-x86_64 -h | grep vga`.
+
 ## Installing virtio drivers
 
 QEMU offers guests the ability to use paravirtualized block and network devices using the [virtio](http://wiki.libvirt.org/page/Virtio) drivers, which provide better performance and lower overhead.
@@ -1352,7 +1393,9 @@ It is possible to run [Windows PE](/index.php/Windows_PE "Windows PE") in QEMU.
 
 #### Fast startup
 
-For Windows 8 (or later) guests it is better to disable "Fast Startup" from the Power Options of the Control Panel, as it causes the guest to hang during every other boot.
+**Note:** An administrator account is required to change power settings.
+
+For Windows 8 (or later) guests it is better to disable "Turn on fast startup (recommended)" from the Power Options of the Control Panel, as it causes the guest to hang during every other boot.
 
 Fast Startup may also need to be disabled for changes to the `-smp` option to be properly applied.
 

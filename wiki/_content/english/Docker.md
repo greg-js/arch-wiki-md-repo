@@ -97,9 +97,11 @@ To open the Remote API to port `4243` manually, run:
 
 ##### Remote API with systemd
 
-To start the remote API with the docker daemon modify `/usr/lib/systemd/system/docker.service` and replace the `ExecStart` value.
+To start the remote API with the docker daemon create a drop-in unit file at `/etc/systemd/system/docker.service.d/remote-api.conf` with the following content:
 
 ```
+[Service]
+ExecStart=
 ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 
 ```
@@ -108,6 +110,13 @@ Reload the service-configurations
 
 ```
 # systemctl daemon-reload
+
+```
+
+Restart the docker service
+
+```
+# systemctl restart docker
 
 ```
 

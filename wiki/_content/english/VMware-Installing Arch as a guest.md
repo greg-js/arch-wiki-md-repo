@@ -34,15 +34,16 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
         *   [6.5.2 Paravirtual Network Adapater](#Paravirtual_Network_Adapater)
         *   [6.5.3 Virtual Machine Settings](#Virtual_Machine_Settings)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Mouse problems](#Mouse_problems)
-        *   [7.1.1 Missing buttons](#Missing_buttons)
-    *   [7.2 Boot problems](#Boot_problems)
-        *   [7.2.1 Slow boot time](#Slow_boot_time)
-        *   [7.2.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
-    *   [7.3 Autofit problems](#Autofit_problems)
-    *   [7.4 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
-    *   [7.5 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
-    *   [7.6 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
+    *   [7.1 Sound problems](#Sound_problems)
+    *   [7.2 Mouse problems](#Mouse_problems)
+        *   [7.2.1 Missing buttons](#Missing_buttons)
+    *   [7.3 Boot problems](#Boot_problems)
+        *   [7.3.1 Slow boot time](#Slow_boot_time)
+        *   [7.3.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
+    *   [7.4 Autofit problems](#Autofit_problems)
+    *   [7.5 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
+    *   [7.6 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
+    *   [7.7 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
 
 ## In-kernel drivers
 
@@ -541,6 +542,15 @@ mainMem.partialLazyRestore = "FALSE"
 *   **mainMem.partialLazySave** and **mainMem.partialLazyRestore**: These two parameters will prevent the virtual machine from creating partial snapshots for suspends. When you use these parameters and you suspend your virtual machine it will take a little bit longer, but there should be less hard disk activity from VMware trying to store this information.
 
 ## Troubleshooting
+
+### Sound problems
+
+If unacceptably loud and annoying sounds occur, then it may be related to the [PC speaker](/index.php/PC_speaker "PC speaker"). The issue may be resolved by globally disabling the PC speaker within the guest image:
+
+```
+ # echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+
+```
 
 ### Mouse problems
 

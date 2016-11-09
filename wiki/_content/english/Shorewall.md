@@ -100,6 +100,15 @@ DNS(ACCEPT)     loc              $FW
 
 ### /etc/shorewall/masq
 
+**Note:**
+
+As of version 5.0.14, /etc/shorewall/masq has been deprecated in favor of /etc/shorewall/snat. Add the following line to /etc/shorewall/snat instead of modifying masq.
+
+```
+MASQUERADE        192.168.1.0/24        eth0
+
+```
+
 **Change** the network interface to the one connected to your external (WAN) network and **change** the IP to the one used in your local network.
 
 ```

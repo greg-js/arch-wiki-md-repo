@@ -64,7 +64,7 @@
 
 ## Configuration
 
-*mpv'*s configuration is read from the files `mpv.conf` ([example](https://raw.githubusercontent.com/mpv-player/mpv/master/etc/mpv.conf)) (settings), `input.conf` (key bindings), and `lua-settings/osc.conf` ([example](https://raw.githubusercontent.com/mpv-player/mpv/master/etc/input.conf)) (on screen display). For a full list of options, see the [mpv(1)](https://mpv.io/manual/master/) or the github docs [options.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst), [input.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/input.rst), and [osc.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/osc.rst).
+*mpv'*s configuration is read from the files `mpv.conf` (settings), `input.conf` (key bindings), and `lua-settings/osc.conf` (on screen display). For a full list of options, see the [mpv(1)](https://mpv.io/manual/master/) or the [GitHub docs](https://github.com/mpv-player/mpv/tree/master/DOCS/man).
 
 If the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is not set, user configuration files will be read from the `~/.config/mpv` directory. System-wide configuration files are read from the `/etc/mpv` directory.
 

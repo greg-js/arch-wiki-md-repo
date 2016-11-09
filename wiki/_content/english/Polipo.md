@@ -23,9 +23,7 @@ The following covers installing and setting up Polipo.
 
 ## Installation
 
-Install [polipo](https://www.archlinux.org/packages/?name=polipo), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
-
-Alternatively, install the newer development branch [polipo-git](https://aur.archlinux.org/packages/polipo-git/) from the [AUR](/index.php/AUR "AUR") instead.
+[Install](/index.php/Install "Install") the [polipo](https://www.archlinux.org/packages/?name=polipo) package.
 
 ## Starting the daemon
 

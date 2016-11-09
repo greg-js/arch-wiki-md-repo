@@ -185,6 +185,8 @@ With certain terminal definitions such as `screen-256color` or `xterm-termite`, 
 
 Settings will be stored in the `~/.config/mc/ini` file, for example for `screen-256color`:
 
+**Note:** The following example assumes F13–F20 are bound to `Shift+F3`–`Shift+F10`.
+
 ```
 [terminal:screen-256color]
 f1=\\eOP

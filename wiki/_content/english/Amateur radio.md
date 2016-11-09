@@ -70,10 +70,6 @@ then logoff and logon.
 
 	[http://owx.chmurka.net](http://owx.chmurka.net) || [owx](https://aur.archlinux.org/packages/owx/)
 
-*   **twcw** — extension for cwirc
-
-	[http://wa0eir.home.mchsi.com/twcw.html](http://wa0eir.home.mchsi.com/twcw.html) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=twcw)</small>
-
 *   **fldigi** — popular GUI developed by W1HKJ for a variety of digital communication modes
 
 	[http://w1hkj.com/Fldigi.html](http://w1hkj.com/Fldigi.html) || [fldigi](https://aur.archlinux.org/packages/fldigi/)
@@ -90,12 +86,25 @@ then logoff and logon.
 
 	[http://www.qsl.net/pg4i/linux/xdx.html](http://www.qsl.net/pg4i/linux/xdx.html) || [xdx](https://aur.archlinux.org/packages/xdx/)
 
-*   [d-rats](https://aur.archlinux.org/packages/d-rats/) – D-STAR communication tool
-*   [qsstv](https://aur.archlinux.org/packages/qsstv/) – Slow-scan television
-*   [linpsk](https://aur.archlinux.org/packages/linpsk/) – PSK31
-*   [psk31lx](https://aur.archlinux.org/packages/psk31lx/) – PSK31 using Pulseaudio
-*   [twpsk](https://aur.archlinux.org/packages/twpsk/) – Soundcard based program for PSK31
-*   [xpsk31](https://aur.archlinux.org/packages/xpsk31/) – PSK31 using a GUI rendered by GTK+
+*   **qsstv** — Slow-scan television
+
+	|| [qsstv](https://aur.archlinux.org/packages/qsstv/)
+
+*   **linpsk** — PSK31
+
+	|| [linpsk](https://aur.archlinux.org/packages/linpsk/)
+
+*   **psk31lx** — PSK31 using Pulseaudio
+
+	[http://wa0eir.bcts.info/](http://wa0eir.bcts.info/) || [psk31lx](https://aur.archlinux.org/packages/psk31lx/)
+
+*   **twpsk** — Soundcard based program for PSK31
+
+	[http://wa0eir.bcts.info/](http://wa0eir.bcts.info/) || [twpsk](https://aur.archlinux.org/packages/twpsk/)
+
+*   **xpsk31** — PSK31 using a GUI rendered by GTK+
+
+	[http://www.qsl.net/5b4az/pkg/psk31/xpsk31/xpsk31.html](http://www.qsl.net/5b4az/pkg/psk31/xpsk31/xpsk31.html) || [xpsk31](https://aur.archlinux.org/packages/xpsk31/)
 
 ### AX.25
 

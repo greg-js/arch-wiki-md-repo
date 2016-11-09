@@ -300,7 +300,7 @@ With the release of PHP7 [roundcubemail-plugins-kolab](https://aur.archlinux.org
 
 #### PHP 5
 
-Install [roundcube-plugins-kolab](https://aur.archlinux.org/packages/roundcube-plugins-kolab/)
+Install [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/)
 
 #### Update the roundcube database
 

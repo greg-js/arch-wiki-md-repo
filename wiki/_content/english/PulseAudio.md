@@ -361,37 +361,7 @@ load-module module-dbus-protocol
 
 ### QEMU
 
-The audio driver used by QEMU is set with the `QEMU_AUDIO_DRV` environment variable:
-
-```
-$ export QEMU_AUDIO_DRV=pa
-
-```
-
-Run the following command to get QEMU's configuration options related to PulseAudio:
-
-```
-$ qemu-system-x86_64 -audio-help | awk '/Name: pa/' RS=
-
-```
-
-The listed options can be exported as environment variables, for example:
-
-```
-$ export QEMU_PA_SINK=alsa_output.pci-0000_04_01.0.analog-stereo.monitor
-$ export QEMU_PA_SOURCE=input
-```
-
-To get list of the supported emulation audio drivers
-
-```
-$ qemu-system-x86_64 -soundhw help
-
-```
-
-To use e.g. `ac97` driver for the guest use the `-soundhw ac97` commnad with QEMU.
-
-**Note:** Video graphic card emulated drivers for the guest machine may also cause a problem with the sound quality. Test one by one to make it work. You can list possible options with `qemu-system-x86_64 -h | grep vga`.
+Refer to [QEMU#Host](/index.php/QEMU#Host "QEMU") for a detailed guide on how to configure pulseaudio within [QEMU](/index.php/QEMU "QEMU").
 
 ### AlsaMixer.app
 

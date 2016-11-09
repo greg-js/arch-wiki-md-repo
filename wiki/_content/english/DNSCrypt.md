@@ -163,7 +163,7 @@ The default size being **1252** bytes, with values up to **4096** bytes being pu
 Make use of the [DNS Reply Size Test Server](https://www.dns-oarc.net/oarc/services/replysizetest), use the *dig* command line tool from the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools) package to issue a TXT query for the name *rs.dns-oarc.net*:
 
 ```
-$ dig +short rs.dns-oarc.net txt
+$ dig +short rs.dns-oarc.net TXT
 
 ```
 
@@ -210,7 +210,7 @@ First, we need `/etc/systemd/system/dnscrypt-proxy@.service` containing:
  [Service]
  Type=notify
  NonBlocking=true
- ExecStart=/usr/sbin/dnscrypt-proxy \
+ ExecStart=/usr/bin/dnscrypt-proxy \
      --resolver-name=%i
  Restart=always
 
