@@ -2,7 +2,9 @@ From the [redshift project web page](http://jonls.dk/redshift/):
 
 	Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com)....
 
-The project is developed on [GitHub](https://github.com/jonls/redshift). At the moment, Redshift [only works](https://github.com/jonls/redshift/issues/55) on [Xorg](/index.php/Xorg "Xorg").
+The project is developed on [GitHub](https://github.com/jonls/redshift).
+
+**Note:** At the moment, Redshift [only works](https://github.com/jonls/redshift/issues/55) with [Xorg](/index.php/Xorg "Xorg") – [Wayland](/index.php/Wayland "Wayland") is not supported yet, see [Redshift#If you are on Wayland](/index.php/Redshift#If_you_are_on_Wayland "Redshift").
 
 ## Contents
 

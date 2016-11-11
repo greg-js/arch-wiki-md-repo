@@ -17,8 +17,10 @@ Plex for Linux is split into a closed-source server Plex Media Server, and an op
     *   [1.8 Troubleshooting](#Troubleshooting)
 *   [2 Plex Home Theater (PHT)](#Plex_Home_Theater_.28PHT.29)
     *   [2.1 Installation](#Installation_2)
-*   [3 Kodi and PleXBMC](#Kodi_and_PleXBMC)
+*   [3 Plex Media Player (PMP)](#Plex_Media_Player_.28PMP.29)
     *   [3.1 Installation](#Installation_3)
+*   [4 Kodi and PleXBMC](#Kodi_and_PleXBMC)
+    *   [4.1 Installation](#Installation_4)
 
 ## Plex Media Server (PMS)
 
@@ -132,11 +134,23 @@ export LD_LIBRARY_PATH=/opt/plexmediaserver
 
 ## Plex Home Theater (PHT)
 
+Previously known as Plex Media Center, Plex Home Theater is the software component used for a long time as the front-end media player for Plex's back-end server component Plex Media Server. This component came from a fork of XBMC Media Center software on May 21, 2008.
+
+Official support for Plex Home Theater (from Plex, Inc.) has been discontinued in favour of Plex Media Player (based on MPV). However, Plex Home Theater has been forked and is still under active development by the Open Source community under the name [OpenPHT](https://github.com/RasPlex/OpenPHT)
+
 ### Installation
 
 [Install](/index.php/Install "Install") the [openpht](https://aur.archlinux.org/packages/openpht/) package.
 
 Plex Home Theater can be launched by running `plexhometheater.sh` from your terminal.
+
+## Plex Media Player (PMP)
+
+Plex Media Player is officially replacing Plex Home Theater but as PMP is still a preview app and under active beta development, it's currently only available for use by Plex Pass holders.
+
+### Installation
+
+[Install](/index.php/Install "Install") the [plex-media-player](https://aur.archlinux.org/packages/plex-media-player/) package. You will then need to login to your Plex account to use the app (currently must be a Plex Pass subscriber to use this preview app)
 
 ## Kodi and PleXBMC
 

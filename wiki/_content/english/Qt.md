@@ -36,7 +36,6 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [5.1 Icon theme is not applied](#Icon_theme_is_not_applied)
     *   [5.2 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
     *   [5.3 Qt4 style not respected](#Qt4_style_not_respected)
-    *   [5.4 Qt5 platform plugins and missing dependencies](#Qt5_platform_plugins_and_missing_dependencies)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -47,11 +46,13 @@ Two versions of Qt are currently available in the [official repositories](/index
 *   **Qt 4.x** is available in the [qt4](https://www.archlinux.org/packages/?name=qt4) package, with documentation on AUR in the [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/) package.
 *   **Qt 3.x** is available from the AUR in the [qt3](https://aur.archlinux.org/packages/qt3/) package, with documentation on AUR in the [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/) package.
 
-**Warning:** Qt packages do not provide the usual bins (e.g. *qmake*) in `/usr/bin` anymore. Instead `-qt5`, `-qt4` and `-qt3` symlinks are provided (e.g. `qmake-qt5`, `qmake-qt4`, `qmake-qt3`). This may cause compilation failures in Qt3/4 applications. To install usual bins, see [#Default Qt toolkit](#Default_Qt_toolkit) section.
-
 ## Default Qt toolkit
 
+Qt packages do not provide the usual bins (e.g. *qmake*) in `/usr/bin` anymore. Instead `-qt5`, `-qt4` and `-qt3` symlinks are provided (e.g. `qmake-qt5`, `qmake-qt4`, `qmake-qt3`). This may cause compilation failures in Qt3/4 applications.
+
 By installing [qtchooser](https://aur.archlinux.org/packages/qtchooser/) you can restore the usual bins (e.g. *qmake*) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
+
+**Warning:** [qtchooser](https://aur.archlinux.org/packages/qtchooser/) now is conflict with [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can install it in /usr/local if you really need it, but it's not officially supported[[1]](https://bugs.archlinux.org/task/51308).
 
 ### Using environment variables
 
@@ -499,21 +500,6 @@ Alternatively, you can symlink the Qt4 styles directory to the KDE4 styles one:
 # ln -s /usr/lib/{kde,qt}4/plugins/styles/[theme name]
 
 ```
-
-### Qt5 platform plugins and missing dependencies
-
-Using [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) will install Qt5, which makes use of [platform abstractions](http://doc.qt.io/qt-5/qpa.html), but some platform abstraction plugin dependencies may be missing. Qt may tell you that the plugin is unavailable, rather than resolve the chain of missing dependencies for other packages.
-
-For instance, if your application relies on [xcb](http://xcb.freedesktop.org), and dependencies of the xcb library are missing, Qt will report:
-
-```
-This application failed to start because it could not find or load the Qt platform plugin "xcb". Available plugins are: xcb.
-
-Reinstalling the application may fix this problem.
-
-```
-
-This implies the application package misses some of its required dependencies not provided by [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can use *ldd* to identify which are missing (e.g. `ldd /usr/bin/*application* |grep -e xcb`) and file a bug against the application package. The Qt5 page proposes a [list of packages](http://doc.qt.io/qt-5/linux-requirements.html) that are recommended for installation; it can help to identify the one missing.
 
 ## See also
 

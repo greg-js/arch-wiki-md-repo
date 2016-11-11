@@ -85,7 +85,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 
-	[https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)
+	[https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
 
 *   **[Moksha](/index.php/Moksha "Moksha")** — Fork of Enlightenment currently used as default desktop environment in Ubuntu-based Bodhi Linux.
 
@@ -212,7 +212,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [greenisland](https://aur.archlinux.org/packages/greenisland/) | Hawaii Shell
 [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/) | Terminal
 [hawaii-terminal](https://aur.archlinux.org/packages/hawaii-terminal/) | Swordfish
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=swordfish-git)</small> | [SpeedCrunch](http://speedcrunch.org/)
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=swordfish)</small> | [SpeedCrunch](http://speedcrunch.org/)
 [speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
 [juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | EyeSight
 [eyesight](https://aur.archlinux.org/packages/eyesight/) | SMPlayer
@@ -309,8 +309,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [papyros-shell](https://aur.archlinux.org/packages/papyros-shell/) | Papyros Terminal
 [papyros-terminal](https://www.archlinux.org/packages/?name=papyros-terminal) | Papyros Files
 [papyros-files](https://www.archlinux.org/packages/?name=papyros-files) | Liri Calculator
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-calculator-git)</small> | Liri Text
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text-git)</small> | Liri Browser
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-calculator)</small> | Liri Text
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text)</small> | Liri Browser
 [liri-browser](https://aur.archlinux.org/packages/liri-browser/) | Liri Player
 [liri-player-git](https://aur.archlinux.org/packages/liri-player-git/) | Liri Browser
 [liri-browser](https://aur.archlinux.org/packages/liri-browser/) | SDDM

@@ -44,6 +44,7 @@ List here articles that only exist in non-English languages, or that exist in En
 | [Mounting external storage with correct character encoding in Gnome (Русский)](/index.php/Mounting_external_storage_with_correct_character_encoding_in_Gnome_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Mounting external storage with correct character encoding in Gnome (Русский)") | Russian | in Russian only |
 | [MSI GT72 2QD Dominator (Español)](/index.php/MSI_GT72_2QD_Dominator_(Espa%C3%B1ol) "MSI GT72 2QD Dominator (Español)") | Spanish |
 | [MYTHTV UNDERTHESTAIRS (Dansk)](/index.php/MYTHTV_UNDERTHESTAIRS_(Dansk) "MYTHTV UNDERTHESTAIRS (Dansk)") | Dansk |
+| [Netzob (Русский)](/index.php/Netzob_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netzob (Русский)") | Russian |
 | [Osiris (Italiano)](/index.php/Osiris_(Italiano) "Osiris (Italiano)") | Italian |
 | [Palm Pre (Italiano)](/index.php/Palm_Pre_(Italiano) "Palm Pre (Italiano)") | Italian |
 | [RoverBook Voyager H591 (Русский)](/index.php/RoverBook_Voyager_H591_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RoverBook Voyager H591 (Русский)") | Russian | in Russian only |

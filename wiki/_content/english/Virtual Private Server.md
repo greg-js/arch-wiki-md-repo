@@ -95,9 +95,6 @@ This process (with minor modification) also works to migrate existing Arch insta
     *   SSH is not strictly required, but rsync over SSH is the method used here.
 *   A VPS running any distribution, with `rsync` and a working SSH server
     *   Its architecture (x86_64 or i686) does not matter as long as the OpenVZ installation can support your target architecture.
-
-**Note:** Since Arch Linux uses symlinks for `/bin`, `/sbin`, `/lib` and `/lib64`, it is recommended to use a distribution that does the same to avoid issues while installing Arch Linux with `rsync`. An example of such a distribution is Fedora 23.
-
 *   OpenVZ's serial console feature (usually accessible via your provider's control panel)
     *   Without this, any network configuration for the target VPS will have to be done immediately after the "Build" step below.
 
@@ -131,7 +128,14 @@ Replace all files, directories, etc. on your target VPS with the contents of you
 
 Explanation of options:
 
-At minimum, only the `-a` (preserve timestamps, permissions, etc.), `-x` (do not cross filesystem boundaries), and `--delete` (delete anything in the target that does not exist in the source) options are required. The `--delete-delay` option is an alternate deletion mode which waits to delete anything until the synchronization is otherwise complete; this is not necessary but may reduce the risk of a slow transfer causing the target VPS to lock-up. The `-H` causes hardlinks to be preserved. The `-e ssh` (use rsync over SSH) option is recommended and makes things simple. The `--stats` and `-P` options are just to show more information.
+*   `-a` - Required. Preserves timestamps, permissions, etc.
+*   `--delete` - Required. Deletes anything in the target that does not exist in the source
+*   `-x` - Important. Prevents the crossing of filesystem boundaries (other partitions, /dev, etc.) during the copy
+*   `-H` - Important. Preserves hardlinks
+*   `--delete-delay` - Recommended. Enables alternate deletion mode which waits to delete anything until the synchronization is otherwise complete, which may reduce the risk of a slow transfer causing the target VPS to lock-up
+*   `-e ssh` - Recommended. Uses `rsync` over SSH (recommended for simplicity compared to setting up an `rsync` server)
+*   `-P` - Recommended. Shows partial progress information during transfer
+*   `--stats` - Recommended. Shows transfer statistics at the end
 
 ##### Configuration
 

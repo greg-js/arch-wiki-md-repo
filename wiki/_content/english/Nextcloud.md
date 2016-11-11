@@ -8,7 +8,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): N
 *   [2 PHP Configuration](#PHP_Configuration)
 *   [3 Setup mariadb and nextcloud DB](#Setup_mariadb_and_nextcloud_DB)
 *   [4 Setup Apache](#Setup_Apache)
-*   [5 Swithch to Cron from AJAX](#Swithch_to_Cron_from_AJAX)
+*   [5 Switch to Cron from AJAX](#Switch_to_Cron_from_AJAX)
 *   [6 Enable memcache](#Enable_memcache)
 *   [7 (Optional) SSL Setup and its hardening plus SSL hardening](#.28Optional.29_SSL_Setup_and_its_hardening_plus_SSL_hardening)
     *   [7.1 Enable SSL with a self signed certificate](#Enable_SSL_with_a_self_signed_certificate)
@@ -62,6 +62,8 @@ intl.so
 mcrypt.so
 
 ```
+
+**Note:** If you are installing this on a 32-bit based OS (ie the current Arch Linux for ARM ([https://archlinuxarm.org/](https://archlinuxarm.org/)) uses a 32-bit OS for Raspberry Pi), then do not configure open_basedir - refer to the Nextcloud manual: [https://docs.nextcloud.com/server/10/admin_manual/configuration_files/big_file_upload_configuration.html#configuring-php](https://docs.nextcloud.com/server/10/admin_manual/configuration_files/big_file_upload_configuration.html#configuring-php)
 
 Add the following to `open_basedir`:
 
@@ -162,20 +164,20 @@ Include conf/extra/nextcloud.conf
 
 ```
 
-Enable the following modules:
+Enable (uncomment) the following modules:
 
 ```
-mod_rewrite
-headers
-env
-dir
-mime
+LoadModule rewrite_module modules/mod_rewrite.so
+LoadModule headers_module modules/mod_headers.so
+LoadModule env_module modules/mod_env.so
+LoadModule dir_module modules/mod_dir.so
+LoadModule mime_module modules/mod_mime.so
 
 ```
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the [apache](https://www.archlinux.org/packages/?name=apache) service `httpd`
 
-## Swithch to Cron from AJAX
+## Switch to Cron from AJAX
 
 Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead.
 
@@ -227,7 +229,7 @@ Log onto Nextcloud and set it up by pointing your browser to: `[http://localhost
 After Nextcloud is set up, add the following line to `/usr/share/webapps/nextcloud/config/config.php`:
 
 ```
-'memcache.local’ => ‘\OC\Memcache\APCu’,
+'memcache.local' => '\OC\Memcache\APCu',
 
 ```
 
@@ -269,7 +271,7 @@ Edit `/etc/httpd/conf/extra/httpd-ssl.conf` and under the `VirtualHost:443` sect
 
 ```
 <IfModule mod_headers.c>
-Header always set Strict-Transport-Security “max-age=15768000; includeSubDomains; preload”
+Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"
 </IfModule>
 
 ```

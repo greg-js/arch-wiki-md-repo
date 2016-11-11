@@ -27,22 +27,23 @@ This article is about installing VMware in Arch Linux; you may also be intereste
         *   [4.4.3 Installation](#Installation_2)
     *   [4.5 Enable 3D graphics on Intel and Optimus](#Enable_3D_graphics_on_Intel_and_Optimus)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
-    *   [5.2 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
-    *   [5.3 USB devices not recognized](#USB_devices_not_recognized)
-    *   [5.4 The installer fails to start](#The_installer_fails_to_start)
-    *   [5.5 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
-    *   [5.6 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
-    *   [5.7 Issues with ALSA output](#Issues_with_ALSA_output)
-    *   [5.8 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
-    *   [5.9 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
-    *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
-    *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
-    *   [5.12 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
-    *   [5.13 Kernel modules fail to build after Linux kernel 4.7](#Kernel_modules_fail_to_build_after_Linux_kernel_4.7)
-        *   [5.13.1 Linux kernel 4.7](#Linux_kernel_4.7)
-        *   [5.13.2 Linux kernel 4.8](#Linux_kernel_4.8)
-    *   [5.14 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
+    *   [5.1 /etc/init.d - Directory must be non-empty](#.2Fetc.2Finit.d_-_Directory_must_be_non-empty)
+    *   [5.2 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
+    *   [5.3 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
+    *   [5.4 USB devices not recognized](#USB_devices_not_recognized)
+    *   [5.5 The installer fails to start](#The_installer_fails_to_start)
+    *   [5.6 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
+    *   [5.7 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
+    *   [5.8 Issues with ALSA output](#Issues_with_ALSA_output)
+    *   [5.9 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
+    *   [5.10 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
+    *   [5.11 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
+    *   [5.12 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
+    *   [5.13 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
+    *   [5.14 Kernel modules fail to build after Linux kernel 4.7](#Kernel_modules_fail_to_build_after_Linux_kernel_4.7)
+        *   [5.14.1 Linux kernel 4.7](#Linux_kernel_4.7)
+        *   [5.14.2 Linux kernel 4.8](#Linux_kernel_4.8)
+    *   [5.15 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -334,6 +335,21 @@ This means the following:
  `~/.vmware/preferences`  `mks.gl.allowBlacklistedDrivers = TRUE` 
 
 ## Troubleshooting
+
+### /etc/init.d - Directory must be non-empty
+
+If you want to use the default location, you need to re-type `/etc/init.d' to bypass the error :
+
+```
+Extracting VMware Installer...done.
+System service scripts directory (commonly /etc/init.d).: 
+
+Directory must be non-empty
+System service scripts directory (commonly /etc/init.d).: /etc/init.d
+
+Would you like to check for product updates on startup? [yes]: 
+
+```
 
 ### /dev/vmmon not found
 

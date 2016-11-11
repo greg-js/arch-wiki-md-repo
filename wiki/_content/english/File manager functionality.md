@@ -122,7 +122,7 @@ These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM
 *   [freetype2](https://www.archlinux.org/packages/?name=freetype2): Font files
 *   [libgsf](https://www.archlinux.org/packages/?name=libgsf): `.odf` files
 *   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): `.raw` files
-*   [totem](https://www.archlinux.org/packages/?name=totem): Video files and tagged audio files ([GNOME Files](/index.php/GNOME_Files "GNOME Files"), [Nemo](/index.php/Nemo "Nemo") and Caja only)
+*   [totem](https://www.archlinux.org/packages/?name=totem): Video files and tagged audio files ([GNOME Files](/index.php/GNOME_Files "GNOME Files"), and Caja only)
 *   [evince](https://www.archlinux.org/packages/?name=evince) or [atril](https://www.archlinux.org/packages/?name=atril): `.pdf` files
 
 #### Dolphin and Konqueror (KDE)

@@ -36,7 +36,9 @@ In order to use spell checking in *gedit* you need an *aspell* dictionary. See t
 
 ## Plugins
 
-Some plugins are available in the [gedit-plugins](https://www.archlinux.org/packages/?name=gedit-plugins) package.
+In recent versions even basic features (such as changing the font size) have been shifted to plugins, some of which are available in the [gedit-plugins](https://www.archlinux.org/packages/?name=gedit-plugins) package.
+
+**Note:** If the plugins do not work try installing the [gnome-python](https://www.archlinux.org/packages/?name=gnome-python) package.
 
 ### Adding and making custom plugins
 

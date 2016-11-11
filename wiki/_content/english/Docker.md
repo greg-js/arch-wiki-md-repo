@@ -24,18 +24,29 @@
 *   [6 Clean Remove Docker + Images](#Clean_Remove_Docker_.2B_Images)
 *   [7 Useful tips](#Useful_tips)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Docker info errors out](#Docker_info_errors_out)
-    *   [8.2 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
-    *   [8.3 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [8.4 docker complains about no loopback devices](#docker_complains_about_no_loopback_devices)
+    *   [8.1 Cannot start a container with systemd 232](#Cannot_start_a_container_with_systemd_232)
+    *   [8.2 Docker info errors out](#Docker_info_errors_out)
+    *   [8.3 Deleting Docker Images in a BTRFS Filesystem](#Deleting_Docker_Images_in_a_BTRFS_Filesystem)
+    *   [8.4 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
     *   [8.5 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
 *   [9 See also](#See_also)
 
 ## Installation
 
-**Note:** Docker doesn't support i686\. [[1]](https://github.com/docker/docker/issues/136)
+**Note:**
 
-[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the development version, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. You may need to reboot. Next [start](/index.php/Start "Start") and enable `docker.service` and verify operation:
+*   Docker doesn't support i686 [[1]](https://github.com/docker/docker/issues/136).
+*   Docker needs the `loop` module on first usage. The following steps may be required before starting docker:
+
+```
+# tee /etc/modules-load.d/loop.conf <<< "loop"
+# modprobe loop 
+
+```
+
+You may need to reboot before the module is available.
+
+[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the development version, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. Next [start](/index.php/Start "Start") and enable `docker.service` and verify operation:
 
 ```
 # docker info
@@ -66,21 +77,20 @@ Storage driver, a.k.a. graph driver has huge impact on performance. It's job is 
 
 As Arch linux ships new kernels, there's no point using the compatibility option. A good, modern choice is `overlay2`.
 
-To see current storage driver, run `docker info | head`.
+To see current storage driver, run `# docker info | head`.
 
-To set your own choice of storage driver, use `-s` option to `dockerd`, e.g.:
+To set your own choice of storage driver, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") and use `-s` option to `dockerd`:
 
+ `/etc/systemd/system/docker.service.d/override.conf` 
 ```
- [root@bmg ~]# cat /etc/systemd/system/docker.service.d/local.conf 
- [Service]
- ExecStart=
- ExecStart=/usr/bin/dockerd -H fd:// -s overlay2
-
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd -H fd:// -s overlay2
 ```
 
 Recall that `ExecStart=` line is needed to drop inherited `ExecStart`.
 
-Further information on available options is at [https://docs.docker.com/engine/userguide/storagedriver/selectadriver/](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/)
+Further information on options is available on the [user guide](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/).
 
 ### Opening remote API
 
@@ -97,37 +107,23 @@ To open the Remote API to port `4243` manually, run:
 
 ##### Remote API with systemd
 
-To start the remote API with the docker daemon create a drop-in unit file at `/etc/systemd/system/docker.service.d/remote-api.conf` with the following content:
+To start the remote API with the docker daemon, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") with the following content:
 
+ `/etc/systemd/system/docker.service.d/override.conf` 
 ```
 [Service]
 ExecStart=
 ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
-
-```
-
-Reload the service-configurations
-
-```
-# systemctl daemon-reload
-
-```
-
-Restart the docker service
-
-```
-# systemctl restart docker
-
 ```
 
 ### Daemon socket configuration
 
-The *docker* daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, edit `/etc/systemd/system/docker.socket`, where `ListenStream` is the used port:
+The *docker* daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") with the following content:
 
+ `/etc/systemd/system/docker.service.d/socket.conf` 
 ```
 [Socket]
 ListenStream=0.0.0.0:2375
-
 ```
 
 ### Proxies
@@ -136,19 +132,15 @@ Proxy configuration is broken down into two. First is the host configuration of 
 
 #### Proxy configuration
 
-First, create a systemd drop-in directory for the docker service: `mkdir /etc/systemd/system/docker.service.d`
+Create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") with the following content:
 
-Now create a file called `/etc/systemd/system/docker.service.d/http-proxy.conf` that adds the `HTTP_PROXY` environment variable:
-
+ `/etc/systemd/system/docker.service.d/proxy.conf` 
 ```
 [Service]
 Environment="HTTP_PROXY=192.168.1.1"
-
 ```
 
 **Note:** This assumes `192.168.1.1` is your proxy server, do not use `127.0.0.1`.
-
-Flush changes: `# systemctl daemon-reload`
 
 Verify that the configuration has been loaded:
 
@@ -157,8 +149,6 @@ Verify that the configuration has been loaded:
 Environment=HTTP_PROXY=192.168.1.1
 
 ```
-
-Restart Docker: `# systemctl restart docker`
 
 #### Container configuration
 
@@ -175,7 +165,7 @@ The settings in the `docker.service` file will not translate into containers. To
 
 ### Configuring DNS
 
-By default, docker will make resolv.conf in the container match resolv.conf on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields an empty file, then googles DNS servers are defaulted. If you are using a service like dnsmasq to provide name resolution, you will need to add an entry to your resolv.conf for docker's network interface so that it isn't filtered out.
+By default, docker will make `resolv.conf` in the container match `/etc/resolv.conf` on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields an empty file, then [Google DNS servers](https://developers.google.com/speed/public-dns/) are used. If you are using a service like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to provide name resolution, you may need to add an entry to the `/etc/resolv.conf` for docker's network interface so that it isn't filtered out.
 
 ### Images location
 
@@ -192,23 +182,19 @@ ExecStart=
 ExecStart=/usr/bin/dockerd -g */path/to/new/location/docker* -H fd://
 ```
 
-Finally, [reload](/index.php/Reload "Reload") configuration and [start](/index.php/Start "Start") `docker.service` again.
-
 ## Docker 0.9.0 -- 1.2.x and LXC
 
 Since version 0.9.0 Docker provides a new way to start containers without relying on a LXC library called *libcontainer*.
 
-The lxc exec driver and the -lxc-conf option may also be removed in the near future, [[2]](https://github.com/docker/docker/pull/5797)
+The lxc exec driver and the -lxc-conf option may also be removed in the near future [[2]](https://github.com/docker/docker/pull/5797), hence, you will not be able to use `lxc-attach` with containers managed by Docker 0.9.0+ by default. It is required to make docker daemon run with `-e lxc` as an argument.
 
-Hence, you will not be able to use `lxc-attach` with containers managed by Docker 0.9.0+ by default. It is required to make Docker daemon run with `-e lxc` as an argument.
+Create [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service` with the following content:
 
-You can create a file named `lxc.conf` under `/etc/systemd/system/docker.service.d/` with the following contents:
-
+ `/etc/systemd/system/docker.service.d/lxc.conf` 
 ```
 [Service]
 ExecStart=
 ExecStart=/usr/bin/docker -d -e lxc
-
 ```
 
 ## Images
@@ -290,17 +276,24 @@ Check for running containers:
 
 ```
 
-Killing still running containers:
-
-```
-# docker kill <CONTAINER ID>
-
-```
-
 List all containers running on the host for deletion:
 
 ```
 # docker ps -a
+
+```
+
+Stop a running container:
+
+```
+# docker stop <CONTAINER ID>
+
+```
+
+Killing still running containers:
+
+```
+# docker kill <CONTAINER ID>
 
 ```
 
@@ -325,35 +318,6 @@ Delete all images by ID:
 
 ```
 
-Disable Docker:
-
-```
-# systemctl disable docker
-# systemctl stop docker
-
-```
-
-Remove Docker/Compose from the system:
-
-```
-# pacman -Rs docker docker-compose
-
-```
-
-Remove users from docker group:
-
-```
-# gpasswd -d <user> docker
-
-```
-
-Delete docker group from system:
-
-```
-# groupdel docker
-
-```
-
 Delete all Docker data (purge directory):
 
 ```
@@ -368,6 +332,10 @@ To grab the IP address of a running container:
  `$ docker inspect --format '{{ .NetworkSettings.IPAddress }}' <container-name OR id> `  `172.17.0.37` 
 
 ## Troubleshooting
+
+### Cannot start a container with systemd 232
+
+Append `systemd.legacy_systemd_cgroup_controller=yes` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), see [bug report](https://github.com/opencontainers/runc/issues/1175) for details.
 
 ### Docker info errors out
 
@@ -419,10 +387,6 @@ EOF
 ```
 
 Finally [restart](/index.php/Restart "Restart") the `systemd-networkd` and `docker` services.
-
-### docker complains about no loopback devices
-
-If starting the docker service fails and `journalctl` says that no loopback device can be found, try following the steps outlined in [TrueCrypt's troubleshooting section](/index.php/TrueCrypt#Failed_to_set_up_a_loop_device "TrueCrypt"). In particular, if you've upgraded the kernel since last rebooting, you just need to reboot.
 
 ### Default number of allowed processes/threads too low
 

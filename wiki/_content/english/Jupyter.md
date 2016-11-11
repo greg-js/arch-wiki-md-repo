@@ -1,4 +1,4 @@
-[Jupyter](http://jupyter.org/) is a browser-based interactive notebook for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, and Julia.
+[Jupyter](http://jupyter.org/) is a browser-based interactive notebook for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
 
 ## Contents
 

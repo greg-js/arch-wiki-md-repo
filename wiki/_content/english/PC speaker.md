@@ -1,31 +1,32 @@
-## Contents
+The computer often seems to make beep noises or other sounds at various times, whether we want them or not. They come from various sources, and as such, you may be able to configure if or when they occur. For situations where no sound card or speakers are available and a simple audio notification is desired, see [#Beep](#Beep).
 
-*   [1 Introduction](#Introduction)
-*   [2 Globally](#Globally)
-*   [3 Locally](#Locally)
-    *   [3.1 Console](#Console)
-    *   [3.2 ALSA](#ALSA)
-    *   [3.3 Xorg](#Xorg)
-    *   [3.4 GNOME](#GNOME)
-    *   [3.5 Cinnamon](#Cinnamon)
-    *   [3.6 GTK+](#GTK.2B)
-*   [4 Beep](#Beep)
-    *   [4.1 Installation](#Installation)
-    *   [4.2 Access for non-root users](#Access_for_non-root_users)
-    *   [4.3 Tips and Tricks](#Tips_and_Tricks)
-*   [5 See also](#See_also)
-
-## Introduction
-
-The computer often seems to make beep noises or other sounds at various times, whether we want them or not. They come from various sources, and as such, you may be able to configure if or when they occur. In situations where no sound card or speakers are available and simple audio notification is desired, use [beep](https://www.archlinux.org/packages/?name=beep). The [beep](https://www.archlinux.org/packages/?name=beep) package provides an advanced PC speaker beeping program.
-
-Sounds from the computer can be heard from the built-in case speaker, the speakers, or headphones which are plugged into the sound card (in which case the noise may be unexpectedly loud). Turning off a particular instance of a sound, while leaving the others operational, is possible if and only if one can identify which portion of the environment generates the particular sound. This allows for a customized selection of attention-getting sounds possible. Please feel free to add any configurations and settings to this wiki page that may be useful for other users.
+Sounds from the computer can be heard from the built-in case speaker, the speakers, or headphones which are plugged into the soundcard (in which case the noise may be unexpectedly loud).
 
 **Note:** The sounds are caused by the BIOS (Basic Input/Output System), the OS (Operating System), the DE (Desktop Environment), or various software programs. The BIOS is a particularly troublesome problem because it is kept inside an EPROM chip on the motherboard, and the only direct control the user has is by turning the power on or off. Unless the BIOS setup has a setting you can adjust or you wish to attempt to reprogram that chip with the proper light source, it is not likely you will be able to change it at all. BIOS-generated beep sounds are not addressed here, except to say that unplugging your computer case speaker will stop all such sounds from being heard. (Do so at your own risk.)
 
-## Globally
+## Contents
 
-The PC speaker can be disabled by [unloading](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") the `pcspkr` module, which is provided by the [linux](https://www.archlinux.org/packages/?name=linux) kernel:
+*   [1 Disable PC Speaker](#Disable_PC_Speaker)
+    *   [1.1 Globally](#Globally)
+    *   [1.2 Xorg](#Xorg)
+    *   [1.3 Console](#Console)
+    *   [1.4 ALSA](#ALSA)
+    *   [1.5 GNOME](#GNOME)
+    *   [1.6 Cinnamon](#Cinnamon)
+    *   [1.7 GTK+](#GTK.2B)
+*   [2 Beep](#Beep)
+    *   [2.1 Installation](#Installation)
+    *   [2.2 Access for non-root users](#Access_for_non-root_users)
+    *   [2.3 Tips and Tricks](#Tips_and_Tricks)
+*   [3 See also](#See_also)
+
+## Disable PC Speaker
+
+Turning off a particular instance of a sound, while leaving the others operational, is possible if and only if one can identify which portion of the environment generates the particular sound. This allows customizing the selection of sounds. Please feel free to add any configurations and settings to this wiki page that may be useful for other users.
+
+### Globally
+
+The PC speaker can be disabled by [unloading](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") the `pcspkr` [kernel module](/index.php/Kernel_module "Kernel module"):
 
 ```
 # rmmod pcspkr
@@ -41,11 +42,18 @@ The PC speaker can be disabled by [unloading](/index.php/Kernel_modules#Manual_m
 
 [Blacklisting it on the kernel command line](/index.php/Kernel_modules#Using_kernel_command_line_2 "Kernel modules") is yet another way. Simply add `modprobe.blacklist=pcspkr` to your bootloader's kernel line.
 
-## Locally
+### Xorg
+
+```
+$ xset -b
+
+```
+
+You can add this command to a startup file such as `/etc/xprofile` to make it permanent. See [xprofile](/index.php/Xprofile "Xprofile") for more information.
 
 ### Console
 
-You can add this command in `/etc/profile` or a dedicated file like `/etc/profile.d/disable-beep.sh` (must be executable):
+You can add this command in `/etc/profile` or a dedicated file like `/etc/profile.d/disable-beep.sh`:
 
 ```
 setterm -blength 0
@@ -61,57 +69,16 @@ set bell-style none
 
 ### ALSA
 
-**Tip:** For most Intel's cards, if you do not see a channel named PC Speaker or Beep in alsamixer's default device, then try selecting the correct card by pressing F6 (e.g. "HDA Intel PCH"). It is listed as "Beep" there. This is because PulseAudio proxy controls may not list all PC Speakers.
-
-Try muting the PC Speaker:
+For most sound cards the PC speaker is listed as an [ALSA](/index.php/ALSA "ALSA") channel, named either *PC Speaker*, *PC Beep*, or *Beep*. To mute the speaker, either use *alsamixer* or *amixer*:
 
 ```
-$ amixer set 'PC Speaker' 0% mute
+$ amixer set *channel* 0% mute
 
 ```
 
-For certain sound cards, it is the PC Beep:
+To unmute the channel, see [Advanced Linux Sound Architecture#Unmuting the channels](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture").
 
-```
-$ amixer set 'PC Beep' 0% mute
-
-```
-
-Or merely Beep:
-
-```
-$ amixer set 'Beep' 0% mute
-
-```
-
-You can also use alsamixer for a console GUI
-
-```
-$ alsamixer
-
-```
-
-The channel can also be unmuted by using the `↑` key to increase the volume of the channel.
-
-Press `Esc` to close alsamixer.
-
-To persist the current ALSA Mixer state, save the settings:
-
-```
-# alsactl -f /var/lib/alsa/asound.state store
-
-```
-
-**Note:** Not every sound card creates a PC Speaker or PC Beep slider control in alsamixer.
-
-### Xorg
-
-```
-$ xset -b
-
-```
-
-You can add this command to a startup file, such as [xprofile](/index.php/Xprofile "Xprofile") to make it permanent.
+**Tip:** If you are using PulseAudio and the PC speaker channel is not listed for the default ALSA device, try selecting the device corresponding to the sound card - PulseAudio proxy controls may not list the PC speaker
 
 ### GNOME
 
@@ -152,9 +119,13 @@ This is documented in the [Gnome Developer Handbook](https://developer.gnome.org
 
 ## Beep
 
+Beep is an advanced PC speaker beeping program. It is useful for situations where no sound card and/or speakers are available, and simple audio notification is desired.
+
 ### Installation
 
 [Install](/index.php/Install "Install") the [beep](https://www.archlinux.org/packages/?name=beep) package.
+
+You may also need to [unmute](#ALSA) the PC speaker in [ALSA](/index.php/ALSA "ALSA").
 
 ### Access for non-root users
 
@@ -192,6 +163,4 @@ While many people are happy with the traditional beep sound, some may like to ch
 
 ## See also
 
-*   Have a look at these `man` pages for further information: `xset(1)`, `setterm(1)`, `readline(3)`.
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-*   [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture")
+*   [xset(1)](http://man7.org/linux/man-pages/man1/xset.1.html), [setterm(1)](http://man7.org/linux/man-pages/man1/setterm.1.html), [readline(1)](http://man7.org/linux/man-pages/man1/readline.1.html)

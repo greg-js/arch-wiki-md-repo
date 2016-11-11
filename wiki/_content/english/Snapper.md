@@ -163,11 +163,11 @@ Then perform a system modification (*e.g.*, install a new program, upgrade, etc.
 Now create the *post* snapshot:
 
 ```
- # snapper -c *config* create -t post --pre-number *#*
+ # snapper -c *config* create -t post --pre-number *N*
 
 ```
 
-where `*#*` is the corresponding *pre* snapshot number.
+where `*N*` is the corresponding *pre* snapshot number.
 
 An alternative method is to use the `--command` flag for `create`, which wraps a command with pre/post snapshots:
 
@@ -200,10 +200,10 @@ To list all [configurations](#Create_a_new_configuration) you have created do:
 
 ## Delete a snapshot
 
-To delete a snapshot number `*#*` do:
+To delete a snapshot number `*N*` do:
 
 ```
- # snapper -c *config* delete *#*
+ # snapper -c *config* delete *N*
 
 ```
 

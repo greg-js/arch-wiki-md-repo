@@ -78,6 +78,17 @@ BEGIN {
 
 ```
 
+	Batch
+
+	A scripting language for Windows that can be used to automate tasks or just have some fun.
+
+```
+@echo off
+echo Arch is the best!
+pause
+
+```
+
 	Befunge
 
 	Believed to be the first two-dimensional, ASCII-based, general-purpose (in the sense of "you could plausibly write Hunt the Wumpus in it") programming language.
@@ -310,6 +321,43 @@ Pick a language:
 
 ```
 
+	Crystal
+
+	An object-oriented, Ruby-like language.
+
+```
+print("Arch is the best!")
+
+```
+
+	Crystal (through web server)
+
+	For distributing the message to multiple friends at once.
+
+```
+# For giving the message to your friends
+require "http/server"
+
+server = HTTP::Server.new(80) do |context|
+  context.response.content_type = "text/plain"
+    context.response.print "Arch is the best!"
+end
+
+puts "Listening."
+server.listen
+
+```
+
+	csh
+
+	A C-like shell.
+
+```
+#!/bin/csh
+echo "Hello, World!"
+
+```
+
 	CSS
 
 	A stylesheet language, heavily used for styling web pages.
@@ -363,6 +411,28 @@ body::before {
  console.loge with '                So Arch'
  console.loge with '     Much Good'
  console.loge with '                          Wow'
+
+```
+
+	Ebuild
+
+	Gentoo's build script format.
+
+```
+DESCRIPTION="Arch is the best!"
+SRC_URI="[https://wiki.archlinux.org/index.php/Arch_is_the_best](https://wiki.archlinux.org/index.php/Arch_is_the_best)"
+
+LICENSE="GFDL_1.3"
+SLOT="0"
+KEYWORDS=""
+IUSE=""
+
+DEPEND=""
+RDEPEND=""
+
+src_compile() {
+einfo "Arch is the best!"
+}
 
 ```
 
@@ -1043,6 +1113,15 @@ Arch is the best!
 
 ```
 
+	VimScript
+
+	A scripting language for the Vim text editor.
+
+```
+echo "Arch is the best!"
+
+```
+
 	Wiring (Arduino)
 
 	Built on Processing, the open source programming language developed at the Massachusetts Institute of Technology.
@@ -1098,6 +1177,18 @@ int main()
 
        XCloseDisplay(d);
        return 0;
+}
+
+```
+
+	Zimbu
+
+	A fast, easy to learn, and JS-like programming language.
+
+```
+FUNC Main() int
+  IO.write("Arch is the best!")
+  RETURN 0
 }
 
 ```

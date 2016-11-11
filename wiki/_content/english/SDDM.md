@@ -21,6 +21,7 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
     *   [3.3 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
     *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
+    *   [3.5 No user Icon](#No_user_Icon)
 
 ## Installation
 
@@ -163,3 +164,13 @@ MinimumUid=500 #My UID is 501
 ### SDDM loads only US keyboard layout
 
 SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.conf`. You can generate this configuration file by `localectl set-x11-keymap` command. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for more information.
+
+### No user Icon
+
+since SDDM reads user icon from either ~/.face.icon or FacesDir/username.face.icon
+
+You need to make sure that SDDM user have permissions to read those files.
+
+`$ setfacl -m u:sddm:x /home/username $ setfacl -m u:sddm:r /home/username/.face.icon`
+
+*   [No User Icon](https://github.com/sgerbino/sddm#no-user-icon).

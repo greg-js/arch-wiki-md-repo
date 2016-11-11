@@ -455,7 +455,7 @@ Now after setup of the encrypted LVM partitioning, it would be time to install: 
 
 Add the `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `etc/mkinitcpio.conf`  `HOOKS="... **block *''*encrypt** **lvm2** ... filesystems ..."` 
+ `etc/mkinitcpio.conf`  `HOOKS="... **block** **encrypt** **lvm2** ... filesystems ..."` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 

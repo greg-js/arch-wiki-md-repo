@@ -62,7 +62,7 @@ To allow remote users to use ALSA, you need to [add](/index.php/Users_and_groups
 
 ### ALSA Utilities
 
-[Install](/index.php/Install "Install") the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package. This contains (among other utilities) the `alsamixer` and `amixer` utilities. *amixer* is a shell command to change audio settings. while *alsamixer* provides a more intuitive [ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") based interface for audio device configuration.
+[Install](/index.php/Install "Install") the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package. This contains (among other utilities) the `alsamixer` and `amixer` utilities. *amixer* is a shell command to change audio settings, while *alsamixer* provides a more intuitive [ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") based interface for audio device configuration.
 
 If you need [high quality resampling](#High_quality_resampling) install the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package to enable [upmixing/downmixing](#Upmixing.2Fdownmixing) and other advanced features.
 

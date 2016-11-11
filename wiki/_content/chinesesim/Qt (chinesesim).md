@@ -1,12 +1,12 @@
 **翻译状态：** 本文是英文页面 [Qt](/index.php/Qt "Qt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2013-10-6，点击[这里](https://wiki.archlinux.org/index.php?title=Qt&diff=0&oldid=277311)可以查看翻译后英文页面的改动。
 
-[Qt](http://qt-project.org/) 是一个跨平台的应用程序，组件工具使用标准 C++，但也大量使用了特殊的代码生成器（称为 [Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html)，或者 moc）以及数个宏来充实语言。它有一些更重要的特性：
+[Qt](http://qt-project.org/) 是一个跨平台的应用程序和组件工具，使用标准 C++编写，通过大量使用代码生成器 [Meta Object Compiler(moc)](http://qt-project.org/doc/qt-4.8/moc.html)以及数个宏来扩展语言的功能。它有一些更重要的特性包括：
 
-*   运行于主流桌面平台和部分手机平台。
-*   广泛的国际化支持。
-*   提供 SQL 数据访问、XML 解析、线程管理、网络支持和统一的文件处理跨平台应用编程接口（API）的完整类库。
+*   支持各种主流桌面平台和部分手机平台。
+*   完善的国际化支持。
+*   提供 SQL 数据访问、XML 解析、线程管理、网络支持和统一的文件处理跨平台应用编程接口。
 
-Qt 框架正在成为主要的开发平台，同时是 [KDE](/index.php/KDE "KDE") 软件社区和重要的开源和闭源应用，如 [VLC](/index.php/VLC "VLC")、[VirtualBox](/index.php/VirtualBox "VirtualBox")、[Opera](/index.php/Opera "Opera")、[Mathematica](/index.php/Mathematica "Mathematica")、[Skype](/index.php/Skype "Skype")以及许多其它应用的基石。
+Qt 框架正在成为主要的开发平台，是 [KDE](/index.php/KDE "KDE") 软件社区和其它一些重要开源和闭源应用的基石，例如 [VLC](/index.php/VLC "VLC")、[VirtualBox](/index.php/VirtualBox "VirtualBox")、[Opera](/index.php/Opera "Opera")、[Mathematica](/index.php/Mathematica "Mathematica")和[Skype](/index.php/Skype "Skype") 等等。
 
 ## Contents
 
@@ -40,23 +40,28 @@ Qt 框架正在成为主要的开发平台，同时是 [KDE](/index.php/KDE "KDE
 
 现在[官方源](/index.php/Official_repositories "Official repositories")中有三个版本的 Qt，能用以下软件包来[安装](/index.php/Pacman "Pacman")：
 
-*   **Qt 5.x** 在软件包 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) 内，文档在软件包 [qt5-doc](https://www.archlinux.org/packages/?name=qt5-doc) 内。
-*   **Qt 4.x** 在软件包 [qt4](https://www.archlinux.org/packages/?name=qt4) 内。
-*   **Qt 3.x** 在软件包 [qt3](https://aur.archlinux.org/packages/qt3/) 内，文档在软件包 [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/) 内。
-
-**警告:** Qt软件包不再提供通常的二进制文件`/usr/bin/qmake`,而是将它们改名为 qmake-qt5, qmake-qt4, qmake-qt3 软链接，这可能导致 Qt3/4 程序编译失败。
+*   **Qt 5.x**：软件包 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base)，文档包是 [qt5-doc](https://www.archlinux.org/packages/?name=qt5-doc)。
+*   **Qt 4.x**：软件包 [qt4](https://www.archlinux.org/packages/?name=qt4)，文档包是 [qt4-doc](https://aur.archlinux.org/packages/qt4-doc/)。
+*   **Qt 3.x**：在软件包 [qt3](https://aur.archlinux.org/packages/qt3/)，文档包是 [qt3-doc](https://aur.archlinux.org/packages/qt3-doc/)。
 
 ## 默认 Qt 库
 
-安装[qtchooser](https://aur.archlinux.org/packages/qtchooser/)可以恢复 `/usr/bin/qmake` 并设置要使用的 Qt 版本，默认是使用 Qt5。
+Qt软件包不再提供通常的二进制文件`/usr/bin/qmake`,而是将它们改名为 qmake-qt5, qmake-qt4, qmake-qt3 软链接，这可能导致 Qt3/4 程序编译失败。安装[qtchooser](https://aur.archlinux.org/packages/qtchooser/)可以恢复 `/usr/bin/qmake` 并设置要使用的 Qt 版本，默认是使用 Qt5。
+
+**警告:** 现在 [qtchooser](https://aur.archlinux.org/packages/qtchooser/) 与 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) 相冲突，可以自行编译并安装到`/usr/local`。Arch 官方不支持这种方式[[1]](https://bugs.archlinux.org/task/51308)。
 
 ### 修改环境变量
 
-要使用 Qt4，可以在`~/.{bash,zsh}_profile.`中设置`QT_SELECT=4`。
+可以通过 `QT_SELECT` [环境变量](/index.php/Environment_variable "Environment variable") 设置默认的 QT. 例如要使用 Qt4，可以在`~/.bash_profile` 或 `~/.zsh_profile` 中 `export QT_SELECT=4`。
 
 ### 使用配置文件
 
-要使用 Qt4，将 `/etc/xdg/qtchooser/4.conf` 软链接到 `~/.config/qtchooser/default.conf`。
+创建 `~/.config/qtchooser/default.conf` 软链接，链接到`/etc/xdg/qtchooser/`目录中需要的 *.conf* 文件上。例如要使用 Qt4，将 `/etc/xdg/qtchooser/4.conf` 软链接到 `~/.config/qtchooser/default.conf`。
+
+```
+$ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
+
+```
 
 ## 外观
 

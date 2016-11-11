@@ -7,19 +7,20 @@ Unlike any other desktop environment, EDE² is based upon the [FLTK toolkit](htt
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Installation (packages)](#Installation_.28packages.29)
-    *   [1.2 Installation (AUR)](#Installation_.28AUR.29)
+    *   [1.1 Custom repository](#Custom_repository)
 *   [2 Starting the DE](#Starting_the_DE)
 *   [3 Applications](#Applications)
     *   [3.1 Some recommendations](#Some_recommendations)
 
 ## Installation
 
-EDE is not very a very common piece of software. You usually have to compile it yourself. For Arch Linux there are however pre-built packages available via a [custom repository](/index.php/Unofficial_user_repositories "Unofficial user repositories").
+EDE can be [installed](/index.php/Install "Install") from the [AUR](/index.php/AUR "AUR") with the [ede](https://aur.archlinux.org/packages/ede/) package.
 
-### Installation (packages)
+Alternatively, you can obtain it from the [#Custom repository](#Custom_repository).
 
-To enable EDE's repository, just add the following lines to your `/etc/pacman.conf`:
+### Custom repository
+
+To enable EDE's [unofficial user repository](/index.php/Unofficial_user_repository "Unofficial user repository"), add the following lines to your `/etc/pacman.conf`:
 
 ```
 [ede]
@@ -34,12 +35,6 @@ Next [refresh the package lists](/index.php/Mirrors#Force_pacman_to_refresh_the_
 *   *ede-common*
 *   *ede*
 *   *ede-wallpapers* (optional)
-
-### Installation (AUR)
-
-You can also build EDE yourself. Fortunately on Arch there are two [AUR](/index.php/AUR "AUR")-[PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files available that allow you to build it without much hassle.
-
-The first one is [edelib](https://aur.archlinux.org/packages/edelib/) which is a dependency for EDE, the other one [ede](https://aur.archlinux.org/packages/ede/) the actual DE.
 
 ## Starting the DE
 
