@@ -200,7 +200,7 @@ In `about:config`, set the string value to a blank for both of these: `browser.n
 
 #### Enable Electrolysis
 
-In firefox 48 or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to true in `about:config`.
+In firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to true in `about:config`.
 
 ## Appearance
 

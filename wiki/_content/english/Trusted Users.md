@@ -57,6 +57,7 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [flexiondotorg](https://aur.archlinux.org/packages.php?K=flexiondotorg&SeB=m) | Martin Wimpress | [martin+arch@flexion.org](mailto:martin+arch@flexion.org) |
 | [foutrelis](https://aur.archlinux.org/packages.php?K=foutrelis&SeB=m) | Evangelos Foutras | evangelos@foutrelis.com |
 | [giniu](https://aur.archlinux.org/packages.php?K=giniu&SeB=m) | [Andrzej Giniewicz](/index.php/User:Giniu "User:Giniu") | gginiu@gmail.com |
+| [grazzolini](https://aur.archlinux.org/packages/?SeB=m&K=grazzolini) | Giancarlo Razzolini | grazzolini [at] gmail [dot] com |
 | [gtmanfred](https://aur.archlinux.org/packages.php?K=gtmanfred&SeB=m) | Daniel Wallace | danielwallace gtmanfred com |
 | [heftig](https://aur.archlinux.org/packages.php?K=heftig&SeB=m) | Jan Steffens | jan.steffens@student.kit.edu |
 | [jelly](https://aur.archlinux.org/packages.php?K=jelly&SeB=m) | Jelle van der Waa | jelle vdwaa nl |

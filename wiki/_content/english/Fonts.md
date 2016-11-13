@@ -14,7 +14,7 @@ Note that certain font licenses may impose some legal limitations.
     *   [2.4 Older applications](#Older_applications)
     *   [2.5 Pango Warnings](#Pango_Warnings)
 *   [3 Console fonts](#Console_fonts)
-    *   [3.1 Previewing and testing](#Previewing_and_testing)
+    *   [3.1 Preview and temporary changes](#Preview_and_temporary_changes)
     *   [3.2 Persistent configuration](#Persistent_configuration)
 *   [4 Font packages](#Font_packages)
     *   [4.1 Latin script](#Latin_script)
@@ -268,30 +268,27 @@ Keymaps, the connection between the key pressed and the character used by the co
 
 **Note:** Replacing the font can cause issues with programs that expect a standard VGA-style font, such as those using line drawing graphics.
 
-### Previewing and testing
+### Preview and temporary changes
 
 **Tip:** An organized library of images for previewing is available: [Linux console fonts screenshots](http://alexandre.deverteuil.net/pages/consolefonts/).
-
-The available glyphs or letters in the font can also be viewed as a table with using *showconsolefont*:
 
 ```
 $ showconsolefont
 
 ```
 
-The *setfont* utility may be used to temporarily change the font, so that the user can consider its permanent use. Just pass the name of the font (they are located in `/usr/share/kbd/consolefonts/`). For example:
+shows a table of glyphs or letters of a font.
+
+`setfont` temporarily change the font if passed a font name (in `/usr/share/kbd/consolefonts/`) such as
 
 ```
 $ setfont lat2-16 -m 8859-2
 
 ```
 
-Note that the font name is case-sensitive, so type it *exactly* as you see it. If the newly changed font is not suitable, a return to the default font with the following command (even if the console display is totally unreadable, this command will still work, just type the command "blindly"):
+Font names are case-sensitive. With no parameter, `setfont` returns the console to the default font.
 
-```
-$ setfont
-
-```
+**Tip:** All font changing commands can be typed in "blind".
 
 **Note:** *setfont* only works on the console currently being used. Any other consoles, active or inactive, remain unaffected.
 

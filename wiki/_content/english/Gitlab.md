@@ -242,8 +242,6 @@ production:
 
 For our purposes (unless you know what you are doing), you do not need to worry about configuring the other databases listed in `/etc/webapps/gitlab/database.yml`. We only need to set up the production database to get GitLab working.
 
-Finally, open `/usr/lib/systemd/system/gitlab.target` and `/usr/lib/systemd/system/gitlab-unicorn.service` change all instances of `mysql.service` to `postgresql.service`.
-
 #### Firewall
 
 If you want to give direct access to your Gitlab installation through an [iptables](/index.php/Iptables "Iptables") firewall, you may need to adjust the port and the network address:
@@ -266,26 +264,7 @@ If you are behind a router, do not forget to forward this port to the running Gi
 
 Start the Redis server before we create the database [start/enable](/index.php/Start/enable "Start/enable") the `redis` systemd unit.
 
-Now you have to install bundler and the required gems with:
-
-```
-# export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin
-# sudo -u gitlab -H gem install bundler --no-document
-# cd /usr/share/webapps/gitlab
-# sudo -u gitlab -H bundle install
-
-```
-
 **Warning:** GitLab requires `bundle` command, not `bundle-2.1`, don't forget to install it.
-
-**Note:** If you're getting errors later on saying bundle is missing for the user 'gitlab', then this is most likely because ruby is installed in a non-readable folder such as /usr/lib or something similar and this solves that issue:
-```
-su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; gem install bundler --no-document"
-su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; cd /usr/share/webapps/gitlab; bundle install"
-su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; cd /usr/share/webapps/gitlab; bundle exec rake gitlab:setup RAILS_ENV=production"
-su - gitlab -s /bin/sh -c "export PATH=$PATH:/var/lib/gitlab/.gem/ruby/2.3.0/bin; cd /usr/share/webapps/gitlab; bundle exec rake assets:precompile RAILS_ENV=production"
-
-```
 
 Initialize the database and activate advanced features:
 
@@ -313,15 +292,8 @@ gitlabhq_production already exists
 
 Administrator account created:
 
-login.........root
-password......5iveL!fe
-
-```
-
-Now compile the assets:
-
-```
-# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake assets:precompile RAILS_ENV=production"
+login:    root
+password: You'll be prompted to create one on your first visit.
 
 ```
 
@@ -484,11 +456,11 @@ Checking GitLab ... Finished
 
 To automatically launch GitLab at startup, enable the `gitlab.target`, `gitlab-sidekiq` and `gitlab-unicorn` services.
 
-Now test your GitLab instance by visiting [http://localhost:8080](http://localhost:8080) or [http://yourdomain.com](http://yourdomain.com) and login with the default credentials:
+Now test your GitLab instance by visiting [http://localhost:8080](http://localhost:8080) or [http://yourdomain.com](http://yourdomain.com), you should be prompted to create a password:
 
 ```
 username: root
-password: 5iveL!fe
+password: You'll be prompted to create one on your first visit.
 
 ```
 
@@ -791,15 +763,26 @@ For more information, please see issue [#6100](https://github.com/gitlabhq/gitla
 
 ### Gitlab-workhorse
 
-Since 8.0 GitLab uses separate HTTP server [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this.
+Since 8.0 GitLab uses separate HTTP server [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) for large HTTP requests like Git push/pull. If you want to use this instead of SSH, install the [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) package, enable `gitlab-workhorse.service` and configure web server for this. [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) should now be preferred over `gitlab-unicorn` according to the GitLab team: [https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216](https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216)
 
-Please note that [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) should now be preferred over [gitlab-unicorn](https://www.archlinux.org/packages/?name=gitlab-unicorn) according to the GitLab team: [https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216](https://gitlab.com/gitlab-org/gitlab-ce/issues/22528#note_16036216)
+**Note:** Unicorn is still needed so don't disable or stop `gitlab-unicorn.service`. If you've changed the port Unicorn listens at, [edit](/index.php/Edit "Edit") the `-authBackend` setting in `gitlab-workhorse.service` accordingly
 
-GitLab v8.12 somehow broke [gitlab-unicorn](https://www.archlinux.org/packages/?name=gitlab-unicorn) web server. Using [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) instead fixes issues about unreachable assets and consequently broken display/broken CSS.
+By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `/run/gitlab/gitlab-workhorse.socket`. You can [edit](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` to make it listen on an address, for example `-listenAddr 127.0.0.1:8181`.
 
-By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `127.0.0.1:8181`. You should consider [editing](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` according to your LAN IP address, for example `-listenAddr 192.168.0.1:8181`.
+When using nginx remember to edit your nginx configuration file. To switch from gitlab-unicorn to gitlab-workhorse edit the two following settings accordingly
 
-When using nginx remember to verify your nginx configuration file. To switch from gitlab-unicorn to gitlab-workhorse please see configuration in /etc/webapps/gitlab/nginx.conf.example. To fix not working broken CSS you probably will need to change your upstream to point to workhorse socket.
+ `/etc/nginx/servers-available/gitlab` 
+```
+upstream gitlab {
+   server unix:/run/gitlab/gitlab-workhorse.socket fail_timeout=0;
+}
+
+...
+
+      proxy_pass [http://unix:/run/gitlab/gitlab-workhorse.socket](http://unix:/run/gitlab/gitlab-workhorse.socket);
+  }  
+}
+```
 
 ## Useful Tips
 

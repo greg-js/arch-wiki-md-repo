@@ -279,7 +279,9 @@ Set `load_state` and `unload_state` module options according to your needs (see 
 
 #### Enable NVIDIA card during shutdown
 
-The NVIDIA card may not correctly initialize during boot if the card was powered off when the system was last shutdown. One option is to set `TurnCardOffAtExit=false` in `/etc/bumblebee/bumblebee.conf`, however this will enable the card everytime you stop the Bumblebee daemon, even if done manually. To ensure that the NVIDIA card is always powered on during shutdown, add the following [systemd](/index.php/Systemd "Systemd") service (if using [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)):
+On some laptops, the NVIDIA card may not correctly initialize during boot if the card was powered off when the system was last shutdown. Therefore the Bumblebee daemon will power on the GPU when stopping the daemon (e.g. on shutdown) due to the (default) setting `TurnCardOffAtExit=false` in `/etc/bumblebee/bumblebee.conf`. Note that this setting does not influence power state while the daemon is running, so if all `optirun` or `primusrun` programs have exited, the GPU will still be powered off.
+
+When you stop the daemon manually, you might want to keep the card powered off while still powering it on on shutdown. To achieve the latter, add the following [systemd](/index.php/Systemd "Systemd") service (if using [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)):
 
  `/etc/systemd/system/nvidia-enable.service` 
 ```

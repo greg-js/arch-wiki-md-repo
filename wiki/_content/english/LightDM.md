@@ -225,7 +225,7 @@ Edit the LightDM configuration file and ensure these lines are uncommented and c
 
  `/etc/lightdm/lightdm.conf` 
 ```
-[Seat:*]
+[SeatDefaults]
 pam-service=lightdm
 pam-autologin-service=lightdm-autologin
 autologin-user=*username*

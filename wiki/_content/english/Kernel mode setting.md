@@ -57,7 +57,9 @@ Rebuild your initial ramdisk image (see [mkinitcpio](/index.php/Mkinitcpio "Mkin
 
 ### My fonts are too tiny
 
-See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for how to change your console font to a large font. The Terminus font ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) is available in many sizes, including larger sizes.
+See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for how to change your console font to a large font. The Terminus font ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) is available in many sizes, such as `ter-132n` which is larger.
+
+Alternatively, disabling KMS by appending `nomodeset` as a kernel parameter will also make fonts readable.
 
 ### Problem upon bootloading and dmesg
 

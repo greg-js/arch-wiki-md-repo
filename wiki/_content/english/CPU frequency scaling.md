@@ -33,7 +33,7 @@ By default, it monitors CPU temperature using available CPU digital temperature 
 
 ### i7z
 
-[i7z](https://www.archlinux.org/packages/?name=i7z) is an i7 (and now i3, i5) (CPU) reporting tool for Linux. It can be launched from a Terminal with the command `i7z` or as GUI with `i7z-gui`.
+[i7z](https://www.archlinux.org/packages/?name=i7z) is an i7 (and now i3, i5) CPU reporting tool for Linux. It can be launched from a Terminal with the command `i7z` or as GUI with `i7z-gui`.
 
 ### cpupower
 
@@ -109,7 +109,7 @@ To set the CPU to run at a specified frequency:
 Governors (see table below) are power schemes for the CPU. Only one may be active at a time. For details, see the [kernel documentation](https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt) in the kernel source.
 
 | Governor | Description |
-| performance | Run the CPU at max frequency. |
+| performance | Run the CPU at the maximum frequency. |
 | powersave | Run the CPU at the minimum frequency. |
 | userspace | Run the CPU at user specified frequencies. |
 | ondemand | Scales the frequency dynamically according to current load. Jumps to the highest frequency and then possibly back off as the idle time increases. |

@@ -578,13 +578,6 @@ Add a line to `/etc/fstab`:
 
 Keep in mind the Hibernate hook must be loaded before filesystems, so using ZVOL as swap will not allow to use hibernate function. If you need hibernate, keep a partition for it.
 
-Make sure to unmount all ZFS filesystems before rebooting the machine, otherwise any ZFS pools will refuse to be imported:
-
-```
-# zfs umount -a
-
-```
-
 ### Automatic snapshots
 
 #### ZFS Automatic Snapshot Service for Linux

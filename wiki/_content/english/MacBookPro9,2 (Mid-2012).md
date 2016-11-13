@@ -117,6 +117,33 @@ For Macbook Pro 9,1 users, the process is similar.
 
 The only difference is installing efibootmgr (required for 9,2) and running grub-mkconfig (may not be required for 9,2)
 
+Alternatively you can use rEFInd as your boot manager instead.
+
+```
+# pacman -S refind-efi
+# mkdir /boot/EFI/refind/refind_x64.efi
+# refind-install
+# mkinitcpio -p linux
+
+```
+
+Then to find the slow bootup of rEFInd you need to copy or move the refind folder and rename the efi.
+
+```
+# cp -r /boot/EFI/refind /boot/EFI/BOOT
+# mv /boot/EFI/BOOT/refind_x64.efi /boot/EFI/BOOT/bootx64.efi
+
+```
+
+For some reason the MBP bootloader is looking for this first. Without this MBP will be sitting at the grey startup screen for 30s+
+
+Configure /boot/EFI/BOOT/refind.conf and uncomment the scan line and edit to reflect the below values for mac.
+
+```
+scanfor internal,hdbios,external,biosexternal,optical,manual
+
+```
+
 ## Post Installation
 
 Continue with [General recommendations](/index.php/General_recommendations "General recommendations"), noting the following modifications:

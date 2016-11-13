@@ -63,7 +63,7 @@ There are no exclusive hardware differences between the Developer Edition and th
 Dell does no longer show bios versions higher than A07 on their site. You can download BIOS version A08 and A09 from here:
 
 *   [BIOS A08](https://mega.nz/#!20U2VRBI!FRam__6wjlOjRejd0Oy4Wtof6wdkTkyUUBBz8oTtOno) md5sum: d1df9447f119ce5cb90ebea875a22cd9
-*   [BIOS A09](https://please.insert/link) md5sum: please-insert-link
+*   [BIOS A09](http://downloads.dell.com/FOLDER03901193M/1/9343A09.exe) md5sum: 3921c57ae6ff3fcd9b4564f5f36fb69a
 
 ### Backlight
 

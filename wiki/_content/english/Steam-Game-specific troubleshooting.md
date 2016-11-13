@@ -873,6 +873,8 @@ Error about missing client.so might appear, solution:
 
 ```
 
+If the error mentions a missing library for libgcrypt.so.11, install [lib32-libgcrypt15](https://www.archlinux.org/packages/?name=lib32-libgcrypt15).
+
 ### Opening some menus causes the game to crash
 
 Most menus work fine, but ones with checkboxes (LAN multiplayer, mounted games list) do not work at all. This is a bug in the menu code.

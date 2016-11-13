@@ -607,7 +607,7 @@ If you want your system to be able to recognise Steam controller after hot swapp
 
 If the Steam Controller will not pair wirelessly but works when wired make you may need to create the following udev rule, suggested by Valve[[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/).
 
-`/lib/udev/rules.d/99-steam-controller-perms.rules`
+`/etc/udev/rules.d/99-steam-controller-perms.rules`
 
 ```
 # This rule is needed for basic functionality of the controller in Steam and keyboard/mouse emulation

@@ -567,6 +567,20 @@ There may be reasons you want to use another window manager than KWin, for examp
 
 To use an alternative [window manager](/index.php/Window_manager "Window manager") with Plasma open the *System Settings* panel, navigate to *(Default) Applications > Window Manager > Use a different window manager* and select the window manager you wish to use from the list.
 
+**Note:**
+
+The component chooser settings in plasma 5 doesn't allow changing the window manager anymore. [[7]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the KDEWM environment variable before KDE startup. [[8]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in ~/.config/plasma-workspace/env and export the KDEWM variable there. For example to use the i3 window manager :
+
+ `~/.config/plasma-workspace/env/set_window_manager.sh` 
+```
+export KDEWM=/usr/bin/i3
+
+```
+
+And then make it executable :
+
+ ` chmod +x ~/.config/plasma-workspace/env/set_window_manager.sh` 
+
 #### KDE/Openbox session
 
 The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a session for using KDE with [Openbox](/index.php/Openbox "Openbox"). To make use of this session, select *KDE/Openbox* from the [display manager](/index.php/Display_manager "Display manager") menu.
@@ -765,7 +779,7 @@ Now go back to the System Settings page and carefully add the necessary resource
 
 ### Fix empty IMAP inbox
 
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[7]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
+For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[9]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
 
 ### Getting current state of KWin for support and debug purposes
 

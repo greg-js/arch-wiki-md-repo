@@ -101,7 +101,7 @@ The **preferred way** to connect a Windows client to a Linux print server is usi
 
 First, configure the server as described in the section [#Between GNU/Linux systems](#Between_GNU.2FLinux_systems).
 
-On the Windows computer, go to *Control Panel->Devices and Printers* and choose to 'Add a printer'. Next, choose 'Select a shared printer by name' and type in the location of the printer:
+On the Windows computer, go to *Control Panel->Devices and Printers* and choose to 'Add a printer'. If on Windows 10, click "The printer that I want isn't listed". Next, choose 'Select a shared printer by name' and type in the location of the printer:
 
 ```
 http://*hostname*:631/printers/*printer_name*

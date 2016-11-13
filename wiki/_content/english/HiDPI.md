@@ -481,6 +481,15 @@ You may adjust the "sharpness" parameter on your monitor settings to adjust the 
 
 The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n`(normal) and `ter-132b`(bold). See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for configuration details.
 
+After booting, other virtual consoles (TTY2-6) may have garbled and unreadable fonts. This can be fixed temporarily by logging in and setting the font again:
+
+```
+setfont ter-132n
+
+```
+
+However, this must be changed for each terminal separately. A more permanent fix is to pass a [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") by editing your boot manager's configuration file and adding `video=2560x1600@60`(substituting in the native resolution of your HiDPI display). This should solve the problem after next boot.
+
 ## See also
 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)

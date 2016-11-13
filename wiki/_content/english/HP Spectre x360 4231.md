@@ -1,11 +1,11 @@
 | **Device** | **Status** | **Modules** |
 | Video | Working, see tweaks | i915 |
 | Wireless | Working, see issues | iwlwifi |
-| Bluetooth | not working | unknown |
+| Bluetooth | Working | bluetooth |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working |  ? |
-| Webcam | working | uvcvideo |
-| Card Reader | not tested | rtsx_pci |
+| Webcam | Working | uvcvideo |
+| Card Reader | Working | rtsx_pci |
 | Wireless switch | Working, see issues | intel-hid |
 | Function/Multimedia Keys | Working |  ? |
 
@@ -140,4 +140,3 @@ Issues for which no resolution could be found:
     *   Booting to GDM makes the hotkey for airplane mode work. Nothing special. You can login immediately.
     *   Right after login to Gnome the hotkey is spammed and thus airplane mode turned off and on for like 7 seconds. `dmesg` shows some hard faults caused by wifi module being unexpectedly unavailable but nothing else suspicious.
     *   If you wait in GDM for a while, the spam hotkey spam won't happen after login. I.e. the timer is running already while you are in GDM.
-*   Bluetooth not working. This has not been investigated at all yet. Maybe just a missing driver.

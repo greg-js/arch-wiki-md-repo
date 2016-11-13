@@ -138,7 +138,7 @@ A specific example of arguments is
 
 ### Using sd-encrypt hook
 
-In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator(8)](http://man7.org/linux/man-pages/man8/systemd-cryptsetup-generator.8.html) for more options and more details.
+In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for more options and more details.
 
 #### luks.uuid
 
@@ -152,11 +152,11 @@ Specify the UUID of the device to be decrypted on boot with this flag. If the UU
 #### luks.name
 
 ```
-luks.name=*cryptroot*
+luks.name=*UUID*=*name*
 
 ```
 
-Specify the name of the mapped device after the LUKS partition is open. For example, specifying `cryptroot` causes the unlocked device to be located at `/dev/mapper/cryptroot`. If this is not specified the mapped device will be located at `/dev/mapper/luks-*UUID*` where *UUID* is the UUID of the LUKS partition.
+Specify the name of the mapped device after the LUKS partition is open. For example, specifying `*UUID*=cryptroot` causes the unlocked device to be located at `/dev/mapper/cryptroot`. If this is not specified the mapped device will be located at `/dev/mapper/luks-*UUID*` where *UUID* is the UUID of the LUKS partition.
 
 This is equivalent to the second parameter of `encrypt`'s `cryptdevice`.
 
