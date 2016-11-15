@@ -42,7 +42,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.13 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
     *   [5.14 Kernel modules fail to build after Linux kernel 4.7](#Kernel_modules_fail_to_build_after_Linux_kernel_4.7)
         *   [5.14.1 Linux kernel 4.7](#Linux_kernel_4.7)
-        *   [5.14.2 Linux kernel 4.8](#Linux_kernel_4.8)
+        *   [5.14.2 Linux kernel 4.8.x (x<=6)](#Linux_kernel_4.8.x_.28x.3C.3D6.29)
     *   [5.15 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
 *   [6 Uninstallation](#Uninstallation)
 
@@ -542,7 +542,7 @@ As of VMware Workstation Pro 12.1, the module source needs to be modified to be 
 
 ```
 
-#### Linux kernel 4.8
+#### Linux kernel 4.8.x (x<=6)
 
 ```
 # cd /usr/lib/vmware/modules/source

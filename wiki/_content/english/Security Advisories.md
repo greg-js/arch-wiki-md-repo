@@ -43,6 +43,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### November 2016
 
+*   [14 November 2016] [ASA-201611-13](https://lists.archlinux.org/pipermail/arch-security/2016-November/000760.html) [shutter](https://www.archlinux.org/packages/?name=shutter) arbitrary code execution
 *   [02 November 2016] [ASA-201611-12](https://lists.archlinux.org/pipermail/arch-security/2016-November/000759.html) [lib32-gdk-pixbuf2](https://www.archlinux.org/packages/?name=lib32-gdk-pixbuf2) arbitrary code execution
 *   [02 November 2016] [ASA-201611-11](https://lists.archlinux.org/pipermail/arch-security/2016-November/000758.html) [tar](https://www.archlinux.org/packages/?name=tar) arbitrary file overwrite
 *   [02 November 2016] [ASA-201611-10](https://lists.archlinux.org/pipermail/arch-security/2016-November/000757.html) [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls) multiple issues

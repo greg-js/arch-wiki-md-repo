@@ -87,3 +87,4 @@ FONT=ter-v28b
 
 *   **[Bumblebee](/index.php/Bumblebee "Bumblebee")** - To configure intel/nvidia hybrid graphics
 *   **[iwlwifi issue](https://bbs.archlinux.org/viewtopic.php?id=213363)** - if you have [*** ] A start job is running for wlp3s0 (14 s / 1min 30s).
+*   **[cheat sheet](https://github.com/nicholasglazer/arch-cheat-sheet)** - Arch guide did with this laptop model

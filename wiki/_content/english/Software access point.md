@@ -115,7 +115,7 @@ For automatically starting hostapd, [enable](/index.php/Daemon "Daemon") the `ho
 
 **Warning:** The wireless channels allowed for access point operation differ according to geography. Depending on the wireless firmware, you may have to set the region correctly to use legal channels. **Do not** choose another region, as you may be illegally disturbing network traffic, affecting wireless functionality of your own device and others within its reach! To set the region see [Wireless network configuration#Respecting the regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration").
 
-**Note:** If you have a card based on RTL8192CU chipset, install [hostapd-8192cu](https://aur.archlinux.org/packages/hostapd-8192cu/) in the [AUR](/index.php/AUR "AUR") and replace `driver=nl80211` with `driver=rtl871xdrv` in the `hostapd.conf` file.
+**Note:** If you have a card based on RTL8192CU chipset, install [hostapd-rtl871xdrv](https://aur.archlinux.org/packages/hostapd-rtl871xdrv/) and replace `driver=nl80211` with `driver=rtl871xdrv` in the `hostapd.conf` file.
 
 ### Network configuration
 

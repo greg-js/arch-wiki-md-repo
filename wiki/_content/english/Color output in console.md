@@ -85,7 +85,6 @@ The `-n` option includes file line numbers in the output.
 
 Add the following lines to your shell configuration file:
 
- `~/.bashrc` 
 ```
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
@@ -96,11 +95,12 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 # and so on
+
 ```
 
 Change the values ([ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code")) as you like. [This blog post](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized) and the page [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization") (not bash-specific!) also help.
 
-**Note:** The `LESS_TERMCAP_*xx*` variables are currently undocumented in less (1). For a detailed explanation, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
+**Note:** The `LESS_TERMCAP_*xx*` variables are currently undocumented in [less(1)](http://man7.org/linux/man-pages/man1/less.1.html). For a detailed explanation, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840).
 
 #### Reading from stdin
 
@@ -148,6 +148,7 @@ pty() {
 ptyless() {
 	pty $@ | less
 }
+
 ```
 
 Usage:
@@ -193,9 +194,8 @@ To enable colored `man`, two main pagers, `less` and `most`, are hacked here.
 
 See [#less](#less) for a more detailes description.
 
-A `less` wrapper of `man` for bash would look like this:
+For bash or zsh, add the following `less` wrapper function to `~/.bashrc` or `~/.zshrc`:
 
- `~/.bashrc` 
 ```
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
@@ -563,11 +563,7 @@ $ (x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:
 
 Replace `tput op` with whatever tput you want to trace. `op` is the default foreground and background color.
 
-```
-$ ( strace -s5000 -e write tput op 2>&2 2>&1 ) | tee -a /dev/stderr | grep -o '"[^"]*"'
-
-```
-
+ `$ ( strace -s5000 -e write tput op 2>&2 2>&1 ) | tee -a /dev/stderr | grep -o '"[^"]*"'` 
 ```
 033[\033[1;34m"\33[39;49m"\033[00m
 
@@ -577,11 +573,7 @@ $ ( strace -s5000 -e write tput op 2>&2 2>&1 ) | tee -a /dev/stderr | grep -o '"
 
 The following command will let you discover all the terminals you have terminfo support for, and the number of colors each terminal supports. The possible values are: 8, 15, 16, 52, 64, 88 and 256.
 
-```
-$ for T in `find /usr/share/terminfo -type f -printf '%f '`;do echo "$T `tput -T $T colors`";done|sort -nk2
-
-```
-
+ `$ for T in `find /usr/share/terminfo -type f -printf '%f '`;do echo "$T `tput -T $T colors`";done|sort -nk2` 
 ```
 Eterm-88color 88
 rxvt-88color 88
@@ -605,11 +597,7 @@ xterm-256color 256
 
 This command is useful to see what features that are supported by your terminal.
 
-```
-$ infocmp -1 | sed -nu 's/^[ \000\t]*//;s/[ \000\t]*$//;/[^ \t\000]\{1,\}/!d;/acsc/d;s/=.*,//p'|column -c80
-
-```
-
+ `$ infocmp -1 | sed -nu 's/^[ \000\t]*//;s/[ \000\t]*$//;/[^ \t\000]\{1,\}/!d;/acsc/d;s/=.*,//p'|column -c80` 
 ```
 bel	cuu	ich	kb2	kf15	kf3	kf44	kf59	mc0	rmso	smul
 blink	cuu1	il	kbs	kf16	kf30	kf45	kf6	mc4	rmul	tbc

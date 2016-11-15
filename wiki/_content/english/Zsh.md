@@ -150,18 +150,19 @@ promptinit
 
 # This will set the default prompt to the walters theme
 prompt walters
+
 ```
 
 ### Configuring $PATH
 
 Normally, the path should be set in `~/.zshenv`, but Arch Linux sources `/etc/profile` after sourcing `~/.zshenv`.
 
-To prevent your $PATH being overwritten, set it in `~/.zprofile`.
+To prevent your `$PATH` being overwritten, set it in `~/.zprofile`.
 
  `~/.zprofile` 
 ```
 typeset -U path
-path=(~/bin /other/things/in/path $path[@])
+path=(*~/bin* */other/things/in/path* $path[@])
 ```
 
 See also [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html#l24) and the note in [#Startup/Shutdown files](#Startup.2FShutdown_files).
@@ -179,19 +180,31 @@ compinit
 
 The above configuration includes ssh/scp/sftp hostnames completion but in order for this feature to work, users need to prevent ssh from hashing hosts names in `~/.ssh/known_hosts`.
 
-**Warning:** This makes the computer vulnerable to ["Island-hopping" attacks](http://blog.rootshell.be/2010/11/03/bruteforcing-ssh-known_hosts-files/). In that intention, comment the following line or set the value to `no`: `/etc/ssh/ssh_config`  `#HashKnownHosts yes` 
+**Warning:** This makes the computer vulnerable to ["Island-hopping" attacks](http://blog.rootshell.be/2010/11/03/bruteforcing-ssh-known_hosts-files/). In that intention, comment the following line or set the value to `no`: `/etc/ssh/ssh_config` 
+```
+#HashKnownHosts yes
+
+```
 
 And move `~/.ssh/known_hosts` somewhere else so that ssh creates a new one with un-hashed hostnames (previously known hosts will thus be lost). For more information, see the SSH readme for [hashed-hosts](http://nms.lcs.mit.edu/projects/ssh/README.hashed-hosts).
 
 For autocompletion with an arrow-key driven interface, add the following to:
 
- `~/.zshrc`  `zstyle ':completion:*' menu select` 
+ `~/.zshrc` 
+```
+zstyle ':completion:*' menu select
+
+```
 
 	*To activate the menu, press tab twice.*
 
 For autocompletion of command line switches for aliases, add the following to:
 
- `~/.zshrc`  `setopt COMPLETE_ALIASES` 
+ `~/.zshrc` 
+```
+setopt COMPLETE_ALIASES
+
+```
 
 ### Autostart X at login
 
@@ -203,13 +216,21 @@ See [Xinitrc#Autostart X at login](/index.php/Xinitrc#Autostart_X_at_login "Xini
 
 You need to [source](/index.php/Source "Source") the hook to enable it, for example:
 
- `~/.zshrc`  `source /usr/share/doc/pkgfile/command-not-found.zsh` 
+ `~/.zshrc` 
+```
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+```
 
 ### The ttyctl command
 
 [[1]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
 
- `~/.zshrc`  `ttyctl -f` 
+ `~/.zshrc` 
+```
+ttyctl -f
+
+```
 
 ### Key bindings
 
@@ -410,7 +431,7 @@ cdr allows you to change the working directory to a previous working directory f
  `.zshrc` 
 ```
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
+add-zsh-hook -Uz chpwd chpwd_recent_dirs
 
 ```
 
@@ -434,16 +455,29 @@ Use `cdr <NUM>` to go back to a visited folder. Completion for the argument to c
 
 ### Help command
 
-Unlike [bash](/index.php/Bash "Bash"), *zsh* does not enable a built in `help` command. To use `help` in zsh, add following to your `zshrc`:
+Zsh `help` command is called `run-help`. Unlike [bash](/index.php/Bash "Bash"), *zsh* does not enable it by default. To use `help` in zsh, add following to your `zshrc`:
 
 ```
 autoload -Uz run-help
-autoload -Uz run-help-git
-autoload -Uz run-help-svn
-autoload -Uz run-help-svk
 unalias run-help
 alias help=run-help
 ```
+
+`run-help` will invoke *man* for external commands. Default keyboard shortcut is `Alt+h` or `Esc+h`.
+
+`run-help` has helper functions, they need to be enabled separately:
+
+```
+autoload -Uz run-help-git
+autoload -Uz run-help-ip
+autoload -Uz run-help-openssl
+autoload -Uz run-help-p4
+autoload -Uz run-help-sudo
+autoload -Uz run-help-svk
+autoload -Uz run-help-svn
+```
+
+For example `run-help git commit` command will now open the man page [git-commit(1)](http://man7.org/linux/man-pages/man1/git-commit.1.html) instead of [git(1)](http://man7.org/linux/man-pages/man1/git.1.html).
 
 ### Fish-like syntax highlighting
 
@@ -480,7 +514,7 @@ See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for mor
 
 ### Persistent rehash
 
-Typically, compinit will not automatically find new executables in the $PATH. For example, after you install a new package, the files in /usr/bin would not be immediately or automatically included in the completion. Thus, to have these new exectuables included, one would run:
+Typically, compinit will not automatically find new executables in the `$PATH`. For example, after you install a new package, the files in /usr/bin would not be immediately or automatically included in the completion. Thus, to have these new exectuables included, one would run:
 
 ```
 $ rehash
@@ -489,7 +523,12 @@ $ rehash
 
 This 'rehash' can be set to happen automatically. Simply include the following in your `zshrc`:
 
- `~/.zshrc`  `zstyle ':completion:*' rehash true` 
+ `~/.zshrc` 
+```
+zstyle ':completion:*' rehash true
+
+```
+
 **Note:** This hack has been found in a PR for Oh My Zsh [[2]](https://github.com/robbyrussell/oh-my-zsh/issues/3440)
 
 ## Uninstallation

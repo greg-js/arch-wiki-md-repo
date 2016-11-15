@@ -6,13 +6,13 @@ Described as ["The last word in filesystems"](http://web.archive.org/web/2006042
 
 ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://www.llnl.gov/) to develop a native Linux kernel module for its massive storage requirements and super computers.
 
-**Note:** Due to potential legal incompatibilities between CDDL license of ZFS code, and GPL of Linux kernel ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS development not upstreamed nor supported by kernel. While ZFS, as filesystem, being heavily in need of kernel functionality and work stability.
+**Note:** Due to potential legal incompatibilities between CDDL license of ZFS code and GPL of the Linux kernel ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS development is not supported by the kernel.
 
-This results in:
+As a result:
 
 *   ZFS sill resides in [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and unofficial [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
-*   ZFSonLinux project keeping up to Linux kernel versions and making stable releases and Arch ZFS maintainers releasing them while Arch Linux already get next newer version of kernel, perpetually.
-*   This situation locks-down normal rolling update process by unsatisfied dependencies, because new kernel version, proposed by update, most of the time unsupported by ZFS.
+*   ZFSonLinux project must keep up wth Linux kernel versions and making stable releases with Arch ZFS maintainers releasing them whenever Arch Linux gets a new version of the kernel.
+*   This situation locks-down normal rolling update process by unsatisfied dependencies, because new kernel version, proposed by update, most of the time are unsupported by ZFS.
 
 ## Contents
 

@@ -262,15 +262,15 @@ Then reboot.
 
 ## Swap the Fn key and Left Ctrl key
 
-While the original hid-apple module doesn't have an option to swap the fn and left ctrl keys, there is a patch adding this functionality to the module: [https://github.com/free5lot/hid-apple-patched](https://github.com/free5lot/hid-apple-patched).
+While the original hid-apple module doesn't have an option to swap the fn and left control keys, there is a patch adding this functionality to the module: [hid-apple-patched](https://github.com/free5lot/hid-apple-patched).
 
-You could install this module from aur: [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/)
+You can install this module from the AUR: [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/)
 
-Once installed you can either to temporarily or permanently swap fn and left ctrl key.
+Once the package has been installed, follow the below given instructions to swap the keys.
 
 **Temporarily**
 
-The following command will swap fn and left ctrl keys with immediate effect, but restarting will reset the configuration:
+The following command will swap the fn and left control keys with immediate effect, but restarting your system will reset the configuration:
 
 ```
 $ echo 1 | sudo tee /sys/module/hid_apple/parameters/swap_fn_leftctrl
@@ -279,13 +279,8 @@ $ echo 1 | sudo tee /sys/module/hid_apple/parameters/swap_fn_leftctrl
 
 **Permanently**
 
-Run the following command to append the configuration line to the file /etc/modprobe.d/hid_apple.conf creating it if necessary:
+The default configuration file `/etc/modprobe.d/hid_apple.conf` comes with the option to swap the fn and left control keys already set, i.e., `swap_fn_leftctrl=1`.
 
-```
-$ echo options hid_apple swap_fn_leftctrl=1 | sudo tee -a /etc/modprobe.d/hid_apple.conf
+**Note:** The default configuration also swaps the left option and command keys, i.e., `swap_opt_cmd=1`, so you don't have to follow the previous section to do that.
 
-```
-
-Then reboot.
-
-Note: This patch also provides an option to use ejectcd key as the missing delete key on Apple keyboard. Just replace `swap_fn_leftctrl` with `ejectcd_as_delete` in the above command to enable it.
+**Note:** This patch also provides an option to use ejectcd key as the missing delete key on Apple keyboard. It is enabled by default through the `ejectcd_as_delete=1` option.

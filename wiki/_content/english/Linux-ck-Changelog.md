@@ -5,7 +5,8 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 **Bump to v4.8.7-2**
 
 *   Changelog: Bump to ck7 with MuQSS 0.140
-*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=7ca3092a3fdd4cd10ef4419ce7a9c92fbdfe832a](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=7ca3092a3fdd4cd10ef4419ce7a9c92fbdfe832a)
+*   Commit1: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=7ca3092a3fdd4cd10ef4419ce7a9c92fbdfe832a](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=7ca3092a3fdd4cd10ef4419ce7a9c92fbdfe832a)
+*   Commit2: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=f3da3a8ee81d39ce13109caa4b7738d6c388b5e5](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=f3da3a8ee81d39ce13109caa4b7738d6c388b5e5)
 
 **Bump to v4.8.7-1**
 

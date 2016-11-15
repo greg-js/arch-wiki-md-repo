@@ -384,7 +384,7 @@ hhvm.extensions[pgsql] = pgsql.so
 
 ## Upgrading PostgreSQL
 
-Upgrading minor PostgreSQL versions (i.e. `9.2, 9.3, 9.4, 9.5`) requires some extra maintenance.
+Upgrading minor PostgreSQL versions (i.e. `9.2, 9.3, 9.4, 9.5, 9.6`) requires some extra maintenance.
 
 **Tip:** If you already migrated from 9.2 to 9.3 and you want to migrate from 9.3 to 9.4, change versions before executing commands. If `/var/lib/postgres/data-9.2` already exists and you just copy-paste all commands, `pg_upgrade` will complain about the wrong version of the database, because your version 9.3 database will be stored in `/var/lib/postgres/data-9.2/data/`.
 
@@ -399,7 +399,7 @@ upgrade_pg.sh
 
 ```
 ## Set the old version that we want to upgrade from.
-export FROM_VERSION=9.4
+export FROM_VERSION=9.5
 
 pacman -S --needed postgresql-old-upgrade
 chown postgres:postgres /var/lib/postgres/

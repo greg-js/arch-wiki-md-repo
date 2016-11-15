@@ -47,11 +47,11 @@ Bring up your wired NIC, and assign it an address appropriately.
 
 ### DHCP + TFTP
 
-You will need both a DHCP and TFTP server to configure networking on the install target and to facilitate the transfer of files between the PXE server and client; dnsmasq does both, and is extremely easy to set up.
+You will need both a DHCP and TFTP server to configure networking on the install target and to facilitate the transfer of files between the PXE server and client; *dnsmasq* does both, and is extremely easy to set up.
 
-[Install](/index.php/Install "Install") [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package.
 
-Configure dnsmasq:
+Configure *dnsmasq*:
 
  `# /etc/dnsmasq.conf` 
 ```
@@ -67,21 +67,23 @@ enable-tftp
 tftp-root=/mnt/archiso
 ```
 
-Start the `dnsmasq` [systemd service](/index.php/Systemctl#Using_units "Systemctl").
+[Start](/index.php/Start "Start") `dnsmasq.service`.
 
 ### HTTP
 
 Thanks to recent changes in [archiso](/index.php/Archiso "Archiso"), it is now possible to boot from HTTP (archiso_pxe_http initcpio hook) or NFS (archiso_pxe_nfs initcpio hook); among all alternatives, darkhttpd is by far the most trivial to setup (and the lightest-weight).
 
-First, [install](/index.php/Install "Install") [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) from [official repositories](/index.php/Official_repositories "Official repositories").
+First, [install](/index.php/Install "Install") the [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) package.
 
-Then start [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd) using our `/mnt/archiso` as the document root:
+Then start *darkhttpd* using our `/mnt/archiso` as the document root:
 
  `# darkhttpd /mnt/archiso` 
 ```
 darkhttpd/1.8, copyright (c) 2003-2011 Emil Mikulic.
 listening on: http://0.0.0.0:80/
 ```
+
+Note that it is important that the server is running on port 80\. If you start *darkhttpd* without root access it will default to 8080\. The client will try to access port 80 and the boot will fail.
 
 ## Installation
 
@@ -135,11 +137,9 @@ After the root filesystem is downloaded via HTTP, you will eventually end up at 
 
 ### Post-boot
 
-Unless you want all traffic to be routed through your PXE server (which will not work anyway unless you [set it up properly](/index.php/Simple_stateful_firewall#Setting_up_a_NAT_gateway "Simple stateful firewall")), you will want to kill [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) and get a new lease on the install target, as appropriate for your network layout.
+Unless you want all traffic to be routed through your PXE server (which will not work anyway unless you [set it up properly](/index.php/Simple_stateful_firewall#Setting_up_a_NAT_gateway "Simple stateful firewall")), you will want to [stop](/index.php/Stop "Stop") `dnsmasq.service` and get a new lease on the install target, as appropriate for your network layout.
 
- `# systemctl stop dnsmasq.service` 
-
-You can also kill [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd); the target has already downloaded the root filesystem, so it is no longer needed. While you are at it, you can also unmount the installation image:
+You can also kill *darkhttpd*; the target has already downloaded the root filesystem, so it is no longer needed. While you are at it, you can also unmount the installation image:
 
  `# umount /mnt/archiso` 
 
@@ -167,7 +167,7 @@ After the kernel loads, the Arch bootstrap image will copy the root filesystem v
 
 ### NBD
 
-Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it:
+[Install](/index.php/Install "Install") the [nbd](https://www.archlinux.org/packages/?name=nbd) package and configure it:
 
  `# vim /etc/nbd-server/config` 
 ```
@@ -177,7 +177,7 @@ Install [nbd](https://www.archlinux.org/packages/?name=nbd) and configure it:
     exportname = /srv/archlinux-2013.02.01-dual.iso
 ```
 
-Start the `nbd` [systemd service](/index.php/Systemctl#Using_units "Systemctl").
+[Start](/index.php/Start "Start") `nbd.service`.
 
 ### Existing PXE Server
 

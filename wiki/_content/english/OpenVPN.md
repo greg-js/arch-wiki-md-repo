@@ -61,7 +61,8 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 
 ## Kernel configuration
 
-**Note:** OpenVPN requires TUN/TAP support, which is already configured in the default kernel. Users of custom kernel should make sure to enable the `tun` module as below.
+OpenVPN requires TUN/TAP support, which is already configured in the default kernel. Users of custom kernel should make sure to enable the `tun` module:
+
  `Kernel config file` 
 ```
  Device Drivers
@@ -260,7 +261,7 @@ Some software will only read VPN certificates that are stored in a password-encr
 
 ### Testing the OpenVPN configuration
 
-Run `# openvpn /etc/openvpn/server.conf` on the server from `/etc/openvpn` directory, and `# openvpn /etc/openvpn/client.conf` on the client from the `/etc/openvpn` directory. Example output should be similar to the following:
+Run `# openvpn /etc/openvpn/server.conf` on the server, and `# openvpn /etc/openvpn/client.conf` on the client. Example output should be similar to the following:
 
  `# openvpn /etc/openvpn/server.conf` 
 ```

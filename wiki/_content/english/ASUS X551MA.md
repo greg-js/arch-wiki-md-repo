@@ -73,7 +73,7 @@ Works out of the box
 
 ### Wi-fi
 
-Install from AUR: [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl)
+Install from AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
 
 ### Audio
 

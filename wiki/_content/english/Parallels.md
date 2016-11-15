@@ -38,6 +38,7 @@ Different versions have different software requirements:
 *   9.0.24229.991745 needs 3.13.8 (or possibly a later 3.13.y) (3.14 is known to show a black screen and freeze the system) and xorg 1.15.y or earlier
 *   9.0.24237.1028877 works with Arch's 3.14.15-1-lts (newer versions may work) and xorg 1.15.y or earlier
 *   11.0.0.31193 works on the latest Arch 4.1.6-1 and xorg 1.17.2-4
+*   12.1.0.41489 works on latest Arch 4.8.7-1 and Xorg 1.18.4, after removing the PATH statement in the install script (cdrom//Parallels Tools//install), and adding "iomem=relaxed" to kernel boot parameters.
 
 And there are different ways to obtain them:
 

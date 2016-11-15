@@ -78,11 +78,11 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
         *   [10.7.1 Fast startup](#Fast_startup)
         *   [10.7.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
 *   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
-    *   [11.2 No visible Cursor](#No_visible_Cursor)
-    *   [11.3 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
-    *   [11.4 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
-    *   [11.5 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
+    *   [11.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
+    *   [11.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
+    *   [11.3 No visible Cursor](#No_visible_Cursor)
+    *   [11.4 Unable to move/attach Cursor](#Unable_to_move.2Fattach_Cursor)
+    *   [11.5 Keyboard seems broken or the arrow keys do not work](#Keyboard_seems_broken_or_the_arrow_keys_do_not_work)
     *   [11.6 Guest display stretches on window resize](#Guest_display_stretches_on_window_resize)
     *   [11.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
     *   [11.8 libgfapi error message](#libgfapi_error_message)
@@ -1417,38 +1417,6 @@ $ xfreerdp -g 2048x1152 localhost:5555 -z -x lan
 
 ## Troubleshooting
 
-### Mouse cursor is jittery or erratic
-
-If the cursor jumps around the screen uncontrollably, entering this on the terminal before starting QEMU might help:
-
-```
-$ export SDL_VIDEO_X11_DGAMOUSE=0
-
-```
-
-If this helps, you can add this to your `~/.bashrc` file.
-
-### No visible Cursor
-
-Add `-show-cursor` to QEMU's options to see a mouse cursor.
-
-If that still doesn't work, make sure you've set your display device appropriately.
-
-For example: `-vga qxl`
-
-### Unable to move/attach Cursor
-
-Replace `-usbdevice tablet` with `-usb` as QEMU option.
-
-### Keyboard seems broken or the arrow keys do not work
-
-Should you find that some of your keys do not work or "press" the wrong key (in particular, the arrow keys), you likely need to specify your keyboard layout as an option. The keyboard layouts can be found in `/usr/share/qemu/keymaps`.
-
-```
-$ qemu-system-i386 -k *keymap* *disk_image*
-
-```
-
 ### Virtual machine runs too slowly
 
 There are a number of techniques that you can use to improve the performance of your virtual machine. For example:
@@ -1498,6 +1466,38 @@ $ qemu-system-i386 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id
 ```
 
 See [http://www.linux-kvm.org/page/Tuning_KVM](http://www.linux-kvm.org/page/Tuning_KVM) for more information.
+
+### Mouse cursor is jittery or erratic
+
+If the cursor jumps around the screen uncontrollably, entering this on the terminal before starting QEMU might help:
+
+```
+$ export SDL_VIDEO_X11_DGAMOUSE=0
+
+```
+
+If this helps, you can add this to your `~/.bashrc` file.
+
+### No visible Cursor
+
+Add `-show-cursor` to QEMU's options to see a mouse cursor.
+
+If that still doesn't work, make sure you've set your display device appropriately.
+
+For example: `-vga qxl`
+
+### Unable to move/attach Cursor
+
+Replace `-usbdevice tablet` with `-usb` as QEMU option.
+
+### Keyboard seems broken or the arrow keys do not work
+
+Should you find that some of your keys do not work or "press" the wrong key (in particular, the arrow keys), you likely need to specify your keyboard layout as an option. The keyboard layouts can be found in `/usr/share/qemu/keymaps`.
+
+```
+$ qemu-system-i386 -k *keymap* *disk_image*
+
+```
 
 ### Guest display stretches on window resize
 

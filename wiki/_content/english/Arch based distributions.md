@@ -55,7 +55,7 @@ The following distributions include a pre-installed [Desktop environment](/index
 
 *   [Alpine Linux](http://alpinelinux.org/)
 *   [Arch Linux ARM](http://archlinuxarm.org/)
-*   [Arch-Anywhere](https://sourceforge.net/projects/arch-anywhere/)
+*   [Arch-Anywhere](https://arch-anywhere.org/)
 *   [LinHES](http://linhes.org/)
 *   [Parabola GNU/Linux-libre](https://www.parabola.nu/)
 *   [MSYS2](https://sourceforge.net/projects/msys2/)

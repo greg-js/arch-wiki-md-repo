@@ -73,7 +73,7 @@ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 Now start scaling down by setting zoom-out factor with xrandr. First get the output name:
 
- `xrandr | grep -v disconnected | grep connected | cut -d' ' -f1`  `eDP1` 
+ `xrandr | grep -w connected | cut -d' ' -f1`  `eDP1` 
 
 Use this value to specify --output further on. If you have two or more screens you can set their scale independently.
 
@@ -481,14 +481,7 @@ You may adjust the "sharpness" parameter on your monitor settings to adjust the 
 
 The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n`(normal) and `ter-132b`(bold). See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for configuration details.
 
-After booting, other virtual consoles (TTY2-6) may have garbled and unreadable fonts. This can be fixed temporarily by logging in and setting the font again:
-
-```
-setfont ter-132n
-
-```
-
-However, this must be changed for each terminal separately. A more permanent fix is to pass a [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") by editing your boot manager's configuration file and adding `video=2560x1600@60`(substituting in the native resolution of your HiDPI display). This should solve the problem after next boot.
+After changing the font, it is often garbled and unreadable when changing to other virtual consoles (`tty2-6`). To fix this you can [force specific mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") for KMS, such as `video=2560x1600@60` (substitute in the native resolution of your HiDPI display), and reboot.
 
 ## See also
 

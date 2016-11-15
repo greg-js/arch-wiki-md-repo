@@ -31,7 +31,7 @@ Then follow [Display manager#Loading the display manager](/index.php/Display_man
 
 ## Configuration
 
-The configuration file for SDDM can be found at `/etc/sddm.conf`. See `man sddm.conf` for all options.
+The configuration file for SDDM can be found at `/etc/sddm.conf`. See sddm.conf(5) for all options.
 
 On systems controlled by [systemd](/index.php/Systemd "Systemd"), everything should work out of the box, since SDDM defaults to using `systemd-logind` for session management. The configuration file will therefore not be created at package installation time. SDDM offers a command for generating a sample configuration file with the default settings if you really want one:
 
@@ -58,7 +58,7 @@ An option to autologin into KDE Plasma while simultaneously locking the session 
 You can add a script that activates the screensaver of KDE to the autostart as a workaround:
 
 ```
-#!/bin/bash                                                                                                                                                         
+#!/bin/bash
 /usr/bin/qdbus-qt4 org.kde.screensaver /ScreenSaver SetActive true &
 exit 0
 
@@ -125,13 +125,11 @@ For example:
 
 ### Hangs after login
 
-Try removing *~/.Xauthority*.
-
-Alternatively, if your cursor turns to a black cross at the same time, and you are using zsh as your shell, you may be experiencing [this bug](https://github.com/sddm/sddm/issues/352). Follow the instructions in the previous link to fix the issue. This bug is expected to be fixed in the SDDM version subsequent to 0.11.0.
+Try removing `~/.Xauthority`.
 
 ### SDDM starts on tty1 instead of tty7
 
-SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, uncomment and edit the "MinimumVT" variable, under the [X11] section in `sddm.conf`:
+SDDM follows the [systemd convention](http://0pointer.de/blog/projects/serial-console.html) of starting the first graphical session on tty1\. If you prefer the old convention where tty1 through tty6 are reserved for text consoles, uncomment and edit the `MinimumVT` variable, under the `[X11]` section in `sddm.conf`:
 
  `/etc/sddm.conf` 
 ```
@@ -167,10 +165,14 @@ SDDM loads the keyboard layout specified in `/etc/X11/xorg.conf.d/00-keyboard.co
 
 ### No user Icon
 
-since SDDM reads user icon from either ~/.face.icon or FacesDir/username.face.icon
+SDDM reads user icon from either `~/.face.icon` or `*FacesDir*/username.face.icon`
 
 You need to make sure that SDDM user have permissions to read those files.
 
-`$ setfacl -m u:sddm:x /home/username $ setfacl -m u:sddm:r /home/username/.face.icon`
+```
+$ setfacl -m u:sddm:x /home/username
+$ setfacl -m u:sddm:r /home/username/.face.icon
 
-*   [No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
+```
+
+See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).

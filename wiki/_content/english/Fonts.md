@@ -268,6 +268,8 @@ Keymaps, the connection between the key pressed and the character used by the co
 
 **Note:** Replacing the font can cause issues with programs that expect a standard VGA-style font, such as those using line drawing graphics.
 
+**Tip:** For European based languages written in Latin/Greek letters you can use `eurlatgr` font, it includes a broad range of Latin/Greek letter variations as well as special characters [[2]](https://lists.altlinux.org/pipermail/kbd/2014-February/000439.html).
+
 ### Preview and temporary changes
 
 **Tip:** An organized library of images for previewing is available: [Linux console fonts screenshots](http://alexandre.deverteuil.net/pages/consolefonts/).
@@ -309,13 +311,13 @@ It means that second part of ISO/IEC 8859 characters are used with size 16\. You
 
 To use the specified font in early userspace, use the `consolefont` hook in `/etc/mkinitcpio.conf`. See [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") for more information.
 
-If the fonts seems to not change on boot, or change only temporarily, it is most likely that they got reset when graphics driver was initialized and console was switched to framebuffer. To avoid this, load your graphics driver earlier. See for example [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), [[2]](https://bbs.archlinux.org/viewtopic.php?id=145765) or other ways to setup your framebuffer before `/etc/vconsole.conf` is applied.
+If the fonts seems to not change on boot, or change only temporarily, it is most likely that they got reset when graphics driver was initialized and console was switched to framebuffer. To avoid this, load your graphics driver earlier. See for example [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), [[3]](https://bbs.archlinux.org/viewtopic.php?id=145765) or other ways to setup your framebuffer before `/etc/vconsole.conf` is applied.
 
 ## Font packages
 
 This is a selective list that includes many font packages from the [AUR](/index.php/AUR "AUR") along with those in the official repositories. Fonts are tagged "Unicode" if they have wide Unicode support, see the project or Wikipedia pages for detail.
 
-Github user Ternstor has created a python script that generates HTML documents with PNG images of all the fonts in the AUR and the official repositories: [[3]](https://github.com/ternstor/distrofonts/blob/master/archfonts.py).
+Github user Ternstor has created a python script that generates HTML documents with PNG images of all the fonts in the AUR and the official repositories: [[4]](https://github.com/ternstor/distrofonts/blob/master/archfonts.py).
 
 ### Latin script
 
@@ -648,7 +650,7 @@ For terminal emulators that use `Xresources`, fonts can be set by using escape s
 
 ### Application-specific font cache
 
-Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `$HOME/.matplotlib/fontList.cache`, `$HOME/.cache/matplotlib/fontList.cache`, `$HOME/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[4]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
+Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `$HOME/.matplotlib/fontList.cache`, `$HOME/.cache/matplotlib/fontList.cache`, `$HOME/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[5]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
 
 ## See also
 

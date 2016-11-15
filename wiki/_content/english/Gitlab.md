@@ -10,8 +10,10 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 *   [2 Configuration](#Configuration)
     *   [2.1 Notes Before Configuring](#Notes_Before_Configuring)
     *   [2.2 Basic configuration](#Basic_configuration)
-        *   [2.2.1 GitLab Shell](#GitLab_Shell)
-        *   [2.2.2 GitLab](#GitLab)
+        *   [2.2.1 GitLab](#GitLab)
+        *   [2.2.2 GitLab Shell](#GitLab_Shell)
+        *   [2.2.3 Redis](#Redis)
+            *   [2.2.3.1 Enable listen on socket](#Enable_listen_on_socket)
     *   [2.3 Further configuration](#Further_configuration)
         *   [2.3.1 Database backend](#Database_backend)
         *   [2.3.2 MariaDB](#MariaDB)
@@ -21,38 +23,36 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
         *   [2.3.6 Configure Git User](#Configure_Git_User)
         *   [2.3.7 Adjust modifier bits](#Adjust_modifier_bits)
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
-*   [4 Advanced Configuration](#Advanced_Configuration)
-    *   [4.1 Custom SSH Connection](#Custom_SSH_Connection)
-    *   [4.2 HTTPS/SSL](#HTTPS.2FSSL)
-        *   [4.2.1 Change GitLab configs](#Change_GitLab_configs)
-        *   [4.2.2 Let's Encrypt](#Let.27s_Encrypt)
-    *   [4.3 Web server configuration](#Web_server_configuration)
-        *   [4.3.1 Node.js](#Node.js)
-        *   [4.3.2 Nginx and unicorn](#Nginx_and_unicorn)
-            *   [4.3.2.1 AUR Installation](#AUR_Installation)
-            *   [4.3.2.2 Manual Installation](#Manual_Installation)
-        *   [4.3.3 Apache and unicorn](#Apache_and_unicorn)
-            *   [4.3.3.1 Configure Unicorn](#Configure_Unicorn)
-            *   [4.3.3.2 Create a virtual host for Gitlab](#Create_a_virtual_host_for_Gitlab)
-            *   [4.3.3.3 Enable host and start unicorn](#Enable_host_and_start_unicorn)
-    *   [4.4 Redis](#Redis)
-        *   [4.4.1 Redis Over Unix Socket](#Redis_Over_Unix_Socket)
-    *   [4.5 Gitlab-workhorse](#Gitlab-workhorse)
-*   [5 Useful Tips](#Useful_Tips)
-    *   [5.1 Fix Rake Warning](#Fix_Rake_Warning)
-    *   [5.2 Hook into /var](#Hook_into_.2Fvar)
-    *   [5.3 Hidden options](#Hidden_options)
-    *   [5.4 Backup and restore](#Backup_and_restore)
-    *   [5.5 Migrate from sqlite to mysql](#Migrate_from_sqlite_to_mysql)
-    *   [5.6 Running GitLab with rvm](#Running_GitLab_with_rvm)
-    *   [5.7 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
-    *   [6.2 401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access)
-    *   [6.3 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
-    *   [6.4 Errors after updating](#Errors_after_updating)
-    *   [6.5 /etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty)
-*   [7 See also](#See_also)
+*   [4 Upgrade database on updates](#Upgrade_database_on_updates)
+*   [5 Advanced Configuration](#Advanced_Configuration)
+    *   [5.1 Custom SSH Connection](#Custom_SSH_Connection)
+    *   [5.2 HTTPS/SSL](#HTTPS.2FSSL)
+        *   [5.2.1 Change GitLab configs](#Change_GitLab_configs)
+        *   [5.2.2 Let's Encrypt](#Let.27s_Encrypt)
+    *   [5.3 Web server configuration](#Web_server_configuration)
+        *   [5.3.1 Node.js](#Node.js)
+        *   [5.3.2 Nginx and unicorn](#Nginx_and_unicorn)
+            *   [5.3.2.1 Alternative Example](#Alternative_Example)
+        *   [5.3.3 Apache and unicorn](#Apache_and_unicorn)
+            *   [5.3.3.1 Configure Unicorn](#Configure_Unicorn)
+            *   [5.3.3.2 Create a virtual host for Gitlab](#Create_a_virtual_host_for_Gitlab)
+            *   [5.3.3.3 Enable host and start unicorn](#Enable_host_and_start_unicorn)
+    *   [5.4 Gitlab-workhorse](#Gitlab-workhorse)
+*   [6 Useful Tips](#Useful_Tips)
+    *   [6.1 Fix Rake Warning](#Fix_Rake_Warning)
+    *   [6.2 Hook into /var](#Hook_into_.2Fvar)
+    *   [6.3 Hidden options](#Hidden_options)
+    *   [6.4 Backup and restore](#Backup_and_restore)
+    *   [6.5 Migrate from sqlite to mysql](#Migrate_from_sqlite_to_mysql)
+    *   [6.6 Running GitLab with rvm](#Running_GitLab_with_rvm)
+    *   [6.7 Sending mails from Gitlab via SMTP](#Sending_mails_from_Gitlab_via_SMTP)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
+    *   [7.2 401 Unauthorized on all API access](#401_Unauthorized_on_all_API_access)
+    *   [7.3 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
+    *   [7.4 Errors after updating](#Errors_after_updating)
+    *   [7.5 /etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -60,7 +60,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 
 **Note:** This article covers installing and configuring GitLab without HTTPS at first. If needed, see [#Advanced Configuration](#Advanced_Configuration) to set up SSL
 
-GitLab requires a database backend. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+GitLab requires [Redis](/index.php/Redis "Redis") and a database backend. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 [Install](/index.php/Install "Install") the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package.
 
@@ -81,6 +81,25 @@ The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs G
 
 ### Basic configuration
 
+#### GitLab
+
+Edit `/etc/webapps/gitlab/gitlab.yml` and setup at least the following parameters:
+
+**Tip:** The hostname and port are used for the `git clone [http://hostname:port](http://hostname:port)` as example.
+
+**Hostname:** In the `gitlab:` section set `host:` - replacing `localhost` to `yourdomain.com` (**note:** no '[http://'](http://') or trailing slash) - into your fully qualified domain name.
+
+**Port:** `port:` can be confusing. This is not the port that the gitlab server (unicorn) runs on; it's the port that users will initially access through in their browser. Basically, if you intend for users to visit 'yourdomain.com' in their browser, without appending a port number to the domain name, leave `port:` as `80`. If you intend your users to type something like 'yourdomain.com:3425' into their browsers, then you'd set `port:` to `3425`. You will also have to **configure your webserver** to listen on that port.
+
+**Timezone (optional):** The `time_zone:` parameter is optional, but may be useful to force the zone of GitLab applications.
+
+Finally set the correct permissions to the *uploads* directory:
+
+```
+# chmod 700 /var/lib/gitlab/uploads
+
+```
+
 #### GitLab Shell
 
 **Note:** You can leave the `gitlab_url` with default value if you intend to host GitLab on the same host.
@@ -97,7 +116,7 @@ user: gitlab
 # You only have to change the default if you have configured Unicorn
 # to listen on a custom port, or if you have configured Unicorn to
 # only listen on a Unix domain socket.
-gitlab_url: "[http://localhost:8080/](http://localhost:8080/)" # <<-- right here
+gitlab_url: "[http://localhost:8080/](http://localhost:8080/)" #
 
 http_settings:
 #  user: someone
@@ -107,21 +126,48 @@ http_settings:
 
 Update the `/etc/webapps/gitlab/unicorn.rb` configuration if the port and/or hostname is different from the default:
 
- `/etc/webapps/gitlab/unicorn.rb`  `listen "127.0.0.1:8080", :tcp_nopush => true # <<-- right here` 
+ `/etc/webapps/gitlab/unicorn.rb` 
+```
+listen "/run/gitlab/gitlab.socket", :backlog => 1024
+listen "**127.0.0.1:8080**", :tcp_nopush => true
+```
 
-#### GitLab
+#### Redis
 
-Edit `/etc/webapps/gitlab/gitlab.yml` and setup at least the following parameters:
+Using a [Redis](/index.php/Redis "Redis") setup different from default (e.g. different address, port, unix socket) requires the environment variable *REDIS_URL* to be set accordingly for unicorn. This can be achieved by extending the systemd service file. Create a file */etc/systemd/system/gitlab-unicorn.service.d/redis.conf* that injects the *REDIS_URL* environment variable:
 
-**Tip:** The hostname and port are used for the `git clone [http://hostname:port](http://hostname:port)` as example.
+```
+[Service]
+Environment=REDIS_URL=unix:///run/gitlab/redis.sock
 
-**Hostname:** In the `gitlab:` section set `host:` - replacing `localhost` to `yourdomain.com` (**note:** no '[http://'](http://') or trailing slash) - into your fully qualified domain name.
+```
 
-**Port:** `port:` can be confusing. This is not the port that the gitlab server (unicorn) runs on; it's the port that users will initially access through in their browser. Basically, if you intend for users to visit 'yourdomain.com' in their browser, without appending a port number to the domain name, leave `port:` as `80`. If you intend your users to type something like 'yourdomain.com:3425' into their browsers, then you'd set `port:` to `3425`. You will also have to **configure your webserver** to listen on that port.
+##### Enable listen on socket
 
-**Timezone (optional):** The `time_zone:` parameter is optional, but may be useful to force the zone of GitLab applications.
+Follow instructions describe on [Redis#Listen on socket](/index.php/Redis#Listen_on_socket "Redis"), and adjust the default configuration [[1]](https://github.com/gitlabhq/gitlabhq/issues/6100).
 
-Those are the minimal changes needed for a working GitLab install. The adventurous may read on in the comment and customize as needed.
+*   Add the user *git* and *gitlab* to the *redis* [group](/index.php/Group "Group").
+
+*   Update the configuration files:
+
+ `/etc/webapps/gitlab/resque.yml` 
+```
+development: unix:/var/run/redis/redis.sock
+test: unix:/run/redis/redis.sock
+production: unix:/run/redis/redis.sock
+```
+ `/etc/webapps/gitlab-shell/config.yml` 
+```
+# Redis settings used for pushing commit notices to gitlab
+redis:
+  bin: /usr/bin/redis-cli
+  host: 127.0.0.1
+  port: 6379
+  # pass: redispass # Allows you to specify the password for Redis
+  database: 5 # Use different database, default up to 16
+  socket: /var/run/redis/redis.sock # **uncomment** this line
+  namespace: resque:gitlab
+```
 
 ### Further configuration
 
@@ -172,7 +218,7 @@ production:
   username: **username**
   password: **"password"**
   # host: localhost
-  # socket: /run/mysqld/mysqld.sock # If running MariaDB as socket
+  # socket: /var/run/mysqld/mysqld.sock # If running MariaDB as socket
 ...
 
 ```
@@ -262,46 +308,29 @@ If you are behind a router, do not forget to forward this port to the running Gi
 
 #### Initialize Gitlab database
 
-Start the Redis server before we create the database [start/enable](/index.php/Start/enable "Start/enable") the `redis` systemd unit.
-
-**Warning:** GitLab requires `bundle` command, not `bundle-2.1`, don't forget to install it.
+Start the [Redis](/index.php/Redis "Redis") server before we create the database.
 
 Initialize the database and activate advanced features:
 
 ```
-# cd /usr/share/webapps/gitlab
 # su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:setup RAILS_ENV=production"
 
 ```
 
+Finally run the following commands to check your installation:
+
 ```
-Missing `db_key_base` for 'production' environment. The secrets will be generated and stored in `config/secrets.yml`
-This will create the necessary database tables and seed the database.
-You will lose any previous data stored in the database.
-Do you want to continue (yes/no)? yes
-
-gitlabhq_production already exists
--- enable_extension("plpgsql")
-   -> 0.0009s
--- create_table("abuse_reports", {:force=>true})
-   -> 0.0300s
--- create_table("application_settings", {:force=>true})
-   -> 0.0116s
-
-...
-
-Administrator account created:
-
-login:    root
-password: You'll be prompted to create one on your first visit.
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:env:info RAILS_ENV=production"
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake gitlab:check RAILS_ENV=production"
 
 ```
 
-Finally, check that `/etc/webapps/gitlab/secret` contains a random hex string.
+**Note:**
+
+*   The *gitlab:env:info* and *gitlab:check* commands will show a fatal error related to git. This is OK.
+*   The *gitlab:check* will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
 
 #### Configure Git User
-
-**Note:** This must match the `user` and `email_from` defined in `/usr/share/webapps/gitlab/config/gitlab.yml`.
 
 ```
 # cd /usr/share/webapps/gitlab
@@ -326,133 +355,9 @@ Finally, check that `/etc/webapps/gitlab/secret` contains a random hex string.
 
 **Note:** See [#Troubleshooting](#Troubleshooting) and log files inside the `/usr/share/webapps/gitlab/log` directory for troubleshooting.
 
-Make systemd see your new daemon unit files:
-
-```
-# systemctl daemon-reload
-
-```
-
-Make sure [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") and Redis are running and setup correctly.
-
-If needed see [#Redis Over Unix Socket](#Redis_Over_Unix_Socket) example if GitLab cannot load `redis` correctly.
+Make sure [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") and [Redis](/index.php/Redis "Redis") are running and setup correctly.
 
 After starting the database backends, we can start GitLab with its webserver (Unicorn) by [starting](/index.php/Start "Start") both the `gitlab-sidekiq` and `gitlab-unicorn` systemd units.
-
-With the following commands we check if the steps we followed so far are configured properly:
-
-```
-# cd /usr/share/webapps/gitlab
-# sudo -u gitlab bundle exec rake gitlab:env:info RAILS_ENV=production
-# sudo -u gitlab bundle exec rake gitlab:check RAILS_ENV=production
-
-```
-
-**Note:** These gitlab:env:info and gitlab:check commands will show a fatal error related to git. This is OK.
- `$ sudo -u gitlab bundle exec rake gitlab:env:info RAILS_ENV=production` 
-```
-fatal: Not a git repository (or any of the parent directories): .git
-
-System information
-System:		Arch rolling
-Current User:	gitlab
-Using RVM:	no
-Ruby Version:	2.2.3p173
-Gem Version:	2.4.5.1
-Bundler Version:1.10.6
-Rake Version:	10.4.2
-Sidekiq Version:3.3.0
-
-GitLab information
-Version:	7.14.0
-Revision:	fatal: Not a git repository (or any of the parent directories): .git
-Directory:	/usr/share/webapps/gitlab
-DB Adapter:	mysql2
-URL:		http://gitlab.arch
-HTTP Clone URL:	http://gitlab.arch/some-project.git
-SSH Clone URL:	git@gitlab.arch:some-project.git
-Using LDAP:	no
-Using Omniauth:	no
-
-GitLab Shell
-Version:	2.6.4
-Repositories:	/var/lib/gitlab/repositories/
-Hooks:		/usr/share/webapps/gitlab-shell/hooks/
-Git:		/usr/bin/git
-
-```
-
-**Note:** `gitlab:check` will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
- `$ sudo -u gitlab bundle exec rake gitlab:check RAILS_ENV=production` 
-```
-fatal: Not a git repository (or any of the parent directories): .git
-Checking Environment ...
-
-Git configured for gitlab user? ... yes
-Has python2? ... yes
-python2 is supported version? ... yes
-
-Checking Environment ... Finished
-
-Checking GitLab Shell ...
-
-GitLab Shell version >= 1.7.9 ? ... OK (1.8.0)
-Repo base directory exists? ... yes
-Repo base directory is a symlink? ... no
-Repo base owned by gitlab:gitlab? ... yes
-Repo base access is drwxrws---? ... yes
-update hook up-to-date? ... yes
-update hooks in repos are links: ... can't check, you have no projects
-Running /srv/gitlab/gitlab-shell/bin/check
-Check GitLab API access: OK
-Check directories and files:
-        /srv/gitlab/repositories: OK
-        /srv/gitlab/.ssh/authorized_keys: OK
-Test redis-cli executable: redis-cli 2.8.4
-Send ping to redis server: PONG
-gitlab-shell self-check successful
-
-Checking GitLab Shell ... Finished
-
-Checking Sidekiq ...
-
-Running? ... yes
-Number of Sidekiq processes ... 1
-
-Checking Sidekiq ... Finished
-
-Checking LDAP ...
-
-LDAP is disabled in config/gitlab.yml
-
-Checking LDAP ... Finished
-
-Checking GitLab ...
-
-Database config exists? ... yes
-Database is SQLite ... no
-All migrations up? ... fatal: Not a git repository (or any of the parent directories): .git
-yes
-GitLab config exists? ... yes
-GitLab config outdated? ... no
-Log directory writable? ... yes
-Tmp directory writable? ... yes
-Init script exists? ... no
-  Try fixing it:
-  Install the init script
-  For more information see:
-  doc/install/installation.md in section "Install Init Script"
-  Please fix the error above and rerun the checks.
-Init script up-to-date? ... can't check because of previous errors
-projects have namespace: ... can't check, you have no projects
-Projects have satellites? ... can't check, you have no projects
-Redis version >= 2.0.0? ... yes
-Your git bin path is "/usr/bin/git"
-Git version >= 1.7.10 ? ... yes (1.8.5)
-
-Checking GitLab ... Finished
-
-```
 
 To automatically launch GitLab at startup, enable the `gitlab.target`, `gitlab-sidekiq` and `gitlab-unicorn` services.
 
@@ -464,11 +369,22 @@ password: You'll be prompted to create one on your first visit.
 
 ```
 
-**Note:** If your browser runs not on the machine where gitlab is running, modify your unicorn.rb in order to be able to test your setup without the use of a proxy. The corresponding line looks like this: `listen "127.0.0.1:8080, :tcp_nopush => true` 
+## Upgrade database on updates
 
-you should replace that with:
+After updating the [gitlab](https://www.archlinux.org/packages/?name=gitlab) package, it is required to upgrade the database:
 
- `listen "example.yourhost.com:8080, :tcp_nopush => true` 
+```
+# su - gitlab -s /bin/sh -c "cd '/usr/share/webapps/gitlab'; bundle exec rake db:migrate RAILS_ENV=production"
+
+```
+
+Afterwards, restart gitlab-related services:
+
+```
+# systemctl daemon-reload
+# systemctl restart gitlab-sidekiq gitlab-unicorn gitlab-workhorse
+
+```
 
 ## Advanced Configuration
 
@@ -519,15 +435,19 @@ You can easily set up an http proxy on port 443 to proxy traffic to the GitLab a
 
 #### Nginx and unicorn
 
-##### AUR Installation
+Copy `/usr/share/doc/gitlab/nginx.conf.example` or `/usr/share/doc/gitlab/nginx-ssl.conf.example` to `/etc/nginx/servers-available/gitlab`. See [Nginx#Managing server entries](/index.php/Nginx#Managing_server_entries "Nginx") for more information.
 
-Setup [Nginx](/index.php/Nginx "Nginx"), and create the following directories (if not exist already):
+Update the `/etc/nginx/servers-available/gitlab` file and [restart](/index.php/Restart "Restart") the nginx service.
 
-```
-# mkdir /etc/nginx/servers-available
-# mkdir /etc/nginx/servers-enabled
+If your unable to authenticate, add the following headers to `/etc/nginx/servers-available/gitlab`:
 
 ```
+proxy_set_header    X-Forwarded-Ssl     on; # Only when using SSL
+proxy_set_header    X-Frame-Options     SAMEORIGIN; 
+
+```
+
+##### Alternative Example
 
 **Note:** You may need to change `localhost:8080` with the correct gitlab address and `example.com` to your desired server name.
 
@@ -576,65 +496,6 @@ server {
 }
 ```
 
-Make sure the following line exists at the end of the `http` block in `/etc/nginx/nginx.conf`:
-
-```
-include servers-enabled/*;
-
-```
-
-Enable the `github` configuration:
-
-```
-# ln -s /etc/nginx/servers-available/gitlab /etc/nginx/servers-enabled/gitlab
-
-```
-
-Verify the new configuration:
-
-```
-# nginx -t
-
-```
-
-Finally, (re)start the `gitlab.target`, `resque.target` and `nginx.service`.
-
-##### Manual Installation
-
-If you did not use AUR, you need to copy `/usr/lib/support/nginx/gitlab` to `/etc/nginx/sites-available/`.
-
-Run these commands to setup nginx:
-
-```
-# ln -s /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab
-
-```
-
-Edit `/etc/nginx/sites-enabled/gitlab` and change YOUR_SERVER_IP and YOUR_SERVER_FQDN to the IP address and fully-qualified domain name of the host serving Gitlab.
-
-Make sure the following line exists at the end of the `http` block in `/etc/nginx/nginx.conf`:
-
-```
-include sites-enabled/*;
-
-```
-
-Enable the `github` configuration:
-
-```
-# ln -s /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab
-
-```
-
-Verify the new configuration:
-
-```
-# nginx -t
-
-```
-
-Finally, (re)start the `gitlab.target`, `resque.target` and `nginx.service`.
-
 #### Apache and unicorn
 
 [Install](/index.php/Install "Install") [apache](https://www.archlinux.org/packages/?name=apache) from the [official repositories](/index.php/Official_repositories "Official repositories").
@@ -677,89 +538,6 @@ Copy the Apache gitlab.conf file
 ```
 
 Finally [start](/index.php/Start "Start") `gitlab-unicorn.service`.
-
-### Redis
-
-Using a Redis setup different from default (e.g. different address, port, unix socket) requires the environment variable *REDIS_URL* to be set accordingly for unicorn. This can be achieved by extending the systemd service file. Create a file */etc/systemd/system/gitlab-unicorn.service.d/redis.conf* that injects the *REDIS_URL* environment variable:
-
-```
-[Service]
-Environment=REDIS_URL=unix:///run/gitlab/redis.sock
-
-```
-
-#### Redis Over Unix Socket
-
-If Redis is set to listen on socket, you may want to adjust the default configuration:
-
- `/etc/redis.conf` 
-```
-...
-# Accept connections on the specified port, default is 6379.
-# If port 0 is specified Redis will not listen on a TCP socket.
-port 0
-...
-# By default Redis listens for connections from all the network interfaces
-# available on the server. It is possible to listen to just one or multiple
-# interfaces using the "bind" configuration directive, followed by one or
-# more IP addresses.
-#
-# Examples:
-#
-# bind 192.168.1.100 10.0.0.1
-bind 127.0.0.1
-
-# Specify the path for the Unix socket that will be used to listen for
-# incoming connections. There is no default, so Redis will not listen
-# on a unix socket when not specified.
-#
-unixsocket /var/run/redis/redis.sock
-unixsocketperm 770
-```
-
-Create the directory `/var/run/redis` and set the correct permissions:
-
-```
-# mkdir /var/run/redis
-# chown redis:redis /var/run/redis
-# chmod 755 /var/run/redis
-
-```
-
-Add the user `git` and `gitlab` to the `redis` group:
-
-```
-# usermod -a -G redis git
-# usermod -a -G redis gitlab
-
-```
-
-Update `/etc/webapps/gitlab-shell/config.yml` and `/etc/webapps/gitlab/resque.yml` files:
-
- `/etc/webapps/gitlab/resque.yml` 
-```
-development: unix:/var/run/redis/redis.sock
-test: unix:/run/redis/redis.sock
-production: unix:/run/redis/redis.sock
-```
- `/etc/webapps/gitlab-shell/config.yml` 
-```
-...
-# Redis settings used for pushing commit notices to gitlab
-redis:
-  bin: /usr/bin/redis-cli
-  host: 127.0.0.1
-  port: 6379
-  # pass: redispass # Allows you to specify the password for Redis
-  database: 5 # Use different database, default up to 16
-  socket: /var/run/redis/redis.sock # uncomment this line
-  namespace: resque:gitlab
-...
-```
-
-Finally restart the `redis`, `gitlab-sidekiq` and `gitlab-unicorn` services.
-
-For more information, please see issue [#6100](https://github.com/gitlabhq/gitlabhq/issues/6100).
 
 ### Gitlab-workhorse
 

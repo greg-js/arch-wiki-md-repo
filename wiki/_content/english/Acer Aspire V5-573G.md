@@ -111,5 +111,5 @@ If you do not have 4.0 sound sources, you may want to make PulseAudio automatica
 
 ## See also
 
-*   [Drivers and Manuals](http://www.acer.co.uk/ac/en/GB/content/drivers/4843;-;Aspire%20V5-573G) Official support page
+*   [Drivers and Manuals](http://www.acer.com/ac/en/GB/content/support-product/4843?b=1) Official support page
 *   [Acer Aspire V5-573G](http://wiki.gentoo.org/wiki/Acer_Aspire_V5-573G) Gentoo Wiki

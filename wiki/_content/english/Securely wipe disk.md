@@ -135,11 +135,9 @@ If you are worried about unintentional damage of important data on the primary c
 
 See also [Wikipedia:Dd (Unix)#Block size](https://en.wikipedia.org/wiki/Dd_(Unix)#Block_size "wikipedia:Dd (Unix)"), [blocksize io-limits](http://people.redhat.com/msnitzer/docs/io-limits.txt).
 
-If you have an [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format "wikipedia:Advanced Format") hard drive it is recommended that you specify a block size larger than the default 512 bytes. To speed up the overwriting process choose a block size matching your drive's physical geometry by appending the block size option to the *dd* command (i.e. `bs=4096` for 4KB).
+If you have an [Advanced Format](/index.php/Advanced_Format "Advanced Format") hard drive it is recommended that you specify a block size larger than the default 512 bytes. To speed up the overwriting process choose a block size matching your drive's physical geometry by appending the block size option to the *dd* command (i.e. `bs=4096` for 4KB).
 
-*fdisk* prints physical and logical sector size for every disk.
-
-Alternatively sysfs does expose information:
+*fdisk* prints physical and logical sector size for every disk. Alternatively sysfs does expose information:
 
 ```
 /sys/block/sdX/size
@@ -150,6 +148,8 @@ Alternatively sysfs does expose information:
 /sys/block/sdX/sdXY/size
 
 ```
+
+**Warning:** These methods show the block size the drive reports to the kernel. However, many Advanced Format drives incorrectly understate the physical block size as 512.
 
 **Tip:** This script helps to calculate parameters to wipe a device/partition with dd [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/), e.g. `genwipe.sh /dev/sd"XY"`.
 
@@ -309,10 +309,10 @@ See also [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities").
 
 **Warning:** There is no confirmation regarding the sanity of this command so **repeatedly check** that the correct drive or partition has been targeted. Make certain that the `of=...` option points to the target drive and not to a system disk.
 
-Zero-fill the disk by writing a zero byte to every addressable location on the disk using the [/dev/zero](https://en.wikipedia.org/wiki//dev/zero "wikipedia:/dev/zero") stream. `iflag` and `oflag` as below will try to disable buffering, which is senseless for a constant stream.
+Zero-fill the disk by writing a zero byte to every addressable location on the disk using the [/dev/zero](https://en.wikipedia.org/wiki//dev/zero "wikipedia:/dev/zero") stream.
 
 ```
-# dd if=/dev/zero of=/dev/sdX iflag=nocache oflag=direct bs=4096
+# dd if=/dev/zero of=/dev/sdX bs=4096
 
 ```
 

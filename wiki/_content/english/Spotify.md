@@ -293,7 +293,7 @@ By placing this script at `/usr/local/bin/spotify`, it gets preferred to `/usr/b
 
 #### Spotify-AdKiller
 
-[Spotify-AdKiller](https://github.com/SecUpwN/Spotify-AdKiller) ([spotify-adkiller](https://aur.archlinux.org/packages/spotify-adkiller/)) is another alternative to block Spotify adds.
+[Spotify-AdKiller](https://github.com/SecUpwN/Spotify-AdKiller) ([spotify-adkiller-git](https://aur.archlinux.org/packages/spotify-adkiller-git/)) is another alternative to block Spotify adds.
 
 ### Remote Control
 

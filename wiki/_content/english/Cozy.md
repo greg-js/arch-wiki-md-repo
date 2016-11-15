@@ -67,7 +67,7 @@ To create an administrator, first generate the credentials (with [pwgen](https:/
 # pwgen -1 >> /etc/cozy/couchdb.login
 # chown cozy-data-system /etc/cozy/couchdb.login
 # chmod 640 /etc/cozy/couchdb.login
-# curl 127.0.0.1:5984/_cluster_setup -Hcontent-type:application/json -d '{"action":"enable_cluster", "username":"$(head -n1 /etc/cozy/couchdb.login)", "password":"$(tail -n1 /etc/cozy/couchdb.login)", "bind_address":"0.0.0.0"}'
+# curl 127.0.0.1:5984/_cluster_setup -Hcontent-type:application/json -d "{\"action\":\"enable_cluster\", \"username\":\"$(head -n1 /etc/cozy/couchdb.login)\", \"password\":\"$(tail -n1 /etc/cozy/couchdb.login)\", \"bind_address\":\"0.0.0.0\"}"
 # curl $(head -n1 /etc/cozy/couchdb.login):$(tail -n1 /etc/cozy/couchdb.login)@127.0.0.1:5984/_cluster_setup -XPOST -Hcontent-type:application/json -d '{"action":"finish_cluster"}'
 
 ```

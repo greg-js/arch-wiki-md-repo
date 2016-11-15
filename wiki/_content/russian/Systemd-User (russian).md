@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [systemd/User](/index.php/Systemd/User "Systemd/User"). Дата последней синхронизации: 24 марта 2016‎. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Systemd/User&diff=0&oldid=427531).
 
-[systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") offers users the ability to manage services under the user's control with a per-user systemd instance, enabling users to start, stop, enable, and disable their own units. This is convenient for daemons and other services that are commonly run for a single user, such as [mpd](/index.php/Mpd "Mpd"), or to perform automated tasks like fetching mail. With some caveats it is even possible to run xorg and the entire window manager from user services.
+[systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") предоставляет пользователям возможность управления и контроля службами с отдельным экземпляром Systemd для каждого пользователя, что позволяет пользователю запускать, останавливать, включать и отключать свои собственные службы. Это удобно применять для демонов и других служб, которые обычно выполняются для одного пользователя, например, [mpd](/index.php/Music_Player_Daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Music Player Daemon (Русский)") или для выполнения автоматизированных задач, таких как выборка почты. С некоторыми предостережениями можно даже запустить Xorg и весь оконный менеджер из пользовательских служб.
 
 ## Contents
 
@@ -26,21 +26,21 @@
 
 ## Как это работает
 
-As per default configuration in `/etc/pam.d/system-login`, the `pam_systemd` module automatically launches a `systemd --user` instance when the user logs in for the first time. This process will survive as long as there is some session for that user, and will be killed as soon as the last session for the user is closed. When [#Automatic start-up of systemd user instances](#Automatic_start-up_of_systemd_user_instances) is enabled, the instance is started on boot and will not be killed. The systemd user instance is responsible for managing user services, which can be used to run daemons or automated tasks, with all the benefits of systemd, such as socket activation, timers, dependency system or strict process control via cgroups.
+В соответствии с конфигурацией по умолчанию в `/etc/pam.d/system-login`, модуль `pam_systemd` автоматически запускает `systemd --user` в случае, когда пользователь в первый раз входит в систему . Этот процесс будет работать до тех пор, пока есть некоторая сессия для этого пользователя, и будет убит, как только последний сеанс для пользователя будет закрыт. Когда включен [#Автоматический запуск пользовательского экземпляра systemd](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D1.8D.D0.BA.D0.B7.D0.B5.D0.BC.D0.BF.D0.BB.D1.8F.D1.80.D0.B0_systemd), то экземпляр запускается при загрузке и убит не будет. Пользовательский экземпляр systemd отвечает за управление службами пользователей, которые могут быть использованы для запуска демонов или автоматизированных задач, со всеми преимуществами systemd, таких как активация сокета, таймеры, системы зависимостей или строгий контроль процесса через контрольные группы.
 
-Similarly to system units, user units are located in the following directories (ordered by ascending precedence):
+Аналогично системным службам, пользовательские службы расположены в следующих каталогах (отсортированы по возрастанию приоритета):
 
-*   `/usr/lib/systemd/user/` where units provided by installed packages belong.
-*   `~/.local/share/systemd/user/` where units of packages that have been installed in the home directory belong.
-*   `/etc/systemd/user/` where system-wide user units are placed by the system administrator.
-*   `~/.config/systemd/user/` where the user puts its own units.
+*   `/usr/lib/systemd/user/` где находятся службы, относящиеся к установленным пакетам.
+*   `~/.local/share/systemd/user/` где находятся службы, относящиеся к пакетам, установленным в домашний каталог.
+*   `/etc/systemd/user/` где находятся общесистемные пользовательские службы, созданные системным администратором.
+*   `~/.config/systemd/user/` где пользователь размещает свои собственные службы.
 
-When systemd user instance starts, it brings up the target `default.target`. Other units can be controlled manually with `systemctl --user`.
+При запуске пользовательского экземпляра systemd, у Вас откроется целевой `default.target`. Другие службы могут управляться вручную с помощью команды `systemctl --user`.
 
 **Примечание:**
 
-*   Be aware that since version 206, the `systemd --user` instance is a per-user process, and not per-session. The rationale is that most resources handled by user services, like sockets or state files will be per-user (live on the user's home dir) and not per session. This means that all user services run outside of a session. As a consequence, programs that need to be run inside a session will probably break in user services. The way systemd handles user sessions is pretty much in flux. See [[1]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[2]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html) for some hints on where things are going.
-*   `systemd --user` runs as a separate process from the `systemd --system` process. User units can not reference or depend on system units.
+*   Имейте в виду, что начиная с версии 206, `systemd --user` представляет собой процесс для каждого пользователя, а не для сессии. Смысл заключается в том, что большая часть ресурсов, обрабатываемых пользовательскими службами, такие как сокеты или файлы состояния будут создаваться отдельно для каждого пользователя (в домашнем каталоге пользователя), и не за один сеанс. Это означает, что все пользовательские службы работают вне сеанса. Как следствие, программы, которые должны быть запущены внутри сессии, вероятно, прервут выполнение пользовательских служб. Способом Systemd обрабатываются пользовательские сеансы довольно много данных. См [[1]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) и [[2]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html) для получения подсказок о том, как идут дела.
+*   `systemd --user` выполняется как отдельный процесс от родительского `systemd --system` процесса. Службы пользователей не могут ссылаться на или зависеть от системных устройств.
 
 ## Основные настройки
 

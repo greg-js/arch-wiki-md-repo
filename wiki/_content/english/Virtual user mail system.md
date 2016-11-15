@@ -353,6 +353,10 @@ Configure the password plugin and make sure you alter the settings accordingly:
 ```
 $config['password_driver'] = 'sql';
 $config['password_db_dsn'] = 'mysql://<postfix_database_user>:<password>@localhost/<postfix_database_name>';
+## for dovecot salted passwords only
+# $config['password_dovecotpw'] = 'doveadm pw';
+# $config['password_dovecotpw_method'] = 'SHA512-CRYPT';
+# $config['password_dovecotpw_with_method'] = true;
 $config['password_query'] = 'UPDATE mailbox SET password=%c WHERE username=%u';
 
 ```

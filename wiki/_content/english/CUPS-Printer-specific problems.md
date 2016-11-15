@@ -167,7 +167,7 @@ See [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 ## Dell
 
 | Printer | Driver/filter | Notes |
-| 1250C | [foo2zjs](https://aur.archlinux.org/packages/foo2zjs/) | See [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), the patch has been merged into upstream. The printer may also work with the [Xerox Phaser 6000B driver](#Xerox_Phaser_6000B). |
+| 1250C | [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/) | See [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), the patch has been merged into upstream. The printer may also work with the [Xerox Phaser 6000B driver](#Xerox_Phaser_6000B). |
 | E515,
 
 E515dw
@@ -253,7 +253,7 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | DeskJet 820Cxi |
 | DeskJet 1000Cse |
 | DeskJet 1000Cxi |
-| LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs](https://aur.archlinux.org/packages/foo2zjs/). |
+| LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/). |
 | Printer | Driver/filter | Notes |
 
 ###### HPLIP Driver

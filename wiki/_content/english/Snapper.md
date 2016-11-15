@@ -296,6 +296,10 @@ The following packages use `btrfs send` and `btrfs receive` to send backups incr
 
 	[https://github.com/wesbarnett/snap-sync.git](https://github.com/wesbarnett/snap-sync.git) || [snap-sync](https://aur.archlinux.org/packages/snap-sync/)
 
+*   **snapsync** — "A synchronization tool for snapper"
+
+	[https://github.com/doudou/snapsync](https://github.com/doudou/snapsync) || [ruby-snapsync](https://aur.archlinux.org/packages/ruby-snapsync/)
+
 *   **buttersink** — "Buttersink is like rsync for btrfs snapshots."
 
 	[https://github.com/AmesCornish/buttersink.git](https://github.com/AmesCornish/buttersink.git) || [buttersink-git](https://aur.archlinux.org/packages/buttersink-git/)

@@ -18,12 +18,15 @@ For general help on the install preocedure see the [Installation guide](/index.p
         *   [2.2.1 Sample partition layout](#Sample_partition_layout)
         *   [2.2.2 Install Bootloader](#Install_Bootloader)
         *   [2.2.3 Note about Macbook Pro 9,1 and 9,2](#Note_about_Macbook_Pro_9.2C1_and_9.2C2)
+        *   [2.2.4 rEFInd](#rEFInd)
 *   [3 Post Installation](#Post_Installation)
-    *   [3.1 Users](#Users)
-    *   [3.2 Wireless](#Wireless)
-        *   [3.2.1 b43](#b43)
-        *   [3.2.2 wl](#wl)
-    *   [3.3 Xorg](#Xorg)
+    *   [3.1 SD Card Reader](#SD_Card_Reader)
+    *   [3.2 Users](#Users)
+    *   [3.3 Wireless](#Wireless)
+        *   [3.3.1 b43](#b43)
+        *   [3.3.2 wl](#wl)
+        *   [3.3.3 Wireless Flakiness](#Wireless_Flakiness)
+    *   [3.4 Xorg](#Xorg)
 *   [4 Bells & Whistles](#Bells_.26_Whistles)
     *   [4.1 Emulating OSX Touchpad Gestures](#Emulating_OSX_Touchpad_Gestures)
         *   [4.1.1 Using synclient](#Using_synclient)
@@ -117,36 +120,50 @@ For Macbook Pro 9,1 users, the process is similar.
 
 The only difference is installing efibootmgr (required for 9,2) and running grub-mkconfig (may not be required for 9,2)
 
-Alternatively you can use rEFInd as your boot manager instead.
+#### rEFInd
+
+Alternatively you can use rEFInd as your boot manager. Very simple installation as the refind-install script does everything for you.
 
 ```
 # pacman -S refind-efi
-# mkdir /boot/EFI/refind/refind_x64.efi
 # refind-install
-# mkinitcpio -p linux
 
 ```
 
-Then to find the slow bootup of rEFInd you need to copy or move the refind folder and rename the efi.
+Configure /boot/EFI/refind/refind.conf and uncomment the scan line and edit to reflect the below values for mac.
 
 ```
-# cp -r /boot/EFI/refind /boot/EFI/BOOT
+scanfor internal,hdbios,external,biosexternal,optical,cd,manual
+
+```
+
+If you are seeing a slow bootup (30s) move rEFInd to the fallback efi boot path.
+
+```
+# mv /boot/EFI/refind /boot/EFI/BOOT
 # mv /boot/EFI/BOOT/refind_x64.efi /boot/EFI/BOOT/bootx64.efi
 
 ```
 
-For some reason the MBP bootloader is looking for this first. Without this MBP will be sitting at the grey startup screen for 30s+
-
-Configure /boot/EFI/BOOT/refind.conf and uncomment the scan line and edit to reflect the below values for mac.
+If you are having problems check the efi boot order with efibootmgr.
 
 ```
-scanfor internal,hdbios,external,biosexternal,optical,manual
+# efibootmgr -v
 
 ```
 
 ## Post Installation
 
 Continue with [General recommendations](/index.php/General_recommendations "General recommendations"), noting the following modifications:
+
+### SD Card Reader
+
+The sdcard reader does not work properly with the highest speeds currently and may never work properly. To get it working you will have to sacrifice the ultra fast modes and use a quirk in your boot parameters.
+
+```
+sdhci.debug_quirks2=4
+
+```
 
 ### Users
 
@@ -187,6 +204,17 @@ Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) from [A
 *more to come.*
 
 Download, extract, and install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from [AUR](/index.php/AUR "AUR") and reboot.
+
+#### Wireless Flakiness
+
+The only connection manager combination with BCM4331 that doesn't result in flakiness seems to be connman + disabled background scanning.
+
+```
+/etc/connman/main.conf
+[General]
+BackgroundScanning = false
+
+```
 
 ### Xorg
 

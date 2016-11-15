@@ -28,7 +28,7 @@ When encrypting a system it is necessary to regenerate the initial ramdisk after
 *   `encrypt`: always needed when encrypting the root partition, or a partition that needs to be mounted *before* root. It is not needed in all the other cases, as system initialization scripts like `/etc/crypttab` take care of unlocking other encrypted partitions. This hook must be placed *after* the `udev` hook, if that is used.
 *   `sd-encrypt`: systemd version of `encrypt` hook and used instead of `encrypt` hook. Must be used with `systemd` hook.
 *   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Setting your keymap is done in [`/etc/vconsole.conf`](/index.php/Keymap#Persistent_configuration "Keymap").
-*   `keyboard`: needed to make USB keyboards work in early userspace.
+*   `keyboard`: needed to make keyboards work in early userspace.
 
 Other hooks needed should be clear from other manual steps followed during the installation of the system.
 
@@ -124,21 +124,32 @@ This parameter is specific to pass *dm-crypt* plain mode options to the *encrypt
 
 It takes the form
 
- `crypto=<hash>:<cipher>:<keysize>:<offset>:<skip>` 
+```
+crypto=<hash>:<cipher>:<keysize>:<offset>:<skip>
+
+```
 
 The arguments relate directly to the *cryptsetup* options. See [Dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption").
 
 For a disk encrypted with just *plain* default options, the `crypto` arguments must be specified, but each entry can be left blank:
 
- `crypto=::::` 
+```
+crypto=::::
+
+```
 
 A specific example of arguments is
 
- `crypto=sha512:twofish-xts-plain64:512:0:` 
+```
+crypto=sha512:twofish-xts-plain64:512:0:
+
+```
 
 ### Using sd-encrypt hook
 
-In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for more options and more details.
+In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters are honored by both the main system and initrd. `rd.luks` parameters are only honored by the initrd. See [systemd-cryptsetup-generator(8)](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html) for more options and more details.
+
+**Tip:** If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`.
 
 #### luks.uuid
 
@@ -193,7 +204,7 @@ The `/etc/crypttab` (encrypted device table) file is similar to the [fstab](/ind
 
 `crypttab` is read *before* `fstab`, so that dm-crypt containers can be unlocked before the file system inside is mounted. Note that `crypttab` is read *after* the system has booted up, therefore it is not a replacement for unlocking encrypted partitions by using [mkinitcpio](#mkinitcpio) hooks and [boot loader options](#Boot_loader) as in the case of [encrypting the root partition](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). `crypttab` processing at boot time is made by the `systemd-cryptsetup-generator` automatically.
 
-See the `crypttab` [man page](http://linux.die.net/man/5/crypttab) for details, read below for some examples, and the [#Mounting at boot time](#Mounting_at_boot_time) section for instructions on how to use UUIDs to mount an encrypted device.
+See [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html) for details, read below for some examples, and the [#Mounting at boot time](#Mounting_at_boot_time) section for instructions on how to use UUIDs to mount an encrypted device.
 
 **Warning:** There are issues with [systemd](/index.php/Systemd "Systemd") when processing `crypttab` entries for *dm-crypt* [plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) devices:
 
@@ -203,31 +214,26 @@ See the `crypttab` [man page](http://linux.die.net/man/5/crypttab) for details, 
 
  `/etc/crypttab` 
 ```
- # Example crypttab file. Fields are: name, underlying device, passphrase, cryptsetup options.
+# Example crypttab file. Fields are: name, underlying device, passphrase, cryptsetup options.
 
- # Mount /dev/lvm/swap re-encrypting it with a fresh key each reboot
+# Mount /dev/lvm/swap re-encrypting it with a fresh key each reboot
  swap	/dev/lvm/swap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
 
- # Mount /dev/lvm/tmp as /dev/mapper/tmp using plain dm-crypt with a random passphrase, making its contents unrecoverable after it is dismounted.
- tmp	/dev/lvm/tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256 
+# Mount /dev/lvm/tmp as /dev/mapper/tmp using plain dm-crypt with a random passphrase, making its contents unrecoverable after it is dismounted.
+tmp	/dev/lvm/tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256 
 
- # Mount /dev/lvm/home as /dev/mapper/home using LUKS, and prompt for the passphrase at boot time.
- home   /dev/lvm/home
+# Mount /dev/lvm/home as /dev/mapper/home using LUKS, and prompt for the passphrase at boot time.
+home   /dev/lvm/home
 
- # Mount /dev/sdb1 as /dev/mapper/backup using LUKS, with a passphrase stored in a file.
- backup /dev/sdb1       /home/alice/backup.key
-
+# Mount /dev/sdb1 as /dev/mapper/backup using LUKS, with a passphrase stored in a file.
+backup /dev/sdb1       /home/alice/backup.key
 ```
 
 ### Mounting at boot time
 
 If you want to mount an encrypted drive at boot time, enter the device's UUID in `/etc/crypttab`. You get the UUID (partition) by using the command `lsblk -f` and adding it to `crypttab` in the form:
 
- `/etc/crypttab` 
-```
- externaldrive         UUID=2f9a8428-ac69-478a-88a2-4aa458565431        none    luks,timeout=180
-
-```
+ `/etc/crypttab`  `externaldrive         UUID=2f9a8428-ac69-478a-88a2-4aa458565431        none    luks,timeout=180` 
 
 The first parameter is your preferred device mapper's name for the encrypted drive. The option `none` will trigger a prompt during boot to type the passphrase for unlocking the partition. The `timeout` option defines a timeout in seconds for entering the decryption password during boot.
 
@@ -235,11 +241,7 @@ A [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encr
 
 Use the device mapper's name you've defined in `/etc/crypttab` in `/etc/fstab` as follows:
 
- `/etc/fstab` 
-```
- /dev/mapper/externaldrive      /mnt/backup               ext4    defaults,errors=remount-ro  0  2
-
-```
+ `/etc/fstab`  `/dev/mapper/externaldrive      /mnt/backup               ext4    defaults,errors=remount-ro  0  2` 
 
 Since `/dev/mapper/externaldrive` already is the result of a unique partition mapping, there is no need to specify an UUID for it. In any case, the mapper with the filesystem will have a different UUID than the partition it is encrypted in.
 
