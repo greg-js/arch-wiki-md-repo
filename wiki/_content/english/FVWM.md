@@ -426,7 +426,7 @@ FVWM provides a number of options that allow it to mimic the appearance and beha
 
 ### Force icon size and background
 
-The sizing of icons is not regular as different programs provide icons of differing sizes. Use the `IconSize` style to force a regular size: `Style "*" IconSize 48 48` Note that icons larger than the given size will be clipped.
+The sizing of icons is not regular as different programs provide icons of differing sizes. Use the `IconSize` style to force a regular size: `Style "*" IconSize 48 48` for instance. Note that icons larger than the given size will be clipped.
 
 By default, icons also have no background. You can use the `IconBackgroundColorset` style to force icons to have a background. See [#Colorsets](#Colorsets).
 

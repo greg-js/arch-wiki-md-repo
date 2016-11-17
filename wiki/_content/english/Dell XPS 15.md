@@ -47,7 +47,7 @@ This page is a work in progress! More info coming soon.
             *   [3.13.1.1 XPS 9550](#XPS_9550)
         *   [3.13.2 Synaptics](#Synaptics)
     *   [3.14 Notes](#Notes)
-*   [4 Howtos](#Howtos)
+*   [4 Howtos & Helpful Info](#Howtos_.26_Helpful_Info)
 
 ## System Settings
 
@@ -572,6 +572,17 @@ If the camera seems that it does not work (black image), try to enable/disable a
 
 ### Power management
 
+Closing the lid causes the system to shutdown. This can be fixed by writing this into `/etc/systemd/sleep.conf`:
+
+```
+ [Sleep]
+ HibernateState=disk
+ HibernateMode=shutdown
+
+```
+
+[Source](https://bbs.archlinux.org/viewtopic.php?id=204739)
+
 ### Special Touch Keys
 
 The special touch keys are strangely mapped by default. One changes brightness, one does next track. They seem to be linked to the same key sequences as the Fn+F# keys that do the same job. To fix this, make this new file:
@@ -664,9 +675,10 @@ If using Synaptics, read [Synaptics](/index.php/Synaptics "Synaptics").
 *   Remember to turn on Wi-Fi and Bluetooth by pressing the F2 button.
 *   Card reader is finnicky. Try booting with a card inserted or inserting a card after it is booted and running `sudo echo 1 > /sys/bus/pci/rescan`. Otherwise, card reader will not be detected. It seems that a certain kernel update results in the workaround not working as well. More info needed.
 
-## Howtos
+## Howtos & Helpful Info
 
 *   [A fairly comprehensive writeup of running Arch Linux on an XPS 15 9530.](http://drwho.virtadpt.net/archive/2015/01/05/linux-on-the-dell-xps-15-9530)
 *   [Comprehensive coverage of Arch Linux on XPS 15 9550](https://ahxxm.com/151.moew/)
 *   [Multitouch gestures with libinput and libinput-gestures](https://blog.spirotot.com/2016/07/27/dell-xps-15-9550-arch-linux-trackpad-gestures/)
 *   [Fixing 9550 screen flickering and black screen on resume from suspend](https://blog.spirotot.com/2016/08/11/xps-9550-arch-linux-fix-screen-flickering/)
+*   [Arch on New XPS 15 (Late 2015)](https://bbs.archlinux.org/viewtopic.php?id=204739)

@@ -158,7 +158,7 @@ Plasma 5.6 已经可以在 [Wayland](/index.php/Wayland "Wayland") 上使用，�
 
 ### Qt 和 GTK+ 应用外观
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 为了 Qt 和 GTK 主题的一致性，请参见 [外观统一的 QT 和 GTK 应用](/index.php?title=%E5%A4%96%E8%A7%82%E7%BB%9F%E4%B8%80%E7%9A%84_QT_%E5%92%8C_GTK_%E5%BA%94%E7%94%A8&action=edit&redlink=1 "外观统一的 QT 和 GTK 应用 (page does not exist)")。
 
 	Qt4
 

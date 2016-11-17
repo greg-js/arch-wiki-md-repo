@@ -5,8 +5,10 @@
 *   [1 Installation](#Installation)
 *   [2 Basic usage](#Basic_usage)
 *   [3 Migrating to pass](#Migrating_to_pass)
-*   [4 GUI](#GUI)
-*   [5 See also](#See_also)
+*   [4 Advanced usage](#Advanced_usage)
+*   [5 Multiple pass Contexts (e.g. Teaming)](#Multiple_pass_Contexts_.28e.g._Teaming.29)
+*   [6 GUI](#GUI)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -67,6 +69,47 @@ $ pass -c archlinux.org/wiki/username
 ## Migrating to pass
 
 There are multiple scripts listed on the [pass-project page](http://www.zx2c4.com/projects/password-store/) to import passwords from other programs
+
+## Advanced usage
+
+[Environment variables](/index.php/Environment_variables "Environment variables") can be used to alter where *pass* looks to do store and git operations via
+
+```
+PASSWORD_STORE_DIR=/path/to/store
+PASSWORD_STORE_GIT=/path/to/store
+
+```
+
+For more information on how this can be used to support multiple pass repositories see [this link](https://lists.zx2c4.com/pipermail/password-store/2016-November/002463.html).
+
+## Multiple pass Contexts (e.g. Teaming)
+
+One can use aliases to set up different pass contexts, which helps when collaborating with different teams. We've gotten this working in bash as follows:
+
+Add aliases to your `*~/.bashrc*`:
+
+```
+ alias passered="PASSWORD_STORE_DIR=~/.pass/red PASSWORD_STORE_GIT=~/.pass/red pass"
+ alias passblue="PASSWORD_STORE_DIR=~/.pass/blue PASSWORD_STORE_GIT=~/.pass/blue pass"
+
+```
+
+Add these for bash-completion to your `*~/.bash_completion*` and make sure [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) is installed:
+
+```
+ source /usr/share/bash-completion/completions/pass
+ _passred(){
+     PASSWORD_STORE_DIR=~/.pass/red/ _pass
+ }
+ complete -o filenames -o nospace -F _passred passred
+ _passblue(){
+     PASSWORD_STORE_DIR=~/.pass/blue/ _pass
+ }
+ complete -o filenames -o nospace -F _passblue passblue
+
+```
+
+Now you can initialize into `*~/.pass/red*` and `*~/.pass/blue*` and have two pass contexts with the `*passred*` and `*passblue*` aliases. You can generalize this further into as many contexts as you like.
 
 ## GUI
 

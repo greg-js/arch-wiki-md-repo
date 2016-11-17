@@ -2,7 +2,7 @@ The HP Zbook Studio G3 is a workstation replacement laptop.
 
 ## Contents
 
-*   [1 Status=](#Status.3D)
+*   [1 Status](#Status)
 *   [2 Installation](#Installation)
     *   [2.1 Using hybrid graphics](#Using_hybrid_graphics)
     *   [2.2 Disabling Hybrid graphics](#Disabling_Hybrid_graphics)
@@ -12,7 +12,7 @@ The HP Zbook Studio G3 is a workstation replacement laptop.
     *   [3.1 X config](#X_config)
     *   [3.2 HiDPI configuration](#HiDPI_configuration)
 
-## Status=
+## Status
 
 This laptop is currently very difficult to get working with Arch. Despite the progress described below, it sometimes stops working, and it is unclear exactly why. At this moment I would NOT reccommend buying this laptop unless you want a challenge.
 

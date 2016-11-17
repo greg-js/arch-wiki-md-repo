@@ -44,6 +44,8 @@ If the installer fails saying that DirectX cannot be installed, make sure you in
 
 [leagueoflegends](https://aur.archlinux.org/packages/leagueoflegends/) from the [AUR](/index.php/AUR "AUR") is available to ease the installation of the game using the method used in the [#Wine Method](#Wine_Method) section. This package will download the game installer in `/opt/games/leagueoflegends` and configure the wine environment to run the game. Additionally, it creates a bash script and a `.desktop` file to launch the game.
 
+Also you can use [leagueoflegends-git](https://aur.archlinux.org/packages/leagueoflegends-git/) do the same, but another way.
+
 ### Wine Method
 
 **Note:** The guide is written mostly for x86_64 systems, if your architecture is i686, you can skip setting up the new Wine Prefix (Just use the default wine prefix instead: .wine). You can also ignore WINEARCH/WINEPREFIX parts of commands· And to you, "lib32-lcms2" would just be "lcms2"

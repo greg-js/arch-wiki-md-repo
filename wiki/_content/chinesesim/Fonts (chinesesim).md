@@ -348,7 +348,7 @@ LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 ### 预览和测试
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 这里有一个整理过的预览影像数据库：[Linux 终端字体截图](http://alexandre.deverteuil.net/pages/consolefonts/)。
 
 *showconsolefont* 指令会以表格形式显示可用字与字符：
 

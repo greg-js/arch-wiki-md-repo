@@ -222,6 +222,8 @@ The new package will appear on AUR after you *push* the first commit. You can no
 
 #### Uploading packages
 
+**Tip:** To prevent untracked files from commits and keep a clean working directory as possible, exclude all files with `.gitignore` and force-add files instead. See [dotfiles#Using gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").
+
 The procedure for uploading packages to the AUR is the same for new packages and package updates. You need at least [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and [.SRCINFO](/index.php/.SRCINFO ".SRCINFO") in the top-level directory to *push* your package to AUR.
 
 To upload, add the `PKGBUILD`, `.SRCINFO`, and any helper files (like `.install` files or local source files like `.patch`) to the *staging area* with `git add`, commit them to your local tree with a commit message with `git commit`, and finally publish the changes to the AUR with `git push`.

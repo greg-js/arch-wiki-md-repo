@@ -1,4 +1,10 @@
-Webfs is a simple http server for mostly static content. It is available in the Arch community repo.
+[Webfs](http://linux.bytesex.org/misc/webfs.html) is a simple http server for mostly static content.
+
+## Installation
+
+It is available as [webfs](https://www.archlinux.org/packages/?name=webfs).
+
+## Configuration
 
 The configuration file is `/etc/conf.d/webfsd`. You need to create an `index.html` file if you want to make it web browser readable, and point to `index.html` in the configuration file.
 
@@ -27,7 +33,12 @@ An `index.html` example.
   </head>
   <body>
   <h>Local network File Server</h>
-  <table><tr><th></th><th><a href="./">Program</a></th><th><a href="?C=M;O=A"></a></th><th><a href="?C=S;O=A"></a></th><th><a href="?C=D;O=A"></a></th></tr><tr><th colspan="5"><hr></th></tr>
+  <table><tr><th></th>
+<th><a href="./">Program</a></th>
+<th><a href="?C=M;O=A"></a></th>
+<th><a href="?C=S;O=A"></a></th>
+<th><a href="?C=D;O=A"></a></th></tr>
+<tr><th colspan="5"><hr></th></tr>
 
   <tr><td valign="top"></td><td><a href="flash_erase">flash_erase</a>
 
@@ -47,6 +58,6 @@ An `index.html` example.
 
 ```
 
-See: man webfsd
+## See also
 
-[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html)
+*   `man webfsd`

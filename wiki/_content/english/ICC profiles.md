@@ -228,3 +228,4 @@ You can easily use one of these loaders to apply the color profile in early boot
 *   [LPROF Main Help Window](http://lprof.sourceforge.net/help/lprof-help.html) - Details on profiling printers and scanners
 *   [DisplayCal: Basic concept of display calibration and profiling](http://displaycal.net/#concept)
 *   [Display color profiling on Linux (XFCE)](https://encrypted.pcode.nl/blog/2013/11/24/display-color-profiling-on-linux/)
+*   [Monitor Hardware Calibration](https://linuxtidbits.wordpress.com/2013/04/20/handling-display-calibration/)

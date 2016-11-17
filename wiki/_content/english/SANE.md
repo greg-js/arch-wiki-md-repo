@@ -3,7 +3,7 @@ SANE ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
+*   [2 Verification](#Verification)
 *   [3 Installing a scanner driver](#Installing_a_scanner_driver)
     *   [3.1 Firmware](#Firmware)
 *   [4 Install a frontend](#Install_a_frontend)
@@ -24,7 +24,7 @@ SANE ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now
 
 [Install](/index.php/Install "Install") the [sane](https://www.archlinux.org/packages/?name=sane) package.
 
-## Configuration
+## Verification
 
 Now you can try to see if sane recognizes your scanner
 
@@ -53,7 +53,7 @@ device `pixma:04A91749_247936' is a CANON Canon PIXMA MG5200 multi-function peri
 Then you would need to run
 
 ```
-$ scanimage --device pixma:04A91749_247936 --format=tiff > test.tiff
+$ scanimage --device "pixma:04A91749_247936" --format=tiff > test.tiff
 
 ```
 
@@ -221,19 +221,19 @@ After systemd, the `scanner` and `lp` groups are deprecated. No need to add your
 
 You can also try to change permissions of usb device but this is not recommended, a better solution is to fix the Udev rules so that your scanner is recognized.
 
-First, as root, check connected usb devices with `lsusb`:
+First check connected usb devices with `lsusb`:
 
 ```
-#Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-#Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-#Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-#Bus 003 Device 003: ID 04d9:1603 Holtek Semiconductor, Inc. 
-#Bus 003 Device 002: ID 04fc:0538 Sunplus Technology Co., Ltd 
-#Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-#Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-#Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard 
-#Bus 001 Device 002: ID 046d:0802 Logitech, Inc. Webcam C200
-#Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 003: ID 04d9:1603 Holtek Semiconductor, Inc. 
+Bus 003 Device 002: ID 04fc:0538 Sunplus Technology Co., Ltd 
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 006: ID 03f0:2504 Hewlett-Packard 
+Bus 001 Device 002: ID 046d:0802 Logitech, Inc. Webcam C200
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 

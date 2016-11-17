@@ -43,6 +43,10 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### November 2016
 
+*   [16 November 2016] [ASA-201611-17](https://lists.archlinux.org/pipermail/arch-security/2016-November/000764.html) [libgit2](https://www.archlinux.org/packages/?name=libgit2) denial of service
+*   [16 November 2016] [ASA-201611-16](https://lists.archlinux.org/pipermail/arch-security/2016-November/000763.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
+*   [16 November 2016] [ASA-201611-15](https://lists.archlinux.org/pipermail/arch-security/2016-November/000762.html) [python-django](https://www.archlinux.org/packages/?name=python-django) multiple issues
+*   [16 November 2016] [ASA-201611-14](https://lists.archlinux.org/pipermail/arch-security/2016-November/000761.html) [python2-django](https://www.archlinux.org/packages/?name=python2-django) multiple issues
 *   [14 November 2016] [ASA-201611-13](https://lists.archlinux.org/pipermail/arch-security/2016-November/000760.html) [shutter](https://www.archlinux.org/packages/?name=shutter) arbitrary code execution
 *   [02 November 2016] [ASA-201611-12](https://lists.archlinux.org/pipermail/arch-security/2016-November/000759.html) [lib32-gdk-pixbuf2](https://www.archlinux.org/packages/?name=lib32-gdk-pixbuf2) arbitrary code execution
 *   [02 November 2016] [ASA-201611-11](https://lists.archlinux.org/pipermail/arch-security/2016-November/000758.html) [tar](https://www.archlinux.org/packages/?name=tar) arbitrary file overwrite

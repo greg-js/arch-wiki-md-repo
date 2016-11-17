@@ -472,6 +472,47 @@ $ sudo -u postgres mv /var/lib/postgres/data-9.X/postmaster.pid /tmp
 
 	Your installation references loadable libraries that are missing from the new installation.
 
+	could not load library "$libdir/postgis-2.2":
+
+	ERROR: incompatible library "/usr/lib/postgresql/postgis-2.2.so": version mismatch
+
+	DETAIL: Server is version 9.6, library is version 9.5.
+
+	You can manually compile the previous version of PostGIS against the new version of PostgreSQL, use it for the upgrade process, then install the new version back.
+
+	In this example we upgrade from the old **PostgreSQL 9.5 + PostGIS 2.2** to the new **PostgreSQL 9.6 + PostGIS 2.3**:
+
+```
+# Uninstall PostGIS 2.3.
+sudo pacman -R postgis
+
+# Download and compile PostGIS 2.2 against PostgreSQL 5.6\. The latest sources can be found at http://postgis.net/source/
+wget http://download.osgeo.org/postgis/source/postgis-2.2.3.tar.gz
+tar -xvf postgis-2.2.3.tar.gz
+cd postgis-2.2.3
+./configure
+make 
+
+# Copy just the files we need to upgrade the database.
+sudo cp postgis/postgis-2.2.so /usr/lib/postgresql
+sudo cp raster/rt_pg/rtpostgis-2.2.so /usr/lib/postgresql                                                
+sudo cp topology/postgis_topology-2.2.so /usr/lib/postgresql
+
+# Run pg_upgrade as described above. It should now finish successfully.
+[...]
+
+# Remove PostGIS 2.2.
+sudo rm /usr/lib/postgresql/postgis-2.2.so
+sudo rm /usr/lib/postgresql/rtpostgis-2.2.so
+sudo rm /usr/lib/postgresql/postgis_topology-2.2.so
+
+# Install PostGIS 2.3 back again.
+sudo pacman -S postgis
+
+```
+
+	Your installation references loadable libraries that are missing from the new installation.
+
 	You can add these libraries to the new installation, or remove the functions using them from the old installation.
 
 	A list of problem libraries is in the file

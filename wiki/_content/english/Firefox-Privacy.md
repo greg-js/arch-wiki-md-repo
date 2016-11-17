@@ -16,11 +16,14 @@ This article overviews some useful extensions which enhance security and privacy
     *   [1.11 RequestPolicy](#RequestPolicy)
     *   [1.12 Decentraleyes](#Decentraleyes)
     *   [1.13 CanvasBlocker](#CanvasBlocker)
+    *   [1.14 Random User Agent](#Random_User_Agent)
 *   [2 Configuration tweaks](#Configuration_tweaks)
     *   [2.1 Enable tracking protection](#Enable_tracking_protection)
     *   [2.2 Change browser time zone](#Change_browser_time_zone)
     *   [2.3 Change user agent and platform](#Change_user_agent_and_platform)
     *   [2.4 Disable battery api](#Disable_battery_api)
+    *   [2.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
+    *   [2.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
 
 ## Extensions
 
@@ -104,6 +107,10 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 
 [CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting.</canvas>
 
+### Random User Agent
+
+[Random User Agent](https://addons.mozilla.org/en-US/firefox/addon/random-agent-spoofer/) rotates complete browser profiles (from real browsers/devices) at a user defined time interval. It includes many extra privacy enhancing options.
+
 ## Configuration tweaks
 
 The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
@@ -161,3 +168,26 @@ Select a known common platform that corresponds with your user agent.
 Firefox is disabling the battery api for web content starting with Firefox 52, the api will still be available for add-ons [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) [[3]](https://www.theguardian.com/technology/2016/nov/01/firefox-disable-battery-status-api-tracking)
 
 Battery status api may be used to fingerprint the user[[4]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.
+
+### WebRTC exposes LAN IP address
+
+To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
+
+*   `media.peerconnection.ice.default_address_only` to **true** (Firefox < 51)
+*   `media.peerconnection.ice.no_host` to **true** (Firefox >= 51)
+
+or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/).
+
+You can use this [WebRTC test page](http://net.ipcalf.com/) to confirm that your internal IP address is no longer leaked.
+
+### Disable 1024-bit Diffie-Hellman primes
+
+Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to **false** in `about:config`:
+
+```
+  security.ssl3.dhe_rsa_aes_128_sha
+  security.ssl3.dhe_rsa_aes_256_sha
+
+```
+
+Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).

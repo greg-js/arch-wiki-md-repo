@@ -2,6 +2,11 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.8-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.8](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.8)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=dc5e5c025b7c87d827fd68e37c68d5f6a861ccbd](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=dc5e5c025b7c87d827fd68e37c68d5f6a861ccbd)
+
 **Bump to v4.8.7-2**
 
 *   Changelog: Bump to ck7 with MuQSS 0.140

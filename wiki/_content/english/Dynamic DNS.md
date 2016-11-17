@@ -10,7 +10,7 @@
 *   [2 Other providers](#Other_providers)
     *   [2.1 duiadns](#duiadns)
     *   [2.2 FreeDns.io](#FreeDns.io)
-    *   [2.3 Now-IP](#Now-IP)
+    *   [2.3 Now-DNS](#Now-DNS)
     *   [2.4 System-NS](#System-NS)
 
 ## Update tools
@@ -29,6 +29,7 @@ Some of the compatible services are listed below, but you can also check the [ex
 
 <caption>ddclient compatible services</caption>
 | Service | Cost | Available Records | Hostname Limit | Config Notes | Alternative tools |
+| [Now-DNS](http://now-dns.com/) | Free | A, AAAA | unlimited | Use protocol `dyndns2`, server `now-dns.com/update` |
 | [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free |
 | [DNSdynamic](http://www.dnsdynamic.org/) | Free | [example](https://www.dnsdynamic.org/api.php) |
 | [Duck DNS](https://www.duckdns.org/) | Free and open source | [duckdns](https://aur.archlinux.org/packages/duckdns/) |
@@ -77,9 +78,9 @@ The following DDNS providers are not compatible with [ddclient](#ddclient) so up
 
 [FreeDns.io](https://freedns.io) provides free A and AAAA DNS records and CNAME, TXT and MX records with a premium membership. You can update your IP using their HTTP API (with a 60 requests-per-hour limit). They provide [several example scripts](https://github.com/nkovacne/freedns-samples).
 
-### Now-IP
+### Now-DNS
 
-[Now-IP.com](https://now-ip.com) is a free service which is easy and uncomplicated to set up.
+[Now-DNS.com](https://now-dns.com) is a free service which is easy and uncomplicated to set up.
 
 ### System-NS
 

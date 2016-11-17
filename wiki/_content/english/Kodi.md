@@ -41,8 +41,7 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
     *   [3.11 Raspberry Pi](#Raspberry_Pi)
         *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
         *   [3.11.2 Right Click Menu Key](#Right_Click_Menu_Key)
-        *   [3.11.3 Blackborders are transparent](#Blackborders_are_transparent)
-        *   [3.11.4 USB DAC not working](#USB_DAC_not_working)
+        *   [3.11.3 USB DAC not working](#USB_DAC_not_working)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -572,12 +571,6 @@ To make sure that [sudo](/index.php/Sudo "Sudo") does not ask for password for `
 #### Right Click Menu Key
 
 On the Raspberry Pi the physical keyboard "Menu Key" does not work with kodi. As an alternative hold the "Enter Key" longer to access submenus in kodi. This bug seems to be exclusive to the Raspberry Pi as it is run in a standalone environment.
-
-#### Blackborders are transparent
-
-Some users have reported that running in kodi-standalone mode as systemd service causes cropped videos with black borders the console.
-
-This is a bug of the systemd script in the alarm repository and will hopefully get fixed soon. Further details and a fix can be found on [Github](https://github.com/archlinuxarm/PKGBUILDs/pull/1379).
 
 #### USB DAC not working
 

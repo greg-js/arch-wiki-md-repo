@@ -54,7 +54,11 @@
 
 监视和控制systemd的主要命令是`systemctl`。该命令可用于查看系统状态和管理系统及服务。详见`man 1 systemctl`。
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：**
+
+*   在 `systemctl` 参数中添加 `-H <用户名>@<主机名>` 可以实现对其他机器的远程控制。该功能使用 [SSH](/index.php/SSH_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SSH (简体中文)") 连接。
+*   `systemadm` 是 systemd 的官方图形前端。[官方软件仓库](/index.php/Official_repositories "Official repositories")提供了稳定版本 [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) 。
+*   [Plasma](/index.php/Plasma "Plasma") 用户可以安装 *systemctl* 图形前端 [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)。安装后可以在 *System administration* 下找到。
 
 ### 分析系统状态
 
@@ -107,7 +111,11 @@ $ systemctl list-unit-files
 
 在实例化之前，*systemd* 会先检查 `name@string.suffix` 文件是否存在（如果存在，就直接使用这个文件，而不是模板实例化）。大多数情况下，包含 `@` 标记都意味着这个文件是模板。如果一个模板单元没有实例化就调用，该调用会返回失败，因为模板单元中的 `%I` 指示符没有被替换。
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：**
+
+*   下面的大部分命令都可以跟多个单元名, 详细信息参见 `man systemctl`。
+*   `systemctl`命令在`enable`、`disable`和`mask`子命令中增加了`--now`选项，可以实现激活的同时启动服务，取消激活的同时停止服务。
+*   一个软件包可能会提供多个不同的单元。如果你已经安装了软件包，可以通过`pacman -Qql *package* | grep systemd`命令检查这个软件包提供了哪些单元。
 
 立即激活单元：
 
@@ -246,7 +254,7 @@ $ systemctl hybrid-sleep
 
 单元文件的语法，可以参考系统已经安装的单元，也可以参考 `man systemd.service` 中的[EXAMPLES章节](http://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)。
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 以 `#` 开头的注释可能也能用在 unit-files 中，但是只能在新行中使用。不要在 *systemd* 的参数后面使用行末注释， 否则 unit 将会启动失败。
 
 ### 处理依赖关系
 
@@ -308,7 +316,7 @@ RestartSec=30
 
 此外，把旧的单元文件从 `/usr/lib/systemd/system/` 复制到 `/etc/systemd/system/`，然后进行修改，也可以达到同样效果。在 `/etc/systemd/system/` 目录中的单元文件的优先级总是高于 `/usr/lib/systemd/system/` 目录中的同名单元文件。注意，当 `/usr/lib/` 中的单元文件因软件包升级变更时，`/etc/` 中自定义的单元文件不会同步更新。此外，你还得执行 `systemctl reenable <unit>`，手动重新启用该单元。因此，建议使用前面一种利用 `*.conf` 的方法。
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** `systemd-delta` 命令用来查看哪些单元文件被覆盖、哪些被修改。系统维护的时候需要及时了解哪些单元已经有了更新。
 
 安装 [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd) 软件包，可以使单元配置文件在 [Vim](/index.php/Vim "Vim") 下支持语法高亮。
 
@@ -419,7 +427,7 @@ systemd 提供了自己的日志系统（logging system），称为 journal。�
 
 默认情况下（当 `Storage=` 在文件 `/etc/systemd/journald.conf` 中被设置为 `auto`），日志记录将被写入 `/var/log/journal/`。该目录是 [systemd](https://www.archlinux.org/packages/?name=systemd) 软件包的一部分。若被删除，systemd **不会**自动创建它，直到下次升级软件包时重建该目录。如果该目录缺失，systemd 会将日志记录写入 `/run/systemd/journal`。这意味着，系统重启后日志将丢失。
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 如果 `/var/log/journal/` 位于 [btrfs](/index.php/Btrfs "Btrfs") 文件系统，应该考虑对这个目录禁用写入时复制，方法参阅[Btrfs#Copy-On-Write (CoW)](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs")。
 
 Systemd 日志事件提示信息的记录分级方式符合经典的 BSD syslog 协议风格（[维基百科](https://en.wikipedia.org/wiki/Syslog "wikipedia:Syslog")，[RFC 5424](https://tools.ietf.org/html/rfc5424)）。详情请参阅 [Facility](#Facility)、[Priority level](#Priority_level)等章节，用例请参阅 [Filtering output](#Filtering_output)。
 
@@ -776,7 +784,7 @@ Failed to issue method call: No such file or directory
 
 需要 [重新生成 initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio")。
 
-**Tip:** 可以使用 pacman 钩子在更新 [systemd](https://www.archlinux.org/packages/?name=systemd)时重新生成 initramfs。参考 [这个帖子](https://bbs.archlinux.org/viewtopic.php?id=215411) 和 [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
+**提示：** 可以使用 pacman 钩子在更新 [systemd](https://www.archlinux.org/packages/?name=systemd)时重新生成 initramfs。参考 [这个帖子](https://bbs.archlinux.org/viewtopic.php?id=215411) 和 [Pacman#Hooks](/index.php/Pacman#Hooks "Pacman").
 
 ## 相关资源
 

@@ -50,10 +50,8 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [3.9 Prevent accidental closing](#Prevent_accidental_closing)
     *   [3.10 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
     *   [3.11 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
-    *   [3.12 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
-    *   [3.13 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [3.14 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [3.15 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
+    *   [3.12 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
+    *   [3.13 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
 *   [4 See also](#See_also)
 
 ## Performance
@@ -200,7 +198,9 @@ In `about:config`, set the string value to a blank for both of these: `browser.n
 
 #### Enable Electrolysis
 
-In firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to true in `about:config`.
+In firefox 48 (45 ESR) or later, Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to force-enable Electrolysis [[2]](https://wiki.mozilla.org/Electrolysis#Force_Enable), although this is generally not recommended and may cause issues.
+
+To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
 
 ## Appearance
 
@@ -505,11 +505,10 @@ Before continuing, remember there is a reason some of these variables are not en
 
 #### Widevine and Netflix/Amazon Video
 
-Starting with version 49, Firefox can play Widevine videos, such as those on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
+Starting with version 50 (49 doesn't work because of [bug 1303813](https://bugzilla.mozilla.org/show_bug.cgi?id=1303813)), Firefox can play Widevine videos, such as those on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
 
-1.  **Allow Firefox to install DRM.** The first time you visit a widevine-enabled page, firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
-2.  **Forge a Chrome user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox it will try to use Silverlight. Use a user agent string from Chrome for linux, such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.93 Safari/537.36`. This can be configured using the [User Agent Switcher extension](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) or with `general.useragent.override` in *about:config*
-3.  **Run firefox with the sandboxes turned off. (not needed with Firefox 50+)** Some part of the widevine cdm tries to violate [the seccomp sandbox](https://wiki.mozilla.org/Security/Sandbox/Seccomp), which will crash playback (see [bug 1303813](https://bugzilla.mozilla.org/show_bug.cgi?id=1303813)). Launch firefox with the media plugin sandbox disabled using an environment variable: `MOZ_DISABLE_GMP_SANDBOX=1 firefox`
+1.  **Allow Firefox to install DRM.** The first time you visit a Widevine-enabled page, Firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
+2.  **Forge a Firefox on Windows user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox on Linux it will try to use Silverlight. Use a user agent string from Firefox on Windows, such as `Mozilla/5.0 (Windows NT 10.0; rv:50.0) Gecko/20100101 Firefox/50.0`. This can be configured using the [User Agent Switcher extension](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) or with `general.useragent.override` in *about:config*
 
 ### Mouse wheel scroll speed
 
@@ -575,7 +574,7 @@ x-scheme-handler/magnet=kde4-ktorrent.desktop
 
 ```
 
-See [[2]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
+See [[3]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-with-ktorrent-in-firefox)
 
 ### Prevent accidental closing
 
@@ -613,17 +612,6 @@ Scrolling in Firefox can feel "jerky" or "choppy". A post on [MozillaZine](http:
 
 Now scrolling should flow smoothly.
 
-### WebRTC exposes LAN IP address
-
-To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
-
-*   `media.peerconnection.ice.default_address_only` to **true** (Firefox < 51)
-*   `media.peerconnection.ice.no_host` to **true** (Firefox >= 51)
-
-or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/).
-
-You can use this [WebRTC test page](http://net.ipcalf.com/) to confirm that your internal IP address is no longer leaked.
-
 ### Run Firefox inside an nspawn container
 
 Note: on newer systems, you must enable local access to the user xserver with 'xhost local:root'
@@ -656,18 +644,6 @@ Once your container is booted, run the Xorg binary like so:
 # systemd-run -M firefox --setenv=DISPLAY=:0 firefox
 
 ```
-
-### Disable 1024-bit Diffie-Hellman primes
-
-Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to **false** in `about:config`:
-
-```
-  security.ssl3.dhe_rsa_aes_128_sha
-  security.ssl3.dhe_rsa_aes_256_sha
-
-```
-
-Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
 
 ### Show search matches position in scroll bar
 

@@ -108,7 +108,7 @@ Arch Linux 預設 `wheel` 組的所有實驗者都是管理員身分：定義於
 
 **注意:** 要求口令的提示由系統中的 [認證代理](/index.php/Polkit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.A4.E8.AF.81.E4.BB.A3.E7.90.86 "Polkit (简体中文)") 給出。文本控制台預設的認證代理是 `pkttyagent` 它可能因工作不正常而導致各種問題。
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 如果要配置無密碼認證，參考 [跳過密碼提示](/index.php/Polkit#Bypass_password_prompt "Polkit")。
 
 從 libvirt 1.2.16 開始（提案見：[[2]](http://libvirt.org/git/?p=libvirt.git;a=commit;h=e94979e901517af9fdde358d7b7c92cc055dd50c)），`libvirt` 組的成員使用者預設可以無密碼存取讀寫模式 socket。最簡單的判斷方法就是看 libvirt 組是否存在並且使用者是否為該組成員。如果要把 kvm 組存取讀寫模式後台 socket 的認證策略改為免認證模式，可創建下面的檔案：
 

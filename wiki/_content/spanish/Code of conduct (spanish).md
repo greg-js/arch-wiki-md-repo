@@ -108,7 +108,7 @@ La publicidad si se relaciona con Arch (como un proyecto o de la comunidad) o GN
 
 ### Exactitud
 
-El valor de la comunidad de Arch Linux reside en la precisión técnica. Cuando se busca, se da o se ayuda, recuerde uchar por la exactitud, la integridad y la precisión. Una excelente introducción a las expectativas de la comunidad de Arch es [Cómo hacer preguntas de forma inteligente](http://www.catb.org/~esr/faqs/smart-questions.html) de ESR.
+El valor de la comunidad de Arch Linux reside en la precisión técnica. Cuando se busca, se da o se ayuda, recuerde luchar por la exactitud, la integridad y la precisión. Una excelente introducción a las expectativas de la comunidad de Arch es [Cómo hacer preguntas de forma inteligente](http://www.catb.org/~esr/faqs/smart-questions.html) de ESR.
 
 Otras consideraciones en esta categoría incluyen:
 
@@ -156,7 +156,7 @@ Además del [código común](#C.C3.B3digo_de_conducta_.28Espa.C3.B1ol.29), cada 
 
 #### Colocar código e imágenes
 
-Por favor, use etiquetas [code] al pegar fragmentos de consola. Use también, por favor, el [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") a la hora de enviar una gran cantidad de código. Para los usuarios de idioma distinto del inglés: por favor, antepongan `LC_ALL=C` a las órdenes enviadas, de modo que la salida se vea en inglés. No publique fotos a pantalla completa, use miniaturas en su lugar. Cualquier imagen de dimensiones superiores a 250x250px o de tamaño mayor de 50Kb será eliminada. Do **not** post screenshots of text output; post [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
+Por favor, use etiquetas [code] al pegar fragmentos de consola. Use también, por favor, el [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") a la hora de enviar una gran cantidad de código. Para los usuarios de idioma distinto del inglés: por favor, antepongan `LC_ALL=C` a las órdenes enviadas, de modo que la salida se vea en inglés. No publique fotos a pantalla completa, use miniaturas en su lugar. Cualquier imagen de dimensiones superiores a 250x250px o de tamaño mayor de 50Kb será eliminada. No publicar capturas de pantalla de salida de texto; publicar [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### La vida es una calle de doble sentido
 

@@ -42,7 +42,7 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 对这些软件包的编译脚本感兴趣的可以访问[Alucryd's GitHub repository](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).
 
 当然，如果喜欢也可以选择自己编译这些软件包，相关的软件包源码都可以直接从 [AUR](/index.php/AUR "AUR") 系统找到.
 
@@ -56,7 +56,7 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 当然，要获取更完美的Pantheon桌面体验，还请同时安装以下软件包：
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 请确保系统安装的以下程序包都是带-bzr的版本，已避免可能导致的错误。
 
 *   [audience-bzr](https://aur.archlinux.org/packages/audience-bzr/): Video player
 *   [contractor-bzr](https://aur.archlinux.org/packages/contractor-bzr/): Service for sharing data between apps

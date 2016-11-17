@@ -132,7 +132,7 @@ $ udisksctl loop-setup -r -f *image.iso*
 
 这条命令会创建 loop 设备并显示可以挂载的 ISO 镜像，卸载后，loop 设备会被 [udev](/index.php/Udev "Udev") 删除.
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** This mounts a read only image. To mount raw disk images, such as for [QEMU](/index.php/QEMU "QEMU"), remove the `-r` flag, and release the image after use with `udisksctl loop-delete -b */dev/loop0*`. Substitute `/dev/loop0` with the name of the loop device.
 
 ### 隐藏选中的分区
 

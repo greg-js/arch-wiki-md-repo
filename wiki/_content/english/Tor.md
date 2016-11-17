@@ -94,7 +94,7 @@ You may wish to review [Lifecycle of a New Relay](https://blog.torproject.org/bl
 
 **Warning:** Connecting with telnet to the local ControlPort seems to be broken while running Tor in a chroot
 
-For security purposes, it may be desirable to run Tor in a [chroot](/index.php/Chroot "Chroot"). The following script will create an appropriate chroot in /opt/torchroot:
+For security purposes, it may be desirable to run Tor in a [chroot](/index.php/Chroot "Chroot"). The following script will create an appropriate chroot in `/opt/torchroot`:
 
  `~/torchroot-setup.sh` 
 ```
@@ -189,7 +189,7 @@ Create directory if it does not exist:
 
 ```
 
-**Note:** Symlinks for `nspawn` are currently broken(2/4/2016) [https://github.com/systemd/systemd/issues/2001](https://github.com/systemd/systemd/issues/2001), and will give you a "too many levels of symlinks" error. As a (possibly insecure) workaround, simply pacstrap your install to the container directory instead.
+**Note:** Symlinks for `nspawn` are currently broken (as of 2016-02-04; see [https://github.com/systemd/systemd/issues/2001](https://github.com/systemd/systemd/issues/2001)), and will give you a "too many levels of symlinks" error. As a (possibly insecure) workaround, simply pacstrap your install to the container directory instead.
 
 Symlink to register the container on the host, as per [Systemd-nspawn#Boot your container at your machine startup](/index.php/Systemd-nspawn#Boot_your_container_at_your_machine_startup "Systemd-nspawn"):
 
@@ -406,7 +406,7 @@ A Tor bridge is a Tor relay that is not listed in the public Tor directory, thus
 
 #### Configuration
 
-According to [https://www.torproject.org/docs/bridges](https://www.torproject.org/docs/bridges) , make your torrc be just these four lines (Default: /etc/tor/torrc, or $HOME/.torrc if that file is not found)
+According to [https://www.torproject.org/docs/bridges](https://www.torproject.org/docs/bridges) , make your `torrc` be just these four lines (Default: `/etc/tor/torrc`, or `$HOME/.torrc` if that file is not found)
 
 ```
    SocksPort 0

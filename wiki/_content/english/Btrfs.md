@@ -27,7 +27,6 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [4.3.2 Listing subvolumes](#Listing_subvolumes)
         *   [4.3.3 Deleting a subvolume](#Deleting_a_subvolume)
         *   [4.3.4 Mounting subvolumes](#Mounting_subvolumes)
-            *   [4.3.4.1 Mount options](#Mount_options)
         *   [4.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
     *   [4.4 Commit Interval](#Commit_Interval)
     *   [4.5 SSD TRIM](#SSD_TRIM)
@@ -252,19 +251,13 @@ Attempting to remove the directory `*/path/to/subvolume*` without using the abov
 
 #### Mounting subvolumes
 
-Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named `subvol_root` and mount it as `/`. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them at the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
+Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named `subvol_root` and mount it as `/`. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them at the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state using [#Snapshots](#Snapshots).
 
 **Tip:** Changing subvolume layouts is made simpler by not using the toplevel subvolume (ID=5) as `/` (which is done by default). Instead, consider creating a subvolume to house your actual data and mounting it as `/`.
 
+**Note:** "Most mount options apply to the **whole filesystem**, and only the options for the first subvolume to be mounted will take effect. This is due to lack of implementation and may change in the future." [[3]](https://btrfs.wiki.kernel.org/index.php/Mount_options)
+
 See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
-
-##### Mount options
-
-When mounting subvolumes with `subvol=` several mount options are available. For example, mount options that affect [#Compression](#Compression) or [#Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29) can be used.
-
-See [Btrfs Wiki Mount options](https://btrfs.wiki.kernel.org/index.php/Mount_options) and [Btrfs Wiki Gotchas](https://btrfs.wiki.kernel.org/index.php/Gotchas) for more information. In addition to configurations that can be made during or after file system creation, the various mount options for Btrfs can drastically change its performance characteristics. As this is a file system that is still in active development, changes and regressions should be expected. See links in the [#See also](#See_also) section for some benchmarks.
-
-**Warning:** Specific mount options can disable safety features and increase the risk of complete file system corruption.
 
 #### Changing the default sub-volume
 
@@ -279,7 +272,7 @@ where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 **Note:** After changing the default subvolume on a system with [GRUB](/index.php/GRUB "GRUB"), you should run `grub-install` again to notify the bootloader of the changes. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
 
-**Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible when the default subvolume is mounted . Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
+**Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible when the default subvolume is mounted. Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
 ### Commit Interval
 
@@ -302,7 +295,7 @@ More information about enabling and using TRIM can be found in [Solid State Driv
 
 ### Displaying used/free space
 
-General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition since it does not take into account space allocated for and used by the metadata. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
+General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
 
  `$ df -h /` 
 ```
@@ -369,14 +362,14 @@ The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says
 
 ##### Start manually
 
-To start a scrub for the subvolume mounted at root do:
+To start a (background) scrub on the filesystem which contains `/`:
 
 ```
 # btrfs scrub start /
 
 ```
 
-To check the status of the scrub do:
+To check the status of a running scrub:
 
 ```
 # btrfs scrub status /
@@ -391,7 +384,7 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 #### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[4]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[5]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
 
 On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 
@@ -414,7 +407,7 @@ To create a snapshot:
 
 To create a readonly snapshot add the `-r` flag. To create writable version of a readonly snapshot, simply create a snapshot of it.
 
-**Note:** Snapshots are not recursive. Every sub-volume inside sub-volume will be an empty directory inside the snapshot.
+**Note:** Snapshots are not recursive. Every nested subvolume will be an empty directory inside the snapshot.
 
 ### Send/receive
 
@@ -425,7 +418,7 @@ A subvolume can be sent to stdout or a file using the `send` command. This is us
 
 ```
 
-The snapshot that is sent *must* be readonly. The above command is useful for copying a subvolume to an external device (*e.g.*, a USB disk mounted at `/backup` above).
+The snapshot that is sent *must* be readonly. The above command is useful for copying a subvolume to an external device (e.g. a USB disk mounted at `/backup` above).
 
 You can also send only the difference between two snapshots. For example, if you have already sent a copy of `root_backup` above and have made a new readonly snapshot on your system named `root_backup_new`, then to send only the incremental difference to `/backup` do:
 
@@ -436,7 +429,7 @@ You can also send only the difference between two snapshots. For example, if you
 
 Now a new subvolume named `root_backup_new` will be present in `/backup`.
 
-See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) on how to use this for an incremental backup and for tools that automate the process.
+See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) on how to use this for incremental backups and for tools that automate the process.
 
 ## Known issues
 
@@ -450,7 +443,7 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 ### Swap file
 
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs does not have for possibility of file system corruption [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[6]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
+Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs does not have for possibility of file system corruption [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[7]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
 
 ### Linux-rt kernel
 

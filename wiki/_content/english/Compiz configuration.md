@@ -140,7 +140,7 @@ Kwin themes can be downloaded, installed and managed using the [KDE](/index.php/
 
 Unlike many other window managers, Compiz does not use multiple workspaces. Instead, it uses one workspace but splits it into multiple sections known as viewports.
 
-The number and layout of viewports can be configured in CCSM -> *General Options* -> *Desktop Size* Changing the *Horizontal Virtual Size* will change the number of viewports in a row. Changing the *Vertical Virtual Size* will add or remove rows of viewports.
+The number and layout of viewports can be configured in CCSM -> *General Options* -> *Desktop Size*. Changing the *Horizontal Virtual Size* will change the number of viewports in a row. Changing the *Vertical Virtual Size* will add or remove rows of viewports.
 
 If you are using the *Desktop Cube* plugin, you will not be to use the rows of viewports added by increasing the *Vertical Virtual Size*. To take advantage of multiple rows of viewports, use the *Desktop Wall* plugin instead.
 

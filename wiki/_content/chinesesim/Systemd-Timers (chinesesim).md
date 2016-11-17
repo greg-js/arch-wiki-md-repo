@@ -87,7 +87,7 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 特殊的事件表达式如 `daily` 和 `weekly` 表示 *特定的启动时间*，因此任何共享该日历事件的定时器将同时启动。如果该定时器的服务会计算系统资源，那么定时器共享启动事件可能会引起系统性能下降。可以考虑手动错开该定时器运行特定事件的时间，如 `OnCalendar=Wed, 23:15`。参见 [#注意事项](#.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9).
 
 ## 替代 cron
 

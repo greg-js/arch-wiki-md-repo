@@ -26,7 +26,7 @@ The official documentation [states](http://ceph.com/docs/master/install/#deploy-
 
 ## 术语
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** [官方文档](http://ceph.com/docs/master/glossary/)提供了完整的术语表
 
 *   **Client** : Something which connects to a Ceph cluster to access data but is not part of the Ceph cluster itself.
 *   **MONs** : Also known as monitors, these store cluster state and maps containing information about the cluster such as running services and data locations.

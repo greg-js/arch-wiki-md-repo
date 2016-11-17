@@ -11,7 +11,7 @@
 *   [8 Media Keys](#Media_Keys)
 *   [9 PrintScreen and SysRq](#PrintScreen_and_SysRq)
 *   [10 Treating Apple Keyboards Like Regular Keyboards](#Treating_Apple_Keyboards_Like_Regular_Keyboards)
-*   [11 Swap the Alt key and Command key(Meta/Super)](#Swap_the_Alt_key_and_Command_key.28Meta.2FSuper.29)
+*   [11 Swap the Alt key and Command key (Meta/Super)](#Swap_the_Alt_key_and_Command_key_.28Meta.2FSuper.29)
 *   [12 Swap the Fn key and Left Ctrl key](#Swap_the_Fn_key_and_Left_Ctrl_key)
 
 ## More Information
@@ -238,7 +238,7 @@ If you want to use your Apple keyboard like a regular US-layout keyboard, with `
 
 You will need to add `/etc/modprobe.d/hid_apple.conf` to FILES in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). Otherwise if you boot your computer with the Apple keyboard plugged in, the F keys will not be the default.
 
-## Swap the Alt key and Command key(Meta/Super)
+## Swap the Alt key and Command key (Meta/Super)
 
 **Temporarily**
 
@@ -251,22 +251,11 @@ $ echo 1 | sudo tee /sys/module/hid_apple/parameters/swap_opt_cmd
 
 **Permanently**
 
-Run the following command to append the configuration line to the file /etc/modprobe.d/hid_apple.conf creating it if necessary:
-
-```
-$ echo options hid_apple swap_opt_cmd=1 | sudo tee -a /etc/modprobe.d/hid_apple.conf
-
-```
-
-Then reboot.
+[Set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `swap_opt_cmd=1` option of the `hid_apple` module.
 
 ## Swap the Fn key and Left Ctrl key
 
-While the original hid-apple module doesn't have an option to swap the fn and left control keys, there is a patch adding this functionality to the module: [hid-apple-patched](https://github.com/free5lot/hid-apple-patched).
-
-You can install this module from the AUR: [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/)
-
-Once the package has been installed, follow the below given instructions to swap the keys.
+While the original `hid-apple` module doesn't have an option to swap the fn and left control keys, there is a [patch](https://github.com/free5lot/hid-apple-patched) adding this functionality to the module. To install the patch, [install](/index.php/Install "Install") the [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/) package.
 
 **Temporarily**
 
@@ -281,6 +270,7 @@ $ echo 1 | sudo tee /sys/module/hid_apple/parameters/swap_fn_leftctrl
 
 The default configuration file `/etc/modprobe.d/hid_apple.conf` comes with the option to swap the fn and left control keys already set, i.e., `swap_fn_leftctrl=1`.
 
-**Note:** The default configuration also swaps the left option and command keys, i.e., `swap_opt_cmd=1`, so you don't have to follow the previous section to do that.
+**Note:**
 
-**Note:** This patch also provides an option to use ejectcd key as the missing delete key on Apple keyboard. It is enabled by default through the `ejectcd_as_delete=1` option.
+*   The default configuration also swaps the left option and command keys, i.e., `swap_opt_cmd=1`, so you don't have to follow the previous section to do that.
+*   This patch also provides an option to use ejectcd key as the missing delete key on Apple keyboard. It is enabled by default through the `ejectcd_as_delete=1` option.

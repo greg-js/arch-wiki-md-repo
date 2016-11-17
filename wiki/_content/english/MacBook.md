@@ -269,7 +269,7 @@ cd /efi/refit
 
 ### Using the native Apple bootloader with systemd-boot (Recommended)
 
-Apple's native EFI bootloader reads `.efi` files located inside the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") at `/EFI/BOOT/BOOTX64.EFI`. Luckly, this is also the default install location the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") binary. This means that booting linux using *systemd-boot* is very simple.
+Apple's native EFI bootloader reads `.efi` files located inside the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") at `/EFI/BOOT/BOOTX64.EFI`. Luckily, this is also the default install location for the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") binary. This means that booting linux using *systemd-boot* is very simple.
 
 *   First, make sure you mounted the EFI System Partition at `/boot`
 *   Proceed with [#Installation](#Installation) normally

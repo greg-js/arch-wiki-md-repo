@@ -114,7 +114,7 @@ Emerald窗口装饰器可以从 [emerald](https://aur.archlinux.org/packages/eme
 
 ### 窗口装饰器
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 想知道更多关于选择与管理主题的情况，请访问：[Compiz configuration#Window decoration themes](/index.php/Compiz_configuration#Window_decoration_themes "Compiz configuration")。
 
 **注意:**
 
@@ -141,7 +141,10 @@ Emerald窗口装饰器可以从 [emerald](https://aur.archlinux.org/packages/eme
 
 ### 启用重要的插件
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：**
+
+*   *译者注* 为了大家看得方便，我把插件的名字保留了英文。因为有时候CCSM里面也会显示英文的插件名称。
+*   *译者注* 插件的中文名称可能翻译得不准确。
 
 在开始使用Compiz之前， 你需要激活一些提供窗口管理基本功能的插件。 要不然你可能连拖拽窗口都困难，更别说缩放和关闭了。
 
@@ -170,7 +173,7 @@ $ compiz --replace &
 
 ```
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 如果 `compiz --replace &` 命令在进入会话时不管用。 试一试没有a花的命令： `compiz --replace`。
 
 我们来过一下常用的Compiz命令行选项吧：
 

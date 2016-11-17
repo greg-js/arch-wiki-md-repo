@@ -29,6 +29,7 @@
         *   [3.4.5 Use dispatcher to handle mounting of CIFS shares](#Use_dispatcher_to_handle_mounting_of_CIFS_shares)
     *   [3.5 Proxy settings](#Proxy_settings)
     *   [3.6 Disable NetworkManager](#Disable_NetworkManager)
+    *   [3.7 Checking connectivity](#Checking_connectivity)
 *   [4 Testing](#Testing)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
@@ -396,6 +397,10 @@ See: [Proxy settings](/index.php/Proxy_settings "Proxy settings").
 ### Disable NetworkManager
 
 It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") the services `NetworkManager` and `NetworkManager-dispatcher`.
+
+### Checking connectivity
+
+NetworkManager can try to reach a page on Internet when connecting to a network. For those behind a captive portal, the desktop manager can automatically open a window asking for credentials. To enable this feature, uncomment the [connectivity section](https://git.archlinux.org/svntogit/packages.git/tree/trunk/NetworkManager.conf?h=packages/networkmanager#n6) in `/etc/NetworkManager/NetworkManager.conf`.
 
 ## Testing
 

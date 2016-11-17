@@ -35,7 +35,7 @@ Steam is not supported on this distribution. As such some fixes are needed on th
 *   Steam makes heavy usage of the Arial font. A decent Arial font to use is [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) or [the fonts provided by Steam](/index.php/Steam/Troubleshooting#Text_is_corrupt_or_missing "Steam/Troubleshooting"). Asian languages require [wqy-zenhei](https://www.archlinux.org/packages/?name=wqy-zenhei) to display properly.
 *   If you have a 64-bit system, you **must** install the 32-bit Multilib version of your [graphics driver](/index.php/Xorg#Driver_installation "Xorg"), [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) to enable sound, and [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) to enable update at first run.
 *   Several games have dependencies which may be missing from your system. If a game fails to launch (often without error messages) then make sure all of the libraries listed in [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting") are installed.
-*   In case that you are using Arch linux in your national language, make sure that you also have properly generated en_US locales (see [[1]](https://wiki.archlinux.org/index.php/Locale#Generating_locales)). Otherwise Steam client wont start with **invalid pointer** error.
+*   In case that you are using Arch linux in your national language, make sure that you also have properly generated en_US locales (see [Locale#Generating locales](/index.php/Locale#Generating_locales "Locale")). Otherwise Steam client wont start with **invalid pointer** error.
 
 ## Usage
 
@@ -93,7 +93,7 @@ If you are running the [Linux-ck](/index.php/Linux-ck "Linux-ck") kernel, you ma
 
 ```
 
-Also keep in mind that Steam [doesn't really care](http://i.imgur.com/oJcLDBi.png) what you want it to run. By setting `%command%` to an environment variable, you can have Steam run whatever you would like. For example, the Launch Option used in the image above:
+Also keep in mind that Steam [does not really care](http://i.imgur.com/oJcLDBi.png) what you want it to run. By setting `%command%` to an environment variable, you can have Steam run whatever you would like. For example, the Launch Option used in the image above:
 
 ```
 IGNORE_ME=%command% glxgears

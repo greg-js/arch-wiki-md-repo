@@ -168,4 +168,20 @@ Esta configuración se puede cambiar en las opciones LibreOffice. En el menú de
 
 Descripción del problema: En las otras aplicaciones los acentos funcionan bien, en libreoffice no los puedo ingresar usando el teclado, el problema parecen ser las teclas muertas pues la ñ si funciona pero las tíldes no, adicionalmente puedo copiar (por ejemplo de Firefox) y pegar las letras con tildes.
 
-Solución: Es posible que tengas unicamente hablitadas las locales para UTF8, habilita las locales para codificación de caracteres ISO (/etc/locale.gen) y funcionará.
+Solución:
+
+En /etc/locale.gen desmarcar (quitar #) de:
+
+*   es_ES.UTF-8
+*   es_ES.ISO-8859-1
+*   en_US.UTF-8
+*   en_US.ISO-8859-1
+
+luego en la consola como root
+
+```
+# locale-gen
+
+```
+
+y en libreoffice Opciones -> Configuración del Idioma -> Idioma de: --> Interfaz del Usuario: Predeterminado - Español - España

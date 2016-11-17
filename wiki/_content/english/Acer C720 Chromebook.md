@@ -19,6 +19,7 @@ The Acer C720 Chromebook (and newer Chromebooks in general) features a "legacy b
 *   [5 Known Issues](#Known_Issues)
     *   [5.1 System freezes](#System_freezes)
     *   [5.2 Internal microphone not working](#Internal_microphone_not_working)
+    *   [5.3 System shutdown on battery](#System_shutdown_on_battery)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -146,6 +147,12 @@ Additionally see [SSD#Troubleshooting](/index.php/SSD#Troubleshooting "SSD") if 
 If your internal microphone is not working (for example, in Skype), select "Microphone (unplugged)" as your input source in the PulseAudio Volume Control. Your internal microphone should now work. [[5]](http://forums.bodhilinux.com/index.php?/topic/9975-microphone-support-on-acer-c720/)
 
 See also [Chrome OS devices#Fixing audio](/index.php/Chrome_OS_devices#Fixing_audio "Chrome OS devices") for another possible solution.
+
+### System shutdown on battery
+
+If you are on battery and the system shutdown when you use the keyboard, it's probably a battery switch mulfunction (cover don't press it all time), labbeled #5 in [this picture](http://www.chromium.org/_/rsrc/1381990807648/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook/c720-chromebook-annotated-innards.png). It is a safety mechanism to prevent the Acer C720 from being powered by the battery while the cover is removed.
+
+You can bypass this switch with a screw inserted in hole #6.
 
 ## See also
 

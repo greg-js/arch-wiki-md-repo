@@ -160,7 +160,7 @@ exec gnome-session
 
 **注意:** 一些GNOME程序在文档和关于对话框的名称已更改，但可执行文件的名称却没有。这样的应用程序在下面表格列出.
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 在搜索栏中搜索的应用程序的遗留名称将成功返回现在的应用程序，例如搜索*nautilus*将返回*Files*.
 
 | Current | Legacy |
 | [Files](/index.php/Files "Files") | Nautilus |
@@ -330,7 +330,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 ```
 
-1.  REDIRECT [Template:Tip (简体中文)](/index.php/Template:Tip_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Tip (简体中文)")
+**提示：** 冒号表示窗口标题栏的按钮会出现在哪一方
 
 ###### 最大化时隐藏标题栏
 

@@ -26,9 +26,7 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
     *   [7.1 Journalctl](#Journalctl)
     *   [7.2 code 110](#code_110)
     *   [7.3 Adjust log level](#Adjust_log_level)
-    *   [7.4 Failure work with CMake or other tools](#Failure_work_with_CMake_or_other_tools)
-    *   [7.5 Limit HDD/SSD usage](#Limit_HDD.2FSSD_usage)
-        *   [7.5.1 Relocate $HOME/.distcc](#Relocate_.24HOME.2F.distcc)
+    *   [7.4 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD.2FSSD_usage_by_relocating_.24HOME.2F.distcc)
 
 ## Terms
 
@@ -44,7 +42,7 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
 
 ## Getting started
 
-[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package from [official repositories](/index.php/Official_repositories "Official repositories") on all PCs in the cluster:
+[Install](/index.php/Install "Install") the [distcc](https://www.archlinux.org/packages/?name=distcc) package on all PCs in the cluster:
 
 For other distros, or even OSes including Windows through using Cygwin, refer to the [distcc docs](http://distcc.samba.org/doc.html).
 
@@ -52,7 +50,7 @@ For other distros, or even OSes including Windows through using Cygwin, refer to
 
 ### Slaves
 
-The configuration for the slaves is stored in `/etc/conf.d/distccd`. The available command line options are listed in the [distcc manual](http://distcc.googlecode.com/svn%20...%20%3Cdiv%20class=/trunk/doc/web/man/distccd_1.html). At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
+The configuration for the slaves is stored in `/etc/conf.d/distccd`. The available command line options are listed in [distcc(1)](https://linux.die.net/man/1/distccd). At a minimum, configure the allowed address ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") format:
 
 ```
 DISTCC_ARGS="--allow 192.168.0.0/24"
@@ -327,13 +325,7 @@ DISTCC_ARGS="--allow 192.168.0.0/24 --log-level error --log-file /tmp/distccd.lo
 
 ```
 
-### Failure work with CMake or other tools
-
-CMake sometimes pass ["response file"](http://gcc.gnu.org/wiki/Response_Files) to gcc, but the distcc cannot deal with it. There is a [patch file](http://code.google.com/p/distcc/issues/detail?id=85&q=response), but it has not been applied to upstream code. Users encountering this problem, can source this file or use the [distcc-rsp](https://aur.archlinux.org/packages/distcc-rsp/) package.
-
-### Limit HDD/SSD usage
-
-#### Relocate $HOME/.distcc
+### Limit HDD/SSD usage by relocating $HOME/.distcc
 
 By default, distcc creates `$HOME/.distcc` which stores transient relevant info as it serves up work for nodes to compile. Create a directory named *.distcc* in RAM such as /tmp and soft link to it in $HOME. This will avoid needless HDD read/writes and is particularly important for SSDs.
 

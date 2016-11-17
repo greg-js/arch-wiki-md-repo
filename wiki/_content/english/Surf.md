@@ -15,11 +15,9 @@
 
 ## Installation
 
-[surf](https://www.archlinux.org/packages/?name=surf) can be [installed](/index.php/Pacman "Pacman") from the [official repositories](/index.php/Official_repositories "Official repositories"). There is also [surf-git](https://aur.archlinux.org/packages/surf-git/) and [surf-xdg-config-hg](https://aur.archlinux.org/packages/surf-xdg-config-hg/) in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [surf](https://www.archlinux.org/packages/?name=surf) package. Alternatively, there is the [surf-git](https://aur.archlinux.org/packages/surf-git/) package for the development version.
 
-Optional:
-
-*   [dmenu](https://www.archlinux.org/packages/?name=dmenu) for URL-bar
+Optionally also install the [dmenu](https://www.archlinux.org/packages/?name=dmenu) package for URL-bar
 
 ## Configuration
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [General troubleshooting](/index.php?title=General_troubleshooting&redirect=no "General troubleshooting")
+*   [General troubleshooting#Scrollback](/index.php?title=General_troubleshooting&redirect=no#Scrollback "General troubleshooting")
