@@ -49,9 +49,13 @@ $ xfwm4-tweaks-settings
 
 ```
 
-Alternatively, it can be enabled with `--compositor`. For example:
+Alternatively, it can be enabled with `--compositor` or using *xfconf*. For example:
 
  `~/.xinitrc`  `exec xfwm4 --compositor=on` 
+```
+$ xfconf-query -c xfwm4 -p /general/use_compositing -s *true*
+
+```
 
 ### Window roll-up
 

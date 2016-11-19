@@ -4,7 +4,7 @@ AMD's Linux driver package *catalyst* was previously named *fglrx* (**F**ire**GL
 
 **Catalyst packages are no longer offered in the official repositories.** In the past, Catalyst [has been dropped](https://www.archlinux.org/news/ati-catalyst-support-dropped/) from official Arch support because of dissatisfaction with the quality and speed of development. After a brief return they were dropped again in April 2013 and they have not returned since.
 
-Compared with the open source driver, Catalyst performs generally worse in 2D rendering and generally equal in 3D rendering, also having better power management, but it lacks efficient multi-head support. Catalyst does support OpenCL 2.0 thought and that's the main difference between Catalyst and open source drivers. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with chipset R600 and newer (Radeon HD 2xxx and newer). See the Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units"), to translate *model* names (X1900, HD4850) to/from *chip* names (R580, RV770 respectively).
+Compared with the open source driver, Catalyst performs generally worse in 2D rendering and generally equal in 3D rendering, also having better power management, but it lacks efficient multi-head support. Catalyst does support OpenCL 2.0 thought and that's the main difference between Catalyst and open source drivers. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with chipset R600 and newer (Radeon HD 2xxx and newer). See the Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units"), to translate *model* names (HD2400, HD6990) to/from *chip* names (R600, *Northern Islands* respectively).
 
 ## Contents
 
@@ -58,28 +58,27 @@ Compared with the open source driver, Catalyst performs generally worse in 2D re
     *   [7.7 Black screen with complete lockups and/or hangs after reboot or startx](#Black_screen_with_complete_lockups_and.2For_hangs_after_reboot_or_startx)
         *   [7.7.1 Faulty ACPI hardware calls](#Faulty_ACPI_hardware_calls)
     *   [7.8 KDM disappears after logout](#KDM_disappears_after_logout)
-    *   [7.9 Direct Rendering does not work](#Direct_Rendering_does_not_work)
-    *   [7.10 Hibernate/Sleep issues](#Hibernate.2FSleep_issues)
-        *   [7.10.1 Video fails to resume from suspend2ram](#Video_fails_to_resume_from_suspend2ram)
-    *   [7.11 System freezes/Hard locks](#System_freezes.2FHard_locks)
-    *   [7.12 Hardware conflicts](#Hardware_conflicts)
-    *   [7.13 Temporary hangs when playing video](#Temporary_hangs_when_playing_video)
-    *   [7.14 "aticonfig: No supported adapters detected"](#.22aticonfig:_No_supported_adapters_detected.22)
-    *   [7.15 WebGL support in Chromium](#WebGL_support_in_Chromium)
-    *   [7.16 Lag/freezes when watching flash videos via Adobe's flashplugin](#Lag.2Ffreezes_when_watching_flash_videos_via_Adobe.27s_flashplugin)
-    *   [7.17 Lag/slow windows movement in GNOME3](#Lag.2Fslow_windows_movement_in_GNOME3)
-    *   [7.18 Not using full screen resolution at 1920x1080 (underscanning, black borders around the screen)](#Not_using_full_screen_resolution_at_1920x1080_.28underscanning.2C_black_borders_around_the_screen.29)
-    *   [7.19 Dual Screen Setup: general problems with acceleration, OpenGL, compositing, performance](#Dual_Screen_Setup:_general_problems_with_acceleration.2C_OpenGL.2C_compositing.2C_performance)
-    *   [7.20 Disabling VariBright feature](#Disabling_VariBright_feature)
-    *   [7.21 Hybrid/PowerXpress: turning off discrete GPU](#Hybrid.2FPowerXpress:_turning_off_discrete_GPU)
-    *   [7.22 Switching from X session to TTYs gives a blank screen/low resolution TTY](#Switching_from_X_session_to_TTYs_gives_a_blank_screen.2Flow_resolution_TTY)
-    *   [7.23 Switching from X session to TTYs gives a black screen with the monitor backlight on](#Switching_from_X_session_to_TTYs_gives_a_black_screen_with_the_monitor_backlight_on)
-    *   [7.24 Switching to TTYs then back to X session gives a black screen with a mouse cursor](#Switching_to_TTYs_then_back_to_X_session_gives_a_black_screen_with_a_mouse_cursor)
-    *   [7.25 30 FPS / Tear-Free / V-Sync bug](#30_FPS_.2F_Tear-Free_.2F_V-Sync_bug)
-    *   [7.26 Backlight adjustment does not work](#Backlight_adjustment_does_not_work)
-    *   [7.27 Chromium glitching when using plasma](#Chromium_glitching_when_using_plasma)
-    *   [7.28 Xorg crashes](#Xorg_crashes)
-        *   [7.28.1 Unsupported Xorg Version](#Unsupported_Xorg_Version)
+    *   [7.9 Hibernate/Sleep issues](#Hibernate.2FSleep_issues)
+        *   [7.9.1 Video fails to resume from suspend2ram](#Video_fails_to_resume_from_suspend2ram)
+    *   [7.10 System freezes/Hard locks](#System_freezes.2FHard_locks)
+    *   [7.11 Hardware conflicts](#Hardware_conflicts)
+    *   [7.12 Temporary hangs when playing video](#Temporary_hangs_when_playing_video)
+    *   [7.13 "aticonfig: No supported adapters detected"](#.22aticonfig:_No_supported_adapters_detected.22)
+    *   [7.14 WebGL support in Chromium](#WebGL_support_in_Chromium)
+    *   [7.15 Lag/freezes when watching flash videos via Adobe's flashplugin](#Lag.2Ffreezes_when_watching_flash_videos_via_Adobe.27s_flashplugin)
+    *   [7.16 Lag/slow windows movement in GNOME3](#Lag.2Fslow_windows_movement_in_GNOME3)
+    *   [7.17 Not using full screen resolution at 1920x1080 (underscanning, black borders around the screen)](#Not_using_full_screen_resolution_at_1920x1080_.28underscanning.2C_black_borders_around_the_screen.29)
+    *   [7.18 Dual Screen Setup: general problems with acceleration, OpenGL, compositing, performance](#Dual_Screen_Setup:_general_problems_with_acceleration.2C_OpenGL.2C_compositing.2C_performance)
+    *   [7.19 Disabling VariBright feature](#Disabling_VariBright_feature)
+    *   [7.20 Hybrid/PowerXpress: turning off discrete GPU](#Hybrid.2FPowerXpress:_turning_off_discrete_GPU)
+    *   [7.21 Switching from X session to TTYs gives a blank screen/low resolution TTY](#Switching_from_X_session_to_TTYs_gives_a_blank_screen.2Flow_resolution_TTY)
+    *   [7.22 Switching from X session to TTYs gives a black screen with the monitor backlight on](#Switching_from_X_session_to_TTYs_gives_a_black_screen_with_the_monitor_backlight_on)
+    *   [7.23 Switching to TTYs then back to X session gives a black screen with a mouse cursor](#Switching_to_TTYs_then_back_to_X_session_gives_a_black_screen_with_a_mouse_cursor)
+    *   [7.24 30 FPS / Tear-Free / V-Sync bug](#30_FPS_.2F_Tear-Free_.2F_V-Sync_bug)
+    *   [7.25 Backlight adjustment does not work](#Backlight_adjustment_does_not_work)
+    *   [7.26 Chromium glitching when using plasma](#Chromium_glitching_when_using_plasma)
+    *   [7.27 Xorg crashes](#Xorg_crashes)
+        *   [7.27.1 Unsupported Xorg Version](#Unsupported_Xorg_Version)
 *   [8 See also](#See_also)
 
 ## Selecting the right driver
@@ -829,74 +828,6 @@ If you are running Catalyst proprietary driver and you get a console (tty1) inst
  `/usr/share/config/kdm/kdmrc`  `TerminateServer=True` 
 
 KDM should now appear when you log out of KDE.
-
-### Direct Rendering does not work
-
-This problem may occur when using the proprietary **Catalyst** driver.
-
-**Warning:** This error would also appear if you have not **rebooted** your system after the installation or upgrade of catalyst. The system needs to load the fglrx.ko module in order to make the driver work.
-
-If you have problem with direct rendering, run:
-
-```
-$ LIBGL_DEBUG=verbose glxinfo > /dev/null
-
-```
-
-at the command prompt. At the very start of the output, it will usually give you a nice error message saying why you do not have direct rendering.
-
-Common errors and their solutions, are:
-
-```
-libGL error: XF86DRIQueryDirectRenderingCapable returned false
-
-```
-
-*   Ensure that you are loading the correct agp modules for your AGP chipset before you load the `fglrx` kernel module. To determine which agp modules you will need, run `# hwdetect --show-agp`. Then open your `/etc/modules-load.d/fglrx.conf` and add the agp module on a line **before** the `fglrx` line.
-
-```
-libGL error: failed to open DRM: Operation not permitted
-libGL error: reverting to (slow) indirect rendering
-
-```
-
-```
-libGL: OpenDriver: trying /usr/lib/xorg/modules/dri//fglrx_dri.so
-libGL error: dlopen /usr/lib/xorg/modules/dri//fglrx_dri.so failed
-(/usr/lib/xorg/modules/dri//fglrx_dri.so: cannot open shared object file: No such file or directory)
-libGL error: unable to find driver: fglrx_dri.so
-
-```
-
-*   Something has not been installed correctly. If the paths in the error message are `/usr/X11R6/lib/modules/dri/fglrx_dri.so`, then ensure you have logged completely out of your system, then back in. If you are using a graphical login manager (gdm, kdm, xdm), ensure that `/etc/profile` is sourced every time you log in. This is usually accomplished by adding `source /etc/profile` into `~/.xsession` or `~/.xinitrc`, but this may vary between login managers.
-
-*   If the paths above in your error message *are* `/usr/lib/xorg/modules/dri/fglrx_dri.so`, then something has not been correctly installed. Try reinstalling the [catalyst](https://aur.archlinux.org/packages/catalyst/) package.
-
-Errors such as:
-
-```
-fglrx: libGL version undetermined - OpenGL module is using glapi fallback
-
-```
-
-could be caused by having multiple versions of `libGL.so` on your system. The command below should return the following output:
-
- `$ locate libGL.s` 
-```
-/usr/lib/libGL.so
-/usr/lib/libGL.so.1
-/usr/lib/libGL.so.1.2
-```
-
-These are the only three libGL.so files you should have on your system. If you have any more (e.g. `/usr/X11R6/lib/libGL.so.1.2`), then remove them. This should fix your problem.
-
-You might not get any error to indicate that this is a problem. If you are using X11R7, make sure you do **not** have these files on your system:
-
-```
-/usr/X11R6/lib/libGL.so.1.2
-/usr/X11R6/lib/libGL.so.1
-
-```
 
 ### Hibernate/Sleep issues
 

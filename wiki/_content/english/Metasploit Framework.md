@@ -30,7 +30,7 @@ Currently, Metasploit requires to setup and configure Postgresql on target syste
 
 ## Installation
 
-Install package [metasploit](https://www.archlinux.org/packages/?name=metasploit) from the official repositories. Note that you will have to follow the RVM setup instructions below for it to be able to function properly.
+Install package [metasploit](https://www.archlinux.org/packages/?name=metasploit) from the official repositories. It is optional to follow the RVM setup instructions below, ruby is pulled as a dependency.
 
 For latest development version, install [metasploit-git](https://aur.archlinux.org/packages/metasploit-git/) instead.
 
@@ -40,13 +40,13 @@ For latest development version, install [metasploit-git](https://aur.archlinux.o
 
 When running Armitage, [#Setting up the database](#Setting_up_the_database) is not optional, and must be followed. It is also mandatory to use a `~/.msf4/database.yml` file.
 
-A sample `database.yml` file is packaged as `/usr/share/metasploit/database.yml.sample`.
+A sample `database.yml` file is packaged as `/opt/metasploit/config/database.yml.sample`.
 
 ### RVM
 
 Msfconsole requires [Ruby](/index.php/Ruby "Ruby") and some [Ruby#RubyGems](/index.php/Ruby#RubyGems "Ruby") to run without error.
 
-Follow the [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") and [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM") articles to install and use Ruby version 2.1.5 and set it to default.
+Follow the [RVM#Installing RVM](/index.php/RVM#Installing_RVM "RVM") and [RVM#Using RVM](/index.php/RVM#Using_RVM "RVM") articles to install and use Ruby version 2.3.1 and set it to default.
 
 Once complete, source the newly created RVM installation:
 
@@ -67,7 +67,7 @@ $ bundle install
 
 ```
 
-**Note:** Using a version of Ruby older than 2.1.5 will result in the failure to install the `metasploit-concern` gem.
+**Note:** Using a version of Ruby older than 2.3.1 will result in the failure to install the `metasploit-concern` gem.
 
 ## Setting up the database
 

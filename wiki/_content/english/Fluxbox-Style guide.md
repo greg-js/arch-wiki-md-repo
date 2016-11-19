@@ -116,21 +116,12 @@ e.g. menu.title: Raised Bevel1 Gradient Vertical
 any hex color
 
 ```
- #ffffff
- #000000
+#ffffff
+#000000
 
 ```
 
 e.g menu.title.textColor: #ffffff
-
-any rgb colour as shown in /usr/X11R6/lib/X11/rgb.txt
-
-```
-rgb:4/3/2
-
-```
-
-e.g menu.title.textColor: rgb:4/3/2
 
 any colour
 

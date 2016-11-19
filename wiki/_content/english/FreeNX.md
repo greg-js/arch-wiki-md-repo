@@ -28,15 +28,14 @@ From [FreeNX - the free NX](http://freenx.berlios.de/):
     *   [6.2 Debug problems](#Debug_problems)
     *   [6.3 Authentication OK, but connection fails](#Authentication_OK.2C_but_connection_fails)
     *   [6.4 Key changes](#Key_changes)
-    *   [6.5 Xorg 7](#Xorg_7)
-    *   [6.6 Wrong password / No connection possible / Key-based authentication](#Wrong_password_.2F_No_connection_possible_.2F_Key-based_authentication)
-    *   [6.7 NX crashes on session startup](#NX_crashes_on_session_startup)
-        *   [6.7.1 Missing fonts](#Missing_fonts)
-    *   [6.8 NX logo then blank screen](#NX_logo_then_blank_screen)
-    *   [6.9 GDM/XDM Session Menu Error with non-KDE or GNOME Desktop Managers (more common with non-Arch Linux users)](#GDM.2FXDM_Session_Menu_Error_with_non-KDE_or_GNOME_Desktop_Managers_.28more_common_with_non-Arch_Linux_users.29)
-    *   [6.10 Cannot connect because command sessreg not found](#Cannot_connect_because_command_sessreg_not_found)
-    *   [6.11 Broken resume with Cairo 1.12.x](#Broken_resume_with_Cairo_1.12.x)
-    *   [6.12 Eclipse crashes when editing a file](#Eclipse_crashes_when_editing_a_file)
+    *   [6.5 Wrong password / No connection possible / Key-based authentication](#Wrong_password_.2F_No_connection_possible_.2F_Key-based_authentication)
+    *   [6.6 NX crashes on session startup](#NX_crashes_on_session_startup)
+        *   [6.6.1 Missing fonts](#Missing_fonts)
+    *   [6.7 NX logo then blank screen](#NX_logo_then_blank_screen)
+    *   [6.8 GDM/XDM Session Menu Error with non-KDE or GNOME Desktop Managers (more common with non-Arch Linux users)](#GDM.2FXDM_Session_Menu_Error_with_non-KDE_or_GNOME_Desktop_Managers_.28more_common_with_non-Arch_Linux_users.29)
+    *   [6.9 Cannot connect because command sessreg not found](#Cannot_connect_because_command_sessreg_not_found)
+    *   [6.10 Broken resume with Cairo 1.12.x](#Broken_resume_with_Cairo_1.12.x)
+    *   [6.11 Eclipse crashes when editing a file](#Eclipse_crashes_when_editing_a_file)
 
 ## Installation
 
@@ -388,10 +387,6 @@ Replace for:
 ### Key changes
 
 Change the key in GUI setup to new generated key.
-
-### Xorg 7
-
-Be aware that you have to remove the /usr/X11R6 directory, else strange things can happen.
 
 ### Wrong password / No connection possible / Key-based authentication
 

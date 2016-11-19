@@ -44,8 +44,7 @@ If you ended up here looking for a simple way to configure your keyboard, be sur
     *   [11.2 Keysym interpretation](#Keysym_interpretation)
     *   [11.3 Client side notes](#Client_side_notes)
 *   [12 XKB control bits](#XKB_control_bits)
-    *   [12.1 Overlays](#Overlays)
-    *   [12.2 Mouse control](#Mouse_control)
+    *   [12.1 Mouse control](#Mouse_control)
 *   [13 Local XKB folder](#Local_XKB_folder)
 *   [14 Troubleshooting](#Troubleshooting)
     *   [14.1 I have an USB keyboard and the settings get lost upon unplugging it](#I_have_an_USB_keyboard_and_the_settings_get_lost_upon_unplugging_it)
@@ -884,51 +883,6 @@ Some others may implement something that looks like virtual modifier support, bu
 ## XKB control bits
 
 A bunch of bit flags affecting various aspects of XKB functionality. To control them, use {Set,Latch,Lock}Controls actions.
-
-### Overlays
-
-This feature allows temporary changing keycode (together with associated keysyms) for a key. Example:
-
-```
-   xkb_keycodes {
-       <KP4> = 83;      // both keycodes must be defined,
-       <K04> = 144;     // even if the device cannot produce the second one
-   };
-
-```
-
-```
-   xkb_compatibility {
-       interpret Overlay1_Enable { action = LockControls(controls=overlay1); };
-   };
-
-```
-
-```
-   xkb_symbols {
-       key <KP4> { [ KP_Left ], overlay1=<KO4> };
-       key <KO4> { [ KP_4 ] };
-
-```
-
-```
-       key <NMLK> { [ Overlay1_Enable ] };
-   };
-
-```
-
-Let us assume 83 is a "real" code the keyboard can produce. With overlay1 bit off, the key will produce KP_Left keysym. With overlay1 bit on, it will produce keycode 144 and associated keysym KP_4, taking it from a different xkb_symbols row.
-
-The principal difference between overlays and user-defined types, which can be used to accomplish similar behavior too, is that overlays change keycode and leave no traces in the state field. However, overlays are very limited. There are only two control bits, overlay1 and overlay2), and each key can have only one alternative keycode, so writing
-
-```
-       key <KP4> { [ KP_Left ], overlay1=<KO4>, overlay2=<KX4> };
-
-```
-
-is useless (but xkbcomp will not warn you). Each key has only one "alternative keycode" field, the choice between overlay1= and overlay2= only determines which of the two bits enables that alternative keycode.
-
-The only well-know application for overlays is implementing keypad/NumLock, as shown above. Check /usr/share/X11/xkb/symbols/keypad for a complete example.
 
 ### Mouse control
 

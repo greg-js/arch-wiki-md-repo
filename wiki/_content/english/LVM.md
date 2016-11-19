@@ -455,21 +455,21 @@ Extend logical volume *lv1* within volume group *vg1* by 2GB *without* touching 
 
 ```
 
-Reduce `vg1/lv1` of 500MB *without* resizing its file system (make sure it is [already shrunk](#Resizing_the_file_system_separately) in that case):
+Reduce the size of `vg1/lv1` by 500MB *without* resizing its file system (make sure it is [already shrunk](#Resizing_the_file_system_separately) in that case):
 
 ```
 # lvresize -L -500M vg1/lv1
 
 ```
 
-Set `vg1/lv1` to 15GB and resize its file sytem *all at once*:
+Set `vg1/lv1` to 15GB and resize its file system *all at once*:
 
 ```
 # lvresize -L 15G -r vg1/lv1
 
 ```
 
-**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. If different look for the [appropriate utility](/index.php/File_systems#Types_of_file_systems "File systems").
+**Note:** Only *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* and [XFS](/index.php/XFS "XFS") [file systems](/index.php/File_systems "File systems") are supported. For a different type of file system look for the [appropriate utility](/index.php/File_systems#Types_of_file_systems "File systems").
 
 If you want to fill all the free space on a volume group, use the following command:
 
@@ -486,7 +486,7 @@ If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using 
 
 **Warning:** Not all file systems support resizing without loss of data and/or resizing online.
 
-For example with and ext2/ext3/ext4 file system:
+For example with an ext2/ext3/ext4 file system:
 
 ```
 # resize2fs *vg*/*lv*

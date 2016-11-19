@@ -22,30 +22,25 @@
 
 ## hwd output
 
+ `hwd -s` 
 ```
-$ sudo hwd -s
-
-```
-
-```
- HARDWARE DETECT ver 5.3.1 (simple mode)
- Kernel     : 2.6.23.14-ARCH
- CPU & Cache: Processor 0: Intel(R) Core(TM)2 CPU         T7200  @ 2.00GHz 1000MHz, 4096 KB Cache
- Processor 1: Intel(R) Core(TM)2 CPU         T7200  @ 2.00GHz 1000MHz, 4096 KB Cache
- Sound(a)   : 82801G ICH7 Family High Definition Audio Controller module: snd-hda-intel
- Video      : G72GL [Quadro FX 350M] server: Xorg (vesa)
- Driver     : nvidia   module: nvidia
- Monitor    : Generic Monitor  H: 28.0-96.0kHz V: 50.0-75.0Hz
- Mouse      : Microsoft Corp. IntelliMouse Optical   xtype: IMPS2 device: /dev/input/mice # My usb mouse, however M65 has the great Synaptics touchpad + trackpoint
- HDD        : 82801GBM/GHM ICH7 Family SATA IDE Controller module: ata_piix
- USB        : 82801G ICH7 Family USB UHCI Controller #4 module: uhci_hcd
- USB2       : 82801G ICH7 Family USB2 EHCI Controller module: ehci_hcd
- USB Reader : O2 Micro, Inc. Oz776 SmartCard Reader
- Ethernet   : NetXtreme BCM5752 Gigabit Ethernet PCI Express module: tg3
- Network    : PRO/Wireless 3945ABG Network Connection module: iwl3945
- Firewire   : Firewire IEEE 1394  module: ohci1394
- PCMCIA slot: Cardbus bridge module: yenta_cardbus
-
+HARDWARE DETECT ver 5.3.1 (simple mode)
+Kernel     : 2.6.23.14-ARCH
+CPU & Cache: Processor 0: Intel(R) Core(TM)2 CPU         T7200  @ 2.00GHz 1000MHz, 4096 KB Cache
+Processor 1: Intel(R) Core(TM)2 CPU         T7200  @ 2.00GHz 1000MHz, 4096 KB Cache
+Sound(a)   : 82801G ICH7 Family High Definition Audio Controller module: snd-hda-intel
+Video      : G72GL [Quadro FX 350M] server: Xorg (vesa)
+Driver     : nvidia   module: nvidia
+Monitor    : Generic Monitor  H: 28.0-96.0kHz V: 50.0-75.0Hz
+Mouse      : Microsoft Corp. IntelliMouse Optical   xtype: IMPS2 device: /dev/input/mice # My usb mouse, however M65 has the great Synaptics touchpad + trackpoint
+HDD        : 82801GBM/GHM ICH7 Family SATA IDE Controller module: ata_piix
+USB        : 82801G ICH7 Family USB UHCI Controller #4 module: uhci_hcd
+USB2       : 82801G ICH7 Family USB2 EHCI Controller module: ehci_hcd
+USB Reader : O2 Micro, Inc. Oz776 SmartCard Reader
+Ethernet   : NetXtreme BCM5752 Gigabit Ethernet PCI Express module: tg3
+Network    : PRO/Wireless 3945ABG Network Connection module: iwl3945
+Firewire   : Firewire IEEE 1394  module: ohci1394
+PCMCIA slot: Cardbus bridge module: yenta_cardbus
 ```
 
 ## lsusb
@@ -107,10 +102,6 @@ Section "ServerLayout"
    InputDevice    "Keyboard0"
    InputDevice    "Mouse0"
    InputDevice    "Mouse1"
-EndSection
-
-Section "Files"
-   RgbPath         "/usr/X11R6/lib/X11/rgb"
 EndSection
 
 Section "Module"

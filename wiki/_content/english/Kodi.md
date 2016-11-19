@@ -38,7 +38,7 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
     *   [3.8 Using ALSA](#Using_ALSA)
     *   [3.9 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
     *   [3.10 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [3.11 Raspberry Pi](#Raspberry_Pi)
+    *   [3.11 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
         *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
         *   [3.11.2 Right Click Menu Key](#Right_Click_Menu_Key)
         *   [3.11.3 USB DAC not working](#USB_DAC_not_working)
@@ -46,9 +46,9 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
 
 ## Installation
 
-**Note:** There are device specific packages on Arch Linux ARM. While they should work out of the box on the specific device, they are NOT necessarily compatible with the kodi package!
-
 [Install](/index.php/Install "Install") the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Be sure to install the optional dependencies listed by pacman that apply to your specific use-case.
+
+**Note:** Users of Arch ARM should be aware that several different kodi packages with specific hardware support are available.
 
 ## Configuration
 
@@ -61,6 +61,8 @@ The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies a sta
 #### Kodi-standalone-service
 
 The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and creates the needed user to run Kodi in standalone mode. This is a drop-in replacement of the package-legacy systemd service and post install script which Arch developers have removed from the package when the Xorg package updated to 1.16-1 (see [this commit](https://projects.archlinux.org/svntogit/community.git/commit/trunk?h=packages/xbmc&id=9763c6d32678f3a3f45c195bfae92eee209d504f)). Functionally, there is no difference.
+
+**Warning:** Users of Arch ARM should not attempt to install this package as breakage will occur!
 
 [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
 
@@ -177,8 +179,6 @@ At last start and enable the service:
 
 ### Sharing a database across multiple nodes
 
-**Warning:** Updating from kodi 15x to 16x is currently broken due to some bugs within mariadb which as of 28-Feb-2016 are not yet in [community]/mariadb. For more, see the links in [FS#48364](https://bugs.archlinux.org/task/48364)
-
 One can easily configure Kodi to share a single media library (video and music). The advantage of this is that key metadata are stored in one place, and are shared/updated by all nodes on the network. For example, users of this setup can:
 
 *   Stop watching a movie or show in one room then finish watching it in another room automatically.
@@ -188,7 +188,7 @@ One can easily configure Kodi to share a single media library (video and music).
 Several key things are needed for this to work:
 
 *   Network exposed media (via protocols that Kodi can read, e.g. NFS or Samba).
-*   A MySQL server.
+*   A MySQL server (Arch uses [mariadb](https://www.archlinux.org/packages/?name=mariadb)).
 
 **Note:** The following guide is only an example of one configuration and is not meant to be limiting but illustrative. Key steps are shown but a detailed discussion is not offered.
 
@@ -196,7 +196,6 @@ These assumptions are used for the guide, substitute to reflect your setup:
 
 *   The media is located under following mount points: `/mnt/tv-shows` `/mnt/movies` `/mnt/music`.
 *   The network addresses of all nodes are within the 192.168.0.* subnet range.
-*   The user wishes to use NFSv4 exports.
 *   The IP address of the machine running both the NFS exports and the MySQL database is 192.168.0.105.
 *   Each Kodi box is referred to as a node.
 *   The Linux user running Kodi is 'kodi' on all nodes.
@@ -205,7 +204,7 @@ For additional info, refer to the [official Kodi wiki](http://kodi.wiki/index.ph
 
 #### Setup an NFS server
 
-This section provides an example using NFS exports (NFSv4), but as mentioned above, any protocol that Kodi can read is acceptable.
+This section provides an example using NFS exports, but as mentioned above, any protocol that Kodi can read is acceptable.
 
 **Warning:** Kodi is using [libnfs](https://www.archlinux.org/packages/?name=libnfs) to access NFS shares which only supports NFSv3 (see [this issue](https://github.com/sahlberg/libnfs/issues/37)). Therefore do not setup a NFSv4-only server or Kodi will only be able to list the shares but cannot access them.
 
@@ -536,15 +535,16 @@ The [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package is used to
 
 If your setup does not or cannot make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](http://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661). To achieve this, go to `System Settings` and then to `Video`. Set the `settings level` to `Advanced` or `Expert` and go to `Acceleration`. There, set `Decoding method` to `software`.
 
-### Raspberry Pi
+### Raspberry Pi (all generations)
 
-Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful tips to consider:
+Kodi runs smoothly on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips to consider:
 
-*   [Install](/index.php/Install "Install") the *kodi-rbp* package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
+*   [Install](/index.php/Install "Install") either the *kodi-rbp* (stable) or *kodi-rbp-git* (dev) package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 *   This package ships with a systemd service to run in standalone mode.
 *   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended.
-*   Install *omxplayer-git*, *xorg-xrefresh* and *xorg-xset* to get hardware acceleration working.
-*   Add the udev rule `SUBSYSTEM=="tty", KERNEL=="tty0", GROUP="tty", MODE="0666"` to `/etc/udev/rules.d/raspberrypi.rules` to enable typing with a physical keyboard.
+*   Add the udev rule `SSUBSYSTEM=="tty", KERNEL=="tty[0-9]*", GROUP="tty", MODE="0660"` to `/etc/udev/rules.d/raspberrypi.rules` and add the kodi user to both the `tty` and `input` groups to enable typing with a physical keyboard.
+
+**Note:** The keyboard work around has been proposed in a [PR#1416](https://github.com/archlinuxarm/PKGBUILDs/pull/1416) in ArchARM upstream, if accepted, this step will no longer be necessary.
 
 #### Run kodi in a window manager
 

@@ -458,7 +458,7 @@ which-2.20-6
 
 ### 升级前对比版本
 
-要查看旧版和新版的有效安装包，请注释掉`/etc/pacman.conf`中"VerbosePkgLists"。修改后的`pacman -Syu`输出如下：
+要查看旧版和新版的有效安装包，请取消`/etc/pacman.conf`中"VerbosePkgLists"的注释。修改后的`pacman -Syu`输出如下：
 
 ```
 Package (6)             Old Version  New Version  Net Change  Download Size

@@ -989,6 +989,10 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 	[https://discordapp.com/](https://discordapp.com/) || [discord-canary](https://aur.archlinux.org/packages/discord-canary/)
 
+*   **GameVox** — Voice communication for your gaming community, partly based on Mumble source code.
+
+	[https://www.gamevox.com/](https://www.gamevox.com/) || [gamevox](https://aur.archlinux.org/packages/gamevox/)
+
 ###### Multi-protocol
 
 *   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).

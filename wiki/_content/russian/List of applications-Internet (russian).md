@@ -592,7 +592,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **qutIM** — Простой и дружелюбный к пользователю мессенджер, поддерживающий ICQ, Jabber, Mail.Ru, IRC и VKontakte
 
-	[http://qutim.org/](http://qutim.org/) || [qutim-stable](https://aur.archlinux.org/packages/qutim-stable/)
+	[http://qutim.org/](http://qutim.org/) || [qutim](https://aur.archlinux.org/packages/qutim/)
 
 ##### XMPP (Jabber)
 

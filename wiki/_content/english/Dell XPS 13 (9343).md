@@ -15,7 +15,7 @@ The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
-As of kernel 4.1.3, a patched kernel is no longer necessary and this means Installation media older than 2015.08.01 (Release Date: 2015-08-01) should all be able to boot this machine without problems.
+As of kernel 4.1.3, a patched kernel is no longer necessary and this means Installation Media older than 2015.08.01 (release date: 2015-08-01) should all be able to boot this machine without problems.
 
 However, some manual configuration is still recommended to get the best experience.
 

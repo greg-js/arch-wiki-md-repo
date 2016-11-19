@@ -300,7 +300,7 @@ Installation finished. No error reported.
 首先，告诉 GRUB 使用 UEFI，设置引导目录，并设置引导程序ID，将`$esp` 修改为你的 efi 分区 (通常为 `/boot`)
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=**grub**
+# grub-install --target=x86_64-efi --efi-directory=*$esp* --bootloader-id=**grub**
 
 ```
 

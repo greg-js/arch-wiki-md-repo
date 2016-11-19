@@ -3,48 +3,18 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Fixing Problems in xrdp](#Fixing_Problems_in_xrdpAUR)
-    *   [1.2 Autoboot at Startup](#Autoboot_at_Startup)
-    *   [1.3 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_.28Gnome_VNC-Server_for_root_session.29)
+    *   [1.1 Autoboot at startup](#Autoboot_at_startup)
+    *   [1.2 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_.28Gnome_VNC-Server_for_root_session.29)
 *   [2 Usage](#Usage)
 *   [3 See also](#See_also)
 
 ## Installation
 
-Users can find install xrdp from the AUR : [xrdp](https://aur.archlinux.org/packages/xrdp/).
+[Install](/index.php/Install "Install") the [xrdp](https://aur.archlinux.org/packages/xrdp/) package (or alternatively [xrdp-git](https://aur.archlinux.org/packages/xrdp-git/) for the development version).
 
-### Fixing Problems in [xrdp](https://aur.archlinux.org/packages/xrdp/)
+### Autoboot at startup
 
-You won't have these problems when you use [xrdp-git](https://aur.archlinux.org/packages/xrdp-git/) so you can skip this section when you chose the git version.
-
-If Xvnc (tightvnc) fails with
-
-```
-Fatal server error:
-could not open default font 'fixed'
-```
-
-you must create a symlink at `/usr/X11R6/lib/X11/fonts` pointing to `/usr/share/fonts`.
-
-*xrdp* will just fail without giving you that error. You can only see the error message when you try to start Xvnc manually for a test.
-
-To fix the message `Couldn't open RGB_DB '/usr/X11R6/lib/X11/rgb'` copy `/usr/share/X11/rgb.txt` to `/usr/X11R6/lib/X11/rgb.txt` or create a symlink. If this file is missing, standard X11 colors are wrong (pink or blue instead of black) and Xterm is broken.
-
-### Autoboot at Startup
-
-The aur xrdp package contains service files for systemd. Enable xrdp.service :
-
-```
-# systemctl enable xrdp.service
-
-```
-
-Enable xrdp-sesman.service :
-
-```
-# systemctl enable xrdp-sesman.service
-
-```
+The [xrdp](https://aur.archlinux.org/packages/xrdp/) package contains service files for systemd. [Enable](/index.php/Enable "Enable") `xrdp.service` and `xrdp-sesman.service`.
 
 ### Running with Vino (Gnome VNC-Server for root session)
 

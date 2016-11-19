@@ -426,11 +426,11 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 
 #### cdr
 
-cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session. To use cdr add the following lines to shell configuration:
+[cdr](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session. To use cdr add the following lines to shell configuration:
 
  `.zshrc` 
 ```
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+autoload -Uz cdr add-zsh-hook
 add-zsh-hook -Uz chpwd chpwd_recent_dirs
 
 ```

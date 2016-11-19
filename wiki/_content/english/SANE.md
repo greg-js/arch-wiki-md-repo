@@ -33,7 +33,7 @@ $ scanimage -L
 
 ```
 
-If that fails, check that your scanner is plugged into the computer. You also might have to unplug/plug your scanner for `/etc/udev/rules.d/sane.rules` to recognize your scanner.
+If that fails, run the command again as root to check for permission problems. If that fails as well, check that your scanner is plugged into the computer. You also might have to unplug/plug your scanner for `/etc/udev/rules.d/sane.rules` to recognize your scanner.
 
 Now you can see if it actually works
 

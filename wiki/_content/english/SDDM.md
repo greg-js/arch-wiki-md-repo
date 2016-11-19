@@ -102,7 +102,7 @@ FacesDir=/var/lib/AccountsService/icons/
 
 You can also put a png image named `.face.icon` at the root of your home directory. However, you need to make sure that `sddm` user can read that file.
 
-**Note:** SDDM cannot read avatars which are symlinks.
+**Note:** If avatar images are symlinks, you need to set proper file permissions to the target files.
 
 ### Numlock
 
@@ -172,6 +172,7 @@ You need to make sure that SDDM user have permissions to read those files.
 ```
 $ setfacl -m u:sddm:x /home/username
 $ setfacl -m u:sddm:r /home/username/.face.icon
+$ setfacl -m u:sddm:r /home/username/.face
 
 ```
 

@@ -390,7 +390,7 @@ Upgrading minor PostgreSQL versions (i.e. `9.2, 9.3, 9.4, 9.5, 9.6`) requires so
 
 ### Quick guide
 
-If you had custom settings in configuration files like `pg_hba.conf` and `postgresql.conf`, merge them into the new ones.
+If you had custom settings in configuration files like `pg_hba.conf` and `postgresql.conf`, merge them into the new ones. If you have set options such as `data_directory`, `hba_file` or `ident_file` in your `postgresql.conf`, please temporally unset them before the migration.
 
 ```
 upgrade_pg.sh

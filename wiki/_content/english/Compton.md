@@ -16,6 +16,7 @@ Compton is a standalone composite manager, suitable for use with [window manager
     *   [4.4 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
     *   [4.5 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
     *   [4.6 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
+    *   [4.7 Lag when using xft fonts](#Lag_when_using_xft_fonts)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -33,6 +34,8 @@ Compton may be manually enabled or disabled at any time during a session, or aut
 *   `--config`: Use a specified configuration file
 
 Many more options are available, including to set timing, displays to be managed, and the opacity of menus, window borders, and inactive application menus. See the [Compton Man Page](https://github.com/chjj/compton/blob/master/man/compton.1.asciidoc) for further information.
+
+**Note:** If a different [composite manager](/index.php/Composite_manager "Composite manager") is running, it should be disabled before starting *compton*.
 
 ### Autostarting
 
@@ -244,6 +247,19 @@ When facing high CPU use with `--backend glx` or tearing with `--vsync` enabled,
 ### Errors while trying to daemonize with nvidia drivers
 
 If you get error `main(): Failed to create new session.` while trying to start compton in background you should try [compton-garnetius-git](https://aur.archlinux.org/packages/compton-garnetius-git/). It also provides a few pulls from upstream that aren't merged yet.
+
+### Lag when using xft fonts
+
+If you experience heavy lag when using Xft fonts in applications such as [xterm](/index.php/Xterm "Xterm") or [urxvt](/index.php/Urxvt "Urxvt") try running with
+
+```
+--xrender-sync --xrender-sync-fence
+
+```
+
+or try using the xrender backend.
+
+See [[1]](https://github.com/chjj/compton/issues/152) for more information.
 
 ## See also
 

@@ -2,6 +2,12 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.8-2**
+
+*   Changelog: Updates to PKGBUILD per Arch upstream; no need to rebuild [repo-ck] packages for this one.
+*   Commit1: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d57ba729c855ceb39c2364a20290a28124fc3bde](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d57ba729c855ceb39c2364a20290a28124fc3bde)
+*   Commit2: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d4317e335c14488329a099fc6c34caf9ad4c80e6](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=d4317e335c14488329a099fc6c34caf9ad4c80e6)
+
 **Bump to v4.8.8-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.8](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.8)

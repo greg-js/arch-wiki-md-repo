@@ -109,7 +109,7 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 
 ### Random User Agent
 
-[Random User Agent](https://addons.mozilla.org/en-US/firefox/addon/random-agent-spoofer/) rotates complete browser profiles (from real browsers/devices) at a user defined time interval. It includes many extra privacy enhancing options.
+[Random User Agent](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/) rotates complete browser profiles (from real browsers/devices) at a user defined time interval. It includes many extra privacy enhancing options.
 
 ## Configuration tweaks
 
@@ -176,7 +176,7 @@ To prevent websites from getting your local IP address via [WebRTC](https://en.w
 *   `media.peerconnection.ice.default_address_only` to **true** (Firefox < 51)
 *   `media.peerconnection.ice.no_host` to **true** (Firefox >= 51)
 
-or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/disable-hello-pocket-reader/).
+or use [Disable Hello, Pocket & Reader+ extension](https://addons.mozilla.org/firefox/addon/disable-hello-pocket-reader/).
 
 You can use this [WebRTC test page](http://net.ipcalf.com/) to confirm that your internal IP address is no longer leaked.
 
@@ -185,8 +185,8 @@ You can use this [WebRTC test page](http://net.ipcalf.com/) to confirm that your
 Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to **false** in `about:config`:
 
 ```
-  security.ssl3.dhe_rsa_aes_128_sha
-  security.ssl3.dhe_rsa_aes_256_sha
+security.ssl3.dhe_rsa_aes_128_sha
+security.ssl3.dhe_rsa_aes_256_sha
 
 ```
 

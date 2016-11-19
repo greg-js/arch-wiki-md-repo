@@ -86,8 +86,8 @@ This configuration will move the login dialog to the bottom right of the screen.
 Comment out the logo defines:
 
 ```
- #xlogin*logoFileName: /usr/X11R6/lib/X11/xdm/pixmaps/xorg.xpm
- #xlogin*logoFileName: /usr/X11R6/lib/X11/xdm/pixmaps/xorg-bw.xpm
+ #xlogin*logoFileName: /usr/share/xdm/pixmaps/xorg.xpm
+ #xlogin*logoFileName: /usr/share/xdm/pixmaps/xorg-bw.xpm
 
 ```
 

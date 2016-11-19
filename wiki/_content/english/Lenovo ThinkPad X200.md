@@ -238,8 +238,6 @@ For more information about BIOS flashing and system firmware, please see [Flashi
 
 [Coreboot](http://coreboot.org/) is a fast and flexible open source firmware solution to replace the system BIOS. The ThinkPad X200 is [fully supported](https://www.fsf.org/news/libreboot-x200-laptop-now-fsf-certified-to-respect-your-freedom) by Coreboot and good documentation can be found at the Libreboot project's official [website](http://libreboot.org/). The X200s and X200 Tablet are also partially supported per the [Libreboot X200 documentation](http://www.libreboot.org/docs/hcl/x200.html#x200s).
 
-For more information on the Libreboot project, see Gluglug's official [website](http://www.gluglug.org.uk/).
-
 ## Troubleshooting
 
 ### failed to execute '/usr/sbin/inputattach'

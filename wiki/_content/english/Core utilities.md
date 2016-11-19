@@ -91,23 +91,6 @@ Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with
 
 **Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
 
-'dd' can be used to:
-
-*   [drive-related](/index.php/Disk_cloning#Using_dd "Disk cloning") tasks:
-    *   Create an image.
-    *   Write an image.
-    *   Clone whole drive, or partition.
-    *   Wipe drive or partition.
-    *   Erase partition table or boot sector.
-    *   Backup boot sector.
-    *   Restore system.
-*   Get stream from device, `dd /dev/random`, or some input device.
-*   Create load on CPU (example: `dd if=/dev/zero of=/dev/null`).
-*   Create load on disk (example: `dd if=/dev/zero of=/*path*/*testfile* bs=*number_of*G count=*times* oflag=*fdatasync*`).
-*   Create I/O load on disk (many rapid read/writes) (example above with little block size (`bs`) and big amount of cycles (`count`) and needed `oflag`, based on what and how you want to test).
-*   As a backup utility or part of solution.
-*   Convert a file to upper/lower case.
-
 For more information see [dd(1)](http://man7.org/linux/man-pages/man1/dd.1.html) or the [full documentation](http://www.gnu.org/software/coreutils/dd).
 
 ## grep

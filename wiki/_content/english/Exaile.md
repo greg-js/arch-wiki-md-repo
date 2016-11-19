@@ -10,6 +10,7 @@
     *   [3.1 Progress bar stuck at 0:00](#Progress_bar_stuck_at_0:00)
     *   [3.2 "Playback error encountered! Configured audiosink bin0 is not working"](#.22Playback_error_encountered.21_Configured_audiosink_bin0_is_not_working.22)
     *   [3.3 "Last.fm Loved Tracks" plugin not working](#.22Last.fm_Loved_Tracks.22_plugin_not_working)
+    *   [3.4 "Playback error encountered! No suitable plugins found"](#.22Playback_error_encountered.21_No_suitable_plugins_found.22)
 *   [4 Known issues](#Known_issues)
     *   [4.1 Playing from SMB share](#Playing_from_SMB_share)
 
@@ -64,6 +65,10 @@ WARNING : Error while connecting to Last.fm network: 'module' object has no att
 ```
 
 You need to install the [python2-pylast](https://www.archlinux.org/packages/?name=python2-pylast) package from AUR.
+
+### "Playback error encountered! No suitable plugins found"
+
+Install all plugin packages listed in the [GStreamer](/index.php/GStreamer "GStreamer") article and try again.
 
 ## Known issues
 

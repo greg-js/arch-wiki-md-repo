@@ -1,4 +1,4 @@
-[hddtemp](https://savannah.nongnu.org/projects/hddtemp/) is a small utility (with daemon) that gives the hard-drive temperature via S.M.A.R.T. (for drives supporting this feature).
+[hddtemp](https://savannah.nongnu.org/projects/hddtemp/) is a small utility (with daemon) that gives the hard-drive temperature via [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") (for drives supporting this feature).
 
 ## Contents
 

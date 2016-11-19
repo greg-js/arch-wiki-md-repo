@@ -8,6 +8,7 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
     *   [1.3 Pinoccio Scout](#Pinoccio_Scout)
     *   [1.4 Intel Galileo](#Intel_Galileo)
     *   [1.5 On Arm7 devices](#On_Arm7_devices)
+    *   [1.6 RedBear Duo](#RedBear_Duo)
 *   [2 Configuration](#Configuration)
     *   [2.1 Accessing serial](#Accessing_serial)
 *   [3 stty](#stty)
@@ -58,6 +59,10 @@ To use the Intel Galileo boards with Archlinux install the Arduino IDE and downl
 ### On Arm7 devices
 
 See [here](http://blog.tklee.org/2014/10/arduino-ide-158-on-banana-pi.html) for a work around.
+
+### RedBear Duo
+
+You might need to install [perl-archive-zip](https://www.archlinux.org/packages/?name=perl-archive-zip) or you'll get an error about missing crc32.
 
 ## Configuration
 

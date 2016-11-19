@@ -182,7 +182,7 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 ### Client
 
-[Start](/index.php/Start "Start") `rpcbind.service`,`nfs-client.target` and `remote-fs.target` and [enable](/index.php/Enable "Enable") them to start at boot.
+The `nfs-client.target` can be enabled if desired but this is not necessary as `/usr/bin/mount` will call it to start if needed.
 
 Users intending to use NFS4 with Kerberos, also need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rpc-gssd.service`. Setting up `/etc/krb5.keytab /etc/krb5.conf` are beyond the scope of this article.
 

@@ -61,10 +61,9 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.19 "The specified path does not exist. Check the path and then try again." error in Windows guests](#.22The_specified_path_does_not_exist._Check_the_path_and_then_try_again..22_error_in_Windows_guests)
     *   [5.20 No 64-bit OS client options](#No_64-bit_OS_client_options)
     *   [5.21 Host OS freezes on Virtual Machine start](#Host_OS_freezes_on_Virtual_Machine_start)
-    *   [5.22 The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)](#The_virtual_machine_has_terminated_unexpectedly_during_startup_with_exit_code_1_.280x1.29)
-    *   [5.23 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
-    *   [5.24 Fullscreen mode shows blank guest screen](#Fullscreen_mode_shows_blank_guest_screen)
-    *   [5.25 Failed to insert module](#Failed_to_insert_module)
+    *   [5.22 Analog microphone not working in guest](#Analog_microphone_not_working_in_guest)
+    *   [5.23 Fullscreen mode shows blank guest screen](#Fullscreen_mode_shows_blank_guest_screen)
+    *   [5.24 Failed to insert module](#Failed_to_insert_module)
 *   [6 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -870,25 +869,6 @@ Disabling hardware virtualisation (VT-x/AMD-V) may solve the problem.
     *   Fuse mounted partitions (like ntfs) [[8]](https://bbs.archlinux.org/viewtopic.php?id=185841), [[9]](https://bugzilla.kernel.org/show_bug.cgi?id=82951#c12)
 
 Generally, such issues are observed after upgrading VirtualBox or linux kernel. Downgrading them to the previous versions of theirs might solve the problem.
-
-### The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)
-
-When trying to launch a virtual machine, an error message like the following appears:
-
-```
-The virtual machine has terminated unexpectedly during startup with exit code 1 (0x1)
-NS_ERROR_FAILURE 0x80004005
-Component: MachineWrap
-Interface: IMachine
-```
-
-This may occur after upgrading the [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) or [virtualbox-host-modules](https://www.archlinux.org/packages/?name=virtualbox-host-modules) package. Try reloading the `vboxdrv` module:
-
-```
-# modprobe -r vboxdrv
-# modprobe vboxdrv
-
-```
 
 ### Analog microphone not working in guest
 

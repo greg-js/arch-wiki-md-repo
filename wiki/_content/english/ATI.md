@@ -1,6 +1,6 @@
 Owners of **AMD** (previously **ATI**) video cards have a choice between [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source drivers (**ATI** for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the **ATI**/[Radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver for older cards.
 
-The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).) It also has good dual-head support but worse TV-out support. Newer cards support might be lagging behind Catalyst.
+The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).)
 
 If unsure, try the open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](http://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU.
 
@@ -16,7 +16,7 @@ If unsure, try the open source driver first, it will suit most needs and is gene
     *   [6.1 Enabling video acceleration](#Enabling_video_acceleration)
     *   [6.2 Driver options](#Driver_options)
     *   [6.3 Kernel parameters](#Kernel_parameters)
-        *   [6.3.1 Deactivating PCI-E 2.0](#Deactivating_PCI-E_2.0)
+        *   [6.3.1 Deactivating PCIe 2.0](#Deactivating_PCIe_2.0)
     *   [6.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
 *   [7 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
 *   [8 Powersaving](#Powersaving)
@@ -133,7 +133,7 @@ Option "ColorTiling2D" "on"
 
 ```
 
-**DRI3** support can be enabled, instead of using the default **DRI2**. You may want to read the following benchmark by [Phoronix](http://www.phoronix.com/scan.php?page=article&item=radeon-dri3-perf&num=1) to give you an idea of the performance of DRI2 vs DRI3:
+**DRI3** is enabled by default [since xf86-video-ati 7.8.0](http://www.phoronix.com/scan.php?page=news_item&px=Radeon-AMDGPU-1.19-Updates). For older drivers, which use DRI2 by default, switch to DRI3 with the following option:
 
 ```
 Option "DRI" "3"
@@ -147,7 +147,7 @@ Option "TearFree" "on"
 
 ```
 
-**Acceleration architecture**; Glamor is available as 2D acceleration method implement through OpenGL, and it should work with graphic cards whose drivers are newer or equal to R300. Since xf86-video-ati driver-1:7.2.0-1, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards the method can be forced by adding AccelMethod **glamor** to the configuration file:
+**Acceleration architecture**; Glamor is available as 2D acceleration method implement through OpenGL, and it should work with graphic cards whose drivers are newer or equal to R300. Since xf86-video-ati 7.2.0, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards the method can be forced by adding AccelMethod **glamor** to the configuration file:
 
 ```
 Option "AccelMethod" "glamor"
@@ -199,9 +199,9 @@ Defining the **gartsize**, if not autodetected, can be done by adding `radeon.ga
 
 The changes take effect at the next reboot.
 
-#### Deactivating PCI-E 2.0
+#### Deactivating PCIe 2.0
 
-Since kernel 3.6, PCI-E v2.0 in **radeon** is turned on by default.
+Since kernel 3.6, PCI Express 2.0 in **radeon** is turned on by default.
 
 It may be unstable with some motherboards, deactivation can be done by adding `radeon.pcie_gen2=0` as a [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
@@ -476,9 +476,8 @@ root=/dev/disk/by-uuid/d950a14f-fc0c-451d-b0d4-f95c2adefee3 ro quiet radeon.mode
 
 ```
 
-*   Grub can pass such command line as is.
-*   Lilo needs backslashes for doublequotes (append `# \"video=9-pin DIN-1:1024x768-24@60e\"`)
-*   Grub2: TODO
+*   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") can pass such command line as is.
+*   [LILO](/index.php/LILO "LILO") needs backslashes for doublequotes (append `# \"video=9-pin DIN-1:1024x768-24@60e\"`)
 
 You can get list of your video outputs with following command:
 
@@ -486,7 +485,7 @@ You can get list of your video outputs with following command:
 
 ## HDMI audio
 
-HDMI audio is supported in the [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) video driver. If you are using a kernel 3.x older than 3.13, HDMI audio is disabled by default because it can be problematic. To enable HDMI audio add `radeon.audio=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+HDMI audio is supported in the [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) video driver. To disable HDMI audio add `radeon.audio=0` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 If there is no video after boot up, the driver option has to be disabled.
 
@@ -494,7 +493,7 @@ If there is no video after boot up, the driver option has to be disabled.
 
 *   If HDMI audio does not work after installing the driver, test your setup with the procedure at [Advanced Linux Sound Architecture/Troubleshooting#HDMI Output does not work](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#HDMI_Output_does_not_work "Advanced Linux Sound Architecture/Troubleshooting").
 *   If the sound is distorted in PulseAudio try setting `tsched=0` as described in [PulseAudio/Troubleshooting#Glitches, skips or crackling](/index.php/PulseAudio/Troubleshooting#Glitches.2C_skips_or_crackling "PulseAudio/Troubleshooting") and make sure `rtkit` daemon is running.
-*   Your sound card might use the same module, since HDA compliant hardware is pretty common. [Change the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture") using one of the suggested methods, which include using the `defaults` node in alsa configuration.
+*   Your sound card might use the same module, since HDA compliant hardware is pretty common. [Advanced Linux Sound Architecture#Set the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture") using one of the suggested methods, which include using the `defaults` node in alsa configuration.
 
 ## Multihead setup
 

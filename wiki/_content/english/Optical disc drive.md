@@ -228,7 +228,7 @@ That would be 589 MB
 Then copy the determined amount of data from medium to hard disk:
 
 ```
-$ dd if=*/dev/sr0* of=*isoimage.iso* bs=2048 count=$blocks
+$ dd if=*/dev/sr0* of=*isoimage.iso* bs=2048 count=$blocks status=progress
 
 ```
 

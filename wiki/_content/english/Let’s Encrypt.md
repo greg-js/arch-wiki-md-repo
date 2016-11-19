@@ -50,6 +50,8 @@ This will automatically verify your domain and create a private key and certific
 
 You can then manually configure your web server to use the key and certificate in that directory.
 
+**Note:** Running this command multiple times will create multiple sets of files with a trailing number in `/etc/letsencrypt/live/*your.domain*/` so take care to rename them in that directory or in the webserver config file.
+
 #### Webroot
 
 The webroot method lets the client place a challenge response at `yourdomain.tld/.well-known/acme-challenge/`. You can use it to get/renew certificates with a running webserver.

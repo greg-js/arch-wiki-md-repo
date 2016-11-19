@@ -13,7 +13,6 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
     *   [3.2 Autostarting applications](#Autostarting_applications)
     *   [3.3 Set-up environment variables](#Set-up_environment_variables)
     *   [3.4 Editing the Application Menu](#Editing_the_Application_Menu)
-    *   [3.5 Compton](#Compton)
 *   [4 Suggested applications](#Suggested_applications)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Desktop icons are grouped together](#Desktop_icons_are_grouped_together)
@@ -112,10 +111,6 @@ For example use `SAL_USE_VCLPLUGIN=gtk` to force starting libreoffice with gtk2 
 ### Editing the Application Menu
 
 It is possible to edit menu entries by editing their *.desktop* files stored in `/usr/share/applications/lxqt-*.desktop` files. See [Desktop entries](/index.php/Desktop_entries "Desktop entries").
-
-### Compton
-
-If present [Compton](/index.php/Compton "Compton") should auto start with the initial default session.
 
 ## Suggested applications
 

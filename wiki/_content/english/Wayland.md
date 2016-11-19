@@ -1,52 +1,45 @@
-**Wayland** is a new windowing protocol for Linux. Utilization of Wayland requires changes to and re-installation of parts of your system's software. For more information on Wayland see its [homepage](http://wayland.freedesktop.org/).
+Wayland is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager) to talk to its clients, as well as a library implementing this protocol. All major Linux desktop systems like Gnome, KDE do support Wayland, and there is also a reference implementation for a compositor called "Weston". To seamlessly migrate from X a Wayland backend for X was developed so Wayland applications and X applications run without the user noticing when the applications get switched over. For more information on Wayland see its [homepage](http://wayland.freedesktop.org/); see [XWayland](https://wayland.freedesktop.org/xserver.html) for seamless migration from X.
 
 ## Contents
 
 *   [1 Requirements](#Requirements)
-*   [2 Installation](#Installation)
-*   [3 Usage](#Usage)
-*   [4 Weston](#Weston)
-    *   [4.1 Installation](#Installation_2)
-    *   [4.2 Usage](#Usage_2)
-    *   [4.3 Configuration](#Configuration)
-        *   [4.3.1 XWayland](#XWayland)
-        *   [4.3.2 Screencast recording](#Screencast_recording)
-        *   [4.3.3 High DPI displays](#High_DPI_displays)
-        *   [4.3.4 Shell font](#Shell_font)
-*   [5 GUI libraries](#GUI_libraries)
-    *   [5.1 GTK+ 3](#GTK.2B_3)
-    *   [5.2 Qt 5](#Qt_5)
-    *   [5.3 Clutter](#Clutter)
-    *   [5.4 SDL](#SDL)
-    *   [5.5 GLFW](#GLFW)
-    *   [5.6 EFL](#EFL)
-*   [6 Window managers and desktop shells](#Window_managers_and_desktop_shells)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [7.2 Weston fails to launch after update to 1.7](#Weston_fails_to_launch_after_update_to_1.7)
-    *   [7.3 Applications using dbus crashes on startup](#Applications_using_dbus_crashes_on_startup)
-    *   [7.4 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
-*   [8 See also](#See_also)
+*   [2 Weston](#Weston)
+    *   [2.1 Installation](#Installation)
+    *   [2.2 Usage](#Usage)
+    *   [2.3 Configuration](#Configuration)
+        *   [2.3.1 XWayland](#XWayland)
+        *   [2.3.2 Screencast recording](#Screencast_recording)
+        *   [2.3.3 High DPI displays](#High_DPI_displays)
+        *   [2.3.4 Shell font](#Shell_font)
+*   [3 Gnome](#Gnome)
+    *   [3.1 Install and test](#Install_and_test)
+    *   [3.2 Autostart](#Autostart)
+*   [4 GUI libraries](#GUI_libraries)
+    *   [4.1 GTK+ 3](#GTK.2B_3)
+    *   [4.2 Qt 5](#Qt_5)
+    *   [4.3 Clutter](#Clutter)
+    *   [4.4 SDL](#SDL)
+    *   [4.5 GLFW](#GLFW)
+    *   [4.6 EFL](#EFL)
+*   [5 Window managers and desktop shells](#Window_managers_and_desktop_shells)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [6.2 Weston fails to launch after update to 1.7](#Weston_fails_to_launch_after_update_to_1.7)
+    *   [6.3 Applications using dbus crashes on startup](#Applications_using_dbus_crashes_on_startup)
+    *   [6.4 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
+*   [7 See also](#See_also)
 
 ## Requirements
 
-Currently Wayland will only work on systems utilizing [KMS](/index.php/KMS "KMS").
-
-## Installation
-
-**Note:** Wayland is most likely installed on your system already, since it is an indirect dependency of [gtk2](https://www.archlinux.org/packages/?name=gtk2) and [gtk3](https://www.archlinux.org/packages/?name=gtk3).
-
-[Install](/index.php/Install "Install") the [wayland](https://www.archlinux.org/packages/?name=wayland) package.
-
-## Usage
-
-As Wayland is only a library, it is useless on its own. To replace X Server, you need a compositor (like [#Weston](#Weston)).
+Wayland only works on systems using [KMS](/index.php/KMS "KMS"). As Wayland is only a library, it is useless on its own: to replace the X Server you need a compositor such as [#Weston](#Weston).
 
 ## Weston
 
+Weston is the reference implementation of a Wayland compositor.
+
 ### Installation
 
-[Install](/index.php/Install "Install") the [weston](https://www.archlinux.org/packages/?name=weston) package.
+Install the [weston](https://www.archlinux.org/packages/?name=weston) package.
 
 ### Usage
 
@@ -105,7 +98,7 @@ $ weston-image image1.jpg image2.jpg...
 
 ### Configuration
 
-Example configuration file for keyboard layout, module selection and UI modifications. See `man weston.ini` for full details. The Weston outputs differ slightly from <tt>xorg.conf</tt>'s Monitors:
+Example configuration file for keyboard layout, module selection and UI modifications. See `man weston.ini` for full details. The Weston outputs differ slightly from `xorg.conf`'s Monitors:
 
 ```
 $ ls /sys/class/drm
@@ -118,7 +111,7 @@ card1-VGA-2
 
 ```
 
-<tt>card0</tt> is the unused built-in video adapter. The add-on adapter <tt>card1</tt> is cabled to one HDMI and one DVI monitor, so the output names are <tt>HDMI-A-1</tt> and <tt>DVI-I-1</tt>.
+`card0` is the unused built-in video adapter. The add-on adapter `card1` is cabled to one HDMI and one DVI monitor, so the output names are `HDMI-A-1` and `DVI-I-1`.
 
  `~/.config/weston.ini` 
 ```
@@ -269,6 +262,41 @@ scale=2
 #### Shell font
 
 Weston uses the default sans-serif font for window title bars, clocks, etc. See [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration") for instructions on how to change this font.
+
+## Gnome
+
+### Install and test
+
+If you run Gnome, install XWayland with the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, then run it:
+
+```
+$ dbus-run-session -- gnome-session --display-server --wayland
+
+```
+
+To test, install the [weston](https://www.archlinux.org/packages/?name=weston) package and run one of its applications, for example:
+
+```
+$ weston-stacking
+
+```
+
+This is still experimental (state 2011-11-18) and not everything will run as expected. Known issues:
+
+*   Nemo sets the X root window and forwards it to wayland, additionally to the normal window it opens.
+*   Log out, shut down buttons do not work.
+*   Not all weston applications work, e.g. weston-terminal.
+
+### Autostart
+
+To auto-start on login, only on virtual terminal 1, one can enter this into `.bash_profile`:
+
+```
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && dbus-run-session -- gnome-session --display-server --wayland
+
+```
+
+More details on this way of starting are on [Xinit#Autostart X at login](/index.php/Xinit#Autostart_X_at_login "Xinit") (not using a display manager) and [GNOME#Manually](/index.php/GNOME#Manually "GNOME") (resp via xinit in this case).
 
 ## GUI libraries
 

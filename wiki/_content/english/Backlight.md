@@ -378,9 +378,9 @@ path=/sys/class/backlight/acpi_video0
 
 luminance() {
     read -r level < "$path"/actual_brightness
-    factor=$((max / 100))
+    factor=$((100 / max))
     printf '%d
-' "$((level / factor))"
+' "$((level * factor))"
 }
 
 read -r max < "$path"/max_brightness

@@ -225,8 +225,6 @@ See [List of applications/Security#Screen lockers](/index.php/List_of_applicatio
 
 **Tip:** The [light-locker](https://www.archlinux.org/packages/?name=light-locker) session locker integrates with [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager). If light-locker is installed, a *Security* tab is added to the power manager settings and the existing *Lock screen when system is going for sleep* setting is relocated under the *Security* tab.
 
-**Note:** The *xflock4* script can also be modified manually as described in the post [[1]](https://bbs.archlinux.org/viewtopic.php?id=189484). To avoid having the changes overwritten on upgrades, you might wish to copy *xflock4* to `/usr/local/bin` and make the changes to that copy as this will take precedence over the packaged version in `/usr/bin`.
-
 #### User switching
 
 Xfce4 has support for user switching when used with a [Display manager](/index.php/Display_manager "Display manager") that has this functionality - examples being [LightDM](/index.php/LightDM "LightDM") and [GDM](/index.php/GDM "GDM"). Please consult your display manager's wiki page for more information. When you have a display manager installed and configured correctly you can switch users from the 'action buttons' menu item in the panel.
@@ -317,7 +315,7 @@ If you did need to change the default soundcard, logout to ensure that the chang
 
 ##### Change default sound card in Xfce4 mixer
 
-In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[2]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
+In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[1]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
 
 To change the default sound card, open *xfce4-settings-editor* and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
 
@@ -351,7 +349,7 @@ A third party polkit authentication agent for Xfce is also available, see [xfce-
 
 ### Display blanking
 
-**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[3]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[4]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
+**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[2]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[3]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
 
 Some programs that are commonly used with Xfce will control monitor blanking and [DPMS](/index.php/DPMS "DPMS") (monitor powersaving) settings. They are discussed below.
 
@@ -450,7 +448,7 @@ ColorPalette16=#eeeeeeeeecec
 
 ### Colour management
 
-Xfce has no native support for colour management. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
+Xfce has no native support for colour management. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
 
 ### Multiple monitors
 
@@ -599,7 +597,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[7]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -607,7 +605,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 ### Panel applets keep being aligned on the left
 
-Add a separator someplace before the right end and set its "expand" property. [[8]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+Add a separator someplace before the right end and set its "expand" property. [[7]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
 
 ### Preferred Applications preferences have no effect
 

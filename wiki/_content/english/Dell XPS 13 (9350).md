@@ -45,7 +45,6 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [9.2 Gestures](#Gestures)
 *   [10 Sound](#Sound)
     *   [10.1 Hissing/Crackling noises when using headphones](#Hissing.2FCrackling_noises_when_using_headphones)
-    *   [10.2 Loud popping-noises when sound was not playing](#Loud_popping-noises_when_sound_was_not_playing)
 *   [11 Microphone](#Microphone)
 *   [12 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
 *   [13 Diverting models](#Diverting_models)
@@ -272,18 +271,6 @@ Similarly in `/usr/share/pulseaudio/alsa-mixer/paths/analog-input-internal-mic.c
 This will prevent PulseAudio to fiddle with the gain setting at all.
 
 **Note:** Unfortunately, you must make the same modifications every time the PulseAudio package is updated. Additionally, this will entirely disable the internal microphone.
-
-### Loud popping-noises when sound was not playing
-
-Also people noticed loud popping-noises when sound was not playing. You can turn off the sound_power_save in through e.g. `tlp`
-
-```
-   # nano /etc/default/tlp
-   ...
-   SOUND_POWER_SAVE_ON_BAT = 0 
-   ...
-
-```
 
 ## Microphone
 
