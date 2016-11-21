@@ -1,4 +1,4 @@
-Wayland is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager) to talk to its clients, as well as a library implementing this protocol. All major Linux desktop systems like Gnome, KDE do support Wayland, and there is also a reference implementation for a compositor called "Weston". To seamlessly migrate from X a Wayland backend for X was developed so Wayland applications and X applications run without the user noticing when the applications get switched over. For more information on Wayland see its [homepage](http://wayland.freedesktop.org/); see [XWayland](https://wayland.freedesktop.org/xserver.html) for seamless migration from X.
+[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. All major Linux desktop systems like Gnome, KDE do support Wayland, and there is also a reference implementation for a compositor called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
 
 ## Contents
 
@@ -283,8 +283,9 @@ $ weston-stacking
 
 This is still experimental (state 2011-11-18) and not everything will run as expected. Known issues:
 
-*   Nemo sets the X root window and forwards it to wayland, additionally to the normal window it opens.
-*   Log out, shut down buttons do not work.
+*   Nemo sets the X root window and forwards it to wayland, additionally to the normal window it opens ([nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)
+*   Log out, shut down buttons do not work. ([gnome issue 774774](https://bugzilla.gnome.org/show_bug.cgi?id=774774))
+*   starting X11 on tty1, wayland on tty2: windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
 *   Not all weston applications work, e.g. weston-terminal.
 
 ### Autostart

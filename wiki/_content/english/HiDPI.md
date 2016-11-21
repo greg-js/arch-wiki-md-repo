@@ -450,6 +450,8 @@ xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
+**Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available.[[4]](https://bbs.archlinux.org/viewtopic.php?pid=1670840)
+
 ### Mirroring
 
 If all you want is to mirror ("unify") displays, this is easy as well:

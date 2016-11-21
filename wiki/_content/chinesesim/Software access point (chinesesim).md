@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Software_access_point](/index.php/Software_access_point "Software access point") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-03-13，点击[这里](https://wiki.archlinux.org/index.php?title=Software_access_point&diff=0&oldid=420459)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Software_access_point](/index.php/Software_access_point "Software access point") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-11-21，点击[这里](https://wiki.archlinux.org/index.php?title=Software_access_point&diff=0&oldid=456790)可以查看翻译后英文页面的改动。
 
 软件接入点是在你要让你的电脑当作一个本地网络的Wi-Fi接入点时使用的。它免除了你去弄一个独立无线路由器的麻烦。
 
@@ -7,24 +7,25 @@
 *   [1 要求](#.E8.A6.81.E6.B1.82)
     *   [1.1 无线网卡必须支持AP模式](#.E6.97.A0.E7.BA.BF.E7.BD.91.E5.8D.A1.E5.BF.85.E9.A1.BB.E6.94.AF.E6.8C.81AP.E6.A8.A1.E5.BC.8F)
     *   [1.2 单个Wi-Fi设备同时作为无线客户端和AP](#.E5.8D.95.E4.B8.AAWi-Fi.E8.AE.BE.E5.A4.87.E5.90.8C.E6.97.B6.E4.BD.9C.E4.B8.BA.E6.97.A0.E7.BA.BF.E5.AE.A2.E6.88.B7.E7.AB.AF.E5.92.8CAP)
-*   [2 概述](#.E6.A6.82.E8.BF.B0)
-*   [3 无线链路层](#.E6.97.A0.E7.BA.BF.E9.93.BE.E8.B7.AF.E5.B1.82)
-*   [4 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
-    *   [4.1 网桥设置](#.E7.BD.91.E6.A1.A5.E8.AE.BE.E7.BD.AE)
-    *   [4.2 NAT设置](#NAT.E8.AE.BE.E7.BD.AE)
-*   [5 工具](#.E5.B7.A5.E5.85.B7)
-    *   [5.1 create_ap](#create_ap)
-    *   [5.2 RADIUS](#RADIUS)
-*   [6 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
-    *   [6.1 无线局域网很慢](#.E6.97.A0.E7.BA.BF.E5.B1.80.E5.9F.9F.E7.BD.91.E5.BE.88.E6.85.A2)
-    *   [6.2 NetworkManager的干扰](#NetworkManager.E7.9A.84.E5.B9.B2.E6.89.B0)
-*   [7 相关文章](#.E7.9B.B8.E5.85.B3.E6.96.87.E7.AB.A0)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 无线链路层](#.E6.97.A0.E7.BA.BF.E9.93.BE.E8.B7.AF.E5.B1.82)
+    *   [2.2 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
+    *   [2.3 网桥设置](#.E7.BD.91.E6.A1.A5.E8.AE.BE.E7.BD.AE)
+    *   [2.4 NAT设置](#NAT.E8.AE.BE.E7.BD.AE)
+*   [3 工具](#.E5.B7.A5.E5.85.B7)
+    *   [3.1 create_ap](#create_ap)
+    *   [3.2 RADIUS](#RADIUS)
+*   [4 常见问题与解答](#.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98.E4.B8.8E.E8.A7.A3.E7.AD.94)
+    *   [4.1 无线局域网很慢](#.E6.97.A0.E7.BA.BF.E5.B1.80.E5.9F.9F.E7.BD.91.E5.BE.88.E6.85.A2)
+    *   [4.2 NetworkManager的干扰](#NetworkManager.E7.9A.84.E5.B9.B2.E6.89.B0)
+    *   [4.3 无法在 5Ghz 频段启用热点模式](#.E6.97.A0.E6.B3.95.E5.9C.A8_5Ghz_.E9.A2.91.E6.AE.B5.E5.90.AF.E7.94.A8.E7.83.AD.E7.82.B9.E6.A8.A1.E5.BC.8F)
+*   [5 相关文章](#.E7.9B.B8.E5.85.B3.E6.96.87.E7.AB.A0)
 
 ## 要求
 
 ### 无线网卡必须支持AP模式
 
-你需要一个兼容 [nl80211](http://wireless.kernel.org/en/developers/Documentation/nl80211) 的无线设备,并且该设备支持AP[operating mode](http://wireless.kernel.org/en/users/Documentation/modes)模式。这可以通过运行`iw list`命令来验证, 在`Supported interface modes`区块下面应该列出 `AP` 模式:
+你需要一个兼容 [nl80211标准](http://wireless.kernel.org/en/developers/Documentation/nl80211) 的无线设备,并且该设备支持AP[工作模式](http://wireless.kernel.org/en/users/Documentation/modes)。可以通过`iw list`命令进行验证, 在结果的 `Supported interface modes` 段落中应该有 `AP` 模式:
 
  `$ iw list` 
 ```
@@ -60,30 +61,24 @@ Wiphy phy1
 
 如果你需要这种能力/特性,可能是因为以太网络连接不可用,你为了使用它需要创建两个分立的*虚拟网络接口*。 物理设备 `wlan0_sta` 的虚拟网络接口可能通过如下方式来创建:
 
-首先,*虚拟网络接口*是为网络连接 `wlan0_sta` 自身和软件AP/hostapd"无线中继器"创建的。
+为网络连接 `wlan0_sta` 自身和软件AP/hostapd"无线中继器"创建具有唯一 MAC 地址的*虚拟网络接口*。
 
 ```
-iw dev wlan0 interface add wlan0_sta type station  
-iw dev wlan0 interface add wlan0_ap  type __ap     
-
-```
-
-其次,这个接口被分配不同的MAC地址(使用用户唯一地址)
-
-```
-ip link set dev wlan0_sta address 12:34:56:78:ab:cd
-ip link set dev wlan0_ap  address 12:34:56:78:ab:ce
+# iw dev wlan0 interface add wlan0_sta type managed addr 12:34:56:78:ab:cd  
+# iw dev wlan0 interface add wlan0_ap  type managed addr 12:34:56:78:ab:ce
 
 ```
 
-## 概述
+可以用 [macchanger](/index.php/Macchanger "Macchanger") 创建随机 MAC 地址。
+
+## 配置
 
 设置一个接入点包含两个主要部分:
 
 *   设置 **Wi-Fi链路层**,这样无线客户端可以加入你电脑的"软件接入点"并在你的电脑间来回收发IP包; 这是hostapd包将为你做的.
 *   在你的电脑上建立**网络配置**, 这样你的电脑可以在Internet连接和无线客户端之间有效地转发IP包.
 
-## 无线链路层
+### 无线链路层
 
 其实Wi-Fi链路是通过[hostapd](https://www.archlinux.org/packages/?name=hostapd)包来建立的,且支持WPA2.
 
@@ -124,9 +119,9 @@ wpa_pairwise=TKIP CCMP
 
 **Warning:** 根据地域的不同允许作为接入点的无线信道是不同的。 根据无线设备的固件, 你应当设置正确的地区来使用合法的信道。 **不要**选择非本地区域, 这样你可能非法扰乱网络通讯, 在信号覆盖范围内影响你和他人设备的无线功能! 区域信道参见[Wireless network configuration#Respecting the regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration").
 
-**Note:** 如果你有一个基于RTL8192CU芯片组的网卡, 请从[AUR](/index.php/AUR "AUR")中安装[hostapd-8192cu](https://aur.archlinux.org/packages/hostapd-8192cu/)并在`hostapd.conf` 文件中将`driver=nl80211` 换成 `driver=rtl871xdrv`。
+**Note:** 如果你有一个基于RTL8192CU芯片组的网卡, 请从[AUR](/index.php/AUR "AUR")中安装[hostapd-rtl871xdrv](https://aur.archlinux.org/packages/hostapd-rtl871xdrv/)并在`hostapd.conf` 文件中将`driver=nl80211` 换成 `driver=rtl871xdrv`。
 
-## 网络配置
+### 网络配置
 
 有两种基本的方法来实现：
 
@@ -157,7 +152,12 @@ wpa_pairwise=TKIP CCMP
 
 ### create_ap
 
-可以用[create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) 脚本[AUR](/index.php/AUR "AUR") [create_ap](https://www.archlinux.org/packages/?name=create_ap)融合了 [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") 和 [iptables](/index.php/Iptables "Iptables") 来创建桥接或NAT方式的接入点(在[AUR](/index.php/AUR "AUR") [create_ap](https://www.archlinux.org/packages/?name=create_ap)可用)。
+可以用[create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) 脚本， [create_ap](https://www.archlinux.org/packages/?name=create_ap)融合了 [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") 和 [iptables](/index.php/Iptables "Iptables") 来创建桥接或NAT方式的接入点。
+
+```
+# create_ap wlan0 internet0 MyAccessPoint MyPassPhrase
+
+```
 
 ### RADIUS
 
@@ -179,6 +179,10 @@ wpa_pairwise=TKIP CCMP
 unmanaged-devices=mac:<hwaddr>
 
 ```
+
+### 无法在 5Ghz 频段启用热点模式
+
+对某些国家码，例如 `00`，所有 5Ghz 中可使用的频段都设置了 [`no-ir` (*no-initiating-radiation*)](https://wireless.wiki.kernel.org/en/developers/regulatory/processing_rules#post_processing_mechanisms) 标记，hostapd 无法使用它们。需要安装 [crda](https://www.archlinux.org/packages/?name=crda)，将国家码设置成允许使用这个的频段的国家。
 
 ## 相关文章
 

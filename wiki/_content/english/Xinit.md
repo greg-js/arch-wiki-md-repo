@@ -17,6 +17,7 @@ Most display managers also source the similar [xprofile](/index.php/Xprofile "Xp
     *   [5.1 Override xinitrc from command line](#Override_xinitrc_from_command_line)
     *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
     *   [5.3 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
+    *   [5.4 Output redirection using startx](#Output_redirection_using_startx)
 
 ## Installation
 
@@ -253,3 +254,7 @@ With this method you need to set each application window's geometry through its 
 **Tip:** This method can be useful to launch graphical games, especially on systems where excluding the memory or CPU usage of a window manager or desktop environment, and possible accessory applications, can help improve the game's execution performance.
 
 See also [Display manager#Starting applications without a window manager](/index.php/Display_manager#Starting_applications_without_a_window_manager "Display manager").
+
+### Output redirection using startx
+
+See [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg") for details.

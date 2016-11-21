@@ -1,3 +1,7 @@
+## G300s community drivers
+
+Install [ratslap](https://aur.archlinux.org/packages/ratslap/) for drivers for the mouse. It can change colors, binding, and even create custom macros. After installation, use the ratslap binary to change the mouse.
+
 ## How to make G300 work correctly
 
 This Wiki page will show you how to get your G300 mouse working as desired.

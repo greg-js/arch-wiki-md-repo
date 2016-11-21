@@ -402,8 +402,6 @@ This is known to be broken to at least kernel 4.0.5.
 
 For Linux kernels older than 4.3.x, `i915.preliminary_hw_support=1` must be added to your boot parameters for the driver to work on the new Intel Skylake (6th gen.) GPUs. On a fully updated system running kernel 4.3.x and up, this step is unnecessary.
 
-**Note:** Fixes for the GPU/DRM bugs are pending in kernel 4.6\. The following steps are unnecessary if you have [testing](/index.php/Testing "Testing") repository enabled, or once 4.6 lands in [core](/index.php/Official_repositories#core "Official repositories").
-
 The i915 DRM driver is known to cause various GPU hangs, crashes and even full system freezes. It might be necessary to disable hardware acceleration to workaround these issues. One solution is to use the following Xorg configuration.
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 

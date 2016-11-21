@@ -87,11 +87,12 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.11 infinality-bundle-multilib](#infinality-bundle-multilib)
         *   [5.1.12 linux-kalterfx](#linux-kalterfx)
         *   [5.1.13 markzz](#markzz)
-        *   [5.1.14 qt-debug](#qt-debug)
-        *   [5.1.15 quarry](#quarry)
-        *   [5.1.16 siosm-aur](#siosm-aur)
-        *   [5.1.17 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.18 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.14 mladoux](#mladoux)
+        *   [5.1.15 qt-debug](#qt-debug)
+        *   [5.1.16 quarry](#quarry)
+        *   [5.1.17 siosm-aur](#siosm-aur)
+        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -911,6 +912,19 @@ Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
 ```
 [markzz]
 Server = http://repo.markzz.com/arch/$repo/$arch
+
+```
+
+#### mladoux
+
+*   **Maintainer** [[Mark LaDoux](mailto:mark.ladoux@gmail.com)]
+*   **Description** Packages that Mark uses on his own systems. updated regularly ( usually weekly, schedule permitting ).
+*   **Upstream Page** [https://repo.markladoux.com/](https://repo.markladoux.com/)
+*   **Key ID** 8C81228392DA8379BA1A871D07AD53FA02DC4E08
+
+```
+[mladoux]
+Server = https://repo.markladoux.com/archlinux/$arch/
 
 ```
 

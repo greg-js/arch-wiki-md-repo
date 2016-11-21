@@ -13,9 +13,10 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
     *   [3.2 Autostarting applications](#Autostarting_applications)
     *   [3.3 Set-up environment variables](#Set-up_environment_variables)
     *   [3.4 Editing the Application Menu](#Editing_the_Application_Menu)
-*   [4 Suggested applications](#Suggested_applications)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Desktop icons are grouped together](#Desktop_icons_are_grouped_together)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Desktop icons are grouped together](#Desktop_icons_are_grouped_together)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Customizing Leave](#Customizing_Leave)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -112,15 +113,38 @@ For example use `SAL_USE_VCLPLUGIN=gtk` to force starting libreoffice with gtk2 
 
 It is possible to edit menu entries by editing their *.desktop* files stored in `/usr/share/applications/lxqt-*.desktop` files. See [Desktop entries](/index.php/Desktop_entries "Desktop entries").
 
-## Suggested applications
-
-As LXQt is a lightweight desktop, a plain install will not provide many desktop applications. It is left to the user to choose what applications they wish to install. The [Razor-qt wiki](https://github.com/Razor-qt/razor-qt/wiki/3rd-party-applications) has a page which lists of number of useful Qt applications that you may wish to install. Also see the [List of applications](/index.php/List_of_applications "List of applications") page for a comprehensive list of applications available in Arch.
-
 ## Troubleshooting
 
 ### Desktop icons are grouped together
 
 When moving icons on the desktop it is possible to place them a bit too close to each other making them connected. If unable to separate them Stop Desktop from Session Settings, remove `.config/pcmanfm-qt/lxqt/desktop-items-0.conf` and Start Desktop again.
+
+## Tips and tricks
+
+### Customizing Leave
+
+One can customize the options available under "Leave" simply by copying the respective package provide .desktop file to `~/.local/share/applications` and modifying it to contain the *NoDisplay=true* directive. Reference: [#876](https://github.com/lxde/lxqt/issues/876).
+
+Complete list of files to consider masking include:
+
+```
+lxqt-hibernate.desktop
+lxqt-leave.desktop
+lxqt-lockscreen.desktop
+lxqt-logout.desktop
+lxqt-reboot.desktop
+lxqt-shutdown.desktop
+lxqt-suspend.desktop
+
+```
+
+Example: remove hibernate option.
+
+```
+$ mkdir -p ~/.local/share/applications
+$ sed '/OnlyShowIn/aNoDisplay=true' </usr/share/applications/lxqt-hibernate.desktop >~/.local/share/applications/lxqt-hibernate.desktop
+
+```
 
 ## See also
 

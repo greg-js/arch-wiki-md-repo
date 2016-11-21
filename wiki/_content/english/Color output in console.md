@@ -616,3 +616,4 @@ See [[2]](https://paste.xinu.at/m-dAiJ/) for scripts which display a chart of yo
 ## See also
 
 *   [lolcat clone in x64 assembly](https://gkbrk.com/2016/07/lolcat-clone-in-x64-assembly/)
+*   [Setting colors for less](http://unix.stackexchange.com/a/147) and [solving related problems](http://unix.stackexchange.com/a/6357) (threads on StackExchange)

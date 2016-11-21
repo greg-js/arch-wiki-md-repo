@@ -85,7 +85,7 @@ Once sensors is properly configured, run `pwmconfig` to test and configure speed
 
 **Warning:** Some of the steps outlined below describe how to tweak fan speeds. Before doing this be sure to have a low CPU load.
 
-**Note:** On several systems, the included script may report errors as it trys to calibrate fans to the respective PWM. Users may safely ignore these errors. The problem is that the script does not wait long enough before ramping up or down the PWM.
+**Note:** On several systems, the included script may report errors as it tries to calibrate fans to the respective pulse-width modulation (PWM). Users may safely ignore these errors. The problem is that the script does not wait long enough before ramping up or down the PWM.
 
 Users wishing more more control may need to tweak the generated configuration. Here is a sample configuration file:
 

@@ -1,4 +1,4 @@
-Kodi (previously known as XBMC), is a free, [open source (GPL)](http://www.gnu.org/copyleft/gpl.html) multimedia player that originally ran on the first-generation [XBox](https://en.wikipedia.org/wiki/Microsoft_Xbox "wikipedia:Microsoft Xbox"), and now runs on Linux, OS X, Windows, Android and iOS. Kodi can be used to play/view the most popular video, audio, and picture formats, and many more lesser-known formats, including:
+Kodi (previously known as XBMC), is a free, [open source (GPL)](http://www.gnu.org/copyleft/gpl.html) multimedia player that originally ran on the first-generation [Xbox](https://en.wikipedia.org/wiki/Microsoft_Xbox "wikipedia:Microsoft Xbox"), and now runs on Linux, OS X, Windows, Android and iOS. Kodi can be used to play/view the most popular video, audio, and picture formats, and many more lesser-known formats, including:
 
 *   Video - DVD-Video, VCD/SVCD, MPEG-1/2/4, DivX, XviD, Matroska
 *   Audio - MP3, AAC.
@@ -30,18 +30,17 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Accessing kodi logs](#Accessing_kodi_logs)
     *   [3.2 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [3.3 Fixing the Wunderground Weather Add-on](#Fixing_the_Wunderground_Weather_Add-on)
-    *   [3.4 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
-    *   [3.5 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
-    *   [3.6 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
-    *   [3.7 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [3.8 Using ALSA](#Using_ALSA)
-    *   [3.9 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
-    *   [3.10 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [3.11 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-        *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.11.2 Right Click Menu Key](#Right_Click_Menu_Key)
-        *   [3.11.3 USB DAC not working](#USB_DAC_not_working)
+    *   [3.3 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
+    *   [3.4 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
+    *   [3.5 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
+    *   [3.6 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [3.7 Using ALSA](#Using_ALSA)
+    *   [3.8 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
+    *   [3.9 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
+    *   [3.10 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
+        *   [3.10.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+        *   [3.10.2 Right Click Menu Key](#Right_Click_Menu_Key)
+        *   [3.10.3 USB DAC not working](#USB_DAC_not_working)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -206,7 +205,7 @@ For additional info, refer to the [official Kodi wiki](http://kodi.wiki/index.ph
 
 This section provides an example using NFS exports, but as mentioned above, any protocol that Kodi can read is acceptable.
 
-**Warning:** Kodi is using [libnfs](https://www.archlinux.org/packages/?name=libnfs) to access NFS shares which only supports NFSv3 (see [this issue](https://github.com/sahlberg/libnfs/issues/37)). Therefore do not setup a NFSv4-only server or Kodi will only be able to list the shares but cannot access them.
+**Warning:** Kodi is using [libnfs](https://www.archlinux.org/packages/?name=libnfs) to access NFS shares which only supports NFSv3 (see [#37](https://github.com/sahlberg/libnfs/issues/37) and [#156](https://github.com/sahlberg/libnfs/issues/156)). Therefore do not setup a NFSv4-only server or Kodi will only be able to list the shares but cannot access them.
 
 **Note:** Users only need one box on the LAN to serve the content, therefore, do not repeat this for each node. The following example assumes the user is running Arch Linux, but any NFS server will work, be it Linux or BSD, etc.
 
@@ -446,35 +445,6 @@ In case of an error the first point to start investigation can be `~/.kodi/temp/
 ### CLI tool for kodi
 
 A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many task from library management to querying what is currently playing.
-
-### Fixing the Wunderground Weather Add-on
-
-The wunderground now requires users to have an API key in order to receive weather data. An API key is available free of charge for kodi users. To obtain a key, and to configure the add-on follow these steps:
-
-1.  Sign up for an API key at [wunderground](http://www.wunderground.com/weather/api/d/login.html)'s automated system.
-2.  Format the key for kodi's wunderground.py script (it expects the key to be reversed and base64 encoded, see below).
-3.  Enter the formatted key into **WAIK** variable in `~/.kodi/addons/weather.wunderground/resources/lib/wunderground.py`
-
-To reverse and base64 encode the API key, run this two-liner using your own API key in the "key" variable.
-
-```
-$ key=9cc49125b91eb85a
-$ echo $key|rev|base64
-YTU4YmUxOWI1MjE5NGNjOQo=
-
-```
-
-For this example key, the first few lines of `~/.kodi/addons/weather.wunderground/resources/lib/wunderground.py` would look like this:
-
-```
-# -*- coding: utf-8 -*-
-
-import urllib2, gzip, base64
-from StringIO import StringIO
-
-WAIK             = 'YTU4YmUxOWI1MjE5NGNjOQo='
-
-```
 
 ### Fullscreen mode stretches Kodi across multiple displays
 

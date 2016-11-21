@@ -2,6 +2,21 @@ Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
 
 * * *
 
+**Bump to v4.8.9-3**
+
+*   Changelog: Added a warning about initramfs rename for [repo-ck] users.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=b923c8438b7108acb1a46475432c1903b7b8fe0f](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=b923c8438b7108acb1a46475432c1903b7b8fe0f)
+
+**Bump to v4.8.9-2**
+
+*   Changelog: Fix checksums and bump for repo rebuild
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=50c6720caeab3aaa600dad7e322fbc6ba1fbe277](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=50c6720caeab3aaa600dad7e322fbc6ba1fbe277)
+
+**Bump to v4.8.9-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.9](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.9)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=4e7bb75145dd04545e8be6683a617991f57ce455](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=4e7bb75145dd04545e8be6683a617991f57ce455)
+
 **Bump to v4.8.8-2**
 
 *   Changelog: Updates to PKGBUILD per Arch upstream; no need to rebuild [repo-ck] packages for this one.

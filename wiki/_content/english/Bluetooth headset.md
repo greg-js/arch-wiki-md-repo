@@ -250,7 +250,7 @@ $ pacmd set-card-profile 2 a2dp_sink
 
 ```
 
-where 2 is the index of the device retirieved through `pacmd ls`.
+where 2 is the index of the device retrieved through `pacmd ls`.
 
 #### UUIDs has unsupported type
 

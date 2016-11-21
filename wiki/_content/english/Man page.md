@@ -33,7 +33,7 @@ $ man *page_name*
 
 Manuals are sorted into several sections. For a full listing see the section entitled "Sections of the manual pages" in `man man-pages`.
 
-Man pages are usually referred to by their name, followed by their section number in parentheses. Often there are multiple man pages of the same name, such as man(1) and man(7). In this case, give man the section number followed by the name of the man page, for example:
+Man pages are usually referred to by their name, followed by their section number in parentheses. Often there are multiple man pages of the same name, such as [man(1)](http://man7.org/linux/man-pages/man1/man.1.html) and [man(7)](http://man7.org/linux/man-pages/man7/man.7.html). In this case, give man the section number followed by the name of the man page, for example:
 
 ```
 $ man 5 passwd
@@ -48,6 +48,7 @@ One-line descriptions of man pages can be displayed using the `whatis` command. 
 ```
 ls (1p)              - list directory contents
 ls (1)               - list directory contents
+
 ```
 
 ## Format
@@ -285,5 +286,4 @@ Arch Linux specific pages:
 ## See also
 
 *   [man page - Gentoo wiki article](https://wiki.gentoo.org/wiki/Man_page)
-*   [Setting colors for less](http://unix.stackexchange.com/a/147) and [solving related problems](http://unix.stackexchange.com/a/6357) (threads on StackExchange)
 *   [Write The Fine Manual with pod2man](https://linuxtidbits.wordpress.com/2013/08/21/wtfm-write-the-fine-manual-with-pod2man-text-converter/)

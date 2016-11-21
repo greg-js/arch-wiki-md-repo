@@ -1,6 +1,6 @@
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
-At the moment there is support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/), some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family and the [Southern Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) family (more experimental than Sea Islands and coming only in Linux 4.9). AMD has absolutely no plans for supporting the pre-GCN GPUs.
+At the moment there is support for the [Volcanic Islands (VI)](http://xorg.freedesktop.org/wiki/RadeonFeature/), some cards of the [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family and the [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) family (more experimental than Sea Islands and coming only in version [1.2.0](https://lists.x.org/archives/xorg-announce/2016-November/002741.html) and Linux 4.9). AMD has absolutely no plans for supporting the pre-GCN GPUs.
 
 Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 

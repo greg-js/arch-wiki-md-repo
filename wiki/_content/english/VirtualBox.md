@@ -23,6 +23,8 @@ In order to integrate functions of the host system to the guests, including shar
         *   [2.7.1 Manual mounting](#Manual_mounting)
         *   [2.7.2 Automounting](#Automounting)
         *   [2.7.3 Mount at boot](#Mount_at_boot)
+    *   [2.8 SSH from host to guest](#SSH_from_host_to_guest)
+        *   [2.8.1 SSHFS as alternative to the shared folder](#SSHFS_as_alternative_to_the_shared_folder)
 *   [3 Virtual disks management](#Virtual_disks_management)
     *   [3.1 Formats supported by VirtualBox](#Formats_supported_by_VirtualBox)
     *   [3.2 Disk image format conversion](#Disk_image_format_conversion)
@@ -349,6 +351,28 @@ As of 2012-08-02, mount.vboxsf does not support the *nofail* option:
 *desktop*  */media/desktop*  vboxsf  uid=*user*,gid=*group*,rw,dmode=700,fmode=600,nofail  0  0
 
 ```
+
+### SSH from host to guest
+
+The network tab of the virtual machine settings contains, in "Advanced", a tool to create port forwarding. It is possible to use it to forward the Guest ssh port 22 to a Host port, let's say 3022\. Then :
+
+```
+user@host$ ssh -p 3022 $USER@localhost
+
+```
+
+will establish a connection from Host to Guest.
+
+#### SSHFS as alternative to the shared folder
+
+Using this port forwarding and sshfs, it is straightforward to mount the Guest filesystem onto the Host one :
+
+```
+user@host$ sshfs -p 3022 $USER@localhost:$HOME ~/shared_folder
+
+```
+
+and then transfer files between both.
 
 ## Virtual disks management
 

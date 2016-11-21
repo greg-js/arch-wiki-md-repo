@@ -21,7 +21,7 @@ A variation in difficulty is achieved by requiring that this integer is below a 
 
 Install [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt), [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) and [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli).
 
-**Note:** Bitcoin Core requires syncing the blockchain (current size is about 90GB as of Sept. 2016); each transaction in a block gets verified by verifying the ECDSA signatures that spend each transaction, which is a time-consuming mathematical operation, so having a good CPU, sufficient storage and bandwidth is highly recommended.
+**Note:** Bitcoin Core requires syncing the blockchain (current size is about 97GB as of Nov. 2016); each transaction in a block gets verified by verifying the ECDSA signatures that spend each transaction, which is a time-consuming mathematical operation, so having a good CPU, sufficient storage and bandwidth is highly recommended.
 
 Some good practices to consider:
 

@@ -66,7 +66,7 @@ For [Syslinux](/index.php/Syslinux "Syslinux"), all you need to do is duplicate 
 
 **Tip:** Instead of editing `syslinux.cfg`, you can also temporarily edit the menu during boot. When the menu shows up, press the `Tab` key and change the relevant entries. Partitions are counted from one, drives are counted from zero.
 
-For [GRUB](/index.php/GRUB "GRUB"), it is recommended that you automatically [re-generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB").
+For [GRUB](/index.php/GRUB "GRUB"), it is recommended that you automatically [re-generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). If you want to freshly install all grub files to somewhere other than `/boot`, such as `/mnt/newroot/boot`, use the `--boot-directory` flag.
 
 Also verify the new menu entry in `/boot/grub/grub.cfg`. Make sure the UUID is matching the new partition, otherwise it could still boot the old system. Find the UUID of a partition as follows:
 

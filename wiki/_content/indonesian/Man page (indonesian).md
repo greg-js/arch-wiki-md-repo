@@ -42,7 +42,7 @@ $ man 5 passwd
 
 untuk membaca halaman manual pada `/etc/passwd`, darpiada utilitas `passwd`.
 
-One-line descriptions of man pages can be displayed using the `whatis` command. For example, for a brief description of the man page sections about `ls`, type:
+Deskripsi satu-baris (*one-line*) dari halaman panduan dapat ditampilkan dengan menggunakan perintah `whatis`. Misalnya, untuk penjelasan singkat dari bagian halaman panduan mengenai `ls`, ketik:
 
  `$ whatis ls` 
 ```
@@ -52,45 +52,45 @@ ls (1)               - list directory contents
 
 ## Format
 
-Man pages all follow a fairly standard format, which helps in navigating them. See the section entitled "Sections within a manual page" in `man man-pages`.
+Semua halaman panduan mengikuti format yang cukup standar, yang membantu dalam melakukan navigasi pada halaman panduan. Lihat bagian yang berjudul "Sections within a manual page" dalam `man man-pages`.
 
 ## Mencari panduan
 
-Even though the `man` utility allows users to display man pages, and search their contents via *less*, a problem arises when one knows not the exact name of the desired manual page in the first place! Fortunately, the `-k` or `--apropos` options can be used to search the manual page descriptions for instances of a given keyword.
+Walaupun utilitas `man` memungkinkan pengguna untuk menampilkan halaman panduan, dan mencari isinya melalui *less*, masalah muncul ketika pengguna mengetahui bahwa bukan nama yang tepat dari halaman panduan yang diinginkan! Untungnya, opsi `-k` atau opsi `--apropos` dapat digunakan untuk mencari deskripsi halaman panduan pada kasus kata kunci tertentu.
 
-The research feature is provided by a dedicated cache. By default you may not have any cache built and all your searches will give you the *nothing appropriate* result. You can generate the cache or update it by running
+Fitur penelitian disediakan oleh *cache* yang didedikasikan. Secara bawaan, Anda mungkin tidak memiliki *cache* apapun yang dibangun dan semua pencarian Anda, akan memberi Anda hasil *nothing appropriate* (yang tidak tepat). Anda dapat membuat atau memperbarui *cache* dengan menjalankan perintah
 
 ```
 # mandb
 
 ```
 
-You should run it everytime a new manpage is installed.
+Anda harus menjalankan perintah tersebut, setiap kali halaman panduan baru terpasang.
 
-Now you can begin your search. For example, to search for man pages related to "password":
+Sekarang Anda dapat memulai pencarian Anda. Misal, untuk mencari halaman panduan yang berkaitan dengan "password":
 
 ```
 $ man -k password
 
 ```
 
-or:
+atau:
 
 ```
 $ man --apropos password
 
 ```
 
-This is equivalent to calling the `apropos` command:
+Hal ini sama dengan memanggil perintah `apropos`:
 
 ```
 $ apropos password
 
 ```
 
-The given keyword is interpreted as a regular expression by default.
+Kata kunci yang diberikan diinterpretasikan sebagai ekspresi reguler secara bawaan.
 
-If you want to do a more in-depth search by matching the keywords found in the whole articles, you can use the `-K` option:
+Jika Anda ingin melakukan pencarian yang lebih mendalam dengan menyesuaikan kata kunci yang ditemukan di seluruh artikel, Anda dapat menggunakan opsi `-K`:
 
 ```
 $ man -K password

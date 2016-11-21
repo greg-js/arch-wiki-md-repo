@@ -45,8 +45,9 @@
     *   [6.2 Linux distribution on the sdcard](#Linux_distribution_on_the_sdcard)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Android Studio: Android Virtual Devices show 'failed to load'.](#Android_Studio:_Android_Virtual_Devices_show_.27failed_to_load.27.)
-    *   [7.2 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
-    *   [7.3 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
+    *   [7.2 Android Studio: 'failed to create the SD card'](#Android_Studio:_.27failed_to_create_the_SD_card.27)
+    *   [7.3 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
+    *   [7.4 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
 
 ## Exploring Android device
 
@@ -619,6 +620,15 @@ You can install Debian like in this [thread](http://forum.xda-developers.com/sho
 ### Android Studio: Android Virtual Devices show 'failed to load'.
 
 Make sure you've exported the variable `ANDROID_HOME` as explained in [#Android Studio](#Android_Studio).
+
+### Android Studio: 'failed to create the SD card'
+
+If you try to run an AVD (Android Virtual Device) under x64 Arch and get the error above, install the proper 32-bit libs from the multilib repository.
+
+```
+# pacman -S lib32-gcc-libs lib32-ncurses
+
+```
 
 ### aapt: No such file or directory
 

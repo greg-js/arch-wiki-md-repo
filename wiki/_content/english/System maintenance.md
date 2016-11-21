@@ -193,7 +193,7 @@ Old, broken symbolic links might be sitting around your system; you should remov
 To quickly list all the broken symlinks of your system, use:
 
 ```
- # find . -type l -! -exec test -e {} \; -print
+ # find -xtype l -print
 
 ```
 

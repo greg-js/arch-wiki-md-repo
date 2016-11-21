@@ -53,7 +53,7 @@ If UEFI mode is enabled on an [UEFI](/index.php/UEFI "UEFI") motherboard, [Archi
 
 ```
 
-If the directory does not exist, the system is booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") (or CSM) mode.
+If the directory does not exist, the system may be booted in [BIOS](https://en.wikipedia.org/wiki/BIOS "w:BIOS") or CSM mode. Refer to your motherboard's manual for details.
 
 ### Connect to the Internet
 
@@ -211,7 +211,7 @@ If you [set the keyboard layout](#Set_the_keyboard_layout), make the changes per
 
 ### Hostname
 
-Create the [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) file with the desired [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration"):
+Create the [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) file:
 
  `/etc/hostname` 
 ```
@@ -219,7 +219,7 @@ Create the [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html) f
 
 ```
 
-Consider adding a [matching entry](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") to [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+Consider adding a matching entry to [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
 
  `/etc/hosts` 
 ```
@@ -228,6 +228,8 @@ Consider adding a [matching entry](/index.php/Network_configuration#Local_networ
 **127.0.1.1	*myhostname*.localdomain	*myhostname***
 
 ```
+
+See also [Network configuration#Set the hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration").
 
 ### Network configuration
 

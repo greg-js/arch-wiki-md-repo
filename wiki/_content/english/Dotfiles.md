@@ -16,9 +16,9 @@ Managing dotfiles with version control software such as [Git](/index.php/Git "Gi
 
 ### Using gitignore
 
-Keeping a [git directory](https://git-scm.com/blog/2010/04/11/environment.html) inside the home folder allows to directly keep track of changes. It is recommended to selectively add file contents to the index with [git add](http://git-scm.com/docs/git-add).
+Keeping a [git directory](https://git-scm.com/blog/2010/04/11/environment.html) inside the home folder allows to directly keep track of changes. It is recommended to selectively add file contents to the index with [git-add(1)](http://man7.org/linux/man-pages/man1/git-add.1.html).
 
-To prevent untracked files (appearing in commits and removed by [git clean](http://git-scm.com/docs/git-clean)), first exclude all files with [gitignore](http://git-scm.com/docs/gitignore):
+To prevent untracked files (appearing in commits and removed by [git-clean(1)](http://man7.org/linux/man-pages/man1/git-clean.1.html)), first exclude all files with [gitignore(5)](http://man7.org/linux/man-pages/man5/gitignore.5.html):
 
  `~/.git/info/exclude`  `*` 
 
@@ -29,7 +29,7 @@ $ git add -f ~/.config/*
 
 ```
 
-And [commit](http://git-scm.com/docs/git-commit) the changes:
+And commit the changes with [git-commit(1)](http://man7.org/linux/man-pages/man1/git-commit.1.html):
 
 ```
 $ git commit -a
@@ -121,7 +121,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [unexist](http://hg.subtle.de/dotfiles/file) | zsh | subtle | vim | rxvt-unicode | ncmpcpp | mutt | irssi |
 | [vodik](https://github.com/vodik/dotfiles) | zsh | xmonad | vim | termite-git | tmux | ncmpcpp | custom | mutt | weechat |
 | [w0ng](https://github.com/w0ng/dotfiles) | zsh | dwm | vim | rxvt-unicode | tmux | ncmpcpp | custom | mutt | irssi |
-| [Wintervenom](https://github.com/Wintervenom/Configuration) | bash | herbstluftwm | vim | rxvt-unicode | screen | mpd ([mpc-utils](https://github.com/Wintervenom/Scripts/tree/master/audio/mpd)) | [hlwm-dzen2](https://github.com/Wintervenom/Scripts/blob/master/wm/herbstluftwm/hlwm-dzen2https://github.com/wolfcore/dotfiles) | mutt | weechat |
+| [Wintervenom](https://github.com/Wintervenom/Configuration) | bash | herbstluftwm | vim | rxvt-unicode | screen | mpd ([mpc-utils](https://github.com/Wintervenom/Scripts/tree/master/audio/mpd)) | [hlwm-dzen2](https://github.com/Wintervenom/Scripts/blob/master/wm/herbstluftwm/hlwm-dzen2) | mutt | weechat |
 | [wolfcore](https://github.com/wolfcore/dotfiles) | bash | dwm | vim | rxvt-unicode | tmux | cmus | custom | weechat |
 | [xfausto](https://github.com/xfausto/dotfiles) | zsh | dwm | vim | st | ncmpcpp | conky |
 | [zendeavor](https://github.com/zendeavor) | [zsh](https://github.com/zendeavor/config-stuff/tree/sandbag/zsh) | [i3](https://github.com/zendeavor/config-stuff/blob/sandbag/i3/config) | [vim](https://github.com/zendeavor/dotvim/tree/sandbag) | [rxvt-unicode](https://github.com/zendeavor/config-stuff/blob/sandbag/X11/Xresources#L14) | [tmux](https://github.com/zendeavor/config-stuff/tree/sandbag/tmux) | [ncmpcpp](https://github.com/zendeavor/config-stuff/blob/sandbag/ncmpcpp/config) | [i3status](https://github.com/zendeavor/config-stuff/blob/sandbag/i3/i3status.conf) | [weechat](https://github.com/zendeavor/config-stuff/tree/kiwi/weechat) |

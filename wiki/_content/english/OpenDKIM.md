@@ -186,11 +186,6 @@ The default configuration for the OpenDKIM daemon is less than ideal from a secu
 
 The following configuration files will fix most of those issues (assuming you are using Postfix) and drop some unnecessary options in the systemd service unit:
 
- `/etc/tmpfiles.d/opendkim.conf` 
-```
-D /run/opendkim 0750 opendkim postfix
-
-```
  `/etc/opendkim/opendkim.conf` 
 ```
 BaseDirectory           /var/lib/opendkim
@@ -214,6 +209,8 @@ Type=forking
 User=opendkim
 Group=postfix
 ExecStart=/usr/bin/opendkim -x /etc/opendkim/opendkim.conf
+RuntimeDirectory=opendkim
+RuntimeDirectoryMode=0750
 
 [Install]
 WantedBy=multi-user.target

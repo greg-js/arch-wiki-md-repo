@@ -43,6 +43,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### November 2016
 
+*   [19 November 2016] [ASA-201611-20](https://lists.archlinux.org/pipermail/arch-security/2016-November/000767.html) [drupal](https://www.archlinux.org/packages/?name=drupal) multiple issues
 *   [18 November 2016] [ASA-201611-19](https://lists.archlinux.org/pipermail/arch-security/2016-November/000766.html) [php](https://www.archlinux.org/packages/?name=php) arbitrary code execution
 *   [18 November 2016] [ASA-201611-18](https://lists.archlinux.org/pipermail/arch-security/2016-November/000765.html) [w3m](https://www.archlinux.org/packages/?name=w3m) arbitrary code execution
 *   [16 November 2016] [ASA-201611-17](https://lists.archlinux.org/pipermail/arch-security/2016-November/000764.html) [libgit2](https://www.archlinux.org/packages/?name=libgit2) denial of service

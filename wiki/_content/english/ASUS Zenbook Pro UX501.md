@@ -65,6 +65,25 @@ But be careful with `/etc/modprobe.d/i915.conf`. It may cause screen freezing.
 
 The touch pad will work with the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package.
 
+Multi-gesture can be activated downloading this git project [Asus fte dkms](https://github.com/vlasenko/hid-asus-fte-dkms) and following the next instructions:
+
+```
+./dev-run.sh
+
+```
+
+```
+./dkms-add.sh
+
+```
+
+To enable it at boot time you must create a file at `/etc/modules-load.d/` (for example with name `touchpad.conf`) containing:
+
+```
+hid_asus_fte
+
+```
+
 ## Fan Control
 
 To setup variable fan control, install the [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) package and load the `coretemp` module at boot by creating `/etc/modules-load.d/lm_sensors.conf` containing:

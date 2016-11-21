@@ -69,8 +69,8 @@ it can also be set at runtime by writing it to /sys/module/zswap/parameters/comp
 5.  Check dmesg :
 
 ```
-   $ dmesg | grep 'zswap.* compressor'
-   [    0.307223] zswap: using lz4 compressor
+   $ dmesg | grep zswap:
+   [    0.918052] zswap: loaded using pool lz4/zbud
 
 ```
 

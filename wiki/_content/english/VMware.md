@@ -2,7 +2,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 **Note:**
 
-*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.
+*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5.
 *   For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 ## Contents
@@ -19,31 +19,20 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [4.2 Extracting the VMware BIOS](#Extracting_the_VMware_BIOS)
     *   [4.3 Extracting the installer](#Extracting_the_installer)
         *   [4.3.1 Using the modified BIOS](#Using_the_modified_BIOS)
-    *   [4.4 Using DKMS to manage the modules](#Using_DKMS_to_manage_the_modules)
-        *   [4.4.1 Preparation](#Preparation)
-        *   [4.4.2 Build configuration](#Build_configuration)
-            *   [4.4.2.1 1) Using Git](#1.29_Using_Git)
-            *   [4.4.2.2 2) Manual setup](#2.29_Manual_setup)
-        *   [4.4.3 Installation](#Installation_2)
-    *   [4.5 Enable 3D graphics on Intel and Optimus](#Enable_3D_graphics_on_Intel_and_Optimus)
+    *   [4.4 Enable 3D graphics on Intel and Optimus](#Enable_3D_graphics_on_Intel_and_Optimus)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 /etc/init.d - Directory must be non-empty](#.2Fetc.2Finit.d_-_Directory_must_be_non-empty)
-    *   [5.2 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
-    *   [5.3 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
-    *   [5.4 USB devices not recognized](#USB_devices_not_recognized)
-    *   [5.5 The installer fails to start](#The_installer_fails_to_start)
-    *   [5.6 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
-    *   [5.7 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
-    *   [5.8 Issues with ALSA output](#Issues_with_ALSA_output)
-    *   [5.9 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
-    *   [5.10 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
-    *   [5.11 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
-    *   [5.12 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
-    *   [5.13 GUI doesn't show after upgrade](#GUI_doesn.27t_show_after_upgrade)
-    *   [5.14 Kernel modules fail to build after Linux kernel 4.7](#Kernel_modules_fail_to_build_after_Linux_kernel_4.7)
-        *   [5.14.1 Linux kernel 4.7](#Linux_kernel_4.7)
-        *   [5.14.2 Linux kernel 4.8.x (x<=6)](#Linux_kernel_4.8.x_.28x.3C.3D6.29)
-    *   [5.15 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
+    *   [5.1 /dev/vmmon not found](#.2Fdev.2Fvmmon_not_found)
+    *   [5.2 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
+    *   [5.3 USB devices not recognized](#USB_devices_not_recognized)
+    *   [5.4 The installer fails to start](#The_installer_fails_to_start)
+    *   [5.5 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
+    *   [5.6 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
+    *   [5.7 Issues with ALSA output](#Issues_with_ALSA_output)
+    *   [5.8 Kernel-based Virtual Machine (KVM) is running](#Kernel-based_Virtual_Machine_.28KVM.29_is_running)
+    *   [5.9 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
+    *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
+    *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
+    *   [5.12 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -51,6 +40,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 [Install](/index.php/Install "Install") the correct dependencies:
 
 *   [fuse](https://www.archlinux.org/packages/?name=fuse) - the `vmware-vmblock-fuse` service is [favored](https://www.mail-archive.com/open-vm-tools-devel@lists.sourceforge.net/msg00213.html) over the `vmblock` module, and the vmblock module not built anymore without disabling [fuse](http://cateee.net/lkddb/web-lkddb/FUSE_FS.html) in the kernel
+*   [gksu](https://www.archlinux.org/packages/?name=gksu) - for root operations (memory allocations, registering license, etc.)
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - for the GUI
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - for module compilation
 *   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by at least the installer
@@ -86,9 +76,7 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 
 ### Kernel modules
 
-*   VMware Workstation 12.5 supports kernel 4.6 and 4.7 out of the box.
-*   VMware Workstation 12 and 12.1 only supports kernels up to 4.4\. For 4.6 and later, a source modification is needed, see [#Kernel modules fail to build after Linux 4.7](#Kernel_modules_fail_to_build_after_Linux_4.7).
-*   VMware 11 and older require patching the VMCI/VSOCK sources. This is automated by installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
+VMware Workstation 12.5 supports kernels up to 4.8 out of the box.
 
 ### systemd services
 
@@ -218,109 +206,6 @@ then adding the name to the `*Virtual_machine_name*.vmx` file:
 
  `~/vmware/*Virtual_machine_name*/*Virtual_machine_name*.vmx`  `bios440.filename = "bios440.rom"` 
 
-### Using DKMS to manage the modules
-
-The [Dynamic Kernel Module Support (DKMS)](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") can be used to manage VMware modules and to void from re-running `vmware-modconfig` each time the kernel changes. The following example uses a custom `Makefile` to compile and install the modules through `vmware-modconfig`. Afterwards they are removed from the current kernel tree.
-
-#### Preparation
-
-First, [install](/index.php/Install "Install") the [dkms](https://www.archlinux.org/packages/?name=dkms) package.
-
-Then create a source directory for the `Makefile` and the `dkms.conf`:
-
-```
-# mkdir /usr/src/vmware-modules-12/
-
-```
-
-#### Build configuration
-
-Fetch the files with [git](https://www.archlinux.org/packages/?name=git) or use the ones below.
-
-##### 1) Using Git
-
-```
-$ cd /tmp
-$ git clone [git://github.com/bawaaaaah/dkms-workstation.git](git://github.com/bawaaaaah/dkms-workstation.git)
-$ sed -i 's/9/12/' dkms-workstation/dkms.conf
-# cp dkms-workstation/Makefile dkms-workstation/dkms.conf /usr/src/vmware-modules-12/
-
-```
-
-##### 2) Manual setup
-
-The `dkms.conf` describes the module names and the compilation/installation procedure. `AUTOINSTALL="yes"` tells the modules to be recompiled/installed automatically each time:
-
- `/usr/src/vmware-modules-12/dkms.conf` 
-```
-PACKAGE_NAME="vmware-modules"
-PACKAGE_VERSION="12"
-
-MAKE[0]="make all"
-CLEAN="make clean"
-
-BUILT_MODULE_NAME[0]="vmmon"
-BUILT_MODULE_LOCATION[0]="modules"
-
-BUILT_MODULE_NAME[1]="vmnet"
-BUILT_MODULE_LOCATION[1]="modules"
-
-BUILT_MODULE_NAME[2]="vmblock"
-BUILT_MODULE_LOCATION[2]="modules"
-
-BUILT_MODULE_NAME[3]="vmci"
-BUILT_MODULE_LOCATION[3]="modules"
-
-BUILT_MODULE_NAME[4]="vsock"
-BUILT_MODULE_LOCATION[4]="modules"
-
-DEST_MODULE_LOCATION[0]="/extra/vmware"
-DEST_MODULE_LOCATION[1]="/extra/vmware"
-DEST_MODULE_LOCATION[2]="/extra/vmware"
-DEST_MODULE_LOCATION[3]="/extra/vmware"
-DEST_MODULE_LOCATION[4]="/extra/vmware"
-
-AUTOINSTALL="yes"
-```
-
-and now the `Makefile`:
-
- `/usr/src/vmware-modules-12/Makefile` 
-```
-KERNEL := $(KERNELRELEASE)
-HEADERS := /usr/lib/modules/$(KERNEL)/build/include
-GCC := $(shell vmware-modconfig --console --get-gcc)
-DEST := /lib/modules/$(KERNEL)/vmware
-
-TARGETS := vmmon vmnet vmblock vmci vsock
-
-LOCAL_MODULES := $(addsuffix .ko, $(TARGETS))
-
-all: $(LOCAL_MODULES)
-	mkdir -p modules/
-	mv *.ko modules/
-	rm -rf $(DEST)
-	depmod
-
-$(HEADERS)/linux/version.h:
-	ln -s $(HEADERS)/generated/uapi/linux/version.h $(HEADERS)/linux/version.h
-
-%.ko: $(HEADERS)/linux/version.h
-	vmware-modconfig --console --build-mod -k $(KERNEL) $* $(GCC) $(HEADERS) vmware/
-	cp -f $(DEST)/$@ .
-
-clean: rm -rf modules/
-```
-
-#### Installation
-
-The modules can then be installed with:
-
-```
-# dkms install vmware-modules/12 -k $(uname -r)
-
-```
-
 ### Enable 3D graphics on Intel and Optimus
 
 Some graphics drivers are blacklisted by default, due to poor and/or unstable 3D acceleration. After enabling *Accelerate 3D graphics*, the log may show something like:
@@ -335,21 +220,6 @@ This means the following:
  `~/.vmware/preferences`  `mks.gl.allowBlacklistedDrivers = TRUE` 
 
 ## Troubleshooting
-
-### /etc/init.d - Directory must be non-empty
-
-If you want to use the default location, you need to re-type `/etc/init.d' to bypass the error :
-
-```
-Extracting VMware Installer...done.
-System service scripts directory (commonly /etc/init.d).: 
-
-Directory must be non-empty
-System service scripts directory (commonly /etc/init.d).: /etc/init.d
-
-Would you like to check for product updates on startup? [yes]: 
-
-```
 
 ### /dev/vmmon not found
 
@@ -501,84 +371,21 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 
 This is likely due to the `vmnet` module not being loaded [[1]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
 
-### GUI doesn't show after upgrade
-
-The following affects VMware Workstation and Player versions before 12.1.0\. After upgrading to kernel 4.2 an existing installation of VMware does not start any of its GUI applications. This is because the LD library path no longer points to a compatible library. To fix this set your LD_LIBRARY_PATH in a terminal from which you run VMware.
-
-```
-$ export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libglibmm-2.4.so.1/:$LD_LIBRARY_PATH
-
-```
-
-To make this change permanent only when running VMware Workstation add the following line at the beginning of the executable file:
-
- `/usr/bin/vmware`  `export LD_LIBRARY_PATH=/usr/lib/vmware/lib/libglibmm-2.4.so.1` 
-
-For VMware Player make the same change in `/usr/bin/vmplayer`.
-
-### Kernel modules fail to build after Linux kernel 4.7
-
-As of VMware Workstation Pro 12.1, the module source needs to be modified to be successfully compiled [[2]](https://communities.vmware.com/thread/536705?start=0&tstart=0)[[3]](http://rglinuxtech.com/?p=1788). Depending on the kernel version, execute the following commands.
-
-#### Linux kernel 4.7
-
-```
-# cd /usr/lib/vmware/modules/source
-# tar xf vmmon.tar
-# mv vmmon.tar vmmon.old.tar
-# sed -r -i -e 's/get_user_pages(_remote)*/get_user_pages_remote/g' vmmon-only/linux/hostif.c
-# tar cf vmmon.tar vmmon-only
-# rm -r vmmon-only
-
-```
-
-```
-# tar xf vmnet.tar
-# mv vmnet.tar vmnet.old.tar
-# sed -r -i -e 's/get_user_pages(_remote)*/get_user_pages_remote/g' vmnet-only/userif.c
-# sed -i -e 's/dev->trans_start = jiffies/netif_trans_update\(dev\)/g' vmnet-only/netif.c
-# tar cf vmnet.tar vmnet-only
-# rm -r vmnet-only
-
-```
-
-#### Linux kernel 4.8.x (x<=6)
-
-```
-# cd /usr/lib/vmware/modules/source
-# tar xf vmmon.tar
-# mv vmmon.tar vmmon.old.tar
-# sed -r -i -e 's/get_user_pages(_remote)*/get_user_pages_remote/g' vmmon-only/linux/hostif.c
-# sed -r -i -e 's/NR_ANON_PAGES/NR_ANON_MAPPED/g' vmmon-only/linux/hostif.c
-# tar cf vmmon.tar vmmon-only
-# rm -r vmmon-only
-
-```
-
-```
-# tar xf vmnet.tar
-# mv vmnet.tar vmnet.old.tar
-# sed -r -i -e 's/get_user_pages(_remote)*/get_user_pages_remote/g' vmnet-only/userif.c
-# sed -i -e 's/dev->trans_start = jiffies/netif_trans_update\(dev\)/g' vmnet-only/netif.c
-# tar cf vmnet.tar vmnet-only
-# rm -r vmnet-only
-
-```
-
 ### Workstation Server service does not start
 
-If you see this error ( *Could not find administrative user. Error 127* ) in the output of
+If the `vmware-workstation-server.service` fails with:
+
+ `# systemctl status vmware-workstation-server` 
+```
+[...]
+Could not find administrative user. Error 127
 
 ```
-# systemctl status vmware-workstation-server
+
+You may need a symlink for the following:
 
 ```
-
-You may need to execute the following:
-
-```
-$ ln -s /usr/lib/vmware/bin/wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
-$ chmod +x /usr/lib/vmware/bin/wssc-adminTool
+# ln -s wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
 
 ```
 

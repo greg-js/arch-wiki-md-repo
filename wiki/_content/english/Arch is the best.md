@@ -1142,6 +1142,8 @@ void loop()
 
 	X11 is an architecture independent system for display of graphical user interfaces.
 
+`gcc -lX11 arch.c`
+
 ```
 #include <stdio.h>
 #include <stdlib.h>

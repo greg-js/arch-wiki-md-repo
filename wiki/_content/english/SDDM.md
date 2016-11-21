@@ -14,8 +14,9 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
         *   [2.3.3 Mouse cursor](#Mouse_cursor)
         *   [2.3.4 Changing your avatar](#Changing_your_avatar)
     *   [2.4 Numlock](#Numlock)
-    *   [2.5 Configuration GUI](#Configuration_GUI)
-    *   [2.6 DPI settings](#DPI_settings)
+    *   [2.5 Rotate display](#Rotate_display)
+    *   [2.6 Configuration GUI](#Configuration_GUI)
+    *   [2.7 DPI settings](#DPI_settings)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Hangs after login](#Hangs_after_login)
     *   [3.2 SDDM starts on tty1 instead of tty7](#SDDM_starts_on_tty1_instead_of_tty7)
@@ -107,6 +108,10 @@ You can also put a png image named `.face.icon` at the root of your home directo
 ### Numlock
 
 If you want to enforce Numlock to be enabled, set `Numlock=on` in the `[General]` section.
+
+### Rotate display
+
+See [Xrandr#Configuration](/index.php/Xrandr#Configuration "Xrandr").
 
 ### Configuration GUI
 

@@ -14,6 +14,7 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
     *   [3.6 Prevent tap clicking while typing](#Prevent_tap_clicking_while_typing)
     *   [3.7 Video compression artifacts in VLC](#Video_compression_artifacts_in_VLC)
     *   [3.8 Fingeprint Validity Sensor not working](#Fingeprint_Validity_Sensor_not_working)
+    *   [3.9 Headsets not working with pulseaudio](#Headsets_not_working_with_pulseaudio)
 *   [4 lspci](#lspci)
 
 ## Installation
@@ -104,6 +105,10 @@ When running on the Nvidia dGPU, if you see compression artifacts when playing v
 ### Fingeprint Validity Sensor not working
 
 And there is nothing you can do. [bug report at freedesktop](https://bugs.freedesktop.org/show_bug.cgi?id=94536). [discussion on official lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/Validity-Fingerprint-Reader-Linux/td-p/3352145/page/4)
+
+### Headsets not working with pulseaudio
+
+Try to boot with headsets plugged in. Pulseaudio is innocent.
 
 ## lspci
 

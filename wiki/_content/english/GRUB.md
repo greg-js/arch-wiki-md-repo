@@ -121,7 +121,7 @@ There are 4 ways to install GRUB boot files in BIOS booting:
 
 ##### Install to disk
 
-**Note:** The method is specific to installing GRUB to a partitioned (MBR or GPT) disk, with GRUB files installed to `/boot/grub` and its first stage code installed to the 440-byte MBR boot code region (not to be confused with MBR partition table).
+**Note:** The method below is specific to installing GRUB to a partitioned (MBR or GPT) disk, with GRUB files installed to the current `/boot/grub` directory and its first stage code installed to the 440-byte MBR boot code region (not to be confused with MBR partition table). To signal *grub-install* to install files to a different location, such as when migrating to new drives, use the `--boot-directory` flag, such as in [#Install to external USB stick](#Install_to_external_USB_stick).
 
 The following commands will:
 
@@ -129,7 +129,7 @@ The following commands will:
 *   Populate the `/boot/grub` directory
 *   Generate the `/boot/grub/i386-pc/core.img` file
 *   Embed it in the 31 KiB (minimum size - varies depending on partition alignment) post-MBR gap in case of MBR partitioned disk
-*   In the case of a GPT partitioned disk it will embed it in the BIOS Boot Partition , denoted by `bios_grub` flag in parted and EF02 type code in gdisk
+*   In the case of a GPT partitioned disk it will embed it in the BIOS Boot Partition, denoted by `bios_grub` flag in parted and EF02 type code in gdisk
 
 ```
 # grub-install --target=i386-pc /dev/sd*x*

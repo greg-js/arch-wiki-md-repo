@@ -14,7 +14,7 @@ From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
     *   [2.2 Converting ext2/ext3 partitions to ext4](#Converting_ext2.2Fext3_partitions_to_ext4)
         *   [2.2.1 Rationale](#Rationale_2)
         *   [2.2.2 Procedure](#Procedure_2)
-*   [3 Using ext4 file-based encryption](#Using_ext4_file-based_encryption)
+*   [3 Using file-based encryption](#Using_file-based_encryption)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 E4rat](#E4rat)
     *   [4.2 Barriers and performance](#Barriers_and_performance)
@@ -171,14 +171,28 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
     *   Even though the filesystem is now converted to ext4, all files that have been written before the conversion do not yet take advantage of the extent option of ext4, which will improve large file performance and reduce fragmentation and filesystem check time. In order to fully take advantage of ext4, all files would have to be rewritten on disk. Use *e4defrag* to take care of this problem.
 9.  Reboot Arch Linux!
 
-## Using ext4 file-based encryption
+## Using file-based encryption
 
 Since Linux 4.1, ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
 
-Make sure you are using a kernel with the option `CONFIG_EXT4_ENCRYPTION` enabled and have the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package updated to at least version 1.43. Then enable the encryption feature flag on your filesystem:
+Make sure you are using a kernel with the option `CONFIG_EXT4_ENCRYPTION` enabled and have the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package updated to at least version 1.43.
+
+Then verify that your filesystem is using a supported block size for encryption:
 
 ```
-# tune2fs -O encrypt /dev/sdb
+# tune2fs -l /dev/*device* | grep 'Block size'
+Block size:               4096
+# getconf PAGE_SIZE
+4096
+
+```
+
+If these values are not the same, then your filesystem will not support encryption, so **do not proceed further**.
+
+Next, enable the encryption feature flag on your filesystem:
+
+```
+# tune2fs -O encrypt /dev/*device*
 
 ```
 

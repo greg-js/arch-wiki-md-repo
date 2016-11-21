@@ -493,6 +493,10 @@ The game can't find "libpcre.so.3" and fails to run. A solution is to create a s
 
  `ln -s /usr/lib/libpcre.so /usr/lib/libpcre.so.3` 
 
+or safer way
+
+ `ln -s /usr/lib/libpcre.so  /home/<user>/.steam/steam/SteamApps/common/Company\ of\ Heroes\ 2/lib/<ARCH>/libpcre.so.3` 
+
 ## Counter-Strike: Global Offensive (CS:GO)
 
 ### Game runs on the wrong screen
