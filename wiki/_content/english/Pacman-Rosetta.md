@@ -24,7 +24,7 @@ This page uses a table to display the correspondence of [package management](htt
 | **<font color="#707070">Action</font>** | **Arch** | **Red Hat/Fedora** | **Debian/Ubuntu** | **SLES/openSUSE** | **Gentoo** |
 | Install a package(s) by name | pacman -S | dnf install | apt install | zypper install
 zypper in | emerge [-a] |
-| Remove a package(s) by name | pacman -Rs | dnf remove | apt autoremove | zypper remove
+| Remove a package(s) by name | pacman -Rs | dnf remove | apt remove | zypper remove
 zypper rm | emerge -C |
 | Search for package(s) by searching the expression in name, description, short description. What exact fields are being searched by default varies in each tool. Mostly options bring tools on par. | pacman -Ss | dnf search | apt search | zypper search
 zypper se [-s] | emerge -S |

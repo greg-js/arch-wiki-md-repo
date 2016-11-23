@@ -251,7 +251,7 @@ $ git push
 
 *   Disownment requests and removal requests can be created by clicking on the "Submit Request" link under "Package Actions" on the right hand side. This automatically sends a notification email to the current package maintainer and to the [aur-requests mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-requests) for discussion. [Trusted Users](/index.php/Trusted_Users "Trusted Users") will then either accept or reject the request.
 *   Disownment requests will be granted after two weeks if the current maintainer did not react.
-*   **Package merging has been implemented**, users still have to resubmit a package under a new name and may request merging of the old version's comments and votes.
+*   Merge requests are for when one package is replacing another one. Users still have to resubmit a package under a new name and may request merging of the old version's comments and votes. This has nothing to do with 'git merge' and is not similar to github's merge requests.
 *   Removal requests require the following information:
     *   Reason for deletion, at least a short note
         **Notice:** A package's comments does not sufficiently point out the reasons why a package is up for deletion. Because as soon as a TU takes action, the only place where such information can be obtained is the aur-requests mailing list.

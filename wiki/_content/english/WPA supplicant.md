@@ -238,7 +238,10 @@ followed by a method to obtain an ip address manually as indicated in the [#Over
 
 ```
 
-**Tip:** *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
+**Tip:**
+
+*   *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
+*   While testing arguments/configuration it may be helpful to launch *wpa_supplicant* in the foreground (i.e. *without* the `-B` option) for better debugging messages.
 
 #### At boot (systemd)
 
@@ -353,6 +356,8 @@ by capitalizing the letter "v", to
 phase2="auth=MSCHAPV2"
 
 ```
+
+You could even omit this setting entirely, since MSCHAPV2 is the default.
 
 ## See also
 

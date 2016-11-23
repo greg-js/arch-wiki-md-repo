@@ -150,20 +150,32 @@ If the discrete Nvidia GPU is switched off before starting Xorg or Wayland, then
 
 #### Suspend Loop
 
-Suspending (Close laptop lid) does not seem to work with a basic installation. There is a bug in the linux kernel which causes the ACPI "lid open" event to be dropped and not modify the stored state of the lid switch. Since systemd monitors the lid switch state, it will eventually check and see that it is "closed" and resuspend the laptop. The correct fix is to not drop the ACPI event in the kernel, but for now a workaround is possible.
+Suspending (Close laptop lid) does not seem to work with a basic installation. The lid state transitions from "open" to "closed" correctly the first time (and the system suspends), but after resuming from suspend by opening the lid, the lid state does not change back to "open". This results in the laptop entering a suspend loop because systemd monitors the lid state, sees that the lid is closed, and suspends the system.
 
-The only known workaround until the kernel is fixed, is to disable the automatic systemd suspend action by changing the *HandleLidSwitch* value in the */etc/systemd/logind.conf* file:
+A [bug](https://bugzilla.kernel.org/show_bug.cgi?id=187271) was filed against the kernel ACPI driver in November 2016\. It contains a fair amount of documentation on the issue along with a workaround which seems to solve the problem.
 
-```
-HandleLidSwitch=ignore
-
-```
-
-After this, install [pm-utils](https://www.archlinux.org/packages/?name=pm-utils) and [acpid](https://www.archlinux.org/packages/?name=acpid), use *systemctl* to enable acpid at boot, and create a file named */etc/acpi/events/lid* with the following contents:
+To work around the issue, add the following to your [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
 ```
-event=button/lid
-action=/usr/bin/pm-suspend
+button.lid_init_state=open
+
+```
+
+This will instruct the acpi driver to generate an extra open event when waking from suspend which will keep the system up.
+
+You can check that the setting was acknowledged:
+
+```
+# cat /sys/module/button/parameters/lid_init_state
+open
+
+```
+
+And also view all boot parameters:
+
+```
+$ cat /proc/cmdline 
+initrd=\initramfs-linux.img ... button.lid_init_state=open
 
 ```
 

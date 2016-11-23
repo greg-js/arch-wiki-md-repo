@@ -6,7 +6,9 @@ Neovim is a fork of [Vim](/index.php/Vim "Vim") aiming to improve user experienc
 *   [2 Configuration](#Configuration)
     *   [2.1 Transition from vim](#Transition_from_vim)
         *   [2.1.1 Loading vim addons](#Loading_vim_addons)
-*   [3 See also](#See_also)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Replacing vi and vim with neovim](#Replacing_vi_and_vim_with_neovim)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -28,6 +30,14 @@ If you would like to use plugins, syntax definitions, or other addons that are i
 set rtp^=/usr/share/vim/vimfiles/
 
 ```
+
+## Tips and tricks
+
+### Replacing vi and vim with neovim
+
+Setting `$VISUAL` and `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") should be sufficient in most cases.
+
+Some applications may hardcore vi or vim as default editor, to use *neovim* in their place, install [neovim-drop-in](https://aur.archlinux.org/packages/neovim-drop-in/).
 
 ## See also
 

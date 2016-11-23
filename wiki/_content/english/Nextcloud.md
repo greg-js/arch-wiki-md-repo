@@ -34,6 +34,8 @@ For file preview generation [Install](/index.php/Install "Install") the followin
 
 [php-imagick](https://aur.archlinux.org/packages/php-imagick/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
+[nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the Desktop Client
+
 ## PHP Configuration
 
 Edit `/etc/php/php.ini` and uncomment the following required modules:

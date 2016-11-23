@@ -22,7 +22,12 @@ From [Qtile web site](http://qtile.org/):
 
 ## 安装
 
-从 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 安装 [qtile-git](https://aur.archlinux.org/packages/qtile-git/)。
+安装下列包之一：
+
+*   [qtile](https://aur.archlinux.org/packages/qtile/) 最后正式版，基于 Python 3。
+*   [qtile-python2](https://aur.archlinux.org/packages/qtile-python2/) 最后正式版，基于 Python 2。
+*   [qtile-python3-git](https://aur.archlinux.org/packages/qtile-python3-git/) 最后开发版，基于 Python 3。
+*   [qtile-git](https://aur.archlinux.org/packages/qtile-git/) 最后开发版，基于 Python 2。
 
 缺省配置可以参考[Github源](https://github.com/qtile/qtile/blob/master/libqtile/resources/default_config.py)或从该源复制一份，存放于 `~/.config/qtile/config.py`：
 

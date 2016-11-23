@@ -695,7 +695,6 @@ GRUB can be set to ask for a password to open a [LUKS](/index.php/LUKS "LUKS") b
 To enable this feature encrypt the partition with `/boot` residing on it using [LUKS](/index.php/LUKS "LUKS") as normal. Then add the following option to `/etc/default/grub`:
 
  `/etc/default/grub`  `GRUB_ENABLE_CRYPTODISK=y` 
-**Note:** `GRUB_ENABLE_CRYPTODISK=1` [will not work](https://savannah.gnu.org/bugs/?41524) as opposed to the request shown in GRUB 2.02-beta2.
 
 Be sure to [#Generate the main configuration file](#Generate_the_main_configuration_file) while the partition containing `/boot` is mounted.
 

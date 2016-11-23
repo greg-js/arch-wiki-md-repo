@@ -31,17 +31,10 @@ MODULES="f2fs libcrc32c crc32_generic crc32c_generic"
 
 ## Mounting a F2FS partition
 
-Users will likely need to manually load the F2FS kernel module before mounting. Issue as root:
+The partition can then be mounted manually or via other mechanisms:
 
 ```
-# modprobe f2fs
-
-```
-
-The partition can then be mounted:
-
-```
-# mount -t f2fs /dev/sdxY /mnt
+# mount /dev/sdxY /mnt/foo
 
 ```
 

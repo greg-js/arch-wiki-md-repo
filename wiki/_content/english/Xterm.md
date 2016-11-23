@@ -32,6 +32,7 @@
         *   [4.3.2 Adjust line spacing](#Adjust_line_spacing)
     *   [4.4 Remove black border](#Remove_black_border)
     *   [4.5 Tek 4014 demonstration](#Tek_4014_demonstration)
+    *   [4.6 Protect against X11 input snooping](#Protect_against_X11_input_snooping)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Flickering on scroll](#Flickering_on_scroll)
 *   [6 See also](#See_also)
@@ -213,6 +214,8 @@ Another way of selecting text, especially useful when copying more than one full
 You do not have to be precise immediately with the right-click – any highlighted selection may be extended or shortened by using a right-click.
 
 You can clear any selected text by left-clicking once, anywhere within the xterm window.
+
+When a character-based application runs inside Xterm, it is allowed to receive mouse events. This may be a problem if the program can not communicate with the X11 clipboard. In order to pass these events to the underlying Xterm, they must be accompanied by the `Shift` key. For example, in [links(1)](https://www.archlinux.org/packages/?q=links) (not `xlinks -g`), one can mouse-click on URLs and menu items, but not select or paste with a middle button. To do copy-paste, press the `Shift` key and then perform mouse clicks (the key needs to be pressed only during the click, so there is no need to hold it when dragging mouse to select, for instance, a text block).
 
 ## Colors
 
@@ -396,6 +399,21 @@ cat /usr/share/tek2plot/dmerc.tek
 ```
 
 A world map will appear in the Tek window. You can also view other `*.tek` files from that same directory. To close the Tek window, one can use the xterm menus.
+
+### Protect against X11 input snooping
+
+It was already [mentioned](https://wiki.archlinux.org/index.php/Xterm#Menus) about the **Secure Keyboard** mode. However, using mouse to enter the secure mode is not always convenient. One can instead associate a key-binding with the `secure()` function. For example:
+
+```
+XTerm*VT100.translations: #override \
+        Shift <Key>Up: scroll-back(1,line) 
+\
+        Shift <Key>Down: scroll-forw(1,line) 
+\
+        **Ctrl Alt <Key>S: secure() 
+\**
+        ...
+```
 
 ## Troubleshooting
 

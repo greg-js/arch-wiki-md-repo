@@ -70,7 +70,7 @@
 
 *   Fedora 由社区开发,并红帽提供公司级支持.它是红帽版的技术前导版,对新技术的采用非常激进. Fedora 的软件包和项目会被引入 RHEL 中,并最终被其他发行版采用.Arch 不像很多发行版一样提供测试分支,而是采用滚动方式进行升级.
 *   Fedora 采用 RPM 包,用 DNF 包管理器并且提供图形化的包管理工具. Arch 使用 [pacman](/index.php/Pacman "Pacman") 管理 tar.xz 软件包.
-*   Fedora 坚持开源理念,默认不提供有专利限制的软件,比如MP3支持.一些第三方源提供这些内容. Arch 对于 MP3 及非自由软件更加宽松，将决定权交给用户。
+*   Fedora 坚持开源理念,默认不提供有专利限制的软件,比如 MP3 支持(从 Fedora 25 开始已重新支持 MP3).一些第三方源提供这些内容. Arch 对于 MP3 及非自由软件更加宽松，将决定权交给用户。
 *   Fedora 提供很多安装选项,比如图形化安装和最小化安装.Fedora "spins" 还提供许多桌面环境以供用户选择(这些桌面环境都带一些默认的软件包).ARCH 仅提供了一些脚本来方便进行最小化系统安装
 *   Fedora 发行周期固定,但官方支持通过 dnf-plugin-system-upgrade (适合大部分的版本)或 rpm-ostree (适合 Fedora Atomic Host)工具进行跨版本升级. Arch 是滚动升级系统.
 *   ARCH 有 ports 系统,而 Fedora 没有.

@@ -5,32 +5,28 @@ From the project [home page](http://aria2.sourceforge.net/):
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Execution](#Execution)
-*   [3 Configuration](#Configuration)
-    *   [3.1 aria2.conf](#aria2.conf)
-    *   [3.2 Example .bash_alias](#Example_.bash_alias)
-    *   [3.3 Example aria2.conf](#Example_aria2.conf)
-        *   [3.3.1 Option details](#Option_details)
-            *   [3.3.1.1 Example input file #1](#Example_input_file_.231)
-            *   [3.3.1.2 Example input file #2](#Example_input_file_.232)
-        *   [3.3.2 Additional notes](#Additional_notes)
-    *   [3.4 Example aria2.rapidshare](#Example_aria2.rapidshare)
-        *   [3.4.1 Option details](#Option_details_2)
-        *   [3.4.2 Additional notes](#Additional_notes_2)
-    *   [3.5 Example aria2.bittorrent](#Example_aria2.bittorrent)
-        *   [3.5.1 Option details](#Option_details_3)
-    *   [3.6 Example aria2.daemon](#Example_aria2.daemon)
-*   [4 Frontends](#Frontends)
-    *   [4.1 Web UIs](#Web_UIs)
-    *   [4.2 Other UIs](#Other_UIs)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Download the packages without installing them](#Download_the_packages_without_installing_them)
-    *   [5.2 pacman XferCommand](#pacman_XferCommand)
-    *   [5.3 Custom minimal build](#Custom_minimal_build)
-    *   [5.4 Start aria2c on system boot](#Start_aria2c_on_system_boot)
-    *   [5.5 Changing the User Agent](#Changing_the_User_Agent)
-    *   [5.6 Using Aria2 with makepkg](#Using_Aria2_with_makepkg)
-*   [6 See also](#See_also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 aria2.conf](#aria2.conf)
+    *   [2.2 Example aria2.conf](#Example_aria2.conf)
+        *   [2.2.1 Option details](#Option_details)
+            *   [2.2.1.1 Example input file #1](#Example_input_file_.231)
+            *   [2.2.1.2 Example input file #2](#Example_input_file_.232)
+        *   [2.2.2 Additional notes](#Additional_notes)
+    *   [2.3 Example aria2.rapidshare](#Example_aria2.rapidshare)
+        *   [2.3.1 Option details](#Option_details_2)
+        *   [2.3.2 Additional notes](#Additional_notes_2)
+    *   [2.4 Example aria2.bittorrent](#Example_aria2.bittorrent)
+        *   [2.4.1 Option details](#Option_details_3)
+    *   [2.5 Example aria2.daemon](#Example_aria2.daemon)
+*   [3 Frontends](#Frontends)
+    *   [3.1 Web UIs](#Web_UIs)
+    *   [3.2 Other UIs](#Other_UIs)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Download the packages without installing them](#Download_the_packages_without_installing_them)
+    *   [4.2 pacman XferCommand](#pacman_XferCommand)
+    *   [4.3 Changing the User Agent](#Changing_the_User_Agent)
+    *   [4.4 Using Aria2 with makepkg](#Using_Aria2_with_makepkg)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -38,9 +34,7 @@ Install [aria2](https://www.archlinux.org/packages/?name=aria2) from [official r
 
 You may also want to install [aria2-systemd](https://github.com/GutenYe/systemd-units/tree/master/aria2) to use aria2 as [daemon](/index.php/Daemon "Daemon").
 
-## Execution
-
-The executable name for the aria2 package is `aria2c`. This legacy naming convention has been retained for backwards compatibility.
+**Note:** The executable name for the aria2 package is `aria2c`. This legacy naming convention has been retained for backwards compatibility.
 
 ## Configuration
 
@@ -68,14 +62,6 @@ If `$XDG_CONFIG_HOME/aria2/aria2.conf` does not yet exist and you wish to simpli
 
 ```
 $ touch $XDG_CONFIG_HOME/aria2/aria2.conf
-
-```
-
-### Example .bash_alias
-
-```
-alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
-alias rapid='aria2c --conf-path=/file/aria2.rapidshare'
 
 ```
 
@@ -356,16 +342,6 @@ rpc-passwd=rpcpass
 
 	[http://iven.github.com/Yaner](http://iven.github.com/Yaner) || [yaner-git](https://aur.archlinux.org/packages/yaner-git/)
 
-It is convenient to append a monitor function based on diana in your shell configuration file:
-
-```
-da(){
-watch -ctn 1 "(echo -e '\033[32mGID\t\t Name\t\t\t\t\t\t\t%\tDown\tSize\tSpeed\tUp\tS/L\tTime\033[36m'; \
-diana list| cut -c -112; echo -e '\033[37m'; diana stats)"
-}
-
-```
-
 ## Tips and tricks
 
 ### Download the packages without installing them
@@ -381,33 +357,7 @@ Just use the command below:
 
 ### pacman XferCommand
 
-aria2 can be used as the default download manager for the [pacman](/index.php/Pacman "Pacman") package manager. See the ArchWiki article [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for additional details.
-
-### Custom minimal build
-
-Gains in application response can be gleaned by removing unused features and protocols. Further gains can be accomplished by removing support for external libraries with a custom build. Available options are visible through `./configure --help`. See the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") page for further details.
-
-### Start aria2c on system boot
-
-Save the following [systemd](/index.php/Systemd "Systemd") service file, adjust username and config path according to your setup. Ensure your config is set to deamonize (use `daemon=true`).
-
- `/etc/systemd/system/aria2c.service` 
-```
-[Unit]
-Description=Aria2c download manager
-After=network.target
-
-[Service]
-User=aria2
-Type=forking
-ExecStart=/usr/bin/aria2c --conf-path=/home/aria2/.aria2/aria2.daemon
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-Then [start and/or enable](/index.php/Systemd#Using_units "Systemd") the service.
+See [Pacman/Tips_and_tricks#aria2](/index.php/Pacman/Tips_and_tricks#aria2 "Pacman/Tips and tricks").
 
 ### Changing the User Agent
 

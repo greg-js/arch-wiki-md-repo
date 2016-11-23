@@ -52,7 +52,7 @@ Optional dependencies are shown in the table below.
 | Wifi menus | [dialog](https://www.archlinux.org/packages/?name=dialog) |
 | PPPoE | [ppp](https://www.archlinux.org/packages/?name=ppp) |
 
-**Warning:** Do not enable concurrent, conflicting network service. Use `systemctl --type=service` to ensure that no other network service is running before enabling a *netctl* profile/service.
+**Warning:** Do not enable concurrent, conflicting network services. Use `systemctl --type=service` to ensure that no other network service is running before enabling a *netctl* profile/service.
 
 ## Usage
 

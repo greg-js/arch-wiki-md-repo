@@ -22,7 +22,7 @@ Install [etherpad-lite](https://aur.archlinux.org/packages/etherpad-lite/) from 
 
 For testing purposes, the default database backend for Etherpad is the file-based DirtyDB. With that, you can run and test Etherpad-Lite without any further configuration.
 
-If you want to use [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or SQLite, you can adjust those settings in the settings.json file. Further, you can set a password for the administrator interface on [http://localhost:9001/admin](http://localhost:9001/admin), change port and listening address, etc.
+If you want to use [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite"), you can adjust those settings in the settings.json file. Further, you can set a password for the administrator interface on [http://localhost:9001/admin](http://localhost:9001/admin), change port and listening address, etc.
 
 At least, don't forget to set a sessionkey, e.g. generate with [pwgen](https://www.archlinux.org/packages/?name=pwgen) and `pwgen -y 10 1` and write it down to:
 

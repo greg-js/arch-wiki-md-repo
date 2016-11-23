@@ -44,11 +44,21 @@ See [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") for more inform
 
 ### Cron
 
-There is a cron script in the source distribution at `debian/cron.daily`. You can use this script to automatically commit changes on a schedule. To make it run daily, for example, make sure you have cron installed and enabled, then simply copy the script from the srcdir where you built etckeeper to `/etc/cron.daily` and make sure it is executable (e.g. `chmod +x /path/to/script`).
+There is a `[cron script](https://github.com/joeyh/etckeeper/blob/master/debian/cron.daily)` in the source distribution. You can use this script to automatically commit changes on a schedule.
+
+For example, to make it run daily:
+
+1.  Have [cron](/index.php/Cron "Cron") installed and enabled.
+2.  Put script as `/etc/cron.daily/*script_name*`.
+3.  Permit execution of file for *root* (`# chmod u+x /etc/cron.daily/*script_name*`).
+
+See [cron#cronie](/index.php/Cron#cronie "Cron"), [cron](/index.php/Cron "Cron") for more information.
 
 ### Incron
 
-As an alternative to the above, you could set up incron to automatically commit changes using etckeeper whenever a file in `/etc` is modified.
+To automatically create commits on **every** file modification inside `/etc/`, use [incron](https://www.archlinux.org/packages/?name=incron). It utilizes native filesystem signalling through [inotify(7)](http://man7.org/linux/man-pages/man7/inotify.7.html).
+
+See: [[1]](http://inotify.aiken.cz/?section=incron&page=doc&lang=en), [[2]](https://linux.die.net/man/8/incrond)
 
 ### Automatic push to remote repo
 

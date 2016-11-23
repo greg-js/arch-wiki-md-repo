@@ -24,9 +24,8 @@
 *   [5 Window managers and desktop shells](#Window_managers_and_desktop_shells)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [6.2 Weston fails to launch after update to 1.7](#Weston_fails_to_launch_after_update_to_1.7)
-    *   [6.3 Applications using dbus crashes on startup](#Applications_using_dbus_crashes_on_startup)
-    *   [6.4 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
+    *   [6.2 Applications using dbus crashes on startup](#Applications_using_dbus_crashes_on_startup)
+    *   [6.3 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
 *   [7 See also](#See_also)
 
 ## Requirements
@@ -98,7 +97,7 @@ $ weston-image image1.jpg image2.jpg...
 
 ### Configuration
 
-Example configuration file for keyboard layout, module selection and UI modifications. See `man weston.ini` for full details. The Weston outputs differ slightly from `xorg.conf`'s Monitors:
+Example configuration file for keyboard layout, module selection and UI modifications. See weston.ini(5) for full details. The Weston outputs differ slightly from `xorg.conf`'s Monitors:
 
 ```
 $ ls /sys/class/drm
@@ -270,7 +269,7 @@ Weston uses the default sans-serif font for window title bars, clocks, etc. See 
 If you run Gnome, install XWayland with the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, then run it:
 
 ```
-$ dbus-run-session -- gnome-session --display-server --wayland
+$ dbus-run-session -- gnome-shell --display-server --wayland
 
 ```
 
@@ -293,7 +292,7 @@ This is still experimental (state 2011-11-18) and not everything will run as exp
 To auto-start on login, only on virtual terminal 1, one can enter this into `.bash_profile`:
 
 ```
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && dbus-run-session -- gnome-session --display-server --wayland
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && dbus-run-session -- gnome-shell --display-server --wayland
 
 ```
 
@@ -365,28 +364,6 @@ This may imply disabling some drivers which require LLVM. You may also try expor
 
 ```
 $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
-
-```
-
-### Weston fails to launch after update to 1.7
-
-This is possibly caused by the `desktop-shell.so` module being loaded by your `weston.ini`. This used to be required, but is not anymore.
-
-Remove it from the `[core]` section:
-
- `~/.config/weston.ini` 
-```
-[core]
-modules=xwayland.so,desktop-shell.so
-
-```
-
-So that you end up with:
-
- `~/.config/weston.ini` 
-```
-[core]
-modules=xwayland.so
 
 ```
 

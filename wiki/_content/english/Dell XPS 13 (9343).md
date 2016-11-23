@@ -60,9 +60,13 @@ There are no exclusive hardware differences between the *Developer Edition* and 
 
 ### BIOS updates
 
-The latest BIOS update is [A09](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=MNWHN&fileId=3564153400) and was released on 2016-08-30\. With A02 or newer, almost everything should work out-of-the-box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose *BIOS Update* in the F12 boot menu.
+Best practice is to install and use software on the latest BIOS version and this laptop makes no difference.
 
-Dell does no longer show bios versions higher than A07 on their site. You can download BIOS version A08 and A09 from here:
+The latest BIOS update is [A09](http://www.dell.com/support/home/us/en/19/Drivers/DriversDetails?driverId=MNWHN&fileId=3564153400) and was released on 2016-08-30\. With A02 or newer, almost everything should work out-of-the-box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary.
+
+BIOS upgrade is easy, thanks to the EFI implementation: store the update binary on the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
+
+Unfortunately Dell does no longer show BIOS versions higher than A07 on its site and thus the link above doesn't work. Anyhow, you can download BIOS version A08 and A09 from here:
 
 *   [BIOS A08](https://mega.nz/#!20U2VRBI!FRam__6wjlOjRejd0Oy4Wtof6wdkTkyUUBBz8oTtOno) md5sum: d1df9447f119ce5cb90ebea875a22cd9
 *   [BIOS A09](http://downloads.dell.com/FOLDER03901193M/1/9343A09.exe) md5sum: 3921c57ae6ff3fcd9b4564f5f36fb69a
@@ -230,6 +234,8 @@ Some users have reported above sound outputs, as described e.g. in [this BBS thr
 ### Display freezes while manipulating external displays with Xrandr / random blanking
 
 `xrandr` commands (for eg. [HiDPI#Multiple_displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[9]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [[10]](https://wiki.archlinux.org/index.php/Intel_graphics#Skylake_support). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
+
+If you are experiencing freezes in GNOME on Login and/or after, be sure you have latest BIOS installed and disabled the C state feature.
 
 ## See also
 

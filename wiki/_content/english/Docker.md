@@ -415,5 +415,5 @@ EOF
 
 ## See also
 
-*   [Arch Linux on docs.docker.com](https://docs.docker.com/installation/archlinux/)
+*   [Arch Linux on docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com

@@ -18,7 +18,7 @@ The ganglia web frontend is available as the [ganglia-web](https://aur.archlinux
 
 You will also need a [web server](/index.php/Category:Web_server "Category:Web server") with a working [PHP](/index.php/PHP "PHP") setup. The following sections include some example setups.
 
-Make sure that the `open_basedir` setting in your `/etc/php/php.ini` includes `/usr/share/webapps` and `/var/lib/ganglia`.
+Make sure that the `open_basedir` setting in your `/etc/php/php.ini` includes `/tmp`, `/usr/share/webapps` and `/var/lib/ganglia`.
 
 ### [Nginx](/index.php/Nginx "Nginx") with php-fpm
 

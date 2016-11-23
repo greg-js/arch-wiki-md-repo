@@ -79,7 +79,7 @@ EndSection
 
 ```
 
-The miniDP port works, at least when used with a VGA adapter. The connected display shows up in *xrandr* correctly..
+The miniDP port works, at least when used with a VGA adapter. The connected display shows up in *xrandr* correctly. The HDMI output does not appear to work.
 
 ### Card reader
 

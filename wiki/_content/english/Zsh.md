@@ -125,10 +125,10 @@ When starting Zsh, it'll source the following files in this order by default:
 
 **Note:**
 
-*   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992))
-*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please set the `$PATH` variable in `$ZDOTDIR/.zprofile`
+*   The paths used in Arch's [zsh](https://www.archlinux.org/packages/?name=zsh) package are different from the default ones used in the [man pages](/index.php/Man_page "Man page") ([FS#48992](https://bugs.archlinux.org/task/48992)).
+*   `/etc/profile` is not a part of the regular list of startup files run for Zsh, but is sourced from `/etc/zsh/zprofile` in the [zsh](https://www.archlinux.org/packages/?name=zsh) package. Users should take note that `/etc/profile` sets the `$PATH` variable which will overwrite any `$PATH` variable set in `$ZDOTDIR/.zshenv`. To prevent this, please set the `$PATH` variable in `$ZDOTDIR/.zprofile`.
 
-**Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it'll break the integrality of other packages which provide some scripts in `/etc/profile.d`
+**Warning:** It is not recommended to replace the default [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) in `/etc/zsh/zprofile` with something other, it will break the integrality of other packages which provide some scripts in `/etc/profile.d`.
 
 ## Configure Zsh
 
@@ -138,7 +138,7 @@ Although Zsh is usable out of the box, it is almost certainly not set up the way
 
 Included below is a sample configuration file, it provides a decent set of default options as well as giving examples of many ways that Zsh can be customized. In order to use this configuration save it as a file named `.zshrc`.
 
-**Tip:** Apply the changes without needing to logout and then back in by running `source ~/.zshrc`
+**Tip:** Apply the changes without needing to logout and then back in by running `source ~/.zshrc`.
 
 Here is a simple `.zshrc`:
 
@@ -234,7 +234,7 @@ ttyctl -f
 
 ### Key bindings
 
-Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful zle. It does not read `/etc/inputrc` or `~/.inputrc`. Zle has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
+Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`. ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
 See also [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
 
@@ -348,16 +348,11 @@ See [Prompt Expansion](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.h
 
 ##### Colors
 
-Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt"). Add `autoload -Uz colors && colors` before `PROMPT=` in `.zshrc` to use them. Usually you will want to put these inside `%{ [...] %}` so the cursor does not move.
+Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash Prompt").
 
-| Command | Description |
-| `$fg[color]` | will set the text color (red, green, blue, etc. - defaults to whatever format set prior to text) |
-| `%F{color} [...] %f` | effectively the same as the previous, but with less typing. Can also prefix F with a number instead. |
-| `$fg_no_bold[color]` | will set text to non-bold and set the text color |
-| `$fg_bold[color]` | will set the text to bold and set the text color |
-| `$reset_color` | will reset the text color to the default color. Does not reset bold. use `%b` to reset bold. Saves typing if it's just `%f` though. |
-| `%K{color} [...] %k` | will set the background color. Same color as non-bold text color. Prefixing with any single-digit number makes the bg black. |
-| `%S [...] %s` | Standout mode, switches the text and background colors. Useful for Powerline-like prompts, especially if you switch between light/dark backgrounds. |
+See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) in zshmisc(1) for prompt escapes to set foreground color, background color and other visual effects.
+
+Colors can be specified by [numeric color code](https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) or by name (see zshzle(1) section [CHARACTER HIGHLIGHTING](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting)). Most terminals support the following colors by name:
 
 | Possible color values |
 | `black` or `0` | `red` or `1` |
@@ -365,15 +360,21 @@ Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash
 | `blue` or `4` | `magenta` or `5` |
 | `cyan` or `6` | `white` or `7` |
 
-**Note:** Bold text does not necessarily use the same colors as normal text. For example, `$fg['yellow']` looks brown or a very dark yellow, while `$fg_bold['yellow']` looks like bright or regular yellow.
+**Note:** Bold text does not necessarily use the same colors as normal text. For example, `%F{yellow}*text*%f` looks brown or a very dark yellow, while `%F{yellow}%B*text*%b%f` looks like bright or regular yellow.
+
+**Tip:** Prompt escapes can be tested with command `print -P *"prompt escapes"*`, for example:
+```
+$ print -P '%B%F{red}co%F{green}lo%F{blue}rs%f%b'
+
+```
 
 ##### Example
 
 This is an example of a two-sided prompt:
 
 ```
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%# "
-RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
+PROMPT='%F{red}%n%f@%F{blue}%m%f %F{yellow}%1~%f %# '
+RPROMPT='[%F{yellow}%?%f]'
 
 ```
 
@@ -529,7 +530,7 @@ zstyle ':completion:*' rehash true
 
 ```
 
-**Note:** This hack has been found in a PR for Oh My Zsh [[2]](https://github.com/robbyrussell/oh-my-zsh/issues/3440)
+**Note:** This hack has been found in a [PR for Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh/issues/3440).
 
 ## Uninstallation
 

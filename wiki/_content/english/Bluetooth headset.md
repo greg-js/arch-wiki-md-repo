@@ -1,6 +1,6 @@
 Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio playback with the default installation.
 
-**Note:** Bluez5 is only supported by [PulseAudio](/index.php/PulseAudio "PulseAudio") and not by [ALSA](/index.php/ALSA "ALSA"). If you do not want to use PulseAudio, you need to install an older Bluez version from the AUR.
+**Note:** Bluez5 dropped the direct integration for [ALSA](/index.php/ALSA "ALSA") and supports [PulseAudio](/index.php/PulseAudio "PulseAudio"). If you do not want to use PulseAudio, you have to use use [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), as ALSA plugin.
 
 ## Contents
 
@@ -38,12 +38,13 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
     *   [5.1 A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio)
         *   [5.1.1 Socket interface problem](#Socket_interface_problem)
         *   [5.1.2 Gnome with GDM](#Gnome_with_GDM)
-*   [6 Tested headsets](#Tested_headsets)
-*   [7 See also](#See_also)
+*   [6 Headset via Bluez5/bluez-alsa](#Headset_via_Bluez5.2Fbluez-alsa)
+*   [7 Tested headsets](#Tested_headsets)
+*   [8 See also](#See_also)
 
 ## Headset via Bluez5/PulseAudio
 
-PulseAudio 5.x supports A2DP per default. Make sure the following packages are [installed](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), [bluez-firmware](https://www.archlinux.org/packages/?name=bluez-firmware). Without [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) you won't be able to connect after the next pairing and you won't get any usable error messages.
+PulseAudio 5.x supports A2DP per default. Make sure the following packages are [installed](/index.php/Install "Install"): [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa), [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth), [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-libs](https://www.archlinux.org/packages/?name=bluez-libs), [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), [bluez-firmware](https://www.archlinux.org/packages/?name=bluez-firmware). Without [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) you will not be able to connect after the next pairing and you will not get any usable error messages.
 
 [Start](/index.php/Start "Start") the `bluetooth.service` systemd unit.
 
@@ -99,7 +100,7 @@ You can now disable scanning again and exit the program:
 
 ```
 
-#### Setting up auto connection
+### Setting up auto connection
 
 To make your headset auto connect you need to enable PulseAudio's switch-on-connect module. Do this by adding the following lines to your the following to your `/etc/pulse/default.pa`:
 
@@ -682,7 +683,7 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM, you need to prevent GDM from starting its own instance of PulseAudio :
 
-*   Prevent Pulseaudio clients from automatically starting a server if one isn't running by adding the following lines to `/var/lib/gdm/.config/pulse/client.conf` :
+*   Prevent Pulseaudio clients from automatically starting a server if one is not running by adding the following lines to `/var/lib/gdm/.config/pulse/client.conf` :
 
 ```
 autospawn = no
@@ -701,6 +702,45 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 
 **Note:** Discussion about this problem can be found [here](https://bbs.archlinux.org/viewtopic.php?id=194006) and [here](https://bbs.archlinux.org/viewtopic.php?id=196689)
 
+## Headset via Bluez5/bluez-alsa
+
+This approach should be used only if you cannot or do not want to use PulseAudio that is the status quo.
+
+First of all ensure your headset is correctly paired and connected to the system, this implies the same steps that using PulseAudio, for example using `bluetoothctl`.
+
+Install [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), start and possibly enable the `bluealsa` service.
+
+Edit the file `/etc/dbus-1/system.d/bluetooth.conf` and add this lines to the bottom, just before the closing `</busconfig>`.
+
+```
+<policy user="bluealsa">
+  <allow send_destination="org.bluez"/>
+</policy>
+
+```
+
+Finally to let the `bluealsa` work your user must be part of the `audio` group.
+
+You can now test if everything works fine, replace your MAC as necessary:
+
+```
+ aplay -D bluealsa:HCI=hci0,DEV=00:1D:43:6D:03:26,PROFILE=a2dp ./testme.wav
+
+```
+
+If it does you can set up HCI, DEV, and PROFILE as default. Add this lines to your `.asoundrc`:
+
+```
+defaults.bluealsa {
+    interface "hci0"
+    device "00:1D:43:6D:03:26"
+    profile "a2dp"
+}
+
+```
+
+You can now use the device bluealsa to reach your headset. You can also use `alsamixer` to setup the volumes, as `alsamixer -D bluealsa`.
+
 ## Tested headsets
 
 | Model | Version | Comments | Compatible |
@@ -715,7 +755,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Parrot Zik 3.0** | Microphone detected but does not work (HSP profile unavailable). No delay issues. | Limited |
 | **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[4]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
 | **Sony SBH50** | bluez5 | Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe"). | Yes |
-| **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Doesn't auto-connect, need to connect manually. Other functionality works fine. | Limited |
+| **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Does not auto-connect, need to connect manually. Other functionality works fine. | Limited |
 | **Sony MUC-M1BT1** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Both A2DP & HSP/HFP work fine. | Yes |
 | **SoundBot SB220** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Yes |
 | **Auna Air 300** | bluez5, pulseaudio-git | For some reason, a few restarts were required, and eventually it just started working. | Limited |
@@ -730,7 +770,7 @@ sudo -ugdm ln -s /dev/null /var/lib/gdm/.config/systemd/user/pulseaudio.socket
 | **Philips AEA2000/12** | bluez5 | Yes |
 | **Nokia BH-104** | bluez4 | Yes |
 | **Creative AirwaveHD** | bluez 5.23 | Bluetooth adapter Atheros Communications usb: 0cf3:0036 | Yes |
-| **Creative HITZ WP380** | bluez 5.27, pulseaudio 5.0-1 | A2DP Profile only. Buttons work (Play, Pause, Prev, Next). Volume buttons are hardware-only. Auto-connect works but you should include the bluetooth module in "pulseaudio" to switch to it automatically. Clear HD Music Audio (This device support APTx codec but it isn't supported in linux yet). You may have some latency problems which needs pulseaudio restart. | Yes |
+| **Creative HITZ WP380** | bluez 5.27, pulseaudio 5.0-1 | A2DP Profile only. Buttons work (Play, Pause, Prev, Next). Volume buttons are hardware-only. Auto-connect works but you should include the bluetooth module in "pulseaudio" to switch to it automatically. Clear HD Music Audio (This device support APTx codec but it is not supported in linux yet). You may have some latency problems which needs pulseaudio restart. | Yes |
 | **deleyCON Bluetooth Headset** | bluez 5.23 | Adapter: CSL - USB nano Bluetooth-Adapter V4.0\. Tested a2dp profile. Untested microphone. Does not auto-connect (even when paired and trusted), must connect manually. Play/pause button mutes/unmutes the headphones, not the playback. Playback fwd/bwd buttons do not work (nothing visible with *xev*). | Limited |
 | **UE BOOM** | bluez 5.27, pulseaudio-git 5.99 | Update to latest UE BOOM fw 1.3.58\. Sound latency in video solved by configuring pavucontrol. Works with UE BOOM x2. | Yes |
 | **LG HBS-730** | bluez 5.30, pulseaudio 6.0 | Works out of box with A2DP profile. | Yes |

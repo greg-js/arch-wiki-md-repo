@@ -786,7 +786,7 @@ Server = http://noaxiom.org/$repo/$arch
 #### boyska64
 
 *   **Maintainer:** boyska
-*   **Description:** Personal repository: cryptography, sdr, mail handling and misc
+*   **Description:** Personal repository: cryptography, sdr, mail handling and misc; don't expect packages to be upgraded promptly, I am a zealot of slackness
 *   **Key-ID:** 0x7395DCAE58289CA9
 
 ```

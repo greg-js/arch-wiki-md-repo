@@ -15,7 +15,7 @@ This approach works well for migrating an existing installation to a new hard dr
 
 ## With a single command
 
-This command depends on brace expansion available in both the [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) and [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion) shells. When using a different [shell](/index.php/Shell "Shell"), `--exclude` patterns should be repeated manually.
+Run the following command as root to make sure that rsync can access all system files and preserve the ownership:
 
 ```
 # rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} / */path/to/backup/folder*
@@ -24,7 +24,7 @@ This command depends on brace expansion available in both the [bash](https://www
 
 By using the `-aAX` set of options, the files are transferred in archive mode which ensures that symbolic links, devices, permissions, ownerships, modification times, [ACLs](/index.php/ACL "ACL"), and extended attributes are preserved, assuming that the target [file system](/index.php/File_system "File system") supports the feature.
 
-The `--exclude` option causes files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp`, and `/run` are excluded in the above command, because they are populated at boot, although the folders themselves are *not* created. `/lost+found` is filesystem-specific. Quoting the exclude patterns will avoid expansion by the [shell](/index.php/Shell "Shell"), which is necessary, for example, when backing up over [SSH](/index.php/SSH "SSH"). Ending the excluded paths with `*` ensures that the directories themselves are created if they do not already exist.
+The `--exclude` option causes files that match the given patterns to be excluded. The contents of `/dev`, `/proc`, `/sys`, `/tmp`, and `/run` are excluded in the above command, because they are populated at boot, although the folders themselves are *not* created. `/lost+found` is filesystem-specific. The command above depends on brace expansion available in both the [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) and [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion) shells. When using a different [shell](/index.php/Shell "Shell"), `--exclude` patterns should be repeated manually. Quoting the exclude patterns will avoid expansion by the [shell](/index.php/Shell "Shell"), which is necessary, for example, when backing up over [SSH](/index.php/SSH "SSH"). Ending the excluded paths with `*` ensures that the directories themselves are created if they do not already exist.
 
 **Note:**
 

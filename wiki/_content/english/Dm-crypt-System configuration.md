@@ -20,6 +20,8 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 System stuck on boot/password prompt doesn't show](#System_stuck_on_boot.2Fpassword_prompt_doesn.27t_show)
 
 ## mkinitcpio
 
@@ -267,3 +269,9 @@ For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptset
 will ask for the passphrase and mount automatically at boot.
 
 Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/mapper/vgraid-lvraid`) entries, there is no need to add additional mkinitcpio hooks/configuration, because `/etc/crypttab` processing applies to non-root mounts only. One exception is when the `mdadm_udev` hook is used *already* (e.g. for the root device). In this case `/etc/madadm.conf` and the initramfs need updating to achieve the correct root raid is picked first.
+
+## Troubleshooting
+
+### System stuck on boot/password prompt doesn't show
+
+If you are using [Plymouth](/index.php/Plymouth "Plymouth"), make sure to use the correct modules (see: [Plymouth#The_plymouth_hook](/index.php/Plymouth#The_plymouth_hook "Plymouth")) or disable it. Otherwise Plymouth will swallow the password prompt, making a system boot impossible.

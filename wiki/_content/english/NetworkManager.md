@@ -10,13 +10,13 @@
 *   [2 Front-ends](#Front-ends)
     *   [2.1 GNOME](#GNOME)
     *   [2.2 KDE Plasma](#KDE_Plasma)
-    *   [2.3 Xfce](#Xfce)
-    *   [2.4 Openbox](#Openbox)
-    *   [2.5 Other desktops and window managers](#Other_desktops_and_window_managers)
-    *   [2.6 Command line](#Command_line)
-        *   [2.6.1 nmcli](#nmcli)
-        *   [2.6.2 nmtui](#nmtui)
-        *   [2.6.3 nmcli-dmenu](#nmcli-dmenu)
+    *   [2.3 nm-applet](#nm-applet)
+        *   [2.3.1 Xfce](#Xfce)
+        *   [2.3.2 Openbox](#Openbox)
+    *   [2.4 Command line](#Command_line)
+        *   [2.4.1 nmcli](#nmcli)
+        *   [2.4.2 nmtui](#nmtui)
+        *   [2.4.3 nmcli-dmenu](#nmcli-dmenu)
 *   [3 Configuration](#Configuration)
     *   [3.1 Enable NetworkManager](#Enable_NetworkManager)
     *   [3.2 Enable NetworkManager Wait Online](#Enable_NetworkManager_Wait_Online)
@@ -87,8 +87,9 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 *   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
 *   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
+*   [networkmanager-strongswan](https://aur.archlinux.org/packages/networkmanager-strongswan/)
 
-**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350) [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=758772) [FS#47535](https://bugs.archlinux.org/task/47535)
+**Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
 ### PPPoE / DSL support
 
@@ -96,23 +97,40 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 
 ## Front-ends
 
-To configure and have easy access to NetworkManager, most users will want to install an applet. This GUI front-end usually resides in the system tray (or notification area) and allows network selection and configuration of NetworkManager. Various applets exist for different types of desktops.
+To configure and have easy access to NetworkManager, most users will want to install an applet. This GUI front-end usually resides in the system tray (or notification area) and allows network selection and configuration of NetworkManager. Various desktop environments have their own applet. Otherwise you can use [#nm-applet](#nm-applet).
 
 ### GNOME
 
-[GNOME](/index.php/GNOME "GNOME")'s [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in all environments.
-
-To store authentication details for connections (Wireless/DSL) install and configure [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
-
-Be aware that after enabling the tick-box option `Make available to other users` for a connection, NetworkManager stores the password in plain-text, though the respective file is accessible only to root (or other users via `nm-applet`). See [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords).
+[GNOME](/index.php/GNOME "GNOME") has a built-in tool, accessible from the Network settings.
 
 ### KDE Plasma
 
-[Install](/index.php/Install "Install") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) applet.
+[Install](/index.php/Install "Install") the [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) package.
 
-### Xfce
+### nm-applet
 
-While [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in [Xfce](/index.php/Xfce "Xfce"), in order to see notifications, including error messages, `nm-applet` needs an implementation of the Freedesktop desktop notifications specification (see the [Galapago Project](http://www.galago-project.org/specs/notification/0.9/index.html)) to display them. To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification.
+[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) is a GTK+ 3 front-end which works in all environments.
+
+To store connection secrets install and configure [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring").
+
+Be aware that after enabling the tick-box option `Make available to other users` for a connection, NetworkManager stores the password in plain-text, though the respective file is accessible only to root (or other users via `nm-applet`). See [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords).
+
+In order to run `nm-applet` without a systray, you can use [trayer](https://www.archlinux.org/packages/?name=trayer) or [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). For example, you can add a script like this one in your path:
+
+ `nmgui` 
+```
+#!/bin/sh
+nm-applet    2>&1 > /dev/null &
+stalonetray  2>&1 > /dev/null
+killall nm-applet
+
+```
+
+When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
+
+#### Xfce
+
+While [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) works in [Xfce](/index.php/Xfce "Xfce"), in order to see notifications, including error messages, `nm-applet` needs an implementation of the FreeDesktop.org [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications"). To enable notifications install [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd), a package that provides an implementation for the specification.
 
 Without such a notification daemon, `nm-applet` outputs the following errors to stdout/stderr:
 
@@ -131,36 +149,13 @@ code 1.
 
 `nm-applet` will still work fine, though, but without notifications.
 
-If `nm-applet` is not prompting for a password when connecting to new wifi networks, and is just disconnecting immediately, you may need to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
+Should the applet not appear, install the [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/) package. [[2]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
 
-Should the applet not appear, install the [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/) package. [[3]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
-
-### Openbox
+#### Openbox
 
 To work properly in [Openbox](/index.php/Openbox "Openbox"), the GNOME applet requires the [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) notification daemon for the same reason as in XFCE and the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) package to be able to display the applet in the systray.
 
-If you want to store authentication details (Wireless/DSL) install and configure [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring").
-
-`nm-applet` installs the autostart file at `/etc/xdg/autostart/nm-applet.desktop`. If you have issues with it (e.g. `nm-applet` is started twice or is not started at all), see [Openbox#autostart](/index.php/Openbox#autostart "Openbox") or [[4]](https://bbs.archlinux.org/viewtopic.php?pid=993738) for solution.
-
-### Other desktops and window managers
-
-In all other scenarios it is recommended to use the GNOME applet. You will also need to be sure that the [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) package is installed to be able to display the applet.
-
-To store connection secrets install and configure [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
-
-In order to run `nm-applet` without a systray, you can use [trayer](https://www.archlinux.org/packages/?name=trayer) or [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). For example, you can add a script like this one in your path:
-
- `nmgui` 
-```
-#!/bin/sh
-nm-applet    2>&1 > /dev/null &
-stalonetray  2>&1 > /dev/null
-killall nm-applet
-
-```
-
-When you close the *stalonetray* window, it closes `nm-applet` too, so no extra memory is used once you are done with network settings.
+`nm-applet` installs the autostart file at `/etc/xdg/autostart/nm-applet.desktop`. If you have issues with it (e.g. `nm-applet` is started twice or is not started at all), see [Openbox#autostart](/index.php/Openbox#autostart "Openbox") or [[3]](https://bbs.archlinux.org/viewtopic.php?pid=993738) for solution.
 
 ### Command line
 

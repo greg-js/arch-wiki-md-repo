@@ -17,6 +17,7 @@ This article overviews some useful extensions which enhance security and privacy
     *   [1.12 Decentraleyes](#Decentraleyes)
     *   [1.13 CanvasBlocker](#CanvasBlocker)
     *   [1.14 Random User Agent](#Random_User_Agent)
+    *   [1.15 Privacy Settings](#Privacy_Settings)
 *   [2 Configuration tweaks](#Configuration_tweaks)
     *   [2.1 Enable tracking protection](#Enable_tracking_protection)
     *   [2.2 Change browser time zone](#Change_browser_time_zone)
@@ -24,6 +25,11 @@ This article overviews some useful extensions which enhance security and privacy
     *   [2.4 Disable battery api](#Disable_battery_api)
     *   [2.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
     *   [2.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
+    *   [2.7 Disable crash reporting and telemetry](#Disable_crash_reporting_and_telemetry)
+    *   [2.8 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
+    *   [2.9 Disable geolocation](#Disable_geolocation)
+    *   [2.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
+    *   [2.11 Disable WebGL](#Disable_WebGL)
 
 ## Extensions
 
@@ -111,20 +117,28 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 
 [Random User Agent](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/) rotates complete browser profiles (from real browsers/devices) at a user defined time interval. It includes many extra privacy enhancing options.
 
+### Privacy Settings
+
+[Privacy Settings](https://addons.mozilla.org/firefox/addon/privacy-settings/) provides a toolbar panel for easily altering Firefox's built-in privacy settings.
+
 ## Configuration tweaks
 
 The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
 
+In addition, see the following links:
+
+*   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
+*   [user.js Firefox hardening stuff](https://github.com/pyllyukko/user.js) - This is a user.js configuration file for Mozilla Firefox that's supposed to harden Firefox's settings and make it more secure.
+
 ### Enable tracking protection
 
-Mozilla's built-in tracking protection may be enabled in `about:config` by setting the following preference to `true`:
+Firefox gained an option for [tracking protection](https://support.mozilla.org/en-US/kb/tracking-protection-firefox). It can be enabled by setting `about:config`:
 
-```
-privacy.trackingprotection.enabled
+*   privacy.trackingprotection.enabled true
 
-```
+Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
 
-Note that this is not a replacement for extensions such as UBlock Origin and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet "List of applications/Internet").
+Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet "List of applications/Internet").
 
 ### Change browser time zone
 
@@ -173,12 +187,11 @@ Battery status api may be used to fingerprint the user[[4]](http://eprint.iacr.o
 
 To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
 
-*   `media.peerconnection.ice.default_address_only` to **true** (Firefox < 51)
-*   `media.peerconnection.ice.no_host` to **true** (Firefox >= 51)
+*   `media.peerconnection.ice.default_address_only` to **true**
+*   `media.peerconnection.enabled` to **false**.
+*   `media.peerconnection.ice.no_host` to **true** (this key may need to be created)
 
-or use [Disable Hello, Pocket & Reader+ extension](https://addons.mozilla.org/firefox/addon/disable-hello-pocket-reader/).
-
-You can use this [WebRTC test page](http://net.ipcalf.com/) to confirm that your internal IP address is no longer leaked.
+You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://www.privacytools.io/webrtc.html) to confirm that your internal/external IP address is no longer leaked.
 
 ### Disable 1024-bit Diffie-Hellman primes
 
@@ -191,3 +204,31 @@ security.ssl3.dhe_rsa_aes_256_sha
 ```
 
 Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
+
+### Disable crash reporting and telemetry
+
+*   Set `breakpad.reportURL` to a blank value
+*   Set `toolkit.telemetry.enabled` to **false**
+
+### Enable Do Not Track Header (DNT)
+
+**Note:** The user has no control over whether the request is honoured or not.
+
+Set `privacy.donottrackheader.enabled` to **true** or toggle it in Preferences under Privacy.
+
+### Disable geolocation
+
+Set `geo.enabled` to **false** and `geo.wifi.uri` to a blank value in `about:config`.
+
+### Disable Safe Browsing service
+
+Safe Browsing offers phishing protection and malware checks, however it may send user information (e.g. URL, file hashes, etc.) to third parties like Google.
+
+To disable the Safe Browsing service, in `about:config` set:
+
+*   Set `browser.safebrowsing.malware.enabled` to **false**
+*   Set `browser.safebrowsing.phishing.enabled` to **false**
+
+### Disable WebGL
+
+WebGL is a potential [security risk](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern). Set `webgl.disabled` to **true** in `about:config` if you want to disable it.

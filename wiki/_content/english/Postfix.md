@@ -96,18 +96,13 @@ See [this page](http://www.postfix.org/TLS_README.html) for more information abo
 
 	 `home_mailbox = Maildir/` 
 
-**Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration:
-```
-smtpd_tls_mandatory_protocols=!SSLv2,!SSLv3
-smtp_tls_mandatory_protocols=!SSLv2,!SSLv3
-smtpd_tls_protocols=!SSLv2,!SSLv3
-smtp_tls_protocols=!SSLv2,!SSLv3
-smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK, aECDH, EDH-DSS-DES-CBC3-SHA, EDH-RSA-DES-CDC3-SHA, KRB5-DE5, CBC3-SHA
-```
+**Warning:** If you plan on implementing SSL/TLS, please respond safely to [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration: `smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK, aECDH, EDH-DSS-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, KRB5-DES, CBC3-SHA` 
 
 Then, generate a [dhparam file](https://www.openssl.org/docs/apps/dhparam.html) by following [these instructions](https://weakdh.org/sysadmin.html) and then adding the following to your configuration:
 
  `smtpd_tls_dh1024_param_file = ${config_directory}/dhparams.pem` 
+
+Since mid-2015, the default settings have been safe against [POODLE](http://disablessl3.com/).
 
 #### Default message and mailbox size limits
 

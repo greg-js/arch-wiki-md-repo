@@ -148,7 +148,9 @@ screen=1
 
 Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[1]](http://jonls.dk/redshift/#known-bugs-and-limitations)
 
-Changing screen backlight is possible with redshift hooks and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr). You need to create a file in `~/.config/redshift/hooks` and make it executable. You can use and edit this example.
+Changing screen backlight is possible with redshift hooks and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) but, please see [Backlight#xbacklight](/index.php/Backlight#xbacklight "Backlight") as there are some limitations and you may have to find another method of controlling the backlight depending on your hardware.
+
+You need to create a file in `~/.config/redshift/hooks` and make it executable. You can use and edit this example.
 
  `~/.config/redshift/hooks/brightness.sh` 
 ```

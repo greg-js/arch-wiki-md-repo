@@ -33,18 +33,16 @@ To give you admin access, copy your SSH public key to `/var/lib/gitolite/*userna
 Then run the Gitolite setup script as the *gitolite* user.
 
 ```
-# su - gitolite
-$ gitolite setup -pk *username*.pub
+# sudo -u gitolite gitolite setup -pk /var/lib/gitolite/*username*.pub
 
 ```
 
 This puts your public key into the gitolite-admin keydir and gives your username RW+ access to the gitolite-admin repository
 
-You can now remove the SSH public key you copied and exit the *gitolite* user shell
+You can now remove the copy of your SSH public key
 
 ```
-$ rm *username*.pub
-$ exit
+# rm /var/lib/gitolite/*username*.pub
 
 ```
 

@@ -105,9 +105,7 @@ For each item you add, `lxqt-config-session` will create a .desktop-file at `~/.
 
 ### Set-up environment variables
 
-Environment variables for LXQt session can be defined in Session Settings.
-
-For example use `SAL_USE_VCLPLUGIN=gtk` to force starting libreoffice with gtk2 UI.
+[Environment variables](/index.php/Environment_variables "Environment variables") for LXQt session can be defined in Session Settings.
 
 ### Editing the Application Menu
 

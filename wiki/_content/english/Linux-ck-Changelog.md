@@ -1,6 +1,13 @@
-Go back to [Linux-ck](/index.php/Linux-ck "Linux-ck").
+**Bump to v4.8.10-2**
 
-* * *
+*   Changelog: Bump to ck8 with MuQSS 0.144
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9ad082999b718903e2346649a4e4fda4766bef4d](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=9ad082999b718903e2346649a4e4fda4766bef4d)
+
+**Bump to v4.8.10-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.10](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.10)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=2265c8b970a60ad4a64977421d77238e995df735](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=2265c8b970a60ad4a64977421d77238e995df735)
+*   Note: CK will be releasing ck8 in several hours so I am holding off on building 4.8.10-1 for [repo-ck]. AUR users are of course free to do it.
 
 **Bump to v4.8.9-3**
 

@@ -36,13 +36,14 @@
     *   [4.4 Terminal color themes or palettes](#Terminal_color_themes_or_palettes)
         *   [4.4.1 Changing default color theme](#Changing_default_color_theme)
         *   [4.4.2 Terminal tango color theme](#Terminal_tango_color_theme)
-    *   [4.5 Colour management](#Colour_management)
-    *   [4.6 Multiple monitors](#Multiple_monitors)
-    *   [4.7 SSH agents](#SSH_agents)
-    *   [4.8 Scroll a background window without shifting focus on it](#Scroll_a_background_window_without_shifting_focus_on_it)
-    *   [4.9 Mouse button modifier](#Mouse_button_modifier)
-    *   [4.10 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
-    *   [4.11 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
+    *   [4.5 Open URL's by middle mouse in terminal](#Open_URL.27s_by_middle_mouse_in_terminal)
+    *   [4.6 Colour management](#Colour_management)
+    *   [4.7 Multiple monitors](#Multiple_monitors)
+    *   [4.8 SSH agents](#SSH_agents)
+    *   [4.9 Scroll a background window without shifting focus on it](#Scroll_a_background_window_without_shifting_focus_on_it)
+    *   [4.10 Mouse button modifier](#Mouse_button_modifier)
+    *   [4.11 Set the two fingers click to middle click for a touchpad](#Set_the_two_fingers_click_to_middle_click_for_a_touchpad)
+    *   [4.12 Limit the minimum brightness of the brightness-slider](#Limit_the_minimum_brightness_of_the_brightness-slider)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Action buttons are missing icons](#Action_buttons_are_missing_icons)
     *   [5.2 Desktop icons rearrange themselves](#Desktop_icons_rearrange_themselves)
@@ -444,6 +445,16 @@ ColorPalette14=#adad7f7fa8a8
 ColorPalette15=#3434e2e2e2e2
 ColorPalette16=#eeeeeeeeecec
 
+```
+
+### Open URL's by middle mouse in terminal
+
+On update to version 0.8 open URL with middle mouse turned off by default and just paste clip to cursor. To enable old behavior fix next option in `${XDG_CONFIG_HOME}/xfce4/terminal/terminalrc` (`XDG_CONFIG_HOME=${HOME}/.config` by default)
+
+ `${XDG_CONFIG_HOME}/xfce4/terminal/terminalrc` 
+```
+[Configuration]
+MiscMiddleClickOpensUri=TRUE
 ```
 
 ### Colour management

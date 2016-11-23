@@ -179,10 +179,13 @@ Make sure you are using a kernel with the option `CONFIG_EXT4_ENCRYPTION` enable
 
 Then verify that your filesystem is using a supported block size for encryption:
 
+ `# tune2fs -l /dev/*device* | grep 'Block size'` 
 ```
-# tune2fs -l /dev/*device* | grep 'Block size'
 Block size:               4096
-# getconf PAGE_SIZE
+
+```
+ `# getconf PAGE_SIZE` 
+```
 4096
 
 ```

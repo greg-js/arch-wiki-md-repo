@@ -398,8 +398,9 @@ upgrade_pg.sh
 ```
 
 ```
-## Set the old version that we want to upgrade from.
-export FROM_VERSION=9.5
+# Usage: sh ./upgrade_pg.sh <x.y version to update from>
+
+FROM_VERSION="$1"
 
 pacman -S --needed postgresql-old-upgrade
 chown postgres:postgres /var/lib/postgres/

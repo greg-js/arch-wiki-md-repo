@@ -10,9 +10,8 @@
     *   [2.3 Text wrapping](#Text_wrapping)
 *   [3 Usage](#Usage)
     *   [3.1 Special functions](#Special_functions)
-        *   [3.1.1 Shortcut lists overview](#Shortcut_lists_overview)
-        *   [3.1.2 Selected toggle functions](#Selected_toggle_functions)
-*   [4 Tips & tricks](#Tips_.26_tricks)
+    *   [3.2 Selected toggle functions](#Selected_toggle_functions)
+*   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Replacing vi with nano](#Replacing_vi_with_nano)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Hijacked keybindings](#Hijacked_keybindings)
@@ -76,30 +75,14 @@ set nowrap
 
 ## Usage
 
+Shortcuts can be viewed from inside *nano*. See the nano online help files via `Ctrl+g` within nano and the [nano Command Manual](https://www.nano-editor.org/dist/latest/nano.html) for complete descriptions and additional support.
+
 ### Special functions
 
 *   `Ctrl` key modified shortcuts (`^`) representing commonly used functions are listed along the bottom two lines of the nano screen.
 *   Additional functions can be interactively toggled by way of `Meta` (typically `Alt`) and/or `Esc` key modified sequences.
 
-#### Shortcut lists overview
-
-| Key1 | Key2 | Command | Description |
-| ^G | F1 | Get Help | Displays the online help files within the session window. A suggested read for nano users of all levels |
-| ^X | F2 | Exit | Close and exit nano |
-| ^O | F3 | WriteOut | Save the contents of the current file buffer to a file on the disk |
-| ^J | F4 | Justify | Aligns text according to the geometry of the console window |
-| ^R | F5 | Read File | Inserts another file into the current one at the cursor location |
-| ^W | F6 | Where | Perform a case-insensitive string, or regular expression search |
-| ^Y | F7 | Prev Page | Display the previous buffered screen |
-| ^V | F8 | Next Page | Display the next buffered screen |
-| ^K | F9 | Cut Text | Cut and store the current line from the beginning of the line to the end of the line |
-| ^U | F10 | UnCut Text | Paste the contents of the cut buffer to the current cursor location |
-| ^C | F11 | Cur Pos | Display line, column and character position information at the current location of the cursor |
-| ^T | F12 | To Spell | Spellcheck the contents of the buffer with the built-in `spell`, if available |
-
-**Tip:** See the nano online help files via `Ctrl+g` within nano and the [nano Command Manual](https://www.nano-editor.org/dist/latest/nano.html) for complete descriptions and additional support.
-
-#### Selected toggle functions
+### Selected toggle functions
 
 | Key1 | Key2 | Description |
 | Meta+c | Esc+c | Toggles support for line, column and character position information |
@@ -110,13 +93,11 @@ set nowrap
 
 **Tip:** [Feature Toggles](https://www.nano-editor.org/dist/latest/nano.html#Feature-Toggles) lists the global toggles available for nano.
 
-## Tips & tricks
+## Tips and tricks
 
 ### Replacing vi with nano
 
-Casual users may prefer to use `nano` over `vi` for its simplicity and ease of use, and may opt to replace vi with nano as the default text editor for commands such as [visudo](/index.php/Sudo#Using_visudo "Sudo").
-
-Setting the `VISUAL` and `EDITOR` [environment variables](/index.php/Environment_variable#Defining_variables "Environment variable") will work for many applications, for example:
+To replace vi with nano as the default text editor for commands such as [visudo](/index.php/Sudo#Using_visudo "Sudo"), set the `VISUAL` and `EDITOR` [environment variables](/index.php/Environment_variable#Defining_variables "Environment variable"), for example:
 
 ```
 export VISUAL=nano
