@@ -30,7 +30,7 @@ There are several supported ODROID ARM boards available to consumers. This wiki 
 
 See the installation instructions at the [Arch ARM](https://archlinuxarm.org) project page.
 
-*   [ODROID-U2 (armv8)](https://archlinuxarm.org/platforms/armv8/amlogic/odroid-c2)
+*   [ODROID-C2 (armv8)](https://archlinuxarm.org/platforms/armv8/amlogic/odroid-c2)
 *   [ODROID-C1 (armv7)](https://archlinuxarm.org/platforms/armv7/amlogic/odroid-c1)
 *   [ODROID-U2 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-u2)
 *   [ODROID-U3 (armv7)](https://archlinuxarm.org/platforms/armv7/samsung/odroid-u3)

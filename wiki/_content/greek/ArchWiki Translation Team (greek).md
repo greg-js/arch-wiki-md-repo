@@ -34,7 +34,7 @@
 | [eliasps](/index.php/User:Eliasps "User:Eliasps") |
 | [Goldenbeetle](/index.php/User:Goldenbeetle "User:Goldenbeetle") |
 | [Ammer](/index.php/User:Ammer "User:Ammer") |
-| [Sudowoodo](/index.php/User:Sudowoodo "User:Sudowoodo") |
+| [Sudowoodo](/index.php/User:Sudowoodo "User:Sudowoodo") | [fragos.george](/index.php?title=User:Fragos.george&action=edit&redlink=1 "User:Fragos.george (page does not exist)") |
 
 ### Οργάνωση της μετάφρασης
 
@@ -104,6 +104,6 @@ H οργάνωση της μετάφρασης γίνεται στην πλατ�
 | [Bad_translation_(Ελληνικά)](/index.php/Template:Bad_translation_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Bad translation (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Out_of_date_(Ελληνικά)](/index.php/Template:Out_of_date_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Out of date (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Deletion_(Ελληνικά)](/index.php/Template:Deletion_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Deletion (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
-| [Beginners'_Guide_navigation_(Ελληνικά)](/index.php/Template:Beginners%27_Guide_navigation_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Beginners' Guide navigation (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
+| [Beginners'_Guide_navigation_(Ελληνικά)](/index.php?title=Template:Beginners%27_Guide_navigation_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC)&action=edit&redlink=1 "Template:Beginners' Guide navigation (Ελληνικά) (page does not exist)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Related articles start (Ελληνικά)](/index.php/Template:Related_articles_start_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Related articles start (Ελληνικά)") | [NikTh](/index.php/User:NikTh "User:NikTh") | 100% |
 | [Poor writing (Ελληνικά)](/index.php/Template:Poor_writing_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Template:Poor writing (Ελληνικά)") | [Sudowoodo](/index.php/User:Sudowoodo "User:Sudowoodo") | 100% |

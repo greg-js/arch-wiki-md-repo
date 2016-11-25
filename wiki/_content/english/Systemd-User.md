@@ -261,6 +261,13 @@ $ journalctl --user -u myunit.service
 
 ```
 
+For a user unit, use
+
+```
+$ journalctl --user --user-unit myunit.service
+
+```
+
 Note that there seems to be some sort of bug that can sometimes stop output from user services from being properly attributed to their service unit. Therefore, filtering by the `-u` may unwittingly exclude some of the output from the service units.
 
 ## Some use cases

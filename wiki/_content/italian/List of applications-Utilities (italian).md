@@ -77,7 +77,7 @@ Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical
 
 *   **ClipIt** — Un fork di Parcellite con caratteristiche addizionale e bugfix.
 
-	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://www.archlinux.org/packages/?name=clipit)
+	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
 *   **CopyQ** — Un manager degli appunti con ricerca e modifica dello storico, azioni personalizzabili con oggetti e supporto alla riga di comando.
 

@@ -45,12 +45,7 @@ options snd-hda-intel model=dell-headset-multi
 
 ```
 
-To enable power saving functionality for the audio card create `/etc/modprobe.d/audio_powersave.conf` containing:
-
-```
-options snd_hda_intel power_save=1
-
-```
+**Warning:** Restoring the laptop from suspend will bring the noise back.
 
 To enable power-saving functionality for the Intel graphics card create `/etc/modprobe.d/i915.conf` containing:
 

@@ -12,29 +12,30 @@ The [Zsh FAQ](http://zsh.sourceforge.net/FAQ/zshfaq01.html#l4) offers more reaso
     *   [3.1 Simple .zshrc](#Simple_.zshrc)
     *   [3.2 Configuring $PATH](#Configuring_.24PATH)
     *   [3.3 Command completion](#Command_completion)
-    *   [3.4 Autostart X at login](#Autostart_X_at_login)
-    *   [3.5 The "command not found" hook](#The_.22command_not_found.22_hook)
-    *   [3.6 The ttyctl command](#The_ttyctl_command)
-    *   [3.7 Key bindings](#Key_bindings)
-        *   [3.7.1 Bind key to ncurses application](#Bind_key_to_ncurses_application)
-        *   [3.7.2 Alternate way to bind ncurses application](#Alternate_way_to_bind_ncurses_application)
-        *   [3.7.3 File manager key binds](#File_manager_key_binds)
-    *   [3.8 History search](#History_search)
-    *   [3.9 Prompts](#Prompts)
-        *   [3.9.1 Prompt themes](#Prompt_themes)
-        *   [3.9.2 Customized prompt](#Customized_prompt)
-            *   [3.9.2.1 Colors](#Colors)
-            *   [3.9.2.2 Example](#Example)
-    *   [3.10 Remembering recent directories](#Remembering_recent_directories)
-        *   [3.10.1 Dirstack](#Dirstack)
-        *   [3.10.2 cdr](#cdr)
-    *   [3.11 Help command](#Help_command)
-    *   [3.12 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
-    *   [3.13 Sample .zshrc files](#Sample_.zshrc_files)
-    *   [3.14 Configuration Frameworks](#Configuration_Frameworks)
-    *   [3.15 Persistent rehash](#Persistent_rehash)
-*   [4 Uninstallation](#Uninstallation)
-*   [5 See also](#See_also)
+    *   [3.4 Key bindings](#Key_bindings)
+    *   [3.5 History search](#History_search)
+    *   [3.6 Prompts](#Prompts)
+        *   [3.6.1 Prompt themes](#Prompt_themes)
+        *   [3.6.2 Customized prompt](#Customized_prompt)
+            *   [3.6.2.1 Colors](#Colors)
+            *   [3.6.2.2 Example](#Example)
+    *   [3.7 Sample .zshrc files](#Sample_.zshrc_files)
+    *   [3.8 Configuration Frameworks](#Configuration_Frameworks)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Autostart X at login](#Autostart_X_at_login)
+    *   [4.2 The "command not found" hook](#The_.22command_not_found.22_hook)
+    *   [4.3 The ttyctl command](#The_ttyctl_command)
+    *   [4.4 Remembering recent directories](#Remembering_recent_directories)
+        *   [4.4.1 Dirstack](#Dirstack)
+        *   [4.4.2 cdr](#cdr)
+    *   [4.5 Help command](#Help_command)
+    *   [4.6 Fish-like syntax highlighting](#Fish-like_syntax_highlighting)
+    *   [4.7 Persistent rehash](#Persistent_rehash)
+    *   [4.8 Bind key to ncurses application](#Bind_key_to_ncurses_application)
+    *   [4.9 File manager key binds](#File_manager_key_binds)
+    *   [4.10 xterm title](#xterm_title)
+*   [5 Uninstallation](#Uninstallation)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -70,6 +71,8 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 **Tip:** If replacing [bash](https://www.archlinux.org/packages/?name=bash), users may want to move some code from `~/.bashrc` to `~/.zshrc` (e.g. the prompt and the [aliases](/index.php/Bash#Aliases "Bash")) and from `~/.bash_profile` to `~/.zprofile` (e.g. [the code that starts the X Window System](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc")).
 
 ## Startup/Shutdown files
+
+**Tip:** See [A User's Guide to the Z-Shell](http://zsh.sourceforge.net/Guide/zshguide02.html) for explanation on interactive and login shells, and what to put in your startup files.
 
 **Note:**
 
@@ -206,88 +209,11 @@ setopt COMPLETE_ALIASES
 
 ```
 
-### Autostart X at login
-
-See [Xinitrc#Autostart X at login](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc").
-
-### The "command not found" hook
-
-[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command.
-
-You need to [source](/index.php/Source "Source") the hook to enable it, for example:
-
- `~/.zshrc` 
-```
-source /usr/share/doc/pkgfile/command-not-found.zsh
-
-```
-
-### The ttyctl command
-
-[[1]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
-
- `~/.zshrc` 
-```
-ttyctl -f
-
-```
-
 ### Key bindings
 
 Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`. ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
 See also [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
-
-#### Bind key to ncurses application
-
-Bind a ncurses application to a keystoke, but it will not accept interaction. Use `BUFFER` variable to make it work. The following example lets users open ncmpcpp using `Alt+\`:
-
- `~/.zshrc` 
-```
-ncmpcppShow() { BUFFER="ncmpcpp"; zle accept-line; }
-zle -N ncmpcppShow
-bindkey '^[\' ncmpcppShow
-```
-
-#### Alternate way to bind ncurses application
-
-This method will keep everything you entered in the line before calling application
-
- `~/.zshrc` 
-```
-ncmpcppShow() { ncmpcpp <$TTY; zle redisplay; }
-zle -N ncmpcppShow
-bindkey '^[\' ncmpcppShow
-```
-
-#### File manager key binds
-
-Key binds like those used in graphic file managers may come handy. The first comes back in directory history (`Alt+Left`), the second let the user go to the parent directory (`Alt+Up`). They also display the directory content.
-
- `~/.zshrc` 
-```
-cdUndoKey() {
-  popd      > /dev/null
-  zle       reset-prompt
-  echo
-  ls
-  echo
-}
-
-cdParentKey() {
-  pushd .. > /dev/null
-  zle      reset-prompt
-  echo
-  ls
-  echo
-}
-
-zle -N                 cdParentKey
-zle -N                 cdUndoKey
-bindkey '^[[1;3A'      cdParentKey
-bindkey '^[[1;3D'      cdUndoKey
-
-```
 
 ### History search
 
@@ -385,6 +311,58 @@ username@host ~ %                                                         [0]
 
 ```
 
+### Sample .zshrc files
+
+*   A package in offical repository named [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) comes from [https://grml.org/zsh](https://grml.org/zsh) and provides a zshrc file that includes many tweaks for Zshell. This is the default configuration for the [monthly ISO releases](https://www.archlinux.org/download/).
+*   [https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc) - basic setup, with dynamic prompt and window title/hardinfo.
+*   [https://github.com/slashbeast/things/blob/master/configs/DOTzshrc](https://github.com/slashbeast/things/blob/master/configs/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
+
+See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
+
+### Configuration Frameworks
+
+*   **Antigen** — A plugin manager for zsh, inspired by oh-my-zsh and vundle.
+
+	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
+
+*   **oh-my-zsh** — A popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
+
+	[https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) || [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/)
+
+**Note:** For themes to work you may need to set `setopt NO_GLOBAL_RCS` in the `~/.zshenv` file, otherwise changes to some variables (such as `$PROMPT`) may be overwritten.
+
+*   **Prezto** — A configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
+
+	[https://github.com/sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto) || [prezto-git](https://aur.archlinux.org/packages/prezto-git/)
+
+## Tips and tricks
+
+### Autostart X at login
+
+See [Xinitrc#Autostart X at login](/index.php/Xinitrc#Autostart_X_at_login "Xinitrc").
+
+### The "command not found" hook
+
+[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command.
+
+You need to [source](/index.php/Source "Source") the hook to enable it, for example:
+
+ `~/.zshrc` 
+```
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+```
+
+### The ttyctl command
+
+[[1]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
+
+ `~/.zshrc` 
+```
+ttyctl -f
+
+```
+
 ### Remembering recent directories
 
 #### Dirstack
@@ -427,32 +405,9 @@ to print the dirstack. Use `cd -<NUM>` to go back to a visited folder. Use autoc
 
 #### cdr
 
-[cdr](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session. To use cdr add the following lines to shell configuration:
+cdr allows you to change the working directory to a previous working directory from a list maintained automatically. It stores all entries in files that are maintained across sessions and (by default) between terminal emulators in the current session.
 
- `.zshrc` 
-```
-autoload -Uz cdr add-zsh-hook
-add-zsh-hook -Uz chpwd chpwd_recent_dirs
-
-```
-
-Recent directories list by default is stored in `${ZDOTDIR:-$HOME}/.chpwd-recent-dirs`, to change it use `zstyle`:
-
-```
-zstyle ':chpwd:*' recent-dirs-file "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/chpwd-recent-dirs"
-
-```
-
-Every time you change directory interactively, no matter which command you use, the directory to which you change will be remembered in most-recent-first order.
-
-To print the list of recent directories use:
-
-```
-$ cdr -l
-
-```
-
-Use `cdr <NUM>` to go back to a visited folder. Completion for the argument to cdr is available if compinit has been run; menu selection is recommended.
+See [Remembering Recent Directories](http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Recent-Directories) in zshcontrib(1).
 
 ### Help command
 
@@ -489,30 +444,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 ```
 
-### Sample .zshrc files
-
-*   A package in offical repository named [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) comes from [https://grml.org/zsh](https://grml.org/zsh) and provides a zshrc file that includes many tweaks for Zshell. This is the default configuration for the [monthly ISO releases](https://www.archlinux.org/download/).
-*   [https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc](https://github.com/MrElendig/dotfiles-alice/blob/master/.zshrc) - basic setup, with dynamic prompt and window title/hardinfo.
-*   [https://github.com/slashbeast/things/blob/master/configs/DOTzshrc](https://github.com/slashbeast/things/blob/master/configs/DOTzshrc) - zshrc with multiple features, be sure to check out comments into it. Notable features: confirm function to ensure that user want to run poweroff, reboot or hibernate, support for GIT in prompt (done without vcsinfo), tab completion with menu, printing current executed command into window's title bar and more.
-
-See [dotfiles#Repositories](/index.php/Dotfiles#Repositories "Dotfiles") for more.
-
-### Configuration Frameworks
-
-*   **Antigen** — A plugin manager for zsh, inspired by oh-my-zsh and vundle.
-
-	[https://github.com/zsh-users/antigen](https://github.com/zsh-users/antigen) || [antigen-git](https://aur.archlinux.org/packages/antigen-git/)
-
-*   **oh-my-zsh** — A popular, community-driven framework for managing your Zsh configuration. It comes bundled with a ton of helpful functions, helpers, plugins, themes.
-
-	[https://github.com/robbyrussell/oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) || [oh-my-zsh-git](https://aur.archlinux.org/packages/oh-my-zsh-git/)
-
-**Note:** For themes to work you may need to set `setopt NO_GLOBAL_RCS` in the `~/.zshenv` file, otherwise changes to some variables (such as `$PROMPT`) may be overwritten.
-
-*   **Prezto** — A configuration framework for Zsh. It comes with modules, enriching the command line interface environment with sane defaults, aliases, functions, auto completion, and prompt themes.
-
-	[https://github.com/sorin-ionescu/prezto](https://github.com/sorin-ionescu/prezto) || [prezto-git](https://aur.archlinux.org/packages/prezto-git/)
-
 ### Persistent rehash
 
 Typically, compinit will not automatically find new executables in the `$PATH`. For example, after you install a new package, the files in /usr/bin would not be immediately or automatically included in the completion. Thus, to have these new exectuables included, one would run:
@@ -531,6 +462,100 @@ zstyle ':completion:*' rehash true
 ```
 
 **Note:** This hack has been found in a [PR for Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh/issues/3440).
+
+### Bind key to ncurses application
+
+Bind a ncurses application to a keystoke, but it will not accept interaction. Use `BUFFER` variable to make it work. The following example lets users open ncmpcpp using `Alt+\`:
+
+ `~/.zshrc` 
+```
+ncmpcppShow() { BUFFER="ncmpcpp"; zle accept-line; }
+zle -N ncmpcppShow
+bindkey '^[\' ncmpcppShow
+```
+
+An alternate method, that will keep everything you entered in the line before calling application:
+
+ `~/.zshrc` 
+```
+ncmpcppShow() { ncmpcpp <$TTY; zle redisplay; }
+zle -N ncmpcppShow
+bindkey '^[\' ncmpcppShow
+```
+
+### File manager key binds
+
+Key binds like those used in graphic file managers may come handy. The first comes back in directory history (`Alt+Left`), the second let the user go to the parent directory (`Alt+Up`). They also display the directory content.
+
+ `~/.zshrc` 
+```
+cdUndoKey() {
+  popd      > /dev/null
+  zle       reset-prompt
+  echo
+  ls
+  echo
+}
+
+cdParentKey() {
+  pushd .. > /dev/null
+  zle      reset-prompt
+  echo
+  ls
+  echo
+}
+
+zle -N                 cdParentKey
+zle -N                 cdUndoKey
+bindkey '^[[1;3A'      cdParentKey
+bindkey '^[[1;3D'      cdUndoKey
+
+```
+
+### xterm title
+
+xterm title is set with [xterm escape sequences](http://tldp.org/HOWTO/Xterm-Title-3.html#ss3.1). For example:
+
+```
+print -n '\e]2;My xterm title\a'
+
+```
+
+will set the title to
+
+```
+My xterm title
+
+```
+
+An simple way to have a dynamic title is to set the title in a [hook function](http://zsh.sourceforge.net/Doc/Release/Functions.html#Hook-Functions), particularly `precmd` and `preexec`.
+
+By using `print -P` you can take advantage of prompt escapes. Title printing can be split up in multiple commands as long as they are sequential.
+
+ `~/.zshrc` 
+```
+autoload -Uz add-zsh-hook
+
+function xterm_title_precmd () {
+	print -Pn '\e]2;%n@%m %1~\a'
+}
+
+function xterm_title_preexec () {
+	print -Pn '\e]2;%n@%m %1~ %# '
+	print -n "${(q)1}\a"
+}
+
+if [[ "$TERM" == (screen*|xterm*|rxvt*) ]]; then
+	add-zsh-hook -Uz precmd xterm_title_precmd
+	add-zsh-hook -Uz preexec xterm_title_preexec
+fi
+
+```
+
+**Warning:**
+
+*   Do not use `-P` option of `print` when printing variables to prevent them from being parsed as prompt escapes.
+*   Use `q` [parameter expansion flag](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion-Flags) when printing variables to prevent them from being parsed as escape sequences.
 
 ## Uninstallation
 

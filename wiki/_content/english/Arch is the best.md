@@ -845,7 +845,9 @@ print "Arch is the best!
 
 ```
 
-	Perl6
+	Perl 6
+
+	The latest member of the Perl family.
 
 ```
 #!/usr/bin/env perl6

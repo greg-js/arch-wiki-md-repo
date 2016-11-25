@@ -157,7 +157,7 @@ Thunar는 루트 파티션 외에 `/etc/fstab`에 정의된 파티션들은 기�
 
 ### 바이러스 검색
 
-바이러스 검색 기능을 위해서는 [clamav](https://www.archlinux.org/packages/?name=clamav), [clamtk](https://aur.archlinux.org/packages/clamtk/)을 설치한다.
+바이러스 검색 기능을 위해서는 [clamav](https://www.archlinux.org/packages/?name=clamav), [clamtk](https://www.archlinux.org/packages/?name=clamtk)을 설치한다.
 
 | Name | Command | File patterns | Appears if selection contains |
 | Scan for virus | `clamtk %F` | * | Select all |

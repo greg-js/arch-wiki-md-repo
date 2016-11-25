@@ -1,4 +1,4 @@
-**Note:** This page refers to the early 2015 model of XPS 13\. For the late 2015 model, see [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)").
+**Note:** This page refers to the *early* 2015 model of XPS 13\. For the *late* 2015 model, see [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)").
 
 | **Device** | **Status** |
 | Video | Working |
@@ -11,9 +11,9 @@
 | Card Reader | Working |
 | Wireless switch | Working ([Some issues with kde](#rfkill_issues_with_KDE)) |
 
-The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of Dell's XPS 13 line. Like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team. They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
+The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of Dell's XPS 13 line. Like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team[[1]](https://bartongeorge.io/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/). They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
 
-The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
+The installation process for Arch Linux on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
 As of kernel 4.1.3, a patched kernel is no longer necessary and this means Installation Media older than 2015.08.01 (release date: 2015-08-01) should all be able to boot this machine without problems.
 
@@ -52,9 +52,11 @@ However, some manual configuration is still recommended to get the best experien
 
 ## Model differences
 
-Although the XPS 13 is sold in a variety of configurations in most markets, those wanting to run Linux should pay special attention to **display** options (FHD or QHD+) and **Wi-Fi adapter** differences (Dell DW1560 or Intel 7265). For users with the QHD+ model, they need to use a DE/WM that properly supports [HiDPI](/index.php/HiDPI "HiDPI"). Regarding the Wi-Fi adapter, both cards work in Arch Linux; while the Intel 7265 has mainline kernel support, hence it will works out-of-the-box, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are in the proper below section.
+Although the XPS 13 is sold in a variety of configurations in most markets, those wanting to run Linux should pay special attention to **display** options (FHD or QHD+) and **Wi-Fi adapter** differences (Dell DW1560 or Intel 7265).
 
-There are no exclusive hardware differences between the *Developer Edition* and the *Windows edition* of this laptop that means this guide is equally applicable to both models.
+For users with QHD+ display, they need to use a DE/WM that properly supports [HiDPI](/index.php/HiDPI "HiDPI"). Regarding the Wi-Fi adapter, both cards work in Arch Linux; while the Intel 7265 has mainline kernel support, hence it will works out-of-the-box, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are in the proper below section.
+
+There are no exclusive hardware differences between the *Developer Edition* and the *classical edition* (the one with Windows) of this laptop that means this guide is equally applicable to both models.
 
 ## Configuration
 
@@ -90,7 +92,7 @@ Some higher-end models do not use the Dell-branded Broadcom adapter but instead 
 
 ### Bluetooth
 
-**Note:** **Intel Wi-Fi users:** If your Wi-Fi card supports Bluetooth, then the BT interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+**Note:** users with Intel wireless adapter with both Wi-Fi and Bluetooth, the Bluetooth interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
 The Broadcom Bluetooth firmware is not available in the kernel ([source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you need to install [bcm20702a1-firmware](https://aur.archlinux.org/packages/bcm20702a1-firmware/) and reboot if you want to use Bluetooth.
 
@@ -114,13 +116,13 @@ The sound chipset in this laptop, a Realtek ALC3263, is described as "dual-mode"
 
 #### HDA mode
 
-With BIOS A02+ and Arch Linux kernel **4.3 or older**, the sound card will be initialized in HDA mode.
+With BIOS A02+ and official Arch Linux kernel **4.3 or older**, the sound card will be initialized in HDA mode.
 
 To use HDA mode on newer kernels, compile your kernel with the option `CONFIG_ACPI_REV_OVERRIDE_POSSIBLE=y`. This will force HDA mode on; you will not be able to use I2S mode by using that kernel.
 
 ##### Setting the default sound card
 
-By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
+By default, ALSA doesn't output sound to the PCH card but to the HDMI card. This can be changed by following [ALSA#Set the default sound card](/index.php/ALSA#Set_the_default_sound_card "ALSA"). To set the proper order, create the following `.conf` file in `/etc/modprobe.d/` [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1446773#p1446773):
 
  `/etc/modprobe.d/alsa-base.conf`  `options snd_hda_intel index=1,0` 
 
@@ -128,13 +130,13 @@ Note that if you are dual-booting with Windows, you will have to do a cold boot 
 
 #### I2S mode
 
-With BIOS A02+ and Arch kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[2]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer.
+With BIOS A02+ and official Arch Linux kernel **4.4 or newer**, the sound card will be initialized in I2S mode. I2S support requires [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) 1.1.0[[3]](http://www.spinics.net/lists/linux-acpi/msg57457.html) or newer.
 
-**Note:** Kernels 4.5-4.7 require the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[3]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21) otherwise the sound card will not be recognized. This has been resolved in Arch Linux kernel 4.5.2+[[4]](https://bugs.archlinux.org/task/48936); anyhow, a better fix[[5]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e) is included in kernel 4.8.
+**Note:** Kernels 4.5-4.7 require the options `CONFIG_DW_DMAC=y` and `SND_SOC_INTEL_BROADWELL_MACH=m` to be statically compiled[[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1308792#c21) otherwise the sound card will not be recognized. This has been resolved in official Arch Linux kernel 4.5.2+[[5]](https://bugs.archlinux.org/task/48936); anyhow, a better fix[[6]](https://git.kernel.org/cgit/linux/kernel/git/broonie/sound.git/commit/?h=topic/intel&id=a395bdd6b24b692adbce0df6510ec9f2af57573e) is included in kernel 4.8.
 
 ##### Enabling the microphone
 
-**Note:** The microphone appears to be enabled by default as of Arch Linux kernel 4.5.3, so these instructions may be unnecessary.[[6]](https://bugs.archlinux.org/task/47989#comment146876)
+**Note:** The microphone appears to be enabled by default as of official Arch Linux kernel 4.5.3, so these instructions may be unnecessary.[[7]](https://bugs.archlinux.org/task/47989#comment146876)
 
 In I2S mode, the built-in microphone is muted by default. To enable it you have to unmute `Mic` item; follow the instructions below in order to achieve the goal:
 
@@ -183,7 +185,7 @@ Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to
 
 *   With kernel 4.6+, frame-buffer compression (FBC) and panel self-refresh (PSR) are enabled by default, so `i915.enable_fbc` and `i915.enable_psr` are no longer needed. Kernel 4.6.2+ is recommended as older kernels may cause the display to flicker.
 *   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to irc #intel-gfx, "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use."
-*   `i915.enable_rc6=7` is useless on Broadwell/gen8 systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[8]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
+*   `i915.enable_rc6=7` is useless on Broadwell/gen8 systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[9]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
 
 ### Calibrated ICC profile for QHD+ models
 
@@ -223,9 +225,9 @@ See [here](https://bugzilla.kernel.org/show_bug.cgi?id=105251). This issue seems
 
 ### Sound doesn't work after upgrading to kernel 4.4+
 
-You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the Arch 4.4 stock kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode.
+You need to do two cold boots (*don't* reboot; shutdown and turn back on again) to make sound work again. This is necessary because I2S support was enabled in the stock Linux 4.4 kernel, and the XPS 13's embedded controller requires two cold boots to recognize changes in the sound chipset mode.
 
-Refer to the Audio section above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch bug report](https://bugs.archlinux.org/task/47989).
+Refer to the Audio section above for more info, as well as the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=208674) and [Arch Linux bug report](https://bugs.archlinux.org/task/47989).
 
 ### Loud cracks/noise during boot or audio playback
 
@@ -233,7 +235,7 @@ Some users have reported above sound outputs, as described e.g. in [this BBS thr
 
 ### Display freezes while manipulating external displays with Xrandr / random blanking
 
-`xrandr` commands (for eg. [HiDPI#Multiple_displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[9]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [[10]](https://wiki.archlinux.org/index.php/Intel_graphics#Skylake_support). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
+`xrandr` commands (for eg. [HiDPI#Multiple_displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[10]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [[11]](https://wiki.archlinux.org/index.php/Intel_graphics#Skylake_support). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
 
 If you are experiencing freezes in GNOME on Login and/or after, be sure you have latest BIOS installed and disabled the C state feature.
 

@@ -13,91 +13,121 @@
     *   [3.3 Приложения GNOME в Wayland](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_.D0.B2_Wayland)
 *   [4 Навигация](#.D0.9D.D0.B0.D0.B2.D0.B8.D0.B3.D0.B0.D1.86.D0.B8.D1.8F)
     *   [4.1 Старые названия](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B5_.D0.BD.D0.B0.D0.B7.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-*   [5 Использование оболочки](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-    *   [5.1 Шпаргалка GNOME](#.D0.A8.D0.BF.D0.B0.D1.80.D0.B3.D0.B0.D0.BB.D0.BA.D0.B0_GNOME)
-    *   [5.2 Перезапуск оболочки](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-    *   [5.3 Крахи оболочки](#.D0.9A.D1.80.D0.B0.D1.85.D0.B8_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-    *   [5.4 Зависания оболочки](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-*   [6 Интеграция pacman](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_pacman)
-    *   [6.1 GNOME PackageKit](#GNOME_PackageKit)
-    *   [6.2 GNOME Software](#GNOME_Software)
-    *   [6.3 Уведомления об обновлениях пакетов](#.D0.A3.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BE.D0.B1_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
-*   [7 Настройка внешнего вида GNOME](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B5.D0.B3.D0.BE_.D0.B2.D0.B8.D0.B4.D0.B0_GNOME)
-    *   [7.1 Темы оформления](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [7.2 gsettings и dconf](#gsettings_.D0.B8_dconf)
-    *   [7.3 Верхняя панель](#.D0.92.D0.B5.D1.80.D1.85.D0.BD.D1.8F.D1.8F_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D1.8C)
-        *   [7.3.1 Показывать дату в верхней панели](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.B4.D0.B0.D1.82.D1.83_.D0.B2_.D0.B2.D0.B5.D1.80.D1.85.D0.BD.D0.B5.D0.B9_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8)
-        *   [7.3.2 Отключить задержку при выходе из сеанса](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B7.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D1.83_.D0.BF.D1.80.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B5_.D0.B8.D0.B7_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.B0)
-        *   [7.3.3 Показать системный монитор](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D0.B9_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80)
-        *   [7.3.4 Показать информацию о погоде](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D1.8E_.D0.BE_.D0.BF.D0.BE.D0.B3.D0.BE.D0.B4.D0.B5)
-    *   [7.4 Обзор](#.D0.9E.D0.B1.D0.B7.D0.BE.D1.80)
-        *   [7.4.1 Удаление пунктов из меню приложений](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.83.D0.BD.D0.BA.D1.82.D0.BE.D0.B2_.D0.B8.D0.B7_.D0.BC.D0.B5.D0.BD.D1.8E_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
-        *   [7.4.2 Сортировка приложений по папкам](#.D0.A1.D0.BE.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D0.BE_.D0.BF.D0.B0.D0.BF.D0.BA.D0.B0.D0.BC)
-        *   [7.4.3 Изменение размера иконок](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
-            *   [7.4.3.1 Для приложений в меню обзора](#.D0.94.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BC.D0.B5.D0.BD.D1.8E_.D0.BE.D0.B1.D0.B7.D0.BE.D1.80.D0.B0)
-            *   [7.4.3.2 В dash](#.D0.92_dash)
-            *   [7.4.3.3 При переключении по alt-tab](#.D0.9F.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8_.D0.BF.D0.BE_alt-tab)
-            *   [7.4.3.4 В системном трее](#.D0.92_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D0.BE.D0.BC_.D1.82.D1.80.D0.B5.D0.B5)
-        *   [7.4.4 Отключение "горячего угла"](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.22.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B3.D0.BE_.D1.83.D0.B3.D0.BB.D0.B0.22)
-            *   [7.4.4.1 Меню обзора](#.D0.9C.D0.B5.D0.BD.D1.8E_.D0.BE.D0.B1.D0.B7.D0.BE.D1.80.D0.B0)
-            *   [7.4.4.2 Трей сообщений](#.D0.A2.D1.80.D0.B5.D0.B9_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [7.5 Заголовок окна](#.D0.97.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D0.BA_.D0.BE.D0.BA.D0.BD.D0.B0)
-        *   [7.5.1 Уменьшение высоты заголовка окнa](#.D0.A3.D0.BC.D0.B5.D0.BD.D1.8C.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.8B.D1.81.D0.BE.D1.82.D1.8B_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BA.D0.BDa)
-        *   [7.5.2 Изменение порядка кнопок в заголовке окнa](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BA.D0.B0_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.B2_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B5_.D0.BE.D0.BA.D0.BDa)
-        *   [7.5.3 Скрытие заголовка окна при разворачивании](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BA.D0.BD.D0.B0_.D0.BF.D1.80.D0.B8_.D1.80.D0.B0.D0.B7.D0.B2.D0.BE.D1.80.D0.B0.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8)
-        *   [7.5.4 Отключение анимации](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BD.D0.B8.D0.BC.D0.B0.D1.86.D0.B8.D0.B8)
-*   [8 Различные настройки](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
-    *   [8.1 Управление питанием](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC)
-        *   [8.1.1 Выключение сна-в-ОЗУ (S3) при закрытии крышки ноутбука](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BD.D0.B0-.D0.B2-.D0.9E.D0.97.D0.A3_.28S3.29_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B8_.D0.BA.D1.80.D1.8B.D1.88.D0.BA.D0.B8_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.B0)
-        *   [8.1.2 Нет реакции на закрытие крышки ноутбука](#.D0.9D.D0.B5.D1.82_.D1.80.D0.B5.D0.B0.D0.BA.D1.86.D0.B8.D0.B8_.D0.BD.D0.B0_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BA.D1.80.D1.8B.D1.88.D0.BA.D0.B8_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.B0)
-        *   [8.1.3 Изменение действия при критическом заряде батареи (для ноутбуков)](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B5.D0.B9.D1.81.D1.82.D0.B2.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D0.BA.D1.80.D0.B8.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.BC_.D0.B7.D0.B0.D1.80.D1.8F.D0.B4.D0.B5_.D0.B1.D0.B0.D1.82.D0.B0.D1.80.D0.B5.D0.B8_.28.D0.B4.D0.BB.D1.8F_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.BE.D0.B2.29)
-    *   [8.2 Возвращение назад поведения прокрутки](#.D0.92.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B0.D0.B7.D0.B0.D0.B4_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B8)
-    *   [8.3 Автоматический запуск программ при входе в систему](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
-    *   [8.4 Редактирование меню приложений](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D0.BD.D1.8E_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [8.5 Gnome Terminal](#Gnome_Terminal)
-        *   [8.5.1 Внутренний отступ](#.D0.92.D0.BD.D1.83.D1.82.D1.80.D0.B5.D0.BD.D0.BD.D0.B8.D0.B9_.D0.BE.D1.82.D1.81.D1.82.D1.83.D0.BF)
-        *   [8.5.2 Отключение мигающего курсора](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.B3.D0.B0.D1.8E.D1.89.D0.B5.D0.B3.D0.BE_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D0.B0)
-        *   [8.5.3 Открытие новых вкладок в текущем каталоге (для Gnome Terminal 3.8+)](#.D0.9E.D1.82.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.B2.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D0.B2_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.BC_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.B5_.28.D0.B4.D0.BB.D1.8F_Gnome_Terminal_3.8.2B.29)
-    *   [8.6 Перемещение диалоговых окон](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B8.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.D1.8B.D1.85_.D0.BE.D0.BA.D0.BE.D0.BD)
-    *   [8.7 Расширения GNOME shell](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_shell)
-    *   [8.8 Приложения по умолчанию](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
-        *   [8.8.1 Файловый менеджер/замена Files](#.D0.A4.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.2F.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_Files)
-        *   [8.8.2 Программа просмотра PDF](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_PDF)
-    *   [8.9 Средняя кнопка мыши](#.D0.A1.D1.80.D0.B5.D0.B4.D0.BD.D1.8F.D1.8F_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [8.10 Затемнение экрана](#.D0.97.D0.B0.D1.82.D0.B5.D0.BC.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
-    *   [8.11 Настройка горячих клавиш](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D1.85_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
-        *   [8.11.1 Files 3.4 и старше](#Files_3.4_.D0.B8_.D1.81.D1.82.D0.B0.D1.80.D1.88.D0.B5)
-    *   [8.12 Запись экрана (screencast)](#.D0.97.D0.B0.D0.BF.D0.B8.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.28screencast.29)
-    *   [8.13 Настройка клавиатуры при помощи XkbOptions](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_XkbOptions)
-    *   [8.14 Включение раскладок клавиатуры](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [8.15 Поддержка экранов HiDPI (Retina)](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BE.D0.B2_HiDPI_.28Retina.29)
-    *   [8.16 Другие советы](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.81.D0.BE.D0.B2.D0.B5.D1.82.D1.8B)
-*   [9 Tracker (программа поиска)](#Tracker_.28.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA.D0.B0.29)
-*   [10 Totem (видео проигрыватель)](#Totem_.28.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D0.BF.D1.80.D0.BE.D0.B8.D0.B3.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.29)
-*   [11 Empathy (встроенная система обмена мгновенными сообщениями) и GNOME Online Accounts](#Empathy_.28.D0.B2.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.BE.D0.B1.D0.BC.D0.B5.D0.BD.D0.B0_.D0.BC.D0.B3.D0.BD.D0.BE.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8.29_.D0.B8_GNOME_Online_Accounts)
-*   [12 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [12.1 Невозможно изменить настройки в dconf-editor](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B2_dconf-editor)
-    *   [12.2 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
-        *   [12.2.1 Когда расширение рушит GNOME](#.D0.9A.D0.BE.D0.B3.D0.B4.D0.B0_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D1.83.D1.88.D0.B8.D1.82_GNOME)
-        *   [12.2.2 Расширения не работают после обновления GNOME 3](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_3)
-        *   [12.2.3 Удаление расширений Gnome Shell](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B9_Gnome_Shell)
-    *   [12.3 Клавиша "Windows"](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0_.22Windows.22)
-    *   [12.4 Горячие клавиши не работают, когда запущен только conky](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.B7.D0.B0.D0.BF.D1.83.D1.89.D0.B5.D0.BD_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_conky)
-    *   [12.5 Окно открывается позади других окон при использовании нескольких мониторов](#.D0.9E.D0.BA.D0.BD.D0.BE_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D0.B7.D0.B0.D0.B4.D0.B8_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.B8.D1.85_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
-    *   [12.6 Несколько мониторов и расширение dock](#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2_.D0.B8_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_dock)
-    *   [12.7 Горячие клавиши "Показать рабочий стол" не работают](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.22.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB.22_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
-    *   [12.8 Невозможно применить сохранённую конфигурация мониторов](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D1.81.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D1.91.D0.BD.D0.BD.D1.83.D1.8E_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
-    *   [12.9 Кнопка блокировки не может вновь включить тачпад](#.D0.9A.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8_.D0.BD.D0.B5_.D0.BC.D0.BE.D0.B6.D0.B5.D1.82_.D0.B2.D0.BD.D0.BE.D0.B2.D1.8C_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D1.82.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
-    *   [12.10 GNOME использует курсор Х11](#GNOME_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80_.D0.A511)
-    *   [12.11 Tracker и Документы не видят любые локальные файлы](#Tracker_.D0.B8_.D0.94.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D0.BD.D0.B5_.D0.B2.D0.B8.D0.B4.D1.8F.D1.82_.D0.BB.D1.8E.D0.B1.D1.8B.D0.B5_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B)
-    *   [12.12 Не запоминаются пароли](#.D0.9D.D0.B5_.D0.B7.D0.B0.D0.BF.D0.BE.D0.BC.D0.B8.D0.BD.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B8)
-    *   [12.13 Невозможно перетаскивать окна с помощью Alt-Key + кнопка мыши](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D0.B5.D1.80.D0.B5.D1.82.D0.B0.D1.81.D0.BA.D0.B8.D0.B2.D0.B0.D1.82.D1.8C_.D0.BE.D0.BA.D0.BD.D0.B0_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_Alt-Key_.2B_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [12.14 Gnome-shell 3.8.x не загружается, появляются лишь черный экран и курсор](#Gnome-shell_3.8.x_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F.2C_.D0.BF.D0.BE.D1.8F.D0.B2.D0.BB.D1.8F.D1.8E.D1.82.D1.81.D1.8F_.D0.BB.D0.B8.D1.88.D1.8C_.D1.87.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.B8_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80)
-    *   [12.15 Видео tear-free с графикой Intel HD](#.D0.92.D0.B8.D0.B4.D0.B5.D0.BE_tear-free_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9_Intel_HD)
-    *   [12.16 Вход в систему при помощи GDM или lightdm быстро возвращает экран входа в систему без какой-либо реакции](#.D0.92.D1.85.D0.BE.D0.B4_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_GDM_.D0.B8.D0.BB.D0.B8_lightdm_.D0.B1.D1.8B.D1.81.D1.82.D1.80.D0.BE_.D0.B2.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B0.D0.B5.D1.82_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83_.D0.B1.D0.B5.D0.B7_.D0.BA.D0.B0.D0.BA.D0.BE.D0.B9-.D0.BB.D0.B8.D0.B1.D0.BE_.D1.80.D0.B5.D0.B0.D0.BA.D1.86.D0.B8.D0.B8)
-    *   [12.17 Системные иконки Gnome не подгружаются корректно](#.D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_Gnome_.D0.BD.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B3.D1.80.D1.83.D0.B6.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BA.D0.BE.D1.80.D1.80.D0.B5.D0.BA.D1.82.D0.BD.D0.BE)
-    *   [12.18 Искажения при разворачивании окон на весь экран](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D1.80.D0.B0.D0.B7.D0.B2.D0.BE.D1.80.D0.B0.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.BD.D0.B0_.D0.B2.D0.B5.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD)
-*   [13 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [5 Конфигурация](#.D0.9A.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [5.1 Настройки системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+        *   [5.1.1 Цвет](#.D0.A6.D0.B2.D0.B5.D1.82)
+        *   [5.1.2 Дата & время](#.D0.94.D0.B0.D1.82.D0.B0_.26_.D0.B2.D1.80.D0.B5.D0.BC.D1.8F)
+        *   [5.1.3 Приложения по умолчанию](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
+        *   [5.1.4 Мышь и тачпад](#.D0.9C.D1.8B.D1.88.D1.8C_.D0.B8_.D1.82.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
+        *   [5.1.5 Сеть](#.D0.A1.D0.B5.D1.82.D1.8C)
+        *   [5.1.6 Сетевые учетные записи](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D1.83.D1.87.D0.B5.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8)
+        *   [5.1.7 Поиск](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA)
+    *   [5.2 Advanced settings](#Advanced_settings)
+        *   [5.2.1 Appearance](#Appearance)
+            *   [5.2.1.1 GTK+ themes and icon themes](#GTK.2B_themes_and_icon_themes)
+                *   [5.2.1.1.1 Global dark theme](#Global_dark_theme)
+            *   [5.2.1.2 Window manager themes](#Window_manager_themes)
+                *   [5.2.1.2.1 Titlebar height](#Titlebar_height)
+                *   [5.2.1.2.2 Titlebar button order](#Titlebar_button_order)
+                *   [5.2.1.2.3 Hide titlebar when maximized](#Hide_titlebar_when_maximized)
+            *   [5.2.1.3 GNOME Shell themes](#GNOME_Shell_themes)
+            *   [5.2.1.4 Icons on menu](#Icons_on_menu)
+        *   [5.2.2 Desktop](#Desktop)
+            *   [5.2.2.1 Icons on the Desktop](#Icons_on_the_Desktop)
+            *   [5.2.2.2 Lock screen and background](#Lock_screen_and_background)
+        *   [5.2.3 Extensions](#Extensions)
+        *   [5.2.4 Input methods](#Input_methods)
+        *   [5.2.5 Fonts](#Fonts)
+        *   [5.2.6 Startup applications](#Startup_applications)
+        *   [5.2.7 Power](#Power)
+            *   [5.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
+            *   [5.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
+        *   [5.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
+*   [6 Использование оболочки](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
+    *   [6.1 Шпаргалка GNOME](#.D0.A8.D0.BF.D0.B0.D1.80.D0.B3.D0.B0.D0.BB.D0.BA.D0.B0_GNOME)
+    *   [6.2 Перезапуск оболочки](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
+    *   [6.3 Крахи оболочки](#.D0.9A.D1.80.D0.B0.D1.85.D0.B8_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
+    *   [6.4 Зависания оболочки](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
+*   [7 Интеграция pacman](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_pacman)
+    *   [7.1 GNOME PackageKit](#GNOME_PackageKit)
+    *   [7.2 GNOME Software](#GNOME_Software)
+    *   [7.3 Уведомления об обновлениях пакетов](#.D0.A3.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BE.D0.B1_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F.D1.85_.D0.BF.D0.B0.D0.BA.D0.B5.D1.82.D0.BE.D0.B2)
+*   [8 Настройка внешнего вида GNOME](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B5.D0.B3.D0.BE_.D0.B2.D0.B8.D0.B4.D0.B0_GNOME)
+    *   [8.1 Темы оформления](#.D0.A2.D0.B5.D0.BC.D1.8B_.D0.BE.D1.84.D0.BE.D1.80.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [8.2 gsettings и dconf](#gsettings_.D0.B8_dconf)
+    *   [8.3 Верхняя панель](#.D0.92.D0.B5.D1.80.D1.85.D0.BD.D1.8F.D1.8F_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D1.8C)
+        *   [8.3.1 Показывать дату в верхней панели](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.B4.D0.B0.D1.82.D1.83_.D0.B2_.D0.B2.D0.B5.D1.80.D1.85.D0.BD.D0.B5.D0.B9_.D0.BF.D0.B0.D0.BD.D0.B5.D0.BB.D0.B8)
+        *   [8.3.2 Отключить задержку при выходе из сеанса](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B7.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D1.83_.D0.BF.D1.80.D0.B8_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B5_.D0.B8.D0.B7_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.B0)
+        *   [8.3.3 Показать системный монитор](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D0.B9_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80)
+        *   [8.3.4 Показать информацию о погоде](#.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D1.8E_.D0.BE_.D0.BF.D0.BE.D0.B3.D0.BE.D0.B4.D0.B5)
+    *   [8.4 Обзор](#.D0.9E.D0.B1.D0.B7.D0.BE.D1.80)
+        *   [8.4.1 Удаление пунктов из меню приложений](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.83.D0.BD.D0.BA.D1.82.D0.BE.D0.B2_.D0.B8.D0.B7_.D0.BC.D0.B5.D0.BD.D1.8E_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+        *   [8.4.2 Сортировка приложений по папкам](#.D0.A1.D0.BE.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BF.D0.BE_.D0.BF.D0.B0.D0.BF.D0.BA.D0.B0.D0.BC)
+        *   [8.4.3 Изменение размера иконок](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA)
+            *   [8.4.3.1 Для приложений в меню обзора](#.D0.94.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_.D0.BC.D0.B5.D0.BD.D1.8E_.D0.BE.D0.B1.D0.B7.D0.BE.D1.80.D0.B0)
+            *   [8.4.3.2 В dash](#.D0.92_dash)
+            *   [8.4.3.3 При переключении по alt-tab](#.D0.9F.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B8_.D0.BF.D0.BE_alt-tab)
+            *   [8.4.3.4 В системном трее](#.D0.92_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D0.BE.D0.BC_.D1.82.D1.80.D0.B5.D0.B5)
+        *   [8.4.4 Отключение "горячего угла"](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.22.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B3.D0.BE_.D1.83.D0.B3.D0.BB.D0.B0.22)
+            *   [8.4.4.1 Меню обзора](#.D0.9C.D0.B5.D0.BD.D1.8E_.D0.BE.D0.B1.D0.B7.D0.BE.D1.80.D0.B0)
+            *   [8.4.4.2 Трей сообщений](#.D0.A2.D1.80.D0.B5.D0.B9_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [8.5 Заголовок окна](#.D0.97.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D0.BA_.D0.BE.D0.BA.D0.BD.D0.B0)
+        *   [8.5.1 Уменьшение высоты заголовка окнa](#.D0.A3.D0.BC.D0.B5.D0.BD.D1.8C.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D1.8B.D1.81.D0.BE.D1.82.D1.8B_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BA.D0.BDa)
+        *   [8.5.2 Изменение порядка кнопок в заголовке окнa](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BA.D0.B0_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BE.D0.BA_.D0.B2_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B5_.D0.BE.D0.BA.D0.BDa)
+        *   [8.5.3 Скрытие заголовка окна при разворачивании](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BA.D0.BD.D0.B0_.D0.BF.D1.80.D0.B8_.D1.80.D0.B0.D0.B7.D0.B2.D0.BE.D1.80.D0.B0.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8)
+        *   [8.5.4 Отключение анимации](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BD.D0.B8.D0.BC.D0.B0.D1.86.D0.B8.D0.B8)
+*   [9 Различные настройки](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
+    *   [9.1 Управление питанием](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.B8.D1.82.D0.B0.D0.BD.D0.B8.D0.B5.D0.BC)
+        *   [9.1.1 Выключение сна-в-ОЗУ (S3) при закрытии крышки ноутбука](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BD.D0.B0-.D0.B2-.D0.9E.D0.97.D0.A3_.28S3.29_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B8_.D0.BA.D1.80.D1.8B.D1.88.D0.BA.D0.B8_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.B0)
+        *   [9.1.2 Нет реакции на закрытие крышки ноутбука](#.D0.9D.D0.B5.D1.82_.D1.80.D0.B5.D0.B0.D0.BA.D1.86.D0.B8.D0.B8_.D0.BD.D0.B0_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BA.D1.80.D1.8B.D1.88.D0.BA.D0.B8_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.B0)
+        *   [9.1.3 Изменение действия при критическом заряде батареи (для ноутбуков)](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B5.D0.B9.D1.81.D1.82.D0.B2.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D0.BA.D1.80.D0.B8.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.BC_.D0.B7.D0.B0.D1.80.D1.8F.D0.B4.D0.B5_.D0.B1.D0.B0.D1.82.D0.B0.D1.80.D0.B5.D0.B8_.28.D0.B4.D0.BB.D1.8F_.D0.BD.D0.BE.D1.83.D1.82.D0.B1.D1.83.D0.BA.D0.BE.D0.B2.29)
+    *   [9.2 Возвращение назад поведения прокрутки](#.D0.92.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BD.D0.B0.D0.B7.D0.B0.D0.B4_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B8)
+    *   [9.3 Автоматический запуск программ при входе в систему](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+    *   [9.4 Редактирование меню приложений](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B5.D0.BD.D1.8E_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [9.5 Gnome Terminal](#Gnome_Terminal)
+        *   [9.5.1 Внутренний отступ](#.D0.92.D0.BD.D1.83.D1.82.D1.80.D0.B5.D0.BD.D0.BD.D0.B8.D0.B9_.D0.BE.D1.82.D1.81.D1.82.D1.83.D0.BF)
+        *   [9.5.2 Отключение мигающего курсора](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.B3.D0.B0.D1.8E.D1.89.D0.B5.D0.B3.D0.BE_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D0.B0)
+        *   [9.5.3 Открытие новых вкладок в текущем каталоге (для Gnome Terminal 3.8+)](#.D0.9E.D1.82.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BD.D0.BE.D0.B2.D1.8B.D1.85_.D0.B2.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D0.B2_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.BC_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.B5_.28.D0.B4.D0.BB.D1.8F_Gnome_Terminal_3.8.2B.29)
+    *   [9.6 Перемещение диалоговых окон](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BC.D0.B5.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.B8.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.D1.8B.D1.85_.D0.BE.D0.BA.D0.BE.D0.BD)
+    *   [9.7 Расширения GNOME shell](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_shell)
+    *   [9.8 Приложения по умолчанию](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E_2)
+        *   [9.8.1 Файловый менеджер/замена Files](#.D0.A4.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.2F.D0.B7.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_Files)
+        *   [9.8.2 Программа просмотра PDF](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_PDF)
+    *   [9.9 Средняя кнопка мыши](#.D0.A1.D1.80.D0.B5.D0.B4.D0.BD.D1.8F.D1.8F_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.BC.D1.8B.D1.88.D0.B8)
+    *   [9.10 Затемнение экрана](#.D0.97.D0.B0.D1.82.D0.B5.D0.BC.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0)
+    *   [9.11 Настройка горячих клавиш](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D1.85_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
+        *   [9.11.1 Files 3.4 и старше](#Files_3.4_.D0.B8_.D1.81.D1.82.D0.B0.D1.80.D1.88.D0.B5)
+    *   [9.12 Запись экрана (screencast)](#.D0.97.D0.B0.D0.BF.D0.B8.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.28screencast.29)
+    *   [9.13 Настройка клавиатуры при помощи XkbOptions](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_XkbOptions)
+    *   [9.14 Включение раскладок клавиатуры](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [9.15 Поддержка экранов HiDPI (Retina)](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BE.D0.B2_HiDPI_.28Retina.29)
+    *   [9.16 Другие советы](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.81.D0.BE.D0.B2.D0.B5.D1.82.D1.8B)
+*   [10 Tracker (программа поиска)](#Tracker_.28.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA.D0.B0.29)
+*   [11 Totem (видео проигрыватель)](#Totem_.28.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE_.D0.BF.D1.80.D0.BE.D0.B8.D0.B3.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.29)
+*   [12 Empathy (встроенная система обмена мгновенными сообщениями) и GNOME Online Accounts](#Empathy_.28.D0.B2.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.BE.D0.B1.D0.BC.D0.B5.D0.BD.D0.B0_.D0.BC.D0.B3.D0.BD.D0.BE.D0.B2.D0.B5.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8.29_.D0.B8_GNOME_Online_Accounts)
+*   [13 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [13.1 Невозможно изменить настройки в dconf-editor](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.B2_dconf-editor)
+    *   [13.2 Расширения](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F)
+        *   [13.2.1 Когда расширение рушит GNOME](#.D0.9A.D0.BE.D0.B3.D0.B4.D0.B0_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D1.83.D1.88.D0.B8.D1.82_GNOME)
+        *   [13.2.2 Расширения не работают после обновления GNOME 3](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_3)
+        *   [13.2.3 Удаление расширений Gnome Shell](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B9_Gnome_Shell)
+    *   [13.3 Клавиша "Windows"](#.D0.9A.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B0_.22Windows.22)
+    *   [13.4 Горячие клавиши не работают, когда запущен только conky](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82.2C_.D0.BA.D0.BE.D0.B3.D0.B4.D0.B0_.D0.B7.D0.B0.D0.BF.D1.83.D1.89.D0.B5.D0.BD_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_conky)
+    *   [13.5 Окно открывается позади других окон при использовании нескольких мониторов](#.D0.9E.D0.BA.D0.BD.D0.BE_.D0.BE.D1.82.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D0.B7.D0.B0.D0.B4.D0.B8_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.B8.D1.85_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
+    *   [13.6 Несколько мониторов и расширение dock](#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2_.D0.B8_.D1.80.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_dock)
+    *   [13.7 Горячие клавиши "Показать рабочий стол" не работают](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.22.D0.9F.D0.BE.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB.22_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82)
+    *   [13.8 Невозможно применить сохранённую конфигурация мониторов](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D1.80.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8.D1.82.D1.8C_.D1.81.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D1.91.D0.BD.D0.BD.D1.83.D1.8E_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
+    *   [13.9 Кнопка блокировки не может вновь включить тачпад](#.D0.9A.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8_.D0.BD.D0.B5_.D0.BC.D0.BE.D0.B6.D0.B5.D1.82_.D0.B2.D0.BD.D0.BE.D0.B2.D1.8C_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D1.82.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
+    *   [13.10 GNOME использует курсор Х11](#GNOME_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D1.82_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80_.D0.A511)
+    *   [13.11 Tracker и Документы не видят любые локальные файлы](#Tracker_.D0.B8_.D0.94.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B_.D0.BD.D0.B5_.D0.B2.D0.B8.D0.B4.D1.8F.D1.82_.D0.BB.D1.8E.D0.B1.D1.8B.D0.B5_.D0.BB.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B)
+    *   [13.12 Не запоминаются пароли](#.D0.9D.D0.B5_.D0.B7.D0.B0.D0.BF.D0.BE.D0.BC.D0.B8.D0.BD.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D0.B8)
+    *   [13.13 Невозможно перетаскивать окна с помощью Alt-Key + кнопка мыши](#.D0.9D.D0.B5.D0.B2.D0.BE.D0.B7.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D0.B5.D1.80.D0.B5.D1.82.D0.B0.D1.81.D0.BA.D0.B8.D0.B2.D0.B0.D1.82.D1.8C_.D0.BE.D0.BA.D0.BD.D0.B0_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_Alt-Key_.2B_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0_.D0.BC.D1.8B.D1.88.D0.B8)
+    *   [13.14 Gnome-shell 3.8.x не загружается, появляются лишь черный экран и курсор](#Gnome-shell_3.8.x_.D0.BD.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F.2C_.D0.BF.D0.BE.D1.8F.D0.B2.D0.BB.D1.8F.D1.8E.D1.82.D1.81.D1.8F_.D0.BB.D0.B8.D1.88.D1.8C_.D1.87.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.B8_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80)
+    *   [13.15 Видео tear-free с графикой Intel HD](#.D0.92.D0.B8.D0.B4.D0.B5.D0.BE_tear-free_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9_Intel_HD)
+    *   [13.16 Вход в систему при помощи GDM или lightdm быстро возвращает экран входа в систему без какой-либо реакции](#.D0.92.D1.85.D0.BE.D0.B4_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D0.B8_GDM_.D0.B8.D0.BB.D0.B8_lightdm_.D0.B1.D1.8B.D1.81.D1.82.D1.80.D0.BE_.D0.B2.D0.BE.D0.B7.D0.B2.D1.80.D0.B0.D1.89.D0.B0.D0.B5.D1.82_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83_.D0.B1.D0.B5.D0.B7_.D0.BA.D0.B0.D0.BA.D0.BE.D0.B9-.D0.BB.D0.B8.D0.B1.D0.BE_.D1.80.D0.B5.D0.B0.D0.BA.D1.86.D0.B8.D0.B8)
+    *   [13.17 Системные иконки Gnome не подгружаются корректно](#.D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BA.D0.B8_Gnome_.D0.BD.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B3.D1.80.D1.83.D0.B6.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BA.D0.BE.D1.80.D1.80.D0.B5.D0.BA.D1.82.D0.BD.D0.BE)
+    *   [13.18 Искажения при разворачивании окон на весь экран](#.D0.98.D1.81.D0.BA.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D1.80.D0.B0.D0.B7.D0.B2.D0.BE.D1.80.D0.B0.D1.87.D0.B8.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.BD.D0.B0_.D0.B2.D0.B5.D1.81.D1.8C_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD)
+*   [14 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
@@ -191,6 +221,335 @@ GNOME может быть запущен как графически, испол
 | Disk Usage Analyser | Baobab |
 | Image Viewer | EoG (Eye of GNOME) |
 | [Passwords and Keys](/index.php/GNOME_Keyring "GNOME Keyring") | Seahorse |
+
+## Конфигурация
+
+GNOME использует для сохранения настроек системы и приложений DConf - хранилище данных. Рабочий стол поставляется с настройками по умолчанию, установленными приложениями и их собственными базами данных. Базовая конфигурация производится при помощи параметров системы GNOME (*gnome-control-center*) или настройки отдельных приложений. Можно всегда напрямую изменить базу данных DConf; это выполняется при помощи инструмента командной строки *gsettings*. В частности его можно использовать, чтобы настроить параметры, которые не доступны через пользовательский интерфейс.
+
+Настройки GNOME применяются GNOME Settings Daemon. Обратите внимание, что демон может быть запущен вне сессии GNOME, чтобы применить настройки GNOME вне родной среды. Выполните `nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &`.
+
+Конфигурация обычно производится отдельно для каждого пользователя и остальная часть этого раздела не приводит примеры того, как создать конфигурацию для нескольких пользователей одновременно.
+
+### Настройки системы
+
+Заметки о настройках панели управления.
+
+#### Цвет
+
+Демон `colord` считывает данные EDID дисплея и извлекает соответствующий цветовой профиль. Большинство цветовых профилей являются правильными и не требуют настройки; однако для тех, которые не являются правильными или для старых дисплеев, цветовые профили могут быть помещены в `~/.local/share/icc/` и направлены туда же.
+
+#### Дата & время
+
+Если в системе настроен [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon"), он будет также эффективно работать и для GNOME. Синхронизация может быть установлена на ручной контроль из меню, если требуется.
+
+Чтобы показать дату в верхней панели, выполните:
+
+```
+$ gsettings set org.gnome.desktop.interface clock-show-date true
+
+```
+
+Кроме того, чтобы показывать номера недель в календаре, отрытом в верхней панели, выполните:
+
+```
+$ gsettings set org.gnome.desktop.calendar show-weekdate true
+
+```
+
+#### Приложения по умолчанию
+
+После установки GNOME в первый раз, вы можете обнаружить, что неправильные приложения обрабатывают определенные протоколы. Например, *totem* открывает видео вместо ранее использованного [VLC](/index.php/VLC "VLC"). Некоторые ассоциации могут быть установлены с помощью системных настроек: *Все параметры* > *Подробности* > *Приложения по умолчанию*.
+
+Для других протоколов и методах их конфигурации смотрите [Default applications](/index.php/Default_applications "Default applications").
+
+#### Мышь и тачпад
+
+Для того чтобы уменьшить неудобства, доставляемые тачпадом, вам, возможно, захочется реализовать следующее:
+
+*   Отключение тачпада во время набора текста
+*   Отключение прокрутки
+*   Отключение tap-to-click
+
+**Примечание:** Драйвер [synaptics](/index.php/Synaptics "Synaptics") не поддерживается GNOME. Вместо него вы должны использовать [libinput](/index.php/Libinput "Libinput"). Смотрите [этот отчет об ошибке](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
+
+#### Сеть
+
+[NetworkManager](/index.php/NetworkManager "NetworkManager") - родной инструмент проекта GNOME для контроля настроек сети. По умолчанию он устанавливается как зависимость пакета [tracker](https://www.archlinux.org/packages/?name=tracker), который является частью группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), и нужно просто [включить](/index.php/NetworkManager#Enable_NetworkManager "NetworkManager") его.
+
+В отличие от других [менеджеров сети](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet"), которые могут быть также использованы, NetworkManager обеспечивает полную интеграцию через настройки сети оболочки и предоставляет апплет индикатора статуса [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) (не требуется для GNOME).
+
+#### Сетевые учетные записи
+
+Бекенды для приложения обмена сообщениями GNOME [empathy](https://www.archlinux.org/packages/?name=empathy) и для Сетевых учетных записей GNOME, которые располагаются в Параметрах системы, находятся в отдельной группе: [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/). Смотрите [не удается добавить аккаунты в Empathy и Сетевые учетные записи GNOME](/index.php/GNOME/Troubleshooting#Unable_to_add_accounts_in_Empathy_and_GNOME_Online_Accounts "GNOME/Troubleshooting"). Некоторые сетевые учетные записи, такие как [ownCloud](/index.php/OwnCloud "OwnCloud"), требуют установки [gvfs-goa](https://www.archlinux.org/packages/?name=gvfs-goa) для полной работоспособности в приложениях GNOME, таких как [GNOME Files](/index.php/GNOME_Files "GNOME Files") и GNOME Documents [[1]](https://wiki.gnome.org/ThreePointSeven/Features/Owncloud).
+
+#### Поиск
+
+В GNOME встроен поиск, доступ к которому можно получить используя клавишу `Super`. Пакет [tracker](https://www.archlinux.org/packages/?name=tracker) устанавливается по умолчанию как часть группы [gnome](https://www.archlinux.org/groups/x86_64/gnome/), индексирует приложения и базы метаданных. Настраивается при помощи *Поиск и индексация*; мониторинг состояния посредством *tracker-control*. Автоматически запускается *gnome-session*, когда пользователь входит в систему. Можно запустить вручную: `tracker-control -s`. Параметры поиска также могут быть настроены из панели *Все параметры*.
+
+Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства `man tracker-sparql`.
+
+### Advanced settings
+
+As noted above, many configuration options such as changing the [GTK+](/index.php/GTK%2B "GTK+") theme or the [window manager](/index.php/Window_manager "Window manager") theme are not exposed in the GNOME System Settings panel (*gnome-control-center*). Those users that want to configure these settings may wish to use the GNOME Tweak Tool ([gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)), a convenient graphical tool which exposes many of these settings.
+
+GNOME settings (which are stored in the DConf database) can also be configured using the [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (a graphical DConf configuration tool) or the [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) command line tool. The GNOME Tweak Tool does not do anything else in the background of the GUI; note though that you will not find all settings described in the following sections in it.
+
+#### Appearance
+
+##### GTK+ themes and icon themes
+
+To install a new theme or icon set, add the relevant `~/.local/share/themes` or `~/.local/share/icons` respectively (add to `/usr/share/` instead of `~/.local/share/` for the themes to be available systemwide.) They and other GUI settings can also be defined in `~/.config/gtk-3.0/settings.ini`:
+
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-theme-name = Adwaita
+# next option is applicable only if selected theme supports it
+gtk-application-prefer-dark-theme = true
+# set font name and dimension
+gtk-font-name = Sans 10
+
+```
+
+Additional theme locations:
+
+*   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
+*   [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=167).
+*   [GTK+ 3 themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
+*   [Cursor themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
+*   [Icon themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
+
+Once installed, they can be selected using the GNOME Tweak Tool or GSettings - see below for GSettings commands:
+
+For the GTK+ theme:
+
+```
+$ gsettings set org.gnome.desktop.interface gtk-theme *theme-name*
+
+```
+
+For the icon theme
+
+```
+$ gsettings set org.gnome.desktop.interface icon-theme *theme-name*
+
+```
+
+###### Global dark theme
+
+GNOME will use the Adwaita light theme by default however a dark variant of this theme (called the Global Dark Theme) also exists and can be selected using the Tweak Tool or by editing the GTK+ 3 settings file - see [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Some applications such as Image Viewer (*eog*) use the dark theme by default. It should be noted that the Global Dark Theme only works with GTK+ 3 applications; some GTK+ 3 applications may only have partial support for the Global Dark theme. Qt and GTK+ 2 support for the Global Dark Theme may be added in the future.
+
+##### Window manager themes
+
+The window manager theme (the style of the window titlebars) can be set using the GNOME Tweak Tool or the following GSettings command:
+
+```
+$ gsettings set org.gnome.desktop.wm.preferences theme *theme-name*
+
+```
+
+###### Titlebar height
+
+**Note:** Applying this configuration shrinks the titlebar of the GNOME-terminal and Chromium, but does not appear to affect the Nautilus titlebar height.
+ `~/.config/gtk-3.0/gtk.css` 
+```
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ min-height: 0px;
+ font-size: 0.6em;
+}
+
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ min-height: 0px;
+}
+
+```
+
+See [[2]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) for more information.
+
+###### Titlebar button order
+
+To set the order for the GNOME window manager (Mutter, Metacity):
+
+```
+$ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
+
+```
+
+**Tip:** The colon indicates which side of the titlebar the window buttons will appear.
+
+###### Hide titlebar when maximized
+
+*   [Install](/index.php/Install "Install") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) or [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Maximized windows get the title bar merged into the activity bar, saving precious pixels.
+
+*   [Install](/index.php/Install "Install") [mutter-hide-legacy-decorations](https://aur.archlinux.org/packages/mutter-hide-legacy-decorations/). It changes a default setting in the window manager, so as to automatically hide the titlebar on legacy (non-headerbar) apps when they are maximized or tiled to the side.
+
+*   [Install](/index.php/Install "Install") [maximus](https://aur.archlinux.org/packages/maximus/). To start the application, execute *maximus* from a terminal. When running, the daemon will automatically maximize windows. It will undecorate maximized windows and redecorate them when they are unmaximized. If you do not want all windows to start maximized, run `maximus -m` instead. Note that this will only work with windows decorated by the window manager; applications that use client-side decoration such as [GNOME Files](/index.php/GNOME_Files "GNOME Files") will not be undecorated when maximized.
+
+##### GNOME Shell themes
+
+The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly ensure that you have the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package installed. Then enable the *User Themes* extension, either through GNOME Tweak Tool or through the [GNOME Shell Extensions](https://extensions.gnome.org) webpage. Shell themes can then be loaded and selected using the GNOME Tweak Tool.
+
+There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
+
+Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+
+##### Icons on menu
+
+The default GNOME schema doesn't display any icon on menus. To display icons on menus, issue the following command.
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
+
+```
+
+#### Desktop
+
+Various Desktop settings can be applied.
+
+##### Icons on the Desktop
+
+See [GNOME/Files#Desktop Icons](/index.php/GNOME/Files#Desktop_Icons "GNOME/Files").
+
+##### Lock screen and background
+
+When setting the Desktop or Lock screen background, it is important to note that the Pictures tab will only display pictures located in `/home/*username*/Pictures` folder. If you wish to use a picture not located in this folder, use the commands indicated below.
+
+For the desktop background:
+
+```
+$ gsettings set org.gnome.desktop.background picture-uri 'file:///path/to/my/picture.jpg'
+
+```
+
+For the lock screen background
+
+```
+$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'
+
+```
+
+#### Extensions
+
+**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [Firefox](/index.php/Firefox "Firefox") or [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell-git](https://aur.archlinux.org/packages/chrome-gnome-shell-git/).
+
+GNOME Shell can be customized with extensions per user or system-wide.
+
+The catalogue of extensions is available at [extensions.gnome.org](https://extensions.gnome.org). By a user they can be installed and activated in the browser by setting the switch in the top left of the screen to **ON** and clicking **Install** on the resulting dialog (if the extension in question is not installed). After installation it is shown in the [extensions.gnome.org/local/](https://extensions.gnome.org/local/) tab, which has to be visited as well to check for available updates. Installed extensions can also be enabled or disabled using [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+
+More information about GNOME shell extensions is available on the [GNOME Shell Extensions about page](https://extensions.gnome.org/about/).
+
+[Installing](/index.php/Installing "Installing") extensions via a package makes them available for all users of the system and automates the update process.
+
+The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package provides a set of extensions maintained as part of the GNOME project (many of the included extensions are used by the GNOME Classic session).
+
+Users who want a taskbar but do not wish to use the GNOME Classic session may want to enable the *Window list* extension (provided by the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package).
+
+#### Input methods
+
+GNOME has integrated support for input methods through [IBus](/index.php/IBus "IBus"), only [ibus](https://www.archlinux.org/packages/?name=ibus) and the wanted input method engine (e.g. [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) for Intelligent Pinyin) needed to be installed, after installation the input method engine can be added as a keyboard layout in GNOME's Regional & Language Settings.
+
+#### Fonts
+
+**Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
+
+Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweak Tool for the relevant options.
+
+For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
+
+#### Startup applications
+
+To start certain applications on login, copy the relevant `.desktop` file from `/usr/share/applications/` to `~/.config/autostart/`.
+
+The [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) allows managing autostart-entries.
+
+**Tip:** If the plus sign button in the Tweak Tool's Startup Applications section is unresponsive, try start the Tweak Tool from the terminal using the following command: `gnome-tweak-tool`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+
+**Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
+
+#### Power
+
+The basic power settings that may want to be altered (these example settings assume the user is using a laptop - change them as desired):
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.power button-power *hibernate*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout *3600*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type *hibernate*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout *1800*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type *hibernate*
+$ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
+
+```
+
+To keep a monitor active on lid close:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
+
+```
+
+##### Configure behaviour on lid switch close
+
+The GNOME Tweak Tool can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[3]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the Tweak Tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweak Tool's inhibitor.
+
+If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+
+##### Change critical battery level action
+
+The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+
+ `/etc/UPower/UPower.conf` 
+```
+PercentageLow=10
+PercentageCritical=3
+PercentageAction=2
+CriticalPowerAction=HybridSleep
+```
+
+#### Sort applications into application (app) folders
+
+**Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
+
+In the **dconf-editor** navigate to `org.gnome.desktop.app-folders` and set the value of `folder-children` to an array of comma separated folder names:
+
+```
+['Utilities', 'Sundry']
+
+```
+
+Add applications using `gsettings`:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
+
+```
+
+This adds the applications `alacarte.desktop` and `dconf-editor.desktop` to the Sundry folder. This will also create the folder `org.gnome.desktop.app-folders.folders.Sundry`.
+
+To name the folder (if it has no name that appears at the top of the applications):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
+
+```
+
+Applications can also be sorted by their category (specified in their *.desktop* file):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
+
+```
+
+If certain applications matching a category are not wanted in a certain folder, exclusions can be set:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
+
+```
+
+For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
 
 ## Использование оболочки
 
@@ -1013,7 +1372,7 @@ $ xinput --set-prop "SynPS/2 Synaptics TouchPad" "Device Enabled" 1
 
 ### Искажения при разворачивании окон на весь экран
 
-В GNOME 3.12.0 разворачивание окон на весь экран может вызывать искажения [[1]](https://bbs.archlinux.org/viewtopic.php?id=183617) [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=728385). Смотрите раздел [#Видео tear-free с графикой Intel HD](#.D0.92.D0.B8.D0.B4.D0.B5.D0.BE_tear-free_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9_Intel_HD).
+В GNOME 3.12.0 разворачивание окон на весь экран может вызывать искажения [[4]](https://bbs.archlinux.org/viewtopic.php?id=183617) [[5]](https://bugzilla.gnome.org/show_bug.cgi?id=728385). Смотрите раздел [#Видео tear-free с графикой Intel HD](#.D0.92.D0.B8.D0.B4.D0.B5.D0.BE_tear-free_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9_Intel_HD).
 
 ## Смотрите также
 

@@ -540,7 +540,7 @@ To enable display resolution management and multiple monitors in Plasma 5, insta
 
 ### Open application launcher with Super key (Windows key)
 
-Install and start [ksuperkey](https://www.archlinux.org/packages/?name=ksuperkey). Now assign Alt + F1 as hot key. The Super Key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
+Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign Alt + F1 as hot key. The Super Key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
 
 ## 故障排除
 

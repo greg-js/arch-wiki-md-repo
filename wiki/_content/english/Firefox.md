@@ -6,11 +6,10 @@
 *   [2 Add-ons](#Add-ons)
     *   [2.1 Adding search engines](#Adding_search_engines)
         *   [2.1.1 arch-firefox-search](#arch-firefox-search)
-    *   [2.2 GNOME Keyring integration](#GNOME_Keyring_integration)
 *   [3 Configuration](#Configuration)
     *   [3.1 Multimedia playback](#Multimedia_playback)
     *   [3.2 Dictionaries for spell checking](#Dictionaries_for_spell_checking)
-    *   [3.3 KDE integration](#KDE_integration)
+    *   [3.3 KDE/GNOME integration](#KDE.2FGNOME_integration)
 *   [4 Plugins](#Plugins)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Screenshot of webpage](#Screenshot_of_webpage)
@@ -87,10 +86,6 @@ Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extension
 
 Install the [arch-firefox-search](https://www.archlinux.org/packages/?name=arch-firefox-search) package to add Arch-specific searches (AUR, wiki, forum, etc, as specified by user) to the Firefox search toolbar.
 
-### GNOME Keyring integration
-
-Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
-
 ## Configuration
 
 Firefox exposes a number of configuration options. To examine them, enter:
@@ -159,15 +154,15 @@ By default, Firefox will try to symlink all your hunspell dictionaries in `/usr/
 
 When your default language choice does not stick, see [#Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language).
 
-### KDE integration
+### KDE/GNOME integration
 
-**Warning:** Since GTK3 was updated to 3.20.x, there are several broken themes. Including **Breeze**, the recommended theme for integration between KDE and GTK styles. Some of the issues are invisible scroll bars, no text highlight on selection, invisible checkboxes, among others. As a workaround while the themes are upgraded you can do the following after installing [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config), go to `System Settings` -> `Application Style` -> `GNOME Application Style (GTK)` and choose in the **Select a GTK3 Theme** dropdown choose the **Default** theme, also make sure **Show icons in GTK buttons** and **Show icons in GTK** are checked. For further information on the compatibility issue above visit the [GTK3 3.20 upgrade thread](https://bbs.archlinux.org/viewtopic.php?pid=1619076) in the Arch Forums.
-
-*   To bring the KDE look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
+*   To bring the [KDE](/index.php/KDE "KDE") look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to `System Settings` -> `Application Style` -> `GTK`. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 
 *   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
 
-*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde-wallet-password-integratio/), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
+*   Add-ons may provide some integration, such as [KWallet integration](https://addons.mozilla.org/firefox/addon/kde5-wallet-password-integrati/), [GNotifier](https://addons.mozilla.org/firefox/addon/gnotifier/), [Unityfox Revived](https://addons.mozilla.org/firefox/addon/unityfox-revived/), and [Plasma notifications](https://addons.mozilla.org/firefox/addon/plasmanotify/).
+
+*   Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set extensions.gnome-keyring.keyringName to "login" (without the double quotes) in about:config. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
 ## Plugins
 

@@ -144,7 +144,7 @@ The following python script was developed to automatic rotate the screen and the
 
 It works for devices with an accelerometer communicating through the industrial I/O subsystem `/sys/bus/iio/devices/iio:deviceX`, where X is the number of the device. Usually, it is necessary to change the following parameters dpath, devicename, and touchpad.
 
-See [rotate.py](https://gist.githubusercontent.com/ei-grad/4d9d23b1463a99d24a8d/raw/rotate.py).
+See [rotate.py](https://gist.githubusercontent.com/ei-grad/4d9d23b1463a99d24a8d/raw/rotate.py) and for scripts the Surface in [Surface Tools](https://github.com/Surface-Pro-3/surface-tools).
 
 ### With systemd
 

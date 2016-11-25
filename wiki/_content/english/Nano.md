@@ -10,7 +10,6 @@
     *   [2.3 Text wrapping](#Text_wrapping)
 *   [3 Usage](#Usage)
     *   [3.1 Special functions](#Special_functions)
-    *   [3.2 Selected toggle functions](#Selected_toggle_functions)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Replacing vi with nano](#Replacing_vi_with_nano)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -40,7 +39,7 @@ Proceed to establish the nano console environment by setting and/or unsetting co
 
 ### Syntax highlighting
 
-**Nano** ships with predefined [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting "wikipedia:Syntax highlighting") rules, defined in `/usr/share/nano/*.nanorc`. To enable them, add the following line to your `~/.nanorc` or to `/etc/nanorc`:
+Nano ships with predefined [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting "wikipedia:Syntax highlighting") rules, defined in `/usr/share/nano/*.nanorc`. To enable them, add the following line to your `~/.nanorc` or to `/etc/nanorc`:
 
 ```
 include "/usr/share/nano/*.nanorc"
@@ -62,7 +61,7 @@ include "/etc/nano/pkgbuild.nanorc"
 
 ### Suspension
 
-Unlike most interactive programs, suspension is not enabled by default. To change this, uncomment the 'set suspend' line in `/etc/nanorc`. This will allow you to use the keys `Ctrl+z` to send nano to the background.
+Unlike most interactive programs, suspension is not enabled by default. To change this, uncomment the `set suspend` line in `/etc/nanorc`. This will allow you to use the keys `Ctrl+z` to send nano to the background.
 
 ### Text wrapping
 
@@ -79,17 +78,12 @@ Shortcuts can be viewed from inside *nano*. See the nano online help files via `
 
 ### Special functions
 
-*   `Ctrl` key modified shortcuts (`^`) representing commonly used functions are listed along the bottom two lines of the nano screen.
-*   Additional functions can be interactively toggled by way of `Meta` (typically `Alt`) and/or `Esc` key modified sequences.
+Keyboard shortcuts representing commonly used functions are listed along the bottom two lines of the nano screen.
 
-### Selected toggle functions
+They can be toggled by:
 
-| Key1 | Key2 | Description |
-| Meta+c | Esc+c | Toggles support for line, column and character position information |
-| Meta+i | Esc+i | Toggles support for the auto indentation of lines |
-| Meta+k | Esc+k | Toggles support for cutting text from the current cursor position to the end of the line |
-| Meta+m | Esc+m | Toggles mouse support for cursor placement, marking and shortcut execution |
-| Meta+x | Esc+x | Toggles the display of the shortcut list at the bottom of the nano screen for additional screen space |
+*   `Ctrl` for `^` based shortcuts
+*   *`Meta`* (typically `Alt`) or `Esc` for `M-` based shortcuts
 
 **Tip:** [Feature Toggles](https://www.nano-editor.org/dist/latest/nano.html#Feature-Toggles) lists the global toggles available for nano.
 

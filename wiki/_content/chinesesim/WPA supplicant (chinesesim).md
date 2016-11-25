@@ -9,7 +9,7 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 概览](#.E6.A6.82.E8.A7.88)
 *   [3 用 wpa_cli 连接](#.E7.94.A8_wpa_cli_.E8.BF.9E.E6.8E.A5)
-*   [4 带 wpa_passphrase 连接](#.E5.B8.A6_wpa_passphrase_.E8.BF.9E.E6.8E.A5)
+*   [4 带 wpa 通行字的连接](#.E5.B8.A6_wpa_.E9.80.9A.E8.A1.8C.E5.AD.97.E7.9A.84.E8.BF.9E.E6.8E.A5)
 *   [5 高级用法](#.E9.AB.98.E7.BA.A7.E7.94.A8.E6.B3.95)
     *   [5.1 配置](#.E9.85.8D.E7.BD.AE)
     *   [5.2 连接](#.E8.BF.9E.E6.8E.A5)
@@ -30,9 +30,9 @@
 
 ## 概览
 
-The first step to connect to an encrypted wireless network is having *wpa_supplicant* obtain authentication from a WPA authenticator. In order to do this, *wpa_supplicant* must be configured so that it will be able to submit the correct credentials to the authenticator.
+连接到加密无线网络的第一步是让 *wpa_supplicant* 获取 WPA 认证者的认证。为此， *wpa_supplicant* 必须进行配置以使其能够向认证者提交认证信息。
 
-Once the authentication is successful, it will be possible to connect to the network by normally obtaining an IP address by setting it manually with the [iproute2](/index.php/Core_utilities#ip "Core utilities") suite or using some networking program, like [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [dhcpcd](/index.php/Dhcpcd "Dhcpcd"), to configure an *interface* to obtain an IP address automatically via DHCP. See also the [wireless](/index.php/Wireless_network_configuration#Wireless_management "Wireless network configuration") and [wired](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") network configuration articles for methods and examples.
+一旦完成认证，就可以正常连接网络，并通过 [iproute2](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#ip "Core utilities (简体中文)") 手工获取 IP 地址；或者使用 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 或 [dhcpcd](/index.php/Dhcpcd "Dhcpcd")之类的网络管理程序，通过配置一个*接口*然后通过 DHCP 自动获取 IP 地址。参阅[无线网络配置#无线网络管理](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE#.E6.97.A0.E7.BA.BF.E7.BD.91.E7.BB.9C.E7.AE.A1.E7.90.86 "无线网络配置")和[Network configuration (简体中文)#配置 IP 地址](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E9.85.8D.E7.BD.AE_IP_.E5.9C.B0.E5.9D.80 "Network configuration (简体中文)")等文章中的方法和范例。
 
 ## 用 wpa_cli 连接
 
@@ -113,9 +113,9 @@ Once association is complete, all that is left to do is obtain an IP address as 
 
 ```
 
-## 带 wpa_passphrase 连接
+## 带 wpa 通行字的连接
 
-This connection method allows quickly connecting to a network whose SSID is already known, making use of *wpa_passphrase*, a command line tool which generates the minimal configuration needed by *wpa_supplicant*. For example:
+用命令行工具 *wpa_passphrase* 生成 *wpa_supplicant* 所需的最小配置，可以快速连接到已知 SSID 的无线网络。例如：
 
  `$ wpa_passphrase MYSSID passphrase` 
 ```
@@ -126,29 +126,29 @@ network={
 }
 ```
 
-This means that *wpa_supplicant* can be associated with *wpa_passphrase* and simply started with:
+上例表明，*wpa_supplicant* 可以与 *wpa_passphrase* 协同工作，只需简单地这样即可做：
 
 ```
 # wpa_supplicant -B -i *interface* -c <(wpa_passphrase MYSSID passphrase)
 
 ```
 
-**注意:** Because of the process substitution, you **cannot** run this command with [sudo](/index.php/Sudo "Sudo") - you will need a root shell. Just pre-pending *sudo* will lead to the following error:
+**注意:** 由于存在进程替换，这个命令**不能**带着 [sudo](/index.php/Sudo "Sudo") 执行，必须切换到 root 身份。否则会报错：
 ```
 Successfully initialized wpa_supplicant
 Failed to open config file '/dev/fd/63', error: No such file or directory
 Failed to read or parse configuration '/dev/fd/63'
 
 ```
-See also [Help:Reading#Regular user or root](/index.php/Help:Reading#Regular_user_or_root "Help:Reading").
+参阅：[Help:Reading (简体中文)#一般用户还是 root 用户](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.B8.80.E8.88.AC.E7.94.A8.E6.88.B7.E8.BF.98.E6.98.AF_root_.E7.94.A8.E6.88.B7 "Help:Reading (简体中文)")。
 
 **提示：**
 
-*   Use quotes, if the input contains spaces. For example: `"secret passphrase"`
-*   To discover your wireless network interface name, issue the `ip link` command.
-*   Some unusually complex passphrases may require input from a file, e.g. `wpa_passphrase MYSSID < passphrase.txt`, or here strings, e.g. `wpa_passphrase MYSSID <<< "passphrase"`.
+*   如果输入内容包含空格请使用引号。例如：`"secret passphrase"`。
+*   要找出无线网卡的名字，使用 `ip link` 命令。
+*   某些不常用的复杂通行字要求从文件输入，例如：`wpa_passphrase MYSSID < passphrase.txt`；或者从命令行输入，例如：`wpa_passphrase MYSSID <<< "passphrase"`。
 
-Finally, you should obtain an IP address as indicated in the [#Overview](#Overview), for example:
+之后就可以像[#概述](#.E6.A6.82.E8.BF.B0)中所述获取 IP 地址：
 
 ```
 # dhcpcd *interface*
@@ -157,18 +157,18 @@ Finally, you should obtain an IP address as indicated in the [#Overview](#Overvi
 
 ## 高级用法
 
-For networks of varying complexity, possibly employing extensive use of [EAP](https://en.wikipedia.org/wiki/Extensible_Authentication_Protocol "wikipedia:Extensible Authentication Protocol"), it will be useful to maintain a customised configuration file. For an overview of the configuration with examples, refer to [wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf); for details on all the supported configuration parameters, refer to the example file `/etc/wpa_supplicant/wpa_supplicant.conf`.
+对于各种纷繁复杂的网络，更常见的场景是使用 [[EAP](https://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE)] 管理配置文件。各种配置及其范例可参阅手册页[wpa_supplicant.conf(5)](http://linux.die.net/man/5/wpa_supplicant.conf)；所有可支持的配置参数可参考范例文件 `/etc/wpa_supplicant/wpa_supplicant.conf`。
 
 ### 配置
 
-As is clear after reading [#Connecting with wpa_passphrase](#Connecting_with_wpa_passphrase), a basic configuration file can be generated with:
+如上文中[#带 WPA 通行字的连接](#.E5.B8.A6_WPA_.E9.80.9A.E8.A1.8C.E5.AD.97.E7.9A.84.E8.BF.9E.E6.8E.A5)一节所述，一个基本的配置文件可以这样生成：
 
 ```
 # wpa_passphrase MYSSID passphrase > /etc/wpa_supplicant/example.conf
 
 ```
 
-This will only create a `network` section. A configuration file with some more common options may look like:
+这样仅仅是创建了一个网络配置节段。包含更多通用配置项的配置文件类似下面这样：
 
  `/etc/wpa_supplicant/example.conf` 
 ```
@@ -184,7 +184,7 @@ network={
 }
 ```
 
-The passphrase can alternatively be defined in clear text by enclosing it in quotes, if the resulting security problems are not of concern:
+如果可以不顾及安全问题，其中的通行字可以换成由引号包围的纯文本：
 
 ```
 network={
@@ -193,7 +193,7 @@ network={
 }
 ```
 
-If the network does not have a passphrase, e.g. a public Wi-Fi:
+如果某一网络没有设置通行字，比如一个公共无线网络，就是这样：
 
 ```
 network={

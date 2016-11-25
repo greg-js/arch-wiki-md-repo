@@ -159,10 +159,6 @@ Services specifically made for Arch users.
 
 	VPS-based @archlinux.info emails.
 
-	[ProjectArch.tk](https://bbs.archlinux.org/viewtopic.php?id=206735&)
-
-	Free ZNC accounts for Arch Linux users.
-
 ### Other
 
 	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)

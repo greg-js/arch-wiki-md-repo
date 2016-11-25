@@ -1,6 +1,7 @@
 | [Ελληνικά](/index.php/Category:%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC "Category:Ελληνικά") <small>(2)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:About Arch (Ελληνικά)") <small>(8)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:ArchWiki (Ελληνικά)") <small>(2)</small> |
+| <small>1.1.1.</small> [Help](/index.php/Category:Help_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Help (Ελληνικά)") <small>(1)</small> |
 | <small>1.2.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Live Arch systems (Ελληνικά)") <small>(1)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Applications (Ελληνικά)") <small>(0)</small> |
 | <small>2.1.</small> [Emulators](/index.php/Category:Emulators_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Emulators (Ελληνικά)") <small>(1)</small> |

@@ -18,6 +18,7 @@ This page aims to document all relevant information on getting Arch Linux workin
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Invalid signature detected check secure boot policy in setup](#Invalid_signature_detected_check_secure_boot_policy_in_setup)
     *   [4.2 Keyboard Cover not working](#Keyboard_Cover_not_working)
+    *   [4.3 Pen/Touchscreen issues in Xournal](#Pen.2FTouchscreen_issues_in_Xournal)
 
 ## Booting into the installer
 
@@ -167,3 +168,7 @@ If after doing these steps doesn't still work. Flash the archiso image once more
 ### Keyboard Cover not working
 
 This can happen sometimes when you restart. The solution was to shutdown and reboot. (not restart)
+
+### Pen/Touchscreen issues in Xournal
+
+When using the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) package there is a bug in the last official release of [xournal](https://www.archlinux.org/packages/?name=xournal) (0.48.2) where it'll incorrectly detect the Surface Pen as the touchscreen device. However it's been fixed in the latest Xournal source as per this [bug](https://sourceforge.net/p/xournal/bugs/144/). Installing the AUR package [xournal-git](https://aur.archlinux.org/packages/xournal-git/) builds the latest source including this fix. Note that you'll need to select 'NTRG0001:01 1B96:1B05' as the touchscreen device (Options > Pen and Touch).

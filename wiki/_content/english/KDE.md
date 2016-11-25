@@ -656,7 +656,7 @@ To enable display resolution management and multiple monitors in Plasma 5, insta
 
 **Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `Super` key launches kickstart application launcher as if `Alt+F1` keys are pressed.
 
-Install and start [ksuperkey](https://www.archlinux.org/packages/?name=ksuperkey). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
+Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
 
 ### Enabling touchpad tap to click on plasma wayland session
 

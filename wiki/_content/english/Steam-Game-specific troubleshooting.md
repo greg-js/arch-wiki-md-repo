@@ -208,6 +208,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [75 Terraria](#Terraria)
 *   [76 This War of Mine](#This_War_of_Mine)
     *   [76.1 Game doesn't load](#Game_doesn.27t_load)
+    *   [76.2 Sound glitches (on steam-native)](#Sound_glitches_.28on_steam-native.29)
 *   [77 Tomb Raider](#Tomb_Raider)
     *   [77.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
     *   [77.2 Steam Controller not working ingame while being correctly recognised* by Steam outside of the game](#Steam_Controller_not_working_ingame_while_being_correctly_recognised.2A_by_Steam_outside_of_the_game)
@@ -1571,6 +1572,17 @@ This happens because of a incompatibility of the newer version of `lib32-glibc`.
 ```
 
 located in the archive and put on the main game folder: `~/.local/share/Steam/steamapps/common/This War of Mine/`
+
+### Sound glitches (on `steam-native`)
+
+The bundled `libOpenAL` might not work corretly. Use the following fix:
+
+```
+   cd ~/.local/share/Steam/steamapps/common/This\ War\ of\ Mine
+   mv libOpenAL.so libOpenAL.so.backup
+   ln -s /usr/lib32/libopenal.so libOpenAL.so
+
+```
 
 ## Tomb Raider
 

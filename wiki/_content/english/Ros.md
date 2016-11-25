@@ -61,3 +61,56 @@ export LANG=C;grep -r "libboost" /opt/ros/indigo |  awk '{ print $3 }' | grep op
 ' ' '
 
 ```
+
+Or use the following script that build all ros-indigo-* packages following the dependency tree:
+
+```
+ ros_version="ros-indigo"
+
+ pack_file=$1
+ if [$pack_file == ""](/index.php?title=$pack_file_%3D%3D_%22%22&action=edit&redlink=1 "$pack file == "" (page does not exist)") ; then
+	 pack_file=$(mktemp)
+ fi
+
+ function contains() {
+ for item in $(cat $1); do
+     if [ "$2" == "$item" ]; then
+         return 0
+     fi
+ done
+ return 1
+ }
+
+ export built=""
+
+ function get_deps() {
+   deps=$(pacman -Qi $1 | grep 'Depends On' | tr ' ' '
+' | grep ${ros_version})
+   echo $deps
+ }
+
+ function build_package() {
+  local pack=$1
+ 	local recursion_level=$2
+  if contains $pack_file $pack; then
+		 return 0
+  fi
+	printf '%*s' $recursion_level 
+  echo "building $pack "
+  deps=$(get_deps $pack)
+  for dep in $deps; do
+     build_package $dep $(( $recursion_level + 1 ))
+  done
+	yaourt -S $pack --noconfirm
+	echo "$pack" >> $pack_file
+ }
+
+ echo "getting list of package built with boost"
+ list=$(export LANG=C;grep -r "libboost" /opt/ros/indigo | awk '{ print $3 }' | grep opt | pacman -Qo - | awk '{ print $5 }' | tr '
+' ' ')
+
+ for pack in $list; do
+   build_package $pack 0
+ done
+
+```

@@ -302,6 +302,17 @@ password_query = SELECT email as user, password, '/home/vmail/%d/%n' as userdb_h
 
 See [Postfix#PostfixAdmin](/index.php/Postfix#PostfixAdmin "Postfix").
 
+Note: To match the configuration in this file, config.inc.php should contain the following.
+
+```
+   # /etc/postfixadmin/config.inc.php
+   ...
+   $CONF['domain_path'] = 'YES';
+   $CONF['domain_in_mailbox'] = 'NO';
+   ...
+
+```
+
 ### Roundcube
 
 Make sure that both the `pdo_mysql.so` extension and `iconv.so` extension are uncommented in your `php.ini` file. Also check the `.htaccess` for access restrictions. Assuming that localhost is your current host, navigate a browser to `[http://localhost/roundcube/installer/](http://localhost/roundcube/installer/)` and follow the instructions.

@@ -98,7 +98,7 @@ $ ssh-keygen -C "$(whoami)@$(hostname)-$(date -I)"
 
 will add a comment saying which user created the key on which machine and when.
 
-The `-o` switch can also be used to save the private key in the new OpenSSH format, which has increased resistance to brute-force password cracking (but is not supported by versions of OpenSSH prior to 6.5). Use the `-a` switch to specify the number of KDF rounds. According to [ssh-keygen(1)](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html), Ed25519 keys always use the new private key format.
+The `-o` switch can also be used to save the private key in the new OpenSSH format, which has increased resistance to brute-force password cracking (but is not supported by versions of OpenSSH prior to 6.5 [released 2014-01-29](https://lwn.net/Articles/583485/)). Use the `-a` switch to specify the number of KDF rounds. According to [ssh-keygen(1)](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html), Ed25519 keys always use the new private key format.
 
 ### Choosing the type of encryption
 

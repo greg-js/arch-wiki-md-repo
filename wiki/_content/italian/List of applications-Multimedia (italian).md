@@ -404,7 +404,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — Clone di [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes"), scritto in GTK2 e [Mono](/index.php/Mono "Mono"), ricco di funzionalità e con uno sviluppo molto attivo.
 
-	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://www.archlinux.org/packages/?name=banshee)
+	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Porting di Amarok 1.4 in QT4.
 

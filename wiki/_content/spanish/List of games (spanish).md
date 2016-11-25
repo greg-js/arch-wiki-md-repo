@@ -455,7 +455,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Stunt Rally** — Juegos con editor de pistas, basado en VDrift y OGRE.
 
-	[http://code.google.com/p/vdrift-ogre/](http://code.google.com/p/vdrift-ogre/) || [stuntrally](https://www.archlinux.org/packages/?name=stuntrally)
+	[http://code.google.com/p/vdrift-ogre/](http://code.google.com/p/vdrift-ogre/) || [stuntrally](https://aur.archlinux.org/packages/stuntrally/)
 
 *   **Supertux Kart** — Juego de carreras de Kart con Tux y sus amigos.
 

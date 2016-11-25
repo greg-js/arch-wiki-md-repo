@@ -23,11 +23,12 @@
     *   [4.6 Corrupted graphics in canonical indicators](#Corrupted_graphics_in_canonical_indicators)
     *   [4.7 Cannot interact with the LightDM Pantheon greeter](#Cannot_interact_with_the_LightDM_Pantheon_greeter)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Gala crashes on start](#Gala_crashes_on_start)
-    *   [5.2 How can I add new applications to the dock?](#How_can_I_add_new_applications_to_the_dock.3F)
-    *   [5.3 How can I change the default appearance such as GTK theme, font size, etc?](#How_can_I_change_the_default_appearance_such_as_GTK_theme.2C_font_size.2C_etc.3F)
-    *   [5.4 I do not have any mouse cursor](#I_do_not_have_any_mouse_cursor)
-    *   [5.5 Wingpanel is empty except for Applications](#Wingpanel_is_empty_except_for_Applications)
+    *   [5.1 GTK+ applications surrounded by awful black shadow box](#GTK.2B_applications_surrounded_by_awful_black_shadow_box)
+    *   [5.2 Gala crashes on start](#Gala_crashes_on_start)
+    *   [5.3 How can I add new applications to the dock?](#How_can_I_add_new_applications_to_the_dock.3F)
+    *   [5.4 How can I change the default appearance such as GTK theme, font size, etc?](#How_can_I_change_the_default_appearance_such_as_GTK_theme.2C_font_size.2C_etc.3F)
+    *   [5.5 I do not have any mouse cursor](#I_do_not_have_any_mouse_cursor)
+    *   [5.6 Wingpanel is empty except for Applications](#Wingpanel_is_empty_except_for_Applications)
 
 ## Installation
 
@@ -237,6 +238,35 @@ Indicators behave incorrectly with every theme I have tried. They are very ancie
 You need to delete `/var/lib/lightdm/.pam_environment`. Do note however that this file is a workaround for the following LightDM bug: [https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482](https://bugs.launchpad.net/ubuntu/+source/unity-greeter/+bug/1024482)
 
 ## Troubleshooting
+
+### GTK+ applications surrounded by awful black shadow box
+
+Elementary GTK theme seems to be using its own files and ignoring `~/.config/gtk-3.0/gtk.css` config file. This has been reported on [https://bugs.launchpad.net/elementaryos/+bug/1592441](https://bugs.launchpad.net/elementaryos/+bug/1592441). To work around the issue, go to the file `/usr/share/themes/elementary/gtk-3.0/gtk-widgets.css` and look for the following (around line 3669):
+
+```
+decoration,
+.window-frame {
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 0 0 1px alpha (#000, 0.3),
+                0 14px 28px rgba(0,0,0,0.35),
+                0 10px 10px rgba(0,0,0,0.22);
+    margin: 12px;
+}
+
+```
+
+Replace the above by the the code below
+
+```
+decoration,
+.window-frame {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+```
 
 ### Gala crashes on start
 

@@ -28,7 +28,7 @@ max_file_uploads = 20000
 In this configuration, we will configure the [Nginx](/index.php/Nginx "Nginx") web server to serve Pydio on localhost in the root location without SSL enabled (even tough it's recommended to use it with SSL). First, place a copy of the Pydio Nginx configuration
 
 ```
-# cp /usr/share/doc/pydio/example_nginx_vhost.conf /etc/webapps/pydio/nginx.conf
+# cp /usr/share/doc/pydio/nginx.conf.sample /etc/webapps/pydio/nginx.conf
 
 ```
 

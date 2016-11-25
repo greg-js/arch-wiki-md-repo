@@ -79,7 +79,7 @@ EndSection
 
 ```
 
-The miniDP port works, at least when used with a VGA adapter. The connected display shows up in *xrandr* correctly. The HDMI output does not appear to work.
+The miniDP port works, at least when used with a VGA adapter. The connected display shows up in *xrandr* correctly. The HDMI output works with Xorg and xf86-video-intel 1:2.99.917+730.
 
 ### Card reader
 

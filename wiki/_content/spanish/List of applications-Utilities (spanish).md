@@ -84,7 +84,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page
 
 *   **ClipIt** — Fork de Parcellite con características adicionales y corrección de errores.
 
-	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://www.archlinux.org/packages/?name=clipit)
+	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
 *   **CopyQ** — Gestor de portapapeles inteligente con búsqueda e historial editables, acciones personalizadas sobre elementos y soporte para línea de órdenes.
 

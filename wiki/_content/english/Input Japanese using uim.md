@@ -205,7 +205,7 @@ Or, specify package names directly. For example:
 
 ##### mozc-ut
 
-[mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) can be built uim-mozc.
+[mozc-ut2](https://aur.archlinux.org/packages/mozc-ut2/) can be built uim-mozc.
 
 **Note:** mozc-ut can work with [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/).
 

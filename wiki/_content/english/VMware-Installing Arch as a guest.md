@@ -40,7 +40,7 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
     *   [7.3 Boot problems](#Boot_problems)
         *   [7.3.1 Slow boot time](#Slow_boot_time)
         *   [7.3.2 Shutdown/Reboot hangs](#Shutdown.2FReboot_hangs)
-    *   [7.4 Autofit problems](#Autofit_problems)
+    *   [7.4 Window resolution autofit problems](#Window_resolution_autofit_problems)
     *   [7.5 Drag and drop, copy/paste](#Drag_and_drop.2C_copy.2Fpaste)
     *   [7.6 Problems when running as a shared VM on Workstation 11](#Problems_when_running_as_a_shared_VM_on_Workstation_11)
     *   [7.7 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
@@ -617,9 +617,15 @@ Adjust the timeout for the vmtoolsd service (defaults to 90 seconds).
 TimeoutStopSec=1
 ```
 
-### Autofit problems
+### Window resolution autofit problems
 
-If VMWare is stretching instead of changing the resolution even with the system service enabled, you may need to add the modules to mkinitcpio.conf.
+Autofit means that when you resize the VMWare window in the host, ArchLinux should automatically follow and readjust its resolution to fit the new size of the host window.
+
+For some reason autofit requires packages **gtkmm** and **gtk2**, so you should check that you have them installed. If you don't have X windows installed or you are using a non GTK-based desktop environment such as KDE, you might have to install them manually.
+
+**Potential solution 2**
+
+You may need to add the modules to mkinitcpio.conf.
 
  `/etc/mkinitcpio.conf`  `MODULES="vsock vmw_vsock_vmci_transport vmw_balloon vmw_vmci vmwgfx"` 
 

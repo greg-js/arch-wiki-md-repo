@@ -157,7 +157,7 @@ To use this action you need to have [catfish](https://www.archlinux.org/packages
 
 ### Scan for viruses
 
-To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://aur.archlinux.org/packages/clamtk/) installed.
+To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://www.archlinux.org/packages/?name=clamtk) installed.
 
 | Name | Command | File patterns | Appears if selection contains |
 | Scan for virus | `clamtk %F` | * | Select all |

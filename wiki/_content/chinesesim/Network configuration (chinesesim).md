@@ -377,7 +377,7 @@ Hosts/Net: 2                     Class A, Private Internet
 
 ### 绑定和链路聚合
 
-参见 [netctl (简体中文)#Bonding（绑定）](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#Bonding.EF.BC.88.E7.BB.91.E5.AE.9A.EF.BC.89 "Netctl (简体中文)") 或 [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding").
+参见 [绑定](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.BB.91.E5.AE.9A "Netctl (简体中文)") 或 [无线网络绑定](/index.php/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E7%BB%91%E5%AE%9A "无线网络绑定")。
 
 ### IP 别名
 

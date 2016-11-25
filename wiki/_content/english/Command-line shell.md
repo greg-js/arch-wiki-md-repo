@@ -24,6 +24,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 
 	[http://www.kornshell.com](http://www.kornshell.com) || See [article](/index.php/Ksh#Installation "Ksh")
 
+*   **[Nash](/index.php/Nash "Nash")** — Nash is a system shell, inspired by plan9 rc, that makes it easy to create reliable and safe scripts taking advantages of operating systems namespaces (on linux and plan9) in an idiomatic way.
+
+	[https://github.com/NeowayLabs/nash](https://github.com/NeowayLabs/nash) || [nash-git](https://aur.archlinux.org/packages/nash-git/)
+
 *   **Oh** — Unix shell written in Go. It is similar in spirit but different in detail from other Unix shells. Oh extends the shell's programming language features without sacrificing the shell's interactive features.
 
 	[https://github.com/michaelmacinnis/oh](https://github.com/michaelmacinnis/oh) || [oh](https://aur.archlinux.org/packages/oh/)

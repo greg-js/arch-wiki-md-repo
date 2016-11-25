@@ -332,8 +332,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [kwin](https://www.archlinux.org/packages/?name=kwin) | theShell
 [theshell](https://aur.archlinux.org/packages/theshell/) | theTerminal
 [theterminal](https://aur.archlinux.org/packages/theterminal/) | theFile
-[thefile](https://aur.archlinux.org/packages/thefile/) | [KCalc](http://www.kde.org/applications/utilities/kcalc/)
-[kcalc](https://www.archlinux.org/packages/?name=kcalc) | [KWrite/Kate](http://kate-editor.org/)
+[thefile](https://aur.archlinux.org/packages/thefile/) | theCalculator
+[thecalculator](https://aur.archlinux.org/packages/thecalculator/) | [KWrite/Kate](http://kate-editor.org/)
 [kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
 [gwenview](https://www.archlinux.org/packages/?name=gwenview) | theMedia
 [themedia](https://aur.archlinux.org/packages/themedia/) | theWeb

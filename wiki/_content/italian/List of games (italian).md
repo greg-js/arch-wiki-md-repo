@@ -433,7 +433,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **Stunt Rally** — Gioco che comprende un editor di piste, basato su VDrift e OGRE.
 
-	[http://code.google.com/p/vdrift-ogre/](http://code.google.com/p/vdrift-ogre/) || [stuntrally](https://www.archlinux.org/packages/?name=stuntrally)
+	[http://code.google.com/p/vdrift-ogre/](http://code.google.com/p/vdrift-ogre/) || [stuntrally](https://aur.archlinux.org/packages/stuntrally/)
 
 *   **Supertux Kart** — Gioco di corse Kart, potrete usare alla guida Tux e i suoi amici.
 

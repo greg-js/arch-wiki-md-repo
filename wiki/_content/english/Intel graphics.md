@@ -2,10 +2,7 @@ Since Intel provides and supports open source drivers, Intel graphics are essent
 
 For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs, see [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").
 
-**Note:**
-
-*   Some recommend not installing the Intel driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel), [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
-*   PowerVR-based graphics ([GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") and [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
+**Note:** PowerVR-based graphics ([GMA 500](/index.php/Intel_GMA_500 "Intel GMA 500") and [GMA 3600](/index.php/Intel_GMA_3600 "Intel GMA 3600") series) are not supported by open source drivers.
 
 ## Contents
 
@@ -41,6 +38,8 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 *   [7 See also](#See_also)
 
 ## Installation
+
+**Note:** Some recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel), [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 [Install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
 

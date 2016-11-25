@@ -28,13 +28,13 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
 *   [10 Serial console](#Serial_console)
 *   [11 Raspberry Pi camera module](#Raspberry_Pi_camera_module)
 *   [12 Hardware random number generator](#Hardware_random_number_generator)
-*   [13 GPIO](#GPIO)
-    *   [13.1 SPI](#SPI)
-    *   [13.2 Python](#Python)
-*   [14 I2C](#I2C)
-*   [15 Compiling on the RPi](#Compiling_on_the_RPi)
-*   [16 QEMU chroot](#QEMU_chroot)
-*   [17 See also](#See_also)
+*   [13 I/O pins](#I.2FO_pins)
+    *   [13.1 GPIO](#GPIO)
+    *   [13.2 SPI](#SPI)
+    *   [13.3 I2C](#I2C)
+*   [14 Compiling on the RPi](#Compiling_on_the_RPi)
+*   [15 QEMU chroot](#QEMU_chroot)
+*   [16 See also](#See_also)
 
 ## Article preface
 
@@ -359,7 +359,11 @@ Once completed, this change ensures that data from the hardware random number ge
 
 The number it reports should be around 3000, whereas before setting up *rngd* it would have been closer to 1000.
 
-## GPIO
+## I/O pins
+
+### GPIO
+
+To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) library. Install the [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) package.
 
 ### SPI
 
@@ -367,11 +371,7 @@ To enable the `/dev/spidev*` devices, uncomment the following line:
 
  `/boot/config.txt`  `device_tree_param=spi=on` 
 
-### Python
-
-To be able to use the GPIO pins from Python, use the [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) library. Install the [python-raspberry-gpio](https://aur.archlinux.org/packages/python-raspberry-gpio/) package.
-
-## I2C
+### I2C
 
 Install *i2c-tools* and *lm_sensors* packages.
 

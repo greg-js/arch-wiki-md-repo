@@ -30,15 +30,14 @@ Now edit `/etc/webapps/diaspora/database.yml` and fill out the needed values. Th
 Ensure your database is running and then switch to the diaspora user:
 
 ```
-$ su diaspora
-$ cd
+$ su - diaspora
 
 ```
 
 Create the database and initialize the schema:
 
 ```
- bin/bundle exec rake db:create db:schema:load
+$ bin/bundle exec rake db:create db:schema:load
 
 ```
 
@@ -53,15 +52,14 @@ The static content your reverse proxy needs to serve will be available under `/u
 Updating is very analogous. Obtain the newest version of the package and build it, just like in the installation instructions. Watch for .pacnew files and review the changes. Also read the [changelog](https://github.com/diaspora/diaspora/blob/master/Changelog.md) over at Diaspora. Then again ensure the database is running and switch to the diaspora user:
 
 ```
- $ su diaspora
- $ cd
+ $ su - diaspora
 
 ```
 
 And update the database schema:
 
 ```
- bin/bundle exec rake db:migrate
+ $ bin/bundle exec rake db:migrate
 
 ```
 
@@ -70,7 +68,7 @@ Exit and restart **diaspora** systemd service.
 If you notice [missing icons or layout issues](https://wiki.diasporafoundation.org/FAQ_for_pod_maintainers#I_installed_diaspora.2A_on_my_machine.2C_but_when_I_load_the_site_there_are_no_images_and_the_layout_looks_horrible.21) after restarting the service, switch to the diaspora user again and run:
 
 ```
- bin/bundle exec rake assets:precompile
+ $ bin/bundle exec rake assets:precompile
 
 ```
 
@@ -81,9 +79,8 @@ Once more, exit and restart **diaspora** systemd service.
 Switch to the diaspora user and start the Rails console:
 
 ```
- su diaspora
- cd
- bin/bundle exec rails console production
+ $ su - diaspora
+ $ bin/bundle exec rails console production
 
 ```
 

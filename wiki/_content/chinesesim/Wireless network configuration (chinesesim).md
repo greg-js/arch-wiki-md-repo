@@ -22,16 +22,16 @@
         *   [2.2.3 Wicd](#Wicd)
         *   [2.2.4 NetworkManager](#NetworkManager)
         *   [2.2.5 Wifi Radar](#Wifi_Radar)
-*   [3 WPA2 Enterprise](#WPA2_Enterprise)
+*   [3 WPA2 企业版](#WPA2_.E4.BC.81.E4.B8.9A.E7.89.88)
     *   [3.1 eduroam](#eduroam)
-    *   [3.2 Manual/automatic setup](#Manual.2Fautomatic_setup)
+    *   [3.2 手工/自动配置](#.E6.89.8B.E5.B7.A5.2F.E8.87.AA.E5.8A.A8.E9.85.8D.E7.BD.AE)
         *   [3.2.1 wpa_supplicant](#wpa_supplicant)
         *   [3.2.2 NetworkManager](#NetworkManager_2)
         *   [3.2.3 connman](#connman_2)
         *   [3.2.4 netctl](#netctl_2)
-    *   [3.3 Troubleshooting](#Troubleshooting)
+    *   [3.3 排错](#.E6.8E.92.E9.94.99)
         *   [3.3.1 MS-CHAPv2](#MS-CHAPv2)
-*   [4 排错](#.E6.8E.92.E9.94.99)
+*   [4 排错](#.E6.8E.92.E9.94.99_2)
     *   [4.1 Temporary internet access](#Temporary_internet_access)
     *   [4.2 Rfkill 警告](#Rfkill_.E8.AD.A6.E5.91.8A)
     *   [4.3 Respecting the regulatory domain](#Respecting_the_regulatory_domain)
@@ -466,7 +466,7 @@ ConnMan 可以替代 NetworkManager 或 Wicd, 设计上考虑低资源消耗，�
 
 #### Netctl
 
-*netctl* 替代了 *netcfg* 和 systemd 一起工作。使用基于 profile 的配置，可以检查和连接多种网络类型。使用简单，并不比图形工具难。 参阅： [Netctl (简体中文)](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")
+*netctl* 与 systemd 一起工作。基于配置文件，可以检查和连接多种网络类型。使用简单，并不比图形工具难。 参阅： [Netctl (简体中文)](/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Netctl (简体中文)")
 
 #### Wicd
 
@@ -486,32 +486,32 @@ WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无
 
 详情请见[Wifi Radar (简体中文)](/index.php/Wifi_Radar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wifi Radar (简体中文)")。
 
-## WPA2 Enterprise
+## WPA2 企业版
 
-*WPA2 Enterprise* is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
+*WPA2 企业版*是 WPA（[Wi-Fi Protected Access](https://zh.wikipedia.org/wiki/WPA)）的工作模式之一。It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
 
 The Enterprise mode enables users to log onto the Wi-Fi network with a username and password and/or a digital certificate. Since each user has a dynamic and unique encryption key, it also helps to prevent user-to-user snooping on the wireless network, and improves encryption strength.
 
 This section describes the configuration of [network clients](/index.php/List_of_applications#Network_managers "List of applications") to connect to a wireless access point with WPA2 Enterprise mode. See [Software access point#RADIUS](/index.php/Software_access_point#RADIUS "Software access point") for information on setting up an access point itself.
 
-**Note:** Enterprise mode requires a more complex client configuration, whereas Personal mode only requires entering a passphrase when prompted. Clients likely need to install the server’s CA certificate (plus per-user certificates if using EAP-TLS), and then manually configure the wireless security and 802.1X authentication settings.
+**注意:** Enterprise mode requires a more complex client configuration, whereas Personal mode only requires entering a passphrase when prompted. Clients likely need to install the server’s CA certificate (plus per-user certificates if using EAP-TLS), and then manually configure the wireless security and 802.1X authentication settings.
 
 For a comparison of protocols see the following [table](http://deployingradius.com/documents/protocols/compatibility.html).
 
-**Warning:** It is possible to use WPA2 Enterprise without the client checking the server CA certificate. However, you should always seek to do so, because without authenticating the access point the connection can be subject to a man-in-the-middle attack. This may happen because while the connection handshake itself may be encrypted, the most widely used setups transmit the password itself either in plain text or the easily breakable [#MS-CHAPv2](#MS-CHAPv2). Hence, the client might send the password to a malicious access point which then proxies the connection.
+**警告:** It is possible to use WPA2 Enterprise without the client checking the server CA certificate. However, you should always seek to do so, because without authenticating the access point the connection can be subject to a man-in-the-middle attack. This may happen because while the connection handshake itself may be encrypted, the most widely used setups transmit the password itself either in plain text or the easily breakable [#MS-CHAPv2](#MS-CHAPv2). Hence, the client might send the password to a malicious access point which then proxies the connection.
 
 ### eduroam
 
 [eduroam](https://en.wikipedia.org/wiki/eduroam "wikipedia:eduroam") (education roaming) is an international roaming service for users in research, higher education and further education, based on WPA2 Enterprise.
 
-**Warning:**
+**警告:**
 
 *   Check connection details **first** with your institution before applying any profiles listed in this section. Example profiles are not guaranteed to work or match any security requirements.
 *   When storing connection profiles unencrypted, restrict read access to the root account by specifying `chmod 600 *profile*` as root.
 
-**Tip:** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") and [#wpa_supplicant](#wpa_supplicant) can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
+**提示：** Configuration for [NetworkManager](/index.php/NetworkManager "NetworkManager") and [#wpa_supplicant](#wpa_supplicant) can be generated with the [eduroam Configuration Assistant Tool](https://cat.eduroam.org/).
 
-### Manual/automatic setup
+### 手工/自动配置
 
 #### wpa_supplicant
 
@@ -529,11 +529,11 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 [netctl](/index.php/Netctl "Netctl") supports [#wpa_supplicant](#wpa_supplicant) configuration through blocks included with `WPAConfigSection=`. See netctl.profile(5) for details.
 
-**Warning:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in netctl.profile(5).
+**警告:** Special quoting rules apply: see the `*SPECIAL QUOTING RULES*` section in netctl.profile(5).
 
-**Tip:** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
+**提示：** Custom certificates can be specified by adding the line `'ca_cert="/path/to/special/certificate.cer"'` in `WPAConfigSection`.
 
-### Troubleshooting
+### 排错
 
 #### MS-CHAPv2
 
@@ -566,11 +566,11 @@ If the card is *hard-blocked*, use the hardware button (switch) to unblock it. I
 
 ```
 
-**Note:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
+**注意:** It is possible that the card will go from *hard-blocked* and *soft-unblocked* state into *hard-unblocked* and *soft-blocked* state by pressing the hardware button (i.e. the *soft-blocked* bit is just switched no matter what). This can be adjusted by tuning some options of the `rfkill` [kernel module](/index.php/Kernel_module "Kernel module").
 
 切换无线网卡的硬件按钮是厂商专用的 [内核模块](/index.php/Kernel_module "Kernel module") 处理的, 通常是 [WMI](https://lwn.net/Articles/391230/) 模块。新硬件模块可能还没有被最新内核支持，这时可能需要查看内核 bug 系统并将硬件信息汇报给对应内核模块的维护者。
 
-More info: [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
+更多信息参见： [http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill](http://askubuntu.com/questions/62166/siocsifflags-operation-not-possible-due-to-rf-kill)
 
 ### Respecting the regulatory domain
 

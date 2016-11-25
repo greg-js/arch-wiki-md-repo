@@ -125,11 +125,10 @@ The following options apply to `/etc/X11/xorg.conf.d/**20-radeon.conf**`.
 
 Please read `man radeon` and [RadeonFeature](http://www.x.org/wiki/RadeonFeature/#index4h2) first before applying driver options.
 
-**ColorTiling** and **ColorTiling2D** is completely safe to enable and supposedly is enabled by default. Most users will notice increased performance but it is not yet supported on R200 and earlier cards. Can be enabled on earlier cards, but the workload is transferred to the CPU:
+**Acceleration architecture**; Glamor is available as 2D acceleration method implement through OpenGL, and it should work with R600 and newer graphic cards. Since xf86-video-ati 7.2.0, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards the method can be forced by adding AccelMethod **glamor** to the configuration file (it will be enabled by default on all capable cards [in the next release](https://cgit.freedesktop.org/xorg/driver/xf86-video-ati/commit/?id=f11531c99fcd6473f58b4d10efaf3efd84304d8e)):
 
 ```
-Option "ColorTiling" "on"
-Option "ColorTiling2D" "on"
+Option "AccelMethod" "glamor"
 
 ```
 
@@ -147,10 +146,11 @@ Option "TearFree" "on"
 
 ```
 
-**Acceleration architecture**; Glamor is available as 2D acceleration method implement through OpenGL, and it should work with graphic cards whose drivers are newer or equal to R300. Since xf86-video-ati 7.2.0, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards the method can be forced by adding AccelMethod **glamor** to the configuration file:
+**ColorTiling** and **ColorTiling2D** are supposedly to be enabled by default. Tiled mode can provide significant performance benefits with 3D applications. It will be disabled if the DRM module is too old or if the current display configuration does not support it. KMS ColorTiling2D is only supported on R600 and newer chips:
 
 ```
-Option "AccelMethod" "glamor"
+Option "ColorTiling" "on"
+Option "ColorTiling2D" "on"
 
 ```
 
@@ -177,6 +177,8 @@ Section "Device"
 	Option "AccelMethod" "glamor"
         Option "DRI" "3"
         Option "TearFree" "on"
+        Option "ColorTiling" "on"
+        Option "ColorTiling2D" "on"
 EndSection
 
 ```

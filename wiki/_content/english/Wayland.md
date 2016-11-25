@@ -14,6 +14,7 @@
 *   [3 Gnome](#Gnome)
     *   [3.1 Install and test](#Install_and_test)
     *   [3.2 Autostart](#Autostart)
+    *   [3.3 hints](#hints)
 *   [4 GUI libraries](#GUI_libraries)
     *   [4.1 GTK+ 3](#GTK.2B_3)
     *   [4.2 Qt 5](#Qt_5)
@@ -282,7 +283,6 @@ $ weston-stacking
 
 This is still experimental (state 2011-11-18) and not everything will run as expected. Known issues:
 
-*   Nemo sets the X root window and forwards it to wayland, additionally to the normal window it opens ([nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)
 *   Log out, shut down buttons do not work. ([gnome issue 774774](https://bugzilla.gnome.org/show_bug.cgi?id=774774))
 *   starting X11 on tty1, wayland on tty2: windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
 *   Not all weston applications work, e.g. weston-terminal.
@@ -297,6 +297,15 @@ To auto-start on login, only on virtual terminal 1, one can enter this into `.ba
 ```
 
 More details on this way of starting are on [Xinit#Autostart X at login](/index.php/Xinit#Autostart_X_at_login "Xinit") (not using a display manager) and [GNOME#Manually](/index.php/GNOME#Manually "GNOME") (resp via xinit in this case).
+
+### hints
+
+some practical settings. for nemo prevent that the desktop is created <ref>[nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)</ref>
+
+```
+gsettings set org.nemo.desktop show-desktop-icons false
+
+```
 
 ## GUI libraries
 

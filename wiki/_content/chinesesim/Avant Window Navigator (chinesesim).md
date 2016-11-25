@@ -33,7 +33,7 @@
 | dialect | [python-xklavier](https://aur.archlinux.org/packages/python-xklavier/) |
 | feeds | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
 | hardware-sensors | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) |
-| media-control | [banshee](https://www.archlinux.org/packages/?name=banshee) |
+| media-control | [banshee](https://aur.archlinux.org/packages/banshee/) |
 | media-player | [gstreamer0.10-python](https://www.archlinux.org/packages/?name=gstreamer0.10-python) |
 | mail | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
 | slickswitcher | [python2-wnck](https://www.archlinux.org/packages/?name=python2-wnck) | [python2-gconf](https://www.archlinux.org/packages/?name=python2-gconf) |

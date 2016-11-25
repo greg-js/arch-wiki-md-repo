@@ -7,7 +7,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
     *   [1.2 KDE](#KDE)
-        *   [1.2.1 Tray icons with fixed size](#Tray_icons_with_fixed_size)
+        *   [1.2.1 KDE with multi-monitor setup](#KDE_with_multi-monitor_setup)
+        *   [1.2.2 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
     *   [1.5 Enlightenment](#Enlightenment)
@@ -106,9 +107,20 @@ xrandr --output eDP1 --panning 2304x1296
 
 ### KDE
 
-KDE plasma 5 provides decent support for HiDPI screens.
+KDE plasma 5 provides excellent support for HiDPI screens out of the box. All you need to make sure of is that the X-server is aware of your screens resolution. Quickes way to do this by editing your /etc/sddm.conf and add the dpi arguments to the [X11] section's ServerArguments;
 
-Please follow these guidelines for HiDPI support in KDE plasma 5
+```
+   ServerArguments=-nolisten tcp -dpi 276
+
+```
+
+More info and perhaps more correct solutions can be found at [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg")
+
+#### KDE with multi-monitor setup
+
+The main solution, above, works fine if all your displays are of approximately the same DPI, it is not so great if you use multiple outputs. For that situation there is a second way of support, which is to simply scale the display. You should be aware that this loses your hidpi advantage and your graphics will not be nearly as nice as if you do not scale your output.
+
+To scale a single screen;
 
 1.  System Settings → Display and Monitor → Display Configuration → Scale Display
 2.  Then drag the slider to 2
@@ -186,7 +198,9 @@ This will make the font render properly in most toolkits and applications, it wi
 
 ### Qt 5
 
-Since Qt 5.6, Qt 5 applications can be instructed to honor screen DPI by setting the `QT_AUTO_SCREEN_SCALE_FACTOR` environment variable, for example by creating a file `/etc/profile.d/qt-hidpi.sh`
+If you failed to fix your DPI on your X server, there is a way to get your Qt applications to look good on HiDPI anyway.
+
+Since Qt 5.6, Qt 5 applications can be instructed to disregard faulty screen DPI by setting the `QT_AUTO_SCREEN_SCALE_FACTOR` environment variable, for example by creating a file `/etc/profile.d/qt-hidpi.sh` (Note; this variable is unset in the startkde script, as KDE prefers the solution where the proper DPI was set on the actual X-server).
 
 ```
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
@@ -195,9 +209,9 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 And set the executable bit on it.
 
-If automatic detection of DPI does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
+If automatic detection of hi-DPI screens does not produce the desired effect, scaling can be set manually per-screen (`QT_SCREEN_SCALE_FACTORS`) or globally (`QT_SCALE_FACTOR`). For more details see the [Qt blog post](https://blog.qt.io/blog/2016/01/26/high-dpi-support-in-qt-5-6/).
 
-Note if you manually set the screen factor, it's important to set QT_AUTO_SCREEN_SCALE_FACTOR=0 otherwise some applications which explicitly force high DPI enabling get scaled twice.
+Note if you manually set the screen factor, it's important to set QT_AUTO_SCREEN_SCALE_FACTOR=0 otherwise some applications which explicitly force high DPI enabling get scaled twice. This is why KDE disables this way of scaling.
 
 QT_SCALE_FACTOR will scale fonts QT_SCREEN_SCALE_FACTORS will *not* scale fonts
 
@@ -241,7 +255,7 @@ For more details see [https://phab.enlightenment.org/w/elementary/](https://phab
 To scale SDDM you have to change the following properties in `/etc/sddm.conf`. It is recommended to make a backup of your config before editing it.
 
 ```
-[XDisplay]
+[X11]
 # X server arguments
 ServerArguments=-nolisten tcp -dpi 144
 
@@ -252,7 +266,7 @@ ServerArguments=-nolisten tcp -dpi 144
 If setting ServerArguments fails, it is possible to directly change the DPI setting via xrandr. Modify `/etc/sddm.conf` and add the following section into file:
 
 ```
-[XDisplay]
+[X11]
 # script to execute when starting the display server
 # default to /usr/share/sddm/scripts/Xsetup
 DisplayCommand=/etc/sddm/Xsetup
@@ -304,6 +318,18 @@ If you use a HiDPI monitor such as Retina display together with another monitor,
 
 From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be taken into account.[[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=975919)
 
+If the menus and url-bar fonts are still tiny you can create a userChrome.css file for your profile that explicitly sets the font-size. The file needs to be placed in your $HOME/.mozilla/firefox/*.default/chrome/ folder. You likely need to create the chrome folder, do not try to put it in a chrome folder that already exists in another place, that will not work.
+
+The content should be something like following. Please make sure that the namespace part is included as that is important.
+
+```
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+* { font-size: 16px !important; }
+
+```
+
+If the preferences pages are still tiny, you should try setting a minimum font size in your preferences -> Content -> Font&Colors -> Advanced.
+
 #### Chromium / Google Chrome
 
 Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:
@@ -337,7 +363,9 @@ and change the "dpi" setting found in the "Graphics" tab. This only affects the 
 
 ### Skype
 
-Skype is a Qt program, and needs to be configured separately. You cannot change the DPI setting for it, but at least you can change font size. Install [qt4](https://www.archlinux.org/packages/?name=qt4) and run `qtconfig-qt4` to do it.
+The new Skype for Linux Alpha ([skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/)) uses [#Qt 5](#Qt_5).
+
+The old legacy Skype ([skype](https://aur.archlinux.org/packages/skype/)) uses Qt 4, and needs to be configured separately. You cannot change the DPI setting for it, but at least you can change font size. Install [qt4](https://www.archlinux.org/packages/?name=qt4) and run `qtconfig-qt4` to do it.
 
 ### Spotify
 

@@ -12,12 +12,12 @@ Terlepas dari ruang lingkupnya, halaman panduan dirancang untuk menjadi dokumen 
 *   [4 Halaman panduan berwarna](#Halaman_panduan_berwarna)
 *   [5 Lebar halaman dinamis](#Lebar_halaman_dinamis)
 *   [6 Membaca halaman panduan lokal](#Membaca_halaman_panduan_lokal)
-    *   [6.1 Mengkonversi ke mode halaman HTML peramban](#Mengkonversi_ke_mode_halaman_HTML_peramban)
+    *   [6.1 Mengonversi ke mode halaman HTML peramban](#Mengonversi_ke_mode_halaman_HTML_peramban)
         *   [6.1.1 mdocml](#mdocml)
         *   [6.1.2 man2html](#man2html)
         *   [6.1.3 man -H](#man_-H)
         *   [6.1.4 roffit](#roffit)
-    *   [6.2 Mengkonversi ke PDF](#Mengkonversi_ke_PDF)
+    *   [6.2 Mengonversi ke PDF](#Mengonversi_ke_PDF)
 *   [7 Halaman Panduan berbasis Online](#Halaman_Panduan_berbasis_Online)
 *   [8 Halaman panduan penting](#Halaman_panduan_penting)
 *   [9 Lihat juga](#Lihat_juga)
@@ -99,13 +99,13 @@ $ man -K password
 
 ## Halaman panduan berwarna
 
-See [Color output in console#man](/index.php/Color_output_in_console#man "Color output in console").
+Lihat [Color output in console#man](/index.php/Color_output_in_console#man "Color output in console").
 
 ## Lebar halaman dinamis
 
-The man page width is controlled by the `MANWIDTH` environment variable.
+Lebar halaman panduan dikendalikan oleh variable konfigurasi `MANWIDTH`.
 
-If the number of columns in the terminal is too small (e.g. the window width is narrow), the line breaks will be wrong. This can be very disturbing for reading. You can fix this by setting the MANWIDTH on `man` invocation. With `Bash`, that would be:
+Jika jumlah kolom pada *terminal* terlalu kecil (misal lebar layarnya sempit), jeda baris akan tidak akurat. Hal ini dapat sangat mengganggu ketika dibaca. Anda dapat memperbaiki hal ini dengan mengatur MANWIDTH pada invokasi `man`. Dengan `Bash`, akan menjadi seperti berikut:
 
  `~/.bashrc` 
 ```
@@ -118,41 +118,41 @@ man() {
 
 ```
 
-Feel free to combine this function with the [color settings](#Colored_man_pages).
+Jangan ragu untuk mengombinasikan fungsi ini dengan [color settings](#Colored_man_pages).
 
 ## Membaca halaman panduan lokal
 
-Instead of the standard interface, using browsers such as [lynx](https://www.archlinux.org/packages/?name=lynx) and [Firefox](/index.php/Firefox "Firefox") to view man pages allows users to reap info pages' main benefit of hyperlinked text. Alternatives include the following:
+Sebagai ganti antarmuka yang standar, menggunakan peramban seperti [lynx](https://www.archlinux.org/packages/?name=lynx) dan [Firefox](/index.php/Firefox "Firefox") untuk melihat halaman panduan yang memungkinkan pengguna mendapatkan manfaat utama halaman informasi dari teks *hyperlink*. Alternatifnya meliputi sebagai berikut:
 
-*   [KDE](/index.php/KDE "KDE") users can read man pages in Konqueror using `man:<name>`.
-*   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) provides a categorized look at man pages in [X](/index.php/X "X").
-*   The [GNOME](/index.php/GNOME "GNOME") Help Browser [yelp](https://www.archlinux.org/packages/?name=yelp) can be used via `yelp man:<name>`.
+*   Para pengguna [KDE](/index.php/KDE "KDE") dapat membaca halaman panduan di Konqueror menggunakan `man:<name>`.
+*   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) menyajikan tampilan halaman panduan yang terkategorikan pada [X](/index.php/X "X").
+*   Bantuan Peramban (*Help Browseer*) [GNOME](/index.php/GNOME "GNOME") [yelp](https://www.archlinux.org/packages/?name=yelp) dapat digunakan melalui `yelp man:<name>`.
 
-### Mengkonversi ke mode halaman HTML peramban
+### Mengonversi ke mode halaman HTML peramban
 
 #### mdocml
 
-Install [mdocml](https://aur.archlinux.org/packages/mdocml/) from [AUR](/index.php/AUR "AUR"). To convert a page, for example `free(1)`:
+Pasang [mdocml](https://aur.archlinux.org/packages/mdocml/) dari [AUR](/index.php/AUR "AUR"). Untuk mengonversikan sebuah halaman, misalnya `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
 
 ```
 
-Now open the file called `free.html` in your favourite browser.
+Buka berkas yang bernama `free.html` pada peramban Anda.
 
 #### man2html
 
-First, install [man2html](https://www.archlinux.org/packages/?name=man2html) from the official repositories.
+Pertama, pasang [man2html](https://www.archlinux.org/packages/?name=man2html) dari repositori resmi.
 
-Now, convert a man page:
+Lalu, konversikan halaman panduan:
 
 ```
 $ man free | man2html -compress -cgiurl man$section/$title.$section$subsection.html > ~/man/free.html
 
 ```
 
-Another use for `man2html` is exporting to raw, printer-friendly text:
+Penggunaan lain dari `man2html` adalah mengonversi ke berkas *raw*, teks yang kompatibel dengan mesin cetak:
 
 ```
 $ man free | man2html -bare > ~/free.txt
@@ -161,27 +161,27 @@ $ man free | man2html -bare > ~/free.txt
 
 #### man -H
 
-The GNU implementation of man in the Arch repositories also has the ability to do this on its own:
+Implementasi GNU pada pandual di dalam repositori Archjuga juga memiliki kemampuan untuk melakukan hal tersebut dengan cara:
 
 ```
 $ man -H free
 
 ```
 
-This will read your `BROWSER` [environment variable](/index.php/Environment_variable "Environment variable") to determine the browser. You can override this by passing the binary to the `-H` option.
+Hal ini akan membaca `BROWSER` [environment variable](/index.php/Environment_variable "Environment variable") Anda untuk menentukan peramban. Anda dapat mengganti ini dengan cara melewati biner ke opsi `-H`.
 
 #### roffit
 
-First install [roffit](https://aur.archlinux.org/packages/roffit/) from [AUR](/index.php/AUR "AUR").
+Pertama-tama pasang [roffit](https://aur.archlinux.org/packages/roffit/) dari[AUR](/index.php/AUR "AUR").
 
-To convert a man page:
+Untuk mengonversi halaman panduan:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
 
 ```
 
-### Mengkonversi ke PDF
+### Mengonversi ke PDF
 
 man pages have always been printable: they are written in troff, which is fundamentally a typesetting language. If you have ghostscript installed, converting a man page to PDF is actually very easy: `man -t <manpage> | ps2pdf - <pdf>`. [This google image search](https://www.google.com/search?q=manpage+pdf+troff&num=100&hl=en&prmd=imvns&source=lnms&tbm=isch&sa=X&ei=5BZpUI3oH6rI2AXvx4CoAw&ved=0CAoQ_AUoAQ&biw=1321&bih=1100) should give you an idea of what the result looks like; it may not be to everybody's liking.
 

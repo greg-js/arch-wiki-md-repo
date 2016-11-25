@@ -427,7 +427,7 @@
 
 *   **[Banshee](https://en.wikipedia.org/wiki/ru:Banshee "wikipedia:ru:Banshee")** — Очень активно развивающийся клон [iTunes](https://en.wikipedia.org/wiki/ru:iTunes "wikipedia:ru:iTunes"), использующий GTK+ и [Mono](/index.php/Mono "Mono"), с богатым функционалом
 
-	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://www.archlinux.org/packages/?name=banshee)
+	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
 *   **[Clementine](https://en.wikipedia.org/wiki/ru:Clementine_(%D0%BC%D0%B5%D0%B4%D0%B8%D0%B0%D0%BF%D0%BB%D0%B5%D0%B5%D1%80) "wikipedia:ru:Clementine (медиаплеер)")** — Клон Amarok 1.4, портированный на Qt 4
 
