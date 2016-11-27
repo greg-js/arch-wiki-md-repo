@@ -22,7 +22,7 @@
         *   [5.1.5 Сеть](#.D0.A1.D0.B5.D1.82.D1.8C)
         *   [5.1.6 Сетевые учетные записи](#.D0.A1.D0.B5.D1.82.D0.B5.D0.B2.D1.8B.D0.B5_.D1.83.D1.87.D0.B5.D1.82.D0.BD.D1.8B.D0.B5_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8)
         *   [5.1.7 Поиск](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA)
-    *   [5.2 Advanced settings](#Advanced_settings)
+    *   [5.2 Расширенная конфигурация](#.D0.A0.D0.B0.D1.81.D1.88.D0.B8.D1.80.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F)
         *   [5.2.1 Appearance](#Appearance)
             *   [5.2.1.1 GTK+ themes and icon themes](#GTK.2B_themes_and_icon_themes)
                 *   [5.2.1.1.1 Global dark theme](#Global_dark_theme)
@@ -224,7 +224,7 @@ GNOME может быть запущен как графически, испол
 
 ## Конфигурация
 
-GNOME использует для сохранения настроек системы и приложений DConf - хранилище данных. Рабочий стол поставляется с настройками по умолчанию, установленными приложениями и их собственными базами данных. Базовая конфигурация производится при помощи параметров системы GNOME (*gnome-control-center*) или настройки отдельных приложений. Можно всегда напрямую изменить базу данных DConf; это выполняется при помощи инструмента командной строки *gsettings*. В частности его можно использовать, чтобы настроить параметры, которые не доступны через пользовательский интерфейс.
+GNOME использует для сохранения настроек системы и приложений DConf - хранилище данных. Рабочий стол поставляется с настройками по умолчанию, установленными приложениями и их собственными базами данных. Базовая конфигурация производится при помощи панели управления GNOME (*gnome-control-center*) или настройки отдельных приложений. Можно всегда напрямую изменить базу данных DConf; это выполняется при помощи инструмента командной строки *gsettings*. В частности его можно использовать, чтобы настроить параметры, которые не доступны через пользовательский интерфейс.
 
 Настройки GNOME применяются GNOME Settings Daemon. Обратите внимание, что демон может быть запущен вне сессии GNOME, чтобы применить настройки GNOME вне родной среды. Выполните `nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &`.
 
@@ -288,11 +288,11 @@ $ gsettings set org.gnome.desktop.calendar show-weekdate true
 
 Отправлять запросы базе данных Tracker можно при помощи *tracker-sparql*. Смотрите страницу справочного руководства `man tracker-sparql`.
 
-### Advanced settings
+### Расширенная конфигурация
 
-As noted above, many configuration options such as changing the [GTK+](/index.php/GTK%2B "GTK+") theme or the [window manager](/index.php/Window_manager "Window manager") theme are not exposed in the GNOME System Settings panel (*gnome-control-center*). Those users that want to configure these settings may wish to use the GNOME Tweak Tool ([gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)), a convenient graphical tool which exposes many of these settings.
+Как вы могли заметить выше, многие параметры, такие как изменение темы [GTK+](/index.php/GTK%2B "GTK+") или [оконного менеджера](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер"), недоступны в панели управления GNOME (*gnome-control-center*). Пользователи, желающие настроить эти параметры, возможно, захотят использовать GNOME Tweak Tool ([gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)) - удобная графическая утилита, которая предоставляет доступ к множеству параметров.
 
-GNOME settings (which are stored in the DConf database) can also be configured using the [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (a graphical DConf configuration tool) or the [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) command line tool. The GNOME Tweak Tool does not do anything else in the background of the GUI; note though that you will not find all settings described in the following sections in it.
+Параметры GNOME (которые сохраняются в базе данных DConf) также могут быть настроены используя [*dconf-editor*](https://developer.gnome.org/dconf/unstable/dconf-editor.html) (графический инструмент для настройки DConf) или [*gsettings*](https://developer.gnome.org/gio/stable/GSettings.html) - консольный утилита для настройки. В GNOME Tweak Tool нет скрытых настроек, все они предоставлены в графическом интерфейсе; заметим, однако, что вы не найдете все описываемые ниже параметры в этой утилите.
 
 #### Appearance
 

@@ -407,7 +407,8 @@ The official documentation has a [FAQ](http://synergy-project.org/wiki/Synergy_F
 If you encounter problems with AltGr add
 
 ```
-altgr = alt
+altgr = alt       #1.8.2
+altgr = shift     #v1.8.3 and higher
 
 ```
 

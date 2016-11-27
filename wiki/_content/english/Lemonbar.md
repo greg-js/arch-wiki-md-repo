@@ -11,7 +11,7 @@
 
 ## Installation
 
-[lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/) is available in the AUR and can be installed manually or through the use of a AUR helper of your choice.
+[Install](/index.php/Install "Install") the [lemonbar](https://aur.archlinux.org/packages/lemonbar/) package, or [lemonbar-git](https://aur.archlinux.org/packages/lemonbar-git/) for the development version.
 
 ## Configuration
 

@@ -13,9 +13,8 @@ This article covers the installation and configuration of Arch Linux on a Lenovo
     *   [3.3 CPU frequency scaling](#CPU_frequency_scaling)
     *   [3.4 Fans](#Fans)
     *   [3.5 Laptop Mode Tools](#Laptop_Mode_Tools)
-    *   [3.6 Synaptics](#Synaptics)
-    *   [3.7 NVIDIA Optimus](#NVIDIA_Optimus)
-    *   [3.8 Optional kernel boot arguments](#Optional_kernel_boot_arguments)
+    *   [3.6 NVIDIA Optimus](#NVIDIA_Optimus)
+    *   [3.7 Optional kernel boot arguments](#Optional_kernel_boot_arguments)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Media Keys](#Media_Keys)
     *   [4.2 Rebind Forward and Back keys](#Rebind_Forward_and_Back_keys)
@@ -143,29 +142,6 @@ No significant issues were found using [Laptop Mode Tools](/index.php/Laptop_Mod
 Possible bug with [#Shutdown on battery](#Shutdown_on_battery).
 
 The package [tlp](https://www.archlinux.org/packages/?name=tlp) is an alternative tool that can replace [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/).
-
-### Synaptics
-
-TouchPad and TrackPoint do work out of the box, but the TrackPoint is way too sensitive (i.e. fast) to be usable, since it is recognized as a mouse. Configure both devices as described in [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") and [TrackPoint](/index.php/TrackPoint "TrackPoint").
-
-To adjust the speed/sensitivity of the TrackPoint add these lines in a systemd tmpfile:
-
- `/etc/tmpfiles.d/local.conf` 
-```
-w /sys/devices/platform/i8042/serio1/speed - - - - 180
-w /sys/devices/platform/i8042/serio1/sensitivity - - - - 200
-
-```
-
-Possible range of values are 1-255.
-
-Alternatively, you can add an [udev](/index.php/Udev "Udev") rule:
-
- `/etc/udev/rules.d/10-trackpoint.rules` 
-```
-ACTION=="add",DEVPATH=="/devices/platform/i8042/serio4/serio5",ATTR{sensitivity}="128",ATTR{speed}="200"
-
-```
 
 ### NVIDIA Optimus
 

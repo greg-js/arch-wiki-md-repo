@@ -618,9 +618,13 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 	[http://www.vsxu.com/](http://www.vsxu.com/) || [vsxu](https://aur.archlinux.org/packages/vsxu/)
 
-*   **cava** — Console-based audio visualizer for Alsa, MPD and PulseAudio.
+*   **C.A.V.A.** — Console-based audio visualizer for Alsa, MPD and PulseAudio.
 
 	[https://karlstav.github.io/cava/](https://karlstav.github.io/cava/) || [cava](https://aur.archlinux.org/packages/cava/)
+
+*   **cli-visualizer** — A highly configurable CLI-based audio visualizer.
+
+	[https://github.com/dpayne/cli-visualizer](https://github.com/dpayne/cli-visualizer) || [cli-visualizer](https://aur.archlinux.org/packages/cli-visualizer/)
 
 #### Audio tag editors
 

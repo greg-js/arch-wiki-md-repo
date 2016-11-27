@@ -1,3 +1,8 @@
+**Bump to v4.8.11-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.11](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.11)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=fb4439ad30e436a93ba9dc42c8f6c37788334f94](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=fb4439ad30e436a93ba9dc42c8f6c37788334f94)
+
 **Bump to v4.8.10-2**
 
 *   Changelog: Bump to ck8 with MuQSS 0.144

@@ -17,7 +17,8 @@
     *   [4.6 Caching](#Caching)
 *   [5 Theme](#Theme)
 *   [6 Restart after Upgrade](#Restart_after_Upgrade)
-*   [7 See also](#See_also)
+*   [7 SSH port](#SSH_port)
+*   [8 See also](#See_also)
 
 ## Packages
 
@@ -108,6 +109,26 @@ Target = usr/share/gogs/gogs
 Description = Restart gogs...
 When = PostTransaction
 Exec = /usr/bin/systemctl try-restart gogs.service
+
+```
+
+## SSH port
+
+If you are using a non-default port for your SSH server, you will get not-so-pretty clone URLs. You can make gogs start its own SSH server, listening on port 22.
+
+Allow gogs binary to bind privileged ports:
+
+```
+sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/share/gogs/gogs
+
+```
+
+Configure gogs SSH server in `/srv/gogs/conf/app.ini`:
+
+```
+START_SSH_SERVER       = true
+SSH_PORT               = 22
+SSH_LISTEN_PORT        = 22
 
 ```
 

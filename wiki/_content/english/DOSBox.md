@@ -54,6 +54,8 @@ C:\> SETUP.EXE
 
 If DOSBox traps your focus, use `Ctrl+F10` to free it.
 
+To play music, some DOS games require a [MIDI](/index.php/MIDI "MIDI") synthesizer which DOSBox does not emulate. However DOSBox can use one if one is available. A software synthesizer such as [FluidSynth](/index.php/FluidSynth "FluidSynth") or [Timidity](/index.php/Timidity "Timidity") can be used if your computer does not have a hardware synthesizer.
+
 ## See also
 
 *   [http://www.dosbox.com/](http://www.dosbox.com/) - The official DOSBox site.

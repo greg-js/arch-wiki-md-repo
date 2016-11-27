@@ -1,4 +1,4 @@
-[Syncthing](https://syncthing.net) is an open-source file synchronization client/server application, written in Go, implementing its own, equally free Block Exchange Protocol. All transit communications between syncthing nodes are encrypted, and all nodes are uniquely identified with cryptographic certificates.
+[Syncthing](https://syncthing.net) is an open-source file synchronization client/server application, written in Go, implementing its own, equally free [Block Exchange Protocol](https://docs.syncthing.net/specs/bep-v1.html). All transit communications between syncthing nodes are encrypted, and all nodes are uniquely identified with cryptographic certificates.
 
 ## Contents
 
@@ -18,7 +18,7 @@
 
 ## Installation
 
-Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package. This latter includes additional features such as synchronization by inotify, desktop notifications and integration with Nautilus, Nemo and Caja.
+Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package, which depends on the former. This latter includes additional features such as synchronization by inotify, desktop notifications and integration with Nautilus, Nemo and Caja.
 
 After installing, you can [start Syncthing](#Starting_Syncthing).
 

@@ -88,7 +88,7 @@ GNOME has three available sessions, all using GNOME Shell.
 
 ## Starting GNOME
 
-GNOME can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console. For optimal desktop integration, using [GDM](/index.php/GDM "GDM") (the GNOME Display manager) is recommended. Note that [enabling](/index.php/Enabling "Enabling") a display manager (such as GDM) means that Xorg will run with root rights.
+GNOME can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console. For optimal desktop integration, using [GDM](/index.php/GDM "GDM") (the GNOME Display manager) is recommended.
 
 **Note:** Support for screen locking in GNOME is provided by GDM. If GNOME is not started using GDM, you will have to use another screen locker to provide this functionality - see [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 

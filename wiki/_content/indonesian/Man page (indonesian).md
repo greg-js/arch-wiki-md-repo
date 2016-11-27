@@ -183,11 +183,11 @@ $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
 
 ### Mengonversi ke PDF
 
-man pages have always been printable: they are written in troff, which is fundamentally a typesetting language. If you have ghostscript installed, converting a man page to PDF is actually very easy: `man -t <manpage> | ps2pdf - <pdf>`. [This google image search](https://www.google.com/search?q=manpage+pdf+troff&num=100&hl=en&prmd=imvns&source=lnms&tbm=isch&sa=X&ei=5BZpUI3oH6rI2AXvx4CoAw&ved=0CAoQ_AUoAQ&biw=1321&bih=1100) should give you an idea of what the result looks like; it may not be to everybody's liking.
+Halaman panduan selalu bisa dicetak: ditulis dalam troff, yang pada dasarnya merupakan suatu bahasa penyusunan huruf (*typesetting*). Jika Anda telah memasang *ghostscript*, mengonversi sebuah halaman panduan ke PDF sangatlah mudah: `man -t <manpage> | ps2pdf - <pdf>`. [Berikut hasil dari pencarian gambar google](https://www.google.com/search?q=manpage+pdf+troff&num=100&hl=en&prmd=imvns&source=lnms&tbm=isch&sa=X&ei=5BZpUI3oH6rI2AXvx4CoAw&ved=0CAoQ_AUoAQ&biw=1321&bih=1100) memberikan Anda gambaran akan terlihat seperti apa hasilnya; mungkin bukan kesukaan semua orang.
 
-Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no hyperlinks. Some man pages were specifically designed for terminal viewing, and won't look right in PS or PDF form.
+Caveats: Huruf-huruf umumnya terbatas pada Times dengan ukuran *hardcoded*. Tidak ada *hyperlink*. Beberapa halaman panduan didesain khusus untuk tampilan *terminal*, dan tidak akan terlihat baik pada format PS atau PDF.
 
-The following perl script converts man pages to PDFs, caches the PDFs in the `$HOME/.manpdf/` directory, and calls a PDF viewer, specifically [mupdf](https://www.archlinux.org/packages/?name=mupdf).
+Berikut skrip dalam bahasa perl untuk mengonversi halaman panduan ke PDF, penyimpanan sementara PDF di dalam direktori `$HOME/.manpdf/`, dan secara khusus gunakan penampil PDF, seperti [mupdf](https://www.archlinux.org/packages/?name=mupdf).
 
  `Usage: manpdf [<section>] <manpage>` 
 ```
@@ -223,7 +223,7 @@ if (!fork) {
 
 ## Halaman Panduan berbasis Online
 
-There are several online databases of man pages, including:
+Ada beberapa basis datas halaman panduan yang berbasis *online*, termasuk:
 
 *   [Man7.org.](http://man7.org/linux/man-pages/index.html) Upstream for Arch Linux's [man-pages](https://www.archlinux.org/packages/?name=man-pages).
 *   [*Arch Linux man pages*](https://manned.org/pkg/arch)
@@ -243,11 +243,11 @@ There are several online databases of man pages, including:
 *   [*The UNIX and Linux Forums Man Page Repository*](http://www.unix.com/man-page/OpenSolaris/1/man/)
 *   [*Ubuntu Manpage Repository*](http://manpages.ubuntu.com/)
 
-**Warning:** Some distributions provide patched or outdated man pages that differ from those provided by Arch. Exercise caution when using online man pages.
+**Warning:** Beberapa distribusi menyediakan halaman panduan yang telah di-*patch* atau sudah usang yang berbeda dari yang disediakan oleh Arch. Hati-hati saat menggunakan panduan secara *online*.
 
 ## Halaman panduan penting
 
-Here follows a non-exhaustive list of noteworthy pages that might help you understand a lot of things more in-depth. Some of them might serve as a good reference (like the ASCII table).
+Berikut daftar non-komplit dari halaman penting yang dapat membantu Anda memahami banyak hal secara lebih mendalam. Beberapa dari daftar di bawah ini dapat menjadi referensi yang bagus (seperti tabel ASCII).
 
 *   [ascii(7)](http://man7.org/linux/man-pages/man7/ascii.7.html)
 *   [boot(7)](http://man7.org/linux/man-pages/man7/boot.7.html)
@@ -267,14 +267,14 @@ Here follows a non-exhaustive list of noteworthy pages that might help you under
 *   [terminfo(5)](http://man7.org/linux/man-pages/man5/terminfo.5.html)
 *   [utf-8(7)](http://man7.org/linux/man-pages/man7/utf-8.7.html)
 
-More generally, have a look at category 7 pages:
+Secara lebih umum, lihatlah kategori 7 pada halaman panduan:
 
 ```
 $ man -s 7 -k ".*" 
 
 ```
 
-Arch Linux specific pages:
+Halaman khusus Arch Linux:
 
 *   archlinux(7)
 *   mkinitcpio(8)
@@ -285,5 +285,5 @@ Arch Linux specific pages:
 ## Lihat juga
 
 *   [man page - Gentoo wiki article](https://wiki.gentoo.org/wiki/Man_page)
-*   [Setting colors for less](http://unix.stackexchange.com/a/147) and [solving related problems](http://unix.stackexchange.com/a/6357) (threads on StackExchange)
+*   [Setting colors for less](http://unix.stackexchange.com/a/147) dan [solving related problems](http://unix.stackexchange.com/a/6357) (*thread* di StackExchange)
 *   [Write The Fine Manual with pod2man](https://linuxtidbits.wordpress.com/2013/08/21/wtfm-write-the-fine-manual-with-pod2man-text-converter/)

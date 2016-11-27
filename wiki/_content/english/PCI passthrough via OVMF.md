@@ -52,7 +52,7 @@ A VGA Passthrough relies on a number of technologies that are not ubiquitous as 
 *   Your motherboard must also support IOMMU
     *   Both the chipset and the BIOS must support it. It is not always easy to tell at a glance whether or not this is the case, but there is a [fairly comprehensive list on the matter on the Xen wiki](http://wiki.xen.org/wiki/VTdHowTo) as well as [another one on Wikipedia](https://en.wikipedia.org/wiki/List_of_IOMMU-supporting_hardware "wikipedia:List of IOMMU-supporting hardware").
 *   Your guest GPU ROM must support UEFI
-    *   If you can find [any ROM in this list](https://www.techpowerup.com/vgabios/) that applies to your specific GPU and is said to support UEFI, you are generally in the clear. If not, you might want to try anyway if you have a recent GPU.
+    *   If you can find [any ROM in this list](https://www.techpowerup.com/vgabios/) that applies to your specific GPU and is said to support UEFI, you are generally in the clear. All GPUs from 2012 and later should support this, as Microsoft made UEFI a requirement for devices to be marketed as compatible with Windows 8.
 
 You will probably want to have a spare monitor (the GPU will not display anything if there is no screen plugged in and using a VNC or Spice connection will not help your performance), as well as a mouse and a keyboard you can pass to your VM. If anything goes wrong, you will at least have a way to control your host machine this way.
 
@@ -159,11 +159,12 @@ IOMMU Group 13 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Au
 
 ```
 
-**Note:** If, as noted [here](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
+**Note:** You cannot specify which device to isolate using vendor-device ID pairs if the host GPU and the guest GPU share the same pair (i.e : if both are the same model). If this is your case, read the [Special procedures](#Using_identical_guest_and_host_GPUs) section instead.
 
 You can then add those vendor-device ID pairs to the default parameters passed to vfio-pci whenever it is inserted into the kernel.
 
  `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
+**Note:** If, as noted [here](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
 
 This, however, does not guarantee that vfio-pci will be loaded before other graphics drivers. To ensure that, we need to statically bind it in the kernel image by adding it anywhere in the MODULES list in mkinitpcio.conf, alongside with its dependencies.
 
@@ -215,6 +216,8 @@ IOMMU group 13 06:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeFo
 IOMMU group 13 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)}}
 
 ```
+
+**Note:** You cannot specify which device to isolate using vendor-device ID pairs if the host GPU and the guest GPU share the same pair (i.e : if both are the same model). If this is your case, read the [Special procedures](#Using_identical_guest_and_host_GPUs) section instead.
 
 Most linux distros (including Arch Linux) have pci-stub built statically within the kernel image. If for any reason it needs to be loaded as a module in your case, you will need to bind it yourself using whatever tool your distro provides for this, such as `mkinitpcio` for Arch.
 
@@ -441,13 +444,13 @@ Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Creat
 ```
    #!/bin/sh
 
-   for i in $(find /sys/devices/pci* -name boot_vga); do
-           if [ $(cat $i) -eq 0 ]; then
-                   GPU=$(dirname $i)
-                   AUDIO=$(echo $GPU | sed -e "s/0$/1/")
-                   echo "vfio-pci" > $GPU/driver_override
-                   if [ -d $AUDIO ]; then
-                           echo "vfio-pci" > $AUDIO/driver_override
+   for i in /sys/devices/pci*/*/boot_vga; do
+           if [ $(cat "$i") -eq 0 ]; then
+                   GPU="${i%/boot_vga}"
+                   AUDIO="$(echo "$GPU" | sed -e "s/0$/1/")"
+                   echo "vfio-pci" > "$GPU/driver_override"
+                   if [ -d "$AUDIO" ]; then
+                           echo "vfio-pci" > "$AUDIO/driver_override"
                    fi
            fi
    done
@@ -469,13 +472,6 @@ Remove any video drivers from MODULES, and add vfio-pci, and vfio_iommu_type1
 
 ```
    MODULES="ext4 vfat vfio-pci vfio_iommu_type1"
-
-```
-
-Add "find" and "dirname" to BINARIES:
-
-```
-   BINARIES="find dirname"
 
 ```
 

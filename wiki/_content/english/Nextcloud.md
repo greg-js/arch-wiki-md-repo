@@ -81,7 +81,7 @@ Add the following to `open_basedir`:
 Configure [mariadb](/index.php/Mariadb "Mariadb"):
 
 ```
-# mysql_install_db -–user=mysql -–basedir=/usr -–datadir=/var/lib/mysql
+# mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 ```
 

@@ -3,7 +3,7 @@
 *   [1 Configuración de ordenadores portátiles](#Configuraci.C3.B3n_de_ordenadores_port.C3.A1tiles)
 *   [2 Administración de energía](#Administraci.C3.B3n_de_energ.C3.ADa)
     *   [2.1 Utilidades de monitorización del estado de la batería](#Utilidades_de_monitorizaci.C3.B3n_del_estado_de_la_bater.C3.ADa)
-    *   [2.2 Suspención e hibernación](#Suspenci.C3.B3n_e_hibernaci.C3.B3n)
+    *   [2.2 Suspensión e hibernación](#Suspensi.C3.B3n_e_hibernaci.C3.B3n)
     *   [2.3 Ajustes automáticos para extender la vida de la batería](#Ajustes_autom.C3.A1ticos_para_extender_la_vida_de_la_bater.C3.ADa)
     *   [2.4 Other tweaks](#Other_tweaks)
         *   [2.4.1 PCI-e ASPM](#PCI-e_ASPM)
@@ -50,7 +50,7 @@ El estado de la batería puede ser leído utilizando las utilidades ACPI en la t
 
 **Tip:** Más información puede ser encontrada en el artículo [ACPI modules](/index.php/ACPI_modules "ACPI modules")
 
-### Suspención e hibernación
+### Suspensión e hibernación
 
 El sistema se puede suspender manualmente, tanto a la memoria (standby) o al disco (hibernate) a veces, proporciona la forma más eficaz para optimizar la vida de batería, dependiendo de el patrón de uso del portátil. Así mismo, el kernel de Linux soporta relativamente estas operaciones, típicamente algunos ajustes tienen que hacerse antes de iniciar estas operaciones (generalmente debido a drivers problemáticos, módulos o hardware). Las siguientes herramientas proporcionan "wrappers" alrededor de las interfaces del kernel para suspender/reanudar:
 

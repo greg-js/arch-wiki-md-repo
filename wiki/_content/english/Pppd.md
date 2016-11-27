@@ -166,6 +166,8 @@ If you use a flat-rate always-on connection on a computer, some providers restar
 
 #### Using cron
 
+**Note:** There are many [cron](/index.php/Cron "Cron") implementations, but none of them are installed by default as the base system uses [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") instead.
+
 As root, do the following:
 
 Create a bash script similar to this and give it a name (e.g. `pppd_redial.sh`):

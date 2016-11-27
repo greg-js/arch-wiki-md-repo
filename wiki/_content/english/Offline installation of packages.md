@@ -50,14 +50,16 @@ To update a New Arch Linux base system after installation you may enter
 
 ```
 
-Now open that textfile with an editor and delete all lines that are not URLs. Next, bring that list with you to a place where you have internet and either download the listed packages manually or do
+Now open that textfile with an editor and delete all lines that are not URLs. Next, bring that list with you to a place where you have internet and either download the listed packages manually or run wget in an empty directory:
 
 ```
 # wget -nv -i ../pkglist
 
 ```
 
-in an empty directory. Take all the *.pkg.tar.gz files back home, put them in /var/cache/pacman/pkg and finally run
+**Tip:** When using [cygwin](https://www.cygwin.com) or some other kind of Windows environment to download the packages the filenames will get mangled, since default Windows file naming requires to escape e.g. colons. To avoid this (under cygwin, since it doesn't follow such restrictions) use `wget --restrict-file-names=unix`.
+
+Take all the *.pkg.tar.gz files back home, put them in /var/cache/pacman/pkg and finally run
 
 ```
 # pacman -S *package-name*

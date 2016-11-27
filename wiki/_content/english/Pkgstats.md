@@ -16,4 +16,6 @@ If you do not want to wait for a reboot cycle, you can manually [start](/index.p
 
 Statistics are available at [https://www.archlinux.de/?page=Statistics](https://www.archlinux.de/?page=Statistics).
 
+The following open source project allows you to get the statistics data as JSON: [ArchLinuxPkgStatsScraper](https://github.com/chrissound/ArchLinuxPkgStatsScraper)
+
 You can read the official [forum thread](https://bbs.archlinux.org/viewtopic.php?id=105431) for more info.

@@ -196,6 +196,7 @@ Description=Userspace Daemon of the spacenav driver.
 [Service]
 Type=forking
 PIDFile=/var/run/spnavd.pid
+Environment=XAUTHORITY=/run/user/1000/gdm/Xauthority
 ExecStart=/usr/bin/spacenavd
 
 [Install]

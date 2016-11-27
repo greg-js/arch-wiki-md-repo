@@ -7,6 +7,7 @@
 *   [2 Daemon setup](#Daemon_setup)
     *   [2.1 System service](#System_service)
     *   [2.2 User service](#User_service)
+    *   [2.3 Shared directories for downloads/uploads](#Shared_directories_for_downloads.2Fuploads)
 *   [3 Configuration](#Configuration)
     *   [3.1 Firewall](#Firewall)
 *   [4 Clients](#Clients)
@@ -49,22 +50,21 @@ It offers additional settings like `announce_ip` (IP to announce to trackers), `
 
 ## Daemon setup
 
-**Warning:** If multiple users are running a daemon, the default port (58846) will need to be changed for each user.
+Upon installation, pacman will create a non-privileged **deluge** user. This user is meant to run the provided daemon, `/usr/bin/deluged`. Users are able to start the deamon several ways.
 
-Deluge comes with a daemon called `deluged`. If it is not running when one of the clients is run, it will be started. It is useful, however, to have it started with systemd to allow torrents to run without starting a client and/or Xorg. This can be accomplished in one of two ways: a system service or a user service.
+1.  Systemd system service (runs as the deluge user).
+2.  Systemd user service (runs as another user).
+3.  Running it directly (runs as another user).
+
+For security reasons, the recommended method of running `deluged` is by the systemd system service `deluged.service` since the deluge user has no shell access (limited account). In addition to the security benefits of running as the non-privileged deluge user, the system service can also run at boot without the need to start Xorg or a client.
 
 ### System service
 
-A system service will allow `deluged` to run at boot without the need to start Xorg or a client. Deluge comes with a system service called `deluged.service`, which can be [started](/index.php/Start "Start") and enabled without change, which will run the deluge daemon as the **deluge** user, which is created by the package.
-
-To run the daemon under a different user, copy `/usr/lib/systemd/system/deluged.service` to `/etc/systemd/system/deluged.service` and change the User parameter within the file, such as the **archie** user:
-
-```
-User=**archie**
-
-```
+[Start](/index.php/Start "Start") the service and optionally [enable](/index.php/Enable "Enable") it if running at boot is desired.
 
 ### User service
+
+**Warning:** If multiple users are running a daemon, the default port (58846) will need to be changed for each user.
 
 A user service will allow `deluged` to run when `systemd --user` is started. This is accomplished by creating a user service file:
 
@@ -85,6 +85,25 @@ WantedBy=default.target
 The deluge user service can now be [started](/index.php/Start "Start") and enabled by the user.
 
 The `deluged` user service can also be placed in `$HOME/.config/systemd/user/`. See [systemd/User](/index.php/Systemd/User "Systemd/User") for more information on user services.
+
+### Shared directories for downloads/uploads
+
+When using the systemd deluged.service, the shared directory/directories need to be shared so that other users on the system are able to access the data. The general strategy is to:
+
+1.  Change the owner and group of the shared directory to deluge:deluge.
+2.  Set the [File_permissions_and_attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") on the shared directory to at least 770.
+3.  Add your user (or the user/users needing to access the files) to the deluge group.
+
+Example using `/mnt/torrent_data`:
+
+```
+# chown -R deluge:deluge /mnt/torrent_data
+# chmod 770 /mnt/torrent_data
+# usermod -a -G deluge YOURUSER
+
+```
+
+**Note:** When usermod is used to change group affiliation, a logout/login is required before changes take effect.
 
 ## Configuration
 

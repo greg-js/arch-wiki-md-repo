@@ -11,10 +11,11 @@ Third-party apps are available through a marketplace and can be used to extend C
     *   [1.2 Pre-installation](#Pre-installation)
     *   [1.3 Configuring CouchDB](#Configuring_CouchDB)
     *   [1.4 Starting the controller](#Starting_the_controller)
-    *   [1.5 Installing the Cozy stack](#Installing_the_Cozy_stack)
-    *   [1.6 Configuring](#Configuring)
-        *   [1.6.1 Configuring the domain](#Configuring_the_domain)
-        *   [1.6.2 Configuring the background](#Configuring_the_background)
+    *   [1.5 Creating the controller's configuration file](#Creating_the_controller.27s_configuration_file)
+    *   [1.6 Installing the Cozy stack](#Installing_the_Cozy_stack)
+    *   [1.7 Configuring](#Configuring)
+        *   [1.7.1 Configuring the domain](#Configuring_the_domain)
+        *   [1.7.2 Configuring the background](#Configuring_the_background)
 *   [2 Reverse proxying](#Reverse_proxying)
     *   [2.1 Apache](#Apache)
     *   [2.2 nginx](#nginx)
@@ -91,6 +92,26 @@ ExecStart=/usr/bin/cozy-controller
 [Install]
 WantedBy=multi-user.target
 ```
+
+### Creating the controller's configuration file
+
+Cozy's controller can use a JSON configuration file located at `/etc/cozy/controller.json`. If this file doesn't exist, the controller will use its own default values. One of them is restarting itself using [supervisor](https://www.archlinux.org/packages/?name=supervisor). As this install describes using systemd to start and stop the controller, we need to edit this by creating the said JSON file and setting the right restart command.
+
+ `**/etc/cozy/controller.json**` 
+```
+{
+    "restart_cmd": "/bin/systemctl restart cozy"
+}
+```
+
+You may want to give ownership for this file to Cozy by running
+
+```
+# chown cozy:cozy /etc/cozy/controller.json
+
+```
+
+**Note:** A documentation on the different parameters that can be set in `controller.json` is located [here](https://github.com/babolivier/cozy-controller/blob/master/doc/config.md).
 
 ### Installing the Cozy stack
 

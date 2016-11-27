@@ -20,7 +20,7 @@ DASH shines in:
 
 ## Installation
 
-[Install](/index.php/Install "Install") [dash](https://www.archlinux.org/packages/?name=dash) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [dash](https://www.archlinux.org/packages/?name=dash) from the [official repositories](/index.php/Official_repositories "Official repositories") or [dash-static-musl](https://aur.archlinux.org/packages/dash-static-musl/) from the [AUR](/index.php/AUR "AUR").
 
 ## Use DASH as `/bin/sh`
 

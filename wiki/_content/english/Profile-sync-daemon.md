@@ -1,5 +1,7 @@
 [Profile-sync-daemon](https://aur.archlinux.org/packages/Profile-sync-daemon/) (psd) is a tiny pseudo-daemon designed to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD). This is accomplished by an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backup of the browser profile(s). Additionally, psd features several crash recovery features.
 
+**Note:** Occasionally, updates/changes are made to the default config file `/usr/share/psd/psd.conf` upstream. The user copy `$XDG_CONFIG_HOME/psd/psd.conf` will need to be diffed against it. On Arch Linux, pacman should notify the user to do this. Users of other package managers and/or distros will need to periodically diff the files manually.
+
 ## Contents
 
 *   [1 Design goals and benefits of psd](#Design_goals_and_benefits_of_psd)
@@ -53,6 +55,7 @@ First time running psd so please edit /home/facade/.config/psd/psd.conf to your 
 *   Optionally enable the use of overlayfs to improve sync speed and to use a smaller memory footprint. Do this in the USE_OVERLAYFS variable. The user will require sudo rights to `/usr/bin/psd-overlay-helper` to use this option and the kernel must support overlayfs version 22 or higher. See the FAQ below for additional details.
 *   Optionally define which browsers are to be managed in the BROWSERS array. If none are defined, the default is all detected browsers.
 *   Optionally disable the use of crash-recovery snapshots (not recommended). Do this in the USE_BACKUPS variable.
+*   Optionally define the number of crash-recovery snapshots to keep. Do this in the BACKUP_LIMIT variable.
 
 Example: Let's say that Chromium, Opera and Midori are installed but only Chromium and Opera are to be sync'ed to tmpfs since the user keeps Midori as a backup browser and it is seldom used:
 

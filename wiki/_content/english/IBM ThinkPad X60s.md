@@ -36,6 +36,8 @@ It is easiest to do the initial installation with a wired ethernet connection wh
 
 See [Intel graphics](/index.php/Intel_graphics "Intel graphics"). The required driver is xf86-video-intel.
 
+**Tip:** When adjusting the screen backlight with the keyboard, flickering might be encountered. This can be fixed with adding `acpi_backlight=native` to the kernel command options.
+
 ## Ethernet
 
 Gigabit ethernet works out of the box with the e1000e kernel module.

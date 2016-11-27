@@ -81,7 +81,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
 
-*   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+*   **Pacmatic** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
 
@@ -97,7 +97,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
 
-*   **[pkgtools](/index.php/Pkgtools "Pkgtools")** — Collection of scripts for Arch Linux packages.
+*   **pkgtools** — Collection of scripts for Arch Linux packages.
 
 	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
 

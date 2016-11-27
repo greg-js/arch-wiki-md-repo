@@ -120,7 +120,7 @@ ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
 
 The *docker* daemon listens to a [Unix socket](https://en.wikipedia.org/wiki/Unix_domain_socket "wikipedia:Unix domain socket") by default. To listen on a specified port instead, create a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") with the following content:
 
- `/etc/systemd/system/docker.service.d/socket.conf` 
+ `/etc/systemd/system/docker.socket.d/socket.conf` 
 ```
 [Socket]
 ListenStream=0.0.0.0:2375

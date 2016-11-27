@@ -56,6 +56,7 @@ Start the installation:
 
 **Tip:** Some useful flags:
 
+*   `--custom` - Allows changing install directories. Is is recommended to install in /usr/local
 *   `--eulas-agreed` - Skip the EULAs
 *   `--console` - Use the console UI.
 *   `-I`, `--ignore-errors` - Ignore fatal errors.

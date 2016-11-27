@@ -43,6 +43,13 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### November 2016
 
+*   [26 November 2016] [ASA-201611-28](https://lists.archlinux.org/pipermail/arch-security/2016-November/000775.html) [ntp](https://www.archlinux.org/packages/?name=ntp) multiple issues
+*   [25 November 2016] [ASA-201611-27](https://lists.archlinux.org/pipermail/arch-security/2016-November/000774.html) [lib32-libtiff](https://www.archlinux.org/packages/?name=lib32-libtiff) multiple issues
+*   [25 November 2016] [ASA-201611-26](https://lists.archlinux.org/pipermail/arch-security/2016-November/000773.html) [libtiff](https://www.archlinux.org/packages/?name=libtiff) multiple issues
+*   [24 November 2016] [ASA-201611-25](https://lists.archlinux.org/pipermail/arch-security/2016-November/000772.html) [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) multiple issues
+*   [24 November 2016] [ASA-201611-24](https://lists.archlinux.org/pipermail/arch-security/2016-November/000771.html) [wireshark-qt](https://www.archlinux.org/packages/?name=wireshark-qt) multiple issues
+*   [24 November 2016] [ASA-201611-23](https://lists.archlinux.org/pipermail/arch-security/2016-November/000770.html) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk) multiple issues
+*   [23 November 2016] [ASA-201611-22](https://lists.archlinux.org/pipermail/arch-security/2016-November/000769.html) [tomcat6](https://www.archlinux.org/packages/?name=tomcat6) multiple issues
 *   [21 November 2016] [ASA-201611-21](https://lists.archlinux.org/pipermail/arch-security/2016-November/000768.html) [slock](https://www.archlinux.org/packages/?name=slock) access restriction bypass
 *   [19 November 2016] [ASA-201611-20](https://lists.archlinux.org/pipermail/arch-security/2016-November/000767.html) [drupal](https://www.archlinux.org/packages/?name=drupal) multiple issues
 *   [18 November 2016] [ASA-201611-19](https://lists.archlinux.org/pipermail/arch-security/2016-November/000766.html) [php](https://www.archlinux.org/packages/?name=php) arbitrary code execution
