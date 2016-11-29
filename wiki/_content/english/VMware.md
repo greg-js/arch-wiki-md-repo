@@ -56,9 +56,9 @@ Start the installation:
 
 **Tip:** Some useful flags:
 
-*   `--custom` - Allows changing install directories. Is is recommended to install in /usr/local
 *   `--eulas-agreed` - Skip the EULAs
 *   `--console` - Use the console UI.
+*   `--custom` - Allows changing the install directory to e.g. `/usr/local` (make sure to update the `vmware-usbarbitrator.service` paths in [#systemd services](#systemd_services)).
 *   `-I`, `--ignore-errors` - Ignore fatal errors.
 *   `--set-setting=vmware-workstation serialNumber XXXXX-XXXXX-XXXXX-XXXXX-XXXXX` - Set the serial number during install (good for scripted installs).
 *   `--required` - Only ask mandatory questions (results in silent install when combined with `--eulas-agreed` and `--console`).

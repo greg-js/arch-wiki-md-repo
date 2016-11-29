@@ -39,7 +39,8 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [4.2 Solid state drives](#Solid_state_drives)
     *   [4.3 Verify alignment](#Verify_alignment)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 GPT Kernel Support](#GPT_Kernel_Support)
+    *   [5.1 Converting MBR to GPT](#Converting_MBR_to_GPT)
+    *   [5.2 GPT Kernel Support](#GPT_Kernel_Support)
 *   [6 See also](#See_also)
 
 ## Partition table
@@ -213,14 +214,11 @@ This table will help you to choose utility for your needs:
 
  MBR | GPT |
 | Dialog | fdisk
-parted | fdisk
-gdisk
+parted | gdisk
 parted |
-| Pseudo-graphics | cfdisk | cfdisk
-cgdisk |
+| Pseudo-graphics | cfdisk | cgdisk |
 | Non-interactive | sfdisk
-parted | sfdisk
-sgdisk
+parted | sgdisk
 parted |
 | Graphical | GParted
 partitionmanager | GParted
@@ -295,6 +293,10 @@ Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Fla
 See [GNU Parted#Check alignment](/index.php/GNU_Parted#Check_alignment "GNU Parted").
 
 ## Tips and tricks
+
+#### Converting MBR to GPT
+
+See [fdisk#Convert between MBR and GPT](/index.php/Fdisk#Convert_between_MBR_and_GPT "Fdisk").
 
 #### GPT Kernel Support
 

@@ -2,8 +2,9 @@
 
 *   [1 Installation](#Installation)
 *   [2 GPU](#GPU)
-    *   [2.1 Intel HD 4000](#Intel_HD_4000)
-    *   [2.2 NVIDIA NVS 5400M](#NVIDIA_NVS_5400M)
+    *   [2.1 Detecting Mini Display Port](#Detecting_Mini_Display_Port)
+    *   [2.2 Intel HD 4000](#Intel_HD_4000)
+    *   [2.3 NVIDIA NVS 5400M](#NVIDIA_NVS_5400M)
 *   [3 Input](#Input)
     *   [3.1 Hotkeys (Media Keys)](#Hotkeys_.28Media_Keys.29)
 *   [4 Networking](#Networking)
@@ -15,6 +16,10 @@
 See [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch").
 
 ## GPU
+
+### Detecting Mini Display Port
+
+When using Nvidia optimus the Display port will not be accessible. To have access to this port go into Bios and change the your GPU to discrete, also change the auto detect OS to false. Restart and you can now access the mini-display port.
 
 See [Bumblebee](/index.php/Bumblebee "Bumblebee"), or disable the dedicated GPU in the BIOS for power-saving.
 

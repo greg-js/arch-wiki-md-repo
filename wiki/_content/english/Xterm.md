@@ -201,6 +201,16 @@ XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT
 
 ```
 
+You can configure XTerm to behave like modern terminals (like gnome-terminal) that recognize Ctrl+Shift+C and Ctrl+Shift+V for Copy and Paste (using CLIPBOARD) by setting the following rule in your .Xresources:
+
+```
+xterm*VT100.Translations: #override Ctrl Shift <Key>V: insert-selection(CLIPBOARD) 
+ Ctrl Shift <Key>C: copy-selection(CLIPBOARD)
+
+```
+
+Note that this configuration does not impact PRIMARY and it should be working as it was before this configuration.
+
 #### Selecting text
 
 The new user usually discovers that text may be selected using a "click-and-drag" with the left mouse button. Double-clicking will select a word, where a word is defined as consecutive alphabetic characters plus the underscore, or the Basic Regular Expression (BRE) `[A-Za-z_]`. Triple-clicking selects a line, with a "tab" character usually copied as multiple "space" characters.

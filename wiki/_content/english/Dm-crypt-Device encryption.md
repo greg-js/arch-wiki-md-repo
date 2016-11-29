@@ -670,14 +670,14 @@ A keyfile can be of arbitrary content and size.
 Here `dd` is used to generate a keyfile of 2048 random bytes, storing it in the file `/etc/mykeyfile`:
 
 ```
-# dd bs=512 count=4 if=/dev/urandom of=/etc/mykeyfile iflag=fullblock
+# dd bs=512 count=4 if=/dev/urandom of=/etc/mykeyfile
 
 ```
 
 If you are planning to store the keyfile on an external device, you can also simply change the outputfile to the corresponding directory:
 
 ```
-# dd bs=512 count=4 if=/dev/urandom of=/media/usbstick/mykeyfile iflag=fullblock
+# dd bs=512 count=4 if=/dev/urandom of=/media/usbstick/mykeyfile
 
 ```
 

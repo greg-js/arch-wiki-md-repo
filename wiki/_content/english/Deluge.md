@@ -3,20 +3,19 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Plugins](#Plugins)
-*   [2 Daemon setup](#Daemon_setup)
+*   [2 Daemon](#Daemon)
     *   [2.1 System service](#System_service)
     *   [2.2 User service](#User_service)
-    *   [2.3 Shared directories for downloads/uploads](#Shared_directories_for_downloads.2Fuploads)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Firewall](#Firewall)
+    *   [3.1 Shared directories for downloads/uploads](#Shared_directories_for_downloads.2Fuploads)
+    *   [3.2 Firewall](#Firewall)
+    *   [3.3 Plugins](#Plugins)
 *   [4 Clients](#Clients)
     *   [4.1 Console](#Console)
     *   [4.2 GTK+](#GTK.2B)
     *   [4.3 Web](#Web)
         *   [4.3.1 System service](#System_service_2)
         *   [4.3.2 User service](#User_service_2)
-        *   [4.3.3 Setup](#Setup)
 *   [5 Headless setup](#Headless_setup)
     *   [5.1 Create a user](#Create_a_user)
     *   [5.2 Allow remote](#Allow_remote)
@@ -27,36 +26,19 @@
 
 ## Installation
 
-Install [deluge](https://www.archlinux.org/packages/?name=deluge) and optionally [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity) as users may experience a lengthy warning and have their client reject many valid certificate/hostname mappings.
+Install [deluge](https://www.archlinux.org/packages/?name=deluge) and optionally [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity) as users may experience a lengthy warning and have their client reject many valid certificate/hostname mappings. Additional optional dependencies can be viewed using the [pacman -Si](#Querying_package_databases) command.
 
-Note: The latest release of deluge (1.3) does not support the latest [libtorrent-rasterbar](https://www.archlinux.org/packages/?name=libtorrent-rasterbar) (1.1)[[1]](http://forum.deluge-torrent.org/viewtopic.php?t=53939#p223925), resulting in connection problems. Until deluge is updated, the only fix is to install libtorrent 1.0 which is not supported.
+## Daemon
 
-The GTK+ UI requires additional dependencies as does the Web UI:
+Deluge works with a client/server model. The server is referred to as the daemon and runs in the background waiting for a client (console, gtk, or web-based) to connect. The client can disconnect but the daemon continues to run transferring the torrent files in the queue.
 
-*   [python2-notify](https://www.archlinux.org/packages/?name=python2-notify): libnotify notifications support
-*   [pygtk](https://www.archlinux.org/packages/?name=pygtk): requirement for the GTK+ UI
-*   [librsvg](https://www.archlinux.org/packages/?name=librsvg): requirement for the GTK+ UI
-*   [python2-mako](https://www.archlinux.org/packages/?name=python2-mako): requirement for Web UI
-
-### Plugins
-
-**Note:** Plugins should be compiled with Python2.7: e.g. `$ python2.7 *setup.py build*`.
-
-A complete list of plugins can be found on the [Deluge Wiki](http://dev.deluge-torrent.org/wiki/Plugins)
-
-[ltConfig](https://github.com/ratanakvlun/deluge-ltconfig) is a useful plugin that allows direct modification to libtorrent settings and has preset support.
-
-It offers additional settings like `announce_ip` (IP to announce to trackers), `half_open_limit` (Remove maximum half-open connections limit) and more possible privacy and (seed) speedboost features.
-
-## Daemon setup
-
-Upon installation, pacman will create a non-privileged **deluge** user. This user is meant to run the provided daemon, `/usr/bin/deluged`. Users are able to start the deamon several ways.
+Upon installation, pacman will create a non-privileged **deluge** user. This user is meant to run the provided daemon, `/usr/bin/deluged`. Users are able to start the daemon several ways:
 
 1.  Systemd system service (runs as the deluge user).
 2.  Systemd user service (runs as another user).
 3.  Running it directly (runs as another user).
 
-For security reasons, the recommended method of running `deluged` is by the systemd system service `deluged.service` since the deluge user has no shell access (limited account). In addition to the security benefits of running as the non-privileged deluge user, the system service can also run at boot without the need to start Xorg or a client.
+**Tip:** For the highest level of security, running `deluged` via the systemd system service (`deluged.service`) is recommended since the deluge user has no shell access (limited account) or other group affiliation on the host system. In addition to the security benefits of running as the non-privileged deluge user, the system service can also run at boot without the need to start Xorg or a client.
 
 ### System service
 
@@ -86,6 +68,10 @@ The deluge user service can now be [started](/index.php/Start "Start") and enabl
 
 The `deluged` user service can also be placed in `$HOME/.config/systemd/user/`. See [systemd/User](/index.php/Systemd/User "Systemd/User") for more information on user services.
 
+## Configuration
+
+Deluge can be configured through any of the clients as well as by simply editing the JSON-formatted configuration files located in `$HOME/.config/deluge/`. **$HOME** refers to the home directory of the user that `deluged` is running as. This means that if the daemon is running as the **deluge** user, the default home directory is `/srv/deluge/`.
+
 ### Shared directories for downloads/uploads
 
 When using the systemd deluged.service, the shared directory/directories need to be shared so that other users on the system are able to access the data. The general strategy is to:
@@ -105,10 +91,6 @@ Example using `/mnt/torrent_data`:
 
 **Note:** When usermod is used to change group affiliation, a logout/login is required before changes take effect.
 
-## Configuration
-
-Deluge can be configured through any of the clients as well as by simply editing the JSON-formatted configuration files located in `$HOME/.config/deluge/`. **$HOME** refers to the home directory of the user that `deluged` is running as. This means that if the daemon is running as the **deluge** user, the default home directory is `/srv/deluge/`.
-
 ### Firewall
 
 Deluge requires at least one port open for TCP and UDP to allow incoming connections for seeding. If deluge complaining that it cannot open a port for incoming connections, users must open port(s) to be used. In this example, ports 56881 through 56889 are opened for TCP and UDP:
@@ -123,7 +105,7 @@ User who are behind a NAT router/firewall must setup the corresponding ports to 
 
 **Note:** One can limit this to a single port, just be sure to enable both TCP and UDP.
 
-On many default configurations, when using iptables with connection tracking (conntrack) set to drop "INVALID" packets, sometimes a great deal of legitimate torrent traffic (especially DHT traffic) is dropped as "invalid." This is typically caused by either conntrack's memory restrictions, or from long periods between packets among peers (see [[2]](http://libtorrent.rakshasa.no/wiki/RTorrentUsingDHT) towards the bottom and [[3]](http://www.linuxquestions.org/questions/showthread.php?p=5145026)). Symptoms of this problem include torrents not seeding, especially when the torrent client has been active for more than a day or two continuously, and consistently low overhead traffic (in one experience, less than 3KiB/s in either in or out) with DHT enabled, even when deluge/libtorrent has been continuously running for more than forty-eight hours and many torrents are active. For this reason, it may be necessary to disable connection tracking of all torrent traffic for optimal performance, even with the listening ports set to ACCEPT (as the causes for dropping INVALID packets, for instance conntrack's memory problems, may supercede any rules to accept traffic to/from those ports).
+On many default configurations, when using iptables with connection tracking (conntrack) set to drop "INVALID" packets, sometimes a great deal of legitimate torrent traffic (especially DHT traffic) is dropped as "invalid." This is typically caused by either conntrack's memory restrictions, or from long periods between packets among peers (see [[1]](http://libtorrent.rakshasa.no/wiki/RTorrentUsingDHT) towards the bottom and [[2]](http://www.linuxquestions.org/questions/showthread.php?p=5145026)). Symptoms of this problem include torrents not seeding, especially when the torrent client has been active for more than a day or two continuously, and consistently low overhead traffic (in one experience, less than 3KiB/s in either in or out) with DHT enabled, even when deluge/libtorrent has been continuously running for more than forty-eight hours and many torrents are active. For this reason, it may be necessary to disable connection tracking of all torrent traffic for optimal performance, even with the listening ports set to ACCEPT (as the causes for dropping INVALID packets, for instance conntrack's memory problems, may supercede any rules to accept traffic to/from those ports).
 
 To fully turn off connection tracking for torrents, specify ports for both Incoming and Outgoing traffic in Deluge, for instance, 56881-56889 for incoming connections and 56890-57200 for outgoing connections.
 
@@ -146,6 +128,16 @@ Then issue the following commands (after substituting the relevant port ranges):
 The ICMP allowances are desirable because once connection tracking is disabled on those ports, those important ICMP messages (types 3 (Destination Unreachable), 4 (Source Quench), 11 (Time Exceeded) and 12 (Parameter Problem)) would otherwise be declared INVALID themselves (as netfilter would not know of any connections that they are associated with), and they would potentially be blocked.
 
 **Warning:** A port range of 1024:65535 would break every DNS query.
+
+### Plugins
+
+**Note:** Plugins should be compiled with Python2.7: e.g. `$ python2.7 *setup.py build*`.
+
+A complete list of plugins can be found on the [Deluge Wiki](http://dev.deluge-torrent.org/wiki/Plugins)
+
+[ltConfig](https://github.com/ratanakvlun/deluge-ltconfig) is a useful plugin that allows direct modification to libtorrent settings and has preset support.
+
+It offers additional settings like `announce_ip` (IP to announce to trackers), `half_open_limit` (Remove maximum half-open connections limit) and more possible privacy and (seed) speedboost features.
 
 ## Clients
 
@@ -191,22 +183,28 @@ The GTK+ client has a number of useful plugins:
 
 ### Web
 
-**Note:** It is recommended to use HTTPS for the Web client to protect against a Man-in-the-middle attack.
+A web-client is also provided should users not want GTK or shell-based access to the daemon. Just as with deluge daemon mentioned above, the web client as can be started several different ways:
 
-**Warning:**
+1.  Systemd system service (runs as the deluge user).
+2.  Systemd user service (runs as another user).
+3.  Running it directly (runs as another user).
 
+**Tip:** For the highest level of security, running `deluge-web` via the systemd system service (`deluge-web.service`) is recommended since the deluge user has no shell access (limited account) or other group affiliation on the host system. In addition to the security benefits of running as the non-privileged deluge user, the system service can also run at boot without the need to start Xorg or a client.
+
+When the web client s initially started, it will create `$HOME/.config/deluge/web.conf`. The password in this file is hashed with SHA1 and salted. The default password is "deluge".
+
+Several things to note:
+
+*   The web client offers many of the same features of the GTK+ UI, including the plugin system.
+*   It is recommended to use HTTPS for the Web client to protect against a man-in-the-middle attack.
+*   Users may be greeted by a warning from the browser that the SSL certificate is untrusted. Add an exception to this in the browser to continue on. See the [OpenSSL](/index.php/OpenSSL "OpenSSL") page for information on creating your own certificate.
 *   If multiple users are running a daemon, the default port (8112) will need to be changed for each user.
-*   The deluge Web client comes with `deluge` as default password. Please update the password to something more secure.
 
-The Web UI can be [start](/index.php/Start "Start") by running `deluge-web` or by enabling the Web UI through the GTK+ UI. It offers many of the same features of the GTK+ UI, including the plugin system.
+Once running, users may connect to the web client by browsing to [http://hostname:8112](http://hostname:8112) or if using encryption: [https://hostname:8112](https://hostname:8112)
 
 #### System service
 
-Deluge comes with a system service file called `deluge-web.service`, which is used to [start](/index.php/Start "Start") the Deluge Web UI.
-
-The Deluge Web UI uses a Connection Manager, allowing managing of multiple Deluge clients running under the same host. It's however also possible to connect and manage Deluge clients running under a different host.
-
-Remember to [start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") the `deluged` service to allow the Web UI connect to the host Deluge client.
+Deluge ships with `deluge-web.service`, a systemd system unit, which is used to [start](/index.php/Start "Start") the Deluge Web UI. The Deluge Web UI uses a Connection Manager, allowing managing of multiple Deluge clients running under the same host or on an entirely different one. Remember to [start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") the `deluged` service to allow the Web UI connect to the host Deluge client.
 
 #### User service
 
@@ -229,12 +227,6 @@ WantedBy=default.target
 The deluge user service can now be [started](/index.php/Start "Start") and enabled by the user.
 
 The `deluge-web` user service can also be placed in `$HOME/.config/systemd/user/`. See [systemd/User](/index.php/Systemd/User "Systemd/User") for more information on user services.
-
-#### Setup
-
-When `deluge-web` is initially started, it will create `$HOME/.config/deluge/web.conf`. The password in this file is hashed with SHA1 and salted. The default password is "deluge".
-
-Users may be greeted by a warning from the browser that the SSL certificate is untrusted. Add an exception to this in the browser to continue on. See the [OpenSSL](/index.php/OpenSSL "OpenSSL") page for information on creating your own certificate.
 
 ## Headless setup
 

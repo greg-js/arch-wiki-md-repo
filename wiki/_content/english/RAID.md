@@ -31,8 +31,8 @@ This article explains what RAID is and how to create/manage a software RAID arra
         *   [6.1.2 RAID1 and RAID10 Notes on Scrubbing](#RAID1_and_RAID10_Notes_on_Scrubbing)
     *   [6.2 Removing Devices from an Array](#Removing_Devices_from_an_Array)
     *   [6.3 Adding a New Device to an Array](#Adding_a_New_Device_to_an_Array)
-        *   [6.3.1 For RAID0 Arrays](#For_RAID0_Arrays)
-    *   [6.4 Change sync speed limits](#Change_sync_speed_limits)
+    *   [6.4 Increasing Size of a RAID Volume](#Increasing_Size_of_a_RAID_Volume)
+    *   [6.5 Change sync speed limits](#Change_sync_speed_limits)
 *   [7 Monitoring](#Monitoring)
     *   [7.1 Watch mdstat](#Watch_mdstat)
     *   [7.2 Track IO with iotop](#Track_IO_with_iotop)
@@ -502,7 +502,7 @@ One can remove a device from the array after marking it as faulty:
 Now remove it from the array:
 
 ```
-# mdadm -r /dev/md0 /dev/sdxx
+# mdadm --remove /dev/md0 /dev/sdxx
 
 ```
 
@@ -556,19 +556,34 @@ Check that the device has been added with the command:
 
 ```
 
-#### For RAID0 Arrays
-
-If you get an error like:
-
+**Note:** For RAID0 arrays you may get the following error message:
 ```
 mdadm: add new device failed for /dev/sdc1 as 2: Invalid argument
 
 ```
 
-It may be because you're using RAID0\. The command above will add the new disk as a "spare", but RAID0 doesn't have spares. If you want to add a device to a RAID0 array, you need to "grow" and "add" in the same command:
+This is because the above commands will add the new disk as a "spare" but RAID0 doesn't have spares. If you want to add a device to a RAID0 array, you need to "grow" and "add" in the same command. This is demonstrated below:
 
 ```
 # mdadm --grow /dev/md0 --raid-devices=3 --add /dev/sdc1
+
+```
+
+### Increasing Size of a RAID Volume
+
+If larger disks are installed in a RAID array or partition size has been increased, it may be desirable to increase the size of the RAID volume to fill the larger available space. This process may be begun by first following the above sections pertaining to replacing disks. Once the RAID volume has been rebuilt onto the larger disks it must be "grown" to fill the space.
+
+```
+# mdadm --grow /dev/md0 --size=max
+
+```
+
+Next, partitions present on the RAID volume `/dev/md0` may need to be resized. See [Partitioning](/index.php/Partitioning "Partitioning") for details. Finally, the filesystem on the above mentioned partition will need to be resized. If partitioning was performed with `gparted` this will be done automatically. If other tools were used, unmount and then resize the filesystem manually.
+
+```
+# umount /storage
+# fsck.ext4 -f /dev/md0p1
+# resize2fs /dev/md0p1
 
 ```
 

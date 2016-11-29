@@ -73,7 +73,7 @@ Sometimes the BIOS UEFI does not respect the efivars. In this case you have manu
 
 ### Updates
 
-[BIOS update 1.4.4](http://downloads.dell.com/FOLDER03769593M/1/XPS_9350_1.4.4.exe) was released on 2016-06-30\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
+[BIOS update 1.4.10](http://downloads.dell.com/FOLDER04040637M/1/XPS_9350_1.4.10.exe) was released on 2016-11-22\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
 
 ## Thunderbolt 3 / USB 3.1
 

@@ -19,6 +19,7 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
     *   [5.4 Disable gksu grab mode](#Disable_gksu_grab_mode)
     *   [5.5 Gnome-screensaver](#Gnome-screensaver)
     *   [5.6 GDM](#GDM)
+    *   [5.7 LightDM](#LightDM)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wacom Drivers](#Wacom_Drivers)
     *   [6.2 Screen Rotation](#Screen_Rotation)
@@ -425,6 +426,14 @@ cellwriter --keyboard-only --window-x=512 --window-y=768 &
 To start a fully fledged CellWriter instance within the user session, you might want to terminate the instance started with the keyboard-only switch within the gdm context. Add something such as `killall cellwriter` to your newly created file `/etc/gdm/PostLogin/Default`.
 
 **Note:** This works in a single-user setup, if you have a multi-user setup, you might want to develop and post your more elaborate solution.
+
+### LightDM
+
+Configuring LightDM to use Onboard for touchscreen login and unlocking is likely the simplest option (and stable) to provide onscreen keyboard login (when using the default GTK greeter).
+
+Ensure [onboard](https://www.archlinux.org/packages/?name=onboard) and [lightdm-gtk-greeter-settings](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter-settings) are installed and run `lightdm-gtk-greeter-settings` to configure onboard to start.
+
+Specifiying `onboard -t Droid -l Phone` configures the Droid theme and sets the Phone layout.
 
 ## Troubleshooting
 

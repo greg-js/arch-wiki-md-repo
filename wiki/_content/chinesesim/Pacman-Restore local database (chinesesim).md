@@ -22,13 +22,19 @@ $ ls /var/log/pacman.log
 ```
 #!/bin/awk -f
 
-$3 ~ /^(installed|upgraded)$/ {
-  pkg[$4] = 1
+i = 3 {}
+
+$3 ~ /^\[[^]]+\]$/ {
+  i = 4
+}
+
+$i ~ /^(installed|upgraded)$/ {
+  pkg[$(i+1)] = 1
   next
 } 
 
-$3 == "removed" {
-  pkg[$4] = 0
+$i == "removed" {
+  pkg[$(i+1)] = 0
 } 
 
 END {

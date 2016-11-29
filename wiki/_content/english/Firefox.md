@@ -34,6 +34,7 @@
     *   [6.17 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
     *   [6.18 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
     *   [6.19 Firefox looks bad with GTK+ >=3.20](#Firefox_looks_bad_with_GTK.2B_.3E.3D3.20)
+    *   [6.20 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -211,6 +212,8 @@ If Firefox takes much longer to start up than other browsers, it may be due to l
 
 See [Font configuration](/index.php/Font_configuration "Font configuration").
 
+Firefox has a setting which determines how many replacements it will allow from fontconfig. To allow it to use all your replacement-rules, change `gfx.font_rendering.fontconfig.max_generic_substitutions` to `127` (the highest possible value).
+
 ### Setting an email client
 
 Inside the browser, `mailto` links by default are opened by a web application such as Gmail or Yahoo Mail. To set an external email program, go to *Preferences > Applications* and modify the *action* corresponding to the `mailto` content type; the file path will need to be designated (e.g. `/usr/bin/kmail` for Kmail).
@@ -383,6 +386,18 @@ If you are using the Xorg Intel or Nouveau drivers and experience tearing video 
 ### Firefox looks bad with GTK+ >=3.20
 
 Firefox (as of version 47) [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-gtk2](https://aur.archlinux.org/packages/firefox-gtk2/). Alternatively, you may use [markzz's repository](/index.php/Unofficial_user_repositories#markzz "Unofficial user repositories") or [archlinuxcn's](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") (x86_64 only) for pre-built GTK2 Firefox packages.
+
+### Firefox WebRTC module cannot detect a microphone
+
+WebRTC applications for instance [Firefox WebRTC getUserMedia test page](https://mozilla.github.io/webrtc-landing/gum_test.html) say that microphone cannot be found. Issue is reproducible for both ALSA or Pulseaudio setup. Firefox debug logs show the following error:
+
+ `$ NSPR_LOG_MODULES=MediaManager:5,GetUserMedia:5 firefox` 
+```
+...
+[Unnamed thread 0x7fd7c0654340]: D/GetUserMedia  VoEHardware:GetRecordingDeviceName: Failed 1
+```
+
+You can try setting `media.navigator.audio.full_duplex` property to `false` at `about:config` Firefox page and restart Firefox.
 
 ## See also
 

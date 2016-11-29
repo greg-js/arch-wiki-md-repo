@@ -43,14 +43,15 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [3.6 Choppy/distorted sound](#Choppy.2Fdistorted_sound)
 *   [4 Hardware and Cards](#Hardware_and_Cards)
     *   [4.1 No HDMI sound output after some time with the monitor turned off](#No_HDMI_sound_output_after_some_time_with_the_monitor_turned_off)
-    *   [4.2 No cards](#No_cards)
-    *   [4.3 Starting an application interrupts other app's sound](#Starting_an_application_interrupts_other_app.27s_sound)
-    *   [4.4 The only device shown is "dummy output" or newly connected cards are not detected](#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_are_not_detected)
-    *   [4.5 No HDMI 5/7.1 Selection for Device](#No_HDMI_5.2F7.1_Selection_for_Device)
-    *   [4.6 Failed to create sink input: sink is suspended](#Failed_to_create_sink_input:_sink_is_suspended)
-    *   [4.7 Simultaneous output to multiple sound cards / devices](#Simultaneous_output_to_multiple_sound_cards_.2F_devices)
-    *   [4.8 Simultaneous output to multiple sinks on the same sound card not working](#Simultaneous_output_to_multiple_sinks_on_the_same_sound_card_not_working)
-    *   [4.9 Some profiles like SPDIF are not enabled by default on the card](#Some_profiles_like_SPDIF_are_not_enabled_by_default_on_the_card)
+    *   [4.2 No HDMI sound using a headless server](#No_HDMI_sound_using_a_headless_server)
+    *   [4.3 No cards](#No_cards)
+    *   [4.4 Starting an application interrupts other app's sound](#Starting_an_application_interrupts_other_app.27s_sound)
+    *   [4.5 The only device shown is "dummy output" or newly connected cards are not detected](#The_only_device_shown_is_.22dummy_output.22_or_newly_connected_cards_are_not_detected)
+    *   [4.6 No HDMI 5/7.1 Selection for Device](#No_HDMI_5.2F7.1_Selection_for_Device)
+    *   [4.7 Failed to create sink input: sink is suspended](#Failed_to_create_sink_input:_sink_is_suspended)
+    *   [4.8 Simultaneous output to multiple sound cards / devices](#Simultaneous_output_to_multiple_sound_cards_.2F_devices)
+    *   [4.9 Simultaneous output to multiple sinks on the same sound card not working](#Simultaneous_output_to_multiple_sinks_on_the_same_sound_card_not_working)
+    *   [4.10 Some profiles like SPDIF are not enabled by default on the card](#Some_profiles_like_SPDIF_are_not_enabled_by_default_on_the_card)
 *   [5 Bluetooth](#Bluetooth)
     *   [5.1 Disable Bluetooth support](#Disable_Bluetooth_support)
     *   [5.2 Bluetooth headset replay problems](#Bluetooth_headset_replay_problems)
@@ -714,6 +715,14 @@ Another workaround could be to disable the switch-on-port-available module by co
 ...
 
 ```
+
+### No HDMI sound using a headless server
+
+You might want to use HDMI audio with your a/v receiver but no display. HDMI requires a video signal, which we have from the virtual terminal.
+
+By default, this signal is turned off after 600 seconds, thus the audio sink gets lost as well.
+
+To prevent screen blanking, add `consoleblank=0` to the kernel command line.
 
 ### No cards
 

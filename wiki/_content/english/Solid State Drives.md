@@ -54,6 +54,15 @@ and notes |
 To verify TRIM support, run:
 
 ```
+# lsblk -D
+
+```
+
+And check the values of DISC-GRAN and DISC-MAX columns. Non-zero values indicate TRIM support.
+
+Or [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") [hdparm](https://www.archlinux.org/packages/?name=hdparm) package and run:
+
+```
 # hdparm -I /dev/sda | grep TRIM
         *    Data Set Management TRIM supported (limit 1 block)
 

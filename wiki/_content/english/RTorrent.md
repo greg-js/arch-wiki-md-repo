@@ -71,7 +71,7 @@ upload_rate = 28
 
 ```
 
-The `check_hash` option executes a hash check when a torrent download is complete or rTorrent is started. When starting, it checks for errors in your completed files.
+The `check_hash` option executes a hash check when rTorrent is started. It checks for errors in your completed files.
 
 ```
 check_hash = yes

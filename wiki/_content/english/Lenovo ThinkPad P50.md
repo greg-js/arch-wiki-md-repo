@@ -15,6 +15,7 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
     *   [3.7 Video compression artifacts in VLC](#Video_compression_artifacts_in_VLC)
     *   [3.8 Fingeprint Validity Sensor not working](#Fingeprint_Validity_Sensor_not_working)
     *   [3.9 Headsets not working with pulseaudio](#Headsets_not_working_with_pulseaudio)
+    *   [3.10 Wifi failing to come up (Intel 8260)](#Wifi_failing_to_come_up_.28Intel_8260.29)
 *   [4 lspci](#lspci)
 
 ## Installation
@@ -109,6 +110,14 @@ And there is nothing you can do. [bug report at freedesktop](https://bugs.freede
 ### Headsets not working with pulseaudio
 
 Try to boot with headsets plugged in. Pulseaudio is innocent.
+
+### Wifi failing to come up (Intel 8260)
+
+On a clean install with kernel 4.8.10 I was unable to bring up the wireless interface. It showed up in 'ip link' and 'iw dev' and was clear of blocks (confirmed via 'rfkill list'). Step 1 is to make sure that it's not soft blocked with rfkill via the 'rfkill list' command. If it is blocked you can use the "F8" wifi toggle key to ensure that it's not been disabled via that switch.
+
+More importantly: I was unable to get it working intially. I eventually started downgrading the available firmware for this unit by simply moving specific iwlwifi firmware out of /lib/firmware until I identified the working firmware packages.
+
+At the time of this note, the available iwlwifi-8000C-XX.ucode files include version 13, 16, 21 and 22\. 22 seems to be the culprit here. 21 and 16 both worked for me. I left all files in place and moved firmware v. 22 to /root/lib/firmware for safe keeping. A reboot (or modprobe -r iwlwifi / modprobe iwlwifi) and the card was working.
 
 ## lspci
 

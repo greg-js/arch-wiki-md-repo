@@ -1,5 +1,7 @@
 [Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. All major Linux desktop systems like Gnome, KDE do support Wayland, and there is also a reference implementation for a compositor called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
 
+The biggest issue is, in 2016, with screen recording, as applications do not see other applications contents any more.
+
 ## Contents
 
 *   [1 Requirements](#Requirements)
@@ -281,11 +283,13 @@ $ weston-stacking
 
 ```
 
-This is still experimental (state 2011-11-18) and not everything will run as expected. Known issues:
+This is still experimental (state 2016-11-18) and not everything will run as expected. Known issues:
 
-*   when launching without GDM, gnome-session needs to be started manual, no shutdown/restart buttons work ([gnome issue 774774](https://bugzilla.gnome.org/show_bug.cgi?id=774774))
-*   starting X11 on tty1, wayland on tty2: windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
+*   When launching without GDM, gnome-session needs to be started manual, no shutdown/restart buttons work ([gnome issue 774774](https://bugzilla.gnome.org/show_bug.cgi?id=774774))
+*   Starting X11 on tty1, wayland on tty2: windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
 *   Not all weston applications work, e.g. weston-terminal.
+
+*   As of November 2016 there is an ongoing discussion how to implement screen recording. Currently the compositors implement at least basic functionality, so does gnome.
 
 ### Autostart
 

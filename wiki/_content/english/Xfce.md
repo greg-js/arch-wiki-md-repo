@@ -11,7 +11,8 @@
     *   [3.2 Desktop](#Desktop)
         *   [3.2.1 Transparent background for icon titles](#Transparent_background_for_icon_titles)
         *   [3.2.2 Remove Thunar options from right-click menu](#Remove_Thunar_options_from_right-click_menu)
-        *   [3.2.3 Kill window shortcut](#Kill_window_shortcut)
+        *   [3.2.3 One wallpaper across multihead](#One_wallpaper_across_multihead)
+        *   [3.2.4 Kill window shortcut](#Kill_window_shortcut)
     *   [3.3 Session](#Session)
         *   [3.3.1 Startup applications](#Startup_applications)
             *   [3.3.1.1 Delay application startup](#Delay_application_startup)
@@ -166,6 +167,17 @@ Issue the following command:
 
 ```
 $ xfconf-query -c xfce4-desktop -v --create -p /desktop-icons/style -t int -s 0
+
+```
+
+#### One wallpaper across multihead
+
+Open `xfce4-settings-editor` and create a new property with the following settings:
+
+```
+Property: /backdrop/screen0/xinerama-stretch
+Type: Boolean
+Value: TRUE|1|Enabled
 
 ```
 

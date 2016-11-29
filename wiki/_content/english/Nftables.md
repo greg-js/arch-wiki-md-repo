@@ -577,7 +577,7 @@ table inet filter {
 
 		# no ping floods:
 		ip6 nexthdr icmpv6 icmpv6 type echo-request limit rate 10/second accept
-		ip protocol icmp icmp type echo-request 10/second accept
+		ip protocol icmp icmp type echo-request limit rate 10/second accept
 
 		ct state established,related accept
 		ct state invalid drop

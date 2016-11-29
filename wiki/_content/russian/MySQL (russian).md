@@ -56,6 +56,12 @@ MariaDB - так именуется форк популярного сервер
 
 и [перезапустите](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D1%82%D0%B5 "Перезапустите") `mysqld`.
 
+При MariaDB по стандарту запустится только так:
+
+**Warning:** For security reasons, the Systemd service file for this package will prevent MariaDB from using a `datadir` under the `$HOME` hierarchy
+
+Now the `mariadb.service` can be started and/or enabled with [systemd](/index.php/Systemd#Using_units "Systemd").
+
 Если есть необходимость во фронтендах к MariaDB, то можете использовать [mysql-gui-tools](https://aur.archlinux.org/packages/mysql-gui-tools/) или [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench).
 
 ### Автоматический запуск при загрузке системы

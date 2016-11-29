@@ -60,24 +60,14 @@ But be careful with `/etc/modprobe.d/i915.conf`. It may cause screen freezing.
 
 The touch pad will work with the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package.
 
-Multi-gesture can be activated downloading this git project [Asus fte dkms](https://github.com/vlasenko/hid-asus-fte-dkms) and executing the following instructions:
-
-```
-./dev-run.sh
-
-```
+Multi-gesture can be activated downloading this git project [Asus HID DKMS](https://github.com/vlasenko/hid-asus-dkms) and executing the following script:
 
 ```
 ./dkms-add.sh
 
 ```
 
-To enable it at boot time you must create a file at `/etc/modules-load.d/` (for example with name `touchpad.conf`) containing:
-
-```
-hid_asus_fte
-
-```
+It will build and load immediately the touch pad driver kernel module and will add it persistently to load it during boot.
 
 Notice: You must have installed before the packages `dkms` and `linux-headers`
 

@@ -25,7 +25,7 @@ Include = /etc/pacman.d/mirrorlist
 
 更新软件包列表并升级系统 `pacman -Syu`.
 
-**Note:** 需要仅运行 `pacman -Sy`, [Arch 不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance").
+**Note:** 不要仅运行 `pacman -Sy`, [Arch 不支持部分升级](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance").
 
 ## 禁用
 

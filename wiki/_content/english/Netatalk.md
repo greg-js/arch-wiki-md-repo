@@ -67,7 +67,7 @@ rwlist = nobody
 
 ## IP Tables
 
-If you use the iptables package for firewall services, consider adding the following: (replace `-I` with `-A` as necessary)
+If you use the [iptables](/index.php/Iptables "Iptables") package for firewall services, consider adding the following: (replace `-I` with `-A` as necessary)
 
  `Bonjour/Zeroconf` 
 ```
