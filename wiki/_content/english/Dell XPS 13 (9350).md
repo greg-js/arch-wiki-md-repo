@@ -2,6 +2,7 @@
 
 | **Device** | **Status** | **Modules** |
 | Video | Works after configuration | i915 |
+| External screen | Partial or does not work at all |  ? |
 | Wireless | Works after configuration | brcmfmac |
 | Bluetooth | Works after installing firmware | btbcm |
 | Audio | Working | snd_hda_intel |
@@ -25,6 +26,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [2.2 No UEFI system found](#No_UEFI_system_found)
     *   [2.3 Updates](#Updates)
 *   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
+    *   [3.1 External screen](#External_screen)
 *   [4 SATA controller](#SATA_controller)
     *   [4.1 Dual booting Linux and Windows](#Dual_booting_Linux_and_Windows)
 *   [5 NVM Express SSD](#NVM_Express_SSD)
@@ -47,15 +49,10 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [10.1 Hissing/Crackling noises when using headphones](#Hissing.2FCrackling_noises_when_using_headphones)
 *   [11 Microphone](#Microphone)
 *   [12 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
-*   [13 Diverting models](#Diverting_models)
-    *   [13.1 XPS 12](#XPS_12)
-    *   [13.2 Dell XPS 15](#Dell_XPS_15)
-    *   [13.3 Dell XPS 13 (2015)](#Dell_XPS_13_.282015.29)
-    *   [13.4 Dell XPS 13 9360 (4th Gen - late 2016)](#Dell_XPS_13_9360_.284th_Gen_-_late_2016.29)
-*   [14 lspci and lsusb](#lspci_and_lsusb)
-    *   [14.1 lspci](#lspci)
-    *   [14.2 lsusb](#lsusb)
-*   [15 See also](#See_also)
+*   [13 lspci and lsusb](#lspci_and_lsusb)
+    *   [13.1 lspci](#lspci)
+    *   [13.2 lsusb](#lsusb)
+*   [14 See also](#See_also)
 
 ## Content adaptive brightness control
 
@@ -84,6 +81,16 @@ In the event of devices not working correctly, ensure that you have updated to t
 [Thunderbolt 3 Firmware Update 2.16.01.003, A04](http://downloads.dell.com/FOLDER03798029M/1/Intel_TBT3_FW_UPDATE_NVM16_A04_2.16.01.003.exe) was released on 2016-08-10\. Unlike the BIOS update, this is a graphical application which must be run in a modern Windows environment (MS-DOS will not suffice).
 
 Hotplug support for this port requires a [bug fix](https://bugzilla.kernel.org/show_bug.cgi?id=115121) which landed in kernel version 4.7\. It also requires the kernel to be built with <tt>CONFIG_PCI_HOTPLUG=y</tt>.
+
+### External screen
+
+Support for external screens either using an USB-C to HDMI or USB-C to Mini Display ports adapters may not be working properly. Commonly the screen when plugged is reported to either:
+
+*   display an image for a few milliseconds then switch to a black screen;
+*   have no image at all;
+*   being flickering after a few minutes to the extent this is basically unusable.
+
+Refer to the [according Arch Forum entry](https://bbs.archlinux.org/viewtopic.php?id=205147) for an exhaustive discussion about working adapters and the [Dell forum entry](http://en.community.dell.com/techcenter/os-applications/f/4613/t/19988851).
 
 ## SATA controller
 
@@ -281,22 +288,6 @@ For ALSA, increase "Digital" channel for microphone to work.
 ## CPU slowdown after resume from suspend
 
 If you are experiencing a very slow computer after resume from suspend, you may be subject to a bug where your CPU frequency is capped to a very low value. Use `cpupower frequency-info` to check. If so, please read [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1558948#p1558948) for debug information, and a workaround.
-
-## Diverting models
-
-### XPS 12
-
-### Dell XPS 15
-
-Despite the similarities between the two devices they have quite different solutions for various problems, refer to [Dell XPS 15](/index.php/Dell_XPS_15 "Dell XPS 15") for more information.
-
-### Dell XPS 13 (2015)
-
-Information about the predecessor is available at [Dell XPS 13 (9343)](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)").
-
-### Dell XPS 13 9360 (4th Gen - late 2016)
-
-Information about the successor is available at [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)").
 
 ## lspci and lsusb
 

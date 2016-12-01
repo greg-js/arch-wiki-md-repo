@@ -24,11 +24,10 @@ From [MATE homepage](http://mate-desktop.org/):
     *   [5.7 Change window decoration button order](#Change_window_decoration_button_order)
     *   [5.8 Auto open file manager after drive mount](#Auto_open_file_manager_after_drive_mount)
     *   [5.9 Screensaver](#Screensaver)
-    *   [5.10 Lock screen and default background image](#Lock_screen_and_default_background_image)
-    *   [5.11 Spatial view in Caja](#Spatial_view_in_Caja)
-    *   [5.12 Change font DPI setting](#Change_font_DPI_setting)
-    *   [5.13 Change applications menu icon](#Change_applications_menu_icon)
-    *   [5.14 Panel speed settings](#Panel_speed_settings)
+    *   [5.10 Spatial view in Caja](#Spatial_view_in_Caja)
+    *   [5.11 Change font DPI setting](#Change_font_DPI_setting)
+    *   [5.12 Change applications menu icon](#Change_applications_menu_icon)
+    *   [5.13 Panel speed settings](#Panel_speed_settings)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Toggling compositing](#Toggling_compositing)
     *   [6.2 Vertical sync for compositing](#Vertical_sync_for_compositing)
@@ -36,6 +35,7 @@ From [MATE homepage](http://mate-desktop.org/):
     *   [6.4 Use of gradient backgrounds with LightDM](#Use_of_gradient_backgrounds_with_LightDM)
     *   [6.5 Enabling panel shadow](#Enabling_panel_shadow)
     *   [6.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
+    *   [6.7 MATE Screensaver background cannot be changed](#MATE_Screensaver_background_cannot_be_changed)
 *   [7 See also](#See_also)
 
 ## MATE applications
@@ -275,41 +275,6 @@ $ gsettings set org.mate.media-handling automount-open false
 
 MATE uses [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver) to lock your session. By default there are a limited number of screensavers available. To make more screensavers available, install the [mate-screensaver-hacks](https://www.archlinux.org/packages/?name=mate-screensaver-hacks) package. This will allow you to use [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") screensavers with [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver).
 
-### Lock screen and default background image
-
-The full list of configuration options can be found in `/usr/share/glib-2.0/schemas/org.mate.background.gschema.xml`, they are overridden by creating the file `/usr/share/glib-2.0/schemas/mate-background.gschema.override`.
-
-**Note:** The values on the right must be enclosed in single quotes ('') otherwise an error will occur during re-compile.
-
-Example #1: Change the background image of the lock screen:
-
- `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
-```
-[org.mate.background]
-picture-filename='/path/to/the/background.jpg'
-```
-
-Example #2: Change the lock screen to use a gradient:
-
- `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
-```
-[org.mate.background]
-color-shading-type='vertical-gradient'
-picture-options='scaled'
-picture-filename=''
-primary-color='#152233'
-secondary-color='#000000'
-```
-
-Re-compile the schemas:
-
-```
-# glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-```
-
-Finally, restart your X session for the change to effect.
-
 ### Spatial view in Caja
 
 To ensure that each new folder opens in a new window (known as spatial view), open Caja's preferences dialog, click on the behaviour tab and tick the 'Open each folder in its own window' option. Alternatively, execute the following command which achieves the same effect:
@@ -428,6 +393,41 @@ If this has no effect, increase the delay duration.
 A feature of the MATE panel window list is that windows can be scrolled through using the mouse or touchpad. This feature may be troublesome for some as there is potential for accidental, unintended scrolling through windows.
 
 Whilst there is no way of disabling this feature through MATE's settings, this feature can be disabled by patching [libwnck](https://www.archlinux.org/packages/?name=libwnck) using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"); in this case, rebuild libwnck with the following [patch](http://pastebin.com/raw.php?i=Bj0AnH1c). For more information on rebuilding packages with patches applied, see [Patching in ABS#Applying patches](/index.php/Patching_in_ABS#Applying_patches "Patching in ABS").
+
+### MATE Screensaver background cannot be changed
+
+Due to a [bug](https://github.com/mate-desktop/mate-screensaver/issues/55) in MATE Screensaver, it is only possible to change the MATE Screensaver background by changing the default background image using a gsettings override. The full list of configuration options can be found in `/usr/share/glib-2.0/schemas/org.mate.background.gschema.xml`, they are overridden by creating the file `/usr/share/glib-2.0/schemas/mate-background.gschema.override`.
+
+**Note:** The values on the right must be enclosed in single quotes ('') otherwise an error will occur during re-compile.
+
+Example #1: Change the background image of the lock screen:
+
+ `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
+```
+[org.mate.background]
+picture-filename='/path/to/the/background.jpg'
+```
+
+Example #2: Change the lock screen to use a gradient:
+
+ `/usr/share/glib-2.0/schemas/mate-background.gschema.override` 
+```
+[org.mate.background]
+color-shading-type='vertical-gradient'
+picture-options='scaled'
+picture-filename=''
+primary-color='#152233'
+secondary-color='#000000'
+```
+
+Re-compile the schemas:
+
+```
+# glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+```
+
+Finally, restart your X session for the change to effect.
 
 ## See also
 

@@ -214,11 +214,14 @@ This table will help you to choose utility for your needs:
 
  MBR | GPT |
 | Dialog | fdisk
-parted | gdisk
+parted | fdisk
+gdisk
 parted |
-| Pseudo-graphics | cfdisk | cgdisk |
+| Pseudo-graphics | cfdisk | cfdisk
+cgdisk |
 | Non-interactive | sfdisk
-parted | sgdisk
+parted | sfdisk
+sgdisk
 parted |
 | Graphical | GParted
 partitionmanager | GParted

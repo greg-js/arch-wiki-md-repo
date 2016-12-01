@@ -93,8 +93,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [10.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
     *   [10.12 Multi-monitor issues](#Multi-monitor_issues)
 *   [11 Unstable releases](#Unstable_releases)
-*   [12 Bugs](#Bugs)
-*   [13 See also](#See_also)
+*   [12 See also](#See_also)
 
 ## Installation
 
@@ -940,12 +939,6 @@ These bugs have been resolved in the upstream/git KDE Plasma builds, which can b
 ## Unstable releases
 
 See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories")
-
-## Bugs
-
-It is preferable that if you find a minor or serious bug, you should visit [the Arch Bug Tracker](https://bugs.archlinux.org) or/and [KDE Bug Tracker](http://bugs.kde.org) in order to report that. Make sure that you are clear about what you want to report.
-
-If you have any problem and you write about in on the Arch forums, first make sure that you have **fully** updated your system using a good sync mirror (check [here](https://www.archlinux.de/?page=MirrorStatus)) or try [Reflector](/index.php/Reflector "Reflector").
 
 ## See also
 

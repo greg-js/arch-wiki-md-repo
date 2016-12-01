@@ -259,12 +259,23 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
  |
 | [OpenSSL](https://www.openssl.org/docs/faq.html) | `~/.rnd` | Seeding file .rnd's location can be set with RANDFILE environment variable per [FAQ](https://www.openssl.org/docs/faq.html). |
+| [pass](https://www.archlinux.org/packages/?name=pass) | `~/.password-store` | `$ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass` |
+| [pidgin](https://www.archlinux.org/packages/?name=pidgin) | `~/.purple` | `$ pidgin --config="$XDG_DATA_HOME"/purple` |
 | [python-setuptools](https://pypi.python.org/pypi/setuptools) | `~/.python-eggs` | `$ export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs` |
 | [readline](http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html) | `~/.inputrc` | `$ export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc` |
 | [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/) | `~/.*_history` | [[59]](https://github.com/hanslub42/rlwrap/issues/25) | `$ export RLWRAP_HOME="$XDG_DATA_HOME"/rlwrap` |
 | [screen](/index.php/Screen "Screen") | `~/.screenrc` | `$ export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc` |
 | [stack](https://www.stackage.org/) | `~/.stack` | [[60]](https://github.com/commercialhaskell/stack/issues/342) | `$ export STACK_ROOT="$XDG_DATA_HOME"/stack` |
 | [subversion](/index.php/Subversion "Subversion") | `~/.subversion` | [[61]](https://issues.apache.org/jira/browse/SVN-4599) [[62]](https://mail-archives.apache.org/mod_mbox/subversion-users/201204.mbox/%3c4F8FBCC6.4080205@ritsuka.org%3e)[[63]](http://mail-archives.apache.org/mod_mbox/subversion-dev/201509.mbox/%3c20150917222954.GA20331@teapot%3e) | `$ svn --config-dir "$XDG_CONFIG_HOME"/subversion` |
+| [task](https://www.archlinux.org/packages/?name=task) | `~/.task`
+
+`~/.taskrc`
+
+ | `$ export TASKDATA="$XDG_DATA_HOME"/task`
+
+`$ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc`
+
+ |
 | [tig](http://jonas.nitro.dk/tig/) | `~/.tigrc` | `$ export TIGRC_USER="$XDG_CONFIG_HOME"/tig/tigrc` |
 | [tmux](/index.php/Tmux "Tmux") | `~/.tmux.conf` | [[64]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/6013) [[65]](http://sourceforge.net/p/tmux/mailman/message/30619546/) | `$ tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf`
 

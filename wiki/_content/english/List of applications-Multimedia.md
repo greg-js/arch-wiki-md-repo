@@ -300,7 +300,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Replacement for Adobe Illustrator or CorelDraw, oriented for "prepress ready" PostScript & PDF output.
 
-	[http://sk1project.org/](http://sk1project.org/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
+	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
 
 *   **[Xara LX](https://en.wikipedia.org/wiki/Xara_Xtreme_LX "wikipedia:Xara Xtreme LX")** — Advanced vector graphics program, the open source version of the commercial Xara X.
 

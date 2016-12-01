@@ -43,6 +43,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### November 2016
 
+*   [30 November 2016] [ASA-201611-29](https://lists.archlinux.org/pipermail/arch-security/2016-November/000776.html) [neovim](https://www.archlinux.org/packages/?name=neovim) arbitrary command execution
 *   [26 November 2016] [ASA-201611-28](https://lists.archlinux.org/pipermail/arch-security/2016-November/000775.html) [ntp](https://www.archlinux.org/packages/?name=ntp) multiple issues
 *   [25 November 2016] [ASA-201611-27](https://lists.archlinux.org/pipermail/arch-security/2016-November/000774.html) [lib32-libtiff](https://www.archlinux.org/packages/?name=lib32-libtiff) multiple issues
 *   [25 November 2016] [ASA-201611-26](https://lists.archlinux.org/pipermail/arch-security/2016-November/000773.html) [libtiff](https://www.archlinux.org/packages/?name=libtiff) multiple issues

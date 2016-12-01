@@ -72,6 +72,7 @@ This is actually a "feature" called Intel SpeedStep, that reduces performance in
 
 *   [Wireless#iwlwifi](/index.php/Wireless#iwlwifi "Wireless") for Intel 7260 wifi card.
 *   [Synaptics](/index.php/Synaptics "Synaptics") for Touchpad
+*   [Fan_speed_control#i8kutils](/index.php/Fan_speed_control#i8kutils "Fan speed control") to control fan speed. There is only one fan on this laptop, detected on the right. Don't forget to [disable BIOS fan speed control](https://wiki.archlinux.org/index.php/Fan_speed_control#Disable_BIOS_fan_speed_control) to use custom fan speed config.
 
 ## What does not work
 

@@ -2,18 +2,19 @@
 
 *   [1 Browsing experience](#Browsing_experience)
     *   [1.1 chrome://xxx](#chrome:.2F.2Fxxx)
-    *   [1.2 Broken icons in Download tab](#Broken_icons_in_Download_tab)
-    *   [1.3 Chromium overrides/overwrites Preferences file](#Chromium_overrides.2Foverwrites_Preferences_file)
-    *   [1.4 Search engines](#Search_engines)
-    *   [1.5 Tmpfs](#Tmpfs)
-        *   [1.5.1 Cache in tmpfs](#Cache_in_tmpfs)
-        *   [1.5.2 Profile in tmpfs](#Profile_in_tmpfs)
-    *   [1.6 Launch a new browser instance](#Launch_a_new_browser_instance)
-    *   [1.7 Directly open *.torrent files and magnet links with a torrent client](#Directly_open_.2A.torrent_files_and_magnet_links_with_a_torrent_client)
-    *   [1.8 Touch Scrolling on touchscreen devices](#Touch_Scrolling_on_touchscreen_devices)
-    *   [1.9 Disable system tray icon](#Disable_system_tray_icon)
-    *   [1.10 Reduce memory usage](#Reduce_memory_usage)
-    *   [1.11 User Agent](#User_Agent)
+    *   [1.2 Chromium task manager](#Chromium_task_manager)
+    *   [1.3 Broken icons in Download tab](#Broken_icons_in_Download_tab)
+    *   [1.4 Chromium overrides/overwrites Preferences file](#Chromium_overrides.2Foverwrites_Preferences_file)
+    *   [1.5 Search engines](#Search_engines)
+    *   [1.6 Tmpfs](#Tmpfs)
+        *   [1.6.1 Cache in tmpfs](#Cache_in_tmpfs)
+        *   [1.6.2 Profile in tmpfs](#Profile_in_tmpfs)
+    *   [1.7 Launch a new browser instance](#Launch_a_new_browser_instance)
+    *   [1.8 Directly open *.torrent files and magnet links with a torrent client](#Directly_open_.2A.torrent_files_and_magnet_links_with_a_torrent_client)
+    *   [1.9 Touch Scrolling on touchscreen devices](#Touch_Scrolling_on_touchscreen_devices)
+    *   [1.10 Disable system tray icon](#Disable_system_tray_icon)
+    *   [1.11 Reduce memory usage](#Reduce_memory_usage)
+    *   [1.12 User Agent](#User_Agent)
 *   [2 Profile maintenance](#Profile_maintenance)
 *   [3 Security](#Security)
     *   [3.1 WebRTC](#WebRTC)
@@ -38,6 +39,10 @@ A number of tweaks can be accessed via typing *chrome://xxx* in the URL field. A
 *   **chrome://version** - display version and switches used to invoke the active `/usr/bin/chromium`.
 
 An automatically updated, complete listing of Chromium switches is available [here](http://peter.sh/experiments/chromium-command-line-switches/).
+
+### Chromium task manager
+
+Shift+ESC can be used to bring up the browser task manager wherein memory, CPU, and network usage can be viewed.
 
 ### Broken icons in Download tab
 

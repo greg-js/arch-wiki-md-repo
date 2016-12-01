@@ -14,7 +14,7 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [4.4 Create in one step](#Create_in_one_step)
     *   [4.5 Create logical volumes](#Create_logical_volumes)
     *   [4.6 Create file systems and mount logical volumes](#Create_file_systems_and_mount_logical_volumes)
-    *   [4.7 Add lvm2 hook to mkinitcpio.conf for root on LVM](#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM)
+    *   [4.7 Configure mkinitcpio](#Configure_mkinitcpio)
     *   [4.8 Kernel options](#Kernel_options)
 *   [5 Volume operations](#Volume_operations)
     *   [5.1 Advanced options](#Advanced_options)
@@ -293,9 +293,9 @@ For example:
 
 **Warning:** When choosing mountpoints, just select your newly created logical volumes (use: `/dev/mapper/Volgroup00-lvolhome`). Do **not** select the actual partitions on which logical volumes were created (do not use: `/dev/sda2`).
 
-### Add lvm2 hook to mkinitcpio.conf for root on LVM
+### Configure mkinitcpio
 
-In case your root filesystem is on LVM, you will need to enable the apropriate [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hooks, otherwise your system might not boot. Enable:
+In case your root filesystem is on LVM, you will need to enable the appropriate [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hooks, otherwise your system might not boot. Enable:
 
 *   `udev` and `lvm2` for the default busybox based initramfs
 *   `systemd` and `sd-lvm2` for systemd based initramfs
@@ -310,9 +310,10 @@ For systemd based initramfs:
 
 Afterwards, you can continue in normal installation instructions with the [create an initial ramdisk](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") step.
 
-**Tip:** The `lvm2` and `sd-lvm2` hooks are installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` or `sd-lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
+**Tip:**
 
-**Tip:** If your root filesystem is on a mirrored logical volume with type raid1, you will also need to add `dm_mod`, `dm_raid` and `raid1` to the MODULES section of mkinitcpio.conf.
+*   The `lvm2` and `sd-lvm2` hooks are installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` or `sd-lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
+*   If your root filesystem is on a mirrored logical volume with type `raid1`, you will also need to add `dm_mod`, `dm_raid` and `raid1` to the MODULES section of `mkinitcpio.conf`.
 
 ### Kernel options
 

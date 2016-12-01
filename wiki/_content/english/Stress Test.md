@@ -173,6 +173,6 @@ A very good program for stress testing memory is [Memtest86+](http://www.memtest
 
 ### Running Memtest86+
 
-Either download and burn the ISO to a CD and boot from it, or install [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) from [extra] and [update GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") which will auto-detect the package and allow users to boot directly to it.
+Either download and burn the ISO to a CD and boot from it, or install [memtest86+](https://www.archlinux.org/packages/?name=memtest86%2B) from [extra] and [update GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") which will auto-detect the package and allow users to boot directly to it (only for BIOS, doesn't work for EFI, one can use [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) instead of memtest86+ or boot grub with memtest86+ from [Arch Linux install image](https://www.archlinux.org/download/)).
 
 **Tip:** Allowing Memtest86+ to run for >10 cycles without errors is usually sufficient.

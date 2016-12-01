@@ -210,27 +210,27 @@ Recent kernels have InfiniBand modules compiled in, and they just need to be loa
 
 *   Install [rdma](https://aur.archlinux.org/packages/rdma/)
     *   Its `/usr/lib/udev/rules.d/98-rdma.rules` attempts loading hardware kernel modules cxgb*, ib_*, mlx*, iw_*, be2net, and usnic*.
-    *   Its `/usr/bin/rdma-init-kernel` (which is what `rdma.service` starts) loads kernel modules requested by `/etc/rdma.conf`.
+    *   Its `/usr/lib/rdma/rdma-init-kernel` (which is what `rdma.service` starts) loads kernel modules requested by `/etc/rdma/rdma.conf`.
 
-<caption>/etc/rdma.conf supports these options</caption>
+<caption>/etc/rdma/rdma.conf supports these options</caption>
 | Option | If yes, loads category | of these kernel modules |
 | (Always) | Core | ib_core, ib_mad, ib_sa, and ib_addr |
 | (Always) | Core user | ib_umad, ib_uverbs, ib_ucm, and rdma_ucm |
 | (Always) | Core connection manager | iw_cm, ib_cm, and rdma_cm |
 | IPOIB_LOAD=yes (default yes)* | Internet Protocol over InfiniBand | ib_ipoib |
-| RDS_LOAD=yes (default no) | Reliable Datagram Service | rds, rds_tcp, and rds_rdma |
-| SRP_LOAD=yes (default no) | SCSI Remote Protocol initiator | ib_srp |
-| SRPT_LOAD=yes (default no) | SCSI Remote Protocol target | ib_srpt |
-| ISER_LOAD=yes (default no) | iSCSI over RDMA initiator | ib_iser. |
+| RDS_LOAD=yes (default yes) | Reliable Datagram Service | rds, rds_tcp, and rds_rdma |
+| SRP_LOAD=yes (default yes) | SCSI Remote Protocol initiator | ib_srp |
+| SRPT_LOAD=yes (default yes) | SCSI Remote Protocol target | ib_srpt |
+| ISER_LOAD=yes (default yes) | iSCSI over RDMA initiator | ib_iser. |
 | ISERT_LOAD=yes (default no) | iSCSI over RDMA target | ib_isert. |
 | (if lhca devices) | IBM pSeries Adapters (rare) | ib_ehca |
 | (if be2net module) | Emulex Adpaters (rare) | ocrdma |
 
-	* ib_ipoib also loaded a dependency for `RDS_LOAD=yes`, or if `/etc/rdma.conf` doesn't exist
+	* ib_ipoib also loaded a dependency for `RDS_LOAD=yes`, or if `/etc/rdma/rdma.conf` doesn't exist
 
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rdma.service`
 
-**Note:** [Due to how the kernel stacks are handled](https://bugzilla.redhat.com/show_bug.cgi?id=965829), changes to `/etc/rdma.conf` only take effect during boot, or upon a boot's first [start](/index.php/Start "Start") of `rdma.service`. Restarting `rdma.service` will have no effect.
+**Note:** [Due to how the kernel stacks are handled](https://bugzilla.redhat.com/show_bug.cgi?id=965829), changes to `/etc/rdma/rdma.conf` only take effect during boot, or upon a boot's first [start](/index.php/Start "Start") of `rdma.service`. Restarting `rdma.service` will have no effect.
 
 ### Subnet manager
 

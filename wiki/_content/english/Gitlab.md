@@ -439,7 +439,7 @@ Copy `/usr/share/doc/gitlab/nginx.conf.example` or `/usr/share/doc/gitlab/nginx-
 
 Update the `/etc/nginx/servers-available/gitlab` file and [restart](/index.php/Restart "Restart") the nginx service.
 
-If your unable to authenticate, add the following headers to `/etc/nginx/servers-available/gitlab`:
+If you are unable to authenticate, add the following headers to `/etc/nginx/servers-available/gitlab`:
 
 ```
 proxy_set_header    X-Forwarded-Ssl     on; # Only when using SSL

@@ -51,6 +51,8 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 *   For even older cards, have a look at [#Unsupported drivers](#Unsupported_drivers).
 
+**Warning:** Currently, NVIDIA driver version 375.20 has OpenGL issues on certain systems, see [FS#51898](https://bugs.archlinux.org/task/51898).
+
 4\. If you are on 64-bit and also need 32-bit OpenGL support, you must also install the equivalent *lib32* package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) or [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
 
 5\. Reboot. The [nvidia](https://www.archlinux.org/packages/?name=nvidia) package contains a file which blacklists the *nouveau* module, so rebooting is necessary.

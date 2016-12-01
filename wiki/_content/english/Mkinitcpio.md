@@ -1,4 +1,4 @@
-**mkinitcpio** is the next generation of [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") creation.
+**mkinitcpio** is the next generation of [initramfs](https://en.wikipedia.org/wiki/initramfs "wikipedia:initramfs") creation.
 
 ## Contents
 
@@ -35,7 +35,7 @@
 
 ## Overview
 
-mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio man page](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt):
+mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio(8)](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt):
 
 	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to init. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
 
@@ -49,8 +49,8 @@ mkinitcpio is a modular tool for building an initramfs CPIO image, offering many
 
 *   The use of [BusyBox](http://www.busybox.net/) to provide a small and lightweight base for early userspace.
 *   Support for **[udev](/index.php/Udev "Udev")** for hardware auto-detection at runtime, thus preventing the loading of unnecessary modules.
-*   Using an extendable hook-based init script, which supports custom hooks that can easily be included in [pacman](/index.php/Pacman "Pacman") packages.
-*   Support for [LVM2](/index.php/LVM2 "LVM2"), [dm-crypt](/index.php/Dm-crypt "Dm-crypt") for both legacy and LUKS volumes, [mdadm](/index.php/Mdadm "Mdadm"), and **swsusp** and [suspend2](/index.php/Suspend2 "Suspend2") for resuming and booting from USB mass storage devices.
+*   Using an extendable hook-based init script, which supports custom hooks that can easily be included in packages.
+*   Support for [LVM2](/index.php/LVM2 "LVM2"), [dm-crypt](/index.php/Dm-crypt "Dm-crypt") for both plain and LUKS volumes, [RAID](/index.php/RAID "RAID"), and [swsusp](https://en.wikipedia.org/wiki/swsusp "wikipedia:swsusp") and [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") for resuming, and booting from USB mass storage devices.
 *   The ability to allow many features to be configured from the kernel command line without needing to rebuild the image.
 
 mkinitcpio has been developed by the Arch Linux developers and from community contributions. See the [public Git repository](https://projects.archlinux.org/mkinitcpio.git/).
@@ -215,7 +215,7 @@ A table of common hooks and how they affect image creation and runtime follows. 
 | **net** | -- | Adds the necessary modules for a network device. For PCMCIA net devices, please add the **pcmcia** hook too. | Provides handling for an NFS-based root file system. |
 | **dmraid** | *?* | Provides support for fakeRAID root devices. You must have [dmraid](https://www.archlinux.org/packages/?name=dmraid) installed to use this. Note that it is preferred to use `mdadm` with the **mdadm_udev** hook with fakeRAID if your controller supports it. | Locates and assembles fakeRAID block devices using `dmraid`. |
 | **mdadm** | *?* | Provides support for assembling RAID arrays from `/etc/mdadm.conf`, or autodetection during boot. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. The **mdadm_udev** hook is preferred over this hook. | Locates and assembles software RAID block devices using `mdassemble`. |
-| **mdadm_udev** | *?* | Provides support for assembling RAID arrays via udev. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. If you use this hook with a FakeRAID array, it is recommended to include `mdmon` in the binaries section and add the **shutdown** hook in order to avoid unnecessary RAID rebuilds on reboot. | Locates and assembles software RAID block devices using `udev` and `mdadm` incremental assembly. This is the preferred method of mdadm assembly (rather than using the above *mdadm* hook). |
+| **mdadm_udev** | *?* | Provides support for assembling RAID arrays via udev. You must have [mdadm](https://www.archlinux.org/packages/?name=mdadm) installed to use this. If you use this hook with a FakeRAID array, it is recommended to include `mdmon` in the binaries section. | Locates and assembles software RAID block devices using `udev` and `mdadm` incremental assembly. This is the preferred method of mdadm assembly (rather than using the above *mdadm* hook). |
 | **keyboard** | Adds the necessary modules for keyboard devices. Use this if you have an USB or serial keyboard and need it in early userspace (either for entering encryption passphrases or for use in an interactive shell). As a side effect, modules for some non-keyboard input devices might be added to, but this should not be relied on. | -- |
 | **keymap** | **sd-vconsole** | Adds the specified keymap(s) from `/etc/vconsole.conf` to the initramfs. | Loads the specified keymap(s) from `/etc/vconsole.conf` during early userspace. |
 | **consolefont** | Adds the specified console font from `/etc/vconsole.conf` to the initramfs. | Loads the specified console font from `/etc/vconsole.conf` during early userspace. |
@@ -227,7 +227,6 @@ For **sd-encrypt** see [systemd-cryptsetup-generator(8)](https://www.freedesktop
 | **lvm2** | **sd-lvm2** | Adds the device mapper kernel module and the `lvm` tool to the image. You must have [lvm2](https://www.archlinux.org/packages/?name=lvm2) installed to use this. | Enables all LVM2 volume groups. This is necessary if you have your root file system on [LVM](/index.php/LVM "LVM"). |
 | **fsck** | Adds the fsck binary and file system-specific helpers. If added after the **autodetect** hook, only the helper specific to your root file system will be added. Usage of this hook is **strongly** recommended, and it is required with a separate `/usr` partition. | Runs fsck against your root device (and `/usr` if separate) prior to mounting. The use of this hook requires the rw parameter to be set on the kernel commandline ([discussion](https://bbs.archlinux.org/viewtopic.php?pid=1307895#p1307895)). |
 | **filesystems** | This includes necessary file system modules into your image. This hook is **required** unless you specify your file system modules in MODULES. | -- |
-| **shutdown** | **sd-shutdown** | Adds shutdown initramfs support. Usage of this hook was strongly recommended before mkinitcpio 0.16, if you have a separate `/usr` partition or encrypted root. From mkinitcpio 0.16 onwards, it is deemed [not necessary](https://mailman.archlinux.org/pipermail/arch-dev-public/2013-December/025742.html). | Unmounts and disassembles devices on shutdown. |
 
 ### COMPRESSION
 
@@ -280,7 +279,7 @@ root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660            # GPT partition UU
 
 	Alter the order in which modules are loaded by specifying modules to load early via `earlymodules=mod1[,mod2,...]`. (This may be used, for example, to ensure the correct ordering of multiple network interfaces.)
 
-See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [man mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212) for other parameters.
+See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [mkinitcpio(8)](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212) for other parameters.
 
 ### Using RAID
 
@@ -292,7 +291,7 @@ Assembly via udev is also possible using the `mdadm_udev` hook. Upstream prefers
 
 ### Using net
 
-**Warning:** NFSv4 is not yet supported.
+**Warning:** NFSv4 is not yet supported [FS#28287](https://bugs.archlinux.org/task/28287).
 
 **Required Packages**
 
@@ -379,7 +378,7 @@ If you do not use the `nfsroot` parameter, you need to set `root=/dev/nfs` to bo
 
 ### Using LVM
 
-If your root device is on [LVM](/index.php/LVM "LVM"), see [Add lvm2 hook to mkinitcpio.conf for root on LVM](/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM "LVM").
+If your root device is on [LVM](/index.php/LVM "LVM"), see [LVM#Configure mkinitcpio](/index.php/LVM#Configure_mkinitcpio "LVM").
 
 ### Using encrypted root
 
@@ -389,9 +388,8 @@ If using an [encrypted root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm
 
 If you keep `/usr` as a separate partition, you must adhere to the following requirements:
 
-*   Enable `mkinitcpio-generate-shutdown-ramfs.service` **or** add the `shutdown` hook.
 *   Add the `fsck` hook, mark `/usr` with a `passno` of `0` in `/etc/fstab`. While recommended for everyone, it is mandatory if you want your `/usr` partition to be fsck'ed at boot-up. Without this hook, `/usr` will never be fsck'd.
-*   Add the `usr` hook. This will mount the `/usr` partition after root is mounted. Prior to 0.9.0, mounting of `/usr` would be automatic if it was found in the real root's `/etc/fstab`. See [Fstab](/index.php/Fstab "Fstab")
+*   Add the `usr` hook. This will mount the `/usr` partition after root is mounted.
 
 ## Troubleshooting
 
@@ -466,7 +464,7 @@ The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd
 
 ### Using systemd HOOKS in a LUKS/LVM/resume setup
 
-Using `systemd/sd-encrypt/sd-lvm2` **HOOKS** instead of the traditional `encrypt/lvm2/resume` requires different initrd parameters to be passed by your bootloader. See this post on forum for details [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1480241).
+Using `systemd`/`sd-encrypt`/`sd-lvm2` **HOOKS** instead of the traditional `encrypt`/`lvm2`/`resume` requires different initrd parameters to be passed by your [boot loader](/index.php/Boot_loader "Boot loader"). See [this post on forum](https://bbs.archlinux.org/viewtopic.php?pid=1480241) for details.
 
 ### Possibly missing firmware for module XXXX
 

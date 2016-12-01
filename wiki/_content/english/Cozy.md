@@ -100,7 +100,7 @@ Cozy's controller can use a JSON configuration file located at `/etc/cozy/contro
  `**/etc/cozy/controller.json**` 
 ```
 {
-    "restart_cmd": "/bin/systemctl restart cozy"
+    "restart_cmd": "/bin/systemctl restart cozy-controller"
 }
 ```
 

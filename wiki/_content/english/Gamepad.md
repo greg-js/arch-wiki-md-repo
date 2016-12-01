@@ -325,6 +325,8 @@ If you can't get the Steam Controller to work, see [#Steam Controller Not Pairin
 
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam.
 
+On some desktop environments the on screen keyboard might freeze when trying to input text after two characters. This is a problem with focus and can be fixed by opening Window Manager, opening focus tab and unticking 'Automatically give focus to newly created windows'.
+
 #### Wine
 
 [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.

@@ -254,8 +254,6 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 
 ### Lenovo ThinkPad T430
 
-*   The volume mute works fine, but the led is simply toggled by the press. No relation to the actual mute state. (aka. if you start with the system muted and the led off, pressing it will unmute the volume, but turn on the led).
-*   The microphone mute button works, but the led stays lit permanently.
 *   Bluetooth (0a5c:21e6 Broadcom Corp. BCM20702 Bluetooth 4.0 [ThinkPad]) appears to be functional, even during standby or hibernation.
 
 ### Lenovo ThinkPad T440p

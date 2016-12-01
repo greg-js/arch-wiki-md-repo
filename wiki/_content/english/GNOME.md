@@ -8,6 +8,8 @@ GNOME (pronounced *gah-nohm* or *nohm*) is a [desktop environment](/index.php/De
 *   [3 Starting GNOME](#Starting_GNOME)
     *   [3.1 Graphically](#Graphically)
     *   [3.2 Manually](#Manually)
+        *   [3.2.1 Xorg sessions](#Xorg_sessions)
+        *   [3.2.2 Wayland sessions](#Wayland_sessions)
     *   [3.3 GNOME applications in Wayland](#GNOME_applications_in_Wayland)
 *   [4 Navigation](#Navigation)
     *   [4.1 Legacy names](#Legacy_names)
@@ -88,7 +90,7 @@ GNOME has three available sessions, all using GNOME Shell.
 
 ## Starting GNOME
 
-GNOME can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console. For optimal desktop integration, using [GDM](/index.php/GDM "GDM") (the GNOME Display manager) is recommended.
+GNOME can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console.
 
 **Note:** Support for screen locking in GNOME is provided by GDM. If GNOME is not started using GDM, you will have to use another screen locker to provide this functionality - see [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
@@ -97,6 +99,8 @@ GNOME can be started either graphically, using a [display manager](/index.php/Di
 Select the session: *GNOME*, *GNOME Classic*, or *GNOME on Xorg* from the display manager's session menu.
 
 ### Manually
+
+#### Xorg sessions
 
 *   For the GNOME on Xorg session, add to the `~/.xinitrc` file: `exec gnome-session`.
 *   For the GNOME Classic session, add to the `~/.xinitrc` file:
@@ -108,7 +112,11 @@ Select the session: *GNOME*, *GNOME Classic*, or *GNOME on Xorg* from the displa
 
 After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` command (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details, such as preserving the logind session). After setting up the `~/.xinitrc` file it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
-**Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using *startx* and `~/.xinitrc`. Instead, simply run `gnome-session`. For more information, see [Wayland](/index.php/Wayland "Wayland").
+#### Wayland sessions
+
+**Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using *startx* and `~/.xinitrc`. For more information, see [Wayland](/index.php/Wayland "Wayland").
+
+The GNOME Shell Wayland compositor can be started by running `gnome-shell --wayland` in the command line. However, to take advantage of GNOME's session manager, one needs to create a [custom GNOME session](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_session "GNOME/Tips and tricks"). A desktop file is needed which specifies `gnome-shell --wayland` on the `Exec` line and a GNOME session file is needed which specifies the aforementioned desktop file as a required component (along with `gnome-settings-daemon`). If the session file you created was called `gnome-wayland.session` then you can start the session with `gnome-session --session=gnome-wayland`.
 
 ### GNOME applications in Wayland
 

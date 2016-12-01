@@ -134,7 +134,7 @@ This is merely a short overview, for a more detailed guide be sure to have a loo
 
 ### Parsing profiles
 
-To load, unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](http://man.cx/apparmor_parser(8)) man page for more information.
+To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](http://man.cx/apparmor_parser(8)) man page for more information.
 
 ## Security considerations
 

@@ -73,7 +73,7 @@
 | <small>5.7.</small> [Network sharing](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)") <small>(2)</small> |
 | <small>5.8.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.9.</small> [Escritorio remoto](/index.php/Category:Remote_desktop_(Espa%C3%B1ol) "Category:Remote desktop (Español)") <small>(1)</small> |
-| <small>5.10.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
+| <small>5.10.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(6) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.11.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice_(Espa%C3%B1ol) "Category:Telephony and voice (Español)") <small>(0)</small> |
 | <small>5.12.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(8)</small> |
 | <small>5.13.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
@@ -106,7 +106,7 @@
 | <small>6.12.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(5)</small> |
 | <small>6.12.2.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(5) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.12.3.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
-| <small>6.12.4.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
+| <small>6.12.4.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(6) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.13.</small> [Recuperación del sistema](/index.php/Category:System_recovery_(Espa%C3%B1ol) "Category:System recovery (Español)") <small>(10)</small> |
 | <small>6.14.</small> [Virtualización](/index.php/Category:Virtualization_(Espa%C3%B1ol) "Category:Virtualization (Español)") <small>(4)</small> |
 | <small>6.14.1.</small> [Hipervisores](/index.php/Category:Hypervisors_(Espa%C3%B1ol) "Category:Hypervisors (Español)") <small>(1)</small> |

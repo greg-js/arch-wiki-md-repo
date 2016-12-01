@@ -282,13 +282,13 @@ use_lvmetad = 0
 
 This will trigger later an error on boot in the initrd stage. Therefore, you have to change it back after the grub generation. In a software RAID + LVM, steps would be the following:
 
-*   After installing all the system, when you have to do all the initramfs (mkinitcpio) and grub thing.
-*   Change /etc/mdadm.conf to reflect your RAID config (if any)
-*   Change HOOKS and MODULES according to lvm and raid requirements: `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
-*   Generate initrd images with mkinitcpio
-*   Change /etc/lvm/lvm.conf to put use_lvmetad = 0
-*   Generate grub config (grub-mkconfig)
-*   Change /etc/lvm/lvm.conf to put use_lvmetad = 1
+*   After installing the system, double check your [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") and your bootloader settings. See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for a list of bootloaders.
+*   You may need to change your `/etc/mdadm.conf` to reflect your [RAID](/index.php/RAID "RAID") settings (if applicable).
+*   You may need to change your `HOOKS` and `MODULES` according to your [LVM](/index.php/LVM "LVM") and [RAID](/index.php/RAID "RAID") requirements: `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
+*   You will most likely need to generate new initrd images with mkinitcpio. See [Mkinitcpio#Image_creation_and_activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+*   Set `use_lvmetad = 0` in `/etc/lvm/lvm.conf`.
+*   Update your bootloader settings. See your bootloader's wiki page for details.
+*   Set `use_lvmetad = 1` in `/etc/lvm/lvm.conf`.
 
 ##### Fedora-based host
 

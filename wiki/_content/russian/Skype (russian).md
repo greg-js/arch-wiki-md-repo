@@ -201,7 +201,7 @@ Exec=/usr/bin/apulse32 /usr/bin/skype  %U
 
 ### Docker
 
-Есть возможность использовать Skype в безопасном контйнере [Docker](/index.php/Docker "Docker"). Программа заработает по тунелю SSH с сопроваждением X11 и звуком через PulseAudio's Network Server.
+Есть возможность использовать Skype в безопасном контйнере [Docker](/index.php/Docker "Docker"). Программа заработает по тунелю SSH с сопровождением X11 и звуком через PulseAudio's Network Server.
 
 Скачайте подготовленный образ docker с [официальной страницы](https://index.docker.io/u/tomparys/skype/), или посмотрите инструкцию, как сделать всё самому [тут](https://github.com/tomparys/docker-skype-pulseaudio).
 

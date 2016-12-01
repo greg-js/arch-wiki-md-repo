@@ -5,13 +5,12 @@ From the project [home page](http://www.pidgin.im/): "Pidgin is an easy to use a
 *   [1 Installation](#Installation)
 *   [2 Spellcheck](#Spellcheck)
 *   [3 Services](#Services)
-    *   [3.1 Facebook XMPP](#Facebook_XMPP)
+    *   [3.1 Facebook](#Facebook)
     *   [3.2 IRC](#IRC)
     *   [3.3 Sametime protocol](#Sametime_protocol)
     *   [3.4 SIP/Simple protocol for Live Communications Server 2003/2005/2007](#SIP.2FSimple_protocol_for_Live_Communications_Server_2003.2F2005.2F2007)
     *   [3.5 Skype plugin](#Skype_plugin)
     *   [3.6 Web QQ](#Web_QQ)
-    *   [3.7 Xfire](#Xfire)
 *   [4 Security](#Security)
 *   [5 Privacy](#Privacy)
     *   [5.1 Pidgin-OTR](#Pidgin-OTR)
@@ -48,13 +47,9 @@ The [aspell](https://www.archlinux.org/packages/?name=aspell) package will be in
 
 ## Services
 
-### Facebook XMPP
+### Facebook
 
-Facebook XMPP is not working since April 30th, 2015\. See [[1]](https://developers.facebook.com/docs/chat?_fb_noscript=1)
-
-An alternative is to use a ThirdPartyPlugin that uses Facebook IM, see [[2]](https://github.com/jgeboski/purple-facebook)
-
-You can get the plugin from either [purple-facebook](https://aur.archlinux.org/packages/purple-facebook/) or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/)
+[Install](/index.php/Install "Install") the [purple-facebook](https://aur.archlinux.org/packages/purple-facebook/) package. (or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/))
 
 Then add a new account, select Facebook as the protocol, enter your [Facebook username](https://www.facebook.com/help/211813265517027) and password and login.
 
@@ -98,16 +93,11 @@ This final step will add your channel to 'Buddies': go to *Buddies > Add chat*, 
 
 ### Sametime protocol
 
-Sametime support is available by installing two packages from [AUR](/index.php/AUR "AUR"):
-
-*   [meanwhile](https://aur.archlinux.org/packages/meanwhile/)
-*   [libpurple-meanwhile](https://aur.archlinux.org/packages/libpurple-meanwhile/)
-
-Previously it was required to rebuild Pidgin to remove the `--disable-meanwhile` flag from compilation, this is no longer needed. Once these two packages are installed the 'Sametime' protocol will be available when creating an account.
+[Install](/index.php/Install "Install") the [libpurple-meanwhile](https://aur.archlinux.org/packages/libpurple-meanwhile/) package. The 'Sametime' protocol will be available when creating an account.
 
 ### SIP/Simple protocol for Live Communications Server 2003/2005/2007
 
-The [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) plugin is available in [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [pidgin-sipe](https://www.archlinux.org/packages/?name=pidgin-sipe) package.
 
 ### Skype plugin
 
@@ -117,13 +107,9 @@ Install the [purple-skypeweb](https://www.archlinux.org/packages/?name=purple-sk
 
 Simply install [pidgin-lwqq](https://www.archlinux.org/packages/?name=pidgin-lwqq) and then add a new account, selecting webQQ as the protocol. QQ is a proprietary chat protocol/IM service mainly used in Asia, particularly China.
 
-### Xfire
-
-Simply install [pidgin-gfire](https://www.archlinux.org/packages/?name=pidgin-gfire) and then add a new account, selecting xfire as protocol.
-
 ## Security
 
-Pidgin uses Libpurple 2 which stores passwords unencrypted (in plaintext) in $HOME/.purple/account.xml, see [[3]](https://developer.pidgin.im/wiki/PlainTextPasswords). You can store them in a keyring by using a plugin like:
+Pidgin uses Libpurple 2 which stores passwords unencrypted (in plaintext) in $HOME/.purple/account.xml, see [[1]](https://developer.pidgin.im/wiki/PlainTextPasswords). You can store them in a keyring by using a plugin like:
 
 *   [purple-gnome-keyring](https://aur.archlinux.org/packages/purple-gnome-keyring/)
 *   [pidgin-kwallet](https://www.archlinux.org/packages/?name=pidgin-kwallet)

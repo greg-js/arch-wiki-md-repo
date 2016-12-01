@@ -77,22 +77,23 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.1.1 archzfs](#archzfs)
         *   [5.1.2 ashleyis](#ashleyis)
         *   [5.1.3 atom](#atom)
-        *   [5.1.4 boyska64](#boyska64)
-        *   [5.1.5 coderkun-aur](#coderkun-aur)
-        *   [5.1.6 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.7 decryptedepsilon](#decryptedepsilon)
-        *   [5.1.8 eatabrick](#eatabrick)
-        *   [5.1.9 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.10 holo](#holo)
-        *   [5.1.11 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.12 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.13 markzz](#markzz)
-        *   [5.1.14 mladoux](#mladoux)
-        *   [5.1.15 qt-debug](#qt-debug)
-        *   [5.1.16 quarry](#quarry)
-        *   [5.1.17 siosm-aur](#siosm-aur)
-        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.4 aurpackages](#aurpackages)
+        *   [5.1.5 boyska64](#boyska64)
+        *   [5.1.6 coderkun-aur](#coderkun-aur)
+        *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.8 decryptedepsilon](#decryptedepsilon)
+        *   [5.1.9 eatabrick](#eatabrick)
+        *   [5.1.10 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.11 holo](#holo)
+        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.13 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.14 markzz](#markzz)
+        *   [5.1.15 mladoux](#mladoux)
+        *   [5.1.16 qt-debug](#qt-debug)
+        *   [5.1.17 quarry](#quarry)
+        *   [5.1.18 siosm-aur](#siosm-aur)
+        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -783,6 +784,19 @@ Server = http://noaxiom.org/$repo/$arch
 
 ```
 
+#### aurpackages
+
+*   **Maintainer:** Mark Vainomaa <mikroskeem@mikroskeem.eu>
+*   **Description:** AUR packages I tend to use every day. Will be updated weekly
+*   **Key-ID:** 2A07EF8371AFC028
+
+```
+[aurpackages]
+SigLevel = Required
+Server = https://r.mikroskeem.eu
+
+```
+
 #### boyska64
 
 *   **Maintainer:** boyska
@@ -1082,8 +1096,10 @@ Server = https://repo.matrixim.cc/$repo/$arch
 
 #### mikroskeem
 
-*   **Maintainer:** mikroskeem <mikroskeem@mikroskeem.eu>
+*   **Maintainer:** Mark Vainomaa <mikroskeem@mikroskeem.eu>
 *   **Description:** Openarena, i3 wm, and neovim-related packages
+
+**NOTE:** This repo isn't maintained anymore. It will be shut down on **01-01-2017**. Use my *aurpackages* repo instead.
 
 ```
 [mikroskeem]

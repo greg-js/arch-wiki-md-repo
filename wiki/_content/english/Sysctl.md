@@ -186,5 +186,5 @@ Try to change `kernel.io_delay_type` (x86 only):
 *   [sysctl(8)](http://man7.org/linux/man-pages/man8/sysctl.8.html) and [sysctl.conf(5)](http://man7.org/linux/man-pages/man5/sysctl.conf.5.html)
 *   Linux kernel documentation (`<kernel source dir>/Documentation/sysctl/`)
 *   Kernel Documentation: [IP Sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
-*   SysCtl.conf Tweaked for Security and Cable Speed [[1]](http://blog.gotux.net/code/config/sysctl/)
-*   Kernel network parameters for sysctl [[2]](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)
+*   [SysCtl.conf Tweaked for Security and Cable Speed](http://blog.gotux.net/code/config/sysctl/)
+*   [Kernel network parameters for sysctl](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)

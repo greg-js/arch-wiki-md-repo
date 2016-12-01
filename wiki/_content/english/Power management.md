@@ -1,6 +1,6 @@
 [Power management](https://en.wikipedia.org/wiki/Power_management "wikipedia:Power management") is a feature that turns off the power or switches system's components to a low-power state when inactive.
 
-In Arch linux, power management consists of two main parts:
+In Arch Linux, power management consists of two main parts:
 
 1.  Configuration of the Linux kernel, which interacts with the hardware.
     *   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")

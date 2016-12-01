@@ -251,7 +251,7 @@ Systemctl will open a drop-in configuration file in your editor. Write the follo
 
 ```
 [Service]
-Environment=PGROOT=*/pathto/pgroot/*
+Environment=PGROOT=*/pathto/pgroot*
 PIDFile=*/pathto/pgroot/*data/postmaster.pid
 
 ```
@@ -392,6 +392,20 @@ Upgrading minor PostgreSQL versions (i.e. `9.2, 9.3, 9.4, 9.5, 9.6`) requires so
 
 If you had custom settings in configuration files like `pg_hba.conf` and `postgresql.conf`, merge them into the new ones. If you have set options such as `data_directory`, `hba_file` or `ident_file` in your `postgresql.conf`, please temporally unset them before the migration.
 
+**Warning:** This quick script is critical. Please make sure you have dumped your complete database before embarking in such upgrade.
+
+This can easily done with:
+
+```
+# su - postgres
+$ cd /var/lib/postgres
+$ mkdir dump
+$ pg_dumpall | gzip > dump/pgdumpall.gz
+
+```
+
+The first time, it is advisable to run one by one the commands of this script.
+
 ```
 upgrade_pg.sh
 
@@ -403,9 +417,10 @@ upgrade_pg.sh
 FROM_VERSION="$1"
 
 pacman -S --needed postgresql-old-upgrade
-chown postgres:postgres /var/lib/postgres/
+systemctl stop postgresql
 su - postgres -c "mv /var/lib/postgres/data /var/lib/postgres/data-${FROM_VERSION}"
 su - postgres -c 'mkdir /var/lib/postgres/data'
+su - postgres -c 'chmod 700 /var/lib/postgres/data'
 su - postgres -c "initdb --locale $LANG -E UTF8 -D /var/lib/postgres/data"
 su - postgres -c "pg_upgrade -b /opt/pgsql-${FROM_VERSION}/bin/ -B /usr/bin/ -d /var/lib/postgres/data-${FROM_VERSION} -D /var/lib/postgres/data"
 

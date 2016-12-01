@@ -28,6 +28,8 @@
 
 Install [deluge](https://www.archlinux.org/packages/?name=deluge) and optionally [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity) as users may experience a lengthy warning and have their client reject many valid certificate/hostname mappings. Additional optional dependencies can be viewed using the [pacman -Si](#Querying_package_databases) command.
 
+**Note:** Currently, [python2-twisted](https://www.archlinux.org/packages/?name=python2-twisted) and its 4 other dependencies that pacman pulls in automatically when installing deluge are not removed due to a bug revolving around a dependency cycle, see: [FS#41031](https://bugs.archlinux.org/task/41031). Users can circumvent this by removing the affected packages (assuming they are not needed by other packages installed on the system): `pacman -Rs deluge python2-twisted`.
+
 ## Daemon
 
 Deluge works with a client/server model. The server is referred to as the daemon and runs in the background waiting for a client (console, gtk, or web-based) to connect. The client can disconnect but the daemon continues to run transferring the torrent files in the queue.

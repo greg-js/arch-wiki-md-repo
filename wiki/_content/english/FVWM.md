@@ -81,7 +81,7 @@ The following configuration file locations are supported:
 *   `$HOME/.fvwm/config`
 *   `/usr/local/share/fvwm/config`
 
-The following configuration locations are supported as of version 2.6.6, but may not be supported in the future:
+The following configuration locations are supported as of version 2.6.7, but may not be supported in the future:
 
 *   `$HOME/.fvwm/.fvwm2rc`
 *   `$HOME/.fvwm2rc`
@@ -89,7 +89,7 @@ The following configuration locations are supported as of version 2.6.6, but may
 *   `/usr/local/share/fvwm/system.fvwm2rc`
 *   `/etc/system.fvwm2rc`
 
-FVWM will no longer ship sample configuration files as of version 2.6.7\. Nonetheless, the removed sample files can still be viewed on [GitHub](https://github.com/fvwmorg/fvwm/tree/4fc2bf68493c098da54af63cff3ebf3c58882a8d/sample.fvwmrc). The [fvwm-themes](http://fvwm-themes.sourceforge.net/) project also provides ready-made configurations.
+FVWM no longer ships sample configuration files as of version 2.6.7\. Nonetheless, the removed sample files can still be viewed on [GitHub](https://github.com/fvwmorg/fvwm/tree/4fc2bf68493c098da54af63cff3ebf3c58882a8d/sample.fvwmrc). The [fvwm-themes](http://fvwm-themes.sourceforge.net/) project also provides ready-made configurations.
 
 **Tip:** You can split up your configuration into multiple files and then source those files from the main configuration file using the `read` command. The syntax is `read /path/to/file`.
 

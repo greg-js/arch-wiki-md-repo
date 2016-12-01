@@ -109,7 +109,7 @@ Advanced network settings can be found on the `about:config` page (try searching
 
 #### Stop urlclassifier3.sqlite from being created again
 
-If you did remove all the `urlclassifier*` files as mentioned above, you may find out that `urlclassifier3.sqlite` keeps growing again after a certain time. Here is a simple solution to avoid it for now and ever.
+Removing all `urlclassifier*` files can prevent the use of megabytes of storage in your firefox profile. If you remove all the `urlclassifier*` files, you may find out that `urlclassifier3.sqlite` keeps growing again after a certain time. Here is a simple solution to avoid it for now and ever.
 
 ```
 $ cd ~/.mozilla/firefox/<profile_dir>

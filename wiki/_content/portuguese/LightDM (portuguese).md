@@ -1,0 +1,1 @@
+página em Tradução

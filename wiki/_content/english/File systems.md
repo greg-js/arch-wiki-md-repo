@@ -22,7 +22,7 @@ Individual drive partitions can be setup using one of the many different availab
 
 ## Types of file systems
 
-See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for a general overview, and [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "w:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
+See [filesystems(5)](http://man7.org/linux/man-pages/man5/filesystems.5.html) for a general overview, and [Wikipedia:Comparison of file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "wikipedia:Comparison of file systems") for a detailed feature comparison. File systems supported by the kernel are listed in `/proc/filesystems`.
 
 | File system | Creation command | Userspace utilities | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.both) | Kernel documentation [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | Notes |
 | [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](http://man7.org/linux/man-pages/man8/mkfs.btrfs.8.html) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [Stability status](https://btrfs.wiki.kernel.org/index.php/Status) |
@@ -111,6 +111,10 @@ See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wi
 *   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — **SquashFS** is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
 
 	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
+
+*   **[OrangeFS](https://en.wikipedia.org/wiki/OrangeFS "wikipedia:OrangeFS")** — **OrangeFS** is a scale-out network file system designed for transparently accessing multi-server-based disk storage, in parallel. Has optimized MPI-IO support for parallel and distributed applications. Simplifies the use of parallel storage not only for Linux clients, but also for Windows, Hadoop, and WebDAV. POSIX-compatible. Part of Linux kernel since version 4.6\.
+
+	[http://www.orangefs.org/](http://www.orangefs.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## Identify existing file systems
 

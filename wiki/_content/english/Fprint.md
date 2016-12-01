@@ -54,6 +54,13 @@ $ fprintd-enroll
 
 ```
 
+or create a new signature for all fingers ([username] must be replaced with your username)
+
+```
+$ fprintd-delete [username] && fprintd-enroll -f left-thumb [username] && fprintd-enroll -f left-index-finger [username] && fprintd-enroll -f left-middle-finger [username] && fprintd-enroll -f left-ring-finger [username] && fprintd-enroll -f left-little-finger [username] && fprintd-enroll -f right-thumb [username] && fprintd-enroll -f right-index-finger [username] && fprintd-enroll -f right-middle-finger [username] && fprintd-enroll -f right-ring-finger [username] && fprintd-enroll -f right-little-finger [username]
+
+```
+
 You will be asked to scan the given finger. After that, the signature is created in `/var/lib/fprint/`.
 
 For more information, see `man fprintd`.

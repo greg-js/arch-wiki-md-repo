@@ -31,7 +31,7 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 *   **Deepin Screenshot** — A quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
 
-	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
+	[https://www.deepin.org/](https://www.deepin.org/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
 
 *   **Escrotum** — Screen capture using pygtk, inspired by scrot.
 

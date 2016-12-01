@@ -13,22 +13,6 @@ Create the partition:
 
 where `*/dev/sdxY*` is the target volume to format in F2FS.
 
-**Warning:** If using F2FS as your root partition, you will need to add the following modules to the `MODULES` line in your `/etc/mkinitcpio.conf` file [[1]](https://bbs.archlinux.org/viewtopic.php?id=210673):
-
-For newer CPU (having PCLMUL acceleration):
-
-```
-MODULES="f2fs libcrc32c crc32c-intel crc32-pclmul"
-
-```
-
-For old CPU:
-
-```
-MODULES="f2fs libcrc32c crc32_generic crc32c_generic"
-
-```
-
 ## Mounting a F2FS partition
 
 The partition can then be mounted manually or via other mechanisms:
@@ -39,6 +23,8 @@ The partition can then be mounted manually or via other mechanisms:
 ```
 
 ## Install Arch Linux on F2FS partition
+
+**Warning:** If using F2FS as your root partition, you will need to add the following module to the `MODULES` line in your `/etc/mkinitcpio.conf` file ([FS#49380](https://bugs.archlinux.org/task/49380)): `MODULES="... **crypto-crc32**"` 
 
 With the latest [installation media](https://www.archlinux.org/download/) it is possible to install Arch linux with root located on a F2FS filesystem:
 
