@@ -41,6 +41,7 @@ UseSTARTTLS=Yes
 # Username/Password
 AuthUser=username
 AuthPass=password
+AuthMethod=LOGIN
 
 # Email 'From header's can override the default domain?
 FromLineOverride=yes

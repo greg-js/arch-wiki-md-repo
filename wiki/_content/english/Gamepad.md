@@ -605,9 +605,16 @@ Then replug the device making you trouble. The joystick and event devices should
 
 ### Steam Controller Not Pairing
 
-If you want your system to be able to recognise Steam controller after hot swapping between wireless and wired connection, and also want system to recognise Steam controller if connected via micro-usb cable while wireless dongle is plugged in, you need to do instructions below. Otherwise, Steam controller will behave just as keyboard/mouse devise after hot swapping or unrecognised at all by steam and games.
+There are some unknown cases where the packaged udev rule for the Steam controller does not work ([FS#47330](https://bugs.archlinux.org/task/47330)). The most reliable workaround is to make the controller world readable. Copy the rule `/usr/lib/udev/rules.d/80-steam-controller-permission.rule` to `/etc/udev/rules.d` and set `MODE="0666"` e.g.
 
-If the Steam Controller will not pair wirelessly but works when wired make you may need to create the following udev rule, suggested by Valve[[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/).
+ `/etc/udev/rules.d/80-steam-controller-permission.rule` 
+```
+#USB devices
+SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666", TAG+="uaccess"
+KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
+```
+
+If you want your system to recognize the Steam controller after hot-swapping wireless/wired connections or when connected via micro-USB cable with the dongle plugged in, you may need a more complicated udev rule. Otherwise, the controller might stop working or behave like a mouse and keyboard after hot-swapping. The following rule was suggested by a Valve developer [[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/)
 
  `/etc/udev/rules.d/99-steam-controller-perms.rules` 
 ```

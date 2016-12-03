@@ -31,14 +31,14 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.1.5 catalyst](#catalyst)
         *   [3.1.6 catalyst-hd234k](#catalyst-hd234k)
         *   [3.1.7 city](#city)
-        *   [3.1.8 haskell-core](#haskell-core)
-        *   [3.1.9 haskell-happstack](#haskell-happstack)
-        *   [3.1.10 haskell-web](#haskell-web)
-        *   [3.1.11 herecura](#herecura)
-        *   [3.1.12 infinality-bundle](#infinality-bundle)
-        *   [3.1.13 ivasilev](#ivasilev_2)
-        *   [3.1.14 llvm-svn](#llvm-svn)
-        *   [3.1.15 nuvolaplayer](#nuvolaplayer)
+        *   [3.1.8 gustawho](#gustawho)
+        *   [3.1.9 haskell-core](#haskell-core)
+        *   [3.1.10 haskell-happstack](#haskell-happstack)
+        *   [3.1.11 haskell-web](#haskell-web)
+        *   [3.1.12 herecura](#herecura)
+        *   [3.1.13 infinality-bundle](#infinality-bundle)
+        *   [3.1.14 ivasilev](#ivasilev_2)
+        *   [3.1.15 llvm-svn](#llvm-svn)
         *   [3.1.16 miffe](#miffe)
         *   [3.1.17 repo-ck](#repo-ck)
         *   [3.1.18 seblu](#seblu)
@@ -312,6 +312,20 @@ Server = http://pkgbuild.com/~bgyorgy/$repo/os/$arch
 
 ```
 
+#### gustawho
+
+*   **Maintainer:** [Gustavo Castro](https://twitter.com/gustawho) <gustawho@openmailbox.com>
+*   **Description:** Scientific tools (mostly physics/math) and AUR packages that take long to build (such as [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)).
+*   **Package list:** [http://gustawho.com/pacman](http://gustawho.com/pacman)
+*   **Upstream page:** [http://gustawho.com](http://gustawho.com)
+*   **Key-ID:** [76578671](https://gustawho.com/repo/gustawho.key)
+
+```
+[gustawho]
+Server = https://gustawho.com/repo/$arch
+
+```
+
 #### haskell-core
 
 See [ArchHaskell#haskell-core](/index.php/ArchHaskell#haskell-core "ArchHaskell").
@@ -371,18 +385,6 @@ Server = http://ivasilev.net/pacman/$arch
 ```
 [llvm-svn]
 Server = http://repos.uni-plovdiv.net/archlinux/$repo/$arch
-
-```
-
-#### nuvolaplayer
-
-*   **Maintainer:** [Patrick Burroughs (Celti) <celti@celti.name>](https://www.celti.name/)
-*   **Description:** Packages for the [Nuvola Player](https://tiliado.eu/nuvolaplayer) cloud music player and its various integrations. Includes both stable and git versions. The [build scripts](https://repo.celti.name/nuvolaplayer/) used to manage the repository (using makepkg-template, makechrootpkg, and repose) are available. Both the packages and the database are signed.
-*   **Key-ID:** `[123C 3F8B 058A 707F 8664 3316 FA68 2BD8 910C F4EA](https://sks-keyservers.net/pks/lookup?op=vindex&search=0x123C3F8B058A707F86643316FA682BD8910CF4EA)`
-
-```
-[nuvolaplayer]
-Server = https://repo.celti.name/archlinux/$repo/$arch
 
 ```
 

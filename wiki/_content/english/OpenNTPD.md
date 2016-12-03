@@ -15,7 +15,6 @@
         *   [3.2.4 Using dhcpcd hooks](#Using_dhcpcd_hooks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Error adjusting time](#Error_adjusting_time)
-    *   [4.2 Increasing time shift](#Increasing_time_shift)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -154,10 +153,6 @@ Try:
 ```
 
 This is also how you would manually sync your system.
-
-### Increasing time shift
-
-Starting *openntpd* in the background could lead to synchronization errors between the actual time and the time stored on your computer. If you recognize an increasing time difference between your desktop clock and the actual time, try to start the *openntpd* daemon normal and not in the background.
 
 ## See also
 

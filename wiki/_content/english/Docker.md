@@ -375,7 +375,7 @@ Docker enables IP forwarding by itself, but by default systemd overrides the res
 ```
 # cat > /etc/systemd/network/ipforward.network <<EOF
 [Network]
-IPForward=ipv4
+IPForward=kernel
 EOF
 
 # cat > /etc/sysctl.d/99-docker.conf <<EOF

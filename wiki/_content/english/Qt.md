@@ -33,9 +33,10 @@ The Qt framework is emerging as a major development platform and is the basis of
         *   [4.3.8 Perl](#Perl)
         *   [4.3.9 Lua](#Lua)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Icon theme is not applied](#Icon_theme_is_not_applied)
-    *   [5.2 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
-    *   [5.3 Qt4 style not respected](#Qt4_style_not_respected)
+    *   [5.1 Qt programs crash when opening file dialogs under GNOME Wayland](#Qt_programs_crash_when_opening_file_dialogs_under_GNOME_Wayland)
+    *   [5.2 Icon theme is not applied](#Icon_theme_is_not_applied)
+    *   [5.3 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
+    *   [5.4 Qt4 style not respected](#Qt4_style_not_respected)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -464,6 +465,19 @@ label:show()
 **Note:** QtLua is not designed to develop an application in pure Lua but rather to extend a Qt C++ application using Lua as scripting language.
 
 ## Troubleshooting
+
+### Qt programs crash when opening file dialogs under GNOME Wayland
+
+Under a GNOME Wayland environment, Qt programs such as Smplayer and Calibre may crash when opening a "FileDiag" (e.g. the "Open file" or "Save as" dialogs), because by default Qt tries to use the native GTK FileDiag, but the invocation assumes the use of X11 and would segfault in Wayland. This issue can be worked around in two ways:
+
+*   Force the use of X11 GDK backend for these Qt programs.
+
+```
+GDK_BACKEND=x11 some_qt_program
+
+```
+
+*   Install the latest git snapshot of [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/), which contains a fix. The platform plugin should work automatically under GNOME (3.20 or later); if not, manually set the [environment variable](/index.php/Environment_variables#Using_pam_env "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform` . This also has the effect of [uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 ### Icon theme is not applied
 

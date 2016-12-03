@@ -87,47 +87,11 @@ BrowseAddress 192.168.0.*:631
 
 ```
 
-and
-
-```
-# systemctl restart org.cups.cupsd.service
-
-```
+and [restart](/index.php/Restart "Restart") the `org.cups.cupsd` service.
 
 Note that "browsing" at the print server is a different thing from "browsing" at a remote networked host. On the print server, `cupsd` provides the DNS-SD protocol support which the `avahi-daemon` broadcasts. The `cups-browsed` service is unnecessary on the print server, unless also broadcasting the old CUPS protocol, or the print server is also "browsing" for other networked printers. On the remote networked host, the `cups-browsed` service is *required* to "browse" for network broadcasts of print services, and running `cups-browsed` will also automatically start `cupsd`.
 
-While `cupsd` will be started automtically when a USB printer is "hot plugged", there is no "hot plug" support for a parallel port attached printer. If the network printer is attached to a parallel port, then there is nothing that will automatically start `cupsd` on boot, and without `cupsd` running, there will be no `avahi-daemon` broadcasts about print services, and no network printer will be "seen" on the remote hosts. In this case, the systemd unit service file must be modified to start `cupsd` on boot, and then the service must again be "enabled/installed" with the new dependency.
-
-```
-# cp /usr/lib/systemd/system/org.cups.cupsd.service /etc/systemd/system
-
-```
-
-Edit the service file `[Install]` section to add a `WantedBy=default.target` dependency,
-
- `/etc/systemd/system/org.cups.cupsd.service` 
-```
-[Unit]
-Description=CUPS Scheduler
-Documentation=man:cupsd(8)
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/cupsd -l
-Type=notify
-
-[Install]
-Also=org.cups.cupsd.socket org.cups.cupsd.path
-WantedBy=printer.target
-WantedBy=default.target
-```
-
-and finally,
-
-```
-# systemctl --now enable org.cups.cupsd.service
-
-```
+The `org.cups.cupsd.service` service will be automatically started when a USB printer is plugged in, however this may not be the case for other connection types. If `cupsd` is not running, `avahi-daemon` does not broadcast the print services, so in that case the systemd unit service file must be modified to start on boot, and then the service must again be "enabled/installed" with the new dependency. To do this, [edit](/index.php/Edit "Edit") the service file `[Install]` section to add a `WantedBy=default.target` dependency, and then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `org.cups.cupsd.service` service.
 
 ## Between GNU/Linux and Windows
 

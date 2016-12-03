@@ -564,6 +564,9 @@ Listed below are you may encounter with the XPS 9550 4K:
 • Still has black screen upon resume issue. To turn screen on, increase brightness to maximum using keyboard. It is not possible to decrease brightness after resume, either maximum or off.
 • Increasing the brightness (eg, with xbacklight) by less than 9% does not have any effect. Decreasing by less than 9% always results in a decrease of 9%.
 
+**1.02.16** *[Download](http://downloads.dell.com/FOLDER04030973M/1/XPS_9550_1.2.16.exe)*
+• "Black screen upon resume" issue appears to have been fixed!
+
 Many users have recommend the 01.02.00 BIOS, as it proves to be the most balanced out of all of the updates.
 
 ### Webcam

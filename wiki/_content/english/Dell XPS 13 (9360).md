@@ -79,6 +79,8 @@ When the SATA-controller is set to `RAID On` in Bios, the hard disk (at least th
 
 ## Touchpad
 
+The touchpad has no explicit buttons. The buttons are built into the pads surface. There is a small line printed on the pad separating left from right click button. The pad has a **middle button** built in! (works with libinput without any configuration): To issue a middle click, simply press on the middle area right between the virtual left and click buttons - so on the small printed separator line.
+
 ### Remove psmouse errors from dmesg
 
 If `dmesg | grep -i psmouse` returns an error, but your touchpad still works, then it might be a good idea to disable `psmouse`. First create a config file:

@@ -93,6 +93,8 @@ ssh orion.archlinux.org /community/db-repo-remove community arch pkgname
 
 Here and in the following text, *arch* can be one of *i686* or *x86_64* which are the two architectures supported by Arch Linux.
 
+**Note:** If you are editing packages of the *any* architecture you can simply run the x64 scripts which will also work.
+
 When you are done with editing the PKGBUILD, etc., you should **commit** the changes (`svn commit`).
 
 Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and `extra-x86_64-build`. If you want to upload to testing you also need to build with the testing scripts `testing-i686-build` and `testing-x86_64-build`.
@@ -107,7 +109,7 @@ When you want to **release** a package, first copy the package along with its si
 
 *   **Update** the package directory: `svn update some-package`.
 *   **Change** to the package trunk directory: `cd some-package/trunk`.
-*   **Edit** the PKGBUILD, make necessary changes
+*   **Edit** the PKGBUILD, make necessary changes, update hashes with `updpkgsums`.
 *   **Build** the package: either `makechrootpkg` or `extra-i686-build` and `extra-x86_64-build`. It is **mandatory** to build in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
 *   **[Namcap](/index.php/Namcap "Namcap")** the PKGBUILD and the binary `pkg.tar.gz`.
 *   **Commit**, **Sign**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:

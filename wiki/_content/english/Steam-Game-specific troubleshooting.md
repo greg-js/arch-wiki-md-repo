@@ -1222,6 +1222,13 @@ The game segfaults during program start because of the `LD_LIBRARY_PATH` setting
 
 Several OpenGL-related errors (such as `PROBLEM: You appear to have OpenGL 1.4.0, but we need at least 2.0.0!` or `libGL error: driver pointer missing`) are caused by Portal 2 bundling an old libstdc++ file. This error is especially common with open source Radeon drivers (`radeonsi`). See [Steam/Troubleshooting#Steam runtime issues](/index.php/Steam/Troubleshooting#Steam_runtime_issues "Steam/Troubleshooting").
 
+A problem with libstdc can be fixed with
+
+```
+LD_PRELOAD='/usr/$LIB/libstdc++.so.6' %command%
+
+```
+
 ## Prison Architect
 
 ### ALSA error when using PulseAudio

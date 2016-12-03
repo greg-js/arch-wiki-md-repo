@@ -39,6 +39,8 @@ Please consult the [Certbot documentation](https://certbot.eff.org/docs/) on how
 
 **Note:** With this method, you must temporarily stop your web server. You can also run the verification through your already running web server with the [#Webroot](#Webroot) method.
 
+**Note:** With this method, you will not be able to automatically renew certificates. If you are interested in auto-renewal you may want to use the [#Webroot](#Webroot) method.
+
 If there is no plugin for your web server, use the following command:
 
 ```

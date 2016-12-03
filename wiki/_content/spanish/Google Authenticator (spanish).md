@@ -3,7 +3,7 @@
 ## Contents
 
 *   [1 Installación](#Installaci.C3.B3n)
-*   [2 Setting up the PAM](#Setting_up_the_PAM)
+*   [2 Configurando PAM](#Configurando_PAM)
 *   [3 Generar un fichero de clave secreta](#Generar_un_fichero_de_clave_secreta)
 *   [4 Configurando tu generador de OTP](#Configurando_tu_generador_de_OTP)
 *   [5 Probando](#Probando)
@@ -13,7 +13,7 @@
 
 Instalar el paquete [libpam-google-authenticator](https://aur.archlinux.org/packages/libpam-google-authenticator/) desde [AUR](/index.php/AUR "AUR"). La versión de desarrollo también está disponible cómo [google-authenticator-libpam-git](https://aur.archlinux.org/packages/google-authenticator-libpam-git/).
 
-## Setting up the PAM
+## Configurando PAM
 
 **Warning:** Si haces toda la configuración via SSH no cierres la sesión antes de comprobar que todo funciona correctamente, si no puedes bloquearte a ti mismo. A demás considera crear una llave SSH (véase [SSH_keys_(Español)](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)")) antes de activar PAM.
 
@@ -54,7 +54,7 @@ Finalmente, [reload](/index.php/Reload "Reload") el servicio `sshd`.
 
 ## Generar un fichero de clave secreta
 
-**Tip:** Instalar [qrencode](https://www.archlinux.org/packages/?name=qrencode) para generar un código QR escaneable. Escanea el código QR con la app Google Authenticator para configurar automáticamente la clave.
+**Tip:** Instalar [qrencode](https://www.archlinux.org/packages/?name=qrencode) para generar un código QR escaneable. Escanea el código QR con la app Google Authenticator (u otra a su elección, p.e. FreeOTP) para configurar automáticamente la clave.
 
 Todos los usuarios que quieran usar autenticación en dos pasos necesitarán generar un fichero de clave secreta en su directorio personal. Ésto se puede hacer muy fácilmente usando *google-authenticator*:
 

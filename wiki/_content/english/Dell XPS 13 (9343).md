@@ -68,11 +68,6 @@ The latest BIOS update is [A09](http://www.dell.com/support/home/us/en/19/Driver
 
 BIOS upgrade is easy, thanks to the EFI implementation: store the update binary on the EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, press `F12` key in order to enter in the Boot Menu and then choose *BIOS Update*.
 
-Unfortunately Dell does no longer show BIOS versions higher than A07 on its site and thus the link above doesn't work. Anyhow, you can download BIOS version A08 and A09 from here:
-
-*   [BIOS A08](https://mega.nz/#!20U2VRBI!FRam__6wjlOjRejd0Oy4Wtof6wdkTkyUUBBz8oTtOno) md5sum: d1df9447f119ce5cb90ebea875a22cd9
-*   [BIOS A09](http://downloads.dell.com/FOLDER03901193M/1/9343A09.exe) md5sum: 3921c57ae6ff3fcd9b4564f5f36fb69a
-
 ### Backlight
 
 Works out-of-the-box:

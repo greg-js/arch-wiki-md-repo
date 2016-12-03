@@ -727,6 +727,7 @@ Once the script is installed add lines like the following into your OpenVPN clie
 
 ```
 script-security 2
+setenv PATH /usr/bin
 up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
 

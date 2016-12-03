@@ -16,21 +16,20 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [5.2 Canada](#Canada)
     *   [5.3 China](#China)
     *   [5.4 France](#France)
-    *   [5.5 Germany](#Germany)
-    *   [5.6 Indonesia](#Indonesia)
-    *   [5.7 Iran](#Iran)
-    *   [5.8 Italy](#Italy)
-    *   [5.9 Japan](#Japan)
-    *   [5.10 Malaysia](#Malaysia)
-    *   [5.11 Netherlands](#Netherlands)
-    *   [5.12 New Zealand](#New_Zealand)
-    *   [5.13 Poland](#Poland)
-    *   [5.14 Russia](#Russia)
-    *   [5.15 South Africa](#South_Africa)
-    *   [5.16 Sweden](#Sweden)
-    *   [5.17 Thailand](#Thailand)
-    *   [5.18 United States](#United_States)
-    *   [5.19 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+    *   [5.5 Indonesia](#Indonesia)
+    *   [5.6 Iran](#Iran)
+    *   [5.7 Italy](#Italy)
+    *   [5.8 Japan](#Japan)
+    *   [5.9 Malaysia](#Malaysia)
+    *   [5.10 Netherlands](#Netherlands)
+    *   [5.11 New Zealand](#New_Zealand)
+    *   [5.12 Poland](#Poland)
+    *   [5.13 Russia](#Russia)
+    *   [5.14 South Africa](#South_Africa)
+    *   [5.15 Sweden](#Sweden)
+    *   [5.16 Thailand](#Thailand)
+    *   [5.17 United States](#United_States)
+    *   [5.18 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 
 ## Official mirrors
 
@@ -218,11 +217,6 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://delta.archlinux.fr/](http://delta.archlinux.fr/) - *With Delta package support. Needs [xdelta3](https://www.archlinux.org/packages/?name=xdelta3) to run.*
 *   [https://eu.mirrors.coltondrg.com/archlinux/](https://eu.mirrors.coltondrg.com/archlinux/)
-
-### Germany
-
-*   [http://ftp.u-tx.net/archlinux/](http://ftp.u-tx.net/archlinux/)
-*   [ftp://ftp.u-tx.net/archlinux/](ftp://ftp.u-tx.net/archlinux/)
 
 ### Indonesia
 

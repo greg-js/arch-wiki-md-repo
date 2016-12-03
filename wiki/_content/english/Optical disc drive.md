@@ -679,6 +679,10 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 	[http://www.mcternan.me.uk/ripright/](http://www.mcternan.me.uk/ripright/) || [ripright](https://aur.archlinux.org/packages/ripright/)
 
+*   **ripit** — Command-line ripper that supports MusicBrainz, freeddb and various codecs.
+
+	[http://www.suwald.com/ripit/news.php](http://www.suwald.com/ripit/news.php) || [ripit](https://aur.archlinux.org/packages/ripit/)
+
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
 	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)

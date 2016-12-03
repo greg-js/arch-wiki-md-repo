@@ -26,20 +26,37 @@
 *   [Install](/index.php/Install "Install") the package [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) from the [AUR](/index.php/AUR "AUR").
     Then [enable](/index.php/Enable "Enable") the `numLockOnTty` service.
 
-*   Alternatively, if you do not want to install an aur package to implement this, you can simply create a service file in `/etc/systemd/system` like:
+*   Alternatively, if you do not want to install an aur package to implement this, you can simply create a file in `/usr/bin` similar to:
     ```
-    [Unit]
-    Description=Switch on numlock from tty1 to tty6
+    #!/bin/bash
 
-    [Service]
-    ExecStart=/bin/bash -c 'for tty in /dev/tty{1..6};do /usr/bin/setleds -D +num < \"$tty\";done'
+    #Ybalrid on 01/02/13
+    #This script set the numpad on for the 6 first tty
 
-    [Install]
-    WantedBy=multi-user.target
+    for tty in /dev/tty{1..6}
+    do
+        /usr/bin/setleds -D +num < "$tty";
+    done
+
     ```
+    as done in the aforementioned aur package. Remember to give it a name e.g. numlock.
 
-    **Note:** The filename should have a `.service` suffix, e.g. `numlock1to6.service`.
-    Do not forget to [enable](/index.php/Enable "Enable") the service after you create it.
+You will then need to create a service file in `/usr/lib/systemd/system/` like:
+```
+[Unit]
+Description=numlock
+
+[Service]
+ExecStart=/usr/bin/numlock
+StandardInput=tty
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target emergency.target rescue.target
+```
+
+**Note:** The filename should have a `.service` suffix, e.g. `numlock.service`.
+Do not forget to [enable](/index.php/Enable "Enable") the service after you create it. `# systemctl start numlock` 
 
 ### Extending getty@.service
 

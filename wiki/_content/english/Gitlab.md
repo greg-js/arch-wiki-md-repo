@@ -328,6 +328,7 @@ Finally run the following commands to check your installation:
 **Note:**
 
 *   The *gitlab:env:info* and *gitlab:check* commands will show a fatal error related to git. This is OK.
+*   If *gitlab:check* fails with *Check GitLab API access: FAILED. code: 401*, see [[2]](https://wiki.archlinux.org/index.php/gitlab#401_Unauthorized_on_all_API_access) and [[3]](https://wiki.archlinux.org/index.php/gitlab#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty) of the troubleshoot section to resolve this.
 *   The *gitlab:check* will complain about missing initscripts. This is nothing to worry about, as [systemd](/index.php/Systemd "Systemd") service files are used instead (which GitLab does not recognize).
 
 #### Configure Git User
@@ -545,7 +546,7 @@ Since 8.0 GitLab uses separate HTTP server [gitlab-workhorse](https://www.archli
 
 **Note:** Unicorn is still needed so don't disable or stop `gitlab-unicorn.service`. If you've changed the port Unicorn listens at, [edit](/index.php/Edit "Edit") the `-authBackend` setting in `gitlab-workhorse.service` accordingly
 
-By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `/run/gitlab/gitlab-workhorse.socket`. You can [edit](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` to make it listen on an address, for example `-listenAddr 127.0.0.1:8181`.
+By default [gitlab-workhorse](https://www.archlinux.org/packages/?name=gitlab-workhorse) listens on `/run/gitlab/gitlab-workhorse.socket`. You can [edit](/index.php/Edit "Edit") `gitlab-workhorse.service` and change the parameter `-listenAddr` to make it listen on an address, for example `-listenAddr 127.0.0.1:8181`. If listening on an address you also need to set the network type to `-listenNetwork tcp`
 
 When using nginx remember to edit your nginx configuration file. To switch from gitlab-unicorn to gitlab-workhorse edit the two following settings accordingly
 

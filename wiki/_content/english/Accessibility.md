@@ -102,7 +102,7 @@ WantedBy=multi-user.target emergency.target rescue.target
 Finally, move this file, e.g. "loadkeys.service", to `/usr/lib/systemd/system/` and enable it by running:
 
 ```
-# systemdctl enable loadkeys
+# systemctl enable loadkeys
 
 ```
 

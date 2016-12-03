@@ -31,7 +31,8 @@ To **execute** programs that use OpenCL, you need to install a runtime compatibl
 
 *   [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia): execute on your Nvidia GPU (official Nvidia runtime)
 *   [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa): execute on AMD GPU's using the mesa drivers (currently under development, your mileage may vary)
-*   [opencl-catalyst](https://aur.archlinux.org/packages/opencl-catalyst/): execute on your AMD GPU (official AMD runtime)
+*   [opencl-catalyst](https://aur.archlinux.org/packages/opencl-catalyst/): execute on your AMD GPU (official AMD runtime, soon to be deprecated)
+*   [amdgpu-pro-computing](https://aur.archlinux.org/packages/amdgpu-pro-computing/): execute on your AMD GPU (official AMD runtime, auto-generated from Ubuntu package)
 *   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): execute on your CPU (official Intel runtime, also supports non-Intel CPUs)
 *   [pocl](https://aur.archlinux.org/packages/pocl/): execute on your CPU (LLVM-based OpenCL implementation)
 
