@@ -66,7 +66,7 @@ Now the `mariadb.service` can be started and/or enabled with [systemd](/index.ph
 
 **Tip:** If you use something different from `/var/lib/mysql` for your data dir, you need to set `datadir=<YOUR_DATADIR>` under section `[mysqld]` of your `/etc/mysql/my.cnf`
 
-The following command will interactively guide you through a number of recomended security measures at the database level:
+The following command will interactively guide you through a number of recommended security measures at the database level:
 
 ```
 # mysql_secure_installation

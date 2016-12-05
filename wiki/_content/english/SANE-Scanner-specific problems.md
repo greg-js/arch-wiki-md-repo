@@ -49,7 +49,7 @@ Then, install the appropriate package:
 *   [brscan4](https://aur.archlinux.org/packages/brscan4/)
 *   [libsane-dsseries](https://aur.archlinux.org/packages/libsane-dsseries/)
 
-Now, the scanner should be recognized by SANE.
+Now, the scanner should be recognized by SANE. If it is not, check if you have libusb-compat package installed, as the brother modules are linked against version 0.1.
 
 For network scanners, Brother provides a different configuration tool for each brscan version (eg. brsaneconfig2 for brscan2 compatible devices):
 
@@ -161,7 +161,7 @@ Replug scanner, you have a working Epson Perfection 1270 now.
 
 *   To prevent `scanimage: sane_start: Error during device I/O` and hangup of the scanner itself, when trying to scan with ADF (automatic document feed) enabled, I had to remove or comment out all Backends from `/etc/sane.d/dll.conf` and instead just add this to the file: `snapscan` 
 
-Finally. If you still get the `Error I/O` messages try to check the transportation lock of the scanner. It is on the bottom of the scanner. It must be opened.
+If you still get the `Error during device I/O` messages check that the transportation lock of the scanner (on the bottom of the scanner) is open.
 
 ### Epson Perfection 1670/2480/2580/3490/3590
 

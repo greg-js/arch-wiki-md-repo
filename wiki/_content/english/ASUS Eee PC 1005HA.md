@@ -29,6 +29,7 @@ This article describes both the 1005HA and the 1005HAB. The functional differenc
         *   [4.4.3 Sleep](#Sleep)
         *   [4.4.4 Display Panel](#Display_Panel)
         *   [4.4.5 Trackpad Toggle](#Trackpad_Toggle)
+        *   [4.4.6 Super hybrid engine toggle](#Super_hybrid_engine_toggle)
     *   [4.5 Display settings](#Display_settings)
 *   [5 Hardware](#Hardware)
     *   [5.1 Ethernet](#Ethernet)
@@ -56,7 +57,7 @@ The wireless interface may become soft blocked shortly after completing initial 
 
 # Display and input settings
 
-See [Xorg](/index.php/Xorg "Xorg"), [Intel graphics](/index.php/Intel_graphics "Intel graphics"), [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") and [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+See [Xorg](/index.php/Xorg "Xorg"), [Intel graphics](/index.php/Intel_graphics "Intel graphics"), [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") and [Libinput](/index.php/Libinput "Libinput") for TouchPad configuration.
 
 # Powersaving and ACPI
 
@@ -107,7 +108,7 @@ See [cpufrequtils](/index.php/Cpufrequtils "Cpufrequtils").
 
 ## Hotkeys
 
-To get the hotkeys working (fn+F1 etc, touchpad lock, powerbutton shutdown, Super hybrid engine toggle), install the [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/) package from AUR. Configuration is done in the file /etc/conf.d/acpi-eeepc-generic.conf.
+To get the hotkeys working (fn+F1 etc, powerbutton shutdown), install the [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/) package from AUR. Configuration is done in the file /etc/conf.d/acpi-eeepc-generic.conf.
 
 acpi-eeepc-generic needs the eeepc_wmi kernel module to be loaded to work. Check with:
 
@@ -198,7 +199,11 @@ The display pannel toggle hotkey (Fn+F7) does not produce a scancode (Tested on 
 
 ### Trackpad Toggle
 
-The Trackpad Toggle (Fn+F3 or the hard button) can work but require manual configuration. See [extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") and [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics"). In kernel 4.4.1-2-ARCH using eeepc_wmi and asus_wmi modules I was unable to find a way to manage the trackpad status LED.
+The Trackpad Toggle (Fn+F3 or the hard button) does not seem to be recognized anymore (kernel 4.8.11-1-ARCH using asus_wmi)
+
+### Super hybrid engine toggle
+
+The Super hybrid engine toggle button (Fn+Space) does not seem to be recognized anymore (kernel 4.8.11-1-ARCH using asus_wmi)
 
 ## Display settings
 

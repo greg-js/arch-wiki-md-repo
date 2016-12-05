@@ -279,6 +279,10 @@ To check the if it was set correctly, use:
 
  `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
 
+If you get the error `dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`, make sure dbus is running:
+
+ `$ sudo -u gdm dbus-launch gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
+
 ### GDM keyboard layout
 
 See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").

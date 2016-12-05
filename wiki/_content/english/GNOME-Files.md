@@ -17,6 +17,7 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
     *   [3.3 Music files metadata in list view](#Music_files_metadata_in_list_view)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Files is no longer the default file manager](#Files_is_no_longer_the_default_file_manager)
+    *   [4.2 Thumbnailing not working for video files](#Thumbnailing_not_working_for_video_files)
 
 ## Installation
 
@@ -147,3 +148,7 @@ This can be caused by the file association for directories being reset. Installi
 To solve this, open Files, right-click on a folder, and choose *Open With Other Application > Files > Select*. This will set the association for directories back to Files.
 
 If this does not solve the issue, see [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").
+
+### Thumbnailing not working for video files
+
+There is an ongoing issue with [totem](https://www.archlinux.org/packages/?name=totem) (the video thumbnailer for Nautilus) on computers with Intel GPUs. It will crash if [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) is installed. Until this issue is resolved, it is recommended to remove this package.

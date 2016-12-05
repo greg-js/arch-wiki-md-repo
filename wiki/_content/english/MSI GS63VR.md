@@ -6,6 +6,7 @@
     *   [2.2 Touchpad](#Touchpad)
     *   [2.3 Networking](#Networking)
         *   [2.3.1 Wireless](#Wireless)
+    *   [2.4 Audio](#Audio)
 *   [3 Misc](#Misc)
     *   [3.1 BIOS](#BIOS)
 
@@ -28,6 +29,10 @@ This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinpu
 #### Wireless
 
 [NetworkManager](/index.php/NetworkManager "NetworkManager") works out of the box for wifi on both 2.4GHz and 5GHz networks.
+
+### Audio
+
+Headphones through the headphone jack do not have any volume control and are always maxed using default PulseAudio configuration.
 
 ## Misc
 

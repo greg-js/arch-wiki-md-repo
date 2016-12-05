@@ -13,6 +13,7 @@ From here, you will be able to follow the [Beginner's Guide](/index.php/Beginner
 
 *   Sound doesn't work without the appropriate asound.state file (James Fu's backup can be found here: [https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0](https://www.dropbox.com/s/gb9mhd0z4356n81/asound.state?dl=0) )
 
+*   Newer Arch kernels don't support the Bay Trail MAX98090 soc audio drivers. You need to enable CONFIG_SND_SOC_INTEL_BYT_MAX98090_MACH in a custom built kernel.
 *   Support for the keyboard layout may be found in the xkeyboard-config-chromebook package in the AUR
 
 ## See also
@@ -20,3 +21,5 @@ From here, you will be able to follow the [Beginner's Guide](/index.php/Beginner
 *   [https://johnlewis.ie/custom-chromebook-firmware/rom-download/](https://johnlewis.ie/custom-chromebook-firmware/rom-download/)
 *   [https://plus.google.com/communities/112479827373921524726](https://plus.google.com/communities/112479827373921524726)
 *   [https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH](https://plus.google.com/+JamesFuBEEFCAKE/posts/Tf4Pc5Z8reH)
+*   [https://cateee.net/lkddb/web-lkddb/SND_SOC_INTEL_BYT_MAX98090_MACH.html](https://cateee.net/lkddb/web-lkddb/SND_SOC_INTEL_BYT_MAX98090_MACH.html)
+*   [https://lkml.org/lkml/2016/8/12/180](https://lkml.org/lkml/2016/8/12/180)

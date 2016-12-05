@@ -197,7 +197,7 @@ Key Exchange Key:
 $ openssl req -new -x509 -newkey rsa:2048 -subj "/CN=*my KEK*/" -keyout KEK.key -out KEK.crt -days *3650* -nodes -sha256
 $ openssl x509 -outform DER -in KEK.crt -out KEK.cer
 $ cert-to-efi-sig-list -g *GUID* KEK.crt KEK.esl
-$ sign-efi-sig-list -k PK.key -c PK.crt KEK KEK.esl KEK.auth
+$ sign-efi-sig-list -g *GUID* -k PK.key -c PK.crt KEK KEK.esl KEK.auth
 
 ```
 
@@ -207,7 +207,7 @@ Signature Database:
 $ openssl req -new -x509 -newkey rsa:2048 -subj "/CN=*my db*/" -keyout db.key -out db.crt -days *3650* -nodes -sha256
 $ openssl x509 -outform DER -in db.crt -out db.cer
 $ cert-to-efi-sig-list -g *GUID* db.crt db.esl
-$ sign-efi-sig-list -k PK.key -c PK.crt DB db.esl db.auth
+$ sign-efi-sig-list -g *GUID* -k KEK.key -c KEK.crt DB db.esl db.auth
 
 ```
 

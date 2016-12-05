@@ -8,10 +8,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 *   [2 Configuration](#Configuration)
     *   [2.1 Activation and autostart](#Activation_and_autostart)
     *   [2.2 Handling errors of jobs](#Handling_errors_of_jobs)
-        *   [2.2.1 Example with msmtp](#Example_with_msmtp)
-        *   [2.2.2 Example with esmtp](#Example_with_esmtp)
-        *   [2.2.3 Example with opensmtpd](#Example_with_opensmtpd)
-        *   [2.2.4 Long cron job](#Long_cron_job)
+        *   [2.2.1 Example with ssmtp](#Example_with_ssmtp)
+        *   [2.2.2 Example with msmtp](#Example_with_msmtp)
+        *   [2.2.3 Example with esmtp](#Example_with_esmtp)
+        *   [2.2.4 Example with opensmtpd](#Example_with_opensmtpd)
+        *   [2.2.5 Long cron job](#Long_cron_job)
 *   [3 Crontab format](#Crontab_format)
 *   [4 Basic commands](#Basic_commands)
 *   [5 Examples](#Examples)
@@ -57,11 +58,19 @@ Check `/etc/cron.daily/` and similar directories to see which jobs are present. 
 cron registers the output from *stdout* and *stderr* and attempts to send it as email to the user's spools via the `sendmail` command. Cronie disables mail output if `/usr/bin/sendmail` is not found. In order for mail to be written to a user's spool, there must be an smtp daemon running on the system, e.g. [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd). Otherwise, you can install a package that provides the sendmail command, and configure it to send mail to a remote mail exchanger. You can also log the messages by using the `-m` option and writing a custom script.
 
 1.  [Edit](/index.php/Systemd#Editing_provided_units "Systemd") the `cronie.service` unit.
-2.  Install [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](/index.php/Msmtp "Msmtp"), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) or write a custom script.
+2.  Install [esmtp](https://www.archlinux.org/packages/?name=esmtp), [msmtp](/index.php/Msmtp "Msmtp"), [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd), [ssmtp](/index.php/SSMTP "SSMTP"), or write a custom script.
+
+#### Example with ssmtp
+
+ssmtp is a send-only sendmail emulator which delivers email from a local computer to an smtp server. While there are currently no active maintainers, it is still by far the simplest way to transfer mail to a configured mailhub. There are no daemons to run, and configuration can be as simple as editing 3 lines in a single configuration file (if your host is trusted to relay unauthenticated email through your mailhub). ssmtp does not receive mail, expand aliases, or manage a queue.
+
+Install [ssmtp](https://www.archlinux.org/packages/?name=ssmtp), which creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/ssmtp`. You must then edit `/etc/ssmtp/ssmtp.conf`. See [ssmtp](/index.php/SSMTP "SSMTP") for details. Creating a symbolic link to `/usr/bin/sendmail` insures that programs like [S-nail](/index.php/S-nail "S-nail") (or any package which provides `/usr/bin/mail` will just work without modification.
+
+Restart `cronie` to insure that it detects that you now have a `/usr/bin/sendmail` installed.
 
 #### Example with msmtp
 
-Install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) which creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/msmtp`. Restart `cronie` to make sure it detects the new `sendmail` command. You must then provide a way for `msmtp` to convert your username into an email address.
+Install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta), which creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/msmtp`. Restart `cronie` to make sure it detects the new `sendmail` command. You must then provide a way for `msmtp` to convert your username into an email address.
 
 Then either add `MAILTO` line to your crontab, like so:
 

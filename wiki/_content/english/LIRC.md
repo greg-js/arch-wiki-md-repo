@@ -23,6 +23,7 @@ The Central Dogma of LIRC (an allusion to the [flow of information](http://www.n
     *   [5.1 Remote functions as a keyboard](#Remote_functions_as_a_keyboard)
         *   [5.1.1 When using Xorg](#When_using_Xorg)
         *   [5.1.2 On an ARM device not using Xorg](#On_an_ARM_device_not_using_Xorg)
+    *   [5.2 Changing default configuration](#Changing_default_configuration)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -189,6 +190,39 @@ install ir_rc6_decoder /bin/false
 install ir_sanyo_decoder /bin/false
 
 ```
+
+### Changing default configuration
+
+Users not getting any output from `irw` may have the default configuration in `/etc/lirc/lirc_options.conf` incorrectly setup (or might have been overwritten by an update).
+
+First, check if `/dev/lirc0` is present:
+
+```
+$ mode2 --driver default --device /dev/lirc0
+
+```
+
+Watch the output while pressing buttons on the remote. If output is present, edit `/etc/lirc/lirc_options.conf` changing the **driver** and **device** appropriately.
+
+If no output is presented, the task becomes locating the correct driver/device combination. First check what combination lirc detected by default. Run `ir-keytable` and check the output. It will look similar to this:
+
+```
+ Found /sys/class/rc/rc0/ (/dev/input/event5) with:
+       Driver ite-cir, table rc-rc6-mce
+       Supported protocols: unknown other lirc rc-5 jvc sony nec sanyo mce-kbd rc-6 sharp xmp
+       Enabled protocols: lirc
+       Extra capabilities: <access denied>
+
+```
+
+In this case, lirc automatically detected `/dev/input/event5` as the IR device, which uses the `devinput` driver. Check if this combination is working by running:
+
+```
+$ mode2 --driver devinput --device /dev/input/event5
+
+```
+
+Now try pressing buttons on the remote. If there is no output, try different driver and device combinations. Once a working combination has been identified, change **driver** and **device** in `/etc/lirc/lirc_options.conf` appropriately.
 
 ## See also
 

@@ -214,8 +214,8 @@ If you see a message similar to this, you can go on and investigate your PulseAu
 When using [GDM](/index.php/GDM "GDM"), another instance of PulseAudio is started, which "captures" your bluetooth device connection. This can be prevented by [masking](/index.php/Mask "Mask") the pulseaudio socket for the GDM user by doing the following:
 
 ```
-$ mkdir -p ~gdm/.config/systemd/user
-$ ln -s /dev/null ~gdm/.config/systemd/user/pulseaudio.socket
+# mkdir -p ~gdm/.config/systemd/user
+# ln -s /dev/null ~gdm/.config/systemd/user/pulseaudio.socket
 
 ```
 

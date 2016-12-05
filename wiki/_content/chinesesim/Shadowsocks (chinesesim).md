@@ -5,6 +5,7 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
+        *   [2.1.1 GUI client](#GUI_client)
     *   [2.2 服务端](#.E6.9C.8D.E5.8A.A1.E7.AB.AF)
     *   [2.3 以守护进程形式运行客户端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E5.AE.A2.E6.88.B7.E7.AB.AF)
     *   [2.4 以守护进程形式运行服务端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E6.9C.8D.E5.8A.A1.E7.AB.AF)
@@ -68,13 +69,11 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 * * *
 
-**提示：** 当然也有图形化的使用[shadowsocks-gui@gitHub](https://github.com/shadowsocks/shadowsocks-gui),如果不希望自己编译的话，也可以到[shadowsocks-gui@sourceforge](http://sourceforge.net/projects/shadowsocksgui/files/dist/)下载。
+#### GUI client
 
-* * *
+安装 [shadowsocks-qt5](https://aur.archlinux.org/packages/shadowsocks-qt5/)。
 
-由于作者被相关部门请去喝茶，出于某些原因，其项目已经从github移除,但仍然可以从aur中下载安装
-
-对debian用户的友情提示，由于源中没有shadowsocks-qt5，可到unbuntu的源中下载，下载[shadowsocks-qt5以及libqtshadowsocks](https://launchpad.net/shadowsocks-qt5/+packages)，使用dpkg命令或者借助gdebi点击安装。
+**提示：** 也可以使用[shadowsocks-gui@gitHub](https://github.com/shadowsocks/shadowsocks-gui),如果不希望自己编译的话到[shadowsocks-gui@sourceforge](http://sourceforge.net/projects/shadowsocksgui/files/dist/)直接下载。
 
 * * *
 
@@ -161,11 +160,11 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 安装代理插件[foxyproxy](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?src=userprofile):打开浏览器右上角菜单，进入扩展管理，在搜索框中输入foxyproxy，安装foxyproxy代理插件，安装完毕后重启浏览器。
 
-设置代理：找到foxyproxy插件，单击进入foxyproxy的设置界面，在代理服务器目录左侧选择添加代理服务器，在代理服务器设置里选择手动设置代理服务器，ip地址栏填写127.0.0.1，勾选SOCKS代理服务器，点选SOCKS V5，然后确定。
+设置代理：找到foxyproxy插件，单击进入foxyproxy的设置界面，在代理服务器目录左侧选择添加代理服务器，为新加代理起一个名字，然后在代理服务器设置里选择手动设置代理服务器，ip地址栏填写127.0.0.1，勾选SOCKS代理服务器，点选SOCKS V5，然后确定。
 
-开启快速添加：在foxyproxy设置中，选择快速添加，勾选启用，在进入某些需要代理的网站时可以按下Alt+f2将网址添加到设定的代理中（可设置相应匹配）（！此功能需要foxyproxy标准版）。
+开启快速添加（可选）：在foxyproxy设置中，选择快速添加，勾选启用，在进入某些需要代理的网站时可以按下Alt+f2将网址添加到设定的代理中（！此功能需要foxyproxy标准版）。
 
-使用代理：在foxyproxy上鼠标右键点击，指针移动到添加的代理上，就可以选择使用此代理服务器。也可以根据个人需求给某些特定域名添加到代理列表，单独使用某个代理服务器。
+使用代理：在foxyproxy上鼠标右键点击，指针移动到添加的代理上，就可以选择使用此代理服务器。也可以根据个人需求给某些特定域名添加到代理列表，使指定域名使用相应的代理设置。
 
 更多有关foxyproxy内容，请到[foxyproxy官网](https://getfoxyproxy.org)查看。
 

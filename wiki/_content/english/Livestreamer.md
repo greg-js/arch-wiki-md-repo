@@ -1,3 +1,5 @@
+This is updated, please change to [Streamlink](/index.php/Streamlink "Streamlink").
+
 Livestreamer is a command-line utility written in [Python](/index.php/Python "Python"), which allows you to watch online video streams in popular video players, such as [VLC](/index.php/VLC "VLC"), [MPlayer](/index.php/MPlayer "MPlayer") or [mpv](/index.php/Mpv "Mpv") The full list of supported media players is available here: [http://docs.livestreamer.io/players.html#player-compatibility](http://docs.livestreamer.io/players.html#player-compatibility).
 
 Support of a various streaming services is provided by a plugins, which can be easily added if needed. A lot of popular video streaming services are supported out of the box, including Dailymotion, Livestream, Twitch, UStream, YouTube Live and many more. List of all built-in plugins is available on [http://livestreamer.tanuki.se/en/latest/plugin_matrix.html](http://livestreamer.tanuki.se/en/latest/plugin_matrix.html).

@@ -491,7 +491,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://dfm.sourceforge.net/](http://dfm.sourceforge.net/) || [dino-dfm](https://aur.archlinux.org/packages/dino-dfm/)
 
-*   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE4 desktop.
+*   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE desktop.
 
 	[http://dolphin.kde.org/](http://dolphin.kde.org/) || [dolphin](https://www.archlinux.org/packages/?name=dolphin)
 
@@ -830,6 +830,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **Collectd** — A simple, extensible system monitoring daemon based on [rrdtool](http://oss.oetiker.ch/rrdtool/). It has a small footprint and can be set up either stand-alone or as a server/client application.
 
 	[https://collectd.org/](https://collectd.org/) || [collectd](https://www.archlinux.org/packages/?name=collectd)
+
+*   **collectl** — Collectl is a light-weight performance monitoring tool capable of reporting interactively as well as logging to disk. It reports statistics on cpu, disk, infiniband, lustre, memory, network, nfs, process, quadrics, slabs and more in easy to read format.
+
+	[http://collectl.sourceforge.net/](http://collectl.sourceforge.net/) || [collectl](https://aur.archlinux.org/packages/collectl/)
 
 *   **dstat** — Versatile resource statistics tool.
 

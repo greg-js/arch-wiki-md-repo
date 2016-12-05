@@ -68,7 +68,7 @@ $ alsamixer -c PCH
 
 #### Brightness
 
-In some cases, `FN+F3` and `FN+F4` might not work out of box with some [desktop environments](/index.php/Desktop_environments "Desktop environments"), so install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/) from the [AUR](/index.php/AUR "AUR"). Load the module to control hotkeys:
+Key mappings `FN+F3` and `FN+F4` might not work out of box with some [desktop environments](/index.php/Desktop_environments "Desktop environments"). To resolve, install [asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/) and load the module to control hotkeys:
 
 ```
 # modprobe asus-nb-wmi
@@ -158,7 +158,7 @@ Test with `xev` or try to bind something on media button. `FN+F7` should be cont
 
 ### Touchpad
 
-For touchpad to operate as expected, please install [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package. For more information, see [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
+Touchpad might not work as expected out of the box. To resolve, install [Touchpad Synaptics driver](/index.php/Touchpad_Synaptics#Installation "Touchpad Synaptics").
 
 ## Troubleshooting
 

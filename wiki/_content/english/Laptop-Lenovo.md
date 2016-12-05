@@ -8,11 +8,12 @@
         *   [1.1.1 300 series](#300_series)
         *   [1.1.2 Edge series](#Edge_series)
         *   [1.1.3 L series](#L_series)
-        *   [1.1.4 R series](#R_series)
-        *   [1.1.5 T series](#T_series)
-        *   [1.1.6 W series](#W_series)
-        *   [1.1.7 X series](#X_series)
-        *   [1.1.8 P series](#P_series)
+        *   [1.1.4 P series](#P_series)
+        *   [1.1.5 R series](#R_series)
+        *   [1.1.6 T series](#T_series)
+        *   [1.1.7 W series](#W_series)
+        *   [1.1.8 X series](#X_series)
+        *   [1.1.9 Yoga Series](#Yoga_Series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
     *   [2.2 B series](#B_series)
@@ -71,6 +72,15 @@ install CD version
 | Lenovo ThinkPad L420 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA |
 | Lenovo ThinkPad L430 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint* |
 | Lenovo ThinkPad L530 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
+
+#### P series
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| [Lenovo ThinkPad P50](/index.php/Lenovo_ThinkPad_P50 "Lenovo ThinkPad P50") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
+| [Lenovo ThinkPad P70](/index.php/Lenovo_ThinkPad_P70 "Lenovo ThinkPad P70") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
 
 #### R series
 
@@ -135,14 +145,13 @@ install CD version
 | [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)") | NA | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 
-#### P series
+#### Yoga Series
 
 | Model version | Arch Linux
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| [Lenovo ThinkPad P50](/index.php/Lenovo_ThinkPad_P50 "Lenovo ThinkPad P50") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
-| [Lenovo ThinkPad P70](/index.php/Lenovo_ThinkPad_P70 "Lenovo ThinkPad P70") | 2016.04 | Yes | Yes | Yes | Yes | Yes | Suspend working, hibernate not tested | NA | SD card (Yes), Webcam (Yes), Fingerprint Reader (No), | Wifi requires Kernel 4.3.3+ |
+| [Lenovo Thinkpad Yoga 260](/index.php/Lenovo_Thinkpad_Yoga_260 "Lenovo Thinkpad Yoga 260") | USB | Yes | Yes | Yes | Yes | Yes | Unknown | N/A | SD card (Yes), Webcam (Yes), Fingerprint Reader (Unknown), Touchscreen (Yes), Tablet (Partial), Accelerometer (No) | Wifi requires Kernel 4.3.3+ |
 
 ## Lenovo
 

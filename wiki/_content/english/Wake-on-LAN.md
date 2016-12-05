@@ -6,7 +6,7 @@ Wake-on-LAN (WOL) is a feature to switch on a computer via a network connection 
 *   [2 Software configuration](#Software_configuration)
     *   [2.1 Make it persistent](#Make_it_persistent)
         *   [2.1.1 netctl](#netctl)
-        *   [2.1.2 systemd-networkd](#systemd-networkd)
+        *   [2.1.2 systemd.link](#systemd.link)
         *   [2.1.3 systemd service](#systemd_service)
         *   [2.1.4 udev](#udev)
         *   [2.1.5 cron](#cron)
@@ -69,9 +69,9 @@ If using netctl, one can make this setting persistent by adding the following th
 
  `/etc/netctl/*profile*`  `ExecUpPost='/usr/bin/ethtool -s net0 wol g'` 
 
-#### systemd-networkd
+#### systemd.link
 
-If [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") is used to setup machine's network then it is easy to enable Wake-On-Lan using `systemd.link` configuration. Add `WakeOnLan` option to the network link file:
+Link-level configuration is possible through systemd. The actual setup is performed by the `net_setup_link` udev builtin. Add the `WakeOnLan` option to the network link file:
 
  `/etc/systemd/network/50-wired.link` 
 ```
@@ -79,6 +79,8 @@ If [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") is used to
 WakeOnLan=magic
 ...
 ```
+
+**Note:** This configuration applies only to the link-level, and is independent of network-level daemons such as [NetworkManager](/index.php/NetworkManager "NetworkManager") or [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").
 
 See [systemd-networkd#link files](/index.php/Systemd-networkd#link_files "Systemd-networkd") and `man systemd.link` for more information.
 
@@ -118,6 +120,8 @@ ACTION=="add", SUBSYSTEM=="net", NAME=="enp*", RUN+="/usr/bin/ethtool -s $name w
 The `$name` placeholder will be replaced by the value of the `NAME` variable for the matched device.
 
 **Note:** The name of the configuration file is important. Due to the introduction of [persistent device names](/index.php/Network_configuration#Device_names "Network configuration") in systemd v197, it is important that the rules matching a specific network interface are named lexicographically after `80-net-name-slot.rules`, so that they are applied after the devices gain the persistent names.
+
+**Warning:** [udev](/index.php/Udev "Udev") will match the device as soon it becomes available, be this in the [initramfs](/index.php/Initramfs "Initramfs") (before the switch_root) or the main system. The order is not deterministic; there is no guarantee. Be sure that your initramfs includes the necessary udev rules (from `/etc/udev/rules.d`) and supporting binaries (`/usr/bin/ethtool`).
 
 #### cron
 

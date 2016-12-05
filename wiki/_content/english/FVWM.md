@@ -89,7 +89,7 @@ The following configuration locations are supported as of version 2.6.7, but may
 *   `/usr/local/share/fvwm/system.fvwm2rc`
 *   `/etc/system.fvwm2rc`
 
-FVWM no longer ships sample configuration files as of version 2.6.7\. Nonetheless, the removed sample files can still be viewed on [GitHub](https://github.com/fvwmorg/fvwm/tree/4fc2bf68493c098da54af63cff3ebf3c58882a8d/sample.fvwmrc). The [fvwm-themes](http://fvwm-themes.sourceforge.net/) project also provides ready-made configurations.
+As of version 2.6.7, FVWM ships with a new default configuration, located in `/usr/share/fvwm/default-config`. As such, the older sample configuration files are no longer provided. However, they can still be viewed on [GitHub](https://github.com/fvwmorg/fvwm/tree/4fc2bf68493c098da54af63cff3ebf3c58882a8d/sample.fvwmrc). The [fvwm-themes](http://fvwm-themes.sourceforge.net/) project also provides ready-made configurations.
 
 **Tip:** You can split up your configuration into multiple files and then source those files from the main configuration file using the `read` command. The syntax is `read /path/to/file`.
 
@@ -260,7 +260,7 @@ AddToFunc MyFunc
 
 ### Modules
 
-**Note:** Several modules are being considered for considered for deprecation. [[3]](https://www.mail-archive.com/fvwm-workers@fvwm.org/msg03971.html)
+**Note:** A number of older FVWM modules have been removed as of version 2.6.7\. [[3]](https://github.com/fvwmorg/fvwm/releases/tag/2.6.7)
 
 Modules are separate programs, spawned by FVWM that can add extra functionality. Modules can be spawned using the following syntax: `Module *ModuleName* (*identifier*) *ModuleArgs*`.
 

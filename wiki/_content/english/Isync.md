@@ -11,6 +11,7 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
 *   [3 Configuring](#Configuring)
 *   [4 Usage](#Usage)
 *   [5 Automatic synchronization](#Automatic_synchronization)
+    *   [5.1 Integration with notmuch](#Integration_with_notmuch)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
     *   [6.2 Step #2: Rehash the certificates](#Step_.232:_Rehash_the_certificates)
@@ -169,6 +170,27 @@ WantedBy=timers.target
 ```
 
 Once those two files are created, [reload](/index.php/Reload "Reload") systemd, then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mbsync@*user*.timer`, replacing `*user*` with your username..
+
+### Integration with notmuch
+
+If you want to run [notmuch](/index.php/Notmuch "Notmuch") after automatically synchronizing your mails, it is preferable to modify the above `mbsync@.service` by adding a post-start hook, like below:
+
+ `/etc/systemd/system/mbsync@.service` 
+```
+[Unit]
+Description=Mailbox synchronization service for user %I
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -Va
+ExecStartPost=/usr/bin/notmuch new
+User=%i
+StandardOutput=syslog
+StandardError=syslog
+
+```
+
+This modification assumes that you have already setup notmuch for your user. If the ExecStart command does not execute successfully, the ExecStartPost command will not execute, so be aware of this!
 
 ## Troubleshooting
 

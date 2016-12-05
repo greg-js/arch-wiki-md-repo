@@ -32,7 +32,7 @@ $ pass insert archlinux.org/wiki/username
 
 ```
 
-To get a view of the password store do the following. Not the example output which shows the hiearchy we just created.
+To get a view of the password store do the following. Note the example output which shows the hiearchy we just created.
 
  `$ pass` 
 ```
@@ -89,7 +89,7 @@ One can use aliases to set up different pass contexts, which helps when collabor
 Add aliases to your `*~/.bashrc*`:
 
 ```
- alias passered="PASSWORD_STORE_DIR=~/.pass/red PASSWORD_STORE_GIT=~/.pass/red pass"
+ alias passred="PASSWORD_STORE_DIR=~/.pass/red PASSWORD_STORE_GIT=~/.pass/red pass"
  alias passblue="PASSWORD_STORE_DIR=~/.pass/blue PASSWORD_STORE_GIT=~/.pass/blue pass"
 
 ```

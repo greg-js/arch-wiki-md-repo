@@ -19,6 +19,7 @@ Not to be confused with [Unity3D](/index.php/Unity3D "Unity3D").
 *   [4 Known issues](#Known_issues)
     *   [4.1 Indicator-messages does not work properly](#Indicator-messages_does_not_work_properly)
     *   [4.2 Pidgin-libnotify-ubuntu has unresolvable dependency](#Pidgin-libnotify-ubuntu_has_unresolvable_dependency)
+    *   [4.3 /tmp folder space issue](#.2Ftmp_folder_space_issue)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -136,6 +137,22 @@ Pidgin and a number of other applications can not be integrated into *indicator-
 ### Pidgin-libnotify-ubuntu has unresolvable dependency
 
 As of February 2015, the required package *perlxml* is unavailable, try *pidgin-indicator*.
+
+### /tmp folder space issue
+
+Because unity-editor is a large program, it is common to have issues with space in the tmp folder
+
+```
+   Cannot write, no space on disk error
+
+```
+
+To resolve this, just run the yaourt command with the tmp folder path to another created folder to be used for the installation that can be deleted later.
+
+```
+   yaourt -S unity-editor --tmp temporaryfolder
+
+```
 
 ## See also
 

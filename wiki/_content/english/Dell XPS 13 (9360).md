@@ -32,6 +32,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
 *   [10 Touchscreen](#Touchscreen)
     *   [10.1 Gestures](#Gestures)
+*   [11 Firmware Updates](#Firmware_Updates)
 
 ## Content adaptive brightness control
 
@@ -110,3 +111,7 @@ The touchscreen works without additional configuration. The bug resulting in a d
 ### Gestures
 
 Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for information about the current development state and available methods.
+
+## Firmware Updates
+
+Dell provides firmware updates via [fwupd](https://aur.archlinux.org/packages/fwupd/). See [Flashing_BIOS_from_Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux").

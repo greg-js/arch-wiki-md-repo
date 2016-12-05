@@ -24,7 +24,7 @@ The partition can then be mounted manually or via other mechanisms:
 
 ## Install Arch Linux on F2FS partition
 
-**Warning:** If using F2FS as your root partition, you will need to add the following module to the `MODULES` line in your `/etc/mkinitcpio.conf` file ([FS#49380](https://bugs.archlinux.org/task/49380)): `MODULES="... **crypto-crc32**"` If your CPU supports PCLMUL acceleration, you can also add `crc32c-intel crc32-pclmul` for better I/O performance, or `crc32c-generic crc32-generic` will be used.
+**Warning:** If using F2FS as your root partition, you will need to add the following module to the `MODULES` line in your `/etc/mkinitcpio.conf` file ([FS#49380](https://bugs.archlinux.org/task/49380)): `MODULES="... **crypto-crc32**"` To enable checksum hardware acceleration, you need to compile `crc32c-intel` into kernel, or `crc32c-generic` will be loaded first.
 
 **Warning:** If using GRUB your freshly installed system might not boot after reboot. As GRUB doesn't support F2FS it isn't able to extract the UUID (which is persistent across reboots) of your drive so it uses classic `/dev/sdXx` names instead (which are not guaranteed to be persistent across reboots). In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/sdXx` with `root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`; you can use the `blkid` command to get the UUID of your device.
 

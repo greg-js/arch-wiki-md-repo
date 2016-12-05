@@ -101,7 +101,6 @@ Lastly, and this goes without saying, please verify that your solution is correc
 | Application | Legacy Path | Supported Since | Discussion | Notes |
 | [antimicro](https://github.com/Antimicro/antimicro/) | `~/.antimicro` | [edba864](https://github.com/Antimicro/antimicro/commit/edba864) | [[2]](https://github.com/Antimicro/antimicro/issues/5) |
 | [aria2](https://github.com/tatsuhiro-t/aria2/) | `~/.aria2` | [8bc1d37](https://github.com/tatsuhiro-t/aria2/commit/8bc1d37) | [[3]](https://github.com/tatsuhiro-t/aria2/issues/27) |
-| [beets](http://beets.radbox.org/) |
 | [blender](http://www.blender.org/) | `~/.blender` | [4293f473](http://git.blender.org/gitweb/gitweb.cgi/blender.git/commit/4293f473) | [[4]](https://developer.blender.org/T28943) |
 | [burp](https://github.com/falconindy/burp) | [f2388e9](https://github.com/falconindy/burp/commit/f2388e9) |
 | [chromium](/index.php/Chromium "Chromium") | `~/.chromium` | [23057](https://src.chromium.org/viewvc/chrome?revision=23057&view=revision) | [[5]](https://groups.google.com/forum/#!topic/chromium-dev/QekVQxF3nho) [[6]](https://code.google.com/p/chromium/issues/detail?id=16976) |
@@ -288,6 +287,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 `$ weechat -d "$XDG_CONFIG_HOME"/weechat`
 
  |
+| [wget](/index.php/Wget "Wget") | `~/.wgetrc` | `$ export WGETRC="$XDG_CONFIG_HOME/wgetrc"` |
 | [wine](/index.php/Wine "Wine") | `~/.wine` | [[67]](https://bugs.winehq.org/show_bug.cgi?id=20888) | `$ export WINEPREFIX="$XDG_DATA_HOME"/wine` |
 | [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) | `~/.Xauthority` | `$ export XAUTHORITY="$XDG_RUNTIME_DIR"/X11/xauthority` |
 | [libx11](http://www.x.org/wiki/) | `~/.XCompose` | `$ export XCOMPOSEFILE="$XDG_CONFIG_HOME"/X11/xcompose` |

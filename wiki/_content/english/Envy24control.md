@@ -122,7 +122,7 @@ The faders, meters, and mute buttons operate identically to those on the Monitor
 
 *   The available software inputs are displayed as "playback_*X*", where *X* is a sequential number, in [JACK](/index.php/JACK "JACK")'s Connections dialog (in the "Writable Clients / Input Ports" box.) The number of available inputs will vary depending on your specific card.
 
-*   "PCM Out 1/2" are typically used by applications like [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)") for their main outs. This is so common, the default signal routed to your card's physical outputs come from "PCM Out 1/2." Therefore, when using your card for monitoring rather than [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)")'s, use "PCM Out 3" or higher to monitor the signal you are actively recording to maintain mixing flexibility. See [#Usage examples](#Usage_examples).
+*   "PCM Out 1/2" are typically used by applications like Ardour for their main outs. This is so common, the default signal routed to your card's physical outputs come from "PCM Out 1/2." Therefore, when using your card for monitoring rather than Ardour's, use "PCM Out 3" or higher to monitor the signal you are actively recording to maintain mixing flexibility. See [#Usage examples](#Usage_examples).
 
 *   When connecting the "capture_1/2" output port to input ports in [JACK](/index.php/JACK "JACK")'s Connections dialog, be sure to mute the "H/W In 1/2" on the Monitor Inputs page. For example, if you use JACK to connect "capture_1/2" to "playback_3/4", not muting "H/W In 1/2" on the Monitor Inputs page will result in a combination of the direct input hardware signal with a software version of the same signal in the mixer (remember your card is a mixer!), and this usually produces signal phase problems or worse. Depending on the situation, you could even produce a signal loop.
 
@@ -132,14 +132,14 @@ This page allows you to connect each of the card's hardware outputs to specific 
 
 The two leftmost vertical columns, "H/W Out 1/2 (L/R)", connects these outputs to one of these signal sources:
 
-1.  The default setting, "PCM Out 1/2", is your music software outputs. For example, [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)")'s main outs connected to "playback_1/2" via [JACK](/index.php/JACK "JACK")'s Connections dialog.
+1.  The default setting, "PCM Out 1/2", is your music software outputs. For example, Ardour's main outs connected to "playback_1/2" via [JACK](/index.php/JACK "JACK")'s Connections dialog.
 2.  "Digital Mix" is the output of the card's mixer.This handy option allows you to mix hardware and software audio sources directly in your card's mixer with near-zero latency.
 3.  "S/PDIF In L/R" is a direct connection to the card's S/PDIF inputs.
 4.  "H/W In 1/2" is a direct connection to the card's analog audio inputs.
 
 The two rightmost columns, "S/PDIF Out 1/2 (L/R)", function identically as the above, but the first option is labeled differently (and a bit confusingly):
 
-1.  The "S/PDIF Out 1/2 (L/R)" option connects these outputs to your music software outputs. Again, for example, [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)")'s main outs connected via [JACK](/index.php/JACK "JACK").
+1.  The "S/PDIF Out 1/2 (L/R)" option connects these outputs to your music software outputs. Again, for example, Ardour's main outs connected via [JACK](/index.php/JACK "JACK").
 
 #### Tips and tricks
 
@@ -176,7 +176,7 @@ The codec sample rate can be locked to a specific rate by selecting *Locked*. Wh
 
 #### Actual Rate
 
-This displays the current codec sample rate of the card. Depending on your settings, this may vary as it's controlled by applications such as [JACK](/index.php/JACK "JACK") or [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)") and/or by envy24control itself. See [#Master Clock](#Master_Clock) and [#Rate State](#Rate_State) for details.
+This displays the current codec sample rate of the card. Depending on your settings, this may vary as it's controlled by applications such as [JACK](/index.php/JACK "JACK") or Ardour and/or by envy24control itself. See [#Master Clock](#Master_Clock) and [#Rate State](#Rate_State) for details.
 
 ### Analog Volume
 
@@ -218,14 +218,14 @@ This example assumes you have a mono audio source plugged into your card's analo
 *   On the "Patchbay / Router" page, select "PCM Out 1/2" in the "H/W Out 1/2 (L/R)" columns. This is where Ardour is sending its master outs.
 *   On the "Analog Volume" page, set the appropriate faders (e.g., "DAC 0/1") to 127 (full volume), and set the "ADC 0" fader to 127 (unity gain or 0dB.)
 *   On the "Monitor Inputs" page, watch the "H/W In 1" meter and adjust the output volume on your audio source until most peaks fall in the "orange" zone. This is about -12dB through -3dB.
-*   Once the [JACK](/index.php/JACK "JACK") connections are made as described below, you will also be able to meter [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)")'s master out signal on "PCM Out 1/2" in the "Monitor PCMs" page.
+*   Once the [JACK](/index.php/JACK "JACK") connections are made as described below, you will also be able to meter Ardour's master out signal on "PCM Out 1/2" in the "Monitor PCMs" page.
 
 #### Ardour settings
 
 *   Create a normal mono track. For this example, it will be called "Audio 1."
 *   Under *Options > Monitoring*, ensure that *Ardour does monitoring* is selected. **VERY IMPORTANT!**
 *   Ensure "Auto Input" is enabled; you can find the button in the upper right-hand corner. This will cause the signal for your track to toggle between the recorded track and the input signal, depending on whether or not the track is "armed" for recording.
-*   After making the [JACK](/index.php/JACK "JACK") connections as described below, arm "Audio 1" for recording and make any level adjustments in [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)"), using the "Audio 1" meter.
+*   After making the [JACK](/index.php/JACK "JACK") connections as described below, arm "Audio 1" for recording and make any level adjustments in Ardour, using the "Audio 1" meter.
 
 #### JACK connections
 
@@ -258,16 +258,16 @@ As with the first example, this example also assumes you have a mono audio sourc
 *   Mute all channels on the "Monitor Inputs" page. Watch the "H/W In 1" meter and adjust the output volume on your audio source until most peaks fall in the "orange" zone. This is about -12dB through -3dB.
 *   On the "Patchbay / Router" page, select "Digital Mix" in the "H/W Out 1/2 (L/R)" columns.
 *   On the "Analog Volume" page, set the appropriate faders (e.g., "DAC 0/1") to 127 (full volume), and set the "ADC 0" fader to 127 (unity gain or 0dB.)
-*   On the "Monitor PCMs" page, unmute the L channel of "PCM Out 1" and set the fader to 20\. Unmute the R channel of "PCM Out 2" and set the fader to 20\. This will preserve the stereo field of [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)")'s master outs.
+*   On the "Monitor PCMs" page, unmute the L channel of "PCM Out 1" and set the fader to 20\. Unmute the R channel of "PCM Out 2" and set the fader to 20\. This will preserve the stereo field of Ardour's master outs.
 *   Also on the "Monitor PCMs" page, unmute both the L and R channels of "PCM Out 3" and set the faders to 20\. This is where [[JACK][] will be routing your incoming audio source's signal for monitoring.
-*   After making the [JACK](/index.php/JACK "JACK") connections as described below, use the faders on the "Monitor PCMs" page to adjust levels in your monitor mix. (This will make more sense once you have recorded a track: the playback will be routed to "PCM Out 1/2" because these are [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)")'s master outs.)
+*   After making the [JACK](/index.php/JACK "JACK") connections as described below, use the faders on the "Monitor PCMs" page to adjust levels in your monitor mix. (This will make more sense once you have recorded a track: the playback will be routed to "PCM Out 1/2" because these are Ardour's master outs.)
 
 #### Ardour settings
 
 *   Create a normal mono track. For this example, it will be called "Audio 1."
 *   Under *Options > Monitoring*, ensure that *Audio Hardware does monitoring* is selected. **VERY IMPORTANT!**
 *   Ensure "Auto Input" is disabled; you can find the button in the upper right-hand corner. (This is optional, but helps to avoid confusion.)
-*   After making the [JACK](/index.php/JACK "JACK") connections as described below, arm "Audio 1" for recording and make any level adjustments in [Ardour](/index.php?title=Ardour&action=edit&redlink=1 "Ardour (page does not exist)"), using the "Audio 1" meter.
+*   After making the [JACK](/index.php/JACK "JACK") connections as described below, arm "Audio 1" for recording and make any level adjustments in Ardour, using the "Audio 1" meter.
 
 #### JACK connections
 

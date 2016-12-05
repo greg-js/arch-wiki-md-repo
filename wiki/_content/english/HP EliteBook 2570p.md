@@ -54,7 +54,7 @@ The `xf86-input-synaptics` driver is needed (see [Touchpad Synaptics](/index.php
 
 ### Bluetooth adapter
 
-The integrated [Bluetooth](/index.php/Bluetooth "Bluetooth") device [BCM20702A0](http://www.broadcom.com/products/Bluetooth/Bluetooth-RF-Silicon-and-Software-Solutions/BCM20702) (`ID 0a5c:21e1 Broadcom Corp. HP Portable SoftSailing`) seems a bit buggy as a few random disconnects were observed in combination with some BT4.0 devices. One possible way to circumvent this HP engineers' bad choice is to replace the integrated Wi-Fi card with Wi-Fi+BT combo one sucj as Intel® Centrino® Advanced-N 6235 or similar (later 2570p BIOS-es should have WLAN whitelisting [removed](https://www.techinferno.com/index.php?/forums/topic/1982-125-hp-elitebook-2570p-owners-lounge/&page=41#comment-109982)) and then [connecting](https://www.techinferno.com/index.php?/forums/topic/1982-125-hp-elitebook-2570p-owners-lounge/&page=47#comment-132577) the Bluetooth interface of the card to the pins used by the docking connector. This is necessary as this laptop has no USB pins connected on the WLAN miniPCIe interface and the user also benefits from the Intel® Centrino® Advanced-N 6235's improved power efficiency over 6205.
+The integrated [Bluetooth](/index.php/Bluetooth "Bluetooth") device [BCM20702A0](http://www.broadcom.com/products/Bluetooth/Bluetooth-RF-Silicon-and-Software-Solutions/BCM20702) (`ID 0a5c:21e1 Broadcom Corp. HP Portable SoftSailing`) seems a bit buggy as a few random disconnects were observed in combination with some BT4.0 devices. One possible way to circumvent this HP engineers' bad choice is to replace the integrated Wi-Fi card with Wi-Fi+BT combo one such as Intel® Centrino® Advanced-N 6235 or similar (later 2570p BIOS-es should have WLAN whitelisting [removed](https://www.techinferno.com/index.php?/forums/topic/1982-125-hp-elitebook-2570p-owners-lounge/&page=41#comment-109982)) and then [connecting](https://www.techinferno.com/index.php?/forums/topic/1982-125-hp-elitebook-2570p-owners-lounge/&page=47#comment-132577) the Bluetooth interface of the card to the pins used by the docking connector. This is necessary as this laptop has no USB pins connected on the WLAN miniPCIe interface and the user also benefits from the Intel® Centrino® Advanced-N 6235's improved power efficiency over 6205.
 
 ## Power management
 
@@ -87,7 +87,7 @@ This laptop has [ASPM](/index.php/Power_management#Active_State_Power_Management
  export TEXTDOMAINDIR="${datarootdir}/locale"
 
  # HP EliteBook 2570p ASPM hardware enable
- #cho "write_byte 0xB9CF506D 0x03" # Enable in ACPI FADT/FACP (BIOS F.40-)
+ echo "write_byte 0xB9CF506D 0x03" # Enable in ACPI FADT/FACP (BIOS F.40-)
  echo "write_byte 0xB9FFC06D 0x03" # Enable in ACPI FADT/FACP (BIOS F.40+)
  echo "write_byte 0xB9FFC019 0x10" # Correct checksum
 
@@ -100,10 +100,10 @@ If ASPM has been successfully enabled, there will be no complaints in `dmesg | g
  setpci -s "00:1c.0" "50.b=0x43" # PCI Express Root Port 1
  setpci -s "00:1c.1" "50.b=0x43" # ExpressCard (alternatively 50.b=0x03)
  setpci -s "00:1c.2" "50.b=0x43" # PCI Express Root Port 3
- #etpci -s "00:1c.3" "50.b=0x43" # PCI Express Root Port 4
+ setpci -s "00:1c.3" "50.b=0x43" # PCI Express Root Port 4
  setpci -s "02:00.0" "90.b=0x43" # SD/MMC Host Controller
  setpci -s "02:00.2" "90.b=0x43" # SD Host Controller
- #etpci -s "03:00.0" "f0.b=0x43" # Network controller
+ setpci -s "03:00.0" "f0.b=0x43" # Network controller
 
 ```
 

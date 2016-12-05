@@ -12,7 +12,8 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
     *   [1.1 Versioned packages](#Versioned_packages)
 *   [2 Installation methods](#Installation_methods)
     *   [2.1 distutils](#distutils)
-    *   [2.2 pip](#pip)
+    *   [2.2 setuptools](#setuptools)
+    *   [2.3 pip](#pip)
 *   [3 Notes](#Notes)
     *   [3.1 PyPI download URLs](#PyPI_download_URLs)
 
@@ -46,6 +47,12 @@ where:
 *   *<python version>* is replaced with the proper binary, `python` or `python2`
 *   `--root="$pkgdir/"` prevents trying to directly install in the host system instead of inside the package file, which would result in a permission error
 *   `--optimize=1` compiles `.pyo` files so they can be tracked by [pacman](/index.php/Pacman "Pacman").
+
+### setuptools
+
+The Python packaging scene has largely migrated from *distutils* to *setuptools*, which is actively developed and functions as a drop-in replacement import in `setup.py`. The main difference for packagers is that *setuptools* is packaged separately from Python itself, and must be specified as a `makedepends`.
+
+If the resulting package includes executables which [import the `pkg_resources` module](https://setuptools.readthedocs.io/en/latest/setuptools.html#automatic-script-creation), then *setuptools* must be additionally specified as a `depends` in the split `package_*()` functions; alternatively, if the PKGBUILD only installs the Python package for a single version of Python, *setuptools* should be moved from `makedepends` to `depends`.
 
 ### pip
 

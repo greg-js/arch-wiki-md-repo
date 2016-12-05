@@ -83,7 +83,7 @@ $ clamscan --recursive --infected --exclude-dir='^/sys|^/dev' /
 
 If you would like `clamscan` to remove the infected file add to the command the `--remove` option, or you can use `--move=/dir` to quarantine them.
 
-You may also want for `clamscan` to scan larger files, in that case append the options `--max-filesize=2000M` and `--max-scansize=2000M` to the command. Where the size 2000M may be replaced as necessary.
+You may also want `clamscan` to scan larger files. In this case, append the options `--max-filesize=4000M` and `--max-scansize=4000M` to the command. '4000M' is the largest possible value, and may be lowered as necessary.
 
 Using the `-l /path/to/file` option will print the `clamscan` logs to a text file for locating reported infections.
 

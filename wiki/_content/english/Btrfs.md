@@ -45,9 +45,10 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
     *   [6.2 Swap file](#Swap_file)
     *   [6.3 Linux-rt kernel](#Linux-rt_kernel)
 *   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Corruption recovery](#Corruption_recovery)
-    *   [7.2 Booting into snapshots with GRUB](#Booting_into_snapshots_with_GRUB)
-    *   [7.3 Use Btrfs subvolumes with systemd-nspawn](#Use_Btrfs_subvolumes_with_systemd-nspawn)
+    *   [7.1 Checksum hardware acceleration](#Checksum_hardware_acceleration)
+    *   [7.2 Corruption recovery](#Corruption_recovery)
+    *   [7.3 Booting into snapshots with GRUB](#Booting_into_snapshots_with_GRUB)
+    *   [7.4 Use Btrfs subvolumes with systemd-nspawn](#Use_Btrfs_subvolumes_with_systemd-nspawn)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 GRUB](#GRUB)
         *   [8.1.1 Partition offset](#Partition_offset)
@@ -450,6 +451,14 @@ Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This 
 As of version 3.14.12_rt9, the [linux-rt](/index.php/Kernel#-rt "Kernel") kernel does not boot with the Btrfs file system. This is due to the slow development of the *rt* patchset.
 
 ## Tips and tricks
+
+### Checksum hardware acceleration
+
+Verify if Btrfs checksum is hardware accelerated:
+
+ `$ dmesg | grep crc32c`  `Btrfs loaded, crc32c=crc32c-intel` 
+
+If you see `crc32c=crc32c-generic`, it is probably because your root partition is Btrfs, and you will have to compile crc32c-intel into kernel to make it work. Note: put `crc32c-intel` into mkinitcpio.conf does NOT work.
 
 ### Corruption recovery
 

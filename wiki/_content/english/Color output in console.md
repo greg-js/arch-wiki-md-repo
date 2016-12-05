@@ -192,7 +192,7 @@ To enable colored `man`, two main pagers, `less` and `most`, are hacked here.
 
 #### Using less
 
-See [#less](#less) for a more detailes description.
+See [#less](#less) for a more detailed description.
 
 For bash or zsh, add the following `less` wrapper function to `~/.bashrc` or `~/.zshrc`:
 

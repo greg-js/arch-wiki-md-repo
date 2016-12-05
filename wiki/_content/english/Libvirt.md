@@ -69,7 +69,7 @@ The client is the user interface that will be used to manage and access the virt
 
 *   *virsh* is a command line program for managing and configuring domains; it is included in the [libvirt](https://www.archlinux.org/packages/?name=libvirt) package.
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager) is a graphical user interface for managing virtual machines.
-*   [virtviewer](https://www.archlinux.org/packages/?name=virtviewer) is a lightweight interface for interacting with the graphical display of virtualized guest OS.
+*   [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) is a lightweight interface for interacting with the graphical display of virtualized guest OS.
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes) is a simple GNOME 3 application to access remote or virtual systems.
 *   [virt-manager-qt5](https://aur.archlinux.org/packages/virt-manager-qt5/)
 *   [libvirt-sandbox](https://aur.archlinux.org/packages/libvirt-sandbox/) is an application sandbox toolkit.

@@ -55,7 +55,7 @@
 | <small>4.8.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet "Category:Graphics tablet") <small>(1)</small> |
 | <small>4.8.2.</small> [Keyboards](/index.php/Category:Keyboards "Category:Keyboards") <small>(22)</small> |
 | <small>4.8.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(14)</small> |
-| <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(20)</small> |
+| <small>4.9.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(21)</small> |
 | <small>4.9.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(35)</small> |
 | <small>4.9.2.</small> [Alienware](/index.php/Category:Alienware "Category:Alienware") <small>(4)</small> |
 | <small>4.9.3.</small> [Apple](/index.php/Category:Apple "Category:Apple") <small>(12)</small> |
@@ -65,7 +65,7 @@
 | <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(54)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
-| <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(52)</small> |
+| <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(53)</small> |
 | <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(10)</small> |
 | <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(73)</small> |
 | <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(4)</small> |
@@ -82,7 +82,7 @@
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(20)</small> |
 | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11)</small> |
-| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(70)</small> |
+| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(71)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(6)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(13)</small> |
 | <small>5.3.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol") <small>(8)</small> |

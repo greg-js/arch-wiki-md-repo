@@ -44,6 +44,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### December 2016
 
+*   [02 December 2016] [ASA-201612-4](https://lists.archlinux.org/pipermail/arch-security/2016-December/000780.html) [libdwarf](https://www.archlinux.org/packages/?name=libdwarf) multiple issues
+*   [02 December 2016] [ASA-201612-3](https://lists.archlinux.org/pipermail/arch-security/2016-December/000779.html) [chromium](https://www.archlinux.org/packages/?name=chromium) multiple issues
 *   [01 December 2016] [ASA-201612-2](https://lists.archlinux.org/pipermail/arch-security/2016-December/000778.html) [thunderbird](https://www.archlinux.org/packages/?name=thunderbird) arbitrary code execution
 *   [01 December 2016] [ASA-201612-1](https://lists.archlinux.org/pipermail/arch-security/2016-December/000777.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
 

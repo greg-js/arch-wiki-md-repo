@@ -89,7 +89,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Montar los sistemas de archivos
 
-*   El siguiente paso es [montar(8)](http://man7.org/linux/man-pages/man8/montar.8.html) la partición del sistema —root— en `/mnt`, por ejemplo: `# mount /dev/*sda1* /mnt` 
+*   El siguiente paso es [montar](/index.php/File_systems#Mount_a_filesystem "File systems") la partición del sistema —root— en `/mnt`, por ejemplo: `# mount /dev/*sda1* /mnt` 
 
 *   Después de esto, hay que crear tantos directorios como particiones haya realizado y montarlas, por ejemplo: `# mkdir /mnt/boot`  `# mount /dev/sda2 /mnt/boot` 
 

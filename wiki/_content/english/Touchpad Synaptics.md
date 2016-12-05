@@ -1,6 +1,6 @@
 This article details the installation and configuration process of the ***Synaptics input driver*** for Synaptics (and ALPS) touchpads found on most notebooks.
 
-**Tip:** An alternative touchpad driver is [libinput](/index.php/Libinput "Libinput"). It implements a different approach to recognize and process multitouch features.
+**Tip:** `xf86-input-synaptics` is in maintenance mode and is no longer updated. If possible, use [libinput](/index.php/Libinput "Libinput"). It implements a different approach to recognize and process multitouch features.
 
 **Note:** If you want to configure touchpad via GNOME control center, you need to use the [libinput](/index.php/Libinput "Libinput") driver.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)
 

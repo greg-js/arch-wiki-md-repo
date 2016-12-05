@@ -2,8 +2,6 @@
 
 It is simple to configure, but can only start EFI executables, such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager, and such.
 
-**Warning:** *systemd-boot* simply provides a boot menu for EFISTUB kernels. In case you have issues booting EFISTUB kernels like in [FS#33745](https://bugs.archlinux.org/task/33745), you should use a boot loader which does not use EFISTUB, like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or any other [Boot loader](/index.php/Boot_loader "Boot loader") which does not solely rely on [UEFI](/index.php/UEFI "UEFI").
-
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -35,8 +33,8 @@ It is simple to configure, but can only start EFI executables, such as the Linux
 3.  Mount your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")(ESP) properly. `*esp*` is used to denote the mountpoint in this article.
     **Note:** *systemd-boot* cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
 
-4.  If the ESP will **not** be used as the /boot partition then copy your kernel and initramfs onto that ESP.
-    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at the [EFISTUB article](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your efi partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
+4.  If the ESP is **not** mounted at `/boot`, then copy your kernel and initramfs onto that ESP.
+    **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at [EFISTUB#Using systemd](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your EFI System Partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
 
 5.  Type the following command to install *systemd-boot*: `# bootctl --path=*esp* install` It will copy the *systemd-boot* binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 6.  Finally you must [configure](#Configuration) the boot loader to function properly.

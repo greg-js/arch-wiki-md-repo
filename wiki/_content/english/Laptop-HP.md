@@ -148,6 +148,15 @@ Display dimming: Works
 CPU frequency scaling: Works | No modem installed | Hot keys: Works
 Webcam: Works
 Card reader: not tested as per 30.10.16 | -- |
+| HP Envy 15-as010ur | 2016.09 | Intel Core i7-6560U, Intel Iris Graphics 540 | Intel sound card(Conexant CX8200): *snd-hda-intel* | No | Intel DB 7265(*iwlwifi*) | Yes(btusb). Successfully sent a picture to the phone. | ACPI: Works
+Suspend to RAM: Works
+Suspend to Disk: Not tested
+Battery: Works
+Display dimming: Works
+CPU frequency scaling: Works(only performance and powersave governors*[[1]](https://wiki.archlinux.org/index.php/CPU_frequency_scaling#Scaling_governors)[[2]](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ)*) | --- | Hotkeys: Works
+Webcam: Works
+Card reader: not tested | There is small problem with p2p wpa_supplicant, possible solution: p2p_disabled=1.
+Can't set mute-key led light. |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 
