@@ -55,8 +55,6 @@ Although IceWM configuration is originally text-based, there are GUI-based tools
 
 To change your icewm configuration from the default, simply copy the default configuration files from `/usr/share/icewm/` to `~/.icewm/`, for example:
 
-**Note:** Do this as a regular user, not as root.
-
 ```
 $ mkdir ~/.icewm/
 $ cp -R /usr/share/icewm/* ~/.icewm/
@@ -119,7 +117,7 @@ $ mmaker -f --no-legacy --no-debian icewm
 
 ### Themes
 
-A small number of themes are included in the [icewm](https://www.archlinux.org/packages/?name=icewm) package. These can supplemented by the themes available from the [icewm-themes](https://www.archlinux.org/packages/?name=icewm-themes) package. Many more themes can be downloaded from [box-look.org](http://www.box-look.org/index.php?xcontentmode=7311).
+A small number of themes are included in the [icewm](https://www.archlinux.org/packages/?name=icewm) package. These can supplemented by the themes available from the [icewm-themes](https://www.archlinux.org/packages/?name=icewm-themes) package. Many more themes can be downloaded from [box-look.org](https://www.box-look.org/browse/cat/142/ord/latest/).
 
 ### Desktop icons
 

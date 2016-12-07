@@ -109,7 +109,7 @@ BROWSERS="chromium opera"
 *   [Midori](/index.php/Midori "Midori")
 *   [Opera](/index.php/Opera "Opera")
 *   Qupzilla
-*   [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+*   [rekonq](https://aur.archlinux.org/packages/rekonq/)
 *   [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
 *   [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
 

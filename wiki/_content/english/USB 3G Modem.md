@@ -83,9 +83,27 @@ See main article: [wvdial](/index.php/Wvdial "Wvdial")
 
 ### netctl
 
-Netctl can be used to establish a connection using a USB modem. An example configuration file provided by [netctl](https://www.archlinux.org/packages/?name=netctl) is located at `/etc/netctl/examples/mobile_ppp`.
+Netctl can be used to establish a connection using a USB modem. To bring up the modem you can use `mbim-network`. First create a profile for mbim-network.
 
-See the [netctl](/index.php/Netctl "Netctl") article for more information.
+ `/etc/mbim-network.conf`  `APN=Broadband` Now connect to the network with `# mbim-network /dev/cdc-wdmX start` . Then bring up the interface and get an ip address:
+```
+# ip link set wwanY up
+# dhcpcd wwanY
+
+```
+
+An example configuration file provided by [netctl](https://www.archlinux.org/packages/?name=netctl) is located at `/etc/netctl/examples/mobile_ppp`. Minimally you will probably have to specify
+
+ `/etc/netctl/mobile_ppp` 
+```
+Interface=cdc-wdmX
+Connection=mobile_ppp
+PhoneNumber=XxxxXXXX
+AccessPointName=Broadband
+
+```
+
+See the [netctl](/index.php/Netctl "Netctl") article and [netctl.profile](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) for more information.
 
 ### sakis3g
 

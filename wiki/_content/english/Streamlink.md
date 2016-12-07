@@ -1,9 +1,6 @@
 Streamlink is a command-line utility written in [Python](/index.php/Python "Python"), which allows you to watch online video streams in popular video players, such as [VLC](/index.php/VLC "VLC"), [MPlayer](/index.php/MPlayer "MPlayer") or [mpv](/index.php/Mpv "Mpv") The full list of supported media players is available [here](https://streamlink.github.io/players.html#player-compatibility).
 
-```
-This project was forked from Livestreamer, which is **no longer maintained**.
-
-```
+This project was forked from [Livestreamer](/index.php/Livestreamer "Livestreamer"), which is no longer maintained.
 
 Support of a various streaming services is provided by a plugins, which can be easily added if needed. A lot of popular video streaming services are supported out of the box, including Dailymotion, Livestream, Twitch, UStream, YouTube Live and many more. List of all built-in plugins is available [here](https://streamlink.github.io/plugin_matrix.html).
 
@@ -17,7 +14,7 @@ Support of a various streaming services is provided by a plugins, which can be e
 
 ## Installation
 
-[Install](/index.php/Install "Install") [streamlink](https://www.archlinux.org/packages/?name=streamlink), available from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [streamlink](https://aur.archlinux.org/packages/streamlink/), available from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Usage
 

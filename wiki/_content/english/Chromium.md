@@ -13,12 +13,13 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Constant freezes under KDE](#Constant_freezes_under_KDE)
-    *   [4.2 Fonts](#Fonts)
-        *   [4.2.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
-    *   [4.3 Force 3D acceleration](#Force_3D_acceleration)
-    *   [4.4 WebGL](#WebGL)
-    *   [4.5 Distorted GUI](#Distorted_GUI)
-    *   [4.6 Disable keyring password prompt](#Disable_keyring_password_prompt)
+    *   [4.2 Full system hangs /"Oops something happened" under Gnome after clicking from CLI to chromium](#Full_system_hangs_.2F.22Oops_something_happened.22_under_Gnome_after_clicking_from_CLI_to_chromium)
+    *   [4.3 Fonts](#Fonts)
+        *   [4.3.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
+    *   [4.4 Force 3D acceleration](#Force_3D_acceleration)
+    *   [4.5 WebGL](#WebGL)
+    *   [4.6 Distorted GUI](#Distorted_GUI)
+    *   [4.7 Disable keyring password prompt](#Disable_keyring_password_prompt)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -106,6 +107,10 @@ See the main article: [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tr
 ### Constant freezes under KDE
 
 [Uninstall](/index.php/Uninstall "Uninstall") [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse). See: [BBS#1228558](https://bbs.archlinux.org/viewtopic.php?pid=1228558).
+
+### Full system hangs /"Oops something happened" under Gnome after clicking from CLI to chromium
+
+[Uninstall](/index.php/Uninstall "Uninstall") [chromium](https://www.archlinux.org/packages/?name=chromium). delete the chromium folder under ~/.config See: [BBS#1228558](https://bbs.archlinux.org/viewtopic.php?pid=1228558).
 
 ### Fonts
 

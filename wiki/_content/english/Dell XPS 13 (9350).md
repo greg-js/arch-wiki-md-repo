@@ -1,12 +1,12 @@
 **Note:** This page refers to the early 2016 model of XPS 13\. For the late 2016 model see [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)").
 
 | **Device** | **Status** | **Modules** |
-| Video | Works after configuration | i915 |
+| Video | Working | i915 |
 | External screen | Partial or does not work at all |  ? |
-| Wireless | Works after configuration | brcmfmac |
+| Wireless | Working | brcmfmac |
 | Bluetooth | Works after installing firmware | btbcm |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Works after configuration |  ? |
+| Touchpad | Working |  ? |
 | Webcam | Working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working | intel_hid |
@@ -25,6 +25,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [2.1 USB not found](#USB_not_found)
     *   [2.2 No UEFI system found](#No_UEFI_system_found)
     *   [2.3 Updates](#Updates)
+    *   [2.4 Firmware Updates](#Firmware_Updates)
 *   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
     *   [3.1 External screen](#External_screen)
 *   [4 SATA controller](#SATA_controller)
@@ -71,6 +72,10 @@ Sometimes the BIOS UEFI does not respect the efivars. In this case you have manu
 ### Updates
 
 [BIOS update 1.4.10](http://downloads.dell.com/FOLDER04040637M/1/XPS_9350_1.4.10.exe) was released on 2016-11-22\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
+
+### Firmware Updates
+
+Dell provides firmware updates via Linux Vendor Firmware Service (LVFS). Refer to [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux") for additional information. A package is readily available at [fwupd](https://aur.archlinux.org/packages/fwupd/).
 
 ## Thunderbolt 3 / USB 3.1
 

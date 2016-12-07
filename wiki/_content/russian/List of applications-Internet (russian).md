@@ -206,7 +206,7 @@
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/ru:Rekonq "wikipedia:ru:Rekonq")** — Основанный на WebKit браузер для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 *   **Sb** — Очень легковесный, основанный на WebKit браузер, использующий горячие клавиши для большинства операций с полем ввода адреса
 

@@ -111,7 +111,7 @@ A traffic statistics page is available at port 22070, e.g. [http://78.47.248.86:
 
 ## Stop journal spam
 
-Syncthing can be quite noise even while it isn't doing anything. The service ExecStart can be overridden like this to filter output directly without an extra script (adjust "grep" as needed):
+Syncthing can be quite noisy even while it isn't doing anything. The service ExecStart can be overridden like this to filter output directly without an extra script (adjust "grep" as needed):
 
  `/etc/systemd/system/syncthing@.service.d/nospam.conf` 
 ```

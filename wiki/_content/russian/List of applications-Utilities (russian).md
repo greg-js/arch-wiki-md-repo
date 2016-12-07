@@ -550,6 +550,10 @@
 
 	[http://p7zip.sourceforge.net/](http://p7zip.sourceforge.net/) || [p7zip](https://www.archlinux.org/packages/?name=p7zip)
 
+*   **[pigz](/index.php?title=Pigz&action=edit&redlink=1 "Pigz (page does not exist)")** — Параллельная реализация GZIP
+
+	[http://compression.ca/pbzip2/](http://compression.ca/pbzip2/) || [pigz](https://www.archlinux.org/packages/?name=pigz)
+
 *   **[tar](/index.php/Tar "Tar")** — Утилита GNU для работы с вездесущими архивами tar (tarballs)
 
 	[http://www.gnu.org/software/tar](http://www.gnu.org/software/tar) || [tar](https://www.archlinux.org/packages/?name=tar)

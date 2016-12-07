@@ -71,7 +71,7 @@ For Java completion, a project file should be present and Eclim headless server 
 
 1.  Install [eclim](https://aur.archlinux.org/packages/eclim/) or [eclim-git](https://aur.archlinux.org/packages/eclim-git/) from [AUR](/index.php/AUR "AUR").
 2.  Put this in your [.vimrc](/index.php/Vim/.vimrc "Vim/.vimrc"): `~/.vimrc`  `let g:EclimCompletionMethod = 'omnifunc'` 
-3.  Start `eclimd` script in a separate terminal: `$ /usr/share/eclipse/eclimd` 
+3.  Start `eclimd` script in a separate terminal: `$ /usr/lib/eclipse/plugins/org.eclim_$pkgver/bin/eclimd` 
 4.  Create a file named `.project` in the same directory as your Java files: `.project` 
     ```
     <projectDescription>

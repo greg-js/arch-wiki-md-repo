@@ -524,7 +524,7 @@ The [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [
 
 ### Incomplete removal of gdm
 
-After removing gdm (say it was a build dependancy), systemd may report the following:
+After removing [gdm](https://www.archlinux.org/packages/?name=gdm), [systemd](/index.php/Systemd "Systemd") may report the following:
 
 ```
 user 'gdm': directory '/var/lib/gdm' does not exist

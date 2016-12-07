@@ -76,6 +76,8 @@ EndSection
 
 ```
 
+See [Linux Wacom Tablet PC Configuration](http://linuxwacom.sourceforge.net/wiki/index.php/Tablet_PC_Configuration) and [Liniux Wacom Tablet Configuration](http://linuxwacom.sourceforge.net/wiki/index.php/Tablet_Configuration) notes for more details.
+
 ## Rotation
 
 Unless you are running a very old Xserver, rotation capabilities (included in [xrandr](/index.php/Xrandr "Xrandr")) should already be on by default. If not, you can enable xrandr by adding the following option to the **Screen** section of the xorg.conf file.

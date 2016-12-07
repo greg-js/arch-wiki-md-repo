@@ -66,7 +66,7 @@ Edit *mythweb.conf* to point it to the directory where you'll be installing myth
 
 ```
 
-Then check that the configuration matches your [MythTV](/index.php/MythTV "MythTV") setup. If you have changed the database login or password you will need to change the following section.
+Then check that the configuration matches your [MythTV](/index.php/MythTV "MythTV") setup. If you have changed the database login or password you will need to change the following section. **(Be sure to uncomment these lines.)**
 
 ```
 setenv db_server        "localhost"

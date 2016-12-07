@@ -33,7 +33,7 @@ You will need at least one input method, corresponding to the language you wish 
 
 *   [ibus-anthy](https://www.archlinux.org/packages/?name=ibus-anthy) - Japanese IME, based on [anthy](https://www.archlinux.org/packages/?name=anthy).
 *   ~~[ibus-pinyin](https://www.archlinux.org/packages/?name=ibus-pinyin) - Intelligent Chinese Phonetic IME for Hanyu pinyin and Zhuyin (Bopomofo) users. Designed by IBus main author and has many advance features such as English spell checking.~~ Package currently not maintained and partly broken with latest ibus base. Use [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) instead.
-*   [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) - Powerful and smart Chinese input method for Chinese (pinyin, zhuyin, with or without tones, double pinyin, Jyutping, Wugniu, Cangjie5 and Wubi 86).
+*   [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime) - Powerful and smart input method for a wide range of Chinese input methods, based on the [Rime IME](/index.php/Rime_IME "Rime IME") project.
 *   [ibus-chewing](https://www.archlinux.org/packages/?name=ibus-chewing) - Intelligent Chinese Phonetic IME for Zhuyin (Bopomofo) users, based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
 *   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) - Korean IME, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
 *   [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) - IME for typing Vietnamese characters.

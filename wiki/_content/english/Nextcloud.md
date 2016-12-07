@@ -5,14 +5,17 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): N
 *   [1 Installation](#Installation)
     *   [1.1 Required Packages](#Required_Packages)
     *   [1.2 Optional Packages](#Optional_Packages)
-*   [2 PHP Configuration](#PHP_Configuration)
-*   [3 Setup mariadb and nextcloud DB](#Setup_mariadb_and_nextcloud_DB)
-*   [4 Setup Apache](#Setup_Apache)
-*   [5 Switch to Cron from AJAX](#Switch_to_Cron_from_AJAX)
-*   [6 Enable memcache](#Enable_memcache)
-*   [7 (Optional) SSL Setup and its hardening plus SSL hardening](#.28Optional.29_SSL_Setup_and_its_hardening_plus_SSL_hardening)
-    *   [7.1 Enable SSL with a self signed certificate](#Enable_SSL_with_a_self_signed_certificate)
-    *   [7.2 SSL hardening](#SSL_hardening)
+*   [2 Configuration](#Configuration)
+    *   [2.1 PHP Configuration](#PHP_Configuration)
+    *   [2.2 Setup mariadb and nextcloud DB](#Setup_mariadb_and_nextcloud_DB)
+    *   [2.3 Setup Apache](#Setup_Apache)
+    *   [2.4 Switch to Cron from AJAX](#Switch_to_Cron_from_AJAX)
+    *   [2.5 Enable memcache](#Enable_memcache)
+    *   [2.6 (Optional) SSL Setup and its hardening plus SSL hardening](#.28Optional.29_SSL_Setup_and_its_hardening_plus_SSL_hardening)
+        *   [2.6.1 Enable SSL with a self signed certificate](#Enable_SSL_with_a_self_signed_certificate)
+    *   [2.7 SSL hardening](#SSL_hardening)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Collabora Online Office integration](#Collabora_Online_Office_integration)
 
 ## Installation
 
@@ -36,7 +39,9 @@ For file preview generation [Install](/index.php/Install "Install") the followin
 
 [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the Desktop Client
 
-## PHP Configuration
+## Configuration
+
+### PHP Configuration
 
 Edit `/etc/php/php.ini` and uncomment the following required modules:
 
@@ -76,7 +81,7 @@ Add the following to `open_basedir`:
 
 **Note:** You may also need to add the `/tmp` directory in `open_basedir` if Apache only displays a blank page. Check `/var/log/httpd/error_log` file to confirm this problem
 
-## Setup mariadb and nextcloud DB
+### Setup mariadb and nextcloud DB
 
 Configure [mariadb](/index.php/Mariadb "Mariadb"):
 
@@ -113,7 +118,7 @@ quit
 
 ```
 
-## Setup Apache
+### Setup Apache
 
 Copy Nextcloud’s [Apache](/index.php/Apache "Apache") configuration file to [Apache](/index.php/Apache "Apache") configuration directory:
 
@@ -179,7 +184,7 @@ LoadModule mime_module modules/mod_mime.so
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the [apache](https://www.archlinux.org/packages/?name=apache) service `httpd`
 
-## Switch to Cron from AJAX
+### Switch to Cron from AJAX
 
 Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead.
 
@@ -215,7 +220,7 @@ You can verify that everything is set by running
 
 Finally, set Cron option in Nextcloud settings to Cron.
 
-## Enable memcache
+### Enable memcache
 
 Enable memcache by uncommenting the following line in `/etc/php/conf.d/apcu.ini`:
 
@@ -237,11 +242,11 @@ After Nextcloud is set up, add the following line to `/usr/share/webapps/nextclo
 
 [Restart](/index.php/Restart "Restart") the [apache](https://www.archlinux.org/packages/?name=apache) `httpd` service.
 
-## (Optional) SSL Setup and its hardening plus SSL hardening
+### (Optional) SSL Setup and its hardening plus SSL hardening
 
 **Tip:** See the [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") for details about free, automated ssl certificates.
 
-### Enable SSL with a self signed certificate
+#### Enable SSL with a self signed certificate
 
 Edit `/etc/httpd/conf/httpd.conf` and uncomment the following lines:
 
@@ -279,3 +284,49 @@ Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains
 ```
 
 [Restart](/index.php/Restart "Restart") the [apache](https://www.archlinux.org/packages/?name=apache) `httpd` service.
+
+## Tips and tricks
+
+### Collabora Online Office integration
+
+Install [nextcloud-app-collaboraonline](https://aur.archlinux.org/packages/nextcloud-app-collaboraonline/) from the [AUR](/index.php/AUR "AUR"). Add following reverse proxy settings to your nextcloud domain config, in this case for [Nginx](/index.php/Nginx "Nginx"):
+
+```
+# static files
+location ^~ /loleaflet {
+ proxy_pass [https://localhost:9980](https://localhost:9980);
+ proxy_set_header Host $http_host;
+}
+# WOPI discovery URL
+location ^~ /hosting/discovery {
+ proxy_pass [https://localhost:9980](https://localhost:9980);
+ proxy_set_header Host $http_host;
+}
+# websockets, download, presentation and image upload
+location ^~ /lool {
+ proxy_pass [https://localhost:9980](https://localhost:9980);
+ proxy_set_header Upgrade $http_upgrade;
+ proxy_set_header Connection "upgrade";
+ proxy_set_header Host $http_host;
+}
+
+```
+
+There's also a [setup instruction](https://nextcloud.com/collaboraonline/) for [Apache](/index.php/Apache "Apache"). Assuming you already have the docker deamon up and running, you can now pull the latest docker image for Collabora Online. Adjust the second command with the domain name of your Nextcloud server.
+
+```
+docker pull collabora/code
+docker run -t -d -p 127.0.0.1:9980:9980 -e 'domain=cloud\\.nextcloud\\.com' --restart always --cap-add MKNOD collabora/code
+
+```
+
+When updating the docker image you can run the same commands, but before that kill all running processes of the old image:
+
+```
+docker ps
+docker stop CONTAINER_ID
+docker rm CONTAINER_ID
+
+```
+
+Now you can enable the Collabora Online app in your Nextcloud instance. In the last step, you have to configure your domain in the administrator settings regarding the Collabora Online app.

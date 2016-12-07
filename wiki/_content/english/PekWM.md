@@ -217,9 +217,7 @@ If you'd like certain applications to open on certain workspaces, have a certain
 
 ## Themes
 
-*   [Box-Look PekWM Themes](http://box-look.org/index.php?xcontentmode=7403)
-*   [Freshmeat PekWM Themes](http://themes.freshmeat.net/search/?q=pekwm&section=projects)
-*   [Hewphoria PekWM Themes](http://hewphoria.com/?p=submission&type=theme&cat=1)
+*   [Box-Look PekWM Themes](https://www.box-look.org/browse/cat/141/ord/latest/)
 
 To install a theme extract the archive to a themesdir the default ones are:
 

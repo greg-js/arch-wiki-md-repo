@@ -39,11 +39,11 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 [Install](/index.php/Install "Install") the correct dependencies:
 
-*   [fuse](https://www.archlinux.org/packages/?name=fuse) - the `vmware-vmblock-fuse` service is [favored](https://www.mail-archive.com/open-vm-tools-devel@lists.sourceforge.net/msg00213.html) over the `vmblock` module, and the vmblock module not built anymore without disabling [fuse](http://cateee.net/lkddb/web-lkddb/FUSE_FS.html) in the kernel
+*   [fuse](https://www.archlinux.org/packages/?name=fuse) - for *vmware-vmblock-fuse*
 *   [gksu](https://www.archlinux.org/packages/?name=gksu) - for root operations (memory allocations, registering license, etc.)
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - for the GUI
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - for module compilation
-*   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by at least the installer
+*   [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) - needed by the `--console` installer
 
 Download the latest [VMware Workstation Pro](https://www.vmware.com/go/tryworkstation) or [Player](https://www.vmware.com/go/downloadplayer) (or a [beta](https://communities.vmware.com/community/vmtn/beta) version, if available).
 

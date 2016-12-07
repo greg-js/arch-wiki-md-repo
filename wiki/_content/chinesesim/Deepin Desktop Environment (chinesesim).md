@@ -34,7 +34,7 @@ deepin默认lightdm greeter是lightdm-deepin-greeter，可通过pacman安装，�
 
  `/etc/lightdm/lightdm.conf` 
 ```
-[SeatDefaults]
+[Seat:*]
 ...
 greeter-session=lightdm-deepin-greeter
 ```

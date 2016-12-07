@@ -144,7 +144,7 @@ Create a swap filesystem inside the mapped partition:
 
 Now you have to create a hook to open the swap at boot time. You can either [install](/index.php/Install "Install") and configure [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/), or follow the following instructions. Create a hook file containing the open command:
 
- `/lib/initcpio/hooks/openswap` 
+ `/etc/initcpio/hooks/openswap` 
 ```
  run_hook ()
  {
@@ -155,7 +155,7 @@ Now you have to create a hook to open the swap at boot time. You can either [ins
 
 for opening the swap device by typing your password or
 
- `/lib/initcpio/hooks/openswap` 
+ `/etc/initcpio/hooks/openswap` 
 ```
  run_hook ()
  {
@@ -183,7 +183,7 @@ On some computers race conditions may occur when mkinitcpio tries to mount the d
 
 Then create and edit the hook setup file:
 
- `/lib/initcpio/install/openswap` 
+ `/etc/initcpio/install/openswap` 
 ```
 build ()
 {

@@ -40,7 +40,7 @@ The Xilinx ISE WebPACK is a freeware software released under a proprietary licen
 
 ### Dependencies
 
-Several tools included in the ISE Webpack (and the installer itself) depends on [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/).
+Several tools included in the ISE Webpack (and the installer itself) depends on [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/). [Additionally](https://forums.xilinx.com/t5/General-Technical-Discussion/Xilinx-issues-on-Linux/td-p/194576) other tools (e.g. the FPGA editor) requires [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5), [openmotif](https://www.archlinux.org/packages/?name=openmotif), [xorg-fonts-75dpi](https://www.archlinux.org/packages/?name=xorg-fonts-75dpi) and [xorg-fonts-100dpi](https://www.archlinux.org/packages/?name=xorg-fonts-100dpi).
 
 If you plan to develop software for an embedded ARM core (e.g. for Xilinx Zynq SoC devices), you will want to install the GCC cross-compiler bundled included with the Xilinx Embedded Development Kit (EDK). This compiler requires the [glibc](https://www.archlinux.org/packages/?name=glibc) and [ncurses](https://www.archlinux.org/packages/?name=ncurses) packages. On 64-bit systems, you also need to install the 32-bit versions [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) from the [multilib](/index.php/Multilib "Multilib") repository and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) from the [AUR](/index.php/AUR "AUR").
 

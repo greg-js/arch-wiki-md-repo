@@ -422,7 +422,7 @@ Server = http://repo-ck.com/$arch
 
 ```
 [seblu]
-Server = http://seblu.net/a/$repo/$arch
+Server = http://al.seblu.net/$repo/$arch
 
 ```
 

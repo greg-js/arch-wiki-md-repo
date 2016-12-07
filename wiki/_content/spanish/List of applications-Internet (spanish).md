@@ -793,7 +793,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — Navegador web basado en WebKit para KDE.
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 *   **Sb** — Navegador muy ligero basado en WebKit que utiliza combinaciones de teclas para realizar la mayoría de las cosas que suele hacer la barra de direcciones.
 

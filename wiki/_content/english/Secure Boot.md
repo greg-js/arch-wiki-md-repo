@@ -153,9 +153,11 @@ Secure Boot implementations use these keys:
 
 	Contains keys and/or hashes used to blacklist EFI binaries
 
-To use Secure Boot you need at least **PK**, **KEK** and **db** keys.
+See [The Meaning of all the UEFI Keys](http://blog.hansenpartnership.com/the-meaning-of-all-the-uefi-keys/) for a more detailed explanation.
 
-Once Secure Boot is in "User Mode" keys can only be updated by signing (using *sign-efi-sig-list*) the update with a higher level key. Platform key can be signed by itself.
+To use Secure Boot you need at least **PK**, **KEK** and **db** keys. While you can add multiple KEK, db and dbx certificates, only one Platform Key is allowed.
+
+Once Secure Boot is in "User Mode" keys can only be updated by signing the update (using *sign-efi-sig-list*) with a higher level key. Platform key can be signed by itself.
 
 ### Creating keys
 
@@ -184,10 +186,10 @@ $ sign-efi-sig-list -g *GUID* -k PK.key -c PK.crt PK PK.esl PK.auth
 
 ```
 
-Create an empty file `null.esl` and sign it to allow deleting Platform Key:
+Sign an empty file to allow removing Platform Key:
 
 ```
-$ sign-efi-sig-list -g *GUID* -c PK.crt -k PK.key PK *null.esl* rm_PK.auth
+$ sign-efi-sig-list -g *GUID* -c PK.crt -k PK.key PK /dev/null rm_PK.auth
 
 ```
 
@@ -256,7 +258,7 @@ Firmwares have various different interfaces, see [Replacing Keys Using Your Firm
 `KeyTool.efi` is in [efitools](https://www.archlinux.org/packages/?name=efitools) package, copy it to ESP. To use it after enrolling keys, sign it with `sbsign`.
 
 ```
-# sbsign --key db.key --cert db.crt --output *esp*/EFI/KeyTool-signed.efi /usr/share/efitools/efi/KeyTool.efi
+# sbsign --key db.key --cert db.crt --output *esp*/KeyTool-signed.efi /usr/share/efitools/efi/KeyTool.efi
 
 ```
 
@@ -278,6 +280,7 @@ Note that some motherboards (this is the case in a Packard Bell laptop) only all
 *   [Dealing with Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html) by Rod Smith
 *   [Controlling Secure Boot](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html) by Rod Smith
 *   [UEFI secure booting (part 2)](https://mjg59.dreamwidth.org/5850.html) by Matthew Garrett
+*   [UEFI Secure Boot](http://blog.hansenpartnership.com/uefi-secure-boot/) by James Bottomley
 *   [efitools README](https://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git/tree/README)
 *   [Will your computer's "Secure Boot" turn out to be "Restricted Boot"?](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot) — Free Software Foundation
 *   [Free Software Foundation recommendations for free operating system distributions considering Secure Boot](https://www.fsf.org/campaigns/secure-boot-vs-restricted-boot/statement/campaigns/secure-boot-vs-restricted-boot/whitepaper-web)

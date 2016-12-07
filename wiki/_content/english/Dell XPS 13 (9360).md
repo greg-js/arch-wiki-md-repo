@@ -114,4 +114,4 @@ Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for inform
 
 ## Firmware Updates
 
-Dell provides firmware updates via [fwupd](https://aur.archlinux.org/packages/fwupd/). See [Flashing_BIOS_from_Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux").
+Dell provides firmware updates via [fwupd](https://aur.archlinux.org/packages/fwupd/). See [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux").

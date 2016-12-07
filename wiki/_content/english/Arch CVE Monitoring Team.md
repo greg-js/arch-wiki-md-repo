@@ -203,8 +203,6 @@ Below is a list of general package categories. Should you like, you are welcome 
 
 *   Kernel
 
-	[Daniel Micay](/index.php/User:Thestinger "User:Thestinger")
-
 	Mark Lee
 
 *   Filesystems

@@ -127,6 +127,6 @@ Una vez copiados los iconos puede, si así lo desea, eliminar el paquete.
 
 Edite /etc/lightdm/lightdm.conf y cámbielo por algo como esto:
 
-[SeatDefaults] autologin-user=su_usuario autologin-user-timeout=0 pam-service=lightdm-autologin NumLock ON instale numlockx y modifique /etc/lightdm/lightdm.conf para agregar lo siguiente:
+[Seat:*] autologin-user=su_usuario autologin-user-timeout=0 pam-service=lightdm-autologin NumLock ON instale numlockx y modifique /etc/lightdm/lightdm.conf para agregar lo siguiente:
 
 greeter-setup-script=/usr/bin/numlockx on

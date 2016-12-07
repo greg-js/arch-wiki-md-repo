@@ -9,9 +9,8 @@
     *   [3.2 Vim](#Vim)
     *   [3.3 alot](#alot)
     *   [3.4 bower](#bower)
-    *   [3.5 mutt-kz](#mutt-kz)
-    *   [3.6 Neomutt](#Neomutt)
-    *   [3.7 ner](#ner)
+    *   [3.5 Neomutt](#Neomutt)
+    *   [3.6 ner](#ner)
 *   [4 Integrating with mutt](#Integrating_with_mutt)
     *   [4.1 notmuch-mutt problems](#notmuch-mutt_problems)
 *   [5 Integrating with NeoMutt / mutt-kz](#Integrating_with_NeoMutt_.2F_mutt-kz)
@@ -77,10 +76,6 @@ More file handlers can be configured of course.
 ### bower
 
 [bower](https://github.com/wangp/bower) is another CLI interface, this one is written in [Mercury](https://mercurylang.org/).
-
-### mutt-kz
-
-[mutt-kz](http://kzak.redcrew.org/doku.php?id=mutt:start) - A fork of mutt with integrated notmuch. It has a virtual folder support and talks directly to libnotmuch, avoiding hacks with symbolic links. It is available from [AUR](/index.php/AUR "AUR") as [mutt-kz](https://aur.archlinux.org/packages/mutt-kz/) or [mutt-kz-git](https://aur.archlinux.org/packages/mutt-kz-git/).
 
 ### Neomutt
 

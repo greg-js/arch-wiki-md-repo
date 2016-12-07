@@ -76,6 +76,8 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 **Note:** This assumes that the user has created an kodi user named kodiuser on the system and that the following file is present as described.
 
 **Note:** [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) creates a user named kodi, which is not permitted to login, thus autologin will fail with this user.
+
+**Note:** lightdm does not pull in an X server as a required dependency, it is optional. The X server listed as an optional dependency (xephyr) does not work when run as root by lightdm.service ([Bug to have optional dependency modified](https://bugs.archlinux.org/?string=52067)) ([Upstream Bug](https://bugs.launchpad.net/lightdm/+bug/852577)). If you don't already have it installed, Install [xorg-server](/index.php/Xorg#Installation "Xorg").
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
 To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php/LightDM#Enabling_autologin "LightDM") and [LightDM#Enabling interactive passwordless login](/index.php/LightDM#Enabling_interactive_passwordless_login "LightDM"). *Kodi* includes `kodi.desktop` as [xsession](/index.php/Xsession "Xsession").
@@ -86,7 +88,7 @@ To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php
 minimum-vt=1
 run-directory=/run/lightdm
 
-[SeatDefaults]
+[Seat:*]
 session-wrapper=/etc/lightdm/Xsession
 pam-service=lightdm-autologin
 autologin-user=kodiuser
@@ -493,7 +495,7 @@ Kodi has a webservice that allows interaction through a web-interface. By defaul
 
 ### Using ALSA
 
-If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using ALSA directly by starting Kodi with the `AE_SINK=ALSA` environment variable.
+If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using ALSA directly by starting Kodi with the `AE_SINK=ALSA` environment variable. The Kodi wiki for NUC devices provides [[instructions](http://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)]
 
 ### Soft subtitles not displaying
 

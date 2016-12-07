@@ -18,21 +18,28 @@ Rime IME is provided by [librime](https://www.archlinux.org/packages/?name=libri
 
 **Note:** Rime works with [ibus](https://www.archlinux.org/packages/?name=ibus) or [fcitx](https://www.archlinux.org/packages/?name=fcitx). Please see also [IBus](/index.php/IBus "IBus") and [Fcitx](/index.php/Fcitx "Fcitx") for installation and configuration.
 
-In order for Rime to work, input schemas are needed. Schemas are text files that can be created and customized by users. Alternatively, there are several default input schemas you can choose from:
+In order for Rime to work, input schemas are needed. Schemas are text files that can be created and customized by users. Alternatively, there are several [default input schemas](https://github.com/rime/brise#packages) you can choose from:
 
 *   Luna Pinyin (Standard Mandarin)
 *   Terra Pinyin (with tones)
-*   Bopomofo (Mandarin Phonetic Symbol)
+*   Zhuyin (Mandarin Phonetic Symbol)
 *   Double Pinyin (Ziranma, MSPY)
 *   Jyutping (Cantonese)
 *   Wugniu (Wuu)
 *   Cangjie5
 *   Wubi86
 
-To customize Rime, you should first create the rime config directory, assuming you are using [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime):
+To customize Rime, you should first create the rime config directory. Assuming you are using [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime):
 
 ```
 $ mkdir ~/.config/ibus/rime
+
+```
+
+Or if you are using [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime):
+
+```
+$ mkdir ~/.config/fcitx/rime/
 
 ```
 
@@ -48,10 +55,17 @@ patch:
 
 Note that the indentation level is important. This file overrides the default configuration. So if you only add Terra Pinyin, it will be the only schema enabled.
 
-To make the customizations effective, you need to redeploy. If you have working ibus or fcitx GUI, you may find a ⟲ (Deploy) button and click it. Alternatively, use the following command:
+To make the customizations effective, you need to redeploy. If you have working ibus or fcitx GUI, you may find a ⟲ (Deploy) button and click it. Alternatively, use the following command, assuming you are using [ibus-rime](https://www.archlinux.org/packages/?name=ibus-rime):
 
 ```
 $ rm ~/.config/ibus/rime/default.yaml && ibus-daemon -drx
+
+```
+
+Or if you are using [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime):
+
+```
+$ rm ~/.config/fcitx/rime/default.yaml && fcitx-remote -r
 
 ```
 

@@ -253,7 +253,7 @@ This means that `vglgenkey` is either not being run at all for your virtualGL X 
  `/etc/lightdm/lightdm.conf` 
 ```
 ...
-[SeatDefaults]
+[Seat:*]
 display-setup-script=/usr/bin/vglgenkey
 
 ```

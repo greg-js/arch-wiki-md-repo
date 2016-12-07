@@ -276,7 +276,7 @@ $ lpq -a # on all queues
 
 The CUPS server can be fully administered through the web interface, available on [http://localhost:631/](http://localhost:631/).
 
-**Note:** If an HTTPS connection to CUPS is used, it *may* take a very long time before the interface appears the first time the it is accessed. This is because the first request triggers the generation of SSL certificates which can be a time-consuming job.
+**Note:** If an HTTPS connection to CUPS is used, it *may* take a very long time before the interface appears the first time it is accessed. This is because the first request triggers the generation of SSL certificates which can be a time-consuming job.
 
 	Add a queue
 

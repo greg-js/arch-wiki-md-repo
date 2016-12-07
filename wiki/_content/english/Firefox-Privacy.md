@@ -25,7 +25,7 @@ This article overviews some useful extensions which enhance security and privacy
     *   [2.4 Disable battery api](#Disable_battery_api)
     *   [2.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
     *   [2.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [2.7 Disable crash reporting and telemetry](#Disable_crash_reporting_and_telemetry)
+    *   [2.7 Disable telemetry](#Disable_telemetry)
     *   [2.8 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
     *   [2.9 Disable geolocation](#Disable_geolocation)
     *   [2.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
@@ -188,8 +188,7 @@ Battery status api may be used to fingerprint the user[[4]](http://eprint.iacr.o
 To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
 
 *   `media.peerconnection.ice.default_address_only` to **true**
-*   `media.peerconnection.enabled` to **false**.
-*   `media.peerconnection.ice.no_host` to **true** (this key may need to be created)
+*   `media.peerconnection.enabled` to **false**. (only if you want to completely disable WebRTC)
 
 You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://www.privacytools.io/webrtc.html) to confirm that your internal/external IP address is no longer leaked.
 
@@ -205,20 +204,19 @@ security.ssl3.dhe_rsa_aes_256_sha
 
 Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
 
-### Disable crash reporting and telemetry
+### Disable telemetry
 
-*   Set `breakpad.reportURL` to a blank value
-*   Set `toolkit.telemetry.enabled` to **false**
+Set `toolkit.telemetry.enabled` to **false** and/or disable it under Preferences, Advanced, Data Choices.
 
 ### Enable Do Not Track Header (DNT)
 
 **Note:** The user has no control over whether the request is honoured or not.
 
-Set `privacy.donottrackheader.enabled` to **true** or toggle it in Preferences under Privacy.
+Set `privacy.donottrackheader.enabled` to **true** or toggle it in Preferences under Privacy, manage your Do Not Track settings.
 
 ### Disable geolocation
 
-Set `geo.enabled` to **false** and `geo.wifi.uri` to a blank value in `about:config`.
+Set `geo.enabled` to **false** in `about:config`.
 
 ### Disable Safe Browsing service
 
@@ -228,6 +226,8 @@ To disable the Safe Browsing service, in `about:config` set:
 
 *   Set `browser.safebrowsing.malware.enabled` to **false**
 *   Set `browser.safebrowsing.phishing.enabled` to **false**
+
+In addition disable download checking, by setting `browser.safebrowsing.downloads.enabled` to **false**.
 
 ### Disable WebGL
 

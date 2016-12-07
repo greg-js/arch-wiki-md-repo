@@ -21,8 +21,9 @@
 *   [4 Tools](#Tools)
     *   [4.1 UEFI shell](#UEFI_shell)
     *   [4.2 Memtest86](#Memtest86)
-    *   [4.3 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
-    *   [4.4 iPXE](#iPXE)
+    *   [4.3 KeyTool](#KeyTool)
+    *   [4.4 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
+    *   [4.5 iPXE](#iPXE)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
     *   [5.2 btrfs subvolume root support](#btrfs_subvolume_root_support)
@@ -278,7 +279,7 @@ See [Using rEFInd](http://www.rodsbooks.com/refind/using.html).
  `*esp*/EFI/refind/refind.conf` 
 ```
 ...
-showtools **shell**, **memtest**, **gdisk**, **netboot**, ...
+showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#KeyTool), [gdisk](#GPT_fdisk_.28gdisk.29), [netboot](#iPXE), ...
 ...
 
 ```
@@ -297,6 +298,14 @@ Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) and c
 # cp /usr/share/memtest86-efi/bootx64.efi *esp*/EFI/tools/memtest86.efi
 
 ```
+
+### KeyTool
+
+Install [efitools](https://www.archlinux.org/packages/?name=efitools).
+
+Place KeyTool EFI binary in `*esp*/` or `*esp*/EFI/tools/` with the name `KeyTool.efi` or `KeyTool-signed.efi`.
+
+See [Secure Boot#Using KeyTool](/index.php/Secure_Boot#Using_KeyTool "Secure Boot") for instructions on signing `KeyTool.efi`.
 
 ### GPT fdisk (gdisk)
 

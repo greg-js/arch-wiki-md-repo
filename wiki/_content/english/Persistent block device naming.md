@@ -89,7 +89,7 @@ The labels of your filesystems can be changed. Following are some methods for ch
 
 	fat/vfat 
 
-	`dosfslabel /dev/XXX <label>` using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
+	`fatlabel /dev/XXX <label>` using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
 
 	fat/vfat 
 

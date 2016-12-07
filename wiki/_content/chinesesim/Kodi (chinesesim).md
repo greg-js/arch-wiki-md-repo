@@ -77,7 +77,7 @@ To use LightDM with automatic login, see [LightDM#Enabling autologin](/index.php
 minimum-vt=1
 run-directory=/run/lightdm
 
-[SeatDefaults]
+[Seat:*]
 session-wrapper=/etc/lightdm/Xsession
 pam-service=lightdm-autologin
 autologin-user=kodi

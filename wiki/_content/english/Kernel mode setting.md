@@ -107,6 +107,8 @@ For the four built-in resolutions, see table below for the name to specify:
 | 1680x1050 | edid/1680x1050.bin |
 | 1920x1080 | edid/1920x1080.bin |
 
+You can also find some binaries EDID [here](https://gitlab.com/corossig/edid-database/tree/master).
+
 If you are doing early KMS, you must include the custom EDID file in the [initramfs](#Early_KMS_start) or you will run into problems.
 
 You can also construct your own EDID with the makefile included in the `Documentation/EDID` sources of the kernel. The full information can be read [here](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/Documentation/EDID/HOWTO.txt) and [there](https://www.osadl.org/Single-View.111+M591850c02b5.0.html).

@@ -9,6 +9,7 @@
         *   [2.2.1 Service example](#Service_example)
         *   [2.2.2 DISPLAY and XAUTHORITY](#DISPLAY_and_XAUTHORITY)
         *   [2.2.3 PATH](#PATH)
+        *   [2.2.4 pam_environment](#pam_environment)
     *   [2.3 Automatic start-up of systemd user instances](#Automatic_start-up_of_systemd_user_instances)
 *   [3 Xorg and systemd](#Xorg_and_systemd)
     *   [3.1 Automatic login into Xorg without display manager](#Automatic_login_into_Xorg_without_display_manager)
@@ -89,6 +90,26 @@ If you customize your `PATH` and plan on launching applications that make use of
 ```
 systemctl --user import-environment PATH
 
+```
+
+#### pam_environment
+
+Environment variables can be made available through use of the `pam_env.so` module. Create the file `~/.pam_environment`, for example:
+
+ `~/.pam_environment` 
+```
+XDG_CONFIG_HOME DEFAULT=@{HOME}/.local/config
+XDG_DATA_HOME   DEFAULT=@{HOME}/.local/data
+```
+
+For details about the syntax of the `.pam_environment` file see [Environment_variables#Using_pam_env](/index.php/Environment_variables#Using_pam_env "Environment variables"). You can verify that the configuration was successful by running the command `systemctl --user show-environment`:
+
+ `$ systemctl --user show-environment` 
+```
+...
+XDG_CONFIG_HOME=/home/*user*/.local/config
+XDG_DATA_HOME=/home/*user*/.local/data
+...
 ```
 
 ### Automatic start-up of systemd user instances

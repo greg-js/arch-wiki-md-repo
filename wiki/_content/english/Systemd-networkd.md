@@ -9,21 +9,21 @@
         *   [1.2.2 Wired adapter using a static IP](#Wired_adapter_using_a_static_IP)
         *   [1.2.3 Wireless adapter](#Wireless_adapter)
         *   [1.2.4 Wired and wireless adapters on the same machine](#Wired_and_wireless_adapters_on_the_same_machine)
+        *   [1.2.5 Renaming an interface](#Renaming_an_interface)
 *   [2 Configuration files](#Configuration_files)
     *   [2.1 network files](#network_files)
-        *   [2.1.1 [Match] section](#.5BMatch.5D_section)
-        *   [2.1.2 [Link] section](#.5BLink.5D_section)
-        *   [2.1.3 [Network] section](#.5BNetwork.5D_section)
-        *   [2.1.4 [Address] section](#.5BAddress.5D_section)
-        *   [2.1.5 [Route] section](#.5BRoute.5D_section)
-        *   [2.1.6 [DHCP] section](#.5BDHCP.5D_section)
+        *   [2.1.1 [Match]](#.5BMatch.5D)
+        *   [2.1.2 [Link]](#.5BLink.5D)
+        *   [2.1.3 [Network]](#.5BNetwork.5D)
+        *   [2.1.4 [Address]](#.5BAddress.5D)
+        *   [2.1.5 [Route]](#.5BRoute.5D)
+        *   [2.1.6 [DHCP]](#.5BDHCP.5D)
     *   [2.2 netdev files](#netdev_files)
-        *   [2.2.1 [Match] section](#.5BMatch.5D_section_2)
+        *   [2.2.1 [Match] section](#.5BMatch.5D_section)
         *   [2.2.2 [NetDev] section](#.5BNetDev.5D_section)
     *   [2.3 link files](#link_files)
-        *   [2.3.1 [Match] section](#.5BMatch.5D_section_3)
-        *   [2.3.2 [Link] section](#.5BLink.5D_section_2)
-        *   [2.3.3 Renaming an interface](#Renaming_an_interface)
+        *   [2.3.1 [Match] section](#.5BMatch.5D_section_2)
+        *   [2.3.2 [Link] section](#.5BLink.5D_section)
 *   [3 Usage with containers](#Usage_with_containers)
     *   [3.1 Basic DHCP network](#Basic_DHCP_network)
     *   [3.2 DHCP with two distinct IP](#DHCP_with_two_distinct_IP)
@@ -159,169 +159,6 @@ RouteMetric=20
 
 ```
 
-## Configuration files
-
-Configuration files are located in `/usr/lib/systemd/network`, the volatile runtime network directory `/run/systemd/network` and, the local administration network directory `/etc/systemd/network`. Files in `/etc/systemd/network` have the highest priority.
-
-There are three types of configuration files.
-
-*   **.network** files. They will apply a network configuration for a *matching* device
-*   **.netdev** files. They will create a *virtual network device* for a *matching* environment
-*   **.link** files. When a network device appears, [udev](/index.php/Udev "Udev") will look for the first *matching* **.link** file
-
-They all follow the same rules:
-
-*   If **all** conditions in the `[Match]` section are matched, the profile will be activated
-*   an empty `[Match]` section means the profile will apply in any case (can be compared to the `*` joker)
-*   each entry is a key with the `NAME=VALUE` syntax
-*   all configuration files are collectively sorted and processed in lexical order, regardless of the directory in which they live
-*   files with identical name replace each other
-
-**Tip:**
-
-*   to override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
-*   the `*` joker can be used in `VALUE` (e.g `en*` will match any Ethernet device)
-*   following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
-
-### network files
-
-These files are aimed at setting network configuration variables, especially for servers and containers.
-
-Below is a basic structure of a `*MyProfile*.network` file:
-
- `/etc/systemd/network/*MyProfile*.network` 
-```
-[Match]
-*a vertical list of keys*
-
-[Network]
-*a vertical list of keys*
-
-[Address]
-*a vertical list of keys*
-
-[Route]
-*a vertical list of keys*
-
-[DHCP]
-*a vertical list of keys*
-
-```
-
-#### [Match] section
-
-Most common keys are:
-
-*   `Name=` the device name (e.g Br0, enp4s0, en*)
-*   `Host=` the machine hostname
-*   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
-
-#### [Link] section
-
-Most common keys are:
-
-*   `MACAddress=` useful for [MAC address spoofing](/index.php/MAC_address_spoofing#Method_1:_systemd-networkd "MAC address spoofing")
-*   `MTUBytes=` the maximum transmission unit in bytes (suffixes K, M, G, are supported and are understood to the base of 1024). Using a larger MTU value ([Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")) can significantly speed up your network transfers.
-
-#### [Network] section
-
-Most common keys are:
-
-*   `DHCP=` enables [DHCPv4](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") and/or DHCPv6 support. Accepts `yes`, `no`, `ipv4` or `ipv6`
-*   `DNS=` is a [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") server address. You can specify this option more than once
-*   `Bridge=` is the name of the bridge to add the link to
-*   `IPForward=` defaults to `no`. It enables IP forwarding, performing the forwarding according to the routing table and is required for setting up [Internet sharing](/index.php/Internet_sharing "Internet sharing"). Note that turning `IPForward=` on applies to *all* network interfaces.
-*   `Domains=` a list of the domains used for DNS host name resolution.
-
-Please see `systemd.network(5)` for details.
-
-#### [Address] section
-
-Most common key in the `[Address]` section is:
-
-*   `Address=` is a static **IPv4** or **IPv6** address and its prefix length, separated by a `/` character (e.g `192.168.1.90/24`). This option is **mandatory** unless DHCP is used.
-
-#### [Route] section
-
-Most common key in the `[Route]` section is:
-
-*   `Gateway=` is the address of your machine gateway. This option is **mandatory** unless DHCP is used.
-
-For an exhaustive key list, please refer to `systemd.network(5)`
-
-**Tip:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `Address=` contains only an Address key and `Gateway=` section contains only a Gateway key
-
-#### [DHCP] section
-
-A useful key in the `[DHCP]` section is:
-
-*   `UseDomains=true` seems to fix local name resolving when systemd-resolved is used.
-
-### netdev files
-
-These files will create virtual network devices.
-
-Below is a basic structure of a *Mydevice*.netdev file:
-
- `/etc/systemd/network/*MyDevice*.netdev` 
-```
-[Match]
-*a vertical list of keys*
-
-[NetDev]
-*a vertical list of keys*
-
-```
-
-#### [Match] section
-
-Most common keys are `Host=` and `Virtualization=`
-
-#### [NetDev] section
-
-Most common keys are:
-
-*   `Name=` is the interface name used when creating the netdev. This option is **compulsory**
-*   `Kind=` is the netdev kind. For example, *bridge*, *bond*, *vlan*, *veth*, *sit*, etc. are supported. This option is **compulsory**
-
-For an exhaustive key list, please refer to `systemd.netdev(5)`
-
-### link files
-
-These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears.
-
-Below is a basic structure of a *Mydevice*.link file:
-
- `/etc/systemd/network/*MyDevice*.link` 
-```
-[Match]
-*a vertical list of keys*
-
-[Link]
-*a vertical list of keys*
-
-```
-
-The `[Match]` section will determine if a given link file may be applied to a given device, when the `[Link]` section specifies the device configuration.
-
-**Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with `.link` files.
-
-#### [Match] section
-
-Most common keys are `MACAddress=`, `Host=` and `Virtualization=`.
-
-`Type=` is the device type (e.g. vlan)
-
-#### [Link] section
-
-Most common keys are:
-
-`MACAddressPolicy=` is either *persistent* when the hardware has a persistent MAC address (as most hardware should) or *random* , which allows to give a random MAC address when the device appears.
-
-`MACAddress=` shall be used when no `MACAddressPolicy=` is specified.
-
-**Note:** the system `/usr/lib/systemd/network/99-default.link` is generally sufficient for most of the basic cases.
-
 #### Renaming an interface
 
 Instead of [editing udev rules](/index.php/Network_configuration#Change_device_name "Network configuration"), a .link file can be used to rename an interface. A useful example is to set a predictable interface name for a USB-to-Ethernet adapter based on its MAC address, as those adapters are usually given different names depending on which USB port they are plugged into.
@@ -336,7 +173,105 @@ Description=USB to Ethernet Adapter
 Name=ethusb0
 ```
 
-**Note:** The default link file `/usr/lib/systemd/network/99-default.link` is shipped by the system. Any user-supplied .link **should** have a lexically earlier file name to be considered at all. For example, name the file `10-ethusb0.link` and not `ethusb0.link`.
+**Note:** Any user-supplied .link **must** have a lexically earlier file name than the default config `99-default.link` in order to be considered at all. For example, name the file `10-ethusb0.link` and not `ethusb0.link`.
+
+## Configuration files
+
+Configuration files are located in `/usr/lib/systemd/network`, the volatile runtime network directory `/run/systemd/network` and, the local administration network directory `/etc/systemd/network`. Files in `/etc/systemd/network` have the highest priority.
+
+There are three types of configuration files. They all use a format similar to [systemd unit files](/index.php/Systemd#Writing_unit_files "Systemd").
+
+*   **.network** files. They will apply a network configuration for a *matching* device
+*   **.netdev** files. They will create a *virtual network device* for a *matching* environment
+*   **.link** files. When a network device appears, [udev](/index.php/Udev "Udev") will look for the first *matching* **.link** file
+
+They all follow the same rules:
+
+*   If **all** conditions in the `[Match]` section are matched, the profile will be activated
+*   an empty `[Match]` section means the profile will apply in any case (can be compared to the `*` joker)
+*   all configuration files are collectively sorted and processed in lexical order, regardless of the directory in which they live
+*   files with identical name replace each other
+
+**Tip:**
+
+*   to override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
+*   the `*` joker can be used in `VALUE` (e.g `en*` will match any Ethernet device)
+*   following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
+
+### network files
+
+These files are aimed at setting network configuration variables, especially for servers and containers.
+
+`.network` files have the following sections: `[Match]`, `[Link]`, `[Network]`, `[Address]`, `[Route]`, and `[DHCP]`. Below are commonly configured keys for each section. See [systemd.network(5)](http://man7.org/linux/man-pages/man5/systemd.network.5.html) for more information and examples.
+
+#### [Match]
+
+*   `Name=` the device name
+*   `Host=` the machine hostname
+*   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
+
+#### [Link]
+
+*   `MACAddress=` useful for [MAC address spoofing](/index.php/MAC_address_spoofing#Method_1:_systemd-networkd "MAC address spoofing")
+*   `MTUBytes=` setting a larger MTU value ([jumbo frames](/index.php/Jumbo_frames "Jumbo frames")) can significantly speed up your network transfers
+
+#### [Network]
+
+*   `DHCP=` enables the DHCP client
+*   `DNS=` DNS server address
+*   `Bridge=` the bridge name
+*   `IPForward=` enables IP packet forwarding
+*   `Domains=` a list of domains to be resolved on this link
+
+#### [Address]
+
+*   `Address=` this option is **mandatory** unless DHCP is used
+
+#### [Route]
+
+*   `Gateway=` this option is **mandatory** unless DHCP is used
+
+**Tip:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `Address=` contains only an Address key and `Gateway=` section contains only a Gateway key.
+
+#### [DHCP]
+
+*   `UseDomains=true` can sometimes fix local name resolving when using systemd-resolved
+
+### netdev files
+
+These files will create virtual network devices. They have two sections: `[Match]` and `[NetDev]`. Below are commonly configured keys for each section. See [systemd.netdev(5)](http://man7.org/linux/man-pages/man5/systemd.netdev.5.html) for more information and examples.
+
+#### [Match] section
+
+*   `Host=` the hostname
+*   `Virtualization=` check if running in a VM
+
+#### [NetDev] section
+
+Most common keys are:
+
+*   `Name=` the interface name. **mandatory**
+*   `Kind=` e.g. *bridge*, *bond*, *vlan*, *veth*, *sit*, etc. **mandatory**
+
+### link files
+
+These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears. They have two sections: `[Match]` and `[Link]`. Below are commonly configured keys for each section. See `man` for more information and examples.
+
+**Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with `.link` files.
+
+#### [Match] section
+
+*   `MACAddress=` the MAC address
+*   `Host=` the host name
+*   `Virtualization=`
+*   `Type=` the device type e.g. vlan
+
+#### [Link] section
+
+*   `MACAddressPolicy=` persistent or random addresses, or
+*   `MACAddress=` a specific address
+
+**Note:** the system `/usr/lib/systemd/network/99-default.link` is generally sufficient for most of the basic cases.
 
 ## Usage with containers
 
@@ -412,6 +347,8 @@ If you did not want to configure a DNS in `/etc/resolv.conf` and want to rely on
 # ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
 
 ```
+
+**Note:** During a fresh install, you cannot remove/overwrite /etc/resolv.conf due to the file 'being in use'. You can make the above change/link after the first-boot of the system.
 
 See `systemd-resolved.service(8)` for more details.
 

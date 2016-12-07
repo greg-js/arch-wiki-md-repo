@@ -112,11 +112,11 @@ xrandr --auto
 
 ```
 
-编辑 `/etc/lightdm/lightdm.conf` 的 `[SeatDefaults]` 部分以配置 lightdm 运行这个脚本:
+编辑 `/etc/lightdm/lightdm.conf` 的 `[Seat:*]` 部分以配置 lightdm 运行这个脚本:
 
  `# nano /etc/lightdm/lightdm.conf` 
 ```
-[SeatDefaults]
+[Seat:*]
 display-setup-script=/etc/lightdm/display_setup.sh
 ```
 

@@ -1,4 +1,4 @@
-This is updated, please change to [Streamlink](/index.php/Streamlink "Streamlink").
+**Note:** Livestreamer is no longer maintained, see [Streamlink](/index.php/Streamlink "Streamlink") for an active fork.
 
 Livestreamer is a command-line utility written in [Python](/index.php/Python "Python"), which allows you to watch online video streams in popular video players, such as [VLC](/index.php/VLC "VLC"), [MPlayer](/index.php/MPlayer "MPlayer") or [mpv](/index.php/Mpv "Mpv") The full list of supported media players is available here: [http://docs.livestreamer.io/players.html#player-compatibility](http://docs.livestreamer.io/players.html#player-compatibility).
 

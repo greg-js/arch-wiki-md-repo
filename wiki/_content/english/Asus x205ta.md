@@ -21,7 +21,7 @@
 
 ## Booting Arch install media
 
-The Asus x205ta has an exclusively 32-bit EFI bootloader. Since Arch does not include a 32-bit EFU loader in the standard install image, we need to add one. This procedure may work for other exclusively 32-bit EFI machines.
+The Asus x205TA and x206HA have an exclusively 32-bit EFI bootloader. Since Arch does not include a 32-bit EFU loader in the standard install image, we need to add one. This procedure may work for other exclusively 32-bit EFI machines.
 
 The current image (ARCH_201508) does not include the drivers for the x205ta's broadcom wireless modem, so we add those to the install image too.
 

@@ -291,7 +291,7 @@ The `--bootloader-id` is what appears in the boot options to identify the GRUB E
 
 After the above install finished the main GRUB directory is located at `/boot/grub/`.
 
-Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing further setup dependant [#Configuration](#Configuration).
+Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing further setup dependent [#Configuration](#Configuration).
 
 **Note:**
 

@@ -29,11 +29,11 @@ To be able to use the integrated network administration, the [networkmanager](ht
 
 ### Via a Display Manager
 
-To use the default DDE's lightdm greeter you have to modify the configuration file under the `[SeatDefaults]` section, to state:.
+To use the default DDE's lightdm greeter you have to modify the configuration file under the `[Seat:*]` section, to state:.
 
  `/etc/lightdm/lightdm.conf` 
 ```
-[SeatDefaults]
+[Seat:*]
 ...
 greeter-session=lightdm-deepin-greeter
 ```

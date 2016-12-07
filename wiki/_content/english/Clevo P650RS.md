@@ -4,8 +4,8 @@ The P650RS is a device by the taiwanese OEM manufacturer Clevo. It is also sold 
 
 *   [1 Installation](#Installation)
 *   [2 Graphics](#Graphics)
-    *   [2.1 Switchable / Optimus](#Switchable_.2F_Optimus)
-    *   [2.2 Discrete only](#Discrete_only)
+    *   [2.1 Discrete only](#Discrete_only)
+    *   [2.2 Switchable / Optimus](#Switchable_.2F_Optimus)
 *   [3 Power management](#Power_management)
 *   [4 WiFi](#WiFi)
 *   [5 Webcam](#Webcam)
@@ -18,7 +18,13 @@ Installing Archlinux requires kernel parameter `nouveau.modeset=0`.
 
 ## Graphics
 
-This laptop has switchable graphics, but the BIOS includes an option to disable the integrated card. These instructions apply to the switchable configuration, i.e. `MSHYBRID` in BIOS.
+The Clevo is available in switchable, and non-switchable configurations. In configurations with both integrated and discrete GPUs, the BIOS includes an an option (`MSHYBRID`) to disable the integrated card, rendering it the same as the dedicated GPU model.
+
+### Discrete only
+
+Given this laptop has a mux, it does not require PRIME configuration to make use of the dedicated graphics card in full even though it should be possible. Installation should follow [NVIDIA](/index.php/NVIDIA "NVIDIA") after setting and booting with `DISCRETE` BIOS option.
+
+Using the NVIDIA proprietary driver (testing with 375.20) the backlight may not come back on after the display has gone to sleep. A workaround is to drop to console (e.g. Ctrl-Alt-F2) and then back to X.
 
 ### Switchable / Optimus
 
@@ -47,12 +53,6 @@ To enable the use of the dedicated graphics card see [Bumblebee](/index.php/Bumb
 **Note:** Automatic turn off of dGPU through [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) will not work with current version. This is a known issue, see [Bumblebee#Broken_power_management_with_kernel_4.8s](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8s "Bumblebee") for details. Insisting on using it may result in a hang boot.
 
 All DisplayPort and HDMI ports seem to be connected to the dGPU which involves extra steps to get them working.
-
-### Discrete only
-
-Given this laptop has a mux, it does not require PRIME configuration to make use of the dedicated graphics card in full even though it should be possible. Installation should follow [NVIDIA](/index.php/NVIDIA "NVIDIA") after setting and booting with `DISCRETE` BIOS option.
-
-Using the NVIDIA proprietary driver (testing with 375.20) the backlight may not come back on after the display has gone to sleep. A workaround is to drop to console (e.g. Ctrl-Alt-F2) and then back to X.
 
 ## Power management
 

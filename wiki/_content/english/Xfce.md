@@ -24,9 +24,8 @@
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Xfce4 mixer](#Xfce4_mixer)
             *   [3.5.1.1 Change default sound card in Xfce4 mixer](#Change_default_sound_card_in_Xfce4_mixer)
-        *   [3.5.2 xfce4-alsa-plugin](#xfce4-alsa-plugin)
-        *   [3.5.3 Keyboard volume buttons](#Keyboard_volume_buttons)
-            *   [3.5.3.1 Shortcuts](#Shortcuts)
+        *   [3.5.2 Keyboard volume buttons](#Keyboard_volume_buttons)
+            *   [3.5.2.1 Shortcuts](#Shortcuts)
     *   [3.6 Keyboard Shortcuts](#Keyboard_Shortcuts)
     *   [3.7 Polkit Authentication Agent](#Polkit_Authentication_Agent)
     *   [3.8 Display blanking](#Display_blanking)
@@ -37,7 +36,7 @@
     *   [4.4 Terminal color themes or palettes](#Terminal_color_themes_or_palettes)
         *   [4.4.1 Changing default color theme](#Changing_default_color_theme)
         *   [4.4.2 Terminal tango color theme](#Terminal_tango_color_theme)
-    *   [4.5 Open URL's by middle mouse in terminal](#Open_URL.27s_by_middle_mouse_in_terminal)
+    *   [4.5 Open URLs by middle mouse in terminal](#Open_URLs_by_middle_mouse_in_terminal)
     *   [4.6 Colour management](#Colour_management)
     *   [4.7 Multiple monitors](#Multiple_monitors)
     *   [4.8 SSH agents](#SSH_agents)
@@ -331,10 +330,6 @@ In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [x
 
 To change the default sound card, open *xfce4-settings-editor* and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
 
-#### xfce4-alsa-plugin
-
-If you do not use PulseAudio, you can install [xfce4-alsa-plugin](https://aur.archlinux.org/packages/xfce4-alsa-plugin/). It provides a simple panel plugin with the ability to control ALSA volume, though it does not support keyboard volume buttons.
-
 #### Keyboard volume buttons
 
 If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/). This provides a panel applet which has support for keyboard volume control and volume notifications.
@@ -357,7 +352,7 @@ Keyboard shortcuts are defined in two places: *Settings > Window Manager > Keybo
 
 The [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) agent will be installed along with [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session) and autostarted automatically; no user intervention is required. For more information, see [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit").
 
-A third party polkit authentication agent for Xfce is also available, see [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/).
+A third party polkit authentication agent for Xfce is also available, see [xfce-polkit](https://aur.archlinux.org/packages/xfce-polkit/) or [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/).
 
 ### Display blanking
 
@@ -458,7 +453,7 @@ ColorPalette16=#eeeeeeeeecec
 
 ```
 
-### Open URL's by middle mouse in terminal
+### Open URLs by middle mouse in terminal
 
 On update to version 0.8 open URL with middle mouse turned off by default and just paste clip to cursor. To enable old behavior fix next option in `${XDG_CONFIG_HOME}/xfce4/terminal/terminalrc` (`XDG_CONFIG_HOME=${HOME}/.config` by default)
 

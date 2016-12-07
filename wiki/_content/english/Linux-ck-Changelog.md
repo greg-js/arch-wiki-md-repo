@@ -1,3 +1,8 @@
+**Bump to v4.8.12-2**
+
+*   Changelog: Security patch fix following Arch upstream.
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=534ea03f8d05a95db7bf44b6cb304cc3b836d89f](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=534ea03f8d05a95db7bf44b6cb304cc3b836d89f)
+
 **Bump to v4.8.12-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.12](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.12)
