@@ -60,13 +60,6 @@ Using switchable graphics and standard [TLP](/index.php/TLP "TLP") configuration
 
 The dGPU cannot be turned off automatically as a function of being in use at this moment though (see [#Switchable / Optimus](#Switchable_.2F_Optimus)). If left on, the system will take >20W on idle though.
 
-You can combine functionality and power managment by using TLP and no bbswitch:
-
-*   Boot in battery mode: Bumblebee cannot turn dGPU on and fails to load driver.
-*   Boot in AC mode: Bumblebee works fine. dGPU will not turn off and subsequent use of optirun in battery mode works at the expense of no power management. Low power mode is possible after a reboot.
-
-**Tip:** Always boot in AC to maximize functionality and reboot after using the dGPU for lower power consumption.
-
 ## WiFi
 
 WiFi seems to work well and coexist nicely with bluetooth. Consider enabling antenna aggregation to take the most out of the hardware: [iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration").

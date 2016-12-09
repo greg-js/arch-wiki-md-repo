@@ -24,7 +24,7 @@ The Pax subset is installed with the [linux-grsec](https://www.archlinux.org/pac
 
 The recommended way to switch to opt-in is to [install](/index.php/Install "Install") the [paxd](https://www.archlinux.org/packages/?name=paxd) package.
 
-**Note:** After installing [paxd](https://www.archlinux.org/packages/?name=paxd) the system must be rebooted to apply the changes. Alternatively apply the [sysctl](/index.php/Sysctl "Sysctl") configuration to the running system using `sysctl -p usr/lib/sysctl.d/10-enable-pax.conf`
+**Note:** After installing [paxd](https://www.archlinux.org/packages/?name=paxd) the system must be rebooted to apply the changes. Alternatively apply the [sysctl](/index.php/Sysctl "Sysctl") configuration to the running system using `sysctl -p /usr/lib/sysctl.d/10-enable-pax.conf`
 
 It is also possible to temporarily disable soft mode:
 

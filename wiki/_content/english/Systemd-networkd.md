@@ -348,9 +348,9 @@ If you did not want to configure a DNS in `/etc/resolv.conf` and want to rely on
 
 ```
 
-**Note:** During a fresh install, you cannot remove/overwrite /etc/resolv.conf due to the file 'being in use'. You can make the above change/link after the first-boot of the system.
-
 See `systemd-resolved.service(8)` for more details.
+
+**Note:** Users accessing a system partition via `/usr/bin/arch-chroot` from [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), will need to create the symlink outside of the chroot, on the mounted partition. This is due to arch-chroot linking the file to the live environment.
 
 ### DHCP with two distinct IP
 

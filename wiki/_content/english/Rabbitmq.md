@@ -7,6 +7,7 @@
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Changed hostname](#Changed_hostname)
     *   [3.2 Upgraded RabbitMQ to latest version and cannot start](#Upgraded_RabbitMQ_to_latest_version_and_cannot_start)
+    *   [3.3 Erlang cookie error](#Erlang_cookie_error)
 
 ## Installation
 
@@ -31,4 +32,25 @@ NODENAME=rabbit@my-new-hostname
 
 ### Upgraded RabbitMQ to latest version and cannot start
 
-This might cause your `/etc/rabbitmq/rabbitmq-env.conf` to get the wrong `NODENAME`. For example, it might cause it to add another `@hostname` part. In either way, follow [#Changed hostname](#Changed_hostname).
+This might cause your `/etc/rabbitmq/rabbitmq-env.conf` to get the wrong `NODENAME`. For example, it might cause it to add another `@hostname` part. In any case, this can be fixed by following [#Changed hostname](#Changed_hostname).
+
+### Erlang cookie error
+
+Failure to authenticate might be caused by a wrong rabbitmq HOME setting:
+
+```
+Authentication failed (rejected by the remote node), please check the Erlang cookie
+...
+home dir: /root
+
+```
+
+Home can be set in the configuration file:
+
+ `/etc/rabbitmq/rabbitmq-env.conf` 
+```
+...
+HOME=/var/lib/rabbitmq
+...
+
+```

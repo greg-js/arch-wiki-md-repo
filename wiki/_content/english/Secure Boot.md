@@ -4,9 +4,15 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 
 *   [1 Using a signed boot loader](#Using_a_signed_boot_loader)
     *   [1.1 Booting archiso](#Booting_archiso)
-    *   [1.2 Set up PreLoader](#Set_up_PreLoader)
-        *   [1.2.1 Fallback](#Fallback)
-    *   [1.3 Remove PreLoader](#Remove_PreLoader)
+    *   [1.2 PreLoader](#PreLoader)
+        *   [1.2.1 Set up PreLoader](#Set_up_PreLoader)
+            *   [1.2.1.1 Fallback](#Fallback)
+        *   [1.2.2 Remove PreLoader](#Remove_PreLoader)
+    *   [1.3 shim](#shim)
+        *   [1.3.1 Set up shim](#Set_up_shim)
+            *   [1.3.1.1 shim with hash](#shim_with_hash)
+            *   [1.3.1.2 shim with key](#shim_with_key)
+        *   [1.3.2 Remove shim](#Remove_shim)
 *   [2 Using your own keys](#Using_your_own_keys)
     *   [2.1 Creating keys](#Creating_keys)
     *   [2.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
@@ -21,11 +27,11 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 
 ### Booting archiso
 
-Booting the archiso with Secure Boot enabled is possible since the EFI applications `PreLoader.efi` and `HashTool.efi` have been added to it. A message will show up that says *Failed to Start loader... I will now execute HashTool.* To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps.
+Booting the archiso with Secure Boot enabled is possible since the EFI applications `PreLoader.efi` and `HashTool.efi` have been added to it. A message will show up that says `Failed to Start loader... I will now execute HashTool.` To use HashTool for enrolling the hash of `loader.efi` and `vmlinuz.efi`, follow these steps.
 
-*   Select `OK`
-*   In the HashTool main menu, select `Enroll Hash`, choose `\loader.efi` and confirm with `Yes`. Again, select `Enroll Hash` and `archiso` to enter the archiso directory, then select `vmlinuz.efi` and confirm with `Yes`. Then choose `Exit` to return to the boot device selection menu.
-*   In the boot device selection menu choose `Arch Linux archiso x86_64 UEFI CD`
+*   Select *OK*
+*   In the HashTool main menu, select *Enroll Hash*, choose `\loader.efi` and confirm with *Yes*. Again, select *Enroll Hash* and `archiso` to enter the archiso directory, then select `vmlinuz.efi` and confirm with *Yes*. Then choose *Exit* to return to the boot device selection menu.
+*   In the boot device selection menu choose *Arch Linux archiso x86_64 UEFI CD*
 
 The archiso boots, and you are presented with a shell prompt, automatically logged in as root. To check if the archiso was booted with Secure Boot, use this command:
 
@@ -50,7 +56,9 @@ For a verbose status, another way is to execute:
 
 ```
 
-### Set up PreLoader
+### PreLoader
+
+#### Set up PreLoader
 
 **Warning:** `PreLoader.efi` and `HashTool.efi` in [efitools](https://www.archlinux.org/packages/?name=efitools) package are not signed, so their usefulness is limited. You can get a signed `PreLoader.efi` and `HashTool.efi` from [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) or [download them manually](http://blog.hansenpartnership.com/linux-foundation-secure-boot-system-released/).
 
@@ -79,9 +87,9 @@ Replace `X` with the drive letter and replace `Y` with the partition number of t
 
 This entry should be added to the list as the first to boot; check with the `efibootmgr` command and adjust the boot-order if necessary.
 
-#### Fallback
+##### Fallback
 
-If there are problems booting the custom NVRAM entry, copy `HashTool.efi` & `loader.efi` to the default loader location booted automatically by UEFI systems:
+If there are problems booting the custom NVRAM entry, copy `HashTool.efi` and `loader.efi` to the default loader location booted automatically by UEFI systems:
 
 ```
 # cp /usr/share/preloader-signed/HashTool.efi *esp*/EFI/Boot
@@ -106,11 +114,11 @@ For particularly intransigent UEFI implementations, copy `PreLoader.efi` to the 
 
 **Note:** If dual-booting with Windows, backup the original `bootmgfw.efi` first as replacing it may cause problems with Windows updates.
 
-As before, copy `HashTool.efi` & `loader.efi` to `*esp*/EFI/Microsoft/Boot`
+As before, copy `HashTool.efi` and `loader.efi` to `*esp*/EFI/Microsoft/Boot`
 
 When the system starts with Secure Boot enabled, follow the steps above to enrol `loader.efi` and `/vmlinuz-linux` (or whichever kernel image is being used).
 
-### Remove PreLoader
+#### Remove PreLoader
 
 **Note:** Since you are going to remove stuff, is a good idea to backup it.
 
@@ -128,6 +136,91 @@ Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check wit
 
 **Note:** The above commands cover the easiest case; if you have created, copied, renamed or edited further files probably you have to handle with them, too. If PreLoader was your operational boot entry, you obviously also need to [#Disable Secure Boot](#Disable_Secure_Boot).
 
+### shim
+
+#### Set up shim
+
+[Install](/index.php/Install "Install") [shim-signed](https://aur.archlinux.org/packages/shim-signed/).
+
+Rename your current [boot loader](/index.php/Boot_loader "Boot loader") to `grubx64.efi`
+
+```
+# mv *esp*/EFI/BOOT/BOOTX64.efi *esp*/EFI/BOOT/grubx64.efi
+
+```
+
+Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous filename of your boot loader as as the filename for `shim.efi`:
+
+```
+# cp /usr/share/shim-signed/shim.efi *esp*/EFI/BOOT/BOOTX64.efi
+# cp /usr/share/shim-signed/MokManager.efi *esp*/EFI/BOOT/
+
+```
+
+*shim* can authenticate binaries by Machine Owner Key or hash stored in MoKList.
+
+	Machine Owner Key (MOK)
+
+	A key that a user generates and uses to sign an EFI binaries.
+
+	hash
+
+	A SHA256 hash of an EFI binary.
+
+Using hash is simpler, but each time you update your boot loader or kernel you will need to add their hashes in MokManager. With MOK you only need to add the key once, but you will have to sign the boot loader and kernel each time it updates.
+
+##### shim with hash
+
+If *shim* does not find the SHA256 hash of `grubx64.efi` in MoKList it will launch `MokManager.efi`.
+
+In *MokManager* select *Enroll hash from disk*, find `grubx64.efi` and add it to MokList. Repeat the steps and add your kernel `vmlinuz-linux`. When done select *Continue boot* and your boot loader will launch and it will be capable launching the kernel.
+
+##### shim with key
+
+Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
+
+You will need:
+
+	`.key`
+
+	PEM format **private** key for EFI binary signing.
+
+	`.crt`
+
+	PEM format certificate for *sbsign*.
+
+	`.cer`
+
+	DER format certificate for *MokManager*.
+
+Create a Machine Owner Key:
+
+```
+$ openssl req -newkey rsa:2048 -nodes -keyout MOK.key -new -x509 -sha256 -days *3650* -subj "/CN=*my Machine Owner Key*/" -out MOK.crt
+$ openssl x509 -outform DER -in MOK.crt -out MOK.cer
+
+```
+
+Sign your boot loader (named `grubx64.efi`) and kernel:
+
+```
+# sbsign --key MOK.key --cert MOK.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+# sbsign --key MOK.key --cert MOK.crt --output *esp*/EFI/BOOT/grubx64.efi *esp*/EFI/BOOT/grubx64.efi
+
+```
+
+You will need to do this each time they are updated.
+
+Copy `MOK.cer` to a FAT formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
+
+Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MoKList it will launch `MokManager.efi`.
+
+In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokList. When done select *Continue boot* and your boot loader will launch and it will be capable launching any binary signed with your Machine Owner Key.
+
+#### Remove shim
+
+[Uninstall](/index.php/Uninstall "Uninstall") [shim-signed](https://aur.archlinux.org/packages/shim-signed/), [remove](/index.php/Remove "Remove") the copied *shim* and *MokManager* files and rename back your boot loader.
+
 ## Using your own keys
 
 **Tip:**
@@ -139,19 +232,19 @@ Secure Boot implementations use these keys:
 
 	Platform Key (PK)
 
-	Top-level key
+	Top-level key.
 
 	Key Exchange Key (KEK)
 
-	Key used to sign signature databases or EFI binaries
+	Keys used to sign Signatures Database and Forbidden Signatures Database updates.
 
 	Signature Database (db)
 
-	Contains keys and/or hashes used to sign EFI binaries
+	Contains keys and/or hashes of allowed EFI binaries.
 
 	Forbidden Signatures Database (dbx)
 
-	Contains keys and/or hashes used to blacklist EFI binaries
+	Contains keys and/or hashes of blacklisted EFI binaries.
 
 See [The Meaning of all the UEFI Keys](http://blog.hansenpartnership.com/the-meaning-of-all-the-uefi-keys/) for a more detailed explanation.
 
@@ -165,51 +258,67 @@ To generate keys, [install](/index.php/Install "Install") [efitools](https://www
 
 You will need keys and certificates in multiple formats:
 
-1.  Create keys and **PEM** format certificates for `sbsign`
-2.  Convert certificates to **DER** format for firmware
-3.  Convert certificates to **EFI Signature List** for `KeyTool`
+	`.key`
+
+	PEM format **private** keys for EFI binary and EFI signature list signing.
+
+	`.crt`
+
+	PEM format certificates for *sbsign*.
+
+	`.cer`
+
+	DER format certificates for firmware.
+
+	`.esl`
+
+	Certificates in EFI Signature List for *KeyTool* and/or firmware.
+
+	`.auth`
+
+	Certificates in EFI Signature List with authentication header (i.e. a signed certificate update file) for *KeyTool* and/or firmware.
 
 Create a [GUID](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") for owner identification:
 
 ```
-$ uuidgen --random
+$ uuidgen --random > GUID.txt
 
 ```
 
 Platform key:
 
 ```
-$ openssl req -new -x509 -newkey rsa:2048 -subj "/CN=*my PK*/" -keyout PK.key -out PK.crt -days *3650* -nodes -sha256
+$ openssl req -newkey rsa:2048 -nodes -keyout PK.key -new -x509 -sha256 -days *3650* -subj "/CN=*my Platform Key*/" -out PK.crt
 $ openssl x509 -outform DER -in PK.crt -out PK.cer
-$ cert-to-efi-sig-list -g *GUID* PK.crt PK.esl
-$ sign-efi-sig-list -g *GUID* -k PK.key -c PK.crt PK PK.esl PK.auth
+$ cert-to-efi-sig-list -g "$(< GUID.txt)" PK.crt PK.esl
+$ sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt PK PK.esl PK.auth
 
 ```
 
 Sign an empty file to allow removing Platform Key:
 
 ```
-$ sign-efi-sig-list -g *GUID* -c PK.crt -k PK.key PK /dev/null rm_PK.auth
+$ sign-efi-sig-list -g "$(< GUID.txt)" -c PK.crt -k PK.key PK /dev/null rm_PK.auth
 
 ```
 
 Key Exchange Key:
 
 ```
-$ openssl req -new -x509 -newkey rsa:2048 -subj "/CN=*my KEK*/" -keyout KEK.key -out KEK.crt -days *3650* -nodes -sha256
+$ openssl req -newkey rsa:2048 -nodes -keyout KEK.key -new -x509 -sha256 -days *3650* -subj "/CN=*my Key Exchange Key*/" -out KEK.crt
 $ openssl x509 -outform DER -in KEK.crt -out KEK.cer
-$ cert-to-efi-sig-list -g *GUID* KEK.crt KEK.esl
-$ sign-efi-sig-list -g *GUID* -k PK.key -c PK.crt KEK KEK.esl KEK.auth
+$ cert-to-efi-sig-list -g "$(< GUID.txt)" KEK.crt KEK.esl
+$ sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt KEK KEK.esl KEK.auth
 
 ```
 
 Signature Database:
 
 ```
-$ openssl req -new -x509 -newkey rsa:2048 -subj "/CN=*my db*/" -keyout db.key -out db.crt -days *3650* -nodes -sha256
+$ openssl req -newkey rsa:2048 -nodes -keyout db.key -new -x509 -sha256 -days *3650* -subj "/CN=*my Signature Database*/" -out db.crt
 $ openssl x509 -outform DER -in db.crt -out db.cer
-$ cert-to-efi-sig-list -g *GUID* db.crt db.esl
-$ sign-efi-sig-list -g *GUID* -k KEK.key -c KEK.crt DB db.esl db.auth
+$ cert-to-efi-sig-list -g "$(< GUID.txt)" db.crt db.esl
+$ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
 
 ```
 
@@ -227,13 +336,16 @@ Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
 ```
 
-**Tip:** To check if a binary is signed and list its signatures use
+**Tip:**
+
+*   To check if a binary is signed and list its signatures use
+
 ```
 $ sbverify --list */path/to/binary*
 
 ```
 
-**Tip:** You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
+*   You can use [sbupdate-git](https://aur.archlinux.org/packages/sbupdate-git/) to automatically sign your kernels on update. This will also take care of embedding the otherwise unprotected initramfs and kernel command line into the signed UEFI image.
 
 ### Put firmware in "Setup Mode"
 

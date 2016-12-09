@@ -8,7 +8,8 @@
     *   [1.1 Scripted installation](#Scripted_installation)
         *   [1.1.1 Secure Boot](#Secure_Boot)
             *   [1.1.1.1 Using PreLoader](#Using_PreLoader)
-            *   [1.1.1.2 Using your own keys](#Using_your_own_keys)
+            *   [1.1.1.2 Using shim](#Using_shim)
+            *   [1.1.1.3 Using your own keys](#Using_your_own_keys)
     *   [1.2 Manual installation](#Manual_installation)
     *   [1.3 Upgrading](#Upgrading)
         *   [1.3.1 Pacman hook](#Pacman_hook)
@@ -21,7 +22,10 @@
 *   [4 Tools](#Tools)
     *   [4.1 UEFI shell](#UEFI_shell)
     *   [4.2 Memtest86](#Memtest86)
-    *   [4.3 KeyTool](#KeyTool)
+    *   [4.3 Key management tools](#Key_management_tools)
+        *   [4.3.1 HashTool](#HashTool)
+        *   [4.3.2 MokManager](#MokManager)
+        *   [4.3.3 KeyTool](#KeyTool)
     *   [4.4 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
     *   [4.5 iPXE](#iPXE)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -94,14 +98,41 @@ Execute `refind-install` with the option `--preloader */path/to/preloader*`
 
 ```
 
-The script will
-
-*   copy `PreLoader.efi` to `*esp*/EFI/refind/refind_x64.efi` or `*esp*/EFI/BOOT/BOOT_X64.EFI` if used with `--usedefault` option
-*   copy rEFInd binary as `loader.efi` to the same directory as PreLoader on ESP
-*   copy `HashTool.efi` to same directory as PreLoader on ESP
-*   setup boot entry with `efibootmgr` unless used with `--usedefault` option
-
 Next time you boot with Secure Boot enabled, HashTool will launch and you will need to register rEFInd (`loader.efi`) as a trusted application.
+
+See [refind-install(8)](http://www.rodsbooks.com/refind/refind-install.html) for more information.
+
+##### Using shim
+
+Read [Secure Boot#shim](/index.php/Secure_Boot#shim "Secure Boot"), but skip all file copying.
+
+To use only hashes with *shim*, execute `refind-install` with the option `--shim */path/to/shim*`
+
+```
+# refind-install --shim /usr/share/shim-signed/shim.efi
+
+```
+
+To sign rEFInd with Machine Owner Key, follow [Secure Boot#shim with key](/index.php/Secure_Boot#shim_with_key "Secure Boot") to create a key. Sign the kernel, but don't sign the boot loader, refind-install will do that.
+
+Create directory `/etc/refind.d/keys` and copy `MOK.key`, `MOK.crt` and `MOK.cer` to it, name them `refind_local.key`, `refind_local.crt` and `refind_local.cer`.
+
+Execute `refind-install` with the options `--shim */path/to/shim*` and `--localkeys`:
+
+```
+# refind-install --shim /usr/share/shim-signed/shim.efi --localkeys
+
+```
+
+**Tip:** If you run `refind-install` with the option `--localkeys` without creating the keys first, *refind-install* will create the keys for you. You can then sign the kernel with the same key, e.g.:
+```
+# sbsign --key /etc/refind.d/keys/refind_local.key --cert /etc/refind.d/keys/refind_local.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
+
+```
+
+Once in *MokManager* add `refind_local.cer` to MoKList. `refind_local.cer` can be found inside a directory called `keys` in the rEFInd's installation directory, e.g. `*esp*/EFI/refind/keys/refind_local.cer`.
+
+See [refind-install(8)](http://www.rodsbooks.com/refind/refind-install.html) for more information.
 
 ##### Using your own keys
 
@@ -117,8 +148,6 @@ When running install script add option `--localkeys`, e.g.:
 ```
 
 *rEFInd* EFI binary will be signed with supplied key and certificate.
-
-**Tip:** If you run `refind-install --localkeys` without creating the keys first, *refind-install* will create the keys for you.
 
 ### Manual installation
 
@@ -279,14 +308,14 @@ See [Using rEFInd](http://www.rodsbooks.com/refind/using.html).
  `*esp*/EFI/refind/refind.conf` 
 ```
 ...
-showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#KeyTool), [gdisk](#GPT_fdisk_.28gdisk.29), [netboot](#iPXE), ...
+showtools [shell](#UEFI_shell), [memtest](#Memtest86), [mok_tool](#Key_management_tools), [gdisk](#GPT_fdisk_.28gdisk.29), [netboot](#iPXE), ...
 ...
 
 ```
 
 ### UEFI shell
 
-See [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").
+See [Unified Extensible Firmware Interface#UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").
 
 Copy `shellx64.efi` to the root of the [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
@@ -299,7 +328,19 @@ Install [memtest86-efi](https://aur.archlinux.org/packages/memtest86-efi/) and c
 
 ```
 
-### KeyTool
+### Key management tools
+
+rEFInd can detect Secure Boot key management tools if they are placed in rEFInd's directory on ESP, `*esp*/` or `*esp*/EFI/tools/`.
+
+#### HashTool
+
+Follow [#Using PreLoader](#Using_PreLoader) and `HashTool.efi` will be placed rEFInd's directory.
+
+#### MokManager
+
+Follow [#Using shim](#Using_shim) and `MokManager.efi` will be placed rEFInd's directory.
+
+#### KeyTool
 
 Install [efitools](https://www.archlinux.org/packages/?name=efitools).
 

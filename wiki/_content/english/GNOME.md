@@ -68,6 +68,10 @@ These packages are not in the above mentioned groups:
 
 	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
 
+*   **GNOME MultiWriter** — Write an ISO file to multiple USB devices at once.
+
+	[https://wiki.gnome.org/Apps/MultiWriter](https://wiki.gnome.org/Apps/MultiWriter) || [gnome-multi-writer](https://www.archlinux.org/packages/?name=gnome-multi-writer)
+
 *   **GNOME PackageKit** — Collection of graphical tools for PackageKit to be used in the GNOME desktop.
 
 	[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
@@ -116,7 +120,7 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 **Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using *startx* and `~/.xinitrc`. For more information, see [Wayland](/index.php/Wayland "Wayland").
 
-The GNOME Shell Wayland compositor can be started by running `gnome-shell --wayland` in the command line. However, to take advantage of GNOME's session manager, one needs to create a [custom GNOME session](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_session "GNOME/Tips and tricks"). A desktop file is needed which specifies `gnome-shell --wayland` on the `Exec` line and a GNOME session file is needed which specifies the aforementioned desktop file as a required component (along with `gnome-settings-daemon`). If the session file you created was called `gnome-wayland.session` then you can start the session with `gnome-session --session=gnome-wayland`.
+The GNOME Shell Wayland compositor can be started by running `gnome-shell --wayland` in the command line. However, to take advantage of GNOME's session manager, one needs to create a [custom GNOME session](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks"). A desktop file is needed which specifies `gnome-shell --wayland` on the `Exec` line and a GNOME session file is needed which specifies the aforementioned desktop file as a required component (along with `gnome-settings-daemon`). If the session file you created was called `gnome-wayland.session` then you can start the session with `gnome-session --session=gnome-wayland`.
 
 ### GNOME applications in Wayland
 

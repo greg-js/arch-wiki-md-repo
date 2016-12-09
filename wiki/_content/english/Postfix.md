@@ -22,22 +22,23 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [4.2 See that you have received a email](#See_that_you_have_received_a_email)
 *   [5 Extra](#Extra)
     *   [5.1 PostfixAdmin](#PostfixAdmin)
-    *   [5.2 Secure SMTP](#Secure_SMTP)
-        *   [5.2.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
-        *   [5.2.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
-    *   [5.3 SpamAssassin](#SpamAssassin)
-        *   [5.3.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
-        *   [5.3.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
-        *   [5.3.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
-        *   [5.3.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
-        *   [5.3.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
-    *   [5.4 Using Razor](#Using_Razor)
-    *   [5.5 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
-    *   [5.6 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
-    *   [5.7 Rule-based mail processing](#Rule-based_mail_processing)
-    *   [5.8 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
-        *   [5.8.1 Resource Record](#Resource_Record)
-        *   [5.8.2 Configuration](#Configuration_2)
+    *   [5.2 Secure SMTP (sending)](#Secure_SMTP_.28sending.29)
+    *   [5.3 Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29)
+        *   [5.3.1 STARTTLS over SMTP (port 587)](#STARTTLS_over_SMTP_.28port_587.29)
+        *   [5.3.2 SMTPS (port 465)](#SMTPS_.28port_465.29)
+    *   [5.4 SpamAssassin](#SpamAssassin)
+        *   [5.4.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
+        *   [5.4.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
+        *   [5.4.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
+        *   [5.4.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+        *   [5.4.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
+    *   [5.5 Using Razor](#Using_Razor)
+    *   [5.6 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
+    *   [5.7 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+    *   [5.8 Rule-based mail processing](#Rule-based_mail_processing)
+    *   [5.9 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
+        *   [5.9.1 Resource Record](#Resource_Record)
+        *   [5.9.2 Configuration](#Configuration_2)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -50,7 +51,7 @@ The goal of this article is to setup Postfix and explain what the basic configur
 
 `/etc/postfix/master.cf` is the master configuration file where you can specify what kinds of protocols you will serve. It is also the place where you can put your new pipes e.g. to check for Spam!
 
-It is recommended to enable secure SMTP as described in [#Secure SMTP](#Secure_SMTP).
+It is recommended to enable secure SMTP as described in [#Secure SMTP (sending)](#Secure_SMTP_.28sending.29) and [#Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29).
 
 See [this page](http://www.postfix.org/TLS_README.html) for more information about encrypting outgoing and incoming email.
 
@@ -324,7 +325,15 @@ Include conf/extra/httpd-postfixadmin.conf
 
 **Note:** If you get a blank page check the syntax of the file with `php -l /etc/webapps/postfixadmin/config.inc.php`.
 
-### Secure SMTP
+### Secure SMTP (sending)
+
+By default, Postfix/sendmail will not send email encrypted to other SMTP servers. To use TLS when available, add the following line to `main.cf`:
+
+ `/etc/postfix/main.cf`  `smtp_tls_security_level = may` 
+
+To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`.
+
+### Secure SMTP (receiving)
 
 For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_README.html).
 

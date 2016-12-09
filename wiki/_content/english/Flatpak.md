@@ -21,6 +21,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/flatpak "wikipedia:flatpak"): "[F
 
 [Install](/index.php/Install "Install") the [flatpak](https://www.archlinux.org/packages/?name=flatpak) or [flatpak-git](https://aur.archlinux.org/packages/flatpak-git/) package.
 
+If you want to have desktop integration using [portals](https://github.com/flatpak/flatpak/wiki/Portals) you can install the [xdg-desktop-portal-gtk](https://aur.archlinux.org/packages/xdg-desktop-portal-gtk/) package.
+
 ## Managing repositories
 
 ### Add a repository

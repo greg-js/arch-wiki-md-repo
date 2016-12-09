@@ -182,9 +182,19 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 ### Client
 
-The `nfs-client.target` can be enabled if desired but this is not necessary as `/usr/bin/mount` will call it to start if needed.
+Users intending to use NFS4 with Kerberos, also need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`. However, due to bug [FS#50663](https://bugs.archlinux.org/task/50663) in glibc, `rpc-gssd.service` currently fails to start. Adding the "-f" (foreground) flag in the service is a workaround:
 
-Users intending to use NFS4 with Kerberos, also need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rpc-gssd.service`. Setting up `/etc/krb5.keytab /etc/krb5.conf` are beyond the scope of this article.
+ `# systemctl edit rpc-gssd.service` 
+```
+[Unit]
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=
+ExecStart=/usr/sbin/rpc.gssd -f
+```
 
 #### Error from systemd
 

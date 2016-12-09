@@ -32,7 +32,7 @@ This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinpu
 
 ### Audio
 
-Headphones through the headphone jack do not have any volume control and are always maxed using default PulseAudio configuration.
+The headphone jack always acts as SPDIF out and subsequently has no volume control and does not mute the speakers when a device is plugged in. [Link to a description of the issue on the ALSA mailing list](https://sourceforge.net/p/alsa/mailman/message/35292536/).
 
 ## Misc
 

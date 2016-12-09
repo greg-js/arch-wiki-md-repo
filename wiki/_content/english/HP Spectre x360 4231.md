@@ -4,6 +4,7 @@
 | Bluetooth | Working | bluetooth |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working |  ? |
+| Touchscreen | Working | hid_multitouch |
 | Webcam | Working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working, see issues | intel-hid |
@@ -22,7 +23,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [3 Tweaks](#Tweaks)
     *   [3.1 Brightness / backlight](#Brightness_.2F_backlight)
     *   [3.2 Gnome scaling](#Gnome_scaling)
-    *   [3.3 Video driver](#Video_driver)
+    *   [3.3 ICC screen calibration (enhanced brightness)](#ICC_screen_calibration_.28enhanced_brightness.29)
+    *   [3.4 Video driver](#Video_driver)
 *   [4 Issues](#Issues)
 
 ## Hardware info
@@ -126,6 +128,13 @@ xrandr --output eDP1 --panning 3200x1800
 ```
 
 Those commands should be executed in two steps tho. Gnome doesn't adjust size for sure each time. Setting those changes in an autostart script after login is not very reliable if some other programs are started at the same time. Even adding some sleep does not improve reliability to an acceptable level. Testing will be continued since this is a perfect resolution.
+
+### ICC screen calibration (enhanced brightness)
+
+By default the screen colors are well balanced. Default brightness is a major issue: it equals the enormous bright maximum. The scripts described in chapter Brightness / backlight provide some basic brightness control. Unfortunately there is still some brightness reset to maximum on certain events. This can be circumvented by applying an appropriate [ICC calibration profile](/index.php/ICC_profiles "ICC profiles").
+Generating such profile requires a colorimeter and [displaycal](https://www.archlinux.org/packages/?name=displaycal) (which is based on [argyllcms](https://www.archlinux.org/packages/?name=argyllcms)). Gnome offers some color calibration [gnome-color-calibration](https://www.archlinux.org/packages/?name=gnome-color-calibration) as well. Unfortunately Gnome color calibration crashes when using a x-rite Colormunki Display.
+[ICC profiles](/index.php/ICC_profiles "ICC profiles") can be obtained from AUR: [icc-x360-qhd](https://aur.archlinux.org/packages/icc-x360-qhd/). Those profiles have been created on a 4231 model (see hardware options for details). Since there are only a few screen manufacturers those ICC profiles should be valid for all QHD (2560x1440) screen models. Be advised to not apply those profiles on any other (incompatible) screen.
+The profile is currently based on 406 patches only. Improved profiles will be made available in a later update. Main advantage of applying such profile is the default brightness used. The 120 cdm² profil is best for regular enviroments. Use system settings to apply the profiles.
 
 ### Video driver
 

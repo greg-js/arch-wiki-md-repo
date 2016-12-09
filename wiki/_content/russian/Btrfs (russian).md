@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Btrfs](/index.php/Btrfs "Btrfs"). Дата последней синхронизации: 30 октября 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Btrfs&diff=0&oldid=455472).
+**Состояние перевода:** На этой странице представлен перевод статьи [Btrfs](/index.php/Btrfs "Btrfs"). Дата последней синхронизации: 7 Декабря 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Btrfs&diff=0&oldid=458333).
 
 Из [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs"):
 
@@ -29,8 +29,7 @@
         *   [4.3.2 Просмотр подтомов](#.D0.9F.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.BE.D0.B2)
         *   [4.3.3 Удаление подтома](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0)
         *   [4.3.4 Монтирование подтомов](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.BE.D0.B2)
-            *   [4.3.4.1 Опции монтирования](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
-        *   [4.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
+        *   [4.3.5 Изменение подтома по умолчанию](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.B0_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E)
     *   [4.4 Commit Interval](#Commit_Interval)
     *   [4.5 SSD TRIM](#SSD_TRIM)
 *   [5 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
@@ -48,9 +47,10 @@
     *   [6.2 Файл подкачки (Swap)](#.D0.A4.D0.B0.D0.B9.D0.BB_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8_.28Swap.29)
     *   [6.3 Ядро Linux-rt](#.D0.AF.D0.B4.D1.80.D0.BE_Linux-rt)
 *   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Corruption recovery](#Corruption_recovery)
-    *   [7.2 Загрузка в снимки с помощью GRUB](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.81.D0.BD.D0.B8.D0.BC.D0.BA.D0.B8_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_GRUB)
-    *   [7.3 Использование подтомов Btrfs с systemd-nspawn](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.BE.D0.B2_Btrfs_.D1.81_systemd-nspawn)
+    *   [7.1 Checksum hardware acceleration](#Checksum_hardware_acceleration)
+    *   [7.2 Corruption recovery](#Corruption_recovery)
+    *   [7.3 Загрузка в снимки с помощью GRUB](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0_.D0.B2_.D1.81.D0.BD.D0.B8.D0.BC.D0.BA.D0.B8_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_GRUB)
+    *   [7.4 Использование подтомов Btrfs с systemd-nspawn](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D1.82.D0.BE.D0.BC.D0.BE.D0.B2_Btrfs_.D1.81_systemd-nspawn)
 *   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [8.1 GRUB](#GRUB)
         *   [8.1.1 Смещение разделов](#.D0.A1.D0.BC.D0.B5.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
@@ -156,7 +156,7 @@ Finally [balance](#Balance) the file system to reclaim the space.
 
 ### Копирование при записи (CoW)
 
-By default, Btrfs uses [Wikipedia:copy-on-write](https://en.wikipedia.org/wiki/copy-on-write "wikipedia:copy-on-write") for all files all the time. See [the Btrfs Sysadmin Guide section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Copy_on_Write_.28CoW.29) for implementation details, as well as advantages and disadvantages.
+По умолчанию, Btrfs использует [Копирование при записи](https://en.wikipedia.org/wiki/ru:%D0%9A%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%B8_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8 "wikipedia:ru:Копирование при записи") для всех файлов постоянно. Чтобы узнать как это реализовано и какие есть преимущества и недостатки, смотрите [the Btrfs Sysadmin Guide section](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Copy_on_Write_.28CoW.29).
 
 #### Отключение CoW
 
@@ -225,7 +225,7 @@ See the following links for more details:
 
 #### Создание подтома
 
-To create a subvolume:
+Чтобы создать подтом:
 
 ```
 # btrfs subvolume create */path/to/subvolume*
@@ -234,41 +234,35 @@ To create a subvolume:
 
 #### Просмотр подтомов
 
-To see a list of current subvolumes under `*path*`:
+Чтобы просмотреть список текущих подтомов по `*пути*`:
 
 ```
-# btrfs subvolume list -p *path*
+# btrfs subvolume list -p *путь*
 
 ```
 
 #### Удаление подтома
 
-To delete a subvolume:
+Для удаления подтома:
 
 ```
 # btrfs subvolume delete */path/to/subvolume*
 
 ```
 
-Attempting to remove the directory `*/path/to/subvolume*` without using the above command will not delete the subvolume.
+Попытка удалить каталог `*/путь/к/подтому*` без использования указанной выше команды не удалит подтом.
 
 #### Монтирование подтомов
 
-Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named `subvol_root` and mount it as `/`. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them at the appropriate mount points. Thus one can easily restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
+Subvolumes can be mounted like file system partitions using the `subvol=*/path/to/subvolume*` or `subvolid=*objectid*` mount flags. For example, you could have a subvolume named `subvol_root` and mount it as `/`. One can mimic traditional file system partitions by creating various subvolumes under the top level of the file system and then mounting them at the appropriate mount points. Thus one can restore a file system (or part of it) to a previous state easily using [#Snapshots](#Snapshots).
 
 **Совет:** Changing subvolume layouts is made simpler by not using the toplevel subvolume (ID=5) as `/` (which is done by default). Instead, consider creating a subvolume to house your actual data and mounting it as `/`.
 
+**Примечание:** "Most mount options apply to the **whole filesystem**, and only the options for the first subvolume to be mounted will take effect. This is due to lack of implementation and may change in the future." [[3]](https://btrfs.wiki.kernel.org/index.php/Mount_options) See the [Btrfs Wiki FAQ](https://btrfs.wiki.kernel.org/index.php/FAQ#Can_I_mount_subvolumes_with_different_mount_options.3F) for which mount options can be used per subvolume.
+
 See [Snapper#Suggested filesystem layout](/index.php/Snapper#Suggested_filesystem_layout "Snapper"), [Btrfs SysadminGuide#Managing Snapshots](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Managing_Snapshots), and [Btrfs SysadminGuide#Layout](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Layout) for example file system layouts using subvolumes.
 
-##### Опции монтирования
-
-When mounting subvolumes with `subvol=` several mount options are available. For example, mount options that affect [#Compression](#Compression) or [#Copy-On-Write (CoW)](#Copy-On-Write_.28CoW.29) can be used.
-
-See [Btrfs Wiki Mount options](https://btrfs.wiki.kernel.org/index.php/Mount_options) and [Btrfs Wiki Gotchas](https://btrfs.wiki.kernel.org/index.php/Gotchas) for more information. In addition to configurations that can be made during or after file system creation, the various mount options for Btrfs can drastically change its performance characteristics. As this is a file system that is still in active development, changes and regressions should be expected. See links in the [#See also](#See_also) section for some benchmarks.
-
-**Важно:** Specific mount options can disable safety features and increase the risk of complete file system corruption.
-
-#### Changing the default sub-volume
+#### Изменение подтома по умолчанию
 
 The default sub-volume is mounted if no `subvol=` mount option is provided. To change the default subvolume, do:
 
@@ -296,15 +290,13 @@ System-wide settings also affect commit intervals. They include the files under 
 
 ### SSD TRIM
 
-Файловая система Btrfs может освобождать неиспользуемые блоки на диске SSD, поддерживающего команду TRIM.
-
-Больше информации о задействовании и использовании TRIM можно найти в разделе [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
+Файловая система Btrfs способна освобождать неиспользуемые блоки из SSD-диска, поддерживающего команду TRIM. Больше информации о задействовании и использовании TRIM можно найти в разделе [Solid State Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives").
 
 ## Использование
 
 ### Показать использованное/свободное место
 
-General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition since it does not take into account space allocated for and used by the metadata. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
+General linux userspace tools such as `/usr/bin/df` will inaccurately report free space on a Btrfs partition. It is recommended to use `/usr/bin/btrfs` to query a Btrfs partition. Below is an illustration of this effect, first querying using `df -h`, and then using `btrfs filesystem df`:
 
  `$ df -h /` 
 ```
@@ -371,14 +363,14 @@ The [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary) says
 
 ##### Start manually
 
-To start a scrub for the subvolume mounted at root do:
+To start a (background) scrub on the filesystem which contains `/`:
 
 ```
 # btrfs scrub start /
 
 ```
 
-To check the status of the scrub do:
+To check the status of a running scrub:
 
 ```
 # btrfs scrub status /
@@ -393,7 +385,9 @@ You can also run the scrub by [starting](/index.php/Starting "Starting") `btrfs-
 
 #### Balance
 
-"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[4]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+"A balance passes all data in the filesystem through the allocator again. It is primarily intended to rebalance the data in the filesystem across the devices when a device is added or removed. A balance will regenerate missing copies for the redundant RAID levels, if a device has failed." [[5]](https://btrfs.wiki.kernel.org/index.php/Glossary) See [Upstream FAQ page](https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F).
+
+On a single-device filesystem a balance may be also useful for (temporarily) reducing the amount of allocated but unused (meta)data chunks. Sometimes this is needed for fixing ["filesystem full" issues](https://btrfs.wiki.kernel.org/index.php/FAQ#Help.21_Btrfs_claims_I.27m_out_of_space.2C_but_it_looks_like_I_should_have_lots_left.21).
 
 ```
 # btrfs balance start /
@@ -414,7 +408,7 @@ To create a snapshot:
 
 To create a readonly snapshot add the `-r` flag. To create writable version of a readonly snapshot, simply create a snapshot of it.
 
-**Примечание:** Snapshots are not recursive. Every sub-volume inside sub-volume will be an empty directory inside the snapshot.
+**Примечание:** Snapshots are not recursive. Every nested subvolume will be an empty directory inside the snapshot.
 
 ### Отправить / получить
 
@@ -436,7 +430,7 @@ You can also send only the difference between two snapshots. For example, if you
 
 Now a new subvolume named `root_backup_new` will be present in `/backup`.
 
-See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) on how to use this for an incremental backup and for tools that automate the process.
+See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) on how to use this for an incremental backups and for tools that automate the process.
 
 ## Известные проблемы
 
@@ -450,13 +444,21 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 
 ### Файл подкачки (Swap)
 
-Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs does not have for possibility of file system corruption [[5]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[6]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
+Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs does not have for possibility of file system corruption [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[7]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
 
 ### Ядро Linux-rt
 
 As of version 3.14.12_rt9, the [linux-rt](/index.php/Kernel#-rt "Kernel") kernel does not boot with the Btrfs file system. This is due to the slow development of the *rt* patchset.
 
 ## Tips and tricks
+
+### Checksum hardware acceleration
+
+Verify if Btrfs checksum is hardware accelerated:
+
+ `$ dmesg | grep crc32c`  `Btrfs loaded, crc32c=crc32c-intel` 
+
+If you see `crc32c=crc32c-generic`, it is probably because your root partition is Btrfs, and you will have to compile crc32c-intel into kernel to make it work. Note: put `crc32c-intel` into mkinitcpio.conf does NOT work.
 
 ### Corruption recovery
 
@@ -492,7 +494,7 @@ See the [Btrfs Problem FAQ](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ)
 
 **Примечание:** The offset problem may happen when you try to embed `core.img` into a partitioned disk. It means that [it is OK](https://wiki.archlinux.org/index.php?title=Talk:Btrfs&diff=319474&oldid=292530) to embed grub's `core.img` into a Btrfs pool on a partitionless disk (e.g. `/dev/sd*X*`) directly.
 
-[GRUB](/index.php/GRUB "GRUB") can boot Btrfs partitions however the module may be larger than other [file systems](/index.php/File_systems "File systems"). And the `core.img` file made by `grub-install` may not fit in the first 63 sectors (31.5KiB) of the drive between the MBR and the first partition. Up-to-date partitioning tools such as `fdisk` and `gdisk` avoid this issue by offsetting the first partition by roughly 1MiB or 2MiB.
+[GRUB](/index.php/GRUB "GRUB") can boot Btrfs partitions, however the module may be larger than other [file systems](/index.php/File_systems "File systems"). And the `core.img` file made by `grub-install` may not fit in the first 63 sectors (31.5KiB) of the drive between the MBR and the first partition. Up-to-date partitioning tools such as `fdisk` and `gdisk` avoid this issue by offsetting the first partition by roughly 1MiB or 2MiB.
 
 #### Отсутствует root
 

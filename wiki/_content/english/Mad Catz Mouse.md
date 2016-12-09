@@ -7,7 +7,7 @@ Mad Catz produces a series of gaming mice, for example the Saitek Cyborg R.A.T.3
 *   [3 The Disable Button Solution](#The_Disable_Button_Solution)
 *   [4 RAT7 or RAT9 Partial Fix](#RAT7_or_RAT9_Partial_Fix)
 *   [5 Manual Button Mapping Fix](#Manual_Button_Mapping_Fix)
-*   [6 RAT9 configuration](#RAT9_configuration)
+*   [6 R.A.T. configuration software](#R.A.T._configuration_software)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -202,13 +202,13 @@ To work correctly, it is important to that you identify the correct "ButtonMappi
 
 For any any modifications to xorg.conf take effect, X must be restarted.
 
-## RAT9 configuration
+## R.A.T. configuration software
 
-Saitek does not provide official configuration software for Linux.
+Saitek/Mad Catz does not provide any official configuration software for Linux.
 
-There is however open source project which allows you to configure DPI settings and modes [here](https://github.com/MayeulC/Saitek).
+There is however open an source project which allows you to configure DPI settings for each and mode [here](https://github.com/MayeulC/Saitek).
 
-With some tweaking it probably works for other R.A.T. mouses.
+It might however require some tweaking for certain R.A.T. mice, such as adding your mouse ID to the list of supported IDs.
 
 ## See also
 

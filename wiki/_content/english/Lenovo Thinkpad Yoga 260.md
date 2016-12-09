@@ -26,7 +26,7 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Audio | **Working** | snd_hda_intel |
 | Touchscreen | **Working** | wacom |
 | Stylus | **Partial** ¹ | wacom,usbhid |
-| Accelerometer | **Not Working** |
+| Accelerometer | **Working in Linux 4.9** | hid_sensor_accel_3d |
 | Touchpad | **Working** | psmouse |
 | Trackpoint | **Working** | psmouse |
 | Camera | **Working** | uvcvideo |

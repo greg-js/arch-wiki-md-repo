@@ -332,7 +332,7 @@ Section "Screen"
     Option         "TwinView" "0"
     SubSection "Display"
         Depth          24
-        Modes          "1980x1080_60.00"
+        Modes          "1920x1080_60.00"
     EndSubSection
 EndSection
 
@@ -344,7 +344,7 @@ Section "Screen"
     Option         "TwinView" "0"
     SubSection "Display"
         Depth          24
-        Modes          "1980x1080_60.00"
+        Modes          "1920x1080_60.00"
     EndSubSection
 EndSection
 

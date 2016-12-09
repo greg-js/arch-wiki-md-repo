@@ -200,8 +200,6 @@ There are no negative coordinates, the setup's leftmost and highest possibly tar
 
 ## Xinerama
 
-**Warning:** As of August 2013, Xinerama is broken when using the proprietary NVIDIA driver from 319 upwards. Users wishing to use Xinerama with the NVIDIA driver should use the NVIDIA 313 driver, which works only with Linux kernels earlier than 3.10\. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=163319) for more information.
-
 [Xinerama](https://en.wikipedia.org/wiki/Xinerama "wikipedia:Xinerama") is the old way of doing genuine multihead X. Xinerama combines all monitors into a single screen (`:0`) making it possible to drag windows between screens.
 
 Xinerama is configured via custom [X configuration files](/index.php/Xorg#Configuration "Xorg"). Here are some examples:

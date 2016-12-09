@@ -20,7 +20,7 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 
 Classes are announced on arch-general, the forums, and other broadcasting places like twitter. A list is given below for easy viewing.
 
-| **Date and Time** | **Class Title** | **Instructor(s)** | **Announcement(S)** |
+| **Date and Time** | **Class Title** | **Instructor(s)** | **Announcement(s)** |
 | 2016-12-11 19:00 UTC | *Getting started with Arch Linux package building* | halosghost and meskarune |
 
 ### Previous classes

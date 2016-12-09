@@ -64,8 +64,6 @@ The following are examples of common scenarios of full system encryption with *d
 
 Securing a root filesystem is where *dm-crypt* excels, feature and performance-wise. Unlike selectively encrypting non-root filesystems, an encrypted root filesystem can conceal information such as which programs are installed, the usernames of all user accounts, and common data-leakage vectors such as [mlocate](/index.php/Mlocate "Mlocate") and `/var/log/`. Furthermore, an encrypted root filesystem makes tampering with the system far more difficult, as everything except the [boot loader](/index.php/Boot_loader "Boot loader") and (usually) the kernel is encrypted.
 
-In any scenario, **never** use directly on the drive file system repair softwares (like [fsck](/index.php/Fsck "Fsck")) on an encrypted drive. You will lose your files. Those tools will destroy any means to recover the key used to encrypt your files.
-
 All scenarios illustrated in the following share these advantages, other pros and cons differentiating them are summarized below:
 
 | Scenarios | Advantages | Disadvantages |
@@ -171,6 +169,8 @@ See [Dm-crypt/Drive preparation#Partitioning](/index.php/Dm-crypt/Drive_preparat
 Another area to consider is whether to set up an encrypted swap partition and what kind. See [Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") for alternatives.
 
 If you anticipate to protect the system's data not only against physical theft, but also have a requirement of precautions against logical tampering, see [Dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") for further possibilities after following one of the scenarios.
+
+**Warning:** In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
 
 ## Simple partition layout with LUKS
 

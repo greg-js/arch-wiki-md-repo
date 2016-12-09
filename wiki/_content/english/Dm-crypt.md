@@ -20,8 +20,6 @@ See [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_
 
 See [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system") if you want to encrypt an entire system, in particular a root partition. Several scenarios are covered, including the use of *dm-crypt* with the *LUKS* extension, *plain* mode encryption and encryption and *LVM*.
 
-In any scenario, **never** use any general file system repair software (like [fsck](/index.php/Fsck "Fsck")) on an encrypted drive. You will lose your files. Those tools will destroy any means to recover the key used to encrypt your files.
-
 ## Drive preparation
 
 [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") deals with operations like [securely erasing the drive](/index.php/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive "Dm-crypt/Drive preparation") and *dm-crypt* specific points for [partitioning it](/index.php/Dm-crypt/Drive_preparation#Partitioning "Dm-crypt/Drive preparation").

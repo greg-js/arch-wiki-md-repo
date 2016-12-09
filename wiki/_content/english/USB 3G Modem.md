@@ -10,11 +10,12 @@ A number of mobile telephone networks around the world offer mobile internet con
     *   [4.2 pppd](#pppd)
     *   [4.3 wvdial](#wvdial)
     *   [4.4 netctl](#netctl)
-    *   [4.5 sakis3g](#sakis3g)
-    *   [4.6 Low connection speed](#Low_connection_speed)
-        *   [4.6.1 QoS parameter](#QoS_parameter)
-        *   [4.6.2 Baud parameter](#Baud_parameter)
-    *   [4.7 Monitor used bandwith](#Monitor_used_bandwith)
+    *   [4.5 libmbim](#libmbim)
+    *   [4.6 sakis3g](#sakis3g)
+    *   [4.7 Low connection speed](#Low_connection_speed)
+        *   [4.7.1 QoS parameter](#QoS_parameter)
+        *   [4.7.2 Baud parameter](#Baud_parameter)
+    *   [4.8 Monitor used bandwith](#Monitor_used_bandwith)
 *   [5 Reading SMS](#Reading_SMS)
     *   [5.1 command line script](#command_line_script)
 *   [6 Fix image quality](#Fix_image_quality)
@@ -83,16 +84,7 @@ See main article: [wvdial](/index.php/Wvdial "Wvdial")
 
 ### netctl
 
-Netctl can be used to establish a connection using a USB modem. To bring up the modem you can use `mbim-network`. First create a profile for mbim-network.
-
- `/etc/mbim-network.conf`  `APN=Broadband` Now connect to the network with `# mbim-network /dev/cdc-wdmX start` . Then bring up the interface and get an ip address:
-```
-# ip link set wwanY up
-# dhcpcd wwanY
-
-```
-
-An example configuration file provided by [netctl](https://www.archlinux.org/packages/?name=netctl) is located at `/etc/netctl/examples/mobile_ppp`. Minimally you will probably have to specify
+Netctl can be used to establish a connection using a USB modem. An example configuration file provided by [netctl](https://www.archlinux.org/packages/?name=netctl) is located at `/etc/netctl/examples/mobile_ppp`. Minimally you will probably have to specify
 
  `/etc/netctl/mobile_ppp` 
 ```
@@ -104,6 +96,17 @@ AccessPointName=Broadband
 ```
 
 See the [netctl](/index.php/Netctl "Netctl") article and [netctl.profile](https://github.com/joukewitteveen/netctl/blob/master/docs/netctl.profile.5.txt) for more information.
+
+### libmbim
+
+Install `libmbim` from the official repositories. To bring up the modem you can use `mbim-network` which is a wrapper for `mmcli` calls. First create a profile for mbim-network.
+
+ `/etc/mbim-network.conf`  `APN=Broadband` Now connect to the network with `# mbim-network /dev/cdc-wdmX start` . Then bring up the interface and get an ip address:
+```
+# ip link set wwanY up
+# dhcpcd wwanY
+
+```
 
 ### sakis3g
 

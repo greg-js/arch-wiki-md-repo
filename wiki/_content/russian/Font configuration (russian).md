@@ -1,10 +1,10 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Font configuration](/index.php/Font_configuration "Font configuration"). Дата последней синхронизации: 18 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=426368).
+**Состояние перевода:** На этой странице представлен перевод статьи [Font configuration](/index.php/Font_configuration "Font configuration"). Дата последней синхронизации: 7 Декабря 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Font_configuration&diff=0&oldid=455396).
 
 [Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/) - это библиотека, разработанная для предоставления списка доступных [шрифтов](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fonts (Русский)") приложениям, а также для настройки того, как шрифты будут отображены: смотрите [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig"). Библиотека FreeType [freetype2](https://www.archlinux.org/packages/?name=freetype2) отображает (рендерит) шрифты, основываясь на этих настройках.
 
 Хотя Fontconfig является стандартом в современном Linux, некоторые приложения полагаются на оригинальном способе отбора шрифтов и отображения, в [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description").
 
-Пакеты отображения шрифтов на Arch Linux включает в себя поддержку *freetype2* с включенным переводчиком байт-кода (BCI). Для лучшего отоброжения шрифтов, особенно на ЖК-мониторах, см [#Настройка Fontconfig](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Fontconfig) и [Настройка шрифтов/Примеры](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B "Настройка шрифтов/Примеры").
+Пакеты отображения шрифтов на Arch Linux включает в себя поддержку *freetype2* с включенным переводчиком байт-кода (BCI). Для лучшего отображения шрифтов, особенно на ЖК-мониторах, см [#Настройка Fontconfig](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_Fontconfig) и [Настройка шрифтов/Примеры](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B "Настройка шрифтов/Примеры").
 
 ## Contents
 
@@ -50,7 +50,7 @@ $ fc-list : file
 
 ```
 
-Для больших выводных форматов, сомтрите `man fc-list`.
+Для больших выводных форматов, смотрите `man fc-list`.
 
 Проверьте известные пути шрифтов Xorg, посмотрев свой журнал:
 
@@ -132,12 +132,12 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ### Anti-aliasing (сглаживание)
 
-[Растеризация шрифтов](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") преобразует данные векторного шрифта в растровые, так что они могут быть отображены. В результате могут появиться ступеньки/зубцы, из-за [наложения (алиасинга)](https://en.wikipedia.org/wiki/ru:%D0%90%D0%BB%D0%B8%D0%B0%D1%81%D0%B8%D0%BD%D0%B3 "wikipedia:ru:Алиасинг"). [Анти-алиасинг/сглаживание (Anti-aliasing)](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") включен по умолчанию и увеличивает видимое разрешение краев шрифта.
+[Растеризация шрифтов](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") преобразует данные векторного шрифта в растровые, так что они могут быть отображены. В результате могут появиться ступеньки/зубцы, из-за [наложения (алиасинга)](https://en.wikipedia.org/wiki/ru:%D0%90%D0%BB%D0%B8%D0%B0%D1%81%D0%B8%D0%BD%D0%B3 "wikipedia:ru:Алиасинг"). Методика известна как [Анти-алиасинг/сглаживание (Anti-aliasing)](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing"), и может быть использована для повышения разрешения видимых краев шрифта. Сглаживание **включено (true)** по умолчанию. Для того, чтобы отключить его:
 
 ```
   <match target="font">
     <edit name="antialias" mode="assign">
-      <bool>true</bool>
+      <bool>false</bool>
     </edit>
   </match>
 
@@ -151,12 +151,12 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 #### Байт-код Переводчик (Byte-Code Interpreter, BCI)
 
-Использование хинтинга BCI. Инструкции в шрифтах TrueType предоставляются в соответствии с интерпретатором FreeTypes. Хинтинг BCI прекрасно работает со шрифтами с хорошими инструкциями хинтинга. Чтобы включить хинтинг:
+Использование хинтинга BCI. Инструкции в шрифтах TrueType предоставляются в соответствии с интерпретатором FreeTypes. Хинтинг BCI прекрасно работает со шрифтами с хорошими инструкциями хинтинга. По умолчанию хинтинг **включен (enabled)**. Для его отключения:
 
 ```
   <match target="font">
     <edit name="hinting" mode="assign">
-      <bool>true</bool>
+      <bool>false</bool>
     </edit>
   </match>
 
@@ -164,7 +164,7 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 #### Autohinter (Авто Хинтинг)
 
-Autohinter пытается сделать автоматический хинтинг и игнорирует существующую информацию хинтинга. Первоначально это было по умолчанию, поскольку шрифты TrueType2 были защищены патентом, но теперь срок патентов истёк, и там очень мало оснований, чтобы использовать Авто Хинтинг. Это лучше работает со шрифтами, которые поломанные или не содержат информацию по хинтингу, но это будет не оптимально для шрифтов с хорошей информацией хинтинга. К распространённым шрифтам Авто Хинтинг в дальейшем не будет полезным. Чтобы включить Авто Хинтинг:
+Autohinter пытается сделать автоматический хинтинг и игнорирует существующую информацию хинтинга. Первоначально это было по умолчанию, поскольку шрифты TrueType2 были защищены патентом, но теперь срок патентов истёк, и там очень мало оснований, чтобы использовать Авто Хинтинг. Это лучше работает со шрифтами, которые поломанные или не содержат информацию по хинтингу, но это будет не оптимально для шрифтов с хорошей информацией хинтинга. К распространённым шрифтам Авто Хинтинг в дальейшем не будет полезным. По умолчанию автохинтинг **отключен (disabled)**. Чтобы его включить:
 
 ```
   <match target="font">
@@ -177,12 +177,12 @@ Autohinter пытается сделать автоматический хинт
 
 #### Hintstyle (Стиль Хинтинга)
 
-Hintstyle это сумма изменений шрифта, сделанных чтобы выстроить его по пиксельной сетке. Значения хинтинга: `hintnone`(без хинтинга), `hintslight`(лёгкий хинтинг), `hintmedium`(средний хинтинг), и `hintfull`(полный хинтинг). `hintslight` сделает шрифт более нечётким выстраивая по сетке, но сохранит лучше форму шрифта, в то время как `hintfull` сделает чётким шрифт, выровняет хорошо по пиксельной сетке, но больше потеряет форму шрифта. Предпочтения различаются.
+Hintstyle это сумма изменений шрифта, сделанных чтобы выстроить его по пиксельной сетке. Значения хинтинга: `hintnone`(без хинтинга), `hintslight`(лёгкий хинтинг), `hintmedium`(средний хинтинг), и `hintfull`(полный хинтинг). `hintslight` сделает шрифт более нечётким выстраивая по сетке, но сохранит лучше форму шрифта, в то время как `hintfull` сделает чётким шрифт, выровняет хорошо по пиксельной сетке, но больше потеряет форму шрифта. **`hintslight`** установлен по умолчанию. Для того, чтобы изменить его:
 
 ```
   <match target="font">
     <edit name="hintstyle" mode="assign">
-      <const>hintfull</const>
+      <const>hintnone</const>
     </edit>
   </match>
 
@@ -205,7 +205,7 @@ Hintstyle это сумма изменений шрифта, сделанных 
 
 ```
 
-**Примечание:** Субпиксельное отображение эффективно утраивает горизонтальное (или вертикальное) разрешение для шрифтов путем использования субпикселей. По умолчанию, автохинтинг и субпиксельное отображение не предназначены для совместной работы, следовательно, вы захотите включить субпиксельный автохинтинг Infinality и др. собранный Freetype2 с [the <tt>TT_CONFIG_OPTION_SUBPIXEL_HINTING</tt> macro](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/0003-Enable-subpixel-hinting.patch?h=9867afd). Тем не менее, оно должно быть включено путем установки любого значения FT2_SUBPIXEL_HINTING в [переменных окружениях](/index.php/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F "Переменные окружения") [FS#35274](https://bugs.archlinux.org/task/35274)
+**Примечание:** Subpixel rendering effectively triples the horizontal (or vertical) resolution for fonts by making use of subpixels. The default autohinter and subpixel rendering are not designed to work together, hence you will want to enable the subpixel autohinter. Prior to [freetype2](https://www.archlinux.org/packages/?name=freetype2) 2.7, the subpixel hinting mode was configurable with the `FT2_SUBPIXEL_HINTING` [environment variable](/index.php/Environment_variable "Environment variable"). Possible values were `0` (disabled), `1` (Infinality) and `2` (minimal). From [freetype2](https://www.archlinux.org/packages/?name=freetype2) 2.7, subpixel hinting uses upstream's configuration method, which has a different syntax. Subpixel hinting mode configured in the file `/etc/profile.d/freetype2.sh` which includes a brief documentation. Possible values are `truetype:interpreter-version=35` (classic mode/2.6 default), `truetype:interpreter-version=38` ("Infinality" mode), `truetype:interpreter-version=40` (minimal mode/2.7 default).
 
 #### LCD filter (ЖК-фильтр)
 
@@ -215,7 +215,7 @@ Hintstyle это сумма изменений шрифта, сделанных 
 
 ```
   <match target="font">
-    <edit mode="assign" name="lcdfilter">
+      <edit name="lcdfilter" mode="assign">
       <const>lcddefault</const>
     </edit>
   </match>
@@ -479,8 +479,8 @@ hinting: True(s)
  `~/.Xresources` 
 ```
 Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintslight
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
@@ -528,7 +528,9 @@ Xft.dpi:	102
 
 ### Calibri, Cambria, Monaco, и т. д. не отображаются правильно
 
-Некоторые масштабируемые шрифты имеют встроенные растровые версии, которые предоставляются, главным образом, при меньших размерах. Принудительно используйте масштабируемые шрифты на всех размерах с помощью [#Отключения растровых шрифтов](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B2.D1.8B.D1.85_.D1.88.D1.80.D0.B8.D1.84.D1.82.D0.BE.D0.B2).
+Некоторые масштабируемые шрифты имеют встроенные растровые версии, которые предоставляются, главным образом, при меньших размерах. В этом случае использование [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts") в качестве замены, может улучшить отображение.
+
+You can also force using scalable fonts at all sizes by [disabling embedded bitmap](#Disable_bitmap_fonts), sacrificing some rendering quality.
 
 ### Приложения переопределяют hinting
 
@@ -596,3 +598,4 @@ helvR12-ISO8859-1.pcf.gz: "Helvetica" "Regular"
 *   [Fonts in X11R6.8.2](http://www.x.org/X11R6.8.2/doc/fonts.html) - Официальная информаци по шрифтам Xorg (Англ.)
 *   [обзор FreeType 2 (Англ.)](http://freetype.sourceforge.net/freetype2/)
 *   [Дискуссия Gentoo об отображении шрифтов (Англ.)](https://forums.gentoo.org/viewtopic-t-723341.html)
+*   [On slight hinting](http://www.freetype.org/freetype2/docs/text-rendering-general.html)

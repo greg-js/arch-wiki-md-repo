@@ -3,7 +3,7 @@ In networking, tunneling is using a protocol of higher level (in our case HTTP) 
 ## Contents
 
 *   [1 Creating the tunnel](#Creating_the_tunnel)
-    *   [1.1 Using corscrew and HTTP CONNECT](#Using_corscrew_and_HTTP_CONNECT)
+    *   [1.1 Using corkscrew and HTTP CONNECT](#Using_corkscrew_and_HTTP_CONNECT)
         *   [1.1.1 Tunneling Git](#Tunneling_Git)
     *   [1.2 Using httptunnel](#Using_httptunnel)
     *   [1.3 Using proxytunnel](#Using_proxytunnel)
@@ -12,7 +12,7 @@ In networking, tunneling is using a protocol of higher level (in our case HTTP) 
 
 ## Creating the tunnel
 
-### Using corscrew and HTTP CONNECT
+### Using corkscrew and HTTP CONNECT
 
 To open the connection to the server running the SSH daemon we will use the HTTP CONNECT method which allows a client to connect to a server through an HTTP proxy by sending an HTTP CONNECT request to this proxy.
 

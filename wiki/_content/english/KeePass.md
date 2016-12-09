@@ -21,7 +21,7 @@ There are two major implementations of KeePass, both of which are included in of
 
 *   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application *Keepass Password Safe*. The new version [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) is compatible with 2.x database formats, but can import 1.x databases. One may also import PwManager databases and KWallet XML databases.
 
-	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) [keepassx-reboot](https://aur.archlinux.org/packages/keepassx-reboot/) [keepassx-reboot-git](https://aur.archlinux.org/packages/keepassx-reboot-git/)
+	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) [keepassxc](https://aur.archlinux.org/packages/keepassxc/) [keepassxc-git](https://aur.archlinux.org/packages/keepassxc-git/)
 
 Other lesser known implementations are found in the AUR:
 
@@ -51,7 +51,7 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 
 ```
 
-**Note:** KeePassX does not support plugins on its master branch (at the moment of writing KeePassX version is 0.4.4 and KeePassX2 version is 2.0.2). An alternative is to use global autotype feature. If plugins are absolutely necessary, [keepassx-reboot](https://aur.archlinux.org/packages/keepassx-reboot/) supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as [ChromeIPass](https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) and [PassIFox](https://addons.mozilla.org/en-US/firefox/addon/passifox/).
+**Note:** KeePassX does not support plugins on its master branch (at the moment of writing KeePassX version is 0.4.4 and KeePassX2 version is 2.0.2). An alternative is to use global autotype feature. If plugins are absolutely necessary, [keepassxc](https://aur.archlinux.org/packages/keepassxc/) supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as [ChromeIPass](https://chrome.google.com/webstore/detail/chromeipass/ompiailgknfdndiefoaoiligalphfdae) and [PassIFox](https://addons.mozilla.org/en-US/firefox/addon/passifox/).
 
 ### Firefox
 

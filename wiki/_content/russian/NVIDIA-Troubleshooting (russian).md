@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [NVIDIA/Troubleshooting](/index.php/NVIDIA/Troubleshooting "NVIDIA/Troubleshooting"). Дата последней синхронизации: 23 марта 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=NVIDIA/Troubleshooting&diff=0&oldid=427261).
+**Состояние перевода:** На этой странице представлен перевод статьи [NVIDIA/Troubleshooting](/index.php/NVIDIA/Troubleshooting "NVIDIA/Troubleshooting"). Дата последней синхронизации: 9 Декабря 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=NVIDIA/Troubleshooting&diff=0&oldid=455924).
 
 Смотрите главную статью [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)").
 
@@ -23,9 +23,12 @@
 *   [16 X fails with "no screens found" with Intel iGPU](#X_fails_with_.22no_screens_found.22_with_Intel_iGPU)
 *   [17 Xorg fails during boot, but otherwise starts fine](#Xorg_fails_during_boot.2C_but_otherwise_starts_fine)
 *   [18 Flash video players crashes](#Flash_video_players_crashes)
-*   [19 Override EDID](#Override_EDID)
-*   [20 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
-*   [21 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
+*   [19 xrandr BadMatch](#xrandr_BadMatch)
+*   [20 Override EDID](#Override_EDID)
+*   [21 Overclocking with nvidia-settings GUI not working](#Overclocking_with_nvidia-settings_GUI_not_working)
+*   [22 Avoid screen tearing](#Avoid_screen_tearing)
+    *   [22.1 Avoid screen tearing in KDE (KWin)](#Avoid_screen_tearing_in_KDE_.28KWin.29)
+*   [23 Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8](#Modprobe_Error:_.22Could_not_insert_.27nvidia.27:_No_such_device.22_on_linux_.3E.3D4.8)
 
 ## Wayland (gdm) рушится после установки nvidia-libgl
 
@@ -335,6 +338,12 @@ If you are getting frequent crashes of Flash video players, try to switch off Ha
 
 (This problem appeared after installing the proprietary nvidia driver, and was fixed by changing this setting.)
 
+## xrandr BadMatch
+
+If you are trying to configure a WQHD monitor such as DELL U2515H using [xrandr](/index.php/Xrandr "Xrandr") and `xrandr --addmode` gives you the error `X Error of failed request: BadMatch`, it might be because the proprietary NVIDIA driver clips the pixel clock maximum frequency of HDMI output to 225 MHz or lower. To set the monitor to maximum resolution you have to install [nouveau](/index.php/Nouveau "Nouveau") drivers. You can force nouveau to use a specific pixel clock frequency by setting `nouveau.hdmimhz=297` (or `330`) in your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+
+Alternatively, it may be that your monitor's EDID is incorrect. See [#Override EDID](#Override_EDID).
+
 ## Override EDID
 
 If your monitor is providing wrong EDID information, the nvidia-driver will pick a very small solution. Nvidia's driver options change, this guide refers to nvidia 346.47-11.
@@ -376,9 +385,23 @@ Section "Screen"
 EndSection
 ```
 
+Alternatively, it may be that your monitor's EDID is actually correct and the driver does not trust it. To force it to use the EDID anyway, set the `IgnoreEDIDChecksum` option for the X11 Device.
+
+**Warning:** If the EDID is actually incorrect, ignoring the checksum could cause hardware damage. Only attempt this if you know for a fact that the monitor's mode is correctly detected in some case (e.g. different OS, different driver, different output).
+
+```
+Section "Device"
+    Identifier "Device0"
+    Driver "nvidia"
+    Option "IgnoreEDIDChecksum" "*displayName*"
+EndSection
+```
+
+where `*displayName*` is the name of the display device e.g. `DFP-4`. You can find the display device name in your Xorg log; it is *not* the same as the output name (e.g. `DVI-I-0`) that you would see in [Xrandr](/index.php/Xrandr "Xrandr") output.
+
 ## Overclocking with nvidia-settings GUI not working
 
-Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [#Enabling overclocking](#Enabling_overclocking) ). `man nvidia-settings` for more information.
+Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"). `man nvidia-settings` for more information.
 
 Example to query all variables:
 
@@ -401,7 +424,38 @@ Example to set multiple variables at once(Overclock on performance level [3] by 
 
 ```
 
-## Avoid screen tearing in KDE (KWin)
+## Avoid screen tearing
+
+Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, type
+
+```
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+
+```
+
+This however has been reported to reduce the performance of some OpenGL applications and may produce issues in WebGL.
+
+In order to make the change permanent, it must be added to the `"Screen"` section of your Xorg configuration file. When making this change, `TripleBuffering` should be enabled and `AllowIndirectGLXProtocol` should be disabled in the driver configuration as well. See example configuration below:
+
+**Warning:** MetaMode "extra attributes" in Xorg configuration files seem to be broken at the moment and might keep X from starting. Use the command line tool instead until this is fixed: [https://devtalk.nvidia.com/default/topic/950647/linux/black-screen-with-367-35/2](https://devtalk.nvidia.com/default/topic/950647/linux/black-screen-with-367-35/2)
+ `/etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "Screen"
+    Identifier     "Screen0"
+    Option         "metamodes" "nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+EndSection
+
+```
+
+If you do not have an Xorg configuration file, you can create one for your present hardware using `nvidia-xconfig` (see [NVIDIA#Automatic configuration](/index.php/NVIDIA#Automatic_configuration "NVIDIA")) and move it from `/etc/X11/xorg.conf` to the preferred location `/etc/X11/xorg.conf.d/20-nvidia.conf`.
+
+**Note:** Many of the configuration options produced in `20-nvidia.conf` by using `nvidia-xconfig` are set automatically by the driver and are not needed. To only use this file for enabling composition pipeline, only the section `"Screen"` containing lines with values for `Identifier` and `Option` are necessary. Other sections may be removed from this file.
+
+**Tip:** Multi monitor setups using different model monitors may have slightly different refresh rates. If vsync is enabled by the driver it will sync to only one of these refresh rates which can cause the appearance of screen tearing on incorrectly synced monitors. Select to sync the display device which is the primarily used monitor as others will not sync properly. This is configurable in `~/.nvidia-settings-rc` as `0/XVideoSyncToDisplayID=` or by installing [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) and using the graphical configuration options.
+
+### Avoid screen tearing in KDE (KWin)
 
  `/etc/profile.d/kwin.sh` 
 ```
@@ -417,4 +471,52 @@ export KWIN_TRIPLE_BUFFER=1
 
 ```
 
-Do not have both of the above enabled at the same time. Also if you enable triple buffering make sure to enable TripleBuffering for the driver itself. Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)
+**Warning:** Do not have both of the above enabled at the same time.
+
+If you enable triple buffering make sure to enable `TripleBuffering` for the driver itself.
+
+ `/etc/X11/xorg.conf or /etc/X11/xorg.conf.d/20-nvidia.conf` 
+```
+Section "Device"
+    [...]
+    Option         "TripleBuffer" "True"
+    [...]
+EndSection
+
+```
+
+Also make sure to select OpenGL >= 2.0 as rendering backend under Systemsettings > Display and Monitor > Compositor.
+
+In some cases neither of the above fixes work. A possible fix is to configure [ForceFullCompositionPipeline](#Avoid_screen_tearing).
+
+Source: [https://bugs.kde.org/show_bug.cgi?id=322060](https://bugs.kde.org/show_bug.cgi?id=322060)
+
+## Modprobe Error: "Could not insert 'nvidia': No such device" on linux >=4.8
+
+With linux 4.8, one can get the following errors when trying to use the discrete card:
+
+ `$ modprobe nvidia -vv` 
+```
+modprobe: INFO: custom logging function 0x409c10 registered
+modprobe: INFO: Failed to insert module '/lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz': No such device
+modprobe: ERROR: could not insert 'nvidia': No such device
+modprobe: INFO: context 0x24481e0 released
+insmod /lib/modules/4.8.6-1-ARCH/extramodules/nvidia.ko.gz 
+
+```
+ `$ dmesg` 
+```
+...
+NVRM: The NVIDIA GPU 0000:01:00.0 (PCI ID: 10de:139b)
+NVRM: installed in this system is not supported by the 370.28
+NVRM: NVIDIA Linux driver release.  Please see 'Appendix
+NVRM: A - Supported NVIDIA GPU Products' in this release's
+NVRM: README, available on the Linux driver download page
+NVRM: at www.nvidia.com.
+...
+
+```
+
+This problem is caused by bad commits pertaining to PCIe power management in the Linux Kernel (as documented in [this NVIDIA DevTalk thread](https://devtalk.nvidia.com/default/topic/971733/-370-28-with-kernel-4-8-on-gt-2015-machines-driver-claims-card-not-supported-if-nvidia-is-not-primary-card/)).
+
+The workaround is to add `pcie_port_pm=off` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Note that this disables PCIe power management for all devices.

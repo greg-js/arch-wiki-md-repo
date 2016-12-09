@@ -170,7 +170,7 @@ You can store the documentation locally by installing the [openjdk8-doc](https:/
 
 ### Crash on first boot or when choosing *Help > Welcome*
 
-Add the following line to `/usr/share/eclipse/eclipse.ini`:
+Add the following line to `/usr/lib/eclipse/eclipse.ini`:
 
 ```
 -Dorg.eclipse.swt.browser.UseWebKitGTK=true
@@ -252,7 +252,7 @@ SWT_GTK3=0 eclipse
 
 ```
 
-Another option to achieve the same effect is to add the follwoing to `/usr/lib/eclipse/eclipse.ini`.
+Another option to achieve the same effect is to add the following to `/usr/lib/eclipse/eclipse.ini`.
 
 ```
 --launcher.GTK_version

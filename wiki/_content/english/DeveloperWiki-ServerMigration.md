@@ -106,3 +106,6 @@ NOTE: Talk to heftig about server specs before ordering.
 
 *   Migrate patchwork. Reference: [https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md](https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md)
     *   Add automatic updates when patches are pushed to a repo (at the bottom of the above link)
+
+*   Set up intel AMT for serial over lan (some/most of the new server should have it)
+    *   probably requires enabling it in BIOS

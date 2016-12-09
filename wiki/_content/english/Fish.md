@@ -66,6 +66,8 @@ Context-aware completions for Arch Linux-specific commands like *pacman*, *pacma
 
 Fish does not implement history substitution (e.g. `sudo !!`), and the fish developers have said that they [do not plan to](http://fishshell.com/docs/current/faq.html#faq-history). Still, this is an essential piece of many users' workflow. Reddit user, [crossroads1112](http://www.reddit.com/u/crossroads1112), created a function that regains some of the functionality of history substitution and with another syntax. The function is on [github](https://gist.github.com/crossroads1112/77badb2c3455e23b873b) and instructions are included as comments in it. There is a [forked version](https://gist.github.com/b-/981892a65837ab0a387e) that is closer to the original syntax and allows for `command !!` if you specify the command in the helper function.
 
+Other alternatives to regaining the `command !!` syntax can be found on [Fish' github wiki](https://github.com/fish-shell/fish-shell/wiki/Bash-Style-History-Substitution-%28%21%21-and-%21%24%29). The examples here include e.g. the `bind_bang` function which expands `!!` to the latest command in the history (this will of course make it impossible to do to bangs in a row as they will expand). Another option is the command given on [this github issue](https://github.com/fish-shell/fish-shell/issues/288#issuecomment-158704275).
+
 ## Tips and tricks
 
 ### Not setting fish as default shell
@@ -76,7 +78,7 @@ In Arch, some shell scripts are written for [Bash](/index.php/Bash "Bash") and a
 
 Keep your default shell as Bash and simply add the line `exec fish` to the appropriate [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash"), such as `.bashrc`. This will allow Bash to properly source `/etc/profile` and all files in `/etc/profile.d`. Because *fish* replaces the bash process, exiting *fish* will also exit the terminal. Compared to the following options, this is the most universal solution, since it works both on a local machine and on an SSH server.
 
-**Tip:** Use `bash --norc` to enter bash manually without dropping to fish after setting up as above.
+**Tip:** Use `bash` to enter bash manually without dropping to fish after setting up as above.
 
 #### Use terminal emulator options
 

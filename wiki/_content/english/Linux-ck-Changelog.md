@@ -1,3 +1,14 @@
+**Bump to v4.8.13-2**
+
+*   Changelog: Add net_handle_no_dst_on_skb_in_icmp6_send.patch from Arch upstream
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=a209d3f04799921d0bc5c2bbb482439f67ea07a2](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=a209d3f04799921d0bc5c2bbb482439f67ea07a2)
+
+**Bump to v4.8.13-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.13](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.13)
+*   Commit1: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=1597b1d85c2813d59eea59170b14eb36db0d70e1](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=1597b1d85c2813d59eea59170b14eb36db0d70e1)
+*   Commit2: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=0bc2e1617d2fb8142aebb3109e4cd3b1796be777](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=0bc2e1617d2fb8142aebb3109e4cd3b1796be777)
+
 **Bump to v4.8.12-2**
 
 *   Changelog: Security patch fix following Arch upstream.

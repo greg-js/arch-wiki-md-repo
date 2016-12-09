@@ -454,11 +454,11 @@ As of version 3.14.12_rt9, the [linux-rt](/index.php/Kernel#-rt "Kernel") kernel
 
 ### Checksum hardware acceleration
 
-Verify if Btrfs checksum is hardware accelerated:
+To verify if Btrfs checksum is hardware accelerated:
 
  `$ dmesg | grep crc32c`  `Btrfs loaded, crc32c=crc32c-intel` 
 
-If you see `crc32c=crc32c-generic`, it is probably because your root partition is Btrfs, and you will have to compile crc32c-intel into kernel to make it work. Note: put `crc32c-intel` into mkinitcpio.conf does NOT work.
+If you see `crc32c=crc32c-generic`, it is probably because your root partition is Btrfs, and you will have to compile crc32c-intel into the kernel to make it work. Putting `crc32c-intel` into [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") does *not* work.
 
 ### Corruption recovery
 
