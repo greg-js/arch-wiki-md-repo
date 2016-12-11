@@ -102,7 +102,7 @@ $ alsamixer -c 0
 
 ### Output stuck muted while Master is toggled
 
-In setups with multiple outputs (e.g. 'Headphone' and 'Speaker') using plain amixer to toggle Master can trigger PulseAudio to mute the active output too, but it does not necessarily unmute it when Master is toggled back to be unmuted. To resolve this, amixer must have the device flag set to 'pulse':
+In setups with multiple outputs (e.g. 'Headphone' and 'Speaker') using plain amixer to toggle Master can trigger PulseAudio to mute the active output too, but it does not necessarily unmute it when Master is toggled back to be unmuted. [[1]](https://lists.freedesktop.org/archives/pulseaudio-discuss/2015-December/025062.html) To resolve this, amixer must have the device flag set to 'pulse':
 
 ```
 $ amixer -D pulse sset Master toggle
@@ -705,7 +705,7 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that does not work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
 
-Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
+Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
 
  `/etc/pulse/default.pa` 
 ```
@@ -958,7 +958,7 @@ As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) o
 
 The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
 
-See also [[2]](https://bbs.archlinux.org/viewtopic.php?id=135955).
+See also [[3]](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
@@ -1166,4 +1166,4 @@ load-module module-stream-restore restore_device=false
 
 ### RTP/UDP packet flood
 
-In some cases the default configuration might flood the network with UDP packets.[[3]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[4]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+In some cases the default configuration might flood the network with UDP packets.[[4]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[5]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

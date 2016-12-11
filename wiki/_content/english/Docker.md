@@ -1,4 +1,4 @@
-[Docker](http://www.docker.io) is a utility to pack, ship and run any application as a lightweight container.
+[Docker](https://www.docker.com) is a utility to pack, ship and run any application as a lightweight container.
 
 ## Contents
 
@@ -73,7 +73,7 @@ $ newgrp docker
 
 ### Storage driver
 
-Storage driver, a.k.a. graph driver has huge impact on performance. It's job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The default, most compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
+Storage driver, a.k.a. graph driver has huge impact on performance. Its job is to store layers of container images efficiently, that is when several images share a layer, only one layer uses disk space. The default, most compatible option, `devicemapper` offers suboptimal performance, which is outright terrible on rotating disks. Additionally, `devicemappper` is not recommended in production.
 
 As Arch linux ships new kernels, there's no point using the compatibility option. A good, modern choice is `overlay2`.
 

@@ -172,7 +172,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Ristretto** — Fast and lightweight image viewer for the Xfce desktop environment.
 
-	[http://goodies.xfce.org/projects/applications/ristretto](http://goodies.xfce.org/projects/applications/ristretto) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
+	[http://docs.xfce.org/apps/ristretto/start](http://docs.xfce.org/apps/ristretto/start) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
 
 *   **Shotwell** — A digital photo organizer designed for the GNOME desktop environment
 
@@ -684,7 +684,7 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 *   **Bitwig Studio** — Proprietary professional digital audio workstation.
 
-	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio-demo](https://aur.archlinux.org/packages/bitwig-studio-demo/)
+	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio](https://aur.archlinux.org/packages/bitwig-studio/)
 
 *   **Gnac** — Audio converter for GNOME.
 

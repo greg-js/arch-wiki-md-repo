@@ -44,6 +44,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### December 2016
 
+*   [10 December 2016] [ASA-201612-11](https://lists.archlinux.org/pipermail/arch-security/2016-December/000787.html) [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) denial of service
+*   [10 December 2016] [ASA-201612-10](https://lists.archlinux.org/pipermail/arch-security/2016-December/000786.html) [linux](https://www.archlinux.org/packages/?name=linux) denial of service
 *   [06 December 2016] [ASA-201612-9](https://lists.archlinux.org/pipermail/arch-security/2016-December/000785.html) [jasper](https://www.archlinux.org/packages/?name=jasper) multiple issues
 *   [06 December 2016] [ASA-201612-8](https://lists.archlinux.org/pipermail/arch-security/2016-December/000784.html) [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) privilege escalation
 *   [06 December 2016] [ASA-201612-7](https://lists.archlinux.org/pipermail/arch-security/2016-December/000783.html) [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) privilege escalation

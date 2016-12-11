@@ -1,4 +1,4 @@
-**Note:** After upgrading to systemd, syslog-ng is unnecessary for users who can be satisfied by journalctl and can be uninstalled for those.
+**Note:** With systemd's journal, syslog-ng is not needed by most users.
 
 ## Contents
 

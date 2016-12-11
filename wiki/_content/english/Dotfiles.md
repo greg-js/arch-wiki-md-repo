@@ -50,6 +50,10 @@ $ git commit -a
 
 	[https://github.com/pearl-core/pearl](https://github.com/pearl-core/pearl) || [pearl-git](https://aur.archlinux.org/packages/pearl-git/)
 
+*   **rcm** — Can be used to symlink dotfiles from a repository into the $HOME tree.
+
+	[https://github.com/thoughtbot/rcm](https://github.com/thoughtbot/rcm) || [rcm](https://aur.archlinux.org/packages/rcm/)
+
 *   **vcsh** — Allows separating differents modules (e.g., Emacs config vs. zsh config) into individual repositories which can be maintained separately, as opposed to keeping all dotfiles in a single repository. Works with git only.
 
 	[https://github.com/RichiH/vcsh](https://github.com/RichiH/vcsh) || [vcsh](https://aur.archlinux.org/packages/vcsh/)

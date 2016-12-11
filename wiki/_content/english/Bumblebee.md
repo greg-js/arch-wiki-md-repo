@@ -38,7 +38,7 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [7.7 Video tearing](#Video_tearing)
     *   [7.8 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
     *   [7.9 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
-    *   [7.10 Primusrun mouse delay/disable VSYNC](#Primusrun_mouse_delay.2Fdisable_VSYNC)
+    *   [7.10 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
     *   [7.11 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
     *   [7.12 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
     *   [7.13 Optirun doesn't work, no debug output](#Optirun_doesn.27t_work.2C_no_debug_output)
@@ -652,7 +652,7 @@ If you mistakenly had the display connected to the discrete graphics card and in
 
 See [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
 
-### Primusrun mouse delay/disable VSYNC
+### Primusrun mouse delay (disable VSYNC)
 
 For `primusrun`, `VSYNC` is enabled by default and as a result, it could make mouse input delay lag or even slightly decrease performance. Test `primusrun` with `VSYNC` disabled:
 
@@ -661,20 +661,15 @@ $ vblank_mode=0 primusrun glxgears
 
 ```
 
-If you want to keep using it, install [optiprime](https://aur.archlinux.org/packages/optiprime/) package, which provides a script for above command. Usage:
+If you are satisfied with the above setting, create an [alias](/index.php/Alias "Alias") (e.g. `alias primusrun="vblank_mode=0 primusrun"`).
 
-```
-$ optiprime glxgears
+Performance comparison:
 
-```
+| VSYNC enabled | FPS | Score | Min FPS | Max FPS |
+| FALSE | 31.5 | 793 | 22.3 | 54.8 |
+| TRUE | 31.4 | 792 | 18.7 | 54.2 |
 
-Comparison:
-
-| Command | FPS | Score | Min FPS | Max FPS |
-| optiprime unigine-heaven | 31.5 | 793 | 22.3 | 54.8 |
-| primusrun unigine-heaven | 31.4 | 792 | 18.7 | 54.2 |
-
-*Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/).*
+*Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") notebook and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/).*
 
 **Note:** To disable vertical synchronization system-wide, see [Intel graphics#Disable Vertical Synchronization (VSYNC)](/index.php/Intel_graphics#Disable_Vertical_Synchronization_.28VSYNC.29 "Intel graphics").
 

@@ -34,7 +34,7 @@ Apache is often used together with a scripting language such as PHP and database
 
 Apache configuration files are located in `/etc/httpd/conf`. The main configuration file is `/etc/httpd/conf/httpd.conf`, which includes various other configuration files. The default configuration file should be fine for a simple setup. By default, it will serve the directory `/srv/http` to anyone who visits your website.
 
-To start Apache, start `httpd.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
+To start Apache, start `httpd.service` using [systemd](/index.php/Systemd#Using_units "Systemd").
 
 Apache should now be running. Test by visiting [http://localhost/](http://localhost/) in a web browser. It should display a simple index page.
 
@@ -321,7 +321,7 @@ AddHandler php7-script php
 
 ```
 
-Restart `httpd.service` [using systemd](/index.php/Systemd#Using_units "Systemd")
+Restart `httpd.service` using [systemd](/index.php/Systemd#Using_units "Systemd").
 
 To test whether PHP was correctly configured: create a file called `test.php` in your Apache `DocumentRoot` directory (e.g. `/srv/http/` or `~/public_html`) with the following contents:
 
@@ -455,7 +455,7 @@ Include conf/extra/php7_module.conf
 
 Follow the instructions in [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP").
 
-When configuration is complete, [restart](/index.php/Restart "Restart") `httpd.service` to apply all the changes.
+When configuration is complete, restart `httpd.service` to apply all the changes.
 
 ### HTTP2
 

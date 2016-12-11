@@ -30,17 +30,18 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Accessing kodi logs](#Accessing_kodi_logs)
     *   [3.2 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [3.3 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
-    *   [3.4 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
-    *   [3.5 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
-    *   [3.6 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [3.7 Using ALSA](#Using_ALSA)
-    *   [3.8 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
-    *   [3.9 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [3.10 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-        *   [3.10.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.10.2 Right Click Menu Key](#Right_Click_Menu_Key)
-        *   [3.10.3 USB DAC not working](#USB_DAC_not_working)
+    *   [3.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
+    *   [3.4 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
+    *   [3.5 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
+    *   [3.6 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
+    *   [3.7 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [3.8 Using ALSA](#Using_ALSA)
+    *   [3.9 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
+    *   [3.10 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
+    *   [3.11 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
+        *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+        *   [3.11.2 Right Click Menu Key](#Right_Click_Menu_Key)
+        *   [3.11.3 USB DAC not working](#USB_DAC_not_working)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -447,6 +448,12 @@ In case of an error the first point to start investigation can be `~/.kodi/temp/
 ### CLI tool for kodi
 
 A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many task from library management to querying what is currently playing.
+
+### Enable Hardware video acceleration
+
+Enable and configure [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to speed up playback performance.
+
+Restart Kodi and enable the hardware backend(s) in Playback under Settings.
 
 ### Fullscreen mode stretches Kodi across multiple displays
 

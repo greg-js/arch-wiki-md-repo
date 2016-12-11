@@ -714,6 +714,7 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 *   If the router is considerably older than the wireless device you use for the client, test if it works with setting the router to one wireless mode
 *   Disable mixed-mode authentication (e.g. only WPA2 with AES, or TKIP if the router is old)
 *   Try a fixed/free channel rather than "auto" channel (maybe the router next door is old and interfering)
+*   Disable WPS
 *   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
 *   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
 

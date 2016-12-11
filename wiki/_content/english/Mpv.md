@@ -252,13 +252,13 @@ $ mpv --vf=vapoursynth=f3k_db.py <video_file>
 
 ### Fix jerky playback and tearing
 
-mpv defaults to using the opengl video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the xv (XVideo) video output device may help.
+mpv defaults to using the OpenGL video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the XV (XVideo) video output device may help:
 
  `~/.config/mpv/mpv.conf`  `vo=xv` 
 
-It is possible to increase decoding performance (especially on lower hardware), but this may affect the video quality. See the [configuration section](/index.php/Mpv#Configuration "Mpv") for information about the available options.
+It is possible to increase playback performance even more (especially on lower hardware), but this decreases the video quality dramatically in most cases.
 
-The following options can be considered to increase video performance:
+The following [options](/index.php/Mpv#Configuration "Mpv") may be considered to increase the video playback performance:
 
  `~/.config/mpv/mpv.conf` 
 ```

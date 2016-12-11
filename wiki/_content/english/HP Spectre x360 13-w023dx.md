@@ -3,7 +3,7 @@
 | Wireless | Working | iwlwifi |
 | Bluetooth | Working | bluetooth |
 | Audio | Partially working | snd_hda_intel |
-| Touchpad | Working with issues |  ? |
+| Touchpad | Working with tweaks |  ? |
 | Webcam | Working | uvcvideo |
 
 This article covers hardware specific configuration of this laptop, some minor issues remain after customization. These can be performed after an installation of Arch Linux has been finished and the machine rebooted into it.
@@ -77,4 +77,6 @@ In best case scenario just one speaker is going to work. There's a bug for that:
 
 ### Touchpad
 
-Synaptics touchpad works but fails to detect palm, which causes problems when typing. Dell XPS13 had similar issue and they fixed it, but HP is not going to do that. Refer to [https://github.com/advancingu/XPS13Linux/issues/3](https://github.com/advancingu/XPS13Linux/issues/3)
+When using synaptics X11 drivers touchpad works but fails to detect palm, which causes problems when typing. Dell XPS13 had similar issue and they fixed it, but HP is not going to do that. Refer to [https://github.com/advancingu/XPS13Linux/issues/3](https://github.com/advancingu/XPS13Linux/issues/3)
+
+When using libinput drivers palm detection works out of the box.

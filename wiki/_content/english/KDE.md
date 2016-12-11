@@ -34,66 +34,66 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [5.1 Baloo](#Baloo)
         *   [5.1.1 Using and configuring Baloo](#Using_and_configuring_Baloo)
         *   [5.1.2 How do I index a removable device?](#How_do_I_index_a_removable_device.3F)
-    *   [5.2 Web browsers](#Web_browsers)
-        *   [5.2.1 Konqueror and Rekonq](#Konqueror_and_Rekonq)
-        *   [5.2.2 Chromium and Chrome](#Chromium_and_Chrome)
-        *   [5.2.3 Firefox](#Firefox)
-        *   [5.2.4 Qupzilla](#Qupzilla)
-*   [6 PIM](#PIM)
-    *   [6.1 Akonadi](#Akonadi)
-        *   [6.1.1 Installation](#Installation_2)
-        *   [6.1.2 Disabling Akonadi](#Disabling_Akonadi)
-        *   [6.1.3 Database configuration](#Database_configuration)
-            *   [6.1.3.1 MariaDB/MySQL](#MariaDB.2FMySQL)
-                *   [6.1.3.1.1 Using ZFS](#Using_ZFS)
-            *   [6.1.3.2 PostgreSQL](#PostgreSQL)
-            *   [6.1.3.3 SQLite](#SQLite)
-*   [7 Phonon](#Phonon)
-    *   [7.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
-*   [8 Useful applications](#Useful_applications)
-    *   [8.1 Yakuake](#Yakuake)
-    *   [8.2 KDE Telepathy](#KDE_Telepathy)
-        *   [8.2.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
-*   [9 Tips and tricks](#Tips_and_tricks)
-    *   [9.1 Using an alternative window manager](#Using_an_alternative_window_manager)
-        *   [9.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
-        *   [9.1.2 Compiz custom](#Compiz_custom)
-        *   [9.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
-    *   [9.2 Integrate Android](#Integrate_Android)
-    *   [9.3 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
-    *   [9.4 Speed up application startup](#Speed_up_application_startup)
-    *   [9.5 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
-    *   [9.6 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
-    *   [9.7 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
-*   [10 Troubleshooting](#Troubleshooting)
-    *   [10.1 Configuration related](#Configuration_related)
-        *   [10.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
-        *   [10.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
-    *   [10.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
-    *   [10.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
-    *   [10.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
-    *   [10.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
-    *   [10.6 KF5/Qt5 applications don't display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_don.27t_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [10.7 Graphical related problems](#Graphical_related_problems)
-        *   [10.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
-        *   [10.7.2 Applications don't refresh properly](#Applications_don.27t_refresh_properly)
-        *   [10.7.3 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
-            *   [10.7.3.1 GPU driver problem](#GPU_driver_problem)
-            *   [10.7.3.2 The Raster engine workaround](#The_Raster_engine_workaround)
-        *   [10.7.4 Low 3D desktop performance](#Low_3D_desktop_performance)
-        *   [10.7.5 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
-        *   [10.7.6 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [10.7.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
-    *   [10.8 Sound problems under KDE](#Sound_problems_under_KDE)
-        *   [10.8.1 ALSA related problems](#ALSA_related_problems)
-            *   [10.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
-            *   [10.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [10.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
-    *   [10.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [10.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
-    *   [10.12 Multi-monitor issues](#Multi-monitor_issues)
-*   [11 Unstable releases](#Unstable_releases)
-*   [12 See also](#See_also)
+*   [6 Web browsers](#Web_browsers)
+    *   [6.1 Konqueror and Rekonq](#Konqueror_and_Rekonq)
+    *   [6.2 Chromium and Chrome](#Chromium_and_Chrome)
+    *   [6.3 Firefox](#Firefox)
+    *   [6.4 Qupzilla](#Qupzilla)
+*   [7 PIM](#PIM)
+    *   [7.1 Akonadi](#Akonadi)
+        *   [7.1.1 Installation](#Installation_2)
+        *   [7.1.2 Disabling Akonadi](#Disabling_Akonadi)
+        *   [7.1.3 Database configuration](#Database_configuration)
+            *   [7.1.3.1 MariaDB/MySQL](#MariaDB.2FMySQL)
+                *   [7.1.3.1.1 Using ZFS](#Using_ZFS)
+            *   [7.1.3.2 PostgreSQL](#PostgreSQL)
+            *   [7.1.3.3 SQLite](#SQLite)
+*   [8 Phonon](#Phonon)
+    *   [8.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
+*   [9 Useful applications](#Useful_applications)
+    *   [9.1 Yakuake](#Yakuake)
+    *   [9.2 KDE Telepathy](#KDE_Telepathy)
+        *   [9.2.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
+*   [10 Tips and tricks](#Tips_and_tricks)
+    *   [10.1 Using an alternative window manager](#Using_an_alternative_window_manager)
+        *   [10.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
+        *   [10.1.2 Compiz custom](#Compiz_custom)
+        *   [10.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
+    *   [10.2 Integrate Android](#Integrate_Android)
+    *   [10.3 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
+    *   [10.4 Speed up application startup](#Speed_up_application_startup)
+    *   [10.5 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
+    *   [10.6 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
+    *   [10.7 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 Configuration related](#Configuration_related)
+        *   [11.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
+        *   [11.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
+    *   [11.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
+    *   [11.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
+    *   [11.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
+    *   [11.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
+    *   [11.6 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [11.7 Graphical related problems](#Graphical_related_problems)
+        *   [11.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
+        *   [11.7.2 Applications do not refresh properly](#Applications_do_not_refresh_properly)
+        *   [11.7.3 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
+            *   [11.7.3.1 GPU driver problem](#GPU_driver_problem)
+            *   [11.7.3.2 The Raster engine workaround](#The_Raster_engine_workaround)
+        *   [11.7.4 Low 3D desktop performance](#Low_3D_desktop_performance)
+        *   [11.7.5 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
+        *   [11.7.6 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [11.7.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
+    *   [11.8 Sound problems under KDE](#Sound_problems_under_KDE)
+        *   [11.8.1 ALSA related problems](#ALSA_related_problems)
+            *   [11.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
+            *   [11.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+    *   [11.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
+    *   [11.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [11.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
+    *   [11.12 Multi-monitor issues](#Multi-monitor_issues)
+*   [12 Unstable releases](#Unstable_releases)
+*   [13 See also](#See_also)
 
 ## Installation
 
@@ -410,23 +410,23 @@ More advanced configuration options are available through [kcm_baloo_advanced](h
 
 By default every removable device is blacklisted. You just have to remove your device from the blacklist in the KCM panel.
 
-### Web browsers
+## Web browsers
 
-#### Konqueror and Rekonq
+### Konqueror and Rekonq
 
 Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is currently not supported by either Konqueror or Rekonq. There is a [community continuation](http://qtwebkit.blogspot.com/2016/08/qtwebkit-im-back.html) of QtWebKit.
 
 A successor named Fiber is currently in development, which will use Chromium's engine.
 
-#### Chromium and Chrome
+### Chromium and Chrome
 
 [Chromium](/index.php/Chromium "Chromium") and its proprietary variant Google Chrome have limited Plasma integration. [They can use KWallet](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") and KDE Open/Save windows.
 
-#### Firefox
+### Firefox
 
 Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE_integration "Firefox") for details.
 
-#### Qupzilla
+### Qupzilla
 
 Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) is a Qt web browser with Plasma integration features. Qupzilla 2.0 uses Qt WebEngine instead of WebKit. The WebKit variant is also available as [qupzilla-qtwebkit-git](https://aur.archlinux.org/packages/qupzilla-qtwebkit-git/).
 
@@ -490,7 +490,6 @@ Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_runni
     ServerPath=/usr/bin/pg_ctl
     StartServer=true
     User=postgres
-
     ```
 
     **Note:** If your PostgreSQL database username, password, and port differ from `postgres`, (nothing), and `5432`, then make sure you respectively change the configuration options, `User=`, `Password=`, and `Port=`.
@@ -566,7 +565,7 @@ There may be reasons you want to use another window manager than KWin, for examp
 
 To use an alternative [window manager](/index.php/Window_manager "Window manager") with Plasma open the *System Settings* panel, navigate to *(Default) Applications > Window Manager > Use a different window manager* and select the window manager you wish to use from the list.
 
-**Note:** The component chooser settings in plasma 5 doesn't allow changing the window manager anymore. [[7]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)
+**Note:** The component chooser settings in plasma 5 does not allow changing the window manager anymore. [[7]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)
 
 In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[8]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
 
@@ -655,7 +654,7 @@ To enable display resolution management and multiple monitors in Plasma 5, insta
 
 **Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `Super` key launches kickstart application launcher as if `Alt+F1` keys are pressed.
 
-Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you don't want to start it manually.
+Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you do not want to start it manually.
 
 ### Enabling touchpad tap to click on plasma wayland session
 
@@ -807,7 +806,7 @@ Alternatively, you can symlink the Qt styles directory to the KDE styles one:
 
 Under Gnome you can try to install the package libgnomeui.
 
-### KF5/Qt5 applications don't display icons in i3/fvwm/awesome
+### KF5/Qt5 applications do not display icons in i3/fvwm/awesome
 
 See [Qt#Configuration of Qt5 apps under environments other than KDE](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE "Qt").
 
@@ -825,9 +824,9 @@ export KWIN_EXPLICIT_SYNC=0
 
 Then go to *system-settings > Startup and Shutdown > Autostart* and *Check/Add* the script as a pre-KDE startup file.
 
-#### Applications don't refresh properly
+#### Applications do not refresh properly
 
-If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications don't refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to System Settings under *Display and Monitor* -> *Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
+If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications do not refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to System Settings under *Display and Monitor* -> *Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
 
 #### Low 2D desktop performance (or) artifacts appear when on 2D
 
@@ -924,11 +923,11 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 ### Locale warning when installing packages in Konsole
 
 ```
- mandb: can't set the locale; make sure $lc_* and $lang are correct
+ mandb: cannot set the locale; make sure $lc_* and $lang are correct
 
 ```
 
-By default, Konsole sets $LANG to en_US.US-ASCII. If you haven't generated that locale, then mandb can't use it. In your Konsole profile settings, click "Environment" and then add a line for LANG=en_US.UTF-8 or whatever your locale should be.
+By default, Konsole sets $LANG to en_US.US-ASCII. If you have not generated that locale, then mandb cannot use it. In your Konsole profile settings, click "Environment" and then add a line for LANG=en_US.UTF-8 or whatever your locale should be.
 
 ### Multi-monitor issues
 

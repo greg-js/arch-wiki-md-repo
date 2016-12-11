@@ -61,12 +61,34 @@ The default Murmur config file is at `/etc/murmur.ini` and is heavily commented.
 
 #### SSL/TLS
 
-Obtain either a self-signed certificate as described in [OpenSSL](/index.php/OpenSSL "OpenSSL"), or a publicly trusted one with [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt").
+Obtain either a self-signed certificate as described in [OpenSSL](/index.php/OpenSSL "OpenSSL"), or a publicly trusted one with [Let's Encrypt](/index.php/Let%27s_Encrypt "Let's Encrypt") according to the following directions:
 
-Edit `murmur.ini` and tell it where your key and cert is:
+[Install](/index.php/Install "Install") the [certbot](https://www.archlinux.org/packages/?name=certbot) package. Temporarily turn off any webservers listening on port 443, if any (apache/nginx/etc)
+
+```
+# systemctl stop nginx
+
+```
+
+Generate the Let's Encrypt certificate for Murmur
+
+```
+# certbot certonly --standalone --standalone-supported-challenges tls-sni-01
+
+```
+
+Re-enable webservers, if any
+
+```
+# systemctl start nginx
+
+```
+
+Edit `murmur.ini` and tell it where your key and cert are:
 
  `/etc/murmur.ini` 
 ```
-sslKey=/var/lib/murmur/ssl/voip.example.com.key
-sslCert=/var/lib/murmur/ssl/voip.example.com.crt
+sslCert=/etc/letsencrypt/live/$domain/cert.pem
+sslKey=/etc/letsencrypt/live/$domain/privkey.pem
+sslCA=/etc/letsencrypt/live/$domain/fullchain.pem
 ```

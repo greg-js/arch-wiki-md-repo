@@ -179,11 +179,11 @@ event=button/volumeup
 action=amixer set Master 5+
 ```
 
-**Note:** These commands may not work as expected with PulseAudio. See [PulseAudio/Troubleshooting#Output stuck muted while Master is toggled](/index.php/PulseAudio/Troubleshooting#Output_stuck_muted_while_Master_is_toggled "PulseAudio/Troubleshooting").
+**Note:** These commands may not work as expected with PulseAudio. [[1]](https://lists.freedesktop.org/archives/pulseaudio-discuss/2015-December/025062.html) For full functionality, run commands as the current user while specifying the `XDG_RUNTIME_DIR` [environment variable](/index.php/Environment_variable "Environment variable"), for example with `sudo -u *user* XDG_RUNTIME_DIR=/run/user/*1000* pactl`.
 
 **Tip:** Disable or bind the volume buttons in Xorg to prevent conflicts with other applications. See [Xmodmap](/index.php/Xmodmap "Xmodmap") for details.
 
-See also [[1]](http://web.archive.org/web/20150711044207/http://blog.lastlog.de/posts/fixing_volume_change_in_linux).
+See also [[2]](http://web.archive.org/web/20150711044207/http://blog.lastlog.de/posts/fixing_volume_change_in_linux).
 
 ### Enabling backlight control
 
@@ -241,7 +241,7 @@ esac
 
 To run commands dependening on [Xorg](/index.php/Xorg "Xorg"), defining the X display as well as the MIT magic cookie file (via XAUTHORITY) is required. Latter is a security credential providing read and write access to the X server, display, and any input devices (see `man xauth`).
 
-See [[2]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) for an example function when using [xinitrc](/index.php/Xinitrc "Xinitrc").
+See [[3]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) for an example function when using [xinitrc](/index.php/Xinitrc "Xinitrc").
 
 **Note:**
 

@@ -208,7 +208,7 @@ $ mimeopen -n photo.jpeg
 
 Most importantly, [#xdg-utils](#xdg-utils) apps will actually call `mimetype` instead of `file` for MIME type detection, if possible. This is important because `file` does not follow the [#XDG standard](#XDG_standard).
 
-**Note:** But [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) does not *entirely* follow the [#XDG standard](#XDG_standard). For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
+**Note:** [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) before 0.28-1 does not *entirely* follow the [#XDG standard](#XDG_standard). For example it does not read [distribution-wide defaults](https://github.com/mbeijen/File-MimeInfo/issues/20) and it saves its config in [deprecated locations](https://github.com/mbeijen/File-MimeInfo/issues/8).
 
 #### mimeo
 

@@ -107,7 +107,7 @@ Para mais informações sobre o ABS, leia o artigo [Arch Build System](/index.ph
 
 Encontre o pacote no AUR. Isso pode ser feito usando o recurso de pesquisa (o campo de texto no topo da [Página inicial do AUR](https://aur.archlinux.org/)). Ao clicar no nome do aplicativo na lista de resultados de pesquisa, será mostrada uma página de informações sobre o pacote. Leia atentamente a descrição para confirmar que esse é o pacote desejado, veja quando o pacote foi atualizado pela última vez e leia quaiquer comentários.
 
-Baixe os arquivos necessários para compilação clicando no link "Baixar o tarball" em "Ações do Pacote", no canto direito da tela. Esse arquivo deve ser salvo no diretório de construção, ou copiado para esse diretório, depois do download. Neste exemplo, o arquivo é chamado "foo.tar.gz" (o formato padrão é "pkgname".tar.gz, se ele foi submetido do modo certo).
+Baixe os arquivos necessários para compilação clicando no link "Baixar snapshot" em "Ações do Pacote", no canto direito da tela. Esse arquivo deve ser salvo no diretório de construção, ou copiado para esse diretório, depois do download. Neste exemplo, o arquivo é chamado "foo.tar.gz" (o formato padrão é "pkgname".tar.gz, se ele foi submetido do modo certo).
 
 ### Compile o pacote
 

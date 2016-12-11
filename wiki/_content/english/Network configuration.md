@@ -104,6 +104,8 @@ A [hostname](https://en.wikipedia.org/wiki/Hostname "wikipedia:Hostname") is a u
 
 Alternatively, using [hostnamectl(1)](http://man7.org/linux/man-pages/man1/hostnamectl.1.html):
 
+**Tip:** It is not possible to set a machine's hostname using hostnamectl while in a chroot environment. The above method of writing to /etc/hostname directly should be used while installing a new system.
+
 ```
 # hostnamectl set-hostname *myhostname*
 

@@ -33,6 +33,9 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [10 Touchscreen](#Touchscreen)
     *   [10.1 Gestures](#Gestures)
 *   [11 Firmware Updates](#Firmware_Updates)
+*   [12 Troubleshooting](#Troubleshooting)
+    *   [12.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [12.2 Not waking from suspend](#Not_waking_from_suspend)
 
 ## Content adaptive brightness control
 
@@ -114,4 +117,14 @@ Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for inform
 
 ## Firmware Updates
 
-Dell provides firmware updates via [fwupd](https://aur.archlinux.org/packages/fwupd/). See [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux").
+Dell provides firmware updates via [fwupd](https://aur.archlinux.org/packages/fwupd/). See [Flashing BIOS from Linux#fwupd](/index.php/Flashing_BIOS_from_Linux#fwupd "Flashing BIOS from Linux"). Please note if you have used a bind mount partition for /boot, you will not be able to use the fwupd utility; Instead format a USB as FAT32 and put the bios update .exe on. Reboot into the one-time-boot menu and update the BIOS flash through there.
+
+## Troubleshooting
+
+### EFISTUB does not boot
+
+The BIOS does not pass any boot parameters to the kernel. Use a UEFI [boot loader](/index.php/Boot_loader "Boot loader") instead.
+
+### Not waking from suspend
+
+Update the BIOS to 1.0.7 to patch this issue.

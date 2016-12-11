@@ -11,7 +11,8 @@ The biggest feature of WordPress is its ease in configuration and administration
     *   [2.1 Host config](#Host_config)
     *   [2.2 Configure apache](#Configure_apache)
     *   [2.3 Configure MySQL](#Configure_MySQL)
-        *   [2.3.1 Using phpMyAdmin](#Using_phpMyAdmin)
+        *   [2.3.1 Using MariaDB command-line tool](#Using_MariaDB_command-line_tool)
+        *   [2.3.2 Using phpMyAdmin](#Using_phpMyAdmin)
 *   [3 WordPress Installation](#WordPress_Installation)
 *   [4 Usage](#Usage)
     *   [4.1 Installing a theme](#Installing_a_theme)
@@ -66,7 +67,7 @@ Make sure your `/etc/hosts` file is setup correctly. This will be important when
 
 ### Configure apache
 
-**Note:** You will need to have [Apache](/index.php/Apache "Apache") configured to run with [PHP](/index.php/PHP "PHP"). Check the [LAMP#PHP](/index.php/LAMP#PHP "LAMP") page for instructions. Make sure to enable the `mysqli.so` extension.
+**Note:** You will need [Apache](/index.php/Apache "Apache") configured to run with [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL"). Check [LAMP#PHP](/index.php/LAMP#PHP "LAMP") and [LAMP#MySQL/MariaDB](/index.php/LAMP#MySQL.2FMariaDB "LAMP") sections for instructions.
 
 You will need to create a config file for apache to find your WordPress install. Create the following file and edit it your favorite text editor:
 
@@ -108,11 +109,35 @@ Include conf/extra/httpd-wordpress.conf
 
 ```
 
-Now [restart](/index.php/Daemons#Restarting "Daemons") httpd (Apache).
+Now restart `httpd.service` (Apache) using [systemd](/index.php/Systemd#Using_units "Systemd").
 
 ### Configure MySQL
 
-MySQL can be configured using a plethora of tools, but the most common are the command line or [phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php).
+MySQL can be configured using a plethora of tools, but the most common are the command-line or [phpMyAdmin](http://www.phpmyadmin.net/home_page/index.php).
+
+**Tip:** Make sure MariaDB is installed and configured correctly. At a minimum, follow the [installation instructions](/index.php/MySQL#Installation "MySQL") for Arch Linux.
+
+#### Using MariaDB command-line tool
+
+First, login as root. You will be asked for your MariaDB root password:
+
+```
+$ mysql -u root -p
+
+```
+
+Then create a user and database:
+
+**Note:** `wordpress` is your Database Name and `wp-user` is your User Name. You can change them if you wish. Also replace `choose_db_password` with your new Password for this database. You will be asked for these values along with `localhost` in the next section.
+
+```
+MariaDB> CREATE DATABASE wordpress;
+MariaDB> GRANT ALL PRIVILEGES ON wordpress.* TO "wp-user"@"localhost" IDENTIFIED BY "choose_db_password";
+MariaDB> FLUSH PRIVILEGES;
+MariaDB> EXIT
+```
+
+See WordPress.org [official instructions](https://codex.wordpress.org/Installing_WordPress#Using_the_MySQL_Client) for details.
 
 #### Using phpMyAdmin
 

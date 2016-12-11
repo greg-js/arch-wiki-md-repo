@@ -735,6 +735,8 @@ down /etc/openvpn/update-resolv-conf
 
 Now, when your launch your OpenVPN connection, you should find that your resolv.conf file is updated accordingly, and also returns to normal when your close the connection.
 
+**Note:** When using `openresolv`s "-p" or "-x" options in a script (as both the included `client.up` and the `update-resolv-conf` scripts currently do) a DNS resolver like [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) or [unbound](https://www.archlinux.org/packages/?name=unbound) is required for `openresolv` to correctly update the `/etc/resolv.conf` file. When using the default DNS resolution from `libc` the "-p" and "-x" options must be removed in order for the `/etc/resolv.conf` file to be correctly updated by `openresolv`. For example, if the script contains a command like `resolvconf -p -a` and the default DNS resolver from `libc` is being used, change the command in the script to be `resolvconf -a` .
+
 ### Update systemd-resolved script
 
 Since systemd-229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")'s `systemd-resolved.service` has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if you are using `resolve` instead of `dns` in your `/etc/nsswitch.conf` file. The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script is another alternative and links OpenVPN with `systemd-resolved` via DBus to update the DNS records.

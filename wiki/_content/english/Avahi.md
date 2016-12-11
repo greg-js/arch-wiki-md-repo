@@ -37,17 +37,10 @@ You can manage the Avahi daemon with `avahi-daemon.service` [using systemd](/ind
 
 Avahi provides local hostname resolution using a "*hostname*.local" naming scheme. To enable it, install the [nss-mdns](https://www.archlinux.org/packages/?name=nss-mdns) package and start `avahi-daemon.service`.
 
-Then, edit the file `/etc/nsswitch.conf` and change the line:
+Then, edit the file `/etc/nsswitch.conf` and change the `hosts` line to include `mdns_minimal [NOTFOUND=return]` before `resolve` and `dns`:
 
 ```
-hosts: files dns myhostname
-
-```
-
-to:
-
-```
-hosts: files mdns_minimal [NOTFOUND=return] dns myhostname
+hosts: files mymachines **mdns_minimal [NOTFOUND=return]** resolve [!UNAVAIL=return] dns myhostname
 
 ```
 

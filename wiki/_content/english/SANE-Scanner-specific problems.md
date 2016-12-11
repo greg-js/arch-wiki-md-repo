@@ -49,7 +49,7 @@ Then, install the appropriate package:
 *   [brscan4](https://aur.archlinux.org/packages/brscan4/)
 *   [libsane-dsseries](https://aur.archlinux.org/packages/libsane-dsseries/)
 
-Now, the scanner should be recognized by SANE. If it is not, check if you have libusb-compat package installed, as the brother modules are linked against version 0.1.
+Now, the scanner should be recognized by SANE.
 
 For network scanners, Brother provides a different configuration tool for each brscan version (eg. brsaneconfig2 for brscan2 compatible devices):
 

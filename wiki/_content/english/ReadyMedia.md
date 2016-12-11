@@ -19,6 +19,7 @@ ReadyMedia is a simple, lightweight alternative to [MediaTomb](/index.php/MediaT
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Server not visible on Wireless behind a router](#Server_not_visible_on_Wireless_behind_a_router)
     *   [5.2 Media directory not accessible](#Media_directory_not_accessible)
+    *   [5.3 DLNA server stops being visible after some time when being shared on a bridge device](#DLNA_server_stops_being_visible_after_some_time_when_being_shared_on_a_bridge_device)
 
 ## Installation
 
@@ -188,4 +189,20 @@ Please note that the default systemd service file enforces the parameter `Protec
 ```
 [Service]
 ProtectHome=read-only
+```
+
+### DLNA server stops being visible after some time when being shared on a bridge device
+
+If you are using ReadyMedia to "broadcast" on a bridged device (such as an OpenVPN device bridged to an Ethernet device), the server may stop being seen by the clients after some time (which may vary from a few seconds to half a day). In order to solve this you need to disable 'multicast snooping'. You can do it instantly with the following command:
+
+```
+# echo 0 >> /sys/devices/virtual/net/br0/bridge/multicast_snooping
+
+```
+
+This should make the server visible to the clients *immediately*, but the change will be lost on reboot. If this works, you can make it a permanent change by issuing the following command:
+
+```
+# echo 'net.br0.bridge.multicast_snooping=0' > /etc/sysctl.d/35-minidlna_no_snoop.conf
+
 ```

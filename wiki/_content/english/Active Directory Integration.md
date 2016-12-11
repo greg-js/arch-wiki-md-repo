@@ -605,7 +605,7 @@ This explains how to generate a machine keytab file which you will need e.g. to 
 
 ### Creating a machine key tab file
 
-run 'net ads keytab create -U administrator' as root to create a machine keytab file in /etc/krb5.keytab. It will promt you with a warning that we need to enable keytab authentication in our configuration file, so we will do that in the next step. In my case it had problems when a key tab file is already in place - the command just did not come back it hang ... In that case you should rename the existing /etc/krb5.keytab and run the command again - it should work now.
+run 'net ads keytab create -U administrator' as root to create a machine keytab file in /etc/krb5.keytab. It will prompt you with a warning that we need to enable keytab authentication in our configuration file, so we will do that in the next step. In my case it had problems when a key tab file is already in place - the command just did not come back it hang ... In that case you should rename the existing /etc/krb5.keytab and run the command again - it should work now.
 
  `# net ads keytab create -U administrator` 
 

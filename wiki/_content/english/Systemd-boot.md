@@ -1,13 +1,15 @@
-**systemd-boot**, previously called **gummiboot**, is a simple UEFI boot manager which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with the [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on an Arch system by default.
+**systemd-boot**, previously called **gummiboot**, is a simple UEFI boot manager which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with the [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on Arch system by default.
 
-It is simple to configure, but can only start EFI executables, such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager, and such.
+It is simple to configure but it can only start EFI executables such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, the Windows Boot Manager.
 
 ## Contents
 
 *   [1 Installation](#Installation)
     *   [1.1 EFI boot](#EFI_boot)
-    *   [1.2 Legacy boot](#Legacy_boot)
+    *   [1.2 BIOS boot](#BIOS_boot)
     *   [1.3 Updating](#Updating)
+        *   [1.3.1 Manually](#Manually)
+        *   [1.3.2 Automatically](#Automatically)
 *   [2 Configuration](#Configuration)
     *   [2.1 Basic configuration](#Basic_configuration)
     *   [2.2 Adding boot entries](#Adding_boot_entries)
@@ -30,31 +32,36 @@ It is simple to configure, but can only start EFI executables, such as the Linux
 
 1.  Make sure you are booted in UEFI mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Mount your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")(ESP) properly. `*esp*` is used to denote the mountpoint in this article.
-    **Note:** *systemd-boot* cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. See [#Updating](#Updating) for more information and work-around, in case you want to separate `/boot` from the ESP.
+3.  Mount your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition") (ESP) properly. `*esp*` is used to denote the mountpoint in this article.
+    **Note:** *systemd-boot* cannot load EFI binaries from other partitions. It is therefore recommended to mount your ESP to `/boot`. In case you want to separate `/boot` from the ESP see [#Manually](#Manually) for more information.
 
 4.  If the ESP is **not** mounted at `/boot`, then copy your kernel and initramfs onto that ESP.
     **Note:** For a way to automatically keep the kernel updated on the ESP, have a look at [EFISTUB#Using systemd](/index.php/EFISTUB#Using_systemd "EFISTUB") for some systemd units that can be adapted. If your EFI System Partition is using automount, you may need to add `vfat` to a file in `/etc/modules-load.d/` to ensure the current running kernel has the `vfat` module loaded at boot, before any kernel update happens that could replace the module for the currently running version making the mounting of `/boot/efi` impossible until reboot.
 
-5.  Type the following command to install *systemd-boot*: `# bootctl --path=*esp* install` It will copy the *systemd-boot* binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` - both of which are identical - on x64 systems) and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+5.  Type the following command to install *systemd-boot*: `# bootctl --path=*esp* install` It will copy the *systemd-boot* binary to your EFI System Partition (`*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` – both of which are identical – on x86-64 systems) and add *systemd-boot* itself as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 6.  Finally you must [configure](#Configuration) the boot loader to function properly.
 
-### Legacy boot
+### BIOS boot
 
-**Warning:** This is not the recommended process.
+**Warning:** This is not recommended.
 
-You can also successfully install *systemd-boot* if booted with a legacy OS. However, this requires that you later on tell your firmware to launch *systemd-boot'*s EFI file on boot:
+You can successfully install *systemd-boot* if booted with in BIOS mode. However, this process requires you to tell firmware to launch *systemd-boot'*s EFI file at boot, usually via two ways:
 
-*   you either have a working EFI shell somewhere;
-*   or your firmware interface provides you with a way of properly setting the EFI file that will be loaded at boot time.
+*   you have a working EFI Shell somewhere else.
 
-**Note:** E.g. on Dell's Latitude series, the firmware interface provides everything you need to setup EFI boot, and the EFI Shell won't be able to write to the computer's ROM.
+*   your firmware interface provides a way of properly setting the EFI file that needs to be loaded at boot time.
 
-If you can do so, the installation is easier: go into your EFI shell or your firmware configuration interface, and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` (`systemd-bootia32.efi` on i686 systems).
+If you can do it, the installation is easier: go into your EFI Shell or your firmware configuration interface and change your machine's default EFI file to `*esp*/EFI/systemd/systemd-bootx64.efi` ( or `systemd-bootia32.efi` depending if your system firmware is 32 bit).
+
+**Note:** the firmware interface of Dell Latitude series provides everything you need to setup EFI boot but the EFI Shell won't be able to write to the computer's ROM.
 
 ### Updating
 
-*systemd-boot* (`man bootctl`, `man systemd-efi-boot-generator`) assumes that your EFI System Partition is mounted on `/boot`. Unlike the previous separate *gummiboot* package, which updated automatically on a new package release with a `post_install` script, updates of new *systemd-boot* versions are now handled manually by the user:
+Unlike the previous separate *gummiboot* package, which updated automatically on a new package release with a `post_install` script, updates of new *systemd-boot* versions must now be done manually by the user. However the procedure can be automated using pacman hooks.
+
+#### Manually
+
+*systemd-boot* ([bootctl(1)](https://www.freedesktop.org/software/systemd/man/bootctl.html), [systemd-efi-boot-generator(8)](http://man7.org/linux/man-pages/man8/systemd-efi-boot-generator.8.html)) assumes that your EFI System Partition is mounted on `/boot`.
 
 ```
 # bootctl update
@@ -70,17 +77,21 @@ If the ESP is not mounted on `/boot`, the `--path=` option can pass it. For exam
 
 **Note:** This is also the command to use when migrating from *gummiboot*, before removing that package. If that package has already been removed, however, run `bootctl --path=*esp* install`.
 
+#### Automatically
+
+The [AUR](/index.php/AUR "AUR") package [systemd-boot-pacman-hook](https://aur.archlinux.org/packages/systemd-boot-pacman-hook/) provides a [Pacman hook](/index.php/Pacman#Hooks "Pacman") to automate the update process. [Installing](/index.php/Install "Install") the package will add a hook which will be execute every time the [systemd](https://www.archlinux.org/packages/?name=systemd) package is upgraded.
+
 ## Configuration
 
 ### Basic configuration
 
-The basic configuration is kept in `*esp*/loader/loader.conf`, with three possible configuration options:
+The basic configuration is stored in `*esp*/loader/loader.conf` file and it is composed by three options:
 
-*   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`
+*   `default` – default entry to select (without the `.conf` suffix); can be a wildcard like `arch-*`.
 
 *   `timeout` – menu timeout in seconds. If this is not set, the menu will only be shown on key press during boot.
 
-*   `editor` - whether to enable the kernel parameters editor or not. `1` (default) is to enable, `0` is to disable. Since the user can add `init=/bin/bash` to bypass root password and gain root access, it's strongly recommended to set this option to `0`.
+*   `editor` – whether to enable the kernel parameters editor or not. `1` (default) is enabled, `0` is disabled; since the user can add `init=/bin/bash` to bypass root password and gain root access, it is strongly recommended to set this option to `0`.
 
 Example:
 
@@ -92,15 +103,15 @@ editor   0
 
 ```
 
-**Note:** The first 2 options can be changed in the boot menu itself, which will store them as EFI variables.
+**Note:** The first 2 options can be changed in the boot menu itself and changes will be stored as EFI variables.
 
-**Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl`.
+**Tip:** A basic configuration file example is located at `/usr/share/systemd/bootctl/loader.conf`.
 
 ### Adding boot entries
 
 **Note:**
 
-*   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) at boot time. Where detected, entries will also automatically be generated for them as well. These entries don't require loader configuration entries. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created.
+*   *bootctl* will automatically check for "**Windows Boot Manager**" (`\EFI\Microsoft\Boot\Bootmgfw.efi`), "**EFI Shell**" (`\shellx64.efi`) and "**EFI Default Loader**" (`\EFI\Boot\bootx64.efi`) at boot time. Where detected, entries will also automatically be generated for them as well. These entries do not require loader configuration entries. However, it does not auto-detect other EFI applications (unlike [rEFInd](/index.php/REFInd "REFInd")), so for booting the kernel, manual configuration entries must be created.
 *   If you dual-boot Windows, it is strongly recommended to disable its default [Fast Start-Up](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") option.
 *   Remember to load the intel [microcode](/index.php/Microcode "Microcode") with `initrd` if applicable.
 *   You can find the `PARTUUID` for your root partition with the command `blkid -s PARTUUID -o value /dev/sd*xY*`, where `*x*` is the device letter and `*Y*` is the partition number. This is required only for your root partition, not `*esp*`.

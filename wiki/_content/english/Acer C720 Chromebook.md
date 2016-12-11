@@ -124,7 +124,7 @@ This method does not persist after a reboot.
 
 ### Lots of ehci errors in dmesg after resume
 
-See [Chrome OS devices#Fixing suspend](/index.php/Chrome_OS_devices#Fixing_suspend "Chrome OS devices"). Additionally, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521%7Cthis), [[2]](https://github.com/vonbrownie/linux-post-install/blob/master/config/c720_jessiebook/lib/systemd/system-sleep/ehci-pci.sh%7Cthis), [[3]](https://philipalban.wordpress.com/2014/04/25/fixing-suspend-in-xubuntu-on-the-acer-c720-a-simplified-guide/%7Cthis), and [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1218734%7Cthis) may be helpful.
+See [Chrome OS devices#Fixing suspend](/index.php/Chrome_OS_devices#Fixing_suspend "Chrome OS devices"). Additionally, [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521), [[2]](https://github.com/vonbrownie/linux-post-install/blob/master/config/c720_jessiebook/lib/systemd/system-sleep/ehci-pci.sh), [[3]](https://philipalban.wordpress.com/2014/04/25/fixing-suspend-in-xubuntu-on-the-acer-c720-a-simplified-guide/), and [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1218734) may be helpful.
 
 One symptom may be that it cannot properly shut down or reboot.
 

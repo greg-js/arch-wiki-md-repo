@@ -1,3 +1,8 @@
+**Bump to v4.8.14-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.14](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.14)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8ba1005749ff576f5d8ed659fe06a81a06dfe234](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=8ba1005749ff576f5d8ed659fe06a81a06dfe234)
+
 **Bump to v4.8.13-2**
 
 *   Changelog: Add net_handle_no_dst_on_skb_in_icmp6_send.patch from Arch upstream

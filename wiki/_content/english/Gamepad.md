@@ -325,7 +325,7 @@ If you can't get the Steam Controller to work, see [#Steam Controller Not Pairin
 
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam.
 
-On some desktop environments the on screen keyboard might freeze when trying to input text after two characters. This is a problem with focus and can be fixed by opening Window Manager, opening focus tab and unticking 'Automatically give focus to newly created windows'.
+On some desktop environments the on screen keyboard might freeze when trying to input text after two characters. This is a problem with focus and can be fixed by opening Window Manager, opening focus tab and changing to 'Focus follows mouse' so you can have the keyboard on front while having focus in the background. 'Automatically give focus to newly created windows' can do this as well, but doesn't work well with Big Picture as windowed games don't come to front.
 
 #### Wine
 

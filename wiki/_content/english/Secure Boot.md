@@ -14,7 +14,9 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
             *   [1.3.1.2 shim with key](#shim_with_key)
         *   [1.3.2 Remove shim](#Remove_shim)
 *   [2 Using your own keys](#Using_your_own_keys)
-    *   [2.1 Creating keys](#Creating_keys)
+    *   [2.1 Custom keys](#Custom_keys)
+        *   [2.1.1 Creating keys](#Creating_keys)
+        *   [2.1.2 Adding keys in User Mode](#Adding_keys_in_User_Mode)
     *   [2.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
     *   [2.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
     *   [2.4 Enrol keys in firmware](#Enrol_keys_in_firmware)
@@ -24,6 +26,8 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 *   [4 See also](#See_also)
 
 ## Using a signed boot loader
+
+Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders PreLoader and shim, their purpose is to chainload other EFI binaries (usually [boot loaders](/index.php/Boot_loaders "Boot loaders")). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use a whitelist called Machine Owner Key list. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
 
 ### Booting archiso
 
@@ -57,6 +61,10 @@ For a verbose status, another way is to execute:
 ```
 
 ### PreLoader
+
+When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is not in MokList, PreLoader will launch `HashTool.efi`. In HashTool you must enrol the hash of the EFI binaries you want to launch, that means your [boot loader](/index.php/Boot_loader "Boot loader") (`loader.efi`) and kernel.
+
+**Note:** Each time you update any of the binaries (e.g. boot loader or kernel) you will need to enrol their new hash.
 
 #### Set up PreLoader
 
@@ -138,6 +146,10 @@ Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check wit
 
 ### shim
 
+When run, shim tries to launch `grubx64.efi`, if MokList doesn't contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `MokManager.efi`. In MokManager you must enrol the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enrol the key they are signed with.
+
+**Note:** If you use [#shim with hash](#shim_with_hash), each time you update any of the binaries (e.g. boot loader or kernel) you will need to enrol their new hash.
+
 #### Set up shim
 
 [Install](/index.php/Install "Install") [shim-signed](https://aur.archlinux.org/packages/shim-signed/).
@@ -157,7 +169,7 @@ Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous 
 
 ```
 
-*shim* can authenticate binaries by Machine Owner Key or hash stored in MoKList.
+*shim* can authenticate binaries by Machine Owner Key or hash stored in MokList.
 
 	Machine Owner Key (MOK)
 
@@ -171,7 +183,7 @@ Using hash is simpler, but each time you update your boot loader or kernel you w
 
 ##### shim with hash
 
-If *shim* does not find the SHA256 hash of `grubx64.efi` in MoKList it will launch `MokManager.efi`.
+If *shim* does not find the SHA256 hash of `grubx64.efi` in MokList it will launch `MokManager.efi`.
 
 In *MokManager* select *Enroll hash from disk*, find `grubx64.efi` and add it to MokList. Repeat the steps and add your kernel `vmlinuz-linux`. When done select *Continue boot* and your boot loader will launch and it will be capable launching the kernel.
 
@@ -213,7 +225,7 @@ You will need to do this each time they are updated.
 
 Copy `MOK.cer` to a FAT formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
 
-Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MoKList it will launch `MokManager.efi`.
+Reboot and enable Secure Boot. If *shim* does not find the certificate `grubx64.efi` is signed with in MokList it will launch `MokManager.efi`.
 
 In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokList. When done select *Continue boot* and your boot loader will launch and it will be capable launching any binary signed with your Machine Owner Key.
 
@@ -252,7 +264,9 @@ To use Secure Boot you need at least **PK**, **KEK** and **db** keys. While you 
 
 Once Secure Boot is in "User Mode" keys can only be updated by signing the update (using *sign-efi-sig-list*) with a higher level key. Platform key can be signed by itself.
 
-### Creating keys
+### Custom keys
+
+#### Creating keys
 
 To generate keys, [install](/index.php/Install "Install") [efitools](https://www.archlinux.org/packages/?name=efitools).
 
@@ -321,6 +335,38 @@ $ cert-to-efi-sig-list -g "$(< GUID.txt)" db.crt db.esl
 $ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
 
 ```
+
+#### Adding keys in User Mode
+
+**Note:** Once Secure Boot is in "User Mode" any changes to KEK, db and dbx need to be signed with a higher level key.
+
+For example to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates, [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows and [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
+
+Microsoft's certificates are in DER format, convert them to PEM format with *openssl*:
+
+```
+$ openssl x509 -inform DER -outform PEM -in MicWinProPCA2011_2011-10-19.crt -out MicWinProPCA2011_2011-10-19.crt.pem
+$ openssl x509 -inform DER -outform PEM -in MicCorUEFCA2011_2011-06-27.crt -out MicCorUEFCA2011_2011-06-27.crt.pem
+
+```
+
+Create EFI Signature Lists with Microsoft's GUID (`77fa9abd-0359-4d32-bd60-28f4e78f784b`) and combine them in one file for simplicity:
+
+```
+$ cert-to-efi-sig-list -g 77fa9abd-0359-4d32-bd60-28f4e78f784b MicWinProPCA2011_2011-10-19.crt.pem MS_Win_db.esl
+$ cert-to-efi-sig-list -g 77fa9abd-0359-4d32-bd60-28f4e78f784b MicCorUEFCA2011_2011-06-27.crt.pem MS_UEFI_db.esl
+$ cat MS_Win_db.esl MS_UEFI_db.esl > MS_db.esl
+
+```
+
+Sign a db update with your KEK. Use `sign-efi-sig-list` with option `-a` to **add** not replace a db certificate:
+
+```
+$ sign-efi-sig-list -a -g 77fa9abd-0359-4d32-bd60-28f4e78f784b -k KEK.key -c KEK.crt db MS_db.esl add_MS_db.auth
+
+```
+
+Follow [#Enrol keys in firmware](#Enrol_keys_in_firmware) to add `add_MS_db.auth` to Signature Database.
 
 ### Signing bootloader and kernel
 

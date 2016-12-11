@@ -38,7 +38,7 @@ If that fails, run the command again as root to check for permission problems. I
 Now you can see if it actually works
 
 ```
-$ scanimage --format=tiff > test.tiff
+$ scanimage --format=png > test.png
 
 ```
 

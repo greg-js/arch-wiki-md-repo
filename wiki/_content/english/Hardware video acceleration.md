@@ -22,7 +22,6 @@ There are several ways to achieve this on Linux:
     *   [4.2 Configuring VDPAU](#Configuring_VDPAU)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
-    *   [5.2 VA-API vaInitialize failed](#VA-API_vaInitialize_failed)
 
 ## Support
 
@@ -176,8 +175,6 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
 **Tip:** It is recommended to install and configure both VA-API and VDPAU to achieve support in different scenarios, e.g. [Flash](/index.php/Flash "Flash") doesn't support VA-API but can use the VDPAU VA-API backend.
 
-**Warning:** Do not use [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) and [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) together as it will create an (infinite) loop between VA-API and VDPAU, which will result in something either really bad or really fun. But if you try it anyway please share your experiences.
-
 ### Installing VA-API
 
 **Open source drivers:**
@@ -208,7 +205,19 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
 ## Verification
 
-**Tip:** [mpv](/index.php/Mpv#Hardware_Decoding "Mpv") is great for testing hardware acceleration in practice.
+**Tip:**
+
+*   [mpv](/index.php/Mpv#Hardware_Decoding "Mpv") is great for testing hardware acceleration in practice.
+*   For [radeon](/index.php/Radeon "Radeon") the driver name can determined by running:
+
+ `$ grep -iE 'vdpau|dri driver' ~/.local/share/xorg/Xorg.0.log` 
+```
+(II) RADEON(0): [DRI2] DRI driver: radeonsi
+(II) RADEON(0): [DRI2] VDPAU driver: radeonsi
+
+```
+
+In this case you want to use `radeonsi` for both VA-API and VDPAU.
 
 ### Verifying VA-API
 
@@ -246,17 +255,59 @@ In this example the `i965` driver is used, as you can see in this line:
 
  `libva info: Trying to open /usr/lib/dri/**i965**_drv_video.so` 
 
+If the following error is displayed when running `vainfo`:
+
+```
+libva info: va_openDriver() returns -1
+vaInitialize failed with error code -1 (unknown libva error),exit
+
+```
+
+You need to configure the correct driver, see [#Configuring VA-API](#Configuring_VA-API).
+
 ### Verifying VDPAU
 
-You can verify that the VDPAU driver is loaded correctly using [vdpauinfo](https://www.archlinux.org/packages/?name=vdpauinfo):
+Install [vdpauinfo](https://www.archlinux.org/packages/?name=vdpauinfo) to verify if the VDPAU driver is loaded correctly and retrieve a full report of the configuration:
 
- `$ vdpauinfo | grep "Information string:"` 
+ `$ vdpauinfo` 
 ```
-Information string: NVIDIA VDPAU Driver Shared Library  364.19  Tue Apr 19 14:14:26 PDT 2016
+display: :0   screen: 0
+API version: 1
+Information string: G3DVL VDPAU Driver Shared Library version 1.0
+
+Video surface:
+
+name   width height types
+
+* * *
+
+420    16384 16384  NV12 YV12 
+422    16384 16384  UYVY YUYV 
+444    16384 16384  Y8U8V8A8 V8U8Y8A8 
+
+Decoder capabilities:
+
+name                        level macbs width height
+
+* * *
+
+MPEG1                          --- not supported ---
+MPEG2_SIMPLE                    3  9216  2048  1152
+MPEG2_MAIN                      3  9216  2048  1152
+H264_BASELINE                  41  9216  2048  1152
+H264_MAIN                      41  9216  2048  1152
+H264_HIGH                      41  9216  2048  1152
+VC1_SIMPLE                      1  9216  2048  1152
+VC1_MAIN                        2  9216  2048  1152
+VC1_ADVANCED                    4  9216  2048  1152
+
+..
 
 ```
 
 ## Configuration
+
+**Note:** Although the video driver should automatically enable hardware video acceleration support for both VA-API and VDPAU, it may be needed to configure VA-API/VDPAU manually. See [#Verification](#Verification).
 
 ### Configuring VA-API
 
@@ -264,11 +315,12 @@ The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endstha
 
 *   For Intel Graphics use `i965`.
 *   For NVIDIA use `vdpau`.
-*   For AMD use either `gallium` (for [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver)) or `vdpau` (for [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)).
+*   For AMD use either `radeonsi` or `vdpau`.
 
-**Note:** You can find the installed drivers in `/usr/lib/dri/`.
+**Note:**
 
-**Note:** Since version 12.0.1 [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) provides `radeonsi` instead of `gallium`.
+*   You can find the installed drivers in `/usr/lib/dri/`.
+*   Since version 12.0.1 [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) provides `radeonsi` instead of `gallium`.
 
 ### Configuring VDPAU
 
@@ -277,22 +329,13 @@ The driver for use with VDPAU is auto-detected, but you may need to override it 
 The correct driver name depends on your setup:
 
 *   For Intel Graphics or AMD Catalyst you [need](#Failed_to_open_VDPAU_backend) to set it to `va_gl`.
-*   For the open source AMD/ATI driver set it to the proper driver version depending on your GPU (see below).
+*   For the open source AMD/ATI driver set it to the proper driver version depending on your GPU, see [#Verification](#Verification).
 *   For NVIDIA's proprietary version set it to `nvidia`.
 
-The driver name can determined by running:
+**Note:**
 
- `$ grep -i vdpau ~/.local/share/xorg/Xorg.0.log` 
-```
-(II) RADEON(0): [DRI2] VDPAU driver: r300
-
-```
-
-In this case you want to set `VDPAU_DRIVER=r300`.
-
-**Note:** You can find the installed drivers in `/usr/lib/vdpau/`.
-
-For hybrid setups (both NVIDIA and AMD), it may be necessary to [set](/index.php/Environment_variable "Environment variable") `DRI_PRIME=1`. For more information see [PRIME](/index.php/PRIME "PRIME").
+*   You can find the installed drivers in `/usr/lib/vdpau/`.
+*   For hybrid setups (both NVIDIA and AMD), it may be necessary to [set](/index.php/Environment_variable "Environment variable") `DRI_PRIME=1`. For more information see [PRIME](/index.php/PRIME "PRIME").
 
 ## Troubleshooting
 
@@ -301,15 +344,3 @@ For hybrid setups (both NVIDIA and AMD), it may be necessary to [set](/index.php
 This happens when you use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) without overriding `VDPAU_DRIVER`. VDPAU doesn't know what driver to use in this case for some reason and guesses wrongly. See [#Configuring VDPAU](#Configuring_VDPAU).
 
 However you may want to configure your media player to use VA-API instead, getting far better results. See [#Software](#Software).
-
-### VA-API vaInitialize failed
-
-If vainfo gives you this error:
-
-```
-libva info: va_openDriver() returns -1
-vaInitialize failed with error code -1 (unknown libva error),exit
-
-```
-
-You may need to set the `LIBVA_DRIVER_NAME` environment variable to `vdpau` or `gallium`, see [#Configuring VA-API](#Configuring_VA-API).

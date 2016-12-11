@@ -46,15 +46,15 @@ It only runs in RAM, without any special filesystems like squashfs, thus it is l
 	network labeled images don't include [core] repository.
 
 *   Please check md5sum before using it.
-*   [Download 2016.08 „2k16-R2“](https://downloads.archlinux.de/iso/archboot/2016.08) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2016.08-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
+*   [Download 2016.12 „2k16-R3“](https://downloads.archlinux.de/iso/archboot/2016.12) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2016.12-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
-	kernel: 4.7.2-1
+	kernel: 4.8.13-1
 
 	pacman: 5.0.1-4
 
-	systemd: 231-1
+	systemd: 232-6
 
-	RAM recommendations: 600 MB
+	RAM recommendations: 800 MB
 
 ### Burning Release
 

@@ -188,6 +188,13 @@ ephemeral: false
 
 ```
 
+Or to enable `security.privileged=true` for new containers, edit the config for the default profile:
+
+```
+$ lxc profile edit default
+
+```
+
 ## See also
 
 *   [The official LXD homepage](https://linuxcontainers.org/lxd/)

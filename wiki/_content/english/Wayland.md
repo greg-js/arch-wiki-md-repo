@@ -311,6 +311,13 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ```
 
+gparted wants to run as root, before starting it allow all local users to display applications on your desktop by typing in a command line:
+
+```
+ xhost +local:
+
+```
+
 ## GUI libraries
 
 See details on the [official website](http://wayland.freedesktop.org/toolkits.html).

@@ -43,7 +43,9 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 ```
 
-**提示：** 若需同时指定多个服务端ip，可参考`"server":["1.1.1.1","2.2.2.2"],`
+**提示：** shadowsocks: 若需同时指定多个服务端ip，可参考`"server":["1.1.1.1","2.2.2.2"],`
+
+**提示：** shadowsocks-libev: 若需同时指定多个服务端ip或利用多处理器核心提高sockets处理性能，可启用多个shadowsocks-libev实例并绑定同一个端口，因为其支持SO_REUSEPORT（内核级CPU负载平衡）
 
 | server | 服务端监听地址(IPv4或IPv6) |
 | server_port | 服务端端口，一般为`443` |

@@ -4,7 +4,7 @@ From the [redshift project web page](http://jonls.dk/redshift/):
 
 The project is developed on [GitHub](https://github.com/jonls/redshift).
 
-**Note:** At the moment, Redshift [only works](https://github.com/jonls/redshift/issues/55) with [Xorg](/index.php/Xorg "Xorg") – [Wayland](/index.php/Wayland "Wayland") is not supported yet, see [Redshift#If you are on Wayland](/index.php/Redshift#If_you_are_on_Wayland "Redshift").
+**Note:** At the moment, Redshift [only works](https://github.com/jonls/redshift/issues/55) with [Xorg](/index.php/Xorg "Xorg") – [Wayland](/index.php/Wayland "Wayland") is not supported yet, see [#If you are on Wayland](#If_you_are_on_Wayland).
 
 ## Contents
 
@@ -20,7 +20,7 @@ The project is developed on [GitHub](https://github.com/jonls/redshift).
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 redshift-gtk will not start](#redshift-gtk_will_not_start)
     *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
-    *   [3.4 If you can't get redshift to autostart in i3](#If_you_can.27t_get_redshift_to_autostart_in_i3)
+    *   [3.4 If you cannot get redshift to autostart in i3](#If_you_cannot_get_redshift_to_autostart_in_i3)
     *   [3.5 If you are on Wayland](#If_you_are_on_Wayland)
 *   [4 See also](#See_also)
 
@@ -221,7 +221,7 @@ system=false
 users=
 ```
 
-### If you can't get redshift to autostart in i3
+### If you cannot get redshift to autostart in i3
 
 You can add this to your i3 config file.
 
@@ -233,6 +233,8 @@ You can add this to your i3 config file.
 ### If you are on Wayland
 
 At the moment running redshift has no effect under Wayland, because gamma correction is not available there[[2]](https://github.com/jonls/redshift/issues/260). There is an open feature request on their issue tracker.[[3]](https://github.com/jonls/redshift/issues/55)
+
+If you are running Gnome, you can try your luck with [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/). Install the aur package, restart Gnome and enable the Gnome Redshift Extension.
 
 ## See also
 

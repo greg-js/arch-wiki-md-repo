@@ -155,7 +155,7 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 The SNA acceleration method causes tearing for some people. To fix this, enable the `"TearFree"` option in the driver by adding the following line to your [configuration file](#Configuration):
 
 ```
-Option      "TearFree"    "true"
+Option "TearFree" "true"
 
 ```
 
@@ -164,9 +164,9 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 **Note:**
 
 *   This option may not work when `SwapbuffersWait` is `false`.
+*   This option may increases memory allocation considerably and reduce performance. [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
 *   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
 *   This option does not work with UXA acceleration method, only with SNA.
-*   This option should not be needed with DRI3 enabled.
 
 ### Disable Vertical Synchronization (VSYNC)
 
@@ -215,7 +215,7 @@ If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1.
 
 ### H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[5]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[6]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done.
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[6]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[7]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done.
 
 ### Setting brightness and gamma
 
@@ -327,7 +327,7 @@ Unfortunately, the Intel driver does not support setting the color range through
 
 A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
 
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[7]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[8]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[8]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[9]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 ### Backlight is not adjustable
 
@@ -388,7 +388,7 @@ Jun 16 17:54:03 hostname kernel: RIP  [<          (null)>]           (null)
 
 ```
 
-This can be fixed by disabling execlist support which was changed to default on with kernel 4.0\. Add the following kernel parameter:
+This can be fixed by disabling execlist support which was changed to default on with kernel 4.0\. Add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
 
 ```
 i915.enable_execlists=0
