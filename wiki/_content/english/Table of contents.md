@@ -24,7 +24,7 @@
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
 | <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
-| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(27)</small> |
+| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(28)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(45)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
 | <small>2.12.2.</small> [Multimedia players](/index.php/Category:Multimedia_players "Category:Multimedia players") <small>(23)</small> |
@@ -36,7 +36,7 @@
 | <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(13)</small> |
 | <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small> |
-| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(57)</small> |
+| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(58)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(51)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
@@ -127,7 +127,7 @@
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(2) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(22)</small> |
-| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small> |
+| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(73)</small> |
 | <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small> |
 | <small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

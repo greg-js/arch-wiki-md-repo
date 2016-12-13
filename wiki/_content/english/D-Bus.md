@@ -17,7 +17,7 @@ As of [systemd](https://www.archlinux.org/packages/?name=systemd) `226-1` and [d
 
 ## Debugging
 
-[d-feet](https://www.archlinux.org/packages/?name=d-feet) is an easy to use D-Bus debugger GUI tool. D-Feet can be used to inspect D-Bus interfaces of running programs and invoke methods on those interfaces. See [its homepage](https://wiki.gnome.org/DFeet) for more info.
+[d-feet](https://www.archlinux.org/packages/?name=d-feet) is an easy to use D-Bus debugger GUI tool. D-Feet can be used to inspect D-Bus interfaces of running programs and invoke methods on those interfaces. See [its homepage](https://wiki.gnome.org/Apps/DFeet) for more info.
 
 ## See also
 

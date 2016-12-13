@@ -27,9 +27,10 @@ In Linux console, some *keysyms* (e.g. `F1` to `F246`) can be mapped to certain 
     *   [3.1 In console](#In_console_2)
     *   [3.2 In Xorg](#In_Xorg_2)
 *   [4 Laptops](#Laptops)
-    *   [4.1 Asus M series](#Asus_M_series)
-    *   [4.2 Asus N56VJ (or possibly others)](#Asus_N56VJ_.28or_possibly_others.29)
-    *   [4.3 Lenovo T460p (or possibly others)](#Lenovo_T460p_.28or_possibly_others.29)
+    *   [4.1 Apple MacBooks](#Apple_MacBooks)
+    *   [4.2 Asus M series](#Asus_M_series)
+    *   [4.3 Asus N56VJ (or possibly others)](#Asus_N56VJ_.28or_possibly_others.29)
+    *   [4.4 Lenovo T460p (or possibly others)](#Lenovo_T460p_.28or_possibly_others.29)
 *   [5 Gaming Keyboards](#Gaming_Keyboards)
     *   [5.1 Cooler Master CM Storm QuickFire TK](#Cooler_Master_CM_Storm_QuickFire_TK)
 *   [6 See also](#See_also)
@@ -138,6 +139,10 @@ See the main article: [Extra keyboard keys in console](/index.php/Extra_keyboard
 See the main article: [xmodmap](/index.php/Xmodmap "Xmodmap").
 
 ## Laptops
+
+### Apple MacBooks
+
+All the required information is available on the [Apple Keyboard](/index.php/Apple_Keyboard "Apple Keyboard") dedicated article.
 
 ### Asus M series
 

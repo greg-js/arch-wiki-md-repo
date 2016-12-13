@@ -98,13 +98,15 @@ Execute `refind-install` with the option `--preloader */path/to/preloader*`
 
 ```
 
-Next time you boot with Secure Boot enabled, HashTool will launch and you will need to register rEFInd (`loader.efi`) as a trusted application.
+Next time you boot with Secure Boot enabled, HashTool will launch and you will need to enrol the hash of rEFInd (`loader.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel.
 
 See [refind-install(8)](http://www.rodsbooks.com/refind/refind-install.html) for more information.
 
+**Note:** The signed *HashTool* is only capable of accessing the partition it was launched from. This means if your kernel is not on the ESP, you will not be able to enrol its hash from *HashTool*. You can workaround this by using [#KeyTool](#KeyTool), since it is capable of enrolling a hash in MokList and is not limited to one partition. Remember to enrol *KeyTool'*s hash before before using it.
+
 ##### Using shim
 
-Read [Secure Boot#shim](/index.php/Secure_Boot#shim "Secure Boot"), but skip all file copying.
+[Install](/index.php/Install "Install") [shim-signed](https://aur.archlinux.org/packages/shim-signed/). Read [Secure Boot#shim](/index.php/Secure_Boot#shim "Secure Boot"), but skip all file copying.
 
 To use only hashes with *shim*, execute `refind-install` with the option `--shim */path/to/shim*`
 
@@ -113,9 +115,11 @@ To use only hashes with *shim*, execute `refind-install` with the option `--shim
 
 ```
 
-To sign rEFInd with Machine Owner Key, follow [Secure Boot#shim with key](/index.php/Secure_Boot#shim_with_key "Secure Boot") to create a key. Sign the kernel, but don't sign the boot loader, refind-install will do that.
+Next time you boot with Secure Boot enabled, *MokManager* will launch and you will need to enrol the hash of rEFInd (`loader.efi`), rEFInd's drivers (e.g. `ext4_x64.efi`) and kernel.
 
-Create directory `/etc/refind.d/keys` and copy `MOK.key`, `MOK.crt` and `MOK.cer` to it, name them `refind_local.key`, `refind_local.crt` and `refind_local.cer`.
+To sign rEFInd with a Machine Owner Key, install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
+
+**Tip:** If you already have [created a MOK](/index.php/Secure_Boot#shim_with_key "Secure Boot"), place the files in the directory `/etc/refind.d/keys` with the names `refind_local.key`, `refind_local.crt` and `refind_local.cer`.
 
 Execute `refind-install` with the options `--shim */path/to/shim*` and `--localkeys`:
 
@@ -124,7 +128,8 @@ Execute `refind-install` with the options `--shim */path/to/shim*` and `--localk
 
 ```
 
-**Tip:** If you run `refind-install` with the option `--localkeys` without creating the keys first, *refind-install* will create the keys for you. You can then sign the kernel with the same key, e.g.:
+*refind-install* will create the keys for you and sign itself and its drivers. You will need to sign the kernel with the same key, e.g.:
+
 ```
 # sbsign --key /etc/refind.d/keys/refind_local.key --cert /etc/refind.d/keys/refind_local.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
 
@@ -204,7 +209,7 @@ You can try out different fonts by copying them and changing the `font` setting 
 
 ```
 
-**Tip:** Pressing F10 in *rEFInd* will save a screenshot to the top level directory of the ESP.
+**Tip:** Pressing `F10` in *rEFInd* will save a screenshot to the top level directory of the ESP.
 
 ### Upgrading
 

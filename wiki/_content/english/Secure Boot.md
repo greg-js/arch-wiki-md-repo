@@ -16,12 +16,14 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
 *   [2 Using your own keys](#Using_your_own_keys)
     *   [2.1 Custom keys](#Custom_keys)
         *   [2.1.1 Creating keys](#Creating_keys)
-        *   [2.1.2 Adding keys in User Mode](#Adding_keys_in_User_Mode)
+        *   [2.1.2 Updating keys](#Updating_keys)
     *   [2.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
     *   [2.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
     *   [2.4 Enrol keys in firmware](#Enrol_keys_in_firmware)
         *   [2.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
         *   [2.4.2 Using KeyTool](#Using_KeyTool)
+    *   [2.5 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
+        *   [2.5.1 Microsoft Windows](#Microsoft_Windows)
 *   [3 Disable Secure Boot](#Disable_Secure_Boot)
 *   [4 See also](#See_also)
 
@@ -173,7 +175,7 @@ Copy *shim* and *MokManager* to your boot loader directory on ESP; use previous 
 
 	Machine Owner Key (MOK)
 
-	A key that a user generates and uses to sign an EFI binaries.
+	A key that a user generates and uses to sign EFI binaries.
 
 	hash
 
@@ -336,37 +338,9 @@ $ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
 
 ```
 
-#### Adding keys in User Mode
+#### Updating keys
 
 **Note:** Once Secure Boot is in "User Mode" any changes to KEK, db and dbx need to be signed with a higher level key.
-
-For example to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates, [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows and [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
-
-Microsoft's certificates are in DER format, convert them to PEM format with *openssl*:
-
-```
-$ openssl x509 -inform DER -outform PEM -in MicWinProPCA2011_2011-10-19.crt -out MicWinProPCA2011_2011-10-19.crt.pem
-$ openssl x509 -inform DER -outform PEM -in MicCorUEFCA2011_2011-06-27.crt -out MicCorUEFCA2011_2011-06-27.crt.pem
-
-```
-
-Create EFI Signature Lists with Microsoft's GUID (`77fa9abd-0359-4d32-bd60-28f4e78f784b`) and combine them in one file for simplicity:
-
-```
-$ cert-to-efi-sig-list -g 77fa9abd-0359-4d32-bd60-28f4e78f784b MicWinProPCA2011_2011-10-19.crt.pem MS_Win_db.esl
-$ cert-to-efi-sig-list -g 77fa9abd-0359-4d32-bd60-28f4e78f784b MicCorUEFCA2011_2011-06-27.crt.pem MS_UEFI_db.esl
-$ cat MS_Win_db.esl MS_UEFI_db.esl > MS_db.esl
-
-```
-
-Sign a db update with your KEK. Use `sign-efi-sig-list` with option `-a` to **add** not replace a db certificate:
-
-```
-$ sign-efi-sig-list -a -g 77fa9abd-0359-4d32-bd60-28f4e78f784b -k KEK.key -c KEK.crt db MS_db.esl add_MS_db.auth
-
-```
-
-Follow [#Enrol keys in firmware](#Enrol_keys_in_firmware) to add `add_MS_db.auth` to Signature Database.
 
 ### Signing bootloader and kernel
 
@@ -423,6 +397,38 @@ Firmwares have various different interfaces, see [Replacing Keys Using Your Firm
 Launch `KeyTool-signed.efi` using firmware setup utility, boot loader or [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") and enrol keys.
 
 See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#keytool) for explanation of KeyTool menu options.
+
+### Dual booting with other operating systems
+
+#### Microsoft Windows
+
+For example to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates, [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows and [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
+
+Microsoft's certificates are in DER format, convert them to PEM format with *openssl*:
+
+```
+$ openssl x509 -inform DER -outform PEM -in MicWinProPCA2011_2011-10-19.crt -out MicWinProPCA2011_2011-10-19.crt.pem
+$ openssl x509 -inform DER -outform PEM -in MicCorUEFCA2011_2011-06-27.crt -out MicCorUEFCA2011_2011-06-27.crt.pem
+
+```
+
+Create EFI Signature Lists with Microsoft's GUID (`77fa9abd-0359-4d32-bd60-28f4e78f784b`) and combine them in one file for simplicity:
+
+```
+$ cert-to-efi-sig-list -g 77fa9abd-0359-4d32-bd60-28f4e78f784b MicWinProPCA2011_2011-10-19.crt.pem MS_Win_db.esl
+$ cert-to-efi-sig-list -g 77fa9abd-0359-4d32-bd60-28f4e78f784b MicCorUEFCA2011_2011-06-27.crt.pem MS_UEFI_db.esl
+$ cat MS_Win_db.esl MS_UEFI_db.esl > MS_db.esl
+
+```
+
+Sign a db update with your KEK. Use `sign-efi-sig-list` with option `-a` to **add** not replace a db certificate:
+
+```
+$ sign-efi-sig-list -a -g 77fa9abd-0359-4d32-bd60-28f4e78f784b -k KEK.key -c KEK.crt db MS_db.esl add_MS_db.auth
+
+```
+
+Follow [#Enrol keys in firmware](#Enrol_keys_in_firmware) to add `add_MS_db.auth` to Signature Database.
 
 ## Disable Secure Boot
 

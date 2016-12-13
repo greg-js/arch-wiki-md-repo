@@ -263,7 +263,21 @@ Si está planificando una conexión a una impresora en red, en lugar de una cone
 
 ### El demonio CUPS
 
-Con el módulo del kernel instalado, ahora puede iniciar **cups** y, opcionalmente, el [demonio](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") **cups-browsed**.
+Con el módulo del kernel instalado, ahora puede iniciar **cups** y, opcionalmente, el [demonio](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") **cups-browsed**. Tenga en cuenta que a partir de **cups v. 2.0.0** el nombre del demonio ha cambiado de **cups** a **org.cups.cupsd**. Si tiene activado el viejo servicio primero deberá desactivarlo:
+
+```
+# systemctl disable cups.service
+
+```
+
+Y activar el nuevo en su lugar:
+
+```
+# systemctl enable org.cups.cupsd.service
+# systemctl daemon-reload
+# systemctl start org.cups.cupsd.service
+
+```
 
 ### Interfaz web y herramientas
 
@@ -481,7 +495,7 @@ $ lpq -a # en todas las impresoras
 
 #### GNOME
 
-Si usa [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), tiene la posibilidad de gestionar y configurar la impresora [instalando](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [system-config-printer-gnome](https://www.archlinux.org/packages/?name=system-config-printer-gnome).
+Si usa [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), tiene la posibilidad de gestionar y configurar la impresora [instalando](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer).
 
 Para hacer system-config-printer realmente funcional, será necesario ejecutarlo como root, o, alternativamente, establecer permisos a un usuario «normal» para administrar CUPS (en este último caso **siga los pasos 1-3**):
 

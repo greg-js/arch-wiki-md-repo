@@ -19,9 +19,7 @@ CPU frequency scaling is implemented in the Linux kernel, the infrastructure is 
 *   [5 Privilege granting under GNOME](#Privilege_granting_under_GNOME)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 BIOS frequency limitation](#BIOS_frequency_limitation)
-*   [7 Common issues](#Common_issues)
-    *   [7.1 High load](#High_load)
-*   [8 See also](#See_also)
+*   [7 See also](#See_also)
 
 ## Userspace tools
 
@@ -122,6 +120,8 @@ Depending on the scaling driver, one of these governors will be loaded by defaul
 *   `powersave` for Intel CPUs using the `intel_pstate` driver (Sandy Bridge and newer).
 
 **Note:** The `intel_pstate` driver supports only the performance and powersave governors, but they both provide dynamic scaling. The performance governor [should give better power saving functionality than the old ondemand governor](http://www.phoronix.com/scan.php?page=news_item&px=MTM3NDQ).
+
+**Warning:** Use CPU monitoring tools (for temperatures, voltage, etc.) when changing the default governor.
 
 To activate a particular governor, run:
 
@@ -285,12 +285,6 @@ For setting it permanent refer to [Kernel modules](/index.php/Kernel_modules#Con
 # If the frequency of your machine gets wrongly limited by BIOS, this should help
 options processor ignore_ppc=1
 ```
-
-## Common issues
-
-### High load
-
-There is a bug in the kernel module `rtsx_usb_ms` which causes a constant load over 1.0\. Test whether it makes a difference by temporarily removing it `rmmod rtsx_usb_ms`
 
 ## See also
 

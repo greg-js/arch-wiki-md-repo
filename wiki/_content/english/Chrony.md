@@ -140,13 +140,7 @@ You can either use *chronyc* to notify *chrony* that your network configuration 
 
 ### netctl
 
-Install [netctl-dispatcher-chrony](https://aur.archlinux.org/packages/netctl-dispatcher-chrony/) from the AUR, and add the included scripts to your [netctl](/index.php/Netctl "Netctl") profile:
-
-```
-# echo "ExecUpPost='/usr/share/netctl-dispatcher-chrony/chrony-up.sh'" >> /path/to/netctl/profile
-# echo "ExecDownPre='/usr/share/netctl-dispatcher-chrony/chrony-down.sh'" >> /path/to/netctl/profile
-
-```
+Install [netctl-dispatcher-chrony](https://aur.archlinux.org/packages/netctl-dispatcher-chrony/) from the AUR. This adds a hook to netctl which is run automatically for any connection.
 
 ## See also
 

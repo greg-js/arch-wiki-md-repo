@@ -72,6 +72,4 @@ A sample config file, with comments showing all of the possible options for conf
 
 ## See also
 
-	[Project Homepage](http://www.generictestdomain.net/archey3/)
-
-	[Archey3 Config Reference](http://www.generictestdomain.net/archey3/config.html)
+	[Project Homepage](http://bluepeppers.github.com/archey3)

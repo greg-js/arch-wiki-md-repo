@@ -1,4 +1,4 @@
-**Warning:** While the choice to install in UEFI mode is forward looking, early vendor UEFI implementations may carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
+**Warning:** While the choice to install in UEFI mode is forward looking, early vendor UEFI implementations *may* carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular mainboard model before proceeding.
 
 The [Unified Extensible Firmware Interface](http://www.uefi.org/) (EFI or UEFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
 

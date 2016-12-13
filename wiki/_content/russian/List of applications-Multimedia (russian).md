@@ -265,7 +265,7 @@
 
 *   **[sK1](https://en.wikipedia.org/wiki/ru:sK1 "wikipedia:ru:sK1")** — Замена Adobe Illustrator или CorelDraw, ориентированная на "допечатную подготовку" PostScript и PDF
 
-	[http://sk1project.org/](http://sk1project.org/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
+	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
 
 *   **[Xara LX](https://en.wikipedia.org/wiki/ru:Xara_Designer "wikipedia:ru:Xara Designer")** — Усовершенствованная программа редактирования векторной графики, версия с открытым исходным кодом коммерческой Xara X
 

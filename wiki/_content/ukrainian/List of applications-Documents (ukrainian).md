@@ -119,7 +119,7 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 
 *   **Asciidoctor** — An asciidoc implementation written in Ruby, with many extra features.
 
-	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://aur.archlinux.org/packages/asciidoctor/)
+	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
 
 *   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Text-to-HTML conversion tool that allows you to write using a simple plain text format.
 

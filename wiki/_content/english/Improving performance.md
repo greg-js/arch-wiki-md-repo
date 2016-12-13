@@ -4,8 +4,7 @@ This article provides information on basic system diagnostics relating to perfor
 
 *   [1 The basics](#The_basics)
     *   [1.1 Know your system](#Know_your_system)
-    *   [1.2 The first thing to do](#The_first_thing_to_do)
-    *   [1.3 Benchmarking](#Benchmarking)
+    *   [1.2 Benchmarking](#Benchmarking)
 *   [2 Storage devices](#Storage_devices)
     *   [2.1 Multiple hardware paths](#Multiple_hardware_paths)
     *   [2.2 Partitioning](#Partitioning)
@@ -58,35 +57,29 @@ $ free -h
 
 *   If boot time is slow, and applications take a long time to load at first launch (only), then the hard drive is likely to blame. The speed of a hard drive can be measured with the `hdparm` command:
 
+**Note:** [hdparm](https://www.archlinux.org/packages/?name=hdparm) indicates only the pure read speed of a hard drive, and is not a valid benchmark. A value higher than 40MB/s (while idle) is however acceptable on an average system.
+
 ```
 # hdparm -t /dev/sdx
 
 ```
 
-[hdparm](https://www.archlinux.org/packages/?name=hdparm) indicates only the pure read speed of a hard drive, and is not a valid benchmark. A value higher than 40MB/s (while idle) is however acceptable on an average system.
-
-*   If CPU load is consistently high even with enough RAM available, then lowering CPU use should be a priority. This can be monitored in several ways, for example with [htop](https://www.archlinux.org/packages/?name=htop):
+*   If CPU load is consistently high even with enough RAM available, then try to lower CPU usage by disabling running [daemons](/index.php/Daemons "Daemons") and/or processes. This can be monitored in several ways, for example with [htop](https://www.archlinux.org/packages/?name=htop), `pstree` or any other [system monitoring](/index.php/List_of_applications#System_monitoring "List of applications") tool:
 
 ```
 $ htop
 
 ```
 
-*   If only applications using direct rendering are slow (i.e those which use the GPU, such as video players and games), then improving GPU performance should help. The first step is to verify if direct rendering is actually enabled. This is indicated by the `glxinfo` command:
+*   If applications using direct rendering are slow (i.e those which use the GPU, such as video players, games, or even a [window manager](/index.php/Window_manager "Window manager")), then improving GPU performance should help. The first step is to verify if direct rendering is actually enabled. This is indicated by the `glxinfo` command, part of the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package:
+
+ `$ glxinfo | grep direct` 
+```
+direct rendering: Yes
 
 ```
-$ glxinfo | grep direct
 
-```
-
-*glxinfo* is part of the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) package.
-
-### The first thing to do
-
-The simplest and most efficient way of improving overall performance is to run lightweight environments and applications.
-
-*   Use a [window manager](/index.php/Window_manager "Window manager") instead of a [desktop environment](/index.php/Desktop_environment "Desktop environment").
-*   Use `pstree` or [htop](https://www.archlinux.org/packages/?name=htop) to list running daemons and their resource use.
+*   When running a [desktop environment](/index.php/Desktop_environment "Desktop environment"), disabling (unused) visual desktop effects may reduce GPU usage. Use a more lightweight environment or create a [custom environment](/index.php/Desktop_environment#Custom_environments "Desktop environment") if the current does not meet the hardware and/or personal requirements.
 
 ### Benchmarking
 

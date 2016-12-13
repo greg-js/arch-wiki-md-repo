@@ -69,7 +69,7 @@ GStreamer will automatically detect and use the correct API [[1]](http://docs.gs
 *   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
 *   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU support.
 
-**Warning:** Enabling VA-API support on computers with Intel GPUs may cause issues with thumbnailing of video files. See [GNOME Files#Thumbnailing_not_working_for_video_files](/index.php/GNOME_Files#Thumbnailing_not_working_for_video_files "GNOME Files") for details.
+**Note:** Enabling VA-API support on computers with Intel GPUs may cause issues with thumbnailing of video files. See [GNOME Files#Thumbnailing_not_working_for_video_files](/index.php/GNOME_Files#Thumbnailing_not_working_for_video_files "GNOME Files") for details.
 
 ## Troubleshooting
 

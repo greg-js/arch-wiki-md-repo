@@ -144,7 +144,7 @@ CUDA (Compute Unified Device Architecture) is [NVIDIA](/index.php/NVIDIA "NVIDIA
     *   CUDA toolkit, including the `nvcc` compiler
     *   CUDA SDK, which contains many code samples and examples of CUDA and OpenCL programs
 
-The kernel module and CUDA "driver" library are shipped in [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia). The "runtime" library and the rest of the CUDA toolkit are available in [cuda](https://www.archlinux.org/packages/?name=cuda). The library is available [only in 64-bit version](https://projects.archlinux.org/svntogit/community.git/commit/trunk?h=packages/cuda&id=1b62c8bcb9194b2de1b750bd62a8dce1e7e549f5).
+The kernel module and CUDA "driver" library are shipped in [nvidia](https://www.archlinux.org/packages/?name=nvidia) and [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia). The "runtime" library and the rest of the CUDA toolkit are available in [cuda](https://www.archlinux.org/packages/?name=cuda). The library is available [only in 64-bit version](https://projects.archlinux.org/svntogit/community.git/commit/trunk?h=packages/cuda&id=1b62c8bcb9194b2de1b750bd62a8dce1e7e549f5). `cuda-gdb` needs [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) to be installed, see [FS#46598](https://bugs.archlinux.org/task/46598).
 
 ### Development
 

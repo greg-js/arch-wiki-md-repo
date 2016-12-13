@@ -278,6 +278,8 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 
 If brightness control still does not work with this option, try installing [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/) or [nvidiabl](https://aur.archlinux.org/packages/nvidiabl/).
 
+**Note:** Installing either [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/) or [nvidiabl](https://aur.archlinux.org/packages/nvidiabl/) will provide a `/sys/class/backlight/nvidia_backlight/` interface to backlight brightness control, but your system may continue to issue backlight control changes on `/sys/class/backlight/acpi_video0/`. One solution in this case is to watch for changes on, e.g. `acpi_video0/brightness` with *inotifywait* and to translate and write to `nvidia_backlight/brightness` accordingly. See [Backlight#sysfs modified but no brightness change](/index.php/Backlight#sysfs_modified_but_no_brightness_change "Backlight").
+
 ### Enabling SLI
 
 **Warning:** As of May 7, 2011, you may experience sluggish video performance in GNOME 3 after enabling SLI.

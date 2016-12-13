@@ -142,7 +142,7 @@ See [GTK+#Keyboard shortcuts](/index.php/GTK%2B#Keyboard_shortcuts "GTK+"),
 
 By default Thunar will not show in devices any partitions defined in `/etc/fstab` besides the root partition.
 
-We can change that by adding the option **comment=x-gvfs-show** to fstab for the partition we wish to show.
+We can change that by adding the option **x-gvfs-show** to fstab for the partition we wish to show.
 
 ## Custom actions
 

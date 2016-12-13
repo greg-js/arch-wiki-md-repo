@@ -251,7 +251,7 @@ static const FT_Byte  default_filter[5] =
 
 ```
 
-This constant defines a low-pass filter applied to the rendered glyph. Modify it as needed. Save the file, build and install the custom package:
+This constant defines a low-pass filter applied to the rendered glyph. Modify it as needed. (reference: [freetype list discussion](https://lists.nongnu.org/archive/html/freetype/2006-09/msg00069.html)) Save the file, build and install the custom package:
 
 ```
 $ makepkg -e

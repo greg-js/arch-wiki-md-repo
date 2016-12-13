@@ -122,6 +122,8 @@ The remaining features are left off by default, to remain compatible with contai
 
 ```
 
+**Note:** The [chroot_findtask](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Protect_outside_processes) option has [been found to cause problems](https://forums.grsecurity.net/viewtopic.php?f=3&t=4623) with systemd-nspawn.
+
 ## Socket restrictions
 
 There are 3 groups for restricting access to sockets. Users in the `socket-deny-client` group are forbidden from connecting to other hosts. Users in the `socket-deny-server` group are unable to listen on a port. The `socket-deny-all` group includes both of the restrictions.

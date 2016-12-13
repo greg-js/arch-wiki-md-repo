@@ -3,15 +3,30 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Auto logout on suspend](#Auto_logout_on_suspend)
-*   [3 Off-the-Record Messaging](#Off-the-Record_Messaging)
-    *   [3.1 Configuration](#Configuration)
-*   [4 OMEMO Support](#OMEMO_Support)
-    *   [4.1 Configuration](#Configuration_2)
+*   [2 Enabling DBus remote control Support](#Enabling_DBus_remote_control_Support)
+*   [3 Show/hide roster](#Show.2Fhide_roster)
+*   [4 Auto logout on suspend](#Auto_logout_on_suspend)
+*   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
+    *   [5.1 Configuration](#Configuration)
+*   [6 OMEMO Support](#OMEMO_Support)
+    *   [6.1 Configuration](#Configuration_2)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [gajim](https://www.archlinux.org/packages/?name=gajim) package.
+
+## Enabling DBus remote control Support
+
+As of version 0.16.6, DBus support is disabled, in order to activate it, enable *remote_control* in the 'Advanced Configuration Editor' (Preferences -> Advanced -> 'Advanced Configuration Editor'), then restart Gajim.
+
+## Show/hide roster
+
+If you would like to be able to show/hide the roster using a script or your wm, you can use the following command from the terminal.
+
+```
+$ gajim-remote toggle_roster_appearance
+
+```
 
 ## Auto logout on suspend
 
@@ -45,7 +60,7 @@ $ gajim-remote check_gajim_running
 
 ```
 
-In case it returns "False" while Gajim is running, enable *remote_control* in the 'Advanced Configuration Editor' (Preferences -> Advanced -> 'Advanced Configuration Editor'), then restart Gajim.
+In case it returns "False" while Gajim is running, enable DBus Support
 
 Then [enable](/index.php/Enable "Enable") the service.
 

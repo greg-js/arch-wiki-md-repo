@@ -27,7 +27,7 @@ This article covers installing, using and training [waifu2x](https://github.com/
 
 To directly use waifu2x, install [waifu2x-git](https://aur.archlinux.org/packages/waifu2x-git/) pakage. There are other alternates for using waifu2x, just search `waifu2x` in AUR.
 
-**Tip:** If you have an NVIDIA GPU, you can install [cuda](https://www.archlinux.org/packages/?name=cuda) to gain significantly speed up
+**Tip:** If you have an NVIDIA GPU, you can install [cuda](https://www.archlinux.org/packages/?name=cuda) to significantly speed up the conversion process.
 
 ## Usage
 

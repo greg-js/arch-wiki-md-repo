@@ -131,7 +131,7 @@ The RAID devices can be managed in different ways:
 
 	Software RAID
 
-	This is the easier implementation as it does not rely on obscure proprietary firmware and software to be used. The array is managed by the operating system either by:
+	This is the easiest implementation as it does not rely on obscure proprietary firmware and software to be used. The array is managed by the operating system either by:
 
 *   by an abstraction layer (e.g. [mdadm](#Installation));
     **Note:** This is the method we will use later in this guide.

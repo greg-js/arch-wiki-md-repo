@@ -8,13 +8,15 @@ Hardware-based full-disk encryption (FDE) is now available from many hard disk d
     *   [1.3 Disadvantages](#Disadvantages)
 *   [2 Linux support](#Linux_support)
 *   [3 Encrypting the root (boot) drive](#Encrypting_the_root_.28boot.29_drive)
-    *   [3.1 Download (or create) the pre-boot authorization (PBA) image](#Download_.28or_create.29_the_pre-boot_authorization_.28PBA.29_image)
-    *   [3.2 Test the PBA on your machine (optional)](#Test_the_PBA_on_your_machine_.28optional.29)
-    *   [3.3 Prepare and test the rescue image (optional)](#Prepare_and_test_the_rescue_image_.28optional.29)
-    *   [3.4 Set up the drive](#Set_up_the_drive)
-    *   [3.5 Enable locking](#Enable_locking)
-    *   [3.6 Disable locking](#Disable_locking)
-    *   [3.7 Re-enable locking and the PBA](#Re-enable_locking_and_the_PBA)
+    *   [3.1 Check if your disk supports OPAL](#Check_if_your_disk_supports_OPAL)
+    *   [3.2 Download (or create) the pre-boot authorization (PBA) image](#Download_.28or_create.29_the_pre-boot_authorization_.28PBA.29_image)
+    *   [3.3 Test the PBA on your machine (optional)](#Test_the_PBA_on_your_machine_.28optional.29)
+    *   [3.4 Prepare and test the rescue image (optional)](#Prepare_and_test_the_rescue_image_.28optional.29)
+    *   [3.5 Set up the drive](#Set_up_the_drive)
+    *   [3.6 Enable locking](#Enable_locking)
+    *   [3.7 Accessing the drive from a live distro](#Accessing_the_drive_from_a_live_distro)
+    *   [3.8 Disable locking](#Disable_locking)
+    *   [3.9 Re-enable locking and the PBA](#Re-enable_locking_and_the_PBA)
 *   [4 Encrypting a non-root drive](#Encrypting_a_non-root_drive)
 *   [5 Changing the passphrase](#Changing_the_passphrase)
 *   [6 Secure disk erasure](#Secure_disk_erasure)
@@ -87,15 +89,55 @@ In fact, in drives featuring FDE, data is *always* encrypted with the DEK when s
 
 These instructions assume you have the *sedutil-cli* tool installed (via the [AUR](https://aur.archlinux.org/packages/sedutil), or by other means)
 
+### Check if your disk supports OPAL
+
+```
+# sedutil-cli --scan
+
+```
+
+If you get something like
+
+```
+Scanning for Opal compliant disks
+/dev/sda No  LITEONIT LMT-256L9M-11 MSATA 256GB       HM8110B
+
+```
+
+then your disk doesn't support OPAL. On the contrary, the following output (taken from the Windows version) means OPAL is supported:
+
+```
+\\.\PhysicalDrive0 12  Samsung SSD 850 PRO 512GB                EXM02B6Q
+
+```
+
 ### Download (or create) the pre-boot authorization (PBA) image
 
 Download the pre-boot authorization (PBA) image for a [BIOS](https://github.com/Drive-Trust-Alliance/exec/blob/master/LINUXPBARelease.img.gz?raw=true) or [64bit UEFI](https://github.com/Drive-Trust-Alliance/exec/blob/master/UEFI64_Release.img.gz?raw=true) machine.
 
 **Note:** UEFI support currently requires that Secure Boot be turned off.
 
+Alternatively, you can create your own PBA image using the supplied helpers:
+
+```
+# mklinuxpba-efi
+
+```
+
+to create an EFI image (/boot/linuxpba-efi.diskimg) and
+
+```
+# mklinuxpba-bios
+
+```
+
+to create a BIOS image (/boot/linuxpba.diskimg).
+
 ### Test the PBA on your machine (optional)
 
 Refer to the [official docs](https://github.com/Drive-Trust-Alliance/sedutil/wiki/Test-the-PBA).
+
+Don't expect to get a list of your OPAL disks. If you try the PBA from a USB stick and your SSD disk is still not activated for OPAL locking (as it is recommended before the PBA has been successfully tested) you will get an error message including "INVALID PARAMETER" (see [this issue](https://github.com/Drive-Trust-Alliance/sedutil/issues/73)). But this shows that the PBA is actually working and finding your disk. The Wiki is outdated in this regard.
 
 ### Prepare and test the rescue image (optional)
 
@@ -129,6 +171,20 @@ Use the output of `lsblk --fs` to help identify the correct drive.
 Power off the computer to lock the drive.
 
 When the computer is next powered on, the PBA should ask for your password; then unlock the drive and chain-load the decrypted OS.
+
+### Accessing the drive from a live distro
+
+The easiest way is to boot the encrypted SSD first, in order to run the shadow MBR. Then press the key that prompts the boot menu and boot whatever device you prefer. Such a way the SED will be completely transparent.
+
+Another way is to directly boot into the live distro and use sedutil to unlock the SSD:
+
+```
+# sedutil-cli --setlockingrange 0 rw <password> <drive>
+# sedutil-cli --setmbrdone on <password> <drive>
+
+```
+
+`libata.allow_tpm` **must** be set to `1` (true) in order to use sedutil. Either add `libata.allow_tpm=1` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), or by setting `/sys/module/libata/parameters/allow_tpm` to `1` on a running system.
 
 ### Disable locking
 

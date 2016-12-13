@@ -30,8 +30,8 @@
 
 Linux-ck roughly follows the release cycle of the official ARCH kernel. The following are requirements for its release:
 
-*   Corresponding ARCH kernel base must be in [core] or else the corresponding modules such as nvidia, nvidia-304xx, nvidia-340xx, and vbox will not be available to users and will cause version conflicts.
 *   CK's patchset.
+*   The corresponding Arch kernel must be in existence. See [git.archlinux.org](https://git.archlinux.org/svntogit/packages.git/log/trunk?h=packages/linux) for the linux package.
 
 ### Package defaults
 
