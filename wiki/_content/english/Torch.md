@@ -3,5 +3,3 @@
 ## Installation
 
 Install [torch7](https://aur.archlinux.org/packages/torch7/) from the [AUR](/index.php/AUR "AUR").
-
-I recommend you then follow through with the tutorial available here [[1]](http://code.madbits.com/wiki/doku.php?id=tutorial_basics).

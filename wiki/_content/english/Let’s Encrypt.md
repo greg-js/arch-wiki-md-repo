@@ -48,6 +48,13 @@ If there is no plugin for your web server, use the following command:
 
 ```
 
+When preferring to use DNS challenge (TXT record) use:
+
+```
+# certbot certonly --manual --preferred-challenges dns
+
+```
+
 This will automatically verify your domain and create a private key and certificate pair. These are placed in `/etc/letsencrypt/live/*your.domain*/`.
 
 You can then manually configure your web server to use the key and certificate in that directory.

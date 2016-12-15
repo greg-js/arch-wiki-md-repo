@@ -461,8 +461,9 @@ Create a file `/etc/nginx/servers-available/gitlab` with the following content:
 # Created by: Sameer Naik
 # Contributor: francoism90
 # Source: [https://gist.github.com/sameersbn/becd1c976c3dc4866ef8](https://gist.github.com/sameersbn/becd1c976c3dc4866ef8)
-upstream gitlab {
-  server localhost:8080 fail_timeout=0;
+
+upstream gitlab-workhorse {
+  server unix:/run/gitlab/gitlab-workhorse.socket fail_timeout=0;
 }
 
 server {
@@ -492,7 +493,7 @@ server {
       proxy_set_header X-Forwarded-Proto $scheme;
       proxy_set_header X-Frame-Options SAMEORIGIN;
 
-      proxy_pass [http://localhost:8080](http://localhost:8080);
+      proxy_pass [http://gitlab-workhorse](http://gitlab-workhorse);
   }  
 }
 ```

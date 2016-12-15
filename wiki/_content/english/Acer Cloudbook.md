@@ -119,6 +119,24 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ***Installation made with the 2015_12_01 image, which includes the kernel version 4.2.5.***
 
+**The default Arch kernel is not compatible with this line of laptops due to the module pinctrl_cherryview being built-in to the Kernel. Therefore, you will have to compile your own kernel, possibly on another Arch machine. Follow the [Kernels/Arch_Build_System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System") guide and change the line**
+
+```
+CONFIG_PINCTRL_CHERRYVIEW=y
+
+```
+
+**to**
+
+```
+CONFIG_PINCTRL_CHERRYVIEW=n
+
+```
+
+**in the config (config.x86_64 if running 64-bit Arch) file to have a successfully working kernel.**
+
+**Linux-lts 4.4.38-1 does work with this line of laptops, but this is likely to change in the future releases.**
+
 ### BIOS configuration
 
 *   Touchpad: Basic

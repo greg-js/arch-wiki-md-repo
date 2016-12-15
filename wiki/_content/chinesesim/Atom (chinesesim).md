@@ -1,10 +1,12 @@
-[Atom](https://atom.io/) 是一个由GitHub开发的开源编辑器，采用MIT证书授权方式。它主要是由CoffeeScript和Javascript编写，并使用Node.js作为运行时环境。超过4,000个插件和1,000种主题使它具有很强的扩展性。它使用其内建的apm软件包管理器管理软件包和主题。
+**翻译状态：** 本文是英文页面 [Atom](/index.php/Atom "Atom") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-12-14，点击[这里](https://wiki.archlinux.org/index.php?title=Atom&diff=0&oldid=459125)可以查看翻译后英文页面的改动。
+
+[Atom](https://atom.io/) 是一个由 GitHub 开发的开源编辑器，采用 MIT 证书授权方式。主要是由 CoffeeScript 和 Javascript 编写，并使用 Node.js 作为运行时环境。超过 4,000 个插件和1,000 种主题使它具有很强的扩展性。它使用其内建的 apm 软件包管理器管理软件包和主题。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 插件](#.E6.8F.92.E4.BB.B6)
-*   [3 Troubleshooting](#Troubleshooting)
+*   [3 问题处理](#.E9.97.AE.E9.A2.98.E5.A4.84.E7.90.86)
     *   [3.1 环境变量设置（Environment variables not sourced）](#.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F.E8.AE.BE.E7.BD.AE.EF.BC.88Environment_variables_not_sourced.EF.BC.89)
 
 ## 安装
@@ -17,7 +19,7 @@
 *   [atom-editor-git](https://aur.archlinux.org/packages/atom-editor-git/)
 *   [atom-editor-beta](https://aur.archlinux.org/packages/atom-editor-beta/)
 *   [atom-editor-beta-bin](https://aur.archlinux.org/packages/atom-editor-beta-bin/)
-*   *atom* 来自一个非官方的 [atom](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") 源.
+*   非官方的 [atom](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") 源提供的 *atom* 软件包 .
     **Note:** Bugs regarding binary packages from the *atom* repository can be reported on [GitHub](https://github.com/tensor5/arch-atom/issues). Bugs regarding Atom itself should be reported upstream.
 
 ## 插件
@@ -41,7 +43,7 @@ $ apm install *package_name1* *package_name2* *package_name3* ...
 *   [script](https://atom.io/packages/script) which enables Atom the ability to run scripts, based on file names.
 *   [terminal-fusion](https://atom.io/packages/terminal-fusion) which adds an embedded terminal window to Atom.
 
-## Troubleshooting
+## 问题处理
 
 ### 环境变量设置（Environment variables not sourced）
 

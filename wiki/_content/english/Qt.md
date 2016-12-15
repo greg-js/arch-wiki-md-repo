@@ -17,7 +17,7 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [3.2 Qt5](#Qt5)
     *   [3.3 Qt Style Sheets](#Qt_Style_Sheets)
     *   [3.4 GTK+ and Qt](#GTK.2B_and_Qt)
-    *   [3.5 Configuration of Qt5 apps under environments other than KDE](#Configuration_of_Qt5_apps_under_environments_other_than_KDE)
+    *   [3.5 Configuration of Qt5 apps under environments other than KDE Plasma](#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma)
 *   [4 Development](#Development)
     *   [4.1 Supported platforms](#Supported_platforms)
         *   [4.1.1 Android](#Android)
@@ -161,9 +161,9 @@ For more information on Qt Style Sheets see the [official documentation](http://
 
 If you have GTK+ and Qt applications, their looks might not exactly blend in very well. If you wish to make your GTK+ styles match your Qt styles please read [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-### Configuration of Qt5 apps under environments other than KDE
+### Configuration of Qt5 apps under environments other than KDE Plasma
 
-Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running DE. In KDE or GNOME this works well, but in other less popular DEs or WM it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
+Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running DE. In KDE Plasma or GNOME this works well, but in other less popular DEs or WM it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
 
 Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a DE independent Qt5 QPA and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the environment variable `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications. Alternatively, use `--platformtheme qt5ct` as argument to the Qt5 application.
 

@@ -2,11 +2,11 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
 
 ## Contents
 
-*   [1 Joystick Input Systems](#Joystick_Input_Systems)
+*   [1 Joystick input systems](#Joystick_input_systems)
 *   [2 Determining which modules you need](#Determining_which_modules_you_need)
     *   [2.1 Loading the modules for analogue devices](#Loading_the_modules_for_analogue_devices)
     *   [2.2 USB joysticks](#USB_joysticks)
-*   [3 Testing Your Configuration](#Testing_Your_Configuration)
+*   [3 Testing your configuration](#Testing_your_configuration)
     *   [3.1 Joystick API](#Joystick_API)
     *   [3.2 evdev API](#evdev_API)
 *   [4 Setting up deadzones and calibration](#Setting_up_deadzones_and_calibration)
@@ -15,7 +15,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [4.3 Joystick API deadzones](#Joystick_API_deadzones)
     *   [4.4 evdev API deadzones](#evdev_API_deadzones)
     *   [4.5 Configuring curves and responsivness](#Configuring_curves_and_responsivness)
-*   [5 Disable Joystick From Controlling Mouse](#Disable_Joystick_From_Controlling_Mouse)
+*   [5 Disable joystick from controlling mouse](#Disable_joystick_from_controlling_mouse)
 *   [6 Using Joystick to send keystrokes](#Using_Joystick_to_send_keystrokes)
     *   [6.1 Xorg configuration example](#Xorg_configuration_example)
 *   [7 Specific devices](#Specific_devices)
@@ -40,19 +40,17 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [8.1 Joystick moving mouse](#Joystick_moving_mouse)
     *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
     *   [8.3 Joystick not recognized by all programs](#Joystick_not_recognized_by_all_programs)
-    *   [8.4 Steam Controller Not Pairing](#Steam_Controller_Not_Pairing)
+    *   [8.4 Steam Controller not pairing](#Steam_Controller_not_pairing)
 
-## Joystick Input Systems
+## Joystick input systems
 
-Linux actually has 2 different input systems for Joysticks. The original 'Joystick' interface and the newer 'evdev' based one.
+Linux has 2 different input systems for Joysticks. The original 'Joystick' interface and the newer 'evdev' based one.
 
 `/dev/input/jsX` maps to the 'Joystick' API interface and `/dev/input/event*` maps to the 'evdev' ones (this also includes other input devices such as mice and keyboards). Symbolic links to those devices are also available in `/dev/input/by-id/` and `/dev/input/by-path/` where the legacy 'Joystick' API has names ending with `-joystick` while the 'evdev' have names ending with `-event-joystick`.
 
 Most new games will default to the 'evdev' interface as it gives more detailed information about the buttons and axes available and also adds support for force feedback.
 
-While SDL1.x defaults to 'evdev' interface you can force it to use the old 'Joystick' API by setting the environment variable `SDL_JOYSTICK_DEVICE=/dev/input/js0`. This can help many games such as X3\. SDL2.x supports only the new 'evdev' interface.
-
-It's also worth mentioning that there is also a xorg driver `xf86-input-joystick`. It just allows you to control the mouse/keyboard in xorg using a joystick, for most people this will be undesirable. Disabling this behaviour is described below in [Disable Joystick From Controlling Mouse](#Disable_Joystick_From_Controlling_Mouse), in most cases you can just remove this package though.
+While SDL1 defaults to 'evdev' interface you can force it to use the old 'Joystick' API by setting the environment variable `SDL_JOYSTICK_DEVICE=/dev/input/js0`. This can help many games such as X3\. SDL2 supports only the new 'evdev' interface.
 
 ## Determining which modules you need
 
@@ -72,7 +70,7 @@ You need to load a module for your gameport (`ns558`, `emu10k1-gp`, `cs461x`, et
 
 You need to get USB working, and then modprobe your joystick driver, which is `usbhid`, as well as `joydev`. If you use a usb mouse or keyboard, `usbhid` will be loaded already and you just have to load the `joydev` module.
 
-## Testing Your Configuration
+## Testing your configuration
 
 Once the modules are loaded, you should be able to find a new device: `/dev/input/js0` and a file ending with `-event-joystick` in `/dev/input/by-id` directory. You can simply `cat` those devices to see if the joystick works - move the stick around, press all the buttons - you should see mojibake printed when you move the sticks or press buttons.
 
@@ -116,10 +114,13 @@ Source: [UsefulRegistryKeys](http://wiki.winehq.org/UsefulRegistryKeys)
 
 ### Xorg deadzones
 
-Add a similar line into your `/usr/share/X11/xorg.conf.d/50-joystick.conf` before the `EndSection`:
+Add a similar line to `/etc/X11/xorg.conf.d/51-joystick.conf` (create if it doesn't exist):
 
+ `/etc/X11/xorg.conf.d/51-joystick.conf` 
 ```
-Option "MapAxis1" "deadzone=1000"
+Section "InputClass"
+    Option "MapAxis1" "deadzone=1000"
+EndSection
 
 ```
 
@@ -229,11 +230,11 @@ You can also modify the responsiveness by setting the 'sen' (sensitivity). Setti
 
 Nice thing about xboxdrv is that it exports resulting device as both old Joystick API and new style evdev API so it should be compatible with basically any application.
 
-## Disable Joystick From Controlling Mouse
+## Disable joystick from controlling mouse
 
-If you want to play games with your controller, you might want to disable joystick control over mouse cursor. To do this, edit /usr/share/X11/xorg.conf.d/50-joystick.conf so that it looks like this:
+If you want to play games with your controller, you might want to disable joystick control over mouse cursor. To do this, edit `/etc/X11/xorg.conf.d/51-joystick.conf` (create if it doesn't exists) so that it looks like this:
 
- `/usr/share/X11/xorg.conf.d/50-joystick.conf ` 
+ `/etc/X11/xorg.conf.d/51-joystick.conf ` 
 ```
 Section "InputClass"
         Identifier "joystick catchall"
@@ -253,7 +254,7 @@ A couple joystick to keystroke programs exist like [qjoypad](https://aur.archlin
 
 This is a good solution for systems where restarting Xorg is a rare event because it is a static configuration loaded only on X startup. The example runs on a [Kodi](/index.php/Kodi "Kodi") media PC, controlled with a Logitech Cordless RumblePad 2\. Due to a problem with the d-pad (a.k.a. "hat") being recognized as another axis, [Joy2key](/index.php/Joy2key "Joy2key") was used as a workaround. Since upgrade to Kodi version 11.0 and joy2key 1.6.3-1, this setup no longer worked and the following was created for letting Xorg handle joystick events.
 
-First, make sure you have [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) installed. Then, create `/usr/share/X11/xorg.conf.d/51-joystick.conf` like so:
+First, [install](/index.php/Install "Install") the [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) package. Then, create `/etc/X11/xorg.conf.d/51-joystick.conf` like so:
 
 ```
  Section "InputClass"
@@ -321,7 +322,7 @@ Remember to disconnect the controller when you are done as the controller will s
 
 The [steam](https://www.archlinux.org/packages/?name=steam) package (starting from version 1.0.0.51-1) will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running steam. If all else fails, try restarting the computer while the dongle is plugged in.
 
-If you can't get the Steam Controller to work, see [#Steam Controller Not Pairing](#Steam_Controller_Not_Pairing).
+If you can't get the Steam Controller to work, see [#Steam Controller not pairing](#Steam_Controller_not_pairing).
 
 Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam.
 
@@ -360,7 +361,7 @@ It has been reported that the default xpad driver has some issues with a few new
 
 If you experience such issues, you can use either [#SteamOS xpad](#SteamOS_xpad) or [#xboxdrv](#xboxdrv) instead of the default `xpad` driver.
 
-If you wish to use the controller for controlling the mouse, or mapping buttons to keys, etc. you should use the [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) package (configuration help can be found using `man joystick`). If the mouse locks itself in a corner, it might help changing the `MatchDevicePath` in `/usr/share/X11/xorg.conf.d/50-joystick.conf` from `/dev/input/event*` to `/dev/input/js*`.
+If you wish to use the controller for controlling the mouse, or mapping buttons to keys, etc. you should use the [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) package (configuration help can be found using `man joystick`). If the mouse locks itself in a corner, it might help changing the `MatchDevicePath` in `/etc/X11/xorg.conf.d/50-joystick.conf` from `/dev/input/event*` to `/dev/input/js*`.
 
 **Tip:** If you use the [TLP](/index.php/TLP "TLP") power management tool, you may experience connection issues with your Microsoft wireless adapter (e.g. the indicator LED will go out after the adapter has been connected for a few seconds, and controller connection attempts fail). This is due to TLP's USB autosuspend functionality, and the solution is to add the Microsoft wireless adapter's device ID to this feature's blacklist (USB_BLACKLIST, check [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#usb) for more details).
 
@@ -561,13 +562,13 @@ To fix the button mapping of PS4 controller you can use the following command wi
 
 ### Joystick moving mouse
 
-Sometimes USB joystick can be recognized as HID mouse (only in X, it is still being installed as `/dev/input/js0` as well). Known issue is cursor being moved by the joystick, or escaping to en edge of a screen right after plugin. If your application can detect joystick by it self, you can remove xf86-input-joystick package.
+Sometimes USB joystick can be recognized as HID mouse (only in X, it is still being installed as `/dev/input/js0` as well). Known issue is cursor being moved by the joystick, or escaping to en edge of a screen right after plugin. If your application can detect joystick by it self, you can remove the [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) package.
 
-More gentle solution is to [Disable Joystick From Controlling Mouse](#Disable_Joystick_From_Controlling_Mouse).
+A more gentle solution is described in [#Disable joystick from controlling mouse](#Disable_joystick_from_controlling_mouse).
 
 ### Joystick not working in FNA/SDL based games
 
-If you are using a generic non-widely used gamepad you may encounter issues getting the gamepad recognized in games based on SDL. Since [May the 14th 2015](https://github.com/flibitijibibo/FNA/commit/e55742cfe7e38b778a21ed8a12cb2f2081490d8d), FNA supports dropping a `gamecontrollerdb.txt` into the executable folder of the game, for example the [SDL_GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB).
+If you are using a generic non-widely used gamepad you may encounter issues getting the gamepad recognized in games based on SDL. Since [14 May 2015](https://github.com/flibitijibibo/FNA/commit/e55742cfe7e38b778a21ed8a12cb2f2081490d8d), FNA supports dropping a `gamecontrollerdb.txt` into the executable folder of the game, for example the [SDL_GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB).
 
 As an alternative and for older versions of FNA or for SDL you can generate a mapping yourself by downloading the SDL source code via [http://libsdl.org/](http://libsdl.org/), navigating to `/test/`, compile the `controllermap.c` program (alternatively install [controllermap](https://aur.archlinux.org/packages/controllermap/)) and run the test. After completing the controllermap test, a guid will be generated that you can put in the `SDL_GAMECONTROLLERCONFIG` environment variable which will then be picked up by SDL/FNA games. For example:
 
@@ -603,7 +604,7 @@ Assuming the device in question is `/dev/input/js0`. After you placed the rule r
 
 Then replug the device making you trouble. The joystick and event devices should be gone, although their number will still be reserved. But the files are out of the way.
 
-### Steam Controller Not Pairing
+### Steam Controller not pairing
 
 There are some unknown cases where the packaged udev rule for the Steam controller does not work ([FS#47330](https://bugs.archlinux.org/task/47330)). The most reliable workaround is to make the controller world readable. Copy the rule `/usr/lib/udev/rules.d/80-steam-controller-permission.rule` to `/etc/udev/rules.d` and set `MODE="0666"` e.g.
 

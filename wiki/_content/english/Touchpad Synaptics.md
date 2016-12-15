@@ -887,6 +887,8 @@ Newer Thinkpads do not have physical buttons for their Trackpoint anymore and in
 2.  Install the focaltech-dkms from [https://github.com/hanipouspilot/focaltech-dkms](https://github.com/hanipouspilot/focaltech-dkms)
 3.  Restart your computer
 4.  Edit your settings in the "Mouse and Trackpad" settings.
+5.  If the above does not work, the dkms from [https://github.com/vlasenko/hid-asus-dkms](https://github.com/vlasenko/hid-asus-dkms) could be used
+6.  For more informations see [https://bugzilla.kernel.org/show_bug.cgi?id=120181](https://bugzilla.kernel.org/show_bug.cgi?id=120181)
 
 ## See also
 

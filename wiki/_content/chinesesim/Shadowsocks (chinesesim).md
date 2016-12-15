@@ -5,13 +5,16 @@
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 客户端](#.E5.AE.A2.E6.88.B7.E7.AB.AF)
-        *   [2.1.1 GUI client](#GUI_client)
+        *   [2.1.1 命令行](#.E5.91.BD.E4.BB.A4.E8.A1.8C)
+        *   [2.1.2 以守护进程形式运行客户端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E5.AE.A2.E6.88.B7.E7.AB.AF)
+        *   [2.1.3 图形界面客户端](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E5.AE.A2.E6.88.B7.E7.AB.AF)
+        *   [2.1.4 浏览器配置](#.E6.B5.8F.E8.A7.88.E5.99.A8.E9.85.8D.E7.BD.AE)
+            *   [2.1.4.1 Firefox](#Firefox)
+            *   [2.1.4.2 Chrome/Chromium](#Chrome.2FChromium)
     *   [2.2 服务端](#.E6.9C.8D.E5.8A.A1.E7.AB.AF)
-    *   [2.3 以守护进程形式运行客户端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [2.4 以守护进程形式运行服务端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E6.9C.8D.E5.8A.A1.E7.AB.AF)
-    *   [2.5 加密](#.E5.8A.A0.E5.AF.86)
-    *   [2.6 Firefox](#Firefox)
-    *   [2.7 Chrome/Chromium](#Chrome.2FChromium)
+        *   [2.2.1 命令行运行服务端](#.E5.91.BD.E4.BB.A4.E8.A1.8C.E8.BF.90.E8.A1.8C.E6.9C.8D.E5.8A.A1.E7.AB.AF)
+        *   [2.2.2 以守护进程形式运行服务端](#.E4.BB.A5.E5.AE.88.E6.8A.A4.E8.BF.9B.E7.A8.8B.E5.BD.A2.E5.BC.8F.E8.BF.90.E8.A1.8C.E6.9C.8D.E5.8A.A1.E7.AB.AF)
+        *   [2.2.3 加密方法](#.E5.8A.A0.E5.AF.86.E6.96.B9.E6.B3.95)
 *   [3 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
@@ -59,6 +62,8 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 ### 客户端
 
+#### 命令行
+
 在`config.json`所在目录下运行`sslocal`即可；若需指定配置文件的位置：
 
  `# sslocal -c /etc/shadowsocks/config.json` 
@@ -71,24 +76,7 @@ shadowsocks以[json](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON")为配�
 
 * * *
 
-#### GUI client
-
-安装 [shadowsocks-qt5](https://aur.archlinux.org/packages/shadowsocks-qt5/)。
-
-**提示：** 也可以使用[shadowsocks-gui@gitHub](https://github.com/shadowsocks/shadowsocks-gui),如果不希望自己编译的话到[shadowsocks-gui@sourceforge](http://sourceforge.net/projects/shadowsocksgui/files/dist/)直接下载。
-
-* * *
-
-### 服务端
-
-**提示：** 普通用户无需配置服务端；
-
-在服务器上`cd`到`config.json`所在目录：
-
-1.  运行`ssserver`；
-2.  如果想在后台一直运行，可改执行：`nohup ssserver > log &`；
-
-### 以守护进程形式运行客户端
+#### 以守护进程形式运行客户端
 
 Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")服务可在`/etc/shadowsocks/`里调用不同的`*conf-file*.json`（以`*conf-file*`为区分标志），例： 在`/etc/shadowsocks/`中创建了`foo.json`配置文件，那么执行以下语句就可以调用该配置：
 
@@ -106,57 +94,17 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 **提示：** 可用`journalctl -u shadowsocks@foo`来查询日志；
 
-### 以守护进程形式运行服务端
+#### 图形界面客户端
 
-以上只是启动了客户端的守护进程，如果架设的是服务器，则需要：
+安装 [shadowsocks-qt5](https://aur.archlinux.org/packages/shadowsocks-qt5/)。
 
-```
-# systemctl start shadowsocks-server@foo
-# systemctl enable shadowsocks-server@foo
+**提示：** 也可以使用[shadowsocks-gui@gitHub](https://github.com/shadowsocks/shadowsocks-gui),如果不希望自己编译的话到[shadowsocks-gui@sourceforge](http://sourceforge.net/projects/shadowsocksgui/files/dist/)直接下载。
 
-```
+* * *
 
-**提示：** 如果使用的服务端端口号小于1024，需要修改`usr/lib/systemd/system/shadowsocks-server@.service`使得`user=root`，之后使用`systemctl daemon-reload`重新载入守护进程配置，即可开启监听。
+#### 浏览器配置
 
-### 加密
-
-**注意:** 默认加密方法`table`速度很快，但很不安全。如果CPU支持AES硬件加速的话，推荐使用`aes-128-ctr`。如果是旧CPU（不支持AES硬件加速），ChaCha20是占用最小速度最快的一种方式。请不要使用`rc4`，它不安全。
-
-**提示：** 安装`M2Crypto`可略微提升加密速度，对于Python2来说，安装[python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto)即可。
-
-可选的加密方式：
-
-*   aes-256-cfb（Shadowsocks的作者推荐的加密算法，移动平台可能开销稍高）
-*   aes-128-cfb
-*   aes-192-cfb
-*   aes-256-ofb
-*   aes-128-ofb
-*   aes-192-ofb
-*   aes-128-ctr
-*   aes-192-ctr
-*   aes-256-ctr
-*   aes-128-cfb8
-*   aes-192-cfb8
-*   aes-256-cfb8
-*   aes-128-cfb1
-*   aes-192-cfb1
-*   aes-256-cfb1
-*   bf-cfb
-*   camellia-128-cfb
-*   camellia-192-cfb
-*   camellia-256-cfb
-*   cast5-cfb
-*   chacha20
-*   idea-cfb
-*   rc2-cfb
-*   rc4-md5
-*   salsa20
-*   seed-cfb
-
-**注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
-,
-
-### Firefox
+##### Firefox
 
 以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")使用代理服务器的方法示例。
 
@@ -170,7 +118,7 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 更多有关foxyproxy内容，请到[foxyproxy官网](https://getfoxyproxy.org)查看。
 
-### Chrome/Chromium
+##### Chrome/Chromium
 
 以下是本地监听端口`127.0.0.1:1080`配置完毕后，[Chrome/Chromium](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")使用代理服务器的方法示例。
 
@@ -207,6 +155,67 @@ listen-address  127.0.0.1:8118
 $ chromium %U --proxy-server=127.0.0.1:8118
 
 ```
+
+### 服务端
+
+**提示：** 普通用户无需配置服务端；
+
+#### 命令行运行服务端
+
+在服务器上`cd`到`config.json`所在目录：
+
+1.  运行`ssserver`；
+2.  如果想在后台一直运行，可改执行：`nohup ssserver > log &`；
+
+#### 以守护进程形式运行服务端
+
+以上只是启动了客户端的守护进程，如果架设的是服务器，则需要：
+
+```
+# systemctl start shadowsocks-server@foo
+# systemctl enable shadowsocks-server@foo
+
+```
+
+**提示：** 如果使用的服务端端口号小于1024，需要修改`usr/lib/systemd/system/shadowsocks-server@.service`使得`user=root`，之后使用`systemctl daemon-reload`重新载入守护进程配置，即可开启监听。
+
+#### 加密方法
+
+**注意:** 默认加密方法`table`速度很快，但很不安全。如果CPU支持AES硬件加速的话，推荐使用`aes-128-ctr`。如果是旧CPU（不支持AES硬件加速），ChaCha20是占用最小速度最快的一种方式。请不要使用`rc4`，它不安全。
+
+**提示：** 安装`M2Crypto`可略微提升加密速度，对于Python2来说，安装[python2-m2crypto](https://www.archlinux.org/packages/?name=python2-m2crypto)即可。
+
+可选的加密方式：
+
+*   aes-256-cfb（Shadowsocks的作者推荐的加密算法，移动平台可能开销稍高）
+*   aes-128-cfb
+*   aes-192-cfb
+*   aes-256-ofb
+*   aes-128-ofb
+*   aes-192-ofb
+*   aes-128-ctr
+*   aes-192-ctr
+*   aes-256-ctr
+*   aes-128-cfb8
+*   aes-192-cfb8
+*   aes-256-cfb8
+*   aes-128-cfb1
+*   aes-192-cfb1
+*   aes-256-cfb1
+*   bf-cfb
+*   camellia-128-cfb
+*   camellia-192-cfb
+*   camellia-256-cfb
+*   cast5-cfb
+*   chacha20
+*   idea-cfb
+*   rc2-cfb
+*   rc4-md5
+*   salsa20
+*   seed-cfb
+
+**注意:** 官方软件源的[shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks)不支持全部加密方式，官方软件源Chacha20以及salsa20的支持可以安装libsodium（For salsa20 and chacha20 support） 。若对非主流加密方式有需求，可尝试[aur](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的[shadowsocks-nodejs](https://aur.archlinux.org/packages/shadowsocks-nodejs/)
+。
 
 ## 参阅
 

@@ -11,8 +11,9 @@ Also see the forum thread: [[1]](https://bbs.archlinux.org/viewtopic.php?id=1949
     *   [2.1 Grub](#Grub)
     *   [2.2 Dual Booting ChromeOS and Arch Linux](#Dual_Booting_ChromeOS_and_Arch_Linux)
 *   [3 Touchpad, touchscreen and audio](#Touchpad.2C_touchscreen_and_audio)
-    *   [3.1 Linux 4.1](#Linux_4.1)
-    *   [3.2 Linux 3.19](#Linux_3.19)
+    *   [3.1 Linux 4.9](#Linux_4.9)
+    *   [3.2 Linux 4.1](#Linux_4.1)
+    *   [3.3 Linux 3.19](#Linux_3.19)
 *   [4 Backlight control](#Backlight_control)
 *   [5 Keyboard rebindings](#Keyboard_rebindings)
 *   [6 Disabling firmware write protect](#Disabling_firmware_write_protect)
@@ -58,6 +59,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 See [Chrome OS devices#Alternative installation, Install Arch Linux in addition to Chrome OS](/index.php/Chrome_OS_devices#Alternative_installation.2C_Install_Arch_Linux_in_addition_to_Chrome_OS "Chrome OS devices").
 
 ## Touchpad, touchscreen and audio
+
+### Linux 4.9
+
+Touchpad, touchscreen, and audio are all working in the upstream 4.9 kernel.
 
 ### Linux 4.1
 

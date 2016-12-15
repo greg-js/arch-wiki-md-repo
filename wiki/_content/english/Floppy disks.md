@@ -70,7 +70,7 @@ In such case, is probably that the diskette is physically damaged.
 
 ## More Resources
 
-*   [http://www.daniel-baumann.ch/software/dosfstools/](http://www.daniel-baumann.ch/software/dosfstools/) - DOS filesystem utilities (not so verbosely documented IMHO)
+*   [https://github.com/dosfstools/dosfstools](https://github.com/dosfstools/dosfstools) - DOS filesystem utilities
 *   [http://www.gnu.org/software/mtools/](http://www.gnu.org/software/mtools/) - a collection of utilities to access MS-DOS disks from Unix without mounting them
 
 ## Todo

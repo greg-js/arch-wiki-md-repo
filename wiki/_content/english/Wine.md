@@ -517,7 +517,7 @@ As an alternative to the above method, [playonlinux](https://www.archlinux.org/p
 
 #### Office 2013
 
-[CodeWeawers](https://www.codeweavers.com/) managed to install and run Microsoft Office 2013 with many bugs. It is still pretty unusable. You can read more [here](https://www.codeweavers.com/about/blogs/caron/2015/07/13/two-weeks-in-crossover-microsoft-office-2013-installs-and-launches).
+[Should work](http://www.phoronix.com/scan.php?page=news_item&px=CodeWeavers-CrossOver-16).
 
 #### Office 2016
 

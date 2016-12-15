@@ -316,8 +316,8 @@ Server = http://pkgbuild.com/~bgyorgy/$repo/os/$arch
 
 *   **Maintainer:** [Gustavo Castro](https://twitter.com/gustawho) <gustawho@openmailbox.com>
 *   **Description:** Scientific tools (mostly physics/math) and AUR packages that take long to build (such as [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)).
-*   **Package list:** [http://gustawho.com/pacman](http://gustawho.com/pacman)
-*   **Upstream page:** [http://gustawho.com](http://gustawho.com)
+*   **Package list:** [https://gustawho.com/pacman](https://gustawho.com/pacman)
+*   **Upstream page:** [https://gustawho.com](https://gustawho.com)
 *   **Key-ID:** [76578671](https://gustawho.com/repo/gustawho.key)
 
 ```

@@ -21,7 +21,6 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 Classes are announced on arch-general, the forums, and other broadcasting places like twitter. A list is given below for easy viewing.
 
 | **Date and Time** | **Class Title** | **Instructor(s)** | **Announcement(s)** |
-| 2016-12-11 19:00 UTC | *Getting started with Arch Linux package building* | halosghost and meskarune |
 
 ### Previous classes
 
@@ -33,7 +32,8 @@ Classes that have already happened. (Maybe students and teachers could write up 
 | 2014-05-31 | *A First Look at the Linux Kernel* | jy2wong | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-05-31-a_first_look_at_the_linux_kernel.txt) |
 | 2014-09-05 | *Introduction to Scheme and Functional Programming* | nisstyre | [20:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-09-05-introduction_to_scheme_and_functional_programming.txt) |
 | 2015-05-17 | *An Imperfect Introduction to Static Typing* | HalosGhost | [23:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2015-05-17-an_imperfect_introduction_to_static_typing.txt) |
-| 2016-07-16 | *Git for Gits* | polyzen, meskarune | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-07-16-git_for_gits.txt) |
+| 2016-07-16 | *Git for Gits* | polyzen and meskarune | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-07-16-git_for_gits.txt) |
+| 2016-12-11 | *Getting started with Arch Linux packaging* | halosghost and meskarune | [19:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-12-11-getting_started_with_arch_linux_packaging.txt) |
 
 ### Requested classes
 

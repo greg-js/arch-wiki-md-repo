@@ -153,6 +153,8 @@ In all of the following `luks` can be replaced with `rd.luks`. `luks` parameters
 
 **Tip:** If the file `/etc/crypttab.initramfs` exists, [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") will add it to the initramfs as `/etc/crypttab`.
 
+**Note:** If you use `luks.*` kernel parameters for the rootfs while also using /etc/crypttab for the swap then systemd will complain about "Not creating device 'swap' because it was not specified on the kernel command line.". To fix this issue just use `rd.luks.*` parameters instead.
+
 #### luks.uuid
 
 ```

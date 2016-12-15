@@ -20,22 +20,21 @@ This is a guide to setting up your webcam in Arch Linux.
 *   [5 Webcam configuration](#Webcam_configuration)
     *   [5.1 Webcam resolution](#Webcam_resolution)
 *   [6 Get software to use your webcam](#Get_software_to_use_your_webcam)
-    *   [6.1 Cheese](#Cheese)
-    *   [6.2 QtCAM](#QtCAM)
-    *   [6.3 fswebcam](#fswebcam)
-    *   [6.4 GTK+ UVC Viewer (guvcview)](#GTK.2B_UVC_Viewer_.28guvcview.29)
-    *   [6.5 Kopete](#Kopete)
-    *   [6.6 Kamoso](#Kamoso)
-    *   [6.7 xawtv](#xawtv)
-    *   [6.8 VLC](#VLC)
-    *   [6.9 MPlayer](#MPlayer)
-    *   [6.10 mpv](#mpv)
-    *   [6.11 FFmpeg](#FFmpeg)
-    *   [6.12 ekiga](#ekiga)
-    *   [6.13 Sonic-snap](#Sonic-snap)
-    *   [6.14 Skype](#Skype)
-    *   [6.15 Motion](#Motion)
-    *   [6.16 MJPG-streamer](#MJPG-streamer)
+    *   [6.1 QtCAM](#QtCAM)
+    *   [6.2 fswebcam](#fswebcam)
+    *   [6.3 GTK+ UVC Viewer (guvcview)](#GTK.2B_UVC_Viewer_.28guvcview.29)
+    *   [6.4 Kopete](#Kopete)
+    *   [6.5 Kamoso](#Kamoso)
+    *   [6.6 xawtv](#xawtv)
+    *   [6.7 VLC](#VLC)
+    *   [6.8 MPlayer](#MPlayer)
+    *   [6.9 mpv](#mpv)
+    *   [6.10 FFmpeg](#FFmpeg)
+    *   [6.11 ekiga](#ekiga)
+    *   [6.12 Sonic-snap](#Sonic-snap)
+    *   [6.13 Skype](#Skype)
+    *   [6.14 Motion](#Motion)
+    *   [6.15 MJPG-streamer](#MJPG-streamer)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
 
@@ -69,12 +68,7 @@ Identify the name of your webcam (using, for example, `lsusb`) and find a proper
 *   Logitech Quickcam Messenger
 *   Logitech Quickcam Communicate (for Communicate MP/S5500 or "for Business" see the linux-uvc section below)
 
-It is now in the community repo.
-
-**Note:**
-
-*   If qc-usb-messenger does not work use the gspca module, by installing the gspcav1 package.
-*   Now this driver is a module included in kernel 2.6.27.
+**Note:** Now this driver is a module included in kernel 2.6.27.
 
 ### zr364xx
 
@@ -270,27 +264,6 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 before starting it.
 
-### Cheese
-
-[cheese](https://www.archlinux.org/packages/?name=cheese) is the GNOME photo/video taking client. It is similar to Photo Booth in macOS. It is in the official repositories.
-
-In case of the following error:
-
-```
-Error during camera setup: One or more needed GStreamer elements are missing: cluttervideosink.
-
-```
-
-First close cheese, then run the following commands:
-
-```
-# pacman -R clutter-gst
-$ rm -r ~/.cache/gstreamer-1.0/
-
-```
-
-Then reopen cheese.
-
 ### QtCAM
 
 QtCAM is an Open Source Linux Webcam Software that enables users to capture/view videos/images from any USB camera or any V4L2 compatible device with attractive features such as Color space switching, Displaying Frame rates, over 10 image control settings and extension settings for select cameras.
@@ -305,14 +278,11 @@ In addition to being a convenient way to configure your webcam, [guvcview](http:
 
 ### Kopete
 
-Kopete is the [KDE](/index.php/KDE "KDE") instant messaging (IM) client. As of KDE 3.5, it has support for MSN and Yahoo! webcams, but not every cam works yet. It is included in the kdenetwork package.
+Kopete is the [KDE](/index.php/KDE "KDE") instant messaging (IM) client. [Install](/index.php/Install "Install") it with the [kdenetwork-kopete](https://www.archlinux.org/packages/?name=kdenetwork-kopete) package.
 
 ### Kamoso
 
-Application to take pictures and videos out of your webcam for KDE.
-
-*   KDE4: [kamoso](https://www.archlinux.org/packages/?name=kamoso)
-*   KDE Plasma 5: [kamoso-git](https://aur.archlinux.org/packages/kamoso-git/)
+Application to take pictures and videos out of your webcam for KDE. [Install](/index.php/Install "Install") it with the [kamoso](https://www.archlinux.org/packages/?name=kamoso) package.
 
 ### xawtv
 

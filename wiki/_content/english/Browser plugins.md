@@ -48,9 +48,8 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
 
 The package you will need to install depends on the browser you use.
 
-*   The NPAPI version can be [installed](/index.php/Pacman "Pacman") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package. This plugin is currently at version 11.2, but will be updated in the future.[[1]](https://blogs.adobe.com/flashplayer/2016/08/beta-news-flash-player-npapi-for-linux.html#sthash.3gR3RhEv.gSTeJKBM.dpbs)
-
-*   The PPAPI version can be [installed](/index.php/Install "Install") with the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package. Note that it is already included with Google Chrome.
+*   The NPAPI version can be [installed](/index.php/Install "Install") with the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package.
+*   The PPAPI version can be [installed](/index.php/Install "Install") with the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
 
 **Note:**
 

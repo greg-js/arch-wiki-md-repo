@@ -75,9 +75,9 @@ CONFIG_DEBUG_INFO_REDUCED=n
 
 *You can safely skip this step if you believe the source files are correct*.
 
-Run `md5sum config[.x86_64]` to get a new md5sum.
+Run `sha256sum config[.x86_64]` to get a new sha256sum.
 
-In **PKGBUILD** file, the `md5sums=('sum-of-first' ... 'sum-of-last')` has the same order with `source=('first-source' ... 'last-source')`, put your new md5sum in the right place.
+In **PKGBUILD** file, the `sha256sum=('sum-of-first' ... 'sum-of-last')` has the same order with `source=('first-source' ... 'last-source')`, put your new sha256sum in the right place.
 
 ### Build and Install
 

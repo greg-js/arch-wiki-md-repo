@@ -377,6 +377,8 @@ menuentry "[loopback]clonezilla-live-2.2.3-25-amd64" {
 
 **Tip:** To install debian from any stock install medium on a non-optical medium (e.g. usb stick, HDD), it's necessary to use a different initramfs instead of the default one on the installation medium which is located at `(loop)/install.amd/initrd.gz`. If you boot with the default one, the installer will unable to find or mount the proper iso image for installation. Please download the initramfs for hard disk installation from [an official mirror site](https://mirrors.kernel.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/initrd.gz), put it in the same directory with the image file and give it a suitable name (`debian-7.8.0-amd64-DVD-1.hdd.initrd.gz` in this example).
 
+**Tip:** The non-optical medium needs to be vFAT formatted, otherwise the /cdrom directory where the files from the *.iso image are located is not read correctly and a "Corrupted or missing CD-ROM" error appears.
+
 ```
 menuentry '[loopback]debian-7.8.0-amd64-DVD-1' {
 	set isofile='/boot/iso/debian-7.8.0-amd64-DVD-1.iso'

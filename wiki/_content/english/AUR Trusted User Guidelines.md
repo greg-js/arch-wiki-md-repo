@@ -26,7 +26,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
 6.  Remind a [BBS admin](https://bbs.archlinux.org/userlist.php?username=&show_group=1&sort_by=username&sort_dir=ASC&search=Submit) to change your account on forums.
 7.  Ask some TU for the #archlinux-tu@freenode key and hang out with us in the channel. You do not have to do this, but it would be neat since this is where most dark secrets are spilled and where many new ideas are conceived.
 8.  Create a PGP key for [package signing](/index.php/Package_signing "Package signing") or use your existing PGP key. Make sure the key also contains an encryption subkey so you can receive encrypted verification tokens.
-9.  Send Ionuț Bîru (ibiru@archlinux.org) or Florian Pritz (bluewind@xinu.at) with all the information based on this [template](https://www.archlinux.org/trustedusers/) to have access on dev interface (archweb).
+9.  Send Ionuț Bîru (ibiru@archlinux.org) or Florian Pritz (bluewind@xinu.at) an email with all the information based on this [template](https://www.archlinux.org/people/trusted-users/) to have access on dev interface (archweb).
 10.  Send a signed email to Florian:
     *   Attach one SSH public key. If you do not have one, use `ssh-keygen` to generate one. Check the [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") wiki page for more information about SSH keys.
     *   Ask him to whitelist you from arch-dev-public.

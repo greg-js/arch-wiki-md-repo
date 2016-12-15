@@ -40,7 +40,7 @@ Some plugins are available in the [gedit-plugins](https://www.archlinux.org/pack
 
 ### Adding and making custom plugins
 
-A plugin that shows errors while you type for languages like C, C++, etc, available in the [AUR](/index.php/AUR "AUR"): [gedit-code-assistance-git](https://aur.archlinux.org/packages/gedit-code-assistance-git/).
+A plugin that shows errors while you type for languages like C, C++, etc, available in the [extra](#extra) repository: [gedit-code-assistance](#extra).
 
 ## See also
 

@@ -11,7 +11,10 @@
 *   [2 Hardening](#Hardening)
     *   [2.1 Capabilities](#Capabilities)
     *   [2.2 Filesystem Access](#Filesystem_Access)
-*   [3 SSH jail](#SSH_jail)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Default jails](#Default_jails)
+    *   [3.2 Paths](#Paths)
+    *   [3.3 Custom SSH jail](#Custom_SSH_jail)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -54,9 +57,34 @@ ReadWriteDirectories=/var/run/fail2ban /var/lib/fail2ban /var/spool/postfix/mail
 
 In the example above, this limits the file system to read-only, except for `/var/run/fail2ban` for pid and socket files, and `/var/spool/postfix/maildrop` for [postfix](/index.php/Postfix "Postfix") sendmail. Again, this will be dependent on you system configuration and fail2ban configuration. The `/tmp` directory is needed for some fail2ban actions. Note that adding `/var/log` is necessary if you want fail2ban to log its activity.
 
-## SSH jail
+## Configuration
 
 **Note:** Due to the possibility of the `jail.conf` file being overwritten or improved during a distribution update, it is recommended to provide customizations in a `jail.local` file, or separate *.conf* files under the `jail.d/` directory, e.g. `jail.d/ssh-iptables.conf`.
+
+### Default jails
+
+Jails for many different services are already present in `/etc/fail2ban/jail.conf` but not enabled by default. You can copy the section headers into a .local file of your choice, enable them (and optionally override settings).
+
+### Paths
+
+There currently is no out-of-the-box support for archlinux, but the fedora defaults can make a decent starting point:
+
+```
+# cp /etc/fail2ban/paths-fedora.conf /etc/fail2ban/paths-archlinux.conf
+
+```
+
+To activate that configuration, add or alter the following section in the `jail.local` file:
+
+```
+[INCLUDES]
+before = paths-archlinux.conf
+
+```
+
+[Restart](/index.php/Restart "Restart") `fail2ban.service` to test your configuration. Watch out for "file not found errors" from *fail2ban-client* if the fail2ban service fails to start. Adjust the paths `paths-archlinux.conf` or `jail.local` as needed. Many of the default jails might not work out of the box.
+
+### Custom SSH jail
 
 Edit `/etc/fail2ban/jail.d/jail.conf`, add this section and update the list of trusted IP addresses.
 

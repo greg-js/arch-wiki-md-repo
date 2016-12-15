@@ -52,6 +52,8 @@ After a reboot to activate the encrypted swap, you will note that running `swapo
 
 **Note:** If the partition chosen for swap was previously a LUKS partition, crypttab will not overwrite the partition to create a swap partition. This is a safety measure to prevent data loss from accidental mis-identification of the swap partition in crypttab. In order to use such a partition the [LUKS header must be overwritten](/index.php/Dm-crypt/Drive_preparation#Wipe_LUKS_header "Dm-crypt/Drive preparation") once.
 
+**Note:** If you use the `sd-encrypt` hook and `luks.*` kernel parameters for the rootfs while also using /etc/crypttab for the swap then systemd will complain about "Not creating device 'swap' because it was not specified on the kernel command line.". To fix this issue just use `rd.luks.*` parameters instead.
+
 ### UUID and LABEL
 
 **Note:** This does not work when using the systemd and sd-encrypt init hooks

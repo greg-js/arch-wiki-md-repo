@@ -750,6 +750,7 @@ You can now use the device bluealsa to reach your headset. You can also use `als
 | **Philips SHB7100** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume is flaky (sometimes works in VLC, not at all in Audacious). Tested only A2DP and Handsfree audio out, built-in mic was broken. | Limited |
 | **Philips SHB7150** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume work in VLC. Tested only A2DP profile. | Yes |
 | **Philips SHB5500BK/00** | bluez 5.28, PulseAudio 6.0 | Pause and resume is not working. | Limited |
+| **Philips SHB3060** | bluez 5.40, PulseAudio 9.0 | Buttons are not working. Both profiles: HSP (also micrphone) and A2DP work. | Yes |
 | **Parrot Zik** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
 | **Parrot Zik 2.0** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
 | **Parrot Zik 3.0** | Microphone detected but does not work (HSP profile unavailable). No delay issues. | Limited |

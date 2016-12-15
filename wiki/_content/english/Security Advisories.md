@@ -44,6 +44,10 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### December 2016
 
+*   [14 December 2016] [ASA-201612-15](https://lists.archlinux.org/pipermail/arch-security/2016-December/000792.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
+*   [13 December 2016] [ASA-201612-14](https://lists.archlinux.org/pipermail/arch-security/2016-December/000791.html) [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) denial of service
+*   [13 December 2016] [ASA-201612-13](https://lists.archlinux.org/pipermail/arch-security/2016-December/000790.html) [python-html5lib](https://www.archlinux.org/packages/?name=python-html5lib) cross-site scripting
+*   [13 December 2016] [ASA-201612-12](https://lists.archlinux.org/pipermail/arch-security/2016-December/000789.html) [python2-html5lib](https://www.archlinux.org/packages/?name=python2-html5lib) cross-site scripting
 *   [10 December 2016] [ASA-201612-11](https://lists.archlinux.org/pipermail/arch-security/2016-December/000787.html) [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) denial of service
 *   [10 December 2016] [ASA-201612-10](https://lists.archlinux.org/pipermail/arch-security/2016-December/000786.html) [linux](https://www.archlinux.org/packages/?name=linux) denial of service
 *   [06 December 2016] [ASA-201612-9](https://lists.archlinux.org/pipermail/arch-security/2016-December/000785.html) [jasper](https://www.archlinux.org/packages/?name=jasper) multiple issues

@@ -148,7 +148,7 @@ Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check wit
 
 ### shim
 
-When run, shim tries to launch `grubx64.efi`, if MokList doesn't contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `MokManager.efi`. In MokManager you must enrol the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enrol the key they are signed with.
+When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `MokManager.efi`. In MokManager you must enrol the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enrol the key they are signed with.
 
 **Note:** If you use [#shim with hash](#shim_with_hash), each time you update any of the binaries (e.g. boot loader or kernel) you will need to enrol their new hash.
 
@@ -262,17 +262,17 @@ Secure Boot implementations use these keys:
 
 See [The Meaning of all the UEFI Keys](http://blog.hansenpartnership.com/the-meaning-of-all-the-uefi-keys/) for a more detailed explanation.
 
+### Custom keys
+
 To use Secure Boot you need at least **PK**, **KEK** and **db** keys. While you can add multiple KEK, db and dbx certificates, only one Platform Key is allowed.
 
 Once Secure Boot is in "User Mode" keys can only be updated by signing the update (using *sign-efi-sig-list*) with a higher level key. Platform key can be signed by itself.
-
-### Custom keys
 
 #### Creating keys
 
 To generate keys, [install](/index.php/Install "Install") [efitools](https://www.archlinux.org/packages/?name=efitools).
 
-You will need keys and certificates in multiple formats:
+You will need private keys and certificates in multiple formats:
 
 	`.key`
 
@@ -311,7 +311,7 @@ $ sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt PK PK.esl PK.auth
 
 ```
 
-Sign an empty file to allow removing Platform Key:
+Sign an empty file to allow removing Platform Key when in "User Mode":
 
 ```
 $ sign-efi-sig-list -g "$(< GUID.txt)" -c PK.crt -k PK.key PK /dev/null rm_PK.auth
@@ -328,10 +328,10 @@ $ sign-efi-sig-list -g "$(< GUID.txt)" -k PK.key -c PK.crt KEK KEK.esl KEK.auth
 
 ```
 
-Signature Database:
+Signature Database key:
 
 ```
-$ openssl req -newkey rsa:2048 -nodes -keyout db.key -new -x509 -sha256 -days *3650* -subj "/CN=*my Signature Database*/" -out db.crt
+$ openssl req -newkey rsa:2048 -nodes -keyout db.key -new -x509 -sha256 -days *3650* -subj "/CN=*my Signature Database key*/" -out db.crt
 $ openssl x509 -outform DER -in db.crt -out db.cer
 $ cert-to-efi-sig-list -g "$(< GUID.txt)" db.crt db.esl
 $ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
@@ -340,7 +340,29 @@ $ sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db db.esl db.auth
 
 #### Updating keys
 
-**Note:** Once Secure Boot is in "User Mode" any changes to KEK, db and dbx need to be signed with a higher level key.
+Once Secure Boot is in "User Mode" any changes to KEK, db and dbx need to be signed with a higher level key.
+
+For example, if you wanted to replace your db key with a new one:
+
+1.  [Create the new key](#Creating_keys),
+2.  Convert it to EFI Signature List,
+3.  Sign the EFI Signature List,
+4.  Enrol the signed certificate update file.
+
+```
+cert-to-efi-sig-list -g "$(< GUID.txt)" *new_db*.crt *new_db*.esl
+sign-efi-sig-list -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *new_db*.auth
+
+```
+
+If instead of replacing your db key, you want to **add** another one to the Signature Database, you need to use the option `-a` (see sign-efi-sig-list(1)):
+
+```
+sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.esl *new_db*.auth
+
+```
+
+When `*new_db*.auth` is created, [enrol it](#Enrol_keys_in_firmware).
 
 ### Signing bootloader and kernel
 
@@ -348,7 +370,7 @@ When Secure Boot is active (i.e. in "User Mode") you will only be able to launch
 
 Install [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools).
 
-**Note:** If running *sbsign* without `--output` the resulting file will be `*filename*.signed`.
+**Note:** If running *sbsign* without `--output` the resulting file will be `*filename*.signed`. See sbsign(1) for more information.
 
 ```
 # sbsign --key db.key --cert db.crt --output /boot/vmlinuz-linux /boot/vmlinuz-linux
@@ -402,7 +424,7 @@ See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/cont
 
 #### Microsoft Windows
 
-For example to [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates, [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows and [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
+To [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows"), you would need to add Microsoft's certificates to the Signature Database. Microsoft has two db certificates, [Microsoft Windows Production PCA 2011](http://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt) for Windows and [Microsoft Corporation UEFI CA 2011](http://www.microsoft.com/pkiops/certs/MicCorUEFCA2011_2011-06-27.crt) for third-party binaries like UEFI drivers, option ROMs etc.
 
 Microsoft's certificates are in DER format, convert them to PEM format with *openssl*:
 

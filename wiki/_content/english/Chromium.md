@@ -43,7 +43,7 @@ Other alternatives include:
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
 
-The derived browser, **Google Chrome**, bundled with Flash Player and Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
+The derived browser, **Google Chrome**, bundled with Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
 
 Other alternatives include:
 
@@ -71,7 +71,7 @@ To set Chromium as the default browser and to change which applications Chromium
 
 **Note:** Chromium no longer supports the Netscape plugin API (NPAPI), so [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) from the repositories cannot be used.
 
-*Pepper Flash* is the Flash Player plugin, using the new Pepper plugin API. It is included with Google Chrome. To install it for Chromium, [install](/index.php/Install "Install") it the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
+*Pepper Flash* is the Flash Player plugin, using the new Pepper plugin API. To install it for Chromium, [install](/index.php/Install "Install") it the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
 
 Make sure the plugin is enabled in `chrome://plugins` and restart Chromium via its menu.
 

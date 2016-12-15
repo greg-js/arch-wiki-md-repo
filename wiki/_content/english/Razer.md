@@ -281,7 +281,7 @@ Then use the shortcut utility of your Desktop Enviroment to map the keys
 
 #### Features
 
-*   Works with BlackWidow Ultimate 2013 (unknown whether it works with other versions)
+*   Works with BlackWidow Ultimate and Stealth 2013 (unknown whether it works with other versions)
 *   Uses Python 2
 *   Bundles scripts to create and execute macros
 

@@ -204,7 +204,7 @@ $ mode2 --driver default --device /dev/lirc0
 
 Watch the output while pressing buttons on the remote. If output is present, edit `/etc/lirc/lirc_options.conf` changing the **driver** and **device** appropriately.
 
-If no output is presented, the task becomes locating the correct driver/device combination. First check what combination lirc detected by default. Run `ir-keytable` and check the output. It will look similar to this:
+If no output is presented, the task becomes locating the correct driver/device combination. First check what combination lirc detected by default. Run `ir-keytable` from the [v4l-utils](https://www.archlinux.org/packages/?name=v4l-utils) package. and check the output. It will look similar to this:
 
 ```
  Found /sys/class/rc/rc0/ (/dev/input/event5) with:

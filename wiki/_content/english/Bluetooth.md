@@ -125,6 +125,8 @@ WantedBy=suspend.target
 
 [Enable](/index.php/Enable "Enable") an instance of the unit using your bluetooth device name, for example `bluetooth-auto-power@hci0.service`.
 
+Alternatively and instead of the custom service and udev rule, you can simply use the new [AutoEnable feature introduced in BlueZ 5.35](http://www.bluez.org/release-of-bluez-5-35/) by uncommenting `[Policy]` and `AutoEnable` lines in `/etc/bluetooth/main.conf`.
+
 ## Configuration with a graphical front-end
 
 The following packages allow for a graphical interface to customize Bluetooth.

@@ -39,28 +39,16 @@ Some of the compatible services are listed below, but you can also check the [ex
 
 #### Starting ddclient after networking is up
 
-If you find that ddclient is unable to update your IP properly, it may be that the ddclient process is starting before networking is up. To fix it, you can edit the unit file to depend on `network-online.target` (added lines in bold):
+If you find that ddclient is unable to update your IP properly, it may be that the ddclient process is starting before networking is up. To fix it, you can edit the unit file to depend on `network-online.target`:
 
- `# systemctl edit --full ddclient.service` 
+ `# systemctl edit ddclient.service` 
 ```
 [Unit]
-Description=Dynamic DNS Update Client
-After=network.target
-**PartOf=network-online.target**
-
-[Service]
-Type=forking
-PIDFile=/var/run/ddclient.pid
-ExecStart=/usr/bin/ddclient
-
-[Install]
-**WantedBy=network-online.target**
+After=network-online.target
+Wants=network-online.target
 ```
 
-**Note:**
-
-*   A full replacement must be created, because a drop-in override cannot modify the `[Install]` section of a unit file. Make sure to disable and reenable the `ddclient.service` so that the symlink is put into the right place.
-*   It may be necessary to configure the network manager to activate `network-online.target` (for [netctl](/index.php/Netctl "Netctl") see [netctl#Activate network-online.target](/index.php/Netctl#Activate_network-online.target "Netctl")).
+Additional configuration for `network-online.target` may be necessary, see [[1]](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget#cutthecraphowdoimakenetwork.targetworkforme).
 
 ### Other tools
 

@@ -13,7 +13,7 @@
     *   [2.7 Webserver (Nginx)](#Webserver_.28Nginx.29)
 *   [3 Install Roundcube](#Install_Roundcube)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Setting Roundcube up for use with an IMAP server that only allows TLS authentication](#Setting_Roundcube_up_for_use_with_an_IMAP_server_that_only_allows_TLS_authentication)
+    *   [4.1 Setting Roundcube up for use with an IMAP/SMTP server that only allows TLS authentication](#Setting_Roundcube_up_for_use_with_an_IMAP.2FSMTP_server_that_only_allows_TLS_authentication)
     *   [4.2 PDF and OpenDocument file preview](#PDF_and_OpenDocument_file_preview)
         *   [4.2.1 PHP 5](#PHP_5)
         *   [4.2.2 PHP 7](#PHP_7)
@@ -212,29 +212,40 @@ Because the `~/roundcube/config` directory contains sensitive information about 
 
 ## Tips and tricks
 
-### Setting Roundcube up for use with an IMAP server that only allows TLS authentication
+### Setting Roundcube up for use with an IMAP/SMTP server that only allows TLS authentication
 
-It's quite common for modern IMAP servers to only allow encrypted authentication, say using STARTTLS. **If you are setting Roundcube up for TLS authentication, the web-based installer won't help you.** You will need to edit the `/etc/webapps/roundcubemail/config/config.inc.php` by hand, adding the following lines:
+It's quite common for modern IMAP/SMTP servers to only allow encrypted authentication, say using STARTTLS. **If you are setting Roundcube up for TLS authentication, the web-based installer won't help you.** You will need to edit the `/etc/webapps/roundcubemail/config/config.inc.php` by hand, adding the following lines:
 
 ```
  $config['default_host'] = 'tls://mail.my_domain.org';
-
-```
-
-```
+ // For STARTTLS IMAP
  $config['imap_conn_options'] = array(
      'ssl' => array(
        'verify_peer'       => true,
-       'allow_self_signed' => true,
-       'peer_name'         => 'mail.my_domain.org',
+       // certificate is not self-signed if cafile provided
+       'allow_self_signed' => false,
+       'cafile'  => '/etc/ssl/certs/Your_CA_certificate.pem',
+       // probably optional parameters
        'ciphers' => 'TLSv1+HIGH:!aNull:@STRENGTH',
-       'cafile'  => '/etc/ssl/certs/ssl-cert-cyrus.my_domain.org.pem',
+       'peer_name'         => 'mail.my_domain.org',
+     ),
+ );
+ // For STARTTLS SMTP
+ $config['smtp_conn_options'] = array(
+     'ssl' => array(
+       'verify_peer'       => true,
+       // certificate is not self-signed if cafile provided
+       'allow_self_signed' => false,
+       'cafile'  => '/etc/ssl/certs/Your_CA_certificate.pem',
+       // probably optional parameters
+       'ciphers' => 'TLSv1+HIGH:!aNull:@STRENGTH',
+       'peer_name'         => 'mail.my_domain.org',
      ),
  );
 
 ```
 
-where `mail.my_domain.org` is the `CN` host name in your SSL certificate (i.e. the hostname of your IMAP server), and `/etc/ssl/certs/ssl-cert-cyrus.my_domain.org.pem` is the path to your SSL certificate. You might need to adjust the `ciphers` element to correspond to the ciphers allowed by your IMAP server.
+where `mail.my_domain.org` is the `CN` host name in your SSL certificate (i.e. the hostname of your IMAP server), and `/etc/ssl/certs/Your_CA_certificate.pem` is the path to your SSL certificate. You might need to adjust the `ciphers` element to correspond to the ciphers allowed by your IMAP server.
 
 A complete list of PHP SSL configuration options [can be found here](http://php.net/manual/en/context.ssl.php).
 

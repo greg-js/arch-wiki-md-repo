@@ -67,7 +67,7 @@ Hybrid image file is a standard CD-burnable image and also a raw disk image.
 
 ### PXE booting / Rescue system
 
-[Download 2016.05 „2k16-R1“](https://downloads.archlinux.de/iso/archboot/2016.08/boot) needed files from the directory.
+[Download 2016.12 „2k16-R3“](https://downloads.archlinux.de/iso/archboot/2016.12/boot) needed files from the directory.
 
 *   vmlinuz_i686 + initramfs_i686.img (i686)
 *   vmlinuz_x86_64 + initramfs_x86_64.img(x86_64)

@@ -19,11 +19,7 @@ From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software)
         *   [3.2.2 Samba](#Samba)
         *   [3.2.3 Vsftpd](#Vsftpd)
     *   [3.3 Airprint from Mobile Devices](#Airprint_from_Mobile_Devices)
-*   [4 Modifying the service-types database](#Modifying_the_service-types_database)
-    *   [4.1 Getting the sources](#Getting_the_sources)
-    *   [4.2 Modify the sources](#Modify_the_sources)
-        *   [4.2.1 Build and install the new database](#Build_and_install_the_new_database)
-*   [5 See also](#See_also)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -40,7 +36,7 @@ Avahi provides local hostname resolution using a "*hostname*.local" naming schem
 Then, edit the file `/etc/nsswitch.conf` and change the `hosts` line to include `mdns_minimal [NOTFOUND=return]` before `resolve` and `dns`:
 
 ```
-hosts: files mymachines **mdns_minimal [NOTFOUND=return]** resolve [!UNAVAIL=return] dns myhostname
+hosts: ... **mdns_minimal [NOTFOUND=return]** resolve [!UNAVAIL=return] dns ...
 
 ```
 
@@ -101,9 +97,9 @@ Alternatively, run `avahi-autoipd`:
 
 Avahi advertises the services whose `*.service` files are found in `/etc/avahi/services`. If you want to advertise a service for which there is no `*.service` file, it is very easy to create your own.
 
-As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per [RFC865](http://tools.ietf.org/html/rfc865) on TCP port 17 which you are running on your machine
+As an example, let's say you wanted to advertise a quote of the day (QOTD) service operating per [RFC 865](//tools.ietf.org/html/rfc865) on TCP port `17` which you are running on your machine
 
-The first thing to do is to determine the `<type>`. `man avahi.service` indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and RFC865) is 17.
+The first thing to do is to determine the `<type>`. avahi.service(5) indicates that the type should be "the DNS-SD service type for this service. e.g. '_http._tcp'". Since the [DNS-SD register was merged into the IANA register in 2010](http://www.dns-sd.org/ServiceTypes.html), we look for the service name on the [IANA register](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml) or in `/etc/services` file. The service name shown there is `qotd`. Since we're running QOTD on tcp, we now know the service is `_qotd._tcp` and the port (per IANA and [RFC 865](//tools.ietf.org/html/rfc865)) is `17`.
 
 Our service file is thus:
 
@@ -125,7 +121,7 @@ Our service file is thus:
 
 ```
 
-For more complicated scenarios, such as advertising services running on a different server, DNS sub-types and so on, consult `man avahi.service`.
+For more complicated scenarios, such as advertising services running on a different server, DNS sub-types and so on, consult avahi.service(5).
 
 ### SSH
 
@@ -156,6 +152,7 @@ Create a `.service` file in `/etc/avahi/services` with the following contents:
     <txt-record>path=/data/shared/Music</txt-record>
   </service>
 </service-group>
+
 ```
 
 The port is correct if you have *insecure* as an option in your `/etc/exports`; otherwise, it needs to be changed (note that *insecure* is needed for macOS clients). The path is the path to your export, or a subdirectory of it. For some reason the automount functionality has been removed from Leopard, however [a script is available](http://www.macosxhints.com/article.php?story=20071116042238744). This was based upon [this post](http://ubuntuforums.org/showthread.php?p=4387032#post4387032).
@@ -166,7 +163,7 @@ With the Avahi daemon running on both the server and client, the file manager on
 
 #### Vsftpd
 
-You can also auto-discover regular FTP servers, such as vsftpd. Install the [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) package and change the settings of vsftpd according to your own personal preferences (see [this thread on ubuntuforums.org](http://ubuntuforums.org/showthread.php?t=218630) or `man vsftpd.conf`).
+You can also auto-discover regular FTP servers, such as [vsftpd](/index.php/Vsftpd "Vsftpd"). Install the [vsftpd](https://www.archlinux.org/packages/?name=vsftpd) package and change the settings of vsftpd according to your own personal preferences (see [this thread on ubuntuforums.org](http://ubuntuforums.org/showthread.php?t=218630) or vsftpd.conf(5)).
 
 Create a `.service` file in `/etc/avahi/services` with the following contents:
 
@@ -188,7 +185,7 @@ The FTP server should now be advertised by Avahi. You should now be able to find
 
 ### Airprint from Mobile Devices
 
-Avahi along with CUPS also provides the capability to print to just about any printer from airprint compatible mobile devices. In order to enable print capability from your device, simply create an Avahi service file for your printer in `/etc/avahi/services/`. An example of a generic services file for an HP-Laserjet printer would be similar to the following with the `name`, `rp`, `ty`, `adminurl` and `note` fields changed.
+Avahi along with [CUPS](/index.php/CUPS "CUPS") also provides the capability to print to just about any printer from airprint compatible mobile devices. In order to enable print capability from your device, simply create an Avahi service file for your printer in `/etc/avahi/services/`. An example of a generic services file for an HP-Laserjet printer would be similar to the following with the `name`, `rp`, `ty`, `adminurl` and `note` fields changed.
 
  `/etc/avahi/services/airprint.service` 
 ```
@@ -238,95 +235,9 @@ Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airpr
 
 **Note:** If your printer under [http://localhost:631/printers](http://localhost:631/printers) is "Not Shared", this python script won't output any file to /etc/avahi/services; in that case, you'll need to "Modify Printer" under one of the CUPS drop-down menus to turn sharing on. If that doesn't work, check out the ArchWiki on [CUPS printer sharing](/index.php/CUPS_printer_sharing "CUPS printer sharing").
 
-## Modifying the service-types database
-
-As noted above, avahi comes with tools to browse advertised services. Both `avahi-browse` and `avahi-discover` use a database file to furnish descriptions of the relevant service. That database contains the names of many, but not all, services.
-
-Sadly, it doesn't contain the QOTD service we just created. Thus `avahi-browse -a` would show the following ugly entry
-
-```
-+ wlp2s0 IPv4 MyServer                                        _qotd._tcp local
-
-```
-
-### Getting the sources
-
-First, download the files `build-db.in` and `service-types` files from the `service-type-database` subdirectory in the [the avahi github mirror](https://github.com/lathiat/avahi) to a build directory.
-
-```
-wget [https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/build-db.in](https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/build-db.in)
-wget [https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/service-types](https://raw.githubusercontent.com/lathiat/avahi/master/service-type-database/service-types)
-
-```
-
-### Modify the sources
-
-Second, create the following script:
-
-```
-#!/bin/bash
-sed -e 's,@PYTHON\@,/usr/bin/python2.7,g' \
-    -e 's,@DBM\@,gdbm,g' < build-db.in > build-db
-chmod +x build-db
-
-```
-
-This mimics what the Makefile would do if one were building all of avahi. It creates a file named build-db.
-
-```
-$./whatever_you_named_the_script.sh
-$ ls
-build-db build-db.in service-types whatever_you_named_the_script.sh
-
-```
-
-Third, make the changes needed to add your new QOTD service to the `service-types` file. This file has one entry per line, with the entries in the format `type:Human Readable Description`. Note that the human readable description can contain spaces.
-
-In our example, we add the following entry to the end of the file:
-
-```
-_qotd._tcp:Quote of the Day (QOTD) Server
-
-```
-
-#### Build and install the new database
-
-Now run the `build-db` python script (be sure to use python2 not python3). This will build the `service-types.db` file. Check to make sure it's been built and use `gdbmtools` to make sure the new database is loadable and contains the new entry:
-
-```
-$/usr/bin/python2.7 build-db
-$ls
-build-db build-db.in service-types service-types.db whatever_you_named_the_script.sh
-$gdbmtool service-types.db
-
-Welcome to the gdbm tool.  Type ? for help.
-
-gdbmtool>fetch _qotd._tcp
-Quote of the Day (QOTD) Server
-gdbmtool>quit
-
-```
-
-Now copy the old database to a backup location, move the new database to the live directory and use `avahi-browse` database dump command to make sure avahi sees the new entry:
-
-```
-$cp /usr/lib/avahi/service-types.db /backup-directory
-$sudo cp /build-directory/service-types.db /usr/lib/avahi/service-types.db
-$avahi-browse -b | grep QOTD
-Quote of the Day (QOTD) Server
-
-```
-
-The entry in `avahi-browse` should now be:
-
-```
-+ wlp2s0 IPv4 MyServer                                        Quote of the Day (QOTD) Server local
-
-```
-
 ## See also
 
 *   [Avahi](http://avahi.org/) - Official project website
-*   [Wikipedia entry](https://en.wikipedia.org/wiki/Avahi_(software) "wikipedia:Avahi (software)")
+*   [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software) "wikipedia:Avahi (software)")
 *   [Bonjour for Windows](http://www.apple.com/support/downloads/bonjourforwindows.html) - Enable Zeroconf on Windows
 *   [http://www.zeroconf.org/](http://www.zeroconf.org/)

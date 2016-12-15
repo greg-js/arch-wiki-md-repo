@@ -685,6 +685,10 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
 
+*   **nixnote** — evernote的第三方开源程序（以前名叫nevernote）
+
+	[http://www.sourceforge.net/projects/nevernote](http://www.sourceforge.net/projects/nevernote) || [nixnote_beta](https://aur.archlinux.org/packages/nixnote_beta/)
+
 *   **[Tomboy](https://en.wikipedia.org/wiki/Tomboy_(software) "wikipedia:Tomboy (software)")** — Linux 和 Unix 上的桌面笔记程序，可以 wiki 形式连接众多笔记。
 
 	[http://projects.gnome.org/tomboy/](http://projects.gnome.org/tomboy/) || [tomboy](https://www.archlinux.org/packages/?name=tomboy)
