@@ -44,6 +44,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### December 2016
 
+*   [15 December 2016] [ASA-201612-17](https://lists.archlinux.org/pipermail/arch-security/2016-December/000794.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
+*   [15 December 2016] [ASA-201612-16](https://lists.archlinux.org/pipermail/arch-security/2016-December/000793.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
 *   [14 December 2016] [ASA-201612-15](https://lists.archlinux.org/pipermail/arch-security/2016-December/000792.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues
 *   [13 December 2016] [ASA-201612-14](https://lists.archlinux.org/pipermail/arch-security/2016-December/000791.html) [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) denial of service
 *   [13 December 2016] [ASA-201612-13](https://lists.archlinux.org/pipermail/arch-security/2016-December/000790.html) [python-html5lib](https://www.archlinux.org/packages/?name=python-html5lib) cross-site scripting

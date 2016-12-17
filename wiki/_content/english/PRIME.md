@@ -14,6 +14,7 @@ PRIME is a technology used to manage hybrid graphics found on recent laptops ([O
         *   [4.2.1 Black screen with GL-based compositors](#Black_screen_with_GL-based_compositors)
     *   [4.3 Kernel crash/oops when using PRIME and switching windows/workspaces](#Kernel_crash.2Foops_when_using_PRIME_and_switching_windows.2Fworkspaces)
     *   [4.4 Glitches/Ghosting synchronization problem on second monitor when using reverse PRIME](#Glitches.2FGhosting_synchronization_problem_on_second_monitor_when_using_reverse_PRIME)
+    *   [4.5 Error "radeon: Failed to allocate virtual address for buffer:" when launching GL application](#Error_.22radeon:_Failed_to_allocate_virtual_address_for_buffer:.22_when_launching_GL_application)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -206,6 +207,10 @@ CLUTTER_PAINT=disable-clipped-redraws:disable-culling
 CLUTTER_VBLANK=True
 
 ```
+
+### Error "radeon: Failed to allocate virtual address for buffer:" when launching GL application
+
+This error is given when the power management in the kernel driver is running. You can overcome this error by appending radeon.runpm=0 to the kernel parameters in the bootloader.
 
 ## See also
 

@@ -19,7 +19,7 @@ For an overview about Secure Boot in Linux see [Rodsbooks' Secure Boot](http://w
         *   [2.1.2 Updating keys](#Updating_keys)
     *   [2.2 Signing bootloader and kernel](#Signing_bootloader_and_kernel)
     *   [2.3 Put firmware in "Setup Mode"](#Put_firmware_in_.22Setup_Mode.22)
-    *   [2.4 Enrol keys in firmware](#Enrol_keys_in_firmware)
+    *   [2.4 Enroll keys in firmware](#Enroll_keys_in_firmware)
         *   [2.4.1 Using firmware setup utility](#Using_firmware_setup_utility)
         *   [2.4.2 Using KeyTool](#Using_KeyTool)
     *   [2.5 Dual booting with other operating systems](#Dual_booting_with_other_operating_systems)
@@ -64,9 +64,9 @@ For a verbose status, another way is to execute:
 
 ### PreLoader
 
-When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is not in MokList, PreLoader will launch `HashTool.efi`. In HashTool you must enrol the hash of the EFI binaries you want to launch, that means your [boot loader](/index.php/Boot_loader "Boot loader") (`loader.efi`) and kernel.
+When run, PreLoader tries to launch `loader.efi`, if the hash of `loader.efi` is not in MokList, PreLoader will launch `HashTool.efi`. In HashTool you must enroll the hash of the EFI binaries you want to launch, that means your [boot loader](/index.php/Boot_loader "Boot loader") (`loader.efi`) and kernel.
 
-**Note:** Each time you update any of the binaries (e.g. boot loader or kernel) you will need to enrol their new hash.
+**Note:** Each time you update any of the binaries (e.g. boot loader or kernel) you will need to enroll their new hash.
 
 #### Set up PreLoader
 
@@ -126,7 +126,7 @@ For particularly intransigent UEFI implementations, copy `PreLoader.efi` to the 
 
 As before, copy `HashTool.efi` and `loader.efi` to `*esp*/EFI/Microsoft/Boot`
 
-When the system starts with Secure Boot enabled, follow the steps above to enrol `loader.efi` and `/vmlinuz-linux` (or whichever kernel image is being used).
+When the system starts with Secure Boot enabled, follow the steps above to enroll `loader.efi` and `/vmlinuz-linux` (or whichever kernel image is being used).
 
 #### Remove PreLoader
 
@@ -148,9 +148,9 @@ Where `N` is the NVRAM boot entry created for booting `PreLoader.efi`. Check wit
 
 ### shim
 
-When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `MokManager.efi`. In MokManager you must enrol the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enrol the key they are signed with.
+When run, shim tries to launch `grubx64.efi`, if MokList does not contain the hash of `grubx64.efi` or the key it is signed with, shim will launch `MokManager.efi`. In MokManager you must enroll the hash of the EFI binaries you want to launch (your [boot loader](/index.php/Boot_loader "Boot loader") (`grubx64.efi`) and kernel) or enroll the key they are signed with.
 
-**Note:** If you use [#shim with hash](#shim_with_hash), each time you update any of the binaries (e.g. boot loader or kernel) you will need to enrol their new hash.
+**Note:** If you use [#shim with hash](#shim_with_hash), each time you update any of the binaries (e.g. boot loader or kernel) you will need to enroll their new hash.
 
 #### Set up shim
 
@@ -347,7 +347,7 @@ For example, if you wanted to replace your db key with a new one:
 1.  [Create the new key](#Creating_keys),
 2.  Convert it to EFI Signature List,
 3.  Sign the EFI Signature List,
-4.  Enrol the signed certificate update file.
+4.  Enroll the signed certificate update file.
 
 ```
 cert-to-efi-sig-list -g "$(< GUID.txt)" *new_db*.crt *new_db*.esl
@@ -362,7 +362,7 @@ sign-efi-sig-list **-a** -g "$(< GUID.txt)" -k KEK.key -c KEK.crt db *new_db*.es
 
 ```
 
-When `*new_db*.auth` is created, [enrol it](#Enrol_keys_in_firmware).
+When `*new_db*.auth` is created, [enroll it](#Enroll_keys_in_firmware).
 
 ### Signing bootloader and kernel
 
@@ -393,19 +393,19 @@ $ sbverify --list */path/to/binary*
 
 Secure Boot is in Setup Mode when the Platform Key is removed. To put firmware in Setup Mode, enter firmware setup utility and find an option to delete or clear certificates.
 
-### Enrol keys in firmware
+### Enroll keys in firmware
 
 Copy all `*.cer`, `*.esl`, `*.auth` to a FAT formatted file system (you can use [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition")).
 
-Launch firmware setup utility or KeyTool and enrol **db**, **KEK** and **PK** certificates.
+Launch firmware setup utility or KeyTool and enroll **db**, **KEK** and **PK** certificates.
 
 If the used tool supports it prefer using `.auth` and `.esl` over `.cer`.
 
-**Warning:** Enrolling Platform Key sets Secure Boot in "User Mode", so it needs to be enrolled last.
+**Warning:** Enrolling Platform Key sets Secure Boot in "User Mode", so it should be enrolled last.
 
 #### Using firmware setup utility
 
-Firmwares have various different interfaces, see [Replacing Keys Using Your Firmware's Setup Utility](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil) for example how to enrol keys.
+Firmwares have various different interfaces, see [Replacing Keys Using Your Firmware's Setup Utility](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#setuputil) for example how to enroll keys.
 
 #### Using KeyTool
 
@@ -416,7 +416,7 @@ Firmwares have various different interfaces, see [Replacing Keys Using Your Firm
 
 ```
 
-Launch `KeyTool-signed.efi` using firmware setup utility, boot loader or [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") and enrol keys.
+Launch `KeyTool-signed.efi` using firmware setup utility, boot loader or [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") and enroll keys.
 
 See [Replacing Keys Using KeyTool](http://www.rodsbooks.com/efi-bootloaders/controlling-sb.html#keytool) for explanation of KeyTool menu options.
 
@@ -450,7 +450,7 @@ $ sign-efi-sig-list -a -g 77fa9abd-0359-4d32-bd60-28f4e78f784b -k KEK.key -c KEK
 
 ```
 
-Follow [#Enrol keys in firmware](#Enrol_keys_in_firmware) to add `add_MS_db.auth` to Signature Database.
+Follow [#Enroll keys in firmware](#Enroll_keys_in_firmware) to add `add_MS_db.auth` to Signature Database.
 
 ## Disable Secure Boot
 

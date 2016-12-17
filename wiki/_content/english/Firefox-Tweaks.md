@@ -203,6 +203,8 @@ If you don't use the Pocket-service, you may want to remove it completely by cha
 *   Set `extensions.pocket.api` and `extensions.pocket.site` to a blank value
 *   Set `extensions.pocket.enabled` to *false*
 
+**Note:** on 45ESR the keys are `browser.pocket...`
+
 #### Disable Social Service API
 
 If you don't use any [social-services](https://activations.cdn.mozilla.net/en-US/), you want to disable this API completely in `about:config`:

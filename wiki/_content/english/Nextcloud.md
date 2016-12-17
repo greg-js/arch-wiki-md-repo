@@ -2,12 +2,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): N
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 Required Packages](#Required_Packages)
-    *   [1.2 Optional Packages](#Optional_Packages)
-*   [2 Configuration](#Configuration)
-    *   [2.1 PHP Configuration](#PHP_Configuration)
-    *   [2.2 Setup mariadb and nextcloud DB](#Setup_mariadb_and_nextcloud_DB)
+*   [1 Prerequisites](#Prerequisites)
+*   [2 Installation](#Installation)
+    *   [2.1 Database support](#Database_support)
+        *   [2.1.1 MariaDB](#MariaDB)
+    *   [2.2 Optional Packages](#Optional_Packages)
     *   [2.3 Setup Apache](#Setup_Apache)
     *   [2.4 Switch to Cron from AJAX](#Switch_to_Cron_from_AJAX)
     *   [2.5 Enable memcache](#Enable_memcache)
@@ -17,56 +16,23 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): N
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Collabora Online Office integration](#Collabora_Online_Office_integration)
 
+## Prerequisites
+
+*NextCloud* needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://docs.nextcloud.com/server/10/admin_manual/installation/system_requirements.html).
+
 ## Installation
-
-### Required Packages
-
-[Install](/index.php/Install "Install") the [apache](https://www.archlinux.org/packages/?name=apache) [php](https://www.archlinux.org/packages/?name=php) [php-apache](https://www.archlinux.org/packages/?name=php-apache) [mariadb](https://www.archlinux.org/packages/?name=mariadb) packages from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 [Install](/index.php/Install "Install") the [nextcloud](https://aur.archlinux.org/packages/nextcloud/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-[Install](/index.php/Install "Install") the required [PHP](/index.php/PHP "PHP") modules packages: [php-gd](https://www.archlinux.org/packages/?name=php-gd) [php-intl](https://www.archlinux.org/packages/?name=php-intl) [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-[Install](/index.php/Install "Install") from the [official repositories](/index.php/Official_repositories "Official repositories") the [APCu](/index.php/PHP#APCu "PHP") PHP module for memory caching: [php-apcu](https://www.archlinux.org/packages/?name=php-apcu).
-
-### Optional Packages
-
-For file preview generation [Install](/index.php/Install "Install") the following packages:
-
-[ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) and either [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-[php-imagick](https://aur.archlinux.org/packages/php-imagick/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-
-[nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the Desktop Client
-
-## Configuration
-
-### PHP Configuration
-
-Edit `/etc/php/php.ini` and uncomment the following required modules:
-
-```
-gd.so
-iconv.so
-xmlrpc.so
-zip.so
-
-```
-
-Also uncomment the following required modules for [mariadb](/index.php/Mariadb "Mariadb"):
-
-```
-extension=pdo_mysql.so
-
-```
-
-Uncomment the following recommended [PHP](/index.php/PHP "PHP") modules:
+[Install](/index.php/Install "Install") the required [PHP](/index.php/PHP "PHP") modules packages: [php-gd](https://www.archlinux.org/packages/?name=php-gd) [php-intl](https://www.archlinux.org/packages/?name=php-intl) [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) from the [official repositories](/index.php/Official_repositories "Official repositories") and uncomment the following [required extensions](https://docs.nextcloud.com/server/9/admin_manual/installation/source_installation.html#prerequisites-label) in `/etc/php/php.ini`:
 
 ```
 bz2.so
 curl.so
-intl.so
-mcrypt.so
+gd.so
+iconv.so
+xmlrpc.so
+zip.so
 
 ```
 
@@ -81,23 +47,17 @@ Add the following to `open_basedir`:
 
 **Note:** You may also need to add the `/tmp` directory in `open_basedir` if Apache only displays a blank page. Check `/var/log/httpd/error_log` file to confirm this problem
 
-### Setup mariadb and nextcloud DB
+Optional enable [APCu](/index.php/PHP#APCu "PHP") PHP module for memory caching.
 
-Configure [mariadb](/index.php/Mariadb "Mariadb"):
+### Database support
 
-```
-# mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+Depending on which database backend you are going to use, uncomment the following extensions in `/etc/php/php.ini`:
 
-```
+*   For [MySQL](/index.php/MySQL "MySQL"), uncomment `pdo_mysql.so`.
+*   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), uncomment `pdo_pgsql.so` and `pgsql.so`, and install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql).
+*   For [SQLite](/index.php/SQLite "SQLite"), uncomment `pdo_sqlite.so` and `sqlite3.so`, and install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite).
 
-[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `mariadb.service`.
-
-Secure [mariadb](/index.php/Mariadb "Mariadb"):
-
-```
-# mysql_secure_installation
-
-```
+#### MariaDB
 
 Create `nextcloud` database:
 
@@ -106,17 +66,26 @@ $ mysql -u root -p
 
 ```
 
-At the prompt, insert the following lines (make sure to enter them separately).
-
-**Note:** Change `*username*` and `*password*` to your specific values and note them down as you will need them later.
+At the prompt, insert the following lines (make sure to enter them separately):
 
 ```
 CREATE DATABASE IF NOT EXISTS nextcloud;
 CREATE USER ‘*username*’@’localhost’ IDENTIFIED BY ‘*password*’;
 GRANT ALL PRIVILEGES ON nextcloud.* TO ‘*username*’@’localhost’ IDENTIFIED BY ‘*password*’;
+FLUSH PRIVILEGES;
 quit
 
 ```
+
+### Optional Packages
+
+For file preview generation [Install](/index.php/Install "Install") the following packages:
+
+[ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) and either [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh) from the [official repositories](/index.php/Official_repositories "Official repositories").
+
+[php-imagick](https://aur.archlinux.org/packages/php-imagick/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+
+[nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") for the Desktop Client
 
 ### Setup Apache
 

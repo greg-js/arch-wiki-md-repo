@@ -2,13 +2,12 @@
 
 *   [1 Network Interface Bonding with Removable Device Support](#Network_Interface_Bonding_with_Removable_Device_Support)
 *   [2 DHCP configuration](#DHCP_configuration)
-*   [3 DHCPv6 configuration](#DHCPv6_configuration)
-*   [4 Static Network configuration](#Static_Network_configuration)
-*   [5 wpa_supplicant configuration](#wpa_supplicant_configuration)
-*   [6 Slave configuration](#Slave_configuration)
-*   [7 Master configuration](#Master_configuration)
-*   [8 Enabling/Installing the Service Units](#Enabling.2FInstalling_the_Service_Units)
-*   [9 Testing the result](#Testing_the_result)
+*   [3 Static Network configuration](#Static_Network_configuration)
+*   [4 wpa_supplicant configuration](#wpa_supplicant_configuration)
+*   [5 Slave configuration](#Slave_configuration)
+*   [6 Master configuration](#Master_configuration)
+*   [7 Enabling/Installing the Service Units](#Enabling.2FInstalling_the_Service_Units)
+*   [8 Testing the result](#Testing_the_result)
 
 ## Network Interface Bonding with Removable Device Support
 
@@ -17,11 +16,11 @@
 
 The Linux kernel bonding driver can be used to provide parallel network connections to maximize throughput, or to allow redundant network connections to maximize network availability. Here is an example of using the kernel bonding driver to maximize availability, by allowing network connections to "failover" between a primary network device and any number of secondary devices, or alternatively, by selecting the highest speed connection available. This approach provides Automatic Wired and Wireless Network Configuration with Removable Device Support, using only the kernel bonding module in "active-backup" mode, the sysfs, the [iproute2](https://www.archlinux.org/packages/?name=iproute2) commands, and [systemd](https://www.archlinux.org/packages/?name=systemd) "template" Unit files, **without** using systemd-networkd.
 
-This example will run wpa_supplicant continuously on any interface, as needed, and DHCP and DHCPv6 clients on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be applied to any other type of network interface, and extended to more than two physical or virtual network interfaces.
+This example will run wpa_supplicant continuously on any interface, as needed, and DHCP client on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be applied to any other type of network interface, and extended to more than two physical or virtual network interfaces.
 
 Note that host networking is managed directly with [systemd](/index.php/Systemd "Systemd"), and that no other "connection manager" is used here, providing a more basic approach. But then also, wpa_supplicant itself can still be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui), to scan for, select, and connect to new wireless access points/base stations.
 
-In this example, there are six [systemd](/index.php/Systemd "Systemd") service unit files used, along with five associated configuration files, for the [kernel bonding module](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/), [dhclient](https://www.archlinux.org/packages/?name=dhclient), and for static network configuration and specifying the primary slave network interface name. The six unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
+In this example, there are six [systemd](/index.php/Systemd "Systemd") service unit files used, along with five associated configuration files, for the [kernel bonding module](https://www.kernel.org/doc/Documentation/networking/bonding.txt), [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), [dhclient](https://www.archlinux.org/packages/?name=dhclient), and for static network configuration and specifying the primary slave network interface name. The six unit files are essentially generic service unit files which do not contain configuration data, and no modification is needed. The various service units may be stopped, started, and restarted individually without ordering errors or failed states. Any network interface device, such as typically a wired or wireless PC Card, may be removed and replaced, and reconfiguration will be automatic.
 
 **Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch Linux packages. Edit as required.
 
@@ -40,7 +39,7 @@ send dhcp-client-identifier 00:02:00:02:2e:2d:01:bd:c3:92:9a:44:2a:c4 ;
 send host-name "laptop";
 ```
 
-Make sure that the DHCP Client Identifier and the DHCPv6 Client Identifier are the same DUID. See `xxd -g1 -s2 /var/lib/dhcpv6/dhcp6c_duid`. The DHCP Server, [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) for instance, can be configured to give fixed IP addresses based upon multiple MAC addresses, or provided hostname, or provided Client Identifier.
+If you also run a DHCPv6 client, make sure that the DHCP Client Identifier and the DHCPv6 Client Identifier are the same DUID. The DHCP Server, [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) for instance, can be configured to give fixed IP addresses based upon multiple MAC addresses, or provided hostname, or provided Client Identifier.
 
  `/etc/systemd/system/dhclient@.service` 
 ```
@@ -76,64 +75,6 @@ These are only issues with dhclient and IPv4\. Fortunately, on a dhclient DHCP r
 This problem **cannot** be solved by configuring the bonding driver with the default `fail_over_mac=none`. Almost all network interface devices will not pass traffic with a MAC address which is not their own. An example of this kind of warning can be seen [here](http://www.ibm.com/developerworks/linux/linux390/development_restrictions.html#net). Strange network behavior will be the result, where broadcast packets will pass, but ping/icmp packets will only pass in some circumstances and not others.
 
 Ideally, dhclient would re-determine the bonding interface MAC address each time it initially retried contacting the DHCP server. Without that, a different approach is to simply delay the start of dhclient until after the kernel bonding driver has configured an active slave. If the active slave is to be the wireless interface, then wpa_supplicant will first have authenticated, associated, and authorized with the access point/base station, and dhclient will adopt the correct MAC address. If the active slave is the primary slave, again dhclient will adopt the correct MAC address. This delay is imposed with the simple `ExecStartPre= /usr/bin/sleep 8` line in the dhclient service unit file, a conservatively long delay between the time systemd starts dhclient and the supplicant and the bonding driver selects the active interface. This selection time is longest during system boot, when many processes are starting. On faster hardware, a shorter delay, perhaps `sleep 4`, may still be effective.
-
-## DHCPv6 configuration
-
- `/etc/wide-dhcpv6/dhcp6c.conf` 
-```
-profile default {                       # generic interface using a profile named "default"
-        send ia-na 1;                   # a corresponding identity association statement must exist with the same ID.
-#       send ia-pd 2;
-        send rapid-commit;
-#       send authentication auth-protocol;
-        request domain-name-servers, domain-name, ntp-servers;
-#       script "/etc/wide-dhcpv6/dhcp6c-script";
-};
-
-id-assoc na 1 {                         # Identity Association for Non-temporary Addresses request
-                                        # Optionally request a specific address.
-#       address <ipv6-address> <pltime> [<vltime>];
-};
-
-keyinfo kame-key {                      # Required to use the dhcp6ctl tool.
-        realm "kame.net";
-        keyid 1;
-        secret "ErEJ0GEz7HS3uBU03/hKZA==";
-                                        # Generate with "sudo sh -c 'openssl rand -base64 16 > /etc/wide-dhcpv6/dhcp6cctlkey'".
-                                        # Copy the key from /etc/wide-dhcpv6/dhcp6cctlkey
-};
-```
-
-A simple example configuration file, with no Prefix Delegation being requested. Here, the "Profile" statement is used instead of the "Interface" statement, since the same configuration is to be applied to whatever interface is provided on the dhcp6c command line. A keyfile is required to allow dhcp6ctl to communicate with dhcp6c.
-
- `/etc/systemd/system/dhcp6c@.service` 
-```
-[Unit]
-Description= WIDE-DHCPv6 dhcp6c on interface %I
-Documentation= man:dhcp6c(8) man:dhcp6c.conf(5) man:dhcp6ctl(8)
-
-Documentation= [https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/)
-Wants= network.target
-Before= network.target
-After= network-pre.target
-
-BindsTo= sys-subsystem-net-devices-%i.device
-
-[Service]
-ExecStart= /usr/bin/dhcp6c -f -P default -c /etc/wide-dhcpv6/dhcp6c.conf %I
-
-# Configure keyinfo in /etc/wide-dhcpv6/dhcp6c.conf
-ExecReload= /usr/bin/dhcp6ctl reload
-ExecReload= /usr/bin/dhcp6ctl start interface %I
-
-ExecStop= /usr/bin/dhcp6ctl stop
-ExecStop= /usr/bin/sleep 1
-
-Restart= on-abnormal
-
-[Install]
-WantedBy= sys-subsystem-net-devices-%i.device
-```
 
 ## Static Network configuration
 
@@ -261,7 +202,7 @@ Restart= on-abnormal
 WantedBy= sys-subsystem-net-devices-%i.device
 ```
 
-The supplicants and the DHCP and DHCPv6 clients are ordered relative to the network-pre.target on shutdown. The supplicants must not be stopped before the DHCP and DHCPv6 clients release their address leases.
+The supplicants and the DHCP client are ordered relative to the network-pre.target on shutdown. The supplicants must not be stopped before the DHCP client releases the address lease.
 
 Remember that the `iw` commands do not work with the wired interface drivers or with older wireless drivers which rely upon the Wireless Extensions user-space driver, and will be ignored in those cases.
 
@@ -281,7 +222,6 @@ Requires= master@%i.service
 After= master@%i.service
 
 Before= dhclient@%i.service
-Before= dhcp6c@%i.service
 Before= static@%i.service
 Before= supplicant@%p.service
 
@@ -355,7 +295,6 @@ ExecStop=\
 
 [Install]
 RequiredBy= dhclient@%i.service
-RequiredBy= dhcp6c@%i.service
 RequiredBy= static@%i.service
 ```
 
@@ -410,18 +349,18 @@ Then, Enable/Install the slave and master units, using any desired interface nam
 Explicitly Enable/Install only the desired network configuration, specifying the interface name, here again, bond0:
 
 ```
-# systemctl enable dhclient@bond0 dhcp6c@bond0 static@bond0
+# systemctl enable dhclient@bond0 static@bond0
 
 ```
 
-And finally, activate the bonding interface, the DHCP and DHCPv6 clients, and any static network configuration, by starting "master@bond0.service":
+And finally, activate the bonding interface, the DHCP client, and any static network configuration, by starting "master@bond0.service":
 
 ```
 # systemctl start master@bond0
 
 ```
 
-The master and supplicant units will be started automatically when any configured slave device appears, and in particular, when the system boots. Were any of the DHCP, DHCPv6, or slave units to be started independently, the master unit would also be started, but normally these units will have already been started at boot.
+The master and supplicant units will be started automatically when any configured slave device appears, and in particular, when the system boots. Were any of the DHCP, or slave units to be started independently, the master unit would also be started, but normally these units will have already been started at boot.
 
 ## Testing the result
 
@@ -439,7 +378,6 @@ UNIT                                   LOAD   ACTIVE   SUB     DESCRIPTION
 sys-devices-virtual-net-bond0.device   loaded active   plugged /sys/devices/virtual/net/bond0
 sys-subsystem-net-devices-bond0.device loaded active   plugged /sys/subsystem/net/devices/bond0
 dhclient@bond0.service                 loaded active   running ISC dhclient on interface bond0
-dhcp6c@bond0.service                   loaded active   running WIDE-DHCPv6 dhcp6c on interface bond0
 enp3s0@bond0.service                   loaded active   exited  enp3s0@bond0 Slave
 master@bond0.service                   loaded active   exited  bond0 Interface Master
 static@bond0.service                   loaded active   exited  Static Network Configuration on bond0
@@ -521,7 +459,7 @@ Slave queue ID: 0
 
 ```
 
-To tear-down the bonding interface and shutdown the master, slave, DHCP, and DHCPv6 units, simply run:
+To tear-down the bonding interface and shutdown the master, slave, and DHCP units, simply run:
 
 ```
 # systemctl stop master@bond0
@@ -535,7 +473,7 @@ The supplicant units can be stopped independently with
 
 ```
 
-This approach to bonded wireless networking leaves wpa_supplicant running continuously on whatever interfaces it is started. By running [htop](https://www.archlinux.org/packages/?name=htop), it can be seen that wpa_supplicant, and the DHCP and DHCPv6 client daemons, seem to behave well, and do not use any noticeable CPU time.
+This approach to bonded wireless networking leaves wpa_supplicant running continuously on whatever interfaces it is started. By running [htop](https://www.archlinux.org/packages/?name=htop), it can be seen that wpa_supplicant, and the DHCP client daemon, seem to behave well, and do not use any noticeable CPU time.
 
 Still, a hardware switch or [rfkill](/index.php/Rfkill "Rfkill") can be used to actually disable the radio when desired.
 

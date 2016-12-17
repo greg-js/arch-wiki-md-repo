@@ -53,7 +53,7 @@ dhcpcd: *eth0*: leased 192.168.1.70 for 86400 seconds
 
 ## Configuration
 
-The main configuration is done in `/etc/dhcpcd.conf`, see `dhcpcd.conf(5)` for details. Some of the frequently used options are highlighted below.
+The main configuration is done in `/etc/dhcpcd.conf`, see [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details. Some of the frequently used options are highlighted below.
 
 ### DHCP static route(s)
 
@@ -118,7 +118,7 @@ static routers=192.168.0.1
 static domain_name_servers=192.168.0.1 8.8.8.8
 ```
 
-More complicated configurations are possible, for example combining with the `arping` option. See `dhcpcd.conf(5)` for details.
+More complicated configurations are possible, for example combining with the `arping` option. See [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) for details.
 
 #### Fallback profile
 
@@ -141,7 +141,7 @@ fallback static_eth0
 
 ## Hooks
 
-*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See `dhcpcd(5)` and `dhcpcd-run-hooks(8)` for details.
+*dhcpcd* executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexical order. See [dhcpcd(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) and [dhcpcd-run-hooks(8)](http://roy.marples.name/man/html8/dhcpcd-run-hooks.html) for details.
 
 **Note:**
 

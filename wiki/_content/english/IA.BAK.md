@@ -1,17 +1,14 @@
+This is an experimental project to see the feasibility and issues with making a backup of the Internet Archive. This project should be considered to be in an alpha state. To read the original document suggesting the research, click here. Implementation ideas are discussed on this page. If you have (at least) hundreds of gigabytes of disk space, are comfortable with a linux/unix variant, and wish to take part in the project, the information to do so is here. As time progresses, the client that sets up your environment will become easier and more intuitive to use - right now, some things are still unclear or in need of clarification. Join #internetarchive.bak on EFNet (IRC) to get help.
+
 ## Contents
 
-*   [1 About](#About)
-*   [2 Installation](#Installation)
-*   [3 Status](#Status)
-*   [4 Implementation plan](#Implementation_plan)
-*   [5 First tasks](#First_tasks)
-*   [6 Middle tasks](#Middle_tasks)
-*   [7 Later tasks](#Later_tasks)
-*   [8 SHARD1](#SHARD1)
-
-## About
-
-This is an experimental project to see the feasibility and issues with making a backup of the Internet Archive. This project should be considered to be in an alpha state. To read the original document suggesting the research, click here. Implementation ideas are discussed on this page. If you have (at least) hundreds of gigabytes of disk space, are comfortable with a linux/unix variant, and wish to take part in the project, the information to do so is here. As time progresses, the client that sets up your environment will become easier and more intuitive to use - right now, some things are still unclear or in need of clarification. Join #internetarchive.bak on EFNet (IRC) to get help.
+*   [1 Installation](#Installation)
+*   [2 Status](#Status)
+*   [3 Implementation plan](#Implementation_plan)
+*   [4 First tasks](#First_tasks)
+*   [5 Middle tasks](#Middle_tasks)
+*   [6 Later tasks](#Later_tasks)
+*   [7 SHARD1](#SHARD1)
 
 ## Installation
 
@@ -30,9 +27,8 @@ $ ./iabak
 
 ## Status
 
-[Graphs of status](http://iabak.archiveteam.org/)
-
-[raw data](http://iabak.archiveteam.org/stats/)
+*   [Graphs of status](http://iabak.archiveteam.org/)
+*   [raw data](http://iabak.archiveteam.org/stats/)
 
 ## Implementation plan
 

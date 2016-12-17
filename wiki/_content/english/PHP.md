@@ -11,10 +11,11 @@
     *   [4.3 pthreads](#pthreads)
     *   [4.4 PCNTL](#PCNTL)
     *   [4.5 MySQL/MariaDB](#MySQL.2FMariaDB)
-    *   [4.6 PostgreSQL](#PostgreSQL)
-    *   [4.7 Sqlite](#Sqlite)
-    *   [4.8 XDebug](#XDebug)
-    *   [4.9 IMAP](#IMAP)
+    *   [4.6 Redis](#Redis)
+    *   [4.7 PostgreSQL](#PostgreSQL)
+    *   [4.8 Sqlite](#Sqlite)
+    *   [4.9 XDebug](#XDebug)
+    *   [4.10 IMAP](#IMAP)
 *   [5 Caching](#Caching)
     *   [5.1 OPCache](#OPCache)
     *   [5.2 APCu](#APCu)
@@ -95,7 +96,7 @@ $ pacman -Ss php-
 
 **Tip:** Instead of editing `/etc/php/php.ini`, an extension may be enabled/configured in the `/etc/php/conf.d` directory instead (e.g. `/etc/php/conf.d/gd.ini`)
 
-Extensions for older versions of PHP can be found in the AUR, under the prefix php56-*, eg. [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/)
+Extensions for current and older versions of PHP are also available in [AUR](/index.php/AUR "AUR") under the prefix php-* and php56-*, e.g. [php-imagick](https://aur.archlinux.org/packages/php-imagick/), [php-redis](https://aur.archlinux.org/packages/php-redis/), [php56-mcrypt](https://aur.archlinux.org/packages/php56-mcrypt/).
 
 ### gd
 
@@ -108,7 +109,7 @@ extension=gd.so
 
 ### imagemagick
 
-For [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) run `# pecl install imagick`. The *pecl* binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. Then add
+For [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) install [php-imagick](https://aur.archlinux.org/packages/php-imagick/) or install it manually using `# pecl install imagick`. The *pecl* binary is included in the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. Then add
 
 ```
 extension=imagick.so
@@ -144,6 +145,12 @@ extension=mysqli.so
 **Warning:** `mysql.so` was [removed](https://secure.php.net/manual/en/migration70.removed-exts-sapis.php) in PHP 7.0.
 
 You can add minor privileged MySQL users for your web scripts. You might also want to edit `/etc/mysql/my.cnf` and uncomment the `skip-networking` line so the MySQL server is only accessible by the localhost. You have to restart MySQL for changes to take effect.
+
+### Redis
+
+Install and configure [Redis](/index.php/Redis "Redis"), then install either [php-redis](https://aur.archlinux.org/packages/php-redis/) or [phpredis-git](https://aur.archlinux.org/packages/phpredis-git/).
+
+Uncomment the line of the package, e.g. `/etc/php/conf.d/redis.ini`.
 
 ### PostgreSQL
 

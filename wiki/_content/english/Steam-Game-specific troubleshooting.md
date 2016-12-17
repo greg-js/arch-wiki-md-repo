@@ -698,7 +698,7 @@ LD_LIBRARY_PATH="." primusrun ./EoCApp
 
 *   [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)
 *   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) (Looks like it fixes sound in some cases. See [this github issue](https://github.com/ValveSoftware/steam-for-linux/issues/2968) for details)
-*   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat) (Requires further commands after installation as described [here](http://steamcommunity.com/app/219740/discussions/2/620700960796078576/#c611704730329482542))
+*   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
 
 ### No sound
 

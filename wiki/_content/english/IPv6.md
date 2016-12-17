@@ -35,6 +35,13 @@ $ ping ff02::1%eth0
 
 ```
 
+After that, you can get a list of all the neighbors in the local network with:
+
+```
+ $ ip -6 neigh
+
+```
+
 With a ping to the multicast address `ff02::2` only routers will respond.
 
 If you add an option `-I *your-global-ipv6*`, link-local hosts will respond with their link-global scope addresses. The interface can be omitted in this case:
@@ -76,12 +83,15 @@ To properly hand out IPv6s to the network clients we will need to use an adverti
 # replace LAN with your LAN facing interface
 interface LAN {
   AdvSendAdvert on;
-  MinRtrAdvInterval 3;
-  MaxRtrAdvInterval 10;
+  MinRtrAdvInterval 30;
+  MaxRtrAdvInterval 90;
   prefix ::/64 {
     AdvOnLink on;
     AdvAutonomous on;
     AdvRouterAddr on;
+  };
+  # use ipv6 google's dns
+  RDNSS 2001:4860:4860::8888 2001:4860:4860::8844 {
   };
 };
 

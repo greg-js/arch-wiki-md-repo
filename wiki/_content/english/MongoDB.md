@@ -14,9 +14,7 @@ Install [mongodb](https://www.archlinux.org/packages/?name=mongodb) from [offici
 
 [Start/Enable](/index.php/Systemd#Using_units "Systemd") the `mongodb.service` daemon.
 
-During the first startup of the mongodb service, it will pre-allocate space, by creating large files (for its journal and other data). These files may take up a total space of 3 GB.
-
-Please note this step may take a while, during which the database shell is unavailable.
+During the first startup of the mongodb service, it will [pre-allocate space](https://docs.mongodb.com/manual/faq/storage/#preallocated-data-files), by creating large files (for its journal and other data). This step may take a while, during which the database shell is unavailable.
 
 ## Usage
 
@@ -38,26 +36,23 @@ $ df -h /var/lib/mongodb/
 
 ```
 
-Check if the lock file exists:
+Check if the mongod.lock lock file is empty or not:
 
 ```
 # ls  -lisa /var/lib/mongodb
 
 ```
 
-If it does, stop `mongodb.service`, and delete the file. Then start the service again.
-
-```
-# rm /var/lib/mongodb/mongod.lock
-
-```
-
-If it still won't start, run a repair on the database, specifying the dbpath (/var/lib/mongodb/ is the default --dbpath in Arch Linux):
+If it does, stop `mongodb.service`. Run a repair on the database, specifying the dbpath (/var/lib/mongodb/ is the default --dbpath in Arch Linux):
 
 ```
 # mongod --dbpath /var/lib/mongodb/ --repair
 
 ```
+
+Upon completion, the dbpath should contain the repaired data files and an empty mongod.lock file.
+
+**Warning:** In dire situations, you can remove the file, start the database using the possibly corrupt files, and attempt to recover data from the database. However, it is impossible to predict the state of the database in these situations. See [upstream document for detail](https://docs.mongodb.com/manual/tutorial/recover-data-following-unexpected-shutdown/).
 
 After running the repair as root, the files will be owned by the root user, whilst Arch Linux runs it under a different user. You will need to use chown to change the ownership of the files back to the correct user. See following link for further details: [Further reference](http://earlz.net/view/2011/03/11/0015/mongodb-and-arch-linux)
 
@@ -65,8 +60,6 @@ After running the repair as root, the files will be owned by the root user, whil
 # chown -R mongodb: /var/{log,lib}/mongodb/
 
 ```
-
-Check that the [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) package is up to date. MongoDB requires a specific version, however, the package does not restrict the version of this dependency.
 
 ### MongoDB complains about transparent_hugepage Kernel Setting
 

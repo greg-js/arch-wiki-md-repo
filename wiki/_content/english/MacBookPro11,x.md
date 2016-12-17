@@ -4,52 +4,52 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
 
 ## Contents
 
-*   [1 Preparing for the Installation](#Preparing_for_the_Installation)
-    *   [1.1 Firmware updates](#Firmware_updates)
-    *   [1.2 Partitioning](#Partitioning)
-*   [2 Installation](#Installation)
-    *   [2.1 Booting the live image](#Booting_the_live_image)
-    *   [2.2 Console](#Console)
-    *   [2.3 Internet](#Internet)
-        *   [2.3.1 Wired](#Wired)
-        *   [2.3.2 Wireless](#Wireless)
-    *   [2.4 Bootloader](#Bootloader)
-*   [3 Post installation](#Post_installation)
-    *   [3.1 Console](#Console_2)
-    *   [3.2 Graphics](#Graphics)
-        *   [3.2.1 MacBook Pro 11,1](#MacBook_Pro_11.2C1)
-        *   [3.2.2 MacBook Pro 11,2](#MacBook_Pro_11.2C2)
-        *   [3.2.3 MacBook Pro 11,3](#MacBook_Pro_11.2C3)
-        *   [3.2.4 MacBook Pro 11,5](#MacBook_Pro_11.2C5)
-        *   [3.2.5 Microcode](#Microcode)
-        *   [3.2.6 HiDPI](#HiDPI)
-        *   [3.2.7 Xfce](#Xfce)
-        *   [3.2.8 lightdm](#lightdm)
-        *   [3.2.9 MATE](#MATE)
-        *   [3.2.10 GNOME](#GNOME)
-        *   [3.2.11 Getting the integrated intel card to work on 11,3](#Getting_the_integrated_intel_card_to_work_on_11.2C3)
-        *   [3.2.12 Alternative method to disable NVIDIA card](#Alternative_method_to_disable_NVIDIA_card)
-    *   [3.3 Sound](#Sound)
-    *   [3.4 Touchpad](#Touchpad)
-        *   [3.4.1 Ctrl-Click as Right-Click](#Ctrl-Click_as_Right-Click)
-        *   [3.4.2 input-mtrack](#input-mtrack)
-    *   [3.5 Keyboard backlight](#Keyboard_backlight)
-    *   [3.6 Screen backlight](#Screen_backlight)
-    *   [3.7 Suspend](#Suspend)
-    *   [3.8 Powersave](#Powersave)
-    *   [3.9 SD Card Reader](#SD_Card_Reader)
-    *   [3.10 Repurpose the power key](#Repurpose_the_power_key)
-    *   [3.11 Web cam](#Web_cam)
-*   [4 What does not work](#What_does_not_work)
-    *   [4.1 General](#General)
-    *   [4.2 Wi-Fi](#Wi-Fi)
-    *   [4.3 Backlight keys / Suspend support](#Backlight_keys_.2F_Suspend_support)
-*   [5 Discussions](#Discussions)
-*   [6 See also](#See_also)
+*   [1 Overview](#Overview)
+*   [2 Firmware updates](#Firmware_updates)
+*   [3 Partitioning](#Partitioning)
+*   [4 Installation](#Installation)
+    *   [4.1 Internet](#Internet)
+*   [5 Setup bootloader](#Setup_bootloader)
+*   [6 Post installation](#Post_installation)
+    *   [6.1 Console](#Console)
+    *   [6.2 Graphics](#Graphics)
+        *   [6.2.1 MacBook Pro 11,1](#MacBook_Pro_11.2C1)
+        *   [6.2.2 MacBook Pro 11,2](#MacBook_Pro_11.2C2)
+        *   [6.2.3 MacBook Pro 11,3](#MacBook_Pro_11.2C3)
+        *   [6.2.4 MacBook Pro 11,5](#MacBook_Pro_11.2C5)
+        *   [6.2.5 Microcode](#Microcode)
+        *   [6.2.6 HiDPI](#HiDPI)
+        *   [6.2.7 Getting the integrated intel card to work on 11,3](#Getting_the_integrated_intel_card_to_work_on_11.2C3)
+        *   [6.2.8 Alternative method to disable NVIDIA card](#Alternative_method_to_disable_NVIDIA_card)
+    *   [6.3 Sound](#Sound)
+    *   [6.4 Touchpad](#Touchpad)
+        *   [6.4.1 Ctrl-Click as Right-Click](#Ctrl-Click_as_Right-Click)
+        *   [6.4.2 input-mtrack](#input-mtrack)
+    *   [6.5 Keyboard backlight](#Keyboard_backlight)
+    *   [6.6 Screen backlight](#Screen_backlight)
+    *   [6.7 Suspend](#Suspend)
+    *   [6.8 Powersave](#Powersave)
+    *   [6.9 SD Card Reader](#SD_Card_Reader)
+    *   [6.10 Repurpose the power key](#Repurpose_the_power_key)
+    *   [6.11 Web cam](#Web_cam)
+*   [7 What does not work](#What_does_not_work)
+    *   [7.1 General](#General)
+    *   [7.2 Wi-Fi](#Wi-Fi)
+    *   [7.3 Backlight keys / Suspend support](#Backlight_keys_.2F_Suspend_support)
+*   [8 Discussions](#Discussions)
+*   [9 See also](#See_also)
 
-## Preparing for the Installation
+## Overview
 
-### Firmware updates
+Specifically, the procedure for installing Arch Linux on a MacBook is:
+
+1.  **[Firmware updates](#Firmware_updates)**: It always helps to start from a clean, backed up, and up-to-date install of OS X.
+2.  **[Partitioning](#Partitioning)**: Resizing or deleting the OS X partition to create partitions for Arch Linux.
+3.  **[Setup bootloader](#Setup_bootloader)**: Making sure that the new partition is bootable.
+4.  **[Install Arch Linux](#Installation)**: Actually installing Arch Linux.
+5.  **[Post-installation](#Post-installation)**: MacBook-specific configuration.
+
+## Firmware updates
 
 Before proceeding with the installation of Arch Linux, it is important to ensure that the latest firmware updates for you MacBook are installed. This procedure requires OS X. In OS X, open the App Store and check for updates. If your mac finds and installs any updates, make sure to **reboot** your computer, and then check again for updates to make sure that you installed everything.
 
@@ -62,7 +62,9 @@ It is advisable to keep OS X installed, because MacBook firmware updates can onl
 
 ```
 
-### Partitioning
+Continue to [#Partitioning](#Partitioning)
+
+## Partitioning
 
 By default, the MacBook's drive is formatted using GPT and contains at least 3 partitions:
 
@@ -80,11 +82,7 @@ As a general rule, partitioning is no different from any other hardware that Arc
 
 ## Installation
 
-### Booting the live image
-
-The Apple boot manager is accessible by holding the `Alt` button during power on. As any other computer that does not have a CDROM drive, you need to use an [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). After booting, please refer to the official [Installation guide](/index.php/Installation_guide "Installation guide").
-
-### Console
+Installation is similar to any other standard laptop. Please refer to the official [Installation guide](/index.php/Installation_guide "Installation guide"). The Apple boot manager is accessible by holding the `Alt` button during power on. As any other computer that does not have a CDROM drive, you need to use an [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media").
 
 As this model of notebook has a high DPI display, the console font displayed will be extremely small and depending on your preferences is likely to be uncomfortable to use. You may wish to change this for a more legible font, an example of which is;
 
@@ -93,29 +91,18 @@ $ setfont sun12x22
 
 ```
 
-If you want to make this change permanent, add the following line to `/etc/vconsole.conf`
-
-```
- FONT=sun12x22
-
-```
-
 ### Internet
 
-#### Wired
+Thunderbolt Ethernet adapters and USB-to-Ethernet adapters are usually picked up automatically. In case you use a Thunderbolt ethernet adapter, you may have to power on the machine with the adapter plugged in for it to be picked up by the system.
 
-Thunderbolt Ethernet adapters and USB-to-Ethernet adapters should be picked up automatically.
+Another easy option is to use USB tethering with an Android device. For more information, see [Android tethering](/index.php/Android_tethering "Android tethering").
 
-**Note:** You may have to power on the machine with the Thunderbolt Ethernet adapter plugged in for it to be picked up initially.
-
-#### Wireless
-
-As mentioned below, `broadcom-wl` is sufficient if you are using the Linux mainline kernel. For custom kernels, you need to use `broadcom-wl-dkms`. Both are available from the [AUR](/index.php/AUR "AUR"). The easiest way to get Wi-Fi connectivity during install is to build the package driver on a separate system. Note that it does have to be built against the exact same kernel version as used by the installer, and this may differ from the latest version. If built against the wrong kernel you may encounter an error *(ERROR: could not insert 'wl': Invalid argument)* upon modprobe. Build the package as follows:
+If you have neither, the only option is to use the onboard wireless adapter. Unfortunately, it uses a Broadcom BCM43xx chipset, which is supported only by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") and is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
 
 ```
-$ curl -O [https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl-dkms.tar.gz](https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl-dkms.tar.gz)
-$ tar -zxvf broadcom-wl-dkms.tar.gz
-$ cd broadcom-wl-dkms
+$ curl -O [https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz](https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz)
+$ tar -zxvf broadcom-wl.tar.gz
+$ cd broadcom-wl
 $ makepkg -s
 
 ```
@@ -124,15 +111,17 @@ This will give you a package (`broadcom-wl-*.pkg.tar.xz`) which can be installed
 
 ```
 # pacman -U broadcom-wl-*.pkg.tar.xz
+# rmmod b43
+# rmmod ssb
 # modprobe wl
 
 ```
 
 You may now use `wifi-menu` to connect to your network of choice.
 
-**Note:** You need to repeat this process when you have finished your installation and booting into the system for the first time. If kernel versions differ, you may want to ensure to install a number of essential packages while you have connectivity and before you boot into your system, these allow you to build the broadcom driver again and connect (provided you put the AUR tarball for the driver on USB drive too): [dkms](https://www.archlinux.org/packages/?name=dkms), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) ([dialog](https://www.archlinux.org/packages/?name=dialog) and [netctl](https://www.archlinux.org/packages/?name=netctl) are needed if you want to use `wifi-menu` again after you boot)
+**Note:** The driver will need to be reinstalled after booting into the system for the first time. For more information, please see [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless"))
 
-### Bootloader
+## Setup bootloader
 
 MacBooks can be easily configured to use [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [GRUB](/index.php/GRUB "GRUB") directly from the Apple bootloader, without the need for third-party tools such as [rEFInd](/index.php/REFInd "REFInd"). Systemd-boot is the recommended way for systems that support UEFI.
 
@@ -150,11 +139,27 @@ At the next reboot, the Apple Boot Manager, shown when holding down the option k
 
 **Note:** If you wish to use GRUB, have a look at the [MacBook](/index.php/MacBook#Using_the_native_Apple_bootloader_with_GRUB "MacBook") page.
 
+**Tip:** After the installation, it is optionally possible to set a custom icon that will be displayed in the MacBook boot loader. In order to do that, you need to install the [wget](https://www.archlinux.org/packages/?name=wget), [librsvg](https://www.archlinux.org/packages/?name=librsvg) and [libicns](https://aur.archlinux.org/packages/libicns/) packages. After that, just follow the following commands:
+```
+ $ wget -O /tmp/archlinux.svg [https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg](https://www.archlinux.org/logos/archlinux-icon-crystal-64.svg)
+ $ rsvg-convert -w 128 -h 128 -o /tmp/archlogo.png /tmp/archlinux.svg
+ $ sudo png2icns /boot/.VolumeIcon.icns /tmp/archlogo.png
+ $ rm /tmp/archlogo.png
+ $ rm /tmp/archlinux.svg
+
+```
+
+Obviously, you can replace the Arch logo with any other icon you like.
+
 **Tip:** If you installed Arch Linux alongside OS X, you will be able to change the default boot location from system Settings inside OS X. If Arch Linux does not show up as a possible boot option, you will have to mount the EFI System Partition inside OS X before selecting your boot option: `$ diskutil mount disk0s1` 
 
 Keep in mind, however, it is also possible to load OS X from [systemd-boot](/index.php/Systemd-boot "Systemd-boot").
 
 ## Post installation
+
+See [General recommendations](/index.php/General_recommendations "General recommendations") for system management directions and post-installation tutorials.
+
+Additionally, you might want to have a look at the [Power management](/index.php/Power_management "Power management") page for useful tips in power management and battery-saving software.
 
 ### Console
 
@@ -195,37 +200,6 @@ You may need to install [intel-ucode](https://www.archlinux.org/packages/?name=i
 ###### HiDPI
 
 See [HiDPI](/index.php/HiDPI "HiDPI") for information on how to tweak the system for a Retina screen.
-
-###### Xfce
-
-If you are using [Xfce](/index.php/Xfce "Xfce"), you will probably experience tearing in Firefox, VLC, etc. Until newer versions of xfwm support OpenGL rendering, use another compositing window manager like [compton](/index.php/Compton "Compton") with `backend = "glx"`.
-
-###### lightdm
-
-If you are using lightdm on HiDPI/Retina screens you may experience a small login box , to use the native resolution of 2560x1600 on the login screen create a script
-
-```
-  #!/bin/sh
-  xrandr --output eDP1 --primary --mode 2560x1600
-
-```
-
-and set it as display-setup-script in /etc/lightdm/lightdm.conf
-
-###### MATE
-
-MATE's Marco seems to have problems. Replace it with GNOME's Mutter for nice animated effects. This works best with the nouveau driver.
-
-```
-# mutter --replace &&
-
-```
-
-Or configure MATE to use Mutter in dconf...
-
-###### GNOME
-
-It all works great out of the box with the nouveau driver.
 
 #### Getting the integrated intel card to work on 11,3
 

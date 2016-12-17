@@ -334,11 +334,11 @@ If your private key is encrypted, `ssh-add` will prompt you to enter your passph
 In order to start the agent automatically and make sure that only one `ssh-agent` process runs at a time, add the following to your `~/.bashrc`:
 
 ```
-if ! pgrep -u $USER ssh-agent > /dev/null; then
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval $(<~/.ssh-agent-thing)
+    eval "$(<~/.ssh-agent-thing)"
 fi
 
 ```

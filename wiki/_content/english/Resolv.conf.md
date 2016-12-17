@@ -70,12 +70,19 @@ To use alternative DNS servers, edit `/etc/resolv.conf` and add them to the top 
 
 [OpenNIC](http://www.opennicproject.org/) provides free uncensored nameservers with additional features.
 
-**Tip:** OpenNIC offers many [different nameservers](http://wiki.opennicproject.org/Tier2) located in multiple countries. Pick some of the [nearest nameservers](http://www.opennicproject.org/nearest-servers/) for optimal performance.
+**Tip:** OpenNIC offers many [different nameservers](http://wiki.opennicproject.org/Tier2) located in multiple countries. Pick some of the [nearest nameservers](https://www.opennicproject.org/nearest-servers/) for optimal performance.
 
 ```
-# OpenNIC IPv4 nameservers (US)
-nameserver 107.170.95.180
-nameserver 75.127.14.107
+# OpenNIC IPv4 nameservers (Worldwide Anycast)
+nameserver 185.121.177.177
+nameserver 185.121.177.53
+
+```
+
+```
+# OpenNIC IPv6 nameservers (Worldwide Anycast)
+nameserver 2a05:dfc7:5::53
+nameserver 2a05:dfc7:5::5353
 
 ```
 

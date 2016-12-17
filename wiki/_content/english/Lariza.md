@@ -48,6 +48,8 @@ export LARIZA_ZOOM=1.0 # Default Zoom Level
 
 Set various XDG environment variables to modify the default [WebKit](https://webkitgtk.org/) cache and/or [local storage](https://en.wikipedia.org/wiki/Web_storage "wikipedia:Web storage") locations. To avoid establishing a global environment which affects other applications, XDG variables should be set before calling lariza. [GTK+ variables](https://developer.gnome.org/gtk3/stable/gtk-running.html) can also be used to support the environment.
 
+*   Specify a theme and cache directory before launching lariza without support for tabbed:
+
 ```
 $ GTK_THEME=Adwaita:dark XDG_CACHE_HOME=/tmp lariza -T
 
@@ -73,14 +75,14 @@ Keyword based searching can be configured by creating `~/.config/lariza/keywords
 ```
 a [https://aur.archlinux.org/packages/?O=0&SeB=n&K=%s](https://aur.archlinux.org/packages/?O=0&SeB=n&K=%s)
 cv [https://web.nvd.nist.gov/view/vuln/search-results?query=%s](https://web.nvd.nist.gov/view/vuln/search-results?query=%s)
-d [https://duckduckgo.com/html/?q=%s](https://duckduckgo.com/html/?q=%s)
+d [https://duckduckgo.com/html/?q=%s&kp=-1&k1=-1&kd=1](https://duckduckgo.com/html/?q=%s&kp=-1&k1=-1&kd=1)
 # g [https://wiki.gentoo.org/index.php?&search=%s](https://wiki.gentoo.org/index.php?&search=%s)
 git [https://github.com/search?&q=%s](https://github.com/search?&q=%s)
 p [https://www.archlinux.org/packages/?sort=&arch=x86_64&q=%s](https://www.archlinux.org/packages/?sort=&arch=x86_64&q=%s)
 
 ```
 
-Single line entries consist of a keyword and a URI terminated with a `%s`. Typing `git lariza` in the address field + `Enter` will return the results of searching GitHub for lariza: [https://github.com/search?&q=lariza](https://github.com/search?&q=lariza). Note that `#` commented lines are ignored.
+Single line entries consist of a keyword and a URI `%s` query. Typing `git lariza` in the address field + `Enter` will return the results of searching GitHub for lariza: [https://github.com/search?&q=lariza](https://github.com/search?&q=lariza). Note that `#` commented lines are ignored.
 
 ### Bookmarks workaround
 
@@ -113,7 +115,7 @@ lariza enables JavaScript by default. Rather, lariza passes through the default 
 
 ### Adblock support
 
-Support for blocking ads can be configured by creating `~/.config/lariza/adblock.black` with regular expressions:
+Support for blocking ads or URIs in general can be configured by creating `~/.config/lariza/adblock.black` with [regular expressions](https://developer.gnome.org/glib/stable/glib-regex-syntax.html). Case-insensitive regexp and partial matches with glob wildcards are supported.
 
 ```
 .*/ad/.*

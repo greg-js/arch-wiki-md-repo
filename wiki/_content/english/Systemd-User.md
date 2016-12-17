@@ -4,13 +4,12 @@
 
 *   [1 How it works](#How_it_works)
 *   [2 Basic setup](#Basic_setup)
-    *   [2.1 D-Bus](#D-Bus)
-    *   [2.2 Environment variables](#Environment_variables)
-        *   [2.2.1 Service example](#Service_example)
-        *   [2.2.2 DISPLAY and XAUTHORITY](#DISPLAY_and_XAUTHORITY)
-        *   [2.2.3 PATH](#PATH)
-        *   [2.2.4 pam_environment](#pam_environment)
-    *   [2.3 Automatic start-up of systemd user instances](#Automatic_start-up_of_systemd_user_instances)
+    *   [2.1 Environment variables](#Environment_variables)
+        *   [2.1.1 Service example](#Service_example)
+        *   [2.1.2 DISPLAY and XAUTHORITY](#DISPLAY_and_XAUTHORITY)
+        *   [2.1.3 PATH](#PATH)
+        *   [2.1.4 pam_environment](#pam_environment)
+    *   [2.2 Automatic start-up of systemd user instances](#Automatic_start-up_of_systemd_user_instances)
 *   [3 Xorg and systemd](#Xorg_and_systemd)
     *   [3.1 Automatic login into Xorg without display manager](#Automatic_login_into_Xorg_without_display_manager)
     *   [3.2 Xorg as a systemd user service](#Xorg_as_a_systemd_user_service)
@@ -47,12 +46,6 @@ When systemd user instance starts, it brings up the target `default.target`. Oth
 
 All the user services will be placed in `~/.config/systemd/user/`. If you want to run services on first login, execute `systemctl --user enable *service*` for any service you want to be autostarted.
 
-### D-Bus
-
-Some programs will need a [D-Bus](/index.php/D-Bus "D-Bus") user message bus, and systemd is the manager of the user message bus.[[3]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) The *dbus-daemon* is started once per user for all sessions with the provided `dbus.socket` and `dbus.service` user units.
-
-**Note:** If you had previously created these units manually under `/etc/systemd/user/` or `~/.config/systemd/user/`, they can be removed.
-
 ### Environment variables
 
 The user instance of systemd does not inherit any of the [environment variables](/index.php/Environment_variables "Environment variables") set in places like `.bashrc` etc. There are several ways to set environment variables for the systemd user instance:
@@ -80,7 +73,7 @@ Environment="NO_AT_BRIDGE=1"
 
 #### DISPLAY and XAUTHORITY
 
-`DISPLAY` is used by any X application to know which display to use and `XAUTHORITY` to provide a path to the user's `.Xauthority` file and thus the cookie needed to access the X server. If you plan on launching X applications from systemd units, these variables need to be set. Systemd provides a script in `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` to import those variables into the systemd user session on X launch. [[4]](https://github.com/systemd/systemd/blob/v219/NEWS#L194) So unless you start X in a nonstandard way, user services should be aware of the `DISPLAY` and `XAUTHORITY`.
+`DISPLAY` is used by any X application to know which display to use and `XAUTHORITY` to provide a path to the user's `.Xauthority` file and thus the cookie needed to access the X server. If you plan on launching X applications from systemd units, these variables need to be set. Systemd provides a script in `/etc/X11/xinit/xinitrc.d/50-systemd-user.sh` to import those variables into the systemd user session on X launch. [[3]](https://github.com/systemd/systemd/blob/v219/NEWS#L194) So unless you start X in a nonstandard way, user services should be aware of the `DISPLAY` and `XAUTHORITY`.
 
 #### PATH
 
@@ -131,7 +124,7 @@ There are several ways to run xorg within systemd units. Below there are two opt
 
 This option will launch a system unit that will start a user session with an xorg server and then run the usual `~/.xinitrc` to launch the window manager, etc.
 
-You need to have [#D-Bus](#D-Bus) correctly set up and [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/) installed.
+You need to have [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/) installed.
 
 Set up your [xinitrc](/index.php/Xinitrc "Xinitrc") from the skeleton, so that it will source the files in `/etc/X11/xinit/xinitrc.d/`. Running your `~/.xinitrc` should not return, so either have `wait` as the last command, or add `exec` to the last command that will be called and which should not return (your window manager, for instance).
 
@@ -159,7 +152,7 @@ Unfortunately, to be able to run xorg in unprivileged mode, it needs to run insi
 
 **Note:** This is not a fundamental restriction imposed by logind, but the reason seems to be that xorg needs to know which session to take over, and right now it gets this information calling [logind](http://www.freedesktop.org/wiki/Software/systemd/logind)'s `GetSessionByPID` using its own pid as argument. See [this thread](http://lists.x.org/archives/xorg-devel/2014-February/040476.html) and [xorg sources](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/os-support/linux/systemd-logind.c). It seems likely that xorg could be modified to get the session from the tty it is attaching to, and then it could run unprivileged from a user service outside a session.
 
-**Warning:** On xorg 1.18 socket activation seems to be broken. The client triggering the activation deadlocks. See the upstream bug report [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). As a temporary workaround you can start the xorg server without socket activation, making sure the clients connect after a delay, so the server is fully started. There seems to be no nice mechanism te get startup notification for the X server.
+**Warning:** On xorg 1.18 socket activation seems to be broken. The client triggering the activation deadlocks. See the upstream bug report [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=93072). As a temporary workaround you can start the xorg server without socket activation, making sure the clients connect after a delay, so the server is fully started. There seems to be no nice mechanism te get startup notification for the X server.
 
 This is how to launch xorg from a user service:
 
@@ -222,7 +215,7 @@ Now running any X application will launch xorg on virtual terminal 2 automatical
 
 The environment variable `XDG_VTNR` can be set in the systemd environment from `.bash_profile`, and then one could start any X application, including a window manager, as a systemd unit that depends on `xorg@0.socket`.
 
-**Warning:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[6]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[7]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
+**Warning:** Currently running a window manager as a user service means it runs outside of a session with the problems this may bring: [break the session](/index.php/General_troubleshooting#Session_permissions "General troubleshooting"). However, it seems that systemd developers intend to make something like this possible. See [[5]](https://mail.gnome.org/archives/desktop-devel-list/2014-January/msg00079.html) and [[6]](http://lists.freedesktop.org/archives/systemd-devel/2014-March/017552.html)
 
 ## Writing user units
 

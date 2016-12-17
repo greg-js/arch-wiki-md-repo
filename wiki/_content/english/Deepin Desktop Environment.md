@@ -9,6 +9,7 @@
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Does not start](#Does_not_start)
     *   [3.2 No background after resuming from standby](#No_background_after_resuming_from_standby)
+    *   [3.3 Open in terminal not work in deepin-file-manager](#Open_in_terminal_not_work_in_deepin-file-manager)
 *   [4 Bug Reporting](#Bug_Reporting)
 
 ## Installation
@@ -100,6 +101,15 @@ Once those two files are created in the correct directories, in order to enable 
 ```
 
 The first command makes the script you created executable, the second makes sure that the service always start at boot and the last one starts the service immediately so you can test the workaround without having to reboot the system.
+
+### Open in terminal not work in deepin-file-manager
+
+See [here](https://github.com/linuxdeepin/developer-center/issues/121). A solution for the moment:
+
+```
+# ln -s /usr/bin/deepin-terminal /usr/bin/x-terminal-emulator
+
+```
 
 ## Bug Reporting
 

@@ -221,11 +221,9 @@ If you do not use a DE, place the line from [#Autostart on tty login](#Autostart
 
 #### Autostart with systemd
 
-**Note:** It is assumed that you already have systemd user-session manager running (which should be default). See the [systemd/User](/index.php/Systemd/User "Systemd/User") page for details.
+The [mpd](https://www.archlinux.org/packages/?name=mpd) package provides user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file, the process already has user permissions and therefore it is not necessary to change them further.
 
-The package [mpd](https://www.archlinux.org/packages/?name=mpd) provides user service file in `/usr/lib/systemd/user/mpd.service`. The configuration file is expected to exist either in `~/.mpdconf` or `~/.config/mpd/mpd.conf`, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") if you would like to use different path. The process is not started as root, so you should not use the `user` and `group` variables in the MPD configuration file, the process already has user permissions and therefore it is not necessary to change them further.
-
-All you have to do is enable and start the `mpd` [user service](/index.php/Systemd/User#User_Services "Systemd/User").
+All you have to do is enable and start the `mpd` [user service](/index.php/Systemd/User "Systemd/User").
 
 **Note:**
 

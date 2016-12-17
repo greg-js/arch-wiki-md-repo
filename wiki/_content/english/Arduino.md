@@ -36,7 +36,7 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 
 ## Installation
 
-*   Install [arduino](https://aur.archlinux.org/packages/arduino/) from the [AUR](/index.php/AUR "AUR") and [arduino-docs](https://www.archlinux.org/packages/?name=arduino-docs) for its offline documentation.
+*   Install [arduino](https://www.archlinux.org/packages/?name=arduino) and [arduino-docs](https://www.archlinux.org/packages/?name=arduino-docs) for its offline documentation.
 *   Add yourself to the `uucp` and `lock` [groups](/index.php/Groups "Groups") (more information in the [#Accessing serial](#Accessing_serial) section).
 *   You may need to [load](/index.php/Kernel_modules "Kernel modules") the `cdc_acm` module.
 
@@ -250,7 +250,7 @@ Main resource: [here](http://www.emacswiki.org/emacs/ArduinoSupport).
 
 ### Version 1.6
 
-As of Oct 5, 2014, most of the 3rd party tools only work for Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/)). Some of the tools may partially work for Arduino version 1.6 ([arduino](https://aur.archlinux.org/packages/arduino/)) and after. Check the version if the tools do not work.
+As of Oct 5, 2014, most of the 3rd party tools only work for Arduino 1.0 ([arduino10](https://aur.archlinux.org/packages/arduino10/)). Some of the tools may partially work for Arduino version 1.6 ([arduino](https://www.archlinux.org/packages/?name=arduino)) and after. Check the version if the tools do not work.
 
 ### Consistent naming of Arduino devices
 

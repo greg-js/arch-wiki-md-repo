@@ -1,3 +1,8 @@
+**Bump to v4.8.15-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.15](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.15)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=cbb19d8e215caf35f41d967fb7a14c68de5a3c64](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=cbb19d8e215caf35f41d967fb7a14c68de5a3c64)
+
 **Bump to v4.8.14-2**
 
 *   Changelog: Bug patch fix following Arch upstream.
