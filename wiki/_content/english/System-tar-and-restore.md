@@ -1,4 +1,10 @@
-**System-tar-and-restore** contains two bash scripts, **backup.sh** and **restore.sh**. The former makes a tar backup of your system. The latter restores the backup or transfers your system using [rsync](https://www.archlinux.org/packages/?name=rsync) in desired partition(s). The scripts include two interfaces, **cli** and **dialog** (ncurses). If you plan to use the second, install [dialog](https://www.archlinux.org/packages/?name=dialog) from the [official repositories](/index.php/Official_repositories "Official repositories"). Also a [gui wrapper](https://github.com/tritonas00/system-tar-and-restore#gui) is available. Install [gtkdialog](https://www.archlinux.org/packages/?name=gtkdialog) and run `star-gui.sh` as root in order to use it.
+**System-tar-and-restore** contains two bash scripts, the main program **star.sh** and a gui wrapper **star-gui.sh**. Three modes are available:
+
+*   **Backup**: With this mode you can make a tar backup archive of your system.
+
+*   **Restore/Transfer**: Restore mode uses the above created archive to extract it in desired partition(s). Transfer mode transfers your system in desired partition(s) using [rsync](https://www.archlinux.org/packages/?name=rsync). Then, in both cases, the script generates the target system's fstab, rebuilds initramfs for every available kernel, generates locales and finally installs and configures the selected bootloader.
+
+If you plan to use the gui, install [gtkdialog](https://www.archlinux.org/packages/?name=gtkdialog) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Installation
 

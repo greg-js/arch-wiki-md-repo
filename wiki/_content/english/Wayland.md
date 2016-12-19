@@ -1,7 +1,5 @@
 [Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositor](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing this protocol. All major Linux desktop systems like Gnome, KDE do support Wayland, and there is also a reference implementation for a compositor called "Weston". [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy X11 applications on Wayland.
 
-The biggest issue is, in 2016, with screen recording, as applications do not see other applications contents any more.
-
 ## Contents
 
 *   [1 Requirements](#Requirements)
@@ -13,7 +11,7 @@ The biggest issue is, in 2016, with screen recording, as applications do not see
         *   [2.3.2 Screencast recording](#Screencast_recording)
         *   [2.3.3 High DPI displays](#High_DPI_displays)
         *   [2.3.4 Shell font](#Shell_font)
-*   [3 Gnome](#Gnome)
+*   [3 GNOME](#GNOME)
     *   [3.1 Install and test](#Install_and_test)
     *   [3.2 Autostart](#Autostart)
     *   [3.3 hints](#hints)
@@ -265,7 +263,7 @@ scale=2
 
 Weston uses the default sans-serif font for window title bars, clocks, etc. See [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration") for instructions on how to change this font.
 
-## Gnome
+## GNOME
 
 ### Install and test
 

@@ -269,6 +269,16 @@ An ok workaround until this is fixed is the [Backlight#redshift](/index.php/Back
 
 **Update : If you boot Legacy with Grub2 by holding down "option" at startup and selecting the "Windows" disk, your backlight control will work. Booting using EFI or rEFIt disables the backlight control.**
 
+**EDIT:** I was able to adjust the backlight on a mid 2011, 27 inch iMac by adjusting the values in "radeon_bl1" rather than "acpi_video0."
+
+You can check the maximum value allowed with:
+
+ `cat /sys/class/backlight/radeon_bl1/max_brightness ` 
+
+And you can set the current brightness with:
+
+ `tee /sys/class/backlight/radeon_bl1/brightness <<< ''your_value''` 
+
 ## Getting sound to work right
 
 Sound does not always work nice out of the box using Linux on an iMac. For instance, the sound can appear "thin" or tinny with too much treble and too little base due to the built in subwoofer being muted by default or the OS may not detect that the headphones have been plugged in. The fixes are generally to load sound drivers with extra model flags specifying relevent iMac model by manipulating */etc/modprobe.d/sound.conf* or */etc/modprobe.d/modprobe.conf*, restart the computer or the sound system and use alsamixer to make sure all desired channels are not muted.

@@ -143,21 +143,23 @@ Fancy double-key Rapid Fire Trick are not possible by default for Linux. The [xk
 
 #### Enable CapsLock as a Rapid Fire Hotkey
 
-TheCore and TheCore Lite hotkeys rely on CapsLock to be a rapid fire hotkey. This does not work by default under Linux. To make it work, CapsLock key could be remapped to another key with [xmodmap](/index.php/Xmodmap "Xmodmap"). Hereafter an example with "!" character that cannot be used by Starcraft2 in any case.
+TheCore and TheCore Lite hotkeys rely on CapsLock to be a rapid fire hotkey. This does not work by default under Linux. To make it work, CapsLock key could be remapped to another key with [xmodmap](/index.php/Xmodmap "Xmodmap"). Hereafter an example with "Backspace" character.
 
 ```
-$ xmodmap -e "remove Lock = Caps_Lock" -e "keycode 66 = exclam"
-
-```
-
-The .SC2Hotkeys file would need to be modified, to take it into account to add "!" as an alternate wherever CapsLock is used
-
-```
-$ sed -i -e "s:CapsLock:CapsLock,OEM8:g" <file>.SC2Hotkeys
+$ xmodmap -e "remove Lock = Caps_Lock" -e "keycode 66 = BackSpace"
 
 ```
 
-**Tip:** `xmodmap -e "add Lock = Caps_Lock" -e "keycode 66 = Caps_Lock"` to get back to default CapsLock behavior
+The .SC2Hotkeys file would need to be modified, to take it into account to add "Backspace" as an alternate wherever CapsLock is used
+
+```
+$ sed -i -e "s:CapsLock:Backspace:" <file>.SC2Hotkeys                         # replacement of CapsLock by BackSpace
+$ sed -i -e "s:CapsLock:CapsLock,Backspace:" <file>.SC2Hotkeys                # easy command copy
+$ sed -i -e "s:\([=,]\([=,]\)*CapsLock\):\1,\2Backspace:" <file>.SC2Hotkeys   # this one copies any modifier with CapsLock to equivalent with BackSpace
+
+```
+
+**Tip:** `xmodmap -e "add Lock = Caps_Lock" -e "keycode 66 = Caps_Lock"` to get back to default CapsLock behavior, once you exit the game
 
 #### Enable Scrollclick
 

@@ -2,11 +2,13 @@ There are two official Linux versions of Skype available:
 
 *   The new Skype for Linux Alpha (released 2016-07-13): see [#Skype for Linux Alpha](#Skype_for_Linux_Alpha)
 
-	It is basically the web version in a wrapper. Video chat is not completely working yet.
+	It is basically the web version in a wrapper. Group video chat is not yet working.
 
 *   The old Skype (last release in June 2014): see [#Legacy Skype](#Legacy_Skype)
 
-Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working voice chat, at least with Chromium/Chrome. In recent versions of Firefox voice and video chat are working.
+	Legacy Skype does not support calling to some newer clients.[[1]](https://blogs.skype.com/news/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/)
+
+Alternatively, you can use the web version at [web.skype.com](https://web.skype.com/). It has working voice and video chat (at least on Chromium/Chrome and Firefox), but group video chat is not yet working.
 
 ## Contents
 
@@ -42,7 +44,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
 
 ## Skype for Linux Alpha
 
-There is a new [Skype for Linux Alpha](http://blogs.skype.com/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/), which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text, (group) voice, and video chat (video only between Linux clients, as of [version 1.10](https://community.skype.com/t5/Linux/What-s-New-in-Skype-1-10-for-Linux-Alpha/td-p/4495850)).
+There is a new [Skype for Linux Alpha](http://blogs.skype.com/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/), which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text, (group) voice, and video chat (group video chat is not yet working).
 
 [Install](/index.php/Install "Install") it with the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
 
@@ -88,7 +90,7 @@ There are a couple of reasons you might want to restrict Skype's access to your 
 *   The skype binary is disguised against decompiling, so nobody is (still) able to reproduce what it really does.
 *   It produces encrypted traffic even when you are not actively using Skype.
 
-See [[1]](http://www1.cs.columbia.edu/~salman/skype/index.html) for more information.
+See [[2]](http://www1.cs.columbia.edu/~salman/skype/index.html) for more information.
 
 Restrictions can be implemented in a number of ways, with varying ease and security. It is possible to run Skype in a container, run it as a separate user, or use the [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") functionality available in the Linux kernel.
 
@@ -640,7 +642,7 @@ $ tail -f reject_003.log
 
 The output of this command will show you rejected actions for Skype, so you will be able to add them to `domain_policy.conf` file if needed.
 
-See [[2]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide to TOMOYO configuration.
+See [[3]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide to TOMOYO configuration.
 
 ### Troubleshooting
 

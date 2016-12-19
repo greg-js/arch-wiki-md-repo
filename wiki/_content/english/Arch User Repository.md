@@ -351,12 +351,8 @@ If the package used to exist in AUR3, it might not have been [migrated to AUR4](
 The simplest way is to check the HTTP status of the package's AUR page:
 
 ```
-#!/bin/bash
-for pkg in $(pacman -Qqm); do
-    if ! curl -sILfo /dev/null -w '%{http_code}' "https://aur.archlinux.org/packages/$pkg" | grep -q '^2'; then
-        echo "$pkg is missing!"
-    fi
-done
+$ comm -23 <(pacman -Qqm | sort) <(curl [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz) | gzip -cd | sort)
+
 ```
 
 If you use an [AUR helper](/index.php/AUR_helper "AUR helper"), you can shorten this script by replacing the curl command with whatever command queries the AUR for a package.

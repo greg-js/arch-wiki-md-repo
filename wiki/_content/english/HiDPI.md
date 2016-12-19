@@ -107,14 +107,14 @@ xrandr --output eDP1 --panning 2304x1296
 
 ### KDE
 
-KDE plasma 5 provides excellent support for HiDPI screens out of the box. All you need to make sure of is that the X-server is aware of your screens resolution. Quickes way to do this by editing your /etc/sddm.conf and add the dpi arguments to the [X11] section's ServerArguments;
+KDE plasma 5 provides excellent support for HiDPI screens out of the box. You just need to make sure that the X server is aware of your screen's pixel density. The quickest way to achieve this is to edit your `/etc/sddm.conf` and add the dpi argument to `ServerArguments` in the `[X11]` section:
 
 ```
-   ServerArguments=-nolisten tcp -dpi 276
+ServerArguments=-nolisten tcp -dpi 276
 
 ```
 
-More info and perhaps more correct solutions can be found at [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg")
+More information and perhaps more correct solutions can be found at [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg").
 
 #### KDE with multi-monitor setup
 

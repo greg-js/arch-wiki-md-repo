@@ -92,7 +92,7 @@ For audio, see [[3]](https://github.com/tsowell/linux-samus).
 
 The screen backlight can be controlled via <tt>/sys/class/backlight/intel_backlight/</tt>; see the [brightness](https://raw.githubusercontent.com/raphael/linux-samus/master/build/brightness) script from [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/).
 
-The keyboard backlight can be controlled via <tt>/sys/class/leds/chromeos::kbd_backlight/</tt>; see the [keyboard-brightness.sh](https://gist.githubusercontent.com/strayArch/5c862648f261122d9e4e/raw/d0b800f13b8d792445f32e0317efd57e7f4439a1/keyboard-brightness.sh) script.
+The keyboard backlight can be controlled via <tt>/sys/class/leds/chromeos::kbd_backlight/</tt>; see the [keyboard](https://raw.githubusercontent.com/raphael/linux-samus/master/scripts/setup/brightness/keyboard_led) script from [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/).
 
 ## Keyboard rebindings
 

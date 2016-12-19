@@ -230,7 +230,7 @@ If you did need to add this module to your kernel image configuration manually, 
 
 Add the relevant PCI device IDs to the kernel command line:
 
- `/etc/mkinitcpio.conf` 
+ `/etc/default/grub` 
 ```
 ...
 GRUB_CMDLINE_LINUX_DEFAULT="... pci-stub.ids=10de:13c2,10de:0fbb ..."

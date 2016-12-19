@@ -116,7 +116,7 @@ A systemd service can be used to set the keyboard rate. For example
 Description=Keyboard repeat rate in tty.
 
 [Service]
-Type=simple
+Type=oneshot
 RemainAfterExit=yes
 StandardInput=tty
 StandardOutput=tty

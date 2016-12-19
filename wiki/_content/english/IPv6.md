@@ -38,7 +38,7 @@ $ ping ff02::1%eth0
 After that, you can get a list of all the neighbors in the local network with:
 
 ```
- $ ip -6 neigh
+$ ip -6 neigh
 
 ```
 
@@ -60,7 +60,7 @@ The easiest way to acquire an IPv6 address as long as your network is configured
 If you are using [netctl](/index.php/Netctl "Netctl") you just need to add the following line to your ethernet or wireless configuration.
 
 ```
- IP6=stateless
+IP6=stateless
 
 ```
 
@@ -69,7 +69,7 @@ If you are using [NetworkManager](/index.php/NetworkManager "NetworkManager") th
 Please note that stateless autoconfiguration works on the condition that IPv6 icmp packets are allowed throughout the network. So for the client side the `ipv6-icmp` packets must be accepted. If you are using the [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")/[iptables](/index.php/Iptables "Iptables") you only need to add:
 
 ```
- -A INPUT -p ipv6-icmp -j ACCEPT
+-A INPUT -p ipv6-icmp -j ACCEPT
 
 ```
 
@@ -83,15 +83,12 @@ To properly hand out IPv6s to the network clients we will need to use an adverti
 # replace LAN with your LAN facing interface
 interface LAN {
   AdvSendAdvert on;
-  MinRtrAdvInterval 30;
-  MaxRtrAdvInterval 90;
+  MinRtrAdvInterval 3;
+  MaxRtrAdvInterval 10;
   prefix ::/64 {
     AdvOnLink on;
     AdvAutonomous on;
     AdvRouterAddr on;
-  };
-  # use ipv6 google's dns
-  RDNSS 2001:4860:4860::8888 2001:4860:4860::8844 {
   };
 };
 
@@ -102,9 +99,9 @@ The above configuration will tell clients to autoconfigure themselves using addr
 The gateway must also allow the traffic of `ipv6-icmp` packets on all basic chains. For the [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall")/[iptables](/index.php/Iptables "Iptables") add:
 
 ```
- -A INPUT -p ipv6-icmp -j ACCEPT
- -A OUTPUT -p ipv6-icmp -j ACCEPT
- -A FORWARD -p ipv6-icmp -j ACCEPT
+-A INPUT -p ipv6-icmp -j ACCEPT
+-A OUTPUT -p ipv6-icmp -j ACCEPT
+-A FORWARD -p ipv6-icmp -j ACCEPT
 
 ```
 
@@ -164,8 +161,8 @@ method=auto
 Systemd-networkd also does not honor the settings `net.ipv6.conf.xxx.use_tempaddr` placed in `/etc/sysctl.d/40-ipv6.conf` unless the option `IPv6PrivacyExtensions` is set with the value `kernel` in the .network file(s). Other options for the IPv6 Privacy Extensions like
 
 ```
- net.ipv6.conf.xxx.temp_prefered_lft
- net.ipv6.conf.xxx.temp_valid_lft
+net.ipv6.conf.xxx.temp_prefered_lft
+net.ipv6.conf.xxx.temp_valid_lft
 
 ```
 
@@ -178,8 +175,8 @@ See [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [syst
 Add to `/var/lib/connman/settings` under the global section:
 
 ```
- [global]
- IPv6.privacy=prefered
+[global]
+IPv6.privacy=prefered
 
 ```
 
@@ -211,14 +208,14 @@ If your provider did not give you ipv6 dns and you are not running your own, you
 The standard tool for PPPoE, `pppd`, provides support for IPv6 on PPPoE as long as your ISP and your modem support it. Just add the following to `/etc/ppp/pppoe.conf`
 
 ```
- +ipv6
++ipv6
 
 ```
 
 If you are using [netctl](/index.php/Netctl "Netctl") for PPPoE then just add the following to your netctl configuration instead
 
 ```
- PPPoEIP6=yes
+PPPoEIP6=yes
 
 ```
 
@@ -245,11 +242,11 @@ iface "WAN" {
 
 ```
 
-**Tip:** Read manpage **`dibbler-client(8)`** for more information.
+**Tip:** Read dibbler-client(8) for more information.
 
 ### With dhcpcd
 
-[Dhcpcd](/index.php/Dhcpcd "Dhcpcd") apart from IPv4 dhcp support also provides a fairly complete implementation of the DHCPv6 client standard which includes DHCPv6-PD. If you are using `dhcpcd` edit `/etc/dhcpcd.conf`. You might already be using dhcpcd for IPv4 so just update your existing configuration.
+[dhcpcd](/index.php/Dhcpcd "Dhcpcd") apart from IPv4 dhcp support also provides a fairly complete implementation of the DHCPv6 client standard which includes DHCPv6-PD. If you are using `dhcpcd` edit `/etc/dhcpcd.conf`. You might already be using dhcpcd for IPv4 so just update your existing configuration.
 
 ```
 duid
@@ -270,7 +267,7 @@ ia_pd 1 LAN
 
 This configuration will ask for a prefix from WAN interface (`WAN`) and delegate it to the internal interface (`LAN`). In the event that a `/64` range is issued, you will need to use the 2nd `ia_pd instruction` that is commented out instead. It will also disable router solicitations on all interfaces except for the WAN interface (`WAN`).
 
-**Tip:** Also read: manpages **`dhcpcd(8)`** and **`dhcpcd.conf(5)`**.
+**Tip:** Also read [dhcpcd(8)](http://roy.marples.name/man/html8/dhcpcd.html) and [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html).
 
 ### With WIDE-DHCPv6
 
@@ -303,7 +300,7 @@ To enable/start wide-dhcpv6 client use the following command. Change `WAN` with 
 
 ```
 
-**Tip:** Read manpages **`dhcp6c(8)`** and **`dhcp6c.conf(5)`** for more information.
+**Tip:** Read dhcp6c(8) and dhcp6c.conf(5) for more information.
 
 ## IPv6 on Comcast
 
@@ -379,7 +376,7 @@ Disabling IPv6 functionality in the kernel does not prevent other programs from 
 
 #### dhcpcd
 
-*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the `dhcpcd.conf (5)` [man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
+*dhcpcd* will continue to harmlessly attempt to perform IPv6 router solicitation. To disable this, as stated in the [dhcpcd.conf(5)](http://roy.marples.name/man/html5/dhcpcd.conf.html) [man page](/index.php/Man_page "Man page"), add the following to `/etc/dhcpcd.conf`:
 
 ```
 noipv6rs

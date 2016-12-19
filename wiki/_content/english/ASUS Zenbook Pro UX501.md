@@ -5,11 +5,12 @@ For general instructions see [Laptop](/index.php/Laptop "Laptop") and comparable
 ## Contents
 
 *   [1 Kernel Options](#Kernel_Options)
-*   [2 Module Configuration](#Module_Configuration)
-*   [3 Touch Pad](#Touch_Pad)
-*   [4 Fan Control](#Fan_Control)
-*   [5 Virtual Terminal Fonts](#Virtual_Terminal_Fonts)
-*   [6 See also](#See_also)
+*   [2 Microcode](#Microcode)
+*   [3 Module Configuration](#Module_Configuration)
+*   [4 Touch Pad](#Touch_Pad)
+*   [5 Fan Control](#Fan_Control)
+*   [6 Virtual Terminal Fonts](#Virtual_Terminal_Fonts)
+*   [7 See also](#See_also)
 
 ## Kernel Options
 
@@ -33,6 +34,10 @@ To allow X to start without locking up when the GPU is powered down via bbswitch
 acpi_osi=! acpi_osi="Windows 2009"
 
 ```
+
+## Microcode
+
+Be sure to load the latest [microcode](/index.php/Microcode "Microcode") alongside your kernel to prevent random lock ups while using the modesetting driver.
 
 ## Module Configuration
 

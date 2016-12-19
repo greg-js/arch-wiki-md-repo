@@ -287,9 +287,9 @@ Restart Firefox and see if it solved the problem.
 
 ### Unreadable input fields with dark GTK+ themes
 
-When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
+When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
 
-A work around is to explicitly setting standard colors for all web pages in `~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css` or using [stylish add-on](https://addons.mozilla.org/firefox/addon/stylish/).
+Another workaround is to explicitly setting standard colors for all web pages in `~/.mozilla/firefox/xxxxxxxx.default/chrome/userContent.css` or using [stylish add-on](https://addons.mozilla.org/firefox/addon/stylish/).
 
 The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
 
@@ -319,7 +319,7 @@ select {
 }
 ```
 
-Another workaround is to force Firefox to use a light theme (e.g. "Adwaita:light"):
+Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
 
 1.  Copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`.
 2.  Close all running instances of Firefox and restart your window manager/desktop environment.

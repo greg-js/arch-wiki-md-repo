@@ -107,7 +107,7 @@ $ zcat /proc/config.gz > .config
 
 ```
 
-**Warning:** If you are compiling a kernel using your current `.config` file, do not forget to rename your kernel version in the `General Setup --->` option using one of the user interfaces listed later. If you skip this, there is the risk of overwriting one of your existing kernels by mistake.
+**Warning:** If you are compiling a kernel using your current `.config` file, do not forget to rename your kernel version "CONFIG_LOCALVERSION" in the new .config or in the `General Setup --->` option using one of the user interfaces listed under Advanced Configuration. If you skip this, there is the risk of overwriting one of your existing kernels by mistake.
 
 #### B. Generated configuration
 

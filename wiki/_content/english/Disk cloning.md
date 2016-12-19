@@ -266,8 +266,7 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
 	[http://www.redobackup.org/](http://www.redobackup.org/) ||
 
 *   **System Tar & Restore** — Backup and Restore your system using tar or Transfer it with rsync
-    *   CLI and Dialog interfaces
-    *   Easy backup and restore wizards
+    *   GUI and CLI interfaces
     *   Creates *.tar.gz*, *.tar.bz2*, *.tar.xz* or *.tar* archives
     *   Supports openssl / gpg encryption
     *   Uses rsync to transfer a running system

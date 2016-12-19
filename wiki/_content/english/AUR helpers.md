@@ -107,6 +107,10 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://archlinux.fr/yaourt-en](https://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
 
+*   **yay** — AUR helper written in Go.
+
+	[https://github.com/Jguer/yay](https://github.com/Jguer/yay) || [yay](https://aur.archlinux.org/packages/yay/) or [yay-bin](https://aur.archlinux.org/packages/yay-bin/) (binary)
+
 ## Maintenance
 
 *   **pkgbuild-watch** — Looks for changes on the upstream web pages
@@ -190,6 +194,7 @@ The columns have the following meaning:
 | wrapaur | Bash | Yes | Yes | No | No | No | Yes | None | S | Mirror updates, print news and AUR comments |
 | yaah | Bash | Yes | N/A | Yes | N/A | N/A | Optional | bash | S | No automatic builds |
 | yaourt | Bash/C | No (*yaourt -Si*) [[9]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) | No [[10]](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | No [[11]](https://github.com/archlinuxfr/yaourt/issues/186) | No [[12]](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | bash/zsh/fish | P | Backup, ABS support, AUR comments, multilingual |
+| yay | Go | Yes | Yes | Yes | No | Partial | No | bash/zsh/fish | P | sort by votes |
 
 **Note:** [Pacman](/index.php/Pacman "Pacman") 4.2\. introduced architecture specific fields. [[13]](http://allanmcrae.com/2014/12/pacman-4-2-released/) However, as of 06 April 2016, [AurJson](/index.php/AurJson "AurJson") combines all entries in a single field: [FS#48796](https://bugs.archlinux.org/task/48796). Helpers relying on the RPC may use the below workarounds to retrieve dependencies:
 

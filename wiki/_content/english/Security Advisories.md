@@ -44,6 +44,7 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### December 2016
 
+*   [17 December 2016] [ASA-201612-18](https://lists.archlinux.org/pipermail/arch-security/2016-December/000795.html) [qt5-webengine](https://www.archlinux.org/packages/?name=qt5-webengine) multiple issues
 *   [15 December 2016] [ASA-201612-17](https://lists.archlinux.org/pipermail/arch-security/2016-December/000794.html) [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin) multiple issues
 *   [15 December 2016] [ASA-201612-16](https://lists.archlinux.org/pipermail/arch-security/2016-December/000793.html) [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) multiple issues
 *   [14 December 2016] [ASA-201612-15](https://lists.archlinux.org/pipermail/arch-security/2016-December/000792.html) [firefox](https://www.archlinux.org/packages/?name=firefox) multiple issues

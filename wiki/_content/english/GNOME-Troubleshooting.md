@@ -198,7 +198,7 @@ According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028
 
 	Intel TearFree
 
-Enabling the [Xorg Intel TearFree option](/index.php/Intel_graphics#Tear-free_video "Intel graphics") is a known workaround for tearing problems on Intel adapters. However, the way this option acts makes it redundant with the use of a compositor (it increases memory consumption and lowers performance, see [the original bug report's final comment](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)).
+Enabling the [Xorg Intel TearFree option](/index.php/Intel_graphics#Tear-free_video "Intel graphics") is a known workaround for tearing problems on Intel adapters. However, the way this option acts increases memory consumption and lowers performance, see [the original bug report's final comment](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123).
 
 	Mutter tweaks
 

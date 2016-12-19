@@ -4,7 +4,7 @@ BUS1 is a work-in-progress in-kernel IPC mechanism.
 
 **Warning:** BUS1 is in heavy development, and should not be considered ready to use
 
-Install [bus1-git](https://aur.archlinux.org/packages/bus1-git/) and [libbus1-git](https://aur.archlinux.org/packages/libbus1-git/), then load the module:
+Install [libbus1-git](https://aur.archlinux.org/packages/libbus1-git/), then load the module:
 
 ```
 # modprobe bus1

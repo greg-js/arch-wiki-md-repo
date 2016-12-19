@@ -310,7 +310,7 @@ $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4
 
 ### Темы
 
-Темы для Xfce доступны на сайте [[1]](http://www.xfce-look.org). Темы *Xfwm* находятся в `/usr/share/themes/xfce4` и устанавливаются в меню *Settings > Window Manager*. Темы [GTK+](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)") устанавливаются через меню *Settings > Appearance*.
+Темы для Xfce доступны на сайте [xfce-look.org](http://www.xfce-look.org). Темы *Xfwm* находятся в `/usr/share/themes/xfce4` и устанавливаются в меню *Settings > Window Manager*. Темы [GTK+](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)") устанавливаются через меню *Settings > Appearance*.
 
 #### Согласованность компонентов
 
@@ -610,7 +610,7 @@ ColorPalette16=#eeeeeeeeecec
 
 Также вы можете установить [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon) и [gnome-color-manager](https://www.archlinux.org/packages/?name=gnome-color-manager) (доступны в extra). Чтобы начать калибровку из командной строки, вызовите `/usr/lib/gnome-settings-daemon/gnome-settings-daemon &` (обратите внимание, что это может изменить раскладку клавиатуры и чего угодно еще, поэтому, возможно стоит сделать это в отдельном аккаунте). Затем выполните `colormgr get-devices` и посмотрите значение "Device ID". Если это, например, "xrandr-Lenovo Group Limited", начните калибровку командой `gcm-calibrate --device "xrandr-Lenovo Group Limited"`.
 
-**Примечание:** Причина, по которой вам нужен gnome-settings-daemon в том, что Xfce сам по себе не поддерживает colord (см. [[2]](https://bugzilla.xfce.org/show_bug.cgi?id=8559)). Вместо него, вы можете использовать демон [xiccd](https://github.com/agalakhov/xiccd).
+**Примечание:** Причина, по которой вам нужен gnome-settings-daemon в том, что Xfce сам по себе не поддерживает colord (см. [[1]](https://bugzilla.xfce.org/show_bug.cgi?id=8559)). Вместо него, вы можете использовать демон [xiccd](https://github.com/agalakhov/xiccd).
 
 Для получения дополнительной информации, смотрите [ICC profiles](/index.php/ICC_profiles "ICC profiles").
 
@@ -698,7 +698,7 @@ xfconf-query -c xfce4-session -p /startup/ssh-agent/type -n -t string -s ssh-age
 
 Чтобы использовать [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), установите флажок *Launch GNOME services on startup* во вкладке *Advanced* окна *Session Manager* в настройках. Это также заблокирует gpg-agent и ssh-agent.
 
-Смотрите также [[3]](http://docs.xfce.org/xfce/xfce4-session/advanced).
+Смотрите также [[2]](http://docs.xfce.org/xfce/xfce4-session/advanced).
 
 ### Bluetooth
 
@@ -768,7 +768,7 @@ col=0
 
 ### HTML-файлы не открываются корректно в Firefox
 
-Проблема возникает, если Firefox установлен как браузер по умолчанию в `exo-preferred-applications`. При открытии файлов HTML, в имени которых есть пробелы, каждая часть имени, разделенная пробелом, может быть открыта как отдельный URL в отдельной вкладке ([[4]](https://bugzilla.xfce.org/show_bug.cgi?id=10731)). Вы можете открывать такие файлы, указывая явно `firefox.desktop` (*Firefox*) вместо `exo-web-browser.desktop` (*Web Browser*), или в файле `/usr/share/xfce4/helpers/firefox.desktop` измените:
+Проблема возникает, если Firefox установлен как браузер по умолчанию в `exo-preferred-applications`. При открытии файлов HTML, в имени которых есть пробелы, каждая часть имени, разделенная пробелом, может быть открыта как отдельный URL в отдельной вкладке ([[3]](https://bugzilla.xfce.org/show_bug.cgi?id=10731)). Вы можете открывать такие файлы, указывая явно `firefox.desktop` (*Firefox*) вместо `exo-web-browser.desktop` (*Web Browser*), или в файле `/usr/share/xfce4/helpers/firefox.desktop` измените:
 
 ```
 X-XFCE-CommandsWithParameter=%B -remote "openURL(%s)";%B %s;
@@ -905,7 +905,7 @@ $ rm -r ~/.cache/sessions/
 ## Смотрите также
 
 *   [Xfce — About](http://www.xfce.org/about/).
-*   [[5]](http://docs.xfce.org/) — полная документация.
+*   [[4]](http://docs.xfce.org/) — полная документация.
 *   [Xfce-Look](http://www.xfce-look.org/) — темы, обои и многое другое.
-*   [[6]](http://xfce.wikia.com/wiki/Frequently_Asked_Questions) — FAQ по Xfce.
+*   [[5]](http://xfce.wikia.com/wiki/Frequently_Asked_Questions) — FAQ по Xfce.
 *   [Xfce Wiki](http://wiki.xfce.org).

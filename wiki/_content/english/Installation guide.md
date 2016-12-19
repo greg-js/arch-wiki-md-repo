@@ -30,7 +30,7 @@ For more detailed instructions, see the respective [ArchWiki](/index.php/ArchWik
 
 ## Pre-installation
 
-Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "w:P6 (microarchitecture)") or [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible machine with a minimum of 256 MB RAM. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, a working internet connection is required.
+Arch Linux should run on any [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "w:P6 (microarchitecture)") or [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible machine with a minimum of 256 MB RAM, or 512 MB for x86_64\. A basic installation with all packages from the [base](https://www.archlinux.org/groups/x86_64/base/) group should take less than 800 MB of disk space. As the installation process needs to retrieve packages from a remote repository, a working internet connection is required.
 
 Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt; common commands such as [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) can be [tab-completed](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
