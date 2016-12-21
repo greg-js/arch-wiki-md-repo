@@ -1,4 +1,4 @@
-Installing Archlinux on the Macbook5,2 (Polycarbonate, Mid-2009) has several pitfalls as of right now. I have written them into this article for people having trouble installing Archlinux on their 5,2 Macbook. This guide assumes you are also going to follow the [MacBook](/index.php/MacBook "MacBook") install guide, and will point out a few modifications to get it working on this Macbook. Review these suggestions and then follow the guide. This guide also assumes you have rEFIt installed before hand.
+Installing Archlinux on the Macbook5,2 (Polycarbonate, Mid-2009) has several pitfalls as of right now. I have written them into this article for people having trouble installing Archlinux on their 5,2 Macbook. This guide assumes you are also going to follow the [Mac](/index.php/Mac "Mac") install guide, and will point out a few modifications to get it working on this Macbook. Review these suggestions and then follow the guide. This guide also assumes you have rEFIt installed before hand.
 
 ## Contents
 

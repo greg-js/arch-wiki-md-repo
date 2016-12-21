@@ -11,27 +11,25 @@ Like previous MacBook models, the MacBook Pro 11,x supports UEFI. This page will
     *   [4.1 Internet](#Internet)
 *   [5 Setup bootloader](#Setup_bootloader)
 *   [6 Post installation](#Post_installation)
-    *   [6.1 Console](#Console)
-    *   [6.2 Graphics](#Graphics)
-        *   [6.2.1 MacBook Pro 11,1](#MacBook_Pro_11.2C1)
-        *   [6.2.2 MacBook Pro 11,2](#MacBook_Pro_11.2C2)
-        *   [6.2.3 MacBook Pro 11,3](#MacBook_Pro_11.2C3)
-        *   [6.2.4 MacBook Pro 11,5](#MacBook_Pro_11.2C5)
-        *   [6.2.5 Microcode](#Microcode)
-        *   [6.2.6 HiDPI](#HiDPI)
-        *   [6.2.7 Getting the integrated intel card to work on 11,3](#Getting_the_integrated_intel_card_to_work_on_11.2C3)
-        *   [6.2.8 Alternative method to disable NVIDIA card](#Alternative_method_to_disable_NVIDIA_card)
-    *   [6.3 Sound](#Sound)
-    *   [6.4 Touchpad](#Touchpad)
-        *   [6.4.1 Ctrl-Click as Right-Click](#Ctrl-Click_as_Right-Click)
-        *   [6.4.2 input-mtrack](#input-mtrack)
-    *   [6.5 Keyboard backlight](#Keyboard_backlight)
-    *   [6.6 Screen backlight](#Screen_backlight)
-    *   [6.7 Suspend](#Suspend)
-    *   [6.8 Powersave](#Powersave)
-    *   [6.9 SD Card Reader](#SD_Card_Reader)
-    *   [6.10 Repurpose the power key](#Repurpose_the_power_key)
-    *   [6.11 Web cam](#Web_cam)
+    *   [6.1 Kernel parameters](#Kernel_parameters)
+    *   [6.2 Fan control](#Fan_control)
+    *   [6.3 Console](#Console)
+    *   [6.4 Graphics](#Graphics)
+        *   [6.4.1 Getting the integrated intel card to work on 11,3](#Getting_the_integrated_intel_card_to_work_on_11.2C3)
+        *   [6.4.2 Alternative method to disable NVIDIA card](#Alternative_method_to_disable_NVIDIA_card)
+    *   [6.5 Microcode](#Microcode)
+    *   [6.6 HiDPI](#HiDPI)
+    *   [6.7 Sound](#Sound)
+    *   [6.8 Touchpad](#Touchpad)
+        *   [6.8.1 Ctrl-Click as Right-Click](#Ctrl-Click_as_Right-Click)
+        *   [6.8.2 input-mtrack](#input-mtrack)
+    *   [6.9 Keyboard backlight](#Keyboard_backlight)
+    *   [6.10 Screen backlight](#Screen_backlight)
+    *   [6.11 Suspend](#Suspend)
+    *   [6.12 Powersave](#Powersave)
+    *   [6.13 SD Card Reader](#SD_Card_Reader)
+    *   [6.14 Repurpose the power key](#Repurpose_the_power_key)
+    *   [6.15 Web cam](#Web_cam)
 *   [7 What does not work](#What_does_not_work)
     *   [7.1 General](#General)
     *   [7.2 Wi-Fi](#Wi-Fi)
@@ -137,7 +135,7 @@ The above command will copy the *systemd-boot* binary to `/boot/EFI/Boot/BOOTX64
 
 At the next reboot, the Apple Boot Manager, shown when holding down the option key when booting the MacBook, should display Arch Linux (it will be displayed as `EFI Boot` as a possible boot option).
 
-**Note:** If you wish to use GRUB, have a look at the [MacBook](/index.php/MacBook#Using_the_native_Apple_bootloader_with_GRUB "MacBook") page.
+**Note:** If you wish to use GRUB, have a look at [Mac#Using the native Apple bootloader with GRUB](/index.php/Mac#Using_the_native_Apple_bootloader_with_GRUB "Mac").
 
 **Tip:** After the installation, it is optionally possible to set a custom icon that will be displayed in the MacBook boot loader. In order to do that, you need to install the [wget](https://www.archlinux.org/packages/?name=wget), [librsvg](https://www.archlinux.org/packages/?name=librsvg) and [libicns](https://aur.archlinux.org/packages/libicns/) packages. After that, just follow the following commands:
 ```
@@ -161,6 +159,14 @@ See [General recommendations](/index.php/General_recommendations "General recomm
 
 Additionally, you might want to have a look at the [Power management](/index.php/Power_management "Power management") page for useful tips in power management and battery-saving software.
 
+### Kernel parameters
+
+Due to [this bug](https://bugzilla.kernel.org/show_bug.cgi?id=177151), it might be required to add `acpi_osi=` as a kernel boot parameter in order to improve battery life.
+
+### Fan control
+
+Install [mbpfan-git](https://aur.archlinux.org/packages/mbpfan-git/) or [macfanctld](https://aur.archlinux.org/packages/macfanctld/) and [enable](/index.php/Enable "Enable") the relative .service in order to prevent laptop overheating.
+
 ### Console
 
 Largest console font can be achieved by adding `FONT=sun12x22` to `/etc/vconsole.conf`:
@@ -173,33 +179,17 @@ FONT=sun12x22
 
 ### Graphics
 
-###### MacBook Pro 11,1
+MacBook Pro with integrated Intel graphics and no discrete GPU are supported out of the box. See [Intel graphics](/index.php/Intel_graphics "Intel graphics") for additional details and configuration options.
 
-*   Works, see [Intel graphics](/index.php/Intel_graphics "Intel graphics")
+Versions which include a discrete Nvidia GPU should need additional configuration:
 
-###### MacBook Pro 11,2
-
-*   Intel works from 3.13.4-1-ARCH
-
-###### MacBook Pro 11,3
-
-*   Nvidia works (both 319.60 and 331.17 drivers)
-    *   Follow [http://cberner.com/2013/03/01/installing-ubuntu-13-04-on-macbook-pro-retina/](http://cberner.com/2013/03/01/installing-ubuntu-13-04-on-macbook-pro-retina/)
-*   Intel works after patching grub, see below
-
-###### MacBook Pro 11,5
-
-*   The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package seems to be stable. Switching to VTs and back works fine from MATE and GNOME. SOmetimes Chromium causes a "kernele rejected pixbuf" error which freezes the desktop.
-*   The [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) driver has been crashing a lot.
-*   The [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver seems to be super stable, but GNOME desktop won't like to start, showing you a "Oh no! Something has gone wrong" message. Cinnamon Desktop is buttery smooth with the nvidia driver, and if you want your GNOME desktop, you can run `gnome-shell --relace &` while in cinnamon desktop to switch to Gnome Shell as a workaround.
-
-###### Microcode
-
-You may need to install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode), especially if you have Nvidia drivers. Read the wiki page to learn more about [Microcode](/index.php/Microcode "Microcode").
-
-###### HiDPI
-
-See [HiDPI](/index.php/HiDPI "HiDPI") for information on how to tweak the system for a Retina screen.
+*   MacBook Pro 11,3:
+    *   nvidia drivers work, see [NVIDIA](/index.php/NVIDIA "NVIDIA") or [Nouveau](/index.php/Nouveau "Nouveau"). In case you use the proprietary driver, see the following link [[1]](http://cberner.com/2013/03/01/installing-ubuntu-13-04-on-macbook-pro-retina/) for additional details.
+    *   It is possible to configure the integrated intel GPU, provided you are using [GRUB](/index.php/GRUB "GRUB") as your bootloader of choice. See below for details
+*   MacBook Pro 11,5
+    *   The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package seems to be stable. Switching to VTs and back works fine from MATE and GNOME. SOmetimes Chromium causes a "kernele rejected pixbuf" error which freezes the desktop.
+    *   The [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) driver has been crashing a lot.
+    *   The [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver seems to be super stable, but GNOME desktop won't like to start, showing you a "Oh no! Something has gone wrong" message. Cinnamon Desktop is buttery smooth with the nvidia driver, and if you want your GNOME desktop, you can run `gnome-shell --relace &` while in cinnamon desktop to switch to Gnome Shell as a workaround.
 
 #### Getting the integrated intel card to work on 11,3
 
@@ -261,6 +251,14 @@ To see if you dedicated GPU is actually disabled, run:
 
 **Note:** gpu-switch has been tested only on a select few models, those being MacBookPro9,1, MacBookPro10,1, and MacBookPro11,3\. Use at your own risk.
 
+### Microcode
+
+You may need to install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode), especially if you have Nvidia drivers. Read the wiki page to learn more about [Microcode](/index.php/Microcode "Microcode").
+
+### HiDPI
+
+See [HiDPI](/index.php/HiDPI "HiDPI") for information on how to tweak the system for a Retina screen.
+
 ### Sound
 
 *   Headphones work
@@ -301,7 +299,7 @@ EndSection
 
 #### Ctrl-Click as Right-Click
 
-Using this SuperUser receipt [[1]](http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac) I got Ctrl-click working as right-click. I had to increase the sleep time to 0.1 though.
+Using this SuperUser receipt [[2]](http://superuser.com/questions/217615/how-to-right-click-using-the-keyboard-from-ubuntu-on-a-mac) I got Ctrl-click working as right-click. I had to increase the sleep time to 0.1 though.
 
 #### input-mtrack
 
@@ -349,7 +347,7 @@ EndSection
 
 ### Keyboard backlight
 
-*   Works, see [MacBook#Keyboard_Backlight](/index.php/MacBook#Keyboard_Backlight "MacBook")
+*   Works, see [Mac#Keyboard Backlight](/index.php/Mac#Keyboard_Backlight "Mac")
 *   On KDE controlling the backlight with the increase or decrease brightness keys work fine, but they need upower to start before the desktop. To do this create the file `/etc/systemd/system/kdm.service.d/kbd_backlight.conf` with this content (you might need to create the directory as well)
 
 ```
@@ -445,4 +443,4 @@ Updated 2016-07-21
 ## See also
 
 *   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
-*   [MacBook](/index.php/MacBook "MacBook")
+*   [Mac](/index.php/Mac "Mac")

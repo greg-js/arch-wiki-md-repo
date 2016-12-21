@@ -12,22 +12,23 @@
     *   [3.2 Manual snapshots](#Manual_snapshots)
         *   [3.2.1 Simple snapshots](#Simple_snapshots)
         *   [3.2.2 Pre/post snapshots](#Pre.2Fpost_snapshots)
+    *   [3.3 Snapshots on boot](#Snapshots_on_boot)
 *   [4 List snapshots](#List_snapshots)
 *   [5 List configurations](#List_configurations)
 *   [6 Delete a snapshot](#Delete_a_snapshot)
 *   [7 Access for non-root users](#Access_for_non-root_users)
 *   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 Snapshots on boot](#Snapshots_on_boot)
-    *   [8.2 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
-        *   [8.2.1 Backup non-btrfs boot partition on pacman transactions](#Backup_non-btrfs_boot_partition_on_pacman_transactions)
-    *   [8.3 Incremental backup to external drive](#Incremental_backup_to_external_drive)
-    *   [8.4 Suggested filesystem layout](#Suggested_filesystem_layout)
-        *   [8.4.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
-        *   [8.4.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
-    *   [8.5 Deleting files from snapshots](#Deleting_files_from_snapshots)
-    *   [8.6 Preventing slowdowns](#Preventing_slowdowns)
-        *   [8.6.1 updatedb](#updatedb)
-    *   [8.7 Preserving log files](#Preserving_log_files)
+    *   [8.1 Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots)
+        *   [8.1.1 Backup non-btrfs boot partition on pacman transactions](#Backup_non-btrfs_boot_partition_on_pacman_transactions)
+    *   [8.2 Incremental backup to external drive](#Incremental_backup_to_external_drive)
+    *   [8.3 Suggested filesystem layout](#Suggested_filesystem_layout)
+        *   [8.3.1 Configuration of snapper and mount point](#Configuration_of_snapper_and_mount_point)
+        *   [8.3.2 Restoring / to a previous snapshot of @](#Restoring_.2F_to_a_previous_snapshot_of_.40)
+    *   [8.4 Deleting files from snapshots](#Deleting_files_from_snapshots)
+    *   [8.5 Preventing slowdowns](#Preventing_slowdowns)
+        *   [8.5.1 updatedb](#updatedb)
+    *   [8.6 Preserving log files](#Preserving_log_files)
+    *   [8.7 Cleanup based on disk usage](#Cleanup_based_on_disk_usage)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Snapper logs](#Snapper_logs)
     *   [9.2 IO error](#IO_error)
@@ -180,6 +181,10 @@ where `*cmd*` is the command you wish to wrap with pre/post snapshots.
 
 See [#Wrapping pacman transactions in snapshots](#Wrapping_pacman_transactions_in_snapshots).
 
+### Snapshots on boot
+
+To have snapper take a snapshot of the `root` configuration, [enable](/index.php/Enable "Enable") `snapper-boot.timer`.
+
 ## List snapshots
 
 To list snapshots taken for a given configuration *config* do:
@@ -231,31 +236,6 @@ Eventually, you want to be able to browse the `.snapshots` directory with a user
 ```
 
 ## Tips and tricks
-
-### Snapshots on boot
-
-One can setup a [systemd](/index.php/Systemd "Systemd") unit and timer to have snapper create snapshots on boot:
-
- `/etc/systemd/system/snapper-boot.timer` 
-```
-[Unit]
-Description=Take snapper snapshot of root on boot
-
-[Timer]
-OnBootSec=1
-
-[Install]
-WantedBy=basic.target
-```
- `/etc/systemd/system/snapper-boot.service` 
-```
-[Unit]
-Description=Take snapper snapshot of root on boot
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/snapper --config root create --cleanup-algorithm number --description "boot"
-```
 
 ### Wrapping pacman transactions in snapshots
 
@@ -436,6 +416,8 @@ By default, `updatedb` will also index the `.snapshots` directory created by sna
 ### Preserving log files
 
 It's recommended to create a subvolume for `/var/log` so that snapshots of `/` exclude it. That way if a snapshot of `/` is restored your log files will not also be reverted to the previous state. This make it easier to troubleshoot.
+
+### Cleanup based on disk usage
 
 ## Troubleshooting
 

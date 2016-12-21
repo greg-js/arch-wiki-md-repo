@@ -1158,10 +1158,12 @@ Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
 #### zrootfs
 
 *   **Maintainer:** Isabell Cowan <isabellcowan@gmail.com>
-*   **Description:** For Haswell and Broadwell architecture processors with size in mind (out of date 2016-03-14).
+*   **Description:** For Haswell and Broadwell architecture processors with size in mind.
+
+**Note:** This repo has not been maintained since 2016-03-14\. There are no guarantees as to how long it will be kept online.
 
 ```
 [zrootfs]
-Server = http://www.izzette.com/izzi/zrootfs-old
+Server = https://www.izzette.com/izzi/zrootfs-old
 
 ```

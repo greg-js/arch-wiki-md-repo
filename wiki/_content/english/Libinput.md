@@ -28,7 +28,9 @@ You may also want to install [xorg-xinput](https://www.archlinux.org/packages/?n
 
 ## Configuration
 
-For [Xorg](/index.php/Xorg "Xorg"), a default configuration file is installed in `/usr/share/X11/xorg.conf.d/40-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
+For [Wayland](/index.php/Wayland "Wayland"), there is no libinput configuration file. The configurable options depend on the progress of your desktop environment's support for them; see [#Graphical tools](#Graphical_tools).
+
+For [Xorg](/index.php/Xorg "Xorg"), a default configuration file for the wrapper is installed to `/usr/share/X11/xorg.conf.d/40-libinput.conf`. No extra configuration is necessary for it to autodetect keyboards, touchpads, trackpointers and supported touchscreens.
 
 First, execute:
 
@@ -70,7 +72,7 @@ Alternative drivers for [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg
 
 **Tip:** If you have libinput and synaptics installed in parallel with default configuration (i.e. no files in `/etc/X11/xorg.conf.d` for both), synaptics will take precedence due to its `70-synaptics.conf` file name. To avoid this, you can symlink the default libinput configuration:
 ```
-# ln -s /usr/share/X11/xorg.conf.d/60-libinput.conf /etc/X11/xorg.conf.d/60-libinput.conf
+# ln -s /usr/share/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
 
 ```
 If you *do* have `/etc/X11/xorg.conf.d/` configuration files for both, the libinput file must be ordered second; see [Xorg#Using .conf files](/index.php/Xorg#Using_.conf_files "Xorg").
@@ -97,7 +99,7 @@ Of course you can elect to use an alternative driver for one device and libinput
 
 Custom configuration files should be placed in `/etc/X11/xorg.conf.d/` and following a widely used naming schema `30-touchpad.conf` is often chosen as filename.
 
-**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/60-libinput.conf` for guidance and refer to the [libinput(4)](https://www.mankier.com/4/libinput) manual page for a detailed description of available configuration options.
+**Tip:** Have a look at `/usr/share/X11/xorg.conf.d/40-libinput.conf` for guidance and refer to the [libinput(4)](https://www.mankier.com/4/libinput) manual page for a detailed description of available configuration options.
 
 A basic configuration should have the following structure:
 
@@ -115,7 +117,7 @@ EndSection
 You may define as many sections as you like in a single configuration file. To configure the device of your choice specify a filter by using `MatchIsPointer "on"`, `MatchIsKeyboard "on"`, `MatchIsTouchpad "on"` or `MatchIsTouchscreen "on"` and add your desired option. Common options include:
 
 *   `"Tapping" "on"`: tapping a.k.a. tap-to-click
-*   `"ClickMethod" "fingers"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
+*   `"ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
 *   `"NaturalScrolling" "true"`: natural (reverse) scrolling
 *   `"ScrollMethod" "edge"`: edge (vertical) scrolling
 
@@ -126,7 +128,7 @@ Bear in mind that some of them may only apply to certain devices.
 There are different GUI tools:
 
 *   [GNOME](/index.php/GNOME "GNOME"):
-    *   Control center has a basic UI under 'Mouse & Touchpad'.
+    *   Control center has a basic UI. See [GNOME#Mouse and touchpad](/index.php/GNOME#Mouse_and_touchpad "GNOME").
 *   [Cinnamon](/index.php/Cinnamon "Cinnamon"):
     *   Similar to the GNOME UI, with more options.
 *   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") 5:

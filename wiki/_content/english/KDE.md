@@ -414,7 +414,7 @@ By default every removable device is blacklisted. You just have to remove your d
 
 ### Konqueror and Rekonq
 
-Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is currently not supported by either Konqueror or Rekonq. There is a [community continuation](http://qtwebkit.blogspot.com/2016/08/qtwebkit-im-back.html) of QtWebKit.
+Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is supported by Konqueror since version 16.12\. There is a [community continuation](http://qtwebkit.blogspot.com/2016/08/qtwebkit-im-back.html) of QtWebKit.
 
 A successor named Fiber is currently in development, which will use Chromium's engine.
 
@@ -424,7 +424,7 @@ A successor named Fiber is currently in development, which will use Chromium's e
 
 ### Firefox
 
-Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE_integration "Firefox") for details.
+Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox") for details.
 
 ### Qupzilla
 

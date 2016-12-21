@@ -94,7 +94,7 @@ On the installation page select **mysql** and insert your configured user, passw
 
 ## Theme
 
-The current package (gogs-git* and gogs>=0.4.2) support custom themes. The location for Gogs themes is `/usr/share/themes/gogs/`. Gogs comes with one default theme, but you can easily create a own theme. Just copy the default `theme` directory and change what every you want. In the `public` directory is every javascript, stylesheet and font file and in the `template` directory are the HTML templates. The current selected theme can be changed over the `app.ini` configuration parameter `STATIC_ROOT_PATH`. Changed it with the absolute path to the new theme.
+The current package (gogs-git* and gogs>=0.4.2) support custom themes. The location for Gogs themes is `/usr/share/themes/gogs/`. Gogs comes with one default theme, but you can easily create a own theme. Just copy the default `theme` directory and change whatever you want. In the `public` directory is every javascript, stylesheet and font file and in the `template` directory are the HTML templates. The current selected theme can be changed over the `app.ini` configuration parameter `STATIC_ROOT_PATH`. Changed it with the absolute path to the new theme.
 
 ## Restart after Upgrade
 

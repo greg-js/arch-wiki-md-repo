@@ -17,7 +17,8 @@
     *   [4.3 Simple tabs](#Simple_tabs)
     *   [4.4 Fullscreen](#Fullscreen)
     *   [4.5 Changing font size on the fly](#Changing_font_size_on_the_fly)
-    *   [4.6 Disabling Perl extensions](#Disabling_Perl_extensions)
+    *   [4.6 Bell Command](#Bell_Command)
+    *   [4.7 Disabling Perl extensions](#Disabling_Perl_extensions)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Transparency not working after upgrade to v9.09](#Transparency_not_working_after_upgrade_to_v9.09)
     *   [5.2 Remote hosts](#Remote_hosts)
@@ -297,6 +298,31 @@ For the Ctrl+Shift bindings to work, a default binding needs to be disabled (see
  URxvt.iso14755_52: false
 
 ```
+
+### Bell Command
+
+It is possible to execute a shell command when the terminal rings the bell. The pre-packed `bell-command` extension needs to be enabled first in the `~/.Xresources` file:
+
+```
+ URxvt.perl-ext-common: ...,bell-command,...
+
+```
+
+The following example will use [ALSA](/index.php/ALSA "ALSA")'s `aplay` command to play a `.wav` file:
+
+```
+ URxvt.bell-command: aplay /path/to/a/file.wav
+
+```
+
+And the next setting will pop a visual notification:
+
+```
+ URxvt.bell-command: notify-send "rxvt-unicode: bell!"
+
+```
+
+**Note:** Setting the `bell-command` option alone will not mute the buzzer in your computer, to do that take a look at the [PC speaker](/index.php/PC_speaker "PC speaker") article.
 
 ### Disabling Perl extensions
 

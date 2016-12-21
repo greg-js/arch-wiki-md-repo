@@ -30,8 +30,6 @@ The biggest feature of WordPress is its ease in configuration and administration
 
 WordPress requires [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL") to be installed and configured. See the [LAMP](/index.php/LAMP "LAMP") wiki article for more information. During configuration, be aware that some WordPress features require [PHP extensions](http://wordpress.stackexchange.com/questions/42098/what-are-php-extensions-and-libraries-wp-needs-and-or-uses) that may not be turned on by default.
 
-**Note:** As of August 2012, this article does not support using WordPress with PostrgreSQL. WordPress was designed to be used with MySQL only. It is possible to use WordPress with other databases such as PostgreSQL, through the use of a [plugin](http://wordpress.org/extend/plugins/postgresql-for-wordpress/) and a bit of work.
-
 ### Installation using pacman
 
 [Install](/index.php/Install "Install") the [wordpress](https://www.archlinux.org/packages/?name=wordpress) package.
@@ -185,6 +183,8 @@ There are tens of thousands of themes available for WordPress. Searching on goog
 *   [Smashing Magazine](http://www.smashingmagazine.com/)
 *   [The Theme Factory](http://thethemefoundry.com/)
 *   [Woo Themes](http://www.woothemes.com/)
+
+**Tip:** One can use WordPress' admin interface to install plugins and themes. To do this, make the user that serves WordPress the [owner](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes") of your WordPress directory. For [Apache](/index.php/Apache_HTTP_Server#Advanced_options "Apache HTTP Server") this user is normally http.
 
 #### Install using the admin panel
 

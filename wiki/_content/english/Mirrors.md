@@ -10,6 +10,8 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [3.1 List by speed](#List_by_speed)
     *   [3.2 Server-side ranking](#Server-side_ranking)
     *   [3.3 List mirrors only for a specific country](#List_mirrors_only_for_a_specific_country)
+        *   [3.3.1 Once during installation from live medium](#Once_during_installation_from_live_medium)
+        *   [3.3.2 Automated](#Automated)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 Unofficial mirrors](#Unofficial_mirrors)
     *   [5.1 Austria](#Austria)
@@ -145,6 +147,14 @@ There are multiple scripts automating the update of the mirrorlist from the rank
 *   [armrr](https://github.com/Gen2ly/armrr) downloads a ranked mirrorlist for a specific country from the [Pacman Mirrorlist Generator](https://www.archlinux.org/mirrorlist/) and creates a backup of the previous mirrorlist.
 
 ### List mirrors only for a specific country
+
+#### Once during installation from live medium
+
+The 2016.12.01 installation ISO supplies a mirror list that can easily be filtered for your (nearby) country. An example command for the country "Netherlands":
+
+ `# grep -A1 --no-group-separator Netherlands /etc/pacman.d/mirrorlist > /etc/pacman.d/mirrorlist.backup` 
+
+#### Automated
 
 Can be useful to automate update of the mirror list only for a specific countries instead of making a speed test each time. Assumed that `mirrorlist.pacnew` exist, the file creates after installation of the [pacman-mirrorlist](https://www.archlinux.org/packages/?name=pacman-mirrorlist) update.
 

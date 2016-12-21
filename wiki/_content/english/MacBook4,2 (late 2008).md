@@ -1,4 +1,4 @@
-This article is intended specifically for Macbook(4,2) (late September 2008) model. If you have other Macbook model, please see [here](/index.php/MacBook "MacBook").
+This article is intended specifically for Macbook(4,2) (late September 2008) model. If you have other Macbook model, please see [Mac](/index.php/Mac "Mac").
 
 ## Contents
 

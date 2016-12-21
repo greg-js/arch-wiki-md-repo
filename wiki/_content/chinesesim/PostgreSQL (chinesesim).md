@@ -43,11 +43,11 @@ PostgreSQL是一个开源的，社区驱动的，符合标准的 对象-关系�
 
 ```
 
-**警告:** 如果数据库位于[Btrfs](/index.php/Btrfs "Btrfs")文件系统上，你应该在创建数据库前禁用数据库目录的[Copy-on-Write](/index.php/Btrfs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.86.99.E6.97.B6.E5.A4.8D.E5.88.B6_.EF.BC.88Copy-On-Write_.28CoW.29.EF.BC.89 "Btrfs (简体中文)")。
+**警告:** 如果数据库位于[Btrfs](/index.php/Btrfs "Btrfs")文件系统上，你应该在创建数据库前禁用数据库目录的[Copy-on-Write](/index.php/Btrfs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.86.99.E6.97.B6.E5.A4.8D.E5.88.B6_.28CoW.29 "Btrfs (简体中文)")
 
 ## 创建第一个数据库/用户
 
-**提示:** 如果创建一个与你的 Arch 用户 ($USER) 同名的数据库用户，并允许其访问 PostgreSQL 数据库的 shell，那么在使用PostgreSQL 数据库 shell 的时候无需指定用户登录（这样做会比较方便）。
+**提示：** 如果创建一个与你的 Arch 用户 ($USER) 同名的数据库用户，并允许其访问 PostgreSQL 数据库的 shell，那么在使用PostgreSQL 数据库 shell 的时候无需指定用户登录（这样做会比较方便）。
 
 以 postgres 用户身份, 添加一个新的数据库用户使用 [createuser](http://www.postgresql.org/docs/9.0/static/app-createuser.html) 命令
 

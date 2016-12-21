@@ -194,11 +194,32 @@ For other protocols and methods see [Default applications](/index.php/Default_ap
 
 #### Mouse and touchpad
 
-To help reduce touchpad interference you may wish to implement the settings below:
+To help reduce touchpad interference you may wish to implement the settings below via *gnome-control-center*:
 
 *   Disable touchpad while typing
 *   Disable scrolling
 *   Disable tap-to-click
+
+Depending on your device, other configuration settings may be available, but not exposed via the default GUI. For example, a different touchpad `click-method`
+
+ `$ gsettings range org.gnome.desktop.peripherals.touchpad click-method` 
+```
+
+enum
+'default'
+'none'
+'areas'
+'fingers'
+```
+
+to be set manually:
+
+```
+$ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
+
+```
+
+or via *gnome-tweak-tool*.
 
 **Note:** The [synaptics](/index.php/Synaptics "Synaptics") driver is not supported by GNOME. Instead, you should use [libinput](/index.php/Libinput "Libinput"). See [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
 

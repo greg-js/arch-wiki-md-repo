@@ -185,6 +185,8 @@ alsamixer from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils)
 
 ```
 
+By comment out this module in some cases can make pulse audio to choose HDMI output as the default every time you plug or unplug your headphones. Leaving you with no sound until you manually choose speakers in the sound options.
+
 ### Webcam
 
 Works fine with no configuration required. The webcam records at a higher framerate than the sensor on the G73 and is actually usable, but it isn't anything special.

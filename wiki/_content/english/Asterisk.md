@@ -80,12 +80,8 @@ Music on hold is a really sweet feature. And once again easy to install and conf
 ```
 [default]
 mode=files
-directory=/var/lib/asterisk/mohmp3
+directory=mohmp3
 ```
-
-Now go into your sip.conf
-
- `musiconhold=default` 
 
 And that is all there is to it. Just copy your favorite legally obtained MP3 to `/var/lib/asterisk/mohmp3`.
 

@@ -24,11 +24,11 @@ The Arch Linux Archive is available at [https://archive.archlinux.org/](https://
 
 Previous locations listed below are deprecated and will be closed soon:
 
-*   [http://seblu.net/a/archive](http://seblu.net/a/archive)
 *   [http://ala.seblu.net/](http://ala.seblu.net/)
 
 The locations listed below are now closed:
 
+*   [http://seblu.net/a/archive](http://seblu.net/a/archive)
 *   [http://seblu.net/a/arm](http://seblu.net/a/arm)
 *   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
 *   [ftp://seblu.net/archlinux/archive](ftp://seblu.net/archlinux/archive)

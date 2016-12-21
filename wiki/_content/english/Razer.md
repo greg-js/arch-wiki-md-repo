@@ -14,6 +14,7 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
         *   [2.1.4 Graphics Drivers](#Graphics_Drivers)
         *   [2.1.5 Hybrid graphics](#Hybrid_graphics)
         *   [2.1.6 Suspend Loop](#Suspend_Loop)
+            *   [2.1.6.1 GRUB](#GRUB)
         *   [2.1.7 Tweaking](#Tweaking)
         *   [2.1.8 Audio](#Audio)
         *   [2.1.9 Unresolved Issues](#Unresolved_Issues)
@@ -176,6 +177,22 @@ And also view all boot parameters:
 ```
 $ cat /proc/cmdline 
 initrd=\initramfs-linux.img ... button.lid_init_state=open
+
+```
+
+##### GRUB
+
+For example, to make changes permanent on [GRUB](/index.php/GRUB "GRUB") systems, edit `# /etc/default/grub` and append `button.lid_init_state=open` to the `GRUB_CMDLINE_LINUX_DEFAULT` line. After the change, the line might look like this (mileage may vary depending on the kernel params already set):
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet button.lid_init_state=open"
+
+```
+
+Then automatically re-generate the grub.cfg file with:
+
+```
+# grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
 

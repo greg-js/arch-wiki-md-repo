@@ -5,8 +5,8 @@ This is an install and configuration guide for the Dell Inspiron 13 5368 laptop 
 | Wireless | Working | iwlmvm |
 | Bluetooth | Working | btusb |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Working |  ? |
-| Touchscreen | Working |  ? |
+| Touchpad | Working | i2c_hid |
+| Touchscreen | Working | usbhid |
 | Webcam | Working | uvcvideo |
 | Wireless switch | Working | intel_hid |
 | Keyboard backlight switch | Working |  ? |
@@ -56,10 +56,8 @@ lsusb:
 
 ```
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 001 Device 004: ID 2386:3111  
-Bus 001 Device 003: ID 8087:0a2a Intel Corp. 
+Bus 001 Device 003: ID 2386:3111  
 Bus 001 Device 002: ID 0bda:568a Realtek Semiconductor Corp. 
-Bus 001 Device 005: ID 3938:1031  
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
@@ -89,7 +87,7 @@ See: [Libinput](/index.php/Libinput "Libinput").
 
 ### Touchscreen
 
-Touchscreen worked after installing [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev). Works well with the default configuration file.
+Touchscreen worked out of the box. More can be done after installing [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev). Works well with the default configuration file.
 
 ### Wireless
 

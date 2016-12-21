@@ -4,7 +4,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 *pacman* is written in the C programming language and uses the *.pkg.tar.xz* package format.
 
-**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains other useful tools such as **makepkg**, **pactree**, **vercmp**, and [checkupdates](/index.php/Checkupdates "Checkupdates"). Run `pacman -Qlq pacman | grep bin` to see the full list.
+**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains other useful tools such as **[makepkg](/index.php/Makepkg "Makepkg")**, **pactree**, **vercmp**, and [checkupdates](/index.php/Checkupdates "Checkupdates"). Run `pacman -Qlq pacman | grep bin` to see the full list.
 
 ## Contents
 

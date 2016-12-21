@@ -17,7 +17,7 @@ This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro.
 
 ## Installation
 
-To install an x86_64 system, follow the [MacBook](/index.php/MacBook "MacBook") EFI installation instructions. It is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before trying any of this on your machine. Also of note, [GIST](https://gist.github.com/Apsu/4108795).
+To install an x86_64 system, follow the [Mac](/index.php/Mac "Mac") EFI installation instructions. It is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before trying any of this on your machine. Also of note, [GIST](https://gist.github.com/Apsu/4108795).
 
 See notes on **video support** before attempting installation!
 

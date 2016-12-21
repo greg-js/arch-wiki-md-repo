@@ -1,4 +1,4 @@
-This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retina display](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_.28Retina.29 "wikipedia:MacBook Pro"). Most of the steps are the same or very similar to the regular ArchLinux installation. However, because this is very new hardware, the setup requires a few different steps. The general installation guidelines are descibed in [MacBook](/index.php/MacBook "MacBook").
+This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retina display](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_.28Retina.29 "wikipedia:MacBook Pro"). Most of the steps are the same or very similar to the regular ArchLinux installation. However, because this is very new hardware, the setup requires a few different steps. The general installation guidelines are descibed in [Mac](/index.php/Mac "Mac").
 
 **Note:** To have all hardware supported, you should run this Notebook with Kernel 3.7 or newer.
 
@@ -80,7 +80,7 @@ Now you should be able to use wifi-menu to connect to your Wi-Fi network.
 
 ### The installation
 
-**Note:** Refer to the [MacBook](/index.php/MacBook "MacBook") page if you do not want to have a separate partition for GRUB but rather prefer to use [rEFInd](http://www.rodsbooks.com/refind/) (or [rEFIt](/index.php/MacBook#rEFIt "MacBook")).
+**Note:** Refer to the [Mac](/index.php/Mac "Mac") page if you do not want to have a separate partition for GRUB but rather prefer to use [rEFInd](http://www.rodsbooks.com/refind/) (or [rEFIt](/index.php/Mac#rEFIt "Mac")).
 
 Run the installation wizard. When asked to partition your hard drive, create a small HFS partition. This is where you put the standalone GRUB package after the installation. The rest of the installation is pretty much the same as usual. When choosing the bootloader, select GRUB, and install it. Do not worry about any errors; we will create the bootable EFI image on our own afterwards.
 

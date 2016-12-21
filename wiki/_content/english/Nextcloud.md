@@ -258,7 +258,7 @@ Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains
 
 ### Collabora Online Office integration
 
-Install [nextcloud-app-collaboraonline](https://aur.archlinux.org/packages/nextcloud-app-collaboraonline/) from the [AUR](/index.php/AUR "AUR"). Add following reverse proxy settings to your nextcloud domain config, in this case for [Nginx](/index.php/Nginx "Nginx"):
+Install [nextcloud-app-collabora-online](https://aur.archlinux.org/packages/nextcloud-app-collabora-online/) from the [AUR](/index.php/AUR "AUR"). Add following reverse proxy settings to your nextcloud domain config, in this case for [Nginx](/index.php/Nginx "Nginx"):
 
 ```
 # static files

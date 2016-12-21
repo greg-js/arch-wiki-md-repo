@@ -28,21 +28,23 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
         *   [2.3.1 MCE remote with Lirc and Systemd](#MCE_remote_with_Lirc_and_Systemd)
         *   [2.3.2 HDMI-CEC with Pulse Eight USB-CEC](#HDMI-CEC_with_Pulse_Eight_USB-CEC)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
-    *   [3.1 Accessing kodi logs](#Accessing_kodi_logs)
-    *   [3.2 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [3.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
-    *   [3.4 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
-    *   [3.5 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
-    *   [3.6 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
-    *   [3.7 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [3.8 Using ALSA](#Using_ALSA)
-    *   [3.9 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
-    *   [3.10 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
-    *   [3.11 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-        *   [3.11.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.11.2 Right Click Menu Key](#Right_Click_Menu_Key)
-        *   [3.11.3 USB DAC not working](#USB_DAC_not_working)
-*   [4 See also](#See_also)
+    *   [3.1 CLI tool for kodi](#CLI_tool_for_kodi)
+    *   [3.2 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
+    *   [3.3 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
+    *   [3.4 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [3.5 Using ALSA](#Using_ALSA)
+    *   [3.6 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
+        *   [3.6.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+        *   [3.6.2 Right Click Menu Key](#Right_Click_Menu_Key)
+        *   [3.6.3 USB DAC not working](#USB_DAC_not_working)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Accessing kodi logs](#Accessing_kodi_logs)
+    *   [4.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
+    *   [4.3 Video tearing on Intel HD Graphics](#Video_tearing_on_Intel_HD_Graphics)
+    *   [4.4 Soft subtitles not displaying](#Soft_subtitles_not_displaying)
+    *   [4.5 H.264 playback is using only a single core](#H.264_playback_is_using_only_a_single_core)
+    *   [4.6 Kodi hangs on exit, fully occupying one CPU core, UI unresponsive](#Kodi_hangs_on_exit.2C_fully_occupying_one_CPU_core.2C_UI_unresponsive)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -441,10 +443,6 @@ Remember that modifying the groups of any logged in users means those users need
 
 ## Tips and Tricks
 
-### Accessing kodi logs
-
-In case of an error the first point to start investigation can be `~/.kodi/temp/kodi.log`.
-
 ### CLI tool for kodi
 
 A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many task from library management to querying what is currently playing.
@@ -454,23 +452,6 @@ A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.or
 Enable and configure [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to speed up playback performance.
 
 Restart Kodi and enable the hardware backend(s) in Playback under Settings.
-
-### Fullscreen mode stretches Kodi across multiple displays
-
-For a multi-monitor setup, Kodi may default to stretching across all screens. One can restrict the fullscreen mode to one display by setting the environment variable SDL_VIDEO_FULLSCREEN_HEAD to the number of the desired target display. For example, having Kodi show up on display 0, add the following line to the Kodi user's `~/.bashrc` configuration:
-
-```
-SDL_VIDEO_FULLSCREEN_HEAD=0
-
-```
-
-**Note:** Mouse cursor will be held inside screen with Kodi.
-
-### Video tearing on Intel HD Graphics
-
-Users observing tearing when watching a movie try this: [https://bbs.archlinux.org/viewtopic.php?id=176651](https://bbs.archlinux.org/viewtopic.php?id=176651)
-
-Try a different X11 compositor like [compton](https://www.archlinux.org/packages/?name=compton) as an alternative with [Xfce](/index.php/Xfce "Xfce") which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
 
 ### Slowing down CD/DVD drive speed
 
@@ -503,16 +484,6 @@ Kodi has a webservice that allows interaction through a web-interface. By defaul
 ### Using ALSA
 
 If [PulseAudio](/index.php/PulseAudio "PulseAudio") does not work properly, try using ALSA directly by starting Kodi with the `AE_SINK=ALSA` environment variable. The Kodi wiki for NUC devices provides [[instructions](http://kodi.wiki/view/HOW-TO:Install_Kodi_on_an_Intel_NUC#disable_PulseAudio)]
-
-### Soft subtitles not displaying
-
-The [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package is used to extract the subtitles.
-
-### H.264 playback is using only a single core
-
-**Tip:** By default, press `O` during playback to show codec information and CPU usage. More information about this overlay can be found [here](http://kodi.wiki/view/Codecinfo).
-
-If your setup does not or cannot make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](http://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661). To achieve this, go to `System Settings` and then to `Video`. Set the `settings level` to `Advanced` or `Expert` and go to `Acceleration`. There, set `Decoding method` to `software`.
 
 ### Raspberry Pi (all generations)
 
@@ -566,6 +537,50 @@ to
 
 ```
 <processquality default="**false**">**100**</processquality>
+
+```
+
+## Troubleshooting
+
+### Accessing kodi logs
+
+In case of an error the first point to start investigation can be `~/.kodi/temp/kodi.log`.
+
+### Fullscreen mode stretches Kodi across multiple displays
+
+For a multi-monitor setup, Kodi may default to stretching across all screens. One can restrict the fullscreen mode to one display by setting the environment variable SDL_VIDEO_FULLSCREEN_HEAD to the number of the desired target display. For example, having Kodi show up on display 0, add the following line to the Kodi user's `~/.bashrc` configuration:
+
+```
+SDL_VIDEO_FULLSCREEN_HEAD=0
+
+```
+
+**Note:** Mouse cursor will be held inside screen with Kodi.
+
+### Video tearing on Intel HD Graphics
+
+Users observing tearing when watching a movie try this: [https://bbs.archlinux.org/viewtopic.php?id=176651](https://bbs.archlinux.org/viewtopic.php?id=176651)
+
+Try a different X11 compositor like [compton](https://www.archlinux.org/packages/?name=compton) as an alternative with [Xfce](/index.php/Xfce "Xfce") which reduces video tearing. There is no essential need to install the intel driver. A tutorial how to configure compton with Xfce can be found [here](http://duncanlock.net/blog/2013/06/07/how-to-switch-to-compton-for-beautiful-tear-free-compositing-in-xfce/).
+
+### Soft subtitles not displaying
+
+The [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package is used to extract the subtitles.
+
+### H.264 playback is using only a single core
+
+**Tip:** By default, press `O` during playback to show codec information and CPU usage. More information about this overlay can be found [here](http://kodi.wiki/view/Codecinfo).
+
+If your setup does not or cannot make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](http://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661). To achieve this, go to `System Settings` and then to `Video`. Set the `settings level` to `Advanced` or `Expert` and go to `Acceleration`. There, set `Decoding method` to `software`.
+
+### Kodi hangs on exit, fully occupying one CPU core, UI unresponsive
+
+This problem can arise with third-party plugins installed, there is some issue with their termination[[1]](https://www.linuxquestions.org/questions/linux-software-2/kodi-freezes-on-exit-kodi-bin-won't-die-4175588180/),[[2]](https://www.reddit.com/r/archlinux/comments/5029oo/kodi_freezes_on_exit_kodibin_wont_die/).
+
+Workaround: find proper UI description file (*DialogButtonMenu.xml*) and tweak exit button type from internal Kodi's *Quit()* function call to sending signal from outside system to Kodi. Here is one-liner that makes modifications to any skin from your default Kodi package:
+
+```
+find /usr/share/kodi/addons/skin.* -name DialogButtonMenu.xml | xargs sudo sed -i "s%<onclick>Quit()</onclick>%<onclick>System.Exec ("killall --signal SIGHUP kodi.bin")</onclick>%"
 
 ```
 

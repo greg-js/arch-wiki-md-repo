@@ -191,6 +191,10 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
+*   **Ungoogled chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
+
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
+
 *   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
 
 	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
@@ -829,7 +833,7 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 
 	[http://jabberd2.org](http://jabberd2.org) || [jabberd2](https://aur.archlinux.org/packages/jabberd2/)
 
-*   **Openfire** — An XMPP IM multiplatform server written in Java
+*   **[Openfire](/index.php/Openfire "Openfire")** — An XMPP IM multiplatform server written in Java
 
 	[http://www.igniterealtime.org/projects/openfire/](http://www.igniterealtime.org/projects/openfire/) || [openfire](https://www.archlinux.org/packages/?name=openfire)
 

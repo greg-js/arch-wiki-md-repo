@@ -44,7 +44,7 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	[linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
-	The [ZEN Kernel](https://github.com/zen-kernel/zen-kernel) is the result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for every day systems.
+	The [ZEN Kernel](https://github.com/zen-kernel/zen-kernel) is the result of a collaborative effort of kernel hackers to provide the best Linux kernel possible for everyday systems.
 
 ### AUR packages
 

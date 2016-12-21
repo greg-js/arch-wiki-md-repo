@@ -129,7 +129,7 @@ If the wireless adapter has a static IP address, the configuration is the same (
 
 #### Wired and wireless adapters on the same machine
 
-This setup will enable a DHCP IP for both a wired and wireless connection making use of the metric directive to allow the kernel the decide on-the-fly which one to use. This way, no connection downtime is observed when the wired connection is unplugged.
+This setup will enable a DHCP IP for both a wired and wireless connection making use of the metric directive to allow the kernel to decide on-the-fly which one to use. This way, no connection downtime is observed when the wired connection is unplugged.
 
 The kernel's route metric (same as configured with *ip*) decides which route to use for outgoing packets, in cases when several match. This will be the case when both wireless and wired devices on the system have active connections. To break the tie, the kernel uses the metric. If one of the connections is terminated, the other automatically wins without there being a gap with nothing configured (ongoing transfers may still not deal with this nicely but that is at a different OSI layer).
 
@@ -177,7 +177,7 @@ Name=ethusb0
 
 ## Configuration files
 
-Configuration files are located in `/usr/lib/systemd/network`, the volatile runtime network directory `/run/systemd/network` and, the local administration network directory `/etc/systemd/network`. Files in `/etc/systemd/network` have the highest priority.
+Configuration files are located in `/usr/lib/systemd/network`, the volatile runtime network directory `/run/systemd/network` and the local administration network directory `/etc/systemd/network`. Files in `/etc/systemd/network` have the highest priority.
 
 There are three types of configuration files. They all use a format similar to [systemd unit files](/index.php/Systemd#Writing_unit_files "Systemd").
 
@@ -231,7 +231,7 @@ These files are aimed at setting network configuration variables, especially for
 
 *   `Gateway=` this option is **mandatory** unless DHCP is used
 
-**Tip:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `Address=` contains only an Address key and `Gateway=` section contains only a Gateway key.
+**Tip:** you can put the `Address=` and `Gateway=` keys in the `[Network]` section as a short-hand if `[Address]` section contains only an Address key and `[Gateway]` section contains only a Gateway key.
 
 #### [DHCP]
 
@@ -255,7 +255,7 @@ Most common keys are:
 
 ### link files
 
-These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears. They have two sections: `[Match]` and `[Link]`. Below are commonly configured keys for each section. See `man` for more information and examples.
+These files are an alternative to custom udev rules and will be applied by [udev](/index.php/Udev "Udev") as the device appears. They have two sections: `[Match]` and `[Link]`. Below are commonly configured keys for each section. See [systemd.link(5)](http://man7.org/linux/man-pages/man5/systemd.link.5.html) for more information and examples.
 
 **Tip:** Use `udevadm test-builtin net_setup_link /sys/path/to/network/device` to diagnose problems with `.link` files.
 

@@ -376,6 +376,30 @@ $ spotify --force-device-scale-factor=1.5
 
 ```
 
+You can also override Spotify's `.desktop` file. Simply copy the file:
+
+```
+$ cp /usr/share/applications/spotify.desktop ~/.local/share/applications/
+
+```
+
+Then edit it and add the `--force-device-scale-factor` option:
+
+```
+[Desktop Entry]
+Name=Spotify
+GenericName=Music Player
+Comment=Spotify streaming music client
+Icon=spotify-client
+Exec=spotify %U --force-device-scale-factor=1.5
+TryExec=spotify
+Terminal=false
+Type=Application
+Categories=Audio;Music;Player;AudioVideo;
+MimeType=x-scheme-handler/spotify;
+
+```
+
 ### Zathura document viewer
 
 No modifications required for document viewing.

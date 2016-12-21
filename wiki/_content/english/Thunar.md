@@ -33,6 +33,10 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 ### Plugins and addons
 
+*   **Gnome Virtual File System** — For trash support, mounting removable media, and remote filesystems (`mtp`/`smb`). See [File manager functionality#Mounting](/index.php/File_manager_functionality#Mounting "File manager functionality") for more details.
+
+	[https://wiki.gnome.org/Projects/gvfs](https://wiki.gnome.org/Projects/gvfs) || [gvfs](https://www.archlinux.org/packages/?name=gvfs)
+
 *   **Thunar Archive Plugin** — Plugin which allows you to create and extract archive files using contextual menu items. It does not create or extract archives directly, but instead acts as a frontend for other programs such as File Roller ([file-roller](https://www.archlinux.org/packages/?name=file-roller)), Ark ([ark](https://www.archlinux.org/packages/?name=ark)) or Xarchiver ([xarchiver](https://www.archlinux.org/packages/?name=xarchiver)). Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
 	[http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin) || [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin)
@@ -61,11 +65,9 @@ From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 	[http://directory.fsf.org/wiki/Libgsf](http://directory.fsf.org/wiki/Libgsf) || [libgsf](https://www.archlinux.org/packages/?name=libgsf)
 
-**Tip:** For additional functionality, such as `mtp` or `smb` services access from Thunar, see [GVFS](/index.php/GVFS "GVFS"). Also see [File manager functionality](/index.php/File_manager_functionality "File manager functionality") for more details.
-
 ## Thunar Volume Manager
 
-While Thunar can support automatic mounting and unmounting of removable media, the Thunar Volume Manager allows extended functionality, such as automatically running commands or automatically opening a Thunar window for mounted media.
+While Thunar supports automatic mounting and unmounting of removable media (with [gvfs](https://www.archlinux.org/packages/?name=gvfs)), the Thunar Volume Manager allows extended functionality, such as automatically running commands or automatically opening a Thunar window for mounted media.
 
 ### Installation
 

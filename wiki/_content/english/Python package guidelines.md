@@ -68,6 +68,13 @@ PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-insta
 *   `--ignore-installed` is necessary until [https://github.com/pypa/pip/issues/3063](https://github.com/pypa/pip/issues/3063) is resolved (otherwise **pip** skips the install in the presence of an earlier `--user` install).
 *   `--no-deps` ensures, that dependencies do not get packaged together with the main package.
 
+*pip* doesn't know how to generate `.pyo` files (see [https://github.com/pypa/pip/issues/2209](https://github.com/pypa/pip/issues/2209)). In order to generate them manually after *pip* has installed the module, run:
+
+```
+python -O -m compileall "${pkgdir}/path/to/module
+
+```
+
 ## Notes
 
 In most cases, you should put `any` in the `arch` array since most Python packages are architecture independent.

@@ -1,4 +1,4 @@
-[[1]](http://nouveau.freedesktop.org/wiki/Nouveau) - это свободный (Open Source) видеодрайвер для карт NVIDIA, разрабатываемый без поддержки самой NVIDIA и в противоположность [проприетарному драйверу](/index.php/NVIDIA "NVIDIA"). В [FAQ проекта](http://nouveau.freedesktop.org/wiki/FAQ) содержится достаточно много ценной информации, поэтому имеет смысл в том числе ознакомиться и с ним.
+[Nouveau](http://nouveau.freedesktop.org/wiki/Nouveau) - это свободный (Open Source) видеодрайвер для карт NVIDIA, разрабатываемый без поддержки самой NVIDIA и в противоположность [проприетарному драйверу](/index.php/NVIDIA "NVIDIA"). В [FAQ проекта](http://nouveau.freedesktop.org/wiki/FAQ) содержится достаточно много ценной информации, поэтому имеет смысл в том числе ознакомиться и с ним.
 
 Прежде чем устанавливать драйвер, изучите [таблицу возможностей](http://nouveau.freedesktop.org/wiki/FeatureMatrix) драйвера Nouveau для вашего графического чипа. Его название можно определить по модели видеокарты с помощью [список кодовых имён](http://nouveau.freedesktop.org/wiki/CodeNames).
 

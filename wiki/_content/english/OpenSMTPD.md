@@ -17,7 +17,8 @@ This article explains how to install and configure a simple [OpenSMTPD](https://
     *   [3.1 Console debugging](#Console_debugging)
     *   [3.2 Subsystem tracing](#Subsystem_tracing)
     *   [3.3 Manual Submission port authentication](#Manual_Submission_port_authentication)
-    *   [3.4 Resources](#Resources)
+    *   [3.4 "Helo command rejected: need fully-qualified hostname"](#.22Helo_command_rejected:_need_fully-qualified_hostname.22)
+    *   [3.5 Resources](#Resources)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -218,6 +219,10 @@ dXNlcm5hbWUAdXNlcm5hbWUAcGFzc3dvcmQ=
 235 2.0.0: Authentication succeeded
 
 ```
+
+### "Helo command rejected: need fully-qualified hostname"
+
+When sending email, if you get this kind of messages, set your FQDN in the file `/etc/smtpd/mailname`. Otherwise, the server name is derived from the local hostname returned by gethostname(3), either directly if it is a fully qualified domain name, or by retreiving the associated canonical name through getaddrinfo(3).
 
 ### Resources
 

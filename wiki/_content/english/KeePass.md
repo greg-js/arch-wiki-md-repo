@@ -35,7 +35,7 @@ Other lesser known implementations are found in the AUR:
 
 *   **keeweb** — A desktop webapp compatible to KeePass 2.x.
 
-	[https://github.com/keeweb/keeweb](https://github.com/keeweb/keeweb) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/)
+	[https://github.com/keeweb/keeweb](https://github.com/keeweb/keeweb) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/) [nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/)
 
 ## Integration
 
