@@ -627,7 +627,7 @@
 
 *   **KWave** — Звуковой редактор для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[LMMS](/index.php/LMMS "LMMS")** — Linux MultiMedia Studio. Свободное кроссплатформенное программное обеспечение, позволяющее вам создавать музыку на компьютере
 

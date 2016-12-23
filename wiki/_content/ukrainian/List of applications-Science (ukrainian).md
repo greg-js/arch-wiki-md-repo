@@ -268,7 +268,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, viewer and simulator for 3D molecule structures (also supports downloading files from the [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Standalone molecular modeling and visualization application, part of the [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") framework.
 
@@ -430,7 +430,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
 
-	[http://arduino.cc/en/Main/Software](http://arduino.cc/en/Main/Software) || [arduino](https://aur.archlinux.org/packages/arduino/)
+	[http://arduino.cc/en/Main/Software](http://arduino.cc/en/Main/Software) || [arduino](https://www.archlinux.org/packages/?name=arduino)
 
 ##### Schematic capture editor
 

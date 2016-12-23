@@ -20,7 +20,7 @@ You will also need a [web server](/index.php/Category:Web_server "Category:Web s
 
 Make sure that the `open_basedir` setting in your `/etc/php/php.ini` includes `/tmp`, `/usr/share/webapps` and `/var/lib/ganglia`.
 
-### [Nginx](/index.php/Nginx "Nginx") with php-fpm
+### Nginx with php-fpm
 
 Firstly, install the required packages:
 
@@ -29,7 +29,9 @@ pacman -S nginx php-fpm
 
 ```
 
-This is a minimal configuration for nginx:
+Secondly, read the [Nginx](/index.php/Nginx "Nginx") article. Note its [Nginx#FastCGI](/index.php/Nginx#FastCGI "Nginx") and subsequent php-fpm sections. [Nginx#Adding to main configuration](/index.php/Nginx#Adding_to_main_configuration "Nginx") details a minimum `nginx.conf` to use.
+
+An older minimal configuration for nginx would be something like this:
 
  `/etc/nginx/nginx.conf` 
 ```

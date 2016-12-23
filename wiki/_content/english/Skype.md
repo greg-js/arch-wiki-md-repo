@@ -46,7 +46,7 @@ Alternatively, you can use the web version at [web.skype.com](https://web.skype.
 
 There is a new [Skype for Linux Alpha](http://blogs.skype.com/2016/07/13/skype-for-linux-alpha-and-calling-on-chrome-and-chromebooks/), which is basically the web version at [web.skype.com](https://web.skype.com/) in a wrapper. It has working text, (group) voice, and video chat (group video chat is not yet working).
 
-[Install](/index.php/Install "Install") it with the [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
+[Install](/index.php/Install "Install") it with the [skypeforlinux](https://aur.archlinux.org/packages/skypeforlinux/) or [skypeforlinux-bin](https://aur.archlinux.org/packages/skypeforlinux-bin/) package.
 
 ## Legacy Skype
 

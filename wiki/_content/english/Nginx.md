@@ -365,6 +365,7 @@ Unix domain sockets should however be faster.
 
 The example shown below is a copy of a working configuration. Notice that in this example the `root` path in specified directly under `server`, and not inside `location` (as it is in the default config).
 
+ `/etc/nginx/nginx.conf` 
 ```
 server {
     listen 80;

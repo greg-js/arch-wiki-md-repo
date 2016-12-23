@@ -232,7 +232,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, visualizzatore e simulatore della struttura delle molecole in 3D (permette il download dalla [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Visualizzatore ed editor di molecole standalone, parte del framework [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL").
 

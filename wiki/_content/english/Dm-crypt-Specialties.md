@@ -195,13 +195,16 @@ Note that:
 
 ## Remote unlocking of the root (or other) partition
 
-There are few ways to provide early networking and cryptsetup configuration.
+If you want to be able to reboot a fully LUKS-encrypted system remotely, or start it with a [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") service, you will need a way to enter a passphrase for the root partition/volume at startup. This can be achieved by running a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that configures a network interface. Some packages listed below contribute various [mkinitcpio build hooks](/index.php/Mkinitcpio#Build_hooks "Mkinitcpio") to ease with the configuration.
 
-They all require making changes to initramfs with help of packages contributing various [mkinitcpio build hooks](/index.php/Mkinitcpio#Build_hooks "Mkinitcpio").
+**Note:**
+
+*   Keep in mind to use kernel device names for the network interface (e.g. `eth0`) and not [udev's](/index.php/Udev "Udev") ones (e.g. `enp1s0`), as those will not work.
+*   It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
 
 ### Remote unlocking (hooks: systemd, systemd-tool)
 
-AUR package [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) provides [systemd](https://www.archlinux.org/packages/?name=systemd)-centric mkinitcpio hook named *systemd-tool* with the following set of features for systemd in initramfs:
+AUR package [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) provides a [systemd](https://www.archlinux.org/packages/?name=systemd)-centric mkinitcpio hook named *systemd-tool* with the following set of features for systemd in initramfs:
 
 | 
 
@@ -223,46 +226,25 @@ Features provided by the included service units:
 
  |
 
-**Note:** [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) package requires use of [systemd hook](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio").
+The [mkinitcpio-systemd-tool](https://aur.archlinux.org/packages/mkinitcpio-systemd-tool/) package requires the [systemd hook](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio"). For more information be sure to read the project's [README](https://github.com/random-archer/mkinitcpio-systemd-tool/blob/master/README.md) as well as the provided default [systemd service unit files](https://github.com/random-archer/mkinitcpio-systemd-tool) to get you started.
 
-**Tip:** please study project [README](https://github.com/random-archer/mkinitcpio-systemd-tool/blob/master/README.md) as well as provided default [systemd service unit files](https://github.com/random-archer/mkinitcpio-systemd-tool) to get you started.
-
-Recommended hooks are: base autodetect modconf block filesystems keyboard fsck systemd systemd-tool
-
-Please keep in mind: initrd-network.network from systemd-network still uses eth0 instead of enp?s? or similar.
+The recommended hooks are: `base autodetect modconf block filesystems keyboard fsck systemd systemd-tool`.
 
 ### Remote unlocking (hooks: netconf, dropbear, tinyssh, ppp)
 
-If you want to be able to reboot a fully LUKS-encrypted system remotely, or start it with a [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") service, you will need a way to enter a passphrase for the root partition/volume at startup. This can be achieved by running a [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") hook that configures a network interface, such as [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server in initrd. You have the option of using either [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) or [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/). Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://aur.archlinux.org/packages/mkinitcpio-utils/) package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.
+Another package combination providing remote logins to the initcpio is [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/) and/or [mkinitcpio-ppp](https://aur.archlinux.org/packages/mkinitcpio-ppp/) (for remote unlocking using a [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") connection over the internet) along with an [SSH](/index.php/SSH "SSH") server. You have the option of using either [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) or [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/). Those hooks do not install any shell, so you also need to [install](/index.php/Install "Install") the [mkinitcpio-utils](https://aur.archlinux.org/packages/mkinitcpio-utils/) package. The instructions below can be used in any combination of the packages above. When there are different paths, it will be noted.
 
-1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine).
-2.  If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of using [Ed25519 keys](/index.php/SSH_keys#Choosing_the_type_of_encryption "SSH keys").
-3.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key` or `/etc/tinyssh/root_key` file using the method of your choice, e.g.:
-    *   [copy the public key to the remote system](/index.php/SSH_keys#Copying_the_public_key_to_the_remote_server "SSH keys")
-    *   then enter the following command (on the remote system): `# cat /home/<user>/.ssh/authorized_keys > /etc/<dropbear or tinyssh>/root_key` 
-        **Tip:** This method can later be used to add other SSH public keys as needed; in that case verify the content of remote `~/.ssh/authorized_keys` contains only keys you agree to be used to unlock the remote machine. When adding additional keys, also regenerate your initrd with mkinitcpio. See also [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell").
+1.  If you do not have an SSH key pair yet, [generate one](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the client system (the one which will be used to unlock the remote machine). If your choose to use [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of using [Ed25519 keys](/index.php/SSH_keys#Choosing_the_type_of_encryption "SSH keys").
+2.  Insert your SSH public key (i.e. the one you usually put onto hosts so that you can ssh in without a password, or the one you just created and which ends with *.pub*) into the remote machine's `/etc/dropbear/root_key` or `/etc/tinyssh/root_key` file.
+    **Tip:** This method can later be used to add other SSH public keys as needed; In the case of simply copying the content of the remote's `~/.ssh/authorized_keys`, be sure to verify that it only contains keys you intend to be using to unlock the remote machine. When adding additional keys, regenerate your initrd as well using `mkinitcpio`. See also [Secure Shell#Protection](/index.php/Secure_Shell#Protection "Secure Shell").
 
-4.  Add the `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` replaces the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
-    **Note:** The `net` hook provided with [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed
+3.  Add the `<netconf and/or ppp> <dropbear or tinyssh> encryptssh` [hooks](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") before `filesystems` within the "HOOKS" array in `/etc/mkinitcpio.conf` (the `encryptssh` replaces the `encrypt` hook). Then [rebuild the initramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
+    **Note:** The `net` hook provided by [mkinitcpio-nfs-utils](https://www.archlinux.org/packages/?name=mkinitcpio-nfs-utils) is **not** needed.
 
-    **Note:** It could be necessary to add [the module for your network card](/index.php/Network_configuration#Device_driver "Network configuration") to the [MODULES](/index.php/Mkinitcpio#MODULES "Mkinitcpio") array.
-
-5.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments (see [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")). For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH accross reboots, you can explicitly state the IP you want to be used:
-    **Note:** References to eth0 represent the fact that the netconf module will not match th enp?s? convention.
-     `ip=192.168.1.1:::::eth0:none` 
-    **Note:** As of version 0.0.4 of [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/), you can nest multiple ip= parameters in order to configure multiple interfaces. You cannot mix it with ip=dhcp (ip=:::::eth0:dhcp) alone. An interface needs to be specified.
-     `ip=ip=192.168.1.1:::::eth0:none:ip=172.16.1.1:::::eth1:none` 
-    **Note:** Make sure to use kernel device names for the interface name (under the form *eth#*) and not *udev* ones, as those will not work.
-    Then update the configuration of your [bootloader](/index.php/Boot_loaders "Boot loaders"), e.g. for [GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
-6.  Finally, restart the remote system and try to [ssh to it](/index.php/Secure_Shell#Client_usage "Secure Shell"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses. (Except Ed25519 keys, dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of installing [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) or [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/) so you can use the same keys as your [openssh](https://www.archlinux.org/packages/?name=openssh) installation (currently only Ed25519 keys). In either case, you should have run [the ssh daemon](/index.php/Secure_Shell#Daemon_management "Secure Shell") at least once, using the provided systemd units, so the keys can be generated first. After rebooting the machine, you should be prompted for the passphrase to unlock the root device:
-
- `$ ssh **root**@192.168.1.1` 
-```
-Enter passphrase for /dev/sda2:    
-Connection to 192.168.1.1 closed.
-```
-
-Afterwards, the system will complete its boot process and you can ssh to it [as you normally would](/index.php/Secure_Shell#Client_usage "Secure Shell") (with the remote user of your choice).
+4.  Configure the required `cryptdevice=` [parameter](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and add the `ip=` [kernel command parameter](/index.php/Kernel_parameters "Kernel parameters") to your bootloader configuration with the appropriate arguments. For example, if the DHCP server does not attribute a static IP to your remote system, making it difficult to access via SSH accross reboots, you can explicitly state the IP you want to be using: `ip=192.168.1.1:::::eth0:none` 
+    **Note:** As of version 0.0.4 of [mkinitcpio-netconf](https://aur.archlinux.org/packages/mkinitcpio-netconf/), you can nest multiple `ip=` parameters in order to configure multiple interfaces. You cannot mix it with `ip=dhcp` (`ip=:::::eth0:dhcp`) alone. An interface needs to be specified.
+     `ip=ip=192.168.1.1:::::eth0:none:ip=172.16.1.1:::::eth1:none` For a detailed description have a look at the [according mkinitcpio section](/index.php/Mkinitcpio#Using_net "Mkinitcpio"). When finished, update the configuration of your [bootloader](/index.php/Boot_loaders "Boot loaders").
+5.  Finally, restart the remote system and try to [ssh to it](/index.php/Secure_Shell#Client_usage "Secure Shell"), **explicitly stating the "root" username** (even if the root account is disabled on the machine, this root user is used only in the initrd for the purpose of unlocking the remote system). If you are using the [mkinitcpio-dropbear](https://aur.archlinux.org/packages/mkinitcpio-dropbear/) package and you also have the [openssh](https://www.archlinux.org/packages/?name=openssh) package installed, then you most probably will not get any warnings before logging in, because it convert and use the same host keys openssh uses. (Except Ed25519 keys, dropbear does not support them). In case you are using [mkinitcpio-tinyssh](https://aur.archlinux.org/packages/mkinitcpio-tinyssh/), you have the option of installing [tinyssh-convert](https://aur.archlinux.org/packages/tinyssh-convert/) or [tinyssh-convert-git](https://aur.archlinux.org/packages/tinyssh-convert-git/) so you can use the same keys as your [openssh](https://www.archlinux.org/packages/?name=openssh) installation (currently only Ed25519 keys). In either case, you should have run [the ssh daemon](/index.php/Secure_Shell#Daemon_management "Secure Shell") at least once, using the provided systemd units, so the keys can be generated first. After rebooting the machine, you should be prompted for the passphrase to unlock the root device. Afterwards, the system will complete its boot process and you can ssh to it [as you normally would](/index.php/Secure_Shell#Client_usage "Secure Shell") (with the remote user of your choice).
 
 **Tip:** If you would simply like a nice solution to mount other encrypted partitions (such as `/home`) remotely, you may want to look at [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=880484).
 
@@ -334,7 +316,7 @@ Below example shows a setup using a usb wifi adapter, connecting to a wifi netwo
 4.  Add `ip=:::::wlan0:dhcp` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Remove `ip=:::::eth0:dhcp` so it does not conflict.
 5.  Optionally create an additional boot entry with kernel parameter `ip=:::::eth0:dhcp`.
 6.  [Regenerate the intiramfs image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").
-7.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader"), e.g. for [GRUB](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"): `# grub-mkconfig -o /boot/grub/grub.cfg` 
+7.  Update the configuration of your [boot loader](/index.php/Boot_loader "Boot loader").
 
 Remember to setup [wifi](/index.php/Wireless_network_configuration "Wireless network configuration"), so you are able to login once the system is fully booted. In case you are unable to connect to the wifi network, try increasing the sleep times a bit.
 

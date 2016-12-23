@@ -104,11 +104,11 @@ When starting Zsh, it'll source the following files in this order by default:
 
 	`/etc/zsh/zshrc`
 
-	Used for setting interactive shell configuration and executing commands, will be sourced when starting as a ***interactive shell***.
+	Used for setting interactive shell configuration and executing commands, will be sourced when starting as an ***interactive shell***.
 
 	`$ZDOTDIR/.zshrc`
 
-	Used for setting user's interactive shell configuration and executing commands, will be sourced when starting as a ***interactive shell***.
+	Used for setting user's interactive shell configuration and executing commands, will be sourced when starting as an ***interactive shell***.
 
 	`/etc/zsh/zlogin`
 

@@ -6,6 +6,8 @@ Installation and basic usage of Intel® C++ Composer XE (formerly Intel® C++ Co
 *   [2 Setup and installation](#Setup_and_installation)
 *   [3 Using icc with makepkg](#Using_icc_with_makepkg)
     *   [3.1 Method 1 (12/08/2012)](#Method_1_.2812.2F08.2F2012.29)
+    *   [3.2 Method 2](#Method_2)
+    *   [3.3 Checking for compilation by icc](#Checking_for_compilation_by_icc)
 *   [4 icc CFLAGS](#icc_CFLAGS)
     *   [4.1 -xX](#-xX)
     *   [4.2 -Ox](#-Ox)
@@ -58,6 +60,42 @@ fi
 
 *   To toggle between the native gcc and icc, simple comment or uncomment the newly created **_CC** variable.
 *   In some case the compilation method described above fails and the compilation will be performed with *gcc*, so you should test if yours application has been effectively compiled with *icc*.
+
+### Method 2
+
+The [customizepkg](https://github.com/ava1ar/customizepkg) utility can automatically patch PKGBUILD files to compile with icc using a supported AUR helper.
+
+The following guide shows step-by-step how to build simple packages using this method:
+
+1\. Install either [customizepkg-git](https://aur.archlinux.org/packages/customizepkg-git/) or [customizepkg-scripting](https://aur.archlinux.org/packages/customizepkg-scripting/). We need a version which supports scripting. Patching will not work for our method.
+
+2\. Make sure the directory `/etc/customizepkg.d` exists and that customizepkg is compatible with your AUR helper.
+
+3\. Create a script with the same file name as the package you are trying to build under `/etc/customizepkg.d/` with the following contents:
+
+```
+#!/bin/sh
+cat - "$1" > "$2" << EOF
+groups=('modified')
+export CC="icc"
+export CXX="icpc"
+export CFLAGS="-xHost -march=native -O3 -no-prec-div -fno-alias -fp-model fast=2 -ipo -pipe"
+export CXXFLAGS="-xHost -march=native -O3 -no-prec-div -fno-alias -fp-model fast=2 -ipo -pipe"
+export LDFLAGS="-Wl,-O1,--sort-common,--as-needed"
+export AR="xiar"
+export LD="xild"
+EOF
+sed -i 's/depends=(/depends=("intel-openmp" "intel-compiler-base" /' "$2"
+
+```
+
+**Note:** The use of `groups=('modified')` is explained further in [Arch Build System#Preserve modified packages](/index.php/Arch_Build_System#Preserve_modified_packages "Arch Build System"). You can delete this line if necessary.
+
+4\. Mark the file executable, so that customizepkg will treat it as a script.
+
+5\. Build the file as usual using the AUR helper. If successful, customizepkg will recognize the file, execute it, and output relevant information to the terminal. Makepkg will now use the modified PKGBUILD.
+
+### Checking for compilation by icc
 
 To test if your package has been really compiled with icc:
 
@@ -123,29 +161,29 @@ Similar to the gcc:
 
 In the following table we report a list of packages from the officials repository that we have tried to compile with the intel C/C++ compiler. The compilation should be done by using the PKGBUILD from ABS.
 
-| Application | Compile | Comments |
-| **xvidcore** | OK | Works with the [Method 1](#Method_1) |
-| **kdebase** | OK | Works with the [Method 1](#Method_1) |
-| **conky 1.9.0** | OK | Works with the [Method 1](#Method_1) |
-| **nginx 1.4.2** | OK | Works with the [Method 1](#Method_1) |
-| **gzip 1.6** | OK | Works with the [Method 1](#Method_1) |
-| **xz** | OK | Works with the [Method 1](#Method_1) |
+| Application | Method 1 | Comments |
+| **xvidcore** | OK |
+| **kdebase** | OK |
+| **conky 1.9.0** | OK |
+| **nginx 1.4.2** | OK |
+| **gzip 1.6** | OK |
+| **xz** | OK |
 | **lz4** | OK | We must edit the PKGBUILD. |
-| **minetest** | OK | Works with the [Method 1](#Method_1) |
-| **opus** | OK | Works with the [Method 1](#Method_1) |
-| **zlib 1.2.8** | Not recommended | Works with the [Method 1](#Method_1), but caused bugs in some apps, like tightvnc |
-| **Gimp 2.8 / 2.9** | OK | Works with the [Method 1](#Method_1) |
-| **Pacman 4.0.3** | OK | Works with the [Method 1](#Method_1) |
-| **x264** | OK | Works with the [Method 1](#Method_1) |
-| **MySql** | OK | Works with the [Method 1](#Method_1) |
-| **SqlLite** | OK | Works with the [Method 1](#Method_1) |
-| **lame** | OK | Works with the [Method 1](#Method_1) |
-| **xaos** | OK | Works with the [Method 1](#Method_1) |
-| **gegl** | OK | Works with the [Method 1](#Method_1) |
+| **minetest** | OK |
+| **opus** | OK |
+| **zlib 1.2.8** | Not recommended | Causes bugs in some apps, like tightvnc |
+| **Gimp 2.8 / 2.9** | OK |
+| **Pacman 4.0.3** | OK |
+| **x264** | OK |
+| **MySql** | OK |
+| **SqlLite** | OK |
+| **lame** | OK |
+| **xaos** | OK |
+| **gegl** | OK |
 | **VLC** | Unsuccessful | There is some problem with the compiler flags |
 | **bzip2** | Unsuccessful | There is some problem with the compiler flags |
-| **mplayer** | Out of date | It do not recognize the Intel compiler |
-| **optipng** | OK | Works with the [Method 1](#Method_1). Comment out LD=xild in makepkg.conf |
+| **mplayer** | Out of date | Does not recognize the Intel compiler |
+| **optipng** | OK | Comment out LD=xild in makepkg.conf |
 | **python-numpy** | OK | We must edit the PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/) |
 | **python-scipy** | OK | We must edit the PKGBUILD. [python-scipy-mkl](https://aur.archlinux.org/packages/python-scipy-mkl/) |
 | **Qt** | OK | We must add the option *-platform linux-icc-64 (or 32)* in the configure command |

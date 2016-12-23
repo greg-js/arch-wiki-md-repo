@@ -59,7 +59,7 @@
 
 ```
 
-**提示:** Some other useful flags:
+**提示：** Some other useful flags:
 
 *   `--eulas-agreed` - Skip the EULAs
 *   `--console` - Use the console UI.
@@ -71,7 +71,7 @@
 
 **注意:** 安装过程中会收到`"No rc*.d style init script directories"`错误。这可以安全忽略,因为Arch使用的是[systemd](/index.php/Systemd "Systemd").
 
-**提示:** 从终端上(重新)构建模块，使用:
+**提示：** 从终端上(重新)构建模块，使用:
 ```
 # vmware-modconfig --console --install-all
 
@@ -79,7 +79,7 @@
 
 ## 配置
 
-**提示:** [AUR](/index.php/Arch_User_Repository "Arch User Repository") 中也包含了一个叫做 [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) 的软件包会自动完成本节内容(它同时支持旧版本的 VMware )。
+**提示：** [AUR](/index.php/Arch_User_Repository "Arch User Repository") 中也包含了一个叫做 [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) 的软件包会自动完成本节内容(它同时支持旧版本的 VMware )。
 
 ### VMware module模块补丁和安装
 
@@ -350,7 +350,7 @@ Please make sure that the kernel module `vmmon' is loaded.
 
 ### 无法识别 USB 设备
 
-**提示:** 可以通过 [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) 解决。
+**提示：** 可以通过 [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) 解决。
 
 如果不使用[systemd service](#systemd_services)来处理服务,you need to manually start the `vmware-usbarbitrator` binary as root each time.
 

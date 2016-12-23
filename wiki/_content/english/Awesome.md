@@ -7,6 +7,7 @@ From the [awesome website](https://awesome.naquadah.org/):
 *   [1 Installation](#Installation)
     *   [1.1 KDM](#KDM)
     *   [1.2 With GNOME](#With_GNOME)
+    *   [1.3 XFCE (WIP)](#XFCE_.28WIP.29)
 *   [2 Configuration](#Configuration)
     *   [2.1 Creating the configuration file](#Creating_the_configuration_file)
         *   [2.1.1 Examples](#Examples)
@@ -68,6 +69,12 @@ TryExec=/usr/bin/awesome
 ### With GNOME
 
 You can set up [GNOME](/index.php/GNOME "GNOME") to use awesome as the visual interface, but have GNOME work in the background. See [awesome wiki](http://awesome.naquadah.org/wiki/Quickly_Setting_up_Awesome_with_Gnome) for details.
+
+### XFCE (WIP)
+
+Xfce4 is a highly customizable Desktop Enviroment and as such it let you specify which WM you want to use for your session.
+
+Work in Progress, you can get more info here: [https://bbs.archlinux.org/viewtopic.php?id=166902](https://bbs.archlinux.org/viewtopic.php?id=166902)
 
 ## Configuration
 

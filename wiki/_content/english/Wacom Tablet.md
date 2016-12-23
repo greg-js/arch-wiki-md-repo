@@ -346,9 +346,9 @@ It is possible to remap the buttons with hotkeys.
 Sometimes it needs some trial&error to find the correct button IDs. For me they even differ for `xsetwacom` and the `xorg.conf` configuration. Very helpful tools are `xev` or `xbindkeys -mk`. An easy way to proceed is to temporarily assign keystrokes to your tablet's buttons like this:
 
 ```
- $ xsetwacom --get "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 'key a'
- $ xsetwacom --get "Wacom Bamboo 16FG 4x5 Finger pad" Button 2 'key b'
- $ xsetwacom --get "Wacom Bamboo 16FG 4x5 Finger pad" Button 3 'key c'
+ $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 'key a'
+ $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 2 'key b'
+ $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 3 'key c'
  $ # and so on
 
 ```
@@ -389,7 +389,7 @@ The syntax of `xsetwacom` is flexible but not very well documented. The general 
 ##### Some examples
 
 ```
- $ xsetwacom --get "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 3 # right mouse button
+ $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 3 # right mouse button
  $ xsetwacom --set "Wacom Bamboo 16FG 4x5 Finger pad" Button 1 "key +ctrl z -ctrl"
  $ xsetwacom --get "Wacom Bamboo 16FG 4x5 Finger pad" Button 1
  key +Control_L +z -z -Control_L

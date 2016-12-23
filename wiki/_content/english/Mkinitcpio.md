@@ -203,7 +203,7 @@ A table of common hooks and how they affect image creation and runtime follows. 
 
 <caption>**Current hooks**</caption>
 | busybox | systemd | Installation | Runtime |
-| **base** | Sets up all initial directories and installs base utilities and libraries. Always keep this hook as the first hook unless you know what you are doing. | -- |
+| **base** | *optional for recovery shell* | Sets up all initial directories and installs base utilities and libraries. Always keep this hook as the first hook unless you know what you are doing. Provides a busybox recovery shell when using systemd. | -- |
 | **udev** | **systemd** | Adds udevd, udevadm, and a small subset of udev rules to your image. | Starts the udev daemon and processes uevents from the kernel; creating device nodes. As it simplifies the boot process by not requiring the user to explicitly specify necessary modules, using it is recommended. |
 | **usr** | Adds support for `/usr` on a separate partition. | Mounts the `/usr` partition after the real root has been mounted. |
 | **resume** | -- | Tries to resume from the "suspend to disk" state. Works with both *swsusp* and *[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")*. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. |

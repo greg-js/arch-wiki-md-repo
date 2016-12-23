@@ -265,7 +265,7 @@
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Программа редактирования, просмотра и имитации в 3D молекулярных структур. Поддерживает скачивание файлов из [Protein Data Bank](https://en.wikipedia.org/wiki/ru:Protein_Data_Bank "wikipedia:ru:Protein Data Bank")
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Автономное приложение молекулярного моделирования и визуализации, часть фреймворка [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL")
 

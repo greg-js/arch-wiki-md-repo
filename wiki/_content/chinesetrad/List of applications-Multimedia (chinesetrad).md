@@ -616,7 +616,7 @@ See also: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FD
 
 *   **KWave** — Sound editor for KDE.
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Qt-based hard disk recorder and digital audio workstation application that aims to provide digital audio workstation software simple enough for the average home user, and yet powerful enough for the professional user.
 

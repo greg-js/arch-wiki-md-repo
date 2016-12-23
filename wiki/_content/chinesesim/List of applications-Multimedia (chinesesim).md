@@ -635,7 +635,7 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 *   **KWave** — KDE的声音编辑器
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **easytag** — 查看和编辑多种音频格式的 tag
 

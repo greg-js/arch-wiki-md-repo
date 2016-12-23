@@ -557,7 +557,7 @@ Listed below are you may encounter with the XPS 9550 4K:
 • Brightness flickers/stutters when dimming or increasing the brightness (demonstrated in [i3wm](https://wiki.archlinux.org/index.php/I3))
 • Screen flickers on low brightness settings
 • Possible poor fan behavior (not confirmed)
-• Battery will not charge beyond 60%. The fix is to download and flash the [1.1.15 BIOS](http://downloads.dell.com/FOLDER03486977M/1/XPS_9550_1.1.15.exe) or to try the 1.2.14\. Flashing 01.02.00 will be pointless after, as the issue carries over to this version of BIOS.
+• Battery will not charge beyond 60%. The fix is to download and flash [1.2.14 BIOS or later](http://downloads.dell.com/FOLDER03906323M/1/XPS_9550_1.2.14.exe) Flashing 01.02.00 will be pointless after, as the issue carries over to this version of BIOS.
 
 **01.02.14** *[Download](http://downloads.dell.com/FOLDER03906910M/1/Precision_5510_1.2.14.exe)*
 • User [report](https://www.reddit.com/r/Dell/comments/51wr31/dell_xps15_9550_bios_1214_fixes_battery_at_60/) that the issue with the battery is fixed

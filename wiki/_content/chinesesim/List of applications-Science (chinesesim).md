@@ -275,7 +275,7 @@
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — 3D分子结构编辑器，查看器和仿真器(同时支持从[Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")下载数据)。
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — 可单独使用的分子建模和可视化应用，是[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL")框架的一部分。
 

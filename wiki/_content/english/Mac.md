@@ -695,7 +695,7 @@ Suspending (suspend to ram) and hibernating (suspend to disk) work fine out of t
 
 ```
 
-Issues were reported where the machine would "suspend immediately after resume" in certain conditions when suspending by closing the lid. This was solved by de-selecting the option "event_when_closed_battery" in gconf-editor → gnome-power-manager → actions).
+Issues were reported where the machine would "suspend immediately after resume" in certain conditions when suspending by closing the lid. This was solved by setting the option "sleep-inactive-ac-type" to "nothing" using dconf-editor, option path: org → gnome → settings-daemon → plugins → power).
 
 See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") for details on how to configure hibernation. Noticably, you'll need a swap partition or file (see the mentioned article for further instructions).
 

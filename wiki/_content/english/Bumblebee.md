@@ -397,28 +397,27 @@ The BusID is 0:2:0
 
 On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired to the NVIDIA chip. If you want to use all the displays on such a system simultaneously, you have to run 2 X Servers. The first will be using the Intel driver for the notebooks panel and a display connected on VGA. The second will be started through optirun on the NVIDIA card, and drives the digital display.
 
-*intel-virtual-output* is a tool provided in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver set, as of v2.99\. When run in a terminal, it will daemonize itself unless the `-f` switch is used. Once the tool is running, it activates Bumblebee (Bumblebee can be left as default install), and any displays attached will be automatically detected, and manageable via any desktop display manager such as xrandr or KDE Display. See the [Bumblebee wiki page](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup) for more information.
+*intel-virtual-output* is a tool provided in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver set, as of v2.99\. Commandline usage is as follows:
+
+ `$ intel-virtual-output [OPTION]... [TARGET_DISPLAY]...` 
+```
+-d <source display>  source display
+-f                   keep in foreground (do not detach from console and daemonize)
+-b                   start bumblebee
+-a                   connect to all local displays (e.g. :1, :2, etc)
+-S                   disable use of a singleton and launch a fresh intel-virtual-output process
+-v                   all verbose output, implies -f
+-V <category>        specific verbose output, implies -f
+-h                   this help
+```
+
+If no target displays are parsed on the commandline, *intel-virtual-output* will attempt to connect to any local display. The detected displays will be manageable via any desktop display manager such as xrandr or KDE Display.
+
+The tool will also start bumblebee (which may be left as default install). See the [Bumblebee wiki page](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup) for more information.
 
 **Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `UseEDID` and `Option "AutoAddDevices" "false"` to `"true"`, if you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
 
-Commandline usage is as follows:
-
-```
-intel-virtual-output [OPTION]... [TARGET_DISPLAY]...
- -d <source display>  source display
- -f                   keep in foreground (do not detach from console and daemonize)
- -b                   start bumblebee
- -a                   connect to all local displays (e.g. :1, :2, etc)
- -S                   disable use of a singleton and launch a fresh intel-virtual-output process
- -v                   all verbose output, implies -f
- -V <category>        specific verbose output, implies -f
- -h                   this help
-
-```
-
-If no target displays are parsed on the commandline, *intel-virtual-output* will attempt to connect to any local display and then start bumblebee.[[1]](http://cgit.freedesktop.org/xorg/driver/xf86-video-intel/tree/tools/)
-
-The advantage of using *intel-virtual-output* in foreground mode is that once the external display is disconnected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
+When run in a terminal, it will daemonize itself unless the `-f` switch is used. The advantage of using it in foreground mode is that once the external display is disconnected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
 
 ## Switch between discrete and integrated like Windows
 
@@ -675,7 +674,7 @@ Performance comparison:
 
 ### Primus issues under compositing window managers
 
-Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[2]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
+Since compositing hurts performance, invoking primus when a compositing WM is active is not recommended.[[1]](https://github.com/amonakov/primus#issues-under-compositing-wms) If you need to use primus with compositing and see flickering or bad performance, synchronizing primus' display thread with the application's rendering thread may help:
 
 ```
 $ PRIMUS_SYNC=1 primusrun ...

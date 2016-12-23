@@ -28,6 +28,7 @@ The Eclipse IDE is largely written in Java but can be used to develop applicatio
     *   [4.9 Freshplayerplugin](#Freshplayerplugin)
     *   [4.10 Eclipse 4.6 may not open the marketplace properly](#Eclipse_4.6_may_not_open_the_marketplace_properly)
     *   [4.11 Show in System Explorer does not work](#Show_in_System_Explorer_does_not_work)
+    *   [4.12 Display issues under Wayland](#Display_issues_under_Wayland)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -299,6 +300,19 @@ cd /usr/lib/eclipse/ && sudo rm plugins/org.apache.httpcomponents.httpclient_4.3
 ### Show in System Explorer does not work
 
 See [this](http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Freference%2Fref-9.htm&cp=0_4_1_52) guide. Go to **Window** > **Preferences** > **General** > **Workspace** and change the command launching system explorer. As Xfce user you may like to change it to `thunar ${selected_resource_uri}` to open the selected folder with thunar.
+
+### Display issues under Wayland
+
+When running Eclipse on Wayland, you may encounter rendering issues such as slow response time to mouse events or chopped dialog windows (Bug report [[1]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=483545)). A possible workaround for this issue is to force Eclipse to run under XWayland.
+
+With the superuser, open the file `/usr/bin/eclipse` and append this line before the `exec` line :
+
+```
+   export GDK_BACKEND=x11
+
+```
+
+This will force the execution of Eclipse on XWayland.
 
 ## See also
 

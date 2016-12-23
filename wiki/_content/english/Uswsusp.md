@@ -17,8 +17,7 @@
     *   [2.3 Sample config](#Sample_config)
 *   [3 Usage](#Usage)
     *   [3.1 Standalone](#Standalone)
-    *   [3.2 With pm-utils](#With_pm-utils)
-    *   [3.3 With systemd](#With_systemd)
+    *   [3.2 With systemd](#With_systemd)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 My machine is not whitelisted](#My_machine_is_not_whitelisted)
     *   [4.2 s2ram -f doesn't work](#s2ram_-f_doesn.27t_work)
@@ -166,52 +165,20 @@ Now you could try to suspend directly calling s2disk from the command line:
 
 It is probably necessary to resort to a userspace tool which calls internally s2disk, like [Pm-utils](/index.php/Pm-utils "Pm-utils") or hibernate-script. See [Suspending to Disk with hibernate-script](/index.php/Suspending_to_Disk_with_hibernate-script "Suspending to Disk with hibernate-script") about details for defining the ususpend-disk method as default.
 
-### With pm-utils
-
-[Pm-utils](/index.php/Pm-utils "Pm-utils") can utilise several [sleep back-ends](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils"), including uswsusp. Create or edit `/etc/pm/config.d/module`:
-```
-SLEEP_MODULE=uswsusp
-
-```
-
-This way, pm-suspend and pm-hibernate will use uswsusp. There is an advantage to this: regular users can use these commands to suspend with uswsusp:
-
-```
-$ dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
-
-$ dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate
-
-```
-
-**Note:** The user's [window manager](/index.php/Window_manager "Window manager") or [desktop environment](/index.php/Desktop_environment "Desktop environment") needs to be started either with a [login manager](/index.php/Login_manager "Login manager") like gdm or kdm. Also, upower needs to be installed.
-
 ### With systemd
 
-To to put your system into hibernation a.k.a *Suspend to Disk* with `systemctl hibernate`, do:
+To to put your system into hibernation a.k.a *Suspend to Disk* with `systemctl hibernate`, [edit](/index.php/Edit "Edit") `systemd-hibernate.service`, adding:
 
+ `/etc/systemd/system/systemd-hibernate-service.d/override.conf` 
 ```
-# cp /usr/lib/systemd/system/systemd-hibernate.service /etc/systemd/system/
-# cd /etc/systemd/system/
-
-```
-
-Open `systemd-hibernate.service` with your preferred text editor and edit the line from this:
-
- `/etc/systemd/system/systemd-hibernate.service` 
-```
-...
-ExecStart=/usr/lib/systemd/systemd-sleep hibernate
+[Service]
+ExecStart=
+ExecStartPre=-/usr/bin/run-parts -v -a pre /usr/lib/systemd/system-sleep
+ExecStart=/usr/bin/s2disk
+ExecStartPost=-/usr/bin/run-parts -v --reverse -a post /usr/lib/systemd/system-sleep
 ```
 
-to this:
-
- `/etc/systemd/system/systemd-hibernate.service` 
-```
-...
-ExecStart=/bin/sh -c 's2disk && run-parts --regex .\* -a post /usr/lib/systemd/system-sleep'
-```
-
-After that, execute `systemctl hibernate` to put your system into hibernation. Do similar changes for systemd-hybrid-sleep.service to enable uswsusp-based hybrid sleep too.
+After that, execute `systemctl hibernate` to put your system into hibernation. Make similar changes to `systemd-hybrid-sleep.service` (replace *s2disk* with *s2both*) to enable uswsusp-based hybrid sleep.
 
 ## Troubleshooting
 

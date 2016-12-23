@@ -440,7 +440,7 @@ Now when you run *gmx pdb2gmx* this solvent model should be available for the ap
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — an advanced molecule editor and visualizer designed for cross-platform use in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas.
 
-	[http://avogadro.cc](http://avogadro.cc) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.cc](http://avogadro.cc) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 #### Topology generation
 

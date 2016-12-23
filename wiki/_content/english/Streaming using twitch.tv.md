@@ -1,4 +1,4 @@
-Twitch.tv is one of the more popular [RTMP](https://en.wikipedia.org/wiki/Real_Time_Messaging_Protocol "wikipedia:Real Time Messaging Protocol") based streaming services offered. As [Steam](/index.php/Steam "Steam") has a Linux client available, some people may be in search of solutions to stream their games or Linux desktop. As there are no well known Linux broadcasting programs just yet, most solutions at this point are CLI based. The info included here should serve as a list of such solutions.
+Twitch.tv is one of the more popular [RTMP](https://en.wikipedia.org/wiki/Real_Time_Messaging_Protocol "wikipedia:Real Time Messaging Protocol") based streaming services offered. As [Steam](/index.php/Steam "Steam") has a Linux client available, some people may be in search of solutions to stream their games or Linux desktop. The info included here should serve as a list of such solutions.
 
 ## Contents
 
@@ -29,10 +29,8 @@ Not listed on their page is a requirement of the [Y'UV420p pixel format](https:/
 
 ## GUI solutions
 
+*   Open Broadcaster Software ([obs-studio](https://www.archlinux.org/packages/?name=obs-studio)) is a popularly used streaming program that is now available in the community repo. Alpha Linux builds ([obs-studio-git](https://aur.archlinux.org/packages/obs-studio-git/) from the [AUR](/index.php/AUR "AUR")) are also available for compiling & testing.
 *   Castawesome ([castawesome](https://aur.archlinux.org/packages/castawesome/) from the [AUR](/index.php/AUR "AUR")) is a Gtk3 frontend for ffmpeg streaming with builtin Twitch.tv support.
-
-*   Open Broadcaster Software ([obs-studio](https://www.archlinux.org/packages/?name=obs-studio)) is a popularly used software on Windows. *Note that the package is **not an official build**.* Alpha Linux builds ([obs-studio-git](https://aur.archlinux.org/packages/obs-studio-git/) from the [AUR](/index.php/AUR "AUR")) are also available for compiling & testing.
-
 *   SimpleScreenRecorder ([lib32-simplescreenrecorder](https://www.archlinux.org/packages/?name=lib32-simplescreenrecorder) from the [official repositories](/index.php/Official_repositories "Official repositories")) can be configured to stream to twitch.
     *   For this to work:
         *   The container needs to be set to FLV

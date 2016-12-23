@@ -596,7 +596,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **KWave** — Editor audio per KDE.
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Workstation per l'audio digitale e registrazione multicanale su disco rigido basata sulle Q, che mira a fornire un software abbastanza semplice per l'utente domestico medio, ma abbastanza potente per l'utente professionale.
 

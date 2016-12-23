@@ -638,7 +638,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **KWave** — Editor de sonido para KDE.
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Grabador de disco duro basado en Qt y estación de trabajo de audio digital que tiene como objetivo proporcionar software de estación de trabajo de audio digital lo suficientemente simple para el usuario doméstico medio, y sin embargo, lo suficientemente poderoso para el usuario profesional .
 

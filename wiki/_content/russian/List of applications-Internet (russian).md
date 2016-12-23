@@ -486,7 +486,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Kmail](https://en.wikipedia.org/wiki/ru:Kmail "wikipedia:ru:Kmail")** — Зрелый клиент электронной почты с богатым функционалом. Является частью группы пакетов [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 
-	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kdepim-kmail](https://www.archlinux.org/packages/?name=kdepim-kmail)
+	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
 *   **Manitou Mail** — Система обработки электронной почты на базах данных (database-driven)
 

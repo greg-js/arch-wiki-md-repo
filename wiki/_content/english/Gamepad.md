@@ -316,6 +316,8 @@ Install the [bluez-plugins](https://www.archlinux.org/packages/?name=bluez-plugi
 
 You can now disconnect your controller. The next time you hit the PlayStation button it will connect without asking anything else.
 
+Alternatively, you can press the share button and the PlayStation button simultaneously to put the gamepad in pairing mode, and pair as you would normally.
+
 Remember to disconnect the controller when you are done as the controller will stay on when connected and drain the battery.
 
 ### Steam Controller

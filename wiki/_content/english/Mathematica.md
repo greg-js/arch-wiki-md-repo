@@ -10,6 +10,7 @@
     *   [1.2 Mathematica 7](#Mathematica_7)
     *   [1.3 Mathematica 8.0.4.0](#Mathematica_8.0.4.0)
     *   [1.4 Mathematica 10](#Mathematica_10)
+    *   [1.5 Mathematica 11](#Mathematica_11)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Missing symbols](#Missing_symbols)
     *   [2.2 HiDPI / Retina Screens](#HiDPI_.2F_Retina_Screens)
@@ -105,7 +106,13 @@ The second issue with Mathematica 8 in 64-bit archlinux (may also affect 32-bit 
 
 ### Mathematica 10
 
-[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/). The `Mathematica_10.XX.YY_LINUX.sh` installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
+[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/) (need historical version). The `Mathematica_10.XX.YY_LINUX.sh` installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
+
+### Mathematica 11
+
+[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/). Obtain `Mathematica_11.XX.YY_LINUX.sh` from Wolfram Research, along with an activation key. Successful install may throw non-critical errors: xdg-icon-resource, mkdir, xdg-desktop-menu.
+
+Mathematica 11 automatically creates a document folder 'Wolfram Mathematica' in [$UserDocumentsDirectory](https://reference.wolfram.com/language/ref/$UserDocumentsDirectory.html), which is set by Mathematica according to [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
 
 ## Troubleshooting
 

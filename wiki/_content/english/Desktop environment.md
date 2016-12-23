@@ -229,7 +229,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [kwrite](https://www.archlinux.org/packages/?name=kwrite) [kate](https://www.archlinux.org/packages/?name=kate) | [Gwenview](http://gwenview.sourceforge.net/)
 [gwenview](https://www.archlinux.org/packages/?name=gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
 [dragon](https://www.archlinux.org/packages/?name=dragon) | [Konqueror](http://www.konqueror.org/)
-[kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror) | [SDDM](/index.php/SDDM "SDDM")
+[konqueror](https://www.archlinux.org/packages/?name=konqueror) | [SDDM](/index.php/SDDM "SDDM")
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [LXDE](/index.php/LXDE "LXDE") (GTK+ 2) | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")

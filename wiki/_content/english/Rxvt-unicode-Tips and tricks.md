@@ -21,6 +21,7 @@ See [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode") for the main article.
 *   [6 Use urxvt as application launcher](#Use_urxvt_as_application_launcher)
 *   [7 Xterm escape sequences](#Xterm_escape_sequences)
 *   [8 Bidirectional support](#Bidirectional_support)
+*   [9 Bell Command](#Bell_Command)
 
 ## Improved Kuake-like behavior in Openbox
 
@@ -433,3 +434,28 @@ urxvt -pe bidi
 ```
 
 **Note:** The font you're using should support your language. For example, for viewing Hebrew you should a font like terminus.
+
+## Bell Command
+
+It is possible to execute a shell command when the terminal rings the bell. The pre-packed `bell-command` extension needs to be enabled first in the `~/.Xresources` file:
+
+```
+ URxvt.perl-ext-common: ...,bell-command,...
+
+```
+
+The following example will use [ALSA](/index.php/ALSA "ALSA")'s `aplay` command to play a `.wav` file:
+
+```
+ URxvt.bell-command: aplay /path/to/a/file.wav
+
+```
+
+And the next setting will pop a visual notification:
+
+```
+ URxvt.bell-command: notify-send "rxvt-unicode: bell!"
+
+```
+
+**Note:** Setting the `bell-command` option alone will not mute the buzzer in your computer, to do that take a look at the [PC speaker](/index.php/PC_speaker "PC speaker") article.

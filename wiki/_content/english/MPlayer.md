@@ -1,4 +1,4 @@
-**MPlayer** is a popular movie player for GNU/Linux. It has support for most video and audio formats and is thus highly versatile, even if it is mostly used for viewing videos.
+[MPlayer](http://www.mplayerhq.hu/) is a popular movie player for GNU/Linux. It has support for most video and audio formats and is thus highly versatile, even if it is mostly used for viewing videos.
 
 ## Contents
 
@@ -457,7 +457,6 @@ The `:1` is to lower the CDROM speed for a constant spin and less noise.
 
 ## See also
 
-*   [Official MPlayer website](http://www.mplayerhq.hu/)
 *   [Official MPlayer2 website](http://www.mplayer2.org/)
 *   [MPlayer FAQ](http://wiki.multimedia.cx/index.php?title=MPlayer_FAQ)
 *   [MPlayer notes](https://www.youtube.com/watch?v=n4Ul_A0VBVI)

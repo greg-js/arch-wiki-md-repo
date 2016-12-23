@@ -114,7 +114,7 @@ After=suspend.target hybrid-sleep.target hibernate.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/hdparm -q -S 120 -y /dev/sdb
+ExecStart=/usr/bin/hdparm -B 254 /dev/sda
 
 [Install]
 WantedBy=sleep.target

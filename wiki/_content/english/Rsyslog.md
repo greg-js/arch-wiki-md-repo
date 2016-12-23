@@ -57,6 +57,14 @@ To use **somehost** as the hostname. Move **somehost.localdomain** to the first 
 
 The [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) doesn't create its working directory `/var/spool/rsyslog` defined by the `$WorkDirectory` variable in the configuration file. You might need to create it manually or change its destination.
 
+By default, all syslog messages are handled by [systemd](/index.php/Systemd "Systemd"). If you want rsyslog to pull messages from systemd, load the *imjournal* module:
+
+ `/etc/rsyslog.conf` 
+```
+$ModLoad imjournal
+
+```
+
 Log output can be fine tuned in `/etc/rsyslog.conf`. The daemon uses Facility levels (see below) to determine what gets put where. For example:
 
  `/etc/rsyslog.conf` 

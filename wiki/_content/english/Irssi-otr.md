@@ -9,7 +9,7 @@ The [irssi-otr](http://irssi-otr.tuxfamily.org/) module brings [Off-the-Record M
 
 ## Installing
 
-You can install the [irssi-otr](https://aur.archlinux.org/packages/irssi-otr/) module from the [AUR](/index.php/AUR "AUR"). If you like to test bleeding edge software, there is also [irssi-otr-git](https://aur.archlinux.org/packages/irssi-otr-git/).
+You can install the [irssi-otr](https://www.archlinux.org/packages/?name=irssi-otr) module from the [AUR](/index.php/AUR "AUR"). If you like to test bleeding edge software, there is also [irssi-otr-git](https://aur.archlinux.org/packages/irssi-otr-git/).
 
 ## Usage
 

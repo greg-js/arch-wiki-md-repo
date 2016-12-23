@@ -41,13 +41,13 @@ $ mkdir ~/kernelbuild
 
 ### Download the kernel source
 
-**Warning:** [systemd](/index.php/Systemd "Systemd") requires kernel version 3.11 and above (4.2 and above for unified [cgroups](/index.php/Cgroups "Cgroups") hierarchy support). See `/usr/share/systemd/README` for more information.
+**Warning:** [systemd](/index.php/Systemd "Systemd") requires kernel version 3.12 at least (4.2 or greater for unified [cgroups](/index.php/Cgroups "Cgroups") hierarchy support). See `/usr/share/doc/systemd/README` for more information.
 
-Download the kernel source from [http://www.kernel.org](http://www.kernel.org). This should be the [tarball](https://en.wikipedia.org/wiki/Tar_(computing) (`tar.xz`) file for your chosen kernel.
+Download the kernel source from [https://www.kernel.org](https://www.kernel.org). This should be the [tarball](https://en.wikipedia.org/wiki/Tar_(computing) (`tar.xz`) file for your chosen kernel.
 
 It can be downloaded by simply right-clicking the `tar.xz` link in your browser and selecting `Save Link As...`, or any other number of ways via alternative graphical or command-line tools that utilise HTTP, [FTP](/index.php/Ftp#FTP "Ftp"), [RSYNC](/index.php/Rsync "Rsync"), or [Git](/index.php/Git "Git").
 
-**Note:** It is a good idea to verify the PGP signature of any downloaded kernel tarball. This ensures that it is legitimate and helps to build the Web of Trust. See [kernel.org/signature](http://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures).
+**Note:** It is a good idea to verify the PGP signature of any downloaded kernel tarball. This ensures that it is legitimate and helps to build the Web of Trust. See [kernel.org/signature](https://kernel.org/signature.html#using-gnupg-to-verify-kernel-signatures).
 
 In the following command-line example, [wget](https://www.archlinux.org/packages/?name=wget) has been installed and is used inside the `~/kernelbuild` directory to obtain kernel 4.8.6:
 

@@ -57,7 +57,7 @@ A working [mysql](/index.php/Mysql "Mysql") server needs to be installed to crea
 
 ### Install & start Openfire on remote
 
-Install the [Openfire](https://www.archlinux.org/packages/?name=Openfire) package.
+Install the [openfire](https://www.archlinux.org/packages/?name=openfire) package.
 
 The Openfire admin interface will listen on port `9090` and 9091 of your [server](/index.php/Server "Server") by default. Adding `<inteface>127.0.0.1</inteface>"` can probably (untested) be used to temporarily secure the server if the ports aren't properly [firewalled](/index.php/Firewall "Firewall").
 
@@ -146,7 +146,7 @@ iptables -A INPUT -p tcp --dport 5229 -j ACCEPT
 
 ### Add unix socket support
 
-Connecting to database via unix socket with a java application requires a jdbc driver with an implementation of socketFactory. [MariaDB] Connector/J supports auth over socket since version 1.4\. and can be install via [mariadb-jdbc](https://aur.archlinux.org/packages/mariadb-jdbc/), which also requires [npe](https://aur.archlinux.org/packages/npe/) to work with unix sockets. Install both.
+Connecting to database via unix socket with a java application requires a jdbc driver with an implementation of socketFactory. [MariaDB] Connector/J supports auth over socket since version 1.4\. and can be install via [mariadb-jdbc](https://aur.archlinux.org/packages/mariadb-jdbc/), which also requires [jna](https://aur.archlinux.org/packages/jna/) (Java Native Access) to work with unix sockets. Install both.
 
  `/etc/systemd/system/openfire.service.d/override.conf` 
 ```

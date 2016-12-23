@@ -43,7 +43,7 @@ It will output the devices on the system and their respective features supported
 
 After a [restart](/index.php/Restart "Restart") of the graphical environment, the devices should be managed by libinput with default configuration, if no other drivers are configured to take precedence.
 
-See the libinput(4) manual page for general options to set. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
+See [libinput(4)](https://www.mankier.com/4/libinput) for general options to set. The *xinput* tool is used to view or change options available for a particular device at runtime. For example:
 
 ```
 $ xinput list
