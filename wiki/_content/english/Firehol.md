@@ -1,23 +1,16 @@
-[FireHOL](http://firehol.org) is a language (and a program to run it) which builds secure, stateful firewalls from easy to understand, human-readable configurations. The configurations stay readable even for very complex setups.
-
-## Contents
-
-*   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Try, Run and Enable](#Try.2C_Run_and_Enable)
-*   [4 Related](#Related)
+[FireHOL](http://firehol.org) is a language (and a program to run it) to build secure, stateful firewalls from easy to understand, human-readable configuration files. The configuration stays readable even for very complex setups. In the background it interfaces with [iptables](/index.php/Iptables "Iptables") (IPv4/IPv6).
 
 ## Installation
 
-Install [Firehol](http://aur.archlinux.org/packages/firehol/) or [Firehol-git](http://aur.archlinux.org/pkgbase/firehol-git/) from AUR.
+[Install](/index.php/Install "Install") [firehol](https://aur.archlinux.org/packages/firehol/) or [firehol-git](https://aur.archlinux.org/packages/firehol-git/).
 
 ## Configuration
 
-Configuration file is at `/etc/firehol/firehol.conf`
+The configuration file is `/etc/firehol/firehol.conf`.
 
-Copy example config from [Firehol example](http://firehol.org/#firehol)
+A good way to start learning its scripting declarations is by copying an [Firehol example configuration](http://firehol.org/#firehol).
 
-The configuration file is bash file and has 3 parts
+The configuration file is bash file and has 3 parts:
 
 *   helper
 *   interface
@@ -25,34 +18,23 @@ The configuration file is bash file and has 3 parts
 
 ## Try, Run and Enable
 
-You can try the config file is correct or not by
+You can test the configuration file's correctness by issuing:
 
 ```
-   sudo firehol try
+# firehol try
 
 ```
 
 or
 
 ```
-   sudo firehol nofast try
+# firehol nofast try
 
 ```
 
-If the config is working, run the Firehol by
+If the configuration is working, [start/enable](/index.php/Start/enable "Start/enable") the `firehol.service`.
 
-```
-   systemctl start firehol
+**Tip:**
 
-```
-
-Enable Firehol to run at boot time by
-
-```
-   systemctl enable firehol
-
-```
-
-## Related
-
-You may configure Fireqos for QoS and NetData for monitoring
+*   The package also includes [FireQOS](http://firehol.org/#fireqos), a helper for [Advanced traffic control](/index.php/Advanced_traffic_control "Advanced traffic control"). It is packaged with its own `fireqos.service`.
+*   The [netdata](https://www.archlinux.org/packages/?name=netdata) (or [netdata-git](https://aur.archlinux.org/packages/netdata-git/)) application for traffic monitoring, created by the same project authors, also is available. See [Netdata](https://github.com/firehol/netdata) for more information.

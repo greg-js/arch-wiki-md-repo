@@ -103,7 +103,7 @@ Similar to [keyword based searching](#Keyword_based_searching) less the terminat
 
 #### Speed Dial home page
 
-Create a static/dynamic HTML page with a list of links to serve as a Speed Dial page to be called with the home page key binding. See [lariza Speed Dial Example](http://pastebin.com/NpAvecWH) for a sample static page.
+Create a static/dynamic HTML page with a list of links to serve as a Speed Dial page to be called with the home page key binding. See [lariza Speed Dial Example](http://pastebin.com/3tVpksLf) for a sample static page.
 
 **Note:** Set the lariza home page environment variable accordingly: `LARIZA_HOME_URI=file:///home/example/.config/lariza/bookmarks.html`
 

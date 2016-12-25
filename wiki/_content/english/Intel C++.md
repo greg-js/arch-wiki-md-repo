@@ -7,12 +7,12 @@ Installation and basic usage of Intel® C++ Composer XE (formerly Intel® C++ Co
 *   [3 Using icc with makepkg](#Using_icc_with_makepkg)
     *   [3.1 Method 1 (12/08/2012)](#Method_1_.2812.2F08.2F2012.29)
     *   [3.2 Method 2](#Method_2)
-    *   [3.3 Checking for compilation by icc](#Checking_for_compilation_by_icc)
-*   [4 icc CFLAGS](#icc_CFLAGS)
-    *   [4.1 -xX](#-xX)
-    *   [4.2 -Ox](#-Ox)
-    *   [4.3 -w](#-w)
-*   [5 Software compiled with Intel C / C++](#Software_compiled_with_Intel_C_.2F_C.2B.2B)
+*   [4 Checking for compilation by icc](#Checking_for_compilation_by_icc)
+*   [5 icc CFLAGS](#icc_CFLAGS)
+    *   [5.1 -xX](#-xX)
+    *   [5.2 -Ox](#-Ox)
+    *   [5.3 -w](#-w)
+*   [6 Software compiled with Intel C / C++](#Software_compiled_with_Intel_C_.2F_C.2B.2B)
 
 ## Before you begin
 
@@ -63,43 +63,29 @@ fi
 
 ### Method 2
 
-The [customizepkg](https://github.com/ava1ar/customizepkg) utility can automatically patch PKGBUILD files to compile with icc using a supported AUR helper.
-
-The following guide shows step-by-step how to build simple packages using this method:
-
-1\. Install either [customizepkg-git](https://aur.archlinux.org/packages/customizepkg-git/) or [customizepkg-scripting](https://aur.archlinux.org/packages/customizepkg-scripting/). We need a version which supports scripting. Patching will not work for our method.
-
-2\. Make sure the directory `/etc/customizepkg.d` exists and that customizepkg is compatible with your AUR helper.
-
-3\. Create a script with the same file name as the package you are trying to build under `/etc/customizepkg.d/` with the following contents:
+Insert the following code anywhere near the top of the PKGBUILD:
 
 ```
-#!/bin/sh
-cat - "$1" > "$2" << EOF
 groups=('modified')
 export CC="icc"
 export CXX="icpc"
-export CFLAGS="-xHost -march=native -O3 -no-prec-div -fno-alias -fp-model fast=2 -ipo -pipe"
-export CXXFLAGS="-xHost -march=native -O3 -no-prec-div -fno-alias -fp-model fast=2 -ipo -pipe"
+export CFLAGS="-march=native -O3 -no-prec-div -fno-alias -pipe"
+export CXXFLAGS="-march=native -O3 -no-prec-div -fno-alias -pipe"
 export LDFLAGS="-Wl,-O1,--sort-common,--as-needed"
 export AR="xiar"
 export LD="xild"
-EOF
-sed -i 's/depends=(/depends=("intel-openmp" "intel-compiler-base" /' "$2"
 
 ```
 
-**Note:** The use of `groups=('modified')` is explained further in [Arch Build System#Preserve modified packages](/index.php/Arch_Build_System#Preserve_modified_packages "Arch Build System"). You can delete this line if necessary.
+**Note:** The use of `groups=('modified')` is explained further in [Arch Build System#Preserve modified packages](/index.php/Arch_Build_System#Preserve_modified_packages "Arch Build System"). You can delete this line if necessary. However, remember that the package will be replaced with the GCC version every time it is upgraded.
 
-4\. Mark the file executable, so that customizepkg will treat it as a script.
+Add `intel-openmp` and `intel-compiler-base` to the `depends` array.
 
-5\. Build the file as usual using the AUR helper. If successful, customizepkg will recognize the file, execute it, and output relevant information to the terminal. Makepkg will now use the modified PKGBUILD.
-
-### Checking for compilation by icc
+## Checking for compilation by icc
 
 To test if your package has been really compiled with icc:
 
-*   Type the command **ldd [your_app] | grep intel** If the application is linked to a shared object located in the directory **/opt/intel/lib/** it is mind that has been complied with icc.
+*   Type the command `ldd [your_app] | grep intel`. If the application is linked to a shared object located in the directory `/opt/intel/lib/`, then it has been complied with icc.
 
 *   Another method is to observe the build output and watch if it is using the *icc* or *icpc* command.
 
@@ -159,7 +145,7 @@ Similar to the gcc:
 
 ## Software compiled with Intel C / C++
 
-In the following table we report a list of packages from the officials repository that we have tried to compile with the intel C/C++ compiler. The compilation should be done by using the PKGBUILD from ABS.
+In the following table we report a list of packages from the official repository that we have tried to compile with the intel C/C++ compiler. The compilation should be done by using the PKGBUILD from ABS.
 
 | Application | Method 1 | Comments |
 | **xvidcore** | OK |
@@ -196,4 +182,4 @@ In the following table we report a list of packages from the officials repositor
 | Unsuccessful | The compilation may work, but there are some compilations errors. |
 | Not recommended | The compilation works, but is not recommended |
 | Fail | It is impossible to compile the PKG with ICC. |
-| Out of date | It is unsuccessful or fails with older CFLAGS. You can try compiling it with new [Method 1](#Method_1).(Do not forget to paste your result here!) |
+| Out of date | It is unsuccessful or fails with older CFLAGS. |

@@ -1,4 +1,4 @@
-From the [awesome website](https://awesome.naquadah.org/):
+From the [awesome website](https://awesomewm.org/):
 
 	[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment.
 
@@ -98,7 +98,7 @@ $ cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
 
 The API for the configuration often changes when awesome updates. So, remember to repeat the command above when you get something strange with awesome, or you want to modify the configuration.
 
-For more information about configuring awesome, check out the [configuration page at awesome wiki](http://awesome.naquadah.org/wiki/Awesome_3_configuration)
+For more information about configuring awesome, check out the [configuration section at awesome docs](https://awesomewm.org/apidoc/documentation/90-FAQ.md.html#Configuration)
 
 #### Examples
 
@@ -556,8 +556,8 @@ Xdg-menu will generate duplicate entries if you copy desktop-files from /usr/sha
 
 ## See also
 
-*   [http://awesome.naquadah.org/wiki/FAQ](http://awesome.naquadah.org/wiki/FAQ) - FAQ
+*   [https://awesomewm.org/apidoc/documentation/90-FAQ.md.html](https://awesomewm.org/apidoc/documentation/90-FAQ.md.html) - FAQ
 *   [http://www.lua.org/pil/](http://www.lua.org/pil/) - Programming in Lua (first edition)
-*   [http://awesome.naquadah.org/](http://awesome.naquadah.org/) - The official awesome website
+*   [https://awesomewm.org/](https://awesomewm.org/) - The official awesome website
 *   [http://awesome.naquadah.org/wiki/Main_Page](http://awesome.naquadah.org/wiki/Main_Page) - the awesome wiki
 *   [https://bbs.archlinux.org/viewtopic.php?id=88926](https://bbs.archlinux.org/viewtopic.php?id=88926) - share your awesome!

@@ -171,23 +171,33 @@ If you start subsonic using `/etc/rc.d/subsonic`, and your /etc/[rc.conf](/index
 
 Subsonic stores all its data inside a [HyperSQL](http://hsqldb.org/) database in `/var/lib/subsonic/db`. You can access it with a simple web interface by going to [http://localhost:4040/db.view](http://localhost:4040/db.view) (replace with your Subsonic URL).
 
-You can also use the SQLTool command-line tool from the HyperSQL distribution, found in [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/). Note that this tool cannot be run concurrently with your Subsonic instance, so you will have to either shut it down or copy the database directory.
+You can also use the SQLTool command-line tool from the HyperSQL distribution, found in [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/).
 
-SQLTool first needs a `~/sqltool.rc` file with the following contents :
+**Warning:** This tool cannot be run concurrently with your Subsonic instance and *severely corrupt* your database if misused. The following assumes that you have a copy of the database in the `db.copy` directory.
 
-```
-urlid subsonic
-url jdbc:hsqldb:/var/lib/subsonic/db/subsonic
-username sa
-password
-```
-
-Then, you can for example export all the contents in the `MEDIA_FILE` table :
+This command can be run interactively without other arguments :
 
 ```
-$ java -jar /usr/share/java/sqltool.jar subsonic - <<< '\xq MEDIA_FILE'
+$ java -jar /usr/share/java/sqltool.jar --inlineRc=url=jdbc:hsqldb:file:db.copy/libresonic,user=sa,password=
+SqlTool v. 5337.
+JDBC Connection established to a HSQL Database Engine v. 2.3.3 database
+...
+sql>
+```
+
+It can also run commands non-interactively. This command exports all the contents in the `MEDIA_FILE` table :
+
+```
+$ java -jar /usr/share/java/sqltool.jar --inlineRc=url=jdbc:hsqldb:file:db.copy/libresonic,user=sa,password= - <<< '\xq MEDIA_FILE'
 8074 row(s) fetched from database.
 Wrote 3252295 characters to file 'MEDIA_FILE.csv'.
+```
+
+This command exports the whole database as a SQL file :
+
+```
+$ java -jar /usr/share/java/sqltool.jar --inlineRc=url=jdbc:hsqldb:file:db.copy/libresonic,user=sa,password= - <<< "backup database to 'backup.tar' script not compressed;"
+1 / 1 subsonic.script...
 ```
 
 ## Madsonic

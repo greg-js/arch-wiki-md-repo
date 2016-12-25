@@ -5,32 +5,26 @@
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 附加安装组件](#.E9.99.84.E5.8A.A0.E5.AE.89.E8.A3.85.E7.BB.84.E4.BB.B6)
-    *   [2.1 图形前端](#.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
-    *   [2.2 浏览器整合](#.E6.B5.8F.E8.A7.88.E5.99.A8.E6.95.B4.E5.90.88)
-        *   [2.2.1 Firefox 和 Chromium](#Firefox_.E5.92.8C_Chromium)
-        *   [2.2.2 Konqueror](#Konqueror)
-*   [3 使用](#.E4.BD.BF.E7.94.A8)
-    *   [3.1 配置](#.E9.85.8D.E7.BD.AE)
-    *   [3.2 按键绑定](#.E6.8C.89.E9.94.AE.E7.BB.91.E5.AE.9A)
-*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
-    *   [4.1 启用 VDPAU （适用于新款nVidia显卡）](#.E5.90.AF.E7.94.A8_VDPAU_.EF.BC.88.E9.80.82.E7.94.A8.E4.BA.8E.E6.96.B0.E6.AC.BEnVidia.E6.98.BE.E5.8D.A1.EF.BC.89)
-        *   [4.1.1 1\. 使用配置文件](#1._.E4.BD.BF.E7.94.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
-        *   [4.1.2 2\. 使用包装脚本](#2._.E4.BD.BF.E7.94.A8.E5.8C.85.E8.A3.85.E8.84.9A.E6.9C.AC)
-    *   [4.2 Translucent Video with radeon and Composite enabled](#Translucent_Video_with_radeon_and_Composite_enabled)
-    *   [4.3 Smplayer无图像](#Smplayer.E6.97.A0.E5.9B.BE.E5.83.8F)
-    *   [4.4 Transparent SMPlayer in Gnome with Composite enabled](#Transparent_SMPlayer_in_Gnome_with_Composite_enabled)
-    *   [4.5 播放流媒体文件](#.E6.92.AD.E6.94.BE.E6.B5.81.E5.AA.92.E4.BD.93.E6.96.87.E4.BB.B6)
-    *   [4.6 启用dvdnav支持](#.E5.90.AF.E7.94.A8dvdnav.E6.94.AF.E6.8C.81)
-    *   [4.7 使用jackd处理音频](#.E4.BD.BF.E7.94.A8jackd.E5.A4.84.E7.90.86.E9.9F.B3.E9.A2.91)
-    *   [4.8 无法打开名称含空格的文件](#.E6.97.A0.E6.B3.95.E6.89.93.E5.BC.80.E5.90.8D.E7.A7.B0.E5.90.AB.E7.A9.BA.E6.A0.BC.E7.9A.84.E6.96.87.E4.BB.B6)
-    *   [4.9 播放DVD](#.E6.92.AD.E6.94.BEDVD)
+*   [2 图形前端](#.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
+*   [3 浏览器整合](#.E6.B5.8F.E8.A7.88.E5.99.A8.E6.95.B4.E5.90.88)
+    *   [3.1 Firefox 和 Chromium](#Firefox_.E5.92.8C_Chromium)
+    *   [3.2 Konqueror](#Konqueror)
+*   [4 配置](#.E9.85.8D.E7.BD.AE)
+*   [5 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [5.1 启用 VDPAU （适用于新款nVidia显卡）](#.E5.90.AF.E7.94.A8_VDPAU_.EF.BC.88.E9.80.82.E7.94.A8.E4.BA.8E.E6.96.B0.E6.AC.BEnVidia.E6.98.BE.E5.8D.A1.EF.BC.89)
+        *   [5.1.1 1\. 使用配置文件](#1._.E4.BD.BF.E7.94.A8.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6)
+        *   [5.1.2 2\. 使用包装脚本](#2._.E4.BD.BF.E7.94.A8.E5.8C.85.E8.A3.85.E8.84.9A.E6.9C.AC)
+    *   [5.2 Translucent Video with radeon and Composite enabled](#Translucent_Video_with_radeon_and_Composite_enabled)
+    *   [5.3 Smplayer无图像](#Smplayer.E6.97.A0.E5.9B.BE.E5.83.8F)
+    *   [5.4 Transparent SMPlayer in Gnome with Composite enabled](#Transparent_SMPlayer_in_Gnome_with_Composite_enabled)
+    *   [5.5 播放流媒体文件](#.E6.92.AD.E6.94.BE.E6.B5.81.E5.AA.92.E4.BD.93.E6.96.87.E4.BB.B6)
+    *   [5.6 启用dvdnav支持](#.E5.90.AF.E7.94.A8dvdnav.E6.94.AF.E6.8C.81)
+    *   [5.7 使用jackd处理音频](#.E4.BD.BF.E7.94.A8jackd.E5.A4.84.E7.90.86.E9.9F.B3.E9.A2.91)
+    *   [5.8 无法打开名称含空格的文件](#.E6.97.A0.E6.B3.95.E6.89.93.E5.BC.80.E5.90.8D.E7.A7.B0.E5.90.AB.E7.A9.BA.E6.A0.BC.E7.9A.84.E6.96.87.E4.BB.B6)
+    *   [5.9 播放DVD](#.E6.92.AD.E6.94.BEDVD)
 
 ## 安装
 
-MPlayer 可以通过[官方软件仓库](/index.php/Official_repositories "Official repositories")中的三个不同的软件包获得：
-
-*   [mplayer](https://www.archlinux.org/packages/?name=mplayer): 标准软件包
 *   [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/): 启用 VAAPI 的版本
 *   [mplayer2](https://aur.archlinux.org/packages/mplayer2/)：MPlayer 的一个分支。区别请参考 [MPlayer2 vs MPlayer](http://www.mplayer2.org/differences/).
 
@@ -39,9 +33,27 @@ MPlayer 可以通过[官方软件仓库](/index.php/Official_repositories "Offic
 *   [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)
 *   [mplayer2-git](https://aur.archlinux.org/packages/mplayer2-git/)
 
-## 附加安装组件
+*   **[MPlayer](/index.php/MPlayer "MPlayer")** — 官方软件包
 
-### 图形前端
+	[https://mplayerhq.hu/](https://mplayerhq.hu/) || [mplayer](https://www.archlinux.org/packages/?name=mplayer)
+
+其他版本：
+
+*   **MPlayer-VAAPI** — 启用 VAAPI 的版本
+
+	[http://gitorious.org/vaapi/mplayer](http://gitorious.org/vaapi/mplayer) || [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)
+
+*   **MPlayer-svn** — 开发版本
+
+	|| [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)
+
+*   **MPlayer2** — MPlayer 的一个分支
+
+	[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/)
+
+**注意:** *mplayer2* 的开发已经停止，推荐使用 [mpv](/index.php/Mpv "Mpv")，mpv 更注重速度和开发质量，这会破坏兼容性，使用前请注意一下它们的 [差异](https://github.com/mpv-player/mpv/blob/master/DOCS/mplayer-changes.rst)。
+
+## 图形前端
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — MPlayer 的Qt前端，外加一些补丁。
 
@@ -59,95 +71,31 @@ MPlayer 可以通过[官方软件仓库](/index.php/Official_repositories "Offic
 
 	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://www.archlinux.org/packages/?name=kmplayer)
 
-*   **Xt7-Player** — Gambas编写的MPlayer 图形界面，有大量功能。
-
-	[http://xt7-player.sourceforge.net/xt7forum/](http://xt7-player.sourceforge.net/xt7forum/) || [xt7-player](https://aur.archlinux.org/packages/xt7-player/)
-
-### 浏览器整合
+## 浏览器整合
 
 要让MPlayer控制浏览器的影音播放，请安装以下内容：
 
-#### Firefox 和 Chromium
+### Firefox 和 Chromium
 
-[官方软件仓库](/index.php/Official_repositories "Official repositories")提供了[gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer) 软件包。
+[官方软件仓库](/index.php/Official_repositories "Official repositories")提供了[gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer) 软件包，依赖于 [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)，这个软件还提供了完整的图形前端。
 
-**注意:** 依赖于gnome-mplayer图形前端。
+### Konqueror
 
-#### Konqueror
+[AUR](/index.php/AUR "AUR") 中的 [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) 软件包提供了Konqueror 插件，这个软件包也提供了完整的 mplayer 图形前端。
 
-[AUR](/index.php/AUR "AUR") 中的 [kmplayer](https://www.archlinux.org/packages/?name=kmplayer) 软件包提供了Konqueror 插件。
+## 配置
 
-**注意:** 亦提供完整的mplayer图形前端。
+系统全局配置文件位于`/etc/mplayer/`，用户配置文件位于`~/.mplayer/`。
 
-## 使用
+`/etc/mplayer/` 下默认包含：
 
-### 配置
+*   `codecs.conf` - 解码器配置文件.
+*   `example.conf` - mplayer.conf 示例，要进行配置，需要安装之后将此示例文件复制为 mplayer.conf.
+*   `input.conf` - 快捷键配置.
 
-系统全局配置文件是`/etc/mplayer/mplayer.conf`，用户配置文件是`~/.mplayer/config`。`/etc/mplayer/example.conf`提供了配置文件范例。
+`~/.mplayer/` 下默认包含一个 *config* 文件.
 
-一个配置文件范例：
-
- `/etc/mplayer/example.conf` 
-```
-# 应用于所有文件类型的默认设置
-[default]
-# 使用X11输出影像
-vo=xv
-# 使用alsa输出音频
-ao=alsa
-# ao=oss # 使用OSS
-# 使用6声道
-channels = 6
-# 字幕占据3%屏幕空间
-subfont-text-scale = 3
-# 从不使用字体配置
-nofontconfig = 1
-# 当图像不适合屏幕长宽比时添加黑边
-# 宽屏用户
-vf-add=expand=::::1:16/9:16
-# 非宽屏用户
-#vf-add=expand=::::1:4/3:16
-
-#profile for up-mixing two channels audio to six channels
-# use -profile 2chto6ch to activate
-[2chto6ch]
-af-add=pan=6:1:0:.4:0:.6:2:0:1:0:.4:.6:2
-
-#profile to down-mixing six channels audio to two channels
-# use -profile 6chto2ch to activate
-[6chto2ch]
-af-add=pan=2:0.7:0:0:0.7:0.5:0:0:0.5:0.6:0.6:0:0
-
-# 播放时禁用屏保
-heartbeat-cmd="xscreensaver-command -deactivate &" # stop xscreensaver
-stop-xscreensaver="yes" # stop gnome-screensaver
-```
-
-### 按键绑定
-
-此处列举了最基本的Mplayer按键操作，详细信息请阅读`man mplayer`
-
-| 按键 | 功能 |
-| p | 暂停/播放 |
-| 空格 | 暂停/播放 |
-| Backspace | 使用dvdnav时返回菜单 |
-| 左方向键 | 后退10秒 |
-| 右方向键 | 快进10秒 |
-| 下方向键 | 后退1分钟 |
-| 上方向键 | 快进1分钟 |
-| < | 打开播放列表前一项 |
-| > | 打开播放列表后一项 |
-| m | 静音 |
-| 0 | 提升音量 |
-| 9 | 降低音量 |
-| f | 切换全屏 |
-| o | 切换OSD状态 |
-| j | 打开/关闭字幕 |
-| `I` | 显示文件名 |
-| 1, 2 | 调整对比度 |
-| 3, 4 | 调整亮度 |
-| j | 使用下一个可用字幕 |
-| # | 使用下一个可用音轨 |
+参考 [MPlayer 配置示例](http://mplayerhq.hu/DOCS/man/en/mplayer.1.html#CONFIGURATION%20FILES) 和 `man mplayer`.
 
 ## 提示与技巧
 

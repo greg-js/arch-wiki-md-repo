@@ -38,7 +38,7 @@
 你至少需要一个支持你所想用的语言的输入法。可用的输入法包括：
 
 *   ibus-anthy: 一个日文输入法引擎，基于[anthy](https://www.archlinux.org/packages/?name=anthy)。
-*   ibus-pinyin: 一个智能中文语音输入法引擎，支持汉语拼音与注音符号。设计者为Ibus的主要作者，而且有许多的高级功能（如英文拼错修改）。
+*   ~~ibus-pinyin: 一个智能中文语音输入法引擎，支持汉语拼音与注音符号。设计者为Ibus的主要作者，而且有许多的高级功能（如英文拼错修改）。~~ 该软件暂时没有维护，而且最新的 ibus 引擎上部分功能不能使用。作为替代，请使用[ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin)。
 *   ibus-rime:一个强大的智能中文输入法,支持拼音、注音或者没有音调的拼音、双拼、粤拼、中州韵、仓颉和五笔86。
 *   ibus-chewing:一个智能中文语音输入法引擎，支持注音符号，基于[libchewing](https://www.archlinux.org/packages/?name=libchewing)。
 *   ibus-hangul: 一个韩文输入法，基于[libhangul](https://www.archlinux.org/packages/?name=libhangul)。
@@ -55,7 +55,7 @@ $ pacman -Ss ^ibus-*
 
 ```
 
-其他软包也供给于[AUR](/index.php/AUR "AUR").
+其他软包也供给于[AUR](/index.php/AUR "AUR")。
 
 ### 初始安装
 
@@ -77,7 +77,7 @@ IBus has been started! If you cannot use IBus, please add below lines in $HOME/.
 
 ```
 
-**注意:** 虽然Ibus使用一个后台程序，但是它不是被/etc/rc.conf中的DAEMONS（后台程序）阵列管理的那种后台程序：它当普通用户运行，并你登录时，它会启动。
+**注意:** 虽然Ibus使用一个后台程序，但是它不是被*systemd*管理的那种后台程序：普通用户也可以运行，当你登录时，它会启动。
 
 **注意:** 但是，如果ibus尚未启动，先将那些"export"的代码复制到$HOME/.xprofile，并将这行代码加到该文件：“ibus-daemon -x -d”,再重新登录。
 
@@ -94,20 +94,22 @@ $ qtconfig-qt4
 
 ### GNOME
 
-GNOME现在已经默认集成了IBus， 所以只要安装你需要的输入法引擎并在*Region & Language* 添加输入源. 默认切换输入法的快捷键是 `Super+space`; 你可以在终端输入
+GNOME现在已经默认集成了IBus， 所以你只需要安装的输入法引擎并在*Region & Language* 添加输入源。默认切换输入法的快捷键是 `Super+space`; 你可以在终端输入
 
 ```
 $ ibus-setup
 
 ```
 
-进入设置页面来修改.
+进入设置页面来修改。
 
 ## 配置
 
 **注意:** 如果你想输入汉、日、韩、越南文字，需要安装[东亚字体](/index.php/Fonts_FAQ#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese "Fonts FAQ")。
 
-默认的"General"（常规）设置应该可以用，但是点击“Input Methods"(输入法）， 在键下拉式列表框中选择你的输入法之后，点击“Add"（添加）。 Ibus一配置好，就可以按Ctrl+Space使用（按多次为多语言转换）。在每个窗口当中，Ibus会记住你所用的输入法，所以每个窗口都需要重新启动。 你可以超驰这种行为。在系统托盘的图符上点击右键，选择“Preferences"(首选项）,然后点击“Advanced"(高级)的标签即可。
+默认的 "General"（常规）设置应该可以用，但是最好点击“Input Methods”（输入法），在下拉式列表框中选择你的输入法，点击“Add"（添加）。 Ibus 配置好后，可以按 Ctrl+Space 使用（按多次为在已安装语言之间切换）。在每个窗口当中，Ibus 会记住你所用的输入法，所以每个新打开的窗口都需要重新启动。 你可以置换这个特性，在系统托盘的图符上点击右键，选择“Preferences“（首选项）,然后点击“Advanced”（高级）的标签即可。
+
+**注意:** IBus 默认覆盖 [Xmodmap](/index.php/Xmodmap "Xmodmap") 的设置。你可以禁用这个特性，在”references”（首选项）中点击“Advanced”（高级），勾选“Use system keyboard layout”选项。
 
 ## 小贴士及技巧
 
@@ -116,7 +118,7 @@ $ ibus-setup
 当使用 ibus-pinyin时,
 
 *   首先用拼音（无声调）打你想输入的字。
-*   反复地按上和下选择一个字（如果有必要，启程前往下一页）
+*   反复地按上和下选择一个字（如果有必要，启程前往下一页）。
 *   按Space使用一个字。
 *   你也可以用上页和下页，并使用1-5的数字键选择你需要的字。
 *   你可以一次输入组成一个词或一条短语的若干字（如"zhongwen"可以输入"中文"). ibus-pinyin会记住你最经常打的字，并渐渐做适合你的打字配置文件的建议。
@@ -125,7 +127,7 @@ $ ibus-setup
 
 ### Kimpanel
 
-目前IBus的主界面只支持GTK，[Kimpanel](https://www.archlinux.org/packages/?name=Kimpanel) 提供了原生的 Qt/KDE 输入界面。 但是，目前kimpanel在Arch Linux环境下因并不能很好的工作（部分原因是[FS#19580](https://bugs.archlinux.org/task/19580)），因此需要额外地配置一下。
+目前IBus的主界面只支持GTK，[Kimpanel](https://www.archlinux.org/packages/?name=Kimpanel) 提供了原生的 Qt/KDE 输入界面。 但是，目前 kimpanel 在Arch Linux 环境下因并不能很好地工作（部分原因是[FS#19580](https://bugs.archlinux.org/task/19580)），因此需要额外地配置一下。
 
 安装Kimpanel:
 
@@ -134,7 +136,7 @@ $ ibus-setup
 
 ```
 
-下载和你的KDE版本对应的 kdeplasma-addons 的源文件，并解压缩。
+下载和你的 KDE 版本对应的 kdeplasma-addons 的源文件，并解压缩。
 
 ```
 $ wget -c [http://download.kde.org/stable/4.x.x/src/kdeplasma-addons-4.x.x.tar.bz2](http://download.kde.org/stable/4.x.x/src/kdeplasma-addons-4.x.x.tar.bz2)
@@ -228,9 +230,9 @@ $ ibus-setup
 
 ### rxvt-unicode
 
-如果有ibus与rxvt-unicode包的问题，以下的步骤应该将它解决好。
+如果有 ibus 与 *rxvt-unicode* 包的问题，以下的步骤应该能够解决。
 
-将以下的两行代码添加到你的.Xdefaults文件（可能不需要，先尝试，如果问题出现，再添加代码）：
+将以下的两行代码添加到你的 `~/.Xresources` 文件（可能不需要，先尝试，如果问题出现，再添加代码）：
 
 ```
   URxvt.inputMethod: ibus
@@ -245,11 +247,11 @@ $ ibus-setup
 
 ```
 
-如果你自动地开始ibus-daemon（如在～/.xinitrc或~/.xsession中),但是以前用过没有'--xim'选项的'ibus-daemon &' 命令，先保证已经将已存在的流程杀掉，再尝试新命令。
+如果 ibus-daemon 自动开启（如在 `~/.xinitrc` 或 `~/.xsession` 中)，但是以前执行 `ibus-daemon &` 没有用 `--xim` 选项，确保先结束已打开的进程，再尝试新命令。
 
 ### GTK 应用程序
 
-有些用户在GTK应用程序下使用输入法时会因为无法找到gtk.immodules文件而出现问题。在$HOME/.bashrc中加入
+有些用户在 GTK 应用程序下使用输入法时会因为无法找到g tk.immodules 文件而出现问题。在 $HOME/.bashrc中加入
 
 ```
  (gtk2) export GTK_IM_MODULE_FILE=/etc/gtk-2.0/gtk.immodules
@@ -271,7 +273,7 @@ $ ibus-setup
 
 你可以安装 [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin)。
 
-如需 ibus 随 gnome 启动，把这些加入 ~/.profile 后重启 gnome。
+如需 ibus 随 gnome 启动，把这些加入 `~/.profile` 后重启 gnome。
 
 ```
    export GTK_IM_MODULE=ibus

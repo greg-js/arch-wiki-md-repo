@@ -225,27 +225,41 @@ Verify the settings for VA-API by running `vainfo`, which is provided by [libva]
 
  `$ vainfo` 
 ```
-libva info: VA-API version 0.39.0
+libva info: VA-API version 0.39.4
 libva info: va_getDriverName() returns 0
 libva info: Trying to open /usr/lib/dri/i965_drv_video.so
 libva info: Found init function __vaDriverInit_0_39
 libva info: va_openDriver() returns 0
-vainfo: VA-API version: 0.39 (libva 1.7.0)
-vainfo: Driver version: Intel i965 driver for Intel(R) Sandybridge Mobile - 1.7.0
+vainfo: VA-API version: 0.39 (libva 1.7.3)
+vainfo: Driver version: Intel i965 driver for Intel(R) Skylake - 1.7.3
 vainfo: Supported profile and entrypoints
-      VAProfileMPEG2Simple            : VAEntrypointVLD
-      VAProfileMPEG2Main              : VAEntrypointVLD
-      VAProfileH264ConstrainedBaseline: VAEntrypointVLD
-      VAProfileH264ConstrainedBaseline: VAEntrypointEncSlice
-      VAProfileH264Main               : VAEntrypointVLD
-      VAProfileH264Main               : VAEntrypointEncSlice
-      VAProfileH264High               : VAEntrypointVLD
-      VAProfileH264High               : VAEntrypointEncSlice
-      VAProfileH264StereoHigh         : VAEntrypointVLD
-      VAProfileVC1Simple              : VAEntrypointVLD
-      VAProfileVC1Main                : VAEntrypointVLD
-      VAProfileVC1Advanced            : VAEntrypointVLD
-      VAProfileNone                   : VAEntrypointVideoProc
+      VAProfileMPEG2Simple            :	VAEntrypointVLD
+      VAProfileMPEG2Simple            :	VAEntrypointEncSlice
+      VAProfileMPEG2Main              :	VAEntrypointVLD
+      VAProfileMPEG2Main              :	VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline:	VAEntrypointVLD
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline:	VAEntrypointEncSliceLP
+      VAProfileH264Main               :	VAEntrypointVLD
+      VAProfileH264Main               :	VAEntrypointEncSlice
+      VAProfileH264Main               :	VAEntrypointEncSliceLP
+      VAProfileH264High               :	VAEntrypointVLD
+      VAProfileH264High               :	VAEntrypointEncSlice
+      VAProfileH264High               :	VAEntrypointEncSliceLP
+      VAProfileH264MultiviewHigh      :	VAEntrypointVLD
+      VAProfileH264MultiviewHigh      :	VAEntrypointEncSlice
+      VAProfileH264StereoHigh         :	VAEntrypointVLD
+      VAProfileH264StereoHigh         :	VAEntrypointEncSlice
+      VAProfileVC1Simple              :	VAEntrypointVLD
+      VAProfileVC1Main                :	VAEntrypointVLD
+      VAProfileVC1Advanced            :	VAEntrypointVLD
+      VAProfileNone                   :	VAEntrypointVideoProc
+      VAProfileJPEGBaseline           :	VAEntrypointVLD
+      VAProfileJPEGBaseline           :	VAEntrypointEncPicture
+      VAProfileVP8Version0_3          :	VAEntrypointVLD
+      VAProfileVP8Version0_3          :	VAEntrypointEncSlice
+      VAProfileHEVCMain               :	VAEntrypointVLD
+      VAProfileHEVCMain               :	VAEntrypointEncSlice
 
 ```
 

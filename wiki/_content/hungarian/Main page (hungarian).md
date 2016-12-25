@@ -56,6 +56,6 @@ Az ArchWiki kategóriák listájáért látogasd meg a **[Tartalomjegyzéket](/i
 
 ## Segítség
 
-Az ArchWiki oldalak egy sajátos konvenciót követnek, így ha gondot okoz számodra az ArchWiki olvasása, vagy néhány utasítás megértése, akkor tisztásásképpen lásd a [Segítség:Olvasás](/index.php/Help:Reading "Help:Reading") oldalt.
+Az ArchWiki oldalak egy sajátos konvenciót követnek, így ha gondot okoz számodra az ArchWiki olvasása, vagy néhány utasítás megértése, akkor tisztázásképpen lásd a [Segítség:Olvasás](/index.php/Help:Reading "Help:Reading") oldalt.
 
 Ha valami konkrét információra lenne szükséged, használd a bal oldalon lévő keresőmezőt. Használhatod kedvenc webes keresőmotorodat is, ami valószínűleg biztosít egy speciális szintaxist az eredmények megadott webhelyre történő korlátozásához (általában a `site:wiki.archlinux.org` hozzáfűzése a keresési kifejezéshez elég). Lásd a [Segítség:Keresés](/index.php/Help:Searching "Help:Searching") oldalt további tippekért.

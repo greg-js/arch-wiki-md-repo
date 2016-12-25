@@ -15,6 +15,7 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
     *   [3.3 Logitech touchpad keyboard K400r with unifying receiver M325](#Logitech_touchpad_keyboard_K400r_with_unifying_receiver_M325)
     *   [3.4 Solaar 'Permission denied'](#Solaar_.27Permission_denied.27)
     *   [3.5 Wireless Keyboard doesn't work while booting (can't enter luks passphrase)](#Wireless_Keyboard_doesn.27t_work_while_booting_.28can.27t_enter_luks_passphrase.29)
+    *   [3.6 Update firmware](#Update_firmware)
 
 ## Installation
 
@@ -161,3 +162,7 @@ and recreate the initrd for the kernel:
 # mkinitcpio -p linux
 
 ```
+
+### Update firmware
+
+As of December 2016 it does not seem possible to update the firmware of a Logitech Unifying device on Linux.

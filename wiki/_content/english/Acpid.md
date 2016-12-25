@@ -257,8 +257,8 @@ In addition to rule files, acpid accepts connections on a UNIX domain socket, by
 coproc acpi_listen
 trap 'kill $COPROC_PID' EXIT
 
-while read -u ${COPROC[0]} -a event; do
-    *handler.sh* ${event[@]}
+while read -u "${COPROC[0]}" -a event; do
+    *handler.sh* "${event[@]}"
 done
 
 ```

@@ -102,21 +102,21 @@ $ timedatectl status | grep local
 
 如果同时安装了 Windows 操作系统（[默认使用地方时](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)），那么一般 RTC 会被设置为地方时。Windows 其实也能处理 UTC，需要[修改注册表](#Windows_.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_UTC)。建议让 Windows 使用 UTC，而非让 Linux 使用地方时。Windows 使用 UTC 后，请记得禁用 Windows 的时间同步功能，以防 Windows 错误设置硬件时间。如上文所说，Linux 可以使用[NTP服务](/index.php/NTP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NTP (简体中文)")来在线同步硬件时钟。
 
-使用 `regedit`,输入如下 DWORD 值。
+使用 `regedit`,新建如下 DWORD 值，并将其值设为十六进制的 `1`。
 
 ```
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation\RealTimeIsUniversal
 
 ```
 
-用管理员权限启动命令行：
+也可以用管理员权限启动命令行来完成：
 
 ```
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
 
 ```
 
-如果上面命令不起作用，使用的是 Windows 64位系统，将 `DWORD` 修改为 `QWORD`。
+如果以上操作不起作用，并且你使用的是 Windows 64位系统，将 `DWORD` 修改为 `QWORD`。
 
 如果 Windows 要求根据夏令时更新时钟，可以允许。时钟仍然是 UTC，仅是显示时间会改变。
 

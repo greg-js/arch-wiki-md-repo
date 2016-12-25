@@ -15,6 +15,9 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
         *   [1.4.2 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
         *   [1.4.3 OpenVPN considerations](#OpenVPN_considerations)
 *   [2 Managing Containers](#Managing_Containers)
+    *   [2.1 Basic usage](#Basic_usage)
+    *   [2.2 Advanced usage](#Advanced_usage)
+        *   [2.2.1 LXC clones](#LXC_clones)
 *   [3 Running Xorg programs](#Running_Xorg_programs)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 root login fails](#root_login_fails)
@@ -177,6 +180,8 @@ Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the containe
 
 ## Managing Containers
 
+### Basic usage
+
 To list all installed LXC containers:
 
 ```
@@ -217,6 +222,31 @@ To attach to a container:
 ```
 
 It works nearly the same as lxc-console, but you are automatically accessing root prompt inside the container, bypassing login.
+
+### Advanced usage
+
+#### LXC clones
+
+Users with a need to run multiple identical containers can simplify administrative overhead (user management, system updates, etc.) by using snapshots. The strategy is to setup and keep up-to-date a single base container, then, as needed, clone (snapshot) it. The power in this strategy is that the disk space and system overhead are truly minimized since the snapshots use an overlayfs mount to only write out to disk, only the differences in data. The base system is read-only but changes to it in the snapshots are allowed via the overlayfs.
+
+One caveat to this setup is that the base lxc cannot be running when snapshots are taken.
+
+For example, setup a container as outlined above. We'll call it "base" for the purposes of this guide. Now create 2 snapshots of "base" which we'll call "snap1" and "snap2" with these commands:
+
+```
+# lxc-copy -n base -N snap1 -B overlayfs -s
+# lxc-copy -n base -N snap2 -B overlayfs -s
+
+```
+
+**Note:** If a static IP was defined for the "base" lxc, that will need to manually changed in the config for "snap1" and for "snap2" before starting them. If the process is to be automated, a script using sed can do this automatically although this is beyond the scope of this wiki section.
+
+The snapshots can be started/stopped like any other container. Users can optionally destroy the snapshots and all new data therein with the following command. Note that the underlying "base" lxc is untouched:
+
+```
+# lxc-destroy -n snap1 -f
+
+```
 
 ## Running Xorg programs
 

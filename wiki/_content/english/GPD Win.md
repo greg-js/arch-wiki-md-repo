@@ -64,7 +64,7 @@ No fix found yet. Device uses the Intel Battery Management Device INT33FE. These
 
 #### Rotating X Session
 
-Because the device uses a phone screen, the display has to be rotated to function properly. With current latest kernel (4.9-1) rotating X session (manually with [xrandr](/index.php/Xrandr "Xrandr") or within settings of a desktop environment) will result in a black screen. Current solution is to use an older kernel, like [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) or rotate the screen with xorg.conf **(please, add instructions)**.
+Because the device uses a phone screen, the display has to be rotated to function properly. Before [Linux Bug 191081](https://bugzilla.kernel.org/show_bug.cgi?id=191081) is resolved, rotating X session (manually with [xrandr](/index.php/Xrandr "Xrandr") or within settings of a desktop environment) with a kernel above 4.7.6-1 will result in a black screen. Current solution is to use an older kernel, like [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) or rotate the screen with xorg.conf **(please, add instructions)**.
 
 #### Rotating touch screen
 

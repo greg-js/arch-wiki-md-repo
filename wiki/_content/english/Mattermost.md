@@ -10,10 +10,11 @@ From [Mattermost's homepage:](http://www.mattermost.org/)
 *   [2 Configuration](#Configuration)
     *   [2.1 Setting up the database](#Setting_up_the_database)
         *   [2.1.1 PostgreSQL](#PostgreSQL)
+        *   [2.1.2 MySQL/MariaDB](#MySQL.2FMariaDB)
     *   [2.2 Configuring Mattermost](#Configuring_Mattermost)
 *   [3 Starting mattermost](#Starting_mattermost)
 *   [4 Testing](#Testing)
-*   [5 Useful Tips](#Useful_Tips)
+*   [5 Useful tips](#Useful_tips)
     *   [5.1 TLS/SSL via reverse web-proxy](#TLS.2FSSL_via_reverse_web-proxy)
         *   [5.1.1 TLS/SSL via Lighttpd2](#TLS.2FSSL_via_Lighttpd2)
 
@@ -29,6 +30,8 @@ From [Mattermost's homepage:](http://www.mattermost.org/)
 
 ### Setting up the database
 
+Mattermost requires either [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [MySQL](/index.php/MySQL "MySQL")/MariaDB as database. Follow one of the following sections and then proceed with [#Configuring Mattermost](#Configuring_Mattermost).
+
 #### PostgreSQL
 
 ```
@@ -40,7 +43,7 @@ postgres$ psql
 ```
 postgres=# CREATE DATABASE mattermost;
 postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';
-postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost TO mmuser;
 postgres=# \q
 postgres$ exit
 ```
@@ -53,48 +56,48 @@ psql --host=127.0.0.1 --dbname=mattermost --username=mmuser --password
 ```
  `mattermost=> \q` 
 
+#### MySQL/MariaDB
+
+ `$ mysql -u root -p` 
+```
+CREATE DATABASE mattermost;
+CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
+GRANT ALL ON mattermost.* TO mmuser;
+exit;
+
+```
+
 ### Configuring Mattermost
 
 You'll find the configuration file at `/etc/webapps/mattermost/config.json`.
 
-There are essentially two things you need to change.
+There are essentially two things you need to change, depending on which database you are using.
 
-```
-"DriverName": "mysql"
+The `"DriverName": "..."` setting:
 
-```
+*   For MySQL (default), make sure it is set to `"mysql"`.
+*   For PostgreSQL, set it to `"postgres"` (*not* `postgre**sql**`).
 
-should be changed to use PostgreSQL if that is the case:
+The connection string `"DataSource": "..."` should match your database and user settings:
 
-```
-"DriverName": "postgres"
-
-```
-
-**Note:** Important to note is that it's spelled "postgres" not "postgresql".
-
-And the connection string `"DataSource": "..."` should match your database and user settings
-
-```
-"DataSource": "postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermost?sslmode=disable&connect_timeout=10"
-
-```
+*   For MySQL, set it to something like `"**mmuser**:**mmuser_password**@unix(/run/mysqld/mysqld.sock)/**mattermost**?charset=utf8mb4,utf8"`.
+*   For PostgreSQL, set it to something like `"postgres://**mmuser**:**mmuser_password**@127.0.0.1:5432/**mattermost**?sslmode=disable&connect_timeout=10"`.
 
 **Note:** Be sure to replace `mmuser_password` with whatever password you configured the user to have
 
 ## Starting mattermost
 
-The package provides the `mattermost` service, which can be normally [started](/index.php/Started "Started") and [enabled](/index.php/Enabled "Enabled").
+The package provides `mattermost.service`, which can be normally [started](/index.php/Started "Started") and [enabled](/index.php/Enabled "Enabled").
 
 ## Testing
 
-Open up a browser and navigate to [http://127.0.0.1:8065/](http://127.0.0.1:8065/) and that should give you a mattermost chat startpage.
+Open up a browser and navigate to [http://localhost:8065/](http://localhost:8065/) and that should give you a mattermost chat startpage.
 
-## Useful Tips
+## Useful tips
 
 ### TLS/SSL via reverse web-proxy
 
-Since Mattermost doesn't support self signed TLS/SSL keys in their [Android](/index.php/Android "Android") or [iOS](/index.php?title=IOS&action=edit&redlink=1 "IOS (page does not exist)") app, a good thing to do is to setup a reverse web proxy.
+Since Mattermost doesn't support self signed TLS/SSL keys in their [Android](/index.php/Android "Android") or [iOS](/index.php/IOS "IOS") app, a good thing to do is to setup a reverse web proxy.
 
 Some alterantives are:
 

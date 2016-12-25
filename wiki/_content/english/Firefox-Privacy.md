@@ -18,6 +18,7 @@ This article overviews some useful extensions which enhance security and privacy
     *   [1.13 CanvasBlocker](#CanvasBlocker)
     *   [1.14 Random User Agent](#Random_User_Agent)
     *   [1.15 Privacy Settings](#Privacy_Settings)
+    *   [1.16 Stop Fingerprinting](#Stop_Fingerprinting)
 *   [2 Configuration tweaks](#Configuration_tweaks)
     *   [2.1 Enable tracking protection](#Enable_tracking_protection)
     *   [2.2 Change browser time zone](#Change_browser_time_zone)
@@ -120,6 +121,10 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 ### Privacy Settings
 
 [Privacy Settings](https://addons.mozilla.org/firefox/addon/privacy-settings/) provides a toolbar panel for easily altering Firefox's built-in privacy settings.
+
+### Stop Fingerprinting
+
+[Stop Fingerprinting](https://addons.mozilla.org/firefox/addon/stop-fingerprinting/) disables / modifies some browser APIs that would otherwise allow browser fingerprinting.
 
 ## Configuration tweaks
 

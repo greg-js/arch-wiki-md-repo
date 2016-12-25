@@ -108,43 +108,10 @@ $ pacman -Ss ttf
 
 ### Creating a package
 
-You should give pacman the ability to manage your fonts, which is done by creating an Arch package. These can also be shared with the community in the [AUR](/index.php/AUR "AUR"). Here is an example of how to create a basic package. To learn more about building packages, read [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+You should give pacman the ability to manage your fonts, which is done by creating an Arch package. These can also be shared with the community in the [AUR](/index.php/AUR "AUR"). The packages to install fonts are particularly similar; simply taking an existing [package](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/adobe-source-code-pro-fonts) as template should work well. To learn about how to modify it for your font, please refer to [Creating packages](/index.php/Creating_packages "Creating packages").
 
 The family name of a font file can be aquired with the use of `fc-query` for example: `fc-query -f '%{family[0]}
 ' /path/to/file`. The formatting is described in the FcPatternFormat(3) manual.
-
- `PKGBUILD` 
-```
-pkgname=fontname-fonts
-pkgver=1.0
-pkgrel=1
-pkgdesc="Some description"
-arch=(any)
-depends=(fontconfig xorg-font-utils)
-source=("http://someurl.org/$pkgname.tar.bz2")
-install=$pkgname.install
-
-package() {
-  install -Dm644 $pkgname/font.otf "$pkgdir"/usr/share/fonts/family_name/font.otf
-  install -Dm644 $pkgname/font_bold.otf "$pkgdir"/usr/share/fonts/family_name/font_bold.otf
-}
-
-```
- `fontname-fonts.install` 
-```
-post_install() {
-  fc-cache -s
-}
-
-post_upgrade() {
-  post_install
-}
-
-post_remove() {
-  post_install
-}
-
-```
 
 ### Manual installation
 

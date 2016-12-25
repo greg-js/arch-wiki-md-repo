@@ -107,7 +107,7 @@ In window managers multi-pointer support could mean:
 *   setting the client pointer of a focused window to the pointer that "focused" it
 *   letting move and resize windows simultaneously
 
-As of 26 September 2010, none of major window managers support multi-pointer.
+As of 24 December 2016, only [multicursor-wm](http://multicursor-wm.sourceforge.net/) (development stops around 2011) supports multi-pointer.
 
 ## Useful links
 

@@ -25,7 +25,7 @@ Wake-on-LAN (WOL) is a feature to switch on a computer via a network connection 
 
 ## Hardware settings
 
-The target computer's motherboard and [NIC](https://en.wikipedia.org/wiki/NIC "wikipedia:NIC") have to support Wake-on-LAN. Wireless cards do not support Wake-on-LAN, so the target computer has to be physically connected (i.e. by cable) to router or the source computer.
+The target computer's motherboard and [NIC](https://en.wikipedia.org/wiki/Network_interface_controller "wikipedia:Network interface controller") have to support Wake-on-LAN. Wireless cards do not support Wake-on-LAN, so the target computer has to be physically connected (i.e. by cable) to router or the source computer.
 
 The Wake-on-LAN feature also has to be enabled in the PC's BIOS. Different motherboard manufactures use slightly different language for this feature. Look for terminology such as "PCI Power up", "Allow PCI wake up event" or "Boot from PCI/PCI-E".
 

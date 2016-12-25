@@ -1,8 +1,8 @@
-**man pages**—abbreviation for "manual pages"—are the extensive documentation that comes preinstalled with almost all substantial UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
+**man pages**—abbreviation for "manual pages"—are the form of documentation that is available on almost all UNIX-like operating systems, including Arch Linux. The command used to display them is `man`.
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware info files, GNU's attempt at replacing the traditional man page format.
 
-[less](/index.php/Core_utilities#less "Core utilities") is the default pager used with *man*.
+[man-db](https://www.archlinux.org/packages/?name=man-db) implements *man* on Arch Linux, and [less](/index.php/Core_utilities#less "Core utilities") is the default pager used with *man*.
 
 ## Contents
 
@@ -10,7 +10,7 @@ In spite of their scope, man pages are designed to be self-contained documents, 
 *   [2 Format](#Format)
 *   [3 Searching manuals](#Searching_manuals)
 *   [4 Colored man pages](#Colored_man_pages)
-*   [5 Dynamic page width](#Dynamic_page_width)
+*   [5 Page width](#Page_width)
 *   [6 Reading local man pages](#Reading_local_man_pages)
     *   [6.1 Converting to browser-readable HTML](#Converting_to_browser-readable_HTML)
         *   [6.1.1 mdocml](#mdocml)
@@ -102,7 +102,7 @@ $ man -K password
 
 See [Color output in console#man](/index.php/Color_output_in_console#man "Color output in console").
 
-## Dynamic page width
+## Page width
 
 The man page width is controlled by the `MANWIDTH` environment variable.
 

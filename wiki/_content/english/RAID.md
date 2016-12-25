@@ -161,7 +161,7 @@ Install [mdadm](https://www.archlinux.org/packages/?name=mdadm) from the [offici
 
 **Warning:** These steps erase everything on a device, so type carefully!
 
-To prevent possible issues each device in the RAID should be [securely wiped](/index.php/Securely_wipe_disk "Securely wipe disk"). If the device is being reused or re-purposed from an existing array, erase any old RAID configuration information:
+If the device is being reused or re-purposed from an existing array, erase any old RAID configuration information:
 
 ```
 # mdadm --zero-superblock /dev/<drive>
@@ -175,7 +175,10 @@ or if a particular partition on a drive is to be deleted:
 
 ```
 
-**Note:** Zapping a partition's superblock should not affect the other partitions on the disk.
+**Note:**
+
+*   Zapping a partition's superblock should not affect the other partitions on the disk.
+*   Due to the nature of RAID functionality it is very difficult to [Securely wipe disks](/index.php/Securely_wipe_disk "Securely wipe disk") fully on a running array. Consider whether it is useful to do so before creating it.
 
 ### Create the Partition Table (GPT)
 

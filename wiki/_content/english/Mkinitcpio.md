@@ -203,10 +203,14 @@ A table of common hooks and how they affect image creation and runtime follows. 
 
 <caption>**Current hooks**</caption>
 | busybox | systemd | Installation | Runtime |
-| **base** | *optional for recovery shell* | Sets up all initial directories and installs base utilities and libraries. Always keep this hook as the first hook unless you know what you are doing. Provides a busybox recovery shell when using systemd. | -- |
+| **base** | Sets up all initial directories and installs base utilities and libraries. Always keep this hook as the first hook unless you know what you are doing.
+
+Provides a busybox recovery shell when using **systemd** hook.
+
+ | -- |
 | **udev** | **systemd** | Adds udevd, udevadm, and a small subset of udev rules to your image. | Starts the udev daemon and processes uevents from the kernel; creating device nodes. As it simplifies the boot process by not requiring the user to explicitly specify necessary modules, using it is recommended. |
 | **usr** | Adds support for `/usr` on a separate partition. | Mounts the `/usr` partition after the real root has been mounted. |
-| **resume** | -- | Tries to resume from the "suspend to disk" state. Works with both *swsusp* and *[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")*. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. |
+| **resume** | -- | Tries to resume from the "suspend to disk" state. **resume** hook supports both *swsusp* and *[TuxOnIce](/index.php/TuxOnIce "TuxOnIce")*, **systemd** hook supports only *swsusp*. See [Hibernation](/index.php/Hibernation "Hibernation") for further configuration. |
 | **btrfs** | -- | Sets the required modules to enable [Btrfs](/index.php/Btrfs "Btrfs") for using multiple devices with Btrfs. This hook is not required for using Btrfs on a single device. | Runs `btrfs device scan` to assemble a multi-device Btrfs root file system when **udev** hook or **systemd** hook is not present. The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package is required for this hook. |
 | **autodetect** | Shrinks your initramfs to a smaller size by creating a whitelist of modules from a scan of sysfs. Be sure to verify included modules are correct and none are missing. This hook must be run before other subsystem hooks in order to take advantage of auto-detection. Any hooks placed before 'autodetect' will be installed in full. | -- |
 | **modconf** | Includes modprobe configuration files from `/etc/modprobe.d` and `/usr/lib/modprobe.d` | -- |

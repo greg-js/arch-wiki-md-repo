@@ -87,7 +87,7 @@ coretemp
 
 ## Virtual Terminal Fonts
 
-The 4k resolution causes the default virtual terminal font to be extremely small, one way to resolve this is to install the [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) package and then creating `/etc/vconsole.conf` containing:
+The 4K resolution causes the default virtual terminal font to be extremely small, and the loss of detail caused by the fact that the UX501 uses a false-4K Pentile display instead of a true-4K display can make it even more difficult to read. One way to resolve this is to install the [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) package and then create `/etc/vconsole.conf` containing:
 
 ```
 FONT=ter-v28b
