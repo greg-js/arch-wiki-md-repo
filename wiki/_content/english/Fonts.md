@@ -305,7 +305,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Bitstream Vera Mono](https://en.wikipedia.org/wiki/Bitstream_Vera "wikipedia:Bitstream Vera") ([ttf-bitstream-vera](https://www.archlinux.org/packages/?name=ttf-bitstream-vera))
 *   [Consolas](https://en.wikipedia.org/wiki/Consolas "wikipedia:Consolas") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)) - Windows programming font
 *   [Courier New](https://en.wikipedia.org/wiki/Courier_New "wikipedia:Courier New") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   Cousine ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS replacement for Courier New (metric-compatible)
+*   [Cousine](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) - Chrome/Chromium OS replacement for Courier New (metric-compatible)
 *   [DejaVu Sans Mono](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) - Unicode
 *   [Droid Sans Mono](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/))
 *   [Envy Code R](https://damieng.com/blog/2008/05/26/envy-code-r-preview-7-coding-font-released) ([ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/))
@@ -339,7 +339,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Andika](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=andika) ([ttf-andika](https://aur.archlinux.org/packages/ttf-andika/))
 *   [Arial](https://en.wikipedia.org/wiki/Arial "wikipedia:Arial") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
 *   [Arial Black](https://en.wikipedia.org/wiki/Arial_Black "wikipedia:Arial Black") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   Arimo ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS replacement for Arial (metric-compatible)
+*   [Arimo](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) - Chrome/Chromium OS replacement for Arial (metric-compatible)
 *   [Calibri](https://en.wikipedia.org/wiki/Calibri "wikipedia:Calibri") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Candara](https://en.wikipedia.org/wiki/Candara "wikipedia:Candara") ([ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/))
 *   [Comic Sans](https://en.wikipedia.org/wiki/Comic_Sans "wikipedia:Comic Sans") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
@@ -371,7 +371,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [Liberation Serif](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) - Replacement for Times New Roman, based on Tinos (metric-compatible)
 *   [Linux Libertine](https://en.wikipedia.org/wiki/Linux_Libertine "wikipedia:Linux Libertine") ([ttf-linux-libertine](https://www.archlinux.org/packages/?name=ttf-linux-libertine)) - Unicode: Latin, Greek, Cyrillic, Hebrew
 *   [Times New Roman](https://en.wikipedia.org/wiki/Times_New_Roman "wikipedia:Times New Roman") ([ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/))
-*   Tinos ([ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/) or [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) - Chrome/Chromium OS replacement for Times New Roman (metric-compatible)
+*   [Tinos](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) - Chrome/Chromium OS replacement for Times New Roman (metric-compatible)
 
 #### Unsorted
 

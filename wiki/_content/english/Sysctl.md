@@ -94,7 +94,7 @@ net.ipv4.tcp_syncookies = 1
 ## (not widely supported outside of linux, but conforms to RFC)
 net.ipv4.tcp_rfc1337 = 1
 
-## sets the kernels reverse path filtering mechanism to value 1(on)
+## sets the kernels reverse path filtering mechanism to value 1 (on)
 ## will do source validation of the packet's recieved from all the interfaces on the machine
 ## protects from attackers that are using ip spoofing methods to do harm
 net.ipv4.conf.default.rp_filter = 1
@@ -135,7 +135,7 @@ net.ipv6.conf.all.accept_redirects=0
 
 ## Virtual memory
 
-There are several key parameters to tune the operation of the virtual memory (VM) subsystem of the Linux kernel and the writeout of dirty data to disk. See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt) for more information. For example:
+There are several key parameters to tune the operation of the virtual memory (VM) subsystem of the Linux kernel and the write out of dirty data to disk. See the official [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt) for more information. For example:
 
 *   `vm.dirty_ratio = 3`
 
@@ -149,6 +149,12 @@ As noted in the comments for the parameters, one needs to consider the total amo
 
 *   Consensus is that setting `vm.dirty_ratio` to 10% of RAM is a sane value if RAM is say 1 GB (so 10% is 100 MB). But if the machine has much more RAM, say 16 GB (10% is 1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case is 3 (3% of 16 GB is approximately 491 MB).
 *   Similarly, setting `vm.dirty_background_ratio` to 5 may be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
+
+Another parameter is:
+
+*   `vfs_cache_pressure = 60`
+
+	The value controls the tendency of the kernel to reclaim the memory which is used for caching of directory and inode objects (VFS cache). Lowering it from the default value of 100, we will force the kernel to be less inclined to reclaim VFS cache.
 
 ## MDADM
 

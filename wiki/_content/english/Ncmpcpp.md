@@ -54,16 +54,13 @@ visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
 visualizer_sync_interval = "30" 
 visualizer_in_stereo = "yes"
-#visualizer_type = "wave" (spectrum/wave/wave_filled/ellipse)
-#visualizer_type = "wave_filled" (spectrum/wave/wave_filled/ellipse)
-#visualizer_type = "ellipse" (spectrum/wave/wave_filled/ellipse)
-visualizer_type = "spectrum" (spectrum/wave/wave_filled/ellipse)
+visualizer_type = "spectrum"
 visualizer_look = "+|"
 
 ```
 
 *   **visualizer_sync_interval** - Set the interval for synchronizing the visualizer with the audio output from *mpd*. It should be set to greater than 10 to avoid trying to synchronize too frequently, which freezes the visualization. The recommended value is 30, but it can be reduced if the audio becomes desynced with the visualization.
-*   **visualizer_type** - Set the visualization to either a spectrum/ellipse analyzer or wave/wave filled form.
+*   **visualizer_type** - Set the visualization to either a `spectrum`/`ellipse` analyzer or `wave`/`wave_filled` form.
 *   **visualizer_look** - Set the visualizer's look (string has to be exactly 2 characters long: first one is for wave and wave_filled whereas second for frequency spectrum and ellipse).
 
 ## Basic usage

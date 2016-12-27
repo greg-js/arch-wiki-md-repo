@@ -48,6 +48,7 @@
     *   [7.2 Android Studio: 'failed to create the SD card'](#Android_Studio:_.27failed_to_create_the_SD_card.27)
     *   [7.3 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
     *   [7.4 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
+    *   [7.5 libGL error: failed to load driver: swrast](#libGL_error:_failed_to_load_driver:_swrast)
 
 ## Exploring Android device
 
@@ -650,3 +651,7 @@ If that does not work, then try this:
 rm `find /path/to/android-root -name .repopickle_config`
 
 ```
+
+### libGL error: failed to load driver: swrast
+
+The AVD loaded incorrect version of libstdc++, you can remove the libstdc++.so.6 from Android/Sdk/tools/lib64/libstdc++

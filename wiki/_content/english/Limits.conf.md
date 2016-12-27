@@ -11,7 +11,6 @@ Using `limits.conf`, you can limit how many resources various users and groups a
     *   [2.3 nofile](#nofile)
     *   [2.4 nproc](#nproc)
     *   [2.5 priority](#priority)
-*   [3 See also](#See_also)
 
 ## Syntax
 
@@ -63,8 +62,4 @@ Whatever you set your nproc to, make sure to allow your root user to create as m
 
 The default niceness should generally be 0, but you can set individual users and groups to have different default priorities using this parameter.
 
- `*           soft    priority   0           # Set the default priority to neutral niceness.` 
-
-## See also
-
-[Security](/index.php/Security "Security")
+ `*           soft    priority   0           # Set the default priority to neutral niceness.`

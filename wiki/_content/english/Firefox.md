@@ -18,7 +18,6 @@
     *   [6.2 Font troubleshooting](#Font_troubleshooting)
     *   [6.3 Setting an email client](#Setting_an_email_client)
     *   [6.4 File association](#File_association)
-        *   [6.4.1 File association problems](#File_association_problems)
     *   [6.5 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_.7E.2FDesktop_even_when_this_is_not_desired)
     *   [6.6 Make plugins respect blocked pop-ups](#Make_plugins_respect_blocked_pop-ups)
     *   [6.7 Middle-click errors](#Middle-click_errors)
@@ -224,12 +223,6 @@ Outside the browser, `mailto` links are handled by the `x-scheme-handler/mailto`
 
 See [Default applications](/index.php/Default_applications "Default applications").
 
-#### File association problems
-
-For non-[GNOME](/index.php/GNOME "GNOME") users, Firefox may not associate file types properly or at all (in the "Open With" part of the download dialog). Installing [libgnome](https://www.archlinux.org/packages/?name=libgnome) amends the problem.
-
-See also [[3]](http://alien.slackbook.org/blog/make-firefox-understand-downloaded-files/).
-
 ### Firefox keeps creating ~/Desktop even when this is not desired
 
 Firefox uses `~/Desktop` as the default place for download and upload files. To change it to another folder, set the `XDG_DESKTOP_DIR` option as explained in [XDG user directories](/index.php/XDG_user_directories "XDG user directories").
@@ -342,7 +335,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Javascript context menu does not appear on some sites
 
@@ -358,13 +351,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[5]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[3]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[4]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[5]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[6]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

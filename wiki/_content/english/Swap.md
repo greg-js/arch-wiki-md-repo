@@ -120,7 +120,7 @@ As an alternative to creating an entire partition, a swap file offers the abilit
 
 ##### Swap file creation
 
-As root use `fallocate` to create a swap file the size of your choosing (M = Megabytes, G = Gigabytes). For example, creating a 512 MB swap file:
+As root use `fallocate` to create a swap file the size of your choosing (M = [Mebibytes](https://en.wikipedia.org/wiki/Mebibyte "wikipedia:Mebibyte"), G = [Gibibytes](https://en.wikipedia.org/wiki/Gibibyte "wikipedia:Gibibyte")). For example, creating a 512 MiB swap file:
 
 ```
 # fallocate -l 512M /swapfile

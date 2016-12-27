@@ -14,8 +14,6 @@
     *   [5.1 Automatic resuming from where you left off](#Automatic_resuming_from_where_you_left_off)
     *   [5.2 Hardware acceleration](#Hardware_acceleration)
         *   [5.2.1 Enabling VDPAU](#Enabling_VDPAU)
-            *   [5.2.1.1 Using a configuration file](#Using_a_configuration_file)
-            *   [5.2.1.2 Using a wrapper script](#Using_a_wrapper_script)
         *   [5.2.2 Enabling VA-API](#Enabling_VA-API)
     *   [5.3 Translucent video with Radeon cards and Composite enabled](#Translucent_video_with_Radeon_cards_and_Composite_enabled)
     *   [5.4 Watching streamed video](#Watching_streamed_video)
@@ -138,8 +136,6 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 #### Enabling VDPAU
 
-##### Using a configuration file
-
 Append the following to either the system-wide (`/etc/mplayer/mplayer.conf`) or user-specific (`~/.mplayer/config`) configuration files:
 
 ```
@@ -153,13 +149,7 @@ vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau
 *   The trailing commas are important! They tell MPlayer to fall back on other drivers and codecs should the specified ones not be found.
 *   `-vo` option selects VDPAU video output driver, `-vc` option selects VDPAU video codecs.
 
-**Warning:** The `ffodivxvdpau` codec is only supported by the most recent series of NVIDIA hardware. Consider omitting it based on your specific hardware. See [the NVIDIA page](/index.php/NVIDIA#Pure_Video_HD_.28VDPAU.2FVAAPI.29 "NVIDIA") for more information.
-
-##### Using a wrapper script
-
-The [AUR](/index.php/AUR "AUR") contains a trivial Bash script called [mplayer-vdpau-auto](https://aur.archlinux.org/packages/mplayer-vdpau-auto/) that detects which video codec to use and when to use VDPAU as the video output.
-
-Another simple wrapper is [mplayer-vdpau-shell-git](https://aur.archlinux.org/packages/mplayer-vdpau-shell-git/), which can recover from a VDPAU FATAL error. This wrapper uses the "-include" option to include a VDPAU configuration, so it will ignore any VDPAU specific settings in your `~/.mplayer/config` file.
+**Warning:** The `ffodivxvdpau` codec is only supported by the most recent series of NVIDIA hardware. Consider omitting it based on your specific hardware. See [the NVIDIA page](/index.php/NVIDIA#Pure_Video_HD "NVIDIA") for more information.
 
 #### Enabling VA-API
 

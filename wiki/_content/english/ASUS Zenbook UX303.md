@@ -16,7 +16,7 @@ There is a lot a models but 2 main models, UX303LN with 2 graphic cards (intel &
     *   [2.8 Keyboard backlight](#Keyboard_backlight)
     *   [2.9 Monitor backlight](#Monitor_backlight)
     *   [2.10 Ambient Light Sensor (ALS)](#Ambient_Light_Sensor_.28ALS.29)
-    *   [2.11 QHD monitor](#QHD_monitor)
+    *   [2.11 QHD+ Pentile Display](#QHD.2B_Pentile_Display)
     *   [2.12 Suspend/resume](#Suspend.2Fresume)
     *   [2.13 Battery](#Battery)
     *   [2.14 Microphone](#Microphone)
@@ -162,9 +162,9 @@ The included Ambient Light Sensor can be accessed using the [als-driver-git](htt
 
 Note that the userspace program currently does not work correctly on the UX303 as the reported brightness values differ from the Zenbook Prime.
 
-### QHD monitor
+### QHD+ Pentile Display
 
-Some models include a 3200x1800 screen, which display very tiny characters.
+Some models include a 3200x1800 (faux-3200x1800 RG/BW Pentile) screen, which displays very tiny characters, and can make them difficult to read due to its incomplete subpixel matrix.
 
 Gnome3 is able to work out the correct font size on this display, but other environments and GUI toolkits may need adjustment. See the general [HiDPI](/index.php/HiDPI "HiDPI") wiki page for possible fixes.
 

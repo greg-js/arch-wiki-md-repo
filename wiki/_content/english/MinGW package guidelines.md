@@ -25,19 +25,19 @@ A package for mingw-w64 should be named `mingw-w64-*pkgname*`. If a static varia
 
 Packaging for cross platform packages can be fairly tricky as there are many different build systems and low-level quirks. Take a note of the following things though:
 
-*   always add [mingw-w64-crt](https://www.archlinux.org/packages/?name=mingw-w64-crt) to `depends`
-*   always add [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc) to `makedepends`
+*   always add [mingw-w64-crt](https://www.archlinux.org/packages/?name=mingw-w64-crt) to `depends`, unless it depends on another package which implicitly depends on it
+*   always add [mingw-w64-gcc](https://www.archlinux.org/packages/?name=mingw-w64-gcc) to `makedepends`, unless using [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/) or [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/)
 *   always add `!strip`, `staticlibs` and `!buildflags` to `options`
 *   always use the original `pkgdesc` and append `(mingw-w64)` to the end of `pkgdesc`
 *   always use and follow the original `pkgver` of the official package
-*   always build both 32-bit and 64-bit versions of libraries, unless of course the package can only target, or is meant to only target, 32-bit or 64-bit, or if problems arise building one of the two.
+*   always build both 32-bit and 64-bit versions of libraries
 *   always put all stuff under the `/usr/i686-w64-mingw32` and `/usr/x86_64-w64-mingw32` prefix
 *   always use `any` as the architecture (except the package contains executables which must run on the build system)
 *   always build both shared and static binaries, unless they conflict
-*   always remove Win32 executables (*.exe) if the intended package is a library (`rm "$pkgdir"/usr/${_arch}/bin/*.exe`)
 *   consider removing unneeded documentation (`rm -r $pkgdir/usr/i686-w64-mingw32/share/{doc,info,man}`, `rm -r $pkgdir/usr/x86_64-w64-mingw32/share/{doc,info,man}`)
 *   consider using [mingw-w64-configure](https://aur.archlinux.org/packages/mingw-w64-configure/) for building with configure scripts
 *   consider using [mingw-w64-cmake](https://aur.archlinux.org/packages/mingw-w64-cmake/) for building with CMake
+*   consider using [mingw-w64-qt5-base](https://aur.archlinux.org/packages/mingw-w64-qt5-base/) or [mingw-w64-qt4](https://aur.archlinux.org/packages/mingw-w64-qt4/) for building with QMake
 *   consider using compilation flags `-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions --param=ssp-buffer-size=4` (usually named CFLAGS, CXXFLAGS) when no proper build system is provided
 *   consider explicitly stripping symbols with `${_arch}-strip` in `package()`'s for-loop as demonstrated in the below PKGBUILD examples.
     *   consider using the [find](/index.php/Find "Find") command to iterate over `$pkgdir` since not all DLLs, static libraries, or executables may reside in their appropriate locations.

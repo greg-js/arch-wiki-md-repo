@@ -72,7 +72,7 @@
 | <small>6.4.2.</small> [IRC](/index.php/Category:Internet_Relay_Chat_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Internet Relay Chat (简体中文)") <small>(3)</small> |
 | <small>6.4.3.</small> [网页浏览器](/index.php/Category:Web_browser_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web browser (简体中文)") <small>(5)</small> |
 | <small>6.5.</small> [邮件服务器](/index.php/Category:Mail_server_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mail server (简体中文)") <small>(1)</small> |
-| <small>6.6.</small> [Network configuration](/index.php/Category:Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network configuration (简体中文)") <small>(1)</small> |
+| <small>6.6.</small> [Network configuration](/index.php/Category:Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network configuration (简体中文)") <small>(2)</small> |
 | <small>6.7.</small> [网络共享](/index.php/Category:Network_sharing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Network sharing (简体中文)") <small>(3)</small> |
 | <small>6.8.</small> [代理服务器](/index.php/Category:Proxy_servers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Proxy servers (简体中文)") <small>(3) (同时还属于 [安全](/index.php/Category:Security_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Security (简体中文)"))</small> |
 | <small>6.9.</small> [远程桌面](/index.php/Category:Remote_desktop_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Remote desktop (简体中文)") <small>(2)</small> |

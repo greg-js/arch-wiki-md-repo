@@ -17,7 +17,7 @@ From [docs.saltstack.com](http://docs.saltstack.com/):
 
 ## Installation
 
-Salt is available in [official repositories](/index.php/Official_repositories "Official repositories") as [salt-raet](https://www.archlinux.org/packages/?name=salt-raet) and [salt-zmq](https://www.archlinux.org/packages/?name=salt-zmq).
+Salt is available in [official repositories](/index.php/Official_repositories "Official repositories") as [salt](https://www.archlinux.org/packages/?name=salt).
 
 ## Components of Salt Stack
 

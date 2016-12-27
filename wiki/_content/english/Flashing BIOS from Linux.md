@@ -108,7 +108,7 @@ If you want to flash other flash chips on your mainboard, you will find all opti
 
 ```
 
-**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ﻿).
+**Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [FAQ](https://www.flashrom.org/FAQ).
 
 ## FreeDOS
 

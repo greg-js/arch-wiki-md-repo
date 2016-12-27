@@ -10,7 +10,7 @@ This article assumes you already have a basic understanding of the [Secure Shell
 
 *   [1 Background](#Background)
 *   [2 Generating an SSH key pair](#Generating_an_SSH_key_pair)
-    *   [2.1 Choosing the type of encryption](#Choosing_the_type_of_encryption)
+    *   [2.1 Choosing the authentication key type](#Choosing_the_authentication_key_type)
         *   [2.1.1 RSA](#RSA)
         *   [2.1.2 ECDSA](#ECDSA)
         *   [2.1.3 Ed25519](#Ed25519)
@@ -100,9 +100,9 @@ will add a comment saying which user created the key on which machine and when.
 
 The `-o` switch can also be used to save the private key in the new OpenSSH format, which has increased resistance to brute-force password cracking (but is not supported by versions of OpenSSH prior to 6.5 [released 2014-01-29](https://lwn.net/Articles/583485/)). Use the `-a` switch to specify the number of KDF rounds. According to [ssh-keygen(1)](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html), Ed25519 keys always use the new private key format.
 
-### Choosing the type of encryption
+### Choosing the authentication key type
 
-OpenSSH supports several key exchange algorithms which can be divided in two groups depending on the mathematical properties they exploit:
+OpenSSH supports several signing algorithms (for authentication keys) which can be divided in two groups depending on the mathematical properties they exploit:
 
 1.  [DSA](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm "wikipedia:Digital Signature Algorithm") and [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem) "wikipedia:RSA (cryptosystem)"), which rely on the [practical difficulty](https://en.wikipedia.org/wiki/Integer_factorization#Difficulty_and_complexity "wikipedia:Integer factorization") of factoring the product of two large prime numbers,
 2.  [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm "wikipedia:Elliptic Curve Digital Signature Algorithm") and [Ed25519](https://en.wikipedia.org/wiki/Curve25519 "wikipedia:Curve25519"), which rely on the elliptic curve [discrete logarithm](https://en.wikipedia.org/wiki/Discrete_logarithm "wikipedia:Discrete logarithm") problem. ([example](https://www.certicom.com/index.php/52-the-elliptic-curve-discrete-logarithm-problem))

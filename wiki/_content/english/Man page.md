@@ -125,7 +125,9 @@ Feel free to combine this function with the [color settings](#Colored_man_pages)
 
 Instead of the standard interface, using browsers such as [lynx](https://www.archlinux.org/packages/?name=lynx) and [Firefox](/index.php/Firefox "Firefox") to view man pages allows users to reap info pages' main benefit of hyperlinked text. Alternatives include the following:
 
-*   [KDE](/index.php/KDE "KDE") users can read man pages in Konqueror using `man:<name>`.
+*   [KDE](/index.php/KDE "KDE") users can read man pages in
+    *   Konqueror using `man:<name>`.
+    *   KHelpCenter ([khelpcenter](https://www.archlinux.org/packages/?name=khelpcenter)) in "UNIX manual pages" or by running `khelpcenter man:<name>`.
 *   [xorg-xman](https://www.archlinux.org/packages/?name=xorg-xman) provides a categorized look at man pages in [X](/index.php/X "X").
 *   The [GNOME](/index.php/GNOME "GNOME") Help Browser [yelp](https://www.archlinux.org/packages/?name=yelp) can be used via `yelp man:<name>`.
 

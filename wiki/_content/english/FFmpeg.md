@@ -13,22 +13,21 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [2.5 x265](#x265)
     *   [2.6 Single-pass MPEG-2 (near lossless)](#Single-pass_MPEG-2_.28near_lossless.29)
     *   [2.7 x264: constant rate factor](#x264:_constant_rate_factor)
-    *   [2.8 YouTube](#YouTube)
-    *   [2.9 Two-pass x264 (very high-quality)](#Two-pass_x264_.28very_high-quality.29)
-    *   [2.10 Two-pass MPEG-4 (very high-quality)](#Two-pass_MPEG-4_.28very_high-quality.29)
-        *   [2.10.1 Determining bitrates with fixed output file sizes](#Determining_bitrates_with_fixed_output_file_sizes)
-    *   [2.11 x264 video stabilization](#x264_video_stabilization)
-        *   [2.11.1 First pass](#First_pass)
-        *   [2.11.2 Second pass](#Second_pass)
-    *   [2.12 Subtitles](#Subtitles)
-        *   [2.12.1 Extracting](#Extracting)
-        *   [2.12.2 Hardsubbing](#Hardsubbing)
-    *   [2.13 Volume gain](#Volume_gain)
-    *   [2.14 Extracting audio](#Extracting_audio)
-    *   [2.15 Stripping audio](#Stripping_audio)
-    *   [2.16 Splitting files](#Splitting_files)
-    *   [2.17 Hardware acceleration](#Hardware_acceleration)
-        *   [2.17.1 Intel GPU (VA-API)](#Intel_GPU_.28VA-API.29)
+    *   [2.8 Two-pass x264 (very high-quality)](#Two-pass_x264_.28very_high-quality.29)
+    *   [2.9 Two-pass MPEG-4 (very high-quality)](#Two-pass_MPEG-4_.28very_high-quality.29)
+        *   [2.9.1 Determining bitrates with fixed output file sizes](#Determining_bitrates_with_fixed_output_file_sizes)
+    *   [2.10 x264 video stabilization](#x264_video_stabilization)
+        *   [2.10.1 First pass](#First_pass)
+        *   [2.10.2 Second pass](#Second_pass)
+    *   [2.11 Subtitles](#Subtitles)
+        *   [2.11.1 Extracting](#Extracting)
+        *   [2.11.2 Hardsubbing](#Hardsubbing)
+    *   [2.12 Volume gain](#Volume_gain)
+    *   [2.13 Extracting audio](#Extracting_audio)
+    *   [2.14 Stripping audio](#Stripping_audio)
+    *   [2.15 Splitting files](#Splitting_files)
+    *   [2.16 Hardware acceleration](#Hardware_acceleration)
+        *   [2.16.1 Intel GPU (VA-API)](#Intel_GPU_.28VA-API.29)
 *   [3 Preset files](#Preset_files)
     *   [3.1 Using preset files](#Using_preset_files)
         *   [3.1.1 libavcodec-vhq.ffpreset](#libavcodec-vhq.ffpreset)
@@ -167,26 +166,6 @@ $ ffmpeg -i *video* -c:v libx264 -tune film -preset slow -crf 22 -x264opts fast_
 ```
 
 `-tune` option can be used to [match the type and content of the of media being encoded](http://forum.doom9.org/showthread.php?t=149394).
-
-### YouTube
-
-FFmpeg is very useful to encode videos and strip their size before you upload them on YouTube. The following single line of code takes an input file and outputs a mkv container.
-
-```
-$ ffmpeg -i *video* -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy *output*.mkv
-
-```
-
-For more information see the [forums](https://bbs.archlinux.org/viewtopic.php?pid=1200667#p1200667). You can also create a shell function `ytconvert` which takes the name of the input file as first argument and the name of the .mkv container as second argument. To do so add the following to your `~/.bashrc`:
-
-```
-ytconvert() {
-        ffmpeg -i "$1" -c:v libx264 -crf 18 -preset slow -pix_fmt yuv420p -c:a copy "$2.mkv"
-}
-
-```
-
-See also [Arch Linux forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1200542#p1200542).
 
 ### Two-pass x264 (very high-quality)
 

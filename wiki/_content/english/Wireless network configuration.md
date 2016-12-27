@@ -436,7 +436,7 @@ GUI | Console tools |
 | [netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | No | `netctl`,`wifi-menu` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | Yes | `nmcli`,`nmtui` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | Yes | `wicd-curses` |
-| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes |  ? |  ? | Yes | `wifi-radar` |
+| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes | Yes | No | Yes | `wifi-radar` |
 
 #### Connman
 
@@ -903,6 +903,14 @@ These modules are fully supported in the kernel, but they require additional fir
 
 *   use the `rtap_iface=1` option to enable the radiotap interface
 *   use the `led=1` option to enable a front LED indicating when the wireless is connected or not
+
+Some cards like the **2915ABG** might have problems initializing a connection with [NetworkManager](/index.php/NetworkManager "NetworkManager"). You may use the following in its configuration:
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[device]
+wifi.scan-rand-mac-address=no
+```
 
 #### iwlegacy
 

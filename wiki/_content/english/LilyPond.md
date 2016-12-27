@@ -15,6 +15,8 @@ Lilypond is a Free Software score writing application. Its input is a plain text
 
 ## Example Score
 
+**Warning:** PDF output is broken when using [infinality](/index.php/Infinality "Infinality"). See [this thread](https://bbs.archlinux.org/viewtopic.php?id=195031).
+
 Create a test file like:
 
  `test.ly` 

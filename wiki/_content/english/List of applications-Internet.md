@@ -16,7 +16,7 @@
             *   [1.3.2.2 Blink-based](#Blink-based)
                 *   [1.3.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
                 *   [1.3.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
-                *   [1.3.2.2.3 Others browsers based on Chromium's Content module](#Others_browsers_based_on_Chromium.27s_Content_module)
+                *   [1.3.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
             *   [1.3.2.3 WebKit-based](#WebKit-based)
                 *   [1.3.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.3.2.3.2 Browsers based on webkitgtk/webkitgtk2](#Browsers_based_on_webkitgtk.2Fwebkitgtk2)
@@ -209,6 +209,10 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 ###### Browsers based on qt5-webengine
 
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and Qt WebEngine (or KHTML layout engine), part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
+
+	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
+
 *   **Liri** — A minimalistic material design web browser written for Papyros.
 
 	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
@@ -221,7 +225,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
-###### Others browsers based on Chromium's Content module
+###### Other browsers based on Chromium's Content module
 
 *   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Electron](http://electron.atom.io/) platform.
 
@@ -330,10 +334,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk"). Uses its own layout engine.
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
-
-*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and KHTML layout engine, part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
-
-	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
 
 *   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Featherweight browser written in C, notable for its slowly developing JavaScript support and fast rendering through its own layout engine.
 

@@ -373,25 +373,27 @@ Sound card is `hw:0,0`.
 
 #### Determine sampling rate of the sound card (2/5)
 
+We aim to find the highest sample rate supported by the `hw:0,0` sound card using a *trial-and-error* procedure starting from a low value. When the top value is reached, we got a warning message:
+
  `arecord -f dat -r 60000 -D hw:0,0 -d 5 test.wav` 
 ```
 "Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 60000 Hz, Stereo
-Warning: rate is not accurate (requested = 60000Hz, **got = 96000Hz**)
+Warning: rate is not accurate (requested = 60000Hz, **got = 44100Hz**)
 please, try the plug plugin
 ```
 
-observe, the `got = 96000Hz`. This is the maximum sampling rate of our card.
+observe, the `got = 44100Hz`. This is the maximum sampling rate of our card.
 
 #### Setting the sound card's sampling rate into PulseAudio configuration (3/5)
 
 The default sampling rate in PulseAudio:
 
- `$ grep "default-sample-rate" /etc/pulse/daemon.conf`  `; default-sample-rate = 44100` 
+ `$ grep "default-sample-rate" /etc/pulse/daemon.conf`  `; default-sample-rate = 48000` 
 
-`44100` is disabled and needs to be changed to `96000`:
+`48000` is disabled and needs to be changed to `44100`:
 
 ```
-# sed 's/; default-sample-rate = 44100/default-sample-rate = 96000/g' -i /etc/pulse/daemon.conf
+# sed 's/; default-sample-rate = 48000/default-sample-rate = 44100/g' -i /etc/pulse/daemon.conf
 
 ```
 

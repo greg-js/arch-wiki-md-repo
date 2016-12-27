@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-14，点击[这里](https://wiki.archlinux.org/index.php?title=Mkinitcpio&diff=0&oldid=434079)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-05-14，点击[这里](https://wiki.archlinux.org/index.php?title=Mkinitcpio&diff=0&oldid=459968)可以查看翻译后英文页面的改动。
 
-**mkinitcpio**是新一代[initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")创建工具。
+**mkinitcpio**是新一代[initramfs](https://en.wikipedia.org/wiki/initramfs "wikipedia:initramfs")创建工具。
 
 ## Contents
 
@@ -27,18 +27,20 @@
     *   [5.6 /usr 放到单独分区](#.2Fusr_.E6.94.BE.E5.88.B0.E5.8D.95.E7.8B.AC.E5.88.86.E5.8C.BA)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [6.1 解压缩镜像](#.E8.A7.A3.E5.8E.8B.E7.BC.A9.E9.95.9C.E5.83.8F)
-    *   [6.2 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
-    *   [6.3 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
-    *   [6.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
-    *   [6.5 Standard rescue procedures](#Standard_rescue_procedures)
-        *   [6.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+    *   [6.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
+    *   [6.3 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
+    *   [6.4 Using systemd HOOKS in a LUKS/LVM/resume setup](#Using_systemd_HOOKS_in_a_LUKS.2FLVM.2Fresume_setup)
+    *   [6.5 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
+    *   [6.6 mkinitcpio creates images with all the shared libraries missing](#mkinitcpio_creates_images_with_all_the_shared_libraries_missing)
+    *   [6.7 Standard rescue procedures](#Standard_rescue_procedures)
+        *   [6.7.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
 *   [7 参考资料](#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99)
 
 ## 概览
 
-mkinitcpio是一个用来创建初始化内存盘（initial ramdisk，简称initrd）的bash脚本。摘自[mkinitcpio手册页](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt)：
+mkinitcpio 是一个创建初始内存盘的 bash 脚本。摘自[mkinitcpio手册页](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt)：
 
-	*初始化内存盘本质上是一个很小的运行环境（早期用户空间，early userspace），用于加载一些核心模块，并在init接管启动过程之前准备一些必须的东西，比如加密的根文件系统、在RAID上的根文件系统。使用mkinicpio可以方便地使用自定义的钩子扩展（hooks）、运行时自动检测、以及其他功能。*
+	*初始内存盘本质上是一个很小的运行环境（早期用户空间），用于加载一些核心模块，并在 init 接管启动过程之前做必要的准备。有了这个环境，才能支持加密根文件系统、RAID上的根文件系统等高级功能。mkinicpio 支持自定义的钩子扩展、运行时自动检测以及其他功能。*
 
 从前，内核在[启动过程](/index.php/Boot_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot process (简体中文)")早期（挂载根目录和启动`init`之前）处理一切硬件的检测和初始化。然而，但随着技术的演进，这种做法变得十分繁琐。
 
@@ -64,7 +66,7 @@ mkinitcpio是一个用来创建初始化内存盘（initial ramdisk，简称init
 
 每次升级内核，mkinitcpio都会默认创建两个内存盘镜像：*默认*镜像`/boot/initramfs-linux.img`和*fallback*镜像`/boot/initramfs-linux-fallback.img`。*fallback*镜像和*默认*镜像只有一个区别，就是创建时跳过了**autodetect**钩子扩展，因而它包含更多的内核模块。**autodetect**扩展会探测硬件信息，针对硬件向镜像添加需要的模块，因此缩小了镜像。
 
-在创建初始化内存盘镜像时，可以使用很多不同配置。创建完成后，在启动引导器[配置文件](/index.php/Boot_Loader#Configuration_files "Boot Loader")中添加启动项目，即可使用新镜像。更改mkinitcpio配置后，需要手动重新生成镜像。以Arch默认的内核[linux](https://www.archlinux.org/packages/?name=linux)为例：
+在创建初始化内存盘镜像时，可以使用很多不同配置。创建完成后，在启动引导器[配置文件](/index.php/Boot_Loader "Boot Loader")中添加启动项目，即可使用新镜像。更改mkinitcpio配置后，需要手动重新生成镜像。以Arch默认的内核[linux](https://www.archlinux.org/packages/?name=linux)为例：
 
 ```
 # mkinitcpio -p linux
@@ -129,7 +131,8 @@ mkinitcpio是一个用来创建初始化内存盘（initial ramdisk，简称init
 
 如果模块名称前加上一个“?”问号，那么即使系统无法找到该模块也不会报错。对于自己编译的内核，其中内置了某些模块，该功能可能有用。
 
-**注意:** 如果使用**reiser4**，该模块*必须*放入`MODULES`数组。此外，如果运行mkinitcpio时未加载某些文件系统的模块，而系统启动时又必须使用这些文件系统——比如，LUKS加密密匙文件在**ext2**分区上，而使用mkinitcpio时系统并未挂载任何**ext2**分区——那么该文件系统的模块也必须放在`MODULES`数组。详情参见 [此文](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration")。
+*   如果使用**reiser4**，该模块*必须*放入`MODULES`数组。
+*   如果运行 mkinitcpio 时未加载某些文件系统的模块，而系统启动时又必须使用这些文件系统——比如，LUKS加密密匙文件在**ext2**分区上，而使用mkinitcpio时系统并未挂载任何**ext2**分区——那么该文件系统的模块也必须放在`MODULES`数组。详情参见 [此文](/index.php/Dm-crypt/System_configuration#cryptkey "Dm-crypt/System configuration")。}}
 
 如果挂载root分区时需要上述任一模块，请将其加入`/etc/mkinitcpio.conf`，以避免内核崩溃。
 
@@ -142,16 +145,16 @@ mkinitcpio是一个用来创建初始化内存盘（initial ramdisk，简称init
 这两个选项允许用户添加任何文件到镜像中。`BINARIES`、`FILES`数组指定了要加入内存盘镜像的文件，可以覆盖钩子扩展提供的文件。`BINARIES`中的二进制文件会自动放入一个标准的`PATH`路径，而且会自动加入可执行文件依赖的函数库。`FILES`中的文件则不进行上述处理，直接原样放入镜像。例如：
 
 ```
-FILES="/etc/modprobe.d/modprobe.conf"
-
-```
-
-```
-BINARIES="kexec"
+FILES="/etc/modprobe.d/modprobe.conf /etc/another.conf"
+BINARIES="kexec some_bin"
 
 ```
 
 配置支持多个选项，用空格隔开。
+
+上面的例子添加了两个配置文件：`modprobe.conf` 和 `another.conf` 和两个二进制文件：`kexec` 和 `some_bin`.
+
+所有文件在镜像中的位置和当前系统的位置一致，比如 `modprobe.conf` 会被放到镜像的 `/etc/modprobe.d/`，上层目录会被自动创建。
 
 ### 钩子(HOOKS)
 
@@ -267,17 +270,7 @@ Runtime hooks are found in `/usr/lib/initcpio/hooks`. For any runtime hook, ther
 
 内核支持几种initramfs的压缩方式 - gzip, bzip2, lzma, xz (也被称为 lzma2), lzo 和 lz4。对于大多数使用的情况，gzip, lzop, lz4 提供了基本的压缩大小和解压缩速度的平衡。
 
-```
-COMPRESSION="gzip"
-COMPRESSION="bzip2"
-COMPRESSION="lzma"
-COMPRESSION="lzop"
-COMPRESSION="xz"
-COMPRESSION="lz4"
-
-```
-
-不指定 `COMPRESSION` 选项会导致使用 gzip 压缩的 initramfs 文件。想要创建一个未压缩的镜像，在配置中指定`COMPRESSION=cat` 或者在命令行使用 `-z cat`.
+系统中的 `mkinitcpio.conf` 已经注释掉了各种 `COMPRESSION` 选项，要使用某个压缩方式，请取消前面的注释。不指定 `COMPRESSION` 选项会使用 gzip 压缩的 initramfs 文件。想要创建一个未压缩的镜像，在配置中指定`COMPRESSION=cat` 或者在命令行使用 `-z cat`.
 
 请按照选择的压缩方式安装需要的工具。
 
@@ -426,20 +419,18 @@ BOOTIF=01-A1-B2-C3-D4-E5-F6  # Note the prepended "01-" and capital letters.
 
 ### 使用 lvm
 
-如果你的根设备是在[LVM](/index.php/LVM "LVM") 上，你必须添加 **lvm2** 钩子。请阅读 [这里](/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM "LVM").
+如果你的根设备是在[LVM](/index.php/LVM "LVM") 上，你必须添加 **lvm2** 钩子。请阅读 [这里](/index.php/LVM#Configure_mkinitcpio "LVM").
 
 ### 使用加密根目录
 
-如果使用 [加密 root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), `encrypt` 钩子需要加到 `filesystems` 和其它需要的钩子之前。并且需要一些额外的内核命令参数，请参考 [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration")。
+如果使用 [加密 root](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system")，请参考 [Dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration")。
 
 ### /usr 放到单独分区
 
 如果将 /usr 放在单独分区，必须满足：
 
-*   启用 `mkinitcpio-generate-shutdown-ramfs.service` **或** 添加 `shutdown` 钩子.
 *   添加 `fsck` 钩子，在`/etc/fstab`中将`/usr`的`passno`设置为`0`。这个对其他用户是推荐选项，而对 /usr 单独分区用户是硬性要求。不添加这个钩子，没有此选项，系统不好对`/usr`进行磁盘检查。
 *   从 mkinitcpio 0.9.0 开始: 添加上面的钩子和 `usr` 钩子，它会在 root 挂载后挂载 `/usr` 分区。
-*   在 0.9.0 之前，如果真正 root 中的 `/etc/fstab` 包含 `/usr`，将会自动挂载它, 参考 [Fstab](/index.php/Fstab "Fstab").
 
 ## 疑难解答
 
@@ -472,6 +463,35 @@ $ lsinitcpio -a /boot/initramfs-linux.img
 
 ```
 
+### Recompressing a modified extracted image
+
+After extracting an image as explained above, after modifying it, you can find the command necessary to recompress it. Edit `/usr/bin/mkinitcpio` and change the line as shown below (line 531 in mkinitcpio v20-1.)
+
+```
+#MKINITCPIO_PROCESS_PRESET=1 "$0" "${preset_cmd[@]}"
+MKINITCPIO_PROCESS_PRESET=1 /usr/bin/bash -x "$0" "${preset_cmd[@]}"
+
+```
+
+Then running `mkinitcpio` with its usual options (typically `mkinitcpio -p linux`), toward the last 20 lines or so you will see something like:
+
+```
++ find -mindepth 1 -printf '%P\0'
++ LANG=C
++ bsdcpio -0 -o -H newc --quiet
++ gzip
+
+```
+
+Which corresponds to the command you need to run, which may be:
+
+```
+# find -mindepth 1 -printf '%P\0' | LANG=C bsdcpio -0 -o -H newc --quiet | gzip > /boot/initramfs-linux.img
+
+```
+
+**Warning:** It's a good idea to rename the automatically generated /boot/initramfs-linux.img before you overwrite it, so you can easily undo your changes. Be prepared for making a mistake that prevents your system from booting. If this happens, you will need to boot through the fallback, or a boot CD, to restore your original, run mkinitcpio to overwrite your changes, or fix them yourself and recompress the image.
+
 ### "/dev must be mounted" when it already is
 
 The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd/ is there. If everything else looks fine, it can be "created" manually by:
@@ -485,7 +505,7 @@ The test used by mkinitcpio to determine if /dev is mounted is to see if /dev/fd
 
 ### Using systemd HOOKS in a LUKS/LVM/resume setup
 
-Using `systemd/sd-encrypt/sd-lvm2` **HOOKS** instead of the traditional `encrypt/lvm2/resume` requires different initrd parameters to be passed by your bootloader. See this post on forum for details [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1480241).
+Using `systemd`/`sd-encrypt`/`sd-lvm2` **HOOKS** instead of the traditional `encrypt`/`lvm2`/`resume` requires different initrd parameters to be passed by your [boot loader](/index.php/Boot_loader "Boot loader"). See [this post on forum](https://bbs.archlinux.org/viewtopic.php?pid=1480241) for details.
 
 ### Possibly missing firmware for module XXXX
 
@@ -499,6 +519,10 @@ When initramfs are being rebuild after a kernel update, you might get these two 
 
 These appear to any Arch Linux users, especially those who have not installed these firmware modules. If you do not use hardware which uses these firmwares you can safely ignore this message.
 
+### mkinitcpio creates images with all the shared libraries missing
+
+If your machine fails to boot with an "Attempted to kill init!" kernel panic right off the bat (before any `init` or `systemd`-related messages appear on the screen), and running `lsinitcpio` reveals that all the shared libraries are missing from the images generated in `/boot`, make sure there is a symbolic link at `/usr/lib64` pointing to `/usr/lib`, and rebuild them all.
+
 ### Standard rescue procedures
 
 With an improper initial ram-disk a system often is unbootable. So follow a system rescue procedure like below:
@@ -511,7 +535,6 @@ To fix, first try choosing the [fallback](#Image_creation_and_activation) image 
 
 ## 参考资料
 
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - 用 GRUB 调试
-*   Linux Kernel documentation on [initramfs](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/filesystems/ramfs-rootfs-initramfs.txt;hb=HEAD)
-*   Linux Kernel documentation on [initrd](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob;f=Documentation/initrd.txt;hb=HEAD)
-*   Wikipedia article on [initrd](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd")
+*   [Boot debugging](/index.php/Boot_debugging "Boot debugging") - 启动调试
+*   [initramfs](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/ramfs-rootfs-initramfs.txt?id=HEAD) 内核文档
+*   [initrd](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/plain/Documentation/initrd.txt?id=HEAD) 内核文档

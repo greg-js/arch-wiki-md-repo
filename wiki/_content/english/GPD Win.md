@@ -1,3 +1,5 @@
+[GPD Win](https://www.indiegogo.com/projects/gpd-win-intel-z8700-win-10-os-game-console-laptop#/) is a small (5.5 inch screen) handheld device.
+
 ## Contents
 
 *   [1 Fixes](#Fixes)

@@ -72,7 +72,7 @@
 | <small>4.9.14.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small> |
 | <small>4.9.15.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(12)</small> |
 | <small>4.9.16.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(12)</small> |
-| <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(17)</small> |
+| <small>4.9.17.</small> [Toshiba](/index.php/Category:Toshiba "Category:Toshiba") <small>(18)</small> |
 | <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
 | <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(17)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
@@ -93,7 +93,7 @@
 | <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
 | <small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(23)</small> |
 | <small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>5.8.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(10)</small> |
+| <small>5.8.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small> |
 | <small>5.9.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(8)</small> |
 | <small>5.10.</small> [Network sharing](/index.php/Category:Network_sharing "Category:Network sharing") <small>(13)</small> |
 | <small>5.11.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(10) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
@@ -103,7 +103,7 @@
 | <small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(5)</small> |
 | <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(66)</small> |
-| <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(9)</small> |
+| <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(38)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
@@ -124,7 +124,7 @@
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(74)</small> |
 | <small>6.7.</small> [Internationalization](/index.php/Category:Internationalization "Category:Internationalization") <small>(16)</small> |
 | <small>6.8.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(41)</small> |
-| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
+| <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
 | <small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(2) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(22)</small> |
 | <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(73)</small> |

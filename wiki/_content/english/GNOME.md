@@ -118,9 +118,15 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 #### Wayland sessions
 
-**Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using *startx* and `~/.xinitrc`. For more information, see [Wayland](/index.php/Wayland "Wayland").
+**Note:** as long as not all applications are converted to support wayland, its necessary to still have an X server, provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package. For more information, see [Wayland](/index.php/Wayland "Wayland").
 
-The GNOME Shell Wayland compositor can be started by running `gnome-shell --wayland` in the command line. However, to take advantage of GNOME's session manager, one needs to create a [custom GNOME session](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks"). A desktop file is needed which specifies `gnome-shell --wayland` on the `Exec` line and a GNOME session file is needed which specifies the aforementioned desktop file as a required component (along with `gnome-settings-daemon`). If the session file you created was called `gnome-wayland.session` then you can start the session with `gnome-session --session=gnome-wayland`.
+Starting manual is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. This can be embedded e.g. in `.bash_profile`, so on login to tty1 gnome is started. There is no other graphical tool running then as different user, as it would when using gdm.
+
+```
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
+fi
+```
 
 ### GNOME applications in Wayland
 

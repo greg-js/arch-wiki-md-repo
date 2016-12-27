@@ -288,28 +288,42 @@ LABEL="persistent_printer_end"
 
 #### USB flash device
 
-USB flash devices usually contain partitions, and partition labels are one way to have a static naming for a device. Another way is to create a udev rule for it.
+USB flash devices usually contain partitions, and partition labels are one way to have a static naming for a device. Another way is to create a udev rule to add symlinks in /dev/.
 
-Get the serial number and USB ids from the USB flash drive (if you use multiple of the same make, you might have to check the serial is indeed unique):
+Get the serial number and USB ids from the USB flash drive (if you use multiple of the same make, you might have to check the serial is indeed unique). This command walks from partition up the chain of devices. A rule to match can be composed by the attributes of the device and the attributes from one single parent device:
 
+ `# udevadm info --name=/dev/sdc1 --attribute-walk` 
 ```
-lsusb -v | grep -A 5 Vendor
+  looking at device '/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2/2-4.2:1.0/host3/target3:0:0/3:0:0:0/block/sdc/sdc1':
+    KERNEL=="sdc1"
+    SUBSYSTEM=="block"
+    ATTR{partition}=="1"
+    ...
+  looking at parent device '/devices/pci0000:00/0000:00:14.0/usb2/2-4/2-4.2':
+    KERNELS=="2-4.2"
+    SUBSYSTEMS=="usb"
+    DRIVERS=="usb"
+    ...
+    ATTRS{idProduct}=="1000"
+    ATTRS{idVendor}=="8564"
+    ATTRS{manufacturer}=="JetFlash"
+    ATTRS{serial}=="08CV4HPEF7S8RT1"
 
 ```
 
 Create a udev rule for it by adding the following to a file in `/etc/udev/rules.d/`, such as `8-usbstick.rules`:
 
 ```
-KERNEL=="sd*", ATTRS{serial}=="$SERIAL", ATTRS{idVendor}=="$VENDOR", ATTRS{idProduct}=="$PRODUCT" SYMLINK+="$SYMLINK%n"
+KERNEL=="sd*", ATTRS{idProduct}=="1000", ATTRS{idVendor}=="8564", ATTRS{manufacturer}=="JetFlash", ATTRS{serial}=="08CV4HPEF7S8RT1", SYMLINK+="sdUSBstick%n"
 
 ```
 
-Replace `$SERIAL`, `$VENDOR`, `$PRODUCT` from above output accordingly and `$SYMLINK` with the desired name. `%n` will expand to the partition number. For example, if the device has two partitions, two symlinks will be created. You do not need to go with the 'serial' attribute. If you have a custom rule of your own, you can put it in as well (e.g. using the vendor name).
+`%n` will expand to the partition number. For example, if the device has two partitions, two symlinks will be created. You do not need to go with the 'serial' attribute. If you have a custom rule of your own, you can put it in as well (e.g. using the vendor name).
 
 Rescan sysfs:
 
 ```
-udevadm trigger
+udevadm control --reload-rules && udevadm trigger
 
 ```
 

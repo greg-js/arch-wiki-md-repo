@@ -64,7 +64,7 @@ The Synaptics driver can be [installed](/index.php/Installed "Installed") with t
 
 ## Configuration
 
-The primary method of configuration for the touchpad is through an [Xorg](/index.php/Xorg "Xorg") server configuration file. After installation of `xf86-input-synaptics`, a default configuration file is located at `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Users can copy this file to `/etc/X11/xorg.conf.d/` and edit it to configure the various driver options available. Refer to the `synaptics(4)` manual page for a complete list of available options. Machine-specific options can be discovered using [synclient](#Synclient).
+The primary method of configuration for the touchpad is through an [Xorg](/index.php/Xorg "Xorg") server configuration file. After installation of `xf86-input-synaptics`, a default configuration file is located at `/usr/share/X11/xorg.conf.d/70-synaptics.conf`. Users can copy this file to `/etc/X11/xorg.conf.d/` and edit it to configure the various driver options available. Refer to the synaptics(4) manual page for a complete list of available options. Machine-specific options can be discovered using [synclient](#Synclient).
 
 ### Frequently used options
 
@@ -96,66 +96,66 @@ EndSection
 
 ```
 
-	**TapButton1**
+	TapButton1
 
 	(integer) configures which mouse-button is reported on a non-corner, one finger tap.
 
-	**TapButton2**
+	TapButton2
 
 	(integer) configures which mouse-button is reported on a non-corner, two finger tap
 
-	**TapButton3**
+	TapButton3
 
 	(integer) configures which mouse-button is reported on a non-corner, three finger tap
 
-	**RBCornerButton**
+	RBCornerButton
 
 	(integer) configures which mouse-button is reported on a right bottom corner, one finger tap (use `Option "RBCornerButton" "3"` to achieve Ubuntu style tap behaviour for right mouse button in lower right corner)
 
-	**RTCornerButton**
+	RTCornerButton
 
 	(integer) as above, but for top right corner, one finger tap.
 
-	**VertEdgeScroll**
+	VertEdgeScroll
 
 	(boolean) enables vertical scrolling while dragging across the right edge of the touch pad.
 
-	**HorizEdgeScroll**
+	HorizEdgeScroll
 
 	(boolean) enables horizontal scrolling while dragging across the bottom edge of the touch pad.
 
-	**VertTwoFingerScroll**
+	VertTwoFingerScroll
 
 	(boolean) enables vertical scrolling using two fingers.
 
-	**HorizTwoFingerScroll**
+	HorizTwoFingerScroll
 
 	(boolean) enables horizontal scrolling using two fingers.
 
-	**EmulateTwoFingerMinZ/W**
+	EmulateTwoFingerMinZ/W
 
 	(integer) play with this value to set the precision of two finger scroll.
 
-	**FingerLow**
+	FingerLow
 
 	(integer) when finger pressure drops below this value, the driver counts it as a release.
 
-	**FingerHigh**
+	FingerHigh
 
 	(integer) when finger pressure goes above this value, the driver counts it as a touch.
 
-	**MaxTapTime**
+	MaxTapTime
 
 	Determines how "crisp" a tap must be to be considered a real tap. Decrease the value to require a more crisp tap. Properly adjusting this parameter can reduce false positives when the hands hover over or lightly touch the pad.
 
-	**VertScrollDelta** and **HorizScrollDelta**
+	VertScrollDelta and HorizScrollDelta
 
 	(integer) configures the speed of scrolling, it is a bit counter-intuitive because higher values produce greater precision and thus slower scrolling. Negative values cause natural scrolling like in macOS.
 
 **Note:**
 
-*   If you find that your hand frequently brushes your touchpad, causing the TapButton2 option to be triggered (which will more than likely paste from your clipboard), and you do not mind losing two-finger-tap functionality, set `TapButton2` to 0\. Alternatively, see [#Disable touchpad while typing](#Disable_touchpad_while_typing).
-*   Recent versions include a "Coasting" feature, enabled by default, which may have the undesired effect of continuing almost any scrolling until the next tap or click, even if you are no longer touching the touchpad. This means that to scroll just a bit, you need to scroll (by using the edge, or a multitouch option) and then almost immediately tap the touchpad, otherwise scrolling will continue forever. If wish to avoid this, set `CoastingSpeed` to 0.
+*   If you find that your hand frequently brushes your touchpad, causing the `TapButton2` option to be triggered (which will more than likely paste from your clipboard), and you do not mind losing two-finger-tap functionality, set `TapButton2` to `0`. Alternatively, see [#Disable touchpad while typing](#Disable_touchpad_while_typing).
+*   Recent versions include a "Coasting" feature, enabled by default, which may have the undesired effect of continuing almost any scrolling until the next tap or click, even if you are no longer touching the touchpad. This means that to scroll just a bit, you need to scroll (by using the edge, or a multitouch option) and then almost immediately tap the touchpad, otherwise scrolling will continue forever. If wish to avoid this, set `CoastingSpeed` to `0`.
 *   If your touchpad is too sensitive, use higher values for `FingerLow` and `FingerHigh` and vice versa. Remember that `FingerLow` should be smaller than `FingerHigh`
 
 ### Configuration on the fly
@@ -180,7 +180,7 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 *   **kcm_touchpad** — New configuration tool for [KDE](/index.php/KDE "KDE") Plasma 5\. It provides a module under input devices in System Settings. It is to be considered a replacement for *synaptiks* and the old *kcm-touchpad* module.
 
-	[https://quickgit.kde.org/?p=plasma-desktop.git&a=tree&f=kcms%2Ftouchpad](https://quickgit.kde.org/?p=plasma-desktop.git&a=tree&f=kcms%2Ftouchpad) || [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)
+	[https://cgit.kde.org/plasma-desktop.git/tree/kcms/touchpad](https://cgit.kde.org/plasma-desktop.git/tree/kcms/touchpad) || [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)
 
 ### Xfce4/Cinnamon
 
@@ -229,31 +229,27 @@ $ xinput list
 
 You can now use `xinput` to find your touchpad's capabilities:
 
+ `$ xinput list-props "SynPS/2 Synaptics TouchPad" | grep Capabilities` 
 ```
-$ xinput list-props "SynPS/2 Synaptics TouchPad" | grep Capabilities
-
-```
-
-```
-  Synaptics Capabilities (309):  1, 0, 1, 0, 0, 1, 1
+Synaptics Capabilities (309):  1, 0, 1, 0, 0, 1, 1
 
 ```
 
 From left to right, this shows:
 
-*   (1) device has a physical left button
-*   (0) device does not have a physical middle button
-*   (1) device has a physical right button
-*   (0) device does not support two-finger detection
-*   (0) device does not support three-finger detection
-*   (1) device can configure vertical resolution
-*   (1) device can configure horizontal resolution
+*   `1`: device has a physical left button
+*   `0`: device does not have a physical middle button
+*   `1`: device has a physical right button
+*   `0`: device does not support two-finger detection
+*   `0`: device does not support three-finger detection
+*   `1`: device can configure vertical resolution
+*   `1`: device can configure horizontal resolution
 
-Use `xinput list-props "SynPS/2 Synaptics TouchPad"` to list all device properties. See `synaptics(4)` for full documentation of the Synaptics properties.
+Use `xinput list-props "SynPS/2 Synaptics TouchPad"` to list all device properties. See synaptics(4) for full documentation of the Synaptics properties.
 
 ### Synclient
 
-Synclient can configure every option available to the user as documented in `$ man synaptics`. A full list of the current user settings can be brought up:
+Synclient can configure every option available to the user as documented in synaptics(4). A full list of the current user settings can be brought up:
 
 ```
 $ synclient -l
@@ -572,7 +568,7 @@ EndSection
 
 ```
 
-The format for the SoftButtonAreas option is (from `man 4 synaptics`):
+The format for the SoftButtonAreas option is (from synaptics(4)):
 
  `RightButtonAreaLeft RightButtonAreaRight RightButtonAreaTop RightButtonAreaBottom  MiddleButtonAreaLeft MiddleButtonAreaRight MiddleButtonAreaTop MiddleButtonAreaBottom` 
 
@@ -671,8 +667,8 @@ Due to the way synaptics is currently set-up, 2 instances of the synaptics modul
 
  `/var/log/Xorg.0.log` 
 ```
- [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "evdev touchpad catchall"
- [ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "touchpad catchall"
+[ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "evdev touchpad catchall"
+[ 9304.803] (**) SynPS/2 Synaptics TouchPad: Applying InputClass "touchpad catchall"
 
 ```
 
@@ -723,7 +719,7 @@ Post kernel 3.15, having the module blacklisted may cause touchpad to stop worki
 
 In some cases Synaptics touchpads only work partially. Features like two-finger scrolling or two-finger middle-click do not work even if properly enabled. This is probably related to the [The touchpad is not working](#The_touchpad_is_not_working.2C_Xorg.0.log_shows_.22Query_no_Synaptics:_6003C8.22) problem mentioned above. Fix is the same, prevent double module loading.
 
-If preventing the module from loading twice does not solve your issue, try commenting out the toggle "MatchIsTouchpad" (which is now included by default in the synaptics config).
+If preventing the module from loading twice does not solve your issue, try commenting out the toggle `MatchIsTouchpad` (which is now included by default in the synaptics config).
 
 If clicking with either 2 or 3 fingers is interpreted as a right-click, so you cannot get a middle click either way regardless of configuration, this bug is probably the culprit: [https://bugs.freedesktop.org/show_bug.cgi?id=55365](https://bugs.freedesktop.org/show_bug.cgi?id=55365)
 
@@ -731,9 +727,13 @@ If clicking with either 2 or 3 fingers is interpreted as a right-click, so you c
 
 Some users have their cursor inexplicably *jump* around the screen. There currently no patch for this, but the developers are aware of the problem and are working on it.
 
-Another posibility is that you are experiencing *IRQ losses* related to the i8042 controller (this device handles the keyboard and the touchpad of many laptops), so you have two posibilities here:
+Another posibility is that you are experiencing *IRQ losses* related to the i8042 controller (this device handles the keyboard and the touchpad of many laptops), so you have two possibilities here:
 
-1\. rmmod && insmod the psmouse module. 2\. append i8042.nomux=1 to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and reboot your machine.
+1\. rmmod && insmod the psmouse module.
+
+2\. append`
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+`to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and reboot your machine.
 
 ### Touchpad device is not located at `/dev/input/*`
 
@@ -764,7 +764,7 @@ In this case, the `Handlers` are `mouse0` and `event1`, so `/dev/input/mouse0` w
 
 ### Firefox and special touchpad events
 
-You can enable/disable some special events that Firefox handles upon tapping or scrolling certain parts of your touchpad by editing the settings of those actions. Type **about:config** in your Firefox address bar. To alter options, double-click on the line in question.
+You can enable/disable some special events that Firefox handles upon tapping or scrolling certain parts of your touchpad by editing the settings of those actions. Type `about:config` in your Firefox address bar. To alter options, double-click on the line in question.
 
 #### Firefox 17.0 and later
 
@@ -797,10 +797,15 @@ These problems seem to be occurring on several models of LG laptops. Symptoms in
 
 The scrolling issue can be resolved by entering in `xorg.conf`:
 
- `/etc/X11/xorg.conf.d/xorg.conf`  `Option "UpDownScrolling" "0"` 
-**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg[[2]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
+ `/etc/X11/xorg.conf.d/xorg.conf` 
+```
+Option "UpDownScrolling" "0"
 
-Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics[[3]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
+```
+
+**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg [[2]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
+
+Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics [[3]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
 
 There is also a package build file in the AUR to automate this: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/).
 
@@ -816,19 +821,35 @@ $ makepkg
 
 First, make sure your section describing the external mouse contains this line (or that the line looks like this):
 
- `/etc/X11/xorg.conf.d/xorg.conf`  `Option     "Device" "/dev/input/mice"` 
+ `/etc/X11/xorg.conf.d/xorg.conf` 
+```
+Option     "Device" "/dev/input/mice"
+
+```
 
 If the "Device" line is different, change it to the above and try to restart X. If this does not solve your problem, make your **touchpad** is the CorePointer in the "Server Layout" section:
 
- `/etc/X11/xorg.conf.d/xorg.conf`  `InputDevice    "Touchpad" "CorePointer"` 
+ `/etc/X11/xorg.conf.d/xorg.conf` 
+```
+InputDevice    "Touchpad" "CorePointer"
+
+```
 
 and make your external device "SendCoreEvents":
 
- `/etc/X11/xorg.conf.d/xorg.conf`  `InputDevice    "USB Mouse" "SendCoreEvents"` 
+ `/etc/X11/xorg.conf.d/xorg.conf` 
+```
+InputDevice    "USB Mouse" "SendCoreEvents"
+
+```
 
 finally add this to your external device's section:
 
- `/etc/X11/xorg.conf.d/xorg.conf`  `Option      "SendCoreEvents"    "true"` 
+ `/etc/X11/xorg.conf.d/xorg.conf` 
+```
+Option      "SendCoreEvents"    "true"
+
+```
 
 If all of the above does not work for you, please check relevant bug trackers for possible bugs, or go through the forums to see if anyone has found a better solution.
 
@@ -836,7 +857,11 @@ If all of the above does not work for you, please check relevant bug trackers fo
 
 Sometimes the cursor may freeze for several seconds or start acting on its own for no apparent reason. This behavior is accompanied by records in `/var/log/messages.log`
 
- `/var/log/messages.log`  `psmouse.c: TouchPad at isa0060/serio1/input0 lost synchronization, throwing 3 bytes away` 
+ `/var/log/messages.log` 
+```
+psmouse.c: TouchPad at isa0060/serio1/input0 lost synchronization, throwing 3 bytes away
+
+```
 
 This problem has no general solution, but there are several possible workarounds.
 

@@ -112,6 +112,8 @@ In conclusion, do not forget the user guide at `/usr/share/doc/chrony/chrony.txt
 
 The package provides `chrony.service`, see [systemd](/index.php/Systemd "Systemd") for details.
 
+**Note:** `systemd-timesyncd.service` is in conflict with `chrony`, so you need to [disable](/index.php/Disable "Disable") it first if you want to [enable](/index.php/Enable "Enable") `chrony` properly.
+
 ### Synchronising chrony hardware clock from the system clock
 
 During boot the initial time is read from the hardware clock (RTC) and the system time is then set, and synchronised over a period of minutes once the chrony daemon has been running for a while. If the hardware clock is out of sync then the initial system time can be some minutes away from the true time. If that is the case it may be necessary to reset the hardware clock.

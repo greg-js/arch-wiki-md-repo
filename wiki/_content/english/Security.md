@@ -56,7 +56,8 @@ This article contains recommendations and best practices for hardening an Arch L
         *   [12.2.2 GRUB](#GRUB)
     *   [12.3 Denying console login as root](#Denying_console_login_as_root)
     *   [12.4 Automatic logout](#Automatic_logout)
-*   [13 See also](#See_also)
+*   [13 Rebuilding packages](#Rebuilding_packages)
+*   [14 See also](#See_also)
 
 ## Concepts
 
@@ -434,7 +435,7 @@ To check the blacklisting works as intended, you may re-open your preferred brow
 
 ## Follow NVD/CVE alerts
 
-Subscribe to the Common Vulnerabilities and Exposure Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](http://nvd.nist.gov/download.cfm). See also [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team") and [CVE](/index.php/CVE "CVE").
+Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](http://nvd.nist.gov/download.cfm). The [Arch Linux Security Tracker](https://security.archlinux.org/) serves as a particularly useful resource in that it combines Arch Linux Security Advisory (ASA), Arch Linux Vulnerability Group (AVG) and CVE data sets in tabular format. See also [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team") and [CVE](/index.php/CVE "CVE").
 
 **Warning:** Do not be tempted to perform [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"), as they are not supported by Arch Linux and may cause instability: the whole system should be upgraded when upgrading a component. Also note that infrequent system updates can complicate the update process.
 
@@ -502,6 +503,10 @@ $ export TMOUT="$(( 60*10 ))";
 ```
 
 Note that this will not work if there is some command running in the shell (eg.: an SSH session or other shell without `TMOUT` support). But if you are using VC mostly for restarting frozen GDM/Xorg as root, then this is very useful.
+
+## Rebuilding packages
+
+Packages can be rebuilt and stripped of undesired functions and features as a means to reduce attack surface. Custom hardening flags can also be applied either manually or via [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper). For example, [bzip2](https://www.archlinux.org/packages/?name=bzip2) can be rebuilt less `bzip2recover` in an attempt to circumvent long-standing [CVE-2016-3189](https://security.archlinux.org/CVE-2016-3189).
 
 ## See also
 

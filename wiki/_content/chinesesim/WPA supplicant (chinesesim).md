@@ -243,18 +243,18 @@ followed by a method to obtain an ip address manually as indicated in the [#Over
 
 #### 引导时连接（systemd）
 
-The *wpa_supplicant* package provides multiple [systemd](/index.php/Systemd "Systemd") service files:
+*wpa_supplicant* 软件包中提供了多个 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 服务文件：
 
-*   `wpa_supplicant.service` - uses [D-Bus](/index.php/D-Bus "D-Bus"), recommended for [NetworkManager](/index.php/NetworkManager "NetworkManager") users.
-*   `wpa_supplicant@.service` - accepts the interface name as an argument and starts the *wpa_supplicant* daemon for this interface. It reads the configuration file in `/etc/wpa_supplicant/wpa_supplicant-*interface*.conf`.
-*   `wpa_supplicant-nl80211@.service` - also interface specific, but explicitly forces the `nl80211` driver (see below). The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-nl80211-*interface*.conf`.
-*   `wpa_supplicant-wired@.service` - also interface specific, uses the `wired` driver. The configuration file path is `/etc/wpa_supplicant/wpa_supplicant-wired-*interface*.conf`.
+*   `wpa_supplicant.service` - 使用 [D-Bus](/index.php/D-Bus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "D-Bus (简体中文)") ，建议 [NetworkManager](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") 用户使用。
+*   `wpa_supplicant@.service` - 接受网口名作为参数，启动服务于该网口的 *wpa_supplicant* 守护进程。这个服务将读取 `/etc/wpa_supplicant/wpa_supplicant-*interface*.conf` 这个配置文件。
+*   `wpa_supplicant-nl80211@.service` - 同样接受网口名作为参数，但明确限定使用 `nl80211` 驱动（详阅下文）。它的配置文件是 `/etc/wpa_supplicant/wpa_supplicant-nl80211-*interface*.conf`。
+*   `wpa_supplicant-wired@.service` - 同样接受网口名作为参数，使用 `wired`（有线网络）驱动。它的配置文件是 `/etc/wpa_supplicant/wpa_supplicant-wired-*interface*.conf`。
 
-To enable wireless at boot, enable an instance of one of the above services on a particular wireless interface. For example, [enable](/index.php/Enable "Enable") the `wpa_supplicant@*interface*` systemd unit.
+在引导时激活无线网络，就是激活服务于某个无线网络接口的上述服务单元之一。
 
-Now choose and [enable](/index.php/Enable "Enable") an instance of a service to obtain an ip address for the particular *interface* as indicated in the [#Overview](#Overview). For example, [enable](/index.php/Enable "Enable") the `dhcpcd@*interface*` systemd unit.
+现在就可以像[概览](#.E6.A6.82.E8.A7.88)一节所述，可以选定某个网络接口并[激活](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)")其服务单元的一个实例，从而获取一个 IP 地址。
 
-**提示：** *dhcpcd* has a hook that can lauch *wpa_supplicant* implicitly, see [dhcpcd#10-wpa_supplicant](/index.php/Dhcpcd#10-wpa_supplicant "Dhcpcd").
+**提示：** *dhcpcd* 可以后台加载 *wpa_supplicant* ，参阅 [dhcpcd (简体中文)#10-wpa_supplicant](/index.php/Dhcpcd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#10-wpa_supplicant "Dhcpcd (简体中文)").
 
 ### wpa_cli 操作脚本
 

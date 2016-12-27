@@ -61,10 +61,9 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [10.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [10.2 Integrate Android](#Integrate_Android)
     *   [10.3 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
-    *   [10.4 Speed up application startup](#Speed_up_application_startup)
-    *   [10.5 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
-    *   [10.6 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
-    *   [10.7 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
+    *   [10.4 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
+    *   [10.5 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
+    *   [10.6 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
 *   [11 Troubleshooting](#Troubleshooting)
     *   [11.1 Configuration related](#Configuration_related)
         *   [11.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
@@ -627,24 +626,6 @@ You will need to install KDE Connect both on your computer and on your Android. 
 ### Configure KWin to use OpenGL ES
 
 Set environment variable `KWIN_COMPOSE` to 'O2ES' to force the OpenGL ES backend. Please note that OpenGL ES is not supported by all drivers.
-
-### Speed up application startup
-
-User Rob described a "[magic trick](http://kdemonkey.blogspot.nl/2008/04/magic-trick.html)" on his blog to improve application start-up time by 50-150ms. To enable it, create this folder in your home:
-
-```
-$ mkdir ~/.compose-cache/
-
-```
-
-It can produce freezes under heavy io. To avoid this, also do:
-
-```
-$ ln -sfv /run/user/$UID/ /home/$USER/.compose-cache
-
-```
-
-**Note:** For those curious about what is going on here, this enables an optimization which Lubos (of general KDE speediness fame) came up with some time ago and was then rewritten and integrated into libx11\. Ordinarily, on startup, applications read input method information from `/usr/share/X11/locale/*your locale*/Compose`. This file is quite long (>5000 lines for the en_US.UTF-8 one) and takes some time to process. libX11 can create a cache of the parsed information which is much quicker to read subsequently, but it will only re-use an existing cache or create a new one in `~/.compose-cache` if the directory already exists.
 
 ### Configuring monitor resolution / multiple monitors
 

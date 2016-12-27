@@ -9,7 +9,7 @@ Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.
     *   [2.1 Touchpad](#Touchpad)
     *   [2.2 Wifi](#Wifi)
     *   [2.3 Graphics](#Graphics)
-    *   [2.4 QHD monitor](#QHD_monitor)
+    *   [2.4 QHD+ Pentile Display](#QHD.2B_Pentile_Display)
     *   [2.5 Function Keys](#Function_Keys)
         *   [2.5.1 Brightness Keys](#Brightness_Keys)
 *   [3 See also](#See_also)
@@ -89,9 +89,9 @@ Bug: [https://bugzilla.redhat.com/show_bug.cgi?id=1151757](https://bugzilla.redh
 
 See also [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics").
 
-### QHD monitor
+### QHD+ Pentile Display
 
-Some models include a 3200x1800 screen, which display very tiny characters.
+Some models include a 3200x1800 (faux-3200x1800 RG/BW Pentile) screen, which displays very tiny characters, and can make them difficult to read due to its incomplete subpixel matrix.
 
 For Firefox and Thunderbird, add the below property in the about:config area
 

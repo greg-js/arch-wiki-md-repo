@@ -32,8 +32,6 @@ Töltsd le az új Arch Linux ISO-t az [Arch Linux letöltési oldaláról](https
 
 Sok országhoz és billentyűzettípushoz a megfelelő kiosztás alapból elérhető. A magyar kiosztás betöltéséhez a `loadkeys hu` parancs használható. További billentyűzetkiosztás-fájlok a `/usr/share/kbd/keymaps/` könyvtárban találhatók (loadkeys használata esetén az útvonal és fájlkiterjesztés elhagyható).
 
-Magyar font állítható be a $ fontconfig LatArCyrHeb-19 -m 8859-2 paranccsal.
-
 ### Lemezek particionálása
 
 Lásd a [particionálást](/index.php/Partitioning "Partitioning") részletekért.

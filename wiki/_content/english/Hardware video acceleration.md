@@ -30,16 +30,16 @@ There are several ways to achieve this on Linux:
 **Note:** To choose the correct driver see [#Installation](#Installation).
 
 <caption>VA-API</caption>
- [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) |
+ [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) | [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/) |
 | MPEG2 decoding | GMA 4500 and newer | 
 
 <center>?</center>
 
- | Radeon HD 4000 and newer | 
+ | 
 
 <center>See VDPAU.</center>
 
- |
+ | Radeon HD 4000 and newer |
 | MPEG4 decoding | 
 
 <center>✗</center>
@@ -145,7 +145,7 @@ There are several ways to achieve this on Linux:
 
 The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
 
-Regarding the [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-amdgpu-pro/) package, see also: [AMD Radeon™ Software AMD GPU-PRO Beta Driver – Linux® for Vulkan™ Release Notes](https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Beta-Driver-for-Vulkan-Release-Notes.aspx). Loosely, this VDPAU driver is for the Radeon R9 family.
+Regarding the [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-amdgpu-pro/) package, see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU").
 
 ### Software
 

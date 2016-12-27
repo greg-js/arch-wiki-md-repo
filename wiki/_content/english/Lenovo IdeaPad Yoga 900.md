@@ -8,7 +8,7 @@
 | Card Reader | Working |
 | Bluetooth | Working | btusb |
 
-The [Lenovo Yoga 900](http://shop.lenovo.com/us/en/laptops/yoga/900-series/yoga-900-13/#tab-tech_specs) is a 2 in 1 laptop with a QHD+ display.
+The [Lenovo Yoga 900](http://shop.lenovo.com/us/en/laptops/yoga/900-series/yoga-900-13/#tab-tech_specs) is a 2 in 1 laptop with a faux-3200x1800 RG/BW Pentile display.
 
 For a general overview of laptop-related articles and recommendations, see [Laptop](/index.php/Laptop "Laptop").
 
@@ -43,7 +43,7 @@ Lenovo does not currently offer a BIOS update ISO image. This means you can only
 
 ### Font Size
 
-The console text is hard to read during install with this high resolution screen. You can temporarily use a default larger font like sun12x22.
+The console text is hard to read during install with this display, which renders in 3200x1800 resolution but omits part of the detail due to its incomplete (RG/BW) subpixel matrix. You can temporarily use a default larger font like sun12x22.
 
  `setfont sun12x22` 
 

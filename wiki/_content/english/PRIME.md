@@ -52,7 +52,7 @@ OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
 ### Closed Source Drivers
 
-[Nvidia's documentation for their 364.15 Linux driver](http://us.download.nvidia.com/XFree86/Linux-x86/364.15/README/randr14.html) gives similar information to the [#Discrete Card as Primary GPU](#Discrete_Card_as_Primary_GPU) section of this article.
+[Nvidia's documentation for their 375.26 Linux driver](http://us.download.nvidia.com/XFree86/Linux-x86/375.26/README/randr14.html) gives similar information to the [#Discrete Card as Primary GPU](#Discrete_Card_as_Primary_GPU) section of this article.
 
 ## PRIME GPU offloading
 

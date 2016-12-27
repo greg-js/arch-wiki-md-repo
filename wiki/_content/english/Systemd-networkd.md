@@ -68,6 +68,7 @@ See `man systemd-resolved` and `man resolved.conf` and [Systemd README](https://
 
 **Note:** Systemd's `resolve` may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate `.network` file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
 
+*   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
 *   Switch to using fully-qualified domain names
 *   Use `/etc/hosts` to resolve hostnames
 *   Fall back to using glibc's `dns` instead of using systemd's `resolve`
