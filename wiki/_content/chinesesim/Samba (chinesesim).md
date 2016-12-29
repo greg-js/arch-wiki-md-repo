@@ -83,7 +83,7 @@ On Windows side, be sure to change `smb.conf` to the in-use Windows Workgroup (d
 
 为了能够使用 SMB 进行基本的文件共享，[start/enable](/index.php/Systemd#Using_units "Systemd") `smbd.service` 和 `nmbd.service` 服务。更多信息参阅 [smbd](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) 和 [nmbd](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) 的 man 手册。
 
-**Tip:** 除了在启动时启动服务，可以选择启用 `smbd.socket`，禁用 `smbd.service`。这样的话会在第一次收到连接请求是启动后台进程。
+**提示：** 除了在启动时启动服务，可以选择启用 `smbd.socket`，禁用 `smbd.service`。这样的话会在第一次收到连接请求是启动后台进程。
 
 ### 建立 Usershare 路径
 

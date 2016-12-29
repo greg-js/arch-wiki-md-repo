@@ -23,7 +23,7 @@
 | <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(75) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
-| <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
+| <small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |
 | <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(28)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(45)</small> |
 | <small>2.12.1.</small> [Image manipulation](/index.php/Category:Image_manipulation "Category:Image manipulation") <small>(15)</small> |
@@ -62,7 +62,7 @@
 | <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(66)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(53)</small> |
+| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(54)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(53)</small> |
@@ -90,7 +90,7 @@
 | <small>5.5.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(75) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(17)</small> |
 | <small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small> |
-| <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(23)</small> |
+| <small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(24)</small> |
 | <small>5.6.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(23)</small> |
 | <small>5.7.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.8.</small> [Network configuration](/index.php/Category:Network_configuration "Category:Network configuration") <small>(11)</small> |

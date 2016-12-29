@@ -118,9 +118,7 @@ More information and perhaps more correct solutions can be found at [Xorg#Displa
 
 #### KDE with multi-monitor setup
 
-The main solution, above, works fine if all your displays are of approximately the same DPI, it is not so great if you use multiple outputs. For that situation there is a second way of support, which is to simply scale the display. You should be aware that this loses your hidpi advantage and your graphics will not be nearly as nice as if you do not scale your output.
-
-To scale a single screen;
+The main solution, above, works fine if all your displays are of approximately the same DPI, it is not so great if you use multiple outputs. To scale a single screen;
 
 1.  System Settings → Display and Monitor → Display Configuration → Scale Display
 2.  Then drag the slider to 2
@@ -436,6 +434,8 @@ There's also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
 ### VLC
 
 As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/) seems to solve some of the problems.
+
+Qt5 may detect that you have a HiDPI display and if so the video will be played in one corner of the window with lots of black space around it, even in fullscreen. You can start vlc with `QT_AUTO_SCREEN_SCALE_FACTOR=0` to workaround the problem, although the interface elements will be smaller. ([source](https://trac.videolan.org/vlc/ticket/17823))
 
 ### Steam
 

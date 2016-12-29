@@ -286,6 +286,7 @@ This is still experimental (state 2016-11-18) and not everything will run as exp
 *   When launching without GDM, gnome-session needs to be started manual, no shutdown/restart buttons work ([gnome issue 774774](https://bugzilla.gnome.org/show_bug.cgi?id=774774))
 *   Starting X11 on tty1, wayland on tty2: windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
 *   Not all weston applications work, e.g. weston-terminal.
+*   Not all QT applications work, e.g. [liteide](https://github.com/visualfc/liteide/issues/734)].
 
 *   As of November 2016 there is an ongoing discussion how to implement screen recording. Currently the compositors implement at least basic functionality, so does gnome.
 

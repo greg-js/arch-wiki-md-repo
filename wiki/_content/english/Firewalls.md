@@ -95,7 +95,7 @@ The Linux kernel includes [iptables](/index.php/Iptables "Iptables") as a built-
 
 ## nftables
 
-[nftables](/index.php/Nftables "Nftables") is a netfilter project that aims to replace the existing ip-, ip6-, arp-, and ebtables framework. It is supposed to replace iptables one day.
+[nftables](/index.php/Nftables "Nftables") is a netfilter project that aims to replace the existing ip-, ip6-, arp-, and ebtables framework. It combines a simple syntax with feature parity and performance benefits over iptables.
 
 ## Other
 

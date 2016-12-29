@@ -176,7 +176,7 @@ If you still get a permission denied error in your LXC guest, then you may need 
 
 #### OpenVPN considerations
 
-Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the container should read the [OpenVPN in Linux containers](/index.php/OpenVPN_in_Linux_containers "OpenVPN in Linux containers") article.
+Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the container should read the [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") article.
 
 ## Managing Containers
 

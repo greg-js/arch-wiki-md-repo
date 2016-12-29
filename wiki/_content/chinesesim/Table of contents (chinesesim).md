@@ -94,7 +94,7 @@
 | <small>7.4.4.</small> [层叠窗口管理器](/index.php/Category:Stacking_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Stacking WMs (简体中文)") <small>(6)</small> |
 | <small>7.4.5.</small> [平铺窗口管理器](/index.php/Category:Tiling_WMs_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Tiling WMs (简体中文)") <small>(5)</small> |
 | <small>7.5.</small> [Dotfiles](/index.php/Category:Dotfiles_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dotfiles (简体中文)") <small>(1)</small> |
-| <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(22)</small> |
+| <small>7.6.</small> [文件系统](/index.php/Category:File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File systems (简体中文)") <small>(23)</small> |
 | <small>7.7.</small> [软件包管理](/index.php/Category:Package_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package management (简体中文)") <small>(24)</small> |
 | <small>7.7.1.</small> [Arch用户软件库 (AUR)](/index.php/Category:Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch User Repository (简体中文)") <small>(3)</small> |
 | <small>7.8.</small> [电源管理](/index.php/Category:Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Power management (简体中文)") <small>(7)</small> |

@@ -13,8 +13,8 @@ Wake-on-LAN (WOL) is a feature to switch on a computer via a network connection 
         *   [2.1.6 NetworkManager](#NetworkManager)
 *   [3 Trigger a wake up](#Trigger_a_wake_up)
     *   [3.1 On the same LAN](#On_the_same_LAN)
-    *   [3.2 With port forwarding](#With_port_forwarding)
-    *   [3.3 Across the internet](#Across_the_internet)
+    *   [3.2 Across the internet](#Across_the_internet)
+        *   [3.2.1 Forward a port to the broadcast address](#Forward_a_port_to_the_broadcast_address)
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Battery draining problem](#Battery_draining_problem)
     *   [4.2 Example WOL script](#Example_WOL_script)
@@ -210,31 +210,23 @@ $ wol -i *target_IP* *target_MAC_address*
 
 **Tip:** If you intend to continue using Wake-on-LAN, it is recommended to assign a static IP address to the target computer.
 
-### With port forwarding
+### Across the internet
 
-When the source and target computers are separated by a router, Wake-on-LAN can be used via [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding "wikipedia:Port forwarding"). The router must be instructed to forward any signal heading for a specific port to the internal IP of the target PC. See for example [Firewalls](/index.php/Firewalls "Firewalls") for configuration details.
+When the source and target computers are separated by a router, Wake-on-LAN can be used via [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding "wikipedia:Port forwarding"). There are two possible solutions:
 
-To trigger the wakeup:
+*   Configure the router to forward a different port to each target machine. (Requires any target machine to have a static IP address on its LAN)
+*   Configure the router to forward a single port to the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address"). (May not be possible on all routers)
+
+In both cases to trigger the wakeup run:
 
 ```
 $ wol -p *forwarded_port* -i *router_IP* *target_MAC_address*
 
 ```
 
-In case of multiple computers behind the router, it is recommended to assign a different port forward to each target IP.
+#### Forward a port to the broadcast address
 
-### Across the internet
-
-The syntax needed in this case:
-
-```
-$ wol -p *target_port* -i *target_IP_or_hostname* *target_MAC_address*
-
-```
-
-*   Assuming that you know the external IP of the target machine, and that the [router ports](#With_port_forwarding) on both sides have been forwarding correctly, then this should be exactly as the syntax states.
-
-Usually it is necessary to forward your wol port (typically UDP 9) to the broadcast address on your network, not to a particular IP. Most routers do not allow you to forward to broadcast, however if you can get shell access to your router (through telnet, ssh, serial cable, etc) you can implement this workaround:
+Most routers do not allow you to forward to broadcast, however if you can get shell access to your router (through telnet, ssh, serial cable, etc) you can implement this workaround:
 
 ```
 $ ip neighbor add 192.168.1.254 lladdr FF:FF:FF:FF:FF:FF dev net0
@@ -269,7 +261,7 @@ chronic=00:3a:53:21:bc:30
 powerless=1a:32:41:02:29:92
 ghost=01:1a:d2:56:6b:e6
 
-while [ "$input1" != quit ]; do
+while true; do
 echo "Which PC to wake?"
 echo "p) powerless"
 echo "m) monster"
@@ -278,42 +270,40 @@ echo "g) ghost"
 echo "b) wake monster, wait 40sec, then wake chronic"
 echo "q) quit and take no action"
 read input1
-  if [ $input1 == p ]; then
+
+case $input1 in
+  p)
   /usr/bin/wol $powerless
-  exit 1
-fi
+  ;;
 
-if [ $input1 == m ]; then
+  m)
   /usr/bin/wol $monster
-  exit 1
-fi
+  ;;
 
-if [ $input1 == c ]; then
+  c)
   /usr/bin/wol $chronic
-  exit 1
-fi
+  ;;
 
-# this line requires an IP address in /etc/hosts for ghost
-# and should use wol over the internet provided that port 9
-# is forwarded to ghost on ghost's router
-
-if [ $input1 == g ]; then
+  g)
+  # this line requires an IP address in /etc/hosts for ghost
+  # and should use wol over the internet provided that port 9
+  # is forwarded to ghost on ghost's router
   /usr/bin/wol -v -h -p 9 ghost $ghost
-  exit 1
-fi
+  ;;
 
-if [ $input1 == b ]; then
+  b)
   /usr/bin/wol $monster
   echo "monster sent, now waiting for 40sec then waking chronic"
   sleep 40
   /usr/bin/wol $chronic
-  exit 1
-fi
+  ;;
 
-if [ $input1 == Q ] || [ $input1 == q ]; then
-echo "later!"
-exit 1
-fi
+  Q|q)
+  echo "later!"
+  break
+  ;;
+
+esac
 
 done
 echo  "this is the (quit) end!! c-ya!"

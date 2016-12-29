@@ -57,6 +57,7 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [12.3 Denying console login as root](#Denying_console_login_as_root)
     *   [12.4 Automatic logout](#Automatic_logout)
 *   [13 Rebuilding packages](#Rebuilding_packages)
+    *   [13.1 Custom hardening flags](#Custom_hardening_flags)
 *   [14 See also](#See_also)
 
 ## Concepts
@@ -506,19 +507,81 @@ Note that this will not work if there is some command running in the shell (eg.:
 
 ## Rebuilding packages
 
-Packages can be rebuilt and stripped of undesired functions and features as a means to reduce attack surface. Custom hardening flags can also be applied either manually or via [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper). For example, [bzip2](https://www.archlinux.org/packages/?name=bzip2) can be rebuilt less `bzip2recover` in an attempt to circumvent long-standing [CVE-2016-3189](https://security.archlinux.org/CVE-2016-3189).
+Packages can be rebuilt and stripped of undesired functions and features as a means to reduce attack surface. For example, [bzip2](https://www.archlinux.org/packages/?name=bzip2) can be rebuilt without `bzip2recover` in an attempt to circumvent [CVE-2016-3189](https://security.archlinux.org/CVE-2016-3189). Custom hardening flags can also be applied either manually or via [hardening-wrapper](https://www.archlinux.org/packages/?name=hardening-wrapper).
+
+### Custom hardening flags
+
+While still a work in progress, the following build flags can be enabled in `/etc/makepkg.conf` as they are expected to become [Arch default](https://lists.archlinux.org/pipermail/arch-dev-public/2016-October/028405.html) flags in the future:
+
+*   `z,now` to LDFLAGS
+*   `-fno-plt -fstack-check` to [CFLAGS](https://en.wikipedia.org/wiki/CFLAGS "wikipedia:CFLAGS")
+
+Using [hardening-check](https://aur.archlinux.org/packages/hardening-check/) to verify the status of the vanilla `bzip2` binary:
+
+```
+$ hardening check -v /usr/bin/bzip2
+/usr/bin/bzip2:
+Position Independent Executable: no, normal executable!
+Stack protected: yes
+Fortify Source functions: no, only unprotected functions found!
+       unprotected: fread
+       unprotected: fprintf
+       unprotected: strcat
+       unprotected: strncpy
+       unprotected: strcpy
+Read-only relocations: no, not found!
+Immediate binding: no, not found!
+
+```
+
+Using [hardening-check](https://aur.archlinux.org/packages/hardening-check/) to verify the status of a hardened `bzip2` *binary*:
+
+```
+$ hardening check -v /usr/bin/bzip2
+/usr/bin/bzip2:
+Position Independent Executable: yes
+Stack protected: yes
+Fortify Source functions: yes (some protected functions found)
+       unprotected: memcpy
+       unprotected: fread
+       unprotected: strncpy
+       protected: fprintf
+       protected: strcat
+Read-only relocations: yes
+Immediate binding: yes
+
+```
+
+Using [checksec](https://www.archlinux.org/packages/?name=checksec) to verify the status of the vanilla `bzip2` binary:
+
+```
+$ checksec -f /usr/bin/bzip2
+RELRO           STACK CANARY      NX                   PIE                RPATH        RUNPATH         FORTIFY Fortified Fortifiable  FILE
+No RELRO     Canary found         NX enabled     No PIE          No RPATH  No RUNPATH    Yes         0                    5        /usr/bin/bzip2
+
+```
+
+Using [checksec](https://www.archlinux.org/packages/?name=checksec) to verify the status of a hardened `bzip2` binary:
+
+```
+$ checksec -f /usr/bin/bzip2
+RELRO           STACK CANARY      NX                   PIE                RPATH        RUNPATH         FORTIFY Fortified Fortifiable  FILE
+Full RELRO    Canary found         NX enabled     PIE enabled  No RPATH  No RUNPATH   Yes         0                    5        /usr/bin/bzip2
+
+```
+
+**Note:** Certain packages are known to fail with PIE enabled. `export HARDENING_PIE=0` as a workaround.
 
 ## See also
 
 *   [DeveloperWiki:Security](/index.php/DeveloperWiki:Security "DeveloperWiki:Security")
-*   ArchWiki's Current list of security applications: [Lists of Applications: Security](/index.php/List_of_applications/Security "List of applications/Security")
-*   [Securing and Hardening Red Hat Linux Production Systems](http://www.puschitz.com/SecuringLinux.shtml)
-*   [Hardening the linux desktop](http://www.ibm.com/developerworks/linux/tutorials/l-harden-desktop/index.html)
-*   [Hardening the linux server](http://www.ibm.com/developerworks/linux/tutorials/l-harden-server/index.html)
-*   [Securing and Optimizing Linux](http://www.faqs.org/docs/securing/index.html)
-*   [UNIX and Linux Security Checklist v3.0](http://www.auscert.org.au/5816)
-*   [CentOS Wiki: OS Protection](http://wiki.centos.org/HowTos/OS_Protection)
-*   [Hardening Debian (pdf)](http://www.debian.org/doc/manuals/securing-debian-howto/securing-debian-howto.en.pdf)
+*   [ArchWiki: Security Applications](/index.php/List_of_applications/Security "List of applications/Security")
+*   [CentOS Wiki: OS Protection](https://wiki.centos.org/HowTos/OS_Protection)
+*   [Hardening the Linux desktop](https://www.ibm.com/developerworks/linux/tutorials/l-harden-desktop/index.html)
+*   [Hardening the Linux server](https://www.ibm.com/developerworks/linux/tutorials/l-harden-server/index.html)
+*   [Linux Foundation: Linux workstation security checklist](https://github.com/lfit/itpol/blob/master/linux-workstation-security.md)
+*   [privacytools.io Privacy Resources](https://www.privacytools.io/)
+*   [Red Hat Enterprise Linux 7 Security Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/)
+*   [Securing Debian Manual (PDF)](https://www.debian.org/doc/manuals/securing-debian-howto/securing-debian-howto.en.pdf)
 *   [The paranoid #! Security Guide](http://crunchbang.org/forums/viewtopic.php?id=24722)
-*   [Linux Foundation's Linux workstation security checklist](https://github.com/lfit/itpol/blob/master/linux-workstation-security.md)
-*   [privacytools.io](https://www.privacytools.io/)
+*   [UNIX and Linux Security Checklist v3.0](https://www.auscert.org.au/resources/publications/guidelines/unix-linux/unix-and-linux-security-checklist-v3.0)

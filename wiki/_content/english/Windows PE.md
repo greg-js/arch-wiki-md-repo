@@ -28,8 +28,6 @@ Normally, an image of Windows PE can only be created using the Windows Automated
 
 ## Creating a bootable Windows PE image
 
-[Install](/index.php/Install "Install") [fuse](https://www.archlinux.org/packages/?name=fuse), [cdrkit](https://www.archlinux.org/packages/?name=cdrkit), and [cabextract](https://www.archlinux.org/packages/?name=cabextract) from [official repositories](/index.php/Official_repositories "Official repositories").
-
 Install [wimlib](https://aur.archlinux.org/packages/wimlib/) from the [AUR](/index.php/AUR "AUR").
 
 ### Configure the Windows PE image

@@ -34,7 +34,7 @@ Questo articolo discute le comuni tecniche disponibili in Arch Linux per protegg
 
 ## Perché usare la crittografia?
 
-La crittografia dei dischi assicura che tutti i file immagazzinati sul disco sono criptati. I file diventeranno disponibili al sistema operativo e alle applicazioni solo quando il sistema corrente sarà sbloccato da un utente fidato. Leggere settori criptati senza i permessi restituirà dati messi a caso invece dei file effettivi.
+La crittografia dei dischi assicura che tutti i file immagazzinati sul disco siano criptati. I file diventeranno disponibili al sistema operativo e alle applicazioni solo quando il sistema corrente sarà sbloccato da un utente fidato. Leggere settori criptati senza i permessi restituirà dati messi a caso invece dei file effettivi.
 
 Per esempio, la crittografia può prevenire visioni non autorizzate dei dati quando il computer o l'hard disk:
 
@@ -51,7 +51,7 @@ Compreso quanto segue:
 
 *   Hacker che possono entrare nel tuo sistema (es. attraverso internet) mentre è acceso e dopo che le parti del disco criptate sono state sbloccate e mountate.
 *   Hacker che sono capaci di avere l'accesso fisico al computer mentre è acceso, e hanno le risorse per portare a termine un [cold boot attack](https://en.wikipedia.org/wiki/Cold_boot_attack "wikipedia:Cold boot attack").
-*   Un'entità governativa che non solo ha le risorse per (...), ma può semplicemente forzarvi a consegnare le password usando varie tecniche di [coercizione](https://en.wikipedia.org/wiki/Coercizione "wikipedia:Coercizione").Nella maggior parte delle nazioni non democratiche nel mondo, così come negli Stati Uniti e nel Regno Unito, questo è legale per la polizia federale se ha dei sospetti che voi stiate nascondendo qualcosa nel loro interesse.
+*   Un'entità governativa che non solo ha le risorse per portare a termine un cold bold attack, ma può semplicemente forzarvi a consegnare le password usando varie tecniche di [coercizione](https://en.wikipedia.org/wiki/Coercizione "wikipedia:Coercizione").Nella maggior parte delle nazioni non democratiche nel mondo, così come negli Stati Uniti e nel Regno Unito, questo è legale per la polizia federale se ha dei sospetti che voi stiate nascondendo qualcosa nel loro interesse.
 
 Un'impostazione di crittografia molto forte (es. crittografia di sistema completa con partizione di boot senza plaintext e controllo di autenticità) è richiesta per avere una possibilità di resistere a hacker professionisti, i quali sono capaci di corrompere il vostro sistema prima che di usarlo. E anche in quel caso non si sa se può davvero prevenire tutti i tipi di attacchi (es. [hardware keylogger](https://en.wikipedia.org/wiki/Hardware_keylogger "wikipedia:Hardware keylogger")). Il miglior rimedio potrebbe essere [hardware-based full disk encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption") (es. [trusted computing](https://en.wikipedia.org/wiki/Trusted_computing "wikipedia:Trusted computing").)
 

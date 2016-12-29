@@ -20,16 +20,17 @@ For more details on how EncFS compares to other disk encryption solution, see [D
     *   [4.2 Mount using gnome-encfs](#Mount_using_gnome-encfs)
     *   [4.3 Mount using CryptKeeper trayicon](#Mount_using_CryptKeeper_trayicon)
     *   [4.4 Mount using encfsui](#Mount_using_encfsui)
-    *   [4.5 Mount at login using pam_encfs](#Mount_at_login_using_pam_encfs)
-        *   [4.5.1 Single password](#Single_password)
-        *   [4.5.2 /etc/pam.d/](#.2Fetc.2Fpam.d.2F)
-            *   [4.5.2.1 setup pam_encfs for all login methods](#setup_pam_encfs_for_all_login_methods)
-            *   [4.5.2.2 login](#login)
-            *   [4.5.2.3 gdm](#gdm)
-            *   [4.5.2.4 Configuration](#Configuration)
-    *   [4.6 Mount when USB drive with EncFS folders is inserted using fsniper](#Mount_when_USB_drive_with_EncFS_folders_is_inserted_using_fsniper)
-        *   [4.6.1 How to](#How_to)
-    *   [4.7 Mount using KDE KWallet](#Mount_using_KDE_KWallet)
+    *   [4.5 Mount via fstab](#Mount_via_fstab)
+    *   [4.6 Mount at login using pam_encfs](#Mount_at_login_using_pam_encfs)
+        *   [4.6.1 Single password](#Single_password)
+        *   [4.6.2 /etc/pam.d/](#.2Fetc.2Fpam.d.2F)
+            *   [4.6.2.1 setup pam_encfs for all login methods](#setup_pam_encfs_for_all_login_methods)
+            *   [4.6.2.2 login](#login)
+            *   [4.6.2.3 gdm](#gdm)
+            *   [4.6.2.4 Configuration](#Configuration)
+    *   [4.7 Mount when USB drive with EncFS folders is inserted using fsniper](#Mount_when_USB_drive_with_EncFS_folders_is_inserted_using_fsniper)
+        *   [4.7.1 How to](#How_to)
+    *   [4.8 Mount using KDE KWallet](#Mount_using_KDE_KWallet)
 *   [5 Encrypted backup](#Encrypted_backup)
     *   [5.1 Backup encrypted directory](#Backup_encrypted_directory)
     *   [5.2 Backup plaintext directory](#Backup_plaintext_directory)
@@ -86,6 +87,18 @@ Quite simple app, just [install](/index.php/Install "Install") [cryptkeeper](htt
 ### Mount using encfsui
 
 A bash script [encfsui](http://github.com/bulletmark/encfsui) provides a simple [zenity](https://www.archlinux.org/packages/?name=zenity) gui around the EncFS command line utility to mount and unmount an encrypted directory. It includes a desktop launcher. Install it from [encfsui](https://aur.archlinux.org/packages/encfsui/).
+
+### Mount via fstab
+
+Adding an entry in `/etc/fstab` will allow you to mount the encfs volume with a simple `mount /target/path` and you will be prompted for your password.
+
+ `/etc/fstab` 
+```
+encfs#/path/to/encfs/data  /mnt/decrypted  fuse  noauto,user  0  0
+
+```
+
+The `noauto` option prevents an attempt to mount the volume at boot, which could delay the boot process while it waits for a password to be entered. `user` can be omitted if only the `root` user should be able to mount the volume.
 
 ### Mount at login using pam_encfs
 

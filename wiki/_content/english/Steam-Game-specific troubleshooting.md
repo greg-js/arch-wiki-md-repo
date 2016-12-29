@@ -352,7 +352,7 @@ as launch option in steam
 
 ### No sound
 
-**Note:** This also helps with Never Alone (Kisima Ingitchuna)
+**Note:** This also helps with Never Alone (Kisima Ingitchuna) and No Time to Explain
 
 Right click on `Binding of Isaac: Rebirth` on your game list, click on `Properties`, click on `SET LAUNCH OPTIONS`, then add this:
 

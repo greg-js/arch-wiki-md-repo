@@ -152,9 +152,9 @@ As noted in the comments for the parameters, one needs to consider the total amo
 
 Another parameter is:
 
-*   `vfs_cache_pressure = 60`
+*   `vm.vfs_cache_pressure = 60`
 
-	The value controls the tendency of the kernel to reclaim the memory which is used for caching of directory and inode objects (VFS cache). Lowering it from the default value of 100, we will force the kernel to be less inclined to reclaim VFS cache.
+	The value controls the tendency of the kernel to reclaim the memory which is used for caching of directory and inode objects (VFS cache). Lowering it from the default value of 100 makes the kernel less inclined to reclaim VFS cache (do not set it to 0, this may produce out-of-memory conditions).
 
 ## MDADM
 
@@ -190,7 +190,7 @@ Try to change `kernel.io_delay_type` (x86 only):
 ## See also
 
 *   [sysctl(8)](http://man7.org/linux/man-pages/man8/sysctl.8.html) and [sysctl.conf(5)](http://man7.org/linux/man-pages/man5/sysctl.conf.5.html)
-*   Linux kernel documentation (`<kernel source dir>/Documentation/sysctl/`)
+*   [Linux kernel documentation for /proc/sys/](https://www.kernel.org/doc/Documentation/sysctl/)
 *   Kernel Documentation: [IP Sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
 *   [SysCtl.conf Tweaked for Security and Cable Speed](http://blog.gotux.net/code/config/sysctl/)
 *   [Kernel network parameters for sysctl](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)

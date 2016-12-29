@@ -41,6 +41,8 @@ exec /usr/bin/Xorg -nolisten tcp "$@" vt$XDG_VTNR
 
 Alternatively, if you wish to have the X display on a separate console from the one where the server is invoked, you can do so by using the X server wrapper provided by `/usr/lib/systemd/systemd-multi-seat-x`. For convenience, *xinit* and *startx* can be set up to use this wrapper by modifying your `~/.xserverrc`.
 
+**Note:** To re-enable redirection of the output from X session into the Xorg log file, add the `-keeptty` option. See [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg") for details.
+
 ### xinitrc
 
 If `.xinitrc` is present in a user's home directory, *startx* and *xinit* execute it. Otherwise *startx* will run the default `/etc/X11/xinit/xinitrc`.

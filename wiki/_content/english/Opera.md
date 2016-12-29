@@ -33,6 +33,8 @@ In early December 2014, Opera version 26 was released, but only for 64-bit syste
 
 [Installing](/index.php/Install "Install") the [opera](https://www.archlinux.org/packages/?name=opera) package will provide the new Blink version on x86_64 systems, and the old Presto version on i686 systems.
 
+**Tip:** Using Presto-based Opera isn't recommended because of security and compliance with modern web standards. Instead you can try [Vivaldi](/index.php/Vivaldi "Vivaldi") by former Opera team members or [Otter Browser](/index.php/Otter_Browser "Otter Browser") with really similar UI.
+
 The 12.16 Presto version is also available from the [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) package for both x86_64 and i686 architectures.
 
 ## Plugins

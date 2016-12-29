@@ -17,7 +17,7 @@ Sshfs può essere usato per effettuare il mount di file system remoti - accessib
 
 ## Installazione
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [sshfs](https://www.archlinux.org/packages/?name=sshfs). Questo pacchetto ha come sua dipendenza [fuse](https://www.archlinux.org/packages/?name=fuse) e ne richiederà l'installazione (se non è già stato installato).
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [sshfs](https://www.archlinux.org/packages/?name=sshfs).
 
 ## Uso
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-13，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=448095)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-12-28，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=459689)可以查看翻译后英文页面的改动。
 
 [pacman](https://archlinux.org/pacman/)[软件包管理器](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的一大亮点。它将一个简单的二进制包格式和易用的构建系统结合了起来(参见[makepkg](/index.php/Makepkg "Makepkg")和[ABS](/index.php/ABS "ABS"))。不管软件包是来自官方的 Arch 库还是用户自己创建，*pacman* 都能方便得管理。
 
@@ -6,7 +6,7 @@
 
 *pacman* 用 C 语言编写，使用 `.pkg.tar.xz` 打包格式。
 
-**提示：** [pacman](https://www.archlinux.org/packages/?name=pacman) 软件包还提供了其它有用工具，例如**makepkg**、**pactree**、**vercomp**、 [checkupdates](/index.php/Checkupdates "Checkupdates")等。可以通过 `pacman -Ql pacman | grep bin` 获取工具列表。
+**提示：** [pacman](https://www.archlinux.org/packages/?name=pacman) 软件包还提供了其它有用工具，例如 [makepkg](/index.php/Makepkg "Makepkg")、**pactree**、**vercomp**、 [checkupdates](/index.php/Checkupdates "Checkupdates")等。可以通过 `pacman -Ql pacman | grep bin` 获取工具列表。
 
 ## Contents
 
@@ -41,7 +41,7 @@
     *   [3.5 pacman 重复升级同一个包](#pacman_.E9.87.8D.E5.A4.8D.E5.8D.87.E7.BA.A7.E5.90.8C.E4.B8.80.E4.B8.AA.E5.8C.85)
     *   [3.6 我需要有一个指定文件的包。我怎么知道谁提供了这个文件？](#.E6.88.91.E9.9C.80.E8.A6.81.E6.9C.89.E4.B8.80.E4.B8.AA.E6.8C.87.E5.AE.9A.E6.96.87.E4.BB.B6.E7.9A.84.E5.8C.85.E3.80.82.E6.88.91.E6.80.8E.E4.B9.88.E7.9F.A5.E9.81.93.E8.B0.81.E6.8F.90.E4.BE.9B.E4.BA.86.E8.BF.99.E4.B8.AA.E6.96.87.E4.BB.B6.EF.BC.9F)
     *   [3.7 pacman 完全坏掉，如何修复?](#pacman_.E5.AE.8C.E5.85.A8.E5.9D.8F.E6.8E.89.EF.BC.8C.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.3F)
-    *   [3.8 pacman 更新时崩溃!](#pacman_.E6.9B.B4.E6.96.B0.E6.97.B6.E5.B4.A9.E6.BA.83.21)
+    *   [3.8 pacman 更新时崩溃](#pacman_.E6.9B.B4.E6.96.B0.E6.97.B6.E5.B4.A9.E6.BA.83)
     *   [3.9 pacman crashes the official installation media](#pacman_crashes_the_official_installation_media)
     *   [3.10 升级系统重启后，出现"unable to find root device"错误，无法登陆](#.E5.8D.87.E7.BA.A7.E7.B3.BB.E7.BB.9F.E9.87.8D.E5.90.AF.E5.90.8E.EF.BC.8C.E5.87.BA.E7.8E.B0.22unable_to_find_root_device.22.E9.94.99.E8.AF.AF.EF.BC.8C.E6.97.A0.E6.B3.95.E7.99.BB.E9.99.86)
         *   [3.10.1 Fallback 启动项](#Fallback_.E5.90.AF.E5.8A.A8.E9.A1.B9)
@@ -67,7 +67,7 @@
 
 **注意:** 软件包通常有很多[可选依赖](/index.php/PKGBUILD#optdepends "PKGBUILD")， 它们为软件提供额外功能， 并不强制要求安装它们。 安装软件时, *pacman* 将会输出它的可选依赖, 但是这个输出不会在 `pacman.log`中；当你想浏览已安装软件的可选依赖时可以使用`pacman -Si` ，得到关于可选依赖的简短描述。
 
-**警告:** 在Arch下安装软件包时，未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**更新软件包数据库（例如，可能出现某软件包不再出现在官方库）。操作时，应使用`pacman -Syu *package_name*`, 而不要使用（`pacman -Sy *package_name*`），否则可能会有依赖问题。参见[#不支持部分升级](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)和 [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
+**警告:** 在Arch下安装软件包时，未[更新](#.E5.8D.87.E7.BA.A7.E8.BD.AF.E4.BB.B6.E5.8C.85)系统前，**不要**更新软件包数据库（例如，可能出现某软件包不再出现在官方库）。操作时，应使用`pacman -Syu *package_name*`, 而不要使用（`pacman -Sy *package_name*`），否则可能会有依赖问题。参见 [System maintenance (简体中文)#不支持部分升级](/index.php/System_maintenance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7 "System maintenance (简体中文)") 和 [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### 安装指定的包
 
@@ -504,17 +504,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ```
 
-通过下面命令可以产生类似 [localepurge](https://aur.archlinux.org/packages/localepurge/) 的效果：
-
-```
-NoExtract = usr/share/help/* !usr/share/help/en*
-NoExtract = usr/share/locale/* !usr/share/locale/en*
-NoExtract = usr/share/man/* !usr/share/man/man*
-NoExtract = usr/share/vim/vim74/lang/*
-
-```
-
-后面的规则覆盖前面的规则，加上 `!` 可以取消跳过效果，这样可以只安装需要语言的本地化文件
+后面的规则覆盖前面的规则，加上 `!` 可以取消跳过效果.
 
 ### 保留多个配置文件
 
@@ -622,9 +612,9 @@ Errors occurred, no packages were upgraded.
 
 ### pacman 完全坏掉，如何修复?
 
-如果 *pacman* 完全坏掉不能使用，需要手动下载或构建需要的软件包([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), [libfetch](https://www.archlinux.org/packages/?name=libfetch), 和 [pacman](https://www.archlinux.org/packages/?name=pacman)) 并解压到根目录。*pacman* 会和默认配置文件一起恢复。之后，用 *pacman* 重新安装这些软件包以保证数据库的完整性。
+如果 *pacman* 完全坏掉不能使用，需要手动下载或构建需要的软件包([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive) 和 [pacman](https://www.archlinux.org/packages/?name=pacman)) 并解压到根目录。*pacman* 会和默认配置文件一起恢复。之后，用 *pacman* 重新安装这些软件包以保证数据库的完整性。
 
-### pacman 更新时崩溃!
+### pacman 更新时崩溃
 
 如果 *pacman* 在删除、重新安装或更新软件包时 "数据库写入" 出错：
 
@@ -638,7 +628,7 @@ Errors occurred, no packages were upgraded.
 
 The official installation media (ISO) before version 10.2015 are not setup to be updated itself at runtime. Running `pacman -Syu` from a booted install media console may crash unexpectedly any time, as soon as memory is depleted. This happens because the install media image build reports an arbitrary capacity (of 32GB) to pacman, regardless of available free memory.[[1]](https://bugs.archlinux.org/task/45618#comment137346) At the same time the ISO reserves only a low static memory allotment for operations (`/run/archiso/cowspace` of `256MB` RAM) of the live system, in order to allow installation on machines with low resources. If the machine has more RAM available, you can override the allotment by setting the `cow_spacesize=` kernel option for the ISO manually, e.g. `cow_spacesize=2GB`.
 
-If you use the install media to update an installed system, you simply have to use the `--root=` option along with a `--cachedir=` path to point pacman to available real storage. For example, see [#pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade).
+If you use the install media to update an installed system, you simply have to use the `--root=` option along with a `--cachedir=` path to point pacman to available real storage. For example, see [#pacman 更新时崩溃](#pacman_.E6.9B.B4.E6.96.B0.E6.97.B6.E5.B4.A9.E6.BA.83).
 
 If you *require* an install media with persistent dataspace, the [Archiso](/index.php/Archiso "Archiso") build script can be used to create one along with its [boot options](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams).
 
@@ -701,7 +691,7 @@ Make sure to correct the [time](/index.php/Time "Time"), for example with `ntpd 
 
 ### pacman不使用我的代理设置
 
-正确设置环境变量(`$http_proxy`, `$ftp_proxy` etc.)如果使用[sudo](/index.php/Sudo "Sudo"),需要让 sudo [将这些变量传递给 pacman](/index.php/Sudo#Environment_variables_.28Outdated.3F.29 "Sudo").
+正确设置环境变量(`$http_proxy`, `$ftp_proxy` etc.)如果使用[sudo](/index.php/Sudo "Sudo"),需要让 sudo [将这些变量传递给 pacman](/index.php/Sudo#Environment_variables "Sudo").
 
 ### 如何重装所有包并保留安装和依赖信息？
 
@@ -715,7 +705,7 @@ It looks like previous *pacman* transaction removed or corrupted shared librarie
 
 To recover from this situation you need to unpack required libraries to your filesystem manually. First find what package contains the missed library and then locate it in the *pacman* cache (`/var/cache/pacman/pkg/`). Unpack required shared library to the filesystem. This will allow to run *pacman*.
 
-Now you need to [reinstall](#Installing_specific_packages) the broken package. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *pacman* will correctly replace our shared library file with one from package.
+需要重新安装损坏的软件包. Note that you need to use `--force` flag as you just unpacked system files and *pacman* does not know about it. *pacman* will correctly replace our shared library file with one from package.
 
 That's it. Update the rest of the system.
 

@@ -587,7 +587,7 @@ In this case, `DejaVuSansMono.ttf` is the font represented by the monospace alia
 
 ### List all installed fonts
 
-You can use the following command to list all installed fonts that are available on your system.
+You can use the following command to list all installed Fontconfig fonts that are available on your system.
 
 ```
 $ fc-list

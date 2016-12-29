@@ -62,7 +62,7 @@ Non tutte le tecniche di journaling sono uguali: in particolare, solo ext3 ed ex
 
 *   **fuse-exfat** — Supporto per il montaggio exFAT.
 
-	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [fuse-exfat](https://www.archlinux.org/packages/?name=fuse-exfat)
+	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
 *   **e2fsprogs** — Supporto per ext2, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4").
 

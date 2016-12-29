@@ -39,7 +39,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 
 [Install](/index.php/Install "Install") the correct dependencies:
 
-*   [fuse](https://www.archlinux.org/packages/?name=fuse) - for *vmware-vmblock-fuse*
+*   [fuse2](https://www.archlinux.org/packages/?name=fuse2) - for *vmware-vmblock-fuse*
 *   [gksu](https://www.archlinux.org/packages/?name=gksu) - for root operations (memory allocations, registering license, etc.)
 *   [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) - for the GUI
 *   [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) - for module compilation
@@ -383,10 +383,14 @@ Could not find administrative user. Error 127
 
 ```
 
-You may need a symlink for the following:
+This could mean that in the chain of commands VMware Workstation wants to run wssc-adminTool.
+
+In at least one version in the recent past (Workstation Pro 12.5) this file was missing. There was a file vmware-wssc-adminTool but not wssc-adminTool.
+
+Easy fix:
 
 ```
-# ln -s wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
+# ln -s /usr/lib/vmware/bin/wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
 
 ```
 

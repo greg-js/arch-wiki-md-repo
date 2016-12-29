@@ -166,6 +166,8 @@ Hidden=false
 
 ```
 
+You may want to add *-p 10* to the *Exec* parameter so that it starts drawing *conky* after the desktop is up (*-p 10* means pause for 10 seconds at startup before doing anything).
+
 ### Prevent flickering
 
 *Conky* needs Double Buffer Extension (DBE) support from the X server to prevent flickering because it cannot update the window fast enough without it. It can be enabled in `/etc/X11/xorg.conf` with `Load "dbe"` line in `"Module"` section. The `xorg.conf` file has been replaced (1.8.x patch upwards) by `/etc/X11/xorg.conf.d` which contains the particular configuration files. *DBE* is loaded automatically.

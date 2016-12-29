@@ -152,7 +152,7 @@ This section provides orientation for users wishing to run graphical application
 
 [Xorg](/index.php/Xorg "Xorg") is the public, open-source implementation of the [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") (commonly X11, or X). It is required for running applications with graphical user interfaces (GUIs), and the majority of users will want to install it.
 
-[Wayland](/index.php/Wayland "Wayland") is a new, alternative display server protocol and the Weston reference implementation is available. There is very little support for it from applications at this early stage of development.
+[Wayland](/index.php/Wayland "Wayland") is a new, alternative display server protocol and the Weston reference implementation is available.
 
 ### Display drivers
 

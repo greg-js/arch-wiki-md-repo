@@ -49,7 +49,7 @@ For advanced file manipulation, use
 
 	[https://www.digikam.org/](https://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-*   **gphotofs** — FUSE ([fuse](https://www.archlinux.org/packages/?name=fuse)) module to mount camera as a filesystem.
+*   **gphotofs** — [Fuse](/index.php/Fuse "Fuse") module to mount camera as a filesystem.
 
 	[http://www.gphoto.org/proj/gphotofs/](http://www.gphoto.org/proj/gphotofs/) || [gphotofs](https://aur.archlinux.org/packages/gphotofs/)
 

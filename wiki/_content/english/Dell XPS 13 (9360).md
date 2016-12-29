@@ -63,7 +63,9 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 ## Wireless
 
-The Killer 1535 Wirless Adapter is functional and the ath10k firmware is included in recent linux kernel versions. The connection speed reported by iw is limited to 1-6Mbits/s. However this is just the output being wrong. The real connection speed is not limited to this value.
+The Killer 1535 Wirless Adapter is functional and the ath10k firmware is included in recent linux kernel versions. However the speed on 2.4 GHz band does not exceed the limit of around 2 MB/s. This seems to be another hardware problem that Dell failed to detect during quality control.
+
+More details: [http://en.community.dell.com/support-forums/network-internet-wireless/f/3324/t/19995423](http://en.community.dell.com/support-forums/network-internet-wireless/f/3324/t/19995423)
 
 ## Bluetooth
 

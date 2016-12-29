@@ -14,8 +14,9 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
     *   [3.1 Button re-mapping](#Button_re-mapping)
     *   [3.2 Manual button re-mapping](#Manual_button_re-mapping)
     *   [3.3 Gestures](#Gestures)
-*   [4 Debugging](#Debugging)
+*   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
+    *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE.27s_Touchpad_KCM)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -196,7 +197,7 @@ For [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "w:Extend
 
 To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), install the [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) package. You can use the default system-wide configured swipe and pinch gestures or define your own in a personal configuration file, see the [README](https://github.com/bulletmark/libinput-gestures/blob/master/README.md) for details.
 
-## Debugging
+## Troubleshooting
 
 First, see whether the packaged *libinput-debug-events* tool can support you in debugging the problem. Executing `libinput-debug-events --help` shows options it covers.
 
@@ -212,6 +213,10 @@ Ensure the touchpad events are being sent to the GNOME desktop by running the fo
 $ gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 
 ```
+
+### Touchpad settings not taking effect in KDE's Touchpad KCM
+
+KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to set the options manually with `xinput set-prop`.
 
 ## See also
 

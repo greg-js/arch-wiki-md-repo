@@ -125,12 +125,7 @@ The important mount options here are *noauto,x-systemd.automount,_netdev*.
 *   *x-systemd.automount* does the on-demand magic
 *   *_netdev* tells it that it is a network device, not a block device (without it "No such device" errors might happen)
 
-**Tip:**
-
-There are two other ways to do this. Both do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`):
-
-*   [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
-*   [afuse](https://aur.archlinux.org/packages/afuse/) is a general-purpose userspace automounter for FUSE filesystems. It works well with sshfs. No user-activation is necessary. Example invocation: `afuse -o mount_template='sshfs -o ServerAliveInterval=10 -o reconnect %r:/ %m' -o unmount_template='fusermount -u -z %m' ~/mnt/ssh`
+**Tip:** [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) do not require editing `/etc/fstab` to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`). [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
 
 ### On boot
 

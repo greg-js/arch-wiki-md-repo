@@ -21,7 +21,7 @@ The audit framework works by listening to the event reported by the kernel and l
 *   [4 Which files or syscalls are worth-auditing ?](#Which_files_or_syscalls_are_worth-auditing_.3F)
 *   [5 Gather logs from different hosts](#Gather_logs_from_different_hosts)
     *   [5.1 Send logfiles](#Send_logfiles)
-    *   [5.2 Recieve logfiles](#Recieve_logfiles)
+    *   [5.2 Receive logfiles](#Receive_logfiles)
 
 ## Installation
 
@@ -43,7 +43,7 @@ This daemon can be controlled by several commands and files:
 
 ## Adding rules
 
-Before adding rules, you must know that the audit framework can be very verbose and that each rules must be carrefully tested before being effectively deployed. Indeed, just one rule can flood all your log within a few minutes.
+Before adding rules, you must know that the audit framework can be very verbose and that each rules must be carefully tested before being effectively deployed. Indeed, just one rule can flood all your log within a few minutes.
 
 ### Audit files and directories access
 
@@ -61,7 +61,7 @@ You can track access to a folder with :
 
 ```
 
-The first rule keep track of every read `r` , write `w` , execution `x` , attribute change `a` to the file `/etc/passwd`. The second keep track to any access in the `/etc/security/` folder.
+The first rule keeps track of every read `r` , write `w` , execution `x` , attribute change `a` to the file `/etc/passwd`. The second one keeps track of any access to the `/etc/security/` folder.
 
 You can list all active rules with :
 
@@ -77,7 +77,7 @@ You can delete all rules with :
 
 ```
 
-Once you validate the rule, you can append them to the `/etc/audit/audit.rules` file like that :
+Once you validate the rules, you can append them to the `/etc/audit/audit.rules` file like that :
 
 ```
 -w /etc/audit/audit.rules -p rwxa
@@ -87,7 +87,7 @@ Once you validate the rule, you can append them to the `/etc/audit/audit.rules` 
 
 ### Audit syscalls
 
-The audit framework allow you to audit the syscalls performed with the `-a` option.
+The audit framework allows you to audit the syscalls performed with the `-a` option.
 
 A security related rule is to track the `chmod syscall`, to detect file ownership changes :
 
@@ -102,7 +102,7 @@ A lot of rules and posibilities are available, see [auditctl(8)](http://linux.di
 
 ## Search the logs
 
-The audit framework provide some tools to ease the use and the research of event haeing on a system.
+The audit framework provides some tools to ease the use and the research of events happening on a system.
 
 ### using pid
 
@@ -113,11 +113,11 @@ You can search events related to a particular pid using `ausearch`:
 
 ```
 
-This command will show you all the events logged according to your rules related to the PID1 (i.e. systemd).
+This command will show you all the events logged according to your rules related to PID 1 (i.e. systemd).
 
 ### using keys
 
-One of the great feature of the audit framework is its hability to use `keys` to manage events, such a usage is recommended.
+One of the great features of the audit framework is its hability to use `keys` to manage events, such a usage is recommended.
 
 You can use the `-k` option in your rules to be able to find related events easily :
 
@@ -135,7 +135,7 @@ Then, if you search for events with the key `KEY_pwd`, ausearch will display onl
 
 ### Look for abnormalies
 
-The `aureport` tool can be used to quicly report any anormal event performed on the system, it include network interface used in promiscous mode, process or thread crashing or exiting with ENOMEM error etc.
+The `aureport` tool can be used to quickly report any anormal event performed on the system, it includes network interfaces used in promiscous mode, process or thread crashing or exiting with ENOMEM error etc.
 
 The easiest way to use `aureport` is :
 
@@ -144,21 +144,21 @@ The easiest way to use `aureport` is :
 
 ```
 
-aureport can be used to generate custom report, see [aureport(8)](http://linux.die.net/man/8/aureport).
+aureport can be used to generate custom reports, see [aureport(8)](http://linux.die.net/man/8/aureport).
 
 ## Which files or syscalls are worth-auditing ?
 
 Keep in mind that each audit rule added will generate logs, so you must be ready to treat this amount of information. Basically, each security-related event/file must be monitored, like ids, ips, anti-rootkits etc. On the other side, it's totally useless to track every write syscall, the smallest compilation will fill your logs with this event.
 
-More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, see [auditctl(8)](http://linux.die.net/man/8/auditctl) are worth-reading.
+More complex set of rules can be set up, performing auditing on a very fine-grained base. If you want to do so, see [auditctl(8)](http://linux.die.net/man/8/auditctl).
 
 ## Gather logs from different hosts
 
-The audit framework has an plugin system which provides the possibility to send local logfiles to an remote auditd.
+The audit framework has a plugin system which provides the possibility to send local logfiles to a remote auditd.
 
 ### Send logfiles
 
-To send your logfiles to an remote host you need the `audisp-remote` plugin which comes automatically with the [audit](https://www.archlinux.org/packages/?name=audit) package. Activate the plugin:
+To send your logfiles to a remote host you need the `audisp-remote` plugin which comes automatically with the [audit](https://www.archlinux.org/packages/?name=audit) package. Activate the plugin:
 
  `/etc/audisp/plugins.d/au-remote.conf` 
 ```
@@ -179,7 +179,7 @@ port = 60
 transport = tcp
 ```
 
-### Recieve logfiles
+### Receive logfiles
 
 To make audit listen for remote audispds you just need to set the tcp options:
 
@@ -192,4 +192,4 @@ tcp_max_per_addr = 1
 tcp_client_max_idle = 0
 ```
 
-Now you can view the logs of **all** configured hosts in the logfiles of the recieving auditd.
+Now you can view the logs of **all** configured hosts in the logfiles of the receiving auditd.

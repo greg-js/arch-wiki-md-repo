@@ -99,7 +99,7 @@ GNOME可以通过 [显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%
 
 ### 图形界面登录
 
-可以在登录管理器中选择 *GNOME*, *GNOME Classic* 或 *GNOME on Wayland* 作为登录选项。
+可以在登录管理器中选择 *GNOME*, *GNOME Classic* 或 *GNOME on Xorg* 作为登录选项。
 
 ### 手动启动
 

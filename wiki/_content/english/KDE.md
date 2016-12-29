@@ -159,12 +159,7 @@ Frameworks 5 applications can use KDE 4 configuration however they expect the co
 
 [Plasma themes](http://kde-look.org/index.php?xcontentmode=76) define the look of panels and plasmoids. For easy system-wide installation, some such themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
 
-The easiest way to install themes is by going through the Desktop Settings control panel:
-
-```
- Workspace Theme > Desktop Theme > Get new Themes
-
-```
+The easiest way to install themes is by going through the *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
 
 This will present a nice frontend for [kde-look.org](http://www.kde-look.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
@@ -178,13 +173,15 @@ Note that the [SDDM](/index.php/SDDM "SDDM") login screen is not part of this th
 
 	Qt4
 
-For Qt4 applications to have a consistent appearance, there are two options: Install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and then pick Breeze as GUI Style in `qtconfig-qt4`; or install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style.
+For Qt4 applications to have a consistent appearance, there are two options:
+
+Install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and then pick Breeze as GUI Style in `qtconfig-qt4`; or install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style.
 
 	GTK+
 
 The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in *System Settings > Application Style > GNOME Application Style*.
 
-In some themes, tooltips in GTK+ applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the gtkrc file and change it. For GTK3 application two files need to be changed, gtk.css and settings.ini.
+In some themes, tooltips in GTK+ applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`.
 
 ##### Widgets
 
@@ -198,7 +195,7 @@ Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/pa
 
 [Install](/index.php/Install "Install") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) or [kmix](https://www.archlinux.org/packages/?name=kmix) (start Kmix from the Application Launcher).
 
-**Note:** To adjust the [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), add e.g. `VolumePercentageStep=1` in the `[Global]` section of `~/.kde4/share/config/kmixrc`
+**Note:** To adjust the [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), add e.g. `VolumePercentageStep=1` in the `[Global]` section of `~/.kde4/share/config/kmixrc`.
 
 ##### Disable panel shadow
 
@@ -237,8 +234,7 @@ There you can also directly download and install more themes with one click, and
 
 Icon themes can be installed and changed on *System Settings > Icons*.
 
-**Note:** Although all modern Linux desktops share the same icon theme format, desktops like [GNOME](/index.php/GNOME "GNOME") use fewer icons (esp. in menus and toolbars). Themes developed for such desktops usually lack icons required by Plasma 5 and KDE apps.
-It is recommended to install Plasma compatible icon themes instead.
+**Note:** Although all modern Linux desktops share the same icon theme format, desktops like [GNOME](/index.php/GNOME "GNOME") use fewer icons (esp. in menus and toolbars). Themes developed for such desktops usually lack icons required by Plasma 5 and KDE apps. It is recommended to install Plasma compatible icon themes instead.
 
 #### Fonts
 
@@ -254,9 +250,9 @@ There is no way to prevent this, but, if you set the values to match your `fonts
 
 ##### Fonts are huge or seem disproportional
 
-Try to force font DPI to **96** in *System Settings > Application Appearance > Fonts*.
+Try to force font DPI to `**96**` in *System Settings > Application Appearance > Fonts*.
 
-If that does not work, try setting the DPI directly in your Xorg configuration as documented [here](/index.php/Xorg#Setting_DPI_manually "Xorg").
+If that does not work, try setting the DPI directly in your Xorg configuration as documented in [Xorg#Setting DPI manually](/index.php/Xorg#Setting_DPI_manually "Xorg").
 
 #### Space efficiency
 
@@ -296,6 +292,7 @@ Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/et
 ```
 # Administrator user group...
 SystemGroup sys root lpadmin
+
 ```
 
 **Tip:** Read [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS") to get more details on how to configure CUPS.
@@ -304,7 +301,7 @@ SystemGroup sys root lpadmin
 
 If you want to have access to Windows services, install [Samba](/index.php/Samba "Samba") (package [samba](https://www.archlinux.org/packages/?name=samba)).
 
-The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock smb.conf does not have enabled. Instructions to add them are in [Samba#Creating usershare path](/index.php/Samba#Creating_usershare_path "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
+The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Creating usershare path](/index.php/Samba#Creating_usershare_path "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
 
 ### KDE Desktop activities
 
@@ -322,7 +319,7 @@ Plasma has an integrated power saving service called "**Powerdevil Power Managem
 
 ### Autostarting applications
 
-Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, start `systemsettings` and navigate to *Startup and Shutdown* -> *Autostart* and add the program or shell script of your choice. For applications, a `.desktop` file will be created, for shell scripts, a symlink will be created.
+Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, navigate to *System Settings > Startup and Shutdown > Autostart* and add the program or shell script of your choice. For applications, a `.desktop` file will be created, for shell scripts, a symlink will be created.
 
 **Note:**
 
@@ -359,31 +356,37 @@ Navigate to the submenu *System Settings > Input Devices > Keyboard > Advanced (
 
 KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system by providing interfaces in System Settings, or through the command line with *kcmshell5*.
 
-**Configuration for look and feel of GTK applications.**
+*   **kde-gtk-config** — GTK2 and GTK3 Configurator for KDE.
 
-*   [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
-*   [kcm-gtk](https://aur.archlinux.org/packages/kcm-gtk/)
-*   [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)
+	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
 
-**Configuration for the GRUB bootloader.**
+*   **kcm-gtk** — A GTK appearance KConfig Module.
 
-*   [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
+	[https://launchpad.net/kcm-gtk](https://launchpad.net/kcm-gtk) || [kcm-gtk](https://aur.archlinux.org/packages/kcm-gtk/)
 
-**Configuration for the [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") (UFW)**
+*   **KCM Qt Graphics System** — This KCM allows you to easily configure the standard Qt graphics system.
 
-*   [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
+	[https://www.linux-apps.com/p/1127857/](https://www.linux-apps.com/p/1127857/) || [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)
 
-**Configuration for [PolicyKit](/index.php/PolicyKit "PolicyKit")**
+*   **grub2-editor** — A KDE Control Module for configuring the GRUB2 bootloader.
 
-*   [kcm-polkit-kde-git](https://aur.archlinux.org/packages/kcm-polkit-kde-git/)
+	[https://sourceforge.net/projects/kcm-grub2/](https://sourceforge.net/projects/kcm-grub2/) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
 
-**Configuration for Wacom tablets**
+*   **UFW KControl Module** — KDE4 control module for UFW ([Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")).
 
-*   [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
+	[https://www.linux-apps.com/p/1127851/](https://www.linux-apps.com/p/1127851/) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
 
-**Configuration for systemd**
+*   **System policies** — Set of configuration modules which allows administrator to change [PolicyKit](/index.php/PolicyKit "PolicyKit") settings.
 
-*   [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)
+	[https://projects.kde.org/projects/extragear/base/polkit-kde-kcmodules-1](https://projects.kde.org/projects/extragear/base/polkit-kde-kcmodules-1) || [kcm-polkit-kde-git](https://aur.archlinux.org/packages/kcm-polkit-kde-git/)
+
+*   **wacom tablet** — KDE GUI for the Wacom Linux Drivers.
+
+	[https://www.linux-apps.com/p/1127862/](https://www.linux-apps.com/p/1127862/) || [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
+
+*   **Kcmsystemd** — systemd control module for KDE.
+
+	[https://github.com/rthomsen/kcmsystemd](https://github.com/rthomsen/kcmsystemd) || [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)
 
 More KCMs can be found at [kde-apps.org](http://kde-apps.org/index.php?xcontentmode=273).
 
@@ -443,11 +446,7 @@ Akonadi does not store any data by itself: the storage format depends on the nat
 
 Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons). For EWS support, install [akonadi-ews-git](https://aur.archlinux.org/packages/akonadi-ews-git/).
 
-**Note:** If you wish to use a database engine other than MariaDB/MySQL, then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies:
-```
-pacman -S akonadi --assume-installed mariadb
-
-```
+**Note:** If you wish to use a database engine other than MariaDB/MySQL, then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies: `# pacman -S akonadi --assume-installed mariadb` 
 
 #### Disabling Akonadi
 
@@ -530,9 +529,6 @@ In the past other backends were developed as well but are no longer maintained a
 
 *   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Phonon > Backend*. For Plasma 5 this would be *System Settings > Multimedia > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
-
-**Note:**
-
 *   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[6]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
 *   A possible fix is to run
 
@@ -540,11 +536,11 @@ In the past other backends were developed as well but are no longer maintained a
 
 ## Useful applications
 
-The official set of KDE applications may be found [here](http://www.kde.org/applications/).
+The official set of KDE applications may be found at [http://www.kde.org/applications/](http://www.kde.org/applications/).
 
 ### Yakuake
 
-[Yakuake](/index.php/Yakuake "Yakuake") provides a Quake-like terminal emulator whose visibility is toggled by the F12 key. It also has support for multiple tabs. Yakuake is available in the package [yakuake](https://www.archlinux.org/packages/?name=yakuake).
+[Yakuake](/index.php/Yakuake "Yakuake") provides a Quake-like terminal emulator whose visibility is toggled by the `F12` key. It also has support for multiple tabs. Yakuake is available in the package [yakuake](https://www.archlinux.org/packages/?name=yakuake).
 
 ### KDE Telepathy
 
@@ -803,11 +799,11 @@ export KWIN_EXPLICIT_SYNC=0
 
 ```
 
-Then go to *system-settings > Startup and Shutdown > Autostart* and *Check/Add* the script as a pre-KDE startup file.
+Then go to *System Settings > Startup and Shutdown > Autostart* and *Check/Add* the script as a pre-KDE startup file.
 
 #### Applications do not refresh properly
 
-If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications do not refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to System Settings under *Display and Monitor* -> *Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
+If you use 3D-accelerated composition with [Intel](/index.php/Intel "Intel"), you might find that the Plasma panel and other applications do not refresh properly (stay frozen). Some Intel drivers have [problems with EGL](https://bugzilla.redhat.com/show_bug.cgi?id=1259475). Go to *System Settings > Display and Monitor > Compositor*. Set *OpenGL interface* to OpenGL 3.1\. If that does not work, see [Intel graphics#SNA issues](/index.php/Intel_graphics#SNA_issues "Intel graphics") for alternative solutions.
 
 #### Low 2D desktop performance (or) artifacts appear when on 2D
 
@@ -904,7 +900,7 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 ### Locale warning when installing packages in Konsole
 
 ```
- mandb: cannot set the locale; make sure $lc_* and $lang are correct
+mandb: cannot set the locale; make sure $lc_* and $lang are correct
 
 ```
 

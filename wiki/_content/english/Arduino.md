@@ -12,27 +12,26 @@ Arduino is an open-source electronics prototyping platform based on flexible, ea
 *   [2 Configuration](#Configuration)
     *   [2.1 Accessing serial](#Accessing_serial)
 *   [3 stty](#stty)
-*   [4 Alternatives for IDE](#Alternatives_for_IDE)
-    *   [4.1 ArduIDE](#ArduIDE)
-    *   [4.2 gnoduino](#gnoduino)
-    *   [4.3 Arduino-CMake](#Arduino-CMake)
-    *   [4.4 Ino](#Ino)
-    *   [4.5 Makefile](#Makefile)
-    *   [4.6 Arduino-mk](#Arduino-mk)
-    *   [4.7 Scons](#Scons)
-    *   [4.8 PlatformIO](#PlatformIO)
-        *   [4.8.1 Installation](#Installation_2)
-        *   [4.8.2 Usage](#Usage)
-    *   [4.9 Emacs](#Emacs)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Version 1.6](#Version_1.6)
-    *   [5.2 Consistent naming of Arduino devices](#Consistent_naming_of_Arduino_devices)
-    *   [5.3 Error opening serial port](#Error_opening_serial_port)
-    *   [5.4 Missing twi.o](#Missing_twi.o)
-    *   [5.5 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
-    *   [5.6 Error compiling](#Error_compiling)
-    *   [5.7 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
-*   [6 See also](#See_also)
+*   [4 Arduino-Builder](#Arduino-Builder)
+*   [5 Alternatives for IDE](#Alternatives_for_IDE)
+    *   [5.1 ArduIDE](#ArduIDE)
+    *   [5.2 gnoduino](#gnoduino)
+    *   [5.3 Arduino-CMake](#Arduino-CMake)
+    *   [5.4 Ino](#Ino)
+    *   [5.5 Makefile](#Makefile)
+    *   [5.6 Arduino-mk](#Arduino-mk)
+    *   [5.7 Scons](#Scons)
+    *   [5.8 PlatformIO](#PlatformIO)
+        *   [5.8.1 Installation](#Installation_2)
+        *   [5.8.2 Usage](#Usage)
+    *   [5.9 Emacs](#Emacs)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Version 1.6](#Version_1.6)
+    *   [6.2 Consistent naming of Arduino devices](#Consistent_naming_of_Arduino_devices)
+    *   [6.3 Error opening serial port](#Error_opening_serial_port)
+    *   [6.4 Working with Uno/Mega2560](#Working_with_Uno.2FMega2560)
+    *   [6.5 Application not resizing with WM, menus immediately closing](#Application_not_resizing_with_WM.2C_menus_immediately_closing)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -102,6 +101,33 @@ Reading what your Arduino has to tell you
 
 ```
 $ cat /dev/ttyACM0
+
+```
+
+## Arduino-Builder
+
+You can also build Arduino sketches with the [arduino-builder](https://www.archlinux.org/packages/?name=arduino-builder) command line tool. In order to use the provided [arduino-avr-core](https://www.archlinux.org/packages/?name=arduino-avr-core) with upstream [avr-gcc](https://www.archlinux.org/packages/?name=avr-gcc) and [avrdude](https://www.archlinux.org/packages/?name=avrdude) you need to create a small settings file:
+
+ `build.options.json` 
+```
+{
+    "fqbn": "archlinux-arduino:avr:uno",
+    "hardwareFolders": "/usr/share/arduino/hardware",
+    "toolsFolders": "/usr/bin"
+}
+```
+
+Compile a sketch with:
+
+```
+$ arduino-builder -build-options-file build.options.json blink.ino
+
+```
+
+Or pass all options via command line:
+
+```
+$ arduino-builder -fqbn archlinux-arduino:avr:uno -hardware /usr/share/arduino/hardware -tools /usr/bin blink.ino
 
 ```
 
@@ -283,10 +309,6 @@ Common `idVendor`/`idProduct` pairs can be found in `hardware/arduino/avr/boards
 
 You may see the serial port initially when the IDE starts, but the TX/RX leds do nothing when uploading. You may have previously changed the baudrate in the serial monitor to something it does not like. Edit ~/.arduino/preferences.txt so that serial.debug_rate is a different speed, like 115200.
 
-### Missing twi.o
-
-If the file `/usr/share/arduino/lib/targets/libraries/Wire/utility/twi.o` does not exist arduino may try to create it. Normal users do not have permission to write there so this will fail. Run arduino as root so it can create the file, after the file has been created arduino can be run under a normal user.
-
 ### Working with Uno/Mega2560
 
 The Arduino Uno and Mega2560 have an onboard USB interface (an Atmel 8U2) that accepts serial data, so they are accessed through /dev/ttyACM0 created by the cdc-acm kernel module when it is plugged in.
@@ -294,28 +316,6 @@ The Arduino Uno and Mega2560 have an onboard USB interface (an Atmel 8U2) that a
 The 8U2 firmware may need an update to ease serial communications. See [[1]](http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1286350399) for more details and reply #11 for a fix. The original arduino bbs, where you can find an image explaining how to get your Uno into DFU, is now in a read-only state. If you do not have an account to view the image, see [[2]](http://www.scribd.com/doc/45913857/Arduino-UNO).
 
 You can perform a general function test of the Uno by putting it in loopback mode and typing characters into the arduino serial monitor at 115200 baud. It should echo the characters back to you. To put it in loopback, short pins 0 -> 1 on the digital side and either hold the reset button or short the GND -> RESET pins while you type.
-
-### Error compiling
-
-If you get following message (in verbose mode)
-
-```
-/usr/share/arduino/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/../../../avr/bin/ld: cannot find -lm
-
-```
-
-see this fix [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1343402#p1343402)
-
-*   install package avr-gcc
-*   Replace build-in avr-gcc compiler by same from package installed on previous step:
-
-1.  cd /usr/share/arduino/hardware/tools/avr/bin
-2.  mv ./avr-gcc ./avr-gcc-backup
-3.  ln -s /usr/bin/avr-gcc ./
-
-To use the avr tools that are system installed, remove the avr directory as per the Arduino Linux install page: "If you want to use your system's compiler, delete the folder `./hardware/tools/avr` in your arduino IDE installation"
-
-An alternate approach to take is to download the corresponding Linux install from Arduino.cc and replace the `/usr/share/arduino/hardware/tools/avr` directory with the avr directory that comes in the stock installation archive.
 
 ### Application not resizing with WM, menus immediately closing
 

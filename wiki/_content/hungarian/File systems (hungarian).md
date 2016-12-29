@@ -60,7 +60,7 @@ A naplózó-technikák nem egyformák. Csak az ext3 és ext4 használ adatmódú
 
 *   **fuse-exfat** — exFAT csatolás támogatása.
 
-	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [fuse-exfat](https://www.archlinux.org/packages/?name=fuse-exfat)
+	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
 *   **e2fsprogs** — ext2, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4") támogatás.
 

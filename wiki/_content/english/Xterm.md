@@ -236,7 +236,7 @@ $ xterm -rv
 
 ```
 
-Alternatively, the same thing can be accomplished with the following [X resources parameter](/index.php/X_resources "X resources") (do not forget to [reread the new resource afterwards](/index.php/X_resources#Parsing_.Xresources "X resources")!):
+Alternatively, the same thing can be accomplished with the following [X resources parameter](/index.php/X_resources "X resources") (do not forget to [reread the new resource afterwards](/index.php/X_resources#Load_resource_file "X resources")!):
 
 ```
 XTerm*reverseVideo: on

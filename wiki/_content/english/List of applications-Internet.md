@@ -217,6 +217,10 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
 
+*   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5\. Experimental support for QtWebEngine is available.
+
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
+
 *   **Qt WebBrowser** — Browser for embedded devices developed using the capabilities of Qt and Qt WebEngine.
 
 	[http://doc.qt.io/QtWebBrowser/](http://doc.qt.io/QtWebBrowser/) || [qtwebbrowser](https://aur.archlinux.org/packages/qtwebbrowser/)
@@ -317,7 +321,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://dooble.sourceforge.net/](http://dooble.sourceforge.net/) || [dooble](https://aur.archlinux.org/packages/dooble/)
 
-*   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
+*   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
 

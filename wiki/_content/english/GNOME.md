@@ -118,14 +118,18 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 #### Wayland sessions
 
-**Note:** as long as not all applications are converted to support wayland, its necessary to still have an X server, provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package. For more information, see [Wayland](/index.php/Wayland "Wayland").
+**Note:** An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary if some applications used are not ported to Wayland. For more information, see [Wayland](/index.php/Wayland "Wayland").
 
-Starting manual is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. This can be embedded e.g. in `.bash_profile`, so on login to tty1 gnome is started. There is no other graphical tool running then as different user, as it would when using gdm.
+Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. To make QT applications use Wayland, install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package and set the [environment variable](/index.php/Environment_variable "Environment variable") `QT_QPA_PLATFORM=wayland`.
+
+To start on login to tty1, add the following to your `.bash_profile`:
 
 ```
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  export QT_QPA_PLATFORM=wayland
   XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
 fi
+
 ```
 
 ### GNOME applications in Wayland

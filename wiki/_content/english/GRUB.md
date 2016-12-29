@@ -1074,4 +1074,4 @@ A setting in Windows 8/10 called "Hiberboot", "Hybrid Boot" or "Fast Boot" can p
 *   Ubuntu wiki page for GRUB - [https://help.ubuntu.com/community/Grub2](https://help.ubuntu.com/community/Grub2)
 *   GRUB wiki page describing steps to compile for UEFI systems - [https://help.ubuntu.com/community/UEFIBooting](https://help.ubuntu.com/community/UEFIBooting)
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
-*   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
+*   [http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme](http://web.archive.org/web/20160424042444/http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html#Editing_etcgrub.d05_debian_theme) - quite complete description of how to configure GRUB (Original link down)
