@@ -36,18 +36,19 @@
     *   [3.14 Booting ISO9660 image files with memdisk](#Booting_ISO9660_image_files_with_memdisk)
     *   [3.15 Serial console](#Serial_console)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Using the Syslinux prompt](#Using_the_Syslinux_prompt)
-    *   [4.2 Fsck fails on root partition](#Fsck_fails_on_root_partition)
-    *   [4.3 No Default or UI found on some computers](#No_Default_or_UI_found_on_some_computers)
-    *   [4.4 Missing operating system](#Missing_operating_system)
-    *   [4.5 Windows boots up, ignoring Syslinux](#Windows_boots_up.2C_ignoring_Syslinux)
-    *   [4.6 Menu entries do nothing](#Menu_entries_do_nothing)
-    *   [4.7 Cannot remove ldlinux.sys](#Cannot_remove_ldlinux.sys)
-    *   [4.8 White block in upper left corner when using vesamenu](#White_block_in_upper_left_corner_when_using_vesamenu)
-    *   [4.9 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
-    *   [4.10 Read bootloader log](#Read_bootloader_log)
-    *   [4.11 Btrfs compression](#Btrfs_compression)
-    *   [4.12 Btrfs multi-device](#Btrfs_multi-device)
+    *   [4.1 Failed to load ldlinux](#Failed_to_load_ldlinux)
+    *   [4.2 Using the Syslinux prompt](#Using_the_Syslinux_prompt)
+    *   [4.3 Fsck fails on root partition](#Fsck_fails_on_root_partition)
+    *   [4.4 No Default or UI found on some computers](#No_Default_or_UI_found_on_some_computers)
+    *   [4.5 Missing operating system](#Missing_operating_system)
+    *   [4.6 Windows boots up, ignoring Syslinux](#Windows_boots_up.2C_ignoring_Syslinux)
+    *   [4.7 Menu entries do nothing](#Menu_entries_do_nothing)
+    *   [4.8 Cannot remove ldlinux.sys](#Cannot_remove_ldlinux.sys)
+    *   [4.9 White block in upper left corner when using vesamenu](#White_block_in_upper_left_corner_when_using_vesamenu)
+    *   [4.10 Chainloading Windows does not work, when it is installed on another drive](#Chainloading_Windows_does_not_work.2C_when_it_is_installed_on_another_drive)
+    *   [4.11 Read bootloader log](#Read_bootloader_log)
+    *   [4.12 Btrfs compression](#Btrfs_compression)
+    *   [4.13 Btrfs multi-device](#Btrfs_multi-device)
 *   [5 See also](#See_also)
 
 ## BIOS Systems
@@ -769,6 +770,19 @@ How to do this with GRUB: [Working with the serial console#GRUB2 and systemd](/i
 
 ## Troubleshooting
 
+### Failed to load ldlinux
+
+An error message such as "Failed to load ldlinux.c32" during the initial boot can be triggered by many diverse reasons. One potential reason could be a change in file system tools or in a file system structure, depending on its own version. For instance, newer ext4 file systems might be created with its "64bit" feature enabled by default (whereas its "64bit" feature is only set manually, not by default, in older versions of mke2fs). This is just one example; file systems other than ext4 could also be affected by changes in their own structures and/or respective tools, thus also affecting bootloaders' behavior.
+
+**Warning:** As of Syslinux 6.03, some of the features of the supported file systems are not supported by the bootloader; for example, the "64bit" feature of ext4 (boot) volumes. See [[12]](http://www.syslinux.org/wiki/index.php/Filesystem) for more information.
+
+**Note:** There is no direct and unique correspondence between a message such as `Failed to load ldlinux.c32` and a problem related to the file system:
+
+*   Other alternative symptoms, instead of this message, could also indicate a problem related to the file system.
+*   The message does not necessarily mean that the problem is related to the file system; there are other possible reasons for this type of messages.
+
+See also [[13]](http://www.syslinux.org/wiki/index.php/Common_Problems#Failed_to_load_ldlinux) (the whole page might be relevant for troubleshooting too).
+
 ### Using the Syslinux prompt
 
 You can type in the `LABEL` name of the entry that you want to boot (as per your `syslinux.cfg`). If you used the example configurations, just type:
@@ -933,7 +947,7 @@ To get more detailed debug log, [recompile](/index.php/ABS "ABS") the [syslinux]
 
 ### Btrfs compression
 
-Booting from btrfs with compression is not supported.[[12]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
+Booting from btrfs with compression is not supported.[[14]](http://www.syslinux.org/wiki/index.php/Syslinux_4_Changelog#Changes_in_4.02) This error will show:
 
 ```
 btrfs: found compressed data, cannot continue!
@@ -943,7 +957,7 @@ invalid or corrupt kernel image.
 
 ### Btrfs multi-device
 
-Booting from multiple-device btrfs is not supported.[[13]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 7/21/2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
+Booting from multiple-device btrfs is not supported.[[15]](http://repo.or.cz/syslinux.git/blob/HEAD:/extlinux/main.c) (As of 7/21/2016 line 1246 in validate_device_btrfs() in main.c) This head-scratching error will show (assuming you're installing on sda1):
 
 ```
 /boot/syslinux is device /dev/sda1

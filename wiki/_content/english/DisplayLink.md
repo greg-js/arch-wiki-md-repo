@@ -157,7 +157,7 @@ Avoid placing these commands in `~/.xprofile` as this breaks the display configu
 
 ### Not working configuration
 
-These are tested on [Xfce](/index.php/Xfce "Xfce") using Display settings (included in XFCE4 package) and external tool - [arandr](https://www.archlinux.org/packages/?name=arandr). XFCE4 Display settings are likelly to crash, so ARandR might help.
+These are tested on [Xfce](/index.php/Xfce "Xfce") using Display settings (included in XFCE4 package) and external tool - [arandr](https://www.archlinux.org/packages/?name=arandr). XFCE4 Display settings are likely to crash, so ARandR might help.
 
 When you connect display link device via USB to your computer, the computer should show monitors in Display settings. There are few troubleshooting steps that you should try:
 

@@ -4,6 +4,10 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Using folders and sup labels](#Using_folders_and_sup_labels)
+        *   [2.1.1 sup labels](#sup_labels)
+        *   [2.1.2 sup hooks](#sup_hooks)
+    *   [2.2 Viewing HTML attachments](#Viewing_HTML_attachments)
 *   [3 Usage](#Usage)
 *   [4 Back-up and Restore](#Back-up_and_Restore)
 *   [5 List of Keybindings](#List_of_Keybindings)
@@ -16,7 +20,8 @@
     *   [5.7 Global keybindings](#Global_keybindings)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Crashing with: Illegal instruction (core dumped)](#Crashing_with:_Illegal_instruction_.28core_dumped.29)
-*   [7 See also](#See_also)
+*   [7 Tips and tricks](#Tips_and_tricks)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -49,6 +54,109 @@ Sup is for the most part only an MUA (mail user agent) and cannot handle downloa
 The [sup wiki has an example](https://github.com/sup-heliotrope/sup/wiki/Complete-gmail-configuration) for configuring a gmail+imap source using offlineimap. The [Mutt#POP3](/index.php/Mutt#POP3 "Mutt") subsection shows some additional mail transfer methods.
 
 After the email sources have been added, `sup-config` will execute the `sup-sync` command to import mail into your mailbox.
+
+### Using folders and sup labels
+
+Here is a configuration using folders, imapfilter and sup to automatically tag the messages according to your preferences and archive all the stuff you don't want to have in your face and easily find it with sups excellent views and labels.
+
+Create the folders on the IMAP-server:
+
+*   INBOX
+*   Pulse
+
+Filter all mail with [imapfilter](https://aur.archlinux.org/packages/imapfilter/) starting from the [example.config](https://github.com/lefcha/imapfilter/blob/master/samples/config.lua).
+
+**Tip:** change `ssl = 'ssl23',` to use a more secure protocol e.g. *tls1*
+
+Your mail is now filtered with all of interest in *INBOX* and the cruft in *Pulse*.
+
+#### sup labels
+
+Sup uses the file `~/.sup/sources.yaml` to get sync your mail with its index and supports adding labels.
+
+```
+--- 
+- !supmua.org,2006-10-01/Redwood/Maildir 
+  uri: maildir:/home/User/Mail/Inbox
+  usual: true
+  archived: false
+  id: 1
+  labels: []
+- !supmua.org,2006-10-01/Redwood/Maildir 
+  uri: maildir:/home/User/Mail/Pulse
+  usual: true
+  archived: true
+  id: 2
+  labels:
+  - pulse
+  - cruft
+```
+
+As seen in the example the *Pulse* folder has 2 labels: *pulse* and *cruft*. All the mail from Pulse is archived on import and hidden from view avoiding a cluttered screen. See the [sup wiki](https://github.com/sup-heliotrope/sup/wiki/Adding-sources) for details on labels and ids.
+
+**Warning:** The source-statements need to have unique ids to work properly.
+
+#### sup hooks
+
+sup has to types of hooks: interactive and non-interactive to enable the user to easily customize the program.
+
+To activate the filtering and syncing automatically we set up a non-interactive startup hook using **before-poll**:
+
+```
+ File: ~/.sup/hooks/before-poll.rb
+ Executes immediately before a poll for new messages commences.
+ No variables.
+
+```
+
+Here is a simple example (without filtering)
+
+```
+ say "Running offlineimap..."
+ system "offlineimap", "-o", "-u", "quiet"
+
+```
+
+Here is a simple example (with filtering)
+
+```
+ say "Running imapfilter..."
+ system "imapfilter", "-c", "path-to-config.lua"
+ say "Running offlineimap..."
+ system "offlineimap", "-o", "-u", "quiet"
+
+```
+
+Now running sup will start filtering and then synching mail when sup starts or whenever you poll mail manually. See details in the [sup wiki on before-poll](https://github.com/sup-heliotrope/sup/wiki/Triggering-mail-collection)
+
+### Viewing HTML attachments
+
+create `~/.sup/hooks/mime-decode.rb` with
+
+```
+   require 'shellwords'
+   unless sibling_types.member? "text/plain"
+     case content_type
+     when "text/html"
+       `/usr/bin/w3m -dump -T #{content_type} #{Shellwords.escape filename}`
+     end
+   end
+
+```
+
+Or
+
+```
+    require 'shellwords'
+    unless sibling_types.member? "text/plain"
+      case content_type
+      when "text/html"
+	`/usr/bin/links -dump #{Shellwords.escape filename}`
+      end
+    end
+```
+
+Note the difference in program executed. See details on [the sup wiki](https://github.com/sup-heliotrope/sup/wiki/Viewing-Attachments#decoding-attachments)
 
 ## Usage
 
@@ -285,6 +393,8 @@ This should solve the problem with Xapian not running on old CPUs. It should als
 ```
 
 it is possible that you also have this issue, try to run the other executables such as `sup` or `sup-dump` to see if you get the Illegal instruction (core dumped) error message.
+
+## Tips and tricks
 
 ## See also
 

@@ -6,7 +6,8 @@ This article documents the configuration of `libgphoto2` to access digital camer
     *   [1.1 Installation](#Installation)
     *   [1.2 Permission issues](#Permission_issues)
     *   [1.3 GPhoto2 usage](#GPhoto2_usage)
-        *   [1.3.1 Other frontend applications for libgphoto2](#Other_frontend_applications_for_libgphoto2)
+        *   [1.3.1 Example usage with gvfs](#Example_usage_with_gvfs)
+        *   [1.3.2 Other frontend applications for libgphoto2](#Other_frontend_applications_for_libgphoto2)
 *   [2 See also](#See_also)
 
 ## libgphoto2
@@ -38,6 +39,20 @@ GPhoto2 also provides convenient debugging features for camera driver developers
 For advanced file manipulation, use
 
 *   `gphoto2 --shell`
+
+#### Example usage with gvfs
+
+Auto detect the connected camera and list the required port:
+
+```
+$ gphoto2 --auto-detect
+Model                          Port                                            
+----------------------------------------------------------
+Canon Digital IXUS 980 IS      usb:006,011 
+
+```
+
+Now open your favorite file manager and enter the address with the found port detail "gphoto2://[usb:006,011]" - the camera will be mounted with gvfs and can be managed with the file manager.
 
 #### Other frontend applications for libgphoto2
 

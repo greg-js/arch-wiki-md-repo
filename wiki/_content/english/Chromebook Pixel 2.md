@@ -64,6 +64,10 @@ See [Chrome OS devices#Alternative installation, Install Arch Linux in addition 
 
 Touchpad, touchscreen, and audio are all working in the upstream 4.9 kernel.
 
+4.9 is in Testing right now so you can install [linux](https://www.archlinux.org/packages/?name=linux) after enabling [Official_repositories#testing](/index.php/Official_repositories#testing "Official repositories").
+
+On a fresh Arch install sound was muted by default. I followed [PulseAudio/Troubleshooting#Volume](/index.php/PulseAudio/Troubleshooting#Volume "PulseAudio/Troubleshooting") and found that I had to unmute Stereo DAC MIXL DAC1 L and Stereo DAC MIXL DAC1 R on bdw-rt5677\. I also haven't been able to get the headphone port working.
+
 ### Linux 4.1
 
 [Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) package for Linux 4.1 support. You will need to regenerate your GRUB configuration after installing linux-samus4\. See [[2]](https://github.com/raphael/linux-4.1-samus) for information on how to enable audio and microphone support.

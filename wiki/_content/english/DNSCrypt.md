@@ -16,11 +16,11 @@
     *   [3.2 Enable EDNS0](#Enable_EDNS0)
         *   [3.2.1 Test EDNS0](#Test_EDNS0)
     *   [3.3 Redundant DNSCrypt providers](#Redundant_DNSCrypt_providers)
-        *   [3.3.1 Add new forward address](#Add_new_forward_address)
-        *   [3.3.2 Create instanced systemd service](#Create_instanced_systemd_service)
-        *   [3.3.3 Add first dnscrypt-socket](#Add_first_dnscrypt-socket)
-        *   [3.3.4 Add additional dnscrypt-sockets](#Add_additional_dnscrypt-sockets)
-        *   [3.3.5 Apply new systemd configuration](#Apply_new_systemd_configuration)
+        *   [3.3.1 Create instanced systemd service](#Create_instanced_systemd_service)
+            *   [3.3.1.1 Create systemd file](#Create_systemd_file)
+            *   [3.3.1.2 Add first dnscrypt-socket](#Add_first_dnscrypt-socket)
+            *   [3.3.1.3 Add additional dnscrypt-sockets](#Add_additional_dnscrypt-sockets)
+            *   [3.3.1.4 Apply new systemd configuration](#Apply_new_systemd_configuration)
 *   [4 Known issues](#Known_issues)
     *   [4.1 dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges)
 
@@ -197,22 +197,22 @@ rst.x4055.x4049.x3827.rs.dns-oarc.net.
 
 ### Redundant DNSCrypt providers
 
-#### Add new forward address
+To use several different dnscrypt providers, you may simply copy the original modified `dnscrypt-proxy.service` and `dnscrypt-proxy.socket` from [#Configuration](#Configuration). Then in your new copy of the service change the provider. From there change the port in the new socket. Lastly, update your local DNS cache program to point to new service's port. For example, with [unbound](/index.php/Unbound "Unbound") the configuration file would look like if using ports `5353` for the original socket and `5354` for the new socket.
 
-**Note:** Obtaining redundancy requires a simple edit to the above Unbound example and the addition of a second instance of the dnscrypt-proxy and service. Please be sure that the above Unbound example is working prior to proceeding, as this tip extends the previous example.
-
-Extend the previous [Unbound](/index.php/Unbound "Unbound") configuration in `/etc/unbound/unbound.conf` to include an additional forward address that uses a different port. Port 5354 is used in the below example:
-
+ `/etc/unbound/unbound.conf` 
 ```
-do-not-query-localhost: no
-forward-zone:
-  name: "."
-  forward-addr: 127.0.0.1@5353
-  forward-addr: 127.0.0.1@5354
-
+ do-not-query-localhost: no
+ forward-zone:
+   name: "."
+   forward-addr: 127.0.0.1@5353
+   forward-addr: 127.0.0.1@5354
 ```
 
 #### Create instanced systemd service
+
+An alternative option to copying the systemd service is to used an instanced service.
+
+##### Create systemd file
 
 First, create `/etc/systemd/system/dnscrypt-proxy@.service` containing:
 
@@ -236,13 +236,13 @@ Restart=always
 
 This specifies an instanced systemd service that starts a dnscrypt-proxy using the service name specified after the @ symbol of a corresponding .socket file.
 
-#### Add first dnscrypt-socket
+##### Add first dnscrypt-socket
 
 Now create two or more socket files, specifying different DNSCrypt providers.
 
 For the first dnscrypt-proxy socket, listening on 127.0.0.1@5353 and connecting to the example dnscrypt.eu-nl provider, copy `/lib/systemd/system/dnscrypt-proxy.socket` to `/etc/systemd/system/dnscrypt-proxy@dnscrypt.eu-nl.socket` and edit the file to reflect the correct port (5353 in this case).
 
-#### Add additional dnscrypt-sockets
+##### Add additional dnscrypt-sockets
 
 For additional dnscrypt-proxy sockets, copy `/lib/systemd/system/dnscrypt-proxy.socket` to eg. `/etc/systemd/system/dnscrypt-proxy@cloudns-syd.socket`
 
@@ -267,7 +267,7 @@ WantedBy=sockets.target
 
 ```
 
-#### Apply new systemd configuration
+##### Apply new systemd configuration
 
 Now we need to reload the systemd configuration.
 

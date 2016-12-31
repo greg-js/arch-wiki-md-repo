@@ -96,7 +96,7 @@
 
 对于一个选定的设备，以下的*分区*是必须要有的:
 
-*   一个根分区 `/`.
+*   一个根分区（挂载在根目录） `/`.
 *   如果 [UEFI](/index.php/UEFI "UEFI") 模式被启用,你还需要一个 [EFI 系统分区](/index.php/EFI_System_Partition "EFI System Partition").
 *   [Swap](/index.php/Swap_space "Swap space") 可以在一个独立的分区上设置，也可以直接建立 [交换文件](/index.php/Swap#Swap_file "Swap").
 
@@ -288,7 +288,7 @@ zh_TW.UTF-8 UTF-8
 
 ### 安装引导程序
 
-[启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")页面介绍了可用选项和配置方法。包括 [GRUB](/index.php/GRUB "GRUB") (BIOS/UEFI), [systemd-boot](/index.php/Systemd-boot "Systemd-boot") (UEFI) 和 [syslinux](/index.php/Syslinux "Syslinux") (BIOS)等.
+[启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")页面介绍了可用选项和配置方法。包括 [GRUB_(简体中文)](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") (BIOS/UEFI), [systemd-boot_(简体中文)](/index.php/Systemd-boot_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd-boot (简体中文)") (UEFI) 和 [Syslinux_(简体中文)](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") (BIOS)等.
 
 Intel CPU 也需要安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 并根据 [Microcode](/index.php/Microcode "Microcode") 配置 boot loader.
 

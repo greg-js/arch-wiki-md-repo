@@ -1,4 +1,4 @@
-[Otter Browser](http://otter-browser.org) is a web browser which aims to recreate [Opera](/index.php/Opera "Opera") UI. It's based on [Qt5](/index.php/Qt "Qt") and QtWebKit with experimental support of QtWebEngine.
+[Otter Browser](http://otter-browser.org) is a web browser which aims to recreate [Opera](/index.php/Opera "Opera") UI. It's based on [Qt5](/index.php/Qt "Qt") and QtWebKit, with experimental support of QtWebEngine.
 
 ## Contents
 
@@ -15,7 +15,7 @@ Otter Browser can be [installed](/index.php/Installed "Installed") with [otter-b
 
 ### Experimental support for QtWebEngine
 
-To use QtWebEngine based on Blink web engine, install [qt5-webengine](https://www.archlinux.org/packages/?name=qt5-webengine) and rebuild Otter package. After this you can go to [about:config](http://about:config) and select *qtwebengine* as *Backend*.
+To use QtWebEngine based on Blink web engine, install [qt5-webengine](https://www.archlinux.org/packages/?name=qt5-webengine) and rebuild Otter package. After this you can go to **about:config** and select *qtwebengine* as *Backend*.
 
 ## See also
 

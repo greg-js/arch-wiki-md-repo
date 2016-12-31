@@ -41,6 +41,7 @@ This article provides information on basic system diagnostics relating to perfor
         *   [5.2.1 Swap on zRAM using a udev rule](#Swap_on_zRAM_using_a_udev_rule)
     *   [5.3 Using the graphic card's RAM](#Using_the_graphic_card.27s_RAM)
 *   [6 Network](#Network)
+*   [7 Watchdogs](#Watchdogs)
 
 ## The basics
 
@@ -416,3 +417,35 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 ## Network
 
 Every time a connection is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be established. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached-git](https://aur.archlinux.org/packages/rescached-git/).
+
+## Watchdogs
+
+According to [[7]](https://en.wikipedia.org/wiki/Watchdog_timer):
+
+	A watchdog timer [...] is an electronic timer that is used to detect and recover from computer malfunctions. During normal operation, the computer regularly resets the watchdog timer [...]. If, [...], the computer fails to reset the watchdog, the timer will elapse and generate a timeout signal [...] used to initiate corrective [...] actions [...] typically include placing the computer system in a safe state and restoring normal system operation.
+
+Many users need this feature due to their system's mission-critical role (i.e. servers), or because of the lack of power reset (i.e. embedded devices). Thus, this feature is required for a good operation in some situations. On the other hand, normal users (i.e. desktop and laptop) do not need this feature and can disable it.
+
+To disable watchdog timers (both software and hardware), append `nowatchdog` to your boot parameters.
+
+To check the new configuration do:
+
+```
+# cat /proc/sys/kernel/watchdog
+
+```
+
+or use:
+
+```
+# wdctl
+
+```
+
+After you disabled watchdogs, you can *optionally* avoid the loading of the module responsible of the hardware watchdog, too. Do it by [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") the related module, e.g. `iTCO_wdt`.
+
+**Note:** Some users [reported](https://bbs.archlinux.org/viewtopic.php?id=221239) the `nowatchdog` parameter doesn't work as expected but they have successfully disabled the watchdog (at least the hardware one) by blacklisting the above-mentioned module.
+
+Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](https://wiki.archlinux.org/index.php/Power_management#Disabling_NMI_watchdog).
+
+See [[8]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[9]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[10]](http://0pointer.de/blog/projects/watchdog.html), and [[11]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.

@@ -158,7 +158,7 @@ Whatever executable you use, it should probably take at least two arguments as t
  `/etc/systemd/system/status-email-*user*@.service` 
 ```
 [Unit]
-Description=status email for %I to *user*
+Description=status email for %i to *user*
 
 [Service]
 Type=oneshot

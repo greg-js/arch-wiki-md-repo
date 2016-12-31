@@ -32,9 +32,12 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Camera | **Working** | uvcvideo |
 | Card Reader | **Working** | mmc_core |
 | Bluetooth | **Working** | btintel |
-| Fingerprint Reader | **Unknown** |
+| Fingerprint Reader | **Not working** ² |
+| Smartcard reader | **Working** |
 
 ¹Only one pen-button working
+
+²https://bugs.freedesktop.org/show_bug.cgi?id=94536
 
 ## Installation
 

@@ -1,4 +1,4 @@
-KDE is a software project currently comprising of a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma (or Plasma Workspaces), a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/). Detailed information about most KDE applications can be found there.
+KDE is a software project currently comprising of a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma (or Plasma Workspaces), a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](https://userbase.kde.org/). Detailed information about most KDE applications can be found there.
 
 ## Contents
 
@@ -6,6 +6,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [1.1 Plasma Desktop](#Plasma_Desktop)
     *   [1.2 Upgrading from Plasma 4 to 5](#Upgrading_from_Plasma_4_to_5)
     *   [1.3 KDE applications and language packs](#KDE_applications_and_language_packs)
+    *   [1.4 Unstable releases](#Unstable_releases)
 *   [2 Starting Plasma](#Starting_Plasma)
     *   [2.1 Wayland](#Wayland)
 *   [3 Configuration](#Configuration)
@@ -27,72 +28,69 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [3.4 KDE Desktop activities](#KDE_Desktop_activities)
     *   [3.5 Power saving](#Power_saving)
     *   [3.6 Autostarting applications](#Autostarting_applications)
-*   [4 System administration](#System_administration)
-    *   [4.1 Terminate Xorg server through KDE System Settings](#Terminate_Xorg_server_through_KDE_System_Settings)
-    *   [4.2 KCM](#KCM)
-*   [5 Desktop search](#Desktop_search)
-    *   [5.1 Baloo](#Baloo)
-        *   [5.1.1 Using and configuring Baloo](#Using_and_configuring_Baloo)
-        *   [5.1.2 How do I index a removable device?](#How_do_I_index_a_removable_device.3F)
-*   [6 Web browsers](#Web_browsers)
-    *   [6.1 Konqueror and Rekonq](#Konqueror_and_Rekonq)
-    *   [6.2 Chromium and Chrome](#Chromium_and_Chrome)
-    *   [6.3 Firefox](#Firefox)
-    *   [6.4 Qupzilla](#Qupzilla)
-*   [7 PIM](#PIM)
-    *   [7.1 Akonadi](#Akonadi)
-        *   [7.1.1 Installation](#Installation_2)
-        *   [7.1.2 Disabling Akonadi](#Disabling_Akonadi)
-        *   [7.1.3 Database configuration](#Database_configuration)
-            *   [7.1.3.1 MariaDB/MySQL](#MariaDB.2FMySQL)
-                *   [7.1.3.1.1 Using ZFS](#Using_ZFS)
-            *   [7.1.3.2 PostgreSQL](#PostgreSQL)
-            *   [7.1.3.3 SQLite](#SQLite)
-*   [8 Phonon](#Phonon)
-    *   [8.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
-*   [9 Useful applications](#Useful_applications)
-    *   [9.1 Yakuake](#Yakuake)
-    *   [9.2 KDE Telepathy](#KDE_Telepathy)
-        *   [9.2.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
-*   [10 Tips and tricks](#Tips_and_tricks)
-    *   [10.1 Using an alternative window manager](#Using_an_alternative_window_manager)
-        *   [10.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
-        *   [10.1.2 Compiz custom](#Compiz_custom)
-        *   [10.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
-    *   [10.2 Integrate Android](#Integrate_Android)
-    *   [10.3 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
-    *   [10.4 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
-    *   [10.5 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
-    *   [10.6 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Configuration related](#Configuration_related)
-        *   [11.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
-        *   [11.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
-    *   [11.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
-    *   [11.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
-    *   [11.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
-    *   [11.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
-    *   [11.6 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [11.7 Graphical related problems](#Graphical_related_problems)
-        *   [11.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
-        *   [11.7.2 Applications do not refresh properly](#Applications_do_not_refresh_properly)
-        *   [11.7.3 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
-            *   [11.7.3.1 GPU driver problem](#GPU_driver_problem)
-            *   [11.7.3.2 The Raster engine workaround](#The_Raster_engine_workaround)
-        *   [11.7.4 Low 3D desktop performance](#Low_3D_desktop_performance)
-        *   [11.7.5 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
-        *   [11.7.6 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [11.7.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
-    *   [11.8 Sound problems under KDE](#Sound_problems_under_KDE)
-        *   [11.8.1 ALSA related problems](#ALSA_related_problems)
-            *   [11.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
-            *   [11.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [11.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
-    *   [11.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [11.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
-    *   [11.12 Multi-monitor issues](#Multi-monitor_issues)
-*   [12 Unstable releases](#Unstable_releases)
-*   [13 See also](#See_also)
+    *   [3.7 Phonon](#Phonon)
+        *   [3.7.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
+*   [4 Applications](#Applications)
+    *   [4.1 System administration](#System_administration)
+        *   [4.1.1 Terminate Xorg server through KDE System Settings](#Terminate_Xorg_server_through_KDE_System_Settings)
+        *   [4.1.2 KCM](#KCM)
+    *   [4.2 Desktop search](#Desktop_search)
+        *   [4.2.1 Baloo](#Baloo)
+            *   [4.2.1.1 Using and configuring Baloo](#Using_and_configuring_Baloo)
+            *   [4.2.1.2 How do I index a removable device?](#How_do_I_index_a_removable_device.3F)
+    *   [4.3 Web browsers](#Web_browsers)
+        *   [4.3.1 Konqueror and Rekonq](#Konqueror_and_Rekonq)
+        *   [4.3.2 Chromium and Chrome](#Chromium_and_Chrome)
+        *   [4.3.3 Firefox](#Firefox)
+        *   [4.3.4 Qupzilla](#Qupzilla)
+    *   [4.4 PIM](#PIM)
+        *   [4.4.1 Akonadi](#Akonadi)
+            *   [4.4.1.1 Installation](#Installation_2)
+            *   [4.4.1.2 Disabling Akonadi](#Disabling_Akonadi)
+            *   [4.4.1.3 Database configuration](#Database_configuration)
+                *   [4.4.1.3.1 MariaDB/MySQL (using ZFS)](#MariaDB.2FMySQL_.28using_ZFS.29)
+                *   [4.4.1.3.2 PostgreSQL](#PostgreSQL)
+                *   [4.4.1.3.3 SQLite](#SQLite)
+    *   [4.5 KDE Telepathy](#KDE_Telepathy)
+        *   [4.5.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
+    *   [4.6 Integrate Android](#Integrate_Android)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Using an alternative window manager](#Using_an_alternative_window_manager)
+        *   [5.1.1 KDE/Openbox session](#KDE.2FOpenbox_session)
+        *   [5.1.2 Compiz custom](#Compiz_custom)
+        *   [5.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
+    *   [5.2 Configure KWin to use OpenGL ES](#Configure_KWin_to_use_OpenGL_ES)
+    *   [5.3 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
+    *   [5.4 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
+    *   [5.5 Enabling touchpad tap to click on plasma wayland session](#Enabling_touchpad_tap_to_click_on_plasma_wayland_session)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Configuration related](#Configuration_related)
+        *   [6.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
+        *   [6.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
+    *   [6.2 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
+    *   [6.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
+    *   [6.4 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
+    *   [6.5 KDE and Qt programs look bad when in a different window manager](#KDE_and_Qt_programs_look_bad_when_in_a_different_window_manager)
+    *   [6.6 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [6.7 Graphical related problems](#Graphical_related_problems)
+        *   [6.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
+        *   [6.7.2 Applications do not refresh properly](#Applications_do_not_refresh_properly)
+        *   [6.7.3 Low 2D desktop performance (or) artifacts appear when on 2D](#Low_2D_desktop_performance_.28or.29_artifacts_appear_when_on_2D)
+            *   [6.7.3.1 GPU driver problem](#GPU_driver_problem)
+            *   [6.7.3.2 The Raster engine workaround](#The_Raster_engine_workaround)
+        *   [6.7.4 Low 3D desktop performance](#Low_3D_desktop_performance)
+        *   [6.7.5 Desktop compositing is disabled on my system with a modern Nvidia GPU](#Desktop_compositing_is_disabled_on_my_system_with_a_modern_Nvidia_GPU)
+        *   [6.7.6 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [6.7.7 Display settings lost on reboot (multiple monitors)](#Display_settings_lost_on_reboot_.28multiple_monitors.29)
+    *   [6.8 Sound problems under KDE](#Sound_problems_under_KDE)
+        *   [6.8.1 ALSA related problems](#ALSA_related_problems)
+            *   [6.8.1.1 "Falling back to default" messages when trying to listen to any sound in KDE](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound_in_KDE)
+            *   [6.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+    *   [6.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
+    *   [6.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [6.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
+    *   [6.12 Multi-monitor issues](#Multi-monitor_issues)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -124,6 +122,10 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-package. Note that this will only install applications, it will not install any version of the Plasma Desktop.
 
 If you need language files, install `kde-l10n-**yourlanguagehere**` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see [this link](https://www.archlinux.org/packages/extra/any/kde-l10n/).
+
+### Unstable releases
+
+See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories")
 
 ## Starting Plasma
 
@@ -157,11 +159,11 @@ Frameworks 5 applications can use KDE 4 configuration however they expect the co
 
 **Note:** If the Plasma cursor theme is incorrect in some instances, see the following [forum post](https://bbs.archlinux.org/viewtopic.php?pid=1533071#p1533071) for a workaround.
 
-[Plasma themes](http://kde-look.org/index.php?xcontentmode=76) define the look of panels and plasmoids. For easy system-wide installation, some such themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
+[Plasma themes](https://store.kde.org/browse/cat/104/) define the look of panels and plasmoids. For easy system-wide installation, some such themes are available in both the official repositories and the [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go).
 
 The easiest way to install themes is by going through the *System Settings > Workspace Theme > Desktop Theme > Get new Themes*.
 
-This will present a nice frontend for [kde-look.org](http://www.kde-look.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
+This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
 Splash and Lock screens are currently unavailable so to customize these screens you have to modify the original theme found in `/usr/share/plasma/look-and-feel/`. See [this thread](https://www.kubuntuforums.net/showthread.php?67599-Plasma-5-background-images&s=59832dc20e5bfc2948dbb591d8453f61) on the Kubuntu forums.
 
@@ -187,7 +189,7 @@ In some themes, tooltips in GTK+ applications have white text on white backgroun
 
 Plasmoids are little scripted (plasmoid scripts) or coded (plasmoid binaries) KDE applications designed to enhance the functionality of your desktop.
 
-The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*. This will present a nice frontend for [kde-look.org](http://www.kde-look.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
+The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*. This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
 Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmoid&do_Search=Go&PP=25&SO=d&SB=v).
 
@@ -226,7 +228,7 @@ $ kcmshell5 autostart
 
 #### Window decorations
 
-[Window decorations](http://kde-look.org/index.php?xcontentmode=75) can be changed in *System Settings > Workspace Appearance > Window Decorations*.
+[Window decorations](https://store.kde.org/browse/cat/114/) can be changed in *System Settings > Application Style > Window Decorations*.
 
 There you can also directly download and install more themes with one click, and some are available in the [AUR](https://aur.archlinux.org/packages.php?O=0&K=kdestyle&do_Search=Go&PP=25&SO=d&SB=v).
 
@@ -346,13 +348,46 @@ Place or symlink shell scripts in one of the following directories:
 
 	for executing scripts on shutdown.
 
-## System administration
+### Phonon
 
-### Terminate Xorg server through KDE System Settings
+From [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
+
+	*“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications.*
+
+Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.”
+
+**Phonon** is being widely used within KDE, for both audio (e.g., the System notifications or KDE audio apps) and video (e.g., the Dolphin video thumbnails).
+
+#### Which backend should I choose?
+
+You can choose between backends based on [GStreamer](/index.php/GStreamer "GStreamer") and [VLC](/index.php/VLC "VLC") – each available in versions for Qt4 applications and Qt5 applications ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
+
+[Upstream prefers VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM) but prominent Linux distributions (Kubuntu and Fedora-KDE for example) prefer GStreamer because that allows them to easily leave out patented MPEG codecs from the default installation. Both backends have a slightly different [features set](https://community.kde.org/Phonon/FeatureMatrix).
+
+In the past other backends were developed as well but are no longer maintained and their AUR packages have been deleted.
+
+**Note:**
+
+*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Phonon > Backend*. For Plasma 5 this would be *System Settings > Multimedia > Backend*.
+*   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
+*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[6]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
+*   A possible fix is to run
+
+ `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
+
+## Applications
+
+The KDE project provides a suite of applications that integrate with the Plasma desktop. See the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group for a full listing of the available applications. Also see [Category:KDE](/index.php/Category:KDE "Category:KDE") for related KDE application pages.
+
+Aside from the programs provided in KDE Applications, there are many other applications available that can complement the Plasma desktop. Some of these are discussed below.
+
+### System administration
+
+#### Terminate Xorg server through KDE System Settings
 
 Navigate to the submenu *System Settings > Input Devices > Keyboard > Advanced (tab) > "Key Sequence to kill the X server"* and ensure that the checkbox is ticked.
 
-### KCM
+#### KCM
 
 KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system by providing interfaces in System Settings, or through the command line with *kcmshell5*.
 
@@ -388,15 +423,15 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 	[https://github.com/rthomsen/kcmsystemd](https://github.com/rthomsen/kcmsystemd) || [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm)
 
-More KCMs can be found at [kde-apps.org](http://kde-apps.org/index.php?xcontentmode=273).
+More KCMs can be found at [linux-apps.com](https://www.linux-apps.com/search?projectSearchText=KCM).
 
-## Desktop search
+### Desktop search
 
 KDE implements desktop search with a software called Baloo, a file indexing and searching solution.
 
-### Baloo
+#### Baloo
 
-#### Using and configuring Baloo
+##### Using and configuring Baloo
 
 In order to search using Baloo on the KDE Plasma Desktop, press `ALT+F2` and type in your query. Within Dolphin press `CTRL+F`.
 
@@ -408,55 +443,53 @@ Once you added additional folders to the blacklist or disabled Baloo entirely, a
 
 More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/).
 
-#### How do I index a removable device?
+##### How do I index a removable device?
 
 By default every removable device is blacklisted. You just have to remove your device from the blacklist in the KCM panel.
 
-## Web browsers
+### Web browsers
 
-### Konqueror and Rekonq
+#### Konqueror and Rekonq
 
-Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is supported by Konqueror since version 16.12\. There is a [community continuation](http://qtwebkit.blogspot.com/2016/08/qtwebkit-im-back.html) of QtWebKit.
+Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is supported by Konqueror since version 16.12\. There is a [community continuation](https://qtwebkit.blogspot.com/2016/08/qtwebkit-im-back.html) of QtWebKit.
 
 A successor named Fiber is currently in development, which will use Chromium's engine.
 
-### Chromium and Chrome
+#### Chromium and Chrome
 
 [Chromium](/index.php/Chromium "Chromium") and its proprietary variant Google Chrome have limited Plasma integration. [They can use KWallet](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") and KDE Open/Save windows.
 
-### Firefox
+#### Firefox
 
 Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox") for details.
 
-### Qupzilla
+#### Qupzilla
 
 Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) is a Qt web browser with Plasma integration features. Qupzilla 2.0 uses Qt WebEngine instead of WebKit. The WebKit variant is also available as [qupzilla-qtwebkit-git](https://aur.archlinux.org/packages/qupzilla-qtwebkit-git/).
 
-## PIM
+### PIM
 
 KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc.
 
-### Akonadi
+#### Akonadi
 
 Akonadi is a system meant to act as a local cache for PIM data, regardless of its origin, which can be then used by other applications. This includes the user's emails, contacts, calendars, events, journals, alarms, notes, and so on.
 
 Akonadi does not store any data by itself: the storage format depends on the nature of the data (for example, contacts may be stored in vCard format).
 
-#### Installation
+##### Installation
 
 Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons). For EWS support, install [akonadi-ews-git](https://aur.archlinux.org/packages/akonadi-ews-git/).
 
 **Note:** If you wish to use a database engine other than MariaDB/MySQL, then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies: `# pacman -S akonadi --assume-installed mariadb` 
 
-#### Disabling Akonadi
+##### Disabling Akonadi
 
-See this [section in the KDE userbase](http://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem).
+See this [section in the KDE userbase](https://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem).
 
-#### Database configuration
+##### Database configuration
 
-##### MariaDB/MySQL
-
-###### Using ZFS
+###### MariaDB/MySQL (using ZFS)
 
 If your home directory is on a ZFS pool, you will need to create `~/.config/akonadi/mysql-local.conf` with the following contents:
 
@@ -468,7 +501,7 @@ innodb_use_native_aio = 0
 
 Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL")
 
-##### PostgreSQL
+###### PostgreSQL
 
 1.  Install and setup PostgreSQL (see [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"))
     *   Enable the `postgresql` [systemd](/index.php/Systemd "Systemd") service: `systemctl enable postgresql.service`.
@@ -494,7 +527,7 @@ Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_runni
 
 4.  Start Akonadi: `akonadictl start`, and check its status: `akonadictl status`.
 
-##### SQLite
+###### SQLite
 
 Edit `~/.config/akonadi/akonadiserverrc` to match the configuration below:
 
@@ -507,50 +540,29 @@ Name=/home/username/.local/akonadi/akonadi.db
 
 ```
 
-## Phonon
-
-From [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
-
-	*“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications.*
-
-Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.”
-
-**Phonon** is being widely used within KDE, for both audio (e.g., the System notifications or KDE audio apps) and video (e.g., the Dolphin video thumbnails).
-
-### Which backend should I choose?
-
-You can choose between backends based on [GStreamer](/index.php/GStreamer "GStreamer") and [VLC](/index.php/VLC "VLC") – each available in versions for Qt4 applications and Qt5 applications ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
-
-[Upstream prefers VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM) but prominent Linux distributions (Kubuntu and Fedora-KDE for example) prefer GStreamer because that allows them to easily leave out patented MPEG codecs from the default installation. Both backends have a slightly different [features set](http://community.kde.org/Phonon/FeatureMatrix).
-
-In the past other backends were developed as well but are no longer maintained and their AUR packages have been deleted.
-
-**Note:**
-
-*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Phonon > Backend*. For Plasma 5 this would be *System Settings > Multimedia > Backend*.
-*   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
-*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[6]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
-*   A possible fix is to run
-
- `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
-
-## Useful applications
-
-The official set of KDE applications may be found at [http://www.kde.org/applications/](http://www.kde.org/applications/).
-
-### Yakuake
-
-[Yakuake](/index.php/Yakuake "Yakuake") provides a Quake-like terminal emulator whose visibility is toggled by the `F12` key. It also has support for multiple tabs. Yakuake is available in the package [yakuake](https://www.archlinux.org/packages/?name=yakuake).
-
 ### KDE Telepathy
 
-[KDE Telepathy](http://community.kde.org/KTp) is a project with the goal to closely integrate Instant Messaging with the KDE desktop. It utilizes the Telepathy framework as a backend and is intended to replace Kopete.
+[KDE Telepathy](https://community.kde.org/KTp) is a project with the goal to closely integrate Instant Messaging with the KDE desktop. It utilizes the Telepathy framework as a backend and is intended to replace Kopete.
 
 To install all Telepathy protocols, install the [telepathy](https://www.archlinux.org/groups/x86_64/telepathy/) group. To use the KDE Telepathy client, install the [telepathy-kde-meta](https://www.archlinux.org/packages/?name=telepathy-kde-meta) package that includes all the packages contained in the [telepathy-kde](https://www.archlinux.org/groups/x86_64/telepathy-kde/) group.
 
 #### Use Telegram with KDE Telepathy
 
 Telegram protocol is available using [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), installing [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) and [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/). The username is the Telegram account telephone number (complete with the national prefix '+xx', e.g. '+49' for Germany). The configuration through the GUI may be tricky: if the phone number is not accepted when configuring a new account in the KDE Telepathy client (with an error message complaining about an invalid parameter which prevents the account creation), insert it between single quotes and then remove the quotes manually from the configuration file (`~/.local/share/telepathy/mission-control/accounts.cfg`) after the account creation (if the quotes are not removed after, an authentication error should rise). Note that the configuration file should be edited manually when KDE Telepathy is not running, e.g. when there is no KDE desktop session active, otherwise manual changes may be overwritten by the software.
+
+### Integrate Android
+
+KDE Connect provides several features for you:
+
+*   Share files and URLs to/from KDE from/to any app, without wires.
+*   Touchpad emulation: Use your phone screen as your computer's touchpad.
+*   Notifications sync (4.3+): Read your Android notifications from the desktop.
+*   Shared clipboard: copy and paste between your phone and your computer.
+*   Multimedia remote control: Use your phone as a remote for Linux media players.
+*   WiFi connection: no usb wire or bluetooth needed.
+*   RSA Encryption: your information is safe.
+
+You will need to install KDE Connect both on your computer and on your Android. For PC side, install [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install `KDE Connect` from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
 
 ## Tips and tricks
 
@@ -604,20 +616,6 @@ $ chmod +x /usr/local/bin/compiz-kde-launcher
 #### Re-enabling compositing effects
 
 When replacing Kwin with a window manager which does not provide a Compositor (such as Openbox), any desktop compositing effects e.g. transparency will be lost. In this case, install and run a separate Composite manager to provide the effects such as [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") or [Compton](/index.php/Compton "Compton").
-
-### Integrate Android
-
-KDE Connect provides several features for you:
-
-*   Share files and URLs to/from KDE from/to any app, without wires.
-*   Touchpad emulation: Use your phone screen as your computer's touchpad.
-*   Notifications sync (4.3+): Read your Android notifications from the desktop.
-*   Shared clipboard: copy and paste between your phone and your computer.
-*   Multimedia remote control: Use your phone as a remote for Linux media players.
-*   WiFi connection: no usb wire or bluetooth needed.
-*   RSA Encryption: your information is safe.
-
-You will need to install KDE Connect both on your computer and on your Android. For PC side, install [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install `KDE Connect` from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
 
 ### Configure KWin to use OpenGL ES
 
@@ -709,7 +707,7 @@ Many problems in KDE are related to configuration.
 
 Plasma problems are usually caused by unstable **Plasma widgets** (colloquially called *plasmoids*) or **Plasma themes**. First, find which was the last widget or theme you had installed and disable it or uninstall it.
 
-So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report (bugs.kde.org) **only if it is an official widget**. If it is not, it is recommended you find the entry on kde-look.org and inform the developer of that widget about the problem (detailing steps to reproduce, etc).
+So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report (bugs.kde.org) **only if it is an official widget**. If it is not, it is recommended you find the entry on [https://store.kde.org/](https://store.kde.org/) and inform the developer of that widget about the problem (detailing steps to reproduce, etc).
 
 If you cannot find the problem, but you do not want *all* the settings to be lost, navigate to `~/.config`:
 
@@ -754,7 +752,7 @@ For some IMAP accounts, kmail will show the inbox as a container with all other 
 
 ### Getting current state of KWin for support and debug purposes
 
-This command prints out a wonderful summary of the current state of KWin including used options, used compositing backend and relevant OpenGL driver capabilities. See more on [Martin's blog](http://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/).
+This command prints out a wonderful summary of the current state of KWin including used options, used compositing backend and relevant OpenGL driver capabilities. See more on [Martin's blog](https://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/).
 
 ```
 $ qdbus org.kde.KWin /KWin supportInformation
@@ -785,7 +783,7 @@ Under Gnome you can try to install the package libgnomeui.
 
 ### KF5/Qt5 applications do not display icons in i3/fvwm/awesome
 
-See [Qt#Configuration of Qt5 apps under environments other than KDE](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE "Qt").
+See [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
 
 ### Graphical related problems
 
@@ -823,7 +821,7 @@ Since Qt 4.7+, recompiling Qt is not needed. Simply export `QT_GRAPHICSSYSTEM=ra
 
 **The best and automatic way to do that** is to install [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) from AUR and configure this particular Qt setting through *System Settings > Qt Graphics System*.
 
-For more information, consult this [KDE Developer blog entry](http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) and/or this [Qt Developer blog entry](https://web.archive.org/web/20100430183745/http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine).
+For more information, consult this [KDE Developer blog entry](https://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) and/or this [Qt Developer blog entry](https://web.archive.org/web/20100430183745/http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine).
 
 #### Low 3D desktop performance
 
@@ -912,13 +910,9 @@ The current release of KDE Plasma has several issues with multi-monitor setups, 
 
 These bugs have been resolved in the upstream/git KDE Plasma builds, which can be installed from [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) or [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) - bear in mind that all packages will conflict with current versions - it is recommended to [remove](/index.php/Remove "Remove") them first.
 
-## Unstable releases
-
-See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-unstable "Official repositories")
-
 ## See also
 
-*   [KDE homepage](http://www.kde.org)
+*   [KDE homepage](https://www.kde.org)
 *   [KDE bug tracker](https://bugs.kde.org)
 *   [KDE Projects](https://projects.kde.org)
-*   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
+*   [Martin Graesslin's blog](https://blog.martin-graesslin.com/blog/kategorien/kde/)

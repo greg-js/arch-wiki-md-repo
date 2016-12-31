@@ -28,7 +28,7 @@ port 6379
 
 ### Listen on socket
 
-Using Redis over an Unix socket may give a performance increase, compared to TCP/IP [[1]](http://redis.io/topics/benchmarks).
+Using Redis over a Unix socket may give a performance increase, compared to TCP/IP [[1]](http://redis.io/topics/benchmarks).
 
 The following changes should be made in `/etc/redis.conf` to enable use of the unix socket:
 

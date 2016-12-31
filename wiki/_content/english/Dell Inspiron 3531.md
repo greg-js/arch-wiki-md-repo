@@ -1,4 +1,4 @@
-This page describes Arch's issues with Dell Inspiron 15 3531 (Dell's budget model of autumn 2014).
+This page describes Arch's issues with Dell Inspiron 15 3531 (budget model of autumn 2014).
 
 ## Contents
 
@@ -25,7 +25,7 @@ This page describes Arch's issues with Dell Inspiron 15 3531 (Dell's budget mode
 
 This cheap stripped down model has:
 
-*   no optical drive (and, although there is a slot for the drive, motherboard has no SATA connector),
+*   no optical drive (and, although there is a slot for the drive, the motherboard has no SATA connector),
 *   no Bluetooth,
 *   no CPU fan,
 *   no external microphone jack
@@ -94,13 +94,13 @@ Install the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-vid
 
 ### HDMI output
 
-More details to come as I test it.
+Works out of the box (tested under XFCE)
 
 ### Input
 
 #### Touchpad
 
-To make it work install the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) driver.
+Install the [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) driver.
 
 Hypersensity of the touchpad can be reduced by editing /etc/X11/xorg.conf.d/50-synaptics.conf
 
@@ -119,15 +119,7 @@ Tune the values to your taste (increasing reduces sensitivity).
 
 #### SD card reader
 
-The laptop has an RTS5129 controller which is now handled by modules rtsx_usb and rtsx_usb_sdmmc. To load temporarily:
-
-```
-sudo modprobe rtsx_usb 
-sudo modprobe rtsx_usb_sdmmc
-
-```
-
-To enable permanently create file /etc/modules-load.d/sdcard.conf with two lines:
+The laptop has an RTS5129 controller which is now handled by modules rtsx_usb and rtsx_usb_sdmmc. To enable permanently create a file /etc/modules-load.d/sdcard.conf with two lines:
 
 ```
 rtsx_usb 
@@ -151,7 +143,7 @@ A test device Huawei E173 (connected via a USB hub) was detected and worked fine
 
 ### Audio
 
-Built-in microphone does not work out of the box. To enable, create a file /etc/modeprobe.d/modeprobe.conf with a line
+Built-in microphone does not work out of the box. To enable, create a file /etc/modeprobe.acpi_backlight=vendord/modeprobe.conf with a line
 
 ```
 options snd-hda-intel model=laptop
@@ -162,9 +154,16 @@ and *unmute* microphones in alsamixer (press 'M' on devices with an "MM" annotat
 
 ### Backlight (and XFCE)
 
-For those with sensitive eyes the default handling of backlight in XFCE can be troublesome. The range of the intel_backlight on this laptop is 7812 steps, however [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) uses only [hardcoded 10 steps](https://forum.xfce.org/viewtopic.php?pid=29952#p29952) what might be too coarse. Adding acpi_backlight=vendor to the kernel parameters creates /sys/class/backlight/dell_backlight/ with max_brightness=15, and power-manager now steps with 20% of it (3 points), which may also be suboptimal.
+For those with sensitive eyes the default handling of backlight in XFCE can be troublesome. The range of the intel_backlight on this laptop is 7812 steps, however [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) uses only [hardcoded 10 steps](https://forum.xfce.org/viewtopic.php?pid=29952#p29952) what might be too coarse. Adding
 
-The usual workaround to assign commands "xbacklight +5" and "xbacklight -5" to the function keys Fn+F5/F4 (using Settings->Keyboard) to finer-grained control does not solve the problem, because the power manager intercepts keystrokes. [Disabling the brightness keys in the power manager](http://www.n0nb.us/blog/2012/02/restoring-screen-brightness-step-size-on-xfce4/) AND enabling the above keyboard shotcuts somehow works (decreasing brightness and increasing it again does not always give you the same number). Test it to see if you are fine with such a behavior.
+```
+acpi_backlight=vendor 
+
+```
+
+to the kernel parameters creates /sys/class/backlight/dell_backlight/ with max_brightness=15, and power-manager now steps with 20% of it (3 points), which may also be suboptimal.
+
+The usual workaround to assign commands "xbacklight +5" and "xbacklight -5" to the function keys Fn+F5/F4 (using Settings->Keyboard) to finer-grained control does not solve the problem, because the power manager intercepts keystrokes. [Disabling the brightness keys in the power manager](http://www.n0nb.us/blog/2012/02/restoring-screen-brightness-step-size-on-xfce4/) AND enabling the above keyboard shortcuts somehow works (decreasing brightness and increasing it again does not always give you the same number). Test it to see if you are fine with such a behavior.
 
 Finest grained control of the backlight can be achieved with the direct setting
 

@@ -22,6 +22,8 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [4.2 Custom drivers](#Custom_drivers_3)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 FujiXerox](#FujiXerox)
+    *   [5.1 Phaser 6125N](#Phaser_6125N)
+        *   [5.1.1 Manually installing a custom driver](#Manually_installing_a_custom_driver)
 *   [6 HP](#HP)
     *   [6.1 HPLIP Driver](#HPLIP_Driver)
 *   [7 Konica](#Konica)
@@ -237,6 +239,32 @@ If you have any problems on a 64 system, some other lib32 libraries may be requi
 | DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Using the **DocuPrint P8e(hpijs)** driver, or the Brother driver on FujiXerox's website (see [#Brother](#Brother) for more information on how to install custom Brother drivers). |
 |  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/) |
 | Printer | Driver/filter | Notes |
+
+### Phaser 6125N
+
+FujiXerox does not support Linux on this model. An old rpm-package [is availiable](http://onlinesupport.fujixerox.com/tiles/common/hc_drivers_download.jsp?system=%27Linux%27&shortdesc=null&xcrealpath=http://www.fujixeroxprinters.com/downloads/uploaded/dpc525a_linux_.0.0.tar_81c2.zip) but does not seem to work.
+
+#### Manually installing a custom driver
+
+**Warning:** This section involves installing packages without [pacman](/index.php/Pacman "Pacman"). These directions should ideally be automated with a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+
+A slightly adapted [custom driver from Rick van der Zwet](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) has been found to work out of the box.
+
+Download it
+
+```
+# wget file:///trac/personal/raw-attachment/wiki/XeroxPhaser6125N/cups-xerox-phaser-6125n-1.0.0.tar.gz
+
+```
+
+Install it
+
+```
+# sudo tar -C / --keep-newer-files -xvzf cups-xerox-phaser-6125n-1.0.0.tar.gz 
+
+```
+
+Install printer with the CUPS web interface or [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer).
 
 ## HP
 

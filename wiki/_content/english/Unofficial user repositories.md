@@ -6,9 +6,7 @@ In order to use these repositories, you will have to add them to `/etc/pacman.co
 
 If you want to create your own custom repository, follow [pacman tips#Custom local repository](/index.php/Pacman_tips#Custom_local_repository "Pacman tips").
 
-**Tip:** To get a list of all servers listed in this page: `curl 'https://wiki.archlinux.org/index.php/Unofficial_user_repositories' | grep 'Server = ' | sed "s/\$arch/$(uname -m)/g" | cut -f 3 -d' '` 
-
-For your convenience you can, for example, open them all in a web browser to inspect the contents of their repositories.
+**Tip:** To get a list of all servers listed in this page: `curl -s 'https://wiki.archlinux.org/index.php/Unofficial_user_repositories' | awk '/^Server =/ { print $3 }' ` 
 
 ## Contents
 
@@ -56,14 +54,13 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [3.2.7 heftig](#heftig)
         *   [3.2.8 home_Minerva_W_Science_Arch_Extra](#home_Minerva_W_Science_Arch_Extra)
         *   [3.2.9 home_Pival81_arch_xapps_Arch_Extra](#home_Pival81_arch_xapps_Arch_Extra)
-        *   [3.2.10 mesa-git](#mesa-git)
-        *   [3.2.11 noware](#noware)
-        *   [3.2.12 openrc-eudev](#openrc-eudev)
-        *   [3.2.13 pantheon](#pantheon)
-        *   [3.2.14 pietma](#pietma)
-        *   [3.2.15 trinity](#trinity)
-        *   [3.2.16 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
-        *   [3.2.17 QOwnNotes](#QOwnNotes)
+        *   [3.2.10 noware](#noware)
+        *   [3.2.11 openrc-eudev](#openrc-eudev)
+        *   [3.2.12 pantheon](#pantheon)
+        *   [3.2.13 pietma](#pietma)
+        *   [3.2.14 trinity](#trinity)
+        *   [3.2.15 home_tarakbumba_archlinux_Arch_Extra_standard](#home_tarakbumba_archlinux_Arch_Extra_standard)
+        *   [3.2.16 QOwnNotes](#QOwnNotes)
 *   [4 i686 only](#i686_only)
     *   [4.1 Signed](#Signed_3)
         *   [4.1.1 xyne-i686](#xyne-i686)
@@ -102,12 +99,13 @@ For your convenience you can, for example, open them all in a web browser to ins
         *   [5.2.5 imake](#imake)
         *   [5.2.6 jkanetwork](#jkanetwork)
         *   [5.2.7 matrixim](#matrixim)
-        *   [5.2.8 mikroskeem](#mikroskeem)
-        *   [5.2.9 mingw-w64](#mingw-w64)
-        *   [5.2.10 pkgbuild-current](#pkgbuild-current)
-        *   [5.2.11 pnsft-pur](#pnsft-pur)
-        *   [5.2.12 rakudo](#rakudo)
-        *   [5.2.13 zrootfs](#zrootfs)
+        *   [5.2.8 mesa-git](#mesa-git)
+        *   [5.2.9 mikroskeem](#mikroskeem)
+        *   [5.2.10 mingw-w64](#mingw-w64)
+        *   [5.2.11 pkgbuild-current](#pkgbuild-current)
+        *   [5.2.12 pnsft-pur](#pnsft-pur)
+        *   [5.2.13 rakudo](#rakudo)
+        *   [5.2.14 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -581,17 +579,6 @@ Server = http://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch
 [home_Pival81_arch_xapps_Arch_Extra]
 SigLevel = Never
 Server = http://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
-
-```
-
-#### mesa-git
-
-*   **Maintainer:** [Laurent Carlier](https://www.archlinux.org/people/trusted-users/#lcarlier)
-*   **Description:** Mesa git builds for the *testing* and *multilib-testing* repositories
-
-```
-[mesa-git]
-Server = http://pkgbuild.com/~lcarlier/$repo/$arch
 
 ```
 
@@ -1093,6 +1080,17 @@ Server = http://repo.jkanetwork.com/repo/$repo/
 ```
 [matrixim]
 Server = https://repo.matrixim.cc/$repo/$arch
+
+```
+
+#### mesa-git
+
+*   **Maintainer:** [Laurent Carlier](https://www.archlinux.org/people/trusted-users/#lcarlier)
+*   **Description:** Mesa git builds for the *testing* and *multilib-testing* repositories
+
+```
+[mesa-git]
+Server = http://pkgbuild.com/~lcarlier/$repo/$arch
 
 ```
 

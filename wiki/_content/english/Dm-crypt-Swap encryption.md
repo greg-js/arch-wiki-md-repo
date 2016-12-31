@@ -10,6 +10,7 @@ Depending on requirements, different methods may be used to encrypt the [swap](/
     *   [2.1 LVM on LUKS](#LVM_on_LUKS)
     *   [2.2 mkinitcpio hook](#mkinitcpio_hook)
     *   [2.3 Using a swap file](#Using_a_swap_file)
+*   [3 Known Issues](#Known_Issues)
 
 ## Without suspend-to-disk support
 
@@ -269,3 +270,7 @@ If you use a USB keyboard to enter your decryption password, then the `keyboard`
 HOOKS="... **keyboard** encrypt ..."
 
 ```
+
+## Known Issues
+
+*   "Stopped (with error) /dev/dm-1" in logs. See [[2]](https://github.com/systemd/systemd/issues/1620).

@@ -158,6 +158,7 @@ In order to do this, we first need to create a place to keep the jail, we shall 
  # Copy over required system files
  cp -av /etc/{localtime,named.conf} /srv/named/etc/
  cp -av /usr/lib/engines/* /srv/named/usr/lib/engines/
+ cp -av /var/named/* /srv/named/var/named/.
  # Set up required dev nodes
  mknod /srv/named/dev/null c 1 3
  mknod /srv/named/dev/random c 1 8
@@ -184,7 +185,6 @@ we need to edit how the service calls bind.
   ExecStart=/usr/bin/named -4 -f -u named -t "/srv/named"
 
 ```
-}
 
 Now, reload systemd `systemctl daemon-reload`. Then [start](/index.php/Start "Start") `named-chroot.service`
 

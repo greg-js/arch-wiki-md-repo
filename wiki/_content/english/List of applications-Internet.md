@@ -1375,23 +1375,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 ### Bitcoin
 
-See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
-
-*   **Armory** — Bitcoin client with features such as support for multiple wallets, importing keys and backups.
-
-	[https://github.com/etotheipi/BitcoinArmory](https://github.com/etotheipi/BitcoinArmory) || [armory-git](https://aur.archlinux.org/packages/armory-git/)
-
-*   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Official tool to manage Bitcoins, a P2P currency.
-
-	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt) [bitcoin-tx](https://www.archlinux.org/packages/?name=bitcoin-tx)
-
-*   **Electrum** — An easy to use Bitcoin client.
-
-	[http://electrum.org/](http://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
-
-*   **MultiBit** — A lightweight Bitcoin desktop client powered by the BitCoinJ library.
-
-	[https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
+See [Bitcoin#Bitcoin Software](/index.php/Bitcoin#Bitcoin_Software "Bitcoin").
 
 ### Surveying
 

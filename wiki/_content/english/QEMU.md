@@ -28,6 +28,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [5.5 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
         *   [5.5.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
         *   [5.5.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
+            *   [5.5.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
 *   [6 Networking](#Networking)
     *   [6.1 Link-level address caveat](#Link-level_address_caveat)
     *   [6.2 User-mode networking](#User-mode_networking)
@@ -430,6 +431,40 @@ $ qemu-system-i386 -hdc /dev/md0 *[...]*
 ```
 
 You can, of course, safely set any bootloader on this disk image using QEMU, provided the original `/dev/hda*N*` partition contains the necessary tools.
+
+##### Alternative: use nbd-server
+
+Instead of linear RAID, you may use `nbd-server` (from the [nbd](https://www.archlinux.org/packages/?name=nbd) package) to create an MBR wrapper for QEMU.
+
+Assuming you have already set up your MBR wrapper file like above, rename it to `wrapper.img.0`. Then create a symbolic link named `wrapper.img.1` in the same directory, pointing to your partition. Then put the following script in the same directory:
+
+```
+#!/bin/sh
+dir="$(realpath "$(dirname "$0")")"
+cat >wrapper.conf <<EOF
+[generic]
+allowlist = true
+listenaddr = 127.713705
+port = 10809
+
+[wrap]
+exportname = $dir/wrapper.img
+multifile = true
+EOF
+
+nbd-server \
+    -C wrapper.conf \
+    -p wrapper.pid \
+    "$@"
+
+```
+
+The `.0` and `.1` suffixes are essential; the rest can be changed. After running the above script (which you may need to do as root to make sure nbd-server is able to access the partition), you can launch QEMU with:
+
+```
+qemu-system-i386 -drive file=nbd:127.713705:10809:exportname=wrap *[...]*
+
+```
 
 ## Networking
 

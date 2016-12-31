@@ -517,6 +517,8 @@ In Pulseaudio Volume Control (pavucontrol), under the "Playback" tab, change the
 
 ## PulseAudio through JACK
 
+The [JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit") is popular for audio work, and is widely supported by Linux audio applications. It fills a similar niche as PulseAudio, but with more of an emphasis on professional audio work. In particular, audio applications such as Ardour and Audacity work well with Jack.
+
 ### The new new way
 
 This configuration only works with jackdbus (JACK2 compiled with D-Bus support). It also requires the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package. Make sure that `/etc/pulse/default.pa` contains a line:
@@ -614,14 +616,12 @@ pacmd suspend false
 
 ### The old way
 
-The JACK-Audio-Connection-Kit is popular for audio work, and is widely supported by Linux audio applications. It fills a similar niche as PulseAudio, but with more of an emphasis on professional audio work. In particular, audio applications such as Ardour and Audacity (recently) work well with Jack.
-
-PulseAudio provides module-jack-source and module-jack-sink which allow PulseAudio to be run as a sound server above the JACK daemon. This allows the usage of per-volume adjustments and the like for the apps which need it, play-back apps for movies and audio, while allowing low-latency and inter-app connectivity for sound-processing apps which connect to JACK. However, this will prevent PulseAudio from directly writing to the sound card buffers, which will increase overall CPU usage.
+Install the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package, which provides `module-jack-source` and `module-jack-sink` which allow PulseAudio to be run as a sound server above the JACK daemon. This allows the usage of per-volume adjustments and the like for the apps which need it, play-back apps for movies and audio, while allowing low-latency and inter-app connectivity for sound-processing apps which connect to JACK. However, this will prevent PulseAudio from directly writing to the sound card buffers, which will increase overall CPU usage.
 
 To just try PA on top of JACK, have PA load the necessary modules on start:
 
 ```
-pulseaudio -L module-jack-sink -L module-jack-source
+$ pulseaudio -L module-jack-sink -L module-jack-source
 
 ```
 

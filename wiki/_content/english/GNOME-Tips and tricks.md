@@ -195,7 +195,7 @@ $ dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897
 
 ```
 
-Note that `gnome-settings-daemon`, from the package of the same name, must be running for this and other settings changes to take effect in GNOME applications - see [#Configuration](#Configuration).
+Note that `gnome-settings-daemon`, from the package of the same name, must be running for this and other settings changes to take effect in GNOME applications - see [GNOME#Configuration](/index.php/GNOME#Configuration "GNOME").
 
 ### Disable confirmation window when closing Terminal
 

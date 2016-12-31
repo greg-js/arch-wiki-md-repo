@@ -38,28 +38,28 @@
 Цель aurget - предоставление простого, подобного pacman интерфейса к AUR, сделать AUR удобным, в независимости от того, желает ли пользователь найти, скачать, собрать, установить или обновить пакеты AUR.
 
 *   Сайт: [http://pbrisbin.com/posts/aurget/](http://pbrisbin.com/posts/aurget/)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=31933](https://aur.archlinux.org/packages.php?ID=31933)
+*   Пакет: [https://aur.archlinux.org/packages/aurget/](https://aur.archlinux.org/packages/aurget/)
 
 ### aurora
 
 Aurora is a very simple frontend for the AUR. It allows the user to install AUR packages, download the AUR packages (for manual installation) and also offers an AUR upgrade feature. By design, aurora does not wrap pacman.
 
 *   Сайт: [http://bitbucket.org/bbenne10/aurora](http://bitbucket.org/bbenne10/aurora)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=41732](https://aur.archlinux.org/packages.php?ID=41732)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=41732](https://aur.archlinux.org/packages.php?ID=41732) (not available)
 
 ### aurpac
 
 Light'n'fast AUR and pacman frontend.
 
-*   Сайт: [http://3ed.jogger.pl/2009/02/15/aurpac/](http://3ed.jogger.pl/2009/02/15/aurpac/)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=23919](https://aur.archlinux.org/packages.php?ID=23919)
+*   Сайт: [http://3ed.jogger.pl/2009/02/15/aurpac/](http://3ed.jogger.pl/2009/02/15/aurpac/) (not available)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=23919](https://aur.archlinux.org/packages.php?ID=23919) (not available)
 
 ### aurploader
 
 Aurploader prompts the user for an AUR username and password and will then upload PKGBUILD tarballs to the AUR. Before uploading each Пакет, the user is prompted to select a category. When the uploads have completed, the user is asked if the cookie file should be kept so that the script can be run again without needing the AUR username and password to be re-entered.
 
-*   Сайт: [http://xyne.archlinux.ca/info/aurploader](http://xyne.archlinux.ca/info/aurploader)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=23393](https://aur.archlinux.org/packages.php?ID=23393)
+*   Сайт: [http://xyne.archlinux.ca/info/aurploader](http://xyne.archlinux.ca/info/aurploader) (not available)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=23393](https://aur.archlinux.org/packages.php?ID=23393) (not available)
 
 ### aursh
 
@@ -67,22 +67,22 @@ Aurploader prompts the user for an AUR username and password and will then uploa
 
 AurShell is a shell-like application. With plugins included, it's possible to build and install packages from AUR, ABS, and even wrap pacman.
 
-*   Сайт: [http://github.com/husio/aursh/](http://github.com/husio/aursh/)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=33423](https://aur.archlinux.org/packages.php?ID=33423)
+*   Сайт: [http://github.com/husio/aursh/](http://github.com/husio/aursh/) (not available)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=33423](https://aur.archlinux.org/packages.php?ID=33423) (not available)
 
 ### autoaur
 
 autoaur is a script for automatic mass downloading, updating, building, and installing groups of AUR packages.
 
 *   Сайт: [autoaur](/index.php?title=Autoaur&action=edit&redlink=1 "Autoaur (page does not exist)")
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=6390](https://aur.archlinux.org/packages.php?ID=6390)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=6390](https://aur.archlinux.org/packages.php?ID=6390) (not available)
 
 ### burp
 
 burp is a fast and simple AUR uploader written in C. Supports persistent cookies for seamless logins.
 
-*   Сайт: [http://github.com/falconindy/burp](http://github.com/falconindy/burp)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=37216](https://aur.archlinux.org/packages.php?ID=37216)
+*   Сайт: [http://github.com/falconindy/burp](http://github.com/falconindy/burp) (not available)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=37216](https://aur.archlinux.org/packages.php?ID=37216) (not available)
 
 ### cower
 
@@ -90,28 +90,28 @@ Cower is a fast and simple AUR search and download agent, which will also check 
 
 *   Сайт: [http://github.com/falconindy/cower](http://github.com/falconindy/cower)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?id=97137](https://bbs.archlinux.org/viewtopic.php?id=97137)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=44921](https://aur.archlinux.org/packages.php?ID=44921)
+*   Пакет: [https://aur.archlinux.org/packages/cower/](https://aur.archlinux.org/packages/cower/)
 
 ### haskell-archlinux
 
 haskell-archlinux is a library to programmatically access the AUR and Пакет metadata from the Haskell programming language.
 
-*   Сайт: [http://hackage.haskell.org/Пакет/archlinux](http://hackage.haskell.org/Пакет/archlinux)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=29267](https://aur.archlinux.org/packages.php?ID=29267)
+*   Сайт: [https://hackage.haskell.org/package/archlinux](https://hackage.haskell.org/package/archlinux)
+*   Пакет: [https://aur.archlinux.org/packages/haskell-archlinux/](https://aur.archlinux.org/packages/haskell-archlinux/)
 
 ### makeaur
 
 Makeaur is a wrapper for pacman and makepkg that allows users to easily install packages from the Arch User Repository.
 
 *   Сайт: [http://github.com/ghost1227/makeaur/](http://github.com/ghost1227/makeaur/)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=23678](https://aur.archlinux.org/packages.php?ID=23678)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=23678](https://aur.archlinux.org/packages.php?ID=23678) (not available)
 
 ### Meat ( Alpha / Under development )
 
 Meat is a front-end for cower ( see above ) and it is fully written in bash.
 
 *   Сайт: [http://github.com/e36freak/meat](http://github.com/e36freak/meat)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=50075](https://aur.archlinux.org/packages.php?ID=50075)
+*   Пакет: [https://aur.archlinux.org/packages.php?ID=50075](https://aur.archlinux.org/packages.php?ID=50075) (not available)
 
 ### pacaur
 
@@ -119,15 +119,15 @@ Pacaur is a fast workflow AUR wrapper, using [cower](/index.php/AUR_helpers#cowe
 
 *   Сайт: [https://github.com/Spyhawk/pacaur](https://github.com/Spyhawk/pacaur)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?pid=937423](https://bbs.archlinux.org/viewtopic.php?pid=937423)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=49145](https://aur.archlinux.org/packages.php?ID=49145)
+*   Пакет: [https://aur.archlinux.org/packages/pacaur/](https://aur.archlinux.org/packages/pacaur/)
 
 ### packer
 
 Packer is a wrapper for pacman and the AUR. It was designed to be a simple and very fast replacement for the basic functionality of Yaourt. It has commands to install, update, search, and show information for any Пакет in the main repositories and in the AUR. Use pacman for other commands, such as removing a Пакет.
 
-*   Сайт: [http://github.com/bruenig/packer](http://github.com/bruenig/packer)
+*   Сайт: [http://github.com/bruenig/packer](http://github.com/bruenig/packer) (not available)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?id=88115](https://bbs.archlinux.org/viewtopic.php?id=88115)
-*   Пакет: [https://aur.archlinux.org/packages.php?ID=33378](https://aur.archlinux.org/packages.php?ID=33378)
+*   Пакет: [https://aur.archlinux.org/packages/packer/](https://aur.archlinux.org/packages/packer/)
 *   Wiki: [https://github.com/bruenig/packer/wiki](https://github.com/bruenig/packer/wiki)
 
 ### pacmoon

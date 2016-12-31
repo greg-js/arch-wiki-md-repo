@@ -194,7 +194,7 @@ Maximizing windows may cause artifacts as of GNOME 3.12.0 - see the following [f
 
 	DRI3
 
-According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c2), DRI3 includes the `buffer_age` extension that allows GNOME Shell's Mutter compositor to sync windows to vblank in an efficient way. [Enable](/index.php/Intel_graphics#Direct_Rendering_Infrastructure_3_.28DRI3.29 "Intel graphics") it in the Xorg driver. You can change `AccelMethod` to your preference in the configuration file created, but the line must be included when the file is created; otherwise, `gnome-session` will crash upon login in a non-Wayland session.
+According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c2), DRI3 includes the `buffer_age` extension that allows GNOME Shell's Mutter compositor to sync windows to vblank in an efficient way. Since version `1:2.99.917+682+g4eaab17-1`, DRI3 is enabled by default in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) [[2]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/xf86-video-intel&id=cd3de9bb45a9ab84383541ed45ee6f0c10ea8798).
 
 	Intel TearFree
 

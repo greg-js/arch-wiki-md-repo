@@ -36,6 +36,7 @@ From [MATE homepage](http://mate-desktop.org/):
     *   [6.5 Enabling panel shadow](#Enabling_panel_shadow)
     *   [6.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
     *   [6.7 MATE Screensaver background cannot be changed](#MATE_Screensaver_background_cannot_be_changed)
+    *   [6.8 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
 *   [7 See also](#See_also)
 
 ## MATE applications
@@ -428,6 +429,10 @@ Re-compile the schemas:
 ```
 
 Finally, restart your X session for the change to effect.
+
+### Logout/shutdown delayed by at-spi-registryd
+
+When logging out or shutting down, you may find that you are presented with an *A program is still running: at-spi-registryd.desktop* popup. As a workaround, you can prevent *at-spi-registryd* from starting - see [GTK+#Suppress warning about accessibility bus](/index.php/GTK%2B#Suppress_warning_about_accessibility_bus "GTK+") - though this may have an effect on some accessibility features.
 
 ## See also
 

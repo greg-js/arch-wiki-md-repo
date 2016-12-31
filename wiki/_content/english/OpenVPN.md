@@ -1,4 +1,4 @@
-This article describes a basic installation and configuration of [OpenVPN](http://openvpn.net), suitable for private and small business use. For more detailed information, please see the [OpenVPN 2.3 man page](https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation). OpenVPN is a robust and highly flexible [VPN](https://en.wikipedia.org/wiki/VPN "wikipedia:VPN") daemon. It supports [SSL/TLS](https://en.wikipedia.org/wiki/SSL/TLS "wikipedia:SSL/TLS") security, [Ethernet bridging](https://en.wikipedia.org/wiki/Bridging_(networking) "wikipedia:Bridging (networking)"), [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol "wikipedia:Transmission Control Protocol") or [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol "wikipedia:User Datagram Protocol") [tunnel transport](https://en.wikipedia.org/wiki/Tunneling_protocol "wikipedia:Tunneling protocol") through [proxies](https://en.wikipedia.org/wiki/Proxy_server "wikipedia:Proxy server") or [NAT](https://en.wikipedia.org/wiki/Network_address_translation "wikipedia:Network address translation"). Additionally it has support for dynamic IP addresses and [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), scalability to hundreds or thousands of users, and portability to most major OS platforms.
+This article describes a basic installation and configuration of [OpenVPN](http://openvpn.net), suitable for private and small business use. For more detailed information, please see the [OpenVPN 2.4 man page](https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation). OpenVPN is a robust and highly flexible [VPN](https://en.wikipedia.org/wiki/VPN "wikipedia:VPN") daemon. It supports [SSL/TLS](https://en.wikipedia.org/wiki/SSL/TLS "wikipedia:SSL/TLS") security, [Ethernet bridging](https://en.wikipedia.org/wiki/Bridging_(networking) "wikipedia:Bridging (networking)"), [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol "wikipedia:Transmission Control Protocol") or [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol "wikipedia:User Datagram Protocol") [tunnel transport](https://en.wikipedia.org/wiki/Tunneling_protocol "wikipedia:Tunneling protocol") through [proxies](https://en.wikipedia.org/wiki/Proxy_server "wikipedia:Proxy server") or [NAT](https://en.wikipedia.org/wiki/Network_address_translation "wikipedia:Network address translation"). Additionally it has support for dynamic IP addresses and [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), scalability to hundreds or thousands of users, and portability to most major OS platforms.
 
 OpenVPN is tightly bound to the [OpenSSL](http://www.openssl.org) library, and derives much of its crypto capabilities from it. It supports conventional encryption using a [pre-shared secret key](https://en.wikipedia.org/wiki/Pre-shared_key "wikipedia:Pre-shared key") (Static Key mode) or [public key security](https://en.wikipedia.org/wiki/Public_key "wikipedia:Public key") ([SSL/TLS](https://en.wikipedia.org/wiki/SSL/TLS "wikipedia:SSL/TLS") mode) using client & server certificates. Additionally it supports unencrypted TCP/UDP tunnels.
 
@@ -13,9 +13,6 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [5 A basic L3 IP routing configuration](#A_basic_L3_IP_routing_configuration)
     *   [5.1 Example configuration](#Example_configuration)
     *   [5.2 The server configuration file](#The_server_configuration_file)
-        *   [5.2.1 Hardening the server](#Hardening_the_server)
-        *   [5.2.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
-            *   [5.2.2.1 TCP vs UDP](#TCP_vs_UDP)
     *   [5.3 The client config profile (OpenVPN)](#The_client_config_profile_.28OpenVPN.29)
         *   [5.3.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
     *   [5.4 The client profile (generic for Linux, iOS, or Android)](#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29)
@@ -80,22 +77,20 @@ To connect to a VPN service provided by a third party, most of the following can
 
 ## Create a Public Key Infrastructure (PKI) from scratch
 
-When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is detailed in the [easy-rsa](/index.php/Easy-rsa "Easy-rsa") article. Once the needed certificates, private keys, and associated files are created via following the steps in the separate article, one should have 5 files in `/etc/openvpn` at this point:
+When setting up an OpenVPN server, users need to create a [Public Key Infrastructure (PKI)](https://en.wikipedia.org/wiki/Public_key_infrastructure "wikipedia:Public key infrastructure") which is detailed in the [easy-rsa](/index.php/Easy-rsa "Easy-rsa") article. Once the needed certificates, private keys, and associated files are created via following the steps in the separate article, one should have 5 files in `/etc/openvpn/server` at this point:
 
-*   `/etc/openvpn/ca.crt`
-*   `/etc/openvpn/dh.pem`
-*   `/etc/openvpn/servername.crt` and `/etc/openvpn/servername.key`
-*   `/etc/openvpn/ta.key`
+*   `/etc/openvpn/server/ca.crt`
+*   `/etc/openvpn/server/dh.pem`
+*   `/etc/openvpn/server/servername.crt` and `/etc/openvpn/server/servername.key`
+*   `/etc/openvpn/server/ta.key`
 
 ## A basic L3 IP routing configuration
 
-**Note:** Unless otherwise explicitly stated, the rest of this article assumes this basic configuration.
+**Note:** Unless otherwise explicitly stated, the rest of this article assumes a bais L3 IP routing configuration.
 
 OpenVPN is an extremely versatile piece of software and many configurations are possible, in fact machines can be both "servers" and "clients", blurring the distinction between server and client.
 
-What really distinguishes a server from a client (apart from the type of certificate used) is the configuration file itself. The OpenVPN daemon start-up script reads all the *.conf configuration files it finds in `/etc/openvpn` on start-up and acts accordingly. If it finds more than one configuration file, it will start one OpenVPN process per configuration file.
-
-This article explains how to set up a server named `elmer` and a client that connects to it named `bugs`. More servers and clients can easily be added by creating more key/certificate pairs and adding more server and client configuration files.
+With the release of v2.4, server configurations are stored in `/etc/openvpn/server` and client configurations are stored in `/etc/openvpn/client` and each mode has its own respective systemd unit, namely, `openvpn-client@.service` and `openvpn-server@.service`.
 
 ### Example configuration
 
@@ -106,91 +101,104 @@ The OpenVPN package comes with a collection of example configuration files for d
 *   Listens for client connections on UDP port 1194 (OpenVPN's [official IANA port number](https://en.wikipedia.org/wiki/Port_number "wikipedia:Port number")).
 *   Distributes virtual addresses to connecting clients from the 10.8.0.0/24 subnet.
 
-For more advanced configurations, please see the official [OpenVPN 2.3 man page](https://community.openvpn.net/openvpn/wiki/Openvpn23ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
+For more advanced configurations, please see the official [OpenVPN 2.4 man page](https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation).
 
 ### The server configuration file
 
 **Note:** Note that if the server is behind a firewall or a NAT translating router, the OpenVPN port must be forward on to the server.
 
-Copy the example server configuration file to `/etc/openvpn/server.conf`:
+Copy the example server configuration file to `/etc/openvpn/server/server.conf`:
 
 ```
-# cp /usr/share/openvpn/examples/server.conf /etc/openvpn/server.conf
+# cp /usr/share/openvpn/examples/server.conf /etc/openvpn/server/server.conf
 
 ```
 
+```
 Edit the file making a minimum of the following changes:
 
- `/etc/openvpn/server.conf` 
 ```
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/servername.crt
-key /etc/openvpn/servername.key  # This file should be kept secret
-dh /etc/openvpn/dh.pem
-.
-tls-auth /etc/openvpn/ta.key **0**
-.
-user nobody
-group nobody
+ `/etc/openvpn/server/server.conf` 
+```
+ ca ca.crt
+ cert servername.crt
+ key servername.key  # This file should be kept secret
+ dh dh.pem
+ .
+ tls-auth ta.key **0**
+ .
+ user nobody
+ group nobody
 
 ```
 
-#### Hardening the server
-
-If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and limiting the newer tls ciphers. Do so by adding the following to `/etc/openvpn/server.conf`
-
- `/etc/openvpn/server.conf` 
 ```
-.
-cipher AES-256-CBC
-auth SHA512
-tls-version-min 1.2
-tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
-.
+==== Hardening the server ====
+If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and limiting the newer tls ciphers.  Do so by adding the following to `/etc/openvpn/server/server.conf`
+
+```
+ `/etc/openvpn/server/server.conf` 
+```
+ .
+ cipher AES-256-CBC
+ auth SHA512
+ tls-version-min 1.2
+ tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
+ .
 
 ```
 
 **Note:** The .ovpn client profile MUST contain a matching cipher and auth line to work properly (at least with the iOS and Android client)!
 
-#### Deviating from the standard port and/or protocol
-
-Some public/private network admins may not allow OpenVPN connections on its default port and/or protocol. One strategy to circumvent this is to mimic https/SSL traffic which is very likely unobstructed.
-
-To do so, configure `/etc/openvpn/server.conf` as such:
-
- `/etc/openvpn/server.conf` 
 ```
-.
-port 443
-proto tcp
-.
+==== Deviating from the standard port and/or protocol ====
+Some public/private network admins may not allow OpenVPN connections on its default port and/or protocol.  One strategy to circumvent this is to mimic https/SSL traffic which is very likely unobstructed.
+
+```
+
+```
+To do so, configure `/etc/openvpn/server/server.conf` as such:
+
+```
+ `/etc/openvpn/server/server.conf` 
+```
+ .
+ port 443
+ proto tcp
+ .
 
 ```
 
 **Note:** The .ovpn client profile MUST contain a matching port and proto line to work properly!
 
-##### TCP vs UDP
-
+```
+===== TCP vs UDP =====
 There are subtle differences between TCP and UDP.
 
+```
+
+```
 TCP
+* So-called "stateful protocol."
+* High reliability due to error correction (i.e. waits for packet acknowledgment).
+* Potentially slower than UDP.
 
-*   So-called "stateful protocol."
-*   High reliability due to error correction (i.e. waits for packet acknowledgment).
-*   Potentially slower than UDP.
+```
 
+```
 UDP
+* So-called "stateless protocol."
+* Less reliable than TCP as no error correction is in use.
+* Potentially faster than TCP.
 
-*   So-called "stateless protocol."
-*   Less reliable than TCP as no error correction is in use.
-*   Potentially faster than TCP.
+```
 
 ### The client config profile (OpenVPN)
 
-Copy the example client configuration file to `/etc/openvpn/client.conf`:
+Copy the example client configuration file to `/etc/openvpn/client/client.conf`:
 
 ```
-# cp /usr/share/openvpn/examples/client.conf /etc/openvpn/client.conf
+# cp /usr/share/openvpn/examples/client.conf /etc/openvpn/client/client.conf
 
 ```
 
@@ -201,17 +209,17 @@ Edit the following:
 *   The `ca`, `cert`, and `key` parameters to reflect the path and names of the keys and certificates.
 *   Enable the SSL/TLS HMAC handshake protection. **Note the use of the parameter 1 for a client**.
 
- `/etc/openvpn/client.conf` 
+ `/etc/openvpn/client/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
 .
 user nobody
 group nobody
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/client.crt
-key /etc/openvpn/client.key
+ca ca.crt
+cert client.crt
+key client.key
 .
-tls-auth /etc/openvpn/ta.key **1**
+tls-auth ta.key **1**
 
 ```
 
@@ -245,7 +253,7 @@ Simply invoke the script with 5 tokens:
 Example:
 
 ```
-# ovpngen example.org /etc/openvpn/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/ta.key > iphone.ovpn
+# ovpngen example.org /etc/openvpn/server/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/server/ta.key > iphone.ovpn
 
 ```
 
@@ -261,9 +269,9 @@ Some software will only read VPN certificates that are stored in a password-encr
 
 ### Testing the OpenVPN configuration
 
-Run `# openvpn /etc/openvpn/server.conf` on the server, and `# openvpn /etc/openvpn/client.conf` on the client. Example output should be similar to the following:
+Run `# openvpn /etc/openvpn/server/server.conf` on the server, and `# openvpn /etc/openvpn/client/client.conf` on the client. Example output should be similar to the following:
 
- `# openvpn /etc/openvpn/server.conf` 
+ `# openvpn /etc/openvpn/server/server.conf` 
 ```
 Wed Dec 28 14:41:26 2011 OpenVPN 2.2.1 x86_64-unknown-linux-gnu [SSL] [LZO2] [EPOLL] [eurephia] built on Aug 13 2011
 Wed Dec 28 14:41:26 2011 NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
@@ -274,7 +282,7 @@ Wed Dec 28 14:41:54 2011 bugs/95.126.136.73:48904 MULTI: primary virtual IP for 
 Wed Dec 28 14:41:57 2011 bugs/95.126.136.73:48904 PUSH: Received control message: 'PUSH_REQUEST'
 Wed Dec 28 14:41:57 2011 bugs/95.126.136.73:48904 SENT CONTROL [bugs]: 'PUSH_REPLY,route 10.8.0.1,topology net30,ping 10,ping-restart 120,ifconfig 10.8.0.6 10.8.0.5' (status=1)
 ```
- `# openvpn /etc/openvpn/client.conf` 
+ `# openvpn /etc/openvpn/client/client.conf` 
 ```
 Wed Dec 28 14:41:50 2011 OpenVPN 2.2.1 i686-pc-linux-gnu [SSL] [LZO2] [EPOLL] [eurephia] built on Aug 13 2011
 Wed Dec 28 14:41:50 2011 NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
@@ -381,7 +389,7 @@ rtt min/avg/max/mdev = 206.027/210.603/224.158/6.832 ms
 
 After some trial and error..., we discover that we need to fragment packets on 548 bytes. In order to do this we specify this fragment size in the configuration and instruct OpenVPN to fix the Maximum Segment Size (MSS).
 
- `/etc/openvpn/client.conf` 
+ `/etc/openvpn/client/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
 ...
@@ -393,7 +401,7 @@ mssfix 548
 We also need to tell the server about the fragmentation. Note that "mssfix" is NOT needed in the server configuration.
 
 **Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://forums.openvpn.net/topic13201.html#p31156)) are not able to connect to a server that uses the 'fragment' directive. To support such clients, skip this section and configure the clients with the 'mtu-test' directive described below.
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 ...
 fragment 548
@@ -404,13 +412,13 @@ fragment 548
 
 You can also allow OpenVPN to do this for you by having OpenVPN do the ping testing every time the client connects to the VPN. Be patient, since your client may not inform you about the test being run and the connection may appear as nonfunctional until finished.
 
- `/etc/openvpn/client.conf` 
+ `/etc/openvpn/client/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
 ...
 mtu-test
 ...
-tls-auth /etc/openvpn/ta.key **1**
+tls-auth ta.key **1**
 
 ```
 
@@ -449,13 +457,13 @@ OpenVPN does not yet include DHCPv6, so there is no method to e.g. push DNS serv
 
 ### Manual startup
 
-To troubleshoot a VPN connection, start the client's daemon manually with `openvpn /etc/openvpn/client.conf` as root. The server can be started the same way using its own configuration file (e.g., `openvpn /etc/openvpn/server.conf`).
+To troubleshoot a VPN connection, start the client's daemon manually with `openvpn /etc/openvpn/client/client.conf` as root. The server can be started the same way using its own configuration file (e.g., `openvpn /etc/openvpn/server/server.conf`).
 
 ### systemd service configuration
 
-To start OpenVPN automatically at system boot, either for a client or for a server, [enable](/index.php/Enable "Enable") `openvpn@*<configuration>*.service` on the applicable machine. (Leave `.conf` out of the `<configuration>` string.)
+To start OpenVPN automatically at system boot, either for a client or for a server, [enable](/index.php/Enable "Enable") `openvpn-server@*<configuration>*.service` on the applicable machine. (Leave `.conf` out of the `<configuration>` string.)
 
-For example, if the client configuration file is `/etc/openvpn/client.conf`, the service name is `openvpn@client.service`. Or, if the server configuration file is `/etc/openvpn/server.conf`, the service name is `openvpn@server.service`.
+For example, if the client configuration file is `/etc/openvpn/client/client.conf`, the service name is `openvpn-client@client.service`. Or, if the server configuration file is `/etc/openvpn/server/server.conf`, the service name is `openvpn-server@server.service`.
 
 ### Letting NetworkManager start a connection
 
@@ -487,7 +495,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server.conf`) [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -517,7 +525,7 @@ In order to configure your ufw settings for VPN traffic first add the following 
 
  `/etc/default/ufw`  `DEFAULT_FORWARD_POLICY="ACCEPT"` 
 
-Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Do not forget to change the IP/subnet mask to match the one in `/etc/openvpn/server.conf`. The adapter ID in the example is generically called `eth0` so edit it for your system accordingly.
+Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Do not forget to change the IP/subnet mask to match the one in `/etc/openvpn/server/server.conf`. The adapter ID in the example is generically called `eth0` so edit it for your system accordingly.
 
  `/etc/ufw/before.rules` 
 ```
@@ -633,7 +641,7 @@ By default, all IP packets on a LAN addressed to a different subnet get sent to 
 
 ### Connect the server LAN to a client
 
-The server is on a LAN using the 10.66.0.0/24 subnet. To inform the client about the available subnet, add a push directive to the server configuration file: `/etc/openvpn/server.conf`  `push "route 10.66.0.0 255.255.255.0"` 
+The server is on a LAN using the 10.66.0.0/24 subnet. To inform the client about the available subnet, add a push directive to the server configuration file: `/etc/openvpn/server/server.conf`  `push "route 10.66.0.0 255.255.255.0"` 
 **Note:** To route more LANs from the server to the client, add more push directives to the server configuration file, but keep in mind that the server side LANs will need to know how to route to the client.
 
 ### Connect the client LAN to a server
@@ -657,7 +665,7 @@ Create a file in the client configuration directory called bugs, containing the 
 
 Add the client-config-dir and the `route 192.168.4.0 255.255.255.0` directive to the server configuration file. It tells the server what subnet should be routed from the tun device to the server LAN:
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 client-config-dir ccd
 route 192.168.4.0 255.255.255.0
@@ -670,7 +678,7 @@ route 192.168.4.0 255.255.255.0
 
 Combine the two previous sections:
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 push "route 10.66.0.0 255.255.255.0"
 .
@@ -684,11 +692,11 @@ route 192.168.4.0 255.255.255.0
 
 ### Connect clients and client LANs
 
-By default clients will not see each other. To allow IP packets to flow between clients and/or client LANs, add a client-to-client directive to the server configuration file: `/etc/openvpn/server.conf`  `client-to-client` 
+By default clients will not see each other. To allow IP packets to flow between clients and/or client LANs, add a client-to-client directive to the server configuration file: `/etc/openvpn/server/server.conf`  `client-to-client` 
 
 In order for another client or client LAN to see a specific client LAN, you will need to add a push directive for each client subnet to the server configuration file (this will make the server announce the available subnet(s) to other clients):
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 client-to-client
 push "route 192.168.4.0 255.255.255.0"
@@ -706,7 +714,7 @@ The DNS servers used by the system are defined in `/etc/resolv.conf`. Traditiona
 
 Before continuing, test openresolv by restarting your network connection and ensuring that `resolv.conf` states that it was generated by *resolvconf*, and that your DNS resolution still works as before. You should not need to configure openresolv; it should be automatically detected and used by your network system.
 
-For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with the `client.up` and `client.down` scripts packaged in `/usr/share/openvpn/contrib/pull-resolv-conf/`. See their comments on how to install them to `/etc/openvpn`. The following is an excerpt of a resulting client configuration using the scripts in conjunction with *resolvconf* and options to [#Drop root privileges after connecting](#Drop_root_privileges_after_connecting):
+For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with the `client.up` and `client.down` scripts packaged in `/usr/share/openvpn/contrib/pull-resolv-conf/`. See their comments on how to install them to `/etc/openvpn/client/`. The following is an excerpt of a resulting client configuration using the scripts in conjunction with *resolvconf* and options to [#Drop root privileges after connecting](#Drop_root_privileges_after_connecting):
 
  `/etc/openvpn/clienttunnel.conf` 
 ```
@@ -715,8 +723,8 @@ group nobody
 # Optional, choose a suitable path to chroot into for your system
 chroot /srv
 script-security 2
-up /etc/openvpn/client.up 
-plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client.down tun0"
+up /etc/openvpn/client/client.up 
+plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client/client.down tun0"
 ```
 
 ### Update resolv-conf script
@@ -782,7 +790,7 @@ Restart=always
 
 If the VPN-Connection drops some seconds after it stopped transmitting data and, even though it states it is connected, no data can be transmitted through the tunnel, try adding a `keepalive`directive to the server's configuration:
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 .
 .

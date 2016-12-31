@@ -11,23 +11,25 @@
         *   [2.3.2 Screencast recording](#Screencast_recording)
         *   [2.3.3 High DPI displays](#High_DPI_displays)
         *   [2.3.4 Shell font](#Shell_font)
-*   [3 GNOME](#GNOME)
-    *   [3.1 Install and test](#Install_and_test)
-    *   [3.2 Autostart](#Autostart)
-    *   [3.3 hints](#hints)
-*   [4 GUI libraries](#GUI_libraries)
-    *   [4.1 GTK+ 3](#GTK.2B_3)
-    *   [4.2 Qt 5](#Qt_5)
-    *   [4.3 Clutter](#Clutter)
-    *   [4.4 SDL](#SDL)
-    *   [4.5 GLFW](#GLFW)
-    *   [4.6 EFL](#EFL)
-*   [5 Window managers and desktop shells](#Window_managers_and_desktop_shells)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 LLVM assertion failure](#LLVM_assertion_failure)
-    *   [6.2 Applications using dbus crashes on startup](#Applications_using_dbus_crashes_on_startup)
-    *   [6.3 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
-*   [7 See also](#See_also)
+*   [3 GUI libraries](#GUI_libraries)
+    *   [3.1 GTK+ 3](#GTK.2B_3)
+    *   [3.2 Qt 5](#Qt_5)
+    *   [3.3 Clutter](#Clutter)
+    *   [3.4 SDL](#SDL)
+    *   [3.5 GLFW](#GLFW)
+    *   [3.6 EFL](#EFL)
+*   [4 Window managers and desktop shells](#Window_managers_and_desktop_shells)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 LLVM assertion failure](#LLVM_assertion_failure)
+    *   [5.2 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
+    *   [5.3 nemo](#nemo)
+    *   [5.4 gparted](#gparted)
+    *   [5.5 X11 on tty1, wayland on tty2](#X11_on_tty1.2C_wayland_on_tty2)
+    *   [5.6 weston-terminal](#weston-terminal)
+    *   [5.7 liteide](#liteide)
+    *   [5.8 screen recording](#screen_recording)
+    *   [5.9 remote display](#remote_display)
+*   [6 See also](#See_also)
 
 ## Requirements
 
@@ -263,60 +265,6 @@ scale=2
 
 Weston uses the default sans-serif font for window title bars, clocks, etc. See [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration") for instructions on how to change this font.
 
-## GNOME
-
-### Install and test
-
-If you run Gnome, install XWayland with the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, then run it:
-
-```
-$ dbus-run-session -- gnome-shell --display-server --wayland
-
-```
-
-To test, install the [weston](https://www.archlinux.org/packages/?name=weston) package and run one of its applications, for example:
-
-```
-$ weston-stacking
-
-```
-
-This is still experimental (state 2016-11-18) and not everything will run as expected. Known issues:
-
-*   When launching without GDM, gnome-session needs to be started manual, no shutdown/restart buttons work ([gnome issue 774774](https://bugzilla.gnome.org/show_bug.cgi?id=774774))
-*   Starting X11 on tty1, wayland on tty2: windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
-*   Not all weston applications work, e.g. weston-terminal.
-*   Not all QT applications work, e.g. [liteide](https://github.com/visualfc/liteide/issues/734)].
-
-*   As of November 2016 there is an ongoing discussion how to implement screen recording. Currently the compositors implement at least basic functionality, so does gnome.
-
-### Autostart
-
-To auto-start on login, only on virtual terminal 1, one can enter this into `.bash_profile`:
-
-```
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && dbus-run-session -- gnome-shell --display-server --wayland
-
-```
-
-More details on this way of starting are on [Xinit#Autostart X at login](/index.php/Xinit#Autostart_X_at_login "Xinit") (not using a display manager) and [GNOME#Manually](/index.php/GNOME#Manually "GNOME") (resp via xinit in this case).
-
-### hints
-
-some practical settings. for nemo prevent that the desktop is created <ref>[nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)</ref>
-
-```
-gsettings set org.nemo.desktop show-desktop-icons false
-
-```
-
-gparted wants to run as root, before starting it allow all local users to display applications on your desktop by typing in a command line:
-
-```
- xhost +local:
-
-```
-
 ## GUI libraries
 
 See details on the [official website](http://wayland.freedesktop.org/toolkits.html).
@@ -386,18 +334,47 @@ $ export EGL_DRIVER=/usr/lib/egl/egl_gallium.so
 
 ```
 
-### Applications using dbus crashes on startup
-
-For a temporary solution, use `dbus-launch` to run the application. For example, to launch [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) inside a weston session, this command is sufficient.
-
-```
- dbus-launch gnome-terminal
-
-```
-
 ### Slow motion, graphical glitches, and crashes
 
 Gnome-shell users may experience display issues when they switch to Wayland from X. One of the root cause might be the `CLUTTER_PAINT=disable-clipped-redraws:disable-culling` set by yourself for Xorg-based gnome-shell. Just try to remove it from `/etc/environment` or other rc files to see if everything goes back to normal.
+
+### nemo
+
+(20161229) prevent that the desktop is created <ref>[nemo issue 1343](https://github.com/linuxmint/nemo/issues/1343)</ref>
+
+```
+gsettings set org.nemo.desktop show-desktop-icons false
+
+```
+
+### gparted
+
+(20161229) gparted wants to run as root, before starting it allow all local users to display applications on your desktop by typing in a command line:
+
+```
+ xhost +local:
+
+```
+
+### X11 on tty1, wayland on tty2
+
+(20161209) windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
+
+### weston-terminal
+
+(20161229) core dump when started on gnome
+
+### liteide
+
+(20161229) [core dump](https://github.com/visualfc/liteide/issues/734)] on gnome and weston.
+
+### screen recording
+
+(20161229) As of November 2016 there is an ongoing discussion how to implement screen recording. Currently the compositors implement at least basic functionality.
+
+### remote display
+
+(20161229) there was a merge of FreeRDP into weston in 2013.
 
 ## See also
 

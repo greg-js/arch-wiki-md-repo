@@ -67,7 +67,7 @@
 *   mailman
 *   planet [done]
 *   bugs
-*   archweb
+*   archweb [done]
 *   patchwork
 *   projects
 *   mail

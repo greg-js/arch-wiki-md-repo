@@ -24,32 +24,37 @@ There are two places in `/etc/opensc.conf` that comment out `enable_pinpad = fal
 
 ## Configure browser
 
+1\. Go to: [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
+
+2\. Download certs: "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.0" (ZIP Download)
+
+3\. Unzip the DoD PKI zip
+
+4\. Follow browser-specific instructions
+
 ### Firefox
 
 #### Load security device
 
-Navigate to Edit -> Preference -> Advanced -> Certificates -> Security Devices and load a module using `/usr/lib/opensc-pkcs11.so`.
+Navigate to Edit -> Preference -> Advanced -> Certificates -> Security Devices and clikc "Load" to load a module using `/usr/lib/opensc-pkcs11.so` or `/usr/lib/pkcs11/opensc-pkcs11.so`.
 
 #### Import the DoD Certificates
 
-If you're using a branded version of [Firefox](/index.php/Firefox "Firefox") you should be able to go to [http://dodpki.c3pki.chamb.disa.mil/rootca.html](http://dodpki.c3pki.chamb.disa.mil/rootca.html) and click on the high-level certificates to install them and be done.
+Install the certificates from the mentioned zip in _this_ order, by going to Edit -> Preference -> Advanced -> Certificates -> View Certificates -> Authorities -> Import (make sure to at-least check the box for Trust this CA to identify websites):
 
-The primary root certificate used has a CN of "DoD Root CA 2": this certificate can be converted to PEM format for use in other browsers:
+1\. DoD_Root_CA_2__0x05__DoD_Root_CA_2.cer
 
-1.  Download the CA bundle. This includes approximately 36 certificates. `$ curl -O [http://dodpki.c3pki.chamb.disa.mil/rel3_dodroot_2048.p7b](http://dodpki.c3pki.chamb.disa.mil/rel3_dodroot_2048.p7b)`
-2.  Extract the root certificate into a PEM-formatted file.
+2\. DoD_Root_CA_2__0x05__DoD_Root_CA_3.cer
 
-`$ openssl pkcs7 -inform DER -in rel3_dodroot_2048.p7b -print_certs | sed -n '/subject=.*CN=DoD Root CA 2/,${/^$/q;P;D}' > DoD_Root_CA_2.pem`
+3\. DoD_Root_CA_2__0x05__DoD_Root_CA_4.cer
+
+4\. Certificates_PKCS7_v5.0u1_DoD.der.p7b
 
 ### Chromium/Google Chrome
 
 1\. Ensure CAC is connected, [Chromium](/index.php/Chromium "Chromium") is closed and enter the following in a terminal: `$ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so`
 
-2\. Go to: [http://iase.disa.mil/pki-pke/Pages/tools.aspx](http://iase.disa.mil/pki-pke/Pages/tools.aspx)
-
-3\. Download certs: "Trust Store" -> "PKI CA Certificate Bundles: PKCS#7" -> "For DoD PKI Only - Version 5.0" (ZIP Download)
-
-4\. Unzip the DoD PKI zip, change directory to the new folder, and install:
+2\. Navigate (in a shell) to the location of the unzip DoD PKI files and install via:
 
 ```
  for n in $(ls * | grep Chrome); do certutil -d sql:$HOME/.pki/nssdb -A -t TC -n $n -i $n; done
@@ -59,6 +64,8 @@ The primary root certificate used has a CN of "DoD Root CA 2": this certificate 
 ## Testing
 
 Visit your favorite CAC secured web page and you should be asked for the *Master Password* for your certificate. Enter it and if you get in, you know it's working.
+
+If some sites/pages seem to have a problem working correctly (e.g. outlook web access won't authenticate the session for DoD webmail) try using a private/incognito session to test validity of the cert chain and remove some variables.
 
 ## Debugging
 

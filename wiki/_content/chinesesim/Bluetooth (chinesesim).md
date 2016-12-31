@@ -27,7 +27,7 @@
     *   [8.4 Bluetooth USB 适配器](#Bluetooth_USB_.E9.80.82.E9.85.8D.E5.99.A8)
     *   [8.5 hcitool scan: 没找到设备](#hcitool_scan:_.E6.B2.A1.E6.89.BE.E5.88.B0.E8.AE.BE.E5.A4.87)
     *   [8.6 我的电脑不可见](#.E6.88.91.E7.9A.84.E7.94.B5.E8.84.91.E4.B8.8D.E5.8F.AF.E8.A7.81)
-    *   [8.7 Nautilus cannot browse files](#Nautilus_cannot_browse_files)
+    *   [8.7 Nautilus无法浏览文件](#Nautilus.E6.97.A0.E6.B3.95.E6.B5.8F.E8.A7.88.E6.96.87.E4.BB.B6)
 *   [9 资源](#.E8.B5.84.E6.BA.90)
 
 ## 安装
@@ -127,7 +127,7 @@ WantedBy=suspend.target
 
 要接收文件，必须安装 [gnome-user-share](https://www.archlinux.org/packages/?name=gnome-user-share) 软件包。然后在 *设置 -> 共享* 中授权配对的设备通过蓝牙接收文件。
 
-**小贴士:** 若要在 Thunar 中文件属性的*发送到*菜单中增加蓝牙选项，参阅[这里](http://docs.xfce.org/xfce/thunar/send-to)的命令。（需要设置的命令是 `bluetooth-sendto %F`)。
+**提示：** 若要在 Thunar 中文件属性的*发送到*菜单中增加蓝牙选项，参阅[这里](http://docs.xfce.org/xfce/thunar/send-to)的命令。（需要设置的命令是 `bluetooth-sendto %F`)。
 
 ### Bluedevil
 
@@ -660,18 +660,18 @@ Class = 0x100100
 
 ```
 
-This was the only solution to make my computer visible for my phone.
+这是目前唯一的能够使电脑对电话可见的方法。
 
-### Nautilus cannot browse files
+### Nautilus无法浏览文件
 
-If nautilus doesn't open and show this error:
+如果Nautilus无法打开并且显示如下错误：
 
 ```
 Nautilus cannot handle obex: locations. Couldn't display "obex://[XX:XX:XX:XX:XX:XX]/".
 
 ```
 
-Install gvfs-obexftp package:
+安装gvfs-obexftp软件包：
 
 ```
 # pacman -S gvfs-obexftp

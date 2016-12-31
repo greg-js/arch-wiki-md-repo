@@ -53,10 +53,10 @@ A functional OpenVPN server requires the following (in alphabetical order):
 
 Upon completing the steps outlined in this article, users will have generated the following files on the server:
 
-1.  `/etc/openvpn/ca.crt`
-2.  `/etc/openvpn/dh.pem`
-3.  `/etc/openvpn/servername.crt` and `/etc/openvpn/servername.key`
-4.  `/etc/openvpn/ta.key`
+1.  `/etc/openvpn/server/ca.crt`
+2.  `/etc/openvpn/server/dh.pem`
+3.  `/etc/openvpn/server/servername.crt` and `/etc/openvpn/server/servername.key`
+4.  `/etc/openvpn/server/ta.key`
 
 ### CA public certificate
 
@@ -78,8 +78,8 @@ $ scp /tmp/ca.crt foo@hostname-of-openvpn-server:/tmp
 On the **OpenVPN server machine**:
 
 ```
-# mv /tmp/ca.crt /etc/openvpn
-# chown root:root /etc/openvpn/ca.crt
+# mv /tmp/ca.crt /etc/openvpn/server/
+# chown root:root /etc/openvpn/server/ca.crt
 
 ```
 
@@ -91,7 +91,7 @@ On the **OpenVPN server machine**, install [easy-rsa](https://www.archlinux.org/
 # cd /etc/easy-rsa
 # easyrsa init-pki
 # easyrsa gen-req servername nopass
-# cp /etc/easy-rsa/pki/private/servername.key /etc/openvpn
+# cp /etc/easy-rsa/pki/private/servername.key /etc/openvpn/server/
 
 ```
 
@@ -104,7 +104,7 @@ This will create two files:
 On the **OpenVPN server machine**, create the initial dh.pem file:
 
 ```
-# openssl dhparam -out /etc/openvpn/dh.pem 2048
+# openssl dhparam -out /etc/openvpn/server/dh.pem 2048
 
 ```
 
@@ -115,7 +115,7 @@ On the **OpenVPN server machine**, create the initial dh.pem file:
 On the **OpenVPN server machine**, create the HMAC key:
 
 ```
-# openvpn --genkey --secret /etc/openvpn/ta.key
+# openvpn --genkey --secret /etc/openvpn/server/ta.key
 
 ```
 
@@ -211,8 +211,8 @@ $ scp /tmp/*.crt foo@hostname-of-openvpn_server:/tmp
 On the **OpenVPN server**, move the certificates in place and reassign ownership:
 
 ```
-# mv /tmp/servername.crt /etc/openvpn
-# chown root:root /etc/openvpn/servername.crt
+# mv /tmp/servername.crt /etc/openvpn/server/
+# chown root:root /etc/openvpn/server/servername.crt
 
 ```
 
@@ -254,17 +254,17 @@ On the **CA machine**:
 On the **OpenVPN machine**, copy `crl.pem` and inform the server to read it:
 
 ```
-# mv /tmp/crl.pem /etc/openvpn
-# chown root:root /etc/openvpn/crl.pem
+# mv /tmp/crl.pem /etc/openvpn/server/
+# chown root:root /etc/openvpn/server/crl.pem
 
 ```
 
-Edit `/etc/openvpn/server.conf` uncommenting the crl-verify directive, then [restart](/index.php/Restart "Restart") openvpn@server.service to re-read it:
+Edit `/etc/openvpn/server/server.conf` uncommenting the crl-verify directive, then [restart](/index.php/Restart "Restart") openvpn-server@server.service to re-read it:
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 .
-crl-verify /etc/openvpn/crl.pem
+crl-verify /etc/openvpn/server/crl.pem
 .
 
 ```

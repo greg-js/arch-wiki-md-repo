@@ -517,7 +517,7 @@ As an alternative to the above method, [playonlinux](https://www.archlinux.org/p
 
 #### Office 2013
 
-[Should work](http://www.phoronix.com/scan.php?page=news_item&px=CodeWeavers-CrossOver-16).
+[Should work](http://www.phoronix.com/scan.php?page=news_item&px=CodeWeavers-CrossOver-16) with Wine 2.0 and newer - most likely 32-bit versions only. The exact status for each application should be updated on [this](https://appdb.winehq.org/objectManager.php?sClass=application&iId=31) page once Wine 2.0 is out.
 
 #### Office 2016
 

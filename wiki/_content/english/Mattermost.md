@@ -81,7 +81,9 @@ The `"DriverName": "..."` setting:
 The connection string `"DataSource": "..."` should match your database and user settings:
 
 *   For MySQL, set it to something like `"**mmuser**:**mmuser_password**@unix(/run/mysqld/mysqld.sock)/**mattermost**?charset=utf8mb4,utf8"`.
-*   For PostgreSQL, set it to something like `"postgres://**mmuser**:**mmuser_password**@127.0.0.1:5432/**mattermost**?sslmode=disable&connect_timeout=10"`.
+*   For PostgreSQL
+    *   using a network socket : set it to something like `"postgres://**mmuser**:**mmuser_password**@127.0.0.1:5432/**mattermost**?sslmode=disable&connect_timeout=10"`.
+    *   using an unix socket : set it to `"postgres:///mattermost?host=/run/postgresql"` ; take care of the 3 slashes after `"postgres:"`, `"mattermost"` is the name of the database and `"/run/postgresql"` is the directory containing your socket
 
 **Note:** Be sure to replace `mmuser_password` with whatever password you configured the user to have
 

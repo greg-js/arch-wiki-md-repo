@@ -134,7 +134,7 @@ logfile /var/log/ntp.log
 
 systemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(*panic-gate*). 这样即使 ntp-server 的时间和系统时间的差异超过阈值，依然会同步时间。
 
-**Warning:** 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。
+**警告:** 使用 panic-gate 的原因是某些后台任务或服务会引起时间跳跃. 如果系统的时间从来没有同步过，请考虑先禁用其他服务再进行同步。
 
 两个服务都依赖系统网络状况，会在检测到网络连接时开始同步。
 
@@ -142,7 +142,7 @@ systemd 服务默认使用 `-u` 选项和 `-g` 选项禁用一个阈值(*panic-g
 
 [启用](/index.php/Enable "Enable") `ntpd.service` 服务.
 
-**Note:** systemd 命令 *timedatectl* 仅可以控制 [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd"), 用 root 执行 `timedatectl set-ntp 1` 会停止运行中的 `ntpd.service`.[[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-April/030277.html)
+**注意:** systemd 命令 *timedatectl* 仅可以控制 [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd"), 用 root 执行 `timedatectl set-ntp 1` 会停止运行中的 `ntpd.service`.[[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-April/030277.html)
 
 用 *ntpq* 可以查看同步的状态：
 
@@ -202,7 +202,7 @@ systemctl stop ntpd &
 
 ```
 
-**Note:** You are advised to customize the options for the *ntpd* command as explained in [#Usage](#Usage).
+**注意:** You are advised to customize the options for the *ntpd* command as explained in [#Usage](#Usage).
 
 See also [Wicd#Scripts](/index.php/Wicd#Scripts "Wicd").
 
@@ -246,11 +246,11 @@ remote           refid            st t when poll reach   delay   offset  jitter
 *GPSD_JSON(0)    .GPS.            0 l   55   64  377    0.000    2.556  14.109
 ```
 
-**Tip:** If the *reach* column is 0, it means *ntpd* has not been able to talk to *gpsd*. Wait a few minutes and try again. Sometimes it takes *ntpd* a while.
+**提示：** If the *reach* column is 0, it means *ntpd* has not been able to talk to *gpsd*. Wait a few minutes and try again. Sometimes it takes *ntpd* a while.
 
 ### Running in a chroot
 
-**Note:** *ntpd* should be started as non-root (default in the Arch Linux package) before attempting to jail it in a chroot, since chroots are relatively useless at securing processes running as root.
+**注意:** *ntpd* should be started as non-root (default in the Arch Linux package) before attempting to jail it in a chroot, since chroots are relatively useless at securing processes running as root.
 
 Create a new directory `/etc/systemd/system/ntpd.service.d/` if it does not exist and a file named `customexec.conf` inside with the following content:
 

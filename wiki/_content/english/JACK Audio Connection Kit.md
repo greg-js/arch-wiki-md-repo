@@ -57,7 +57,7 @@ jack_control dps period 256  -  set the driver parameter period to 256
 
 If you want a GUI control application, the most widely used one is [qjackctl](https://www.archlinux.org/packages/?name=qjackctl).
 
-Also, [cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) offers a set of applications and eases some advanced jack configurations. It is available on [aur](https://aur.archlinux.org/packages/cadence/).
+Also, [cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) offers a set of applications and eases some advanced jack configurations. It can be installed with the [cadence](https://aur.archlinux.org/packages/cadence/) package.
 
 ## Basic Configuration
 
@@ -88,7 +88,7 @@ jack_control dps rate 48000
 jack_control dps nperiods 2
 jack_control dps period 64
 sleep 10
-/usr/bin/a2jmidid -e &
+a2jmidid -e &
 sleep 10
 qjackctl &
 sleep 10
@@ -167,7 +167,7 @@ sleep 10
 Wait for the above to settle.
 
 ```
-/usr/bin/a2jmidid -e &
+a2jmidid -e &
 
 ```
 

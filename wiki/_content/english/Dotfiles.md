@@ -96,7 +96,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 
 ## Repositories
 
-| Author | Shell | WM / DE | Editor | Terminal | Multiplexer | Audio | Monitor | Mail | IRC |
+| Author | Shell (shell framework) | WM / DE | Editor | Terminal | Multiplexer | Audio | Monitor | Mail | IRC |
 | [Ambrevar](https://bitbucket.org/ambrevar/dotfiles) | zsh | awesome | emacs | rxvt-unicode | cmus | htop/vicious | mutt |
 | [awal](https://github.com/awalGarg/dotfiles) | fish | i3 | vim | sakura | tmux | i3status | The Lounge |
 | [bamos](https://github.com/bamos/dotfiles) | zsh | i3/xmonad | vim/emacs | rxvt-unicode | tmux | mpv/cmus | conky/xmobar | mutt | ERC |

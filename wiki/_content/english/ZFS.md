@@ -563,6 +563,7 @@ Create a 8GiB zfs volume:
 
 ```
 # zfs create -V 8G -b $(getconf PAGESIZE) \
+              -o logbias=throughput -o sync=always\
               -o primarycache=metadata \
               -o com.sun:auto-snapshot=false <pool>/swap
 

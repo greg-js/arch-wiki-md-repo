@@ -27,7 +27,8 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
                 *   [5.2.1.2.3 Resize partition](#Resize_partition)
         *   [5.2.2 Logical volumes](#Logical_volumes)
             *   [5.2.2.1 Growing or shrinking with lvresize](#Growing_or_shrinking_with_lvresize)
-            *   [5.2.2.2 Resizing the file system separately](#Resizing_the_file_system_separately)
+            *   [5.2.2.2 Extending the logical volume and file system in one go](#Extending_the_logical_volume_and_file_system_in_one_go)
+            *   [5.2.2.3 Resizing the file system separately](#Resizing_the_file_system_separately)
     *   [5.3 Remove logical volume](#Remove_logical_volume)
     *   [5.4 Add physical volume to a volume group](#Add_physical_volume_to_a_volume_group)
     *   [5.5 Remove partition from a volume group](#Remove_partition_from_a_volume_group)
@@ -46,6 +47,7 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [7.5 Resizing a contiguous logical volume fails](#Resizing_a_contiguous_logical_volume_fails)
     *   [7.6 Command "grub-mkconfig" reports "unknown filesystem" errors](#Command_.22grub-mkconfig.22_reports_.22unknown_filesystem.22_errors)
     *   [7.7 Thinly-provisioned root volume device times out](#Thinly-provisioned_root_volume_device_times_out)
+    *   [7.8 Delay on shutdown](#Delay_on_shutdown)
 *   [8 See also](#See_also)
 
 ### LVM Building Blocks
@@ -102,7 +104,7 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 *   Resize/create/delete logical and physical volumes online. File systems on them still need to be resized, but some (such as ext4) support online resizing.
 *   Online/live migration of LV being used by services to different disks without having to restart services.
 *   Snapshots allow you to backup a frozen copy of the file system, while keeping service downtime to a minimum.
-*   Support for various device-mapper targets, including transparent filesystem encryption and caching of frequently used data.
+*   Support for various device-mapper targets, including transparent filesystem encryption and caching of frequently used data. This allows creating a system with (one or more) physical disks (encrypted with LUKS) and [LVM on top](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") to allow for easy resizing and management of separate volumes for */*, */home*,*/backup*, etc. without the hassle of entering a key multiple times on boot.
 
 ### Disadvantages
 
@@ -481,6 +483,27 @@ If you want to fill all the free space on a volume group, use the following comm
 
 See [lvresize(8)](http://man7.org/linux/man-pages/man8/lvresize.8.html) for more detailed options.
 
+##### Extending the logical volume and file system in one go
+
+**Warning:** Not all file systems support resizing without loss of data and/or resizing online.
+
+Extend the logical volume *home* in *volume-group* with 10GB
+
+```
+# lvresize -L +10G /dev/*volume-group*/*home* --resize-fs
+
+```
+
+Alternatively with a XFS filesystem
+
+```
+# lvextend -L+10G /dev/*volume-group*/*home*
+# xfs_growfs /home
+
+```
+
+Note: *xfs_growfs* takes a mount point as argument. See [xfs_growfs(8)](http://man7.org/linux/man-pages/man8/xfs_growfs.8.html) for more detailed options.
+
 ##### Resizing the file system separately
 
 If not using the `-r, --resizefs` option to `lv{resize,extend,reduce}` or using a file system unspported by [fsadm(8)](http://man7.org/linux/man-pages/man8/fsadm.8.html) ([Btrfs](/index.php/Btrfs "Btrfs"), [ZFS](/index.php/ZFS "ZFS")...), you need to manually resize the FS before shrinking the LV or after expanding it.
@@ -805,6 +828,10 @@ Make sure to remove snapshot volumes before [generating grub.cfg](/index.php/GRU
 ### Thinly-provisioned root volume device times out
 
 With a large number of snapshots, `thin_check` runs for a long enough time so that waiting for the root device times out. To compensate, add the `rootdelay=60` kernel boot parameter to your boot loader configuration.
+
+### Delay on shutdown
+
+If you use RAID, snapshots or thin provisioning and experience a delay on shutdown, [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `lvm2-monitor.service`. See [FS#50420](https://bugs.archlinux.org/task/50420).
 
 ## See also
 
