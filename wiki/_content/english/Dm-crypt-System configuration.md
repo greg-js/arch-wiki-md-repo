@@ -5,6 +5,7 @@ Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 ## Contents
 
 *   [1 mkinitcpio](#mkinitcpio)
+    *   [1.1 Examples](#Examples)
 *   [2 Boot loader](#Boot_loader)
     *   [2.1 Using encrypt hook](#Using_encrypt_hook)
         *   [2.1.1 cryptdevice](#cryptdevice)
@@ -32,7 +33,27 @@ When encrypting a system it is necessary to regenerate the initial ramdisk after
 *   `keymap`: provides support for foreign keymaps for typing encryption passwords; it must come *before* the `encrypt` hook. Setting your keymap is done in [`/etc/vconsole.conf`](/index.php/Keymap#Persistent_configuration "Keymap").
 *   `keyboard`: needed to make keyboards work in early userspace.
 
-Other hooks needed should be clear from other manual steps followed during the installation of the system.
+[Other hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") needed should be clear from other manual steps followed during the installation of the system.
+
+### Examples
+
+A typical `/etc/mkinitcpio.conf` configuration using `encrypt` hook:
+
+ `/etc/mkinitcpio.conf` 
+```
+...
+HOOKS="base udev autodetect modconf keyboard keymap consolefont block encrypt filesystems resume fsck"
+...
+```
+
+A configuration with systemd-based initramfs using `sd-encrypt` hook:
+
+ `/etc/mkinitcpio.conf` 
+```
+...
+HOOKS="base systemd autodetect modconf keyboard sd-vconsole block sd-encrypt filesystems fsck"
+...
+```
 
 ## Boot loader
 

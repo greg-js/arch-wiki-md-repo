@@ -4,10 +4,14 @@
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Using folders and sup labels](#Using_folders_and_sup_labels)
-        *   [2.1.1 sup labels](#sup_labels)
-        *   [2.1.2 sup hooks](#sup_hooks)
-    *   [2.2 Viewing HTML attachments](#Viewing_HTML_attachments)
+    *   [2.1 Filtering mail](#Filtering_mail)
+        *   [2.1.1 Local filtering](#Local_filtering)
+        *   [2.1.2 Filter serverside](#Filter_serverside)
+    *   [2.2 sup sources](#sup_sources)
+    *   [2.3 sup hooks](#sup_hooks)
+        *   [2.3.1 before-poll hook](#before-poll_hook)
+    *   [2.4 Viewing HTML attachments](#Viewing_HTML_attachments)
+    *   [2.5 Viewing non-text attachments](#Viewing_non-text_attachments)
 *   [3 Usage](#Usage)
 *   [4 Back-up and Restore](#Back-up_and_Restore)
 *   [5 List of Keybindings](#List_of_Keybindings)
@@ -55,24 +59,30 @@ The [sup wiki has an example](https://github.com/sup-heliotrope/sup/wiki/Complet
 
 After the email sources have been added, `sup-config` will execute the `sup-sync` command to import mail into your mailbox.
 
-### Using folders and sup labels
+### Filtering mail
 
-Here is a configuration using folders, imapfilter and sup to automatically tag the messages according to your preferences and archive all the stuff you don't want to have in your face and easily find it with sups excellent views and labels.
+sup works by having all relevant mail in one view at a time and no folders. To control exactly what is viewed and what is not mail needs filtering.
 
-Create the folders on the IMAP-server:
+There are many ways to filter mail. Depending on how you access your mail you might want to filter on the serverside (with e.g. [imapfilter)](https://aur.archlinux.org/packages/imapfilter%29/) or on the clientside.
 
-*   INBOX
-*   Pulse
+To decide which way to go consider these two scenarios:
 
-Filter all mail with [imapfilter](https://aur.archlinux.org/packages/imapfilter/) starting from the [example.config](https://github.com/lefcha/imapfilter/blob/master/samples/config.lua).
+*   you always check mail on the same computer using sup -> go for local filtering
+*   you want to be able to read your (uncluttered) email (through webmail) when using other computers -> filter on the server
 
-**Tip:** change `ssl = 'ssl23',` to use a more secure protocol e.g. *tls1*
+#### Local filtering
 
-Your mail is now filtered with all of interest in *INBOX* and the cruft in *Pulse*.
+The sup hook [before-add-message.rb](https://github.com/sup-heliotrope/sup/wiki/Auto-Add-Labels-To-New-Messages) enables you with a little ruby knowledge to filter your mail and applying *labels*, *archive*, *mark read* etc. to mail easily.
 
-#### sup labels
+#### Filter serverside
 
-Sup uses the file `~/.sup/sources.yaml` to get sync your mail with its index and supports adding labels.
+Sup only hides from view so to keep the serverside clean you have to resort to another tool. [imapfilter](https://aur.archlinux.org/packages/imapfilter/) is a popular mailfilter. Set it up starting from the [example.config](https://github.com/lefcha/imapfilter/blob/master/samples/config.lua).
+
+**Tip:** Some servers impose **quotas** and to keep within it you can use [archivemail](https://aur.archlinux.org/packages/archivemail/) to clear the server from old mail.
+
+### sup sources
+
+Sup uses the file `~/.sup/sources.yaml` to get sync your mail with its index and supports adding one or more labels to all mail from a source.
 
 ```
 --- 
@@ -96,9 +106,11 @@ As seen in the example the *Pulse* folder has 2 labels: *pulse* and *cruft*. All
 
 **Warning:** The source-statements need to have unique ids to work properly.
 
-#### sup hooks
+### sup hooks
 
-sup has to types of hooks: interactive and non-interactive to enable the user to easily customize the program.
+sup has to types of hooks: interactive and non-interactive to enable the user to easily customize the program. See details in the [sup wiki on hooks](https://github.com/sup-heliotrope/sup/wiki/Hooks) for details.
+
+#### before-poll hook
 
 To activate the filtering and syncing automatically we set up a non-interactive startup hook using **before-poll**:
 
@@ -157,6 +169,25 @@ Or
 ```
 
 Note the difference in program executed. See details on [the sup wiki](https://github.com/sup-heliotrope/sup/wiki/Viewing-Attachments#decoding-attachments)
+
+### Viewing non-text attachments
+
+**Note:** Install [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) to use xdg-open
+
+create `~/.sup/hooks/mime-view.rb` with
+
+```
+# filename has already been shellesacped
+  pid = Process.spawn("xdg-open", filename,
+                    :out => '/dev/null',
+                    :err => '/dev/null')
+
+  Process.detach pid
+
+  true
+```
+
+See details on [the sup wiki](https://github.com/sup-heliotrope/sup/wiki/Viewing-Attachments)
 
 ## Usage
 

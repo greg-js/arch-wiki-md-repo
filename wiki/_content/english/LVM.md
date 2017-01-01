@@ -50,7 +50,7 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
     *   [7.8 Delay on shutdown](#Delay_on_shutdown)
 *   [8 See also](#See_also)
 
-### LVM Building Blocks
+## LVM Building Blocks
 
 Logical Volume Management utilizes the kernel's [device-mapper](http://sources.redhat.com/dm/) feature to provide a system of partitions independent of underlying disk layout. With LVM you abstract your storage and have "virtual partitions", making [extending/shrinking](#Resizing_volumes) easier (subject to potential filesystem limitations).
 
@@ -93,7 +93,7 @@ Example:
 
 ```
 
-### Advantages
+## Advantages
 
 LVM gives you more flexibility than just using normal hard drive partitions:
 
@@ -106,7 +106,7 @@ LVM gives you more flexibility than just using normal hard drive partitions:
 *   Snapshots allow you to backup a frozen copy of the file system, while keeping service downtime to a minimum.
 *   Support for various device-mapper targets, including transparent filesystem encryption and caching of frequently used data. This allows creating a system with (one or more) physical disks (encrypted with LUKS) and [LVM on top](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") to allow for easy resizing and management of separate volumes for */*, */home*,*/backup*, etc. without the hassle of entering a key multiple times on boot.
 
-### Disadvantages
+## Disadvantages
 
 *   Additional steps in setting up the system, more complicated.
 *   If dual-booting, note that Windows does not support LVM; you will be unable to access any LVM partitions from Windows.

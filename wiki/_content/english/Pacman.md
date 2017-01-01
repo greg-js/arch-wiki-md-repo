@@ -1,4 +1,4 @@
-The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use [build system](/index.php/Arch_Build_System "Arch Build System"). The goal of *pacman* is to make it possible to easily manage packages, whether they are from the [official repositories](/index.php/Official_repositories "Official repositories") or the user's own builds.
+The [pacman](https://git.archlinux.org/pacman.git/tree/doc/index.txt) [package manager](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use [build system](/index.php/Arch_Build_System "Arch Build System"). The goal of *pacman* is to make it possible to easily manage packages, whether they are from the [official repositories](/index.php/Official_repositories "Official repositories") or the user's own builds.
 
 *pacman* keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.
 
@@ -510,7 +510,7 @@ where `*/path/to/common/settings*` file contains the same options for both confi
 
 *pacman* can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`, which defaults to `/etc/pacman.d/hooks`. Hook file names must be suffixed with *.hook*.
 
-For more information on alpm hooks, see [alpm-hooks(5)](https://www.archlinux.org/pacman/alpm-hooks.5.html)
+For more information on alpm hooks, see [alpm-hooks(5)](https://git.archlinux.org/pacman.git/tree/doc/alpm-hooks.5.txt).
 
 ### Repositories and mirrors
 
@@ -711,7 +711,7 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 
 ## See also
 
-*   [Pacman's homepage](https://www.archlinux.org/pacman/)
+*   [pacman git](https://git.archlinux.org/pacman.git/tree/doc/index.txt)
 *   [libalpm(3)](https://www.archlinux.org/pacman/libalpm.3.html)
 *   [pacman(8)](https://www.archlinux.org/pacman/pacman.8.html)
 *   [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html)

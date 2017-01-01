@@ -316,7 +316,7 @@ See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/ind
 
 #### Xfce4 mixer
 
-**Note:** Xfce4 mixer and Xfce4 volumed are no longer being maintained upstream as they cannot be ported to GStreamer 1.0\. For more information, see the 4.12 [news post](http://www.xfce.org/about/news/?post=1425081600). Additionally if using [PulseAudio](/index.php/PulseAudio "PulseAudio") you can replace [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) and it's dependencies with [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/) and [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol).
+**Note:** Xfce4 mixer and Xfce4 volumed are no longer being maintained upstream as they cannot be ported to GStreamer 1.0\. For more information, see the 4.12 [news post](http://www.xfce.org/about/news/?post=1425081600).
 
 Xfce4 mixer, provided by [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer), is the GUI mixer app and panel plugin from the Xfce team. It is part of the xfce4 group. For [PulseAudio](/index.php/PulseAudio "PulseAudio") and [OSS](/index.php/OSS "OSS") support, you will need to install [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) if it is not installed already.
 

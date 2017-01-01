@@ -62,7 +62,7 @@
 | <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(67)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(54)</small> |
+| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(56)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(53)</small> |
@@ -77,7 +77,7 @@
 | <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(17)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
-| <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(8)</small> |
+| <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
 | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(19)</small> |
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |
 | <small>4.16.1.</small> [Optical](/index.php/Category:Optical "Category:Optical") <small>(5)</small> |

@@ -13,6 +13,9 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [5 A basic L3 IP routing configuration](#A_basic_L3_IP_routing_configuration)
     *   [5.1 Example configuration](#Example_configuration)
     *   [5.2 The server configuration file](#The_server_configuration_file)
+        *   [5.2.1 Hardening the server](#Hardening_the_server)
+        *   [5.2.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
+            *   [5.2.2.1 TCP vs UDP](#TCP_vs_UDP)
     *   [5.3 The client config profile (OpenVPN)](#The_client_config_profile_.28OpenVPN.29)
         *   [5.3.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
     *   [5.4 The client profile (generic for Linux, iOS, or Android)](#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29)
@@ -48,7 +51,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [11 Troubleshooting](#Troubleshooting)
     *   [11.1 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
     *   [11.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
-*   [12 See Also](#See_Also)
+*   [12 See also](#See_also)
 
 ## Install OpenVPN
 
@@ -114,84 +117,71 @@ Copy the example server configuration file to `/etc/openvpn/server/server.conf`:
 
 ```
 
-```
 Edit the file making a minimum of the following changes:
 
-```
  `/etc/openvpn/server/server.conf` 
 ```
- ca ca.crt
- cert servername.crt
- key servername.key  # This file should be kept secret
- dh dh.pem
- .
- tls-auth ta.key **0**
- .
- user nobody
- group nobody
+ca ca.crt
+cert servername.crt
+key servername.key  # This file should be kept secret
+dh dh.pem
+.
+tls-auth ta.key **0**
+.
+user nobody
+group nobody
 
 ```
 
-```
-==== Hardening the server ====
-If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and limiting the newer tls ciphers.  Do so by adding the following to `/etc/openvpn/server/server.conf`
+#### Hardening the server
 
-```
+If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and limiting the newer tls ciphers. Do so by adding the following to `/etc/openvpn/server/server.conf`:
+
  `/etc/openvpn/server/server.conf` 
 ```
- .
- cipher AES-256-CBC
- auth SHA512
- tls-version-min 1.2
- tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
- .
+.
+cipher AES-256-CBC
+auth SHA512
+tls-version-min 1.2
+tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA256:TLS-DHE-RSA-WITH-AES-256-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA:TLS-DHE-RSA-WITH-AES-128-CBC-SHA:TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA
+.
 
 ```
 
-**Note:** The .ovpn client profile MUST contain a matching cipher and auth line to work properly (at least with the iOS and Android client)!
+**Note:** The .ovpn client profile **must** contain a matching cipher and auth line to work properly (at least with the iOS and Android client)!
 
-```
-==== Deviating from the standard port and/or protocol ====
-Some public/private network admins may not allow OpenVPN connections on its default port and/or protocol.  One strategy to circumvent this is to mimic https/SSL traffic which is very likely unobstructed.
+#### Deviating from the standard port and/or protocol
 
-```
+Some public/private network admins may not allow OpenVPN connections on its default port and/or protocol. One strategy to circumvent this is to mimic https/SSL traffic which is very likely unobstructed.
 
-```
 To do so, configure `/etc/openvpn/server/server.conf` as such:
 
-```
  `/etc/openvpn/server/server.conf` 
 ```
- .
- port 443
- proto tcp
- .
+.
+port 443
+proto tcp
+.
 
 ```
 
-**Note:** The .ovpn client profile MUST contain a matching port and proto line to work properly!
+**Note:** The .ovpn client profile **must** contain a matching port and proto line to work properly!
 
-```
-===== TCP vs UDP =====
+##### TCP vs UDP
+
 There are subtle differences between TCP and UDP.
 
-```
-
-```
 TCP
-* So-called "stateful protocol."
-* High reliability due to error correction (i.e. waits for packet acknowledgment).
-* Potentially slower than UDP.
 
-```
+*   So-called "stateful protocol."
+*   High reliability due to error correction (i.e. waits for packet acknowledgment).
+*   Potentially slower than UDP.
 
-```
 UDP
-* So-called "stateless protocol."
-* Less reliable than TCP as no error correction is in use.
-* Potentially faster than TCP.
 
-```
+*   So-called "stateless protocol."
+*   Less reliable than TCP as no error correction is in use.
+*   Potentially faster than TCP.
 
 ### The client config profile (OpenVPN)
 
@@ -230,7 +220,7 @@ Using the options `user nobody` and `group nobody` in the configuration file mak
 As it could seem to require manual action to manage the routes, the options `user nobody` and `group nobody` might seem undesirable. Depending on setup, however, there are four ways to handle these situations:
 
 *   For errors of the unit, a simple way is to [edit](/index.php/Edit "Edit") it and add a `Restart=on-failure` to the `[Service]` section. Though, this alone will not delete any obsoleted routes, so it may happen that the restarted tunnel is not routed properly.
-*   The package contains the `/usr/lib/openvpn/plugins/openvpn-plugin-down-root.so` (see README in its directory), which can be used to let *openvpn* fork a process with root privileges with the only task to execute a custom script when receiving a down signal from the main process, which is handling the tunnel with dropped privileges.[[1]](https://community.openvpn.net/openvpn/browser/plugin/down-root/README?rev=d02a86d37bed69ee3fb63d08913623a86c88da15)
+*   The package contains the `/usr/lib/openvpn/plugins/openvpn-plugin-down-root.so`, which can be used to let *openvpn* fork a process with root privileges with the only task to execute a custom script when receiving a down signal from the main process, which is handling the tunnel with dropped privileges (see also its [README](https://community.openvpn.net/openvpn/browser/plugin/down-root/README?rev=d02a86d37bed69ee3fb63d08913623a86c88da15)).
 *   The [OpenVPN HowTo](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains another way how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
 *   Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki HowTo](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
 
@@ -463,7 +453,7 @@ To troubleshoot a VPN connection, start the client's daemon manually with `openv
 
 To start OpenVPN automatically at system boot, either for a client or for a server, [enable](/index.php/Enable "Enable") `openvpn-server@*<configuration>*.service` on the applicable machine. (Leave `.conf` out of the `<configuration>` string.)
 
-For example, if the client configuration file is `/etc/openvpn/client/client.conf`, the service name is `openvpn-client@client.service`. Or, if the server configuration file is `/etc/openvpn/server/server.conf`, the service name is `openvpn-server@server.service`.
+For example, if the client configuration file is `/etc/openvpn/client/*client*.conf`, the service name is `openvpn-client@*client*.service`. Or, if the server configuration file is `/etc/openvpn/server/*server*.conf`, the service name is `openvpn-server@*server*.service`.
 
 ### Letting NetworkManager start a connection
 
@@ -495,7 +485,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[1]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -556,14 +546,14 @@ Lastly, reload UFW:
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[3]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[4]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[3]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
@@ -716,7 +706,7 @@ Before continuing, test openresolv by restarting your network connection and ens
 
 For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with the `client.up` and `client.down` scripts packaged in `/usr/share/openvpn/contrib/pull-resolv-conf/`. See their comments on how to install them to `/etc/openvpn/client/`. The following is an excerpt of a resulting client configuration using the scripts in conjunction with *resolvconf* and options to [#Drop root privileges after connecting](#Drop_root_privileges_after_connecting):
 
- `/etc/openvpn/clienttunnel.conf` 
+ `/etc/openvpn/client/*clienttunnel*.conf` 
 ```
 user nobody
 group nobody
@@ -778,9 +768,9 @@ then
 fi
 ```
 
-Make it executable `chmod a+x /usr/lib/systemd/system-sleep/vpn.sh`
+Make it executable `chmod a+x /usr/lib/systemd/system-sleep/vpn.sh` and [edit](/index.php/Edit "Edit") the respective service:
 
- `/etc/systemd/system/openvpn@.service.d/restart.conf` 
+ `/etc/systemd/system/openvpn-client@.service.d/restart.conf` 
 ```
 [Service]
 Restart=always
@@ -804,7 +794,6 @@ In this case the server will send ping-like messages to all of its clients every
 
 A small ping-interval can increase the stability of the tunnel, but will also cause slightly higher traffic. Depending on your connection, also try lower intervals than 10 seconds.
 
-## See Also
+## See also
 
 *   [OpenVPN Official Site](https://openvpn.net/index.php/open-source.html)
-*   [Airvpn](/index.php/Airvpn "Airvpn")

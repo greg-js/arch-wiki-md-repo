@@ -222,17 +222,18 @@ If the plugins do not show up in Eclipse after the AUR package has been upgraded
 To connect to a real device or phone via ADB under Arch, you must:
 
 1.  Install [android-tools](https://www.archlinux.org/packages/?name=android-tools). In addition, you might want to install [android-udev](https://www.archlinux.org/packages/?name=android-udev) if you wish to connect the device to the proper `/dev/` entries.
-2.  Enable USB Debugging on your phone or device:
-    *   Jelly Bean (4.2) and newer: Go to `Settings --> About Phone` tap “Build Number” until you get a popup that you have become a developer (7 times). Then go to `Settings --> Developer --> USB debugging` and enable it.
+2.  plug in your android device via USB.
+3.  Enable USB Debugging on your phone or device:
+    *   Jelly Bean (4.2) and newer: Go to `Settings --> About Phone` tap “Build Number” 7 times until you get a popup that you have become a developer. Then go to `Settings --> Developer --> USB debugging` and enable it. The device will ask to allow the computer with its fingerprint to connect. allowing it permanent will copy $HOME/.android/adbkey.pub onto the devices /data/misc/adb/adb_keys folder.
     *   Older versions: This is usually done from `Settings --> Applications --> Development --> USB debugging`. Reboot the phone after checking this option to make sure USB debugging is enabled.
-3.  Add yourself to the *adbusers* group:
+4.  Add yourself to the *adbusers* group:
 
 ```
 # gpasswd -a *username* adbusers
 
 ```
 
-If [ADB recognizes your device](#Detect_the_device) (it is visible and accessible in IDE), you are done. Otherwise see instructions below.
+If [ADB recognizes your device](#Detect_the_device) (`adb devices` shows it as "device" and not as "unauthorized", or it is visible and accessible in IDE), you are done. Otherwise see instructions below.
 
 #### Figure out device IDs
 

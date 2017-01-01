@@ -130,7 +130,7 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ### Anti-aliasing
 
-[Font rasterization](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") converts vector font data to bitmap data so that it can be displayed. The result can appear jagged due to [aliasing](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"). Technique known as [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") can be used to increase the apparent resolution of font edges. Anti-aliasing is **enabled** by default. To disable it:
+[Font rasterization](https://en.wikipedia.org/wiki/Font_rasterization "wikipedia:Font rasterization") converts vector font data to bitmap data so that it can be displayed. The result can appear jagged due to [aliasing](https://en.wikipedia.org/wiki/Aliasing "wikipedia:Aliasing"). The technique known as [anti-aliasing](https://en.wikipedia.org/wiki/Anti-aliasing "wikipedia:Anti-aliasing") can be used to increase the apparent resolution of font edges. Anti-aliasing is **enabled** by default. To disable it:
 
 ```
   <match target="font">
@@ -222,7 +222,7 @@ The `lcddefault` filter will work for most users. Other filters are available th
 
 #### Advanced LCD filter specification
 
-If the available, built-in LCD filters are not satisfactory, it is possible to tweak the font rendering very specifically by building a custom freetype2 package and modifying the hardcoded filters. The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be used to build and install packages from source.
+If the available built-in LCD filters are not satisfactory, it is possible to tweak the font rendering very specifically by building a custom freetype2 package and modifying the hardcoded filters. The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be used to build and install packages from source.
 
 **Tip:** With the [Infinality](/index.php/Infinality "Infinality") packages, the LCD filter can be modified without rebuilds.
 

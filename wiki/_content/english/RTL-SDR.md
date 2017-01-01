@@ -12,6 +12,8 @@ Bleeding edge is on [rtl-sdr-git](https://aur.archlinux.org/packages/rtl-sdr-git
 
 udev rules are installed at `/usr/lib/udev/rules.d/10-rtl-sdr.rules` and set the proper permissions such that non-root users can access the device.
 
+**Tip:** The official RTL-SDR software does not include an infrared module. If one is desired, this [fork](https://github.com/librtlsdr/librtlsdr), which includes an rtl_ir module, should be used instead.
+
 ## Usage
 
 Performing a simple test, and make sure the dongle works and that there are no lost samples:

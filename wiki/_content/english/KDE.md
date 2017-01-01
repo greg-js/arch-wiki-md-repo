@@ -197,7 +197,7 @@ Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/pa
 
 [Install](/index.php/Install "Install") [plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa) or [kmix](https://www.archlinux.org/packages/?name=kmix) (start Kmix from the Application Launcher).
 
-**Note:** To adjust the [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), add e.g. `VolumePercentageStep=1` in the `[Global]` section of `~/.kde4/share/config/kmixrc`.
+**Note:** To adjust the [step size of volume increments/decrements](https://bugs.kde.org/show_bug.cgi?id=313579#c28), add e.g. `VolumePercentageStep=1` in the `[Global]` section of `~/.config/kmixrc`.
 
 ##### Disable panel shadow
 
@@ -503,41 +503,43 @@ Otherwise you will get the [OS error 22](/index.php/MySQL#OS_error_22_when_runni
 
 ###### PostgreSQL
 
-1.  Install and setup PostgreSQL (see [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"))
-    *   Enable the `postgresql` [systemd](/index.php/Systemd "Systemd") service: `systemctl enable postgresql.service`.
-2.  Create the `~/.config/akonadi/akonadiserverrc` file if it does not exist.
-3.  Edit `~/.config/akonadi/akonadiserverrc` file so that it has the following contents:
-    ```
-    [General]
-    Driver=QPSQL
+Install and setup [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). Make sure `postgresql.service` is [started](/index.php/Started "Started").
 
-    [QPSQL]
-    Host=/run/postgresql/
-    InitDbPath=/usr/bin/initdb
-    Name=akonadi
-    Options=
-    Password=
-    Port=5432
-    ServerPath=/usr/bin/pg_ctl
-    StartServer=true
-    User=postgres
-    ```
+Edit Akonadi configuration file so that it has the following contents:
 
-    **Note:** If your PostgreSQL database username, password, and port differ from `postgres`, (nothing), and `5432`, then make sure you respectively change the configuration options, `User=`, `Password=`, and `Port=`.
+ `~/.config/akonadi/akonadiserverrc` 
+```
+[General]
+Driver=QPSQL
 
-4.  Start Akonadi: `akonadictl start`, and check its status: `akonadictl status`.
+[QPSQL]
+Host=/run/postgresql/
+InitDbPath=/usr/bin/initdb
+Name=akonadi
+Options=
+Password=
+Port=5432
+ServerPath=/usr/bin/pg_ctl
+StartServer=true
+User=postgres
+
+```
+
+**Note:** If your PostgreSQL database username, password, and port differ from `postgres`, (nothing), and `5432`, then make sure you respectively change the configuration options, `User=`, `Password=`, and `Port=`.
+
+Start Akonadi with `akonadictl start`, and check its status: `akonadictl status`.
 
 ###### SQLite
 
-Edit `~/.config/akonadi/akonadiserverrc` to match the configuration below:
+Edit Akonadi configuration file to match the configuration below:
 
+ `~/.config/akonadi/akonadiserverrc` 
 ```
 [General]
 Driver=QSQLITE3
 
 [QSQLITE3]
-Name=/home/username/.local/akonadi/akonadi.db
-
+Name=/home/*username*/.local/share/akonadi/akonadi.db
 ```
 
 ### KDE Telepathy
@@ -548,11 +550,15 @@ To install all Telepathy protocols, install the [telepathy](https://www.archlinu
 
 #### Use Telegram with KDE Telepathy
 
-Telegram protocol is available using [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), installing [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) and [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/). The username is the Telegram account telephone number (complete with the national prefix '+xx', e.g. '+49' for Germany). The configuration through the GUI may be tricky: if the phone number is not accepted when configuring a new account in the KDE Telepathy client (with an error message complaining about an invalid parameter which prevents the account creation), insert it between single quotes and then remove the quotes manually from the configuration file (`~/.local/share/telepathy/mission-control/accounts.cfg`) after the account creation (if the quotes are not removed after, an authentication error should rise). Note that the configuration file should be edited manually when KDE Telepathy is not running, e.g. when there is no KDE desktop session active, otherwise manual changes may be overwritten by the software.
+[Telegram](/index.php/Telegram "Telegram") protocol is available using [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), installing [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) and [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/). The username is the Telegram account telephone number (complete with the national prefix `+*xx*`, e.g. `+49` for Germany).
+
+The configuration through the GUI may be tricky: if the phone number is not accepted when configuring a new account in the KDE Telepathy client (with an error message complaining about an invalid parameter which prevents the account creation), insert it between single quotes and then remove the quotes manually from the configuration file (`~/.local/share/telepathy/mission-control/accounts.cfg`) after the account creation (if the quotes are not removed after, an authentication error should rise).
+
+**Note:** The configuration file should be edited manually when KDE Telepathy is not running, e.g. when there is no KDE desktop session active, otherwise manual changes may be overwritten by the software.
 
 ### Integrate Android
 
-KDE Connect provides several features for you:
+[KDE Connect](https://community.kde.org/KDEConnect) provides several features for you:
 
 *   Share files and URLs to/from KDE from/to any app, without wires.
 *   Touchpad emulation: Use your phone screen as your computer's touchpad.
@@ -748,7 +754,7 @@ Now go back to the System Settings page and carefully add the necessary resource
 
 ### Fix empty IMAP inbox
 
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders [[9]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
+For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders, see [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscribition in the kmail account settings.
 
 ### Getting current state of KWin for support and debug purposes
 
@@ -902,7 +908,7 @@ mandb: cannot set the locale; make sure $lc_* and $lang are correct
 
 ```
 
-By default, Konsole sets $LANG to en_US.US-ASCII. If you have not generated that locale, then mandb cannot use it. In your Konsole profile settings, click "Environment" and then add a line for LANG=en_US.UTF-8 or whatever your locale should be.
+By default, Konsole sets `$LANG` to `en_US.US-ASCII`. If you have not generated that locale, then mandb cannot use it. In your Konsole profile settings, click "Environment" and then add a line for `LANG=en_US.UTF-8` or whatever your locale should be.
 
 ### Multi-monitor issues
 

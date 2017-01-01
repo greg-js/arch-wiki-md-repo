@@ -235,7 +235,7 @@ See also [Network configuration#Set the hostname](/index.php/Network_configurati
 
 Configure the network for the newly installed environment: see [Network configuration](/index.php/Network_configuration "Network configuration").
 
-For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") the [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), and [dialog](https://www.archlinux.org/packages/?name=dialog) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
+For [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration"), [install](/index.php/Help:Reading#Installation_of_packages "Help:Reading") the [iw](https://www.archlinux.org/packages/?name=iw) and [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) packages, as well as needed [firmware packages](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Optionally install [dialog](https://www.archlinux.org/packages/?name=dialog) for usage of *wifi-menu*.
 
 ### Initramfs
 

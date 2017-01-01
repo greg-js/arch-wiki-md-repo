@@ -1,4 +1,4 @@
-[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (e.g. 150 BTC), can also be exchanged for traditional currencies like US dollars.
+[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (e.g. 0.1 BTC), can also be exchanged for traditional currencies like US dollars.
 
 ## Contents
 
@@ -24,6 +24,9 @@
         *   [5.4.1 Electrum](#Electrum)
         *   [5.4.2 Multibit HD](#Multibit_HD)
 *   [6 See also](#See_also)
+    *   [6.1 Informational Sites](#Informational_Sites)
+    *   [6.2 Discussion Groups](#Discussion_Groups)
+    *   [6.3 Blockchain Explorers](#Blockchain_Explorers)
 
 ## Introduction
 
@@ -53,9 +56,11 @@ A discussion of design flaw on reddit (with citation links to official developer
 
 ## Installation
 
-See [Bitcoin Software](#Bitcoin_Software).
+See [#Bitcoin Software](#Bitcoin_Software).
 
 ## How to get Bitcoins?
+
+**Warning:** Your private keys are what allows you to spend your Bitcoin under valid consensus rules. They also allow **anyone** else possessing them to spend your Bitcoin. Keeping your private keys safe is the equivalent of keeping your Bitcoin safe, the two are inseparable. Here is a link to the Bitcoin Wiki article on wallet security: [Wallet Security.](https://en.bitcoin.it/wiki/Securing_your_wallet)
 
 There are a variety of ways to acquire bitcoins:
 
@@ -81,7 +86,7 @@ There are several Bitcoin miners in the [official repositories](/index.php/Offic
 
 A full node is a bitcoin client which starts with the initial genesis block of the blockchain, and sequentially validates the signature chain of every historical Bitcoin transaction and validity of each historical block to construct upon arriving at the tip of the chain the current Unspent Transaction Output Set. This is the current set of unspent coins, and which private keys they are encumbered to. It is called a full node because it obviously verifies the cryptographic integrity of the UTXO set itself. A full node client may or may not also participate in relaying unconfirmed transactions around the network and operate a mempool of all unconfirmed transactions, and may or may not participate in serving the full historical blockchain to new full node clients bootstrapping themselves. It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded and verified them in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set.
 
-**Warning:** There are many different proposals to alter the consensus rules of the Bitcoin network, with different applications implementing different alterations. This section attempts to provide an overview of the software in the Bitcoin ecosystem, both those that attempt to implement alterations to consensus rules and those that do not. Applications listed here have the intention of interacting with the main network of Bitcoin nodes, and only implement protocol changes when their specific clients mechanism for doing so reaches its activation threshold (which differs depending on the client). It is advised to research thoroughly before use, in order to find the best fit for your use case. Be warned that choosing a consensus-incompatible node may result in you being forked off the bitcoin blockchain and result in you using some other currency that isn't bitcoin. Also be warned that operating a minority implementation sharing consensus rules with another implementation also carries a risk of bugs or design flaws causing a fork or consensus failure. See [Consensus](#Consensus).
+**Warning:** There are many different proposals to alter the consensus rules of the Bitcoin network, with different applications implementing different alterations. This section attempts to provide an overview of the software in the Bitcoin ecosystem, both those that attempt to implement alterations to consensus rules and those that do not. Applications listed here have the intention of interacting with the main network of Bitcoin nodes, and only implement protocol changes when their specific clients mechanism for doing so reaches its activation threshold (which differs depending on the client). It is advised to research thoroughly before use, in order to find the best fit for your use case. Be warned that choosing a consensus-incompatible node may result in you being forked off the bitcoin blockchain and result in you using some other currency that is not bitcoin. Also be warned that operating a minority implementation sharing consensus rules with another implementation also carries a risk of bugs or design flaws causing a fork or consensus failure. See [#Consensus](#Consensus).
 
 #### Bitcoin Core
 
@@ -91,7 +96,7 @@ Install [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt), [bitc
 
 Currently the dominant standard being used by most Bitcoin nodes. Has the vast majority of bitcoin developers, resources and bitcoin economy behind it.
 
-Bitcoin Core can made to use less storage by enabling pruning, by adding `prune=550` to the configuration file at ~/.bitcoin/bitcoin.conf. This will bring the disk space usage down to about 2GB. Synchronizing the blockchain can be made faster by increasing the database cache as much as your RAM allows, add `dbcache=M` to ~/.bitcoin/bitcoin.conf where M is the number of megabytes of RAM to allocate. To reduce bandwidth usage you can use the options from this page: [https://bitcoin.org/en/full-node#reduce-traffic](https://bitcoin.org/en/full-node#reduce-traffic)
+Bitcoin Core can made to use less storage by enabling pruning, by adding `prune=550` to the configuration file at `~/.bitcoin/bitcoin.conf`. This will bring the disk space usage down to about 2GB. Synchronizing the blockchain can be made faster by increasing the database cache as much as your RAM allows, add `dbcache=M` to `~/.bitcoin/bitcoin.conf` where M is the number of megabytes of RAM to allocate. To reduce bandwidth usage you can use the options from this page: [https://bitcoin.org/en/full-node#reduce-traffic](https://bitcoin.org/en/full-node#reduce-traffic)
 
 Version `0.13.1` introduced signaling for [Segregated Witness (segwit)](https://bitcoincore.org/en/2016/01/26/segwit-benefits/).
 
@@ -121,7 +126,7 @@ WantedBy=multi-user.target
 
 ```
 
-**bitcoin-qt** should run fine with minimal or no configuration file. For a list of configuration parameters that can be added to your `~/.bitcoin/bitcoin.conf`, see: `bitcoind --help`.
+**bitcoind** and **bitcoin-qt** should run fine with minimal or no configuration file. For a list of configuration parameters that can be added to your `~/.bitcoin/bitcoin.conf`, see: `bitcoind --help`.
 
 [Official Website](https://bitcoincore.org/)
 
@@ -165,7 +170,7 @@ Bitcoin Classic can be found in [bitcoin-classic](https://aur.archlinux.org/pack
 
 [Bitcoin Classic](https://bitcoinclassic.com/) has a statement on blocksize [here](https://bitcoinclassic.com/devel/Blocksize.html).
 
-This client is potentially consensus in-compatible with the rest of the network, and upon conditions being met will fork away from the previous chain and consensus rules.
+This client is potentially consensus-incompatible with the rest of the network, and upon conditions being met will fork away from the previous chain and consensus rules.
 
 **Note:** In Bitcoin Classic the block size is no longer limited by rules set by software developers. It is set by you, the person running the software. This runs the very real risk of adding support to raising the blocksize to a point your hardware cannot provide the necessary resources to fully validate the blockchain.
 
@@ -173,7 +178,7 @@ This client is potentially consensus in-compatible with the rest of the network,
 
 Bitcoin Unlimited can be found in [bitcoind-unlimited-git](https://aur.archlinux.org/packages/bitcoind-unlimited-git/)
 
-Consensus-incompatible implementation that [Removes the block size limit completely.](https://www.bitcoinunlimited.info/faq)
+Potentially consensus-incompatible implementation that [Removes the block size limit completely](https://www.bitcoinunlimited.info/faq).
 
 **Note:** In Bitcoin Unlimited the block size is no longer limited by rules set by software developers. It is set by you, the person running the software. This runs the very real risk of adding support to raising the blocksize to a point your hardware cannot provide the necessary resources to fully validate the blockchain.
 
@@ -183,15 +188,13 @@ Consensus-incompatible implementation that [Removes the block size limit complet
 
 Bitcoin XT can be found in [bitcoinxt-gui-git](https://aur.archlinux.org/packages/bitcoinxt-gui-git/)
 
-Implementation similar to Bitcoin Classic which also implements [multiple patches](https://bitcoinxt.software/patches.html) aimed at improving the network's throughput. This client is potentially consensus in-compatible with the rest of the network, and upon conditions being met will fork away from the previous chain and consensus rules.
+Implementation similar to Bitcoin Classic which also implements [multiple patches](https://bitcoinxt.software/patches.html) aimed at improving the network's throughput. This client is potentially consensus-incompatible with the rest of the network, and upon conditions being met will fork away from the previous chain and consensus rules.
 
 [Official Website](https://bitcoinxt.software/)
 
 ### Thin Clients
 
 Thin clients do not fully validate the blockchain or compute a full UTXO set. They derive their security in proxy by connecting to a fullnode and downloading the blockheaders. They are still able to guarantee the Proof of Work behind a block is valid, and each blockheader contains a merkle root of all the transactions in the block. This allows them to query full node clients for the blockheaders and the data to prove their transaction is in the merkle root in the blockheader. They however must trust that miners are mining valid blocks, and have no way to make sure rules like the issuance rate or cap of Bitcoins are being followed.
-
-**Note:** Simplified Payment Verification (SPV) wallets are lightweight wallets that can verify whether or not a transaction is part of a block without downloading the 97 GB block chain. However, they cannot verify whether or not the transaction is actually valid. (Only full validation nodes like Bitcoin Core can do that.)
 
 **Warning:** In the event of a consensus failure at large on the network, or one affecting the node(s) an SPV client is connected to, the SPV client is incapable of detecting which partition of the network it is on, or communicating to, or being sent information by. It is extremely insecure to send or receive money with an SPV client in the event of such a consensus failure occurring.
 
@@ -213,19 +216,30 @@ Install the [multibit](https://www.archlinux.org/packages/?name=multibit) packag
 
 ## See also
 
+#### Informational Sites
+
+*   [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf) - The original whitepaper published by Satoshi Nakamoto before the launch of the live Bitcoin network.
 *   [bitcoin.org](https://www.bitcoin.org/) - Today the site is an independent open source project with contributors from around the world. Final publication authority is held by the co-owners, but all regular activity is organized through the public pull request process and managed by the site co-maintainers.
 *   [bitcoin.it Wiki](https://en.bitcoin.it/wiki/Main_Page) - Bitcoin Wikipedia.
-*   [bitcoin.com - Forum](https://forum.bitcoin.com/)
-*   [bitcointalk.org](https://bitcointalk.org/) - Forum
 *   [Satoshi Nakamoto Institute](http://satoshi.nakamotoinstitute.org/) - Thoughts and quotes from the designer.
-*   [Blockchain.info](https://blockchain.info/) - Blockchain explorer/Webwallet
-*   [Blockr.io](https://btc.blockr.io/) - Blockchain explorer
-*   [blockparser](https://github.com/znort987/blockparser) - Fast, quick and dirty bitcoin blockchain parser.
+*   [Coin Dance](https://coin.dance/) - Broad purpose network statistics.
 
+#### Discussion Groups
+
+*   [bitcoin.com](https://forum.bitcoin.com/) - Forum.
+*   [bitcointalk.org](https://bitcointalk.org/) - Forum.
 *   IRC Channels on Freenode:
     *   **#bitcoin** - General Bitcoin-related.
     *   **##bitcoin** - Price talk discussion, etc.
-    *   **#bitcoin-core-dev** Development and technical.
+    *   **#bitcoin-core-dev** - Development and technical.
     *   **#bitcoin-otc** - Over The Counter exchange.
     *   **#bitcoin-market** - Live quotes from markets.
     *   **#bitcoin-mining** - Mining discussion.
+
+#### Blockchain Explorers
+
+*   [Blockchain.info](https://blockchain.info/) - Blockchain explorer/Webwallet.
+*   [Blockr.io](https://btc.blockr.io/) - Blockchain explorer.
+*   [blockparser](https://github.com/znort987/blockparser) - Fast, quick and dirty bitcoin blockchain parser.
+*   [Tradeblock](https://tradeblock.com/bitcoin/) - Blockchain explorer with graphical real-time tools.
+*   [Blockcypher](https://live.blockcypher.com/) - Blockchain explorer.

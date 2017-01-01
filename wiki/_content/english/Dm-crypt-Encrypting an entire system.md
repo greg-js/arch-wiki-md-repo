@@ -238,9 +238,9 @@ Afterwards continue with the installation procedure up to the mkinitcpio step.
 
 ### Configuring mkinitcpio
 
-Add the `encrypt` hook to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Add the `keyboard` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `etc/mkinitcpio.conf`  `HOOKS="... **encrypt** ... filesystems ..."` 
+ `etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** ... filesystems ..."` 
 
 Depending on which other hooks are used, the order may be relevant. See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -383,9 +383,9 @@ Afterwards continue with the installation procedure up to the `mkinitcpio` step.
 
 ### Configuring mkinitcpio
 
-Add the `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **encrypt** **lvm2** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** **lvm2** ... filesystems ..."` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -455,9 +455,9 @@ Now after setup of the encrypted LVM partitioning, it would be time to install: 
 
 ### Configuring mkinitcpio
 
-Add the `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Add the `keyboard`, `lvm2` and `encrypt` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **block** **encrypt** **lvm2** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **lvm2** **encrypt** ... filesystems ..."` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -620,9 +620,9 @@ We choose a non-journalling file system to preserve the flash memory of the `/bo
 
 ### Configuring mkinitcpio
 
-Add the `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `etc/mkinitcpio.conf`  `HOOKS="... **encrypt** **lvm2** ... filesystems ..."` 
+ `etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** **lvm2** ... filesystems ..."` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 
@@ -801,9 +801,9 @@ Afterwards continue with the installation procedure up to the mkinitcpio step.
 
 ### Configuring mkinitcpio
 
-Add the `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
+Add the `keyboard`, `encrypt` and `lvm2` hooks to [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"):
 
- `/etc/mkinitcpio.conf`  `HOOKS="... **encrypt** **lvm2** ... filesystems ..."` 
+ `/etc/mkinitcpio.conf`  `HOOKS="... **keyboard** block **encrypt** **lvm2** ... filesystems ..."` 
 
 See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details and other hooks that you may need.
 

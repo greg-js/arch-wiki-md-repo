@@ -145,14 +145,21 @@ If you are having issues with the offset of the time, try reinstalling [tzdata](
 
 Ubuntu and its derivatives have the hardware clock set to be interpreted as in "localtime" if Windows was detected on any disk during Ubuntu installation. This is apparently done deliberately to allow new Linux users to try out Ubuntu on their Windows computers without editing the registry.
 
-To change this behaviour in Ubuntu you need to do the following. Open the file:
+To change this behavior in Ubuntu 14.10 and earlier, you need to do the following. Open the file:
 
 ```
 /etc/default/rcS
 
 ```
 
-and change UTC flag to **UTC=yes**.
+and change UTC flag to `UTC=yes`.
+
+To change this behavior in Ubuntu 15.04 and later, do:
+
+```
+# timedatectl set-local-rtc 0
+
+```
 
 ## Time zone
 
