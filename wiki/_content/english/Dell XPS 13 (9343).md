@@ -140,7 +140,7 @@ In I2S mode, the built-in microphone is muted by default. To enable it you have 
 *   press `F4` to switch to the *Capture view* and ensure that **ADC0** has the *CAPTURE* label. If it doesn't, toggle over to it with your arrow keys and press the spacebar to turn it on *CAPTURE*
 *   finally, toggle over to the **Mic** item and raise the volume to 100.
 
-**Note:** Switching the **port** (from Main Microphone and Headset Microphone (unplugged)) of the only `Input Devices` tab entry in the `pavucontrol` application, has the same effect of the above instructions.
+**Note:** Cycling the **Port** (from *Main Microphone* to *Headset Microphone (unplugged)*, and back) of the **Input Devices** tab in the `pavucontrol` application, has the same effect of the above instructions.
 
 ### Touchpad
 

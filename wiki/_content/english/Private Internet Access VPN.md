@@ -91,15 +91,13 @@ Run `openvpn --config /etc/openvpn/{config_file_name}` as root. `{config_file_na
 
 | option | option values | description |
 | openvpn_auto_login | True,False | Default: True; Configures if OpenVPN configuration files should have auto-login enabled. See [#Enabling auto-login](#Enabling_auto-login) |
-| strong_encryption | True,False | Default: False; Configures strong encryption. Uses port 1197, cipher aes-256-cbc, auth sha256\. Custom configurations for port, cipher, and auth are ignored when enabling this option. |
 
 *   For the `[configure]` section:
 
 | option | option values | description |
 | apps | cm, nm | Default: all; This configures which applications are configured. The application will configure all applications installed; however, if a user only needed configurations for Conman, then setting this to 'cm' would generate only those configurations even if they had NetworkManager installed. OpenVPN configurations are always generated. cm = Conman; nm = NetworkManager |
-| port | 501, 502, 1197, 1198 | Default: 1198; This configures which port and protocol the VPN uses. 501,502=TCP; 1197,1198=UDP |
-| cipher | aes-128-cbc, aes-256-cbc, bf-cbc, None | Default: aes-128-cbc; This configures the data encryption cipher. |
-| auth | sha1, sha256, None | Default: sha1; This configures the data authentication. |
+| port | See for list: PIA's Support -
+[Which encryption/auth settings should I use for ports on your gateways?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/225274288-Which-encryption-auth-settings-should-I-use-for-ports-on-your-gateways-) | Default: 1198 |
 
 ## Example Configuration
 
@@ -113,7 +111,7 @@ openvpn_auto_login = True
 
 [configure]
 apps = cm
-port = UDP/8080
+port = 8080
 hosts = US East, US West, Japan, UK London, UK Southampton
 
 ```

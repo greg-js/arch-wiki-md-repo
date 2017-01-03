@@ -213,11 +213,11 @@ setopt COMPLETE_ALIASES
 
 Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`. ZLE has an [emacs](/index.php/Emacs "Emacs") mode and a [vi](/index.php/Vi "Vi") mode. If one of the `$VISUAL` or `$EDITOR` environment variables contain the string `vi` then vi mode will be used; otherwise, it will default to emacs mode. Set the mode explicitly with `bindkey -e` or `bindkey -v` respectively for emacs mode or vi mode.
 
-See also [zshwiki: bindkeys](http://zshwiki.org/home/zle/bindkeys).
+See [ZshWiki: bindkeys](http://zshwiki.org/home/zle/bindkeys) for instructions on keybinding setup.
 
 ### History search
 
-Add these lines to .zshrc
+You need to set up [#Key bindings](#Key_bindings) to use this. To enable history search add these lines to `.zshrc` file:
 
  `~/.zshrc` 
 ```
@@ -225,12 +225,12 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-[[ -n "${key[Up]}"   ]] && bindkey "${key[Up]}"   up-line-or-beginning-search
-[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
+[[ -n "$key[Up]"   ]] && bindkey -- "$key[Up]"   up-line-or-beginning-search
+[[ -n "$key[Down]" ]] && bindkey -- "$key[Down]" down-line-or-beginning-search
 
 ```
 
-Doing this, only past commands matching the current line up to the current cursor position will be shown.
+By doing this, only the past commands matching the current line up to the current cursor position will be shown when `Up` or `Down` keys are pressed.
 
 ### Prompts
 

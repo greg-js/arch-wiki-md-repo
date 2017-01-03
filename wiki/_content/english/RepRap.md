@@ -48,6 +48,16 @@ $ cura
 
 Configure it to use RepRap in the startup configuration wizard. Select the RepRap model you are using, or select Custom RepRap.
 
+**[Lulzbot by Aleph Objects](https://www.lulzbot.com)**
+
+*   Install [cura-aleph-bin](https://aur.archlinux.org/packages/cura-aleph-bin/) from [AUR](/index.php/AUR "AUR").
+*   Add user to the uucp group
+
+```
+$ usermod -a -G uucp *username*
+
+```
+
 #### MatterControl
 
 MatterControl is a combined slicer/host similar to Cura. Install [mattercontrol](https://aur.archlinux.org/packages/mattercontrol/) from [AUR](/index.php/AUR "AUR"), then run it.

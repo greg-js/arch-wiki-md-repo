@@ -10,9 +10,10 @@ Dolphin is a Nintendo Gamecube, Wii and Triforce emulator, currently supporting 
 *   [3 Playing](#Playing)
     *   [3.1 Dolphin's Wiki](#Dolphin.27s_Wiki)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Launching games fails with "WriteRest Op" error](#Launching_games_fails_with_.22WriteRest_Op.22_error)
-    *   [4.2 Games play too fast](#Games_play_too_fast)
-    *   [4.3 Emulation is too slow](#Emulation_is_too_slow)
+    *   [4.1 Incompatibility with Wayland](#Incompatibility_with_Wayland)
+    *   [4.2 Launching games fails with "WriteRest Op" error](#Launching_games_fails_with_.22WriteRest_Op.22_error)
+    *   [4.3 Games play too fast](#Games_play_too_fast)
+    *   [4.4 Emulation is too slow](#Emulation_is_too_slow)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -132,6 +133,15 @@ exo-open --launch WebBrowser [https://wiki.dolphin-emu.org/index.php?search=%u](
 
 ## Troubleshooting
 
+### Incompatibility with Wayland
+
+Dolphin 5.0 is not compatible with Wayland. Force it to run as X11 application via this command:
+
+```
+GDK_BACKEND=x11 dolphin-emu
+
+```
+
 ### Launching games fails with "WriteRest Op" error
 
 Add "-fno-pie" to "CXX_FLAGS" when building Dolphin.
@@ -142,9 +152,11 @@ Make sure the framelimit is set to a proper value for the game's region; 60 for 
 
 ### Emulation is too slow
 
-Double-check the [CPU scaling governor](/index.php/Cpu_scaling#Scaling_governors "Cpu scaling"). If using an nvidia graphics card, on nvidia-settings changing the powermizer setting to "Prefer maximum performance"; check its temperature to make sure the card does not overheat, though. Change Dolphin's priority using *nice*. Killing unnecessary processes and disabling compositing also helps. Configuring Dolphin correctly, as described above, is the most important part.
+Double-check the [CPU scaling governor](/index.php/Cpu_scaling#Scaling_governors "Cpu scaling"). If using an NVidia graphics card, on nvidia-settings changing the powermizer setting to "Prefer maximum performance"; check its temperature to make sure the card does not overheat, though. Change Dolphin's priority using *nice*. Killing unnecessary processes and disabling compositing also helps. Configuring Dolphin correctly, as described above, is the most important part.
 
-*See also: [Improving performance](/index.php/Improving_performance "Improving performance") - most of the advice should be helpful.*
+Many systems have more than one GPU, like an integrated low-performance one by Intel and a dedicated graphics card. Run `DRI_PRIME=1 dolphin-emu` to execute Dolphin on your dedicated GPU. See [PRIME](/index.php/PRIME "PRIME") for details.
+
+*See also: [Improving performance](/index.php/Improving_performance "Improving performance") – most of the advice should be helpful.*
 
 ## See also
 

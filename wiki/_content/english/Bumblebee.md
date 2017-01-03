@@ -263,7 +263,7 @@ $ optirun -b primus glxgears
 
 Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you won't have to specify it on the command line.
 
-**Tip:** Refer to [#Primusrun mouse delay/disable VSYNC](#Primusrun_mouse_delay.2Fdisable_VSYNC) if you want to disable `VSYNC`. It can also remove mouse input delay lag and slightly increase the performance.
+**Tip:** Refer to [#Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29) if you want to disable `VSYNC`. It can also remove mouse input delay lag and slightly increase the performance.
 
 ### Power management
 

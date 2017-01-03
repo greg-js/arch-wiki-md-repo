@@ -30,6 +30,7 @@ This is the model of HP Spectre x360 released in late 2016\. Distinctive feature
 *   OLED touch screen running at 1920x1080
 *   500 GB M.2 SDD
 *   16 GB RAM
+*   4 speakers
 
 ### lspci on a 4231
 

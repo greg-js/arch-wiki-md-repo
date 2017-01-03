@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Tmux](/index.php/Tmux "Tmux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-8-31，点击[这里](https://wiki.archlinux.org/index.php?title=Tmux&diff=0&oldid=445584)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Tmux](/index.php/Tmux "Tmux") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-03，点击[这里](https://wiki.archlinux.org/index.php?title=Tmux&diff=0&oldid=456181)可以查看翻译后英文页面的改动。
 
 [Tmux](http://tmux.github.io/) 是一个终端复用器: 可以激活多个终端或窗口, 在每个终端都可以单独访问，每一个终端都可以访问，运行和控制各自的程序.tmux类似于screen，可以关闭窗口将程序放在后台运行，需要的时候再重新连接。 Tmux是于基于BSD协议发布的 [GNU Screen](/index.php/Screen_Tips "Screen Tips"). 虽然两者类似，但是还是有不同的地方，详情点击 [tmux FAQ page](https://raw.githubusercontent.com/tmux/tmux/master/FAQ)。
 
@@ -19,15 +19,23 @@
 *   [5 ICCCM Selection Integration](#ICCCM_Selection_Integration)
     *   [5.1 Urxvt MiddleClick Solution](#Urxvt_MiddleClick_Solution)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Start tmux in urxvt](#Start_tmux_in_urxvt)
-    *   [6.2 Start tmux on every shell login](#Start_tmux_on_every_shell_login)
-    *   [6.3 Use tmux windows like tabs](#Use_tmux_windows_like_tabs)
-    *   [6.4 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
-    *   [6.5 Changing the configuration with tmux started](#Changing_the_configuration_with_tmux_started)
-    *   [6.6 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
-    *   [6.7 Terminal emulator window titles](#Terminal_emulator_window_titles)
-    *   [6.8 Automatic layouting](#Automatic_layouting)
-    *   [6.9 vim friendly configuration](#vim_friendly_configuration)
+    *   [6.1 Start tmux with default session layout](#Start_tmux_with_default_session_layout)
+        *   [6.1.1 Get the default layout values](#Get_the_default_layout_values)
+        *   [6.1.2 Define the default tmux layout](#Define_the_default_tmux_layout)
+        *   [6.1.3 Autostart tmux with default tmux layout](#Autostart_tmux_with_default_tmux_layout)
+        *   [6.1.4 Alternate approach for default session](#Alternate_approach_for_default_session)
+    *   [6.2 Start tmux in urxvt](#Start_tmux_in_urxvt)
+    *   [6.3 Start tmux on every shell login](#Start_tmux_on_every_shell_login)
+        *   [6.3.1 Bash](#Bash)
+    *   [6.4 Start a non-login shell](#Start_a_non-login_shell)
+    *   [6.5 Use tmux windows like tabs](#Use_tmux_windows_like_tabs)
+    *   [6.6 Clients simultaneously interacting with various windows of a session](#Clients_simultaneously_interacting_with_various_windows_of_a_session)
+    *   [6.7 Correct the TERM variable according to terminal type](#Correct_the_TERM_variable_according_to_terminal_type)
+    *   [6.8 Reload an updated configuration without restarting tmux](#Reload_an_updated_configuration_without_restarting_tmux)
+    *   [6.9 Template script to run program in new session resp. attach to existing one](#Template_script_to_run_program_in_new_session_resp._attach_to_existing_one)
+    *   [6.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
+    *   [6.11 Automatic layouting](#Automatic_layouting)
+    *   [6.12 Vim friendly configuration](#Vim_friendly_configuration)
 *   [7 外部链接](#.E5.A4.96.E9.83.A8.E9.93.BE.E6.8E.A5)
 
 ## 安装
@@ -36,7 +44,7 @@
 
 ## 配置
 
-用户私人配置文件在`~/.tmux.conf`, 全局配置文件在 `/etc/tmux.conf`，范例配置文件在`/usr/share/tmux/`。
+用户私人配置文件在`~/.tmux.conf`, 全局配置文件在 `/etc/tmux.conf`。
 
 ### 快捷键前缀
 
@@ -334,6 +342,94 @@ While in tmux, Shift+MiddleMouseClick will paste the clipboard selection while j
 
 ## Tips and tricks
 
+### Start tmux with default session layout
+
+To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
+
+```
+tmuxinator doctor
+
+```
+
+#### Get the default layout values
+
+Start Tmux as usual and configure your windows and panes layout as you like. When finished, get the current layout values by executing (while you are still within the current Tmux session)
+
+```
+tmux list-windows
+
+```
+
+The output may look like this (two windows with 3 panes and 2 panes layout)
+
+```
+0: default* (3 panes) [274x83] [layout 20a0,274x83,0,0{137x83,0,0,3,136x83,138,0[136x41,138,0,5,136x41,138,42,6]}] @2 (active)
+1: remote- (2 panes) [274x83] [layout e3d3,274x83,0,0[274x41,0,0,4,274x41,0,42,7]] @3                                         
+
+```
+
+The Interesting part you need to copy for later use begins after **[layout...** and excludes **... ] @2 (active)**. For the first window layout you need to copy e.g. **20a0,274x83,0,0{137x83,0,0,3,136x83,138,0[136x41,138,0,5,136x41,138,42,6]}**
+
+#### Define the default tmux layout
+
+Knowing this, you can exit the current tmux session. Following this, you create your default Tmux session layout by editing Tmuxinator's config file (Don't copy the example, get your layout values as described above)
+
+ `~/.tmuxinator/default.yml` 
+```
+name: default
+root: ~/
+windows:
+  - default:
+      layout: 20a0,274x83,0,0{137x83,0,0,3,136x83,138,0[136x41,138,0,5,136x41,138,42,6]}
+      panes:
+        - clear
+        - vim
+        - clear && emacs -nw
+  - remote:
+      layout: 24ab,274x83,0,0{137x83,0,0,3,136x83,138,0,4}
+      panes:
+        - 
+        - 
+
+```
+
+The example defines two windows named "default" and "remote". With your determined layout values. For each pane you have to use at least one `-` line. Within the first window panes you start the commandline "clear" in pane one, "vim" in pane two and "clear && emacs -nw" executes two commands in pane three on each Tmux start. The second window layout has two panes without defining any start commmands.
+
+Test the new default layout with (yes, it is "mux"):
+
+```
+mux default
+
+```
+
+#### Autostart tmux with default tmux layout
+
+If you like to start your terminal session with your default Tmux session layout edit
+
+ `~/.bashrc` 
+```
+ if [ -z "$TMUX" ]; then
+   mux default          
+ fi                     
+
+```
+
+#### Alternate approach for default session
+
+Instead of using the above method, one can just write a bash script that when run, will create the default session and attach to it. Then you can execute it from a terminal to get the pre-designed configuration in that terminal
+
+```
+#!/bin/bash
+tmux new-session -d -n WindowName Command
+tmux new-window -n NewWindowName
+tmux split-window -v
+tmux selectp -t 1
+tmux split-window -h
+tmux selectw -t 1
+tmux -2 attach-session -d
+
+```
+
 ### Start tmux in urxvt
 
 Use this command to start urxvt with a started tmux session. I use this with the exec command from my .ratpoisonrc file.
@@ -342,9 +438,11 @@ Use this command to start urxvt with a started tmux session. I use this with the
 
 ### Start tmux on every shell login
 
-Simply add the following line of bash code to your .bashrc before your aliases; the code for other shells is very similar:
+#### Bash
 
- `[[ -z "$TMUX" ]] && exec tmux`  `~/.bashrc` 
+For bash, simply add the following line of bash code to your .bashrc before your aliases; the code for other shells is very similar:
+
+ `~/.bashrc` 
 ```
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
@@ -354,22 +452,22 @@ Simply add the following line of bash code to your .bashrc before your aliases; 
 
 **Note:** This snippet ensures that tmux is not launched inside of itself (something tmux usually already checks for anyway). tmux sets $TMUX to the socket it is using whenever it runs, so if $TMUX isn't set or is length 0, we know we aren't already running tmux.
 
-And this snippet start only one session(unless you start some manually), on login, try attach at first, only create a session if no tmux is running.
+Add the following snippet to start only one session (unless you start some manually), on login, try attach at first, only create a session if no tmux is running.
 
 ```
 # TMUX
-if which tmux 2>&1 >/dev/null; then
+if which tmux >/dev/null 2>&1; then
     #if not inside a tmux session, and if no session is started, start a new session
     test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
 
 ```
 
-This snippet does the same thing, but also checks tmux is installed before trying to launch it. It also tries to reattach you to an existing tmux session at logout, so that you can shut down every tmux session quickly from the same terminal at logout.
+The following snippet does the same thing, but also checks tmux is installed before trying to launch it. It also tries to reattach you to an existing tmux session at logout, so that you can shut down every tmux session quickly from the same terminal at logout.
 
 ```
 # TMUX
-if which tmux 2>&1 >/dev/null; then
+if which tmux >/dev/null 2>&1; then
     # if no session is started, start a new session
     test -z ${TMUX} && tmux
 
@@ -395,7 +493,19 @@ fi
 
 ```
 
-**Note:** Instead of using the bashrc file, you can launch tmux when you start your terminal emulator. (i. e. urxvt -e tmux)
+### Start a non-login shell
+
+Tmux starts a [login shell](http://unix.stackexchange.com/questions/38175) [by default](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/5997), which may result in multiple negative side effects:
+
+*   Users of [fortune](https://en.wikipedia.org/wiki/fortune_(Unix) may notice that quotes are printed when creating a new panel.
+*   The configuration files for login shells such as `~/.profile` are interpreted each time a new panel is created, so commands intended to be run on session initialization (e.g. setting audio level) are executed.
+
+To disable this behaviour, add to `~/.tmux.conf`:
+
+```
+set -g default-command "${SHELL}"
+
+```
 
 ### Use tmux windows like tabs
 
@@ -466,7 +576,7 @@ else
     # Make sure we are not already in a tmux session
     if [[ -z "$TMUX" ]]; then
         echo "Launching copy of base session $base_session ..."
-        # Session is is date and time to prevent conflict
+        # Session id is date and time to prevent conflict
         session_id=`date +%Y%m%d%H%M%S`
         # Create a new session (without attaching it) and link to base session 
         # to share windows
@@ -491,7 +601,7 @@ setw -g aggressive-resize on
 
 added to `~/.tmux.conf`. It causes tmux to resize a window based on the smallest client actually viewing it, not on the smallest one attached to the entire session.
 
-An alternative taken from [[1]](http://sourceforge.net/mailarchive/forum.php?thread_name=CAPBqLKEC0MAFR%2BWUYqCuyd%3DKB47HK8CFSuAf%3Dd%3DW2H3F4fpMZw%40mail.gmail.com&forum_name=tmux-users) is to put the following ~/.bashrc:
+An alternative taken from [[1]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/2632) is to put the following ~/.bashrc:
 
  `.bashrc` 
 ```
@@ -513,7 +623,36 @@ Citing the author:
 
 	Therefore, when my computer looses network connectivity, all "foo.something" clients are killed while "foo" remains. I can then call "rsc foo" to continue work from where I stopped.
 
-### Changing the configuration with tmux started
+### Correct the TERM variable according to terminal type
+
+Instead of [setting a fixed TERM variable in tmux](#Setting_the_correct_term), it is possible to set the proper TERM (either `screen` or `screen-256color`) according to the type of your terminal emulator:
+
+ `~/.tmux.conf` 
+```
+## set the default TERM
+set -g default-terminal screen
+
+## update the TERM variable of terminal emulator when creating a new session or attaching a existing session
+set -g update-environment 'DISPLAY SSH_ASKPASS SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY TERM'
+## determine if we should enable 256-colour support
+if "[[ ${TERM} =~ 256color || ${TERM} == fbterm ]]" 'set -g default-terminal screen-256color'
+
+```
+ `~/.zshrc` 
+```
+## workaround for handling TERM variable in multiple tmux sessions properly from [http://sourceforge.net/p/tmux/mailman/message/32751663/](http://sourceforge.net/p/tmux/mailman/message/32751663/) by Nicholas Marriott
+if [[ -n ${TMUX} && -n ${commands[tmux]} ]];then
+        case $(tmux showenv TERM 2>/dev/null) in
+                *256color) ;&
+                TERM=fbterm)
+                        TERM=screen-256color ;;
+                *)
+                        TERM=screen
+        esac
+fi
+```
+
+### Reload an updated configuration without restarting tmux
 
 By default tmux reads `~/.tmux.conf` only if it was not already running. To have tmux load a configuration file afterwards, execute:
 
@@ -567,7 +706,7 @@ set -g set-titles-string "#T"
 
 ```
 
-For `set-titles-string`, `#T` will display `user@host:~` and change accordingly as you connect to different hosts. You can also set many more options here.
+For `set-titles-string`, `#T` will display `user@host:~` and change accordingly as you connect to different hosts.
 
 ### Automatic layouting
 
@@ -579,68 +718,9 @@ bind-key -n M-n split-window \; select-layout
 
 ```
 
-### vim friendly configuration
+### Vim friendly configuration
 
-This is a configuration meant to be friendly to whoever uses vim
-
-```
-#Prefix is Ctrl-a
-set -g prefix C-a
-bind C-a send-prefix
-unbind C-b
-
-set -sg escape-time 1
-set -g base-index 1
-setw -g pane-base-index 1
-
-#Mouse works as expected
-setw -g mode-mouse on
-set -g mouse-select-pane on
-set -g mouse-resize-pane on
-set -g mouse-select-window on
-
-setw -g monitor-activity on
-set -g visual-activity on
-
-set -g mode-keys vi
-set -g history-limit 10000
-
-# y and p as in vim
-bind Escape copy-mode
-unbind p
-bind p paste-buffer
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
-bind -t vi-copy 'Space' halfpage-down
-bind -t vi-copy 'Bspace' halfpage-up
-
-# extra commands for interacting with the ICCCM clipboard
-bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
-bind C-v run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer"
-
-# easy-to-remember split pane commands
-bind | split-window -h
-bind - split-window -v
-unbind '"'
-unbind %
-
-# moving between panes with vim movement keys
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
-
-# moving between windows with vim movement keys
-bind -r C-h select-window -t :-
-bind -r C-l select-window -t :+
-
-# resize panes with vim movement keys
-bind -r H resize-pane -L 5
-bind -r J resize-pane -D 5
-bind -r K resize-pane -U 5
-bind -r L resize-pane -R 5
-
-```
+See [[2]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configuration friendly to [vim](/index.php/Vim "Vim") users.
 
 ## 外部链接
 

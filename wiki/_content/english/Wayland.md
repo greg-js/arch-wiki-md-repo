@@ -29,6 +29,7 @@
     *   [5.7 liteide](#liteide)
     *   [5.8 screen recording](#screen_recording)
     *   [5.9 remote display](#remote_display)
+    *   [5.10 drag and drop between GNOME and QT, or within QT](#drag_and_drop_between_GNOME_and_QT.2C_or_within_QT)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -374,7 +375,11 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### remote display
 
-(20161229) there was a merge of FreeRDP into weston in 2013.
+(20161229) there was a merge of FreeRDP into weston in 2013, enabled via compile time switch. The arch linux weston package currently has it not enabled.
+
+### drag and drop between GNOME and QT, or within QT
+
+(20170103) when running GNOME, dragging files from dolphin or nemo into avidemux does not work. see [QTBUG-57879](https://bugreports.qt.io/browse/QTBUG-57879).
 
 ## See also
 

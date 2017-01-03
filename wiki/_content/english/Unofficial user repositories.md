@@ -85,12 +85,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
         *   [5.1.13 linux-kalterfx](#linux-kalterfx)
         *   [5.1.14 markzz](#markzz)
-        *   [5.1.15 mladoux](#mladoux)
-        *   [5.1.16 qt-debug](#qt-debug)
-        *   [5.1.17 quarry](#quarry)
-        *   [5.1.18 siosm-aur](#siosm-aur)
-        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.15 qt-debug](#qt-debug)
+        *   [5.1.16 quarry](#quarry)
+        *   [5.1.17 siosm-aur](#siosm-aur)
+        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -915,19 +914,6 @@ Server = https://deadsoftware.ru/files/linux-kalterfx/repo/$arch
 ```
 [markzz]
 Server = http://repo.markzz.com/arch/$repo/$arch
-
-```
-
-#### mladoux
-
-*   **Maintainer** [[Mark LaDoux](mailto:mark.ladoux@gmail.com)]
-*   **Description** Packages that Mark uses on his own systems. updated regularly ( usually weekly, schedule permitting ).
-*   **Upstream Page** [https://repo.markladoux.com/](https://repo.markladoux.com/)
-*   **Key ID** 8C81228392DA8379BA1A871D07AD53FA02DC4E08
-
-```
-[mladoux]
-Server = https://repo.markladoux.com/archlinux/$arch/
 
 ```
 

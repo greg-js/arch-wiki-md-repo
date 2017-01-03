@@ -76,14 +76,14 @@ In addition, the boinc user should be in the video group:
 
 ```
 
-The boinc user also needs to have access to your X session. Use this command to accomplish this:
+In order to suspend GPU computing when the computer is in use, the boinc user should have access to your X session so that mouse/keyboard input can be communicated to the client. This can be accomplished by installing the package [xorg-xhost](https://www.archlinux.org/packages/?name=xorg-xhost) (Extra) and executing the following command:
 
 ```
-xhost local:boinc
+$ xhost local:boinc
 
 ```
 
-You may want to add that to a startup script.
+You may want to add that to a [startup script](/index.php/Autostarting#X_session_startup "Autostarting").
 
 ### BOINC via the CLI
 

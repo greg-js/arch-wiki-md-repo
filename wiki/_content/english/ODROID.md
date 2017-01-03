@@ -6,25 +6,28 @@ There are several supported ODROID ARM boards available to consumers. This wiki 
 
 *   [1 Installation](#Installation)
 *   [2 Kernel updates](#Kernel_updates)
-*   [3 CPU scaling and temperature management](#CPU_scaling_and_temperature_management)
-    *   [3.1 Headless mode for the C2](#Headless_mode_for_the_C2)
-    *   [3.2 CPU frequency scaling](#CPU_frequency_scaling)
-        *   [3.2.1 Show online/offline cores](#Show_online.2Foffline_cores)
-*   [4 Onboard hardware sensors](#Onboard_hardware_sensors)
-    *   [4.1 CPU temperature](#CPU_temperature)
-    *   [4.2 CPU frequency](#CPU_frequency)
-    *   [4.3 CPU governor](#CPU_governor)
-    *   [4.4 Lightweight monitoring suite](#Lightweight_monitoring_suite)
-*   [5 Hardware tweaks](#Hardware_tweaks)
-    *   [5.1 LEDs](#LEDs)
-        *   [5.1.1 Blue LED](#Blue_LED)
-            *   [5.1.1.1 List available triggers](#List_available_triggers)
-            *   [5.1.1.2 Temporary configuration](#Temporary_configuration)
-            *   [5.1.1.3 Permanent configuration](#Permanent_configuration)
-    *   [5.2 CPU Fan](#CPU_Fan)
-        *   [5.2.1 Fan Mode](#Fan_Mode)
-        *   [5.2.2 Fan Speed (Manual Only)](#Fan_Speed_.28Manual_Only.29)
-*   [6 See also](#See_also)
+*   [3 General quirkiness](#General_quirkiness)
+    *   [3.1 Bridge interfaces do not work as expected](#Bridge_interfaces_do_not_work_as_expected)
+    *   [3.2 DHCP assignments to LXCs do not work as expected](#DHCP_assignments_to_LXCs_do_not_work_as_expected)
+*   [4 CPU scaling and temperature management](#CPU_scaling_and_temperature_management)
+    *   [4.1 Headless mode for the C2](#Headless_mode_for_the_C2)
+    *   [4.2 CPU frequency scaling](#CPU_frequency_scaling)
+        *   [4.2.1 Show online/offline cores](#Show_online.2Foffline_cores)
+*   [5 Onboard hardware sensors](#Onboard_hardware_sensors)
+    *   [5.1 CPU temperature](#CPU_temperature)
+    *   [5.2 CPU frequency](#CPU_frequency)
+    *   [5.3 CPU governor](#CPU_governor)
+    *   [5.4 Lightweight monitoring suite](#Lightweight_monitoring_suite)
+*   [6 Hardware tweaks](#Hardware_tweaks)
+    *   [6.1 CPU Fan](#CPU_Fan)
+        *   [6.1.1 Fan Mode](#Fan_Mode)
+        *   [6.1.2 Fan Speed (Manual Only)](#Fan_Speed_.28Manual_Only.29)
+    *   [6.2 LEDs](#LEDs)
+        *   [6.2.1 Blue LED](#Blue_LED)
+            *   [6.2.1.1 List available triggers](#List_available_triggers)
+            *   [6.2.1.2 Temporary configuration](#Temporary_configuration)
+            *   [6.2.1.3 Permanent configuration](#Permanent_configuration)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -56,6 +59,24 @@ find: ‘/sys/devices/platform/’: No such file or directory
 ==> WARNING: No modules were added to the image. This is probably not what you want.
 
 ```
+
+## General quirkiness
+
+### Bridge interfaces do not work as expected
+
+Is is known that both the ODROID-C1+ and ODROID-C2 (perhaps others) have a limitation with network bridges hypothesized to be due to the currently supported, but [old 3.14.x series of kernels](https://github.com/systemd/systemd/issues/4945#issuecomment-268596134). The limitation is that established network tools such as [netctl](/index.php/Netctl "Netctl") and [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") cannot create and bring up a usable network bridge needed for linux containers among other things.
+
+One solution is to use [odroid-auto-bridge](https://aur.archlinux.org/packages/odroid-auto-bridge/) which will setup the bridge automatically using a discrete systemd service. This bridge can then be managed by systemd-netword or netctl (others too). See the [upsteam readme](https://github.com/graysky2/odroid-auto-bridge) for more.
+
+### DHCP assignments to LXCs do not work as expected
+
+Running linux containers on an ODROID host is quirky. In addition to the difficulties with network bridging described above, users will need to change the default forwarding policy on the host OS to allow for DHCP requests to the containers to work properly. Alternatively, users can use implement a static IP setup for containers.
+
+Users wishing to retain the DHCP functionality need to install [ufw](/index.php/Ufw "Ufw") and configure it (see [Uncomplicated_Firewall#Basic_configuration](/index.php/Uncomplicated_Firewall#Basic_configuration "Uncomplicated Firewall")) on the host OS, Beyond the standard configuration, modify `/etc/default/ufw` as follows:
+
+ `/etc/default/ufw`  `DEFAULT_FORWARD_POLICY="ACCEPT"` 
+
+Failure to do so will result in an non-function DHCP assignment within the container even if users create a ufw rule or profile that specifically allows ports 67 and 68.
 
 ## CPU scaling and temperature management
 
@@ -112,6 +133,20 @@ cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
 ## Hardware tweaks
 
+### CPU Fan
+
+The optional CPU fan can be controlled via the `/sys/devices/platform/odroidu2-fan` interface.
+
+#### Fan Mode
+
+ `# echo auto > /sys/devices/platform/odroidu2-fan/fan_mode`  `# echo manual > /sys/devices/platform/odroidu2-fan/fan_mode` 
+
+#### Fan Speed (Manual Only)
+
+Values range from 0 (0%) to 255 (100%)
+
+ `# echo 0 > /sys/devices/platform/odroidu2-fan/pwm_duty`  `# echo 255 > /sys/devices/platform/odroidu2-fan/pwm_duty` 
+
 ### LEDs
 
 Several ODROID models have dual LEDs: a red power LED which is always on if power is supplied, and a blue LED which can be configured.
@@ -138,20 +173,6 @@ Replace `*TRIGGER*` with one of the available triggers. This setting will apply 
 Replace `*TRIGGER*` with one of the available triggers. This setting will apply upon reboot.
 
  `/etc/tmpfiles.d/leds.conf`  `w /sys/class/leds/blue:heartbeat/trigger - - - - *TRIGGER*` 
-
-### CPU Fan
-
-The optional CPU fan can be controlled via the `/sys/devices/platform/odroidu2-fan` interface.
-
-#### Fan Mode
-
- `# echo auto > /sys/devices/platform/odroidu2-fan/fan_mode`  `# echo manual > /sys/devices/platform/odroidu2-fan/fan_mode` 
-
-#### Fan Speed (Manual Only)
-
-Values range from 0 (0%) to 255 (100%)
-
- `# echo 0 > /sys/devices/platform/odroidu2-fan/pwm_duty`  `# echo 255 > /sys/devices/platform/odroidu2-fan/pwm_duty` 
 
 ## See also
 

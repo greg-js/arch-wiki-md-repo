@@ -11,18 +11,13 @@
 *   [5 Bitcoin Software](#Bitcoin_Software)
     *   [5.1 Full Nodes](#Full_Nodes)
         *   [5.1.1 Bitcoin Core](#Bitcoin_Core)
-    *   [5.2 Re-implementations](#Re-implementations)
-        *   [5.2.1 Bitcoin Knots](#Bitcoin_Knots)
-        *   [5.2.2 BTCD](#BTCD)
-        *   [5.2.3 BCoin](#BCoin)
-        *   [5.2.4 Toshi](#Toshi)
-    *   [5.3 Diverging Implementations](#Diverging_Implementations)
-        *   [5.3.1 Bitcoin Classic](#Bitcoin_Classic)
-        *   [5.3.2 Bitcoin Unlimited](#Bitcoin_Unlimited)
-        *   [5.3.3 Bitcoin XT](#Bitcoin_XT)
-    *   [5.4 Thin Clients](#Thin_Clients)
-        *   [5.4.1 Electrum](#Electrum)
-        *   [5.4.2 Multibit HD](#Multibit_HD)
+    *   [5.2 Diverging Implementations](#Diverging_Implementations)
+        *   [5.2.1 Bitcoin Classic](#Bitcoin_Classic)
+        *   [5.2.2 Bitcoin Unlimited](#Bitcoin_Unlimited)
+        *   [5.2.3 Bitcoin XT](#Bitcoin_XT)
+    *   [5.3 Thin Clients](#Thin_Clients)
+        *   [5.3.1 Electrum](#Electrum)
+        *   [5.3.2 Multibit HD](#Multibit_HD)
 *   [6 See also](#See_also)
     *   [6.1 Informational Sites](#Informational_Sites)
     *   [6.2 Discussion Groups](#Discussion_Groups)
@@ -86,7 +81,7 @@ There are several Bitcoin miners in the [official repositories](/index.php/Offic
 
 A full node is a bitcoin client which starts with the initial genesis block of the blockchain, and sequentially validates the signature chain of every historical Bitcoin transaction and validity of each historical block to construct upon arriving at the tip of the chain the current Unspent Transaction Output Set. This is the current set of unspent coins, and which private keys they are encumbered to. It is called a full node because it obviously verifies the cryptographic integrity of the UTXO set itself. A full node client may or may not also participate in relaying unconfirmed transactions around the network and operate a mempool of all unconfirmed transactions, and may or may not participate in serving the full historical blockchain to new full node clients bootstrapping themselves. It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded and verified them in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set.
 
-**Warning:** There are many different proposals to alter the consensus rules of the Bitcoin network, with different applications implementing different alterations. This section attempts to provide an overview of the software in the Bitcoin ecosystem, both those that attempt to implement alterations to consensus rules and those that do not. Applications listed here have the intention of interacting with the main network of Bitcoin nodes, and only implement protocol changes when their specific clients mechanism for doing so reaches its activation threshold (which differs depending on the client). It is advised to research thoroughly before use, in order to find the best fit for your use case. Be warned that choosing a consensus-incompatible node may result in you being forked off the bitcoin blockchain and result in you using some other currency that is not bitcoin. Also be warned that operating a minority implementation sharing consensus rules with another implementation also carries a risk of bugs or design flaws causing a fork or consensus failure. See [#Consensus](#Consensus).
+**Warning:** In order to transact or interact with other clients you must be running compatible software. This is currently a complicated and contentious matter in the Bitcoin community, it is advised you thoroughly research your clients compatibility with others. See [#Consensus](#Consensus).
 
 #### Bitcoin Core
 
@@ -130,36 +125,6 @@ WantedBy=multi-user.target
 
 [Official Website](https://bitcoincore.org/)
 
-### Re-implementations
-
-**Note:** The following clients have re-implemented the consensus rules enforced by Bitcoin Core either from scratch with a new codebase, or by forking from Core's codebase, with the intent of continuing to follow the consensus rules enforced by Bitcoin Core.
-
-#### Bitcoin Knots
-
-Consensus-compatible software fork of Bitcoin Core. Mostly maintained by Core Developer Luke-jr, for features that don't make it into the main project.
-
-[Official Website](https://bitcoinknots.org/) [Features list](https://bitcoinknots.org/#features)
-
-#### BTCD
-
-Consensus-compatible node and software library written in Golang.
-
-[Official Website](https://github.com/btcsuite/btcd)
-
-#### BCoin
-
-Consensus-compatible node and software library written in JavaScript.
-
-[Official Website](https://github.com/bcoin-org/bcoin)
-
-#### Toshi
-
-Consensus-compatible node and software library written in Ruby and released by the [Coinbase](https://coinbase.com) company.
-
-[Website](https://github.com/coinbase/toshi)
-
-**Note:** This client is no longer used by Coinbase, who runs Bitcoin Core, because of multiple bugs causing them to fork off the network in multiple instances.
-
 ### Diverging Implementations
 
 **Note:** The following clients have been forked away from Core's codebase, with many different modifications made to consensus related and non consensus related code, with the intent to upon the activation conditions laid out by each client initiate a break in consensus to continue a new diverging fork under different consensus rules than currently enforced by the majority of the network.
@@ -178,7 +143,7 @@ This client is potentially consensus-incompatible with the rest of the network, 
 
 Bitcoin Unlimited can be found in [bitcoind-unlimited-git](https://aur.archlinux.org/packages/bitcoind-unlimited-git/)
 
-Potentially consensus-incompatible implementation that [Removes the block size limit completely](https://www.bitcoinunlimited.info/faq).
+Consensus-incompatible implementation that [Removes the block size limit completely](https://www.bitcoinunlimited.info/faq).
 
 **Note:** In Bitcoin Unlimited the block size is no longer limited by rules set by software developers. It is set by you, the person running the software. This runs the very real risk of adding support to raising the blocksize to a point your hardware cannot provide the necessary resources to fully validate the blockchain.
 
@@ -226,7 +191,6 @@ Install the [multibit](https://www.archlinux.org/packages/?name=multibit) packag
 
 #### Discussion Groups
 
-*   [bitcoin.com](https://forum.bitcoin.com/) - Forum.
 *   [bitcointalk.org](https://bitcointalk.org/) - Forum.
 *   IRC Channels on Freenode:
     *   **#bitcoin** - General Bitcoin-related.

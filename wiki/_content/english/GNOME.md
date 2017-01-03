@@ -134,7 +134,7 @@ fi
 
 ### GNOME applications in Wayland
 
-When the *GNOME* session is used, GNOME applications will be run using Wayland. See the current status of Wayland for GNOME applications at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
+When the *GNOME* session is used, GNOME applications will be run using Wayland. See the current status of Wayland for GNOME applications at [GNOME Applications under Wayland](https://wiki.gnome.org/Initiatives/Wayland/Applications/). For debugging cases, the [GTK+ manual](https://developer.gnome.org/gtk3/stable/gtk-running.html) lists options and environment variables.
 
 ## Navigation
 

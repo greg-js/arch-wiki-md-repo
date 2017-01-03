@@ -698,7 +698,7 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 
 ```
 
-Note that each time the laptop lid settings are changed in the power manager, this setting will be reset.
+**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[8]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
 
 ### Power Manager Plugin shows battery time and remaining percentage
 

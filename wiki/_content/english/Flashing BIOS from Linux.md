@@ -23,7 +23,7 @@ This article aims on providing information on flashing your system BIOS under Li
 
 ## BiosDisk
 
-[BiosDisk](http://linux.dell.com/git/biosdisk.git) BiosDisk simplifies the process of flashing your system BIOS under Linux
+[BiosDisk](https://github.com/dell/biosdisk) BiosDisk simplifies the process of flashing your system BIOS under Linux
 
 ### Installation
 

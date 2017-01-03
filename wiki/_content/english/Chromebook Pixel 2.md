@@ -66,9 +66,13 @@ Touchpad, touchscreen, and audio are all working in the upstream 4.9 kernel.
 
 ### (Samus) Linux 4.9 (AUR)
 
-[Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) package. You will need to regenerate your GRUB configuration after installing linux-samus4\. See [[1]](https://github.com/raphael/linux-4.1-samus) for information on how to enable audio and microphone support.
+[Install](/index.php/Install "Install") the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) package. The installed [boot loader](/index.php/Boot_loaders "Boot loaders") needs to be configured so that it is possible to boot the [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) image. See [[1]](https://github.com/raphael/linux-4.1-samus) for more information (i.e. audio and microphone configuration).
 
-If the `linux-samus4` kernel hangs after `Loading initial ramdisk...` and you have an encrypted disk then try adding `i915` to `MODULES` in `/etc/mkinitcpio.conf` according to [Intel graphics](/index.php/Intel_graphics "Intel graphics") and then run `mkinitcpio -p linux-samus4` to regenerate the image.
+According to [Intel graphics](/index.php/Intel_graphics "Intel graphics") if the `linux-samus4` kernel has a blank screen during boot, then try adding `i915` to `MODULES` in `/etc/mkinitcpio.conf`. Finally, run `mkinitcpio -p linux-samus4` to regenerate the image.
+
+**Note:**
+
+*   Make sure that `/boot` is mounted when `mkinitcpio -p linux-samus4` is executed, otherwise on reboot the boot partition will be mounted over the new image.
 
 ## Backlight
 

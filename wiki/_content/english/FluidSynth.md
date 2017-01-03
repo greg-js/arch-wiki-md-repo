@@ -6,7 +6,7 @@
 *   [2 How to use FluidSynth](#How_to_use_FluidSynth)
     *   [2.1 Standalone mode](#Standalone_mode)
     *   [2.2 ALSA daemon mode](#ALSA_daemon_mode)
-*   [3 How to convert MIDI to OGG](#How_to_convert_MIDI_to_OGG)
+*   [3 How to convert MIDI to MP3/OGG](#How_to_convert_MIDI_to_MP3.2FOGG)
 
 ## Installing FluidSynth
 
@@ -61,7 +61,20 @@ $ aplaymidi -p128:0 example.midi
 
 ```
 
-## How to convert MIDI to OGG
+## How to convert MIDI to MP3/OGG
+
+Requires [soundfont-fluid](https://www.archlinux.org/packages/?sort=&q=soundfont-fluid&maintainer=&flagged=) or any other soundfont of your choice.
+
+/usr/share/soundfonts is the default location of FluidR3_GM
+
+Simple command lines to convert midi to mp3:
+
+```
+$ fluidsynth -l -T raw -F /usr/share/soundfonts/FluidR3_GM.sf2 example.mid | twolame -b 256 -r example.mp3 
+
+```
+
+Requires [twolame](https://www.archlinux.org/packages/?sort=&q=twolame&maintainer=&flagged=)
 
 Simple command lines to convert midi to ogg:
 

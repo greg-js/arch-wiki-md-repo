@@ -2,7 +2,7 @@
 
 ## Installation and usage
 
-[Install](/index.php/Install "Install") the [jenkins](https://www.archlinux.org/packages/?name=jenkins) package.
+[Install](/index.php/Install "Install") the [jenkins](https://www.archlinux.org/packages/?name=jenkins) or [jenkins-lts](https://aur.archlinux.org/packages/jenkins-lts/) package.
 
 The configuration file is located in `/etc/conf.d/jenkins`.
 

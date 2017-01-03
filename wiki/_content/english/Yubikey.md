@@ -203,6 +203,8 @@ release_context
 
 You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop-git](https://aur.archlinux.org/packages/yubico-yubioath-desktop-git/).
 
+While `pcscd.service` is running, run `yubioath-gui` and insert your Yubikey when prompted.
+
 ## FIDO U2F Security Key by Plug-up International
 
 ```

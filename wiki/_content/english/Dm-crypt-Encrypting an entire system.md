@@ -200,8 +200,8 @@ The following commands create and mount the encrypted root partition. They corre
 ```
 # cryptsetup -y -v luksFormat /dev/sdaX
 # cryptsetup open /dev/sdaX cryptroot
-# mkfs -t ext4 /dev/mapper/cryptroot
-# mount -t ext4 /dev/mapper/cryptroot /mnt
+# mkfs.ext4 /dev/mapper/cryptroot
+# mount /dev/mapper/cryptroot /mnt
 
 ```
 
@@ -211,7 +211,7 @@ Check the mapping works as intended:
 # umount /mnt
 # cryptsetup close cryptroot
 # cryptsetup open /dev/sdaX cryptroot
-# mount -t ext4 /dev/mapper/cryptroot /mnt
+# mount /dev/mapper/cryptroot /mnt
 
 ```
 
@@ -224,9 +224,9 @@ Note that each blockdevice requires its own passphrase. This may be inconvenient
 What you do have to setup is a non-encrypted `/boot` partition, which is needed for a crypted root. For a standard [MBR/non-EFI](/index.php/EFI "EFI") `/boot` partition, for example, execute:
 
 ```
-# mkfs -t ext4 /dev/sdaY
+# mkfs.ext4 /dev/sdaY
 # mkdir /mnt/boot
-# mount -t ext4 /dev/sdaY /mnt/boot
+# mount /dev/sdaY /mnt/boot
 
 ```
 
@@ -304,25 +304,25 @@ For more information about the available cryptsetup options see the [LUKS encryp
 Open the container:
 
 ```
-# cryptsetup open --type luks /dev/*sdaX* lvm
+# cryptsetup open --type luks /dev/*sdaX* cryptolvm
 
 ```
 
-The decrypted container is now available at `/dev/mapper/lvm`.
+The decrypted container is now available at `/dev/mapper/cryptolvm`.
 
 ### Preparing the logical volumes
 
 Create a physical volume on top of the opened LUKS container:
 
 ```
-# pvcreate /dev/mapper/lvm
+# pvcreate /dev/mapper/cryptolvm
 
 ```
 
 Create the volume group named `MyVol` (or whatever you want), adding the previously created physical volume to it:
 
 ```
-# vgcreate MyVol /dev/mapper/lvm
+# vgcreate MyVol /dev/mapper/cryptolvm
 
 ```
 
@@ -394,7 +394,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameter needs to be set by the boot loader:
 
 ```
-cryptdevice=UUID=*device-UUID*:lvm
+cryptdevice=UUID=*device-UUID*:cryptolvm
 
 ```
 
@@ -414,27 +414,38 @@ The following short example creates a LUKS on LVM setup and mixes in the use of 
 
 Partitioning scheme:
 
-*   `/dev/sda1` -> `/boot`
-*   `/dev/sda2` -> LVM
+```
++----------------+-----------------------------------------------------------------------+
+|                | LUKS encrypted volume | LUKS encrypted volume | LUKS encrypted volume |
+|                | /dev/mapper/swap      | /dev/mapper/root      | /dev/mapper/home      |
+|                |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|
+|                | Logical volume1       | Logical volume2       | Logical volume3       |
+|                |/dev/mapper/MyVol-swap |/dev/mapper/MyVol-root |/dev/mapper/MyVol-home |
+|                |_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _|
+| Boot partition |                                                                       |
+|   /dev/sda1    |                               /dev/sda2                               |
++----------------+-----------------------------------------------------------------------+
+
+```
 
 Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on an empty disk or partition](/index.php/Dm-crypt/Drive_preparation#dm-crypt_wipe_on_an_empty_disk_or_partition "Dm-crypt/Drive preparation").
 
 ### Preparing the logical volumes
 
 ```
-# lvm pvcreate /dev/sda2
-# lvm vgcreate lvm /dev/sda2
-# lvm lvcreate -L 10G -n lvroot lvm
-# lvm lvcreate -L 500M -n swap lvm
-# lvm lvcreate -L 500M -n tmp lvm
-# lvm lvcreate -l 100%FREE -n home lvm
+# pvcreate /dev/sda2
+# vgcreate MyVol /dev/sda2
+# lvcreate -L 10G -n lvroot MyVol
+# lvcreate -L 500M -n swap MyVol
+# lvcreate -L 500M -n tmp MyVol
+# lvcreate -l 100%FREE -n home MyVol
 
 ```
 
 ```
-# cryptsetup luksFormat -c aes-xts-plain64 -s 512 /dev/lvm/lvroot
-# cryptsetup open --type luks /dev/lvm/lvroot root
-# mkfs -t ext4 /dev/mapper/root
+# cryptsetup luksFormat -c aes-xts-plain64 -s 512 /dev/mapper/MyVol-lvroot
+# cryptsetup open --type luks /dev/mapper/MyVol-lvroot root
+# mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
 
 ```
@@ -444,8 +455,8 @@ More information about the encryption options can be found in [Dm-crypt/Device e
 ### Preparing the boot partition
 
 ```
-# dd if=/dev/zero of=/dev/sda1 bs=1M
-# mkfs -t ext4 /dev/sda1
+# dd if=/dev/zero of=/dev/sda1 bs=1M status=progress
+# mkfs.ext4 /dev/sda1
 # mkdir /mnt/boot
 # mount /dev/sda1 /mnt/boot
 
@@ -466,7 +477,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to unlock the encrypted root partition at boot, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=/dev/lvm/lvroot:cryptoroot root=/dev/mapper/cryptoroot
+cryptdevice=/dev/mapper/MyVol-lvroot:root root=/dev/mapper/root
 
 ```
 
@@ -476,18 +487,20 @@ See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_confi
 
  `/etc/fstab` 
 ```
- /dev/mapper/root        /       ext4            defaults        0       1
- /dev/sda1               /boot   ext4            defaults        0       2
- /dev/mapper/tmp         /tmp    tmpfs           defaults        0       0
- /dev/mapper/swap        none    swap            sw              0       0
+/dev/mapper/root        /       ext4            defaults        0       1
+/dev/sda1               /boot   ext4            defaults        0       2
+/dev/mapper/tmp         /tmp    tmpfs           defaults        0       0
+/dev/mapper/swap        none    swap            sw              0       0
+
 ```
 
 The following [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration") options will re-encrypt the temporary filesystems each reboot:
 
  `/etc/crypttab` 
 ```
- swap	/dev/lvm/swap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
- tmp	/dev/lvm/tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
+swap	/dev/mapper/MyVol-swap	/dev/urandom	swap,cipher=aes-xts-plain64,size=256
+tmp	/dev/mapper/MyVol-tmp	/dev/urandom	tmp,cipher=aes-xts-plain64,size=256
+
 ```
 
 ### Encrypting logical volume /home
@@ -495,24 +508,33 @@ The following [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-c
 Since this scenario uses LVM as the primary and dm-crypt as secondary mapper, each encrypted logical volume requires its own encryption. Yet, unlike the temporary filesystems configured with volatile encryption above, the logical volume for `/home` should be persistent, of course. The following assumes you have rebooted into the installed system, otherwise you have to adjust paths. To safe on entering a second passphrase at boot for it, a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") is created:
 
 ```
-mkdir -m 700 /etc/luks-keys
-dd if=/dev/random of=/etc/luks-keys/home bs=1 count=256
+# mkdir -m 700 /etc/luks-keys
+# dd if=/dev/random of=/etc/luks-keys/home bs=1 count=256 status=progress
 
 ```
 
 The logical volume is encrypted with it:
 
 ```
-cryptsetup luksFormat -v -s 512 /dev/lvm/home /etc/luks-keys/home
-cryptsetup -d /etc/luks-keys/home open --type luks /dev/lvm/home home
-mkfs -t ext4 /dev/mapper/home
-mount /dev/mapper/home /home
+# cryptsetup luksFormat -v -s 512 /dev/mapper/MyVol-home /etc/luks-keys/home
+# cryptsetup -d /etc/luks-keys/home open --type luks /dev/mapper/MyVol-home home
+# mkfs.ext4 /dev/mapper/home
+# mount /dev/mapper/home /home
 
 ```
 
 The encrypted mount is configured in [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"):
 
- `/etc/crypttab`  `home	/dev/lvm/home   /etc/luks-keys/home`  `/etc/fstab`  `/dev/mapper/home        /home   ext4        defaults        0       2` 
+ `/etc/crypttab` 
+```
+home	/dev/mapper/MyVol-home   /etc/luks-keys/home
+
+```
+ `/etc/fstab` 
+```
+/dev/mapper/home        /home   ext4        defaults        0       2
+
+```
 
 and setup is done.
 
@@ -653,6 +675,7 @@ You may wish to remove the USB sticks after booting. Since the `/boot` partition
 ```
 # /dev/sd*Yn*
 /dev/sd*Yn* /boot ext2 **noauto**,rw,noatime 0 2
+
 ```
 
 However, when an update to the kernel or bootloader is required, the `/boot` partition must be present and mounted. As the entry in `fstab` already exists, it can be mounted simply with:
@@ -711,7 +734,7 @@ For more information about the available cryptsetup options see the [LUKS encryp
 
 Your partition layout should look similar to this:
 
- ` gdisk /dev/sda ` 
+ `# gdisk /dev/sda` 
 ```
 Number  Start (sector)    End (sector)  Size       Code  Name
    1            2048         1050623   512.0 MiB   EF00  EFI System
@@ -740,14 +763,14 @@ The bootloader loads the kernel, [initramfs](/index.php/Initramfs "Initramfs"), 
 First, create the LUKS container where the files will be located and installed into:
 
 ```
-# cryptsetup luksFormat /dev/sda*Y* 
+# cryptsetup luksFormat /dev/sda*Y*
 
 ```
 
 Next, open it:
 
 ```
-# cryptsetup open /dev/sda*Y* cryptboot 
+# cryptsetup open /dev/sda*Y* cryptboot
 
 ```
 
@@ -782,15 +805,15 @@ Create a mountpoint for the [EFI System Partition](/index.php/EFI_System_Partiti
 
 At this point, you should have the following partitions and logical volumes inside of `/mnt`:
 
- `lsblk` 
+ `$ lsblk` 
 ```
 NAME              	  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
-sda                       8:0      0   200G  0 disk  
+sda                       8:0      0   200G  0 disk
 ├─sda1                    8:1      0   512M  0 part  /boot/efi
-├─sda2                    8:2      0   200M  0 part  
+├─sda2                    8:2      0   200M  0 part
 │ └─boot		  254:0    0   198M  0 crypt /boot
-└─sda3                    8:3      0   100G  0 part  
-  └─lvm                   254:1    0   100G  0 crypt 
+└─sda3                    8:3      0   100G  0 part
+  └─lvm                   254:1    0   100G  0 crypt
     ├─MyStorage-swapvol   254:2    0     8G  0 lvm   [SWAP]
     ├─MyStorage-rootvol   254:3    0    15G  0 lvm   /
     └─MyStorage-homevol   254:4    0    77G  0 lvm   /home
@@ -837,7 +860,11 @@ While GRUB asks for a passphrase to unlock the encrypted `/boot` after above ins
 
 If you used the *genfstab* script during installation, it will have generated `/etc/fstab` entries for the `/boot` and `/boot/efi` mount points already, but the system will fail to find the generated device mapper for the boot partition. To make it available, add it to [crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration"). For example:
 
- `/etc/crypttab`  `cryptboot  /dev/sdaY      none        luks` 
+ `/etc/crypttab` 
+```
+cryptboot  /dev/sdaY      none        luks
+
+```
 
 will make the system ask for the passphrase again (i.e. you have to enter it twice at boot: once for GRUB and once for systemd init). To avoid the double entry for unlocking `/boot`, follow the instructions at [Dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") to:
 

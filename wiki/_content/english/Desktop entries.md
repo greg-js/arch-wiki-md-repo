@@ -285,7 +285,7 @@ For a more specific description of directories used, [Desktop Application Autost
 
 ### Modify environment variables
 
-Edit the `Exec` command by appending `env`, for example:
+Edit the `Exec` command by prepending `env`, for example:
 
  `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
 

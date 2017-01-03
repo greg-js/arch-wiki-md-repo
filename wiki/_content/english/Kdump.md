@@ -114,6 +114,50 @@ Once booted into dump capture kernel you can read `/proc/vmcore` file. It is rec
 
 or optionally you can copy the crash to other machine. Once dump is saved you should reboot machine into normal system kernel.
 
+The crash dump can be quite big, [makedumpfile](https://aur.archlinux.org/packages/makedumpfile/) can be used to create smaller dumps by ignoring some memory regions and using compression:
+
+```
+# makedumpfile -c -d 31 /proc/vmcore /root/crash.dump
+
+```
+
+The following systemd service can be used to automatically save crash dumps and reboot into the main kernel:
+
+ `/etc/systemd/system/kdump-save.service` 
+```
+[Unit]
+Description=Create dump after kernel crash
+DefaultDependencies=no
+Wants=local-fs.target
+After=local-fs.target
+
+[Service]
+Type=idle
+ExecStart=/bin/sh -c 'mkdir -p /var/crash/ && /usr/bin/makedumpfile -c -d 31 /proc/vmcore "/var/crash/crashdump-$$(date +%F-%T)"'
+ExecStopPost=/usr/bin/systemctl reboot
+UMask=0077
+StandardInput=tty-force
+StandardOutput=inherit
+StandardError=inherit
+
+```
+
+This can be invoked from the dump capture kernel command line:
+
+ `/etc/systemd/system/kdump.service` 
+```
+[Unit]
+Description=Load dump capture kernel
+After=local-fs.target
+
+[Service]
+ExecStart=/usr/bin/kexec -p [/boot/vmlinuz-linux-kdump] --initrd=[/boot/initramfs-linux-kdump.img] --append="root=[root-device] **systemd.unit=kdump-save.service** irqpoll maxcpus=1 reset_devices"
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## Analyzing core dump
 
 You can use either *gdb* tool or special gdb extension called [crash](https://www.archlinux.org/packages/?name=crash). Run *crash* as

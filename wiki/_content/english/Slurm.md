@@ -18,7 +18,7 @@ The package itself has many more optional dependencies, though Slurm has to be r
 
 ## Setup
 
-The configuration files for slurm-llnl reside under `/etc/slurm-llnl`. Prior to starting any slurm-services, it has to be configure properly by creating a config file `/etc/slurm-llnl/slurm.conf`. Client and server may use the same configuration file, which can either be generated at [https://computing.llnl.gov/linux/slurm/configurator.html](https://computing.llnl.gov/linux/slurm/configurator.html) or by copying `/etc/slurm-llnl/slurm.conf.example` to `/etc/slurm-llnl/slurm.conf` and adapting it to ones liking.
+The configuration files for slurm-llnl reside under `/etc/slurm-llnl`. Prior to starting any slurm-services, it has to be configured properly by creating a config file `/etc/slurm-llnl/slurm.conf`. Client and server may use the same configuration file, which can either be generated at [https://computing.llnl.gov/linux/slurm/configurator.html](https://computing.llnl.gov/linux/slurm/configurator.html) or by copying `/etc/slurm-llnl/slurm.conf.example` to `/etc/slurm-llnl/slurm.conf` and adapting it to ones liking.
 
 By default the Slurm user, which was introduced to your system in the installation process, has `64030` as UID and GID, this simplifies the setup on multiple systems. UID and GID matches the one used in Debian, therefore they may be used side-by-side, but remember that binaries are not in the same directories on each and every distribution.
 

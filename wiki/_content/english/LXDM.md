@@ -16,6 +16,7 @@ LXDM does not support the XDMCP protocol. An alternative that does is [LightDM](
     *   [3.2 Simultaneous users and switching users](#Simultaneous_users_and_switching_users)
     *   [3.3 Themes](#Themes)
     *   [3.4 Advanced Session Configuration](#Advanced_Session_Configuration)
+    *   [3.5 Flash fix for dark backgrounds](#Flash_fix_for_dark_backgrounds)
 
 ## Installation
 
@@ -188,3 +189,7 @@ These files can be used to set session environment variables and to start servic
 Note that LXDM does *not* source `~/.xinitrc`, so those migrating from a DM that *does* use this file, like [SLiM](/index.php/SLiM "SLiM"), will have to move their settings elsewhere — probably `~/.xprofile`. Also note LXDM does not source `~/.bash_profile`.
 
 LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbmap](/index.php/Xkbmap "Xkbmap"), and .[Xmodmap](/index.php/Xmodmap "Xmodmap"). See `/etc/lxdm/Xsession` for details on how LXDM uses system-wide and per-user configuration files to configure the session.[[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/Xsession?h=packages/lxdm)
+
+### Flash fix for dark backgrounds
+
+When using the default LXDM **theme=Industrial** and a custom dark or even black background image **bg=/usr/share/backgrounds/img.png** there may be a short bright flash before LXDM starts. This is caused by the **bg_color:** property of the selected theme. To avoid this change **gtk_theme=Adwaita** to Adwaita-dark or to another dark theme for a no flash smooth dark transition to and from LXDM.

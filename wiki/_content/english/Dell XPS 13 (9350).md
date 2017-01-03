@@ -41,8 +41,13 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
         *   [7.2.1 Wireless headset: strange bluetooth behavior](#Wireless_headset:_strange_bluetooth_behavior)
 *   [8 Video](#Video)
     *   [8.1 Blank screen issue after booting](#Blank_screen_issue_after_booting)
-    *   [8.2 Linux kernel 4.3 or earlier](#Linux_kernel_4.3_or_earlier)
-    *   [8.3 Linux kernel 4.5 or earlier](#Linux_kernel_4.5_or_earlier)
+    *   [8.2 Linux kernel 4.8 or later power savings](#Linux_kernel_4.8_or_later_power_savings)
+        *   [8.2.1 RC6](#RC6)
+        *   [8.2.2 Panel Self Refresh](#Panel_Self_Refresh)
+        *   [8.2.3 Frame Buffer Compression](#Frame_Buffer_Compression)
+        *   [8.2.4 GuC](#GuC)
+    *   [8.3 Linux kernel 4.3 or earlier](#Linux_kernel_4.3_or_earlier)
+    *   [8.4 Linux kernel 4.5 or earlier](#Linux_kernel_4.5_or_earlier)
 *   [9 Touchpad](#Touchpad)
     *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
     *   [9.2 Gestures](#Gestures)
@@ -71,7 +76,7 @@ Sometimes the BIOS UEFI does not respect the efivars. In this case you have manu
 
 ### Updates
 
-[BIOS update 1.4.10](http://downloads.dell.com/FOLDER04040637M/1/XPS_9350_1.4.10.exe) was released on 2016-11-22\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
+[BIOS update 1.4.12](http://downloads.dell.com/FOLDER04068454M/1/XPS_9350_1.4.12.exe) was released on 2016-12-21\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu. This might also help if your machine will not resume after suspend.
 
 ### Firmware Updates
 
@@ -185,6 +190,26 @@ The video should work with the `i915` driver of the current [linux](https://www.
 ### Blank screen issue after booting
 
 If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen goes blank when loading modules, it may help to add `i915` and `intel_agp` to the initramfs or using a special [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). Consult [Intel graphics#Blank screen during boot, when "Loading modules"](/index.php/Intel_graphics#Blank_screen_during_boot.2C_when_.22Loading_modules.22 "Intel graphics") for more information about the kernel paramter way and have a look at [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for a guide on how to setup the modules for the initramfs.
+
+### Linux kernel 4.8 or later power savings
+
+**Warning:** The following options of the `i915` module taint the kernel, use at your own risks!
+
+#### RC6
+
+`i915.enable_rc6=1` seems to be stable, setting the value to a higher number will be ignored is therefore confusing, the deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[1]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[2]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html).
+
+#### Panel Self Refresh
+
+`i915.enable_psr=1` allows for some really nice power savings by leaving the package longer in more efficient C-states. However, users experience freezes for a few seconds with this option fairly often, setting the value to [2 or 3](https://patchwork.kernel.org/patch/8182841/) may yield to similar power savings but without the freezes. `i915.disable_power_well=0` with `i915.enable_psr=1 i915.enable_rc6=0` also seems to be a stable configuration for PSR.
+
+#### Frame Buffer Compression
+
+`i915.enable_fbc=1` is stable but does not seem to yield significant power saving results.
+
+#### GuC
+
+[GuC](https://01.org/linuxgraphics/intel-linux-graphics-firmwares) loading with `i915.enable_guc_loading=1 i915.enable_guc_submission=1` seems stable too.
 
 ### Linux kernel 4.3 or earlier
 

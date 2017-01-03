@@ -18,7 +18,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): N
 
 ## Prerequisites
 
-*NextCloud* needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://docs.nextcloud.com/server/10/admin_manual/installation/system_requirements.html).
+*NextCloud* needs a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP") and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). For instance, a classic [LAMP stack](/index.php/LAMP "LAMP") should work fine and is the [recommended configuration](https://docs.nextcloud.com/server/11/admin_manual/installation/system_requirements.html).
 
 ## Installation
 
@@ -36,7 +36,7 @@ zip.so
 
 ```
 
-**Note:** If you are installing this on a 32-bit based OS (ie the current Arch Linux for ARM ([https://archlinuxarm.org/](https://archlinuxarm.org/)) uses a 32-bit OS for Raspberry Pi), then do not configure open_basedir - refer to the Nextcloud manual: [https://docs.nextcloud.com/server/10/admin_manual/configuration_files/big_file_upload_configuration.html#configuring-php](https://docs.nextcloud.com/server/10/admin_manual/configuration_files/big_file_upload_configuration.html#configuring-php)
+**Note:** If you are installing this on a 32-bit based OS (ie the current Arch Linux for ARM ([https://archlinuxarm.org/](https://archlinuxarm.org/)) uses a 32-bit OS for Raspberry Pi), then do not configure open_basedir - refer to the Nextcloud manual: [https://docs.nextcloud.com/server/11/admin_manual/configuration_files/big_file_upload_configuration.html#configuring-php](https://docs.nextcloud.com/server/11/admin_manual/configuration_files/big_file_upload_configuration.html#configuring-php)
 
 Add the following to `open_basedir`:
 

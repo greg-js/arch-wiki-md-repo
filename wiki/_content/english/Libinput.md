@@ -115,7 +115,7 @@ EndSection
 
 ```
 
-You may define as many sections as you like in a single configuration file. To configure the device of your choice specify a filter by using `MatchIsPointer "on"`, `MatchIsKeyboard "on"`, `MatchIsTouchpad "on"` or `MatchIsTouchscreen "on"` and add your desired option. Common options include:
+Where `devpath` is the path to the device as given by `libinput-list-devices`, eg: `/dev/input/event16`. You may define as many sections as you like in a single configuration file. To configure the device of your choice specify a filter by using `MatchIsPointer "on"`, `MatchIsKeyboard "on"`, `MatchIsTouchpad "on"` or `MatchIsTouchscreen "on"` and add your desired option. See [libinput(4)](https://www.mankier.com/4/libinput) for more details. Common options include:
 
 *   `"Tapping" "on"`: tapping a.k.a. tap-to-click
 *   `"ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).

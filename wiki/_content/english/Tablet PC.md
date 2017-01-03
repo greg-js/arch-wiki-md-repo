@@ -5,8 +5,9 @@ Here are some hints for getting Arch Linux working on your tablet PC. These inst
 *   [1 Models](#Models)
 *   [2 Stylus](#Stylus)
 *   [3 Rotation](#Rotation)
-    *   [3.1 XFCE: Stylus and screen rotation](#XFCE:_Stylus_and_screen_rotation)
-    *   [3.2 Touchscreen rotation](#Touchscreen_rotation)
+    *   [3.1 Stylus and screen rotation](#Stylus_and_screen_rotation)
+    *   [3.2 XFCE: Stylus and screen rotation](#XFCE:_Stylus_and_screen_rotation)
+    *   [3.3 Touchscreen rotation](#Touchscreen_rotation)
 *   [4 Automatic rotation](#Automatic_rotation)
     *   [4.1 With a script](#With_a_script)
     *   [4.2 With systemd](#With_systemd)
@@ -88,6 +89,40 @@ Option         "RandRRotation" "on"
 ```
 
 Save the file and restart the xserver for changes to take effect.
+
+### Stylus and screen rotation
+
+To set the screen and stylus input to portrait mode:
+
+```
+ xrandr -o 3
+ xsetwacom set stylus Rotate cw
+
+```
+
+To return to landscape mode:
+
+```
+ xrandr -o 0
+ xsetwacom set stylus Rotate none
+
+```
+
+In case the device 'stylus' cannot be found, use
+
+```
+xsetwacom list devices
+
+```
+
+to get a list of devices. Mine for example was
+
+```
+xsetwacom set "Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus" Rotate cw
+
+```
+
+Source: [http://xournal.sourceforge.net/manual.html](http://xournal.sourceforge.net/manual.html)
 
 ### XFCE: Stylus and screen rotation
 

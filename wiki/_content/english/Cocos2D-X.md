@@ -88,6 +88,5 @@ $ sdkbox update
 *   [Official Programmers Guide](http://www.cocos2d-x.org/programmersguide/)
 *   [Cocos2D-X Developer Guide](http://cocos.sonarlearning.co.uk/)
 *   [Official API Referenece Guide](http://www.cocos2d-x.org/wiki/Reference)
-*   [Enabling Immersive Mode for Android](http://discuss.cocos2d-x.org/t/how-to-set-full-screen-on-android-4-4/10278/3) - See **Cookiebit'**s answer.
 *   [Texture Rendering + Blur Tutorial](http://discuss.cocos2d-x.org/t/cocos3-8-tutorial-rendertexture-blur/13622)
 *   [Particle2DX](http://particle2dx.com/) - Cocos2D-X Particle Generator
