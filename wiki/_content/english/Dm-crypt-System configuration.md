@@ -42,7 +42,7 @@ A typical `/etc/mkinitcpio.conf` configuration using `encrypt` hook:
  `/etc/mkinitcpio.conf` 
 ```
 ...
-HOOKS="base udev autodetect keyboard keymap consolefont block encrypt lvm2 filesystems fsck"
+HOOKS="base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck"
 ...
 ```
 
@@ -51,7 +51,7 @@ A configuration with systemd-based initramfs using `sd-encrypt` hook:
  `/etc/mkinitcpio.conf` 
 ```
 ...
-HOOKS="base systemd autodetect keyboard sd-vconsole block sd-encrypt sd-lvm2 filesystems fsck"
+HOOKS="base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 filesystems fsck"
 ...
 ```
 

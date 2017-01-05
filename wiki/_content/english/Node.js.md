@@ -29,8 +29,6 @@ It is not uncommon to need or desire to work in different versions of [nodejs](h
 
 ```
 
-**Warning:** This section refers to [Node Version Manager](https://github.com/creationix/nvm), installing from [npm](https://www.npmjs.com/) will load a **different** project with the same name.
-
 ## Node Packaged Modules
 
 [npm](https://www.npmjs.org/) is the official package manager for node.js. Since [nodejs](https://www.archlinux.org/packages/?name=nodejs) 0.12.2-4, `npm` is no longer included in the package. It is available as [npm](https://www.archlinux.org/packages/?name=npm) in the [official repositories](/index.php/Official_repositories "Official repositories").

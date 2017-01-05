@@ -315,7 +315,7 @@ Afterwards, you can continue in normal installation instructions with the [creat
 **Tip:**
 
 *   The `lvm2` and `sd-lvm2` hooks are installed by [lvm2](https://www.archlinux.org/packages/?name=lvm2), not [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). If you are running *mkinitcpio* in an *arch-chroot* for a new installation, [lvm2](https://www.archlinux.org/packages/?name=lvm2) must be installed inside the *arch-chroot* for *mkinitcpio* to find the `lvm2` or `sd-lvm2` hook. If [lvm2](https://www.archlinux.org/packages/?name=lvm2) only exists outside the *arch-chroot*, *mkinitcpio* will output `Error: Hook 'lvm2' cannot be found`.
-*   If your root filesystem is on a mirrored logical volume with type `raid1`, you will also need to add `dm_mod`, `dm_raid` and `raid1` to the MODULES section of `mkinitcpio.conf`.
+*   If your root filesystem is on LVM RAID you will also need to add `dm-raid` and the appropriate RAID modules (e.g. `raid0`, `raid1`, `raid10` or `raid456`) to the MODULES section of `mkinitcpio.conf`.
 
 ### Kernel options
 

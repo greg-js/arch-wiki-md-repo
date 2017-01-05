@@ -36,11 +36,11 @@ There are two places in `/etc/opensc.conf` that comment out `enable_pinpad = fal
 
 #### Load security device
 
-Navigate to Edit -> Preference -> Advanced -> Certificates -> Security Devices and clikc "Load" to load a module using `/usr/lib/opensc-pkcs11.so` or `/usr/lib/pkcs11/opensc-pkcs11.so`.
+Navigate to Edit -> Preference -> Advanced -> Certificates -> Security Devices and click "Load" to load a module using `/usr/lib/opensc-pkcs11.so` or `/usr/lib/pkcs11/opensc-pkcs11.so`.
 
 #### Import the DoD Certificates
 
-Install the certificates from the mentioned zip in _this_ order, by going to Edit -> Preference -> Advanced -> Certificates -> View Certificates -> Authorities -> Import (make sure to at-least check the box for Trust this CA to identify websites):
+Install the certificates from the mentioned zip in _this_ order, by going to Edit -> Preference -> Advanced -> Certificates -> View Certificates -> Authorities -> Import (make sure to at-least check the box for "Trust this CA to identify websites"):
 
 1\. DoD_Root_CA_2__0x05__DoD_Root_CA_2.cer
 

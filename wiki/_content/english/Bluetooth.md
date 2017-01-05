@@ -238,6 +238,8 @@ In order to be able to use audio equipment like bluetooth headphones, you need t
 
 Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
 
+In order to enable your system to be detected as an A2DP sink (e.g. to play music from your phone via your computer speakers), add `Enable=Source,Sink,Media,Socket` under `[General]` in `/etc/bluetooth/main.conf`.
+
 ## Troubleshooting
 
 ### bluetoothctl

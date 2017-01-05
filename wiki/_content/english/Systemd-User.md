@@ -22,7 +22,8 @@
     *   [5.1 Persistent terminal multiplexer](#Persistent_terminal_multiplexer)
     *   [5.2 Window manager](#Window_manager)
 *   [6 Kill user processes on logout](#Kill_user_processes_on_logout)
-*   [7 See also](#See_also)
+*   [7 Known issues](#Known_issues)
+*   [8 See also](#See_also)
 
 ## How it works
 
@@ -367,6 +368,10 @@ For example, to run `screen` you would do:
 $ systemd-run --scope --user screen -S *foo*
 
 ```
+
+## Known issues
+
+*   Enabling systemd user units [causes login problems](https://github.com/systemd/systemd/issues/2863).
 
 ## See also
 

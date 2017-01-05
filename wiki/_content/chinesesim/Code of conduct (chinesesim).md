@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Code_of_conduct](/index.php/Code_of_conduct "Code of conduct") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-27，点击[这里](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=439118)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Code_of_conduct](/index.php/Code_of_conduct "Code of conduct") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-04，点击[这里](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=455751)可以查看翻译后英文页面的改动。
 
 此指南是论坛管理团队长时间经验的结晶，充分考虑了社区的建议。 Arch 论坛本身是一个严肃的论坛。
 
@@ -68,7 +68,7 @@ Arch Linux 是一个社区驱动的发行版；开发者、支持人员和提供
 
 #### 尊重他人
 
-简而言之，尊重他人和他们的意见，即使你不同意他们的观点。不同意对方观点时，请反驳论题本身，不要反驳提出问题的人。
+Arch Linux 是一个尊重他人、非常包容的社区。不会容忍任何反社会或攻击性的行为。简而言之，尊重他人和他们的意见，即使你不同意他们的观点。不同意对方观点时，请反驳论题本身，不要反驳提出问题的人。
 
 #### 尊重其他发行版和操作系统
 
@@ -120,7 +120,7 @@ Arch 衍生发行版通常使用不一样的软件包、版本号、软件仓库
 
 #### 个人话题/咆哮
 
-不要咆哮和抱怨，被发现的话可能会关闭话题。这些内容更适合放在博客或其他个人网站上，不适合放到 Arch 论坛。公开贴应该允许所有人参与。一组特定用户的讨论应该在私人消息中进行。
+不要咆哮和抱怨，这样的话题会被及时关闭。这些内容更适合放在博客或其他个人网站上，不适合放到 Arch 社区中。所做的贡献应该允许所有人参与。
 
 #### 避免论战/有争议的话题
 

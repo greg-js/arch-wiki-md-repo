@@ -171,6 +171,6 @@ For a complete list of all options, please see the [kernel documentation](https:
 
 ## See also
 
-*   [Linux "Kernel Parameters" documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt)
+*   [Linux "Kernel Parameters" documentation](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt)
 *   [Power saving#Kernel parameters](/index.php/Power_saving#Kernel_parameters "Power saving")
 *   [List of kernel parameters with further explanation and grouped by similar options](http://files.kroah.com/lkn/lkn_pdf/ch09.pdf)

@@ -22,9 +22,9 @@ From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): N
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [nextcloud](https://aur.archlinux.org/packages/nextcloud/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [nextcloud](https://aur.archlinux.org/packages/nextcloud/) package.
 
-[Install](/index.php/Install "Install") the required [PHP](/index.php/PHP "PHP") modules packages: [php-gd](https://www.archlinux.org/packages/?name=php-gd) [php-intl](https://www.archlinux.org/packages/?name=php-intl) [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) from the [official repositories](/index.php/Official_repositories "Official repositories") and uncomment the following [required extensions](https://docs.nextcloud.com/server/9/admin_manual/installation/source_installation.html#prerequisites-label) in `/etc/php/php.ini`:
+[Install](/index.php/Install "Install") the required [PHP](/index.php/PHP "PHP") modules packages: [php-gd](https://www.archlinux.org/packages/?name=php-gd) [php-intl](https://www.archlinux.org/packages/?name=php-intl) [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt), and uncomment the following [required extensions](https://docs.nextcloud.com/server/9/admin_manual/installation/source_installation.html#prerequisites-label) in `/etc/php/php.ini`:
 
 ```
 bz2.so
@@ -157,12 +157,7 @@ LoadModule mime_module modules/mod_mime.so
 
 Nextcloud requires scheduled execution of some tasks, and by default it archives this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead.
 
-To do so, first install [cronie](https://www.archlinux.org/packages/?name=cronie):
-
-```
-# pacman -S cronie
-
-```
+To do so, first install the [cronie](https://www.archlinux.org/packages/?name=cronie) package.
 
 Then create a job for `http` user:
 

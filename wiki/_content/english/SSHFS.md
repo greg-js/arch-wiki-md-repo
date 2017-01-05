@@ -311,6 +311,5 @@ Then enable the service: `systemctl enable killsshfs.service`
 
 ## See also
 
-*   [sftpman](/index.php/Sftpman "Sftpman") - sshfs helper tool
-*   [SSH](/index.php/SSH "SSH")
 *   [How to mount chrooted SSH filesystem](http://wiki.gilug.org/index.php/How_to_mount_SFTP_accesses), with special care with owners and permissions questions.
+*   [SSHFS – Installation and Performance](http://www.admin-magazine.com/HPC/Articles/Sharing-Data-with-SSHFS) — Comparison with NFS and optimization tips.

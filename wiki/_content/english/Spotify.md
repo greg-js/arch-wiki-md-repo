@@ -55,6 +55,8 @@ There are also some alternatives to the official spotify client:
 
 	[https://github.com/mopidy](https://github.com/mopidy) || [mopidy](https://www.archlinux.org/packages/?name=mopidy)+ [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/)
 
+*   [Librespot](https://github.com/plietar/librespot) — An open source client library for Spotify. It enables applications to use Spotify's service (streaming), without using the official closed-source *libspotif*. || [librespot-git](https://aur.archlinux.org/packages/librespot-git/) [librespot-alsa-git](https://aur.archlinux.org/packages/librespot-alsa-git/)
+
 ### Linux
 
 [spotify](https://aur.archlinux.org/packages/spotify/) from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg0.10](https://www.archlinux.org/packages/?name=ffmpeg0.10) as well.

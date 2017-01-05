@@ -173,7 +173,7 @@ Subsonic stores all its data inside a [HyperSQL](http://hsqldb.org/) database in
 
 You can also use the SQLTool command-line tool from the HyperSQL distribution, found in [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/).
 
-**Warning:** This tool cannot be run concurrently with your Subsonic instance and *severely corrupt* your database if misused. The following assumes that you have a copy of the database in the `db.copy` directory.
+**Warning:** This tool cannot be run concurrently with your Subsonic instance and *severely corrupt* your database if misused, since newer versions of SqlTool automatically try to upgrade the database to a version that Subsonic does not support. The following assumes that you have a copy of the database in the `db.copy` directory.
 
 This command can be run interactively without other arguments :
 

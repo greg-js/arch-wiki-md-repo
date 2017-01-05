@@ -30,8 +30,9 @@ There are several ways to achieve this on Linux:
 **Note:** To choose the correct driver see [#Installation](#Installation).
 
 <caption>VA-API</caption>
- [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) | [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/) |
-| MPEG2 decoding | GMA 4500 and newer | 
+ [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://cgit.freedesktop.org/vaapi/intel-driver/tree/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) | [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") |
+| Decoding |
+| MPEG2 | GMA 4500 and newer | 
 
 <center>?</center>
 
@@ -40,7 +41,7 @@ There are several ways to achieve this on Linux:
 <center>See VDPAU.</center>
 
  | Radeon HD 4000 and newer |
-| MPEG4 decoding | 
+| MPEG4 | 
 
 <center>✗</center>
 
@@ -49,17 +50,45 @@ There are several ways to achieve this on Linux:
 <center>?</center>
 
  | Radeon HD 6000 and newer |
-| H.264 decoding | GMA 4500, Ironlake Graphics and newer | 
+| H.264 | GMA 4500, Ironlake Graphics and newer | 
 
 <center>?</center>
 
  | Radeon HD 4000 and newer |
-| VC1 decoding | Sandy Bridge Graphics and newer | 
+| HEVC (H.265) | Cherryview/Braswell and newer | 
+
+<center>?</center>
+
+ | 
+
+<center>?</center>
+
+ |
+| VC1 | Sandy Bridge Graphics and newer | 
 
 <center>?</center>
 
  | Radeon HD 4000 and newer |
-| MPEG2 encoding | Ivy Bridge Graphics and newer | 
+| VP8 | Broadwell and newer | 
+
+<center>?</center>
+
+ | 
+
+<center>?</center>
+
+ |
+| VP9 | Broxton and newer | 
+
+<center>?</center>
+
+ | 
+
+<center>?</center>
+
+ |
+| Encoding |
+| MPEG2 | Ivy Bridge Graphics and newer | 
 
 <center>?</center>
 
@@ -72,7 +101,7 @@ There are several ways to achieve this on Linux:
 <center>✗</center>
 
  |
-| H.264 encoding | Sandy Bridge Graphics and newer | 
+| H.264 | Sandy Bridge Graphics and newer | 
 
 <center>?</center>
 
@@ -80,15 +109,39 @@ There are several ways to achieve this on Linux:
 
 <center>✗</center>
 
+ |
+| HEVC (H.265) | Skylake and newer | 
+
+<center>?</center>
+
  | 
 
-<center>✗</center>
+<center>?</center>
+
+ |
+| VP8 | Cherryview/Braswell and newer | 
+
+<center>?</center>
+
+ | 
+
+<center>?</center>
+
+ |
+| VP9 | Kaby Lake and newer | 
+
+<center>?</center>
+
+ | 
+
+<center>?</center>
 
  |
 
 <caption>VDPAU</caption>
  [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) | [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-amdgpu-pro/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) |
-| MPEG2 decoding | Radeon 9500 and newer, GeForce 8 and newer | 
+| Decoding |
+| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | 
 
 <center>✗</center>
 
@@ -97,16 +150,12 @@ There are several ways to achieve this on Linux:
 <center>?</center>
 
  | GeForce 8 and newer |
-| MPEG4 decoding | Radeon HD 6000 and newer, GeForce 200 and newer | 
-
-<center>✗</center>
-
- | 
+| MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | 
 
 <center>?</center>
 
  | GeForce 200 and newer |
-| H.264 decoding | Radeon HD 4000 and newer, GeForce 8 and newer | 
+| H.264 | Radeon HD 4000 and newer, GeForce 8 and newer | 
 
 <center>See VA-API.</center>
 
@@ -115,16 +164,7 @@ There are several ways to achieve this on Linux:
 <center>?</center>
 
  | GeForce 8 and newer |
-| VC1 decoding | Radeon HD 4000 and newer, GeForce 8 and newer | 
-
-<center>✗</center>
-
- | 
-
-<center>?</center>
-
- | GeForce 8 and newer |
-| HEVC (H.265) decoding | 
+| HEVC (H.265) | 
 
 <center>✗</center>
 
@@ -137,6 +177,11 @@ There are several ways to achieve this on Linux:
 <center>?</center>
 
  | GeForce 900 and newer |
+| VC1 | Radeon HD 4000 and newer, GeForce 8 and newer | 
+
+<center>?</center>
+
+ | GeForce 8 and newer |
 
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
 *   As of version 0.3, the VA GL driver doesn't support any other hardware decoder than H.264.
@@ -156,7 +201,7 @@ Regarding the [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-
 | [MPlayer](/index.php/MPlayer "MPlayer") | ✓ (with [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/), see [MPlayer#Enabling VA-API](/index.php/MPlayer#Enabling_VA-API "MPlayer")) | ✓ (see [MPlayer#Enabling VDPAU](/index.php/MPlayer#Enabling_VDPAU "MPlayer")) |
 | [Flash](/index.php/Flash "Flash") | ✓ (with [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) | ✓ (see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) |
 | [Kodi](/index.php/Kodi "Kodi") | ✓ | ✓ |
-| [Firefox](/index.php/Firefox "Firefox") | ✗ [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210727) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=563206) |
+| [Firefox](/index.php/Firefox "Firefox") | ✗ [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210727) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=563206) |
 
 ## Installation
 
@@ -186,7 +231,7 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
 **Proprietary drivers:**
 
-*   [AMD](/index.php/AMD_Catalyst "AMD Catalyst") Radeon HD 4000 series and newer GPUs are supported by [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/). It uses the [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) driver for Radeon HD 5000 series and newer, and [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) for Radeon HD 4000 series.
+*   [AMD](/index.php/AMD_Catalyst "AMD Catalyst") Radeon HD 4000 series and newer GPUs are supported by [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst").
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 8 series and newer GPUs are supported by [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
 
 ### Installing VDPAU

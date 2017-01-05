@@ -103,9 +103,9 @@ Advanced network settings can be found on the `about:config` page (try searching
 
 <caption>Suggested values</caption>
 | Key | Value | Description |
-| network.http.pipelining | true | Enable [pipelining](http://www-archive.mozilla.org/projects/netlib/http/pipelining-faq.html) for normal connections |
-| network.http.pipelining.ssl | true | Enable pipelining for SSL connections |
-| network.http.proxy.pipelining | true | Enable pipelining for proxy connections |
+| network.http.pipelining | true | Enable [HTTP pipelining](https://en.wikipedia.org/wiki/HTTP_pipelining "w:HTTP pipelining") for normal connections |
+| network.http.pipelining.ssl | true | Enable HTTP pipelining for SSL connections |
+| network.http.proxy.pipelining | true | Enable HTTP pipelining for proxy connections |
 
 #### Stop urlclassifier3.sqlite from being created again
 
@@ -520,7 +520,7 @@ Before continuing, remember there is a reason some of these variables are not en
 Starting with version 50 (49 doesn't work because of [bug 1303813](https://bugzilla.mozilla.org/show_bug.cgi?id=1303813)), Firefox can play Widevine videos, such as those on Netflix and Amazon Prime. Making this actually work properly, however, takes some extra work.
 
 1.  **Allow Firefox to install DRM.** The first time you visit a Widevine-enabled page, Firefox will pop a prompt below the address bar asking for permission to install DRM. You have to approve this and then wait for the "Downloading" bar to disappear.
-2.  **Forge a Firefox on Windows user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox on Linux it will try to use Silverlight. Use a user agent string from Chrome on Linux such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2876.0 Safari/537.36`. This can be configured using the [User Agent Switcher extension](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) or with `general.useragent.override` in *about:config*
+2.  **Forge a Chrome on Linux user agent.** Netflix uses your user agent string to decide which player to serve you, and if it detects Firefox on Linux it will try to use Silverlight. Use a user agent string from Chrome on Linux such as `Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2876.0 Safari/537.36`. This can be configured using the [User Agent Switcher extension](https://addons.mozilla.org/firefox/addon/user-agent-switcher/) or with `general.useragent.override` in *about:config*
 
 ### Mouse wheel scroll speed
 

@@ -1,68 +1,114 @@
-*virtualenv* 是 Ian Bicking 编写的 Python 工具，可以为 Python 建立独立环境，可以安装软件包而不影响其它 virtualenv 环境或系统 Python 软件包。 The present article covers the installation of the *virtualenv* package and its companion command line utility *virtualenvwrapper* designed by Doug Hellmann to (greatly) improve your work flow. A quick how-to to help you to begin working inside virtual environment is then provided.
+**翻译状态：** 本文是英文页面 [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-04，点击[这里](https://wiki.archlinux.org/index.php?title=Python%2FVirtualenv&diff=0&oldid=454548)可以查看翻译后英文页面的改动。
+
+*virtualenv* 是为 [Python](/index.php/Python "Python") 程序建立独立环境的工具，可以安装本地软件包，建立工作环境并在其中执行 [Python](/index.php/Python "Python")。
 
 ## Contents
 
-*   [1 Virtual Environments at a glance](#Virtual_Environments_at_a_glance)
-*   [2 Virtualenv](#Virtualenv)
-    *   [2.1 Installation](#Installation)
-    *   [2.2 Basic Usage](#Basic_Usage)
-*   [3 Virtualenvwrapper](#Virtualenvwrapper)
-    *   [3.1 Installation](#Installation_2)
-    *   [3.2 Basic Usage](#Basic_Usage_2)
-*   [4 See Also](#See_Also)
+*   [1 Overview](#Overview)
+*   [2 Installation](#Installation)
+    *   [2.1 Packages](#Packages)
+*   [3 Usage](#Usage)
+    *   [3.1 Creation](#Creation)
+        *   [3.1.1 pyvenv](#pyvenv)
+        *   [3.1.2 virtualenv](#virtualenv)
+    *   [3.2 Activation](#Activation)
+*   [4 Python versions](#Python_versions)
+*   [5 virtualenvwrapper](#virtualenvwrapper)
+    *   [5.1 Installation](#Installation_2)
+    *   [5.2 Basic usage](#Basic_usage)
+*   [6 See also](#See_also)
 
-## Virtual Environments at a glance
+## Overview
 
-*virtualenv* is a tool designated to address the problem of dealing with packages' dependencies while maintaining different versions that suit projects' needs. For example, if you work on two Django web sites, say one that needs Django 1.2 while the other needs the good old 0.96\. You have no way to keep both versions if you install them into /usr/lib/python2/site-packages . Thanks to virtualenv it's possible, by creating two isolated environments, to have the two development environment to play along nicely.
+A virtual environment is a directory into which some binaries and shell scripts are installed. The binaries include *python* for executing scripts and *pip* for installing other modules within the environment. There are also shell scripts (one for [bash](/index.php/Bash "Bash"), csh, and [fish](/index.php/Fish "Fish")) to activate the environment. Essentially, a virtual environment mimics a full system install of [Python](/index.php/Python "Python") and all of the desired modules without interfering with any system on which the application might run.
 
-*vitualenvwrapper* takes *virtualenv* a step further by providing convenient commands you can invoke from your favorite console.
+## Installation
 
-*venv* is [a built-in module](https://docs.python.org/3/library/venv.html) added in version 3.3, implementing a similar API to *virtualenv*.
+[Python](/index.php/Python "Python") 3.3+ comes with a tool called *pyvenv* and an API called *venv* for extending the native implementation. For applications that require an older version of Python, *virtualenv* must be used.
 
-## Virtualenv
+### Packages
 
-*virtualenv* supports Python 2.6+ and Python 3.x. See [Python#Python 3](/index.php/Python#Python_3 "Python") for an overview of the different versions of Python.
+[Install](/index.php/Install "Install") one of these packages from the [official repositories](/index.php/Official_repositories "Official repositories") to use a Python virtual environment.
 
-### Installation
+*   Python 3.3+: [python](https://www.archlinux.org/packages/?name=python)
+*   Python 3: [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv)
+*   Python 2: [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv)
 
-[Install](/index.php/Install "Install") [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv), or [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) for the legacy version.
+## Usage
 
-### Basic Usage
+All three tools use a similar workflow.
 
-An extended tutorial on how use *virtualenv* for sandboxing can be found [here](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). If the link does not work, try [the archive link](http://web.archive.org/web/20120304235158/http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox). A simple use case is as follows:
+### Creation
 
-*   创建 Virtualenv 环境：
+Use *pyvenv* or *virtualenv* to create the virtual environment within your project directory. Be sure to exclude the venv directory from version control--a copy of `pip freeze` will be enough to rebuild it.
+
+#### pyvenv
+
+This tool is provided by [python](https://www.archlinux.org/packages/?name=python) (3.3+).
 
 ```
-$ virtualenv2 venv # 创建一个名为 venv 的目录，其中包含了 Virtualenv
+$ pyvenv venv
 
 ```
 
-*   激活这个Virtualenv：
+#### virtualenv
+
+Use *virtualenv* for Python 3, available in [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv).
+
+```
+$ virtualenv venv
+
+```
+
+And *virtualenv2* for Python 2, available in [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
+
+```
+$ virtualenv2 venv
+
+```
+
+### Activation
+
+Use one of the provided shell scripts to activate and deactivate the environment. This example assumes bash is used.
 
 ```
 $ source venv/bin/activate
+(venv) $
 
 ```
 
-*   Install some package inside the virtualenv (say, Django):
+Once inside the virtual environment, modules can be installed with *pip* and scripts can be run as normal.
+
+To exit the virtual environment, run the function provided by `bin/activate`:
 
 ```
-(my_env)$ pip install django
-
-```
-
-*   Do your things
-*   Leave the virtualenv:
-
-```
-(my_env)$ deactivate
+(venv) $ deactivate
 
 ```
 
-## Virtualenvwrapper
+## Python versions
 
-*virtualenvwrapper* allows more natural command line interaction with your virtualenvs by exposing several useful commands to create, activate and remove virtualenvs. This package is a wrapper for both [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) and [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
+The binary versions depend on which virtual environment tool was used. For instance, the *python* command used in the Python 2 example points to `bin/python2.7`, while the one in the *pyvenv* example points to `bin/python3.5`.
+
+One major difference between *pyvenv* and *virtualenv* is that the former uses the system's Python binary by default:
+
+```
+$ ls -l pyvenv/bin/python3.5
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:57 pyvenv/bin/python3.5 -> /usr/bin/python3
+
+```
+
+The *virtualenv* tool uses a separate Python binary in the environment directory:
+
+```
+$ ls -l venv3/bin/python3.5
+lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 venv3/bin/python3.5 -> python3
+
+```
+
+## virtualenvwrapper
+
+*virtualenvwrapper* allows more natural command line interaction with your virtual environemnts by exposing several useful commands to create, activate and remove virtual environments. This package is a wrapper for both [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) and [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
 
 ### Installation
 
@@ -71,15 +117,23 @@ $ source venv/bin/activate
 Now add the following lines to your `~/.bashrc`:
 
 ```
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+$ export WORKON_HOME=~/.virtualenvs
+$ source /usr/bin/virtualenvwrapper.sh
 
 ```
 
-If you are not using python3 by default (check the output of `$ python --version`) you also need to add the following line to your `~/.bashrc` prior sourcing the `virtualenvwrapper.sh` script. The current version of the `virtualenvwrapper-python` package only works with python3\. It can create python2 virtualenvs fine though.
+Since python3 is a system-wide default in Arch, in order to be able to create python2 environments, you need to set `VIRTUALENVWRAPPER_PYTHON` and `VIRTUALENVWRAPPER_VIRTUALENV` prior to sourcing `virtualenvwrapper.sh` in your `~/.bashrc`:
 
 ```
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+
+```
+
+If you are not using python3 by default (check the output of `python --version`) you need to add the following line to your `~/.bashrc` prior sourcing the `virtualenvwrapper.sh` script.
+
+```
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 ```
 
@@ -90,41 +144,41 @@ $ mkdir $WORKON_HOME
 
 ```
 
-### Basic Usage
+### Basic usage
 
 The main information source on virtualenvwrapper usage (and extension capability) is Doug Hellmann's [page](http://www.doughellmann.com/docs/virtualenvwrapper/).
 
-*   Create the virtualenv:
+Create the virtual environment:
 
 ```
 $ mkvirtualenv -p /usr/bin/python2.7 my_env
 
 ```
 
-*   Activate the virtualenv:
+Activate the virtual environment:
 
 ```
 $ workon my_env
 
 ```
 
-*   Install some package inside the virtualenv (say, Django):
+Install some package inside the virtual environment (say, Django):
 
 ```
-(my_env)$ pip install django
-
-```
-
-*   Do your things
-*   Leave the virtualenv:
-
-```
-(my_env)$ deactivate
+(my_env) $ pip install django
 
 ```
 
-## See Also
+After you have done your things, leave the virtual environment:
 
+```
+(my_env) $ deactivate
+
+```
+
+## See also
+
+*   [Python venv (pyvenv)](https://docs.python.org/3/library/venv.html)
 *   [virtualenv Pypi page](https://pypi.python.org/pypi/virtualenv)
 *   [Tutorial for virtualenv](http://wiki.pylonshq.com/display/pylonscookbook/Using+a+Virtualenv+Sandbox)
 *   [virtualenvwrapper page at Doug Hellmann's](http://www.doughellmann.com/docs/virtualenvwrapper/)

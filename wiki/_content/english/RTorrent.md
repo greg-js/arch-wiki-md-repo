@@ -676,6 +676,7 @@ There are numerous web interfaces and front ends for rTorrent including:
 *   [rTWi](https://rtwi.jmk.hu/) is a simple rTorrent web interface written in PHP.
 *   [Rtgui](/index.php/Rtgui "Rtgui") is a web based front end for rTorrent written in PHP and uses XML-RPC to communicate with the rTorrent client.
 *   [rutorrent](https://github.com/Novik/ruTorrent) and [Forum](http://forums.rutorrent.org/) - A web-based front-end with an interface very similar to uTorrent which supports many plugins and advanced features (see also: [ruTorrent](/index.php/RuTorrent "RuTorrent") and [Guide on forum](https://bbs.archlinux.org/viewtopic.php?pid=897577#p897577)).
+*   [flood](https://github.com/jfurrow/flood) is a web interface for rtorrent written in Node.js using XMLRPC.
 
 **Note:** rTorrent is currently built using [XML-RPC for C/C++](http://xmlrpc-c.sourceforge.net/), which is required for some web interfaces (e.g. ruTorrent).
 

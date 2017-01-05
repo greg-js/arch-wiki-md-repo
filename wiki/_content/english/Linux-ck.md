@@ -99,24 +99,7 @@ Users of [repo-ck](/index.php/Repo-ck "Repo-ck") or those who have not modified 
 
 ### Enable BFQ for only specified devices
 
-An alternative method is to direct the kernel to use BFQ on a device-by-device basis. For example, to enable it for `/dev/sda` simply:
-
-```
-# echo bfq > /sys/block/sda/queue/scheduler
-
-```
-
-To confirm:
-
-```
-# cat /sys/block/sda/queue/scheduler
-noop deadline cfq [bfq] 
-
-```
-
-Note that doing it this way will not survive a reboot. To make the change automatically at the next system boot, create the following tmpfile where sdX is the desired device:
-
- `/etc/tmpfiles.d/set_IO_scheduler.conf`  `w /sys/block/sdX/queue/scheduler - - - - bfq` 
+An alternative method is to direct the kernel at runtime to use BFQ on a device-by-device basis. For configuration examples see the [Improving performance#Tuning IO schedulers](/index.php/Improving_performance#Tuning_IO_schedulers "Improving performance") section.
 
 ## More about MuQSS
 

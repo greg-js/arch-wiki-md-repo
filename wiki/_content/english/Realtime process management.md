@@ -211,7 +211,5 @@ CFS implements three scheduling policies:
 ## See also
 
 *   [IO Benchmarking: How, why and with what](http://cuddletech.com/?p=330)
-*   [CGROUPS Kernel documentation](http://www.kernel.org/doc/Documentation/cgroups/cgroups.txt)
-*   [Optimizing servers and processes for speed with ionice, nice, ulimit](http://www.askapache.com/linux-unix/optimize-nice-ionice.html)
 *   [SYSSTAT utilities home page](http://sebastien.godard.pagesperso-orange.fr/)
 *   [Multitasking from the Linux command line and process prioritization](http://gaarai.com/2009/03/06/multitasking-from-the-linux-command-line-plus-process-prioritization/)

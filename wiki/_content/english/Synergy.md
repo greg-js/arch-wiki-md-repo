@@ -453,5 +453,5 @@ You need to copy the content of server's "~/.synergy/SSL/Fingerprints/Local.txt"
 
 ## External Links
 
-*   Synergy website: [http://synergy-project.org](http://synergy-project.org)
+*   Synergy website: [https://symless.com/synergy/](https://symless.com/synergy/)
 *   Official documentation: [http://synergy-project.org/wiki/User_Guide](http://synergy-project.org/wiki/User_Guide)

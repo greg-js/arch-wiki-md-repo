@@ -457,24 +457,7 @@ After making this change, reload the gpg-agent.
 
 It is possible to use the [Systemd/User](/index.php/Systemd/User "Systemd/User") facilities to start the agent.
 
-Create a systemd unit file:
-
- `~/.config/systemd/user/gpg-agent.service` 
-```
-[Unit]
-Description=GnuPG private key agent
-IgnoreOnIsolate=true
-
-[Service]
-Type=forking
-ExecStart=/usr/bin/gpg-agent --daemon
-Restart=on-abort
-
-[Install]
-WantedBy=default.target
-```
-
-**Note:** If you use non-default value for the [GNUPGHOME](#Directory_location) environment variable, you need to pass it to the service. See [systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User") for details.
+The `gpg-agent.socket` unit will start the service on-demand and manage the lifetime. The `dirmngr.socket` should usually be enabled too, which is a daemon spawned to handle keyserver requests.
 
 ### Unattended passphrase
 

@@ -348,8 +348,8 @@ The following script will check if we connected to a specific network and mount 
  `/etc/NetworkManager/dispatcher.d/mount_cifs` 
 ```
 #!/bin/bash
-if [ "$2" = "up" ]
-  if [ "$CONNECTION_UUID" = "uuid" ]
+if [ "$2" = "up" ]; then
+  if [ "$CONNECTION_UUID" = "uuid" ]; then
     mount /your/mount/point & 
     # add more shares as needed
   fi
@@ -464,17 +464,7 @@ Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be
 
 ### Hostname problems
 
-It depends on the NetworkManager plugins used, whether the hostname is forwarded to a router on connect. The generic "keyfile" plugin does not forward the hostname in default configuration. To make it forward the hostname, add the following to `/etc/NetworkManager/NetworkManager.conf`:
-
-```
-[keyfile]
-hostname=*your_hostname*
-
-```
-
-The options under `[keyfile]` will be applied to network connections in the default `/etc/NetworkManager/system-connections` path.
-
-Another option is to configure the DHCP client, which NetworkManager starts automatically, to forward it. NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to its internal DHCP funtionality, if the former is not installed. To make *dhclient* forward the hostname requires to set a non-default option, *dhcpcd* forwards the hostname by default.
+NetworkManager utilizes [dhclient](https://www.archlinux.org/packages/?name=dhclient) in default and falls back to its internal DHCP funtionality, if the former is not installed. To make *dhclient* forward the hostname requires to set a non-default option, *dhcpcd* forwards the hostname by default.
 
 First, check which DHCP client is used (*dhclient* in this example):
 
@@ -784,6 +774,8 @@ Randomization during Wi-Fi scanning is enabled by default starting on version 1.
 wifi.scan-rand-mac-address=no
 
 ```
+
+**Tip:** Disabling MAC address randomization may be needed for stable connection, see e.g. [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101).
 
 In contrast, stable randomization generates a different MAC address for each different connection. This is specially useful when, for example, a portal remembers your login status based on your MAC address. To enable this mode, you can use the option
 

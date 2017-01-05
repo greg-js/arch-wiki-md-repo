@@ -109,11 +109,11 @@ If you are on laptop, it might be a good idea to install and enable the [acpid](
 
 ## Displaying GPU temperature in the shell
 
+There are three methods to query the GPU temperature. *nvidia-settings* requires that you are using X, *nvidia-smi* or *nvclock* do not. Also note that *nvclock* currently does not work with newer NVIDIA cards such as GeForce 200 series cards as well as embedded GPUs such as the Zotac IONITX's 8800GS.
+
 ### nvidia-settings
 
-**Note:** This method requires that you are using X. Use Method 2 or Method 3 if you are not. Also note that Method 3 currently does not not work with newer NVIDIA cards such as GeForce 200 series cards as well as embedded GPUs such as the Zotac IONITX's 8800GS.
-
-To display the GPU temp in the shell, use `nvidia-settings` as follows:
+To display the GPU temp in the shell, use *nvidia-settings* as follows:
 
 ```
 $ nvidia-settings -q gpucoretemp
@@ -132,13 +132,13 @@ Attribute 'GPUCoreTemp' (hostname:0.0): 41.
 
 The GPU temps of this board is 41 C.
 
-In order to get just the temperature for use in utils such as `rrdtool` or `conky`, among others:
+In order to get just the temperature for use in utilities such as *rrdtool* or *conky*:
 
  `$ nvidia-settings -q gpucoretemp -t`  `41` 
 
 ### nvidia-smi
 
-Use nvidia-smi which can read temps directly from the GPU without the need to use X at all. This is important for a small group of users who do not have X running on their boxes, perhaps because the box is headless running server apps. To display the GPU temperature in the shell, use nvidia-smi as follows:
+Use *nvidia-smi* which can read temps directly from the GPU without the need to use X at all, e.g. when running Wayland or on a headless server. To display the GPU temperature in the shell, use *nvidia-smi* as follows:
 
 ```
 $ nvidia-smi
@@ -186,7 +186,7 @@ GPU 0000:01:00.0
 
 ```
 
-In order to get just the temperature for use in utils such as rrdtool or conky, among others:
+In order to get just the temperature for use in utilities such as *rrdtool* or *conky*:
 
  `$ nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits`  `52` 
 
@@ -196,9 +196,9 @@ Reference: [http://www.question-defense.com/2010/03/22/gpu-linux-shell-temp-get-
 
 Use [nvclock](https://aur.archlinux.org/packages/nvclock/) which is available from the [AUR](/index.php/AUR "AUR").
 
-**Note:** `nvclock` cannot access thermal sensors on newer NVIDIA cards such as Geforce 200 series cards.
+**Note:** *nvclock* cannot access thermal sensors on newer NVIDIA cards such as Geforce 200 series cards.
 
-There can be significant differences between the temperatures reported by nvclock and nvidia-settings/nv-control. According to [this post](http://sourceforge.net/projects/nvclock/forums/forum/67426/topic/1906899) by the author (thunderbird) of nvclock, the nvclock values should be more accurate.
+There can be significant differences between the temperatures reported by *nvclock* and *nvidia-settings*/*nv-control*. According to [this post](http://sourceforge.net/projects/nvclock/forums/forum/67426/topic/1906899) by the author (thunderbird) of *nvclock*, the *nvclock* values should be more accurate.
 
 ## Set fan speed at login
 

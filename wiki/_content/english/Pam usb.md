@@ -9,7 +9,9 @@ It works with any application supporting [PAM](/index.php/PAM "PAM"), such as [s
     *   [2.1 Setting up Devices and Users](#Setting_up_Devices_and_Users)
     *   [2.2 Check the configuration](#Check_the_configuration)
     *   [2.3 Setting up the PAM module](#Setting_up_the_PAM_module)
-*   [3 See also](#See_also)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 su fails to use pam_usb](#su_fails_to_use_pam_usb)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -101,6 +103,16 @@ Now you should be able to authenticate with the relevant USB device plugged-in.
 * Verification match, updating one time pads...
 * Access granted.
 ```
+
+## Troubleshooting
+
+### su fails to use pam_usb
+
+If you set:
+
+ `/etc/pam.d/system-auth`  `auth          sufficient   pam_usb.so` 
+
+and `su` prompts for a password, and does not use pam_usb, add the same line at the beginning of `/etc/pam.d/su`. This may be required for other pam-aware applications as well.
 
 ## See also
 

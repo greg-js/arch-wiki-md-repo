@@ -59,8 +59,8 @@ yourtunnelbearpassword
 Start & add it to systemd boot process
 
 ```
-$ sudo systemctl start openvpn@TunnelBearJapan.service
-$ sudo systemctl enable openvpn@TunnelBearJapan.service
+$ sudo systemctl start openvpn-client@TunnelBearJapan.service
+$ sudo systemctl enable openvpn-client@TunnelBearJapan.service
 
 ```
 

@@ -10,7 +10,8 @@
     *   [4.2 Installing](#Installing)
     *   [4.3 Updating](#Updating)
     *   [4.4 Removing](#Removing)
-*   [5 See also](#See_also)
+*   [5 Support](#Support)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -119,6 +120,10 @@ Snaps can be removed by executing:
 # snap remove *snapname*
 
 ```
+
+## Support
+
+Arch Linux related mailing lists and other official Arch Linux support channels aren't an appropriate place to request help with snaps on Arch Linux. An appropriate place to ask for support is the [Snapcraft mailing list](https://lists.ubuntu.com/mailman/listinfo/snapcraft).
 
 ## See also
 

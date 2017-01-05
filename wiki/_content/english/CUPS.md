@@ -278,6 +278,8 @@ The CUPS server can be fully administered through the web interface, available o
 
 **Note:** If an HTTPS connection to CUPS is used, it *may* take a very long time before the interface appears the first time it is accessed. This is because the first request triggers the generation of SSL certificates which can be a time-consuming job.
 
+To perform administrative tasks from the web interface authentication is required. Authenticate either as `root` or make sure your user is member of a group with printer administration privileges, see [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS").
+
 	Add a queue
 
 Go to the **Administration** page.

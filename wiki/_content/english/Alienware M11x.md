@@ -16,9 +16,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
     *   [4.3 VGA_SWITCHEROO](#VGA_SWITCHEROO)
     *   [4.4 Backlight Brightness](#Backlight_Brightness)
         *   [4.4.1 /sbin/backlight](#.2Fsbin.2Fbacklight)
-*   [5 Lighting and colors](#Lighting_and_colors)
-    *   [5.1 alienware-kbl](#alienware-kbl)
-    *   [5.2 Other applications](#Other_applications)
+    *   [4.5 Other applications](#Other_applications)
 
 ## Wireless
 
@@ -221,12 +219,8 @@ exit 0
 
 ```
 
-## Lighting and colors
-
-### alienware-kbl
-
-[alienware-kbl](https://www.rsm.website/software/gnu-linux/software/alienware-kbl) is the continuation of pyAlienFx for computers under GNU-Linux systems (Arch users must use the tar.gz packages).
-
 ### Other applications
 
 *   A C-program which cycles through colors, plus information about how to understand it, can be found at [[1]](http://www.dettus.net/alienware).
+
+*   [alienware-kbl](https://rafael.senties-martinelli.com/software/alienware-kbl) a software to manage the light colors with a graphical interface, python or bash commands.

@@ -904,14 +904,6 @@ These modules are fully supported in the kernel, but they require additional fir
 *   use the `rtap_iface=1` option to enable the radiotap interface
 *   use the `led=1` option to enable a front LED indicating when the wireless is connected or not
 
-Some cards like the **2915ABG** might have problems initializing a connection with [NetworkManager](/index.php/NetworkManager "NetworkManager"). You may use the following in its configuration:
-
- `/etc/NetworkManager/NetworkManager.conf` 
-```
-[device]
-wifi.scan-rand-mac-address=no
-```
-
 #### iwlegacy
 
 [iwlegacy](http://wireless.kernel.org/en/users/Drivers/iwlegacy) is the wireless driver for Intel's 3945 and 4965 wireless chips. The firmware is included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.

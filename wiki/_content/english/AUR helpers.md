@@ -153,7 +153,7 @@ This is a list of helper utilities that search, download and/or build packages.
 
 	[https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/) || [aarchup](https://aur.archlinux.org/packages/aarchup/)
 
-*   **Argon** — Graphical frontend of pacaur, featuring package installation, removal, and updating; and update notifications for both official repository and AUR packages.
+*   **Argon** — Graphical frontend to pacaur, featuring package installation, removal, and updating; and update notifications for both official repository and AUR packages.
 
 	[https://github.com/14mRh4X0r/arch-argon](https://github.com/14mRh4X0r/arch-argon) || [argon](https://aur.archlinux.org/packages/argon/)
 

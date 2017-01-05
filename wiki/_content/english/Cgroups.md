@@ -238,7 +238,7 @@ Make sure to use the right path to the executable.
 
 ## Documentation
 
-*   For information on controllers and what certain switches and tunables mean, refer to [kernel's Documentation/cgroup](https://www.kernel.org/doc/Documentation/cgroups/) (or install linux-docs and see `/usr/src/linux/Documentation/cgroup`
+*   For information on controllers and what certain switches and tunables mean, refer to kernel's documentation [v1](https://www.kernel.org/doc/Documentation/cgroup-v1/) or [v2](https://www.kernel.org/doc/Documentation/cgroup-v2.txt) (or install linux-docs and see `/usr/src/linux/Documentation/cgroup`)
 *   A detailed and complete Resource Management Guide can be found in the [fedora project documentation](http://docs.fedoraproject.org/en-US/Fedora/17/html-single/Resource_Management_Guide/index.html#sec-How_Control_Groups_Are_Organized).
 
 For commands and configuration files, see relevant man pages, e.g. `man cgcreate` or `man cgrules.conf`

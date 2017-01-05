@@ -386,7 +386,7 @@ alias startx='ssh-agent startx'
 
 Doing it this way avoids the problem of having extraneous `ssh-agent` instances floating around between login sessions. Exactly one instance will live and die with the entire X session.
 
-**Note:** You can also add `eval $(ssh-agent)` to `~/.xinitrc`.
+**Note:** As an alternative to calling `ssh-agent startx`, you can add `eval $(ssh-agent)` to `~/.xinitrc`.
 
 See [the below notes on using x11-ssh-askpass with ssh-add](#Calling_x11-ssh-askpass_with_ssh-add) for an idea on how to immediately add your key to the agent.
 

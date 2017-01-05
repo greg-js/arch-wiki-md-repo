@@ -274,7 +274,6 @@ Server = http://repo.herecura.be/$repo/$arch
 
 *   **Maintainer:** [Vi0l0](/index.php/User:Vi0L0 "User:Vi0L0")
 *   **Description:** ATI Catalyst proprietary drivers.
-*   **Upstream Page:** [http://catalyst.wirephire.com](http://catalyst.wirephire.com)
 *   **Key-ID:** 653C3094
 
 ```
@@ -287,7 +286,6 @@ Server = http://mirror.hactar.xyz/Vi0L0/catalyst/$arch
 
 *   **Maintainer:** [Vi0l0](/index.php/User:Vi0L0 "User:Vi0L0")
 *   **Description:** ATI Catalyst proprietary drivers.
-*   **Upstream Page:** [http://catalyst.wirephire.com](http://catalyst.wirephire.com)
 *   **Key-ID:** 653C3094
 
 ```

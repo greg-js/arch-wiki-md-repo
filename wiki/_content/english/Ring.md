@@ -6,7 +6,7 @@ Additionally, Ring has a clean separation between daemon and user interface, and
 
 ## Installation
 
-**Note:** Remember that as of May 2016, Ring is still in beta stage. As such, things might break, especially when upgrading.
+**Note:** Remember that as of January 2017, Ring is still in beta stage. As such, things might break, especially when upgrading.
 
 Ring is currently packaged in the AUR. You can choose between several versions:
 

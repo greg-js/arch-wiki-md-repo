@@ -13,7 +13,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [4 Sound](#Sound)
 *   [5 Touchpad](#Touchpad)
 *   [6 Video](#Video)
-*   [7 AlienFX](#AlienFX)
+*   [7 Control of the light colors](#Control_of_the_light_colors)
 *   [8 BIOS](#BIOS)
 
 ## System Specifications
@@ -246,11 +246,11 @@ In kernel 3.7 power managing methods were added, so battery life increased a lot
 
 Kernel 3.10 is coming with a lot of fixes in the Nouveau driver for our NVE0 (Kepler) graphics card. We are expecting a lot of power management improvements.
 
-## AlienFX
+## Control of the light colors
 
-AlienFX on Alienware M14xR2 is only supported by [pyalienfx](https://aur.archlinux.org/packages/pyalienfx/) that can be installed from AUR.
+*   AlienFX on Alienware M14xR2 is only supported by [pyalienfx](https://aur.archlinux.org/packages/pyalienfx/) that can be installed from AUR. You can visit [pyalienfx project webpage](https://code.google.com/p/pyalienfx/) for reporting issues.
 
-You can visit [pyalienfx project webpage](https://code.google.com/p/pyalienfx/) for reporting issues.
+*   Supported by [alienware-kbl](https://rafael.senties-martinelli.com/software/alienware-kbl) a software to manage the light colors with a graphical interface, python or bash commands.
 
 ## BIOS
 

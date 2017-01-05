@@ -134,7 +134,7 @@ Other filesystems like `/home` can be mounted with custom mount units. Adding `n
 
 ## Less output during boot
 
-Change `verbose` to `quiet` on the bootloader's kernel line. For some systems, particularly those with an SSD, the slow performance of the TTY is actually a bottleneck, and so less output means faster booting.
+For some systems, particularly those with an SSD, the slow performance of the TTY is actually a bottleneck, and so less output means faster booting. See the [Silent boot](/index.php/Silent_boot "Silent boot") article for suggestions.
 
 ## Suspend to RAM
 

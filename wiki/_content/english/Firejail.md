@@ -13,6 +13,9 @@
         *   [3.2.3 Notes](#Notes)
 *   [4 Firetools](#Firetools)
 *   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Mozilla Firefox: Could not find the Mozilla runtime](#Mozilla_Firefox:_Could_not_find_the_Mozilla_runtime)
+    *   [5.2 Symbolic links](#Symbolic_links)
+    *   [5.3 PulseAudio](#PulseAudio)
 
 ## Installation
 
@@ -35,19 +38,19 @@ If you need to reference, whitelist, or blacklist a directory within a custom pr
 
 ## Usage
 
-To execute an application using firejail with seccomp protection, such as firefox, execute the following:
+To execute an application using firejail with seccomp protection, such as okular, execute the following:
 
 ```
-$ firejail --seccomp firefox
+$ firejail --seccomp okular
 
 ```
 
 #### Private mode
 
-Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute firefox in private mode, do the following:
+Firejail also includes a one time private mode, in which no mounts are made in the chroots to your home directory. In doing this, you can execute applications without performing any changes to disk. For example, to execute okular in private mode, do the following:
 
 ```
-$ firejail --seccomp --private firefox
+$ firejail --seccomp --private okular
 
 ```
 
@@ -56,13 +59,13 @@ $ firejail --seccomp --private firefox
 To execute an application in Firejail per default, create a symbolic link pointing to `/usr/bin/firejail`. For example:
 
 ```
-$ ln -s /usr/bin/firejail /usr/local/bin/firefox
+$ ln -s /usr/bin/firejail /usr/local/bin/okular
 
 ```
 
 The *firecfg* tool can be used to automate this process.
 
-**Tip:** To open the application with your custom Firejail options, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file instead for Firefox and make it [executable](/index.php/File_permissions_and_attributes "File permissions and attributes"): `/usr/local/bin/firefox`  `firejail --seccomp /usr/bin/firefox $@` 
+**Tip:** To open the application with your custom Firejail options, [create](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") the following file instead for Okular and make it [executable](/index.php/File_permissions_and_attributes "File permissions and attributes"): `/usr/local/bin/okular`  `firejail --seccomp /usr/bin/okular $@` 
 
 #### Desktop files
 
@@ -84,7 +87,32 @@ A GUI application for use with Firejail is also available, [firetools](https://a
 
 ## Troubleshooting
 
-**PulseAudio**
+### Mozilla Firefox: Could not find the Mozilla runtime
+
+See the next section.
+
+### Symbolic links
+
+If the command path given to firejail is a symbolic link instead of an executable, firejail gets confused, and the application fails to run. For example, the command path of mozilla firefox is a symbolic link: `/usr/bin/firefox -> /usr/lib/firefox/firefox` Therefore following error appears when trying to start mozilla firefox with firejail.
+
+ `firejail firefox` 
+```
+Could not find the Mozilla runtime.
+
+Parent is shutting down, bye...
+
+```
+
+This can be remedied by giving the target of the symbolic link to firejail as an argument.
+
+```
+$ firejail /usr/lib/firefox/firefox
+
+```
+
+Also use this path in the Exec= line of .desktop files for a sandboxed mozilla firefox.
+
+### PulseAudio
 
 If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround:
 

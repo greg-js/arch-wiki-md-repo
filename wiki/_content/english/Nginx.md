@@ -1,5 +1,7 @@
 [nginx](https://en.wikipedia.org/wiki/nginx "wikipedia:nginx") (pronounced "engine X"), is a free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server, written by Igor Sysoev in 2005\. According to Netcraft's [April 2015 Web Server Survey](http://news.netcraft.com/archives/2015/04/20/april-2015-web-server-survey.html), nginx now hosts 14.48% of all domains worldwide, while [Apache](/index.php/Apache "Apache") hosts about 38.39%. nginx is now well known for its stability, rich feature set, simple configuration, and low resource consumption.
 
+Nginx is often used together with a scripting language such as [PHP](/index.php/PHP "PHP") and database such as [MySQL](/index.php/MySQL "MySQL"). This combination is often referred to as a LEMP stack (Linux, EngineX, MySQL, PHP).
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -72,6 +74,7 @@ The examples below cover the most common use cases. It is assumed that you use t
 ```
 user http;
 worker_processes auto;
+worker_cpu_affinity auto;
 pcre_jit on;
 
 events {
@@ -81,6 +84,12 @@ events {
 http {
     include mime.types;
     default_type application/octet-stream;
+    sendfile on;
+    tcp_nopush on;
+    aio threads;
+    server_tokens off; # Security: Disables nginx version in error messages and in the “Server” response header field.
+    charset utf-8; # Force usage of UTF-8
+    index index.php index.html index.htm;
     # include servers-enabled/*; # See Server blocks
 }
 
@@ -197,9 +206,14 @@ Reload or restart `nginx` service to enable the new configuration.
 
 [OpenSSL](/index.php/OpenSSL "OpenSSL") provides TLS/SSL support and is installed by default on Arch installations.
 
-**Tip:** You may want to read the [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate) docs first before configuring SSL
+**Tip:**
 
-**Tip:** [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A plugin is available to request valid SSL certificates straight from the command line and automatic configuration.
+*   You may want to read the [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate) docs first before configuring SSL.
+*   [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A plugin is available to request valid SSL certificates straight from the command line and automatic configuration.
+*   Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes [nginx specific](https://wiki.mozilla.org/Security/Server_Side_TLS#Nginx) configuration guidelines as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
+*   [Cipherli.st](https://cipherli.st) provides strong SSL implementation examples and tutorial for most modern webservers.
+
+**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to nginx, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
 Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](/index.php/OpenSSL#Making_requests "OpenSSL"):
 
@@ -228,8 +242,6 @@ If you need to create a CSR, follow these instructions instead of the above:
 
 **Note:** For more *openssl* options, read its [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse its [extensive documentation](https://www.openssl.org/docs/).
 
-**Warning:** If you plan on implementing SSL/TLS, know that some variations and implementations are [still](https://weakdh.org/#affected) [vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security"). For details on these current vulnerabilities within SSL/TLS and how to apply appropriate changes to nginx, visit [http://disablessl3.com/](http://disablessl3.com/) and [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
-
 Example of a `nginx.conf` using SSL:
 
  `/etc/nginx/nginx.conf` 
@@ -248,9 +260,16 @@ http {
         resolver 8.8.8.8 8.8.4.4 valid=300s; # Google DNS Servers
         resolver_timeout 5s;
 
+# Redirect to HTTPS
+server {
+        listen 80;
+        server_name localhost;
+        return 301 https://$server_name$request_uri;
+}
+
 server {
         #listen 80; # Uncomment to also listen for HTTP requests
-        listen 443 ssl;
+        listen 443 ssl http2; # HTTP/2 is only possible when using SSL
         server_name localhost;
 
         ssl_certificate ssl/server.crt;
@@ -258,16 +277,11 @@ server {
 
         root /usr/share/nginx/html;
         location / {
-            index  index.html index.htm;
+            index index.html index.htm;
         }
 }
 
 ```
-
-**Tip:**
-
-*   Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS) which includes [nginx specific](https://wiki.mozilla.org/Security/Server_Side_TLS#Nginx) configuration guidelines as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
-*   [Cipherli.st](https://cipherli.st) provides strong SSL implementation examples and tutorial for most modern webservers.
 
 [Restart](/index.php/Restart "Restart") the `nginx` service to apply any changes.
 

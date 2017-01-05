@@ -97,9 +97,9 @@ As of version 2.6.7, FVWM ships with a new default configuration, located in `/u
 
 For its virtual desktop, FVWM implements both workspaces (used by window managers such as Metacity and [Openbox](/index.php/Openbox "Openbox")) and viewports (used by window managers such as Compiz). See [[2]](http://www.circuitousroot.com/artifice/programming/useful/fvwm/viewports/index.html) for a description of the differences between workspaces and viewports. FVWM refers to workspaces as desks and viewports as pages.
 
-Pages in FVWM are arranged in a grid. The number of pages used can be defined with the `DesktopSize` command. For instance, adding `DesktopSize 3x3` to your configuration file will give you 9 pages, arranged in a 3x3 grid. Pages can be navigated using the [pager module](#FvwmPager) or with the `MoveToPage` command which could be mapped to a keyboard shortcut or menu entry. For instance, the command `MoveToPage -1p +0p` will move the viewport 1 page to the left of the current page.
+Pages in FVWM are arranged in a grid. The number of pages used can be defined with the `DesktopSize` command. For instance, adding `DesktopSize 3x3` to your configuration file will give you 9 pages, arranged in a 3x3 grid. Pages can be navigated using the [pager module](#FvwmPager) or with the `GoToPage` command which could be mapped to a keyboard shortcut or menu entry. For instance, the command `GoToPage -1p +0p` will move the viewport 1 page to the left of the current page.
 
-The number of desks available in FVWM is very large, the minimum desk number is -2147483648 and the maximum is 2147483647\. By default, FVWM starts on desk 0\. Desks can be navigated using the pager module (if it is configured to show a number of desks) or with the `MoveToDesk` command - `MoveToDesk +1` will move to the next desk, relative to the currently used desk.
+The number of desks available in FVWM is very large, the minimum desk number is -2147483648 and the maximum is 2147483647\. By default, FVWM starts on desk 0\. Desks can be navigated using the pager module (if it is configured to show a number of desks) or with the `GoToDesk` command - `GoToDesk +1` will move to the next desk, relative to the currently used desk.
 
 ### Keyboard and mouse bindings
 

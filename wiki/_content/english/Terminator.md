@@ -13,7 +13,7 @@
 
 ## Installation
 
-[terminator](https://www.archlinux.org/packages/?name=terminator) is available in the [official repositories](/index.php/Official_repositories "Official repositories"). Development has [ceased](https://launchpad.net/terminator/trunk/1.0) on this version, including bug fixes. Development is now focused on the new GTK3/VTE3 version, which currently has no stable release. Install [terminator-gtk3-bzr](https://aur.archlinux.org/packages/terminator-gtk3-bzr/) for the latest (trunk) version.
+[terminator](https://www.archlinux.org/packages/?name=terminator) is available in the [official repositories](/index.php/Official_repositories "Official repositories"). Install [terminator-gtk3-bzr](https://aur.archlinux.org/packages/terminator-gtk3-bzr/) for the latest (trunk) version.
 
 ## Configuration
 

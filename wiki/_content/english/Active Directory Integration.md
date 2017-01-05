@@ -33,11 +33,13 @@ This document is not an intended as a complete guide to Active Directory nor Sam
     *   [3.4 Testing Samba commands](#Testing_Samba_commands)
 *   [4 Configuring PAM](#Configuring_PAM)
     *   [4.1 system-auth](#system-auth)
-        *   [4.1.1 "auth" section"](#.22auth.22_section.22)
+        *   [4.1.1 "auth" section](#.22auth.22_section)
         *   [4.1.2 "account" section](#.22account.22_section)
         *   [4.1.3 "password" section](#.22password.22_section)
         *   [4.1.4 "session" section](#.22session.22_section)
-    *   [4.2 Testing login](#Testing_login)
+    *   [4.2 passwd](#passwd)
+        *   [4.2.1 "password" section](#.22password.22_section_2)
+    *   [4.3 Testing login](#Testing_login)
 *   [5 Configuring Shares](#Configuring_Shares)
 *   [6 Adding a machine keytab file and activating password-free kerberized ssh to the machine](#Adding_a_machine_keytab_file_and_activating_password-free_kerberized_ssh_to_the_machine)
     *   [6.1 Creating a machine key tab file](#Creating_a_machine_key_tab_file)
@@ -491,7 +493,7 @@ The Arch Linux PAM configuration keeps the central auth process in `/etc/pam.d/s
 
 ### system-auth
 
-#### "auth" section"
+#### "auth" section
 
 Find the line:
 
@@ -567,6 +569,26 @@ Below the pam_unix line, add these:
 ```
 session [success=1 default=ignore] pam_localuser.so
 session required pam_winbind.so
+
+```
+
+### passwd
+
+#### "password" section
+
+In order for logged-in Active Directory users to be able to change their passwords with the 'passwd' command, the file `/etc/pam.d/passwd` must include the information from system-auth.
+
+Find the line:
+
+```
+password required pam_unix.so sha512 shadow nullok
+
+```
+
+Delete it, and replace with:
+
+```
+password include system-auth
 
 ```
 

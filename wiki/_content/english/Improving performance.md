@@ -16,9 +16,12 @@ This article provides information on basic system diagnostics relating to perfor
     *   [2.4 Tuning kernel parameters](#Tuning_kernel_parameters)
         *   [2.4.1 USB storage devices](#USB_storage_devices)
     *   [2.5 Tuning IO schedulers](#Tuning_IO_schedulers)
-        *   [2.5.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
-        *   [2.5.2 systemd-tmpfiles](#systemd-tmpfiles)
-        *   [2.5.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
+        *   [2.5.1 Background](#Background)
+        *   [2.5.2 Change at runtime](#Change_at_runtime)
+        *   [2.5.3 Persisting the change](#Persisting_the_change)
+            *   [2.5.3.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
+            *   [2.5.3.2 systemd-tmpfiles](#systemd-tmpfiles)
+            *   [2.5.3.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
     *   [2.6 Power management configuration](#Power_management_configuration)
     *   [2.7 Reduce disk reads/writes](#Reduce_disk_reads.2Fwrites)
         *   [2.7.1 Show disk writes](#Show_disk_writes)
@@ -26,6 +29,7 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.7.3 Compiling in tmpfs](#Compiling_in_tmpfs)
         *   [2.7.4 Disabling journaling on the filesystem](#Disabling_journaling_on_the_filesystem)
         *   [2.7.5 Swap space](#Swap_space)
+    *   [2.8 Storage I/O scheduling with ionice](#Storage_I.2FO_scheduling_with_ionice)
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
     *   [3.2 Verynice](#Verynice)
@@ -166,6 +170,8 @@ See also [[2]](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freez
 
 ### Tuning IO schedulers
 
+**Warning:** Only the CFQ scheduler supports setting IO priorities with ionice. Some background processes rely on this capability to perform background IO unobtrusively by reducing their IO priority, for example KDE's file indexer baloo. Using a different scheduler than the default CFQ scheduler can worsen the user experience on desktops. [[5]](https://blogs.kde.org/2014/10/15/ubuntus-linux-scheduler-or-why-baloo-might-be-slowing-your-system-1404)
+
 The kernel officially supports the following schedulers for storage disk in-/output (IO):
 
 *   [CFQ](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") scheduler (Completely Fair Queuing)
@@ -185,6 +191,8 @@ scsi_mod.use_blk_mq=y dm_mod.use_blk_mq=y
 
 **Note:** Using blk_mq is an all-or-nothing proposition. When enabled all IO schedulers are disabled which is fine for SSDs but doing this may [negatively impact performance of rotational discs](https://mahmoudhatem.wordpress.com/2016/02/08/oracle-uek-4-where-is-my-io-scheduler-none-multi-queue-model-blk-mq/).
 
+#### Background
+
 A HDD has spinning disks and head that move physically to the required location. Such structure leads to following characteristics:
 
 *   random latency is quite high, for modern HDDs it is ~10ms (ignoring a disk controller write buffer).
@@ -199,6 +207,8 @@ While these schedulers try to improve total throughput they also might leave som
 CFQ (the default scheduler nowadays) aggregates all ideas from above and adds `cgroup` support that allows to reserve some amount of IO to a specific `cgroup`. It is useful on shared (and cloud) hosting - users who paid for 20 IO/s want to get their share if needed.
 
 The characteristics of a SSD are different. It does not have moving parts. Random access is as fast as sequential one. An SSD can handle multiple requests at the same time. Modern devices' throughput ~10K IO/s, which is higher than workload on most systems. Essentially a user cannot generate enough requests to saturate a SDD, the requests queue is effectively always empty. In this case IO scheduler does not provide any improvements. Thus, it is recommended to use the **noop** scheduler for an SSD.
+
+#### Change at runtime
 
 It is possible to change the scheduler at runtime and even to use different schedulers for separate storage devices at the same time. Available schedulers can be queried by viewing the contents of `/sys/block/sd**X**/queue/scheduler` (the active scheduler is denoted by brackets):
 
@@ -217,11 +227,13 @@ Users can change the active scheduler at runtime without the need to reboot, for
 
 This method is non-persistent and will be lost upon rebooting.
 
-#### Kernel parameter (for a single device)
+#### Persisting the change
+
+##### Kernel parameter (for a single device)
 
 If the sole storage device in the system is an SSD, consider setting the I/O scheduler for the entire system via the `elevator=noop` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
-#### systemd-tmpfiles
+##### systemd-tmpfiles
 
 If you have more than one storage device, or wish to avoid clutter on the kernel cmdline, you can set the I/O scheduler via `systemd-tmpfiles`:
 
@@ -229,7 +241,7 @@ If you have more than one storage device, or wish to avoid clutter on the kernel
 
 For more detail on `systemd-tmpfiles` see [Systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd").
 
-#### Using udev for one device or HDD/SSD mixed environment
+##### Using udev for one device or HDD/SSD mixed environment
 
 Though the above will undoubtedly work, it is probably considered a reliable workaround. Ergo, it would be preferred to use the system that is responsible for the devices in the first place to implement the scheduler. In this case it is udev, and to do this, all one needs is a simple [udev](/index.php/Udev "Udev") rule.
 
@@ -259,7 +271,7 @@ When dealing with traditional rotational disks (HDD's) you may want to [lower or
 
 Avoiding unnecessary access to slow storage drives is good for performance and also increasing lifetime of the devices, although on modern hardware the difference in life expectancy is usually negligible.
 
-**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[6]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
+**Note:** A 32GB SSD with a mediocre 10x write amplification factor, a standard 10000 write/erase cycle, and **10GB of data written per day**, would get an **8 years life expectancy**. It gets better with bigger SSDs and modern controllers with less write amplification. Also compare [[7]](http://techreport.com/review/25889/the-ssd-endurance-experiment-500tb-update) when considering whether any particular strategy to limit disk writes is actually needed.
 
 #### Show disk writes
 
@@ -286,6 +298,19 @@ Using a journaling filesystem such as ext4 on an SSD **without** a journal is an
 #### Swap space
 
 See [Swap#Swappiness](/index.php/Swap#Swappiness "Swap").
+
+### Storage I/O scheduling with ionice
+
+Many tasks such as backups do not rely on a short storage I/O delay or high storage I/O bandwidth to fulfil their task, they can be classified as background tasks. On the other hand quick I/O is necessary for good UI responsiveness on the desktop. Therefore it is beneficial to reduce the amount of storage bandwidth available to background tasks, whilst other tasks are in need of storage I/O. This can be achieved by making use of the linux I/O scheduler CFQ, which allows setting different priorities for processes.
+
+The I/O priority of a background process can be reduced to the "Idle" level by starting it with
+
+```
+# ionice -c 3 command
+
+```
+
+See man ionice(1) and [[8]](https://www.cyberciti.biz/tips/linux-set-io-scheduling-class-priority.html) for more information.
 
 ## CPU
 
@@ -420,7 +445,7 @@ Every time a connection is made, the system must first resolve a fully qualified
 
 ## Watchdogs
 
-According to [[7]](https://en.wikipedia.org/wiki/Watchdog_timer):
+According to [[9]](https://en.wikipedia.org/wiki/Watchdog_timer):
 
 	A watchdog timer [...] is an electronic timer that is used to detect and recover from computer malfunctions. During normal operation, the computer regularly resets the watchdog timer [...]. If, [...], the computer fails to reset the watchdog, the timer will elapse and generate a timeout signal [...] used to initiate corrective [...] actions [...] typically include placing the computer system in a safe state and restoring normal system operation.
 
@@ -448,4 +473,4 @@ After you disabled watchdogs, you can *optionally* avoid the loading of the modu
 
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](https://wiki.archlinux.org/index.php/Power_management#Disabling_NMI_watchdog).
 
-See [[8]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[9]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[10]](http://0pointer.de/blog/projects/watchdog.html), and [[11]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+See [[10]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[11]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[12]](http://0pointer.de/blog/projects/watchdog.html), and [[13]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.

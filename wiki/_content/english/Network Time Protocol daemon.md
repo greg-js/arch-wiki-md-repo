@@ -277,6 +277,7 @@ Create a suitable chroot environment so that getaddrinfo() will work by creating
 
 ```
 # mkdir /var/lib/ntp/etc /var/lib/ntp/lib /var/lib/ntp/proc
+# mkdir /var/lib/ntp/usr /var/lib/ntp/usr/lib
 # touch /var/lib/ntp/etc/resolv.conf /var/lib/ntp/etc/services
 
 ```
@@ -290,6 +291,7 @@ and by bind-mounting the aformentioned files:
 /etc/resolv.conf  /var/lib/ntp/etc/resolv.conf none bind 0 0
 /etc/services	  /var/lib/ntp/etc/services none bind 0 0
 /lib		  /var/lib/ntp/lib none bind 0 0
+/usr/lib	  /var/lib/ntp/usr/lib none bind 0 0
 /proc		  /var/lib/ntp/proc none bind 0 0
 
 ```

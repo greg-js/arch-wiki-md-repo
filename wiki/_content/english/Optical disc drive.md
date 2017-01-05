@@ -605,7 +605,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://littlesvr.ca/isomaster](http://littlesvr.ca/isomaster) || [isomaster](https://aur.archlinux.org/packages/isomaster/)
 
-*   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD burning application based on KDElibs.
+*   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD burning and ripping application based on KDElibs.
 
 	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
@@ -661,11 +661,11 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **[Grip](https://en.wikipedia.org/wiki/Grip_(software) "wikipedia:Grip (software)")** — Fast and light CD ripper within the GNOME project that resembles [Audiograbber](https://en.wikipedia.org/wiki/Audiograbber "wikipedia:Audiograbber").
 
-	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip)
+	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip).
 
-*   **KAudioCreator** — Program for ripping and encoding Audio CDs and encoding files from disk.
+*   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD/DVD burning and ripping application based on KDElibs.
 
-	[http://kde-apps.org/content/show.php/KAudioCreator?content=107645](http://kde-apps.org/content/show.php/KAudioCreator?content=107645) || [kaudiocreator](https://www.archlinux.org/packages/?name=kaudiocreator)
+	[http://www.k3b.org/](http://www.k3b.org/) || [k3b](https://www.archlinux.org/packages/?name=k3b)
 
 *   **morituri** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
 
@@ -707,6 +707,10 @@ Often, the process of ripping a DVD can be broken down into two subtasks:
 2.  [Transcoding](https://en.wikipedia.org/wiki/Transcode "wikipedia:Transcode") — Converting the extracted data into a suitable format.
 
 Some utilities perform both tasks, whilst others focus on one aspect or the other:
+
+*   **Avidemux** — Multithreaded video transcoder, which offers both a graphical and command-line interface with many preset configurations. Influenced by Handbrake.
+
+	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux](https://www.archlinux.org/packages/?name=avidemux)
 
 *   **dvd-vr** — Tool which easily converts VRO files extracted from a [DVD-VR](https://en.wikipedia.org/wiki/DVD-VR "wikipedia:DVD-VR") and splits them in regular VOB files.
 
@@ -843,7 +847,7 @@ Sometimes:
 
 Any speed that is supported by the drive can be used, or 0 for the maximum speed.
 
-[Setting CD-ROM and DVD-ROM drive speed](http://hektor.umcs.lublin.pl/~mikosmul/computing/tips/cd-rom-speed.html)
+[Setting CD-ROM and DVD-ROM drive speed](http://michal.kosmulski.org/computing/tips/cd-rom-speed.html)
 
 ### Playback does not work with new computer (new DVD-Drive)
 

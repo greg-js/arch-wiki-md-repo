@@ -11,7 +11,8 @@ PIA is a subscription based service provided from [PIA](https://www.privateinter
     *   [3.3 Automatically connect to VPN](#Automatically_connect_to_VPN)
     *   [3.4 Advanced Options](#Advanced_Options)
 *   [4 Example Configuration](#Example_Configuration)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+*   [6 See also](#See_also)
 
 ## Requirements
 
@@ -113,6 +114,37 @@ openvpn_auto_login = True
 apps = cm
 port = 8080
 hosts = US East, US West, Japan, UK London, UK Southampton
+
+```
+
+## Troubleshooting
+
+Concerning DNS Leaks (See: [python-pia/#13](https://github.com/flamusdiu/python-pia/issues/13)), Network Manager leak information due to how /etc/resolv.conf is setup. The script below is a work around posted by [@maximbaz](https://github.com/maximbaz) to work around the problem.
+
+ `/etc/NetworkManager/dispatcher.d/pia-vpn` 
+```
+
+#!/bin/bash
+#/etc/NetworkManager/dispatcher.d/pia-vpn
+
+interface="$1"
+status=$2
+
+case $status in
+  vpn-up)
+    if [[ $interface == "tun0" ]]; then
+      chmod +w /etc/resolv.conf
+      echo -e "nameserver 209.222.18.222
+nameserver 209.222.18.218" > /etc/resolv.conf
+      chmod -w /etc/resolv.conf
+    fi
+    ;;
+  vpn-down)
+    if [[ $interface == "tun0" ]]; then
+      chmod +w /etc/resolv.conf
+    fi
+    ;;
+esac
 
 ```
 

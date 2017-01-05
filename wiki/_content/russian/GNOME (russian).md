@@ -194,7 +194,7 @@ GNOME может быть запущен как графически, испол
 
 ### Приложения GNOME в Wayland
 
-Когда используется сессия *GNOME*, соответствующие приложения будут запущены используя Wayland. Смотрите текущий статус Wayland для приложений GNOME [здесь](https://wiki.gnome.org/Initiatives/Wayland/Applications/).
+Когда используется сессия *GNOME*, соответствующие приложения будут запущены используя Wayland. Смотрите текущий статус Wayland для приложений GNOME [здесь](https://wiki.gnome.org/Initiatives/Wayland/Applications/). Для отладки смотрите [руководство GTK+](https://developer.gnome.org/gtk3/stable/gtk-running.html), в нем перечислены параметры и переменные окружения.
 
 ## Навигация
 

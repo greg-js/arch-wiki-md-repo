@@ -6,20 +6,19 @@
 *   [2 Setup](#Setup)
 *   [3 Running sensors](#Running_sensors)
     *   [3.1 Reading SPD values from memory modules (optional)](#Reading_SPD_values_from_memory_modules_.28optional.29)
-*   [4 Using Sensor Data](#Using_Sensor_Data)
-    *   [4.1 Graphical Front-ends](#Graphical_Front-ends)
+*   [4 Using sensor data](#Using_sensor_data)
+    *   [4.1 Graphical front-ends](#Graphical_front-ends)
     *   [4.2 sensord](#sensord)
-*   [5 Tips and Tricks](#Tips_and_Tricks)
-    *   [5.1 Adjusting Values](#Adjusting_Values)
-        *   [5.1.1 Example 1\. Adjusting Temperature Offsets](#Example_1._Adjusting_Temperature_Offsets)
-        *   [5.1.2 Example 2\. Renaming Labels](#Example_2._Renaming_Labels)
-        *   [5.1.3 Example 3\. Renumbering Cores for Multi-CPU Systems](#Example_3._Renumbering_Cores_for_Multi-CPU_Systems)
-    *   [5.2 Automatic lm_sensors Deployment](#Automatic_lm_sensors_Deployment)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Adjusting values](#Adjusting_values)
+        *   [5.1.1 Example 1\. Adjusting temperature offsets](#Example_1._Adjusting_temperature_offsets)
+        *   [5.1.2 Example 2\. Renaming labels](#Example_2._Renaming_labels)
+        *   [5.1.3 Example 3\. Renumbering cores for multi-CPU systems](#Example_3._Renumbering_cores_for_multi-CPU_systems)
+    *   [5.2 Automatic lm_sensors deployment](#Automatic_lm_sensors_deployment)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 K10Temp Module](#K10Temp_Module)
-    *   [6.2 Sensors not working since Linux 2.6.31](#Sensors_not_working_since_Linux_2.6.31)
-    *   [6.3 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
-    *   [6.4 Laptop Screen issues after running sensors-detect](#Laptop_Screen_issues_after_running_sensors-detect)
+    *   [6.1 K10Temp module](#K10Temp_module)
+    *   [6.2 Gigabyte GA-J1900N-D3V](#Gigabyte_GA-J1900N-D3V)
+    *   [6.3 Laptop screen issues after running sensors-detect](#Laptop_screen_issues_after_running_sensors-detect)
 
 ## Installation
 
@@ -179,9 +178,9 @@ Part Number                                     OCZ3G1600LV2G
 
 ```
 
-## Using Sensor Data
+## Using sensor data
 
-### Graphical Front-ends
+### Graphical front-ends
 
 There are a variety of front-ends for sensors data.
 
@@ -200,9 +199,9 @@ For specific [Desktop environments](/index.php/Desktop_environments "Desktop env
 
 There is an optional daemon called sensord (included with the [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) package) which can log data to a round robin database (rrd) and later visualize graphically. See the sensord man page for details.
 
-## Tips and Tricks
+## Tips and tricks
 
-### Adjusting Values
+### Adjusting values
 
 In some cases, the data displayed might be incorrect or users may wish to rename the output. Use cases include:
 
@@ -214,7 +213,7 @@ All of the above (and more) can be adjusted by overriding the package provides s
 
 **Note:** Do not edit /etc/sensors3.conf directly since package updates will overwrite any changes thus losing them.
 
-#### Example 1\. Adjusting Temperature Offsets
+#### Example 1\. Adjusting temperature offsets
 
 This is a real example on a Zotac ION-ITX-A-U motherboard. The coretemp values are off by 20 °C (too high) and are adjusted down to Intel specs.
 
@@ -271,7 +270,7 @@ Core 1:       +35.0°C  (crit = +105.0°C)
 
 ```
 
-#### Example 2\. Renaming Labels
+#### Example 2\. Renaming labels
 
 This is a real example on an Asus A7M266\. The user wishes more verbose names for the temperature labels 'temp1' and 'temp2':
 
@@ -309,7 +308,7 @@ CPU0 Temp:        +47.5°C  (high = +100.0°C, hyst = +75.0°C)
 
 ```
 
-#### Example 3\. Renumbering Cores for Multi-CPU Systems
+#### Example 3\. Renumbering cores for multi-CPU systems
 
 This is a real example on an HP Z600 workstation with dual Xeons. The actual numbering of physical cores is incorrect: numbered 0, 1, 9, 10 which is repeated into the second CPU. Most users expect the core temperatures to report out in sequential order, i.e. 0,1,2,3,4,5,6,7.
 
@@ -422,7 +421,7 @@ Core7:        +60.0°C  (high = +85.0°C, crit = +95.0°C)
 
 ```
 
-### Automatic lm_sensors Deployment
+### Automatic lm_sensors deployment
 
 Users wishing to deploy lm_sensors on multiple machines can use either of the following:
 
@@ -442,7 +441,7 @@ Users wishing to deploy lm_sensors on multiple machines can use either of the fo
 
 ## Troubleshooting
 
-### K10Temp Module
+### K10Temp module
 
 Some K10 processors have issues with their temperature sensor. From the kernel documentation (`linux-<version>/Documentation/hwmon/k10temp`):
 
@@ -467,19 +466,6 @@ options k10temp force=1
 
 This will allow the module to load at boot.
 
-### Sensors not working since Linux 2.6.31
-
-A change in version 2.6.31 has made some sensors stop working. See [this FAQ entry](http://web.archive.org/web/20140630034601/http://www.lm-sensors.org/wiki/FAQ/Chapter3#Mysensorshavestoppedworkinginkernel2.6.31) for a detailed explanation and for some example errors. In most cases the information is still accessible via other modules (e.g. via ACPI modules) for the hardware in question. Many utilities and monitors (e.g. `/usr/bin/sensors`) can gather information from either source. Where possible, this is the preferred solution.
-
-**Warning:** The following workaround is risky and has the potential to damage your hardware. The change in 2.6.31 is not a bug, but a fix to remove that risk. Consult the aforementioned FAQ entry for details.
-
-If you want to restore pre-2.6.31-behaviour, add the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
-
-```
-acpi_enforce_resources=lax
-
-```
-
 ### Gigabyte GA-J1900N-D3V
 
 The motherboard use the ITE IT8620E chip (useful also to read voltages, mainboard temp, fan speed). As of October 2014, lm_sensors has no driver support for chip ITE IT8620E [[1]](https://hwmon.wiki.kernel.org/device_support_status_g_i) [[2]](http://comments.gmane.org/gmane.linux.drivers.sensors/35168). lm_sensors developers had a report that the chip is somewhat compatible with the IT8728F for the hardware monitoring part. However, as of August 2016, [[3]](https://www.kernel.org/doc/Documentation/hwmon/it87) lists the IT8620E as supported.
@@ -499,6 +485,6 @@ Once the module is loaded you can use the *sensors* tool to probe the chip.
 
 Now you can also use [fancontrol](/index.php/Fancontrol "Fancontrol") to control the speedsteps of your case fan.
 
-### Laptop Screen issues after running sensors-detect
+### Laptop screen issues after running sensors-detect
 
 This is caused by lm-sensors messing with the Vcom values of the screen while probing for sensors. It has been discussed and solved at the forums already: [https://bbs.archlinux.org/viewtopic.php?id=193048](https://bbs.archlinux.org/viewtopic.php?id=193048) However, make sure to read through the thread carefully before running any of the suggested commands.

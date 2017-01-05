@@ -181,7 +181,9 @@ $ hex2hcd BCM4350C5_003.006.007.0095.1703.hex
 
 ```
 
-After reboot, the firmware should be available for your Bluetooth interface.
+Alternatively, you may simply install [bcm4350-firmware](https://aur.archlinux.org/packages/bcm4350-firmware/).
+
+After a reboot, the firmware should be available for your Bluetooth interface.
 
 ## Video
 

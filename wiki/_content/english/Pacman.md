@@ -19,6 +19,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [1.5 Cleaning the package cache](#Cleaning_the_package_cache)
     *   [1.6 Additional commands](#Additional_commands)
     *   [1.7 Installation reason](#Installation_reason)
+    *   [1.8 Search for a package that contains a specific file](#Search_for_a_package_that_contains_a_specific_file)
 *   [2 Configuration](#Configuration)
     *   [2.1 General options](#General_options)
         *   [2.1.1 Comparing versions before updating](#Comparing_versions_before_updating)
@@ -34,19 +35,18 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
     *   [3.2 "Failed to commit transaction (invalid or corrupted package)" error](#.22Failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22_error)
     *   [3.3 "Failed to init transaction (unable to lock database)" error](#.22Failed_to_init_transaction_.28unable_to_lock_database.29.22_error)
     *   [3.4 Packages cannot be retrieved on installation](#Packages_cannot_be_retrieved_on_installation)
-    *   [3.5 Search for a package that contains a specific file](#Search_for_a_package_that_contains_a_specific_file)
-    *   [3.6 Manually reinstalling pacman](#Manually_reinstalling_pacman)
-    *   [3.7 pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade)
-    *   [3.8 "Unable to find root device" error after rebooting](#.22Unable_to_find_root_device.22_error_after_rebooting)
-    *   [3.9 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
-    *   [3.10 Request on importing PGP keys](#Request_on_importing_PGP_keys)
-    *   [3.11 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
-    *   [3.12 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
-    *   [3.13 pacman does not honor proxy settings](#pacman_does_not_honor_proxy_settings)
-    *   [3.14 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
-    *   [3.15 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
-    *   [3.16 Freeze of package downloads](#Freeze_of_package_downloads)
-    *   [3.17 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
+    *   [3.5 Manually reinstalling pacman](#Manually_reinstalling_pacman)
+    *   [3.6 pacman crashes during an upgrade](#pacman_crashes_during_an_upgrade)
+    *   [3.7 "Unable to find root device" error after rebooting](#.22Unable_to_find_root_device.22_error_after_rebooting)
+    *   [3.8 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.9 Request on importing PGP keys](#Request_on_importing_PGP_keys)
+    *   [3.10 Signature from "User <email@archlinux.org>" is invalid, installation failed](#Signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.2C_installation_failed)
+    *   [3.11 "Warning: current locale is invalid; using default "C" locale" error](#.22Warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.22_error)
+    *   [3.12 pacman does not honor proxy settings](#pacman_does_not_honor_proxy_settings)
+    *   [3.13 How do I reinstall all packages, retaining information on whether something was explicitly installed or as a dependency?](#How_do_I_reinstall_all_packages.2C_retaining_information_on_whether_something_was_explicitly_installed_or_as_a_dependency.3F)
+    *   [3.14 "Cannot open shared object file" error](#.22Cannot_open_shared_object_file.22_error)
+    *   [3.15 Freeze of package downloads](#Freeze_of_package_downloads)
+    *   [3.16 Failed retrieving file 'core.db' from mirror](#Failed_retrieving_file_.27core.db.27_from_mirror)
 *   [4 See also](#See_also)
 
 ## Usage
@@ -439,6 +439,31 @@ To change the installation reason of an already installed package, execute:
 
 Use `--asexplicit` to do the opposite operation.
 
+### Search for a package that contains a specific file
+
+Sync the files database:
+
+```
+# pacman -Fy
+
+```
+
+Search for a package containing a file, e.g.:
+
+```
+# pacman -Fs pacman
+core/pacman 5.0.1-4
+    usr/bin/pacman
+    usr/share/bash-completion/completions/pacman
+extra/xscreensaver 5.36-1
+    usr/lib/xscreensaver/pacman
+
+```
+
+**Tip:** You can set a cron job or a systemd timer to sync the files database regularly.
+
+For advanced functionality install [pkgfile](/index.php/Pkgfile "Pkgfile"), which uses a separate database with all files and their associated packages.
+
 ## Configuration
 
 *pacman'*s settings are located in `/etc/pacman.conf`: this is the place where the user configures the program to work in the desired manner. In-depth information about the configuration file can be found in [pacman.conf(5)](https://www.archlinux.org/pacman/pacman.conf.5.html).
@@ -528,7 +553,7 @@ Each repository section allows defining the list of its mirrors directly or in a
 
 ### "Failed to commit transaction (conflicting files)" error
 
-If you see the following error: [[2]](https://bbs.archlinux.org/viewtopic.php?id=56373)
+If you see the following error: [[1]](https://bbs.archlinux.org/viewtopic.php?id=56373)
 
 ```
 error: could not prepare transaction
@@ -577,10 +602,6 @@ Firstly, ensure the package actually exists (and watch out for typos!). If certa
 It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the *multilib* repository, but *multilib* is not enabled in your *pacman.conf*.
 
 See also [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
-
-### Search for a package that contains a specific file
-
-Install [pkgfile](/index.php/Pkgfile "Pkgfile") which uses a separate database with all files and their associated packages.
 
 ### Manually reinstalling pacman
 
@@ -703,7 +724,7 @@ That's it. Update the rest of the system.
 
 ### Freeze of package downloads
 
-Some issues have been reported regarding network problems that prevent *pacman* from updating/synchronizing repositories. [[3]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[4]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default *pacman* file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using *Host interface* instead of *NAT* in the machine properties.
+Some issues have been reported regarding network problems that prevent *pacman* from updating/synchronizing repositories. [[2]](https://bbs.archlinux.org/viewtopic.php?id=68944) [[3]](https://bbs.archlinux.org/viewtopic.php?id=65728) When installing Arch Linux natively, these issues have been resolved by replacing the default *pacman* file downloader with an alternative (see [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance") for more details). When installing Arch Linux as a guest OS in [VirtualBox](/index.php/VirtualBox "VirtualBox"), this issue has also been addressed by using *Host interface* instead of *NAT* in the machine properties.
 
 ### Failed retrieving file 'core.db' from mirror
 

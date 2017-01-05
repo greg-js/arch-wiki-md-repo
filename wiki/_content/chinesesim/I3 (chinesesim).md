@@ -17,7 +17,7 @@ i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的
     *   [4.1 配置助手和可选键盘布局](#.E9.85.8D.E7.BD.AE.E5.8A.A9.E6.89.8B.E5.92.8C.E5.8F.AF.E9.80.89.E9.94.AE.E7.9B.98.E5.B8.83.E5.B1.80)
     *   [4.2 颜色主题](#.E9.A2.9C.E8.89.B2.E4.B8.BB.E9.A2.98)
     *   [4.3 i3bar](#i3bar)
-    *   [4.4 i3bar可选方案 =](#i3bar.E5.8F.AF.E9.80.89.E6.96.B9.E6.A1.88_.3D)
+    *   [4.4 i3bar可选方案](#i3bar.E5.8F.AF.E9.80.89.E6.96.B9.E6.A1.88)
     *   [4.5 i3status](#i3status)
         *   [4.5.1 i3status可选方案](#i3status.E5.8F.AF.E9.80.89.E6.96.B9.E6.A1.88)
         *   [4.5.2 i3status 包装器](#i3status_.E5.8C.85.E8.A3.85.E5.99.A8)
@@ -110,11 +110,6 @@ The configuration file allows for customization of window decoration colors, but
 
 	[https://github.com/acrisci/i3-style](https://github.com/acrisci/i3-style) || [nodejs-i3-style](https://aur.archlinux.org/packages/nodejs-i3-style/)
 
-```
-	+	
-
-```
-
 *   **j4-make-config** — Merge your config with a collection of themes or personal config parts, for example host-specific configuration, allowing quick changing of the theme and flexible, dynamic customization of the configuration
 
 	[https://github.com/okraits/j4-make-config](https://github.com/okraits/j4-make-config) || [j4-make-config-git](https://aur.archlinux.org/packages/j4-make-config-git/)
@@ -149,7 +144,7 @@ bar {
 
 更多细节，见[Configuring i3bar](http://i3wm.org/docs/userguide.html#_configuring_i3bar) 。
 
-### i3bar可选方案 =
+### i3bar可选方案
 
 一些用户可能更偏好于类似于常规 [桌面环境](/index.php/Desktop_environment "Desktop environment") 提供的面板。这可以通过在 i3 启动时运行面板程序达成。
 
@@ -192,28 +187,13 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 *   {{App|i3pystatus|默认带有许多插件和选项的可扩展 Python 3 状态栏 |[https://github.com/enkore/i3pystatus](https://github.com/enkore/i3pystatus) i3pystatus|[i3pystatus-git](https://aur.archlinux.org/packages/i3pystatus-git/)}
 
-```
-	+	
-
-```
-
 *   **i3situation** — 另一个 Python 3 状态栏生成器。
 
 	[https://github.com/HarveyHunt/i3situation](https://github.com/HarveyHunt/i3situation) || [i3situation-git](https://aur.archlinux.org/packages/i3situation-git/)
 
-```
-	+	
-
-```
-
 *   **j4status** — 提供了状态栏，可以通过插件扩展，且是用 C 写成的。额外的插件由[j4status-plugins-git](https://aur.archlinux.org/packages/j4status-plugins-git/).
 
 	[http://j4status.j4tools.org/](http://j4status.j4tools.org/) || [j4status-git](https://aur.archlinux.org/packages/j4status-git/)提供
-
-```
-	+	
-
-```
 
 *   **goi3bar** — Go 写的 i3status 替代品。配置文件同时还有各种插件，并发选项和丰富的插件支持。
 

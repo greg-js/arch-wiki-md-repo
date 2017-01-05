@@ -89,6 +89,14 @@ CPU frequency scaling: untested | Untested | Webcam: untested
 Hotkeys: OK
 Synaptic Touchpad: OK
 HDMI: untested |
+| Acer Nitro VN7-792G-751Y | archlinux-2016-12-01-dual | Intel HD 530
+Nvidia GeForce GTX 960M 4GB VRAM | OK | Realtek: OK | OK | OK | Suspend to RAM: Yes
+Disk: Yes
+Battery: Yes
+CPU frequency scaling: untested | Untested | Webcam: Yes
+Hotkeys: OK
+Synaptic Touchpad: OK
+HDMI: **Does not work** |
 | [Aspire One Cloudbook 11](/index.php/Acer_Cloudbook "Acer Cloudbook") | archlinux-201608 | Intel HD Graphics 400 | OK, HDA-Intel | N/A | OK, Qualcomm Atheros | OK | Suspend to RAM: Yes
 Disk: Not tested
 Battery: Yes
@@ -96,3 +104,18 @@ CPU frequency scaling: Ok | N/A | Webcam: Ok
 Hotkeys: Some
 Synaptic Touchpad: OK (Set to Basic in BIOS)
 HDMI: untested | First boot after a UEFI install will typically stop with a "No media found" message. Go into BIOS and navigate to "Select an UEFI file as trusted". Note that a Supervisor password must be set to change these parameters. |
+| Acer Aspire F5-573G-7791 | 2016.12.01 | OK, NVIDIA GeForce 940MX (NVIDIA Device 179c), [Bumblebee](/index.php/Bumblebee "Bumblebee") 2016.02.05 | OK, Intel Device 9d71
+Driver: snd_hda_intel | OK, Realtek RTL8111/8168/8411 | OK, Intel Wireless 3165 | Not tested fully, initial signs suggest not working | Suspend to RAM: Yes
+Disk: Not tested
+Battery: Yes
+CPU frequency scaling: Unknown | Untested (not present?) | Webcam: Untested
+Hot keys: OK
+Synaptic Touchpad: OK
+HDMI: Untested
+USB:
+
+*   1x USB 2.0: OK
+*   2x USB 3.0: OK
+*   1x USB 3.1 Type-C: Untested
+
+ | (BIOS v1.15) After UEFI installation, must set Supervisor password, add bootloader as trusted, and boot with SecureBoot. BIOS v1.25 reportedly has problems on similar E5 models that were fixed in 1.31 onward. |

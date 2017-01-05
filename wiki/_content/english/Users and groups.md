@@ -408,7 +408,7 @@ Non-root workstation/desktop users often need to be added to some of following g
 
 ### System groups
 
-The following groups are used for system purposes, an assignment to users is only required for dedicated purposos:
+The following groups are used for system purposes, an assignment to users is only required for dedicated purposes:
 
 | Group | Affected files | Purpose |
 | dbus | used internally by [dbus](https://www.archlinux.org/packages/?name=dbus) |

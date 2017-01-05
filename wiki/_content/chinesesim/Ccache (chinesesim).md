@@ -1,21 +1,25 @@
-`gcc` 有一个非常有用的工具叫 `ccache`. 主页位于[这里](http://ccache.samba.org)。
+**翻译状态：** 本文是英文页面 [Ccache](/index.php/Ccache "Ccache") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-03，点击[这里](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=450899)可以查看翻译后英文页面的改动。
 
-如果总是不停的编译同一个程序 — 例如实验不同的内核补丁、测试自己的开发等 — 那么 `ccache` 是完美的选择。尽管第一次编译会花费长一点的时间，有了`ccache`，后续的编译将变得非常非常快。
+[Ccache](http://ccache.samba.org) 是一个编译工具，可以加速 gcc 对同一个程序的多次编译。尽管第一次编译会花费长一点的时间，有了`ccache`，后续的编译将变得非常非常快。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 为 makepkg 启用 ccache](#.E4.B8.BA_makepkg_.E5.90.AF.E7.94.A8_ccache)
-    *   [1.2 启用命令行](#.E5.90.AF.E7.94.A8.E5.91.BD.E4.BB.A4.E8.A1.8C)
-    *   [1.3 启用 colorgcc 支持](#.E5.90.AF.E7.94.A8_colorgcc_.E6.94.AF.E6.8C.81)
-*   [2 Misc](#Misc)
-    *   [2.1 修改缓存目录](#.E4.BF.AE.E6.94.B9.E7.BC.93.E5.AD.98.E7.9B.AE.E5.BD.95)
-    *   [2.2 CLI](#CLI)
-*   [3 参见](#.E5.8F.82.E8.A7.81)
+*   [2 配置](#.E9.85.8D.E7.BD.AE)
+    *   [2.1 为 makepkg 启用 ccache](#.E4.B8.BA_makepkg_.E5.90.AF.E7.94.A8_ccache)
+    *   [2.2 启用命令行](#.E5.90.AF.E7.94.A8.E5.91.BD.E4.BB.A4.E8.A1.8C)
+    *   [2.3 启用 colorgcc 支持](#.E5.90.AF.E7.94.A8_colorgcc_.E6.94.AF.E6.8C.81)
+*   [3 Misc](#Misc)
+    *   [3.1 修改缓存目录](#.E4.BF.AE.E6.94.B9.E7.BC.93.E5.AD.98.E7.9B.AE.E5.BD.95)
+    *   [3.2 CLI](#CLI)
+    *   [3.3 makechrootpkg](#makechrootpkg)
+*   [4 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
 
 [安装](/index.php/Pacman "Pacman") 位于 [官方软件仓库](/index.php/Official_repositories "Official repositories") 的 [ccache](https://www.archlinux.org/packages/?name=ccache) 软件包。
+
+## 配置
 
 ### 为 makepkg 启用 ccache
 
@@ -40,6 +44,8 @@ export PATH="/usr/lib/ccache/bin/:$PATH"
 ```
 
 可以将其加入 `~/.bashrc`，这样以后可以一直使用。
+
+如果使用此 PATH，makepkg 也会启用 ccache。
 
 ### 启用 colorgcc 支持
 
@@ -93,7 +99,22 @@ $ ccache -C
 
 ```
 
-## 参见
+### makechrootpkg
 
-*   [ccache 主页](http://ccache.samba.org/)
+makechrootpkg 也可以使用 ccache，要在清理 chroot 后保留缓存，可以使用 makechrootpkg 的 `-d` 选项将 cache 目录从普通系统绑定到 chroot:
+
+```
+$ mkdir /path/of/chroot/ccache
+
+```
+
+```
+$ makechrootpkg -d /path/to/cache/:/ccache -r /path/of/chroot -- CCACHE_DIR=/ccache
+
+```
+
+这样 chroot 中就可以和正常系统中一样配置和使用 ccache.
+
+## 参阅
+
 *   [ccache 手册](http://ccache.samba.org/manual.html)

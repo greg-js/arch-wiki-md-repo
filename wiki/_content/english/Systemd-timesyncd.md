@@ -52,7 +52,7 @@ The NTP server to be used will be determined using the following rules:
 *   The NTP servers defined in `/etc/systemd/timesyncd.conf` will be appended to the per-interface list at runtime and the daemon will contact the servers in turn until one is found that responds.
 *   If no NTP server information is acquired after completing those steps, the NTP server host names or IP addresses defined in `FallbackNTP=` will be used.
 
-**Warning:** The service writes to a local file /var/lib/systemd/clock with every syncronization, this location is hard-coded and cannot be changed. This may be problematic for running off read-only root partition or trying to minimize writes to an SD card.
+**Warning:** The service writes to a local file /var/lib/systemd/clock with every synchronization, this location is hard-coded and cannot be changed. This may be problematic for running off read-only root partition or trying to minimize writes to an SD card.
 
 ## See also
 

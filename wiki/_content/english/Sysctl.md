@@ -99,8 +99,6 @@ net.ipv4.tcp_rfc1337 = 1
 ## protects from attackers that are using ip spoofing methods to do harm
 net.ipv4.conf.default.rp_filter = 1
 net.ipv4.conf.all.rp_filter = 1
-net.ipv6.conf.default.rp_filter = 1
-net.ipv6.conf.all.rp_filter = 1
 
 ## tcp timestamps
 ## + protect against wrapping sequence numbers (at gigabit speeds)

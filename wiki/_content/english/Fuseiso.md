@@ -7,6 +7,7 @@ The *fuseiso* command line program is a simple tool that uses [FUSE](https://en.
     *   [2.1 Mounting an ISO image](#Mounting_an_ISO_image)
         *   [2.1.1 Unmounting](#Unmounting)
 *   [3 Using with GNOME Files](#Using_with_GNOME_Files)
+*   [4 nemo](#nemo)
 
 ## Installation
 
@@ -92,3 +93,7 @@ And a second one:
 This second action will unmount the mounted iso and remove the folder from the desktop.
 
 Sometimes you have to logout to be able to mount any image of the given types simply by right clicking it in Files and selecting *Mount ISO*. To unmount it again, just right click the corresponding folder on your desktop and select *Unmount ISO*.
+
+## nemo
+
+nemo as a file browser has a packaged function on right click to mount an iso. unmount is done by clicking on the respective icon of the mounted iso, just like one would do for USB drives.

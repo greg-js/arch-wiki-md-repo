@@ -38,9 +38,10 @@ There are two JACK implementations, see [this comparison](https://github.com/jac
 
 JACK2 with [D-Bus](/index.php/D-Bus "D-Bus") can be installed via [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus). It is the same as the [jack2](https://www.archlinux.org/packages/?name=jack2) package but does not provide the legacy "jackd" server.
 
-It is controlled by the `jack_control` utility. The important commands are listed below:
+It is controlled by the `jack_control` utility. The jack_control utility requires you to also install the [python2-dbus](https://www.archlinux.org/packages/?name=python2-dbus) package as well.
 
 ```
+The important commands are listed below:
 jack_control start  -  starts the jack server
 jack_control stop  - stops the jack server
 jack_control ds alsa  -  selects alsa as the driver (backend)

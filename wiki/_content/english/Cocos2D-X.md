@@ -1,4 +1,4 @@
-Cocos2D-X is a high-performance cross platform 2D/3D game engine that supports multiple platforms such as iOS, Android, WinXP/7/8, WP8, BlackBerry, MeeGo, Marmelade, WebOS, Mac OS X. This page will focus entirely on properly configuring this package for initial usage. For other documentation, click [here](#See_also).
+Cocos2D-X is a high-performance cross platform 2D/3D game engine that supports multiple platforms such as iOS, Android, WinXP/7/8, WP8, BlackBerry, MeeGo, Marmelade, WebOS, Mac OS X. This page will focus on properly configuring this package for initial usage for the most part. For other documentation, click [here](#See_also).
 
 ## Contents
 
@@ -9,7 +9,9 @@ Cocos2D-X is a high-performance cross platform 2D/3D game engine that supports m
     *   [2.3 Disable sending usage data](#Disable_sending_usage_data)
     *   [2.4 Cross Compiling for Android](#Cross_Compiling_for_Android)
     *   [2.5 Updating SDKBOX](#Updating_SDKBOX)
-*   [3 See also](#See_also)
+*   [3 Cocos2D-X Development Notes](#Cocos2D-X_Development_Notes)
+    *   [3.1 Creating a Scene with Physics](#Creating_a_Scene_with_Physics)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -60,7 +62,7 @@ Sending the usage data can be disabled setting `enable_stat` to `false` in `/opt
 
 ### Cross Compiling for Android
 
-Install [android-ndk](https://aur.archlinux.org/packages/android-ndk/), [android-sdk](https://aur.archlinux.org/packages/android-sdk/) and [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/), and also add the following to your shell configuration file:
+Install [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk), [android-ndk](https://aur.archlinux.org/packages/android-ndk/), [android-sdk](https://aur.archlinux.org/packages/android-sdk/) and [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/), and also add the following to your shell configuration file:
 
 ```
 export NDK_ROOT=/opt/android-ndk
@@ -82,6 +84,13 @@ For a single-user configuration, executing the following will suffice:
 $ sdkbox update
 
 ```
+
+## Cocos2D-X Development Notes
+
+### Creating a Scene with Physics
+
+*   As of Cocos2D-X version 3.14, the `HelloWorldScene.cpp` and `HelloWorldScene.h` templates have been updated in [cocos2d-x-src](https://aur.archlinux.org/packages/cocos2d-x-src/) to reflect the the fact that `cocos2d::Layer` has been deprecated. See [issue #16941](https://github.com/cocos2d/cocos2d-x/issues/16941) in the official Cocos2D-X repository.
+    *   In order to create a `cocos2d::Scene` with physics, line 16 of `HelloWorld.cpp` must be changed to the following: `if ( !Scene::initWithPhysics() )`
 
 ## See also
 

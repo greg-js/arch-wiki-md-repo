@@ -20,7 +20,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [3 Input](#Input)
 *   [4 Video](#Video)
     *   [4.1 NVIDIA Corporation GM204M [GeForce GTX 965M]](#NVIDIA_Corporation_GM204M_.5BGeForce_GTX_965M.5D)
-*   [5 Alien FX](#Alien_FX)
+*   [5 Control of the light colors](#Control_of_the_light_colors)
 *   [6 Issues](#Issues)
 
 ## Hardware overview
@@ -167,9 +167,10 @@ Nvidia & Intel video card configuration: [Bumblebee](/index.php/Bumblebee "Bumbl
 
 Currently not supported by [Bumblebee](/index.php/Bumblebee "Bumblebee") (Tested on Alienware 15 R2) Please install only [Intel](/index.php/Intel "Intel") driver via [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel)
 
-## Alien FX
+## Control of the light colors
 
-Currently unsupported by pyAlienFx and alienfx[[1]](https://github.com/erlkonig/alienfx) have some diff from previous version.
+*   Currently unsupported by pyAlienFx and alienfx[[1]](https://github.com/erlkonig/alienfx) have some diff from previous version.
+*   Probably supported by [alienware-kbl](https://rafael.senties-martinelli.com/software/alienware-kbl), a software to manage the light colors with a graphical interface, python or bash commands.
 
 ## Issues
 

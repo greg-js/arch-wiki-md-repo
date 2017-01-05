@@ -411,9 +411,9 @@ VESA standards are commonly a maximum of 25 rows and 80 columns, so going higher
 
 ### Kernel parameters
 
-The [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") are set using the `APPEND` line in `syslinux.cfg`. It is recommended to make the following changes for the fallback entry as well.
+The [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") are set by using the `APPEND` directive in `syslinux.cfg`: for each `LABEL` entry, a maximum of one [APPEND](http://www.syslinux.org/wiki/index.php/Config#APPEND) line is accepted (i.e. spanning multiple lines is not valid).
 
-**Warning:** It is suggested that only one `APPEND` is used per a menu entry. Having more than one entry may result in a failure to boot.
+It is recommended to make the following changes for the "fallback" entry as well.
 
 **In the simplest case**, the partition name in the `root` parameter needs to be replaced. Change `/dev/sda2` to point to the correct root partition.
 

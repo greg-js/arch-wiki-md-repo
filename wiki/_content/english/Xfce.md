@@ -82,7 +82,7 @@ Xfce stores configuration options in [Xfconf](http://docs.xfce.org/xfce/xfconf/s
 
 #### Whisker menu
 
-[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace 'Applications Menu' as first item in Panel 1 (in 'Settings/Panel/Items' add 'Whisker Menu'...).
+[xfce4-whiskermenu-plugin](https://www.archlinux.org/packages/?name=xfce4-whiskermenu-plugin) (also included in [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/)) is an alternate application launcher. It shows a list of favorites, browses through all installed applications through category buttons, and supports fuzzy searching. After package being installed, it can replace 'Applications Menu' as first item in Panel 1 (in 'Settings/Panel/Items' add 'Whisker Menu'...).
 
 #### Edit entries
 
@@ -316,7 +316,7 @@ See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/ind
 
 #### Xfce4 mixer
 
-**Note:** Xfce4 mixer and Xfce4 volumed are no longer being maintained upstream as they cannot be ported to GStreamer 1.0\. For more information, see the 4.12 [news post](http://www.xfce.org/about/news/?post=1425081600).
+**Note:** Xfce4 mixer and Xfce4 volumed are no longer being maintained upstream as they cannot be ported to GStreamer 1.0\. For more information, see the 4.12 [news post](http://www.xfce.org/about/news/?post=1425081600). Consider [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/) in combination with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) as an alternative.
 
 Xfce4 mixer, provided by [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer), is the GUI mixer app and panel plugin from the Xfce team. It is part of the xfce4 group. For [PulseAudio](/index.php/PulseAudio "PulseAudio") and [OSS](/index.php/OSS "OSS") support, you will need to install [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) if it is not installed already.
 
@@ -376,7 +376,7 @@ If neither of the above applications are running, then blanking and DPMS setting
 
 ### Hide partitions from thunar and xfdesktop
 
-See [Udisks#Hide selected partitions](/index.php/Udisks#Hide_selected_partitions "Udisks").
+If your installation partitions are shown as mounted devices on the desktop and in Thunar, try to install [gvfs](https://www.archlinux.org/packages/?name=gvfs). See [Udisks#Hide selected partitions](/index.php/Udisks#Hide_selected_partitions "Udisks") for more advanced configuration options.
 
 ### Screenshots
 

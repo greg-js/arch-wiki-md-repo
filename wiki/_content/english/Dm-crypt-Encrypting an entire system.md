@@ -27,19 +27,25 @@ The following are examples of common scenarios of full system encryption with *d
     *   [4.6 Configuring fstab and crypttab](#Configuring_fstab_and_crypttab)
     *   [4.7 Encrypting logical volume /home](#Encrypting_logical_volume_.2Fhome)
 *   [5 LUKS on software RAID](#LUKS_on_software_RAID)
+    *   [5.1 Preparing the disks](#Preparing_the_disks)
+    *   [5.2 Building the RAID array](#Building_the_RAID_array)
+    *   [5.3 Preparing the block devices](#Preparing_the_block_devices)
+    *   [5.4 Configuring the boot loader](#Configuring_the_boot_loader_4)
+    *   [5.5 Creating the keyfiles](#Creating_the_keyfiles)
+    *   [5.6 Configuring the system](#Configuring_the_system)
 *   [6 Plain dm-crypt](#Plain_dm-crypt)
     *   [6.1 Preparing the disk](#Preparing_the_disk_4)
     *   [6.2 Preparing the non-boot partitions](#Preparing_the_non-boot_partitions)
     *   [6.3 Preparing the boot partition](#Preparing_the_boot_partition_4)
     *   [6.4 Configuring mkinitcpio](#Configuring_mkinitcpio_4)
-    *   [6.5 Configuring the boot loader](#Configuring_the_boot_loader_4)
+    *   [6.5 Configuring the boot loader](#Configuring_the_boot_loader_5)
     *   [6.6 Post-installation](#Post-installation)
 *   [7 Encrypted boot partition (GRUB)](#Encrypted_boot_partition_.28GRUB.29)
     *   [7.1 Preparing the disk](#Preparing_the_disk_5)
     *   [7.2 Preparing the logical volumes](#Preparing_the_logical_volumes_3)
     *   [7.3 Preparing the boot partition](#Preparing_the_boot_partition_5)
     *   [7.4 Configuring mkinitcpio](#Configuring_mkinitcpio_5)
-    *   [7.5 Configuring the boot loader](#Configuring_the_boot_loader_5)
+    *   [7.5 Configuring the boot loader](#Configuring_the_boot_loader_6)
     *   [7.6 Configuring fstab and crypttab](#Configuring_fstab_and_crypttab_2)
 *   [8 Btrfs subvolumes with swap](#Btrfs_subvolumes_with_swap)
     *   [8.1 Preparing the disk](#Preparing_the_disk_6)
@@ -57,7 +63,7 @@ The following are examples of common scenarios of full system encryption with *d
     *   [8.4 Configuring mkinitcpio](#Configuring_mkinitcpio_6)
         *   [8.4.1 Create keyfile](#Create_keyfile)
         *   [8.4.2 Edit mkinitcpio.conf](#Edit_mkinitcpio.conf)
-    *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader_6)
+    *   [8.5 Configuring the boot loader](#Configuring_the_boot_loader_7)
     *   [8.6 Configuring swap](#Configuring_swap)
 
 ## Overview
@@ -111,6 +117,19 @@ uses dm-crypt only after the LVM is setup.
 *   Complex; changing volumes requires changing encryption mappers too
 *   Volumes require individual keys
 *   LVM layout is transparent when locked
+
+ |
+| [#LUKS on software RAID](#LUKS_on_software_RAID)
+
+uses dm-crypt only after RAID is setup.
+
+ | 
+
+*   Analogous to LUKS on LVM
+
+ | 
+
+*   Analogous to LUKS on LVM
 
  |
 | [#Plain dm-crypt](#Plain_dm-crypt)
@@ -232,7 +251,7 @@ What you do have to setup is a non-encrypted `/boot` partition, which is needed 
 
 ### Mounting the devices
 
-At [Installation guide#Mount the partitions](/index.php/Installation_guide#Mount_the_partitions "Installation guide") you will have to mount the mapped devices, not the actual partitions. Of course `/boot`, which is not encrypted, will still have to be mounted directly.
+At [Installation guide#Mount the file systems](/index.php/Installation_guide#Mount_the_file_systems "Installation guide") you will have to mount the mapped devices, not the actual partitions. Of course `/boot`, which is not encrypted, will still have to be mounted directly.
 
 Afterwards continue with the installation procedure up to the mkinitcpio step.
 
@@ -462,7 +481,7 @@ More information about the encryption options can be found in [Dm-crypt/Device e
 
 ```
 
-Now after setup of the encrypted LVM partitioning, it would be time to install: [Arch Install Scripts](/index.php/Installation_guide#Mount_the_partitions "Installation guide").
+Now after setup of the encrypted LVM partitioning, it would be time to install: [Arch Install Scripts](/index.php/Installation_guide#Mount_the_file_systems "Installation guide").
 
 ### Configuring mkinitcpio
 
@@ -541,6 +560,188 @@ and setup is done.
 If you want to expand the logical volume for `/home` (or any other volume) at a later point, it is important to note that the LUKS encrypted part has to be resized as well. For a procedure see [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
 ## LUKS on software RAID
+
+This example is based on a real-world setup for a workstation class laptop equipped with two SSDs of equal size, and an additional HDD for bulk storage. The end result is LUKS based full disk encryption (including `/boot`) for all drives, with the SSDs in a [RAID0](/index.php/RAID "RAID") array, and keyfiles used to unlock all encryption after [GRUB](/index.php/GRUB "GRUB") is given a correct passphrase at boot. [TRIM](/index.php/Solid_State_Drives#TRIM "Solid State Drives") support is enabled on the SSDs, but you may wish to review the security implications detailed at [Dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") before considering using this.
+
+This setup utilizes a very simplistic partitioning scheme, with all the available RAID storage being mounted at `/` (no separate `/boot` partition), and the decrypted HDD being mounted at `/mnt/data`. It is also worth mentioning that the system in this example boots in BIOS mode and the drives are partitioned with [GPT](/index.php/Partitioning "Partitioning") partitions.
+
+Please note that regular [backups](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") are very important in this setup. If either of the SSDs fail, the data contained in the RAID array will be practically impossible to recover. You may wish to select a different [RAID level](/index.php/RAID#Standard_RAID_levels "RAID") if fault tolerance is important to you.
+
+The encryption is not deniable in this setup.
+
+For the sake of the instructions below, the following block devices are used:
+
+```
+/dev/sda = first SSD
+/dev/sdb = second SSD
+/dev/sdc = HDD
+
+```
+
+Be sure to substitue them with the appropriate device designations for your setup, as they may be different.
+
+### Preparing the disks
+
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation").
+
+When using the [GRUB](/index.php/GRUB "GRUB") bootloader together with [GPT](/index.php/GPT "GPT"), create a BIOS Boot Partition as explained in [GRUB#BIOS systems](/index.php/GRUB#BIOS_systems "GRUB"). For this setup, this includes a 1M partition for "BIOS boot" at `/dev/sda1` and the remaining space on the drive being partitioned for "Linux RAID" at `/dev/sda2`.
+
+Once partitions have been created on `/dev/sda`, the following commands can be used to clone them to `/dev/sdb`.
+
+```
+# sfdisk -d /dev/sda > sda.dump
+# sfdisk /dev/sdb < sda.dump
+
+```
+
+The HDD is prepared with a single Linux partition covering the whole drive at `/dev/sdc1`.
+
+### Building the RAID array
+
+Create the RAID array for the SSDs. This example utilizes RAID0, you may wish to substitute a different level based on your preferences or requirements.
+
+```
+# mdadm --create --verbose --level=0 --metadata=1.2 --raid-devices=2 /dev/md0 /dev/sda2 /dev/sdb2
+
+```
+
+### Preparing the block devices
+
+As explained in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"), the devices are wiped with random data utilizing `/dev/zero` and a crypt device with a random key. Alternatively, you could use `dd` with `/dev/random` or `/dev/urandom`, though it will be much slower.
+
+```
+# cryptsetup open --type plain /dev/md0 container --key-file /dev/random
+# dd if=/dev/zero of=/dev/mapper/container bs=1M status=progress
+# cryptsetup close container
+
+```
+
+Repeat for the HDD.
+
+```
+# cryptsetup open --type plain /dev/sdc1 container --key-file /dev/random
+# dd if=/dev/zero of=/dev/mapper/container bs=1M status=progress
+# cryptsetup close container
+
+```
+
+Set up encryption for `/dev/md0`.
+
+```
+# cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/md0
+# cryptsetup open /dev/md0 cryptroot
+# mkfs.ext4 /dev/mapper/cryptroot
+# mount /dev/mapper/cryptroot /mnt
+
+```
+
+And repeat for the HDD.
+
+```
+# cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/sdc1
+# cryptsetup open /dev/sdc1 cryptdata
+# mkfs.ext4 /dev/mapper/cryptdata
+# mkdir -p /mnt/mnt/data
+# mount /dev/mapper/cryptdata /mnt/mnt/data
+
+```
+
+### Configuring the boot loader
+
+Configure [GRUB](/index.php/GRUB "GRUB") for the encrypted system by editing `/etc/defaults/grub` with the following. Note that the `:allow-discards` option enables TRIM support on the SSDs, if you do not wish to use it you should omit this.
+
+```
+GRUB_CMDLINE_LINUX="cryptdevice=/dev/md0:cryptroot:allow-discards root=/dev/mapper/cryptroot"
+GRUB_ENABLE_CRYPTODISK=y
+
+```
+
+See [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") and [GRUB#Boot partition](/index.php/GRUB#Boot_partition "GRUB") for details.
+
+Complete the GRUB install to both SSDs (in reality, installing only to `/dev/sda` will work).
+
+```
+# grub-install --target=i386-pc /dev/sda
+# grub-install --target=i386-pc /dev/sdb
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+```
+
+### Creating the keyfiles
+
+The next steps save you from entering your passphrase twice when you boot the system (once so GRUB can unlock the encryption, and second time once the initramfs assumes control of the system). This is done by creating a [keyfile](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption") for the encryption and adding it to the initramfs image to allow the encrypt hook to unlock the root device. See [Dm-crypt/Device_encryption#With a keyfile embedded in the initramfs](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption") for additional details.
+
+Create the keyfile.
+
+```
+# dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin
+
+```
+
+Make sure only root can read it. If on a multi-user system, you may want to apply similar permissions to `/boot` as well, as someone could dump the keyfile from the initramfs image.
+
+```
+# chmod 600 /crypto_keyfile.bin
+# chmod -R g-rwx,o-rwx /boot
+
+```
+
+Add the key to `/dev/md0`.
+
+```
+# cryptsetup luksAddKey /dev/md0 /crypto_keyfile.bin
+
+```
+
+Create another keyfile for the HDD so it can also be unlocked at boot. For convenience, leave the passphrase created above in place as this can make recovery easier if you ever need it.
+
+```
+# mkdir -m 700 /etc/luks-keys
+# dd bs=512 count=4 if=/dev/random of=/etc/luks-keys/data
+# cryptsetup luksAddKey /dev/sdc1 /etc/luks-keys/data
+
+```
+
+Find the UUID for `/dev/sdc1`, to be used in `/etc/crypttab` for persistent naming.
+
+```
+# ls -al /dev/disk/by-uuid | grep sdc1
+
+```
+
+Edit `/etc/crypttab` to decrypt the HDD at boot, substituting in the UUID found in the previous step.
+
+```
+cryptdata    UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   /etc/luks-keys/data
+
+```
+
+### Configuring the system
+
+Edit [/etc/fstab](/index.php/Fstab "Fstab") to mount the cryptroot and cryptdata block devices; if you are not enabling TRIM support, delete the `discard` mount option:
+
+```
+/dev/mapper/cryptroot  /           ext4    rw,noatime,discard  0   1 
+/dev/mapper/cryptdata  /mnt/data   ext4    defaults            0   2  
+
+```
+
+Save the RAID configuration:
+
+```
+# mdadm --detail --scan > /etc/mdadm.conf 
+
+```
+
+Edit [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") to include your keyfile and add the proper hooks:
+
+```
+FILES="/crypto_keyfile.bin"
+HOOKS=" ... mdadm_udev encrypt ... " (insert right before "filesystems") 
+
+```
+
+See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details.
 
 ## Plain dm-crypt
 

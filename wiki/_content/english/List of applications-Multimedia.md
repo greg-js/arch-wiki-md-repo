@@ -946,6 +946,10 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
 
+*   **peek** — Simple screencast tool that produces GIF animations.
+
+	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
+
 ### Mobile phone managers
 
 *   **[gnokii](https://en.wikipedia.org/wiki/Gnokii "wikipedia:Gnokii")** — Tools and user space driver for use with mobile phones.

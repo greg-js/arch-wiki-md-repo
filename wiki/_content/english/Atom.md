@@ -6,6 +6,7 @@
 *   [2 Packages](#Packages)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Environment variables not sourced](#Environment_variables_not_sourced)
+    *   [3.2 Unable to delete files](#Unable_to_delete_files)
 
 ## Installation
 
@@ -45,3 +46,16 @@ Several packages come preinstalled with Atom, notable packages that are not, inc
 You may experience some problems with packages using environments variables, like [go-plus](https://atom.io/packages/go-plus) (`$GOPATH not found`). Moreover, it only appears when atom is opened by your file manager. (Because this one is DBUS-spawned, thus it does not inherit variables defined in `.bashrc`). A solution is to make available your variables to DBUS-spawned processes, by following [Systemd/User#Environment variables](/index.php/Systemd/User#Environment_variables "Systemd/User").
 
 More info on this issue in [Environment variables#Per user](/index.php/Environment_variables#Per_user "Environment variables").
+
+### Unable to delete files
+
+By default, [Electron](/index.php/Electron "Electron") apps use `gvfs-trash` to delete files. For users not using [Gnome](/index.php/Gnome "Gnome") the `ELECTRON_TRASH` environmental variable can be used to specify which trash utility should be used.
+
+For example, for deleting files under [Plasma](/index.php/Plasma "Plasma"):
+
+```
+$ ELECTRON_TRASH=kioclient5 atom
+
+```
+
+At the time of writing, [Electron](/index.php/Electron "Electron") supports `kioclient5`, `kioclient`, `trash-cli` and `gvfs-trash` (default). More info is available at this [Github pull request page](https://github.com/electron/electron/pull/7178).

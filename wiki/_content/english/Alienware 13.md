@@ -105,7 +105,7 @@ To get access to the keyboard lights they can be controlling by sending data to 
 
 ```
 
-There plenty of programs like pyAlienFX or Alienware-kbl and none of these worked for me, but there is a github project that consists on sending data to USB using `libusb` that worked fine.
+There plenty of programs like pyAlienFX or [Alienware-KBL](https://rafael.senties-martinelli.com/software/alienware-kbl) and none of these worked for me, but there is a github project that consists on sending data to USB using `libusb` that worked fine.
 
 ```
  git clone [https://github.com/snooze6/hack-alienfx](https://github.com/snooze6/hack-alienfx)
