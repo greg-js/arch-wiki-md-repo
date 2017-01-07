@@ -252,7 +252,7 @@
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Популярная замена xterm
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — Простая реализация терминала для X
 

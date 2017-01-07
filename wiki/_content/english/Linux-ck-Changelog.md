@@ -1,3 +1,8 @@
+**Bump to v4.8.16-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.16](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.8.16)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=62ab24ecce8b6e321981e845b4363cf386a72a17](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=62ab24ecce8b6e321981e845b4363cf386a72a17)
+
 **Bump to v4.8.15-2**
 
 *   Changelog: [Updates](https://github.com/graysky2/kernel_gcc_patch/compare/graysky2:2301b1528e80d86b88a252d5e17227278c62131c...84aad1d8bf5e0c2505b8fb9882394a262a7307e8) to gcc patch

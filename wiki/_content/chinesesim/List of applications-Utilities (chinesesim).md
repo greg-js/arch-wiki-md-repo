@@ -255,7 +255,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — 公认已取代 Xterm 的虚拟终端。
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — 简单，在Ｘ下可用。
 

@@ -369,7 +369,7 @@ for_window [class="Uzbl-core"] focus child, layout tabbed, focus
 
 *   `$TERMINAL`
 *   [urxvt](/index.php/Urxvt "Urxvt")
-*   [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+*   [rxvt](https://aur.archlinux.org/packages/rxvt/)
 *   [terminator](/index.php/Terminator "Terminator")
 *   [Eterm](https://aur.archlinux.org/packages/Eterm/)
 *   [aterm](https://aur.archlinux.org/packages/aterm/)

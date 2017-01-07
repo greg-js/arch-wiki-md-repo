@@ -66,7 +66,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for the xterm
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — Simple terminal implementation for X.
 

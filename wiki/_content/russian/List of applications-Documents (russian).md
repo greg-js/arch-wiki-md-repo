@@ -46,7 +46,7 @@
 
 *   **[Calligra](https://en.wikipedia.org/wiki/ru:Calligra_Suite "wikipedia:ru:Calligra Suite")** — Активно разрабатываемый форк KOffice, офисного пакета [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"). Предлагает большую часть возможностей OpenOffice, а также имеет версию для смартфонов (Calligra Mobile) и планшетов (Calligra Active)
 
-	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[LibreOffice](/index.php/LibreOffice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LibreOffice (Русский)")** — Более активно развиваемый форк OpenOffice
 

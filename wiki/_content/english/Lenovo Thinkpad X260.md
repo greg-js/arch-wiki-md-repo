@@ -13,7 +13,7 @@ The Lenovo ThinkPad X260 is the successor to the [Lenovo ThinkPad X240](/index.p
 
 ### Fingerprint
 
-Some X260's come with vfs (Validity Sensors) fingerprint readers. If this is the case then you will need to additionally install [libfprint-vfs0050](https://aur.archlinux.org/packages/libfprint-vfs0050/), along with fprintd. See [fprint](/index.php/Fprint "Fprint") for details.
+Some X260's come with vfs (Validity Sensors) fingerprint readers. If this is the case then you will need to additionally install [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/), along with fprintd. See [fprint](/index.php/Fprint "Fprint") for details.
 
 ## Troubleshooting
 

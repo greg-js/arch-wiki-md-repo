@@ -207,7 +207,7 @@
 
 	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
 
-*   **[Krita](https://en.wikipedia.org/wiki/ru:Krita "wikipedia:ru:Krita")** — Программное обеспечение для рисования и создания иллюстраций, основанное на платформе KDE и библиотеках Calligra. Является частью группы пакетов [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+*   **[Krita](https://en.wikipedia.org/wiki/ru:Krita "wikipedia:ru:Krita")** — Программное обеспечение для рисования и создания иллюстраций, основанное на платформе KDE и библиотеках Calligra. Является частью группы пакетов [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
 
@@ -255,7 +255,7 @@
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **[Karbon](https://en.wikipedia.org/wiki/ru:Karbon "wikipedia:ru:Karbon")** — Программа редактирования векторной графики, часть офисного пакета Calligra. Входит в группу пакетов [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+*   **[Karbon](https://en.wikipedia.org/wiki/ru:Karbon "wikipedia:ru:Karbon")** — Программа редактирования векторной графики, часть офисного пакета Calligra. Входит в группу пакетов [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
 

@@ -85,7 +85,7 @@ LANG=en_US.UTF-8
 
 **警告:** 不推荐在此设置中文locale，会导致tty乱码；在tty下亦可显示和输入中文，但需要安装cce、zhcon或[fbterm](https://www.archlinux.org/packages/?name=fbterm)；
 
-**提示:** 如欲为内核打中文补丁，可参见[[1]](http://blog.chinaunix.net/space.php?uid=436750&do=blog&id=2123586)；
+**提示：** 如欲为内核打中文补丁，可参见[[1]](http://blog.chinaunix.net/space.php?uid=436750&do=blog&id=2123586)；
 
 对于特定用户，还可以在`~/.bashrc`、`~/.xinitrc`或`~/.xprofile`中设置自己的用户环境。不同之处在于：
 

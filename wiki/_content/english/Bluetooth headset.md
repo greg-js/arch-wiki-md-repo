@@ -778,6 +778,7 @@ You can now use the device bluealsa to reach your headset. You can also use `als
 | **LG HBS-750** | bluez 5.30, pulseaudio-git 6.0 | Works out of box with A2DP profile. | Yes |
 | **Beats Studio Wireless** | bluez 5.28, pulseaudio 6.0 | Works out of box. Not tested multimedia buttons. | Yes |
 | **AKG Y45BT** | bluez 5.30, pulseaudio 6.0 | Pause and resume does not work. Needs `Enable=Socket` in `/etc/bluetooth/audio.conf` and `load-module module-bluetooth-discover` in `/etc/pulse/default.pa`. | Yes |
+| **AKG Y50BT** | bluez 5.43, pulseaudio 9.0 | In A2DP profile works fine. Pause/Resume, next and previous works as expected. | Yes |
 | **Bluedio Turbine/Turbine 2+** | bluez 5.3, pulseaudio 6.0 | HSP/HFP work fine, A2DP work fine. | Yes |
 | **Sony SBH20** | bluez 5.30, pulseaudio 6.0 | Works out of box with A2DP profile. | Yes |
 | **Nokia BH-111** | bluez 5.30, pulseaudio 6.0 | Works with both HSP/HFP and A2DP. Buttons work in certain apps. | Yes |

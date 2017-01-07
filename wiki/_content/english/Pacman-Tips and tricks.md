@@ -47,6 +47,10 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 ### Graphical front-ends
 
+*   **Arch-Update** — Update indicator for Gnome-Shell.
+
+	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
+
 *   **Discover** — A collection of package management tools for KDE, using PackageKit.
 
 	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
@@ -68,14 +72,6 @@ For general methods to improve the flexibility of the provided tips or pacman it
 	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
 
 ### Utilities
-
-*   **Arch-Update** — Update indicator for Gnome-Shell.
-
-	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
-
-*   **cylon** — Updates, maintenance, backups, and system checks in a menu driven Bash script.
-
-	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
 
 *   **Lostfiles** — Script that identifies files not owned by any package.
 
@@ -229,7 +225,7 @@ If your system has stray files not owned by any package (a common case if you do
 
 This process is tricky in practice because many important files are not part of any package (e.g. files generated at runtime, custom configs) and so will be included in the final output, making it difficult to pick out the files that can be safely deleted.
 
-**Tip:** The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
+**Tip:** The [lostfiles](https://aur.archlinux.org/packages/lostfiles/) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) also allows tracking orphaned files using a configuration script.
 
 ### Removing unused packages (orphans)
 

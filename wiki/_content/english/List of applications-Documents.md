@@ -47,7 +47,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Actively developed fork of KOffice, the [KDE](/index.php/KDE "KDE") office suite. It offers most of the features of OpenOffice while also having versions for smartphones (Calligra Mobile) and tablets (Calligra Active).
 
-	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[LibreOffice](/index.php/LibreOffice "LibreOffice")** — More actively developed fork of OpenOffice.
 

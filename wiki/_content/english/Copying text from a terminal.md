@@ -68,7 +68,7 @@ Unless the "Notes" column states otherwise, the keys combination is `Ctrl+Shift+
 | [putty](https://www.archlinux.org/packages/?name=putty) | Yes | No | No | No | No |
 | [qterminal](https://www.archlinux.org/packages/?name=qterminal) | Yes | No | Yes | Yes | Yes |
 | [roxterm](https://www.archlinux.org/packages/?name=roxterm) | Yes | No | Yes | Yes | Yes |
-| [rxvt](https://www.archlinux.org/packages/?name=rxvt) | Yes | No | No | No | No |
+| [rxvt](https://aur.archlinux.org/packages/rxvt/) | Yes | No | No | No | No |
 | [sakura](https://www.archlinux.org/packages/?name=sakura) | Yes | No | Yes | Yes | Yes |
 | [st](/index.php/St "St") | Yes | No | No | No | No |
 | [terminator](/index.php/Terminator "Terminator") | Yes | No | Yes | Yes | No |

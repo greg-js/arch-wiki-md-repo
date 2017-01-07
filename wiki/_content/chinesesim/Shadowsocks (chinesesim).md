@@ -96,7 +96,7 @@ Shadowsocks的[systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
 
 #### 图形界面客户端
 
-安装 [shadowsocks-qt5](https://aur.archlinux.org/packages/shadowsocks-qt5/)。
+安装 [shadowsocks-qt5](https://www.archlinux.org/packages/?name=shadowsocks-qt5)。
 
 **提示：** 也可以使用[shadowsocks-gui@gitHub](https://github.com/shadowsocks/shadowsocks-gui),如果不希望自己编译的话到[shadowsocks-gui@sourceforge](http://sourceforge.net/projects/shadowsocksgui/files/dist/)直接下载。
 

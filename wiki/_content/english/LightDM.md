@@ -30,12 +30,13 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [5.5 Enabling interactive passwordless login](#Enabling_interactive_passwordless_login)
     *   [5.6 Hiding system and services users](#Hiding_system_and_services_users)
     *   [5.7 Migrating from SLiM](#Migrating_from_SLiM)
-    *   [5.8 NumLock on by default](#NumLock_on_by_default)
-    *   [5.9 User switching under Xfce4](#User_switching_under_Xfce4)
-    *   [5.10 Default session](#Default_session)
-    *   [5.11 Customization of the login window](#Customization_of_the_login_window)
-        *   [5.11.1 GTK+ greeter](#GTK.2B_greeter_2)
-    *   [5.12 VNC Server](#VNC_Server)
+    *   [5.8 Login using ~/.xinitrc](#Login_using_.7E.2F.xinitrc)
+    *   [5.9 NumLock on by default](#NumLock_on_by_default)
+    *   [5.10 User switching under Xfce4](#User_switching_under_Xfce4)
+    *   [5.11 Default session](#Default_session)
+    *   [5.12 Customization of the login window](#Customization_of_the_login_window)
+        *   [5.12.1 GTK+ greeter](#GTK.2B_greeter_2)
+    *   [5.13 VNC Server](#VNC_Server)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
@@ -279,6 +280,21 @@ To prevent system users from showing-up in the login, install the optional depen
 ### Migrating from SLiM
 
 Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/index.php/Xprofile "Xprofile"), removing the call to start the [window manager](/index.php/Window_manager "Window manager") or [desktop environment](/index.php/Desktop_environment "Desktop environment").
+
+### Login using ~/.xinitrc
+
+Although migrating to an [xprofile](/index.php/Xprofile "Xprofile") is the preferred method of using a custom start script, it is possible to use your [xinitrc](/index.php/Xinitrc "Xinitrc") by installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/). This provides the necessary `/usr/share/xsession` file, so the option will become available on a restart of lightdm.
+
+An alternative to this is symlinking your .xinitrc `ln -s ~/.xinitrc ~/.xsession` and creating this file:
+
+ `/usr/share/xsessions/custom.desktop` 
+```
+[Desktop Entry]
+Name=Xsession
+Exec=/etc/X11/Xsession
+```
+
+If you get a black screen that returns you to your login screen, make sure that either your `~/.xinitrc` or `~/.xsession` file is executable (with `chmod +x <file>`).
 
 ### NumLock on by default
 

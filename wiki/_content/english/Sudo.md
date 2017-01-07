@@ -378,13 +378,15 @@ admin% screen
 *sudo* parses files contained in the directory `/etc/sudoers.d/`. This means that instead of editing `/etc/sudoers`, you can change settings in standalone files and drop them in that directory. This has two advantages:
 
 *   There is no need to edit a `sudoers.pacnew` file;
-*   If there is a problem with a new entry, you can remove the offending file instead of editing `/etc/sudoers`.
+*   If there is a problem with a new entry, you can remove the offending file instead of editing `/etc/sudoers` (but see the warning below).
 
-The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f */path/to/file*`. See the "Including other files from within sudoers" section of [sudoers(5)](https://www.sudo.ws/man/sudoers.man.html) for details.
+The format for entries in these drop-in files is the same as for `/etc/sudoers` itself. To edit them directly, use `visudo -f /etc/sudoers.d/*somefile*`. See the "Including other files from within sudoers" section of [sudoers(5)](https://www.sudo.ws/man/sudoers.man.html) for details.
 
 The files in `/etc/sudoers.d/` directory are parsed in lexicographical order, file names containing `.` or `~` are skipped. To avoid sorting problems, the file names should begin with two digits, e.g. `01_foo`.
 
-**Note:** The order of entries in the drop-in files is important, make sure that the statements do not override themselves.
+**Note:** The order of entries in the drop-in files is important: make sure that the statements do not override themselves.
+
+**Warning:** The files in `/etc/sudoers.d/` are just as fragile as `/etc/sudoers` itself: any improperly formatted file will prevent `sudo` from working. Hence, for the same reason it is strongly advised to use `visudo`
 
 ## Troubleshooting
 

@@ -257,37 +257,39 @@ You might want to control VDR not only by keyboard but using a remote control wh
 
 #### LIRC
 
-To setup VDR to make use of your [LIRC](/index.php/LIRC "LIRC") remote control you have to adjust the file /etc/vdr/remote.conf. The labeling after "LIRC.", e.g., "Up" has to correspond with the labeling in /etc/lircd.conf. The second column stands for the correspondent VDR command.
+To setup VDR to make use of your [LIRC](/index.php/LIRC "LIRC") remote control you have to adjust the file /etc/vdr/remote.conf. The labeling after "LIRC.", e.g., "Up" has to correspond with the labeling in /etc/lircd.conf. The second column stands for the corresponding VDR command. On a reasonable modern setup the lircd.conf should use the KEY_ symbols listed here in which case this could be used as-is.
+
+If your lircd.conf does not use the KEY_ symbols you should consider updating lircd.conf instead; these are standardized and recognized in many contexts. Using lirc tools, `irrecord -l` lists the standardized names and `lirc-config-tool(1)` can do the heavy lifting when updating lircd.conf .
 
 ```
-LIRC.Up         	Up
-LIRC.Down       	Down
-LIRC.Menu       	Menu
-LIRC.Ok			Ok
-LIRC.Back       	Back
-LIRC.Left       	Left
-LIRC.Right      	Right
-LIRC.Red        	Red
-LIRC.Green      	Green
-LIRC.Yellow     	Yellow
-LIRC.Blue       	Blue
-LIRC.0          	0
-LIRC.1          	1
-LIRC.2          	2
-LIRC.3          	3
-LIRC.4          	4
-LIRC.5          	5
-LIRC.6          	6
-LIRC.7          	7
-LIRC.8          	8
-LIRC.9          	9
-LIRC.Power      	Power
-LIRC.Volume+   		Volume+
-LIRC.Volume-   	 	Volume-
-LIRC.Mute       	Mute
-LIRC.Audio      	Audio
-LIRC.Recordings 	Recordings
-LIRC.Info       	Info
+LIRC.KEY_UP         	Up
+LIRC.KEY_DOWN       	Down
+LIRC.KEY_MENU       	Menu
+LIRC.KEY_OK		Ok
+LIRC.KEY_BACK       	Back
+LIRC.KEY_LEFT       	Left
+LIRC.KEY_RIGHT      	Right
+LIRC.KEY_RED        	Red
+LIRC.KEY_GREEN      	Green
+LIRC.KEY_YELLOW     	Yellow
+LIRC.KEY_BLUE       	Blue
+LIRC.KEY_0          	0
+LIRC.KEY_1          	1
+LIRC.KEY_2          	2
+LIRC.KEY_3          	3
+LIRC.KEY_4          	4
+LIRC.KEY_5          	5
+LIRC.KEY_6          	6
+LIRC.KEY_7          	7
+LIRC.KEY_8          	8
+LIRC.KEY_9          	9
+LIRC.KEY_POWER      	Power
+LIRC.KEY_VOLUMEUP   	Volume+
+LIRC.KEY_VOLUMEDOWN    	Volume-
+LIRC.KEY_MUTE       	Mute
+LIRC.KEY_AUDIO      	Audio
+LIRC.KEY_VIDEO  	Recordings
+LIRC.KEY_INFO       	Info
 
 ```
 

@@ -67,21 +67,21 @@ sda            0 931.5G disk sata
 sdb            0 931.5G disk sata
 ```
 
-HDDs. [Hpfall](/index.php/Hpfall "Hpfall") or [freefall](https://aur.archlinux.org/packages/freefall/) are theoretically compatible, however as at early 2015:
+HDDs. [Hpfall](/index.php/Hpfall "Hpfall") or [freefall](https://aur.archlinux.org/packages/freefall/) are theoretically compatible, however:
 
-*   The unit had not been 'dropped' to confirm actual functionality.
-*   Either package only allowed one device to be specified for protection.
+*   No-one has 'dropped' their unit to test.
+*   Either package only allows one device to be specified for protection.
 *   Asynchronous loading through [Udev](/index.php/Udev "Udev") means that the device being protected may change between reboots.
 
 There is an HDD activity LED, which shows activity for both HDDs.
 
  `sr0            1        rom  sata` 
 
-[Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive") capable of both reading and writing CDs, DVDs and [BDs](/index.php/BluRay "BluRay"). Reading of data CDs and data DVDs is confirmed to work; reading of other disc types and disc writing has not (yet) been tested.
+[Optical disc drive](/index.php/Optical_disc_drive "Optical disc drive") capable of both reading and writing CDs, DVDs and [BDs](/index.php/BluRay "BluRay"). Reading of data CDs and data DVDs works; reading of other disc types and disc writing has not (yet) been tested.
 
 * * *
 
-**Note:** A memory card slot is also present, however it has not (yet) been tested.
+**Note:** A memory card slot is also present, however it has also not (yet) been tested.
 
 ### Power
 

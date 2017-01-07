@@ -26,7 +26,9 @@
         *   [5.2.2 Remove special udev rule](#Remove_special_udev_rule)
         *   [5.2.3 Disable and remove the services created by archiso](#Disable_and_remove_the_services_created_by_archiso)
         *   [5.2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
-        *   [5.2.5 Configure the system](#Configure_the_system)
+        *   [5.2.5 Importing archlinux keys](#Importing_archlinux_keys)
+        *   [5.2.6 Configure the system](#Configure_the_system)
+        *   [5.2.7 Enable graphical login (optional)](#Enable_graphical_login_.28optional.29)
 *   [6 See also](#See_also)
     *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
     *   [6.2 Example customization template](#Example_customization_template)
@@ -417,9 +419,31 @@ There are some scripts installed in the live system by archiso scripts, which ar
 
 ```
 
+#### Importing archlinux keys
+
+In order to use the official repositories, we need to import the archlinux master keys ([pacman/Package signing#Initializing the keyring](/index.php/Pacman/Package_signing#Initializing_the_keyring "Pacman/Package signing")). This step is usually done by pacstrap but can be achieved with
+
+```
+# pacman-key --init
+# pacman-key --populate archlinux
+
+```
+
+**Note:** Keyboard or mouse activity is needed to generate entropy and speed-up the first step.
+
 #### Configure the system
 
 Now you can follow the skipped steps of the [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") section (setting a locale, timezone, hostname, etc.) and finish the installation by creating an initial ramdisk as described in [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide").
+
+#### Enable graphical login (optional)
+
+If using a display manager like GDM, you may want to change the systemd default target from multi-user.target to one that allows graphical login.
+
+```
+# systemctl disable multi-user.target
+# systemctl enable graphical.target
+
+```
 
 ## See also
 

@@ -128,7 +128,7 @@ WantedBy=multi-user.target
 
 [w:Bitcoin Classic](https://en.wikipedia.org/wiki/Bitcoin_Classic "w:Bitcoin Classic") is a fork of Bitcoin Core aiming to increase the transaction processing capacity of Bitcoin by increasing its block size limit. [[1]](https://bitcoinclassic.com/devel/Blocksize.html)
 
-[Install](/index.php/Install "Install") the [bitcoin-classic](https://aur.archlinux.org/packages/bitcoin-classic/) package. Bitcoin Classic ships with a [systemd](/index.php/Systemd "Systemd") unit `bitcoind.service`.
+[Install](/index.php/Install "Install") the [bitcoin-classic](https://aur.archlinux.org/packages/bitcoin-classic/) package or the [bitcoin-classic-daemon](https://aur.archlinux.org/packages/bitcoin-classic-daemon/) headless one. Bitcoin Classic ships with a [systemd](/index.php/Systemd "Systemd") unit `bitcoind.service`. More details on the packages can be found [here](https://bitcoinclassic.com/linuxbuilds.html).
 
 This client is potentially consensus-incompatible with the rest of the network, and upon conditions being met will fork away from the previous chain and consensus rules.
 

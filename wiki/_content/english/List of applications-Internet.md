@@ -27,17 +27,20 @@
         *   [1.4.2 FTP](#FTP)
             *   [1.4.2.1 FTP clients](#FTP_clients)
             *   [1.4.2.2 FTP servers](#FTP_servers)
-        *   [1.4.3 Distributed file systems](#Distributed_file_systems)
-        *   [1.4.4 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.4.1 Console](#Console_2)
-                *   [1.4.4.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.4.4.1.2 Console Interface](#Console_Interface)
-            *   [1.4.4.2 Graphical Interface](#Graphical_Interface)
-                *   [1.4.4.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.4.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.4.4.2.3 others](#others)
-        *   [1.4.5 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.6 Video downloaders](#Video_downloaders)
+        *   [1.4.3 SSH/SFTP](#SSH.2FSFTP)
+            *   [1.4.3.1 SFTP servers](#SFTP_servers)
+            *   [1.4.3.2 SFTP clients](#SFTP_clients)
+        *   [1.4.4 Distributed file systems](#Distributed_file_systems)
+        *   [1.4.5 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.5.1 Console](#Console_2)
+                *   [1.4.5.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.4.5.1.2 Console Interface](#Console_Interface)
+            *   [1.4.5.2 Graphical Interface](#Graphical_Interface)
+                *   [1.4.5.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.5.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.4.5.2.3 others](#others)
+        *   [1.4.6 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.7 Video downloaders](#Video_downloaders)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
             *   [1.5.1.1 Console](#Console_3)
@@ -397,10 +400,6 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
 
-*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
-
-	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
-
 *   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
 
 	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
@@ -421,13 +420,23 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 
 	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
 
+*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
+
+	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
+
+#### SSH/SFTP
+
+##### SFTP servers
+
 *   **[SSH](/index.php/SSH "SSH")** — SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream.
 
 	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
 
-*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
+##### SFTP clients
 
-	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
+*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
+
+	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 
 #### Distributed file systems
 

@@ -304,7 +304,7 @@ $ vncserver -geometry 1440x900 -alwaysshared -dpi 96 -localhost :1
 
 Alternatively, simply add the "localhost" option as a single line in `~/.vnc/config`. Below is the example above in this format:
 
- `~/.vnc.config` 
+ `~/.vnc/config` 
 ```
 
 ## Supported server options to pass to vncserver upon invocation can be listed

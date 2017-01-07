@@ -323,7 +323,7 @@ For more information about the available cryptsetup options see the [LUKS encryp
 Open the container:
 
 ```
-# cryptsetup open --type luks /dev/*sdaX* cryptolvm
+# cryptsetup open /dev/*sdaX* cryptolvm
 
 ```
 
@@ -463,7 +463,7 @@ Randomise `/dev/sda2` according to [Dm-crypt/Drive preparation#dm-crypt wipe on 
 
 ```
 # cryptsetup luksFormat -c aes-xts-plain64 -s 512 /dev/mapper/MyVol-lvroot
-# cryptsetup open --type luks /dev/mapper/MyVol-lvroot root
+# cryptsetup open /dev/mapper/MyVol-lvroot root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
 
@@ -536,7 +536,7 @@ The logical volume is encrypted with it:
 
 ```
 # cryptsetup luksFormat -v -s 512 /dev/mapper/MyVol-home /etc/luks-keys/home
-# cryptsetup -d /etc/luks-keys/home open --type luks /dev/mapper/MyVol-home home
+# cryptsetup -d /etc/luks-keys/home open /dev/mapper/MyVol-home home
 # mkfs.ext4 /dev/mapper/home
 # mount /dev/mapper/home /home
 
@@ -947,7 +947,7 @@ Number  Start (sector)    End (sector)  Size       Code  Name
 Open the container:
 
 ```
-# cryptsetup open --type luks /dev/*sdaZ* lvm
+# cryptsetup open /dev/*sdaZ* lvm
 
 ```
 

@@ -204,7 +204,18 @@ See [my post](http://ubuntuforums.org/showthread.php?p=12127450#post12127450) on
 
 ### ncsvc and kernel versions 3.19 and 4.5 to 4.8
 
-Juniter VPN does not support [linux](https://www.archlinux.org/packages/?name=linux) 4.5 to 4.8\. [Downgrade](/index.php/Downgrade "Downgrade") to version 4.4, or [install](/index.php/Install "Install") [linux-lts](https://www.archlinux.org/packages/?name=linux-lts). This seems to be a reoccurence of an similar issue with [linux](https://www.archlinux.org/packages/?name=linux) 3.19\. [[1]](http://www.unixgr.com/juniper-ncsvc-and-linux-3-19/)
+Juniter VPN does not support [linux](https://www.archlinux.org/packages/?name=linux) 3.19\. [UNIXgr](http://www.unixgr.com/juniper-ncsvc-and-linux-3-19/)
+
+There are also issues with [linux](https://www.archlinux.org/packages/?name=linux) 4.5 to 4.8 (and probabyl onwards). See [Bug 121131 on the Kernel bug tracker](https://bugzilla.kernel.org/show_bug.cgi?id=121131) for more information. There are two ways to work around this issue:
+
+*   [Downgrade](/index.php/Downgrade "Downgrade") to version 4.4, or [install](/index.php/Install "Install") [linux-lts](https://www.archlinux.org/packages/?name=linux-lts).
+*   According to [this comment](https://bugzilla.kernel.org/show_bug.cgi?id=121131#c24) disabling router solicitations for IPv6 and reconnecting will also solve the issue. This can be done with the following command (as root):
+
+ `echo 0 > /proc/sys/net/ipv6/conf/default/router_solicitations` 
+
+	To make this setting automatically on boot time use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"):
+
+ `/etc/tmpfiles.d/disable-router-solicitations.conf`  `w /proc/sys/net/ipv6/conf/default/router_solicitations - - - - 0` 
 
 ## Caveats
 

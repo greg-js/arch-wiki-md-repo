@@ -8,7 +8,7 @@
 
 ## Configuration
 
-Most of the settings in bftpd are done by editing the file `/etc/bftpd.conf`. A default `/etc/xinetd.d/bftpd` configuration is provided as well.
+Most of the settings in bftpd are done by editing the file `/etc/bftpd.conf`.
 
 ## See also
 

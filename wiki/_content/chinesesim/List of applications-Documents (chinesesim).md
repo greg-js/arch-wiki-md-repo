@@ -47,7 +47,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — [KDE](/index.php/KDE "KDE") 办公软件套装，即 KOffice 的活跃分支。它提供了 OpenOffice 大多功能，又有智能手机和平板的版本。
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Kingsoft Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — 专有，又名 WPS.
 

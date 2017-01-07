@@ -32,7 +32,7 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 
 **Note:** The highly disputed user namespace (`CONFIG_USER_NS=Y`) isn't set in the [kernel](/index.php/Kernel "Kernel") configuration, but may bring additional functionality to AppArmor. See [FS#36969](https://bugs.archlinux.org/task/36969) for details on user namespaces.
 
-When compiling the kernel, it is required to at least set the following options:
+When [compiling the kernel](/index.php/Kernels#Compilation "Kernels"), it is required to at least set the following options:
 
 ```
 CONFIG_SECURITY_APPARMOR=y

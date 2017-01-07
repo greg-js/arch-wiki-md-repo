@@ -32,15 +32,16 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
 *   [3 Audio quality](#Audio_quality)
     *   [3.1 Enable Echo/Noise-Cancelation](#Enable_Echo.2FNoise-Cancelation)
     *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
-    *   [3.3 Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio)
-        *   [3.3.1 Disabling timer-based scheduling (0/4)](#Disabling_timer-based_scheduling_.280.2F4.29)
-        *   [3.3.2 Finding out your audio device parameters (1/4)](#Finding_out_your_audio_device_parameters_.281.2F4.29)
-        *   [3.3.3 Calculate your fragment size in msecs and number of fragments (2/4)](#Calculate_your_fragment_size_in_msecs_and_number_of_fragments_.282.2F4.29)
-        *   [3.3.4 Modify PulseAudio's configuration file (3/4)](#Modify_PulseAudio.27s_configuration_file_.283.2F4.29)
-        *   [3.3.5 Restart the PulseAudio daemon (4/4)](#Restart_the_PulseAudio_daemon_.284.2F4.29)
-    *   [3.4 Choppy sound with analog surround sound setup](#Choppy_sound_with_analog_surround_sound_setup)
-    *   [3.5 Laggy sound](#Laggy_sound)
-    *   [3.6 Choppy/distorted sound](#Choppy.2Fdistorted_sound)
+    *   [3.3 Static noise when using headphones](#Static_noise_when_using_headphones)
+    *   [3.4 Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio)
+        *   [3.4.1 Disabling timer-based scheduling (0/4)](#Disabling_timer-based_scheduling_.280.2F4.29)
+        *   [3.4.2 Finding out your audio device parameters (1/4)](#Finding_out_your_audio_device_parameters_.281.2F4.29)
+        *   [3.4.3 Calculate your fragment size in msecs and number of fragments (2/4)](#Calculate_your_fragment_size_in_msecs_and_number_of_fragments_.282.2F4.29)
+        *   [3.4.4 Modify PulseAudio's configuration file (3/4)](#Modify_PulseAudio.27s_configuration_file_.283.2F4.29)
+        *   [3.4.5 Restart the PulseAudio daemon (4/4)](#Restart_the_PulseAudio_daemon_.284.2F4.29)
+    *   [3.5 Choppy sound with analog surround sound setup](#Choppy_sound_with_analog_surround_sound_setup)
+    *   [3.6 Laggy sound](#Laggy_sound)
+    *   [3.7 Choppy/distorted sound](#Choppy.2Fdistorted_sound)
 *   [4 Hardware and Cards](#Hardware_and_Cards)
     *   [4.1 No HDMI sound output after some time with the monitor turned off](#No_HDMI_sound_output_after_some_time_with_the_monitor_turned_off)
     *   [4.2 No HDMI sound using a headless server](#No_HDMI_sound_using_a_headless_server)
@@ -536,6 +537,10 @@ Some Intel audio cards using the `snd-hda-intel` module need the otions `vid=808
  `/etc/modprobe.d/sound.conf`  `options snd-hda-intel vid=8086 pid=8ca0 snoop=0` 
 
 Please report any such cards to [PulseAudio Broken Sound Driver page](http://www.freedesktop.org/wiki/Software/PulseAudio/Backends/ALSA/BrokenDrivers/)
+
+### Static noise when using headphones
+
+If you are encountering static in your headphone jack, one possible culprit may be ALSA's loopback mixing. In addition to setting tsched=0 as documented above, it may be helpful to disable loopback mixing. This can be accomplished trivially with alsamixer, part of [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). This should not impact audio playback or microphone recording negatively, unless you require loopback mixing.
 
 ### Setting the default fragment number and buffer size in PulseAudio
 

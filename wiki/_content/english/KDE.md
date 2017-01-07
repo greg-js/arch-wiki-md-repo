@@ -743,8 +743,8 @@ Hopefully, your problems are now fixed.
 First, make sure that KMail is not running. Then backup configuration:
 
 ```
-$ mv ~/.local/share/akonadi ~/.local/share/akonadi-old
-$ mv ~/.config/akonadi ~/.config/akonadi-old
+$ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old
+$ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 

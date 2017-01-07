@@ -21,10 +21,13 @@
         *   [5.1.3 Use DKMS (more complicated, recommended with LTS releases)](#Use_DKMS_.28more_complicated.2C_recommended_with_LTS_releases.29)
     *   [5.2 Downgrading](#Downgrading)
     *   [5.3 Forum support](#Forum_support)
+*   [6 See also](#See_also)
 
 ## General package details
 
 [Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available in the [AUR](/index.php/AUR "AUR") and in the [unofficial linux-ck repo](#Use_pre-compiled_packages) that allows users to run a kernel/headers setup patched with Con Kolivas' ck patchset, including MuQSS (Multiple Queue Skiplist Scheduler) which is pronounced "mux" and has replaced the legacy Brain Fuck Scheduler (BFS). Many Archers elect to use this package for its excellent desktop interactivity and responsiveness under any load situation.
+
+BFS/CK are designed for desktop/laptop use and not servers. They provide low latency and work well for 16 CPUs or less. Also, Con Kolivas suggests setting HZ to 1000.
 
 ### Release cycle
 
@@ -171,3 +174,11 @@ Users wishing to downgrade to a previous version of linux-ck, have several optio
 ### Forum support
 
 Always feel free to open a thread in the forums for support. Be sure to give the thread a descriptive title to draw attention to the fact that the post relates to the Linux- ck package.
+
+## See also
+
+[BFS FAQ](http://ck.kolivas.org/patches/bfs/bfs-faq.txt)
+
+[Kernel patch homepage of Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/)
+
+[Con Kolivas' desktop-centric kernel patchset](http://lkml.org/lkml/2009/9/6/136)

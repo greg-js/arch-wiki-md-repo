@@ -93,7 +93,7 @@ Not yet supported, [see more](http://amarok.kde.org/blog/archives/812-MySQL-in-A
 
 ## Audio CD Playback
 
-If you are not using KDE as your Desktop Environment, Amarok may not have the utilities it needs to play back Audio CDs. [Install](/index.php/Install "Install") [kdemultimedia-audiocd-kio](https://www.archlinux.org/packages/?name=kdemultimedia-audiocd-kio) from the [official repositories](/index.php/Official_repositories "Official repositories") to obtain this functionality.
+If you are not using KDE as your Desktop Environment, Amarok may not have the utilities it needs to play back Audio CDs. [Install](/index.php/Install "Install") [kdemultimedia-audiocd-kio](https://aur.archlinux.org/packages/kdemultimedia-audiocd-kio/) from the [official repositories](/index.php/Official_repositories "Official repositories") to obtain this functionality.
 
 ## Firefly/Daap share
 

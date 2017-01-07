@@ -12,29 +12,26 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [2.1 CARPS](#CARPS)
     *   [2.2 CAPT](#CAPT)
 *   [3 Dell](#Dell)
-    *   [3.1 Custom drivers](#Custom_drivers_2)
-        *   [3.1.1 Xerox Phaser 6000B](#Xerox_Phaser_6000B)
 *   [4 Epson](#Epson)
     *   [4.1 Utilities](#Utilities)
         *   [4.1.1 escputil](#escputil)
         *   [4.1.2 mtink](#mtink)
         *   [4.1.3 Stylus-toolbox](#Stylus-toolbox)
-    *   [4.2 Custom drivers](#Custom_drivers_3)
+    *   [4.2 Custom drivers](#Custom_drivers_2)
         *   [4.2.1 Avasys](#Avasys)
-*   [5 FujiXerox](#FujiXerox)
-    *   [5.1 Phaser 6125N](#Phaser_6125N)
-        *   [5.1.1 Manually installing a custom driver](#Manually_installing_a_custom_driver)
-*   [6 HP](#HP)
-    *   [6.1 HPLIP Driver](#HPLIP_Driver)
-*   [7 Konica](#Konica)
-*   [8 Lexmark](#Lexmark)
-    *   [8.1 Utilities](#Utilities_2)
-    *   [8.2 Custom drivers](#Custom_drivers_4)
-*   [9 Oki](#Oki)
-*   [10 Samsung](#Samsung)
-*   [11 Xerox](#Xerox)
-    *   [11.1 Custom drivers](#Custom_drivers_5)
-        *   [11.1.1 Phaser 3100MFP](#Phaser_3100MFP)
+*   [5 HP](#HP)
+    *   [5.1 HPLIP Driver](#HPLIP_Driver)
+*   [6 Konica](#Konica)
+*   [7 Lexmark](#Lexmark)
+    *   [7.1 Utilities](#Utilities_2)
+    *   [7.2 Custom drivers](#Custom_drivers_3)
+*   [8 Oki](#Oki)
+*   [9 Samsung](#Samsung)
+*   [10 Xerox or FujiXerox](#Xerox_or_FujiXerox)
+    *   [10.1 Custom drivers](#Custom_drivers_4)
+        *   [10.1.1 Phaser 3100MFP](#Phaser_3100MFP)
+        *   [10.1.2 Phaser 6000B](#Phaser_6000B)
+        *   [10.1.3 Phaser 6125N](#Phaser_6125N)
 
 ## Brother
 
@@ -179,12 +176,6 @@ E515dw
  | Install [Dell's driver](http://downloads.dell.com/FOLDER03040853M/1/Printer_E515dw_Driver_Dell_A00_LINUX.zip). | Both *e515dwcupswrapper-3.2.0-1.i386.deb* and *e515dwlpr-3.2.0-1.i386.deb* need to be installed. You could either write a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), use [debtap](https://aur.archlinux.org/packages/debtap/), or use [dpkg](https://aur.archlinux.org/packages/dpkg/) (using dpkg is not recommended as the files will not be managed by [pacman](/index.php/Pacman "Pacman")). The driver works on both the x86_64 and i386 platforms, but may require [multilib](/index.php/Multilib "Multilib"). |
 | Printer | Driver/filter | Notes |
 
-### Custom drivers
-
-#### Xerox Phaser 6000B
-
-[Install](/index.php/Install "Install") the [xerox-phaser-6010](https://github.com/aur-archive/xerox-phaser-6010) package (archived from the AUR). The driver may require older versions of [nettle](https://www.archlinux.org/packages/?name=nettle) and [gnutls](https://www.archlinux.org/packages/?name=gnutls) to be installed, since the binary blob linked against older versions of the shared libraries provided by those packages. The oldest known-good versions are `nettle-2.7.1-1` and `gnutls-3.3.13-1`.
-
 ## Epson
 
 [epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) is a driver for the Epson Inkjet Printer Driver (ESC/P-R) for Linux.
@@ -233,39 +224,6 @@ $ make
 ```
 
 If you have any problems on a 64 system, some other lib32 libraries may be required. Please adjust this page if that is the case.
-
-## FujiXerox
-
-| Printer | Driver/filter | Notes |
-| DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Using the **DocuPrint P8e(hpijs)** driver, or the Brother driver on FujiXerox's website (see [#Brother](#Brother) for more information on how to install custom Brother drivers). |
-|  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/) |
-| Printer | Driver/filter | Notes |
-
-### Phaser 6125N
-
-FujiXerox does not support Linux on this model. An old rpm-package [is availiable](http://onlinesupport.fujixerox.com/tiles/common/hc_drivers_download.jsp?system=%27Linux%27&shortdesc=null&xcrealpath=http://www.fujixeroxprinters.com/downloads/uploaded/dpc525a_linux_.0.0.tar_81c2.zip) but does not seem to work.
-
-#### Manually installing a custom driver
-
-**Warning:** This section involves installing packages without [pacman](/index.php/Pacman "Pacman"). These directions should ideally be automated with a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
-
-A slightly adapted [custom driver from Rick van der Zwet](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) has been found to work out of the box.
-
-Download it
-
-```
-# wget file:///trac/personal/raw-attachment/wiki/XeroxPhaser6125N/cups-xerox-phaser-6125n-1.0.0.tar.gz
-
-```
-
-Install it
-
-```
-# sudo tar -C / --keep-newer-files -xvzf cups-xerox-phaser-6125n-1.0.0.tar.gz 
-
-```
-
-Install printer with the CUPS web interface or [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer).
 
 ## HP
 
@@ -411,12 +369,14 @@ For printers requiring the *cnijfilter* drivers, search for the correct driver [
 | Newer printers? | [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/) |
 | Printer | Driver/filter | Notes |
 
-## Xerox
+## Xerox or FujiXerox
 
 | Printer | Driver/filter | Notes |
+| DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Using the **DocuPrint P8e(hpijs)** driver, or the Brother driver on FujiXerox's website (see [#Brother](#Brother) for more information on how to install custom Brother drivers). |
 | Phaser 3100MFP | Install Xerox's driver | See [#Phaser 3100MFP](#Phaser_3100MFP) for more instructions. |
 | Phaser 6115MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
 | Phaser 6121MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
+|  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/) |
 | Printer | Driver/filter | Notes |
 
 ### Custom drivers
@@ -451,3 +411,22 @@ Now install the driver:
 ```
 
 Again, on an x86_64 install, 32 bit libraries will be needed.
+
+#### Phaser 6000B
+
+[Install](/index.php/Install "Install") the [xerox-phaser-6010](https://github.com/aur-archive/xerox-phaser-6010) package (archived from the AUR). The driver may require older versions of [nettle](https://www.archlinux.org/packages/?name=nettle) and [gnutls](https://www.archlinux.org/packages/?name=gnutls) to be installed, since the binary blob linked against older versions of the shared libraries provided by those packages. The oldest known-good versions are `nettle-2.7.1-1` and `gnutls-3.3.13-1`.
+
+#### Phaser 6125N
+
+**Warning:** This section involves installing packages without [pacman](/index.php/Pacman "Pacman"). These directions should ideally be automated with a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+
+FujiXerox does not support Linux on this model. An old rpm [is available](http://onlinesupport.fujixerox.com/tiles/common/hc_drivers_download.jsp?system=%27Linux%27&shortdesc=null&xcrealpath=http://www.fujixeroxprinters.com/downloads/uploaded/dpc525a_linux_.0.0.tar_81c2.zip) but does not seem to work.
+
+A slightly adapted [custom driver](https://rickvanderzwet.nl/trac/personal/wiki/XeroxPhaser6125N) has been found to work out of the box.
+
+To install the tarball, run
+
+```
+# tar -C / --keep-newer-files -xvzf cups-xerox-phaser-6125n-1.0.0.tar.gz
+
+```

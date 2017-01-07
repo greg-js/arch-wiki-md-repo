@@ -81,9 +81,11 @@ Systemd/udev automatically assigns predictable, stable network interface names f
 
 After making changes to a configuration file, [restart](/index.php/Restart "Restart") `systemd-networkd.service`.
 
-**Note:** In the examples below, `enp1s0` is the wired adapter and `wlp2s0` is the wireless adapter. These names can be different on different systems.
+**Note:**
 
-**Note:** If you want to disable IPv6, and your router advertises IPv6, you might need to add `IPv6AcceptRA=false` to the `[Network]` section
+*   In the examples below, `enp1s0` is the wired adapter and `wlp2s0` is the wireless adapter. These names can be different on different systems.
+*   If you want to disable IPv6, and your router advertises IPv6, you might need to add `IPv6AcceptRA=false` to the `[Network]` section.
+*   Set `DHCP=yes` to accept an IPv4 **and** IPv6 DHCP request to the `[Network]` section.
 
 #### Wired adapter using DHCP
 
@@ -548,6 +550,8 @@ Gateway=192.168.1.254
 When *networkd* is configured with [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant"), both *wpa_cli* and *wpa_gui* offer the ability to associate and reconfigure WLAN interfaces dynamically.
 
 [networkd-notify](https://github.com/wavexx/networkd-notify) can generate simple notifications in response to network interface state changes (such as connection/disconnection and re-association).
+
+The [networkd-dispatcher](https://aur.archlinux.org/packages/networkd-dispatcher/) daemon allows executing scripts in response to network interface state changes, similar to NetworkManager-dispatcher.
 
 ## See also
 

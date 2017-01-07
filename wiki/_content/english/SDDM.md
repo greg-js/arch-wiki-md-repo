@@ -83,7 +83,7 @@ Set the main theme through the `Current` value, e.g. `Current=archlinux-simplybl
 
 #### Editing themes
 
-The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your custom made themes to that directory under a seperate subdirectory. Study the files installed to modify or create your own theme.
+The default SDDM theme directory is `/usr/share/sddm/themes/`. You can add your custom made themes to that directory under a separate subdirectory. Study the files installed to modify or create your own theme.
 
 #### Mouse cursor
 

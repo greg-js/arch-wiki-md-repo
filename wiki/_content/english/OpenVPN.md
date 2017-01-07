@@ -51,6 +51,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
 *   [11 Troubleshooting](#Troubleshooting)
     *   [11.1 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
     *   [11.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
+    *   [11.3 PID files not present](#PID_files_not_present)
 *   [12 See also](#See_also)
 
 ## Install OpenVPN
@@ -793,6 +794,12 @@ keepalive 10 120
 In this case the server will send ping-like messages to all of its clients every `10` seconds, thus keeping the tunnel up. If the server does not receive a response within `120` seconds from a specific client, it will assume this client is down.
 
 A small ping-interval can increase the stability of the tunnel, but will also cause slightly higher traffic. Depending on your connection, also try lower intervals than 10 seconds.
+
+### PID files not present
+
+The default systemd service file for openvpn-client does not have the --writepid flag enabled, despite creating /var/run/openvpn-client. If this breaks a config (such as an i3bar VPN indicator), simply change:
+
+ `/usr/lib/systemd/system/openvpn-client@.service`  `ExecStart=/usr/sbin/openvpn --suppress-timestamps --nobind --config %i.conf --writepid /var/run/openvpn-client/%i.pid` 
 
 ## See also
 

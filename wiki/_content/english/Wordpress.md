@@ -41,8 +41,8 @@ WordPress requires [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MyS
 Go to [wordpress.org](http://wordpress.org/download/) and download the latest version of WordPress and extract it to your webserver directory. Give the directory enough permissions to allow your FTP user to write to the directory (used by WordPress).
 
 ```
-cd /srv/http/whatever
-wget [https://wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz)
+cd /srv/http/*whatever*
+wget https://wordpress.org/latest.tar.gz
 tar xvzf latest.tar.gz
 
 ```
@@ -76,11 +76,8 @@ Alias /wordpress "/usr/share/webapps/wordpress"
 	AllowOverride All
 	Options FollowSymlinks
 	Require all granted
-	php_admin_value open_basedir "/srv/:/tmp/:/usr/share/webapps/:/etc/webapps:$"
 </Directory>
 ```
-
-**Note:** As of PHP 7.0, `open_basedir` [is not set anymore by default](https://www.archlinux.org/news/php-70-packages-released) and the line (`php_admin_value open_basedir ...`) can be safely skipped in default PHP configurations.
 
 Change `/wordpress` in the first line to whatever you want. For example, `/myblog` would require that you navigate to `[http://hostname/myblog](http://hostname/myblog)` to see your WordPress website.
 
@@ -93,17 +90,14 @@ Alias /myblog "/mnt/data/srv/wordpress"
 	AllowOverride All
 	Options FollowSymlinks
 	Require all granted
-	php_admin_value open_basedir "/srv/:/tmp/:/usr/share/webapps/:/etc/webapps:/mnt/data/srv:$"
 </Directory>
 ```
 
-Next edit the apache config file and add the following:
+Next edit the [Apache](/index.php/Apache "Apache") configuration file and add the following:
 
  `# /etc/httpd/conf/httpd.conf` 
 ```
-...
 Include conf/extra/httpd-wordpress.conf
-...
 
 ```
 
@@ -222,7 +216,7 @@ Select your new theme from the theme chooser ("Appearance->Themes")
 
 ### Installing a plugin
 
-The steps for installing a plugin are the same as they are for installing a theme. Just click the "Plugins" link in the left navigation bar and follow the steps. WordPress is very easy to use.
+The steps for installing a plugin are the same as they are for installing a theme. Just click the "Plugins" link in the left navigation bar and follow the steps.
 
 ### Updating
 

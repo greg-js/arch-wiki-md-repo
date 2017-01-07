@@ -306,7 +306,7 @@ Most use cases for PCI passthroughs relate to performance-intensive domains such
 
 ### CPU pinning
 
-The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. Since switching between threads adds a bit of overhead (because context switching forces the core to change its cache between operations), this can noticeably harm performance on the guest. CPU pinning aims to resolve this as it overrides process scheduling and ensures that the VM threads will always run and only run on those specific cores. Here, for instance, the guest cores 0, 1, 2 and 3 are mapped to the host cores 5, 6, 7 and 8 respectively.
+The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. Since switching between threads adds a bit of overhead (because context switching forces the core to change its cache between operations), this can noticeably harm performance on the guest. CPU pinning aims to resolve this as it overrides process scheduling and ensures that the VM threads will always run and only run on those specific cores. Here, for instance, the guest cores 0, 1, 2 and 3 are mapped to the host cores 4, 5, 6 and 7 respectively.
 
  `EDITOR=nano virsh edit myPciPassthroughVm` 
 ```

@@ -40,7 +40,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Actively developed fork of KOffice, the [KDE](/index.php/KDE "KDE") office suite. It offers most of the features of OpenOffice while also having versions for smartphones (Calligra Mobile) and tablets (Calligra Active).
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Kingsoft Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Propietary office productivity suite, also named WPS.
 

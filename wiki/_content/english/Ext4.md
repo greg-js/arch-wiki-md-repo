@@ -33,11 +33,11 @@ To format a partition do:
 
 ```
 
-**Tip:** See the mkfs.ext4 [man page](/index.php/Man_page "Man page") for more options; edit `/etc/mke2fs.conf` to view/configure default options.
+**Tip:** See [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html) for more options; edit `/etc/mke2fs.conf` to view/configure default options.
 
 ### Bytes-per-inode ratio
 
-From `man mkfs.ext4`:
+From [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html):
 
 	***mke2fs** creates an inode for every* bytes-per-inode *bytes of space on the disk. The larger the* bytes-per-inode *ratio, the fewer inodes will be created.*
 
@@ -77,7 +77,7 @@ The bytes-per-inode ratio can also be set directly via the `-i` option: *e.g.* u
 
 ### Reserved blocks
 
-By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from `man mkfs.ext4`).
+By default, 5% of the filesystem blocks will be reserved for the super-user, to avoid fragmentation and "*allow root-owned daemons to continue to function correctly after non-privileged processes are prevented from writing to the filesystem*" (from [mke2fs(8)](http://man7.org/linux/man-pages/man8/mke2fs.8.html)).
 
 For modern high-capacity disks, this is higher than necessary if the partition is used as a long-term archive or not crucial to system operations (like `/home`). See [this email](http://www.redhat.com/archives/ext3-users/2009-January/msg00026.html) for the opinion of ext4 developer Ted Ts'o on reserved blocks.
 
@@ -102,7 +102,7 @@ To reduce it to 1% afterwards, use:
 
 ```
 
-You can use `findmnt(8)` to find the device name:
+You can use [findmnt(8)](http://man7.org/linux/man-pages/man8/findmnt.8.html) to find the device name:
 
 ```
 $ findmnt */the/mount/point*
@@ -339,6 +339,6 @@ Keep in mind that the intel module consistently performs 10x faster than the gen
 *   [Official Ext4 wiki](https://ext4.wiki.kernel.org/)
 *   [Ext4 Disk Layout](https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout) described in its wiki
 *   [Ext4 Encryption](http://lwn.net/Articles/639427/) LWN article
-*   Kernel commits for ext4 encryption [[6]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
+*   Kernel commits for ext4 encryption [[7]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=6162e4b0bedeb3dac2ba0a5e1b1f56db107d97ec) [[8]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=8663da2c0919896788321cd8a0016af08588c656)
 *   [e2fsprogs Changelog](http://e2fsprogs.sourceforge.net/e2fsprogs-release.html)
 *   [Ext4 Metadata Checksums](https://ext4.wiki.kernel.org/index.php/Ext4_Metadata_Checksums)

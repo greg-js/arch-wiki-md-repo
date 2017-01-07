@@ -135,6 +135,8 @@ At this point, only after ensuring there is no information available through pac
 
 To clean up improperly installed files, use [lostfiles](https://aur.archlinux.org/packages/lostfiles/) or see [Pacman/Tips and tricks#Identify files not owned by any package](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks").
 
+See also [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)), which allows creating a commented configuration file with package lists and changed files. This allows documenting the reason why a package is installed, so it's clear when it's no longer needed.
+
 ### Choose open-source drivers
 
 Always try open source drivers before resorting to proprietary drivers. Most of the time, open source drivers are more stable and reliable than proprietary drivers. Open source driver bugs are fixed more easily and quickly. While proprietary drivers can offer more features and capabilities, this can come at the cost of stability. To avoid this dilemma, try to choose hardware components known to have mature open source driver support with full features. Information about hardware with open source Linux drivers is available at [linux-drivers.org](http://www.linux-drivers.org/).

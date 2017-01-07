@@ -189,7 +189,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
 
-*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software de dibujo e ilustración digital basado en la plataforma KDE y en las bibliotecas de Calligra. Parte del grupo [calligra](https://www.archlinux.org/groups/x86_64/calligra/).
+*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software de dibujo e ilustración digital basado en la plataforma KDE y en las bibliotecas de Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
 	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
 
@@ -237,7 +237,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor de gráficos vectoriales, que forma parte de la suite Calligra. Parte del grupo [calligra](https://www.archlinux.org/groups/x86_64/calligra/).
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor de gráficos vectoriales, que forma parte de la suite Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
 

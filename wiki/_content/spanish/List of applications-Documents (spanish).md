@@ -122,7 +122,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Fork de KOffice desarrollado activamente, la suite de ofimática de [KDE](/index.php/KDE "KDE"). Soporta la mayoría de las características de OpenOffice al tiempo que ofrece también versiones para smartphones (Calligra Mobile) y tabletas (Calligra Activo) .
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Kingsoft Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Suite de productividad ofimática propietaria, también llamada WPS.
 

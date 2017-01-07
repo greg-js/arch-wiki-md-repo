@@ -316,7 +316,7 @@ Gli utenti utilizzano emulatori di terminale molto spesso, quindi non sorprende 
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popolare sostituto di xterm
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — Un semplice terminale implementato per X.
 

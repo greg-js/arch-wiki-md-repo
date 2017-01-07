@@ -286,7 +286,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite. Part of [calligra](https://www.archlinux.org/groups/x86_64/calligra/) group.
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite. Part of [calligra](https://www.archlinux.org/packages/?name=calligra) group.
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
 

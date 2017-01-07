@@ -133,7 +133,7 @@ $ xinit /usr/bin/xonotic-glx -- :1 vt$XDG_VTNR
 
 ```
 
-This can further be spiced up by using a seperate X configuration file:
+This can further be spiced up by using a separate X configuration file:
 
 ```
 $ xinit /usr/bin/xonotic-glx -- :1 -xf86config xorg-game.conf vt$XDG_VTNR

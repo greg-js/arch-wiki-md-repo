@@ -203,7 +203,7 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 #### Panel Self Refresh
 
-`i915.enable_psr=1` allows for some really nice power savings by leaving the package longer in more efficient C-states. However, users experience freezes for a few seconds with this option fairly often, setting the value to [2 or 3](https://patchwork.kernel.org/patch/8182841/) may yield to similar power savings but without the freezes. `i915.disable_power_well=0` with `i915.enable_psr=1 i915.enable_rc6=0` also seems to be a stable configuration for PSR.
+`i915.enable_psr=1` allows for some really nice power savings by leaving the package longer in more efficient C-states. However, users experience freezes for a few seconds with this option fairly often, setting the value to [2 or 3](https://patchwork.kernel.org/patch/8182841/) may yield to similar power savings but without the freezes. `i915.disable_power_well=0` with `i915.enable_psr=1 i915.enable_rc6=1` also seems to be a stable configuration for PSR.
 
 #### Frame Buffer Compression
 

@@ -13,11 +13,12 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
 *   [1 Adding your repository to this page](#Adding_your_repository_to_this_page)
 *   [2 Any](#Any)
     *   [2.1 Signed](#Signed)
-        *   [2.1.1 infinality-bundle-fonts](#infinality-bundle-fonts)
-        *   [2.1.2 ivasilev](#ivasilev)
-        *   [2.1.3 pkgbuilder](#pkgbuilder)
-        *   [2.1.4 xyne-any](#xyne-any)
-        *   [2.1.5 youtube-dl](#youtube-dl)
+        *   [2.1.1 archstrike](#archstrike)
+        *   [2.1.2 infinality-bundle-fonts](#infinality-bundle-fonts)
+        *   [2.1.3 ivasilev](#ivasilev)
+        *   [2.1.4 pkgbuilder](#pkgbuilder)
+        *   [2.1.5 xyne-any](#xyne-any)
+        *   [2.1.6 youtube-dl](#youtube-dl)
     *   [2.2 Unsigned](#Unsigned)
         *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
@@ -122,6 +123,21 @@ If you have your own repository, please add it to this page, so that all the oth
 "Any" repositories are architecture-independent. In other words, they can be used on both i686 and x86_64 systems.
 
 ### Signed
+
+#### archstrike
+
+*   **Maintainer:** [The ArchStrike Team](https://archstrike.org/team)
+*   **Description:** A repository for security professionals and enthusiasts
+*   **Upstream page:** [https://archstrike.org/](https://archstrike.org/)
+*   **Key-ID:** 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
+
+**Note:** ArchStrike specific instructions can be found at [https://archstrike.org/wiki/setup](https://archstrike.org/wiki/setup)
+
+```
+[archstrike]
+Server = https://mirror.archstrike.org/$arch/$repo
+
+```
 
 #### infinality-bundle-fonts
 
@@ -243,11 +259,12 @@ Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
 
 #### archlinuxcn
 
-*   **Maintainers:** [Phoenix Nemo (phoenixlzx)](https://plus.google.com/+PhoenixNemo/), Felix Yan (felixonmars, TU), [lilydjwg](https://twitter.com/lilydjwg), and others
-*   **Description:** Packages by the Chinese Arch Linux community (mostly signed)
+*   **Maintainers:** [Phoenix Nemo (phoenixlzx)](https://plus.google.com/+PhoenixNemo/), [Felix Yan (felixonmars, dev)](https://www.archlinux.org/people/developers/#fyan), [lilydjwg](https://twitter.com/lilydjwg), [farseerfc (TU)](https://www.archlinux.org/people/trusted-users/#farseerfc), and [others](https://github.com/archlinuxcn/repo/graphs/contributors)
+*   **Description:** Packages by the Chinese Arch Linux community, all signed. Be aware that i686 packages are not fully maintained and tested, create an issue if you find some problems.
 *   **Git Repo:** [https://github.com/archlinuxcn/repo](https://github.com/archlinuxcn/repo)
-*   **Mirrors:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo) (Mostly for users in mainland China)
-*   **Key-ID:** Once the repo is added, *archlinuxcn-keyring* package must be installed before any other so you do not get errors about PGP signatures.
+*   **Issue tracking:** [https://github.com/archlinuxcn/repo/issues](https://github.com/archlinuxcn/repo/issues) for packaging issues, out-of-date notifications, package requests, and related questions
+*   **Mirrors:** [https://github.com/archlinuxcn/mirrorlist-repo](https://github.com/archlinuxcn/mirrorlist-repo) (Mostly for users in mainland China), or install *archlinuxcn-mirrorlist-git* from the repo.
+*   **Key-ID:** Once the repo is added, *archlinuxcn-keyring* package must be installed before any other so you do not get errors about PGP signatures. *archlinuxcn-keyring* package itself is signed by TU.
 
 ```
 [archlinuxcn]
@@ -255,6 +272,8 @@ SigLevel = Optional TrustedOnly
 Server = http://repo.archlinuxcn.org/$arch
 ## or use a CDN (beta)
 #Server = https://cdn.repo.archlinuxcn.org/$arch
+## or install archlinuxcn-mirrorlist-git and use the mirrorlist
+#Include = /etc/pacman.d/archlinuxcn-mirrorlist
 
 ```
 
@@ -891,7 +910,7 @@ Server = http://bohoomil.com/repo/multilib/$arch
 
 *   **Maintainer**: Anna Ivanova ([kalterfive](https://aur.archlinux.org/account/kalterfive))
 *   **Upstream page**: [https://deadsoftware.ru/files/linux-kalterfx](https://deadsoftware.ru/files/linux-kalterfx)
-*   **Description**: A stable kernel with [pf-kernel](#Linux-pf), [reiser4](/index.php/Reiser4 "Reiser4") and smack
+*   **Description**: A mainline kernel with [linux-pf](/index.php/Linux-pf "Linux-pf"), [reiser4](/index.php/Reiser4 "Reiser4"), UKSM and SMACK
 *   **Key-ID**: A0C04F15
 *   **Keyfile**: [https://keybase.io/kalterfive/key.asc](https://keybase.io/kalterfive/key.asc)
 

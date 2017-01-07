@@ -13,9 +13,7 @@
 
 ## Installation
 
-**Note:** At the time of writing, there are no official upgrade release yet. Developers are working on 1.0.0 that should allow seamless upgrades of existing Gogs deploys.
-
-Install the [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
+Install the [gitea](https://aur.archlinux.org/packages/gitea/) or [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
 
 Gitea requires the use of a database backend, the following are supported:
 
@@ -115,6 +113,8 @@ HTTP_PORT              = 3000
 ```
 
 **Note:** You don't need to activate any SSL certificate options in `app.ini`.
+
+Finally update the *cookie* section and set COOKIE_SECURE to **true**.
 
 ## See also
 

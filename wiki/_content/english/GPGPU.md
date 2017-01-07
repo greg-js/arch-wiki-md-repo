@@ -60,8 +60,8 @@ This is necessary because all the SDKs add their runtime's lib directories to th
 The available packages containing various OpenCL ICDs are:
 
 *   [ocl-icd](https://www.archlinux.org/packages/?name=ocl-icd): recommended, most up-to-date
-*   [libopencl](https://aur.archlinux.org/packages/libopencl/) by AMD. Provides version 2.0 of OpenCL. It is currently distributed by AMD under a restrictive license and therefore could not have been pushed into official repo.
-*   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): Intel's libCL, provides OpenCL 1.2.
+*   [libopencl](https://aur.archlinux.org/packages/libopencl/) by AMD. Provides OpenCL 2.0\. It is distributed by AMD under a restrictive license and therefore cannot be included into the official repositories.
+*   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/) by Intel. Provides OpenCL 1.2.
 
 **Note:** ICD Loader's vendor is mentioned only to identify each loader, it is otherwise completely irrelevant. ICD loaders are vendor-agnostic and may be used interchangeably. (as long as they are implemented correctly)
 
@@ -89,21 +89,6 @@ Code is compiled using [llvm](https://www.archlinux.org/packages/?name=llvm) (de
 OpenCL support from Mesa is in development (see [http://www.x.org/wiki/GalliumStatus/](http://www.x.org/wiki/GalliumStatus/)). AMD Radeon cards are supported by the r600g driver.
 
 Arch Linux ships OpenCL support as a separate package [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa). See [http://dri.freedesktop.org/wiki/GalliumCompute/](http://dri.freedesktop.org/wiki/GalliumCompute/) for usage instructions.
-
-You could also use [lordheavy's repo](http://pkgbuild.com/~lcarlier/mesa-git/). Install these packages:
-
-*   ati-dri-git
-*   opencl-mesa-git
-*   libclc-git
-
-Surprisingly, pyrit performs 20% better with radeon+r600g compared to Catalyst 13.11 Beta1 (tested with 7 other CPU cores):
-
-```
-catalyst     #1: 'OpenCL-Device 'Barts'': 21840.7 PMKs/s (RTT 2.8)
-radeon+r600g #1: 'OpenCL-Device 'AMD BARTS'': 26608.1 PMKs/s (RTT 3.0)
-```
-
-At the time of this writing (30 October 2013), one must apply patches [[1]](http://people.freedesktop.org/~tstellar/pyrit-perf/0001-XXX-clover-Calculate-the-optimal-work-group-size.patch) and [[2]](http://people.freedesktop.org/~tstellar/pyrit-perf/0001-radeon-llvm-Specify-the-DataLayout-when-running-opti.patch) on top of Mesa commit ac81b6f2be8779022e8641984b09118b57263128 to get this performance improvement. The latest unpatched LLVM trunk was used (SVN rev 193660).
 
 #### Nvidia
 
@@ -152,7 +137,7 @@ The [cuda](https://www.archlinux.org/packages/?name=cuda) package installs all c
 
 To find whether the installation was successful and if cuda is up and running, you can compile the samples installed on `/opt/cuda/sample` (you can simply run `make` inside the directory, altough is a good practice to copy the `/opt/cuda/samples` directory to your home directory before compiling) and running the compiled examples. A nice way to check the installation is to run one of the examples, called `deviceQuery`.
 
-**Note:** CUDA 7.5/8.0 is not compatible with GCC 6 (see [FS#49272](https://bugs.archlinux.org/task/49272)). Therefore the [cuda](https://www.archlinux.org/packages/?name=cuda) package depends on [gcc5](https://www.archlinux.org/packages/?name=gcc5) and creates symbolic links in `/opt/cuda/bin/` for the older version to be picked up by `nvcc`. You might also need to configure your build system to use the same GCC version for compiling host code.
+**Note:** CUDA 8.0 is not compatible with GCC 6 (see [FS#49272](https://bugs.archlinux.org/task/49272)). Therefore the [cuda](https://www.archlinux.org/packages/?name=cuda) package depends on [gcc5](https://www.archlinux.org/packages/?name=gcc5) and creates symbolic links in `/opt/cuda/bin/` for the older version to be picked up by `nvcc`. You might also need to configure your build system to use the same GCC version for compiling host code.
 
 ### Language bindings
 
@@ -172,11 +157,10 @@ It might be necessary to use the legacy driver [nvidia-304xx](https://www.archli
 ## List of OpenCL and CUDA accelerated software
 
 *   [Bitcoin](/index.php/Bitcoin "Bitcoin")
-*   [GIMP](/index.php/GIMP "GIMP") (experimental - see [[3]](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html))
+*   [GIMP](/index.php/GIMP "GIMP") (experimental - see [[1]](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html))
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
 *   [darktable](https://www.archlinux.org/packages/?name=darktable) - OpenCL feature requires at least 1 GB RAM on GPU and *Image support* (check output of clinfo command).
 *   [aircrack-ng](https://www.archlinux.org/packages/?name=aircrack-ng)
-*   [john-opencl](https://aur.archlinux.org/packages/john-opencl/)
 *   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) - a GPU memtest. Despite its name, is supports both CUDA and OpenCL
 *   [blender](https://www.archlinux.org/packages/?name=blender) - CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
 

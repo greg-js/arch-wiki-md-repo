@@ -25,11 +25,12 @@
     *   [5.3 nemo](#nemo)
     *   [5.4 gparted](#gparted)
     *   [5.5 X11 on tty1, wayland on tty2](#X11_on_tty1.2C_wayland_on_tty2)
-    *   [5.6 weston-terminal](#weston-terminal)
-    *   [5.7 liteide](#liteide)
-    *   [5.8 screen recording](#screen_recording)
-    *   [5.9 remote display](#remote_display)
-    *   [5.10 drag and drop between GNOME and QT, or within QT](#drag_and_drop_between_GNOME_and_QT.2C_or_within_QT)
+    *   [5.6 gnome wayland on tty1, weston on tty2](#gnome_wayland_on_tty1.2C_weston_on_tty2)
+    *   [5.7 weston-terminal](#weston-terminal)
+    *   [5.8 liteide](#liteide)
+    *   [5.9 screen recording](#screen_recording)
+    *   [5.10 remote display](#remote_display)
+    *   [5.11 drag and drop between GNOME and QT, or within QT](#drag_and_drop_between_GNOME_and_QT.2C_or_within_QT)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -360,6 +361,10 @@ gsettings set org.nemo.desktop show-desktop-icons false
 ### X11 on tty1, wayland on tty2
 
 (20161209) windows of gnome applications end up on tty2 no matter where started ([gnome issue 774775)](https://bugzilla.gnome.org/show_bug.cgi?id=774775)
+
+### gnome wayland on tty1, weston on tty2
+
+(20170106) KDE and QT applications dump core when started on tty1/gnome ([qt issue 57995](https://bugreports.qt.io/browse/QTBUG-57995))
 
 ### weston-terminal
 

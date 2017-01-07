@@ -32,18 +32,22 @@ This article provides information on basic system diagnostics relating to perfor
     *   [2.8 Storage I/O scheduling with ionice](#Storage_I.2FO_scheduling_with_ionice)
 *   [3 CPU](#CPU)
     *   [3.1 Overclocking](#Overclocking)
-    *   [3.2 Verynice](#Verynice)
-    *   [3.3 Ananicy](#Ananicy)
-    *   [3.4 cgroups](#cgroups)
+    *   [3.2 Frequency scaling](#Frequency_scaling)
+    *   [3.3 Alternative CPU scheduler](#Alternative_CPU_scheduler)
+    *   [3.4 Adjusting priorities of processes](#Adjusting_priorities_of_processes)
+        *   [3.4.1 Verynice](#Verynice)
+        *   [3.4.2 Ananicy](#Ananicy)
+        *   [3.4.3 cgroups](#cgroups)
     *   [3.5 irqbalance](#irqbalance)
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg.conf configuration](#Xorg.conf_configuration)
     *   [4.2 Driconf](#Driconf)
 *   [5 RAM and swap](#RAM_and_swap)
-    *   [5.1 Root on RAM overlay](#Root_on_RAM_overlay)
-    *   [5.2 Zram or zswap](#Zram_or_zswap)
-        *   [5.2.1 Swap on zRAM using a udev rule](#Swap_on_zRAM_using_a_udev_rule)
-    *   [5.3 Using the graphic card's RAM](#Using_the_graphic_card.27s_RAM)
+    *   [5.1 Clock frequency and timings](#Clock_frequency_and_timings)
+    *   [5.2 Root on RAM overlay](#Root_on_RAM_overlay)
+    *   [5.3 Zram or zswap](#Zram_or_zswap)
+        *   [5.3.1 Swap on zRAM using a udev rule](#Swap_on_zRAM_using_a_udev_rule)
+    *   [5.4 Using the graphic card's RAM](#Using_the_graphic_card.27s_RAM)
 *   [6 Network](#Network)
 *   [7 Watchdogs](#Watchdogs)
 
@@ -314,33 +318,37 @@ See man ionice(1) and [[8]](https://www.cyberciti.biz/tips/linux-set-io-scheduli
 
 ## CPU
 
-There are few ways to get more performance:
-
-*   Overclock the CPU. Please note that most CPUs cannot be overclocked (locked by the vendor).
-    *   Nehalem (Core i#) CPUs already use overclocking (Turbo technology). This limits the possibilities of overclocking heavily (unless you use liquid cooling).
-*   [Change the CPU governor](/index.php/CPU_frequency_scaling "CPU frequency scaling")
-
 ### Overclocking
 
-The only way to directly improve CPU speed is overclocking. As it is a complicated and risky task, it is not recommended for anyone except experts. The best way to overclock is through the BIOS. When purchasing your system, keep in mind that most Intel motherboards are notorious for disabling the capability to overclock.
+[Overclocking](https://en.wikipedia.org/wiki/Overclocking "w:Overclocking") improves the computational performance of the CPU by increasing its peak clock frequency. The ability to overclock depends on the combination of CPU model and motherboard model. It is most frequently done through the BIOS. Overclocking also has disadvantages and risks. It is neither recommended nor discouraged here.
 
-Many Intel i5 and i7 chips, even when overclocked properly through the BIOS or UEFI interface, will not report the correct clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg about delays unless the module acpi_cpufreq is unloaded and blacklisted. The only tool known to correctly read the clock speed of these overclocked chips under Linux is i7z. The [i7z](https://www.archlinux.org/packages/?name=i7z) and [i7z-git](https://aur.archlinux.org/packages/i7z-git/) packages are available.
+Many Intel chips will not correctly report their clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg, which can be avoided by unloading and blacklisting the kernel module `acpi_cpufreq`. To read their clock speed use `i7z`, available trough the `i7z` and [i7z-git](https://aur.archlinux.org/packages/i7z-git/) packages.
 
-A way to modify performance ([ref](http://lkml.org/lkml/2009/9/6/136)) is to use Con Kolivas' desktop-centric kernel patchset, which, among other things, replaces the Completely Fair Scheduler (CFS) with the Brain Fuck Scheduler (BFS).
+### Frequency scaling
 
-Kernel PKGBUILDs that include the BFS patch can be installed from the [AUR](/index.php/AUR "AUR") or [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). See the respective pages for [linux-ck](https://aur.archlinux.org/packages/linux-ck/) and [Linux-ck](/index.php/Linux-ck "Linux-ck") wiki page, [linux-pf](https://aur.archlinux.org/packages/linux-pf/) and [Linux-pf](/index.php/Linux-pf "Linux-pf") wiki page for more information on their additional patches.
+See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling").
 
-**Note:** BFS/CK are designed for desktop/laptop use and not servers. They provide low latency and work well for 16 CPUs or less. Also, Con Kolivas suggests setting HZ to 1000\. For more information, see the [BFS FAQ](http://ck.kolivas.org/patches/bfs/bfs-faq.txt) and [Kernel patch homepage of Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/).
+### Alternative CPU scheduler
 
-### Verynice
+Actual default scheduler is CFS[[9]](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler).
+
+Nowadays, the most *famous* and *interesting* alternative is MuQSS, developed by Con Kolivas[[10]](http://users.tpg.com.au/ckolivas/kernel/). This CPU scheduler is intended to be used on desktop computers (over servers), focused on desktop interactivity and responsiveness.
+
+CPU scheduler's patch is available either as stand-alone and as part of a wider patchset, the **-ck** patchset, written by the same author but including also other work, also from different people. As always, Arch Linux users can manually patch and compile their own kernel or they can easily make use of packages in [AUR](/index.php/AUR "AUR").
+
+See the packages respective pages of [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") for more information.
+
+### Adjusting priorities of processes
+
+#### Verynice
 
 [VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [verynice](https://aur.archlinux.org/packages/verynice/) package, for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as *goodexe* in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as *badexe*. This prioritization greatly improves system responsiveness under heavy load.
 
-### Ananicy
+#### Ananicy
 
 [Ananicy](https://github.com/Nefelim4ag/Ananicy) is a daemon, available in the [ananicy-git](https://aur.archlinux.org/packages/ananicy-git/) package, for auto adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources.
 
-### cgroups
+#### cgroups
 
 See [cgroups](/index.php/Cgroups "Cgroups").
 
@@ -361,6 +369,10 @@ Graphics performance may depend on the settings in `/etc/X11/xorg.conf`; see the
 [driconf](https://www.archlinux.org/packages/?name=driconf) is a small utility which allows to change direct rendering settings for open source drivers. Enabling *HyperZ* may improve performance.
 
 ## RAM and swap
+
+### Clock frequency and timings
+
+RAM can run at different clock frequencies and timings, which can be configured in the BIOS. Memory performance depends on both values. Selecting the highest preset presented by the BIOS usually improves the performance over the default setting. Note that increasing the frequency to values not supported by both motherboard and RAM vendor is overclocking, and similar risks and disdvantages apply, see [Improving_performance#Overclocking](/index.php/Improving_performance#Overclocking "Improving performance").
 
 ### Root on RAM overlay
 
@@ -445,7 +457,7 @@ Every time a connection is made, the system must first resolve a fully qualified
 
 ## Watchdogs
 
-According to [[9]](https://en.wikipedia.org/wiki/Watchdog_timer):
+According to [[11]](https://en.wikipedia.org/wiki/Watchdog_timer):
 
 	A watchdog timer [...] is an electronic timer that is used to detect and recover from computer malfunctions. During normal operation, the computer regularly resets the watchdog timer [...]. If, [...], the computer fails to reset the watchdog, the timer will elapse and generate a timeout signal [...] used to initiate corrective [...] actions [...] typically include placing the computer system in a safe state and restoring normal system operation.
 
@@ -473,4 +485,4 @@ After you disabled watchdogs, you can *optionally* avoid the loading of the modu
 
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](https://wiki.archlinux.org/index.php/Power_management#Disabling_NMI_watchdog).
 
-See [[10]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[11]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[12]](http://0pointer.de/blog/projects/watchdog.html), and [[13]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+See [[12]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[13]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[14]](http://0pointer.de/blog/projects/watchdog.html), and [[15]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.

@@ -118,7 +118,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Fork di KOffice e attivamente sviluppato, è la suite office di [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"). Offre molte delle caratteristiche di OpenOffice.org e inoltre ha una versione per smartphones (Calligra Mobile) e tablet (Calligra Active).
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **gLabels** — Programma per creare etichette e biglietti da visita.
 

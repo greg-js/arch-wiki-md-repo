@@ -394,17 +394,26 @@ If you had custom settings in configuration files like `pg_hba.conf` and `postgr
 
 **Warning:** This quick script is critical. Please make sure you have dumped your complete database before embarking in such upgrade.
 
-**First step: dump you database**
+**First step: dump your database and stop postgres**
 
 ```
 # su - postgres
 $ cd /var/lib/postgres
 $ mkdir dump
 $ pg_dumpall | gzip > dump/pgdumpall.gz
+$ exit
+# systemctl stop postgres
 
 ```
 
-**Second step: prepare the upgrade script**
+**Second step: update the packages and install postgresql-old-upgrade**
+
+```
+# pacman -Suy postgresql-old-upgrade postgresql postgresql-libs
+
+```
+
+**Third step: prepare the upgrade script**
 
 ```
 upgrade_pg.sh
@@ -421,14 +430,6 @@ su - postgres -c 'mkdir /var/lib/postgres/data'
 su - postgres -c 'chmod 700 /var/lib/postgres/data'
 su - postgres -c "initdb --locale $LANG -E UTF8 -D /var/lib/postgres/data"
 su - postgres -c "pg_upgrade -b /opt/pgsql-${FROM_VERSION}/bin/ -B /usr/bin/ -d /var/lib/postgres/data-${FROM_VERSION} -D /var/lib/postgres/data"
-
-```
-
-**Third step: update the packages**
-
-```
-# systemctl stop postgresql
-# pacman -S postgresql-old-upgrade postgresql postgresql-libs
 
 ```
 

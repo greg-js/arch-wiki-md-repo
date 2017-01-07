@@ -115,9 +115,28 @@ This platform theme is enabled automatically in GNOME since version 3.20\. For o
 
 ### Using a GTK+ icon theme in Qt apps
 
-If running Plasma, install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under *System Settings > Application Style > GTK*.
+If you are running Plasma, install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the icon-theme under *System Settings > Application Style > GTK*.
 
-If you are not using [GNOME](/index.php/GNOME "GNOME"), run `gconf-editor`, look under *desktop > gnome > interface* for the `icon_theme` key and change it to your preference. As you are not using GNOME, it is possible that you will have to set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using a [Display manager](/index.php/Display_manager "Display manager") in [Xprofile](/index.php/Xprofile "Xprofile").
+If you are using [GNOME](/index.php/GNOME "GNOME"), first check if [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) is installed.
+
+Then, run `dconf-editor` and look under *org > gnome > desktop > interface* for `icon-theme` key and change it to your preferred icon theme.
+
+If you are not using [GNOME](/index.php/GNOME "GNOME"), for example if you are running a minimal system with [i3-wm](https://www.archlinux.org/packages/?name=i3-wm), first install [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor).
+
+Then, run `dconf-editor` and look under *org > gnome > desktop > interface* for `icon-theme` key and change it to your preferred icon theme.
+
+Since, you are not using [GNOME](/index.php/GNOME "GNOME"), you might have to set the value of `DESKTOP_SESSION` in your profile. To do that execute the below code in a terminal and restart your system.
+
+```
+$ echo 'export DESKTOP_SESSION=gnome' >> /etc/profile
+
+```
+
+**OR**
+
+Set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using a [Display manager](/index.php/Display_manager "Display manager") in [Xprofile](/index.php/Xprofile "Xprofile").
+
+**Note:** If the icon theme was not applied, you might want to check if the name that you entered of your preferred theme, was in the correct format. For example, if you want to apply the currently active icon theme to your QT applications, you can find the correct format of it's name with the command:- `cat /home/$USER/.gtkrc-2.0 ` 
 
 ### Improve subpixel rendering of GTK apps under KDE Plasma
 

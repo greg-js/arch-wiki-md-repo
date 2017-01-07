@@ -8,6 +8,7 @@ Another tool to be used for the same purpose is [RVM](/index.php/RVM "RVM").
 *   [2 Plugins](#Plugins)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Ruby 2.x.x](#Ruby_2.x.x)
+    *   [3.2 Ruby 1.9.3](#Ruby_1.9.3)
 *   [4 External links](#External_links)
 
 ## Installation
@@ -33,6 +34,22 @@ This can be solved using the patch as described [here](https://github.com/rbenv/
 
 ```
  curl -fsSL https://gist.github.com/mislav/055441129184a1512bb5.txt | rbenv install --patch 2.2.3
+
+```
+
+### Ruby 1.9.3
+
+Installation of Ruby 1.9.3 may show the same error:
+
+```
+ ossl_ssl.c:116:27: error: ‘SSLv3_method’ undeclared here (not in a function)
+
+```
+
+This can be solved by using the patch as described [here](https://www.reddit.com/r/archlinux/comments/49bw8j/rvm_fails_to_compile_ruby_with_openssl_102g3/)
+
+```
+ curl -fsSL https://gist.githubusercontent.com/anonymous/679228bc324d6fdd3074.txt | rbenv install --patch 1.9.3-p448
 
 ```
 

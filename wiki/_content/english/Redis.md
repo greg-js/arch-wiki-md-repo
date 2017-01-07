@@ -49,15 +49,15 @@ unixsocketperm 770
 *   Create the directory which contains the socket:
 
 ```
-mkdir /var/run/redis
-chown redis:redis /var/run/redis
-chmod 755 /var/run/redis
+# mkdir /var/run/redis
+# chown redis:redis /var/run/redis
+# chmod 755 /var/run/redis
 
 ```
 
 *   Persist the directory which contains the socket:
 
- `/etc/tmpfiles.d/redis.conf`  `d  /var/run/redis  0755  redis  redis  10d  -` 
+ `/etc/tmpfiles.d/redis.conf`  `d /var/run/redis 0755 redis redis -` 
 
 *   Add users (e.g. *git*, *http*) to the *redis* [group](/index.php/Group "Group") so they can access and use the socket.
 

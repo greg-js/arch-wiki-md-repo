@@ -1,4 +1,6 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): Nextcloud is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrary to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications.Nextcloud is an actively maintained fork of ownCloud.
+From [Wikipedia](https://en.wikipedia.org/wiki/Nextcloud "wikipedia:Nextcloud"):
+
+	Nextcloud is functionally very similar to the widely used Dropbox, with the primary functional difference being that Nextcloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server. In contrary to proprietary services like Dropbox, the open architecture allows adding additional functionality to the server in form of so-called applications. Nextcloud is an actively maintained fork of ownCloud.
 
 ## Contents
 

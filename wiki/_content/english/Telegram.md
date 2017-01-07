@@ -34,7 +34,7 @@ To install applications provided by Telegram, one can use the following packages
 
 Unofficial other programs are as follows:
 
-*   [cutegram](https://www.archlinux.org/packages/?name=cutegram) package exists in the Arch official repositories and many other Linux distributions and BSDs. This package has been created by Iranian programmers from [aseman](http://aseman.co/en/products/cutegram). The package is based on [Qt](/index.php/Qt "Qt") and has different capabilities from pure Telegram. Install [cutegram-git](https://www.archlinux.org/packages/?name=cutegram-git) for latest development version install.
+*   [cutegram](https://www.archlinux.org/packages/?name=cutegram) package exists in the Arch official repositories and many other Linux distributions and BSDs. This package has been created by Iranian programmers from [aseman](http://aseman.co/en/products/cutegram). The package is based on [Qt](/index.php/Qt "Qt") and has different capabilities from pure Telegram. Install [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) for latest development version install.
 
 ### Telegram applications for the command line and CLI environment
 
