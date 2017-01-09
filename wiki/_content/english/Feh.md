@@ -4,17 +4,10 @@
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 As an image viewer](#As_an_image_viewer)
-        *   [2.1.1 File browser image launcher](#File_browser_image_launcher)
-    *   [2.2 As a desktop wallpaper manager](#As_a_desktop_wallpaper_manager)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Open SVG images](#Open_SVG_images)
-    *   [3.2 Random background image](#Random_background_image)
-        *   [3.2.1 Using a script](#Using_a_script)
-            *   [3.2.1.1 For dual screen no-xinerama](#For_dual_screen_no-xinerama)
-        *   [3.2.2 Using a cron job](#Using_a_cron_job)
-        *   [3.2.3 Using systemd user session](#Using_systemd_user_session)
-*   [4 See also](#See_also)
+    *   [2.1 Browse images](#Browse_images)
+    *   [2.2 Set the wallpaper](#Set_the_wallpaper)
+    *   [2.3 Open SVG images](#Open_SVG_images)
+    *   [2.4 Random background image](#Random_background_image)
 
 ## Installation
 
@@ -22,9 +15,9 @@
 
 ## Usage
 
-feh is highly configurable. For a full list of options, run `feh --help`.
+feh is highly configurable. For a full list of options, run `feh --help` or see the [feh(1)](https://man.finalrewind.org/1/feh/) [man page](/index.php/Man_page "Man page").
 
-### As an image viewer
+### Browse images
 
 To quickly browse images in a specific directory, you can launch feh with the following arguments:
 
@@ -39,72 +32,18 @@ $ feh -g 640x480 -d -S filename /path/to/directory
 
 This is just one example; there are many more options available should you desire more flexibility.
 
-#### File browser image launcher
+**Tip:** The `--start-at` option will display a selected image in feh while allowing to browse all other images in the directory as well, in their default order, i.e. as if you had run "feh *" and cycled through to the selected image. For example, `feh --start-at ./foo.jpg .` views all images in the current directory, starting with `*foo*.jpg`.
 
-The following script is useful for file browsers. It will display your selected image in feh, but it will enable you to browse all other images in the directory as well, in their default order, i.e. as if you had run "feh *" and cycled through to the selected image.
+### Set the wallpaper
 
-The script assumes the first argument is the filename, with other arguments passed on to feh.
-
- `feh_browser.sh` 
-```
-#!/bin/bash
-shopt -s nullglob
-feh_args=(--draw-filename --draw-exif --magick-timeout 10 --image-bg black -g 800x600)
-
-if [[ ! -f $1 ]]; then
-  printf '%s
-' "$0: first argument is not a file" >&2
-  exit 1
-fi
-
-file=$(basename -- "$1")
-dir=$(dirname -- "$1")
-shift
-
-cd -- "$dir" || exit
-IFS=$'
-\b'
-
-for i in ./*.{png,jpg,jpeg,gif} ; do
-  if [[ ! -f $i ]]; then
-    continue
-  else
-    arr+=("$i")
-  fi
-
-  if [[ $i == "$file" ]]; then
-    c=$((${#arr[@]} - 1))
-  fi
-done
-
-feh "${feh_args[@]}" "$@" -- "${arr[@]:c}" "${arr[@]:0:c}" >/dev/null 2>&1
-
-```
-
-Invoke the script with the selected image's path, followed by any additional arguments to feh. Here is an example of a launcher that you can use in a file browser:
-
- `$ /path/to/script/feh_browser.sh %f -F -Z` 
-
-`-F` and `-Z` are feh arguments. `-F` opens the image in fullscreen mode, and `-Z` automatically zooms the image. Adding the `-q` flag (quiet) suppresses error messages to the terminal when feh tries loading non-image files from the current folder.
-
-A simple but less versatile alternative is
-
- `feh_browser.sh` 
-```
-#! /bin/sh
-feh -. "$(dirname "$1")" --start-at "$1"
-
-```
-
-This one does not seem to accept options.
-
-### As a desktop wallpaper manager
-
-feh can be used to manage the desktop wallpaper for window managers that lack desktop features, such as [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), and [xmonad](/index.php/Xmonad "Xmonad").
+feh can be used to set the desktop wallpaper, for example for [window managers](/index.php/Window_manager "Window manager") without this feature such as [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), and [xmonad](/index.php/Xmonad "Xmonad").
 
 The following command is an example of how to set the initial background:
 
- `$ feh --bg-scale /path/to/image.file` 
+```
+$ feh --bg-scale /path/to/image.file
+
+```
 
 Other scaling options include:
 
@@ -118,17 +57,18 @@ Other scaling options include:
 
 To restore the background on the next session, add the following to your startup file (e.g. `~/.xinitrc`, `~/.config/openbox/autostart`, etc.):
 
- `$ sh ~/.fehbg &` 
+```
+$ sh ~/.fehbg &
+
+```
 
 To change the background image, edit the file `~/.fehbg` which gets created after running the command `feh --bg-scale /path/to/image.file` mentioned above.
-
-## Tips and tricks
 
 ### Open SVG images
 
  `$ feh --magick-timeout 1 file.svg` 
 
-Note that you need [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
+Note that this requires the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package.
 
 ### Random background image
 
@@ -152,126 +92,4 @@ Another way to set a random wallpaper on each x.org session is to edit your `.fe
 
 ```
 
-To change wallpapers periodically, use a script, cron job, or systemd service to execute the command at the desired interval.
-
-#### Using a script
-
-To rotate the wallpaper randomly, create a script with the code below (e.g. `wallpaper.sh`). Make the script executable:
-
- `$ chmod +x wallpaper.sh` 
-
-and call it from `~/.xinitrc`. You can also put the source directly in `~/.xinitrc` instead of in a separate file.
-
-Change the `~/.wallpaper` directory to fit your setup and the `15m` delay as you please (see `man sleep` for options).
-
- `wallpaper.sh` 
-```
-#!/bin/sh
-
-while true; do
-	find ~/.wallpaper -type f \( -name '*.jpg' -o -name '*.png' \) -print0 |
-		shuf -n1 -z | xargs -0 feh --bg-max
-	sleep 15m
-done
-
-```
-
-You may have to change `find ~/.wallpaper` to `find ~/.wallpaper/` to make the above work.
-
-This version does not fork as much, but this version does not recurse through directories:
-
- `wallpaper.sh` 
-```
-#!/bin/bash
-
-shopt -s nullglob
-cd ~/.wallpaper
-
-while true; do
-	files=()
-	for i in ./*.jpg ./*.png; do
-		[[ -f $i ]] && files+=("$i")
-	done
-	range=${#files[@]}
-
-	((range)) && feh --bg-scale "${files[RANDOM % range]}"
-
-	sleep 15m
-done
-
-```
-
-##### For dual screen no-xinerama
-
-This script replace the call to **feh** for add a wallpaper on systems with dual screen nvidia twinview (for example).
-
- `wallpaper.sh` 
-```
-#!/bin/sh
-exec feh --bg-max --no-xinerama "$@"
-
-```
-
-#### Using a cron job
-
-Using a [cron](/index.php/Cron "Cron") job, you can get a similar result, and it does not require having a script constantly sleeping.
-
-Just do `$ crontab -e` and add:
-
-```
-* * * * *  DISPLAY=:0.0 feh --bg-max "$(find ~/.wallpaper/|shuf -n1)"
-
-```
-
-#### Using systemd user session
-
-**Note:** This is useful **only** if you are using *systemd user session*. Read [Systemd/User](/index.php/Systemd/User "Systemd/User") for more details.
-
-Create the unit service file:
-
- `$HOME/.config/systemd/user/feh-wallpaper.service` 
-```
-[Unit]
-Description=Random wallpaper with feh
-
-[Service]
-Type=oneshot
-EnvironmentFile=%h/.wallpaper
-ExecStart=/bin/bash -c '/usr/bin/feh --bg-max "$(find ${WALLPATH}|shuf|head -n 1)"'
-
-[Install]
-WantedBy=default.target
-
-```
-
-Now create the timer file. Change the time as necessary. In this example is `15 seconds`.
-
- `$HOME/.config/systemd/user/feh-wallpaper.timer` 
-```
-[Unit]
-Description=Random wallpaper with feh
-
-[Timer]
-OnUnitActiveSec=*15s*
-Unit=feh-wallpaper.service
-
-[Install]
-WantedBy=default.target
-
-```
-
-In this example the configuration is one hidden file on the home directory with the path of the directory where the images are stored
-
- `$HOME/.wallpaper` 
-```
-WALLPATH=*/home/user/.wallpaper/*
-
-```
-
-To activate the `feh-wallpaper.timer` see [Systemd/Timers#Management](/index.php/Systemd/Timers#Management "Systemd/Timers").
-
-**Note:** Remember that under *systemd user session*, you should use the `--user` flag on `systemctl`.
-
-## See also
-
-*   [Forum post with original script for feh_browser](https://bbs.archlinux.org/viewtopic.php?pid=884635#p884635)
+**Tip:** To change wallpapers periodically, use a script (see [while loop](http://mywiki.wooledge.org/BashGuide/TestsAndConditionals#Conditional_Loops_.28while.2C_until_and_for.29)), [cron](/index.php/Cron "Cron") job, or [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") to execute the command at the desired interval.

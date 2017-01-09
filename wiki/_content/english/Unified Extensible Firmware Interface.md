@@ -448,7 +448,7 @@ Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/inde
 
 **Tip:** The given configuration entries can also be entered inside a [GRUB command-shell](/index.php/GRUB#Using_the_command_shell "GRUB").
 
-*   [Create an USB Flash Installation](/index.php/USB_flash_installation_media#BIOS_and_UEFI_Bootable_USB "USB flash installation media")
+*   [Create an editable USB Flash Installation](/index.php/USB_flash_installation_media#Using_manual_formatting "USB flash installation media"). Since we are going to use GRUB, you only need to follow the steps up until the `syslinux` part
 
 *   Backup `EFI/boot/loader.efi` to `EFI/boot/gummiboot.efi`
 

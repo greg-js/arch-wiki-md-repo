@@ -136,7 +136,7 @@ $ echo 'export DESKTOP_SESSION=gnome' >> /etc/profile
 
 Set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using a [Display manager](/index.php/Display_manager "Display manager") in [Xprofile](/index.php/Xprofile "Xprofile").
 
-**Note:** If the icon theme was not applied, you might want to check if the name that you entered of your preferred theme, was in the correct format. For example, if you want to apply the currently active icon theme to your QT applications, you can find the correct format of it's name with the command:- `cat /home/$USER/.gtkrc-2.0 ` 
+**Note:** If the icon theme was not applied, you might want to check if the name that you entered of your preferred theme, was in the correct format. For example, if you want to apply the currently active icon theme to your QT applications, you can find the correct format of it's name with the command: `$ cat ~/.gtkrc-2.0 | grep icon-theme | cut -d= -f2` 
 
 ### Improve subpixel rendering of GTK apps under KDE Plasma
 

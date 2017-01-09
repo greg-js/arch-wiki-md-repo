@@ -3,7 +3,7 @@ As it pertains to general desktop use, an [ICC profile](https://en.wikipedia.org
 ## Contents
 
 *   [1 Profile generation](#Profile_generation)
-    *   [1.1 Calorimeter or spectrometer](#Calorimeter_or_spectrometer)
+    *   [1.1 Colorimeter or spectrometer](#Colorimeter_or_spectrometer)
     *   [1.2 Argyll CMS](#Argyll_CMS)
     *   [1.3 Monitor calibration and profiling with additional calibration hardware](#Monitor_calibration_and_profiling_with_additional_calibration_hardware)
     *   [1.4 Scanner calibration](#Scanner_calibration)
@@ -31,9 +31,9 @@ As it pertains to general desktop use, an [ICC profile](https://en.wikipedia.org
 
 Color management is a workflow of hardware calibration, software profiling and embedding the profile into the picture or video. It's all based on using an [ICC profile](https://en.wikipedia.org/wiki/ICC_profile "wikipedia:ICC profile").
 
-### Calorimeter or spectrometer
+### Colorimeter or spectrometer
 
-It is highly recommended to use a calorimeter or spectrometer device for hardware assisted display, printer and scanner calibration. For home use there are several affordable calorimeters available. Some are well or even better supported under Linux than on other operating systems. Frequently recommended devices are [X-Rite ColorMunki Display](http://www.xrite.com/colormunki-display), [DataColor Spyder5 Express](http://spyder.datacolor.com/portfolio-view/spyder5express/) and the open source hardware [ColorHug](http://www.hughski.com/). You can find more Linux supported devices listed in the [AgyllCMS documentation](http://www.argyllcms.com/doc/instruments.html).
+It is highly recommended to use a colorimeter or spectrometer device for hardware-assisted display, printer and scanner calibration. For home use there are several affordable colorimeters available. Some are well- or even better-supported under Linux than on other operating systems. Frequently recommended devices are [X-Rite ColorMunki Display](http://www.xrite.com/colormunki-display), [DataColor Spyder5 Express](http://spyder.datacolor.com/portfolio-view/spyder5express/) and the open source hardware [ColorHug](http://www.hughski.com/). You can find more Linux-supported devices listed in the [AgyllCMS documentation](http://www.argyllcms.com/doc/instruments.html).
 
 ### Argyll CMS
 

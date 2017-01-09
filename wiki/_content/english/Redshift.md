@@ -19,9 +19,10 @@ The project is developed on [GitHub](https://github.com/jonls/redshift).
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 redshift-gtk will not start](#redshift-gtk_will_not_start)
-    *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
-    *   [3.4 If you cannot get redshift to autostart in i3](#If_you_cannot_get_redshift_to_autostart_in_i3)
-    *   [3.5 If you are on Wayland](#If_you_are_on_Wayland)
+    *   [3.3 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
+    *   [3.4 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
+    *   [3.5 If you cannot get redshift to autostart in i3](#If_you_cannot_get_redshift_to_autostart_in_i3)
+    *   [3.6 If you are on Wayland](#If_you_are_on_Wayland)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -194,16 +195,20 @@ Locate configuration-file "redshift.conf" in your distribution and change "scree
 redshift-gtk requires optional dependencies to work correctly. To verify any missing dependencies, run `redshift-gtk` in the command line. Similar output to the following would be produced:
 
 ```
- Traceback (most recent call last):
-   File "/usr/bin/redshift-gtk", line 26, in <module>
-     from redshift_gtk.statusicon import run
-   File "/usr/lib/python3.4/site-packages/redshift_gtk/statusicon.py", line 31, in <module>
-     from gi.repository import Gtk, GLib
- ImportError: No module named 'gi.repository'
+Traceback (most recent call last):
+  File "/usr/bin/redshift-gtk", line 26, in <module>
+    from redshift_gtk.statusicon import run
+  File "/usr/lib/python3.4/site-packages/redshift_gtk/statusicon.py", line 31, in <module>
+    from gi.repository import Gtk, GLib
+ImportError: No module named 'gi.repository'
 
 ```
 
 If this is the case, installing [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg) packages solves this issue.
+
+### Left/right clicking the tray icon doesn't work
+
+Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[2]](https://github.com/jonls/redshift/issues/363) and [[3]](https://bugs.archlinux.org/task/49971)
 
 ### Failed to run Redshift due to geoclue2
 
@@ -226,13 +231,13 @@ users=
 You can add this to your i3 config file.
 
 ```
-   exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift-gtk
 
 ```
 
 ### If you are on Wayland
 
-At the moment running redshift has no effect under Wayland, because gamma correction is not available there[[2]](https://github.com/jonls/redshift/issues/260). There is an open feature request on their issue tracker.[[3]](https://github.com/jonls/redshift/issues/55)
+At the moment running redshift has no effect under Wayland, because gamma correction is not available there[[4]](https://github.com/jonls/redshift/issues/260). There is an open feature request on their issue tracker.[[5]](https://github.com/jonls/redshift/issues/55)
 
 If you are running Gnome, you can try your luck with [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/). Install the aur package, restart Gnome and enable the Gnome Redshift Extension.
 

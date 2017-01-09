@@ -77,7 +77,7 @@ UEFI 主流都支持 MBR 和 GPT 分区表。Apple-Intel Macs 上的 EFI 还支�
 
 内核被加载后，它就会解压 [mkinitcpio (简体中文)](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")， 又名 initial RAM filesystem, 后者会伪装成一个被初始化了的根文件系统。内核接着会执行 `/init` 作为第一条进程。传说中的「用户空间」就这么被启动了。
 
-initramfs 之所以存在，是为了帮系统访问真正的根文件系统（参见 [Arch filesystem hierarchy (简体中文)](/index.php/Arch_filesystem_hierarchy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch filesystem hierarchy (简体中文)")）。也就是说，那些硬件 IDE, SCSI, SATA, USB/FW 所要求的内核模块，如果并没有内置在内核里，就会被 initramfs 负责加载。一旦通过 [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)") 之类的程序或脚本加载好模块，启动流程才会继续下去。所以啊，initramfs 只要有能够让系统访问真・根文件系统的模块就可以了，不用尽可能地包含一切模块。当然，其它真正有用的模块之后会在 init 流程中被 udev 加载好。
+initramfs 之所以存在，是为了帮系统访问真正的根文件系统（参见 [Arch filesystem hierarchy (简体中文)](/index.php/Arch_filesystem_hierarchy_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch filesystem hierarchy (简体中文)")）。也就是说，那些硬件 IDE, SCSI, SATA, USB/FW 所要求的内核模块，如果并没有内置在内核里，就会被 initramfs 负责加载。一旦通过 [udev (简体中文)](/index.php/Udev_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Udev (简体中文)") 之类的程序或脚本加载好模块，启动流程才会继续下去。所以，initramfs 只要有能够让系统访问真实根文件系统的模块就可以了，不用尽可能地包含一切模块。当然，其它真正有用的模块之后会在 init 流程中被 udev 加载好。
 
 ## Init 流程
 

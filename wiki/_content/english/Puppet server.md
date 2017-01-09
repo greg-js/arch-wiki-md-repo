@@ -3,6 +3,7 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Tuning the server for lower memory usage](#Tuning_the_server_for_lower_memory_usage)
+    *   [2.2 Installing support for hiera eyaml](#Installing_support_for_hiera_eyaml)
 *   [3 Accessing the puppet server web interface](#Accessing_the_puppet_server_web_interface)
 
 ## Installation
@@ -52,6 +53,17 @@ By default it is:
 ```
 
 But if you are using a server that does not have sufficient RAM spare you can set it to as little as 512 megabytes. Keep in mind though that this will only cater for a small amount of managed servers and you will also need to change the maximum active instances of puppet to 1 in `/etc/puppetlabs/puppetserver/puppetserver.conf` which limits the number of server's that the server is able to communicate with at once.
+
+### Installing support for hiera eyaml
+
+If you wish to use Hiera eyaml on the puppet server you should install the gems for it on the puppet server using the following command:
+
+```
+puppetserver gem install hiera-eyaml
+
+```
+
+and then restart puppet server.
 
 ## Accessing the puppet server web interface
 

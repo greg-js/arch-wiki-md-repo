@@ -21,7 +21,8 @@
     *   [3.6 Blacklist interfaces](#Blacklist_interfaces)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Error /net/connman/technology/wifi: Not supported](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_Not_supported)
-    *   [4.2 Error Failed to set hostname/domainname](#Error_Failed_to_set_hostname.2Fdomainname)
+    *   [4.2 Error /net/connman/technology/wifi: No carrier](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_No_carrier)
+    *   [4.3 Error Failed to set hostname/domainname](#Error_Failed_to_set_hostname.2Fdomainname)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -338,7 +339,11 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 
 ### Error /net/connman/technology/wifi: Not supported
 
-You need to install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then restart connman service: `systemctl restart connman.service`.
+You need to install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then [restart](/index.php/Restart "Restart") `connman.service`.
+
+### Error /net/connman/technology/wifi: No carrier
+
+If wireless scanning leads to above error, this may be due to an unresolved bug.[[3]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
 
 ### Error Failed to set hostname/domainname
 

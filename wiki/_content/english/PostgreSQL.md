@@ -31,17 +31,19 @@ This document describes how to set up PostgreSQL. It also describes how to confi
 
 Then, switch to the default PostgreSQL user *postgres* by executing the following command:
 
-*   If you have [sudo](https://www.archlinux.org/packages/?name=sudo) and your username is in `sudoers`:
+*   If you have [sudo](/index.php/Sudo "Sudo") and your username is in `sudoers`:
 
-	 `$ sudo -i -u postgres` 
+	 `$ sudo -u postgres -i` 
 
 *   Otherwise:
 
 ```
 $ su
-# su - postgres
+# su -l postgres
 
 ```
+
+See [su(1)](http://man7.org/linux/man-pages/man1/su.1.html) or [sudo(8)](https://www.sudo.ws/man/sudo.man.html) for their usage.
 
 **Note:** Commands that should be run as the postgres user are prefixed by `[postgres]$` in this article.
 
@@ -54,11 +56,11 @@ Before PostgreSQL can function correctly, the database cluster must be initializ
 
 Where:
 
-*   the *--locale* is the one defined in the file `/etc/locale.conf`;
-*   the *-E* is the default encoding of the database that will be created in the future;
-*   and *-D* is the default location where the database cluster must be stored.
+*   the `--locale` is the one defined in the file `/etc/locale.conf`;
+*   the `-E` is the default encoding of the database that will be created in the future;
+*   and `-D` is the default location where the database cluster must be stored.
 
-A bunch of lines should now appear on the screen with several ending by *... ok*:
+A bunch of lines should now appear on the screen with several ending by `... ok`:
 
 ```
 The files belonging to this database system will be owned by user "postgres".
@@ -78,11 +80,12 @@ creating configuration files ... ok
 creating template1 database in /var/lib/postgres/data/base/1 ... ok
 initializing pg_authid ... ok
 [...]
+
 ```
 
 If this is the kind of lines you see, then the process succeeded. In that case return to the regular user using `exit`.
 
-Then as root, [start](/index.php/Start "Start") and enable `postgresql.service`.
+Then as root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `postgresql.service`.
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to edit the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 
@@ -315,13 +318,7 @@ Now you can create a new database:
 
 If you log back in to `psql` and check the databases, you should see the proper encoding of your new database:
 
-```
-\l
-
-```
-
-returns
-
+ `\l` 
 ```
                               List of databases
   Name    |  Owner   | Encoding  | Collation | Ctype |   Access privileges
@@ -329,7 +326,7 @@ returns
 blog      | postgres | UTF8      | C         | C     |
 postgres  | postgres | SQL_ASCII | C         | C     |
 template0 | postgres | SQL_ASCII | C         | C     | =c/postgres
-                                                     : postgres=CTc/postgres
+                                                     : postgres=CTc/postgres
 template1 | postgres | UTF8      | C         | C     |
 
 ```
@@ -380,6 +377,7 @@ Add to /etc/hhvm/server.ini:
 ```
 extension_dir = /etc/hhvm
 hhvm.extensions[pgsql] = pgsql.so
+
 ```
 
 ## Upgrading PostgreSQL
@@ -394,42 +392,38 @@ If you had custom settings in configuration files like `pg_hba.conf` and `postgr
 
 **Warning:** This quick script is critical. Please make sure you have dumped your complete database before embarking in such upgrade.
 
-**First step: dump your database and stop postgres**
+**First step: dump your database and stop PostgreSQL**
 
 ```
-# su - postgres
-$ cd /var/lib/postgres
-$ mkdir dump
-$ pg_dumpall | gzip > dump/pgdumpall.gz
-$ exit
-# systemctl stop postgres
+# su -l postgres
+[postgres]$ cd /var/lib/postgres
+[postgres]$ mkdir dump
+[postgres]$ pg_dumpall | gzip > dump/pgdumpall.gz
 
 ```
 
-**Second step: update the packages and install postgresql-old-upgrade**
+[Stop](/index.php/Stop "Stop") `postgresql.service`.
 
-```
-# pacman -Suy postgresql-old-upgrade postgresql postgresql-libs
+**Second step: prepare the upgrade script**
 
-```
-
-**Third step: prepare the upgrade script**
-
-```
-upgrade_pg.sh
-
-```
-
+ `upgrade_pg.sh` 
 ```
 # Usage: sh ./upgrade_pg.sh <x.y version to update from>
 
 FROM_VERSION="$1"
 
-su - postgres -c "mv /var/lib/postgres/data /var/lib/postgres/data-${FROM_VERSION}"
-su - postgres -c 'mkdir /var/lib/postgres/data'
-su - postgres -c 'chmod 700 /var/lib/postgres/data'
-su - postgres -c "initdb --locale $LANG -E UTF8 -D /var/lib/postgres/data"
-su - postgres -c "pg_upgrade -b /opt/pgsql-${FROM_VERSION}/bin/ -B /usr/bin/ -d /var/lib/postgres/data-${FROM_VERSION} -D /var/lib/postgres/data"
+su -l postgres -c "mv /var/lib/postgres/data /var/lib/postgres/data-${FROM_VERSION}"
+su -l postgres -c 'mkdir /var/lib/postgres/data'
+su -l postgres -c 'chmod 700 /var/lib/postgres/data'
+su -l postgres -c "initdb --locale $LANG -E UTF8 -D /var/lib/postgres/data"
+su -l postgres -c "pg_upgrade -b /opt/pgsql-${FROM_VERSION}/bin/ -B /usr/bin/ -d /var/lib/postgres/data-${FROM_VERSION} -D /var/lib/postgres/data"
+
+```
+
+**Third step: update the packages and install postgresql-old-upgrade**
+
+```
+# pacman -Syu postgresql-old-upgrade postgresql postgresql-libs
 
 ```
 
@@ -439,10 +433,7 @@ The first time, it is advisable to run one by one the commands of this script.
 
 **Fith step: start the database**
 
-```
-# systemctl start postgresql
-
-```
+[Start](/index.php/Start "Start") `postgresql.service`
 
 #### Troubleshooting
 
@@ -452,7 +443,7 @@ If the `pg_upgrade` step fails with the following messages,
 
 	Failure, exiting
 
-	Make sure you are in a directory that the postgres user has enough rights to write the log file to (`/tmp` for example), or use `su - postgres` instead of `sudo -u postgres`.
+	Make sure you are in a directory that the postgres user has enough rights to write the log file to (`/tmp` for example), or use `su -l postgres` instead of `sudo -u postgres`.
 
 	If you are in a directory that postgres user has enough rights to write the log file to however you still get this error then make sure `/var/lib/postgres` is owned by postgres
 
@@ -583,16 +574,16 @@ For those wishing to use `pg_upgrade`, a [postgresql-old-upgrade](https://www.ar
 When you are ready, upgrade the following packages: [postgresql](https://www.archlinux.org/packages/?name=postgresql), [postgresql-libs](https://www.archlinux.org/packages/?name=postgresql-libs), and [postgresql-old-upgrade](https://www.archlinux.org/packages/?name=postgresql-old-upgrade). Note that the data directory does not change from version to version, so before running `pg_upgrade`, it is necessary to rename your existing data directory and migrate into a new directory. The new database must be initialized, as described near the top of this page.
 
 ```
-# systemctl stop postgresql
-# su - postgres -c 'mv /var/lib/postgres/data /var/lib/postgres/olddata'
-# su - postgres -c 'initdb --locale en_US.UTF-8 -E UTF8 -D /var/lib/postgres/data'
+# systemctl stop postgresql.service
+# su -l postgres -c 'mv /var/lib/postgres/data /var/lib/postgres/olddata'
+# su -l postgres -c 'initdb --locale en_US.UTF-8 -E UTF8 -D /var/lib/postgres/data'
 
 ```
 
 The upgrade invocation will likely look something like the following. **Do not run this command blindly without understanding what it does!** Reference the [upstream pg_upgrade documentation](http://www.postgresql.org/docs/current/static/pgupgrade.html) for details.
 
 ```
-# su - postgres -c 'pg_upgrade -d /var/lib/postgres/olddata/ -D /var/lib/postgres/data/ -b /opt/pgsql-9.4/bin/ -B /usr/bin/'
+# su -l postgres -c 'pg_upgrade -d /var/lib/postgres/olddata/ -D /var/lib/postgres/data/ -b /opt/pgsql-9.4/bin/ -B /usr/bin/'
 
 ```
 
@@ -603,11 +594,11 @@ You could also do something like this (after the upgrade and install of [postgre
 **Note:** Below are the commands for PostgreSQL 9.4\. You can find similar commands in `/opt/` for PostgreSQL 9.2.
 
 ```
-# systemctl stop postgresql
+# systemctl stop postgresql.service
 # /opt/pgsql-9.4/bin/pg_ctl -D /var/lib/postgres/olddata/ start
 # /opt/pgsql-9.4/bin/pg_dumpall >> old_backup.sql
 # /opt/pgsql-9.4/bin/pg_ctl -D /var/lib/postgres/olddata/ stop
-# systemctl start postgresql
+# systemctl start postgresql.service
 # psql -f old_backup.sql postgres
 
 ```

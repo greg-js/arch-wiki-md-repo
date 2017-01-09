@@ -14,6 +14,7 @@
     *   [2.7 Desktop launcher menus](#Desktop_launcher_menus)
         *   [2.7.1 Creating menu entries for Wine utilities](#Creating_menu_entries_for_Wine_utilities)
         *   [2.7.2 Removing menu entries](#Removing_menu_entries)
+    *   [2.8 Mono and Gecko](#Mono_and_Gecko)
 *   [3 Using Windows applications](#Using_Windows_applications)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
@@ -256,6 +257,17 @@ $ rm ~/.local/share/mime/packages/x-wine*
 $ rm ~/.local/share/applications/wine-extension*
 $ rm ~/.local/share/icons/hicolor/*/*/application-x-wine-extension*
 $ rm ~/.local/share/mime/application/x-wine-extension*
+
+```
+
+### Mono and Gecko
+
+when initializing a new wineprefix wine will ask to install mono and gecko. or if the packages [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) and [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) are installed wine will silently copy about 450 mb of mono and gecko files in the wineprefix.
+
+to prevent wine from asking to install mono and gecko start wine like this:
+
+```
+WINEDLLOVERRIDES=mscoree=d;mshtml=d wine somewineapp
 
 ```
 

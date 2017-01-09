@@ -113,7 +113,7 @@ Next, we will have to make sure it is called and piped to `$PANEL_FIFO`:
 
 ```
 while true; do
-echo "S" "$(panel_volume) $(panel_clock) > "$PANEL_FIFO"
+echo "S" "$(panel_volume) $(panel_clock)" > "$PANEL_FIFO"
         sleep 1s
 done &
 

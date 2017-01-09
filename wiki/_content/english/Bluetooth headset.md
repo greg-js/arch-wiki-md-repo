@@ -10,9 +10,10 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.2.1 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
         *   [1.2.2 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
         *   [1.2.3 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
-        *   [1.2.4 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
-        *   [1.2.5 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
-        *   [1.2.6 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
+        *   [1.2.4 Connecting works, but there're sound glitches all the time](#Connecting_works.2C_but_there.27re_sound_glitches_all_the_time)
+        *   [1.2.5 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
+        *   [1.2.6 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+        *   [1.2.7 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -37,10 +38,10 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 *   [5 Switch between HSV and A2DP setting](#Switch_between_HSV_and_A2DP_setting)
     *   [5.1 A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio)
         *   [5.1.1 Socket interface problem](#Socket_interface_problem)
-        *   [5.1.2 Gnome with GDM](#Gnome_with_GDM)
+        *   [5.1.2 A2DP profile is unavailable](#A2DP_profile_is_unavailable)
+        *   [5.1.3 Gnome with GDM](#Gnome_with_GDM)
 *   [6 Headset via Bluez5/bluez-alsa](#Headset_via_Bluez5.2Fbluez-alsa)
-*   [7 Tested headsets](#Tested_headsets)
-*   [8 See also](#See_also)
+*   [7 See also](#See_also)
 
 ## Headset via Bluez5/PulseAudio
 
@@ -198,6 +199,10 @@ module-bluez5-device
 module-bluez5-discover
 
 ```
+
+#### Connecting works, but there're sound glitches all the time
+
+This is very likely to occur when the bluetooth and the wifi share the same chip as they share the same physical anthena and possibly band range (2.4GHz). Although this works seamlessly on windows, this is not the case on linux. One possible solution is to move your wifi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your wifi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
 
 #### Connecting works, but I cannot play sound
 
@@ -677,6 +682,16 @@ pacmd set-card-profile 2 a2dp_sink
 
 If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseAudio 3.0+, you can try disabling the Socket interface from `/etc/bluetooth/audio.conf` by removing the line `Enable=Socket` and adding line `Disable=Socket`.
 
+#### A2DP profile is unavailable
+
+As of Pulseaudio 9.0, when connecting to headset via Bluedevil or similar, A2DP profile is unavailable. As mentioned in [bug 92102](https://bugs.freedesktop.org/show_bug.cgi?id=92102) discussion, a workaround is connecting to a headset via bluetoothctl
+
+```
+bluetoothctl
+connect [headset MAC here]
+
+```
+
 #### Gnome with GDM
 
 **Note:** Below was tested with Gnome 3.18.4 and PulseAudio 8.0
@@ -740,64 +755,6 @@ defaults.bluealsa {
 ```
 
 You can now use the device bluealsa to reach your headset. You can also use `alsamixer` to setup the volumes, as `alsamixer -D bluealsa`.
-
-## Tested headsets
-
-| Model | Version | Comments | Compatible |
-| **Philips SHB9150** | bluez5, pulseaudio 9 | Yes |
-| **Philips SHB9100** | Pause and resume is flaky. See [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1315428#p1315428) for the underlying issue and a temporary solution to improve audio quality. | Limited |
-| **Philips SHB7000** | Pause and resume is flaky. | Limited |
-| **Philips SHB7100** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume is flaky (sometimes works in VLC, not at all in Audacious). Tested only A2DP and Handsfree audio out, built-in mic was broken. | Limited |
-| **Philips SHB7150** | bluez 5.32, pulseaudio 6.0 | Next/previous buttons work. Pause and resume work in VLC. Tested only A2DP profile. | Yes |
-| **Philips SHB5500BK/00** | bluez 5.28, PulseAudio 6.0 | Pause and resume is not working. | Limited |
-| **Philips SHB3060** | bluez 5.40, PulseAudio 9.0 | Buttons are not working. Both profiles: HSP (also micrphone) and A2DP work. | Yes |
-| **Parrot Zik** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
-| **Parrot Zik 2.0** | Microphone detected but does not work (HSP profile unavailable). If the Bluetooth connection cuts, there will be a noticeable delay in audio. Work around by reinitializing the Bluetooth connection. | Limited |
-| **Parrot Zik 3.0** | Microphone detected but does not work (HSP profile unavailable). No delay issues. | Limited |
-| **Sony DR-BT50** | bluez{4,5} | Works for a2dp, see [[4]](http://vlsd.blogspot.com/2013/11/bluetooth-headphones-and-arch-linux.html)). Adapter: D-Link DBT-120 USB dongle. | Yes |
-| **Sony SBH50** | bluez5 | Works for a2dp, Adapter: Broadcom Bluetooth 2.1 Device (Vendor=0a5c ProdID=219b Rev=03.43). Requires the `btusb` [module](/index.php/Modprobe "Modprobe"). | Yes |
-| **Sony MDR-XB950BT** | pulseaudio | Tested a2dp. Adapter: Grand-X BT40G. Does not auto-connect, need to connect manually. Other functionality works fine. | Limited |
-| **Sony MUC-M1BT1** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Both A2DP & HSP/HFP work fine. | Yes |
-| **SoundBot SB220** | bluez5, [pulseaudio-git](https://aur.archlinux.org/packages/pulseaudio-git/) | Yes |
-| **Auna Air 300** | bluez5, pulseaudio-git | For some reason, a few restarts were required, and eventually it just started working. | Limited |
-| **Sennheiser MM 400-X** | bluez5, pulseaudio 4.0-6 | Yes |
-| **Sennheiser MM 550-X Travel** | bluez 5.27-1, pulseaudio 5.0-1 | Next/Previous buttons work out-of-the-box, Play/Pause does not | Yes |
-| **Sennheiser URBANITE XL Wireless** | bluez 5.37-2, pulseaudio 7.1-3 | A2DP High Fidelity Playback. Play/Pause/Next/Previous works out-of-the-box. | Yes |
-| **Audionic BlueBeats (B-777)** | bluez5, pulseaudio 4.0-6 | Yes |
-| **Logitech Wireless Headset** | bluez 5.14, pulseaudio-git | part number PN 981-000381, advertised for use with iPad | Yes |
-| **HMDX Jam Classic Bluetooth** | bluez, pulseaudio-git | Yes |
-| **PT-810** | bluez 5.14, pulseaudio-git | Generic USB-Powered Bluetooth Audio Receiver with 3.5mm headset jack and a2dp profile. Widely available as "USB Bluetooth Receiver." IDs as PT-810. | Yes |
-| **Philips SHB4000WT** | bluez5 | A2DP works, HDP distorted. | Yes |
-| **Philips AEA2000/12** | bluez5 | Yes |
-| **Nokia BH-104** | bluez4 | Yes |
-| **Creative AirwaveHD** | bluez 5.23 | Bluetooth adapter Atheros Communications usb: 0cf3:0036 | Yes |
-| **Creative HITZ WP380** | bluez 5.27, pulseaudio 5.0-1 | A2DP Profile only. Buttons work (Play, Pause, Prev, Next). Volume buttons are hardware-only. Auto-connect works but you should include the bluetooth module in "pulseaudio" to switch to it automatically. Clear HD Music Audio (This device support APTx codec but it is not supported in linux yet). You may have some latency problems which needs pulseaudio restart. | Yes |
-| **deleyCON Bluetooth Headset** | bluez 5.23 | Adapter: CSL - USB nano Bluetooth-Adapter V4.0\. Tested a2dp profile. Untested microphone. Does not auto-connect (even when paired and trusted), must connect manually. Play/pause button mutes/unmutes the headphones, not the playback. Playback fwd/bwd buttons do not work (nothing visible with *xev*). | Limited |
-| **UE BOOM** | bluez 5.27, pulseaudio-git 5.99 | Update to latest UE BOOM fw 1.3.58\. Sound latency in video solved by configuring pavucontrol. Works with UE BOOM x2. | Yes |
-| **LG HBS-730** | bluez 5.30, pulseaudio 6.0 | Works out of box with A2DP profile. | Yes |
-| **LG HBS-750** | bluez 5.30, pulseaudio-git 6.0 | Works out of box with A2DP profile. | Yes |
-| **Beats Studio Wireless** | bluez 5.28, pulseaudio 6.0 | Works out of box. Not tested multimedia buttons. | Yes |
-| **AKG Y45BT** | bluez 5.30, pulseaudio 6.0 | Pause and resume does not work. Needs `Enable=Socket` in `/etc/bluetooth/audio.conf` and `load-module module-bluetooth-discover` in `/etc/pulse/default.pa`. | Yes |
-| **AKG Y50BT** | bluez 5.43, pulseaudio 9.0 | In A2DP profile works fine. Pause/Resume, next and previous works as expected. | Yes |
-| **Bluedio Turbine/Turbine 2+** | bluez 5.3, pulseaudio 6.0 | HSP/HFP work fine, A2DP work fine. | Yes |
-| **Sony SBH20** | bluez 5.30, pulseaudio 6.0 | Works out of box with A2DP profile. | Yes |
-| **Nokia BH-111** | bluez 5.30, pulseaudio 6.0 | Works with both HSP/HFP and A2DP. Buttons work in certain apps. | Yes |
-| **Sony MDR-ZX330BT** | bluez 5.31, pulseaudio 6.0 | Works out of box (HSP/HFP and A2DP). Buttons work in certain apps. | Yes |
-| **Samsung Level Link** | bluez 5.33, pulseaudio 6.0 | Works out of box (HSP/HFP and A2DP). Buttons work in certain apps. | Yes |
-| **Bernafon Soundgate 3** | bluez 5.34-2, pulseaudio 7.0-1 | Works (A2DP) after installing blueman-git 2.0.r53.g2a812a8-1. | Yes |
-| **JBL E40 BT** | bluez 5.35, pulseaudio 7.0 | Connection works after installing blueberry and blueman. A2DP works after adding Disable=Socket to `/etc/bluetooth/audio.conf`. Media buttons works. | Yes |
-| **Sony SBH80** | bluez 5.36, pulseaudio 7.1 | Media buttons do not work. A2DP works after disabling profiles and enabling A2DP in blueman. | Yes |
-| **Kitsound Manhattan** | bluez 5.37, pulseaudio 7.13 | All appears to work fine. If Pulseaudio is run as root ( --system) rather than as a user, it often resuls in either a refusal to connect once paired, or else a complete system freeze ( asking for the access PIN )! You have been warned. | Yes |
-| **JBL Everest 300** | bluez 5.37, pulseaudio 8.0 | Everything works correctly. Headphones connected with HSP/HFP profile and sound quality was bad, but after switching profile in **pavucontrol** to A2DP sink sound quality went way up (as expected). Pairing went without issues. | Yes |
-| **Logitech UE9000** | bluez 5.37, pulseaudio 7.1, gnome 3.18.2 | Audio playback works correctly after gnome/gdm fix [here](#Connecting_works.2C_but_I_cannot_play_sound). Audio profile defaults to HSP/HFP. Microphone works in both HSP/HFP and A2DP profiles. Play/Pause and Fwd/Back functions work correctly in Spotify and VLC | Yes |
-| **Bose AE2 SoundLink** | bluez 5.36, pulseaudio 7.1 | Pause and resume does not work. Microphone does not work. | Limited |
-| **Jawbone Jambox** | bluez 5.38, pulseaudio 8.0 | Yes |
-| **Plantronics BackBeat FIT** | bluez5, pulseaudio 8.0 | Fully working on both headset and a2dp profiles. Pause button pauses the player. (Tested in mpv.) | Yes |
-| **Aukey EP-B26** | bluez 5.39-1, pulseaudio 8.0-3 | Fully working on both headset(poor quality) and a2dp(good quality) profiles. Pause button pauses the player, back/forth goes to previous/next song. (Tested in mpv) Microphone works only in HSP/HFP mode. | Yes |
-| **Plantronics BackBeat Pro** | bluez5, pulseaudio 9.0 | Fully working on both headset and a2dp profiles. Pause button as well as removing the headset from the ears pauses the player. | Yes |
-| **Bose QuietComfort 35** | bluez 5.41, pulseaudio 9.0 | Set `ControllerMode=bredr` to successfully pair. | Yes |
-| **Sennheiser Momentum 2** | bluez5, pulseaudio 9.0-1 | The A2DP profile change may fail if not avoided gdm to start fix is applied | Yes |
-| **Blue Tiger Dual Elite** | bluez-5.42-1, pulseaudio 9.0-1 | Connects with `pulseaudio-bluetooth` package, mic & controls not tested | Yes |
 
 ## See also
 

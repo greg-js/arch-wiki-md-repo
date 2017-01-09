@@ -2,7 +2,6 @@
 
 | **Device** | **Status** | **Modules** |
 | Video | Working | i915 |
-| External screen | Partial or does not work at all |  ? |
 | Wireless | Working | brcmfmac |
 | Bluetooth | Works after installing firmware | btbcm |
 | Audio | Working | snd_hda_intel |
@@ -11,6 +10,7 @@
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
+| TPM 1.2/2.0 | Working | tpm |
 
 The Dell XPS 13 2016 (9350) is the third-generation model of the XPS 13 line. The laptop is available in both a standard edition with Windows installed as well as a Developer Edition which only differs in that it comes with Ubuntu installed as well as the Broadcom WiFi card replaced with an Intel WiFi card. Just like the older versions ([Dell XPS 13 (9333)](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)") and [Dell XPS 13 (9343)](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)")) it can be bought in different hardware configurations.
 
@@ -22,10 +22,8 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 
 *   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
 *   [2 BIOS](#BIOS)
-    *   [2.1 USB not found](#USB_not_found)
-    *   [2.2 No UEFI system found](#No_UEFI_system_found)
-    *   [2.3 Updates](#Updates)
-    *   [2.4 Firmware Updates](#Firmware_Updates)
+    *   [2.1 Updates](#Updates)
+    *   [2.2 Firmware Updates](#Firmware_Updates)
 *   [3 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
     *   [3.1 External screen](#External_screen)
 *   [4 SATA controller](#SATA_controller)
@@ -54,11 +52,13 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [10 Sound](#Sound)
     *   [10.1 Hissing/Crackling noises when using headphones](#Hissing.2FCrackling_noises_when_using_headphones)
 *   [11 Microphone](#Microphone)
-*   [12 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
-*   [13 lspci and lsusb](#lspci_and_lsusb)
-    *   [13.1 lspci](#lspci)
-    *   [13.2 lsusb](#lsusb)
-*   [14 See also](#See_also)
+*   [12 TPM](#TPM)
+    *   [12.1 TPM 2.0](#TPM_2.0)
+*   [13 CPU slowdown after resume from suspend](#CPU_slowdown_after_resume_from_suspend)
+*   [14 lspci and lsusb](#lspci_and_lsusb)
+    *   [14.1 lspci](#lspci)
+    *   [14.2 lsusb](#lsusb)
+*   [15 See also](#See_also)
 
 ## Content adaptive brightness control
 
@@ -66,13 +66,9 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 ## BIOS
 
-### USB not found
+The most convenient way to install Arch Linux is by disabling "Secure Boot" (Secure Boot > Disable). However it is possible to self-sign your kernel and boot with it enabled. For further information have a look at the [Secure Boot](/index.php/Secure_Boot "Secure Boot") article.
 
-It may happen that the Arch Linux USB won't be recognized. You have to disable secure boot (Secure Boot > Disable) and then enable the legacy (General > Advanced Boot Options > Enable Legacy Option ROMs).
-
-### No UEFI system found
-
-Sometimes the BIOS UEFI does not respect the efivars. In this case you have manually add your efi file in BIOS boot options by going to General > Boot Sequence > Add Boot Option.
+In case you `efivars` are not properly set it is most likely due to you not being booted into [UEFI](/index.php/UEFI "UEFI"). Should the problem persist be sure to consult the [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") section.
 
 ### Updates
 
@@ -316,6 +312,21 @@ This will prevent PulseAudio to fiddle with the gain setting at all.
 **Note:** Not all hardware has the "Digital" channel
 
 For ALSA, increase "Digital" channel for microphone to work.
+
+## TPM
+
+As shipped the Trusted Platform Module (TPM) can be configured easily following the steps at [Trusted Platform Module](/index.php/Trusted_Platform_Module "Trusted Platform Module") and requires no otherwise special configuration. Handy packages to use with the TPM are [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/) and [trousers](https://aur.archlinux.org/packages/trousers/).
+
+### TPM 2.0
+
+Originally the Dell XPS 13 (9350) shipped with TPM 1.2 - the TPM chip was configured to support the TPM Standard version 1.2\. However, on 6 Jan 2017 Dell released a [firmware update](http://www.dell.com/support/home/uk/en/ukdhs1/Drivers/DriversDetails?driverId=N8P80) (internal version 1.3.1.0_V1) for the TPM chip that converts it to support the feature set of TPM Standard version 2.0\. Unfortunately, as of this moment the update cannot be applied through Linux or the BIOS direct flashing capabilities. The only way to install it seems to be to apply it through a running Windows OS. The easiest method is to run a temporary Windows installation on a USB drive, boot into it and run the update from there.
+**Warning:** It should be noted that this update is irreversible once applied. It also requires that the TPM memory and configuration is completely cleared.
+
+**Note:** As for BIOS updates, please make sure the laptop is plugged in to a power source and that power source is stable.
+
+To install the update one can follow the instructions on the above mentioned firmware update page to clear and reset the TPM chip and initiate the update. Users intending to later use the device in Linux, can skip the last steps 11 & 12 from section "Disable TPM Auto Provisioning in Windows". Another option is to just clear the TPM following [this guide](http://www.dell.com/support/article/uk/en/ukbsdt1/SLN155219/en) and just run the `.exe` file from Windows.
+
+Once the update succeeds, the Linux kernel should automatically recognise the newly configured TPM device and enable it automatically on next boot. To make use of the now TPM 2.0 chip a couple of packages are worth installing - [tpm2.0-tss-git](https://aur.archlinux.org/packages/tpm2.0-tss-git/) and [tpm2.0-tools-git](https://aur.archlinux.org/packages/tpm2.0-tools-git/). To make the TSS resource manager work on boot, a handy systemd service is provided and its variants discussed [here](https://github.com/01org/TPM2.0-TSS/issues/321).
 
 ## CPU slowdown after resume from suspend
 

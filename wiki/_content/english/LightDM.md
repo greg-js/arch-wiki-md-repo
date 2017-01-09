@@ -283,18 +283,7 @@ Move the contents of [xinitrc](/index.php/Xinitrc "Xinitrc") to [xprofile](/inde
 
 ### Login using ~/.xinitrc
 
-Although migrating to an [xprofile](/index.php/Xprofile "Xprofile") is the preferred method of using a custom start script, it is possible to use your [xinitrc](/index.php/Xinitrc "Xinitrc") by installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/). This provides the necessary `/usr/share/xsession` file, so the option will become available on a restart of lightdm.
-
-An alternative to this is symlinking your .xinitrc `ln -s ~/.xinitrc ~/.xsession` and creating this file:
-
- `/usr/share/xsessions/custom.desktop` 
-```
-[Desktop Entry]
-Name=Xsession
-Exec=/etc/X11/Xsession
-```
-
-If you get a black screen that returns you to your login screen, make sure that either your `~/.xinitrc` or `~/.xsession` file is executable (with `chmod +x <file>`).
+Although migrating to an [xprofile](/index.php/Xprofile "Xprofile") is the preferred method of using a custom start script, it is possible to use your [xinitrc](/index.php/Xinitrc "Xinitrc") by installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/). This provides the necessary file in `/usr/share/xsessions/`, so the option will become available on a restart of lightdm.
 
 ### NumLock on by default
 

@@ -121,8 +121,6 @@ $ file * | grep ELF | cut -d: -f1 | LD_LIBRARY_PATH=. xargs ldd | grep 'not foun
 
 ```
 
-**Note:** The libraries must be 32-bit, some of which are only available for x86_64 in the [AUR](/index.php/AUR "AUR").
-
 Alternatively, while Steam is running, the following command will show which non-system libraries Steam is using (not all of these are part of the Steam runtime):
 
 ```

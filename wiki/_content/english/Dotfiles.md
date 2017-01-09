@@ -38,13 +38,41 @@ $ git commit -a
 
 ### Other tools
 
-*   **etckeeper** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade; for pacman, these hooks currently have to be triggered manually.
+*   **dotbot** — A minimalist dotfiles manager that can be installed as a git submodule of your dotfiles repository.
+
+	[https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **dotfiles** — A tool to make managing your dotfile symlinks in $HOME easy, allowing you to keep all of them in a single directory.
+
+	[https://github.com/jbernard/dotfiles](https://github.com/jbernard/dotfiles) || [dotfiles](https://aur.archlinux.org/packages/dotfiles/)
+
+*   **dotgit** — A comprehensive solution to managing your dotfiles.
+
+	[http://github.com/Cube777/dotgit](http://github.com/Cube777/dotgit) || [dotgit](https://aur.archlinux.org/packages/dotgit/)
+
+*   **dots** — A portable tool for managing a single set of dotfiles in an organized fashion.
+
+	[https://github.com/EvanPurkhiser/dots](https://github.com/EvanPurkhiser/dots) || [dots-manager](https://aur.archlinux.org/packages/dots-manager/)
+
+*   **[etckeeper](/index.php/Etckeeper "Etckeeper")** — Intended to version-control system-wide configuration in /etc. Works by keeping track of permissions and modes which version-control software often ignores. Can use various SCM systems as a backend. Hooks can auto-commit changes to the repository before a system-upgrade; for pacman, these hooks currently have to be triggered manually.
 
 	[http://joeyh.name/code/etckeeper/](http://joeyh.name/code/etckeeper/) || [etckeeper](https://www.archlinux.org/packages/?name=etckeeper)
 
 *   **GNU Stow** — Can be used to symlink dotfiles from a repository into the $HOME tree. See [[1]](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) for more information.
 
 	[http://www.gnu.org/software/stow/](http://www.gnu.org/software/stow/) || [stow](https://www.archlinux.org/packages/?name=stow)
+
+*   **homeshick** — git dotfiles synchronizer written in bash.
+
+	[https://github.com/andsens/homeshick](https://github.com/andsens/homeshick) || [homeshick-git](https://aur.archlinux.org/packages/homeshick-git/)
+
+*   **homesick** — Your home directory is your castle. Don't leave your dotfiles behind.
+
+	[https://github.com/technicalpickles/homesick](https://github.com/technicalpickles/homesick) || [homesick](https://aur.archlinux.org/packages/homesick/)
+
+*   **mackup** — a small Python utitlity to keep your application settings in sync.
+
+	[https://github.com/lra/mackup](https://github.com/lra/mackup) || [mackup](https://aur.archlinux.org/packages/mackup/)
 
 *   **Pearl** — Package manager for dotfiles, plugins, programs and any form of code accessible via git. Allow to easily share and sync packages across systems and have them ready to work out of the box.
 
@@ -61,14 +89,6 @@ $ git commit -a
 *   **yadm** — Manages files across systems using a single Git repository. Provides a way to use alternate files on a specific OS or host. Supplies a method of encrypting confidential data so it can safely be stored in your repository.
 
 	[https://github.com/TheLocehiliosan/yadm](https://github.com/TheLocehiliosan/yadm) || [yadm](https://aur.archlinux.org/packages/yadm/)
-
-*   **homeshick** — git dotfiles synchronizer written in bash
-
-	[https://github.com/andsens/homeshick](https://github.com/andsens/homeshick) || [homeshick-git](https://aur.archlinux.org/packages/homeshick-git/)
-
-*   **dotbot** — A minimalist dotfiles manager that can be installed as a git submodule of your dotfiles repository.
-
-	[https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot) ||
 
 ### Maintaining dotfiles across multiple machines
 

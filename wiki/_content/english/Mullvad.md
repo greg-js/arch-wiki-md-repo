@@ -2,14 +2,14 @@ Mullvad is a VPN service based in Sweden which operates [OpenVPN](/index.php/Ope
 
 ## Configuring OpenVPN
 
-Mullvad supply their own client but it can also be used with a manual configuration of Openvpn. Install [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [openresolv](https://www.archlinux.org/packages/?name=openresolv). Download the Mullvad OpenVPN configuration files from [Mullvad](https://www.mullvad.net/download/config/) (under the "other platforms" tab) and unzip into /etc/openvpn. Rename mullvad_linux.conf:
+Mullvad supply their own client but it can also be used with a manual configuration of Openvpn. Install [openvpn](https://www.archlinux.org/packages/?name=openvpn) and [openresolv](https://www.archlinux.org/packages/?name=openresolv). Download the Mullvad OpenVPN configuration files from [Mullvad](https://www.mullvad.net/download/config/) (under the "other platforms" tab) and unzip into /etc/openvpn/client. Rename mullvad_linux.conf:
 
 ```
-# mv /etc/openvpn/mullvad_linux.conf /etc/openvpn/mullvad.conf
+# mv /etc/openvpn/client/mullvad_linux.conf /etc/openvpn/client/mullvad.conf
 
 ```
 
-In order to use the nameservers supplied by the VPN, a script needs to be called when starting and stopping OpenVPN to update resolvconf with the correct servers.
+In order to use the nameservers supplied by the VPN, a script needs to be called when starting and stopping OpenVPN to update resolvconf with the correct servers. This script is also included in the config folder provided by Mullvad.
 
  `/etc/openvpn/update-resolv-conf` 
 ```

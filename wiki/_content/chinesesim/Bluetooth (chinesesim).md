@@ -117,6 +117,10 @@ WantedBy=suspend.target
 
 ```
 
+使用你的蓝牙设备的设备名来启用一个此服务的实例，例如 bluetooth-auto-power@hci0.service。
+
+除了添加自定义服务和 udev 规则之外，你也可以通过反注释 /etc/bluetooth/main.conf 文件中的 [Policy] 和 AutoEnable 两行，来启用 BlueZ 5.35 中引入的 AutoEnable 特性。
+
 ## 图形化前端
 
 下面的软件包提供了一个图形化的界面来自定义蓝牙。

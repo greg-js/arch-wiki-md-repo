@@ -127,7 +127,7 @@ cert servername.crt
 key servername.key  # This file should be kept secret
 dh dh.pem
 .
-tls-auth ta.key **0**
+tls-crypt ta.key
 .
 user nobody
 group nobody
@@ -198,7 +198,7 @@ Edit the following:
 *   The `remote` directive to reflect either the server's [Fully Qualified Domain Name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name "wikipedia:Fully qualified domain name"), hostname (as known to the client), or its IP address.
 *   Uncomment the `user` and `group` directives to drop privileges.
 *   The `ca`, `cert`, and `key` parameters to reflect the path and names of the keys and certificates.
-*   Enable the SSL/TLS HMAC handshake protection. **Note the use of the parameter 1 for a client**.
+*   Enable the TLS HMAC handshake protection (`--tls-crypt` or `--tls-auth`).
 
  `/etc/openvpn/client/client.conf` 
 ```
@@ -210,7 +210,7 @@ ca ca.crt
 cert client.crt
 key client.key
 .
-tls-auth ta.key **1**
+tls-crypt ta.key
 
 ```
 
@@ -409,7 +409,6 @@ remote elmer.acmecorp.org 1194
 ...
 mtu-test
 ...
-tls-auth ta.key **1**
 
 ```
 

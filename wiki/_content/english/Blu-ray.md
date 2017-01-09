@@ -65,6 +65,8 @@ There have been several efforts to compile VUKs from various sources. Early atte
 
 BD+ is an additional but optional component of the Blu-ray DRM. In December 2013, VideoLAN released the long awaited [libbdplus](https://aur.archlinux.org/packages/libbdplus/) which provides experimental support for BD+ decryption. The library does not provide keys or certificates required for BD+ decryption, you need to retrieve and install them separately, as explained at [[11]](http://www.labdv.com/aacs/) and [[12]](http://www.labdv.com/aacs/advanced-users.php).
 
+**Note:** The download provided by LabDV is a `.tar.bz2` archive, but is named `bdplus-vm0.bz2`. You want to put a folder named `vm0` in `~/.config/bdplus`, **not** a file named `bdplus-vm0`.
+
 ## Playback
 
 ### Preparation

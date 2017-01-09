@@ -158,20 +158,46 @@ Users can **share** PKGBUILDs using the Arch User Repository. It does not contai
 
 ### Submitting packages
 
-**Warning:** Before attempting to submit a package you are expected to familiarize yourself with [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") and all the articles under "Related articles".
+**Warning:** Before attempting to submit a package you are expected to familiarize yourself with [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") and all the articles under "Related articles". **Verify carefully** that what you are uploading is correct. Packages that violate the rules may be **deleted** without warning.
+
+If you are unsure in any way about the package or the build/submission process even after reading this section twice, submit the PKGBUILD to the [AUR mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general), the [AUR forum](https://bbs.archlinux.org/viewforum.php?id=4) on the Arch forums, or ask on our [IRC channel](/index.php/IRC_channel "IRC channel") for public review before adding it to the AUR.
 
 #### Rules of submission
 
-When submitting a package, observe the following rules:
+When submitting a package to the AUR, observe the following rules:
 
-*   Check the [official package database](https://www.archlinux.org/packages/) for the package. If **any version** of it exists, **do not** submit the package. If the official package is out-of-date, flag it as such. If the official package is broken or is lacking a feature, then please file a [bug report](https://bugs.archlinux.org/).
-*   Check the AUR for the package. If it is currently maintained, changes can be submitted in a comment for the maintainer's attention. If it is unmaintained, the package can be adopted and updated as required. Do not create duplicate packages.
-*   Verify carefully that what you are uploading is correct. All contributors must read and adhere to the [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards") when writing PKGBUILDs. This is essential to the smooth running and general success of the AUR. Remember that you are not going to earn any credit or respect from your peers by wasting their time with a bad PKGBUILD.
-*   Packages that contain binaries or that are very poorly written may be deleted without warning.
-*   If you are unsure about the package (or the build/submission process) in any way, submit the PKGBUILD to the [AUR mailing list](https://mailman.archlinux.org/mailman/listinfo/aur-general) or the [AUR forum](https://bbs.archlinux.org/viewforum.php?id=4) on the Arch forums for public review before adding it to the AUR.
-*   Make sure the package is useful. Will anyone else want to use this package? Is it extremely specialized? If more than a few people would find this package useful, it is appropriate for submission.
-*   The AUR and official repositories are intended for packages which install generally software and software-related content, including one or more of the following: executable(s); config file(s); online or offline documentation for specific software or the Arch Linux distribution as a whole; media intended to be used directly by software.
-*   Gain some experience before submitting packages. Build a few packages to learn the process and then submit.
+*   The submitted PKGBUILDs must not build applications **already in any** of the **official** binary **repositories** under any circumstances. Check the [official package database](https://www.archlinux.org/packages/) for the package. If any version of it exists, **do not** submit the package. If the official package is out-of-date, flag it as such. If the official package is broken or is lacking a feature, then please file a [bug report](https://bugs.archlinux.org/).
+
+	**Exception** to this strict rule may only be packages having **extra features** enabled and/or **patches** in compare to the official ones. In such an occasion the `pkgname` should be different to express that difference. For example, a package for GNU screen containing the sidebar patch could be named `screen-sidebar`. Additionally the `provides=('screen')` array should be used in order to avoid conflicts with the official package.
+
+*   **Check the AUR** if the package **already exists**. If it is currently maintained, changes can be submitted in a comment for the maintainer's attention. If it is unmaintained or the maintainer is unresponsive, the package can be adopted and updated as required. Do not create duplicate packages.
+
+*   Make sure the package you want to upload is **useful**. Will anyone else want to use this package? Is it extremely specialized? If more than a few people would find this package useful, it is appropriate for submission.
+
+	The AUR and official repositories are intended for packages which install generally software and software-related content, including one or more of the following: executable(s); config file(s); online or offline documentation for specific software or the Arch Linux distribution as a whole; media intended to be used directly by software.
+
+*   Do not use `replaces` in an AUR PKGBUILD unless the package is to be renamed, for example when *Ethereal* became *Wireshark*. If the package is an **alternate version of an already existing package**, use `conflicts` (and `provides` if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching `replaces` anywhere in its repositories; `conflicts`, on the other hand, is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
+
+*   Submitting **binaries** should be **avoided** if the sources are available. The AUR should not contain the binary tarball created by makepkg, nor should it contain the filelist.
+
+*   Please add a **comment line** to the top of the `PKGBUILD` file which contains information about the current **maintainers** and previous **contributors**, respecting the following format. Remember to disguise your email to protect against spam. Additional or unneeded lines are facultative.
+
+	If you are assuming the role of maintainer for an existing PKGBUILD, add your name to the top like this
+
+```
+# Maintainer: Your Name <address at domain dot tld>
+
+```
+
+	If there was previous maintainers, put them as contributors. The same applies for the original submitter if this is not you. If you are a co-maintainer, add the name of the other current maintainers as well.
+
+```
+# Maintainer: Your name <address at domain dot tld>
+# Maintainer: Other maintainer's name <address at domain dot tld>
+# Contributor: Previous maintainer's name <address at domain dot tld>
+# Contributor: Original submitter's name <address at domain dot tld>
+
+```
 
 #### Authentication
 

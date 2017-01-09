@@ -492,7 +492,7 @@ Kodi runs smoothly on the Raspberry Pi (RPi), RPi2, and RPi3\. Some helpful tips
 *   [Install](/index.php/Install "Install") either the *kodi-rbp* (stable) or *kodi-rbp-git* (dev) package instead of *kodi* from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).
 *   This package ships with a systemd service to run in standalone mode.
 *   The memory reserved for GPU is 64 MB by default. This is insufficient for GPU accelerated HD video playback. Users can increase this value via a simple edit to the `gpu_mem` tag in `/boot/config.txt`. A value of at least 128 MB is recommended.
-*   Add the udev rule `SSUBSYSTEM=="tty", KERNEL=="tty[0-9]*", GROUP="tty", MODE="0660"` to `/etc/udev/rules.d/raspberrypi.rules` and add the kodi user to both the `tty` and `input` groups to enable typing with a physical keyboard.
+*   Add the udev rule `SUBSYSTEM=="tty", KERNEL=="tty[0-9]*", GROUP="tty", MODE="0660"` to `/etc/udev/rules.d/raspberrypi.rules` and add the kodi user to both the `tty` and `input` groups to enable typing with a physical keyboard.
 
 **Note:** The keyboard work around has been proposed in a [PR#1416](https://github.com/archlinuxarm/PKGBUILDs/pull/1416) in ArchARM upstream, if accepted, this step will no longer be necessary.
 

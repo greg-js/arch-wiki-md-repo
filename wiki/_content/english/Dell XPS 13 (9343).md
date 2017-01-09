@@ -37,7 +37,8 @@ However, some manual configuration is still recommended to get the best experien
         *   [2.7.1 Synaptics driver](#Synaptics_driver)
         *   [2.7.2 Libinput driver](#Libinput_driver)
     *   [2.8 Powersaving](#Powersaving)
-    *   [2.9 Calibrated ICC profile for QHD+ models](#Calibrated_ICC_profile_for_QHD.2B_models)
+    *   [2.9 Calibrated ICC profile](#Calibrated_ICC_profile)
+        *   [2.9.1 QHD+ model](#QHD.2B_model)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
     *   [3.2 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
@@ -183,13 +184,15 @@ Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to
 *   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to irc #intel-gfx, "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use."
 *   `i915.enable_rc6=7` is useless on Broadwell/gen8 systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[10]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
 
-### Calibrated ICC profile for QHD+ models
+### Calibrated ICC profile
 
-**Warning:** This profile is only for QHD+ models. Do not use it if you have the FHD model of the XPS 13.
+#### QHD+ model
 
-An [ICC profile](/index.php/ICC_profiles "ICC profiles") is a binary file which contains precise data regarding the color attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document editing and publishing. The following ICC profiles are made with DispcalGUI, ArgyllCMS and a spectrophotometer for absolute color accuracy. It is possible to achieve better results by calibrating your own monitor, but generally this profile will be an improvement over the stock profile.
+**Warning:** This profile is only for QHD+ model. Do not use it if you have the FHD one.
 
-This profile has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. Dynamic Brightness Control has been disabled and the monitor has been turned on at least 30 minutes before commencing the calibration.
+An [ICC profile](/index.php/ICC_profiles "ICC profiles") is a binary file which contains precise data regarding the colour attributes of the monitor. It allows you to produce consistent and repeatable results for graphic and document. The following ICC profile is made with dispcalGUI ([displaycal](https://www.archlinux.org/packages/?name=displaycal)), ArgyllCMS ([argyllcms](https://www.archlinux.org/packages/?name=argyllcms)) and a spectrophotometer for absolute colour accuracy; even if it is possible to achieve better results by calibrating your own monitor by yourself, in general this profile is definitively an improvement over the stock profile.
+
+This profile has been made with the spectrophotometer's high resolution spectral mode, with white and black level drift compensation, the high quality ArgyllCMS switch and 3440 patches. Dynamic Brightness Control has been disabled and the monitor has been turned on for at least 30 minutes prior to start the calibration.
 
 *   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
 

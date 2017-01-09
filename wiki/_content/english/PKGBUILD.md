@@ -295,6 +295,8 @@ Only full fingerprints are accepted. They must be uppercase and must not contain
 
 **Note:** You can use `gpg --list-keys --fingerprint <KEYID>` to find out the fingerprint of the appropriate key.
 
+Please read [Makepkg#Signature_checking](/index.php/Makepkg#Signature_checking "Makepkg") for more information.
+
 ## Integrity
 
 **Note:** Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `md5sums_i686=()`, `sha256sums_x86_64=()`.

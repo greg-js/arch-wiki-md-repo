@@ -8,7 +8,7 @@ For more information: [http://www.3dconnexion.com/products/what-is-a-3d-mouse.ht
 
 *   [1 Proprietary drivers](#Proprietary_drivers)
 *   [2 Open Source Drivers](#Open_Source_Drivers)
-    *   [2.1 Rebuild Blender with spacenav support](#Rebuild_Blender_with_spacenav_support)
+    *   [2.1 Blender with spacenav support](#Blender_with_spacenav_support)
 *   [3 See also](#See_also)
 
 ### Proprietary drivers
@@ -205,9 +205,11 @@ WantedBy=multi-user.target
 
 Now everything is up and running and every supported application should be able to use the 3D Mouse.
 
-#### Rebuild Blender with spacenav support
+#### Blender with spacenav support
 
-Unfortunately the [blender](https://www.archlinux.org/packages/?name=blender) package in the community repository is not compiled with spacenav support. You can install [libspnav](https://www.archlinux.org/packages/?name=libspnav) first then rebuild blender from [ABS](/index.php/ABS "ABS") and it will automatically build with NDOF(=spacenav) support.
+The [blender](https://www.archlinux.org/packages/?name=blender) package in the community repository is now compiled with spacenav support by default.
+
+However, if you wish to rebuild Blender with spacenav support manually, you can install [libspnav](https://www.archlinux.org/packages/?name=libspnav) first and then rebuild blender from [ABS](/index.php/ABS "ABS"). It will automatically build with NDOF(=spacenav) support.
 
 Now you can fire up blender and test your 3D Mouse.
 

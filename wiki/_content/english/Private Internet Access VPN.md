@@ -36,9 +36,7 @@ If there are any issues with connectivity and you are running [connman](https://
 
 ## Usage
 
-**Note:** As of version 2.0, the command `pia` is provided by [python-pia](https://github.com/flamusdiu/python-pia).
-
-**Note:** As of version 1.5, the command as changed from `pia-auto-login.py` to `pia`. Also, command line options have changed.
+**Note:** As of `openvpn` version 2.4.0, VPN configurations are been put into subfolders. See: [OpenVPN 2.4.0 update requires administrative interaction](https://www.archlinux.org/news/openvpn-240-update-requires-administrative-interaction/)
 
 ### Enabling auto-login
 
@@ -70,7 +68,7 @@ This secures the access to the file from non-root users. Read more on [File perm
 
 ### Manually Connecting to VPN
 
-Run `openvpn --config /etc/openvpn/{config_file_name}` as root. `{config_file_name}` will be listed in the /etc/openvpn directory or run `pia -l`.
+Run `openvpn --config /etc/openvpn/client/{config_file_name}` as root. `{config_file_name}` will be listed in the /etc/openvpn directory or run `pia -l`.
 
 ### Automatically connect to VPN
 

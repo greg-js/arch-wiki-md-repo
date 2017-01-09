@@ -1,7 +1,5 @@
 When building packages for Arch Linux, **adhere to the package guidelines** below, especially if the intention is to **contribute** a new package to Arch Linux. You should also see the [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) and [makepkg](https://archlinux.org/pacman/makepkg.8.html) manpages.
 
-**The submitted PKGBUILDs must not build applications already in any of the official binary repositories under any circumstances. Exception to this strict rule may only be packages having extra features enabled and/or patches in comparison to the official ones. In such an occasion, the pkgname array should be different.**
-
 ## Contents
 
 *   [1 PKGBUILD prototype](#PKGBUILD_prototype)
@@ -11,8 +9,7 @@ When building packages for Arch Linux, **adhere to the package guidelines** belo
 *   [5 Makepkg duties](#Makepkg_duties)
 *   [6 Architectures](#Architectures)
 *   [7 Licenses](#Licenses)
-*   [8 AUR packages](#AUR_packages)
-*   [9 Additional guidelines](#Additional_guidelines)
+*   [8 Additional guidelines](#Additional_guidelines)
 
 ## PKGBUILD prototype
 
@@ -64,6 +61,7 @@ Other prototypes are found in `/usr/share/pacman` from the pacman and abs packag
 *   **Avoid** using `/usr/libexec/` for anything. Use `/usr/lib/$pkgname/` instead.
 *   The `packager` field from the package meta file can be **customized** by the package builder by modifying the appropriate option in the `/etc/makepkg.conf` file, or alternatively override it by creating `~/.makepkg.conf`.
 *   All important messages should be echoed during install using an **.install file**. For example, if a package needs extra setup to work, directions should be included.
+*   **Dependencies** are the most common packaging error. Please take the time to verify them carefully, for example by running `ldd` on dynamic executables, checking tools required by scripts or looking at the documentation of the software. The [namcap](/index.php/Namcap "Namcap") utility can help you in this regard. This tool can analyze both PKGBUILD and the resulting package tarball and will warn you about bad permissions, missing dependencies, redundant dependencies, and other common mistakes.
 *   Any **optional dependencies** that are not needed to run the package or have it generally function should not be included in the **depends** array; instead the information should be added to the **optdepends** array:
 
 ```
@@ -74,6 +72,7 @@ optdepends=('cups: printing support'
             'giflib: GIF images support'
             'libjpeg: JPEG images support'
             'libpng: PNG images support')
+
 ```
 
 	The above example is taken from the **wine** package in `extra`. The optdepends information is automatically printed out on installation/upgrade so one should **not** keep this kind of information in `.install` files.
@@ -83,6 +82,7 @@ optdepends=('cups: printing support'
 *   Where possible, **remove empty lines** from the `PKGBUILD` (`provides`, `replaces`, etc.)
 *   It is common practice to **preserve the order** of the `PKGBUILD` fields as shown above. However, this is not mandatory, as the only requirement in this context is **correct bash syntax**.
 *   **Quote** variables which may contain spaces, such as `"$pkgdir"` and `"$srcdir"`.
+*   To ensure the **integrity** of packages, make sure that the [integrity variables](/index.php/PKGBUILD#Integrity "PKGBUILD") contain correct values. These can be updated using the `updpkgsums` tool.
 
 ## Package naming
 
@@ -166,23 +166,6 @@ The [license](/index.php/License "License") array is being implemented in the of
     *   (L)GPL2 - (L)GPL2 only
     *   (L)GPL3 - (L)GPL3 or any later version
 
-## AUR packages
-
-Note the following before submitting any packages to the AUR:
-
-1.  The submitted PKGBUILDs **MUST NOT** build applications already in any of the official binary repositories under any circumstances. Exception to this strict rule may only be packages having extra features enabled and/or patches in compare to the official ones. In such an occasion the pkgname array should be different to express that difference. e.g. A GNU screen PKGBUILD submitted containing the sidebar patch, could be named screen-sidebar etc. Additionally the **provides=('screen')** PKGBUILD array should be used in order to avoid conflicts with the official package.
-2.  To ensure the security of pkgs submitted to the AUR please **ensure** that you have correctly filled the `md5sums` field. The `md5sums` values can be updated using the `updpkgsums` command.
-3.  Please **add a comment line** to the top of the `PKGBUILD` file that follows this format. Remember to disguise your email to protect against spam: `# Maintainer: Your Name <address at domain dot com>` If you are assuming the role of maintainer for an existing PKGBUILD, add your name to the top as described above and change the title of the previous Maintainer(s) to Contributor:
-    ```
-    # Maintainer: Your Name <address at domain dot com>
-    # Contributor: Previous Name <address at domain dot com>
-    ```
-
-4.  Verify the package **dependencies** (eg, run `ldd` on dynamic executables, check tools required by scripts, etc). The TU team **strongly** recommend the use of the `namcap` utility, written by Jason Chu (jason@archlinux.org), to analyze the sanity of packages. `namcap` will warn you about bad permissions, missing dependencies, un-needed dependencies, and other common mistakes. You can install the `namcap` package with `pacman`. Remember `namcap` can be used to check both pkg.tar.gz files and PKGBUILDs
-5.  **Dependencies** are the most common packaging error. Namcap can help detect them, but it is not always correct. Verify dependencies by looking at source documentation and the program website.
-6.  **Do not use `replaces`** in a PKGBUILD unless the package is to be renamed, for example when *Ethereal* became *Wireshark*. If the package is an alternate version of an already existing package, use `conflicts` (and `provides` if that package is required by others). The main difference is: after syncing (-Sy) pacman immediately wants to replace an installed, 'offending' package upon encountering a package with the matching `replaces` anywhere in its repositories; `conflicts` on the other hand is only evaluated when actually installing the package, which is usually the desired behavior because it is less invasive.
-7.  Read [Arch User Repository#Submitting packages](/index.php/Arch_User_Repository#Submitting_packages "Arch User Repository") for a detailed description of the submission process. The repository **should not** contain the binary tarball created by makepkg, nor should it contain the filelist.
-
 ## Additional guidelines
 
 Be sure to read the above guidelines first - important points are listed on this page that will not be repeated in the following guideline pages. These specific guidelines are intended as an addition to the standards listed on this page.
@@ -192,3 +175,5 @@ Be sure to read the above guidelines first - important points are listed on this
 * * *
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – [Node.js](/index.php/Node.js_package_guidelines "Node.js package guidelines") – [Nonfree](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines") – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
+
+Packages submitted to the AUR must additionally comply with [Arch User Repository#Rules of submission](/index.php/Arch_User_Repository#Rules_of_submission "Arch User Repository").

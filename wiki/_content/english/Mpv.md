@@ -15,14 +15,15 @@
     *   [3.5 Quickly cycle between multiple aspect ratio](#Quickly_cycle_between_multiple_aspect_ratio)
     *   [3.6 Drawing to a root window](#Drawing_to_a_root_window)
     *   [3.7 Always show GUI](#Always_show_GUI)
-    *   [3.8 Restoring old OSC](#Restoring_old_OSC)
-    *   [3.9 Use as a browser plugin](#Use_as_a_browser_plugin)
-    *   [3.10 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
-    *   [3.11 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
-    *   [3.12 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
-    *   [3.13 youtube-dl audio with search](#youtube-dl_audio_with_search)
-    *   [3.14 Use mpv with a compositor](#Use_mpv_with_a_compositor)
-    *   [3.15 Creating a single screenshot](#Creating_a_single_screenshot)
+    *   [3.8 Hide GUI for video files](#Hide_GUI_for_video_files)
+    *   [3.9 Restoring old OSC](#Restoring_old_OSC)
+    *   [3.10 Use as a browser plugin](#Use_as_a_browser_plugin)
+    *   [3.11 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
+    *   [3.12 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
+    *   [3.13 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
+    *   [3.14 youtube-dl audio with search](#youtube-dl_audio_with_search)
+    *   [3.15 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [3.16 Creating a single screenshot](#Creating_a_single_screenshot)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -147,6 +148,10 @@ Run *mpv* with `--wid=0`. This tells *mpv* to draw onto a window with a window I
 ### Always show GUI
 
 It may be useful to always show the GUI window, even for audio files, especially when *mpv* is not started from terminal. This can be done by using `--force-window` option.
+
+### Hide GUI for video files
+
+It may be useful to hide the GUI window for video files. This can be done by using `--no-video` option.
 
 ### Restoring old OSC
 

@@ -1,3 +1,5 @@
+**Warning:** The [recent update of harfbuzz to 1.4.1-1](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/harfbuzz&id=276d684c47a739d505917bf3ff35fed86d1196e2) is incompatable with [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) which leads to breakage of multiple packages (deluge and vlc to name a few). See [this link](https://gist.github.com/cryzed/e002e7057435f02cc7894b9e748c5671) for instructions to get back nice looking fonts using the supported [freetype2](https://www.archlinux.org/packages/?name=freetype2) natively.
+
 The [infinality](http://www.infinality.net/) patchset aims to greatly improve font rendering in freetype2 and friends. It adds multiple new capabilities.
 
 Infinality's settings are configurable at runtime via environment variables and include the following:
@@ -183,7 +185,7 @@ See also [Font configuration#Troubleshooting](/index.php/Font_configuration#Trou
 
 ### Spotify
 
-When experiencing font rendering issues with Spotify [[1]](http://i.imgur.com/E51vt2b.jpg), try the following font settings:
+When experiencing font rendering issues with Spotify [[3]](http://i.imgur.com/E51vt2b.jpg), try the following font settings:
 
 ```
 USE_STYLE="2"
@@ -198,7 +200,7 @@ export INFINALITY_FT_STEM_FITTING_STRENGTH="25"
 
 ### Google Chrome
 
-To solve rendering issues in Google Chrome [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1344172#p1344172), edit `/etc/fonts/fonts.conf` file and uncomment the following entry:
+To solve rendering issues in Google Chrome [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1344172#p1344172), edit `/etc/fonts/fonts.conf` file and uncomment the following entry:
 
 ```
 <!--match target="pattern">
@@ -297,7 +299,7 @@ you probably should run
 
 ### CJK character distortion
 
-Some CJK characters like "的" "照" "吧" are likely to deform under certain sizes[[3]](https://github.com/bohoomil/fontconfig-ultimate/issues/182). Disabling certain aspects of the autohinter can help:
+Some CJK characters like "的" "照" "吧" are likely to deform under certain sizes[[5]](https://github.com/bohoomil/fontconfig-ultimate/issues/182). Disabling certain aspects of the autohinter can help:
 
 ```
 export INFINALITY_FT_STEM_ALIGNMENT_STRENGTH=0

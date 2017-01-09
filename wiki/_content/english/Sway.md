@@ -20,6 +20,7 @@
     *   [4.6 Custom keybindings](#Custom_keybindings)
 *   [5 Known issues](#Known_issues)
     *   [5.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
+    *   [5.2 Using VirtualBox](#Using_VirtualBox)
 *   [6 See also](#See_also)
 
 ## Status
@@ -196,6 +197,10 @@ $ wget '[https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch'](ht
 # patch -p0 /usr/bin/i3-dmenu-desktop < 2265.patch
 
 ```
+
+### Using VirtualBox
+
+Sway doesn't work well (or at all) under VirtualBox.
 
 ## See also
 

@@ -15,10 +15,11 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
 *   [6 Enable amdgpu for Sea Islands or Southern Islands cards](#Enable_amdgpu_for_Sea_Islands_or_Southern_Islands_cards)
-*   [7 Disable radeon driver](#Disable_radeon_driver)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
-    *   [8.2 Blender UI graphical corruption](#Blender_UI_graphical_corruption)
+    *   [6.1 Disable radeon driver](#Disable_radeon_driver)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
+    *   [7.2 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+    *   [7.3 Blender UI graphical corruption](#Blender_UI_graphical_corruption)
 
 ## Selecting the right driver
 
@@ -124,13 +125,19 @@ CONFIG_DRM_AMDGPU_SI=Y
 
 ```
 
-## Disable radeon driver
+### Disable radeon driver
 
-To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](/index.php/Blacklist "Blacklist") the `radeon` module.
+CIK (and SI?) cards will default to the radeon driver, even after manually enabling AMDGPU for these cards when building the kernel.
+
+To make sure AMDGPU is used instead, prevent `radeon` from loading, by disabling it in the Kconfig or [blacklisting](/index.php/Blacklist "Blacklist") the `radeon` module.
 
  `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
 
 ## Troubleshooting
+
+### No HDMI/DP Audio
+
+The open source AMDGPU driver relies on the DAL code that [currently being worked on](https://cgit.freedesktop.org/~agd5f/linux/log/?h=drm-next-4.7-wip-dal). Until DAL is mainlined, audio suppport for HDMI and DisplayPort will not be available. The only current way to get HDMI and DisplayPort audio is to install the AMDGPU-PRO driver.
 
 ### Xorg or applications won't start
 

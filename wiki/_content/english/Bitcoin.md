@@ -122,7 +122,7 @@ WantedBy=multi-user.target
 
 ### Diverging Implementations
 
-**Note:** These clients have been forked away from the Bitcoin Core codebase, with many different modifications made to [#Consensus](#Consensus) related and non consensus related code, with the intent to upon the activation conditions laid out by each client initiate a break in consensus to continue a new diverging fork under different consensus rules than currently enforced by the majority of the network.
+**Note:** These clients have been forked away from the Bitcoin Core codebase, with many different modifications made to [#Consensus](#Consensus) related and non consensus related code. Depending on the activation conditions laid out by each client this may initiate a break in consensus to continue a new diverging fork under different consensus rules than currently enforced by the network. While no client has a viable interest to activate rules without some sort of majority support, the final outcome of such an event for the blockchain is highly disputed in the Bitcoin community.
 
 #### Bitcoin Classic
 
@@ -132,8 +132,6 @@ WantedBy=multi-user.target
 
 This client is potentially consensus-incompatible with the rest of the network, and upon conditions being met will fork away from the previous chain and consensus rules.
 
-**Note:** In Bitcoin Classic the block size is no longer limited by rules set by software developers. It is set by you, the person running the software. This runs the very real risk of adding support to raising the blocksize to a point your hardware cannot provide the necessary resources to fully validate the blockchain.
-
 #### Bitcoin Unlimited
 
 [Bitcoin Unlimited](https://www.bitcoinunlimited.info/) is a fork of Bitcoin Core which removes the block size limit. [[2]](https://www.bitcoinunlimited.info/faq)
@@ -141,8 +139,6 @@ This client is potentially consensus-incompatible with the rest of the network, 
 [Install](/index.php/Install "Install") the [bitcoind-unlimited-git](https://aur.archlinux.org/packages/bitcoind-unlimited-git/) package.
 
 Consensus-incompatible implementation.
-
-**Note:** In Bitcoin Unlimited the block size is no longer limited by rules set by software developers. It is set by you, the person running the software. This runs the very real risk of adding support to raising the blocksize to a point your hardware cannot provide the necessary resources to fully validate the blockchain.
 
 #### Bitcoin XT
 

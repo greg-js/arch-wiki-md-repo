@@ -7,9 +7,8 @@
 *   [3 Show/hide roster](#Show.2Fhide_roster)
 *   [4 Auto logout on suspend](#Auto_logout_on_suspend)
 *   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
-    *   [5.1 Configuration](#Configuration)
 *   [6 OMEMO Support](#OMEMO_Support)
-    *   [6.1 Configuration](#Configuration_2)
+    *   [6.1 Configuration](#Configuration)
 
 ## Installation
 
@@ -68,18 +67,7 @@ Then [enable](/index.php/Enable "Enable") the service.
 
 [OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](http://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim does not support OTR out of the box.
 
-Install the [gajim-plugin-otr](https://aur.archlinux.org/packages/gajim-plugin-otr/) package.
-
-### Configuration
-
-At first time, you also need to activate OTR plugin:
-
-1.  Go to menu Edit => Modules;
-2.  Activate the "Off-the-record encryption" plugin;
-3.  Click on plugin settings button;
-4.  Generate your OTR key using "Generate key";
-5.  Take a look on other settings;
-6.  Close dialogs to save the changes.
+Apparently the development of [gajim-plugin-otr](https://aur.archlinux.org/packages/gajim-plugin-otr/) package has been [discontinued in February 2015](https://github.com/python-otr/gajim-otr/wiki) and the plugin contains an unresolved [security issue](https://github.com/python-otr/gajim-otr/issues/13), which leads to sending unencrypted/cleartext messages.
 
 ## OMEMO Support
 

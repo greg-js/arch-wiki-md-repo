@@ -245,7 +245,7 @@ Note that *gpg* release 2.1 changed default behaviour so that the above command 
 To import the backup of your private key:
 
 ```
-$ gpg --allow-secret-key-import --import *privkey.asc*
+$ gpg --import *privkey.asc*
 
 ```
 

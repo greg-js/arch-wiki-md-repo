@@ -119,7 +119,7 @@ If the group is omitted, a group whose name equals that of *user* is used.
 
 #### Server blocks
 
-It is possible to serve multiple domains using `server` blocks. It may be referred as "VirtualHosts", however this is an [Apache](/index.php/Apache "Apache") term. The usage of `server` blocks also differs to [Apache](http://wiki.nginx.org/ServerBlockExample).
+It is possible to serve multiple domains using `server` blocks. It may be referred as "VirtualHosts", however this is an [Apache](/index.php/Apache "Apache") term. The usage of `server` blocks also differs from [Apache](http://wiki.nginx.org/ServerBlockExample).
 
 In the example below the server listens for incoming connections for two domains: `domainname1.dom` and `domainname2.dom`:
 

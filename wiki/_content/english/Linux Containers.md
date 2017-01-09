@@ -7,8 +7,6 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 *   [1 Setup](#Setup)
     *   [1.1 Required software](#Required_software)
     *   [1.2 Host network configuration](#Host_network_configuration)
-        *   [1.2.1 Example for a wired network](#Example_for_a_wired_network)
-        *   [1.2.2 Example for a wireless network](#Example_for_a_wireless_network)
     *   [1.3 Container creation](#Container_creation)
     *   [1.4 Container configuration](#Container_configuration)
         *   [1.4.1 Basic config with networking](#Basic_config_with_networking)
@@ -41,64 +39,7 @@ Due to security concerns, the default Arch kernel does **not** ship with the abi
 
 ### Host network configuration
 
-LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)). A bridge device on the host is required for most types of virtual networking. The examples of creating a bridge provided below are not meant to be limiting, but illustrative. Users may use other programs to achieve the same results. A wired and wireless example is provided below, but other setups are possible. Users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article for additional options.
-
-#### Example for a wired network
-
-This example uses [netctl](/index.php/Netctl "Netctl"): a bridge template can be found in `/etc/netctl/examples` which needs to be edited to match the host network hardware specs and IP ranges of the host network. Below are two example bridge configs, one using a dhcp setup and the other using a static IP setup.
-
- `/etc/netctl/lxcbridge` 
-```
-Description="LXC bridge"
-Interface=br0
-Connection=bridge
-BindsToInterfaces=('eno1')
-IP=dhcp
-SkipForwardingDelay=yes
-```
- `/etc/netctl/lxcbridge` 
-```
-Description="LXC bridge"
-Interface=br0
-Connection=bridge
-BindsToInterfaces=('eno1')
-IP=static
-Address=192.168.0.2/24
-Gateway='192.168.0.1'
-DNS=('192.168.0.1')
-```
-
-Before attempting to start the bridge, [disable](/index.php/Disable "Disable") the running network interface on the host as the bridge will replace it; this depends on how the host network is configured, see [Network configuration](/index.php/Network_configuration "Network configuration").
-
-For users already using netctl to manage an adapter, simply switch-to it:
-
-```
-# netctl switch-to lxcbridge
-# netctl enable lxcbridge
-
-```
-
-Verify network connectivity on the host before continuing. This can be accomplished with a simple ping:
-
-```
-$ ping -c 1 www.google.com
-
-```
-
-#### Example for a wireless network
-
-Wireless networks cannot be bridged directly; a different method must be used in this case. First, a bridge must be created similar to the previous examples, but it should not have any interface defined to it (other than the virtual interface of the container itself, which is done automatically). Assign a static IP address to the bridge, but do not assign a gateway.
-
-The host must be configured to perform NAT using [iptables](/index.php/Iptables "Iptables"):
-
-```
-# iptables -t nat -A POSTROUTING -o *wlp3s0* -j MASQUERADE
-
-```
-
-where `*wlp3s0*` is the name of the wireless interface. [Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing"), which is disabled by default.
-
-The remaining steps are similar, except for one thing: for the container, the gateway must be configured to be the IP address of the host (in this example, it was 192.168.0.2). This is specified in `/var/lib/lxc/*container_name*/config` (see the following sections).
+LXCs support different virtual network types and devices (see [lxc.container.conf(5)](https://linuxcontainers.org/lxc/manpages//man5/lxc.container.conf.5.html)). A bridge device on the host is required for most types of virtual networking. Users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article.
 
 ### Container creation
 
@@ -227,7 +168,7 @@ It works nearly the same as lxc-console, but you are automatically accessing roo
 
 #### LXC clones
 
-Users with a need to run multiple identical containers can simplify administrative overhead (user management, system updates, etc.) by using snapshots. The strategy is to setup and keep up-to-date a single base container, then, as needed, clone (snapshot) it. The power in this strategy is that the disk space and system overhead are truly minimized since the snapshots use an overlayfs mount to only write out to disk, only the differences in data. The base system is read-only but changes to it in the snapshots are allowed via the overlayfs.
+Users with a need to run multiple containers can simplify administrative overhead (user management, system updates, etc.) by using snapshots. The strategy is to setup and keep up-to-date a single base container, then, as needed, clone (snapshot) it. The power in this strategy is that the disk space and system overhead are truly minimized since the snapshots use an overlayfs mount to only write out to disk, only the differences in data. The base system is read-only but changes to it in the snapshots are allowed via the overlayfs.
 
 One caveat to this setup is that the base lxc cannot be running when snapshots are taken.
 
