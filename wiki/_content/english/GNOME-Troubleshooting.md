@@ -33,7 +33,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 
 In the event of a Shell freeze (which might be caused by certain appearance tweaks, malfunctioning extensions or perhaps a lack of available memory) restarting the Shell by pressing `Alt` + `F2` and then entering **r** may not be possible.
 
-In this case, try switching to another TTY (**Ctrl** + **Alt** + **F2**) and entering the following command: `pkill -HUP gnome-shell`. It may take a few seconds before the Shell successfully restarts. Restarting the shell in this fashion should not log the user out but it is a good idea to try and ensure that all work is saved anyway.
+In this case, try switching to another TTY (**Ctrl** + **Alt** + **F2**) and entering the following command: `pkill -HUP gnome-shell`. It may take a few seconds before the Shell successfully restarts. On X11 restarting the shell in this fashion should not log the user out but it is a good idea to try and ensure that all work is saved anyway; on Wayland (currently the default) restartung the shell kills the whole session, so everything will be lost.
 
 If this fails, the [Xorg](/index.php/Xorg "Xorg") server will need to be restarted either by: `pkill X` for console logins or: `systemctl restart gdm` for GDM logins. Bear in mind that restarting the Xorg server will log the user out so try to ensure that all work is saved before attempting this.
 

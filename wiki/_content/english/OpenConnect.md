@@ -8,6 +8,7 @@ From [OpenConnect](http://www.infradead.org/openconnect.html):
 *   [2 Usage](#Usage)
     *   [2.1 NetworkManager](#NetworkManager)
     *   [2.2 Command Line](#Command_Line)
+        *   [2.2.1 Juniper Pulse Client](#Juniper_Pulse_Client)
     *   [2.3 Integration in netctl](#Integration_in_netctl)
 *   [3 See also](#See_also)
 
@@ -48,10 +49,23 @@ Often VPN provider are offering different authentication groups for different ac
 
 ```
 
-Here is an example of how to to connect to a Juniper Pulse Secure Pulse Client. Only version 7.06 and higher are compatible.
+#### Juniper Pulse Client
+
+Here is an example of how to connect to a Juniper Pulse Secure Pulse Client. Only Openconnect version 7.06 and higher are compatible.
+
+The --no-cert-check switch is no longer compatible with Openconnect 7.06 and higher.
+
+Run this command below to get your ssl cert SHA1.
 
 ```
-# sudo openconnect --no-cert-check --authgroup="Single-Factor Pulse Clients" --juniper *example.com*/dana-na/auth/url_6/welcome.cgi
+# openconnect --servercert=sha1: --authgroup="single-Factor Pulse Clients" --protocol=nc <VPN_SERVER_ADDRESS>/dana-na/auth/url_6/welcome.cgi --pid-file="/var/run/work-vpn.pid" --user=<USER_NAME>
+
+```
+
+It should return something like this. # Server SSL certificate didn't match: sha1:8cde39f3bf9d770cb7d1f2379e86384ff12932bb copy this into the comnmand below.
+
+```
+# openconnect --servercert=sha1:<SHA1_OF_THE_SSL_CERT_FROM_ABOVE> --authgroup="single-Factor Pulse Clients" --protocol=nc <VPN_SERVER_ADDRESS>/dana-na/auth/url_6/welcome.cgi --pid-file="/var/run/work-vpn.pid" --user=<YOU_USERNAME_HERE>
 
 ```
 

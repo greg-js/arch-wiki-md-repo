@@ -114,33 +114,11 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 ### Wine QQ
 
-目前最成熟的 Wine 模拟方案之一为 LongeneTeam 提供的 wine qq 2013 方案。在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 直接安装现成的 [wineqq](https://aur.archlinux.org/packages/wineqq/) 即可。
+目前较为成熟的 Wine 模拟方案之一为 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案。
 
-**警告:** 从2014年11月份开始，2013版qq已经不在受到官方支持。所以aur中的wineqq也不在提供使用
+**注意:** 如果系统默认不是中文环境可能无法输入中文,解决方法是修改启动文件的`Exec`: `$HOME/.local/share/applications/wine-QQ.desktop`  `Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"` 
 
-**注意:** 由于腾讯已停止对 QQ 2012 的支持，wine qq 2012 方案不再可行
-
-也可以直接使用原生 Wine 模拟，但此方法可行性一般，且稳定性非常差，不推荐。方法如下：
-
-**注意:** 此方案尚未证实具备可行性
-
-首先，安装[winetricks](https://www.archlinux.org/packages/?name=winetricks)、[wine](https://www.archlinux.org/packages/?name=wine)。
-
-使用`winetricks`安装依赖：
-
-```
-$ winetricks msxml3 gdiplus riched20 riched30 ie6 vcrun6 vcrun2005sp1 flash wenquanyi
-
-```
-
-从[QQ官方网站](http://im.qq.com/)下载合适版本的QQ。然后通过Wine安装：
-
-```
-$ wine qq2010.exe
-
-```
-
-**注意:** 最好使用旧版本QQ或TM，最新版模拟成功率很低。
+**注意:** 此方案只需要安装[wine](https://www.archlinux.org/packages/?name=wine)即可，安装其它的Wine库可能造成干扰。第一次启动的时候会自动下载安装`Mono`库。如果安装失败，可以首先删除`$HOME/.wine`并卸载所有Wine相关的包后重启系统，得到一个相对干净的环境再尝试按上面博客的步骤进行安装
 
 ### Wine QQ 轻聊版
 

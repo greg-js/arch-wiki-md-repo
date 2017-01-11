@@ -278,7 +278,7 @@ Zsh sets colors differently than [Bash](/index.php/Color_Bash_Prompt "Color Bash
 
 See [Visual effects](http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects) in zshmisc(1) for prompt escapes to set foreground color, background color and other visual effects.
 
-Colors can be specified by [numeric color code](https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) or by name (see zshzle(1) section [CHARACTER HIGHLIGHTING](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting)). Most terminals support the following colors by name:
+Colors can be specified by [numeric color code](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg) or by name (see zshzle(1) section [CHARACTER HIGHLIGHTING](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Character-Highlighting)). Most terminals support the following colors by name:
 
 | Possible color values |
 | `black` or `0` | `red` or `1` |

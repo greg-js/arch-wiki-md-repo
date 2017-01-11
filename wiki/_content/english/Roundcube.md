@@ -71,8 +71,9 @@ Set your mail server settings, and set `enable_installer` to enable the setup wi
  `/etc/webapps/roundcubemail/config/config.inc.php` 
 ```
 $config['db_dsnw'] = 'mysql://roundcube:****@localhost/roundcubemail';
-$config['default_host'] = 'tls://localhost';
-$config['smtp_server'] = 'localhost';
+$config['default_host'] = 'tls://localhost'; // IMAP host
+$config['smtp_server'] = 'tls://localhost';
+$config['smtp_port'] = 587;
 $config['des_key'] = 'some_awesome_long_semi_random_string';
 $config['enable_installer'] = true;
 
@@ -95,14 +96,7 @@ extension=iconv.so
 
 ```
 
-**Warning:** The distributed Apache conf file includes these directories. Adding to your php.ini will make them apply to all php web apps. See [phpsec open_basedir](http://phpsec.org/projects/phpsecinfo/tests/open_basedir.html)
-
-You also need to make sure that PHP can access `/etc/webapps` and `/usr/share/webapps`. Add them to `open_basedir` in `/etc/php/php.ini` if open_basedir is not yet configured:
-
-```
-open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/
-
-```
+**If** you have configured `open_basedir` in `php.ini`, make sure it includes `/etc/webapps` and `/usr/share/webapps`, so PHP can open the required Roundcube files. If `open_basedir` is disabled/commented out (the default setting), you don't have to do anything.
 
 ### Webserver (Apache)
 

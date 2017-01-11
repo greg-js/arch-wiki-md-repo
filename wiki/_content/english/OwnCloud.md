@@ -57,17 +57,12 @@ Nextcloud, a fork of ownCloud, is also treated in this article. For differences 
 
 ## Prerequisites
 
-[owncloud](https://www.archlinux.org/packages/?name=owncloud) and [nextcloud](https://aur.archlinux.org/packages/nextcloud/) both require several components to function including: a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP"), and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). These components are collectively refereed to as a [LAMP stack](/index.php/LAMP "LAMP") which is recommended upstream by both [owncloud](https://doc.owncloud.org/server/9.1/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud) and [nextcloud](https://docs.nextcloud.com/server/11/admin_manual/installation/system_requirements.html#recommended-setup-for-running-nextcloud). Alternatively, many users opt for a [LEMP stack](/index.php/LEMP "LEMP") which uses [nginx](https://www.archlinux.org/packages/?name=nginx) rather than [apache](https://www.archlinux.org/packages/?name=apache) due to the lighter footprint, contextually better performance, and reduced system overhead nginx provides. This article provides configuration samples for both web servers.
+Both the [owncloud](https://www.archlinux.org/packages/?name=owncloud) and [nextcloud](https://aur.archlinux.org/packages/nextcloud/) packages require several components to function including: a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP"), and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). These components are collectively refereed to as a [LAMP stack](/index.php/LAMP "LAMP"), which is recommended upstream by both [owncloud](https://doc.owncloud.org/server/9.1/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud) and [nextcloud](https://docs.nextcloud.com/server/11/admin_manual/installation/system_requirements.html#recommended-setup-for-running-nextcloud). Alternatively, many users opt for a [LEMP stack](/index.php/LEMP "LEMP") which uses [nginx](/index.php/Nginx "Nginx") rather than [Apache](/index.php/Apache "Apache") due to the lighter footprint, contextually better performance, and reduced system overhead nginx provides. This article provides configuration samples for both web servers.
 
 Users are directed to the above linked articles for detailed installation instructions; in brief summary, the minimal needed packages are:
 
-1.  Install either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline).
-2.  Install the following (assuming the backend to use is mysqld):
-
-```
-php-gd php-fpm php-intl php-mcrypt php-apcu mariadb
-
-```
+1.  [Install](/index.php/Install "Install") either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline).
+2.  Install the following, assuming the backend to use is mysqld: [php-gd](https://www.archlinux.org/packages/?name=php-gd), [php-intl](https://www.archlinux.org/packages/?name=php-intl), [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt), and [mariadb](https://www.archlinux.org/packages/?name=mariadb).
 
 ## Installation
 
@@ -350,7 +345,7 @@ On a fresh installation, an owncloud/nextcloud admin account needs to be created
 
 Enter the administrative account (username/password) and the name of the database, database user, and database user password to initialize the instance.
 
-Once completed, add the following directive to `/etc/webapps/owncloud/config/config.php` or to `/etc/webapps/nextcloud/config/config.php`:
+Once completed, if you have chosen to enable PHP caching as optionally instructed above, add the following directive to `/etc/webapps/owncloud/config/config.php` or to `/etc/webapps/nextcloud/config/config.php`:
 
 ```
 'memcache.local' => '\OC\Memcache\APCu',

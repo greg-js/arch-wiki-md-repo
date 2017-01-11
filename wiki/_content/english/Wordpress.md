@@ -222,6 +222,8 @@ The steps for installing a plugin are the same as they are for installing a them
 
 Every now and then when you log into wordpress there will be a notification informing you of updates. If you have correctly installed and configured an FTP client, and have the correct filesystem permissions to write in the WordPress install path then you should be able to perform updates at the click of a button. Just follow the steps.
 
+Alternatively, you can use SSH to update your installation with the [SSH SFTP Updater Support plugin](https://wordpress.org/plugins/ssh-sftp-updater-support/).
+
 ## Troubleshooting
 
 ### Appearance is broken (no styling)

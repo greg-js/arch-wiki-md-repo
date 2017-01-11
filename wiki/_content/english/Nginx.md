@@ -967,3 +967,4 @@ The `PIDFile` in unit file allows systemd to monitor process (absolute path requ
 *   [nginix configuration pitfalls](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
 *   [Very good in-depth 2014 look at nginx security and Reverse Proxying](https://calomel.org/nginx.html)
 *   [Installing LEMP (nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux](http://www.tecmint.com/install-nginx-php-mysql-with-mariadb-engine-and-phpmyadmin-in-arch-linux/)
+*   [Using SSL certificates generated with Let's Enceypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt")

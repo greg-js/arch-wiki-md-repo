@@ -17,13 +17,15 @@ The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([A
     *   [6.1 Caveats for HDMI audio](#Caveats_for_HDMI_audio)
     *   [6.2 Caveats for Analogue audio](#Caveats_for_Analogue_audio)
 *   [7 Video](#Video)
-    *   [7.1 HDMI / analog TV-Out](#HDMI_.2F_analog_TV-Out)
-    *   [7.2 Caveats for analog TV-Out](#Caveats_for_analog_TV-Out)
-    *   [7.3 X.org driver](#X.org_driver)
+    *   [7.1 CPU/GPU RAM split](#CPU.2FGPU_RAM_split)
+    *   [7.2 HDMI / analog TV-Out](#HDMI_.2F_analog_TV-Out)
+    *   [7.3 Caveats for analog TV-Out](#Caveats_for_analog_TV-Out)
+    *   [7.4 X.org driver](#X.org_driver)
 *   [8 Onboard hardware sensors](#Onboard_hardware_sensors)
     *   [8.1 Temperature](#Temperature)
     *   [8.2 Voltage](#Voltage)
-    *   [8.3 Lightweight monitoring suite](#Lightweight_monitoring_suite)
+    *   [8.3 Watchdog](#Watchdog)
+    *   [8.4 Lightweight monitoring suite](#Lightweight_monitoring_suite)
 *   [9 Overclocking/underclocking](#Overclocking.2Funderclocking)
 *   [10 Serial console](#Serial_console)
 *   [11 Raspberry Pi camera module](#Raspberry_Pi_camera_module)
@@ -118,6 +120,10 @@ audio_pwm_mode=2
 
 ## Video
 
+### CPU/GPU RAM split
+
+Memory split between the CPU and GPU of the SoC can be set in `boot/config.txt` by adjusting the parameter `gpu_mem` which stands for the amount of RAM in MB that is available to the GPU (minimum 16, default 64) and the rest is available to the ARM CPU.
+
 ### HDMI / analog TV-Out
 
 With the default configuration, the Raspberry Pi uses HDMI video if a [HDMI](https://en.wikipedia.org/wiki/HDMI "wikipedia:HDMI") monitor is connected. Otherwise, it uses analog TV-Out (also known as composite output or RCA)
@@ -166,7 +172,7 @@ The X.org driver for Raspberry Pi can be [installed](/index.php/Installed "Insta
 
 ### Temperature
 
-Temperatures sensors can be queried with utils in the *raspberrypi-firmware-tools* package. The RPi offers a sensor on the BCM2835 SoC (CPU/GPU):
+Temperatures sensors can be queried with utils in the *raspberrypi-firmware* package. The RPi offers a sensor on the BCM2835 SoC (CPU/GPU):
 
  `$ /opt/vc/bin/vcgencmd measure_temp`  `temp=49.8'C` 
 
@@ -194,6 +200,14 @@ Where `*<id>*` is:
 *   sdram_c for sdram Core voltage
 *   sdram_i for sdram I/O voltage
 *   sdram_p for sdram PHY voltage
+
+### Watchdog
+
+BCM2708 has a hardware watchdog which can be utilized by enabling the `bcm2708_wdog` [kernel module](/index.php/Kernel_module "Kernel module").
+
+For proper operation the `watchdog` daemon also has to be installed, configured (by uncommenting the "watchdog-device" line in `/etc/watchdog.conf`) and [enabled](/index.php/Enabled "Enabled").
+
+This should also apply for Raspberry Pi 2 by using the `bcm2709_wdog` module and Raspberry Pi 3 by using the `bcm2835_wdt` module.
 
 ### Lightweight monitoring suite
 
@@ -271,7 +285,7 @@ From a PC, connect:
 
 ## Raspberry Pi camera module
 
-The commands for the camera module are included as part of the *raspberrypi-firmware-tools* package - which is installed by default.
+The commands for the camera module are included as part of the *raspberrypi-firmware* package - which is installed by default.
 
 ```
 $ /opt/vc/bin/raspistill

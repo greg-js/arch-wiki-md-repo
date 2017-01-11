@@ -11,8 +11,8 @@ ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://
 As a result:
 
 *   ZFS sill resides in [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and unofficial [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
-*   ZFSonLinux project must keep up wth Linux kernel versions and making stable releases with Arch ZFS maintainers releasing them whenever Arch Linux gets a new version of the kernel.
-*   This situation locks-down normal rolling update process by unsatisfied dependencies, because new kernel version, proposed by update, most of the time are unsupported by ZFS.
+*   ZFSonLinux project must keep up with Linux kernel versions. After making stable ZFSonLinux release - Arch ZFS maintainers release them.
+*   This situation sometimes locks-down normal rolling update process by unsatisfied dependencies, because new kernel version, proposed by update, is unsupported by ZFSonLinux.
 
 ## Contents
 
@@ -68,6 +68,10 @@ As a result:
 
 ### General
 
+**Warning:** Unless you use the [dkms](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") versions of these packages, the ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
+
+**Tip:** You can [downgrade](/index.php/Downgrade "Downgrade") your linux version to the one from [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repo if your current kenel is newer.
+
 Install from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository:
 
 *   [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) for [stable](http://zfsonlinux.org/) releases.
@@ -77,11 +81,7 @@ Install from the [Arch User Repository](/index.php/Arch_User_Repository "Arch Us
 
 These branches have according for them `zfs-utils`, `spl-linux`, `spl-utils-linux` dependencies. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
 
-**Warning:** Unless you use the [dkms](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") versions of these packages, the ZFS and SPL kernel modules are tied to a specific kernel version. It would not be possible to apply any kernel updates until updated packages are uploaded to AUR or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
-
 Test the installation by issuing `zpool status` on the command line. If an "insmod" error is produced, try `depmod -a`.
-
-**Tip:** You can [downgrade](/index.php/Downgrade "Downgrade") your linux version to the one from [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repo if your current kenel is newer.
 
 ### Root on ZFS
 

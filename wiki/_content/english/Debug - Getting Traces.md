@@ -122,7 +122,7 @@ The [qt-debug](/index.php/Unofficial_user_repositories#qt-debug "Unofficial user
 Build the package from source using `makepkg` while in the PKGBUILD's directory. This could take some time:
 
 ```
-# makepkg
+$ makepkg
 
 ```
 

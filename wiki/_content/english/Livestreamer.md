@@ -40,6 +40,8 @@ See the `livestreamer (1)` [man page](/index.php/Man_page "Man page") for the fu
 
 ### Twitch
 
+**Warning:** Twitch support is now completely broken, try the actively maintained fork [Streamlink](/index.php/Streamlink "Streamlink")
+
 ```
 $ livestreamer -p *player* twitch.tv/*name_of_channel* *quality*
 

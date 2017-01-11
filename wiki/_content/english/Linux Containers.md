@@ -4,38 +4,113 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 
 ## Contents
 
-*   [1 Setup](#Setup)
-    *   [1.1 Required software](#Required_software)
-    *   [1.2 Host network configuration](#Host_network_configuration)
-    *   [1.3 Container creation](#Container_creation)
-    *   [1.4 Container configuration](#Container_configuration)
-        *   [1.4.1 Basic config with networking](#Basic_config_with_networking)
-        *   [1.4.2 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
-        *   [1.4.3 OpenVPN considerations](#OpenVPN_considerations)
-*   [2 Managing Containers](#Managing_Containers)
-    *   [2.1 Basic usage](#Basic_usage)
-    *   [2.2 Advanced usage](#Advanced_usage)
-        *   [2.2.1 LXC clones](#LXC_clones)
-*   [3 Running Xorg programs](#Running_Xorg_programs)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 root login fails](#root_login_fails)
-    *   [4.2 no network-connection with veth in container config](#no_network-connection_with_veth_in_container_config)
-*   [5 See also](#See_also)
+*   [1 Privileged containers or unprivileged containers](#Privileged_containers_or_unprivileged_containers)
+    *   [1.1 An example to illustrate unprivileged containers](#An_example_to_illustrate_unprivileged_containers)
+*   [2 Setup](#Setup)
+    *   [2.1 Required software](#Required_software)
+        *   [2.1.1 Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29)
+    *   [2.2 Host network configuration](#Host_network_configuration)
+    *   [2.3 Container creation](#Container_creation)
+    *   [2.4 Container configuration](#Container_configuration)
+        *   [2.4.1 Basic config with static IP networking](#Basic_config_with_static_IP_networking)
+        *   [2.4.2 Basic config with DHCP networking](#Basic_config_with_DHCP_networking)
+        *   [2.4.3 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
+        *   [2.4.4 OpenVPN considerations](#OpenVPN_considerations)
+*   [3 Managing Containers](#Managing_Containers)
+    *   [3.1 Basic usage](#Basic_usage)
+    *   [3.2 Advanced usage](#Advanced_usage)
+        *   [3.2.1 LXC clones](#LXC_clones)
+    *   [3.3 Converting a privileged container to an unprivileged container](#Converting_a_privileged_container_to_an_unprivileged_container)
+*   [4 Running Xorg programs](#Running_Xorg_programs)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 root login fails](#root_login_fails)
+    *   [5.2 no network-connection with veth in container config](#no_network-connection_with_veth_in_container_config)
+*   [6 See also](#See_also)
+
+## Privileged containers or unprivileged containers
+
+LXCs can be run in so-called *privileged* and *unprivileged* modes.
+
+In general, running an *unprivileged* container is considered safer than running a *privileged* container as *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID in the container to a non-root UID on the host which makes it more difficult for a hack within the container to lead to consequences on host system. In other words, if an attacker manages to escape the container, he or she should find themselves with no rights on the host. See [this link](https://unix.stackexchange.com/questions/177030/what-is-an-unprivileged-lxc-container) for a good discussion about the differences between privileged and unprivileged containers.
+
+Although several requests have been filed to modify it, ([FS#36969](https://bugs.archlinux.org/task/36969) and [FS#74933](https://bugs.archlinux.org/task/74933)), the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel is not currently configured to run *unprivileged* containers. Therefore, modification is required to do which is detailed in the [Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29 "Linux Containers") section of this article. As well, this article contains information for users to run either type of container.
+
+### An example to illustrate unprivileged containers
+
+To illustrate the power of UID mapping, consider the output below from a running, *unprivileged* container. Therein, we see the containerized processes owned by the containerized root user in the output of `ps`:
+
+```
+[root@unprivileged_container /]# ps -ef | head -n 5
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 17:49 ?        00:00:00 /sbin/init
+root        14     1  0 17:49 ?        00:00:00 /usr/lib/systemd/systemd-journald
+dbus        25     1  0 17:49 ?        00:00:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+systemd+    26     1  0 17:49 ?        00:00:00 /usr/lib/systemd/systemd-networkd
+
+```
+
+On the host however, those containerized root processes are running as the mapped user (ID>100000) on the host, not as the root user on the host:
+
+```
+[root@host /]# lxc-info -Ssip --name sandbox
+State:          RUNNING
+PID:            26204
+CPU use:        10.51 seconds
+BlkIO use:      244.00 KiB
+Memory use:     13.09 MiB
+KMem use:       7.21 MiB
+
+```
+
+```
+[root@host /]# ps -ef | grep 26204 | head -n 5
+UID        PID  PPID  C STIME TTY          TIME CMD
+100000   26204 26200  0 12:49 ?        00:00:00 /sbin/init
+100000   26256 26204  0 12:49 ?        00:00:00 /usr/lib/systemd/systemd-journald
+100081   26282 26204  0 12:49 ?        00:00:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+100000   26284 26204  0 12:49 ?        00:00:00 /usr/lib/systemd/systemd-logind
+
+```
 
 ## Setup
 
 ### Required software
 
-Install the [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) packages.
+Install the [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) packages. These two packages should be enough to allow the host system to run privileged lxcs.
 
-Verify that the running kernel is properly configured to run a container:
+#### Enable support to run unprivileged contains (optional)
+
+User wishing to run *unprivileged*containers need to complete several additional setup steps.
+
+Firstly, a custom kernel is required that has support for User namespaces. This option is available under **General setup>Namespaces support>User namespace** from an nconfig, or by simply modifying the kernel [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") with the following line inserted prior to the "make prepare" line:
 
 ```
-$ lxc-checkconfig
+sed -i -e 's/# CONFIG_USER_NS is not set/CONFIG_USER_NS=y/' ./.config
 
 ```
 
-Due to security concerns, the default Arch kernel does **not** ship with the ability to run containers as an unprivileged user; therefore, it is normal to see a **missing** status for "User namespaces" when running the check. See [FS#36969](https://bugs.archlinux.org/task/36969) for this feature request.
+See, [ABS](/index.php/ABS "ABS") for more on compiling a custom kernel.
+
+Secondly, modify `/etc/lxc/default.conf` to contain the following lines:
+
+```
+lxc.id_map = u 0 100000 65536
+lxc.id_map = g 0 100000 65536
+
+```
+
+Finally, create both `/etc/subuid` and `/etc/subgid` to contain the mapping to the containerized uid/gid pairs for each user who shall be able to run the containers. The example below is simply for the root user (and systemd system unit):
+
+ `/etc/subuid` 
+```
+root:100000:65536
+
+```
+ `/etc/subgid` 
+```
+root:100000:65536
+
+```
 
 ### Host network configuration
 
@@ -43,7 +118,7 @@ LXCs support different virtual network types and devices (see [lxc.container.con
 
 ### Container creation
 
-Select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
+For privileged containers, simply select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
 
 *   Debian-based: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap)
 *   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/)
@@ -55,6 +130,13 @@ Run `lxc-create` to create the container, which installs the root filesystem of 
 
 ```
 
+Users wishing to run unprivileged containers should use the -t download directive and select from the images that are displayed. For example:
+
+```
+# lxc-create -n playtime -t download
+
+```
+
 **Tip:** Users may optionally install [haveged](https://www.archlinux.org/packages/?name=haveged) and [start](/index.php/Start "Start") `haveged.service` to avoid a perceived hang during the setup process while waiting for system entropy to be seeded. Without it, the generation of private/GPG keys can add a lengthy wait to the process.
 
 **Tip:** Users of [Btrfs](/index.php/Btrfs "Btrfs") can append `-B btrfs` to create a Btrfs subvolume for storing containerized rootfs. This comes in handy if cloning containers with the help of `lxc-clone` command. [ZFS](/index.php/ZFS "ZFS") users may use `-B zfs`, correspondingly.
@@ -63,7 +145,9 @@ Run `lxc-create` to create the container, which installs the root filesystem of 
 
 ### Container configuration
 
-#### Basic config with networking
+The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.id_map = u 0 100000 65536` and the `lxc.id_map = g 0 100000 65536` values optionally defined in the [Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29 "Linux Containers") section.
+
+#### Basic config with static IP networking
 
 System resources to be virtualized/isolated when a process is using the container are defined in `/var/lib/lxc/CONTAINER_NAME/config`. By default, the creation process will make a minimum setup without networking support. Below is an example config with networking:
 
@@ -83,9 +167,10 @@ lxc.include = /usr/share/lxc/config/archlinux.common.conf
 lxc.network.type = veth
 lxc.network.link = br0
 lxc.network.flags = up
+lxc.network.name = eth0
 lxc.network.ipv4 = 192.168.0.3/24
 lxc.network.ipv4.gateway = 192.168.0.1
-lxc.network.name = eth0
+lxc.network.hwaddr = ee:ec:fa:e9:56:7d
 
 ## mounts
 ## specify shared filesystem paths in the format below
@@ -97,6 +182,12 @@ lxc.network.name = eth0
 #lxc.mount.entry = /var/cache/pacman/pkg var/cache/pacman/pkg none bind 0 0
 
 ```
+
+**Note:** The lxc.network.hwaddr entry is optional and if skipped, a random MAC address will be created automatically.
+
+#### Basic config with DHCP networking
+
+Users wishing to have DHCP used within the container may omit the `lxc.network.ipv4` and `lxc.network.ipv4.gateway` lines as the Arch template provides a DHCP [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") profile by default. It is advantageous to define a MAC address for the container here to allow the DHCP server to always assign the same IP to the container's NIC (beyond the scope of this article but worth mentioning).
 
 #### Xorg program considerations (optional)
 
@@ -188,6 +279,21 @@ The snapshots can be started/stopped like any other container. Users can optiona
 # lxc-destroy -n snap1 -f
 
 ```
+
+### Converting a privileged container to an unprivileged container
+
+Once the system has been configured to use unprivileged containers (see, [Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29 "Linux Containers")), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
+
+**Warning:** It is recommended to backup the existing image before using this utility!
+
+Invoke the utility to convert over like so:
+
+```
+# uidmapshift -b /var/lib/lxc/foo 0 100000 65536
+
+```
+
+Additional options are available simply by calling `uidmapshift` without any arguments.
 
 ## Running Xorg programs
 

@@ -533,7 +533,7 @@ For MacBooks with NVIDIA graphics, for the backlight to work properly you may ne
 **Tip:**
 
 *   If backlight control does not work after installing nvidia-bl, you should [blacklist](/index.php/Blacklist "Blacklist") apple_bl kernel module.
-*   If backlight control does not work even this way, try setting module parameters, e.g. `options nvidiabl screen_type=3 min=0 max=44000` in `/etc/modprobe.conf` in case of MacBook Air 3.2
+*   If backlight control does not work even this way, try setting module parameters. Uncommenting `options nvidia_bl max_level=0x1ffff shift=11` in `/etc/modprobe.d/nvidia_bl.conf` should do the trick.
 *   Alternatively, you can choose to use the [pommed-light](https://aur.archlinux.org/packages/pommed-light/) package. If you do so, you may wish to change the step settings in `/etc/pommed.conf.mactel` to something around 5000-10000 depending on how many levels of brightness you desire. The max brightness is around 80000, so take that into account.
 
 #### Touchpad

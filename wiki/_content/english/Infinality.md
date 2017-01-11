@@ -1,5 +1,3 @@
-**Warning:** The [recent update of harfbuzz to 1.4.1-1](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/harfbuzz&id=276d684c47a739d505917bf3ff35fed86d1196e2) is incompatable with [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) which leads to breakage of multiple packages (deluge and vlc to name a few). See [this link](https://gist.github.com/cryzed/e002e7057435f02cc7894b9e748c5671) for instructions to get back nice looking fonts using the supported [freetype2](https://www.archlinux.org/packages/?name=freetype2) natively.
-
 The [infinality](http://www.infinality.net/) patchset aims to greatly improve font rendering in freetype2 and friends. It adds multiple new capabilities.
 
 Infinality's settings are configurable at runtime via environment variables and include the following:

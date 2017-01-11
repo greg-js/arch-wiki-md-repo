@@ -69,7 +69,6 @@ prints the escape sequence to set the foreground color to green.
 
 To practically incorporate these capabilities into your prompt, you can use Bash's command substitution and string interpolation. For example
 
- `~/.bashrc` 
 ```
 GREEN="\[$(tput setaf 2)\]"
 RESET="\[$(tput sgr0)\]"
@@ -140,7 +139,10 @@ You can affect your input text in Bash by not resetting the text properties at t
 
 In order to insert escape sequences after you type a command but before the output is displayed, you can trap Bash's DEBUG signal, which is sent right before each command is executed:
 
- `~/.bashrc`  `trap 'tput sgr0' DEBUG` 
+```
+$ trap 'tput sgr0' DEBUG
+
+```
 
 ### Customizing root prompts
 

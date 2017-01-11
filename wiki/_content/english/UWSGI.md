@@ -68,6 +68,8 @@ uwsgi --socket 127.0.0.1:3031 --plugin python2 --wsgi-file ~/foo.py --master --p
 
 **Note:** You should avoid running this command as root
 
+**Note:** Pay attention to operational mode in use, preforking without --lazy-apps may cause non-obvious behavior. By default the Python plugin does not initialize the GIL. This means your app-generated threads will not run. If you need threads, remember to enable them with enable-threads. Running uWSGI in multithreading mode (with the threads options) will automatically enable threading support. This “strange” default behaviour is for performance reasons, no shame in that. (see [https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html](https://uwsgi-docs.readthedocs.io/en/latest/ThingsToKnow.html))
+
 #### Php
 
 The following is a simple example for a [PHP](/index.php/PHP "PHP") based website.

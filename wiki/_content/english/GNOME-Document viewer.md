@@ -4,11 +4,24 @@ Document viewer uses the poppler library as a backend.
 
 **Note:** Document viewer was previously known as [Evince](https://wiki.gnome.org/Apps/Evince) until the application was given new descriptive names, one for each supported language. The name *Evince* is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Printer does not show up](#Printer_does_not_show_up)
+*   [3 See also](#See_also)
+
 ## Installation
 
 [Install](/index.php/Install "Install") the [evince](https://www.archlinux.org/packages/?name=evince) package, or [evince-git](https://aur.archlinux.org/packages/evince-git/) for the development version. Evince installs the gnome-desktop as a dependency
 
 For a standalone version install [evince-no-gnome](https://aur.archlinux.org/packages/evince-no-gnome/) or the light version [evince-light](https://aur.archlinux.org/packages/evince-light/) for pdf support only.
+
+## Troubleshooting
+
+### Printer does not show up
+
+Simply install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends).
 
 ## See also
 

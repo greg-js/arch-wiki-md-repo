@@ -23,14 +23,14 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 3.  [登录](/index.php/Special:UserLogin "Special:UserLogin") 以进行编辑。
 4.  选择要翻译的页面，例如从 [随机页面](/index.php/Special:Random "Special:Random") 或[页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8) 中选择一个未翻译完成的页面。假设要翻译 [Some Page](/index.php?title=Some_Page&action=edit&redlink=1 "Some Page (page does not exist)").
 5.  进入选择的英文页面，点击页面顶部的 **编辑**。
-6.  添加要翻译文件的语言间链接, 中文的话加入[[zh-CN:Some Page]]，其它语言参见[Help:i18n#Interlanguage links](/index.php/Help:I18n#Interlanguage_links "Help:I18n"))。
+6.  添加要翻译文件的语言间链接, 简体中文的话加入[[zh-hans:Some Page]]，其它语言参见[Help:i18n#Interlanguage links](/index.php/Help:I18n#Interlanguage_links "Help:I18n"))。
 7.  复制所有页面代码。
 8.  保存页面 (新加了语言链接)
 9.  访问页面左边新添加的语言链接，应该会进到 [Some Page (简体中文)](/index.php?title=Some_Page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Some Page (简体中文) (page does not exist)") : `https://wiki.archlinux.org/index.php/Some_Page_(*简体中文*)`
 10.  因为页面不存在，点击 **创建**。
 11.  将显示一个编辑器 - 粘贴复制的英文页面。
 12.  将文章分类修改为本地化版本，例如将 `[[Category:Internationalization]]` 修改为 `[[Category:Internationalization (简体中文)]]`,参阅[Help:Category (简体中文)](/index.php/Help:Category_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Category (简体中文)").
-13.  修改语言间链接，指向英文页面(将 `zh-CN` 修改为 `en`，并将英文页面移到文章顶部。
+13.  修改语言间链接，指向英文页面(将 `zh-hans` 修改为 `en`，并将英文页面移到文章顶部。
 14.  翻译页面，进行保存。
 15.  (推荐)给翻译完成的页面加上[翻译状态](/index.php/Template:TranslationStatus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:TranslationStatus (简体中文)"),后有详细介绍。
 16.  更新所有其它语言页面，加入刚翻译文章的语言间链接。
@@ -89,7 +89,7 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 
 为了更好的跟踪英文页面的修改，请务必在设置中启用监视列表邮件通知，并监视对应的英文页面(从设置中找到监视列表，加入英文页面。或者直接到英文页面点击页面顶端的监视标签。这样只要有改动，就会收到邮件通知)。
 
-**小贴士:** 如果收到邮件通知后没有访问页面或者访问了页面却没有登录用户，下次页面改动时就不会再发邮件通知。可以点击监视列表中的**标记所有页面为已读**再次获取更新。
+**提示：** 如果收到邮件通知后没有访问页面或者访问了页面却没有登录用户，下次页面改动时就不会再发邮件通知。可以点击监视列表中的**标记所有页面为已读**再次获取更新。
 
 如果页面有维护者但长期得不到更新，将会在维护列表中删除维护者。
 

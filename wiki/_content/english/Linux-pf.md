@@ -21,7 +21,7 @@
 
 ### From the unofficial repository
 
-Precompiled packages (generic or CPU-family optimized) are available from the [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") unofficial repository. See [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") for configuration details.
+Precompiled packages are available from the [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") unofficial repository. See [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") for configuration details.
 
 After an [upgrade](/index.php/Pacman#Upgrading_packages "Pacman"), running `pacman -Sl *repo_name*` will show the packages available in the given repository. Afterwards, just install the *linux-pf* and *linux-pf-headers* packages (for generic binaries - platform-specific binaries are also available in some repositories and will be listed in the output from the aforementioned pacman command). See the [#Configuration](#Configuration) section for additional configuration steps.
 

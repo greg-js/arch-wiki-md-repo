@@ -105,7 +105,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 ## Enable amdgpu for Sea Islands or Southern Islands cards
 
-**Note:** The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package (from version 4.9, currently in [testing]), is compiled with Southern Islands support enabled by default.[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4978)
+**Note:** The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package (from version 4.9, currently in [testing]), is compiled with Southern Islands support enabled by default.[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4978) You will still need to [#Disable radeon driver](#Disable_radeon_driver). See [FS#50399](https://bugs.archlinux.org/task/50399) for more information.
 
 `amdgpu` has experimental support for Sea Islands (CIK) and Southern Islands (SI; since Linux 4.9) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[2]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf).
 
@@ -127,9 +127,9 @@ CONFIG_DRM_AMDGPU_SI=Y
 
 ### Disable radeon driver
 
-CIK (and SI?) cards will default to the radeon driver, even after manually enabling AMDGPU for these cards when building the kernel.
+CIK and SI cards will default to the [radeon](/index.php/Radeon "Radeon") driver, even after manually enabling AMDGPU for these cards when building the kernel.
 
-To make sure AMDGPU is used instead, prevent `radeon` from loading, by disabling it in the Kconfig or [blacklisting](/index.php/Blacklist "Blacklist") the `radeon` module.
+Prevent the `radeon` module from loading by disabling it in the Kconfig or [blacklist](/index.php/Blacklist "Blacklist") the `radeon` module, to force usage of the `amdgpu` module:
 
  `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
 

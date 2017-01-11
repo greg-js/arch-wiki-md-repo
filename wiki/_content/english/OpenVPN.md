@@ -725,11 +725,12 @@ Once the script is installed add lines like the following into your OpenVPN clie
 
 ```
 script-security 2
-setenv PATH /usr/bin
 up /etc/openvpn/update-resolv-conf
 down /etc/openvpn/update-resolv-conf
 
 ```
+
+**Note:** If manually placing the script on the filesystem, be sure to have [openresolv](https://www.archlinux.org/packages/?name=openresolv) installed.
 
 Now, when your launch your OpenVPN connection, you should find that your resolv.conf file is updated accordingly, and also returns to normal when your close the connection.
 

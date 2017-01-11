@@ -39,7 +39,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 ## Installation
 
-**Note:** Some recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver. See [[1]](https://packages.debian.org/sid/x11/xserver-xorg-video-intel), [[2]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 [Install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
 
@@ -121,9 +121,9 @@ options i915 enable_rc6=1 enable_fbc=1 semaphores=1
 
 ### RC6 sleep modes (enable_rc6)
 
-You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[3]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
+You can experiment with higher values for `enable_rc6`, but your GPU may not support them or the activation of the other options [[2]](https://wiki.archlinux.org/index.php?title=Talk:Intel_Graphics&oldid=327547#Kernel_Module_options).
 
-The available `enable_rc6` values are a bitmask with bit values RC6=1, RC6p=2, RC6pp=4[[4]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/intel_pm.c#n34) - where "RC6p" and "RC6pp" are lower power states.
+The available `enable_rc6` values are a bitmask with bit values RC6=1, RC6p=2, RC6pp=4[[3]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/intel_pm.c#n34) - where "RC6p" and "RC6pp" are lower power states.
 
 To confirm the current running RC6 level, you can look in sysfs:
 
@@ -164,7 +164,7 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 **Note:**
 
 *   This option may not work when `SwapbuffersWait` is `false`.
-*   This option may increases memory allocation considerably and reduce performance. [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
+*   This option may increases memory allocation considerably and reduce performance. [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
 *   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
 *   This option does not work with UXA acceleration method, only with SNA.
 
@@ -215,7 +215,7 @@ If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1.
 
 ### H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[6]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[7]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done.
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package provides MPEG-2 decoding only for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[5]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[6]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done.
 
 ### Setting brightness and gamma
 
@@ -327,7 +327,7 @@ Unfortunately, the Intel driver does not support setting the color range through
 
 A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
 
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[8]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[9]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[7]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[8]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 ### Backlight is not adjustable
 

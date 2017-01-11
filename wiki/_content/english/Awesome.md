@@ -31,6 +31,7 @@ From the [awesome website](https://awesomewm.org/):
     *   [3.9 Applications menu](#Applications_menu)
     *   [3.10 Titlebars](#Titlebars)
     *   [3.11 Battery notification](#Battery_notification)
+    *   [3.12 Media Controls](#Media_Controls)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Debugging rc.lua](#Debugging_rc.lua)
         *   [4.1.1 awmtt](#awmtt)
@@ -374,6 +375,34 @@ awful.titlebar.hide(c)
 ### Battery notification
 
 See [[7]](http://bpdp.blogspot.be/2013/06/battery-warning-notification-for.html) for a simple battery notification to add to `rc.lua`. Note that its needs *naughty* for the notifications (installed by default in version 3.5). Other examples are available at [awesome wiki](https://awesome.naquadah.org/wiki/Gigamo_Battery_Widget#Simple_modular_version_for_3.4)
+
+### Media Controls
+
+It is possible to control both volume and media playback via a combination of amixer (available via the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package) and [playerctl](https://aur.archlinux.org/packages/playerctl/). The following can be added to the relevant key binding section of your rc.lua configuration file:
+
+```
+   -- Volume Keys
+   awful.key({}, "#122", function ()
+     awful.util.spawn("amixer -q -D pulse sset Master 5%-")
+   end),
+   awful.key({}, "#123", function ()
+     awful.util.spawn("amixer -q -D pulse sset Master 5%+")
+   end),
+   awful.key({}, "XF86AudioMute", function ()
+     awful.util.spawn("amixer -D pulse set Master 1+ toggle")
+   end),
+   -- Media Keys
+   awful.key({}, "XF86AudioPlay", function()
+     awful.util.spawn("playerctl play-pause")
+   end),
+   awful.key({}, "XF86AudioNext", function()
+     awful.util.spawn("playerctl next")
+   end),
+   awful.key({}, "XF86AudioPrev", function()
+     awful.util.spawn("playerctl previous")
+   end)
+
+```
 
 ## Troubleshooting
 

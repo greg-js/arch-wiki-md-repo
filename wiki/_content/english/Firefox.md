@@ -38,7 +38,7 @@
 
 ## Installing
 
-Firefox can be [installed](/index.php/Installed "Installed") with the [firefox](https://www.archlinux.org/packages/?name=firefox) package.
+Firefox can be [installed](/index.php/Installed "Installed") with the [firefox](https://www.archlinux.org/packages/?name=firefox) package. For printing support, install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends), which is an optional dependency of [gtk3](https://www.archlinux.org/packages/?name=gtk3).
 
 Other alternatives include:
 

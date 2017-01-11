@@ -16,6 +16,7 @@ The Lenovo P50 is a quad core Intel Skylake Laptop.
     *   [3.8 Fingeprint Validity Sensor not working](#Fingeprint_Validity_Sensor_not_working)
     *   [3.9 Headsets not working with pulseaudio](#Headsets_not_working_with_pulseaudio)
     *   [3.10 Wifi failing to come up (Intel 8260)](#Wifi_failing_to_come_up_.28Intel_8260.29)
+    *   [3.11 External monitor can't be detected on Hybrid Graphics](#External_monitor_can.27t_be_detected_on_Hybrid_Graphics)
 *   [4 lspci](#lspci)
 
 ## Installation
@@ -118,6 +119,10 @@ On a clean install with kernel 4.8.10 I was unable to bring up the wireless inte
 More importantly: I was unable to get it working intially. I eventually started downgrading the available firmware for this unit by simply moving specific iwlwifi firmware out of /lib/firmware until I identified the working firmware packages.
 
 At the time of this note, the available iwlwifi-8000C-XX.ucode files include version 13, 16, 21 and 22\. 22 seems to be the culprit here. 21 and 16 both worked for me. I left all files in place and moved firmware v. 22 to /root/lib/firmware for safe keeping. A reboot (or modprobe -r iwlwifi / modprobe iwlwifi) and the card was working.
+
+### External monitor can't be detected on Hybrid Graphics
+
+This [guide](https://wiki.archlinux.org/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip) works, if you want to use nvidia driver. If you are using nouveau driver look at [this](https://bbs.archlinux.org/viewtopic.php?id=221358) thread.
 
 ## lspci
 

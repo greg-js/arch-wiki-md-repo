@@ -73,6 +73,7 @@ To disable the num-lock activation hint displaying on the login screen, edit get
 
  `# systemctl edit getty@tty1.service` 
 ```
+[Service]
 ExecStart=
 ExecStart=-/sbin/agetty --nohints --noclear %I $TERM
 

@@ -306,12 +306,12 @@ The bumblebee daemon may fail to activate the graphics card after suspending. A 
  `/etc/bumblebee/bumblebee.conf` 
 ```
 [driver-nvidia]
-PMmethod=bbswitch
+PMMethod=bbswitch
 
 # ...
 
 [driver-nouveau]
-PMmethod=bbswitch
+PMMethod=bbswitch
 ```
 
 **Note:** This fix seems to work only after rebooting the system. Restarting the bumblebee service is not enough.

@@ -613,7 +613,7 @@ In all cases, make sure you have the latest Pacman before doing any modification
 
 #### Powerpill
 
-See [Powerpill](/index.php/Powerpill "Powerpill").
+[Powerpill](/index.php/Powerpill "Powerpill") is a Pacman wrapper that uses parallel and segmented downloading to try to speed up downloads for Pacman.
 
 #### wget
 

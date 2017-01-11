@@ -6,15 +6,16 @@ This article serves as a temporal indexing directory for the issues of running A
 *   [2 Installing](#Installing)
 *   [3 CPU](#CPU)
     *   [3.1 cpufreq](#cpufreq)
-*   [4 Multimedia](#Multimedia)
-    *   [4.1 Audio](#Audio)
-    *   [4.2 Video](#Video)
-    *   [4.3 Webcam](#Webcam)
-*   [5 Networking](#Networking)
-    *   [5.1 Wireless](#Wireless)
-*   [6 Input](#Input)
-    *   [6.1 Touchpad](#Touchpad)
-*   [7 See also](#See_also)
+*   [4 Init](#Init)
+*   [5 Multimedia](#Multimedia)
+    *   [5.1 Audio](#Audio)
+    *   [5.2 Video](#Video)
+    *   [5.3 Webcam](#Webcam)
+*   [6 Networking](#Networking)
+    *   [6.1 Wireless](#Wireless)
+*   [7 Input](#Input)
+    *   [7.1 Touchpad](#Touchpad)
+*   [8 See also](#See_also)
 
 ## Hardware
 
@@ -34,6 +35,12 @@ This article serves as a temporal indexing directory for the issues of running A
 ## CPU
 
 ### cpufreq
+
+## Init
+
+Section coming soon...
+
+In short - switch over from systemd to OpenRC Use [this website](http://systemd-free.org/) as a guide.
 
 ## Multimedia
 

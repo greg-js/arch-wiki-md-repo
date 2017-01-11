@@ -67,7 +67,7 @@ It is possible to make the ESP part of a RAID1 array, but doing so brings the ri
 
 ### Using bind mount
 
-Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind mount (see `mount(8)`). This allows pacman to update the kernel directly while keeping the ESP organized to your liking. If it works for you, this method is much simpler than the other approaches which copy files.
+Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind mount (see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)). This allows pacman to update the kernel directly while keeping the ESP organized to your liking. If it works for you, this method is much simpler than the other approaches which copy files.
 
 **Note:** This requires a kernel and bootloader compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot`). Forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
 

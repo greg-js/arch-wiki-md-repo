@@ -69,7 +69,7 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **[Klipper](https://en.wikipedia.org/wiki/Klipper "wikipedia:Klipper")** — Full featured clipboard manager for the KDE desktop.
 
-	[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
+	[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://www.archlinux.org/packages/?name=kdebase-workspace)
 
 *   **Parcellite** — Lightweight yet feature-rich clipboard manager.
 

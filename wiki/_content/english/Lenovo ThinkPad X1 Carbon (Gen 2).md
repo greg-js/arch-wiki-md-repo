@@ -1,3 +1,5 @@
+**Tip:** A great resource for thinkpads is [http://www.thinkwiki.org/wiki/ThinkWiki](http://www.thinkwiki.org/wiki/ThinkWiki)
+
 ## Contents
 
 *   [1 Model description](#Model_description)

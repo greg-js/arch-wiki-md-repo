@@ -5,8 +5,8 @@
     *   [1.2 systemd-sysusers](#systemd-sysusers)
     *   [1.3 udevadm hwdb, systemd-hwdb](#udevadm_hwdb.2C_systemd-hwdb)
     *   [1.4 fc-cache](#fc-cache)
-*   [2 TBD](#TBD)
-*   [3 Implemented](#Implemented)
+    *   [1.5 mkfontscale/mkfontdir](#mkfontscale.2Fmkfontdir)
+*   [2 Implemented](#Implemented)
 
 # Hooks!
 
@@ -35,6 +35,8 @@ NeedsTargets
 
 Used by 29 packages
 
+sysusers also runs at boot via ConditionNeedsUpdate, see below, so depending on whether that works and when we need the users to exist this hook might not be needed.
+
 Proposed hook (systemd)
 
 ```
@@ -60,7 +62,26 @@ This SHOULD be run with --usr, resulting in /usr/lib/udev/hwdb.bin instead of /e
 
 Although the latter database overrides the former, this would not be a problem since systemd-hwdb-update.service will update /etc/udev/hwdb.bin at boot if /etc/udev/hwdb.bin exists OR /usr/lib/udev/hwdb.bin does not exist OR /etc/udev/hwdb.d is not empty.
 
-However, this service is also gated on ConditionNeedsUpdate=/etc, which passes if /usr has a newer mtime than /etc/.updated. Unfortunately, ConditionNeedsUpdate (used in quite a few services!) is broken for us since pacman will not update the mtime of directories that already exist, such as /usr.
+However, this service is also gated on ConditionNeedsUpdate=/etc, which passes if /usr has a newer mtime than /etc/.updated. Unfortunately, ConditionNeedsUpdate (used in quite a few services!) is broken for us since pacman will not update the mtime of directories that already exist, such as /usr. This can be worked around with another hook.
+
+If this workaround hook is unacceptable, it and the --usr argument can be dropped.
+
+Proposed hook (systemd)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr
+
+[Action]
+Description = Updating /usr...
+When = PostTransaction
+Exec = /usr/bin/touch -c /usr
+
+```
 
 Proposed hook (systemd)
 
@@ -75,7 +96,7 @@ Target = usr/lib/udev/hwdb.d/*.hwdb
 [Action]
 Description = Updating udev hardware database...
 When = PostTransaction
-Exec = /usr/bin/systemd-hwdb update
+Exec = /usr/bin/systemd-hwdb --usr update
 
 ```
 
@@ -100,12 +121,32 @@ Exec = /usr/bin/fc-cache -s
 
 ```
 
-# TBD
+## mkfontscale/mkfontdir
 
-*   mkfontscale, mkfontdir (58 packages)
-*   gdk-pixbuf-query-loaders (6 packages)
-*   gtk-query-immodules-2.0 (7 packages)
-*   gtk-query-immodules-3.0 (7 packages)
+Used by 39 packages
+
+Proposed hook (xorg-mkfontdir)
+
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = usr/share/fonts/*/*.bdf
+Target = usr/share/fonts/*/*.otf
+Target = usr/share/fonts/*/*.pcf.gz
+Target = usr/share/fonts/*/*.pfa
+Target = usr/share/fonts/*/*.pfb
+Target = usr/share/fonts/*/*.ttf
+
+[Action]
+Description = Creating index of X font files...
+When = PostTransaction
+Exec = /bin/sh -c 'while read -r f; do dirname $f; done | uniq | while read -r d; do mkfontscale /$d && mkfontdir /$d; done'
+NeedsTargets
+
+```
 
 # Implemented
 
