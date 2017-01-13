@@ -18,60 +18,17 @@ Basic setup and understanding of [Linux Containers](/index.php/Linux_Containers 
 
 ### LXC config
 
-The container's config should be modified to include several key sections in order to both run OpenVPN and have internet programs (browsers, email clients, torrent clients, etc.) interact with the host system from within the LXC and from behind the VPN.
+The container's config should be modified to include several key lines in order to both run OpenVPN and have internet programs (browsers, email clients, torrent clients, etc.) interact with the host system from within the LXC and from behind the VPN.
 
 For the example, the lxc is named "playtime" and a full config is shown:
 
  `/var/lib/lxc/playtime/config` 
 ```
-# Template used to create this container: /usr/share/lxc/templates/lxc-archlinux
-# Parameters passed to the template:
-# For additional config options, please look at lxc.container.conf(5)
-
-lxc.rootfs = /var/lib/lxc/playtime/rootfs
-lxc.utsname = playtime
-lxc.arch = x86_64
-lxc.include = /usr/share/lxc/config/archlinux.common.conf
-
-## network
-lxc.network.type = veth
-lxc.network.link = br0
-lxc.network.flags = up
-lxc.network.ipv4 = 192.168.0.3/24
-lxc.network.ipv4.gateway = 192.168.0.1
-lxc.network.name = eth0
-
-## systemd within the lxc
-lxc.autodev = 1
-lxc.hook.autodev = /var/lib/lxc/playtime/autodev
-lxc.pts = 1024
-lxc.kmsg = 0
-
-## mounts
-lxc.mount.entry = /mnt/data/inbox mnt/data none bind 0 0
-lxc.mount.entry = /var/cache/pacman/pkg var/cache/pacman/pkg none bind 0 0
-
-## for xorg
-## fix overmounting see: https://github.com/lxc/lxc/issues/434
-lxc.mount.entry = tmpfs tmp tmpfs defaults
-lxc.mount.entry = /dev/dri dev/dri none bind,optional,create=dir
-lxc.mount.entry = /dev/snd dev/snd none bind,optional,create=dir
-lxc.mount.entry = /tmp/.X11-unix tmp/.X11-unix none bind,optional,create=dir
-lxc.mount.entry = /dev/video0 dev/video0 none bind,optional,create=file
+...
 
 ## for openvpn
+lxc.mount.entry = /dev/net dev/net none bind,create=dir
 lxc.cgroup.devices.allow = c 10:200 rwm
-
-```
-
-**Note:** This example requires the use of the **autodev** hook which calls the corresponding `/var/lib/lxc/playtime/autodev` script which users need to create and make executable. For the sake of completeness, this script is provided below. Refer to [Linux Containers](/index.php/Linux_Containers "Linux Containers") for additional discussion if needed.
- `/var/lib/lxc/playtime/autodev` 
-```
-#!/bin/bash
-cd ${LXC_ROOTFS_MOUNT}/dev
-mkdir net
-mknod net/tun c 10 200
-chmod 0666 net/tun
 
 ```
 
@@ -91,6 +48,8 @@ This guide uses [ufw](https://www.archlinux.org/packages/?name=ufw) which is ver
 Configuration of OpenVPN is beyond the scope of this article. Readers are encouraged to read the [OpenVPN](/index.php/OpenVPN "OpenVPN") article to properly setup the software for a given VPN provider. Note that many private VPN providers include links to directly download a properly configured openvpn.opvn profile unique to their particular service. For the purposes of this guide, `/etc/openvpn/client/myprofile.conf` will refer to that config.
 
 Verify openvpn functionality within the container; [start](/index.php/Start "Start") openvpn via `openvpn@myprofile.service` and once satisfied [enable](/index.php/Enable "Enable") it to run at boot.
+
+**Note:** Users running openvpn within an *unprivileged* container will need to create a custom systemd unit to start it within the container. Simply copy the package-provided `/usr/lib/systemd/system/openvpn-client@.service` to `/etc/systemd/system/openvpn-client@.service` and modify the new file commenting out the the line beginning with: `LimitNPROC...`
 
 ##### Avoiding DNS leaks
 

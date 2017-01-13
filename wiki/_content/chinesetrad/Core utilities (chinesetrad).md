@@ -234,7 +234,7 @@ alias less=$PAGER
 
 *   不需要先建立目錄再使用 *chmod* 更改權限模式，用 `-m` 選項可直接定義新建目錄的存取權限。
 
-**提示:** 若您要建立一個暫存目錄，比較好的替代指令為 [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (*make termporary*；建立暫存): `mktemp -p`。
+**提示：** 若您要建立一個暫存目錄，比較好的替代指令為 [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (*make termporary*；建立暫存): `mktemp -p`。
 
 ## mv
 
@@ -267,7 +267,7 @@ alias mv=' timeout 8 mv -iv'
 
 這裡有份 *sed* 一行範例的[清單](http://sed.sourceforge.net/sed1line.txt)。
 
-**提示:** 功能更為強大的替代品有 [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") 和 [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") 語言。
+**提示：** 功能更為強大的替代品有 [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") 和 [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl") 語言。
 
 ## seq
 

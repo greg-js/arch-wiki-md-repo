@@ -28,7 +28,7 @@ QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php
     *   [5.5 Utilizar cualquier partición real como la única partición primaria de una imagen de disco duro](#Utilizar_cualquier_partici.C3.B3n_real_como_la_.C3.BAnica_partici.C3.B3n_primaria_de_una_imagen_de_disco_duro)
         *   [5.5.1 Especificar el kernel y el initrd manualmente](#Especificar_el_kernel_y_el_initrd_manualmente)
         *   [5.5.2 Simular disco virtual con MBR usando RAID lineal](#Simular_disco_virtual_con_MBR_usando_RAID_lineal)
-*   [6 Networking](#Networking)
+*   [6 Redes](#Redes)
     *   [6.1 Advertencia de dirección a nivel de enlace](#Advertencia_de_direcci.C3.B3n_a_nivel_de_enlace)
     *   [6.2 Redes en modo de usuario](#Redes_en_modo_de_usuario)
     *   [6.3 Tap de red con QEMU](#Tap_de_red_con_QEMU)
@@ -45,7 +45,7 @@ QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php
     *   [6.5 Puente VDE2](#Puente_VDE2)
         *   [6.5.1 Conceptos básicos](#Conceptos_b.C3.A1sicos)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
-*   [7 Graphics](#Graphics)
+*   [7 Gráficos](#Gr.C3.A1ficos)
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
         *   [7.2.1 SPICE](#SPICE)
@@ -56,27 +56,27 @@ QEMU puede usar hipervisores como [Xen](/index.php/Xen "Xen") o [KVM](/index.php
     *   [7.7 vnc](#vnc)
 *   [8 Audio](#Audio)
     *   [8.1 Host](#Host)
-    *   [8.2 Guest](#Guest)
+    *   [8.2 Invitado](#Invitado)
 *   [9 Instalación de controladores virtio](#Instalaci.C3.B3n_de_controladores_virtio)
-    *   [9.1 Preparing an (Arch) Linux guest](#Preparing_an_.28Arch.29_Linux_guest)
-    *   [9.2 Preparing a Windows guest](#Preparing_a_Windows_guest)
-        *   [9.2.1 Block device drivers](#Block_device_drivers)
-            *   [9.2.1.1 New Install of Windows](#New_Install_of_Windows)
-            *   [9.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
-        *   [9.2.2 Network drivers](#Network_drivers)
-    *   [9.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
-*   [10 Tips and tricks](#Tips_and_tricks)
-    *   [10.1 Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot)
-        *   [10.1.1 With libvirt](#With_libvirt)
-        *   [10.1.2 Custom script](#Custom_script)
-    *   [10.2 Mouse integration](#Mouse_integration)
-    *   [10.3 Pass-through host USB device](#Pass-through_host_USB_device)
+    *   [9.1 Preparando a Arch Linux como invitado](#Preparando_a_Arch_Linux_como_invitado)
+    *   [9.2 Preparar un invitado de Windows](#Preparar_un_invitado_de_Windows)
+        *   [9.2.1 Bloquear controladores de dispositivo](#Bloquear_controladores_de_dispositivo)
+            *   [9.2.1.1 Nueva instalación de Windows](#Nueva_instalaci.C3.B3n_de_Windows)
+            *   [9.2.1.2 Cambiar la máquina virtual existente de Windows para utilizar virtio](#Cambiar_la_m.C3.A1quina_virtual_existente_de_Windows_para_utilizar_virtio)
+        *   [9.2.2 Controladores de red](#Controladores_de_red)
+    *   [9.3 Preparación de FreeBSD como invitado](#Preparaci.C3.B3n_de_FreeBSD_como_invitado)
+*   [10 Consejos y trucos](#Consejos_y_trucos)
+    *   [10.1 Inicio de las máquinas virtuales QEMU en el arranque](#Inicio_de_las_m.C3.A1quinas_virtuales_QEMU_en_el_arranque)
+        *   [10.1.1 Con libvirt](#Con_libvirt)
+        *   [10.1.2 Script personalizado](#Script_personalizado)
+    *   [10.2 Integración del ratón](#Integraci.C3.B3n_del_rat.C3.B3n)
+    *   [10.3 Dispositivo USB del host de paso](#Dispositivo_USB_del_host_de_paso)
     *   [10.4 Habilitar KSM](#Habilitar_KSM)
     *   [10.5 Multi-monitor support](#Multi-monitor_support)
-    *   [10.6 Copy and paste](#Copy_and_paste)
-    *   [10.7 Windows-specific notes](#Windows-specific_notes)
-        *   [10.7.1 Fast startup](#Fast_startup)
-        *   [10.7.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+    *   [10.6 Copiar y pegar](#Copiar_y_pegar)
+    *   [10.7 Notas específicas de Windows](#Notas_espec.C3.ADficas_de_Windows)
+        *   [10.7.1 Inicio rápido](#Inicio_r.C3.A1pido)
+        *   [10.7.2 Protocolo de escritorio remoto](#Protocolo_de_escritorio_remoto)
 *   [11 Solución de problemas](#Soluci.C3.B3n_de_problemas)
     *   [11.1 La máquina virtual virtual corre muy lento](#La_m.C3.A1quina_virtual_virtual_corre_muy_lento)
     *   [11.2 El cursor del ratón está nervioso o errático](#El_cursor_del_rat.C3.B3n_est.C3.A1_nervioso_o_err.C3.A1tico)
@@ -177,7 +177,7 @@ Después de ampliar la imagen de disco, debe utilizar el sistema de archivos y l
 
 Para instalar un sistema operativo en su imagen de disco, necesita el medio de instalación (por ejemplo, disco óptico, unidad USB o imagen ISO) para el sistema operativo. El soporte de instalación no debe montarse porque QEMU accede directamente al medio.
 
-**Sugerencia:** Si utiliza un disco óptico, es una buena idea volcar primero los medios a un archivo porque esto mejora el rendimiento y no requiere que tenga acceso directo a los dispositivos (es decir, puede ejecutar QEMU como un usuario normal sin tener Para cambiar permisos de acceso en el archivo de dispositivo del medio). Por ejemplo, si el nodo de dispositivo de CD-ROM tiene el nombre `/ Dev / cdrom`, puede volcarlo a un archivo de comandos: `$ dd si = / dev / cdrom de = *Cd_image.iso* ` 
+**Sugerencia:** Si utiliza un disco óptico, es una buena idea volcar primero los medios a un archivo porque esto mejora el rendimiento y no requiere que tenga acceso directo a los dispositivos (es decir, puede ejecutar QEMU como un usuario normal sin tener Para cambiar permisos de acceso en el archivo de dispositivo del medio). Por ejemplo, si el nodo de dispositivo de CD-ROM tiene el nombre `/dev/cdrom`, puede volcarlo a un archivo de comandos: `$ dd if=/dev/cdrom of=*Cd_image.iso*` 
 
 ### Instalando el sistema operativo
 
@@ -415,7 +415,7 @@ $ Qemu-system-i386 -hdc /dev/md0 *[...]*
 
 Por supuesto, puede configurar con seguridad cualquier cargador de arranque en esta imagen de disco utilizando QEMU, siempre que la partición original `/dev/hda*N*` contenga las herramientas necesarias.
 
-## Networking
+## Redes
 
 El rendimiento de la red virtual debería ser mejor con los dispositivos de derivación (tap) y puentes que con la red en modo de usuario o vde porque los dispositivos de derivación y los puentes se implementan en el kernel.
 
@@ -508,7 +508,17 @@ Ver [http://www.linux-kvm.com/content/how-maximize-virtio-net-performance-vhost-
 
 Si al puente se le da una dirección IP y se permite el tráfico destinado a ello, pero no hay una interfaz real (por ejemplo, `eth0`) conectada al puente, las máquinas virtuales podrán hablar entre sí y la Sistema anfitrión. Sin embargo, no podrán hablar con nada en la red externa, siempre y cuando no configure IP enmascarada en el host físico. Esta configuración se llama *red de host solamente* por otro software de virtualización como [VirtualBox](/index.php/VirtualBox "VirtualBox").
 
-[Template:Consejo](/index.php?title=Template:Consejo&action=edit&redlink=1 "Template:Consejo (page does not exist)")
+**Sugerencia:**
+
+*   Si desea configurar IP masquerading, ej. NAT para máquinas virtuales, consulte la página [Internet sharing#Enable NAT](/index.php/Internet_sharing#Enable_NAT "Internet sharing").
+*   Es posible que desee tener un servidor DHCP que se ejecute en la interfaz de puente para dar servicio a la red virtual. Por ejemplo, para usar la subred `172.20.0.1/16` con [dnsmasq](/index.php/Dnsmasq "Dnsmasq") como servidor DHCP:
+
+```
+# ip addr add 172.20.0.1/16 dev br0
+# ip link set br0 up
+# dnsmasq --interface=br0 --bind-interfaces --dhcp-range=172.20.0.2,172.20.255.254
+
+```
 
 #### Red interna
 
@@ -527,7 +537,7 @@ De forma predeterminada, iptables eliminaría los paquetes de la red de bridge. 
 
 Este método no requiere una secuencia de comandos de inicio y acepta fácilmente múltiples tomas y puentes múltiples. Utiliza el binario `/usr/lib/qemu/qemu-bridge-helper`, que permite crear dispositivos de derivación en un puente existente.
 
-[Template:Consejo](/index.php?title=Template:Consejo&action=edit&redlink=1 "Template:Consejo (page does not exist)")
+**Sugerencia:** Consulte [Network bridge](/index.php/Network_bridge "Network bridge") para obtener información sobre cómo crear un puente.
 
 En primer lugar, cree un archivo de configuración que contenga los nombres de todos los puentes que QEMU utilizará:
 
@@ -554,7 +564,7 @@ $ qemu-system-i386 -net nic -net bridge,br=*bridge0* -net nic,vlan=1 -net bridge
 
 #### Creación manual del puente
 
-{{Sugerencia: Desde QEMU 1.1, el [puente de red ayudante](http://wiki.qemu.org/Features/HelperNetworking) puede establecer tun / tap up para usted sin necesidad de secuencias de comandos adicionales. Consulte [#Blocales de red utilizando qemu-bridge-helper](#Blocales_de_red_utilizando_qemu-bridge-helper).}}
+**Sugerencia:** Desde QEMU 1.1, el [puente de red ayudante](http://wiki.qemu.org/Features/HelperNetworking) puede establecer tun / tap up para usted sin necesidad de secuencias de comandos adicionales. Consulte [#Blocales de red utilizando qemu-bridge-helper](#Blocales_de_red_utilizando_qemu-bridge-helper).
 
 A continuación se describe cómo conectar una máquina virtual con una interfaz de host como `eth0`, que es probablemente la configuración más común. Esta configuración hace que parezca que la máquina virtual está ubicada directamente en la red externa, en el mismo segmento Ethernet que la máquina host física.
 
@@ -949,41 +959,41 @@ WantedBy=multi-user.target
 
 Y, por último, puede crear el puente interfaz con netctl.
 
-## Graphics
+## Gráficos
 
-QEMU can use the following different graphic outputs: `std`, `qxl`, `vmware`, `virtio`, `cirrus` and `none`.
+QEMU puede utilizar las siguientes salidas gráficas diferentes: `std`, `qxl`, `vmware`, `virtio`, `cirrus` y `none`.
 
 ### std
 
-With `-vga std` you can get a resolution of up to 2560 x 1600 pixels without requiring guest drivers. This is the default since QEMU 2.2.
+Con `-vga std` puede obtener una resolución de hasta 2560 x 1600 píxeles sin necesidad de controladores invitados. Este es el valor predeterminado desde QEMU 2.2.
 
 ### qxl
 
-QXL is a paravirtual graphics driver with 2D support. To use it, pass the `-vga qxl` option and install drivers in the guest. You may want to use SPICE for improved graphical performance when using QXL.
+QXL Es un controlador de gráficos paravirtual con soporte 2D. Para usarlo, pase la opción `-vga qxl` e instale los controladores en el invitado. Es posible que desee utilizar SPICE para mejorar el rendimiento gráfico al utilizar QXL.
 
-On Linux guests, the `qxl` and `bochs_drm` kernel modules must be loaded in order to gain a decent performance.
+En los invitados de Linux, los módulos del kernel `qxl` y `bochs_drm` deben ser inicializados para poder tener un rendimiento descente.
 
 #### SPICE
 
-The [SPICE project](http://spice-space.org/) aims to provide a complete open source solution for remote access to virtual machines in a seamless way.
+El proyecto [SPICE](http://spice-space.org/) tiene como objetivo proporcionar una solución completa de código abierto para el acceso remoto a máquinas virtuales de una manera transparente.
 
-SPICE can only be used when using QXL as the graphical output.
+SPICE sólo se puede utilizar cuando se utiliza QXL como la salida gráfica.
 
-The following is example of booting with SPICE as the remote desktop protocol:
+El siguiente es un ejemplo de arranque con SPICE como protocolo de escritorio remoto:
 
 ```
 $ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -chardev spicevm 
 
 ```
 
-Connect to the guest by using a SPICE client. At the moment [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) is recommended, however other [clients](http://www.spice-space.org/download.html), including other platforms, are available:
+Conéctese al invitado utilizando un cliente SPICE. En este momento se recomienda [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3), sin embargo otros [clientes](http://www.spice-space.org/download.html), incluyendo otras plataformas, están disponibles:
 
 ```
 $ spicy -h 127.0.0.1 -p 5930
 
 ```
 
-Using [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") instead of TCP ports does not involve using network stack on the host system, so it is [reportedly](https://unix.stackexchange.com/questions/91774/performance-of-unix-sockets-vs-tcp-ports) better for performance. Example:
+El uso de [Unix sockets](https://en.wikipedia.org/wiki/Unix_socket "wikipedia:Unix socket") en lugar de los puertos TCP no implica el uso de pila de red en el sistema host, por lo que es [Sockets-vs-tcp-ports según se informa](https://unix.stackexchange.com/questions/91774/performance-of-unix-) mejor para el rendimiento. Ejemplo:
 
 ```
 $ qemu-system-x86_64 -vga qxl -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -spice unix,addr=/tmp/vm_spice.socket,disable-ticketing
@@ -991,21 +1001,21 @@ $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 
 ```
 
-For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
+Para una mejor compatibilidad con varios monitores, compartir el portapapeles, etc., los paquetes siguientes deben estar instalados en el invitado:
 
-*   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more
-*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
-*   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
+*   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg cliente que permite copiar y pegar entre el cliente y X-session y más
+*   [xf86-video-qxl](https://aur.archlinux.org/packages/xf86-video-qxl/) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl controlador de vídeo
+*   Para otros sistemas operativos, mire la sección Guest de la página [SPICE-Space download](http://www.spice-space.org/download.html).
 
 ### vmware
 
-Although it is a bit buggy, it performs better than std and cirrus. Install the VMware drivers [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) and [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) for Arch Linux guests.
+Aunque tiene pocos errores, tiene mejor rendimiento que std y cirrus. Instale los controladores de VMware [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware) y [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) para los invitados de Arch Linux.
 
 ### virtio
 
-`virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests with [mesa](https://www.archlinux.org/packages/?name=mesa) (>=11.2) compiled with the option `--with-gallium-drivers=virgl`.
+`virtio-vga` / `virtio-gpu` Es un controlador de gráficos 3D paravirtual basado en [virgl](https://virgil3d.github.io/). Actualmente un trabajo en curso, que sólo admite a invitados Linux (>= 4.4) con [mesa](https://www.archlinux.org/packages/?name=mesa) (>= 11.2) compilados con la opción `--with-gallium-drivers=virgl`.
 
-To enable 3D acceleration on the guest system select this vga with `-vga virtio` and enable the opengl context in the display device with `-display sdl,gl=on` or `-display gtk,gl=on` for the sdl and gtk display output respectively. Successful configuration can be confirmed looking at the kernel log in the guest:
+Para activar la aceleración 3D en el sistema invitado, seleccione vga con `-vga virtio` y habilitar el contexto opengl en el dispositivo de visualización con `-display sdl,gl=on` ó `-display gtk,gl=on` Para la salida de pantalla sdl y gtk respectivamente. La configuración correcta se puede confirmar mirando el registro del kernel en el invitado:
 
  `$ dmesg | grep drm ` 
 ```
@@ -1014,21 +1024,21 @@ To enable 3D acceleration on the guest system select this vga with `-vga virtio`
 
 ```
 
-As of September 2016, support for the spice protocol is under development and can be tested installing the development release of [spice](https://www.archlinux.org/packages/?name=spice) (>= 0.13.2) and recompiling qemu.
+A partir de septiembre de 2016, el soporte para el protocolo de especias está en desarrollo y se puede probar la instalación de la versión de desarrollo de [spice](https://www.archlinux.org/packages/?name=spice) (>= 0.13.2) y la recompilación de qemu.
 
-For more information visit [kraxel's blog](https://www.kraxel.org/blog/tag/virgl/).
+Para más información visite [blog de kraxel](https://www.kraxel.org/blog/tag/virgl/).
 
 ### cirrus
 
-The cirrus graphical adapter was the default [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). It [should not](https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) be used on modern systems.
+El adaptador gráfico cirrus fue el predeterminado [before 2.2](http://wiki.qemu.org/ChangeLog/2.2#VGA). [no debería](Https://www.kraxel.org/blog/2014/10/qemu-using-cirrus-considered-harmful/) utilizarse en sistemas modernos.
 
 ### none
 
-This is like a PC that has no VGA card at all. You would not even be able to access it with the `-vnc` option. Also, this is different from the `-nographic` option which lets QEMU emulate a VGA card, but disables the SDL display.
+Esto es como un PC que no tiene tarjeta VGA en absoluto. Ni siquiera podrías acceder a ella con la opción `-vnc`. Además, esto es diferente de la opción `-nographic` que permite a QEMU emular una tarjeta VGA, pero deshabilita la visualización SDL.
 
 ### vnc
 
-Given that you used the `-nographic` option, you can add the `-vnc display` option to have QEMU listen on `display` and redirect the VGA display to the VNC session. There is an example of this in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section's example configs.
+Dado que usó la opción `-nographic`, puede agregar la opción `-vnc display` para que QEMU escuche en `display` y redirigir la pantalla VGA a la sesión VNC . Hay un ejemplo de esto en las configuraciones de ejemplo de la sección [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot).
 
 ```
 $ qemu-system-i386 -vga std -nographic -vnc :0
@@ -1036,97 +1046,97 @@ $ gvncviewer :0
 
 ```
 
-When using VNC, you might experience keyboard problems described (in gory details) [here](https://www.berrange.com/posts/2010/07/04/more-than-you-or-i-ever-wanted-to-know-about-virtual-keyboard-handling/). The solution is *not* to use the `-k` option on QEMU, and to use `gvncviewer` from [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc). See also [this](http://www.mail-archive.com/libvir-list@redhat.com/msg13340.html) message posted on libvirt's mailing list.
+Al usar VNC, puede experimentar problemas de teclado descritos (en detalles gory) [Know-about-virtual-keyboard-handling / aquí](https://www.berrange.com/posts/2010/07/04/more-than-you-or-+-wanted-to-). La solución es "no" usar la opción `-k` en QEMU y usar `gvncviewer` de [gtk-vnc](https://www.archlinux.org/packages/?name=gtk-vnc). Ver también [este](http://www.mail-archive.com/libvir-list@redhat.com/msg13340.html) mensaje publicado en la lista de correo de libvirt.
 
 ## Audio
 
 ### Host
 
-The audio driver used by QEMU is set with the `QEMU_AUDIO_DRV` environment variable:
+El controlador de audio utilizado por QEMU se establece con la variable de entorno `QEMU_AUDIO_DRV`:
 
 ```
 $ export QEMU_AUDIO_DRV=pa
 
 ```
 
-Run the following command to get QEMU's configuration options related to PulseAudio:
+Ejecute el siguiente comando para obtener las opciones de configuración de QEMU relacionadas con PulseAudio:
 
 ```
 $ qemu-system-x86_64 -audio-help | awk '/Name: pa/' RS=
 
 ```
 
-The listed options can be exported as environment variables, for example:
+Las opciones listadas se pueden exportar como variables de entorno, por ejemplo:
 
 ```
 $ export QEMU_PA_SINK=alsa_output.pci-0000_04_01.0.analog-stereo.monitor
 $ export QEMU_PA_SOURCE=input
 ```
 
-### Guest
+### Invitado
 
-To get list of the supported emulation audio drivers:
+Para obtener la lista de los controladores de audio de emulación compatibles:
 
 ```
 $ qemu-system-x86_64 -soundhw help
 
 ```
 
-To use e.g. `hda` driver for the guest use the `-soundhw hda` command with QEMU.
+Para usar (ej. `hda`) para el invitado utilice el comando `-soundhw hda` con QEMU.
 
-**Note:** Video graphic card emulated drivers for the guest machine may also cause a problem with the sound quality. Test one by one to make it work. You can list possible options with `qemu-system-x86_64 -h | grep vga`.
+**Nota:** Los controladores emulados con tarjeta gráfica de vídeo para la máquina invitada también pueden causar un problema con la calidad del sonido. Pruebe uno por uno para que funcione. Puede listar las opciones posibles con `qemu-system-x86_64 -h` .
 
 ## Instalación de controladores virtio
 
-QEMU offers guests the ability to use paravirtualized block and network devices using the [virtio](http://wiki.libvirt.org/page/Virtio) drivers, which provide better performance and lower overhead.
+QEMU ofrece a los clientes la posibilidad de utilizar dispositivos bloqueados y de red paravirtualizados utilizando los controladores [virtio](http://wiki.libvirt.org/page/Virtio), que proporcionan un mejor rendimiento y menores gastos generales.
 
-*   A virtio block device requires the option `-drive` instead of the simple `-hd*` plus `if=virtio`:
+Un dispositivo virtio bloque requiere la opción `-drive` en lugar del simple `-hd *` más `if=virtio`:
 
 ```
 $ qemu-system-i386 -boot order=c -drive file=*disk_image*,if=virtio
 
 ```
 
-**Note:** `-boot order=c` is absolutely necessary when you want to boot from it. There is no auto-detection as with `-hd*`.
+**Nota:** `-boot order=c` es absolutamente necesario cuando se desea arrancar desde él. No hay detección automática como con `-hd*`.
 
-*   Almost the same goes for the network:
+*   Casi de la misma manera para la red:
 
 ```
 $ qemu-system-i386 -net nic,model=virtio
 
 ```
 
-**Note:** This will only work if the guest machine has drivers for virtio devices. Linux does, and the required drivers are included in Arch Linux, but there is no guarantee that virtio devices will work with other operating systems.
+**Nota:** Esto sólo funcionará si la máquina invitada tiene controladores para dispositivos virtio. Linux lo hace, y los controladores necesarios están incluidos en Arch Linux, pero no hay garantía de que los dispositivos virtio funcionen con otros sistemas operativos.
 
-### Preparing an (Arch) Linux guest
+### Preparando a Arch Linux como invitado
 
-To use virtio devices after an Arch Linux guest has been installed, the following modules must be loaded in the guest: `virtio`, `virtio_pci`, `virtio_blk`, `virtio_net`, and `virtio_ring`. For 32-bit guests, the specific "virtio" module is not necessary.
+Para utilizar los dispositivos virtio después de instalar un invitado de Arch Linux, se deben cargar en el invitado los siguientes módulos: `virtio`, `virtio_pci`, `virtio_blk`, `Virtio_net`, y `virtio_ring`. Para los huéspedes de 32 bits, no es necesario el módulo "virtio" específico.
 
-If you want to boot from a virtio disk, the initial ramdisk must contain the necessary modules. By default, this is handled by [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `autodetect` hook. Otherwise use the `MODULES` array in `/etc/mkinitcpio.conf` to include the necessary modules and rebuild the initial ramdisk.
+Si desea arrancar desde un disco virtio, el disco ramd inicial debe contener los módulos necesarios. De forma predeterminada, esto es manejado por el gancho `autodetect` de [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). De lo contrario, utilice la matriz `MODULES` en `/etc/mkinitcpio.conf` para incluir los módulos necesarios y reconstruir el disco ramd inicial.
 
  `/etc/mkinitcpio.conf`  `MODULES="virtio virtio_blk virtio_pci virtio_net"` 
 
-Virtio disks are recognized with the prefix `**v**` (e.g. `**v**da`, `**v**db`, etc.); therefore, changes must be made in at least `/etc/fstab` and `/boot/grub/grub.cfg` when booting from a virtio disk.
+Los discos Virtio se reconocen con el prefijo `**v**` (ej. `**v** da`, {{ic|**v** db} }, etc.); Por lo tanto, los cambios deben realizarse al menos en `/etc/fstab` y `/boot/grub/grub.cfg` al arrancar desde un disco virtio.
 
-**Tip:** When referencing disks by [UUID](/index.php/UUID "UUID") in both `/etc/fstab` and bootloader, nothing has to be done.
+**Nota:** Cuando se hace referencia a discos por [UUID](/index.php/UUID "UUID") en `/etc/fstab` y bootloader, no hay nada que hacer.
 
-Further information on paravirtualization with KVM can be found [here](http://www.linux-kvm.org/page/Boot_from_virtio_block_device).
+Se puede encontrar más información sobre la paravirtualización con KVM [aquí](http://www.linux-kvm.org/page/Boot_from_virtio_block_device).
 
-You might also want to install [qemu-guest-agent](https://www.archlinux.org/packages/?name=qemu-guest-agent) to implement support for QMP commands that will enhance the hypervisor management capabilities. After installing the package you can enable and start the `qemu-ga.service`.
+También puede instalar [qemu-guest-agent](https://www.archlinux.org/packages/?name=qemu-guest-agent) para implementar la compatibilidad con los comandos QMP que mejorarán las capacidades de administración del hipervisor. Después de instalar el paquete, puedes habilitar e iniciar el `qemu-ga.service`.
 
-### Preparing a Windows guest
+### Preparar un invitado de Windows
 
-**Note:** The only (reliable) way to upgrade a Windows 8.1 guest to Windows 10 seems to be to temporarily choose cpu core2duo,nx for the install [[3]](http://ubuntuforums.org/showthread.php?t=2289210). After the install, you may revert to other cpu settings (8/8/2015).
+**Nota:** La única forma (fiable) de actualizar un cliente de Windows 8.1 a Windows 10 parece que es elegir temporalmente cpu core2duo, nx para la instalación [[3]](http://ubuntuforums.org/showthread.php?t=2289210). Después de la instalación, puede volver a otros ajustes de la CPU (8/8/2015).
 
-#### Block device drivers
+#### Bloquear controladores de dispositivo
 
-##### New Install of Windows
+##### Nueva instalación de Windows
 
-Windows does not come with the virtio drivers. Therefore, you will need to load them during installation. There are basically two ways to do this: via Floppy Disk or via ISO files. Both images can be downloaded from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
+Windows no viene con los controladores virtio. Por lo tanto, tendrá que cargarlos durante la instalación. Hay básicamente dos maneras de hacer esto: vía disco blando o vía archivos de ISO. Ambas imágenes se pueden descargar desde el repositorio [Fedora](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
 
-The floppy disk option is difficult because you will need to press F6 (Shift-F6 on newer Windows) at the very beginning of powering on the QEMU. This is difficult since you need time to connect your VNC console window. You can attempt to add a delay to the boot sequence. See `man qemu-system` for more details about applying a delay at boot.
+La opción del disquete es difícil porque necesitará presionar F6 (Shift-F6 en Windows más reciente) al inicio de la alimentación del QEMU. Esto es difícil ya que necesitas tiempo para conectar tu ventana de consola VNC. Puede intentar agregar un retardo a la secuencia de arranque. Consulte `man qemu-system` para obtener más detalles sobre la aplicación de un retardo en el arranque.
 
-The ISO option to load drivers is the preferred way, but it is available only on Windows Vista and Windows Server 2008 and later. The procedure is to load the image with virtio drivers in an additional cdrom device along with the primary disk device and Windows installer:
+La opción ISO para cargar los controladores es la forma preferida, pero está disponible sólo en Windows Vista y Windows Server 2008 y versiones posteriores. El procedimiento consiste en cargar la imagen con controladores virtio en un dispositivo de cdrom adicional junto con el dispositivo de disco principal y el instalador de Windows:
 
 ```
 $ qemu-system-i386 ... \
@@ -1137,61 +1147,61 @@ $ qemu-system-i386 ... \
 
 ```
 
-During the installation, the Windows installer will ask you for your Product key and perform some additional checks. When it gets to the "Where do you want to install Windows?" screen, it will give a warning that no disks are found. Follow the example instructions below (based on Windows Server 2012 R2 with Update).
+Durante la instalación, el instalador de Windows le pedirá su clave de producto y realizará algunas comprobaciones adicionales. Cuando llegue a la "¿Dónde desea instalar Windows?" Pantalla, dará una advertencia de que no se encuentran discos. Siga las instrucciones de ejemplo siguientes (basadas en Windows Server 2012 R2 con Actualización).
 
-*   Select the option `Load Drivers`.
-*   Uncheck the box for "Hide drivers that aren't compatible with this computer's hardware".
-*   Click the Browse button and open the CDROM for the virtio iso, usually named "virtio-win-XX".
-*   Now browse to `E:\viostor\[your-os]\amd64`, select it, and press OK.
+*   Seleccione la opción `Load Drivers`.
+*   Desactive la casilla de "Ocultar los controladores que no son compatibles con el hardware de este equipo".
+*   Haga clic en el botón Examinar y abra el CDROM para la virtio iso, normalmente llamada "virtio-win-XX".
+*   Ahora vaya a `E:\viostor\[your-os]\amd64`, seleccione y pulse OK.
 *   Click Next
 
-You should now see your virtio disk(s) listed here, ready to be selected, formatted and installed to.
+Ahora debería ver sus discos virtio listados aquí, listos para ser seleccionados, formateados e instalados.
 
-##### Change Existing Windows VM to use virtio
+##### Cambiar la máquina virtual existente de Windows para utilizar virtio
 
-Modifying an existing Windows guest for booting from virtio disk is a bit tricky.
+Modificar un invitado de Windows existente para arrancar desde disco virtio es un poco difícil.
 
-You can download the virtio disk driver from the [Fedora repository](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
+Puede descargar el controlador de disco virtio desde el [repositorio de Fedora](https://fedoraproject.org/wiki/Windows_Virtio_Drivers).
 
-Now you need to create a new disk image, which fill force Windows to search for the driver. For example:
+Ahora necesita crear una nueva imagen de disco, que llene la fuerza de Windows para buscar el controlador. Por ejemplo:
 
 ```
 $ qemu-img create -f qcow2 *fake.qcow2* 1G
 
 ```
 
-Run the original Windows guest (with the boot disk still in IDE mode) with the fake disk (in virtio mode) and a CD-ROM with the driver.
+Ejecute el invitado original de Windows (con el disco de inicio todavía en modo IDE) con el disco falso (en modo virtio) y un CD-ROM con el controlador.
 
 ```
 $ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=ide -drive file=*fake.qcow2*,if=virtio -cdrom virtio-win-0.1-81.iso
 
 ```
 
-Windows will detect the fake disk and try to find a driver for it. If it fails, go to the *Device Manager*, locate the SCSI drive with an exclamation mark icon (should be open), click *Update driver* and select the virtual CD-ROM. Do not forget to select the checkbox which says to search for directories recursively.
+Windows detectará el disco falso y tratará de encontrar un controlador para ello. Si falla, vaya al *Administrador de dispositivos* , busque la unidad SCSI con un icono de signo de exclamación (debe estar abierto), haga clic en *Actualizar controlador* y seleccione el CD-ROM virtual. No olvide seleccionar la casilla de verificación que dice que debe buscar directorios recursivamente.
 
-When the installation is successful, you can turn off the virtual machine and launch it again, now with the boot disk attached in virtio mode:
+Cuando la instalación se realiza correctamente, puede apagar la máquina virtual y volver a iniciarla, ahora con el disco de arranque conectado en modo virtio:
 
 ```
 $ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
 
 ```
 
-**Note:** If you encounter the Blue Screen of Death, make sure you did not forget the `-m` parameter, and that you do not boot with virtio instead of ide for the system drive before drivers are installed.
+**Nota:** Si encuentra la pantalla azul de Death, asegúrese de no olvidar el parámetro `-m` y de que no arranca con virtio en lugar de ide para la unidad del sistema antes de instalar los controladores.
 
-#### Network drivers
+#### Controladores de red
 
-Installing virtio network drivers is a bit easier, simply add the `-net` argument as explained above.
+La instalación de los controladores de red virtio es un poco más fácil, simplemente agregue el argumento `-net` como se explicó anteriormente.
 
 ```
 $ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio -net nic,model=virtio -cdrom virtio-win-0.1-74.iso
 
 ```
 
-Windows will detect the network adapter and try to find a driver for it. If it fails, go to the *Device Manager*, locate the network adapter with an exclamation mark icon (should be open), click *Update driver* and select the virtual CD-ROM. Do not forget to select the checkbox which says to search for directories recursively.
+Windows detectará el adaptador de red y tratará de encontrar un controlador para ello. Si falla, vaya al *Administrador de dispositivos*, localice el adaptador de red con un icono de signo de exclamación (debe estar abierto), haga clic en *Actualizar controlador* y seleccione el CD-ROM virtual. No olvide seleccionar la casilla de verificación que dice que debe buscar directorios recursivamente.
 
-### Preparing a FreeBSD guest
+### Preparación de FreeBSD como invitado
 
-Install the `emulators/virtio-kmod` port if you are using FreeBSD 8.3 or later up until 10.0-CURRENT where they are included into the kernel. After installation, add the following to your `/boot/loader.conf` file:
+Instale el puerto `emulators/virtio-kmod` si está utilizando FreeBSD 8.3 o posterior hasta 10.0-CURRENT donde están incluidos en el kernel. Después de la instalación, añada lo siguiente a su archivo `/boot/loader.conf`:
 
 ```
 virtio_loader="YES"
@@ -1202,26 +1212,26 @@ virtio_balloon_load="YES"
 
 ```
 
-Then modify your `/etc/fstab` by doing the following:
+A continuación, modifique su `/etc/fstab` haciendo lo siguiente:
 
 ```
 sed -i bak "s/ada/vtbd/g" /etc/fstab
 
 ```
 
-And verify that `/etc/fstab` is consistent. If anything goes wrong, just boot into a rescue CD and copy `/etc/fstab.bak` back to `/etc/fstab`.
+Y verificar que `/etc/fstab` es consistente. Si algo sale mal, sólo arranque en un CD de rescate y copie `/etc/fstab.bak` de vuelta a `/etc/fstab`.
 
-## Tips and tricks
+## Consejos y trucos
 
-### Starting QEMU virtual machines on boot
+### Inicio de las máquinas virtuales QEMU en el arranque
 
-#### With libvirt
+#### Con libvirt
 
-If a virtual machine is set up with [libvirt](/index.php/Libvirt "Libvirt"), it can be configured through the virt-manager GUI to start at host boot by going to the Boot Options for the virtual machine and selecting "Start virtual machine on host boot up".
+Si se configura una máquina virtual con [libvirt](/index.php/Libvirt "Libvirt"), se puede configurar a través de la interfaz gráfica de usuario de virt-manager para iniciar en el arranque de host, accediendo a las Opciones de arranque de la máquina virtual y seleccionando "Inicio de la máquina virtual en el arranque del host".
 
-#### Custom script
+#### Script personalizado
 
-To run QEMU VMs on boot, you can use following systemd unit and config.
+Para ejecutar QEMU VMs al arrancar, puede usar las siguientes unidades systemd y config.
 
  `/etc/systemd/system/qemu@.service` 
 ```
@@ -1241,9 +1251,9 @@ WantedBy=multi-user.target
 
 ```
 
-**Note:** According to `systemd.service(5)` and `systemd.kill(5)` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
+{{Nota| De acuerdo con `systemd.service (5)` y `systemd.kill (5)` man, es necesario utilizar `KillMode=none` opción. De lo contrario, el proceso qemu principal se eliminará inmediatamente después de que se cierre el comando `ExecStop` (simplemente hace eco de una cadena) y su sistema de búsqueda no podrá apagarse correctamente.
 
-Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, with the following variables set:
+A continuación, cree archivos de configuración por-VM, denominados `/etc/conf.d/qemu.d/*vm_name*`, con las siguientes variables establecidas:
 
 	type
 
@@ -1257,7 +1267,7 @@ Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, wi
 
 	Command to shut down a VM safely. I am using `-monitor telnet:..` and power off my VMs via ACPI by sending `system_powerdown` to monitor. You can use SSH or some other ways.
 
-Example configs:
+Ejemplo de configuración:
 
  `/etc/conf.d/qemu.d/one` 
 ```
@@ -1283,50 +1293,50 @@ haltcmd="echo 'system_powerdown' | nc localhost 7101"
 
 ```
 
-To set which virtual machines will start on boot-up, [enable](/index.php/Enable "Enable") the `qemu@*vm_name*.service` systemd unit.
+Para establecer qué máquinas virtuales se iniciarán al arrancar, habilite la unidad de [systemd](/index.php/Systemd "Systemd") `qemu@*vm_name*.service`.
 
-### Mouse integration
+### Integración del ratón
 
-To prevent the mouse from being grabbed when clicking on the guest operating system's window, add the option `-usbdevice tablet`. This means QEMU is able to report the mouse position without having to grab the mouse. This also overrides PS/2 mouse emulation when activated. For example:
+Para evitar que el ratón sea agarrado al hacer clic en la ventana del sistema operativo invitado, agregue la opción `-usbdevice tablet`. Esto significa que QEMU puede reportar la posición del ratón sin tener que agarrar el ratón. Esto también anula la emulación de ratón PS/2 cuando se activa. Por ejemplo:
 
 ```
 $ qemu-system-i386 -hda *disk_image* -m 512 -vga std -usbdevice tablet
 
 ```
 
-If that does not work, try the tip at [#Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic).
+If that does not work, try the tip at [#El cursor del ratón está nervioso o errático](#El_cursor_del_rat.C3.B3n_est.C3.A1_nervioso_o_err.C3.A1tico).
 
-### Pass-through host USB device
+### Dispositivo USB del host de paso
 
-To access physical USB device connected to host from VM, you can use the option: `-usbdevice host:*vendor_id*:*product_id*`.
+Para acceder al dispositivo físico USB conectado al host desde la VM, puede utilizar la opción: `-usbdevice host:*vendor_id*:*product_id*`.
 
-You can find `vendor_id` and `product_id` of your device with `lsusb` command.
+Puedes encontrar `vendor_id` y `product_id` de tu dispositivo con el comando `lsusb`.
 
-Since the default I440FX chipset emulated by qemu feature a single UHCI controller (USB 1), the `-usbdevice` option will try to attach your physical device to it. In some cases this may cause issues with newer devices. A possible solution is to emulate the [ICH9](http://wiki.qemu.org/Features/Q35) chipset, which offer an EHCI controller supporting up to 12 devices, using the option `-machine type=q35`.
+Puesto que el chipset I440FX por defecto emulado por qemu cuentan con un solo controlador UHCI (USB 1), la opción `-usbdevice` intentará conectar su dispositivo físico a él. En algunos casos esto puede causar problemas con los dispositivos más nuevos. Una posible solución es emular el chipset [ICH9](http://wiki.qemu.org/Features/Q35), que ofrece un controlador EHCI que soporta hasta 12 dispositivos, usando la opción `-machine type=q35`.
 
-A less invasive solution is to emulate an EHCI (USB 2) or XHCI (USB 3) controller with the option `-device usb-ehci,id=ehci` or `-device nec-usb-xhci,id=xhci` respectively and then attach your physical device to it with the option `-device usb-host,..` as follows:
+Una solución menos invasiva es emular un controlador EHCI (USB 2) o XHCI (USB 3) con la opción `-device usb-ehci, id = ehci` o `-device nec -usb-xhci, id=xhci` respectivamente y luego adjuntar su dispositivo físico con la opción `-device usb-host,..` como sigue:
 
 ```
 -device usb-host,bus=**controller_id**.0,vendorid=0x**vendor_id**,productid=0x**product_id**
 
 ```
 
-You can also add the `...,port=*<n>*` setting to the previous option to specify in which physical port of the virtual controller you want to attach your device, useful in the case you want to add multiple usb devices to the VM.
+También puede agregar la configuración `..., port =*<n>*` a la opción anterior para especificar en qué puerto físico del controlador virtual que desea conectar su dispositivo, útil en El caso que desea agregar varios dispositivos usb a la VM.
 
-**Note:** If you encounter permission errors when running QEMU, see [Udev#Writing udev rules](/index.php/Udev#Writing_udev_rules "Udev") for information on how to set permissions of the device.
+{{Nota|Si encuentra errores de permisos al ejecutar QEMU, consulte [Udev#Writing udev rules](/index.php/Udev#Writing_udev_rules "Udev") para obtener información sobre cómo establecer permisos del dispositivo.
 
 ### Habilitar KSM
 
-Kernel Samepage Merging (KSM) is a feature of the Linux kernel that allows for an application to register with the kernel to have its pages merged with other processes that also register to have their pages merged. The KSM mechanism allows for guest virtual machines to share pages with each other. In an environment where many of the guest operating systems are similar, this can result in significant memory savings.
+Kernel Samepage Merging (KSM) es una característica del kernel de Linux que permite que una aplicación se registre con el kernel para que sus páginas se combinen con otros procesos que también se registren para que sus páginas se fusionen. El mecanismo KSM permite a las máquinas virtuales invitadas compartir páginas entre sí. En un entorno donde muchos de los sistemas operativos invitados son similares, esto puede resultar en ahorros significativos de memoria.
 
-To enable KSM, simply run
+Para activar KSM, simplemente ejecute:
 
 ```
 # echo 1 > /sys/kernel/mm/ksm/run
 
 ```
 
-To make it permanent, you can use [systemd's temporary files](/index.php/Systemd#Temporary_files "Systemd"):
+Para hacerlo permanente, puede utilizar [archivos temporales de systemd](/index.php/Systemd#Temporary_files "Systemd"):
 
  `/etc/tmpfiles.d/ksm.conf` 
 ```
@@ -1334,55 +1344,57 @@ w /sys/kernel/mm/ksm/run - - - - 1
 
 ```
 
-If KSM is running, and there are pages to be merged (i.e. at least two similar VMs are running), then `/sys/kernel/mm/ksm/pages_shared` should be non-zero. See [https://www.kernel.org/doc/Documentation/vm/ksm.txt](https://www.kernel.org/doc/Documentation/vm/ksm.txt) for more information.
+Si KSM está en ejecución y hay páginas que se van a fusionar (es decir, al menos dos máquinas virtuales similares se están ejecutando), entonces `/sys/kernel/mm/ksm/pages_shared` debería ser distinto de cero. Consulte [https://www.kernel.org/doc/Documentation/vm/ksm.txt](https://www.kernel.org/doc/Documentation/vm/ksm.txt) para obtener más información.
 
-**Tip:** An easy way to see how well KSM is performing is to simply print the contents of all the files in that directory: `$ grep . /sys/kernel/mm/ksm/*` 
+**Sugerencia:** Una manera fácil de ver lo bien que KSM está realizando es simplemente imprimir el contenido de todos los archivos de ese directorio: `$ grep./Sys/kernel/mm/ksm/*` 
 
 ### Multi-monitor support
 
-The Linux QXL driver supports four heads (virtual screens) by default. This can be changed via the `qxl.heads=N` kernel parameter.
+El controlador QXL de Linux soporta cuatro cabezas (pantallas virtuales) de forma predeterminada. Esto se puede cambiar a través del parámetro kernel `qxl.heads = N`.
 
-The default VGA memory size for QXL devices is 16M (VRAM size is 64M). This is not sufficient if you would like to enable two 1920x1200 monitors since that requires 2 × 1920 × 4 (color depth) × 1200 = 17.6 MiB VGA memory. This can be changed by replacing `-vga qxl` by `-vga none -device qxl-vga,vgamem_mb=32`. If you ever increase vgamem_mb beyond 64M, then you also have to increase the `vram_size_mb` option.
+El tamaño de memoria VGA predeterminado para los dispositivos QXL es de 16M (el tamaño de la VRAM es de 64M). Esto no es suficiente si desea habilitar dos monitores 1920x1200 ya que requiere 2 × 1920 × 4 (profundidad de color) × 1200 = 17.6 MiB memoria VGA. Esto se puede cambiar reemplazando `-vga qxl` por`
+**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
+`. Si alguna vez incrementas vgamem_mb más allá de 64M, también debes aumentar la opción `vram_size_mb`.
 
-### Copy and paste
+### Copiar y pegar
 
-To have copy and paste between the host and the guest you need to enable the spice agent communication channel. It requires to add a virtio-serial device to the guest, and open a port for the spice vdagent. It is also required to install the spice vdagent in guest ([spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent) for Arch guests, [Windows guest tools](http://www.spice-space.org/download.html) for Windows guests). Make sure the agent is running (and for future, started automatically).
+Para poder copiar y pegar entre el host y el invitado, debe habilitar el canal de comunicación del agente de especias. Requiere agregar un dispositivo virtio-serial al huésped, y abrir un puerto para el vdagent de la especia. También es necesario instalar el spice vdagent en invitado ([spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent) para invitados de Arch, [Herramientas para invitados de Windows](http://www.spice-space.org/download.html) para invitados de Windows). Asegúrese de que el agente se está ejecutando (y para el futuro, se iniciará automáticamente).
 
-Start QEMU with the following options:
+Inicie QEMU con las siguientes opciones:
 
 ```
 $ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
 
 ```
 
-The `-device virtio-serial-pci` option adds the virtio-serial device, `-device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0` opens a port for spice vdagent in that device and `-chardev spicevmc,id=spicechannel0,name=vdagent` adds a spicevmc chardev for that port.
+La opción `-device virtio-serial-pci` añade el dispositivo virtio-serial, `-device virtserialport, chardev=spicechannel0, nombre=com.redhat.spice.0` abre un puerto Para spice vdagent en ese dispositivo y `-chardev spicevmc, id=spicechannel0, nombre=vdagent` añade un spicevmc chardev para ese puerto.
 
-It is important that the `chardev=` option of the `virtserialport` device matches the `id=` option given to the `chardev` option (`spicechannel0` in this example). It is also important that the port name is `com.redhat.spice.0`, because that is the namespace where vdagent is looking for in the guest. And finally, specify `name=vdagent` so that spice knows what this channel is for.
+Es importante que la opción `chardev=` del dispositivo `virtserialport` coincida con la opción `id=` dada a la opción `chardev` (`spicechannel0` en este ejemplo). También es importante que el nombre del puerto sea `com.redhat.spice.0`, ya que es el espacio de nombres donde vdagent está buscando en el invitado. Y finalmente, especifique `name=vdagent` para que spice sepa para qué sirve este canal.
 
-### Windows-specific notes
+### Notas específicas de Windows
 
-QEMU can run any version of Windows from Windows 95 through Windows 10.
+QEMU puede ejecutar cualquier versión de Windows desde Windows 95 a través de Windows 10.
 
-It is possible to run [Windows PE](/index.php/Windows_PE "Windows PE") in QEMU.
+Es posible ejecutar [Windows PE](/index.php/Windows_PE "Windows PE") en QEMU.
 
-#### Fast startup
+#### Inicio rápido
 
-**Note:** An administrator account is required to change power settings.
+**Nota:** Se requiere una cuenta de administrador para cambiar la configuración de energía.
 
-For Windows 8 (or later) guests it is better to disable "Turn on fast startup (recommended)" from the Power Options of the Control Panel, as it causes the guest to hang during every other boot.
+Para invitados de Windows 8 (o posteriores), es mejor desactivar "Activar inicio rápido (recomendado)" en Opciones de energía del Panel de control, ya que hace que el invitado se bloquee durante cada arranque.
 
-Fast Startup may also need to be disabled for changes to the `-smp` option to be properly applied.
+El inicio rápido también puede necesitar deshabilitarse para que los cambios en la opción `-smp` se apliquen correctamente.
 
-#### Remote Desktop Protocol
+#### Protocolo de escritorio remoto
 
-If you use a MS Windows guest, you might want to use RDP to connect to your guest VM. If you are using a VLAN or are not in the same network as the guest, use:
+Si utiliza un invitado de MS Windows, puede utilizar RDP para conectarse a su VM invitada. Si está utilizando una VLAN o no está en la misma red que el invitado, utilice:
 
 ```
 $ qemu-system-i386 -nographic -net user,hostfwd=tcp::5555-:3389
 
 ```
 
-Then connect with either [rdesktop](https://www.archlinux.org/packages/?name=rdesktop) or [freerdp](https://www.archlinux.org/packages/?name=freerdp) to the guest. For example:
+A continuación, conéctese con [rdesktop](https://www.archlinux.org/packages/?name=rdesktop) ó [freerdp](https://www.archlinux.org/packages/?name=freerdp) al invitado. Por ejemplo:
 
 ```
 $ xfreerdp -g 2048x1152 localhost:5555 -z -x lan

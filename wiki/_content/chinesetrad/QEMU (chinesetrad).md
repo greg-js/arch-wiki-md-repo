@@ -66,7 +66,7 @@
 
 ### 創建硬碟鏡像
 
-**提示:** 在[QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images) QEMU images常見更多資訊
+**提示：** 在[QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images) QEMU images常見更多資訊
 
 硬碟鏡像是一個檔案，存儲虛擬機的虛擬硬碟上的內容。除非直接從 CD-ROM 或網路開機並且不安裝系統到硬碟，否則執行 QEMU 時都需要硬碟鏡像。
 
@@ -221,7 +221,7 @@ umount [hd_image]
 
 The drawback of this solution is that you cannot use it with qcow images (including overlay images). So you need to create you images without \"-f qcow\" option.
 
-**小贴士:** Create a second, raw hard drive image. This way you will be able to transfer data easily and use qcow overlay images for the primary drive.
+**提示：** Create a second, raw hard drive image. This way you will be able to transfer data easily and use qcow overlay images for the primary drive.
 
 **警告:** 掛載時千萬不要啟動虛擬機!
 

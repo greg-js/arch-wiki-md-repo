@@ -79,7 +79,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Powerful word processor included in the Calligra Suite.
 
-	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra-words](https://www.archlinux.org/packages/?name=calligra-words)
+	[https://www.calligra.org/words/](https://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **gLabels** — program for creating labels and business cards.
 
@@ -91,7 +91,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[LibreOffice Writer](/index.php/LibreOffice "LibreOffice")** — Full-featured word processor included in the LibreOffice suite.
 
-	[https://www.libreoffice.org/discover/writer](https://www.libreoffice.org/discover/writer) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still)
+	[https://www.libreoffice.org/discover/writer](https://www.libreoffice.org/discover/writer) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
 *   **[OpenOffice Writer](/index.php/OpenOffice "OpenOffice")** — Full-featured word processor included in the OpenOffice suite.
 
@@ -143,7 +143,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[Calligra Sheets](https://en.wikipedia.org/wiki/Calligra_Sheets "wikipedia:Calligra Sheets")** — Powerful spreadsheet application included in the Calligra Suite
 
-	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra-sheets](https://www.archlinux.org/packages/?name=calligra-sheets)
+	[https://www.calligra.org/sheets/](https://www.calligra.org/sheets/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Gnumeric](/index.php/Gnumeric "Gnumeric")** — Spreadsheet program that is part of the GNOME desktop.
 
@@ -151,7 +151,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[LibreOffice Calc](/index.php/LibreOffice "LibreOffice")** — Full-featured spreadsheet application included in the LibreOffice suite.
 
-	[https://www.libreoffice.org/discover/calc/](https://www.libreoffice.org/discover/calc/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still)
+	[https://www.libreoffice.org/discover/calc/](https://www.libreoffice.org/discover/calc/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
 *   **[OpenOffice Calc](/index.php/OpenOffice "OpenOffice")** — Full-featured spreadsheet application included in the OpenOffice suite.
 
@@ -550,8 +550,8 @@ for more collection apps, see also [Multimedia#Collection managers](/index.php/M
 **Note:** [PDF forms](https://en.wikipedia.org/wiki/Portable_Document_Format#Interactive_elements "wikipedia:Portable Document Format") support:
 
 *   [acroread](https://aur.archlinux.org/packages/acroread/) is able to save both AcroForms and XFA forms into PDF files.
-*   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular) support AcroForms, but not full XFA forms. [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[3]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
-*   For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
+*   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [okular](https://www.archlinux.org/packages/?name=okular) support AcroForms, but not full XFA forms. [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[3]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
+*   For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [okular](https://www.archlinux.org/packages/?name=okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
 
 See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_PDF_software "wikipedia:List of PDF software") and [Wikipedia:DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu").
 
@@ -561,13 +561,13 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
 
-*   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
-
-	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
-
 *   **ghostscript** — convert into PDF, reduce size of PDF documents with eg `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf`
 
 	[https://www.ghostscript.com/](https://www.ghostscript.com/) || [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
+
+*   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
+
+	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
 ##### Graphical
 
@@ -611,7 +611,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Universal PDF viewer for KDE.
 
-	[http://okular.kde.org/](http://okular.kde.org/) || [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular)
+	[http://okular.kde.org/](http://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
 
 *   **PdfMod** — You can reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
@@ -792,9 +792,13 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
 
-*   **nixnote** — evernote's third Opensource application（It is formerly called nevernote）
+*   **nixnote** — Evernote's third Opensource application, formerly called Nevernote.
 
-	[http://www.sourceforge.net/projects/nevernote](http://www.sourceforge.net/projects/nevernote) || [nixnote_beta](https://aur.archlinux.org/packages/nixnote_beta/)
+	[http://www.sourceforge.net/projects/nevernote](http://www.sourceforge.net/projects/nevernote) || [nixnote](https://aur.archlinux.org/packages/nixnote/)
+
+*   **[QOwnNotes](https://en.wikipedia.org/wiki/QOwnNotes "wikipedia:QOwnNotes")** — An open source notepad and todo list manager with markdown support and optional ownCloud integration built on qt5.
+
+	[http://www.qownnotes.org/](http://www.qownnotes.org/) || [qownnotes](https://aur.archlinux.org/packages/qownnotes/)
 
 *   **[Tomboy](https://en.wikipedia.org/wiki/Tomboy_(software) "wikipedia:Tomboy (software)")** — Desktop note-taking application for Linux and Unix with a wiki-like linking system to connect notes together.
 

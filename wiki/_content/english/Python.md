@@ -184,7 +184,7 @@ See [Python/Virtual environment](/index.php/Python/Virtual_environment "Python/V
 
 Copy this into Python's interactive shell:
 
- `/usr/bin/python` 
+ `/usr/bin/python2` 
 ```
 import rlcompleter
 import readline

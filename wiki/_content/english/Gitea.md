@@ -13,7 +13,7 @@
 
 ## Installation
 
-Install the [gitea](https://aur.archlinux.org/packages/gitea/) or [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
+[Install](/index.php/Install "Install") the [gitea](https://aur.archlinux.org/packages/gitea/) or [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
 
 Gitea requires the use of a database backend, the following are supported:
 
@@ -48,7 +48,7 @@ Configure MariaDB on first run or by updating `app.ini`:
  `/var/lib/gitea/custom/conf/app.ini` 
 ```
 DB_TYPE  = mysql
-HOST     = /var/run/mysqld/mysqld.sock ; or 127.0.0.1:3306
+HOST     = 127.0.0.1:3306 ; or /var/run/mysqld/mysqld.sock
 NAME     = gitea
 USER     = gitea
 PASSWD   = **password**
@@ -56,13 +56,15 @@ PASSWD   = **password**
 
 ## Running
 
+**Note:** If you want Gitea to listen on all interfaces, set `HTTP_ADDR = 0.0.0.0` in `/var/lib/gitea/custom/conf/app.ini`.
+
 [Start/enable](/index.php/Start/enable "Start/enable") `gitea.service`, the webinterface should listen on `[http://localhost:3000](http://localhost:3000)`.
 
 When running Gitea for the first time it should redirect to `[http://localhost:3000/install](http://localhost:3000/install)`.
 
 ## Configuration
 
-The user configuration file is located at `/var/lib/gitea/custom/conf/app.ini`. Do **not** edit the main configuration file at `/var/lib/gitea/conf/app.ini`, since this file is included in the binary and will be overwritten on each update.
+The user configuration file is located at `/var/lib/gitea/custom/conf/app.ini`. Do **not** edit the main configuration file (`/var/lib/gitea/conf/app.ini`), since this file is included in the binary and will be overwritten on each update.
 
 Gitea application and repository data will be saved into */var/lib/gitea*, however it is possible to set custom locations in `/var/lib/gitea/custom/conf/app.ini`.
 
@@ -114,7 +116,7 @@ HTTP_PORT              = 3000
 
 **Note:** You don't need to activate any SSL certificate options in `app.ini`.
 
-Finally update the *cookie* section and set COOKIE_SECURE to **true**.
+Finally update the *cookie* section - set COOKIE_SECURE to **true**.
 
 ## See also
 

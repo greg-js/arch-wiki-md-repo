@@ -19,7 +19,6 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 No HDMI/DP Audio](#No_HDMI.2FDP_Audio)
     *   [7.2 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
-    *   [7.3 Blender UI graphical corruption](#Blender_UI_graphical_corruption)
 
 ## Selecting the right driver
 
@@ -155,7 +154,3 @@ Section "Screen"
 EndSection
 
 ```
-
-### Blender UI graphical corruption
-
-The open source amdgpu driver with certain cards currently seems to cause blender to experience graphical corruption on the user interface. Until this is fixed, the workaround to solve the issue is to use Triple Buffering for blender, incurring a heavier VRAM usage. This can be done by going to **File->User Preferences->System** inside of blender and changing the **Window Draw Method** to **Triple Buffering**

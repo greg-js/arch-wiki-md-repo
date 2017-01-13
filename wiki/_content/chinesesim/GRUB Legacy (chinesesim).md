@@ -462,7 +462,7 @@ grub> root (hd1,0)
 
 ```
 
-**提示:** GRUB Shell 支持 Tab 补全，如果你键入'root (hd'然后连续敲击 `Tab` 两次你就可以看见可用的存储分区设备，在分区下也适用，Tab 补全在 GRUB 引导菜单上也适用，如果你的配置文件有错误你可以在引导菜单里编辑并使用 Tab 补全来协助寻找驱动器和分区。请参考[#Edit GRUB entries in the boot menu](#Edit_GRUB_entries_in_the_boot_menu).
+**提示：** GRUB Shell 支持 Tab 补全，如果你键入'root (hd'然后连续敲击 `Tab` 两次你就可以看见可用的存储分区设备，在分区下也适用，Tab 补全在 GRUB 引导菜单上也适用，如果你的配置文件有错误你可以在引导菜单里编辑并使用 Tab 补全来协助寻找驱动器和分区。请参考[#Edit GRUB entries in the boot menu](#Edit_GRUB_entries_in_the_boot_menu).
 
 ### 安装到 MBR
 

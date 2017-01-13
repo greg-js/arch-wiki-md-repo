@@ -134,7 +134,7 @@ epoch=1
     *   (L)GPL3 - 指代 (L)GPL3 或之后的任意版本
 *   如果最终无法决定使用哪种许可证，[PKGBUILD.proto](https://projects.archlinux.org/pacman.git/tree/proto/PKGBUILD.proto) 建议使用 `unknown`。这种情况下应该联系上游的软件发布者。
 
-**小贴士:** 有些软件作者没有提供单独的版权文件，而是在 ReadMe.txt 中声明。可以在 `build` 阶段将这些声明提取为单独文件：`sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`.
+**提示：** 有些软件作者没有提供单独的版权文件，而是在 ReadMe.txt 中声明。可以在 `build` 阶段将这些声明提取为单独文件：`sed -n '/**This software**/,/ **thereof.**/p' ReadMe.txt > LICENSE`.
 
 ### groups
 
@@ -233,7 +233,7 @@ $ LC_ALL=C pacman -Si $(pactree -rl ''package'') 2>/dev/null | grep -q "^Groups 
 
 每一个函数都是在 pacman 安装目录下通过 chroot 运行。参见[这个帖子](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
-**小贴士:** 一个 `.install` 文件模板（原型）位于[/usr/share/pacman/proto.install 这里](https://projects.archlinux.org/pacman.git/plain/proto/proto.install)。
+**提示：** 一个 `.install` 文件模板（原型）位于[/usr/share/pacman/proto.install 这里](https://projects.archlinux.org/pacman.git/plain/proto/proto.install)。
 
 **Note:** 脚本不要以 `exit` 结束，否则包含的函数无法被执行。
 
@@ -256,7 +256,7 @@ $ pacman -Qc *pkgname*
 
 文件也可以放到 `PKGBUILD` 相同目录中，把文件名添加到这个列表中，以相对 `PKGBUILD` 的路径记录。在实际的编译过程开始之前，所有该列表中引用的文件都会被下载或检查是否存在，如果有文件丢失 `makepkg` 就不会继续。
 
-**小贴士:** 你可以为下载的文件指定不同的文件名（如将下载的文件出于某些原因有不同的文件名，像 URL 有一个 GET 参数时）。使用如下语法：`*filename*::*fileuri*`。
+**提示：** 你可以为下载的文件指定不同的文件名（如将下载的文件出于某些原因有不同的文件名，像 URL 有一个 GET 参数时）。使用如下语法：`*filename*::*fileuri*`。
 
 例如：
 

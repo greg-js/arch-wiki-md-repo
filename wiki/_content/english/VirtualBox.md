@@ -898,6 +898,8 @@ Generally, such issues are observed after upgrading VirtualBox or linux kernel. 
 
 If the audio input from an analog microphone is working correctly on the host, but no sound seems to get through to the guest, despite the microphone device apparently being detected normally, installing a [sound server](/index.php/Sound_system#Sound_servers "Sound system") such as [PulseAudio](/index.php/PulseAudio "PulseAudio") on the host might fix the problem.
 
+If after installing [PulseAudio](/index.php/PulseAudio "PulseAudio") microphone still refuses to work, setting 'Host Audio Driver'(Virtualbox->Machine->Settings->Audio->Host Audio Driver) to 'ALSA Audio Driver' might help.
+
 **Sound input (microphone) not working after upgrade**
 
 There has been issues reported around sound input in 5.1.x versions;
@@ -906,7 +908,7 @@ There has been issues reported around sound input in 5.1.x versions;
 
 [Downgrading](/index.php/Downgrading "Downgrading") may solve the problem.
 
-You may also try [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) to ease downgrading.
+You can use [virtualbox-bin-5.0](https://aur.archlinux.org/packages/virtualbox-bin-5.0/) to ease downgrading.
 
 ### Fullscreen mode shows blank guest screen
 

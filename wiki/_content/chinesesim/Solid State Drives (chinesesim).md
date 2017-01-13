@@ -294,7 +294,7 @@ Security:
 
 使用 [iotop](https://www.archlinux.org/packages/?name=iotop) 以及 sort 对硬盘写入排序来观察程序对硬盘写的量及频率。
 
-**提示:** *iotop* 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 `man iotop`。
+**提示：** *iotop* 使用 `-b` 参数可在批处理模式而不是默认的交互模式下运行。 `-o` 用于查看正在输入输出的程序， `-qqq` 用于废止字段名和I/O总览。更多选项见 `man iotop`。
 ```
 # iotop -boqqq
 

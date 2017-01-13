@@ -18,15 +18,9 @@ A comprehensive list of features are documented at the [official Openbox website
     *   [4.1 Special keys](#Special_keys)
         *   [4.1.1 Modifiers](#Modifiers)
         *   [4.1.2 Multimedia keys](#Multimedia_keys)
+            *   [4.1.2.1 Volume control](#Volume_control)
         *   [4.1.3 Navigation keys](#Navigation_keys)
-    *   [4.2 Volume control](#Volume_control)
-        *   [4.2.1 ALSA](#ALSA)
-        *   [4.2.2 Pulseaudio](#Pulseaudio)
-        *   [4.2.3 OSS](#OSS)
-    *   [4.3 Media player control](#Media_player_control)
-    *   [4.4 Brightness control](#Brightness_control)
-    *   [4.5 Window snapping](#Window_snapping)
-    *   [4.6 Desktop menu](#Desktop_menu)
+    *   [4.2 Window snapping](#Window_snapping)
 *   [5 Menus](#Menus)
     *   [5.1 Static](#Static)
         *   [5.1.1 menumaker](#menumaker)
@@ -218,22 +212,46 @@ Where intending to add this command as a keybind to `~/.config/openbox/rc.xml`, 
 
 ## Keybinds
 
-All keybinds must be added to the `~/.config/openbox/rc.xml` file, and below the `<!-- Keybindings for running aplications -->` heading. Although a brief overview has been provided here, a more in-depth explanation of keybindings can be found at [openbox.org](http://openbox.org/wiki/Help:Bindings). [obkey](https://aur.archlinux.org/packages/obkey/) is a utility for adjust key-binding. Before using obkey, you should use obconf to create `~/.config/openbox/rc.xml`.
+All keybinds must be added to the `~/.config/openbox/rc.xml` file, and below the `<!-- Keybindings for running aplications -->` heading. Although a brief overview has been provided here, a more in-depth explanation of keybindings can be found at [openbox.org](http://openbox.org/wiki/Help:Bindings).
+
+Keybinds can be added to the configuration file using the following syntax:
+
+```
+<keybind key="**my-key-combination**">
+  <action name="**my-action**">
+    **...**
+  </action>
+</keybind>
+
+```
+
+The action name for running an external command is *Execute*. Use the following syntax to define an external command to execute:
+
+```
+<action name="Execute">
+  <command>**my-command**</command>
+</action>
+
+```
+
+See [the Openbox wiki](http://openbox.org/wiki/Help:Actions) for a list of all available actions.
+
+**Note:** The [obkey](https://aur.archlinux.org/packages/obkey/) utility provides a graphical interface for configuring key bindings. Before using *obkey*, you should use *obconf* to create `~/.config/openbox/rc.xml`.
 
 ### Special keys
 
-While the use of standard alpha-numeric keys for keybindings is self-explanatory, special names are assigned to other types of keys, such as `modifers`, `multimedia` keys and `navigation` keys.
+While the use of standard alpha-numeric keys for keybindings is self-explanatory, special names are assigned to other types of keys, such as `modifiers`, `multimedia` keys and `navigation` keys.
 
 #### Modifiers
 
-`Modifer` keys play an important role in keybindings (e.g. holding down the `shift` or `CTRL / control` key in combination with another key to undertake an action). Using modifers helps to prevent conflicting keybinds, whereby two or more actions are linked to the same key or combination of keys. The syntax to use a modifer with another key is:
+`Modifier` keys play an important role in keybindings (e.g. holding down the `shift` or `CTRL / control` key in combination with another key to undertake an action). Using modifiers helps to prevent conflicting keybinds, whereby two or more actions are linked to the same key or combination of keys. The syntax to use a modifier with another key is:
 
 ```
 "<modifier>-<key>"
 
 ```
 
-The modifer codes are as follows:
+The modifier codes are as follows:
 
 *   `S`: Shift
 *   `C`: Control / CTRL
@@ -241,17 +259,6 @@ The modifer codes are as follows:
 *   `W`: Super / Windows
 *   `M`: Meta
 *   `H`: Hyper (If it is bound to something)
-
-For example, the code below would use `super` and `t` to launch [lxterminal](https://www.archlinux.org/packages/?name=lxterminal)
-
-```
-<keybind key="W-t">
-    <action name="Execute">
-        <command>lxterminal</command>
-    </action>
-</keybind>
-
-```
 
 #### Multimedia keys
 
@@ -265,7 +272,15 @@ The volume and brightness multimedia codes are as follows (note that commands wi
 *   `XF86MonBrightnessUp`: Increase screen brightness
 *   `XF86MonBrightnessDown`: Decrease screen brightness
 
-Examples of how these may be used in `~/.config/openbox/rc.xml` have been provided in the [#Volume control](#Volume_control) section.
+For a full list of XF86 multimedia keys, see the [LinuxQuestions wiki](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols).
+
+##### Volume control
+
+What commands should be used for controlling the volume will depend on whether [ALSA](/index.php/ALSA "ALSA"), [PulseAudio](/index.php/PulseAudio "PulseAudio"), or [OSS](/index.php/OSS "OSS") is used for sound.
+
+*   ALSA: see [Advanced Linux Sound Architecture#Keyboard volume control](/index.php/Advanced_Linux_Sound_Architecture#Keyboard_volume_control "Advanced Linux Sound Architecture").
+*   PulseAudio: see [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio")
+*   OSS: see [OSS#Using multimedia keys with OSS](/index.php/OSS#Using_multimedia_keys_with_OSS "OSS").
 
 #### Navigation keys
 
@@ -275,124 +290,6 @@ These are the directional / arrow keys, usually used to move the cursor up, down
 *   `Down`: Down
 *   `Left`: Left
 *   `Right`: Right
-
-### Volume control
-
-What commands should be used for controlling the volume will depend on whether [ALSA](/index.php/ALSA "ALSA"), [PulseAudio](/index.php/PulseAudio "PulseAudio"), or [OSS](/index.php/OSS "OSS") is used for sound.
-
-#### ALSA
-
-If [ALSA](/index.php/ALSA "ALSA") is used for sound, the `amixer` program can be used to adjust the volume, which is part of the [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) package. The following example - using the `multimedia` keys intended to control the volume - will adjust the volume by +/- 5% (which may be changed, as desired):
-
-```
-<keybind key="XF86AudioRaiseVolume">
-    <action name="Execute">
-        <command>amixer set Master 5%+ unmute</command>
-    </action>
-</keybind>
-<keybind key="XF86AudioLowerVolume">
-    <action name="Execute">
-        <command>amixer set Master 5%- unmute</command>
-    </action>
-</keybind>
-<keybind key="XF86AudioMute">
-    <action name="Execute">
-        <command>amixer set Master toggle</command>
-    </action>
-</keybind>
-
-```
-
-#### Pulseaudio
-
-Where using [PulseAudio](/index.php/PulseAudio "PulseAudio") with [ALSA](/index.php/ALSA "ALSA") as a backend, the `amixer` program commands will have to be modifed, as illustrated below in comparison to the ALSA example:
-
-```
-<keybind key="XF86AudioRaiseVolume">
-    <action name="Execute">
-        <command>amixer -D pulse set Master 5%+ unmute</command>
-    </action>
-</keybind>
-<keybind key="XF86AudioLowerVolume">
-    <action name="Execute">
-        <command>amixer -D pulse set Master 5%- unmute</command>
-    </action>
-</keybind>
-<keybind key="XF86AudioMute">
-    <action name="Execute">
-        <command>amixer -D pulse set Master toggle</command>
-    </action>
-</keybind>
-
-```
-
-#### OSS
-
-**Note:** This option may be suitable for more experienced users.
-
-Where using [OSS](/index.php/OSS "OSS"), it is possible to create keybindings to raise or lower specific mixers. This allows, for example, the volume of a specific application (such as an audio player) to be changed without changing the overall system volume settings in turn. In this instance, the application must first have been [configured](/index.php/OSS#Configuring_Applications_for_OSS "OSS") to use its own mixer.
-
-In the following example, [MPD](/index.php/MPD "MPD") has been configured to use its own mixer - also named `mpd` - to increase and decrease the volume by a single decibel at a time. The `--` that appears after the `ossmix` command has been added to prevent a negative value from being treated as an argument:
-
-```
-<keybind key="[chosen keybind]">
-    <action name="Execute">
-        <command>ossmix -- mpd +1</command>
-    </action>
-</keybind>
-<keybind key="[chosen keybind]">
-    <action name="Execute">
-        <command>ossmix -- mpd -1</command>
-    </action>
-</keybind>
-
-```
-
-### Media player control
-
-The [playerctl](https://aur.archlinux.org/packages/playerctl/) command-line utility can be used to bind multimedia keys to player actions. It should work with most media players.
-
-```
-<keybind key="XF86AudioPlay">
-    <action name="Execute">
-        <command>playerctl play</command>
-    </action>
-</keybind>
-<keybind key="XF86AudioPause">
-    <action name="Execute">
-        <command>playerctl pause</command>
-    </action>
-</keybind>
-<keybind key="XF86AudioNext">
-    <action name="Execute">
-        <command>playerctl next</command>
-    </action>
-</keybind>
-<keybind key="XF86AudioPrev">
-    <action name="Execute">
-        <command>playerctl previous</command>
-    </action>
-</keybind>
-
-```
-
-### Brightness control
-
-The `xbacklight` program is used to control screen brightness, which is part of the [Xorg](/index.php/Xorg "Xorg") X-Window system. In the example below, the `multimedia` keys intended to control the screen brightness will adjust the settings by +/- 10%:
-
-```
-<keybind key="XF86MonBrightnessUp">
-     <action name="Execute">
-       <command>xbacklight +10</command>
-     </action>
-</keybind>
-<keybind key="XF86MonBrightnessDown">
-     <action name="Execute">
-       <command>xbacklight -10</command>
-     </action>
-</keybind>
-
-```
 
 ### Window snapping
 
@@ -433,19 +330,6 @@ However, it should be noted that once a window has been 'snapped' to an edge, it
 ```
 
 This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap-git](https://aur.archlinux.org/packages/opensnap-git/) are also available to automatically simulate window snapping behaviour without the use of keybinds.
-
-### Desktop menu
-
-It is also possible to create a keybind to access the desktop menu. For example, the following code will bring up the menu by pressing `CTRL` + `m`:
-
-```
-<keybind key="C-m">
-    <action name="ShowMenu">
-       <menu>root-menu</menu>
-    </action>
-</keybind>
-
-```
 
 ## Menus
 

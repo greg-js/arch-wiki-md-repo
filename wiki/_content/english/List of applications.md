@@ -25,8 +25,8 @@ This article is a general list of applications sorted by category, as a referenc
             *   [1.3.2.1 Gecko-based](#Gecko-based)
             *   [1.3.2.2 Blink-based](#Blink-based)
                 *   [1.3.2.2.1 Chromium spin-offs](#Chromium_spin-offs)
-                *   [1.3.2.2.2 Browsers based on electron](#Browsers_based_on_electron)
-                *   [1.3.2.2.3 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
+                *   [1.3.2.2.2 Browsers based on qt5-webengine](#Browsers_based_on_qt5-webengine)
+                *   [1.3.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
             *   [1.3.2.3 WebKit-based](#WebKit-based)
                 *   [1.3.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.3.2.3.2 Browsers based on webkitgtk/webkitgtk2](#Browsers_based_on_webkitgtk.2Fwebkitgtk2)
@@ -37,17 +37,20 @@ This article is a general list of applications sorted by category, as a referenc
         *   [1.4.2 FTP](#FTP)
             *   [1.4.2.1 FTP clients](#FTP_clients)
             *   [1.4.2.2 FTP servers](#FTP_servers)
-        *   [1.4.3 Distributed file systems](#Distributed_file_systems)
-        *   [1.4.4 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.4.1 Console](#Console_2)
-                *   [1.4.4.1.1 Command line / backend](#Command_line_.2F_backend)
-                *   [1.4.4.1.2 Console Interface](#Console_Interface)
-            *   [1.4.4.2 Graphical Interface](#Graphical_Interface)
-                *   [1.4.4.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
-                *   [1.4.4.2.2 libktorrent backend](#libktorrent_backend)
-                *   [1.4.4.2.3 others](#others)
-        *   [1.4.5 Other P2P networks](#Other_P2P_networks)
-        *   [1.4.6 Video downloaders](#Video_downloaders)
+        *   [1.4.3 SSH/SFTP](#SSH.2FSFTP)
+            *   [1.4.3.1 SFTP servers](#SFTP_servers)
+            *   [1.4.3.2 SFTP clients](#SFTP_clients)
+        *   [1.4.4 Distributed file systems](#Distributed_file_systems)
+        *   [1.4.5 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.5.1 Console](#Console_2)
+                *   [1.4.5.1.1 Command line / backend](#Command_line_.2F_backend)
+                *   [1.4.5.1.2 Console Interface](#Console_Interface)
+            *   [1.4.5.2 Graphical Interface](#Graphical_Interface)
+                *   [1.4.5.2.1 libtorrent-rasterbar backend](#libtorrent-rasterbar_backend)
+                *   [1.4.5.2.2 libktorrent backend](#libktorrent_backend)
+                *   [1.4.5.2.3 others](#others)
+        *   [1.4.6 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.7 Video downloaders](#Video_downloaders)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
             *   [1.5.1.1 Console](#Console_3)
@@ -383,13 +386,13 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://opera.com](https://opera.com) || [opera](https://www.archlinux.org/packages/?name=opera)
 
+*   **Ungoogled chromium** — Modifications to Google Chromium for removing Google integration and enhancing privacy, control, and transparency
+
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
+
 *   **[Slimjet](https://en.wikipedia.org/wiki/SlimBrowser "wikipedia:SlimBrowser")** — Fast, smart and powerful proprietary browser based on Chromium.
 
 	[http://www.slimjet.com/](http://www.slimjet.com/) || [slimjet](https://aur.archlinux.org/packages/slimjet/)
-
-*   **theWeb** — A web browser based on Qt using the Chromium Embedded Framework, with Linux integration (such as MPRIS) in mind.
-
-	[https://github.com/vicr123/theweb](https://github.com/vicr123/theweb) || [theweb](https://aur.archlinux.org/packages/theweb/)
 
 *   **[Vivaldi](/index.php/Vivaldi "Vivaldi")** — An advanced proprietary browser made with the power user in mind.
 
@@ -399,21 +402,19 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://browser.yandex.com/](https://browser.yandex.com/) || [yandex-browser-beta](https://aur.archlinux.org/packages/yandex-browser-beta/)
 
-###### Browsers based on electron
-
-*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Electron](http://electron.atom.io/) platform.
-
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
-
-*   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
-
-	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://aur.archlinux.org/packages/min/)
-
 ###### Browsers based on qt5-webengine
+
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and Qt WebEngine (or KHTML layout engine), part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
+
+	[http://konqueror.org/](http://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **Liri** — A minimalistic material design web browser written for Papyros.
 
 	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
+
+*   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5\. Experimental support for QtWebEngine is available.
+
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
 
 *   **Qt WebBrowser** — Browser for embedded devices developed using the capabilities of Qt and Qt WebEngine.
 
@@ -422,6 +423,20 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 *   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on QtWebEngine, written in Qt framework.
 
 	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
+
+###### Other browsers based on Chromium's Content module
+
+*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Electron](http://electron.atom.io/) platform.
+
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
+
+*   **Min** — A smarter, faster web browser based on the [Electron](http://electron.atom.io/) platform.
+
+	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://www.archlinux.org/packages/?name=min)
+
+*   **theWeb** — A web browser based on Qt using the Chromium Embedded Framework, with Linux integration (such as MPRIS) in mind.
+
+	[https://github.com/vicr123/theweb](https://github.com/vicr123/theweb) || [theweb](https://aur.archlinux.org/packages/theweb/)
 
 ##### WebKit-based
 
@@ -501,7 +516,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://dooble.sourceforge.net/](http://dooble.sourceforge.net/) || [dooble](https://aur.archlinux.org/packages/dooble/)
 
-*   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
+*   **[Otter Browser](/index.php/Otter_Browser "Otter Browser")** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
 	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
 
@@ -511,17 +526,13 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 ##### Other
 
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk"). Uses its own layout engine.
 
 	[http://dillo.org/](http://dillo.org/) || [dillo](https://www.archlinux.org/packages/?name=dillo)
-
-*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Web browser based on Qt toolkit and KHTML layout engine, part of [kdebase](https://www.archlinux.org/groups/x86_64/kdebase/).
-
-	[http://konqueror.org/](http://konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
 
 *   **[NetSurf](https://en.wikipedia.org/wiki/NetSurf "wikipedia:NetSurf")** — Featherweight browser written in C, notable for its slowly developing JavaScript support and fast rendering through its own layout engine.
 
@@ -581,10 +592,6 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 	[http://www.ncftp.com/](http://www.ncftp.com/) || [ncftp](https://www.archlinux.org/packages/?name=ncftp)
 
-*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
-
-	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
-
 *   **[tnftp](https://en.wikipedia.org/wiki/tnftp "wikipedia:tnftp")** — FTP client with several advanced features for [NetBSD](https://en.wikipedia.org/wiki/NetBSD "wikipedia:NetBSD").
 
 	[http://freecode.com/projects/tnftp](http://freecode.com/projects/tnftp) || [tnftp](https://www.archlinux.org/packages/?name=tnftp)
@@ -592,6 +599,8 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Files") and [Thunar](/index.php/Thunar "Thunar") also provide FTP functionality.
 
 ##### FTP servers
+
+See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/List_of_FTP_server_software "wikipedia:List of FTP server software").
 
 *   **[bftpd](/index.php/Bftpd "Bftpd")** — Small, easy-to-configure FTP server
 
@@ -605,13 +614,23 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 
 	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
 
+*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
+
+	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
+
+#### SSH/SFTP
+
+##### SFTP servers
+
 *   **[SSH](/index.php/SSH "SSH")** — SFTP is a network protocol that provides file access, file transfer, and file management over any reliable data stream.
 
 	[https://www.openssh.com](https://www.openssh.com) || [openssh](https://www.archlinux.org/packages/?name=openssh)
 
-*   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
+##### SFTP clients
 
-	[https://security.appspot.com/vsftpd.html](https://security.appspot.com/vsftpd.html) || [vsftpd](https://www.archlinux.org/packages/?name=vsftpd)
+*   **[SSHFS](/index.php/SSHFS "SSHFS")** — A network filesystem client to connect to SSH (SFTP) servers.
+
+	[https://github.com/libfuse/sshfs/](https://github.com/libfuse/sshfs/) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 
 #### Distributed file systems
 
@@ -622,6 +641,10 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 *   **GlusterFS** — Cluster file system capable of scaling to several peta-bytes.
 
 	[http://www.gluster.org/](http://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
+
+*   **[OpenAFS](/index.php/OpenAFS "OpenAFS")** — Open source implementation of the AFS distributed file system
+
+	[http://www.openafs.org](http://www.openafs.org) || [openafs](https://aur.archlinux.org/packages/openafs/)
 
 *   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
 
@@ -691,7 +714,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **[Ktorrent](/index.php/Ktorrent "Ktorrent")** — Feature-rich BitTorrent client for KDE.
 
-	[http://ktorrent.org/](http://ktorrent.org/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
+	[https://www.kde.org/applications/internet/ktorrent/](https://www.kde.org/applications/internet/ktorrent/) || [ktorrent](https://www.archlinux.org/packages/?name=ktorrent)
 
 ###### others
 
@@ -1017,7 +1040,7 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 
 	[http://jabberd2.org](http://jabberd2.org) || [jabberd2](https://aur.archlinux.org/packages/jabberd2/)
 
-*   **Openfire** — An XMPP IM multiplatform server written in Java
+*   **[Openfire](/index.php/Openfire "Openfire")** — An XMPP IM multiplatform server written in Java
 
 	[http://www.igniterealtime.org/projects/openfire/](http://www.igniterealtime.org/projects/openfire/) || [openfire](https://www.archlinux.org/packages/?name=openfire)
 
@@ -1113,7 +1136,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(SIP_client) "wikipedia:Blink (SIP client)")** — State of the art, easy to use SIP client.
 
-	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink-darcs](https://aur.archlinux.org/packages/blink-darcs/)
+	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink](https://aur.archlinux.org/packages/blink/)
 
 *   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — VoIP and video conferencing application with full SIP and H.323 support (formerly known as GNOME Meeting).
 
@@ -1180,6 +1203,10 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 *   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
 
 	[https://discordapp.com/](https://discordapp.com/) || [discord-canary](https://aur.archlinux.org/packages/discord-canary/)
+
+*   **GameVox** — Voice communication for your gaming community, partly based on Mumble source code.
+
+	[https://www.gamevox.com/](https://www.gamevox.com/) || [gamevox](https://aur.archlinux.org/packages/gamevox/)
 
 ###### Multi-protocol
 
@@ -1318,10 +1345,6 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 *   **[pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — A GTK2 Usenet newsreader that's good at both text and binaries.
 
 	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
-
-*   **[NZBGet](/index.php/NZBGet "NZBGet")** — CLI Utility to grab Usenet binary file using .nzb files.
-
-	[http://nzbget.sourceforge.net/](http://nzbget.sourceforge.net/) || [nzbget](https://www.archlinux.org/packages/?name=nzbget)
 
 *   **[SABnzbd](/index.php/SABnzbd "SABnzbd")** — SABnzbd is an open-source binary newsreader written in Python.
 
@@ -1555,23 +1578,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 ### Bitcoin
 
-See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
-
-*   **Armory** — Bitcoin client with features such as support for multiple wallets, importing keys and backups.
-
-	[https://github.com/etotheipi/BitcoinArmory](https://github.com/etotheipi/BitcoinArmory) || [armory-git](https://aur.archlinux.org/packages/armory-git/)
-
-*   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Official tool to manage Bitcoins, a P2P currency.
-
-	[http://bitcoin.org/](http://bitcoin.org/) || [bitcoin-daemon](https://www.archlinux.org/packages/?name=bitcoin-daemon) [bitcoin-cli](https://www.archlinux.org/packages/?name=bitcoin-cli) [bitcoin-qt](https://www.archlinux.org/packages/?name=bitcoin-qt) [bitcoin-tx](https://www.archlinux.org/packages/?name=bitcoin-tx)
-
-*   **Electrum** — An easy to use Bitcoin client.
-
-	[http://electrum.org/](http://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
-
-*   **MultiBit** — A lightweight Bitcoin desktop client powered by the BitCoinJ library.
-
-	[https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
+See [Bitcoin#Bitcoin Software](/index.php/Bitcoin#Bitcoin_Software "Bitcoin").
 
 ### Surveying
 
@@ -1705,7 +1712,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **Ristretto** — Fast and lightweight image viewer for the Xfce desktop environment.
 
-	[http://goodies.xfce.org/projects/applications/ristretto](http://goodies.xfce.org/projects/applications/ristretto) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
+	[http://docs.xfce.org/apps/ristretto/start](http://docs.xfce.org/apps/ristretto/start) || [ristretto](https://www.archlinux.org/packages/?name=ristretto)
 
 *   **Shotwell** — A digital photo organizer designed for the GNOME desktop environment
 
@@ -1743,7 +1750,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 *   **[darktable](https://en.wikipedia.org/wiki/darktable "wikipedia:darktable")** — Photography workflow and RAW development application.
 
-	[http://www.darktable.org//](http://www.darktable.org//) || [darktable](https://www.archlinux.org/packages/?name=darktable)
+	[http://www.darktable.org/](http://www.darktable.org/) || [darktable](https://www.archlinux.org/packages/?name=darktable)
 
 *   **dcraw** — Converts many camera RAW formats.
 
@@ -1819,9 +1826,9 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite. Part of [calligra](https://www.archlinux.org/groups/x86_64/calligra/) group.
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite.
 
-	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
+	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Pencil Project](https://en.wikipedia.org/wiki/Pencil2D "wikipedia:Pencil2D")** — An open-source GUI prototyping and mockup tool.
 
@@ -1833,7 +1840,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 *   **[sK1](https://en.wikipedia.org/wiki/SK1_(program) "wikipedia:SK1 (program)")** — Replacement for Adobe Illustrator or CorelDraw, oriented for "prepress ready" PostScript & PDF output.
 
-	[http://sk1project.org/](http://sk1project.org/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
+	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
 
 *   **[Xara LX](https://en.wikipedia.org/wiki/Xara_Xtreme_LX "wikipedia:Xara Xtreme LX")** — Advanced vector graphics program, the open source version of the commercial Xara X.
 
@@ -1993,7 +2000,7 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 *   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes") clone, built with GTK+ and [Mono](/index.php/Mono "Mono"), feature-rich and more actively developed.
 
-	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://www.archlinux.org/packages/?name=banshee)
+	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Amarok 1.4 clone, ported to Qt 4.
 
@@ -2151,9 +2158,13 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 	[http://www.vsxu.com/](http://www.vsxu.com/) || [vsxu](https://aur.archlinux.org/packages/vsxu/)
 
-*   **cava** — Console-based audio visualizer for Alsa, MPD and PulseAudio.
+*   **C.A.V.A.** — Console-based audio visualizer for Alsa, MPD and PulseAudio.
 
 	[https://karlstav.github.io/cava/](https://karlstav.github.io/cava/) || [cava](https://aur.archlinux.org/packages/cava/)
+
+*   **cli-visualizer** — A highly configurable CLI-based audio visualizer.
+
+	[https://github.com/dpayne/cli-visualizer](https://github.com/dpayne/cli-visualizer) || [cli-visualizer](https://aur.archlinux.org/packages/cli-visualizer/)
 
 #### Audio tag editors
 
@@ -2213,7 +2224,7 @@ See [Optical disc drive#CD 2](/index.php/Optical_disc_drive#CD_2 "Optical disc d
 
 *   **Bitwig Studio** — Proprietary professional digital audio workstation.
 
-	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio-demo](https://aur.archlinux.org/packages/bitwig-studio-demo/)
+	[http://bitwig.com/](http://bitwig.com/) || [bitwig-studio](https://aur.archlinux.org/packages/bitwig-studio/)
 
 *   **Gnac** — Audio converter for GNOME.
 
@@ -2383,11 +2394,11 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Avidemux](https://en.wikipedia.org/wiki/Avidemux "wikipedia:Avidemux")** — Free video editor designed for simple cutting, filtering and encoding tasks.
 
-	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-gtk](https://www.archlinux.org/packages/?name=avidemux-gtk) [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
+	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-qt](https://www.archlinux.org/packages/?name=avidemux-qt)
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/Cinelerra "wikipedia:Cinelerra")** — Professional video editing and compositing environment.
 
-	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
 
 *   **Flowblade** — Flowblade is a multitrack non-linear video editor for Linux, designed to provide a fast, robust editing experience.
 
@@ -2424,6 +2435,10 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 *   **Transmageddon** — Simple python application for transcoding video into formats supported by GStreamer.
 
 	[http://www.linuxrising.org/](http://www.linuxrising.org/) || [transmageddon](https://www.archlinux.org/packages/?name=transmageddon)
+
+*   **[Blender](https://en.wikipedia.org/wiki/Blender_(software)#Video_editing "wikipedia:Blender (software)")** — Fully integrated 3D graphics creation suite with a built-in non-linear video editor.
+
+	[http://www.blender.org/](http://www.blender.org/) || [blender](https://www.archlinux.org/packages/?name=blender)
 
 #### Screencast
 
@@ -2470,6 +2485,10 @@ Screencast utilities allow you to create a video of your desktop or individual w
 *   **FFcast** — FFmpeg-based screencast tool written in Bash.
 
 	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
+
+*   **peek** — Simple screencast tool that produces GIF animations.
+
+	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
 
 ### Mobile phone managers
 
@@ -2777,7 +2796,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for the xterm.
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **shellinabox** — A web-based SSH Terminal
 
@@ -2790,10 +2809,6 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 *   **Terminal** — A terminal emulator, that supports multiple windows, scroll buffer and all the expected features. A part of GNUstep.
 
 	[http://gap.nongnu.org/terminal/index.html](http://gap.nongnu.org/terminal/index.html) || [gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/)
-
-*   **[terminator](/index.php/Terminator "Terminator")** — Terminal emulator supporting multiple resizable terminal panels.
-
-	[http://gnometerminator.blogspot.it/](http://gnometerminator.blogspot.it/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
 
 *   **Terminology** — Terminal emulator by the Enlightenment project team with innovative features: file thumbnails and media play like a media player.
 
@@ -2835,10 +2850,6 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 	[http://guake-project.org/](http://guake-project.org/) || [guake](https://www.archlinux.org/packages/?name=guake)
 
-*   **Terra** — is a GTK+3.0 based terminal emulator with useful user interface, it also supports multiple terminals with splitting screen horizontally or vertically -- (similar to guake).
-
-	[https://github.com/ozcan/terra-terminal](https://github.com/ozcan/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
-
 *   **[LilyTerm](/index.php/LilyTerm "LilyTerm")** — Very light and easy to use X Terminal Emulator
 
 	[http://lilyterm.luna.com.tw/](http://lilyterm.luna.com.tw/) || [lilyterm](https://www.archlinux.org/packages/?name=lilyterm)
@@ -2871,6 +2882,10 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 	[http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
 
+*   **[terminator](/index.php/Terminator "Terminator")** — Terminal emulator supporting multiple resizable terminal panels.
+
+	[http://gnometerminator.blogspot.it/](http://gnometerminator.blogspot.it/) || [terminator](https://www.archlinux.org/packages/?name=terminator)
+
 *   **Terminix** — A tiling terminal emulator for Linux using GTK+ 3
 
 	[https://github.com/gnunn1/terminix](https://github.com/gnunn1/terminix) || [terminix](https://aur.archlinux.org/packages/terminix/), [terminix-git](https://aur.archlinux.org/packages/terminix-git/)
@@ -2882,6 +2897,10 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 *   **[Termite](/index.php/Termite "Termite")** — A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
 
 	[https://github.com/thestinger/termite](https://github.com/thestinger/termite) || [termite](https://www.archlinux.org/packages/?name=termite)
+
+*   **Terra** — is a GTK+3.0 based terminal emulator with useful user interface, it also supports multiple terminals with splitting screen horizontally or vertically -- (similar to guake).
+
+	[https://github.com/ozcan/terra-terminal](https://github.com/ozcan/terra-terminal) || [terra](https://aur.archlinux.org/packages/terra/)
 
 *   **tinyterm** — Very lightweight terminal emulator based on VTE.
 
@@ -2969,7 +2988,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://dfm.sourceforge.net/](http://dfm.sourceforge.net/) || [dino-dfm](https://aur.archlinux.org/packages/dino-dfm/)
 
-*   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE4 desktop.
+*   **[Dolphin](/index.php/Dolphin "Dolphin")** — File manager included in the KDE desktop.
 
 	[http://dolphin.kde.org/](http://dolphin.kde.org/) || [dolphin](https://www.archlinux.org/packages/?name=dolphin)
 
@@ -2995,7 +3014,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — File manager and web browser for the KDE desktop.
 
-	[http://www.konqueror.org/](http://www.konqueror.org/) || [kdebase-konqueror](https://www.archlinux.org/packages/?name=kdebase-konqueror)
+	[http://www.konqueror.org/](http://www.konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
 *   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Advanced twin panel (Midnight Commander style) file manager for the KDE desktop.
 
@@ -3237,7 +3256,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **[BleachBit](https://en.wikipedia.org/wiki/BleachBit "wikipedia:BleachBit")** — It frees disk space and guards your privacy; frees cache, deletes cookies, clears Internet history, shreds temporary files, deletes logs, and discards junk you didn't know was there.
 
-	[http://bleachbit.sourceforge.net/](http://bleachbit.sourceforge.net/) || [bleachbit](https://www.archlinux.org/packages/?name=bleachbit)
+	[http://bleachbit.sourceforge.net/](http://bleachbit.sourceforge.net/) || [bleachbit](https://www.archlinux.org/packages/?name=bleachbit) [bleachbit-git](https://aur.archlinux.org/packages/bleachbit-git/)
 
 *   **gconf-cleaner** — cleans up the unknown/invalid gconf keys that still sitting down on your gconf database
 
@@ -3308,6 +3327,10 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **Collectd** — A simple, extensible system monitoring daemon based on [rrdtool](http://oss.oetiker.ch/rrdtool/). It has a small footprint and can be set up either stand-alone or as a server/client application.
 
 	[https://collectd.org/](https://collectd.org/) || [collectd](https://www.archlinux.org/packages/?name=collectd)
+
+*   **collectl** — Collectl is a light-weight performance monitoring tool capable of reporting interactively as well as logging to disk. It reports statistics on cpu, disk, infiniband, lustre, memory, network, nfs, process, quadrics, slabs and more in easy to read format.
+
+	[http://collectl.sourceforge.net/](http://collectl.sourceforge.net/) || [collectl](https://aur.archlinux.org/packages/collectl/)
 
 *   **dstat** — Versatile resource statistics tool.
 
@@ -3555,7 +3578,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Actively developed fork of KOffice, the [KDE](/index.php/KDE "KDE") office suite. It offers most of the features of OpenOffice while also having versions for smartphones (Calligra Mobile) and tablets (Calligra Active).
 
-	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[LibreOffice](/index.php/LibreOffice "LibreOffice")** — More actively developed fork of OpenOffice.
 
@@ -3587,7 +3610,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[Calligra Words](https://en.wikipedia.org/wiki/Calligra_Words "wikipedia:Calligra Words")** — Powerful word processor included in the Calligra Suite.
 
-	[http://www.calligra.org/words/](http://www.calligra.org/words/) || [calligra-words](https://www.archlinux.org/packages/?name=calligra-words)
+	[https://www.calligra.org/words/](https://www.calligra.org/words/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **gLabels** — program for creating labels and business cards.
 
@@ -3599,7 +3622,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[LibreOffice Writer](/index.php/LibreOffice "LibreOffice")** — Full-featured word processor included in the LibreOffice suite.
 
-	[https://www.libreoffice.org/discover/writer](https://www.libreoffice.org/discover/writer) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still)
+	[https://www.libreoffice.org/discover/writer](https://www.libreoffice.org/discover/writer) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
 *   **[OpenOffice Writer](/index.php/OpenOffice "OpenOffice")** — Full-featured word processor included in the OpenOffice suite.
 
@@ -3627,7 +3650,7 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 
 *   **Asciidoctor** — An asciidoc implementation written in Ruby, with many extra features.
 
-	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://aur.archlinux.org/packages/asciidoctor/)
+	[http://asciidoctor.org/](http://asciidoctor.org/) || [asciidoctor](https://www.archlinux.org/packages/?name=asciidoctor)
 
 *   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Text-to-HTML conversion tool that allows you to write using a simple plain text format.
 
@@ -3651,7 +3674,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[Calligra Sheets](https://en.wikipedia.org/wiki/Calligra_Sheets "wikipedia:Calligra Sheets")** — Powerful spreadsheet application included in the Calligra Suite
 
-	[http://www.calligra.org/sheets/](http://www.calligra.org/sheets/) || [calligra-sheets](https://www.archlinux.org/packages/?name=calligra-sheets)
+	[https://www.calligra.org/sheets/](https://www.calligra.org/sheets/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Gnumeric](/index.php/Gnumeric "Gnumeric")** — Spreadsheet program that is part of the GNOME desktop.
 
@@ -3659,7 +3682,7 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[LibreOffice Calc](/index.php/LibreOffice "LibreOffice")** — Full-featured spreadsheet application included in the LibreOffice suite.
 
-	[https://www.libreoffice.org/discover/calc/](https://www.libreoffice.org/discover/calc/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still)
+	[https://www.libreoffice.org/discover/calc/](https://www.libreoffice.org/discover/calc/) || [libreoffice-still](https://www.archlinux.org/packages/?name=libreoffice-still) or [libreoffice-fresh](https://www.archlinux.org/packages/?name=libreoffice-fresh)
 
 *   **[OpenOffice Calc](/index.php/OpenOffice "OpenOffice")** — Full-featured spreadsheet application included in the OpenOffice suite.
 
@@ -3836,6 +3859,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **Slap** — Sublime-like terminal-based text editor.
 
 	[https://github.com/slap-editor/slap](https://github.com/slap-editor/slap) || [slap](https://aur.archlinux.org/packages/slap/)
+
+*   **Tilde** — An intuitive text editor with Windows-like key bindings.
+
+	[http://os.ghalkes.nl/tilde/](http://os.ghalkes.nl/tilde/) || [tilde](https://aur.archlinux.org/packages/tilde/)
 
 *   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — A lightweight Emacs clone with *vi*-like key bindings.
 
@@ -4054,8 +4081,8 @@ for more collection apps, see also [Multimedia#Collection managers](/index.php/M
 **Note:** [PDF forms](https://en.wikipedia.org/wiki/Portable_Document_Format#Interactive_elements "wikipedia:Portable Document Format") support:
 
 *   [acroread](https://aur.archlinux.org/packages/acroread/) is able to save both AcroForms and XFA forms into PDF files.
-*   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular) support AcroForms, but not full XFA forms. [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[4]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
-*   For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
+*   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [okular](https://www.archlinux.org/packages/?name=okular) support AcroForms, but not full XFA forms. [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[4]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
+*   For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [okular](https://www.archlinux.org/packages/?name=okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
 
 See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_PDF_software "wikipedia:List of PDF software") and [Wikipedia:DjVu](https://en.wikipedia.org/wiki/DjVu "wikipedia:DjVu").
 
@@ -4064,6 +4091,10 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 *   **fbpdf** — Small framebuffer PDF and DjVu viewer based off of MuPDF, with [Vim](/index.php/Vim "Vim") keybindings and written in C
 
 	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
+
+*   **ghostscript** — convert into PDF, reduce size of PDF documents with eg `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf`
+
+	[https://www.ghostscript.com/](https://www.ghostscript.com/) || [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
 
 *   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of *fbpdf* called *jfbpdf*, now completely rewritten.
 
@@ -4111,7 +4142,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Okular](https://en.wikipedia.org/wiki/Okular "wikipedia:Okular")** — Universal PDF viewer for KDE.
 
-	[http://okular.kde.org/](http://okular.kde.org/) || [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular)
+	[http://okular.kde.org/](http://okular.kde.org/) || [okular](https://www.archlinux.org/packages/?name=okular)
 
 *   **PdfMod** — You can reorder, rotate, and remove pages, export images from a document, edit the title, subject, author, and keywords, and combine documents via drag and drop.
 
@@ -4133,7 +4164,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 	[http://xournal.sourceforge.net/](http://xournal.sourceforge.net/) || [xournal](https://www.archlinux.org/packages/?name=xournal)
 
-*   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
+*   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs. Note that due to removal of all Type1 fonts from the gsfonts package, you will need to install them from an archive package - see [https://bugs.archlinux.org/task/50297](https://bugs.archlinux.org/task/50297)
 
 	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://www.archlinux.org/packages/?name=xpdf)
 
@@ -4291,6 +4322,14 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 *   **[org-mode](https://en.wikipedia.org/wiki/org-mode "wikipedia:org-mode")** — [Emacs](/index.php/Emacs "Emacs") mode for notes, project planning and authoring.
 
 	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
+
+*   **nixnote** — Evernote's third Opensource application, formerly called Nevernote.
+
+	[http://www.sourceforge.net/projects/nevernote](http://www.sourceforge.net/projects/nevernote) || [nixnote](https://aur.archlinux.org/packages/nixnote/)
+
+*   **[QOwnNotes](https://en.wikipedia.org/wiki/QOwnNotes "wikipedia:QOwnNotes")** — An open source notepad and todo list manager with markdown support and optional ownCloud integration built on qt5.
+
+	[http://www.qownnotes.org/](http://www.qownnotes.org/) || [qownnotes](https://aur.archlinux.org/packages/qownnotes/)
 
 *   **[Tomboy](https://en.wikipedia.org/wiki/Tomboy_(software) "wikipedia:Tomboy (software)")** — Desktop note-taking application for Linux and Unix with a wiki-like linking system to connect notes together.
 
@@ -4672,7 +4711,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — *a simple interface for GnuPG* for KDE.
 
-	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg)
+	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kgpg](https://www.archlinux.org/packages/?name=kgpg)
 
 *   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — *GNOME application for managing encryption keys and passwords in the GnomeKeyring.*
 
@@ -5018,7 +5057,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, viewer and simulator for 3D molecule structures (also supports downloading files from the [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Standalone molecular modeling and visualization application, part of the [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") framework.
 
@@ -5076,7 +5115,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[Kalzium](https://en.wikipedia.org/wiki/Kalzium "wikipedia:Kalzium")** — Periodic table of the elements with molecule editor and equation solver from the [KDE](/index.php/KDE "KDE") desktop.
 
-	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kdeedu-kalzium](https://www.archlinux.org/packages/?name=kdeedu-kalzium)
+	[http://edu.kde.org/kalzium/](http://edu.kde.org/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
 
 #### Biochemistry
 
@@ -5180,7 +5219,7 @@ Digital logic software are mainly simple educational tools that intended for onl
 
 *   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
 
-	[http://arduino.cc/en/Main/Software](http://arduino.cc/en/Main/Software) || [arduino](https://aur.archlinux.org/packages/arduino/)
+	[http://arduino.cc/en/Main/Software](http://arduino.cc/en/Main/Software) || [arduino](https://www.archlinux.org/packages/?name=arduino)
 
 ##### Schematic capture editor
 

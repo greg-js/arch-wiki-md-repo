@@ -37,12 +37,13 @@ This section covers how to manually utilize *dm-crypt* from the command line to 
             *   [6.2.1.1 Securely overwriting stored keyfiles](#Securely_overwriting_stored_keyfiles)
         *   [6.2.2 Storing the keyfile in tmpfs](#Storing_the_keyfile_in_tmpfs)
     *   [6.3 Configuring LUKS to make use of the keyfile](#Configuring_LUKS_to_make_use_of_the_keyfile)
-    *   [6.4 Unlocking a secondary partition at boot](#Unlocking_a_secondary_partition_at_boot)
-    *   [6.5 Unlocking the root partition at boot](#Unlocking_the_root_partition_at_boot)
-        *   [6.5.1 With a keyfile stored on an external media](#With_a_keyfile_stored_on_an_external_media)
-            *   [6.5.1.1 Configuring mkinitcpio](#Configuring_mkinitcpio)
-            *   [6.5.1.2 Configuring the kernel parameters](#Configuring_the_kernel_parameters)
-        *   [6.5.2 With a keyfile embedded in the initramfs](#With_a_keyfile_embedded_in_the_initramfs)
+    *   [6.4 Manually unlocking a partition using a keyfile](#Manually_unlocking_a_partition_using_a_keyfile)
+    *   [6.5 Unlocking a secondary partition at boot](#Unlocking_a_secondary_partition_at_boot)
+    *   [6.6 Unlocking the root partition at boot](#Unlocking_the_root_partition_at_boot)
+        *   [6.6.1 With a keyfile stored on an external media](#With_a_keyfile_stored_on_an_external_media)
+            *   [6.6.1.1 Configuring mkinitcpio](#Configuring_mkinitcpio)
+            *   [6.6.1.2 Configuring the kernel parameters](#Configuring_the_kernel_parameters)
+        *   [6.6.2 With a keyfile embedded in the initramfs](#With_a_keyfile_embedded_in_the_initramfs)
 
 ## Preparation
 
@@ -714,6 +715,15 @@ Add a keyslot for the keyfile to the LUKS header:
 Enter any LUKS passphrase:
 key slot 0 unlocked.
 Command successful.
+```
+
+### Manually unlocking a partition using a keyfile
+
+use the `--key-file` option when opening the LUKS container:
+
+```
+# cryptsetup open /dev/sdX containername --key-file /etc/mykeyfile
+
 ```
 
 ### Unlocking a secondary partition at boot

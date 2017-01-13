@@ -542,7 +542,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Skype](/index.php/Skype "Skype")** — Popolare applicazione P2P per comunicazioni voce di alta qualità.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Applicazione proprietaria VoIP, che ha tra i videogiocatori come target di riferimento.
 
@@ -882,7 +882,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — Browser basato su WebKit per KDE.
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 *   **Sb** — Browser web veramente leggero, che utilizza scorciatoie da tastiera per eseguire la maggior parte delle azioni nella barra degli indirizzi.
 
@@ -1385,7 +1385,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — Clone di [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes"), scritto in GTK2 e [Mono](/index.php/Mono "Mono"), ricco di funzionalità e con uno sviluppo molto attivo.
 
-	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://www.archlinux.org/packages/?name=banshee)
+	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Porting di Amarok 1.4 in QT4.
 
@@ -1577,7 +1577,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **KWave** — Editor audio per KDE.
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Workstation per l'audio digitale e registrazione multicanale su disco rigido basata sulle Q, che mira a fornire un software abbastanza semplice per l'utente domestico medio, ma abbastanza potente per l'utente professionale.
 
@@ -1755,9 +1755,9 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://tellico-project.org/](http://tellico-project.org/) || [tellico](https://www.archlinux.org/packages/?name=tellico)
 
-*   **[XBMC](https://en.wikipedia.org/wiki/XBMC "wikipedia:XBMC")** — Applicazione per organizzare varie collezioni capace di recuperare automaticamente informazioni riguardo essi (video, music, photos).
+*   **[Kodi](/index.php/Kodi "Kodi")** — Applicazione per organizzare varie collezioni capace di recuperare automaticamente informazioni riguardo essi (video, music, photos).
 
-	[http://xbmc.org/](http://xbmc.org/) || [xbmc](https://www.archlinux.org/packages/?name=xbmc)
+	[https://kodi.tv/](https://kodi.tv/) || [kodi](https://www.archlinux.org/packages/?name=kodi)
 
 ## Utilità
 
@@ -1815,7 +1815,7 @@ Consultare: [Masterizzare CD/DVD con una interfaccia grafica](/index.php/Optical
 
 *   **ClipIt** — Un fork di Parcellite con caratteristiche addizionale e bugfix.
 
-	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://www.archlinux.org/packages/?name=clipit)
+	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
 *   **CopyQ** — Un manager degli appunti con ricerca e modifica dello storico, azioni personalizzabili con oggetti e supporto alla riga di comando.
 
@@ -2193,7 +2193,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Fork di KOffice e attivamente sviluppato, è la suite office di [KDE](/index.php/KDE_(Italiano) "KDE (Italiano)"). Offre molte delle caratteristiche di OpenOffice.org e inoltre ha una versione per smartphones (Calligra Mobile) e tablet (Calligra Active).
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **gLabels** — Programma per creare etichette e biglietti da visita.
 
@@ -2551,7 +2551,7 @@ Si veda l'articolo principale: [List of applications/Documents (Italiano)#Docume
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — Interfaccia per Giac, un sistema per il calcolo algebrico libero.
 
-	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://aur.archlinux.org/packages/xcas/)
+	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://www.archlinux.org/packages/?name=xcas)
 
 #### Calcolo scientifico e tecnico
 
@@ -2679,7 +2679,7 @@ Vedi anche [List of applications (Italiano)#Fogli di calcolo](/index.php/List_of
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, visualizzatore e simulatore della struttura delle molecole in 3D (permette il download dalla [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Visualizzatore ed editor di molecole standalone, parte del framework [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL").
 
@@ -3129,7 +3129,7 @@ Gli utenti utilizzano emulatori di terminale molto spesso, quindi non sorprende 
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popolare sostituto di xterm
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — Un semplice terminale implementato per X.
 

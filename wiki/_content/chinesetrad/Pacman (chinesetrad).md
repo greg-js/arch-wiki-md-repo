@@ -6,7 +6,7 @@ Pacman 會和主要伺服器同步軟體包清單，來保持系統處於最新�
 
 Pacman 以 C 語言撰寫，使用 `.pkg.tar.xz` 軟體包格式。
 
-**提示:** 官方的 [pacman](https://www.archlinux.org/packages/?name=pacman) 已提供了不少好用工具 (如 **makepkg**, **pactree**, **vercmp** 以及更多)：執行 `pacman -Ql pacman | grep bin` 可查看完整清單。
+**提示：** 官方的 [pacman](https://www.archlinux.org/packages/?name=pacman) 已提供了不少好用工具 (如 **makepkg**, **pactree**, **vercmp** 以及更多)：執行 `pacman -Ql pacman | grep bin` 可查看完整清單。
 
 ## Contents
 
@@ -250,7 +250,7 @@ Pacman 只需一個指令即可更新系統所有軟體包。根據系統的軟�
 
 Pacman 是相當強大的軟體包管理工具，但它並不是對付各式疑難雜症的萬靈丹。若這對您造成困擾，請回頭看看 [Arch 的設計哲學](/index.php/The_Arch_Way_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "The Arch Way (正體中文)")是怎麼說的。使用者必須有警覺心，並負起維護自己系統的重責大任。**在執行系統更新時，要做好 Arch 使用者的基本功：閱讀 Pacman 輸出的所有資訊並動動腦筋。**當新軟體包的版本要更新一個被使用者修改過的設定檔時，為了避免蓋掉使用者自己的設定，會將新的預設設定檔改為 `.pacnew` 檔案。Pacman 會提醒使用者融合新舊兩檔。這些設定檔案需要使用者手動介入，而且最好在每次軟體包更新 / 移除之後就馬上處理。更多資訊請參閱 [Pacnew 與 Pacsave 檔案](/index.php/Pacnew_and_Pacsave_files "Pacnew and Pacsave files")。
 
-**提示:** Pacman 的輸出訊息會記錄在 `/var/log/pacman.log`。
+**提示：** Pacman 的輸出訊息會記錄在 `/var/log/pacman.log`。
 
 升級系統之前，建議到 [Arch Linux 首頁](https://www.archlinux.org/)檢查最新消息 (或是訂閱 [RSS feed](https://www.archlinux.org/feeds/news/)、[arch-announce 郵件論壇](https://mailman.archlinux.org/mailman/listinfo/arch-announce/)，或是追蹤 [@archlinux](https://twitter.com/archlinux) Arch 的推特)。當出現 Pacman 無法自行處理、使用者必須介入的狀況時 (雖然這種情況很少見)，我們會發送新的公告貼文。
 
@@ -367,7 +367,7 @@ $ whoneeds **軟體包名稱**
 
 ```
 
-**提示:** 若要保存一份本機軟體包的副本到 Pacman 的快取，使用：
+**提示：** 若要保存一份本機軟體包的副本到 Pacman 的快取，使用：
 ```
 # pacman -U file://path/to/package/package_name-version.pkg.tar.xz
 
@@ -398,7 +398,7 @@ $ whoneeds **軟體包名稱**
 
 ```
 
-**提示:** 除了使用 `-Sc` 和 `-Scc` 這兩個選項以外，也可以考慮使用 [pacman](https://www.archlinux.org/packages/?name=pacman) 下的 `paccache`。此工具提供更多樣的控制，像是要刪除什麼軟體包快取、或刪除多少軟體包快取。執行 `paccache -h` 可獲得更多指示。
+**提示：** 除了使用 `-Sc` 和 `-Scc` 這兩個選項以外，也可以考慮使用 [pacman](https://www.archlinux.org/packages/?name=pacman) 下的 `paccache`。此工具提供更多樣的控制，像是要刪除什麼軟體包快取、或刪除多少軟體包快取。執行 `paccache -h` 可獲得更多指示。
 
 ### 不支援部分升級
 
@@ -496,7 +496,7 @@ Errors occurred, no packages were upgraded.
 
 **1.** 試試 *Fallback* 項目。
 
-**提示:** 如果這個項目被刪除，在開機載入程式的選單顯示之後，按 `Tab` 鍵 (Syslinux) 或 `e` (GRUB)，重新命名為 `initramfs-linux-fallback.img`，按 `Enter` 或 `b` (視開機載入程式而定) 以新參數開機。
+**提示：** 如果這個項目被刪除，在開機載入程式的選單顯示之後，按 `Tab` 鍵 (Syslinux) 或 `e` (GRUB)，重新命名為 `initramfs-linux-fallback.img`，按 `Enter` 或 `b` (視開機載入程式而定) 以新參數開機。
 
 	當系統啟動就緒，在終端機或文字介面下執行這個指令 (對應 [linux](https://www.archlinux.org/packages/?name=linux) 核心)，重新建立一份 initramfs 映像：
 

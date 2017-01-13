@@ -195,37 +195,44 @@ See the main article: [fstab#UUIDs](/index.php/Fstab#UUIDs "Fstab")
 
 ### Boot managers
 
-To use persistent names in your boot manager, the following prerequisites must be met:
+To use persistent names in the [boot manager (boot loader)](/index.php/Boot_loader "Boot loader"), the following prerequisites must be met. On a standard installation following the installation guide both prerequisites are met.
 
 *   You are using a [mkinitcpio](/index.php/Mkinitcpio#Configuration "Mkinitcpio") initial RAM disk image
 *   You have udev enabled in `/etc/mkinitcpio.conf`
 
-In the above example, `/dev/sda1` is the root partition. In the [GRUB](/index.php/GRUB "GRUB") `grub.cfg` file, the *linux* line looks like this:
+The location of the root filesystem is given by the parameter `root` on the kernel commandline. The kernel commandline is configured from the bootloader, see [Kernel_parameters#Configuration](/index.php/Kernel_parameters#Configuration "Kernel parameters"). To change to persistent device naming, only change the parameters which specify block devices, e.g. `root` and `resume`, while leaving other parameters as is. Various naming schemes are supported:
+
+Non-persistent device naming using the `/dev` path format, in this example `*/dev/sdr1*` is the root partition.
 
 ```
-linux /boot/vmlinuz-linux root=/dev/sda1 rw quiet
-
-```
-
-Depending on which naming scheme you would prefer, change it to one of the following:
-
-```
-linux /boot/vmlinuz-linux root=/dev/disk/by-label/root_myhost rw quiet
+root=*/dev/sdr1*
 
 ```
 
-or:
+Persistent device naming using label and the `/dev` path format, in this example `*root_myhost*` is the label of the root partition.
 
 ```
-linux /boot/vmlinuz-linux root=UUID=2d781b26-0285-421a-b9d0-d4a0d3b55680 rw quiet
+root=/dev/disk/by-label/*root_myhost*
 
 ```
 
-If you are using [LILO](/index.php/LILO "LILO"), then do not try this with the `root=...` configuration option; it will not work. Use `append="root=..."` or `addappend="root=..."` instead. Read the LILO man page for more information on `append` and `addappend`.
-
-There is an alternative way to use the label embedded in the filesystem. For example if (as above) the filesystem in `/dev/sda1` is labeled `root_myhost`, you would give this line to GRUB:
+Persistent device naming using label and the `LABEL=` format.
 
 ```
-linux /boot/vmlinuz-linux root=LABEL=root_myhost rw quiet
+root=LABEL=*root_myhost*
+
+```
+
+Persistent device naming using UUID and the `UUID=` format, in this example `*1234-5678*` is the UUID of the root partition
+
+```
+root=UUID=*1234-5678*
+
+```
+
+Persistent device naming using the PARTUUID and the `PARTUUID=` format.
+
+```
+root=PARTUUID=*1234-5678*
 
 ```

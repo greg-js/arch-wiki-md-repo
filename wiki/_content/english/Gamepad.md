@@ -254,7 +254,7 @@ A couple joystick to keystroke programs exist like [qjoypad](https://aur.archlin
 
 This is a good solution for systems where restarting Xorg is a rare event because it is a static configuration loaded only on X startup. The example runs on a [Kodi](/index.php/Kodi "Kodi") media PC, controlled with a Logitech Cordless RumblePad 2\. Due to a problem with the d-pad (a.k.a. "hat") being recognized as another axis, [Joy2key](/index.php/Joy2key "Joy2key") was used as a workaround. Since upgrade to Kodi version 11.0 and joy2key 1.6.3-1, this setup no longer worked and the following was created for letting Xorg handle joystick events.
 
-First, [install](/index.php/Install "Install") the [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) package. Then, create `/etc/X11/xorg.conf.d/51-joystick.conf` like so:
+First, [install](/index.php/Install "Install") the [xf86-input-joystick](https://aur.archlinux.org/packages/xf86-input-joystick/) package. Then, create `/etc/X11/xorg.conf.d/51-joystick.conf` like so:
 
 ```
  Section "InputClass"
@@ -363,7 +363,7 @@ It has been reported that the default xpad driver has some issues with a few new
 
 If you experience such issues, you can use either [#SteamOS xpad](#SteamOS_xpad) or [#xboxdrv](#xboxdrv) instead of the default `xpad` driver.
 
-If you wish to use the controller for controlling the mouse, or mapping buttons to keys, etc. you should use the [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) package (configuration help can be found using `man joystick`). If the mouse locks itself in a corner, it might help changing the `MatchDevicePath` in `/etc/X11/xorg.conf.d/50-joystick.conf` from `/dev/input/event*` to `/dev/input/js*`.
+If you wish to use the controller for controlling the mouse, or mapping buttons to keys, etc. you should use the [xf86-input-joystick](https://aur.archlinux.org/packages/xf86-input-joystick/) package (configuration help can be found using `man joystick`). If the mouse locks itself in a corner, it might help changing the `MatchDevicePath` in `/etc/X11/xorg.conf.d/50-joystick.conf` from `/dev/input/event*` to `/dev/input/js*`.
 
 **Tip:** If you use the [TLP](/index.php/TLP "TLP") power management tool, you may experience connection issues with your Microsoft wireless adapter (e.g. the indicator LED will go out after the adapter has been connected for a few seconds, and controller connection attempts fail). This is due to TLP's USB autosuspend functionality, and the solution is to add the Microsoft wireless adapter's device ID to this feature's blacklist (USB_BLACKLIST, check [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#usb) for more details).
 

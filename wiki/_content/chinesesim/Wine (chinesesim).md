@@ -121,7 +121,7 @@ export WINEARCH=win32
 
 ```
 
-**小贴士:** 编辑 [~/.bashrc](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.A4.96.E5.A3.B3.E5.92.8C.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F "Bash (简体中文)")，使得 WINEPREFIX 和 WINEARCH 永久生效。
+**提示：** 编辑 [~/.bashrc](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.A4.96.E5.A3.B3.E5.92.8C.E7.8E.AF.E5.A2.83.E5.8F.98.E9.87.8F "Bash (简体中文)")，使得 WINEPREFIX 和 WINEARCH 永久生效。
 
 **注意:** 不必手动在 `wineprefixes` 文件夹下建立 steam 文件夹，Wine会自动创建不存在的系统目录。
 
@@ -194,7 +194,7 @@ x86_64平台下使用[Alsa](/index.php/Alsa_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%8
 
 Wine不会为内置程序（如`winecfg`、`winebrowser`）创建桌面启动器和菜单项。但手动安装的Windows程序通常会自动创建启动器和菜单项。在Windows下，安装程序（如`setup.exe`）通常会在桌面和开始菜单建立快捷方式，而Wine下会创建遵循freedesktop.org规范的.desktop文件（即启动器，相当于快捷方式）。
 
-**小贴士:** 如果启动器*没有*自动创建，或者这些文件丢失了，可以尝试使用[winemenubuilder](http://wiki.winehq.org/winemenubuilder)修复。
+**提示：** 如果启动器*没有*自动创建，或者这些文件丢失了，可以尝试使用[winemenubuilder](http://wiki.winehq.org/winemenubuilder)修复。
 
 Ubuntu下，Wine项目以子菜单形式出现在系统菜单。以下步骤将实现这个效果：
 
@@ -249,7 +249,7 @@ Icon=wine-winefile
 
 ```
 
-**小贴士:** 多数桌面环境在上述“创建启动器”步骤即可设置图标。以第一个启动器为例，在选择图标窗口中搜索wine-winecfg，选择即可，无需手动编辑。 ——译者注
+**提示：** 多数桌面环境在上述“创建启动器”步骤即可设置图标。以第一个启动器为例，在选择图标窗口中搜索wine-winecfg，选择即可，无需手动编辑。 ——译者注
 
 如果图标无法显示或者你觉得很丑陋，换成其他图标也可以。右键设置启动器，应该有更改图标的地方。很多图标主题，例如[GNOME-colors](http://www.gnome-look.org/content/show.php/GNOME-colors?content=82562)，都提供这些图标。
 
@@ -340,7 +340,7 @@ $ msiexec /i *path_to_msi*
 
 ## 技巧和技巧
 
-**小贴士:** 此外您可能会感兴趣以下文章的开始所提供的链接
+**提示：** 此外您可能会感兴趣以下文章的开始所提供的链接
 
 *   [Wine程序数据库 (Wine Application Database, AppDB)](http://appdb.winehq.org/) —— 特定Windows程序的Wine兼容情况（运行时的已知问题、用户评分、指南等等）
 *   [WineHQ论坛](http://forum.winehq.org/) —— 要是看完上述网页还有问题，可以到这里咨询

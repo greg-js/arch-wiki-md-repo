@@ -48,7 +48,7 @@
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(7)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |
 | <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
-| <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(33)</small> |
+| <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(34)</small> |
 | <small>4.6.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(10)</small> |
 | <small>4.7.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(7)</small> |
 | <small>4.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(14)</small> |
@@ -102,7 +102,7 @@
 | <small>5.14.</small> [Telephony and voice](/index.php/Category:Telephony_and_voice "Category:Telephony and voice") <small>(10)</small> |
 | <small>5.15.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(14) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.15.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(5)</small> |
-| <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(65)</small> |
+| <small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(66)</small> |
 | <small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(38)</small> |

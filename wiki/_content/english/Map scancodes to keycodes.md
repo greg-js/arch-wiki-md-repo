@@ -74,9 +74,9 @@ After changing the configuration files, the hardware database index, `hwdb.bin`,
 
 ```
 
-*   Update automatically on each reboot by commenting out `ConditionNeedsUpdate` in `systemd-udev-hwdb-update.service`.
+*   Update automatically on each reboot by commenting out `ConditionNeedsUpdate` in `systemd-hwdb-update.service`.
 
- `/usr/lib/systemd/system/systemd-udev-hwdb-update.service` 
+ `/usr/lib/systemd/system/systemd-hwdb-update.service` 
 ```
 #  This file is part of systemd.
 .
@@ -87,7 +87,7 @@ After changing the configuration files, the hardware database index, `hwdb.bin`,
 
 ```
 
-After `systemd-udev-hwdb-update.service` finished loading `systemd-udev-trigger.service` will reload the changes from `hwdb.bin`.
+After `systemd-hwdb-update.service` finished loading `systemd-trigger.service` will reload the changes from `hwdb.bin`.
 
 *   Automatically after [Systemd](/index.php/Systemd "Systemd") upgrade.
 

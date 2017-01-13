@@ -24,49 +24,17 @@ Basic setup and understanding of [Linux Containers](/index.php/Linux_Containers 
 
 ### LXC config
 
-The container's config should be modified to include several key sections in order run OpenVPN.
+The container's config should be modified to include several key lines in order run OpenVPN.
 
 For the example, the lxc is named "playtime" and a full config is shown:
 
  `/var/lib/lxc/playtime/config` 
 ```
-# Template used to create this container: /usr/share/lxc/templates/lxc-archlinux
-# Parameters passed to the template:
-# For additional config options, please look at lxc.container.conf(5)
-
-lxc.rootfs = /var/lib/lxc/playtime/rootfs
-lxc.utsname = playtime
-lxc.arch = x86_64
-lxc.include = /usr/share/lxc/config/archlinux.common.conf
-
-## network
-lxc.network.type = veth
-lxc.network.link = br0
-lxc.network.flags = up
-lxc.network.name = eth0
-
-## systemd within the lxc
-lxc.autodev = 1
-lxc.hook.autodev = /var/lib/lxc/playtime/autodev
-lxc.pts = 1024
-lxc.kmsg = 0
-
-## mounts
-lxc.mount.entry = /var/cache/pacman/pkg var/cache/pacman/pkg none bind 0 0
+...
 
 ## for openvpn
+lxc.mount.entry = /dev/net dev/net none bind,create=dir
 lxc.cgroup.devices.allow = c 10:200 rwm
-
-```
-
-**Note:** This example requires the use of the **autodev** hook which calls the corresponding `/var/lib/lxc/playtime/autodev` script which users need to create and make executable. For the sake of completeness, this script is provided below. Refer to [Linux Containers](/index.php/Linux_Containers "Linux Containers") for additional discussion if needed.
- `/var/lib/lxc/playtime/autodev` 
-```
-#!/bin/bash
-cd ${LXC_ROOTFS_MOUNT}/dev
-mkdir net
-mknod net/tun c 10 200
-chmod 0666 net/tun
 
 ```
 
@@ -79,6 +47,8 @@ In addition to the base system, [openvpn](https://www.archlinux.org/packages/?na
 #### OpenVPN
 
 Refer to the [OpenVPN](/index.php/OpenVPN "OpenVPN") article to properly setup the home server. Verify openvpn functionality within the container; [start](/index.php/Start "Start") openvpn via `openvpn@myprofile.service` and once satisfied [enable](/index.php/Enable "Enable") it to run at boot.
+
+**Note:** Users running openvpn within an *unprivileged* container will need to create a custom systemd unit to start it within the container. Simply copy the package-provided `/usr/lib/systemd/system/openvpn-server@.service` to `/etc/systemd/system/openvpn-server@.service` and modify the new file commenting out the the line beginning with: `LimitNPROC...`
 
 #### ufw
 

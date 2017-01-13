@@ -182,7 +182,13 @@ The following python script was developed to automatic rotate the screen and the
 
 It works for devices with an accelerometer communicating through the industrial I/O subsystem `/sys/bus/iio/devices/iio:deviceX`, where X is the number of the device. Usually, it is necessary to change the following parameters dpath, devicename, and touchpad.
 
-See [rotate.py](https://gist.githubusercontent.com/ei-grad/4d9d23b1463a99d24a8d/raw/rotate.py) and for scripts the Surface in [Surface Tools](https://github.com/Surface-Pro-3/surface-tools).
+See [rotate.py](https://gist.githubusercontent.com/ei-grad/4d9d23b1463a99d24a8d/raw/rotate.py) and for scripts the Surface in the github [Surface Tools](https://github.com/Surface-Pro-3/surface-tools) repository.
+
+Note that there are many other surface pro 3 rotate scripts on github, including:
+
+*   [https://github.com/freundTech/surface-tools/tree/master/autorotate](https://github.com/freundTech/surface-tools/tree/master/autorotate)
+*   [https://github.com/simonwjackson/surface-pro-3-scripts](https://github.com/simonwjackson/surface-pro-3-scripts)
+*   [https://github.com/andrewrembrandt/surface-autorotate2](https://github.com/andrewrembrandt/surface-autorotate2)
 
 ### With systemd
 

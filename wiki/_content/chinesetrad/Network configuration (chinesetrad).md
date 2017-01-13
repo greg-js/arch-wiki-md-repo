@@ -59,7 +59,7 @@
 
 **註記:** `-c 3` 選項表示將會呼叫三次。詳細請參閱 `man ping` 。
 
-**提示:** 您也可以嘗試使用其他的 Domain ，如 www.hinet.net 。
+**提示：** 您也可以嘗試使用其他的 Domain ，如 www.hinet.net 。
  `$ ping -c 3 www.google.com` 
 ```
 PING www.l.google.com (74.125.224.146) 56(84) bytes of data.
@@ -77,7 +77,7 @@ rtt min/avg/max/mdev = 298.107/373.642/437.202/57.415 ms
 
 若剛才的指令出現了 unknown hosts 之類的訊息，代表您的機器無法解析網域。這可能是因為您的網路服務提供商/閘道造成的。您可以嘗試 ping 一個靜態 IP 以實驗您的機器能否存取網際網路。
 
-**提示:** 您也可以嘗試使用其他的 IP ，如 168.95.1.1 。
+**提示：** 您也可以嘗試使用其他的 IP ，如 168.95.1.1 。
  `$ ping -c 3 8.8.8.8` 
 ```
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
@@ -168,7 +168,7 @@ $ dmesg | grep atl1
 
 要禁用這種行為，可以將 `net.ifnames=0` 到您的核心指令列。
 
-**提示:** 您可以執行 `ip link` 或是 `ls /sys/class/net` 以列出所有可用的介面。
+**提示：** 您可以執行 `ip link` 或是 `ls /sys/class/net` 以列出所有可用的介面。
 
 **註記:** 當您更改了介面名稱規則後，別忘了更新所有跟網路有關的組態檔案與自定的 systemd unit 檔案以因應該更改。特別是當您啟用了 [netctl 靜態設定檔](/index.php/Netctl#Basic_method "Netctl") ，請執行 `netctl reenable *profile*` 以更新所有產生的服務檔案。
 
@@ -383,7 +383,7 @@ $ ping -c 3 www.google.com
 
 ### 筆記型電腦之 ifplugd
 
-**提示:** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 提供了開箱即用的相同功能。
+**提示：** [dhcpcd](/index.php/Dhcpcd "Dhcpcd") 提供了開箱即用的相同功能。
 
 [官方軟體套件庫](/index.php/Official_repositories_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Official repositories (正體中文)")中的 [ifplugd](https://www.archlinux.org/packages/?name=ifplugd) 為一個當網路線插入後自動組態乙太設備；網路線拔除後自動取消組態的 Daemon 。 這對於搭載內建網路介面卡的筆記型電腦特別有用，因為其只會在網路線真正連上後才會對介面進行組態。另一個會用到的情況為，當您需要重新啟動網路，但您並不想重開及或在 Shell 中進行設定。
 

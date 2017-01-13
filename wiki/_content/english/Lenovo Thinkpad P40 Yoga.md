@@ -1,15 +1,70 @@
 | **Device** | **Status** | **Modules** |
-| Intel | Working | i915 |
-| Nvidia | Working | nouveau *or* nvidia |
+| Intel | Working | [i915](/index.php/Intel_graphics "Intel graphics") |
+| Nvidia | Working | [nouveau *or* nvidia](/index.php/NVIDIA_Optimus "NVIDIA Optimus") |
 | Wireless | Working | iwlwifi |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Working | xf86-input-synaptics |
-| Stylus | Working | wacom |
-| Touchscreen | Working | wacom |
-| Camera | Working | uvcvideo |
+| Touchpad | Working | [xf86-input-synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") |
+| Stylus | Working | [wacom](/index.php/Wacom_Tablet "Wacom Tablet") |
+| Touchscreen | Working | [wacom](/index.php/Wacom_Tablet "Wacom Tablet") |
+| Camera | Working | [uvcvideo](/index.php/Webcam_setup#linux-uvc "Webcam setup") |
 | Card Reader | Not tested |
 | Bluetooth | Working | btusb |
 | Accelerometer | Working | hid_sensor_hub |
+
+## Contents
+
+*   [1 Configuration](#Configuration)
+    *   [1.1 Automatic rotation](#Automatic_rotation)
+*   [2 Hardware Overview](#Hardware_Overview)
+*   [3 See also](#See_also)
+
+## Configuration
+
+### Automatic rotation
+
+Install [iio-sensor-proxy-git](https://aur.archlinux.org/packages/iio-sensor-proxy-git/). Under [GNOME](/index.php/GNOME "GNOME"), rotation will happen automatically. Under [i3](/index.php/I3 "I3"), you can use this script in the background:
+
+```
+#!/bin/sh
+# Requires [https://github.com/hadess/iio-sensor-proxy](https://github.com/hadess/iio-sensor-proxy)
+
+dbus-monitor --system interface=org.freedesktop.DBus.Properties,member=PropertiesChanged,path=/net/hadess/SensorProxy 2> /dev/null |
+        sed -n -u -e '/string "AccelerometerOrientation"/ {n ; s/\s*variant\s*string\s*"\(.*\)"/\1/p}' |
+        while read -r line ; do
+                case $line in
+                        right-up )
+                                xrandr -o right &> /dev/null
+                                ;;
+                        left-up )
+                                xrandr -o left &> /dev/null 
+                                ;;
+                        bottom-up )
+                                xrandr -o inverted &> /dev/null
+                                ;;
+                        normal | * )
+                                xrandr -o normal &> /dev/null
+                                ;;
+                 esac
+        done
+
+```
+
+In order to have your touchpad, Trackpoint, touchscreen and stylus also change orientation, install [xrandr-align](https://github.com/wolneykien/xrandr-align) and run the following script at startup:
+
+```
+#!/bin/sh
+# Requires [https://github.com/wolneykien/xrandr-align](https://github.com/wolneykien/xrandr-align)
+
+for input in \
+        "Wacom Co.,Ltd. Pen and multitouch sensor Finger touch" \
+        "Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus" \
+        "ETPS/2 Elantech Touchpad" \
+        "ETPS/2 Elantech TrackPoint" \
+        "Wacom Co.,Ltd. Pen and multitouch sensor Pen eraser" ; do
+        xrandr-align monitor --input="$input" &
+done
+
+```
 
 ## Hardware Overview
 
@@ -56,3 +111,9 @@
  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
+
+## See also
+
+[Official Support page](http://support.lenovo.com/ch/en/products/Laptops-and-netbooks/ThinkPad-P-Series-laptops/ThinkPad-P40-Yoga/20GQ?LinkTrack=Solr&beta=false)
+
+[ThinkPad P40 Yoga Platform Specifications](http://psref.lenovo.com/syspool%5CSys/PDF/Think%20Tablets%20_%20Convertibles/ThinkPad%20P40%20Yoga/ThinkPad_P40_Yoga_specs.pdf)

@@ -47,7 +47,7 @@
 
 #### 第三方拼音输入法
 
-Fcitx 同样支持流行的第三方拼音输入法以提供更好的整句输入效果. 在 Fcitx 支持的拼音输入法中，内置拼音响应速度最快，[fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin) 的综合效果最好，[fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin) 算法比 sunpinyin 先进，但是尚有很多 bug 而且欠缺良好的词库（根据2016年12月软件包的使用情况来看，fcitx-sunpinyin 已经明显比较落后，输入效果远不如 fcitx-libpinyin ）。其它的还有：
+Fcitx 同样支持流行的第三方拼音输入法以提供更好的整句输入效果. 在 Fcitx 支持的拼音输入法中，内置拼音响应速度最快，[fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin) 在输入速度和输入精度之间有较好的平衡，[fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin) 算法比 sunpinyin 先进。其它的还有：
 
 *   [fcitx-rime](https://www.archlinux.org/packages/?name=fcitx-rime), 即著名中文输入法 [Rime](https://code.google.com/p/rimeime/) 的 Fcitx 版本。但它不支持 Fcitx 本身的 [#特殊符号](#.E7.89.B9.E6.AE.8A.E7.AC.A6.E5.8F.B7) 和 [#快速输入](#.E5.BF.AB.E9.80.9F.E8.BE.93.E5.85.A5) 功能，自定义设置请参见[官方](http://rime.im)，
 *   [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin), Google 拼音输入法 for Android.

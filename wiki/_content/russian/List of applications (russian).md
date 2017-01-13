@@ -368,7 +368,7 @@
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/ru:Rekonq "wikipedia:ru:Rekonq")** — Основанный на WebKit браузер для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 *   **Sb** — Очень легковесный, основанный на WebKit браузер, использующий горячие клавиши для большинства операций с полем ввода адреса
 
@@ -648,7 +648,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Kmail](https://en.wikipedia.org/wiki/ru:Kmail "wikipedia:ru:Kmail")** — Зрелый клиент электронной почты с богатым функционалом. Является частью группы пакетов [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)
 
-	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kdepim-kmail](https://www.archlinux.org/packages/?name=kdepim-kmail)
+	[http://kde.org/applications/internet/kmail/](http://kde.org/applications/internet/kmail/) || [kmail](https://www.archlinux.org/packages/?name=kmail)
 
 *   **Manitou Mail** — Система обработки электронной почты на базах данных (database-driven)
 
@@ -754,7 +754,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **qutIM** — Простой и дружелюбный к пользователю мессенджер, поддерживающий ICQ, Jabber, Mail.Ru, IRC и VKontakte
 
-	[http://qutim.org/](http://qutim.org/) || [qutim-stable](https://aur.archlinux.org/packages/qutim-stable/)
+	[http://qutim.org/](http://qutim.org/) || [qutim](https://aur.archlinux.org/packages/qutim/)
 
 ##### XMPP (Jabber)
 
@@ -960,7 +960,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Skype](/index.php/Skype_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Skype (Русский)")** — Популярное, но проприетарное приложение высокого качества для голосового общения
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Проприетарное приложение VoIP, целевой аудиторией которого являются геймеры
 
@@ -1104,7 +1104,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — Программа чтения новостей Usenet на GTK2, отлично работающая как с текстом, так и с двоичными файлами
 
-	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://aur.archlinux.org/packages/pan/)
+	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://www.archlinux.org/packages/?name=pan)
 
 *   **[slrn](https://en.wikipedia.org/wiki/ru:slrn "wikipedia:ru:slrn")** — Текстовый клиент новостей с открытым исходным кодом
 
@@ -1456,7 +1456,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
 
-*   **[Krita](https://en.wikipedia.org/wiki/ru:Krita "wikipedia:ru:Krita")** — Программное обеспечение для рисования и создания иллюстраций, основанное на платформе KDE и библиотеках Calligra. Является частью группы пакетов [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+*   **[Krita](https://en.wikipedia.org/wiki/ru:Krita "wikipedia:ru:Krita")** — Программное обеспечение для рисования и создания иллюстраций, основанное на платформе KDE и библиотеках Calligra. Является частью группы пакетов [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
 
@@ -1504,7 +1504,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **[Karbon](https://en.wikipedia.org/wiki/ru:Karbon "wikipedia:ru:Karbon")** — Программа редактирования векторной графики, часть офисного пакета Calligra. Входит в группу пакетов [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+*   **[Karbon](https://en.wikipedia.org/wiki/ru:Karbon "wikipedia:ru:Karbon")** — Программа редактирования векторной графики, часть офисного пакета Calligra. Входит в группу пакетов [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
 
@@ -1514,7 +1514,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[sK1](https://en.wikipedia.org/wiki/ru:sK1 "wikipedia:ru:sK1")** — Замена Adobe Illustrator или CorelDraw, ориентированная на "допечатную подготовку" PostScript и PDF
 
-	[http://sk1project.org/](http://sk1project.org/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
+	[http://sk1project.net/](http://sk1project.net/) || [sk1](https://www.archlinux.org/packages/?name=sk1)
 
 *   **[Xara LX](https://en.wikipedia.org/wiki/ru:Xara_Designer "wikipedia:ru:Xara Designer")** — Усовершенствованная программа редактирования векторной графики, версия с открытым исходным кодом коммерческой Xara X
 
@@ -1676,7 +1676,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Banshee](https://en.wikipedia.org/wiki/ru:Banshee "wikipedia:ru:Banshee")** — Очень активно развивающийся клон [iTunes](https://en.wikipedia.org/wiki/ru:iTunes "wikipedia:ru:iTunes"), использующий GTK+ и [Mono](/index.php/Mono "Mono"), с богатым функционалом
 
-	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://www.archlinux.org/packages/?name=banshee)
+	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
 *   **[Clementine](https://en.wikipedia.org/wiki/ru:Clementine_(%D0%BC%D0%B5%D0%B4%D0%B8%D0%B0%D0%BF%D0%BB%D0%B5%D0%B5%D1%80) "wikipedia:ru:Clementine (медиаплеер)")** — Клон Amarok 1.4, портированный на Qt 4
 
@@ -1780,6 +1780,10 @@ eDonkey по-прежнему является второй по величин�
 
 	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
 
+*   **Volctl** — регулировка громкости для каждого приложения для настольных компьютеров GNU / Linux.
+
+	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
+
 *   **Volnoti** — Легковесный демон уведомлений об уровне звука для GNU/Linux и других операционных систем POSIX
 
 	[https://github.com/davidbrazdil/volnoti](https://github.com/davidbrazdil/volnoti) || [volnoti](https://aur.archlinux.org/packages/volnoti/)
@@ -1872,7 +1876,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **KWave** — Звуковой редактор для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[LMMS](/index.php/LMMS "LMMS")** — Linux MultiMedia Studio. Свободное кроссплатформенное программное обеспечение, позволяющее вам создавать музыку на компьютере
 
@@ -2002,7 +2006,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Cinelerra (Community Version)](https://en.wikipedia.org/wiki/ru:Cinelerra "wikipedia:ru:Cinelerra")** — Профессиональная среда для редактирования видео и композитинга
 
-	[http://cinelerra.org/](http://cinelerra.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
+	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
 
 *   **[HandBrake](/index.php/%D0%9E%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%B8%D0%B2%D0%BE%D0%B4#DVD "Оптический привод")** — Простой, но мощный видео транскодер, идеальный для массового копирования mkv/x264\. Версия GTK+
 
@@ -2312,7 +2316,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Популярная замена xterm
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — Простая реализация терминала для X
 
@@ -2610,6 +2614,10 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://p7zip.sourceforge.net/](http://p7zip.sourceforge.net/) || [p7zip](https://www.archlinux.org/packages/?name=p7zip)
 
+*   **[pigz](/index.php?title=Pigz&action=edit&redlink=1 "Pigz (page does not exist)")** — Параллельная реализация GZIP
+
+	[http://compression.ca/pbzip2/](http://compression.ca/pbzip2/) || [pigz](https://www.archlinux.org/packages/?name=pigz)
+
 *   **[tar](/index.php/Tar "Tar")** — Утилита GNU для работы с вездесущими архивами tar (tarballs)
 
 	[http://www.gnu.org/software/tar](http://www.gnu.org/software/tar) || [tar](https://www.archlinux.org/packages/?name=tar)
@@ -2676,7 +2684,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://furius.ca/xxdiff/](http://furius.ca/xxdiff/) || [xxdiff](https://aur.archlinux.org/packages/xxdiff/)
 
-[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") и [Emacs](/index.php/Emacs "Emacs") предоставляют функционал для объединения в [vimdiff](/index.php/Vim#Merging_files_.28vimdiff.29 "Vim") и `ediff`.
+[Vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") и [Emacs](/index.php/Emacs "Emacs") предоставляют функционал для объединения в [Vim (Русский)#Объединение файлов](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.B1.D1.8A.D0.B5.D0.B4.D0.B8.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2 "Vim (Русский)") и `ediff`.
 
 #### Групповые переименования
 
@@ -2948,7 +2956,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Calligra](https://en.wikipedia.org/wiki/ru:Calligra_Suite "wikipedia:ru:Calligra Suite")** — Активно разрабатываемый форк KOffice, офисного пакета [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)"). Предлагает большую часть возможностей OpenOffice, а также имеет версию для смартфонов (Calligra Mobile) и планшетов (Calligra Active)
 
-	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[https://www.calligra.org/](https://www.calligra.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[LibreOffice](/index.php/LibreOffice_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LibreOffice (Русский)")** — Более активно развиваемый форк OpenOffice
 
@@ -3672,7 +3680,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Metasploit Framework](/index.php/Metasploit_Framework "Metasploit Framework")** — Расширенная платформа с открытым исходным кодом для разработки, тестирования и использования эксплоитов
 
-	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://aur.archlinux.org/packages/metasploit/)
+	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://www.archlinux.org/packages/?name=metasploit)
 
 *   **[Nessus](/index.php/Nessus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nessus (Русский)")** — Комплексная программа поиска уязвимостей
 
@@ -3976,7 +3984,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — Пользовательский интерфейс для Giac, свободной, базовой системы компьютерной алгебры
 
-	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://aur.archlinux.org/packages/xcas/)
+	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://www.archlinux.org/packages/?name=xcas)
 
 #### Научные и технические вычисления
 
@@ -4122,7 +4130,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Программа редактирования, просмотра и имитации в 3D молекулярных структур. Поддерживает скачивание файлов из [Protein Data Bank](https://en.wikipedia.org/wiki/ru:Protein_Data_Bank "wikipedia:ru:Protein Data Bank")
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Автономное приложение молекулярного моделирования и визуализации, часть фреймворка [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL")
 

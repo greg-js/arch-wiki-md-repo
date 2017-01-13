@@ -14,8 +14,9 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [2.4 Container configuration](#Container_configuration)
         *   [2.4.1 Basic config with static IP networking](#Basic_config_with_static_IP_networking)
         *   [2.4.2 Basic config with DHCP networking](#Basic_config_with_DHCP_networking)
-        *   [2.4.3 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
-        *   [2.4.4 OpenVPN considerations](#OpenVPN_considerations)
+        *   [2.4.3 Mounts within the container](#Mounts_within_the_container)
+        *   [2.4.4 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
+        *   [2.4.5 OpenVPN considerations](#OpenVPN_considerations)
 *   [3 Managing Containers](#Managing_Containers)
     *   [3.1 Basic usage](#Basic_usage)
     *   [3.2 Advanced usage](#Advanced_usage)
@@ -29,11 +30,13 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 
 ## Privileged containers or unprivileged containers
 
-LXCs can be run in so-called *privileged* and *unprivileged* modes.
+LXCs can be setup to run in either *privileged* or *unprivileged* configurations.
 
-In general, running an *unprivileged* container is considered safer than running a *privileged* container as *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID in the container to a non-root UID on the host which makes it more difficult for a hack within the container to lead to consequences on host system. In other words, if an attacker manages to escape the container, he or she should find themselves with no rights on the host. See [this link](https://unix.stackexchange.com/questions/177030/what-is-an-unprivileged-lxc-container) for a good discussion about the differences between privileged and unprivileged containers.
+In general, running an *unprivileged* container is [considered safer](https://www.stgraber.org/2014/01/17/lxc-1-0-unprivileged-containers) than running a *privileged* container since *unprivileged* containers have an increased degree of isolation by virtue of their design. Key to this is the mapping of the root UID in the container to a non-root UID on the host which makes it more difficult for a hack within the container to lead to consequences on host system. In other words, if an attacker manages to escape the container, he or she should find themselves with no rights on the host.
 
-Although several requests have been filed to modify it, ([FS#36969](https://bugs.archlinux.org/task/36969) and [FS#74933](https://bugs.archlinux.org/task/74933)), the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel is not currently configured to run *unprivileged* containers. Therefore, modification is required to do which is detailed in the [Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29 "Linux Containers") section of this article. As well, this article contains information for users to run either type of container.
+The Arch packages currently provide out-of-the-box support for *privileged* containers only. This is due to the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel **not** shipping with user namespaces configured. This article contains information for users to run either type of container, but additional setup is required to use *unprivileged* containers at this time.
+
+**Note:** Several requests have been filed to include user namespace support in the kernel including: [FS#36969](https://bugs.archlinux.org/task/36969) and more recently, [FS#49337](https://bugs.archlinux.org/task/49337). However, both requests have been closed with the won't implement reason.
 
 ### An example to illustrate unprivileged containers
 
@@ -76,11 +79,11 @@ UID        PID  PPID  C STIME TTY          TIME CMD
 
 ### Required software
 
-Install the [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) packages. These two packages should be enough to allow the host system to run privileged lxcs.
+Installing [lxc](https://www.archlinux.org/packages/?name=lxc) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) will allow the host system to run privileged lxcs.
 
 #### Enable support to run unprivileged contains (optional)
 
-User wishing to run *unprivileged*containers need to complete several additional setup steps.
+User wishing to run *unprivileged* containers need to complete several additional setup steps.
 
 Firstly, a custom kernel is required that has support for User namespaces. This option is available under **General setup>Namespaces support>User namespace** from an nconfig, or by simply modifying the kernel [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") with the following line inserted prior to the "make prepare" line:
 
@@ -118,7 +121,7 @@ LXCs support different virtual network types and devices (see [lxc.container.con
 
 ### Container creation
 
-For privileged containers, simply select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
+For *privileged* containers, simply select a template from `/usr/share/lxc/templates` that matches the target distro to containerize. Users wishing to containerize non-Arch distros will need additional packages on the host depending on the target distro:
 
 *   Debian-based: [debootstrap](https://www.archlinux.org/packages/?name=debootstrap)
 *   Fedora-based: [yum](https://aur.archlinux.org/packages/yum/)
@@ -130,18 +133,18 @@ Run `lxc-create` to create the container, which installs the root filesystem of 
 
 ```
 
-Users wishing to run unprivileged containers should use the -t download directive and select from the images that are displayed. For example:
+Users wishing to run *unprivileged* containers should use the -t download directive and select from the images that are displayed. For example:
 
 ```
 # lxc-create -n playtime -t download
 
 ```
 
+Alternatively, create a *privileged* container, and see: [Linux_Containers#Converting_a_privileged_container_to_an_unprivileged_container](/index.php/Linux_Containers#Converting_a_privileged_container_to_an_unprivileged_container "Linux Containers").
+
 **Tip:** Users may optionally install [haveged](https://www.archlinux.org/packages/?name=haveged) and [start](/index.php/Start "Start") `haveged.service` to avoid a perceived hang during the setup process while waiting for system entropy to be seeded. Without it, the generation of private/GPG keys can add a lengthy wait to the process.
 
 **Tip:** Users of [Btrfs](/index.php/Btrfs "Btrfs") can append `-B btrfs` to create a Btrfs subvolume for storing containerized rootfs. This comes in handy if cloning containers with the help of `lxc-clone` command. [ZFS](/index.php/ZFS "ZFS") users may use `-B zfs`, correspondingly.
-
-**Tip:** As of July 2015, creating an empty container using `-t none` does not work, see the [bug report](https://bugs.launchpad.net/bugs/1466458). As a workaround one can use `-t /bin/true`.
 
 ### Container configuration
 
@@ -172,15 +175,6 @@ lxc.network.ipv4 = 192.168.0.3/24
 lxc.network.ipv4.gateway = 192.168.0.1
 lxc.network.hwaddr = ee:ec:fa:e9:56:7d
 
-## mounts
-## specify shared filesystem paths in the format below
-## make sure that the mount point exists on the lxc
-#lxc.mount.entry = /mnt/data/share mnt/data none bind 0 0
-#
-# if running the same Arch linux on the same architecture it may be
-# adventitious to share the package cache directory
-#lxc.mount.entry = /var/cache/pacman/pkg var/cache/pacman/pkg none bind 0 0
-
 ```
 
 **Note:** The lxc.network.hwaddr entry is optional and if skipped, a random MAC address will be created automatically.
@@ -188,6 +182,17 @@ lxc.network.hwaddr = ee:ec:fa:e9:56:7d
 #### Basic config with DHCP networking
 
 Users wishing to have DHCP used within the container may omit the `lxc.network.ipv4` and `lxc.network.ipv4.gateway` lines as the Arch template provides a DHCP [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") profile by default. It is advantageous to define a MAC address for the container here to allow the DHCP server to always assign the same IP to the container's NIC (beyond the scope of this article but worth mentioning).
+
+#### Mounts within the container
+
+For *privileged* containers, one can select directories on the host to bind mount to the container. This can be advantageous for example if the same architecture is being containerize and one wants to share pacman packages between the host and container. Another example could be shared directories. The syntax is simple:
+
+```
+lxc.mount.entry = /var/cache/pacman/pkg var/cache/pacman/pkg none bind 0 0
+
+```
+
+**Note:** This will not work without filesystem permission modifications on the host if using *unprivileged* containers.
 
 #### Xorg program considerations (optional)
 
@@ -206,9 +211,11 @@ lxc.mount.entry = /dev/video0 dev/video0 none bind,optional,create=file
 
 If you still get a permission denied error in your LXC guest, then you may need to call `xhost +` in your host to allow the guest to connect to the host's display server. Take note of the security concerns of opening up your display server by doing this.
 
+**Note:** This will not work if using *unprivileged* containers.
+
 #### OpenVPN considerations
 
-Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the container should read the [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") article.
+Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the container are direct to either [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") and/or [OpenVPN (server) in Linux containers](/index.php/OpenVPN_(server)_in_Linux_containers "OpenVPN (server) in Linux containers").
 
 ## Managing Containers
 

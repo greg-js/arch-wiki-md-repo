@@ -68,7 +68,7 @@ Empathy, the engine behind integrated messaging, GNOME Online Accounts, and all 
 
 ## Empathy does not use GNOME Online Accounts
 
-Restart is necessary to enable Empathy to recognize and use GNOME Online Accounts.
+After adding a Gnome Online Account, it may be necessary to log out and log back in for it to be used by Empathy.
 
 ## Cannot change settings in dconf-editor
 

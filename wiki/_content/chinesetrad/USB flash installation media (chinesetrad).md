@@ -43,7 +43,7 @@
 
 #### GNU/Linux
 
-**提示:** **不要**掛載 USB 碟安裝媒體，可以用 `lsblk` 檢查。
+**提示：** **不要**掛載 USB 碟安裝媒體，可以用 `lsblk` 檢查。
 
 **註記:** 使用 `/dev/sd**x**` 而非 `/dev/sd**x1**`，調整 **x** 為您的目標裝置。
 
@@ -58,7 +58,7 @@
 
 確認您安裝的 [Cygwin](http://www.cygwin.com/) 有包含 `dd` 軟體包。
 
-**提示:** 若您不想安裝 Cygwin，也可以從[這裡](http://www.chrysocome.net/dd)單獨下載 Windows 版的 `dd`。更多資訊請參閱下一節。
+**提示：** 若您不想安裝 Cygwin，也可以從[這裡](http://www.chrysocome.net/dd)單獨下載 Windows 版的 `dd`。更多資訊請參閱下一節。
 
 將映像檔放在您的使用者目錄下，例如：
 
@@ -312,7 +312,7 @@ append initrd=/arch/boot/i686/archiso.img archisodevice=/dev/sd**x1** ../../
 
 首先，從[這裡](http://sourceforge.net/projects/win32diskimager/)下載程式。接著解壓縮並執行可執行檔。現在，在 `Image File` (映像檔) 一區選擇 Arch Linux ISO，`Device` (裝置) 一區選擇 USB 裝置字母 (例如 [D:\])。最後，準備好之後點選 `Write` (寫入)。
 
-**提示:** 預設 Win32 Disk Imager 的檔案瀏覽會認為映像檔的副檔名為 `.img`。您可以輕易將 `Files of type` (檔案類型) 下拉選單改為 `*.*`，再選擇 Arch Linux ISO。
+**提示：** 預設 Win32 Disk Imager 的檔案瀏覽會認為映像檔的副檔名為 `.img`。您可以輕易將 `Files of type` (檔案類型) 下拉選單改為 `*.*`，再選擇 Arch Linux ISO。
 
 **註記:** 安裝完成後，若需要還原 USB 裝置，請依照[這裡](#.E5.A6.82.E4.BD.95.E9.82.84.E5.8E.9F_USB_.E8.A3.9D.E7.BD.AE)所寫的步驟進行。
 
@@ -355,7 +355,7 @@ Vista 或 Win7 的使用者，請以系統管理員的身分啟動終端機，�
 
 更多 Arch Linux 與 MEMDISK 的系統要求，請參閱[新手教學](/index.php/Beginners%27_guide_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Beginners' guide (正體中文)")以及[這裡](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries)。
 
-**提示:** 一旦安裝程序徹底載入完畢，就可以移除 USB 隨身碟，將它插入不同機器後可以重新進行安裝步驟。可利用式 MEMDISK 也允許啟動並安裝 Arch Linux 到原本用來安裝的 USB 隨身碟上。
+**提示：** 一旦安裝程序徹底載入完畢，就可以移除 USB 隨身碟，將它插入不同機器後可以重新進行安裝步驟。可利用式 MEMDISK 也允許啟動並安裝 Arch Linux 到原本用來安裝的 USB 隨身碟上。
 
 ##### 準備 USB 隨身碟
 

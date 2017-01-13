@@ -6,7 +6,7 @@
 
 本文為分類過的應用程式列表，可作為找尋軟體的參考。許多小節被區分為終端機與圖形應用程式。
 
-**提示:**
+**提示：**
 
 *   本頁面主要是用來搜尋多種類別的軟體。使用頂端模版的連結，可檢視單一子分類的獨立頁面。
 *   請考慮[安裝](/index.php/Pacman_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Pacman (正體中文)") [pkgstats](/index.php/Pkgstats "Pkgstats") 軟體包，它提供了一個 cron 工作，會定時將您系統上所安裝的軟體包列表、硬體架構與使用的鏡像站傳送給 Arch Linux 開發者，以幫助他們更為集中努力方向，讓發行版變得更好。這些資訊為匿名傳送，不會被用來識別您的身分。您可以在[統計頁面](https://www.archlinux.de/?page=Statistics)中檢視這些收集資料。更多訊息可參閱[這個論壇貼文](https://bbs.archlinux.org/viewtopic.php?id=105431)。
@@ -299,7 +299,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 *   **Sb** — Very lightweight WebKit-based browser that uses keybindings to perform most things the URL bar would usually do.
 
@@ -843,7 +843,7 @@ See also [Wikipedia:List of SIP software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular but proprietary application for high-quality voice communication.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Proprietary VoIP application with gamers as its target audience.
 
@@ -1249,7 +1249,7 @@ See also [Wikipedia:Comparison of raster graphics editors](https://en.wikipedia.
 
 	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
 
-*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Digital painting and illustration software included based on the KDE platform and Calligra libraries. Part of [calligra](https://www.archlinux.org/groups/x86_64/calligra/) group.
+*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Digital painting and illustration software included based on the KDE platform and Calligra libraries. Part of [calligra](https://www.archlinux.org/packages/?name=calligra) group.
 
 	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
 
@@ -1293,7 +1293,7 @@ See also [Wikipedia:Comparison of vector graphics editors](https://en.wikipedia.
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite. Part of [calligra](https://www.archlinux.org/groups/x86_64/calligra/) group.
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Vector graphics editor, part of the Calligra Suite. Part of [calligra](https://www.archlinux.org/packages/?name=calligra) group.
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
 
@@ -1442,7 +1442,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes") clone, built with GTK+ and [Mono](/index.php/Mono "Mono"), feature-rich and more actively developed.
 
-	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://www.archlinux.org/packages/?name=banshee)
+	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Amarok 1.4 clone, ported to Qt 4.
 
@@ -1537,6 +1537,10 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 *   **PNMixer** — A fork of Obmixer. It has many new features such as ALSA channel selection, connect/disconnect detection, shortcuts, etc.
 
 	[https://github.com/nicklan/pnmixer/wiki](https://github.com/nicklan/pnmixer/wiki) || [pnmixer](https://aur.archlinux.org/packages/pnmixer/)
+
+*   **Volctl** — Per-application volume control for GNU/Linux desktops.
+
+	[https://buzz.github.io/volctl/](https://buzz.github.io/volctl/) || [volctl](https://aur.archlinux.org/packages/volctl/)
 
 *   **Volti** — A GTK application for controlling audio volume from system tray with an internal mixer and support for multimedia keys that uses only ALSA.
 
@@ -1666,7 +1670,7 @@ See also: [Burning CD/DVD with GUI](/index.php/Optical_disc_drive#Burning_CD.2FD
 
 *   **KWave** — Sound editor for KDE.
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Qt-based hard disk recorder and digital audio workstation application that aims to provide digital audio workstation software simple enough for the average home user, and yet powerful enough for the professional user.
 
@@ -1902,7 +1906,7 @@ Power users use terminal emulators quite often, so unsurprisingly lots of X11 te
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — Popular replacement for the xterm
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — Simple terminal implementation for X.
 
@@ -2378,7 +2382,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Actively developed fork of KOffice, the [KDE](/index.php/KDE "KDE") office suite. It offers most of the features of OpenOffice while also having versions for smartphones (Calligra Mobile) and tablets (Calligra Active).
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Kingsoft Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Propietary office productivity suite, also named WPS.
 
@@ -3106,7 +3110,7 @@ See also [Wikipedia:Comparison of computer algebra systems](https://en.wikipedia
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — User interface to Giac, a free, basic computer algebra system.
 
-	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://aur.archlinux.org/packages/xcas/)
+	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://www.archlinux.org/packages/?name=xcas)
 
 #### 科學或技術性計算
 
@@ -3238,7 +3242,7 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, viewer and simulator for 3D molecule structures (also supports downloading files from the [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Standalone molecular modeling and visualization application, part of the [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") framework.
 

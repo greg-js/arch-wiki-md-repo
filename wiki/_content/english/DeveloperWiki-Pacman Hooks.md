@@ -1,58 +1,4 @@
-## Contents
-
-*   [1 Hooks!](#Hooks.21)
-    *   [1.1 systemd-tmpfiles](#systemd-tmpfiles)
-    *   [1.2 systemd-sysusers](#systemd-sysusers)
-    *   [1.3 udevadm hwdb, systemd-hwdb](#udevadm_hwdb.2C_systemd-hwdb)
-    *   [1.4 fc-cache](#fc-cache)
-    *   [1.5 mkfontscale/mkfontdir](#mkfontscale.2Fmkfontdir)
-*   [2 Implemented](#Implemented)
-
 # Hooks!
-
-## systemd-tmpfiles
-
-Used by 52 packages
-
-Proposed hook (systemd)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Target = usr/lib/tmpfiles.d/*.conf
-
-[Action]
-Description = Creating temporary files...
-When = PostTransaction
-Exec = /bin/sh -c 'while read -r f; do /usr/bin/systemd-tmpfiles --create "/$f"; done'
-NeedsTargets
-
-```
-
-## systemd-sysusers
-
-Used by 29 packages
-
-sysusers also runs at boot via ConditionNeedsUpdate, see below, so depending on whether that works and when we need the users to exist this hook might not be needed.
-
-Proposed hook (systemd)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Target = usr/lib/sysusers.d/*.conf
-
-[Action]
-Description = Updating system user accounts...
-When = PostTransaction
-Exec = /bin/sh -c 'while read -r f; do /usr/bin/systemd-sysusers "/$f" ; done'
-NeedsTargets
-
-```
 
 ## udevadm hwdb, systemd-hwdb
 
@@ -100,54 +46,6 @@ Exec = /usr/bin/systemd-hwdb --usr update
 
 ```
 
-## fc-cache
-
-Used by 53 packages
-
-Proposed hook (fontconfig)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/share/fonts/*
-
-[Action]
-Description = Updating fontconfig cache...
-When = PostTransaction
-Exec = /usr/bin/fc-cache -s
-
-```
-
-## mkfontscale/mkfontdir
-
-Used by 39 packages
-
-Proposed hook (xorg-mkfontdir)
-
-```
-[Trigger]
-Type = File
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Target = usr/share/fonts/*/*.bdf
-Target = usr/share/fonts/*/*.otf
-Target = usr/share/fonts/*/*.pcf.gz
-Target = usr/share/fonts/*/*.pfa
-Target = usr/share/fonts/*/*.pfb
-Target = usr/share/fonts/*/*.ttf
-
-[Action]
-Description = Creating index of X font files...
-When = PostTransaction
-Exec = /bin/sh -c 'while read -r f; do dirname $f; done | uniq | while read -r d; do mkfontscale /$d && mkfontdir /$d; done'
-NeedsTargets
-
-```
-
 # Implemented
 
 *   update-desktop-database
@@ -163,3 +61,8 @@ NeedsTargets
 *   gtk-query-immodules-3.0
 *   mktexlsr
 *   update-ca-trust
+*   systemd-tmpfiles
+*   systemd-sysusers
+*   fontconfig (fc-cache)
+*   lib32-fontconfig (fc-cache-32)
+*   xorg-mkfontdir (mkfontscale/mkfontdir)

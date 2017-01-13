@@ -184,15 +184,26 @@ authors = ["Your Name <you@example.com>"]
 
 #### Racer
 
-The [Racer](https://github.com/phildawes/racer) autocomplete engine is the current best method of gaining autocomplete support. However, it requires that you also install a copy of the Rust source code, which you can obtain either directly or from the AUR ([rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/)). After installing the source code, you can either use `Cargo` to install racer or obtain it from the repos ([rust-racer](https://www.archlinux.org/packages/?name=rust-racer)).
+The [Racer](https://github.com/phildawes/racer) autocomplete engine is the current best method of gaining autocomplete support. However, it requires that you also install a copy of the Rust source code, which you can obtain in one of several ways:
 
- `cargo install racer` 
+*   With rustup: `rustup component add rust-src`
+*   From the AUR: [rust-src](https://aur.archlinux.org/packages/rust-src/) or [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/), in this case you must set the `RUST_SRC_PATH` environment var.
+
+After installing the source code, you can either use `Cargo` to install racer or obtain it from the repos ([rust-racer](https://www.archlinux.org/packages/?name=rust-racer)).
+
+```
+$ cargo install racer
+
+```
 
 #### Clippy
 
 [Clippy](https://github.com/Manishearth/rust-clippy) takes advantage of compiler plugin support in Nightly builds of Rust to provide a large number of additional lints for detecting and warning about a larger variety of errors and non-idiomatic Rust. Because it requires support for compiler plugins in order to operate, clippy will not work when compiling with the stable Rust compiler.
 
- `cargo install clippy` 
+```
+$ cargo install clippy
+
+```
 
 ### Editors
 

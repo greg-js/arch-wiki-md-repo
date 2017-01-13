@@ -204,6 +204,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
  |
 | [gtk2](/index.php/Gtk "Gtk") | `~/.gtkrc-2.0` | `$ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc` |
+| [Google Earth](/index.php/Google_Earth "Google Earth") | `~/.googleearth` | Some paths can be changed with the `KMLPath` and `CachePath` options in `~/.config/Google/GoogleEarthPlus.conf` |
 | [gtk](/index.php/Gtk "Gtk") | `~/.gtkrc` | `$ export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc` |
 | [httpie](http://httpie.org) | `~/.httpie` | [[52]](https://github.com/jakubroztocil/httpie/issues/145) | `$ export HTTPIE_CONFIG_DIR="$XDG_CONFIG_HOME"/httpie` |
 | [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[53]](https://github.com/irssi/irssi/pull/511) | `irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi` |
@@ -334,13 +335,13 @@ To find the default configuration paths, use this: `env -u HGRCPATH hg debugconf
 | [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[80]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:18](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L18). |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
-| [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | `~/.toprc` | [[81]](https://bugzilla.redhat.com/show_bug.cgi?id=1155265) |
-| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[82]](https://bugzil.la/726939) |
-| [Skype](/index.php/Skype "Skype") | `~/.Skype` | [[83]](https://community.skype.com/t5/Linux-archive/Skype-violates-XDG-basedir-spec-on-linux/td-p/4175884) |
+| [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | `~/.toprc` | [[81]](https://gitlab.com/procps-ng/procps/merge_requests/38) [[82]](https://bugzilla.redhat.com/show_bug.cgi?id=1155265) |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla` | [[83]](https://bugzil.la/726939) |
+| [Skype](/index.php/Skype "Skype") | `~/.Skype` | [[84]](https://community.skype.com/t5/Linux-archive/Skype-violates-XDG-basedir-spec-on-linux/td-p/4175884) |
 | [SpamAssassin](https://spamassassin.apache.org/) | `~/.spamassassin` |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
-| [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history` | [[84]](http://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[85]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[86]](https://bugzil.la/735285) |
+| [SQLite](/index.php/SQLite "SQLite") | `~/.sqlite_history` | [[85]](http://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[86]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird` | [[87]](https://bugzil.la/735285) |
 | [vim](/index.php/Vim "Vim") | `~/.vim` `~/.vimrc` `~/.viminfo` | Since [7.3.1178](https://github.com/vim/vim/commit/6a459902592e2a4ba68) vim will search for `~/.vim/vimrc` if `~/.vimrc` is not found. `~/.vim/vimrc` 
 ```
 set undodir=~/.cache/vim/undo " vim will not create this directory.
@@ -353,16 +354,16 @@ set viminfo+=n~/.cache/vim/viminfo
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[87]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[88]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
 | [wpa_cli](http://w1.fi/) | `~/.wpa_cli_history` |
 | [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
-| [xmonad](/index.php/Xmonad "Xmonad") | `~/.xmonad` | [[88]](https://code.google.com/p/xmonad/issues/detail?id=484) |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[89]](https://github.com/conformal/xombrero/issues/74) |
-| [zsh](/index.php/Zsh "Zsh") | `~/.zshrc` `~/.zprofile` `~/.zshenv` `~/.zlogin` `~/.zlogout` `~/.histfile` | [[90]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+| [xmonad](/index.php/Xmonad "Xmonad") | `~/.xmonad` | [[89]](https://code.google.com/p/xmonad/issues/detail?id=484) |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[90]](https://github.com/conformal/xombrero/issues/74) |
+| [zsh](/index.php/Zsh "Zsh") | `~/.zshrc` `~/.zprofile` `~/.zshenv` `~/.zlogin` `~/.zlogout` `~/.histfile` | [[91]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 

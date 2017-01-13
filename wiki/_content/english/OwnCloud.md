@@ -25,8 +25,9 @@ Nextcloud, a fork of ownCloud, is also treated in this article. For differences 
     *   [3.4 PHP](#PHP)
     *   [3.5 Initialize owncloud/nextcloud](#Initialize_owncloud.2Fnextcloud)
 *   [4 Optional but recommended security hardening](#Optional_but_recommended_security_hardening)
-    *   [4.1 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
-    *   [4.2 Protection from hacking with fail2ban](#Protection_from_hacking_with_fail2ban)
+    *   [4.1 Enable HTTP Strict Transport Security](#Enable_HTTP_Strict_Transport_Security)
+    *   [4.2 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
+    *   [4.3 Protection from hacking with fail2ban](#Protection_from_hacking_with_fail2ban)
 *   [5 Maintenance associated with Arch package updates](#Maintenance_associated_with_Arch_package_updates)
 *   [6 Synchronization](#Synchronization)
     *   [6.1 Desktop](#Desktop)
@@ -345,7 +346,7 @@ On a fresh installation, an owncloud/nextcloud admin account needs to be created
 
 Enter the administrative account (username/password) and the name of the database, database user, and database user password to initialize the instance.
 
-Once completed, if you have chosen to enable PHP caching as optionally instructed above, add the following directive to `/etc/webapps/owncloud/config/config.php` or to `/etc/webapps/nextcloud/config/config.php`:
+Once completed, if you have chosen to enable PHP caching as optionally instructed above, add the following directive to `/usr/share/webapps/owncloud/config/config.php` or to `/usr/share/webapps/nextcloud/config/config.php`:
 
 ```
 'memcache.local' => '\OC\Memcache\APCu',
@@ -353,6 +354,38 @@ Once completed, if you have chosen to enable PHP caching as optionally instructe
 ```
 
 ## Optional but recommended security hardening
+
+### Enable HTTP Strict Transport Security
+
+From [official Security and Hardening Tips](https://docs.nextcloud.com/server/11/admin_manual/configuration_server/harden_server.html):
+
+	While redirecting all traffic to HTTPS is good, it may not completely prevent man-in-the-middle attacks. Thus administrators are encouraged to set the HTTP Strict Transport Security header, which instructs browsers to not allow any connection to the Nextcloud instance using HTTP, and it attempts to prevent site visitors from bypassing invalid certificate warnings.
+
+For [Apache](/index.php/Apache "Apache"), add the following lines to your VirtualHost section used for your owncloud/nextcloud implementation:
+
+ `/etc/httpd/conf/extra/httpd-ssl.conf` 
+```
+<IfModule mod_headers.c>
+      Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+</IfModule>
+
+```
+
+The recommendation is to also include the `preload` flag in your HTST configuration:
+
+ `/etc/httpd/conf/extra/httpd-ssl.conf` 
+```
+<IfModule mod_headers.c>
+      Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
+</IfModule>
+
+```
+
+**Warning:** Ensure that you know what you are doing when adding the preload flag, your domain and all its subdomains will be added to chrome's [preload list](https://hstspreload.org/). Sites on this list will be hardcoded into chrome as being HTTPS only sites, even new users which never visited your site before will be automatically forced to use HTTPS. Since all Major browsers include chrome's list in their preload list this means that all browsers will refuse to connect to your domain using a plain HTTP connection. While this is a great way to ensure that everyone is using HTTPS to reach your site and it protects against man-in-the-middle attacks it also means that if you'd ever want to move your domain away from HTTPS you'll face problems as the [removal](https://hstspreload.org/#removal) from the preload list can take months to propagate to all users, leaving your site unreachable if your HTTPS implementation fails.
+
+Ensure that `mod_headers` is not commented in `/etc/httpd/conf/httpd.conf`.
+
+When finished, restart your webserver.
 
 ### Setting strong permissions for the filesystem
 

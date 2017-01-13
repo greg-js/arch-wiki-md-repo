@@ -273,7 +273,7 @@ Keymaps, the connection between the key pressed and the character used by the co
 
 ### 預覽和測試
 
-**提示:** 一個整理過的預覽影像資料庫：[Linux 終端機字型截圖](http://alexandre.deverteuil.net/pages/consolefonts)。
+**提示：** 一個整理過的預覽影像資料庫：[Linux 終端機字型截圖](http://alexandre.deverteuil.net/pages/consolefonts)。
 
 *showconsolefont* 指令會以表格形式顯示可用字與字元：
 

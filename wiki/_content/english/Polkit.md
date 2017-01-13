@@ -33,7 +33,7 @@ An authentication agent is used to make the user of a session prove that the use
 
 If you are using a graphical environment, make sure that a graphical authentication agent is installed and [autostarted](/index.php/Autostarting "Autostarting") on login.
 
-[Cinnamon](/index.php/Cinnamon "Cinnamon"), [Deepin](/index.php/Deepin "Deepin"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [LXQt](/index.php/LXQt "LXQt"), [MATE](/index.php/MATE "MATE") and [Xfce](/index.php/Xfce "Xfce") have an authentication agent already. In other desktop environments, you have to choose one of the following implementations:
+[Cinnamon](/index.php/Cinnamon "Cinnamon"), [Deepin](/index.php/Deepin "Deepin"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"), [KDE](/index.php/KDE "KDE"), [LXDE](/index.php/LXDE "LXDE"), [LXQt](/index.php/LXQt "LXQt"), [MATE](/index.php/MATE "MATE"), theShell and [Xfce](/index.php/Xfce "Xfce") have an authentication agent already. In other desktop environments, you have to choose one of the following implementations:
 
 *   [lxqt-policykit](https://www.archlinux.org/packages/?name=lxqt-policykit), which provides `/usr/bin/lxqt-policykit-agent`
 *   [lxsession](https://www.archlinux.org/packages/?name=lxsession), which provides `/usr/bin/lxpolkit`
@@ -41,6 +41,7 @@ If you are using a graphical environment, make sure that a graphical authenticat
 *   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/), which provides `/usr/bin/polkit-efl-authentication-agent-1`
 *   [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome), which provides `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`
 *   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent), which provides `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
+*   [ts-polkitagent](https://aur.archlinux.org/packages/ts-polkitagent/), which provides `/usr/lib/ts-polkitagent`
 *   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/), which provides `/usr/lib/xfce-polkit/xfce-polkit`
 
 ## Configuration

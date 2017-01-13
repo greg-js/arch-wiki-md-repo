@@ -22,7 +22,7 @@
         *   [2.2.3 Wicd](#Wicd)
         *   [2.2.4 NetworkManager](#NetworkManager)
         *   [2.2.5 Wifi Radar](#Wifi_Radar)
-*   [3 WPA2 企业版](#WPA2_.E4.BC.81.E4.B8.9A.E7.89.88)
+*   [3 WPA2 企业模式](#WPA2_.E4.BC.81.E4.B8.9A.E6.A8.A1.E5.BC.8F)
     *   [3.1 eduroam](#eduroam)
     *   [3.2 手工/自动配置](#.E6.89.8B.E5.B7.A5.2F.E8.87.AA.E5.8A.A8.E9.85.8D.E7.BD.AE)
         *   [3.2.1 wpa_supplicant](#wpa_supplicant)
@@ -486,13 +486,19 @@ WiFi Radar是 一个Python/PyGTK2 的管理无线配置的程序（**只有**无
 
 详情请见[Wifi Radar (简体中文)](/index.php/Wifi_Radar_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wifi Radar (简体中文)")。
 
-## WPA2 企业版
+## WPA2 企业模式
 
-*WPA2 企业版*是 WPA（[Wi-Fi Protected Access](https://zh.wikipedia.org/wiki/WPA)）的工作模式之一。It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
+*WPA2 企业模式*是 WPA（[Wi-Fi Protected Access](https://zh.wikipedia.org/wiki/WPA)）的工作模式之一。It provides better security and key management than *WPA2 Personal*, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
+
+*WPA2 企业模式* 是 WPA（[Wi-Fi Protected Access](https://zh.wikipedia.org/wiki/WPA)）的工作模式之一。相比 *WPA2 Personal* 而言，它提供了更好的安全性和密钥管理功能，同时也提供了 VLANS 和 [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection") 之类的企业功能。当然，它需要额外的 [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") 认证服务器来为用户提供认证服务，这就和只需要无线路由器或者接入点，所有用户都使用同一个密码的个人模式不同。
 
 The Enterprise mode enables users to log onto the Wi-Fi network with a username and password and/or a digital certificate. Since each user has a dynamic and unique encryption key, it also helps to prevent user-to-user snooping on the wireless network, and improves encryption strength.
 
+企业模式允许用户使用用户名和密码或者数字证书来登陆 Wi-Fi。因为每个用户都拥有一个动态唯一的加密密码，因此企业模式可以防止通过无限网络的用户探听，并提高加密强度。
+
 This section describes the configuration of [network clients](/index.php/List_of_applications#Network_managers "List of applications") to connect to a wireless access point with WPA2 Enterprise mode. See [Software access point#RADIUS](/index.php/Software_access_point#RADIUS "Software access point") for information on setting up an access point itself.
+
+本章节讲解 [network clients](/index.php/List_of_applications#Network_managers "List of applications") 使用WPA2企业模式来连接无线接入点的配置。查看 [Software access point#RADIUS](/index.php/Software_access_point#RADIUS "Software access point") 来获得如何设置接入点自身的相关信息。
 
 **注意:** Enterprise mode requires a more complex client configuration, whereas Personal mode only requires entering a passphrase when prompted. Clients likely need to install the server’s CA certificate (plus per-user certificates if using EAP-TLS), and then manually configure the wireless security and 802.1X authentication settings.
 

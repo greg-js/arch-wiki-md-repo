@@ -414,3 +414,5 @@ Alternative window managers cannot be used with [Cinnamon](/index.php/Cinnamon "
 *   LXQt - See [LXQt#Replace Openbox](/index.php/LXQt#Replace_Openbox "LXQt").
 
 *   Budgie - See [Budgie Desktop#Replace Budgie WM](/index.php/Budgie_Desktop#Replace_Budgie_WM "Budgie Desktop").
+
+*   theShell - In theShell settings, under the "Danger" category, enter the command to start the window manager in "Window Manager Command"

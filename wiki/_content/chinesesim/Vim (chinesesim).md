@@ -161,7 +161,7 @@ Vim默认只安装了英语字典。其他的字典可在[官方软件仓库](/i
 | 将单词添加到内部正确字典 | `zW` |
 | 重新进行拼写检查 | `:spellr` |
 
-**小贴士:**
+**提示：**
 
 *   如果需要针对两种语言进行拼写检察（例如英语与德语），在`~/.vimrc`或`/etc/vimrc`中添加`set spelllang=*en,de*`并重启Vim即可。
 *   使用用于进行文件类型检测的FileType插件和自建规则，可以对任意文件类型开启拼写检查。例如，要开启对扩展名为`.txt`的文件的拼写检查，创建文件`/usr/share/vim/vimfiles/ftdetect/plaintext.vim`，添加内容`autocmd BufRead,BufNewFile *.txt setfiletype plaintext`，然后在`~/.vimrc`或`/etc/vimrc`添加`autocmd FileType plaintext setlocal spell spelllang=en_us`，重启vim即可。
@@ -221,7 +221,7 @@ set guiheadroom=0
 
 使用插件来提高效率，它能改变Vim的界面，添加新命令，代码自动补全，整合其他程序和工具，添加其他编程语言等功能。
 
-**小贴士:** 参阅[Vim Awesome](http://vimawesome.com/)获取一些热门插件
+**提示：** 参阅[Vim Awesome](http://vimawesome.com/)获取一些热门插件
 
 ### 安装
 

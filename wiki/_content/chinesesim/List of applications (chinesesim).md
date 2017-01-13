@@ -373,7 +373,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 *   **Sb** — Very lightweight WebKit-based browser that uses keybindings to perform most things the URL bar would usually do.
 
@@ -1978,7 +1978,7 @@ See [Optical disc drive#CD](/index.php/Optical_disc_drive#CD "Optical disc drive
 
 *   **KWave** — KDE的声音编辑器
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **easytag** — 查看和编辑多种音频格式的 tag
 
@@ -2432,7 +2432,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[rxvt](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt")** — 公认已取代 Xterm 的虚拟终端。
 
-	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://www.archlinux.org/packages/?name=rxvt)
+	[http://rxvt.sourceforge.net/](http://rxvt.sourceforge.net/) || [rxvt](https://aur.archlinux.org/packages/rxvt/)
 
 *   **[st](/index.php/St "St")** — 简单，在Ｘ下可用。
 
@@ -2950,7 +2950,7 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — [KDE](/index.php/KDE "KDE") 办公软件套装，即 KOffice 的活跃分支。它提供了 OpenOffice 大多功能，又有智能手机和平板的版本。
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Kingsoft Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — 专有，又名 WPS.
 
@@ -3587,6 +3587,10 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 *   **[org-mode](https://en.wikipedia.org/wiki/org-mode "wikipedia:org-mode")** — [Emacs](/index.php/Emacs "Emacs") 特有的笔记模式，专于项目的计划及编写。
 
 	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
+
+*   **nixnote** — evernote的第三方开源程序（以前名叫nevernote）
+
+	[http://www.sourceforge.net/projects/nevernote](http://www.sourceforge.net/projects/nevernote) || [nixnote_beta](https://aur.archlinux.org/packages/nixnote_beta/)
 
 *   **[Tomboy](https://en.wikipedia.org/wiki/Tomboy_(software) "wikipedia:Tomboy (software)")** — Linux 和 Unix 上的桌面笔记程序，可以 wiki 形式连接众多笔记。
 
@@ -4294,7 +4298,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — 3D分子结构编辑器，查看器和仿真器(同时支持从[Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")下载数据)。
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — 可单独使用的分子建模和可视化应用，是[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL")框架的一部分。
 

@@ -1,4 +1,4 @@
-[Terminator](http://gnometerminator.blogspot.com/p/introduction.html) is a [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") supporting tabs and multiple resizable terminal panels in one window native based on [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal").
+[Terminator](http://gnometerminator.blogspot.com/p/introduction.html) is a [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator "wikipedia:Terminal emulator") which supports tabs and multiple resizable terminal panels in one window. It is based on [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal").
 
 ## Contents
 
@@ -89,7 +89,7 @@ man terminator
 
 ## Plugins
 
-Terminator also supports plugins. Please read [Writing Terminator plugins](http://www.tenshu.net/2010/04/writing-terminator-plugins.html) for more details.
+Terminator also supports plugins. See [writing Terminator plugins](http://www.tenshu.net/2010/04/writing-terminator-plugins.html) for more details.
 
 ## External resources
 

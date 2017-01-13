@@ -30,7 +30,7 @@ Recently, Lenovo has released a Bios(version 2UCN10T) for Yoga 900 13ISK2, in wh
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Card Reader](#Card_Reader)
     *   [3.2 External Monitor](#External_Monitor)
-    *   [3.3 Networking =](#Networking_.3D)
+    *   [3.3 Networking](#Networking)
     *   [3.4 Toggle Trackpad](#Toggle_Trackpad)
     *   [3.5 Screen Rotation](#Screen_Rotation)
     *   [3.6 Light Sensor](#Light_Sensor)
@@ -163,7 +163,7 @@ Sometimes you will see the following kernel message:
 
 ```
 
-### Networking =
+### Networking
 
 ### Toggle Trackpad
 

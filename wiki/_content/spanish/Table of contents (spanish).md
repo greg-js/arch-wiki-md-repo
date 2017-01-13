@@ -14,7 +14,7 @@
 | <small>2.2.</small> [Shells de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(4)</small> |
 | <small>2.3.</small> [Compresión y almacenamiendo de datos](/index.php/Category:Data_compression_and_archiving_(Espa%C3%B1ol) "Category:Data compression and archiving (Español)") <small>(1)</small> |
 | <small>2.4.</small> [Sistemas de gestión de bases de datos](/index.php/Category:Database_management_systems_(Espa%C3%B1ol) "Category:Database management systems (Español)") <small>(1)</small> |
-| <small>2.5.</small> [Emuladores](/index.php/Category:Emulators_(Espa%C3%B1ol) "Category:Emulators (Español)") <small>(3)</small> |
+| <small>2.5.</small> [Emuladores](/index.php/Category:Emulators_(Espa%C3%B1ol) "Category:Emulators (Español)") <small>(4)</small> |
 | <small>2.6.</small> [Gestores de archivos](/index.php/Category:File_managers_(Espa%C3%B1ol) "Category:File managers (Español)") <small>(2)</small> |
 | <small>2.7.</small> [Juegos](/index.php/Category:Gaming_(Espa%C3%B1ol) "Category:Gaming (Español)") <small>(5)</small> |
 | <small>2.8.</small> [Gráficos y autoedición](/index.php/Category:Graphics_and_desktop_publishing_(Espa%C3%B1ol) "Category:Graphics and desktop publishing (Español)") <small>(0)</small> |
@@ -109,5 +109,5 @@
 | <small>6.12.4.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(6) (también en [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.13.</small> [Recuperación del sistema](/index.php/Category:System_recovery_(Espa%C3%B1ol) "Category:System recovery (Español)") <small>(10)</small> |
 | <small>6.14.</small> [Virtualización](/index.php/Category:Virtualization_(Espa%C3%B1ol) "Category:Virtualization (Español)") <small>(3)</small> |
-| <small>6.14.1.</small> [Hipervisores](/index.php/Category:Hypervisors_(Espa%C3%B1ol) "Category:Hypervisors (Español)") <small>(1)</small> |
+| <small>6.14.1.</small> [Hipervisores](/index.php/Category:Hypervisors_(Espa%C3%B1ol) "Category:Hypervisors (Español)") <small>(2)</small> |
 | <small>6.15.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(17)</small> |

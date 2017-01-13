@@ -55,7 +55,7 @@
 
 另外，安装位于 [xorg-server-utils](https://www.archlinux.org/packages/?name=xorg-server-utils) 组中的某些工具以进行某些特定的配置工作。其他一些有用的工具可以在 [xorg-apps](https://www.archlinux.org/groups/x86_64/xorg-apps/) 组中找到。
 
-**小贴士:** 用户通常需要选择安装某个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 或 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")以配合使用 X。
+**提示：** 用户通常需要选择安装某个 [窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)") 或 [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")以配合使用 X。
 
 ### 驱动安装
 
@@ -91,7 +91,7 @@ $ pacman -Ss xf86-video | less
 
 *参见: [Start X at Login (简体中文)](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")*
 
-**小贴士:** 最简单的方法是使用 [登录管理器](/index.php/%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E5%99%A8 "登录管理器") 例如 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)"), [KDM](/index.php/KDM "KDM") or [SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)").
+**提示：** 最简单的方法是使用 [登录管理器](/index.php/%E7%99%BB%E5%BD%95%E7%AE%A1%E7%90%86%E5%99%A8 "登录管理器") 例如 [GDM](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)"), [KDM](/index.php/KDM "KDM") or [SLiM](/index.php/SLiM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SLiM (简体中文)").
 
 如果不用登陆管理器启动 X，需要安装软件包 [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit)。
 

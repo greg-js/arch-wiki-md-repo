@@ -49,7 +49,7 @@ The goal of this article is to setup Postfix and explain what the basic configur
 
 ### master.cf
 
-`/etc/postfix/master.cf` is the master configuration file where you can specify what kinds of protocols you will serve. It is also the place where you can put your new pipes e.g. to check for Spam!
+`/etc/postfix/master.cf` is the master configuration file where you can specify which protocols will be served. It is also the place where you can put your new pipes e.g. to check for Spam!
 
 It is recommended to enable secure SMTP as described in [#Secure SMTP (sending)](#Secure_SMTP_.28sending.29) and [#Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29).
 

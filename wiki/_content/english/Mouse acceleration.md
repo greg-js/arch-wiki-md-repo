@@ -16,6 +16,7 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
     *   [1.3 Using xinput](#Using_xinput)
     *   [1.4 Configuration example](#Configuration_example)
 *   [2 Disabling mouse acceleration](#Disabling_mouse_acceleration)
+*   [3 Mouse speed](#Mouse_speed)
 
 ## Setting mouse acceleration
 
@@ -172,9 +173,9 @@ If you are satisfied of the results, store the preceding commands in `~/.xinitrc
 
 ## Disabling mouse acceleration
 
-Mouse acceleration has changed dramatically in recent X server versions; using `xset` to disable acceleration doesn't work as it used to and is not recommended anymore.
+Mouse acceleration has changed dramatically in recent X server versions; using `xset` to disable acceleration doesn't work as it used to and is not recommended anymore. Recent changes on `PointerAcceleration` can be read [here](http://xorg.freedesktop.org/wiki/Development/Documentation/PointerAcceleration#Introduction).
 
-Recent changes on `PointerAcceleration` can be read [here](http://xorg.freedesktop.org/wiki/Development/Documentation/PointerAcceleration#Introduction).
+Disabling the mouse acceleration means that a linear function will be used to map from physical to virtual mouse movements. The mouse speed setting controls the inclination of this linear function.
 
 To completely disable any sort of acceleration/deceleration, create the following file:
 
@@ -191,7 +192,7 @@ EndSection
 
 and restart X.
 
-Since [libinput](https://www.archlinux.org/packages/?name=libinput)-1.1.0-1 and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)-0.15.0-1 you can use a flat acceleration profile which will give a 1:1 mapping of physical to virtual mouse movements. To enable it put this in the following file:
+Alternatively, since [libinput](https://www.archlinux.org/packages/?name=libinput)-1.1.0-1 and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)-0.15.0-1 you can use a flat acceleration profile. To enable it create the following file:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
 ```
@@ -205,4 +206,11 @@ EndSection
 
 and restart X.
 
-**Note:** The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. The Speed setting is a fraction that is added (or subtracted) to 100%, e.g. -0.3 is 70% of the normal speed, and 0.5 is 150%. For example, to adjust the mouse speed down to 50%, use `xinput --set-prop 8 'libinput Accel Speed' -0.5`.
+## Mouse speed
+
+The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. The Speed setting is a fraction that is added (or subtracted) to 100%, e.g. -0.3 is 70% of the normal speed, and 0.5 is 150%. For example, to adjust the mouse speed down to 50%, use
+
+```
+$ xinput --set-prop 9 'libinput Accel Speed' -0.5
+
+```

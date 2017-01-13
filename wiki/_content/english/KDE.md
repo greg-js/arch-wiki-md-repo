@@ -441,8 +441,6 @@ Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://com
 
 Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
 
-More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/).
-
 ##### How do I index a removable device?
 
 By default every removable device is blacklisted. You just have to remove your device from the blacklist in the KCM panel.
@@ -451,7 +449,9 @@ By default every removable device is blacklisted. You just have to remove your d
 
 #### Konqueror and Rekonq
 
-Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is supported by Konqueror since version 16.12\. There is a [community continuation](https://qtwebkit.blogspot.com/2016/08/qtwebkit-im-back.html) of QtWebKit.
+Konqueror supports two rendering engines – KHTML and the [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine (via the [qt5-webengine](https://www.archlinux.org/packages/?name=qt5-webengine) package).
+
+Rekonq uses QtWebKit, which is [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project.
 
 A successor named Fiber is currently in development, which will use Chromium's engine.
 
@@ -509,7 +509,7 @@ Edit Akonadi configuration file so that it has the following contents:
 
  `~/.config/akonadi/akonadiserverrc` 
 ```
-[General]
+[%General]
 Driver=QPSQL
 
 [QPSQL]
@@ -535,7 +535,7 @@ Edit Akonadi configuration file to match the configuration below:
 
  `~/.config/akonadi/akonadiserverrc` 
 ```
-[General]
+[%General]
 Driver=QSQLITE3
 
 [QSQLITE3]

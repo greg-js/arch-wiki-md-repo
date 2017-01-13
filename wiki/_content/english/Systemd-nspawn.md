@@ -103,11 +103,11 @@ From there it's rather easy to setup Debian or Ubuntu environments:
 
 ```
 # cd /var/lib/machines
-# debootstrap <codename> myContainer <repository>
+# debootstrap <codename> myContainer <repository-url>
 
 ```
 
-For Debian valid code names are either the rolling names like "stable" and "testing" or release names like "stretch" and "sid", for Ubuntu the code name like "wily" or "hardy" should be used. A complete list is in /usr/share/debootstrap/scripts
+For Debian valid code names are either the rolling names like "stable" and "testing" or release names like "stretch" and "sid", for Ubuntu the code name like "wily" or "hardy" should be used. A complete list of codenames is in `/usr/share/debootstrap/scripts`. In case of a Debian image the "repository-url" can be `[http://deb.debian.org/debian/](http://deb.debian.org/debian/)`.
 
 Unlike Arch, Debian and Ubuntu will not let you login without a password on first login. To set the root password login without the '-b' option and set a password:
 

@@ -562,7 +562,7 @@ Muchos clientes de los que se enumeran aquí (incluyendo Pidgin y todas sus vari
 
 *   **[Skype](/index.php/Skype "Skype")** — Popular aplicación P2P para la comunicación de voz, de alta calidad.
 
-	[http://www.skype.com/](http://www.skype.com/) || [skype](https://www.archlinux.org/packages/?name=skype)
+	[http://www.skype.com/](http://www.skype.com/) || [skype](https://aur.archlinux.org/packages/skype/)
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak")** — Aplicación VoIP propietaria que tiene a los videojugadores como destinatarios principales.
 
@@ -912,7 +912,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — Navegador web basado en WebKit para KDE.
 
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://www.archlinux.org/packages/?name=rekonq)
+	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 *   **Sb** — Navegador muy ligero basado en WebKit que utiliza combinaciones de teclas para realizar la mayoría de las cosas que suele hacer la barra de direcciones.
 
@@ -1200,7 +1200,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://kolourpaint.org](http://kolourpaint.org) || [kdegraphics-kolourpaint](https://www.archlinux.org/packages/?name=kdegraphics-kolourpaint)
 
-*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software de dibujo e ilustración digital basado en la plataforma KDE y en las bibliotecas de Calligra. Parte del grupo [calligra](https://www.archlinux.org/groups/x86_64/calligra/).
+*   **[Krita](https://en.wikipedia.org/wiki/Krita "wikipedia:Krita")** — Software de dibujo e ilustración digital basado en la plataforma KDE y en las bibliotecas de Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
 	[http://krita.org/](http://krita.org/) || [calligra-krita](https://www.archlinux.org/packages/?name=calligra-krita)
 
@@ -1248,7 +1248,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://inkscape.org/](http://inkscape.org/) || [inkscape](https://www.archlinux.org/packages/?name=inkscape)
 
-*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor de gráficos vectoriales, que forma parte de la suite Calligra. Parte del grupo [calligra](https://www.archlinux.org/groups/x86_64/calligra/).
+*   **[Karbon](https://en.wikipedia.org/wiki/Karbon_(software) "wikipedia:Karbon (software)")** — Editor de gráficos vectoriales, que forma parte de la suite Calligra. Parte del grupo [calligra](https://www.archlinux.org/packages/?name=calligra).
 
 	[http://www.calligra-suite.org/karbon/](http://www.calligra-suite.org/karbon/) || [calligra-karbon](https://www.archlinux.org/packages/?name=calligra-karbon)
 
@@ -1449,7 +1449,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[Banshee](https://en.wikipedia.org/wiki/Banshee_(media_player) "wikipedia:Banshee (media player)")** — Clon de [iTunes](https://en.wikipedia.org/wiki/iTunes "wikipedia:iTunes"), compilado con GTK+ y [Mono](/index.php/Mono "Mono"), rico en características y desarrollado activamente.
 
-	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://www.archlinux.org/packages/?name=banshee)
+	[http://banshee.fm/](http://banshee.fm/) || [banshee](https://aur.archlinux.org/packages/banshee/)
 
 *   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Clon de Amarok 1.4, portado a Qt 4.
 
@@ -1649,7 +1649,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **KWave** — Editor de sonido para KDE.
 
-	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://aur.archlinux.org/packages/kwave/)
+	[http://kwave.sourceforge.net/](http://kwave.sourceforge.net/) || [kwave](https://www.archlinux.org/packages/?name=kwave)
 
 *   **[Qtractor](https://en.wikipedia.org/wiki/Qtractor "wikipedia:Qtractor")** — Grabador de disco duro basado en Qt y estación de trabajo de audio digital que tiene como objetivo proporcionar software de estación de trabajo de audio digital lo suficientemente simple para el usuario doméstico medio, y sin embargo, lo suficientemente poderoso para el usuario profesional .
 
@@ -1909,7 +1909,7 @@ Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page
 
 *   **ClipIt** — Fork de Parcellite con características adicionales y corrección de errores.
 
-	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://www.archlinux.org/packages/?name=clipit)
+	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
 *   **CopyQ** — Gestor de portapapeles inteligente con búsqueda e historial editables, acciones personalizadas sobre elementos y soporte para línea de órdenes.
 
@@ -2297,7 +2297,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 *   **[Calligra](https://en.wikipedia.org/wiki/Calligra_Suite "wikipedia:Calligra Suite")** — Fork de KOffice desarrollado activamente, la suite de ofimática de [KDE](/index.php/KDE "KDE"). Soporta la mayoría de las características de OpenOffice al tiempo que ofrece también versiones para smartphones (Calligra Mobile) y tabletas (Calligra Activo) .
 
-	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/groups/x86_64/calligra/)
+	[http://www.calligra-suite.org/](http://www.calligra-suite.org/) || [calligra](https://www.archlinux.org/packages/?name=calligra)
 
 *   **[Kingsoft Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Suite de productividad ofimática propietaria, también llamada WPS.
 
@@ -2639,7 +2639,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Xcas](https://en.wikipedia.org/wiki/Xcas "wikipedia:Xcas")** — Interfaz de usuario de Giac, un sistema de álgebra computacional básica gratuita.
 
-	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://aur.archlinux.org/packages/xcas/)
+	[http://www-fourier.ujf-grenoble.fr/~parisse/giac.html](http://www-fourier.ujf-grenoble.fr/~parisse/giac.html) || [xcas](https://www.archlinux.org/packages/?name=xcas)
 
 #### Ciencia o técnica computacional
 
@@ -2780,7 +2780,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, visor y simulador de estructuras moleculares en 3D (también admite la descarga de archivos desde el [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
 
-	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
+	[http://avogadro.openmolecules.net/wiki/Main_Page](http://avogadro.openmolecules.net/wiki/Main_Page) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
 
 *   **BALLView** — Modelador molecular independiente y aplicación de visualización, parte del marco [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL").
 
@@ -3042,7 +3042,7 @@ Vea también [Comparación de gestores de ventanas de X (en Inglés)](https://en
 
 #### Basado en tiles (baldosas)
 
-*   **[PyTyle3](/index.php/PyTyle "PyTyle")** — Un tiler automático que es compatible con Openbox Multihead y de mayor rápidez y con menor consumo de recursos.
+*   **PyTyle3** — Un tiler automático que es compatible con Openbox Multihead y de mayor rápidez y con menor consumo de recursos.
 
 	[https://github.com/BurntSushi/pytyle3](https://github.com/BurntSushi/pytyle3) || [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/)
 

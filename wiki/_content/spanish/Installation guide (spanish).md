@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2016-11-03**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=455593).
+**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2017-01-11**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=463062).
 
 Este documento es una guía para la instalación de [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que le eche un vistazo a [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)").
 
@@ -32,7 +32,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ## Preinstalación
 
-*   Arch Linux puede ser ejecutado en cualquier máquina [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) o [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible, con un mínimo de 256 MB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) puede tomar alrededor de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, necesitará una conexión a Internet funcional.
+*   Arch Linux puede ser ejecutado en cualquier máquina [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) o [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") compatible, con un mínimo de 256 MB de RAM, o 512 MB para x86_64\. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) puede tomar alrededor de 800 MB de espacio en disco. Dado que el proceso de instalación necesita obtener los paquetes desde un repositorio remoto, necesitará una conexión a Internet funcional.
 
 *   Descargue e inicie el soporte de instalación como se explica en [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Iniciará sesión como usuario root en la primera [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console"), y se le presentará con el intérprete de órdenes [Zsh](/index.php/Zsh "Zsh"); órdenes comunes como [systemctl(1)](http://man7.org/linux/man-pages/man1/systemctl.1.html) pueden ser [completadas con el tabulador](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion").
 
@@ -50,7 +50,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 *   Si el modo UEFI está activado en una placa base [UEFI](/index.php/UEFI "UEFI"), [Archiso](/index.php/Archiso "Archiso") [arrancará](/index.php/Boot "Boot") en consecuencia a través de [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Para comprobar esto, enumere el contenido del directorio [efivars](/index.php/UEFI#UEFI_Variables "UEFI"): `# ls /sys/firmware/efi/efivars` 
 
-*   Si no existe el directorio, el sistema se iniciará en modo [BIOS](https://en.wikipedia.org/wiki/es:BIOS "w:es:BIOS") (o CSM).
+*   Si no existe el directorio, el sistema se iniciará en modo [BIOS](https://en.wikipedia.org/wiki/es:BIOS "w:es:BIOS") (o CSM). Referirse al manual de su tarjeta madre para detalles.
 
 ### Conectarse a Internet
 
@@ -147,7 +147,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ### Nombre del equipo
 
-*   Cree el archivo `/etc/hostname` con el [nombre del equipo](/index.php/Network_configuration#Set_the_hostname "Network configuration") deseado:
+*   Cree el archivo [hostname(5)](http://man7.org/linux/man-pages/man5/hostname.5.html):
 
  `/etc/hostname` 
 ```
@@ -155,7 +155,7 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ```
 
-*   Considere añadir una [entrada similar](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") en [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
+*   Considere añadir una entrada similar en [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html):
 
  `/etc/hosts` 
 ```
@@ -165,11 +165,13 @@ Para obtener instrucciones más detalladas, consulte los artículos relacionados
 
 ```
 
+*   Ver también [Establecer el nombre del equipo](/index.php/Network_configuration_(Espa%C3%B1ol)#Establecer_el_nombre_del_equipo "Network configuration (Español)").
+
 ### Configuración de la conexión de red
 
 *   Configure la red de nuevo para el entorno recién instalado: consulte [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 
-*   Para la [configuración de la red inalámbrica](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Install "Install") los paquetes [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), y [dialog](https://www.archlinux.org/packages/?name=dialog), y, si se diese el caso, los [paquetes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
+*   Para la [configuración de la red inalámbrica](/index.php/Wireless_configuration "Wireless configuration"), [instale](/index.php/Install "Install") los paquetes [iw](https://www.archlinux.org/packages/?name=iw) y [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) y, si se diera el caso, los [paquetes de firmware](/index.php/Wireless#Installing_driver.2Ffirmware "Wireless"). Opcionalmente instalar [dialog](https://www.archlinux.org/packages/?name=dialog) para uso del *menú-wifi*.
 
 ### Initramfs
 

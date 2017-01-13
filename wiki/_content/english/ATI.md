@@ -125,7 +125,7 @@ The following options apply to `/etc/X11/xorg.conf.d/**20-radeon.conf**`.
 
 Please read `man radeon` and [RadeonFeature](http://www.x.org/wiki/RadeonFeature/#index4h2) first before applying driver options.
 
-**Acceleration architecture**; Glamor is available as 2D acceleration method implement through OpenGL, and it should work with R600 and newer graphic cards. Since xf86-video-ati 7.2.0, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards the method can be forced by adding AccelMethod **glamor** to the configuration file (it will be enabled by default on all capable cards [in the next release](https://cgit.freedesktop.org/xorg/driver/xf86-video-ati/commit/?id=f11531c99fcd6473f58b4d10efaf3efd84304d8e)):
+**Acceleration architecture**; Glamor is available as a 2D acceleration method implemented through OpenGL, and it should work with R600 and newer graphic cards. Since xf86-video-ati 7.2.0, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards, the method can be forced by adding AccelMethod **glamor** to the configuration file (it will be enabled by default on all capable cards [in the next release](https://cgit.freedesktop.org/xorg/driver/xf86-video-ati/commit/?id=f11531c99fcd6473f58b4d10efaf3efd84304d8e)):
 
 ```
 Option "AccelMethod" "glamor"
@@ -139,14 +139,14 @@ Option "DRI" "3"
 
 ```
 
-**TearFree** is a tearing prevention using the hardware page flipping mechanism. Enabling this option currently disables Option "EnablePageFlip":
+**TearFree** is a tearing prevention option which prevents tearing by using the hardware page flipping mechanism. Enabling this option currently disables Option "EnablePageFlip":
 
 ```
 Option "TearFree" "on"
 
 ```
 
-**ColorTiling** and **ColorTiling2D** are supposedly to be enabled by default. Tiled mode can provide significant performance benefits with 3D applications. It will be disabled if the DRM module is too old or if the current display configuration does not support it. KMS ColorTiling2D is only supported on R600 and newer chips:
+**ColorTiling** and **ColorTiling2D** are supposed to be enabled by default. Tiled mode can provide significant performance benefits with 3D applications. It is disabled if the DRM module is too old or if the current display configuration does not support it. KMS ColorTiling2D is only supported on R600 and newer chips:
 
 ```
 Option "ColorTiling" "on"
@@ -154,14 +154,14 @@ Option "ColorTiling2D" "on"
 
 ```
 
-When using Glamor as acceleration architecture it is possible to enable the option **ShadowPrimary**, enables a so-called "shadow primary" buffer for fast CPU access to pixel data, and separate scanout buf‐fers for each display controller (CRTC). This may improve performance for some 2D workloads, potentially at the expense of other (e.g. 3D, video) workloads. Note that enabling this option currently disables Option "EnablePageFlip":
+When using Glamor as acceleration architecture, it is possible to enable the **ShadowPrimary** option, which enables a so-called "shadow primary" buffer for fast CPU access to pixel data, and separate scanout buffers for each display controller (CRTC). This may improve performance for some 2D workloads, potentially at the expense of other (e.g. 3D, video) workloads. Note that enabling this option currently disables Option "EnablePageFlip":
 
 ```
 Option "ShadowPrimary" "on"
 
 ```
 
-**EXAVSync** is only available when using EXA and can be enabled to avoid tearing by stalling the engine until the display controller has passed the destination region. It reduces tearing at the cost of performance and has been know to cause instability on some chips:
+**EXAVSync** is only available when using EXA and can be enabled to avoid tearing by stalling the engine until the display controller has passed the destination region. It reduces tearing at the cost of performance and has been known to cause instability on some chips:
 
 ```
 Option "EXAVSync" "yes"
@@ -183,15 +183,15 @@ EndSection
 
 ```
 
-**Tip:** [driconf](https://www.archlinux.org/packages/?name=driconf) is a tool that allows to modify several settings: vsync, anisotropic filtering, texture compression, etc. Using this tool it is also possible to "disable Low Impact fallback" needed by some programs (e.g. Google Earth).
+**Tip:** [driconf](https://www.archlinux.org/packages/?name=driconf) is a tool which allows several settings to be modified: vsync, anisotropic filtering, texture compression, etc. Using this tool it is also possible to "disable Low Impact fallback" needed by some programs (e.g. Google Earth).
 
 ### Kernel parameters
 
-**Tip:** You may want to debug the newly parameters with `systool` as stated in [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules").
+**Tip:** You may want to debug the new parameters with `systool` as stated in [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules").
 
-Defining the **gartsize**, if not autodetected, can be done by adding `radeon.gartsize=32` into [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+Defining the **gartsize**, if not autodetected, can be done by adding `radeon.gartsize=32` as a [kernel parameter](/index.php/Kernel_parameters "Kernel parameters").
 
-**Note:** Setting this parameter should not be needed anymore with modern AMD videocards:
+**Note:** Setting this parameter should not be needed anymore with modern AMD video cards:
 ```
 [drm] Detected VRAM RAM=2048M, BAR=256M
 [drm] radeon: 2048M of VRAM memory ready
@@ -205,23 +205,23 @@ The changes take effect at the next reboot.
 
 Since kernel 3.6, PCI Express 2.0 in **radeon** is turned on by default.
 
-It may be unstable with some motherboards, deactivation can be done by adding `radeon.pcie_gen2=0` as a [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+It may be unstable with some motherboards. It can be deactivated by adding `radeon.pcie_gen2=0` as a [kernel parameter](/index.php/Kernel_parameters "Kernel parameters").
 
 See [Phoronix article](http://www.phoronix.com/scan.php?page=article&item=amd_pcie_gen2&num=1) for more information.
 
 ### Gallium Heads-Up Display
 
-The radeonsi driver supports activating a heads up display which can draw transparent graphs and text on top of applications that are rendering such as games. These can show such values as the current frame rate or the CPU load for each CPU core or an average of all of them. The HUD is controlled by the GALLIUM_HUD environment variable, and can be passed the following list of parameters among others:
+The radeonsi driver supports the activation of a heads-up display (HUD) which can draw transparent graphs and text on top of applications that are rendering, such as games. These can show values such as the current frame rate or the CPU load for each CPU core or an average of all of them. The HUD is controlled by the GALLIUM_HUD environment variable, and can be passed the following list of parameters among others:
 
 *   "fps" - displays current frames per second
 *   "cpu" - displays the average CPU load
 *   "cpu0" - displays the CPU load for the first CPU core
 *   "cpu0+cpu1" - displays the CPU load for the first two CPU cores
 *   "draw-calls" - displays how many times each material in an object is drawn to the screen
-*   "requested-VRAM" - displayed how much VRAM is being used on the GPU
+*   "requested-VRAM" - displays how much VRAM is being used on the GPU
 *   "pixels-rendered" - displays how many pixels are being displayed
 
-To see a full list of parameters as well as some notes on operating GALLIUM_HUD you can also pass the "help" parameter to a simple application such as glxgears and see the corresponding terminal output:
+To see a full list of parameters, as well as some notes on operating GALLIUM_HUD, you can also pass the "help" parameter to a simple application such as glxgears and see the corresponding terminal output:
 
  `# GALLIUM_HUD="help" glxgears` 
 
