@@ -25,7 +25,7 @@
 
 ## Status
 
-Sway is a work-in-progress so caution is advised. However, the project's creator, [Drew DeVault](https://drewdevault.com/) (aka SirCmpwn) has deemed ready for regular use.
+Sway is a work-in-progress so caution is advised. However, the project's creator, [Drew DeVault](https://drewdevault.com/) (aka SirCmpwn) has deemed it ready for regular use.
 
 A detailed accounting of what features have been implemented and what features are still outstanding can be found at the following links:
 

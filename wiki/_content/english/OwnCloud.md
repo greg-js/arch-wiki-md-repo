@@ -1,4 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)." The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
+From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"): "ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)." The ownCloud installation and configuration mainly depends on what web server and database you decide to run.
 
 Nextcloud, a fork of ownCloud, is also treated in this article. For differences between Nextcloud and ownCloud see [[1]](https://en.wikipedia.org/wiki/Nextcloud#Differences_from_ownCloud).
 
@@ -9,25 +9,23 @@ Nextcloud, a fork of ownCloud, is also treated in this article. For differences 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Installation](#Installation)
 *   [3 Setup](#Setup)
-    *   [3.1 Local router and host firewall](#Local_router_and_host_firewall)
-    *   [3.2 Database Setup](#Database_Setup)
-        *   [3.2.1 Mariadb](#Mariadb)
-    *   [3.3 Webserver Setup](#Webserver_Setup)
-        *   [3.3.1 Apache configuration](#Apache_configuration)
-            *   [3.3.1.1 WebDAV](#WebDAV)
-            *   [3.3.1.2 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
-        *   [3.3.2 Nginx](#Nginx)
-            *   [3.3.2.1 1\. Temporary configuration to generate certificates only](#1._Temporary_configuration_to_generate_certificates_only)
-            *   [3.3.2.2 2\. Final configuration with encryption](#2._Final_configuration_with_encryption)
-            *   [3.3.2.3 php-fpm configuration](#php-fpm_configuration)
-            *   [3.3.2.4 uWSGI configuration (optional)](#uWSGI_configuration_.28optional.29)
-                *   [3.3.2.4.1 Activation](#Activation)
-    *   [3.4 PHP](#PHP)
-    *   [3.5 Initialize owncloud/nextcloud](#Initialize_owncloud.2Fnextcloud)
-*   [4 Optional but recommended security hardening](#Optional_but_recommended_security_hardening)
-    *   [4.1 Enable HTTP Strict Transport Security](#Enable_HTTP_Strict_Transport_Security)
-    *   [4.2 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
-    *   [4.3 Protection from hacking with fail2ban](#Protection_from_hacking_with_fail2ban)
+    *   [3.1 Database Setup](#Database_Setup)
+        *   [3.1.1 MariaDB](#MariaDB)
+    *   [3.2 Webserver Setup](#Webserver_Setup)
+        *   [3.2.1 Apache](#Apache)
+            *   [3.2.1.1 WebDAV](#WebDAV)
+            *   [3.2.1.2 Running ownCloud in a subdirectory](#Running_ownCloud_in_a_subdirectory)
+        *   [3.2.2 Nginx](#Nginx)
+            *   [3.2.2.1 PHP-FPM configuration](#PHP-FPM_configuration)
+    *   [3.3 PHP](#PHP)
+    *   [3.4 Initialize owncloud/nextcloud](#Initialize_owncloud.2Fnextcloud)
+*   [4 Security Hardening](#Security_Hardening)
+    *   [4.1 Let's Encrypt](#Let.27s_Encrypt)
+        *   [4.1.1 nginx](#nginx_2)
+    *   [4.2 uWSGI](#uWSGI)
+        *   [4.2.1 Activation](#Activation)
+    *   [4.3 Setting strong permissions for the filesystem](#Setting_strong_permissions_for_the_filesystem)
+    *   [4.4 Protection from hacking with fail2ban](#Protection_from_hacking_with_fail2ban)
 *   [5 Maintenance associated with Arch package updates](#Maintenance_associated_with_Arch_package_updates)
 *   [6 Synchronization](#Synchronization)
     *   [6.1 Desktop](#Desktop)
@@ -35,84 +33,71 @@ Nextcloud, a fork of ownCloud, is also treated in this article. For differences 
         *   [6.1.2 Contacts](#Contacts)
         *   [6.1.3 Mounting files with davfs2](#Mounting_files_with_davfs2)
     *   [6.2 Android](#Android)
-*   [7 Important notes](#Important_notes)
-    *   [7.1 SABnzbd](#SABnzbd)
-*   [8 An all-in-one alternative with Docker](#An_all-in-one_alternative_with_Docker)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
-    *   [9.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
-    *   [9.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
-    *   [9.4 Cannot create data directory (/path/to/dir)](#Cannot_create_data_directory_.28.2Fpath.2Fto.2Fdir.29)
-    *   [9.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
-    *   [9.6 Seeing white page after login](#Seeing_white_page_after_login)
-    *   [9.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
-    *   [9.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
-    *   [9.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
-    *   [9.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
-    *   [9.11 Password not saved](#Password_not_saved)
-*   [10 Upload and Share from File Manager](#Upload_and_Share_from_File_Manager)
-*   [11 Tips and tricks](#Tips_and_tricks)
-    *   [11.1 Switch to Cron from AJAX](#Switch_to_Cron_from_AJAX)
-    *   [11.2 Collabora Online Office integration](#Collabora_Online_Office_integration)
-*   [12 See also](#See_also)
+    *   [6.3 SABnzbd](#SABnzbd)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Self-signed certificate not accepted](#Self-signed_certificate_not_accepted)
+    *   [7.2 Self-signed certificate for Android devices](#Self-signed_certificate_for_Android_devices)
+    *   [7.3 Cannot write into config directory!](#Cannot_write_into_config_directory.21)
+    *   [7.4 Cannot create data directory (/path/to/dir)](#Cannot_create_data_directory_.28.2Fpath.2Fto.2Fdir.29)
+    *   [7.5 CSync failed to find a specific file.](#CSync_failed_to_find_a_specific_file.)
+    *   [7.6 Seeing white page after login](#Seeing_white_page_after_login)
+    *   [7.7 GUI sync client fails to connect](#GUI_sync_client_fails_to_connect)
+    *   [7.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
+    *   [7.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
+    *   [7.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+*   [8 Tips and tricks](#Tips_and_tricks)
+    *   [8.1 Docker](#Docker)
+    *   [8.2 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
+    *   [8.3 Switch to Cron from AJAX](#Switch_to_Cron_from_AJAX)
+    *   [8.4 Collabora Online Office integration](#Collabora_Online_Office_integration)
+*   [9 See also](#See_also)
 
 ## Prerequisites
 
-Both the [owncloud](https://www.archlinux.org/packages/?name=owncloud) and [nextcloud](https://aur.archlinux.org/packages/nextcloud/) packages require several components to function including: a [web server](/index.php/Category:Web_server "Category:Web server"), [PHP](/index.php/PHP "PHP"), and a [database](/index.php/Category:Database_management_systems "Category:Database management systems"). These components are collectively refereed to as a [LAMP stack](/index.php/LAMP "LAMP"), which is recommended upstream by both [owncloud](https://doc.owncloud.org/server/9.1/admin_manual/installation/system_requirements.html#recommended-setup-for-running-owncloud) and [nextcloud](https://docs.nextcloud.com/server/11/admin_manual/installation/system_requirements.html#recommended-setup-for-running-nextcloud). Alternatively, many users opt for a [LEMP stack](/index.php/LEMP "LEMP") which uses [nginx](/index.php/Nginx "Nginx") rather than [Apache](/index.php/Apache "Apache") due to the lighter footprint, contextually better performance, and reduced system overhead nginx provides. This article provides configuration samples for both web servers.
+Both the [owncloud](https://www.archlinux.org/packages/?name=owncloud) and [nextcloud](https://aur.archlinux.org/packages/nextcloud/) package require several components:
 
-Users are directed to the above linked articles for detailed installation instructions; in brief summary, the minimal needed packages are:
+*   A web server: [Apache](/index.php/Apache "Apache") or [nginx](/index.php/Nginx "Nginx")
+*   A database: [MariaDB](/index.php/MariaDB "MariaDB") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
+*   [PHP](/index.php/PHP "PHP") with [additional modules](#PHP).
 
-1.  [Install](/index.php/Install "Install") either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline).
-2.  Install the following, assuming the backend to use is mysqld: [php-gd](https://www.archlinux.org/packages/?name=php-gd), [php-intl](https://www.archlinux.org/packages/?name=php-intl), [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt), and [mariadb](https://www.archlinux.org/packages/?name=mariadb).
+Make sure the required components are correctly setup before configuring/installing OwnCloud/Nextcloud.
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [owncloud](https://www.archlinux.org/packages/?name=owncloud) package. Alternatively, if using *Nextcloud*, install the [nextcloud](https://aur.archlinux.org/packages/nextcloud/) package.
+[Install](/index.php/Install "Install") the [owncloud](https://www.archlinux.org/packages/?name=owncloud) or [nextcloud](https://aur.archlinux.org/packages/nextcloud/) package.
 
 ## Setup
 
-**Note:** This section and its subsections assume that the package-provided conf/ini files are the starting points as many of the owncloud/nextcloud required options are uncommented/present by default.
-
-### Local router and host firewall
-
-It is beyond the scope of this guide to cover port forwarding in a local router and local firewall configuration. These are two steps that are required to expose a port or ports (eg https) to the WAN to allow the webserver to run.
-
 ### Database Setup
 
-#### Mariadb
+#### MariaDB
 
-After following the initial setup in [MySQL#Installation](/index.php/MySQL#Installation "MySQL"), a database and user *within mariadb* need to be created. The below code gives an example. Users are encouraged to change the password given below ("lrGzTRgZed923!xzz") as it is only there an illustrative example. Although not required, user may also substitute the database and user name given with alternative ("cloud"=database and "clouduser"=user):
+**Note:** It's is highly recommended to set `binlog_format` to *mixed* [[2]](https://docs.nextcloud.com/server/11/admin_manual/configuration_database/linux_database_configuration.html#db-binlog-label) in `/etc/mysql/my.cnf`.
 
+The following is an example of setting up a [MariaDB](/index.php/MariaDB "MariaDB") database and user:
+
+ `$ mysql -u root -p` 
 ```
-$ mysql -u root -p
-create database cloud;
-create user clouduser@localhost identified by 'lrGzTRgZed923!xzz';
-grant all privileges on cloud.* to clouduser@localhost identified by 'lrGzTRgZed923!xzz';
-flush privileges;
-exit;
-
+mysql> CREATE DATABASE `**nextcloud**` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
+mysql> CREATE USER `**nextcloud**`@'localhost' IDENTIFIED BY '**password'**;
+mysql> GRANT ALL PRIVILEGES ON `**nextcloud**`.* TO `**nextcloud**`@`localhost`;
+mysql> \q
 ```
-
-A [restart](/index.php/Restart "Restart") of `mariadb.service` is required.
 
 ### Webserver Setup
 
-As mentioned above, either [apache](https://www.archlinux.org/packages/?name=apache) or [nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) can be used to drive the cloud instance. Other webservers may also work, but at this point in time, this article describes setup for these two. Readers may skip to the section corresponding to the server matching his or her installation.
+**Warning:** It is recommended to use TLS/SSL (HTTPS) over plain HTTP, see [Apache#TLS/SSL](/index.php/Apache#TLS.2FSSL "Apache") or [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for examples and implement this in the examples given below.
 
-#### Apache configuration
+#### Apache
 
-**Note:** Make sure PHP is enabled, as described in [Apache HTTP Server#PHP](/index.php/Apache_HTTP_Server#PHP "Apache HTTP Server").
-
-If using *Nextcloud*, substitute `owncloud` for `nextcloud` in this section.
-
-Copy the Apache configuration file to its configuration directory:
+Copy the Apache configuration file to the configuration directory:
 
 ```
 # cp /etc/webapps/owncloud/apache.example.conf /etc/httpd/conf/extra/owncloud.conf
 
 ```
 
-And include it at the bottom of `/etc/httpd/conf/httpd.conf`:
+And include it in `/etc/httpd/conf/httpd.conf`:
 
 ```
 Include conf/extra/owncloud.conf
@@ -123,11 +108,9 @@ Now restart Apache (`httpd.service`).
 
 Open [http://localhost/owncloud](http://localhost/owncloud) in your browser. You should now be able to create a user account and follow the installation wizard.
 
-**Note:** Moving your data folder to another location might conflict with the open_basedir option set in the default apache configuration file.
-
 ##### WebDAV
 
-ownCloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV (not enabled by default with Apache), disable `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[2]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
+ownCloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV (not enabled by default), disable the modules `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[3]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
 
 ##### Running ownCloud in a subdirectory
 
@@ -148,32 +131,47 @@ In `/etc/nginx/nginx.conf`, add the following lines under the "http" section:
 
 ```
 server_names_hash_bucket_size 64;
-include /etc/nginx/conf.d/*.conf;
+include conf.d/*.conf;
 
 ```
 
-From this point on, setup is a 2-step procedure:
+From this point on, it is recommended to obtain a secure-certificates using [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt"), see [#Security Hardening](#Security_Hardening).
 
-1.  Run the server on port 80 (http protocol) only to obtain certificates using [certbot](https://www.archlinux.org/packages/?name=certbot).
-2.  Configure the server to run the encryption (https protocol) using the certificates.
+##### PHP-FPM configuration
 
-##### 1\. Temporary configuration to generate certificates only
+Make sure PHP-FPM has been configured correctly as described in [Nginx#PHP configuration](/index.php/Nginx#PHP_configuration "Nginx").
 
-Create the cloud configuration `/etc/nginx/conf.d/cloud-initial.conf` using [this initial file](https://github.com/graysky2/configs/blob/master/nginx/nextcloud-initial.conf) as a template. Substitute the literal "@@FQDN@@" in the template file with the actual [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) to be used.
+Uncomment `env[PATH] = /usr/local/bin:/usr/bin:/bin` in `/etc/php/php-fpm.d/www.conf` and [restart](/index.php/Restart "Restart") `php-fpm.service` to apply the changes.
 
-The certs for the server need to be generated using this unencrypted configuration initially. Follow the steps outlined on [Let’s_Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") to generate the server encryption certificates.
+### PHP
 
-##### 2\. Final configuration with encryption
+**Tip:** For all prerequisite PHP modules, see upstream documentation: [ownCloud 9.2](https://doc.owncloud.org/server/9.2/admin_manual/installation/source_installation.html#prerequisites) or [Nextcloud 11.0](https://docs.nextcloud.com/server/11/admin_manual/installation/source_installation.html#prerequisites).
 
-Upon successfully generating certificates, replace `/etc/nginx/conf.d/cloud-initial.conf` (it may be safely renamed so long as it does not end in ".conf" or simply deleted) with a new file, `/etc/nginx/conf.d/cloud.conf` using [this file](https://github.com/graysky2/configs/blob/master/nginx/nextcloud.conf) as a template. Again, substitute the literal "@@FQDN@@" in the template file with the actual [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) to be used. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") `nginx.service`.
+Install [PHP#gd](/index.php/PHP#gd "PHP"), [php-intl](https://www.archlinux.org/packages/?name=php-intl) and [php-mcrypt](https://www.archlinux.org/packages/?name=php-mcrypt) as additional modules.
 
-##### php-fpm configuration
+Depending on which database backend is used:
 
-The supported configuration from the official documentation uses [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) for [PHP](/index.php/PHP "PHP"). Modify `/etc/php/php-fpm.d/www.conf` uncommenting the following: `env[PATH] = /usr/local/bin:/usr/bin:/bin`
+*   For [MySQL](/index.php/MySQL "MySQL"), see [PHP#MySQL/MariaDB](/index.php/PHP#MySQL.2FMariaDB "PHP").
+*   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), see [PHP#PostgreSQL](/index.php/PHP#PostgreSQL "PHP").
+*   For [SQLite](/index.php/SQLite "SQLite"), see [PHP#Sqlite](/index.php/PHP#Sqlite "PHP").
 
-[Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") `php-fpm.service`.
+Performance may be improved through the implementation of [caching](/index.php/PHP#Caching "PHP"), see [Configuring Memory Caching](https://docs.nextcloud.com/server/11/admin_manual/configuration_server/caching_configuration.html) on the official documentation for details.
 
-##### uWSGI configuration (optional)
+### Initialize owncloud/nextcloud
+
+Simple open the address OwnCloud/Nextcloud has been configured on, e.g. [https://www.example.com/](https://www.example.com/).
+
+## Security Hardening
+
+### Let's Encrypt
+
+#### nginx
+
+1\. Create the cloud configuration `/etc/nginx/conf.d/cloud-initial.conf` using [this initial file](https://github.com/graysky2/configs/blob/master/nginx/nextcloud-initial.conf) as a template. Substitute the literal "@@FQDN@@" in the template file with the actual [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) to be used. The certs for the server need to be generated using this unencrypted configuration initially. Follow the steps outlined on [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") to generate the server encryption certificates.
+
+2\. Upon successfully generating certificates, replace `/etc/nginx/conf.d/cloud-initial.conf` (it may be safely renamed so long as it does not end in ".conf" or simply deleted) with a new file, `/etc/nginx/conf.d/cloud.conf` using [this file](https://github.com/graysky2/configs/blob/master/nginx/nextcloud.conf) as a template. Again, substitute the literal "@@FQDN@@" in the template file with the actual [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) to be used. [Start](/index.php/Start "Start") and optionally [enable](/index.php/Enable "Enable") `nginx.service`.
+
+### uWSGI
 
 You can run *ownCloud* in its own process and service by using the [uWSGI](/index.php/UWSGI "UWSGI") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. *uWSGI* itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
 
@@ -297,7 +295,7 @@ cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php
 
 **Warning:** The way the [ownCloud background job](https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/owncloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
 
-###### Activation
+#### Activation
 
 [uWSGI](/index.php/UWSGI "UWSGI") provides a [template unit](/index.php/Systemd#Using_units "Systemd") that allows to start and enable application using their configuration file name as instance identifier. For example:
 
@@ -318,74 +316,6 @@ To enable the uwsgi service by default at start-up, run:
 **Note:** Here we make use of [systemd socket activation](http://0pointer.de/blog/projects/socket-activation.html) to prevent unnecessary resources consumption when no connections are made to the instance. If you would rather have it constantly active, simply remove the `.socket` part to start and enable the service instead.
 
 See also [UWSGI#Starting service](/index.php/UWSGI#Starting_service "UWSGI").
-
-### PHP
-
-**Tip:** For all prerequisite PHP modules, see upstream documentation: [ownCloud 9.2](https://doc.owncloud.org/server/9.2/admin_manual/installation/source_installation.html#prerequisites) or [Nextcloud 11.0](https://docs.nextcloud.com/server/11/admin_manual/installation/source_installation.html#prerequisites).
-
-In `/etc/php/php.ini`, uncomment `gd.so`.
-
-Depending on which database backend is to be used, in `/etc/php/php.ini`, uncomment the following extensions:
-
-*   For [MySQL](/index.php/MySQL "MySQL"), `mysqli.so` and `pdo_mysql.so`.
-*   For [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), `pdo_pgsql.so` and `pgsql.so`, and install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql).
-*   For [SQLite](/index.php/SQLite "SQLite"), `pdo_sqlite.so` and `sqlite3.so`, and install [php-sqlite](https://www.archlinux.org/packages/?name=php-sqlite).
-
-Enhanced performance is achieved through the recommended implementation of PHP caching using [PHP#APCu](/index.php/PHP#APCu "PHP"), and [PHP#OPCache](/index.php/PHP#OPCache "PHP"). In `/etc/php/conf.d/apcu.ini`, uncomment `apcu.so`.
-
-In `/etc/php/php.ini`, uncomment `opcache.so`.
-
-### Initialize owncloud/nextcloud
-
-On a fresh installation, an owncloud/nextcloud admin account needs to be created and the initial setup needs to occur. This is accomplished by pointing a browser to the FQDN defined in the webserver config:
-
-```
-[https://www.mydomain.com](https://www.mydomain.com)
-
-```
-
-Enter the administrative account (username/password) and the name of the database, database user, and database user password to initialize the instance.
-
-Once completed, if you have chosen to enable PHP caching as optionally instructed above, add the following directive to `/usr/share/webapps/owncloud/config/config.php` or to `/usr/share/webapps/nextcloud/config/config.php`:
-
-```
-'memcache.local' => '\OC\Memcache\APCu',
-
-```
-
-## Optional but recommended security hardening
-
-### Enable HTTP Strict Transport Security
-
-From [official Security and Hardening Tips](https://docs.nextcloud.com/server/11/admin_manual/configuration_server/harden_server.html):
-
-	While redirecting all traffic to HTTPS is good, it may not completely prevent man-in-the-middle attacks. Thus administrators are encouraged to set the HTTP Strict Transport Security header, which instructs browsers to not allow any connection to the Nextcloud instance using HTTP, and it attempts to prevent site visitors from bypassing invalid certificate warnings.
-
-For [Apache](/index.php/Apache "Apache"), add the following lines to your VirtualHost section used for your owncloud/nextcloud implementation:
-
- `/etc/httpd/conf/extra/httpd-ssl.conf` 
-```
-<IfModule mod_headers.c>
-      Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
-</IfModule>
-
-```
-
-The recommendation is to also include the `preload` flag in your HTST configuration:
-
- `/etc/httpd/conf/extra/httpd-ssl.conf` 
-```
-<IfModule mod_headers.c>
-      Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
-</IfModule>
-
-```
-
-**Warning:** Ensure that you know what you are doing when adding the preload flag, your domain and all its subdomains will be added to chrome's [preload list](https://hstspreload.org/). Sites on this list will be hardcoded into chrome as being HTTPS only sites, even new users which never visited your site before will be automatically forced to use HTTPS. Since all Major browsers include chrome's list in their preload list this means that all browsers will refuse to connect to your domain using a plain HTTP connection. While this is a great way to ensure that everyone is using HTTPS to reach your site and it protects against man-in-the-middle attacks it also means that if you'd ever want to move your domain away from HTTPS you'll face problems as the [removal](https://hstspreload.org/#removal) from the preload list can take months to propagate to all users, leaving your site unreachable if your HTTPS implementation fails.
-
-Ensure that `mod_headers` is not commented in `/etc/httpd/conf/httpd.conf`.
-
-When finished, restart your webserver.
 
 ### Setting strong permissions for the filesystem
 
@@ -486,7 +416,7 @@ When the Arch owncloud package is updated via pacman, it may become necessary to
 
 ### Desktop
 
-The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) package. Alternative versions are avaiable in the [AUR](/index.php/AUR "AUR"): [owncloud-client-beta](https://aur.archlinux.org/packages/owncloud-client-beta/), [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/) and [owncloud-client-qt5](https://aur.archlinux.org/packages/owncloud-client-qt5/). Its use is described in [this page](http://doc.owncloud.org/server/7.0/user_manual/files/sync.html) of the documentation.
+The official client can be installed with the [owncloud-client](https://www.archlinux.org/packages/?name=owncloud-client) or [nextcloud-client](https://aur.archlinux.org/packages/nextcloud-client/) package. Alternative versions are available in the [AUR](/index.php/AUR "AUR"): [owncloud-client-beta](https://aur.archlinux.org/packages/owncloud-client-beta/), [owncloud-client-git](https://aur.archlinux.org/packages/owncloud-client-git/) and [owncloud-client-qt5](https://aur.archlinux.org/packages/owncloud-client-qt5/).
 
 #### Calendar
 
@@ -542,38 +472,13 @@ There is an official Android app available for a [small donation on the Play Sto
 To enable contacts and calendar sync:
 
 *   if using Android 4+:
-    1.  download [[3]](https://davdroid.bitfire.at/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
+    1.  download [[4]](https://davdroid.bitfire.at/) ([Play Store](https://play.google.com/store/apps/details?id=at.bitfire.davdroid), [F-Droid](https://f-droid.org/app/at.bitfire.davdroid))
     2.  Enable mod_rewrite.so in httpd.conf
     3.  create a new DAVdroid account in the *Account* settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; *DAVdroid* will find itself the right URLs)
 
 	For an older version of the app but with still useful info, see [this article](http://www.slsmk.com/sync-android-contacts-calendar-and-files-to-owncloud/).
 
 *   if using an Android version below 4.0 and favouring Free/Libre software solutions, give a try to [aCal](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=com.morphoss.acal) for calendar and contacts sync or CalDAV Sync Adapter ([F-Droid](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=org.gege.caldavsyncadapter)) for just calendar sync; if you are willing to use non-libre software, then the [recommended solution](http://doc.owncloud.org/server/7.0/user_manual/pim/contacts.html#synchronizing-with-android) is to use [CardDAV-Sync and CalDAV-Sync](http://dmfs.org/).
-
-## Important notes
-
-*   When using a subdomain (like cloud.example.net), make sure it is covered by your certificate. Otherwise, connection via the ownCloud client or webdav might fail.
-
-*   If you are planning on using ownCloud's [sync-clients](http://owncloud.org/sync-clients/), make sure to have [ntpd](/index.php/Ntpd "Ntpd") installed and running on your ownCloud server, otherwise the sync-clients will fail.
-
-*   Add some [SSL encryption](/index.php/LAMP#TLS.2FSSL "LAMP") to your connection!
-
-(If adding SSL encryption as above, be sure to edit /etc/httpd/conf/extra/httpd-ssl.conf and change DocumentRoot "/srv/http" to DocumentRoot "/usr/share/webapps/owncloud" )
-
-*   More Apps for ownCloud can be found [here](http://apps.owncloud.com/)
-
-*   To install an new application, download the zip from the apps store, extract it into /srv/http/owncloud/apps/.
-
-Afterwards restart httpd:
-
-```
-# systemctl restart httpd
-
-```
-
-log into your server go to the app sections you should see the new apps in there,
-
-*   If you are protecting access to your ownCloud location with HTTP basic auth, the file "status.php" must be excluded from auth and be publicly accessible. [[4]](https://github.com/owncloud/mirall/issues/734)
 
 ### SABnzbd
 
@@ -585,12 +490,6 @@ folder_rename 0
 ```
 
 in your sabnzbd.ini file, because ownCloud will scan the files as soon as they get uploaded, preventing SABnzbd from removing UNPACKING prefixes etc.
-
-## An all-in-one alternative with Docker
-
-A alternative to installing and configuring your own *ownCloud* is to use a 3rd party supported [Docker](/index.php/Docker "Docker") image. You can find several images of fully working LAMP stack with pre-installed *ownCloud* in the [Docker repositories](https://index.docker.io/search?q=ownCloud). *Docker* containers are generally safer than a [chroot](/index.php/Chroot "Chroot") environment and the overhead is very low; *ownCloud* in Docker works smoothly even on quite old machines. The whole setup including installing *Docker* and *ownCloud* image is considerably easier and quicker than a native installation but you must trust the third party whom you have now given complete control to regarding the installation of your ownCloud instance.
-
-**Note:** Docker images are not officially supported by ownCloud.
 
 ## Troubleshooting
 
@@ -838,17 +737,15 @@ While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param 
 ...
 ```
 
-### Password not saved
-
-If the password are not saved and asked on every startup try to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring), helped under xfce4.
-
-Optional dependencies for gnome-keyring: [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring). This worked under [deepin](https://www.archlinux.org/groups/x86_64/deepin/)
-
-## Upload and Share from File Manager
-
-You can use the following script to quickly upload and share files to your ownCloud installation from Thunar (and possibly other filemanagers): [https://github.com/schiesbn/shareLinkCreator](https://github.com/schiesbn/shareLinkCreator) You need to edit the file with the proper configuration settings. **Note: password is stored as plain text.**
-
 ## Tips and tricks
+
+### Docker
+
+See the [ownCloud](https://hub.docker.com/_/owncloud/)] or [Nextcloud](https://github.com/nextcloud/docker) repository for [Docker](/index.php/Docker "Docker").
+
+### Upload and share from File Manager
+
+[shareLinkCreator](https://github.com/schiesbn/shareLinkCreator) provides the ability to upload a file to OwnCloud via a supported file manager and receive a link to the uploaded file which can then be emailed or shared in another way.
 
 ### Switch to Cron from AJAX
 

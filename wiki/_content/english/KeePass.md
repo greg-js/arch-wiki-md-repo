@@ -55,7 +55,7 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 
 ### Firefox
 
-*   [KeeFox](http://keefox.org/) ([RPC plugin](https://aur.archlinux.org/packages/keepass-plugin-rpc/))
+*   [KeeFox](http://keefox.org/) ([keepass-plugin-rpc](https://aur.archlinux.org/packages/keepass-plugin-rpc/))
 
 Firefox extension that links the browser to existing or new KeePass database. KeeFox needs to be setup before it is fully functional.
 

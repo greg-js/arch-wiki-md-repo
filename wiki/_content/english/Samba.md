@@ -10,7 +10,6 @@
     *   [1.5 Adding a user](#Adding_a_user)
     *   [1.6 Changing Samba user's password](#Changing_Samba_user.27s_password)
     *   [1.7 Required ports](#Required_ports)
-    *   [1.8 Sample configuration](#Sample_configuration)
 *   [2 Client configuration](#Client_configuration)
     *   [2.1 List Public Shares](#List_Public_Shares)
     *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
@@ -62,27 +61,17 @@ To get started you can copy the default config file `/etc/samba/smb.conf.default
 
 ```
 
-The available options are documented in the `smb.conf` man page ([link](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html)). Whenever you modify the file run the `testparm` command to check for syntactic errrors.
+The available options are documented in the [smb.conf(5)](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) man page. Whenever you modify the file run the `testparm` command to check for syntactic errrors.
 
 ### Creating a share
 
-Open `/etc/samba/smb.conf` and scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory. However, users cannot actually log in unless you add a users wildcard.
-
- `/etc/samba/smb.conf` 
-```
-...
-[homes]
-   comment = Home Directories
-   browseable = no
-   writable = yes
-   valid users = %S
-```
+Open `/etc/samba/smb.conf` and scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory.
 
 The `workgroup` specified in `smb.conf` has to match the in use Windows workgroup (default `WORKGROUP`).
 
 ### Starting services
 
-To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smbd.service` and/or `nmbd.service` services. See [smbd](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) and [nmbd](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) manpages for details, as the `nmbd.service` service may not always be required.
+To provide basic file sharing through SMB [start/enable](/index.php/Start/enable "Start/enable") `smbd.service` and/or `nmbd.service` services. See the [smbd(8)](http://www.samba.org/samba/docs/man/manpages-3/smbd.8.html) and [nmbd(8)](http://www.samba.org/samba/docs/man/manpages-3/nmbd.8.html) man pages for details, as the `nmbd.service` service may not always be required.
 
 **Tip:** Instead of having the service running since boot, you can enable `smbd.socket` so the daemon is started on the first incoming connection. Do not forget to disable `smbd.service`.
 
@@ -176,56 +165,6 @@ To change a user's password, use `smbpasswd`:
 ### Required ports
 
 If you are using a [firewall](/index.php/Firewall "Firewall"), do not forget to open required ports (usually 137-139 + 445). For a complete list please check [Samba port usage](https://wiki.samba.org/index.php/Samba_port_usage).
-
-### Sample configuration
-
-See `man smb.conf` for details and explanation of configuration options. There is also an [online version](http://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) available.
-
- `/etc/samba/smb.conf` 
-```
-[global]
-  deadtime = 60 ; This is useful to stop a server's resources being exhausted by a large number of inactive connections
-  disable netbios = yes ; Disable netbios announcing
-  dns proxy = no ; nmbd spawns a second copy of itself to do the DNS name lookup requests on 'yes'
-  hosts allow = 192.168.1\. 127\. 10\. ; This parameter is a comma, space, or tab delimited set of hosts which are permitted to access a service
-  invalid users = root ; This is a list of users that should not be allowed to login to this service
-  security = user ; Use as standalone file server
-  map to guest = Bad User ; Means user logins with an invalid password are rejected, or allow guest login and mapped into the guest account
-  max connections = 100 ; Number of simultaneous connections to a service to be limited
-  workgroup = WORKGROUP ; Workgroup the server will appear to be in when queried by clients
-
-  ; Uncomment the following lines to disable printer support
-  ;load printers = no
-  ;printing = bsd
-  ;printcap name = /dev/null
-  ;disable spoolss = yes
-
-  ; Default permissions for all shares  
-  inherit owner = yes ; Take the ownership of the parent directory when creating files/folders
-  create mask = 0664 ; Create file mask
-  directory mask = 0775 ; Create director mask
-  force create mode = 0664 ; Force create file mask
-  force directory mode = 0775 ; Force create directory mask
-
-; Private Share
-[private] ; translate into: \\server\private
-  comment = My Private Share ; Seen next to a share when a client queries the server
-  path = /path/to/data ; Directory to which the user of the service is to be given access
-  read only = no ; An inverted synonym to writeable.
-  valid users = user1 user2 @group1 @group2; restrict a service to a particular set of users and/or groups
-
-; Public Share
-;[public]
-; comment = My Public Share
-; path = /path/to/public
-; read only = yes
-; guest ok = yes; No password required to connect to the service
-
-```
-
-Restart the `smbd` service to apply configuration changes.
-
-**Note:** Connected clients may need to reconnect before configuration changes take effect.
 
 ## Client configuration
 
@@ -504,12 +443,7 @@ Samba offers an option to block files with certain patterns, like file extension
 
 If nothing is known about other systems on the local network, and automated tools such as [smbnetfs](#smbnetfs) are not available, the following methods allow one to manually probe for Samba shares.
 
-1\. First, install [nmap](https://www.archlinux.org/packages/?name=nmap) and [smbclient](https://www.archlinux.org/packages/?name=smbclient) using [pacman](/index.php/Pacman "Pacman"):
-
-```
-# pacman -S nmap smbclient
-
-```
+1\. First, [install](/index.php/Install "Install") the [nmap](https://www.archlinux.org/packages/?name=nmap) and [smbclient](https://www.archlinux.org/packages/?name=smbclient) packages.
 
 2\. `nmap` checks which ports are open:
 
@@ -852,7 +786,7 @@ mount.cifs //server/share /mnt/point -o sec=ntlmssp,...
 
 ```
 
-See: [man 8 mount.cifs](https://www.samba.org/samba/docs/man/manpages-3/mount.cifs.8.html) **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
+See the [mount.cifs(8)](https://www.samba.org/samba/docs/man/manpages-3/mount.cifs.8.html) man page: **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
 
 ## See also
 

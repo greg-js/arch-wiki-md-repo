@@ -195,70 +195,74 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
 *   [70 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
 *   [71 The Stanley Parable](#The_Stanley_Parable)
     *   [71.1 Game won't start](#Game_won.27t_start)
-*   [72 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [72.1 Start with black screen](#Start_with_black_screen)
-    *   [72.2 No English fonts](#No_English_fonts)
-*   [73 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [73.1 No sound](#No_sound_6)
-*   [74 Strike Suite Zero](#Strike_Suite_Zero)
-    *   [74.1 Dependencies](#Dependencies_36)
-*   [75 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+*   [72 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+    *   [72.1 Dependencies](#Dependencies_36)
+*   [73 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [73.1 Start with black screen](#Start_with_black_screen)
+    *   [73.2 No English fonts](#No_English_fonts)
+*   [74 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [74.1 No sound](#No_sound_6)
+*   [75 Strike Suite Zero](#Strike_Suite_Zero)
     *   [75.1 Dependencies](#Dependencies_37)
-*   [76 Tabletop Simulator](#Tabletop_Simulator)
-    *   [76.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [77 Team Fortress 2](#Team_Fortress_2)
-    *   [77.1 Dependencies](#Dependencies_38)
-    *   [77.2 Making HRTF work](#Making_HRTF_work)
-    *   [77.3 Loading screen freeze](#Loading_screen_freeze)
-    *   [77.4 No audio](#No_audio_4)
-    *   [77.5 Slow loading textures](#Slow_loading_textures)
-*   [78 Terraria](#Terraria)
-*   [79 This War of Mine](#This_War_of_Mine)
-    *   [79.1 Game doesn't load](#Game_doesn.27t_load)
-    *   [79.2 Sound glitches (on steam-native)](#Sound_glitches_.28on_steam-native.29)
-*   [80 Tomb Raider](#Tomb_Raider)
-    *   [80.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [80.2 Steam Controller not working ingame while being correctly recognised* by Steam outside of the game](#Steam_Controller_not_working_ingame_while_being_correctly_recognised.2A_by_Steam_outside_of_the_game)
-*   [81 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [81.1 Crash on launch](#Crash_on_launch)
-*   [82 Transistor](#Transistor)
-    *   [82.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [83 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [83.1 Troubleshooting](#Troubleshooting)
-    *   [83.2 Dependencies](#Dependencies_39)
-*   [84 Trine 2](#Trine_2)
-    *   [84.1 Dependencies](#Dependencies_40)
-    *   [84.2 Colors](#Colors)
-    *   [84.3 Sound](#Sound)
-    *   [84.4 Resolution](#Resolution)
-*   [85 Unity of Command](#Unity_of_Command)
+*   [76 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+    *   [76.1 Dependencies](#Dependencies_38)
+*   [77 Tabletop Simulator](#Tabletop_Simulator)
+    *   [77.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [78 Team Fortress 2](#Team_Fortress_2)
+    *   [78.1 Dependencies](#Dependencies_39)
+    *   [78.2 Making HRTF work](#Making_HRTF_work)
+    *   [78.3 Loading screen freeze](#Loading_screen_freeze)
+    *   [78.4 No audio](#No_audio_4)
+    *   [78.5 Slow loading textures](#Slow_loading_textures)
+*   [79 Terraria](#Terraria)
+*   [80 This War of Mine](#This_War_of_Mine)
+    *   [80.1 Game doesn't load](#Game_doesn.27t_load)
+    *   [80.2 Sound glitches (on steam-native)](#Sound_glitches_.28on_steam-native.29)
+*   [81 Tomb Raider](#Tomb_Raider)
+    *   [81.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [81.2 Steam Controller not working ingame while being correctly recognised* by Steam outside of the game](#Steam_Controller_not_working_ingame_while_being_correctly_recognised.2A_by_Steam_outside_of_the_game)
+*   [82 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [82.1 Crash on launch](#Crash_on_launch)
+*   [83 Transistor](#Transistor)
+    *   [83.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [84 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [84.1 Troubleshooting](#Troubleshooting)
+    *   [84.2 Dependencies](#Dependencies_40)
+*   [85 Trine 2](#Trine_2)
     *   [85.1 Dependencies](#Dependencies_41)
-    *   [85.2 Squares](#Squares)
-    *   [85.3 No audio](#No_audio_5)
-*   [86 Unity3D](#Unity3D)
-    *   [86.1 Locale Settings](#Locale_Settings)
-    *   [86.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [86.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-*   [87 Unrest](#Unrest)
+    *   [85.2 Colors](#Colors)
+    *   [85.3 Sound](#Sound)
+    *   [85.4 Resolution](#Resolution)
+*   [86 Tropico 5](#Tropico_5)
+    *   [86.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [87 Unity of Command](#Unity_of_Command)
     *   [87.1 Dependencies](#Dependencies_42)
-*   [88 War Thunder](#War_Thunder)
-    *   [88.1 Blank screen](#Blank_screen)
-*   [89 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+    *   [87.2 Squares](#Squares)
+    *   [87.3 No audio](#No_audio_5)
+*   [88 Unity3D](#Unity3D)
+    *   [88.1 Locale Settings](#Locale_Settings)
+    *   [88.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [88.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+*   [89 Unrest](#Unrest)
     *   [89.1 Dependencies](#Dependencies_43)
-    *   [89.2 Blank screen](#Blank_screen_2)
-*   [90 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [90.1 Dependencies](#Dependencies_44)
-    *   [90.2 Game does not start](#Game_does_not_start_7)
-*   [91 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [91.1 Dependencies](#Dependencies_45)
-*   [92 World of Goo](#World_of_Goo)
-    *   [92.1 Changing resolution](#Changing_resolution)
-*   [93 Worms Reloaded](#Worms_Reloaded)
+*   [90 War Thunder](#War_Thunder)
+    *   [90.1 Blank screen](#Blank_screen)
+*   [91 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+    *   [91.1 Dependencies](#Dependencies_44)
+    *   [91.2 Blank screen](#Blank_screen_2)
+*   [92 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [92.1 Dependencies](#Dependencies_45)
+    *   [92.2 Game does not start](#Game_does_not_start_7)
+*   [93 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
     *   [93.1 Dependencies](#Dependencies_46)
-*   [94 XCOM](#XCOM)
-    *   [94.1 Dependencies](#Dependencies_47)
-    *   [94.2 Hangs on startup](#Hangs_on_startup)
-    *   [94.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+*   [94 World of Goo](#World_of_Goo)
+    *   [94.1 Changing resolution](#Changing_resolution)
+*   [95 Worms Reloaded](#Worms_Reloaded)
+    *   [95.1 Dependencies](#Dependencies_47)
+*   [96 XCOM](#XCOM)
+    *   [96.1 Dependencies](#Dependencies_48)
+    *   [96.2 Hangs on startup](#Hangs_on_startup)
+    *   [96.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Air Brawl
 
@@ -343,11 +347,9 @@ If that does not fix the issue, unplug any joystick or joystick adapter devices 
 
 ### Game does not start, displays text window with unreadable text
 
-Right click on `ARK:Survival Evolved` on your game list, click on `Properties`, click on `SET LAUNCH OPTIONS`, then add this:
+Right click on the game's entry in your Steam library, click on `Properties`, then `SET LAUNCH OPTIONS`, and add this line:
 
-MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400 %command%
-
-as launch option in steam
+ `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400 %command%` 
 
 ## Audiosurf 2
 
@@ -1441,6 +1443,18 @@ rm ~/.local/share/Steam/steamapps/common/The\ Stanley\ Parable/bin/libstdc++.so.
 
 ```
 
+## Shadow Tactics: Blades of the Shogun
+
+### Dependencies
+
+*   [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc)
+*   [lib32-libx11](https://www.archlinux.org/packages/?name=lib32-libx11)
+*   [lib32-libxcursor](https://www.archlinux.org/packages/?name=lib32-libxcursor)
+*   [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr)
+*   [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5)
+*   [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) (or any vendor specific libgl like nvidia version)
+*   [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib)
+
 ## Steel Storm: Burning Retribution
 
 ### Start with black screen
@@ -1731,6 +1745,14 @@ frequency=48000
 ### Resolution
 
 If the game resolution is wrong when using a dual monitor setup and you can't see the whole window edit `~/.frozenbyte/Trine2/options.txt` and change the options `ForceFullscreenWidth` and `ForceFullscreenHeight` to the resolution of your monitor on which you want to play the game.
+
+## Tropico 5
+
+### Blank screen with sound only on startup
+
+Right click on the game's entry in your Steam library, click on `Properties`, then `SET LAUNCH OPTIONS`, and add this line:
+
+ `MESA_GL_VERSION_OVERRIDE=4.0 MESA_GLSL_VERSION_OVERRIDE=400 %command%` 
 
 ## Unity of Command
 

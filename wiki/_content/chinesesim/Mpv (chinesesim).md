@@ -27,7 +27,7 @@
 
 ## 安装
 
-[Install](/index.php/Install "Install") [mpv](https://www.archlinux.org/packages/?name=mpv) 可以从 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") [official repositories](/index.php/Official_repositories "Official repositories") 或 [mpv-git](https://aur.archlinux.org/packages/mpv-git/) 安装mpv。
+[安装](/index.php/Install "Install") [official repositories](/index.php/Official_repositories "Official repositories")里的软件包[mpv](https://www.archlinux.org/packages/?name=mpv) or [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 里的 [mpv-git](https://aur.archlinux.org/packages/mpv-git/)。
 
 ### 前端
 

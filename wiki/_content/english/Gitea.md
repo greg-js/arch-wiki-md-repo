@@ -31,8 +31,8 @@ The following is an example of setting up [MariaDB](/index.php/MariaDB "MariaDB"
  `$ mysql -u root -p` 
 ```
 mysql> CREATE DATABASE `gitea` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
-mysql> CREATE USER **gitea**@'localhost' IDENTIFIED BY '**password'**;
-mysql> GRANT ALL ON `gitea`.* TO 'gitea'@'localhost';
+mysql> CREATE USER `gitea`@'localhost' IDENTIFIED BY 'password';
+mysql> GRANT ALL PRIVILEGES ON `gitea`.* TO `gitea`@`localhost`;
 mysql> \q
 ```
 

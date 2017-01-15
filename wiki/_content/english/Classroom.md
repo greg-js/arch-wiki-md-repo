@@ -27,13 +27,13 @@ Classes are announced on arch-general, the forums, and other broadcasting places
 Classes that have already happened. (Maybe students and teachers could write up some info on the experience, similar to the arch con pages.)
 
 | **Date** | **Class Title** | **Instructor(s)** | **Logs** |
-| 2013-09-14 | *Beginners Guide to Package Maintaining* | gtmanfred and KaiSforza | [16:45 UTC](https://archwomen.org/media/project_classroom/classlogs/2013-09-14-beginner_pkgbuilds1.txt) |
-| 2014-04-19 | *PKGBUILD Class* | CalimeroTeknik | [9:30 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_09%3a30-UTC.txt) and [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_16%3a00-UTC.txt) |
-| 2014-05-31 | *A First Look at the Linux Kernel* | jy2wong | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-05-31-a_first_look_at_the_linux_kernel.txt) |
-| 2014-09-05 | *Introduction to Scheme and Functional Programming* | nisstyre | [20:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-09-05-introduction_to_scheme_and_functional_programming.txt) |
-| 2015-05-17 | *An Imperfect Introduction to Static Typing* | HalosGhost | [23:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2015-05-17-an_imperfect_introduction_to_static_typing.txt) |
-| 2016-07-16 | *Git for Gits* | polyzen and meskarune | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-07-16-git_for_gits.txt) |
 | 2016-12-11 | *Getting started with Arch Linux packaging* | halosghost and meskarune | [19:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-12-11-getting_started_with_arch_linux_packaging.txt) |
+| 2016-07-16 | *Git for Gits* | polyzen and meskarune | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-07-16-git_for_gits.txt) |
+| 2015-05-17 | *An Imperfect Introduction to Static Typing* | HalosGhost | [23:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2015-05-17-an_imperfect_introduction_to_static_typing.txt) |
+| 2014-09-05 | *Introduction to Scheme and Functional Programming* | nisstyre | [20:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-09-05-introduction_to_scheme_and_functional_programming.txt) |
+| 2014-05-31 | *A First Look at the Linux Kernel* | jy2wong | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-05-31-a_first_look_at_the_linux_kernel.txt) |
+| 2014-04-19 | *PKGBUILD Class* | CalimeroTeknik | [9:30 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_09%3a30-UTC.txt) and [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2014-04-19-pkgbuilds_16%3a00-UTC.txt) |
+| 2013-09-14 | *Beginners Guide to Package Maintaining* | gtmanfred and KaiSforza | [16:45 UTC](https://archwomen.org/media/project_classroom/classlogs/2013-09-14-beginner_pkgbuilds1.txt) |
 
 ### Requested classes
 

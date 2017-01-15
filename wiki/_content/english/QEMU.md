@@ -1534,6 +1534,8 @@ $ qemu-system-i386 -k *keymap* *disk_image*
 
 ```
 
+On a Wayland session manually setting the keymap doesn't seem to work and it's reported as a bug with a suggested patch [[3]](https://bugs.launchpad.net/qemu/+bug/1578192).
+
 ### Guest display stretches on window resize
 
 To restore default window size, press `Ctrl+Alt+u`.

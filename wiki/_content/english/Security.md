@@ -37,9 +37,12 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [7.6 grsecurity](#grsecurity)
 *   [8 Sandboxing applications](#Sandboxing_applications)
     *   [8.1 Firejail](#Firejail)
-    *   [8.2 chroots](#chroots)
-    *   [8.3 Linux containers](#Linux_containers)
-    *   [8.4 Other virtualization options](#Other_virtualization_options)
+    *   [8.2 bubblewrap](#bubblewrap)
+        *   [8.2.1 bubblewrap Unbound in a simple sandbox](#bubblewrap_Unbound_in_a_simple_sandbox)
+    *   [8.3 playpen](#playpen)
+    *   [8.4 chroots](#chroots)
+    *   [8.5 Linux containers](#Linux_containers)
+    *   [8.6 Other virtualization options](#Other_virtualization_options)
 *   [9 Network and firewalls](#Network_and_firewalls)
     *   [9.1 Firewalls](#Firewalls)
     *   [9.2 Kernel parameters](#Kernel_parameters)
@@ -365,11 +368,34 @@ The [grsecurity](/index.php/Grsecurity "Grsecurity") kernel provides many securi
 
 ## Sandboxing applications
 
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel and may prevent certain sandboxing features from being made available to applications. The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package sets `CONFIG_USER_NS=y` and is a viable alternative to the stock kernel if the ability to create user namepaces as an unprivileged user is desired.
+
 ### Firejail
 
-[Firejail](/index.php/Firejail "Firejail") is an easy to use and simple tool for sandboxing applications and servers alike. Firejail is suggested for browsers and internet facing applications, as well as any servers you may be running. Firejail is further enhanced when used with Grsecurity.
+[Firejail](/index.php/Firejail "Firejail") is an easy to use and simple tool for sandboxing applications and servers alike. Firejail is suggested for browsers and internet facing applications, as well as any servers you may be running. Firejail is further enhanced when used with [Grsecurity](/index.php/Grsecurity "Grsecurity").
 
-**Tip:** If you do not require to sandbox graphical applications, an alternative is [playpen](https://www.archlinux.org/packages/?name=playpen).
+### bubblewrap
+
+[bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) is a setuid sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with an even smaller resource footprint than Firejail. While it lacks certain features such as file path whitelisting, bubblewrap does offer bind mounts as well as the creation of user/IPC/PID/network/cgroup namespaces and can support both simple and [complex sandboxes](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh).
+
+#### bubblewrap [Unbound](/index.php/Unbound "Unbound") in a simple sandbox
+
+*   Bind as read-only the system `/usr` directory to `/usr` in the sandbox
+*   Create symbolic link from system `/usr/lib` directory to `/lib64` in the sandbox
+*   Bind as read-only the system `/etc` directory to `/etc` in the sandbox
+*   Create empty `/var` and `/run` directories within the sandbox
+*   Mount a new devtmpfs filesystem to `/dev` in the sandbox
+*   Try to create a new user namepace and skip its creation if restricted
+*   Create new IPC and PID and [control group](/index.php/Cgroups "Cgroups") namespaces
+
+```
+/usr/bin/bwrap --ro-bind /usr /usr --symlink usr/lib /lib64 --ro-bind /etc /etc --dir /var --dir /run --dev /dev --unshare-user-try --unshare-ipc --unshare-pid --unshare-cgroup /usr/bin/unbound -d
+
+```
+
+### playpen
+
+[playpen](https://www.archlinux.org/packages/?name=playpen) is a flyweight (single C file) tool which leverages the `chroot` command to create a read-only root directory and is targeted towards the sandboxing of non-graphical applications. See the [playpen GitHub project page](https://github.com/thestinger/playpen/) for additional details.
 
 ### chroots
 
@@ -575,6 +601,7 @@ Full RELRO    Canary found         NX enabled     PIE enabled  No RPATH  No RUNP
 ## See also
 
 *   [DeveloperWiki:Security](/index.php/DeveloperWiki:Security "DeveloperWiki:Security")
+*   [Arch Linux Security Tracker](https://security.archlinux.org/)
 *   [ArchWiki: Security Applications](/index.php/List_of_applications/Security "List of applications/Security")
 *   [CentOS Wiki: OS Protection](https://wiki.centos.org/HowTos/OS_Protection)
 *   [Hardening the Linux desktop](https://www.ibm.com/developerworks/linux/tutorials/l-harden-desktop/index.html)

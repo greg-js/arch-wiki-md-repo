@@ -1,22 +1,23 @@
 WebDAV (**Web** **D**istributed **A**uthoring and **V**ersioning) is an extension of HTTP 1.1 and therefore can be considered to be a procotol. It contains a set of concepts and accompanying extension methods to allow read and write across the HTTP 1.1 protocol. Instead of using [NFS](/index.php/NFS "NFS") or [SMB](/index.php/SMB "SMB"), WebDAV offers file transfers via HTTP.
 
-The goal of this how to is to setup a simple WebDAV configuration using Apache.
-
-See also [File Sharing with Webdav and DNSSD](/index.php/File_Sharing_with_Webdav_and_DNSSD "File Sharing with Webdav and DNSSD").
+The goal of this how to is to setup a simple WebDAV configuration using a [web server](/index.php/Category:Web_server "Category:Web server").
 
 ## Contents
 
-*   [1 Server (Apache)](#Server_.28Apache.29)
-    *   [1.1 Create directories](#Create_directories)
-*   [2 Client (Cadaver)](#Client_.28Cadaver.29)
-    *   [2.1 Test it](#Test_it)
+*   [1 Server](#Server)
+    *   [1.1 Apache](#Apache)
+*   [2 Client](#Client)
+    *   [2.1 Cadaver](#Cadaver)
 *   [3 Authentication](#Authentication)
+    *   [3.1 Apache](#Apache_2)
 
-## Server (Apache)
+## Server
+
+### Apache
 
 Install the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server").
 
-Now enable WebDAV. Uncomment the modules for DAV:
+Uncomment the modules for DAV:
 
 ```
 LoadModule dav_module modules/mod_dav.so
@@ -48,31 +49,29 @@ Alias /dav "/home/httpd/html/dav"
 
 ```
 
-### Create directories
+Create the directory:
 
 ```
 # mkdir -p /home/httpd/DAV
 
 ```
 
-Check the permissions of DavLockDB's directory and ensure it is writable by the apache user (http):
+Check the permissions of DavLockDB's directory and ensure it is writable by the webserver [user](/index.php/User "User") `http`:
 
 ```
-# chown -R http:http /home/httpd/DAV # Otherwise you wouldn't be able to upload files
-
-```
-
-```
+# chown -R http:http /home/httpd/DAV
 # mkdir -p /home/httpd/html/dav
 # chown -R http:http /home/httpd/html/dav
 
 ```
 
-## Client (Cadaver)
+## Client
 
-Cadaver is a command line WebDAV client. It can be installed with the package [cadaver](https://www.archlinux.org/packages/?name=cadaver), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+### Cadaver
 
-### Test it
+[Install](/index.php/Install "Install") the package [cadaver](https://www.archlinux.org/packages/?name=cadaver).
+
+After installation, test the WebDAV server:
 
 ```
 # cadaver [http://localhost/dav](http://localhost/dav)
@@ -81,15 +80,10 @@ Creating `test': succeeded.
 dav:/dav/> ls
 Listing collection `/dav/': succeeded.
 Coll: test
-dav:/dav/> exit
 
 ```
 
-If the above worked as shown, then you are good to go.
-
 ## Authentication
-
-Make sure you add permissions for viewing and dav access to the directory, and maybe even make that directory ssl access only.
 
 There are numerous different protocols you can use:
 
@@ -97,13 +91,13 @@ There are numerous different protocols you can use:
 *   digest
 *   others
 
-Two examples follow, in which `foo` is the username:
+### Apache
 
 Using digest:
 
 ```
 # basic form: htdigest -c /path/to/file AuthName username
-htdigest -c /etc/httpd/conf/passwd WebDAV foo
+htdigest -c /etc/httpd/conf/passwd WebDAV **username**
 
 ```
 
@@ -113,7 +107,7 @@ Using plain:
 
 ```
 # basic form: htpasswd -c /path/to/file username
-htpasswd -c /etc/httpd/conf/passwd foo
+htpasswd -c /etc/httpd/conf/passwd **username**
 
 ```
 

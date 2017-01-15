@@ -454,4 +454,4 @@ If using a display manager like GDM, you may want to change the systemd default 
 
 ### Example customization template
 
-*   [A live DJ distribution powered by ArchLinux and built with Archiso](http://didjix.blogspot.com/)
+*   [A live DJ distribution powered by ArchLinux and built with Archiso](http://easy.open.and.free.fr/didjix/)

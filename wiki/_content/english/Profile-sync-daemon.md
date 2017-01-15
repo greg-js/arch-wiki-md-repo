@@ -204,7 +204,6 @@ The package provided re-sync timer triggers once per hour. Users may optionally 
 
  `~/.config/systemd/user/psd-resync.timer.d/frequency.conf` 
 ```
---------------------------------------------------------
 [Unit]
 Description=Timer for Profile-sync-daemon
 

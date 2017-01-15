@@ -7,6 +7,8 @@
 *   [3 Show/hide roster](#Show.2Fhide_roster)
 *   [4 Auto logout on suspend](#Auto_logout_on_suspend)
 *   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
+    *   [5.1 Installation / Configuration](#Installation_.2F_Configuration)
+    *   [5.2 gajim-otr version confusions](#gajim-otr_version_confusions)
 *   [6 OMEMO Support](#OMEMO_Support)
     *   [6.1 Configuration](#Configuration)
 
@@ -67,7 +69,20 @@ Then [enable](/index.php/Enable "Enable") the service.
 
 [OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](http://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim does not support OTR out of the box.
 
-Apparently the development of [gajim-plugin-otr](https://aur.archlinux.org/packages/gajim-plugin-otr/) package has been [discontinued in February 2015](https://github.com/python-otr/gajim-otr/wiki) and the plugin contains an unresolved [security issue](https://github.com/python-otr/gajim-otr/issues/13), which leads to sending unencrypted/cleartext messages.
+### Installation / Configuration
+
+1.  Go to "contact-window" menu "Edit => Plugins";
+2.  If not activated out of the box, activate the "Plugin Installer";
+3.  In "plugins-window", switch to the "Available" tab;
+4.  Activate the "Off-the-record encryption" plugin;
+5.  Click on plugin settings button;
+6.  Generate your OTR key using "Generate key";
+7.  Take a look on other settings;
+8.  Close dialogs to save the changes.
+
+### gajim-otr version confusions
+
+There are two differently developed/deployed versions of gajim-otr. One was developed at [github](https://github.com/python-otr/gajim-otr) but soon got merged into [gajim's own plugin-repository](https://dev.gajim.org/gajim/gajim-plugins/commits/master/gotr). [This repository](https://dev.gajim.org/gajim/gajim-plugins/wikis/home) is used for the development of many plugins, those plugins then get installed via. "Plugin Installer" from [ftp.gajim.org](ftp://ftp.gajim.org/) at the "view => plugins menu". github/gajim-otr shall not be used, due the fact it's source is outdated and [not maintained](https://github.com/python-otr/gajim-otr/wiki).
 
 ## OMEMO Support
 

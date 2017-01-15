@@ -39,10 +39,6 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [4.2.1.1 Using and configuring Baloo](#Using_and_configuring_Baloo)
             *   [4.2.1.2 How do I index a removable device?](#How_do_I_index_a_removable_device.3F)
     *   [4.3 Web browsers](#Web_browsers)
-        *   [4.3.1 Konqueror and Rekonq](#Konqueror_and_Rekonq)
-        *   [4.3.2 Chromium and Chrome](#Chromium_and_Chrome)
-        *   [4.3.3 Firefox](#Firefox)
-        *   [4.3.4 Qupzilla](#Qupzilla)
     *   [4.4 PIM](#PIM)
         *   [4.4.1 Akonadi](#Akonadi)
             *   [4.4.1.1 Installation](#Installation_2)
@@ -447,25 +443,21 @@ By default every removable device is blacklisted. You just have to remove your d
 
 ### Web browsers
 
-#### Konqueror and Rekonq
+*   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Part of the KDE project, supports two rendering engines – KHTML and the [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine.
 
-Konqueror supports two rendering engines – KHTML and the [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine (via the [qt5-webengine](https://www.archlinux.org/packages/?name=qt5-webengine) package).
+	[https://konqueror.org/](https://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
-Rekonq uses QtWebKit, which is [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project.
+*   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — A Qt web browser with Plasma integration features. It uses Qt WebEngine.
 
-A successor named Fiber is currently in development, which will use Chromium's engine.
+	[https://www.qupzilla.com/](https://www.qupzilla.com/) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
-#### Chromium and Chrome
+*   **[Chromium](/index.php/Chromium "Chromium")** — Chromium and its proprietary variant Google Chrome have limited Plasma integration. [They can use KWallet](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") and KDE Open/Save windows.
 
-[Chromium](/index.php/Chromium "Chromium") and its proprietary variant Google Chrome have limited Plasma integration. [They can use KWallet](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") and KDE Open/Save windows.
+	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-#### Firefox
+*   **[Firefox](/index.php/Firefox "Firefox")** — Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox") for details.
 
-Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox") for details.
-
-#### Qupzilla
-
-Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) is a Qt web browser with Plasma integration features. Qupzilla 2.0 uses Qt WebEngine instead of WebKit. The WebKit variant is also available as [qupzilla-qtwebkit-git](https://aur.archlinux.org/packages/qupzilla-qtwebkit-git/).
+	[https://mozilla.org/firefox](https://mozilla.org/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
 ### PIM
 

@@ -40,7 +40,9 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.1 USB controller](#USB_controller)
     *   [10.2 Gotchas](#Gotchas_3)
         *   [10.2.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
-*   [11 See also](#See_also)
+*   [11 Troubleshooting](#Troubleshooting_2)
+    *   [11.1 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+*   [12 See also](#See_also)
 
 ## Prerequisites
 
@@ -872,6 +874,12 @@ IOMMU group 13
 ```
 
 This signals that the xHCI USB controller in 00:14.0 cannot be reset and will therefore stop the VM from shutting down properly, while the integrated sound card in 00:1b.0 and the other two controllers in 00:1a.0 and 00:1d.0 do not share this problem and can be passed without issue.
+
+## Troubleshooting
+
+### No HDMI audio output on host when intel_iommu is enabled
+
+If after enabling `intel_iommu` the HDMI output device of Intel GPU becomes unusable on the host then setting the option `igfx_off` (e.g. `intel_iommu=on,igfx_off`) might bring the audio back, please read `Graphics Problems?` in [Intel-IOMMU.txt](https://www.kernel.org/doc/Documentation/Intel-IOMMU.txt) for details about setting `igfx_off`.
 
 ## See also
 

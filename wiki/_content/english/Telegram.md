@@ -3,48 +3,43 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Telegram_(software) "wikipedia:Te
 ## Contents
 
 *   [1 Install](#Install)
-    *   [1.1 Using available messaging software and adding capability of connecting to Telegram to them](#Using_available_messaging_software_and_adding_capability_of_connecting_to_Telegram_to_them)
-    *   [1.2 Using GUI and desktop applications for Telegram](#Using_GUI_and_desktop_applications_for_Telegram)
-    *   [1.3 Telegram applications for the command line and CLI environment](#Telegram_applications_for_the_command_line_and_CLI_environment)
-    *   [1.4 Using the Web-based version of Telegram](#Using_the_Web-based_version_of_Telegram)
+    *   [1.1 Plugin for other chat software](#Plugin_for_other_chat_software)
+    *   [1.2 GUI/graphical application](#GUI.2Fgraphical_application)
+    *   [1.3 CLI/command line application](#CLI.2Fcommand_line_application)
+    *   [1.4 Web application](#Web_application)
 *   [2 Tips and tricks](#Tips_and_tricks)
     *   [2.1 Telegram channels about Arch Linux](#Telegram_channels_about_Arch_Linux)
 
 ## Install
 
-You can use one of following methods in order to use [Telegram](https://telegram.org/) in Arch:
+You can use one of following methods in order to use Telegram in Arch:
 
-### Using available messaging software and adding capability of connecting to Telegram to them
+### Plugin for other chat software
 
 *   By using [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) packages, connection to Telegram through messenger softwares based on [libpurple](https://www.archlinux.org/packages/?name=libpurple) such as [Pidgin](/index.php/Pidgin "Pidgin") is provided.
 *   Messaging apps that are using [Telepathy](https://en.wikipedia.org/wiki/Telepathy "wikipedia:Telepathy") such as [empathy](https://www.archlinux.org/packages/?name=empathy) (the default messenger for [GNOME](/index.php/GNOME "GNOME")) can make use of [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze) package, which provides possibility of using [libpurple](https://www.archlinux.org/packages/?name=libpurple) and thus [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) to connect Telegram.
 *   In the [KDE](/index.php/KDE "KDE") desktop environment using [telepathy-morse](https://www.archlinux.org/packages/?name=telepathy-morse) provides capability of connecting the default messenger to Telegram.
 
-### Using GUI and desktop applications for Telegram
+### GUI/graphical application
 
-Available applications in order to use Telegram in graphical environment are divided into two categories:
+The [official app](https://desktop.telegram.org/):
 
-1.  The official app from [Telegram](https://desktop.telegram.org/).
-2.  Non-formal programs that are provided by others.
-
-To install applications provided by Telegram, one can use the following packages:
-
-*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) that has been compiled and is available on [Telegram](https://desktop.telegram.org/).
+*   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) pre-compiled binary from [Telegram](https://desktop.telegram.org/).
 *   [telegram-desktop](https://aur.archlinux.org/packages/telegram-desktop/) that needs [Qt](/index.php/Qt "Qt") libraries to be compiled.
 
-Unofficial other programs are as follows:
+Alternative unofficial clients:
 
-*   [cutegram](https://www.archlinux.org/packages/?name=cutegram) package exists in the Arch official repositories and many other Linux distributions and BSDs. This package has been created by Iranian programmers from [aseman](http://aseman.co/en/products/cutegram). The package is based on [Qt](/index.php/Qt "Qt") and has different capabilities from pure Telegram. Install [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) for latest development version install.
+*   [cutegram](https://www.archlinux.org/packages/?name=cutegram), open-source client by Iranian developer [aseman](http://aseman.co/en/products/cutegram). The package is based on [Qt](/index.php/Qt "Qt") and has different capabilities from pure Telegram. Install [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) for latest development version.
 
-### Telegram applications for the command line and CLI environment
+### CLI/command line application
 
 *   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) provides command-line interface to connect and use Telegram. For more information about the program, visit the program page on [Github](https://github.com/vysheng/tg).
 
 *   [nctelegram-git](https://aur.archlinux.org/packages/nctelegram-git/) is a command-line interface for Telegram based on [Ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") and needs [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) to run. For more information about the program, visit the program page on [Github](https://github.com/Nanoseb/ncTelegram).
 
-### Using the Web-based version of Telegram
+### Web application
 
-*   To use the web version of telegram, you can use your favorite internet browser for opening [webogram](https://telegram.org/dl/webogram) page and, after you have confirmed your account, you can use Telegram.
+*   The official [Telegram Web](https://web.telegram.org).
 *   [franz-bin](https://aur.archlinux.org/packages/franz-bin/) is a closed-source web-based application that can be used for web-based interface of various instant messaging software such as [Telegram](https://en.wikipedia.org/wiki/Telegram "wikipedia:Telegram"), [WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp"), [Facebook](https://en.wikipedia.org/wiki/Facebook "wikipedia:Facebook"), and more.
 *   [rambox-bin](https://aur.archlinux.org/packages/rambox-bin/) is an open source alternative to Franz. It offers all features of its closed source counterpart.
 *   Use [Telegram Desktop](https://addons.mozilla.org/en-US/firefox/addon/telegram-desktop/) addons for [Firefox](/index.php/Firefox "Firefox"), to connect to Telegram in your browser via web interface.

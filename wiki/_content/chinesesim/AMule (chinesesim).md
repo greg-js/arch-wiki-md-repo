@@ -20,7 +20,7 @@ aMule是一个跨平台的eD2k和Kademlia网络客户端，类似于eMule，即�
 
 ## 服务
 
-软件包提供了两个 sstemd 服务： amuled 和 amuleweb：
+软件包提供了两个 *systemd* [服务](/index.php/Daemon "Daemon")： amuled 和 amuleweb：
 
 ```
 # systemctl start amuled
@@ -84,7 +84,7 @@ $ amuleweb --write-config --password=*<这里是密码>* --admin-pass=<这个是
 
 然后，可以访问地址http://127.0.0.1:4711链接amuleweb，或者使用`amulegui`或`amulecmd`控制amule。
 
-**小贴士:** 如果默认获取KAD节点（nodes.dat）的地址无效，可以从如下地址获取： [http://nodes-dat.com](http://nodes-dat.com) 。
+**提示：** 如果默认获取KAD节点（nodes.dat）的地址无效，可以从如下地址获取： [http://nodes-dat.com](http://nodes-dat.com) 。
 
 ## 参阅
 

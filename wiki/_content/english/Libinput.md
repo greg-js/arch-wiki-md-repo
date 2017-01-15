@@ -92,7 +92,7 @@ One way to check which devices are managed by libinput is the [xorg logfile](/in
 [    28.895] (II) Using input driver 'libinput' for 'ThinkPad Extra Buttons'
 ```
 
-is a notebok without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. devices are autodetected.
+is a notebook without any configuration files in `/etc/X11/xorg.conf.d/`, i.e. devices are autodetected.
 
 Of course you can elect to use an alternative driver for one device and libinput for others. A number of factors may influence which driver to use. For example, in comparison to [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") the libinput driver has fewer options to customize touchpad behaviour to one's own taste, but far more programmatic logic to process multitouch events (e.g. palm detection as well). Hence, it makes sense to try the alternative, if you are experiencing problems on your hardware with one driver or the other.
 

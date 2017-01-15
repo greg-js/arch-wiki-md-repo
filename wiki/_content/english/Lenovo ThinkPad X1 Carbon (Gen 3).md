@@ -48,7 +48,7 @@ Options:
 | [Touchscreen](/index.php/Touchscreen "Touchscreen") | Yes |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes |
 | Camera | Yes |
-| Fingerprint Reader | Yes |
+| [Fingerprint Reader](/index.php?title=Fingerprint_Reader&action=edit&redlink=1 "Fingerprint Reader (page does not exist)") | Yes |
 | [Power management](/index.php/Power_management "Power management") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
 
@@ -128,7 +128,7 @@ Works with [xrandr](/index.php/Xrandr "Xrandr"). Use [arandr](https://www.archli
 
 ### Fingerprint Reader
 
-There are stable releases of [libfprint](https://www.archlinux.org/packages/?name=libfprint) that support this device. See [Fprint](/index.php/Fprint "Fprint") for more details about how to configure it.
+There are stable releases of [fprintd](https://www.archlinux.org/packages/?name=fprintd) that support this device. See [Fprint](/index.php/Fprint "Fprint") for more details about how to configure it.
 
 To display the reader's model:
 
@@ -139,7 +139,7 @@ Bus 001 Device 004: ID 138a:0017 Validity Sensors, Inc. Fingerprint Reader
 
 ```
 
-Note that recent versions of fprint are broken for this model : One is able to enroll a finger but recognition always fails.
+Note that recent versions of [fprintd](https://www.archlinux.org/packages/?name=fprintd) have been broken for this model : One was able to enroll a finger but recognition always failed. With version 0.7.0-1 everything works.
 
 ### WiFi
 

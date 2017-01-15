@@ -104,7 +104,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 ## Enable amdgpu for Sea Islands or Southern Islands cards
 
-**Note:** The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package (from version 4.9, currently in [testing]), is compiled with Southern Islands support enabled by default.[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4978) You will still need to [#Disable radeon driver](#Disable_radeon_driver). See [FS#50399](https://bugs.archlinux.org/task/50399) for more information.
+**Note:** The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package (from version 4.9, currently in [testing]), is compiled with Southern Islands and Sea Island support enabled by default.[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4975) You will still need to [#Disable radeon driver](#Disable_radeon_driver). See [FS#50399](https://bugs.archlinux.org/task/50399) for more information.
 
 `amdgpu` has experimental support for Sea Islands (CIK) and Southern Islands (SI; since Linux 4.9) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[2]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf).
 

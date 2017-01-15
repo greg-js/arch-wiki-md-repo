@@ -78,6 +78,15 @@ Next, you can either change the configuration of the default node (click its nam
 
 Inotify (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support Inotify yet but there is an official extension module which talks to the Syncthing REST API. The usage of Inotify avoids expensive rescans every minute. The rescan interval of each folder is automatically increased to avoid expensive, regular rescans. Syncthing-inotify can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. If Syncthing is managed through systemd, it is ensured by systemd dependencies that `syncthing-inotify.service` is started and stopped automatically.
 
+You may want to check if the `syncthing-inotify` service is running correctly:
+
+ `# systemctl status syncthing-inotify@**user**.service` 
+```
+Jan 12 16:37:33 <host> systemd[1]: Started Syncthing Inotify File Watcher for <user>.
+Jan 12 16:37:33 <host> syncthing-inotify[16916]: [OK] Watching <folder>: <status>
+..
+```
+
 ### Custom Settings
 
 Run `$ syncthing-inotify -help` for available options, such as setting the API key.

@@ -34,6 +34,8 @@ A comprehensive list of features are documented at the [official Openbox website
         *   [5.3.2 openbox-menu](#openbox-menu)
     *   [5.4 Menu icons](#Menu_icons)
     *   [5.5 Desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu)
+    *   [5.6 XDG compliant menu](#XDG_compliant_menu)
+        *   [5.6.1 Examples](#Examples_2)
 *   [6 Desktop theming](#Desktop_theming)
     *   [6.1 Configuration](#Configuration_2)
     *   [6.2 Installation: official and AUR](#Installation:_official_and_AUR)
@@ -534,6 +536,14 @@ $ chmod +x ~/.config/obpanelmenu.sh
 ```
 
 Executing it will bring up the Openbox desktop menu. Consequently, where using a panel that supports drag-and-drop functionality to add new launchers, simply drag the executable script onto it before changing the icon to suit personal taste.
+
+### XDG compliant menu
+
+A xdg compliant menu is based on the freedesktop.org standard. The menu is defined in menu-files which reside in /etc/xdg/menus. New applications will occur automatically in the menu.
+
+#### Examples
+
+*   [happy](https://github.com/nukura/happy): xdg menu based on the LXQt main menu and easily themable
 
 ## Desktop theming
 

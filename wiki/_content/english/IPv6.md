@@ -24,6 +24,7 @@ In Arch Linux, IPv6 is enabled by default.
         *   [8.2.1 dhcpcd](#dhcpcd_2)
         *   [8.2.2 NetworkManager](#NetworkManager_2)
         *   [8.2.3 ntpd](#ntpd)
+    *   [8.3 systemd-networkd](#systemd-networkd_2)
 *   [9 See also](#See_also)
 
 ## Neighbor discovery
@@ -409,6 +410,12 @@ ExecStart=/usr/bin/ntpd -4 -g -u ntp:ntp
 ```
 
 which first clears the previous `ExecStart`, and then replaces it with one that includes the `-4` flag.
+
+### systemd-networkd
+
+networkd supports disabling IPv6 on a per-interface basis. When a network unit's `[Network]` section has either `LinkLocalAddressing=ipv4` or `LinkLocalAddressing=no`, networkd will not try to configure IPv6 on the matching interfaces.
+
+Note however that even when using the above option, networkd will still be expecting to receive router advertisements if IPv6 is not disabled globally. If IPv6 traffic is not being received by the interface (e.g. due to sysctl or ip6tables settings), it will remain in the configuring state and potentially cause timeouts for services waiting for the network to be fully configured. To avoid this, the `IPv6AcceptRA=no` option should also be set in the `[Network]` section.
 
 ## See also
 

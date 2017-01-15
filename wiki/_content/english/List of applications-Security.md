@@ -126,7 +126,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **Samhain** — Host-based intrusion detection system (HIDS) provides file integrity checking and log file monitoring/analysis, as well as rootkit detection, port monitoring, detection of rogue SUID executables, and hidden processes.
 
-	[http://www.la-samhna.de/samhain/index.html](http://www.la-samhna.de/samhain/index.html) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[http://www.la-samhna.de/samhain/index.html](http://www.la-samhna.de/samhain/index.html) || [samhain](https://aur.archlinux.org/packages/samhain/)
 
 *   **Tiger** — Security tool that can be use both as a security audit and intrusion detection system.
 
@@ -134,7 +134,7 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[Tripwire](https://en.wikipedia.org/wiki/Open_Source_Tripwire "wikipedia:Open Source Tripwire")** — Intrusion detection system.
 
-	[https://github.com/Tripwire/tripwire-open-source](https://github.com/Tripwire/tripwire-open-source) || [tripwire](https://aur.archlinux.org/packages/tripwire/)
+	[https://github.com/Tripwire/tripwire-open-source](https://github.com/Tripwire/tripwire-open-source) || [tripwire-git](https://aur.archlinux.org/packages/tripwire-git/)
 
 #### File security
 

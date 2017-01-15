@@ -719,10 +719,10 @@ Command successful.
 
 ### Manually unlocking a partition using a keyfile
 
-use the `--key-file` option when opening the LUKS container:
+Use the `--key-file` option when opening the LUKS device:
 
 ```
-# cryptsetup open /dev/sdX containername --key-file /etc/mykeyfile
+# cryptsetup open /dev/sda2 *dm_name* --key-file /etc/mykeyfile
 
 ```
 

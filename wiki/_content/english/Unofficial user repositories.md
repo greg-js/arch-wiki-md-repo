@@ -908,11 +908,10 @@ Server = http://bohoomil.com/repo/multilib/$arch
 
 #### linux-kalterfx
 
-*   **Maintainer**: Anna Ivanova ([kalterfive](https://aur.archlinux.org/account/kalterfive))
+*   **Maintainer**: [Anna Ivanova](https://aur.archlinux.org/account/kalterfive)
 *   **Upstream page**: [https://deadsoftware.ru/files/linux-kalterfx](https://deadsoftware.ru/files/linux-kalterfx)
-*   **Description**: A mainline kernel with [linux-pf](/index.php/Linux-pf "Linux-pf"), [reiser4](/index.php/Reiser4 "Reiser4"), UKSM and SMACK
-*   **Key-ID**: A0C04F15
-*   **Keyfile**: [https://keybase.io/kalterfive/key.asc](https://keybase.io/kalterfive/key.asc)
+*   **Description**: Kernel packages based on the [-pf](https://wiki.archlinux.org/index.php/Kernels#-pf) kernel, with applied [reiser4](/index.php/Reiser4 "Reiser4") and UKSM patches
+*   **Key** ([key.asc](https://keybase.io/kalterfive/key.asc)): `A0C04F15`
 
 ```
 [linux-kalterfx]

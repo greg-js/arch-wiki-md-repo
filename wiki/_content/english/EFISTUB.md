@@ -46,7 +46,7 @@ Furthermore, you will need to keep the files on the ESP up-to-date with later ke
  `/etc/systemd/system/efistub-update.path` 
 ```
 [Unit]
-Description=Copy EFISTUB Kernel to UEFISYS Partition
+Description=Copy EFISTUB Kernel to EFI System Partition
 
 [Path]
 PathChanged=/boot/initramfs-linux-fallback.img
@@ -54,14 +54,13 @@ PathChanged=/boot/initramfs-linux-fallback.img
 [Install]
 WantedBy=multi-user.target
 WantedBy=system-update.target
-
 ```
 
 **Note:** This watches for changes to `initramfs-linux-fallback.img` since this is the last file built by mkinitcpio. This is to avoid a potential race condition where systemd could copy older files before they are all done being built.
  `/etc/systemd/system/efistub-update.service` 
 ```
 [Unit]
-Description=Copy EFISTUB Kernel to UEFISYS Partition
+Description=Copy EFISTUB Kernel to EFI System Partition
 
 [Service]
 Type=oneshot
@@ -84,17 +83,17 @@ Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") 
 /usr/bin/cp -f /boot/vmlinuz-linux *esp*/EFI/arch/vmlinuz-linux
 /usr/bin/cp -f /boot/initramfs-linux.img *esp*/EFI/arch/initramfs-linux.img
 /usr/bin/cp -f /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
+
 ```
 
 **Note:** The first parameter `/boot/initramfs-linux-fallback.img` is the file to watch. The second parameter `IN_CLOSE_WRITE` is the action to watch for. The third parameter `/usr/local/bin/efistub-update.sh` is the script to execute.
- `/etc/incron.d/efistub-update.conf`  `/boot/initramfs-linux-fallback.img IN_CLOSE_WRITE /usr/local/bin/efistub-update.sh` 
-
-In order to use this method, enable the incrond service:
+ `/etc/incron.d/efistub-update.conf` 
+```
+/boot/initramfs-linux-fallback.img IN_CLOSE_WRITE /usr/local/bin/efistub-update.sh
 
 ```
-# systemctl enable incrond.service
 
-```
+In order to use this method, [enable](/index.php/Enable "Enable") the `incrond.service`.
 
 #### Using mkinitcpio hook
 
@@ -114,6 +113,7 @@ help() {
 This hook waits for mkinitcpio to finish and copies the finished ramdisk and kernel to the ESP
 HELPEOF
 }
+
 ```
  `/root/watch.sh` 
 ```
@@ -128,6 +128,7 @@ done
 /usr/bin/cp -f /boot/initramfs-linux-fallback.img *esp*/EFI/arch/initramfs-linux-fallback.img
 
 echo "Synced kernel with ESP"
+
 ```
 
 #### Using mkinitcpio hook (2)
@@ -190,7 +191,7 @@ mkinitcpio -p linux
 
 ## Booting EFISTUB
 
-**Warning:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root. For example, if the initramfs is located in `$esp/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=/EFI/arch/initramfs-linux.img` or `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is in `$esp/`.
+**Warning:** Linux Kernel EFISTUB initramfs path should be relative to the EFI System Partition's root. For example, if the initramfs is located in `*esp*/EFI/arch/initramfs-linux.img`, the corresponding UEFI formatted line should be `initrd=/EFI/arch/initramfs-linux.img` or `initrd=\EFI\arch\initramfs-linux.img`. In the following examples we will assume that everything is in `*esp*/`.
 
 ### Using a boot manager
 
