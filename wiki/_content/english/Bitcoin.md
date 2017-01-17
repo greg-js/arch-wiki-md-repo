@@ -4,22 +4,21 @@
 
 *   [1 Introduction](#Introduction)
 *   [2 Consensus](#Consensus)
-    *   [2.1 Nature of Consensus Failure](#Nature_of_Consensus_Failure)
-*   [3 Installation](#Installation)
-*   [4 How to get Bitcoins?](#How_to_get_Bitcoins.3F)
-    *   [4.1 Mining](#Mining)
-*   [5 Bitcoin Software](#Bitcoin_Software)
-    *   [5.1 Full Nodes](#Full_Nodes)
-        *   [5.1.1 Bitcoin Core](#Bitcoin_Core)
-    *   [5.2 Diverging Implementations](#Diverging_Implementations)
-        *   [5.2.1 Bitcoin Classic](#Bitcoin_Classic)
-        *   [5.2.2 Bitcoin Unlimited](#Bitcoin_Unlimited)
-        *   [5.2.3 Bitcoin XT](#Bitcoin_XT)
-    *   [5.3 Thin Clients](#Thin_Clients)
-*   [6 See also](#See_also)
-    *   [6.1 Informational Sites](#Informational_Sites)
-    *   [6.2 Discussion Groups](#Discussion_Groups)
-    *   [6.3 Blockchain Explorers](#Blockchain_Explorers)
+    *   [2.1 Nature of consensus failure](#Nature_of_consensus_failure)
+*   [3 How to get Bitcoins?](#How_to_get_Bitcoins.3F)
+*   [4 Bitcoin software](#Bitcoin_software)
+    *   [4.1 Thin clients](#Thin_clients)
+    *   [4.2 Full nodes](#Full_nodes)
+        *   [4.2.1 Bitcoin Core](#Bitcoin_Core)
+        *   [4.2.2 Diverging implementations](#Diverging_implementations)
+            *   [4.2.2.1 Bitcoin Classic](#Bitcoin_Classic)
+            *   [4.2.2.2 Bitcoin Unlimited](#Bitcoin_Unlimited)
+            *   [4.2.2.3 Bitcoin XT](#Bitcoin_XT)
+    *   [4.3 Mining](#Mining)
+*   [5 See also](#See_also)
+    *   [5.1 Informational sites](#Informational_sites)
+    *   [5.2 Discussion groups](#Discussion_groups)
+    *   [5.3 Blockchain explorers](#Blockchain_explorers)
 
 ## Introduction
 
@@ -39,17 +38,13 @@ From [Bitcoin.it wiki](https://en.bitcoin.it/wiki/Consensus):
 
 **Warning:** It is *integral* to understand that you are only capable of transacting with parties with which you are in consensus, should your personal consensus with the network be broken, or consensus of the network at large be broken, you will only be able to transact with those parties with which you are in consensus.
 
-### Nature of Consensus Failure
+### Nature of consensus failure
 
 The nature of consensus is a very strict yet completely voluntary uncoordinated interaction of many independent users. It is both a requirement of the networks correct operation, and a facilitator of its correct operation at the same time. You can be considered to be in consensus with any other node that will accept any data structure relevant to consensus as valid that you have accepted as valid (ignoring of course an instance where two different miners both find valid blocks at the same time and each relay theirs to part of the network, the next valid block will decide which preceding block was valid based on which one it extends from). Consensus can be broken violating explicit consensus rules (violating a rule explicitly spelled out as a consensus rule, i.e. the cap of 21 million bitcoin, rate at which they are issued, the maximum size of a block, that a transaction is only valid if citing a valid unspent coin, etc.) or violating unexplicit rules (due to a bug or unintended consequence of design, i.e. a valid structure erroneously being invalidated due to software bug/improper format/etc., or the use of an attack avenue to overstress the node with load due to a bug or bad design). Both types of consensus failures could potentially come to be intentionally or unintentionally.
 
 A discussion of two consensus breaks in Bitcoin Core's history, one explicit, one unexplicit: [https://bitcointalk.org/index.php?topic=702755.0](https://bitcointalk.org/index.php?topic=702755.0)
 
 A discussion of design flaw on reddit (with citation links to official developers discussion): [https://www.reddit.com/r/Bitcoin/comments/5h70s3/bitcoin_unlimited_bu_the_developers_have_realized/](https://www.reddit.com/r/Bitcoin/comments/5h70s3/bitcoin_unlimited_bu_the_developers_have_realized/)
-
-## Installation
-
-See [#Bitcoin Software](#Bitcoin_Software).
 
 ## How to get Bitcoins?
 
@@ -61,34 +56,45 @@ There are a variety of ways to acquire bitcoins:
 *   There are several services where you can trade them for [traditional currency](https://en.bitcoin.it/wiki/Buying_bitcoins).
 *   Find someone to trade cash for bitcoins in-person through a local directory. To find traders near you, you can use [LocalBitcoins](https://localbitcoins.com/) or a [bitcoin map](https://coinmap.org/).
 *   Participate in a [mining pool](https://en.bitcoin.it/wiki/Pooled_mining).
-*   If you have very good hardware, you can solo mine and attempt to create a new block (currently yields 12.5 BTC plus fees).
+*   If you have very good hardware, you can solo mine and attempt to create a new block (currently yields 12.5 BTC plus fees). See [#Mining](#Mining).
 
-### Mining
-
-**Note:** Mining is only really commercially viable with decent hardware, for a comparison of hardware and their performance see the [bitcoin.it wiki](https://en.bitcoin.it/wiki/Mining_hardware_comparison). To see if your setup is viable use a [Profit Calculator](https://en.bitcoin.it/wiki/Profitability_Calculator).
-
-The concept of Bitcoin mining is based on searching for an input that is hard to find but easy to prove the existence of. Bitcoin miners construct blocks that consist of a set of transactions users are trying to make and link them to the previously solved block. Miners add a random piece of data to this, and hash a summary of the block. If the hash of this summary is below the desired target of the network, the block is considered valid. Since it is easy to reproduce any individual hash, they are impossible to predict, so the miner does not know which piece of data will create a desirable hash.
-
-Mining requires the use of a *miner*, which is a program used to compute the required hashes and thus create Bitcoins. To learn more about mining please read this [article](https://en.bitcoin.it/wiki/Mining).
-
-There are several Bitcoin miners in the [official repositories](/index.php/Official_repositories "Official repositories") as well as in the [AUR](/index.php/AUR "AUR").
-
-## Bitcoin Software
+## Bitcoin software
 
 Some good practices to consider:
 
 1.  Encrypt your wallet with a strong password.
 2.  Backup your keys and transactions (Bitcoin Core stores them `wallet.dat`).
 
-### Full Nodes
+### Thin clients
 
-A full node is a bitcoin client which starts with the initial genesis block of the blockchain, and sequentially validates the signature chain of every historical Bitcoin transaction and validity of each historical block to construct upon arriving at the tip of the chain the current Unspent Transaction Output Set. This is the current set of unspent coins, and which private keys they are encumbered to. It is called a full node because it obviously verifies the cryptographic integrity of the UTXO set itself. A full node client may or may not also participate in relaying unconfirmed transactions around the network and operate a mempool of all unconfirmed transactions, and may or may not participate in serving the full historical blockchain to new full node clients bootstrapping themselves. It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded and verified them in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set.
+Thin clients do not fully validate the blockchain or compute a full UTXO set. They derive their security in proxy by connecting to a fullnode and downloading the blockheaders. They are still able to guarantee the Proof of Work behind a block is valid, and each blockheader contains a merkle root of all the transactions in the block. This allows them to query full node clients for the blockheaders and the data to prove their transaction is in the merkle root in the blockheader. They however must trust that miners are mining valid blocks, and have no way to make sure rules like the issuance rate or cap of Bitcoins are being followed.
+
+**Warning:** In the event of a consensus failure at large on the network, or one affecting the node(s) an SPV client is connected to, the SPV client is incapable of detecting which partition of the network it is on, or communicating to, or being sent information by. It is extremely insecure to send or receive money with an SPV client in the event of such a consensus failure occurring.
+
+*   **Electrum** — Lightweight Bitcoin wallet.
+
+	[https://electrum.org/](https://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
+
+*   **Multibit HD** — Lightweight Bitcoin desktop client powered by the BitCoinJ library.
+
+	[https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
+
+### Full nodes
+
+A full node is a bitcoin client which starts with the initial genesis block of the blockchain, and sequentially validates the signature chain of every historical Bitcoin transaction and validity of each historical block to construct upon arriving at the tip of the chain the current Unspent Transaction Output Set (UTXO). This is the current set of unspent coins, and which private keys they are encumbered to. It is called a full node because it obviously verifies the cryptographic integrity of the UTXO set itself. A full node client may or may not also participate in relaying unconfirmed transactions around the network and operate a mempool of all unconfirmed transactions, and may or may not participate in serving the full historical blockchain to new full node clients bootstrapping themselves.
+
+It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded (97GB as of November 2016) and verified them (which is CPU intensive) in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set.
+
+Initial download of the blockchain can be sped up by increasing the database cache as much as your RAM allows, add `dbcache=M` to `~/.bitcoin/bitcoin.conf` where M is the number of megabytes of RAM to allocate.
+
+See [bitcoin.org](https://bitcoin.org/en/) on how to:
+
+*   [reduce storage](https://bitcoin.org/en/full-node#reduce-storage) and
+*   [bandwith](https://bitcoin.org/en/full-node#reduce-traffic)
+
+requirements for a full-node.
 
 **Warning:** In order to transact or interact with other clients you must be running compatible software. This is currently a complicated and contentious matter in the Bitcoin community, it is advised you thoroughly research your clients compatibility with others. See [#Consensus](#Consensus).
-
-**Note:** Full nodes require syncing the blockchain (current size is about 97GB as of Nov. 2016); each transaction in a block gets verified using cryptographic algorithms, which is a time-consuming operation, so having a good CPU, sufficient storage and bandwidth is highly recommended.
-
-Bitcoin nodes can made to use less storage by enabling pruning, by adding `prune=550` to the configuration file at `~/.bitcoin/bitcoin.conf`. This will bring the disk space usage down to about 2GB. Initial download of the blockchain can be made significantly faster by increasing the database cache as much as your RAM allows, add `dbcache=M` to `~/.bitcoin/bitcoin.conf` where M is the number of megabytes of RAM to allocate. To reduce bandwidth usage you can use the options from this page: [https://bitcoin.org/en/full-node#reduce-traffic](https://bitcoin.org/en/full-node#reduce-traffic)
 
 #### Bitcoin Core
 
@@ -120,11 +126,11 @@ WantedBy=multi-user.target
 
 [Official Website](https://bitcoincore.org/)
 
-### Diverging Implementations
+#### Diverging implementations
 
 **Note:** These clients have been forked away from the Bitcoin Core codebase, with many different modifications made to [#Consensus](#Consensus) related and non consensus related code. Depending on the activation conditions laid out by each client this may initiate a break in consensus to continue a new diverging fork under different consensus rules than currently enforced by the network. While no client has a viable interest to activate rules without some sort of majority support, the final outcome of such an event for the blockchain is highly disputed in the Bitcoin community.
 
-#### Bitcoin Classic
+##### Bitcoin Classic
 
 [w:Bitcoin Classic](https://en.wikipedia.org/wiki/Bitcoin_Classic "w:Bitcoin Classic") is a fork of Bitcoin Core aiming to increase the transaction processing capacity of Bitcoin by increasing its block size limit. [[1]](https://bitcoinclassic.com/devel/Blocksize.html)
 
@@ -132,7 +138,7 @@ WantedBy=multi-user.target
 
 This client is potentially consensus-incompatible with the rest of the network, and upon conditions being met will fork away from the previous chain and consensus rules.
 
-#### Bitcoin Unlimited
+##### Bitcoin Unlimited
 
 [Bitcoin Unlimited](https://www.bitcoinunlimited.info/) is a fork of Bitcoin Core which removes the block size limit. [[2]](https://www.bitcoinunlimited.info/faq)
 
@@ -140,7 +146,7 @@ This client is potentially consensus-incompatible with the rest of the network, 
 
 Consensus-incompatible implementation.
 
-#### Bitcoin XT
+##### Bitcoin XT
 
 [w:Bitcoin XT](https://en.wikipedia.org/wiki/Bitcoin_XT "w:Bitcoin XT") is a fork of the Bitcoin Core reference client. [Install](/index.php/Install "Install") the [bitcoinxt-gui-git](https://aur.archlinux.org/packages/bitcoinxt-gui-git/) package.
 
@@ -148,23 +154,19 @@ Implementation similar to Bitcoin Classic which also implements [multiple patche
 
 [Official Website](https://bitcoinxt.software/)
 
-### Thin Clients
+### Mining
 
-Thin clients do not fully validate the blockchain or compute a full UTXO set. They derive their security in proxy by connecting to a fullnode and downloading the blockheaders. They are still able to guarantee the Proof of Work behind a block is valid, and each blockheader contains a merkle root of all the transactions in the block. This allows them to query full node clients for the blockheaders and the data to prove their transaction is in the merkle root in the blockheader. They however must trust that miners are mining valid blocks, and have no way to make sure rules like the issuance rate or cap of Bitcoins are being followed.
+**Note:** Mining is only really commercially viable with decent hardware, for a comparison of hardware and their performance see the [bitcoin.it wiki](https://en.bitcoin.it/wiki/Mining_hardware_comparison). To see if your setup is viable use a [Profit Calculator](https://en.bitcoin.it/wiki/Profitability_Calculator).
 
-**Warning:** In the event of a consensus failure at large on the network, or one affecting the node(s) an SPV client is connected to, the SPV client is incapable of detecting which partition of the network it is on, or communicating to, or being sent information by. It is extremely insecure to send or receive money with an SPV client in the event of such a consensus failure occurring.
+The concept of Bitcoin mining is based on searching for an input that is hard to find but easy to prove the existence of. Bitcoin miners construct blocks that consist of a set of transactions users are trying to make and link them to the previously solved block. Miners add a random piece of data to this, and hash a summary of the block. If the hash of this summary is below the desired target of the network, the block is considered valid. Since it is easy to reproduce any individual hash, they are impossible to predict, so the miner does not know which piece of data will create a desirable hash.
 
-*   **Electrum** — Lightweight Bitcoin wallet.
+Mining requires the use of a *miner*, which is a program used to compute the required hashes and thus create Bitcoins. To learn more about mining please read this [article](https://en.bitcoin.it/wiki/Mining).
 
-	[https://electrum.org/](https://electrum.org/) || [electrum](https://www.archlinux.org/packages/?name=electrum)
-
-*   **Multibit HD** — Lightweight Bitcoin desktop client powered by the BitCoinJ library.
-
-	[https://multibit.org/](https://multibit.org/) || [multibit](https://www.archlinux.org/packages/?name=multibit)
+There are several Bitcoin miners in the [official repositories](/index.php/Official_repositories "Official repositories") as well as in the [AUR](/index.php/AUR "AUR").
 
 ## See also
 
-#### Informational Sites
+#### Informational sites
 
 *   [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf) - The original whitepaper published by Satoshi Nakamoto before the launch of the live Bitcoin network.
 *   [bitcoin.org](https://www.bitcoin.org/) - Today the site is an independent open source project with contributors from around the world. Final publication authority is held by the co-owners, but all regular activity is organized through the public pull request process and managed by the site co-maintainers.
@@ -173,7 +175,7 @@ Thin clients do not fully validate the blockchain or compute a full UTXO set. Th
 *   [Coin Dance](https://coin.dance/) - Broad purpose network statistics.
 *   [Introduction to Bitcoin concepts](https://21.co/learn/introduction-to-bitcoin-concepts/#introduction-to-bitcoin-concepts). - at 21.co
 
-#### Discussion Groups
+#### Discussion groups
 
 *   [bitcointalk.org](https://bitcointalk.org/) - Forum.
 *   IRC Channels on Freenode:
@@ -183,7 +185,7 @@ Thin clients do not fully validate the blockchain or compute a full UTXO set. Th
     *   **#bitcoin-market** - Live quotes from markets.
     *   **#bitcoin-mining** - Mining discussion.
 
-#### Blockchain Explorers
+#### Blockchain explorers
 
 *   [Blockchain.info](https://blockchain.info/) - Blockchain explorer/Webwallet.
 *   [Blockr.io](https://btc.blockr.io/) - Blockchain explorer.

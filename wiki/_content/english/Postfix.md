@@ -99,7 +99,7 @@ See [this page](http://www.postfix.org/TLS_README.html) for more information abo
 
 **Warning:** If you plan on implementing SSL/TLS, please respond safely to [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration: `smtpd_tls_exclude_ciphers = aNULL, eNULL, EXPORT, DES, RC4, MD5, PSK, aECDH, EDH-DSS-DES-CBC3-SHA, EDH-RSA-DES-CBC3-SHA, KRB5-DES, CBC3-SHA` 
 
-Then, generate a [dhparam file](https://www.openssl.org/docs/apps/dhparam.html) by following [these instructions](https://weakdh.org/sysadmin.html) and then adding the following to your configuration:
+Then, generate a [dhparam file](https://www.openssl.org/docs/man1.0.2/apps/dhparam.html) by following [these instructions](https://weakdh.org/sysadmin.html) and then adding the following to your configuration:
 
  `smtpd_tls_dh1024_param_file = ${config_directory}/dhparams.pem` 
 

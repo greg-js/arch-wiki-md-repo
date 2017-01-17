@@ -256,6 +256,8 @@ $ qemu-system-i386 -enable-kvm -machine q35,accel=kvm -device intel-iommu ..
 
 ```
 
+**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` , so while adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Using_vfio-pci "PCI passthrough via OVMF")) you should not create the IOMMU device with `-device intel-iommu` if PCI passthrough is required.
+
 ## Moving data between host and guest OS
 
 ### Network
@@ -1030,10 +1032,10 @@ The [SPICE project](http://spice-space.org/) aims to provide a complete open sou
 
 SPICE can only be used when using QXL as the graphical output.
 
-The following is example of booting with SPICE as the remote desktop protocol:
+The following is example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
 
 ```
-$ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -chardev spicevm 
+$ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
 
 ```
 
@@ -1534,7 +1536,7 @@ $ qemu-system-i386 -k *keymap* *disk_image*
 
 ```
 
-On a Wayland session manually setting the keymap doesn't seem to work and it's reported as a bug with a suggested patch [[3]](https://bugs.launchpad.net/qemu/+bug/1578192).
+Due to a [bug in QEMU v2.8.0](https://bugs.launchpad.net/qemu/+bug/1578192), on a Wayland session manually setting the keymap won't help to get the arrow keys to work. The bug is fixed in master so you can install [qemu-git](https://aur.archlinux.org/packages/qemu-git/).
 
 ### Guest display stretches on window resize
 

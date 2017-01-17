@@ -38,7 +38,6 @@ This article contains recommendations and best practices for hardening an Arch L
 *   [8 Sandboxing applications](#Sandboxing_applications)
     *   [8.1 Firejail](#Firejail)
     *   [8.2 bubblewrap](#bubblewrap)
-        *   [8.2.1 bubblewrap Unbound in a simple sandbox](#bubblewrap_Unbound_in_a_simple_sandbox)
     *   [8.3 playpen](#playpen)
     *   [8.4 chroots](#chroots)
     *   [8.5 Linux containers](#Linux_containers)
@@ -376,22 +375,7 @@ The [grsecurity](/index.php/Grsecurity "Grsecurity") kernel provides many securi
 
 ### bubblewrap
 
-[bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) is a setuid sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with an even smaller resource footprint than Firejail. While it lacks certain features such as file path whitelisting, bubblewrap does offer bind mounts as well as the creation of user/IPC/PID/network/cgroup namespaces and can support both simple and [complex sandboxes](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh).
-
-#### bubblewrap [Unbound](/index.php/Unbound "Unbound") in a simple sandbox
-
-*   Bind as read-only the system `/usr` directory to `/usr` in the sandbox
-*   Create symbolic link from system `/usr/lib` directory to `/lib64` in the sandbox
-*   Bind as read-only the system `/etc` directory to `/etc` in the sandbox
-*   Create empty `/var` and `/run` directories within the sandbox
-*   Mount a new devtmpfs filesystem to `/dev` in the sandbox
-*   Try to create a new user namepace and skip its creation if restricted
-*   Create new IPC and PID and [control group](/index.php/Cgroups "Cgroups") namespaces
-
-```
-/usr/bin/bwrap --ro-bind /usr /usr --symlink usr/lib /lib64 --ro-bind /etc /etc --dir /var --dir /run --dev /dev --unshare-user-try --unshare-ipc --unshare-pid --unshare-cgroup /usr/bin/unbound -d
-
-```
+[bubblewrap](/index.php/Bubblewrap "Bubblewrap") is a setuid sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with an even smaller resource footprint than Firejail. While it lacks certain features such as file path whitelisting, bubblewrap does offer bind mounts as well as the creation of user/IPC/PID/network/cgroup namespaces and can support both simple and [complex sandboxes](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh).
 
 ### playpen
 

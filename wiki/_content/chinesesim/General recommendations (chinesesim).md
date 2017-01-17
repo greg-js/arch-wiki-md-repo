@@ -76,10 +76,11 @@
 *   [14 中国大陆用户的推荐解决方案](#.E4.B8.AD.E5.9B.BD.E5.A4.A7.E9.99.86.E7.94.A8.E6.88.B7.E7.9A.84.E6.8E.A8.E8.8D.90.E8.A7.A3.E5.86.B3.E6.96.B9.E6.A1.88)
     *   [14.1 办公](#.E5.8A.9E.E5.85.AC)
     *   [14.2 中文输入法](#.E4.B8.AD.E6.96.87.E8.BE.93.E5.85.A5.E6.B3.95)
-    *   [14.3 代理](#.E4.BB.A3.E7.90.86)
-    *   [14.4 即时通讯工具](#.E5.8D.B3.E6.97.B6.E9.80.9A.E8.AE.AF.E5.B7.A5.E5.85.B7)
-    *   [14.5 电子商务](#.E7.94.B5.E5.AD.90.E5.95.86.E5.8A.A1)
-    *   [14.6 校园网](#.E6.A0.A1.E5.9B.AD.E7.BD.91)
+    *   [14.3 在线音乐](#.E5.9C.A8.E7.BA.BF.E9.9F.B3.E4.B9.90)
+    *   [14.4 代理](#.E4.BB.A3.E7.90.86)
+    *   [14.5 即时通讯工具](#.E5.8D.B3.E6.97.B6.E9.80.9A.E8.AE.AF.E5.B7.A5.E5.85.B7)
+    *   [14.6 电子商务](#.E7.94.B5.E5.AD.90.E5.95.86.E5.8A.A1)
+    *   [14.7 校园网](#.E6.A0.A1.E5.9B.AD.E7.BD.91)
 
 ## 系统管理
 
@@ -418,6 +419,11 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 ### 中文输入法
 
 参见 [Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)")或[Ibus](/index.php/IBus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "IBus (简体中文)")。
+
+### 在线音乐
+
+*   网易云音乐[https://aur.archlinux.org/packages/netease-cloud-music](https://aur.archlinux.org/packages/https%3A%2F%2Faur.archlinux.org%2Fpackages%2Fnetease-cloud-music/)。
+*   酷我音乐（第三方）[https://aur.archlinux.org/packages/kwplayer/](https://aur.archlinux.org/packages/https%3A%2F%2Faur.archlinux.org%2Fpackages%2Fkwplayer%2F/)。
 
 ### 代理
 

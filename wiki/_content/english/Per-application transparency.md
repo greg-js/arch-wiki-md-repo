@@ -1,4 +1,4 @@
-Following [xterm automatic transparency guide](/index.php/Xterm_Automatic_Transparency "Xterm Automatic Transparency") one can get per app transparency with just xcompmgr and transset-df - just replace *xterm* with your program name:
+Following the [xterm automatic transparency guide](/index.php/Xterm_Automatic_Transparency "Xterm Automatic Transparency") it is possible to get per app window transparency, with just [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr), *or any other compositor*, and [transset-df](https://www.archlinux.org/packages/?name=transset-df) - just replace *xterm* with your program name:
 
 ```
 xterm & sleep .8s && transset-df -a
@@ -38,7 +38,7 @@ $ xcompmgr &
 
 ```
 
-**Note:** You do not need to pass any arguments to it, but if you would like some other effects, check out the [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") page. Xcompmgr has also been forked as [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/) (dcompmgr) which has also been forked as [compton-git](https://aur.archlinux.org/packages/compton-git/). Some users find these forked projects provide a greater stability.
+**Note:** You do not need to pass any arguments to it, but if you would like some other effects, check out the [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") page. A fork of Xcompmgr available in the repositories, [compton](https://www.archlinux.org/packages/?name=compton), may provide a greater stability and less tearing issues.
 
 ## Configuration
 
@@ -110,4 +110,4 @@ devilspie -a &
 
 [Comprehensive documentation of the devilspie configuration file](http://foosel.org/linux/devilspie).
 
-Alternatively, [gdevilspie](https://aur.archlinux.org/packages/gdevilspie/) is a GUI configuration editor for devilspie.
+Alternatively, [gdevilspie](https://aur.archlinux.org/packages/gdevilspie/) is a GUI configuration editor for [devilspie](https://www.archlinux.org/packages/?name=devilspie).

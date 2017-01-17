@@ -31,7 +31,7 @@ There are several options in [official repositories](/index.php/Official_reposit
 **Note:**
 
 *   The GTK+ client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the remote-cli package for a curses-based GUI.
-*   You cannot connect to the daemon over IPv6.[[1]](https://trac.transmissionbt.com/ticket/2236)
+*   You cannot connect to the daemon over IPv6.[[1]](https://github.com/transmission/transmission/issues/59)
 
 ## Configuring the GUI version
 

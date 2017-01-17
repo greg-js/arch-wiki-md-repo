@@ -117,10 +117,10 @@ OpenVPN является чрезвычайно универсальным пр�
 
 ### Конфигурация сервера
 
-Скопируйте пример конфигурационного файла сервера в `/etc/openvpn/server.conf`:
+Скопируйте пример конфигурационного файла сервера в `/etc/openvpn/server/server.conf`:
 
 ```
-# cp /usr/share/openvpn/examples/server.conf /etc/openvpn/server.conf
+# cp /usr/share/openvpn/examples/server.conf /etc/openvpn/server/server.conf
 
 ```
 
@@ -130,15 +130,15 @@ OpenVPN является чрезвычайно универсальным пр�
 *   Включите HMAC защиту SSL/TLS . **Обратите внимание на использование параметра 0 для сервера**.
 *   В целях безопасности рекомендуется запускать OpenVPN с пониженными правами. Раскомментируйте строки `user` и `group`.
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/elmer.crt
-key /etc/openvpn/elmer.key
+ca ca.crt
+cert elmer.crt
+key elmer.key
 
-dh /etc/openvpn/dh2048.pem
+dh dh2048.pem
 
-tls-auth /etc/openvpn/ta.key **0**
+tls-auth ta.key **0**
 
 user nobody
 group nobody
@@ -149,10 +149,10 @@ group nobody
 
 ### Конфигурация клиента
 
-Скопируйте пример конфигурационного файла клиента в `/etc/openvpn/client.conf`:
+Скопируйте пример конфигурационного файла клиента в `/etc/openvpn/client/client.conf`:
 
 ```
-# cp /usr/share/openvpn/examples/client.conf /etc/openvpn/client.conf
+# cp /usr/share/openvpn/examples/client.conf /etc/openvpn/client/client.conf
 
 ```
 
@@ -163,7 +163,7 @@ group nobody
 *   Параметры `ca`, `cert`, and `key` указав путь, имена ключей и сертификатов.
 *   Включите HMAC защиту SSL/TLS . **Обратите внимание на использование параметра 1 для клиента**.
 
- `/etc/openvpn/client.conf` 
+ `/etc/openvpn/client/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
 .
@@ -172,20 +172,22 @@ user nobody
 group nobody
 .
 .
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/bugs.crt
-key /etc/openvpn/bugs.key
+user nobody
+group nobody
+ca ca.crt
+cert client.crt
+key client.key
 .
 .
-tls-auth /etc/openvpn/ta.key **1**
+tls-auth ta.key **1**
 
 ```
 
 ### Проверка настроек OpenVPN
 
-Запустите `# openvpn /etc/openvpn/server.conf` на сервере, и `# openvpn /etc/openvpn/client.conf` на клиенте. Вы должны увидеть следующее:
+Запустите `# openvpn /etc/openvpn/server/server.conf` на сервере, и `# openvpn /etc/openvpn/client/client.conf` на клиенте. Вы должны увидеть следующее:
 
- `# openvpn /etc/openvpn/server.conf` 
+ `# openvpn /etc/openvpn/server/server.conf` 
 ```
 Wed Dec 28 14:41:26 2011 OpenVPN 2.2.1 x86_64-unknown-linux-gnu [SSL] [LZO2] [EPOLL] [eurephia] built on Aug 13 2011
 Wed Dec 28 14:41:26 2011 NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
@@ -196,7 +198,7 @@ Wed Dec 28 14:41:54 2011 bugs/95.126.136.73:48904 MULTI: primary virtual IP for 
 Wed Dec 28 14:41:57 2011 bugs/95.126.136.73:48904 PUSH: Received control message: 'PUSH_REQUEST'
 Wed Dec 28 14:41:57 2011 bugs/95.126.136.73:48904 SENT CONTROL [bugs]: 'PUSH_REPLY,route 10.8.0.1,topology net30,ping 10,ping-restart 120,ifconfig 10.8.0.6 10.8.0.5' (status=1)
 ```
- `# openvpn /etc/openvpn/client.conf` 
+ `# openvpn /etc/openvpn/client/client.conf` 
 ```
 Wed Dec 28 14:41:50 2011 OpenVPN 2.2.1 i686-pc-linux-gnu [SSL] [LZO2] [EPOLL] [eurephia] built on Aug 13 2011
 Wed Dec 28 14:41:50 2011 NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
@@ -305,7 +307,7 @@ rtt min/avg/max/mdev = 206.027/210.603/224.158/6.832 ms
 
 After some trial and error..., we discover that we need to fragment packets on 548 bytes. In order to do this we specify this fragment size in the configuration and instruct OpenVPN to fix the Maximum Segment Size (MSS).
 
- `/etc/openvpn/client.conf` 
+ `/etc/openvpn/client/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
 .
@@ -318,12 +320,12 @@ user nobody
 group nobody
 .
 .
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/bugs.crt
-key /etc/openvpn/bugs.key
+ca ca.crt
+cert bugs.crt
+key bugs.key
 .
 .
-tls-auth /etc/openvpn/ta.key **1**
+tls-auth ta.key **1**
 
 ```
 
@@ -331,7 +333,7 @@ tls-auth /etc/openvpn/ta.key **1**
 
 Вы также можете позволить OpenVPN делать проверку пинга каждый раз, когда клиент подключается к VPN.
 
- `/etc/openvpn/client.conf` 
+ `/etc/openvpn/client/client.conf` 
 ```
 remote elmer.acmecorp.org 1194
 .
@@ -343,12 +345,12 @@ user nobody
 group nobody
 .
 .
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/bugs.crt
-key /etc/openvpn/bugs.key
+ca ca.crt
+cert bugs.crt
+key bugs.key
 .
 .
-tls-auth /etc/openvpn/ta.key **1**
+tls-auth ta.key **1**
 
 ```
 
@@ -356,13 +358,13 @@ tls-auth /etc/openvpn/ta.key **1**
 
 ### Ручной старт
 
-Для отладки VPN подключений, запускайте демон вручную: `# openvpn /etc/openvpn/client.conf`.
+Для отладки VPN подключений, запускайте демон вручную: `# openvpn /etc/openvpn/client/client.conf`.
 
 ### Настройка запуска через systemd
 
-Синтаксис автозапуска OpenVPN : `systemctl [enable](/index.php/Daemon "Daemon") openvpn@*<configuration>*`.
+Синтаксис автозапуска OpenVPN : `systemctl [enable](/index.php/Daemon "Daemon") openvpn-client@*<configuration>*`.
 
-Например, если файл конфигурации `/etc/openvpn/client.conf`, то название сервиса будет `openvpn@client.service`.
+Например, если файл конфигурации `/etc/openvpn/client/client.conf`, то название сервиса будет `openvpn-client@client.service`.
 
 #### OpenVPN не поднимается после выхода из сна
 
@@ -379,7 +381,7 @@ fi
 
 Дайте файлу права на исполнение `chmod a+x /usr/lib/systemd/system-sleep/vpn.sh`
 
-Добавьте `Restart=always` в `/usr/lib/systemd/system/openvpn@.service`
+Добавьте `Restart=always` в `/usr/lib/systemd/system/openvpn-client@.service`
 
 ## Развертывание L3 IP маршрутизации
 
@@ -422,7 +424,7 @@ net.ipv4.ip_forward=1
 
 ### Связь локальной сети сервера с клиентом
 
-Пусть на стороне сервера используется подсеть 10.66.0.0/24\. Чтобы эта подсеть была доступна клиенту, добавьте параметр push в файл конфигурации сервера: `/etc/openvpn/server.conf`  `push "route 10.66.0.0 255.255.255.0"` 
+Пусть на стороне сервера используется подсеть 10.66.0.0/24\. Чтобы эта подсеть была доступна клиенту, добавьте параметр push в файл конфигурации сервера: `/etc/openvpn/server/server.conf`  `push "route 10.66.0.0 255.255.255.0"` 
 **Примечание:**
 
 *   Не забудьте включить IPv4 переадресацию и перевести LAN интерфейс сервера в неразборчивый режим. Убедитесь, что локальная сеть на стороне сервера знает, как связаться с клиентом VPN.
@@ -449,7 +451,7 @@ net.ipv4.ip_forward=1
 
 Добавьте в конфиг. сервера строку с параметром каталога настройки клиентов . Укажите серверу направлять пакеты подсети туннеля на сервер локальной сети `route 192.168.4.0 255.255.255.0`
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 client-config-dir ccd
 route 192.168.4.0 255.255.255.0
@@ -465,7 +467,7 @@ route 192.168.4.0 255.255.255.0
 
 Совмещает два предыдущих раздела:
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 push "route 10.66.0.0 255.255.255.0"
 client-config-dir ccd
@@ -477,11 +479,11 @@ route 192.168.4.0 255.255.255.0
 
 ### Связь клиентов с другими локальными сетями
 
-По умолчанию клиенты не видят друг друга. Чтобы разрешить обмениваться пакетами между клиентами и клиентскими сетями, добавьте *client-to-client* в файл конфигурации сервера: `/etc/openvpn/server.conf`  `client-to-client` 
+По умолчанию клиенты не видят друг друга. Чтобы разрешить обмениваться пакетами между клиентами и клиентскими сетями, добавьте *client-to-client* в файл конфигурации сервера: `/etc/openvpn/server/server.conf`  `client-to-client` 
 
 Чтобы клиенты сервера и другие сети были доступны друг для друга, пропишите маршруты для каждой подсети в файл конфигурации сервера
 
- `/etc/openvpn/server.conf` 
+ `/etc/openvpn/server/server.conf` 
 ```
 client-to-client
 push "route 192.168.4.0 255.255.255.0"
@@ -521,7 +523,7 @@ And then configure ufw in `/etc/default/ufw`:
 
  `/etc/default/ufw`  `DEFAULT_FORWARD_POLICY="ACCEPT"` 
 
-Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Don't forget to change the IP/subnet mask to match the one in `/etc/openvpn/server.conf`.
+Now change `/etc/ufw/before.rules`, and add the following code after the header and before the "*filter" line. Don't forget to change the IP/subnet mask to match the one in `/etc/openvpn/server/server.conf`.
 
  `/etc/ufw/before.rules` 
 ```

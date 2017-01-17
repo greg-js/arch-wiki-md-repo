@@ -34,6 +34,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [11.3 Logging into SHiFT](#Logging_into_SHiFT)
 *   [12 Borderlands: The Pre-Sequel](#Borderlands:_The_Pre-Sequel)
     *   [12.1 Keyboard not working](#Keyboard_not_working)
+    *   [12.2 Not launching from Steam Client](#Not_launching_from_Steam_Client)
 *   [13 Cities in Motion 2](#Cities_in_Motion_2)
     *   [13.1 Dialog boxes fail to display properly](#Dialog_boxes_fail_to_display_properly)
 *   [14 Cities Skylines](#Cities_Skylines)
@@ -438,6 +439,16 @@ SSL_CERT_DIR="/etc/ssl/certs" %command%
 ### Keyboard not working
 
 Using dwm, no keyboard input seems to register with BL:TPQ. Switching to openbox helped solved the issue, no other fix could be found. It's either a specific dwm issue or tiling WMs in general.
+
+### Not launching from Steam Client
+
+The game may stop launching from Steam; on launch, game appears as 'Running', then syncs and closes.
+
+This may require a few steps; however, the primary issue seems to be that the steam_appid.txt file is missing. In the game folder (by default this should be ~/.steam/steam/steamapps/common/BorderlandsPreSequel), you will need to manually create this file. The contents should read: 261640
+
+The game may be launched from terminal from this location at this time, using any other command line options you would normally use under Set Launch Options.
+
+Alternatively, a launcher or script can be created in your WM to launch this application manually.
 
 ## Cities in Motion 2
 

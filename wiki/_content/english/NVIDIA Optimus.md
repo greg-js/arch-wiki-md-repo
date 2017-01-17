@@ -259,7 +259,7 @@ For more information, look at NVIDIA's official page on the topic [[3]](http://u
 
 ### Tearing/Broken VSync
 
-Unfortunately, this is an issue which currently has no solution, and is [known to NVIDIA](https://devtalk.nvidia.com/default/topic/775691/linux/vsync-issue-nvidia-prime-ux32vd-with-gt620-m-/).
+This requires [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) 1.19 or higher, [linux](https://www.archlinux.org/packages/?name=linux) kernel 4.5 or higher, and [nvidia](https://www.archlinux.org/packages/?name=nvidia) 370.23 or higher. You can read the official [forum thread here](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/).
 
 ### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)
 

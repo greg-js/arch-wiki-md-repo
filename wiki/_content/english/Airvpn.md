@@ -20,7 +20,7 @@ You can use the opvn file gotten from AirVPN's config generator as a conf file. 
 
 If you're interested in simply getting openvpn to work with credentials provided by a third-party VPN service, just [install](/index.php/Install "Install") the [openvpn](https://www.archlinux.org/packages/?name=openvpn) package available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Airvpn generates your config for you, if you have an account and are logged in. You can choose a server, port, and proxy settings, and download a zip file with certificates and settings. I downloaded it from ["Access without a client"](https://airvpn.org/index.php?option=com_air&view=access&Itemid=100) on 01.20.2012\.
+Airvpn generates your config for you, if you have an account and are logged in. You can choose a server, port, and proxy settings, and download a zip file with certificates and settings. On the ["OpenVPN Configuration Generator"](https://airvpn.org/generator) page, select "Separate keys/certs from the .ovpn file" in advanced mode (on 01.16.2017).
 
 You should now have an archive air.zip containing 4 files:
 

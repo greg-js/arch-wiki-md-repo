@@ -803,41 +803,41 @@ See also [Wikipedia:Comparison of Internet_Relay_Chat_clients](https://en.wikipe
 
 ###### 图形界面
 
-*   **HexChat** — Fork of XChat for Linux and Windows.
+*   **HexChat** — 基于Xchat，支持Linux和Windows。
 
 	[http://hexchat.github.io/](http://hexchat.github.io/) || [hexchat](https://www.archlinux.org/packages/?name=hexchat)
 
-*   **[Konversation](https://en.wikipedia.org/wiki/Konversation "wikipedia:Konversation")** — Qt-based IRC client for the KDE desktop.
+*   **[Konversation](https://en.wikipedia.org/wiki/Konversation "wikipedia:Konversation")** — KDE桌面的IRC客户端。
 
 	[http://konversation.kde.org/](http://konversation.kde.org/) || [konversation](https://www.archlinux.org/packages/?name=konversation)
 
-*   **[KVIrc](https://en.wikipedia.org/wiki/KVIrc "wikipedia:KVIrc")** — Qt-based IRC client featuring extensive themes support.
+*   **[KVIrc](https://en.wikipedia.org/wiki/KVIrc "wikipedia:KVIrc")** — 基于QT且能够更外主题外观的IRC客户端。
 
 	[http://kvirc.net/](http://kvirc.net/) || [kvirc](https://www.archlinux.org/packages/?name=kvirc)
 
-*   **Loqui** — GTK+ IRC client with only one dependency: [GNet](https://live.gnome.org/GNetLibrary).
+*   **Loqui** — 依赖少，基于GTK的IRC客户端。 [GNet](https://live.gnome.org/GNetLibrary)
 
 	[https://launchpad.net/loqui](https://launchpad.net/loqui) || [loqui](https://aur.archlinux.org/packages/loqui/)
 
-*   **LostIRC** — Simple GTK+ IRC client with tab-autocompletion, multiple server support, logging and others.
+*   **LostIRC** — 简单的基于GTK+的IRC客户端，具有Tab补全功能，支持多服务器和日志记录等。
 
 	[http://lostirc.sourceforge.net](http://lostirc.sourceforge.net) || [lostirc](https://aur.archlinux.org/packages/lostirc/)
 
-*   **pcw** — Frontend for [ii](http://tools.suckless.org/ii) that opens a new terminal for each channel.
+*   **pcw** — [ii](http://tools.suckless.org/ii)的图形前端， 可以为每一个通信开启一个终端。
 
 	[https://bitbucket.org/emg/pcw](https://bitbucket.org/emg/pcw) || [pcw-hg](https://aur.archlinux.org/packages/pcw-hg/)
 
-*   **[Quassel](https://en.wikipedia.org/wiki/Quassel_IRC "wikipedia:Quassel IRC")** — Modern, cross-platform, distributed IRC client.
+*   **Polari** — Gnome项目中的简洁IRC客户端。
+
+	[https://wiki.gnome.org/Apps/Polari/](https://wiki.gnome.org/Apps/Polari/) || [polari](https://www.archlinux.org/packages/?name=polari)
+
+*   **[Quassel](https://en.wikipedia.org/wiki/Quassel_IRC "wikipedia:Quassel IRC")** — 现代的跨平台分布式IRC客户端。
 
 	[http://quassel-irc.org/](http://quassel-irc.org/) || [quassel-core](https://www.archlinux.org/packages/?name=quassel-core) [quassel-client](https://www.archlinux.org/packages/?name=quassel-client)
 
-*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — Cross-platform IRC client for the GNOME desktop inspired by [Irssi](/index.php/Irssi "Irssi").
+*   **[Smuxi](https://en.wikipedia.org/wiki/Smuxi "wikipedia:Smuxi")** — 跨平台的IRC客户端 ，灵感来自于[Irssi](/index.php/Irssi "Irssi")。
 
 	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
-
-*   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — GTK-based IRC client that works on both Linux and Windows.
-
-	[http://xchat.org/](http://xchat.org/) || [xchat](https://www.archlinux.org/packages/?name=xchat)
 
 ##### XMPP (Jabber)
 

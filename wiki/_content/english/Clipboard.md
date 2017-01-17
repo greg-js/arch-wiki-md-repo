@@ -6,8 +6,14 @@ From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(
 
 *   [1 History](#History)
 *   [2 Background](#Background)
-*   [3 List of clipboard managers](#List_of_clipboard_managers)
-*   [4 See also](#See_also)
+*   [3 CLIPBOARD instead of PRIMARY](#CLIPBOARD_instead_of_PRIMARY)
+    *   [3.1 Konsole terminal](#Konsole_terminal)
+    *   [3.2 Klipper](#Klipper)
+    *   [3.3 Firefox](#Firefox)
+    *   [3.4 Gvim](#Gvim)
+    *   [3.5 GTK](#GTK)
+*   [4 List of clipboard managers](#List_of_clipboard_managers)
+*   [5 See also](#See_also)
 
 ## History
 
@@ -18,6 +24,54 @@ In X10, "cut buffers" were introduced. These were limited buffers that stored ar
 The [ICCCM](http://tronche.com/gui/x/icccm/) (Inter-Client Communication Conventions Manual) standard defines three "selections": PRIMARY, SECONDARY, and CLIPBOARD. Despite the naming, all three are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections. However, in some cases, this can produce strange outcomes, such as a bidirectional shared clipboard with Windows (which uses a single-clipboard system) in a virtual machine.
 
 Of the three selections, users should only be concerned with PRIMARY and CLIPBOARD. SECONDARY is only used inconsistently and was intended as an alternate to PRIMARY. Different applications may treat PRIMARY and CLIPBOARD differently; however, there is a degree of consensus that CLIPBOARD should be used for Windows-style clipboard operations, while PRIMARY should exist as a "quick" option, where text can be selected using the mouse or keyboard, then pasted using the middle mouse button (or some emulation of it). This can cause confusion and, in some cases, inconsistent or undesirable results from rogue applications.
+
+## CLIPBOARD instead of PRIMARY
+
+This section explains how to configure your system to use the CLIPBOARD instead of PRIMARY as much as possible.
+
+### Konsole terminal
+
+The [konsole](https://www.archlinux.org/packages/?name=konsole) terminal allows to use the shortcut `ctl+c` both for copying text and for stopping commands. The behaviour depends on whether there is something selected or not.
+
+### Klipper
+
+The Klipper clipboard manager can be configured to completely ignore the selection clipboard.
+
+### Firefox
+
+To stop firefox from acting on middle mouse clicks, set the following options in `about:config`.
+
+ `about:config` 
+```
+middlemouse.contentLoadURL false
+middlemouse.paste false
+
+```
+
+### Gvim
+
+To allow interacting with the clipboard in Gvim, various configuration variants exist. The following variant uses the shortcuts `ctrl+c` to copy marked text when in visual mode, and `ctrl+v` to paste text when in visual or insert mode, and `ctrl+x` to cut text when in visual mode.
+
+ `.gvimrc` 
+```
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+
+```
+
+See [[1]](https://superuser.com/questions/10588/how-to-make-cut-copy-paste-in-gvim-on-ubuntu-work-with-ctrlx-ctrlc-ctrlv/189198) for other options.
+
+### GTK
+
+GTK3 allows disabling the middle click to paste functionality to avoid accidental pasting.
+
+ `.config/gtk-3.0` 
+```
+gtk-enable-primary-paste=false
+
+```
 
 ## List of clipboard managers
 

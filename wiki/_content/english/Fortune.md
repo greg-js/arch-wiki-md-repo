@@ -1,68 +1,92 @@
-[Fortune](https://en.wikipedia.org/wiki/Fortune_(Unix) is a simple program that displays a pseudorandom message from a database of quotations.
+[fortune](https://en.wikipedia.org/wiki/Fortune_(Unix) is a simple program that displays random poignant, inspirational, silly or snide phrase from a database of quotations. The *fortune* command-line utility is part of the [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod) package.
 
-## Configuration
+## Contents
 
-Along with colors, system info and ASCII symbols, [Bash](/index.php/Bash "Bash") can be made to display a piece of ASCII art on login. ASCII images can be found online and pasted into a text file, or generated from scratch. To set the image to display in a terminal on login, use:
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+    *   [2.1 Cowsay](#Cowsay)
+        *   [2.1.1 Default cow with fortune](#Default_cow_with_fortune)
+        *   [2.1.2 Random cow with fortune](#Random_cow_with_fortune)
+        *   [2.1.3 Random custom cow with fortune](#Random_custom_cow_with_fortune)
+    *   [2.2 Ponysay](#Ponysay)
+*   [3 See also](#See_also)
 
- `~/.bashrc` 
+## Installation
+
+[Install](/index.php/Install "Install") [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod) or [fortune-mod-git](https://aur.archlinux.org/packages/fortune-mod-git/).
+
+**Tip:** Meta packages which provide quotes from specific sources are available in the [AUR](/index.php/AUR "AUR"). For example, [fortune-mod-archlinux](https://aur.archlinux.org/packages/fortune-mod-archlinux/) contains Arch related quotes. You can use [wikiquote-fortune](https://aur.archlinux.org/packages/wikiquote-fortune/) to generate fortune files from [wikiquote](http://en.wikiquote.org) pages, using the syntax `wikiquote-fortune X`, where X is the page's name. To use these files, run `$ fortune /path/to/quote`.
+
+## Usage
+
+*   Command-line in a terminal:
+
 ```
-cat */path/to/text/file*
-
-```
-
-Random poignant, inspirational, silly or snide phrases can be found in [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod).
-
- `$ fortune` 
-```
+$ fortune
 It is Texas law that when two trains meet each other at a railroad crossing,
 each shall come to a full stop, and neither shall proceed until the other has gone.
 
 ```
 
-**Note:**
+*   To display a random quote when launching an interactive terminal, add the *fortune* command to the rc configuration file of your preferred shell:
 
-By default, `fortune` displays quotes and phrases that are rather innocuous. However, the package does contain a set of comments some people will find offensive, located in `/usr/share/fortune/off/`. See the [man page](http://manpages.ubuntu.com/manpages/quantal/en/man6/fortune.6.html) (`man fortune`) for more info on these.
-
-To have a random phrase displayed when logging into a terminal, use:
-
- `~/.bashrc` 
 ```
-command fortune
+#!/bin/bash
+# ~/.bashrc
+fortune
 
 ```
 
-**Tip:**
-
-You can use [wikiquote-fortune](https://aur.archlinux.org/packages/wikiquote-fortune/) to generate fortune files from [wikiquote](http://en.wikiquote.org) pages, using the syntax `wikiquote-fortune X`, where X is the page's name. To use these files, run `$ fortune /path/to/quote`. You can find fortune files made this way on the [AUR](/index.php/AUR "AUR"). For example, [fortune-mod-archlinux](https://aur.archlinux.org/packages/fortune-mod-archlinux/) contains Arch related quotes.
-
-These two features can be combined, using the program [cowsay](https://www.archlinux.org/packages/?name=cowsay):
-
- `command cowsay $(fortune)` 
 ```
-The earth is like a tiny grain of sand, 
-only much, much heavier.                
------------------------------------------ 
+#!/bin/dash
+# ~/.dashrc
+fortune
+
+```
+
+*   To display a random quote when logging into a login terminal, add the *fortune* command to the profile configuration file of your preferred shell:
+
+```
+#!/bin/mksh
+# ~/.profile
+fortune
+
+```
+
+**Note:** *fortune* displays quotes and phrases deemed by its maintainer to be [non-offensive](https://github.com/shlomif/fortune-mod/blob/master/fortune-mod/Offensive). Aphorisms can be enabled as a mix of offensive/non-offensive or as potentially offensive output only. See `man fortune` for more information.
+
+### Cowsay
+
+#### Default cow with fortune
+
+*   Combined with the program [cowsay](https://www.archlinux.org/packages/?name=cowsay):
+
+```
+$ cowthink $(fortune)
+   ___________________________________
+( The best cure for insomnia is to )
+( get a lot of sleep. -W.C. Fields     )
+  --------------------------------------------
+       o   ^__^
+        o  (oo)\_______
+             (__)\             )\/\
+               ||----   w |
+               ||          ||
+
+```
+
+*   Display a potentially offensive fortune:
+
+```
+$ cowsay $(fortune -o)
+      _______________________________
+< Chastity is its own punishment. >
+      ---------------------------------------
        \   ^__^
         \  (oo)\_______
-           (__)\       )\/\
-               ||----w |
-               ||     ||
-**(user@host)-(10:10 AM Wed Dec 22****)**
---(~))--->
-
-```
- `command cowthink $(fortune)` 
-```
-( The best cure for insomnia is to get a )
-( lot of sleep. -W.C. Fields             )
- ---------------------------------------- 
-        o   ^__^
-         o  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-**(user@host)-(10:10 AM Wed Dec 22****)**
---(~))--->
+            (__)\             )\/\
+               ||----  w |
+               ||         ||
 
 ```
 
@@ -73,48 +97,70 @@ $ cowsay -f */path/to/file* $(fortune)
 
 ```
 
-This can produce some nice eye candy, and the commands used can be more complex. For a specialized example, take a look [here.](http://bambambambam.wordpress.com/2009/07/04/futurama-ascii-with-slashdot-header-quotes-in-your-terminal/) Another example, to use a random cow, random facial expression, and nicely wrap the text of long fortunes:
-
- `command fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n` 
-```
- ________________________________________ 
-( Fry: I must be a robot. Why else would )
-( human women refuse to date me?         )
----------------------------------------- 
-       o
-         o
-           o  
-              ,'``.._   ,'``.
-             :,--._:)\,:,._,.:
-             :`--,''@@@:`...';\        
-              `,'@@@@@@@`---'@@`.     
-              /@@@@@@@@@@@@@@@@@:
-             /@@@@@@@@@@@@@@@@@@@\
-           ,'@@@@@@@@@@@@@@@@@@@@@:\.___,-.
-          `...,---'``````-..._@@@@|:@@@@@@@\
-            (                 )@@@;:@@@@)@@@\  _,-.
-             `.              (@@@//@@@@@@@@@@`'@@@@\
-              :               `.//@@)@@@@@@)@@@@@,@;
-              |`.            _,'/@@@@@@@)@@@@)@,'@,'
-              :`.`-..____..=:.-':@@@@@.@@@@@_,@@,'
-             ,'\ ``--....-)='    `._,@@\    )@@@'``._
-            /@_@`.       (@)      /@@@@@)  ; / \ \`-.'
-           (@@@`-:`.     `' ___..'@@_,-'   |/   `.)
-            `-. `.`.``-----``--,@@.'
-              |/`.\`'        ,',');
-                  `         (/  (/
-**(user@host)-(10:10 AM Wed Dec 22****)**
---(~))--->
-
-```
-
-**Note:**
-
-For full 256-colored cowsay-like art use [ponysay](https://www.archlinux.org/packages/?name=ponysay) (version 3.0 has 422 ponies). The syntax is the same, meaning `$ ponysay *message*` to say something and `ponysay -l` for a complete list of ponies. To select a pony to display, run `$ ponysay --pony x "message"`, where x is a pony. To create more ponies use [util-say-git](https://aur.archlinux.org/packages/util-say-git/) and store them in `~/.local/share/ponysay/ponies` and `~/.local/share/ponysay/ttyponies/` for desktop and TTY, respectively.
-
-## Random Cow with fortune
+#### Random cow with fortune
 
 ```
 $ fortune -c | cowthink -f $(find /usr/share/cows -type f | shuf -n 1)
+  ___________________________________________
+( (computers) % A language that doesn't )
+( affect the way you think about                  )
+( programming is not worth knowing.       )
+  ------------------------------------------------------
+         o      (__)
+          o     /oo|
+           o   (_"_)*+++++++++*
+                    //I#\ \ \ \ \ \ \ \   I \
+                   I[I|I | | | | |   I I `
+                   I`I ' /  /  /  '  '     I I
+                   I I                       I I
+                  ~ ~                     ~ ~
+                        Scowleton
 
 ```
+
+#### Random custom cow with fortune
+
+Complex commands can be chained to produce detailed ASCII art sych as this [Futurama example](http://bambambambam.wordpress.com/2009/07/04/futurama-ascii-with-slashdot-header-quotes-in-your-terminal/).
+
+*   Display a random cow with a random facial expression and wrap long lines of fortune text:
+
+**Note:** The randomly selected cow is actually a toad chosen from a database with custom ASCII art
+
+```
+$ fortune -a | fmt -80 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n
+    ________________________________________ 
+( Fry: I must be a robot. Why else would )
+( human women refuse to date me?         )
+    -------------------------------------------------- 
+      o
+        o
+          o  
+             ,'``.._   ,'``.
+            :,--._:)\,:,._,.:
+            :`--,*@@@:`...';\* 
+             `,'@@@@@@@`---'@@`.     
+             /@@@@@@@@@@@@@@@@@:
+            /@@@@@@@@@@@@@@@@@@@\
+          ,'@@@@@@@@@@@@@@@@@@@@@:\.___,-.
+         `...,---'``````-..._@@@@|:@@@@@@@\
+           (                 )@@@;:@@@@)@@@\  _,-.
+            `.              (@@@//@@@@@@@@@@`'@@@@\
+             :               `.//@@)@@@@@@)@@@@@,@;
+             |`.            _,'/@@@@@@@)@@@@)@,'@,'
+             :`.`-..____..=:.-':@@@@@.@@@@@_,@@,'
+            ,'\ ``--....-)='    `._,@@\    )@@@'``._
+           /@_@`.       (@)      /@@@@@)  ; / \ \`-.'
+          (@@@`-:`.     `' ___..'@@_,-'   |/   `.)
+           `-. `.`.``-----``--,@@.'
+             |/`.\`'        ,',');
+                 `         (/  (/
+
+```
+
+### Ponysay
+
+For full 256-colored cowsay-like art use [ponysay](https://www.archlinux.org/packages/?name=ponysay) (version 3.0 has 422 ponies). The syntax is the same, meaning `$ ponysay *message*` to say something and `ponysay -l` for a complete list of ponies. To select a pony to display, run `$ ponysay --pony x "message"`, where x is a pony. To create more ponies use [util-say-git](https://aur.archlinux.org/packages/util-say-git/) and store them in `~/.local/share/ponysay/ponies` and `~/.local/share/ponysay/ttyponies/` for desktop and TTY, respectively.
+
+## See also
+
+*   [fortune-mod GitHub project page](https://github.com/shlomif/fortune-mod)

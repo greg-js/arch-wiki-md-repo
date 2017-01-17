@@ -770,10 +770,6 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
-*   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — GTK-based IRC client that works on both Linux and Windows.
-
-	[http://xchat.org/](http://xchat.org/) || [xchat](https://www.archlinux.org/packages/?name=xchat)
-
 ##### XMPP (Jabber)
 
 See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") and [Wikipedia:Comparison of instant messaging clients#XMPP-related features](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#XMPP-related_features "wikipedia:Comparison of instant messaging clients").
@@ -1386,7 +1382,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 ### Bitcoin
 
-See [Bitcoin#Bitcoin Software](/index.php/Bitcoin#Bitcoin_Software "Bitcoin").
+See [Bitcoin#Bitcoin software](/index.php/Bitcoin#Bitcoin_software "Bitcoin").
 
 ### Surveying
 

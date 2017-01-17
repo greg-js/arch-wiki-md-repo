@@ -13,7 +13,7 @@
 *   [1 动作和冒险](#.E5.8A.A8.E4.BD.9C.E5.92.8C.E5.86.92.E9.99.A9)
 *   [2 街机](#.E8.A1.97.E6.9C.BA)
 *   [3 休闲游戏](#.E4.BC.91.E9.97.B2.E6.B8.B8.E6.88.8F)
-*   [4 象棋模拟器](#.E8.B1.A1.E6.A3.8B.E6.A8.A1.E6.8B.9F.E5.99.A8)
+*   [4 国际象棋模拟器](#.E5.9B.BD.E9.99.85.E8.B1.A1.E6.A3.8B.E6.A8.A1.E6.8B.9F.E5.99.A8)
 *   [5 教育](#.E6.95.99.E8.82.B2)
 *   [6 Interactive fiction](#Interactive_fiction)
 *   [7 大型多人在线游戏(MMO)](#.E5.A4.A7.E5.9E.8B.E5.A4.9A.E4.BA.BA.E5.9C.A8.E7.BA.BF.E6.B8.B8.E6.88.8F.28MMO.29)
@@ -215,7 +215,7 @@
 
 	[http://ninvaders.sourceforge.net/](http://ninvaders.sourceforge.net/) || [ninvaders](https://aur.archlinux.org/packages/ninvaders/)
 
-## 象棋模拟器
+## 国际象棋模拟器
 
 *   **[GNU Chess](https://en.wikipedia.org/wiki/GNU_Chess "wikipedia:GNU Chess")** — One of the oldest computer chess programs for Unix-based computers, lets most modern computers play a full game of chess
 
@@ -363,7 +363,11 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 	[http://www.blockout.net/blockout2/](http://www.blockout.net/blockout2/) || [blockout2](https://aur.archlinux.org/packages/blockout2/)
 
-*   **Cgoban3** — Kiseido Go and SGF client.
+*   **Bovo** — [Gomoku](https://en.wikipedia.org/wiki/Gomoku)-like game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/bovo/](https://www.kde.org/applications/games/bovo/) || [bovo](https://www.archlinux.org/packages/?name=bovo)
+
+*   **Cgoban3** — KGS围棋客户端，带有 SGF 棋谱文件编辑功能
 
 	[http://www.igoweb.org/~wms/comp/cgoban/](http://www.igoweb.org/~wms/comp/cgoban/) || [cgoban](https://www.archlinux.org/packages/?name=cgoban)
 
@@ -375,37 +379,105 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 	[http://www.aluminumangel.org/attack/](http://www.aluminumangel.org/attack/) || [crack-attack](https://aur.archlinux.org/packages/crack-attack/)
 
-*   **glChess** — 3D Chess Frontend.
+*   **Gnu Go** — 一款终端围棋程序
 
-	[http://live.gnome.org/Chess](http://live.gnome.org/Chess) || [glchess](https://aur.archlinux.org/packages/glchess/)
+	[https://www.gnu.org/software/gnugo/](https://www.gnu.org/software/gnugo/) || [gnugo](https://www.archlinux.org/packages/?name=gnugo)
 
-*   **Gnono** — GNOME version of the classic card game UNO.
+*   **Gopanda** — IGS在线围棋客户端。
 
-	[http://sourceforge.net/projects/gnono/](http://sourceforge.net/projects/gnono/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gnono)</small>
+	[http://pandanet-igs.com/communities/gopanda2](http://pandanet-igs.com/communities/gopanda2) || [Gopanda](https://www.archlinux.org/packages/?name=Gopanda)
+
+*   **gweled** — Eliminating tiles by joining them in groups of three.
+
+	[https://launchpad.net/gweled/](https://launchpad.net/gweled/) || [gweled](https://www.archlinux.org/packages/?name=gweled)
 
 *   **Hitori** — Small application written to allow one to play the eponymous puzzle game, which is similar in theme to more popular puzzles such as Sudoku.
 
 	[https://wiki.gnome.org/Apps/Hitori](https://wiki.gnome.org/Apps/Hitori) || [hitori](https://www.archlinux.org/packages/?name=hitori)
 
+*   **kblackbox** — Finding positions of hidden balls by using hints. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kblackbox/](https://www.kde.org/applications/games/kblackbox/) || [kblackbox](https://www.archlinux.org/packages/?name=kblackbox)
+
+*   **kblocks** — *Tetris* clone. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kblocks/](https://www.kde.org/applications/games/kblocks/) || [kblocks](https://www.archlinux.org/packages/?name=kblocks)
+
+*   **KDiamond** — Eliminating tiles by joining them in groups of three. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kdiamond/](https://www.kde.org/applications/games/kdiamond/) || [kdiamond](https://www.archlinux.org/packages/?name=kdiamond)
+
+*   **KFourInLine** — Competition between two players to put a line of four pieces before the opponent. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kfourinline/](https://www.kde.org/applications/games/kfourinline/) || [kfourinline](https://www.archlinux.org/packages/?name=kfourinline)
+
+*   **Kigo** — KDE的围棋游戏，属于[kdegames](https://www.archlinux.org/groups/x86_64/kdegames/)，以GNUGo为后端。
+
+	[https://www.kde.org/applications/games/kigo/](https://www.kde.org/applications/games/kigo/) || [kdegames-kigo](https://www.archlinux.org/packages/?name=kdegames-kigo)
+
+*   **Killbots** — A turn-based game with an objective of avoiding robots that are trying to kill the player. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/killbots/](https://www.kde.org/applications/games/killbots/) || [killbots](https://www.archlinux.org/packages/?name=killbots)
+
+*   **KJumpingCube** — Take-all-tiles game in which one gains fields by increasing value of one’s own nearby fields. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kjumpingcube/](https://www.kde.org/applications/games/kjumpingcube/) || [kjumpingcube](https://www.archlinux.org/packages/?name=kjumpingcube)
+
+*   **Klickety** — Clearing the board by removing aligned tiles. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://games.kde.org/game.php?game=klickety](https://games.kde.org/game.php?game=klickety) || [klickety](https://www.archlinux.org/packages/?name=klickety)
+
+*   **KLines** — Moving balls around the board to form a line of 5 of the same color. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/klines/](https://www.kde.org/applications/games/klines/) || [klines](https://www.archlinux.org/packages/?name=klines)
+
+*   **KMines** — [Minesweeper](https://en.wikipedia.org/wiki/Minesweeper_(video_game)), part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kmines/](https://www.kde.org/applications/games/kmines/) || [kmines](https://www.archlinux.org/packages/?name=kmines)
+
+*   **KNetwalk** — Rotating tiles with wires to connect all computers to internet. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/knetwalk/](https://www.kde.org/applications/games/knetwalk/) || [knetwalk](https://www.archlinux.org/packages/?name=knetwalk)
+
+*   **Kolf** — A minigolf game with 2D overhead view. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kolf/](https://www.kde.org/applications/games/kolf/) || [kdegames-kolf](https://www.archlinux.org/packages/?name=kdegames-kolf)
+
+*   **KShisen** — [Shisen-Sho](https://en.wikipedia.org/wiki/Shisen-Sho). Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/kshisen/](https://www.kde.org/applications/games/kshisen/) || [kshisen](https://www.archlinux.org/packages/?name=kshisen)
+
 *   **Ksudoku** — Sudoku game and more for KDE. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[http://ksudoku.sourceforge.net/](http://ksudoku.sourceforge.net/) || [kdegames-ksudoku](https://www.archlinux.org/packages/?name=kdegames-ksudoku)
 
-*   **Netris** — Unfinished developmental version of Netris, a free networked version of Tetris.
+*   **Kubrick** — A Rubik’s cube solving game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
-	[https://sourceforge.net/projects/netris/](https://sourceforge.net/projects/netris/) || [netris](https://aur.archlinux.org/packages/netris/)
+	[https://www.kde.org/applications/games/kubrick/](https://www.kde.org/applications/games/kubrick/) || [kdegames-kubrick](https://www.archlinux.org/packages/?name=kdegames-kubrick)
+
+*   **Palapeli** — Jigsaw puzzle game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
+
+	[https://www.kde.org/applications/games/palapeli/](https://www.kde.org/applications/games/palapeli/) || [kdegames-palapeli](https://www.archlinux.org/packages/?name=kdegames-palapeli)
+
+*   **Pathological** — Complete all wheels on the board by collecting marbles of the same color in each of them.
+
+	[http://pathological.sourceforge.net/howtoplay.php](http://pathological.sourceforge.net/howtoplay.php) || [pathological](https://www.archlinux.org/packages/?name=pathological)
+
+*   **Picmi** — Nonogram puzzle game
+
+	[https://games.kde.org/picmi](https://games.kde.org/picmi) || [picmi](https://www.archlinux.org/packages/?name=picmi)
 
 *   **Pingus** — Lemmings clone, i.e. a level-based puzzle game.
 
 	[http://pingus.seul.org/](http://pingus.seul.org/) || [pingus](https://www.archlinux.org/packages/?name=pingus)
 
-*   **Portal** — Original puzzle game by Valve. Using Source Engine.
-
-	[http://store.steampowered.com/app/400/](http://store.steampowered.com/app/400/) || Steam
-
 *   **Ri-li** — Toy wood engine GPL game
 
 	[http://ri-li.sourceforge.net/](http://ri-li.sourceforge.net/) || [ri-li](https://aur.archlinux.org/packages/ri-li/)
+
+*   **qgo** — 具有本地对弈（GNUGo为后端）和多协议在线对弈的围棋客户端，且具有SGF编辑功能。
+
+	[https://github.com/pzorin/qgo](https://github.com/pzorin/qgo) || [qgo](https://www.archlinux.org/packages/?name=qgo)
 
 *   **Simon Tatham's Portable Puzzle Collection** — 30+ "quick" puzzle games with simplistic but polished GTK GUI
 
@@ -417,13 +489,17 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 	[http://thelettervsixtim.es/](http://thelettervsixtim.es/) || [vvvvvv](https://aur.archlinux.org/packages/vvvvvv/)
 
+*   **XMahjongg** — Mahjong solitaire for X.
+
+	[https://www.lcdf.org/xmahjongg/](https://www.lcdf.org/xmahjongg/) || [xmahjongg](https://www.archlinux.org/packages/?name=xmahjongg)
+
 *   **Xscorch** — Clone of the classic DOS game Scorched Earth.
 
 	[http://www.xscorch.org/](http://www.xscorch.org/) || [xscorch](https://aur.archlinux.org/packages/xscorch/)
 
 *   **[World of Goo](https://en.wikipedia.org/wiki/World_of_Goo "wikipedia:World of Goo")** — Great 2D puzzle game.
 
-	[http://www.2dboy.com](http://www.2dboy.com) || [worldofgoo](https://aur.archlinux.org/packages/worldofgoo/)
+	[https://www.2dboy.com](https://www.2dboy.com) || [worldofgoo](https://aur.archlinux.org/packages/worldofgoo/)
 
 ## 赛车
 

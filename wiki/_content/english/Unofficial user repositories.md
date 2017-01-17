@@ -76,21 +76,22 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.2 ashleyis](#ashleyis)
         *   [5.1.3 atom](#atom)
         *   [5.1.4 aurpackages](#aurpackages)
-        *   [5.1.5 boyska64](#boyska64)
-        *   [5.1.6 coderkun-aur](#coderkun-aur)
-        *   [5.1.7 coderkun-aur-audio](#coderkun-aur-audio)
-        *   [5.1.8 decryptedepsilon](#decryptedepsilon)
-        *   [5.1.9 eatabrick](#eatabrick)
-        *   [5.1.10 freifunk-rheinland](#freifunk-rheinland)
-        *   [5.1.11 holo](#holo)
-        *   [5.1.12 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.13 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.14 markzz](#markzz)
-        *   [5.1.15 qt-debug](#qt-debug)
-        *   [5.1.16 quarry](#quarry)
-        *   [5.1.17 siosm-aur](#siosm-aur)
-        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.5 aur-archlinux](#aur-archlinux)
+        *   [5.1.6 boyska64](#boyska64)
+        *   [5.1.7 coderkun-aur](#coderkun-aur)
+        *   [5.1.8 coderkun-aur-audio](#coderkun-aur-audio)
+        *   [5.1.9 decryptedepsilon](#decryptedepsilon)
+        *   [5.1.10 eatabrick](#eatabrick)
+        *   [5.1.11 freifunk-rheinland](#freifunk-rheinland)
+        *   [5.1.12 holo](#holo)
+        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
+        *   [5.1.14 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.15 markzz](#markzz)
+        *   [5.1.16 qt-debug](#qt-debug)
+        *   [5.1.17 quarry](#quarry)
+        *   [5.1.18 siosm-aur](#siosm-aur)
+        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -799,6 +800,19 @@ Server = http://noaxiom.org/$repo/$arch
 [aurpackages]
 SigLevel = Required
 Server = https://r.mikroskeem.eu
+
+```
+
+#### aur-archlinux
+
+*   **Maintainer:** Marc Mettke <marc@itmettke.de>
+*   **Description:** Auto Build of Most Popular AUR Packages
+*   **Key-ID:** 7448C890582975CD
+
+```
+[aur-archlinux]
+SigLevel = Required TrustedOnly
+Server = https://repo.arch-server.org/aur/$repo/$arch
 
 ```
 

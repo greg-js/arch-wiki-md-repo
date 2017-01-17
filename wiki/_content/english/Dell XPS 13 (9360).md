@@ -20,22 +20,23 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [1 Content adaptive brightness control](#Content_adaptive_brightness_control)
 *   [2 NVM Express SSD](#NVM_Express_SSD)
     *   [2.1 NVME Power Saving Patch](#NVME_Power_Saving_Patch)
-*   [3 Coil Whine](#Coil_Whine)
-*   [4 Video](#Video)
-    *   [4.1 Blank screen issue after booting](#Blank_screen_issue_after_booting)
-*   [5 Wireless](#Wireless)
-*   [6 Bluetooth](#Bluetooth)
-*   [7 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
-    *   [7.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
-*   [8 SATA controller](#SATA_controller)
-*   [9 Touchpad](#Touchpad)
-    *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
-*   [10 Touchscreen](#Touchscreen)
-    *   [10.1 Gestures](#Gestures)
-*   [11 Firmware Updates](#Firmware_Updates)
-*   [12 Troubleshooting](#Troubleshooting)
-    *   [12.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [12.2 Not waking from suspend](#Not_waking_from_suspend)
+*   [3 Video](#Video)
+    *   [3.1 Blank screen issue after booting](#Blank_screen_issue_after_booting)
+*   [4 Wireless](#Wireless)
+*   [5 Bluetooth](#Bluetooth)
+*   [6 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
+    *   [6.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
+*   [7 SATA controller](#SATA_controller)
+*   [8 Touchpad](#Touchpad)
+    *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
+*   [9 Touchscreen](#Touchscreen)
+    *   [9.1 Gestures](#Gestures)
+*   [10 Firmware Updates](#Firmware_Updates)
+*   [11 Troubleshooting](#Troubleshooting)
+    *   [11.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [11.2 Not waking from suspend](#Not_waking_from_suspend)
+    *   [11.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
+    *   [11.4 Coil Whine](#Coil_Whine)
 
 ## Content adaptive brightness control
 
@@ -48,10 +49,6 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 Andy Lutomirski has released version 4 of his patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR package below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
-
-## Coil Whine
-
-Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. For some users, it is possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"). The coil whine will then start again under heavy graphic load. For the touchscreen model, this may be very often, due to the high resolution screen. In a similar vein, the display can be run at a lower resolution, again reducing the load on the graphics card.
 
 ## Video
 
@@ -130,3 +127,11 @@ The BIOS does not pass any boot parameters to the kernel. Use a UEFI [boot loade
 ### Not waking from suspend
 
 Update the BIOS to 1.0.7 to patch this issue.
+
+### Power Drain after waking from standby
+
+Some users recognised ~2W more power consumption after waking up from standby. Go to the UEFI Firmware Settings (tap the F2 key when the Dell logo appears) and uncheck the 'Enable Thunderbolt Boot Support'. You may use [powertop](https://www.archlinux.org/packages/?name=powertop) or [powerstat-git](https://aur.archlinux.org/packages/powerstat-git/) to reproduce and check this behaviour yourself.
+
+### Coil Whine
+
+Unfortunately Dell still did not fix this issue and the sound for my model was very loud. The issue seems to be connected to the graphic card. For some users, it is possible to reduce it a lot by activating frame buffer compression "enable_fbc=1" [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"). The coil whine will then start again under heavy graphic load. For the touchscreen model, this may be very often, due to the high resolution screen. In a similar vein, the display can be run at a lower resolution, again reducing the load on the graphics card.

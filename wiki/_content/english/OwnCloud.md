@@ -527,8 +527,6 @@ Now, regenerate your certificate store:
 
 Restart the httpd service to activate your certificate.
 
-Should this not work, consider disabling `mod_curl` in `/etc/php/php.ini`.
-
 ### Self-signed certificate for Android devices
 
 Once you have followed the setup for SSL, as on [LAMP](/index.php/LAMP#TLS.2FSSL "LAMP") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
@@ -741,7 +739,7 @@ While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param 
 
 ### Docker
 
-See the [ownCloud](https://hub.docker.com/_/owncloud/)] or [Nextcloud](https://github.com/nextcloud/docker) repository for [Docker](/index.php/Docker "Docker").
+See the [ownCloud](https://hub.docker.com/_/owncloud/) or [Nextcloud](https://github.com/nextcloud/docker) repository for [Docker](/index.php/Docker "Docker").
 
 ### Upload and share from File Manager
 
@@ -803,7 +801,7 @@ location ^~ /lool {
 
 ```
 
-There's also a [setup instruction](https://nextcloud.com/collaboraonline/) for [Apache](/index.php/Apache "Apache"). Assuming you already have the docker deamon up and running, you can now pull the latest docker image for Collabora Online. Adjust the second command with the domain name of your Nextcloud server.
+There's also a [setup instruction](https://nextcloud.com/collaboraonline/) for [Apache](/index.php/Apache "Apache"). Assuming you already have the docker daemon up and running, you can now pull the latest docker image for Collabora Online. Adjust the second command with the domain name of your Nextcloud server.
 
 ```
 docker pull collabora/code

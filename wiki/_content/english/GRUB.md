@@ -524,6 +524,8 @@ menuentry 'FreeBSD' {
 
 ##### Windows installed in UEFI-GPT Mode menu entry
 
+This mode determines where the Windows bootloader resides and chain-loads it after Grub when the meny entry is selected. The main task here is finding the EFI partition and running the bootloader from it.
+
 **Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It **WILL NOT WORK** in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more info.
 
 ```
@@ -539,11 +541,15 @@ if [ "${grub_platform}" == "efi" ]; then
 fi
 ```
 
-where `$hints_string` and `$fs_uuid` are obtained with the following two commands. `$fs_uuid`'s command:
+where `$hints_string` and `$fs_uuid` are obtained with the following two commands.
+
+The `$fs_uuid` command determines the UUID of the EFI partition:
 
  `# grub-probe --target=fs_uuid $esp/EFI/Microsoft/Boot/bootmgfw.efi`  `1ce5-7f28` 
 
-`$hints_string`'s command:
+Alternatively one can run `blkid` (as root) and read the UUID of the EFI partition from there.
+
+The `$hints_string` command will determine the location of the EFI partition, in this case harddrive 0:
 
  `# grub-probe --target=hints_string $esp/EFI/Microsoft/Boot/bootmgfw.efi`  `--hint-bios=hd0,gpt1 --hint-efi=hd0,gpt1 --hint-baremetal=ahci0,gpt1` 
 

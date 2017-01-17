@@ -16,18 +16,19 @@ For more information, please visit the xmonad website: [http://xmonad.org/](http
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 X-Selection-Paste](#X-Selection-Paste)
     *   [5.2 Keyboard shortcuts](#Keyboard_shortcuts)
-    *   [5.3 Complementary applications](#Complementary_applications)
-    *   [5.4 Increase the number of workspaces](#Increase_the_number_of_workspaces)
-    *   [5.5 Making room for Conky or tray apps](#Making_room_for_Conky_or_tray_apps)
-    *   [5.6 Using xmobar with xmonad](#Using_xmobar_with_xmonad)
-        *   [5.6.1 Quick, less flexible](#Quick.2C_less_flexible)
-        *   [5.6.2 More configurable](#More_configurable)
-        *   [5.6.3 Verify XMobar config](#Verify_XMobar_config)
-    *   [5.7 Controlling xmonad with external scripts](#Controlling_xmonad_with_external_scripts)
-    *   [5.8 Launching another window manager within xmonad](#Launching_another_window_manager_within_xmonad)
-    *   [5.9 KDE and xmonad](#KDE_and_xmonad)
-    *   [5.10 IM Layout for Skype](#IM_Layout_for_Skype)
-    *   [5.11 Example configurations](#Example_configurations)
+    *   [5.3 Targeting unbound keys:](#Targeting_unbound_keys:)
+    *   [5.4 Complementary applications](#Complementary_applications)
+    *   [5.5 Increase the number of workspaces](#Increase_the_number_of_workspaces)
+    *   [5.6 Making room for Conky or tray apps](#Making_room_for_Conky_or_tray_apps)
+    *   [5.7 Using xmobar with xmonad](#Using_xmobar_with_xmonad)
+        *   [5.7.1 Quick, less flexible](#Quick.2C_less_flexible)
+        *   [5.7.2 More configurable](#More_configurable)
+        *   [5.7.3 Verify XMobar config](#Verify_XMobar_config)
+    *   [5.8 Controlling xmonad with external scripts](#Controlling_xmonad_with_external_scripts)
+    *   [5.9 Launching another window manager within xmonad](#Launching_another_window_manager_within_xmonad)
+    *   [5.10 KDE and xmonad](#KDE_and_xmonad)
+    *   [5.11 IM Layout for Skype](#IM_Layout_for_Skype)
+    *   [5.12 Example configurations](#Example_configurations)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 GNOME 3 and xmonad](#GNOME_3_and_xmonad)
         *   [6.1.1 Compositing in GNOME and Xmonad](#Compositing_in_GNOME_and_Xmonad)
@@ -84,7 +85,7 @@ This is achieved by writing an `xmonad.hs` like this:
 ```
 import XMonad
 
-main = xmonad defaultConfig
+main = xmonad def
     { terminal    = "urxvt"
     , modMask     = mod4Mask
     , borderWidth = 3
@@ -186,6 +187,10 @@ Also, there exists a function "pasteSelection" in XMonad.Util.Paste that can be 
 Pressing the "Insert" key will now paste the mouse buffer in the active window.
 
 ### Keyboard shortcuts
+
+Default keyboard shortcuts are listed in the man page of xmonad.
+
+### Targeting unbound keys:
 
 If you use Xmonad as a stand alone window manager, you can edit the xmonad.hs to add unbound keyboard keys. You just need to find the Xf86 name of the key (such as XF86PowerDown) and look it up in `/usr/include/X11/XF86keysym.h`. It will give you a keycode (like 0x1008FF2A) which you can use to add a line like the following in the keybindings section of your `xmonad.hs`:
 

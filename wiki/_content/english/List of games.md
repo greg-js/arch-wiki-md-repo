@@ -426,6 +426,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://www.gnu.org/software/gnugo/](https://www.gnu.org/software/gnugo/) || [gnugo](https://www.archlinux.org/packages/?name=gnugo)
 
+*   **Gopanda** — Client for the Pandanet-IGS go Server.
+
+	[http://pandanet-igs.com/communities/gopanda2](http://pandanet-igs.com/communities/gopanda2) || [Gopanda](https://www.archlinux.org/packages/?name=Gopanda)
+
 *   **gweled** — Eliminating tiles by joining them in groups of three.
 
 	[https://launchpad.net/gweled/](https://launchpad.net/gweled/) || [gweled](https://www.archlinux.org/packages/?name=gweled)
@@ -513,6 +517,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 *   **Ri-li** — Toy wood engine GPL game
 
 	[http://ri-li.sourceforge.net/](http://ri-li.sourceforge.net/) || [ri-li](https://aur.archlinux.org/packages/ri-li/)
+
+*   **qgo** — A Go client and full featured SGF editor
+
+	[https://github.com/pzorin/qgo](https://github.com/pzorin/qgo) || [qgo](https://www.archlinux.org/packages/?name=qgo)
 
 *   **Simon Tatham's Portable Puzzle Collection** — 30+ "quick" puzzle games with simplistic but polished GTK GUI
 

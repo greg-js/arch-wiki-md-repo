@@ -84,7 +84,7 @@ After making changes to a configuration file, [restart](/index.php/Restart "Rest
 **Note:**
 
 *   In the examples below, `enp1s0` is the wired adapter and `wlp2s0` is the wireless adapter. These names can be different on different systems.
-*   If you want to disable IPv6, and your router advertises IPv6, you might need to add `IPv6AcceptRA=false` to the `[Network]` section.
+*   If you want to disable IPv6, see [IPv6#systemd-networkd](/index.php/IPv6#systemd-networkd_2 "IPv6").
 *   Set `DHCP=yes` to accept an IPv4 **and** IPv6 DHCP request to the `[Network]` section.
 
 #### Wired adapter using DHCP

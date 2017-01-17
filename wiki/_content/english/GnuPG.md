@@ -16,6 +16,8 @@ According to the [official website](http://www.gnupg.org):
     *   [3.4 Import a public key](#Import_a_public_key)
     *   [3.5 Use a keyserver](#Use_a_keyserver)
     *   [3.6 Encrypt and decrypt](#Encrypt_and_decrypt)
+        *   [3.6.1 Asymmetric](#Asymmetric)
+        *   [3.6.2 Symmetric](#Symmetric)
 *   [4 Key maintenance](#Key_maintenance)
     *   [4.1 Backup your private key](#Backup_your_private_key)
     *   [4.2 Edit your key](#Edit_your_key)
@@ -197,10 +199,12 @@ $ gpg --recv-keys *<key-id>*
 
 *   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed.
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
-*   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. `hkp://jijrk5u4osbsr34t5.onion` is the onion address for the sks-keyservers pool. [See this GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
+*   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. See this [GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
 *   You can connect to a keyserver using a proxy by setting the `http_proxy` environment variable and setting `honor-http-proxy` in `dirmngr.conf`. Alternatively, set `http-proxy *host[:port]*` in `dirmngr.conf`, overriding the `http_proxy` environment variable.
 
 ### Encrypt and decrypt
+
+#### Asymmetric
 
 You need to [#Import a public key](#Import_a_public_key) of a user before encrypting (options `--encrypt` or `-e`) a file or message to that recipient (options `--recipient` or `-r`).
 
@@ -226,6 +230,28 @@ $ gpg --output *doc* --decrypt *doc.gpg*
 *   Use `-R *<user-id>*` or `--hidden-recipient *<user-id>*` instead of `-r` to not put the recipient key IDs in the encrypted message. This helps to hide the receivers of the message and is a limited countermeasure against traffic analysis.
 *   Add `--no-emit-version` to avoid printing the version number, or add the corresponding setting to your configuration file.
 *   You can use gnupg to encrypt your sensitive documents by using your own user-id as recipient, but only individual files at a time, though you can always tarball various files and then encrypt the tarball. See also [Disk encryption#Available methods](/index.php/Disk_encryption#Available_methods "Disk encryption") if you want to encrypt directories or a whole file-system.
+
+#### Symmetric
+
+Symmetric encryption does not require the generation of a key pair and can be used to simply encrypt data with a passphrase.
+
+*   Encrypt *doc* with a symmetric cipher using a passphrase
+*   Use the AES-256 cipher algorithm to encrypt the passphrase
+*   Use the SHA-512 digest algorithm to mangle the passphrase
+*   Mangle the passphrase for 65536 iterations
+
+```
+$ gpg -c --s2k-cipher-algo AES256 --s2k-digest-algo SHA512 --s2k-count 65536 *doc*
+
+```
+
+*   Decrypt a symmetrically encrypted *doc.gpg* using a passphrase
+*   Output decrypted contents into the same directory as *doc.gpg*
+
+```
+$ gpg *doc.gpg*
+
+```
 
 ## Key maintenance
 

@@ -13,9 +13,8 @@
         *   [3.2.3 Notes](#Notes)
 *   [4 Firetools](#Firetools)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Mozilla Firefox: Could not find the Mozilla runtime](#Mozilla_Firefox:_Could_not_find_the_Mozilla_runtime)
-    *   [5.2 Symbolic links](#Symbolic_links)
-    *   [5.3 PulseAudio](#PulseAudio)
+    *   [5.1 PulseAudio](#PulseAudio)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -87,33 +86,12 @@ A GUI application for use with Firejail is also available, [firetools](https://a
 
 ## Troubleshooting
 
-### Mozilla Firefox: Could not find the Mozilla runtime
-
-See the next section.
-
-### Symbolic links
-
-If the command path given to firejail is a symbolic link instead of an executable, firejail gets confused, and the application fails to run. For example, the command path of mozilla firefox is a symbolic link: `/usr/bin/firefox -> /usr/lib/firefox/firefox` Therefore following error appears when trying to start mozilla firefox with firejail.
-
- `firejail firefox` 
-```
-Could not find the Mozilla runtime.
-
-Parent is shutting down, bye...
-
-```
-
-This can be remedied by giving the target of the symbolic link to firejail as an argument.
-
-```
-$ firejail /usr/lib/firefox/firefox
-
-```
-
-Also use this path in the Exec= line of .desktop files for a sandboxed mozilla firefox.
-
 ### PulseAudio
 
 If Firejail causes PulseAudio to misbehave, there is a [known issue.](https://firejail.wordpress.com/support/known-problems/) A temporary workaround:
 
- `cp /etc/pulse/client.conf ~/.config/pulse/`  `echo "enable-shm = no" >> ~/.config/pulse/client.conf`
+ `cp /etc/pulse/client.conf ~/.config/pulse/`  `echo "enable-shm = no" >> ~/.config/pulse/client.conf` 
+
+## See also
+
+*   [Firejail GitHub project page](https://github.com/netblue30/firejail)

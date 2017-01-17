@@ -612,9 +612,9 @@ Applications and browsers select and display fonts depending upon fontconfig pre
 
 ### Set terminal font on-the-fly
 
-For terminal emulators that use `Xresources`, fonts can be set by using escape sequences. Specifically, echo `\033]710;$font\007` to change the normal font (`*font` in `~/.Xresources`), and replace `710` with `711`, `712`, and `713` to change the `*boldFont`, `*italicFont`, and `*boldItalicFont`, respectively.
+For terminal emulators that use `Xresources`, fonts can be set by using escape sequences. Specifically, `echo -e "\033]710;$font\007"` to change the normal font (`*font` in `~/.Xresources`), and replace `710` with `711`, `712`, and `713` to change the `*boldFont`, `*italicFont`, and `*boldItalicFont`, respectively.
 
-`$font` can be anything the terminal emulator will support.
+`$font` uses the same syntax as in `~/.Xresources` and can be anything the terminal emulator will support. (Example: `xft:dejavu sans mono:size=9`)
 
 ### Application-specific font cache
 

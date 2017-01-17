@@ -5,7 +5,8 @@
 *   [1 Preparation](#Preparation)
 *   [2 Installation](#Installation)
     *   [2.1 The plymouth hook](#The_plymouth_hook)
-    *   [2.2 The kernel command line](#The_kernel_command_line)
+    *   [2.2 Alternative plymouth hook (systemd)](#Alternative_plymouth_hook_.28systemd.29)
+    *   [2.3 The kernel command line](#The_kernel_command_line)
 *   [3 Configuration](#Configuration)
     *   [3.1 Smooth transition](#Smooth_transition)
     *   [3.2 Show Delay](#Show_Delay)
@@ -37,6 +38,14 @@ Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.con
 **Warning:** If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` in order to get to the TTY password prompts.
 
 **Warning:** Using PARTUUID in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
+
+### Alternative plymouth hook (systemd)
+
+If your [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf") includes the `systemd` hook, then replace `plymouth` with `sd-plymouth`. Additionally, if using hard drive encryption, use `sd-encrypt` instead of `encrypt` or `plymouth-encrypt`:
+
+ `/etc/mkinitcpio.conf`  `HOOKS="base systemd sd-plymouth [...] sd-encrypt [...]"` 
+
+It may in this case be necessary to use [plymouth-git](https://aur.archlinux.org/packages/plymouth-git/) instead of [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
 ### The kernel command line
 

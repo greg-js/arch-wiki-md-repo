@@ -185,7 +185,16 @@ The [iso](https://archive.archlinux.org/iso) directory contains official ISO ima
 
 ### How to downgrade one package
 
-Find the package you want under [/packages](#.2Fpackages). Download it and install it using `pacman -U`.
+Find the package you want under [/packages](#.2Fpackages) and let pacman fetch it for installation. For example:
+
+```
+# pacman -U https://archive.archlinux.org/packages/ ... *packagename*.pkg.tar.xz
+
+```
+
+Letting pacman fetch it will automatically download the package's detached *.sig* file and verify it according to `/etc/pacman.conf` settings.
+
+Alternatively, download and install the package manually using `pacman -U`.
 
 See also [Downgrading packages#Automation](/index.php/Downgrading_packages#Automation "Downgrading packages") for tools that simplify the process.
 

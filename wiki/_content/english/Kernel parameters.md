@@ -4,7 +4,13 @@ There are three ways to pass options to the kernel and thus control its behaviou
 2.  When starting the kernel (usually, when invoked from a boot loader).
 3.  At runtime (through the files in `/proc` and `/sys`). See [sysctl](/index.php/Sysctl "Sysctl") for details.
 
-This page now explains in more detail the second method and shows a list of most used kernel parameters in Arch Linux.
+This page explains in more detail the second method and shows a list of the most used kernel parameters in Arch Linux.
+
+Not all parameters are always available. Most are associated with subsystems and work only if the kernel is configured with those subsystems built in. They also depend on the presence of the hardware they are associated with.
+
+Parameters either have the format `parameter` or `parameter=value`.
+
+**Note:** All kernel parameters are case-sensitive. Most of them are lower case, writing those in upper case does not work.
 
 ## Contents
 
@@ -111,7 +117,7 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 
 	 `"Boot using default options"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff rw *quiet splash*"` 
 
-*   If you have disabled auto-detection of OSes in rEFInd and are defining OS stanzas instead in `*esp*/refind/refind.conf` to load your OSes, you can edit it like:
+*   If you have disabled auto-detection of OSes in rEFInd and are defining OS stanzas instead in `*esp*/EFI/refind/refind.conf` to load your OSes, you can edit it like:
 
 ```
 menuentry "Arch Linux" {
@@ -122,7 +128,7 @@ menuentry "Arch Linux" {
 
 ```
 
-For more information on configuring kernel parameters in rEFInd, see [Configuring the rEFInd Bootmanager](http://www.rodsbooks.com/refind/linux.html)
+For more information on configuring rEFInd, see the [rEFInd](/index.php/REFInd "REFInd") article.
 
 ### EFISTUB
 
@@ -147,9 +153,7 @@ The `-n` option skips adding the mount to `/etc/mtab`, so it will work even if r
 
 ## Parameter list
 
-Parameters always come in `parameter` or `parameter=value`. All of these parameters are case-sensitive.
-
-**Note:** Not all of the listed options are always available. Most are associated with subsystems and work only if the kernel is configured with those subsystems built in. They also depend on the presence of the hardware they are associated with.
+This list is not comprehensive. For a complete list of all options, please see the [kernel documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt).
 
 | parameter | Description |
 | root= | Root filesystem. |
@@ -166,8 +170,6 @@ Parameters always come in `parameter` or `parameter=value`. All of these paramet
 | video=<videosetting> | Override framebuffer video defaults. |
 
  [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") uses `ro` as default value when neither `rw` or `ro` is set by the [boot loader](/index.php/Boot_loader "Boot loader"). Boot loaders may set the value to use, for example GRUB uses `rw` by default (see [FS#36275](https://bugs.archlinux.org/task/36275) as a reference).
-
-For a complete list of all options, please see the [kernel documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt).
 
 ## See also
 

@@ -95,7 +95,9 @@ Thunderbolt Ethernet adapters and USB-to-Ethernet adapters are usually picked up
 
 Another easy option is to use USB tethering with an Android device. For more information, see [Android tethering](/index.php/Android_tethering "Android tethering").
 
-If you have neither, the only option is to use the onboard wireless adapter. Unfortunately, it uses a Broadcom BCM43xx chipset, which is supported only by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") and is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
+If you have neither, the only option is to use the onboard wireless adapter. Depending on your model, you may have the Broadcom BCM43602, which is supported by the open source brcmfac which is included by default in the kernel (see [here](/index.php/Broadcom_wireless#brcm80211 "Broadcom wireless")). If this is the case, you should have wireless available from the installer.
+
+Unfortunately, other BCM43xx chipsets my only be supported by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") which is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
 
 ```
 $ curl -O [https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz](https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz)
@@ -262,10 +264,7 @@ See [HiDPI](/index.php/HiDPI "HiDPI") for information on how to tweak the system
 ### Sound
 
 *   Headphones work
-*   Speakers work from kernel 3.13 and 3.12.2\. 3.12.1 only with patch
-    *   Patch: [https://bugzilla.kernel.org/attachment.cgi?id=114081](https://bugzilla.kernel.org/attachment.cgi?id=114081).
-    *   See discussion here: [https://bugzilla.kernel.org/show_bug.cgi?id=64401](https://bugzilla.kernel.org/show_bug.cgi?id=64401)
-*   Optical audio can be turned off and on with above sound patch.
+*   Speakers work (tested with kernel 4.8)
 
 If you do not want to hear the annoying sound at system start-up, one way to get rid of it is to turn sound off while under Mac OS.
 
@@ -363,6 +362,7 @@ After=upower.service
 *   Framebuffer, works for MacBook Pro 11,1 and 11,3 via `/sys/class/backlight/gmux_backlight/brightness`.
 *   Brightness in `/sys/class/backlight/gmux_backlight/brightness` can be modified comfortably via the [gmux_backlight](https://aur.archlinux.org/packages/gmux_backlight/) utility without root privileges. Requires the `setpci` setting below.
 *   Nvidia, does not work using default settings. Try adding `setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0` to `/etc/rc.local`.
+*   AMD models may require a patched kernel for the backlight to be adjusted. The [linux-macbook](https://aur.archlinux.org/packages/linux-macbook/) kernel fixes this.
 
 **Note:** If the screen does not show the prompt or the login manager (i.e. a black screen), append `i915.invert_brightness=1` to the kernel.
 

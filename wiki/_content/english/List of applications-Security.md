@@ -8,15 +8,16 @@
 
 *   [1 Security](#Security)
     *   [1.1 Firewalls](#Firewalls)
-    *   [1.2 Network security](#Network_security)
-    *   [1.3 Threat and vulnerability detection](#Threat_and_vulnerability_detection)
-    *   [1.4 File security](#File_security)
-    *   [1.5 Anti malware](#Anti_malware)
-    *   [1.6 Backup programs](#Backup_programs)
-    *   [1.7 Screen lockers](#Screen_lockers)
-    *   [1.8 Hash checkers](#Hash_checkers)
-    *   [1.9 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
-    *   [1.10 Password managers](#Password_managers)
+    *   [1.2 Sandboxes](#Sandboxes)
+    *   [1.3 Network security](#Network_security)
+    *   [1.4 Threat and vulnerability detection](#Threat_and_vulnerability_detection)
+    *   [1.5 File security](#File_security)
+    *   [1.6 Anti malware](#Anti_malware)
+    *   [1.7 Backup programs](#Backup_programs)
+    *   [1.8 Screen lockers](#Screen_lockers)
+    *   [1.9 Hash checkers](#Hash_checkers)
+    *   [1.10 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
+    *   [1.11 Password managers](#Password_managers)
 
 ## Security
 
@@ -27,6 +28,20 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 See the main article: [Firewalls](/index.php/Firewalls "Firewalls").
 
 See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Comparison_of_firewalls "wikipedia:Comparison of firewalls").
+
+#### Sandboxes
+
+*   **[Firejail](/index.php/Firejail "Firejail")** — SUID sandboxing application with desktop-specific features including whitelists.
+
+	[https://github.com/netblue30/firejail](https://github.com/netblue30/firejail) || [firejail](https://www.archlinux.org/packages/?name=firejail)
+
+*   **[bubblewrap](/index.php/Bubblewrap "Bubblewrap")** — Lightweight unprivileged sandboxing tool for virtualized containers and applications alike.
+
+	[https://github.com/projectatomic/bubblewrap](https://github.com/projectatomic/bubblewrap) || [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap)
+
+*   **playpen** — Featherweight application sandbox with support for namespaces, cgroups and seccomp.
+
+	[https://github.com/thestinger/playpen](https://github.com/thestinger/playpen) || [playpen](https://www.archlinux.org/packages/?name=playpen)
 
 #### Network security
 

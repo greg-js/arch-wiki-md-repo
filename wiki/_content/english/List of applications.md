@@ -204,15 +204,16 @@ This article is a general list of applications sorted by category, as a referenc
     *   [4.15 Bibliographic reference managers](#Bibliographic_reference_managers)
 *   [5 Security](#Security)
     *   [5.1 Firewalls](#Firewalls)
-    *   [5.2 Network security](#Network_security)
-    *   [5.3 Threat and vulnerability detection](#Threat_and_vulnerability_detection)
-    *   [5.4 File security](#File_security)
-    *   [5.5 Anti malware](#Anti_malware)
-    *   [5.6 Backup programs](#Backup_programs)
-    *   [5.7 Screen lockers](#Screen_lockers)
-    *   [5.8 Hash checkers](#Hash_checkers)
-    *   [5.9 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
-    *   [5.10 Password managers](#Password_managers)
+    *   [5.2 Sandboxes](#Sandboxes)
+    *   [5.3 Network security](#Network_security)
+    *   [5.4 Threat and vulnerability detection](#Threat_and_vulnerability_detection)
+    *   [5.5 File security](#File_security)
+    *   [5.6 Anti malware](#Anti_malware)
+    *   [5.7 Backup programs](#Backup_programs)
+    *   [5.8 Screen lockers](#Screen_lockers)
+    *   [5.9 Hash checkers](#Hash_checkers)
+    *   [5.10 Encryption, signing, steganography](#Encryption.2C_signing.2C_steganography)
+    *   [5.11 Password managers](#Password_managers)
 *   [6 Science](#Science)
     *   [6.1 Scientific documents](#Scientific_documents_2)
     *   [6.2 Mathematics](#Mathematics)
@@ -962,10 +963,6 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[http://smuxi.org/](http://smuxi.org/) || [smuxi](https://www.archlinux.org/packages/?name=smuxi)
 
-*   **[XChat](https://en.wikipedia.org/wiki/XChat "wikipedia:XChat")** — GTK-based IRC client that works on both Linux and Windows.
-
-	[http://xchat.org/](http://xchat.org/) || [xchat](https://www.archlinux.org/packages/?name=xchat)
-
 ##### XMPP (Jabber)
 
 See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") and [Wikipedia:Comparison of instant messaging clients#XMPP-related features](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients#XMPP-related_features "wikipedia:Comparison of instant messaging clients").
@@ -1578,7 +1575,7 @@ Pastebin services are often used to quote text or images while collaborating and
 
 ### Bitcoin
 
-See [Bitcoin#Bitcoin Software](/index.php/Bitcoin#Bitcoin_Software "Bitcoin").
+See [Bitcoin#Bitcoin software](/index.php/Bitcoin#Bitcoin_software "Bitcoin").
 
 ### Surveying
 
@@ -4438,6 +4435,20 @@ For detailed guides, see the main ArchWiki page, [Security](/index.php/Security 
 See the main article: [Firewalls](/index.php/Firewalls "Firewalls").
 
 See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Comparison_of_firewalls "wikipedia:Comparison of firewalls").
+
+#### Sandboxes
+
+*   **[Firejail](/index.php/Firejail "Firejail")** — SUID sandboxing application with desktop-specific features including whitelists.
+
+	[https://github.com/netblue30/firejail](https://github.com/netblue30/firejail) || [firejail](https://www.archlinux.org/packages/?name=firejail)
+
+*   **[bubblewrap](/index.php/Bubblewrap "Bubblewrap")** — Lightweight unprivileged sandboxing tool for virtualized containers and applications alike.
+
+	[https://github.com/projectatomic/bubblewrap](https://github.com/projectatomic/bubblewrap) || [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap)
+
+*   **playpen** — Featherweight application sandbox with support for namespaces, cgroups and seccomp.
+
+	[https://github.com/thestinger/playpen](https://github.com/thestinger/playpen) || [playpen](https://www.archlinux.org/packages/?name=playpen)
 
 #### Network security
 

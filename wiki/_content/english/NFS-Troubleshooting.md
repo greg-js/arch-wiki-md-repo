@@ -118,7 +118,7 @@ Try adding <tt>sync</tt> as a mount option on the client (e.g. in <tt>/etc/fstab
 
 ### mount.nfs: Operation not permitted
 
-After updating to *nfs-utils* 1.2.1-2 or higher, mounting NFS shares stopped working. Henceforth, *nfs-utils* uses NFSv4 per default instead of NFSv3\. The problem can be solved by using either mount option `'vers=3'` or `'nfsvers=3'` on the command line:
+*nfs-utils* versions 1.2.1-2 or higher use NFSv4 by default, resulting in NFSv3 shares failing on upgrade. The problem can be solved by using either mount option `'vers=3'` or `'nfsvers=3'` on the command line:
 
 ```
 # mount.nfs *remote target* *directory* -o ...,vers=3,...
@@ -136,21 +136,20 @@ or in `/etc/fstab`:
 
 ### mount.nfs: Protocol not supported
 
-Check you are not mounting including the export root. Use:
+This error occurs when you include the export root in the path of the NFS source. For example:
 
 ```
-# mount SERVER:/ /mnt
-
-```
-
-instead of, i.e.:
-
-```
-# mount SERVER:/srv/nfs4/ /mnt
+# mount SERVER:/srv/nfs4/media /mnt
+mount.nfs4: Protocol not supported
 
 ```
 
-Sometimes it could be the same problem with "Operation not permitted" : *nfs-utils* uses NFSv4 per default instead of NFSv3\. Go and see the previons section
+Use the relative path instead:
+
+```
+# mount SERVER:/media /mnt
+
+```
 
 ### Problems with Vagrant and synced_folders
 

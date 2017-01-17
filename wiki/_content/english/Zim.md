@@ -18,6 +18,7 @@ From the project [home page](http://zim-wiki.org/):
 *   [4 Tips](#Tips)
     *   [4.1 Plugins](#Plugins)
         *   [4.1.1 Spell checker](#Spell_checker)
+        *   [4.1.2 Source View](#Source_View)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Problems at launch](#Problems_at_launch)
     *   [5.2 Error: Unable to find or create trash directory](#Error:_Unable_to_find_or_create_trash_directory)
@@ -50,6 +51,10 @@ Zim provides a lot of useful plugins where many of them are not enabled by defau
 The requirements for the Spell Checker plugin are as follows: [gtkspell](https://www.archlinux.org/packages/?name=gtkspell), [python2-gtkspell](https://www.archlinux.org/packages/?name=python2-gtkspell) and [aspell-en](https://www.archlinux.org/packages/?name=aspell-en).
 
 Change `aspell-en` to your desired language support. Now you can configure the Spell Checker and define the default language, in my case `en_GB`.
+
+#### Source View
+
+The requirements for Source View are as follows: [pygtksourceview2](https://www.archlinux.org/packages/?name=pygtksourceview2)
 
 ## Troubleshooting
 

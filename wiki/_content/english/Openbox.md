@@ -66,6 +66,7 @@ A comprehensive list of features are documented at the [official Openbox website
         *   [12.7.1 Firefox](#Firefox)
     *   [12.8 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
     *   [12.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
+    *   [12.10 Enable Hot Corners](#Enable_Hot_Corners)
 *   [13 Troubleshooting](#Troubleshooting_2)
     *   [13.1 Windows load behind the active window](#Windows_load_behind_the_active_window)
 *   [14 See also](#See_also)
@@ -806,6 +807,30 @@ obsetlayout 0 2 2 0
 ```
 
 Run it without arguments to know what the arguments mean.
+
+### Enable Hot Corners
+
+[dopey](https://github.com/nukura/dopey) provides hot corners for openbox and other lightweight window managers. Start the application with a entry in the autostart-file:
+
+```
+com.nukura.dopey &
+
+```
+
+Commands can be edited in the configuration file `~/.config/com.nukura/dopey.conf`:
+
+```
+[eDP1]
+bottom=
+bottomLeft=chromium
+bottomRight=thunar
+left=
+right=
+top=
+topLeft=com.nukura.happy toggle
+topRight=skippy-xd
+
+```
 
 ## Troubleshooting
 

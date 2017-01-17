@@ -263,6 +263,7 @@ Type = Package
 Target = linux
 
 [Action]
+Depends = rsync
 Description = Backing up /boot...
 When = PreTransaction
 Exec = /usr/bin/rsync -avzq --delete /boot /.bootbackup

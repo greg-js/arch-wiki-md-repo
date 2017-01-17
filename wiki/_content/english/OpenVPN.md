@@ -746,7 +746,8 @@ If you copy the script into `/etc/openvpn` and mark as executable with [chmod](/
 script-security 2
 setenv PATH /usr/bin
 up /etc/openvpn/update-systemd-resolved
-down-pre /etc/openvpn/update-systemd-resolved
+down /etc/openvpn/update-systemd-resolved
+down-pre
 
 ```
 

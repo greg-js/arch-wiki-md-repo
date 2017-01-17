@@ -155,7 +155,7 @@
 
 	(integer) configures the speed of scrolling, it is a bit counter-intuitive because higher values produce greater precision and thus slower scrolling. Negative values cause natural scrolling like in OS X.
 
-这个[例子](/index.php?title=Touchpad_Synaptics/10-synaptics.conf_example&action=edit&redlink=1 "Touchpad Synaptics/10-synaptics.conf example (page does not exist)")包含了所有选项的简短介绍. 因为不同计算机的配置一般也不同. 我们推荐使用 [synclient](/index.php/Touchpad_Synaptics#Fine-tuning_with_synclient "Touchpad Synaptics")来对你的计算机进行针对性调教
+这个[例子](/index.php?title=Touchpad_Synaptics/10-synaptics.conf_example&action=edit&redlink=1 "Touchpad Synaptics/10-synaptics.conf example (page does not exist)")包含了所有选项的简短介绍. 因为不同计算机的配置一般也不同. 我们推荐使用 [synclient](/index.php/Touchpad_Synaptics#Synclient "Touchpad Synaptics")来对你的计算机进行针对性调教
 
 如果你经常因为手掌扫过触摸板而导致TabButton2属性被触发(大多数时候都是"粘贴”动作)，而你又不介意关闭掉双指触击功能，请将`TapButton2`设置为0.
 
@@ -171,11 +171,11 @@ Recent versions include a "Coasting" feature, enabled by default, which may have
 
 #### 命令行工具
 
-**[Synclient](/index.php/Touchpad_Synaptics#Synclient "Touchpad Synaptics")** — cSynclient是一个可以对Synaptics驱动进行查询并进行配置的命令行工具，这个工具是由synaptics维护者开发并和synaptics驱动一起提供给用户
+**[Synclient](/index.php/Touchpad_Synaptics#Synclient "Touchpad Synaptics")** — Synclient是一个可以对Synaptics驱动进行查询并进行配置的命令行工具，这个工具是由synaptics维护者开发并和synaptics驱动一起提供给用户
 
 	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
 
-**[xinput](/index.php/Touchpad_Synaptics#xinput "Touchpad Synaptics")** — 调试设备的小型通用命令行程序
+**[xinput](/index.php/Touchpad_Synaptics#Using_xinput_to_determine_touchpad_capabilities "Touchpad Synaptics")** — 调试设备的小型通用命令行程序
 
 	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput)
 

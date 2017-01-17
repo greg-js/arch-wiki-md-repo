@@ -879,7 +879,7 @@ This signals that the xHCI USB controller in 00:14.0 cannot be reset and will th
 
 ### No HDMI audio output on host when intel_iommu is enabled
 
-If after enabling `intel_iommu` the HDMI output device of Intel GPU becomes unusable on the host then setting the option `igfx_off` (e.g. `intel_iommu=on,igfx_off`) might bring the audio back, please read `Graphics Problems?` in [Intel-IOMMU.txt](https://www.kernel.org/doc/Documentation/Intel-IOMMU.txt) for details about setting `igfx_off`.
+If after enabling `intel_iommu` the HDMI output device of Intel GPU becomes unusable on the host then setting the option `igfx_off` (i.e. `intel_iommu=on,igfx_off`) might bring the audio back, please read `Graphics Problems?` in [Intel-IOMMU.txt](https://www.kernel.org/doc/Documentation/Intel-IOMMU.txt) for details about setting `igfx_off`.
 
 ## See also
 

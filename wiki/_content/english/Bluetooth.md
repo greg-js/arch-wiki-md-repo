@@ -29,6 +29,7 @@
     *   [6.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
     *   [6.10 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
     *   [6.11 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
+    *   [6.12 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
 
 ## Installation
 
@@ -526,3 +527,25 @@ Flash the firmware:
 ```
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
+
+### Device connects, then disconnects after a few moments
+
+If you see messages like the following in `journalctl` output, and your device fails to connect or disconnects shortly after connecting:
+
+```
+bluetoothd: Unable to get connect data for Headset Voice gateway: getpeername: Transport endpoint is not connected (107)
+bluetoothd: connect error: Connection refused (111)
+
+```
+
+This may be because you have already paired the device with another operating system using the same bluetooth adapter (e.g., dual-booting). Some devices can't handle multiple pairings associated with the same MAC address (i.e., bluetooth adapter). You can fix this by re-pairing the device. Start by removing the device:
+
+```
+$ bluetoothctl
+[bluetooth]# devices
+Device XX:XX:XX:XX:XX:XX My Device
+[bluetooth]# remove XX:XX:XX:XX:XX:XX
+
+```
+
+Then [restart](/index.php/Restart "Restart") `bluetooth.service`, turn on your bluetooth adapter, make your device discoverable, re-scan for devices, and re-pair your device. Depending on your bluetooth manager, you may need to perform a full reboot in order to re-discover the device.

@@ -54,7 +54,7 @@ In this example, we add `~/bin` directory to the `PATH` for respective user. To 
 # then export ~/bin to your $PATH.
 if [[ $UID -ge 1000 && -d $HOME/bin && -z $(echo $PATH | grep -o $HOME/bin) ]]
 then
-    export PATH=$HOME/bin:${PATH}
+    export PATH="${PATH}:$HOME/bin"
 fi
 
 ```
