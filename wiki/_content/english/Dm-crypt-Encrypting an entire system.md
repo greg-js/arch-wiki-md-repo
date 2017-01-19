@@ -616,16 +616,9 @@ As explained in [Dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparati
 
 ```
 
-Repeat for the HDD.
+And repeat above for the HDD (`/dev/sdc1` in this example).
 
-```
-# cryptsetup open --type plain /dev/sdc1 container --key-file /dev/random
-# dd if=/dev/zero of=/dev/mapper/container bs=1M status=progress
-# cryptsetup close container
-
-```
-
-Set up encryption for `/dev/md0`.
+Set up encryption for `/dev/md0`:
 
 ```
 # cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/md0
@@ -635,7 +628,7 @@ Set up encryption for `/dev/md0`.
 
 ```
 
-And repeat for the HDD.
+And repeat for the HDD:
 
 ```
 # cryptsetup -y -v luksFormat -c aes-xts-plain64 -s 512 /dev/sdc1

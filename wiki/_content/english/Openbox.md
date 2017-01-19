@@ -20,7 +20,6 @@ A comprehensive list of features are documented at the [official Openbox website
         *   [4.1.2 Multimedia keys](#Multimedia_keys)
             *   [4.1.2.1 Volume control](#Volume_control)
         *   [4.1.3 Navigation keys](#Navigation_keys)
-    *   [4.2 Window snapping](#Window_snapping)
 *   [5 Menus](#Menus)
     *   [5.1 Static](#Static)
         *   [5.1.1 menumaker](#menumaker)
@@ -67,6 +66,7 @@ A comprehensive list of features are documented at the [official Openbox website
     *   [12.8 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
     *   [12.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
     *   [12.10 Enable Hot Corners](#Enable_Hot_Corners)
+    *   [12.11 Window snapping](#Window_snapping)
 *   [13 Troubleshooting](#Troubleshooting_2)
     *   [13.1 Windows load behind the active window](#Windows_load_behind_the_active_window)
 *   [14 See also](#See_also)
@@ -294,46 +294,6 @@ These are the directional / arrow keys, usually used to move the cursor up, down
 *   `Left`: Left
 *   `Right`: Right
 
-### Window snapping
-
-Many desktop environments and window managers support *window snapping* (e.g. Windows 7 Aero snap), whereby they will automatically snap into place when moved to the edge of the screen. This effect can also be simulated in Openbox through the use of keybinds on focused windows.
-
-As illustrated in the example below, percentages must be used to determine window sizes (see [openbox.org](http://openbox.org/wiki/Help:Actions) for further information). In this instance, The `super` key is used in conjunction with the `navigation` keys:
-
-```
-<keybind key="W-Left">
-    <action name="UnmaximizeFull"/>
-    <action name="MaximizeVert"/>
-    <action name="MoveResizeTo">
-        <width>50%</width>
-    </action>
-    <action name="MoveToEdge"><direction>west</direction></action>
-</keybind>
-<keybind key="W-Right">
-    <action name="UnmaximizeFull"/>
-    <action name="MaximizeVert"/>
-    <action name="MoveResizeTo">
-        <width>50%</width>
-    </action>
-    <action name="MoveToEdge"><direction>east</direction></action>
-</keybind>
-
-```
-
-However, it should be noted that once a window has been 'snapped' to an edge, it will remain vertically maximised unless subsequently maximised and then restored. The solution is to implement additional keybinds - in this instance using the `down` and `up` keys - to do so. This will also make pulling 'snapped' windows from screen edges faster as well:
-
-```
-<keybind key="W-Down">
-   <action name="Unmaximize"/>
-</keybind>
-<keybind key="W-Up">
-   <action name="Maximize"/>
-</keybind>
-
-```
-
-This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap-git](https://aur.archlinux.org/packages/opensnap-git/) are also available to automatically simulate window snapping behaviour without the use of keybinds.
-
 ## Menus
 
 It is possible to employ three types of menu in Openbox: `static`, `pipes` (dynamic), and `generators` (static or dynamic). They may also be used alone or in any combination.
@@ -544,7 +504,7 @@ A xdg compliant menu is based on the freedesktop.org standard. The menu is defin
 
 #### Examples
 
-*   [happy](https://github.com/nukura/happy): xdg menu based on the LXQt main menu and easily themable
+*   [californium](https://github.com/kernladung/californium): xdg menu based on the LXQt main menu and easily themable
 
 ## Desktop theming
 
@@ -810,14 +770,14 @@ Run it without arguments to know what the arguments mean.
 
 ### Enable Hot Corners
 
-[dopey](https://github.com/nukura/dopey) provides hot corners for openbox and other lightweight window managers. Start the application with a entry in the autostart-file:
+[lead](https://github.com/kernladung/lead) provides hot corners for openbox and other lightweight window managers. Start the application with a entry in the autostart-file:
 
 ```
-com.nukura.dopey &
+kernladung.lead &
 
 ```
 
-Commands can be edited in the configuration file `~/.config/com.nukura/dopey.conf`:
+Commands can be edited in the configuration file `~/.config/kernladung/lead.conf`:
 
 ```
 [eDP1]
@@ -827,10 +787,50 @@ bottomRight=thunar
 left=
 right=
 top=
-topLeft=com.nukura.happy toggle
+topLeft=kernladung.californium toggle
 topRight=skippy-xd
 
 ```
+
+### Window snapping
+
+Many desktop environments and window managers support *window snapping* (e.g. Windows 7 Aero snap), whereby they will automatically snap into place when moved to the edge of the screen. This effect can also be simulated in Openbox through the use of [keybinds](#Keybinds) on focused windows.
+
+As illustrated in the example below, percentages must be used to determine window sizes (see [openbox.org](http://openbox.org/wiki/Help:Actions) for further information). In this instance, The `super` key is used in conjunction with the `navigation` keys:
+
+```
+<keybind key="W-Left">
+    <action name="UnmaximizeFull"/>
+    <action name="MaximizeVert"/>
+    <action name="MoveResizeTo">
+        <width>50%</width>
+    </action>
+    <action name="MoveToEdge"><direction>west</direction></action>
+</keybind>
+<keybind key="W-Right">
+    <action name="UnmaximizeFull"/>
+    <action name="MaximizeVert"/>
+    <action name="MoveResizeTo">
+        <width>50%</width>
+    </action>
+    <action name="MoveToEdge"><direction>east</direction></action>
+</keybind>
+
+```
+
+However, it should be noted that once a window has been 'snapped' to an edge, it will remain vertically maximised unless subsequently maximised and then restored. The solution is to implement additional keybinds - in this instance using the `down` and `up` keys - to do so. This will also make pulling 'snapped' windows from screen edges faster as well:
+
+```
+<keybind key="W-Down">
+   <action name="Unmaximize"/>
+</keybind>
+<keybind key="W-Up">
+   <action name="Maximize"/>
+</keybind>
+
+```
+
+This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap-git](https://aur.archlinux.org/packages/opensnap-git/) are also available to automatically simulate window snapping behaviour without the use of keybinds.
 
 ## Troubleshooting
 

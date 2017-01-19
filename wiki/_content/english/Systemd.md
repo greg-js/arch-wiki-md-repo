@@ -37,6 +37,8 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [7.8 Specify a different journal to view](#Specify_a_different_journal_to_view)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
+    *   [8.2 Sandboxing application environments](#Sandboxing_application_environments)
+        *   [8.2.1 Unbound example](#Unbound_example)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Investigating systemd errors](#Investigating_systemd_errors)
     *   [9.2 Diagnosing boot problems](#Diagnosing_boot_problems)
@@ -616,6 +618,56 @@ Arch Linux ships with `/usr/lib/systemd/system-preset/99-default.preset` contain
 If this behavior is not desired, simply create a symlink from `/etc/systemd/system-preset/99-default.preset` to `/dev/null` in order to override the configuration file. This will cause *systemctl preset* to enable all units that get installed—regardless of unit type—unless specified in another file in one *systemctl preset'*s configuration directories. User units are not affected. See the manpage for `systemd.preset` for more information.
 
 **Note:** Enabling all units by default may cause problems with packages that contain two or more mutually exclusive units. *systemctl preset* is designed to be used by distributions and spins or system administrators. In the case where two conflicting units would be enabled, you should explicitly specify which one is to be disabled in a preset configuration file as specified in the manpage for `systemd.preset`.
+
+### Sandboxing application environments
+
+A unit file can be created as a sandbox to isolate applications and their processes within a hardened virtual environment. systemd leverages [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [control groups](/index.php/Cgroups "Cgroups") to container processes through an extensive [execution environment configuration](https://www.freedesktop.org/software/systemd/man/systemd.exec.html). Application sandboxing by way of systemd unit files is typically a matter of trial-and-error accompanied by the generous use of [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams") and [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html) error logging and output facilities.
+
+#### Unbound example
+
+*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities
+    *   `CAP_IPC_LOCK` = Prevents paging by allowing *unbound* to lock data in memory
+        *   Not a hard requirement for *unbound* but rather a personal security choice
+    *   `CAP_NET_BIND_SERVICE` = Allows for socket binding to privileged ports < 1024
+    *   `CAP_SETGID CAP_SETUID` = Modifies the *user* *group* to *nobody* *nobody*
+    *   `CAP_SYS_CHROOT` = Allows the creation of a chroot at `/etc/unbound`
+*   `ReadWritePaths` specifies paths to override from `ProtectSystem=strict`
+    *   `/etc/unbound` = Allows the *ExecStartPre* command to complete
+    *   `/run` = Allows access to the PID file at `/run/unbound.pid`
+
+**Note:** Changes from the default Arch Linux service file are listed in bold
+
+```
+[Unit]
+Description=Unbound DNS Resolver
+After=network.target
+[Service]
+ExecStartPre=/bin/cp -f /etc/trusted-key.key /etc/unbound/
+PIDFile=/run/unbound.pid
+ExecStart=/usr/bin/unbound -d
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+**CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT**
+**MemoryDenyWriteExecute=true**
+**NoNewPrivileges=true**
+**PrivateDevices=true**
+**PrivateTmp=true**
+**ProtectHome=true**
+**ProtectControlGroups=true**
+**ProtectKernelTunables=true**
+**ProtectSystem=strict**
+**ReadWritePaths=/etc/unbound /run**
+**RestrictAddressFamilies=AF_INET AF_UNIX**
+**SystemCallArchitectures=native**
+**SystemCallFilter=~@clock @debug @keyring @module mount @obsolete @raw-io**
+[Install]
+WantedBy=multi-user.target
+
+```
+
+*   The *@mount* system call set includes *chroot()* which is required by unbound to build its environment
+*   `mount` and `unmount2` require explicit listing if they are to be blacklisted apart from the *@mount* macro
+*   The above example blacklists `CAP_SYS_ADM` which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/)
 
 ## Troubleshooting
 

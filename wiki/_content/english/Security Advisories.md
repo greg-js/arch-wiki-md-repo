@@ -1,3 +1,5 @@
+**Warning:** This article is no longer maintained. See above.
+
 Security Advisories are published by the community driven [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team") to the public [arch-security](https://mailman.archlinux.org/mailman/listinfo/arch-security) list. All published advisories can be found below, however if you want to be up-to-date its recommended to subscribe to the [list](https://mailman.archlinux.org/mailman/listinfo/arch-security). All assigned CVE's are tracked at the relevant CVE page [CVE](/index.php/CVE "CVE"), by the [ACMT](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team").
 
 ## Contents

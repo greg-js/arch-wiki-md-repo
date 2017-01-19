@@ -43,6 +43,7 @@ This article details the installation and configuration process of the ***Synapt
         *   [4.4.1 Elantech touchpads](#Elantech_touchpads)
         *   [4.4.2 Laptops with touchscreen & touchpad](#Laptops_with_touchscreen_.26_touchpad)
     *   [4.5 Non-functional Synaptics special abilities (multi-tap, scrolling, etc.)](#Non-functional_Synaptics_special_abilities_.28multi-tap.2C_scrolling.2C_etc..29)
+        *   [4.5.1 No Multi-touch in some Elantech touchpads](#No_Multi-touch_in_some_Elantech_touchpads)
     *   [4.6 Cursor jump](#Cursor_jump)
     *   [4.7 Touchpad device is not located at /dev/input/*](#Touchpad_device_is_not_located_at_.2Fdev.2Finput.2F.2A)
     *   [4.8 Firefox and special touchpad events](#Firefox_and_special_touchpad_events)
@@ -723,6 +724,10 @@ If preventing the module from loading twice does not solve your issue, try comme
 
 If clicking with either 2 or 3 fingers is interpreted as a right-click, so you cannot get a middle click either way regardless of configuration, this bug is probably the culprit: [https://bugs.freedesktop.org/show_bug.cgi?id=55365](https://bugs.freedesktop.org/show_bug.cgi?id=55365)
 
+#### No Multi-touch in some Elantech touchpads
+
+See [[2]](http://unix.stackexchange.com/questions/28736/what-does-the-i8042-nomux-1-kernel-option-do-during-booting-of-ubuntu).
+
 ### Cursor jump
 
 Some users have their cursor inexplicably *jump* around the screen. There currently no patch for this, but the developers are aware of the problem and are working on it.
@@ -731,9 +736,7 @@ Another posibility is that you are experiencing *IRQ losses* related to the i804
 
 1\. rmmod && insmod the psmouse module.
 
-2\. append`
-**Template error:** are you trying to use the = sign? Visit [Help:Template#Escape template-breaking characters](/index.php/Help:Template#Escape_template-breaking_characters "Help:Template") for workarounds.
-`to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and reboot your machine.
+2\. append `i8042.nomux=1` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and reboot your machine.
 
 ### Touchpad device is not located at `/dev/input/*`
 
@@ -803,9 +806,9 @@ Option "UpDownScrolling" "0"
 
 ```
 
-**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg [[2]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
+**Note:** This will make Synaptics interpret one button push as three. There is a patch written by Oskar Sandberg [[3]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) that removes these clicks.
 
-Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics [[3]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
+Apparently, when trying to compile this against the latest version of Synaptics it fails. The solution to this is using the GIT repository for Synaptics [[4]](http://web.telia.com/~u89404340/touchpad/synaptics/.git).
 
 There is also a package build file in the AUR to automate this: [xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/).
 

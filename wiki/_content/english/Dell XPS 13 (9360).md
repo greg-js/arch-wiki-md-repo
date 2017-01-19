@@ -31,12 +31,13 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
 *   [9 Touchscreen](#Touchscreen)
     *   [9.1 Gestures](#Gestures)
-*   [10 Firmware Updates](#Firmware_Updates)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [11.2 Not waking from suspend](#Not_waking_from_suspend)
-    *   [11.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
-    *   [11.4 Coil Whine](#Coil_Whine)
+*   [10 Keyboard Backlight](#Keyboard_Backlight)
+*   [11 Firmware Updates](#Firmware_Updates)
+*   [12 Troubleshooting](#Troubleshooting)
+    *   [12.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [12.2 Not waking from suspend](#Not_waking_from_suspend)
+    *   [12.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
+    *   [12.4 Coil Whine](#Coil_Whine)
 
 ## Content adaptive brightness control
 
@@ -113,6 +114,22 @@ The touchscreen works without additional configuration. The bug resulting in a d
 ### Gestures
 
 Refer to [libinput#Gestures](/index.php/Libinput#Gestures "Libinput") for information about the current development state and available methods.
+
+## Keyboard Backlight
+
+By default, the keyboard backlight turns off after 10 seconds of inactivity. Some users might find this too short and annoying. The delay can be increased (or decreased) by editing this file:
+
+```
+  /sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/stop_timeout
+
+```
+
+You can also change the brightness (0-2) by editing the following file. This is identical to pressing F10 on your keyboard:
+
+```
+   /sys/devices/platform/dell-laptop/leds/dell\:\:kbd_backlight/brightness
+
+```
 
 ## Firmware Updates
 

@@ -11,6 +11,7 @@ Nextcloud, a fork of ownCloud, is also treated in this article. For differences 
 *   [3 Setup](#Setup)
     *   [3.1 Database Setup](#Database_Setup)
         *   [3.1.1 MariaDB](#MariaDB)
+        *   [3.1.2 PostgreSQL](#PostgreSQL)
     *   [3.2 Webserver Setup](#Webserver_Setup)
         *   [3.2.1 Apache](#Apache)
             *   [3.2.1.1 WebDAV](#WebDAV)
@@ -82,6 +83,21 @@ mysql> CREATE DATABASE `**nextcloud**` DEFAULT CHARACTER SET `utf8` COLLATE `utf
 mysql> CREATE USER `**nextcloud**`@'localhost' IDENTIFIED BY '**password'**;
 mysql> GRANT ALL PRIVILEGES ON `**nextcloud**`.* TO `**nextcloud**`@`localhost`;
 mysql> \q
+```
+
+#### PostgreSQL
+
+The following is an example of setting up a [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") user and database:
+
+ `$ sudo -u postgres createuser -h localhost -P nextcloud` 
+```
+Enter password for new role:
+Enter it again:
+```
+
+```
+$ sudo -u postgres createdb -O nextcloud nextcloud
+
 ```
 
 ### Webserver Setup

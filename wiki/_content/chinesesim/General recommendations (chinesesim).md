@@ -108,7 +108,7 @@
 
 ### 权限提升
 
-使用[su](/index.php?title=Su_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Su (简体中文) (page does not exist)")命令可以方便的切换用户，而[sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")命令则是更为简单的选择。
+使用 [su](/index.php/Su_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Su (简体中文)") 命令可以方便的切换用户，而[sudo](/index.php/Sudo_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Sudo (简体中文)")命令则是更为简单的选择。
 
 ### 系统服务
 
@@ -136,7 +136,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ### 软件仓库
 
-[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")包含了各个仓库的详细介绍。[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") 包含很多个人维护的软件仓库。
+[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")包含了各个仓库的详细介绍。[非官方软件仓库](/index.php/%E9%9D%9E%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "非官方软件仓库")包含很多个人维护的软件仓库。
 
 如果安装的是 Arch Linux x86_64，并计划使用 32 位程序，建议[启用 [multilib] 仓库](/index.php/Multilib "Multilib")。
 

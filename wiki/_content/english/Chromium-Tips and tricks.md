@@ -272,13 +272,7 @@ Canvas fingerprinting is a technique that allows websites to identify users by d
 
 To confirm this is working run [this test](https://panopticlick.eff.org) and make sure "hash of canvas fingerprint" is reported as undetermined in the full results.
 
-**Note:** By setting `--disable-reading-from-canvas` could make some extensions not working:
-
-*   Vimium [https://github.com/philc/vimium/](https://github.com/philc/vimium/)
-*   The Great Suspender [https://github.com/deanoemcke/thegreatsuspender](https://github.com/deanoemcke/thegreatsuspender)
-*   SwitchyOmega [https://github.com/FelisCatus/SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega)
-
-Extensions with dynamic icon update might require drawing on canvas.
+**Note:** Some extensions require reading from canvas and may be broken by setting `--disable-reading-from-canvas`.
 
 ## Making flags persistent
 

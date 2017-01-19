@@ -6,7 +6,7 @@
     *   [1.1 Front ends](#Front_ends)
 *   [2 Configuration](#Configuration)
     *   [2.1 An example input.conf file](#An_example_input.conf_file)
-    *   [2.2 mpv and PulseAudio since 0.18.1](#mpv_and_PulseAudio_since_0.18.1)
+    *   [2.2 mpv and PulseAudio/ALSA mixer controls since 0.18.1](#mpv_and_PulseAudio.2FALSA_mixer_controls_since_0.18.1)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
     *   [3.1 Hardware Decoding](#Hardware_Decoding)
     *   [3.2 High quality video output](#High_quality_video_output)
@@ -85,11 +85,11 @@ Alt+k add video-pan-y -0.05
 
 ```
 
-### mpv and PulseAudio since 0.18.1
+### mpv and PulseAudio/ALSA mixer controls since 0.18.1
 
-This entry only applies if you are using pulseaudio for mpv (`-ao=pulse` or `ao=pulse` in `mpv.conf`).
+This entry only applies if you are using pulseaudio for mpv (`-ao=pulse` or `ao=pulse` in `mpv.conf`), or if you want to control your ALSA mixer volume with mpv.
 
-Add the following to your `~/.config/mpv/input.conf` to make volume changes work again from PulseAudio to mpv and vice versa:
+Add the following to your `~/.config/mpv/input.conf` to make volume changes work again from PulseAudio/ALSA to mpv and vice versa:
 
 ```
 / add ao-volume -2
@@ -97,7 +97,7 @@ SHIFT+* add ao-volume 2
 
 ```
 
-Change the above to whatever volume keys you use. The above is the default of MPV only handles by "softvol" and with those lines handled by PulseAudio.
+Change the above to whatever volume keys you use.
 
 ## Tips and Tricks
 

@@ -175,7 +175,7 @@ If you have run the docker images, you need to make sure the images are unmounte
 
 Then add a [Drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for the `docker.service`, adding the `-g` parameter to the `ExecStart`:
 
- `/etc/systemd/system/docker.service.d/imagelocation.conf` 
+ `/etc/systemd/system/docker.service.d/docker-storage.conf` 
 ```
 [Service]
 ExecStart= 

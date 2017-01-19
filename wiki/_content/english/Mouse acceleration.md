@@ -16,7 +16,8 @@ Setting the mouse acceleration depends on the windowing protocol you are using: 
     *   [1.3 Using xinput](#Using_xinput)
     *   [1.4 Configuration example](#Configuration_example)
 *   [2 Disabling mouse acceleration](#Disabling_mouse_acceleration)
-*   [3 Mouse speed](#Mouse_speed)
+    *   [2.1 with libinput](#with_libinput)
+*   [3 Mouse speed with libinput](#Mouse_speed_with_libinput)
 
 ## Setting mouse acceleration
 
@@ -59,6 +60,8 @@ $ lsusb -v | grep -e idProduct -e idVendor
 If you are unable to identify your device, try running `xinput list`. Some devices the use Logitech Unifying Recceiver share the same USB connection therefore, the mouse don't appear using `lsusb`
 
 ### Using xset
+
+**Note:** xset does not use libinput.
 
 To get the current values, use:
 
@@ -192,6 +195,8 @@ EndSection
 
 and restart X.
 
+### with libinput
+
 Alternatively, since [libinput](https://www.archlinux.org/packages/?name=libinput)-1.1.0-1 and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)-0.15.0-1 you can use a flat acceleration profile. To enable it create the following file:
 
  `/etc/X11/xorg.conf.d/50-mouse-acceleration.conf` 
@@ -206,7 +211,7 @@ EndSection
 
 and restart X.
 
-## Mouse speed
+## Mouse speed with libinput
 
 The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. The Speed setting is a fraction that is added (or subtracted) to 100%, e.g. -0.3 is 70% of the normal speed, and 0.5 is 150%. For example, to adjust the mouse speed down to 50%, use
 

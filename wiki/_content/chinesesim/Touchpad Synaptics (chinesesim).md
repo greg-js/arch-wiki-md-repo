@@ -44,6 +44,7 @@
         *   [4.4.1 Elan Touchpad](#Elan_Touchpad)
         *   [4.4.2 Laptops with touchscreen & touchpad](#Laptops_with_touchscreen_.26_touchpad)
     *   [4.5 Synaptics触摸板某些功能失效 (比如触击,滚动)](#Synaptics.E8.A7.A6.E6.91.B8.E6.9D.BF.E6.9F.90.E4.BA.9B.E5.8A.9F.E8.83.BD.E5.A4.B1.E6.95.88_.28.E6.AF.94.E5.A6.82.E8.A7.A6.E5.87.BB.2C.E6.BB.9A.E5.8A.A8.29)
+        *   [4.5.1 在一些笔记本的Elantech touchpads触摸板多点触控失效](#.E5.9C.A8.E4.B8.80.E4.BA.9B.E7.AC.94.E8.AE.B0.E6.9C.AC.E7.9A.84Elantech_touchpads.E8.A7.A6.E6.91.B8.E6.9D.BF.E5.A4.9A.E7.82.B9.E8.A7.A6.E6.8E.A7.E5.A4.B1.E6.95.88)
     *   [4.6 指针跳跃](#.E6.8C.87.E9.92.88.E8.B7.B3.E8.B7.83)
     *   [4.7 在/dev/input/*中没有触摸板设备}](#.E5.9C.A8.2Fdev.2Finput.2F.2A.E4.B8.AD.E6.B2.A1.E6.9C.89.E8.A7.A6.E6.91.B8.E6.9D.BF.E8.AE.BE.E5.A4.87.7D)
     *   [4.8 Firefox和特殊触摸板事件](#Firefox.E5.92.8C.E7.89.B9.E6.AE.8A.E8.A7.A6.E6.91.B8.E6.9D.BF.E4.BA.8B.E4.BB.B6)
@@ -728,6 +729,10 @@ Post kernel 3.15, having the module blacklisted may cause touchpad to stop worki
 如果阻止了重复加载模块后还有问题,可以尝试将"MatchIsTouchPad"配置项注释掉(这个选项synaptics默认开启)
 
 If clicking with either 2 or 3 fingers is interpreted as a right-click, so you cannot get a middle click either way regardless of configuration, this bug is probably the culprit: [https://bugs.freedesktop.org/show_bug.cgi?id=55365](https://bugs.freedesktop.org/show_bug.cgi?id=55365)
+
+#### 在一些笔记本的Elantech touchpads触摸板多点触控失效
+
+在内核启动选项加上"i8042.reset i8042.nomux=1 i8042.nopnp i8042.noloop"等. 在我的联想小新笔记本上我增加了"i8042.reset i8042.nomux=1"两个选项，触摸板正常识别，多点触控可用。
 
 ### 指针跳跃
 

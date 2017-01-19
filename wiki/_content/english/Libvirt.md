@@ -156,7 +156,7 @@ Edit `/etc/libvirt/libvirtd.conf`:
 ```
 listen_tls = 0
 listen_tcp = 1
-auth_tcp=none
+auth_tcp="none"
 
 ```
 

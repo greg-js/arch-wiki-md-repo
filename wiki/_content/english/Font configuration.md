@@ -224,8 +224,6 @@ The `lcddefault` filter will work for most users. Other filters are available th
 
 If the available built-in LCD filters are not satisfactory, it is possible to tweak the font rendering very specifically by building a custom freetype2 package and modifying the hardcoded filters. The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") can be used to build and install packages from source.
 
-**Tip:** With the [Infinality](/index.php/Infinality "Infinality") packages, the LCD filter can be modified without rebuilds.
-
 First, refresh the freetype2 PKGBUILD as root:
 
 ```

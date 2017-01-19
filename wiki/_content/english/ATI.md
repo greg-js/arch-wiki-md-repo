@@ -45,6 +45,7 @@ If unsure, try the open source driver first, it will suit most needs and is gene
     *   [14.6 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
     *   [14.7 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
     *   [14.8 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
+    *   [14.9 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_.2F_UHD_.2F_4k_support_over_HDMI_for_older_Radeon_cards)
 
 ## Selecting the right driver
 
@@ -628,3 +629,17 @@ Try booting with the [kernel parameter](/index.php/Kernel_parameter "Kernel para
 ### R9-390 Poor Performance and/or Instability
 
 Firmware issues with R9-390 series cards include poor performance and crashes (frequently caused by gaming or using Google Maps) possibly related DPM. Comment 115 of this bug [report](https://bugs.freedesktop.org/show_bug.cgi?id=91880) includes instructions for a fix.
+
+### QHD / UHD / 4k support over HDMI for older Radeon cards
+
+Older cards have their pixel clock limited to 165MHz for HDMI. Hence, they do not support QHD or 4k only via dual-link DVI but not over HDMI.
+
+One possibility to work around this is to use [custom modes with lower refresh rate](https://www.elstel.org/software/hunt-for-4K-UHD-2160p.html.en), e.g. 30Hz.
+
+Another one is a kernel patch removing the pixel clock limit, but this may damage the card!
+
+Official kernel bug ticket with patch for 4.8: [https://bugzilla.kernel.org/show_bug.cgi?id=172421](https://bugzilla.kernel.org/show_bug.cgi?id=172421)
+
+The patch introduces a new kernel parameter `radeon.hdmimhz` which alters the pixel clock limit.
+
+Be sure to use a high speed HDMI cable for this.

@@ -49,6 +49,13 @@ $ pyvenv venv
 
 ```
 
+Since [python](https://www.archlinux.org/packages/?name=python) 3.6 the *pyvenv* script is deprecated, thus the above command should be executed as:
+
+```
+$ python -m venv venv
+
+```
+
 #### virtualenv
 
 Use *virtualenv* for Python 3, available in [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv).

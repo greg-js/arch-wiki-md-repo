@@ -9,8 +9,7 @@ This article explains how to install TrueType Microsoft fonts and emulate Window
     *   [1.2 Current packages](#Current_packages)
     *   [1.3 Legacy packages](#Legacy_packages)
 *   [2 Fontconfig rules useful for MS Fonts](#Fontconfig_rules_useful_for_MS_Fonts)
-*   [3 Windows 7](#Windows_7)
-*   [4 Windows 8](#Windows_8)
+*   [3 Windows 8](#Windows_8)
 
 ## Installation
 
@@ -132,10 +131,6 @@ to make full use of the MS fonts it is necessary to create a rule mapping those 
 
 It is also useful to associate serif,sans-serif,monospace fonts in your favourite browser to MS fonts.
 
-## Windows 7
-
-Use [Infinality's patched freetype2 package](/index.php/Infinality "Infinality"), and use the Windows 7 profile in the provided `local.conf`.
-
 ## Windows 8
 
 The [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/) split package is intended as a more up-to-date replacement for [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/), [ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/) and [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/).
@@ -151,5 +146,3 @@ On the installed Windows 8.1 system fonts are usually located in `[%WINDIR%](htt
 You need the files listed in the `source=()` array. Place them in the same directory as this [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file, then run [makepkg](/index.php/Makepkg "Makepkg").
 
 `makepkg --pkg ttf-ms-win8` will make just the Windows 8.1 core fonts package which should cover even more than [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
-
-Fonts are best viewed with [Infinality](/index.php/Infinality "Infinality"). Infinality offers great font rendering and customization.

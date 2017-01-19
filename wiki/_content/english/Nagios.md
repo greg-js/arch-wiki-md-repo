@@ -280,11 +280,11 @@ chmod 755 /usr/share/nagios/libexec/check_rdiff
 Since the perl script check_rdiff needs to run as root, you will have to enable sudo for the nagios user:
 
 ```
-sudoedit /etc/sudoers
+# visudo
 
 ```
 
-This will open the /etc/sudoers file, then paste the following at the end of the file (you should know how to use the vi editor, if that is the one being used by sudoedit):
+This will open the /etc/sudoers file for editing (and protect it from saving errors). then paste the following at the end of the file (you should know how to use the vi editor):
 
  `nagios  ALL=(root)NOPASSWD:/usr/share/nagios/libexec/check_rdiff` 
 

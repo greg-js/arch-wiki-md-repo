@@ -35,9 +35,10 @@ Packages are also available in the unofficial [nullptr_t](/index.php/Unofficial_
 Add `plymouth` to the HOOKS array in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). It **must** be added **after** `base` and `udev` for it to work:
 
  `/etc/mkinitcpio.conf`  `HOOKS="base udev plymouth [...] "` 
-**Warning:** If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` in order to get to the TTY password prompts.
+**Warning:**
 
-**Warning:** Using PARTUUID in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
+*   If you use [hard drive encryption](/index.php/System_Encryption_with_LUKS_for_dm-crypt "System Encryption with LUKS for dm-crypt") with the `encrypt` hook, you **must** replace the `encrypt` hook with `plymouth-encrypt` in order to get to the TTY password prompts.
+*   Using PARTUUID in `cryptdevice=` parameter does **not** work with `plymouth-encrypt` hook.
 
 ### Alternative plymouth hook (systemd)
 

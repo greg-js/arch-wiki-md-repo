@@ -20,7 +20,7 @@ Install [hawaii-meta-git](https://aur.archlinux.org/packages/hawaii-meta-git/) f
 
 ## Run with a graphical login manager
 
-Login managers that support Wayland such as sddm and gdm can run a Hawaii session.
+Login managers that support Wayland such as [sddm](/index.php/Sddm "Sddm") and [gdm](/index.php/Gdm "Gdm") can run a Hawaii session.
 
 ## Run from a tty
 

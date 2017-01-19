@@ -24,7 +24,7 @@ It is actually very easy getting the Arch Installation Medium to boot properly. 
 
 Installation of Arch can proceed normally. Refer to the [Installation guide](/index.php/Installation_guide "Installation guide") for more info.
 
-**Note:** Remember, that your SSD is called `nvme0n1`, not `sda`.
+**Note:** Remember that your SSD is called `nvme0n1`, not `sda`.
 
 ## Grpahic Card Configuration
 
@@ -92,7 +92,7 @@ Most Fn-keys return the correct keycodes. Here is a table containing that inform
 
 ### Backlight
 
-If you use a tool like [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) in its default configuration, nothing happens. To fix this issue, you have to use a X-Org configuration file:
+If you use a tool like [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) in its default configuration, nothing happens, because the path to the backlighting variable is not standard. To fix this issue, you have to use a X-Org configuration file:
 
  `/etc/X11/xorg.conf.d/10-backlight.conf` 
 ```

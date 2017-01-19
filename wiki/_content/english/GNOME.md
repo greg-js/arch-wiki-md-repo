@@ -120,7 +120,7 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 
 **Note:** An X server—provided by the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package—is still necessary to run applications that have not yet been ported to [Wayland](/index.php/Wayland "Wayland").
 
-Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. To make QT applications use Wayland, install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package and set the [environment variable](/index.php/Environment_variable "Environment variable") `QT_QPA_PLATFORM=wayland`.
+Manually starting a Wayland session is possible with `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. To make Qt applications use Wayland, install the [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) package and set the [environment variable](/index.php/Environment_variable "Environment variable") `QT_QPA_PLATFORM=wayland`.
 
 To start on login to tty1, add the following to your `.bash_profile`:
 

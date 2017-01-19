@@ -174,7 +174,7 @@ The path has then to be writable for the Let's Encrypt client and the web server
 
 Create a file containing the location block and include this inside a server block:
 
- `/etc/nginx/conf/letsencrypt.conf` 
+ `/etc/nginx/conf.d/letsencrypt.conf` 
 ```
 
 location ^~ /.well-known/acme-challenge {
@@ -192,7 +192,7 @@ Example of a server configuration:
 server {
   server_name domain.tld
    ..
-  include conf/letsencrypt.conf;
+  include conf.d/letsencrypt.conf;
 }
 
 ```

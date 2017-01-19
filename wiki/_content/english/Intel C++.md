@@ -20,7 +20,9 @@ Installation and basic usage of Intel® C++ Composer XE (formerly Intel® C++ Co
 
 ## Setup and installation
 
-[intel-parallel-studio-xe](https://aur.archlinux.org/pkgbase/intel-parallel-studio-xe) are available in the [AUR](/index.php/AUR "AUR"). To build the package, one needs a license file which is free for personal and for non-commercial use. The requisite license file is emailed to users upon [registration](https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1517&AccountID=&EmailID=&ProgramID=&RequestDt=&rm=NCOM&lang=) and should be copied into the $startdir prior to running makepkg. The current PKGBUILD assembles 7 or 8 packages:
+[intel-parallel-studio-xe](https://aur.archlinux.org/pkgbase/intel-parallel-studio-xe) are available in the [AUR](/index.php/AUR "AUR"). To build the package, one needs a license file which is free for open-source development. The requisite license file is emailed to users upon [registration](https://software.intel.com/en-us/qualify-for-free-software/opensourcecontributor) and should be copied into the $startdir prior to running makepkg. [Students](https://software.intel.com/en-us/qualify-for-free-software/student), [researchers](https://software.intel.com/en-us/qualify-for-free-software/academicresearcher), and [educators](https://software.intel.com/en-us/qualify-for-free-software/educator) also qualify for free versions.
+
+The current PKGBUILD assembles 7 or 8 packages:
 
 *   **intel-compiler-base** - Intel C/C++ compiler and base libs
 *   **intel-fortran-compiler** - Intel fortran compiler and base libs (only Parallel Studio XE)

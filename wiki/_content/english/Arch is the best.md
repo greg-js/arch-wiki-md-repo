@@ -1586,6 +1586,13 @@ Arch biþ betst!
 
 ```
 
+	Occitan (lenga d'òc)
+
+```
+Arch es lo melhor!
+
+```
+
 	Persian
 
 ```

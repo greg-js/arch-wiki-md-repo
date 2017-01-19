@@ -39,15 +39,15 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 ## Installation
 
-**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+[Install](/index.php/Install "Install") the [mesa](https://www.archlinux.org/packages/?name=mesa) package, which provides the DRI driver for 3D acceleration.
 
-[Install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. It provides the DDX driver for 2D acceleration and it pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency, providing the DRI driver for 3D acceleration.
-
-To enable OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). If you are on x86_64 and need 32-bit support, also install [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) from the [multilib](/index.php/Multilib "Multilib") repository.
+*   For the DDX driver (which provides 2D acceleration in [Xorg](/index.php/Xorg "Xorg")), [install](/index.php/Install "Install") the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package. (Often not recommended, see note below.)
+*   For OpenGL support, install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). If you are on x86_64 and need 32-bit support, also install [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) from the [multilib](/index.php/Multilib "Multilib") repository.
+*   For [Vulkan](/index.php/Vulkan "Vulkan") support (*Ivy Bridge* and newer), install the [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) package.
 
 Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-For [Vulkan](/index.php/Vulkan "Vulkan") support, install [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) on Ivy-Bridge or newer GPUs.
+**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
 ## Configuration
 
@@ -315,9 +315,7 @@ This issue is covered on the [Xrandr page](/index.php/Xrandr#Adding_undetected_r
 
 ### Weathered colors (color range problem)
 
-**Note:** This problem is related to the [changes](http://lists.freedesktop.org/archives/dri-devel/2013-January/033576.html) in the kernel 3.9\. This problem still remains in kernel 4.1.
-
-Kernel 3.9 contains a new default "Automatic" mode for the "Broadcast RGB" property in the Intel driver. It is almost equivalent to "Limited 16:235" (instead of the old default "Full") whenever an HDMI/DP output is in a [CEA mode](http://raspberrypi.stackexchange.com/questions/7332/what-is-the-difference-between-cea-and-dmt). If a monitor does not support signal in limited color range, it will cause weathered colors.
+Kernel 3.9 [contains](http://lists.freedesktop.org/archives/dri-devel/2013-January/033576.html) a new default "Automatic" mode for the "Broadcast RGB" property in the Intel driver. It is almost equivalent to "Limited 16:235" (instead of the old default "Full") whenever an HDMI/DP output is in a [CEA mode](http://raspberrypi.stackexchange.com/questions/7332/what-is-the-difference-between-cea-and-dmt). If a monitor does not support signal in limited color range, it will cause weathered colors.
 
 **Note:** Some monitors/TVs support both color range. In that case an option often known as *Black Level* may need to be adjusted to make them handle the signal correctly. Some TVs can handle signal in limited range only. Setting Broadcast RGB to "Full" will cause color clipping. You may need to set it to "Limited 16:235" manually to avoid the clipping.
 
@@ -399,8 +397,6 @@ This is known to be broken to at least kernel 4.0.5.
 
 ### Skylake support
 
-For Linux kernels older than 4.3.x, `i915.preliminary_hw_support=1` must be added to your boot parameters for the driver to work on the new Intel Skylake (6th gen.) GPUs. On a fully updated system running kernel 4.3.x and up, this step is unnecessary.
-
 The i915 DRM driver is known to cause various GPU hangs, crashes and even full system freezes. It might be necessary to disable hardware acceleration to workaround these issues. One solution is to use the following Xorg configuration.
 
  `/etc/X11/xorg.conf.d/20-intel.conf` 
@@ -427,7 +423,7 @@ The video output of a Windows guest in VirtualBox sometimes hangs until the host
 
 The following power saving features used by intel iGPUs are known to cause flickering in some instances. A temporary solution is to disable one of them using the appropriate [kernel boot parameter](/index.php/Kernel_parameters "Kernel parameters") option:
 
-*   Rc6 sleep modes (see [intel#RC6_sleep_modes_(enable_rc6)](/index.php/Intel#RC6_sleep_modes_.28enable_rc6.29 "Intel")), can be disabled with `i915.enable_rc6=0`.
+*   Rc6 sleep modes (see [#RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)), can be disabled with `i915.enable_rc6=0`.
 
 *   Panel Self Refresh (PSR) [FS#49628](https://bugs.archlinux.org/task/49628) [FS#49371](https://bugs.archlinux.org/task/49371) [FS#50605](https://bugs.archlinux.org/task/50605), enabled by default since kernel mainline 4.6\. To disable this feature use the option `i915.enable_psr=0`.
 

@@ -264,7 +264,7 @@ Which will attempt to find your kernel in `/boot` and automatically generate `re
 
 If you do not specify an `initrd=` parameter, *rEFInd* will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [Microcode](/index.php/Microcode "Microcode") passed before the initramfs: `... initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img`.
 
-**Warning:** `initrd` path is relative to the root of the file system on which the kernel resides.
+**Warning:** `initrd` path is relative to the root of the file system on which the kernel resides. This could be `initrd=/boot/initramfs-linux.img` or, if ESP is mounted to `/boot`, `initrd=/initramfs-linux.img`.
 
 #### Manual boot stanzas
 

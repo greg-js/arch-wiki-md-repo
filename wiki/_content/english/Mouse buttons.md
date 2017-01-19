@@ -10,10 +10,7 @@ This article describes how to configure a mouse with more than 3 buttons.
     *   [4.2 Opera](#Opera)
     *   [4.3 Firefox](#Firefox)
         *   [4.3.1 Horizontal scroll](#Horizontal_scroll)
-            *   [4.3.1.1 Firefox 20 and Newer](#Firefox_20_and_Newer)
-            *   [4.3.1.2 Older Versions](#Older_Versions)
-    *   [4.4 Firefox 3](#Firefox_3)
-        *   [4.4.1 Thumb Buttons - forward and back](#Thumb_Buttons_-_forward_and_back)
+    *   [4.4 Thumb Buttons - forward and back](#Thumb_Buttons_-_forward_and_back)
     *   [4.5 xmodmap tweaking](#xmodmap_tweaking)
     *   [4.6 xinput tweaking](#xinput_tweaking)
 *   [5 Alternate methods](#Alternate_methods)
@@ -21,7 +18,6 @@ This article describes how to configure a mouse with more than 3 buttons.
     *   [5.2 ExplorerPS/2](#ExplorerPS.2F2)
     *   [5.3 Auto](#Auto)
     *   [5.4 easystroke](#easystroke)
-    *   [5.5 Firefox 3 button 6 + 7 correction](#Firefox_3_button_6_.2B_7_correction)
 *   [6 Binding keyboard to mouse buttons](#Binding_keyboard_to_mouse_buttons)
     *   [6.1 xvkbd and xbindkeys](#xvkbd_and_xbindkeys)
     *   [6.2 evrouter](#evrouter)
@@ -31,7 +27,6 @@ This article describes how to configure a mouse with more than 3 buttons.
     *   [8.1 Logitech G600](#Logitech_G600)
     *   [8.2 Mad Catz Mouse](#Mad_Catz_Mouse)
     *   [8.3 Logitech M560/M545/M546](#Logitech_M560.2FM545.2FM546)
-*   [9 See also](#See_also)
 
 ## Prerequisites
 
@@ -234,9 +229,7 @@ It works. Note: buttons can be mapped to functions easily in `Preferences > Adva
 
 #### Horizontal scroll
 
-##### Firefox 20 and Newer
-
-(Tested in version 32) To get back and forward enabled, instead of scroll left/right, change the following settings in `about:config`:
+To get back and forward enabled, instead of scroll left/right, change the following settings in `about:config`:
 
 ```
 mousewheel.default.action.override_x         2
@@ -244,40 +237,7 @@ mousewheel.default.delta_multiplier_x       -100
 
 ```
 
-##### Older Versions
-
-By default, left right scroll on a FX/MX mouse translates into back/forward, respectively. If you do not like this, open `about:config` and change a few values:
-
-```
-mousewheel.horizscroll.withnokey.action      0
-mousewheel.horizscroll.withnokey.numlines   -3
-
-```
-
-OR (tested on Logitech G5)
-
-```
-mousewheel.horizscroll.withnokey.action      2
-mousewheel.horizscroll.withnokey.numlines    2
-
-```
-
-NOTE: If you use a positive value for numlines, your left/right will switch, ie: pressing left scrolls the window to the right.
-
-### Firefox 3
-
-OR (tested on Microsoft Wireless Intellimouse explorer 2.0)
-
-```
-mousewheel.horizscroll.withnokey.action         2
-mousewheel.horizscroll.withnokey.numlines      -1
-mousewheel.horizscroll.withnokey.sysnumlines   false
-
-```
-
-**Note:** If you use the true value for numlines, your left/right will be inverted.
-
-#### Thumb Buttons - forward and back
+### Thumb Buttons - forward and back
 
 **Note:** The following maybe redundant depending on whether xev detects all your mouse buttons correctly (functions can be mapped on a per-app basis) or you want to change the default behaviour.
 
@@ -416,30 +376,6 @@ Go to Preferences tab > Additional buttons > Add, and add any special button.
 **Note:** In case of easystroke does not automatically detect mouse buttons, you can specify it manually. Button identifiers (numbers) can be viewed by xev.
 
 Go to *Action tab > Add action*, give the new action a name, as Type choose "Key", as Details set "Alt+Left" for Back button, "Alt+Right" for Forward button, as Stroke click the proper mouse button (confirm if a warning is displayed), and voilà! Your mouse button is configured.
-
-**Note:** Since Firefox 3, buttons 6 + 7 are no longer mapped to back and forward as in Firefox 2\. Therefore, if using the above methods in Xorg, refer further to corrective methods below if necessary.
-
-### Firefox 3 button 6 + 7 correction
-
-For MX518, try changing the above ButtonMapping Option to:
-
-```
-Option         "ButtonMapping" "1 2 3 8 9" 
-
-```
-
-And restart X. (Successfully tested on MX518)
-
-Another method:
-
-Leave back/forward mapped to 6+7 in xorg. In Firefox 3 about:config change the following keys:
-
-```
-mousewheel.horizscroll.withnokey.action = 2
-mousewheel.horizscroll.withnokey.numlines = -1
-mousewheel.horizscroll.withnokey.sysnumlines = false
-
-```
 
 ## Binding keyboard to mouse buttons
 
@@ -643,11 +579,3 @@ This driver allow to use this mouse like an ordinary mouse. It's recommend use i
 [kernel module for M560](https://github.com/kreijack/logitech-m560)(already merged into kernel v4.2)
 
 [kernel module for M545/M546](https://github.com/CzBiX/logitech-m560/tree/m545)
-
-## See also
-
-*   [http://www.gentoo-wiki.info/HOWTO_Advanced_Mouse](http://www.gentoo-wiki.info/HOWTO_Advanced_Mouse)
-
-For similar setup, specially for Logitech MX, see:
-
-*   [http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu](http://lotphelp.com/lotp/lotp-guide-logitech-mx-mouse-ubuntu)

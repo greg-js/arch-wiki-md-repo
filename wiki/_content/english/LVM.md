@@ -58,10 +58,21 @@ Virtual partitions allow addition and removal without worry of whether you have 
 
 Basic building blocks of LVM:
 
-*   **Physical volume (PV)**: Partition on hard disk (or even the disk itself or loopback file) on which you can have volume groups. It has a special header and is divided into physical extents. Think of physical volumes as big building blocks used to build your hard drive.
-*   **Volume group (VG)**: Group of physical volumes used as a storage volume (as one disk). They contain logical volumes. Think of volume groups as hard drives.
-*   **Logical volume (LV)**: A "virtual/logical partition" that resides in a volume group and is composed of physical extents. Think of logical volumes as normal partitions.
-*   **Physical extent (PE)**: The smallest size in the physical volume that can be assigned to a logical volume (default 4MiB). Think of physical extents as parts of disks that can be allocated to any partition.
+	Physical volume (PV)
+
+	Partition on hard disk (or even the disk itself or loopback file) on which you can have volume groups. It has a special header and is divided into physical extents. Think of physical volumes as big building blocks used to build your hard drive.
+
+	Volume group (VG)
+
+	Group of physical volumes used as a storage volume (as one disk). They contain logical volumes. Think of volume groups as hard drives.
+
+	Logical volume (LV)
+
+	A "virtual/logical partition" that resides in a volume group and is composed of physical extents. Think of logical volumes as normal partitions.
+
+	Physical extent (PE)
+
+	The smallest size in the physical volume that can be assigned to a logical volume (default 4MiB). Think of physical extents as parts of disks that can be allocated to any partition.
 
 Example:
 
@@ -262,7 +273,7 @@ You can track created logical volumes with:
 
 ```
 
-**Note:** You may need to load the *device-mapper* kernel module (**modprobe dm_mod**) for the above commands to succeed.
+**Note:** You may need to load the *device-mapper* kernel module (`modprobe dm_mod'`) for the above commands to succeed.
 
 **Tip:** You can start out with relatively small logical volumes and expand them later if needed. For simplicity, leave some free space in the volume group so there is room for expansion.
 
@@ -397,6 +408,7 @@ Before moving free extents to the end of the volume, one must run `# pvdisplay -
   Physical extent 307201 to 399668:
     Logical volume	/dev/vg1/backup
     Logical extents	153601 to 246068
+
 ```
 
 One can observe FREE space are split across the volume. To shrink the physical volume, we must first move all used segments to the beginning.
@@ -410,6 +422,7 @@ Here, the first free segment is from 0 to 153600 and leaves us with 153601 free 
 ...
 /dev/sdd1: Moved: 99.9 %
 /dev/sdd1: Moved: 100,0%
+
 ```
 
 **Note:**
@@ -583,6 +596,7 @@ You first create a new physical volume on the block device you wish to use, then
 ```
 # pvcreate /dev/sdb1
 # vgextend VolGroup00 /dev/sdb1
+
 ```
 
 This of course will increase the total number of physical extents on your volume group, which can be allocated by logical volumes as you see fit.
@@ -669,12 +683,7 @@ Also multiple snapshots can be taken and each one can be merged with the origin 
 
 The snapshot can be mounted and backed up with **dd** or **tar**. The size of the backup file done with **dd** will be the size of the files residing on the snapshot volume. To restore just create a snapshot, mount it, and write or extract the backup to it. And then merge it with the origin.
 
-It is important to have the *dm_snapshot* module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to rebuild the image with
-
-```
-# mkinitcpio -p linux
-
-```
+It is important to have the *dm_snapshot* module listed in the MODULES variable of `/etc/mkinitcpio.conf`, otherwise the system will not boot. If you do this on an already installed system, make sure to [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
 
 Snapshots are primarily used to provide a frozen copy of a file system to make backups; a backup taking two hours provides a more consistent image of the file system than directly backing up the partition.
 
@@ -724,7 +733,7 @@ If you ever need to undo the one step creation operation above:
 
 ```
 
-This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html).
+This commits any pending writes still in the cache back to the origin LV, then deletes the cache. Other options are available and described in [lvmcache(7)](http://man7.org/linux/man-pages/man7/lvmcache.7.html).
 
 ## Graphical configuration
 
@@ -772,15 +781,15 @@ If you are trying to mount existing logical volumes, but they do not show up in 
 
 Symptoms:
 
+ `# vgscan` 
 ```
-# vgscan
- Reading all physical volumes.  This may take a while...
- /dev/backupdrive1/backup: read failed after 0 of 4096 at 319836585984: Input/output error
- /dev/backupdrive1/backup: read failed after 0 of 4096 at 319836643328: Input/output error
- /dev/backupdrive1/backup: read failed after 0 of 4096 at 0: Input/output error
- /dev/backupdrive1/backup: read failed after 0 of 4096 at 4096: Input/output error
- Found volume group "backupdrive1" using metadata type lvm2
- Found volume group "networkdrive" using metadata type lvm2
+  Reading all physical volumes.  This may take a while...
+  /dev/backupdrive1/backup: read failed after 0 of 4096 at 319836585984: Input/output error
+  /dev/backupdrive1/backup: read failed after 0 of 4096 at 319836643328: Input/output error
+  /dev/backupdrive1/backup: read failed after 0 of 4096 at 0: Input/output error
+  /dev/backupdrive1/backup: read failed after 0 of 4096 at 4096: Input/output error
+  Found volume group "backupdrive1" using metadata type lvm2
+  Found volume group "networkdrive" using metadata type lvm2
 
 ```
 

@@ -158,8 +158,6 @@ You can download and install it with the [android-studio](https://aur.archlinux.
 
 **Note:** Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
 
-**Note:** Bad font rendering in Android Studio can be fixed by installing the [infinality-bundle](/index.php/Infinality#Installation "Infinality") and using infinality patched openJDK 7 ([jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/)) or openJDK 8 ([jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/)) from the AUR as mentioned in [this](https://youtrack.jetbrains.com/issue/IDEA-57233#comment=27-876236) issue page. Patched OpenJDK8 is also available from [Infinality unofficial repository](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories").
-
 Normally, apps are built through the Android Studio GUI. To build apps from the commandline (using e.g. `./gradlew assembleDebug`), add the following to your `~/.bashrc`:
 
 ```

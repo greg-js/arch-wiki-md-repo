@@ -37,6 +37,7 @@
     *   [5.6 Ctrl + ; 会调出 Fcitx 的剪贴板](#Ctrl_.2B_.3B_.E4.BC.9A.E8.B0.83.E5.87.BA_Fcitx_.E7.9A.84.E5.89.AA.E8.B4.B4.E6.9D.BF)
     *   [5.7 fcitx-sogoupinyin 卡死、联想失败](#fcitx-sogoupinyin_.E5.8D.A1.E6.AD.BB.E3.80.81.E8.81.94.E6.83.B3.E5.A4.B1.E8.B4.A5)
     *   [5.8 在某些程序下输入法总是被切换到美语键盘](#.E5.9C.A8.E6.9F.90.E4.BA.9B.E7.A8.8B.E5.BA.8F.E4.B8.8B.E8.BE.93.E5.85.A5.E6.B3.95.E6.80.BB.E6.98.AF.E8.A2.AB.E5.88.87.E6.8D.A2.E5.88.B0.E7.BE.8E.E8.AF.AD.E9.94.AE.E7.9B.98)
+    *   [5.9 Gnome On Wayland 用户无法使用 fcitx](#Gnome_On_Wayland_.E7.94.A8.E6.88.B7.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8_fcitx)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -384,6 +385,10 @@ gsettings set \
 比如在 XMind 下，当 Enter 出新结点时，输入法就会被切换到美语键盘，不得不按 Ctrl-Space 以重新切回中文输入法。
 
 启动 Fcitx 的 Config, 在 Global Config 选项卡下的「Share State Among Window」选项里选中「PerProgram」或「All」即可解决。
+
+### Gnome On Wayland 用户无法使用 fcitx
+
+由于 wayland 无法读取 `~/.xprofile` 中的环境变量，所以 fcitx 不能在 wayland 模式下正常工作，请在登录时选择 **运行于 Xorg 的 Gnome** 。
 
 ## 参见
 

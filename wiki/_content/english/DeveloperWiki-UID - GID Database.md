@@ -116,6 +116,8 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | systemd-resolve | 195 |
 | [gitolite](https://www.archlinux.org/packages/?name=gitolite) | gitolite | 196 |
 | [rabbitmq](https://www.archlinux.org/packages/?name=rabbitmq) | rabbitmq | 197 |
+| [matrix-synapse](https://www.archlinux.org/packages/?name=matrix-synapse) | synapse | 198 |
+| [toxcore](https://www.archlinux.org/packages/?name=toxcore) | tox-bootstrapd | 199 |
  ldap | 439 |
  oprofile | 492 |
  alias | 7790 |
@@ -258,6 +260,8 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [filesystem](https://www.archlinux.org/packages/?name=filesystem) | systemd-resolve | 195 |
 | [gitolite](https://www.archlinux.org/packages/?name=gitolite) | gitolite | 196 |
 | [rabbitmq](https://www.archlinux.org/packages/?name=rabbitmq) | rabbitmq | 197 |
+| [matrix-synapse](https://www.archlinux.org/packages/?name=matrix-synapse) | synapse | 198 |
+| [toxcore](https://www.archlinux.org/packages/?name=toxcore) | tox-bootstrapd | 199 |
 | [grsec-common](https://www.archlinux.org/packages/?name=grsec-common) | tpe | 200 |
 | [grsec-common](https://www.archlinux.org/packages/?name=grsec-common) | audit | 201 |
 | [grsec-common](https://www.archlinux.org/packages/?name=grsec-common) | socket-deny-all | 202 |

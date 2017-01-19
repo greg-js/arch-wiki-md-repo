@@ -201,7 +201,7 @@ Server = http://xyne.archlinux.ca/repos/xyne
 
 *   **Maintainer:** [Case_Of](https://bbs.archlinux.org/profile.php?id=94876)
 *   **Description:** A repository for latest release of youtube-dl package.
-*   **Key-ID:** [9F213FB2](https://youtube-dl.tk/youtube-dl-pgp.key)
+*   **Key-ID:** [C6DFFE6ED7166B97](https://youtube-dl.tk/youtube-dl-pgp.key)
 
 **Note:** Install the package with `pacman -S youtube-dl/youtube-dl`.
 
@@ -269,7 +269,6 @@ Server = http://downloads.sourceforge.net/project/archopenrc/$repo/$arch
 
 ```
 [archlinuxcn]
-SigLevel = Optional TrustedOnly
 Server = http://repo.archlinuxcn.org/$arch
 ## or use a CDN (beta)
 #Server = https://cdn.repo.archlinuxcn.org/$arch
@@ -582,7 +581,6 @@ Server = https://pkgbuild.com/~heftig/repo/$arch
 
 ```
 [home_Minerva_W_Science_Arch_Extra]
-SigLevel = Never
 Server = http://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
 
 ```
@@ -594,7 +592,6 @@ Server = http://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch
 
 ```
 [home_Pival81_arch_xapps_Arch_Extra]
-SigLevel = Never
 Server = http://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
 
 ```
@@ -643,7 +640,6 @@ Server = http://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 [pietma]
-SigLevel = Optional TrustAll
 Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch/$repo
 
 ```
@@ -677,7 +673,6 @@ Server = http://download.opensuse.org/repositories/home:/tarakbumba:/archlinux/A
 
 ```
 [home_pbek_QOwnNotes_Arch_Extra]
-SigLevel = Optional TrustAll
 Server = http://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Extra/$arch
 
 ```
@@ -798,7 +793,6 @@ Server = http://noaxiom.org/$repo/$arch
 
 ```
 [aurpackages]
-SigLevel = Required
 Server = https://r.mikroskeem.eu
 
 ```
@@ -811,7 +805,6 @@ Server = https://r.mikroskeem.eu
 
 ```
 [aur-archlinux]
-SigLevel = Required TrustedOnly
 Server = https://repo.arch-server.org/aur/$repo/$arch
 
 ```
@@ -877,7 +870,6 @@ Server = http://decryptedepsilon.bl.ee/repo/$arch/
 
 ```
 [eatabrick]
-SigLevel = Required
 Server = http://repo.eatabrick.org/$arch
 
 ```
@@ -1070,7 +1062,6 @@ Server = http://pkgbuild.com/~barthalion/brtln/$arch/
 
 ```
 [imake]
-SigLevel = Never
 Server = http://imake.ddns.net/$arch
 
 ```
