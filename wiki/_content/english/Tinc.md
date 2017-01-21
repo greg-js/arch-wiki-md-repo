@@ -11,9 +11,10 @@ This article describes a basic installation and configuration of tinc. For furth
     *   [2.3 Setting up the hosts](#Setting_up_the_hosts)
 *   [3 Starting a private network](#Starting_a_private_network)
 *   [4 Using TAP devices and bridges](#Using_TAP_devices_and_bridges)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 I've updated my system and now tinc won't start.](#I.27ve_updated_my_system_and_now_tinc_won.27t_start.)
-    *   [5.2 I'm running a custom kernel and tinc won't start.](#I.27m_running_a_custom_kernel_and_tinc_won.27t_start.)
+*   [5 Automatically Starting Tinc at boot](#Automatically_Starting_Tinc_at_boot)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 I've updated my system and now tinc won't start.](#I.27ve_updated_my_system_and_now_tinc_won.27t_start.)
+    *   [6.2 I'm running a custom kernel and tinc won't start.](#I.27m_running_a_custom_kernel_and_tinc_won.27t_start.)
 
 ## Installation
 
@@ -186,6 +187,26 @@ And finally restart your tinc daemon:
 
 ```
 # systemctl restart tinc@*vpnname*
+
+```
+
+## Automatically Starting Tinc at boot
+
+Tinc can be configured to automatically start at boot time using systemd units.
+
+Firstly enable the tinc service
+
+```
+# systemctl enable tinc
+
+```
+
+Then for each network that you want to automatically start, enable it individually
+
+```
+# systemctl enable tinc@*vpnname*
+# systemctl enable tinc@*another_vpnname*
+...
 
 ```
 

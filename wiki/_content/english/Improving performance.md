@@ -330,13 +330,9 @@ See [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scal
 
 ### Alternative CPU scheduler
 
-Actual default scheduler is CFS[[9]](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler).
+The default CPU scheduler in the mainline Linux kernel is [CFS](https://en.wikipedia.org/wiki/Completely_Fair_Scheduler "w:Completely Fair Scheduler").
 
-Nowadays, the most *famous* and *interesting* alternative is MuQSS, developed by Con Kolivas[[10]](http://users.tpg.com.au/ckolivas/kernel/). This CPU scheduler is intended to be used on desktop computers (over servers), focused on desktop interactivity and responsiveness.
-
-CPU scheduler's patch is available either as stand-alone and as part of a wider patchset, the **-ck** patchset, written by the same author but including also other work, also from different people. As always, Arch Linux users can manually patch and compile their own kernel or they can easily make use of packages in [AUR](/index.php/AUR "AUR").
-
-See the packages respective pages of [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") for more information.
+An alternative scheduler designed to be used on desktop computers is MuQSS, developed by [Con Kolivas](http://users.tpg.com.au/ckolivas/kernel/), which is focused on desktop interactivity and responsiveness. MuQSS is available either as a stand-alone patch or as part of a wider patchset, the **-ck** patchset. See [Linux-ck](/index.php/Linux-ck "Linux-ck") and [Linux-pf](/index.php/Linux-pf "Linux-pf") for more information on the patchset.
 
 ### Adjusting priorities of processes
 
@@ -457,7 +453,7 @@ Every time a connection is made, the system must first resolve a fully qualified
 
 ## Watchdogs
 
-According to [[11]](https://en.wikipedia.org/wiki/Watchdog_timer):
+According to [[9]](https://en.wikipedia.org/wiki/Watchdog_timer):
 
 	A watchdog timer [...] is an electronic timer that is used to detect and recover from computer malfunctions. During normal operation, the computer regularly resets the watchdog timer [...]. If, [...], the computer fails to reset the watchdog, the timer will elapse and generate a timeout signal [...] used to initiate corrective [...] actions [...] typically include placing the computer system in a safe state and restoring normal system operation.
 
@@ -485,4 +481,4 @@ After you disabled watchdogs, you can *optionally* avoid the loading of the modu
 
 Either action will speed up your boot and shutdown, because one less module is loaded. Additionally disabling watchdog timers increases performance and [lowers power consumption](https://wiki.archlinux.org/index.php/Power_management#Disabling_NMI_watchdog).
 
-See [[12]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[13]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[14]](http://0pointer.de/blog/projects/watchdog.html), and [[15]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.
+See [[10]](https://bbs.archlinux.org/viewtopic.php?id=163768), [[11]](https://bbs.archlinux.org/viewtopic.php?id=165834), [[12]](http://0pointer.de/blog/projects/watchdog.html), and [[13]](https://www.kernel.org/doc/Documentation/watchdog/watchdog-parameters.txt) for more information.

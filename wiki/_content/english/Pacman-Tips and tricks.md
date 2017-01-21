@@ -409,6 +409,8 @@ First, install any network-supporting filesystem; for example [sshfs](/index.php
 
 Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
 
+Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable [Rsync#rsync_daemon](/index.php/Rsync#rsync_daemon "Rsync"). On other clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for rsync.
+
 #### Dynamic reverse proxy cache using nginx
 
 [nginx](/index.php/Nginx "Nginx") can be used to proxy requests to official upstream mirrors and cache the results to local disk. All subsequent requests for that file will be served directly from the local cache, minimizing the amount of internet traffic needed to update a large number of servers with minimal effort.

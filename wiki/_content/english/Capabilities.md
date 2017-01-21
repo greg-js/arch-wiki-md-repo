@@ -85,5 +85,7 @@ $ find /usr/bin /usr/lib -perm /2000 -group root
 
 ## See also
 
-*   Man Page capabilities(7) setcap(8) getcap(8)
+*   Man Page: capabilities(7) setcap(8) getcap(8)
 *   [DeveloperWiki:Security#Replacing setuid with capabilities](/index.php/DeveloperWiki:Security#Replacing_setuid_with_capabilities "DeveloperWiki:Security")
+*   [Grsecurity Appendix: Capability Names and Descriptions](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Capability_Names_and_Descriptions)
+*   [The Linux Kernel Archives: SECure COMPuting with filters](https://www.kernel.org/doc/Documentation/prctl/seccomp_filter.txt)

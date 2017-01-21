@@ -89,7 +89,7 @@ $ printf '%s
 
 Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with lower-level I/O flow control features.
 
-**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
+**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command. It is not available on older versions (8.24) of [coreutils](https://www.archlinux.org/packages/?name=coreutils).
 
 For more information see [dd(1)](http://man7.org/linux/man-pages/man1/dd.1.html) or the [full documentation](http://www.gnu.org/software/coreutils/dd).
 

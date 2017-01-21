@@ -1,4 +1,4 @@
-[bubblewrap](https://github.com/projectatomic/bubblewrap) is a lightweight setuid sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with a small installation footprint and minimal resource requirements. While the application package is named bubblewrap, the actual executable binary and manpage reference is *bwrap*. Notable features include support for cgroup/IPC/mount/network/PID/user [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [seccomp](https://en.wikipedia.org/wiki/Seccomp "wikipedia:Seccomp") filtering. Note that bubblewrap drops all [capabilities](/index.php/Capabilities "Capabilities") within a sandbox and that child tasks cannot gain greater privileges than its parent. Notable feature exclusions include the lack of explicit support for blacklisting/whitelisting file paths.
+[bubblewrap](https://github.com/projectatomic/bubblewrap) is a lightweight [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with a small installation footprint and minimal resource requirements. While the application package is named bubblewrap, the actual executable binary and manpage reference is *bwrap*. bubblewrap is expected to [anchor the sandbox mechanism](https://blog.torproject.org/blog/q-and-yawning-angel) of the [Tor Browser](https://www.torproject.org/projects/torbrowser.html) (Linux) in the future. Notable features include support for cgroup/IPC/mount/network/PID/user/UTS [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [seccomp](https://en.wikipedia.org/wiki/Seccomp "wikipedia:Seccomp") filtering. Note that bubblewrap drops all [capabilities](/index.php/Capabilities "Capabilities") within a sandbox and that child tasks cannot gain greater privileges than its parent. Notable feature exclusions include the lack of explicit support for blacklisting/whitelisting file paths.
 
 ## Contents
 
@@ -9,6 +9,8 @@
     *   [3.2 dhcpcd](#dhcpcd)
     *   [3.3 Unbound](#Unbound)
     *   [3.4 Desktop](#Desktop)
+    *   [3.5 MuPDF](#MuPDF)
+    *   [3.6 p7zip](#p7zip)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Sandboxing X11](#Sandboxing_X11)
 *   [5 See also](#See_also)
@@ -17,7 +19,7 @@
 
 [Install](/index.php/Install "Install") [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap) or [bubblewrap-git](https://aur.archlinux.org/packages/bubblewrap-git/).
 
-**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel per [FS#36969](https://bugs.archlinux.org/task/36969). This prevents the kernel from exposing user namespaces as a means to accomodate separate user information for separate virtualized services. An example would be running *syslog* in a namespace with a UID and GID different than that of the host system. The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package sets `CONFIG_USER_NS=y` and is a viable alternative to the stock kernel if the ability to create user namepaces as an unprivileged user is desired.
+**Note:** The user namespace configuration item `CONFIG_USER_NS` is not set in the stock Arch kernel per [FS#36969](https://bugs.archlinux.org/task/36969). This prevents the kernel from exposing user namespaces as a means to accomodate separate user information for separate virtualized services. An example would be running *syslog* in a namespace with a UID and GID different than that of the host system. The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package sets `CONFIG_USER_NS=y` but restricts it's use to privileged users for security reasons. It is a viable alternative to the stock kernel if the ability to create user namepaces is desired.
 
 ## Configuration
 
@@ -116,6 +118,176 @@ MimeType=text/plain;
 
 **Note:** `--dev /dev` is required to write to `/dev/pty`
 
+*   Example MuPDF desktop entry incorporating a `mupdf.sh` shell wrapper:
+
+```
+[Desktop Entry]
+Name=MuPDF
+Exec=mupdf.sh %f
+Icon=application-pdf.svg
+Type=Application
+MimeType=application/pdf;application/x-pdf;
+
+```
+
+**Note:** Ensure that `mupdf.sh` is located within your executable PATH e.g. `PATH=$PATH:$HOME/bwrap`
+
+### MuPDF
+
+The power and flexibility of *bwrap* is best revealed when used to create an environment within a shell wrapper:
+
+*   Bind as read-only the host `/usr/bin` directory to `/usr/bin` in the sandbox
+*   Bind as read-only the host `/usr/lib` directory to `/usr/lib` in the sandbox
+*   Create a symbolic link from the system `/usr/lib` directory to `/lib64` in the sandbox
+*   Create a [tmpfs](/index.php/Tmpfs "Tmpfs") filesystem overlaying `/usr/lib/gcc` in the sandbox
+    *   This effectively [blacklists](https://en.wikipedia.org/wiki/Blacklist_(computing) the contents of `/usr/lib/gcc` from appearing in the sandbox
+*   Create a new tmpfs filesystem as the `$HOME` directory in the sandbox
+*   Bind as read-only an `.Xauthority` file and *Documents* directory into the sandbox
+    *   This effectively whitelists the `.Xauthority` file and *Documents* directory with recursion
+*   Create a new tmpfs filesystem as the `/tmp` directory in the sandbox
+*   Whitelist the [X11](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") socket by binding it into the sandbox as read-only
+*   Clone and create private containers for all namespaces supported by the running kernel
+    *   If the kernel does not support non-privileged user namespaces, skip its creation and continue
+*   Do not place network components into a private namespace
+    *   This allows for network access to follow URI hyperlinks
+
+```
+#!/bin/sh
+#~/bwrap/mupdf.sh
+(exec bwrap \
+--ro-bind /usr/bin /usr/bin \
+--ro-bind /usr/lib /usr/lib \
+--symlink usr/lib /lib64 \
+--tmpfs /usr/lib/gcc \
+--tmpfs $HOME \
+--ro-bind $HOME/.Xauthority $HOME/.Xauthority \
+--ro-bind $HOME/Documents $HOME/Documents \
+--tmpfs /tmp \
+--ro-bind /tmp/.X11-unix/X0 /tmp/.X11-unix/X0 \
+ --unshare-all \
+--share-net \
+/usr/bin/mupdf "$@")
+
+```
+
+**Tip:** Execute a shell wrapper substituting the existing executable with */usr/bin/sh* to debug and verify the contents and filesystem structure of the sandbox.
+
+```
+$ bwrap \
+--ro-bind /usr/bin /usr/bin \
+--ro-bind /usr/lib /usr/lib \
+--symlink usr/lib /lib64 \
+--tmpfs /usr/lib/gcc \
+--tmpfs $HOME \
+--ro-bind $HOME/.Xauthority $HOME/.Xauthority \
+--ro-bind $HOME/Desktop $HOME/Desktop \
+--tmpfs /tmp \
+--ro-bind /tmp/.X11-unix/X0 /tmp/.X11-unix/X0 \
+--unshare-all \
+--share-net \
+ /usr/bin/sh
+bash: no job control in this shell
+bash-4.4$ ls -AF
+.Xauthority  Documents/
+
+```
+
+Perhaps the most important rule to consider when building a bubblewrapped filesystem is that *commands are executed in the order they appear*. From the [MuPDF](http://mupdf.com/) example above:
+
+*   A tmpfs system is created followed by the bind mounting of an `.Xauthority` file and a *Documents* directory:
+
+```
+--tmpfs $HOME \
+--ro-bind $HOME/.Xauthority $HOME/.Xauthority \
+--ro-bind $HOME/Documents $HOME/Documents \
+
+```
+
+```
+bash-4.4$ ls -a
+.  ..  .Xauthority  Desktop
+
+```
+
+*   A tmpfs filesystem is created after the bind mounting of `.Xauthority` and overlays it so that only the *Documents* directory is visible within the sandbox:
+
+```
+--ro-bind $HOME/.Xauthority $HOME/.Xauthority \
+--tmpfs $HOME \
+--ro-bind $HOME/Desktop $HOME/Desktop \
+
+```
+
+```
+bash-4.4$ ls -a
+.  ..  Desktop
+
+```
+
+### p7zip
+
+Applications which have not yet been patched against [known vulnerabilities](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-9296) constitute prime candidates for bubblewrapping:
+
+*   Bind as read-only the host `/usr/bin/7za` executable path to the sandbox
+*   Create a symbolic link from the system `/usr/lib` directory to `/lib64` in the sandbox
+*   Blacklist the sandboxed contents of `/usr/lib/modules` and `/usr/lib/systemd` with tmpfs overlays
+*   Mount a new devtmpfs filesystem to `/dev` in the sandbox
+*   Bind read-write the host `/sandbox` directory to the `/sandbox` directory in the sandbox
+    *   *7za* will only run in the host `/sandbox` directory and/or its subdirectories when called from the shell wrapper
+*   Create new cgroup/IPC/network/PID/UTS namespaces for the application and its processes
+    *   If the kernel does not support non-privileged user namespaces, skip its creation and continue
+    *   Creation of a new network namespace prevents the sandbox from obtaining network access
+*   Unset the `XAUTHORITY` [environment variable](/index.php/Environment_variables "Environment variables") to hide the location of the X11 connection cookie
+    *   *7za* does not need to connect to an X11 display server to function properly
+*   Start a new terminal session to prevent keyboard input from escaping the sandbox
+
+```
+#!/bin/sh
+#~/bwrap/pz7ip.sh
+(exec bwrap \
+--ro-bind /usr/bin/7za /usr/bin/7za \
+--symlink usr/lib /lib64 \
+--tmpfs /usr/lib/modules \
+--tmpfs /usr/lib/systemd \
+--dev /dev \
+--bind /sandbox /sandbox \
+--unshare-all \
+--unsetenv XAUTHORITY \
+--new-session \
+/usr/bin/7za "$@")
+
+```
+
+**Note:** */usr/bin/sh* and */usr/bin/ls* must reside in the executable path in order to traverse and verify the sandbox filesystem.
+
+```
+bwrap \
+--ro-bind /usr/bin/7za /usr/bin/7za \
+**--ro-bind /usr/bin/ls /usr/bin/ls \**
+**--ro-bind /usr/bin/sh /usr/bin/sh \**
+--symlink usr/lib /lib64 \
+--tmpfs /usr/lib/modules \
+--tmpfs /usr/lib/systemd \
+--dev /dev \
+--bind /sandbox /sandbox \
+--unshare-all \
+--unsetenv XAUTHORITY \
+--new-session \
+/usr/bin/sh
+bash: no job control in this shell
+bash-4.4$ ls -AF         
+dev/  lib64@  usr/
+bash-4.4$ ls -l /usr/lib/modules 
+total 0
+bash-4.4$ ls -l /usr/lib/systemd
+total 0
+bash-4.4$ ls -AF /dev
+console  full  null  ptmx@  pts/  random  shm/  stderr@  stdin@  stdout@  tty  urandom  zero
+bash-4.4$ ls -A /usr/bin
+7za  ls  sh
+
+```
+
 ## Troubleshooting
 
 ### Sandboxing X11
@@ -137,3 +309,4 @@ A workaround is to bind mount the host X11 socket to the same socket within the 
 ## See also
 
 *   [bubblewrap GitHub project page](https://github.com/projectatomic/bubblewrap)
+*   [The Linux Kernel Archives: SECure COMPuting with filters](https://www.kernel.org/doc/Documentation/prctl/seccomp_filter.txt)

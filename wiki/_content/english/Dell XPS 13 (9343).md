@@ -175,14 +175,14 @@ Refer to `man libinput` for more configurable options (e.g. NaturalScrolling, Mi
 
 With kernel 4.6.5 and [tlp](https://www.archlinux.org/packages/?name=tlp), the idle power usage can reach ~2.3 W with the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `pcie_aspm=force` enabled.
 
-Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to tweak performance and monitor power consumption.
+You may use [powertop](https://www.archlinux.org/packages/?name=powertop) or [powerstat-git](https://aur.archlinux.org/packages/powerstat-git/) to reproduce and check this behaviour by yourself.
 
 **Note:**  
 
-*   With kernel 4.6+, frame-buffer compression (FBC) and panel self-refresh (PSR) are enabled by default, so `i915.enable_fbc` and `i915.enable_psr` are no longer needed. Kernel 4.6.2+ is recommended as older kernels may cause the display to flicker.
-*   Soon panel self-refresh (PSR) will be disabled again. [[8]](https://patchwork.freedesktop.org/patch/127188/) Commit 2ee7dc497e348eecbb82adbb1ea9e9a7e29fe921 (drm/i915: disable PSR by default on HSW/BDW) landed on 2016-12-14 and is marked for inclusion in the stable kernel, hence it should reach our distribution sooner or later.
-*   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to irc #intel-gfx, "there's a new auto-downclock for eDP panels in recent kernels and it's enabled by default if available, so don't use."
-*   `i915.enable_rc6=7` is useless on Broadwell/gen8 systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on gen7+ hardware.[[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[10]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
+*   With kernel 4.6+, frame-buffer compression (FBC) and panel self-refresh (PSR) are enabled by default, so `i915.enable_fbc` and `i915.enable_psr` parameters are no longer needed. Kernel 4.6.2+ is recommended as older kernels may cause the display to flicker.
+*   Soon panel self-refresh (PSR) will be disabled again. [[8]](https://patchwork.freedesktop.org/patch/127188/) Commit 2ee7dc497e348eecbb82adbb1ea9e9a7e29fe921 (drm/i915: disable PSR by default on HSW/BDW) landed on 2016-12-14 and is marked for inclusion in the stable kernel. Kernel 4.9 is already *affected*. This is the reference bug [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=95176).
+*   `i915.lvds_downclock=1` for LVDS downclock is no longer needed. According to IRC #intel-gfx, "there is a new auto-downclock for eDP panels in recent kernels and it is enabled by default if available, so do not use."
+*   `i915.enable_rc6=7` is useless on Broadwell (Gen8) systems. The deeper GPU power states that this option enables (RC6p and RC6pp) do not exist on Gen7+ hardwares.[[10]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/i915/i915_drv.h#n2862)[[11]](https://lists.freedesktop.org/archives/intel-gfx/2012-June/018383.html)
 
 ### Calibrated ICC profile
 
@@ -234,7 +234,7 @@ Some users have reported above sound outputs, as described e.g. in [this BBS thr
 
 ### Display freezes while manipulating external displays with Xrandr / random blanking
 
-`xrandr` commands (for eg. [HiDPI#Multiple_displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[11]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [[12]](https://wiki.archlinux.org/index.php/Intel_graphics#Skylake_support). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
+`xrandr` commands (for eg. [HiDPI#Multiple_displays](/index.php/HiDPI#Multiple_displays "HiDPI")) can result in display freezes with no clear journalctl or Xorg error logs. Reported to occur for QHD models running kernel version 4.3.x and up [[12]](https://wiki.gentoo.org/wiki/Dell_XPS_13_9343#GPU_hang.2Ffreeze4_with_external_display) [[13]](https://wiki.archlinux.org/index.php/Intel_graphics#Skylake_support). Setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `i915.preliminary_hw_support=0` can reduce or remove this issue.
 
 If you are experiencing freezes in GNOME on Login and/or after, be sure you have latest BIOS installed and disabled the C state feature.
 

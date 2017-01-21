@@ -28,3 +28,21 @@ package() {
 }
 
 ```
+
+### Setting temporary cache
+
+When npm processes `package.json` in order to build a package it downloads dependencies to its default cache folder at `$HOME/.npm`. To avoid littering user's home folder we can temporarily set a different cache folder with `--cache` flag:
+
+Download dependencies to `${srcdir}/npm-cache` and install them in package directory
+
+```
+npm install --cache "${srcdir}/npm-cache" 
+
+```
+
+Continue with packaging as usual
+
+```
+npm run packager
+
+```

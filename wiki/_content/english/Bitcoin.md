@@ -78,6 +78,8 @@ The above implies you should also take continuous due care to test related updat
 
 ### Thin client
 
+The thin clients are also named Simple Payment Verification (SPV) clients.
+
 Thin clients do not fully validate the blockchain or compute a full Unspent Transaction Output Set (UTXO). They derive their security in proxy by connecting to a fullnode and downloading the blockheaders. They are still able to guarantee the Proof of Work behind a block is valid, and each blockheader contains a merkle root of all the transactions in the block. This allows them to query full node clients for the blockheaders and the data to prove their transaction is in the merkle root in the blockheader. They however must trust that miners are mining valid blocks, and have no way to make sure rules like the issuance rate or cap of Bitcoins are being followed.
 
 **Warning:** In the event of a consensus failure at large on the network, or one affecting the node(s) an SPV client is connected to, the SPV client is incapable of detecting which partition of the network it is on, or communicating to, or being sent information by. It is extremely insecure to send or receive money with an SPV client in the event of such a consensus failure occurring.
@@ -90,16 +92,9 @@ A full node is a bitcoin client which starts with the initial genesis block of t
 
 There are several Bitcoin full node implementations in the [official repositories](/index.php/Official_repositories "Official repositories") and in the [AUR](/index.php/AUR "AUR").
 
-If you decide to install one: It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded (97GB as of November 2016) and verified them (which is CPU intensive) in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set.
+If you decide to install one: It is possible to run a full node that deletes almost all historical blocks, only keeping the recent history to a certain threshold, but only after having downloaded (97GB as of November 2016) and verified them (which is CPU intensive) in sequence to arrive at the present period it retains. This is to ensure the same guarantee of the cryptographic integrity of the UTXO set. Afterwards, one may [reduce storage](https://bitcoin.org/en/full-node#reduce-storage) and [limit bandwith](https://bitcoin.org/en/full-node#reduce-traffic).
 
-Initial download of the blockchain can be sped up by increasing the database cache as much as your RAM allows, add `dbcache=M` to `~/.bitcoin/bitcoin.conf` where M is the number of megabytes of RAM to allocate.
-
-See [bitcoin.org](https://bitcoin.org/en/) on how to:
-
-*   [reduce storage](https://bitcoin.org/en/full-node#reduce-storage) and
-*   [bandwith](https://bitcoin.org/en/full-node#reduce-traffic)
-
-requirements for a full-node.
+The initial download of the blockchain can be sped up by increasing the database cache as much as your RAM allows, add `dbcache=M` to `~/.bitcoin/bitcoin.conf` where M is the number of megabytes of RAM to allocate.
 
 ### Mining
 
@@ -124,13 +119,10 @@ There are several Bitcoin miners in the [official repositories](/index.php/Offic
 
 #### Discussion groups
 
-*   [bitcointalk.org](https://bitcointalk.org/) - Forum.
+*   [bitcointalk.org](https://bitcointalk.org/) - Forum
 *   IRC Channels on Freenode:
-    *   **#bitcoin** - General Bitcoin-related.
-    *   **##bitcoin** - Price talk discussion, etc.
-    *   **#bitcoin-otc** - Over The Counter exchange.
-    *   **#bitcoin-market** - Live quotes from markets.
-    *   **#bitcoin-mining** - Mining discussion.
+    *   **#bitcoin** - General Bitcoin-related
+    *   **#bitcoin-mining** - Mining discussion
 
 #### Blockchain explorers
 

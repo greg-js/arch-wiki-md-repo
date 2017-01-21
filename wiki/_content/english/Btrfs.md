@@ -322,7 +322,7 @@ Another useful command to show a less verbose readout of used space is `btrfs fi
 
 ```
 
-The newest command to get information on free/used space of a is `btrfs filesystem usage`:
+A more verbose command combining the information of `df` and `show` which directly links the free and used space is `btrfs filesystem usage`. It is supposed to replace the `btrfs filesystem df` command in the long run:
 
 ```
 # btrfs filesystem usage

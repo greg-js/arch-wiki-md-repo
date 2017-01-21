@@ -1,4 +1,4 @@
-[CloudCross](Http://cloudcross.mastersoft24.ru) - multi-client for cloud sync local files with various cloud storage, written in pure [Qt](/index.php/Qt "Qt") without the use of other third-party library.is currently supported to work with [Yandex. Drive](/index.php?title=Yandex._Drive&action=edit&redlink=1 "Yandex. Drive (page does not exist)"), [Google Drive](/index.php/Google_Drive "Google Drive") and [Dropbox](/index.php/Dropbox "Dropbox"). CloudCross published under license [GPL](/index.php?title=GPL&action=edit&redlink=1 "GPL (page does not exist)"). Main features:
+[CloudCross](Http://cloudcross.mastersoft24.ru) - multi-client for cloud sync local files with various cloud storage, written in pure [Qt](/index.php/Qt "Qt") without the use of other third-party library.is currently supported to work with [Yandex Disk](/index.php/Yandex_Disk "Yandex Disk"), [Google Drive](/index.php/Google_Drive "Google Drive") and [Dropbox](/index.php/Dropbox "Dropbox"). CloudCross published under license GPL. Main features:
 
 *   When working with Google Drive - Supports two-way conversion of documents from Microsoft Office file formats and Open / Libre Office in Google Doc format, unloading and the inverse transformation when loading.
 *   Support for the so-called black and white lists of files that are involved in synchronization.
@@ -12,11 +12,11 @@
 *   [1 Installation](#Installation)
 *   [2 Choosing a provider](#Choosing_a_provider)
 *   [3 Usage](#Usage)
-*   [4 Use Cases](#Use_Cases)
+*   [4 Use cases](#Use_cases)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Delete files instead of downloading](#Delete_files_instead_of_downloading)
     *   [5.2 Constant upload / download office files](#Constant_upload_.2F_download_office_files)
-*   [6 Links](#Links)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -46,7 +46,7 @@ $ ccross --provider dropbox -a
 
 You will be prompted to copy the link and paste it into your browser. Following the proposed link, you log on to your Google account, and requested permission to take CloudCross applications. After that, you will be given a confirmation code to be inserted into the program. After passing authentication, the program is ready to work.
 
-## Use Cases
+## Use cases
 
 CloudCross can be used in different situations when necessary to synchronize local files with the files in the cloud. It may be, for example, the duplication of files in a remote storage, working together with Google Docs or backup.
 
@@ -69,7 +69,7 @@ But, in any case, you have to remember that no local or remote files are not del
 
 When you synchronize with Google Drive, if the option is used --convert-doc, which converts Office documents to Google Doc format and back, you can see the situation that office files uploaded to the server and unchanged since then, during the next synchronization begin loading back. And once again uploaded to the server during the next synchronization. This is not an error. This happens because the conversion changes the checksum of a file without changing the content and the program tries to synchronize the changes seeing them. If the file has been modified since the last synchronization, the synchronized newer version of the file.
 
-## Links
+## See also
 
-*   [project site](Http://cloudcross.mastersoft24.ru/ru)
+*   [Project site](Http://cloudcross.mastersoft24.ru/ru)
 *   [Group Facebook](Https://www.facebook.com/groups/cloudcross)

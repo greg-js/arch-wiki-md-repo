@@ -19,6 +19,7 @@
     *   [4.2 Adding an authoritative DNS server](#Adding_an_authoritative_DNS_server)
     *   [4.3 WAN facing DNS](#WAN_facing_DNS)
     *   [4.4 Roothints systemd timer](#Roothints_systemd_timer)
+    *   [4.5 Sandboxing](#Sandboxing)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Issues concerning num-threads](#Issues_concerning_num-threads)
 *   [6 See also](#See_also)
@@ -330,6 +331,54 @@ WantedBy=timers.target
 ```
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `roothints.timer` systemd timer.
+
+### Sandboxing
+
+It is possible to sandbox the default `unbound.service` by restricting [capabilities](/index.php/Capabilities "Capabilities") and enforcing [Systemd#Sandboxing application environments](/index.php/Systemd#Sandboxing_application_environments "Systemd") features:
+
+*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities
+    *   `CAP_IPC_LOCK` = Prevents paging by allowing *unbound* to lock data in memory
+        *   Not a hard requirement for *unbound* but rather a personal security choice
+    *   `CAP_NET_BIND_SERVICE` = Allows for socket binding to privileged ports < 1024
+    *   `CAP_SETGID CAP_SETUID` = Modifies the *user* *group* to *nobody* *nobody*
+    *   `CAP_SYS_CHROOT` = Allows the creation of a chroot at `/etc/unbound`
+*   `ReadWritePaths` specifies paths to override from `ProtectSystem=strict`
+    *   `/etc/unbound` = Allows the *ExecStartPre* command to complete
+    *   `/run` = Allows access to the PID file at `/run/unbound.pid`
+
+**Note:** Changes from the default Arch Linux service file are listed in bold
+
+```
+[Unit]
+Description=Unbound DNS Resolver
+After=network.target
+[Service]
+ExecStartPre=/bin/cp -f /etc/trusted-key.key /etc/unbound/
+PIDFile=/run/unbound.pid
+ExecStart=/usr/bin/unbound -d
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+**CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT**
+**MemoryDenyWriteExecute=true**
+**NoNewPrivileges=true**
+**PrivateDevices=true**
+**PrivateTmp=true**
+**ProtectHome=true**
+**ProtectControlGroups=true**
+**ProtectKernelTunables=true**
+**ProtectSystem=strict**
+**ReadWritePaths=/etc/unbound /run**
+**RestrictAddressFamilies=AF_INET AF_UNIX**
+**SystemCallArchitectures=native**
+**SystemCallFilter=~@clock @debug @keyring @module mount @obsolete @raw-io**
+[Install]
+WantedBy=multi-user.target
+
+```
+
+*   The *@mount* system call set includes *chroot()* which is required by unbound to build its environment
+*   `mount` and `unmount2` require explicit listing if they are to be blacklisted apart from the *@mount* macro
+*   The above example blacklists `CAP_SYS_ADM` which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/)
 
 ## Troubleshooting
 

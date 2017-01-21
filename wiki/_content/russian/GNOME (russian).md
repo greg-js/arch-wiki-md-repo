@@ -1,6 +1,6 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [GNOME](/index.php/GNOME "GNOME"). Дата последней синхронизации: 2014-10-21\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=341064).
 
-**GNOME** (произностися как /ɡˈnoʊm/[5] или /ˈnoʊm/[6]) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которые стремится быть простым и легким в использовании. Разрабатывается в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и полностью состоит из свободного и открытого программного обеспечения. Также является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU").
+**GNOME** (произностися как /ɡˈnoʊm/[5] или /ˈnoʊm/[6]) - это [окружение рабочего стола](/index.php/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Окружение рабочего стола"), которые стремится быть простым и легким в использовании. Разрабатывается в рамках [Проекта GNOME](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNOME "wikipedia:ru:Проект GNOME") и полностью состоит из свободного и открытого программного обеспечения. Также является частью [Проекта GNU](https://en.wikipedia.org/wiki/ru:%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82_GNU "wikipedia:ru:Проект GNU"). По умолчанию использует [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)"), а не [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)").
 
 ## Contents
 
@@ -10,6 +10,8 @@
 *   [3 Запуск GNOME](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_GNOME)
     *   [3.1 Графически](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8)
     *   [3.2 Вручную](#.D0.92.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E)
+        *   [3.2.1 Сессия Xorg](#.D0.A1.D0.B5.D1.81.D1.81.D0.B8.D1.8F_Xorg)
+        *   [3.2.2 Сессия Wayland](#.D0.A1.D0.B5.D1.81.D1.81.D0.B8.D1.8F_Wayland)
     *   [3.3 Приложения GNOME в Wayland](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_GNOME_.D0.B2_Wayland)
 *   [4 Навигация](#.D0.9D.D0.B0.D0.B2.D0.B8.D0.B3.D0.B0.D1.86.D0.B8.D1.8F)
     *   [4.1 Старые названия](#.D0.A1.D1.82.D0.B0.D1.80.D1.8B.D0.B5_.D0.BD.D0.B0.D0.B7.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F)
@@ -136,7 +138,7 @@
 *   [gnome](https://www.archlinux.org/groups/x86_64/gnome/) содержит основное рабочее окружение и набор хорошо интегрированных [приложений](https://wiki.gnome.org/Apps);
 *   [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/) включает в себя дополнительные приложения GNOME, такие как архиватор, диспетчер дисков, текстовый редактор и набор игр. Обратите внимание, что эта группа опирается на группу [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 
-Базовый рабочий стол состоит из GNOME Shell, плагина для оконного менеджера Mutter. Может быть установлен отдельным пакетом [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell)
+Базовый рабочий стол состоит из GNOME Shell, плагина для оконного менеджера [Mutter](https://en.wikipedia.org/wiki/ru:Mutter_(%D0%BE%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80) "wikipedia:ru:Mutter (оконный менеджер)"). Может быть установлен отдельным пакетом [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell)
 
 **Примечание:** *mutter* выступает в роли композитного менеджера, используя аппаратное графическое ускорение для предоставления эффектов, направленных на снижение беспорядка на экране. Менеджер сессий GNOME автоматически определяет, способен ли ваш драйвер видеокарты работать с GNOME Shell, и, если нет, возвращается к использованию программного рендеринга с использованием *llvmpipe*.
 
@@ -170,15 +172,15 @@
 
 ## Сессии GNOME
 
-В GNOME 3 имеется *три* доступных режима:
+Доступно три сеанса, каждый из которых использует GNOME Shell.
 
-*   **GNOME** - запускает GNOME Shell, используя новый протокол Wayland, а также привычные приложения X посредством Xwayland
+*   **GNOME** - сеанс по умолчанию; запускает GNOME Shell, используя протокол Wayland, а также привычные приложения X посредством Xwayland
 *   **GNOME Classic** - традиционный рабочий стол, похожий на пользовательский интерфейс GNOME 2, но использующий технологии GNOME 3\. Это достигается за счет использования предустановленных расширений и настроек (смотрите [здесь](http://worldofgnome.org/welcome-to-gnome-3-8-flintstones-mode/), чтобы увидеть список). Следовательно, это более "настроенный", чем первый, режим GNOME Shell
 *   **GNOME on Xorg** - запускает GNOME Shell, используя Xorg
 
 ## Запуск GNOME
 
-GNOME может быть запущен как графически, используя [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер"), так и вручную из консоли. Рекомендуется использовать [GDM](/index.php/GDM "GDM") (the GNOME Display manager) для лучшей интеграции с системой. Обратите внимание, что [включение](/index.php/%D0%92%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D1%82%D1%8C "Включить") экранного менеджера (такого как GDM) означает то, что Xorg будет запускаться с правами суперпользователя.
+GNOME может быть запущен как графически, используя [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер"), так и вручную из консоли.
 
 **Примечание:** Поддержка механизмов блокировки экрана в GNOME обеспечивается GDM. Если запускать GNOME не при помощи GDM, то вам придется использовать другой блокировщик экрана. Смотрите [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
@@ -188,6 +190,8 @@ GNOME может быть запущен как графически, испол
 
 ### Вручную
 
+#### Сессия Xorg
+
 *   Для запуска сессии GNOME on Xorg добавьте следующее в файл `~/.xinitrc`: `exec gnome-session`.
 *   Для запуска сессии GNOME Classic добавьте следующее в файл `~/.xinitrc`:
     ```
@@ -196,9 +200,23 @@ GNOME может быть запущен как графически, испол
     exec gnome-session --session=gnome-classic
     ```
 
-После редактирования файла `~/.xinitrc` GNOME можно запустить при помощи команды `startx` (для получения информации о других возможностях, например, сохранении сессии logind, смотрите статью [xinitrc](/index.php/Xinitrc "Xinitrc")). После настройки вашего файла `~/.xinitrc` также можете использовать инструкции из статьи [Запуск Х при входе в систему](/index.php/Start_X_at_login_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Start X at login (Русский)") с тем, чтобы вам не надо было выполнять команду `startx` вручную.
+После редактирования файла `~/.xinitrc` GNOME можно запустить при помощи команды `startx` (для получения информации о других возможностях, например, сохранении сессии logind, смотрите статью [xinitrc](/index.php/Xinitrc "Xinitrc")). После настройки вашего файла `~/.xinitrc` также можете использовать инструкции из статьи [Запуск Х при входе в систему](/index.php/Start_X_at_login_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Start X at login (Русский)") затем, чтобы вам не надо было выполнять команду `startx` вручную.
 
-**Примечание:** Для работы GNOME on Wayland требуется пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland). Эта сессия не может быть запущена посредством *startx* и `~/.xinitrc`. Вместо этого просто запустите `gnome-session`. Больше информации в статье [Wayland](/index.php/Wayland "Wayland")
+#### Сессия Wayland
+
+**Примечание:** Пакет [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) все еще нужен даже для запуска тех приложений, которые не портированы на [Wayland](/index.php/Wayland_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wayland (Русский)").
+
+Вручную можно запустить следующей командой: `XDG_SESSION_TYPE=wayland dbus-run-session gnome-session`. Для того, чтобы приложения, работающие при помощи Qt, использовали Wayland, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) и значение [переменной окружения](/index.php/Environment_variable "Environment variable"): `QT_QPA_PLATFORM=wayland`.
+
+Чтобы запускать сессию GNOME при входе в систему, добавьте следующее в ваш `.bash_profile`:
+
+```
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  export QT_QPA_PLATFORM=wayland
+  XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
+fi
+
+```
 
 ### Приложения GNOME в Wayland
 
@@ -277,6 +295,27 @@ $ gsettings set org.gnome.desktop.calendar show-weekdate true
 *   Отключение тачпада во время набора текста
 *   Отключение прокрутки
 *   Отключение tap-to-click
+
+В зависимости от вашего устройства другие параметры также могут быть доступны, но их нельзя настроить через интерфейс. Например, другой `click-method` тачпада:
+
+ `$ gsettings range org.gnome.desktop.peripherals.touchpad click-method` 
+```
+
+enum
+'default'
+'none'
+'areas'
+'fingers'
+```
+
+Вручную:
+
+```
+$ gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
+
+```
+
+или через *gnome-tweak-tool*.
 
 **Примечание:** Драйвер [synaptics](/index.php/Synaptics "Synaptics") не поддерживается GNOME. Вместо него вы должны использовать [libinput](/index.php/Libinput "Libinput"). Смотрите [этот отчет об ошибке](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12).
 

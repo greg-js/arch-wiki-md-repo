@@ -16,6 +16,7 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
 *   [5 Fujitsu](#Fujitsu)
     *   [5.1 S300M](#S300M)
 *   [6 HP](#HP)
+    *   [6.1 Alternative way to scan with network HP scanner](#Alternative_way_to_scan_with_network_HP_scanner)
 *   [7 Mustek](#Mustek)
     *   [7.1 BearPaw 2400CU](#BearPaw_2400CU)
 *   [8 Samsung](#Samsung)
@@ -203,6 +204,25 @@ The latter comes with 3 tools:
 If the device is connected by USB, run *hp-setup* as root and follow the on screen instructions.
 
 If your device is connected on the network, use `# hp-setup <printer ip>` instead.
+
+### Alternative way to scan with network HP scanner
+
+*   Find out IP address of your network HP scanner, for example *192.168.1.8*
+*   Make device URI using hp-makeuri utility:
+
+```
+   hp-makeuri 192.168.1.8
+
+```
+
+*   Output should look like *hpaio:/net/DeskJet_3630_series?ip=192.168.1.8*
+*   This URI could be given to xsane or scanimage tools, for example:
+
+```
+   xsane "hpaio:/net/DeskJet_3630_series?ip=192.168.1.8"
+   scanimage --device "hpaio:/net/DeskJet_3630_series?ip=10.12.129.6" --format=png --resolution 300 >scan01.png
+
+```
 
 ## Mustek
 

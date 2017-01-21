@@ -148,7 +148,7 @@ In that article, the device connected to the LAN is `net0`. That device would be
 
 ### create_ap
 
-The [create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) script combines [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [iptables](/index.php/Iptables "Iptables") to create a Bridged/NATed Access Point (available in [create_ap](https://www.archlinux.org/packages/?name=create_ap)).
+The [create_ap](https://bbs.archlinux.org/viewtopic.php?pid=1269258) script combines [hostapd](https://www.archlinux.org/packages/?name=hostapd), [dnsmasq](/index.php/Dnsmasq "Dnsmasq") and [iptables](/index.php/Iptables "Iptables") to create a Bridged/NATed Access Point (available in [create_ap](https://www.archlinux.org/packages/?name=create_ap) or [create_ap-git](https://aur.archlinux.org/packages/create_ap-git/)).
 
 ```
 # create_ap wlan0 internet0 MyAccessPoint MyPassPhrase

@@ -53,7 +53,9 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 
 ```
 
-The option `status=progress` above reports transfer progress every so often. It was introduced in [coreutils](https://www.archlinux.org/packages/?name=coreutils) 8.24 and should be omitted if distribution used to create installation media provides older version. Do **not** miss *sync* to complete before pulling the USB drive.
+Wait for the command *sync* to complete before unplugging the USB drive to ensure the data was written completely.
+
+See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more information about `dd`.
 
 #### In Windows
 

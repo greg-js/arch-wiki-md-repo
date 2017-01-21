@@ -51,7 +51,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [19.2 Cannot reach bottom of the screen on menues](#Cannot_reach_bottom_of_the_screen_on_menues)
     *   [19.3 Audio is not synced](#Audio_is_not_synced)
     *   [19.4 Unable to aim when in game](#Unable_to_aim_when_in_game)
-    *   [19.5 Mouse Deadzone](#Mouse_Deadzone)
+    *   [19.5 Mouse deadzone](#Mouse_deadzone)
     *   [19.6 Low Performance on AMD card using Catalyst proprietary driver ( <= 15.7 )](#Low_Performance_on_AMD_card_using_Catalyst_proprietary_driver_.28_.3C.3D_15.7_.29)
     *   [19.7 Brightness slider not working](#Brightness_slider_not_working)
 *   [20 Crusader Kings II](#Crusader_Kings_II)
@@ -565,20 +565,15 @@ export SDL_VIDEO_X11_DGAMOUSE=0
 
 See also [[1]](https://bbs.archlinux.org/viewtopic.php?id=184905).
 
-### Mouse Deadzone
+### Mouse deadzone
 
 Small mouse movements (less than under 5 pixels per second) does not register on X or an OpenGL games.
 
-Solution[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1519944#p1519944):
-
-```
-sudo pacman -R x86-input-libinput libinput
-
-```
+[Solution](https://bbs.archlinux.org/viewtopic.php?pid=1519944#p1519944): [install](/index.php/Install "Install") the [x86-input-libinput](https://www.archlinux.org/packages/?name=x86-input-libinput) package.
 
 ### Low Performance on AMD card using Catalyst proprietary driver ( <= 15.7 )
 
-Solution[[3]](http://www.phoronix.com/scan.php?page=article&item=amd-csgo-workaround&num=1):
+Solution[[2]](http://www.phoronix.com/scan.php?page=article&item=amd-csgo-workaround&num=1):
 
 ```
 cd ~/.steam/steam/steamapps/common/Counter-Strike\ Global\ Offensive
@@ -623,14 +618,7 @@ For example:
 
 ```
 
-Edit csgo.sh
-
-```
-nano ~/.steam/steam/steamapps/common/Counter-Strike\ Global\ Offensive/csgo.sh
-
-```
-
-and add the following lines (change the OUTPUT_NAME to one you found with xrandr)
+Edit `~/.steam/steam/steamapps/common/Counter-Strike\ Global\ Offensive/csgo.sh` and add the following lines (change the OUTPUT_NAME to one you found with xrandr)
 
 ```
 **# gamma correction**
@@ -775,9 +763,9 @@ Steam distributes a copy of libxcb which is incompatible with the latest xorg li
 
 See more information here:
 
-	[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3199)
+	[[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3199)
 
-	[[5]](https://github.com/ValveSoftware/steam-for-linux/issues/3093)
+	[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3093)
 
 ### Chinese Tips and player's name display problem
 
@@ -1219,7 +1207,7 @@ If Multiwinia crashes on startup on X64 systems, force launching the 32-bit exec
 
 ```
 
-See [[6]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
+See [[5]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
 
 ## Natural Selection 2
 
@@ -1699,9 +1687,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 This will force Steam to do the fix whenever Transistor is started, but allows Steam to be launched normally.
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[7]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[6]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[8]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
+Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
 
 ## Transmissions: Element 120
 
@@ -1835,7 +1823,7 @@ Be aware that some games do not support setting that parameter, it will simply b
 
 ### Blank screen
 
-If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` [environment variable](/index.php/Environment_variable "Environment variable"). [[9]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[10]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` [environment variable](/index.php/Environment_variable "Environment variable"). [[8]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[9]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ## Warhammer 40,000: Dawn of War II
 

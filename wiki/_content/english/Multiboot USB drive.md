@@ -11,40 +11,38 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
         *   [1.3.1 Using a template](#Using_a_template)
         *   [1.3.2 Manual configuration](#Manual_configuration)
     *   [1.4 Boot entries](#Boot_entries)
-        *   [1.4.1 Alpine Linux](#Alpine_Linux)
-        *   [1.4.2 Alt Linux](#Alt_Linux)
-        *   [1.4.3 Arch Linux](#Arch_Linux)
-            *   [1.4.3.1 monthly release](#monthly_release)
-            *   [1.4.3.2 archboot](#archboot)
-        *   [1.4.4 CentOS](#CentOS)
-            *   [1.4.4.1 Stock installation medium](#Stock_installation_medium)
-            *   [1.4.4.2 Desktop live medium](#Desktop_live_medium)
-        *   [1.4.5 Clonezilla Live](#Clonezilla_Live)
-        *   [1.4.6 Debian](#Debian)
-            *   [1.4.6.1 Stock install medium](#Stock_install_medium)
-            *   [1.4.6.2 Live install medium](#Live_install_medium)
-        *   [1.4.7 Elementary OS](#Elementary_OS)
-        *   [1.4.8 Fedora](#Fedora)
-            *   [1.4.8.1 Stock installation medium](#Stock_installation_medium_2)
-            *   [1.4.8.2 Workstation live medium](#Workstation_live_medium)
-        *   [1.4.9 Gentoo](#Gentoo)
-            *   [1.4.9.1 Desktop LiveDVD](#Desktop_LiveDVD)
-        *   [1.4.10 GParted Live](#GParted_Live)
-        *   [1.4.11 Kali Linux](#Kali_Linux)
-        *   [1.4.12 Knoppix](#Knoppix)
-        *   [1.4.13 Linux Mint](#Linux_Mint)
-        *   [1.4.14 openSUSE](#openSUSE)
-            *   [1.4.14.1 Stock installation medium](#Stock_installation_medium_3)
-            *   [1.4.14.2 Desktop Live medium](#Desktop_Live_medium_2)
-        *   [1.4.15 Parabola GNU/Linux-libre](#Parabola_GNU.2FLinux-libre)
-        *   [1.4.16 Sabayon](#Sabayon)
-        *   [1.4.17 Slackware Linux](#Slackware_Linux)
-        *   [1.4.18 SystemRescueCD](#SystemRescueCD)
-        *   [1.4.19 Slitaz](#Slitaz)
-        *   [1.4.20 Slax](#Slax)
-        *   [1.4.21 Tails](#Tails)
-        *   [1.4.22 Ubuntu](#Ubuntu)
-        *   [1.4.23 Xubuntu (32 bit)](#Xubuntu_.2832_bit.29)
+        *   [1.4.1 Arch Linux monthly release](#Arch_Linux_monthly_release)
+        *   [1.4.2 archboot](#archboot)
+    *   [1.5 Boot entries for other distributions](#Boot_entries_for_other_distributions)
+        *   [1.5.1 Alpine Linux](#Alpine_Linux)
+        *   [1.5.2 CentOS](#CentOS)
+            *   [1.5.2.1 Stock installation medium](#Stock_installation_medium)
+            *   [1.5.2.2 Desktop live medium](#Desktop_live_medium)
+        *   [1.5.3 Clonezilla Live](#Clonezilla_Live)
+        *   [1.5.4 Debian](#Debian)
+            *   [1.5.4.1 Live install medium](#Live_install_medium)
+        *   [1.5.5 Elementary OS](#Elementary_OS)
+        *   [1.5.6 Fedora](#Fedora)
+            *   [1.5.6.1 Stock installation medium](#Stock_installation_medium_2)
+            *   [1.5.6.2 Workstation live medium](#Workstation_live_medium)
+        *   [1.5.7 Gentoo](#Gentoo)
+            *   [1.5.7.1 Desktop LiveDVD](#Desktop_LiveDVD)
+        *   [1.5.8 GParted Live](#GParted_Live)
+        *   [1.5.9 Kali Linux](#Kali_Linux)
+        *   [1.5.10 Knoppix](#Knoppix)
+        *   [1.5.11 Linux Mint](#Linux_Mint)
+        *   [1.5.12 openSUSE](#openSUSE)
+            *   [1.5.12.1 Stock installation medium](#Stock_installation_medium_3)
+            *   [1.5.12.2 Desktop Live medium](#Desktop_Live_medium_2)
+        *   [1.5.13 Parabola GNU/Linux-libre](#Parabola_GNU.2FLinux-libre)
+        *   [1.5.14 Sabayon](#Sabayon)
+        *   [1.5.15 Slackware Linux](#Slackware_Linux)
+        *   [1.5.16 SystemRescueCD](#SystemRescueCD)
+        *   [1.5.17 Slitaz](#Slitaz)
+        *   [1.5.18 Slax](#Slax)
+        *   [1.5.19 Tails](#Tails)
+        *   [1.5.20 Ubuntu](#Ubuntu)
+        *   [1.5.21 Xubuntu (32 bit)](#Xubuntu_.2832_bit.29)
 *   [2 Chainloading Windows](#Chainloading_Windows)
 *   [3 Using Syslinux and memdisk](#Using_Syslinux_and_memdisk)
     *   [3.1 Preparation](#Preparation_2)
@@ -220,67 +218,23 @@ To complete the configuration, a boot entry for each ISO image has to be added b
 
 It is assumed that the ISO images are stored in the `boot/iso/` directory on the same filesystem where GRUB is installed. Otherwise it would be necessary to prefix the path to ISO file with device identification when using the `loopback` command, for example `loopback loop **(hd1,2)**$isofile`. As this identification of devices is not [persistent](/index.php/Persistent_block_device_naming "Persistent block device naming"), it is not used in the examples in this section.
 
-One can use persistent block device naming like this:
+One can use persistent block device naming like so. Replace the uuid according to your iso filesystem uuid.
 
 ```
 # define globally (i.e outside any menuentry)
 insmod search_fs_uuid
-search --no-floppy --set=**isopart** --fs-uuid d6de9100-1981-11e5-9fb9-74867a652f05         # your iso fs uuid here
+search --no-floppy --set=**isopart** --fs-uuid *123-456*
 # later use inside each menuentry instead
 loopback loop **($isopart)**$isofile
 ```
 
 **Tip:** For a list of kernel parameters, see [https://www.kernel.org/doc/Documentation/kernel-parameters.txt](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) (still incomplete)
 
-#### Alpine Linux
-
-**Tip:** If you want to boot into a 32-bit system, replace `x86_64` with `x86`.
-
-*   Initramfs framework: ???
-*   Live framework: ???
-*   Init system: [OpenRC](http://wiki.alpinelinux.org/wiki/Alpine_Linux_Init_System) (cmdline: *RFD*)
-
-```
-menuentry '[loopback]alpine x86_64' {
-        set isofile='/boot/iso/alpine-3.3.3-x86_64.iso'
-        loopback loop $isofile
-        set root=loop
-        linux /boot/vmlinuz-grsec modloop=/boot/modloop-grsec modules=loop,squashfs,sd-mod,usb-storage quiet
-        initrd /boot/initramfs-grsec
-}
-```
-
-#### Alt Linux
-
-*   Initramfs framework: ???
-*   Live framework: ???
-*   Init system: ???
-
-```
-menuentry "[loopback]altlinux-7.0.5-simply-x86_64-install-dvd5.iso" {
-        set gfxpayload=keep
-	insmod gzio
-	insmod part_msdos
-	insmod ext2
-	insmod xfs
-        set bootpart=uuid:df46d821-e7f9-4e35-bbd2-728bdce8d89a
-        set isodir=/boot/iso
-        set isofile=altlinux-7.0.5-simply-x86_64-install-dvd5.iso
-        loopback loop (${root})${isodir}/${isofile}
-        linux (loop)/syslinux/alt0/vmlinuz automatic=method:disk,${bootpart},directory:${isodir}/${isofile} ramdisk_size=183210 changedisk lang=ru_RU splash noeject xdriver=auto quiet=1 showopts
-        initrd (loop)/syslinux/alt0/full.cz
-}
-```
-
-#### Arch Linux
+#### Arch Linux monthly release
 
 **Tip:** If you want to boot into a 32-bit system, replace `x86_64` with `i686`.
 
-##### monthly release
-
-*   Initramfs framework: [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (cmdline: [[1]](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212))
-*   Live framework: [archiso](/index.php/Archiso "Archiso") (cmdline: [[2]](https://projects.archlinux.org/archiso.git/tree/docs/README.bootparams))
-*   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[3]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
+Also see [archiso](/index.php/Archiso "Archiso").
 
 ```
 menuentry '[loopback]archlinux-2014.12.01-dual.iso' {
@@ -293,11 +247,9 @@ menuentry '[loopback]archlinux-2014.12.01-dual.iso' {
 
 **Note:** As of archiso v23 (monthly release 2015.10.01), the parameter `archisodevice=/dev/loop0` is no longer necessary when boot using GRUB and loopback devices.
 
-##### archboot
+#### archboot
 
-*   Initramfs framework: [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") (cmdline: [[4]](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212))
-*   Live framework: [archboot](/index.php/Archboot "Archboot") (cmdline: none? *RFD*)
-*   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[5]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
+Also see [archboot](/index.php/Archboot "Archboot").
 
 ```
 menuentry '[loopback]archlinux-2014.11-1-archboot' {
@@ -308,13 +260,25 @@ menuentry '[loopback]archlinux-2014.11-1-archboot' {
 }
 ```
 
+### Boot entries for other distributions
+
+#### Alpine Linux
+
+**Tip:** If you want to boot into a 32-bit system, replace `x86_64` with `x86`.
+
+```
+menuentry '[loopback]alpine x86_64' {
+        set isofile='/boot/iso/alpine-3.3.3-x86_64.iso'
+        loopback loop $isofile
+        set root=loop
+        linux /boot/vmlinuz-grsec modloop=/boot/modloop-grsec modules=loop,squashfs,sd-mod,usb-storage quiet
+        initrd /boot/initramfs-grsec
+}
+```
+
 #### CentOS
 
 ##### Stock installation medium
-
-*   Initramfs framework: [Dracut](https://fedoraproject.org/wiki/Dracut) (cmdline: [[6]](https://git.kernel.org/cgit/boot/dracut/dracut.git/tree/dracut.cmdline.7.asc))
-*   Installation program: [Anaconda](https://fedoraproject.org/wiki/Anaconda) (cmdline: [[7]](https://github.com/rhinstaller/anaconda/blob/master/docs/boot-options.rst))
-*   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[8]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
 
 ```
 menuentry "[loopback]CentOS-7.0-1406-x86_64-**DVD**" {
@@ -325,21 +289,7 @@ menuentry "[loopback]CentOS-7.0-1406-x86_64-**DVD**" {
 }
 ```
 
-**Tip:** The boot parameter of second stage install image location `/dev/sdb2` which is used by Anaconda, is similar to [fstab](/index.php/Fstab "Fstab")'s first field (fs_spec), could be replaced with one of:
-
-*   `/dev/sd***xY***`
-*   `LABEL=MYUSBSTICK`
-*   `UUID=00000000-0000-0000-0000-0000deadbeef`
-
-For example, `linux (loop)/isolinux/vmlinuz noeject inst.stage2=hd:**LABEL=MYUSBSTICK**:/$isofile` or `linux (loop)/isolinux/vmlinuz noeject inst.stage2=hd:**UUID=$rootuuid**:/$isofile`.
-
-When using some special disk label (e.g. GPT), it's also possible to use `PARTUUID=` and/or `PARTLABEL=`.
-
 ##### Desktop live medium
-
-*   Initramfs framework: [Dracut](https://fedoraproject.org/wiki/Dracut) (cmdline: [[9]](https://git.kernel.org/cgit/boot/dracut/dracut.git/tree/dracut.cmdline.7.asc))
-*   Live framework: fedora [livecd-tools](https://fedoraproject.org/wiki/FedoraLiveCD) (cmdline: none)
-*   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[10]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
 
 ```
 menuentry '[loopback]CentOS-7.0-1406-x86_64-GnomeLive' {
@@ -352,11 +302,7 @@ menuentry '[loopback]CentOS-7.0-1406-x86_64-GnomeLive' {
 
 #### Clonezilla Live
 
-**Tip:** Since 2014.01.05[[11]](https://projects.archlinux.org/archiso.git/commit/?id=5cd02c704046cdb6974f6b10f0cac366eeebec0e), the Arch Linux monthly release contains clonezilla.
-
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
-*   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[12]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
+**Tip:** Since 2014.01.05[[1]](https://projects.archlinux.org/archiso.git/commit/?id=5cd02c704046cdb6974f6b10f0cac366eeebec0e), the Arch Linux monthly release contains clonezilla.
 
 ```
 menuentry "[loopback]clonezilla-live-2.2.3-25-amd64" {
@@ -369,31 +315,7 @@ menuentry "[loopback]clonezilla-live-2.2.3-25-amd64" {
 
 #### Debian
 
-##### Stock install medium
-
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
-*   Installation program: [debian-installer](https://wiki.debian.org/DebianInstaller#Development) (cmdline: *exists but missing online documentation*)
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
-
-**Tip:** To install debian from any stock install medium on a non-optical medium (e.g. usb stick, HDD), it's necessary to use a different initramfs instead of the default one on the installation medium which is located at `(loop)/install.amd/initrd.gz`. If you boot with the default one, the installer will unable to find or mount the proper iso image for installation. Please download the initramfs for hard disk installation from [an official mirror site](https://mirrors.kernel.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/initrd.gz), put it in the same directory with the image file and give it a suitable name (`debian-7.8.0-amd64-DVD-1.hdd.initrd.gz` in this example).
-
-**Tip:** The non-optical medium needs to be vFAT formatted, otherwise the /cdrom directory where the files from the *.iso image are located is not read correctly and a "Corrupted or missing CD-ROM" error appears.
-
-```
-menuentry '[loopback]debian-7.8.0-amd64-DVD-1' {
-	set isofile='/boot/iso/debian-7.8.0-amd64-DVD-1.iso'
-	set initrdfile='/boot/iso/debian-7.8.0-amd64-DVD-1.hdd.initrd.gz'
-	loopback loop $isofile
-	linux (loop)/install.amd/vmlinuz vga=791 iso-scan/ask_second_pass=true iso-scan/filename=$isofile
-	initrd $initrdfile
-}
-```
-
 ##### Live install medium
-
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
-*   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[13]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
 
 ```
 menuentry '[loopback]debian-live-7.8.0-amd64-xfce-desktop' {
@@ -404,13 +326,7 @@ menuentry '[loopback]debian-live-7.8.0-amd64-xfce-desktop' {
 }
 ```
 
-**Note:** It's also OK to use `findiso=$isofile` instead of the longer `fromiso=/dev/disk/by-.../.../$isofile`. Anyway, using `fromiso=` instead of `findiso=` may speed up the initialization progress because it avoids unnecessary mounting.
-
 #### Elementary OS
-
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: *RFD*
-*   Init system: upstart (cmdline: *RFD*)
 
 ```
 menuentry '[loopback]elementaryos-freya-amd64.20150411' {
@@ -425,10 +341,6 @@ menuentry '[loopback]elementaryos-freya-amd64.20150411' {
 
 ##### Stock installation medium
 
-*   Initramfs framework: [Dracut](https://fedoraproject.org/wiki/Dracut) (cmdline: [[14]](https://git.kernel.org/cgit/boot/dracut/dracut.git/tree/dracut.cmdline.7.asc))
-*   Installation program: [Anaconda](https://fedoraproject.org/wiki/Anaconda) (cmdline: [[15]](https://github.com/rhinstaller/anaconda/blob/master/docs/boot-options.rst))
-*   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[16]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
-
 ```
 menuentry '[loopback]Fedora-Workstation-netinst-x86_64-24-1.2' {
 	set isofile='/boot/iso/Fedora-Workstation-netinst-x86_64-24-1.2.iso'
@@ -439,10 +351,6 @@ menuentry '[loopback]Fedora-Workstation-netinst-x86_64-24-1.2' {
 ```
 
 ##### Workstation live medium
-
-*   Initramfs framework: [Dracut](https://fedoraproject.org/wiki/Dracut) (cmdline: [[17]](https://git.kernel.org/cgit/boot/dracut/dracut.git/tree/dracut.cmdline.7.asc))
-*   Live framework: fedora [livecd-tools](https://fedoraproject.org/wiki/FedoraLiveCD) (cmdline: none)
-*   Init system: [systemd](/index.php/Systemd "Systemd") (cmdline: [[18]](http://www.freedesktop.org/software/systemd/man/kernel-command-line.html))
 
 ```
 menuentry '[loopback]Fedora-Workstation-Live-x86_64-24-1.2' {
@@ -457,10 +365,6 @@ menuentry '[loopback]Fedora-Workstation-Live-x86_64-24-1.2' {
 
 ##### Desktop LiveDVD
 
-*   Initramfs framework: [genkernel](https://wiki.gentoo.org/wiki/Genkernel) (cmdline: [[19]](https://gitweb.gentoo.org/proj/genkernel.git/tree/doc/genkernel.8.txt#n393))
-*   Live framework: [livecd-tools](https://gitweb.gentoo.org/proj/livecd-tools.git/) (cmdline: *RFD*)
-*   Init system: [OpenRC](https://wiki.gentoo.org/wiki/Project:OpenRC) (cmdline: *RFD*)
-
 ```
 menuentry "[loopback]livedvd-amd64-multilib-20160514" {
 	set isofile="/boot/iso/livedvd-amd64-multilib-20160514.iso"
@@ -470,13 +374,7 @@ menuentry "[loopback]livedvd-amd64-multilib-20160514" {
 }
 ```
 
-**Tip:** This should also works for minimal medium.
-
 #### GParted Live
-
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
-*   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[20]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
 
 ```
 menuentry "[loopback]gparted-live-0.22.0-2-**amd64**" {
@@ -489,10 +387,6 @@ menuentry "[loopback]gparted-live-0.22.0-2-**amd64**" {
 
 #### Kali Linux
 
-*   Initramfs framework: [initramfs-tools](https://anonscm.debian.org/cgit/kernel/initramfs-tools.git/) (cmdline: *RFD*)
-*   Live framework: [Debian Live](http://live.debian.net/) (cmdline: [[21]](http://manpages.debian.org/cgi-bin/man.cgi?query=live-boot&apropos=0&sektion=7&manpath=Debian+unstable+sid&format=html&locale=en))
-*   Init system: [sysvinit](https://savannah.nongnu.org/projects/sysvinit) (cmdline: *RFD*)
-
 ```
 menuentry "[loopback]kali-linux-1.0.7-**amd64**" {
 	set isofile='/boot/iso/kali-linux-1.0.7-**amd64**.iso'
@@ -504,10 +398,6 @@ menuentry "[loopback]kali-linux-1.0.7-**amd64**" {
 
 #### Knoppix
 
-*   Initramfs framework: *Unknown*
-*   Live framework: *Unknown*
-*   Init system: *Unknown*
-
 ```
 menuentry "[loopback]KNOPPIX_V7.4.2DVD-2014-09-28-EN" {
         set isofile="/boot/iso/KNOPPIX_V7.4.2DVD-2014-09-28-EN.iso"
@@ -518,10 +408,6 @@ menuentry "[loopback]KNOPPIX_V7.4.2DVD-2014-09-28-EN" {
 ```
 
 #### Linux Mint
-
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: *RFD*
-*   Init system: *RFD*
 
 ```
 menuentry "Linux Mint 17.2 Cinnamon LTS RC (x64)" {
@@ -536,10 +422,6 @@ menuentry "Linux Mint 17.2 Cinnamon LTS RC (x64)" {
 
 ##### Stock installation medium
 
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: Kiwi? *RFD*
-*   Init system: *RFD*
-
 ```
 menuentry '[loopback]openSUSE-13.1-DVD-x86_64' {
 	set isofile='/boot/iso/openSUSE-13.1-DVD-x86_64.iso'
@@ -550,10 +432,6 @@ menuentry '[loopback]openSUSE-13.1-DVD-x86_64' {
 ```
 
 ##### Desktop Live medium
-
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: Kiwi? *RFD*
-*   Init system: *RFD*
 
 ```
 menuentry '[loopback]openSUSE-13.1-KDE-Live-x86_64' {
@@ -581,10 +459,6 @@ menuentry '[loopback]parabola-2015.07.01-dual.iso' {
 
 #### Sabayon
 
-*   Initramfs framework: genkernel? *RFD*
-*   Live framework or installation program: *RFD*
-*   Init system: openrc? *RFD*
-
 ```
 menuentry '[loopback]Sabayon_Linux_14.05_amd64_KDE' {
 	set isofile='/boot/iso/Sabayon_Linux_14.05_amd64_KDE.iso'
@@ -596,10 +470,6 @@ menuentry '[loopback]Sabayon_Linux_14.05_amd64_KDE' {
 
 #### Slackware Linux
 
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: *RFD*
-*   Init system: *RFD*
-
 ```
 menuentry '[loopback]slackware64-14.1-install-dvd' {
 	set isofile='/boot/iso/slackware64-14.1-install-dvd.iso'
@@ -610,10 +480,6 @@ menuentry '[loopback]slackware64-14.1-install-dvd' {
 ```
 
 #### SystemRescueCD
-
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: *RFD*
-*   Init system: *RFD*
 
 **Note:** Replace `64` with `32` if you want to boot into a 32-bit system.
 
@@ -628,11 +494,7 @@ menuentry '[loopback]systemrescuecd-x86-4.5.2' {
 
 #### Slitaz
 
-*   Initramfs framework: *RFD*
-*   Live framework: *RFD*
-*   Init system: *RFD*
-
-First, download slitaz iso, then extract somewhere (in this case, /live/slitaz-4.0 on /dev/sda3)
+This image needs to be extracted to the directory given in `dir`.
 
 ```
 menuentry 'slitaz-4.0 core' {
@@ -647,11 +509,7 @@ menuentry 'slitaz-4.0 core' {
 
 #### Slax
 
-*   Initramfs framework: *RFD*
-*   Live framework: *RFD*
-*   Init system: *RFD*
-
-First, download Slax zip (for USB), then extract somewhere (in this case, /live/slax on /dev/sda3)
+This image needs to be extracted to the directory given in `dir`.
 
 ```
 menuentry 'slax' {
@@ -663,12 +521,6 @@ menuentry 'slax' {
 ```
 
 #### Tails
-
-*   Initramfs framework: *Unknown*
-*   Live framework: *Unknown*
-*   Init system: *Unknown*
-
-Simply download and verify integrity of the Tails iso.
 
 ```
 menuentry "[loopback]tails-i386-1.5.iso" {
@@ -684,10 +536,6 @@ menuentry "[loopback]tails-i386-1.5.iso" {
 Remove the `live-media=removable` option if the iso file is not on removable media.
 
 #### Ubuntu
-
-*   Initramfs framework: *RFD*
-*   Live framework or installation program: *RFD*
-*   Init system: upstart (cmdline: *RFD*)
 
 ```
 menuentry '[loopback]ubuntu-14.04.1-desktop-amd64' {
@@ -758,7 +606,7 @@ See [memdisk on Syslinux wiki](http://www.syslinux.org/wiki/index.php/MEMDISK) f
 
 ### Caveat for 32-bit systems
 
-When booting a 32-bit system from an image larger than 128MiB, it is necessary to increase the maximum memory usage of vmalloc. This is done by adding `vmalloc=*value*M` to the kernel parameters, where `*value*` is larger than the size of the ISO image in MiB.[[22]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
+When booting a 32-bit system from an image larger than 128MiB, it is necessary to increase the maximum memory usage of vmalloc. This is done by adding `vmalloc=*value*M` to the kernel parameters, where `*value*` is larger than the size of the ISO image in MiB.[[2]](http://www.syslinux.org/wiki/index.php/MEMDISK#-_memdiskfind_in_combination_with_phram_and_mtdblock)
 
 For example when booting the 32-bit system from the [Arch installation ISO](https://www.archlinux.org/download/), press the `Tab` key over the `Boot Arch Linux (i686)` entry and add `vmalloc=768M` at the end. Skipping this step will result in the following error during boot:
 

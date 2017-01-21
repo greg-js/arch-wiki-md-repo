@@ -676,10 +676,11 @@ Afterwards, it is recommended that you run `exit`, `umount /mnt/{boot,}` and `re
 
 ### Signature from "User <email@gmail.com>" is unknown trust, installation failed
 
-Follow [pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key"). Or you can try to either:
+You can try to either:
 
-*   update the known keys, i.e. `pacman-key --refresh-keys`;
-*   or manually upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package first, i.e. `pacman -S archlinux-keyring`.
+*   update the known keys, i.e. `pacman-key --refresh-keys`
+*   manually upgrade [archlinux-keyring](https://www.archlinux.org/packages/?name=archlinux-keyring) package first, i.e. `pacman -S archlinux-keyring`
+*   follow [pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key")
 
 ### Request on importing PGP keys
 

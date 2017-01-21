@@ -55,7 +55,7 @@ auth		required	pam_nologin.so
 
 Keep in mind that your 'sudo' file may contain more entries.
 
-Some users may not have (or want to have) [sudo](/index.php/Sudo "Sudo") installed on their systems. In this case, it is still possible to use your fingerprint to autheticate [su](/index.php/Su "Su"). This can be done just like the sudo example, of course instead adding an entry to `/etc/pam.d/su`. Again, add the following **bold text**.
+Some users may not have (or want to have) [sudo](/index.php/Sudo "Sudo") installed on their systems. In this case, it is still possible to use your fingerprint to authenticate [su](/index.php/Su "Su"). This can be done just like the sudo example, of course instead adding an entry to `/etc/pam.d/su`. Again, add the following **bold text**.
 
  `/etc/pam.d/su` 
 ```

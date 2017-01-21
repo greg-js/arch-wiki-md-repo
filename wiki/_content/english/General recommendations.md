@@ -282,6 +282,8 @@ This section relates to [daemons](/index.php/Daemons "Daemons"). For more, pleas
 
 Most distributions have a `locate` command available to be able to quickly search for files. To get this functionality in Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) is the recommended install. After the install you should run `updatedb` to index the filesystems.
 
+[Desktop search engines](/index.php/List_of_applications/Utilities#Desktop_search_engines "List of applications/Utilities") provide a similar service, while better integrated into the [Desktop Environment](/index.php/Desktop_Environment "Desktop Environment").
+
 ### Local mail delivery
 
 A default base setup bestows no means for mail syncing. To configure *Postfix* for simple local mailbox delivery, see [Postfix](/index.php/Postfix "Postfix"). Other options are [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") and [fdm](/index.php/Fdm "Fdm").
@@ -340,7 +342,7 @@ Emacs is known for featuring options beyond the duties of regular text editing, 
 
 ### Mouse support
 
-Using a mouse with the console for copy-paste operations can be preferred over [GNU Screen](/index.php/GNU_Screen "GNU Screen")'s traditional copy mode. Refer to [Console mouse support](/index.php/Console_mouse_support "Console mouse support") for comprehensive directions.
+Using a mouse with the console for copy-paste operations can be preferred over [GNU Screen](/index.php/GNU_Screen "GNU Screen")'s traditional copy mode. Refer to [Console mouse support](/index.php/Console_mouse_support "Console mouse support") for comprehensive directions. Note that you can already do this in [terminal emulators](/index.php/List_of_applications#Terminal_emulators "List of applications") with the [Clipboard](/index.php/Clipboard "Clipboard").
 
 ### Scrollback buffer
 

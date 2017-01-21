@@ -38,7 +38,6 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Enable installed units by default](#Enable_installed_units_by_default)
     *   [8.2 Sandboxing application environments](#Sandboxing_application_environments)
-        *   [8.2.1 Unbound example](#Unbound_example)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Investigating systemd errors](#Investigating_systemd_errors)
     *   [9.2 Diagnosing boot problems](#Diagnosing_boot_problems)
@@ -623,51 +622,11 @@ If this behavior is not desired, simply create a symlink from `/etc/systemd/syst
 
 A unit file can be created as a sandbox to isolate applications and their processes within a hardened virtual environment. systemd leverages [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [control groups](/index.php/Cgroups "Cgroups") to container processes through an extensive [execution environment configuration](https://www.freedesktop.org/software/systemd/man/systemd.exec.html). Application sandboxing by way of systemd unit files is typically a matter of trial-and-error accompanied by the generous use of [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams") and [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html) error logging and output facilities.
 
-#### Unbound example
+Some examples on how sandboxing with systemd can be deployed:
 
-*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities
-    *   `CAP_IPC_LOCK` = Prevents paging by allowing *unbound* to lock data in memory
-        *   Not a hard requirement for *unbound* but rather a personal security choice
-    *   `CAP_NET_BIND_SERVICE` = Allows for socket binding to privileged ports < 1024
-    *   `CAP_SETGID CAP_SETUID` = Modifies the *user* *group* to *nobody* *nobody*
-    *   `CAP_SYS_CHROOT` = Allows the creation of a chroot at `/etc/unbound`
-*   `ReadWritePaths` specifies paths to override from `ProtectSystem=strict`
-    *   `/etc/unbound` = Allows the *ExecStartPre* command to complete
-    *   `/run` = Allows access to the PID file at `/run/unbound.pid`
-
-**Note:** Changes from the default Arch Linux service file are listed in bold
-
-```
-[Unit]
-Description=Unbound DNS Resolver
-After=network.target
-[Service]
-ExecStartPre=/bin/cp -f /etc/trusted-key.key /etc/unbound/
-PIDFile=/run/unbound.pid
-ExecStart=/usr/bin/unbound -d
-ExecReload=/bin/kill -HUP $MAINPID
-Restart=always
-**CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT**
-**MemoryDenyWriteExecute=true**
-**NoNewPrivileges=true**
-**PrivateDevices=true**
-**PrivateTmp=true**
-**ProtectHome=true**
-**ProtectControlGroups=true**
-**ProtectKernelTunables=true**
-**ProtectSystem=strict**
-**ReadWritePaths=/etc/unbound /run**
-**RestrictAddressFamilies=AF_INET AF_UNIX**
-**SystemCallArchitectures=native**
-**SystemCallFilter=~@clock @debug @keyring @module mount @obsolete @raw-io**
-[Install]
-WantedBy=multi-user.target
-
-```
-
-*   The *@mount* system call set includes *chroot()* which is required by unbound to build its environment
-*   `mount` and `unmount2` require explicit listing if they are to be blacklisted apart from the *@mount* macro
-*   The above example blacklists `CAP_SYS_ADM` which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/)
+*   `CapabilityBoundingSet` defines a whitelisted set of allowed capabilities, but may also be used to blacklist a specific capability for a unit.
+    *   The `CAP_SYS_ADM` capability, for example, which should be one of the [goals of a secure sandbox](https://lwn.net/Articles/486306/): `CapabilityBoundingSet=~ CAP_SYS_ADM`
+*   [Unbound#Sandboxing](/index.php/Unbound#Sandboxing "Unbound") shows a full-scale example of systemd features for sandboxing.
 
 ## Troubleshooting
 

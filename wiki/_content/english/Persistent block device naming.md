@@ -22,6 +22,8 @@ This article describes how to use persistent names for your block devices. This 
 
 There are four different schemes for persistent naming: [by-label](#by-label), [by-uuid](#by-uuid), [by-id and by-path](#by-id_and_by-path). For those using disks with [GUID Partition Table (GPT)](/index.php/GUID_Partition_Table "GUID Partition Table"), two additional schemes can be used [by-partlabel](#by-partlabel) and [by-partuuid](#by-partuuid). You can also use [static device names by using Udev](#Static_device_names_with_Udev).
 
+**Note:** Beware that [Disk cloning](/index.php/Disk_cloning "Disk cloning") creates two different disks with the same name.
+
 The following sections describes what the different persistent naming methods are and how they are used.
 
 The `lsblk -f` command can be used for viewing graphically the first persistent schemes:
@@ -109,6 +111,7 @@ The labels of your filesystems can be changed. Following are some methods for ch
 *   Labels have to be unambiguous to prevent any possible conflicts.
 *   Labels can be up to 16 characters long.
 *   Since the label is a property of the filesystem, it is not suitable for addressing a single RAID device persistently.
+*   When using encrypted containers with [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), the labels of filesystems inside of containers are not available while the container is locked/encrypted.
 
 ### by-uuid
 

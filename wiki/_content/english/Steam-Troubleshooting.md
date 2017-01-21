@@ -11,28 +11,27 @@
         *   [2.2.1 Libraries for x86_64](#Libraries_for_x86_64)
 *   [3 Multiple monitors setup](#Multiple_monitors_setup)
 *   [4 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
-*   [5 The close button only minimizes the window](#The_close_button_only_minimizes_the_window)
-*   [6 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
-*   [7 Text is corrupt or missing](#Text_is_corrupt_or_missing)
-*   [8 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
-*   [9 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
-*   [10 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
-*   [11 No audio in certain games](#No_audio_in_certain_games)
-    *   [11.1 FMOD sound engine](#FMOD_sound_engine)
-*   [12 Missing libc](#Missing_libc)
-*   [13 Missing libGL](#Missing_libGL)
-*   [14 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
-*   [15 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
-*   [16 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
-*   [17 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-*   [18 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
-*   [19 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-*   [20 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
-*   [21 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
-*   [22 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-*   [23 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
-*   [24 Very slow app down speed](#Very_slow_app_down_speed)
-*   [25 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
+*   [5 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
+*   [6 Text is corrupt or missing](#Text_is_corrupt_or_missing)
+*   [7 SetLocale('en_US.UTF-8') fails at game startup](#SetLocale.28.27en_US.UTF-8.27.29_fails_at_game_startup)
+*   [8 The game crashes immediately after start](#The_game_crashes_immediately_after_start)
+*   [9 OpenGL not using direct rendering / Steam crashes Xorg](#OpenGL_not_using_direct_rendering_.2F_Steam_crashes_Xorg)
+*   [10 No audio in certain games](#No_audio_in_certain_games)
+    *   [10.1 FMOD sound engine](#FMOD_sound_engine)
+*   [11 Missing libc](#Missing_libc)
+*   [12 Missing libGL](#Missing_libGL)
+*   [13 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
+*   [14 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
+*   [15 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
+*   [16 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
+*   [17 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
+*   [18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+*   [19 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+*   [20 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+*   [21 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
+*   [22 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
+*   [23 Very slow app down speed](#Very_slow_app_down_speed)
+*   [24 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
 
 ## Debugging Steam
 
@@ -179,14 +178,6 @@ Notice that the workaround is necessary because the bug affects systems with lib
 Alternatively it has been successful to prioritize the loading of the libudev.so.1 (see [comment on the same issue](https://github.com/ValveSoftware/steam-for-linux/issues/3863#issuecomment-203929113)):
 
  `$ LD_PRELOAD=/usr/lib32/libudev.so.1 STEAM_RUNTIME=0 steam` 
-
-## The close button only minimizes the window
-
-	Valve GitHub [issue 1025](https://github.com/ValveSoftware/steam-for-linux/issues/1025)
-
-To close the Steam window (and remove it from the taskbar) when you press **x**, but keep Steam running in the tray, export the environment variable `STEAM_FRAME_FORCE_CLOSE=1`. See [Environment variables#Graphical applications](/index.php/Environment_variables#Graphical_applications "Environment variables").
-
-Steam provides a script located at `/usr/bin/steam` that will be run when launching Steam; adding `export STEAM_FRAME_FORCE_CLOSE=1` to this file will export the environment variable for Steam on application launch.
 
 ## Audio not working or 756 Segmentation fault
 

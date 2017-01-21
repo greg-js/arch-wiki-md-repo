@@ -3,23 +3,27 @@ This article is about **Dolphin**, the default [file manager](/index.php/Categor
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 File previews](#File_previews)
+    *   [1.1 Compare files](#Compare_files)
+    *   [1.2 File previews](#File_previews)
 *   [2 Usage](#Usage)
     *   [2.1 Open Terminal](#Open_Terminal)
     *   [2.2 KIO Slaves](#KIO_Slaves)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 No search results](#No_search_results)
+    *   [3.1 Device names shown as "X GiB Harddrive"](#Device_names_shown_as_.22X_GiB_Harddrive.22)
     *   [3.2 Transparent fonts](#Transparent_fonts)
-    *   [3.3 Unicode characters are not shown](#Unicode_characters_are_not_shown)
-    *   [3.4 Crashes on mounted SMB share](#Crashes_on_mounted_SMB_share)
-    *   [3.5 Cannot write to NTFS: Operation not permitted](#Cannot_write_to_NTFS:_Operation_not_permitted)
+    *   [3.3 Crashes on mounted SMB share](#Crashes_on_mounted_SMB_share)
+    *   [3.4 Cannot write to NTFS: Operation not permitted](#Cannot_write_to_NTFS:_Operation_not_permitted)
 *   [4 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dolphin](https://www.archlinux.org/packages/?name=dolphin) package, or [dolphinpart4](https://www.archlinux.org/packages/?name=dolphinpart4) for the legacy KDE4 version.
+[Install](/index.php/Install "Install") the [dolphin](https://www.archlinux.org/packages/?name=dolphin) package.
 
-For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins). The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare).
+For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install [dolphin-plugins](https://www.archlinux.org/packages/?name=dolphin-plugins).
+
+### Compare files
+
+The *Compare files* dialog depends on [kompare](https://www.archlinux.org/packages/?name=kompare). Alternatively, you can compare files in any diff tool (such as meld) by selecting two files, right clicking, selecting open with, and then the diff tool.
 
 ### File previews
 
@@ -36,7 +40,7 @@ For version control and [Dropbox](/index.php/Dropbox "Dropbox") support, install
 
 ### Open Terminal
 
-Dolphin and other KDE applications use [konsole](https://www.archlinux.org/packages/?name=konsole) by default. To change the default terminal emulator, run `kcmshell4 componentchooser` and select *Terminal Emulator > Use a different terminal program*.
+Dolphin and other KDE applications use [konsole](https://www.archlinux.org/packages/?name=konsole) by default. To change the default terminal emulator, run `kcmshell5 componentchooser` and select *Terminal Emulator > Use a different terminal program*.
 
 ### KIO Slaves
 
@@ -44,17 +48,13 @@ Dolphin uses *KIO slaves* for network access, trash and other functionality, unl
 
 ## Troubleshooting
 
-### No search results
+### Device names shown as "X GiB Harddrive"
 
-If *Baloo* is enabled, Dolphin attempts to use it for file searches even if no file index is present. Either create a Baloo file index, or disable file indexing through `kcmshell4 kcm_baloofile`.
+Create a filesystem label, or a partition label, and Dolphin will show this label in the device list instead of the size. See [Persistent_block_device_naming#by-label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming").
 
 ### Transparent fonts
 
 Fonts in selection frames may become transparent when using the [GTK+ Qt style](/index.php/Uniform_look_for_Qt_and_GTK_applications#QGtkStyle "Uniform look for Qt and GTK applications"). Native Qt styles such as *Cleanlooks* and *Oxygen* are unaffected.
-
-### Unicode characters are not shown
-
-This was a general issue in Qt4 and [kdelibs](https://www.archlinux.org/packages/?name=kdelibs), solved in v4.11 and later versions. [[2]](https://bugs.kde.org/show_bug.cgi?id=165044#c145)
 
 ### Crashes on mounted SMB share
 

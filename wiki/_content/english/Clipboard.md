@@ -6,14 +6,15 @@ From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(
 
 *   [1 History](#History)
 *   [2 Background](#Background)
-*   [3 CLIPBOARD instead of PRIMARY](#CLIPBOARD_instead_of_PRIMARY)
-    *   [3.1 Konsole terminal](#Konsole_terminal)
-    *   [3.2 Klipper](#Klipper)
-    *   [3.3 Firefox](#Firefox)
-    *   [3.4 Gvim](#Gvim)
-    *   [3.5 GTK](#GTK)
-*   [4 List of clipboard managers](#List_of_clipboard_managers)
-*   [5 See also](#See_also)
+*   [3 How to use the selections (clipboards)](#How_to_use_the_selections_.28clipboards.29)
+*   [4 CLIPBOARD instead of PRIMARY](#CLIPBOARD_instead_of_PRIMARY)
+    *   [4.1 Konsole terminal](#Konsole_terminal)
+    *   [4.2 Klipper](#Klipper)
+    *   [4.3 Firefox](#Firefox)
+    *   [4.4 Gvim](#Gvim)
+    *   [4.5 GTK](#GTK)
+*   [5 List of clipboard managers](#List_of_clipboard_managers)
+*   [6 See also](#See_also)
 
 ## History
 
@@ -23,11 +24,23 @@ In X10, "cut buffers" were introduced. These were limited buffers that stored ar
 
 The [ICCCM](http://tronche.com/gui/x/icccm/) (Inter-Client Communication Conventions Manual) standard defines three "selections": PRIMARY, SECONDARY, and CLIPBOARD. Despite the naming, all three are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections. However, in some cases, this can produce strange outcomes, such as a bidirectional shared clipboard with Windows (which uses a single-clipboard system) in a virtual machine.
 
-Of the three selections, users should only be concerned with PRIMARY and CLIPBOARD. SECONDARY is only used inconsistently and was intended as an alternate to PRIMARY. Different applications may treat PRIMARY and CLIPBOARD differently; however, there is a degree of consensus that CLIPBOARD should be used for Windows-style clipboard operations, while PRIMARY should exist as a "quick" option, where text can be selected using the mouse or keyboard, then pasted using the middle mouse button (or some emulation of it). This can cause confusion and, in some cases, inconsistent or undesirable results from rogue applications.
+Of the three selections, users should only be concerned with PRIMARY and CLIPBOARD. SECONDARY is only used inconsistently and was intended as an alternate to PRIMARY. When some applications treat PRIMARY and CLIPBOARD differently, this can cause confusion and, in some cases, inconsistent or undesirable results, but the majority of applications shows the behaviour detailed in the next section.
+
+## How to use the selections (clipboards)
+
+There are two relevant selections (clipboards), which can have different values stored in them. Synchronization of both is possible with clipboard managers.
+
+The CLIPBOARD selection is accessed using keyboard shortcuts, while application specific, these are most commonly `ctrl+c` for copying, `ctrl+v` for pasting and `ctlr+x` for cutting.
+
+The PRIMARY selection speeds up the copying task by copying the text to the clipboard as soon as it was selected with the mouse, without the need for entering a keyboard shortcut. Pasting is triggered by pressing the middle mouse button (or some emulation of it).
+
+**Note:** The clipboard may also contain other items than text, such as images or folders.
 
 ## CLIPBOARD instead of PRIMARY
 
-This section explains how to configure your system to use the CLIPBOARD instead of PRIMARY as much as possible.
+Users who prefer the behaviour of the CLIPBOARD, can follow this section to configure their installation to use the CLIPBOARD instead of the PRIMARY selection much as possible.
+
+Currently the only simple way to completely disable pasting with the middle mouse button across all applications is to disable the middle mouse button, which then also loses its other functions such as closing tabs.
 
 ### Konsole terminal
 

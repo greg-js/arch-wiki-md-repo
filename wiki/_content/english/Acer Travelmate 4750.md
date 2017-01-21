@@ -126,7 +126,7 @@ alias sound-slot-0 snd-hda-intel
 
 ### Webcam
 
-Install **cheese**(with gstreamer-0.10-plugins) to view.
+Install [cheese](https://www.archlinux.org/packages/?name=cheese) to view.
 
 ### Function keys
 

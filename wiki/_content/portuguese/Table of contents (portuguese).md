@@ -1,4 +1,4 @@
-| [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(28)</small> |
+| [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(29)</small> |
 | <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(10)</small> |
 | <small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(0)</small> |
 | <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(4)</small> |

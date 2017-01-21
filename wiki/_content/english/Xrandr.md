@@ -104,6 +104,8 @@ fi
 
 **Note:** To leave the external monitor enabled, replace the *else* clause with `xrandr --output "$intern" --primary --auto --output "$extern" --right-of "$intern" --auto`.
 
+*   [mons](https://aur.archlinux.org/packages/mons/) is a Bash script to quickly manage 2-monitors display (ex: computer, duplicate, extend and projector mode).
+
 #### Example 3
 
 This script iterates through connected monitors, selects currently active monitor, turns next one on and the others off:

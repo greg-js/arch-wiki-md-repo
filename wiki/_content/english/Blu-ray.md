@@ -65,7 +65,7 @@ There have been several efforts to compile VUKs from various sources. Early atte
 
 BD+ is an additional but optional component of the Blu-ray DRM. In December 2013, VideoLAN released the long awaited [libbdplus](https://aur.archlinux.org/packages/libbdplus/) which provides experimental support for BD+ decryption. The library does not provide keys or certificates required for BD+ decryption, you need to retrieve and install them separately, as explained at [[11]](http://www.labdv.com/aacs/) and [[12]](http://www.labdv.com/aacs/advanced-users.php).
 
-**Note:** The download provided by LabDV is a `.tar.bz2` archive, but is named `bdplus-vm0.bz2`. You want to put a folder named `vm0` in `~/.config/bdplus`, **not** a file named `bdplus-vm0`.
+**Note:** The download provided by LabDV is a *.tar.bz2* archive, but is named `bdplus-vm0.bz2`. You want to put a folder named `vm0` in `~/.config/bdplus`, **not** a file named `bdplus-vm0`. You may have to rename the file to end with *.tar.bz2* if you are using a GUI archiving tool.
 
 ## Playback
 
@@ -112,6 +112,8 @@ If this method is successful, after you play the disc, libaacs will store the VU
 #### BD+ support
 
 These pages [[14]](http://www.labdv.com/aacs/) and [[15]](http://www.labdv.com/aacs/advanced-users.php) provide you with further instructions on how to play Blu-ray discs encrypted with BD+. [libbdplus](https://aur.archlinux.org/packages/libbdplus/) provides experimental support for BD+ decryption, but if this fails, users will have to use commercial solutions, such as [makemkv](https://aur.archlinux.org/packages/makemkv/) or [DVDFab](#See_also) (under Wine).
+
+BD+ mainly works by adding errors to the video stream, not enough to make it unwatchable but enough to make it unpleasant to watch due to near constant artifacting. These are fixed in official players by using "fixup tables", which are downloaded from the internet and provide a mapping to convert the broken video stream into the correct video stream. libbdplus stopped working a long time ago, and for right now there's no open source method of playing discs with BD+ protection.
 
 ### Media players
 

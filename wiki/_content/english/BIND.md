@@ -1,5 +1,7 @@
 Berkeley Internet Name Daemon (BIND) is the reference implementation of the Domain Name System (DNS) protocols.
 
+**Note:** The organization developing BIND is serving security notices to paying customers up to four days before Linux distributions or the general public.[[1]](https://kb.isc.org/article/AA-00861/0/ISC-Software-Defect-and-Security-Vulnerability-Disclosure-Policy.html)
+
 ## Contents
 
 *   [1 Installation](#Installation)

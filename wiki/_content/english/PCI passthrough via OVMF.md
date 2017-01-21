@@ -29,20 +29,19 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
     *   [6.2 Passing the boot GPU to the guest](#Passing_the_boot_GPU_to_the_guest)
     *   [6.3 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
-*   [7 Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)](#Complete_example_for_QEMU_.28CLI-based.29_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
-*   [8 Complete example for QEMU with libvirtd](#Complete_example_for_QEMU_with_libvirtd)
-*   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
-    *   [9.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
-    *   [9.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
-    *   [9.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
-*   [10 Passing though other devices](#Passing_though_other_devices)
-    *   [10.1 USB controller](#USB_controller)
-    *   [10.2 Gotchas](#Gotchas_3)
-        *   [10.2.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
-*   [11 Troubleshooting](#Troubleshooting_2)
-    *   [11.1 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
-*   [12 See also](#See_also)
+*   [7 QEMU without libvirtd (can switch GPUs without reboot)](#QEMU_without_libvirtd_.28can_switch_GPUs_without_reboot.29)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 "Error 43 : Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43_:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
+    *   [8.2 Unexpected crashes related to CPU exceptions](#Unexpected_crashes_related_to_CPU_exceptions)
+    *   [8.3 "System Thread Exception Not Handled" when booting on a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_on_a_Windows_VM)
+    *   [8.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
+*   [9 Passing though other devices](#Passing_though_other_devices)
+    *   [9.1 USB controller](#USB_controller)
+    *   [9.2 Gotchas](#Gotchas_3)
+        *   [9.2.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+*   [10 Troubleshooting](#Troubleshooting_2)
+    *   [10.1 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
+*   [11 See also](#See_also)
 
 ## Prerequisites
 
@@ -168,10 +167,10 @@ You can then add those vendor-device ID pairs to the default parameters passed t
  `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
 **Note:** If, as noted [here](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
 
-This, however, does not guarantee that vfio-pci will be loaded before other graphics drivers. To ensure that, we need to statically bind it in the kernel image by adding it anywhere in the MODULES list in mkinitpcio.conf, alongside with its dependencies.
+This, however, does not guarantee that vfio-pci will be loaded before other graphics drivers. To ensure that, we need to statically bind it in the kernel image alongside with its dependencies. That means adding, in this order, `vfio`, `vfio_iommu_type1`, `vfio_pci` and `vfio_virqfd` to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"):
 
-**Note:** If you also have another driver loaded this way for [early modesetting](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") (such as "nouveau", "radeon", "amdgpu", "i915", etc.), all of the following VFIO modules must preceed it.
  `/etc/mkinitcpio.conf`  `MODULES="... vfio vfio_iommu_type1 vfio_pci vfio_virqfd ..."` 
+**Note:** If you also have another driver loaded this way for [early modesetting](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") (such as "nouveau", "radeon", "amdgpu", "i915", etc.), all of the aforementioned VFIO modules must precede it.
 
 Also, ensure that the modconf hook is included in the HOOKS list of mkinitcpio.conf:
 
@@ -520,177 +519,15 @@ The option `pcie_acs_override=downstream` is typically sufficient.
 
 After installation and configuration, reconfigure your [bootloader kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to load the new kernel with the `pcie_acs_override=` option enabled.
 
-## Complete example for QEMU (CLI-based) without libvirtd (can switch GPUs without reboot)
+## QEMU without libvirtd (can switch GPUs without reboot)
 
-This script starts Samba and Synergy, runs the VM and closes everything after the VM is shut down. Note that this method does **not** require libvirtd to be running or configured.
-
-Since this was posted, the author continued working on scripts to ease the workflow of switching GPUs. All of said scripts can be found on the author's GitLab instance: [https://git.mel.vin/melvin/scripts/tree/master/qemu](https://git.mel.vin/melvin/scripts/tree/master/qemu).
+[[1]](https://git.mel.vin/melvin/scripts/tree/master/qemu) starts Samba and Synergy, runs the VM and closes everything after the VM is shut down. This method does **not** require libvirtd to be running or configured.
 
 With these new scripts, is it possible to switch GPUs without rebooting, only a restart of the X session is needed. This is all handled by a tiny shell script that runs in the tty. When you log in the tty, it will ask which card you would like to use if you autolaunch the shell script.
 
 [vfio-users : Full set of (runtime) scripts for VFIO + Qemu CLI](https://www.redhat.com/archives/vfio-users/2016-May/msg00187.html)
 
 [vfio-users : Example configuration with CLI Qemu (working VM => host audio)](https://www.redhat.com/archives/vfio-users/2015-August/msg00020.html)
-
-The script below is the main QEMU launcher as of 2016-05-16, all other scripts can be found in the repo.
-
- `slightly edited from "windows.sh" 2016-05-16 : [https://git.mel.vin/melvin/scripts/tree/master/qemu](https://git.mel.vin/melvin/scripts/tree/master/qemu)` 
-```
-#!/bin/bash
-
-if [[ $EUID -ne 0 ]]
-then
-	echo "This script must be run as root"
-	exit 1
-fi
-
-echo "Starting Samba"
-systemctl start smbd.service
-systemctl start nmbd.service
-
-echo "Starting VM"
-export QEMU_AUDIO_DRV="pa"
-qemu-system-x86_64 \
-	-serial none \
-	-parallel none \
-	-nodefaults \
-	-nodefconfig \
-	-no-user-config \
-	-enable-kvm \
-	-name Windows \
-	-cpu host,kvm=off,hv_vapic,hv_time,hv_relaxed,hv_spinlocks=0x1fff,hv_vendor_id=sugoidesu \
-	-smp sockets=1,cores=4,threads=1 \
-	-m 8192 \
-	-mem-path /dev/hugepages \
-	-mem-prealloc \
-	-soundhw hda \
-	-device ich9-usb-uhci3,id=uhci \
-	-device usb-ehci,id=ehci \
-	-device nec-usb-xhci,id=xhci \
-	-machine pc,accel=kvm,kernel_irqchip=on,mem-merge=off \
-	-drive if=pflash,format=raw,file=./Windows_ovmf_x64.bin \
-	-rtc base=localtime,clock=host,driftfix=none \
-	-boot order=c \
-	-net nic,vlan=0,macaddr=52:54:00:00:00:01,model=virtio,name=net0 \
-	-net bridge,vlan=0,name=bridge0,br=br0 \
-	-drive if=virtio,id=drive0,file=./Windows.img,format=raw,cache=none,aio=native \
-	-nographic \
-	-device vfio-pci,host=04:00.0,addr=09.0,multifunction=on \
-	-device vfio-pci,host=04:00.1,addr=09.1 \
-	-usbdevice host:046d:c29b `# Logitech G27` &
-
-#	-usbdevice host:054c:05c4 `# Sony DualShock 4` \
-#	-usbdevice host:28de:1142 `# Steam Controller` \
-
-sleep 5
-
-while [[ $(pgrep -x -u root qemu-system-x86) ]]
-do
-	if [[ ! $(pgrep -x -u REGULAR_USER synergys) ]]
-	then
-		echo "Starting Synergy server"
-		sudo -u REGULAR_USER /usr/bin/synergys --debug ERROR --no-daemon --enable-crypto --config /etc/synergy.conf &
-	fi
-
-	sleep 5
-done
-
-echo "VM stopped"
-
-echo "Stopping Synergy server"
-pkill -u REGULAR_USER synergys
-
-echo "Stopping Samba"
-systemctl stop smbd.service
-systemctl stop nmbd.service
-
-exit 0
-```
-
-## Complete example for QEMU with libvirtd
-
-```
-<domain type='kvm' xmlns:qemu='[http://libvirt.org/schemas/domain/qemu/1.0'](http://libvirt.org/schemas/domain/qemu/1.0')>
-  <name>win7</name>
-  <uuid>a3bf6450-d26b-4815-b564-b1c9b098a740</uuid>
-  <memory unit='KiB'>8388608</memory>
-  <currentMemory unit='KiB'>8388608</currentMemory>
-  <vcpu placement='static'>8</vcpu>
-  <os>
-    <type arch='x86_64' machine='pc-i440fx-2.4'>hvm</type>
-    <boot dev='hd'/>
-    <bootmenu enable='yes'/>
-  </os>
-  <features>
-    <acpi/>
-    <kvm>
-      <hidden state='on'/>
-    </kvm>
-  </features>
-  <cpu mode='host-passthrough'>
-    <topology sockets='1' cores='8' threads='1'/>
-  </cpu>
-  <clock offset='utc'/>
-  <on_poweroff>destroy</on_poweroff>
-  <on_reboot>restart</on_reboot>
-  <on_crash>destroy</on_crash>
-  <devices>
-    <emulator>/usr/sbin/qemu-system-x86_64</emulator>
-    <disk type='block' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
-      <source dev='/dev/rootvg/win7'/>
-      <target dev='vda' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/>
-    </disk>
-    <disk type='block' device='disk'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
-      <source dev='/dev/rootvg/windane'/>
-      <target dev='vdb' bus='virtio'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
-    </disk>
-    <disk type='block' device='cdrom'>
-      <driver name='qemu' type='raw' cache='none' io='native'/>
-      <target dev='hdb' bus='ide'/>
-      <readonly/>
-      <address type='drive' controller='0' bus='0' target='0' unit='1'/>
-    </disk>
-    <controller type='usb' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2'/>
-    </controller>
-    <controller type='pci' index='0' model='pci-root'/>
-    <controller type='ide' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
-    </controller>
-    <controller type='sata' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
-    </controller>
-    <interface type='network'>
-      <mac address='52:54:00:fa:59:92'/>
-      <source network='default'/>
-      <model type='rtl8139'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0'/>
-    </interface>
-    <input type='mouse' bus='ps2'/>
-    <input type='keyboard' bus='ps2'/>
-    <sound model='ac97'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
-    </sound>
-    <memballoon model='virtio'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x0'/>
-    </memballoon>
-  </devices>
-  <qemu:commandline>
-    <qemu:arg value='-device'/>
-    <qemu:arg value='vfio-pci,host=02:00.0,multifunction=on,x-vga=on'/>
-    <qemu:arg value='-device'/>
-    <qemu:arg value='vfio-pci,host=02:00.1'/>
-    <qemu:env name='QEMU_PA_SAMPLES' value='1024'/>
-    <qemu:env name='QEMU_AUDIO_DRV' value='pa'/>
-    <qemu:env name='QEMU_PA_SERVER' value='/run/user/1000/pulse/native'/>
-  </qemu:commandline>
-</domain>
-
-```
 
 ## Troubleshooting
 

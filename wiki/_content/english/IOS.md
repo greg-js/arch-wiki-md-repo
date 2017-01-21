@@ -80,7 +80,7 @@ Typically you want to convert MOV files to a HTML5 video format like OGV using f
 
 find -name "*.MOV" | while read mov
 do
-    d=$(gst-discoverer-0.10 -v $mov | awk '/datetime:/{print $2}' | tr -d \")
+    d=$(gst-discoverer-1.0 -v $mov | awk '/datetime:/{print $2}' | tr -d \")
     base=${mov%.*}
     if test -f $base.ogv
     then

@@ -39,9 +39,10 @@ For more information, please see [Trusted User Bylaws](https://aur.archlinux.org
 | [Ambrevar](https://aur.archlinux.org/packages.php?K=Ambrevar&SeB=m) | [Pierre Neidhardt](/index.php/User:Ambrevar "User:Ambrevar") | ambrevar@gmail.com |
 | [anatolik](https://aur.archlinux.org/packages.php?K=anatolik&SeB=m) | Anatol Pomozov | anatol dot pomozov + arch at gmail |
 | [anthraxx](https://aur.archlinux.org/packages.php?K=anthraxx&SeB=m) | [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx") | anthraxx [at] archlinux [dot] org |
-| [Atsutane](https://aur.archlinux.org/packages.php?K=Atsutane&SeB=m) | Thorsten Töpper | atsutane {0x40} freethoughts {0x2E} de |
 | [arcanis](https://aur.archlinux.org/packages/?SeB=m&K=arcanis) | Evgeniy Alekseev | arcanis DOT arch AT gmail DOT com |
+| [ArchangeGabriel](https://aur.archlinux.org/packages.php?K=ArchangeGabriel&SeB=m) | Bruno Pagani | bruno.n.pagani@gmail.com |
 | [arojas](https://aur.archlinux.org/packages/?SeB=m&K=arojas) | Antonio Rojas | arojas@archlinux.org |
+| [Atsutane](https://aur.archlinux.org/packages.php?K=Atsutane&SeB=m) | Thorsten Töpper | atsutane {0x40} freethoughts {0x2E} de |
 | [Barthalion](https://aur.archlinux.org/packages.php?K=Barthalion&SeB=m) | Bartłomiej Piotrowski | spam@bpiotrowski.pl |
 | [BlackIkeEagle](https://aur.archlinux.org/packages.php?K=BlackIkeEagle&SeB=m) | [Ike Devolder](/index.php/User:BlackEagle "User:BlackEagle") | ike DOT devolder AT gmail DOT com |
 | [Bluewind](https://aur.archlinux.org/packages.php?K=bluewind&SeB=m) | Florian Pritz | bluewind@xinu.at |

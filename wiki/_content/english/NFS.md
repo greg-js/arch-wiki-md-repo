@@ -93,7 +93,7 @@ For more information about all available options see [exports(5)](http://man7.or
 
 #### Starting the server
 
-[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`. The `rpcbind.service` is also needed for older V2 and V3 exports. To run a V4-only setup, be sure to explicitly disable V2 and V3 using [[1]](https://bbs.archlinux.org/viewtopic.php?id=193629):
+[Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`. The `rpcbind.service` is also needed for older V2 and V3 exports. To run a V4-only setup, be sure to explicitly disable V2 and V3 using [[2]](https://bbs.archlinux.org/viewtopic.php?id=193629):
 
  `/etc/sysconfig/nfs`  `RPCNFSDARGS="-N 2 -N 3"` 
 

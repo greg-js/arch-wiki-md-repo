@@ -2608,7 +2608,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://thunar.xfce.org/index.html](http://thunar.xfce.org/index.html) || [thunar](https://www.archlinux.org/packages/?name=thunar)
 
-*   **tuxcmd** — 双面板文件管理器，Total Commander风格
+*   **tuxcmd** — 双面板文件管理器，Total Commander风格，已停止开发
 
 	[http://tuxcmd.sourceforge.net/description.php](http://tuxcmd.sourceforge.net/description.php) || [tuxcmd](https://www.archlinux.org/packages/?name=tuxcmd)
 

@@ -1,6 +1,6 @@
-**翻译状态：** 本文是英文页面 [Getting_Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-04-15，点击[这里](https://wiki.archlinux.org/index.php?title=Getting_Involved&diff=0&oldid=310528)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Getting_Involved](/index.php/Getting_Involved "Getting Involved") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-19，点击[这里](https://wiki.archlinux.org/index.php?title=Getting_Involved&diff=0&oldid=462995)可以查看翻译后英文页面的改动。
 
-从生物学上来说，[互利共生](https://en.wikipedia.org/wiki/zh:%E4%BA%92%E5%88%A9%E5%85%B1%E7%94%9F "wikipedia:zh:互利共生")（[Mutualism](https://en.wikipedia.org/wiki/Mutualism_(biology) "wikipedia:Mutualism (biology)")）是指在生物界中某两物种间的一种互相依赖、双方获利的专性共生关系。在 Arch 社区里，对于希望为自己喜爱的 GNU/Linux 发行版做出贡献的积极成员，我们的关系正也是如此。大家的参与，不仅有利于社区成员和 Archer 同胞，而且能造福[自由及开放源代码软件](https://en.wikipedia.org/wiki/zh:%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6 "wikipedia:zh:自由及开放源代码软件")全体爱好者。
+在进化生物学中，[合作](https://en.wikipedia.org/wiki/Co-operation_(evolution) "wikipedia:Co-operation (evolution)")是指个体付出一个小成本，可以为其他同胞带来更大的收益，而其他个体也一样提供回报，这样每个参与者都会获得非常大的收益。Arch 社区也是如此，很多成员希望为自己喜爱的 GNU/Linux 发行版做出贡献。大家的参与，不仅有利于 Archer 同胞，还能造福[自由软件和开源软件](https://en.wikipedia.org/wiki/zh:%E8%87%AA%E7%94%B1%E5%8F%8A%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81%E8%BD%AF%E4%BB%B6 "wikipedia:zh:自由及开放源代码软件")的全体爱好者。
 
 本文简单介绍了 Archer 为 Arch 社团做贡献的若干途径。
 
@@ -29,17 +29,19 @@
 
 ## Arch Linux 官方项目
 
+请遵守 [行为守则](/index.php/Code_of_conduct_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Code of conduct (简体中文)").
+
 ### 论坛发帖
 
-参与我们的一个最简单的方法，就是逛 [Arch Linux 官方论坛](https://bbs.archlinux.org/)。请先阅读[论坛规章](/index.php/Forum_etiquette "Forum etiquette")，然后您就可以尽情发表您的高见、帮助菜鸟或是结交新友了。如果在论坛发现他人的违规行为，请使用论坛页面底部的 Report 功能举报。
+参与我们的一个最简单的方法，就是逛 [Arch Linux 官方论坛](https://bbs.archlinux.org/)。您可以尽情发表您的高见、帮助菜鸟或结交新朋友。
 
 ### 完善维基
 
-[ArchWiki](/index.php/AboutWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AboutWiki (简体中文)") 是一个**社区**文档工程。内容**源自**社区，**服务**社区。贡献者奉献他们的时间和精力，在社区中共享知识和技能。我们鼓励**全部**用户[做出贡献](/index.php/ArchWiki:Contributing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:Contributing (简体中文)")。
+[ArchWiki](/index.php/AboutWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AboutWiki (简体中文)") 是一个**社区**文档工程。内容**源自**社区，**服务**社区。贡献者奉献他们的时间和精力，在社区中共享知识和技能。我们鼓励**全体**用户[做贡献](/index.php/ArchWiki:Contributing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:Contributing (简体中文)")。
 
 ### 加入聊天室
 
-可以在 [IRC 频道](/index.php/IRC_channel "IRC channel") 中帮助新人解决问题。进入前请先阅读[规则](/index.php/IRC_channel#.23archlinux_rules "IRC channel")和[指南](/index.php/IRC_channel#.23archlinux_guidelines "IRC channel")。[有许多频道](/index.php/IRC_channels "IRC channels")专门用来讨论不同的问题。
+可以在 [IRC 频道](/index.php/IRC_channel "IRC channel") 中帮助新人解决问题。进入前请先阅读[讨论规则](/index.php/Code_of_conduct#IRC "Code of conduct")。[有许多频道](/index.php/IRC_channels "IRC channels")专门用来讨论不同的问题。
 
 ### 报告安装的软件
 
@@ -61,7 +63,7 @@
 
 ### Arch 官方软件项目
 
-此表列举了 Arch 官方的一些 Git 托管项目：[Arch 官方项目](https://projects.archlinux.org/)。
+此表列举了 Arch 官方的一些 Git 托管项目：[Arch 官方项目](https://git.archlinux.org/)。
 
 ### 捐款
 
@@ -131,29 +133,23 @@ Arch 拥有一个充满活力的用户社区。如果您的项目想参与到社
 
 	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
 
-	Arch-wiki-lite 针对不方便上网，或缺乏图形化的网络浏览器的用户而设计，提供了尽可能极佳的体验。[arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite) （build 脚本在二〇一四年四月处于损坏状态，参见 [FS#39598](https://bugs.archlinux.org/task/39598)）
-
-	[arch-wiki-markdown](https://github.com/tsgates/arch-wiki-markdown)
-
-	可在您的终端搜索浏览 ArchWiki. [arch-wiki-markdown-git](https://aur.archlinux.org/packages/arch-wiki-markdown-git/) （build 脚本在二〇一四年四月处于损坏状态，参见 [FS#39598](https://bugs.archlinux.org/task/39598)）
+	Arch-wiki-lite 针对不方便上网，或缺乏图形化的网络浏览器的用户而设计，提供了尽可能极佳的体验。[arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite)
 
 	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
 
 	ArchLinux wiki 的简单浏览器，网页格式针对移动端而优化。
 
+	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
+
+	一个简单的基于 curses 的阅读器，可以阅读 ArchWiki 或 Wikipedia 等 MediaWiki 网站，软件包：[wikicurses](https://aur.archlinux.org/packages/wikicurses/), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
+
 ### 服务
 
 Arch 特别服务：
 
-	[ArchLinux.us](http://archlinux.us)
+	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
 
-	基于 Gmail 的 @archlinux.us 邮件
-
-	移动访问地址 [archlinux.mobi](http://archlinux.mobi)
-
-	[ArchLinux.me](http://archlinux.me)
-
-	Arch Linux 博客
+	基于 VPS 的 @archlinux.info 电子邮件。
 
 ### 其他
 

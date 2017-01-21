@@ -36,7 +36,7 @@ This article describes how to set up a mail server suitable for personal or smal
 
 The [dovecot](https://www.archlinux.org/packages/?name=dovecot) package contains a script to generate the server SSL certificate.
 
-*   Copy the configuration file from the sample file: `# cp /etc/ssl/dovecot-openssl.cnf{.sample,}` .
+*   Copy the example configuration: `# cp /usr/share/doc/dovecot/dovecot-openssl.cnf /etc/ssl/dovecot-openssl.cnf`.
 *   Edit `/etc/ssl/dovecot-openssl.cnf` to configure the certificate.
 
 *   Execute `# /usr/lib/dovecot/mkcert.sh` to generate the certificate.
