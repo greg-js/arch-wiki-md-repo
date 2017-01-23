@@ -19,11 +19,10 @@ This article's purpose is to detail basic Xorg server keyboard configuration. Fo
     *   [4.6 Currency sign on other key](#Currency_sign_on_other_key)
     *   [4.7 Switching state immediately when Caps Lock is pressed](#Switching_state_immediately_when_Caps_Lock_is_pressed)
         *   [4.7.1 Workaround](#Workaround)
-*   [5 Other settings](#Other_settings)
-    *   [5.1 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
-        *   [5.1.1 Using xset](#Using_xset)
-        *   [5.1.2 Using XServer startup options](#Using_XServer_startup_options)
-        *   [5.1.3 Using XServer options](#Using_XServer_options)
+*   [5 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
+    *   [5.1 Using xset](#Using_xset)
+    *   [5.2 Using XServer startup options](#Using_XServer_startup_options)
+    *   [5.3 Using XServer options](#Using_XServer_options)
 *   [6 See also](#See_also)
 
 ## Overview
@@ -264,13 +263,11 @@ $ xkbcomp -w 0 xkbmap $DISPLAY
 
 Consider making it a service launching after X starts, since reloaded configurations do not survive a system reboot.
 
-## Other settings
+## Adjusting typematic delay and rate
 
-### Adjusting typematic delay and rate
+The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed and held in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. Note that these settings are configured seperately for Xorg and [for the virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console").
 
-The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. The typematic delay in the [virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console") is not affected by these settings.
-
-#### Using xset
+### Using xset
 
 The tool *xset* can be used to set the typematic delay and rate for an active X server, certain actions during runtime tho may cause the XServer to reset these changes and revert instead to its *seat defaults*.
 
@@ -295,7 +292,7 @@ $ xset r rate
 
 ```
 
-#### Using XServer startup options
+### Using XServer startup options
 
 A more resistant way to set the typematic delay and rate is to make them the *seat defaults* by passing the desired settings to the X server on its startup using the following options:
 
@@ -304,7 +301,7 @@ A more resistant way to set the typematic delay and rate is to make them the *se
 
 See `man xserver` for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
 
-#### Using XServer options
+### Using XServer options
 
 Add this line to `/etc/X11/xorg.conf.d/00-keyboard.conf`:
 

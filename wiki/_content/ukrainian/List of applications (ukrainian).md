@@ -463,7 +463,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
 
-	[http://midori-browser.org/](http://midori-browser.org/) || GTK+ 3: [midori](https://www.archlinux.org/packages/?name=midori), GTK+ 2: [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2)
+	[http://midori-browser.org/](http://midori-browser.org/) || GTK+ 3: [midori](https://www.archlinux.org/packages/?name=midori), GTK+ 2: [midori-gtk2](https://aur.archlinux.org/packages/midori-gtk2/)
 
 *   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -1225,7 +1225,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Blam** — Simple newsreader for GNOME written in C Sharp.
 
-	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
 *   **[Evolution](/index.php/Evolution "Evolution") RSS** — Plugin for Evolution Mail that enables reading of RSS/RDF/ATOM feeds.
 
@@ -1713,7 +1713,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Shareware program written by John Bradley to display and modify digital images under the X Window System. Last released in 1994.
 
-	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://www.archlinux.org/packages/?name=xv)
+	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://aur.archlinux.org/packages/xv/)
 
 #### Graphics and image manipulation
 
@@ -2309,7 +2309,7 @@ See also: [MPlayer#Frontends/GUIs](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 *   **Whaaw! Media Player** — Lightweight GStreamer-based audio and video player that can serve as a good alternative to Totem for those who do not like all of those GNOME dependencies.
 
-	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://www.archlinux.org/packages/?name=whaawmp)
+	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://aur.archlinux.org/packages/whaawmp/)
 
 *   **Xnoise** — GTK+ and GStreamer-based media player for both audio and video with "a slick GUI, great speed and lots of features." (development ceased)
 
@@ -5418,7 +5418,7 @@ See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_
 
 *   **PerlPanel** — The ideal accompaniment to a light-weight Window Manager such as OpenBox, or a desktop-drawing program like iDesk.
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 
 *   **[Plank](/index.php/Plank "Plank")** — Elegant, simple, clean dock from [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 

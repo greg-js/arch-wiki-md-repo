@@ -24,9 +24,10 @@ For general methods to improve the flexibility of the provided tips or pacman it
     *   [3.3 Network shared pacman cache](#Network_shared_pacman_cache)
         *   [3.3.1 Read-only cache](#Read-only_cache)
         *   [3.3.2 Read-write cache](#Read-write_cache)
-        *   [3.3.3 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
-        *   [3.3.4 Synchronize pacman package cache using BitTorrent Sync](#Synchronize_pacman_package_cache_using_BitTorrent_Sync)
-        *   [3.3.5 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
+        *   [3.3.3 two-way with rsync](#two-way_with_rsync)
+        *   [3.3.4 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
+        *   [3.3.5 Synchronize pacman package cache using BitTorrent Sync](#Synchronize_pacman_package_cache_using_BitTorrent_Sync)
+        *   [3.3.6 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
     *   [3.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
     *   [3.5 List of installed packages](#List_of_installed_packages)
     *   [3.6 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
@@ -409,7 +410,19 @@ First, install any network-supporting filesystem; for example [sshfs](/index.php
 
 Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
 
-Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable [Rsync#rsync_daemon](/index.php/Rsync#rsync_daemon "Rsync"). On other clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for rsync.
+#### two-way with rsync
+
+Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable [Rsync#rsync_daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for rsync.
+
+Draft example for a client, uname -m as share name ensures architecture depended sync:
+
+```
+ # rsync rsync://server/$(uname -m)/ /var/cache/pacman/pkg/ ...
+ # pacman ...
+ # paccache ...
+ # rsync /var/cache/pacman/pkg/ rsync://server/$(uname -m)/  ...
+
+```
 
 #### Dynamic reverse proxy cache using nginx
 

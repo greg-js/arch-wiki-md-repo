@@ -101,6 +101,16 @@ That done, you can register with a project and attach BOINC to the project.
 
 To register with a project, you may be able to use the command-line client, or you may need to register with a separate website. To register with a project from the command-line, pick a project from [BOINC Wiki Project List](https://boinc.berkeley.edu/wiki/Project_list), and execute a command like `boinccmd --passwd abc123 --create_account ${project_url} ${my_email} ${project_password} ${project_username}` . Regardless of how you register, you must obtain a key for each project you'd like BOINC to attach to. To attach BOINC to a project, execute a command like `boinccmd --passwd abc123 --project_attach ${project_url} ${project_key}` .
 
+By default, BOINC uses at most 60% of available CPU time. If you wish to let boinc do more work, edit the CPU-related options in its configuration file:
+
+ `/var/lib/boinc/global_prefs.xml` 
+```
+<global_preferences>
+    <cpu_usage_limit>100.0</cpu_usage_limit>
+    ...
+</global_preferences>
+```
+
 ## Log files
 
 NB, BOINC places log files in `/var/lib/boinc/`

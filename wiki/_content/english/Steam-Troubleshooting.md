@@ -20,18 +20,17 @@
     *   [10.1 FMOD sound engine](#FMOD_sound_engine)
 *   [11 Missing libc](#Missing_libc)
 *   [12 Missing libGL](#Missing_libGL)
-*   [13 Games do not launch on older intel hardware](#Games_do_not_launch_on_older_intel_hardware)
+*   [13 Games do not launch on older Intel hardware](#Games_do_not_launch_on_older_Intel_hardware)
 *   [14 2k games do not run on xfs partitions](#2k_games_do_not_run_on_xfs_partitions)
 *   [15 Unable to add library folder because of missing execute permissions](#Unable_to_add_library_folder_because_of_missing_execute_permissions)
 *   [16 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-*   [17 VERSION_ID: unbound variable](#VERSION_ID:_unbound_variable)
-*   [18 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-*   [19 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
-*   [20 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
-*   [21 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-*   [22 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
-*   [23 Very slow app down speed](#Very_slow_app_down_speed)
-*   [24 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
+*   [17 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+*   [18 'GLBCXX_3.X.XX' not found when using Bumblebee](#.27GLBCXX_3.X.XX.27_not_found_when_using_Bumblebee)
+*   [19 Prevent Memory Dumps Consuming RAM](#Prevent_Memory_Dumps_Consuming_RAM)
+*   [20 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
+*   [21 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
+*   [22 Very slow app down speed](#Very_slow_app_down_speed)
+*   [23 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
 
 ## Debugging Steam
 
@@ -286,9 +285,7 @@ It usually occurs when an unused sound device is used as default for ALSA. See [
 
 ## Missing libc
 
-Verify that [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) is installed.
-
-This could also be due to a corrupt Steam executable. Check the output of:
+This could be due to a corrupt Steam executable. Check the output of:
 
 ```
 $ ldd ~/.local/share/Steam/ubuntu12_32/steam
@@ -320,9 +317,9 @@ Make sure you have installed the `lib32` version of all your video drivers as de
 
 If you get this error after reinstalling your Nvidia proprietary drivers, or switching from a version to another, [reinstall](/index.php/Reinstall "Reinstall") [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) and [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl).
 
-## Games do not launch on older intel hardware
+## Games do not launch on older Intel hardware
 
-On older Intel hardware, if the game immediately crashes when run, it may be because your hardware does not directly support the latest OpenGL. It appears as a gameoverlayrenderer.so error in /tmp/dumps/mobile_stdout.txt, but looking in /tmp/gameoverlayrenderer.log it shows a GLXBadFBConfig error.
+On older Intel hardware which doesn't support OpenGL 3, such as Intel GMA chips or Westmere CPUs, games may immediately crash when run. It appears as a gameoverlayrenderer.so error in /tmp/dumps/mobile_stdout.txt, but looking in /tmp/gameoverlayrenderer.log it shows a GLXBadFBConfig error.
 
 This can be fixed, however, by forcing the game to use a later version of OpenGL than it wants. Right click on the game, select Properties. Then, click "Set Launch Options" in the "General" tab and paste the following:
 
@@ -348,22 +345,6 @@ This error can also occur because of steam runtime issues and may be fixed follo
 ## Steam controller not being detected correctly
 
 See [Gamepad#Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad").
-
-## VERSION_ID: unbound variable
-
-In Steam's output, you may see the following line:
-
-```
-/home/user/.local/share/Steam/steam.sh: line 161: VERSION_ID: unbound variable
-
-```
-
-This is because steam.sh parses `/etc/os-release` and expects a VERSION_ID which Arch does not have. This error is unimportant but you can fix it by adding the following line to `/etc/os-release`:
-
-```
-VERSION_ID="2015.11.01"
-
-```
 
 ## Steam hangs on "Installing breakpad exception handler..."
 

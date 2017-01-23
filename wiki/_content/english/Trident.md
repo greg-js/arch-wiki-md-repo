@@ -16,7 +16,7 @@ The Trident driver supports the accelerated video chipsets made by the now-defun
 
 ### Installation
 
-If you already have installed [Xorg](/index.php/Xorg "Xorg") you only need to install [xf86-video-trident](https://www.archlinux.org/packages/?name=xf86-video-trident) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+If you already have installed [Xorg](/index.php/Xorg "Xorg") you only need to install [xf86-video-trident](https://aur.archlinux.org/packages/xf86-video-trident/) from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Configuration
 

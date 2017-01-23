@@ -4,6 +4,13 @@
 
 CDemu can be [installed](/index.php/Pacman "Pacman") with the package [cdemu-client](https://www.archlinux.org/packages/?name=cdemu-client), which contains also a handy [systemd](/index.php/Systemd "Systemd") service called **cdemu-daemon.service**.
 
+Since systemd does not automatically load fdrivers for CD/DVD drives, you need to do this manually.
+
+```
+modprobe sg sr_mod
+
+```
+
 ### GUI
 
 There are several GUIs available in the [AUR](/index.php/AUR "AUR").

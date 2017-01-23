@@ -116,7 +116,7 @@ Per aggiungere un nuovo utente, usare il comando `useradd`:
 
 ```
 
-*   `-m` crea la carella home nel percorso `/home/*nomeutente*`; all'interno della cartella home, un utente non-root può salvare file, cancellarli ed installare programmi.
+*   `-m` crea la cartella home nel percorso `/home/*nomeutente*`; all'interno della cartella home, un utente non-root può salvare file, cancellarli ed installare programmi.
 *   `-g` indica il nome o il numero del gruppo principale di appartenenza dell'utente; il gruppo deve esistere; se non viene specificato, il comportamento di `useradd` dipenderà dalla variabile di ambiente `USERGROUPS_ENAB` definita in `/etc/login.defs`. Il comportamento predefinito (`USERGROUPS_ENAB yes`) è quello di creare un gruppo con lo stesso nome del nome utente, con `GID` pari a `UID`.
 *   `-G` precede una lista di gruppi aggiuntivi a cui l'utente appartiene. Ogni gruppo deve essere separato dal successivo da una virgola, senza usare mai gli spazi. Di default non è previsto nessun gruppo aggiuntivo.
 *   `-s` definisce il percorso ed il nome del file della shell di login dell'utente; dopo che il processo di avvio è completo, la shell di login di default è quella definita qui. Assicurarsi che la shell indicata sia installata se si sceglie una shell diversa da [bash](/index.php/Bash_(Italiano) "Bash (Italiano)").

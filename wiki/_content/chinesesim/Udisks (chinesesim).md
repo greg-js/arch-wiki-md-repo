@@ -24,9 +24,9 @@
 
 ## 安装
 
-有两个版本的 *udisks*，分别称为 [udisks](https://www.archlinux.org/packages/?name=udisks) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。为了集中精力开发*udisks2*，*udisks* 的开发已终止 。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+有两个版本的 *udisks*，分别称为 [udisks](https://aur.archlinux.org/packages/udisks/) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。为了集中精力开发*udisks2*，*udisks* 的开发已终止 。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://www.archlinux.org/packages/?name=udisks)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 `man udisksd` 和 `man udisks-daemon`）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 `man udisksctl` 和 `man udisks`。
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 `man udisksd` 和 `man udisks-daemon`）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 `man udisksctl` 和 `man udisks`。
 
 ## 配置
 
@@ -80,7 +80,7 @@ done < <(stdbuf -o L udevadm monitor --udev -s block)
 
 ### udiskie
 
-[udiskie](https://www.archlinux.org/packages/?name=udiskie) 是使用 [udisks](https://www.archlinux.org/packages/?name=udisks) 或 [udisks2](https://www.archlinux.org/packages/?name=udisks2) 的挂载助手，支持密码保护的 [LUKS 设备](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). 请参考[Wiki](https://github.com/coldfix/udiskie/wiki/Usage)。
+[udiskie](https://www.archlinux.org/packages/?name=udiskie) 是使用 [udisks](https://aur.archlinux.org/packages/udisks/) 或 [udisks2](https://www.archlinux.org/packages/?name=udisks2) 的挂载助手，支持密码保护的 [LUKS 设备](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). 请参考[Wiki](https://github.com/coldfix/udiskie/wiki/Usage)。
 
 #### udiskie freezing and configuration
 

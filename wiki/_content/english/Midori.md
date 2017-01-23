@@ -31,7 +31,7 @@ Some of its features are:
 
 ## Installation
 
-GTK+2 and GTK+3 versions of Midori can be [installed](/index.php/Pacman "Pacman") with the respective [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2) and [midori](https://www.archlinux.org/packages/?name=midori) packages.
+GTK+2 and GTK+3 versions of Midori can be [installed](/index.php/Pacman "Pacman") with the respective [midori-gtk2](https://aur.archlinux.org/packages/midori-gtk2/) and [midori](https://www.archlinux.org/packages/?name=midori) packages.
 
 Development versions are also available:
 

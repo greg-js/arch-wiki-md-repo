@@ -250,7 +250,7 @@ Kernel 3.10 is coming with a lot of fixes in the Nouveau driver for our NVE0 (Ke
 
 *   AlienFX on Alienware M14xR2 is only supported by [pyalienfx](https://aur.archlinux.org/packages/pyalienfx/) that can be installed from AUR. You can visit [pyalienfx project webpage](https://code.google.com/p/pyalienfx/) for reporting issues.
 
-*   Supported by [alienware-kbl](https://rafael.senties-martinelli.com/software/alienware-kbl) a software to manage the light colors with a graphical interface, python or bash commands.
+*   Supported by [alienware-kbl](https://github.com/rsm-gh/alienware-kbl) a software to manage the light colors with a graphical interface, python or bash commands.
 
 ## BIOS
 

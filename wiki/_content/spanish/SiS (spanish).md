@@ -12,7 +12,7 @@ Esta página describe cómo hacer funcionar los adaptadores gráficos [Silicon I
 
 ## Paquetes
 
-Necesitará instalar el paquete [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis), también es buena idea instalar [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (herramienta gráfica para editar los modos de vídeo). Algunas tarjetas que no son soportadas por el controlador **sis** pueden funcionar instalando los paquetes [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) y [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/). También puede probar con [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/) desde [AUR](/index.php/AUR "AUR").
+Necesitará instalar el paquete [xf86-video-sis](https://aur.archlinux.org/packages/xf86-video-sis/), también es buena idea instalar [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (herramienta gráfica para editar los modos de vídeo). Algunas tarjetas que no son soportadas por el controlador **sis** pueden funcionar instalando los paquetes [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) y [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/). También puede probar con [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/) desde [AUR](/index.php/AUR "AUR").
 
 ## lspci
 

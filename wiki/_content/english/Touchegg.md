@@ -46,10 +46,10 @@ and then edit this entry:
 ##### Start on login
 
 1.  Hit `alt-f2`;
-2.  type `gnome-session-properties`;
-3.  hit `add`;
-4.  in the box labeled "Command" type `touchegg`. Fill in "Name" and "Label" as you choose;
-5.  hit `OK`.
+2.  Type `gnome-session-properties`;
+3.  Hit `add`;
+4.  In the box labeled "Command" type `touchegg`. Fill in "Name" and "Label" as you choose;
+5.  Hit `OK`.
 
 **Note:** `gnome-session-properties` has been removed from `gnome 3.12`. Currently, you can install [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) from the [AUR](/index.php/AUR "AUR"). See more details in the [BBS thread](https://bbs.archlinux.org/viewtopic.php?id=180282)
 

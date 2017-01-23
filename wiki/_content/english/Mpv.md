@@ -13,17 +13,18 @@
     *   [3.3 Automatically resuming from where you left off](#Automatically_resuming_from_where_you_left_off)
     *   [3.4 Volume is too low](#Volume_is_too_low)
     *   [3.5 Quickly cycle between multiple aspect ratio](#Quickly_cycle_between_multiple_aspect_ratio)
-    *   [3.6 Drawing to a root window](#Drawing_to_a_root_window)
-    *   [3.7 Always show GUI](#Always_show_GUI)
-    *   [3.8 Hide GUI for video files](#Hide_GUI_for_video_files)
-    *   [3.9 Restoring old OSC](#Restoring_old_OSC)
-    *   [3.10 Use as a browser plugin](#Use_as_a_browser_plugin)
-    *   [3.11 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
-    *   [3.12 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
-    *   [3.13 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
-    *   [3.14 youtube-dl audio with search](#youtube-dl_audio_with_search)
-    *   [3.15 Use mpv with a compositor](#Use_mpv_with_a_compositor)
-    *   [3.16 Creating a single screenshot](#Creating_a_single_screenshot)
+    *   [3.6 Ignoring aspect ratio](#Ignoring_aspect_ratio)
+    *   [3.7 Drawing to a root window](#Drawing_to_a_root_window)
+    *   [3.8 Always show GUI](#Always_show_GUI)
+    *   [3.9 Hide GUI for video files](#Hide_GUI_for_video_files)
+    *   [3.10 Restoring old OSC](#Restoring_old_OSC)
+    *   [3.11 Use as a browser plugin](#Use_as_a_browser_plugin)
+    *   [3.12 Improving mpv as a music player with Lua scripts](#Improving_mpv_as_a_music_player_with_Lua_scripts)
+    *   [3.13 Twitch.tv streaming over mpv](#Twitch.tv_streaming_over_mpv)
+    *   [3.14 youtube-dl and choosing formats](#youtube-dl_and_choosing_formats)
+    *   [3.15 youtube-dl audio with search](#youtube-dl_audio_with_search)
+    *   [3.16 Use mpv with a compositor](#Use_mpv_with_a_compositor)
+    *   [3.17 Creating a single screenshot](#Creating_a_single_screenshot)
 *   [4 Vapoursynth](#Vapoursynth)
     *   [4.1 Debanding (flash3kyuu)](#Debanding_.28flash3kyuu.29)
 *   [5 Troubleshooting](#Troubleshooting)
@@ -140,6 +141,10 @@ Set `volume-max=*value*` in your configuration file to a reasonable amount, such
 ### Quickly cycle between multiple aspect ratio
 
 You can cycle between aspect ratios using `Shift+a` from version 0.8.0 onwards.
+
+### Ignoring aspect ratio
+
+You can ignore aspect ratio using `--keepaspect=*no*`. To make option permanent, add line `keepaspect=*no*` to configuration file.
 
 ### Drawing to a root window
 

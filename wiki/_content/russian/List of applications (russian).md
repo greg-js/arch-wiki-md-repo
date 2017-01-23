@@ -1028,7 +1028,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Blam** — Простая программа чтения новостей для GNOME, написанная на C Sharp
 
-	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
 *   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — Отличный агрегатор на Java, дающий пользователям возможность синхронизировать их фиды (feeds) на нескольких компьютерах
 
@@ -1408,7 +1408,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Условно бесплатная (shareware) программа, написанная Джоном Брэдли (John Bradley) для отображения и редактирования цифровых изображений в оконной системе X
 
-	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://www.archlinux.org/packages/?name=xv)
+	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://aur.archlinux.org/packages/xv/)
 
 #### Редактирование
 
@@ -1974,7 +1974,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Whaaw! Media Player** — Легковесный аудио и видео проигрыватель, использующий GStreamer, который является хорошей альтернативой Totem для тех, кто не любит "все эти" зависимости GNOME
 
-	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://www.archlinux.org/packages/?name=whaawmp)
+	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://aur.archlinux.org/packages/whaawmp/)
 
 *   **Xnoise** — Основанный на GTK+ и GStreamer проигрыватель аудио и видео с "приятным GUI, отличной скоростью и большим количеством возможностей" (разработка прекращена)
 
@@ -2636,7 +2636,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://fileroller.sourceforge.net/](http://fileroller.sourceforge.net/) || [file-roller](https://www.archlinux.org/packages/?name=file-roller)
 
-*   **[p7zip](/index.php/P7zip "P7zip")** — Порт 7-Zip для систем POSIX, включая Linux. Для GUI требуется пакет [wxgtk2.8](https://www.archlinux.org/packages/?name=wxgtk2.8), утилита называется **7zFM**
+*   **[p7zip](/index.php/P7zip "P7zip")** — Порт 7-Zip для систем POSIX, включая Linux. Для GUI требуется пакет [wxgtk2.8](https://aur.archlinux.org/packages/wxgtk2.8/), утилита называется **7zFM**
 
 	[http://p7zip.sourceforge.net/](http://p7zip.sourceforge.net/) || [p7zip](https://www.archlinux.org/packages/?name=p7zip)
 
@@ -4480,7 +4480,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **PerlPanel** — Идеальное дополнение к легковесному оконному менеджеру, такому как, например, OpenBox, или к программам наподобие iDesk
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 
 *   **plank** — Элегантный, простой и чистый док из окружения рабочего стола [pantheon](/index.php/Pantheon "Pantheon")
 

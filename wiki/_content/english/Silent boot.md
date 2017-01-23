@@ -6,6 +6,7 @@ This page is for those who prefer to limit the verbosity of their system to a st
 *   [2 sysctl](#sysctl)
 *   [3 startx](#startx)
 *   [4 fsck](#fsck)
+*   [5 Remove console cursor blinking](#Remove_console_cursor_blinking)
 
 ## Kernel parameters
 
@@ -91,3 +92,14 @@ TimeoutSec=0
 ```
 
 See [this](http://www.freedesktop.org/software/systemd/man/systemd-fsck@.service.html) for more info on the options you can pass to `systemd-fsck` - you can change how often the service will check (or not) your filesystems.
+
+## Remove console cursor blinking
+
+The console cursor at boot keeps blinking if you follow these intstructions. This can be solved by passing vt.global_cursor_default=0 to the kernel ([source](http://www.friendlyarm.net/forum/topic/2998)).
+
+To recover the cursor in ttys run:
+
+```
+# setterm -cursor on >> /etc/issue
+
+```

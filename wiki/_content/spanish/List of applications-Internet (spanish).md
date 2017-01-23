@@ -661,7 +661,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Blam** — Lector de noticias simple para GNOME escrito en C Sharp.
 
-	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
 *   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — Excelente agregador de noticias basado en Java, que ofrece a los usuarios la opción de sincronizar sus feeds en varios equipos.
 

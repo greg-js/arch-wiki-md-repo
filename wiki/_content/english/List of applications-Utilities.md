@@ -22,12 +22,14 @@
         *   [1.8.1 File managers](#File_managers)
             *   [1.8.1.1 Console](#Console)
             *   [1.8.1.2 Graphical](#Graphical)
-        *   [1.8.2 Desktop search engines](#Desktop_search_engines)
-        *   [1.8.3 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [1.8.3.1 Console](#Console_2)
-            *   [1.8.3.2 Graphical](#Graphical_2)
-        *   [1.8.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
-        *   [1.8.5 Batch renamers](#Batch_renamers)
+        *   [1.8.2 Trash management](#Trash_management)
+        *   [1.8.3 File synchronization](#File_synchronization)
+        *   [1.8.4 Archiving and compression tools](#Archiving_and_compression_tools)
+            *   [1.8.4.1 Console](#Console_2)
+            *   [1.8.4.2 Graphical](#Graphical_2)
+        *   [1.8.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
+        *   [1.8.6 Batch renamers](#Batch_renamers)
+        *   [1.8.7 Search and replace](#Search_and_replace)
     *   [1.9 Disk cleaning](#Disk_cleaning)
     *   [1.10 Disk usage display](#Disk_usage_display)
     *   [1.11 Clock synchronization](#Clock_synchronization)
@@ -43,9 +45,7 @@
     *   [1.18 Wallpaper setters](#Wallpaper_setters)
     *   [1.19 Package management](#Package_management)
     *   [1.20 Input method editor](#Input_method_editor)
-    *   [1.21 Trash management](#Trash_management)
-    *   [1.22 File synchronization](#File_synchronization)
-    *   [1.23 Finders](#Finders)
+    *   [1.21 Finders](#Finders)
 
 ## Utilities
 
@@ -61,7 +61,7 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 *   **cryptmount** — Mount an encrypted file system as a regular user.
 
-	[http://cryptmount.sourceforge.net/](http://cryptmount.sourceforge.net/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
+	[https://sourceforge.net/projects/cryptmount/](https://sourceforge.net/projects/cryptmount/) || [cryptmount](https://aur.archlinux.org/packages/cryptmount/)
 
 *   **ldm** — A lightweight daemon that mounts drives automagically using *udev*
 
@@ -69,23 +69,23 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 *   **pmount** — Mount *source* as a regular user to an automatically created destination `/media/*source_name*`.
 
-	[http://pmount.alioth.debian.org/](http://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
+	[https://pmount.alioth.debian.org/](https://pmount.alioth.debian.org/) || [pmount](https://aur.archlinux.org/packages/pmount/)
 
 *   **pmount-safe-removal** — Mount removable devices as regular user with safe removal
 
-	[http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](http://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
+	[https://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device](https://mywaytoarch.tumblr.com/post/13111098534/pmount-safe-removal-of-usb-device) || [pmount-safe-removal](https://aur.archlinux.org/packages/pmount-safe-removal/)
 
 *   **udevil** — Mounts removable devices as a regular user, show device info, and monitor device changes. Only depends on *udev* and glib.
 
-	[http://ignorantguru.github.io/udevil](http://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
+	[https://ignorantguru.github.io/udevil](https://ignorantguru.github.io/udevil) || [udevil](https://www.archlinux.org/packages/?name=udevil)
 
 *   **ws** — Mount Windows network shares ([CIFS](https://en.wikipedia.org/wiki/Server_Message_Block "wikipedia:Server Message Block") and [VFS](https://en.wikipedia.org/wiki/Virtual_file_system "wikipedia:Virtual file system")).
 
-	[http://winshares.sourceforge.net/](http://winshares.sourceforge.net/) || [ws](https://aur.archlinux.org/packages/ws/)
+	[https://sourceforge.net/projects/winshares/](https://sourceforge.net/projects/winshares/) || [ws](https://aur.archlinux.org/packages/ws/)
 
 *   **zulucrypt** — A GUI frontend for cryptsetup to create, manage and mount encrypted volumes; supports encfs as well
 
-	[http://mhogomchungu.github.io/zuluCrypt/](http://mhogomchungu.github.io/zuluCrypt/) || [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/)
+	[https://mhogomchungu.github.io/zuluCrypt/](https://mhogomchungu.github.io/zuluCrypt/) || [zulucrypt](https://aur.archlinux.org/packages/zulucrypt/)
 
 #### Udisks
 
@@ -109,7 +109,7 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 *   **[Core utilities](/index.php/Core_utilities "Core utilities")** — The basic file, shell and text manipulation utilities of the GNU operating system
 
-	[http://www.gnu.org/software/coreutils](http://www.gnu.org/software/coreutils) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
+	[https://www.gnu.org/software/coreutils/coreutils.html](https://www.gnu.org/software/coreutils/coreutils.html) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
 
 ### getty
 
@@ -133,7 +133,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Bluej](https://en.wikipedia.org/wiki/Bluej "wikipedia:Bluej")** — Fully featured Java IDE used mainly for educational and beginner purposes.
 
-	[http://bluej.org/](http://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
+	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
 
 *   **[Brackets](https://en.wikipedia.org/wiki/Brackets_(text_editor) "wikipedia:Brackets (text editor)")** — A free open-source editor written in HTML, CSS, and Javascript with a primary focus on Web Development. It was created by Adobe Systems, licensed under the MIT License, and is currently maintained on GitHub.
 
@@ -153,7 +153,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Eclipse](/index.php/Eclipse "Eclipse")** — Open source community project, which aims to provide a universal development platform.
 
-	[http://eclipse.org/](http://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
+	[https://eclipse.org/](https://eclipse.org/) || [eclipse-java](https://www.archlinux.org/packages/?name=eclipse-java), [eclipse-cpp](https://www.archlinux.org/packages/?name=eclipse-cpp), [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php)
 
 *   **[Editra](https://en.wikipedia.org/wiki/Editra "wikipedia:Editra")** — Multi-platform text editor with an implementation that focuses on creating an easy to use interface and features that aid in code development.
 
@@ -161,7 +161,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 *   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python and Ruby IDE in PyQt5.
 
-	[http://eric-ide.python-projects.org/](http://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
+	[https://eric-ide.python-projects.org/](https://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
 
 *   **[Gambas](/index.php/Gambas "Gambas")** — Free development environment based on a Basic interpreter with object extensions.
 
@@ -218,10 +218,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **[PyCharm](https://en.wikipedia.org/wiki/PyCharm "wikipedia:PyCharm")** — IDE used for programming in Python with support for code analysis, debugging, unit testing, version control and web development with Django.
 
 	[http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/) || [pycharm-community](https://aur.archlinux.org/packages/pycharm-community/)
-
-*   **[QDevelop](https://en.wikipedia.org/wiki/QDevelop "wikipedia:QDevelop")** — Free and cross-platform IDE for Qt.
-
-	[https://code.google.com/archive/p/qdevelop/](https://code.google.com/archive/p/qdevelop/) || [qdevelop-svn](https://aur.archlinux.org/packages/qdevelop-svn/)
 
 *   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — Lightweight, cross-platform C++ integrated development environment with a focus on Qt.
 
@@ -377,10 +373,6 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[http://www.pleyades.net/david/projects/sakura](http://www.pleyades.net/david/projects/sakura) || [sakura](https://www.archlinux.org/packages/?name=sakura)
 
-*   **Stjerm** — GTK+-based drop-down terminal emulator that provides a minimalistic interface combined with a small file size, lightweight memory usage and easy integration with composite window managers such as Compiz.
-
-	[https://github.com/stjerm/stjerm](https://github.com/stjerm/stjerm) || [stjerm-git](https://aur.archlinux.org/packages/stjerm-git/)
-
 *   **[Terminal](https://en.wikipedia.org/wiki/Terminal_(Xfce) "wikipedia:Terminal (Xfce)")** — Terminal emulator included in the [Xfce](/index.php/Xfce "Xfce") desktop with support for a colorized prompt and a tabbed interface.
 
 	[http://docs.xfce.org/apps/terminal/start](http://docs.xfce.org/apps/terminal/start) || [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal)
@@ -527,7 +519,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://www.mucommander.com/](http://www.mucommander.com/) || [mucommander](https://aur.archlinux.org/packages/mucommander/)
 
-*   **[Nemo](/index.php/Nemo "Nemo")** — Nemo is the file manager of the Cinnamon desktop. A good alternative to Nautilus.
+*   **[Nemo](/index.php/Nemo "Nemo")** — Nemo is the file manager of the Cinnamon desktop. A fork of Nautilus.
 
 	[http://cinnamon.linuxmint.com/](http://cinnamon.linuxmint.com/) || [nemo](https://www.archlinux.org/packages/?name=nemo)
 
@@ -571,41 +563,15 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://www.archlinux.org/packages/?name=xfe)
 
-#### Desktop search engines
+#### Trash management
 
-See also [Wikipedia:List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
+*   **trash-cli** — A command-line interface implementing FreeDesktop.org's Trash specification.
 
-*   **Baloo** — KDE's file indexing and search solution
+	[https://github.com/andreafrancia/trash-cli](https://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
 
-	[https://community.kde.org/Baloo](https://community.kde.org/Baloo) || [baloo](https://www.archlinux.org/packages/?name=baloo)
+#### File synchronization
 
-*   **Catfish** — Versatile file searching tool
-
-	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
-
-*   **Docfetcher** — A java open source desktop search application
-
-	[http://docfetcher.sourceforge.net](http://docfetcher.sourceforge.net) || [docfetcher](https://aur.archlinux.org/packages/docfetcher/)
-
-*   **Gnome Search Tool** — Default Gnome utility to search for files
-
-	[http://gnome.org](http://gnome.org) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
-
-*   **Gnome Search Tool No Nautilus** — *gnome-search-tool* to search for files without [GNOME Files](/index.php/GNOME_Files "GNOME Files") or *gnome-desktop*
-
-	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
-
-*   **Recoll** — Full text search tool based on Xapian backend
-
-	[http://www.lesbonscomptes.com/recoll/](http://www.lesbonscomptes.com/recoll/) || [recoll](https://www.archlinux.org/packages/?name=recoll)
-
-*   **Searchmonkey** — A powerful GUI search utility for matching regex patterns
-
-	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
-
-*   **[Tracker](https://en.wikipedia.org/wiki/Tracker_(search_software) "wikipedia:Tracker (search software)")** — All-in-one indexer, search tool and metadata database.
-
-	[https://wiki.gnome.org/Projects/Tracker](https://wiki.gnome.org/Projects/Tracker) || [tracker](https://www.archlinux.org/packages/?name=tracker)
+See [Synchronization and backup programs#Data synchronization](/index.php/Synchronization_and_backup_programs#Data_synchronization "Synchronization and backup programs").
 
 #### Archiving and compression tools
 
@@ -703,6 +669,8 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
 
+**Note:** For managing pacnew/pacsave files specialised tools exist. See [Pacnew and Pacsave files#Managing .pacnew files](/index.php/Pacnew_and_Pacsave_files#Managing_.pacnew_files "Pacnew and Pacsave files").
+
 *   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting.
 
 	[http://www.colordiff.org/](http://www.colordiff.org/) || [colordiff](https://www.archlinux.org/packages/?name=colordiff)
@@ -751,7 +719,17 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 	[http://search.cpan.org/~pederst/rename/bin/rename.PL](http://search.cpan.org/~pederst/rename/bin/rename.PL) || [perl-rename](https://www.archlinux.org/packages/?name=perl-rename)
 
+#### Search and replace
+
+*   **KfileReplace** — GUI for batch processing search and replace operations.
+
+	[https://www.kde.org/applications/utilities/kfilereplace/](https://www.kde.org/applications/utilities/kfilereplace/) || [kfilereplace](https://www.archlinux.org/packages/?name=kfilereplace)
+
 ### Disk cleaning
+
+*   **rmlint** — Tool to quickly find (and optionally remove) duplicate files and other lint
+
+	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
 *   **[BleachBit](https://en.wikipedia.org/wiki/BleachBit "wikipedia:BleachBit")** — It frees disk space and guards your privacy; frees cache, deletes cookies, clears Internet history, shreds temporary files, deletes logs, and discards junk you didn't know was there.
 
@@ -905,7 +883,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 *   **dmidecode** — It reports information about your system's hardware as described in your system BIOS according to the SMBIOS/DMI standard.
 
-	[http://www.nongnu.org/dmidecode/](http://www.nongnu.org/dmidecode/) || [dmidecode](https://www.archlinux.org/packages/?name=dmidecode)|
+	[http://www.nongnu.org/dmidecode/](http://www.nongnu.org/dmidecode/) || [dmidecode](https://www.archlinux.org/packages/?name=dmidecode)
 
 *   **hwdetect** — Simple script to list modules that are exported by /sys, a part of [archboot](/index.php/Archboot "Archboot").
 
@@ -1049,17 +1027,9 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 	[https://github.com/uim/uim](https://github.com/uim/uim) || [uim](https://www.archlinux.org/packages/?name=uim)
 
-### Trash management
-
-*   **trash-cli** — A command-line interface implementing FreeDesktop.org's Trash specification.
-
-	[https://github.com/andreafrancia/trash-cli](https://github.com/andreafrancia/trash-cli) || [trash-cli](https://www.archlinux.org/packages/?name=trash-cli)
-
-### File synchronization
-
-See [Synchronization and backup programs#Data synchronization](/index.php/Synchronization_and_backup_programs#Data_synchronization "Synchronization and backup programs").
-
 ### Finders
+
+See also [Wikipedia:List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
 
 *   **fuzzy-find** — Fuzzy completion for finding files.
 
@@ -1069,6 +1039,34 @@ See [Synchronization and backup programs#Data synchronization](/index.php/Synchr
 
 	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf) [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
-*   **rmlint** — Tool to quickly find (and optionally remove) duplicate files and other lint
+*   **Baloo** — KDE's file indexing and search solution
 
-	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
+	[https://community.kde.org/Baloo](https://community.kde.org/Baloo) || [baloo](https://www.archlinux.org/packages/?name=baloo)
+
+*   **Catfish** — Versatile file searching tool
+
+	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
+
+*   **Docfetcher** — A java open source desktop search application
+
+	[http://docfetcher.sourceforge.net](http://docfetcher.sourceforge.net) || [docfetcher](https://aur.archlinux.org/packages/docfetcher/)
+
+*   **Gnome Search Tool** — Default Gnome utility to search for files
+
+	[http://gnome.org](http://gnome.org) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
+
+*   **Gnome Search Tool No Nautilus** — *gnome-search-tool* to search for files without [GNOME Files](/index.php/GNOME_Files "GNOME Files") or *gnome-desktop*
+
+	|| [gnome-search-tool-no-nautilus](https://aur.archlinux.org/packages/gnome-search-tool-no-nautilus/)
+
+*   **Recoll** — Full text search tool based on Xapian backend
+
+	[http://www.lesbonscomptes.com/recoll/](http://www.lesbonscomptes.com/recoll/) || [recoll](https://www.archlinux.org/packages/?name=recoll)
+
+*   **Searchmonkey** — A powerful GUI search utility for matching regex patterns
+
+	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
+
+*   **[Tracker](https://en.wikipedia.org/wiki/Tracker_(search_software) "wikipedia:Tracker (search software)")** — All-in-one indexer, search tool and metadata database.
+
+	[https://wiki.gnome.org/Projects/Tracker](https://wiki.gnome.org/Projects/Tracker) || [tracker](https://www.archlinux.org/packages/?name=tracker)

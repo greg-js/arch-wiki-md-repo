@@ -222,9 +222,6 @@ Description=DNSCrypt client proxy
 Documentation=man:dnscrypt-proxy(8)
 Requires=dnscrypt-proxy@%i.socket
 
-```
-
-```
 [Service]
 Type=notify
 NonBlocking=true
@@ -252,16 +249,10 @@ Here you can replace the socket instance name to eg. **cloudns-syd** as one of t
 [Unit]
 Description=dnscrypt-proxy-secondary listening socket
 
-```
-
-```
 [Socket]
 ListenStream=127.0.0.1:5354
 ListenDatagram=127.0.0.1:5354
 
-```
-
-```
 [Install]
 WantedBy=sockets.target
 

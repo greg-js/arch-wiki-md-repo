@@ -199,7 +199,7 @@
 
 *   **PerlPanel** — Идеальное дополнение к легковесному оконному менеджеру, такому как, например, OpenBox, или к программам наподобие iDesk
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 
 *   **plank** — Элегантный, простой и чистый док из окружения рабочего стола [pantheon](/index.php/Pantheon "Pantheon")
 

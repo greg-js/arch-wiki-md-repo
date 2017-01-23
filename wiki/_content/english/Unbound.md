@@ -365,12 +365,13 @@ Restart=always
 **PrivateTmp=true**
 **ProtectHome=true**
 **ProtectControlGroups=true**
+**ProtectKernelModules=true**
 **ProtectKernelTunables=true**
 **ProtectSystem=strict**
 **ReadWritePaths=/etc/unbound /run**
 **RestrictAddressFamilies=AF_INET AF_UNIX**
 **SystemCallArchitectures=native**
-**SystemCallFilter=~@clock @debug @keyring @module mount @obsolete @raw-io**
+**SystemCallFilter=~@clock @cpu-emulation @debug @keyring @module mount @obsolete @raw-io**
 [Install]
 WantedBy=multi-user.target
 

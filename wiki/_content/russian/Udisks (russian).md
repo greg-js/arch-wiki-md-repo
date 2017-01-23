@@ -20,9 +20,9 @@
 
 ## Установка
 
-Существует две версии *udisks* по имени [udisks](https://www.archlinux.org/packages/?name=udisks) и [udisks2](https://www.archlinux.org/packages/?name=udisks2). Разработка *udisks* прекратилась в пользу *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+Существует две версии *udisks* по имени [udisks](https://aur.archlinux.org/packages/udisks/) и [udisks2](https://www.archlinux.org/packages/?name=udisks2). Разработка *udisks* прекратилась в пользу *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и *udisks-демон* ([udisks](https://www.archlinux.org/packages/?name=udisks)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно (см. `man udisksd` и `man udisks-daemon`). Ими можно управлять через командную строку с помощью *udisksctl* и *udisks*, соответственно. Для получения дополнительной информации смотрите `man udisksctl` и `man udisks`.
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) и *udisks-демон* ([udisks](https://aur.archlinux.org/packages/udisks/)) запускаются по требованию [D-Bus](/index.php/D-Bus "D-Bus") и не должны быть включены явно (см. `man udisksd` и `man udisks-daemon`). Ими можно управлять через командную строку с помощью *udisksctl* и *udisks*, соответственно. Для получения дополнительной информации смотрите `man udisksctl` и `man udisks`.
 
 ## Настройка
 

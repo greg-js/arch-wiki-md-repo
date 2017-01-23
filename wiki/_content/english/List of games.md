@@ -428,7 +428,7 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 *   **Gopanda** — Client for the Pandanet-IGS go Server.
 
-	[http://pandanet-igs.com/communities/gopanda2](http://pandanet-igs.com/communities/gopanda2) || [Gopanda](https://www.archlinux.org/packages/?name=Gopanda)
+	[http://pandanet-igs.com/communities/gopanda2](http://pandanet-igs.com/communities/gopanda2) || [Gopanda](https://aur.archlinux.org/packages/Gopanda/)
 
 *   **gweled** — Eliminating tiles by joining them in groups of three.
 

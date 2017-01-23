@@ -625,7 +625,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Blam** — Semplice newsreader per GNOME scritto in C Sharp.
 
-	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
 *   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — Eccellente aggregatore di notizie basato su java, gli utenti possono usare una opzione per sincronizzare i loro feed tra i vari computer.
 

@@ -223,9 +223,13 @@ xrandr --auto
 
 #### GDM
 
-For the [GDM](/index.php/GDM "GDM") display manager create a new .desktop file:
+For the [GDM](/index.php/GDM "GDM") display manager create two new .desktop files:
 
- `/usr/share/gdm/greeter/autostart/optimus.desktop` 
+```
+/usr/share/gdm/greeter/autostart/optimus.desktop
+/etc/xdg/autostart/optimus.desktop
+```
+
 ```
 [Desktop Entry]
 Type=Application

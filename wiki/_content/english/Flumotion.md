@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [flumotion](https://www.archlinux.org/packages/?name=flumotion) from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [flumotion](https://aur.archlinux.org/packages/flumotion/) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Changing the Default User and Pass
 

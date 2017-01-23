@@ -11,7 +11,7 @@ Questa pagina descrive come far funzionare [Silicon Integrated Systems (SiS)](ht
 
 ## Pacchetti
 
-Servirà installare il pacchetto [xf86-video-sis](https://www.archlinux.org/packages/?name=xf86-video-sis), ed è una buona idea installare anche [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (GUI per impostare le risoluzioni):
+Servirà installare il pacchetto [xf86-video-sis](https://aur.archlinux.org/packages/xf86-video-sis/), ed è una buona idea installare anche [sisctrl](https://www.archlinux.org/packages/?name=sisctrl) (GUI per impostare le risoluzioni):
 
 Alcune schede non supportate da **sis** driver package possono funzionare installando i pacchetti [xf86-video-sisusb](https://www.archlinux.org/packages/?name=xf86-video-sisusb) e [xf86-video-sisimedia](https://aur.archlinux.org/packages/xf86-video-sisimedia/). Puoi anche provare [xf86-video-sis671](https://aur.archlinux.org/packages/xf86-video-sis671/) da [AUR](/index.php/AUR "AUR").
 

@@ -290,7 +290,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
 
-	[http://midori-browser.org/](http://midori-browser.org/) || GTK+ 3: [midori](https://www.archlinux.org/packages/?name=midori), GTK+ 2: [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2)
+	[http://midori-browser.org/](http://midori-browser.org/) || GTK+ 3: [midori](https://www.archlinux.org/packages/?name=midori), GTK+ 2: [midori-gtk2](https://aur.archlinux.org/packages/midori-gtk2/)
 
 *   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -1068,7 +1068,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Blam** — Simple newsreader for GNOME written in C Sharp.
 
-	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
 *   **[Evolution](/index.php/Evolution "Evolution") RSS** — Plugin for Evolution Mail that enables reading of RSS/RDF/ATOM feeds.
 

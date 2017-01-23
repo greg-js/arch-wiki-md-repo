@@ -232,7 +232,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 *   **PerlPanel** — El acompañamiento ideal a un gestor de ventanas ligero como OpenBox, o un programa como de renderizado de escritorio como iDesk.
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 
 *   **plank** — Dock elegante, simple y limpio del entorno de escritorio [pantheon](/index.php/Pantheon "Pantheon").
 

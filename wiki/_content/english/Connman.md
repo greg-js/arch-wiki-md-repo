@@ -23,6 +23,7 @@
     *   [4.1 Error /net/connman/technology/wifi: Not supported](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_Not_supported)
     *   [4.2 Error /net/connman/technology/wifi: No carrier](#Error_.2Fnet.2Fconnman.2Ftechnology.2Fwifi:_No_carrier)
     *   [4.3 Error Failed to set hostname/domainname](#Error_Failed_to_set_hostname.2Fdomainname)
+    *   [4.4 Unknown route on connection](#Unknown_route_on_connection)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -352,6 +353,22 @@ connman can failed to set hostname or domainname due to lack of CAP_SYS_ADMIN.
 You will need to edit connman.service (and other like connman-vpn.service , etc ...) to modify the CapabilityBoundingSet line to add CAP_SYS_ADMIN.
 
 See EPERM error of sethostname(2)/setdomainname(2) manpages for more details.
+
+### Unknown route on connection
+
+A log entry for an unknown route appears each time a connect is done. For example:
+
+```
+...
+connmand[473]: wlp2s0 {add} route 82.165.8.211 gw 10.20.30.4 scope 0 <UNIVERSE>
+connmand[473]: wlp2s0 {del} route 82.165.8.211 gw 10.20.30.4 scope 0 <UNIVERSE>
+...
+
+```
+
+It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[4]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits.
+
+While there is no option to configure the destination host of the check, the connection itself is functional (unless behind a captive portal) if the check is blocked by a firewall rule.
 
 ## See also
 

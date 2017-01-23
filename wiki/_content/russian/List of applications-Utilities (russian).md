@@ -572,7 +572,7 @@
 
 	[http://fileroller.sourceforge.net/](http://fileroller.sourceforge.net/) || [file-roller](https://www.archlinux.org/packages/?name=file-roller)
 
-*   **[p7zip](/index.php/P7zip "P7zip")** — Порт 7-Zip для систем POSIX, включая Linux. Для GUI требуется пакет [wxgtk2.8](https://www.archlinux.org/packages/?name=wxgtk2.8), утилита называется **7zFM**
+*   **[p7zip](/index.php/P7zip "P7zip")** — Порт 7-Zip для систем POSIX, включая Linux. Для GUI требуется пакет [wxgtk2.8](https://aur.archlinux.org/packages/wxgtk2.8/), утилита называется **7zFM**
 
 	[http://p7zip.sourceforge.net/](http://p7zip.sourceforge.net/) || [p7zip](https://www.archlinux.org/packages/?name=p7zip)
 

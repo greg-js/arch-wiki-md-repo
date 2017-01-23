@@ -37,6 +37,7 @@ This is a guide to setting up your webcam in Arch Linux.
     *   [6.15 MJPG-streamer](#MJPG-streamer)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
+    *   [7.2 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
 
 ## Linux webcam support
 
@@ -416,3 +417,7 @@ options uvcvideo quirks=0x80
 ```
 
 **Note:** If delays are visible in the logs, or the camera works periodically, this workaround should apply generally. Bigger values such as `quirks=0x100` are possible.
+
+### Check bandwidth used by USB webcams
+
+When running multiple webcams on a single USB bus, they may saturate the bandwidth of the USB bus and not work properly. You can diagnose this with the *usbtop* tool from the [usbtop](https://aur.archlinux.org/packages/usbtop/) package.

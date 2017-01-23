@@ -38,18 +38,16 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
     *   [3.2 DVD](#DVD_2)
         *   [3.2.1 dvd::rip](#dvd::rip)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 K3b locale error](#K3b_locale_error)
-    *   [4.2 Brasero fails to find blank discs](#Brasero_fails_to_find_blank_discs)
-    *   [4.3 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
-    *   [4.4 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_.22..._could_not_open_the_disc_.2Fdev.2Fdvd.22)
-    *   [4.5 DVD drive is noisy](#DVD_drive_is_noisy)
-    *   [4.6 Playback does not work with new computer (new DVD-Drive)](#Playback_does_not_work_with_new_computer_.28new_DVD-Drive.29)
-    *   [4.7 None of the above programs are able to rip/encode a DVD to my hard disk!](#None_of_the_above_programs_are_able_to_rip.2Fencode_a_DVD_to_my_hard_disk.21)
-    *   [4.8 GUI program log indicates problems with backend program](#GUI_program_log_indicates_problems_with_backend_program)
-        *   [4.8.1 Special case: medium error / write error](#Special_case:_medium_error_.2F_write_error)
-    *   [4.9 AHCI](#AHCI)
-    *   [4.10 BD-R DL 50GB errors on trying to burn second layer](#BD-R_DL_50GB_errors_on_trying_to_burn_second_layer)
-    *   [4.11 Disc tray autocloses](#Disc_tray_autocloses)
+    *   [4.1 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
+    *   [4.2 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_.22..._could_not_open_the_disc_.2Fdev.2Fdvd.22)
+    *   [4.3 DVD drive is noisy](#DVD_drive_is_noisy)
+    *   [4.4 Playback does not work with new computer (new DVD-Drive)](#Playback_does_not_work_with_new_computer_.28new_DVD-Drive.29)
+    *   [4.5 None of the above programs are able to rip/encode a DVD to my hard disk!](#None_of_the_above_programs_are_able_to_rip.2Fencode_a_DVD_to_my_hard_disk.21)
+    *   [4.6 GUI program log indicates problems with backend program](#GUI_program_log_indicates_problems_with_backend_program)
+        *   [4.6.1 Special case: medium error / write error](#Special_case:_medium_error_.2F_write_error)
+    *   [4.7 AHCI](#AHCI)
+    *   [4.8 BD-R DL 50GB errors on trying to burn second layer](#BD-R_DL_50GB_errors_on_trying_to_burn_second_layer)
+    *   [4.9 Disc tray autocloses](#Disc_tray_autocloses)
 *   [5 See also](#See_also)
 
 ## Burning
@@ -70,7 +68,6 @@ Available programs for ISO 9660 image creation are:
 
 *   *mkisofs* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools)
 *   *xorriso* and *xorrisofs* from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
-*   *genisoimage* from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (unmaintained)
 
 The traditional choice is *mkisofs*.
 
@@ -81,17 +78,14 @@ Available programs for burning to media are:
 *   *cdrskin* from [libburn](https://www.archlinux.org/packages/?name=libburn)
 *   *growisofs* from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) (DVD and BD only)
 *   *xorriso* and *xorrecord* from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn)
-*   *wodim* from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) (CD only, DVD deprecated, unmaintained)
 
 The traditional choices are *cdrecord* for CD and *growisofs* for DVD and Blu-ray Disk. For writing TOC/CUE/BIN files to CD, install [cdrdao](https://www.archlinux.org/packages/?name=cdrdao).
 
 The free GUI programs for CD, DVD, and BD burning depend on at least one of the above packages.
 
-Both *genisoimage* and *xorrisofs* support the *mkisofs* options which are shown in this document.
+*xorrisofs* supports the *mkisofs* options which are shown in this document.
 
-Both *wodim* and *cdrskin* support the shown *cdrecord* options; *xorrecord* also supports those which do not deal with audio CD.
-
-**Note:** [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) are in conflict. Install only one of them. [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) is recommended: see [FS#46114](https://bugs.archlinux.org/task/46114).
+*cdrskin* supports the shown *cdrecord* options; *xorrecord* also supports those which do not deal with audio CD.
 
 ### Making an ISO image from existing files on hard disk
 
@@ -151,7 +145,6 @@ Programs *mkisofs* and *xorrisofs* accept the same options. For secure backups, 
 
 See the manuals of the ISO 9660 programs for more info about their options:
 
-*   [genisoimage](http://linux.die.net/man/1/genisoimage)
 *   [mkisofs](http://cdrtools.sourceforge.net/private/man/cdrecord/index.html)
 *   [xorrisofs](https://www.gnu.org/software/xorriso/man_1_xorrisofs.html)
 
@@ -250,7 +243,6 @@ There are two options for blanking: `blank=fast` and `blank=full`. Full blanking
 Alternative commands are:
 
 ```
-$ wodim -v dev=*/dev/sr0* blank=fast
 $ cdrskin -v dev=*/dev/sr0* blank=fast
 $ xorriso -outdev */dev/sr0* -blank as_needed
 
@@ -433,7 +425,6 @@ Most re-usable media types do not record a session history that would be recogni
 By default, *growisofs* uses *mkisofs* as a backend for creating ISO images forwards most of its program arguments to . See above examples of *mkisofs*. It bans option `-o` and deprecates option `-C`. By default it uses the *mkisofs*. You may specify to use one of the others compatible backend program by setting environment variable `MKISOFS`:
 
 ```
-$ export MKISOFS="genisoimage"
 $ export MKISOFS="xorrisofs"
 
 ```
@@ -452,7 +443,7 @@ $ growisofs -M */dev/sr0* -V "*ARCHIVE_2013_07_28*" -r -J *./more_for_iso*
 
 ```
 
-For details see the [growisofs manual](http://linux.die.net/man/1/growisofs) and the manuals of *genisoimage*, *mkisofs* and *xorrisofs*.
+For details see the [growisofs manual](http://linux.die.net/man/1/growisofs) and the manuals of *mkisofs* and *xorrisofs*.
 
 #### Multi-session by xorriso
 
@@ -506,28 +497,6 @@ Name the audio files in a manner that will cause them to be listed in the desire
 
 ```
 $ cdrecord **-dummy** -v -pad speed=1 dev=*/dev/sr0* -dao -swab *.wav
-
-```
-
-In case you detect errors or empty tracks like:
-
-```
-Track 01: audio    0 MB (00:00.00) no preemp pad
-
-```
-
-try another decoder (e.g. mpg123) or try using *cdrecord* from the [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) package.
-
-**Note:** The WAV file has to be 16bit Stereo 44100 Hz. Check you WAV tracking using the standard `file` command. Otherwise you will get the following error:
-```
-wodim: Inappropriate audio coding in 'file.wav'.
-
-```
-
-To quickly convert a mono file into stereo, you can use sox, or any other application you have available:
-
-```
-sox input.wav -c 2 output.wav
 
 ```
 
@@ -645,7 +614,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **[Abcde](https://en.wikipedia.org/wiki/ABCDE "wikipedia:ABCDE")** — Comprehensive command-line tool for ripping audio CDs.
 
-	[http://abcde.einval.com/](http://abcde.einval.com/) || [abcde](https://www.archlinux.org/packages/?name=abcde)
+	[https://abcde.einval.com/](https://abcde.einval.com/) || [abcde](https://www.archlinux.org/packages/?name=abcde)
 
 *   **[Asunder](https://en.wikipedia.org/wiki/Asunder "wikipedia:Asunder")** — GTK+-based CD ripping program.
 
@@ -653,7 +622,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **[cdparanoia](https://en.wikipedia.org/wiki/cdparanoia "wikipedia:cdparanoia")** — Compact Disc Digital Audio (CDDA) Digital Audio Extraction (DAE) tool.
 
-	[http://xiph.org/paranoia/index.html](http://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
+	[https://xiph.org/paranoia/index.html](https://xiph.org/paranoia/index.html) || [cdparanoia](https://www.archlinux.org/packages/?name=cdparanoia)
 
 *   **Goobox** — CD player and ripper for GNOME.
 
@@ -661,7 +630,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **[Grip](https://en.wikipedia.org/wiki/Grip_(software) "wikipedia:Grip (software)")** — Fast and light CD ripper within the GNOME project that resembles [Audiograbber](https://en.wikipedia.org/wiki/Audiograbber "wikipedia:Audiograbber").
 
-	[http://sourceforge.net/projects/grip/](http://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip).
+	[https://sourceforge.net/projects/grip/](https://sourceforge.net/projects/grip/) || [grip](https://www.archlinux.org/packages/?name=grip).
 
 *   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD/DVD burning and ripping application based on KDElibs.
 
@@ -669,11 +638,11 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **morituri** — CD ripper aiming for accuracy over speed. Uses cdparanoia, MusicBrainz, AccurateRip.
 
-	[http://thomas.apestaart.org/morituri/trac/](http://thomas.apestaart.org/morituri/trac/) || [morituri](https://www.archlinux.org/packages/?name=morituri)
+	[http://thomas.apestaart.org/morituri/trac/](http://thomas.apestaart.org/morituri/trac/) || [morituri-git](https://aur.archlinux.org/packages/morituri-git/)
 
 *   **ripperX** — GTK+ program to rip CD audio tracks and encode them to the Ogg, MP3, or FLAC formats.
 
-	[http://sourceforge.net/projects/ripperx/](http://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
+	[https://sourceforge.net/projects/ripperx/](https://sourceforge.net/projects/ripperx/) || [ripperx](https://www.archlinux.org/packages/?name=ripperx)
 
 *   **ripright** — Minimal CD ripper modeled on autorip.
 
@@ -685,7 +654,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
-	[http://code.google.com/p/rubyripper/](http://code.google.com/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
+	[https://code.google.com/archive/p/rubyripper/](https://code.google.com/archive/p/rubyripper/) || [rubyripper](https://www.archlinux.org/packages/?name=rubyripper)
 
 *   **shnsplit** — Splits .wav and .flac files according to a CUE sheet and encodes the resulting pieces. A useful companion to ABCDE.
 
@@ -693,11 +662,11 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **[Sound Juicer](https://en.wikipedia.org/wiki/Sound_Juicer "wikipedia:Sound Juicer")** — CD ripper for GNOME.
 
-	[http://burtonini.com/blog/computers/sound-juicer](http://burtonini.com/blog/computers/sound-juicer) || [sound-juicer](https://www.archlinux.org/packages/?name=sound-juicer)
+	[https://wiki.gnome.org/Apps/SoundJuicer](https://wiki.gnome.org/Apps/SoundJuicer) || [sound-juicer](https://www.archlinux.org/packages/?name=sound-juicer)
 
 *   **soundKonverter** — Front-end to various audio converters.
 
-	[http://www.kde-apps.org/content/show.php?content=29024](http://www.kde-apps.org/content/show.php?content=29024) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
+	[https://www.linux-apps.com/content/show.php?content=29024](https://www.linux-apps.com/content/show.php?content=29024) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
 
 ### DVD
 
@@ -710,7 +679,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **Avidemux** — Multithreaded video transcoder, which offers both a graphical and command-line interface with many preset configurations. Influenced by Handbrake.
 
-	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux](https://www.archlinux.org/packages/?name=avidemux)
+	[http://fixounet.free.fr/avidemux/](http://fixounet.free.fr/avidemux/) || [avidemux-qt-git](https://aur.archlinux.org/packages/avidemux-qt-git/)
 
 *   **dvd-vr** — Tool which easily converts VRO files extracted from a [DVD-VR](https://en.wikipedia.org/wiki/DVD-VR "wikipedia:DVD-VR") and splits them in regular VOB files.
 
@@ -726,7 +695,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **HandBrake** — Multithreaded video transcoder, which offers both a graphical and command-line interface with many preset configurations.
 
-	[http://handbrake.fr/](http://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
+	[https://handbrake.fr/](https://handbrake.fr/) || [handbrake](https://www.archlinux.org/packages/?name=handbrake)
 
 *   **Hybrid** — Multi platform Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an mp4/m2ts/mkv/webm/mov/avi container, a Blu-ray or an AVCHD structure.
 
@@ -738,7 +707,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **Transcode** — Video/DVD ripper and encoder with the CLI.
 
-	[http://tcforge.berlios.de/](http://tcforge.berlios.de/) || [transcode](https://www.archlinux.org/packages/?name=transcode)
+	[http://transcoding.org/](http://transcoding.org/) || [transcode](https://www.archlinux.org/packages/?name=transcode)
 
 #### dvd::rip
 
@@ -757,54 +726,6 @@ The dvd::rip preferences are mostly well-documented/self-explanatory. If you nee
 Ripping a DVD is often a simple matter of selecting the preferred codec(s), selecting the desired titles, then clicking the "Rip" button.
 
 ## Troubleshooting
-
-### K3b locale error
-
-When running K3b, if the following message appears:
-
-```
-System locale charset is ANSI_X3.4-1968
-Your system's locale charset (i.e. the charset used to encode file names) is
-set to ANSI_X3.4-1968\. It is highly unlikely that this has been done intentionally.
-Most likely the locale is not set at all. An invalid setting will result in
-problems when creating data projects.Solution: To properly set the locale
-charset make sure the LC_* environment variables are set. Normally the distribution
-setup tools take care of this.
-
-```
-
-It means that your locale is not set well.
-
-To fix it,
-
-*   Remove `/etc/locale.gen`
-*   Re-install [glibc](https://www.archlinux.org/packages/?name=glibc)
-*   Edit `/etc/locale.gen`, enabling all the locales that corresponds to your language and preferences AND ALL the `en_US` locales for compatibility:
-
-```
-en_US.UTF-8 UTF-8
-en_US ISO-8859-1
-
-```
-
-*   Re-generate the locales with *locale-gen*:
-
- `# locale-gen` 
-```
-Generating locales...
-en_US.UTF-8... done
-en_US.ISO-8859-1... done
-pt_BR.UTF-8... done
-pt_BR.ISO-8859-1... done
-Generation complete.
-
-```
-
-More info [here](https://bbs.archlinux.org/viewtopic.php?pid=251512%29;).
-
-### Brasero fails to find blank discs
-
-Brasero uses [gvfs](https://www.archlinux.org/packages/?name=gvfs) to manage CD/DVD burning devices. Also make sure that your session [is not broken](/index.php/General_troubleshooting#Session_permissions "General troubleshooting").
 
 ### Brasero fails to normalize audio CD
 
@@ -865,15 +786,6 @@ If you use a GUI program and experience problems which the program's log blames 
 
 Here are some typical messages about the drive disliking the medium. This can only be solved by using a different drive or a different medium. A different program will hardly help.
 
-K3b with backend wodim:
-
-```
-Sense Bytes: 70 00 03 00 00 00 00 12 00 00 00 00 0C 00 00 00
-Sense Key: 0x3 Medium Error, Segment 0
-Sense Code: 0x0C Qual 0x00 (write error) Fru 0x0
-
-```
-
 Brasero with backend growisofs:
 
 ```
@@ -908,7 +820,7 @@ Rebuild the kernel image so that it includes the newly added module:
 
 ### BD-R DL 50GB errors on trying to burn second layer
 
-Using *wodim* from [cdrkit](https://www.archlinux.org/packages/?name=cdrkit) and/or *growisofs* from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) for burning 50GB BD-R DL discs might result in a fatal error and damaged media, such as:
+Using *growisofs* from [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) for burning 50GB BD-R DL discs might result in a fatal error and damaged media, such as:
 
  `$ growisofs -Z /dev/sr0 -J -R -V "label" files` 
 ```
@@ -933,7 +845,7 @@ I: -input-charset not specified, using utf-8 (detected in locale settings)
 
 ```
 
-This happened at the 25GB boundary when starting to write the second layer. Using *cdrecord* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) works with no problems. Tested with a 'HL-DT-ST BD-RE WH16NS40' LG burner, and Verbatim BD-R DL 6x discs (#96911).
+This happened at the 25GB boundary when starting to write the second layer. Using *cdrecord* from [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) works with no problems. Tested with a 'HL-DT-ST BD-RE WH16NS40' LG burner, and Verbatim BD-R DL 6x discs (#96911). [FS#47797](https://bugs.archlinux.org/task/47797)
 
 ### Disc tray autocloses
 

@@ -28,15 +28,16 @@ As of version 12, it can also be used to play and record live TV using a tuner, 
         *   [2.3.1 MCE remote with Lirc and Systemd](#MCE_remote_with_Lirc_and_Systemd)
         *   [2.3.2 HDMI-CEC with Pulse Eight USB-CEC](#HDMI-CEC_with_Pulse_Eight_USB-CEC)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
-    *   [3.1 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [3.2 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
-    *   [3.3 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
-    *   [3.4 Use port 80 for webserver](#Use_port_80_for_webserver)
-    *   [3.5 Using ALSA](#Using_ALSA)
-    *   [3.6 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
-        *   [3.6.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
-        *   [3.6.2 Right Click Menu Key](#Right_Click_Menu_Key)
-        *   [3.6.3 USB DAC not working](#USB_DAC_not_working)
+    *   [3.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
+    *   [3.2 CLI tool for kodi](#CLI_tool_for_kodi)
+    *   [3.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
+    *   [3.4 Slowing down CD/DVD drive speed](#Slowing_down_CD.2FDVD_drive_speed)
+    *   [3.5 Use port 80 for webserver](#Use_port_80_for_webserver)
+    *   [3.6 Using ALSA](#Using_ALSA)
+    *   [3.7 Raspberry Pi (all generations)](#Raspberry_Pi_.28all_generations.29)
+        *   [3.7.1 Run kodi in a window manager](#Run_kodi_in_a_window_manager)
+        *   [3.7.2 Right Click Menu Key](#Right_Click_Menu_Key)
+        *   [3.7.3 USB DAC not working](#USB_DAC_not_working)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Accessing kodi logs](#Accessing_kodi_logs)
     *   [4.2 Fullscreen mode stretches Kodi across multiple displays](#Fullscreen_mode_stretches_Kodi_across_multiple_displays)
@@ -442,6 +443,10 @@ Remember that modifying the groups of any logged in users means those users need
 **Note:** Trying to use the USB-CEC without belonging to above groups may lead to problems, including Kodi crashes, so make sure the correct user belongs to both groups.
 
 ## Tips and Tricks
+
+### Keep a log of what is watched
+
+Keep track of every video watched on kodi with [kodi-logger](https://aur.archlinux.org/packages/kodi-logger/).
 
 ### CLI tool for kodi
 

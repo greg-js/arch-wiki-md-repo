@@ -234,7 +234,7 @@ See the main article: [Xorg#List of composite managers](/index.php/Xorg#List_of_
 
 *   **PerlPanel** — The ideal accompaniment to a light-weight Window Manager such as OpenBox, or a desktop-drawing program like iDesk.
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 
 *   **plank** — Elegant, simple, clean dock from [pantheon](/index.php/Pantheon "Pantheon") desktop environment.
 

@@ -42,7 +42,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
 | DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
 | FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
-| FAX-2840 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Works mostly with hpijs-pcl5e.ppd. Same as the HL-2170W. |
+| FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Or [foomatic](/index.php/CUPS#Foomatic "CUPS") - works mostly with `hpijs-pcl5e.ppd`. Same as the HL-2170W. |
 | HL-2030 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
 | HL-2035 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Should be compatible with any drivers for the HL-2030. |
 | HL-2040 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |
@@ -58,6 +58,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
 | HL-3170CDW | [brother-hl3170cdw](https://aur.archlinux.org/packages/brother-hl3170cdw/) |
 | HL-5140 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
+| HL-5340 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Using the *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint), [foomatic-db-gutenprint](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint) and [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Or Brother's driver, which may result in failed prints with postscript errors. |
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |

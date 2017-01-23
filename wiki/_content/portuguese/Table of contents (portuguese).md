@@ -4,7 +4,8 @@
 | <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(4)</small> |
 | <small>1.2.</small> [Baixando e Instalando o Arch](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)") <small>(5)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)") <small>(0)</small> |
-| <small>2.1.</small> [Emulators](/index.php/Category:Emulators_(Portugu%C3%AAs) "Category:Emulators (Português)") <small>(1)</small> |
+| <small>2.1.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(Portugu%C3%AAs) "Category:Data compression and archiving (Português)") <small>(1)</small> |
+| <small>2.2.</small> [Emulators](/index.php/Category:Emulators_(Portugu%C3%AAs) "Category:Emulators (Português)") <small>(1)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(0)</small> |
 | <small>3.1.</small> [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)") <small>(1)</small> |
 | <small>4.</small> [HOWTOs](/index.php/Category:HOWTOs_(Portugu%C3%AAs) "Category:HOWTOs (Português)") <small>(8)</small> |
@@ -31,4 +32,5 @@
 | <small>8.4.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
 | <small>8.5.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(2)</small> |
 | <small>8.5.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
-| <small>8.6.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |
+| <small>8.6.</small> [System recovery](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") <small>(1)</small> |
+| <small>8.7.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |

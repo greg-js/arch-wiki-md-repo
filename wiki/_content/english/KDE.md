@@ -86,6 +86,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
     *   [6.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
     *   [6.12 Multi-monitor issues](#Multi-monitor_issues)
+    *   [6.13 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -399,10 +400,6 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 
 	[https://www.linux-apps.com/p/1127857/](https://www.linux-apps.com/p/1127857/) || [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)
 
-*   **grub2-editor** — A KDE Control Module for configuring the GRUB2 bootloader.
-
-	[https://sourceforge.net/projects/kcm-grub2/](https://sourceforge.net/projects/kcm-grub2/) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
-
 *   **UFW KControl Module** — KDE4 control module for UFW ([Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")).
 
 	[https://www.linux-apps.com/p/1127851/](https://www.linux-apps.com/p/1127851/) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
@@ -429,7 +426,7 @@ KDE implements desktop search with a software called Baloo, a file indexing and 
 
 ##### Using and configuring Baloo
 
-In order to search using Baloo on the KDE Plasma Desktop, press `ALT+F2` and type in your query. Within Dolphin press `CTRL+F`.
+In order to search using Baloo on the KDE Plasma Desktop, start krunner (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `CTRL+F`.
 
 By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click.
 
@@ -625,7 +622,7 @@ To enable display resolution management and multiple monitors in Plasma 5, insta
 
 ### Open application launcher with Super key (Windows key)
 
-**Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `Super` key launches kickstart application launcher as if `Alt+F1` keys are pressed.
+**Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `Super` key launches the application launcher. This works by looking for a launcher which has a global keyboard shortcut set.
 
 Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you do not want to start it manually.
 
@@ -907,6 +904,10 @@ By default, Konsole sets `$LANG` to `en_US.US-ASCII`. If you have not generated 
 The current release of KDE Plasma has several issues with multi-monitor setups, which can make Plasma unusable. See [KDE Bug 356225](https://bugs.kde.org/show_bug.cgi?id=356225).
 
 These bugs have been resolved in the upstream/git KDE Plasma builds, which can be installed from [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) or [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) - bear in mind that all packages will conflict with current versions - it is recommended to [remove](/index.php/Remove "Remove") them first.
+
+### No Suspend/Hibernate options
+
+If your system is able to suspend or hibernate using systemd but do not have these options shown in KDE, make sure [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) is installed.
 
 ## See also
 

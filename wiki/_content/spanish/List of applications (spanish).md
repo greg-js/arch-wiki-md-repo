@@ -780,7 +780,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **Blam** — Lector de noticias simple para GNOME escrito en C Sharp.
 
-	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
 *   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — Excelente agregador de noticias basado en Java, que ofrece a los usuarios la opción de sincronizar sus feeds en varios equipos.
 
@@ -1152,7 +1152,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Programa shareware escrito por John Bradley para mostrar y modificar imágenes digitales en el sistema de ventanas X.
 
-	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://www.archlinux.org/packages/?name=xv)
+	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://aur.archlinux.org/packages/xv/)
 
 ### Manipulación de gráficos e imágenes
 
@@ -1759,7 +1759,7 @@ Véanse los artículos de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main p
 
 *   **Whaaw! Media Player** — Ligero reproductor de audio y vídeo basado en GStreamer que pueda servir como una buena alternativa a Totem para aquellos que no les gusta tener todas las dependencias de GNOME.
 
-	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://www.archlinux.org/packages/?name=whaawmp)
+	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://aur.archlinux.org/packages/whaawmp/)
 
 *   **Xnoise** — Reproductor multimedia basado en GTK+ y GStreamer tanto para audio como para vídeo con «una interfaz pulida, gran velocidad y muchas características».
 
@@ -3164,7 +3164,7 @@ Vea el artículo principal: [Xorg#Composite](/index.php/Xorg_(Espa%C3%B1ol)#Comp
 
 *   **PerlPanel** — El acompañamiento ideal a un gestor de ventanas ligero como OpenBox, o un programa como de renderizado de escritorio como iDesk.
 
-	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+	[http://savannah.nongnu.org/projects/perlpanel](http://savannah.nongnu.org/projects/perlpanel) || [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 
 *   **plank** — Dock elegante, simple y limpio del entorno de escritorio [pantheon](/index.php/Pantheon "Pantheon").
 

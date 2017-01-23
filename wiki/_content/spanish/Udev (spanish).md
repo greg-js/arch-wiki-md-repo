@@ -171,7 +171,7 @@ Si desea montar unidades extraíbles no haga una llamada a 'mount' en la regla u
 Hay dos versiones incompatibles, udisks y udisks2, una reescritura de udisks que rompe la compatibilidad. Dependiendo de nuestro DE, uno u otra versión será necesaria (la cual ya vendrá instalada como una dependencia):
 
 *   Para [GNOME](/index.php/GNOME "GNOME") o [KDE](/index.php/KDE "KDE") 4.10+, instale [udisks2](https://www.archlinux.org/packages/?name=udisks2)
-*   Para [Xfce](/index.php/Xfce "Xfce"), instale [udisks](https://www.archlinux.org/packages/?name=udisks)
+*   Para [Xfce](/index.php/Xfce "Xfce"), instale [udisks](https://aur.archlinux.org/packages/udisks/)
 
 No hay necesidad de cualquier regla adicional. Como elemento adicional, se puede eliminar HAL si se está utilizando solo para fines de montaje automático.
 

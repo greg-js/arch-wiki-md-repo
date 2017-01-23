@@ -159,7 +159,7 @@
 
 *   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Условно бесплатная (shareware) программа, написанная Джоном Брэдли (John Bradley) для отображения и редактирования цифровых изображений в оконной системе X
 
-	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://www.archlinux.org/packages/?name=xv)
+	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://aur.archlinux.org/packages/xv/)
 
 #### Редактирование
 
@@ -725,7 +725,7 @@
 
 *   **Whaaw! Media Player** — Легковесный аудио и видео проигрыватель, использующий GStreamer, который является хорошей альтернативой Totem для тех, кто не любит "все эти" зависимости GNOME
 
-	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://www.archlinux.org/packages/?name=whaawmp)
+	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://aur.archlinux.org/packages/whaawmp/)
 
 *   **Xnoise** — Основанный на GTK+ и GStreamer проигрыватель аудио и видео с "приятным GUI, отличной скоростью и большим количеством возможностей" (разработка прекращена)
 

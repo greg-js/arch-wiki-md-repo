@@ -9,7 +9,7 @@
 
 ## Installing the basic features
 
-2D and Xv acceleration in X can be achieved [installing](/index.php/Installing "Installing") [xf86-video-mach64](https://www.archlinux.org/packages/?name=xf86-video-mach64) from the [official repositories](/index.php/Official_repositories "Official repositories").
+2D and Xv acceleration in X can be achieved [installing](/index.php/Installing "Installing") [xf86-video-mach64](https://aur.archlinux.org/packages/xf86-video-mach64/) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## 3D acceleration and direct rendering
 

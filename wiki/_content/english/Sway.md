@@ -1,7 +1,6 @@
-*sway* is a compositor for [Wayland](/index.php/Wayland "Wayland") designed to be fully compatible with [i3](/index.php/I3 "I3").
+*sway* is a compositor for [Wayland](/index.php/Wayland "Wayland") designed to be fully compatible with [i3](/index.php/I3 "I3"). According to [the official website](https://swaywm.org):
 
-> <font color="grey">*Sway is a drop-in replacement for the i3 window manager, but for Wayland instead of X11\. It works with your existing i3 configuration and supports most of i3's features, and a few extras.*</font>
-> — swaywm.org
+	Sway is a drop-in replacement for the i3 window manager, but for Wayland instead of X11\. It works with your existing i3 configuration and supports most of i3's features, and a few extras.
 
 ## Contents
 
@@ -21,6 +20,8 @@
 *   [5 Known issues](#Known_issues)
     *   [5.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
     *   [5.2 Using VirtualBox](#Using_VirtualBox)
+    *   [5.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
+    *   [5.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
 *   [6 See also](#See_also)
 
 ## Status
@@ -190,17 +191,29 @@ i3-dmenu-desktop is not usable directly from sway, but a patch is available here
 
 See here for more information: [https://github.com/SirCmpwn/sway/issues/521](https://github.com/SirCmpwn/sway/issues/521)
 
-You can still apply the patch manually though:
-
-```
-$ wget '[https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch'](https://patch-diff.githubusercontent.com/raw/i3/i3/pull/2265.patch')
-# patch -p0 /usr/bin/i3-dmenu-desktop < 2265.patch
-
-```
+You can still apply the patch manually through installing [sway-dmenu-desktop](https://aur.archlinux.org/packages/sway-dmenu-desktop/). This creates a new binary called `sway-dmenu-desktop` to be using within sway.
 
 ### Using VirtualBox
 
 Sway doesn't work well (or at all) under VirtualBox.
+
+### Sway Socket Not Detected
+
+Using a `swaymsg` argument, such as `swaymsg -t get_outputs`, will sometimes return the message
+
+```
+sway socket not detected.
+ERROR: Unable to connect to
+
+```
+
+when run inside a terminal multiplexer (such as gnu screen or tmux). To avoid this error, the current workaround is to run the command outside of a multiplexer.
+
+### Incorrect Monitor Resolution
+
+Config options such as `output "HDMI-A-1" res 1280x1024` may not successfully change the resolution. The window manager [wlc](https://www.archlinux.org/packages/?name=wlc) is responsible for setting the resolution, and attempts to figure out monitor resolution from the TTY.
+
+You may be able to alter your TTY resolution (thus also altering the WLC and Sway resolution) by passing a kernel parameter such as `video=HDMI-A-1:1280x1024:e` or with with custom edid binaries ([see Kernel Mode Setting](/index.php/Kernel_mode_setting "Kernel mode setting")).
 
 ## See also
 

@@ -112,15 +112,15 @@ BIOS/[GPT](/index.php/GPT "GPT")配置中，[BIOS启动分区](http://www.gnu.or
 
 *   在尝试分区之前请记住不是所有的系统都支持这种分区方案, 请参阅 [GUID 分区表](/index.php/GUID_Partition_Table#BIOS_systems "GUID Partition Table").
 *   此额外分区只在GRUB, BIOS/GPT分区方式中使用. 对于 GRUB, BIOS/MBR 分区方式, GRUB会把`core.img`放到 MBR 后面的间隙中去. 而 GPT 下不使用这个间隙是因为 GPT 分区需要满足 1M/2048 扇区的磁盘边界规范.
-*   [UEFI](/index.php/UEFI "UEFI") 系统也不需要这额外分区, 应为它不需要嵌入启动扇区.
+*   [UEFI](/index.php/UEFI "UEFI") 系统也不需要这额外分区, 因为它不需要嵌入启动扇区.
 
-安装 GRUB 前，在一个没有文件系统的磁盘上，用 `fdisk` 或 `gdisk` 创建一个 `+1M` 分区，设置为 `BIOS boot` 类型，在 `fdisk` 中的类型号是 `4` in `fdisk`, 在 `gdisk`, `bios_grub` in `parted` 中的类型是 `ef02`。此分区可以在磁盘前 2TB 的任何位置。分区建立好后，按下面的命令安装启动管理器。
+安装 GRUB 前，在一个没有文件系统的磁盘上，用 `fdisk` 或 `gdisk` 创建一个 `+1M` 分区，设置为 `BIOS boot` 类型，在 `fdisk` 中的类型号是 `4`, 在 `gdisk` 中的类型是 `ef02`，在 `parted` 中是 `bios_grub`。此分区可以在磁盘前 2TB 的任何位置。分区建立好后，按下面的命令安装启动管理器。
 
 GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT 对齐规范。因为这个分区不会经常访问，所以性能的影响很小。只不过有些分区工具会发出警告。在 `fdisk` 或 `gdisk` 中创建一个新分区，从 34 扇区开始，一直到 2047，然后设置类型。为了让其它分区对齐，可以最后再创建此分区。
 
 ### 主引导记录(MBR)特殊操作
 
-一般来说,如果使用兼容 DOS 的分区对齐模式, [MBR](/index.php/MBR "MBR") 512 byte 结束位置和第一个分区之间都 31KB 的空闲空间。不过,为了提供足够的空间嵌入GRUB的`core.img`文件([FS#24103](https://bugs.archlinux.org/task/24103)),建议将这个空间设置为 1 到 2 Mib. 建议使用支持 1 MiB分区对齐的分区软件来分区, 因为这样也能满足非512B扇区磁盘分区的需求.
+一般来说,如果使用兼容 DOS 的分区对齐模式, [MBR](/index.php/MBR "MBR") 512 byte 结束位置和第一个分区之间都有 31KB 的空闲空间。不过,为了提供足够的空间嵌入GRUB的`core.img`文件([FS#24103](https://bugs.archlinux.org/task/24103)),建议将这个空间设置为 1 到 2 Mib. 建议使用支持 1 MiB分区对齐的分区软件来分区, 因为这样也能满足非512B扇区磁盘分区的需求.
 
 ### 安装
 
@@ -148,7 +148,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 *   将`grub`安装到 MBR 的启动代码区域
 *   填充`/boot/grub`文件夹
 *   生成`/boot/grub/i386-pc/core.img`
-*   MBR 磁盘，将其嵌入 MBR 后面的 31KB 空间
+*   如果是 MBR 分区的磁盘，将其嵌入 MBR 后面的 31KB 空间
 *   如果是 GPT 分区的磁盘，将其嵌入 BIOS 启动分区中:
 
 ```

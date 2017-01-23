@@ -21,7 +21,7 @@
 
 ## 创建分区
 
-推荐 ESP 大小为 512 MiB 尽管大一点小一点都没问题。
+推荐 ESP 大小为 512 MiB， 不过大一点小一点都没问题。
 
 Microsoft 文献注解了 ESP 大小: 对高级格式化 (Advanced Format) 4K 本地驱动器 (每扇区4KB) 来说，由于 FAT32 文件格式的限制，最小为 260 MB。 FAT32 的最小分区大小可由扇区大小 (4KB) x 65527 = 算出 256 MB。高级格式化 512e 驱动器不受此限制影响，因为其虚拟扇区是 512B. 512 bytes x 65527 = 32 MB, 这比 100 MB 最小限制还要小。[[1]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules)
 
@@ -53,9 +53,9 @@ Microsoft 文献注解了 ESP 大小: 对高级格式化 (Advanced Format) 4K �
 
 除了直接将 ESP 挂载到 `/boot`，还可以将 ESP 中的某个目录 bind mount 挂载到 `/boot`(参考 `mount(8)`). 用这种方式，pacman 可以直接更新目录，而 ESP 分区上的文件可以按照需要进行放置，这个方式比文件复制要简单的多。
 
-**Note:** This requires a kernel and bootloader compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot`). Forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
+**Note:** 这种做法需要兼容FAT32的内核和引导。通常来说Arch都没问题， 但是其他发行版可能会有 (namely those that require symlinks in `/boot`). 讨论帖 [在这里](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
 
-参考 [EFISTUB#Alternative ESP Mount Points](/index.php/EFISTUB#Alternative_ESP_Mount_Points "EFISTUB"), 将所有文件复制到 ESP 下的某个目录，将 ESP 挂在到 `/boot` 之外的地方 (例如 `/esp`)。然后 bind mount 目录：
+参考 [EFISTUB#Alternative ESP Mount Points](/index.php/EFISTUB#Alternative_ESP_Mount_Points "EFISTUB"), 将所有文件复制到 ESP 下的某个目录，将 ESP 挂载到 `/boot` 之外的地方 (例如 `/esp`)。然后 bind mount 目录：
 
 ```
 # mount --bind /esp/EFI/arch/ /boot

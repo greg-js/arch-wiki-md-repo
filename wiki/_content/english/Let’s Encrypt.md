@@ -40,7 +40,8 @@ Consult the [Certbot documentation](https://certbot.eff.org/docs/) for more info
 **Note:**
 
 *   For Apache use --apache or --nginx for Nginx **instead** of --webroot.
-*   The webserver should be accessible over HTTP on first-time setup and the DNS-records should be working correctly.
+*   The webserver must be started and accepting HTTP traffic on port 80.
+*   The Server Name must match that of it's corresponding DNS.
 *   Permissions may need to be altered on the host to allow read-access to `[http://domain.tld/.well-know](http://domain.tld/.well-know)`.
 
 When using the webroot method the Certbot client places a challenge response inside `/path/to/domain.tld/html/.well-known/acme-challenge/` which is used for validation.

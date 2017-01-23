@@ -28,7 +28,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [5.3 Display size and DPI](#Display_size_and_DPI)
         *   [5.3.1 Setting DPI manually](#Setting_DPI_manually)
             *   [5.3.1.1 Proprietary NVIDIA driver](#Proprietary_NVIDIA_driver)
-    *   [5.4 DPMS](#DPMS)
+    *   [5.4 Display Power Management](#Display_Power_Management)
 *   [6 Composite](#Composite)
     *   [6.1 List of composite managers](#List_of_composite_managers)
 *   [7 Tips and tricks](#Tips_and_tricks)
@@ -163,9 +163,9 @@ Alternatively, your proprietary video card drivers may come with a tool to autom
 
 ## Input devices
 
-For input devices, the virtual package *xf86-input-driver* ensures at least one input driver of either [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) or [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) is installed.[[2]](https://www.archlinux.org/news/xorg-1180-enters-testing/)
+For input devices the X server defaults to the libinput driver ([xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput)), but [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and related drivers are available as alternative.[[2]](https://www.archlinux.org/news/xorg-server-1191-is-now-in-extra/)
 
-[Udev](/index.php/Udev "Udev"), which is provided as a systemd dependency, will detect your hardware and both drivers will act as hotplugging input driver for almost all devices, as defined in the default configuration files `10-evdev.conf` and `60-libinput.conf` in the `/usr/share/X11/xorg.conf.d/` directory.
+[Udev](/index.php/Udev "Udev"), which is provided as a systemd dependency, will detect hardware and both drivers will act as hotplugging input driver for almost all devices, as defined in the default configuration files `10-evdev.conf` and `40-libinput.conf` in the `/usr/share/X11/xorg.conf.d/` directory.
 
 After starting X server, the log file will show which driver hotplugged for the individual devices (note the most recent log file name may vary):
 
@@ -190,7 +190,7 @@ See [All Mouse Buttons Working](/index.php/All_Mouse_Buttons_Working "All Mouse 
 
 ### Touchpad
 
-See [Synaptics](/index.php/Synaptics "Synaptics") or [libinput](/index.php/Libinput "Libinput").
+See [libinput](/index.php/Libinput "Libinput") or [Synaptics](/index.php/Synaptics "Synaptics").
 
 ### Touchscreen
 
@@ -366,7 +366,7 @@ Option              "DPI" "96 x 96"
 
 ```
 
-### DPMS
+### Display Power Management
 
 [DPMS](/index.php/DPMS "DPMS") (Display Power Management Signaling) is a technology that allows power saving behaviour of monitors when the computer is not in use. This will allow you to have your monitors automatically go into standby after a predefined period of time.
 

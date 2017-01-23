@@ -248,10 +248,10 @@ Inoltre, le applicazioni condizionate al DE, tendono a integrarsi meglio con i l
 [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
 [mate-terminal](https://www.archlinux.org/packages/?name=mate-terminal) | Caja
 [mate-file-manager](https://www.archlinux.org/packages/?name=mate-file-manager) | Calculator
-[mate-calc](https://www.archlinux.org/packages/?name=mate-calc) | pluma
+[mate-calc](https://aur.archlinux.org/packages/mate-calc/) | pluma
 [mate-text-editor](https://www.archlinux.org/packages/?name=mate-text-editor) | Eye of MATE
 [mate-image-viewer](https://www.archlinux.org/packages/?name=mate-image-viewer) | Whaaw!
-[whaawmp](https://www.archlinux.org/packages/?name=whaawmp) | [Midori](/index.php/Midori "Midori")
+[whaawmp](https://aur.archlinux.org/packages/whaawmp/) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) |
 | [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3

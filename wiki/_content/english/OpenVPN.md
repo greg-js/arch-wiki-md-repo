@@ -16,15 +16,14 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
         *   [5.2.1 Hardening the server](#Hardening_the_server)
         *   [5.2.2 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
             *   [5.2.2.1 TCP vs UDP](#TCP_vs_UDP)
-    *   [5.3 The client config profile (OpenVPN)](#The_client_config_profile_.28OpenVPN.29)
-        *   [5.3.1 Drop root privileges after connecting](#Drop_root_privileges_after_connecting)
-    *   [5.4 The client profile (generic for Linux, iOS, or Android)](#The_client_profile_.28generic_for_Linux.2C_iOS.2C_or_Android.29)
-    *   [5.5 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
-    *   [5.6 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
-    *   [5.7 Configure the MTU with Fragment and MSS](#Configure_the_MTU_with_Fragment_and_MSS)
-    *   [5.8 IPv6](#IPv6)
-        *   [5.8.1 Connect to the server via IPv6](#Connect_to_the_server_via_IPv6)
-        *   [5.8.2 Provide IPv6 inside the tunnel](#Provide_IPv6_inside_the_tunnel)
+    *   [5.3 The client config profile](#The_client_config_profile)
+        *   [5.3.1 Run as unprivileged user](#Run_as_unprivileged_user)
+    *   [5.4 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
+    *   [5.5 Testing the OpenVPN configuration](#Testing_the_OpenVPN_configuration)
+    *   [5.6 Configure the MTU with Fragment and MSS](#Configure_the_MTU_with_Fragment_and_MSS)
+    *   [5.7 IPv6](#IPv6)
+        *   [5.7.1 Connect to the server via IPv6](#Connect_to_the_server_via_IPv6)
+        *   [5.7.2 Provide IPv6 inside the tunnel](#Provide_IPv6_inside_the_tunnel)
 *   [6 Starting OpenVPN](#Starting_OpenVPN)
     *   [6.1 Manual startup](#Manual_startup)
     *   [6.2 systemd service configuration](#systemd_service_configuration)
@@ -48,11 +47,14 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [9.1 Update resolv-conf script](#Update_resolv-conf_script)
     *   [9.2 Update systemd-resolved script](#Update_systemd-resolved_script)
 *   [10 L2 Ethernet bridging](#L2_Ethernet_bridging)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Client daemon not restarting after suspend](#Client_daemon_not_restarting_after_suspend)
-    *   [11.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
-    *   [11.3 PID files not present](#PID_files_not_present)
-*   [12 See also](#See_also)
+*   [11 Config generators](#Config_generators)
+    *   [11.1 ovpngen](#ovpngen)
+    *   [11.2 openvpn-unroot](#openvpn-unroot)
+*   [12 Troubleshooting](#Troubleshooting)
+    *   [12.1 Client daemon not reconnecting after suspend](#Client_daemon_not_reconnecting_after_suspend)
+    *   [12.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
+    *   [12.3 PID files not present](#PID_files_not_present)
+*   [13 See also](#See_also)
 
 ## Install OpenVPN
 
@@ -184,7 +186,7 @@ UDP
 *   Less reliable than TCP as no error correction is in use.
 *   Potentially faster than TCP.
 
-### The client config profile (OpenVPN)
+### The client config profile
 
 Copy the example client configuration file to `/etc/openvpn/client/client.conf`:
 
@@ -214,43 +216,23 @@ tls-crypt ta.key
 
 ```
 
-#### Drop root privileges after connecting
+#### Run as unprivileged user
 
-Using the options `user nobody` and `group nobody` in the configuration file makes *OpenVPN* drop its privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes are not desired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
+Using the options `user nobody` and `group nobody` in the configuration file makes *OpenVPN* drop its `root` privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes are not desired. Further, it can happen that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
 
-As it could seem to require manual action to manage the routes, the options `user nobody` and `group nobody` might seem undesirable. Depending on setup, however, there are four ways to handle these situations:
+As it could seem to require manual action to manage the routes, the options `user nobody` and `group nobody` might seem undesirable. Depending on setup, however, there are different ways to handle these situations:
 
 *   For errors of the unit, a simple way is to [edit](/index.php/Edit "Edit") it and add a `Restart=on-failure` to the `[Service]` section. Though, this alone will not delete any obsoleted routes, so it may happen that the restarted tunnel is not routed properly.
 *   The package contains the `/usr/lib/openvpn/plugins/openvpn-plugin-down-root.so`, which can be used to let *openvpn* fork a process with root privileges with the only task to execute a custom script when receiving a down signal from the main process, which is handling the tunnel with dropped privileges (see also its [README](https://community.openvpn.net/openvpn/browser/plugin/down-root/README?rev=d02a86d37bed69ee3fb63d08913623a86c88da15)).
+
+The OpenVPN HowTo's linked below go further by creating a dedicated non-privileged user/group, instead of the already existing `nobody`. The advantage is that this avoids potential risks when sharing a user among daemons:
+
 *   The [OpenVPN HowTo](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains another way how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
-*   Further, it is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki HowTo](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser).
+*   It is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser) (howto). The howto assumes the presence of System V init, rather than [Systemd](/index.php/Systemd "Systemd") and does not cover the handling of `--up`/`--down` scripts - those should be handled the same way as the *ip* command, with additional attention to access rights.
 
-**Note:** The OpenVPN HowTos linked above create a dedicated non-privileged user/group, instead of the already existing `nobody`. The advantage is that this avoids potential risks when sharing a user among daemons.
+**Note:** Due to a [bug](https://community.openvpn.net/openvpn/ticket/812) in OpenVPN 2.4.0, the `persist-tun` option mentioned in the howtos should **not** be used, otherwise new routes/IPs pushed on reconnect will be ignored by the client.
 
-### The client profile (generic for Linux, iOS, or Android)
-
-The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format suitable for the iOS version of OpenVPN Connect as well as for the Android app.
-
-Simply invoke the script with 5 tokens:
-
-1.  Server Fully Qualified Domain Name of the OpenVPN server (or IP address).
-2.  Full path to the CA cert.
-3.  Full path to the client cert.
-4.  Full path to the client private key.
-5.  Full path to the server TLS shared secret key.
-6.  Optionally a port number.
-7.  Optionally a protocol (udp or tcp).
-
-Example:
-
-```
-# ovpngen example.org /etc/openvpn/server/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/server/ta.key > iphone.ovpn
-
-```
-
-The resulting `iphone.ovpn` can be edited if desired as the script does insert some commented lines.
-
-**Tip:** If the server.conf contains a specified cipher and/or auth line, it is highly recommended that users manually edit the generated .ovpn file adding matching lines for cipher and auth. Failure to do so may results in connection errors!
+**Tip:** [#openvpn-unroot](#openvpn-unroot) describes a tool to automate above setup.
 
 ### Converting certificates to encrypted .p12 format
 
@@ -704,7 +686,7 @@ The DNS servers used by the system are defined in `/etc/resolv.conf`. Traditiona
 
 Before continuing, test openresolv by restarting your network connection and ensuring that `resolv.conf` states that it was generated by *resolvconf*, and that your DNS resolution still works as before. You should not need to configure openresolv; it should be automatically detected and used by your network system.
 
-For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with the `client.up` and `client.down` scripts packaged in `/usr/share/openvpn/contrib/pull-resolv-conf/`. See their comments on how to install them to `/etc/openvpn/client/`. The following is an excerpt of a resulting client configuration using the scripts in conjunction with *resolvconf* and options to [#Drop root privileges after connecting](#Drop_root_privileges_after_connecting):
+For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with the `client.up` and `client.down` scripts packaged in `/usr/share/openvpn/contrib/pull-resolv-conf/`. See their comments on how to install them to `/etc/openvpn/client/`. The following is an excerpt of a resulting client configuration using the scripts in conjunction with *resolvconf* and options to [#Run as unprivileged user](#Run_as_unprivileged_user):
 
  `/etc/openvpn/client/*clienttunnel*.conf` 
 ```
@@ -755,11 +737,48 @@ down-pre
 
 For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
 
+## Config generators
+
+**Warning:** Users are highly recommended to pass through the manual configuration described above to gain knowledge about options and usage before using any additional automation scripts.
+
+### ovpngen
+
+The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format suitable for the iOS version of OpenVPN Connect as well as for the Android app.
+
+Simply invoke the script with 5 tokens:
+
+1.  Server Fully Qualified Domain Name of the OpenVPN server (or IP address).
+2.  Full path to the CA cert.
+3.  Full path to the client cert.
+4.  Full path to the client private key.
+5.  Full path to the server TLS shared secret key.
+6.  Optionally a port number.
+7.  Optionally a protocol (udp or tcp).
+
+Example:
+
+```
+# ovpngen example.org /etc/openvpn/server/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/server/ta.key > iphone.ovpn
+
+```
+
+The resulting `iphone.ovpn` can be edited if desired as the script does insert some commented lines.
+
+**Tip:** If the server.conf contains a specified cipher and/or auth line, it is highly recommended that users manually edit the generated .ovpn file adding matching lines for cipher and auth. Failure to do so may results in connection errors!
+
+### openvpn-unroot
+
+The steps necessary for OpenVPN to [#Run as unprivileged user](#Run_as_unprivileged_user), can be performed automatically using [openvpn-unroot](https://github.com/wknapik/openvpn-unroot) ([openvpn-unroot-git](https://aur.archlinux.org/packages/openvpn-unroot-git/)).
+
+It automates the actions required for the [OpenVPN howto](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser) by adapting it to systemd, and also working around the bug for persistent tun devices mentioned in the note.
+
 ## Troubleshooting
 
-### Client daemon not restarting after suspend
+### Client daemon not reconnecting after suspend
 
-If you put your client system to sleep, and on resume OpenVPN does not restart, resulting in broken connectivity, create the following file:
+[openvpn-reconnect](https://aur.archlinux.org/packages/openvpn-reconnect/), available on the AUR, solves this problem by sending a SIGHUP to openvpn after waking up from suspend.
+
+Alternatively, you can kill and restart openvpn by creating the folowing file:
 
  `/usr/lib/systemd/system-sleep/vpn.sh` 
 ```

@@ -104,7 +104,7 @@ You have two options:
 
 ### Cannot activate "context pane" plugin
 
-You have to install [python-mako](https://www.archlinux.org/packages/?name=python-mako) and [pywebkitgtk](https://www.archlinux.org/packages/?name=pywebkitgtk).
+You have to install [python-mako](https://www.archlinux.org/packages/?name=python-mako) and [pywebkitgtk](https://aur.archlinux.org/packages/pywebkitgtk/).
 
 ### Rhythmbox Startup is Slow
 

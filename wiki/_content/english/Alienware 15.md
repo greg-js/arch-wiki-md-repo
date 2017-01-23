@@ -170,7 +170,7 @@ Currently not supported by [Bumblebee](/index.php/Bumblebee "Bumblebee") (Tested
 ## Control of the light colors
 
 *   Currently unsupported by pyAlienFx and alienfx[[1]](https://github.com/erlkonig/alienfx) have some diff from previous version.
-*   Probably supported by [alienware-kbl](https://rafael.senties-martinelli.com/software/alienware-kbl), a software to manage the light colors with a graphical interface, python or bash commands.
+*   Probably supported by [alienware-kbl](https://github.com/rsm-gh/alienware-kbl), a software to manage the light colors with a graphical interface, python or bash commands.
 
 ## Issues
 

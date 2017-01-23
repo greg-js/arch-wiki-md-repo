@@ -37,7 +37,7 @@ Pantheon is split into several packages which are available in an unofficial rep
 ```
 [pantheon]
 SigLevel = Optional
-Server = http://pkgbuild.com/~alucryd/$repo/$arch
+Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 

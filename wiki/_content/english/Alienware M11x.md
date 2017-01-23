@@ -223,4 +223,4 @@ exit 0
 
 *   A C-program which cycles through colors, plus information about how to understand it, can be found at [[1]](http://www.dettus.net/alienware).
 
-*   [alienware-kbl](https://rafael.senties-martinelli.com/software/alienware-kbl) a software to manage the light colors with a graphical interface, python or bash commands.
+*   [alienware-kbl](https://github.com/rsm-gh/alienware-kbl) a software to manage the light colors with a graphical interface, python or bash commands.

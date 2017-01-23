@@ -564,7 +564,7 @@ To fix the button mapping of PS4 controller you can use the following command wi
 
 ### Joystick moving mouse
 
-Sometimes USB joystick can be recognized as HID mouse (only in X, it is still being installed as `/dev/input/js0` as well). Known issue is cursor being moved by the joystick, or escaping to en edge of a screen right after plugin. If your application can detect joystick by it self, you can remove the [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) package.
+Sometimes USB joystick can be recognized as HID mouse (only in X, it is still being installed as `/dev/input/js0` as well). Known issue is cursor being moved by the joystick, or escaping to en edge of a screen right after plugin. If your application can detect joystick by it self, you can remove the [xf86-input-joystick](https://aur.archlinux.org/packages/xf86-input-joystick/) package.
 
 A more gentle solution is described in [#Disable joystick from controlling mouse](#Disable_joystick_from_controlling_mouse).
 

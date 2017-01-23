@@ -214,7 +214,7 @@ See the [GitHub page](http://haikarainen.github.io/light/) for more information.
 
 ### acpilight
 
-[acpilight](https://aur.archlinux.org/packages/acpilight/) contains an "xbacklight" compatibile utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console.
+[acpilight](https://aur.archlinux.org/packages/acpilight/) contains an "xbacklight" compatible utility that uses the sys filesystem to set the display brightness. Since it doesn't use X at all, it can also be used on the console and Wayland and has no problems with KMS drivers. Furthermore, on ThinkPad laptops, the keyboard backlight can also be controlled.
 
 See the [acpilight repository](https://github.com/wavexx/acpilight/) for more information.
 

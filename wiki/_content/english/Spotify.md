@@ -59,7 +59,7 @@ There are also some alternatives to the official spotify client:
 
 ### Linux
 
-[spotify](https://aur.archlinux.org/packages/spotify/) from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg0.10](https://www.archlinux.org/packages/?name=ffmpeg0.10) as well.
+[spotify](https://aur.archlinux.org/packages/spotify/) from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.
 
 ### Windows (Wine)
 
@@ -295,7 +295,7 @@ By placing this script at `/usr/local/bin/spotify`, it gets preferred to `/usr/b
 
 #### Spotify-AdKiller
 
-[Spotify-AdKiller](https://github.com/SecUpwN/Spotify-AdKiller) ([spotify-adkiller-git](https://aur.archlinux.org/packages/spotify-adkiller-git/)) is another alternative to block Spotify adds.
+[Spotify-AdKiller](https://github.com/SecUpwN/Spotify-AdKiller) ([spotify-adkiller-git](https://aur.archlinux.org/packages/spotify-adkiller-git/)) is another alternative to block Spotify ads.
 
 ### Remote Control
 

@@ -359,9 +359,7 @@ Android 2.2.x (Froyo) and below are the only versions of Android that will build
 
 To build any version of Android, you need to install these packages:
 
-*   32-bit and 64-bit systems: [gcc](https://www.archlinux.org/packages/?name=gcc) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk](https://www.archlinux.org/packages/?name=wxgtk) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
-
-*   64-bit systems only: [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline) [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
+*   [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk](https://www.archlinux.org/packages/?name=wxgtk) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc) [rsync](https://www.archlinux.org/packages/?name=rsync) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline) [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
 **Note:** The PGP signatures for [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) may cause errors, that can be solved by manually importing the needed signature:
 ```
@@ -369,11 +367,11 @@ $ gpg --recv-keys 702353E0F7E48EDB
 
 ```
 
-To build Android 6+, you need to install these additional packages:
+Additionally, LineageOS requires the following packages:
 
-*   32-bit and 64-bit systems: [rsync](https://www.archlinux.org/packages/?name=rsync)
+*   [xml2](https://www.archlinux.org/packages/?name=xml2) [lzop](https://www.archlinux.org/packages/?name=lzop) [pngcrush](https://www.archlinux.org/packages/?name=pngcrush) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [lzop](https://www.archlinux.org/packages/?name=lzop) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
-**Note:** You must now also install [maven](https://www.archlinux.org/packages/?name=maven) to build CyanogenMod since, from cm-13.0, they are using maven artifacts
+**Note:** Installing both [maven](https://www.archlinux.org/packages/?name=maven) and [gradle](https://www.archlinux.org/packages/?name=gradle) to build LineageOS may result in a build speed improvement as the build process will prefer the system's
 
 ### Java Development Kit
 
@@ -397,15 +395,7 @@ This change will be valid only for the current terminal session.
 
 ### Setting up the build environment
 
-[Install](/index.php/Install "Install") the [repo](https://www.archlinux.org/packages/?name=repo) package, then:
-
-```
-$ mkdir ~/bin
-$ export PATH=~/bin:$PATH
-$ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-$ chmod a+x ~/bin/repo
-
-```
+[Install](/index.php/Install "Install") the [repo](https://www.archlinux.org/packages/?name=repo) package.
 
 Create a directory to build.
 
@@ -415,12 +405,15 @@ $ cd ~/android
 
 ```
 
-You will need to change the default Python from version 3 to version 2:
+The Android build process expects `python` to be python2\. Create a python2 virtual environment and activate it:
 
 ```
-$ virtualenv2 venv # Creates a directory, venv/, containing the Virtualenv
+$ virtualenv2 venv
+$ source venv/bin/activate
 
 ```
+
+**Note:** This activation is only active for the current terminal session. The virtual env will be kept in the `venv` folder.
 
 **Note:** During build you may receive error pertaining to missing python modules. A quick and dirty fix is to symlink /usr/lib/python2.7/* to ~/android/venv/python2.7/ (Change ~/android to reflect your build directory if different than above).
 
@@ -428,15 +421,6 @@ Example:
 
 ```
 $ ln -s /usr/lib/python2.7/* /Data/Android_Build/venv/lib/python2.7/
-
-```
-
-Activate the Virtualenv, which will update $PATH to point at Python 2.
-
-**Note:** this activation is only active for the current terminal session.
-
-```
-$ source venv/bin/activate
 
 ```
 

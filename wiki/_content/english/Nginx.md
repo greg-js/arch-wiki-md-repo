@@ -196,7 +196,7 @@ To enable a `server`, simple create a symlink:
 To remove a `server`, delete the symlink:
 
 ```
-# rm -rf /etc/nginx/servers-enabled/example
+# unlink /etc/nginx/servers-enabled/example
 
 ```
 

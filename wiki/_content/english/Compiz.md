@@ -469,7 +469,7 @@ Only a few [panels and docks](/index.php/List_of_applications#Taskbars_.2F_panel
 
 *   [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
 *   [mate-panel](https://www.archlinux.org/packages/?name=mate-panel)
-*   [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+*   [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 *   [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
 *   [cairo-dock](https://www.archlinux.org/packages/?name=cairo-dock)
 

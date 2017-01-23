@@ -17,7 +17,7 @@ Note that uShare is a minimalist server; it keeps all media metadata in memory, 
 
 ## Installation
 
-uShare can be [installed](/index.php/Pacman "Pacman") with the [ushare](https://www.archlinux.org/packages/?name=ushare) package, available from the [official repositories](/index.php/Official_repositories "Official repositories").
+uShare can be [installed](/index.php/Pacman "Pacman") with the [ushare](https://aur.archlinux.org/packages/ushare/) package, available from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Starting uShare
 

@@ -65,7 +65,7 @@ Lets get the features of the laptop correctly working in order to get the most o
 Necessary driver packages:
 
 *   [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
-*   [xf86-video-mach64](https://www.archlinux.org/packages/?name=xf86-video-mach64)
+*   [xf86-video-mach64](https://aur.archlinux.org/packages/xf86-video-mach64/)
 
 **Note:**
 

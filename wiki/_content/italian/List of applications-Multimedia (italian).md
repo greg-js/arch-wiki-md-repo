@@ -137,7 +137,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Programma shareware scritto da John Bradley per visualizzare e modificare le immagini digitali sotto il sistema X Window.
 
-	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://www.archlinux.org/packages/?name=xv)
+	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://aur.archlinux.org/packages/xv/)
 
 ### Grafica e manipolazione delle immagini
 
@@ -694,7 +694,7 @@ Si veda anche: [MPlayer frontends](/index.php/MPlayer#Frontends.2FGUIs "MPlayer"
 
 *   **Whaaw! Media Player** — Lettore leggero audio/video basato su Gstreamer che può essere una buona alternativa a Totem per il fatto di non avere dipendenze da GNOME.
 
-	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://www.archlinux.org/packages/?name=whaawmp)
+	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://aur.archlinux.org/packages/whaawmp/)
 
 *   **Xnoise** — Lettore multimediale in GTK+ per flussi audio e video con "una GUI gradevole, grande velocità e parecchie funzioni". Utilizza gstreamer.
 

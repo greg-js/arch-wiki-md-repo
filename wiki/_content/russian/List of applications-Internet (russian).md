@@ -866,7 +866,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **Blam** — Простая программа чтения новостей для GNOME, написанная на C Sharp
 
-	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://www.archlinux.org/packages/?name=blam)
+	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
 *   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — Отличный агрегатор на Java, дающий пользователям возможность синхронизировать их фиды (feeds) на нескольких компьютерах
 

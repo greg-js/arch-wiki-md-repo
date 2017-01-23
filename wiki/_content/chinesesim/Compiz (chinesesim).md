@@ -530,7 +530,7 @@ There are a number of panels and docks available in Arch however only a few are 
 
 *   [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel)
 *   [mate-panel](https://www.archlinux.org/packages/?name=mate-panel)
-*   [perlpanel](https://www.archlinux.org/packages/?name=perlpanel)
+*   [perlpanel](https://aur.archlinux.org/packages/perlpanel/)
 *   [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel)
 *   [cairo-dock](https://www.archlinux.org/packages/?name=cairo-dock)
 

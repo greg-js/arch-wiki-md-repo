@@ -385,7 +385,7 @@ See also [Wikipedia:Comparison of massively multiplayer online role-playing game
 
 *   **Gopanda** — IGS在线围棋客户端。
 
-	[http://pandanet-igs.com/communities/gopanda2](http://pandanet-igs.com/communities/gopanda2) || [Gopanda](https://www.archlinux.org/packages/?name=Gopanda)
+	[http://pandanet-igs.com/communities/gopanda2](http://pandanet-igs.com/communities/gopanda2) || [Gopanda](https://aur.archlinux.org/packages/Gopanda/)
 
 *   **gweled** — Eliminating tiles by joining them in groups of three.
 

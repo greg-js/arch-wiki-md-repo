@@ -50,7 +50,7 @@ This will yield a working setup, but the dGPU will not be useable at all and wil
 
 To enable the use of the dedicated graphics card see [Bumblebee](/index.php/Bumblebee "Bumblebee").
 
-**Note:** Automatic turn off of dGPU through [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) will not work with current version. This is a known issue, see [Bumblebee#Broken_power_management_with_kernel_4.8s](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8s "Bumblebee") for details. Insisting on using it may result in a hang boot.
+**Note:** Automatic turn off of dGPU through [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) will not work with current version. There are two known related issues, see [Bumblebee#Broken_power_management_with_kernel_4.8](/index.php/Bumblebee#Broken_power_management_with_kernel_4.8 "Bumblebee") and [Bumblebee#Lockup_issue_.28lspci_hangs.29](/index.php/Bumblebee#Lockup_issue_.28lspci_hangs.29 "Bumblebee") for details. As a workaround, try adding boot parameters `pcie_port_pm=off acpi_osi=! acpi_osi="Windows 2009"`.
 
 All DisplayPort and HDMI ports seem to be connected to the dGPU which involves extra steps to get them working.
 

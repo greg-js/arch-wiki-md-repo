@@ -21,9 +21,9 @@
 
 ## Installation
 
-There are two versions of *udisks* called [udisks](https://www.archlinux.org/packages/?name=udisks) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of *udisks* has ceased in favor of *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
+There are two versions of *udisks* called [udisks](https://aur.archlinux.org/packages/udisks/) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of *udisks* has ceased in favor of *udisks2*. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and *udisks-daemon* ([udisks](https://www.archlinux.org/packages/?name=udisks)) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly (see `man udisksd` and `man udisks-daemon`). They can be controlled through the command-line with *udisksctl* and *udisks*, respectively. See `man udisksctl` and `man udisks` for more information.
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) and *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly (see `man udisksd` and `man udisks-daemon`). They can be controlled through the command-line with *udisksctl* and *udisks*, respectively. See `man udisksctl` and `man udisks` for more information.
 
 ## Configuration
 
@@ -77,7 +77,7 @@ done < <(stdbuf -o L udevadm monitor --udev -s block)
 
 ### udiskie
 
-[udiskie](https://www.archlinux.org/packages/?name=udiskie) is a mount helper using either [udisks](https://www.archlinux.org/packages/?name=udisks) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [usage details](https://github.com/coldfix/udiskie/wiki/Usage). Github is also here: [udiskie](https://github.com/coldfix/udiskie)
+[udiskie](https://www.archlinux.org/packages/?name=udiskie) is a mount helper using either [udisks](https://aur.archlinux.org/packages/udisks/) or [udisks2](https://www.archlinux.org/packages/?name=udisks2). It includes support for password protected [LUKS devices](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"). See the udiskie wiki for [usage details](https://github.com/coldfix/udiskie/wiki/Usage). Github is also here: [udiskie](https://github.com/coldfix/udiskie)
 
 #### udiskie freezing and configuration
 

@@ -249,7 +249,7 @@ EndSection
 
 Это хорошее решение для систем, где перезагрузка Xorg случается очень редко, потому что это статическая конфигурация, загружаемая только при запуске X. Я использую его на моем медиа-сервере под управлением XBMC с Logitech Cordless RublePad 2\. Из-за проблемы с тем, что "крестовина" распознается как еще одна ось, мне приходилось запускать [Joy2key](/index.php/Joy2key "Joy2key") в качестве обходного пути. Когда я обновился до XBMC 11.0 с joy2key 1.6.3-1, эта настройка перестала работать. Так что в конце-концов я решил заставить Xorg обрабатывать события джойстика.
 
-Для начала, убедитесь, что у вас установлен [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick). Затем создайте файл `/etc/X11/xorg.conf.d/51-joystick.conf` примерно такого вида:
+Для начала, убедитесь, что у вас установлен [xf86-input-joystick](https://aur.archlinux.org/packages/xf86-input-joystick/). Затем создайте файл `/etc/X11/xorg.conf.d/51-joystick.conf` примерно такого вида:
 
 ```
  Section "InputClass"
@@ -354,7 +354,7 @@ Right Trigger=a6
 
 Если вы испытываете подобные проблемы, можете использовать либо [#SteamOS xpad](#SteamOS_xpad), либо [#xboxdrv](#xboxdrv) вместо стандартного драйвера `xpad`.
 
-Если вы хотите управлять мышью при помощи контроллера, либо назначить кнопки клавишам, используйте пакет [xf86-input-joystick](https://www.archlinux.org/packages/?name=xf86-input-joystick) (дополнительную информацию о настройке см. `man joystick`). Если курсор мыши блокируется в углу экрана, может помочь изменение параметра `MatchDevicePath` в файле `/etc/X11/xorg.conf.d/50-joystick.conf` с `/dev/input/event*` на `/dev/input/js*`.
+Если вы хотите управлять мышью при помощи контроллера, либо назначить кнопки клавишам, используйте пакет [xf86-input-joystick](https://aur.archlinux.org/packages/xf86-input-joystick/) (дополнительную информацию о настройке см. `man joystick`). Если курсор мыши блокируется в углу экрана, может помочь изменение параметра `MatchDevicePath` в файле `/etc/X11/xorg.conf.d/50-joystick.conf` с `/dev/input/event*` на `/dev/input/js*`.
 
 **Совет:** Если вы пользуетесь программой управления питанием [TLP](/index.php/TLP "TLP"), могут возникнуть проблемы с подключением Microsoft Wireless Adapter (например, LED-индикатор может погаснуть через пару секунд после подключения адаптера, и контроллер не подключится). Это происходит из-за функции автоматического "засыпания" USB при использовании TLP, решением является добавление ID Wireless Adapter в черный список этой функции. (USB_BLACKLIST, см [настройку TLP](http://linrunner.de/en/tlp/docs/tlp-configuration.html#usb) для дополнительной информации).
 

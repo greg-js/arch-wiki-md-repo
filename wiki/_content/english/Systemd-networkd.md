@@ -89,7 +89,7 @@ After making changes to a configuration file, [restart](/index.php/Restart "Rest
 
 #### Wired adapter using DHCP
 
- `/etc/systemd/network/*wired*.network` 
+ `/etc/systemd/network/50-wired.network` 
 ```
 [Match]
 Name=enp1s0
@@ -101,7 +101,7 @@ DHCP=ipv4
 
 #### Wired adapter using a static IP
 
- `/etc/systemd/network/*wired*.network` 
+ `/etc/systemd/network/25-wired.network` 
 ```
 [Match]
 Name=enp1s0
@@ -118,7 +118,7 @@ You may specify multiple IP addresses. Add an IPv6 address with another Address=
 
 In order to connect to a wireless network with *systemd-networkd*, a wireless adapter configured with another service such as [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") is required. In this example, the corresponding systemd service file that needs to be enabled is `wpa_supplicant@wlp2s0.service`. This service will run *wpa_supplicant* with the configuration file `/etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf`. If this file does not exist, the service will not start.
 
- `/etc/systemd/network/*wireless*.network` 
+ `/etc/systemd/network/25-wireless.network` 
 ```
 [Match]
 Name=wlp2s0
@@ -137,7 +137,7 @@ This setup will enable a DHCP IP for both a wired and wireless connection making
 The kernel's route metric (same as configured with *ip*) decides which route to use for outgoing packets, in cases when several match. This will be the case when both wireless and wired devices on the system have active connections. To break the tie, the kernel uses the metric. If one of the connections is terminated, the other automatically wins without there being a gap with nothing configured (ongoing transfers may still not deal with this nicely but that is at a different OSI layer).
 
 **Note:** The **Metric** option is for static routes while the **RouteMetric** option is for setups not using static routes.
- `/etc/systemd/network/*wired*.network` 
+ `/etc/systemd/network/20-wired.network` 
 ```
 [Match]
 Name=enp1s0
@@ -149,7 +149,7 @@ DHCP=ipv4
 RouteMetric=10
 
 ```
- `/etc/systemd/network/*wireless*.network` 
+ `/etc/systemd/network/25-wireless.network` 
 ```
 [Match]
 Name=wlp2s0

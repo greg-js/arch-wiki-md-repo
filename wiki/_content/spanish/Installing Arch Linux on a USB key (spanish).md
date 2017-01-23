@@ -126,7 +126,7 @@ Para obtener instrucciones sobre puesta a punto o problemas del touchpad, consul
 
 **Nota:** El uso de controladores de vídeo propietarios **no** es recomendable para este tipo de instalación.
 
-Los controladores de vídeo recomendados son: [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [mesa](https://www.archlinux.org/packages/?name=mesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) y [xf86-video-nv](https://www.archlinux.org/packages/?name=xf86-video-nv).
+Los controladores de vídeo recomendados son: [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa), [mesa](https://www.archlinux.org/packages/?name=mesa), [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati), [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) y [xf86-video-nv](https://aur.archlinux.org/packages/xf86-video-nv/).
 
 Para hacer más versátil la compatibilidad, instale todos los controladores de vídeo de código abierto, incluyendo sus homólogos multilib: [lib32-ati-dri](https://www.archlinux.org/packages/?name=lib32-ati-dri), [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) y [lib32-nouveau-dri](https://www.archlinux.org/packages/?name=lib32-nouveau-dri).
 

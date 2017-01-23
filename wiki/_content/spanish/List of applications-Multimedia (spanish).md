@@ -141,7 +141,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **[xv](https://en.wikipedia.org/wiki/Xv_(software) "wikipedia:Xv (software)")** — Programa shareware escrito por John Bradley para mostrar y modificar imágenes digitales en el sistema de ventanas X.
 
-	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://www.archlinux.org/packages/?name=xv)
+	[http://www.trilon.com/xv/](http://www.trilon.com/xv/) || [xv](https://aur.archlinux.org/packages/xv/)
 
 ### Manipulación de gráficos e imágenes
 
@@ -748,7 +748,7 @@ Véanse los artículos de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main p
 
 *   **Whaaw! Media Player** — Ligero reproductor de audio y vídeo basado en GStreamer que pueda servir como una buena alternativa a Totem para aquellos que no les gusta tener todas las dependencias de GNOME.
 
-	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://www.archlinux.org/packages/?name=whaawmp)
+	[http://home.gna.org/whaawmp/](http://home.gna.org/whaawmp/) || [whaawmp](https://aur.archlinux.org/packages/whaawmp/)
 
 *   **Xnoise** — Reproductor multimedia basado en GTK+ y GStreamer tanto para audio como para vídeo con «una interfaz pulida, gran velocidad y muchas características».
 

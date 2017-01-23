@@ -12,7 +12,9 @@
     *   [3.5 MuPDF](#MuPDF)
     *   [3.6 p7zip](#p7zip)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Sandboxing X11](#Sandboxing_X11)
+    *   [4.1 Using X11](#Using_X11)
+    *   [4.2 Sandboxing X11](#Sandboxing_X11)
+    *   [4.3 New Session](#New_Session)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -232,11 +234,12 @@ Applications which have not yet been patched against [known vulnerabilities](htt
 *   Create a symbolic link from the system `/usr/lib` directory to `/lib64` in the sandbox
 *   Blacklist the sandboxed contents of `/usr/lib/modules` and `/usr/lib/systemd` with tmpfs overlays
 *   Mount a new devtmpfs filesystem to `/dev` in the sandbox
-*   Bind read-write the host `/sandbox` directory to the `/sandbox` directory in the sandbox
+*   Bind as read-write the host `/sandbox` directory to the `/sandbox` directory in the sandbox
     *   *7za* will only run in the host `/sandbox` directory and/or its subdirectories when called from the shell wrapper
 *   Create new cgroup/IPC/network/PID/UTS namespaces for the application and its processes
     *   If the kernel does not support non-privileged user namespaces, skip its creation and continue
     *   Creation of a new network namespace prevents the sandbox from obtaining network access
+*   Add a custom or an arbitrary [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") to the sandbox such as `p7zip`
 *   Unset the `XAUTHORITY` [environment variable](/index.php/Environment_variables "Environment variables") to hide the location of the X11 connection cookie
     *   *7za* does not need to connect to an X11 display server to function properly
 *   Start a new terminal session to prevent keyboard input from escaping the sandbox
@@ -252,6 +255,7 @@ Applications which have not yet been patched against [known vulnerabilities](htt
 --dev /dev \
 --bind /sandbox /sandbox \
 --unshare-all \
+--hostname p7zip \
 --unsetenv XAUTHORITY \
 --new-session \
 /usr/bin/7za "$@")
@@ -271,6 +275,7 @@ bwrap \
 --dev /dev \
 --bind /sandbox /sandbox \
 --unshare-all \
+--hostname p7zip \
 --unsetenv XAUTHORITY \
 --new-session \
 /usr/bin/sh
@@ -290,7 +295,7 @@ bash-4.4$ ls -A /usr/bin
 
 ## Troubleshooting
 
-### Sandboxing X11
+### Using X11
 
 Bind mounting the host X11 socket to an alternative X11 socket may not work:
 
@@ -305,6 +310,20 @@ A workaround is to bind mount the host X11 socket to the same socket within the 
 --bind /tmp/.X11-unix/X0 /tmp/.X11-unix/X0 --setenv DISPLAY :0
 
 ```
+
+### Sandboxing X11
+
+While bwrap provides some very nice isolation for sandboxed application, there is an easy escape as long as access to the X11 socket is available. X11 does not include isolation between applications and is completely insecure. The only solution to this is to switch to a wayland compositor with no access to the Xserver from the sandbox.
+
+There are however some workarounds that use xpra or xephyr to run in a new X11 environment. This would work with bwrap as well.
+
+To test X11 isolation, run 'xinput test <id>' where <id> is your keyboard id shich you can find with 'xinput list' When run without additional X11 isolation, this will show that any application with X11 access can capture keyboard input of any other application, which is basically what a keylogger would do.
+
+### New Session
+
+There is a security issue with TIOCSTI, (CVE-2017-522) which allows sandbox escape. To prevent this, bubblewrap has introduced the new option '--new-session' which calls setsid(). However this causes some behavioural issues that are hard to work with in some cases. For instance, it makes shell job control not work for the bwrap command.
+
+It is recommended to use this if possible, but if not the developers recommend that the issue is neutralized in some other way, for instance using SECCOMP, which is what flatpak does: [https://github.com/flatpak/flatpak/commit/902fb713990a8f968ea4350c7c2a27ff46f1a6c4](https://github.com/flatpak/flatpak/commit/902fb713990a8f968ea4350c7c2a27ff46f1a6c4)
 
 ## See also
 

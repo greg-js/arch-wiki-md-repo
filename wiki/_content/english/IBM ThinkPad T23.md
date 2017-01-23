@@ -23,7 +23,7 @@
 
 #### Easy Installation
 
-Make sure [Xorg](/index.php/Xorg "Xorg") is installed, and then [install](/index.php/Install "Install") [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) from the [official repositories](/index.php/Official_repositories "Official repositories").
+Make sure [Xorg](/index.php/Xorg "Xorg") is installed, and then [install](/index.php/Install "Install") [xf86-video-savage](https://aur.archlinux.org/packages/xf86-video-savage/) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Then, edit your [xorg.conf](/index.php/Xorg.conf "Xorg.conf") to reflect the following contents:
 
@@ -59,7 +59,7 @@ The savage driver supports two types of hardware acceleration: XAA and EXA. Unfo
 This means you must run [xorg-server](/index.php?title=Xorg-server&action=edit&redlink=1 "Xorg-server (page does not exist)") < 1.13, because starting in 1.13 XAA was removed.
 
 | Video Card | Xorg Driver | Mesa DRI Driver | Packages needed for DRI |
-| **S3 SuperSavage IX** | [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) | [savage-dri](https://www.archlinux.org/packages/?name=savage-dri) | [xf86-video-savage](https://www.archlinux.org/packages/?name=xf86-video-savage) (<2.3.6-2) [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) (<1.13), [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) (<2.7.3-2), [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) (<0.4.3-2), [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa) (<2.3.2-2) |
+| **S3 SuperSavage IX** | [xf86-video-savage](https://aur.archlinux.org/packages/xf86-video-savage/) | [savage-dri](https://www.archlinux.org/packages/?name=savage-dri) | [xf86-video-savage](https://aur.archlinux.org/packages/xf86-video-savage/) (<2.3.6-2) [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) (<1.13), [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) (<2.7.3-2), [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) (<0.4.3-2), [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa) (<2.3.2-2) |
 
 ##### Configuration
 

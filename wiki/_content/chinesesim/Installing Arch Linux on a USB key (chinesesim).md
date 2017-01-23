@@ -162,7 +162,7 @@ i686 架构可以在 32位和 64位系统上使用，而且 32位二进制软件
 
 #### 显卡驱动
 
-不要使用非开源驱动，建议安装的驱动： [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa) [mesa](https://www.archlinux.org/packages/?name=mesa) [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) [xf86-video-nv](https://www.archlinux.org/packages/?name=xf86-video-nv).
+不要使用非开源驱动，建议安装的驱动： [xf86-video-vesa](https://www.archlinux.org/packages/?name=xf86-video-vesa) [mesa](https://www.archlinux.org/packages/?name=mesa) [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) [xf86-video-nv](https://aur.archlinux.org/packages/xf86-video-nv/).
 
 同时安装32位软件库：[lib32-ati-dri](https://www.archlinux.org/packages/?name=lib32-ati-dri) [lib32-intel-dri](https://www.archlinux.org/packages/?name=lib32-intel-dri) [lib32-nouveau-dri](https://www.archlinux.org/packages/?name=lib32-nouveau-dri).
 

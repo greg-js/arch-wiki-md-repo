@@ -62,7 +62,7 @@ There are two options for displays:
 
 HDMI: Works
 
-Mini DisplayPort:Works
+Mini DisplayPort: Works
 
 ### OneLink+
 
@@ -76,7 +76,7 @@ DisplayPort: Works
 
 Audio: Works
 
-VGA: Not Tested
+VGA: Works
 
 ### WiFi
 

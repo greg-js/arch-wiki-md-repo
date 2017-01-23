@@ -281,7 +281,7 @@
 [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | pluma
 [pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
 [eom](https://www.archlinux.org/packages/?name=eom) | Whaaw!
-[whaawmp](https://www.archlinux.org/packages/?name=whaawmp) | [Midori](/index.php/Midori "Midori")
+[whaawmp](https://aur.archlinux.org/packages/whaawmp/) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) |
 | Maynard | [GTK+](/index.php/GTK%2B "GTK+") 3

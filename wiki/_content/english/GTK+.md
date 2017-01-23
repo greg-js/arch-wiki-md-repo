@@ -551,7 +551,7 @@ NautilusWindow {
 
 **Note:** This disables touchscreen support for GTK3 applications. [[7]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
 
-[Define](/index.php/Environment_variables#Defining_variables "Environment variables") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
+[Define](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` to use GTK2 style input, instead of xinput2\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
 
 ### Thumbnail support for GTK+ 2 file dialog
 

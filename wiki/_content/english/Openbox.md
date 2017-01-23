@@ -504,7 +504,7 @@ A xdg compliant menu is based on the freedesktop.org standard. The menu is defin
 
 #### Examples
 
-*   [californium](https://github.com/kernladung/californium): xdg menu based on the LXQt main menu and easily themable
+*   [californium](https://github.com/mlde/californium): xdg menu based on the LXQt main menu and easily themable
 
 ## Desktop theming
 
@@ -770,14 +770,14 @@ Run it without arguments to know what the arguments mean.
 
 ### Enable Hot Corners
 
-[lead](https://github.com/kernladung/lead) provides hot corners for openbox and other lightweight window managers. Start the application with a entry in the autostart-file:
+[lead](https://github.com/mlde/lead) provides hot corners for openbox and other lightweight window managers. Start the application with a entry in the autostart-file:
 
 ```
-kernladung.lead &
+mlde.lead &
 
 ```
 
-Commands can be edited in the configuration file `~/.config/kernladung/lead.conf`:
+Commands can be edited in the configuration file `~/.config/mlde/lead.conf`:
 
 ```
 [eDP1]
@@ -787,7 +787,7 @@ bottomRight=thunar
 left=
 right=
 top=
-topLeft=kernladung.californium toggle
+topLeft=mlde.californium toggle
 topRight=skippy-xd
 
 ```

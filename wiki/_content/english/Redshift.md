@@ -1,37 +1,53 @@
-From the [redshift project web page](http://jonls.dk/redshift/):
+From the [Redshift project web page](http://jonls.dk/redshift/):
 
 	Redshift adjusts the color temperature of your screen according to your surroundings. This may help your eyes hurt less if you are working in front of the screen at night. This program is inspired by [f.lux](http://justgetflux.com).
 
-The project is developed on [GitHub](https://github.com/jonls/redshift).
+**Note:**
 
-**Note:** At the moment, Redshift [only works](https://github.com/jonls/redshift/issues/55) with [Xorg](/index.php/Xorg "Xorg") – [Wayland](/index.php/Wayland "Wayland") is not supported yet, see [#If you are on Wayland](#If_you_are_on_Wayland).
+*   Redshift only works with [Xorg](/index.php/Xorg "Xorg") [[1]](https://github.com/jonls/redshift/issues/55) – [Wayland](/index.php/Wayland "Wayland") is not supported yet.
+*   A native [GNOME](/index.php/GNOME "GNOME") [extension](https://github.com/benzea/gnome-shell-extension-redshift) has been made available and supports [Wayland](/index.php/Wayland "Wayland"), however it requires a patched [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon). See [Installation#Gnome Shell Extension](/index.php/Installation#Gnome_Shell_Extension "Installation").
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Desktop environments](#Desktop_environments)
-    *   [1.2 Autostart](#Autostart)
+    *   [1.1 Redshift](#Redshift)
+        *   [1.1.1 Redshift-GTK](#Redshift-GTK)
+    *   [1.2 GNOME Shell Extension](#GNOME_Shell_Extension)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Quick start](#Quick_start)
-    *   [2.2 Automatic location based on GPS](#Automatic_location_based_on_GPS)
-    *   [2.3 Manual setup](#Manual_setup)
-    *   [2.4 Use real screen brightness](#Use_real_screen_brightness)
+    *   [2.1 Autostart](#Autostart)
+    *   [2.2 Quick start](#Quick_start)
+    *   [2.3 Automatic location based on GPS](#Automatic_location_based_on_GPS)
+    *   [2.4 Manual setup](#Manual_setup)
+    *   [2.5 Use real screen brightness](#Use_real_screen_brightness)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
-    *   [3.2 redshift-gtk will not start](#redshift-gtk_will_not_start)
-    *   [3.3 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
-    *   [3.4 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
-    *   [3.5 If you cannot get redshift to autostart in i3](#If_you_cannot_get_redshift_to_autostart_in_i3)
-    *   [3.6 If you are on Wayland](#If_you_are_on_Wayland)
+    *   [3.2 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
+    *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
+    *   [3.4 No autostart in i3](#No_autostart_in_i3)
 *   [4 See also](#See_also)
 
 ## Installation
 
+### Redshift
+
 [Install](/index.php/Install "Install") the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Alternatively, install the [redshift-minimal](https://aur.archlinux.org/packages/redshift-minimal/) package, for a version with minimal dependencies.
 
-### Desktop environments
+#### Redshift-GTK
 
-For desktop environments, the `redshift-gtk` command is installed with the [redshift](https://www.archlinux.org/packages/?name=redshift) package. `redshift-gtk` provides a system tray icon for controlling redshift and requires these three packages to work: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg); all of them are listed as optional dependencies of the main [redshift](https://www.archlinux.org/packages/?name=redshift) package. [KDE](/index.php/KDE "KDE") users can use the [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
+The `redshift-gtk` command is provided by the [redshift](https://www.archlinux.org/packages/?name=redshift) package. Redshift-GTK provides a system tray icon for controlling Redshift and requires the following packages to be installed: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg). An alternative (non-GTK solution) for [KDE](/index.php/KDE "KDE") is available as [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/).
+
+### GNOME Shell Extension
+
+**Note:**
+
+*   [Disable](/index.php/Disable "Disable")/stop any running Redshift instance, because it is not compatible with this GNOME Extension.
+*   You may want to [uninstall](/index.php/Uninstall "Uninstall") [redshift](https://www.archlinux.org/packages/?name=redshift) since it is not used by [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/).
+
+Install [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/), restart/re-login and enable/configure the extension with [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
+
+## Configuration
+
+Redshift will at least need your location to start, meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually: For most places/cities an easy way is to look up the wikipedia page of that place and get the location from there (search the page for "coordinates").
 
 ### Autostart
 
@@ -42,10 +58,6 @@ There are several options to have redshift automatically started:
 *   By right-clicking the system tray icon when redshift-gtk or plasma5-applets-redshift-control is already launched and selecting 'Autostart'.
 
 **Note:** The redshift services files contains `Restart=always` so the service will restart infinitely (see `man systemd.service`)
-
-## Configuration
-
-Redshift will at least need your location to start, meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually: For most places/cities an easy way is to look up the wikipedia page of that place and get the location from there (search the page for "coordinates").
 
 ### Quick start
 
@@ -147,7 +159,7 @@ screen=1
 
 ### Use real screen brightness
 
-Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[1]](http://jonls.dk/redshift/#known-bugs-and-limitations)
+Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[2]](http://jonls.dk/redshift/#known-bugs-and-limitations)
 
 Changing screen backlight is possible with redshift hooks and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) but, please see [Backlight#xbacklight](/index.php/Backlight#xbacklight "Backlight") as there are some limitations and you may have to find another method of controlling the backlight depending on your hardware.
 
@@ -190,31 +202,15 @@ esac
 
 Locate configuration-file "redshift.conf" in your distribution and change "screen 1" to "screen 0"
 
-### redshift-gtk will not start
-
-redshift-gtk requires optional dependencies to work correctly. To verify any missing dependencies, run `redshift-gtk` in the command line. Similar output to the following would be produced:
-
-```
-Traceback (most recent call last):
-  File "/usr/bin/redshift-gtk", line 26, in <module>
-    from redshift_gtk.statusicon import run
-  File "/usr/lib/python3.4/site-packages/redshift_gtk/statusicon.py", line 31, in <module>
-    from gi.repository import Gtk, GLib
-ImportError: No module named 'gi.repository'
-
-```
-
-If this is the case, installing [python-gobject](https://www.archlinux.org/packages/?name=python-gobject), [python-xdg](https://www.archlinux.org/packages/?name=python-xdg), and [librsvg](https://www.archlinux.org/packages/?name=librsvg) packages solves this issue.
-
 ### Left/right clicking the tray icon doesn't work
 
-Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[2]](https://github.com/jonls/redshift/issues/363) and [[3]](https://bugs.archlinux.org/task/49971)
+Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[3]](https://github.com/jonls/redshift/issues/363) and [[4]](https://bugs.archlinux.org/task/49971)
 
 ### Failed to run Redshift due to geoclue2
 
 **Note:** Prior to apply the method below, close redshift-gtk and restart the geoclue service. Sometimes the location service fails due to e.g. connection established after the location service.
 
-If using Gnome, you can also toggle Location Services to "On" in "Settings -> Privacy"
+If using [GNOME](/index.php/GNOME "GNOME"), you can also toggle Location Services to "On" in "Settings -> Privacy"
 
 By default, the geoclue2 configuration files does not allow Redshift access. In order to allow access, add the following lines to `/etc/geoclue/geoclue.conf`
 
@@ -226,20 +222,14 @@ system=false
 users=
 ```
 
-### If you cannot get redshift to autostart in i3
+### No autostart in i3
 
-You can add this to your i3 config file.
+Add the following to the i3 config file:
 
 ```
 exec --no-startup-id redshift-gtk
 
 ```
-
-### If you are on Wayland
-
-At the moment running redshift has no effect under Wayland, because gamma correction is not available there[[4]](https://github.com/jonls/redshift/issues/260). There is an open feature request on their issue tracker.[[5]](https://github.com/jonls/redshift/issues/55)
-
-If you are running Gnome, you can try your luck with [gnome-shell-extension-redshift-native-git](https://aur.archlinux.org/packages/gnome-shell-extension-redshift-native-git/). Install the aur package, restart Gnome and enable the Gnome Redshift Extension.
 
 ## See also
 

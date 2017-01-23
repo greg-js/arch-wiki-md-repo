@@ -320,7 +320,7 @@ As shipped the Trusted Platform Module (TPM) can be configured easily following 
 ### TPM 2.0
 
 Originally the Dell XPS 13 (9350) shipped with TPM 1.2 - the TPM chip was configured to support the TPM Standard version 1.2\. However, on 6 Jan 2017 Dell released a [firmware update](http://www.dell.com/support/home/uk/en/ukdhs1/Drivers/DriversDetails?driverId=N8P80) (internal version 1.3.1.0_V1) for the TPM chip that converts it to support the feature set of TPM Standard version 2.0\. Unfortunately, as of this moment the update cannot be applied through Linux or the BIOS direct flashing capabilities. The only way to install it seems to be to apply it through a running Windows OS. The easiest method is to run a temporary Windows installation on a USB drive, boot into it and run the update from there.
-**Warning:** It should be noted that this update is irreversible once applied. It also requires that the TPM memory and configuration is completely cleared.
+**Note:** It should be noted that this update is reversible once applied. To revert back to TPM 1.2 by using a [firmware update](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=F3J3P) It also requires that the TPM memory and configuration is completely cleared.
 
 **Note:** As for BIOS updates, please make sure the laptop is plugged in to a power source and that power source is stable.
 

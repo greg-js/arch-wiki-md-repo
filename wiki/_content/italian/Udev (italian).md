@@ -66,7 +66,7 @@ Udev rileva i cambiamenti alle file delle regole automaticamente, quindi i cambi
 
 ### UDisks
 
-[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [udisks](https://www.archlinux.org/packages/?name=udisks) e tutte le periferiche verranno montate automaticamente in GNOME e KDE SC 4.6\. Non sarà necessario utilizzare regole aggiuntive per questo metodo. In aggiunta, se si utilizza HAL solamente per il mount automatico delle periferiche, a questo punto sarà possibile rimuoverlo.
+[Installare](/index.php/Pacman_(Italiano) "Pacman (Italiano)") il pacchetto [udisks](https://aur.archlinux.org/packages/udisks/) e tutte le periferiche verranno montate automaticamente in GNOME e KDE SC 4.6\. Non sarà necessario utilizzare regole aggiuntive per questo metodo. In aggiunta, se si utilizza HAL solamente per il mount automatico delle periferiche, a questo punto sarà possibile rimuoverlo.
 
 #### UDisks Wrapper
 

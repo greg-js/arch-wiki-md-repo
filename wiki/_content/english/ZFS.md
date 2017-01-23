@@ -276,7 +276,7 @@ This example line is only necessary if you are using the Git branch of ZoL:
                 -o feature@enabled_txg=enabled \
                 -o feature@hole_birth=enabled \
                 -o feature@bookmarks=enabled \
-                -o feature@filesystem_limits \
+                -o feature@filesystem_limits=enabled \
                 -o feature@embedded_data=enabled \
                 -o feature@large_blocks=enabled \
                 <pool_name> <vdevs>

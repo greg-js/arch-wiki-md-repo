@@ -36,7 +36,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
     *   to open a new task in the "Keyring" project of the bug tracker following the instructions in [this message](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) in order to have your PGP key signed by three master key holders.
 12.  Install the [devtools](https://www.archlinux.org/packages/?name=devtools) package.
 13.  [Configure your private ssh key](/index.php/Arch_User_Repository#Authentication "Arch User Repository") for `orion.archlinux.org` and `repos.archlinux.org` hosts.
-14.  Ssh to yourname@orion.archlinux.org (once you have permissions). Make the directories `~/staging/community` and `~/staging/community-testing` (and `~/staging/multilib` if you are interested in maintaining multilib packages). This step is **important** as the devtools scripts use this directory to process incoming packages.
+14.  Ssh to yourname@orion.archlinux.org (once you have permissions).
 15.  If you are not upgraded to a Trusted User group on bug tracker in two days, report this as a bug to arch-dev-public.
 16.  Start contributing!
 

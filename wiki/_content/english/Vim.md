@@ -5,10 +5,11 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Syntax highlighting](#Syntax_highlighting)
-    *   [3.2 Visual wrapping](#Visual_wrapping)
-    *   [3.3 Using the mouse](#Using_the_mouse)
-    *   [3.4 Traverse line breaks with arrow keys](#Traverse_line_breaks_with_arrow_keys)
+    *   [3.1 Clipboard](#Clipboard)
+    *   [3.2 Syntax highlighting](#Syntax_highlighting)
+    *   [3.3 Visual wrapping](#Visual_wrapping)
+    *   [3.4 Using the mouse](#Using_the_mouse)
+    *   [3.5 Traverse line breaks with arrow keys](#Traverse_line_breaks_with_arrow_keys)
 *   [4 Merging files](#Merging_files)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Line numbers](#Line_numbers)
@@ -54,6 +55,16 @@ Vim includes a broad help system that can be accessed with the `:h *subject*` co
 Vim's user-specific configuration file is located in the home directory: `~/.vimrc`, and Vim files of current user are located inside `~/.vim/`. The global configuration file is located at `/etc/vimrc`. Global Vim files are located inside `/usr/share/vim/`.
 
 **Note:** Commonly expected behavior such as syntax highlighting is enabled in `defaults.vim`, which is loaded when no `~/.vimrc` is present. Add `let skip_defaults_vim=1` to `/etc/vimrc` to disable loading of `defaults.vim` completely. [[1]](https://github.com/vim/vim/issues/1033)
+
+### Clipboard
+
+Vim commands such as `:yank` or `:paste` operate with the unnamed register, which by default corresponds to the `"*` register. If the `+clipboard` feature is available, the `"*` register is reflected to the `PRIMARY` buffer in X.
+
+To change the default register, you can `:set clipboard=unnamedplus` to use the `"+` register instead. The `"+` register corresponds to the `CLIPBOARD` buffer in X.
+
+For more information, see `:help 'clipboard'`.
+
+**Tip:** Custom shortcuts for copy and paste operations can be created. See e.g. [[2]](http://superuser.com/a/189198) for binding `ctrl+c`, `ctrl+v` and `ctrl+x`.
 
 ### Syntax highlighting
 
