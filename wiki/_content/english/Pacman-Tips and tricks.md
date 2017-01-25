@@ -497,12 +497,14 @@ An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepk
 *   These tasks can be automated, see [plist-gist](https://aur.archlinux.org/packages/plist-gist/), [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) or [pacmanity](https://aur.archlinux.org/packages/pacmanity/) for examples.
 *   To skip already installed packages, use `--needed`.
 
-Keeping a list of native, explicitly installed packages can be useful to speed up installation on a new system.
+Keeping a list of explicitly installed packages can be useful to speed up installation on a new system:
 
 ```
-$ pacman -Qqen > pkglist.txt
+$ pacman -Qqe > pkglist.txt
 
 ```
+
+**Note:** If you used `-Qqet`, when reinstalling the list all the non-top-level packages would be set as dependencies.
 
 To install packages from the list backup, run:
 
@@ -511,6 +513,8 @@ To install packages from the list backup, run:
 
 ```
 
+**Tip:** Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
+
 In case the list includes foreign packages, such as [AUR](/index.php/AUR "AUR") packages, remove them first:
 
 ```
@@ -518,7 +522,7 @@ In case the list includes foreign packages, such as [AUR](/index.php/AUR "AUR") 
 
 ```
 
-To remove all the packages on your system that are not mentioned in the list.
+To remove all the packages on your system that are not mentioned in the list:
 
 ```
 # pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))

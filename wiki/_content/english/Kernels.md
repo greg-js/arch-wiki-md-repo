@@ -148,7 +148,7 @@ You can search Google for more sets, but remember to use quotes (`"-nitro"`, for
 
 #### -ck
 
-[Linux-ck](/index.php/Linux-ck "Linux-ck") contains patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The patches are created and maintained by Con Kolivas, his site is at [http://users.on.net/~ckolivas/kernel/](http://users.on.net/~ckolivas/kernel/). Con maintains a full set but also provides the patches broken down so you can add only those you prefer.
+[Linux-ck](/index.php/Linux-ck "Linux-ck") contains patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The patches are created and maintained by Con Kolivas, his site is at [http://users.tpg.com.au/ckolivas/kernel/](http://users.tpg.com.au/ckolivas/kernel/). Con maintains a full set but also provides the patches broken down so you can add only those you prefer.
 
 The -ck patches can be found at [http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/)
 

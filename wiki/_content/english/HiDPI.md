@@ -39,7 +39,8 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [7.9 Gimp 2.8](#Gimp_2.8)
     *   [7.10 VLC](#VLC)
     *   [7.11 Steam](#Steam)
-    *   [7.12 Unsupported applications](#Unsupported_applications)
+    *   [7.12 Java applications](#Java_applications)
+    *   [7.13 Unsupported applications](#Unsupported_applications)
 *   [8 Multiple displays](#Multiple_displays)
     *   [8.1 Side display](#Side_display)
     *   [8.2 Mirroring](#Mirroring)
@@ -444,6 +445,15 @@ The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be 
 **Note:** The skin must be downloaded to `~/.local/share/Steam/skins`, not `~/.steam/skins/` as the README says.
 
 [MetroSkin Unofficial Patch](http://steamcommunity.com/groups/metroskin/discussions/0/517142253861033946/) also helps with HiDPI on Steam with Linux.
+
+### Java applications
+
+Java applications using the AWT/Swing framework can be scaled by defining the sun.java2d.uiScale variable when invoking java. For example,
+
+```
+java -Dsun.java2d.uiScale=2 -jar some_application.jar
+
+```
 
 ### Unsupported applications
 

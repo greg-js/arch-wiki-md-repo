@@ -33,6 +33,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
     *   [5.12 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
+    *   [5.13 No protocol specified](#No_protocol_specified)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -391,6 +392,27 @@ Easy fix:
 
 ```
 # ln -s /usr/lib/vmware/bin/wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
+
+```
+
+### No protocol specified
+
+You may see this error when you try to run the installer for the first time.
+
+```
+ Extracting VMware Installer...done.
+ No protocol specified
+ No protocol specified
+ User interface initialization failed.  Exiting.  Check the log for details.
+
+```
+
+One way to fix this error is to temporarily allow root access to `xhost`.
+
+```
+ $ xhost +
+ $ sudo ./<vmware filename>.bundle
+ $ xhost -
 
 ```
 

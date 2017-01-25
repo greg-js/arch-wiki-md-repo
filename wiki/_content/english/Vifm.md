@@ -21,6 +21,7 @@ If you use [vi](/index.php/Vi "Vi"), Vifm gives you complete keyboard control ov
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Useful key mappings](#Useful_key_mappings)
     *   [4.2 Non-vim Users](#Non-vim_Users)
+    *   [4.3 Total size of selected files](#Total_size_of_selected_files)
 
 ## Installation
 
@@ -242,3 +243,12 @@ Single stroke to access command line
 ### Non-vim Users
 
 `vifm` assumes that you are using `vim` and will throw errors if it doesn't find it. If you are using `vi` or `nvim` ([Neovim](/index.php/Neovim "Neovim")), you need to edit your `~/.vifm/vifmrc` file. Comment out the line `set vicmd=vim` and replace it with `set vicmd=vi` or `set vicmd=nvim`. Note that, just like `.exrc`, comment lines are introduced by double quotes.
+
+### Total size of selected files
+
+To get the total size of selected files change %s to %E in `~/.vifm/vifmrc`, like so:
+
+```
+   set statusline="  %t%= %A %10u:%-7g %15E %20d  "
+
+```

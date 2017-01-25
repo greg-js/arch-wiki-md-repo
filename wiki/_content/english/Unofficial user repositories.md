@@ -14,11 +14,10 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
 *   [2 Any](#Any)
     *   [2.1 Signed](#Signed)
         *   [2.1.1 archstrike](#archstrike)
-        *   [2.1.2 infinality-bundle-fonts](#infinality-bundle-fonts)
-        *   [2.1.3 ivasilev](#ivasilev)
-        *   [2.1.4 pkgbuilder](#pkgbuilder)
-        *   [2.1.5 xyne-any](#xyne-any)
-        *   [2.1.6 youtube-dl](#youtube-dl)
+        *   [2.1.2 ivasilev](#ivasilev)
+        *   [2.1.3 pkgbuilder](#pkgbuilder)
+        *   [2.1.4 xyne-any](#xyne-any)
+        *   [2.1.5 youtube-dl](#youtube-dl)
     *   [2.2 Unsigned](#Unsigned)
         *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
@@ -35,16 +34,15 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [3.1.10 haskell-happstack](#haskell-happstack)
         *   [3.1.11 haskell-web](#haskell-web)
         *   [3.1.12 herecura](#herecura)
-        *   [3.1.13 infinality-bundle](#infinality-bundle)
-        *   [3.1.14 ivasilev](#ivasilev_2)
-        *   [3.1.15 llvm-svn](#llvm-svn)
-        *   [3.1.16 miffe](#miffe)
-        *   [3.1.17 repo-ck](#repo-ck)
-        *   [3.1.18 seblu](#seblu)
-        *   [3.1.19 seiichiro](#seiichiro)
-        *   [3.1.20 sergej-repo](#sergej-repo)
-        *   [3.1.21 tredaelli-systemd](#tredaelli-systemd)
-        *   [3.1.22 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+        *   [3.1.13 ivasilev](#ivasilev_2)
+        *   [3.1.14 llvm-svn](#llvm-svn)
+        *   [3.1.15 miffe](#miffe)
+        *   [3.1.16 repo-ck](#repo-ck)
+        *   [3.1.17 seblu](#seblu)
+        *   [3.1.18 seiichiro](#seiichiro)
+        *   [3.1.19 sergej-repo](#sergej-repo)
+        *   [3.1.20 tredaelli-systemd](#tredaelli-systemd)
+        *   [3.1.21 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 archaudio](#archaudio)
         *   [3.2.2 archlinuxfr](#archlinuxfr)
@@ -84,14 +82,13 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.1.10 eatabrick](#eatabrick)
         *   [5.1.11 freifunk-rheinland](#freifunk-rheinland)
         *   [5.1.12 holo](#holo)
-        *   [5.1.13 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.14 linux-kalterfx](#linux-kalterfx)
-        *   [5.1.15 markzz](#markzz)
-        *   [5.1.16 qt-debug](#qt-debug)
-        *   [5.1.17 quarry](#quarry)
-        *   [5.1.18 siosm-aur](#siosm-aur)
-        *   [5.1.19 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.20 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.13 linux-kalterfx](#linux-kalterfx)
+        *   [5.1.14 markzz](#markzz)
+        *   [5.1.15 qt-debug](#qt-debug)
+        *   [5.1.16 quarry](#quarry)
+        *   [5.1.17 siosm-aur](#siosm-aur)
+        *   [5.1.18 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.19 xyne-x86_64](#xyne-x86_64)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 alucryd](#alucryd)
         *   [5.2.2 alucryd-multilib](#alucryd-multilib)
@@ -137,19 +134,6 @@ If you have your own repository, please add it to this page, so that all the oth
 ```
 [archstrike]
 Server = https://mirror.archstrike.org/$arch/$repo
-
-```
-
-#### infinality-bundle-fonts
-
-*   **Maintainer:** [bohoomil](http://bohoomil.com/)
-*   **Description:** infinality-bundle-fonts repository.
-*   **Upstream page:** [Infinality bundle & fonts](http://bohoomil.com/)
-*   **Key-ID:** 962DDE58
-
-```
-[infinality-bundle-fonts]
-Server = http://bohoomil.com/repo/fonts
 
 ```
 
@@ -361,19 +345,6 @@ See [ArchHaskell#haskell-web](/index.php/ArchHaskell#haskell-web "ArchHaskell").
 ```
 [herecura]
 Server = http://repo.herecura.be/$repo/$arch
-
-```
-
-#### infinality-bundle
-
-*   **Maintainer:** [bohoomil](http://bohoomil.com/)
-*   **Description:** infinality-bundle main repository.
-*   **Upstream page:** [Infinality bundle & fonts](http://bohoomil.com/)
-*   **Key-ID:** 962DDE58
-
-```
-[infinality-bundle]
-Server = http://bohoomil.com/repo/$arch
 
 ```
 
@@ -896,19 +867,6 @@ Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
 ```
 [holo]
 Server = https://repo.holocm.org/archlinux/x86_64
-
-```
-
-#### infinality-bundle-multilib
-
-*   **Maintainer:** [bohoomil](http://bohoomil.com/)
-*   **Description:** infinality-bundle multilib repository.
-*   **Upstream page:** [Infinality bundle & fonts](http://bohoomil.com/)
-*   **Key-ID:** 962DDE58
-
-```
-[infinality-bundle-multilib]
-Server = http://bohoomil.com/repo/multilib/$arch
 
 ```
 

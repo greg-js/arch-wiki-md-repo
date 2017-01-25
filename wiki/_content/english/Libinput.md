@@ -214,6 +214,14 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad send-events enabled
 
 ```
 
+Additionally, GNOME may override certain behaviors, like turning off Tapping and forcing Natural Scrolling. In this case the settings must be adapted using GNOMEs `gsettings` command line tool or a graphical frontend of your choice. For example if you wish to enable *Tapping* and disable *Natural Scrolling* for your user, adjust the touchpad key-values like the following:
+
+```
+$ gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+$ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
+
+```
+
 ### Touchpad settings not taking effect in KDE's Touchpad KCM
 
 KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to set the options manually with `xinput set-prop`.

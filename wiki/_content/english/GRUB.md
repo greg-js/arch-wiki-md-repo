@@ -1044,7 +1044,21 @@ Some have reported that other distributions have trouble finding Arch Linux auto
 
 ### Warning when installing in chroot
 
-When installing GRUB on a LVM system in a chroot environment (e.g. during system installation), you may receive warnings like `/run/lvm/lvmetad.socket: connect failed: No such file or directory` or `WARNING: failed to connect to lvmetad: No such file or directory. Falling back to internal scanning.` This is because `/run` is not available inside the chroot. These warnings will not prevent the system from booting, provided that everything has been done correctly, so you may continue with the installation.
+When installing GRUB on a LVM system in a chroot environment (e.g. during system installation), you may receive warnings like
+
+```
+/run/lvm/lvmetad.socket: connect failed: No such file or directory
+
+```
+
+or
+
+```
+WARNING: failed to connect to lvmetad: No such file or directory. Falling back to internal scanning.
+
+```
+
+This is because `/run` is not available inside the chroot. These warnings will not prevent the system from booting, provided that everything has been done correctly, so you may continue with the installation.
 
 ### GRUB loads slowly
 

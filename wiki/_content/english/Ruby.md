@@ -3,9 +3,8 @@ Ruby is a dynamic, interpreted, open source programming language with a focus on
 ## Contents
 
 *   [1 Installing Ruby](#Installing_Ruby)
-    *   [1.1 Older versions](#Older_versions)
-    *   [1.2 Multiple versions](#Multiple_versions)
-    *   [1.3 Documentation](#Documentation)
+    *   [1.1 Multiple versions](#Multiple_versions)
+    *   [1.2 Documentation](#Documentation)
 *   [2 RubyGems](#RubyGems)
     *   [2.1 Setup](#Setup)
     *   [2.2 Usage](#Usage)
@@ -18,12 +17,6 @@ Ruby is a dynamic, interpreted, open source programming language with a focus on
 ## Installing Ruby
 
 For the latest version of Ruby, [install](/index.php/Install "Install") the [ruby](https://www.archlinux.org/packages/?name=ruby) package. It includes [RubyGems](#RubyGems).
-
-### Older versions
-
-*   For Ruby 2.2, install the [ruby2.2](https://aur.archlinux.org/packages/ruby2.2/) package.
-*   For Ruby 2.1, install the [ruby2.1](https://www.archlinux.org/packages/?name=ruby2.1) package.
-*   For Ruby 2.0, install the [ruby2.0](https://aur.archlinux.org/packages/ruby2.0/) package.
 
 ### Multiple versions
 

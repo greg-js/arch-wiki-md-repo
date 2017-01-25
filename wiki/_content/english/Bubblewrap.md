@@ -48,7 +48,6 @@ cgroup  ipc  mnt  net  pid  user uts
 
 ```
 $ bwrap --ro-bind / / --unshare-user --uid 256 --gid 512 bash
-bash: no job control in this shell
 bash-4.4$ id
 uid=256 gid=512 groups=512,65534(nobody)
 bash-4.4$ ls -l /usr/bin/bash
@@ -188,7 +187,6 @@ $ bwrap \
 --unshare-all \
 --share-net \
  /usr/bin/sh
-bash: no job control in this shell
 bash-4.4$ ls -AF
 .Xauthority  Documents/
 

@@ -1,127 +1,117 @@
 Back to [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system")
 
-It is possible to configure [PAM](/index.php/PAM "PAM") and [systemd](/index.php/Systemd "Systemd") to automatically mount a [dm-crypt](/index.php/Dm-crypt "Dm-crypt") encrypted home partition when its owner logs in, and to unmount it when he logs out.
+**Note:** This tutorial assumes you've already created your encrypted partition, as described in [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system").
+
+**Note:** You need to use the same password for your account and for the partition.
 
 ## Contents
 
-*   [1 General idea](#General_idea)
-*   [2 Helper scripts](#Helper_scripts)
-    *   [2.1 /usr/local/bin/savepass](#.2Fusr.2Flocal.2Fbin.2Fsavepass)
-    *   [2.2 /usr/local/bin/securemount](#.2Fusr.2Flocal.2Fbin.2Fsecuremount)
-    *   [2.3 /usr/local/bin/secureumount](#.2Fusr.2Flocal.2Fbin.2Fsecureumount)
-*   [3 PAM configuration](#PAM_configuration)
-*   [4 systemd service](#systemd_service)
+*   [1 Unlocking](#Unlocking)
+*   [2 Mounting](#Mounting)
+    *   [2.1 Explicit dependencies and ordering](#Explicit_dependencies_and_ordering)
+*   [3 Unmouting on logout](#Unmouting_on_logout)
+*   [4 Locking on unmount](#Locking_on_unmount)
+*   [5 Tips](#Tips)
+    *   [5.1 SDDM](#SDDM)
 
-## General idea
+**Note:** In all the examples, replace *YOURNAME* with your username, *1000* with your user ID and */dev/PARTITION* with the path of your encrypted partition's device.
 
-We're going to save the user's password during the PAM authentication phase, and put it into the kernel's keyring. Next, we're going to use it in a systemd service, started automatically before systemd's own user@.service, to unlock and mount the partition at the correct place.
+## Unlocking
 
-When the user logs out, systemd will stop user@.service, and (because of a dependency) our service too - unmounting and locking the partition.
-
-## Helper scripts
-
-You need 3 helper scripts:
-
-### /usr/local/bin/savepass
-
-Script that saves the pam-provided password in the kernel's keyring (for root user).
-
- `/usr/local/bin/savepass` 
-```
-#!/bin/sh
-exec keyctl padd user user:`id -u $PAM_USER` @u
-
-```
-
-### /usr/local/bin/securemount
-
-Script that unlocks given device with a key obtained from the kernel's keyring, and mounts it at the given place.
-
- `/usr/local/bin/securemount` 
-```
-#!/bin/sh
-set -e
-KEYNAME=$1
-DEVICE=$2
-TARGET=$3
-DEC_DEVICE_NAME=$(/usr/bin/systemd-escape -p `/usr/bin/realpath $DEVICE`)
-DEC_DEVICE=/dev/mapper/$DEC_DEVICE_NAME
-
-/usr/bin/keyctl pipe `/usr/bin/keyctl request user $KEYNAME` | /usr/bin/cryptsetup open $DEVICE $DEC_DEVICE_NAME -d -
-/usr/bin/mount $DEC_DEVICE $TARGET
-
-```
-
-### /usr/local/bin/secureumount
-
-Script that unmounts and closes the encrypted device.
-
- `/usr/local/bin/secureumount` 
-```
-#!/bin/sh
-set -e
-TARGET=$1
-DEC_DEVICE=$(cat /proc/mounts | grep " $TARGET " | cut -d " " -f 1)
-
-/usr/bin/umount $TARGET
-/usr/bin/cryptsetup close $DEC_DEVICE
-
-```
-
-## PAM configuration
-
-Add `auth optional pam_exec.so expose_authtok /usr/local/bin/savepass` before `auth optional pam_permit.so`:
-
- `/etc/pam.d/system-auth` 
+Add `auth       optional   pam_exec.so expose_authtok quiet /usr/bin/cryptsetup open */dev/PARTITION* home-*YOURNAME*` after `auth       include    system-auth` in the **/etc/pam.d/system-login** config file. `/etc/pam.d/system-login **EXAMPLE**` 
 ```
 #%PAM-1.0
 
-auth      required  pam_unix.so     try_first_pass nullok
-**auth      optional  pam_exec.so     expose_authtok /usr/local/bin/savepass**
-auth      optional  pam_permit.so
-auth      required  pam_env.so
+auth       required   pam_tally.so         onerr=succeed file=/var/log/faillog
+auth       required   pam_shells.so
+auth       requisite  pam_nologin.so
+auth       include    system-auth
+auth       optional   pam_exec.so expose_authtok quiet /usr/bin/cryptsetup open */dev/PARTITION* home-*YOURNAME*
 
-account   required  pam_unix.so
-account   optional  pam_permit.so
-account   required  pam_time.so
+account    required   pam_access.so
+account    required   pam_nologin.so
+account    include    system-auth
 
-password  required  pam_unix.so     try_first_pass nullok sha512 shadow
-password  optional  pam_permit.so
+password   include    system-auth
 
-session   required  pam_limits.so
-session   required  pam_unix.so
-session   optional  pam_permit.so
-
+session    optional   pam_loginuid.so
+session    include    system-auth
+session    optional   pam_motd.so          motd=/etc/motd
+session    optional   pam_mail.so          dir=/var/spool/mail standard quiet
+-session   optional   pam_systemd.so
+session    required   pam_env.so
 ```
 
-## systemd service
+## Mounting
 
-Create a new service file in the /etc/systemd/system directory. Replace **123** with the user's ID, **/home/xyz** with the path you want to mount the partition at, and both **c139ae70*\x2d*5861*\x2d*4084*\x2d*84b1*\x2d*7d83f7bb7129** and **c139ae70-5861-4084-84b1-7d83f7bb7129** with the UUID of the encrypted partition. Note, that in the first case you need to use **\x2d** in place of all **-** signs.
+ `/etc/fstab`  `/dev/mapper/home-*YOURNAME*  /home/*YOURNAME*     ext4            rw,noatime,noauto,x-systemd.automount 0 2` 
 
- `/etc/systemd/system/homedir@**123**.service` 
+That's it! Your home directory will be mounted automatically on the first access made by your Desktop Environment or shell.
+
+However, you might want to describe the dependencies and ordering explicitly, as if you want to set up automatic unmounting on logout - you'll end up with a circular dependency loop that cannot by resolved automatically by systemd:
+
+### Explicit dependencies and ordering
+
+ `/etc/systemd/system/user@*1000*.service.d/homedir.conf` 
 ```
 [Unit]
-Description=Home Directory for %I
+Requires=home-*YOURNAME*.mount
+After=home-*YOURNAME*.mount
+```
+
+## Unmouting on logout
+
+After you log out of all your sessions, systemd-logind automatically shuts down user@*1000*.service. Therefore, you can specify that your mountpoint requires it - and it'll get unmounted automatically by systemd.
+
+ `/etc/systemd/system/home-*YOURNAME*.mount.d/logout.conf` 
+```
+[Unit]
+Requires=user@*1000*.service
+```
+
+**Note:** This will create a circular dependency, resolvable as described in the section above.
+
+**Note:** If your DE or some other application does not kill all its processes on logout, you might need to set KillUserProcesses=yes in **/etc/systemd/logind.conf**.
+
+## Locking on unmount
+
+After unmounting, the device will still be unlocked, and it'll be possible to mount it without re-entering password. Therefore, you can set up a service that starts when the device gets unlocked (BindsTo=dev-mapper-home\x2d*YOURNAME*.device) and dies after the device gets unmounted (Requires,Before=home-*YOURNAME*.mount), locking the device in the process (ExecStop=cryptsetup close).
+
+ `/etc/systemd/cryptsetup-*YOURNAME*.service` 
+```
+[Unit]
 DefaultDependencies=no
+BindsTo=*dev-PARTITION*.device
+After=*dev-PARTITION*.device
+BindsTo=dev-mapper-home\x2d*YOURNAME*.device
+Requires=home-*YOURNAME*.mount
+Before=home-*YOURNAME*.mount
 Conflicts=umount.target
-IgnoreOnIsolate=true
-Before=user@%i.service
-Requires=user@%i.service
-BindsTo=dev-disk-by\x2duuid-**c139ae70*\x2d*5861*\x2d*4084*\x2d*84b1*\x2d*7d83f7bb7129**.device
-After=dev-disk-by\x2duuid-**c139ae70*\x2d*5861*\x2d*4084*\x2d*84b1*\x2d*7d83f7bb7129**.device
 Before=umount.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
 TimeoutSec=0
-ExecStart=/usr/local/bin/securemount user:%i /dev/disk/by-uuid/**c139ae70-5861-4084-84b1-7d83f7bb7129** **/home/xyz**
-ExecStop=/usr/local/bin/secureumount **/home/xyz**
+ExecStop=/usr/bin/cryptsetup close home-*YOURNAME*
 
 [Install]
-RequiredBy=user@%i.service
+RequiredBy=dev-mapper-home\x2d*YOURNAME*.device
 ```
 
-Finally, enable the service.
+**Note:** *dev-PARTITION* is the result of **systemd-escape -p */dev/PARTITION***
+ `systemctl enable cryptsetup-*YOURNAME*.service` 
 
- `systemctl enable homedir@123.service`
+## Tips
+
+### SDDM
+
+SDDM by default tries to display avatars of users by accessing ~/.face.icon file. As your home directory is an autofs, this will make it wait for 60 seconds - until autofs reports that the directory cannot be mounted.
+
+You can disable avatars by editing /etc/sddm.conf:
+
+ `/etc/sddm.conf` 
+```
+[Theme]
+EnableAvatars=false
+```

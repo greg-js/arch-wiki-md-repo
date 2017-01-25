@@ -493,14 +493,14 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 #### Persian
 
 *   [persian-fonts](https://aur.archlinux.org/packages/persian-fonts/) - Meta package for installing all Persian fonts in AUR.
-*   [ttf-borna](https://aur.archlinux.org/packages/ttf-borna/) - Borna Rayaneh Persian B font series.
-*   [ttf-iran-nastaliq](https://aur.archlinux.org/packages/ttf-iran-nastaliq/) - A free Unicode calligraphic Persian font created by Iran Supreme Council of Information and Communication Technology (SCICT).
-*   [ttf-iranian-sans](https://aur.archlinux.org/packages/ttf-iranian-sans/) and [ttf-iranian-serif](https://aur.archlinux.org/packages/ttf-iranian-serif/) - A family of fonts, designed by support from Iranian National Initiative for Free and Open Source Software to provide a good looking and free font for Persian script.
-*   [ttf-irfonts](https://aur.archlinux.org/packages/ttf-irfonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts series.
-*   [ttf-persian-hm-ftx](https://aur.archlinux.org/packages/ttf-persian-hm-ftx/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series, Metafont and FarsiTeX fonts with Kashida feature.
-*   [ttf-persian-hm-xs2](https://aur.archlinux.org/packages/ttf-persian-hm-xs2/) - An improved and corrected font series derived from [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) Persian font series with Kashida feature.
-*   [ttf-sina](https://aur.archlinux.org/packages/ttf-sina/) - Sina Pardazesh Persian font series.
-*   [ttf-vazir](https://aur.archlinux.org/packages/ttf-vazir/), [ttf-samim](https://aur.archlinux.org/packages/ttf-samim/), [ttf-tanha](https://aur.archlinux.org/packages/ttf-tanha/), [ttf-shabnam](https://aur.archlinux.org/packages/ttf-shabnam/), [ttf-gandom](https://aur.archlinux.org/packages/ttf-gandom/), [ttf-parastoo](https://aur.archlinux.org/packages/ttf-parastoo/) - Beautiful Persian fonts made by Ali Rasti Kerdar.
+*   [borna-fonts](https://aur.archlinux.org/packages/borna-fonts/) - Borna Rayaneh Co. Persian B font series.
+*   [iran-nastaliq-fonts](https://aur.archlinux.org/packages/iran-nastaliq-fonts/) - A free Unicode calligraphic Persian font.
+*   [iranian-fonts](https://aur.archlinux.org/packages/iranian-fonts/) - Iranian-Sans and Iranian-Serif Persian font family.
+*   [ir-standard-fonts](https://aur.archlinux.org/packages/ir-standard-fonts/) - Iran Supreme Council of Information and Communication Technology (SCICT) standard Persian fonts.
+*   [persian-hm-ftx-fonts](https://aur.archlinux.org/packages/persian-hm-ftx-fonts/) - A Persian font series derived from X Series 2, Metafont and FarsiTeX fonts with Kashida feature.
+*   [persian-hm-xs2-fonts](https://aur.archlinux.org/packages/persian-hm-xs2-fonts/) - A Persian font series derived from X Series 2 fonts with Kashida feature.
+*   [sina-fonts](https://aur.archlinux.org/packages/sina-fonts/) - Sina Pardazesh Co. Persian font series.
+*   [gandom-fonts](https://aur.archlinux.org/packages/gandom-fonts/), [parastoo-fonts](https://aur.archlinux.org/packages/parastoo-fonts/), [sahel-fonts](https://aur.archlinux.org/packages/sahel-fonts/), [samim-fonts](https://aur.archlinux.org/packages/samim-fonts/), [shabnam-fonts](https://aur.archlinux.org/packages/shabnam-fonts/), [tanha-fonts](https://aur.archlinux.org/packages/tanha-fonts/), [vazir-fonts](https://aur.archlinux.org/packages/vazir-fonts/), [vazir-code-fonts](https://aur.archlinux.org/packages/vazir-code-fonts/) - Beautiful Persian fonts made by Ali Rasti Kerdar.
 *   [ttf-yas](https://aur.archlinux.org/packages/ttf-yas/) - The Yas Persian font series (with **hollow zero**).
 *   [ttf-x2](https://aur.archlinux.org/packages/ttf-x2/) - Free fonts with support for Persian, Arabic, Urdu, Pashto, Dari, Uzbek, Kurdish, Uighur, old Turkish (Ottoman) and modern Turkish (Roman).
 

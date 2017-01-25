@@ -45,21 +45,21 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 * * *
 
 | Título | Descrição | Responsável | Status |
-| [pacman](/index.php/Pacman "Pacman") | Documento mostrando como usar o pacman | [Hugo Doria](/index.php?title=User:HugoDoria&action=edit&redlink=1 "User:HugoDoria (page does not exist)") | Concluído |
-| [GNOME](/index.php/GNOME "GNOME") | Tradução do guia do ambiente GNOME | [Hugo Doria](/index.php?title=User:HugoDoria&action=edit&redlink=1 "User:HugoDoria (page does not exist)") | Concluído |
-| [ALSA](/index.php/ALSA "ALSA") | Tradução do guia do ALSA | [Hugo Doria](/index.php?title=User:HugoDoria&action=edit&redlink=1 "User:HugoDoria (page does not exist)") | Concluído |
+| [pacman](/index.php/Pacman "Pacman") | Documento mostrando como usar o pacman | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
+| [GNOME](/index.php/GNOME "GNOME") | Tradução do guia do ambiente GNOME | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
+| [ALSA](/index.php/ALSA "ALSA") | Tradução do guia do ALSA | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
 | [Xorg](/index.php/Xorg "Xorg") | Tradução do guia instalação do Xorg. [Documento Original](/index.php/Xorg "Xorg") | [Leandro Inácio](/index.php?title=User:LeandroInacio&action=edit&redlink=1 "User:LeandroInacio (page does not exist)") | Concluído |
 | [ABS](/index.php/ABS "ABS") | Tradução do guia de uso do ABS | [Rodrigo Lima](/index.php?title=User:Lima87&action=edit&redlink=1 "User:Lima87 (page does not exist)") | Concluído |
 | [rc.conf](/index.php/Rc.conf "Rc.conf") | Tradução do artigo rc.conf | [Rodrigo Lima](/index.php?title=User:Lima87&action=edit&redlink=1 "User:Lima87 (page does not exist)") | Concluído |
 | [Configurando a Rede](/index.php/Configurando_a_Rede "Configurando a Rede") | Tradução da entrada "Configuring Network" do wiki oficial | [Rodrigo Dutra](/index.php?title=User:Rodrigo_Dutra&action=edit&redlink=1 "User:Rodrigo Dutra (page does not exist)") | Concluído |
 | [MEncoder](/index.php/MEncoder "MEncoder") | Tradução do [Documento original](/index.php/MEncoder "MEncoder") | [Rodrigo Dutra](/index.php?title=User:Rodrigo_Dutra&action=edit&redlink=1 "User:Rodrigo Dutra (page does not exist)") | Concluído |
 | [Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ") | Tradução do [Documento original](/index.php/Arch64_FAQ "Arch64 FAQ") | [Rodrigo Dutra](/index.php?title=User:Rodrigo_Dutra&action=edit&redlink=1 "User:Rodrigo Dutra (page does not exist)") | Concluído |
-| [OpenOffice](/index.php/OpenOffice "OpenOffice") | Tradução do guia de uso e instalação do OpenOffice | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Concluído |
-| [Exaile](/index.php/Exaile "Exaile") | Tradução do artigo Exaile | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Concluído |
-| Repositorios_Oficiais | Lista e descrição dos repositórios oficiais. [Documento original](/index.php/Official_repositories "Official repositories") | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Concluído |
-| [Enlightenment](/index.php/Enlightenment "Enlightenment") | Tradução do guia do ambiente Enlightenment [Documento original](/index.php/E17 "E17") | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Concluído |
-| Grupos | Tradução do [Documento original](/index.php/Groups "Groups") | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Concluído |
-| [Sudo](/index.php/Sudo "Sudo") | Tradução do [Documento original](/index.php/Sudo "Sudo") | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Concluído |
+| [OpenOffice](/index.php/OpenOffice "OpenOffice") | Tradução do guia de uso e instalação do OpenOffice | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
+| [Exaile](/index.php/Exaile "Exaile") | Tradução do artigo Exaile | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
+| Repositorios_Oficiais | Lista e descrição dos repositórios oficiais. [Documento original](/index.php/Official_repositories "Official repositories") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
+| [Enlightenment](/index.php/Enlightenment "Enlightenment") | Tradução do guia do ambiente Enlightenment [Documento original](/index.php/E17 "E17") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
+| Grupos | Tradução do [Documento original](/index.php/Groups "Groups") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
+| [Sudo](/index.php/Sudo "Sudo") | Tradução do [Documento original](/index.php/Sudo "Sudo") | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Concluído |
 | [Compiz Fusion](/index.php/Compiz_Fusion "Compiz Fusion") | Tradução do artigo Compiz Fusion | [Guilherme Costa](/index.php?title=User:GuilhermeCosta&action=edit&redlink=1 "User:GuilhermeCosta (page does not exist)") | Concluído |
 | [Fluxbox](/index.php/Fluxbox "Fluxbox") | Instalação e configuração do Fluxbox [Documento original](/index.php/Fluxbox "Fluxbox") | [guitar_brasil](/index.php?title=User:Guitar_brasil&action=edit&redlink=1 "User:Guitar brasil (page does not exist)") | Concluído |
 | [Splashy](/index.php/Splashy "Splashy") | Tradução - [Documento Original](/index.php/Splashy "Splashy") | [Memphyx](/index.php?title=User:Memphyx&action=edit&redlink=1 "User:Memphyx (page does not exist)") | Concluído |
@@ -106,12 +106,12 @@ Você quer que alguma documentação do wiki internacional seja traduzida? Envie
 | [Hellanzb](/index.php/Hellanzb "Hellanzb") | Tradução do [Documento original](/index.php/Hellanzb "Hellanzb") | [tati](/index.php?title=User:Thatysx&action=edit&redlink=1 "User:Thatysx (page does not exist)") | Em andamento |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Tradução do [Documento original](/index.php/NetworkManager "NetworkManager") | [Clécio Oliveira](/index.php?title=User:Cleciooliveira&action=edit&redlink=1 "User:Cleciooliveira (page does not exist)") | Em andamento |
 | [Wmii](/index.php/Wmii "Wmii") | Guia de instalação e utilização do Wmii. [Documento Original](/index.php/Wmii "Wmii") | [Cainã Costa](/index.php?title=User:CainaCosta&action=edit&redlink=1 "User:CainaCosta (page does not exist)") | Não iniciada |
-| [KDE](/index.php/KDE "KDE") | Tradução do guia do ambiente KDE | [Fabiano de Melo](/index.php?title=User:FabianoMelo&action=edit&redlink=1 "User:FabianoMelo (page does not exist)") | Não iniciado |
+| [KDE](/index.php/KDE "KDE") | Tradução do guia do ambiente KDE | [Dione Batista](/index.php/User:StrykeONE "User:StrykeONE") | Não iniciado |
 | [ATI Catalyst](/index.php/ATI_Catalyst "ATI Catalyst") | Tradução do [Documento original](/index.php/ATI_Catalyst "ATI Catalyst") | [Robson Berthelsen](/index.php?title=User:Nosbor868&action=edit&redlink=1 "User:Nosbor868 (page does not exist)") | Não iniciado |
 
 ## Equipe de Traducão:
 
-[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [Tulio Albuquerque](/index.php?title=User:Tuco&action=edit&redlink=1 "User:Tuco (page does not exist)"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden")
+[Dione Batista](/index.php/User:StrykeONE "User:StrykeONE"), [José Leandro Costa](/index.php/User:Lokidarkeden "User:Lokidarkeden")
 
 ## Equipe de Revisão:
 

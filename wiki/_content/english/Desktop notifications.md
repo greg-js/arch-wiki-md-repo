@@ -116,6 +116,27 @@ Hello.Show()
 
 **C**
 
+*   Dependency: [glib2](https://www.archlinux.org/packages/?name=glib2)
+*   Build with: `gcc -o hello_world `pkg-config --cflags --libs gio-2.0` hello_world.c`
+
+ `hello_world.c` 
+```
+#include <gio/gio.h>
+int main() {
+	GApplication *application = g_application_new ("hello.world", G_APPLICATION_FLAGS_NONE);
+	g_application_register (application, NULL, NULL);
+	GNotification *notification = g_notification_new ("Hello world!");
+	g_notification_set_body (notification, "This is an example notification.");
+	GIcon *icon = g_themed_icon_new ("dialog-information");
+	g_notification_set_icon (notification, icon);
+	g_application_send_notification (application, NULL, notification);
+	g_object_unref (icon);
+	g_object_unref (notification);
+	g_object_unref (application);
+	return 0;
+}
+```
+
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 *   Build with: `gcc -o hello_world `pkg-config --cflags --libs libnotify` hello_world.c`
 
@@ -206,6 +227,25 @@ Hello.Show()
 ```
 
 **Genie**
+
+*   Dependency: [glib2](https://www.archlinux.org/packages/?name=glib2)
+*   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
+*   Build with: `valac --pkg gio-2.0 hello_world.gs`
+
+ `hello_world.gs` 
+```
+uses 
+	GLib
+
+init
+	var Application = new GLib.Application ("hello.world", GLib.ApplicationFlags.FLAGS_NONE);
+	Application.register ();
+	var Notification = new GLib.Notification ("Hello world");
+	Notification.set_body ("This is an example notification.");
+	var Icon = new GLib.ThemedIcon ("dialog-information");
+	Notification.set_icon (Icon);
+	Application.send_notification (null, Notification);
+```
 
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 *   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
@@ -317,6 +357,22 @@ public class HelloWorld
 ```
 
 **JavaScript**
+
+*   Dependency: [gjs](https://www.archlinux.org/packages/?name=gjs)
+
+ `hello_world.js` 
+```
+#!/usr/bin/gjs
+const Gio = imports.gi.Gio;
+var Application = new Gio.Application ({application_id: "hello.world"});
+Application.register (null);
+var Notification = new Gio.Notification ();
+Notification.set_title ("Hello world");
+Notification.set_body ("This is an example notification.");
+var Icon = new Gio.ThemedIcon ({name: "dialog-information"});
+Notification.set_icon (Icon);
+Application.send_notification (null, Notification);
+```
 
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [gjs](https://www.archlinux.org/packages/?name=gjs)
 
@@ -437,6 +493,23 @@ $hello->show;
 
 **Python**
 
+*   Dependency: [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) (or [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) for Python 2)
+
+ `hello_world.py` 
+```
+#!/usr/bin/python
+import gi
+gi.require_version('Gio', '2.0')
+from gi.repository import Gio
+Application=Gio.Application.new ("hello.world", Gio.ApplicationFlags.FLAGS_NONE);
+Application.register ();
+Notification=Gio.Notification.new ("Hello world");
+Notification.set_body ("This is an example notification.");
+Icon=Gio.ThemedIcon.new ("dialog-information");
+Notification.set_icon (Icon);
+Application.send_notification (None, Notification);
+```
+
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject) (or [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) for Python 2)
 
  `hello_world.py` 
@@ -517,6 +590,26 @@ object HelloWorld {
 ```
 
 **Vala**
+
+*   Dependency: [glib2](https://www.archlinux.org/packages/?name=glib2)
+*   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
+*   Build with: `valac --pkg gio-2.0 hello_world.vala`
+
+ `hello_world.vala` 
+```
+using GLib;
+public class HelloWorld {
+	static void main () {
+		var Application = new GLib.Application ("hello.world", GLib.ApplicationFlags.FLAGS_NONE);
+		Application.register ();
+		var Notification = new GLib.Notification ("Hello world");
+		Notification.set_body ("This is an example notification.");
+		var Icon = new GLib.ThemedIcon ("dialog-information");
+		Notification.set_icon (Icon);
+		Application.send_notification (null, Notification);
+	}
+}
+```
 
 *   Dependency: [libnotify](https://www.archlinux.org/packages/?name=libnotify)
 *   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)

@@ -476,9 +476,9 @@ After=network.target
 
 [Service] 
 Type=oneshot 
-ExecStart=/usr/bin/chroot --userspec=root:root /srv/http/apps/celery /usr/bin/env -i HOME=/ /usr/bin/python -m celery multi start worker1 -c 2 -A package_name --uid=33 --gid=33 --pidfile=/run/celery/celery.pid --logfile=/var/log/celery/celery.log 
-ExecStop=/usr/bin/chroot --userspec=root:root /srv/http/apps/celery /usr/bin/python -m celery multi stopwait worker1 --uid=33 --gid=33 --pidfile=/run/celery/celery.pid --logfile=/var/log/celery/celery.log --loglevel="INFO" 
-ExecReload=/usr/bin/chroot --userspec=root:root /srv/http/apps/celery /usr/bin/python -m celery multi restart worker1 -c 2 -A package_name --uid=33 --gid=33 --pidfile=/run/celery/celery.pid --logfile=/var/log/celery/celery.log 
+ExecStart=/usr/bin/chroot --userspec=root:root /srv/http/apps/celery /usr/bin/env -i HOME=/ /usr/bin/python -m celery multi start 2 -A package_name --uid=33 --gid=33 --pidfile:1=/run/celery1.pid --pidfile:2=/run/celery2.pid --logfile=/var/log/celery/celery.log 
+ExecStop=/usr/bin/chroot --userspec=root:root /srv/http/apps/celery /usr/bin/python -m celery multi stopwait 2 --uid=33 --gid=33 --pidfile:1=/run/celery1.pid --pidfile:2=/run/celery2.pid --logfile=/var/log/celery/celery.log --loglevel="INFO" 
+ExecReload=/usr/bin/chroot --userspec=root:root /srv/http/apps/celery /usr/bin/python -m celery multi restart 2 -A package_name --uid=33 --gid=33 --pidfile:1=/run/celery1.pid --pidfile:2=/run/celery2.pid --logfile=/var/log/celery/celery.log 
 KillMode=control-group 
 RemainAfterExit=yes 
 

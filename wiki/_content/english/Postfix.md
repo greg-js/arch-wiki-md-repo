@@ -448,7 +448,7 @@ PartOf=spamassassin-update.service
 
 This will ensure that Spamassassin's spamd is restarted just before the timer runs. This means the rules will be available the next day if your timer runs daily. This is so that there is no long service interruption while `sa.service` runs as it takes a while to compile rules.
 
-Now you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `spamassassin-update.service`.
+Now you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `spamassassin-update.timer`.
 
 #### SpamAssassin stand-alone generic setup
 
@@ -468,7 +468,7 @@ spamassassin unix -     n       n       -       -       pipe
   flags=R user=spamd argv=/usr/bin/vendor_perl/spamc -e /usr/bin/sendmail -oi -f ${sender} ${recipient}
 ```
 
-Now you can [start](/index.php/Start "Start") `spamassassin.service`.
+Now you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `spamassassin.service`.
 
 #### SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)
 

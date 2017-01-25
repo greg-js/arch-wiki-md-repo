@@ -33,9 +33,8 @@
 *   [3 User-contributed configuration examples](#User-contributed_configuration_examples)
     *   [3.1 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
 *   [4 A note about symbolic fonts](#A_note_about_symbolic_fonts)
-*   [5 Fonts appear smaller than they should with Infinality](#Fonts_appear_smaller_than_they_should_with_Infinality)
-*   [6 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
-*   [7 See also](#See_also)
+*   [5 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
+*   [6 See also](#See_also)
 
 ## Installation and configuration
 
@@ -565,10 +564,6 @@ See [[2]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
 ## A note about symbolic fonts
 
 Many of the more decorated `conky.conf`'s use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/) and [ttf-piechartsformaps](https://aur.archlinux.org/packages/ttf-piechartsformaps/) respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
-
-## Fonts appear smaller than they should with Infinality
-
-If you notice that your *conky* fonts appear smaller than they should, or they do not align properly, it could be caused by a default setting in the infinality freetype2 patch. This setting can cause some programs to display fonts at 72 DPI instead of 96 even if the rest of your system is set to 96\. If you notice a problem open `/etc/fonts/infinality/infinality.conf` search for the section on DPI and change 72 to 96.
 
 ## Universal method to enable true transparency
 

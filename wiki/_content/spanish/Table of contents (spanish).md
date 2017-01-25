@@ -61,7 +61,7 @@
 | <small>4.12.1.</small> [Dispositivos ópticos](/index.php/Category:Optical_(Espa%C3%B1ol) "Category:Optical (Español)") <small>(1)</small> |
 | <small>4.13.</small> [TV cards](/index.php/Category:TV_cards_(Espa%C3%B1ol) "Category:TV cards (Español)") <small>(0)</small> |
 | <small>5.</small> [Gestión de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(5)</small> |
-| <small>5.1.</small> [Sistema de Nombres de Dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(4)</small> |
+| <small>5.1.</small> [Sistema de Nombres de Dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(5)</small> |
 | <small>5.2.</small> [Protocolo de Transferencia de Archivos (FTP)](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)") <small>(1)</small> |
 | <small>5.3.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.4.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |

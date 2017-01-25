@@ -428,7 +428,7 @@ If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot wit
 *   Ensure [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled in your BIOS (if you are not using a signed boot loader)
 *   Ensure your UEFI boot order does not have Windows Boot Manager set first e.g. using [#efibootmgr](#efibootmgr) and what you see in the configuration tool of the UEFI. Some motherboards override by default any settings set with efibootmgr by Windows if it detects it. This is confirmed in a Packard Bell laptop.
 *   If your motherboard is booting the default UEFI path (`\EFI\BOOT\BOOTX64.EFI`), this file may have been overwritten with the Windows boot loader. Try setting the correct boot path e.g. using [#efibootmgr](#efibootmgr).
-*   If the previous steps do not work, you can tell the Windows boot loader to run a different UEFI application. From a Windows Administrator command prompt: `# bcdedit /set {bootmgr} path \EFI\*path*\*to*\*app.efi*` 
+*   If the previous steps do not work, you can tell the Windows boot loader to run a different UEFI application. From a Windows Administrator command prompt: `# bcdedit /set "{bootmgr}" path "\EFI\*path*\*to*\*app.efi*"` 
 *   Alternatively, you can set a startup script in Windows that ensures that the boot order is set correctly every time you boot Windows.
     1.  Open a command prompt with admin privlages. Run `bcdedit /enum firmware` and find your desired boot entry.
     2.  Copy the Identifier, including the brackets, e.g. `{31d0d5f4-22ad-11e5-b30b-806e6f6e6963}`

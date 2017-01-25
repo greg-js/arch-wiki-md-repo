@@ -3163,7 +3163,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.org/wiki/Comparison_of_file_comparison_tools "wikipedia:Comparison of file comparison tools").
 
-**Note:** For managing pacnew/pacsave files specialised tools exist. See [Pacnew and Pacsave files#Managing .pacnew files](/index.php/Pacnew_and_Pacsave_files#Managing_.pacnew_files "Pacnew and Pacsave files").
+For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and Pacsave files#Managing .pacnew files](/index.php/Pacnew_and_Pacsave_files#Managing_.pacnew_files "Pacnew and Pacsave files").
 
 *   **colordiff** — A Perl script wrapper for 'diff' that produces the same output but with pretty 'syntax' highlighting.
 
@@ -3217,7 +3217,7 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 *   **KfileReplace** — GUI for batch processing search and replace operations.
 
-	[https://www.kde.org/applications/utilities/kfilereplace/](https://www.kde.org/applications/utilities/kfilereplace/) || [kfilereplace](https://www.archlinux.org/packages/?name=kfilereplace)
+	[https://www.kde.org/applications/utilities/kfilereplace/](https://www.kde.org/applications/utilities/kfilereplace/) || [kdewebdev-kfilereplace](https://www.archlinux.org/packages/?name=kdewebdev-kfilereplace)
 
 ### Disk cleaning
 

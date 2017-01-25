@@ -40,6 +40,7 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [5.3.2 Balance](#Balance)
     *   [5.4 Snapshots](#Snapshots)
     *   [5.5 Send/receive](#Send.2Freceive)
+    *   [5.6 Deduplication](#Deduplication)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Encryption](#Encryption)
     *   [6.2 Swap file](#Swap_file)
@@ -213,7 +214,7 @@ When installing Arch to an empty Btrfs partition, use the `compress` option when
 
 "A btrfs subvolume is not a block device (and cannot be treated as one) instead, a btrfs subvolume can be thought of as a POSIX file namespace. This namespace can be accessed via the top-level subvolume of the filesystem, or it can be mounted in its own right." [[2]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#Subvolumes)
 
-Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted as `/` (by default), or another subvolume can be [mounted](#Mounting_subvolumes) instead.
+Each Btrfs file system has a top-level subvolume with ID 5\. It can be mounted as `/` (by default), or another subvolume can be [mounted](#Mounting_subvolumes) instead. Subvolumes can be moved around in the filesystem and are rather identified by their id than their path.
 
 See the following links for more details:
 
@@ -273,14 +274,14 @@ where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 **Note:** After changing the default subvolume on a system with [GRUB](/index.php/GRUB "GRUB"), you should run `grub-install` again to notify the bootloader of the changes. See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1615373).
 
-**Warning:** Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible when the default subvolume is mounted. Reference: [Btrfs Wiki Sysadmin Guide](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
+Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[4]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
 ### Commit Interval
 
 The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This can be changed by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
 
 ```
-LABEL=arch64 / btrfs defaults,noatime,ssd,compress=lzo,commit=120 0 0
+LABEL=arch64 / btrfs defaults,noatime,compress=lzo,commit=120 0 0
 
 ```
 
@@ -333,21 +334,16 @@ A more verbose command combining the information of `df` and `show` which direct
 
 ### Defragmentation
 
-Btrfs supports online defragmentation. To defragment the metadata of the root folder:
+Btrfs supports online defragmentation through a [mount option](https://btrfs.wiki.kernel.org/index.php/Mount_options). To manually defragment your root, use:
 
 ```
-# btrfs filesystem defragment /
+# btrfs filesystem defragment -r /
 
 ```
 
-This *will not* defragment the entire file system. For more information read [this page](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ#Defragmenting_a_directory_doesn.27t_work) on the Btrfs wiki.
+Using the above command without the `-r` switch will result in only the metadata held by the subvolume containing the directory being defragmented. This allows for single file defragmentation by simply specifying the path.
 
-To defragment the entire file system verbosely:
-
-```
-# btrfs filesystem defragment -r -v /
-
-```
+Defragmenting a file which has a COW copy (either a snapshot copy or one made with cp --reflink or bcp) plus using the `-c` switch with a compression algorithm may result in two unrelated files effectively increasing the disk usage.
 
 ### RAID
 
@@ -431,6 +427,12 @@ You can also send only the difference between two snapshots. For example, if you
 Now a new subvolume named `root_backup_new` will be present in `/backup`.
 
 See [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) on how to use this for incremental backups and for tools that automate the process.
+
+### Deduplication
+
+Using copy-on-write, Btrfs is able to copy files or whole subvolumes without actually copying the data. However whenever a file is altered a new *proper* copy is created. Deduplication takes this a step further, by actively identifying blocks of data which share common sequences and combining them into an extent with the same copy-on-write semantics.
+
+For an overview of available tools to deduplicate your Btrfs partition have a look at the [upstream Wiki entry](https://btrfs.wiki.kernel.org/index.php/Deduplication#Batch).
 
 ## Known issues
 

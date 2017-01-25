@@ -14,8 +14,7 @@
 *   [2 Any](#Any)
     *   [2.1 Signed](#Signed)
         *   [2.1.1 bioinformatics-any](#bioinformatics-any)
-        *   [2.1.2 infinality-bundle-fonts](#infinality-bundle-fonts)
-        *   [2.1.3 xyne-any](#xyne-any)
+        *   [2.1.2 xyne-any](#xyne-any)
     *   [2.2 Unsigned](#Unsigned)
         *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
@@ -31,12 +30,11 @@
         *   [3.1.9 demz-repo-core](#demz-repo-core)
         *   [3.1.10 gnome-encfs-manager](#gnome-encfs-manager)
         *   [3.1.11 haskell-core](#haskell-core)
-        *   [3.1.12 infinality-bundle](#infinality-bundle)
-        *   [3.1.13 lxqt-git](#lxqt-git)
-        *   [3.1.14 metalgamer](#metalgamer)
-        *   [3.1.15 pipelight](#pipelight)
-        *   [3.1.16 repo-ck](#repo-ck)
-        *   [3.1.17 sergej-repo](#sergej-repo)
+        *   [3.1.12 lxqt-git](#lxqt-git)
+        *   [3.1.13 metalgamer](#metalgamer)
+        *   [3.1.14 pipelight](#pipelight)
+        *   [3.1.15 repo-ck](#repo-ck)
+        *   [3.1.16 sergej-repo](#sergej-repo)
     *   [3.2 Unsigned](#Unsigned_2)
         *   [3.2.1 alucryd](#alucryd)
         *   [3.2.2 archaudio](#archaudio)
@@ -84,12 +82,11 @@
         *   [5.1.6 coderkun-aur-nonfree](#coderkun-aur-nonfree)
         *   [5.1.7 freifunk-rheinland](#freifunk-rheinland)
         *   [5.1.8 heimdal](#heimdal)
-        *   [5.1.9 infinality-bundle-multilib](#infinality-bundle-multilib)
-        *   [5.1.10 siosm-aur](#siosm-aur)
-        *   [5.1.11 siosm-selinux](#siosm-selinux)
-        *   [5.1.12 subtitlecomposer](#subtitlecomposer)
-        *   [5.1.13 xyne-x86_64](#xyne-x86_64)
-        *   [5.1.14 quarry](#quarry)
+        *   [5.1.9 siosm-aur](#siosm-aur)
+        *   [5.1.10 siosm-selinux](#siosm-selinux)
+        *   [5.1.11 subtitlecomposer](#subtitlecomposer)
+        *   [5.1.12 xyne-x86_64](#xyne-x86_64)
+        *   [5.1.13 quarry](#quarry)
     *   [5.2 Unsigned](#Unsigned_4)
         *   [5.2.1 andrwe](#andrwe_2)
         *   [5.2.2 archstudio](#archstudio)
@@ -138,19 +135,6 @@
 ```
 [bioinformatics-any]
 Server = http://decryptedepsilon.bl.ee/repo/any
-
-```
-
-#### infinality-bundle-fonts
-
-*   **维护者** [bohoomil](http://bohoomil.com/)
-*   **描述：** infinality-bundle-fonts repository.
-*   **Upstream page:** [Infinality bundle & fonts](http://bohoomil.com/)
-*   **Key-ID:** 962DDE58
-
-```
-[infinality-bundle-fonts]
-Server = http://bohoomil.com/repo/fonts
 
 ```
 
@@ -337,19 +321,6 @@ Server = http://download.opensuse.org/repositories/home:/moritzmolch:/gencfsm/Ar
 ```
 [haskell-core]
 Server = http://xsounds.org/~haskell/core/$arch
-
-```
-
-#### infinality-bundle
-
-*   **维护者** [bohoomil](http://bohoomil.com/)
-*   **描述：** infinality-bundle main repository.
-*   **Upstream page:** [Infinality bundle & fonts](http://bohoomil.com/)
-*   **Key-ID:** 962DDE58
-
-```
-[infinality-bundle]
-Server = http://bohoomil.com/repo/$arch
 
 ```
 
@@ -911,19 +882,6 @@ Server = http://mirror.fluxent.de/archlinux-custom/$repo/os/$arch
 ```
 [heimdal]
 Server = http://www.kiwilight.com/heimdal/$arch/
-
-```
-
-#### infinality-bundle-multilib
-
-*   **维护者** [bohoomil](http://bohoomil.com/)
-*   **描述：** infinality-bundle multilib repository.
-*   **Upstream page:** [Infinality bundle & fonts](http://bohoomil.com/)
-*   **Key-ID:** 962DDE58
-
-```
-[infinality-bundle-multilib]
-Server = http://bohoomil.com/repo/multilib/$arch
 
 ```
 

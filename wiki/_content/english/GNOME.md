@@ -166,7 +166,12 @@ To learn how to use the GNOME shell effectively read the [GNOME Shell Cheat Shee
 
 The GNOME desktop relies on a configuration database backend (DConf) to store system and application settings. The desktop comes with default configuration settings, installed applications add their own to the database. The basic configuration is done either via the GNOME System Settings panel (*gnome-control-center*) or the preferences of the individual applications. A direct configuration of the DConf database is always possible as well and performed with the *gsettings* command line tool. In particular it can be used to configure settings which are not exposed via the user interface.
 
-GNOME settings are then applied by the GNOME Settings Daemon. Note that the daemon can be run outside of a GNOME session in order to apply GNOME configuration in a non-GNOME environment. Execute `nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &` to do so.
+GNOME settings are then applied by the GNOME Settings Daemon. Note that the daemon can be run outside of a GNOME session in order to apply GNOME configuration in a non-GNOME environment. To do so, execute:
+
+```
+$ nohup /usr/lib/gnome-settings-daemon/gnome-settings-daemon > /dev/null &
+
+```
 
 The configuration is usually performed per user and the rest of this section does not cover how to create configuration templates for a multi-user-system.
 

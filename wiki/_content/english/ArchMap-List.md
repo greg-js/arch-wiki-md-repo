@@ -1030,6 +1030,8 @@ You can use the following website to get your device's coordinates along with a 
 49.874284, 24.044106 "Michael Lutsiuk" # Lviv, Ukraine
 55.669841, 37.279732 "monory" # Odintsovo, Moscow region, Russia
 37.511334, 22.372988 "jansu" # Tripoli, Greece
-52.733978, -0.651432 "Us3rname" # Rutland, United Kingdom 
+52.733978, -0.651432 "Us3rname" # Rutland, United Kingdom
+42.656469, -82.974470 "wjstarrsiii" # Macomb, MI, USA
+37.766202,30.558844 "Özgür Sarıer" # Isparta, Turkey
 
 ```

@@ -38,7 +38,7 @@ See [urxvt(1)](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.p
 
 ### Xresources
 
-Rxvt-unicode is controlled by command-line arguments or [Xresources](/index.php/Xresources "Xresources"). Command-line arguments override, and take precedence over resource settings See the [X resources](/index.php/X_resources "X resources") article for details.
+Rxvt-unicode is controlled by command-line arguments or [Xresources](/index.php/Xresources "Xresources"). Command-line arguments override, and take precedence over resource settings, see the [X resources](/index.php/X_resources "X resources") article for details.
 
 `urxvt --help` prints all available *rxvt* resources to standard error. The man page has full explanations of each resource.
 

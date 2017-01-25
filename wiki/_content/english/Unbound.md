@@ -346,34 +346,24 @@ It is possible to sandbox the default `unbound.service` by restricting [capabili
     *   `/etc/unbound` = Allows the *ExecStartPre* command to complete
     *   `/run` = Allows access to the PID file at `/run/unbound.pid`
 
-**Note:** Changes from the default Arch Linux service file are listed in bold
-
+[Edit](/index.php/Systemd#Drop-in_files "Systemd") `unbound.service` and add the following contents (cf. [FS#52700](https://bugs.archlinux.org/task/52700)):
 ```
 [Unit]
-Description=Unbound DNS Resolver
-After=network.target
-[Service]
-ExecStartPre=/bin/cp -f /etc/trusted-key.key /etc/unbound/
-PIDFile=/run/unbound.pid
-ExecStart=/usr/bin/unbound -d
-ExecReload=/bin/kill -HUP $MAINPID
-Restart=always
-**CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT**
-**MemoryDenyWriteExecute=true**
-**NoNewPrivileges=true**
-**PrivateDevices=true**
-**PrivateTmp=true**
-**ProtectHome=true**
-**ProtectControlGroups=true**
-**ProtectKernelModules=true**
-**ProtectKernelTunables=true**
-**ProtectSystem=strict**
-**ReadWritePaths=/etc/unbound /run**
-**RestrictAddressFamilies=AF_INET AF_UNIX**
-**SystemCallArchitectures=native**
-**SystemCallFilter=~@clock @cpu-emulation @debug @keyring @module mount @obsolete @raw-io**
-[Install]
-WantedBy=multi-user.target
+CapabilityBoundingSet=CAP_IPC_LOCK CAP_NET_BIND_SERVICE CAP_SETGID CAP_SETUID CAP_SYS_CHROOT
+MemoryDenyWriteExecute=true
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectHome=true
+ProtectControlGroups=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=strict
+ReadWritePaths=/etc/unbound /run
+RestrictAddressFamilies=AF_INET AF_UNIX
+RestrictRealtime=true
+SystemCallArchitectures=native
+SystemCallFilter=~@clock @cpu-emulation @debug @keyring @module mount @obsolete @resources
 
 ```
 

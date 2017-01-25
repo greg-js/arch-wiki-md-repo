@@ -385,7 +385,7 @@ EndSection
 
 ### Using libinput
 
-As of version 3.16 GDM/Gnome uses libinput. For the device to work as described in the above section (note that wheel click emulation is not yet supported by libinput) you need to install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and instead append this to `/etc/X11/xorg.conf.d/10-libinput.conf`.
+As of version 3.16 GDM/Gnome uses libinput. For the device to work as described in the above section you need to install [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) and instead append this to `/etc/X11/xorg.conf.d/10-libinput.conf`.
 
  `/etc/X11/xorg.conf.d/10-libinput.conf` 
 ```
@@ -395,6 +395,7 @@ Section "InputClass"
         Driver          "libinput"
         Option          "ScrollMethod" "button"
         Option          "ScrollButton" "8"
+	Option		"MiddleEmulation" "on"
 EndSection
 
 ```

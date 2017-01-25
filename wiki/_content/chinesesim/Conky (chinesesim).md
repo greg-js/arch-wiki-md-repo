@@ -28,9 +28,8 @@ Conky 是一个用于X窗口系统的系统监视软件。它可以运行在 GNU
     *   [4.1 Graysky](#Graysky)
     *   [4.2 A sample rings script with nvidia support](#A_sample_rings_script_with_nvidia_support)
 *   [5 A note about symbolic fonts](#A_note_about_symbolic_fonts)
-*   [6 Fonts appear smaller than they should](#Fonts_appear_smaller_than_they_should)
-*   [7 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
-*   [8 See also](#See_also)
+*   [6 Universal method to enable true transparency](#Universal_method_to_enable_true_transparency)
+*   [7 See also](#See_also)
 
 ## 安装与设置
 
@@ -912,10 +911,6 @@ And the required lua.lua script:
 ## A note about symbolic fonts
 
 Many of the more decorated .conkyrc's use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as 'ttf-pizzadude-bullets' and 'ttf-piechartsformaps' respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
-
-## Fonts appear smaller than they should
-
-If you notice that your conky fonts appear smaller than they should, or they don't align properly, it could be caused by a default setting in the infinality freetype2 patch. This setting can cause some programs to display fonts at 72 DPI instead of 96 even if the rest of your system is set to 96\. If you notice a problem open `/etc/fonts/infinality/infinality.conf` search for the section on DPI and change 72 to 96.
 
 ## Universal method to enable true transparency
 

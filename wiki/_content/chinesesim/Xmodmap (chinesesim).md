@@ -4,10 +4,10 @@
 
 *   [1 介绍](#.E4.BB.8B.E7.BB.8D)
 *   [2 Keymap表](#Keymap.E8.A1.A8)
-*   [3 Custom table](#Custom_table)
-    *   [3.1 Test changes](#Test_changes)
-*   [4 Special keys/signals](#Special_keys.2Fsignals)
-*   [5 Reverse Scrolling](#Reverse_Scrolling)
+*   [3 自定义映射表](#.E8.87.AA.E5.AE.9A.E4.B9.89.E6.98.A0.E5.B0.84.E8.A1.A8)
+    *   [3.1 测试你的修改](#.E6.B5.8B.E8.AF.95.E4.BD.A0.E7.9A.84.E4.BF.AE.E6.94.B9)
+*   [4 特殊的按键](#.E7.89.B9.E6.AE.8A.E7.9A.84.E6.8C.89.E9.94.AE)
+*   [5 MAC OS X的自然滚动](#MAC_OS_X.E7.9A.84.E8.87.AA.E7.84.B6.E6.BB.9A.E5.8A.A8)
 *   [6 Additional resources](#Additional_resources)
 
 ## 介绍
@@ -37,25 +37,25 @@
 
 使用 [xev](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") 来查看每个键对应的 keymap.
 
-**Tip:** There are predefined descriptive keycodes that make mapping additional keys easier (e.g. `XF86AudioMute`, `XF86Mail`). Those keycodes can be found in: `/usr/include/X11/XF86keysym.h`
+**Tip:** 有一些预定义的keycodes被映射成附加的快捷键 (e.g. `XF86AudioMute`, `XF86Mail`). 那些keycodes能在这个文件找到: `/usr/include/X11/XF86keysym.h`
 
-## Custom table
+## 自定义映射表
 
-You can create your own map and store it in your home directory (i.e. `~/.Xmodmap`). Print the current keymap table into a configuration file:
+你可以创建自己的映射表并且把它储存在你的`home`目录下(i.e. `~/.Xmodmap`). 输出当前键盘映射表到一个配置文件中：
 
 ```
 xmodmap -pke > ~/.Xmodmap
 
 ```
 
-Make the desired changes to `~/.Xmodmap` and then test the new configuration with:
+在 `~/.Xmodmap` 文件中做好想要的修改 然后测试新的配置文件：
 
 ```
 xmodmap ~/.Xmodmap
 
 ```
 
-To activate your custom table when starting Xorg add the following:
+要在启动Xorg时激活你自己的映射表，请添加下面的文件和内容：
 
  `~/.xinitrc` 
 ```
@@ -64,11 +64,11 @@ if [ -f $HOME/.Xmodmap ]; then
 fi
 ```
 
-Alternatively, edit the global startup script `/etc/X11/xinit/xinitrc`.
+或者你也可以编辑全局启动脚本 `/etc/X11/xinit/xinitrc`.
 
-### Test changes
+### 测试你的修改
 
-You can also make temporary changes for the current session. For example:
+你也可以在当前会话做临时的修改。 一个例子：
 
 ```
 xmodmap -e "keycode  46 = l L l L lstroke Lstroke lstroke"
@@ -76,11 +76,11 @@ xmodmap -e "keysym a = e E"
 
 ```
 
-## Special keys/signals
+## 特殊的按键
 
-You can also also edit the keys: `Shift`, `Ctrl`, `Alt` and `Super` (there always exists a left and a right one (Alt_R=AltGr))
+你也可以编辑这些特殊的按键： `Shift`, `Ctrl`, `Alt` and `Super` (这里存在左右之分 (Alt_R=AltGr))
 
-At first you have to delete/clear the signals that should be edited. In the beginning of your `~/.Xmodmap`:
+首先你必须delete/clear你想要编辑的按键在`~/.Xmodmap`这个文件的开头:
 
 ```
 !clear Shift
@@ -96,9 +96,9 @@ keycode   8 =
 
 ```
 
-Remember, `!` is a comment so only `Control` and `Mod4` (Standard: Super_L Super_R) get cleared.
+记住, `!` 是一个注释符号 所以只有 `Control` 和 `Mod4` (Standard: Super_L Super_R) 被clear了.
 
-Write the new signals at the end of `~/.Xmodmap`
+把你的修改写到 `~/.Xmodmap` 文件末尾
 
 ```
 keycode 255 =
@@ -113,7 +113,7 @@ add Mod4    = Control_L Control_R
 
 ```
 
-The `Super` keys have now been exchanged with the `Ctrl` keys.
+现在 `Super` 键 和 `Ctrl` 键被交换了.
 
 附加一个将`CapsLock`映射成`Control`, `Shift+CapsLock`映射成`CapsLock`的例子： `~/.Xmodmap`
 
@@ -125,27 +125,25 @@ keycode 66 = Control_L Caps_Lock NoSymbol NoSymbol
 
 ```
 
-## Reverse Scrolling
+## MAC OS X的自然滚动
 
-The natural scrolling feature available in OS X Lion can be mimicked with xmodmap. Since the synaptics driver uses the buttons 4/5/6/7 for up/down/left/right scrolling, you simply need to swap the order of how the buttons are declared in `~/.Xmodmap`.
+你能用xmodmap去模仿OS X上的自然滚动（反向滚动） 因为synaptics驱动使用按键 4/5/6/7 作为 up/down/left/right 滚动, 你只需要交换按钮的命令，它的描述在这个文件 `~/.Xmodmap` 里.
 
-Open `~/.Xmodmap` and append the following line to the file:
+打开 `~/.Xmodmap` 文件，然后把下面这行添加到文件里面：
 
 ```
 pointer = 1 2 3 5 4 7 6 8 9 10 11 12
 
 ```
 
-Note how the 4 and 5 have been reversed.
-
-Then update xmodmap:
+现在4和5互换了 然后更新xmodmap的设置:
 
 ```
 xmodmap ~/.Xmodmap
 
 ```
 
-To return to regular scrolling simply reverse the order of the 4 and 5 or delete the line altogether. For more information check Peter Hutterer's post, [Natural scrolling in the synaptics driver](http://who-t.blogspot.com/2011/09/natural-scrolling-in-synaptics-driver.html), or the [Reverse scrolling direction ala Mac OS X Lion?](https://bbs.archlinux.org/viewtopic.php?id=126258) forum thread.
+恢复只需要交换4和5或者完全删除那行. 获取更多的信息请查看Peter Hutterer的帖子, [Natural scrolling in the synaptics driver](http://who-t.blogspot.com/2011/09/natural-scrolling-in-synaptics-driver.html), 或者 [Reverse scrolling direction ala Mac OS X Lion?](https://bbs.archlinux.org/viewtopic.php?id=126258) 论坛帖子
 
 ## Additional resources
 

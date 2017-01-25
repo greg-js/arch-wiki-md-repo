@@ -37,7 +37,8 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
     *   [12.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
     *   [12.2 Not waking from suspend](#Not_waking_from_suspend)
     *   [12.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
-    *   [12.4 Coil Whine](#Coil_Whine)
+    *   [12.4 Popping Sound on headphones/external speakers](#Popping_Sound_on_headphones.2Fexternal_speakers)
+    *   [12.5 Coil Whine](#Coil_Whine)
 
 ## Content adaptive brightness control
 
@@ -148,6 +149,10 @@ Update the BIOS to 1.0.7 to patch this issue.
 ### Power Drain after waking from standby
 
 Some users recognised ~2W more power consumption after waking up from standby. Go to the UEFI Firmware Settings (tap the F2 key when the Dell logo appears) and uncheck the 'Enable Thunderbolt Boot Support'. You may use [powertop](https://www.archlinux.org/packages/?name=powertop) or [powerstat-git](https://aur.archlinux.org/packages/powerstat-git/) to reproduce and check this behaviour yourself.
+
+### Popping Sound on headphones/external speakers
+
+Have a look at [Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback "Advanced Linux Sound Architecture/Troubleshooting") and [Advanced_Linux_Sound_Architecture/Troubleshooting#Popping_sound_after_resuming_from_suspension](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Popping_sound_after_resuming_from_suspension "Advanced Linux Sound Architecture/Troubleshooting").
 
 ### Coil Whine
 

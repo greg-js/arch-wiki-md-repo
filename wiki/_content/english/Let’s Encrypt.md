@@ -48,6 +48,29 @@ When using the webroot method the Certbot client places a challenge response ins
 
 The use of this method is recommend over a manual install; it offers automatically renewal and easier certificate management.
 
+**Tip:** The following initial [nginx server](/index.php/Nginx#Server_blocks "Nginx") configuration may be helpful to obtain a first-time certificate: `/etc/nginx/servers-available/domain.tld` 
+```
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name domain.tld;
+  root /usr/share/nginx/html;
+  location / {
+    index index.htm index.html;
+  }
+}
+
+# ACME challenge
+location ^~ /.well-known {
+  allow all;
+  alias /var/lib/letsencrypt/.well-known/;
+  default_type "text/plain";
+  try_files $uri =404;
+}
+
+```
+
 #### Obtain certificate(s)
 
 Request a certificate for `domain.tld` using `/path/to/domain.tld/html/` as public accessible path:
@@ -157,6 +180,14 @@ server {
   ..
 }
 
+# ACME challenge
+location ^~ /.well-known {
+  allow all;
+  alias /var/lib/letsencrypt/.well-known/;
+  default_type "text/plain";
+  try_files $uri =404;
+}
+
 ```
 
 ### Multiple domains
@@ -166,6 +197,7 @@ Management of can be made easier by mapping all HTTP-requests for `/.well-known/
 The path has then to be writable for the Let's Encrypt client and the web server (e.g. [nginx](/index.php/Nginx "Nginx") or [Apache](/index.php/Apache "Apache") running as user *http*):
 
 ```
+# mkdir -p /var/lib/letsencrypt/.well-known
 # chgrp http /var/lib/letsencrypt
 # chmod g+s /var/lib/letsencrypt
 
@@ -178,8 +210,9 @@ Create a file containing the location block and include this inside a server blo
  `/etc/nginx/conf.d/letsencrypt.conf` 
 ```
 
-location ^~ /.well-known/acme-challenge {
-  alias /var/lib/letsencrypt/.well-known/acme-challenge;
+location ^~ /.well-known {
+  allow all;
+  alias /var/lib/letsencrypt/.well-known/;
   default_type "text/plain";
   try_files $uri =404;
 }

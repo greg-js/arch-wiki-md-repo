@@ -44,6 +44,7 @@
     *   [4.9 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
     *   [4.10 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
     *   [4.11 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
+    *   [4.12 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -787,6 +788,39 @@ mount.cifs //server/share /mnt/point -o sec=ntlmssp,...
 ```
 
 See the [mount.cifs(8)](https://www.samba.org/samba/docs/man/manpages-3/mount.cifs.8.html) man page: **ntlmssp** - Use NTLMv2 password hashing encapsulated in Raw NTLMSSP message. The default in mainline kernel versions prior to v3.8 was **sec=ntlm**. In v3.8, the default was changed to **sec=ntlmssp**.
+
+### Mapping reserved Windows characters
+
+Starting with kernel 3.18, the cifs module uses the ["mapposix" option by default](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=2baa2682531ff02928e2d3904800696d9e7193db). When mounting a share using unix extensions and a default Samba configuration, files and directories containing one of the seven reserved Windows characters `: \ * < > ?` are listed but cannot be accessed.
+
+Possible solutions are:
+
+*   Use the undocumented `nomapposix` mount option for cifs
+
+```
+ # mount.cifs //server/share /mnt/point -o nomapposix
+
+```
+
+*   Configure Samba to remap `mapposix` ("SFM", Services for Mac) style characters to the correct native ones using [fruit](https://www.mankier.com/8/vfs_fruit)
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+   vfs objects = catia fruit
+   fruit:encoding = native
+```
+
+*   Manually remap forbidden characters using [catia](https://www.mankier.com/8/vfs_catia)
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+   vfs objects = catia
+   catia:mappings = 0x22:0xf022, 0x2a:0xf02a, 0x2f:0xf02f, 0x3a:0xf03a, 0x3c:0xf03c, 0x3e:0xf03e, 0x3f:0xf03f, 0x5c:0xf05c, 0x7c:0xf07c, 0x20:0xf020
+```
+
+The latter approach (using catia or fruit) has the drawback of filtering files with unprintable characters.
 
 ## See also
 

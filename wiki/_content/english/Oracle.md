@@ -46,7 +46,7 @@ To ease the installation process you may find useful to install an AUR helper:
 
 Install a [Java](/index.php/Java "Java") runtime environment, like [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) and [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk).
 
-From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm](https://aur.archlinux.org/packages/rpm/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
+From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
 
 Oracle database 32-bit requires [unixodbc](https://www.archlinux.org/packages/?name=unixodbc).
 

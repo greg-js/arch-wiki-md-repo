@@ -26,6 +26,7 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
 *   [6 Multimedia playback](#Multimedia_playback)
     *   [6.1 Other plugins](#Other_plugins)
     *   [6.2 Open-with Firefox extension](#Open-with_Firefox_extension)
+    *   [6.3 youtube-dl](#youtube-dl)
 *   [7 Google Hangouts](#Google_Hangouts)
 *   [8 MozPlugger](#MozPlugger)
 *   [9 Troubleshooting](#Troubleshooting)
@@ -204,6 +205,10 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 6.  Right click on links or visit pages containing videos. If the site is supported, the player will open as expected.
 
 The same procedure can be used to associate video downloaders such as *youtube-dl*.
+
+### youtube-dl
+
+Install [Watch with MPV](https://addons.mozilla.org/en-US/firefox/addon/watch-with-mpv/) for playback of [supported sites](http://rg3.github.io/youtube-dl/supportedsites.html) with an external player of your choice ([mpv](/index.php/Mpv "Mpv") by default). Add `--player-operation-mode=pseudo-gui` to *Additional player parameters* for websites with audio only streams.
 
 ## Google Hangouts
 

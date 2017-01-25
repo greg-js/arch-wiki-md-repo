@@ -1,4 +1,4 @@
-**Tip:** The `/usr/bin/steam` script redirects Steam's stdout and stderr to `/tmp/dumps/${USER}_stdout.txt`. This means you do not have to run Steam from a terminal emulator to see that output.
+**Tip:** The Steam launcher redirects its stdout and stderr to `/tmp/dumps/*USER*_stdout.txt`. This means you do not have to run Steam from a terminal emulator to see that output.
 
 **Note:** In addition to being documented here, any bug/fix/error should be, if not already, reported on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux).
 
@@ -6,9 +6,8 @@
 
 *   [1 Debugging Steam](#Debugging_Steam)
 *   [2 Steam runtime issues](#Steam_runtime_issues)
-    *   [2.1 Dynamic linker](#Dynamic_linker)
-    *   [2.2 Native runtime](#Native_runtime)
-        *   [2.2.1 Libraries for x86_64](#Libraries_for_x86_64)
+    *   [2.1 Solutions](#Solutions)
+    *   [2.2 Finding missing runtime libraries](#Finding_missing_runtime_libraries)
 *   [3 Multiple monitors setup](#Multiple_monitors_setup)
 *   [4 Native runtime: steam.sh line 756 Segmentation fault](#Native_runtime:_steam.sh_line_756_Segmentation_fault)
 *   [5 Audio not working or 756 Segmentation fault](#Audio_not_working_or_756_Segmentation_fault)
@@ -51,9 +50,9 @@ Steam installs its own older versions of some libraries collectively called the 
 Some of the possible symptoms of this issue are the Steam client itself crashing or hanging, and/or various errors:
 
 ```
-libGL error: unable to load driver: some_driver_dri.so
+libGL error: unable to load driver: *some_driver_dri*.so
 libGL error: driver pointer missing
-libGL error: failed to load driver: some_driver
+libGL error: failed to load driver: *some_driver*
 libGL error: unable to load driver: swrast_dri.so
 libGL error: failed to load driver: swrast
 ```
@@ -85,33 +84,34 @@ See also [upstream issue #13](https://github.com/ValveSoftware/steam-runtime/iss
 *   [https://bbs.archlinux.org/viewtopic.php?id=181171](https://bbs.archlinux.org/viewtopic.php?id=181171)
 *   [https://bbs.archlinux.org/viewtopic.php?id=183141](https://bbs.archlinux.org/viewtopic.php?id=183141)
 
-### Dynamic linker
+### Solutions
 
-The dynamic linker—see [ld.so(8)](http://man7.org/linux/man-pages/man8/ld.so.8.html)—can be used to force Steam to load the up-to-date system libraries via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable"). For example:
-
-```
-LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam
+There are three ways to run Steam provided by the [steam](https://www.archlinux.org/packages/?name=steam) package:
 
 ```
+$ steam-runtime
 
-**Note:** The `$LIB` above is **not** a variable, but a directive to the linker to pick the appropriate architecture for the library. The single quotes are required to prevent the shell from treating `$LIB` as a variable.
+```
 
-**Tip:** You can put this command in a wrapper script such as `/usr/local/bin/steam-preload`, appending `"$@"` to preserve command-line arguments. This script can be referred to in a [desktop file](/index.php/Desktop_file "Desktop file"), for example through `Exec=/usr/local/bin/steam-preload %U`.
-
-### Native runtime
-
-To force Steam to use only your system libraries, run it with
+This is the command which is run when you run Steam via `/usr/bin/steam` or the "Steam" [desktop entry](/index.php/Desktop_entry "Desktop entry"). Runtime libraries which are known to cause problems are overriden via the `LD_PRELOAD` [environment variable](/index.php/Environment_variable "Environment variable") (see [ld.so(8)](http://man7.org/linux/man-pages/man8/ld.so.8.html)). If your system still has library conflicts with this command, you can make a copy of `/usr/bin/steam-runtime` and edit it to add additional workarounds.
 
 ```
 $ steam-native
 
 ```
 
-Or through the menu entry "Steam (Native)" provided by the steam-native.desktop file.
+This is the command run by the "Steam (Native)" [desktop entry](/index.php/Desktop_entry "Desktop entry"). This version forces Steam to ignore its runtime and only use system libraries. You will probably need to install [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) in order for Steam to run at all, though some games may require additional packages. See [#Finding missing runtime libraries](#Finding_missing_runtime_libraries) and [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").
 
-**Note:** Always use this wrapper as (besides setting STEAM_RUNTIME=0) it also ensures to contain common workarounds and roundups like DBUS_FATAL_WARNINGS=0 to avoid coredumps on shutdown
+```
+$ /usr/lib/steam/steam
 
-This wrapper can be called in another wrapper script or .desktop file, as with the [#Dynamic linker](#Dynamic_linker) solution. However, if you are missing any libraries from the Steam runtime, individual games or Steam itself may fail to launch. To find the required libraries run:
+```
+
+This is the normal Steam launcher without any Arch-specific workarounds.
+
+### Finding missing runtime libraries
+
+If individual games or Steam itself is failing to launch when using `steam-native` you are probably missing libraries. To find the required libraries run:
 
 ```
 $ cd ~/.local/share/Steam/ubuntu12_32
@@ -119,30 +119,12 @@ $ file * | grep ELF | cut -d: -f1 | LD_LIBRARY_PATH=. xargs ldd | grep 'not foun
 
 ```
 
-Alternatively, while Steam is running, the following command will show which non-system libraries Steam is using (not all of these are part of the Steam runtime):
+Alternatively, run Steam with its runtime (`/usr/bin/steam`) and use the following command to see which non-system libraries Steam is using (not all of these are part of the Steam runtime):
 
 ```
 $ for i in $(pgrep steam); do sed '/\.local/!d;s/.*  //g' /proc/$i/maps; done | sort | uniq
 
 ```
-
-#### Libraries for x86_64
-
-The minimum required libraries needed on an x86_64 system are
-
-*   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
-*   [lib32-nss](https://www.archlinux.org/packages/?name=lib32-nss)
-*   [lib32-gtk2](https://www.archlinux.org/packages/?name=lib32-gtk2)
-*   [lib32-gtk3](https://www.archlinux.org/packages/?name=lib32-gtk3)
-*   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
-*   [lib32-gconf](https://www.archlinux.org/packages/?name=lib32-gconf)
-*   [lib32-dbus-glib](https://www.archlinux.org/packages/?name=lib32-dbus-glib)
-*   [lib32-libnm-glib](https://www.archlinux.org/packages/?name=lib32-libnm-glib)
-*   [lib32-libudev0-shim](https://www.archlinux.org/packages/?name=lib32-libudev0-shim)
-
-Some games may require additional libraries in order to launch without the runtime. See [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting").
-
-The meta-package [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) includes all of these libraries (as well as some game-specific libraries) as dependencies, to simplify the install process.
 
 ## Multiple monitors setup
 

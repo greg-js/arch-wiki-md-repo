@@ -1,5 +1,12 @@
 [Zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "w:Zathura (document viewer)") is a highly customizable and functional document viewer. It provides a minimalistic and space saving interface as well as an easy usage that mainly focuses on keyboard interaction. Different file formats are supported through plugins. Support is available for PDF, DJVU, PS and CB files.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Features](#Features)
+*   [3 Useful tips](#Useful_tips)
+*   [4 See also](#See_also)
+
 ## Installation
 
 [Install](/index.php/Install "Install") the [zathura](https://www.archlinux.org/packages/?name=zathura) package as well as those packages that provide the wanted file formats:
@@ -23,6 +30,12 @@ Zathura can adjust the document to best-fit or to fit width, and it can rotate p
 Zathura can search for text and copy text to the primary X selection. It supports bookmarks and can open encrypted files.
 
 The behavior and appearance of Zathura can be customised using a configuration file. Zathura has the ability to execute external shell commands. It can be opened in tabs using tabbed.
+
+## Useful tips
+
+Enable copy to clipboard
+
+ ` ~/.config/zathura/zathurarc `  `set selection-clipboard clipboard` 
 
 ## See also
 
