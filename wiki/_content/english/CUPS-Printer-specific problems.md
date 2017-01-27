@@ -248,19 +248,26 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 
 ###### HPLIP Driver
 
-[hplip](https://www.archlinux.org/packages/?name=hplip) provides drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet printers.
+[hplip](https://www.archlinux.org/packages/?name=hplip) provides drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet, and some LaserJet printers, and also provides an easy to use setup tool.
 
-To run with qt frontend:
+To run the setup tool with the GUI qt frontend:
 
 ```
 # hp-setup -u
 
 ```
 
-To run with command line:
+To run the setup tool with the command line frontend:
 
 ```
 # hp-setup -i
+
+```
+
+To set up directly the configuration of a network connected HP printer:
+
+```
+# hp-setup -i *<ip address>*
 
 ```
 
@@ -274,7 +281,7 @@ $ hp-systray
 To generate a URI for a given ip address:
 
 ```
-# hp-makeuri <ip_address>
+# hp-makeuri *<ip address>*
 
 ```
 

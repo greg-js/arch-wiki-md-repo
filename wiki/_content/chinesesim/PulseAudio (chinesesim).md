@@ -1,10 +1,11 @@
-**翻译状态：** 本文是英文页面 [PulseAudio](/index.php/PulseAudio "PulseAudio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-12-19，点击[这里](https://wiki.archlinux.org/index.php?title=PulseAudio&diff=0&oldid=349898)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [PulseAudio](/index.php/PulseAudio "PulseAudio") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-26，点击[这里](https://wiki.archlinux.org/index.php?title=PulseAudio&diff=0&oldid=349898)可以查看翻译后英文页面的改动。
 
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") 是在[GNOME](/index.php/GNOME "GNOME") 或 [KDE](/index.php/KDE "KDE")等桌面环境中广泛使用的音频服务。它在内核音频组件（比如[ALSA](/index.php/ALSA "ALSA") 和 [OSS](/index.php/OSS "OSS")）和应用程序之间充当代理的角色。由于Arch Linux默认包含ALSA，PulseAudio经常和ALSA协同使用。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
+    *   [1.1 前端](#.E5.89.8D.E7.AB.AF)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
 *   [3 启动](#.E5.90.AF.E5.8A.A8)
     *   [3.1 在不支持的桌面环境中自动启动Pulse](#.E5.9C.A8.E4.B8.8D.E6.94.AF.E6.8C.81.E7.9A.84.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83.E4.B8.AD.E8.87.AA.E5.8A.A8.E5.90.AF.E5.8A.A8Pulse)
@@ -36,13 +37,32 @@
 
 ## 安装
 
-*   需要的软件包: [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio)
-*   可选的GTK图形化配置程序: [paprefs](https://www.archlinux.org/packages/?name=paprefs) 和 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
-*   可选的快捷键音量控制程序: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)
-*   可选的命令行端混音程序: [ponymix](https://www.archlinux.org/packages/?name=ponymix) 和 [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/)
-*   可选的网页端控制程序: [PaWebControl](https://github.com/Siot/PaWebControl)
-*   可选的系统托盘图标: [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
-*   可选的KDE plasma挂件: [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) （Plasma 5：[kmix](https://www.archlinux.org/packages/?name=kmix)）与 [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/) (如果系统启动时KMix/Veromix 无法连接到 PulseAudio ，你可能需要编辑 `/etc/pulse/client.conf` 并将`autospawn = no` 改为 `autospawn = yes` 。)
+安装 [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) 。
+
+有的 PulseAudio 模块已经从主软件包中 [分离](https://www.archlinux.org/news/pulseaudio-split/) 了。如果需要的话请分别安装：
+
+*   [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth): 蓝牙 (Bluez) 支持
+*   [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer): 均衡器 接收器 (qpaeq)
+*   [pulseaudio-gconf](https://www.archlinux.org/packages/?name=pulseaudio-gconf): GConf 支持 (paprefs)
+*   [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack): JACK 接收器, 源和jackdbus检测
+*   [pulseaudio-lirc](https://www.archlinux.org/packages/?name=pulseaudio-lirc): 红外 (LIRC) 音量控制
+*   [pulseaudio-xen](https://www.archlinux.org/packages/?name=pulseaudio-xen): Xen 半虚拟化接收器
+*   [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf): Zeroconf (Avahi/DNS-SD) 支持
+
+**Note:** 用户可能在 [ALSA](/index.php/ALSA "ALSA") 和 PulseAudio 之间产生混淆。ALSA 包括有着声卡驱动的Linux内核组件和用户空间组件两部分，`libalsa`.[[1]](http://www.alsa-project.org/main/index.php/Download) PulseAudio 只依赖于内核组件,但是也通过 [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) 和 `libalsa` 实现了兼容。[[2]](http://www.freedesktop.org/wiki/Software/PulseAudio/FAQ/#index14h3)
+
+### 前端
+
+有多种前端工具可以用以控制 PulseAudio 守护进程：
+
+*   GTK GUI：[paprefs](https://www.archlinux.org/packages/?name=paprefs) 和 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol)
+*   按键音量控制: [pulseaudio-ctl](https://aur.archlinux.org/packages/pulseaudio-ctl/)，[pavolume-git](https://aur.archlinux.org/packages/pavolume-git/)
+*   控制台 (CLI)混合器：[ponymix](https://www.archlinux.org/packages/?name=ponymix)和[pamixer](https://www.archlinux.org/packages/?name=pamixer)
+*   控制台 (curses) 混合器：[pulsemixer](https://aur.archlinux.org/packages/pulsemixer/)
+*   网页音量控制：[PaWebControl](https://github.com/Siot/PaWebControl)
+*   系统托盘图标：[pasystray](https://aur.archlinux.org/packages/pasystray/)，[pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
+*   KF5 plasma 程序：[kmix](https://www.archlinux.org/packages/?name=kmix)和[plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
+*   如果你想通过 PulseAudio 使用蓝牙耳机或其他蓝牙音频设备的话，请参见[Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset").
 
 ## 配置
 
@@ -311,7 +331,7 @@ $ nyxmms2 server config output.plugin alsa
 
 ```
 
-另可查阅官方指南 [[1]](https://xmms2.org/wiki/Using_the_application).
+另可查阅官方指南 [[3]](https://xmms2.org/wiki/Using_the_application).
 
 ### KDE Plasma Workspaces 和 Qt4
 

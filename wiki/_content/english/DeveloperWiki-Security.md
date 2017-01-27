@@ -30,7 +30,6 @@ This page documents progress on fixing/implementing non-CVE security-related bug
         *   [7.1.5 CONFIG_GRKERNSEC_SYSCTL_ON=n](#CONFIG_GRKERNSEC_SYSCTL_ON.3Dn)
         *   [7.1.6 disable Yama](#disable_Yama)
     *   [7.2 PaX](#PaX)
-*   [8 See also](#See_also)
 
 ## Service Isolation
 
@@ -299,7 +298,3 @@ An equivalent to ptrace_scope is built-in to grsecurity, so there is no need for
 ### PaX
 
 The kernel will only be compiled with supported for the extended attribute PaX flags. The ELF flags are not always a working solution, and it's much simpler if there is only one place to look for these. With only [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) installed, `kernel.pax.softmode = 1` is set to disable the userspace mitigations. Installing [paxd](https://www.archlinux.org/packages/?name=paxd) sets `kernel.pax.softmode = 0` and it automatically applies the common set of PaX exceptions whenever a Pacman transaction occurs.
-
-## See also
-
-*   [CVE-2014](/index.php/CVE-2014 "CVE-2014")

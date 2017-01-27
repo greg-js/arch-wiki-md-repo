@@ -1,5 +1,3 @@
-**翻译状态：** 本文是英文页面 [Maximizing_Performance](/index.php/Maximizing_Performance "Maximizing Performance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-01-12，点击[这里](https://wiki.archlinux.org/index.php?title=Maximizing_Performance&diff=0&oldid=222700)可以查看翻译后英文页面的改动。
-
 本文将介绍关于系统性能诊断的基本知识，以及优化系统性能的具体步骤。
 
 ## Contents
@@ -12,7 +10,7 @@
 *   [2 存储设备](#.E5.AD.98.E5.82.A8.E8.AE.BE.E5.A4.87)
     *   [2.1 分散存储](#.E5.88.86.E6.95.A3.E5.AD.98.E5.82.A8)
     *   [2.2 交换分区/文件](#.E4.BA.A4.E6.8D.A2.E5.88.86.E5.8C.BA.2F.E6.96.87.E4.BB.B6)
-    *   [2.3 组RAID](#.E7.BB.84RAID)
+    *   [2.3 组RAID (简体中文)](#.E7.BB.84RAID_.28.E7.AE.80.E4.BD.93.E4.B8.AD.E6.96.87.29)
     *   [2.4 硬盘的连接方式](#.E7.A1.AC.E7.9B.98.E7.9A.84.E8.BF.9E.E6.8E.A5.E6.96.B9.E5.BC.8F)
     *   [2.5 分区方案](#.E5.88.86.E5.8C.BA.E6.96.B9.E6.A1.88)
     *   [2.6 文件系统](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
@@ -93,10 +91,10 @@ $ glxinfo | grep direct
 
 最简单有效的改善系统性能的方法是：改用轻量级桌面和应用程序。
 
-*   不安装完整的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，仅仅使用[窗口管理器](/index.php/Window_manager "Window manager")。可选的方案包括[Awesome](/index.php/Awesome "Awesome")、[dwm](/index.php/Dwm "Dwm")、[Fluxbox](/index.php/Fluxbox "Fluxbox")、[i3](/index.php/I3 "I3")、[JWM](/index.php/JWM "JWM")、[Openbox](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")、[wmii](/index.php/Wmii "Wmii")和[xmonad](/index.php/Xmonad "Xmonad")。
-*   不用重量级的[GNOME](/index.php/GNOME "GNOME")或[KDE](/index.php/KDE "KDE")，改用轻量的桌面环境，如[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")或者[Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")。
-*   改用轻量级应用程序，你可以在[应用程序列表](/index.php/List_of_applications "List of applications")中搜索命令行界面的程序，或者参考论坛票选出的“年度轻便程序”：[2007](https://bbs.archlinux.org/viewtopic.php?id=41168)、 [2008](https://bbs.archlinux.org/viewtopic.php?id=67951)、 [2009](https://bbs.archlinux.org/viewtopic.php?id=78490)、 [2010](https://bbs.archlinux.org/viewtopic.php?id=88515)、 [2011](https://bbs.archlinux.org/viewtopic.php?id=111878)以及[2012](https://bbs.archlinux.org/viewtopic.php?id=138281)。
-*   禁用多余的[系统服务](/index.php/Daemons "Daemons")。
+*   不安装完整的[桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")，仅仅使用[窗口管理器](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")。可选的方案包括[Awesome](/index.php/Awesome "Awesome")、[dwm](/index.php/Dwm "Dwm")、[Fluxbox](/index.php/Fluxbox "Fluxbox")、[i3](/index.php/I3 "I3")、[JWM](/index.php/JWM "JWM")、[Openbox](/index.php/Openbox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Openbox (简体中文)")、[wmii](/index.php/Wmii "Wmii")和[xmonad](/index.php/Xmonad "Xmonad")。
+*   不用重量级的[GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")或[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")，改用轻量的桌面环境，如[LXDE](/index.php/LXDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDE (简体中文)")或者[Xfce](/index.php/Xfce_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xfce (简体中文)")。
+*   改用轻量级应用程序，你可以在[应用程序列表](/index.php/List_of_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of applications (简体中文)")中搜索命令行界面的程序，或者参考论坛票选出的“年度轻便程序”：[2007](https://bbs.archlinux.org/viewtopic.php?id=41168)、 [2008](https://bbs.archlinux.org/viewtopic.php?id=67951)、 [2009](https://bbs.archlinux.org/viewtopic.php?id=78490)、 [2010](https://bbs.archlinux.org/viewtopic.php?id=88515)、 [2011](https://bbs.archlinux.org/viewtopic.php?id=111878)以及[2012](https://bbs.archlinux.org/viewtopic.php?id=138281)。
+*   禁用多余的[系统服务](/index.php/Daemons_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Daemons (简体中文)")。
 
 ### 妥协的考量
 
@@ -104,7 +102,7 @@ $ glxinfo | grep direct
 
 ### 跑分
 
-为定量评估优化成果，可使用[系统评分工具](/index.php/Benchmarking "Benchmarking")。
+为定量评估优化成果，可使用[系统评分工具](/index.php?title=Benchmarking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%EF%BC%89&action=edit&redlink=1 "Benchmarking (简体中文） (page does not exist)")。
 
 ## 存储设备
 
@@ -116,7 +114,7 @@ $ glxinfo | grep direct
 
 把交换分区/文件放在系统盘以外，对提升速度也有所帮助，尤其是系统频繁使用交换分区/文件时。
 
-### 组[RAID](/index.php/RAID "RAID")
+### 组[RAID (简体中文)](/index.php?title=RAID_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "RAID (简体中文) (page does not exist)")
 
 如果你有多个硬盘，组一个软RAID或许有不小惊喜。RAID 0可使存储系统的速度翻翻，而且加入的硬盘越多，速度越快，不过，RAID 0没有数据冗余，一旦某个硬盘故障，数据将有损失。RAID 5则是兼顾速度和数据安全的明智选择，但它至少需要3块硬盘。
 
@@ -155,7 +153,7 @@ $ glxinfo | grep direct
 
 #### Ext4
 
-参见[Ext4](/index.php/Ext4#Tips_and_tricks "Ext4")。
+参见[Ext4 (简体中文)](/index.php/Ext4_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ext4 (简体中文)")。
 
 #### JFS
 

@@ -62,7 +62,7 @@ A security vulnerability has been found in a software package within the Arch Li
     *   Description about the security issue and its impact
     *   Links to the CVE-IDs and (upstream) report
     *   If no release is available, links to the upstream patches (or attachments) that mitigate the issue
-*   Add the issue to a new row at the top of the [CVE Tracking](/index.php/CVE "CVE") page (provide a wiki change summary including package name and some information)
+*   Submit the issue to [https://security.archlinux.org/](https://security.archlinux.org/)
 
 If you have a private bug to report, [then use security@archlinux.org](https://mailman.archlinux.org/pipermail/arch-security/2014-June/000088.html). Please note that the address for private bugs reporting is *security*, not *arch-security*. A private bug is one that is too sensitive to post where anyone can read and exploit it, e.g. vulnerabilities in Arch Linux infrastructure.
 
@@ -85,7 +85,7 @@ Resources:
 
 The criticality of the bug report should be set to either Critical or High, depending on the severity of the issue. Some updates will be much more critical than others. However, updates are always recommended in the case of any vulnerability.
 
-Once this process is complete, please add the CVE and later the [ASA](/index.php/Security_Advisories "Security Advisories") to the [CVE](/index.php/CVE "CVE") Documented Resolved CVE table.
+Once this process is complete, please update [https://security.archlinux.org/](https://security.archlinux.org/).
 
 ## Resources
 

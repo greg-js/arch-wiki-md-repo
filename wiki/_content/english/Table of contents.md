@@ -1,6 +1,6 @@
 | [English](/index.php/Category:English "Category:English") <small>(1)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(22)</small> |
-| <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(51)</small> |
 | <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.2.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(2) (also in [Package management](/index.php/Category:Package_management "Category:Package management"))</small> |
@@ -37,14 +37,14 @@
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(13)</small> |
 | <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(58)</small> |
-| <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(21) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
+| <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(51)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>3.2.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(21)</small> |
 | <small>3.3.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(17)</small> |
 | <small>3.4.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small> |
-| <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(7)</small> |
+| <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(8)</small> |
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(7)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(9)</small> |
 | <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
@@ -127,7 +127,7 @@
 | <small>6.9.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(32)</small> |
 | <small>6.9.1.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") <small>(2) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>6.10.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(22)</small> |
-| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(75)</small> |
+| <small>6.11.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small> |
 | <small>6.11.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(26)</small> |
 | <small>6.11.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(11) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.11.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(10) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

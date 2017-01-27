@@ -1,3 +1,8 @@
+**Bump to v4.9.6-1**
+
+*   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.6](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.6)
+*   Commit: [https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=dde46e543052324f7a2541c699c552b15430c591](https://aur.archlinux.org/cgit/aur.git/commit/?h=linux-ck&id=dde46e543052324f7a2541c699c552b15430c591)
+
 **Bump to v4.9.5-1**
 
 *   Changelog: [https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.5](https://www.kernel.org/pub/linux/kernel/v4.x/ChangeLog-4.9.5)

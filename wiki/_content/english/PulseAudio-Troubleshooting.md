@@ -764,17 +764,16 @@ pulseaudio --start
 
 ### The only device shown is "dummy output" or newly connected cards are not detected
 
-Another reason is [FluidSynth](/index.php/FluidSynth "FluidSynth") conflicting with PulseAudio as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=154002). One solution is to remove the package [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth).
+If the only playback device is the Dummy Output, PulseAudio cannot access your sound devices. It is possible there is an issue with logind giving permissions, see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for more information.
 
-Alternatively you could modify the *fluidsynth* configuration file `/etc/conf.d/fluidsynth` and change the driver to PulseAudio, then restart *fluidsynth* and PulseAudio:
+An application might also not have been configured to work with PulseAudio. This happens with [FluidSynth](/index.php/FluidSynth#Conflicting_with_PulseAudio "FluidSynth") for example. To see which application is responsible for a direct access to the sound card via alsa, run the following command:
 
- `/etc/conf.d/fluidsynth` 
 ```
-AUDIO_DRIVER=pulseaudio
-OTHER_OPTS='-m alsa_seq -r 48000'
+$ fuser -v /dev/snd/*
+
 ```
 
-It is also possible there is an issue with logind giving permissions, see [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") for more information.
+Try to close these applications. pulseaudio, if running, should take again precedence over these applications and all the applications relying on pulseaudio should work again like expected.
 
 ### No HDMI 5/7.1 Selection for Device
 

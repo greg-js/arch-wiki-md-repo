@@ -4,7 +4,7 @@
 
 *   [1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
     *   [1.1 Настройка системы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
-        *   [1.1.1 Контрольный список](#.D0.9A.D0.BE.D0.BD.D1.82.D1.80.D0.BE.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D1.81.D0.BF.D0.B8.D1.81.D0.BE.D0.BA)
+        *   [1.1.1 Проверка настроек](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B0_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA)
     *   [1.2 JACK](#JACK)
         *   [1.2.1 FireWire](#FireWire)
         *   [1.2.2 Jack Flash](#Jack_Flash)
@@ -63,18 +63,18 @@
 
 ### Настройка системы
 
-Вы можете рассмотреть наиболее частые оптимизации:
+Рассмотрим наиболее частые конфигурации:
 
-*   Добавьте свою учётную запись в группу [аудио](/index.php/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B8_%D0%B8_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B0.D0.BC.D0.B8 "Пользователи и группы")
-*   Добавьте строку `threadirqs` в [параметры ядра](/index.php/%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B_%D1%8F%D0%B4%D1%80%D0%B0 "Параметры ядра")
+*   Добавляем свою учётную запись в группу [аудио](/index.php/%D0%9F%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B8_%D0%B8_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D0.B0.D0.BC.D0.B8 "Пользователи и группы")
+*   Добавим строку `threadirqs` в [параметры ядра](/index.php/%D0%9F%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B_%D1%8F%D0%B4%D1%80%D0%B0 "Параметры ядра")
 
-**Важно:** Включение `threadirqs` в сочетании с некоторыми USB устройствами может являться причиной зависания системы, по крайней мере в некоторых версиях ядра, начиная с 3.13 и, в том числе, 3.14-RC2 [[1]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081) [[2]](http://www.spinics.net/lists/linux-usb/msg102504.html)
+**Важно:** Включение `threadirqs` в сочетании с некоторыми USB устройствами может явиться причиной зависания системы, по крайней мере в некоторых версиях ядра, начиная с 3.13 и, в том числе, 3.14-RC2 [[1]](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081) [[2]](http://www.spinics.net/lists/linux-usb/msg102504.html)
 
-**Примечание:** Последний список изменений показывает, что это было исправлено в последних ванильных версиях ядра 3.13.6 [[3]](https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6)
+**Примечание:** Начиная с версии ядра 3.13.6 исправлено [[3]](https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6)
 
-*   Установите ядро [linux-rt](https://aur.archlinux.org/packages/linux-rt/)
-*   Установите значение подсистемы [cpufreq](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CPU frequency scaling (Русский)") в `performance`
-*   Добавьте `noatime` в [опции монтирования файловой системы](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") (смотрите раздел [Увеличение производительности#Параметры монтирования](/index.php/%D0%A3%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F "Увеличение производительности"))
+*   Установим версию ядра реального времени [linux-rt](https://aur.archlinux.org/packages/linux-rt/)
+*   Установим значение подсистемы [cpufreq](/index.php/CPU_frequency_scaling_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CPU frequency scaling (Русский)") в `performance`
+*   Добавим `noatime` в [опции монтирования файловой системы](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)") (смотрите раздел [Увеличение производительности#Параметры монтирования](/index.php/%D0%A3%D0%B2%D0%B5%D0%BB%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F "Увеличение производительности"))
 
 Режим реального времени в большинстве случаев уже настроен: для настройки реалтайма больше не нужно редактировать файл `/etc/security/limits.conf`. Однако, если вам необходимо изменить настройки, вы всегда можете это сделать в файлах `/etc/security/limits.d/99-audio.conf` и `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (эти файлы предоставляются пакетами [jack](https://www.archlinux.org/packages/?name=jack) или [jack2](https://www.archlinux.org/packages/?name=jack2)). Кроме того, вы можете повысить частоту прерывания RTC (по умолчанию она равна 64 Гц) через [автозагрузку следующих значений](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
 
@@ -108,7 +108,7 @@ $ setpci -v -s *$SOUND_CARD_PCI_ID* latency_timer=**ff** # например SOUN
 **03:01.0** Multimedia audio controller: VIA Technologies Inc. VT1720/24 [Envy24PT/HT] PCI Multi-Channel Audio Controller (rev 01)
 ```
 
-#### Контрольный список
+#### Проверка настроек
 
 Следующие действия, в основном, необходимы, чтобы ещё раз проверить, что у вас правильно настроена звуковая подсистема:
 

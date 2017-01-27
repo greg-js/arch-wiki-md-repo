@@ -1,10 +1,8 @@
-**Warning:** Midori is based on a WebKit port that is today considered insecure and outdated. It's recommended to use [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
-
 [Midori](http://midori-browser.org) is a lightweight Webkit-based web browser developed by Christian Dywan. It is part of the [Xfce](/index.php/Xfce "Xfce") Goodies project.
 
 Some of its features are:
 
-*   Full integration with [GTK+](/index.php/GTK%2B "GTK+") 2 and GTK+ 3.
+*   Full integration with [GTK+](/index.php/GTK%2B "GTK+") 3.
 *   Fast rendering, due to the [WebKitGTK+](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit") engine.
 *   Tabs, windows, and **session management**.
 *   Flexible, configurable web search.
@@ -31,12 +29,9 @@ Some of its features are:
 
 ## Installation
 
-GTK+2 and GTK+3 versions of Midori can be [installed](/index.php/Pacman "Pacman") with the respective [midori-gtk2](https://aur.archlinux.org/packages/midori-gtk2/) and [midori](https://www.archlinux.org/packages/?name=midori) packages.
+Midori can be [installed](/index.php/Pacman "Pacman") with the [midori](https://www.archlinux.org/packages/?name=midori) package.
 
-Development versions are also available:
-
-*   [midori-gtk2-bzr](https://aur.archlinux.org/packages/midori-gtk2-bzr/) - GTK+ 2 development version.
-*   [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) - GTK+ 3 and WebKitGTK3-based development version.
+Development version is also available with the [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) package.
 
 ## Extensions
 

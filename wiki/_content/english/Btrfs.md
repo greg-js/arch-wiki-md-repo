@@ -28,8 +28,9 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
         *   [4.3.3 Deleting a subvolume](#Deleting_a_subvolume)
         *   [4.3.4 Mounting subvolumes](#Mounting_subvolumes)
         *   [4.3.5 Changing the default sub-volume](#Changing_the_default_sub-volume)
-    *   [4.4 Commit Interval](#Commit_Interval)
-    *   [4.5 SSD TRIM](#SSD_TRIM)
+    *   [4.4 Quota](#Quota)
+    *   [4.5 Commit Interval](#Commit_Interval)
+    *   [4.6 SSD TRIM](#SSD_TRIM)
 *   [5 Usage](#Usage)
     *   [5.1 Displaying used/free space](#Displaying_used.2Ffree_space)
     *   [5.2 Defragmentation](#Defragmentation)
@@ -44,7 +45,8 @@ From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page):
 *   [6 Known issues](#Known_issues)
     *   [6.1 Encryption](#Encryption)
     *   [6.2 Swap file](#Swap_file)
-    *   [6.3 Linux-rt kernel](#Linux-rt_kernel)
+    *   [6.3 TLP](#TLP)
+    *   [6.4 Linux-rt kernel](#Linux-rt_kernel)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Checksum hardware acceleration](#Checksum_hardware_acceleration)
     *   [7.2 Corruption recovery](#Corruption_recovery)
@@ -150,6 +152,8 @@ After confirming that there are no problems, complete the conversion by deleting
 ```
 
 Finally [balance](#Balance) the file system to reclaim the space.
+
+Remember that some applications which were installed prior have to be adapted to Btrfs. Notably [TLP#Btrfs](/index.php/TLP#Btrfs "TLP") needs special care to avoid filesystem corruption but other applications may profit from certain features as well.
 
 ## Configuring the file system
 
@@ -276,6 +280,38 @@ where *subvolume-id* can be found by [listing](#Listing_subvolumes).
 
 Changing the default subvolume with `btrfs subvolume set-default` will make the top level of the filesystem inaccessible, except by use of the `subvol=/` or `subvolid=5` mount options [[4]](https://btrfs.wiki.kernel.org/index.php/SysadminGuide).
 
+### Quota
+
+**Warning:** Qgroup is not stable yet and combining quota with (too many) snapshots of subvolumes can cause performance problems, for example when deleting snapshots. Plus there are several more [known issues](https://btrfs.wiki.kernel.org/index.php/Quota_support#Known_issues).
+
+Quota support in Btrfs is implemented at a subvolume level by the use of quota groups or qgroup: Each subvolume is assigned a quota groups in the form of *0/<subvolume id>* by default. However it is possible to create a quota group using any number if desired.
+
+To use qgroups you need to enable quota first using
+
+```
+# btrfs quota enable <path>
+
+```
+
+From this point onwards newly created subvolumes will be controlled by those groups. In order to retrospectively enable them for already existing subvolumes, enable quota normally, then create a qgroup (quota group) for each of those subvolume using their *<subvolume id>* and rescan them:
+
+```
+# btrfs subvolume list <path> | cut -d' ' -f2 | xargs -I{} -n1 btrfs qgroup create 0/{} <path>
+# btrfs quota rescan <path>
+
+```
+
+Quota groups in Btrfs form a tree hierarchy, whereby qgroups are attached to subvolumes. The size limits are set per qgroup and apply when any limit is reached in tree that contains a given subvolume.
+
+Limits on quota groups can be applied either to the total data usage, un-shared data usage, compressed data usage or both. File copy and file deletion may both affect limits since the unshared limit of another qgroup can change if the original volume's files are deleted and only one copy is remaining. For example a fresh snapshot shares almost all the blocks with the original subvolume, new writes to either subvolume will raise towards the exclusive limit, deletions of common data in one volume raises towards the exclusive limit in the other one.
+
+To apply a limit to a qgroup, use the command `btrfs qgroup limit`. Depending on your usage either use a total limit, unshared limit (`-e`) or compressed limit (`-c`). To show usage and limits for a given path within a filesystem use
+
+```
+# btrfs qgroup show -reF <path>
+
+```
+
 ### Commit Interval
 
 The resolution at which data are written to the filesystem is dictated by Btrfs itself and by system-wide settings. Btrfs defaults to a 30 seconds checkpoint interval in which new data are committed to the filesystem. This can be changed by appending the `commit` mount option in `/etc/fstab` for the btrfs partition.
@@ -326,7 +362,7 @@ Another useful command to show a less verbose readout of used space is `btrfs fi
 A more verbose command combining the information of `df` and `show` which directly links the free and used space is `btrfs filesystem usage`. It is supposed to replace the `btrfs filesystem df` command in the long run:
 
 ```
-# btrfs filesystem usage
+# btrfs filesystem usage /
 
 ```
 
@@ -447,6 +483,10 @@ Existing Btrfs file systems can use something like [EncFS](/index.php/EncFS "Enc
 ### Swap file
 
 Btrfs does not yet support [swap files](/index.php/Swap#Swap_file "Swap"). This is due to swap files requiring a function that Btrfs does not have for possibility of file system corruption [[6]](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F). Patches for swapfile support are already available [[7]](https://lkml.org/lkml/2014/12/9/718) and may be included in an upcoming kernel release. As an alternative a swap file can be mounted on a loop device with poorer performance but will not be able to hibernate. Install the package [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) to automate this.
+
+### TLP
+
+Using TLP requires special precautions in order to avoid filesystem corruption. Refer to the [according TLP section](/index.php/TLP#Btrfs "TLP") for more information.
 
 ### Linux-rt kernel
 

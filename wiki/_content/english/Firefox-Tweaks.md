@@ -6,20 +6,21 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [1.1 Advanced Firefox options](#Advanced_Firefox_options)
         *   [1.1.1 Enable OpenGL Off-Main-Thread Compositing (OMTC)](#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29)
         *   [1.1.2 Set AzureContentBackend to Skia instead of Cairo](#Set_AzureContentBackend_to_Skia_instead_of_Cairo)
-        *   [1.1.3 Network settings](#Network_settings)
-        *   [1.1.4 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
-        *   [1.1.5 Turn off OCSP validation](#Turn_off_OCSP_validation)
-        *   [1.1.6 Turn off the disk cache](#Turn_off_the_disk_cache)
-        *   [1.1.7 Longer interval to save session](#Longer_interval_to_save_session)
-        *   [1.1.8 Immediate rendering of pages](#Immediate_rendering_of_pages)
-        *   [1.1.9 Referer header control](#Referer_header_control)
-        *   [1.1.10 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
-        *   [1.1.11 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-        *   [1.1.12 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
-        *   [1.1.13 Enable Electrolysis](#Enable_Electrolysis)
-        *   [1.1.14 Enable HTTP Cache](#Enable_HTTP_Cache)
-        *   [1.1.15 Disable Pocket](#Disable_Pocket)
-        *   [1.1.16 Disable Social Service API](#Disable_Social_Service_API)
+        *   [1.1.3 Enable Accelerated Azure Canvas](#Enable_Accelerated_Azure_Canvas)
+        *   [1.1.4 Network settings](#Network_settings)
+        *   [1.1.5 Stop urlclassifier3.sqlite from being created again](#Stop_urlclassifier3.sqlite_from_being_created_again)
+        *   [1.1.6 Turn off OCSP validation](#Turn_off_OCSP_validation)
+        *   [1.1.7 Turn off the disk cache](#Turn_off_the_disk_cache)
+        *   [1.1.8 Longer interval to save session](#Longer_interval_to_save_session)
+        *   [1.1.9 Immediate rendering of pages](#Immediate_rendering_of_pages)
+        *   [1.1.10 Referer header control](#Referer_header_control)
+        *   [1.1.11 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
+        *   [1.1.12 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
+        *   [1.1.13 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
+        *   [1.1.14 Enable Electrolysis](#Enable_Electrolysis)
+        *   [1.1.15 Enable HTTP Cache](#Enable_HTTP_Cache)
+        *   [1.1.16 Disable Pocket](#Disable_Pocket)
+        *   [1.1.17 Disable Social Service API](#Disable_Social_Service_API)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -85,7 +86,7 @@ For more information on OMTC in Firefox read here: [https://wiki.mozilla.org/Pla
 
 #### Set AzureContentBackend to Skia instead of Cairo
 
-**Warning:** You may come across visual errors by enabling skia instead of cairo.
+**Note:** Since Firefox 51 skia is the default content backend
 
 [Skia](https://skia.org/) is a 2D open-source graphics library to eventually supersede Cairo as the default Azure backend on Linux.
 
@@ -96,6 +97,12 @@ To set Skia as the default go to `about:config` and set:
 Restart Firefox for changes to take effect.
 
 To confirm the default Azure backend go to `about:support` and under the "Graphics" section look for "AzureContentBackend" and check if it reports "skia".
+
+#### Enable Accelerated Azure Canvas
+
+To go `about:config` accept the warning, right click and create a new boolean value. Set the name as `gfx.canvas.azure.accelerated` and set it to true.
+
+To verify restart firefox then go to `about:support` and search for AzureCanvasAccelerated which should be set to 1.
 
 #### Network settings
 

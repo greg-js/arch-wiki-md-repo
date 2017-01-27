@@ -173,25 +173,7 @@ http_proxy="http://192.168.0.1:80"
 
 ### Using pam_env
 
-Using `/etc/environment` and `~/.pam_environment` can be a little tricky, and the man pages ([pam_env(8)](http://man7.org/linux/man-pages/man8/pam_env.8.html) and [pam_env.conf(5)](http://man7.org/linux/man-pages/man5/pam_env.conf.5.html)) are not particularly clear. So, here's an example:
-
- `~/.pam_environment` 
-```
-LANG             DEFAULT=en_US.UTF-8
-LC_ALL           DEFAULT=${LANG}
-
-XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
-#XDG_CONFIG_HOME=@{HOME}/.config                    # is **not** valid see below
-XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share
-
-# you can even use recently defined variables
-RCRC             DEFAULT=${XDG_CONFIG_HOME}/rcrc
-BROWSER=firefox
-#BROWSER         DEFAULT=firefox # same as above
-EDITOR=vim
-```
-
-In `~/.pam_environment` there are two ways to set environmental variables:
+In `/etc/environment` and `~/.pam_environment` there are two formats to write down environment variables:
 
 ```
 VARIABLE=VALUE
@@ -205,7 +187,39 @@ VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]
 
 ```
 
-The first one **doesn't allow** the use of `${VARIABLES`}, while the second does. `@{HOME`} is a special variable that expands what is defined in `/etc/passwd` (same goes with `@{SHELL`}). After defining a `VARIABLE`, you can recall it with `${VARIABLE`}. Note that curly braces and the dollar sign are needed (`${`}) when invoking the previously defined variable.
+The first one **doesn't allow** the use of `${VARIABLE}`, while the second does.
+
+`@{HOME}` and `@{SHELL}` are special variables that expand what is defined in `/etc/passwd`.
+
+After defining a `VARIABLE`, you can recall it with `${VARIABLE}`. Curly braces and the dollar sign (`${}`) are required when invoking the previously defined variable.
+
+Here is an example of basic [user directories](/index.php/XDG_Base_Directory_support#User_directories "XDG Base Directory support") configuration:
+
+ `~/.pam_environment` 
+```
+# Setting variables that reuse your $HOME
+XDG_CACHE_HOME   DEFAULT=@{HOME}/.cache
+XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
+XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share
+
+# You can reuse XDG_RUNTIME_DIR for runtime files
+ICEAUTHORITY     DEFAULT=${XDG_RUNTIME_DIR}/ICEauthority
+
+# You can reuse variables you already defined
+GNUPGHOME        DEFAULT=${XDG_CONFIG_HOME}/gnupg
+
+# You can define variables as VARIABLE=VALUE pair
+EDITOR=nano
+
+# Same as above
+EDITOR           DEFAULT=nano
+
+#Incorrect: you can't reuse other variables in VARIABLE=VALUE pair
+#GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
+
+#Incorrect: missing {}
+#GNUPGHOME        DEFAULT=$XDG_CONFIG_HOME/gnupg
+```
 
 **Note:** This file is read before everything, even `~/.{,bash_,z}profile` and `~/.zshenv`.
 

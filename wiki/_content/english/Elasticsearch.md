@@ -57,6 +57,18 @@ http.port: 9200
 
 ```
 
+You may want to chance the default max. memory usage:
+
+ `/etc/elasticsearch/jvm.options` 
+```
+# Xms represents the initial size of total heap space
+# Xmx represents the maximum size of total heap space
+
+-Xms128m # e.g. 256m, 1g, 2g, ..
+-Xmx512m # e.g. 256m, 1g, 2g, ..
+
+```
+
 ## Usage
 
 Elasticsearch uses a REST API, see [Wikipedia:RESTful API](https://en.wikipedia.org/wiki/RESTful_API "wikipedia:RESTful API") for more information.

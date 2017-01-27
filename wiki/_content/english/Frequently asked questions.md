@@ -50,7 +50,7 @@ See the [Arch Linux](/index.php/Arch_Linux "Arch Linux") article.
 You may **not** want to use Arch, if:
 
 *   you do not have the ability/time/desire for a 'do-it-yourself' GNU/Linux distribution.
-*   you require support for an architecture other than x86_64 or i686.
+*   you require support for an architecture other than x86_64.
 *   you take a strong stand on using a distribution which only provides free software as defined by GNU.
 *   you believe an operating system should configure itself, run out of the box, and include a complete default set of software and desktop environment on the installation media.
 *   you do not want a rolling release GNU/Linux distribution.
@@ -58,11 +58,11 @@ You may **not** want to use Arch, if:
 
 ### What architectures does Arch support?
 
-Arch supports the i686 and x86_64 (sometimes called amd64) architectures.
+Arch only supports the x86_64 (sometimes called amd64) architecture. Support for i686 is being phased out and will be completely dropped in November 2017[[1]](https://www.archlinux.org/news/phasing-out-i686-support/): if you are still running a 32-bit system you may be interested in reading [#Can I switch from i686 to x86_64 without reinstalling?](#Can_I_switch_from_i686_to_x86_64_without_reinstalling.3F).
 
 ### Does Arch support ARM CPUs?
 
-No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port of Arch Linux to several ARM platforms. See [[1]](http://ix.io/73w/irc).
+No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port of Arch Linux to several ARM platforms. See [[2]](http://ix.io/73w/irc).
 
 ### Does Arch follow the [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)?
 

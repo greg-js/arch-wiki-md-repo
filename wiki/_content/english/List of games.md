@@ -866,6 +866,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.beyondtheredline.net/](http://www.beyondtheredline.net/) || [btrl](https://aur.archlinux.org/packages/btrl/)
 
+*   **Endless Sky** — Open source, 2D space trading and combat game similar to the classic Escape Velocity series.
+
+	[https://endless-sky.github.io/](https://endless-sky.github.io/) || [endless-sky-git](https://aur.archlinux.org/packages/endless-sky-git/)
+
 *   **[Flight Gear](https://en.wikipedia.org/wiki/Flight_Gear "wikipedia:Flight Gear")** — Open-source, multi-platform flight simulator.
 
 	[http://www.flightgear.org/](http://www.flightgear.org/) || [flightgear](https://www.archlinux.org/packages/?name=flightgear)
@@ -882,11 +886,19 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://www.minetest.net/](http://www.minetest.net/) || [minetest](https://www.archlinux.org/packages/?name=minetest)
 
+*   **Naev** — Open source, 2D space trading and combat game, taking inspiration from the Escape Velocity series.
+
+	[http://blog.naev.org/](http://blog.naev.org/) || [naev](https://www.archlinux.org/packages/?name=naev)
+
 *   **[openBVE](https://en.wikipedia.org/wiki/BVE_Trainsim#openBVE "wikipedia:BVE Trainsim")** — Free-as-in-freedom train simulator placed in the public domain.
 
 	[https://web.archive.org/web/odakyufan.zxq.net/openbve/](https://web.archive.org/web/odakyufan.zxq.net/openbve/) || [openbve](https://www.archlinux.org/packages/?name=openbve)
 
-*   **Powder Toy** — Physics and chemistry simulation sandbox game.
+*   **[Pioneer](https://en.wikipedia.org/wiki/Pioneer_(video_game) "wikipedia:Pioneer (video game)")** — Open source, 3D, freeform single player space adventure set in the Milkyway galaxy at the turn of the 31st century in the spirit of Frontier: Elite II.
+
+	[http://pioneerspacesim.net/](http://pioneerspacesim.net/) || [pioneer](https://aur.archlinux.org/packages/pioneer/)
+
+*   **The Powder Toy** — Open source physics sandbox game, which simulates air pressure and velocity, heat, gravity and a countless number of interactions between different substances.
 
 	[http://powdertoy.co.uk/](http://powdertoy.co.uk/) || [powder-toy](https://aur.archlinux.org/packages/powder-toy/)
 

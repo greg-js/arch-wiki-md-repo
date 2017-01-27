@@ -45,7 +45,7 @@ The certificate/key pair is created as `/etc/ssl/certs/dovecot.pem` and `/etc/ss
 
 Run `cp /etc/ssl/certs/dovecot.pem /etc/ca-certificates/trust-source/anchors/dovecot.crt` and then `# trust extract-compat` whenever you have changed your certificate.
 
-**Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your [configuration](#Dovecot_configuration):
+**Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your [configuration](#Dovecot_configuration) in `/etc/dovecot/conf.d/10-ssl.conf`:
 ```
 ssl_protocols = !SSLv2 !SSLv3
 ssl_cipher_list = ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA
@@ -137,7 +137,7 @@ This facilitates the actual Sieve filtering upon delivery.
 **Note:** Nowadays it is recommended to use LMTP instead of LDA. Nevertheless the Dovecot LDA can still be used for small mailservers. More information can be found in the [Dovecot Wiki](http://wiki2.dovecot.org/LMTP)
 
 *   Optionally, add configuration in `plugin` section. See [Sieve Interpreter Documentation](http://wiki2.dovecot.org/Pigeonhole/Sieve/Configuration) for configuration options and default values.
-    Example:
+    Example: run `cp /usr/share/doc/dovecot/example-config/conf.d/90-sieve.conf /etc/dovecot/conf.d/90-sieve.conf` and verify in `/etc/dovecot/conf.d/90-sieve.conf`:
     ```
     plugin {
       sieve = file:~/sieve;active=~/.dovecot.sieve 
@@ -165,7 +165,7 @@ plugin {
 ```
 **Note:** This tests for "X-Spam_score" (which is the spam header format in default Exim configuration). Your header might look different, ie "X-Spam-Score".
 
-*   Create sieve script
+*   Create sieve script: `mkdir -p /var/lib/dovecot/sieve/global_sieves`
 
  `/var/lib/dovecot/sieve/global_sieves/move_to_spam_folder.sieve` 
 ```

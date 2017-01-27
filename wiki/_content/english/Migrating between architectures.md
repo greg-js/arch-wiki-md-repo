@@ -1,4 +1,4 @@
-This page documents two potential methods of migrating installed systems between i686 (32-bit) and x86_64 (64-bit) architectures, in either direction. The methods avoid a *complete* reinstall (i.e. wiping the hard drive). One method uses a liveCD, the other modifies the system from within.
+This page documents two potential methods of migrating installed systems from i686 (32-bit) to x86_64 (64-bit) architectures. The methods avoid a *complete* reinstall (i.e. wiping the hard drive). One method uses a liveCD, the other modifies the system from within.
 
 **Note:** Technically this process still involves "reinstalling" since every package on the system must be replaced. These methods simply attempt to preserve as much as they can from your existing system.
 
@@ -30,15 +30,13 @@ This page documents two potential methods of migrating installed systems between
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Busybox](#Busybox)
     *   [5.2 Lib32-glibc](#Lib32-glibc)
-    *   [5.3 KDE does not start after switching from 32bit to 64bit](#KDE_does_not_start_after_switching_from_32bit_to_64bit)
+    *   [5.3 KDE does not start after switching from 32-bit to 64-bit](#KDE_does_not_start_after_switching_from_32-bit_to_64-bit)
     *   [5.4 Mutt issues with cache enabled](#Mutt_issues_with_cache_enabled)
 *   [6 See also](#See_also)
 
 ## General preparation
 
 ### Confirm 64-bit architecture
-
-If you are already running x86_64 but want to install i686 this is not relevant and you can skip this step.
 
 In order to run 64-bit software, you must have a 64-bit capable CPU. Most modern CPUs are capable of running 64-bit software. You may check your CPU with the following command:
 
@@ -53,7 +51,7 @@ For CPUs that support x86_64, this will return the `lm` flag (“long mode”) h
 
 You should be prepared for `/var/cache/pacman/pkg` to grow approximately twice its current size during the migration. This is assumes only packages that are currently installed are in the cache, as if “pacman -Sc” (clean) was recently run. The disk space increase is due to duplication between the i686 and x86_64 versions of each package.
 
-If you have not enough disk, please use [GParted](/index.php/GParted "GParted") to resize the relevant partition, or mount another partition to */var/cache/pacman*.
+If you have not enough disk, please use [GParted](/index.php/GParted "GParted") to resize the relevant partition, or mount another partition to `/var/cache/pacman`.
 
 Please do not remove packages of the old architecture from the cache until the system is fully operating in the new architecture. Removing the packages too early may leave you unable to fall back and revert changes.
 
@@ -71,11 +69,12 @@ Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-
 
 ## Method 1: using the Arch LiveCD
 
-1.  Download, burn and boot the 64-bit Arch ISO LiveCD.
-2.  Configure your network on the LiveCD.
-3.  Mount your existing installation. For example: `mount /dev/sda1 /mnt`.
-4.  Edit the LiveCD `/etc/pacman.conf` repositories to match the existing `/mnt/etc/pacman.conf` repositories.
-5.  Use the following commands to update the local pacman database and clear the cache directory.
+1.  [Download](https://www.archlinux.org/download/) and burn the latest Arch Linux ISO.
+2.  Boot the Arch LiveCD in x86_64 mode.
+3.  Configure your network on the LiveCD.
+4.  Mount your existing installation. For example: `mount /dev/sda1 /mnt`.
+5.  Edit the LiveCD `/etc/pacman.conf` repositories to match the existing `/mnt/etc/pacman.conf` repositories.
+6.  Use the following commands to update the local pacman database and clear the cache directory.
 
 ```
  # pacman --root /mnt -Syy
@@ -158,23 +157,9 @@ If you are migrating from 32 bits to 64 bits, now is the time to install 32-bit 
 
 #### Change Pacman architecture
 
-Edit the */etc/pacman.conf* file and change *Architecture* from `auto` to the new value. These *sed* commands may be used:
+Edit the `/etc/pacman.conf` file and change *Architecture* from `auto` to `x86_64`.
 
-Migrating to x86_64:
-
-```
-# sed -i  '/^Architecture =/s/auto/x86_64/' /etc/pacman.conf
-
-```
-
-and for i686:
-
-```
-# sed -i  '/^Architecture =/s/auto/i686/' /etc/pacman.conf
-
-```
-
-Make sure the server lists in */etc/pacman.conf* and */etc/pacman.d/mirrorlist* use *$arch* instead of explicitly specifying *i686* or *x86_64*. Now force Pacman to synchronize with the new repositories:
+Make sure the server lists in `/etc/pacman.conf` and `/etc/pacman.d/mirrorlist` use `$arch` instead of explicitly specifying `i686` or `x86_64`. Now force Pacman to synchronize with the new repositories:
 
 ```
 # pacman -Syy                     # force sync new architecture repositories
@@ -198,7 +183,7 @@ If migrating to 32 bits, install the 32-bit [busybox](https://www.archlinux.org/
 
 #### Install kernel (64-bit)
 
-Upgrading the kernel to 64 bits (x86_64) is safe and straightforward: 32 bit and 64 bit applications run equally well under a 64-bit kernel. For migration *away* from 64 bits, leave the 64-bit kernel installed and running for now and skip this step.
+Upgrading the kernel to 64 bits (x86_64) is safe and straightforward: 32 bit and 64 bit applications run equally well under a 64-bit kernel.
 
 Install the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
@@ -260,8 +245,6 @@ Install all of the previously downloaded replacements for the new architecture. 
 
 If some packages did not install correctly, you should now be able to reinstall them successfully; if you are lazy, you can just re-run the last command to reinstall everything.
 
-For migration away from 64 bits, you may want to skip installing a 32-bit kernel in the commands above, since the old 64-bit kernel will still run 32-bit programs.
-
 After this step the migration in either direction should be complete and it should be safe to reboot the computer.
 
 However, if you have any AUR packages on your system, you must reinstall all of them. A list of those can be obtained by executing:
@@ -313,9 +296,9 @@ Example run 32 bit `/bin/ls`:
 
 ```
 
-### KDE does not start after switching from 32bit to 64bit
+### KDE does not start after switching from 32-bit to 64-bit
 
-KDE will crash when starting after switching from 32bit to 64bit. The cause are some leftover cached files from the 32 bit KDE packages in /var/tmp To fix this remove all kdecache folders in with
+KDE will crash when starting after switching from 32-bit to 64-bit. The cause are some leftover cached files from the 32 bit KDE packages in /var/tmp To fix this remove all kdecache folders in with
 
 ```
 # rm -rf /var/tmp/kdecache-*

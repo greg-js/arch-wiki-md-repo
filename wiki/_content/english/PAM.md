@@ -130,7 +130,7 @@ PAM modules from the [Official repositories](/index.php/Official_repositories "O
 
 	uses `pam_ecryptfs.so` to automount an encrypted directory.
 
-*   [Dm-crypt/Mounting at login#PAM configuration](/index.php/Dm-crypt/Mounting_at_login#PAM_configuration "Dm-crypt/Mounting at login")
+*   [Dm-crypt/Mounting at login](/index.php/Dm-crypt/Mounting_at_login "Dm-crypt/Mounting at login")
 
 	shows how to use `pam_exec.so` to execute a custom script on a user login.
 

@@ -38,7 +38,7 @@ $ chmod 700 ~/.xinitrc
 
 ### Theming
 
-For the exact meanings of the options discussed below, see the manual page of xdm. The configuration file is located in `/etc/X11/xdm/Xresources`, notice that if you installed [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) the configuration file will instead be located in `/etc/X11/archlinux/xdm/Xresources`.
+For the exact meanings of the options discussed below, see the manual page of xdm. The configuration file is located in `/etc/X11/xdm/Xresources`, notice that if you installed [xdm-archlinux](https://www.archlinux.org/packages/?name=xdm-archlinux) the configuration file will instead be located in `/etc/X11/xdm/archlinux/Xresources`.
 
 #### Background wallpaper
 

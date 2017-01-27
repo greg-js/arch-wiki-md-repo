@@ -12,6 +12,7 @@ Note that DVB-T is not used in the US.
     *   [3.2 MPlayer / mpv](#MPlayer_.2F_mpv)
         *   [3.2.1 Channel selector](#Channel_selector)
     *   [3.3 ffmpeg](#ffmpeg)
+    *   [3.4 dvbjet](#dvbjet)
 *   [4 Troubleshooting](#Troubleshooting)
 
 ## Driver
@@ -219,6 +220,12 @@ A simple command to stream a program, without addditional encoding might look li
 $ ffmpeg -f mpegts -i /dev/dvb/adapter0/dvr0 out.mp4
 
 ```
+
+(Note: the above command will not generate output if the card requires to setup the frontend and/or the demuxer).
+
+### dvbjet
+
+DVB cards receive several simultaneous programs multiplexed. The command-line [dvbjet](https://github.com/lightful/DVBdirect/) standalone tool (has no dependencies) tunes the TV card by selecting the frequency, as with a radio, and saves the *full MPEG-TS stream*. To play or extract a separate program from it (with all its audio, video and subtitle tracks) its companion python script lists the programs and invokes ffmpeg.
 
 ## Troubleshooting
 

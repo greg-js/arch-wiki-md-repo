@@ -186,6 +186,8 @@ UDP
 *   Less reliable than TCP as no error correction is in use.
 *   Potentially faster than TCP.
 
+**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[1]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
+
 ### The client config profile
 
 Copy the example client configuration file to `/etc/openvpn/client/client.conf`:
@@ -467,7 +469,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 **Note:** There are potential pitfalls when routing all traffic through a VPN server. Refer to [the OpenVPN documentation on this topic](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) for more information.
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[1]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic, including web traffic, pass through the VPN do the following. First add the following to your server's configuration file (i.e., `/etc/openvpn/server/server.conf`) [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect):
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -528,14 +530,14 @@ Lastly, reload UFW:
 
 #### iptables
 
-In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[2]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your iptables firewall of your server, first create an iptables rule for NAT forwarding [[3]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[3]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[4]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 

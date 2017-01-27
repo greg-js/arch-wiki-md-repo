@@ -194,14 +194,14 @@ options edns0
 
 ```
 
-You may also wish to add the following argument to *dnscrypt-proxy*:
+You may also wish to append the following to `/etc/dnscrypt-proxy.conf`:
 
 ```
---edns-payload-size=<bytes>
+EDNSPayloadSize *<bytes>*
 
 ```
 
-The default size being **1252** bytes, with values up to **4096** bytes being purportedly safe. A value below or equal to **512** bytes will disable this mechanism, unless a client sends a packet with an OPT section providing a payload size.
+Where *<bytes>* is a number, the default size being **1252**, with values up to **4096** bytes being purportedly safe. A value below or equal to **512** bytes will disable this mechanism, unless a client sends a packet with an OPT section providing a payload size.
 
 #### Test EDNS0
 
@@ -300,12 +300,13 @@ User dnscrypt
 
 ```
 
-Alternatively, if you changed the port to an unprivileged port in the [#Change port](#Change_port) section, you should use `User=` in in the `dnscrypt-proxy.service` systemd unit:
+Alternatively, you should use `User=` in in the `dnscrypt-proxy.service` systemd unit:
 
 ```
 [Service]
 User=dnscrypt
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
 
 ```
 
-This second option is useful when using a caching server like unbound and is preferred, since the unit is not exec'ed as root in the first place.
+This second option is useful when using a caching server like unbound and is preferred, since the unit is not exec'ed as root in the first place. If you [changed the port](#Change_port) to an unprivileged one (e.g. 5353), then `CapabilityBoundingSet=CAP_NET_BIND_SERVICE` is not needed.

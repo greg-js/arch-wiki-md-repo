@@ -2,4 +2,4 @@
 
 ## Installation
 
-Install [torch7](https://aur.archlinux.org/packages/torch7/) from the [AUR](/index.php/AUR "AUR").
+Install [torch7-git](https://aur.archlinux.org/packages/torch7-git/) from the [AUR](/index.php/AUR "AUR").

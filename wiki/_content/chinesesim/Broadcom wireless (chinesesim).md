@@ -3,18 +3,17 @@
 *   [1 介绍](#.E4.BB.8B.E7.BB.8D)
 *   [2 查看你可以使用何种驱动](#.E6.9F.A5.E7.9C.8B.E4.BD.A0.E5.8F.AF.E4.BB.A5.E4.BD.BF.E7.94.A8.E4.BD.95.E7.A7.8D.E9.A9.B1.E5.8A.A8)
 *   [3 获取驱动](#.E8.8E.B7.E5.8F.96.E9.A9.B1.E5.8A.A8)
-    *   [3.1 brcmsmac/brcmfmac（brcm80211）](#brcmsmac.2Fbrcmfmac.EF.BC.88brcm80211.EF.BC.89)
+    *   [3.1 brcm80211](#brcm80211)
     *   [3.2 b43/b43legacy](#b43.2Fb43legacy)
-        *   [3.2.1 Loading the b43/b43legacy kernel module](#Loading_the_b43.2Fb43legacy_kernel_module)
     *   [3.3 broadcom-wl](#broadcom-wl)
-        *   [3.3.1 Loading the wl kernel module](#Loading_the_wl_kernel_module)
+        *   [3.3.1 加载broadcom-wl的内核模块](#.E5.8A.A0.E8.BD.BDbroadcom-wl.E7.9A.84.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
 *   [4 加载多博通网卡的内核驱动模块](#.E5.8A.A0.E8.BD.BD.E5.A4.9A.E5.8D.9A.E9.80.9A.E7.BD.91.E5.8D.A1.E7.9A.84.E5.86.85.E6.A0.B8.E9.A9.B1.E5.8A.A8.E6.A8.A1.E5.9D.97)
 *   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [5.1 更新 Kernel 后设备无法访问](#.E6.9B.B4.E6.96.B0_Kernel_.E5.90.8E.E8.AE.BE.E5.A4.87.E6.97.A0.E6.B3.95.E8.AE.BF.E9.97.AE)
     *   [5.2 使用 broadcom-wl 驱动的设备不工作/不显示](#.E4.BD.BF.E7.94.A8_broadcom-wl_.E9.A9.B1.E5.8A.A8.E7.9A.84.E8.AE.BE.E5.A4.87.E4.B8.8D.E5.B7.A5.E4.BD.9C.2F.E4.B8.8D.E6.98.BE.E7.A4.BA)
     *   [5.3 使用 broadcom-wl 驱动时接口交换](#.E4.BD.BF.E7.94.A8_broadcom-wl_.E9.A9.B1.E5.8A.A8.E6.97.B6.E6.8E.A5.E5.8F.A3.E4.BA.A4.E6.8D.A2)
     *   [5.4 接口显示正常但是不能连接](#.E6.8E.A5.E5.8F.A3.E6.98.BE.E7.A4.BA.E6.AD.A3.E5.B8.B8.E4.BD.86.E6.98.AF.E4.B8.8D.E8.83.BD.E8.BF.9E.E6.8E.A5)
-    *   [5.5 Suppressing console messages](#Suppressing_console_messages)
+    *   [5.5 奇怪的报错信息](#.E5.A5.87.E6.80.AA.E7.9A.84.E6.8A.A5.E9.94.99.E4.BF.A1.E6.81.AF)
     *   [5.6 不能检测到设备 BCM43241](#.E4.B8.8D.E8.83.BD.E6.A3.80.E6.B5.8B.E5.88.B0.E8.AE.BE.E5.A4.87_BCM43241)
     *   [5.7 在连接到某些路由器时可能不稳定](#.E5.9C.A8.E8.BF.9E.E6.8E.A5.E5.88.B0.E6.9F.90.E4.BA.9B.E8.B7.AF.E7.94.B1.E5.99.A8.E6.97.B6.E5.8F.AF.E8.83.BD.E4.B8.8D.E7.A8.B3.E5.AE.9A)
 
@@ -22,13 +21,13 @@
 
 博通对于其Wifi卡在 GNU/Linux 上的支持不好可谓是臭名昭著。直到最近，大部分的博通芯片要么是完全不被支持，或者需要用户自行修改内核。一组有限的无线芯片由不同的逆向工程提供支持（比如：`brcm4xxx`, `b43`。从 Kernel 2.6.24 开始，这些逆向工程 [`b43`](http://wireless.kernel.org/en/users/Drivers/b43) 的驱动已经被收录。
 
-2008年8月，博通发布了GNU/ Linux上的 [802.11 Linux STA 驱动r](http://www.broadcom.com/support/802.11/linux_sta.php) 正式为其无线设备提供 GNU/Linux 支持。这些驱动是闭源的, 但博通承诺，在未来将以一种更加开放的方式提供支持。此外，它们不具有隐藏 ESSID 的功能。
+2008年8月，博通发布了GNU/ Linux上的 [802.11 Linux STA 驱动](https://www.broadcom.cn/support/download-search/?pg=&pf=Wireless+LAN+Infrastructure&pn=&po=&pa=&dk=) 正式为其无线设备提供 GNU/Linux 支持。这些驱动是闭源的, 但博通承诺，在未来将以一种更加开放的方式提供支持。此外，它们不具有隐藏 ESSID 的功能。
 
 在2010年9月，博通完全开源的硬件驱动[[1]](http://thread.gmane.org/gmane.linux.kernel.wireless.general/55418终于发布)。该驱动程序[ `brcm80211`](http://wireless.kernel.org/en/users/Drivers/brcm80211)已被列入到自2.6.37之后的内核中。随着2.6.39发布，这些驱动程序已被重新命名为 `brcmsmac`和 `brcmfmac`。
 
 在写这篇文章时，使用博通芯片组的用户有以下三种选择：
 
-| Driver | Description |
+| 驱动 | 描述 |
 | brcmsmac/brcmfmac | 开源内核驱动 |
 | b43 | 逆向工程内核驱动 |
 | broadcom-wl | 专有的 Broadcom STA 驱动 |
@@ -46,118 +45,104 @@ $ lspci -vnn | grep 14e4:
 
 ## 获取驱动
 
-### brcmsmac/brcmfmac（brcm80211）
+### brcm80211
 
-`brcm80211` 驱动自内核2.6.37起包含于内核中. 并且于内核2.6.39起,他们被重命名为`brcmsmac` (针对PCI卡) 以及 `brcmfmac` (针对 SDIO).
+Kernel內建了两个开源驱动: **brcmfmac** 提供原生硬MAC支持， **brcmsmac** 提供基于mac80211的软MAC支持。 它们应该会在启动时自行加载。
 
-这些驱动应该会在启动时自行加载，如果不奏效，可以尝试以下命令
+**Note:**
 
-```
-# modprobe brcmsmac
-
-```
-
-或
-
-```
-# modprobe brcmfmac
-
-```
-
-有时则可能是因为没有合适的固件，可以使用`dmesg`观察启动时可能的报错。
-
-**Note:** The `bcma` module can prevent some cards from showing up and may need to be [blacklisted](#Wi-Fi_card_does_not_work.2Fshow_up_since_kernel_upgrade_.28brcmsmac.29).
-
-**Note:** Since linux 3.3.1 the `brcmsmac` driver depends on the `bcma` module and blacklisting is no longer required.
-
-**Note:** [wireless.kernel.org](http://wireless.kernel.org/en/users/Drivers/brcm80211) states that brcm80211 does not support older PCI/PCI-E chips with ssb backplane.
+*   **brcmfmac** 提供较新的芯片支持，并且支持AP模式，P2P模式，高级加密。
+*   **brcmsmac** 仅提供对于较老芯片的支持，例如BCM4313, BCM43224, BCM43225。
 
 ### b43/b43legacy
 
-The drivers are included in the kernel since 2.6.24.
+**b43** 以及 **b43legacy**两个逆向工程驱动已经被內建在Kernel中。b43支持大部分的博通无线芯片组，而b43legacy驱动仅支持早期的BCM4301以及BCM4306 rev.2 芯片组。为了避免与别的驱动造成冲突，请 [blacklist](/index.php/Blacklist "Blacklist") 未使用的驱动。
 
-#### Loading the b43/b43legacy kernel module
+这些驱动的运行都需要安装闭源固件，请从[AUR](/index.php/AUR "AUR")安装[b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)， [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) 或者 [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/) 。
 
-Verify which module you need by looking up your device [here](http://wireless.kernel.org/en/users/Drivers/b43#Known_PCI_devices). You can also check by computer model [here](http://linuxwireless.org/en/users/Drivers/b43/devices). Blacklist the other module (either `b43` or `b43legacy`) to prevent possible problems/confusion. For instructions, see [Kernel modules#Blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules").
+**Note:**
 
-Install the appropriate [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) or [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/) package from the [AUR](/index.php/AUR "AUR").
-
-You can now configure your device.
+*   BCM4306 rev.3, BCM4311, BCM4312 与 **b43-firmware** 固件不能良好的工作。对于这些芯片组请使用 [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) 代替。
+*   BCM4331 与 **b43-firmware-classic** 固件不能良好的工作。 对于这些芯片组请使用 [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) 代替。
 
 ### broadcom-wl
 
-**Warning:** This driver is more likely to cause problems than to resolve them. Most of the problems reported by users on Broadcom chips are caused by this driver. Using this is HIGHLY NOT recommended. Before you even think of trying out this one, make sure to try the other drivers first.
+[AUR](/index.php/AUR "AUR") 中有两个版本的Broadcom STA闭源驱动：
 
-For users of the `broadcom-wl` driver, there is a PKGBUILD available in the AUR ([broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)). You can also download this driver directly from [Broadcom](http://www.broadcom.com/support/802.11/linux_sta.php). However, the PKGBUILD method is strongly encouraged, as that way will have [pacman](/index.php/Pacman "Pacman") track all of the files.
+*   通常的 [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
+*   以及 [DKMS](/index.php/DKMS "DKMS") 版本 [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
 
-#### Loading the wl kernel module
+**Tip:** DKMS版本 [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)
 
-The `wl` module may need to be manually loaded if there are other usable modules present. Before loading the `wl` module, remove the `b43` or other module that may have been automatically loaded instead:
+*   可以在不同的Kernel中工作 (例如 [linux-ck](https://aur.archlinux.org/packages/linux-ck/)).
+*   每次安装新的Kernel时，dkms都会重新构建驱动，如果你使用 [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) 或者其他依赖于单个Kernel版本的驱动 (例如 [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)), 那么在更新Kernel或者使用新的Kernel时都有可能使驱动崩溃。
+
+#### 加载broadcom-wl的内核模块
+
+`wl` 模块可能会与其他模块冲突而无法加载。加载`wl`模块之前， 请移除`b43`或者其他可能造成冲突的模块：
 
 ```
 # rmmod b43
 
 ```
 
-Also unload `ssb`, if loaded:
+如果 `ssb` 加载了，也请一并移除:
 
 ```
 # rmmod ssb
 
 ```
 
-**Note:** Failure to unload `ssb` may result in the wireless interface not being created.
+**Note:** 错误的加载 `ssb` 可能导致无线界面无法被创建。
 
-Load the `wl` module
+加载 `wl` 模块：
 
 ```
 # modprobe wl
 
 ```
 
-The `wl` module should automatically load `lib80211` or `lib80211_crypt_tkip`. Check with `lsmod` to see if this is the case. If not, you may need to add one of those two modules as well.
+加载 `wl` 模块的同时 `lib80211` 或者 `lib80211_crypt_tkip` 应该也会被自动加载。 使用 `lsmod` 来进行检查，如果没有，请手动加载二者之一；
 
 ```
 # modprobe lib80211
 
 ```
 
-or
+或
 
 ```
 # modprobe lib80211_crypt_tkip
 
 ```
 
-If you installed the driver directly from Broadcom, you may also need to update the dependencies:
+如果你直接从博通官方网站下载驱动冰安装，你可能同时需要更新依赖模块:
 
 ```
 # depmod -a
 
 ```
 
-To make the module load at boot, add `wl` (and `lib80211`/`lib80211_crypt_tkip`, if needed) to your MODULES array in `/etc/rc.conf`.
+如果模块无法在启动时加载，请将 `wl` (以及 `lib80211`/`lib80211_crypt_tkip`如果需要) 到 `/etc/rc.conf`的MODULES列：
 
 ```
-MODULES=(... wl...)
-
-```
-
-You can also blacklist other modules (to prevent them from interfering) in `/etc/modprobe.d/modprobe.conf`. To blacklist a module just append a new line with the syntax `blacklist <module name>`:
-
-```
-blacklist b43
-blacklist ssb
+# MODULES=(... wl...)
 
 ```
 
-**Warning:** Broadcom Corporation BCM4311 802.11b/g WLAN [14e4:4311] does not work with blacklisting `b43` and `ssb`.
+你也可以Blacklist掉可能冲突的模块，在 `/etc/modprobe.d/modprobe.conf`中加入:
+
+```
+# blacklist b43
+# blacklist ssb
+
+```
+
+**Warning:** Broadcom Corporation BCM4311 802.11b/g WLAN [14e4:4311] 在Blacklist `b43` 以及 `ssb`后可能不工作。
 
 ## 加载多博通网卡的内核驱动模块
 
-在我的戴尔 Inspiron笔记本上，拥有BCM4401有线网卡和BCM4328无线网卡。如果我仅仅是移除b43模块，我能加载wl无线驱动，但是没有无线网卡显示。然而，如果我先移除有线网卡的b44(和ssb)驱动模块，然后加载wl无线驱动，则会有一个eth0无线网卡设备出现。之后，再重新加载b44驱动，这样就同时能有一个eth1的有线网卡出现。
-
-短文版:
+**b43**的博通无线网卡驱动与**b44**博通有线网卡驱动可能产生冲突，因此建议您使用**broadcom-wl**驱动
 
 *   Put "lib80211_crypt_tkip" and "wl" at the BEFORE b44 (if you have it) position in MODULES= 在 /etc/rc.conf 模块部分，b44(如果你需要这个驱动的话)之前加入lib80211_crypt_tkip wl
 *   不要忘记把 b43 模块加入黑名单
@@ -171,11 +156,11 @@ blacklist ssb
 
 ### 更新 Kernel 后设备无法访问
 
-Since the 3.3.1 kernel the **bcma** module was introduced. If using a **brcm80211** driver be sure it has not been [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules"). If using a **b43** driver be sure the it has been.
+如果您使用 **brcm80211** 请确保没有被 [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules")。如果你使用 **b43** 驱动确保它在工作。如果你使用**Broadcom STA**驱动的[broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)包，请重新安装或一劳永逸地切换成[broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)。
 
 ### 使用 broadcom-wl 驱动的设备不工作/不显示
 
-Be sure the correct modules are blacklisted and occasionally it may be necessary to blacklist the **brcm80211** drivers if accidentally detected before the **wl** driver is loaded. Furthermore, update the modules dependencies `depmod -a`, verify the wireless interface with `ip addr`, kernel upgrades will require an upgrade of the non-[DKMS](/index.php/DKMS "DKMS") package.
+请查看dmesg是否存在报错信息，**broadcom-wl**经常发生奇怪的问题，重新加载Kernel模块或者重启一般能解决问题
 
 ### 使用 broadcom-wl 驱动时接口交换
 
@@ -183,16 +168,16 @@ Be sure the correct modules are blacklisted and occasionally it may be necessary
 
 ### 接口显示正常但是不能连接
 
-Append the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
+加入以下 [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"):
 
 ```
 b43.allhwsupport=1
 
 ```
 
-### Suppressing console messages
+### 奇怪的报错信息
 
-You may continuously get some verbose and annoying messages during the boot, similar to
+你可能会在启动时接收到奇怪的报错信息，类似于：
 
 ```
 phy0: brcms_ops_bss_info_changed: arp filtering: enabled true, count 0 (implement)
@@ -202,9 +187,9 @@ enabled, active
 
 ```
 
-To disable those messages, increase the loglevel of printk messages that get through to the console.
+一般情况下这并不影响驱动的正常工作，如果你想不想收到这些信息，可以提高printk的日志级别。
 
-Create a file in `/etc/sysctl.d/` called `printk.conf` or something similar:
+在`/etc/sysctl.d/`中创建一个`printk.conf`或者类似的配置文件:
 
  `printk.conf` 
 ```
@@ -213,11 +198,11 @@ kernel.printk = 3 3 3 3
 
 ```
 
-Refere to [StackExchange thread](http://unix.stackexchange.com/questions/44999/how-can-i-hide-messages-of-udev/45525#45525%7Cthis) for an explanation of this variable.
+最后`sysctl -p`确保配置被成功写入。
 
 ### 不能检测到设备 BCM43241
 
-无论是 `lspci` 还是 `lsusb` 都不能检测到设备。这个问题目前无法解决。 请在解决后删除此节点。
+无论是 `lspci` 还是 `lsusb` 都不能检测到设备。这个问题目前无法解决。 请在解决后删除此部分。
 
 ### 在连接到某些路由器时可能不稳定
 

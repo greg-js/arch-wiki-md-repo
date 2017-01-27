@@ -14,19 +14,17 @@ Currently, Metasploit requires to setup and configure Postgresql on target syste
     *   [3.1 Module types](#Module_types)
     *   [3.2 Searching for exploits](#Searching_for_exploits)
     *   [3.3 Using an exploit](#Using_an_exploit)
-*   [4 Bugs](#Bugs)
-    *   [4.1 Search does not filter properly](#Search_does_not_filter_properly)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Searching from the database](#Searching_from_the_database)
-    *   [5.2 Database search examples](#Database_search_examples)
-    *   [5.3 Popularity of a platform by number of exploits](#Popularity_of_a_platform_by_number_of_exploits)
-    *   [5.4 Disable the ASCII banner on startup](#Disable_the_ASCII_banner_on_startup)
-    *   [5.5 Preserve variable values between sessions](#Preserve_variable_values_between_sessions)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Cannot click in VNC viewer](#Cannot_click_in_VNC_viewer)
-    *   [6.2 cannot load such file -- robots (LoadError)](#cannot_load_such_file_--_robots_.28LoadError.29)
-    *   [6.3 db_connect fails silently](#db_connect_fails_silently)
-*   [7 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Searching from the database](#Searching_from_the_database)
+    *   [4.2 Database search examples](#Database_search_examples)
+    *   [4.3 Popularity of a platform by number of exploits](#Popularity_of_a_platform_by_number_of_exploits)
+    *   [4.4 Disable the ASCII banner on startup](#Disable_the_ASCII_banner_on_startup)
+    *   [4.5 Preserve variable values between sessions](#Preserve_variable_values_between_sessions)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Cannot click in VNC viewer](#Cannot_click_in_VNC_viewer)
+    *   [5.2 cannot load such file -- robots (LoadError)](#cannot_load_such_file_--_robots_.28LoadError.29)
+    *   [5.3 db_connect fails silently](#db_connect_fails_silently)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -40,7 +38,7 @@ For latest development version, install [metasploit-git](https://aur.archlinux.o
 
 When running Armitage, [#Setting up the database](#Setting_up_the_database) is not optional, and must be followed. It is also mandatory to use a `~/.msf4/database.yml` file.
 
-A sample `database.yml` file is packaged as `/opt/metasploit/config/database.yml.sample`.
+A sample `database.yml` file is packaged with Armitage as `/usr/share/metasploit/database.yml.sample`.
 
 ### RVM
 
@@ -270,14 +268,6 @@ msf exploit(ms08_067_netapi) > exploit
 ```
 
 If you are lucky, you will be dropped to a Meterpreter session where you can do anything on the remote computer.
-
-## Bugs
-
-### Search does not filter properly
-
-Currently the `search` command in `msfconsole` does not properly filter the results if more than 1 filters are specified. See [the bug report](https://github.com/rapid7/metasploit-framework/issues/3809) for details.
-
-See [#Searching from the database](#Searching_from_the_database) for a workaround.
 
 ## Tips and tricks
 

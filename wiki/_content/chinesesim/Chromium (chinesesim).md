@@ -70,10 +70,7 @@
 
 可以使用 Google Chrome (新Pepper API)提供的 Flash.
 
-可以通过[AUR](/index.php/AUR "AUR")中提供的软件包进行安装:
-
-*   [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) - 稳定版本
-*   [chromium-pepper-flash-dev](https://aur.archlinux.org/packages/chromium-pepper-flash-dev/) - 开发版本
+*Pepper Flash* 是使用了新的 Pepper plugin API 的 Flash Player 插件。要在 Chromium 中使用，可以从包[pepper-flash](https://aur.archlinux.org/packages/pepper-flash/)来安装。
 
 请在`chrome://plugins`中启用 `/usr/lib/PepperFlash/libpepflashplayer.so`.
 

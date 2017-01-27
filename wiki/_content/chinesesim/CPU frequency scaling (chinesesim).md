@@ -21,9 +21,7 @@ Linux 内核具有 CPU 调频实现，该基础架构称为 *cpufreq*。从 3.4 
 *   [5 GNOME下的授权](#GNOME.E4.B8.8B.E7.9A.84.E6.8E.88.E6.9D.83)
 *   [6 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [6.1 BIOS频率限制](#BIOS.E9.A2.91.E7.8E.87.E9.99.90.E5.88.B6)
-*   [7 Common issues](#Common_issues)
-    *   [7.1 High load](#High_load)
-*   [8 参阅](#.E5.8F.82.E9.98.85)
+*   [7 参阅](#.E5.8F.82.E9.98.85)
 
 ## 用户空间工具
 
@@ -294,12 +292,6 @@ ResultActive=yes
 # 如果你的机器受到错误的BIOS频率限制，这应该会有帮助
 options processor ignore_ppc=1
 ```
-
-## Common issues
-
-### High load
-
-There is a bug in the kernel module `rtsx_usb_ms` which causes a constant load over 1.0\. Test whether it makes a difference by temporarily removing it `rmmod rtsx_usb_ms`
 
 ## 参阅
 

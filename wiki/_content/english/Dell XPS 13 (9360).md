@@ -64,6 +64,8 @@ If using "late start" [KMS](/index.php/KMS "KMS") (the default) and the screen g
 
 The Killer 1535 Wirless Adapter is functional and the ath10k firmware is included in recent linux kernel versions. The connection speed reported by iw is limited to 1-6Mbits/s. However this is just the output being wrong. The real connection speed is not limited to this value.
 
+Some users are experiencing issues, where the connection is dropped under heavy load but reconnects within a brief moment. This might not be noticed during browsing at all but becomes apparent in online games. There is no know solution so far.
+
 ## Bluetooth
 
 After following the instructions given at [Bluetooth](/index.php/Bluetooth "Bluetooth") tethering of internet connections via phone works immediately.

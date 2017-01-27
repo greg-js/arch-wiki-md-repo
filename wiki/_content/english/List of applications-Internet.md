@@ -260,6 +260,10 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://www.uninformativ.de/projects/lariza/](https://www.uninformativ.de/projects/lariza/) || [lariza](https://aur.archlinux.org/packages/lariza/)
 
+*   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
+
+	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
+
 *   **Rainbow Lollipop** — The visual history browser. In early state of development.
 
 	[http://rainbow-lollipop.de/](http://rainbow-lollipop.de/) || [rainbow-lollipop-git](https://aur.archlinux.org/packages/rainbow-lollipop-git/)
@@ -288,10 +292,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
 
-*   **[Midori](/index.php/Midori "Midori")** — Lightweight web browser based on GTK+ and WebKit.
-
-	[http://midori-browser.org/](http://midori-browser.org/) || GTK+ 3: [midori](https://www.archlinux.org/packages/?name=midori), GTK+ 2: [midori-gtk2](https://aur.archlinux.org/packages/midori-gtk2/)
-
 *   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
@@ -310,7 +310,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero")** — Webkit minimalist web browser (formerly known as *xxxterm*) with sophisticated security features designed-in, BSD style.
 
-	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
+	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero](https://www.archlinux.org/packages/?name=xombrero)
 
 ###### Browsers based on qt5-webkit/qtwebkit
 

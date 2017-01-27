@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-29，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=429445)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [openLDAP](/index.php/OpenLDAP "OpenLDAP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-01-27，点击[这里](https://wiki.archlinux.org/index.php?title=openLDAP&diff=0&oldid=464607)可以查看翻译后英文页面的改动。
 
 OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器本质上是一个为只读访问而优化的非关系型数据库。它主要用做地址簿查询（如 email 客户端）或对各种服务访问做后台认证以及用户数据权限管控。（例如，访问 Samba 时，LDAP 可以起到域控制器的作用；或者 [Linux 系统认证](/index.php/LDAP_authentication "LDAP authentication") 时代替 `/etc/passwd` 的作用。）
 
@@ -6,7 +6,7 @@ OpenLDAP 是 LDAP 协议的一个开源实现。LDAP 服务器本质上是一个
 
 本页面内容仅基于一个基本的 OpenLDAP 安装做简要配置说明。
 
-**小贴士:** 目录服务是一个庞大的主题，其配置可以非常复杂。如果你是一个完全的新手，[这里](http://www.brennan.id.au/20-Shared_Address_Book_LDAP.html)有一份详尽的介绍文档。该文档通俗易懂，即使你对 LDAP 一窍不通也完全可以引领你入门。
+**提示：** 目录服务是一个庞大的主题，其配置可以非常复杂。如果你是一个完全的新手，[这里](http://www.brennan.id.au/20-Shared_Address_Book_LDAP.html)有一份详尽的介绍文档。该文档通俗易懂，即使你对 LDAP 一窍不通也完全可以引领你入门。
 
 ## Contents
 
@@ -35,7 +35,7 @@ OpenLDAP 软件包同时包含了服务器和客户端。请[安装](/index.php/
 
 ### 服务端
 
-**注意:** 需要先清空系统中现有 OpenLDAP 数据库，请删除 `/var/lib/openldap/openldap-data/`目录。
+**注意:** 需要先清空系统中现有 OpenLDAP 数据库，请删除 `/var/lib/openldap/openldap-data/`目录下的所有文件。
 
 服务器的配置文件位于 `/etc/openldap/slapd.conf`。
 
@@ -57,17 +57,13 @@ rootdn     "cn=root,dc=example,dc=com"
 
 在 `slapd.conf` 头部添加一些 [schemas](http://www.openldap.org/doc/admin24/schema.html):
 
-```
-cp /usr/share/doc/samba/examples/LDAP/samba.schema /etc/openldap/schema
+**注意:** currently missing: cp /usr/share/doc/samba/examples/LDAP/samba.schema /etc/openldap/schema
 
 ```
-
-```
-include         /etc/openldap/schema/core.schema
 include         /etc/openldap/schema/cosine.schema
 include         /etc/openldap/schema/inetorgperson.schema
 include         /etc/openldap/schema/nis.schema
-include         /etc/openldap/schema/samba.schema
+#include         /etc/openldap/schema/samba.schema
 
 ```
 
@@ -82,15 +78,14 @@ index   dc              eq
 
 ```
 
-现在准备数据目录，需要复制默认配置文件并设置用户和群组：
+现在准备数据目录，需要重命名配置文件：
 
 ```
-# cp /etc/openldap/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
-# chown ldap:ldap /var/lib/openldap/openldap-data/DB_CONFIG
+# mv /var/lib/openldap/openldap-data/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
 
 ```
 
-**注意:** 对于 OpenLDAP 2.4 ，不推荐使用 `slapd.conf` 作为配置文件。从这个版本开始所有配置数据都保存在 `/etc/openldap/slapd.d/`中。
+**注意:** 从 OpenLDAP 2.4 版本开始所有配置数据都保存在 `/etc/openldap/slapd.d/`中，建议不再使用 `slapd.conf` 作为配置文件。
 
 将 `slapd.conf` 中的改动应用到 `/etc/openldap/slapd.d/`，需要先删除老配置：
 
@@ -193,17 +188,17 @@ $ ldapsearch -D "cn=root,dc=example,dc=com" -W '(objectclass=*)'
 
 ### 基于 TLS 的 OpenLDAP
 
-**Note:** [upstream documentation](http://www.openldap.org/doc/admin24/) is much more useful/complete than this section
+**注意:** [官方文档](http://www.openldap.org/doc/admin24/)比本节内容更加完整实用。
 
-If you access the OpenLDAP server over the network and especially if you have sensitive data stored on the server you run the risk of someone sniffing your data which is sent clear-text. The next part will guide you on how to setup an SSL connection between the LDAP server and the client so the data will be sent encrypted.
+如果通过网络访问 OpenLDAP 服务器，尤其是当你的服务器上保存有敏感数据时，明文传输这些数据存在被他人嗅探的风险。If you access the OpenLDAP server over the network and especially if you have sensitive data stored on the server you run the risk of someone sniffing your data which is sent clear-text. 下面章节将指导你如何设置 LDAP 服务器与客户端之间的 SSL 连接以加密传输数据。The next part will guide you on how to setup an SSL connection between the LDAP server and the client so the data will be sent encrypted.
 
-In order to use TLS, you must have a certificate. For testing purposes, a *self-signed* certificate will suffice. To learn more about certificates, see [OpenSSL](/index.php/OpenSSL "OpenSSL").
+要使用 TLS，你必须获得一个证书。In order to use TLS, you must have a certificate. 测试时可以使用*自签署*证书。证书的详细信息请参阅 [OpenSSL](/index.php/OpenSSL "OpenSSL")。For testing purposes, a *self-signed* certificate will suffice. To learn more about certificates, see [OpenSSL](/index.php/OpenSSL "OpenSSL").
 
-**Warning:** OpenLDAP cannot use a certificate that has a password associated to it.
+**警告:** OpenLDAP 不能使用关联了口令的证书。cannot use a certificate that has a password associated to it.
 
 #### 创建一个自签署的证书
 
-To create a *self-signed* certificate, type the following:
+输入下列命令创建一个自签署证书： To create a *self-signed* certificate, type the following:
 
 ```
 $ openssl req -new -x509 -nodes -out slapdcert.pem -keyout slapdkey.pem -days 365

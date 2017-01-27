@@ -5,7 +5,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 **Note:**
 
 *   Redshift only works with [Xorg](/index.php/Xorg "Xorg") [[1]](https://github.com/jonls/redshift/issues/55) – [Wayland](/index.php/Wayland "Wayland") is not supported yet.
-*   A native [GNOME](/index.php/GNOME "GNOME") [extension](https://github.com/benzea/gnome-shell-extension-redshift) has been made available and supports [Wayland](/index.php/Wayland "Wayland"), however it requires a patched [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon). See [Installation#Gnome Shell Extension](/index.php/Installation#Gnome_Shell_Extension "Installation").
+*   A native [GNOME](/index.php/GNOME "GNOME") [extension](https://github.com/benzea/gnome-shell-extension-redshift) has been made available and supports [Wayland](/index.php/Wayland "Wayland"), however it requires a patched [gnome-settings-daemon](https://www.archlinux.org/packages/?name=gnome-settings-daemon). See [#GNOME_Shell_Extension](#GNOME_Shell_Extension).
 
 ## Contents
 

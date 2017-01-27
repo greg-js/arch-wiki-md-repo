@@ -87,7 +87,7 @@ En el afán de trasladar ese esfuerzo colectivo a los usuarios de habla hispana,
 *   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 *   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
 *   [SignoSN](/index.php/User:SignoSN "User:SignoSN") - Traducción cada Domingo y Miércoles (*en principio*)
-*   [Raine](/index.php?title=User:Raine&action=edit&redlink=1 "User:Raine (page does not exist)") - [enviar email](/index.php/Special:EmailUser/Raine "Special:EmailUser/Raine")
+*   [Raine](/index.php/User:Raine "User:Raine") - [enviar email](/index.php/Special:EmailUser/Raine "Special:EmailUser/Raine")
 
 ### Inactivos
 

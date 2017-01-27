@@ -14,7 +14,7 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
     *   [5.1 Integration with notmuch](#Integration_with_notmuch)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
-    *   [6.2 Step #2: Rehash the certificates](#Step_.232:_Rehash_the_certificates)
+    *   [6.2 Step #2: Setup mbsync](#Step_.232:_Setup_mbsync)
     *   [6.3 Exchange 2003](#Exchange_2003)
 *   [7 External Links](#External_Links)
 
@@ -194,7 +194,15 @@ This modification assumes that you have already setup notmuch for your user. If 
 
 ## Troubleshooting
 
-If you get certificate related errors, you may need to retrieve the server's certificates manually in order for mbsync to correctly verify it.
+If you get certificate related errors like
+
+```
+
+SSL error connecting pop.mail.com (193.222.111.111:143): error:00000012:lib(0):func(0):reason(18) 
+
+```
+
+you may need to retrieve the server's certificates manually in order for mbsync to correctly verify it.
 
 ### Step #1: Get the certificates
 
@@ -205,7 +213,17 @@ $ openssl s_client -connect some.imap.server:port -showcerts 2>&1 < /dev/null | 
 
 ```
 
-This will create a certificate file called `~/.cert/some.imap.server.pem` (e.g. `~/.cert/imap.gmail.com.pem`). If you wish to do this manually, you may enter:
+This will create a certificate file called `~/.cert/some.imap.server.pem` (e.g. `~/.cert/imap.gmail.com.pem`). Alternatively one can download [get_certs.sh](https://gist.githubusercontent.com/petRUShka/af96ae25ce8280729b9ea049b929f31d/raw/a79471ce8aee3f6d04049039adf870a53a524f7f/get_certs.sh) and run it:
+
+```
+
+$ mkdir ~/.cert
+$ wget https://gist.githubusercontent.com/petRUShka/af96ae25ce8280729b9ea049b929f31d/raw/a79471ce8aee3f6d04049039adf870a53a524f7f/get_certs.sh
+$ sh get_certs.sh some.imap.server port ~/.cert/
+
+```
+
+If you wish to do this manually, you may enter:
 
 ```
 
@@ -320,25 +338,18 @@ cp /usr/share/ca-certificates/mozilla/Equifax_Secure_CA.crt ~/.cert/Equifax_Secu
 
 ```
 
-### Step #2: Rehash the certificates
+### Step #2: Setup mbsync
+
+Configure mbsync to use that certificate:
+
+ `~/.mbsyncrc` 
+```
+IMAPAccount gmail
+Host imap.gmail.com
+# ...
+CertificateFile ~/.cert/imap.gmail.com.pem
 
 ```
-
-$ c_rehash ~/.cert
-
-```
-
-Sample Output:
-
-```
-
-Doing  ~/.cert/
-some.imap.server.pem => 1d97af50.0
-Equifax_Secure_CA.pem => 28def021.3
-
-```
-
-This creates a symlink to the certificate file named with a cryptographic hash of its contents.
 
 ### Exchange 2003
 

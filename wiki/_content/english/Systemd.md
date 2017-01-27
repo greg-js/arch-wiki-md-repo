@@ -620,7 +620,9 @@ If this behavior is not desired, simply create a symlink from `/etc/systemd/syst
 
 ### Sandboxing application environments
 
-A unit file can be created as a sandbox to isolate applications and their processes within a hardened virtual environment. systemd leverages [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [control groups](/index.php/Cgroups "Cgroups") to container processes through an extensive [execution environment configuration](https://www.freedesktop.org/software/systemd/man/systemd.exec.html). Application sandboxing by way of systemd unit files is typically a matter of trial-and-error accompanied by the generous use of [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams") and [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html) error logging and output facilities.
+A unit file can be created as a sandbox to isolate applications and their processes within a hardened virtual environment. systemd leverages [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces"), white-/blacklisting of [Capabilities](/index.php/Capabilities "Capabilities"), and [control groups](/index.php/Cgroups "Cgroups") to container processes through an extensive [execution environment configuration](https://www.freedesktop.org/software/systemd/man/systemd.exec.html).
+
+The enhancement of an existing systemd unit file with application sandboxing typically requires trial-and-error tests accompanied by the generous use of [strace](https://www.archlinux.org/packages/?name=strace), [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_.28stderr.29 "wikipedia:Standard streams") and [journalctl](https://www.freedesktop.org/software/systemd/man/journalctl.html) error logging and output facilities. You may want to first search upstream documentation for already done tests to base trials on.
 
 Some examples on how sandboxing with systemd can be deployed:
 

@@ -8,7 +8,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
     *   [1.1 ThinkPads only](#ThinkPads_only)
 *   [2 Start](#Start)
 *   [3 Configuration](#Configuration)
-    *   [3.1 btrfs](#btrfs)
+    *   [3.1 Btrfs](#Btrfs)
     *   [3.2 Radio Device Wizard](#Radio_Device_Wizard)
     *   [3.3 Command line](#Command_line)
 *   [4 Features intentionally excluded](#Features_intentionally_excluded)
@@ -44,7 +44,7 @@ After installation TLP will be automatically activated upon system start. To sta
 
 The configuration file is located at `/etc/default/tlp` and provides a "largely" optimized power saving by default. For a full explanation of options see: [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html).
 
-### btrfs
+### Btrfs
 
 To avoid filesystem corruption on btrfs formatted partitions, set:
 

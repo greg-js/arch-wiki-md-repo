@@ -345,6 +345,8 @@ Create the volume group named `MyVol` (or whatever you want), adding the previou
 
 ```
 
+**Note:** When creating a volume group, if the physical volume `cryptolvm` doesn't exist, it will be created along with the volume group `MyVol`.
+
 Create all your logical volumes on the volume group:
 
 ```

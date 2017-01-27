@@ -2,20 +2,9 @@ User directories are a set of common user directories located within the `$HOME`
 
 **Tip:** This program will be especially helpful for those who wish to use a file manager to manage their desktop for a [Window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"), as it will also automatically create a `~/Desktop` directory.
 
-## Contents
-
-*   [1 Installation](#Installation)
-*   [2 Creating default directories](#Creating_default_directories)
-*   [3 Creating custom directories](#Creating_custom_directories)
-*   [4 Querying configured directories](#Querying_configured_directories)
-
-## Installation
-
-[Install](/index.php/Install "Install") the [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) package.
-
 ## Creating default directories
 
-To create a full suite of localized default user directories within the `$HOME` directory, enter the following command:
+Creating a full suite of localized default user directories within the `$HOME` directory can be done automatically using [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) and running:
 
 ```
 $ xdg-user-dirs-update
@@ -27,13 +16,13 @@ $ xdg-user-dirs-update
 When executed, it will also automatically:
 
 *   Create a local `~/.config/user-dirs.dirs` configuration file: used by applications to find and use home directories specific to an account.
-*   Create a global `/etc/xdg/user-dirs.defaults` configuration file: used by applications to find and use home directories generally.
 *   Create a local `~/.config/user-dirs.locale` configuration file: used to set the language according to the locale in use.
 
 ## Creating custom directories
 
 Both the local `~/.config/user-dirs.dirs` and global `/etc/xdg/user-dirs.defaults` configuration files use the following environmental variable format to point to user directories: `XDG_DIRNAME_DIR="$HOME/directory_name`" An example configuration file will/may likely look like this (these are all the template directories):
 
+ `~/.config/user-dirs.dirs` 
 ```
 XDG_DESKTOP_DIR="$HOME/Desktop"
 XDG_DOCUMENTS_DIR="$HOME/Documents"
@@ -41,9 +30,8 @@ XDG_DOWNLOAD_DIR="$HOME/Downloads"
 XDG_MUSIC_DIR="$HOME/Music"
 XDG_PICTURES_DIR="$HOME/Pictures"
 XDG_PUBLICSHARE_DIR="$HOME/Public"
-XDG_TEMPLATES_DIR="$HOME/.Templates"
+XDG_TEMPLATES_DIR="$HOME/Templates"
 XDG_VIDEOS_DIR="$HOME/Videos"
-
 ```
 
 As [xdg-user-dirs](https://www.archlinux.org/packages/?name=xdg-user-dirs) will source the local configuration file to point to the appropriate user directories, it is therefore possible to specify custom folders. For example, if a custom folder for the `XDG_DOWNLOAD_DIR` variable has named `$HOME/Internet` in `~/.config/user-dirs.dirs` any application that uses this variable will use this directory.

@@ -2,9 +2,9 @@ Owners of ATI/AMD video cards have a choice between AMD's proprietary driver ([c
 
 AMD's Linux driver package *catalyst* was previously named *fglrx* (**F**ire**GL** and **R**adeon **X**). Only the package name has changed, while the kernel module retains its original *fglrx.ko* filename. Therefore, any mention of fglrx below is specifically in reference to the *kernel module*, **not the package**.
 
-**Catalyst packages are no longer offered in the official repositories.** In the past, Catalyst [has been dropped](https://www.archlinux.org/news/ati-catalyst-support-dropped/) from official Arch support because of dissatisfaction with the quality and speed of development. After a brief return they were dropped again in April 2013 and they have not returned since.
+**Catalyst packages are no longer offered in the official repositories. It is no longer updated by AMD and does not support the latest Xorg, so installing an old Xorg is required.**
 
-Compared with the open source driver, Catalyst performs generally worse in 2D rendering and generally equal in 3D rendering, also having better power management, but it lacks efficient multi-head support. Catalyst does support OpenCL 2.0 thought and that's the main difference between Catalyst and open source drivers. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with chipset R600 and newer (Radeon HD 2xxx and newer). See the Xorg [decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units"), to translate *model* names (HD2400, HD6990) to/from *chip* names (R600, *Northern Islands* respectively).
+Compared with the open source driver, Catalyst performs generally worse in 2D rendering and generally equal in 3D rendering, also having better power management, but it lacks efficient multi-head support. Catalyst does support OpenCL 2.0 thought and that's the main difference between Catalyst and open source drivers. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with R600 to Volcanic Islands chipsets (Radeon HD 2xxx to Rx 300 cards). See the [Release notes](http://support.amd.com/en-us/kb-articles/Pages/AMDRadeonSoftwareCrimsonEdition15-12LINReleaseNotes.aspx), [Xorg decoder ring](http://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units"), to translate *model* names (HD2400, HD6990) to/from *chip* names (R600, *Northern Islands* respectively).
 
 ## Contents
 
@@ -89,7 +89,7 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 There are three ways of installing Catalyst on your system. One way is to use [Vi0L0's](https://aur.archlinux.org/account/Vi0l0/) (Arch's unofficial Catalyst maintainer) repository. This repository contains all the necessary packages. The second method you can use is the AUR; PKGBUILDs offered here are also made by Vi0L0 and are the same he uses to built packages for his repository. Lastly, you can install the driver directly from AMD.
 
-Before choosing the method you prefer, you will have to see which driver you need. Since Catalyst 12.4, AMD has separated its development for Radeon HD 2xxx, 3xxx and 4xxx cards into the **legacy** Catalyst driver. For Radeon HD 5xxx and newer, there is the regular Catalyst driver. Regardless of the driver you need, you will also need the Catalyst utilities.
+Before choosing the method you prefer, you will have to see which driver you need. Since Catalyst 12.4, AMD has separated its development for Radeon HD 2xxx, 3xxx and 4xxx cards into the **legacy** Catalyst driver. For Radeon HD 5xxx to Rx 300, there is the regular Catalyst driver. Regardless of the driver you need, you will also need the Catalyst utilities.
 
 **Note:** After the instructions for every method of installing, you will find general instructions **everyone** has to perform, regardless of the method you used.
 
@@ -101,8 +101,8 @@ If you do not fancy building the packages from the [AUR](/index.php/AUR "AUR"), 
 
 Vi0L0 has three different Catalyst repositories, each having different drivers:
 
-*   [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") for the regular Catalyst driver needed by Radeon HD 5xxx and up, it contains the latest (stable or beta) Catalyst release.
-*   *catalyst-stable* for the regular Catalyst driver needed by Radeon HD 5xxx and up, with the latest stable driver.
+*   [catalyst](/index.php/Unofficial_user_repositories#catalyst "Unofficial user repositories") for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, it contains the latest (stable or beta) Catalyst release.
+*   *catalyst-stable* for the regular Catalyst driver needed by Radeon HD 5xxx to Rx 300, with the latest stable driver.
 *   [catalyst-hd234k](/index.php/Unofficial_user_repositories#catalyst-hd234k "Unofficial user repositories") for the legacy Catalyst driver needed by Radeon HD 2xxx, 3xxx and 4xxx cards.
 
 To enable one of these, follow the instructions in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). Remember to add the chosen repository **above all other repositories** in `pacman.conf`.

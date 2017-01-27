@@ -16,6 +16,7 @@ Every first day of April, the Arch Linux website traditionally features an [Apri
 *   [8 2009: Dropping i686 Support](#2009:_Dropping_i686_Support)
     *   [8.1 About the dropping i686 support joke](#About_the_dropping_i686_support_joke)
     *   [8.2 After-action Report](#After-action_Report)
+    *   [8.3 Actual end of support](#Actual_end_of_support)
 *   [9 2008: Arch in German](#2008:_Arch_in_German)
     *   [9.1 About the German Arch joke](#About_the_German_Arch_joke)
 *   [10 2007: Arch Ark](#2007:_Arch_Ark)
@@ -119,6 +120,10 @@ Interestingly, this joke actually did some good. Some of our users discovered th
 A prime example of a vendor giving in to the demands of the 64-bit community is Adobe. They've recently added 64-bit Linux support to the flash plug-in, for which we thank them.
 
 Sorry for any inconvenience this joke may have caused, but how can we resist a prank on the 1st of April?
+
+### Actual end of support
+
+On 2017-01-25 it was [announced](https://www.archlinux.org/news/phasing-out-i686-support/) that support for the i686 architecture would be actually phased out due to its decreasing popularity among the developers and the community.
 
 ## 2008: Arch in German
 

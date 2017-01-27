@@ -1,4 +1,4 @@
-Arch Linux is an independently developed, i686/x86-64 general-purpose GNU/Linux distribution that strives to provide the latest stable versions of most software by following a rolling-release model. The default installation is a minimal base system, configured by the user to only add what is purposely required.
+Arch Linux is an independently developed, x86-64 general-purpose GNU/Linux distribution that strives to provide the latest stable versions of most software by following a rolling-release model. The default installation is a minimal base system, configured by the user to only add what is purposely required.
 
 ## Contents
 
@@ -11,7 +11,11 @@ Arch Linux is an independently developed, i686/x86-64 general-purpose GNU/Linux 
 *   [2 History](#History)
     *   [2.1 The early years](#The_early_years)
     *   [2.2 The middle years](#The_middle_years)
-    *   [2.3 The dawning of the age of A. Griffin](#The_dawning_of_the_age_of_A._Griffin)
+    *   [2.3 Birth of the ArchWiki](#Birth_of_the_ArchWiki)
+    *   [2.4 The dawning of the age of A. Griffin](#The_dawning_of_the_age_of_A._Griffin)
+    *   [2.5 Arch Install Scripts](#Arch_Install_Scripts)
+    *   [2.6 The systemd era](#The_systemd_era)
+    *   [2.7 Drop of i686 support](#Drop_of_i686_support)
 
 ## Principles
 
@@ -41,7 +45,7 @@ All users are encouraged to [participate](/index.php/Getting_involved "Getting i
 
 ### Versatility
 
-Arch Linux is a general-purpose distribution. Upon installation, only a command-line environment is provided: rather than tearing out unneeded and unwanted packages, the user is offered the ability to build a custom system by choosing among thousands of high-quality packages provided in the [official repositories](/index.php/Official_repositories "Official repositories"), supporting the [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) and [x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") architectures.
+Arch Linux is a general-purpose distribution. Upon installation, only a command-line environment is provided: rather than tearing out unneeded and unwanted packages, the user is offered the ability to build a custom system by choosing among thousands of high-quality packages provided in the [official repositories](/index.php/Official_repositories "Official repositories") for the [x86-64](https://en.wikipedia.org/wiki/x86-64 will [cease](https://www.archlinux.org/news/phasing-out-i686-support/) in November 2017.
 
 Arch is backed by [pacman](/index.php/Pacman "Pacman"), a lightweight, simple and fast package manager that allows to upgrade the entire system with one command. Arch also provides the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), a ports-like system to make it easy to build and install packages from source, which can also be synchronized with one command. In addition, the *Arch User Repository* contains many thousands more of community-contributed [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") scripts for compiling installable packages from source using the [makepkg](/index.php/Makepkg "Makepkg") application. It is also possible for users to build and maintain their own custom repositories with ease.
 
@@ -55,6 +59,10 @@ Judd Vinet, a Canadian programmer and occasional guitarist, began developing Arc
 
 The early Arch community grew steadily, as evidenced by [this chart of forum posts, users, and bug reports](https://dev.archlinux.org/~dan/archstats.svg). Moreover, it was from its early days known as [an open, friendly, and helpful community](http://www.osnews.com/story/4827).
 
+### Birth of the ArchWiki
+
+On 2005-07-08 the ArchWiki was first [set up](/index.php/ArchWiki:About#History "ArchWiki:About") on the MediaWiki engine.
+
 ### The dawning of the age of A. Griffin
 
 In late 2007, Judd Vinet retired from active participation as an Arch developer, and [smoothly transferred the reins over to American programmer Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), aka Phrakture, who remains the lead Arch developer to this day.
@@ -62,3 +70,15 @@ In late 2007, Judd Vinet retired from active participation as an Arch developer,
 Over the years, the Arch community continued to grow and mature, and has recently received an unusual amount of [attention and review](/index.php/Arch_Linux_Press_Review "Arch Linux Press Review") for a Linux distro of its modest size.
 
 Arch developers remain unpaid, part-time volunteers, and there are no prospects for monetizing Arch Linux, so it will remain free in all senses of the word. Those curious to peruse more detail about Arch's development history can browse the [Arch entry in the Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org) and the [Arch Linux News Archives](https://www.archlinux.org/news/).
+
+### Arch Install Scripts
+
+The 2012-07-15 release of the installation image [deprecated](https://www.archlinux.org/news/install-media-20120715-released/) the menu-driven Arch Installation Framework in favor of the Arch Install Scripts.
+
+### The systemd era
+
+Between 2012 and 2013 the traditional System V init system was replaced by systemd.[[1]](https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/)[[2]](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)[[3]](https://www.archlinux.org/news/end-of-initscripts-support/)[[4]](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/)
+
+### Drop of i686 support
+
+On 2017-01-25 it was [announced](https://www.archlinux.org/news/phasing-out-i686-support/) that support for the i686 architecture would be phased out due to its decreasing popularity among the developers and the community.

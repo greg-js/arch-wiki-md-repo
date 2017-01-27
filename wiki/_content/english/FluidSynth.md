@@ -7,6 +7,8 @@
     *   [2.1 Standalone mode](#Standalone_mode)
     *   [2.2 ALSA daemon mode](#ALSA_daemon_mode)
 *   [3 How to convert MIDI to MP3/OGG](#How_to_convert_MIDI_to_MP3.2FOGG)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Conflicting with PulseAudio](#Conflicting_with_PulseAudio)
 
 ## Installing FluidSynth
 
@@ -101,4 +103,16 @@ midi2ogg() {
 export -f midi2ogg
 find . -regex '.*[.][mM][iI][dD][iI]?$' -print0 | xargs -0 -n 1 -P $maxjobs bash -c 'midi2ogg "$@"' --
 
+```
+
+## Troubleshooting
+
+### Conflicting with PulseAudio
+
+If your *fluidsynth* application is set to use alsa as driver, the sound card will be accessed directly and pulseaudio and applications using pulseaudio will not be able to work properly. You can modify the configuration file `/etc/conf.d/fluidsynth` and change the driver to PulseAudio, then restart *fluidsynth* and PulseAudio:
+
+ `/etc/conf.d/fluidsynth` 
+```
+AUDIO_DRIVER=pulseaudio
+OTHER_OPTS='-m alsa_seq -r 48000'
 ```

@@ -10,8 +10,9 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
         *   [1.1.2 In Windows](#In_Windows)
             *   [1.1.2.1 Using Rufus](#Using_Rufus)
             *   [1.1.2.2 Using USBwriter](#Using_USBwriter)
-            *   [1.1.2.3 Using Cygwin](#Using_Cygwin)
-            *   [1.1.2.4 dd for Windows](#dd_for_Windows)
+            *   [1.1.2.3 Using win32diskimager](#Using_win32diskimager)
+            *   [1.1.2.4 Using Cygwin](#Using_Cygwin)
+            *   [1.1.2.5 dd for Windows](#dd_for_Windows)
         *   [1.1.3 In macOS](#In_macOS)
     *   [1.2 Using manual formatting](#Using_manual_formatting)
         *   [1.2.1 In GNU/Linux](#In_GNU.2FLinux_2)
@@ -68,6 +69,10 @@ Since Rufus does not care if the drive is properly formatted or not and provides
 ##### Using USBwriter
 
 This method does not require any workaround and is as straightforward as `dd` under Linux. Just download the Arch Linux ISO, and with local administrator rights use the [USBwriter](http://sourceforge.net/p/usbwriter/wiki/Documentation/) utility to write to your USB flash memory.
+
+##### Using win32diskimager
+
+[win32diskimager](https://sourceforge.net/projects/win32diskimager/) is another graphical USB iso writing tool for Windows. Simply select your iso image and the target USB drive letter (you may have to format it first to assign it a drive letter), and click Write.
 
 ##### Using Cygwin
 

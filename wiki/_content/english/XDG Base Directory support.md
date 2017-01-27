@@ -20,7 +20,7 @@ Hopefully this will provide a source of information about exactly what certain k
 
 Please read the [full specification](http://standards.freedesktop.org/basedir-spec/latest/). This section will attempt to break down the essence of what it tries to achieve.
 
-Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html). It is up to the user to explicitly [define](/index.php/Environment_variables#Defining_variables "Environment variables") the other variables, using absolute paths that point to existing directories.
+Only `XDG_RUNTIME_DIR` is set by default through [pam_systemd](http://www.freedesktop.org/software/systemd/man/pam_systemd.html). It is up to the user to explicitly [define](/index.php/Define "Define") the other variables, using absolute paths that point to existing directories.
 
 ### User directories
 
@@ -192,7 +192,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 
  |
 | [isync](http://isync.sourceforge.net) | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
-| [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[55]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_RUNTIME_DIR"/X11/iceauthority` |
+| [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[55]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_RUNTIME_DIR"/ICEauthority` |
 | [less](http://www.greenwoodsoftware.com/less/) | `~/.lesshst` | `$ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history` (It is required to create the `"$XDG_CACHE_HOME"/less` directory manually.)
 
 `$ export LESSHISTFILE=-` can be used to disable this feature.
@@ -269,7 +269,13 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
  |
 | [wget](/index.php/Wget "Wget") | `~/.wgetrc` | `$ export WGETRC="$XDG_CONFIG_HOME/wgetrc"` |
-| [wine](/index.php/Wine "Wine") | `~/.wine` | [[69]](https://bugs.winehq.org/show_bug.cgi?id=20888) | `$ export WINEPREFIX="$XDG_DATA_HOME"/wine` |
+| [wine](/index.php/Wine "Wine") | `~/.wine` | [[69]](https://bugs.winehq.org/show_bug.cgi?id=20888) | [Winetricks](/index.php/Wine#Winetricks "Wine") uses XDG-alike location below for [WINEPREFIX](/index.php/Wine#WINEPREFIX "Wine") management:
+
+`$ mkdir -p "$XDG_DATA_HOME"/wineprefixes`
+
+`$ export WINEPREFIX="$XDG_DATA_HOME"/wineprefixes/default`
+
+ |
 | [xorg-xauth](https://www.archlinux.org/packages/?name=xorg-xauth) | `~/.Xauthority` | `$ export XAUTHORITY="$XDG_RUNTIME_DIR"/X11/xauthority` |
 | [libx11](http://www.x.org/wiki/) | `~/.XCompose` | `$ export XCOMPOSEFILE="$XDG_CONFIG_HOME"/X11/xcompose` |
 | [xorg-xinit](https://www.archlinux.org/packages/?name=xorg-xinit) | `~/.xinitrc` | `$ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc` |

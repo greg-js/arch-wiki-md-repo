@@ -71,7 +71,7 @@ This article explains different methods to take [screenshots](https://en.wikiped
 
 *   **Shutter** — Rich screenshot and editing program. Supports [delay](https://hyp.is/AVQUNTRUH9ZO4OKSlue9/askubuntu.com/questions/252281/how-do-i-take-screenshots-with-a-delay/260178).
 
-	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://www.archlinux.org/packages/?name=shutter)
+	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://aur.archlinux.org/packages/shutter/)
 
 *   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
 

@@ -49,6 +49,7 @@
     *   [7.3 aapt: No such file or directory](#aapt:_No_such_file_or_directory)
     *   [7.4 ValueError: unsupported pickle protocol](#ValueError:_unsupported_pickle_protocol)
     *   [7.5 libGL error: failed to load driver: swrast](#libGL_error:_failed_to_load_driver:_swrast)
+    *   [7.6 sh: glxinfo: command not found](#sh:_glxinfo:_command_not_found)
 
 ## Exploring Android device
 
@@ -369,7 +370,7 @@ $ gpg --recv-keys 702353E0F7E48EDB
 
 Additionally, LineageOS requires the following packages:
 
-*   [xml2](https://www.archlinux.org/packages/?name=xml2) [lzop](https://www.archlinux.org/packages/?name=lzop) [pngcrush](https://www.archlinux.org/packages/?name=pngcrush) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [lzop](https://www.archlinux.org/packages/?name=lzop) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
+*   [xml2](https://www.archlinux.org/packages/?name=xml2) [lzop](https://www.archlinux.org/packages/?name=lzop) [pngcrush](https://www.archlinux.org/packages/?name=pngcrush) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
 **Note:** Installing both [maven](https://www.archlinux.org/packages/?name=maven) and [gradle](https://www.archlinux.org/packages/?name=gradle) to build LineageOS may result in a build speed improvement as the build process will prefer the system's
 
@@ -608,12 +609,7 @@ Make sure you've exported the variable `ANDROID_HOME` as explained in [#Android 
 
 ### Android Studio: 'failed to create the SD card'
 
-If you try to run an AVD (Android Virtual Device) under x64 Arch and get the error above, install the proper 32-bit libs from the multilib repository.
-
-```
-# pacman -S lib32-gcc-libs lib32-ncurses
-
-```
+If you try to run an AVD (Android Virtual Device) under x86_64 Arch and get the error above, install the [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) and [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) packages from the [Multilib](/index.php/Multilib "Multilib") repository.
 
 ### aapt: No such file or directory
 
@@ -638,3 +634,26 @@ rm `find /path/to/android-root -name .repopickle_config`
 ### libGL error: failed to load driver: swrast
 
 The AVD loaded incorrect version of libstdc++, you can remove the libstdc++.so.6 from Android/Sdk/tools/lib64/libstdc++
+
+### sh: glxinfo: command not found
+
+Here's the full error:
+
+```
+Cannot launch AVD in emulator.
+Output:
+sh: glxinfo: command not found
+sh: glxinfo: command not found
+libGL error: unable to load driver: swrast_dri.so
+libGL error: failed to load driver: swrast
+X Error of failed request:  BadValue (integer parameter out of range for operation)
+  Major opcode of failed request:  154 (GLX)
+  Minor opcode of failed request:  24 (X_GLXCreateNewContext)
+  Value in failed request:  0x0
+  Serial number of failed request:  32
+  Current serial number in output stream:  33
+QObject::~QObject: Timers cannot be stopped from another thread
+
+```
+
+You could figure out how to install glxinfo (seems to be another AUR) but if your computer has enough power you could simply use software to render graphics. To do so, go to Tools -> Android -> AVD Manager, edit the AVD (click the pencil icon), then select "Software - GLES 2.0" for "Emulated Performance -> Graphcs".

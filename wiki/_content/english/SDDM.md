@@ -23,6 +23,7 @@ The [Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Simple_Deskto
     *   [3.3 One or more users do not show up on the greeter](#One_or_more_users_do_not_show_up_on_the_greeter)
     *   [3.4 SDDM loads only US keyboard layout](#SDDM_loads_only_US_keyboard_layout)
     *   [3.5 No user Icon](#No_user_Icon)
+    *   [3.6 Screen resolution is too low](#Screen_resolution_is_too_low)
 
 ## Installation
 
@@ -182,3 +183,18 @@ $ setfacl -m u:sddm:r /home/username/.face
 ```
 
 See [SDDM README: No User Icon](https://github.com/sgerbino/sddm#no-user-icon).
+
+### Screen resolution is too low
+
+Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[2]](https://github.com/sddm/sddm/issues/692)
+
+Try disabling HiDPI in `sddm.conf`:
+
+ `/etc/sddm.conf` 
+```
+[General]
+# Enable Qt's automatic high-DPI scaling
+EnableHiDPI=false
+```
+
+Installing [sddm-git](https://aur.archlinux.org/packages/sddm-git/) may be required.

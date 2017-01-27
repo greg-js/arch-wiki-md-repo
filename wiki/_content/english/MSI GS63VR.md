@@ -20,6 +20,8 @@ Standard installation works per the [Installation guide](/index.php/Installation
 
 It is possible to use [Bumblebee](/index.php/Bumblebee "Bumblebee") to make the Nvidia GPU in this laptop usable. In order to avoid issues caused by the BIOS in the GS63VR when using bbswitch, add `acpi_osi=! acpi_osi="Windows 2009"` to the kernel options at boot (per [NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29](/index.php/NVIDIA_Optimus#Lockup_issue_.28lspci_hangs.29 "NVIDIA Optimus")).
 
+For HDMI/DP ouput: [Bumblebee#Output_wired_to_the_NVIDIA_chip](/index.php/Bumblebee#Output_wired_to_the_NVIDIA_chip "Bumblebee").
+
 ### Touchpad
 
 This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinput "Libinput") works well.

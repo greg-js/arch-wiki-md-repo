@@ -4,7 +4,7 @@ Ext4是Linux上Ext3文件系统的进化。在很多方面，Ext4对于Ext3有�
 
 ## Contents
 
-*   [1 直接创建ext4分区](#.E7.9B.B4.E6.8E.A5.E5.88.9B.E5.BB.BAext4.E5.88.86.E5.8C.BA)
+*   [1 直接创建Ext4分区](#.E7.9B.B4.E6.8E.A5.E5.88.9B.E5.BB.BAExt4.E5.88.86.E5.8C.BA)
 *   [2 从Ext2/3迁移到Ext4](#.E4.BB.8EExt2.2F3.E8.BF.81.E7.A7.BB.E5.88.B0Ext4)
     *   [2.1 不转换直接把ext3分区挂载成ext4分区格式](#.E4.B8.8D.E8.BD.AC.E6.8D.A2.E7.9B.B4.E6.8E.A5.E6.8A.8Aext3.E5.88.86.E5.8C.BA.E6.8C.82.E8.BD.BD.E6.88.90ext4.E5.88.86.E5.8C.BA.E6.A0.BC.E5.BC.8F)
     *   [2.2 基本原理](#.E5.9F.BA.E6.9C.AC.E5.8E.9F.E7.90.86)
@@ -20,14 +20,14 @@ Ext4是Linux上Ext3文件系统的进化。在很多方面，Ext4对于Ext3有�
         *   [4.2.1 E4rat](#E4rat)
 *   [5 参见](#.E5.8F.82.E8.A7.81)
 
-## 直接创建ext4分区
+## 直接创建Ext4分区
 
 1.  升级你的系统: `pacman -Syu`
 2.  格式化分区: `mkfs.ext4 /dev/sdxY` (查看mkfs.ext4 man帮助获得更多选项)
 3.  挂载这个分区
 4.  添加相关条目到fstab `/etc/fstab`, 并且修改文件系统类型'type'为 ext4
 
-**小贴士:** mkfs.ext4 的 man 页面提供了更多选项；编辑 `/etc/mke2fs.conf` 可以修改默认配置。
+**提示：** mkfs.ext4 的 man 页面提供了更多选项；编辑 `/etc/mke2fs.conf` 可以修改默认配置。
 
 ## 从Ext2/3迁移到Ext4
 
