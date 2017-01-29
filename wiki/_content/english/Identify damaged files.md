@@ -7,14 +7,17 @@ Right now this article is only written for JFS and EXT filesystems.
 ## Contents
 
 *   [1 Finding Bad Blocks](#Finding_Bad_Blocks)
-*   [2 Debug the Filesystem (JFS)](#Debug_the_Filesystem_.28JFS.29)
-*   [3 Find Damaged Files (JFS/Universal)](#Find_Damaged_Files_.28JFS.2FUniversal.29)
-*   [4 Debug the Filesystem (EXT(2/3/4))](#Debug_the_Filesystem_.28EXT.282.2F3.2F4.29.29)
-*   [5 Find Damaged Files (EXT(2/3/4))](#Find_Damaged_Files_.28EXT.282.2F3.2F4.29.29)
-*   [6 Force the disk to reallocate bad block](#Force_the_disk_to_reallocate_bad_block)
-*   [7 See also](#See_also)
+*   [2 Filesystems](#Filesystems)
+    *   [2.1 ext2, ext3, and ext4](#ext2.2C_ext3.2C_and_ext4)
+        *   [2.1.1 Debug the Filesystem](#Debug_the_Filesystem)
+        *   [2.1.2 Find Damaged Files](#Find_Damaged_Files)
+    *   [2.2 JFS](#JFS)
+        *   [2.2.1 Debug the Filesystem](#Debug_the_Filesystem_2)
+        *   [2.2.2 Find Damaged Files](#Find_Damaged_Files_2)
+*   [3 Force the disk to reallocate bad block](#Force_the_disk_to_reallocate_bad_block)
+*   [4 See also](#See_also)
 
-## Finding Bad Blocks
+#### Finding Bad Blocks
 
 Just use the [badblocks](/index.php/Badblocks "Badblocks") command. There are a few scan modes supported by it. There's read-only mode (default) which is the least accurate. There is the destructive write-mode (`-w` option) which is the most accurate but takes longer and will (obviously) destroy all data on the drive, thus making it quite useless for matching blocks up to files. There is finally the non-destructive read-write mode which is probably as accurate as the destructive mode, the only real downside of which is it's probably the slowest. However, if a drive is known to be failing then read-only mode is probably still the safest.
 
@@ -51,48 +54,13 @@ Disk identifier: 0x00000000
 
 After all this, you should have the block number(s) of your bad block(s), relative to the partition they exist on.
 
-## Debug the Filesystem (JFS)
+## Filesystems
 
-[jfs_debugfs](/index.php?title=Jfs_debugfs&action=edit&redlink=1 "Jfs debugfs (page does not exist)") will give you access to all the low level structures within any JFS filesystem. Other filesystems such as the EXT filesystems have similar tools. It is probably a good idea to [umount](/index.php?title=Umount&action=edit&redlink=1 "Umount (page does not exist)") any filesystem before you run this on them. To use it just run:
+### ext2, ext3, and ext4
 
- `jfs_debugfs /dev/sdxy` 
+#### Debug the Filesystem
 
-This puts you into a command console. The first thing you should note is your aggregate block size. This is (presumably) the block size the filesystem is using. JFS seems to default to 4096 bytes.
-
-If you did not run [badblocks](/index.php/Badblocks "Badblocks") using the block size that your filesystem is using then you will need to convert your block number(s) to match it (remember to use the block number(s) relative to the partition they're on).
-
-i.e. block number 100 with a block size of 1024 bytes becomes block number 25 at 4096 bytes. The formula is:
-
-```
-(original block number) / ((filesystem block size) / (badblocks block size))
-
-```
-
-Now the entire point of running this program (for the purpose of this article) is to get the *inode* number. To do this run the command:
-
- `d *blocknumber* 0 i` 
-
-The syntax is the `d` command for display, the block number, the offset (just set it to 0), and the display format `i` for *inode*.
-
-**Note:** If you get an error then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
-
-The decimal number that `di_number` is set to is the one we want. From here you type `x` to exit out of the display mode. Repeat the display command for each bad block that you have and note all of their *inode* numbers. For more info on the *inode* such as permissions and filetype type:
-
- `i *inodenumber*` 
-
-When you have all the *inode* numbers type `q` to quit.
-
-## Find Damaged Files (JFS/Universal)
-
-Finally to find the damaged file you can simply use the gnu [find](/index.php/Find "Find") utility. Mount your filesystem and run:
-
- `find / -inum *inodenumber*` 
-
-Substitute `/` for the mountpoint of the filesystem that the *inode* belongs to. If you search root and have more than one filesystem mounted (who doesn't?) you can find multiple files with the same *inode* number on different filesystems, plus [find](/index.php/Find "Find") will take significantly longer. Remember, an *inode* is only unique to the filesystem that it's in.
-
-## Debug the Filesystem (EXT(2/3/4))
-
-[tune2fs](/index.php?title=Tune2fs&action=edit&redlink=1 "Tune2fs (page does not exist)") will give you access to all the low level structures within any EXT filesystem. It is probably a good idea to [umount](/index.php?title=Umount&action=edit&redlink=1 "Umount (page does not exist)") any filesystem before you run this on them.
+`tune2fs` will give you access to all the low level structures within any ext2/[ext3](/index.php/Ext3 "Ext3")/[ext4](/index.php/Ext4 "Ext4") filesystem. It is probably a good idea to `umount` any filesystem before you run this on them.
 
 The first thing we want to do is get the block size from the filesystem in question. Just run:
 
@@ -117,14 +85,14 @@ Now the entire point of running this program (for the purpose of this article) i
 
  `debugfs` 
 
-Then in the [debugfs](/index.php?title=Debugfs&action=edit&redlink=1 "Debugfs (page does not exist)") console, use the `open` command on the EXT partition containing the bad sector:
+Then in the `debugfs` console, use the `open` command on the *ext* partition containing the bad sector:
 
  `debugfs:  open /dev/sdxy` 
 
 Finally, use the `testb` command to get information about the block in question (in this example block 1000):
 
  `debugfs:  testb *blocknumber*` 
-**Note:** If [debugfs](/index.php?title=Debugfs&action=edit&redlink=1 "Debugfs (page does not exist)") says that block isn't in use then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
+**Note:** If `debugfs` says that block isn't in use then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
 
 If the block is in use then run this command to get the *inode* number
 
@@ -132,25 +100,66 @@ If the block is in use then run this command to get the *inode* number
 
 This will return two numbers. The block number and the *inode* number.
 
-## Find Damaged Files (EXT(2/3/4))
+#### Find Damaged Files
 
 Use the *inode* number (second number from the `icheck` command) with the `ncheck` command:
 
  `ncheck *inodenumber*` 
 
-[debugfs](/index.php?title=Debugfs&action=edit&redlink=1 "Debugfs (page does not exist)") will give you the full pathname to the file using the bad block. Now you will know what was actually damaged.
+`debugfs` will give you the full pathname to the file using the bad block. Now you will know what was actually damaged.
 
 If the *inode* number is very small and `ncheck` fails to return a path then it's probably the journal itself that is damaged. To delete the journal simply run this command on the partition:
 
  `tune2fs -O ^has_journal /dev/sdxy` 
 
-Run the `testb` command again from the [debugfs](/index.php?title=Debugfs&action=edit&redlink=1 "Debugfs (page does not exist)") console on the bad block and it should be no longer marked as used if it was indeed used by the journal. To build a new journal run:
+Run the `testb` command again from the `debugfs` console on the bad block and it should be no longer marked as used if it was indeed used by the journal. To build a new journal run:
 
  `tune2fs -j /dev/sdxy` 
 
+### JFS
+
+#### Debug the Filesystem
+
+`jfs_debugfs` will give you access to all the low level structures within any [JFS](/index.php/JFS "JFS") filesystem. Other filesystems such as the [ext3](/index.php/Ext3 "Ext3") and [ext4](/index.php/Ext4 "Ext4") filesystems have similar tools. It is probably a good idea to `umount` any filesystem before you run this on them. To use it just run:
+
+ `jfs_debugfs /dev/sdxy` 
+
+This puts you into a command console. The first thing you should note is your aggregate block size. This is (presumably) the block size the filesystem is using. [JFS](/index.php/JFS "JFS") seems to default to 4096 bytes.
+
+If you did not run [badblocks](/index.php/Badblocks "Badblocks") using the block size that your filesystem is using then you will need to convert your block number(s) to match it (remember to use the block number(s) relative to the partition they're on).
+
+i.e. block number 100 with a block size of 1024 bytes becomes block number 25 at 4096 bytes. The formula is:
+
+```
+(original block number) / ((filesystem block size) / (badblocks block size))
+
+```
+
+Now the entire point of running this program (for the purpose of this article) is to get the *inode* number. To do this run the command:
+
+ `d *blocknumber* 0 i` 
+
+The syntax is the `d` command for display, the block number, the offset (just set it to 0), and the display format `i` for *inode*.
+
+**Note:** If you get an error then that means the block is not allocated and is being used as free space. In that case this is a good thing as it means nothing important was damaged.
+
+The decimal number that `di_number` is set to is the one we want. From here you type `x` to exit out of the display mode. Repeat the display command for each bad block that you have and note all of their *inode* numbers. For more info on the *inode* such as permissions and filetype type:
+
+ `i *inodenumber*` 
+
+When you have all the *inode* numbers type `q` to quit.
+
+#### Find Damaged Files
+
+Finally to find the damaged file you can simply use the gnu [find](/index.php/Find "Find") utility. Mount your filesystem and run:
+
+ `find / -inum *inodenumber*` 
+
+Substitute `/` for the mountpoint of the filesystem that the *inode* belongs to. If you search root and have more than one filesystem mounted (who doesn't?) you can find multiple files with the same *inode* number on different filesystems, plus [find](/index.php/Find "Find") will take significantly longer. Remember, an *inode* is only unique to the filesystem that it's in.
+
 ## Force the disk to reallocate bad block
 
-First you'll want to see how many badblocks the harddrive is aware of through the [smartctl](/index.php?title=Smartctl&action=edit&redlink=1 "Smartctl (page does not exist)") command:
+First you'll want to see how many badblocks the harddrive is aware of through the [smartctl](/index.php/S.M.A.R.T.#smartctl "S.M.A.R.T.") command:
 
  `smartctl -t long /dev/sdx` 
 
@@ -172,7 +181,7 @@ dd if=/dev/zero of=/dev/sdxy bs=4096 count=1 seek=2269012
 sync
 ```
 
-You can see if the harddrive did indeed map out an additional bad sector by checking with the [smartctl](/index.php?title=Smartctl&action=edit&redlink=1 "Smartctl (page does not exist)") command and seeing if the reallocated sector or event count went up:
+You can see if the harddrive did indeed map out an additional bad sector by checking with the [smartctl](/index.php/S.M.A.R.T.#smartctl "S.M.A.R.T.") command and seeing if the reallocated sector or event count went up:
 
  `smartctl -A /dev/sdx` 
 ```

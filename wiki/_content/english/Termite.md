@@ -36,7 +36,7 @@ Fonts are specified in the format `font=<font_name> <font_size>` under the *opti
 ```
 [options]
 font = Monospace 9
-font = Terminus (TTF) 8
+font = xos4 Terminus 12px
 font = Droid Sans Mono 8
 ```
 

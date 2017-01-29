@@ -51,7 +51,7 @@ For the development version, install the [ffmpeg-git](https://aur.archlinux.org/
 
 **Note:**
 
-*   It is important parameters are specify in the correct order (e.g. input, video, filters, audio, output), failing to do so may cause parameters being skipped or will prevent FFmpeg to execute.
+*   It is important parameters are specified in the correct order (e.g. input, video, filters, audio, output), failing to do so may cause parameters being skipped or will prevent FFmpeg from executing.
 *   FFmpeg should automatically choose the number of CPU threads available. However you may want to force the number of threads available by the parameter `-threads <number>`.
 
 ### Screen cast

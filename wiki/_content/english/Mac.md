@@ -1436,6 +1436,15 @@ If you happen to get multiple entries for one boot image, it often results of a 
 
 The `brcmfmac` driver is working as of 2015-11-20, with newer firmware necessary for working 5GHz support ([see here.](https://bugzilla.kernel.org/show_bug.cgi?id=100201#c65))
 
+**Note:** On the Macbook Pro 12,1 if the `brcmfmac` driver can not be started and the following errors occur in the journal:
+```
+brcmfmac: brcmf_chip_recognition: chip backplane type 15 is not supported
+brcmfmac: brcmf_pcie_probe: failed 14e4:43ba
+
+```
+
+then check whether [PCI runtime power management](/index.php/Power_management#PCI_Runtime_Power_Management "Power management") is enabled on the device, and disable it if so.
+
 ##### Bluetooth
 
 Bluetooth is fully supported starting from kernel-4.4.0.

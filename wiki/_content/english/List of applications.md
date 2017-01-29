@@ -2035,6 +2035,10 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[https://www.kde.org/applications/multimedia/juk/](https://www.kde.org/applications/multimedia/juk/) || [kdemultimedia-juk](https://www.archlinux.org/packages/?name=kdemultimedia-juk)
 
+*   **Kaku** — An highly integrated music player supports different online platform like YouTube, SoundCloud, Vimeo and more.
+
+	[http://kaku.rocks/](http://kaku.rocks/) || [kaku-bin](https://aur.archlinux.org/packages/kaku-bin/)
+
 *   **Listen** — Listen is a Music player and management for GNOME written in python.
 
 	[https://launchpad.net/listen](https://launchpad.net/listen) || [listen](https://aur.archlinux.org/packages/listen/)
@@ -2050,6 +2054,10 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 *   **Miam-player** — Cross-platform open source music player.
 
 	[http://miam-player.org/](http://miam-player.org/) || [miam-player](https://aur.archlinux.org/packages/miam-player/)
+
+*   **Muine** — A music player written in C Sharp.
+
+	[http://muine.gooeylinux.org/](http://muine.gooeylinux.org/) || [muine](https://www.archlinux.org/packages/?name=muine)
 
 *   **Musique** — Just another music player, only better.
 
@@ -2640,6 +2648,10 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — Open source and cross-platform C/C++ IDE.
 
 	[http://www.codeblocks.org/](http://www.codeblocks.org/) || [codeblocks](https://www.archlinux.org/packages/?name=codeblocks)
+
+*   **[CodeLite](https://en.wikipedia.org/wiki/CodeLite "wikipedia:CodeLite")** — Open source and cross-platform C/C++/PHP and Node.js IDE written in C++ .
+
+	[http://www.codelite.org/](http://www.codelite.org/) || [codelite](https://aur.archlinux.org/packages/codelite/)
 
 *   **[Cloud9](https://en.wikipedia.org/wiki/Cloud9_IDE "wikipedia:Cloud9 IDE")** — State-of-the-art IDE that runs in your browser and lives in the cloud, allowing you to run, debug and deploy applications from anywhere, anytime.
 

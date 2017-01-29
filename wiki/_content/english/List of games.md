@@ -566,6 +566,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[http://speed-dreams.org/](http://speed-dreams.org/) || [speed-dreams](https://www.archlinux.org/packages/?name=speed-dreams)
 
+*   **Stunt Rally** — Racing game with rally style of driving, mostly on gravel.
+
+	[http://stuntrally.tuxfamily.org/](http://stuntrally.tuxfamily.org/) || [stuntrally](https://aur.archlinux.org/packages/stuntrally/)
+
 *   **Supertux Kart** — Kart racing game featuring Tux and his friends.
 
 	[http://supertuxkart.sourceforge.net/](http://supertuxkart.sourceforge.net/) || [supertuxkart](https://www.archlinux.org/packages/?name=supertuxkart)

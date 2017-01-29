@@ -56,7 +56,7 @@ You can choose one of the following implementations:
 
 *   **MATE Notification Daemon** — Notification server for [MATE](/index.php/MATE "MATE").
 
-	[https://github.com/mate-desktop/mate-notification-daemon/](https://github.com/mate-desktop/mate-notification-daemon/) || GTK+ 2: [mate-notification-daemon](https://www.archlinux.org/packages/?name=mate-notification-daemon), GTK+ 3 (experimental): [mate-notification-daemon-gtk3](https://www.archlinux.org/packages/?name=mate-notification-daemon-gtk3)
+	[https://github.com/mate-desktop/mate-notification-daemon/](https://github.com/mate-desktop/mate-notification-daemon/) || [mate-notification-daemon](https://www.archlinux.org/packages/?name=mate-notification-daemon)
 
 *   **Notify OSD** — Notification server for [Unity](/index.php/Unity "Unity").
 
@@ -154,6 +154,24 @@ int main() {
 ```
 
 **C++**
+
+*   Dependency: [glibmm](https://www.archlinux.org/packages/?name=glibmm)
+*   Build with: `g++ -o hello_world `pkg-config --cflags --libs giomm-2.4` hello_world.cc`
+
+ `hello_world.cc` 
+```
+#include <giomm-2.4/giomm.h>
+int main(int argc, char *argv[]) {
+	auto Application = Gio::Application::create("hello.world", Gio::APPLICATION_FLAGS_NONE);
+	Application->register_application();
+	auto Notification = Gio::Notification::create("Hello world");
+	Notification->set_body("This is an example notification.");
+	auto Icon = Gio::ThemedIcon::create("dialog-information");
+	Notification->set_icon (Icon);
+	Application->send_notification(Notification);
+	return 0;
+}
+```
 
 *   Dependency: [libnotifymm](https://aur.archlinux.org/packages/libnotifymm/)
 *   Build with: `g++ -o hello_world `pkg-config --cflags --libs libnotifymm-1.0` hello_world.cc`
@@ -422,6 +440,22 @@ Hello.show()
 ```
 
 **Lua**
+
+*   Dependency: [lua-lgi](https://www.archlinux.org/packages/?name=lua-lgi)
+
+ `hello_world.lua` 
+```
+#!/usr/bin/lua
+lgi = require 'lgi'
+Gio = lgi.require('Gio')
+Application = Gio.Application.new("hello.world",Gio.ApplicationFlags.FLAGS_NONE);
+Application:register();
+Notification = Gio.Notification.new("Hello world");
+Notification:set_body("This is an example notification.");
+Icon = Gio.ThemedIcon.new("dialog-information");
+Notification:set_icon(Icon);
+Application:send_notification(nil, Notification);
+```
 
 *   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [lua-lgi](https://www.archlinux.org/packages/?name=lua-lgi)
 

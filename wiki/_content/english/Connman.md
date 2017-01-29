@@ -346,6 +346,8 @@ You need to install [wpa_supplicant](https://www.archlinux.org/packages/?name=wp
 
 If wireless scanning leads to above error, this may be due to an unresolved bug.[[3]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
 
+This may also simply be caused by the wireless interface being blocked by [rfkill](/index.php/Rfkill "Rfkill"), which can occur after restarting wpa_supplicant. Use `rfkill list` to check.
+
 ### Error Failed to set hostname/domainname
 
 connman can failed to set hostname or domainname due to lack of CAP_SYS_ADMIN.

@@ -12,10 +12,10 @@ From the project [home page](http://wiki.lxde.org/en/PCManFM):
 *   [4 Autostarting](#Autostarting)
 *   [5 Additional features and functionality](#Additional_features_and_functionality)
 *   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Thumbnail support](#Thumbnail_support)
-    *   [6.2 One click for open folders and files](#One_click_for_open_folders_and_files)
-    *   [6.3 Open or Extract Archives with PCManFM](#Open_or_Extract_Archives_with_PCManFM)
-    *   [6.4 More options under *Create New...*](#More_options_under_Create_New...)
+    *   [6.1 Get thumbnails for other file types](#Get_thumbnails_for_other_file_types)
+    *   [6.2 Set the terminal emulator](#Set_the_terminal_emulator)
+    *   [6.3 Integrate an archiver](#Integrate_an_archiver)
+    *   [6.4 Templates are accessible under *Create New...*](#Templates_are_accessible_under_Create_New...)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Open With dialog window empty](#Open_With_dialog_window_empty)
     *   [7.2 No "Applications"](#No_.22Applications.22)
@@ -104,7 +104,7 @@ Less experienced users should be aware that a file manager alone - especially wh
 
 ## Tips and tricks
 
-### Thumbnail support
+### Get thumbnails for other file types
 
 PCManFM supports image thumbnails out of the box. However, in order to view thumbnails of other file types, PCManFM uses the information provided in the files located at `/usr/share/thumbnailers`. The packages which provide a thumbnailer usually add the corresponding *.thumbnail* file at `/usr/share/thumbnailers`. For example, in order to get thumbnails for OpenDocument files, you may install [libgsf](https://www.archlinux.org/packages/?name=libgsf) from the official repositories. For video files' thumbnails, the package [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) is required. For PDF files, you may install [evince](https://www.archlinux.org/packages/?name=evince) from the official repositories, which provides `evince-thumbnailer` and the corresponding file at `/usr/share/thumbnailers`. However, if you prefer not to install `evince`, you can also replicate the functionality of `evince-thumbnailer` using [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)'s `convert` command. This is accomplished by creating a new file with the *.thumbnailer* extension (e.g.: `imagemagick-pdf.thumbnailer`) at `/usr/share/thumbnailers` with the following content:
 
@@ -122,19 +122,17 @@ Following this example, you can specify custom thumbnailers by creating your own
 
 **Tip:** If you only get thumbnails of certain files and not of all the files of the same type try increasing the maximum file size of the files that get a thumbnail at *Edit > Preferences > Display*.
 
-### One click for open folders and files
+### Set the terminal emulator
 
-Open PCManFM in file explorer mode, go to *Edit > Preferences > General > Behavior*, and select *Open files with a simple click*. This option works with desktop icons too.
+You can configure what terminal emulator PCManFM should use for *Tools > Open Current Folder in Terminal* under *Edit > Preferences > Advanced* e.g. `bash -c 'pantheon-terminal --working-directory "$PWD"'`.
 
-### Open or Extract Archives with PCManFM
+### Integrate an archiver
 
-Install [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) or [engrampa](https://www.archlinux.org/packages/?name=engrampa) from the official repositories.
+You can choose the integrated archiver under *Edit > Preferences > Advanced*. PCManFM supports [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) and [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/).
 
-Open PCManFM in file explorer mode, go to *Edit > Preferences > Advanced*, select *Archiver Integration* and select your installed archiver.
+### Templates are accessible under *Create New...*
 
-### More options under *Create New...*
-
-By default the *Create New...* sub-menu contains *Folder* and *Empty File*. It is possible to include additional entries for your personal needs. To do so create them in `~/Templates/` and restart PCManFM.
+PCManFM adds the files in `~/Templates` as *Create New...* context menu items on startup.
 
 ## Troubleshooting
 

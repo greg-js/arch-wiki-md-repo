@@ -54,9 +54,7 @@ The Raspberry Pi is an ARM-based device and therefore needs binaries compiled fo
 
 ## SD card performance
 
-System responsiveness, particularly during operations involving disk I/O such as updating the system, can be adversely affected by poor quality/slow SD media. This is characterized by [frequent, often extended pauses](http://archlinuxarm.org/forum/viewtopic.php?f=64&t=9467) as pacman writes out files to the file system. The pauses are not due to saturation of the RPi or RPi2 bus, but are likely the bottle-neck due to a slow SD (or micro SD) card. See the [Benchmarking#Flash media](/index.php/Benchmarking#Flash_media "Benchmarking") for more.
-
-Performance and system responsiveness can be generally improved by making adjustments to the system configuration. See [Improving performance](/index.php/Improving_performance "Improving performance").
+System responsiveness, particularly during operations involving disk I/O such as updating the system, can be adversely affected by poor quality/slow SD media. This is characterized by [frequent, often extended pauses](http://archlinuxarm.org/forum/viewtopic.php?f=64&t=9467) as pacman writes out files to the file system. The pauses are not due to saturation of the bus, they are likely caused by a slow micro SD card. See the [Benchmarking#Flash media](/index.php/Benchmarking#Flash_media "Benchmarking") for measuring performance. The recommended solution is use so-called "Pro" class media classified as UHS-I U3 or better. As well, performance and system responsiveness can be tweaked by making adjustments to the system configuration. See [Improving performance](/index.php/Improving_performance "Improving performance").
 
 ### Enable fsck on boot
 
@@ -65,6 +63,8 @@ Follow [fsck#Boot time checking](/index.php/Fsck#Boot_time_checking "Fsck"). Rem
 ## Installing Arch Linux ARM
 
 See the [Arch Linux ARM Pi documentation](http://archlinuxarm.org/platforms/armv6/raspberry-pi) or [Arch Linux ARM Pi2 documentation](http://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2) or [Arch Linux ARM Pi3 documentation](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3).
+
+**Note:** Although the RPi3 can run either ARMv7 (32-bit) or AArch64 (64-bit) architectures, there is currently no support for the vendor-provided libraries, extensions, or related software for AArch64 and some hardware on the board may not work, or may perform poorly. ARMv7 is recommended at this time.
 
 ## Network
 
@@ -346,6 +346,10 @@ can be corrected by adding the following line:
 In order to use standard applications (those that look for `/dev/video0`) the V4L2 driver must be loaded. This can be done automatically at boot by creating an autoload file such as the following.
 
  `/etc/modules-load.d/rpi-camera.conf`  `bcm2835-v4l2` 
+
+The V4L2 driver by default only allows video recording up to 1280x720, else it glues together consecutive still screens resulting in videos of 4 fps or lower. Adding the following options removes this limitation.
+
+ `/etc/modprobe.d/rpi-camera.conf`  `options bcm2835-v4l2 max_video_width=3240 max_video_height=2464` 
 
 ## Hardware random number generator
 

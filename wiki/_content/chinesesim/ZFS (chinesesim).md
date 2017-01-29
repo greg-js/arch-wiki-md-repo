@@ -1,23 +1,19 @@
-[ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") 是一个高级的文件系统, 由[Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems "wikipedia:Sun Microsystems") (现在归Oracle)创建 , 并且在 2005年11月 为OpenSolaris发布.
+[ZFS](https://en.wikipedia.org/wiki/ZFS "wikipedia:ZFS") ZFS，一个文件系统，拥有逻辑卷管理功能，最早源自于太阳微系统为Solaris操作系统开发的文件系统。ZFS是一个具有高存储容量、文件系统与卷管理概念集成、崭新的磁盘逻辑结构的轻量级文件系统，同时也是一个便捷的存储池管理系统。ZFS是一个使用通用开发与散布许可证授权的开源项目，这个商标名称现由甲骨文公司拥有。 ZFS的特性包括: 存储池 (不同于传统文件系统需要驻留于单独设备或者需要一个卷管理系统去使用一个以上的设备，ZFS创建在虚拟的，被称为“zpools”的存储池之上), [写时拷贝事务模型](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [快照与克隆](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), 数据自动校验与恢复(, [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"),ZFS是一个128位的文件系统，这意味着它能存储1800亿亿（18.4 × 1018）倍于当前64位文件系统的数据。ZFS的设计如此超前以至于这个极限就当前现实实际可能永远无法遇到。
 
-ZFS的特性包括: pooled storage (integrated volume management – zpool), [Copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write "wikipedia:Copy-on-write"), [snapshots](https://en.wikipedia.org/wiki/Snapshot_(computer_storage) "wikipedia:Snapshot (computer storage)"), data integrity verification and automatic repair (scrubbing), [RAID-Z](https://en.wikipedia.org/wiki/RAID-Z "wikipedia:RAID-Z"), a maximum [16 Exabyte](https://en.wikipedia.org/wiki/Exabyte "wikipedia:Exabyte") file size, and a maximum 256 Quadrillion [Zettabytes](https://en.wikipedia.org/wiki/Zettabyte "wikipedia:Zettabyte") storage with no limit on number of filesystems (datasets) or files[[1]](http://docs.oracle.com/cd/E19253-01/819-5461/zfsover-2/index.html). ZFS is licensed under the [Common Development and Distribution License](https://en.wikipedia.org/wiki/CDDL "wikipedia:CDDL") (CDDL).
+ZOL是一个由[Lawrence Livermore National Laboratory](https://www.llnl.gov/)赞助的项目，诣在开发用于Linux计算机的ZFS阵列。
 
-Described as ["The last word in filesystems"](http://web.archive.org/web/20060428092023/http://www.sun.com/2004-0914/feature/) ZFS is stable, fast, secure, and future-proof. Being licensed under the CDDL, and thus incompatible with GPL, it is not possible for ZFS to be distributed along with the Linux Kernel. This requirement, however, does not prevent a native Linux kernel module from being developed and distributed by a third party, as is the case with [zfsonlinux.org](http://zfsonlinux.org/) (ZOL).
+**Note:** 由于ZFS所使用的CDDL协议与Linux Kernel所使用的GPL协议存在法律问题 ([[1]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS 的开发并不被Linux基金会支持。
 
-ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://www.llnl.gov/) to develop a native Linux kernel module for its massive storage requirements and super computers.
+因此:
 
-**Note:** Due to potential legal incompatibilities between CDDL license of ZFS code and GPL of the Linux kernel ([[2]](https://sfconservancy.org/blog/2016/feb/25/zfs-and-linux/),[CDDL-GPL](https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License#GPL_compatibility "wikipedia:Common Development and Distribution License"),[ZFS in Linux](https://en.wikipedia.org/wiki/ZFS#Linux "wikipedia:ZFS")) - ZFS development is not supported by the kernel.
-
-As a result:
-
-*   ZFS sill resides in [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and unofficial [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
-*   ZFSonLinux project must keep up wth Linux kernel versions and making stable releases with Arch ZFS maintainers releasing them whenever Arch Linux gets a new version of the kernel.
-*   This situation locks-down normal rolling update process by unsatisfied dependencies, because new kernel version, proposed by update, most of the time are unsupported by ZFS.
+*   ZFS 只存在于 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 以及非官方的 [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") 源。
+*   ZFSonLinux 项目必须紧跟Kernel的发行与Arch维护者共同推出更新。
+*   大部分情况下，ZFSonLinux的发行并不能与Kernel同步，因而可能无法及时升级最新的Kernel。
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 General](#General)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+    *   [1.1 通用](#.E9.80.9A.E7.94.A8)
     *   [1.2 Root on ZFS](#Root_on_ZFS)
     *   [1.3 DKMS](#DKMS)
 *   [2 Experimenting with ZFS](#Experimenting_with_ZFS)
@@ -29,7 +25,7 @@ As a result:
     *   [4.3 GRUB-compatible pool creation](#GRUB-compatible_pool_creation)
     *   [4.4 Importing a pool created by id](#Importing_a_pool_created_by_id)
 *   [5 Tuning](#Tuning)
-    *   [5.1 General](#General_2)
+    *   [5.1 General](#General)
     *   [5.2 SSD Caching](#SSD_Caching)
     *   [5.3 Database](#Database)
     *   [5.4 /tmp](#.2Ftmp)
@@ -64,16 +60,16 @@ As a result:
         *   [8.4.2 systemd mount unit](#systemd_mount_unit)
 *   [9 See also](#See_also)
 
-## Installation
+## 安装
 
-### General
+### 通用
 
-Install from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") or the [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository:
+从 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") 或者 [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") 源安装:
 
-*   [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) for [stable](http://zfsonlinux.org/) releases.
-*   [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) for [development](https://github.com/zfsonlinux/zfs/releases) releases (with support of newer kernel versions).
-*   [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) for stable releases for LTS kernels.
-*   [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) for versions with dynamic kernel module support.
+*   [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) 来安装 [[http://zfsonlinux.org/](http://zfsonlinux.org/) 稳定内核。
+*   [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/) 来安装 [development](https://github.com/zfsonlinux/zfs/releases) 最新的内核。
+*   [zfs-linux-lts](https://aur.archlinux.org/packages/zfs-linux-lts/) 来安装LTS版本的内核。
+*   [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) 来安装[Dynamic Kernel Module Support (简体中文)](/index.php/Dynamic_Kernel_Module_Support_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dynamic Kernel Module Support (简体中文)")支持。
 
 These branches have according for them `zfs-utils`, `spl-linux`, `spl-utils-linux` dependencies. SPL (Solaris Porting Layer) is a Linux Kernel module implementing Solaris APIs for ZFS compatibility.
 
@@ -936,7 +932,7 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 
 #### systemd mount unit
 
-If it is not possible to bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[4]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
+If it is not possible to bindmount a directory residing on zfs onto another directory using fstab, because the fstab is read before the zfs pool is ready, you can overcome this limitation with a systemd mount unit can be used for the bind mount. The name of the mount unit must be equal to the directory mentioned after "Where", replace slashes with minuses. See [[[2]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdAndBindMounts)] and [[[3]](http://utcc.utoronto.ca/~cks/space/blog/linux/SystemdBindMountUnits)] for more details.
 
  `srv-nfs4-music.mount` 
 ```

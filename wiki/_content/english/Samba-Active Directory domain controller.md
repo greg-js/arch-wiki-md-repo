@@ -230,8 +230,8 @@ dlz "AD DNS Zones" {
 //    allow-query { any; };
 //    allow-transfer { any; };
 //};
-
-//logging {
+//
+logging {
     channel xfer-log {
         file "/var/log/named.log";
             print-category yes;

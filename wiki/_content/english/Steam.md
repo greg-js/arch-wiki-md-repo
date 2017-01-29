@@ -25,7 +25,6 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam
 **Note:**
 
 *   Arch Linux is **not** [officially supported](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366).
-*   [Installing](/index.php/Install "Install") the [steam-native-runtime](https://www.archlinux.org/packages/?name=steam-native-runtime) package takes care of some of problems identified below. Start steam with `steam-native`.
 *   If you have a 64-bit system, enable the [multilib](/index.php/Multilib "Multilib") repository.
 
 [Install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.

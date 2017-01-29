@@ -90,7 +90,9 @@ Match User someuser
 .....
 ```
 
-**Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect. For more info check the manpages for `Match, ChrootDirectory` and `ForceCommand`.
+**Note:** The chroot directory **must** be owned by root, otherwise you will not be able to connect.
+
+See also [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot"). For more information check the manpages for `Match, ChrootDirectory` and `ForceCommand`.
 
 ## Helpers
 

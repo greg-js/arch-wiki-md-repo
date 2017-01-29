@@ -104,6 +104,8 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 
 Unlike other virtualization programs such as [VirtualBox](/index.php/VirtualBox "VirtualBox") and [VMware](/index.php/VMware "VMware"), QEMU does not provide a GUI to manage virtual machines (other than the window that appears when running a virtual machine), nor does it provide a way to create persistent virtual machines with saved settings. All parameters to run a virtual machine must be specified on the command line at every launch, unless you have created a custom script to start your virtual machine(s). However, there are several GUI front-ends for QEMU:
 
+*   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)
+*   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
 *   [qemu-launcher](https://www.archlinux.org/packages/?name=qemu-launcher)
 *   [qtemu](https://www.archlinux.org/packages/?name=qtemu)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
@@ -1280,7 +1282,7 @@ And verify that `/etc/fstab` is consistent. If anything goes wrong, just boot in
 
 #### With libvirt
 
-If a virtual machine is set up with [libvirt](/index.php/Libvirt "Libvirt"), it can be configured through the virt-manager GUI to start at host boot by going to the Boot Options for the virtual machine and selecting "Start virtual machine on host boot up".
+If a virtual machine is set up with [libvirt](/index.php/Libvirt "Libvirt"), it can be configured with `virsh autostart` or through the *virt-manager* GUI to start at host boot by going to the Boot Options for the virtual machine and selecting "Start virtual machine on host boot up".
 
 #### Custom script
 

@@ -1,6 +1,6 @@
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
-At the moment there is support for the [Volcanic Islands (VI)](http://xorg.freedesktop.org/wiki/RadeonFeature/), some cards of the [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family and the [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) family (more experimental than Sea Islands and coming only in version [1.2.0](https://lists.x.org/archives/xorg-announce/2016-November/002741.html) and Linux 4.9). AMD has absolutely no plans for supporting the pre-GCN GPUs.
+At the moment there is support for [Volcanic Islands (VI)](http://xorg.freedesktop.org/wiki/RadeonFeature/) and experimental support for [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) and [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) cards. AMD has absolutely no plans for supporting the pre-GCN GPUs.
 
 Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
@@ -47,6 +47,8 @@ The AMDGPU PRO driver provides OpenGL, OpenCL, Vulkan and VDPAU support. For som
 See the [release notes](http://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
 
 There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AUR") ([amdgpu-pro](https://aur.archlinux.org/packages/amdgpu-pro/)), visit [https://github.com/Corngood/archlinux-amdgpu](https://github.com/Corngood/archlinux-amdgpu) for issues or pull requests.
+
+If you want to use the open source AMDGPU drivers, and only the proprietary OpenCL component, then use ([opencl-amd](https://aur.archlinux.org/packages/opencl-amd/))
 
 ## Configuration
 
@@ -104,31 +106,15 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 ## Enable amdgpu for Sea Islands or Southern Islands cards
 
-**Note:** The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package (from version 4.9, currently in [testing]), is compiled with Southern Islands and Sea Island support enabled by default.[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4975) You will still need to [#Disable radeon driver](#Disable_radeon_driver). See [FS#50399](https://bugs.archlinux.org/task/50399) for more information.
+The Arch Linux [linux](https://www.archlinux.org/packages/?name=linux) package (from version 4.9), is compiled with Southern Islands and Sea Island support enabled by default (`CONFIG_DRM_AMDGPU_CIK=Y` and `CONFIG_DRM_AMDGPU_SI=Y` [[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/config.x86_64?h=packages/linux#n4987)).
 
-`amdgpu` has experimental support for Sea Islands (CIK) and Southern Islands (SI; since Linux 4.9) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[2]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf).
-
-If you want to enable `amdgpu` and use it with your Sea Islands or Southern Islands product, you have to recompile your kernel. Probably the easiest way to setup a custom kernel is using the ABS, described in [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). You can also uncomment `make menuconfig` or `make nconfig` in the PKGBUILD, which will allow you to verify that the CIK option is selected by following the instructions from [Gentoo wiki](https://wiki.gentoo.org/wiki/Amdgpu#Feature_support).
-
-For Sea Islands (CIK), set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
-
-```
-CONFIG_DRM_AMDGPU_CIK=Y
-
-```
-
-For Southern Islands (SI; since Linux 4.9), set "Enable amdgpu support for SI parts" to "yes", then compile and install your kernel.
-
-```
-CONFIG_DRM_AMDGPU_SI=Y
-
-```
+When using these cards, the default driver will be the old radeon driver. To use the amdgpu driver instead, you must [#Disable radeon driver](#Disable_radeon_driver).
 
 ### Disable radeon driver
 
 CIK and SI cards will default to the [radeon](/index.php/Radeon "Radeon") driver, even after manually enabling AMDGPU for these cards when building the kernel.
 
-Prevent the `radeon` module from loading by disabling it in the Kconfig or [blacklist](/index.php/Blacklist "Blacklist") the `radeon` module, to force usage of the `amdgpu` module:
+Prevent the `radeon` module from loading by [blacklisting](/index.php/Blacklist "Blacklist") the `radeon` module, to force usage of the `amdgpu` module:
 
  `/etc/modprobe.d/radeon.conf`  `blacklist radeon` 
 

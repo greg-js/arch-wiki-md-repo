@@ -20,9 +20,7 @@ Fancontrol, 是[lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)
 
 许多较新主板的传感器仍然未受到Kernel内建驱动的支持，检查一下表格 [lm-sensors devices](https://hwmon.wiki.kernel.org/device_support_status) 来确认驱动支持情况。
 
-我们不建议使用`lm_sensors.service` 来加载驱动模块，请手动将配置文件放入`/etc/modules-load.d/load_these.conf` since the order in which these modules are loaded dictate the order in which the needed symlinks for hwmon get created. In other words, using the `lm_sensors.service` causes inconsistencies boot-to-boot which will render the configuration file for fan control worthless for a consistency point of view. To avoid this problem:
-
-In `/etc/conf.d/lm_sensors` you find the modules. If not there, run as root `sensors-detect` accepting the defaults. In the `modules-load.d` file place one module name per line. Specifying them like this will create a reproducible order. Another alternative is to use absolute device names in the configuration file.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1415552#p1415552)
+我们不建议使用`lm_sensors.service` 来加载驱动模块，请手动将配置文件放入`/etc/modules-load.d/load_these.conf`，使用 `lm_sensors.service` 可能导致设备地址在每次启动时变化。 在 `/etc/conf.d/lm_sensors` 你可以找到模块， 如果没有，请以root运行`sensors-detect`使用默认设置。 在`modules-load.d`一行行地加入。参见[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1415552#p1415552)
 
 ### lm-sensors
 
@@ -48,7 +46,7 @@ temp1:       +37.5°C  (low  = +129.5°C, high = +129.5°C)  sensor = thermistor
 temp2:       +25.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermal diode
 ```
 
-If the output does not display an RPM value for the CPU fan, one may need to increase the fan divisor. If fan speed is shown and higher than 0, skip the next step.
+如果不能正确地显示风扇转速，你可能需要增加风扇参数。
 
 #### Increasing fan_div
 

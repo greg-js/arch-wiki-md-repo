@@ -22,6 +22,7 @@
     *   [5.2 Using VirtualBox](#Using_VirtualBox)
     *   [5.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
     *   [5.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
+    *   [5.5 Extraneous cursor after logging in with gdm](#Extraneous_cursor_after_logging_in_with_gdm)
 *   [6 See also](#See_also)
 
 ## Status
@@ -214,6 +215,12 @@ when run inside a terminal multiplexer (such as gnu screen or tmux). To avoid th
 Config options such as `output "HDMI-A-1" res 1280x1024` may not successfully change the resolution. The window manager [wlc](https://www.archlinux.org/packages/?name=wlc) is responsible for setting the resolution, and attempts to figure out monitor resolution from the TTY.
 
 You may be able to alter your TTY resolution (thus also altering the WLC and Sway resolution) by passing a kernel parameter such as `video=HDMI-A-1:1280x1024:e` or with with custom edid binaries ([see Kernel Mode Setting](/index.php/Kernel_mode_setting "Kernel mode setting")).
+
+### Extraneous cursor after logging in with gdm
+
+If you use gdm as your login manager, an extraneous cursor will be left after logging in (see [issue #759](https://github.com/SirCmpwn/sway/issues/759)).
+
+The current workaround is to switch to another TTY, and switch back to sway.
 
 ## See also
 

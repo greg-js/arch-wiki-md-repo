@@ -388,9 +388,24 @@ Then set your desired fan speed from 0 to 255, which corresponds to 0-100% fan s
 
 ```
 
-For persistence, use [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") as shown above by the example with power profiles.
+For persistence, use systemd-tmpfiles as shown above by the example with power profiles. If the latter doesn't work (see the note in [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd") for the reason) you can use a udev rule to issue the commands when the card becomes active. Here is an example of a possible rule `/etc/udev/rules.d/99-gpupower`:
 
-If a fixed value isn't desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in `/sys/class/drm/card0/device/hwmon/hwmon0/temp1_input`).
+```
+KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="$HOME/.Xauthority", RUN+="/sbin/sh /etc/conf.d/gpupower"
+
+```
+
+with a possible script `/etc/conf.d/gpupower`:
+
+```
+echo battery > /sys/class/drm/card0/device/power_dpm_state
+echo low > /sys/class/drm/card0/device/power_dpm_force_performance_level
+echo 1 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1_enable
+echo 55 > /sys/class/drm/card0/device/hwmon/hwmon2/pwm1
+
+```
+
+If a fixed speed-value isn't desired, there are possibilities to define a custom fan curve manually by, for example, writing a script in which fan speeds are set depending on the current temperature (current value in `/sys/class/drm/card0/device/hwmon/hwmon0/temp1_input`).
 
 A GUI solution is available by installing [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/).
 

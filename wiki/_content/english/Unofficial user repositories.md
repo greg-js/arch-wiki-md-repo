@@ -100,10 +100,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.8 mesa-git](#mesa-git)
         *   [5.2.9 mikroskeem](#mikroskeem)
         *   [5.2.10 mingw-w64](#mingw-w64)
-        *   [5.2.11 pkgbuild-current](#pkgbuild-current)
-        *   [5.2.12 pnsft-pur](#pnsft-pur)
-        *   [5.2.13 rakudo](#rakudo)
-        *   [5.2.14 zrootfs](#zrootfs)
+        *   [5.2.11 OpenCentrum-Extra](#OpenCentrum-Extra)
+        *   [5.2.12 pkgbuild-current](#pkgbuild-current)
+        *   [5.2.13 pnsft-pur](#pnsft-pur)
+        *   [5.2.14 rakudo](#rakudo)
+        *   [5.2.15 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -1081,6 +1082,18 @@ Server = https://nightsnack.cf/~mark/arch-pkgs
 [mingw-w64]
 Server = http://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 #Server = http://amr.linuxd.org/archlinux/$repo/os/$arch
+
+```
+
+#### OpenCentrum-Extra
+
+*   **Maintainer:** [OpenCentrum](http://opencentrum.sk) (orosu)
+*   **Description:** Extra repo for popular AUR packages like a yaourt, sublime-text, i3-gaps etc...
+*   **Upstream page:** [http://mirror.opencentrum.sk](http://mirror.opencentrum.sk)
+
+```
+[opencentrum-extra]
+Server = http://mirror.opencentrum.sk/extra
 
 ```
 

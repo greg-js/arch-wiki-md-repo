@@ -234,6 +234,8 @@ By doing this, only the past commands matching the current line up to the curren
 
 ### Prompts
 
+Note: Zsh introduced a bug in 5.3 with multi-line prompts. Tab completion will move your cursor up deleting a line of your prompt. See [[1]](//www.zsh.org/mla/workers//2017/msg00021.html) for more details. For temporary workarounds you can either use Zsh 5.2, or attempt a number of workarounds listed [[2]](//github.com/sorin-ionescu/prezto/issues/1245)
+
 #### Prompt themes
 
 There is a quick and easy way to set up a colored prompt in Zsh. Make sure that prompt theme system is set to autoload in `.zshrc`. This can be done by adding these lines to:
@@ -355,7 +357,7 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 ### The ttyctl command
 
-[[1]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
+[[3]](http://zsh.sourceforge.net/Doc/Release/Shell-Builtin-Commands.html#index-tty_002c-freezing) describes the `ttyctl` command in Zsh. This may be used to "freeze/unfreeze" the terminal. Many programs change the terminal state, and often do not restore terminal settings on exiting abnormally. To avoid the need to manually reset the terminal, use the following:
 
  `~/.zshrc` 
 ```

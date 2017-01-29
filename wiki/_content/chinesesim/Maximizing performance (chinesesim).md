@@ -114,7 +114,7 @@ $ glxinfo | grep direct
 
 把交换分区/文件放在系统盘以外，对提升速度也有所帮助，尤其是系统频繁使用交换分区/文件时。
 
-### 组[RAID (简体中文)](/index.php?title=RAID_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "RAID (简体中文) (page does not exist)")
+### 组[RAID (简体中文)](/index.php/RAID_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "RAID (简体中文)")
 
 如果你有多个硬盘，组一个软RAID或许有不小惊喜。RAID 0可使存储系统的速度翻翻，而且加入的硬盘越多，速度越快，不过，RAID 0没有数据冗余，一旦某个硬盘故障，数据将有损失。RAID 5则是兼顾速度和数据安全的明智选择，但它至少需要3块硬盘。
 

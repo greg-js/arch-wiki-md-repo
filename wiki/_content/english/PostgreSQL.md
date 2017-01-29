@@ -60,7 +60,7 @@ Where:
 *   the `-E` is the default encoding of the database that will be created in the future;
 *   and `-D` is the default location where the database cluster must be stored.
 
-A bunch of lines should now appear on the screen with several ending by `... ok`:
+Many lines should now appear on the screen with several ending by `... ok`:
 
 ```
 The files belonging to this database system will be owned by user "postgres".
@@ -83,9 +83,9 @@ initializing pg_authid ... ok
 
 ```
 
-If this is the kind of lines you see, then the process succeeded. In that case return to the regular user using `exit`.
+If these are the kind of lines you see, then the process succeeded. Return to the regular user using `exit`.
 
-Then as root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `postgresql.service`.
+As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `postgresql.service`.
 
 **Tip:** If you change the root to something other than `/var/lib/postgres`, you will have to edit the service file. If the root is under `home`, make sure to set `ProtectHome` to false.
 

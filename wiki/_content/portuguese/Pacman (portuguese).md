@@ -41,7 +41,7 @@ Pacman é escrito na linguagem de programação C e usa o formato de pacote `.pk
     *   [3.14 Recebo um erro "falha ao confirmar a transação (pacote inválido ou corrompido)"](#Recebo_um_erro_.22falha_ao_confirmar_a_transa.C3.A7.C3.A3o_.28pacote_inv.C3.A1lido_ou_corrompido.29.22)
     *   [3.15 Recebo erro toda vez que uso pacman dizendo 'aviso: locale atual é inválida; usando padrão locale "C"'. O que eu faço?](#Recebo_erro_toda_vez_que_uso_pacman_dizendo_.27aviso:_locale_atual_.C3.A9_inv.C3.A1lida.3B_usando_padr.C3.A3o_locale_.22C.22.27._O_que_eu_fa.C3.A7o.3F)
     *   [3.16 Como posso ter Pacman para minhas configurações de proxy?](#Como_posso_ter_Pacman_para_minhas_configura.C3.A7.C3.B5es_de_proxy.3F)
-    *   [3.17 Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência??](#Como_fa.C3.A7o_para_reinstalar_todos_os_pacotes.2C_mantendo_informa.C3.A7.C3.B5es_sobre_se_algo_foi_explicitamente_instalado_ou_como_uma_depend.C3.AAncia.3F.3F)
+    *   [3.17 Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?](#Como_fa.C3.A7o_para_reinstalar_todos_os_pacotes.2C_mantendo_informa.C3.A7.C3.B5es_sobre_se_algo_foi_explicitamente_instalado_ou_como_uma_depend.C3.AAncia.3F)
 *   [4 Veja também](#Veja_tamb.C3.A9m)
 
 ## Configuração
@@ -538,7 +538,7 @@ Como a própria mensagem de erro diz, sua locale está configurada incorretament
 
 Certifique-se que as variáveis de ambiente relevantes (`$http_proxy`, `$ftp_proxy` etc.) estão configuradas. Se você usa Pacman com [sudo](/index.php/Sudo "Sudo"), você precisa configurar o sudo para [passar essas variáveis ​​de ambiente para o Pacman](/index.php/Sudo#Environment_variables "Sudo").
 
-### Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência??
+### Como faço para reinstalar todos os pacotes, mantendo informações sobre se algo foi explicitamente instalado ou como uma dependência?
 
 Para reinstalar todos os pacotes nativos: `pacman -S $(pacman -Qnq)` (a opção `-S` preserva a razão de instalação por padrão).
 Então você terá que reinstalar todos os pacotes externos, que podem ser listados com `pacman -Qmq`.

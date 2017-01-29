@@ -79,7 +79,7 @@ index   dc              eq
 Now prepare the database directory. You will need to rename the default config:
 
 ```
-# mv /var/lib/openldap/openldap-data/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
+# cp /var/lib/openldap/openldap-data/DB_CONFIG.example /var/lib/openldap/openldap-data/DB_CONFIG
 
 ```
 

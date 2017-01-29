@@ -45,6 +45,10 @@
     *   [4.10 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
     *   [4.11 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
     *   [4.12 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
+    *   [4.13 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
+        *   [4.13.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
+        *   [4.13.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
+        *   [4.13.3 Verify folder access by guest](#Verify_folder_access_by_guest)
 *   [5 See also](#See_also)
 
 ## Server configuration
@@ -821,6 +825,124 @@ Possible solutions are:
 ```
 
 The latter approach (using catia or fruit) has the drawback of filtering files with unprintable characters.
+
+### Folder shared inside graphical environment is not available to guests
+
+This section presupposes:
+
+1.  Usershares are configured following [previous section](https://wiki.archlinux.org/index.php/Samba#Creating_usershare_path)
+2.  A shared folder has been created as a non-root user from GUI
+3.  Guests access has been set to shared folder during creation
+4.  Samba service has been restarted at least once since last `/etc/samba/smb.conf` file modification
+
+For clarification purpose only, in the following sub-sections is assumed:
+
+*   Shared folder is located inside user home directory path (`/home/yourUser/Shared`)
+*   Shared folder name is *MySharedFiles*
+*   Guest access is read-only.
+*   Windows users will access shared folder content without login prompt
+
+#### Verify correct samba configuration
+
+Run the following command from a terminal to test configuration file correctness:
+
+```
+$ testparm
+
+```
+
+If everything is fine among output lines you may read
+
+`Press enter to see a dump of your service definitions`
+
+If it is not, please correct file accordingly to command error notifications.
+
+Press the Enter key in order to dump samba configuration. The following options must be listed.
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+
+   ... some options here ...
+
+        usershare max shares = 100
+        usershare path = /var/lib/samba/usershare
+        map to guest = Bad Password
+
+   ... other options here ...
+```
+
+If previous option are not present, modify `/etc/samba/smb.conf` file in order to add them all.
+
+**Note:** The *map to guest* option is used in order to avoid user/password prompt from Windows users.
+
+#### Verify correct shared folder creation
+
+Run the following commands from a terminal:
+
+```
+$ cd /var/lib/samba/usershare
+$ ls
+
+```
+
+If everything is file you will notice a file named `mysharedfiles`
+
+Read file contents by the following command
+
+```
+$ cat mysharedfiles
+
+```
+
+terminal output should display something like this:
+
+ `/var/lib/samba/usershare/mysharedfiles` 
+```
+path=/home/yourUser/Shared
+comment=
+usershare_acl=S-1-1-0:r
+guest_ok=y
+sharename=MySharedFiles
+```
+
+#### Verify folder access by guest
+
+Run the following command from a terminal and just press Enter if a password is asked for your user:
+
+```
+$ smbclient -L localhost
+
+```
+
+If everything is fine, MySharedFiles should be displayed under `Sharename` column
+
+Run the following command in order to access the shared folder as guest (anonymous login)
+
+```
+$ smbclient -N //localhost/MySharedFiles
+
+```
+
+If everything is fine samba client prompt will be displayed:
+
+`smb: \>`
+
+From samba prompt verify guest can list directory contents
+
+`smb: \> ls`
+
+If `NTFS_STATUS_ACCESS_DENIED` error displayed, probably there is something to be solved at directory permission level.
+
+Run the following commands as root to set correct permissions for folders
+
+```
+# cd /home
+# chmod -R 755 /home/yourUser/Shared
+
+```
+
+Access shared folder again as guest to be sure guest read access error has been solved.
 
 ## See also
 

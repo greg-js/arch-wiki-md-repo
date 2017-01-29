@@ -24,6 +24,25 @@ Configuration is done via editing the `greylist.service` file. First copy it ove
 
 Now you can edit it. For example, to add automatic whitelisting (successful deliveries are whitelisted and don't have to wait any more), you could add the `--auto-whitelist-clients=N` option and replace `N` by a suitably small number (or leave it at its default of 5).
 
+...actually, the preferred method should be the override:
+
+```
+cat /etc/systemd/system/postgrey.service.d/override.conf
+
+```
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/postgrey --inet=127.0.0.1:10030 \
+       --pidfile=/run/postgrey/postgrey.pid \
+       --group=postgrey --user=postgrey \
+       --daemonize \
+       --greylist-text="Greylisted for %%s seconds" \
+       --auto-whitelist-clients
+
+```
+
 ## Troubleshooting
 
 If you specify --unix=/path/to/socket and the socket file is not created ensure you have removed the default --inet=127.0.0.1:10030 from the service file.

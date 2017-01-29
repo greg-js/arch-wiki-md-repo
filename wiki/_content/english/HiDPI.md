@@ -534,10 +534,10 @@ xrandr --output HDMI --scale 1.66x1.5
 
 ```
 
-For UHD to 1080p (3840/1920=2 2160/1080=1.98)
+For UHD to 1080p (3840/1920=2 2160/1080=2)
 
 ```
-xrandr --output HDMI --scale 2x1.98
+xrandr --output HDMI --scale 2x2
 
 ```
 
