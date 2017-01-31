@@ -202,7 +202,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **Tetrinet** — Multiplayer online Tetris game for up to six people.
 
-	[http://www.tetrinet.info/](http://www.tetrinet.info/) || [gtetrinet](https://www.archlinux.org/packages/?name=gtetrinet)
+	[http://www.tetrinet.info/](http://www.tetrinet.info/) || [gtetrinet](https://aur.archlinux.org/packages/gtetrinet/)
 
 *   **Ultrastar-ng** — Clone of SingStar, a music video game.
 

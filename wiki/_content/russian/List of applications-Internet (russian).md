@@ -182,7 +182,7 @@
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Сильнонастраиваемый микробраузер, основанный на движке WebKit и тулките [GTK+](/index.php/GTK%2B "GTK+"). Очень быстрый, расширяемый при помощи Lua и распространяемый под лицензией GNU GPLv3
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
 
 *   **Maxthon** — Браузер, сочетающий в себе минималистичный дизайн с современными технологиями, чтобы сделать интернет для вас быстрее, безопаснее и легче
 

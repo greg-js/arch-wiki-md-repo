@@ -228,7 +228,7 @@ Outside the browser, `mailto` links are handled by the `x-scheme-handler/mailto`
 
 #### 文件关联问题
 
-非 [Gnome](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 用户可能遇到该问题，安装[libgnome](https://www.archlinux.org/packages/?name=libgnome)即可。
+非 [Gnome](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") 用户可能遇到该问题，安装[libgnome](https://aur.archlinux.org/packages/libgnome/)即可。
 
 如果使用KDE，还可以这样：
 

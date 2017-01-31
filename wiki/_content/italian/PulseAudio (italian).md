@@ -181,7 +181,7 @@ Assicurarsi che `/usr/local/bin` abbia la precedenza su `/usr/bin` nel vostro `P
 
 ### Gstreamer
 
-Si installi il pacchetto [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) oppure [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) se il programma in questione utilizza un'implementazione vecchia di [GStreamer](/index.php/GStreamer "GStreamer").
+Si installi il pacchetto [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) oppure [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) se il programma in questione utilizza un'implementazione vecchia di [GStreamer](/index.php/GStreamer "GStreamer").
 
 ### OpenAL
 

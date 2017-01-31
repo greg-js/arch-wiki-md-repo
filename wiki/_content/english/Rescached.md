@@ -55,13 +55,14 @@ Rescached configuration resides in `/etc/rescached/rescached.cfg`. Select entrie
 
 	Change the value of `cache.max` and/or `cache.threshold` to match your needs.
 
-After finishing the configuration file, set your system DNS server to point to rescached:
+After finishing the configuration file, modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with address for *localhost*:
 
 ```
-# mv /etc/resolv.conf /etc/resolv.conf.org
-# echo "nameserver 127.0.0.1" > /etc/resolv.conf
+nameserver 127.0.0.1
 
 ```
+
+Other programs may overwrite this setting; see [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") for details.
 
 Finally, [start](/index.php/Start "Start") and possibly [enable](/index.php/Enable "Enable") `rescached.service`.
 

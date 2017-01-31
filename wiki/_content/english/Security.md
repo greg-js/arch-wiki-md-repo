@@ -170,12 +170,14 @@ Partitions used for data should always be mounted with `nodev`, `nosuid`, `noexe
 
 | **Partition** | `nodev` | `nosuid` | `noexec` |
 | `/var` | yes | yes | yes  |
-| `/home` | yes | yes | yes, if you do not code, use wine or steam |
+| `/home` | yes | yes | yes, if you do not code, use wine or steam  |
 | `/dev/shm` | yes | yes | yes |
 | `/tmp` | yes | yes | maybe, breaks compiling packages and various other things |
 | `/boot` | yes | yes | yes |
 
  Note that some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
+
+ Applications that use QML may crash or not work properly starting with Qt 5.8 if `noexec` is set on these partitions. A workaround is available at [Qt#Applications using QML crash or don't work with Qt 5.8](/index.php/Qt#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8 "Qt").
 
 ### File access permissions
 

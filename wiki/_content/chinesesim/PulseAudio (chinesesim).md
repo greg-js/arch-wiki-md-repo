@@ -199,7 +199,7 @@ exec padsp /usr/bin/OSSprogram "$@"
 
 ### GStreamer
 
-安装 [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good)。如果程序使用的是旧版本的Gstreamer，安装[gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins)。
+安装 [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good)。如果程序使用的是旧版本的Gstreamer，安装[gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/)。
 
 ### OpenAL
 

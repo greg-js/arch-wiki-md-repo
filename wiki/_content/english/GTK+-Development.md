@@ -204,7 +204,7 @@ void main(string[] args)
 ### F#
 
 *   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
-*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)
+*   Makedependency: [fsharp](https://www.archlinux.org/packages/?name=fsharp)
 *   Build with: `fsharpc -r:gtk-sharp.dll -I:/usr/lib/mono/gtk-sharp-3.0/ hello_world.fs`
 *   Run with: `mono hello_world.exe`
 

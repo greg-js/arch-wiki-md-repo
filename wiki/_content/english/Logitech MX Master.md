@@ -15,7 +15,7 @@ Mainly, the mouse should work right away with the supplied USB dongle. To get a 
 
 The vertical wheel and the two buttons near it should work right away, however the thumb button requires some special treatment, and you might want to remap the rest.
 
-To remap the buttons of the mouse you can use the packages [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and [xautomation](https://www.archlinux.org/packages/?name=xautomation).
+To remap the buttons of the mouse you can use the packages [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) and [xautomation](https://www.archlinux.org/packages/?name=xautomation).
 
 *xbindkeys* will redirect the buttons and *xte* (which is included in xautomation) will execute the custom key presses. To do so, create a config file named `.xbindkeysrc` in your home directory.
 

@@ -773,7 +773,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Altamente configurable, micronavegador basado en el motor WebKit y GTK+. Es muy rápido, extensible por Lua y licenciado bajo GNU GPLv3 license.
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Navegador web ligero basado en GTK+ y WebKit.
 

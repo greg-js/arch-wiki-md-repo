@@ -153,7 +153,7 @@ The `-n` option skips adding the mount to `/etc/mtab`, so it will work even if r
 
 ## Parameter list
 
-This list is not comprehensive. For a complete list of all options, please see the [kernel documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt).
+This list is not comprehensive. For a complete list of all options, please see the [kernel documentation](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt).
 
 | parameter | Description |
 | root= | Root filesystem. |

@@ -148,7 +148,7 @@ as the command. However, without recompiling gtk-window-decorator, the necessary
 
 ### Qt 应用程序不风格化
 
-You may find that Qt4 applications are not inheriting the GTK2 theme like they should. This can be fixed easily by installing [libgnomeui](https://www.archlinux.org/packages/?name=libgnomeui) with the `--force` flag. If the problem persists, run qtconfig and setting GTK+ as GUI style under System ⇒ Preferences ⇒ QT4 Settings.
+You may find that Qt4 applications are not inheriting the GTK2 theme like they should. This can be fixed easily by installing [libgnomeui](https://aur.archlinux.org/packages/libgnomeui/) with the `--force` flag. If the problem persists, run qtconfig and setting GTK+ as GUI style under System ⇒ Preferences ⇒ QT4 Settings.
 
 ### Evolution Email 不工作
 

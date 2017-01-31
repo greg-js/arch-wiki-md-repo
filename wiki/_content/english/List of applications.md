@@ -427,7 +427,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 ###### Other browsers based on Chromium's Content module
 
-*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Electron](http://electron.atom.io/) platform.
+*   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Muon](https://github.com/brave/muon) platform.
 
 	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
 
@@ -435,7 +435,7 @@ See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(
 
 	[https://minbrowser.github.io/min/](https://minbrowser.github.io/min/) || [min](https://www.archlinux.org/packages/?name=min)
 
-*   **theWeb** — A web browser based on Qt using the Chromium Embedded Framework, with Linux integration (such as MPRIS) in mind.
+*   **theWeb** — A web browser based on Qt using the [Chromium Embedded Framework](https://bitbucket.org/chromiumembedded/cef), with Linux integration (such as MPRIS) in mind.
 
 	[https://github.com/vicr123/theweb](https://github.com/vicr123/theweb) || [theweb](https://aur.archlinux.org/packages/theweb/)
 
@@ -483,7 +483,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Highly configurable, micro-browser framework based on the WebKit engine and the GTK+ toolkit. It is very fast, extensible by Lua and licensed under the GNU GPLv3 license.
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
 
 *   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -1011,7 +1011,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psimedia](https://www.archlinux.org/packages/?name=psimedia)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psimedia](https://aur.archlinux.org/packages/psimedia/)
 
 *   **Psi+** — Enhanced version of the Psi Jabber client with many new [features](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
@@ -1265,7 +1265,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Evolution](/index.php/Evolution "Evolution") RSS** — Plugin for Evolution Mail that enables reading of RSS/RDF/ATOM feeds.
 
-	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://aur.archlinux.org/packages/evolution-rss/)
+	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://www.archlinux.org/packages/?name=evolution-rss)
 
 *   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
 
@@ -3007,7 +3007,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[GNOME Commander](https://en.wikipedia.org/wiki/GNOME_Commander "wikipedia:GNOME Commander")** — A dual-paned file manager for the GNOME Desktop.
 
-	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://www.archlinux.org/packages/?name=gnome-commander)
+	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://aur.archlinux.org/packages/gnome-commander/)
 
 *   **[GNOME Files](/index.php/GNOME_Files "GNOME Files")** — Extensible, heavyweight file manager used by default in GNOME with support for custom scripts.
 
@@ -5826,7 +5826,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **GNOME Break Timer** — Keeps track of how much you are using the computer, and it reminds you to take regular breaks.
 
-	[https://wiki.gnome.org/Apps/GnomeBreakTimer](https://wiki.gnome.org/Apps/GnomeBreakTimer) || [gnome-break-timer](https://aur.archlinux.org/packages/gnome-break-timer/)
+	[https://wiki.gnome.org/Apps/GnomeBreakTimer](https://wiki.gnome.org/Apps/GnomeBreakTimer) || [gnome-break-timer](https://www.archlinux.org/packages/?name=gnome-break-timer)
 
 *   **GTG (Getting Things GNOME!)** — Personal tasks and To-do list items organizer for the GNOME desktop.
 

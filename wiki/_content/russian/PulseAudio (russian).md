@@ -232,7 +232,7 @@ exec padsp /usr/bin/OSSprogram "$@"
 
 ### GStreamer
 
-Установите [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good), или [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins), если Ваша программа имеет наследие реализации [GStreamer](/index.php/GStreamer "GStreamer").
+Установите [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good), или [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/), если Ваша программа имеет наследие реализации [GStreamer](/index.php/GStreamer "GStreamer").
 
 ### OpenAL
 

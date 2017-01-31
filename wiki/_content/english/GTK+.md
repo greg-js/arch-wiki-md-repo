@@ -431,6 +431,8 @@ $ broadwayd --port $port_number --address $address $display_number
 
 The GDK [Wayland](/index.php/Wayland "Wayland") backend can be enabled by setting the `GDK_BACKEND=wayland` environment variable.
 
+**Tip:** To disable GTK window decorations in Wayland, [install](/index.php/Install "Install") the [gtk3-optional-csd](https://aur.archlinux.org/packages/gtk3-optional-csd/) package and set the environment variable `GTK_CSD=0`.
+
 ## Troubleshooting
 
 ### Different themes between GTK+ 2 and GTK+ 3 applications

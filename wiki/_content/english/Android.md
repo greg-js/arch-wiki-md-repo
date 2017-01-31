@@ -362,6 +362,8 @@ To build any version of Android, you need to install these packages:
 
 *   [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [git](https://www.archlinux.org/packages/?name=git) [gnupg](https://www.archlinux.org/packages/?name=gnupg) [flex](https://www.archlinux.org/packages/?name=flex) [bison](https://www.archlinux.org/packages/?name=bison) [gperf](https://www.archlinux.org/packages/?name=gperf) [sdl](https://www.archlinux.org/packages/?name=sdl) [wxgtk](https://www.archlinux.org/packages/?name=wxgtk) [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools) [curl](https://www.archlinux.org/packages/?name=curl) [ncurses](https://www.archlinux.org/packages/?name=ncurses) [zlib](https://www.archlinux.org/packages/?name=zlib) [schedtool](https://www.archlinux.org/packages/?name=schedtool) [perl-switch](https://www.archlinux.org/packages/?name=perl-switch) [zip](https://www.archlinux.org/packages/?name=zip) [unzip](https://www.archlinux.org/packages/?name=unzip) [libxslt](https://www.archlinux.org/packages/?name=libxslt) [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) [bc](https://www.archlinux.org/packages/?name=bc) [rsync](https://www.archlinux.org/packages/?name=rsync) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline) [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)
 
+The [aosp-devel](https://aur.archlinux.org/packages/aosp-devel/) metapackage provides them all for simple installation.
+
 **Note:** The PGP signatures for [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) and [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) may cause errors, that can be solved by manually importing the needed signature:
 ```
 $ gpg --recv-keys 702353E0F7E48EDB
@@ -371,6 +373,8 @@ $ gpg --recv-keys 702353E0F7E48EDB
 Additionally, LineageOS requires the following packages:
 
 *   [xml2](https://www.archlinux.org/packages/?name=xml2) [lzop](https://www.archlinux.org/packages/?name=lzop) [pngcrush](https://www.archlinux.org/packages/?name=pngcrush) [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
+
+They can be installed with the [lineageos-devel](https://aur.archlinux.org/packages/lineageos-devel/) metapackage.
 
 **Note:** Installing both [maven](https://www.archlinux.org/packages/?name=maven) and [gradle](https://www.archlinux.org/packages/?name=gradle) to build LineageOS may result in a build speed improvement as the build process will prefer the system's
 

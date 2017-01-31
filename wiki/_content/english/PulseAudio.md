@@ -301,7 +301,7 @@ Make sure `/usr/local/bin` comes before `/usr/bin` in your **PATH**.
 
 ### GStreamer
 
-Install [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good), or [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) if your intended program has a legacy [GStreamer](/index.php/GStreamer "GStreamer") implementation.
+Install [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good), or [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) if your intended program has a legacy [GStreamer](/index.php/GStreamer "GStreamer") implementation.
 
 ### OpenAL
 

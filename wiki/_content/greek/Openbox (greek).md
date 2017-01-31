@@ -155,7 +155,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 Το αρχείο `~/.gtkrc-2.0` θα δημιουργηθεί αυτόματα αν χρησιμοποιεί κανείς το [lxappearance](/index.php/LXDE "LXDE") για να ορίσει τα θέματα.
 
-Είναι επίσης αναγκαίο να εγκατασταθεί το [libgnomeui](https://www.archlinux.org/packages/?name=libgnomeui) για να διασφαλιστεί ότι το [Qt](/index.php/Qt "Qt") μπορεί επίσης να εντοπίσει τα GTK θέματα.
+Είναι επίσης αναγκαίο να εγκατασταθεί το [libgnomeui](https://aur.archlinux.org/packages/libgnomeui/) για να διασφαλιστεί ότι το [Qt](/index.php/Qt "Qt") μπορεί επίσης να εντοπίσει τα GTK θέματα.
 
 Δες το [GTK+#GTK+ 2.x](/index.php/GTK%2B#GTK.2B_2.x "GTK+") για μια εισαγωγή σχετικά με το πώς να τροποποιεί κανείς το `~/.gtkrc-2.0` με το χέρι.
 

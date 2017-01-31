@@ -213,8 +213,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/) | Terminal
 [hawaii-terminal](https://aur.archlinux.org/packages/hawaii-terminal/) | Swordfish
 <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=swordfish)</small> | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
-[juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | EyeSight
+[speedcrunch](https://www.archlinux.org/packages/?name=speedcrunch) | Notepadqq
+[notepadqq](https://aur.archlinux.org/packages/notepadqq/) | EyeSight
 [eyesight](https://aur.archlinux.org/packages/eyesight/) | SMPlayer
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
@@ -240,8 +240,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | [Leafpad](http://tarot.freeshell.org/leafpad/)
 [leafpad](https://www.archlinux.org/packages/?name=leafpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
 [gpicview](https://www.archlinux.org/packages/?name=gpicview) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
-[lxmusic](https://www.archlinux.org/packages/?name=lxmusic) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LXDM](/index.php/LXDM "LXDM")
+[lxmusic](https://www.archlinux.org/packages/?name=lxmusic) | [Midori](/index.php/Midori "Midori")
+[midori](https://www.archlinux.org/packages/?name=midori) | [LXDM](/index.php/LXDM "LXDM")
 [lxdm](https://www.archlinux.org/packages/?name=lxdm) |
 | [LXDE](/index.php/LXDE "LXDE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Openbox](/index.php/Openbox "Openbox")
@@ -252,8 +252,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [galculator](https://www.archlinux.org/packages/?name=galculator) | L3afpad
 [l3afpad](https://www.archlinux.org/packages/?name=l3afpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
 [gpicview-gtk3](https://aur.archlinux.org/packages/gpicview-gtk3/) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
-[lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LXDM](/index.php/LXDM "LXDM")
+[lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3) | [Midori](/index.php/Midori "Midori")
+[midori](https://www.archlinux.org/packages/?name=midori) | [LXDM](/index.php/LXDM "LXDM")
 [lxdm-gtk3](https://www.archlinux.org/packages/?name=lxdm-gtk3) |
 | [LXQt](/index.php/LXQt "LXQt") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [Openbox](/index.php/Openbox "Openbox")
@@ -261,9 +261,9 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) | QTerminal
 [qterminal](https://www.archlinux.org/packages/?name=qterminal) | PCManFM-Qt
 [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
-[juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | LxImage-Qt
-[lximage-qt](https://aur.archlinux.org/packages/lximage-qt/) | SMPlayer
+[speedcrunch](https://www.archlinux.org/packages/?name=speedcrunch) | Notepadqq
+[notepadqq](https://aur.archlinux.org/packages/notepadqq/) | LxImage-Qt
+[lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt) | SMPlayer
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
@@ -276,8 +276,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | pluma
 [pluma](https://www.archlinux.org/packages/?name=pluma) | Eye of MATE
 [eom](https://www.archlinux.org/packages/?name=eom) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
+[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [MATE](/index.php/MATE "MATE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
@@ -288,8 +288,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [galculator](https://www.archlinux.org/packages/?name=galculator) | pluma
 [pluma-gtk3](https://www.archlinux.org/packages/?name=pluma-gtk3) | Eye of MATE
 [eom-gtk3](https://www.archlinux.org/packages/?name=eom-gtk3) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
+[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
@@ -360,8 +360,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [galculator](https://www.archlinux.org/packages/?name=galculator) | Mousepad
 [mousepad](https://www.archlinux.org/packages/?name=mousepad) | [Ristretto](http://goodies.xfce.org/projects/applications/ristretto)
 [ristretto](https://www.archlinux.org/packages/?name=ristretto) | [Parole](http://docs.xfce.org/apps/parole/start)
-[parole](https://www.archlinux.org/packages/?name=parole) | [Firefox](/index.php/Firefox "Firefox")
-[firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
+[midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 
 ### Resource use

@@ -42,7 +42,7 @@ Pacman te preguntará que paquetes deseas instalar, pero probablemente es mejor 
 
 **Tip:** Instalar [Gamin](/index.php/Gamin_(Espa%C3%B1ol) "Gamin (Español)") (sucesor de [FAM](/index.php/FAM_(Espa%C3%B1ol) "FAM (Español)")) es altamente recomendado.
 
-Si deseas usar que xfce4-mixer funcione con [Alsa](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)"), necesitas instalar [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins). Para [OSS](/index.php/OSS "OSS") mira [mas abajo](#OSS).
+Si deseas usar que xfce4-mixer funcione con [Alsa](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)"), necesitas instalar [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/). Para [OSS](/index.php/OSS "OSS") mira [mas abajo](#OSS).
 
 ## Iniciando Xfce
 

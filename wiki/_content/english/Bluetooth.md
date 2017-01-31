@@ -30,6 +30,7 @@
     *   [6.10 Thinkpad Bluetooth Laser Mouse problems](#Thinkpad_Bluetooth_Laser_Mouse_problems)
     *   [6.11 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
     *   [6.12 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [6.13 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
 
 ## Installation
 
@@ -549,3 +550,14 @@ Device XX:XX:XX:XX:XX:XX My Device
 ```
 
 Then [restart](/index.php/Restart "Restart") `bluetooth.service`, turn on your bluetooth adapter, make your device discoverable, re-scan for devices, and re-pair your device. Depending on your bluetooth manager, you may need to perform a full reboot in order to re-discover the device.
+
+### Device does not connect with an error in journal
+
+If you see a message like the following in `journalctl` output while trying to connect to a device:
+
+```
+a2dp-source profile connect failed for 9C:64:40:22:E1:3F: Protocol not available
+
+```
+
+try installing [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) and restarting pulseaudio. This error can manifest even while using only file transfer.

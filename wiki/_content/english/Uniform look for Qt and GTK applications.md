@@ -160,7 +160,7 @@ QGtkStyle was unable to detect the current GTK+ theme.
 
 ```
 
-According to [this thread](https://bbs.archlinux.org/viewtopic.php?id=99175&p=1), you may simply have to install [libgnomeui](https://www.archlinux.org/packages/?name=libgnomeui) to solve this issue. This has the added benefit that you do not need to edit a file every time you change your theme via a graphical tool, like the one provided by xfce.
+According to [this thread](https://bbs.archlinux.org/viewtopic.php?id=99175&p=1), you may simply have to install [libgnomeui](https://aur.archlinux.org/packages/libgnomeui/) to solve this issue. This has the added benefit that you do not need to edit a file every time you change your theme via a graphical tool, like the one provided by xfce.
 
 Users of [Openbox](/index.php/Openbox "Openbox") and other non-GNOME environments may encounter this problem. To solve this, first add the following to your `.xinitrc` file:
 

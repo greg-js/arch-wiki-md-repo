@@ -1,89 +1,88 @@
-[Spotify](http://www.spotify.com/) is a digital music service that gives you access to millions of songs.
-
-This Internet music service allows you to select any song in its database and stream for free. The service was recently introduced to the United States after previously being exclusive to Europe. The Linux client is only officially packaged for Debian and Fedora distributions, but is also available in the AUR: [spotify](https://aur.archlinux.org/packages/spotify/). Officially, they recommend that Linux users run the windows client under Wine. There are also the occasional voice ads in between songs for users who do not wish to subscribe.
+[Spotify](https://www.spotify.com/) is a digital music service that gives you access to millions of songs. This Internet music service allows you to select any song in its database and stream for free.
 
 Spotify also offers free users the ability to create playlist which can be shuffled, and set to repeat tracks. Content provided by Spotify comes in explicit versions as well as censored.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Linux](#Linux)
-    *   [1.2 Windows (Wine)](#Windows_.28Wine.29)
-*   [2 Global media hotkeys](#Global_media_hotkeys)
-    *   [2.1 Linux](#Linux_2)
+    *   [1.1 Third-party clients](#Third-party_clients)
+    *   [1.2 Official Linux client](#Official_Linux_client)
+    *   [1.3 Official Windows client through Wine](#Official_Windows_client_through_Wine)
+*   [2 Tips & tricks](#Tips_.26_tricks)
+    *   [2.1 Global media hotkeys](#Global_media_hotkeys)
         *   [2.1.1 MPRIS](#MPRIS)
             *   [2.1.1.1 Playerctl](#Playerctl)
             *   [2.1.1.2 D-Bus](#D-Bus)
         *   [2.1.2 xdotool](#xdotool)
-    *   [2.2 Windows](#Windows)
-*   [3 Tips & Tricks](#Tips_.26_Tricks)
-    *   [3.1 Disable track notifications](#Disable_track_notifications)
-    *   [3.2 Show track notifications](#Show_track_notifications)
-    *   [3.3 Skip overplayed radio tracks](#Skip_overplayed_radio_tracks)
-    *   [3.4 Mute commercials](#Mute_commercials)
-        *   [3.4.1 blockify](#blockify)
-        *   [3.4.2 spotblock](#spotblock)
-        *   [3.4.3 Spotify-AdKiller](#Spotify-AdKiller)
-    *   [3.5 Remote Control](#Remote_Control)
-        *   [3.5.1 Send commands via SSH](#Send_commands_via_SSH)
-        *   [3.5.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
-    *   [3.6 HiDPI Mode](#HiDPI_Mode)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
-    *   [4.2 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
-    *   [4.3 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
-    *   [4.4 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
-    *   [4.5 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
-    *   [4.6 Deadlock GUI Thread](#Deadlock_GUI_Thread)
-    *   [4.7 Pulseaudio](#Pulseaudio)
-    *   [4.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [4.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
-    *   [4.10 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
-*   [5 See also](#See_also)
+    *   [2.2 Disable track notifications](#Disable_track_notifications)
+    *   [2.3 Show track notifications](#Show_track_notifications)
+    *   [2.4 Skip overplayed radio tracks](#Skip_overplayed_radio_tracks)
+    *   [2.5 Mute commercials](#Mute_commercials)
+        *   [2.5.1 blockify](#blockify)
+        *   [2.5.2 spotblock](#spotblock)
+        *   [2.5.3 Spotify-AdKiller](#Spotify-AdKiller)
+    *   [2.6 Remote Control](#Remote_Control)
+        *   [2.6.1 Send commands via SSH](#Send_commands_via_SSH)
+        *   [2.6.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
+    *   [2.7 HiDPI Mode](#HiDPI_Mode)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
+    *   [3.2 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
+    *   [3.3 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
+    *   [3.4 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
+    *   [3.5 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
+    *   [3.6 Deadlock GUI Thread](#Deadlock_GUI_Thread)
+    *   [3.7 Pulseaudio](#Pulseaudio)
+    *   [3.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [3.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [3.10 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
+*   [4 See also](#See_also)
 
 ## Installation
 
-Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do **not** need to install both. There is also the online player (requires flash) on [https://play.spotify.com/](https://play.spotify.com/).
+Choose which client you would prefer. The Linux client is receiving good reviews. However, if you are comfortable with wine and its configuration, you might want to choose the windows client. Please note that you do **not** need to install both. There is also the online player (requires [Flash](/index.php/Flash "Flash")) on [https://play.spotify.com/](https://play.spotify.com/).
 
-There are also some alternatives to the official spotify client:
+### Third-party clients
 
-*   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Amarok 1.4 clone, ported to Qt 4, is able of streaming from Spotify with a premium account after activating (downloading) a plugin in the settings.
+*   **[Clementine](https://en.wikipedia.org/wiki/Clementine_(software) "wikipedia:Clementine (software)")** — Able of streaming from Spotify with a premium account after activating (downloading) a plugin in the settings.
 
 	[http://www.clementine-player.org/](http://www.clementine-player.org/) || [clementine](https://www.archlinux.org/packages/?name=clementine)
 
-*   **[Mopidy](https://www.mopidy.com/)** — An alternative plug-in based implementation of [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") is able of streaming from Spotify with an extension.
+*   **Mopidy** — An alternative plug-in based implementation of [Music Player Daemon](/index.php/Music_Player_Daemon "Music Player Daemon") is able of streaming from Spotify with an extension.
 
-	[https://github.com/mopidy](https://github.com/mopidy) || [mopidy](https://www.archlinux.org/packages/?name=mopidy)+ [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/)
+	[https://www.mopidy.com/](https://www.mopidy.com/) || [mopidy](https://www.archlinux.org/packages/?name=mopidy)+ [mopidy-spotify](https://aur.archlinux.org/packages/mopidy-spotify/) or [despotify-svn](https://aur.archlinux.org/packages/despotify-svn/)
 
-*   [Librespot](https://github.com/plietar/librespot) — An open source client library for Spotify. It enables applications to use Spotify's service (streaming), without using the official closed-source *libspotif*. || [librespot-git](https://aur.archlinux.org/packages/librespot-git/) [librespot-alsa-git](https://aur.archlinux.org/packages/librespot-alsa-git/)
+*   **Librespot** — An open source client library for Spotify. It enables applications to use Spotify's service (streaming), without using the official closed-source *libspotif*.
 
-### Linux
+	[https://github.com/plietar/librespot](https://github.com/plietar/librespot) || [librespot-git](https://aur.archlinux.org/packages/librespot-git/) [librespot-alsa-git](https://aur.archlinux.org/packages/librespot-alsa-git/)
 
-[spotify](https://aur.archlinux.org/packages/spotify/) from the [AUR](/index.php/AUR "AUR") will automatically download the software. If you wish to play local files you will need to install [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.
+### Official Linux client
 
-### Windows (Wine)
+[Install](/index.php/Install "Install") it with the [spotify](https://aur.archlinux.org/packages/spotify/) package. If you wish to play local files you will need to install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg0.10](https://aur.archlinux.org/packages/ffmpeg0.10/) as well.
 
-See [Wine](/index.php/Wine "Wine").
+### Official Windows client through Wine
 
-Obtaining Spotify can be done by registering for an account on their Website, the application does not offer in-app registration. However you can obtain the application prior to registering by using the following URL. [[1]](http://download.spotify.com/Spotify%20Installer.exe)
+First, install [Wine](/index.php/Wine "Wine").
+
+Obtaining Spotify can be done by registering for an account on their Website, the application does not offer in-app registration. Obtain the appliction from [https://www.spotify.com/nl/download/windows/](https://www.spotify.com/nl/download/windows/).
 
 After you have registered and downloaded your copy of the installer you will need to run the application through Wine, depending on your setup you may be able to run the application by right clicking the file. If not terminal will work just fine, as long as you run the below command in the directory of your download.
 
 ```
-$ wine Spotify\ Installer.exe
+$ wine SpotifySetup.exe
 
 ```
 
 Once the application is successfully installed you may run Spotify by using one of the following commands in terminal, or in the ALT+F2 launcher:
 
-If you use a x86_64 copy of ArchLinux, you will have to run it like this:
+If you use a x86_64 copy of Arch Linux, you will have to run it like this:
 
 ```
-$ wine "/home/username/.wine/drive_c/Program Files (x86)/Spotify/spotify.exe"
+$ wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Spotify/spotify.exe
 
 ```
 
-If you use a x86 copy of ArchLinux, you can use this command just fine:
+If you use a x86 copy of Arch Linux, you can use this command just fine:
 
 ```
 $ wine ~/.wine/drive_c/Program\ Files/Spotify/spotify.exe
@@ -92,11 +91,11 @@ $ wine ~/.wine/drive_c/Program\ Files/Spotify/spotify.exe
 
 If you have any additional problems, I recommend setting the winecfg to Windows XP or Windows 7 emulation.
 
-## Global media hotkeys
+## Tips & tricks
 
-Spotify has support for media keys like `XF86AudioPlay`, but out of the box they only work inside Spotify. We can use for example [xbindkeys](/index.php/Xbindkeys "Xbindkeys") to catch the global media keypresses, and then forward them to Spotify using one of the methods below. If you use xbindkeys, ensure that Spotify is restarted after installation and key configuration otherwise the key events will not be properly caught.
+### Global media hotkeys
 
-### Linux
+The official Linux client has support for media keys like `XF86AudioPlay`, but out of the box they only work inside Spotify. We can use for example [xbindkeys](/index.php/Xbindkeys "Xbindkeys") to catch the global media keypresses, and then forward them to Spotify using one of the methods below. If you use xbindkeys, ensure that Spotify is restarted after installation and key configuration otherwise the key events will not be properly caught.
 
 #### MPRIS
 
@@ -199,12 +198,6 @@ $ chmod +x musickeys.sh
 ```
 
 By executing `./musickeys.sh play` you can now toggle playing a song. Now you can bind this script to any tool that catches keypresses, such as [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
-
-### Windows
-
-If you prefer the wine-version of Spotify, you can use [spotifycmd](https://aur.archlinux.org/packages/spotifycmd/) to send actions to Spotify. [Here](https://github.com/Tarrasch/dotfiles/compare/0149505f%5E...19ede1f6) is a sample setup of xmonad bindings using spotifycmd.
-
-## Tips & Tricks
 
 ### Disable track notifications
 
@@ -367,48 +360,39 @@ $ sh vncget.sh all
 As the current Spotify build is not DPI aware, the amount to scale the interface by can be specified using the terminal command:
 
 ```
-$ spotify --force-device-scale-factor=X
+$ spotify --force-device-scale-factor=**X**
 
 ```
 
 where X is the amount to scale the interface by, e.g 2.
 
-This change can be added to the `spotify.desktop` file, located in the `/usr/share/applications` directory, in order to apply the scaling when launching from the desktop.
+This change can be added to the `spotify.desktop` file in order to apply the scaling when launching from the desktop.
 
-Example `spotify.desktop` file:
+To make sure the file does not get overwritten when the package is updated, copy it to you local applications folder:
 
+```
+$ cp /usr/share/applications/spotify.desktop ~/.local/share/applications/
+
+```
+
+Now edit `~/.local/share/applications/spotify.desktop` and add the `--force-device-scale-factor` option:
+
+ `spotify.desktop` 
 ```
 [Desktop Entry]
 Name=Spotify
 GenericName=Music Player
 Comment=Spotify streaming music client
 Icon=spotify-client
-Exec=spotify --force-device-scale-factor=2%U
+Exec=spotify **--force-device-scale-factor=2** %U
 TryExec=spotify
 Terminal=false
 Type=Application
 Categories=Audio;Music;Player;AudioVideo
 MimeType=x-scheme-handler/spotify
-
 ```
 
-In alternative, it is possible to create an application launcher override in the `~/.local/share/applications/` folder so that once the app gets updated, the setting will be kept.
-
-Example `spotify.desktop` override:
-
-```
-cp /usr/share/applications/spotify.desktop ~/.local/share/applications/
-# edit ~/.local/share/applications/spotify.desktop
-# so that the following
-# Exec=spotify %U
-# becomes this:
-Exec=spotify --force-device-scale-factor=2 %U
-# or use --force-device-scale-factor=1.0000001
-# if you are not on HiDPi screen
-
-```
-
-Please keep in mind you need to relaunch your Desktop Manager once, before these override changes will be effective.
+You might need to relaunch your Desktop Manager, before these override changes will be effective.
 
 ## Troubleshooting
 
@@ -466,13 +450,13 @@ ui.track_notifications_enabled=false
 
 Restart Spotify. Note that several causes appear to exist for this problem, and this particular fix only applies to select versions of Spotify client and Awesome, and it may be that additional root causes exist for the Debian and Ubuntu users reporting this issue. Observed with Spotify 0.9.17.1.g9b85d436 and Awesome 3.4.15.
 
-**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand some, users report not experimenting the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[2]](https://github.com/acrisci/playerctl/issues/20).
+**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand some, users report not experimenting the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[1]](https://github.com/acrisci/playerctl/issues/20).
 
 **Note:** This issue has multiple causes, so keep track of what you change while researching this. Update this section with additional scenarios and fixes.
 
 ### Pulseaudio
 
-See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
+See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
 
 === Album art and images are missing, show up as squares; with Quit spotify, then open spotify preferences `~/.config/spotify/prefs`
 

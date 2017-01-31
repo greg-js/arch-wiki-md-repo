@@ -32,7 +32,7 @@ Some of the compatible services are listed below, but you can also check the [ex
 | [Now-DNS](http://now-dns.com/) | Free | A, AAAA | unlimited | Use protocol `dyndns2`, server `now-dns.com/update` |
 | [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free |
 | [DNSdynamic](http://www.dnsdynamic.org/) | Free | [example](https://www.dnsdynamic.org/api.php) |
-| [Duck DNS](https://www.duckdns.org/) | Free and open source | [duckdns](https://aur.archlinux.org/packages/duckdns/) |
+| [Duck DNS](https://www.duckdns.org/) | Free | [duckdns](https://aur.archlinux.org/packages/duckdns/) |
 | [FreeDNS](http://freedns.afraid.org/) | Free or paid | CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV | 5 free | [example](http://freedns.afraid.org/scripts/freedns.clients.php) | [afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/), [petrified](https://aur.archlinux.org/packages/petrified/) |
 | [No-IP](http://www.noip.com/) | Free or paid | 3 free, 25+ paid | Use protocol `noip`, server `dynupdate.no-ip.com` | [noip](https://aur.archlinux.org/packages/noip/) |
 | [nsupdate.info](https://www.nsupdate.info/) | Free and open source | A, AAAA | Use protocol `dyndns2` | [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/) |

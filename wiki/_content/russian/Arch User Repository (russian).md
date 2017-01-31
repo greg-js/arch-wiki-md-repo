@@ -242,18 +242,9 @@ $ git push
 
 ## Репозиторий git для пакетов AUR3
 
-Несопровождаемые пакеты 08.08.2015 были удалены из AUR при переходе на использование Git. [Git](/index.php/Git "Git")-репозиторий со старым содержимым AUR доступен по адресу `git://pkgbuild.com/aur-mirror.git`. Информация обновляется по крайней мере раз в день, и данный репозиторий доступен только для чтения. Если вам не нужна [история изменений](http://git-scm.com/book/en/Git-Basics-Viewing-the-Commit-History), используйте опцию `--depth=1`, что может значительно ускорить процесс:
+Несопровождаемые пакеты 08.08.2015 были удалены из AUR при переходе на использование Git.
 
-```
-$ git clone --depth=1 git://pkgbuild.com/aur-mirror.git
-
-```
-
-Вы можете также просмотреть содержимое репозитория из браузера по адресу [http://pkgbuild.com/git/aur-mirror.git/tree](http://pkgbuild.com/git/aur-mirror.git/tree) или посмотреть конкретный пакет `http://pkgbuild.com/git/aur-mirror.git/tree/<packagename>`, что будет гораздо быстрее и потребует меньше памяти.
-
-Для получения дополнительной информации загляните в [эту ветку форума](https://bbs.archlinux.org/viewtopic.php?id=113099).
-
-Также имеется [Архив AUR](https://github.com/aur-archive) на GitHub, содержащий все пакеты из AUR3 до перехода на AUR4.
+Имеется [Архив AUR](https://github.com/aur-archive) на GitHub, содержащий все пакеты из AUR3 до перехода на AUR4.
 
 ## Часто задаваемые вопросы
 

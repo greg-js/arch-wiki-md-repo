@@ -175,7 +175,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 *   **Tetrinet** — Juego en línea multijugador de Tetris con capacidad para seis personas.
 
-	[http://www.tetrinet.info/](http://www.tetrinet.info/) || [gtetrinet](https://www.archlinux.org/packages/?name=gtetrinet)
+	[http://www.tetrinet.info/](http://www.tetrinet.info/) || [gtetrinet](https://aur.archlinux.org/packages/gtetrinet/)
 
 *   **Tuxanci** — Juego multiplataforma, inspirado en el conocido juego checo Bulanci.
 

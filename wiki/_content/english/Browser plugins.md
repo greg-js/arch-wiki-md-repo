@@ -117,7 +117,7 @@ See [Flash DRM content](/index.php/Flash_DRM_content "Flash DRM content").
 
 ### Gnash
 
-[Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash") is a free (libre) alternative to Adobe Flash Player. It is available both as a standalone player for desktop computers and embedded devices, as well as a browser plugin, and supports the SWF format up to version 7 (with versions 8 and 9 under development) and about 80% of ActionScript 2.0.
+[Gnash](https://en.wikipedia.org/wiki/Gnash_(software) is a free (libre) alternative to Adobe Flash Player. It is available both as a standalone player for desktop computers and embedded devices, as well as a browser plugin, and supports the SWF format up to version 7 (with versions 8 and 9 under development) and about 80% of ActionScript 2.0.
 
 There is a packages available: [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
 

@@ -255,7 +255,7 @@ Otras mixer soportados por OSS:
 
 ### Aplicaciones que usan Gstreamer
 
-Si tiene problemas con las aplicaciones que usan Gstreamer para audio, pruebe eliminando [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio), e instalando el paquete [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) que es requerido por `oss4sink` y `oss4src`.
+Si tiene problemas con las aplicaciones que usan Gstreamer para audio, pruebe eliminando [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio), e instalando el paquete [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) que es requerido por `oss4sink` y `oss4src`.
 
 Puede cambiar la configuración de GStreamer a fin de enviar el sonido a OSS, en lugar de a ALSA por defecto, con `gstreamer-properties` (parte del paquete [gnome-media](https://www.archlinux.org/packages/?name=gnome-media) ). Después de iniciar `gstreamer-properties`, se tienen que modificar las opciones de la siguiente manera:
 

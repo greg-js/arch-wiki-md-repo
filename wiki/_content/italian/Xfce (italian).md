@@ -481,9 +481,9 @@ Si potrebbe anche provare a utilizzare un impostazione DPI personalizzata.
 
 ```
 
-I plugin richiesti dipendono dall'hardware. Alla maggior parte delle persone dovrebbe andare bene con [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) che può essere [installato](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+I plugin richiesti dipendono dall'hardware. Alla maggior parte delle persone dovrebbe andare bene con [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/) che può essere [installato](/index.php/Pacman_(Italiano) "Pacman (Italiano)") dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
-Se la voce del pannello xfce4-mixer era già in esecuzione prima di installare uno dei pacchetti di plugin, bisogna uscire dalla sessione e rientrarvi nuovamente per vedere se funziona correttamente, o semplicemente rimuovere il plugin mixer dal pannello e aggiungerlo di nuovo. Se non funziona, potrebbe essere necessario avere più o diversi plugin gstreamer. Provare a installare il pacchetto [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) o [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins).
+Se la voce del pannello xfce4-mixer era già in esecuzione prima di installare uno dei pacchetti di plugin, bisogna uscire dalla sessione e rientrarvi nuovamente per vedere se funziona correttamente, o semplicemente rimuovere il plugin mixer dal pannello e aggiungerlo di nuovo. Se non funziona, potrebbe essere necessario avere più o diversi plugin gstreamer. Provare a installare il pacchetto [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) o [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/).
 
 Se si dovesse cambiare la scheda audio di riferimento nel mixer, allora si dovrebbe effettuare il logout e rientrare nella sessione per sentire nuovamente il suono.
 
@@ -491,7 +491,7 @@ Per ulteriori dettagli, ad esempio come impostare la scheda audio di default, ve
 
 #### Xfce4-mixer con OSS4
 
-Se avete provato la sezione qui sopra per ottenere [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) funzionante ma non funziona comunque, allora potrebbe essere necessario compilarsi per se [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins). Si scarichi il PKGBUILD e gli altri file necessari da ABS o [qui](https://repos.archlinux.org/wsvn/packages/gstreamer0.10-good/repos/extra-i686/), modificare il PKGBUILD, aggiungendo --enable-oss.
+Se avete provato la sezione qui sopra per ottenere [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) funzionante ma non funziona comunque, allora potrebbe essere necessario compilarsi per se [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/). Si scarichi il PKGBUILD e gli altri file necessari da ABS o [qui](https://repos.archlinux.org/wsvn/packages/gstreamer0.10-good/repos/extra-i686/), modificare il PKGBUILD, aggiungendo --enable-oss.
 
 ```
 ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \

@@ -178,7 +178,7 @@ After installing [GNOME](/index.php/GNOME "GNOME"), the sound works without any 
 
 ## Webcam
 
-The to get the webcam to work, [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins) or similar is required.
+The to get the webcam to work, [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/) or similar is required.
 
 ## Accessories
 

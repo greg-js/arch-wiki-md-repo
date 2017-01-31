@@ -114,11 +114,11 @@ Firefox имеет большую библиотеку дополнений, з�
 
 Если опция `media.gstreamer.enabled` включена на странице `about:config`, Firefox будет пытаться использовать [GStreamer](/index.php/GStreamer "GStreamer") для проигрывания мультимедиа в элементах HTML5 `<audio>` и `<video>`. Для их работы необходимо установить:
 
-*   [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins): декодирование vorbis, демультиплексирование ogg
-*   [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins): демультиплексирование webm и mp4
-*   [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins): aac, vp8 и opus
-*   [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins): декодирование h.264 и mp3
-*   [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg): больше дополнительных декодеров
+*   [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/): декодирование vorbis, демультиплексирование ogg
+*   [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/): демультиплексирование webm и mp4
+*   [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/): aac, vp8 и opus
+*   [gstreamer0.10-ugly-plugins](https://aur.archlinux.org/packages/gstreamer0.10-ugly-plugins/): декодирование h.264 и mp3
+*   [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/): больше дополнительных декодеров
 
 Перезапустите Firefox и перейдите на [HTML5 страницу YouTube](https://www.youtube.com/html5) или [сюда](http://www.quirksmode.org/html5/tests/video.html) чтобы убедиться, что всё установлено и работает правильно.
 
@@ -140,7 +140,7 @@ Firefox по умолчанию открывает `mailto` ссылки веб-
 
 #### Проблемы, связанные с ассоциациями файлов
 
-For non-[GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") users, Firefox may not associate file types properly or at all (in the "Open With" part of the download dialog). Installing [libgnome](https://www.archlinux.org/packages/?name=libgnome) from the [official repositories (Русский)](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") amends the problem.
+For non-[GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") users, Firefox may not associate file types properly or at all (in the "Open With" part of the download dialog). Installing [libgnome](https://aur.archlinux.org/packages/libgnome/) from the [official repositories (Русский)](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)") amends the problem.
 
 If you are using [KDE](/index.php/KDE "KDE") you can also do the following:
 

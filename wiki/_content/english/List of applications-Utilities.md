@@ -505,7 +505,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[GNOME Commander](https://en.wikipedia.org/wiki/GNOME_Commander "wikipedia:GNOME Commander")** — A dual-paned file manager for the GNOME Desktop.
 
-	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://www.archlinux.org/packages/?name=gnome-commander)
+	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://aur.archlinux.org/packages/gnome-commander/)
 
 *   **[GNOME Files](/index.php/GNOME_Files "GNOME Files")** — Extensible, heavyweight file manager used by default in GNOME with support for custom scripts.
 

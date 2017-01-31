@@ -42,7 +42,7 @@ Additional plugins:
 
 *   **RSS Plugin** — Enables reading of RSS/RDF/ATOM feeds.
 
-	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://aur.archlinux.org/packages/evolution-rss/)
+	[http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin](http://gnome.eu.org/index.php/Evolution_RSS_Reader_Plugin) || [evolution-rss](https://www.archlinux.org/packages/?name=evolution-rss)
 
 *   **SpamAssassin Plugin** — Spam filtering for Evolution, using SpamAssassin.
 

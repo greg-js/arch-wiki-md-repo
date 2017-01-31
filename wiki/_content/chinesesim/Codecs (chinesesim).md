@@ -57,11 +57,11 @@ Simply, GStreamer is a *backend* or *framework* utilized by many media players.
 
 GStreamer uses a plugin architecture which makes the most of GStreamer's functionality implemented as shared libraries. Since version 0.10 the plugins come grouped into three sets (named after the film The Good, the Bad and the Ugly).[wikipedia:GStreamer](https://en.wikipedia.org/wiki/GStreamer "wikipedia:GStreamer")
 
-*   [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins)
-*   [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins)
-*   [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins)
-*   [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins)
-*   [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg)
+*   [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/)
+*   [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/)
+*   [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/)
+*   [gstreamer0.10-ugly-plugins](https://aur.archlinux.org/packages/gstreamer0.10-ugly-plugins/)
+*   [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/)
 
 For the most complete solution:
 

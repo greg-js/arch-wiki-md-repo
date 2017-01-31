@@ -862,7 +862,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Micro-browser framework per i contenuti web, altamente configurabile e basato sul motore WebKit ed il toolkit GTK +. È molto veloce, estensibile da Lua e concesso sotto la licenza GNU GPLv3.
 
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://www.archlinux.org/packages/?name=luakit)
+	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Leggero browser in GTK2/WebKit.
 

@@ -373,7 +373,7 @@ rm -r ~/.purple
 
 ### Sound fix
 
-To have event sounds working, install the [gstreamer0.10-good](https://www.archlinux.org/packages/?name=gstreamer0.10-good) package. Alternatively, in the "Sounds" preferences tab, the method can be set to 'command' and one of the following sound commands used.
+To have event sounds working, install the [gstreamer0.10-good](https://aur.archlinux.org/packages/gstreamer0.10-good/) package. Alternatively, in the "Sounds" preferences tab, the method can be set to 'command' and one of the following sound commands used.
 
 After configuring [ALSA](/index.php/ALSA "ALSA"):
 

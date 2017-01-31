@@ -90,6 +90,8 @@ Description=XAMPP
 
 [Service]
 ExecStart=/opt/lampp/lampp start
+ExecStop=/opt/lampp/lampp stop
+Type=forking
 
 [Install]
 WantedBy=multi-user.target
@@ -135,7 +137,7 @@ To host other files on your system with XAMPP, you can configure an alias with a
 *   Edit apache's httpd.conf with your favorite editor.
 
 ```
-# nano /opt/lampp/etc/httpd.conf
+# vim /opt/lampp/etc/httpd.conf
 
 ```
 

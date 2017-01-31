@@ -307,7 +307,7 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 
 **Note:** Xfce4 和 and Xfce4 volumed 因为无法移植到 GStreamer 1.0, 上游已经不再维护。详情参考：4.12 [新闻](http://www.xfce.org/about/news/?post=1425081600).
 
-[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) 是 Xfce 组开发的用户混音程序和面板插件，xfce4 软件组的一部分，所以应该已经安装。要支持 [PulseAudio](/index.php/PulseAudio "PulseAudio") 和 [OSS](/index.php/OSS "OSS")，需要安装 [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins)。
+[xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) 是 Xfce 组开发的用户混音程序和面板插件，xfce4 软件组的一部分，所以应该已经安装。要支持 [PulseAudio](/index.php/PulseAudio "PulseAudio") 和 [OSS](/index.php/OSS "OSS")，需要安装 [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/)。
 
 可能需要变更默认声卡才能正常使用 Xfce4 mixer 详情请参考 [Advanced Linux Sound Architecture#Set the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture")，修改后需要重新登录。此外还可以使用 [PulseAudio](/index.php/PulseAudio "PulseAudio") 和 [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) 或 [OSS](/index.php/OSS "OSS"). 参考[OSS#Applications that use GStreamer](/index.php/OSS#Applications_that_use_GStreamer "OSS").
 
@@ -323,7 +323,7 @@ If you do not use PulseAudio, you can install [xfce4-alsa-plugin](https://aur.ar
 
 #### Keyboard volume buttons
 
-If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/). This provides a panel applet which has support for keyboard volume control and volume notifications.
+If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin). This provides a panel applet which has support for keyboard volume control and volume notifications.
 
 For non desktop environment specific alternatives, see [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications").
 

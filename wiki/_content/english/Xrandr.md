@@ -7,8 +7,9 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 Scripts](#Scripts)
         *   [3.1.1 Toggle external monitor](#Toggle_external_monitor)
-        *   [3.1.2 Example 3](#Example_3)
-        *   [3.1.3 Avoid X crash with xrasengan](#Avoid_X_crash_with_xrasengan)
+        *   [3.1.2 Manage 2-monitors](#Manage_2-monitors)
+        *   [3.1.3 Example 3](#Example_3)
+        *   [3.1.4 Avoid X crash with xrasengan](#Avoid_X_crash_with_xrasengan)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Adding undetected resolutions](#Adding_undetected_resolutions)
         *   [4.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
@@ -104,7 +105,11 @@ fi
 
 **Note:** To leave the external monitor enabled, replace the *else* clause with `xrandr --output "$intern" --primary --auto --output "$extern" --right-of "$intern" --auto`.
 
-*   [mons](https://aur.archlinux.org/packages/mons/) is a Bash script to quickly manage 2-monitors display (ex: computer, duplicate, extend and projector mode).
+#### Manage 2-monitors
+
+[mons](https://aur.archlinux.org/packages/mons/) is a Bash script to quickly manage 2-monitors display (ex: computer, duplicate, extend, projector mode).
+
+Mostly made for laptops, we may need to manage 2-plugged-in monitors as well as using basic well-known features on a daily basis (for more details, see [mons](https://github.com/Ventto/mons)).
 
 #### Example 3
 

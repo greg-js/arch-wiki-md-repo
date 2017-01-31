@@ -205,7 +205,7 @@ Then log out.
 
 ### Integration with applications
 
-*   [Firefox#GNOME Keyring integration](/index.php/Firefox#GNOME_Keyring_integration "Firefox")
+*   [Firefox](/index.php/Firefox#KDE.2FGNOME_integration "Firefox")
 
 ### Flushing passphrases
 

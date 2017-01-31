@@ -15,7 +15,7 @@
 
 ## Configuration
 
-**Note:** From version 207 and 21x, [systemd](/index.php/Systemd "Systemd") only applies settings from `/etc/sysctl.d/*.conf` and `/usr/lib/sysctl.d/*.conf`. If you had customized `/etc/sysctl.conf`, you need to rename it as `/etc/sysctl.d/99-sysctl.conf`. If you had e.g. `/etc/sysctl.d/foo`, you need to rename is to `/etc/sysctl.d/foo.conf`.
+**Note:** From version 207 and 21x, [systemd](/index.php/Systemd "Systemd") only applies settings from `/etc/sysctl.d/*.conf` and `/usr/lib/sysctl.d/*.conf`. If you had customized `/etc/sysctl.conf`, you need to rename it as `/etc/sysctl.d/99-sysctl.conf`. If you had e.g. `/etc/sysctl.d/foo`, you need to rename it to `/etc/sysctl.d/foo.conf`.
 
 The **sysctl** preload/configuration file can be created at `/etc/sysctl.d/99-sysctl.conf`. For [systemd](/index.php/Systemd "Systemd"), `/etc/sysctl.d/` and `/usr/lib/sysctl.d/` are drop-in directories for kernel sysctl parameters. The naming and source directory decide the order of processing, which is important since the last parameter processed may override earlier ones. For example, parameters in a `/usr/lib/sysctl.d/50-default.conf` will be overriden by equal parameters in `/etc/sysctl.d/50-default.conf` and any configuration file processed later from both directories.
 

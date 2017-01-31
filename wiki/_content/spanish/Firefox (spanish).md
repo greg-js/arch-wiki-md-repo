@@ -301,7 +301,7 @@ Cambie los colores por valores adecuados, o utilice un add-on como por ejemplo [
 
 ### Problemas de asociación de ficheros
 
-Para no usuarios de [GNOME](/index.php/GNOME "GNOME"), es posible que Firefox no asocie los tipos de archivo (en el diálogo "Abrir Con"). Instalar [libgnome](https://www.archlinux.org/packages/?name=libgnome) soluciona el problema:
+Para no usuarios de [GNOME](/index.php/GNOME "GNOME"), es posible que Firefox no asocie los tipos de archivo (en el diálogo "Abrir Con"). Instalar [libgnome](https://aur.archlinux.org/packages/libgnome/) soluciona el problema:
 
 ```
 pacman -S libgnome

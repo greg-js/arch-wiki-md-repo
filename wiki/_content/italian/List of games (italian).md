@@ -171,7 +171,7 @@
 
 *   **Tetrinet** — Gioco del Tetris Multiplayer online fino a 6 persone.
 
-	[http://www.tetrinet.info/](http://www.tetrinet.info/) || [gtetrinet](https://www.archlinux.org/packages/?name=gtetrinet)
+	[http://www.tetrinet.info/](http://www.tetrinet.info/) || [gtetrinet](https://aur.archlinux.org/packages/gtetrinet/)
 
 *   **Tuxanci** — Gioco multi-piattaforma ispirato al gioco Bulanci.
 

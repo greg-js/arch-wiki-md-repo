@@ -117,6 +117,28 @@ hosts = US East, US West, Japan, UK London, UK Southampton
 
 ## Troubleshooting
 
+In order to use the NetworkManager applet to connect:
+
+```
+   - Right click the Network Manager icon in the system tray
+   - and click "Configure Network Connections..."
+   - then click "Add"
+   - choose "Import VPN..."
+   - browse to "/etc/openvpn/client/CA_Toronto.conf" or whichever configuration you would like to use
+   - then click "Open"
+   - Remove only the ":1198" from the "Gateway:" ( if present ) as only the domain name should be in this box
+   - for the "Username:" type in your "p1234567" username
+   - for the "Password:" type in the password that goes with your "p-xxxxx" username
+   - then click "Advanced..."
+   - set "Custom gateway port:" and set it to "1198"
+   - click on the "Security" tab
+   - set the "Cipher:" to "AES-128-CBC"
+   - set the "HMAC Authentication:" to "SHA-1"
+   - click "OK"
+   - click "OK" again
+
+```
+
 Concerning DNS Leaks (See: [python-pia/#13](https://github.com/flamusdiu/python-pia/issues/13)), Network Manager leak information due to how /etc/resolv.conf is setup. The script below is a work around posted by [@maximbaz](https://github.com/maximbaz) to work around the problem.
 
  `/etc/NetworkManager/dispatcher.d/pia-vpn` 

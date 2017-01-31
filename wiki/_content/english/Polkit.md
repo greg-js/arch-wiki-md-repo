@@ -15,12 +15,13 @@ Polkit works by delimiting distinct actions, e.g. running GParted, and delimitin
     *   [2.2 Authorization rules](#Authorization_rules)
     *   [2.3 Administrator identities](#Administrator_identities)
 *   [3 Examples](#Examples)
-    *   [3.1 Disable suspend and hibernate](#Disable_suspend_and_hibernate)
-    *   [3.2 Bypass password prompt](#Bypass_password_prompt)
-        *   [3.2.1 Globally](#Globally)
-        *   [3.2.2 For specific actions](#For_specific_actions)
-        *   [3.2.3 Udisks](#Udisks)
-    *   [3.3 Allow management of individual systemd units by regular users](#Allow_management_of_individual_systemd_units_by_regular_users)
+    *   [3.1 Debugging/logging](#Debugging.2Flogging)
+    *   [3.2 Disable suspend and hibernate](#Disable_suspend_and_hibernate)
+    *   [3.3 Bypass password prompt](#Bypass_password_prompt)
+        *   [3.3.1 Globally](#Globally)
+        *   [3.3.2 For specific actions](#For_specific_actions)
+        *   [3.3.3 Udisks](#Udisks)
+    *   [3.4 Allow management of individual systemd units by regular users](#Allow_management_of_individual_systemd_units_by_regular_users)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -161,6 +162,18 @@ polkit.addAdminRule(function(action, subject) {
 ```
 
 ## Examples
+
+### Debugging/logging
+
+The following rule logs detailed information about any requested access.
+
+ `/etc/polkit-1/rules.d/00-log-access.rules` 
+```
+polkit.addRule(function(action, subject) {
+    polkit.log("action=" + action);
+    polkit.log("subject=" + subject);
+});
+```
 
 ### Disable suspend and hibernate
 

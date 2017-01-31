@@ -15,7 +15,7 @@ The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is
 
 The installation process for Arch Linux on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.
 
-As of kernel 4.1.3, a patched kernel is no longer necessary and this means Installation Media older than 2015.08.01 (release date: 2015-08-01) should all be able to boot this machine without problems.
+As of kernel 4.1.3, a patched kernel is no longer necessary and this means Installation Media newer than 2015.08.01 (release date: 2015-08-01) should all be able to boot this machine without problems.
 
 However, some manual configuration is still recommended to get the best experience.
 
@@ -55,7 +55,7 @@ However, some manual configuration is still recommended to get the best experien
 
 Although the XPS 13 is sold in a variety of configurations in most markets, those wanting to run Linux should pay special attention to **display** options (FHD or QHD+) and **Wi-Fi adapter** differences (Dell DW1560 or Intel 7265).
 
-For users with QHD+ display, they need to use a DE/WM that properly supports [HiDPI](/index.php/HiDPI "HiDPI"). Regarding the Wi-Fi adapter, both cards work in Arch Linux; while the Intel 7265 has mainline kernel support, hence it will works out-of-the-box, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are in the proper below section.
+For users with QHD+ display, they need to use a DE/WM that properly supports [HiDPI](/index.php/HiDPI "HiDPI"). Regarding the Wi-Fi adapter, both cards work in Arch Linux; while the Intel 7265 has mainline kernel support, hence it will work out-of-the-box, the Dell DW1560 instead requires a proprietary kernel module that is not well-supported; further details are in the proper below section.
 
 There are no exclusive hardware differences between the *Developer Edition* and the *classical edition* (the one with Windows) of this laptop that means this guide is equally applicable to both models.
 

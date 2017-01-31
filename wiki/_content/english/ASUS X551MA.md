@@ -15,6 +15,7 @@
     *   [3.8 Bluetooth](#Bluetooth)
     *   [3.9 Card Reader](#Card_Reader)
 *   [4 Dual boot with Windows](#Dual_boot_with_Windows)
+*   [5 Freezing on 4.x kernels](#Freezing_on_4.x_kernels)
 
 ## Model
 
@@ -22,6 +23,7 @@ X551MA-SX056D
 
 ## Hardware
 
+*   Platform: Bay Trail M (Atom)
 *   CPU: Intel(R) Pentium(R) CPU N3520 @ 2.16GHz (quad core)
 *   RAM: DDR3 1333MHz 4096 MB
 *   SCREEN: 15.6"
@@ -210,3 +212,9 @@ Works out of the box. Tested with SD card 512 Mb.
 ## Dual boot with Windows
 
 To boot Windows 7 it is needed to switch on `CSM` at BIOS. Otherwise Windows boot hangs at logo. Set the BIOS setting `OS Selection` in the `Advanced` menu to `Windows 7`.
+
+## Freezing on 4.x kernels
+
+Pentium N3520 processor is affected by the c-state bug: [https://bugzilla.kernel.org/show_bug.cgi?id=109051](https://bugzilla.kernel.org/show_bug.cgi?id=109051)
+
+Workaround: add `intel_idle.max_cstate=1` kernel parameter.

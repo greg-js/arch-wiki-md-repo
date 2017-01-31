@@ -25,7 +25,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [luakit](https://www.archlinux.org/packages/?name=luakit) from [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [luakit](https://aur.archlinux.org/packages/luakit/) from [official repositories](/index.php/Official_repositories "Official repositories").
 
 To use the latest development version, install [luakit-git](https://aur.archlinux.org/packages/luakit-git/) available from the [AUR](/index.php/AUR "AUR").
 

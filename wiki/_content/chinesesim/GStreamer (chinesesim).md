@@ -5,44 +5,26 @@ Gstreamer是一个基于管道的多媒体框架。Gstreamer使用C语言编写�
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-    *   [1.1 当前版本插件](#.E5.BD.93.E5.89.8D.E7.89.88.E6.9C.AC.E6.8F.92.E4.BB.B6)
-    *   [1.2 旧版本插件](#.E6.97.A7.E7.89.88.E6.9C.AC.E6.8F.92.E4.BB.B6)
 *   [2 整合](#.E6.95.B4.E5.90.88)
     *   [2.1 PulseAudio](#PulseAudio)
     *   [2.2 轻量级桌面](#.E8.BD.BB.E9.87.8F.E7.BA.A7.E6.A1.8C.E9.9D.A2)
     *   [2.3 KDE / Phonon integration](#KDE_.2F_Phonon_integration)
+    *   [2.4 硬件加速](#.E7.A1.AC.E4.BB.B6.E5.8A.A0.E9.80.9F)
 *   [3 Bugs](#Bugs)
 *   [4 相关链接](#.E7.9B.B8.E5.85.B3.E9.93.BE.E6.8E.A5)
 
 ## 安装
 
-从官方源 [official repositories](/index.php/Official_repositories "Official repositories")中安装一个版本的gstreamer:
-
-*   [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) - 当前版本。
-*   [gstreamer0.10](https://www.archlinux.org/packages/?name=gstreamer0.10) - 更旧但是支持更多程序的版本。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) 软件包.
 
 为了让gstreamer发挥作用，安装你所需要的插件
-
-### 当前版本插件
 
 *   [gst-libav](https://www.archlinux.org/packages/?name=gst-libav) - 基于Libav的插件，包含众多编解码器。
 *   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) - 需要更多改进，测试以及资料的插件。
 *   [gst-plugins-base](https://www.archlinux.org/packages/?name=gst-plugins-base) - 基本的Gstreamer组件。
 *   [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) - 发布于LGPL许可证下，质量较高的插件。
 *   [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) - 质量较高，但是可能造成分发问题的插件。
-*   [gst-vaapi](https://www.archlinux.org/packages/?name=gst-vaapi) - [VA-API](/index.php/VA-API#GStreamer "VA-API") 支持.
-*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/) - Gstreamer下的[libde265](https://aur.archlinux.org/packages/libde265/) 插件 (开源的h.265视频解码实现)。
-
-### 旧版本插件
-
-*   [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins) - 需要更多改进，测试以及资料的插件。
-*   [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) - 基本的Gstreamer组件。
-*   [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) - 基于Libav的插件，包含众多编解码器
-*   [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) - 发布于LGPL许可证下，质量较高的插件。
-*   [gstreamer0.10-good-plugins-slim](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins-slim/) - 发布于LGPL许可证下，质量较高的插件。 移除了GNOME 和 ASCII-art依赖.
-*   [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins) - 质量较高，但是可能造成分发问题的插件。
-*   [gstreamer0.10-vaapi](https://aur.archlinux.org/packages/gstreamer0.10-vaapi/) - [VAAPI](/index.php/VA-API#GStreamer "VA-API") 支持.
-*   [gstreamer0.10-plugin-libde265](https://aur.archlinux.org/packages/gstreamer0.10-plugin-libde265/) - Gstreamer下的[libde265](https://aur.archlinux.org/packages/libde265/) 插件 (开源的h.265视频解码实现)。
+*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/) - [libde265](https://aur.archlinux.org/packages/libde265/) 插件 (开源的h.265视频解码实现)。
 
 ## 整合
 
@@ -58,9 +40,20 @@ Gstreamer是一个基于管道的多媒体框架。Gstreamer使用C语言编写�
 
 请查看 [Phonon](/index.php/Phonon "Phonon").
 
+### 硬件加速
+
+见 [Hardware video acceleration (简体中文)](/index.php/Hardware_video_acceleration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Hardware video acceleration (简体中文)").
+
+GStreamer 将会自动的检测并使用正确的 API [[1]](http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding). 根据您的系统，您可以安装：
+
+*   [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) for VA-API support.
+*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) for VDPAU support.
+
+**注意:** 在 Intel GPUs 上启用 VA-API 支持可能会遇到视频文件缩略图的问题 详见 [GNOME Files#Thumbnailing_not_working_for_video_files](/index.php/GNOME_Files#Thumbnailing_not_working_for_video_files "GNOME Files").
+
 ## Bugs
 
-如果使用录制软件录制视频时出现`GStreamer-CRITICAL **: gst_mini_object_unref: assertion `mini_object->refcount > 0' failed`错误， 安装 [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) 以便修复.
+如果使用录制软件录制视频时出现`GStreamer-CRITICAL **: gst_mini_object_unref: assertion `mini_object->refcount > 0' failed`错误， 安装 [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/) 以便修复.
 
 ## 相关链接
 

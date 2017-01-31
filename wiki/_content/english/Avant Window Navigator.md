@@ -32,13 +32,13 @@ The most of the applets require some additional packages, which are listed in op
 | feeds | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
 | hardware-sensors | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) |
 | media-control | [banshee](https://aur.archlinux.org/packages/banshee/) |
-| media-player | [gstreamer0.10-python](https://www.archlinux.org/packages/?name=gstreamer0.10-python) |
+| media-player | [gstreamer0.10-python](https://aur.archlinux.org/packages/gstreamer0.10-python/) |
 | mail | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
 | slickswitcher | [python2-wnck](https://www.archlinux.org/packages/?name=python2-wnck) | [python2-gconf](https://www.archlinux.org/packages/?name=python2-gconf) |
 | stacks | [python2-libgnome](https://www.archlinux.org/packages/?name=python2-libgnome) [python2-gnomedesktop](https://www.archlinux.org/packages/?name=python2-gnomedesktop) |
 | thinkhdaps | [python2-pyinotify](https://www.archlinux.org/packages/?name=python2-pyinotify) |
 | tomboy-applet | [tomboy](https://www.archlinux.org/packages/?name=tomboy) |
-| volume-control | [gstreamer0.10-python](https://www.archlinux.org/packages/?name=gstreamer0.10-python) |
+| volume-control | [gstreamer0.10-python](https://aur.archlinux.org/packages/gstreamer0.10-python/) |
 
 ### Compositing
 

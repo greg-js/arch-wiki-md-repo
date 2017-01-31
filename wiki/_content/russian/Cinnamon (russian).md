@@ -174,7 +174,7 @@ dconf load /org/cinnamon/muffin/keybindings/ <keybindings-backup.dconf
 
 ### QGtkStyle не может определить текущую тему
 
-Установка [libgnome-data](https://www.archlinux.org/packages/?name=libgnome-data) частично решает проблему, и QGtkStyle начинает определять текущую тему GTK+. Однако, чтобы использовался правильный набор значков и курсоры мыши, необходимо задать их явно.
+Установка [libgnome-data](https://aur.archlinux.org/packages/libgnome-data/) частично решает проблему, и QGtkStyle начинает определять текущую тему GTK+. Однако, чтобы использовался правильный набор значков и курсоры мыши, необходимо задать их явно.
 
 Тема значков для приложений Qt может быть установлена следующей командой:
 

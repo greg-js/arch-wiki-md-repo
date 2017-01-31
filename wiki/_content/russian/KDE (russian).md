@@ -788,7 +788,7 @@ export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 
 ```
 
-В GNOME вы также можете попробовать установить пакет [libgnomeui](https://www.archlinux.org/packages/?name=libgnomeui).
+В GNOME вы также можете попробовать установить пакет [libgnomeui](https://aur.archlinux.org/packages/libgnomeui/).
 
 ### Проблемы с графикой
 

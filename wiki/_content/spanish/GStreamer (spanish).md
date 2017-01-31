@@ -20,7 +20,7 @@ Diseñado para ser multiplataforma, se sabe que funciona en Linux (x86, PowerPC 
 
 Instale una versión de GStreamer desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
 
-*   [gstreamer0.10](https://www.archlinux.org/packages/?name=gstreamer0.10) - Versión antigua y extensamente utilizada.
+*   [gstreamer0.10](https://aur.archlinux.org/packages/gstreamer0.10/) - Versión antigua y extensamente utilizada.
 *   [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) - Versión actual.
 
 Para hacer a GStreamer más versátil, instale los paquetes de complementos que necesite.
@@ -35,12 +35,12 @@ Para hacer a GStreamer más versátil, instale los paquetes de complementos que 
 
 ### Complementos de la versión antigua
 
-*   [gstreamer0.10-bad-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-bad-plugins) - Complementos que necesitan más calidad, pruebas o documentación.
-*   [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) - Conjunto ejemplar de elementos esenciales.
-*   [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) - Complemento basado en libav que contiene muchos codificadores y decodificadores.
-*   [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) - Complementos de buena calidad bajo licencia LGPL.
+*   [gstreamer0.10-bad-plugins](https://aur.archlinux.org/packages/gstreamer0.10-bad-plugins/) - Complementos que necesitan más calidad, pruebas o documentación.
+*   [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/) - Conjunto ejemplar de elementos esenciales.
+*   [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/) - Complemento basado en libav que contiene muchos codificadores y decodificadores.
+*   [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) - Complementos de buena calidad bajo licencia LGPL.
 *   [gstreamer0.10-good-plugins-slim](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins-slim/) - Complementos de buena calidad bajo licencia LGPL. Eliminada la dependencia de GNOME y ASCII-art.
-*   [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins) - Complementos de buena calidad que podrían plantear problemas de distribución.
+*   [gstreamer0.10-ugly-plugins](https://aur.archlinux.org/packages/gstreamer0.10-ugly-plugins/) - Complementos de buena calidad que podrían plantear problemas de distribución.
 *   [gstreamer0.10-vaapi](https://aur.archlinux.org/packages/gstreamer0.10-vaapi/) - Soporte (Intel) para VAAPI. Véase más en [http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding](http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding).
 
 ## Integración
@@ -59,7 +59,7 @@ Véase [Phonon](/index.php/Phonon "Phonon").
 
 ## Errores
 
-En caso del mensaje de error: `GStreamer-CRITICAL **: gst_mini_object_unref: assertion `mini_object->refcount > 0' failed`, que generalmente se produce durante la grabación de vídeo a través de software de grabación, instale [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) para arreglarlo.
+En caso del mensaje de error: `GStreamer-CRITICAL **: gst_mini_object_unref: assertion `mini_object->refcount > 0' failed`, que generalmente se produce durante la grabación de vídeo a través de software de grabación, instale [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/) para arreglarlo.
 
 ## Véase también
 

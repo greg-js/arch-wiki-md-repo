@@ -64,7 +64,7 @@ See also [Wikipedia:Gnash](https://en.wikipedia.org/wiki/Gnash "wikipedia:Gnash"
 
 There are multiple packages available: [gnash](https://aur.archlinux.org/packages/gnash/), [gnash-kde4](https://aur.archlinux.org/packages/gnash-kde4/), [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
 
-**Note:** If you find that Gnash does not work properly right out of the box, then you may also need to [install](/index.php/Pacman "Pacman") [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) from the [official repositories](/index.php/Official_repositories "Official repositories").
+**Note:** If you find that Gnash does not work properly right out of the box, then you may also need to [install](/index.php/Pacman "Pacman") [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Lightspark
 

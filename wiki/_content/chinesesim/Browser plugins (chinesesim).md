@@ -145,7 +145,7 @@ Firefox Nightly/Aurora 编译版本包含了 Shumway.
 
 可以通过软件包[gnash](https://aur.archlinux.org/packages/gnash/), [gnash-kde4](https://aur.archlinux.org/packages/gnash-kde4/), [gnash-git](https://aur.archlinux.org/packages/gnash-git/).
 
-**Note:** 如果发现 Gnash 无法工作，可能需要先 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg).
+**Note:** 如果发现 Gnash 无法工作，可能需要先 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [gstreamer0.10-ffmpeg](https://aur.archlinux.org/packages/gstreamer0.10-ffmpeg/).
 
 ### Lightspark
 

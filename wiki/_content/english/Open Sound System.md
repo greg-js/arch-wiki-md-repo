@@ -244,7 +244,7 @@ Other mixers that have support for OSS:
 
 ### Applications that use GStreamer
 
-If you have problems with applications that use Gstreamer for audio, you can try removing [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and installing the [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) package which is needed by `oss4sink` and `oss4src`.
+If you have problems with applications that use Gstreamer for audio, you can try removing [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and installing the [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) package which is needed by `oss4sink` and `oss4src`.
 
 Then you have to change the GStreamer settings to output the sound to OSS instead of the default ALSA with `gstreamer-properties` (part of the [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/) package). After starting `gstreamer-properties`, you have to modify the fields as follows:
 
@@ -268,7 +268,7 @@ You can add this to your `~/.bashrc` to be loaded on login.
 
 #### Xfce4-mixer and OSS4
 
-If you tried the above section to get [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) to work and it does not work at all, then you may have to compile [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) yourself. Download the PKGBUILD and other files needed from ABS or [here](https://projects.archlinux.org/svntogit/packages.git/tree/gstreamer0.10-good/repos), edit the PKGBUILD, add --enable-oss.
+If you tried the above section to get [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) to work and it does not work at all, then you may have to compile [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) yourself. Download the PKGBUILD and other files needed from ABS or [here](https://projects.archlinux.org/svntogit/packages.git/tree/gstreamer0.10-good/repos), edit the PKGBUILD, add --enable-oss.
 
 ```
  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \

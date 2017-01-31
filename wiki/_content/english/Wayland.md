@@ -3,6 +3,7 @@
 ## Contents
 
 *   [1 Requirements](#Requirements)
+    *   [1.1 Buffer API support](#Buffer_API_support)
 *   [2 Weston](#Weston)
     *   [2.1 Installation](#Installation)
     *   [2.2 Usage](#Usage)
@@ -36,6 +37,16 @@
 ## Requirements
 
 Wayland only works on systems using [KMS](/index.php/KMS "KMS"). As Wayland is only a library, it is useless on its own: to replace the X Server you need a compositor such as [#Weston](#Weston).
+
+### Buffer API support
+
+For the GPU driver and Wayland composer to be compatible they must support the same buffer API. There are two main APIs: [GBM](https://en.wikipedia.org/wiki/Generic_Buffer_Management "wikipedia:Generic Buffer Management") and [EGLStreams](http://www.phoronix.com/scan.php?page=news_item&px=XDC2016-Device-Memory-API).
+
+| Buffer API | GPU driver support | Wayland compositor support |
+| GBM | Most* | All |
+| EGLStreams | [Nvidia](/index.php/Nvidia "Nvidia") | [GNOME](/index.php/GNOME "GNOME") ([from 3.24](https://bugzilla.gnome.org/show_bug.cgi?id=773629)) |
+
+*: "Most" GPU drivers (supporting GBM) include [AMDGPU](/index.php/AMDGPU "AMDGPU"), [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [Nouveau](/index.php/Nouveau "Nouveau"). **Not included** are [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") and [Nvidia](/index.php/Nvidia "Nvidia")
 
 ## Weston
 

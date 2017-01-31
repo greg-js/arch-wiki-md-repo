@@ -18,7 +18,7 @@ In order to use Tox, you should [install](/index.php/Install "Install") a [Tox c
 
 *   **µTox (uTox)** — Lightweight Tox client
 
-	[https://github.com/uTox/uTox](https://github.com/uTox/uTox) || [utox](https://aur.archlinux.org/packages/utox/)
+	[https://github.com/uTox/uTox](https://github.com/uTox/uTox) || [utox](https://www.archlinux.org/packages/?name=utox)
 
 *   **Ratox** — FIFO based client
 

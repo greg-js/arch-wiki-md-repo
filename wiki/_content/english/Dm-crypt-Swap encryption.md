@@ -125,6 +125,8 @@ If you want to use a partition which is currently used by the system, you have t
 
 Also make sure you remove any line in `/etc/crypttab` pointing to this device.
 
+If you are reusing an existing swap partition, and if the partition is on a GPT partition table, you will need to remove the partition, and then recreate it with no File System type. See [Partitioning](/index.php/Partitioning "Partitioning"). This will prevent systemd-gpt-auto-generator from discovering and enabling the partition at boot.
+
 The following setup has the disadvantage of having to insert an additional passphrase for the swap partition manually on every boot.
 
 **Warning:** Do not use this setup with a key file if `/boot` is unencrypted. Please read about the issue reported [here](https://wiki.archlinux.org/index.php?title=Talk:Dm-crypt&oldid=255742#Suspend_to_disk_instructions_are_insecure). Alternatively, use a gnupg-encrypted keyfile as per [https://bbs.archlinux.org/viewtopic.php?id=120181](https://bbs.archlinux.org/viewtopic.php?id=120181)
@@ -226,6 +228,13 @@ Set up your system to resume from `/dev/mapper/swapDevice`. For example, if you 
 
 ```
 kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice resume=/dev/mapper/swapDevice ro
+
+```
+
+In order for the LUKS header in the swap device to be detected, a cryptdevice parameter for the swap device, e.g. cryptdevice=/dev/<device>:swapDevice, will have to be added to the kernel parameters:
+
+```
+kernel /vmlinuz-linux cryptdevice=/dev/sda2:rootDevice root=/dev/mapper/rootDevice cryptdevice=/dev/sda3:swapDevice resume=/dev/mapper/swapDevice ro
 
 ```
 

@@ -570,8 +570,6 @@ $ amixer scontrols
 
 Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package.
 
-**Note:** If you have a x86_64-system and are using a 32bit-flashplugin the sound in flash will not work. You have to disable alsaequal or build alsaequal for 32bit.
-
 After installing the package, add the following to your ALSA configuration file:
 
  `/etc/asound.conf` 
@@ -598,6 +596,34 @@ pcm.plugequal {
 pcm.!default {
     type plug;
     slave.pcm plugequal;
+}
+```
+
+If you have a x86_64-system and are using a 32bit-flashplugin the sound in flash will not work with the above configuration. The configuration below enables sound in flash, but you have to specify the sound card manually in the line `pcm "hw:0,0"` (use `aplay -l` to list the available sound card and relative card and device number):
+
+ `/etc/asound.conf` 
+```
+pcm.dmixer {
+    type dmix
+    ipc_key 2048
+    slave {
+        pcm "hw:0,0"
+        buffer_size 16384
+    }
+}
+
+ctl.equal {
+    type equal;
+}
+
+pcm.equalizer {
+    type equal
+    slave.pcm "plug:dmixer"
+}
+
+pcm.!default {
+    type plug
+    slave.pcm equalizer
 }
 ```
 

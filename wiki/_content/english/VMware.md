@@ -11,6 +11,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
 *   [2 Configuration](#Configuration)
     *   [2.1 Kernel modules](#Kernel_modules)
     *   [2.2 systemd services](#systemd_services)
+        *   [2.2.1 Workstation Server service](#Workstation_Server_service)
 *   [3 Launching the application](#Launching_the_application)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Entering the Workstation Pro license key](#Entering_the_Workstation_Pro_license_key)
@@ -25,6 +26,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.2 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
     *   [5.3 USB devices not recognized](#USB_devices_not_recognized)
     *   [5.4 The installer fails to start](#The_installer_fails_to_start)
+        *   [5.4.1 User interface initialization failed](#User_interface_initialization_failed)
     *   [5.5 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
     *   [5.6 Incorrect login/password when trying to access VMware remotely](#Incorrect_login.2Fpassword_when_trying_to_access_VMware_remotely)
     *   [5.7 Issues with ALSA output](#Issues_with_ALSA_output)
@@ -32,8 +34,6 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.9 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
-    *   [5.12 Workstation Server service does not start](#Workstation_Server_service_does_not_start)
-    *   [5.13 No protocol specified](#No_protocol_specified)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -137,6 +137,17 @@ WantedBy=multi-user.target
 ```
 
 After which you can [enable](/index.php/Enable "Enable") them on boot.
+
+#### Workstation Server service
+
+The `vmware-workstation-server.service` calls `wssc-adminTool` in its command chain, despite having been renamed to `vmware-wssc-adminTool`.
+
+To prevent the service startup, this can be fixed with a symlink:
+
+```
+# ln -s wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
+
+```
 
 ## Launching the application
 
@@ -270,6 +281,27 @@ If you just get back to the prompt when opening the `.bundle`, then you probably
 
 ```
 
+#### User interface initialization failed
+
+You may also see an error like this:
+
+```
+ Extracting VMware Installer...done.
+ No protocol specified
+ No protocol specified
+ User interface initialization failed.  Exiting.  Check the log for details.
+
+```
+
+This can be fixed by either installing the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) dependency or temporarily allowing root access to X:
+
+```
+ $ xhost +
+ $ sudo ./<vmware filename>.bundle
+ $ xhost -
+
+```
+
 ### Unable to download VMware Tools for Guests
 
 If after [#Preventing crashes and freezes when checking for updates](#Preventing_crashes_and_freezes_when_checking_for_updates) you are still unable to download the VMware Tools ISOs, you may either try running `vmware` or `vmplayer` as *root*, or downloading them directly from the [VMware repository](http://softwareupdate.vmware.com/cds/vmw-desktop/).
@@ -372,49 +404,6 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 ### Networking on Guests not available after system restart
 
 This is likely due to the `vmnet` module not being loaded [[1]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
-
-### Workstation Server service does not start
-
-If the `vmware-workstation-server.service` fails with:
-
- `# systemctl status vmware-workstation-server` 
-```
-[...]
-Could not find administrative user. Error 127
-
-```
-
-This could mean that in the chain of commands VMware Workstation wants to run wssc-adminTool.
-
-In at least one version in the recent past (Workstation Pro 12.5) this file was missing. There was a file vmware-wssc-adminTool but not wssc-adminTool.
-
-Easy fix:
-
-```
-# ln -s /usr/lib/vmware/bin/wssc-adminTool /usr/lib/vmware/bin/vmware-wssc-adminTool
-
-```
-
-### No protocol specified
-
-You may see this error when you try to run the installer for the first time.
-
-```
- Extracting VMware Installer...done.
- No protocol specified
- No protocol specified
- User interface initialization failed.  Exiting.  Check the log for details.
-
-```
-
-One way to fix this error is to temporarily allow root access to `xhost`.
-
-```
- $ xhost +
- $ sudo ./<vmware filename>.bundle
- $ xhost -
-
-```
 
 ## Uninstallation
 

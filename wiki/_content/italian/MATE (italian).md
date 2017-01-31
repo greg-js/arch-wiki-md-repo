@@ -205,7 +205,7 @@ Questo comando può risolvere anche il problema dell'orologio che non appare sul
 
 ### Applicazioni QT
 
-Le applicazioni Qt4 potrebbero non ereditare il tema GTK2\. Questo problema si può sistemare facilmente installando [libgnomeui](https://www.archlinux.org/packages/?name=libgnomeui) con l'opzione `--force`. Se il problema persiste, lancia qtconfig e assicurarsi che lo stile GUI selezionato sia GTK+.
+Le applicazioni Qt4 potrebbero non ereditare il tema GTK2\. Questo problema si può sistemare facilmente installando [libgnomeui](https://aur.archlinux.org/packages/libgnomeui/) con l'opzione `--force`. Se il problema persiste, lancia qtconfig e assicurarsi che lo stile GUI selezionato sia GTK+.
 
 ### Evolution Email non funziona
 

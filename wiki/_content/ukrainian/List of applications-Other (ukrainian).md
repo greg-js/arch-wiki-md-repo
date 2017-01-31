@@ -551,7 +551,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **GNOME Break Timer** — Keeps track of how much you are using the computer, and it reminds you to take regular breaks.
 
-	[https://wiki.gnome.org/Apps/GnomeBreakTimer](https://wiki.gnome.org/Apps/GnomeBreakTimer) || [gnome-break-timer](https://aur.archlinux.org/packages/gnome-break-timer/)
+	[https://wiki.gnome.org/Apps/GnomeBreakTimer](https://wiki.gnome.org/Apps/GnomeBreakTimer) || [gnome-break-timer](https://www.archlinux.org/packages/?name=gnome-break-timer)
 
 *   **GTG (Getting Things GNOME!)** — Personal tasks and To-do list items organizer for the GNOME desktop.
 

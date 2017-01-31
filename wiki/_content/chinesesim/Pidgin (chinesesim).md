@@ -51,7 +51,7 @@ $ echo center | aspell -a
 
 ## 修复声音
 
-为了修复声音需要安装[gstreamer0.10-good](https://www.archlinux.org/packages/?name=gstreamer0.10-good)包。或者，你可以在配置的声音选项卡中把方法（method）切换为‘命令’（'command'），然后使用下面的命令之一：
+为了修复声音需要安装[gstreamer0.10-good](https://aur.archlinux.org/packages/gstreamer0.10-good/)包。或者，你可以在配置的声音选项卡中把方法（method）切换为‘命令’（'command'），然后使用下面的命令之一：
 
 如果你使用的是[ALSA](/index.php/ALSA "ALSA"):
 

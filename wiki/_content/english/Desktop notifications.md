@@ -230,7 +230,7 @@ class HelloWorld
 **F#**
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
-*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)
+*   Makedependency: [fsharp](https://www.archlinux.org/packages/?name=fsharp)
 *   Build with: `fsharpc -r:notify-sharp.dll -I:/usr/lib/mono/notify-sharp-3.0/ -I:/usr/lib/mono/gtk-sharp-3.0/ hello_world.fs`
 *   Run with: `mono hello_world.exe`
 

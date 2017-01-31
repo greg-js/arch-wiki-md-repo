@@ -234,7 +234,7 @@ By doing this, only the past commands matching the current line up to the curren
 
 ### Prompts
 
-Note: Zsh introduced a bug in 5.3 with multi-line prompts. Tab completion will move your cursor up deleting a line of your prompt. See [[1]](//www.zsh.org/mla/workers//2017/msg00021.html) for more details. For temporary workarounds you can either use Zsh 5.2, or attempt a number of workarounds listed [[2]](//github.com/sorin-ionescu/prezto/issues/1245)
+**Note:** Zsh introduced a bug in 5.3 with multi-line prompts. Tab completion will move your cursor up deleting a line of your prompt. See [[1]](https://www.zsh.org/mla/workers//2017/msg00021.html) for more details. For temporary workarounds you can either use Zsh 5.2, or attempt a number of workarounds listed [[2]](https://github.com/sorin-ionescu/prezto/issues/1245).
 
 #### Prompt themes
 

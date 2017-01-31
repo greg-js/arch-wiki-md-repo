@@ -209,7 +209,7 @@ $ export DRI_PRIME=1
 
 ### [GStreamer](/index.php/GStreamer "GStreamer")
 
-安装 [gst-vaapi](https://www.archlinux.org/packages/?name=gst-vaapi) 软件包，它存在于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。
+安装 [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) 软件包，它存在于[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。
 
  `$ gst-launch-1.0 playbin uri=file://*/path/to/foobar.mpeg*` 
 

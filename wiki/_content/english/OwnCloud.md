@@ -134,6 +134,96 @@ By including the default `owncloud.conf` in `httpd.conf`, ownCloud will take con
 
 If you would like to have ownCloud run in a subdirectory, then edit the `/etc/httpd/conf/extra/owncloud.conf` you included and comment out the `<VirtualHost *:80> ... </VirtualHost>` part of the include file.
 
+You can use the following nginx config when using owncloud with uwsgi:
+
+ `/etc/nginx/conf.d/owncloud.conf` 
+```
+location = /.well-known/carddav {
+  return 301 $scheme://$host/owncloud/remote.php/dav;
+}
+
+location = /.well-known/caldav {
+  return 301 $scheme://$host/owncloud/remote.php/dav;
+}
+
+location /.well-known/acme-challenge { }
+
+location ^~ /owncloud {
+
+  root /usr/share/webapps;
+
+  # set max upload size
+  client_max_body_size 512M;
+  fastcgi_buffers 64 4K;
+
+  # Disable gzip to avoid the removal of the ETag header
+  gzip off;
+
+  # Uncomment if your server is build with the ngx_pagespeed module
+  # This module is currently not supported.
+  #pagespeed off;
+
+  error_page 403 /owncloud/core/templates/403.php;
+  error_page 404 /owncloud/core/templates/404.php;
+
+  location /owncloud {
+    rewrite ^ /owncloud/index.php$uri;
+  }
+
+  location ~ ^/owncloud/(?:build|tests|config|lib|3rdparty|templates|data)/ {
+    deny all;
+  }
+
+  location ~ ^/owncloud/(?:\.|autotest|occ|issue|indie|db_|console) {
+    deny all;
+  }
+
+  location ~ ^/owncloud/(?:updater|ocs-provider)(?:$|/) {
+    try_files $uri/ =404;
+    index index.php;
+  }
+
+  location ~ ^/owncloud/(?:index|remote|public|cron|core/ajax/update|status|ocs/v[12]|updater/.+|ocs-provider/.+|core/templates/40[34])\.php(?:$|/) {
+    include uwsgi_params;
+    uwsgi_modifier1 14;
+    # Avoid duplicate headers confusing OC checks
+    uwsgi_hide_header X-Frame-Options;
+    uwsgi_hide_header X-XSS-Protection;
+    uwsgi_hide_header X-Content-Type-Options;
+    uwsgi_hide_header X-Robots-Tag;
+    uwsgi_pass unix:/run/uwsgi/owncloud.sock;
+  }
+
+  # Adding the cache control header for js and css files
+  # Make sure it is BELOW the PHP block
+  location ~* \.(?:css|js) {
+    try_files $uri /owncloud/index.php$uri$is_args$args;
+    add_header Cache-Control "public, max-age=7200";
+    # Add headers to serve security related headers  (It is intended
+    # to have those duplicated to the ones above)
+    # Before enabling Strict-Transport-Security headers please read
+    # into this topic first.
+    # add_header Strict-Transport-Security "max-age=15768000;
+    # includeSubDomains; preload;";
+    add_header X-Content-Type-Options nosniff;
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Robots-Tag none;
+    add_header X-Download-Options noopen;
+    add_header X-Permitted-Cross-Domain-Policies none;
+    # Optional: Don't log access to assets
+    access_log off;
+  }
+
+  location ~* \.(?:svg|gif|png|html|ttf|woff|ico|jpg|jpeg) {
+    try_files $uri /owncloud/index.php$uri$is_args$args;
+    # Optional: Don't log access to other assets
+    access_log off;
+  }
+}
+
+```
+
 #### Nginx
 
 Create an empty directory to hold the cloud-specific config file:
@@ -308,6 +398,7 @@ cron2 = minute=-15,unique=1 /usr/bin/php -f /usr/share/webapps/owncloud/cron.php
 
 *   Do not forget to set your timezone and uncomment the required database connector in the uWSGI config file
 *   Starting with PHP 7, the [open_basedir](/index.php/PHP#Configuration "PHP") directive is [no longer set by default](https://www.archlinux.org/news/php-70-packages-released/) to keep in line with upstream. A commented out version functional until at least OC 8.2 has been left in the config for users wishing to harden security. Be aware that it may [occasionally break things](https://github.com/owncloud/core/search?q=open_basedir&type=Issues&utf8=%E2%9C%93).
+*   Use `php-docroot = /usr/share/webapps` if placing nextcloud in /nextcloud subdirectory.
 
 **Warning:** The way the [ownCloud background job](https://doc.owncloud.org/server/9.0/admin_manual/configuration_server/background_jobs_configuration.html) is currently set up with [uWSGI cron](https://uwsgi-docs.readthedocs.org/en/latest/Cron.html) will make use of the default global configuration from `/etc/php/php.ini`. This means that none of the specific parameters defined (e.g. required modules) will be enabled, [leading to various issues](https://github.com/owncloud/core/issues/12678#issuecomment-66114448). One solution is to copy `/etc/php/php.ini` to e.g. `/etc/uwsgi/cron-php.ini`, make the required modifications there (mirroring `/etc/uwsgi/owncloud.ini` parameters) and referencing it in the cron directive by adding the `-c /etc/uwsgi/cron-php.ini` option to *php* invocation.
 
@@ -821,7 +912,7 @@ There's also a [setup instruction](https://nextcloud.com/collaboraonline/) for [
 
 ```
 docker pull collabora/code
-docker run -t -d -p 127.0.0.1:9980:9980 -e 'domain=cloud\\.nextcloud\\.com' --restart always --cap-add MKNOD collabora/code
+docker run -t -d -p 127.0.0.1:9980:9980 -e 'domain=localhost' --net host --restart always --cap-add MKNOD collabora/code
 
 ```
 

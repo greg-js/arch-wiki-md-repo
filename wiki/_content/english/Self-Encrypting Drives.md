@@ -104,7 +104,14 @@ Scanning for Opal compliant disks
 
 ```
 
-then your disk doesn't support OPAL. On the contrary, the following output (taken from the Windows version) means OPAL is supported:
+then your disk doesn't support OPAL. On the contrary, the following output means OPAL is supported:
+
+```
+/dev/sda 12  Samsung SSD 850 EVO 500GB                EMT02B6Q
+
+```
+
+Windows version of sedutils output:
 
 ```
 \\.\PhysicalDrive0 12  Samsung SSD 850 PRO 512GB                EXM02B6Q

@@ -56,7 +56,7 @@ See also: [How can I use Amarok to stream to my own radio station?](https://user
 
 ## Ampache/MP3 Streaming
 
-If you are streaming MP3s directly or with the Ampache plugin, you are not able to seek in tracks if you are not using the [GStreamer](/index.php/GStreamer "GStreamer") backend. Install the needed packages: [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) [gstreamer0.10](https://www.archlinux.org/packages/?name=gstreamer0.10) [gstreamer0.10-plugins](https://www.archlinux.org/groups/x86_64/gstreamer0.10-plugins/) [gst-libav](https://www.archlinux.org/packages/?name=gst-libav). Then go inside Amarok to *Settings > Configure Amarok > Playback > Configure Phonon >* *tab* *Backend. Here make GStreamer the prefered backend*
+If you are streaming MP3s directly or with the Ampache plugin, you are not able to seek in tracks if you are not using the [GStreamer](/index.php/GStreamer "GStreamer") backend. Install the needed packages: [phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer) [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) [gstreamer0.10](https://aur.archlinux.org/packages/gstreamer0.10/) [gstreamer0.10-plugins](https://www.archlinux.org/groups/x86_64/gstreamer0.10-plugins/) [gst-libav](https://www.archlinux.org/packages/?name=gst-libav). Then go inside Amarok to *Settings > Configure Amarok > Playback > Configure Phonon >* *tab* *Backend. Here make GStreamer the prefered backend*
 
 ## Collection database
 

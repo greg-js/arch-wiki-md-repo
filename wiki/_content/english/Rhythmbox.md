@@ -84,7 +84,7 @@ After you install it, restart Rhythmbox.
 
 Alternatively, Rhythmbox will display the same error message when it does not have the correct codec to play that stream. You will need to identify what format the stream is (by looking at the command line error messages that Rhythmbox displays) and then install the correct Gstreamer codec for that particular audio stream.
 
-For mp3-files install [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) and/or [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins) depending on wheter you use the current and/or legacy version (see [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer")). You will also need [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).
+For mp3-files install [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) and/or [gstreamer0.10-ugly-plugins](https://aur.archlinux.org/packages/gstreamer0.10-ugly-plugins/) depending on wheter you use the current and/or legacy version (see [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer")). You will also need [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).
 
 If you do not know which gstreamer plugin servers what audio formats, ask on IRC or just google it. For a full setup of rhythmbox, have a look at its optional dependencies: [rhythmbox](https://www.archlinux.org/packages/?name=rhythmbox).
 

@@ -89,6 +89,8 @@ The whitelist model is recommended, and adding non-system users to the whitelist
 
 [Containers](/index.php/Linux_Containers "Linux Containers") or plain [chroots](/index.php/Chroot "Chroot") can throw a wrench into the ease of using TPE, as each one has a local `/etc/group`. A group with the same id in the container will still work as a whitelist, but this will be broken if the container makes use of user namespaces (not yet supported by Arch kernels).
 
+Starting with Qt 5.8, applications that rely on QML (such as [SDDM](/index.php/SDDM "SDDM") or some [KDE](/index.php/KDE "KDE") programs) may crash or fail to function correctly with TPE enabled. This is a result of the **qmlcache** feature, which relies on being able to write files out to `.cache` directories and then execute them. A workaround is available at [Qt#Applications using QML crash or don't work with Qt 5.8](/index.php/Qt#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8 "Qt").
+
 ### Partially restrict all non-root users
 
 Setting the `kernel.grsecurity.tpe_restrict_all` [sysctl](/index.php/Sysctl "Sysctl") switch to `1` will prevent non-root users from executing files writeable by a user other than themselves or root. This feature is enabled by the default `/etc/sysctl.d/05-grsecurity.conf`.

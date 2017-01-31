@@ -37,6 +37,7 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [5.2 Icon theme is not applied](#Icon_theme_is_not_applied)
     *   [5.3 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
     *   [5.4 Qt4 style not respected](#Qt4_style_not_respected)
+    *   [5.5 Applications using QML crash or don't work with Qt 5.8](#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -514,6 +515,14 @@ Alternatively, you can symlink the Qt4 styles directory to the KDE4 styles one:
 # ln -s /usr/lib/{kde,qt}4/plugins/styles/[theme name]
 
 ```
+
+### Applications using QML crash or don't work with Qt 5.8
+
+Starting with Qt 5.8, applications that rely on QML (such as [SDDM](/index.php/SDDM "SDDM") or some [KDE](/index.php/KDE "KDE") programs) may crash or fail to function correctly if they do not have execution privileges under `/home` or `/var` (e.g. if these are separate filesystems mounted as '`noexec`'). This is a result of the **qmlcache** feature, which relies on being able to write files out to `.cache` directories and then execute them.
+
+If you do not want to -- or cannot -- allow such execution privileges, a workaround is to set the following as appropriate in your [environment variables](/index.php/Environment_variables "Environment variables"):
+
+ `QML_DISABLE_DISK_CACHE=1` 
 
 ## See also
 

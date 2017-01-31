@@ -189,12 +189,16 @@ For a random background image, add [[3]](https://gist.github.com/anonymous/37f3b
 
 ### Hide / show wibox
 
-To map Modkey-b to hide/show default statusbar on active screen (as default in awesome 2.3), add to your *globalkeys* in rc.lua:
+For awesome 4.0:
 
 ```
-awful.key({ modkey }, "b", function ()
-    mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible
-end),
+awful.key({ modkey }, "b",
+          function ()
+              myscreen = awful.screen.focused()
+              myscreen.mywibox.visible = not myscreen.mywibox.visible
+          end,
+          {description = "toggle statusbar"}
+),
 
 ```
 

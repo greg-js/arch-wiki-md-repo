@@ -25,7 +25,7 @@
 
 [Exaile](https://aur.archlinux.org/packages/Exaile/) доступен в [AUR](/index.php/AUR "AUR").
 
-Если вы используете [ALSA](/index.php/ALSA "ALSA") и хотите использовать alsasink, установите пакет [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"):
+Если вы используете [ALSA](/index.php/ALSA "ALSA") и хотите использовать alsasink, установите пакет [gstreamer0.10-base-plugins](https://aur.archlinux.org/packages/gstreamer0.10-base-plugins/), доступный в [официальных репозиториях](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)"):
 
 ```
 pacman -S gstreamer0.10-base-plugins

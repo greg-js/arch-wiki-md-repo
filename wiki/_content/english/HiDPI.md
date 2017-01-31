@@ -7,7 +7,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 *   [1 Desktop environments](#Desktop_environments)
     *   [1.1 GNOME](#GNOME)
     *   [1.2 KDE](#KDE)
-        *   [1.2.1 KDE with multi-monitor setup](#KDE_with_multi-monitor_setup)
+        *   [1.2.1 Using KDE system settings](#Using_KDE_system_settings)
         *   [1.2.2 Tray icons with fixed size](#Tray_icons_with_fixed_size)
     *   [1.3 Xfce](#Xfce)
     *   [1.4 Cinnamon](#Cinnamon)
@@ -117,13 +117,25 @@ ServerArguments=-nolisten tcp -dpi 276
 
 More information and perhaps more correct solutions can be found at [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg").
 
-#### KDE with multi-monitor setup
+#### Using KDE system settings
 
-The main solution, above, works fine if all your displays are of approximately the same DPI, it is not so great if you use multiple outputs. To scale a single screen;
+If the solution above does not work correctly, you can use KDE's settings to fine tune font, icon, and widget scaling.
+
+To adjust font, widget, and icon scaling together:
 
 1.  System Settings → Display and Monitor → Display Configuration → Scale Display
-2.  Then drag the slider to 2
-3.  Log out and back in for all applications to take the new setting into account
+2.  Drag the slider to the desired size
+3.  Restart for the settings to take effect
+
+To adjust only font scaling:
+
+1.  System Settings → Fonts
+2.  Check "Force fonts DPI" and adjust the DPI level to the desired value. This setting should take effect immediately for newly started applications. You will have to logout and login for it to take effect on Plasma desktop.
+
+To adjust only icon scaling:
+
+1.  System Settings → Icons → Advanced
+2.  Choose the desired icon size for each category listed. This should take effect immediately.
 
 #### Tray icons with fixed size
 

@@ -422,7 +422,7 @@
 
 *   **[GNOME Commander](https://en.wikipedia.org/wiki/ru:GNOME_Commander "wikipedia:ru:GNOME Commander")** — Двухпанельный файловый менеджер для окружения GNOME
 
-	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://www.archlinux.org/packages/?name=gnome-commander)
+	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://aur.archlinux.org/packages/gnome-commander/)
 
 *   **[GNOME Files](/index.php/GNOME_Files "GNOME Files")** — Расширяемый, тяжеловесный файловый менеджер, используемый по умолчанию в GNOME, с поддержкой самописных скриптов
 

@@ -41,6 +41,8 @@ You could install [bumblebee along with Nvidia and Intel drivers](/index.php/Bum
 
 `FN+F5` and `FN+F6` will not produce any output (will not work) until you use the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi=` to your bootloader. It's indeed followed by a blank space.
 
+Although for the Asus N751JK the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi=` works for the brightness controls, it also brings some ACPI errors in the kernel log. Using the following kernel parameters prevents these errors, while the brightness controls still work: `acpi_osi=\"!Windows 2006\" acpi_osi=\"!Windows 2009\" acpi_osi=\"!Windows 2012\" acpi_osi=\"!Windows 2013\"`. The backslashes are needed for grub to escape the double quotes.
+
 It might happen that display brightness adjustment will not work even when the kernel parameter is used. In this case, make sure you are still using kernel parameter `acpi_osi=` and load the `asus_nb_wmi` module with the following command:
 
 ```

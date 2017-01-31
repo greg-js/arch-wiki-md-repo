@@ -108,7 +108,7 @@ i3 использует [dmenu](/index.php/Dmenu "Dmenu") в качестве з
 
 В i3, команды вызываются с помощью клавиши модификатора, называющейся `$mod`. По умолчанию (Mod1) это `Alt`, с популярной альтернативой (Mod4), которая известна как `Super`.
 
-Смотрите [спраочную карту i3](http://i3wm.org/docs/refcard.html) и [Использование i3](http://i3wm.org/docs/userguide.html#_using_i3) по умолчанию. Смотрите [назначение клавиш](http://i3wm.org/docs/userguide.html#keybindings) чтобы добавить новые сочетания/горячие клавиши.
+Смотрите [справочную карту i3](http://i3wm.org/docs/refcard.html) и [Использование i3](http://i3wm.org/docs/userguide.html#_using_i3) по умолчанию. Смотрите [назначение клавиш](http://i3wm.org/docs/userguide.html#keybindings) чтобы добавить новые сочетания/горячие клавиши.
 
 ### Контейнеры
 

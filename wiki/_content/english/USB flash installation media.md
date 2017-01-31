@@ -21,7 +21,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
     *   [2.1 In GNU/Linux](#In_GNU.2FLinux_3)
         *   [2.1.1 Using a multiboot USB drive](#Using_a_multiboot_USB_drive)
         *   [2.1.2 Using GNOME Disk Utility](#Using_GNOME_Disk_Utility)
-        *   [2.1.3 Making an USB-ZIP drive](#Making_an_USB-ZIP_drive)
+        *   [2.1.3 Making a USB-ZIP drive](#Making_a_USB-ZIP_drive)
         *   [2.1.4 Using UNetbootin](#Using_UNetbootin)
     *   [2.2 In Windows](#In_Windows_3)
         *   [2.2.1 Win32 Disk Imager](#Win32_Disk_Imager)
@@ -282,7 +282,7 @@ This allows booting multiple ISOs from a single USB device, including the archis
 
 Linux distributions running GNOME can easily make a live CD through [nautilus](https://www.archlinux.org/packages/?name=nautilus) and [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Simply right-click on the .iso file, and select "Open With Disk Image Writer." When GNOME Disk Utility opens, specify the flash drive from the "Destination" drop-down menu and click "Start Restoring."
 
-#### Making an USB-ZIP drive
+#### Making a USB-ZIP drive
 
 For some old BIOS systems, only booting from USB-ZIP drives is supported. This method allows you to still boot from a USB-HDD drive.
 

@@ -442,7 +442,7 @@ This issue can occur due to [KMS](/index.php/KMS "KMS") issue. Try [Disabling KM
 
 ### Booting 64-bit kernel on 32-bit UEFI
 
-Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. In such a case you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
+Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/index.php/Archboot "Archboot") iso use EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot 64-bit kernel with 32-bit UEFI you have to use [GRUB](/index.php/GRUB "GRUB") as the USB's UEFI bootloader by following the below section.
 
 #### Using GRUB
 
@@ -452,7 +452,7 @@ Both Official ISO ([Archiso](/index.php/Archiso "Archiso")) and [Archboot](/inde
 
 *   Backup `EFI/boot/loader.efi` to `EFI/boot/gummiboot.efi`
 
-*   [Create a GRUB standalone image](/index.php/GRUB#GRUB_standalone "GRUB") and copy the generate `grub*.efi` to the USB as `EFI/boot/loader.efi` and/or `EFI/boot/bootia32.efi`
+*   [Create a GRUB standalone image](/index.php/GRUB#GRUB_standalone "GRUB") for i686 system and copy the generated `grub*.efi` to the USB as `EFI/boot/loader.efi` and/or `EFI/boot/bootia32.efi`
 
 *   Create `EFI/boot/grub.cfg` with the following contents (replace `ARCH_YYYYMM` with the required archiso label e.g. `ARCH_201507`):
 

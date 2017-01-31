@@ -21,39 +21,20 @@ The result is [LXQt](http://lxqt.org), a desktop built on Qt which partly uses R
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) group.
-
-An icon theme is also needed. The default one is *Oxygen*, which can be installed with the [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons) package.
+[Install](/index.php/Install "Install") the [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/) group and an icon theme (e.g. [breeze-icons](https://www.archlinux.org/packages/?name=breeze-icons) or [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons)).
 
 For additional functionality, you may wish to install the following:
-
-*   **[Connman](/index.php/Connman "Connman")** — Network manager like [NetworkManager](/index.php/NetworkManager "NetworkManager").
-
-	[http://git.kernel.org/cgit/network/connman](http://git.kernel.org/cgit/network/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
 *   **LXQt Connman applet** — LXQt system-tray applet for [Connman](/index.php/Connman "Connman").
 
 	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
-
-*   **LXImage-Qt** — Image viewer and screenshot tool for LXQt.
-
-	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)
-
-*   **ObConf-Qt** — The Qt port of ObConf, the [Openbox](/index.php/Openbox "Openbox") configuration tool.
-
-	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://aur.archlinux.org/packages/obconf-qt/)
-
-*   **LXAppearance** — Easy to use GTK+ configuration tool. Part of LXDE.
-
-	[https://sourceforge.net/projects/lxde/files/LXAppearance/](https://sourceforge.net/projects/lxde/files/LXAppearance/) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — The recommended display manager for LXQt.
 
 	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
 *   A screen locker, if needed. For example, [slock](https://www.archlinux.org/packages/?name=slock) or [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver). Both are confirmed to integrate with LXQt, others may too. If you want to disable screen locking upon suspend/sleep it is under "LXQT Session Settings/Lock screen before suspending".
-
-Some LXQt panel plugins require extra packages to function, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
+*   Some LXQt panel plugins require extra packages to function, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
 
 ## Starting the desktop
 
