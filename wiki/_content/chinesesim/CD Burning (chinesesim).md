@@ -230,7 +230,7 @@ $ dd if=*/dev/sr0* of=*isoimage.iso* bs=2048 count=$blocks status=progress
 
 没有决定大小的话就忽略 `count=$blocks`。你可能会得到比需要的更多的数据。The resulting file will nevertheless be mountable. It should still fit onto a medium of the same type as the medium from which the image was copied.
 
-If the original medium was bootable, then the copy will be a bootable image. You may use it as pseudo CD for a virtual machine or burn it onto optical media which should then become bootable.
+如果原光盘是可启动的，那么复制后的数据也是可启动的。你可以将其作为虚拟机的伪光盘或者刻录成可启动的光盘。
 
 ### 擦除CD-RW和DVD-RW
 
@@ -241,7 +241,7 @@ $ cdrecord -v dev=*/dev/sr0* blank=fast
 
 ```
 
-There are two options for blanking: `blank=fast` and `blank=full`. Full blanking lasts as long as a full write run. It overwrites the payload data on the CD. Nevertheless this should not be considered as securely making those data unreadable. For that purpose, several full write runs with random data are advised.
+blank有两个选项： `blank=fast` 和 `blank=full`。full和完全写入持续的时间一样长。It overwrites the payload data on the CD. Nevertheless this should not be considered as securely making those data unreadable. For that purpose, several full write runs with random data are advised.
 
 可选的命令有：
 
@@ -294,7 +294,7 @@ Unlike DVD-RAM, DVD+RW, and BD-RE, formatted DVD-RW cannot be used as (slow) har
 
 ### 格式化BD-RE和BD-R
 
-BD-RE need formatting before first use. This is done automatically by the burn programs when they detect the unformatted state. Nevertheless the size of the payload area can be influenced by expert versions of the format commands shown above for DVD-RW.
+BD-RE第一次使用需要被格式化。当烧录程序检测到未格式化状态时这会自动完成。Nevertheless the size of the payload area can be influenced by expert versions of the format commands shown above for DVD-RW.
 
 BD-R can be used unformatted or formatted. Unformatted they are written with full nominal speed and offer maximum storage capacity. Formatted they get checkread during write operations and bad blocks get replaced by blocks from the Spare Area. This reduces write speed to a half or less of nominal speed. The default sized Spare Area reduces the storage capacity by 768 MiB.
 
@@ -309,14 +309,14 @@ growisofs formats BD-R by default. The others do not. growisofs can be kept from
 
 ### 向CD，DVD或BD烧录ISO映像
 
-To burn a readily prepared ISO image file `isoimage.iso` onto an optical medium, run for CD:
+要把已准备好的ISO映像文件 `isoimage.iso` 烧录到光盘介质，对于CD：
 
 ```
 $ cdrecord -v -sao dev=*/dev/sr0* *isoimage.iso*
 
 ```
 
-and for DVD or BD:
+对于DVD或BD：
 
 ```
 $ growisofs -dvd-compat -Z */dev/sr0*=*isoimage.iso*
@@ -325,14 +325,15 @@ $ growisofs -dvd-compat -Z */dev/sr0*=*isoimage.iso*
 
 **Note:**
 
-*   Make sure that the medium is not mounted when you begin to write to it. Mounting may happen automatically if the medium contains a readable file system. In the best case, it will prevent the burn programs from using the burner device. In the worst case, there will be misburns because read operations disturbed the drive. So if in doubt, do: `# umount /dev/sr0` 
-*   *growisofs* has a [small bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713016) with blank BD-R media. It issues an error message after the burning is complete. Programs like *k3b* then believe the whole burn run failed. To prevent this, either
+*   确保介质在写入时未被挂载。如果介质有可读的文件系统，挂载会自动进行。在最好的情况下，这会阻止烧录程序使用烧录设备。最坏的情况下，读操作会导致误写。所以有疑问的话，直接: `# umount /dev/sr0` 
+*   *growisofs* 对于空白的BD-R介质有一个 [小bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=713016)。在烧录完成时它会发出一条错误信息。一些程序像 *k3b* 会直接认为整个烧录过程失败。为了防止这样，要么
     *   format the blank BD-R by `dvd+rw-format */dev/sr0*` before submitting it to *growisofs*
-    *   or use *growisofs* option `-use-the-force-luke=spare:none`
+    *   在用 *growisofs* 之前用 `dvd+rw-format */dev/sr0*` 格式化空白BD-R
+    *   要么使用 *growisofs* 的 `-use-the-force-luke=spare:none` 选项
 
 ### 校验已烧录的ISO映像
 
-You can verify the integrity of the burnt medium to make sure it contains no errors. Always eject the medium and reinsert it before verifying. It will guarantee that not any kernel cache will be used to read the data.
+你可以校验以烧录介质的完整性以确保没有错误。别忘了总在校验之前弹出介质并重新插入。这会确保没有任何内核缓存会被用来读取数据。
 
 First calculate the MD5 checksum of the original ISO image:
 

@@ -26,6 +26,7 @@
     *   [5.1 Load equalizer sink and dbus-protocol module](#Load_equalizer_sink_and_dbus-protocol_module)
     *   [5.2 GUI front-end](#GUI_front-end)
     *   [5.3 Load equalizer and dbus module on every boot](#Load_equalizer_and_dbus_module_on_every_boot)
+    *   [5.4 Alternative LADSPA equalizer](#Alternative_LADSPA_equalizer)
 *   [6 Applications](#Applications)
     *   [6.1 QEMU](#QEMU)
     *   [6.2 AlsaMixer.app](#AlsaMixer.app)
@@ -357,6 +358,10 @@ load-module module-dbus-protocol
 
 **Note:** The equalizer sink needs to be loaded after the master sink is already available.
 
+### Alternative LADSPA equalizer
+
+[pulseaudio-equalizer-ladspa](https://aur.archlinux.org/packages/pulseaudio-equalizer-ladspa/) (based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins)) can be used as an alternative to [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer).
+
 ## Applications
 
 ### QEMU
@@ -409,7 +414,7 @@ See also the official guide [[3]](https://xmms2.org/wiki/Using_the_application).
 
 ### KDE Plasma Workspaces and Qt4
 
-PulseAudio will automatically be used by KDE/Qt4 applications. It is supported by default in the KDE sound mixer. For more information see the [KDE page in the PulseAudio wiki](http://www.pulseaudio.org/wiki/KDE). One useful tidbit from that page is to add `load-module module-device-manager` to `/etc/pulse/default.pa`.
+PulseAudio will automatically be used by KDE/Qt4 applications. It is supported by default in the KDE sound mixer. For more information see the [KDE page in the PulseAudio wiki](https://www.freedesktop.org/wiki/Software/PulseAudio/Desktops/KDE/). One useful tidbit from that page is to add `load-module module-device-manager` to `/etc/pulse/default.pa`.
 
 If the phonon-gstreamer backend is used for Phonon, GStreamer should also be configured as described in [#GStreamer](#GStreamer).
 

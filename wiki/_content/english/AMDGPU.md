@@ -9,9 +9,9 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
 *   [2 Installation](#Installation)
     *   [2.1 AMDGPU PRO](#AMDGPU_PRO)
-*   [3 Configuration](#Configuration)
-*   [4 Loading](#Loading)
-    *   [4.1 Enable early KMS](#Enable_early_KMS)
+*   [3 Loading](#Loading)
+    *   [3.1 Enable early KMS](#Enable_early_KMS)
+*   [4 Xorg configuration](#Xorg_configuration)
 *   [5 Performance tuning](#Performance_tuning)
     *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
 *   [6 Enable amdgpu for Sea Islands or Southern Islands cards](#Enable_amdgpu_for_Sea_Islands_or_Southern_Islands_cards)
@@ -50,22 +50,6 @@ There are packages for the amdgpu-pro components in the [AUR](/index.php/AUR "AU
 
 If you want to use the open source AMDGPU drivers, and only the proprietary OpenCL component, then use ([opencl-amd](https://aur.archlinux.org/packages/opencl-amd/))
 
-## Configuration
-
-Xorg will automatically load the driver and it will use your monitor's EDID to set the native resolution. Configuration is only required for tuning the driver.
-
-If you want manual configuration, create `/etc/X11/xorg.conf.d/20-amdgpu.conf`, and add the following:
-
-```
-Section "Device"
-    Identifier "AMD"
-    Driver "amdgpu"
-EndSection
-
-```
-
-Using this section, you can enable features and tweak the driver settings.
-
 ## Loading
 
 The `amdgpu` kernel module should load fine automatically on system boot.
@@ -97,6 +81,22 @@ Now, regenerate the initramfs:
 ```
 
 The change takes effect at the next reboot.
+
+## Xorg configuration
+
+Xorg will automatically load the driver and it will use your monitor's EDID to set the native resolution. Configuration is only required for tuning the driver.
+
+If you want manual configuration, create `/etc/X11/xorg.conf.d/20-amdgpu.conf`, and add the following:
+
+```
+Section "Device"
+    Identifier "AMD"
+    Driver "amdgpu"
+EndSection
+
+```
+
+Using this section, you can enable features and tweak the driver settings.
 
 ## Performance tuning
 

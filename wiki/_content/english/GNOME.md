@@ -127,7 +127,7 @@ To start on login to tty1, add the following to your `.bash_profile`:
 ```
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   export QT_QPA_PLATFORM=wayland
-  XDG_SESSION_TYPE=wayland dbus-run-session gnome-session
+  XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
 fi
 
 ```

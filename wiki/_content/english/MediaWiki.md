@@ -76,7 +76,7 @@ Include conf/extra/mediawiki.conf
 
 [Restart](/index.php/Restart "Restart") the `httpd.service` daemon.
 
-**Note:** The default file from `/etc/webapps/mediawiki/apache.example.conf` will overwrite the PHP open_basedir setting, possibally conflicting with other pages. This behavior can be changed by moving line starting with `php_admin_value` between the `<Directory>` tags. Further, if you are running multiple applications that depend on the same server, this value could also be added to the open_basedir value in `/etc/php/php.ini` instead of `/etc/httpd/conf/extra/mediawiki.conf`
+**Note:** The default file from `/etc/webapps/mediawiki/apache.example.conf` will overwrite the PHP open_basedir setting, possibly conflicting with other pages. This behavior can be changed by moving line starting with `php_admin_value` between the `<Directory>` tags. Further, if you are running multiple applications that depend on the same server, this value could also be added to the open_basedir value in `/etc/php/php.ini` instead of `/etc/httpd/conf/extra/mediawiki.conf`
 
 #### Nginx
 

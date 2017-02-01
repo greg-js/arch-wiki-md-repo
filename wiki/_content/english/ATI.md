@@ -2,60 +2,53 @@ Owners of **AMD** (previously **ATI**) video cards have a choice between [propri
 
 The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).)
 
-If unsure, try the open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](http://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU.
+If unsure, try the open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](http://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU. See the [decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) to translate marketing names (e.g. Radeon HD4330) to chip names (e.g. R700).
 
 ## Contents
 
 *   [1 Selecting the right driver](#Selecting_the_right_driver)
-*   [2 Naming conventions](#Naming_conventions)
-*   [3 Installation](#Installation)
-*   [4 Configuration](#Configuration)
-*   [5 Loading](#Loading)
-    *   [5.1 Enable early KMS](#Enable_early_KMS)
-*   [6 Performance tuning](#Performance_tuning)
-    *   [6.1 Enabling video acceleration](#Enabling_video_acceleration)
-    *   [6.2 Driver options](#Driver_options)
-    *   [6.3 Kernel parameters](#Kernel_parameters)
-        *   [6.3.1 Deactivating PCIe 2.0](#Deactivating_PCIe_2.0)
-    *   [6.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
-*   [7 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
-*   [8 Powersaving](#Powersaving)
-    *   [8.1 Dynamic power management](#Dynamic_power_management)
-        *   [8.1.1 Commandline Tools](#Commandline_Tools)
-    *   [8.2 Old methods](#Old_methods)
-        *   [8.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
-        *   [8.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
-        *   [8.2.3 Persistent configuration](#Persistent_configuration)
-        *   [8.2.4 Graphical tools](#Graphical_tools)
-    *   [8.3 Other notes](#Other_notes)
-*   [9 Fan Speed](#Fan_Speed)
-*   [10 TV out](#TV_out)
-    *   [10.1 Force TV-out in KMS](#Force_TV-out_in_KMS)
-*   [11 HDMI audio](#HDMI_audio)
-*   [12 Multihead setup](#Multihead_setup)
-    *   [12.1 Using the RandR extension](#Using_the_RandR_extension)
-    *   [12.2 Independent X screens](#Independent_X_screens)
-*   [13 Turn vsync off](#Turn_vsync_off)
-*   [14 Troubleshooting](#Troubleshooting)
-    *   [14.1 Performance and/or artifacts issues when using EXA](#Performance_and.2For_artifacts_issues_when_using_EXA)
-    *   [14.2 Adding undetected/unsupported resolutions](#Adding_undetected.2Funsupported_resolutions)
-    *   [14.3 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
-    *   [14.4 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
-    *   [14.5 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
-    *   [14.6 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
-    *   [14.7 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
-    *   [14.8 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
-    *   [14.9 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_.2F_UHD_.2F_4k_support_over_HDMI_for_older_Radeon_cards)
+*   [2 Installation](#Installation)
+*   [3 Loading](#Loading)
+    *   [3.1 Enable early KMS](#Enable_early_KMS)
+*   [4 Xorg configuration](#Xorg_configuration)
+*   [5 Performance tuning](#Performance_tuning)
+    *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
+    *   [5.2 Driver options](#Driver_options)
+    *   [5.3 Kernel parameters](#Kernel_parameters)
+        *   [5.3.1 Deactivating PCIe 2.0](#Deactivating_PCIe_2.0)
+    *   [5.4 Gallium Heads-Up Display](#Gallium_Heads-Up_Display)
+*   [6 Hybrid graphics/AMD Dynamic Switchable Graphics](#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics)
+*   [7 Powersaving](#Powersaving)
+    *   [7.1 Dynamic power management](#Dynamic_power_management)
+        *   [7.1.1 Commandline Tools](#Commandline_Tools)
+    *   [7.2 Old methods](#Old_methods)
+        *   [7.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
+        *   [7.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
+        *   [7.2.3 Persistent configuration](#Persistent_configuration)
+        *   [7.2.4 Graphical tools](#Graphical_tools)
+    *   [7.3 Other notes](#Other_notes)
+*   [8 Fan Speed](#Fan_Speed)
+*   [9 TV out](#TV_out)
+    *   [9.1 Force TV-out in KMS](#Force_TV-out_in_KMS)
+*   [10 HDMI audio](#HDMI_audio)
+*   [11 Multihead setup](#Multihead_setup)
+    *   [11.1 Using the RandR extension](#Using_the_RandR_extension)
+    *   [11.2 Independent X screens](#Independent_X_screens)
+*   [12 Turn vsync off](#Turn_vsync_off)
+*   [13 Troubleshooting](#Troubleshooting)
+    *   [13.1 Performance and/or artifacts issues when using EXA](#Performance_and.2For_artifacts_issues_when_using_EXA)
+    *   [13.2 Adding undetected/unsupported resolutions](#Adding_undetected.2Funsupported_resolutions)
+    *   [13.3 TV showing a black border around the screen](#TV_showing_a_black_border_around_the_screen)
+    *   [13.4 Black screen and no console, but X works in KMS](#Black_screen_and_no_console.2C_but_X_works_in_KMS)
+    *   [13.5 ATI X1600 (RV530 series) 3D application show black windows](#ATI_X1600_.28RV530_series.29_3D_application_show_black_windows)
+    *   [13.6 Cursor corruption after coming out of sleep](#Cursor_corruption_after_coming_out_of_sleep)
+    *   [13.7 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
+    *   [13.8 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
+    *   [13.9 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_.2F_UHD_.2F_4k_support_over_HDMI_for_older_Radeon_cards)
 
 ## Selecting the right driver
 
 Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/Xorg#AMD "Xorg"). This page has instructions for **ATI**.
-
-## Naming conventions
-
-The [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") brand follows a naming scheme that relates each product to a market segment. Within this article, readers will see both *product* names (e.g. HD 4850, X1900) and *code* or *core* names (e.g. RV770, R580). Traditionally, a *product series* will correspond to a *core series* (e.g. the "X1000" product series includes the X1300, X1600, X1800, and X1900 products which utilize the "R500" core series – including the RV515, RV530, R520, and R580 cores).
-
-For a table of core and product series, see [Wikipedia:Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") and [Wikipedia:List of AMD graphics processing units](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units").
 
 ## Installation
 
@@ -66,22 +59,6 @@ For a table of core and product series, see [Wikipedia:Radeon](https://en.wikipe
 To enable OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl). If you are on x86_64 and need 32-bit support, also install [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) from the [multilib](/index.php/Multilib "Multilib") repository.
 
 Support for [accelerated video decoding](#Enabling_video_acceleration) is provided by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) and [lib32-mesa-vdpau](https://www.archlinux.org/packages/?name=lib32-mesa-vdpau) packages.
-
-## Configuration
-
-Xorg will automatically load the driver and it will use your monitor's EDID to set the native resolution. Configuration is only required for tuning the driver.
-
-If you want manual configuration, create `/etc/X11/xorg.conf.d/20-radeon.conf`, and add the following:
-
-```
-Section "Device"
-    Identifier "Radeon"
-    Driver "radeon"
-EndSection
-
-```
-
-Using this section, you can enable features and tweak the driver settings.
 
 ## Loading
 
@@ -114,6 +91,22 @@ Now, regenerate the initramfs:
 
 The change takes effect at the next reboot.
 
+## Xorg configuration
+
+Xorg will automatically load the driver and it will use your monitor's EDID to set the native resolution. Configuration is only required for tuning the driver.
+
+If you want manual configuration, create `/etc/X11/xorg.conf.d/20-radeon.conf`, and add the following:
+
+```
+Section "Device"
+    Identifier "Radeon"
+    Driver "radeon"
+EndSection
+
+```
+
+Using this section, you can enable features and tweak the driver settings.
+
 ## Performance tuning
 
 ### Enabling video acceleration
@@ -126,7 +119,7 @@ The following options apply to `/etc/X11/xorg.conf.d/**20-radeon.conf**`.
 
 Please read `man radeon` and [RadeonFeature](http://www.x.org/wiki/RadeonFeature/#index4h2) first before applying driver options.
 
-**Acceleration architecture**; Glamor is available as a 2D acceleration method implemented through OpenGL, and it should work with R600 and newer graphic cards. Since xf86-video-ati 7.2.0, it is automatically enabled with radeonsi drivers (Southern Islands and superior GFX cards); on other graphic cards, the method can be forced by adding AccelMethod **glamor** to the configuration file (it will be enabled by default on all capable cards [in the next release](https://cgit.freedesktop.org/xorg/driver/xf86-video-ati/commit/?id=f11531c99fcd6473f58b4d10efaf3efd84304d8e)):
+**Acceleration architecture**; Glamor is available as a 2D acceleration method implemented through OpenGL, and it [is the default](https://cgit.freedesktop.org/xorg/driver/xf86-video-ati/commit/?id=f11531c99fcd6473f58b4d10efaf3efd84304d8e) for R600 (Radeon HD2000 series) and newer graphic cards. Older cards use EXA.
 
 ```
 Option "AccelMethod" "glamor"
@@ -147,7 +140,7 @@ Option "TearFree" "on"
 
 ```
 
-**ColorTiling** and **ColorTiling2D** are supposed to be enabled by default. Tiled mode can provide significant performance benefits with 3D applications. It is disabled if the DRM module is too old or if the current display configuration does not support it. KMS ColorTiling2D is only supported on R600 and newer chips:
+**ColorTiling** and **ColorTiling2D** are supposed to be enabled by default. Tiled mode can provide significant performance benefits with 3D applications. It is disabled if the DRM module is too old or if the current display configuration does not support it. KMS ColorTiling2D is only supported on R600 (Radeon HD2000 series) and newer chips:
 
 ```
 Option "ColorTiling" "on"
@@ -574,7 +567,7 @@ EndSection
 
 ### Performance and/or artifacts issues when using EXA
 
-**Note:** Glamor is nowadays recommended over EXA, try forcing this acceleration architecture first (if unsupported).
+**Note:** This only applies to cards older than R600 (Radeon X1000 series and older). Newer cards you should use Glamor instead of EXA.
 
 If having 2D performance issues, like slow scrolling in a terminal or webbrowser, adding `Option "MigrationHeuristic" "greedy"` as device option may solve the issue.
 

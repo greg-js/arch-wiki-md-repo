@@ -35,11 +35,11 @@ Other lesser known implementations are found in the AUR:
 
 *   **keeweb** — A desktop webapp compatible to KeePass 2.x.
 
-	[https://github.com/keeweb/keeweb](https://github.com/keeweb/keeweb) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/) [nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/)
+	[https://keeweb.info](https://keeweb.info) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/) [nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/)
 
 *   **keepassxc** — Fork of KeePassX that aims to incorporate stalled Pull Requests, features, and bug fixes that are not being incorporated into the main KeePassX baseline.
 
-	[https://github.com/keepassxreboot/keepassxc](https://github.com/keepassxreboot/keepassxc) || [keepassxc](https://aur.archlinux.org/packages/keepassxc/)
+	[https://keepassxc.org](https://keepassxc.org) || [keepassxc](https://aur.archlinux.org/packages/keepassxc/)
 
 ## Integration
 

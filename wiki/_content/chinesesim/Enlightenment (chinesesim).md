@@ -26,11 +26,11 @@
 
 ## Enlightenment
 
-这个软件包括Enlightenment [Enlightenment](https://www.enlightenment.org/) 窗体管理器[window manager](/index.php/Window_manager "Window manager") 和 Enlightenment Foundation Libraries (EFL), 他提供额外的桌面环境特性,比如工具包,对象画布抽象对象.从2005年开始开发,但2011年2月才看到1.0稳定版本.
+这个软件包括Enlightenment [Enlightenment](https://www.enlightenment.org/) 窗口管理器[window manager](/index.php/Window_manager "Window manager") 和 Enlightenment Foundation Libraries (EFL), 它提供额外的桌面环境特性,比如工具包,对象画布抽象对象.从2005年开始开发,但2011年2月才看到1.0稳定版本.
 
 ### 安装
 
-可以 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 同名软件包 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) 来安装 enlightenment .
+可以通过 [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") 同名软件包 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) 来安装 enlightenment .
 
 也可以安装 [terminology](https://www.archlinux.org/packages/?name=terminology), 这是一个基于ELF的终端程序 .
 

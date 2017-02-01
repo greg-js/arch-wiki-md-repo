@@ -67,6 +67,8 @@ Make sure the required components are correctly setup before configuring/install
 
 [Install](/index.php/Install "Install") the [owncloud](https://www.archlinux.org/packages/?name=owncloud) or [nextcloud](https://aur.archlinux.org/packages/nextcloud/) package.
 
+**Note:** Arch Linux may drop owncloud and replace it with nextcloud. See [FS#52791](https://bugs.archlinux.org/task/52791) for more information.
+
 ## Setup
 
 ### Database Setup

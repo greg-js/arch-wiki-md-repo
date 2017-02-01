@@ -197,7 +197,7 @@ Source: [http://algorithmicallyrandom.blogspot.com.es/2009/09/tab-completion-in-
 
 ### Dealing with version problem in build scripts
 
-Many projects' build scripts assume `python` to be Python 2, and that would eventually result in an error — typically complaining that `print 'foo'` is invalid syntax. Luckily, many of them call `python` from the `PATH` instead of hardcoding `#!/usr/bin/python` in the shebang line, and the Python scripts are all contained within the project tree. So, instead of modifying the build scripts manually, there is an easy workaround. Just create `/usr/local/bin/python` with content like this:
+Many projects' build scripts assume `python` to be Python 2, and that would eventually result in an error — typically complaining that `print 'foo'` is invalid syntax. Luckily, many of them call `python` from the `PATH` instead of hardcoding `#!/usr/bin/python` in the shebang line, and the Python scripts are all contained within the project tree. So, instead of modifying the build scripts manually, there is a workaround. Create `/usr/local/bin/python` with content like this:
 
  `/usr/local/bin/python` 
 ```

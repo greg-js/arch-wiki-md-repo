@@ -592,7 +592,11 @@ Alternatively, attempting to [disable](http://www.spinics.net/lists/xorg/msg5393
 
 If not by default, all mouse buttons should be working after adding `[mouse.vusb.useBasicMouse = "FALSE"](https://communities.vmware.com/thread/457313?start=15&tstart=0)` to the `.vmx`.
 
- `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx`  `mouse.vusb.useBasicMouse = "FALSE"` 
+ `~/vmware/*<Virtual Machine name>*/*<Virtual Machine name>*.vmx` 
+```
+mouse.vusb.enable = "TRUE"
+mouse.vusb.useBasicMouse = "FALSE"
+```
 
 ### Boot problems
 

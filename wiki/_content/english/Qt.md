@@ -518,7 +518,7 @@ Alternatively, you can symlink the Qt4 styles directory to the KDE4 styles one:
 
 ### Applications using QML crash or don't work with Qt 5.8
 
-Starting with Qt 5.8, applications that rely on QML (such as [SDDM](/index.php/SDDM "SDDM") or some [KDE](/index.php/KDE "KDE") programs) may crash or fail to function correctly if they do not have execution privileges under `/home` or `/var` (e.g. if these are separate filesystems mounted as '`noexec`'). This is a result of the **qmlcache** feature, which relies on being able to write files out to `.cache` directories and then execute them.
+Starting with Qt 5.8, applications that rely on QML (such as [SDDM](/index.php/SDDM "SDDM") or some [KDE](/index.php/KDE "KDE") programs) may crash or fail to function correctly if they do not have execution privileges under `/home` or `/var` (e.g. if these are separate filesystems mounted as '`noexec`'). This is a result of the **qmlcache** feature, which relies on being able to write files out to `.cache` directories and then execute them. See also BBS thread [222486: sddm-helper crashes](https://bbs.archlinux.org/viewtopic.php?id=222486).
 
 If you do not want to -- or cannot -- allow such execution privileges, a workaround is to set the following as appropriate in your [environment variables](/index.php/Environment_variables "Environment variables"):
 

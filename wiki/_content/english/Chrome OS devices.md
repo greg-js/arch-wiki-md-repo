@@ -483,7 +483,7 @@ Then [rebuild your grub config](/index.php/GRUB#Generate_the_main_configuration_
 
 One or more of followings might help solving audio related issues, setting `snd_hda_intel` module index reported the most useful. It is highly possible that you will not need to make any change.
 
-*   Create `/etc/modprobe.d/alsa.conf`, the option `index` will make sure the analog output is the default (and not HDMI), the option `model` will notify the driver our board model which will make the built-in microphone usable (you can try instead `model=alc283-sense-combo`).
+*   Create `/etc/modprobe.d/alsa.conf`, the option `index` will make sure the analog output is the default (and not HDMI), the option `model` will notify the driver our board model which will make the built-in microphone usable (you can try instead `model=alc283-sense-combo` or `model=,alc283-dac-wcaps`).
 
  `/etc/modprobe.d/alsa.conf`  `options snd_hda_intel index=1 model=,alc283-chrome` 
 

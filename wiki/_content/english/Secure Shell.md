@@ -34,13 +34,14 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
         *   [3.2.1 Setup](#Setup)
         *   [3.2.2 Usage](#Usage)
     *   [3.3 Forwarding other ports](#Forwarding_other_ports)
-    *   [3.4 Multiplexing](#Multiplexing)
-    *   [3.5 Speeding up SSH](#Speeding_up_SSH)
-    *   [3.6 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
-    *   [3.7 Keep alive](#Keep_alive)
-    *   [3.8 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
-    *   [3.9 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
-        *   [3.9.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
+    *   [3.4 Jump hosts](#Jump_hosts)
+    *   [3.5 Multiplexing](#Multiplexing)
+    *   [3.6 Speeding up SSH](#Speeding_up_SSH)
+    *   [3.7 Mounting a remote filesystem with SSHFS](#Mounting_a_remote_filesystem_with_SSHFS)
+    *   [3.8 Keep alive](#Keep_alive)
+    *   [3.9 Automatically restart SSH tunnels with systemd](#Automatically_restart_SSH_tunnels_with_systemd)
+    *   [3.10 Autossh - automatically restarts SSH sessions and tunnels](#Autossh_-_automatically_restarts_SSH_sessions_and_tunnels)
+        *   [3.10.1 Run autossh automatically at boot via systemd](#Run_autossh_automatically_at_boot_via_systemd)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Checklist](#Checklist)
     *   [4.2 SSH connection hangs after poweroff/reboot](#SSH_connection_hangs_after_poweroff.2Freboot)
@@ -574,6 +575,17 @@ $ ssh -R 3000:irc.freenode.net:6667 192.168.0.200
 will bring up a shell on 192.168.0.200, and connections from 192.168.0.200 to itself on port 3000 (remotely speaking, localhost:3000) will be sent over the tunnel to the local machine and then on to irc.freenode.net on port 6667, thus, in this example, allowing the use of IRC programs on the remote host to be used, even if port 6667 would normally be blocked to it.
 
 Both local and remote forwarding can be used to provide a secure "gateway," allowing other computers to take advantage of an SSH tunnel, without actually running SSH or the SSH daemon by providing a bind-address for the start of the tunnel as part of the forwarding specification, e.g. `<tunnel address>:<tunnel port>:<destination address>:<destination port>`. The `<tunnel address>` can be any address on the machine at the start of the tunnel, `localhost`, `*` (or blank), which, respectively, allow connections via the given address, via the loopback interface, or via any interface. By default, forwarding is limited to connections from the machine at the "beginning" of the tunnel, i.e. the `<tunnel address>` is set to `localhost`. Local forwarding requires no additional configuration, however remote forwarding is limited by the remote server's SSH daemon configuration. See the `GatewayPorts` option in `sshd_config(5)` for more information.
+
+### Jump hosts
+
+In certain scenarios, there might not be a direct connection to your target SSH daemon, and the use of a jump server (or bastion server) is required. Thus, we attempt to connect together two or more SSH tunnels, and assuming your local keys are authorized against each server in the chain. This is possible using SSH agent forwarding `-A` and pseudo-terminal allocation `-t` which forwards your local key with the following syntax:
+
+```
+$ ssh -A -t -l user1 bastion1 \
+  ssh -A -t -l user2 intermediate2 \
+  ssh -A -t -l user3 target
+
+```
 
 ### Multiplexing
 

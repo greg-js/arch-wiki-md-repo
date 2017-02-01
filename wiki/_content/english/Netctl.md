@@ -291,6 +291,8 @@ Now you can disable your old configuration and set *bond0* to be started automat
 
 **Note:** This uses the round-robin policy, which is the default for the `bonding` driver. See [official documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt) for details.
 
+Setting the MODE in the netctl configuration is not always successful and it may be necessarly to pass options directly to the bonding module on load as noted [here](https://bbs.archlinux.org/viewtopic.php?id=203255). This may be needed to use LACP / mode 4.
+
 **Tip:** To check the status and bonding mode: `$ cat /proc/net/bonding/bond0` 
 
 #### Wired to wireless failover

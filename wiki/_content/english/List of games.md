@@ -902,10 +902,6 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[http://pioneerspacesim.net/](http://pioneerspacesim.net/) || [pioneer](https://aur.archlinux.org/packages/pioneer/)
 
-*   **The Powder Toy** — Open source physics sandbox game, which simulates air pressure and velocity, heat, gravity and a countless number of interactions between different substances.
-
-	[http://powdertoy.co.uk/](http://powdertoy.co.uk/) || [powder-toy](https://aur.archlinux.org/packages/powder-toy/)
-
 *   **Pydance** — Python Dance Dance Revolution style game.
 
 	[https://icculus.org/pyddr/](https://icculus.org/pyddr/) || [pydance](https://aur.archlinux.org/packages/pydance/)
@@ -913,6 +909,14 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 *   **[Stepmania](https://en.wikipedia.org/wiki/Stepmania "wikipedia:Stepmania")** — Advanced dance simulation game.
 
 	[http://www.stepmania.com/](http://www.stepmania.com/) || [stepmania](https://aur.archlinux.org/packages/stepmania/)
+
+*   **Terasology** — Open source voxel world.
+
+	[http://terasology.org](http://terasology.org) || [minetest](https://aur.archlinux.org/packages/minetest/)
+
+*   **The Powder Toy** — Open source physics sandbox game, which simulates air pressure and velocity, heat, gravity and a countless number of interactions between different substances.
+
+	[http://powdertoy.co.uk/](http://powdertoy.co.uk/) || [powder-toy](https://aur.archlinux.org/packages/powder-toy/)
 
 *   **Voxelands** — A fork of Minetest, an Infiniminer/Minecraft inspired game.
 

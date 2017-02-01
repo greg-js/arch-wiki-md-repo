@@ -134,7 +134,7 @@ Alternatively, to start Plasma with *startx*, append `exec startkde` to your `.x
 
 ### Wayland
 
-As of Plasma 5.8, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, although there are a [few known problems](https://community.kde.org/Plasma/5.8_Errata#Wayland).
+As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, although there are a [few known problems](https://community.kde.org/Plasma/5.9_Errata#Wayland).
 
 *   To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
 *   To start a Plasma on Wayland session from a console, run `startplasmacompositor`.

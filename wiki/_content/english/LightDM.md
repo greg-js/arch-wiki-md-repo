@@ -18,25 +18,26 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 *   [3 Command line tool](#Command_line_tool)
 *   [4 Testing](#Testing)
 *   [5 Optional configuration and tweaks](#Optional_configuration_and_tweaks)
-    *   [5.1 Changing background images/colors](#Changing_background_images.2Fcolors)
-        *   [5.1.1 GTK+ greeter](#GTK.2B_greeter)
-            *   [5.1.1.1 GTK3 Dark Theme](#GTK3_Dark_Theme)
-        *   [5.1.2 Webkit2 greeter](#Webkit2_greeter)
-        *   [5.1.3 Unity greeter](#Unity_greeter)
-        *   [5.1.4 KDE greeter](#KDE_greeter)
-    *   [5.2 Changing your avatar](#Changing_your_avatar)
-    *   [5.3 Sources of Arch-centric 64x64 icons](#Sources_of_Arch-centric_64x64_icons)
-    *   [5.4 Enabling autologin](#Enabling_autologin)
-    *   [5.5 Enabling interactive passwordless login](#Enabling_interactive_passwordless_login)
-    *   [5.6 Hiding system and services users](#Hiding_system_and_services_users)
-    *   [5.7 Migrating from SLiM](#Migrating_from_SLiM)
-    *   [5.8 Login using ~/.xinitrc](#Login_using_.7E.2F.xinitrc)
-    *   [5.9 NumLock on by default](#NumLock_on_by_default)
-    *   [5.10 User switching under Xfce4](#User_switching_under_Xfce4)
-    *   [5.11 Default session](#Default_session)
-    *   [5.12 Customization of the login window](#Customization_of_the_login_window)
-        *   [5.12.1 GTK+ greeter](#GTK.2B_greeter_2)
-    *   [5.13 VNC Server](#VNC_Server)
+    *   [5.1 Change DPI](#Change_DPI)
+    *   [5.2 Changing background images/colors](#Changing_background_images.2Fcolors)
+        *   [5.2.1 GTK+ greeter](#GTK.2B_greeter)
+            *   [5.2.1.1 GTK3 Dark Theme](#GTK3_Dark_Theme)
+        *   [5.2.2 Webkit2 greeter](#Webkit2_greeter)
+        *   [5.2.3 Unity greeter](#Unity_greeter)
+        *   [5.2.4 KDE greeter](#KDE_greeter)
+    *   [5.3 Changing your avatar](#Changing_your_avatar)
+    *   [5.4 Sources of Arch-centric 64x64 icons](#Sources_of_Arch-centric_64x64_icons)
+    *   [5.5 Enabling autologin](#Enabling_autologin)
+    *   [5.6 Enabling interactive passwordless login](#Enabling_interactive_passwordless_login)
+    *   [5.7 Hiding system and services users](#Hiding_system_and_services_users)
+    *   [5.8 Migrating from SLiM](#Migrating_from_SLiM)
+    *   [5.9 Login using ~/.xinitrc](#Login_using_.7E.2F.xinitrc)
+    *   [5.10 NumLock on by default](#NumLock_on_by_default)
+    *   [5.11 User switching under Xfce4](#User_switching_under_Xfce4)
+    *   [5.12 Default session](#Default_session)
+    *   [5.13 Customization of the login window](#Customization_of_the_login_window)
+        *   [5.13.1 GTK+ greeter](#GTK.2B_greeter_2)
+    *   [5.14 VNC Server](#VNC_Server)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
@@ -118,6 +119,10 @@ Some greeters have their own configuration files. For example:
 [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): `/etc/lightdm/lightdm-webkit2-greeter.conf`
 
 [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): `/etc/lightdm/lightdm-kde-greeter.conf`
+
+### Change DPI
+
+You can change DPI via the `xserver-command` option. To be more specific, to set a DPI of 150, open lightdm configuration file(usually it's `/etc/lightdm/lightdm.conf`, and change the line `xserver-command=X` to `xserver-command=X -dpi 150`
 
 ### Changing background images/colors
 
@@ -227,14 +232,10 @@ Edit the LightDM configuration file and ensure these lines are uncommented and c
  `/etc/lightdm/lightdm.conf` 
 ```
 [Seat:*]
-pam-service=lightdm
-pam-autologin-service=lightdm-autologin
 autologin-user=*username*
-autologin-user-timeout=0
-session-wrapper=/etc/lightdm/Xsession
 ```
 
-LightDM goes through [PAM](/index.php/PAM "PAM") even when `autologin` is enabled. You must be part of the `autologin` group to be able to login automatically without entering your password:
+You must be part of the `autologin` group to be able to login automatically without entering your password:
 
 ```
 # groupadd -r autologin

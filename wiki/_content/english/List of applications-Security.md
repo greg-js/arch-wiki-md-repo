@@ -31,13 +31,13 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 #### Sandboxes
 
-*   **[Firejail](/index.php/Firejail "Firejail")** — SUID sandboxing application with desktop-specific features including whitelists.
-
-	[https://github.com/netblue30/firejail](https://github.com/netblue30/firejail) || [firejail](https://www.archlinux.org/packages/?name=firejail)
-
 *   **[bubblewrap](/index.php/Bubblewrap "Bubblewrap")** — Lightweight unprivileged sandboxing tool for virtualized containers and applications alike.
 
 	[https://github.com/projectatomic/bubblewrap](https://github.com/projectatomic/bubblewrap) || [bubblewrap](https://www.archlinux.org/packages/?name=bubblewrap)
+
+*   **[Firejail](/index.php/Firejail "Firejail")** — SUID sandboxing application with desktop-specific features including whitelists.
+
+	[https://github.com/netblue30/firejail](https://github.com/netblue30/firejail) || [firejail](https://www.archlinux.org/packages/?name=firejail)
 
 *   **playpen** — Featherweight application sandbox with support for namespaces, cgroups and seccomp.
 
@@ -264,6 +264,10 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 *   **XSecureLock** — X11 screen lock utility designed with the primary goal of security.
 
 	[https://github.com/google/xsecurelock](https://github.com/google/xsecurelock) || [xsecurelock-git](https://aur.archlinux.org/packages/xsecurelock-git/)
+
+*   **xtrlock** — Very lightweight X display locker. Keeps windows visible and displays lock icon instead of mouse cursor. Typing password followed by enter unlocks the screen.
+
+	[https://packages.debian.org/sid/xtrlock](https://packages.debian.org/sid/xtrlock) || [xtrlock](https://www.archlinux.org/packages/?name=xtrlock)
 
 #### Hash checkers
 

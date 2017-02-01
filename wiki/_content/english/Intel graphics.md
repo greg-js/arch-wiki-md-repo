@@ -7,9 +7,9 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Loading](#Loading)
-    *   [3.1 Enable early KMS](#Enable_early_KMS)
+*   [2 Loading](#Loading)
+    *   [2.1 Enable early KMS](#Enable_early_KMS)
+*   [3 Xorg configuration](#Xorg_configuration)
 *   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
     *   [4.1 RC6 sleep modes (enable_rc6)](#RC6_sleep_modes_.28enable_rc6.29)
     *   [4.2 Framebuffer compression (enable_fbc)](#Framebuffer_compression_.28enable_fbc.29)
@@ -47,9 +47,24 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
 
 Also see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
+**Note:** Some ([Debian & Ubuntu](http://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-Debian-Abandon-Intel-DDX), [Fedora](http://www.phoronix.com/scan.php?page=news_item&px=Fedora-Xorg-Intel-DDX-Switch), [KDE](https://community.kde.org/Plasma/5.9_Errata#Intel_GPUs)) recommend not installing the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver, and instead falling back on the modesetting driver. See [[1]](https://www.reddit.com/r/archlinux/comments/4cojj9/it_is_probably_time_to_ditch_xf86videointel/), [[2]](http://www.phoronix.com/scan.php?page=article&item=intel-modesetting-2017&num=1), [Xorg#Installation](/index.php/Xorg#Installation "Xorg"), and [modesetting(4)](http://linux.die.net/man/4/modesetting). However, the modesetting driver can cause problems such as [Chromium Issue 370022](https://bugs.chromium.org/p/chromium/issues/detail?id=370022).
 
-## Configuration
+## Loading
+
+The Intel kernel module should load fine automatically on system boot.
+
+If it does not happen, then:
+
+*   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since Intel requires kernel mode-setting.
+*   Also, check that you have not disabled Intel by using any modprobe blacklisting within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
+
+### Enable early KMS
+
+[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by Intel chipsets that use the i915 DRM driver and is mandatory and enabled by default.
+
+Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for instuctions on how to enable KMS as soon as possible at the boot process.
+
+## Xorg configuration
 
 There is no need for any configuration to run [Xorg](/index.php/Xorg "Xorg").
 
@@ -73,21 +88,6 @@ Additional options are added by the user on new lines below `Driver`.
 *   You might need to add more device sections than the one listed above. This will be indicated where necessary.
 
 For the full list of options, see the [man page](/index.php/Man_page "Man page") for `intel`.
-
-## Loading
-
-The Intel kernel module should load fine automatically on system boot.
-
-If it does not happen, then:
-
-*   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since Intel requires kernel mode-setting.
-*   Also, check that you have not disabled Intel by using any modprobe blacklisting within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
-
-### Enable early KMS
-
-[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is supported by Intel chipsets that use the i915 DRM driver and is mandatory and enabled by default.
-
-Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") for instuctions on how to enable KMS as soon as possible at the boot process.
 
 ## Module-based Powersaving Options
 
@@ -152,7 +152,7 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 
 ### Tear-free video
 
-The SNA acceleration method causes tearing for some people. To fix this, enable the `"TearFree"` option in the driver by adding the following line to your [configuration file](#Configuration):
+The SNA acceleration method causes tearing for some people. To fix this, enable the `"TearFree"` option in the driver by adding the following line to your [configuration file](#Xorg_configuration):
 
 ```
 Option "TearFree" "true"
@@ -225,7 +225,7 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 ### SNA issues
 
-*SNA* is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with *SNA* (e.g. pixelated graphics, corrupt text, etc.), try using *UXA* instead, which can be done by adding the following line to your [configuration file](#Configuration):
+*SNA* is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with *SNA* (e.g. pixelated graphics, corrupt text, etc.), try using *UXA* instead, which can be done by adding the following line to your [configuration file](#Xorg_configuration):
 
 ```
 Option      "AccelMethod"  "uxa"
@@ -236,7 +236,7 @@ See `man 4 intel` under `Option "AccelMethod"`.
 
 ### DRI3 issues
 
-*DRI3* is the default DRI version in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). On some systems this can cause issues such as [this](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). To switch back to *DRI2* add the following line to your [configuration file](#Configuration):
+*DRI3* is the default DRI version in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). On some systems this can cause issues such as [this](https://bugs.chromium.org/p/chromium/issues/detail?id=370022). To switch back to *DRI2* add the following line to your [configuration file](#Xorg_configuration):
 
 ```
 Option "DRI" "2"
@@ -271,7 +271,7 @@ video=VGA-1:1280x800
 
 ### X freeze/crash with intel driver
 
-Some issues with X crashing, GPU hanging, or problems with X freezing, can be fixed by disabling the GPU usage with the `NoAccel` option - add the following lines to your [configuration file](#Configuration):
+Some issues with X crashing, GPU hanging, or problems with X freezing, can be fixed by disabling the GPU usage with the `NoAccel` option - add the following lines to your [configuration file](#Xorg_configuration):
 
 ```
   Option "NoAccel" "True"

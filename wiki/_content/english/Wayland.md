@@ -375,7 +375,7 @@ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### gnome wayland on tty1, weston on tty2
 
-(20170106) KDE and QT applications dump core when started on tty1/gnome ([qt issue 57995](https://bugreports.qt.io/browse/QTBUG-57995))
+(20170106) apps started on gnome with WAYLAND_DISPLAY set to westen make it not respond any more ([wayland issue 99489](https://bugs.freedesktop.org/show_bug.cgi?id=99489))
 
 ### weston-terminal
 

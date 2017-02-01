@@ -65,6 +65,8 @@ options ath5k nohwcrypt=1
 ```
 `
 
+Unfortunately this fix works not so good. Best solution change wi-fi card. For example to this: `Network controller: Qualcomm Atheros AR922X Wireless Network Adapter (rev 01)` It is 300Mbit N wifi card, but with this card some hardware modifications is needed to work second USB port, because Atheros AR9223 is much bigger then AR2413/2414\. Vertical 4 pin usb socket must be replaced with 4 pin horizontal socket on motherboard.
+
 ## Ethernet
 
 Works out of the box perfectly.
