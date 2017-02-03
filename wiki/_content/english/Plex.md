@@ -146,11 +146,11 @@ Plex Home Theater can be launched by running `plexhometheater.sh` from your term
 
 ## Plex Media Player (PMP)
 
-Plex Media Player is officially replacing Plex Home Theater but as PMP is still a preview app and under active beta development, it's currently only available for use by Plex Pass holders.
+Plex Media Player is the current release of Plex's media client. It has officially replaced [#Plex Home Theater (PHT)](/index.php/Plex#Plex_Home_Theater_.28PHT.29 "Plex") (which is still receiving bug fixes) and builds upon previous functionality, such as using mpv. Plex has made PMP [available](https://www.plex.tv/blog/plex-media-player-now-ambidextrous-free-kodi-said/) to all users and it has also become compatible with Kodi. Keep in mind, PMP is not open-source (unlike PHT).
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [plex-media-player](https://aur.archlinux.org/packages/plex-media-player/) package. You will then need to login to your Plex account to use the app (currently must be a Plex Pass subscriber to use this preview app)
+[Install](/index.php/Install "Install") the [plex-media-player](https://aur.archlinux.org/packages/plex-media-player/) package.
 
 ## Kodi and PleXBMC
 

@@ -9,6 +9,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [3 Wireless](#Wireless)
 *   [4 Switchable graphics](#Switchable_graphics)
 *   [5 Keyboard Lights](#Keyboard_Lights)
+*   [6 OLED screen brightness](#OLED_screen_brightness)
 
 ## Getting Linux to boot
 
@@ -52,6 +53,19 @@ $ git clone [https://github.com/sumdog/ath10k-firmware](https://github.com/sumdo
 ```
 
 After a reboot, wireless should work, including wifi-ac speeds.
+
+For Alienware 13 R3, the wifi works out of box. The following kernel error seems to be harmless.
+
+```
+3c:00.0 Ethernet controller: Qualcomm Atheros Killer E2400 Gigabit Ethernet Controller (rev 10)
+3d:00.0 Network controller: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter (rev 32)
+
+```
+
+```
+[    3.420857] ath10k_pci 0000:3d:00.0: could not fetch firmware file 'ath10k/QCA6174/hw3.0/firmware-5.bin': -2
+
+```
 
 ## Switchable graphics
 
@@ -156,3 +170,12 @@ Now it should trigger by executing:
 from a console.
 
 We can simply add the commands to the energy admin or the startup to make keyboard lights change automatically.
+
+## OLED screen brightness
+
+With gnome, the brightness control keys toggles the on-screen display, but it doesn't change the brightness level. The screen blanking feature also doesn't work. The following command can be used to set the brightness to 50%.
+
+```
+xrandr --output eDP1 --brightness .5
+
+```

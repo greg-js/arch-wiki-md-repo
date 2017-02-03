@@ -24,19 +24,17 @@ On first usage of qutebrowser, a Quickstart page appears. It is later accessible
 
 ### User Configuration
 
-You will find the configuration files of qutebrowser under `$XDG_CONFIG_HOME/qutebrowser/`. The main configuration happens in the file `qutebrowser.conf`, which is organized in sections like an ini-file. For example, under `[searchengines]` you can configure your search engines as described by the comment. To add a shortcut for searching the the arch wiki, add these two lines:
+You will find the configuration files of qutebrowser under `$XDG_CONFIG_HOME/qutebrowser/`. The main configuration happens in the file `qutebrowser.conf`, which is organized in sections like an ini-file. For example, under `[searchengines]` you can configure your search engines as described by the comment. To add a shortcut for searching the the arch wiki, add this line:
 
 ```
-archwiki = https://wiki.archlinux.org/?search={}
-aw = ${archwiki}
+aw = https://wiki.archlinux.org/?search={}
 
 ```
 
 Now, in qutebrowser you can search the arch wiki for an article about qutebrowser via `:open aw qutebrowser` which will bring you to this page. As per the standard configuration the key mapping `o` will subsitute `:open`, so typing `o aw *your_search_term*` will henceforth allow you to quickly search the arch wiki. Notice that the arguments required to perform a search vary across search engines, for example, to set up Google use:
 
 ```
-google = https://www.google.com/search?hl=en&q={}
-g = ${google}
+g = https://www.google.com/search?hl=en&q={}
 
 ```
 

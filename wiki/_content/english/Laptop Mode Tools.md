@@ -1,4 +1,4 @@
-[Laptop Mode Tools](http://samwel.tk/laptop_mode/) is a laptop power saving package for Linux systems. It is the primary way to enable the Laptop Mode feature of the Linux kernel, which lets your hard drive spin down. In addition, it allows you to tweak a number of other power-related settings using a simple configuration file.
+[Laptop Mode Tools](https://github.com/rickysarraf/laptop-mode-tools) is a laptop power saving package for Linux systems. It is the primary way to enable the Laptop Mode feature of the Linux kernel, which lets your hard drive spin down. In addition, it allows you to tweak a number of other power-related settings using a simple configuration file.
 
 Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling"), LMT provides most users with a complete notebook power management suite.
 

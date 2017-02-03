@@ -113,6 +113,7 @@ Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should autom
 ## Canon
 
 | Driver | Description |
+| [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Supports [many Canon printers](http://gimp-print.sourceforge.net/p_Supported_Printers.php). |
 | [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) | Canon UFR II /LIPSLX Printer Driver build from source for LBP, iR & MF printers |
 | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) | Canon UFR II/UFR II LT Printer Driver (including Canon imageCLASS MF4720w) |
 | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Canon IJ Printer Driver (for mg4200 series) |

@@ -33,6 +33,8 @@ You can also force fsck at boot time by passing `fsck.mode=force`, as a [kernel 
 
 **Note:** For those accustomed to use other GNU/Linux distributions, the old tricks consisting in writing a file with the name `forcefsck` to the root of each filesystem or using the command `shutdown` with the `-F` flag were only working for the old [SysVinit](/index.php/SysVinit "SysVinit") and early versions of [Upstart](https://en.wikipedia.org/wiki/Upstart "wikipedia:Upstart") and are not working with [systemd](/index.php/Systemd "Systemd"). The aforementioned solution is thus the only one working for Arch Linux.
 
+What is more you can pass additional parameter `fsck.repair=yes`, this will try repair your filesystem without asking. If you don't pass this parameter fsck will repair only safe errors. So be careful with this option! *More information can be found here [[2]](https://www.freedesktop.org/software/systemd/man/systemd-fsck@.service.html).*
+
 ## Tips and tricks
 
 ### Attempt to repair damaged blocks

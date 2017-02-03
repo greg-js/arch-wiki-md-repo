@@ -216,7 +216,7 @@ CONFIG_SECURITY_SELINUX_AVC_STATS=y
 CONFIG_DEFAULT_SECURITY_SELINUX=y
 ```
 
-{{Note|If using proprietary drivers, such as [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics drivers, you may need to [rebuild them](/index.php/NVIDIA#Custom_kernel "NVIDIA")
+**Note:** If using proprietary drivers, such as [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics drivers, you may need to [rebuild them](/index.php/NVIDIA#Custom_kernel "NVIDIA").
 
 There are two methods to install the requisite SELinux packages.
 
@@ -247,11 +247,11 @@ Of course, it is possible to modify the content of `build_and_install_all.sh` be
 
 ### Changing boot loader configuration
 
-If you have installed a new kernel, make sure that you update your bootloader accordingly to boot on it. Moreover you may need to add "security=selinux selinux=1" to the kernel command line. More precisely, if the kernel configuration does not set CONFIG_DEFAULT_SECURITY_SELINUX, "security=selinux" is needed, and if it contains CONFIG_SECURITY_SELINUX_BOOTPARAM=y CONFIG_SECURITY_SELINUX_BOOTPARAM_VALUE=0, "selinux=1" is needed.
+If you have installed a new kernel, make sure that you update your bootloader accordingly to boot on it. Moreover you may need to add `security=selinux selinux=1` to the kernel command line. More precisely, if the kernel configuration does not set `CONFIG_DEFAULT_SECURITY_SELINUX`, `security=selinux` is needed, and if it contains `CONFIG_SECURITY_SELINUX_BOOTPARAM=y` `CONFIG_SECURITY_SELINUX_BOOTPARAM_VALUE=0`, `selinux=1` is needed.
 
 #### GRUB
 
-Add "security=selinux selinux=1" GRUB_CMDLINE_LINUX_DEFAULT variable in /etc/default/grub Run the following command:
+Add `security=selinux selinux=1` to `GRUB_CMDLINE_LINUX_DEFAULT` variable in `/etc/default/grub` Run the following command:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg

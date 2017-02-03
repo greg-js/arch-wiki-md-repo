@@ -12,7 +12,7 @@ This page was created to consolidate colorization of CLI outputs.
     *   [3.3 读取标准输入时彩色化输出](#.E8.AF.BB.E5.8F.96.E6.A0.87.E5.87.86.E8.BE.93.E5.85.A5.E6.97.B6.E5.BD.A9.E8.89.B2.E5.8C.96.E8.BE.93.E5.87.BA)
 *   [4 ls](#ls)
 *   [5 man](#man)
-    *   [5.1 Using less](#Using_less)
+    *   [5.1 使用 less](#.E4.BD.BF.E7.94.A8_less)
     *   [5.2 Using most](#Using_most)
     *   [5.3 Using X resources](#Using_X_resources)
         *   [5.3.1 xterm](#xterm)
@@ -216,9 +216,11 @@ eval $(dircolors -b)
 
 ## man
 
-Color-enabled man pages allow for a clearer presentation and easier digestion of the content. There are two prevalent methods for achieving colored man pages: using `less`, or opting for `most`.
+对很多人来说，彩色手册页比黑白的更加易于大脑消化吸收。
 
-### Using less
+有两种常用的实现man手册页彩色显示的方法：使用 `most` 或 `less` .
+
+### 使用 less
 
 You can set various `LESS_TERMCAP_***` environment variables to change how it highlights text. For example, `LESS_TERMCAP_md` is used for bold text and `LESS_TERMCAP_me` is used to reset to normal text formatting[[3]](http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized).
 
@@ -257,23 +259,25 @@ For a detailed explanation on these variables, see [this answer](http://unix.sta
 
 ### Using most
 
-The basic function of 'most' is similar to `less` and `more`, but it has a smaller feature set. Configuring most to use colors is easier than using less, but additional configuration is necessary to make most behave like less. Install the [most](https://www.archlinux.org/packages/?name=most) package.
+The basic function of 'most' is similar to `less` and `more`, but it has a smaller feature set. Configuring most to use colors is easier than using less, but additional configuration is necessary to make most behave like less.
 
-Edit `/etc/man_db.conf`, uncomment the pager definition and change it to:
+用 [pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)") 安装软件包 [most](https://www.archlinux.org/packages/?name=most).
+
+编辑文件`/etc/man_db.conf`，去掉pager项的注释并修改为：
 
 ```
 DEFINE     pager     most -s
 
 ```
 
-Test the new setup by typing:
+然后测试一下：
 
 ```
 $ man whatever_man_page
 
 ```
 
-Modifying the color values requires editing `~/.mostrc` (creating the file if it is not present) or editing `/etc/most.conf` for system-wide changes. Example `~/.mostrc`:
+通过修改`~/.mostrc`（不存在的话请自行创建）或全局配置文件 `/etc/most.conf`。示例`~/.mostrc`:
 
 ```
 % Color settings
@@ -284,7 +288,7 @@ color overstrike brightblue black
 
 ```
 
-Another example showing keybindings similar to `less` (jump to line is set to 'J'):
+以下示例配置使用类似`less`的快捷键：
 
 ```
 % less-like keybindings

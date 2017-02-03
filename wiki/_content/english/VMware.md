@@ -34,6 +34,7 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.9 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
     *   [5.10 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
     *   [5.11 Networking on Guests not available after system restart](#Networking_on_Guests_not_available_after_system_restart)
+    *   [5.12 Kernel modules fail to build after Linux 4.9](#Kernel_modules_fail_to_build_after_Linux_4.9)
 *   [6 Uninstallation](#Uninstallation)
 
 ## Installation
@@ -404,6 +405,29 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 ### Networking on Guests not available after system restart
 
 This is likely due to the `vmnet` module not being loaded [[1]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
+
+### Kernel modules fail to build after Linux 4.9
+
+As of VMware Workstation Pro 12.5.2, the module source needs to be modified to be successfully compiled under kernel 4.9 [[2]](http://rglinuxtech.com/?p=1847).
+
+```
+# cd /usr/lib/vmware/modules/source
+# tar xf vmmon.tar
+# mv vmmon.tar vmmon.old.tar
+# sed -i 's/uvAddr, numPages, 0, 0/uvAddr, numPages, 0/g' vmmon-only/linux/hostif.c
+# tar cf vmmon.tar vmmon-only
+# rm -r vmmon-only
+
+```
+
+```
+# tar xf vmnet.tar
+# mv vmnet.tar vmnet.old.tar
+# sed -i 's/addr, 1, 1, 0/addr, 1, 0/g' vmnet-only/userif.c
+# tar cf vmnet.tar vmnet-only
+# rm -r vmnet-only
+
+```
 
 ## Uninstallation
 

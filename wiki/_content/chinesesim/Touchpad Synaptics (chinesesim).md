@@ -2,7 +2,7 @@
 
 本文描述了 ***Synaptics 输入驱动*** 的安装和配置过程，适用于大多数笔记本电脑上的Synaptics(或ALPS)触摸板
 
-[libinput](/index.php/Libinput "Libinput") 是另外的触摸板驱动选项，这个库使用不同的设备检测和多指触控支持。uch features.如果要通过 GNOME 控制中心配置触摸板，需要使用 [libinput](/index.php/Libinput "Libinput") 驱动[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=764257#c12)。
+**注意:** `xf86-input-synaptics` 已经进入低维护状态，不会再有大的更新，请尽量使用 [libinput](/index.php/Libinput "Libinput")，libinput 使用另外的方式识别和处理多点触控功能。
 
 ## Contents
 
@@ -801,9 +801,9 @@ The optimum value will depend on your touchpad and how you use it, try starting 
 
  `/etc/X11/xorg.conf.d/xorg.conf`  `Option "UpDownScrolling" "0"` 
 
-注意这会让synaptics对其它键的响应出错。有一个Oskar Sandberg写的补丁[[2]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) 能够解决这个问题。
+注意这会让synaptics对其它键的响应出错。有一个Oskar Sandberg写的补丁[[1]](http://www.math.chalmers.se/~ossa/linux/lg_tx_express.html) 能够解决这个问题。
 
-但是不能为最新版的synaptics驱动打上面的补丁，编译会出错。您可以用GIT包来安装synaptics[[3]](http://web.telia.com/~u89404340/touchpad/synaptics/.git) 。
+但是不能为最新版的synaptics驱动打上面的补丁，编译会出错。您可以用GIT包来安装synaptics[[2]](http://web.telia.com/~u89404340/touchpad/synaptics/.git) 。
 
 AUR中也提供了一个相应的包：[xf86-input-synaptics-lg](https://aur.archlinux.org/packages/xf86-input-synaptics-lg/)
 

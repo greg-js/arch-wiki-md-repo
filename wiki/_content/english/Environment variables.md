@@ -173,6 +173,8 @@ http_proxy="http://192.168.0.1:80"
 
 ### Using pam_env
 
+The [PAM](/index.php/PAM "PAM") module [pam_env(8)](http://man7.org/linux/man-pages/man8/pam_env.8.html) can also be used to apply variables.
+
 In `/etc/environment` and `~/.pam_environment` there are two formats to write down environment variables:
 
 ```
@@ -187,7 +189,7 @@ VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]
 
 ```
 
-The first one **doesn't allow** the use of `${VARIABLE}`, while the second does.
+The first one **does not allow** the use of `${VARIABLE}`, while the second does.
 
 `@{HOME}` and `@{SHELL}` are special variables that expand what is defined in `/etc/passwd`.
 

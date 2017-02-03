@@ -7,12 +7,13 @@
 *   [3 Migrating to pass](#Migrating_to_pass)
 *   [4 Advanced usage](#Advanced_usage)
 *   [5 Multiple pass Contexts (e.g. Teaming)](#Multiple_pass_Contexts_.28e.g._Teaming.29)
-*   [6 GUI](#GUI)
-*   [7 See also](#See_also)
+*   [6 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [pass](https://www.archlinux.org/packages/?name=pass) package.
+
+**Tip:** An optional [Qt](/index.php/Qt "Qt") GUI is available via the [qtpass](https://www.archlinux.org/packages/?name=qtpass) package.
 
 ## Basic usage
 
@@ -110,10 +111,6 @@ Add these for bash-completion to your `*~/.bash_completion*` and make sure [bash
 ```
 
 Now you can initialize into `*~/.pass/red*` and `*~/.pass/blue*` and have two pass contexts with the `*passred*` and `*passblue*` aliases. You can generalize this further into as many contexts as you like.
-
-## GUI
-
-There is now a stable release of [qtpass](https://www.archlinux.org/packages/?name=qtpass) available on the AUR.
 
 ## See also
 

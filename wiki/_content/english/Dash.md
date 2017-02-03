@@ -48,15 +48,24 @@ $ checkbashisms -f -p $(grep -IrlE '^#! ?(/usr)?/bin/(env )?sh' /usr/bin)
 Once you have verified that it won't break any functionality, it should be safe to relink `/bin/sh`. To do so use the following command:
 
 ```
-# ln -sfT dash /bin/sh
+# ln -sfT dash /usr/bin/sh
 
 ```
 
-Updates of Bash could overwrite `/bin/sh`. To prevent this, add the following lines to the `[options]` section of `/etc/pacman.conf`:
+Updates of Bash will overwrite `/bin/sh` with the default symlink. To prevent this, use the following [pacman hook](/index.php/Pacman#Hooks "Pacman"), which will relink `/bin/sh` after every affected update:
 
 ```
-NoUpgrade   = usr/bin/sh
-NoExtract   = usr/bin/sh
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = bash
+
+[Action]
+Description = Re-pointing /bin/sh symlink to dash...
+When = PostTransaction
+Exec = /usr/bin/ln -sfT dash /usr/bin/sh
+Depends = dash
 
 ```
 

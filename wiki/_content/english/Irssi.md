@@ -119,6 +119,8 @@ Save your new settings with:
 
 If everything works you will see the "Z" mode set. It should look like this: "Mode change (+Zi) for user your-nick"
 
+**Note:** In some cases the `ssl_capath` configuration causes valid SSL certificates to fail validation, in this case removing it will fix the problem and certificates should be validated properly.
+
 #### Client certificates
 
 Freenode and OFTC support authentication using SSL certificates, providing an alternative to plaintext passwords. See Freenode's [Identifying with CERTFP](https://freenode.net/certfp/) and [Creating an SSL Certificate](https://freenode.net/certfp/makecert.shtml) for more extensive details.

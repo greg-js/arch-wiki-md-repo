@@ -175,9 +175,9 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
 
 Since Linux 4.1, ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
 
-Make sure you are using a kernel with the option `CONFIG_EXT4_ENCRYPTION` enabled and have the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package updated to at least version 1.43.
+The encryption relies on the enabled (default) kernel option `CONFIG_EXT4_ENCRYPTION` and the *e4crypt* command from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package.
 
-Then verify that your filesystem is using a supported block size for encryption:
+A precondition is that your filesystem is using a supported block size for encryption:
 
  `# tune2fs -l /dev/*device* | grep 'Block size'` 
 ```

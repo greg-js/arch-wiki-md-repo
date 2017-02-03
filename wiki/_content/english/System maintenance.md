@@ -6,10 +6,12 @@ Regular system maintenance is necessary for the proper function of Arch over a p
     *   [1.1 Failed systemd services](#Failed_systemd_services)
     *   [1.2 Logfiles](#Logfiles)
 *   [2 Backup](#Backup)
-    *   [2.1 Configuration files](#Configuration_files)
-    *   [2.2 List of installed packages](#List_of_installed_packages)
-    *   [2.3 Pacman database](#Pacman_database)
-    *   [2.4 LUKS headers](#LUKS_headers)
+    *   [2.1 MBR](#MBR)
+    *   [2.2 GPT](#GPT)
+    *   [2.3 Configuration files](#Configuration_files)
+    *   [2.4 List of installed packages](#List_of_installed_packages)
+    *   [2.5 Pacman database](#Pacman_database)
+    *   [2.6 LUKS headers](#LUKS_headers)
 *   [3 Upgrading the system](#Upgrading_the_system)
     *   [3.1 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
     *   [3.2 Partial upgrades are unsupported](#Partial_upgrades_are_unsupported)
@@ -64,6 +66,26 @@ Create backups of important data at regular intervals. Those data include config
 See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for many alternative applications that may better suit your case. See [Category:System recovery](/index.php/Category:System_recovery "Category:System recovery") for other articles of interest.
 
 Backups may be automated with [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
+
+### MBR
+
+To save the MBR:
+
+```
+# dd if=/dev/*device* of=/path/*device*-mbr-file.img bs=512 count=1
+
+```
+
+See [Disk_cloning#Backing_up_the_MBR](/index.php/Disk_cloning#Backing_up_the_MBR "Disk cloning") for details.
+
+### GPT
+
+To backup GPT data:
+
+```
+# sgdisk -b /path/*device*-gpt.bin /dev/*device*
+
+```
 
 ### Configuration files
 

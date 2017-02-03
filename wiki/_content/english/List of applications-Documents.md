@@ -389,6 +389,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://github.com/JeffHoogland/ePad](https://github.com/JeffHoogland/ePad) || [epad](https://aur.archlinux.org/packages/epad/)
 
+*   **FeatherPad** — Minimal Qt5 plain text editor featuring a native dark theme and support for tabs, printing and syntax highlighting.
+
+	[https://github.com/tsujan/FeatherPad](https://github.com/tsujan/FeatherPad) || [featherpad](https://aur.archlinux.org/packages/featherpad/)
+
 *   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — A text editor using the GTK2 toolkit with basic features of an integrated development environment. It has support for TeX-based documents.
 
 	[https://www.geany.org](https://www.geany.org) || [geany](https://www.archlinux.org/packages/?name=geany)

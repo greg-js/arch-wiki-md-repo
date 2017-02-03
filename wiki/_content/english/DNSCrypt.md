@@ -22,7 +22,7 @@
             *   [3.4.1.1 Create systemd file](#Create_systemd_file)
             *   [3.4.1.2 Add dnscrypt-sockets](#Add_dnscrypt-sockets)
             *   [3.4.1.3 Apply new systemd configuration](#Apply_new_systemd_configuration)
-*   [4 Known issues](#Known_issues)
+*   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 dnscrypt runs with root privileges](#dnscrypt_runs_with_root_privileges)
 
 ## Installation
@@ -37,7 +37,7 @@ To configure *dnscrypt-proxy*, perform the following steps:
 
 ### Select resolver
 
-Select a resolver from `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` and edit `/etc/dsncrypt-proxy.conf`, using a short name from the csv file's first column, `Name`. For example, to select *dnscrypt.eu-nl* as the resolver:
+Select a resolver from `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` and edit `/etc/dnscrypt-proxy.conf`, using a short name from the csv file's first column, `Name`. For example, to select *dnscrypt.eu-nl* as the resolver:
 
 ```
 ResolverName dnscrypt.eu-nl
@@ -280,7 +280,7 @@ Now [start/enable](/index.php/Start/enable "Start/enable") the new service(s), e
 
 Finally [restart](/index.php/Restart "Restart") `unbound.service`.
 
-## Known issues
+## Troubleshooting
 
 ### dnscrypt runs with root privileges
 

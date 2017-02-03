@@ -6,7 +6,7 @@
 | <small>2.</small> [Applications](/index.php/Category:Applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Applications (Українська)") <small>(7)</small> |
 | <small>2.1.</small> [Internet applications](/index.php/Category:Internet_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Internet applications (Українська)") <small>(1) (також в [Networking](/index.php/Category:Networking_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Networking (Українська)"))</small> |
 | <small>2.2.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Mathematics and science (Українська)") <small>(1)</small> |
-| <small>2.3.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Multimedia (Українська)") <small>(1)</small> |
+| <small>2.3.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Multimedia (Українська)") <small>(2)</small> |
 | <small>3.</small> [Arch development](/index.php/Category:Arch_development_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Arch development (Українська)") <small>(1)</small> |
 | <small>4.</small> [Arch User Repository](/index.php/Category:Arch_User_Repository_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Arch User Repository (Українська)") <small>(1)</small> |
 | <small>5.</small> [Обладнання](/index.php/Category:Hardware_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:Hardware (Українська)") <small>(0)</small> |

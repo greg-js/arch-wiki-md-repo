@@ -20,7 +20,6 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [1.1.14 Enable Electrolysis](#Enable_Electrolysis)
         *   [1.1.15 Enable HTTP Cache](#Enable_HTTP_Cache)
         *   [1.1.16 Disable Pocket](#Disable_Pocket)
-        *   [1.1.17 Disable Social Service API](#Disable_Social_Service_API)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -70,7 +69,7 @@ This section contains advanced Firefox options for performance tweaking. For add
 
 **Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables. Proceed with force-enabling it at your own risk.
 
-**Note:** Since Firefox version 40 basic software OMTC is enabled by default.
+**Note:** Since Firefox version 40 basic software OMTC is enabled by default except on machines mentioned above.
 
 To enable OpenGL OMTC go to `about:config` and set:
 
@@ -205,21 +204,9 @@ In `about:config`, set `browser.cache.use_new_backend` from value 0 to 1.
 
 #### Disable Pocket
 
-If you don't use the Pocket-service, you may want to remove it completely by changing the following values in `about:config`:
-
-*   Set `extensions.pocket.api` and `extensions.pocket.site` to a blank value
-*   Set `extensions.pocket.enabled` to *false*
+If you don't use the Pocket-service, you may want to disable it by setting `extensions.pocket.enabled` to *false* in `about:config`.
 
 **Note:** on 45ESR the keys are `browser.pocket...`
-
-#### Disable Social Service API
-
-If you don't use any [social-services](https://activations.cdn.mozilla.net/en-US/), you want to disable this API completely in `about:config`:
-
-*   Set `social.directories`, `social.shareDirectory` and `social.whitelist` to a blank value
-*   Set `social.remote-install.enabled`, `social.share.activationPanelEnabled` and
-
-`social.toast-notifications.enabled` to *false*
 
 ## Appearance
 
@@ -599,7 +586,7 @@ See [[4]](http://superuser.com/questions/44072/how-do-i-associate-magnet-links-w
 
 The [Disable Ctrl-Q Shortcut](https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/) extension can be installed to prevent unwanted closing of the browser.
 
-An alternative is to add a rule in your window manager configuration file. For example in openbox add:
+An alternative is to add a rule in your window manager configuration file. For example in [Openbox](/index.php/Openbox "Openbox") add:
 
 ```
  <keybind key="C-q">
@@ -610,7 +597,7 @@ An alternative is to add a rule in your window manager configuration file. For e
 
 ```
 
-in the *<keyboard>* section of your `rc.xml` file.
+in the *<keyboard>* section of your `~/.config/openbox/rc.xml` file.
 
 **Note:** This will be effective for every application used under a graphic server.
 

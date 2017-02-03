@@ -16,7 +16,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [shadowsocks](https://www.archlinux.org/packages/?name=shadowsocks) package.
+[Install](/index.php/Install "Install") the [shadowsocks-libev](https://www.archlinux.org/packages/?name=shadowsocks-libev) package.
 
 ## Setup
 
@@ -31,7 +31,7 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
     "local_port":1080,
     "password":"mypassword",
     "timeout":300,
-    "method":"aes-128-ctr",
+    "method":"aes-128-gcm",
     "fast_open": false,
     "workers": 1
 }
@@ -49,7 +49,7 @@ Shadowsocks configuration may be done with a JSON formatted file. The following 
 | local_port | local port |
 | password | password used for encryption |
 | timeout | in seconds |
-| method | default: "aes-256-cfb", see [Encryption](https://github.com/shadowsocks/shadowsocks/wiki/Encryption) |
+| method | see [Encryption](https://github.com/shadowsocks/shadowsocks/wiki/Encryption) |
 | fast_open | use [TCP-Fast-Open](https://github.com/clowwindy/shadowsocks/wiki/TCP-Fast-Open), true / false |
 | workers | number of workers |
 

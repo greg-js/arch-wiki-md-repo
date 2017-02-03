@@ -319,6 +319,8 @@ WantedBy=multi-user.target
 
 **Note:** Using `NoNewPrivileges=yes` doesn't work with [Mailman](/index.php/Mailman "Mailman")'s cgi frontend! Remove this setting, if you want to use it in conjunction with it.
 
+**Note:** If you want to harden your uWSGI app further, the use of namespaces is advisable. You can get a first glance on that topic in the [uWSGI namespaces documentation](http://uwsgi-docs.readthedocs.io/en/latest/Namespaces.html).
+
 ## See Also
 
 *   [Official Documentation](http://uwsgi-docs.readthedocs.org/en/latest)

@@ -26,16 +26,17 @@ Spotify also offers free users the ability to create playlist which can be shuff
         *   [2.6.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
     *   [2.7 HiDPI Mode](#HiDPI_Mode)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
-    *   [3.2 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
-    *   [3.3 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
-    *   [3.4 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
-    *   [3.5 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
-    *   [3.6 Deadlock GUI Thread](#Deadlock_GUI_Thread)
-    *   [3.7 Pulseaudio](#Pulseaudio)
-    *   [3.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [3.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
-    *   [3.10 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
+    *   [3.1 Gnome alerts (beep) mutes Spotify](#Gnome_alerts_.28beep.29_mutes_Spotify)
+    *   [3.2 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
+    *   [3.3 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
+    *   [3.4 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
+    *   [3.5 SpotifyHelper.exe crashes (Windows client)](#SpotifyHelper.exe_crashes_.28Windows_client.29)
+    *   [3.6 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
+    *   [3.7 Deadlock GUI Thread](#Deadlock_GUI_Thread)
+    *   [3.8 Pulseaudio](#Pulseaudio)
+    *   [3.9 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [3.10 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [3.11 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -395,6 +396,24 @@ MimeType=x-scheme-handler/spotify
 You might need to relaunch your Desktop Manager, before these override changes will be effective.
 
 ## Troubleshooting
+
+### Gnome alerts (beep) mutes Spotify
+
+Comment out "module-role-cork" in pulse audio configuration file.
+
+Open `/etc/pulse/default.pa` with your text editor and comment out:
+
+```
+load-module module-role-cork 
+
+```
+
+Or simply unload it with:
+
+```
+pactl unload-module module-role-cork
+
+```
 
 ### Using search causes the whole interface to blink and then crash
 

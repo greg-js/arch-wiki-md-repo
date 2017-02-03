@@ -1199,7 +1199,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Discord](https://en.wikipedia.org/wiki/Discord_(software) "wikipedia:Discord (software)")** — All-in-one voice and text chat for gamers that’s free, secure, and works on both your desktop and phone.
 
-	[https://discordapp.com/](https://discordapp.com/) || [discord-canary](https://aur.archlinux.org/packages/discord-canary/)
+	[https://discordapp.com/](https://discordapp.com/) || [discord](https://aur.archlinux.org/packages/discord/)
 
 *   **GameVox** — Voice communication for your gaming community, partly based on Mumble source code.
 
@@ -1861,7 +1861,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE program, based on OpenCascade, Qt and Python with features such as macro recording, workbenches and the ability to run as server.
 
-	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://www.archlinux.org/packages/?name=freecad)
+	[https://github.com/FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) || [freecad](https://www.archlinux.org/packages/?name=freecad)
 
 *   **LeoCAD** — CAD program for creating virtual LEGO models. It has an easy to use interface and currently includes over 6000 different pieces created by the LDraw community.
 
@@ -3926,6 +3926,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 *   **ePad** — A simple text editor written in Python and EFL.
 
 	[https://github.com/JeffHoogland/ePad](https://github.com/JeffHoogland/ePad) || [epad](https://aur.archlinux.org/packages/epad/)
+
+*   **FeatherPad** — Minimal Qt5 plain text editor featuring a native dark theme and support for tabs, printing and syntax highlighting.
+
+	[https://github.com/tsujan/FeatherPad](https://github.com/tsujan/FeatherPad) || [featherpad](https://aur.archlinux.org/packages/featherpad/)
 
 *   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — A text editor using the GTK2 toolkit with basic features of an integrated development environment. It has support for TeX-based documents.
 

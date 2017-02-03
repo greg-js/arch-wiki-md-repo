@@ -320,30 +320,26 @@ This will set the brightness level to 200%. It will cause higher power usage and
 
 Laptops with LED backlight are known to have screen flicker sometimes. This is because the most efficient way of controlling LED backlight brightness is by turning the LED's on and off very quickly varying the amount of time they are on.
 
-However, the frequency of the switching (so-called PWM modulation frequency) may not be high enough for the eye to perceive it as a single brightness and instead see flickering. This causes some people to have symptoms such as headaches and eyestrain.
+However, the frequency of the switching, so-called PWM (pulse-width modulation) frequency, may not be high enough for the eye to perceive it as a single brightness and instead see flickering. This causes some people to have symptoms such as headaches and eyestrain.
 
-If you have an Intel i915 GPU, then it may be possible to adjust PWM modulation frequency to eliminate flicker.
+If you have an Intel i915 GPU, then it may be possible to adjust PWM frequency to eliminate flicker.
 
-Install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories. Get value of the register, that determines PWM modulation frequency
+Period of PWM (inverse to frequency) is stored in 4 higher bytes of `0xC8254` register (if you are using the Intel GM45 chipset use address `0x61254` instead). To manipulate registers values install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories.
 
- `# intel_reg read 0xC8254` 
-```
-0xC8254 : 0x12281228
+To increase the frequency, period must be reduced. For example:
 
-```
+ `# intel_reg read 0xC8254`  `0xC8254 : 0x12281228` 
 
-The value returned represents period of PWM modulation. So to increase PWM modulation frequency, value of the register has to be reduced. For example, to double frequency from the previous listing, execute:
+Then to double PWM frequency divide 4 higher bytes by 2 and write back resulting value, keeping lower bytes unchanged:
 
 ```
-# intel_reg write 0xC8254 0x09140914
+# intel_reg write 0xC8254 0x09141228
 
 ```
 
 You can use online calculator to calculate desired value [http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html](http://devbraindom.blogspot.com/2013/03/eliminate-led-screen-flicker-with-intel.html)
 
-Refer to dedicated topic for details [https://bbs.archlinux.org/viewtopic.php?pid=1245913](https://bbs.archlinux.org/viewtopic.php?pid=1245913)
-
-If you are using the Intel GM45 chipset use address 0x61254 instead of 0xC8254.
+To set new frequency automatically, consider writing an udev rule or install [intelpwm-udev](https://aur.archlinux.org/packages/intelpwm-udev/).
 
 ### Inverted Brightness (Intel i915 only)
 

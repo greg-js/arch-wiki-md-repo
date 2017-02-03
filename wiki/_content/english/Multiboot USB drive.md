@@ -228,7 +228,7 @@ search --no-floppy --set=**isopart** --fs-uuid *123-456*
 loopback loop **($isopart)**$isofile
 ```
 
-**Tip:** For a list of kernel parameters, see [https://www.kernel.org/doc/Documentation/kernel-parameters.txt](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) (still incomplete)
+**Tip:** For a list of kernel parameters, see [https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.rst](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.rst) and [https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) (still incomplete)
 
 #### Arch Linux monthly release
 

@@ -88,6 +88,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [11.7 ioctl(KVM_CREATE_VM) failed: 16 Device or resource busy](#ioctl.28KVM_CREATE_VM.29_failed:_16_Device_or_resource_busy)
     *   [11.8 libgfapi error message](#libgfapi_error_message)
     *   [11.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
+    *   [11.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
 *   [12 See also](#See_also)
 
 ## Installation
@@ -1577,6 +1578,10 @@ If you start a live-environment (or better: booting a system) you may encounter 
 ```
 
 or some other boot hindering process (e.g. cannot unpack initramfs, cant start service foo). Try starting the VM with the `-m VALUE` switch and an appropriate amount of RAM, if the ram is to low you will probably encounter similar issues as above/without the memory-switch.
+
+### Windows 7 guest suffers low-quality sound
+
+Using `hda` audio driver for Windows 7 guest may casue low-quality sound. Changing the audio driver to `ac97` by passing arguement `-soundhw ac97` to QEMU and install ac97 driver from [Realtek AC'97 Audio Codecs](http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=14&PFid=23&Level=4&Conn=3&DownTypeID=3&GetDown=false) in the guest may solve the problem. See [Red Hat Bugzilla – Bug 1176761](https://bugzilla.redhat.com/show_bug.cgi?id=1176761#c16) for more information.
 
 ## See also
 

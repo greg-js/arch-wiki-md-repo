@@ -360,6 +360,8 @@ To fix screen flickering issues add `i915.edp_vswing=2` [to your boot parameters
 
 Since the Display Port is controlled by the Intel driver, it tends to work quite well and will usually mirror the laptop display without configuration. Getting both the HDMI and DP adapters to display separate requires additional setup.
 
+The Display Port can be accessed with a USB-C to Display Port adaptor, it should be a adaptor that works via "alternate mode" such as the plugable cable [[2]](http://plugable.com/products/usbc-dp/) (known to work), there are other adaptors that did not work (KiWiBiRD USB 3.1 Type C THUNDERBOLT 3 to DisplayPort 4K Adapter), though why it didn't is unknown.
+
 #### Multihead
 
 The following instructions should help configure the laptop to display separate output on two external monitors. These instructions are similar in nature to the [instructions](/index.php/Bumblebee#xf86-video-intel-virtual-crtc_and_hybrid-screenclone "Bumblebee") on the [Bumblebee](/index.php/Bumblebee "Bumblebee") page, though recent advancements in virtual displays on Intel reduce the number of steps and packages needed.

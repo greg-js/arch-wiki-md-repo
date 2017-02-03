@@ -25,7 +25,7 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Wireless | **Working** | iwlwifi |
 | Audio | **Working** | snd_hda_intel |
 | Touchscreen | **Working** | wacom |
-| Stylus | **Partial** ¹ | wacom,usbhid |
+| Stylus | **Working** ¹ | wacom,usbhid |
 | Accelerometer | **Working in Linux 4.9** | hid_sensor_accel_3d |
 | Touchpad | **Working** | psmouse |
 | Trackpoint | **Working** | psmouse |
@@ -35,7 +35,7 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Fingerprint Reader | **Not working** ² |
 | Smartcard reader | **Working** |
 
-¹Only one pen-button working
+¹Pen-buttons can be assigned with xsetwacom, see [Wacom_Tablet#Remapping_Buttons](/index.php/Wacom_Tablet#Remapping_Buttons "Wacom Tablet"). Device name is "Wacom Co.,Ltd. Pen and multitouch sensor Pen stylus".
 
 ²https://bugs.freedesktop.org/show_bug.cgi?id=94536
 

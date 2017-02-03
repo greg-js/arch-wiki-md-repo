@@ -122,7 +122,7 @@ Some greeters have their own configuration files. For example:
 
 ### Change DPI
 
-You can change DPI via the `xserver-command` option. To be more specific, to set a DPI of 150, open lightdm configuration file(usually it's `/etc/lightdm/lightdm.conf`, and change the line `xserver-command=X` to `xserver-command=X -dpi 150`
+You can change DPI via the `xserver-command` option. To be more specific, to set a DPI of 150, open lightdm configuration file(usually it's `/etc/lightdm/lightdm.conf`), and change the line `xserver-command=X` to `xserver-command=X -dpi 150`
 
 ### Changing background images/colors
 
@@ -241,6 +241,15 @@ You must be part of the `autologin` group to be able to login automatically with
 # groupadd -r autologin
 # gpasswd -a *username* autologin
 
+```
+
+LightDM logs in using the session specified in the `~/.dmrc` of the user getting logged in automatically. To override this file, specify `autologin-session` in `lightdm.conf`:
+
+ `/etc/lightdm/lightdm.conf` 
+```
+[Seat:*]
+autologin-user=*username*
+autologin-session=*session*
 ```
 
 **Note:** GNOME users, and by extension any gnome-keyring user will have to set up a blank password to their keyring for it to be unlocked automatically.

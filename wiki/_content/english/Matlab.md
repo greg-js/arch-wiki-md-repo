@@ -332,11 +332,18 @@ If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/pack
 
 ### Hangs on rendering or exiting with Intel graphics
 
-Some users have reported issues with DRI3 enabled on Intel Graphics chips. The issue can be circumvented by selecting software rendering with the MATLAB command:
+Some users have reported issues with DRI3 enabled on Intel Graphics chips. A possible workaround is to disable DRI3 and run MATLAB with hardware rendering on DRI2; to do so, launch MATLAB with the environment variable LIBGL_DRI3_DISABLE set to 1:
+
+```
+LIBGL_DRI3_DISABLE=1 /{MATLAB}/bin/matlab
+
+```
+
+If the previous workaround does not work, the issue can be circumvented by selecting software rendering with the MATLAB command (beware, performance may be very poor when doing e.g. big or complex 3D plots):
 
 ```
 opengl('save','software')
 
 ```
 
-See [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) for more.
+See [[4]](https://bugzilla.redhat.com/show_bug.cgi?id=1357571) and [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=96671) for more.

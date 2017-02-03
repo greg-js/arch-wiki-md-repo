@@ -246,7 +246,10 @@ The name of the `.install` script to be included in the package. This should be 
 
 Each function is run [chrooted](/index.php/Chroot "Chroot") inside the *pacman* install directory. See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=913891).
 
-**Tip:** A prototype `.install` is provided at [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
+**Tip:**
+
+*   A prototype `.install` is provided at [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
+*   [pacman#Hooks](/index.php/Pacman#Hooks "Pacman") provide similar functionality.
 
 **Note:** Do not end the script with `exit`. This would prevent the contained functions from executing.
 
@@ -269,11 +272,12 @@ Files can also be supplied directly in the location of the `PKGBUILD` and added 
 
 *.install* files are recognized automatically by *makepkg* and should not be included in the source array. Files in the source array with extensions *.sig*, *.sign*, or *.asc* are recognized by *makepkg* as PGP signatures and will be automatically used to verify the integrity of the corresponding source file.
 
-**Note:** Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `source_i686=()`. There must be a corresponding integrity array with checksums, e.g. `sha256sums_x86_64=()`.
+**Note:**
 
-**Note:** File names of downloaded sources should be globally unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable could be the same directory for all packages. This can be ensured by specifying an alternative source name with the syntax `source=('*filename*::*fileuri*')`, where the chosen `*filename*` should be related to the package name: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
+*   Additional architecture-specific arrays can be added by appending an underscore and the architecture name, e.g. `source_i686=()`. There must be a corresponding integrity array with checksums, e.g. `sha256sums_x86_64=()`.
+*   File names of downloaded sources should be globally unique, because the [SRCDEST](/index.php/Makepkg#Package_output "Makepkg") variable could be the same directory for all packages. This can be ensured by specifying an alternative source name with the syntax `source=('*filename*::*fileuri*')`, where the chosen `*filename*` should be related to the package name: `source=("project_name::hg+https://googlefontdirectory.googlecode.com/hg/")` 
 
-**Note:** If some servers prevent you to download a file because of restricted user-agents, please [read this article](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
+**Tip:** If some servers prevent you from downloading a file because of restricted user-agents, read [Nonfree applications package guidelines#Custom DLAGENTS](/index.php/Nonfree_applications_package_guidelines#Custom_DLAGENTS "Nonfree applications package guidelines").
 
 ### noextract
 

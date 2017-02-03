@@ -210,7 +210,7 @@ You can check the current settings on *Control Panel > Hardware and Sound > Powe
 
 ### Mount failure
 
-If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. Here's an fstab [example](/index.php/Fstab#UUIDs "Fstab").
+If you cannot mount your NTFS partition even when following this guide, try using the [UUID](/index.php/UUID "UUID") instead of device name in `/etc/fstab` for all NTFS partitions. See [Fstab#UUIDs](/index.php/Fstab#UUIDs "Fstab") for an example.
 
 ## See also
 

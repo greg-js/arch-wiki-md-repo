@@ -116,6 +116,10 @@ The following sections describe examples to change the default PAM parameter con
 
 	detail how to configure system process limits with `pam_limits.so`.
 
+*   [Environment variables#Using pam env](/index.php/Environment_variables#Using_pam_env "Environment variables")
+
+	shows examples to set environment variables via `pam_env.so`.
+
 ### PAM stack and module configuration
 
 The following articles detail how to change the [#PAM base-stack](#PAM_base-stack) for special use-cases.
@@ -149,6 +153,10 @@ PAM modules from the [Official repositories](/index.php/Official_repositories "O
 *   [pam_oath](/index.php/Pam_oath "Pam oath")
 
 	shows an example to implement software based two-factor authentication with `pam_oath.so`.
+
+*   [fprint](/index.php/Fprint "Fprint")
+
+	employs `pam_fprintd.so` to setup fingerprint authentication.
 
 PAM modules from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"):
 

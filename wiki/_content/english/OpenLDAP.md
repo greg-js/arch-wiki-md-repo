@@ -18,12 +18,12 @@ This page is a starting point for a basic OpenLDAP installation and a sanity che
         *   [2.5.1 Create a self-signed certificate](#Create_a_self-signed_certificate)
         *   [2.5.2 Configure slapd for SSL](#Configure_slapd_for_SSL)
         *   [2.5.3 Start slapd with SSL](#Start_slapd_with_SSL)
-*   [3 Next Steps](#Next_Steps)
+*   [3 Next steps](#Next_steps)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Client Authentication Checking](#Client_Authentication_Checking)
-    *   [4.2 LDAP Server Stops Suddenly](#LDAP_Server_Stops_Suddenly)
-    *   [4.3 LDAP Server Doesn't Start](#LDAP_Server_Doesn.27t_Start)
-*   [5 See Also](#See_Also)
+    *   [4.1 Client authentication checking](#Client_authentication_checking)
+    *   [4.2 LDAP server stops suddenly](#LDAP_server_stops_suddenly)
+    *   [4.3 LDAP server does not start](#LDAP_server_does_not_start)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -75,6 +75,8 @@ index   sn              pres,sub,eq
 index   dc              eq
 
 ```
+
+If you plan to use your LDAP server for authentication, you might want to check access control configuration in [LDAP authentication#LDAP Server Setup](/index.php/LDAP_authentication#LDAP_Server_Setup "LDAP authentication").
 
 Now prepare the database directory. You will need to rename the default config:
 
@@ -278,7 +280,7 @@ Then [restart](/index.php/Restart "Restart") `slapd.service`. If it was enabled 
 
 **Note:** If you created a self-signed certificate above, be sure to add `TLS_REQCERT allow` to `/etc/openldap/ldap.conf` on the client, or it will not be able connect to the server.
 
-## Next Steps
+## Next steps
 
 You now have a basic LDAP installation. The next step is to design your directory. The design is heavily dependent on what you are using it for. If you are new to LDAP, consider starting with a directory design recommended by the specific client services that will use the directory ([PAM](/index.php/PAM "PAM"), [Postfix](/index.php/Postfix "Postfix"), etc).
 
@@ -288,7 +290,7 @@ A nice web frontend is [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin").
 
 ## Troubleshooting
 
-### Client Authentication Checking
+### Client authentication checking
 
 If you cannot connect to your server for non-secure authentication
 
@@ -304,7 +306,7 @@ $ ldapsearch -x -H ldaps://ldaservername:636 -D cn=Manager,dc=example,dc=example
 
 ```
 
-### LDAP Server Stops Suddenly
+### LDAP server stops suddenly
 
 If you notice that slapd seems to start but then stops, try running:
 
@@ -315,7 +317,7 @@ If you notice that slapd seems to start but then stops, try running:
 
 to allow slapd write access to its data directory as the user "ldap".
 
-### LDAP Server Doesn't Start
+### LDAP server does not start
 
 Try starting the server from the command line with debugging output enabled:
 
@@ -324,7 +326,7 @@ Try starting the server from the command line with debugging output enabled:
 
 ```
 
-## See Also
+## See also
 
 *   [Official OpenLDAP Software 2.4 Administrator's Guide](http://www.openldap.org/doc/admin24/)
 *   [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin") is a web interface tool in the style of phpMyAdmin.

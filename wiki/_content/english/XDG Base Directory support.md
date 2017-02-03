@@ -245,7 +245,7 @@ Lastly, and this goes without saying, please verify that your solution is correc
 `$ export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter`
 
  |
-| [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[123]](https://github.com/irssi/irssi/pull/511) | `irssi --config="$XDG_CONFIG_HOME"/irssi/config \`
+| [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[123]](https://github.com/irssi/irssi/pull/511) | `$ irssi --config="$XDG_CONFIG_HOME"/irssi/config \`
 
 `--home="$XDG_DATA_HOME"/irssi`
 
@@ -353,7 +353,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
 `~/.Xdefaults`
 
- | Ultimately you [should be](http://superuser.com/questions/243914/xresources-or-xdefaults) using `Xresources` and since these resources are loaded via `xrdb` you can specify a path such as `xrdb -load ~/.config/X11/xresources`. |
+ | Ultimately you [should be](http://superuser.com/questions/243914/xresources-or-xdefaults) using `Xresources` and since these resources are loaded via `xrdb` you can specify a path such as `$ xrdb -load ~/.config/X11/xresources`. |
 | [xsel](http://www.vergenet.net/~conrad/software/xsel/) | `~/.xsel.log` | [[140]](https://github.com/kfish/xsel/issues/10) | `$ xsel --logfile "$XDG_CACHE_HOME"/xsel/xsel.log` |
 
 ## Hardcoded
@@ -373,7 +373,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 
  | [[141]](http://savannah.gnu.org/support/?108134) | A specified `bashrc` can be sourced from `/etc/bashrc`
 
-`export HISTFILE="$XDG_DATA_HOME"/bash/history`
+`$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
 
  |
 | [cabal](https://www.haskell.org/cabal/) | `~/.cabal` | [[142]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
@@ -406,9 +406,11 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
  | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
 | [Mercurial](/index.php/Mercurial "Mercurial") | `~/.hgrc` | You cannot append to the configuration search paths, just overwrite them completely. That means you need to be careful to add all default folders:
 
-`export HGRCPATH=/usr/lib/python2.7/site-packages/mercurial/default.d/:\ /etc/mercurial/hgrc:"${XDG_CONFIG_HOME}"/mercurial/hgrc`
+`$ export HGRCPATH=/usr/lib/python2.7/site-packages/mercurial/default.d/:\ /etc/mercurial/hgrc:"${XDG_CONFIG_HOME}"/mercurial/hgrc`
 
-To find the default configuration paths, use this: `env -u HGRCPATH hg debugconfig --debug | grep "read config"`
+To find the default configuration paths:
+
+`$ env -u HGRCPATH hg debugconfig --debug | grep "read config"`
 
  |
 | [milkytracker](http://www.milkytracker.org/) | `~/.milkytracker_config` | [[150]](https://github.com/Deltafire/MilkyTracker/issues/12) |
@@ -473,7 +475,7 @@ set viminfo+=n~/.cache/vim/viminfo
 
  | [[163]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
-`export HISTFILE="$XDG_DATA_HOME"/zsh/history`
+`$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 
  |
 

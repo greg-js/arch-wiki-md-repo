@@ -10,9 +10,9 @@ ZOL is a project funded by the [Lawrence Livermore National Laboratory](https://
 
 As a result:
 
-*   ZFS sill resides in [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and unofficial [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
+*   ZFS still resides in [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") and unofficial [archzfs](/index.php/Unofficial_user_repositories#archzfs "Unofficial user repositories") repository.
 *   ZFSonLinux project must keep up with Linux kernel versions. After making stable ZFSonLinux release - Arch ZFS maintainers release them.
-*   This situation sometimes locks-down normal rolling update process by unsatisfied dependencies, because new kernel version, proposed by update, is unsupported by ZFSonLinux.
+*   This situation sometimes locks down the normal rolling update process by unsatisfied dependencies because the new kernel version, proposed by update, is unsupported by ZFSonLinux.
 
 ## Contents
 
@@ -23,8 +23,8 @@ As a result:
 *   [2 Experimenting with ZFS](#Experimenting_with_ZFS)
 *   [3 Configuration](#Configuration)
     *   [3.1 Automatic Start](#Automatic_Start)
-*   [4 Create a storage pool](#Create_a_storage_pool)
-    *   [4.1 Advanced format disks](#Advanced_format_disks)
+*   [4 Creating a storage pool](#Creating_a_storage_pool)
+    *   [4.1 Advanced Format disks](#Advanced_Format_disks)
     *   [4.2 Verifying pool creation](#Verifying_pool_creation)
     *   [4.3 GRUB-compatible pool creation](#GRUB-compatible_pool_creation)
     *   [4.4 Importing a pool created by id](#Importing_a_pool_created_by_id)
@@ -39,15 +39,15 @@ As a result:
     *   [6.1 Scrub](#Scrub)
     *   [6.2 Check zfs pool status](#Check_zfs_pool_status)
     *   [6.3 Destroy a storage pool](#Destroy_a_storage_pool)
-    *   [6.4 Export a storage pool](#Export_a_storage_pool)
-    *   [6.5 Rename a Zpool](#Rename_a_Zpool)
-    *   [6.6 Setting a Different Mount Point](#Setting_a_Different_Mount_Point)
+    *   [6.4 Exporting a storage pool](#Exporting_a_storage_pool)
+    *   [6.5 Renaming a zpool](#Renaming_a_zpool)
+    *   [6.6 Setting a different mount point](#Setting_a_different_mount_point)
     *   [6.7 Swap volume](#Swap_volume)
     *   [6.8 Automatic snapshots](#Automatic_snapshots)
         *   [6.8.1 ZFS Automatic Snapshot Service for Linux](#ZFS_Automatic_Snapshot_Service_for_Linux)
         *   [6.8.2 ZFS Snapshot Manager](#ZFS_Snapshot_Manager)
 *   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 ZPool creation fails](#ZPool_creation_fails)
+    *   [7.1 Creating a zpool fails](#Creating_a_zpool_fails)
     *   [7.2 ZFS is using too much RAM](#ZFS_is_using_too_much_RAM)
     *   [7.3 Does not contain an EFI label](#Does_not_contain_an_EFI_label)
     *   [7.4 No hostid found](#No_hostid_found)
@@ -57,9 +57,9 @@ As a result:
     *   [7.6 Devices have different sector alignment](#Devices_have_different_sector_alignment)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
-    *   [8.2 Encryption in ZFS on linux](#Encryption_in_ZFS_on_linux)
+    *   [8.2 Encryption in ZFS on Linux](#Encryption_in_ZFS_on_Linux)
     *   [8.3 Emergency chroot repair with archzfs](#Emergency_chroot_repair_with_archzfs)
-    *   [8.4 Bindmount](#Bindmount)
+    *   [8.4 Bind mount](#Bind_mount)
         *   [8.4.1 fstab](#fstab)
         *   [8.4.2 systemd mount unit](#systemd_mount_unit)
 *   [9 See also](#See_also)
@@ -142,7 +142,7 @@ In order to mount zfs pools automatically on boot you need to enable the followi
 
 ```
 
-## Create a storage pool
+## Creating a storage pool
 
 Use `# parted --list` to see a list of all available drives. It is not necessary nor recommended to partition the drives before creating the zfs filesystem.
 
@@ -222,9 +222,9 @@ Here is an example for the full command:
 
 ```
 
-### Advanced format disks
+### Advanced Format disks
 
-In case Advanced Format disks are used which have a native sector size of 4096 bytes instead of 512 bytes, the automated sector size detection algorithm of ZFS might detect 512 bytes because the backwards compatibility with legacy systems. This would result in degraded performance. To make sure a correct sector size is used, the `ashift=12` option should be used (See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks)). The full command would in this case be:
+In case Advanced Format disks are used which have a native sector size of 4096 bytes instead of 512 bytes, the automated sector size detection algorithm of ZFS might detect 512 bytes because of backwards compatibility with legacy systems. This would result in degraded performance. To make sure a correct sector size is used, the `ashift=12` option should be used (See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks)). The full command would in this case be:
 
 ```
 # zpool create -f -o ashift=12 -m /mnt/data bigdata \
@@ -523,7 +523,7 @@ And now when checking the status:
 
 To find the name of the pool, see [#Check zfs pool status](#Check_zfs_pool_status).
 
-### Export a storage pool
+### Exporting a storage pool
 
 If a storage pool is to be used on another system, it will first need to be exported. It is also necessary to export a pool if it has been imported from the archiso as the hostid is different in the archiso as it is in the booted system. The zpool command will refuse to import any storage pools that have not been exported. It is possible to force the import with the `-f` argument, but this is considered bad form.
 
@@ -536,7 +536,7 @@ To export a pool,
 
 ```
 
-### Rename a Zpool
+### Renaming a zpool
 
 Renaming a zpool that is already created is accomplished in 2 steps:
 
@@ -546,7 +546,7 @@ Renaming a zpool that is already created is accomplished in 2 steps:
 
 ```
 
-### Setting a Different Mount Point
+### Setting a different mount point
 
 The mount point for a given zpool can be moved at will with one command:
 
@@ -559,7 +559,7 @@ The mount point for a given zpool can be moved at will with one command:
 
 ZFS does not allow to use swapfiles, but users can use a ZFS volume (ZVOL) as swap. It is importart to set the ZVOL block size to match the system page size, which can be obtained by the `getconf PAGESIZE` command (default on x86_64 is 4KiB). Another option useful for keeping the system running well in low-memory situations is not caching the ZVOL data.
 
-Create a 8GiB zfs volume:
+Create a 8 GiB zfs volume:
 
 ```
 # zfs create -V 8G -b $(getconf PAGESIZE) \
@@ -606,7 +606,7 @@ The package also supports configurable replication to other machines running ZFS
 
 ## Troubleshooting
 
-### ZPool creation fails
+### Creating a zpool fails
 
 If the following error occurs then it can be fixed.
 
@@ -817,7 +817,7 @@ archzfs-linux
 
 Complete [Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso") to finally build the iso.
 
-### Encryption in ZFS on linux
+### Encryption in ZFS on Linux
 
 ZFS on linux does not support encryption directly, but zpools can be created in dm-crypt block devices. Since the zpool is created on the plain-text abstraction it is possible to have the data encrypted while having all the advantages of ZFS like deduplication, compression, and data robustness.
 
@@ -921,7 +921,7 @@ Regenerate the ramdisk:
 
 There should be no errors.
 
-### Bindmount
+### Bind mount
 
 Here a bind mount from /mnt/zfspool to /srv/nfs4/music is created. The configuration ensures that the zfs pool is ready before the bind mount is created.
 

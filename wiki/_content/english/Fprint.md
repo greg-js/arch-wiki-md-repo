@@ -61,6 +61,6 @@ $ fprintd-delete [username] && fprintd-enroll -f left-thumb [username] && fprint
 
 ```
 
-You will be asked to scan the given finger. After that, the signature is created in `/var/lib/fprint/`.
+You will be asked to scan the given finger. Swipe your right index finger **five times**. After that, the signature is created in `/var/lib/fprint/`.
 
 For more information, see `man fprintd`.

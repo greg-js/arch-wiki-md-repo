@@ -32,6 +32,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
     *   [6.1 Suspend & Hibernate](#Suspend_.26_Hibernate)
     *   [6.2 Battery](#Battery)
 *   [7 Bluetooth](#Bluetooth)
+*   [8 Thunderbolt 3 Docks](#Thunderbolt_3_Docks)
 
 ## Pre-Installation System Settings
 
@@ -164,3 +165,9 @@ Battery life can be improved by installing [powertop](https://www.archlinux.org/
 ## Bluetooth
 
 Bluetooth is disabled by default. If you wish to use Bluetooth you'll need to install some firmware. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for details.
+
+## Thunderbolt 3 Docks
+
+It is possible to get video, audio, Ethernet and USB devices working by updating your BIOS to version >=1.2.19 and disabling Thunderbolt security in your bios settings. If you don't disable Thunderbolt security, then only video and power will work (at lest on the Dell TB16 dock).
+
+You can update your bios either [manually](http://www.dell.com/support/article/hr/en/hrdhs1/SLN171755/en) or by using fwupdmgr although if you installed arch by just bundling everything into /boot as some guides suggest then your only option is to update manually util this [issue](https://github.com/rhinstaller/fwupdate/issues/58) is resolved.

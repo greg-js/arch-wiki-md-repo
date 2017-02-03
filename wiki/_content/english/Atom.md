@@ -7,6 +7,7 @@
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Environment variables not sourced](#Environment_variables_not_sourced)
     *   [3.2 Unable to delete files](#Unable_to_delete_files)
+    *   [3.3 Black window content on startup](#Black_window_content_on_startup)
 
 ## Installation
 
@@ -59,3 +60,7 @@ $ ELECTRON_TRASH=kioclient5 atom
 ```
 
 At the time of writing, [Electron](/index.php/Electron "Electron") supports `kioclient5`, `kioclient`, `trash-cli` and `gvfs-trash` (default). More info is available at this [Github pull request page](https://github.com/electron/electron/pull/7178).
+
+### Black window content on startup
+
+With some video devices, such as the one for [VirtualBox](/index.php/VirtualBox "VirtualBox") guests, Atom wont render the window content without GPU acceleration disabled by starting it with the `--disable-gpu` flag, or by editing `.atom/config.cson` and adding/changing the config parameter `useHardwareAcceleration: false` under the `editor` section.

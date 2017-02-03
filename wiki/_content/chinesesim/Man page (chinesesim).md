@@ -7,12 +7,9 @@ man手册页被设计成“自足”的文档库，即论述相关问题时无�
 *   [1 阅读手册页](#.E9.98.85.E8.AF.BB.E6.89.8B.E5.86.8C.E9.A1.B5)
 *   [2 格式](#.E6.A0.BC.E5.BC.8F)
 *   [3 搜索手册页](#.E6.90.9C.E7.B4.A2.E6.89.8B.E5.86.8C.E9.A1.B5)
-*   [4 彩色显示](#.E5.BD.A9.E8.89.B2.E6.98.BE.E7.A4.BA)
-    *   [4.1 方法一：使用most](#.E6.96.B9.E6.B3.95.E4.B8.80.EF.BC.9A.E4.BD.BF.E7.94.A8most)
-    *   [4.2 方法二：使用less](#.E6.96.B9.E6.B3.95.E4.BA.8C.EF.BC.9A.E4.BD.BF.E7.94.A8less)
-*   [5 使用浏览器阅读手册页](#.E4.BD.BF.E7.94.A8.E6.B5.8F.E8.A7.88.E5.99.A8.E9.98.85.E8.AF.BB.E6.89.8B.E5.86.8C.E9.A1.B5)
-    *   [5.1 使用本地手册页](#.E4.BD.BF.E7.94.A8.E6.9C.AC.E5.9C.B0.E6.89.8B.E5.86.8C.E9.A1.B5)
-    *   [5.2 使用在线手册页](#.E4.BD.BF.E7.94.A8.E5.9C.A8.E7.BA.BF.E6.89.8B.E5.86.8C.E9.A1.B5)
+*   [4 使用浏览器阅读手册页](#.E4.BD.BF.E7.94.A8.E6.B5.8F.E8.A7.88.E5.99.A8.E9.98.85.E8.AF.BB.E6.89.8B.E5.86.8C.E9.A1.B5)
+    *   [4.1 使用本地手册页](#.E4.BD.BF.E7.94.A8.E6.9C.AC.E5.9C.B0.E6.89.8B.E5.86.8C.E9.A1.B5)
+    *   [4.2 使用在线手册页](#.E4.BD.BF.E7.94.A8.E5.9C.A8.E7.BA.BF.E6.89.8B.E5.86.8C.E9.A1.B5)
 
 ## 阅读手册页
 
@@ -109,109 +106,6 @@ $ apropos password
 $ man -K password
 
 ```
-
-## 彩色显示
-
-对很多人来说，彩色手册页比黑白的更加易于大脑消化吸收。
-
-有两种常用的实现man手册页彩色显示的方法：使用 `most` 或 `less` （一“多”一“少”）。前者更加易于配置，但后者功能更强大。
-
-### 方法一：使用most
-
-首先通过[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装[most](https://www.archlinux.org/packages/?name=most)：
-
-```
-# pacman -S most
-
-```
-
-该工具类似`less`和`more`，支持彩色化文本。
-
-编辑文件`/etc/man_db.conf`，去掉pager项的注释并修改为：
-
-```
-DEFINE     pager     most -s
-
-```
-
-然后测试一下吧。
-
-通过修改`~/.mostrc`（不存在的话请自行创建）或全局配置文件可以调整配色。例如：
-
-```
-% Color settings
-color normal lightgray black
-color status yellow blue
-color underline yellow black
-color overstrike brightblue black
-
-```
-
-以下示例配置`more`的使用类似`less`的快捷键：
-
-```
-% less-like keybindings
-unsetkey "^K"
-unsetkey "g"
-unsetkey "G"
-unsetkey ":"
-
-setkey next_file ":n"
-setkey find_file ":e"
-setkey next_file ":p"
-setkey toggle_options ":o"
-setkey toggle_case ":c"
-setkey delete_file ":d"
-setkey exit ":q"
-
-setkey bob "g"
-setkey eob "G"
-setkey down "e"
-setkey down "E"
-setkey down "j"
-setkey down "^N"
-setkey up "y"
-setkey up "^Y"
-setkey up "k"
-setkey up "^P"
-setkey up "^K"
-setkey page_down "f"
-setkey page_down "^F"
-setkey page_up "b"
-setkey page_up "^B"
-setkey other_window "z"
-setkey other_window "w"
-setkey search_backward "?"
-setkey bob "p"
-setkey goto_mark "'"
-setkey find_file "E"
-setkey edit "v"
-
-```
-
-### 方法二：使用less
-
-	<small>*来源： [nion's blog - less colors for man pages](http://nion.modprobe.de/blog/archives/572-less-colors-for-man-pages.html)*</small>
-
-此外，还可以使用`less`彩色输出man手册页。`less`提供更多功能，但需要更复杂的配置，适用于高级用户。
-
-将以下内容加入shell配置文件（如[Bash](/index.php/Bash "Bash")的是`~/.bashrc`）：
-
-```
-man() {
-	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;37m") \
-		LESS_TERMCAP_md=$(printf "\e[1;37m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;47;30m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[0;36m") \
-			man "$@"
-}
-```
-
-要调整颜色，参见：[Wikipedia:ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code") for reference.
 
 ## 使用浏览器阅读手册页
 

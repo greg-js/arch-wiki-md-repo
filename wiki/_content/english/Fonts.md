@@ -333,7 +333,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   Tamsyn ([tamsyn-font](https://www.archlinux.org/packages/?name=tamsyn-font))
 *   [Terminus](http://terminus-font.sourceforge.net/) ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font))
 *   [Tewi](https://github.com/lucy/tewi-font) ([bdf-tewi-git](https://aur.archlinux.org/packages/bdf-tewi-git/))
-*   Unifont (glyphs like (look of disapproval)) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))
+*   [Unifont](http://unifoundry.com/unifont.html) ([most extensive](https://en.wikipedia.org/wiki/Unicode_font#Comparison_of_fonts "wikipedia:Unicode font") Unicode coverage of any font) ([bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont))
 
 #### Sans-serif
 
@@ -467,10 +467,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 #### Indic
 
 *   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Font for Bangla
-*   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Indic OpenType Fonts collection (containing ttf-freebanglafont)
-
-	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
-
+*   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Indic OpenType Fonts collection (containing ttf-freebanglafont), provides the character [U+0CA0](http://www.fileformat.info/info/unicode/char/ca0/index.htm) "ಠ"
 *   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/) - Indic TrueType fonts from Fedora Project (containing Oriya Fonts and more)
 *   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/) - Devanagari TrueType fonts (contains 283 fonts)
 *   [ttf-gurmukhi-fonts_sikhnet](https://aur.archlinux.org/packages/ttf-gurmukhi-fonts_sikhnet/) - TrueType Gurmukhi fonts (gurbaniwebthick,prabhki)

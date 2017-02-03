@@ -17,7 +17,7 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
             *   [2.1.6.1 GRUB](#GRUB)
         *   [2.1.7 Tweaking](#Tweaking)
         *   [2.1.8 Audio](#Audio)
-        *   [2.1.9 Unresolved Issues](#Unresolved_Issues)
+        *   [2.1.9 Webcam](#Webcam)
     *   [2.2 2014 version](#2014_version)
         *   [2.2.1 Problems](#Problems)
         *   [2.2.2 Possible trackpad solution](#Possible_trackpad_solution)
@@ -206,9 +206,15 @@ If you are using an external monitor that is not [HiDPI](/index.php/HiDPI "HiDPI
 
 On the latest 'KabyLake' Intel CPU, if you also have a dual-boot with Windows, you might experience some audio issues when booting to Windows and restarting on Linux. The problem is no sound from the speakers and some cracking noises on the headphones - especially when using the touchpad -. No official solution has been posted yet, but a quick hack is to completely shut down the computer (so power off, not restart).
 
-#### Unresolved Issues
+#### Webcam
 
-*   the webcam does not seem to work well with a basic installation. External webcams work fine. It seems to fail when the resolution is anything but 640x480\. [guvcview](https://www.archlinux.org/packages/?name=guvcview) works because it defaults to the resolution. [cheese](https://www.archlinux.org/packages/?name=cheese) and [Google Hangouts](https://hangouts.google.com) do not because they default to the max resolution. your mileage may vary.
+Setting the uvcvideo option "quirks=128" appears to let the webcam work at 720p30, thus enabling [Google Hangouts](https://hangouts.google.com) support. [cheese](https://www.archlinux.org/packages/?name=cheese) works after changing resolution to 720p and relaunching. Multiplying the quirk by a power of 2+ further improves video quality to a point. "quirks=512" seems to work best for one user.
+
+ `/etc/modprobe.d/uvcvideo.conf` 
+```
+## fix issue with built-in webcam
+options uvcvideo quirks=512
+```
 
 ### 2014 version
 
