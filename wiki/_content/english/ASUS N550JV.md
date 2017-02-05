@@ -233,6 +233,8 @@ After installing Intel with Nvidia graphics drivers, messages should dissappear.
 
 ### USB devices and sleep
 
+**Note:** You might experience USB devices (e.g. mouse) are not being turned on immediately after wake up. Current 4.9 kernel (and probably further versions) does not have this issue and below fix might not be required
+
 Hibernate via systemd works out of the box when the swap space or file is correctly identified in the resume kernel parameter. However, even though the system suspends properly it will lock up when resuming. This is due to the USB controller not properly turning off on its own. Create two the following files as shown:
 
  `/etc/systemd/system/root-suspend.service` 

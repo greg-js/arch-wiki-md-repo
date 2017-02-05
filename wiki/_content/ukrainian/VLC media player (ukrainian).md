@@ -16,6 +16,14 @@
     *   [5.5 Запобігання відкриттю великої кількості вікон](#.D0.97.D0.B0.D0.BF.D0.BE.D0.B1.D1.96.D0.B3.D0.B0.D0.BD.D0.BD.D1.8F_.D0.B2.D1.96.D0.B4.D0.BA.D1.80.D0.B8.D1.82.D1.82.D1.8E_.D0.B2.D0.B5.D0.BB.D0.B8.D0.BA.D0.BE.D1.97_.D0.BA.D1.96.D0.BB.D1.8C.D0.BA.D0.BE.D1.81.D1.82.D1.96_.D0.B2.D1.96.D0.BA.D0.BE.D0.BD)
     *   [5.6 Підтримка прискорення апаратноо засобу](#.D0.9F.D1.96.D0.B4.D1.82.D1.80.D0.B8.D0.BC.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.BD.D1.8F_.D0.B0.D0.BF.D0.B0.D1.80.D0.B0.D1.82.D0.BD.D0.BE.D0.BE_.D0.B7.D0.B0.D1.81.D0.BE.D0.B1.D1.83)
     *   [5.7 systemd service](#systemd_service)
+*   [6 Вирішення проблем](#.D0.92.D0.B8.D1.80.D1.96.D1.88.D0.B5.D0.BD.D0.BD.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [6.1 Не відтворюється відео чи інші проблеми після оновлення](#.D0.9D.D0.B5_.D0.B2.D1.96.D0.B4.D1.82.D0.B2.D0.BE.D1.80.D1.8E.D1.94.D1.82.D1.8C.D1.81.D1.8F_.D0.B2.D1.96.D0.B4.D0.B5.D0.BE_.D1.87.D0.B8_.D1.96.D0.BD.D1.88.D1.96_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B8_.D0.BF.D1.96.D1.81.D0.BB.D1.8F_.D0.BE.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.BD.D1.8F)
+    *   [6.2 Збій сегментації](#.D0.97.D0.B1.D1.96.D0.B9_.D1.81.D0.B5.D0.B3.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.86.D1.96.D1.97)
+    *   [6.3 Немає іконок у випадаючому меню](#.D0.9D.D0.B5.D0.BC.D0.B0.D1.94_.D1.96.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA_.D1.83_.D0.B2.D0.B8.D0.BF.D0.B0.D0.B4.D0.B0.D1.8E.D1.87.D0.BE.D0.BC.D1.83_.D0.BC.D0.B5.D0.BD.D1.8E)
+    *   [6.4 Помилка при відкритті VDPAU](#.D0.9F.D0.BE.D0.BC.D0.B8.D0.BB.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B2.D1.96.D0.B4.D0.BA.D1.80.D0.B8.D1.82.D1.82.D1.96_VDPAU)
+    *   [6.5 ВІдео перекриває робочий стіл, коректно не масштабується і не знаходиться в правильному положенні](#.D0.92.D0.86.D0.B4.D0.B5.D0.BE_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D1.80.D0.B8.D0.B2.D0.B0.D1.94_.D1.80.D0.BE.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D1.96.D0.BB.2C_.D0.BA.D0.BE.D1.80.D0.B5.D0.BA.D1.82.D0.BD.D0.BE_.D0.BD.D0.B5_.D0.BC.D0.B0.D1.81.D1.88.D1.82.D0.B0.D0.B1.D1.83.D1.94.D1.82.D1.8C.D1.81.D1.8F_.D1.96_.D0.BD.D0.B5_.D0.B7.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82.D1.8C.D1.81.D1.8F_.D0.B2_.D0.BF.D1.80.D0.B0.D0.B2.D0.B8.D0.BB.D1.8C.D0.BD.D0.BE.D0.BC.D1.83_.D0.BF.D0.BE.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D1.96)
+    *   [6.6 Не програються через SFTP медіа-файли, що мають в імені пробіли](#.D0.9D.D0.B5_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D1.8E.D1.82.D1.8C.D1.81.D1.8F_.D1.87.D0.B5.D1.80.D0.B5.D0.B7_SFTP_.D0.BC.D0.B5.D0.B4.D1.96.D0.B0-.D1.84.D0.B0.D0.B9.D0.BB.D0.B8.2C_.D1.89.D0.BE_.D0.BC.D0.B0.D1.8E.D1.82.D1.8C_.D0.B2_.D1.96.D0.BC.D0.B5.D0.BD.D1.96_.D0.BF.D1.80.D0.BE.D0.B1.D1.96.D0.BB.D0.B8)
+*   [7 Дивіться також](#.D0.94.D0.B8.D0.B2.D1.96.D1.82.D1.8C.D1.81.D1.8F_.D1.82.D0.B0.D0.BA.D0.BE.D0.B6)
 
 ## Встановлення
 
@@ -165,3 +173,77 @@ WantedBy=multi-user.target
 ```
 
 [Запустіть](/index.php/Start "Start") та [ввімкніть](/index.php/Enable "Enable") `vlc.service`. Ввійдіть до http://*yourmachine*:8090/ без імені користувача та з паролем, який ви призначили в файлі systemd service.
+
+## Вирішення проблем
+
+### Не відтворюється відео чи інші проблеми після оновлення
+
+VLC має і буде мати проблем з налаштуванням навіть в незначних релізах. Перед тим, як писати про баґ, видаліть чи змініть ваші конфігурації `~/.config/vlc` і переконайтесь, проблема залишилась.
+
+Якщо ви використовуєте ffmpeg-варіант з AUR, впевніться, що ви так само і оновились. Pacman не оновить пакунок, коли це необхідно, і конфлікт порушить роботу VLC.
+
+### Збій сегментації
+
+При запуску VLC, ви можете отримати збій сегментації. Виключивши загальні фактори такі, як [Microcode](/index.php/Microcode "Microcode"), можливим вирішенням є наступне:
+
+```
+ # /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
+
+```
+
+Потім перевстановіть VLC.
+
+Іншим обхідним рішенням може бути перевстановлення VLC в `LD_PRELOAD` середовищі:
+
+```
+# LD_PRELOAD=/usr/lib/libgobject-2.0.so.0 pacman -S vlc
+
+```
+
+### Немає іконок у випадаючому меню
+
+Таке може трапитись у XFCE. Відсутніми виявляться такі іконки, як PCI card, наприклад.
+
+Виконайте ці команди, щоб реактивувати іконки:
+
+```
+$ gconftool-2 --type boolean --set /desktop/gnome/interface/buttons_have_icons true
+$ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
+```
+
+### Помилка при відкритті VDPAU
+
+Дивіться [Hardware video acceleration#Failed to open VDPAU backend](/index.php/Hardware_video_acceleration#Failed_to_open_VDPAU_backend "Hardware video acceleration").
+
+Якщо ваша система можливо не підтримує VDPAU, ви повинні вказати VLC, щоб використовував VA-API замість того. Дивіться [#Hardware acceleration support](#Hardware_acceleration_support).
+
+### ВІдео перекриває робочий стіл, коректно не масштабується і не знаходиться в правильному положенні
+
+Це трапляється як мінімум на картах Intel. Вирішенням проблеми є коригування виводу в налаштуваннях відео на *OpenGL GLX (XCB)* та *Input/Codecs* - встановити декодування на *VA-API* (вибрати будь-який з них).
+
+### Не програються через SFTP медіа-файли, що мають в імені пробіли
+
+Якщо VLC не програє будь-які відео- чи аудіо-файли через SFTP, спочатку ви повинні впевнитись, що sshfs встановлено.
+
+Якщо він відмовляється програвати будь-які медіа-файли, що містять відступи, через SFTP і постійно запитує підтвердження аутентифікації, то змініть рядок
+
+```
+Exec=/usr/bin/vlc --started-from-file %U
+
+```
+
+на
+
+```
+Exec=/usr/bin/vlc --started-from-file %F
+
+```
+
+у файлі vlc.desktop [[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
+
+## Дивіться також
+
+*   [List of applications (Українська)#Multimedia](/index.php/List_of_applications_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)#Multimedia "List of applications (Українська)")
+*   [Домашня сторінка VLC](http://www.videolan.org/vlc/)
+*   [playerctl](https://github.com/acrisci/playerctl): Командна утиліта та бібліотека для контролювання медіа-плеєрів
+*   [Контролювання VLC в браузері](http://wiki.videolan.org/Control_VLC_via_a_browser)

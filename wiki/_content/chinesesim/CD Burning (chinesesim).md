@@ -1,4 +1,4 @@
-From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive"):
+摘自 [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Optical disc drive"):
 
 	In computing, an optical disc drive (ODD) is a disk drive that uses laser light or electromagnetic waves within or near the visible light spectrum as part of the process of reading or writing data to or from optical discs. Some drives can only read from discs, but recent drives are commonly both readers and recorders, also called burners or writers. Compact discs, DVDs, and Blu-ray discs are common types of optical media which can be read and recorded by such drives. Optical drive is the generic name; drives are usually described as "CD" "DVD", or "Blu-ray", followed by "drive", "writer", etc.
 
@@ -25,7 +25,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
         *   [1.15.1 Multi-session by cdrecord](#Multi-session_by_cdrecord)
         *   [1.15.2 Multi-session by growisofs](#Multi-session_by_growisofs)
         *   [1.15.3 Multi-session by xorriso](#Multi-session_by_xorriso)
-    *   [1.16 BD Defect Management](#BD_Defect_Management)
+    *   [1.16 BD缺陷管理](#BD.E7.BC.BA.E9.99.B7.E7.AE.A1.E7.90.86)
     *   [1.17 烧录音频CD](#.E7.83.A7.E5.BD.95.E9.9F.B3.E9.A2.91CD)
     *   [1.18 烧录BIN/CUE](#.E7.83.A7.E5.BD.95BIN.2FCUE)
         *   [1.18.1 TOC/CUE/BIN for mixed-mode disks](#TOC.2FCUE.2FBIN_for_mixed-mode_disks)
@@ -41,7 +41,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Optical_disc_drive "wikipedia:Opt
 *   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [4.1 Brasero fails to normalize audio CD](#Brasero_fails_to_normalize_audio_CD)
     *   [4.2 VLC: Error "... could not open the disc /dev/dvd"](#VLC:_Error_.22..._could_not_open_the_disc_.2Fdev.2Fdvd.22)
-    *   [4.3 DVD drive is noisy](#DVD_drive_is_noisy)
+    *   [4.3 DVD设备噪音大](#DVD.E8.AE.BE.E5.A4.87.E5.99.AA.E9.9F.B3.E5.A4.A7)
     *   [4.4 Playback does not work with new computer (new DVD-Drive)](#Playback_does_not_work_with_new_computer_.28new_DVD-Drive.29)
     *   [4.5 None of the above programs are able to rip/encode a DVD to my hard disk!](#None_of_the_above_programs_are_able_to_rip.2Fencode_a_DVD_to_my_hard_disk.21)
     *   [4.6 GUI program log indicates problems with backend program](#GUI_program_log_indicates_problems_with_backend_program)
@@ -144,9 +144,9 @@ $ mkisofs -V "*BACKUP_2013_07_27*" -J -r -o *backup_2013_07_27.iso* \
 
 So this example puts the disk directory `/home/user/photos`, `/home/user/mail` and `/home/user/holidays/photos`, respectively in the ISO image as `/photos`, `/mail` and `/photos/holidays`.
 
-Programs *mkisofs* and *xorrisofs* accept the same options. For secure backups, consider using *xorrisofs* with option `--for_backup`, which records eventual ACLs and stores an MD5 checksum for each data file.
+*mkisofs* 和 *xorrisofs* 接受相同的选项。For secure backups, consider using *xorrisofs* with option `--for_backup`, which records eventual ACLs and stores an MD5 checksum for each data file.
 
-See the manuals of the ISO 9660 programs for more info about their options:
+了解更多有关ISO 9660程序选项的信息，请查看man手册：
 
 *   [mkisofs](http://cdrtools.sourceforge.net/private/man/cdrecord/index.html)
 *   [xorrisofs](https://www.gnu.org/software/xorriso/man_1_xorrisofs.html)
@@ -171,7 +171,7 @@ See the manuals of the ISO 9660 programs for more info about their options:
 
 ### 将img/ccd转换为ISO映像
 
-To convert an `img`/`ccd` image, you can use [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso):
+转换一个 `img`/`ccd` 映像，你可以使用 [ccd2iso](https://www.archlinux.org/packages/?name=ccd2iso)：
 
 ```
 $ ccd2iso *~/image.img* *~/image.iso*
@@ -296,7 +296,7 @@ Unlike DVD-RAM, DVD+RW, and BD-RE, formatted DVD-RW cannot be used as (slow) har
 
 BD-RE第一次使用需要被格式化。当烧录程序检测到未格式化状态时这会自动完成。Nevertheless the size of the payload area can be influenced by expert versions of the format commands shown above for DVD-RW.
 
-BD-R can be used unformatted or formatted. Unformatted they are written with full nominal speed and offer maximum storage capacity. Formatted they get checkread during write operations and bad blocks get replaced by blocks from the Spare Area. This reduces write speed to a half or less of nominal speed. The default sized Spare Area reduces the storage capacity by 768 MiB.
+格式化或未格式化BD-R都能被使用。Unformatted they are written with full nominal speed and offer maximum storage capacity. Formatted they get checkread during write operations and bad blocks get replaced by blocks from the Spare Area. This reduces write speed to a half or less of nominal speed. The default sized Spare Area reduces the storage capacity by 768 MiB.
 
 growisofs formats BD-R by default. The others do not. growisofs can be kept from formatting. cdrskin and xorriso can write with full nominal speed on formatted BD-RE or BD-R:
 
@@ -335,7 +335,7 @@ $ growisofs -dvd-compat -Z */dev/sr0*=*isoimage.iso*
 
 你可以校验以烧录介质的完整性以确保没有错误。别忘了总在校验之前弹出介质并重新插入。这会确保没有任何内核缓存会被用来读取数据。
 
-First calculate the MD5 checksum of the original ISO image:
+首先计算原ISO映像的MD5校验和：
 
  `$ md5sum isoimage.iso` 
 ```
@@ -343,7 +343,7 @@ First calculate the MD5 checksum of the original ISO image:
 
 ```
 
-Next calculate the MD5 checksum of the ISO file system on the medium. Although some media types deliver exactly the same amount of data as have been submitted to the burn program, many others append trailing garbage when being read. So you should restrict reading to the size of the ISO image file.
+然后计算介质中ISO文件系统的MD5校验和： 虽然有的介质类型存储了和被提交给烧录程序的完全一样数量的数据，但其它的会在被读取时附加尾随的垃圾。所以你应该ISO映像文件读取的大小。
 
 ```
 $ blocks=$(expr $(du -b isoimage.iso | awk '{print $1}') / 2048)
@@ -372,7 +372,7 @@ $ mkisofs -V "ARCHIVE_2013_07_27" -J -r ./for_iso | \
 
 ```
 
-Option `-waiti` is not really needed here. It prevents *cdrecord* from writing to the medium before *mkisofs* starts its output. This would allow *mkisofs* to read the medium without disturbing an already started burn run. See next section about multi-session.
+这里其实不需要选项 `-waiti`。It prevents *cdrecord* from writing to the medium before *mkisofs* starts its output. This would allow *mkisofs* to read the medium without disturbing an already started burn run. See next section about multi-session.
 
 On DVD and BD, you may let *growisofs* operate *mkisofs* for you and burn its output on-the-fly
 
@@ -389,7 +389,7 @@ Linux and many other operating systems will mount the directory tree in the last
 
 #### Multi-session by cdrecord
 
-CD-R and CD-RW stay writable (aka "appendable") if cdrecord option `-multi` was used
+如果cdrecord的选项 `-multi` 被使用了，CD-R和CD-RW会保持可写（又称为“可附加”）
 
 ```
 $ cdrecord -v -multi dev=*/dev/sr0* *isoimage.iso*
@@ -469,9 +469,9 @@ $ xorriso -dev */dev/sr0* \
 
 For details see the [manual page](https://www.gnu.org/software/xorriso/man_1_xorriso.html) and especially its [examples](https://www.gnu.org/software/xorriso/man_1_xorriso.html#EXAMPLES)
 
-### BD Defect Management
+### BD缺陷管理
 
-BD-RE and formatted BD-R media are normally written with enabled Defect Management. This feature reads the written blocks while they are still stored in the drive buffer. In case of poor read quality the blocks get written again or redirected to the *Spare Area* where the data get stored in replacement blocks.
+正常情况下BD-RE和已格式化的BD-R会在启用缺陷管理时写入。 This feature reads the written blocks while they are still stored in the drive buffer. In case of poor read quality the blocks get written again or redirected to the *Spare Area* where the data get stored in replacement blocks.
 
 This checkreading reduces write speed to at most half of the nominal speed of drive and BD medium. Sometimes it is even worse. Heavy use of the Spare Area causes long delays during read operations. So Defect Management is not always desirable.
 
@@ -483,30 +483,30 @@ This checkreading reduces write speed to at most half of the nominal speed of dr
 
 ### 烧录音频CD
 
-Create your audio tracks and store them as uncompressed, 16-bit, stereo WAV files. To convert MP3 to WAV, ensure [lame](https://www.archlinux.org/packages/?name=lame) is installed, *cd* to the directory with your MP3 files, and run:
+创建你的音频轨道并保存为未压缩、16位、立体声的WAV文件。要把MP3转为WAV，确保已安装 [lame](https://www.archlinux.org/packages/?name=lame)，*cd* 进入有MP3文件的目录，运行：
 
 ```
 $ for i in *.mp3; do lame --decode "$i" "$(basename "$i" .mp3)".wav; done
 
 ```
 
-In case you get an error when trying to burn WAV files converted with LAME, try decoding with [mpg123](https://www.archlinux.org/packages/?name=mpg123):
+为了确保烧录用LAME转换的WAV文件时不报错，试试用 [mpg123](https://www.archlinux.org/packages/?name=mpg123) 编码：
 
 ```
 $ for i in *.mp3; do mpg123 --rate 44100 --stereo --buffer 3072 --resync -w $(basename $i .mp3).wav $i; done
 
 ```
 
-Name the audio files in a manner that will cause them to be listed in the desired track order when listed alphabetically, such as `01.wav`, `02.wav`, `03.wav`, etc. Use the following command to simulate burning the WAV files as an audio CD:
+将音频文件命名为可以让它们在以字母顺序排列时变成想要的轨道顺序的样子，比如 `01.wav`，`02.wav`，`03.wav`，等等。用下面的命令来模拟将WAV文件烧录为音频CD：
 
 ```
 $ cdrecord **-dummy** -v -pad speed=1 dev=*/dev/sr0* -dao -swab *.wav
 
 ```
 
-If everything worked, you can remove the `dummy` flag to actually burn the CD.
+如果一切顺利，你可以去掉 `dummy` 来真正烧录。
 
-To test the new audio CD, use [MPlayer](/index.php/MPlayer "MPlayer"):
+用 [MPlayer](/index.php/MPlayer "MPlayer") 来测试新的音频CD：
 
 ```
 $ mplayer cdda://
@@ -515,7 +515,7 @@ $ mplayer cdda://
 
 ### 烧录BIN/CUE
 
-To burn a BIN/CUE image run:
+烧录一个BIN/CUE映像，运行：
 
 ```
 $ cdrdao write --device */dev/sr0* *image.cue*
@@ -546,11 +546,11 @@ Tell the command lines you tried, the medium type (e.g. CD-R, DVD+RW, ...), and 
 
 ### 用GUI程序烧录CD/DVD/BD
 
-There are several applications available to burn CDs in a graphical environment.
+有若干个在图形环境下烧录CD的程序：
 
-See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.org/wiki/Comparison_of_disc_authoring_software "wikipedia:Comparison of disc authoring software").
+另请参阅 [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.org/wiki/Comparison_of_disc_authoring_software "wikipedia:Comparison of disc authoring software").
 
-*   **[AcetoneISO](https://en.wikipedia.org/wiki/AcetoneISO "wikipedia:AcetoneISO")** — All-in-one ISO tool (supports BIN, MDF, NRG, IMG, DAA, DMG, CDI, B5I, BWI, PDI and ISO).
+*   **[AcetoneISO](https://en.wikipedia.org/wiki/AcetoneISO "wikipedia:AcetoneISO")** — 一体化ISO工具（支持BIN，MDF，NRG，IMG，DAA，DMG，CDI，B5I，BWI，PDI和ISO）。
 
 	[http://sourceforge.net/projects/acetoneiso](http://sourceforge.net/projects/acetoneiso) || [acetoneiso2](https://www.archlinux.org/packages/?name=acetoneiso2)
 
@@ -558,11 +558,11 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 	[http://bashburn.dose.se/](http://bashburn.dose.se/) || [bashburn](https://www.archlinux.org/packages/?name=bashburn)
 
-*   **[Brasero](https://en.wikipedia.org/wiki/Brasero_(software) "wikipedia:Brasero (software)")** — Disc burning application for the GNOME desktop that is designed to be as simple as possible. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
+*   **[Brasero](https://en.wikipedia.org/wiki/Brasero_(software) "wikipedia:Brasero (software)")** — GNOME桌面的光碟烧录程序，被设计得尽可能简单易用。[gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/)的一部分。
 
 	[https://wiki.gnome.org/Apps/Brasero](https://wiki.gnome.org/Apps/Brasero) || [brasero](https://www.archlinux.org/packages/?name=brasero)
 
-*   **cdw** — Ncurses frontend to *cdrecord*, *mkisofs*, *growisofs*, *dvd+rw-mediainfo*, *dvd+rw-format* and *xorriso*.
+*   **cdw** — *cdrecord*，*mkisofs*，*growisofs*，*dvd+rw-mediainfo*，*dvd+rw-format* 和*xorriso*的前端。
 
 	[http://cdw.sourceforge.net/](http://cdw.sourceforge.net/) || [cdw](https://aur.archlinux.org/packages/cdw/)
 
@@ -739,7 +739,7 @@ As a workaround you can disable the normalization plugin using the *Edit > Plugi
 
 ### VLC: Error "... could not open the disc /dev/dvd"
 
-If you get an error like
+如果你收到类似这样的错误
 
 ```
 vlc dvdread could not open the disc "/dev/dvd"
@@ -754,7 +754,7 @@ dvd=/dev/sr0
 
 ```
 
-### DVD drive is noisy
+### DVD设备噪音大
 
 If playing DVD videos causes the system to be very loud, it may be because the disk is spinning faster than it needs to. To temporarily change the speed of the drive, run:
 

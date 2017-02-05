@@ -190,7 +190,7 @@ If you have updated the kernel or the initramfs and wish to boot on EFI systems,
 
 ```
  $ mkdir mnt
- # mount -t fat -o loop ~/customiso/EFI/archiso/efiboot.img mnt
+ # mount -t vfat -o loop ~/customiso/EFI/archiso/efiboot.img mnt
  $ cp ~/customiso/arch/boot/x86_64/vmlinuz mnt/EFI/archiso/vmlinuz.efi
  $ cp ~/customiso/arch/boot/x86_64/archiso.img mnt/EFI/archiso/archiso.img
 

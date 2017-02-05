@@ -132,11 +132,11 @@ The main benefits of using timers come from each job having its own *systemd* se
 Some things that are easy to do with cron are difficult to do with timer units alone.
 
 *   Complexity: to set up a timed job with *systemd* you create two files and run a couple `systemctl` commands. Compare that to adding a single line to a crontab.
-*   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up an equivalent using `OnFailure=`.
+*   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up a similar setup using `OnFailure=`.
 
 ### MAILTO
 
-You can set up systemd to send an e-mail when a unit fails - much like Cron does with `MAILTO`. First you need two files: an executable for sending the mail and a *.service* for starting the executable. For this example, the executable is just a shell script using `sendmail`:
+You can set up systemd to send an e-mail when a unit fails. Cron sends mail to `MAILTO` the job outputs to stdout or stderr, but many jobs are setup to only output on error. First you need two files: an executable for sending the mail and a *.service* for starting the executable. For this example, the executable is just a shell script using `sendmail`:
 
  `/usr/local/bin/systemd-email` 
 ```

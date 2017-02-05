@@ -11,6 +11,7 @@ The power of an enterprise-class laptop. The freedom and convenience of a tablet
     *   [2.5 Smart Card Reader](#Smart_Card_Reader)
     *   [2.6 Display Backlight Control](#Display_Backlight_Control)
     *   [2.7 Keyboard Backlight control](#Keyboard_Backlight_control)
+    *   [2.8 Fn-F9 Touchpad Toggle](#Fn-F9_Touchpad_Toggle)
 
 ## Specifications
 
@@ -60,4 +61,8 @@ Works
 
 For instructions on Keyboard backlight toggle see [Toshiba Portege Z30-A#Installation and configuration](/index.php/Toshiba_Portege_Z30-A#Installation_and_configuration "Toshiba Portege Z30-A").
 
-Since changing sys values requires root, one can either write a wrapper for bash scripts for setuid, which is generally considered insecure. Here is a simple toggle switch written in C: [https://github.com/Exel232/Configurations/tree/highcontrast/Toshiba](https://github.com/Exel232/Configurations/tree/highcontrast/Toshiba)
+Since changing sys values requires root, one can either write a wrapper for bash scripts for setuid, which is generally considered insecure. Here is a simple toggle switch: [KbdBacklightToggle in C](https://github.com/Exel232/Configurations/raw/master/Toshiba/kbdback.c)
+
+### Fn-F9 Touchpad Toggle
+
+Needs custom hwdb to work. See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys"). Example hwdb provided here, but you might want to choose a different keycode: [HWDB Config](https://github.com/Exel232/Configurations/raw/master/Toshiba/60-toshiba-input.hwdb)

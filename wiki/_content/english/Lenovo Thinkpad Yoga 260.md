@@ -18,7 +18,7 @@
 
 ## Overview
 
-Most functionality works out of the box, although a kernel of version 4.3 or higher is necessary for the video card and the wifi adapter. Suspending the machine also works. The accelerometer does not show up.
+Most functionality works out of the box, although a kernel of version 4.3 or higher is necessary for the video card and the wifi adapter and a kernel of version 4.9 or higher for the accelerometer to be recognized. Suspending the machine also works.
 
 | **Device** | **Status** | **Modules** |
 | Graphics | **Working** | i915 |
@@ -26,7 +26,7 @@ Most functionality works out of the box, although a kernel of version 4.3 or hig
 | Audio | **Working** | snd_hda_intel |
 | Touchscreen | **Working** | wacom |
 | Stylus | **Working** ¹ | wacom,usbhid |
-| Accelerometer | **Working in Linux 4.9** | hid_sensor_accel_3d |
+| Accelerometer | **Working** | hid_sensor_accel_3d |
 | Touchpad | **Working** | psmouse |
 | Trackpoint | **Working** | psmouse |
 | Camera | **Working** | uvcvideo |

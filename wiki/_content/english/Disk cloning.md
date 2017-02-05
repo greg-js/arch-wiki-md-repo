@@ -5,7 +5,7 @@ Disk cloning is the process of making an image of a partition or of an entire ha
 *   [1 Using dd](#Using_dd)
     *   [1.1 Cloning a partition](#Cloning_a_partition)
     *   [1.2 Cloning an entire hard disk](#Cloning_an_entire_hard_disk)
-    *   [1.3 Backing up the MBR](#Backing_up_the_MBR)
+    *   [1.3 Backing up the partition table](#Backing_up_the_partition_table)
     *   [1.4 Create disk image](#Create_disk_image)
     *   [1.5 Restore system](#Restore_system)
 *   [2 Using ddrescue](#Using_ddrescue)
@@ -58,48 +58,9 @@ If you are positive that your disk does not contain any errors, you could procee
 *   To regain unique UUIDs of an *ext2/3/4* filesystem, use `tune2fs /dev/sd*XY* -U random` on every partition.
 *   Partition table changes from *dd* are not registered by the kernel. To notify of changes without rebooting, use a utility like *partprobe* (part of [GNU Parted](/index.php/GNU_Parted "GNU Parted")).
 
-### Backing up the MBR
+### Backing up the partition table
 
-The MBR is stored in the the first 512 bytes of the disk. It consist of 3 parts:
-
-1.  The first 446 bytes contain the boot loader.
-2.  The next 64 bytes contain the partition table (4 entries of 16 bytes each, one entry for each primary partition).
-3.  The last 2 bytes contain an identifier
-
-To save the MBR as `mbr.img`:
-
-```
-# dd if=/dev/sdX of=/path/to/mbr_file.img bs=512 count=1
-
-```
-
-To restore (be careful: this could destroy your existing partition table and with it access to all data on the disk):
-
-```
-# dd if=/path/to/mbr_file.img of=/dev/sdX
-
-```
-
-If you only want to restore the boot loader, but not the primary partition table entries, just restore the first 446 bytes of the MBR:
-
-```
-# dd if=/path/to/mbr_file.img of=/dev/sdX bs=446 count=1
-
-```
-
-To restore only the partition table, one must use:
-
-```
-# dd if=/path/to/mbr_file.img of=/dev/sdX bs=1 skip=446 count=64
-
-```
-
-You can also get the MBR from a full dd disk image:
-
-```
-# dd if=/path/to/disk.img of=/path/to/mbr_file.img bs=512 count=1
-
-```
+See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk").
 
 ### Create disk image
 

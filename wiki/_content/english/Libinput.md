@@ -17,6 +17,7 @@ The X.Org input driver supports most regular [Xorg#Input devices](/index.php/Xor
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Touchpad not working in GNOME](#Touchpad_not_working_in_GNOME)
     *   [4.2 Touchpad settings not taking effect in KDE's Touchpad KCM](#Touchpad_settings_not_taking_effect_in_KDE.27s_Touchpad_KCM)
+    *   [4.3 Touchpad not detected at all](#Touchpad_not_detected_at_all)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -225,6 +226,15 @@ $ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 ### Touchpad settings not taking effect in KDE's Touchpad KCM
 
 KDE's Touchpad KCM has libinput support for [Xorg](/index.php/Xorg "Xorg"), but not all GUI settings are available yet. You may find that a setting such as *Disable touchpad when typing* has no effect and other options are greyed out. Until the support is extended, a workaround is to set the options manually with `xinput set-prop`.
+
+### Touchpad not detected at all
+
+If a touchpad device is not detected and shown as a device at all, a possible solution might be using one or more of these kernel parameters.
+
+```
+i8042.noloop i8042.nomux i8042.nopnp i8042.reset
+
+```
 
 ## See also
 

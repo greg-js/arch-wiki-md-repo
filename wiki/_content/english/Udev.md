@@ -403,11 +403,7 @@ Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNA
 
 3) Load/reload the new udev rule (see above) and test it by unplugging the power supply to the laptop.
 
----
-
-[xpub](https://aur.archlinux.org/packages/xpub/)  is a Shell script to get the X display environment variables such as `XAUTHORITY, DISPLAY` and `DBUS_SESSION_BUS_ADDRESS` belonging to the logged user of the current tty.
-
-It helps to display graphical task directly from udev rules without running external script with the key `RUN` (for more details, see [xpub](https://github.com/Ventto/xpub)).
+See also [Getting display environment variables of the graphical-session user](https://github.com/Ventto/xpub)].
 
 ## Troubleshooting
 

@@ -16,6 +16,7 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [1.3 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
     *   [1.4 Partitionless disk](#Partitionless_disk)
         *   [1.4.1 Btrfs partitioning](#Btrfs_partitioning)
+    *   [1.5 Backup](#Backup)
 *   [2 Partition scheme](#Partition_scheme)
     *   [2.1 Single root partition](#Single_root_partition)
     *   [2.2 Discrete partitions](#Discrete_partitions)
@@ -110,6 +111,10 @@ Partitionless disk (a.k.a. superfloppy) refers to using a storage device without
 #### Btrfs partitioning
 
 [Btrfs](/index.php/Btrfs "Btrfs") can occupy an entire data storage device and replace the [MBR](#Master_Boot_Record) or [GPT](#GUID_Partition_Table) partitioning schemes. See the [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") instructions for details.
+
+### Backup
+
+See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk").
 
 ## Partition scheme
 

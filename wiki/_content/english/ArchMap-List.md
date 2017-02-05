@@ -1033,5 +1033,7 @@ You can use the following website to get your device's coordinates along with a 
 52.733978, -0.651432 "Us3rname" # Rutland, United Kingdom
 42.656469, -82.974470 "wjstarrsiii" # Macomb, MI, USA
 37.766202,30.558844 "Özgür Sarıer" # Isparta, Turkey
+53.624290, 11.418881 "aeno" # Schwerin, Germany
+-41.249527, 174.795626 "Piffle" # Wellington, New Zealand
 
 ```

@@ -157,6 +157,14 @@ CPU frequency scaling: Works(only performance and powersave governors*[[1]](http
 Webcam: Works
 Card reader: not tested | There is small problem with p2p wpa_supplicant, possible solution: p2p_disabled=1.
 Can't set mute-key led light. |
+| HP Stream 11-r004nf | 2017.01 | Intel Celeron N3050, Intel HD 400 | Intel sound card: *snd-hda-intel* | No | Realtek RTL8723be (*rtl8723be*) | Yes(btusb). | ACPI: Works
+Suspend to RAM: Works
+Suspend to Disk: Yes
+Battery: Works
+Display dimming: Works
+ | --- | Hotkeys: Works
+Webcam: Works
+Card reader: Works | The wifi signal is weak. It is better to use module from lwfinger's rtlwifi_new repo [[3]](https://github.com/lwfinger/rtlwifi_new) with ant_sel=2 option for the module [[4]](https://aur.archlinux.org/packages/rtlwifi_new-dkms) |
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 

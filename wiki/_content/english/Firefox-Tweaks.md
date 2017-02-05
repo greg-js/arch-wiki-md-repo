@@ -38,6 +38,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.3.3 Add [pdf] after links to PDF files](#Add_.5Bpdf.5D_after_links_to_PDF_files)
         *   [2.3.4 Firefox 4 New Menu Bar/Firefox Button](#Firefox_4_New_Menu_Bar.2FFirefox_Button)
         *   [2.3.5 Block ads](#Block_ads)
+        *   [2.3.6 Remove fullscreen warning](#Remove_fullscreen_warning)
 *   [3 Miscellaneous](#Miscellaneous)
     *   [3.1 Enable additional media codecs](#Enable_additional_media_codecs)
         *   [3.1.1 Widevine and Netflix/Amazon Video](#Widevine_and_Netflix.2FAmazon_Video)
@@ -493,6 +494,10 @@ This userChrome.css configuration copies the default Windows Firefox 4+ look and
 #### Block ads
 
 See [floppymoose.com](http://www.floppymoose.com) for an example of how to use `userContent.css` as a basic ad-blocker.
+
+#### Remove fullscreen warning
+
+Warning about video displayed in full screen mode ("… is now fullscreen") can be disabled by setting "full-screen-api.warning.timeout" to 0 in about:config
 
 ## Miscellaneous
 

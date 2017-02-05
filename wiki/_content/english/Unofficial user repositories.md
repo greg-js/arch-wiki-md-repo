@@ -776,7 +776,7 @@ Server = https://r.mikroskeem.eu
 
 ```
 [aur-archlinux]
-Server = https://repo.arch-server.org/aur/$repo/$arch
+Server = https://repo.itmettke.de/aur/$repo/$arch
 
 ```
 

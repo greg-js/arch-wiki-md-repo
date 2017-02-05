@@ -57,23 +57,48 @@ Before making changes to a hard disk, you may want to backup the partition table
 
 ### Using dd
 
-Because the MBR is located on the disk it can be backed up and later recovered.
+The MBR is stored in the the first 512 bytes of the disk. It consist of 3 parts:
 
-To backup the MBR:
+1.  The first 446 bytes contain the boot loader.
+2.  The next 64 bytes contain the partition table (4 entries of 16 bytes each, one entry for each primary partition).
+3.  The last 2 bytes contain an identifier
 
-```
-# dd if=/dev/sda of=/path/mbr-backup bs=512 count=1
-
-```
-
-Restore the MBR:
+To save the MBR as `mbr_file.img`:
 
 ```
-# dd if=/path/mbr-backup of=/dev/sda bs=512 count=1
+# dd if=/dev/sdX of=/path/to/mbr_file.img bs=512 count=1
+
+```
+
+You can also extract the MBR from a full dd disk image:
+
+```
+# dd if=/path/to/disk.img of=/path/to/mbr_file.img bs=512 count=1
+
+```
+
+To restore (be careful, this destroys the existing partition table and with it access to all data on the disk):
+
+```
+# dd if=/path/to/mbr_file.img of=/dev/sdX bs=512 count=1
 
 ```
 
 **Warning:** Restoring the MBR with a mismatching partition table will make your data unreadable and nearly impossible to recover. If you simply need to reinstall the bootloader see their respective pages as they also employ the [DOS compatibility region](http://www.pixelbeat.org/docs/disk/): [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux").
+
+If you only want to restore the boot loader, but not the primary partition table entries, just restore the first 446 bytes of the MBR:
+
+```
+# dd if=/path/to/mbr_file.img of=/dev/sdX bs=446 count=1
+
+```
+
+To restore only the partition table, one must use:
+
+```
+# dd if=/path/to/mbr_file.img of=/dev/sdX bs=1 skip=446 count=64
+
+```
 
 To erase the MBR (may be useful if you have to do a full reinstall of another operating system) only the first 446 bytes are zeroed because the rest of the data contains the partition table:
 

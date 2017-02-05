@@ -136,7 +136,7 @@ Earlier versions of guides for OpenVPN provided by the OpenVPN team or various L
 
 However, this is a somewhat deprecated approach, since OpenVPN as of 2.1.1 defaults to not allowing itself to call external scripts or programs unless explicitly enabled to, for security reasons.
 
-Also, constructing the bridge is relatively slow compared to all other parts of the network initialization process. (In fact, so slow that dhcpcd will time out before the bridge is ready. See [#Troubleshooting](#Troubleshooting).) Also, when restarting OpenVPN after configuration changes, there is no reason to rebuild a working bridge, interrupting all your other network applications. So, setting up a static bridge configuration as follows is the recommended method.
+Also, constructing the bridge is relatively slow compared to all other parts of the network initialization process. (In fact, so slow that dhcpcd will time out before the bridge is ready. See [#Static Bridge Troubleshooting](#Static_Bridge_Troubleshooting).) Also, when restarting OpenVPN after configuration changes, there is no reason to rebuild a working bridge, interrupting all your other network applications. So, setting up a static bridge configuration as follows is the recommended method.
 
 To create an OpenVPN bridge for your server, you are going to have to use [netctl](/index.php/Netctl "Netctl") and create two network profiles - one for the tap interface and one for the bridge.
 

@@ -185,7 +185,9 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 	[https://github.com/vivien/i3blocks](https://github.com/vivien/i3blocks) || [i3blocks](https://aur.archlinux.org/packages/i3blocks/)
 
-*   {{App|i3pystatus|默认带有许多插件和选项的可扩展 Python 3 状态栏 |[https://github.com/enkore/i3pystatus](https://github.com/enkore/i3pystatus) i3pystatus|[i3pystatus-git](https://aur.archlinux.org/packages/i3pystatus-git/)}
+*   **i3pystatus** — 默认带有许多插件和选项的可扩展 Python 3 状态栏
+
+	[https://github.com/enkore/i3pystatus](https://github.com/enkore/i3pystatus) i3pystatus || [i3pystatus-git](https://aur.archlinux.org/packages/i3pystatus-git/)
 
 *   **i3situation** — 另一个 Python 3 状态栏生成器。
 

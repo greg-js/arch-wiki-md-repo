@@ -44,13 +44,13 @@ the default IP is `0.0.0.0`, change it to 127.0.0.1 as assumed later.
 
   //IP and port which etherpad should bind at
   "ip": "127.0.0.1",
-  "port" : 19001,
+  "port" : 9001,
 
 ```
 
 ## Starting
 
-[Enable](/index.php/Enable "Enable") the `etherpad-lite.service` unit. You can then access Etherpad-Lite on `[http://127.0.0.1:19001](http://127.0.0.1:19001)` or directly access a pad on `[http://127.0.0.1:19001/p/padname](http://127.0.0.1:19001/p/padname)`
+[Enable](/index.php/Enable "Enable") the `etherpad-lite.service` unit. You can then access Etherpad-Lite on `[http://127.0.0.1:9001](http://127.0.0.1:9001)` or directly access a pad on `[http://127.0.0.1:9001/p/padname](http://127.0.0.1:9001/p/padname)`
 
 ## Known issues
 

@@ -27,7 +27,7 @@ and then encapsulate your CJK in \cntext.
 
 ## Goals
 
-This Tutorial is supposed to explain how to configure your [TeX Live](/index.php/TeX_Live "TeX Live") Installation to successfully include CJK (Chinese, Japanese and Korean) Characters in your compiled TeX-files. This tutorial is based on the [Kile-HowTo on CJK Support](http://kile.sourceforge.net/Documentation/html/cjk.html). The problem with the kile-tutorial (which nevertheless is very good) is the loose definition of the file and folder structure (for it is, as I think, written to be used for any TeX-distribution). Long story short, using the kile-tutorial, it might take you a couple of hours to find the appropriate places to store and configure your CJK-installation (at least when using TeXlive). Hope this helps you to avoid this hassle.
+This Tutorial is supposed to explain how to configure your [TeX Live](/index.php/TeX_Live "TeX Live") Installation to successfully include CJK (Chinese, Japanese and Korean) Characters in your compiled TeX-files. This tutorial is based on the [Kile-HowTo on CJK Support](http://kile.sourceforge.net/Documentation/html/cjk.html).
 
 ## Prerequisites
 

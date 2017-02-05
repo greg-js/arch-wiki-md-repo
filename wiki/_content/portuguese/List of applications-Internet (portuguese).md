@@ -183,7 +183,7 @@ Veja Também [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Bli
 
 	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
 
-*   **[Liri](/index.php?title=Liri&action=edit&redlink=1 "Liri (page does not exist)")** — Navegador de Internet com um design e material minimalista escrito para Papyros.
+*   **[Liri](/index.php/Liri "Liri")** — Navegador de Internet com um design e material minimalista escrito para Papyros.
 
 	[http://liriproject.me/browser](http://liriproject.me/browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)
 

@@ -1,12 +1,11 @@
-KDE is a software project currently comprising of a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma (or Plasma Workspaces), a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](https://userbase.kde.org/). Detailed information about most KDE applications can be found there.
+KDE is a software project currently comprising of a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma, a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](https://userbase.kde.org/). Detailed information about most KDE applications can be found there.
 
 ## Contents
 
 *   [1 Installation](#Installation)
     *   [1.1 Plasma Desktop](#Plasma_Desktop)
-    *   [1.2 Upgrading from Plasma 4 to 5](#Upgrading_from_Plasma_4_to_5)
-    *   [1.3 KDE applications and language packs](#KDE_applications_and_language_packs)
-    *   [1.4 Unstable releases](#Unstable_releases)
+    *   [1.2 KDE applications and language packs](#KDE_applications_and_language_packs)
+    *   [1.3 Unstable releases](#Unstable_releases)
 *   [2 Starting Plasma](#Starting_Plasma)
     *   [2.1 Wayland](#Wayland)
 *   [3 Configuration](#Configuration)
@@ -84,35 +83,17 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [6.8.1.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [6.9 Inotify folder watch limit](#Inotify_folder_watch_limit)
     *   [6.10 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [6.11 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
-    *   [6.12 Multi-monitor issues](#Multi-monitor_issues)
-    *   [6.13 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
+    *   [6.11 Multi-monitor issues](#Multi-monitor_issues)
+    *   [6.12 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
 *   [7 See also](#See_also)
 
 ## Installation
 
 ### Plasma Desktop
 
-**Note:**
-
-*   Plasma 5 is not co-installable with Plasma 4.
-*   The Plasma 4 desktop is unmaintained since August 2015.[[1]](https://www.kde.org/announcements/announce-applications-15.08.0.php) It is no longer in the official repositories since December 2015.[[2]](https://www.archlinux.org/news/dropping-plasma-4/)
-*   [KDM](/index.php/KDM "KDM") is no longer available for Plasma 5\. KDE upstream [recommends](http://blog.davidedmundson.co.uk/blog/display_managers_finale) using the [SDDM](/index.php/SDDM "SDDM") display manager as it provides integration with the Plasma 5 theme.
-
 Before installing Plasma, make sure you have a working [Xorg](/index.php/Xorg "Xorg") installation on your system.
 
 Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) meta-package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group. For differences between [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) and [plasma](https://www.archlinux.org/groups/x86_64/plasma/) reference [Creating packages#Meta packages and groups](/index.php/Creating_packages#Meta_packages_and_groups "Creating packages"). Alternatively, for a more minimal Plasma installation, install the [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop) package.
-
-### Upgrading from Plasma 4 to 5
-
-1.  Isolate `multi-user.target`: `# systemctl isolate multi-user.target` 
-2.  If you use KDM as display manager, [disable](/index.php/Disable "Disable") the `kdm.service` systemd unit.
-3.  [Uninstall](/index.php/Install "Install") the [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/) package.
-4.  [Install](/index.php/Install "Install") the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) package or the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group.
-5.  [Enable](/index.php/Enable "Enable") the `sddm.service` systemd unit, or install and enable any other [display manager](/index.php/Display_manager "Display manager").
-6.  Reboot or simply [start](/index.php/Start "Start") the systemd `sddm.service` unit.
-
-**Note:** The Plasma 4 configuration is not automatically migrated to Plasma 5, so you will have to configure your desktop from scratch.
 
 ### KDE applications and language packs
 
@@ -130,7 +111,7 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 To launch a Plasma 5 session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
-Alternatively, to start Plasma with *startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
+Alternatively, to start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 ### Wayland
 
@@ -143,7 +124,7 @@ As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be us
 
 Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing *systemsettings5*.
 
-Frameworks 5 applications can use KDE 4 configuration however they expect the configuration files to be located in different places. To allow Frameworks 5 applications running in KDE 4 to share the same configurations they may be moved to the new locations and symlinked back to the old. Examples are:
+Some Frameworks 5 applications can use KDE 4 configuration, after moving the configuration files to the new location. Examples are:
 
 *   Konsole profiles from `~/.kde4/share/apps/konsole` to `~/.local/share/konsole/`
 *   Application appearance from `~/.kde4/share/config/kdeglobals` to `~/.config/kdeglobals`
@@ -198,14 +179,14 @@ Many Plasmoid binaries are [available from the AUR](https://aur.archlinux.org/pa
 
 ##### Disable panel shadow
 
-As the plasma panel is on top of other windows, its shadow is drawn over them. [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+As the plasma panel is on top of other windows, its shadow is drawn over them. [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-then select the panel with the plus-sized cursor. [[4]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
+then select the panel with the plus-sized cursor. [[2]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
 
  `/usr/local/bin/kde-no-shadow` 
 ```
@@ -261,40 +242,7 @@ The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE 
 
 **Tip:** Use the [CUPS](/index.php/CUPS "CUPS") web interface for faster configuration. Printers configured in this way can be used in KDE applications.
 
-You can also configure printers in *System Settings > Printer Configuration*. To use this method, you must first install [print-manager](https://www.archlinux.org/packages/?name=print-manager) and [cups](https://www.archlinux.org/packages/?name=cups).
-
-The `avahi-daemon.service` and `org.cups.cupsd.service` daemons must be started first; otherwise, you will get the following error:
-
-```
-The service 'Printer Configuration' does not provide an interface 'KCModule'
-with keyword 'system-config- printer-kde/system-config-printer-kde.py'
-The factory does not support creating components of the specified type.
-
-```
-
-If you are getting the following error, you need to give your user the right to manage printers.
-
-```
-There was an error during CUPS operation: 'cups-authorization-canceled'
-
-```
-
-For CUPS, this is set in `/etc/cups/cups-files.conf`.
-
-Adding `lpadmin` to `/etc/group` and then to the `SystemGroup` directive in `/etc/cups/cups-files.conf` allows anyone in the `lpadmin` group to configure printers. Do *not* add the `lp` group to the `SystemGroup` directive, or printing will fail.
-
-```
-# groupadd -g107 lpadmin
-
-```
- `/etc/cups/cups-files.conf` 
-```
-# Administrator user group...
-SystemGroup sys root lpadmin
-
-```
-
-**Tip:** Read [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS") to get more details on how to configure CUPS.
+You can also configure printers in *System Settings > Printer Configuration*. To use this method, you must first install [print-manager](https://www.archlinux.org/packages/?name=print-manager) and [cups](https://www.archlinux.org/packages/?name=cups). See [CUPS#Configuration](/index.php/CUPS#Configuration "CUPS").
 
 ### Samba/Windows support
 
@@ -367,7 +315,7 @@ In the past other backends were developed as well but are no longer maintained a
 
 *   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Phonon > Backend*. For Plasma 5 this would be *System Settings > Multimedia > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
-*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[6]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
+*   If you choose the vlc backend, you may experience crashes every time kde wants to send you a audible warning (and in quite a number of other cases as well, see [[4]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
 *   A possible fix is to run
 
  `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
@@ -563,13 +511,7 @@ You will need to install KDE Connect both on your computer and on your Android. 
 
 ### Using an alternative window manager
 
-There may be reasons you want to use another window manager than KWin, for example to work around the DRI bug that causes [black screen with PRIME](/index.php/PRIME#Black_screen_with_GL-based_compositors "PRIME").
-
-To use an alternative [window manager](/index.php/Window_manager "Window manager") with Plasma open the *System Settings* panel, navigate to *(Default) Applications > Window Manager > Use a different window manager* and select the window manager you wish to use from the list.
-
-**Note:** The component chooser settings in plasma 5 does not allow changing the window manager anymore. [[7]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)
-
-In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[8]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
+The component chooser settings in plasma 5 does not allow changing the window manager anymore. [[5]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[6]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 
@@ -889,15 +831,6 @@ fs.inotify.max_user_watches = 10000
 ### Freezes when using Automount on a NFS volume
 
 Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
-
-### Locale warning when installing packages in Konsole
-
-```
-mandb: cannot set the locale; make sure $lc_* and $lang are correct
-
-```
-
-By default, Konsole sets `$LANG` to `en_US.US-ASCII`. If you have not generated that locale, then mandb cannot use it. In your Konsole profile settings, click "Environment" and then add a line for `LANG=en_US.UTF-8` or whatever your locale should be.
 
 ### Multi-monitor issues
 

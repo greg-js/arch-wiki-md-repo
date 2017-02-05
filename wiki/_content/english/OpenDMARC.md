@@ -1,4 +1,4 @@
-Domain-based Message Authentication, Reporting and Conformance (DMARC) is a policy for mail transfer, which is already supported by some common mail providers. It depends on [SPF](/index.php/SPF "SPF") and [DKIM](/index.php/OpenDKIM "OpenDKIM"). DMARC provides and a policy for outgoing mail and checks incoming mails for compliance with that policy. The policy is published via a DNS TXT record. It is explained in section [Record](#Record). Validation is done in a daemon. Its configuration is explained in section [Validator](#Validator). For more info see the [draft](https://datatracker.ietf.org/doc/draft-kucherawy-dmarc-base/).
+Domain-based Message Authentication, Reporting and Conformance (DMARC) is a policy for mail transfer, which is already supported by some common mail providers. It depends on [SPF](/index.php/SPF "SPF") and [DKIM](/index.php/OpenDKIM "OpenDKIM"). DMARC provides and a policy for outgoing mail and checks incoming mails for compliance with that policy. The policy is published via a DNS TXT record. It is explained in [#Record](#Record). Validation is done in a daemon. Its configuration is explained in [#Validator](#Validator). For more info see the [draft](https://datatracker.ietf.org/doc/draft-kucherawy-dmarc-base/).
 
 ## Contents
 
@@ -12,9 +12,9 @@ Domain-based Message Authentication, Reporting and Conformance (DMARC) is a poli
 
 ## Record
 
-An example Record looks like this: `v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@example.org;ruf=mailto:forensik@example.org;adkim=s;aspf=r`. It is entered as TXT record on the `_dmarc`-Subdomain of your domain.
+An example record looks like this: `v=DMARC1;p=quarantine;pct=100;rua=mailto:postmaster@example.org;ruf=mailto:forensik@example.org;adkim=s;aspf=r`. It is entered as TXT record on the `_dmarc`-subdomain of your domain.
 
-| Tag Name | Purpose | Sample |
+| Tag name | Purpose | Sample |
 | v | Protocol version | v=DMARC1 |
 | pct | Percentage of messages subjected to filtering | pct=20 |
 | ruf | Reporting URI for forensic reports | ruf=[mailto:authfail@example.com](mailto:authfail@example.com) |
@@ -33,7 +33,7 @@ The alignment modes for DKIM and SPF can be s for strict and r for relaxed, wher
 
 ### Installation
 
-[Install](/index.php/Install "Install") the package [opendmarc](https://www.archlinux.org/packages/?name=opendmarc).
+[Install](/index.php/Install "Install") the [opendmarc](https://www.archlinux.org/packages/?name=opendmarc) package.
 
 ### Basic configuration
 
@@ -50,7 +50,7 @@ UserID                  opendmarc
 
 If you want to run your DMARC-Validator on a different machine, you should change the Socket field to `inet:9999@10.0.0.4` with a sample host listening at at port 9999 for an optional client 10.0.0.4 (can be omitted, listens on 0.0.0.0 then).
 
-*   Enable and start the `opendmarc.service`. Read [Daemons](/index.php/Daemons "Daemons") for more information.
+*   [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `opendmarc.service`. Read [Daemons](/index.php/Daemons "Daemons") for more information.
 
 ### Postfix integration
 

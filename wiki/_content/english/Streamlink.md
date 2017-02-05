@@ -75,4 +75,4 @@ Where *YourOAuthToken* is the OAuth token you received in the previous step.
 ## See also
 
 *   [Streamlink repository on GitHub](https://github.com/streamlink/streamlink)
-*   [Streamlink documentation](http://docs.streamlink.io/)
+*   [Streamlink documentation](https://streamlink.github.io/)

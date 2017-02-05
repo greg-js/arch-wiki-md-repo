@@ -769,7 +769,7 @@ If the only playback device is the Dummy Output, PulseAudio cannot access your s
 An application might also not have been configured to work with PulseAudio. This happens with [FluidSynth](/index.php/FluidSynth#Conflicting_with_PulseAudio "FluidSynth") for example. To see which application is responsible for a direct access to the sound card via alsa, run the following command:
 
 ```
-$ fuser -v /dev/snd/*
+# fuser -v /dev/snd/*
 
 ```
 

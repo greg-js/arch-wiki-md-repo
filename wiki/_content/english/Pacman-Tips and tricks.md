@@ -106,13 +106,13 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 	[https://github.com/vodik/repose](https://github.com/vodik/repose) || [repose](https://www.archlinux.org/packages/?name=repose)
 
-*   **srcpac** — Simple tool that automates rebuilding packages from source.
-
-	[https://projects.archlinux.org/srcpac.git](https://projects.archlinux.org/srcpac.git) || [srcpac](https://www.archlinux.org/packages/?name=srcpac)
-
 *   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make pacman automatically use snapper to create pre/post snapshots like openSUSE's YaST.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
+
+*   **srcpac** — Simple tool that automates rebuilding packages from source.
+
+	[https://projects.archlinux.org/srcpac.git](https://projects.archlinux.org/srcpac.git) || [srcpac](https://www.archlinux.org/packages/?name=srcpac)
 
 ## Maintenance
 
@@ -412,15 +412,15 @@ Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the serve
 
 #### two-way with rsync
 
-Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable [Rsync#rsync_daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for rsync.
+Another approach in a local environment is [rsync](/index.php/Rsync "Rsync"). Choose a server for caching and enable the [Rsync#rsync_daemon](/index.php/Rsync#rsync_daemon "Rsync"). On clients synchronize two-way with this share via rsync protocol. Filenames that contain colons are no problem for the rsync protocol.
 
-Draft example for a client, uname -m as share name ensures architecture depended sync:
+Draft example for a client, uname -m in share name ensures architecture depended sync:
 
 ```
- # rsync rsync://server/$(uname -m)/ /var/cache/pacman/pkg/ ...
+ # rsync rsync://server/share_$(uname -m)/ /var/cache/pacman/pkg/ ...
  # pacman ...
  # paccache ...
- # rsync /var/cache/pacman/pkg/ rsync://server/$(uname -m)/  ...
+ # rsync /var/cache/pacman/pkg/ rsync://server/share_$(uname -m)/  ...
 
 ```
 

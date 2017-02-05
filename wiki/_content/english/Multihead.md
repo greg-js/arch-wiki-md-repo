@@ -352,6 +352,7 @@ This section lists window managers and how they cope with multiple monitors.
 *   [i3](/index.php/I3 "I3") - Works
 *   [KDE](/index.php/KDE "KDE") - Works
 *   [MATE](/index.php/MATE "MATE") - Works
+*   [Qtile](/index.php/Qtile "Qtile") - Works
 *   [Spectrwm](/index.php/Spectrwm "Spectrwm") - Works (screens are different workspaces, both accessible and switching is possible by both keyboard and mouse) - as of March 2015
 *   [Xmonad](/index.php/Xmonad "Xmonad") - Works (screens are different workspaces, both accessible and switching is possible by both keyboard and mouse) - as of April 2014
 

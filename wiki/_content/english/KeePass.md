@@ -15,11 +15,11 @@ Currently, there are two variants of the database formats: *KeePass 1.x (Classic
 
 There are two major implementations of KeePass, both of which are included in official repositories:
 
-*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — An easy-to-use password manager for Windows, Linux, Mac OS X and mobile devices. It also has optional autotype and clipboard support respectively when `xdotool` and `xsel` are installed. Supports importing from [many formats](http://keepass.info/help/base/importexport.html).
+*   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — An easy-to-use password manager for Windows, Linux, Mac OS X and mobile devices. It also has optional autotype and clipboard support respectively when `xdotool` and `xsel` are installed. Supports importing from [many formats](http://keepass.info/help/base/importexport.html). Has [many plugins](http://keepass.info/plugins.html).
 
 	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
-*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application *Keepass Password Safe*. The new version [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) is compatible with 2.x database formats, but can import 1.x databases. One may also import PwManager databases and KWallet XML databases.
+*   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application *Keepass Password Safe*. The new version [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) is compatible with 2.x database formats, but can import 1.x databases. One may also import PwManager databases and KWallet XML databases. [Does not have plugin functionality, 2017-02-03](https://www.keepassx.org/faq).
 
 	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 

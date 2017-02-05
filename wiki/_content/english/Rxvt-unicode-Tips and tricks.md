@@ -64,28 +64,6 @@ fi
 
 ```
 
-A previous version of [xdotool](https://www.archlinux.org/packages/?name=xdotool) introduced a bug which disabled recognition of visible windows and thus led some users to use the following scriptlet in place of the previous one. This is no longer necessary as of [xdotool](https://www.archlinux.org/packages/?name=xdotool) >= 1.20100416.2809, but it has been left here for future reference.'
-
-```
-#!/bin/bash
-
-wid=$(xprop -name urxvtq | grep 'WM_COMMAND' | awk -F ',' '{print $3}' | awk -F '"' '{print $2}')
-if [ -z "$wid" ]; then
-  /path/to/urxvtc -name urxvtq -geometry 200x28
-  wid=$(xprop -name urxvtq | grep 'WM_COMMAND' | awk -F ',' '{print $3}' | awk -F '"' '{print $2}')
-  xdotool windowfocus "$wid"
-  xdotool key Control_L+l
-else
-  if [ -z "$(xprop -id "$wid" | grep 'window state: Normal' 2>/dev/null)" ]; then
-    xdotool windowmap "$wid"
-    xdotool windowfocus "$wid"
-  else
-    xdotool windowunmap "$wid"
-  fi
-fi
-
-```
-
 Make sure that you change `/path/to/urxvtc` to the actual path to the `urxvtc` scriptlet that you saved above. We will be using `urxvtc` to launch both regular instances of `urxvt` and the kuake-like instance.
 
 ### urxvtq with tabbing
@@ -196,7 +174,7 @@ The [Openbox per-app settings](http://openbox.org/wiki/Help:Applications) can be
 *   Build rxvt-unicode with disabled support for unnecessary features, `--disable-xft` and `--disable-unicode3` in particular.
 *   Limit the number of `saveLines` (option `-sl`) in the scrollback buffer to reduce memory usage. [[4]](http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod#Isn_t_rxvt_unicode_supposed_to_be_sm)
     *   Use tmux for scrollback buffer and set saveLines to 0
-*   [Disable perl](#Disabling_Perl_extensions)
+*   [Disable perl](/index.php/Rxvt-unicode#Disabling_Perl_extensions "Rxvt-unicode")
 *   Consider running `urxvtd` as a daemon accepting connections from `urxvtc` clients.
 
 ### Daemon-client

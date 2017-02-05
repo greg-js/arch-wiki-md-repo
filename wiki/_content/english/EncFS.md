@@ -313,7 +313,7 @@ rm "$lock" 2>/dev/null
 
 ### Mount using KDE KWallet
 
-This can be done in KDE with the [kdeencfs](http://pastebin.com/RR1hguwE) script. You will also have to [install](/index.php/Install "Install") the [kdebase-kdialog](https://www.archlinux.org/packages/?name=kdebase-kdialog) and [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). kwallet-pam has to started with the session which it is by default. It can be used by calling *kdeencfs encrypted-folder decrypted-folder*.
+This can be done in KDE with the [kdeencfs](http://pastebin.com/RR1hguwE) script. You will also have to [install](/index.php/Install "Install") the [kdialog](https://www.archlinux.org/packages/?name=kdialog) and [kwallet-pam](https://www.archlinux.org/packages/?name=kwallet-pam) packages from the [official repositories](/index.php/Official_repositories "Official repositories"). kwallet-pam has to started with the session which it is by default. It can be used by calling *kdeencfs encrypted-folder decrypted-folder*.
 
 ## Encrypted backup
 
@@ -327,7 +327,7 @@ However, if you - for example - store the backup on a remote location (e.g. in t
 
 ```
 $ mv ~/.name/encfs6.xml ~/.
-$ ENCFS6_CONFIG=~/encfs6.xml encfs ~/.name /name
+$ ENCFS6_CONFIG=~/encfs6.xml encfs ~/.name ~/name
 
 ```
 

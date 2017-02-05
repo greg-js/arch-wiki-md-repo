@@ -125,7 +125,7 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 ### Touchpad
 
-To get your touchpad working properly, see the [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") page. Note that your laptop may have an ALPS touchpad (such as the DELL Inspiron 6000), and not a Synaptics touchpad. In either case, see the link above.
+To get your touchpad working properly, see the [libinput](/index.php/Libinput "Libinput") page. [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics") is the older input driver, which is currently in maintenance mode and is no longer updated.
 
 ### Fingerprint Reader
 

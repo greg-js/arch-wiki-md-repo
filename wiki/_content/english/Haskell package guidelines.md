@@ -6,6 +6,11 @@
 
 This document aims to cover standards and guidelines for producing good [Haskell](/index.php/Haskell "Haskell") [packages](/index.php/Creating_packages "Creating packages") on Arch.
 
-## cabal2arch
+## cblrepo
 
-[cabal2arch](https://aur.archlinux.org/packages/cabal2arch/), available in the [AUR](/index.php/AUR "AUR"), may be used to automatically generate Arch packages from [cabal](/index.php/Haskell#cabal-install "Haskell") build files. It is a wrapper around [cblrepo](https://github.com/magthe/cblrepo). Generally there should be one package (i.e., one [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) per `.cabal` file for a package.
+[cblrepo](https://github.com/magthe/cblrepo), may be used to automatically generate Arch packages from [cabal](/index.php/Haskell#cabal-install "Haskell") build files. Generally there should be one package (i.e., one [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) per `.cabal` file for a package. a PKGBUILD can be generated as follows.
+
+```
+   $ cblrepo pkgbuild yesod
+
+```

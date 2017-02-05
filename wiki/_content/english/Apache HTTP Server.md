@@ -180,7 +180,7 @@ If you need to create a [CSR](https://en.wikipedia.org/wiki/Certificate_signing_
 
 ### Virtual hosts
 
-**Note:** You will need to add a separate <VirtualHost dommainame:443> section for virtual host SSL support. See [#Managing many virtual hosts](#Managing_many_virtual_hosts) for an example file.
+**Note:** You will need to add a separate `<VirtualHost *:443>` section for virtual host SSL support. See [#Managing many virtual hosts](#Managing_many_virtual_hosts) for an example file.
 
 If you want to have more than one host, uncomment the following line in `/etc/httpd/conf/httpd.conf`:
 
@@ -236,7 +236,7 @@ A very basic vhost file will look like this:
 
  `/etc/httpd/conf/vhosts/domainname1.dom` 
 ```
-<VirtualHost domainname1.dom:80>
+<VirtualHost *:80>
     ServerAdmin webmaster@domainname1.dom
     DocumentRoot "/home/user/http/domainname1.dom"
     ServerName domainname1.dom
@@ -249,7 +249,7 @@ A very basic vhost file will look like this:
     </Directory>
 </VirtualHost>
 
-<VirtualHost domainname1.dom:443>
+<VirtualHost *:443>
     ServerAdmin webmaster@domainname1.dom
     DocumentRoot "/home/user/http/domainname1.dom"
     ServerName domainname1.dom:443

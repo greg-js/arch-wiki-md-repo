@@ -610,6 +610,10 @@ See also [Wikipedia:Chronology of roguelike video games](https://en.wikipedia.or
 
 	[https://github.com/cymonsgames/ASCIIpOrtal](https://github.com/cymonsgames/ASCIIpOrtal) || [asciiportal](https://www.archlinux.org/packages/?name=asciiportal)
 
+*   **[Brogue](https://en.wikipedia.org/wiki/Brogue_(video_game) "wikipedia:Brogue (video game)")** — A beginner-friendly Rogue-like.
+
+	[https://sites.google.com/site/broguegame/](https://sites.google.com/site/broguegame/) || [brogue](https://aur.archlinux.org/packages/brogue/)
+
 *   **[Cataclysm: Dark Days Ahead](https://en.wikipedia.org/wiki/Cataclysm:_Dark_Days_Ahead "wikipedia:Cataclysm: Dark Days Ahead")** — Post-apocalyptic roguelike.
 
 	[http://en.cataclysmdda.com/](http://en.cataclysmdda.com/) || [cataclysm-dda](https://www.archlinux.org/packages/?name=cataclysm-dda)

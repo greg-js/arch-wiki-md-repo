@@ -1,4 +1,4 @@
-DomainKeys Identified Mail (DKIM) is a digital email signing/verification technology, which is already supported by some common mail providers (for example yahoo, google, etc).
+DomainKeys Identified Mail (DKIM) is a digital email signing/verification technology, which is supported by most common mail providers, including Yahoo, Google and Outlook.com.
 
 ## Contents
 
@@ -8,7 +8,7 @@ DomainKeys Identified Mail (DKIM) is a digital email signing/verification techno
 *   [4 DNS Record](#DNS_Record)
 *   [5 Postfix integration](#Postfix_integration)
 *   [6 Sendmail integration](#Sendmail_integration)
-*   [7 Multiple Domains](#Multiple_Domains)
+*   [7 Multiple domains](#Multiple_domains)
 *   [8 Security](#Security)
 *   [9 Notes](#Notes)
 
@@ -26,7 +26,7 @@ For more info see [RFC 6376](http://tools.ietf.org/html/rfc6376)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [opendkim](https://www.archlinux.org/packages/?name=opendkim) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [opendkim](https://www.archlinux.org/packages/?name=opendkim) package.
 
 ## Configuration
 
@@ -47,7 +47,7 @@ UserID                  opendkim
 *   To generate a secret signing key, you need to specify the domain used to send mails and a selector which is used to refer to the key. You may choose anything you like, see the RFC for details, but alpha-numeric strings should be OK:
 
 ```
-opendkim-genkey -r -s myselector -d example.com
+$ opendkim-genkey -r -s myselector -d example.com
 
 ```
 
@@ -122,18 +122,20 @@ Edit the `sendmail.mc` file and add the following line, **after the last line** 
 
  `/etc/mail/sendmail.mc` 
 ```
-
 INPUT_MAIL_FILTER(`opendkim', `S=inet:8891@localhost')
 
 ```
 
 Rebuild the `sendmail.cf` file with:
 
- `# m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf` 
+```
+# m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
+
+```
 
 And then restart the `sendmail.service`. Read [Daemons](/index.php/Daemons "Daemons") for more details.
 
-## Multiple Domains
+## Multiple domains
 
 If you are providing mail server service to multiple virtual domains on the same server, you will need to modify the basic configuration as below:
 
@@ -155,12 +157,14 @@ Create the following two files to tell opendkim where to find the correct keys. 
 myselector._domainkey.example1.com example1.com:myselector:/etc/opendkim/myselector.private
 myselector._domainkey.example2.com example2.com:myselector:/etc/opendkim/myselector.private
 ...
+
 ```
  `/etc/opendkim/SigningTable` 
 ```
 *@example1.com myselector._domainkey.example1.com
 *@example2.com myselector._domainkey.example2.com
 ...
+
 ```
 
 An existent `/etc/opendkim/TrustedHosts` file tells opendkim who to let use your keys. This is referenced by the `ExternalIgnoreList` directive in your conf file. Opendkim will ignore this list of hosts when verifying incoming mail. And, because it is also referenced by the `InternalHosts` directive, this same list of hosts will be considered “internal,” and opendkim will sign their outgoing mail. Example: `/etc/opendkim/TrustedHosts`
@@ -168,7 +172,7 @@ An existent `/etc/opendkim/TrustedHosts` file tells opendkim who to let use your
 Change ownership of all files to opendkim:
 
 ```
-chown -R opendkim:mail /etc/opendkim
+# chown -R opendkim:mail /etc/opendkim
 
 ```
 

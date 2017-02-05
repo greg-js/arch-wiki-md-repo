@@ -422,10 +422,10 @@ Example to set multiple variables at once(Overclock on performance level [3] by 
 
 ## Avoid screen tearing
 
-Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, type
+Tearing can be avoided by forcing a full composition pipeline, regardless of the compositor you are using. To test whether this option will work, run:
 
 ```
-nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+$ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 
 ```
 
@@ -433,7 +433,6 @@ This however has been reported to reduce the performance of some OpenGL applicat
 
 In order to make the change permanent, it must be added to the `"Screen"` section of your Xorg configuration file. When making this change, `TripleBuffering` should be enabled and `AllowIndirectGLXProtocol` should be disabled in the driver configuration as well. See example configuration below:
 
-**Warning:** MetaMode "extra attributes" in Xorg configuration files seem to be broken at the moment and might keep X from starting. Use the command line tool instead until this is fixed: [https://devtalk.nvidia.com/default/topic/950647/linux/black-screen-with-367-35/2](https://devtalk.nvidia.com/default/topic/950647/linux/black-screen-with-367-35/2)
  `/etc/X11/xorg.conf.d/20-nvidia.conf` 
 ```
 Section "Screen"

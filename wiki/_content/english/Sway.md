@@ -8,8 +8,9 @@
 *   [2 Installation](#Installation)
 *   [3 Starting sway](#Starting_sway)
     *   [3.1 From a terminal](#From_a_terminal)
-    *   [3.2 Using a display manager](#Using_a_display_manager)
-    *   [3.3 From X](#From_X)
+    *   [3.2 Automatically on log in](#Automatically_on_log_in)
+    *   [3.3 Using a display manager](#Using_a_display_manager)
+    *   [3.4 From X](#From_X)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keymap](#Keymap)
     *   [4.2 Statusbar](#Statusbar)
@@ -45,6 +46,19 @@ A detailed accounting of what features have been implemented and what features a
 ### From a terminal
 
 You can start sway by simply typing `sway` in a terminal.
+
+### Automatically on log in
+
+**Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
+
+To start on login to tty1, add the following to your `.bash_profile`:
+
+```
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  exec sway
+fi
+
+```
 
 ### Using a display manager
 
