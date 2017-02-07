@@ -29,7 +29,7 @@
 
 安装 [AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 中的 [mentohust-git](https://aur.archlinux.org/packages/mentohust-git/) 即可。
 
-**注意:** [mentohust-git](https://aur.archlinux.org/packages/mentohust-git/) 目前还在开发中，主要针对锐捷v4算法，暂不兼容旧版本的mentohust，若使用出现问题，可尝试旧版本的[mentohust](https://code.google.com/archive/p/mentohust/downloads)。
+**注意:** [mentohust-git](https://aur.archlinux.org/packages/mentohust-git/) 目前还在开发中，主要针对锐捷v4算法，暂不兼容旧版本的mentohust，若使用出现问题，可尝试旧版本的[mentohust](https://code.google.com/archive/p/mentohust/downloads),亦可安裝[AUR](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中的旧版本[mentohust](https://aur.archlinux.org/packages/mentohust/) 。
 
 ## 配置与运行
 

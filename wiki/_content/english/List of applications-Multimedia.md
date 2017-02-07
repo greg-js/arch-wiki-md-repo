@@ -140,7 +140,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **LxImage-Qt** — The LXQt image viewer.
 
-	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)
+	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
 
 *   **meh** — meh is a small, simple, super fast image viewer using raw XLib.
 
@@ -537,6 +537,10 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 
 	[http://nuvolaplayer.fenryxo.cz/](http://nuvolaplayer.fenryxo.cz/) || [nuvolaplayer](https://aur.archlinux.org/packages/nuvolaplayer/)
+
+*   **pithos** — Python/GTK Pandora desktop client.
+
+	[https://pithos.github.io/](https://pithos.github.io/) || [pithos](https://aur.archlinux.org/packages/pithos/)
 
 *   **Potamus** — Lightweight, intuitive GTK+ audio player with an emphasis on high audio quality.
 

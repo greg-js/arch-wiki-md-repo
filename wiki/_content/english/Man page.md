@@ -17,7 +17,6 @@ In spite of their scope, man pages are designed to be self-contained documents, 
         *   [5.1.3 man -H](#man_-H)
         *   [5.1.4 roffit](#roffit)
     *   [5.2 Converting to PDF](#Converting_to_PDF)
-        *   [5.2.1 Perl stript wrapper](#Perl_stript_wrapper)
 *   [6 Online Man Pages](#Online_Man_Pages)
 *   [7 Noteworthy manpages](#Noteworthy_manpages)
 *   [8 See also](#See_also)
@@ -183,42 +182,6 @@ $ gunzip -c /usr/share/man/man1/free.1.gz | roffit > free.html
 man pages have always been printable: they are written in troff, which is fundamentally a typesetting language. If you have ghostscript installed, converting a man page to PDF is actually very easy: `man -t <manpage> | ps2pdf - <pdf>`. [This google image search](https://www.google.com/search?q=manpage+pdf+troff&num=100&hl=en&prmd=imvns&source=lnms&tbm=isch&sa=X&ei=5BZpUI3oH6rI2AXvx4CoAw&ved=0CAoQ_AUoAQ&biw=1321&bih=1100) should give you an idea of what the result looks like; it may not be to everybody's liking.
 
 Caveats: Fonts are generally limited to Times at hardcoded sizes. There are no hyperlinks. Some man pages were specifically designed for terminal viewing, and won't look right in PS or PDF form.
-
-#### Perl stript wrapper
-
-The following perl script converts man pages to PDFs, caches the PDFs in the `$HOME/.manpdf/` directory, and calls a PDF viewer, specifically [mupdf](https://www.archlinux.org/packages/?name=mupdf).
-
- `Usage: manpdf [<section>] <manpage>` 
-```
-#!/usr/bin/perl
-use File::stat;
-
-$pdfdir = $ENV{"HOME"}."/.manpdf";
--d $pdfdir || mkdir $pdfdir || die "can't create $pdfdir";
-$manpage = $ARGV[0];
-chop($manpath = `man -w $manpage`);
-die if $?;
-
-$maninfo = stat($manpath) or die;
-$manpath =~ s@.*/man./(.*)(\.(gz|bz2))?$@$1@;
-$pdfpath = "$pdfdir/$manpath.pdf";
-$pdftime = 0;
-if (-f $pdfpath) {
-    $pdfinfo = stat($pdfpath) or die;
-    $pdftime = $pdfinfo->mtime;
-}
-if (!-f $pdfpath || $maninfo->mtime > $pdftime) {
-    system "man -t $manpage | ps2pdf -dPDFSETTINGS=/screen - $pdfpath";
-}
-die if !-f $pdfpath;
-if (!fork) {
-    open(STDOUT, "/dev/null");
-    open(STDERR, "/dev/null");
-    exec "mupdf", "-r", "96", $pdfpath;
-    #exec "acroread", $pdfpath;
-}
-
-```
 
 ## Online Man Pages
 

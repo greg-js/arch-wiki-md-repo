@@ -25,7 +25,7 @@ Want to see it in action? A StumpWM user created a [video](http://www.archive.or
 
 ## Installation
 
-[Install](/index.php/Install "Install") [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/). It supports multiple common-lisp implementations.
+[Install](/index.php/Install "Install") [stumpwm](https://aur.archlinux.org/packages/stumpwm/) or [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/). The stable version supports multiple common-lisp implementations. The git version only supports sbcl.
 
 SBCL is recommended for maximum performance.
 
@@ -36,16 +36,16 @@ Install these packages in the following order:
 *   [sbcl](https://www.archlinux.org/packages/?name=sbcl)
 *   [clx-git](https://aur.archlinux.org/packages/clx-git/)
 *   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)
-*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)
+*   [stumpwm](https://aur.archlinux.org/packages/stumpwm/) or [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)
 
 ### With Clisp
 
 Install these packages from AUR in the following order:
 
 *   [clisp-new-clx](https://aur.archlinux.org/packages/clisp-new-clx/)
-*   [cl-asdf](https://aur.archlinux.org/packages/cl-asdf/)
+*   [asdf](https://aur.archlinux.org/packages/asdf/)
 *   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)
-*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)
+*   [stumpwm](https://aur.archlinux.org/packages/stumpwm/)
 
 Also, look at [this post](https://bbs.archlinux.org/viewtopic.php?pid=543537#p543537) if you run into troubles.
 

@@ -13,7 +13,7 @@
     *   [1.6 BlackArch Linux](#BlackArch_Linux)
     *   [1.7 Bluestar Linux](#Bluestar_Linux)
     *   [1.8 Bridge Linux](#Bridge_Linux)
-    *   [1.9 Papyros](#Papyros)
+    *   [1.9 LiriOS](#LiriOS)
     *   [1.10 Evo/Lution Linux](#Evo.2FLution_Linux)
     *   [1.11 TalkingArch](#TalkingArch)
     *   [1.12 Tux Hat Linux](#Tux_Hat_Linux)
@@ -125,11 +125,11 @@ Bridge Linux 是基于Arch的衍生发行版，提供开箱即用的可工作环
 *   论坛: [http://millertechnologies.net/forum](http://millertechnologies.net/forum)
 *   桌面截图: [http://www.linuxscreenshots.org/?distro=bridge](http://www.linuxscreenshots.org/?distro=bridge)
 
-### Papyros
+### LiriOS
 
-Papyros是一个操作系统，它遵守谷歌的材料设计方案，并基于Arch Linux，KDE和Wayland。
+LiriOS是一个操作系统，它遵守谷歌的Material Design方案，并基于Arch Linux，KDE和Wayland。
 
-*   主页: [http://papyros.io/](http://papyros.io/)
+*   主页: [https://liri.io/](https://liri.io/)
 
 ### Evo/Lution Linux
 

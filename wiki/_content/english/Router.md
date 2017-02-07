@@ -32,7 +32,7 @@ This article does not attempt to show how to set up a shared connection between 
 ## Hardware Requirements
 
 *   At least 1 GB of hard drive space. The base install will take up around 500MB of space and if you want to use a caching web proxy, you will need to reserve space for the cache as well.
-*   At least two physical network interfaces: a gateway connects two networks with each other. You will need to be able to connect those networks to the same physical computer. One interface must connect to the external network, while the other connects to the internal network.
+*   At least two physical network interfaces: a gateway connects two networks with each other (actually router can be made using single physical interface that underlay two VLAN interfaces and connected to VLAN-aware switch, so-called router-on-a-stick configuration, but it is not covered in this article). You will need to be able to connect those networks to the same physical computer. One interface must connect to the external network, while the other connects to the internal network.
 *   A hub, switch or UTP cable: You need a way to connect the other computers to the gateway
 
 ## Conventions

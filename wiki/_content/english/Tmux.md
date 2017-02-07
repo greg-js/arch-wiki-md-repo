@@ -362,14 +362,14 @@ It is possible to copy tmux selection to X clipboard (and to X primary/secondary
 
 ```
 # Emacs style
-bind-key -t emacs-copy M-w copy-pipe "xsel -i -p && xsel -o -p | xsel -i -b"
+bind-key -T copy-mode y send-keys -X copy-pipe "xsel -i -p && xsel -o -p | xsel -i -b"
 bind-key C-y run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```
 
 ```
 # Vim style
-bind-key -t vi-copy y copy-pipe "xsel -i -p && xsel -o -p | xsel -i -b"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe "xsel -i -p && xsel -o -p | xsel -i -b"
 bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```
@@ -378,7 +378,7 @@ bind-key p run "xsel -o | tmux load-buffer - ; tmux paste-buffer"
 
 ```
 # Vim style
-bind-key -t vi-copy y copy-pipe "xclip -i -sel clip > /dev/null"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe "xclip -i -sel clip > /dev/null"
 bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
 
 ```

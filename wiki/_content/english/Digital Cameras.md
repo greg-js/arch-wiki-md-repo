@@ -35,6 +35,7 @@ GPhoto2 also provides convenient debugging features for camera driver developers
 *   `gphoto2 --summary`
 *   `gphoto2 --list-files`
 *   `gphoto2 --get-all-files`
+*   `gphoto2 --set-config datetime=now` - sets the camera to the current time
 
 For advanced file manipulation, use
 

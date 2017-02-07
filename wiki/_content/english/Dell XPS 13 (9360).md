@@ -154,7 +154,11 @@ Some users recognised ~2W more power consumption after waking up from standby. G
 
 ### Popping Sound on headphones/external speakers
 
+Power saving being enabled on the audio chip will cause the hissing and popping to appear.
+
 Have a look at [Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Pops_when_starting_and_stopping_playback "Advanced Linux Sound Architecture/Troubleshooting") and [Advanced_Linux_Sound_Architecture/Troubleshooting#Popping_sound_after_resuming_from_suspension](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Popping_sound_after_resuming_from_suspension "Advanced Linux Sound Architecture/Troubleshooting").
+
+If you are using [tlp](https://www.archlinux.org/packages/?name=tlp), it will activate power saving by default when on battery. Edit `/etc/default/tlp` and disable it.
 
 ### Coil Whine
 

@@ -7,7 +7,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [1.2 KDE applications and language packs](#KDE_applications_and_language_packs)
     *   [1.3 Unstable releases](#Unstable_releases)
 *   [2 Starting Plasma](#Starting_Plasma)
-    *   [2.1 Wayland](#Wayland)
+    *   [2.1 Graphically](#Graphically)
+    *   [2.2 Manual](#Manual)
 *   [3 Configuration](#Configuration)
     *   [3.1 Personalization](#Personalization)
         *   [3.1.1 Plasma desktop](#Plasma_desktop_2)
@@ -107,18 +108,19 @@ See [Official repositories#kde-unstable](/index.php/Official_repositories#kde-un
 
 ## Starting Plasma
 
+Plasma can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console.
+
+### Graphically
+
 **Tip:** To better integrate SDDM with Plasma, it is recommended to edit `/etc/sddm.conf` to use the breeze theme. Refer to [SDDM#Theme settings](/index.php/SDDM#Theme_settings "SDDM") for instructions.
 
 To launch a Plasma 5 session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
-Alternatively, to start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login").
+As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, up to QT-5.7 (resp QT-5.8 beta). With later versions it does not work yet. See the [few known problems](https://community.kde.org/Plasma/5.9_Errata#Wayland) as well. To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
 
-### Wayland
+### Manual
 
-As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, although there are a [few known problems](https://community.kde.org/Plasma/5.9_Errata#Wayland).
-
-*   To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
-*   To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
+To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
 
 ## Configuration
 

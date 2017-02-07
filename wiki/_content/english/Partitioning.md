@@ -36,9 +36,6 @@ Once created, a partition must be formatted with an appropriate [file system](/i
     *   [3.2 GNU Parted](#GNU_Parted)
     *   [3.3 partitionmanager](#partitionmanager)
 *   [4 Partition alignment](#Partition_alignment)
-    *   [4.1 Hard disk drives](#Hard_disk_drives)
-    *   [4.2 Solid state drives](#Solid_state_drives)
-    *   [4.3 Verify alignment](#Verify_alignment)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Converting MBR to GPT](#Converting_MBR_to_GPT)
     *   [5.2 GPT Kernel Support](#GPT_Kernel_Support)
@@ -282,23 +279,9 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 
 ## Partition alignment
 
-Proper partition alignment is essential for optimal performance and longevity. This is due to the [block](https://en.wikipedia.org/wiki/Block_(data_storage) nature of every I/O operation on the hardware level as well as file system level. The key to alignment is partitioning to (at least) the given *block size*, which depends on the used hardware. If the partitions are not aligned to begin at multiples of the *block size*, aligning the file system is a pointless exercise because everything is skewed by the start offset of the partition.
+[fdisk/gdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted#Alignment "Parted") handle alignment automatically. See [GNU Parted#Check alignment](/index.php/GNU_Parted#Check_alignment "GNU Parted") if you want to verify your alignment after partitioning.
 
-### Hard disk drives
-
-Historically, hard drives were addressed by indicating the *cylinder*, the *head*, and the *sector* at which data was to be read or written (also known as [CHS addressing](https://en.wikipedia.org/wiki/Cylinder-head-sector "wikipedia:Cylinder-head-sector")). These represented the radial position (cylinder), the axial position (drive head: platter and side), and the azimuth (sector) of the data respectively. Nowadays, with [logical block addressing](https://en.wikipedia.org/wiki/Logical_block_addressing "wikipedia:Logical block addressing"), the entire hard drive is addressed as one continuous stream of data and the term [sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector") designates the smallest addressable unit.
-
-The standard *sector size* is 512B, but modern high-capacity hard drives use greater value, commonly 4KiB. Using values greater than 512B is referred to as the [Advanced Format](/index.php/Advanced_Format "Advanced Format").
-
-### Solid state drives
-
-Solid state drives are based on [flash memory](https://en.wikipedia.org/wiki/Flash_memory "wikipedia:Flash memory"), and thus differ significantly from hard drives. While reading remains possible in a random access fashion, erasure (hence rewriting and random writing) is possible only by [whole blocks](https://en.wikipedia.org/wiki/Flash_memory#Block_erasure "wikipedia:Flash memory"). Additionally, the *erase block size* (EBS) are significantly greater than regular *block size*, for example 128KiB vs. 4KiB, so it is necessary to align to multiples of EBS. Some [NVMe](/index.php/NVMe "NVMe") drives should be aligned to 4KiB, but not all. To find the sector size of your SSD, see [Advanced Format#How to determine if HDD employ a 4k sector](/index.php/Advanced_Format#How_to_determine_if_HDD_employ_a_4k_sector "Advanced Format").
-
-### Verify alignment
-
-[fdisk/gdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted#Alignment "Parted") handle alignment automatically.
-
-See [GNU Parted#Check alignment](/index.php/GNU_Parted#Check_alignment "GNU Parted").
+For certain drives [Advanced Format](/index.php/Advanced_Format "Advanced Format") might be able to provide a better-performing alignment.
 
 ## Tips and tricks
 

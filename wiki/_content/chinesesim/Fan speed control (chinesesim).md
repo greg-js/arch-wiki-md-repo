@@ -1,3 +1,5 @@
+**翻译状态：** 本文是英文页面 [Fan speed control](/index.php/Fan_speed_control "Fan speed control") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-07，点击[这里](https://wiki.archlinux.org/index.php?title=Fan+speed+control&diff=0&oldid=466874)可以查看翻译后英文页面的改动。
+
 Fancontrol, 是[lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors)的一部分，可以被用于控制CPU以及其他风扇的转速。本文阐述了如何安装，配置它。
 
 对于一些戴尔笔记本，可以由[i8kutils](#i8kutils)代替。

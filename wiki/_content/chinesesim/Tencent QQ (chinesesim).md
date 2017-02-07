@@ -7,9 +7,10 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
     *   [1.2 官方 Adobe Air 客户端](#.E5.AE.98.E6.96.B9_Adobe_Air_.E5.AE.A2.E6.88.B7.E7.AB.AF)
     *   [1.3 PyWebQQ (python-webqq)](#PyWebQQ_.28python-webqq.29)
     *   [1.4 pidgin-lwqq](#pidgin-lwqq)
-    *   [1.5 gtkqq](#gtkqq)
-    *   [1.6 qtqq](#qtqq)
-    *   [1.7 weechat-webqq](#weechat-webqq)
+    *   [1.5 telepathy/empathy-lwqq](#telepathy.2Fempathy-lwqq)
+    *   [1.6 gtkqq](#gtkqq)
+    *   [1.7 qtqq](#qtqq)
+    *   [1.8 weechat-webqq](#weechat-webqq)
 *   [2 独立开发](#.E7.8B.AC.E7.AB.8B.E5.BC.80.E5.8F.91)
     *   [2.1 libqq](#libqq)
 *   [3 官方版本](#.E5.AE.98.E6.96.B9.E7.89.88.E6.9C.AC)
@@ -52,11 +53,13 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ### pidgin-lwqq
 
-[pidgin-lwqq](https://github.com/xiehuc/pidgin-lwqq) 是一个 [Pidgin (简体中文)](/index.php/Pidgin_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pidgin (简体中文)") 插件，实现了 WebQQ 协议支持；目前处于良好的维护状态，帮助文档非常详细；功能较为完善，但WebQQ取消了文件发送及接收，因此已经无法实现文件传输，而且无法视频语音。[Official repositories (简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")提供了 [pidgin-lwqq](https://www.archlinux.org/packages/?name=pidgin-lwqq) 软件包。
+**警告:** 该作者已经停止对其更新，见（[github页面](https://github.com/xiehuc/pidgin-lwqq) ）。
 
-安装完后，在 Pidgin 新建账号时，协议直接选择 webqq，并填入必要的帐号和密码，最后登录即可。
+[pidgin-lwqq](https://github.com/xiehuc/pidgin-lwqq) 是一个 [Pidgin (简体中文)](/index.php/Pidgin_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pidgin (简体中文)") 插件，实现了 WebQQ 协议支持。目前该项目已经停止更新。
 
-此外，该插件也支持 Empathy。
+### telepathy/empathy-lwqq
+
+telepathy的插件[telepathy-lwqq-git](https://aur.archlinux.org/packages/telepathy-lwqq-git/)，[empathy](https://www.archlinux.org/packages/?name=empathy)（基于telepahty框架）也支持。
 
 ### gtkqq
 
@@ -93,9 +96,9 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 ## 官方版本
 
-**警告:** 由于 QQ for Linux 长时间不更新，导致程序无法适应现有的部分Linux组件，安装后经常崩溃。而据用户报告，如今 QQ for Linux 也已不允许登录，每次登录都提示版本过低
+**警告:** 由于 QQ for Linux 长时间不更新，导致程序无法适应现有的部分Linux组件，安装后经常崩溃。而据用户报告，如今 QQ for Linux 也已不允许登录，每次登录都提示版本过低。（一些用户报告可以登录。）
 
-**提示：** 可以在腾讯[投诉](http://support.qq.com/write.shtml)页面呼吁官方提供 Linux 版
+**提示：** 可以在腾讯[投诉](http://support.qq.com/write.shtml)页面呼吁官方提供 Linux 版。（然而并没有什么用）
 
 腾讯在 2008 年底发布了 QQ for Linux 1.0 Preview 3，功能如下：
 
@@ -103,8 +106,6 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 2.  支持和好友/群发送图片
 3.  支持群里截屏并传送截图
 4.  聊天设置中，已经可以设定按回车键发送
-
-在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装 [linuxqq](https://aur.archlinux.org/packages/linuxqq/) 即可。
 
 ## Wine 模拟
 

@@ -5,33 +5,63 @@
 *   [1 Installation](#Installation)
     *   [1.1 Official repositories](#Official_repositories)
     *   [1.2 Using python-pip](#Using_python-pip)
-    *   [1.3 Airline-vim alternative](#Airline-vim_alternative)
-    *   [1.4 Special Plugins](#Special_Plugins)
+    *   [1.3 Using a vim plugin manager](#Using_a_vim_plugin_manager)
+    *   [1.4 Fonts](#Fonts)
+    *   [1.5 Airline-vim alternative](#Airline-vim_alternative)
+    *   [1.6 Special plugins](#Special_plugins)
+*   [2 Usage](#Usage)
 
 ## Installation
 
-[Powerline](https://powerline.readthedocs.io/en/master/index.html) can be installed via two ways - via pacman and via python-pip.
+Powerline can be installed in multiple ways, depending on preference and/or usage intent.
 
 ### Official repositories
 
-[Install](/index.php/Install "Install") [powerline](https://www.archlinux.org/packages/?name=powerline) together with the [python-pip](https://www.archlinux.org/packages/?name=python-pip) and [powerline-common](https://www.archlinux.org/packages/?name=powerline-common) packages.
+[Install](/index.php/Install "Install") [powerline](https://www.archlinux.org/packages/?name=powerline) from the [official repositories](/index.php/Official_repositories "Official repositories")
 
 ### Using python-pip
 
-Please refer to the [Powerline installation guide](https://powerline.readthedocs.io/en/master/installation.html) for python-pip instructions.
+*   [Install](/index.php/Install "Install") [python-pip](https://www.archlinux.org/packages/?name=python-pip) from the [official repositories](/index.php/Official_repositories "Official repositories")
+*   Please refer to the [Powerline installation guide](https://powerline.readthedocs.io/en/master/installation.html) for additional python-pip instructions
+
+### Using a vim plugin manager
+
+There are many vim plugin managers available which are able to install and update Powerline, assuming you are using a version of vim with Python support or you install [python](https://www.archlinux.org/packages/?name=python). For example, using [vim-plug](https://aur.archlinux.org/packages/vim-plug/) from the [AUR](/index.php/AUR "AUR"), add the following to your vimrc file:
+
+ `~/.vimrc` 
+```
+call plug#begin('*path/to/vim/plugins/directory*')
+
+Plug 'powerline/powerline', { 'rtp': 'powerline/bindings/vim' }
+
+call plug#end()
+
+```
+
+Substitute `*path/to/vim/plugins/directory*` with the actual directory, such as `~/.vim/plugged`, and run the vim-plug command `:PlugInstall` within vim. This will download Powerline from the [Powerline GitHub page](https://github.com/powerline/powerline) to the specified plugin directory and add it to vim.
+
+### Fonts
+
+Powerline uses special glyphs and symbols that will not appear correctly unless they are added to fontconfig or patched fonts are installed and used. The fontconfig and some patched fonts are available in the [powerline-fonts](https://www.archlinux.org/packages/?name=powerline-fonts) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Airline-vim alternative
 
 There is currently one known alternative to Powerline - [Vim-airline](https://github.com/vim-airline). It is a part of [vim-plugins](https://www.archlinux.org/groups/x86_64/vim-plugins/) and can be installed separately as [vim-airline](https://www.archlinux.org/packages/?name=vim-airline). Optionally, install [vim-airline-themes](https://www.archlinux.org/packages/?name=vim-airline-themes).
 
-### Special Plugins
+### Special plugins
 
-Depending on where you want to use powerline, you might have to install additional packages.
+Depending on where you want to use Powerline, you might need to install additional packages.
 
 	[Vim](/index.php/Vim "Vim")
 
 	[powerline-vim](https://www.archlinux.org/packages/?name=powerline-vim)
 
+**Tip:** By default, the statusline (and therefore Powerline) only appears when there are multiple windows open. To show it all the time, use `:set laststatus=2`
+
 	[i3](/index.php/I3 "I3")
 
 	[python-i3-git](https://aur.archlinux.org/packages/python-i3-git/)
+
+## Usage
+
+For detailed usage instructions, such as configuring your system to use Powerline with shell prompts, window manager widgets, etc., please refer to the [Usage section](https://powerline.readthedocs.io/en/latest/usage.html#usage) of the [Powerline documentation](https://powerline.readthedocs.io/en/latest/index.html).

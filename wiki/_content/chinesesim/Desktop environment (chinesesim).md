@@ -277,7 +277,7 @@
 [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [SpeedCrunch](http://speedcrunch.org/)
 [speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
 [juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | LxImage-Qt
-[lximage-qt](https://aur.archlinux.org/packages/lximage-qt/) | SMPlayer
+[lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt) | SMPlayer
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |

@@ -211,6 +211,15 @@ EndSection
 
 and restart X.
 
+To confirm that acceleration has been disabled, enter the following:
+
+```
+$ xinput list-props {1..50} 2>/dev/null | fgrep 'libinput Accel Profile Enabled ('
+
+```
+
+The profile should read `0, 1`.
+
 ## Mouse speed with libinput
 
 The speed setting `libinput Accel Speed` is the same as before, taking values in the [-1, 1] range. The Speed setting is a fraction that is added (or subtracted) to 100%, e.g. -0.3 is 70% of the normal speed, and 0.5 is 150%. For example, to adjust the mouse speed down to 50%, use

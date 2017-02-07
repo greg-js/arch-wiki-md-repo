@@ -92,29 +92,29 @@ Arch - це система з плаваючими оновленнями (rolli
 
 Цей розділ містить корисну інформацію, що стосується управління пакетами. Більш детальну інформацію, будь ласка дивіться [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") і [Category:Package management](/index.php/Category:Package_management "Category:Package management").
 
-**Note:** It is imperative to keep up to date with changes in Arch Linux that require manual intervention **before** upgrading your system. Subscribe to the [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) or check the front page [Arch news](https://www.archlinux.org/) every time before you update. Alternatively, you may find it useful to subscribe to [this RSS feed](https://www.archlinux.org/feeds/news/) or follow [@archlinux](https://twitter.com/archlinux) on Twitter.
+**Примітка:** Перш ніж оновлювати систему вам наполегливо радиться ознайомитися з останніми змінами Arch Linux, що можуть потребувати ручного втручання. Підпишіться на [поштовий список оголошень Arch](https://mailman.archlinux.org/mailman/listinfo/arch-announce/), або перевіряйте головну сторінку [новин Arch](https://www.archlinux.org/) перед кожним оновленням. Також, у якості альтернативи, доступні [цей RSS фід](https://www.archlinux.org/feeds/news/), та офіційна твітер-сторінка [@archlinux](https://twitter.com/archlinux).
 
 ### pacman
 
-[pacman (Українська)](/index.php/Pacman_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Pacman (Українська)") is the Arch Linux *pac*kage *man*ager: all users are required to become familiar with it before reading any other articles.
+[pacman (Українська)](/index.php/Pacman_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Pacman (Українська)") це менеджер пакетів (**pac**kage **man**ager) Arch Linux: усі корустивачі повинні ознайомитися з ним перед тим як роздивлятися інші статті цієї вікі.
 
-See [pacman tips](/index.php/Pacman_tips "Pacman tips") for suggestions on how to improve your interaction with *pacman* and package management in general.
+Стаття [pacman tips](/index.php/Pacman_tips "Pacman tips") містить численні поради щодо поліпшення вашої роботи з *pacman* та управлінням пакетами у цілому.
 
 ### Репозиторії
 
-See [Official repositories](/index.php/Official_repositories "Official repositories") for details about the purpose of each officially maintained repository.
+На сторінці [Official repositories](/index.php/Official_repositories "Official repositories") вказано деталі відносно призначення кожного репозіторія, що офіційно підтримується.
 
-If you installed Arch Linux x86_64 and plan on using 32-bit applications, you will want to enable the [multilib](/index.php/Multilib "Multilib") repository.
+Якщо ви встановили x86_64 версію Arch Linux та плануєте використовувати 32-бітні програми, вам потрібно буде застосувати репозиторій [multilib](/index.php/Multilib "Multilib").
 
-[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") lists several other unsupported repositories.
+[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") містить у собі інформацію про деякі інші, (офіційно) непідтримувані, репозиторії.
 
 ### Дзеркала
 
-Visit [Mirrors](/index.php/Mirrors "Mirrors") for steps on taking full advantage of using the fastest and most up to date mirrors of the official repositories. As explained in the article, a particularly good advice is to routinely check the [Mirror Status](https://www.archlinux.org/mirrors/status/) page for a list of mirrors that have been recently synced.
+Розгляньте статтю [Mirrors](/index.php/Mirrors "Mirrors") для ознайомлення із системою дзеркал та їх застосування. Гарною звичкою, згідно зі статтею, є регулярна перевірка [сторінки зі станом дзеркал](https://www.archlinux.org/mirrors/status/), яка перелічує дзеркала що були нещодавно синхронізовані.
 
 ### Система збірки для Arch (Arch Build System)
 
-*Ports* is a system initially used by BSD distributions consisting of build scripts that reside in a directory tree on the local system. Simply put, each port contains a script within a directory intuitively named after the installable third-party application.
+*Ports* це система що спочатку використовувалася дистрибутвами BSD. Вона складається з так званих скриптів збору (build scripts), які знаходяться у дереві директорій локальної системи. Кажучи простіше, кожний порт містить скрипт у директорії названій на честь встановлюємої програми від третьої сторони.
 
 The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS) tree offers the same functionality by providing build scripts called [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), which are populated with information for a given piece of software; integrity hashes, project URL, version, license and build instructions. These PKGBUILDs are later parsed by [makepkg](/index.php/Makepkg "Makepkg"), the actual program that generates packages cleanly manageable by *pacman*.
 

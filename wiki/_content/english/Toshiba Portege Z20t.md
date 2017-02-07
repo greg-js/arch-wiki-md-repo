@@ -8,10 +8,11 @@ The power of an enterprise-class laptop. The freedom and convenience of a tablet
     *   [2.2 Touchpad](#Touchpad)
     *   [2.3 Bluetooth](#Bluetooth)
     *   [2.4 Wifi](#Wifi)
-    *   [2.5 Smart Card Reader](#Smart_Card_Reader)
-    *   [2.6 Display Backlight Control](#Display_Backlight_Control)
-    *   [2.7 Keyboard Backlight control](#Keyboard_Backlight_control)
-    *   [2.8 Fn-F9 Touchpad Toggle](#Fn-F9_Touchpad_Toggle)
+    *   [2.5 LTE/3G](#LTE.2F3G)
+    *   [2.6 Smart Card Reader](#Smart_Card_Reader)
+    *   [2.7 Display Backlight Control](#Display_Backlight_Control)
+    *   [2.8 Keyboard Backlight control](#Keyboard_Backlight_control)
+    *   [2.9 Fn-F9 Touchpad Toggle](#Fn-F9_Touchpad_Toggle)
 
 ## Specifications
 
@@ -46,6 +47,46 @@ Works
 ### Wifi
 
 Works
+
+### LTE/3G
+
+Works in some situations. Some providers might not connect with the default configuration.
+
+The built-in Sierra EM7305 is operating in mbim-mode, which is the default configuration on Windows 8/10 Systems. mbim is still not well supported in Linux. Switching to QMI-Mode can solve some problems. [Source](http://www.0xf8.org/2015/07/dell-wireless-5809e-support-in-linux-a-followup/#more-1258)
+
+ `99-em7305.rules` 
+```
+ACTION!="add|change", GOTO="mbim_to_qmi_rules_end"
+SUBSYSTEM!="usb|drivers", GOTO="mbim_to_qmi_rules_end"
+
+# force Sierra EM7305 to configuration #1
+SUBSYSTEM=="usb", \
+        ATTR{idVendor}=="1199", ATTR{idProduct}=="9063", \
+        ATTR{bConfigurationValue}="1"
+
+# load qcserial module
+SUBSYSTEM=="usb", \
+        ATTR{idVendor}=="1199", ATTR{idProduct}=="9063", \
+        RUN+="/sbin/modprobe -b qcserial"
+
+# add the new id in the qcserial driver
+SUBSYSTEM=="drivers", \
+        ENV{DEVPATH}=="/bus/usb-serial/drivers/qcserial", \
+        ATTR{new_id}="1199 9063"
+
+# load qmi_wwan module
+SUBSYSTEM=="usb", \
+        ATTR{idVendor}=="1199", ATTR{idProduct}=="9063", \
+        RUN+="/sbin/modprobe -b qmi_wwan"
+
+# add the new id in the qmi_wwan driver
+SUBSYSTEM=="drivers", \
+        ENV{DEVPATH}=="/bus/usb/drivers/qmi_wwan", \
+        ATTR{new_id}="1199 9063"
+
+LABEL="mbim_to_qmi_rules_end"
+
+```
 
 ### Smart Card Reader
 

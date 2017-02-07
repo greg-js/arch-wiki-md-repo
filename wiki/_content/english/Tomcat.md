@@ -1,6 +1,6 @@
 Tomcat is an open source Java [Servlet container](https://en.wikipedia.org/wiki/Java_Servlet#Servlet_containers "wikipedia:Java Servlet") developed by the Apache Software Foundation. For more information about basic configuration, see:[Tomcat and Apache](/index.php/Tomcat_and_Apache "Tomcat and Apache")
 
-**Note:** Tomcat currently exists under three stable branches: [6](http://tomcat.apache.org/download-60.cgi), [7](http://tomcat.apache.org/download-70.cgi) and [8](https://tomcat.apache.org/download-80.cgi). None of these version deprecates the preceding. Instead, [each branch is the implementation of a couple of the "Servlet" and "JSP" Java standards](http://tomcat.apache.org/whichversion.html#Apache_Tomcat_Versions). All versions are officially supported in Arch Linux: [tomcat6](https://www.archlinux.org/packages/?name=tomcat6), [tomcat7](https://www.archlinux.org/packages/?name=tomcat7) and [tomcat8](https://www.archlinux.org/packages/?name=tomcat8). Check the version you need depending on your web applications requirements. If you just want to try out tomcat or just do not want to spend more time figuring out, there are good chances you will want to try tomcat7\. This wiki page refers to tomcat7 but most of its content can be applied to tomcat6 and tomcat8.
+**Note:** Tomcat currently exists under two stable branches: [7](http://tomcat.apache.org/download-70.cgi) and [8](https://tomcat.apache.org/download-80.cgi). None of these version deprecates the preceding. Instead, [each branch is the implementation of a couple of the "Servlet" and "JSP" Java standards](http://tomcat.apache.org/whichversion.html#Apache_Tomcat_Versions). All versions are officially supported in Arch Linux: [tomcat7](https://www.archlinux.org/packages/?name=tomcat7) and [tomcat8](https://www.archlinux.org/packages/?name=tomcat8). Check the version you need depending on your web applications requirements. If you just want to try out tomcat or just do not want to spend more time figuring out, there are good chances you will want to try tomcat7\. This wiki page refers to tomcat7 but most of its content can be applied to tomcat8.
 
 ## Contents
 
@@ -21,7 +21,7 @@ Tomcat is an open source Java [Servlet container](https://en.wikipedia.org/wiki/
 
 ## Installation
 
-Install one of [tomcat6](https://www.archlinux.org/packages/?name=tomcat6), [tomcat7](https://www.archlinux.org/packages/?name=tomcat7), or [tomcat8](https://www.archlinux.org/packages/?name=tomcat8).
+Install one of [tomcat7](https://www.archlinux.org/packages/?name=tomcat7), or [tomcat8](https://www.archlinux.org/packages/?name=tomcat8).
 
 If deploying Tomcat onto a production environment, consider installing [tomcat-native](https://www.archlinux.org/packages/?name=tomcat-native). The native library for Tomcat configures the server to use the Apache Portable Runtime (APR) library's network connection (socket) and RNG implementations. It uses native 32- or 64-bit code to enhance performance and is sometimes used in production environments where speed is crucial. No configuration is necessary for default Tomcat installations. More information is availble in the [official Tomcat docs](http://tomcat.apache.org/native-doc/).
 
@@ -34,7 +34,7 @@ INFO: The APR based Apache Tomcat Native library which allows optimal performanc
 
 ### Filesystem hierarchy
 
-Replace the `*` with your installed version (6, 7 or 8).
+Replace the `*` with your installed version (7 or 8).
 
 | Pathname | Use |
 | `/etc/tomcat*` | Configuration files. Among some: `tomcat-users.xml` (defines users allowed to use administration tools and their roles), `server.xml` (Main Tomcat configuration file), `catalina.policy` (security policies configuration file) |
@@ -73,7 +73,7 @@ Keep in mind that Tomcat must be restarted each time a modification is made to t
 
 This [blog post](http://blog.techstacks.com/2010/07/new-manager-roles-in-tomcat-7-are-wonderful.html) gives a good description of these roles.
 
-To have read permissions on the configuration files and work well with some IDEs, you must add your user to the tomcat (tomcat6,tomcat7 or tomcat8 depending on your version) group:
+To have read permissions on the configuration files and work well with some IDEs, you must add your user to the `tomcat7` (respectively `tomcat8`) group:
 
 ```
  gpasswd -a <user> tomcat<number>
@@ -154,7 +154,7 @@ Basic configuration can be made through the virtual host manager web application
 
 ### Migrating from previous versions of Tomcat
 
-As said in the introduction, **Tomcat 7 does not deprecate Tomcat 6**. They are all three, implementations of Servlet/JSP standards. Hence you must first determine [which version](http://tomcat.apache.org/whichversion.html#Apache_Tomcat_Versions) of Tomcat you need depending on the versions of Servlet/JSP your application uses. If you need to migrate, the official website gives [instructions on how to handle such a process](http://tomcat.apache.org/migration.html).
+As said in the introduction, **Tomcat 8 does not deprecate Tomcat 7**. They are all three, implementations of Servlet/JSP standards. Hence you must first determine [which version](http://tomcat.apache.org/whichversion.html#Apache_Tomcat_Versions) of Tomcat you need depending on the versions of Servlet/JSP your application uses. If you need to migrate, the official website gives [instructions on how to handle such a process](http://tomcat.apache.org/migration.html).
 
 ### Using Tomcat with a different JRE/JDK
 

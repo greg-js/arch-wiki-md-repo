@@ -280,10 +280,10 @@ The DPI of the X server is determined in the following manner:
 
 1.  The -dpi command line option has highest priority.
 2.  If this is not used, the DisplaySize setting in the X config file is used to derive the DPI, given the screen resolution.
-3.  If no DisplaySize is given, the monitor size values from DDC are used to derive the DPI, given the screen resolution.
+3.  If no DisplaySize is given, the monitor size values from [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel") are used to derive the DPI, given the screen resolution.
 4.  If DDC does not specify a size, 75 DPI is used by default.
 
-In order to get correct dots per inch (DPI) set, the display size must be recognized or set. Having the correct DPI is especially necessary where fine detail is required (like font rendering). Previously, manufacturers tried to create a standard for 96 DPI (a 10.3" diagonal monitor would be 800x600, a 13.2" monitor 1024x768). These days, screen DPIs vary and may not be equal horizontally and vertically. For example, a 19" widescreen LCD at 1440x900 may have a DPI of 89x87\. To be able to set the DPI, the Xorg server attempts to auto-detect your monitor's physical screen size through the graphic card with [DDC](https://en.wikipedia.org/wiki/Display_Data_Channel "wikipedia:Display Data Channel"). ~~When the Xorg server knows the physical screen size, it will be able to set the correct DPI depending on resolution size.~~
+In order to get correct dots per inch (DPI) set, the display size must be recognized or set. Having the correct DPI is especially necessary where fine detail is required (like font rendering). Previously, manufacturers tried to create a standard for 96 DPI (a 10.3" diagonal monitor would be 800x600, a 13.2" monitor 1024x768). These days, screen DPIs vary and may not be equal horizontally and vertically. For example, a 19" widescreen LCD at 1440x900 may have a DPI of 89x87\. To be able to set the DPI, the Xorg server attempts to auto-detect your monitor's physical screen size through the graphic card with DDC. ~~When the Xorg server knows the physical screen size, it will be able to set the correct DPI depending on resolution size.~~
 
 To see if your display size and DPI are detected/calculated correctly:
 

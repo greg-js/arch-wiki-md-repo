@@ -37,8 +37,9 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [8.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
 *   [9 Passing though other devices](#Passing_though_other_devices)
     *   [9.1 USB controller](#USB_controller)
-    *   [9.2 Gotchas](#Gotchas_3)
-        *   [9.2.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
+    *   [9.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
+    *   [9.3 Gotchas](#Gotchas_3)
+        *   [9.3.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [10 Troubleshooting](#Troubleshooting_2)
     *   [10.1 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
 *   [11 See also](#See_also)
@@ -679,6 +680,65 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 This laptop has 3 USB ports managed by 2 USB controllers, each with their own IOMMU group. In this example, Bus 001 manages a single USB port (with a SanDisk USB pendrive plugged into it so it appears on the list), but also a number of internal devices, such as the internal webcam and the bluetooth card. Bus 002, on the other hand, does not apprear to manage anything except for the calculator that is plugged into it. The third port is empty, which is why it does not show up on the list, but is actually managed by Bus 002.
 
 Once you have identified which controller manages which ports by plugging various devices into them and decided which one you want to passthrough, simply add it to the list of PCI host devices controlled by the VM in your guest configuration. No other configuration should be needed.
+
+### Passing VM audio to host via PulseAudio
+
+It is possible to route the virtual machine's audio to the host as an application using libvirt. This has the advantage of multiple audio streams being routable to one host output, and working with audio output devices that do not support passthrough. [PulseAudio](/index.php/PulseAudio "PulseAudio") is required for this to work.
+
+First, remove the comment from the `#user = ""` line. Then add your username in the quotations. This tells QEMU which user's pulseaudio stream to route through.
+
+ `/etc/libvirt/qemu.conf`  `user = "example"` 
+
+Next, modify the libvirt configuration
+
+ `EDITOR=nano virsh edit [vmname]` 
+```
+<domain type='kvm'>
+
+```
+
+to
+
+ `EDITOR=nano virsh edit [vmname]` 
+```
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+
+```
+
+Then set the QEMU PulseAudio environment variables at the bottom of the libvirt xml file
+
+ `EDITOR=nano virsh edit [vmname]` 
+```
+    </devices>
+   </domain>
+
+```
+
+to
+
+ `EDITOR=nano virsh edit [vmname]` 
+```
+    </devices>
+      <qemu:commandline>
+        <qemu:env name='QEMU_AUDIO_DRV' value='pa'/>
+        <qemu:env name='QEMU_PA_SERVER' value='/run/user/1000/pulse/native'/>
+      </qemu:commandline>
+ </domain>
+
+```
+
+Change 1000 under the user directory to your user uid (which can be found by running the `id` command.
+
+Restart libvirt and pulseaudio (run as your user)
+
+ `systemctl restart libvirtd ` 
+```
+pulseaudio --kill
+pulseaudio --start
+
+```
+
+Virtual Machine audio will now be routed through the host as an application. The application [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) can be used to control the output device. Be aware that on Windows guests, this can cause audio crackling without [using Message-Signaled Interrupts.](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
 
 ### Gotchas
 

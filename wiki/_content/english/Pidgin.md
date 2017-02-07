@@ -49,7 +49,7 @@ The [aspell](https://www.archlinux.org/packages/?name=aspell) package will be in
 
 ### Facebook
 
-[Install](/index.php/Install "Install") the [purple-facebook](https://aur.archlinux.org/packages/purple-facebook/) package. (or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/))
+[Install](/index.php/Install "Install") the [purple-facebook](https://www.archlinux.org/packages/?name=purple-facebook) package. (or [purple-facebook-git](https://aur.archlinux.org/packages/purple-facebook-git/))
 
 Then add a new account, select Facebook as the protocol, enter your [Facebook username](https://www.facebook.com/help/211813265517027) and password and login.
 

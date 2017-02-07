@@ -349,7 +349,7 @@ It is possible to create a `grubx64_standalone.efi` application which has all th
 
 ```
 # echo 'configfile ${cmdpath}/grub.cfg' > /tmp/grub.cfg
-# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --fonts="unicode" --locales="en@quot" --themes="" -o "*esp*/EFI/grub/grubx64_standalone.efi"  "boot/grub/grub.cfg=/tmp/grub.cfg" -v
+# grub-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --modules="part_gpt part_msdos" --locales="en@quot" --themes="" -o "*esp*/EFI/grub/grubx64_standalone.efi" "boot/grub/grub.cfg=/tmp/grub.cfg" -v
 
 ```
 

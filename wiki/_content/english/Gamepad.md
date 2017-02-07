@@ -320,6 +320,8 @@ Alternatively, you can press the share button and the PlayStation button simulta
 
 Remember to disconnect the controller when you are done as the controller will stay on when connected and drain the battery.
 
+**Note:** If the controller does not connect, make sure the bluetooth interface is turned on and the controllers have been trusted. (See [Bluetooth](/index.php/Bluetooth "Bluetooth"))
+
 ### Steam Controller
 
 The [steam](https://www.archlinux.org/packages/?name=steam) package (starting from version 1.0.0.51-1) will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running steam. If all else fails, try restarting the computer while the dongle is plugged in.

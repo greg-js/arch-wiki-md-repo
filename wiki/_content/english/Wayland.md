@@ -32,6 +32,7 @@
     *   [5.9 screen recording](#screen_recording)
     *   [5.10 remote display](#remote_display)
     *   [5.11 drag and drop between GNOME and QT, or within QT](#drag_and_drop_between_GNOME_and_QT.2C_or_within_QT)
+    *   [5.12 Remote desktop and vm applications don't grab input](#Remote_desktop_and_vm_applications_don.27t_grab_input)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -318,14 +319,13 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 
 | Name | Type | Description |
 | GNOME | Compositing | See [GNOME#Starting GNOME](/index.php/GNOME#Starting_GNOME "GNOME"). |
-| Hawaii | *(Unclear)* | See [Hawaii](/index.php/Hawaii "Hawaii"). |
 | sway | Tiling | [Sway](/index.php/Sway "Sway") is an i3-compatible window manager for Wayland. [Github](https://github.com/SirCmpwn/sway) |
-| Enlightenment | *(Unclear)* | Long running minimal Window Manager-turned Wayland compositor. E19 originally had Wayland support but this was removed and now only E20+ Wayland is considered stable enough for regular use. [More Info](https://www.enlightenment.org/about-wayland) |
+| Enlightenment | Compositing | Long running minimal Window Manager-turned Wayland compositor. E19 originally had Wayland support but this was removed and now only E20+ Wayland is considered stable enough for regular use. [More Info](https://www.enlightenment.org/about-wayland) |
 | KDE Plasma | Compositing | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is a tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
 | Orbital | Compositing | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
-| Papyros Shell | *(Unclear)* | [Papyros Shell](https://github.com/papyros/papyros-shell) is the desktop shell for [Papyros](/index.php/Papyros "Papyros"), built using QtQuick and QtCompositor as a compositor for Wayland. |
+| Liri Shell | *(Unclear)* | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
 | Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
 | Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a wayland compositor to explore 3D windowing using Virtual Reality. |
 | Way Cooler | Tiling | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) is a customizeable (lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
@@ -396,6 +396,10 @@ gsettings set org.nemo.desktop show-desktop-icons false
 ### drag and drop between GNOME and QT, or within QT
 
 (20170103) when running GNOME, dragging files from dolphin or nemo into avidemux does not work. see [QTBUG-57879](https://bugreports.qt.io/browse/QTBUG-57879).
+
+### Remote desktop and vm applications don't grab input
+
+Per design Wayland doesn't allow for an application to grab input devices and constrict the region of the input device to the application, a much wanted feature when using a remote dekstop app or running a desktop vm, which means that modifier keys and hotkeys will not be sent correctly to the remote machine or vm and also tge mouse pointer will not be restricted to the application's user interface (which might cause a parallax effect). [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=97333) [[2]](https://bugzilla.redhat.com/show_bug.cgi?id=1285770)
 
 ## See also
 

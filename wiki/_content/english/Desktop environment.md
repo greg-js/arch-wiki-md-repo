@@ -79,9 +79,9 @@ Prior to installing a desktop environment, a functional X server installation is
 
 	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)
 
-*   **[Hawaii](/index.php/Hawaii "Hawaii")** — Hawaii is a lightweight, coherent and fast desktop environment that relies on Qt 5, QtQuick and Wayland and is designed to offer the best UX for the device where it is running.
+*   **[Liri](/index.php/Liri "Liri")** — Liri is a desktop environment with modern design and features. Liri is the merge between [Hawaii](http://hawaiios.org/), [Papyros](http://papyros.io/) and the [Liri Project](https://github.com/liri-project). Highly experimental.
 
-	[http://hawaiios.org](http://hawaiios.org) || [hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/)
+	[https://liri.io/](https://liri.io/) || [liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/)
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 
@@ -94,10 +94,6 @@ Prior to installing a desktop environment, a functional X server installation is
 *   **[Pantheon](/index.php/Pantheon "Pantheon")** — Pantheon is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with GNOME Shell and macOS.
 
 	[https://elementary.io/](https://elementary.io/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
-
-*   **[Papyros](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines. Highly experimental.
-
-	[http://papyros.io/](http://papyros.io/) || [papyros-shell](https://aur.archlinux.org/packages/papyros-shell/)
 
 *   **[Sugar](/index.php/Sugar "Sugar")** — The Sugar Learning Platform is a computer environment composed of Activities designed to help children from 5 to 12 years of age learn together through rich-media expression. Sugar is the core component of a worldwide effort to provide every child with the opportunity for a quality education — it is currently used by nearly one-million children worldwide speaking 25 languages in over 40 countries. Sugar provides the means to help people lead fulfilling lives through access to a quality education that is currently missed by so many.
 
@@ -207,18 +203,6 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
 [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
 [gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [Hawaii](/index.php/Hawaii "Hawaii") | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
-[greenisland](https://aur.archlinux.org/packages/greenisland/) | Hawaii Shell
-[hawaii-shell](https://aur.archlinux.org/packages/hawaii-shell/) | Terminal
-[hawaii-terminal](https://aur.archlinux.org/packages/hawaii-terminal/) | Swordfish
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=swordfish)</small> | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch](https://www.archlinux.org/packages/?name=speedcrunch) | Notepadqq
-[notepadqq](https://aur.archlinux.org/packages/notepadqq/) | EyeSight
-[eyesight](https://aur.archlinux.org/packages/eyesight/) | SMPlayer
-[smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
-[qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
-[sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")
 [kwin](https://www.archlinux.org/packages/?name=kwin) | [Plasma Desktop](https://en.wikipedia.org/wiki/KDE_Plasma_5#Desktop "wikipedia:KDE Plasma 5")
@@ -230,6 +214,18 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [gwenview](https://www.archlinux.org/packages/?name=gwenview) | [Dragon Player](http://www.kde.org/applications/multimedia/dragonplayer/)
 [dragon](https://www.archlinux.org/packages/?name=dragon) | [Konqueror](http://www.konqueror.org/)
 [konqueror](https://www.archlinux.org/packages/?name=konqueror) | [SDDM](/index.php/SDDM "SDDM")
+[sddm](https://www.archlinux.org/packages/?name=sddm) |
+| [Liri](/index.php/Liri "Liri") | [Qt](/index.php/Qt "Qt") 5
+[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
+[greenisland](https://aur.archlinux.org/packages/greenisland/) | Liri Shell
+[liri-shell-git](https://aur.archlinux.org/packages/liri-shell-git/) | Liri Terminal
+[liri-terminal-git](https://aur.archlinux.org/packages/liri-terminal-git/) | Liri Files
+[liri-files-git](https://aur.archlinux.org/packages/liri-files-git/) | Liri Calculator
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-calculator-git)</small> | Liri Text
+<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text-git)</small> | EyeSight
+[eyesight](https://aur.archlinux.org/packages/eyesight/) | Liri Player
+[liri-player-git](https://aur.archlinux.org/packages/liri-player-git/) | Liri Browser
+[liri-browser](https://aur.archlinux.org/packages/liri-browser/) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [LXDE](/index.php/LXDE "LXDE") (GTK+ 2) | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
@@ -303,18 +299,6 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [audience](https://www.archlinux.org/packages/?name=audience) | [Epiphany](/index.php/Epiphany "Epiphany")
 [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
 [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
-| [Papyros](/index.php/Papyros "Papyros") | [Qt](/index.php/Qt "Qt") 5
-[qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
-[greenisland](https://aur.archlinux.org/packages/greenisland/) | Papyros Shell
-[papyros-shell](https://aur.archlinux.org/packages/papyros-shell/) | Papyros Terminal
-[papyros-terminal](https://www.archlinux.org/packages/?name=papyros-terminal) | Papyros Files
-[papyros-files](https://www.archlinux.org/packages/?name=papyros-files) | Liri Calculator
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-calculator)</small> | Liri Text
-<small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=liri-text)</small> | Liri Browser
-[liri-browser](https://aur.archlinux.org/packages/liri-browser/) | Liri Player
-[liri-player-git](https://aur.archlinux.org/packages/liri-player-git/) | Liri Browser
-[liri-browser](https://aur.archlinux.org/packages/liri-browser/) | SDDM
-[sddm](https://www.archlinux.org/packages/?name=sddm) |
 | [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
 [metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar

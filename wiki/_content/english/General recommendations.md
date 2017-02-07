@@ -138,7 +138,7 @@ Processors may have [faulty behaviour](http://www.anandtech.com/show/8376/intel-
 
 ### Retaining boot messages
 
-Once it concludes, the screen is cleared and the login prompt appears, leaving users unable to gather feedback from the boot process. [Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages") to overcome this limitation.
+Once it concludes, the screen is cleared and the login prompt appears, leaving users unable to gather feedback from the boot process. [Disable clearing of boot messages](/index.php/General_troubleshooting#Console_messages "General troubleshooting") to overcome this limitation.
 
 ### Num Lock activation
 

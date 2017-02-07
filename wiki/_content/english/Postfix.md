@@ -265,7 +265,7 @@ $CONF['configured'] = true;
 // correspond to dovecot maildir path /home/vmail/%d/%u 
 $CONF['domain_path'] = 'YES';
 $CONF['domain_in_mailbox'] = 'NO';
-$CONF['database_type'] = 'mysql';
+$CONF['database_type'] = 'mysqli';
 $CONF['database_host'] = 'localhost';
 $CONF['database_user'] = 'postfix_user';
 $CONF['database_password'] = 'hunter2';
@@ -559,6 +559,7 @@ Register with Razor.
  # mkdir /etc/mail/spamassassin/razor
  # chown spamd:spamd /etc/mail/spamassassin/razor
  # sudo -u spamd -s
+ $ cd /etc/mail/spamassassin/razor
  $ razor-admin -home=/etc/mail/spamassassin/razor -register
  $ razor-admin -home=/etc/mail/spamassassin/razor -create
  $ razor-admin -home=/etc/mail/spamassassin/razor -discover

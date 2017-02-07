@@ -239,7 +239,7 @@ The lesser known Mushkin brand Solid State drives also use Sandforce controllers
 
 ### OCZ
 
-OCZ has a command line utility available for Linux (i686 and x86_64) on their forum [here](http://www.ocztechnology.com/ssd_tools/). The AUR provides [ocz-ssd-utility](https://aur.archlinux.org/packages/ocz-ssd-utility/) and [ocztoolbox](https://aur.archlinux.org/packages/ocztoolbox/).
+OCZ has a command line utility available for Linux (i686 and x86_64) on their forum [here](http://www.ocztechnology.com/ssd_tools/). The AUR provides [ocz-ssd-utility](https://aur.archlinux.org/packages/ocz-ssd-utility/), [ocztoolbox](https://aur.archlinux.org/packages/ocztoolbox/) and [oczclout](https://aur.archlinux.org/packages/oczclout/).
 
 ### Samsung
 

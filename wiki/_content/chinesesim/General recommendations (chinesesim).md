@@ -422,8 +422,8 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 ### 在线音乐
 
-*   网易云音乐[https://aur.archlinux.org/packages/netease-cloud-music](https://aur.archlinux.org/packages/https%3A%2F%2Faur.archlinux.org%2Fpackages%2Fnetease-cloud-music/)。
-*   酷我音乐（第三方）[https://aur.archlinux.org/packages/kwplayer/](https://aur.archlinux.org/packages/https%3A%2F%2Faur.archlinux.org%2Fpackages%2Fkwplayer%2F/)。
+*   网易云音乐[netease-cloud-music](https://aur.archlinux.org/packages/netease-cloud-music/)。
+*   酷我音乐（第三方）[kwplayer](https://aur.archlinux.org/packages/kwplayer/)。
 
 ### 代理
 

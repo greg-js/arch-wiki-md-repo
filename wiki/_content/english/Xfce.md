@@ -22,10 +22,8 @@
         *   [3.3.5 Default window manager](#Default_window_manager)
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
-        *   [3.5.1 Xfce4 mixer](#Xfce4_mixer)
-            *   [3.5.1.1 Change default sound card in Xfce4 mixer](#Change_default_sound_card_in_Xfce4_mixer)
-        *   [3.5.2 Keyboard volume buttons](#Keyboard_volume_buttons)
-            *   [3.5.2.1 Shortcuts](#Shortcuts)
+        *   [3.5.1 Keyboard volume buttons](#Keyboard_volume_buttons)
+            *   [3.5.1.1 Shortcuts](#Shortcuts)
     *   [3.6 Keyboard Shortcuts](#Keyboard_Shortcuts)
     *   [3.7 Polkit Authentication Agent](#Polkit_Authentication_Agent)
     *   [3.8 Display blanking](#Display_blanking)
@@ -314,22 +312,6 @@ See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/ind
 
 ### Sound
 
-#### Xfce4 mixer
-
-**Note:** Xfce4 mixer and Xfce4 volumed are no longer being maintained upstream as they cannot be ported to GStreamer 1.0\. For more information, see the 4.12 [news post](http://www.xfce.org/about/news/?post=1425081600). Consider [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) in combination with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) as an alternative.
-
-Xfce4 mixer, provided by [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer), is the GUI mixer app and panel plugin from the Xfce team. It is part of the xfce4 group. For [PulseAudio](/index.php/PulseAudio "PulseAudio") and [OSS](/index.php/OSS "OSS") support, you will need to install [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) if it is not installed already.
-
-You might need to change the default sound card for Xfce4 mixer to function correctly. For further details, such as how to set the default sound card, see [Advanced Linux Sound Architecture#Set the default sound card](/index.php/Advanced_Linux_Sound_Architecture#Set_the_default_sound_card "Advanced Linux Sound Architecture"). Alternatively you can use [PulseAudio](/index.php/PulseAudio "PulseAudio") together with [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) or [OSS](/index.php/OSS "OSS"). For OSS, see [OSS#Applications that use GStreamer](/index.php/OSS#Applications_that_use_GStreamer "OSS").
-
-If you did need to change the default soundcard, logout to ensure that the changes take effect.
-
-##### Change default sound card in Xfce4 mixer
-
-In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[1]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
-
-To change the default sound card, open *xfce4-settings-editor* and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
-
 #### Keyboard volume buttons
 
 If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin). This provides a panel applet which has support for keyboard volume control and volume notifications.
@@ -356,7 +338,7 @@ A third party polkit authentication agent for Xfce is also available, see [xfce-
 
 ### Display blanking
 
-**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[2]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[3]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
+**Note:** There are some issues associated with blanking and resuming from blanking in some configurations. See [[1]](https://bbs.archlinux.org/viewtopic.php?id=194313&p=2)[[2]](https://bugzilla.xfce.org/show_bug.cgi?id=11107).
 
 Some programs that are commonly used with Xfce will control monitor blanking and [DPMS](/index.php/DPMS "DPMS") (monitor powersaving) settings. They are discussed below.
 
@@ -465,7 +447,7 @@ MiscMiddleClickOpensUri=TRUE
 
 ### Colour management
 
-Xfce has no native support for colour management. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
+Xfce has no native support for colour management. [[4]](https://bugzilla.xfce.org/show_bug.cgi?id=8559) See [ICC profiles](/index.php/ICC_profiles "ICC profiles") for alternatives.
 
 ### Multiple monitors
 
@@ -614,7 +596,7 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 ### Keyboard settings are not saved in xkb-plugin
 
-There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[6]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
+There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xfce4-xkb-plugin) *0.5.4.1-1* which causes it to lose keyboard, layout switching and compose key settings. [[5]](https://bugzilla.xfce.org/show_bug.cgi?id=10226) As a workaround, enable *Use system defaults* in `xfce4-keyboard-settings`, then reconfigure *xfce4-xkb-plugin*.
 
 ### NVIDIA and xfce4-sensors-plugin
 
@@ -622,7 +604,7 @@ To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https:/
 
 ### Panel applets keep being aligned on the left
 
-Add a separator someplace before the right end and set its "expand" property. [[7]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
+Add a separator someplace before the right end and set its "expand" property. [[6]](https://forums.linuxmint.com/viewtopic.php?f=110&t=155602})
 
 ### Preferred Applications preferences have no effect
 
@@ -698,7 +680,7 @@ $ xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-
 
 ```
 
-**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[8]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
+**Note:** Under some circumstances, the `logind-handle-lid-switch` setting will get set to true when changes are made to the laptop lid actions or the lock on suspend setting. See [[7]](https://bugzilla.xfce.org/show_bug.cgi?id=12756#c2). In this case, you will need to toggle `logind-handle-lid-switch` to false again.
 
 ### Power Manager Plugin shows battery time and remaining percentage
 

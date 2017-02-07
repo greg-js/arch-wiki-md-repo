@@ -102,7 +102,7 @@ $ glxinfo | grep direct
 
 ### 跑分
 
-为定量评估优化成果，可使用[系统评分工具](/index.php?title=Benchmarking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%EF%BC%89&action=edit&redlink=1 "Benchmarking (简体中文） (page does not exist)")。
+为定量评估优化成果，可使用[benchmarking (简体中文)](/index.php/Benchmarking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Benchmarking (简体中文)")。
 
 ## 存储设备
 

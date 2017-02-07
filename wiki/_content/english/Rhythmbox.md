@@ -9,9 +9,7 @@
     *   [2.3 What to do when the little red icon shows when you try to play radio stations](#What_to_do_when_the_little_red_icon_shows_when_you_try_to_play_radio_stations)
     *   [2.4 How to activate the DAAP Music Sharing](#How_to_activate_the_DAAP_Music_Sharing)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 What to do if you see an "Unknown Playback Error" message](#What_to_do_if_you_see_an_.22Unknown_Playback_Error.22_message)
-        *   [3.1.1 Unknown Playback when streaming from an online radio station](#Unknown_Playback_when_streaming_from_an_online_radio_station)
-        *   [3.1.2 Unknown Playback when streaming or playing from regular files](#Unknown_Playback_when_streaming_or_playing_from_regular_files)
+    *   [3.1 "Unknown Playback Error" when streaming or playing from regular files](#.22Unknown_Playback_Error.22_when_streaming_or_playing_from_regular_files)
     *   [3.2 "Error, impossible to activate plugin 'Audio CD Recorder'" shows up every time I start Rhythmbox](#.22Error.2C_impossible_to_activate_plugin_.27Audio_CD_Recorder.27.22_shows_up_every_time_I_start_Rhythmbox)
     *   [3.3 Slow start and "Unable to start mDNS browsing: MDNS service is not running" output](#Slow_start_and_.22Unable_to_start_mDNS_browsing:_MDNS_service_is_not_running.22_output)
     *   [3.4 Cannot activate "context pane" plugin](#Cannot_activate_.22context_pane.22_plugin)
@@ -70,19 +68,9 @@ c) start it [Start/enable](/index.php/Start/enable "Start/enable") `avahi-daemon
 
 ## Troubleshooting
 
-### What to do if you see an "Unknown Playback Error" message
+### "Unknown Playback Error" when streaming or playing from regular files
 
-#### Unknown Playback when streaming from an online radio station
-
-If you click on the radio stations and are shown a "Unknown Playback Error" error message. you probably do not have a gstreamer gnomevfs installed.
-
-The package is called `gstreamer0.10-base-plugins-gnomevfs` and is available in the [AUR](https://aur.archlinux.org/packages.php?ID=35090)
-
-After you install it, restart Rhythmbox.
-
-#### Unknown Playback when streaming or playing from regular files
-
-Alternatively, Rhythmbox will display the same error message when it does not have the correct codec to play that stream. You will need to identify what format the stream is (by looking at the command line error messages that Rhythmbox displays) and then install the correct Gstreamer codec for that particular audio stream.
+Rhythmbox may display this error when it does not have the correct codec to play that stream. You will need to identify what format the stream is (by looking at the command line error messages that Rhythmbox displays) and then install the correct Gstreamer codec for that particular audio stream.
 
 For mp3-files install [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) and/or [gstreamer0.10-ugly-plugins](https://aur.archlinux.org/packages/gstreamer0.10-ugly-plugins/) depending on wheter you use the current and/or legacy version (see [GStreamer#Installation](/index.php/GStreamer#Installation "GStreamer")). You will also need [gst-libav](https://www.archlinux.org/packages/?name=gst-libav).
 

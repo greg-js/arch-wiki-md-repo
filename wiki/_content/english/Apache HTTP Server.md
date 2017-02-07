@@ -300,10 +300,11 @@ As an alternative, you can use `mod_proxy_fcgi` (see [#Using php-fpm and mod_pro
 
 To enable PHP, add these lines to `/etc/httpd/conf/httpd.conf`:
 
-*   Place this in the `LoadModule` list anywhere after `LoadModule dir_module modules/mod_dir.so`:
+*   Place this at the end of the `LoadModule` list:
 
 ```
 LoadModule php7_module modules/libphp7.so
+AddHandler php7-script php
 
 ```
 
@@ -311,13 +312,6 @@ LoadModule php7_module modules/libphp7.so
 
 ```
 Include conf/extra/php7_module.conf
-
-```
-
-*   And the handler at the end of the `LoadModule`:
-
-```
-AddHandler php7-script php
 
 ```
 

@@ -5,8 +5,7 @@ A VPN based on OpenVPN and operated by activists and hacktivists in defence of n
 *   [1 Configuring OpenVPN to connect as a client to an AirVPN server](#Configuring_OpenVPN_to_connect_as_a_client_to_an_AirVPN_server)
     *   [1.1 Using the all in one config file](#Using_the_all_in_one_config_file)
     *   [1.2 Using seperate keys and certs](#Using_seperate_keys_and_certs)
-    *   [1.3 Troubleshooting](#Troubleshooting)
-        *   [1.3.1 Sample configuration](#Sample_configuration)
+        *   [1.2.1 Sample configuration](#Sample_configuration)
 
 ## Configuring OpenVPN to connect as a client to an AirVPN server
 
@@ -82,16 +81,6 @@ Background openvpn if you'd like:
 ```
 
 I'm not sure how to start this automatically. Perhaps putting a small script in /etc/rc.conf.d/ would be appropriate. For security's sake I don't want to guess at it, since some VPN users can't risk leaking untunnelled data. Presumably it should start before any torrent clients, irc, etc.
-
-### Troubleshooting
-
-If you have a custom kernel, note that OpenVPN requires TUN/TAP modules enabled as described in [OpenVPN](/index.php/OpenVPN "OpenVPN"). They should already work on default kernels.
-
-I was setting this up on a virtual Arch system running in Virtualbox on a Windows 7 host machine. While testing I already had my Windows client tunnelling all traffic through my Windows AirVPN client. Trying to initialize a second tunnel from within the VM failed with an authentication failure, until I turned off the Windows client.
-
-If the files are chmod 400, you must execute openvpn as superuser or it will fail with "Error opening configuration file."
-
-See [OpenVPN](/index.php/OpenVPN "OpenVPN") for lots more.
 
 #### Sample configuration
 

@@ -107,6 +107,9 @@ This list is by no means complete. If you know of a community that is not listed
 *   Homepage: [https://www.archlinuxjp.org/](https://www.archlinuxjp.org/)
 *   Forum: [https://bbs.archlinuxjp.org/](https://bbs.archlinuxjp.org/)
 *   Wiki: [https://wiki.archlinuxjp.org/](https://wiki.archlinuxjp.org/)
+*   Slack: [https://slack.archlinuxjp.org/](https://slack.archlinuxjp.org/)
+*   Planet: [https://planet.archlinuxjp.org/](https://planet.archlinuxjp.org/)
+*   Projects: [https://github.com/ArchLinuxJP](https://github.com/ArchLinuxJP)
 
 ### Lithuania
 

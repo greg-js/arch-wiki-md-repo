@@ -103,6 +103,6 @@ comp-lzo
 
  `# openvpn a-client-conf-file.conf &` 
 
-Optionally, enable for autostart on boot the daemon. (In this example, is `openvpn@a-client-conf-file.service`)
+Optionally, enable for autostart on boot the daemon. (In this example, is `openvpn-client@a-client-conf-file.service`)
 
 Read [Daemon](/index.php/Daemon "Daemon") for more information.

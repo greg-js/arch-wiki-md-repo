@@ -36,6 +36,8 @@ This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinpu
 
 The headphone jack always acts as SPDIF out and subsequently has no volume control and does not mute the speakers when a device is plugged in. [Link to a description of the issue on the ALSA mailing list](https://sourceforge.net/p/alsa/mailman/message/35292536/).
 
+As a workaround it is possible to reassign a microphone input jack using hdajackretask to behave as an audio output.
+
 ## Misc
 
 ### BIOS

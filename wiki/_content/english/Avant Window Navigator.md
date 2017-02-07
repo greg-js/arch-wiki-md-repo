@@ -24,13 +24,13 @@ The most of the applets require some additional packages, which are listed in op
 | Applet name | Dependencies | Optional dependences |
 | animal-farm | [fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod) |
 | battery | [upower](https://www.archlinux.org/packages/?name=upower) |
-| comics | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) |
-| cairo-clock | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) |
+| comics | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) [python2-rsvg](https://aur.archlinux.org/packages/python2-rsvg/) |
+| cairo-clock | [python2-rsvg](https://aur.archlinux.org/packages/python2-rsvg/) | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) |
 | calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://aur.archlinux.org/packages/python2-vobject/) |
 | cpufreq | [gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets) |
 | dialect | [python-xklavier](https://aur.archlinux.org/packages/python-xklavier/) |
 | feeds | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
-| hardware-sensors | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) |
+| hardware-sensors | [python2-rsvg](https://aur.archlinux.org/packages/python2-rsvg/) | [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) |
 | media-control | [banshee](https://aur.archlinux.org/packages/banshee/) |
 | media-player | [gstreamer0.10-python](https://aur.archlinux.org/packages/gstreamer0.10-python/) |
 | mail | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |

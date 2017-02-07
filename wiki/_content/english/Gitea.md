@@ -30,7 +30,7 @@ The following is an example of setting up [MariaDB](/index.php/MariaDB "MariaDB"
 
  `$ mysql -u root -p` 
 ```
-mysql> CREATE DATABASE `gitea` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;
+mysql> CREATE DATABASE `gitea` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`;
 mysql> CREATE USER `gitea`@'localhost' IDENTIFIED BY 'password';
 mysql> GRANT ALL PRIVILEGES ON `gitea`.* TO `gitea`@`localhost`;
 mysql> \q
@@ -70,7 +70,7 @@ Gitea application and repository data will be saved into */var/lib/gitea*, howev
 
 ### Disable HTTP protocol
 
-By default, the ability to interact with repositories by HTTP protocol is enabled. You may want to disable support by setting `DISABLE_HTTP_GIT` to **false**.
+By default, the ability to interact with repositories by HTTP protocol is enabled. You may want to disable support by setting `DISABLE_HTTP_GIT` to **true**.
 
 ## Advanced Configuration
 
@@ -85,16 +85,18 @@ An example of using [nginx](/index.php/Nginx "Nginx") as reverse proxy including
 # redirect to ssl
 server {
   listen 80;
+  listen [::]:80;
   server_name git.domain.tld;
   return 301 [https://$server_name$request_uri](https://$server_name$request_uri);
 }
 
 server {
   listen 443 ssl http2;
+  listen [::]:443 ssl http2;
   server_name git.domain.tld;
+  client_max_body_size 50M;
   ssl_certificate ssl/**cert.crt**;
   ssl_certificate_key ssl/**cert.key**;
-
   location / {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_pass [http://localhost:3000](http://localhost:3000);

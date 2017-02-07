@@ -162,7 +162,7 @@ The settings in the `docker.service` file will not translate into containers. To
 
 ```
 
-[Docker](https://docs.docker.com/reference/builder/#env) provide detailed information on configuration via `ENV` within a Dockerfile.
+[Docker](https://docs.docker.com/engine/reference/builder/#env) provide detailed information on configuration via `ENV` within a Dockerfile.
 
 ### Configuring DNS
 

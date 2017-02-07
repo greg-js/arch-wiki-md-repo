@@ -11,6 +11,7 @@
     *   [2.3 Video playback](#Video_playback)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Use experimental webengine backend](#Use_experimental_webengine_backend)
+    *   [3.2 dwb-like session handling](#dwb-like_session_handling)
 
 ## Installation
 
@@ -60,3 +61,7 @@ To use the more secure webengine backend, use the `--backend` flag:
 ```
 
 **Note:** The qutebrowser implementation of webengine is experimental and may be missing features.
+
+### dwb-like session handling
+
+To have qutebrowser handle sessions more like in [dwb](/index.php/Dwb "Dwb") with the `--restore` option ("per-window" sessions, multiple simultaneously active sessions), you can use [this wrapper script](https://github.com/ayekat/dotfiles/blob/master/.local/bin/qutebrowser).

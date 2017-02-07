@@ -16,15 +16,14 @@ Uplink Labs creates new images approximately twice a month, for a number of regi
 
 ### Archlinux AMI
 
-These were updated as of 2012-10-19.
+current releases: **Release 2017.01.15**
 
-*   ami-6ee95107 = US East (N. Virginia)
-*   ami-bcf77e8c = US West (Oregon)
-*   ami-337d5b76 = US West (N. California)
-*   ami-17595a63 = EU (Ireland)
-*   ami-6af9b938 = Asia Pacific (Singapore)
-*   ami-8cad138d = Asia Pacific (Tokyo)
-*   ami-6259807f = South America (Sao Paulo)
+*   ebs hvm x86_64 lts
+*   s3 hvm x86_64 lts
+*   ebs hvm x86_64 stable
+*   s3 hvm x86_64 stable
+
+for update list: [https://www.uplinklabs.net/projects/arch-linux-on-ec2/](https://www.uplinklabs.net/projects/arch-linux-on-ec2/)
 
 ### Other AMIs
 

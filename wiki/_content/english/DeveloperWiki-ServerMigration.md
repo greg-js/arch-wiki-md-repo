@@ -32,7 +32,7 @@
 
 ## dragon.archlinux.org
 
-*   backups [turned off]
+*   backups. still in use until nymeria/luna are turned off
 
 ## alberich.archlinux.org
 
@@ -43,7 +43,7 @@
 
 *   planet [turned off]
 *   bugs
-*   archweb
+*   archweb [turned off]
 *   patchwork
 *   projects [turned off]
 
@@ -61,12 +61,12 @@
 
 ## apollo.archlinux.org ([[1]](https://www.hetzner.de/de/hosting/produkte_rootserver/px61ssd))
 
-*   bbs
+*   bbs [wip]
 *   wiki
 *   aur
 *   mailman
 *   planet [done]
-*   bugs
+*   bugs [wip]
 *   archweb [done]
 *   patchwork
 *   projects
@@ -76,9 +76,9 @@
 
 NOTE: Talk to heftig about server specs before ordering.
 
-*   pkgbuild.com
+*   pkgbuild.com [done]
 *   releng stuff. no idea
-*   tracker
+*   tracker. no idea
 
 ## orion.archlinux.org (Intel Xeon E3-1245V2 32GB ECC 2x3TB)
 
@@ -106,6 +106,3 @@ NOTE: Talk to heftig about server specs before ordering.
 
 *   Migrate patchwork. Reference: [https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md](https://github.com/getpatchwork/patchwork/blob/master/docs/deployment.md)
     *   Add automatic updates when patches are pushed to a repo (at the bottom of the above link)
-
-*   Set up intel AMT for serial over lan (some/most of the new server should have it)
-    *   probably requires enabling it in BIOS

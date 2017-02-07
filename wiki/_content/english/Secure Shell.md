@@ -90,10 +90,10 @@ The client can be configured to store common options and hosts. All options can 
  `~/.ssh/config` 
 ```
 # global options
-User user
+User *user*
 
 # host-specific options
-Host *myserver*
+Host myserver
     HostName *server-address*
     Port     *port*
 ```
@@ -102,7 +102,7 @@ With such a configuration, the following commands are equivalent
 
 ```
 $ ssh -p *port* *user*@*server-address*
-$ ssh *myserver*
+$ ssh myserver
 
 ```
 
@@ -578,7 +578,7 @@ Both local and remote forwarding can be used to provide a secure "gateway," allo
 
 ### Jump hosts
 
-In certain scenarios, there might not be a direct connection to your target SSH daemon, and the use of a jump server (or bastion server) is required. Thus, we attempt to connect together two or more SSH tunnels, and assuming your local keys are authorized against each server in the chain. This is possible using SSH agent forwarding `-A` and pseudo-terminal allocation `-t` which forwards your local key with the following syntax:
+In certain scenarios, there might not be a direct connection to your target SSH daemon, and the use of a jump server (or bastion server) is required. Thus, we attempt to connect together two or more SSH tunnels, and assuming your local keys are authorized against each server in the chain. This is possible using SSH agent forwarding (`-A`) and pseudo-terminal allocation (`-t`) which forwards your local key with the following syntax:
 
 ```
 $ ssh -A -t -l user1 bastion1 \
@@ -616,6 +616,10 @@ ControlPath ~/.ssh/sockets/socket-%r@%h:%p
 ```
 
 where `~/.ssh/sockets` can be any directory not writable by other users.
+
+`ControlPersist` specifies how long the master should wait for clients before it closes the connection. Possible values are a time in seconds, `yes` to wait forever and `no` to close the connection immediately when the last client disconnects.
+
+**Warning:** Beware that if `ControlPersist` is set to `yes` that the connection will never be closed automatically.
 
 Another option to improve speed is to enable compression with the `Compression yes` option or the `-C` flag.
 

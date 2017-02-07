@@ -25,8 +25,9 @@
         *   [3.4.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
         *   [3.4.2 Start OpenNTPD](#Start_OpenNTPD)
         *   [3.4.3 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
-        *   [3.4.4 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
-        *   [3.4.5 Use dispatcher to handle mounting of CIFS shares](#Use_dispatcher_to_handle_mounting_of_CIFS_shares)
+        *   [3.4.4 Use dispatcher to automatically toggle Wi-Fi depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_Wi-Fi_depending_on_LAN_cable_being_plugged_in)
+        *   [3.4.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
+        *   [3.4.6 Use dispatcher to handle mounting of CIFS shares](#Use_dispatcher_to_handle_mounting_of_CIFS_shares)
     *   [3.5 Proxy settings](#Proxy_settings)
     *   [3.6 Disable NetworkManager](#Disable_NetworkManager)
     *   [3.7 Checking connectivity](#Checking_connectivity)
@@ -288,6 +289,31 @@ if [ "$CONNECTION_UUID" = "*uuid*" ]; then
 fi
 
 ```
+
+#### Use dispatcher to automatically toggle Wi-Fi depending on LAN cable being plugged in
+
+The idea is to only turn Wi-Fi on when the LAN cable is unplugged (for example when detaching from a laptop dock), and for Wi-Fi to be automatically disabled, once a LAN cable is plugged in again.
+
+Create the following dispatcher script ([Source](http://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available)), replacing `LAN_interface` with yours.
+
+ `/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh` 
+```
+#!/bin/sh
+
+if [ "$1" = "LAN_interface" ]; then
+    case "$2" in
+        up)
+            nmcli radio wifi off
+            ;;
+        down)
+            nmcli radio wifi on
+            ;;
+    esac
+fi
+
+```
+
+**Note:** You can get a list of interfaces using [nmcli](#nmcli). The ethernet (LAN) interfaces start with `en`, e.g. `enp0s5`
 
 #### Use dispatcher to connect to a VPN after a network connection is established
 

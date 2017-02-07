@@ -5,11 +5,12 @@
 *   [1 Installation](#Installation)
 *   [2 Setup](#Setup)
     *   [2.1 Client](#Client)
+    *   [2.2 Chrome](#Chrome)
 *   [3 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lantern](https://aur.archlinux.org/packages/lantern/) package.
+[Install](/index.php/Install "Install") the [lantern-newest](https://aur.archlinux.org/packages/lantern-newest/) package.
 
 ## Setup
 
@@ -24,7 +25,21 @@ $ lantern
 
 ```
 
-Then simply open your favorite browser and navigate to any blocked site. Any browser should work, as Lantern configures itself to handle any connection from your computer.
+### Chrome
+
+For Chrome users you might need to install the plugin [Proxy SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega),follow the instructions below:
+
+	Get proxy server address and port
+
+	In lantern set-up page,click Lantern=>Settings=>Advanced Settings,and remember the server address and port
+
+	Edit the Proxy Profile
+
+	In SwitchyOmega option page,edit the example file,fill in the address and port you get above
+
+	Enable the profile
+
+	When viewing blocked websites,run lantern and select the above proxy profile,enjoy it!
 
 ## See also
 

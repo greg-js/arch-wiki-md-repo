@@ -34,11 +34,11 @@
 
 *   **LXImage-Qt** — LXQt 的图像查看器和截图工具。
 
-	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)
+	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
 
 *   **ObConf-Qt** — Qt 版 ObConf，[Openbox](/index.php/Openbox "Openbox") 的配置工具。
 
-	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://aur.archlinux.org/packages/obconf-qt/)
+	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://www.archlinux.org/packages/?name=obconf-qt)
 
 *   **QTerminal** — 基于 Qt 的轻量级终端模拟器。
 
