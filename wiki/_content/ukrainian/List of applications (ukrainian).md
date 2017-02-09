@@ -18,9 +18,9 @@
 
 *   [1 Інтернет](#.D0.86.D0.BD.D1.82.D0.B5.D1.80.D0.BD.D0.B5.D1.82)
     *   [1.1 Мережеві менеджери](#.D0.9C.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.B2.D1.96_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B8)
-    *   [1.2 VPN clients](#VPN_clients)
-    *   [1.3 Web browsers](#Web_browsers)
-        *   [1.3.1 Console](#Console)
+    *   [1.2 VPN-клієнти](#VPN-.D0.BA.D0.BB.D1.96.D1.94.D0.BD.D1.82.D0.B8)
+    *   [1.3 Браузери](#.D0.91.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80.D0.B8)
+        *   [1.3.1 Консольні](#.D0.9A.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.D0.BD.D1.96)
         *   [1.3.2 Graphical](#Graphical)
             *   [1.3.2.1 Gecko-based](#Gecko-based)
             *   [1.3.2.2 Blink-based](#Blink-based)
@@ -39,7 +39,7 @@
             *   [1.4.2.2 FTP servers](#FTP_servers)
         *   [1.4.3 Distributed file systems](#Distributed_file_systems)
         *   [1.4.4 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.4.1 Console](#Console_2)
+            *   [1.4.4.1 Console](#Console)
                 *   [1.4.4.1.1 Command line / backend](#Command_line_.2F_backend)
                 *   [1.4.4.1.2 Console Interface](#Console_Interface)
             *   [1.4.4.2 Graphical Interface](#Graphical_Interface)
@@ -50,11 +50,11 @@
         *   [1.4.6 Video downloaders](#Video_downloaders)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
-            *   [1.5.1.1 Console](#Console_3)
+            *   [1.5.1.1 Console](#Console_2)
             *   [1.5.1.2 Graphical](#Graphical_2)
         *   [1.5.2 Instant messaging](#Instant_messaging)
             *   [1.5.2.1 IRC clients](#IRC_clients)
-                *   [1.5.2.1.1 Console](#Console_4)
+                *   [1.5.2.1.1 Console](#Console_3)
                 *   [1.5.2.1.2 Graphical](#Graphical_3)
             *   [1.5.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
                 *   [1.5.2.2.1 Command line](#Command_line)
@@ -62,7 +62,7 @@
                 *   [1.5.2.2.3 Graphical clients](#Graphical_clients)
                 *   [1.5.2.2.4 Servers](#Servers)
             *   [1.5.2.3 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.2.3.1 Console](#Console_5)
+                *   [1.5.2.3.1 Console](#Console_4)
                 *   [1.5.2.3.2 Graphical](#Graphical_4)
             *   [1.5.2.4 Lan messengers](#Lan_messengers)
         *   [1.5.3 VoIP / Softphone](#VoIP_.2F_Softphone)
@@ -76,7 +76,7 @@
         *   [1.5.4 Speech recognition](#Speech_recognition)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
-            *   [1.6.1.1 Console](#Console_6)
+            *   [1.6.1.1 Console](#Console_5)
             *   [1.6.1.2 Graphical](#Graphical_5)
         *   [1.6.2 Podcast clients](#Podcast_clients)
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
@@ -92,7 +92,7 @@
     *   [2.1 Codecs](#Codecs)
     *   [2.2 Image](#Image)
         *   [2.2.1 Image viewers](#Image_viewers)
-            *   [2.2.1.1 Console](#Console_7)
+            *   [2.2.1.1 Console](#Console_6)
             *   [2.2.1.2 Graphical](#Graphical_6)
         *   [2.2.2 Graphics and image manipulation](#Graphics_and_image_manipulation)
             *   [2.2.2.1 Raster editors](#Raster_editors)
@@ -113,12 +113,12 @@
         *   [2.3.7 Sound editing](#Sound_editing)
     *   [2.4 Video](#Video)
         *   [2.4.1 Video players](#Video_players)
-            *   [2.4.1.1 Console](#Console_8)
+            *   [2.4.1.1 Console](#Console_7)
             *   [2.4.1.2 Graphical](#Graphical_7)
         *   [2.4.2 Subtitles](#Subtitles)
         *   [2.4.3 DVD ripping](#DVD_ripping)
         *   [2.4.4 Video editors](#Video_editors)
-            *   [2.4.4.1 Console](#Console_9)
+            *   [2.4.4.1 Console](#Console_8)
             *   [2.4.4.2 Graphical](#Graphical_8)
         *   [2.4.5 Screencast](#Screencast)
     *   [2.5 Mobile phone managers](#Mobile_phone_managers)
@@ -141,11 +141,11 @@
         *   [3.7.3 framebuffer-based](#framebuffer-based)
     *   [3.8 Files](#Files)
         *   [3.8.1 File managers](#File_managers)
-            *   [3.8.1.1 Console](#Console_10)
+            *   [3.8.1.1 Console](#Console_9)
             *   [3.8.1.2 Graphical](#Graphical_9)
         *   [3.8.2 Desktop search engines](#Desktop_search_engines)
         *   [3.8.3 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [3.8.3.1 Console](#Console_11)
+            *   [3.8.3.1 Console](#Console_10)
             *   [3.8.3.2 Graphical](#Graphical_10)
         *   [3.8.4 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
         *   [3.8.5 Batch renamers](#Batch_renamers)
@@ -155,7 +155,7 @@
     *   [3.12 System maintenance](#System_maintenance)
     *   [3.13 System monitoring](#System_monitoring)
     *   [3.14 System information viewers](#System_information_viewers)
-        *   [3.14.1 Console](#Console_12)
+        *   [3.14.1 Console](#Console_11)
         *   [3.14.2 Graphical](#Graphical_11)
         *   [3.14.3 Others](#Others_2)
     *   [3.15 Keyboard layout switchers](#Keyboard_layout_switchers)
@@ -175,7 +175,7 @@
     *   [4.5 Scientific documents](#Scientific_documents)
     *   [4.6 Translation and localization](#Translation_and_localization)
     *   [4.7 Text editors](#Text_editors)
-        *   [4.7.1 Console](#Console_13)
+        *   [4.7.1 Console](#Console_12)
             *   [4.7.1.1 Vi text editors](#Vi_text_editors)
         *   [4.7.2 Graphical](#Graphical_12)
             *   [4.7.2.1 Collaborative text editors](#Collaborative_text_editors)
@@ -183,7 +183,7 @@
         *   [4.8.1 E-book applications](#E-book_applications)
             *   [4.8.1.1 Book organizers](#Book_organizers)
         *   [4.8.2 PDF and DjVu](#PDF_and_DjVu)
-            *   [4.8.2.1 Console](#Console_14)
+            *   [4.8.2.1 Console](#Console_13)
             *   [4.8.2.2 Graphical](#Graphical_13)
         *   [4.8.3 Terminal pagers](#Terminal_pagers)
         *   [4.8.4 CHM](#CHM)
@@ -193,7 +193,7 @@
         *   [4.10.1 Engines](#Engines)
         *   [4.10.2 Layout analyzers and user interfaces](#Layout_analyzers_and_user_interfaces)
     *   [4.11 Note taking organizers](#Note_taking_organizers)
-        *   [4.11.1 Console](#Console_15)
+        *   [4.11.1 Console](#Console_14)
         *   [4.11.2 Graphical](#Graphical_14)
     *   [4.12 Mind-mapping tools](#Mind-mapping_tools)
     *   [4.13 Character Selector](#Character_Selector)
@@ -244,7 +244,7 @@
         *   [7.1.3 Terminal multiplexers](#Terminal_multiplexers)
         *   [7.1.4 Desktop environments](#Desktop_environments)
         *   [7.1.5 Window managers](#Window_managers)
-            *   [7.1.5.1 Console](#Console_16)
+            *   [7.1.5.1 Console](#Console_15)
             *   [7.1.5.2 Graphical](#Graphical_15)
         *   [7.1.6 Window tilers](#Window_tilers)
         *   [7.1.7 Virtual desktop pagers](#Virtual_desktop_pagers)
@@ -260,14 +260,14 @@
     *   [7.2 Finance](#Finance)
     *   [7.3 Flashcards](#Flashcards)
     *   [7.4 Time management](#Time_management)
-        *   [7.4.1 Console](#Console_17)
+        *   [7.4.1 Console](#Console_16)
         *   [7.4.2 Graphical](#Graphical_16)
     *   [7.5 Emulators](#Emulators)
         *   [7.5.1 Consoles](#Consoles)
         *   [7.5.2 Other](#Other_3)
     *   [7.6 Amateur radio](#Amateur_radio)
     *   [7.7 Display calibration](#Display_calibration)
-        *   [7.7.1 Console](#Console_18)
+        *   [7.7.1 Console](#Console_17)
         *   [7.7.2 Graphical](#Graphical_17)
 *   [8 Дивіться також](#.D0.94.D0.B8.D0.B2.D1.96.D1.82.D1.8C.D1.81.D1.8F_.D1.82.D0.B0.D0.BA.D0.BE.D0.B6)
 
@@ -295,21 +295,25 @@
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
 
-### VPN clients
+### VPN-клієнти
 
-*   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
+*   **[OpenVPN](/index.php/OpenVPN "OpenVPN")** — Для з'єднання з OpenVPN VPN.
+
+	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)
+
+*   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Підтримує Cisco та Juniper VPN'и.
 
 	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
 
-*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
+*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — Для з'єднання до PPTP VPN. Схоже як у Microsoft VPN (MPPE).
 
 	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
 
-### Web browsers
+### Браузери
 
-See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Comparison_of_web_browsers "wikipedia:Comparison of web browsers").
+Дивіться також [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Comparison_of_web_browsers "wikipedia:Comparison of web browsers").
 
-#### Console
+#### Консольні
 
 *   **[ELinks](https://en.wikipedia.org/wiki/ELinks "wikipedia:ELinks")** — Advanced and well-established feature-rich text mode web browser (Links fork, barely supported since 2009).
 

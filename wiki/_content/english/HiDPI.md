@@ -477,9 +477,13 @@ One approach is to run the application full screen and without decoration in its
 
 The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large.
 
+To resize content on a screen ("make it bigger"), but keep its resolution ("awesome 4k"), you can use the [xrandr](/index.php/Xrandr "Xrandr") tool with the `--scale` and `--scale-from` options. They are shortcuts for the transformation matrix application with `--transform`.
+
+`--scale-from` is especially helpful when cloning different-resolution displays.
+
 ### Side display
 
-One workaround is to using [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
+To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
 
 ```
 xrandr --output eDP-1 --auto --output DP-1 --auto --scale 2x2 --right-of eDP-1

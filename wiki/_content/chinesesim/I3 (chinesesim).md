@@ -33,6 +33,7 @@ i3的既定目标包括清晰可读的文档，多显示器支持，多窗口的
     *   [4.13 主题与配色方案](#.E4.B8.BB.E9.A2.98.E4.B8.8E.E9.85.8D.E8.89.B2.E6.96.B9.E6.A1.88)
     *   [4.14 关机，重启和锁屏](#.E5.85.B3.E6.9C.BA.EF.BC.8C.E9.87.8D.E5.90.AF.E5.92.8C.E9.94.81.E5.B1.8F)
     *   [4.15 屏幕保护器及电源管理](#.E5.B1.8F.E5.B9.95.E4.BF.9D.E6.8A.A4.E5.99.A8.E5.8F.8A.E7.94.B5.E6.BA.90.E7.AE.A1.E7.90.86)
+    *   [4.16 网速显示](#.E7.BD.91.E9.80.9F.E6.98.BE.E7.A4.BA)
 *   [5 疑难排除](#.E7.96.91.E9.9A.BE.E6.8E.92.E9.99.A4)
     *   [5.1 鼠标指针总处于忙碌状态](#.E9.BC.A0.E6.A0.87.E6.8C.87.E9.92.88.E6.80.BB.E5.A4.84.E4.BA.8E.E5.BF.99.E7.A2.8C.E7.8A.B6.E6.80.81)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
@@ -493,6 +494,31 @@ exec --no-startup-id xset dpms 600
 
 ```
 xss-lock -- i3lock -i *background_image* &
+
+```
+
+### 网速显示
+
+可以参考此处的脚本文件[measure-net-speed.bash](https://github.com/glittershark/i3status/blob/master/contrib/measure-net-speed.bash)、[measure-net-speed-i3status.bash](https://github.com/glittershark/i3status/blob/master/contrib/measure-net-speed-i3status.bash)。
+
+*   获得你的网络接口 (使用 `ip addr`)，如 `wlan0`
+*   在 `/sys/devices` 找到网卡的名称:
+
+ ` $ find /sys/devices -name *network_interface*` 例如 ` $ find /sys/devices -name wlan0` 
+**Tip:** Use `/sys/class/net/*interface*/statistics/` to not depend on PCI location.
+
+把修改后的脚本文件放置在适当的位置 (比如 `~/.config/i3`) 按照脚本中的建议设置你的[i3-wm](https://www.archlinux.org/packages/?name=i3-wm)和[i3status](https://www.archlinux.org/packages/?name=i3status)配置文件:
+
+*   为脚本 `measure-net-speed-i3status.bash` 、 `measure-net-speed.bash` 添加可执行权限
+
+*   修改 `measure-net-speed-i3status.bash` 中行`dat=$(measure-net-speed.bash)` 为 `dat=$(/path/to/measure-net-speed.bash)`
+
+*   修改 `~/.i3/config` 中对应章节：
+
+```
+bar {
+   status_command /path/to/measure-net-speed-i3status.bash
+}
 
 ```
 

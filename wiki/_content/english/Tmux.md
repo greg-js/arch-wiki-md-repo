@@ -139,10 +139,10 @@ bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; new-window -n "urlvie
 
 #### 256 colors
 
-If you are using a 256 colour terminal, you will need to set the correct term in tmux. As of [tmux 2.1](https://raw.githubusercontent.com/tmux/tmux/master/CHANGES), this is now *tmux*. You can do this in `tmux.conf`:
+If you are using a 256 colour terminal, you will need to set the correct term in tmux. As of [tmux 2.1](https://raw.githubusercontent.com/tmux/tmux/master/CHANGES), this is now *tmux*, or *tmux-256color*. You can do this in `tmux.conf`:
 
 ```
-set -g default-terminal "tmux" 
+set -g default-terminal "tmux-256color" 
 
 ```
 

@@ -155,7 +155,7 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
     *   Configurable compression method.
     *   Multiple backup targets.
 
-	[http://code.google.com/p/archlinux-stuff/](http://code.google.com/p/archlinux-stuff/) || [arch-backup](https://aur.archlinux.org/packages/arch-backup/)
+	[https://github.com/p5n/archlinux-stuff/tree/master/arch-backup/](https://github.com/p5n/archlinux-stuff/tree/master/arch-backup/) || [arch-backup](https://aur.archlinux.org/packages/arch-backup/)
 
 *   **[Clonezilla](https://en.wikipedia.org/wiki/Clonezilla "wikipedia:Clonezilla")** — A disaster recovery, disk cloning, disk imaging and deployment solution.
     *   Boots from live CD, USB flash drive, or PXE server.

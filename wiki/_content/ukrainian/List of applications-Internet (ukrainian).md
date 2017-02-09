@@ -8,9 +8,9 @@
 
 *   [1 Інтернет](#.D0.86.D0.BD.D1.82.D0.B5.D1.80.D0.BD.D0.B5.D1.82)
     *   [1.1 Мережеві менеджери](#.D0.9C.D0.B5.D1.80.D0.B5.D0.B6.D0.B5.D0.B2.D1.96_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B8)
-    *   [1.2 VPN clients](#VPN_clients)
-    *   [1.3 Web browsers](#Web_browsers)
-        *   [1.3.1 Console](#Console)
+    *   [1.2 VPN-клієнти](#VPN-.D0.BA.D0.BB.D1.96.D1.94.D0.BD.D1.82.D0.B8)
+    *   [1.3 Браузери](#.D0.91.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80.D0.B8)
+        *   [1.3.1 Консольні](#.D0.9A.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.D0.BD.D1.96)
         *   [1.3.2 Graphical](#Graphical)
             *   [1.3.2.1 Gecko-based](#Gecko-based)
             *   [1.3.2.2 Blink-based](#Blink-based)
@@ -29,7 +29,7 @@
             *   [1.4.2.2 FTP servers](#FTP_servers)
         *   [1.4.3 Distributed file systems](#Distributed_file_systems)
         *   [1.4.4 BitTorrent clients](#BitTorrent_clients)
-            *   [1.4.4.1 Console](#Console_2)
+            *   [1.4.4.1 Console](#Console)
                 *   [1.4.4.1.1 Command line / backend](#Command_line_.2F_backend)
                 *   [1.4.4.1.2 Console Interface](#Console_Interface)
             *   [1.4.4.2 Graphical Interface](#Graphical_Interface)
@@ -40,11 +40,11 @@
         *   [1.4.6 Video downloaders](#Video_downloaders)
     *   [1.5 Communication](#Communication)
         *   [1.5.1 Email clients](#Email_clients)
-            *   [1.5.1.1 Console](#Console_3)
+            *   [1.5.1.1 Console](#Console_2)
             *   [1.5.1.2 Graphical](#Graphical_2)
         *   [1.5.2 Instant messaging](#Instant_messaging)
             *   [1.5.2.1 IRC clients](#IRC_clients)
-                *   [1.5.2.1.1 Console](#Console_4)
+                *   [1.5.2.1.1 Console](#Console_3)
                 *   [1.5.2.1.2 Graphical](#Graphical_3)
             *   [1.5.2.2 XMPP (Jabber)](#XMPP_.28Jabber.29)
                 *   [1.5.2.2.1 Command line](#Command_line)
@@ -52,7 +52,7 @@
                 *   [1.5.2.2.3 Graphical clients](#Graphical_clients)
                 *   [1.5.2.2.4 Servers](#Servers)
             *   [1.5.2.3 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.5.2.3.1 Console](#Console_5)
+                *   [1.5.2.3.1 Console](#Console_4)
                 *   [1.5.2.3.2 Graphical](#Graphical_4)
             *   [1.5.2.4 Lan messengers](#Lan_messengers)
         *   [1.5.3 VoIP / Softphone](#VoIP_.2F_Softphone)
@@ -66,7 +66,7 @@
         *   [1.5.4 Speech recognition](#Speech_recognition)
     *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.6.1 News aggregators](#News_aggregators)
-            *   [1.6.1.1 Console](#Console_6)
+            *   [1.6.1.1 Console](#Console_5)
             *   [1.6.1.2 Graphical](#Graphical_5)
         *   [1.6.2 Podcast clients](#Podcast_clients)
         *   [1.6.3 Usenet newsreaders & newsgrabbers](#Usenet_newsreaders_.26_newsgrabbers)
@@ -103,21 +103,25 @@
 
 	[https://launchpad.net/wicd](https://launchpad.net/wicd) || [wicd](https://www.archlinux.org/packages/?name=wicd)
 
-### VPN clients
+### VPN-клієнти
 
-*   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Supports Cisco and Juniper VPNs.
+*   **[OpenVPN](/index.php/OpenVPN "OpenVPN")** — Для з'єднання з OpenVPN VPN.
+
+	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)
+
+*   **[OpenConnect](/index.php/OpenConnect "OpenConnect")** — Підтримує Cisco та Juniper VPN'и.
 
 	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
 
-*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — To connect to PPTP VPNs, like Microsoft VPNs (MPPE).
+*   **[PPTP Client](/index.php/PPTP_Client "PPTP Client")** — Для з'єднання до PPTP VPN. Схоже як у Microsoft VPN (MPPE).
 
 	[http://pptpclient.sourceforge.net/](http://pptpclient.sourceforge.net/) || [pptpclient](https://www.archlinux.org/packages/?name=pptpclient)
 
-### Web browsers
+### Браузери
 
-See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Comparison_of_web_browsers "wikipedia:Comparison of web browsers").
+Дивіться також [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Comparison_of_web_browsers "wikipedia:Comparison of web browsers").
 
-#### Console
+#### Консольні
 
 *   **[ELinks](https://en.wikipedia.org/wiki/ELinks "wikipedia:ELinks")** — Advanced and well-established feature-rich text mode web browser (Links fork, barely supported since 2009).
 

@@ -41,7 +41,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [8.1 General](#General)
     *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
     *   [8.3 CTRL right key does not work with oss keymap](#CTRL_right_key_does_not_work_with_oss_keymap)
-    *   [8.4 DRI with Matrox cards stops working](#DRI_with_Matrox_cards_stops_working)
+    *   [8.4 DRI with Matrox cards stopped working](#DRI_with_Matrox_cards_stopped_working)
     *   [8.5 Frame-buffer mode problems](#Frame-buffer_mode_problems)
     *   [8.6 Launching multiple X sessions with proprietary NVIDIA on Xorg 1.16](#Launching_multiple_X_sessions_with_proprietary_NVIDIA_on_Xorg_1.16)
     *   [8.7 Program requests "font '(null)'"](#Program_requests_.22font_.27.28null.29.27.22)
@@ -556,9 +556,9 @@ setxkbmap fr oss
 
 ```
 
-### DRI with Matrox cards stops working
+### DRI with Matrox cards stopped working
 
-If you use a Matrox card and DRI stops working after upgrading to Xorg, try adding the line:
+If you use a Matrox card and DRI stopped working after upgrading to Xorg, try adding the line:
 
 ```
 Option "OldDmaInit" "On"

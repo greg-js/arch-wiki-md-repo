@@ -8,10 +8,10 @@
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 快捷键前缀](#.E5.BF.AB.E6.8D.B7.E9.94.AE.E5.89.8D.E7.BC.80)
         *   [2.1.1 滚动](#.E6.BB.9A.E5.8A.A8)
-    *   [2.2 Browsing URL's](#Browsing_URL.27s)
-    *   [2.3 Setting the correct term](#Setting_the_correct_term)
-    *   [2.4 Other Settings](#Other_Settings)
-    *   [2.5 Autostart with systemd](#Autostart_with_systemd)
+    *   [2.2 打开URL](#.E6.89.93.E5.BC.80URL)
+    *   [2.3 正确设置 term](#.E6.AD.A3.E7.A1.AE.E8.AE.BE.E7.BD.AE_term)
+    *   [2.4 其他设置](#.E5.85.B6.E4.BB.96.E8.AE.BE.E7.BD.AE)
+    *   [2.5 用systemd后台自启tmux](#.E7.94.A8systemd.E5.90.8E.E5.8F.B0.E8.87.AA.E5.90.AFtmux)
 *   [3 Session initialization](#Session_initialization)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Scrolling issues](#Scrolling_issues)
@@ -109,34 +109,34 @@ Ctrl-b PageUp
 
 这个快捷键会使你立即进入滚动模式,并向上翻页.
 
-### Browsing URL's
+### 打开URL
 
-To browse URL's inside tmux you must have [urlview](https://aur.archlinux.org/packages/urlview/) installed and configured.
+你需要安装 [urlview](https://aur.archlinux.org/packages/urlview/)来打开URL 另外需要配置如下：
 
-Inside a new terminal:
+打开一个新的终端:
 
 ```
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; run-shell "$TERMINAL -e urlview /tmp/tmux-buffer"
 
 ```
 
-Or inside a new tmux window (no new terminal needed):
+或者直接在tmux的一个新窗口 (不需要新终端):
 
 ```
 bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; new-window -n "urlview" '$SHELL -c "urlview < /tmp/tmux-buffer"'
 
 ```
 
-### Setting the correct term
+### 正确设置 term
 
-If you are using a 256 colour terminal, you will need to set the correct term in tmux. You can do this in either the `tmux.conf`:
+如果你正在使用256色的终端，你必须在tmux中正确设置term .你可以在 `tmux.conf` 中设置:
 
 ```
 set -g default-terminal "screen-256color" 
 
 ```
 
-or in your `.bashrc` with a test like:
+或在 `.bashrc` 中添加:
 
 ```
 # for tmux: export 256color
@@ -144,7 +144,7 @@ or in your `.bashrc` with a test like:
 
 ```
 
-If you enable xterm-keys in your `tmux.conf`, then you need to build a custom terminfo to declare the new escape codes or applications will not know about them. Compile the following with `tic` and you can use "xterm-screen-256color" as your TERM:
+如果你在 `tmux.conf` 启用xterm-keys, 那你需要构建一个新的终端信息来声明新的退出命令，否则程序无法获取退出方式。用 `tic` 编译下列信息，你可以使用 "xterm-screen-256color" 来作为你的TERM:
 
 ```
 # A screen- based TERMINFO that declares the escape sequences
@@ -166,22 +166,22 @@ xterm-screen-256color|GNU Screen with 256 colors bce and tmux xterm-keys,
 
 ```
 
-### Other Settings
+### 其他设置
 
-Set scrollback to 10000 lines with
+设置最多回滚的行数
 
 ```
 set -g history-limit 10000
 
 ```
 
-### Autostart with systemd
+### 用systemd后台自启tmux
 
-There are some notable advantages to starting a tmux server at startup. Notably, when you start a new tmux session, having the service already running reduces any delays in the startup.
+开机自启tmux有诸多好处，当tmux服务在后台运行时,启动一个tmux会话能减少许多延时。
 
-Furthermore, any customization attached to your tmux session will be retained and your tmux session can be made to persist even if you have never logged in, if you have some reason to do that (like a heavily scripted tmux configuration or shared user tmux sessions).
+此外，即使你没有登录，对tmux会话的任何定制都将保留，tmux会话也将会被持久化。这对于那些有重度tmux配置（启动慢）或者共享tmux会话的人来说特别有用。
 
-The service below starts tmux for the specified user (i.e. start with `tmux@*username*.service`):
+下面这个systemd service配置可作为参考 (启动 `tmux@*username*.service`):
 
  `/etc/systemd/system/tmux@.service` 
 ```
@@ -199,9 +199,9 @@ WantedBy=multi-user.target
 
 ```
 
-**Tip:** You may want to add `WorkingDirectory=*custom_path*` to customize working directory.
+**提示：** 可以通过 `WorkingDirectory=*custom_path*` 设置工作路径.
 
-Alternatively, you can place this file within your [systemd/User](/index.php/Systemd/User "Systemd/User") directory, for example `~/.config/systemd/user/tmux.service`. This way the tmux service will start when you log in.
+把这个文件放在 [systemd/User](/index.php/Systemd/User "Systemd/User") 目录下,如 `~/.config/systemd/user/tmux.service`. 这样tmux service 就会在你登录时自动启动.
 
 ## Session initialization
 

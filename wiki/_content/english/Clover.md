@@ -6,7 +6,7 @@ Download Clover Bootable ISO from [here](http://sourceforge.net/projects/clovere
 
 extract archive and find the `Clover-*-X64.iso` file, mount it.
 
-copy everything in `EFI` folder to your UEFI partition.
+copy everything in `EFI` folder to your [EFI System Partition](/index.php/EFI_System_Partition "EFI System Partition").
 
 ## Configuration
 

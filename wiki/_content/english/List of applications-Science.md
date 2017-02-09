@@ -82,7 +82,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **Qalculate** — Calculator and equation solver with fault-tolerant parsing, constant recognition and units.
 
-	[http://qalculate.github.io/](http://qalculate.github.io/) || [libqalculate](https://www.archlinux.org/packages/?name=libqalculate)
+	[http://qalculate.github.io/](http://qalculate.github.io/) || [qalculate-gtk](https://www.archlinux.org/packages/?name=qalculate-gtk)
 
 *   **SpeedCrunch** — Fast, high precision and powerful cross-platform calculator.
 

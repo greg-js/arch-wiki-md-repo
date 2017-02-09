@@ -48,7 +48,7 @@ $ CONFIGURE_ARGS='with-ldflags=-L/opt/vagrant/embedded/lib with-libvirt-include=
 
 ```
 
-A normal `vagrant up` fails with `incompatible library version` due to [bug #541](https://github.com/vagrant-libvirt/vagrant-libvirt/issues/541). As a workaround, create and run [reinstall-vagrant-libvirt.sh](https://gist.github.com/robled/070e1922816bbe983623#file-reinstall-vagrant-libvirt-sh).
+A normal `vagrant up` fails with `incompatible library version` due to [bug #541](https://github.com/vagrant-libvirt/vagrant-libvirt/issues/541). As a workaround, create and run [[1]](https://gist.github.com/j883376/d90933620c7ed14daa4e0963e005377f).
 
 Once the plugin is installed the `libvirt` provider will be available:
 

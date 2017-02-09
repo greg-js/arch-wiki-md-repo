@@ -29,18 +29,16 @@ This article assumes you already have a basic understanding of the [Secure Shell
         *   [4.3.1 Installation](#Installation)
         *   [4.3.2 Configuration](#Configuration)
         *   [4.3.3 Tips](#Tips)
-    *   [4.4 envoy](#envoy)
-        *   [4.4.1 envoy with key passphrases stored in kwallet](#envoy_with_key_passphrases_stored_in_kwallet)
-    *   [4.5 x11-ssh-askpass](#x11-ssh-askpass)
-        *   [4.5.1 Calling x11-ssh-askpass with ssh-add](#Calling_x11-ssh-askpass_with_ssh-add)
-        *   [4.5.2 Theming](#Theming)
-        *   [4.5.3 Alternative passphrase dialogs](#Alternative_passphrase_dialogs)
-    *   [4.6 pam_ssh](#pam_ssh)
-        *   [4.6.1 Using a different password to unlock the SSH key](#Using_a_different_password_to_unlock_the_SSH_key)
-        *   [4.6.2 Known issues with pam_ssh](#Known_issues_with_pam_ssh)
-    *   [4.7 GNOME Keyring](#GNOME_Keyring)
-    *   [4.8 Store SSH keys with Kwallet](#Store_SSH_keys_with_Kwallet)
-    *   [4.9 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
+    *   [4.4 x11-ssh-askpass](#x11-ssh-askpass)
+        *   [4.4.1 Calling x11-ssh-askpass with ssh-add](#Calling_x11-ssh-askpass_with_ssh-add)
+        *   [4.4.2 Theming](#Theming)
+        *   [4.4.3 Alternative passphrase dialogs](#Alternative_passphrase_dialogs)
+    *   [4.5 pam_ssh](#pam_ssh)
+        *   [4.5.1 Using a different password to unlock the SSH key](#Using_a_different_password_to_unlock_the_SSH_key)
+        *   [4.5.2 Known issues with pam_ssh](#Known_issues_with_pam_ssh)
+    *   [4.6 GNOME Keyring](#GNOME_Keyring)
+    *   [4.7 Store SSH keys with Kwallet](#Store_SSH_keys_with_Kwallet)
+    *   [4.8 KeePass2 with KeeAgent plugin](#KeePass2_with_KeeAgent_plugin)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Key ignored by the server](#Key_ignored_by_the_server)
 *   [6 See also](#See_also)
@@ -438,56 +436,6 @@ Because Keychain reuses the same *ssh-agent* process on successive logins, you s
 *   if you do not want to be immediately prompted for unlocking the keys but rather wait until they are needed, use the `--noask` option.
 
 **Note:** Keychain is able to manage [GPG](/index.php/GPG "GPG") keys in the same fashion. By default it attempts to start *ssh-agent* only, but you can modify this behavior using the `--agents` option, *e.g.* `--agents ssh,gpg`. See `man keychain`.
-
-### envoy
-
-An alternative to keychain is [envoy](https://github.com/vodik/envoy). Envoy is available as [envoy](https://www.archlinux.org/packages/?name=envoy) , or the Git version as [envoy-git](https://aur.archlinux.org/packages/envoy-git/).
-
-After installing it, set up the envoy socket by [enabling](/index.php/Enabling "Enabling") `envoy@ssh-agent.socket`.
-
-And add to your shell's rc file:
-
-```
-envoy -t ssh-agent -a *ssh_key*
-source <(envoy -p)
-
-```
-
-If this syntax for sourcing causes errors (in mksh, for example), you can replace it with:
-
-```
-envoy -t ssh-agent -a *ssh_key*
-eval "$(envoy -p)"
-
-```
-
-If the key is `~/.ssh/id_rsa`, `~/.ssh/id_dsa`, `~/.ssh/id_ecdsa`, or `~/.ssh/identity`, the `-a *ssh_key*` parameter is not needed.
-
-#### envoy with key passphrases stored in kwallet
-
-If you have long passphrases for your SSH keys, remembering them can be a pain. So let us tell kwallet to store them! Along with [envoy](https://www.archlinux.org/packages/?name=envoy), install [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) and [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) from the [official repositories](/index.php/Official_repositories "Official repositories"). Next, enable the envoy socket in systemd (see above).
-
-**Note:** As of April 30, 2015, if after installation [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) keeps asking for access to your wallet even after having submitted the password, you might have [this](https://bbs.archlinux.org/viewtopic.php?id=192862) problem. The proposed solution is to install [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/), though this might break your login.
-
-First, you will add this script to `~/.kde4/Autostart/ssh-agent.sh`:
-
-```
-#!/bin/sh
-envoy -t ssh-agent -a *ssh_key*
-
-```
-
-Then, make sure the script is executable by running: `chmod +x ~/.kde4/Autostart/ssh-agent.sh`
-
-And add this to `~/.kde4/env/ssh-agent.sh`:
-
-```
-#!/bin/sh
-eval $(envoy -p)
-
-```
-
-When you log into KDE, it will execute the `ssh-agent.sh` script. This will call *ksshaskpass*, which will prompt you for your kwallet password when envoy calls *ssh-agent*.
 
 ### x11-ssh-askpass
 

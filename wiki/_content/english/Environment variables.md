@@ -175,7 +175,7 @@ http_proxy="http://192.168.0.1:80"
 
 The [PAM](/index.php/PAM "PAM") module [pam_env(8)](http://man7.org/linux/man-pages/man8/pam_env.8.html) can also be used to apply variables.
 
-In `/etc/environment` and `~/.pam_environment` there are two formats to write down environment variables:
+In `/etc/security/pam_env.conf` and `~/.pam_environment` there are two formats to write down environment variables:
 
 ```
 VARIABLE=VALUE

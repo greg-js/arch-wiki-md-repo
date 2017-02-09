@@ -28,14 +28,15 @@
     *   [5.2 Dual-booting](#Dual-booting)
         *   [5.2.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
         *   [5.2.2 "Restart" menu entry](#.22Restart.22_menu_entry)
-        *   [5.2.3 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-            *   [5.2.3.1 Encrypted GNU/Linux menuentry](#Encrypted_GNU.2FLinux_menuentry)
-        *   [5.2.4 FreeBSD menu entry](#FreeBSD_menu_entry)
-            *   [5.2.4.1 Loading the kernel directly](#Loading_the_kernel_directly)
-            *   [5.2.4.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
-            *   [5.2.4.3 Running the traditional BSD 2nd stage loader](#Running_the_traditional_BSD_2nd_stage_loader)
-        *   [5.2.5 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
-        *   [5.2.6 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
+        *   [5.2.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
+        *   [5.2.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
+            *   [5.2.4.1 Encrypted GNU/Linux menuentry](#Encrypted_GNU.2FLinux_menuentry)
+        *   [5.2.5 FreeBSD menu entry](#FreeBSD_menu_entry)
+            *   [5.2.5.1 Loading the kernel directly](#Loading_the_kernel_directly)
+            *   [5.2.5.2 Chainloading the embedded boot record](#Chainloading_the_embedded_boot_record)
+            *   [5.2.5.3 Running the traditional BSD 2nd stage loader](#Running_the_traditional_BSD_2nd_stage_loader)
+        *   [5.2.6 Windows installed in UEFI-GPT Mode menu entry](#Windows_installed_in_UEFI-GPT_Mode_menu_entry)
+        *   [5.2.7 Windows installed in BIOS-MBR mode](#Windows_installed_in_BIOS-MBR_mode)
     *   [5.3 LVM](#LVM)
     *   [5.4 RAID](#RAID)
     *   [5.5 Multiple entries](#Multiple_entries)
@@ -355,9 +356,7 @@ It is possible to create a `grubx64_standalone.efi` application which has all th
 
 Then copy the GRUB config file to `*esp*/EFI/grub/grub.cfg` and create a UEFI Boot Manager entry for `*esp*/EFI/grub/grubx64_standalone.efi` using [efibootmgr](/index.php/UEFI#efibootmgr "UEFI").
 
-**Note:**
-
-The option `--modules="part_gpt part_msdos"` (with the quotes) is necessary for the `${cmdpath}` feature to work properly.
+**Note:** The option `--modules="part_gpt part_msdos"` (with the quotes) is necessary for the `${cmdpath}` feature to work properly.
 
 **Warning:** You may find that the `grub.cfg` file is not loaded due to `${cmdpath}` missing a slash (i.e. `(hd1,msdos2)EFI/Boot` instead of `(hd1,msdos2)/EFI/Boot`) and so you are dropped into a GRUB shell. If this happens determine what `${cmdpath}` is set to (`echo ${cmdpath}` ) and then load the config file manually (e.g. `configfile (hd1,msdos2)/EFI/Boot/grub.cfg`).
 
@@ -442,6 +441,14 @@ menuentry "System shutdown" {
 menuentry "System restart" {
 	echo "System rebooting..."
 	reboot
+}
+```
+
+##### "Firmware setup" menu entry (UEFI only)
+
+```
+menuentry "Firmware setup" {
+	fwsetup
 }
 ```
 

@@ -30,7 +30,7 @@ This article is a general list of applications sorted by category, as a referenc
             *   [1.3.2.3 WebKit-based](#WebKit-based)
                 *   [1.3.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
                 *   [1.3.2.3.2 Browsers based on webkitgtk/webkitgtk2](#Browsers_based_on_webkitgtk.2Fwebkitgtk2)
-                *   [1.3.2.3.3 Browsers based on qt5-webkit/qtwebkit](#Browsers_based_on_qt5-webkit.2Fqtwebkit)
+                *   [1.3.2.3.3 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
             *   [1.3.2.4 Other](#Other)
     *   [1.4 File sharing](#File_sharing)
         *   [1.4.1 Download managers](#Download_managers)
@@ -363,7 +363,7 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 ##### Blink-based
 
-See also [Wikipedia:Blink (layout engine)](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)").
+See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web_engine) "wikipedia:Blink (web engine)").
 
 *   **[Chromium](/index.php/Chromium "Chromium")** — Web browser developed by Google, the open source project behind Google Chrome.
 
@@ -505,13 +505,9 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero](https://www.archlinux.org/packages/?name=xombrero)
 
-###### Browsers based on qt5-webkit/qtwebkit
+###### Browsers based on qt5-webkit
 
-**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. Qt browsers should be switching to qt5-webengine (Blink). More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
-
-*   **[Arora](https://en.wikipedia.org/wiki/Arora_(web_browser) "wikipedia:Arora (web browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
-
-	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
+**Warning:** The following browsers are based on [qt5-webkit](https://www.archlinux.org/packages/?name=qt5-webkit), which is today considered insecure and outdated. A secure and up to date replacement is provided by the [qt5-webkit-ng](https://www.archlinux.org/packages/?name=qt5-webkit-ng) package.
 
 *   **[Dooble](https://en.wikipedia.org/wiki/Dooble "wikipedia:Dooble")** — A safe WebKit Web browser.
 
@@ -524,10 +520,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit.
 
 	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
-
-*   **[Rekonq](https://en.wikipedia.org/wiki/Rekonq "wikipedia:Rekonq")** — WebKit-based web browser for KDE.
-
-	[http://rekonq.kde.org/](http://rekonq.kde.org/) || [rekonq](https://aur.archlinux.org/packages/rekonq/)
 
 ##### Other
 
@@ -4900,7 +4892,7 @@ See also [Wikipedia:Comparison of software calculators](https://en.wikipedia.org
 
 *   **Qalculate** — Calculator and equation solver with fault-tolerant parsing, constant recognition and units.
 
-	[http://qalculate.github.io/](http://qalculate.github.io/) || [libqalculate](https://www.archlinux.org/packages/?name=libqalculate)
+	[http://qalculate.github.io/](http://qalculate.github.io/) || [qalculate-gtk](https://www.archlinux.org/packages/?name=qalculate-gtk)
 
 *   **SpeedCrunch** — Fast, high precision and powerful cross-platform calculator.
 

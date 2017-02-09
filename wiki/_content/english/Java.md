@@ -72,7 +72,7 @@ The following packages are available in the [official repositories](/index.php/O
 
 ### OpenJFX
 
-JavaFX is also available from the official repositories. It requires the OpenJDK 8\.
+JavaFX is also available from the official repositories. It depends on OpenJDK 8\.
 
 | Package name | Use |
 | [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) | Java OpenJFX 8 client application platform (open-source implementation of JavaFX) |

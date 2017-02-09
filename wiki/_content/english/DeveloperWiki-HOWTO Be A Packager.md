@@ -79,9 +79,10 @@ This will pull the package you requested into your checkout. From now on, any ti
 ```
   cd svn-packages
   mkdir -p new-package/{repos,trunk}
-  $EDITOR new-package/trunk/PKGBUILD
-  svn add new-package
-  svn propset svn:keywords "Id" new-package/trunk/PKGBUILD
+  cd new-package
+  $EDITOR trunk/PKGBUILD
+  svn add .
+  svn propset svn:keywords "Id" trunk/PKGBUILD
   svn commit
 
 ```

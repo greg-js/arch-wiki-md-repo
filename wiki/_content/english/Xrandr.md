@@ -86,9 +86,9 @@ $ xrandr --output LVDS --off --output HDMI-0 --auto
 
 #### Toggle external monitor
 
-This script toggles between an external monitor (specified by `$EXT`) and a default monitor (specified by `$IN`), so that only one monitor is active at a time.
+This script toggles between an external monitor (specified by `$extern`) and a default monitor (specified by `$intern`), so that only one monitor is active at a time.
 
-The default monitor (specified by `$IN`) should be connected when running the script, which is always true for a laptop.
+The default monitor should be connected when running the script, which is always true for a laptop.
 
 ```
 #!/bin/bash

@@ -29,15 +29,9 @@
 
 ## Installation
 
-Install [sup-git](https://aur.archlinux.org/packages/sup-git/) from the [AUR](/index.php/AUR "AUR"). Although the developers suggest that you install Sup via:
+Sup only works with Ruby 2.3.3\. Arch moved to a newer Ruby which makes sup crash. Sup is at the moment not being actively maintained to keep up with new versions of Ruby.
 
-```
-$ gem install xapian-ruby
-$ gem install sup
-
-```
-
-As you get the latest version directly from the developers.
+You can temporarily install sup using this workaround using [RVM](/index.php/RVM "RVM").
 
 ## Configuration
 
@@ -63,7 +57,7 @@ After the email sources have been added, `sup-config` will execute the `sup-sync
 
 sup works by having all relevant mail in one view at a time and no folders. To control exactly what is viewed and what is not mail needs filtering.
 
-There are many ways to filter mail. Depending on how you access your mail you might want to filter on the serverside (with e.g. [imapfilter)](https://aur.archlinux.org/packages/imapfilter%29/) or on the clientside.
+There are many ways to filter mail. Depending on how you access your mail you might want to filter on the serverside (with e.g. [imapfilter](https://aur.archlinux.org/packages/imapfilter/) or on the clientside.
 
 To decide which way to go consider these two scenarios:
 

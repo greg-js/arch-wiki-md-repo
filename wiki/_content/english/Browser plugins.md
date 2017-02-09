@@ -1,7 +1,7 @@
 There are two types of browser plugins, based on the plugin API they use:
 
-*   Netscape plugin API (NPAPI): these plugins work in [Firefox](/index.php/Firefox "Firefox") and most other browsers (**not** in Chromium and Opera).
-*   Pepper plugin API (PPAPI): these plugins work only in [Chromium](/index.php/Chromium "Chromium") (and Chrome) and [Opera](/index.php/Opera "Opera").
+*   Netscape plugin API (NPAPI): these plugins work in [Firefox](/index.php/Firefox "Firefox") ([from version 52 only Flash Player](/index.php/Firefox#Plugins "Firefox")) and most smaller browsers (**not** in Chromium and Opera).
+*   Pepper plugin API (PPAPI): these plugins work in [Chromium](/index.php/Chromium "Chromium") (and Chrome), [Opera](/index.php/Opera "Opera") and [Vivaldi](/index.php/Vivaldi "Vivaldi").
 
 Most plugins on this page are NPAPI-only, unless noted otherwise.
 

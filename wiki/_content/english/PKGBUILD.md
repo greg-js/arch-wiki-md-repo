@@ -204,10 +204,7 @@ However, there is an exception to this. If your package provides a package name 
 *   [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) provides `netbeans` and conflicts `netbeans`
 *   [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) provides `netbeans` and conflicts `netbeans` but does not need to conflicts [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) since pacman is smart enough to figure out these packages are incompatible since they provide the same feature and are in conflict with it.
 
-```
-The same applies in the reverse order: [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) does not need to conflict with [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) as well, because they provide the same package.
-
-```
+	The same applies in the reverse order: [netbeans-php](https://aur.archlinux.org/packages/netbeans-php/) does not need to conflict with [netbeans-javase](https://aur.archlinux.org/packages/netbeans-javase/) as well, because they provide the same package.
 
 Even this is not recommended, in practise, putting the conflicting packages in all directions is not always applicable especially if all these packages are maintained by different people. This exception is useful and comes thus in handy. That way you know you do not need to contact all package maintainers for which you package is in conflict to ask them to include your package name in their `conflicts` array.
 

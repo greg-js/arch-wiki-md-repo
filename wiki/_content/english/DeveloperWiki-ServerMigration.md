@@ -66,9 +66,9 @@
 *   aur
 *   mailman
 *   planet [done]
-*   bugs [wip]
+*   bugs [done]
 *   archweb [done]
-*   patchwork
+*   patchwork [wip]
 *   projects
 *   mail
 

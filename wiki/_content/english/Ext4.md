@@ -173,9 +173,9 @@ In the following steps `/dev/sdxX` denotes the path to the partition to be conve
 
 ## Using file-based encryption
 
-Since Linux 4.1, ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
+ext4 supports file-based encryption. In a directory tree marked for encryption, file contents, filenames, and symbolic link targets are all encrypted. Encryption keys are stored in the kernel keyring. See also [Quarkslab's blog](http://blog.quarkslab.com/a-glimpse-of-ext4-filesystem-level-encryption.html) entry with a write-up of the feature, an overview of the implementation state, and practical test results with kernel 4.1.
 
-The encryption relies on the enabled (default) kernel option `CONFIG_EXT4_ENCRYPTION` and the *e4crypt* command from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package.
+The encryption relies on the kernel option `CONFIG_EXT4_ENCRYPTION`, which is enabled by default, as well as the *e4crypt* command from the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package.
 
 A precondition is that your filesystem is using a supported block size for encryption:
 
@@ -204,13 +204,13 @@ Next, enable the encryption feature flag on your filesystem:
 Next, make a directory to encrypt:
 
 ```
-# mkdir /encrypted
+# mkdir */encrypted*
 
 ```
 
-Note that encryption can only be applied to an empty directory. The encryption setting (or "encryption policy") is inherited by new files and subdirectories. Encrypting existing files is not yet supported.
+Note that encryption can only be applied to an empty directory. New files and subdirectories within an encrypted directory inherit its encryption policies. Encrypting already existing files is not yet supported.
 
-Now generate and add a new key to your keyring. This step must be repeated every time you flush your keyring (reboot):
+Now generate and add a new key to your keyring. This step must be repeated every time you flush your keyring (i.e., reboot):
 
 ```
 # e4crypt add_key
@@ -219,7 +219,7 @@ Added key with descriptor [f88747555a6115f5]
 
 ```
 
-**Warning:** If you forget your passphrase, there will be no way to decrypt your files! It also isn't yet possible to change a passphrase after you've set it.
+**Warning:** If you forget your passphrase, there will be no way to decrypt your files. It also is not yet possible to change a passphrase after it has been set.
 
 **Note:** To help prevent [dictionary attacks](https://en.wikipedia.org/wiki/Dictionary_attack is automatically generated and stored in the ext4 filesystem superblock. Both the passphrase *and* the salt are used to derive the actual encryption key. As a consequence of this, if you have multiple ext4 filesystems with encryption enabled mounted, then `e4crypt add_key` will actually add multiple keys, one per filesystem. Although any key can be used on any filesystem, it would be wise to only use, on a given filesystem, keys using that filesystem's salt. Otherwise, you risk being unable to decrypt files on filesystem A if filesystem B is unmounted. Alternatively, you can use the `-S` option to `e4crypt add_key` to specify a salt yourself.
 
@@ -236,11 +236,18 @@ Session Keyring
 Almost done. Now set an encryption policy on the directory (assign the key to it):
 
 ```
-# e4crypt set_policy f88747555a6115f5 /encrypted
+# e4crypt set_policy f88747555a6115f5 */encrypted*
 
 ```
 
-That is all. If you try accessing the directory without adding the key into your keyring, filenames and their contents will be seen as encrypted gibberish.
+This completes setting up encryption for a directory named `*/encrypted*`. If you try accessing the directory without adding the key into your keyring, filenames and their contents will be seen as encrypted gibberish.
+
+**Warning:**
+
+*   Some applications cannot open files in directories encrypted using this method. Try moving the file outside of the encrypted directory before assuming it is broken. In this case, you will often see a message about a missing key.
+*   Logging in does automatically unlock home directories encrypted by this method when using GDM or console login.
+
+**Note:** Attempting to move files will result in an error. Try copying the files instead.
 
 ## Tips and tricks
 

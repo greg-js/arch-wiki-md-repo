@@ -241,7 +241,7 @@ gtk-font-name = DejaVu Sans 11
 
 ### Dark theme variant
 
-Some GTK+ 3 theme contain a dark theme variant, but it's only used by default, when the application request it explicitly. To use dark theme variant with all GTK+ 3 applications, set:
+Some GTK+ 3 themes contain a dark theme variant, but it's only used by default when the application requests it explicitly. To use dark theme variant with all GTK+ 3 applications, set:
 
 ```
 gtk-application-prefer-dark-theme = true

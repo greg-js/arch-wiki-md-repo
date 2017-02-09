@@ -62,7 +62,7 @@
 | <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(67)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(57)</small> |
+| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(58)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(5)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(53)</small> |

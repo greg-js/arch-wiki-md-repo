@@ -43,12 +43,13 @@ If you are not registered and identified, you will be forwarded to **#archlinux-
 
 **Note:** Arch operators are ops in both **#archlinux** and **#archlinux-offtopic**. See the list below, or run `/msg phrik listops` on freenode.
 
-If you for some reason need the help of an op, do not be shy to `/query` or `/msg` us. Here is the list of ops as of 4 Feb 2016:
+If you for some reason need the help of an op, do not be shy to `/query` or `/msg` us. Here is the list of ops as of 8 Feb 2016:
 
+*   alad
 *   brain0
 *   falconindy
-*   grawity
 *   gehidore
+*   grawity
 *   heftig
 *   jelle
 *   MrElendig / Mion

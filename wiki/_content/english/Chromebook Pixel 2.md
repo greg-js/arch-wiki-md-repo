@@ -62,7 +62,7 @@ See [Install Arch Linux in addition to Chrome OS](/index.php/Chrome_OS_devices#A
 
 Touchpad, touchscreen, and audio are all working in the upstream 4.9 kernel.
 
-4.9 is in Testing right now so you can install [linux](https://www.archlinux.org/packages/?name=linux) after enabling [Official_repositories#testing](/index.php/Official_repositories#testing "Official repositories"). The [linux-samus README](https://github.com/raphael/linux-samus#sound) details how to unmute speakers but you may need to change the card in the commands, i.e. <tt>-c 0</tt>. You can get the card ID by doing <tt>aplay -l | grep bdw-rt5677 | sed -E 's/card ([0-9]):.*/\1/'</tt>.
+The [linux-samus README](https://github.com/raphael/linux-samus#sound) details how to unmute speakers but you may need to change the card in the commands, i.e. <tt>-c 0</tt>. You can get the card ID by doing <tt>aplay -l | grep bdw-rt5677 | sed -E 's/card ([0-9]):.*/\1/'</tt>.
 
 ### (Samus) Linux 4.9 (AUR)
 

@@ -667,11 +667,13 @@ You can easily check what card do your MacBook have by:
 
 *   If you have an Atheros card, all should work out-of-the-box.
 
-*   If you have a Broadcom card, follow the [Broadcom BCM4312](/index.php/Broadcom_BCM4312 "Broadcom BCM4312") page.
+*   If you have a Broadcom card, follow the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page.
 
 *   5.0 and 6.0 generation MacBooks may have a BCM43xx, follow the instructions for the broadcom-wl driver on the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page. The interfaces can swap during reboot so its best to define them in a udev rule (instructions on the [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page).
 
 *   8.1 generation MacBooks have BCM4331, for which support is not present in either Linux (3.0 and 3.1) or the proprietary drivers by Broadcom. There is however preliminary support for it in Linux 3.2\. To run the drivers on earlier kernels, you will need to use [compat-drivers](https://backports.wiki.kernel.org/index.php/Documentation/compat-drivers)
+
+*   If you have the correct broadcom DKMS driver (i.e. broadcom-wl-dkms) installed and your wifi card is still not being recognised, try rebuilding the driver (See [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support")).
 
 **Note:** If your connection frequently drops, you may have to turn off Wi-Fi power management. If you are running [pm-utils](/index.php/Pm-utils "Pm-utils"), you may override wireless power management by creating an executable file `/etc/pm/wireless` with the lines:
 ```

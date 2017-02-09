@@ -26,6 +26,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 root login fails](#root_login_fails)
     *   [5.2 no network-connection with veth in container config](#no_network-connection_with_veth_in_container_config)
+    *   [5.3 can't start unprivileged LXC due to newuidmap execution failure](#can.27t_start_unprivileged_LXC_due_to_newuidmap_execution_failure)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -293,6 +294,8 @@ Once the system has been configured to use unprivileged containers (see, [Linux_
 
 **Warning:** It is recommended to backup the existing image before using this utility!
 
+**Warning:** This util will not shift uid/gid in facl, if your rootfs have any files configured with facl (like archlinux), you need shift to it by your own
+
 Invoke the utility to convert over like so:
 
 ```
@@ -379,6 +382,18 @@ lxc.network.link = `bridge`
 ```
 
 And then assign your IP through your preferred method **inside** the container, see also [Network configuration#Configure the IP address](/index.php/Network_configuration#Configure_the_IP_address "Network configuration").
+
+### can't start unprivileged LXC due to newuidmap execution failure
+
+Unprivileged LXC can't start with current shadow in official package, because of newuidmap and newgidmap is not setuid
+
+```
+chmod u+s /usr/bin/newuidmap
+chmod u+s /usr/bin/newgidmap
+
+```
+
+This is a bug in upstream but still not cherry-picked in official repository
 
 ## See also
 

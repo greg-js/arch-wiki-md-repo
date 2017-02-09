@@ -20,7 +20,7 @@ This article describes how to setup a [Linux Container](/index.php/Linux_Contain
 
 ## Container setup
 
-Basic setup and understanding of [Linux Containers](/index.php/Linux_Containers "Linux Containers") is required. This article assumes that readers have a base LXC setup and operational. New comers to these are directed to the aforementioned article.
+Basic setup and understanding of [Linux Containers](/index.php/Linux_Containers "Linux Containers") is required. This article assumes that readers have a base LXC setup operational. Newcomers to these are directed to the aforementioned article.
 
 ### LXC config
 

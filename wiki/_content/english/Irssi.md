@@ -123,7 +123,7 @@ If everything works you will see the "Z" mode set. It should look like this: "Mo
 
 #### Client certificates
 
-Freenode and OFTC support authentication using SSL certificates, providing an alternative to plaintext passwords. See Freenode's [Identifying with CERTFP](https://freenode.net/certfp/) and [Creating an SSL Certificate](https://freenode.net/certfp/makecert.shtml) for more extensive details.
+Freenode and OFTC support authentication using SSL certificates, providing an alternative to plaintext passwords. See Freenode's [Identifying with CERTFP](https://freenode.net/kb/answer/certfp) for more extensive details.
 
 To create an password-less certificate that is valid for 730 days (when requested to enter details like state or even Common Name (CN), you can fill anything you want):
 
