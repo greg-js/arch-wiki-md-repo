@@ -69,6 +69,8 @@ As mentioned earlier, this script is meant to be used in concert with the **make
 
 **Note:** Since `/usr/bin/modprobe` requires root privileges, `/usr/bin/modprobed-db` needs to be called as root or via sudo when users wish to recall the database.
 
+**Note:** While using **sudo** is recommended, it is not necessary as the same effect can be achieved with `make LSMOD=$HOME/.config/modprobed.db localmodconfig`, this will also avoid polluting your kernel space with unnecessary modules. The downside to this that it will try to build out of tree modules that modprobed has picked up.
+
 #### Using the Official Arch kernel PKGBUILD
 
 The official Arch kernel's PKGBUILD does not have native support for this, but it is easily modified as follows:
@@ -78,8 +80,7 @@ The official Arch kernel's PKGBUILD does not have native support for this, but i
   # get kernel version
   make prepare
 
-  sudo /usr/bin/modprobed-db recall        # <---- insert this line
-  make localmodconfig                      # <---- insert this line
+  make LSMOD=$HOME/.config/modprobed.db localmodconfig                      # <---- insert this line
 
   # load configuration
   # Configure the kernel. Replace the line below with one of your choice.

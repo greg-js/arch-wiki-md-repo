@@ -143,7 +143,7 @@ Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "
 
 ### Android System Images
 
-Install the desired [Android system image](https://aur.archlinux.org/packages/?O=0&K=android+system+image) package from the [AUR](/index.php/AUR "AUR"). This step may not be necessary if installing Android Studio.
+Install the desired [Android system image](https://aur.archlinux.org/packages/?O=0&K=android+system+image) package from the [AUR](/index.php/AUR "AUR"). This step may not be necessary if installing Android Studio. The Images are needed for emulating a specific android device. They are not needed if you want to develop with an android phone.
 
 ### Development environment
 

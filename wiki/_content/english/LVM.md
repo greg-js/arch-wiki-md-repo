@@ -722,7 +722,7 @@ Obviously, if you want your cache to be bigger, you can change the `-L` paramete
 *   `writethrough` ensures that any data written will be stored both in the cache pool LV and on the origin LV. The loss of a device associated with the cache pool LV in this case would not mean the loss of any data;
 *   `writeback` ensures better performance, but at the cost of a higher risk of data loss in case the drive used for cache fails.
 
-If a specific `--cachemode` is not indicated, the system will assume `writetrough` as default.
+If a specific `--cachemode` is not indicated, the system will assume `writethrough` as default.
 
 #### Remove
 

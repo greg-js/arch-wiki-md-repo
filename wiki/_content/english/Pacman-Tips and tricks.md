@@ -531,7 +531,7 @@ To remove all the packages on your system that are not mentioned in the list:
 
 ### Listing all changed files from packages
 
-If you are suspecting file corruption (e.g. by software/hardware failure), but are unsure if files were got corrupted, you might want to compare with the hash sums in the packages. This can be done with [pacutils](https://aur.archlinux.org/packages/pacutils/):
+If you are suspecting file corruption (e.g. by software/hardware failure), but are unsure if files were got corrupted, you might want to compare with the hash sums in the packages. This can be done with [pacutils](https://www.archlinux.org/packages/?name=pacutils):
 
 ```
 # paccheck --md5sum --quiet

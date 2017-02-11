@@ -23,12 +23,11 @@ From [Home - LibreOffice](http://www.libreoffice.org/):
     *   [7.3 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
     *   [7.4 LibreOffice does not detect my certificates](#LibreOffice_does_not_detect_my_certificates)
     *   [7.5 Run .pps files in edit mode (without slideshow)](#Run_.pps_files_in_edit_mode_.28without_slideshow.29)
-    *   [7.6 Application Error (not starting)](#Application_Error_.28not_starting.29)
-    *   [7.7 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
-    *   [7.8 Media support](#Media_support)
-    *   [7.9 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
-    *   [7.10 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
-    *   [7.11 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze.2FPlasma_5_theme)
+    *   [7.6 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
+    *   [7.7 Media support](#Media_support)
+    *   [7.8 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
+    *   [7.9 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
+    *   [7.10 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze.2FPlasma_5_theme)
 
 ## Installation
 
@@ -50,7 +49,7 @@ Check the optional dependencies pacman displays. If you want to use LibreOffice 
 
 LibreOffice includes support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") theme integration. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-As of LibreOffice v3.5.x toolkit libraries are checked in the following order:
+Toolkit libraries are checked in the following order:
 
 ```
 gtk3 > gtk > kde4 > generic
@@ -65,7 +64,7 @@ If that does not work immediately, you may need to change the icon set that is i
 
 ### Firefox themes
 
-LibreOffice 4.x series is able to use Firefox themes. Enter LibreOffice options and choose *Personalization > Select Theme*, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
+LibreOffice is able to use Firefox themes. Enter LibreOffice options and choose *Personalization > Select Theme*, then paste the URL of your favourite one. A convenient button in the dialog box lets you open the browser.
 
 Themes can be found on [Mozilla's theme repository](https://addons.mozilla.org/en-US/firefox/themes/).
 
@@ -92,7 +91,7 @@ For spell checking, please make sure [hunspell](https://www.archlinux.org/packag
 
 	Finnish
 
-Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [libvoikko](https://www.archlinux.org/packages/?name=libvoikko), [malaga](https://aur.archlinux.org/packages/malaga/), [voikko-fi-malaga](https://aur.archlinux.org/packages/voikko-fi-malaga/), [hfstospell](https://aur.archlinux.org/packages/hfstospell/) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/).
+Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [libvoikko](https://www.archlinux.org/packages/?name=libvoikko), [malaga](https://aur.archlinux.org/packages/malaga/), [voikko-fi](https://aur.archlinux.org/packages/voikko-fi/), [hfstospell](https://aur.archlinux.org/packages/hfstospell/) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/).
 
 ### Hyphenation rules
 
@@ -198,22 +197,6 @@ f=$(mktemp)
 cp "$1" "${f}.ppt" && libreoffice "${f}.ppt" && rm -f "${f}.ppt"
 
 ```
-
-### Application Error (not starting)
-
-When using a different GTK theme than *Adwaita*, LibreOffice may fail to start:
-
-```
-(soffice:2148): GLib-GObject-CRITICAL **: g_value_set_boxed: assertion 'G_VALUE_HOLDS_BOXED (value)' failed
-
-(soffice:2148): GLib-GObject-WARNING **: gtype.c:4268: type id '0' is invalid
-
-(soffice:2148): GLib-GObject-WARNING **: can't peek value table for type '<invalid>' which is not currently referenced
-Application Error
-
-```
-
-See [FS#46614](https://bugs.archlinux.org/task/46614).
 
 ### Exit while pushing the save button
 

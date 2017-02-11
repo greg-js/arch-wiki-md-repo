@@ -46,6 +46,7 @@ Nextcloud, a fork of ownCloud, is also treated in this article. For differences 
     *   [7.8 Some files upload, but give an error 'Integrity constraint violation...'](#Some_files_upload.2C_but_give_an_error_.27Integrity_constraint_violation....27)
     *   [7.9 "Cannot write into apps directory"](#.22Cannot_write_into_apps_directory.22)
     *   [7.10 Security warnings even though the recommended settings have been included in nginx.conf](#Security_warnings_even_though_the_recommended_settings_have_been_included_in_nginx.conf)
+    *   [7.11 "Reading from keychain failed with error: 'No keychain service available'"](#.22Reading_from_keychain_failed_with_error:_.27No_keychain_service_available.27.22)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Docker](#Docker)
     *   [8.2 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
@@ -843,6 +844,10 @@ While the fast_cgi sample config has a parameter to avoid that ( `fastcgi_param 
         }
 ...
 ```
+
+### "Reading from keychain failed with error: 'No keychain service available'"
+
+Can be fixed for Gnome by installing the following 2 packages, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). Or the following for KDE, [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring) and [qtkeychain](https://www.archlinux.org/packages/?name=qtkeychain).
 
 ## Tips and tricks
 

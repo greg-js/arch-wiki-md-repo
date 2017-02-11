@@ -17,6 +17,7 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
     *   [3.1 Not working configuration](#Not_working_configuration)
     *   [3.2 Screen redraw is broken](#Screen_redraw_is_broken)
     *   [3.3 DisplayLink refresh rate is extremely slow with gnome 3](#DisplayLink_refresh_rate_is_extremely_slow_with_gnome_3)
+    *   [3.4 Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications](#Slow_redraw.2FUnresponsiveness_in_Google_Chrome_and_Webkit2-based_Applications)
 *   [4 See Also](#See_Also)
 
 ## Installation
@@ -207,6 +208,12 @@ If this does not solve the problem (or if the correct modeline was already in pl
 ### DisplayLink refresh rate is extremely slow with gnome 3
 
 If once you set up your DisplayLink your entire desktop becomes slow, try setting a "simpler" background image, such as complete black.
+
+### Slow redraw/Unresponsiveness in Google Chrome and Webkit2-based Applications
+
+This is to be associated with bugs in hardware acceleration, which can be tested by running glxgears in the displaylink screen resulting in 1fps. There is currently no complete fix available, but turning off Hardware-Acceleration in affected applications can work as a temporary fix.
+
+This can be done in applications without a hardware-acceleration option by prepending the `LIBGL_ALWAYS_SOFTWARE=1` environment variable.
 
 ## See Also
 

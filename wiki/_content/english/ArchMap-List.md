@@ -1035,5 +1035,7 @@ You can use the following website to get your device's coordinates along with a 
 37.766202,30.558844 "Özgür Sarıer" # Isparta, Turkey
 53.624290, 11.418881 "aeno" # Schwerin, Germany
 -41.249527, 174.795626 "Piffle" # Wellington, New Zealand
+46.607027, -122.486172 "gehidore" # Cinebar, Washington, USA
+-41.128481, 175.076722 "phillid" # Upper Hutt, New Zealand
 
 ```

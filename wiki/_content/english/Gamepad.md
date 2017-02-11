@@ -524,6 +524,8 @@ If you own a PS3 controller and can connect with USB, xboxdrv has the mappings b
 
 ```
 
+There are some games which might also need the `--mimic-xpad` option, additionally.
+
 ###### PlayStation 3 controller via Bluetooth
 
 With your controller connected via Bluetooth, find the device address with `bluetoothctl`. Then create a new udev rule with the following content:

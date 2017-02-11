@@ -123,5 +123,6 @@ Next, replace the default route with the tunnel
 ## See also
 
 *   [Configuring Network](/index.php/Configuring_Network "Configuring Network")
-*   [Ssh](/index.php/Ssh "Ssh")
 *   [Router](/index.php/Router "Router")
+*   [Ssh](/index.php/Ssh "Ssh")
+*   [sshuttle-git](https://aur.archlinux.org/packages/sshuttle-git/), a [python](/index.php/Python "Python") tunnel

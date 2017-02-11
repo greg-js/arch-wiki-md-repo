@@ -44,7 +44,7 @@ auth            include         system-login
 account         include         system-login
 password        include         system-login
 session         include         system-login
-**session         optional        pam_kwallet5.so**
+**session         optional        pam_kwallet5.so auto_start**
 ```
 
 After restarting your wallet should unlock automatically if your user password is the same as your KWallet password.

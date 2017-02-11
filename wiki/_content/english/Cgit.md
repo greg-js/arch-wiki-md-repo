@@ -37,7 +37,7 @@ In order to actually use cgit you will also need to have a [web server](/index.p
 You may add the following either to the end of your `/etc/httpd/conf/httpd.conf` file or place it in a separate file inside the `/etc/httpd/conf/extra/` directory.
 
 ```
-ScriptAlias /cgit/ "/usr/lib/cgit/cgit.cgi/"
+ScriptAlias /cgit "/usr/lib/cgit/cgit.cgi/"
 Alias /cgit-css "/usr/share/webapps/cgit/"
 <Directory "/usr/share/webapps/cgit/">
    AllowOverride None

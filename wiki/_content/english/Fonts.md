@@ -381,6 +381,7 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 *   [ttf-junicode](https://www.archlinux.org/packages/?name=ttf-junicode) - Junius font containing almost complete medieval latin script glyphs
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
+*   [noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts) - Google Noto TTF fonts
 *   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
 

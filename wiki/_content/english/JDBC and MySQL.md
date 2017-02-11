@@ -32,13 +32,6 @@ Install a JDBC driver according to your MySQL variant:
 *   [mariadb-jdbc](https://aur.archlinux.org/packages/mariadb-jdbc/) - for the Arch Linux endorsed server
 *   [mysql-jdbc](https://aur.archlinux.org/packages/mysql-jdbc/) - for the Oracle variant
 
-You can also download the latter from [http://www.mysql.com/products/connector-j/](http://www.mysql.com/products/connector-j/), followed by running:
-
-```
-( x=mysql-connector-java-*-bin.jar; install -D $x /usr/lib/jvm/default/jre/lib/ext/${x##*/} )
-
-```
-
 If you use the AUR packages, you will need to link the driver(s) to your JRE's external libraries directory, as follows:
 
 For mariadb-jdbc:

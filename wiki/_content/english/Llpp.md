@@ -7,6 +7,7 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 UI Font](#UI_Font)
     *   [3.2 Custom key bindings](#Custom_key_bindings)
+    *   [3.3 Save annotations to pdf](#Save_annotations_to_pdf)
 *   [4 Tips and Tricks](#Tips_and_Tricks)
     *   [4.1 Reload File](#Reload_File)
     *   [4.2 Remote Interface](#Remote_Interface)
@@ -60,6 +61,17 @@ It is possible to configure key bindings. For example, to disable `Esc` exiting 
 More examples can be found in llpp's example file [keys.txt](http://repo.or.cz/w/llpp.git/blob/HEAD:/misc/keys.txt). For vi-like key bindings, see [this example](https://gist.github.com/Earnestly/7608794).
 
 **Tip:** Bindings can be set for particular modes, including `birdseye`, `global`, `help`, `info`, `listview`, `outline`, and `view`. Example [here](https://gist.github.com/holomorph/9d8e5f483465d92ee69c).
+
+### Save annotations to pdf
+
+You can annotate a pdf with `Shift + Right Click`. To allow saving of annotations add
+
+```
+   savepath-command='echo %s'
+
+```
+
+to your `llpp.conf`. After annotating the file save the changes by pressing `W`. This `echo`s the current pdf path to the option savepath-mmand
 
 ## Tips and Tricks
 

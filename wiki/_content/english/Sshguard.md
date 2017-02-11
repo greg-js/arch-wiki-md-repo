@@ -128,7 +128,7 @@ Finally [restart](/index.php/Restart "Restart") the `sshguard.service` unit.
 
 ### Unbanning
 
-If you get banned, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your IP is banned by sshguard:
+If you *yourself* get banned, you can wait to get unbanned automatically or use iptables to unban yourself. First check if your IP is banned by sshguard:
 
 ```
 # iptables -L sshguard --line-numbers --numeric

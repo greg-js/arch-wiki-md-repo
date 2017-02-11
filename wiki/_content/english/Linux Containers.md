@@ -37,7 +37,7 @@ In general, running an *unprivileged* container is [considered safer](https://ww
 
 The Arch packages currently provide out-of-the-box support for *privileged* containers only. This is due to the current Arch [linux](https://www.archlinux.org/packages/?name=linux) kernel **not** shipping with user namespaces configured. This article contains information for users to run either type of container, but additional setup is required to use *unprivileged* containers at this time.
 
-**Note:** Several requests have been filed to include user namespace support in the kernel including: [FS#36969](https://bugs.archlinux.org/task/36969) and more recently, [FS#49337](https://bugs.archlinux.org/task/49337). However, both requests have been closed with the won't implement reason.
+**Note:** A request has been filed to include user namespace support in the kernel: [FS#36969](https://bugs.archlinux.org/task/36969). However, the request has been closed because of the numerous security issues caused by user namespaces, which are frequently discovered.
 
 ### An example to illustrate unprivileged containers
 

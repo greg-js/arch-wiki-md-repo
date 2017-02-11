@@ -9,7 +9,7 @@ The *multilib* repository is an [official repository](/index.php/Official_reposi
 
 ## Directory structure
 
-A 64-bit installation of Arch Linux with *multilib* enabled follows a directory structure similar to Debian. The 32-bit compatible libraries are located under `/usr/lib32/`, and the native 64-bit libraries under `/usr/lib/`.
+A 64-bit installation of Arch Linux with *multilib* enabled follows a directory structure similar to Debian Squeeze. The 32-bit compatible libraries are located under `/usr/lib32/`, and the native 64-bit libraries under `/usr/lib/`.
 
 ## Enabling
 

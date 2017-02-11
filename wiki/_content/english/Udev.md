@@ -403,7 +403,7 @@ Note: 1) `USERNAME_TO_RUN_SCRIPT_AS`, `UID_OF_USER_TO_RUN_SCRIPT_AS` and `USERNA
 
 3) Load/reload the new udev rule (see above) and test it by unplugging the power supply to the laptop.
 
-See also [xpub](https://github.com/Ventto/xpub) as a method for getting the user's display environment variables from inside the script.
+**Tip:** See also [xpub](https://github.com/Ventto/xpub) as a method for getting the user's display environment variables and exporting the last into udev-rules via `IMPORT` key.
 
 ## Troubleshooting
 

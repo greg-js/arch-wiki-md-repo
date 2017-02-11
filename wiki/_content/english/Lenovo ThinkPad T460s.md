@@ -72,10 +72,6 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Configuration
 
-**Note:** From the comments on [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/): *linux-4.6, which includes the patches applied in this package, is now in testing. This package is now obsolete.*
-
-The [linux-t460s](https://aur.archlinux.org/packages/linux-t460s/) package includes kernel patches that fix the mouse and suspend issues described below, which can be useful until [linux](https://www.archlinux.org/packages/?name=linux) includes these patches. Alternatively, [linux-git](https://aur.archlinux.org/packages/linux-git/) can be used.
-
 ### Touchpad/TrackPoint
 
 With kernels older than 4.5.1, there is a [kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=114321) which causes the physical mouse button (belonging to the TrackPoint) to report release events immediately even when pressing and holding the button. This prevents drag and drop and similar actions from working. This bug was fixed in linux-4.5.1.

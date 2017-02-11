@@ -10,6 +10,7 @@ Volnoti can be useful to check volume changes if you are running a lightweight w
 *   [2 Usage and configuration](#Usage_and_configuration)
     *   [2.1 Starting Volnoti](#Starting_Volnoti)
     *   [2.2 Configuration with Xbindkeys](#Configuration_with_Xbindkeys)
+    *   [2.3 Configuration with i3](#Configuration_with_i3)
 
 ## Installation
 
@@ -43,15 +44,15 @@ Open `~./xbindkeysrc` in a text editor and add these lines before the string `# 
 
 ```
 # Increase volume
-"amixer set Master 5%+ && amixer get Master | egrep -o "([0-9]+)%" | egrep -o "[0-9]+" | xargs -0 volnoti-show"
+"amixer set Master 5%+ && volnoti-show $(amixer get Master | grep -Po "[0-9]+(?=%)" | tail -1)"
    XF86AudioRaiseVolume
 
 # Decrease volume
-"amixer set Master 5%- && amixer get Master | egrep -o "([0-9]+)%" | egrep -o "[0-9]+" | xargs -0 volnoti-show"
+"amixer set Master 5%- && volnoti-show $(amixer get Master | grep -Po "[0-9]+(?=%)" | tail -1)"
    XF86AudioLowerVolume
 
 # Toggle volume
-"amixer set Master toggle; if [[ -n $(amixer get Master | grep 'Mono:' | grep -o "\[off\]") ]] ; then volnoti-show -m -v; else amixer get Master | egrep -o "([0-9]+)%" | egrep -o "[0-9]+" | xargs -0 volnoti-show; fi"
+"amixer set Master toggle; if amixer get Master | grep -Fq "[off]"; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po "[0-9]+(?=%)" | tail -1); fi"
    XF86AudioMute
 
 ```
@@ -59,3 +60,14 @@ Open `~./xbindkeysrc` in a text editor and add these lines before the string `# 
 The first two commands will increase or lower the volume when the corresponding special keys are pressed, reading the new volume level and sending it as an argument to `volnoti-show`; the third one will toggle the volume and display Volnoti's corresponding notification (according to whether the volume was muted or unmuted).
 
 Now you can restart Xbindkeys with `kill -1 $(pidof xbindkeys)` (or reboot your PC, after making sure both Volnoti and Xbindkeys are in your autostart file) and test your configuration.
+
+### Configuration with i3
+
+Add the following three lines to your i3 config file (~/.i3/config or ~/.config/i3/config by default)
+
+```
+ bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%- && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+ bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
+
+```

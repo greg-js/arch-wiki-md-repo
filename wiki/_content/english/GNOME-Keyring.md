@@ -98,7 +98,6 @@ password	required	pam_unix.so sha512 shadow nullok
 
 *   To use automatic unlocking, the same password for the user account and the keyring have to be set.
 *   You will still need the code in `~/.xinitrc` below in order to export the environment variables required.
-*   The daemon started will quit after 120 seconds without unlocking the keyring unless the initialization is completed by running `gnome-keyring-daemon --start --components=secrets`. The gnome-keyring package contains `/etc/xdg/autostart/gnome-keyring-secrets.desktop`, but some lightweight window managers ([i3](/index.php/I3 "I3") and [awesome](/index.php/Awesome "Awesome") for example) doesn't follow the [Desktop Application Autostart Specification](http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html) out of the box. Those window managers often have their own way to autostart applications. You can also consult [Desktop_entries#Autostart](/index.php/Desktop_entries#Autostart "Desktop entries") and [Autostarting](/index.php/Autostarting "Autostarting") in general.
 
 ##### xinitrc method
 

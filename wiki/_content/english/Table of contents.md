@@ -33,7 +33,7 @@
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(4)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(2)</small> |
 | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
-| <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small> |
+| <small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(17)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(13)</small> |
 | <small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(58)</small> |
@@ -76,7 +76,7 @@
 | <small>4.10.</small> [Mainboards and BIOS](/index.php/Category:Mainboards_and_BIOS "Category:Mainboards and BIOS") <small>(4)</small> |
 | <small>4.11.</small> [Mobile devices](/index.php/Category:Mobile_devices "Category:Mobile devices") <small>(17)</small> |
 | <small>4.12.</small> [Modems](/index.php/Category:Modems "Category:Modems") <small>(19) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
-| <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(23)</small> |
+| <small>4.13.</small> [Other hardware](/index.php/Category:Other_hardware "Category:Other hardware") <small>(24)</small> |
 | <small>4.14.</small> [Printers](/index.php/Category:Printers "Category:Printers") <small>(9)</small> |
 | <small>4.15.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(19)</small> |
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(19)</small> |

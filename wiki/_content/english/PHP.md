@@ -185,6 +185,8 @@ xdebug.remote_handler=dbgp
 
 ```
 
+**Note:** To always attempt to start a remote debugging session and connect to a debugging client it is also necessary to set `xdebug.remote_autostart=on`.
+
 ### IMAP
 
 Install [php-imap](https://www.archlinux.org/packages/?name=php-imap) and uncomment the line at `/etc/php/php.ini`:

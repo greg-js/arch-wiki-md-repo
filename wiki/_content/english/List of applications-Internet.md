@@ -19,8 +19,7 @@
                 *   [1.3.2.2.3 Other browsers based on Chromium's Content module](#Other_browsers_based_on_Chromium.27s_Content_module)
             *   [1.3.2.3 WebKit-based](#WebKit-based)
                 *   [1.3.2.3.1 Browsers based on webkit2gtk](#Browsers_based_on_webkit2gtk)
-                *   [1.3.2.3.2 Browsers based on webkitgtk/webkitgtk2](#Browsers_based_on_webkitgtk.2Fwebkitgtk2)
-                *   [1.3.2.3.3 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
+                *   [1.3.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
             *   [1.3.2.4 Other](#Other)
     *   [1.4 File sharing](#File_sharing)
         *   [1.4.1 Download managers](#Download_managers)
@@ -232,6 +231,10 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 	[http://www.qupzilla.com](http://www.qupzilla.com) || [qupzilla](https://www.archlinux.org/packages/?name=qupzilla)
 
+*   **[qutebrowser](/index.php/Qutebrowser "Qutebrowser")** — A keyboard-driven, [vim](/index.php/Vim "Vim")-like browser based on PyQt5 and QtWebKit. Experimental support for QtWebEngine is available.
+
+	[https://github.com/The-Compiler/qutebrowser](https://github.com/The-Compiler/qutebrowser) || [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser)
+
 ###### Other browsers based on Chromium's Content module
 
 *   **[Brave](https://en.wikipedia.org/wiki/Brave_(web_browser) "wikipedia:Brave (web browser)")** — Web browser that blocks ads and trackers by default. Based on the [Muon](https://github.com/brave/muon) platform.
@@ -250,6 +253,8 @@ See also [Wikipedia:Blink (web engine)](https://en.wikipedia.org/wiki/Blink_(web
 
 See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebKit").
 
+**Note:** webkitgtk, webkitgtk2 and qtwebkit-based browsers were removed from the list, because these are today considered insecure and outdated. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
+
 ###### Browsers based on webkit2gtk
 
 *   **[GNOME Web](/index.php/GNOME_Web "GNOME Web")** — Browser which uses the WebKitGTK+ rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
@@ -264,34 +269,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://midori-browser.org/](http://midori-browser.org/) || [midori](https://www.archlinux.org/packages/?name=midori)
 
-*   **Rainbow Lollipop** — The visual history browser. In early state of development.
-
-	[http://rainbow-lollipop.de/](http://rainbow-lollipop.de/) || [rainbow-lollipop-git](https://aur.archlinux.org/packages/rainbow-lollipop-git/)
-
-*   **[Surf](/index.php/Surf "Surf") 2** — A simple web browser based on WebKit2GTK+. Experimental branch.
-
-	[http://surf.suckless.org](http://surf.suckless.org) || [surf-webkit2gtk-git](https://aur.archlinux.org/packages/surf-webkit2gtk-git/)
-
-*   **Webby** — Allows to use web apps as regular desktop apps, integrated with the OS, without tabs and using the default system launcher. In early state of development.
-
-	[https://launchpad.net/webby-browser](https://launchpad.net/webby-browser) || [webby-browser-bzr](https://aur.archlinux.org/packages/webby-browser-bzr/)
-
-###### Browsers based on webkitgtk/webkitgtk2
-
-**Warning:** The following browsers are based on one of four WebKit ports that are today considered insecure and outdated. GTK+ browsers should be switching to webkit2gtk. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
-
-*   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with *vi*-like shortcuts and tiling layouts. As of October 2014 *dwb* is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
-
-	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
-
-*   **[Jumanji](/index.php/Jumanji "Jumanji")** — Highly customizable and functional web browser.
-
-	[http://pwmt.org/projects/jumanji](http://pwmt.org/projects/jumanji) || [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/)
-
-*   **[Luakit](/index.php/Luakit "Luakit")** — Highly configurable, micro-browser framework based on the WebKit engine and the GTK+ toolkit. It is very fast, extensible by Lua and licensed under the GNU GPLv3 license.
-
-	[http://mason-larobina.github.com/luakit/](http://mason-larobina.github.com/luakit/) || [luakit](https://aur.archlinux.org/packages/luakit/)
-
 *   **[Surf](/index.php/Surf "Surf")** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
 	[http://surf.suckless.org](http://surf.suckless.org) || [surf](https://www.archlinux.org/packages/?name=surf)
@@ -299,18 +276,6 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 *   **[Uzbl](/index.php/UZBL-Browser "UZBL-Browser")** — Group of web interface tools which adhere to the Unix philosophy.
 
 	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
-
-*   **vimb** — Fast and lightweight vim like web browser based on the webkit web browser engine and the GTK toolkit.
-
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
-
-*   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Browser that behaves like the Vimperator plugin available for Mozilla Firefox. It is based on the WebKit engine and uses the GTK+ bindings.
-
-	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
-
-*   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero")** — Webkit minimalist web browser (formerly known as *xxxterm*) with sophisticated security features designed-in, BSD style.
-
-	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero](https://www.archlinux.org/packages/?name=xombrero)
 
 ###### Browsers based on qt5-webkit
 

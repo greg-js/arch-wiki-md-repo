@@ -37,7 +37,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dwb](https://www.archlinux.org/packages/?name=dwb) package. Alternatively, install the [dwb-git](https://aur.archlinux.org/packages/dwb-git/) package for the development version.
+[Install](/index.php/Install "Install") the [dwb](https://aur.archlinux.org/packages/dwb/) package. Alternatively, install the [dwb-git](https://aur.archlinux.org/packages/dwb-git/) package for the development version.
 
 ## Basic usage
 

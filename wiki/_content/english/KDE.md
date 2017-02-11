@@ -116,7 +116,7 @@ Plasma can be started either graphically, using a [display manager](/index.php/D
 
 To launch a Plasma 5 session, choose *Plasma* in your [display manager](/index.php/Display_manager "Display manager") menu.
 
-As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, up to QT-5.7 (resp QT-5.8 beta). With later versions it does not work yet. See the [few known problems](https://community.kde.org/Plasma/5.9_Errata#Wayland) as well. To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
+As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be usable, up to Qt 5.7\. With later versions it does not work yet, see the [Plasma 5.9 Errata](https://community.kde.org/Plasma/5.9_Errata#Wayland). To start a Plasma on Wayland session from a display manager, install the [plasma-wayland-session](https://www.archlinux.org/packages/?name=plasma-wayland-session) package and *Plasma* should show up in the display manager.
 
 ### Manual
 

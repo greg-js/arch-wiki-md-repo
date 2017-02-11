@@ -131,7 +131,9 @@ There is the possibility that your graphics card has been blacklisted by Chromiu
 
 If you are using Chromium with [Bumblebee](/index.php/Bumblebee "Bumblebee"), WebGL might crash due to GPU sandboxing. In this case, you can disable GPU sandboxing with `optirun chromium --disable-gpu-sandbox`.
 
-If none of the above solves your problem, you may be able to visit `chrome://gpu/` for additional debugging info.
+Visit `chrome://gpu/` for debugging information about WebGL support.
+
+Chromium can save incorrect data about your GPU in your user profile (e.g. if you use switch between an Nvidia card using Optimus and Intel, it will show the Nvidia card in `chrome://gpu` even when you're not using it or primusrun/optirun). Running using a different user directory, e.g, `chromium --user-data-dir=$(mktemp -d)` may solve this issue. For a persistent solution you can reset the GPU information by deleting `~/.config/chromium/Local\ State`.
 
 ### Distorted GUI
 

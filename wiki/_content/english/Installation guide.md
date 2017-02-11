@@ -179,7 +179,7 @@ Check the resulting file in `/mnt/etc/fstab` afterwards, and edit it in case of 
 Set the [time zone](/index.php/Time#Time_zone "Time"):
 
 ```
-# ln -s /usr/share/zoneinfo/*Region*/*City* /etc/localtime
+# ln -sf /usr/share/zoneinfo/*Region*/*City* /etc/localtime
 
 ```
 

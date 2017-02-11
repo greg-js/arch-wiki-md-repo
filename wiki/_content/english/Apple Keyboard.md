@@ -17,6 +17,22 @@ Some Apple keyboard models may have swapped keys or missing functionality. This 
 
 You may find that the numlock is on. The symptoms are that only the physical keys 7,8,9,u,i,o,j,k,l and surrounding keys work and output numbers. To fix this hit `Fn`+`F6` twice.
 
+Alternatively, set the keycodes manually using [xmodmap](/index.php/Xmodmap "Xmodmap") to avoid use Numlock:
+
+```
+keycode  90 = KP_0 KP_0 KP_0 KP_0 KP_0 KP_0
+keycode  87 = KP_1 KP_1 KP_1 KP_1 KP_1 KP_1
+keycode  88 = KP_2 KP_2 KP_2 KP_2 KP_2 KP_2
+keycode  89 = KP_3 KP_3 KP_3 KP_3 KP_3 KP_3
+keycode  83 = KP_4 KP_4 KP_4 KP_4 KP_4 KP_4
+keycode  84 = KP_5 KP_5 KP_5 KP_5 KP_5 KP_5
+keycode  85 = KP_6 KP_6 KP_6 KP_6 KP_6 KP_6
+keycode  79 = KP_7 KP_7 KP_7 KP_7 KP_7 KP_7
+keycode  80 = KP_8 KP_8 KP_8 KP_8 KP_8 KP_8
+keycode  81 = KP_9 KP_9 KP_9 KP_9 KP_9 KP_9
+
+```
+
 ## Repeating keys on a wireless keyboard
 
 Unpair the keyboard and then re-pair it. The trick is to hold down the power button throughout the entire pairing process.
@@ -89,3 +105,4 @@ To change the behavior temporarily, [append](/index.php/Help:Reading#Append.2C_a
 ## See also
 
 *   [https://help.ubuntu.com/community/AppleKeyboard](https://help.ubuntu.com/community/AppleKeyboard)
+*   [https://github.com/hlechner/xmodmap-aluminium-pt-br](https://github.com/hlechner/xmodmap-aluminium-pt-br)

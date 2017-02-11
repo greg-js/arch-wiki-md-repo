@@ -43,11 +43,12 @@ xinput set-prop "*TPPS/2 IBM TrackPoint*" "Evdev Wheel Emulation Axes" 6 7 4 5
 
 ### Xorg configuration
 
-Alternative to an `~/.xinitrc` configuration, you can also create an [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") for the `evdev` driver. For example, as `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from *xinput*:
+Alternative to an `~/.xinitrc` configuration, you can also create an [Xorg#Configuration](/index.php/Xorg#Configuration "Xorg") for the [evdev(4)](http://man7.org/linux/man-pages/man4/evdev.4.html) driver. For example, as `/etc/X11/xorg.conf.d/20-thinkpad.conf`, replacing `TPPS/2 IBM TrackPoint` with the device name from *xinput*:
 
 ```
 Section "InputClass"
     Identifier	"Trackpoint Wheel Emulation"
+    Driver "evdev"
     MatchProduct	"*TPPS/2 IBM TrackPoint*"
     MatchDevicePath	"/dev/input/event*"
     Option		"EmulateWheel"		"true"

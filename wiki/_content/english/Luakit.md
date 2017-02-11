@@ -25,9 +25,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [luakit](https://aur.archlinux.org/packages/luakit/) from [official repositories](/index.php/Official_repositories "Official repositories").
-
-To use the latest development version, install [luakit-git](https://aur.archlinux.org/packages/luakit-git/) available from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [luakit](https://aur.archlinux.org/packages/luakit/) package..
 
 With the Unix philosophy in mind, Luakit is entirely customizable through its configuration files. Those files are written in the Lua scripting language, thus allowing virtually unlimited features.
 

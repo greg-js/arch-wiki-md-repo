@@ -1,6 +1,6 @@
-[Tmux](http://tmux.github.io/) is a "terminal multiplexer: it enables a number of terminals (or windows), each running a separate program, to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached."
+[tmux](http://tmux.github.io/) is a "terminal multiplexer: it enables a number of terminals (or windows), each running a separate program, to be created, accessed, and controlled from a single screen. tmux may be detached from a screen and continue running in the background, then later reattached."
 
-Tmux is a BSD-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://raw.githubusercontent.com/tmux/tmux/master/FAQ).
+tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Although similar, there are many differences between the programs, as noted on the [tmux FAQ page](https://raw.githubusercontent.com/tmux/tmux/master/FAQ).
 
 ## Contents
 
@@ -80,7 +80,7 @@ Ctrl-b q  (Show pane numbers, when the numbers show up type the key to goto that
 
 ```
 
-Tmux has a find-window option & key binding to ease navigation of many windows:
+tmux has a find-window option & key binding to ease navigation of many windows:
 
 ```
 Ctrl-b f <window name> (Search for window name)
@@ -162,7 +162,7 @@ alias tmux="tmux -2"
 
 #### 24-bit color
 
-Tmux supports 24-bit color as of version 2.2 ([[1]](https://github.com/tmux/tmux/commit/427b8204268af5548d09b830e101c59daa095df9)). If your terminal supports 24-bit color (see this [gist](https://gist.github.com/XVilka/8346728)), add your terminal to the `terminal-overrides` setting. For example, if you use [Termite](/index.php/Termite "Termite"), you would add:
+tmux supports 24-bit color as of version 2.2 ([[1]](https://github.com/tmux/tmux/commit/427b8204268af5548d09b830e101c59daa095df9)). If your terminal supports 24-bit color (see this [gist](https://gist.github.com/XVilka/8346728)), add your terminal to the `terminal-overrides` setting. For example, if you use [Termite](/index.php/Termite "Termite"), you would add:
 
 ```
 set -ga terminal-overrides ",xterm-termite:Tc"
@@ -301,7 +301,7 @@ set -ga terminal-overrides ',xterm*:smcup@:rmcup@'
 
 ```
 
-This tricks the terminal emulator into thinking Tmux is a full screen application like pico or mutt[[2]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using Tmux's native scrollback instead.
+This tricks the terminal emulator into thinking tmux is a full screen application like pico or mutt[[2]](http://superuser.com/questions/310251/use-terminal-scrollbar-with-tmux), which will make the scrollback be recorded properly. Beware however, it will get a bit messed up when switching between windows/panes. Consider using tmux's native scrollback instead.
 
 ### Mouse scrolling
 
@@ -425,7 +425,9 @@ While in tmux, Shift+MiddleMouseClick will paste the clipboard selection while j
 
 ### Start tmux with default session layout
 
-To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
+Session managers like tmuxinator and [tmuxp](/index.php/Tmuxp "Tmuxp") make it easy to manage common session configurations.
+
+For tmuxinator, install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
 
 ```
 tmuxinator doctor
@@ -434,7 +436,7 @@ tmuxinator doctor
 
 #### Get the default layout values
 
-Start Tmux as usual and configure your windows and panes layout as you like. When finished, get the current layout values by executing (while you are still within the current Tmux session)
+Start tmux as usual and configure your windows and panes layout as you like. When finished, get the current layout values by executing (while you are still within the current tmux session)
 
 ```
 tmux list-windows
@@ -453,7 +455,7 @@ The Interesting part you need to copy for later use begins after **[layout...** 
 
 #### Define the default tmux layout
 
-Knowing this, you can exit the current tmux session. Following this, you create your default Tmux session layout by editing Tmuxinator's config file (Don't copy the example, get your layout values as described above)
+Knowing this, you can exit the current tmux session. Following this, you create your default tmux session layout by editing tmuxinator's config file (Don't copy the example, get your layout values as described above)
 
  `~/.tmuxinator/default.yml` 
 ```
@@ -474,7 +476,7 @@ windows:
 
 ```
 
-The example defines two windows named "default" and "remote". With your determined layout values. For each pane you have to use at least one `-` line. Within the first window panes you start the commandline "clear" in pane one, "vim" in pane two and "clear && emacs -nw" executes two commands in pane three on each Tmux start. The second window layout has two panes without defining any start commmands.
+The example defines two windows named "default" and "remote". With your determined layout values. For each pane you have to use at least one `-` line. Within the first window panes you start the commandline "clear" in pane one, "vim" in pane two and "clear && emacs -nw" executes two commands in pane three on each tmux start. The second window layout has two panes without defining any start commmands.
 
 Test the new default layout with (yes, it is "mux"):
 
@@ -485,7 +487,7 @@ mux default
 
 #### Autostart tmux with default tmux layout
 
-If you like to start your terminal session with your default Tmux session layout edit
+If you like to start your terminal session with your default tmux session layout edit
 
  `~/.bashrc` 
 ```
@@ -576,7 +578,7 @@ fi
 
 ### Start a non-login shell
 
-Tmux starts a [login shell](http://unix.stackexchange.com/questions/38175) [by default](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/5997), which may result in multiple negative side effects:
+tmux starts a [login shell](http://unix.stackexchange.com/questions/38175) [by default](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/5997), which may result in multiple negative side effects:
 
 *   Users of [fortune](https://en.wikipedia.org/wiki/fortune_(Unix) may notice that quotes are printed when creating a new panel.
 *   The configuration files for login shells such as `~/.profile` are interpreted each time a new panel is created, so commands intended to be run on session initialization (e.g. setting audio level) are executed.
@@ -813,6 +815,6 @@ See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configur
 **Tutorials**
 
 *   [Practical Tmux](http://mutelight.org/articles/practical-tmux)
-*   [Tmux FAQ (OpenBSD)](http://www.openbsd.org/faq/faq7.html#tmux)
 *   [man page (OpenBSD)](http://www.openbsd.org/cgi-bin/man.cgi?query=tmux)
 *   [Tmux tutorial Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/) and [Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2)
+*   [*The Tao of tmux*](https://leanpub.com/the-tao-of-tmux/read), an ebook by Tony Narlock, author of [tmuxp](https://tmuxp.git-pull.com) and [libtmux](https://libtmux.git-pull.com)

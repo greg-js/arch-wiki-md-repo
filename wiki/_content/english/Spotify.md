@@ -34,9 +34,10 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [3.6 Wrong launcher icon (Windows client)](#Wrong_launcher_icon_.28Windows_client.29)
     *   [3.7 Deadlock GUI Thread](#Deadlock_GUI_Thread)
     *   [3.8 Pulseaudio](#Pulseaudio)
-    *   [3.9 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [3.10 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
-    *   [3.11 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
+    *   [3.9 Album art and images are missing, show up as squares](#Album_art_and_images_are_missing.2C_show_up_as_squares)
+    *   [3.10 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [3.11 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [3.12 Segmentation fault when playing a local file](#Segmentation_fault_when_playing_a_local_file)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -477,7 +478,9 @@ Restart Spotify. Note that several causes appear to exist for this problem, and 
 
 See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
 
-=== Album art and images are missing, show up as squares; with Quit spotify, then open spotify preferences `~/.config/spotify/prefs`
+### Album art and images are missing, show up as squares
+
+Quit spotify, then open spotify preferences `~/.config/spotify/prefs`
 
 Change @https to @http:
 

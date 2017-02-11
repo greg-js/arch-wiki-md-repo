@@ -132,9 +132,9 @@ When you set up Thunderbird to use your bitmessage address, you will need to use
 
 According to the [bitmessage wiki](https://bitmessage.org/wiki/DML):
 
-	*A Mailing List without the requirement of a central "authority". Sometimes called Chan (short for channel) because they usually focus on a subject which also is the password for the deterministic address too.*
+	*A Mailing List without the requirement of a central "authority". Sometimes called Chan (short for channel) because they usually focus on a subject which also is the password for the deterministic address.*
 
-A Chan (or a Distributed Mailing List) can be joined or created by hitting *"Join/Create Chan"* in the file menu. A Passphrase must be entered and the address is generated for creating a can. To join a Chan, you must enter its address and a passphrase (of your choice). The equivalent, but **simpler** method for joining in omits the hard to memorize BM-2... address (key) and requires entering the passphrase ("chan name") only: *Add Chan / Create New Chan*. By far for the most popular chan is *general*, to join it, *Create New Chan* and enter: *general* as the passphrase.
+A Chan (or a Distributed Mailing List) can be joined or created by hitting *"Join/Create Chan"* in the file menu. A Passphrase must be entered and the address is being generated for a (new or old) chan. To join an existing Chan, you must enter a passphrase (the chan name, essentially) and optionally the chan's BM-2... address (for verification against typos in the chan name). The **simpler** method for joining in omits the hard to memorize BM-2... address (key) and requires entering the passphrase ("chan name") only: *Add Chan / Create New Chan*. By far for the most popular chan is *general*, to join it, *Create New Chan* and enter: *general* as the passphrase.
 
 ## Additional resources
 

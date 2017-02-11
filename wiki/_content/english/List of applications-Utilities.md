@@ -89,11 +89,11 @@ See [Partitioning#Partitioning tools](/index.php/Partitioning#Partitioning_tools
 
 #### Udisks
 
-*   **bashmount** — A bash script to mount and manage removable media as a regular user with udisks.
+*   **bashmount** — A bash script to mount and manage removable media as a regular user with *udisks2*
 
 	[https://github.com/jamielinux/bashmount](https://github.com/jamielinux/bashmount) || [bashmount](https://aur.archlinux.org/packages/bashmount/)
 
-*   **udiskie** — Automatic disk mounting service using *udisks*
+*   **udiskie** — Automatic disk mounting service using *udisks2*
 
 	[https://pypi.python.org/pypi/udiskie](https://pypi.python.org/pypi/udiskie) || [udiskie](https://www.archlinux.org/packages/?name=udiskie)
 

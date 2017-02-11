@@ -29,14 +29,11 @@ Additionally you can choose from various [Devart ODBC drivers](https://www.devar
 
 ### Installation
 
-```
-# pacman -S unixodbc
-
-```
+[Install](/index.php/Install "Install") the [unixodbc](https://www.archlinux.org/packages/?name=unixodbc) package.
 
 ### Configuration
 
-At /etc/odbcinst.ini is where drivers are declared, and /etc/odbc.ini where connections. More instruction at each driver section.
+Driver are declared in `/etc/odbcinst.ini`, and connections in `/etc/odbc.ini`. More instruction at each driver section.
 
 ## Drivers
 
@@ -46,15 +43,11 @@ At /etc/odbcinst.ini is where drivers are declared, and /etc/odbc.ini where conn
 
 #### Installation
 
-```
-pacman -S freetds
-
-```
+[Install](/index.php/Install "Install") the [freetds](https://www.archlinux.org/packages/?name=freetds) package.
 
 #### Configuration
 
-/etc/odbcinst.ini
-
+ `/etc/odbcinst.ini` 
 ```
 [FreeTDS]
 Driver          = /usr/lib/libtdsodbc.so
@@ -68,12 +61,13 @@ Myodbc is ODBC driver/connector for mariadb.
 
 #### Installation
 
-Install [myodbc](https://aur.archlinux.org/packages/myodbc/) from [official repositories](/index.php/Official_repositories "Official repositories"). (The package disappeared from oficial repositories and does not exist in AUR either. Google search appears to have seen it in March 2016 last time.)
+Install the [myodbc](https://aur.archlinux.org/packages/myodbc/) package.
 
 #### Configuration
 
-Starting with odbcinst.ini, which lists all installed drivers. Su to root and set up your /etc/odbcinst.ini file as follows
+Starting with `odbcinst.ini`, which lists all installed drivers.
 
+ `/etc/odbcinst.ini` 
 ```
 [MySQL]
 Description     = ODBC Driver for MySQL
@@ -85,11 +79,11 @@ FileUsage       = 1
 
 #### Create a symbolic link
 
-Next we need to create a symlink for libmyodbc.so. To do this we need to go to "/usr/lib/" and set up a symlink to libmyodbc.so
+Next we need to create a symlink for `libmyodbc.so`. To do this we need to go to `/usr/lib/` and set up a symlink to `libmyodbc.so`
 
 ```
- cd /usr/lib/
- ln -s ./libmyodbc5w.so ./libmyodbc.so
+# cd /usr/lib/
+# ln -s ./libmyodbc5w.so ./libmyodbc.so
 
 ```
 
@@ -97,8 +91,7 @@ Next we need to create a symlink for libmyodbc.so. To do this we need to go to "
 
 ### Microsoft SQL Server 2000
 
-/etc/odbc.ini
-
+ `/etc/odbc.ini` 
 ```
 [server_name]
 Driver      = FreeTDS
@@ -108,9 +101,7 @@ Servername  = server_name
 Database    = database_name
 
 ```
-
-/etc/freetds/freetds.conf
-
+ `/etc/freetds/freetds.conf` 
 ```
 [server_name]
 host = 192.168.0.2 # Host name or IP address.
@@ -124,7 +115,7 @@ SQL Server ODBC driver connection strings and [configuration guide](https://www.
 
 ### Mariadb
 
-Set up your data sources in "/etc/odbc.ini" (system wide) or "~/.odbc" (current user). If a data source is defined in both of these files, the one in your home directory take precedence.
+Set up your data sources in `/etc/odbc.ini` (system wide) or `~/.odbc` (current user). If a data source is defined in both of these files, the one in your home directory take precedence.
 
 ```
 [MySQL-test]
@@ -146,7 +137,7 @@ MariaDB ODBC driver connection strings and [configuration guide](https://www.dev
 Create a new database "test". You can use one of the MySQL front-ends such as [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench), or the command-line *mysqladmin* command:
 
 ```
-mysqladmin -h localhost -u root -p create test
+$ mysqladmin -h localhost -u root -p create test
 
 ```
 
@@ -155,7 +146,7 @@ mysqladmin -h localhost -u root -p create test
 To test the ODBC connection
 
 ```
-isql MySQL-test
+$ isql MySQL-test
 
 ```
 
@@ -177,7 +168,7 @@ SQL>
 If you have a problem connecting then check the error message by running
 
 ```
-isql MySQL-test -v
+$ isql MySQL-test -v
 
 ```
 
@@ -193,8 +184,7 @@ To work around error messages this URL proved helpful so here it is as well.
 
 ### Virtuoso / SPARQL
 
-/etc/odbc.ini
-
+ `/etc/odbc.ini` 
 ```
 [ODBC Data Sources]
 VOS = Virtuoso
@@ -205,9 +195,7 @@ Description = Virtuoso Open-Source Edition
 Address = localhost:1111
 
 ```
-
-/etc/odbcinst.ini
-
+ `/etc/odbcinst.ini` 
 ```
 [virtuoso-odbc]
 Driver = /usr/lib/virtodbc.so
@@ -217,6 +205,6 @@ Driver = /usr/lib/virtodbc.so
 Opening a connection using the default credentials (username: "dba", password: "dba"):
 
 ```
-isql VOS dba dba
+$ isql VOS dba dba
 
 ```

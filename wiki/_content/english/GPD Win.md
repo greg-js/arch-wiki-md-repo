@@ -7,9 +7,11 @@
     *   [1.2 Battery sensor](#Battery_sensor)
     *   [1.3 Rotating X Session](#Rotating_X_Session)
     *   [1.4 Rotating touch screen](#Rotating_touch_screen)
-    *   [1.5 Sound](#Sound)
-    *   [1.6 Volume buttons](#Volume_buttons)
+    *   [1.5 Fixing occasional crash when using all cores](#Fixing_occasional_crash_when_using_all_cores)
+    *   [1.6 Sound](#Sound)
     *   [1.7 Memory card reader](#Memory_card_reader)
+    *   [1.8 Volume buttons](#Volume_buttons)
+    *   [1.9 Adjusting screen brightness](#Adjusting_screen_brightness)
 *   [2 Installation guide](#Installation_guide)
     *   [2.1 Boot the installer](#Boot_the_installer)
     *   [2.2 Formating and mounting partitions for dual booting with Windows 10](#Formating_and_mounting_partitions_for_dual_booting_with_Windows_10)
@@ -66,26 +68,34 @@ No fix found yet. Device uses the Intel Battery Management Device INT33FE. These
 
 #### Rotating X Session
 
-Because the device uses a phone screen, the display has to be rotated to function properly. Before [Linux Bug 191081](https://bugzilla.kernel.org/show_bug.cgi?id=191081) is resolved, rotating X session (manually with [xrandr](/index.php/Xrandr "Xrandr") or within settings of a desktop environment) with a kernel above 4.7.6-1 will result in a black screen. Current solution is to use an older kernel, like [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) or rotate the screen with xorg.conf **(please, add instructions)**.
+Because the device uses a phone screen, the display has to be rotated to function properly. Since kernel 4.9.2, rotating X session (manually with [xrandr](/index.php/Xrandr "Xrandr") or within settings of a desktop environment) works out-of-the-box.
 
 #### Rotating touch screen
 
-Running the following command might work for you, but results seems to differ for people. If you find a more reliable way, please share.
+Since kernel 4.9.2, rotating X session will automatically rotate touch screen (so far, only tested with gnome-control-center). If not able to rotate, running the following command might work for you, but results seems to differ for people.
 
 ```
 xinput set-prop 'Goodix Capacitive TouchScreen' 'Coordinate Transformation Matrix' -1 0 1 0 -1 1 0 0 1
 
 ```
 
+#### Fixing occasional crash when using all cores
+
+Turbo Boost on this CPU is software-controlled and the Linux kernel (4.4) is not throttling down the CPU enough, running at or close to 2.4Ghz the whole time even with 4 cores active which crashes the CPU eventually. Disabling the Turbo Boost feature ("Turbo Mode" in the BIOS) fixed those crashes. More info [here](https://www.reddit.com/r/gpdwin/comments/5o2m1v/solved_linux_44_crashing_when_using_all_4_cores/).
+
 #### Sound
 
 Works out of the box with latest kernel. Does not work at all with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
+
+#### Memory card reader
+
+Works out of the box with latest and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel.
 
 #### Volume buttons
 
 No fix found yet.
 
-#### Memory card reader
+#### Adjusting screen brightness
 
 No fix found yet.
 

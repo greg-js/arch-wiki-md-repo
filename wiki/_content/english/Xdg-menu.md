@@ -159,6 +159,13 @@ $ xdg_menu --format awesome --root-menu /etc/xdg/menus/arch-applications.menu >~
 
 ```
 
+**Tip:** If you use awesome 4 with lua 5.3 (current as of 2017-02-09), the xdg_menu does not create the correct lua code. This will not be loaded. But as a workarround you can do
+```
+$ echo "return xdgmenu" >> ~/.config/awesome/archmenu.lua
+
+```
+right after createing the `archmenu.lua` file, so this should work.
+
 Then edit your rc.lua as shown below
 
 *   Add a require statment for your new menu.lua file

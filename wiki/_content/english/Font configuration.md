@@ -376,7 +376,9 @@ To disable embedded bitmap fonts for a specific font:
   <test qual="any" name="family">
     <string>Monaco</string>
   </test>
-  <edit name="embeddedbitmap"><bool>false</bool></edit>
+  <edit name="embeddedbitmap">
+    <bool>false</bool>
+  </edit>
 </match>
 
 ```
