@@ -12,10 +12,9 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
 *   [2 Performance](#Performance)
     *   [2.1 Boot](#Boot)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 NUC brick-by-suspend issue](#NUC_brick-by-suspend_issue)
-    *   [3.2 Audio plug](#Audio_plug)
-    *   [3.3 TPM](#TPM)
-    *   [3.4 Poweroff](#Poweroff)
+    *   [3.1 Audio plug](#Audio_plug)
+    *   [3.2 TPM](#TPM)
+    *   [3.3 Poweroff](#Poweroff)
 *   [4 Resources](#Resources)
 
 ## Installation
@@ -30,7 +29,7 @@ It is highly recommended to update the board BIOS prior to installation. See [of
 
 Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe").
 
-**Note:** In latest BIOS version 0033 (and possibly in later versions as well), M.2 is disabled by default due to a bug.
+**Note:** If the M.2 connector is not working, verify that it is enabled in BIOS.
 
 ### Graphics
 
@@ -38,9 +37,7 @@ Most NUCs use integrated [Intel graphics](/index.php/Intel_graphics "Intel graph
 
 #### Skylake
 
-**Warning:** The `i915` Intel DRM driver suffers from various bugs that can result in kernel errors, GPU crashes and even complete system freezes.
-
-Some promising fixes are pending in kernel `4.6`. In the meantime, see [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics") for useful workarounds.
+Skylake support is stable on recent kernels, no further action should be required. See [Intel graphics#Skylake support](/index.php/Intel_graphics#Skylake_support "Intel graphics") for more details.
 
 ### Wireless
 
@@ -54,14 +51,6 @@ Fastest boot times are achieved with [UEFI](/index.php/UEFI "UEFI") boot and dis
 
 ## Troubleshooting
 
-### NUC brick-by-suspend issue
-
-**Warning:** There is a widely reported issue [[1]](https://communities.intel.com/thread/96168)[[2]](https://communities.intel.com/thread/93211)[[3]](https://www.reddit.com/r/intelnuc/comments/408rai/intel_nucs_getting_bricked_after_linux_sleep/) where Intel NUCs running Linux can become bricked by going into [sleep, suspend and/or hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). The source of this issue in unclear but according to some reports Arch Linux is affected as well.
-
-The current recommended workaround is to never wake up the NUC from hibernation via the power button but only through alternative means such as [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") or wake-on-USB.
-
-If your NUC has become bricked, it might be possible to restore it by momentarily disconnecting the CMOS battery on the bottom side of the motherboard.
-
 ### Audio plug
 
 The [PulseAudio#Switch on connect](/index.php/PulseAudio#Switch_on_connect "PulseAudio") module is buggy and in some cases might cause pulseaudio to stop playing audio when disconnecting the plug, until pulse is restarted. In this case, comment out the module:
@@ -74,7 +63,7 @@ The [PulseAudio#Switch on connect](/index.php/PulseAudio#Switch_on_connect "Puls
 
 ### TPM
 
-NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[5]](https://bugzilla.kernel.org/show_bug.cgi?id=111511). 4.6 Kernel still has no solution for Haswell TPMs but a relevant patch is work in progress[[6]](https://lkml.org/lkml/2016/4/19/46).
+NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a few bugs in `tpm_crb`[[1]](https://bugzilla.kernel.org/show_bug.cgi?id=98181)[[2]](https://bugzilla.kernel.org/show_bug.cgi?id=111511). 4.6 Kernel still has no solution for Haswell TPMs but a relevant patch is work in progress[[3]](https://lkml.org/lkml/2016/4/19/46).
 
 ### Poweroff
 

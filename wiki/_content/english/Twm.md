@@ -46,7 +46,7 @@ By default, twm looks very dated and unintuitive. By creating the file `~/.twmrc
 ## Resources
 
 *   The twm man page gives full details of the commands which can be used in your `~/.twmrc` file. It can be viewed [online](http://linux.die.net/man/1/twm) or accessed once twm is installed by `man twm`.
-*   Many `~/.twmrc` files have been posted online. The site [xwinman.org](http://xwinman.org/vtwm.php) has several `~/.twmrc` files with screenshots which might provide inspiration. A [Google search for "twmrc"](https://www.google.com/search?q=twmrc) can be used to find new ideas.
+*   Many `~/.twmrc` files have been posted online. The site [xwinman.org](http://www.xwinman.org/vtwm.php) has several `~/.twmrc` files with screenshots which might provide inspiration. A [Google search for "twmrc"](https://www.google.com/search?q=twmrc) can be used to find new ideas.
 *   More information about twm can be found on the [twm Wikipedia page](https://en.wikipedia.org/wiki/Twm "wikipedia:Twm").
 *   There is a patched version, not in the repositories, with updated features such as transparency. A description and build script is available on the [xorg mailing list](http://lists.x.org/archives/xorg/2010-January/048401.html). It can be tried out by installing [xcompmgr](/index.php/Xcompmgr "Xcompmgr"), running the build script, putting the resulting `twm` and `dot.twmrc` files in a convenient directory, and editing the `~/.xinitrc` file so that the last two lines are
 

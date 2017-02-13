@@ -70,7 +70,7 @@ After changing the configuration files, the hardware database index, `hwdb.bin`,
 *   Update `hwdb.bin` manually by running
 
 ```
-# udevadm hwdb --update
+# systemd-hwdb update
 
 ```
 

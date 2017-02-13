@@ -18,6 +18,7 @@ There are currently no official drivers for any Razer peripherals in Linux. Howe
         *   [2.1.7 Tweaking](#Tweaking)
         *   [2.1.8 Audio](#Audio)
         *   [2.1.9 Webcam](#Webcam)
+        *   [2.1.10 Keyboard](#Keyboard)
     *   [2.2 2014 version](#2014_version)
         *   [2.2.1 Problems](#Problems)
         *   [2.2.2 Possible trackpad solution](#Possible_trackpad_solution)
@@ -215,6 +216,10 @@ Setting the uvcvideo option "quirks=128" appears to let the webcam work at 720p3
 ## fix issue with built-in webcam
 options uvcvideo quirks=512
 ```
+
+#### Keyboard
+
+The [razer-driver-meta](https://aur.archlinux.org/packages/razer-driver-meta/) enable backlit control capabilities (including effects) and macro controls. You may use [polychromatic](https://aur.archlinux.org/packages/polychromatic/) or [razercommander-git](https://aur.archlinux.org/packages/razercommander-git/) for a GUI to set the keyboard options.
 
 ### 2014 version
 

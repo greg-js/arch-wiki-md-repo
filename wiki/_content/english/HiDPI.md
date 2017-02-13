@@ -19,33 +19,30 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [4.2 GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)
     *   [4.3 GTK+ 2](#GTK.2B_2)
     *   [4.4 Elementary (EFL)](#Elementary_.28EFL.29)
-*   [5 Display managers](#Display_managers)
-    *   [5.1 SDDM](#SDDM)
-        *   [5.1.1 Alternative way using Xrandr](#Alternative_way_using_Xrandr)
-*   [6 Boot managers](#Boot_managers)
-    *   [6.1 GRUB](#GRUB)
-*   [7 Applications](#Applications)
-    *   [7.1 Browsers](#Browsers)
-        *   [7.1.1 Firefox](#Firefox)
-        *   [7.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
-        *   [7.1.3 Opera](#Opera)
-    *   [7.2 Thunderbird](#Thunderbird)
-    *   [7.3 Wine applications](#Wine_applications)
-    *   [7.4 Skype](#Skype)
-    *   [7.5 Spotify](#Spotify)
-    *   [7.6 Zathura document viewer](#Zathura_document_viewer)
-    *   [7.7 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [7.8 NetBeans](#NetBeans)
-    *   [7.9 Gimp 2.8](#Gimp_2.8)
-    *   [7.10 VLC](#VLC)
-    *   [7.11 Steam](#Steam)
-    *   [7.12 Java applications](#Java_applications)
-    *   [7.13 Unsupported applications](#Unsupported_applications)
-*   [8 Multiple displays](#Multiple_displays)
-    *   [8.1 Side display](#Side_display)
-    *   [8.2 Mirroring](#Mirroring)
-*   [9 Linux console](#Linux_console)
-*   [10 See also](#See_also)
+*   [5 Boot managers](#Boot_managers)
+    *   [5.1 GRUB](#GRUB)
+*   [6 Applications](#Applications)
+    *   [6.1 Browsers](#Browsers)
+        *   [6.1.1 Firefox](#Firefox)
+        *   [6.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
+        *   [6.1.3 Opera](#Opera)
+    *   [6.2 Thunderbird](#Thunderbird)
+    *   [6.3 Wine applications](#Wine_applications)
+    *   [6.4 Skype](#Skype)
+    *   [6.5 Spotify](#Spotify)
+    *   [6.6 Zathura document viewer](#Zathura_document_viewer)
+    *   [6.7 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [6.8 NetBeans](#NetBeans)
+    *   [6.9 Gimp 2.8](#Gimp_2.8)
+    *   [6.10 VLC](#VLC)
+    *   [6.11 Steam](#Steam)
+    *   [6.12 Java applications](#Java_applications)
+    *   [6.13 Unsupported applications](#Unsupported_applications)
+*   [7 Multiple displays](#Multiple_displays)
+    *   [7.1 Side display](#Side_display)
+    *   [7.2 Mirroring](#Mirroring)
+*   [8 Linux console](#Linux_console)
+*   [9 See also](#See_also)
 
 ## Desktop environments
 
@@ -54,7 +51,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
 To enable HiDPI, use gsettings:
 
 ```
-gsettings set org.gnome.desktop.interface scaling-factor 2
+$ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 ```
 
@@ -62,60 +59,20 @@ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets).
 
-Alternatively, you can achieve any non-integer scale factor by using a combination of `scaling-factor` and `xrandr`. This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone. You specify zoom-in factor with `gsettings` and zoom-out factor with `xrandr`.
+You can achieve any non-integer scale factor by using a combination of GNOME's `scaling-factor` and [xrandr](/index.php/Xrandr "Xrandr"). This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone. You specify zoom-in factor with `gsettings` and zoom-out factor with [xrandr](/index.php/Xrandr "Xrandr").
 
-Here is a method to find a comfortable scale factor for your screen:
-
-First scale Gnome up to the minimum size which is too big. Usually "2" is already too big, but if "2" is still small for you, try "3", etc.
+First scale GNOME up to the minimum size which is too big. Usually "2" is already too big, otherwise try "3" etc. Then start scaling down by setting zoom-out factor with [xrandr](/index.php/Xrandr "Xrandr"). First get the relevant output name, the examples below use `eDP1`. Start e.g. with zoom-out 1.25 times. If the UI is still too big, increase the scale factor; if it is too small decrease the scale factor.
 
 ```
-gsettings set org.gnome.desktop.interface scaling-factor 2
+$ xrandr --output eDP1 --scale 1.25x1.25
 
 ```
 
-Now start scaling down by setting zoom-out factor with xrandr. First get the output name:
-
- `xrandr | grep -w connected | cut -d' ' -f1`  `eDP1` 
-
-Use this value to specify --output further on. If you have two or more screens you can set their scale independently.
-
-Now, to zoom-out 1.2 times, run the following:
-
-```
-xrandr --output eDP1 --scale 1.2x1.2
-
-```
-
-If the UI is still too big, increase the scale:
-
-```
-xrandr --output eDP1 --scale 1.25x1.25
-
-```
-
-If UI becomes too small, decrease the scale factor a bit. Repeat until you find a value which works best for your screen and your eyes.
-
-Finally, you need to allow the mouse to navigate the whole screen. To do this you need to get the current scaled resolution:
-
- `xrandr | grep eDP1`  `eDP1 connected primary 2304x1296+0+0 (normal left inverted right x axis y axis) 239mm x 134mm` 
-
-Now use the acquired resolution value to set correct panning:
-
-```
-xrandr --output eDP1 --panning 2304x1296
-
-```
+**Note:** To allow the mouse to reach the whole screen, you may need to use the `--panning` option as explained in [#Side display](#Side_display).
 
 ### KDE
 
-KDE plasma 5 provides excellent support for HiDPI screens out of the box. You just need to make sure that the X server is aware of your screen's pixel density. The quickest way to achieve this is to edit your `/etc/sddm.conf` and add the dpi argument to `ServerArguments` in the `[X11]` section:
-
-```
-ServerArguments=-nolisten tcp -dpi 276
-
-```
-
-More information and perhaps more correct solutions can be found at [Xorg#Display size and DPI](/index.php/Xorg#Display_size_and_DPI "Xorg").
+KDE plasma 5 provides excellent support for HiDPI screens out of the box. You just need to make sure that the X server is aware of your screen's pixel density. See [#X Server](#X_Server) and [SDDM#DPI settings](/index.php/SDDM#DPI_settings "SDDM").
 
 #### Using KDE system settings
 
@@ -259,63 +216,11 @@ To scale UI elements by a factor of 1.5:
 
 For more details see [https://phab.enlightenment.org/w/elementary/](https://phab.enlightenment.org/w/elementary/)
 
-## Display managers
-
-### SDDM
-
-To scale SDDM you have to change the following properties in `/etc/sddm.conf`. It is recommended to make a backup of your config before editing it.
-
-```
-[X11]
-# X server arguments
-ServerArguments=-nolisten tcp -dpi 144
-
-```
-
-#### Alternative way using Xrandr
-
-If setting ServerArguments fails, it is possible to directly change the DPI setting via xrandr. Modify `/etc/sddm.conf` and add the following section into file:
-
-```
-[X11]
-# script to execute when starting the display server
-# default to /usr/share/sddm/scripts/Xsetup
-DisplayCommand=/etc/sddm/Xsetup
-
-```
-
-Then copy `/usr/share/sddm/scripts/Xsetup` into `/etc/sddm/Xsetup` with the following lines:
-
-```
-#!/bin/sh
-# Xsetup - run as root before the login dialog appears
-/usr/bin/xrandr --dpi 144
-
-```
-
-Please read `sddm.conf(5)` for detailed configuration parameters.
-
 ## Boot managers
 
 ### GRUB
 
-A possible solution is to use a big size font. Generate a GRUB font of custom size, e.g. using the font DejaVu Sans Mono and size 36:
-
-```
-# grub-mkfont --output=/boot/grub/fonts/DejaVuSansMono36.pf2 --size=36 /usr/share/fonts/TTF/DejaVuSansMono.ttf
-
-```
-
-then set GRUB to use it, adding the `GRUB_FONT` line to `/etc/default/grub`
-
- `/etc/default/grub`  `GRUB_FONT=/boot/grub/fonts/DejaVuSansMono36.pf2` 
-
-and finally update GRUB configuration with
-
-```
-# grub-mkconfig -o /boot/grub/grub.cfg
-
-```
+Set a lower resolution for the framebuffer as explained in [GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution](/index.php/GRUB/Tips_and_tricks#Setting_the_framebuffer_resolution "GRUB/Tips and tricks").
 
 ## Applications
 
@@ -477,13 +382,9 @@ One approach is to run the application full screen and without decoration in its
 
 The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large.
 
-To resize content on a screen ("make it bigger"), but keep its resolution ("awesome 4k"), you can use the [xrandr](/index.php/Xrandr "Xrandr") tool with the `--scale` and `--scale-from` options. They are shortcuts for the transformation matrix application with `--transform`.
-
-`--scale-from` is especially helpful when cloning different-resolution displays.
-
 ### Side display
 
-To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
+One workaround is to using [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
 
 ```
 xrandr --output eDP-1 --auto --output DP-1 --auto --scale 2x2 --right-of eDP-1

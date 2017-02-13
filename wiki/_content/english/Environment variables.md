@@ -65,7 +65,7 @@ fi
 
 You do not always want to define an environment variable globally. For instance, you might want to add `/home/my_user/bin` to the `PATH` variable but do not want all other users on your system to have that in their `PATH` too. Local environment variables can be defined in many different files:
 
-*   `~/.pam_environment` is the user specific equivalent of `/etc/environment`, used by pam_env module. See [pam_env(8)](http://man7.org/linux/man-pages/man8/pam_env.8.html) and [pam_env.conf(5)](http://man7.org/linux/man-pages/man5/pam_env.conf.5.html) for details.
+*   `~/.pam_environment` is the user specific equivalent of `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), used by pam_env module. See [pam_env(8)](http://man7.org/linux/man-pages/man8/pam_env.8.html) and [pam_env.conf(5)](http://man7.org/linux/man-pages/man5/pam_env.conf.5.html) for details.
 *   User configuration files of your [shell](/index.php/Shell "Shell"), for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 *   `~/.profile` is used by many shells as fallback, see [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 
@@ -173,27 +173,10 @@ http_proxy="http://192.168.0.1:80"
 
 ### Using pam_env
 
-The [PAM](/index.php/PAM "PAM") module [pam_env(8)](http://man7.org/linux/man-pages/man8/pam_env.8.html) can also be used to apply variables.
+The [PAM](/index.php/PAM "PAM") module [pam_env(8)](http://man7.org/linux/man-pages/man8/pam_env.8.html) loads the variables to be set in the environment from the following files: `/etc/security/pam_env.conf`, `/etc/environment`, `~/.pam_environment`.
 
-In `/etc/security/pam_env.conf` and `~/.pam_environment` there are two formats to write down environment variables:
-
-```
-VARIABLE=VALUE
-
-```
-
-and
-
-```
-VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]
-
-```
-
-The first one **does not allow** the use of `${VARIABLE}`, while the second does.
-
-`@{HOME}` and `@{SHELL}` are special variables that expand what is defined in `/etc/passwd`.
-
-After defining a `VARIABLE`, you can recall it with `${VARIABLE}`. Curly braces and the dollar sign (`${}`) are required when invoking the previously defined variable.
+*   `/etc/environment` must consist of simple `VARIABLE=VALUE` pairs on separate lines.
+*   `/etc/security/pam_env.conf` and `~/.pam_environment` have the same format: `VARIABLE [DEFAULT=[value]] [OVERRIDE=[value]]` The format allows to expand already defined variables in the values of other variables using `${VARIABLE}`. `@{HOME}` and `@{SHELL}` are special variables that expand to what is defined in `/etc/passwd`. See [pam_env.conf(5)](http://man7.org/linux/man-pages/man5/pam_env.conf.5.html) for more information.
 
 Here is an example of basic [user directories](/index.php/XDG_Base_Directory_support#User_directories "XDG Base Directory support") configuration:
 

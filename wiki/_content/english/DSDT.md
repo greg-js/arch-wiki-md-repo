@@ -91,7 +91,15 @@ Error    4105 -          Invalid object type for reserved name ^  (found BUFFER,
 ```
  ` nano +6727 dsdt.dsl`  `(_PLD, Package(1) {Buffer (0x10)...` 
 
-5.) Compile fixed code: `iasl -tc dsdt.dsl` (Might want to try option -ic for C include file to insert into kernel source)
+5.) Increase OEM version or otherwise the kernel will not apply the modified ACPI table. For example, before modification:
+
+ `DefinitionBlock ("DSDT.aml", "DSDT", 2, "INTEL ", "TEMPLATE", 0x00000000)` 
+
+After modification:
+
+ `DefinitionBlock ("DSDT.aml", "DSDT", 2, "INTEL ", "TEMPLATE", 0x00000001)` 
+
+6.) Compile fixed code: `iasl -tc dsdt.dsl` (Might want to try option -ic for C include file to insert into kernel source)
 
 If it says no errors and no warnings you should be good to go.
 

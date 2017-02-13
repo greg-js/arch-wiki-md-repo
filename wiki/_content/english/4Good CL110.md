@@ -7,15 +7,16 @@ This article serves as a temporal indexing directory for the issues of running A
 *   [3 CPU](#CPU)
     *   [3.1 cpufreq](#cpufreq)
 *   [4 Init](#Init)
-*   [5 Multimedia](#Multimedia)
-    *   [5.1 Audio](#Audio)
-    *   [5.2 Video](#Video)
-    *   [5.3 Webcam](#Webcam)
-*   [6 Networking](#Networking)
-    *   [6.1 Wireless](#Wireless)
-*   [7 Input](#Input)
-    *   [7.1 Touchpad](#Touchpad)
-*   [8 See also](#See_also)
+*   [5 UEFI](#UEFI)
+*   [6 Multimedia](#Multimedia)
+    *   [6.1 Audio](#Audio)
+    *   [6.2 Video](#Video)
+    *   [6.3 Webcam](#Webcam)
+*   [7 Networking](#Networking)
+    *   [7.1 Wireless](#Wireless)
+*   [8 Input](#Input)
+    *   [8.1 Touchpad](#Touchpad)
+*   [9 See also](#See_also)
 
 ## Hardware
 
@@ -38,9 +39,13 @@ This article serves as a temporal indexing directory for the issues of running A
 
 ## Init
 
-Section coming soon...
+Section coming soon... In short - switch over from systemd to OpenRC Use [this website](http://systemd-free.org/) as a guide.
 
-In short - switch over from systemd to OpenRC Use [this website](http://systemd-free.org/) as a guide.
+A flawless [migration guide](http://systemd-free.org/migrate.php) It's actually pretty flawed, so this article *should* address some of the out-of-date issues
+
+## UEFI
+
+This model has a 32bit UEFI [32bit UEFI boot image instructions](https://git.archlinux.org/archiso.git/tree/docs/README.transfer#n105)
 
 ## Multimedia
 

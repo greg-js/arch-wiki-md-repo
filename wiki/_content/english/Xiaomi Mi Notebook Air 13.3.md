@@ -13,6 +13,7 @@ The installation should be going without any problems, if you follow the followi
     *   [3.2 Fn-Keys](#Fn-Keys)
 *   [4 Troubleshoothing](#Troubleshoothing)
     *   [4.1 Backlight](#Backlight)
+    *   [4.2 WiFi](#WiFi)
 
 ## Pre-Installation System Settings
 
@@ -103,3 +104,9 @@ Section "Device"
         BusID      "PCI:0:2:0" 
 EndSection
 ```
+
+### WiFi
+
+If you are having issues with the autodetected wifi drivers, that's because there's a conflict between two of them, as you can see using `rfkill list` To solve it, block the wrong driver:
+
+ `/etc/modprobe.d/blacklist.conf`  `blacklist acer-wmi`

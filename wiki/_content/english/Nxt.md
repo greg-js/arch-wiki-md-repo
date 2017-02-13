@@ -12,4 +12,4 @@ First, [start](/index.php/Start "Start") and optionally also enable the `nxt.ser
 
 Once the NXT service is running, start the client by running `nrs` from the terminal or use the NRS desktop shortcut.
 
-For more information on how to use NRS, see the [NXT wiki](http://www.thenxtwiki.org/wiki/Nxt_client_interface).
+For more information on how to use NRS, see the [NXT wiki](https://nxtwiki.org/wiki/Nxt_client_interface).

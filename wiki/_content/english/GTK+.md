@@ -34,6 +34,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [6.7 Wrong focus events with tiling window managers](#Wrong_focus_events_with_tiling_window_managers)
     *   [6.8 Thumbnail support for GTK+ 2 file dialog](#Thumbnail_support_for_GTK.2B_2_file_dialog)
     *   [6.9 Button/menu icons in some apps in GNOME Wayland session](#Button.2Fmenu_icons_in_some_apps_in_GNOME_Wayland_session)
+    *   [6.10 Printers not shown in the GTK print dialog](#Printers_not_shown_in_the_GTK_print_dialog)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Enable typeahead search feature of file chooser widget](#Enable_typeahead_search_feature_of_file_chooser_widget)
 *   [8 Examples](#Examples)
@@ -571,6 +572,10 @@ gtk-menu-images=1
 ```
 
 Simply set them to 0 or remove the whole file to use GNOME defaults.
+
+### Printers not shown in the GTK print dialog
+
+It seems, that from GTK 3.22 onwards, one needs to additionally install [gtk3-print-backends](https://www.archlinux.org/packages/?name=gtk3-print-backends) to get the list of printers in the GTK print dialog.
 
 ## Tips and tricks
 

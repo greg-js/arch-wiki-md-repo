@@ -17,7 +17,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/).
+[Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/). For [PulseAudio](/index.php/PulseAudio "PulseAudio") support install [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) or [moc-pulse-git](https://aur.archlinux.org/packages/moc-pulse-git/).
 
 ## Configuration
 
@@ -92,10 +92,6 @@ In January of 2016 last.fm updated their password requirements, with all new and
 If you want to use Libre.fm instead of Last.fm it is important to change `hostname` from `post.audioscrobbler.com` to `turtle.libre.fm`.
 
 ## Front-ends
-
-*   **dmenu_mocp** — Dmenu frontend to MOC
-
-	[https://github.com/mutantturkey/mocicon](https://github.com/mutantturkey/mocicon) || [dmenu_mocp](https://aur.archlinux.org/packages/dmenu_mocp/)
 
 *   **mocicon** — GTK panel applet to control MOC
 

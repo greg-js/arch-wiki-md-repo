@@ -74,7 +74,8 @@ If your XPS has a hybrid graphics configuration (GTX960M + HD Graphics 530) and 
 If your model comes with an nVidia card which you don't use then you can try to disable it with an ACPI command. Depending on the model, this can have a small to profound effect on the laptop's temperature and battery life (it can more than double battery life!)
 
 *   Install the Intel video driver using the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) package.
-*   Blacklist the [nvidia](https://www.archlinux.org/packages/?name=nvidia) & [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) modules [Kernel Modules#Blacklisting](/index.php/Kernel_Modules#Blacklisting "Kernel Modules")
+*   Blacklist the `nvidia` & `nouveau` modules [Kernel Modules#Blacklisting](/index.php/Kernel_Modules#Blacklisting "Kernel Modules")
+*   Power down the GPU [with an ACPI command](/index.php/Hybrid_graphics#Fully_Power_Down_Discrete_GPU "Hybrid graphics")
 
 ### Optimus Configuration (Hybrid Intel and Nvidia)
 

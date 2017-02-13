@@ -284,37 +284,39 @@ menuentry "Arch Linux" {
 if you did not create a separate /boot partition, kernel and initrd paths have to be in the following format:
 
 ```
- /dataset/@/actual/path  
+/dataset/@/actual/path  
 
 ```
 
 Example with Arch installed on the main dataset (not recommended - this will not allow for boot environments):
 
 ```
-   linux /@/boot/vmlinuz-linux zfs=zroot rw
-   initrd /@/boot/initramfs-linux.img
+linux /@/boot/vmlinuz-linux zfs=zroot rw
+initrd /@/boot/initramfs-linux.img
 
 ```
 
 Example with Arch installed on a separate dataset zroot/ROOT/default:
 
 ```
-   linux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
-   initrd /ROOT/default/@/boot/initramfs-linux.img
+inux /ROOT/default/@/boot/vmlinuz-linux zfs=zroot/ROOT/default rw 
+initrd /ROOT/default/@/boot/initramfs-linux.img
 
 ```
 
-When you come to installing GRUB, you are likely to get an error like:
+[GRUB](https://www.archlinux.org/packages/?repo=Core&name=grub) is affected by an issue that results in grub-install failing with the following error while using ZFS:
 
 ```
-Failed to get canonical path of /dev/ata-yourdriveid-partx
+grub-install: error: failed to get canonical path of `/dev/bus-Your_Disk_ID-part#'
 
 ```
 
-Until this gets fixed, the easiest workaround is to create a symbolic link from the regular Linux device name of the partition to the device name GRUB is looking for:
+While this issue has been resolved upstream the relevant changes have not yet been included in one of GRUB’s releases. Building GRUB from a source snapshot provides a mended copy of the bootloader that installs successfully. There is a PKGBUILD available via the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") to facilitate compiling and installing GRUB using the package management toolchain: [grub-git](https://aur.archlinux.org/packages/grub-git/).
+
+It is also possible to resolve this issue employing the following workaround: create a symbolic link at the location GRUB is expecting to the regular Linux device name of the partition.
 
 ```
-# ln -s /dev/sdax /dev/ata-yourdriveid-partx
+# ln -s /dev/sda# /dev/bus-Your_Disk_ID-part#
 
 ```
 

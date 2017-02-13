@@ -20,6 +20,7 @@ It is simple to configure but it can only start EFI executables such as the Linu
         *   [2.2.5 ZFS root installations](#ZFS_root_installations)
         *   [2.2.6 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
     *   [2.3 Support hibernation](#Support_hibernation)
+    *   [2.4 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Manual entry using efibootmgr](#Manual_entry_using_efibootmgr)
@@ -242,6 +243,16 @@ efi    /EFI/shellx64_v2.efi
 ### Support hibernation
 
 See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").
+
+### Kernel parameters editor with password protection
+
+Alternatively you can install [systemd-boot-password](https://aur.archlinux.org/packages/systemd-boot-password/) which supports `password` basic configuration option. Use `sbp-generate` to generate a value for this option.
+
+Install *systemd-boot-password* with the following command:
+
+ `# sbp-install *esp*` 
+
+With enabled editor you will be prompted for your password before you can edit kernel parameters.
 
 ## Keys inside the boot menu
 

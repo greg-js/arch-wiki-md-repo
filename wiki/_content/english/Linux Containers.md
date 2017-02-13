@@ -17,16 +17,16 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
         *   [2.4.3 Mounts within the container](#Mounts_within_the_container)
         *   [2.4.4 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
         *   [2.4.5 OpenVPN considerations](#OpenVPN_considerations)
-*   [3 Managing Containers](#Managing_Containers)
+*   [3 Managing containers](#Managing_containers)
     *   [3.1 Basic usage](#Basic_usage)
     *   [3.2 Advanced usage](#Advanced_usage)
         *   [3.2.1 LXC clones](#LXC_clones)
     *   [3.3 Converting a privileged container to an unprivileged container](#Converting_a_privileged_container_to_an_unprivileged_container)
 *   [4 Running Xorg programs](#Running_Xorg_programs)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 root login fails](#root_login_fails)
-    *   [5.2 no network-connection with veth in container config](#no_network-connection_with_veth_in_container_config)
-    *   [5.3 can't start unprivileged LXC due to newuidmap execution failure](#can.27t_start_unprivileged_LXC_due_to_newuidmap_execution_failure)
+    *   [5.1 Root login fails](#Root_login_fails)
+    *   [5.2 No network-connection with veth in container config](#No_network-connection_with_veth_in_container_config)
+    *   [5.3 Cannot start unprivileged LXC due to newuidmap execution failure](#Cannot_start_unprivileged_LXC_due_to_newuidmap_execution_failure)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -141,7 +141,7 @@ Users wishing to run *unprivileged* containers should use the -t download direct
 
 ```
 
-Alternatively, create a *privileged* container, and see: [Linux_Containers#Converting_a_privileged_container_to_an_unprivileged_container](/index.php/Linux_Containers#Converting_a_privileged_container_to_an_unprivileged_container "Linux Containers").
+Alternatively, create a *privileged* container, and see: [#Converting a privileged container to an unprivileged container](#Converting_a_privileged_container_to_an_unprivileged_container).
 
 **Tip:** Users may optionally install [haveged](https://www.archlinux.org/packages/?name=haveged) and [start](/index.php/Start "Start") `haveged.service` to avoid a perceived hang during the setup process while waiting for system entropy to be seeded. Without it, the generation of private/GPG keys can add a lengthy wait to the process.
 
@@ -149,7 +149,7 @@ Alternatively, create a *privileged* container, and see: [Linux_Containers#Conve
 
 ### Container configuration
 
-The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.id_map = u 0 100000 65536` and the `lxc.id_map = g 0 100000 65536` values optionally defined in the [Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29 "Linux Containers") section.
+The examples below can be used with *privileged* and *unprivileged* containers alike. Note that for unprivileged containers, additional lines will be present by default which are not shown in the examples, including the `lxc.id_map = u 0 100000 65536` and the `lxc.id_map = g 0 100000 65536` values optionally defined in the [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29) section.
 
 #### Basic config with static IP networking
 
@@ -218,7 +218,7 @@ If you still get a permission denied error in your LXC guest, then you may need 
 
 Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the container are direct to either [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") and/or [OpenVPN (server) in Linux containers](/index.php/OpenVPN_(server)_in_Linux_containers "OpenVPN (server) in Linux containers").
 
-## Managing Containers
+## Managing containers
 
 ### Basic usage
 
@@ -271,7 +271,7 @@ Users with a need to run multiple containers can simplify administrative overhea
 
 One caveat to this setup is that the base lxc cannot be running when snapshots are taken.
 
-For example, setup a container as outlined above. We'll call it "base" for the purposes of this guide. Now create 2 snapshots of "base" which we'll call "snap1" and "snap2" with these commands:
+For example, setup a container as outlined above. We will call it "base" for the purposes of this guide. Now create 2 snapshots of "base" which we will call "snap1" and "snap2" with these commands:
 
 ```
 # lxc-copy -n base -N snap1 -B overlayfs -s
@@ -290,7 +290,7 @@ The snapshots can be started/stopped like any other container. Users can optiona
 
 ### Converting a privileged container to an unprivileged container
 
-Once the system has been configured to use unprivileged containers (see, [Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29](/index.php/Linux_Containers#Enable_support_to_run_unprivileged_contains_.28optional.29 "Linux Containers")), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
+Once the system has been configured to use unprivileged containers (see, [#Enable support to run unprivileged contains (optional)](#Enable_support_to_run_unprivileged_contains_.28optional.29)), [nsexec-bzr](https://aur.archlinux.org/packages/nsexec-bzr/) contains a utility called `uidmapshift` which is able to convert an existing *privileged* container to an *unprivileged* container to avoid a total rebuild of the image.
 
 **Warning:** It is recommended to backup the existing image before using this utility!
 
@@ -325,7 +325,7 @@ Alternatively, to avoid directly attaching to or connecting to the container, th
 
 ## Troubleshooting
 
-### root login fails
+### Root login fails
 
 If you get the following error when you try to login using lxc-console:
 
@@ -357,9 +357,9 @@ Alternatively, create a new user in lxc-attach and use it for logging in to the 
 
 ```
 
-### no network-connection with veth in container config
+### No network-connection with veth in container config
 
-If you can't access your LAN or WAN with a networking interface configured as **veth** and setup through `/etc/lxc/*containername*/config`. If the virtual interface gets the ip assigned and should be connected to the network correctly.
+If you cannot access your LAN or WAN with a networking interface configured as **veth** and setup through `/etc/lxc/*containername*/config`. If the virtual interface gets the ip assigned and should be connected to the network correctly.
 
 ```
 ip addr show veth0 
@@ -383,9 +383,9 @@ lxc.network.link = `bridge`
 
 And then assign your IP through your preferred method **inside** the container, see also [Network configuration#Configure the IP address](/index.php/Network_configuration#Configure_the_IP_address "Network configuration").
 
-### can't start unprivileged LXC due to newuidmap execution failure
+### Cannot start unprivileged LXC due to newuidmap execution failure
 
-Unprivileged LXC can't start with current shadow in official package, because of newuidmap and newgidmap is not setuid
+Unprivileged LXC cannot start with current shadow in official package, because of newuidmap and newgidmap is not setuid
 
 ```
 chmod u+s /usr/bin/newuidmap

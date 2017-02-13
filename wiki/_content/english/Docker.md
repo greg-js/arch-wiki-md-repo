@@ -84,6 +84,12 @@ To set your own choice of storage driver, create a [Drop-in snippet](/index.php/
 
  `/etc/systemd/system/docker.service.d/override.conf` 
 ```
+[Unit]
+Description=Docker Application Container Engine
+Documentation=[https://docs.docker.com](https://docs.docker.com)
+After=network.target docker.socket
+Requires=docker.socket
+
 [Service]
 ExecStart=
 ExecStart=/usr/bin/dockerd -H fd:// -s overlay2

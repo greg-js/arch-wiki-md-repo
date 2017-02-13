@@ -864,7 +864,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 *   **[dwb](/index.php/Dwb "Dwb")** — Navegador web ligero y altamente personalizable basado en el motor WebKit con atajos tipo vi y diseños tiling.
 
-	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
+	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://aur.archlinux.org/packages/dwb/)
 
 *   **[Epiphany](/index.php/Epiphany "Epiphany")** — Navegador que utiliza el motor de renderizado WebKit, parte del grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 

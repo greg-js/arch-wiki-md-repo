@@ -98,12 +98,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
         *   [5.2.6 jkanetwork](#jkanetwork)
         *   [5.2.7 matrixim](#matrixim)
         *   [5.2.8 mesa-git](#mesa-git)
-        *   [5.2.9 mikroskeem](#mikroskeem)
-        *   [5.2.10 mingw-w64](#mingw-w64)
-        *   [5.2.11 pkgbuild-current](#pkgbuild-current)
-        *   [5.2.12 pnsft-pur](#pnsft-pur)
-        *   [5.2.13 rakudo](#rakudo)
-        *   [5.2.14 zrootfs](#zrootfs)
+        *   [5.2.9 mingw-w64](#mingw-w64)
+        *   [5.2.10 pkgbuild-current](#pkgbuild-current)
+        *   [5.2.11 pnsft-pur](#pnsft-pur)
+        *   [5.2.12 rakudo](#rakudo)
+        *   [5.2.13 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -1056,19 +1055,6 @@ Server = https://repo.matrixim.cc/$repo/$arch
 ```
 [mesa-git]
 Server = http://pkgbuild.com/~lcarlier/$repo/$arch
-
-```
-
-#### mikroskeem
-
-*   **Maintainer:** Mark Vainomaa <mikroskeem@mikroskeem.eu>
-*   **Description:** Openarena, i3 wm, and neovim-related packages
-
-**NOTE:** This repo isn't maintained anymore. It will be shut down on **01-01-2017**. Use my *aurpackages* repo instead.
-
-```
-[mikroskeem]
-Server = https://nightsnack.cf/~mark/arch-pkgs
 
 ```
 

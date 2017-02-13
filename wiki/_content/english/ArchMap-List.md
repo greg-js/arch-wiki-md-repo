@@ -1037,5 +1037,6 @@ You can use the following website to get your device's coordinates along with a 
 -41.249527, 174.795626 "Piffle" # Wellington, New Zealand
 46.607027, -122.486172 "gehidore" # Cinebar, Washington, USA
 -41.128481, 175.076722 "phillid" # Upper Hutt, New Zealand
+49.00408, 8.40861 "wombalton" # Karlsruhe, Baden-Württemberg, Germany, EU
 
 ```

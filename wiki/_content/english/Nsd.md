@@ -83,6 +83,7 @@ where w.x.y.z is a local address within the LAN.
 Once this is working then if you are running [unbound](/index.php/Unbound "Unbound") as the caching recursive server then you can switch the unbound configuration to forward queries from local machines on the same network to query nsd by using the following structure in unbound.conf (and see [unbound](/index.php/Unbound "Unbound")), where it is assumed that nsd is listening to port 53530:
 
 ```
+do-not-query-localhost: no
 local-zone: "*example.com*" nodefault
 
 ```

@@ -507,7 +507,7 @@ xss-lock -- i3lock -i *background_image* &
  ` $ find /sys/devices -name *network_interface*` 例如 ` $ find /sys/devices -name wlan0` 
 **Tip:** Use `/sys/class/net/*interface*/statistics/` to not depend on PCI location.
 
-把修改后的脚本文件放置在适当的位置 (比如 `~/.config/i3`) 按照脚本中的建议设置你的[i3-wm](https://www.archlinux.org/packages/?name=i3-wm)和[i3status](https://www.archlinux.org/packages/?name=i3status)配置文件:
+把修改后的脚本文件放置在适当的位置 (比如 `~/.config/i3`) 按照脚本中的建议设置你的 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm)和 [i3status](https://www.archlinux.org/packages/?name=i3status)配置文件:
 
 *   为脚本 `measure-net-speed-i3status.bash` 、 `measure-net-speed.bash` 添加可执行权限
 

@@ -42,7 +42,7 @@ See the [AUR](/index.php/AUR "AUR") article for important usage topics. For now,
 
 You will need to enable the [Multilib](/index.php/Multilib "Multilib") repository to continue. Ensure to update the package list and upgrade with `pacman -Syu`
 
-[Install](/index.php/Install "Install") [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl), [lib32-qt4](https://www.archlinux.org/packages/?name=lib32-qt4), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng), and [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) from the [official repositories](/index.php/Official_repositories "Official repositories"). Answer yes if you are asked to remove gcc-libs.
+[Install](/index.php/Install "Install") [lib32-openssl](https://www.archlinux.org/packages/?name=lib32-openssl), [lib32-qt4](https://aur.archlinux.org/packages/lib32-qt4/), [lib32-libpng](https://www.archlinux.org/packages/?name=lib32-libpng), and [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) from the [official repositories](/index.php/Official_repositories "Official repositories"). Answer yes if you are asked to remove gcc-libs.
 
 You will need to have access to the file `Cisco Packet Tracer 6.0.1 for Linux (with tutorials)` to continue with the installation. For your convenience, the sha1sum and md5sum of this file is provided below.
 

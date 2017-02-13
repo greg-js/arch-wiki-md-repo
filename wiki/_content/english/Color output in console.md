@@ -353,7 +353,7 @@ They go with multiple preconfigured presets that can be changed, and new can be 
 *   **rainbow** — Colorize commands output or STDIN using patterns.
     Presets: df, diff, env, host, ifconfig, java-stack-trace, jboss, jonas, md5sum, mvn2, mvn3, ping, tomcat, top, traceroute.
 
-	[https://github.com/nicoulaj/rainbow](https://github.com/nicoulaj/rainbow) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+	[https://github.com/nicoulaj/rainbow](https://github.com/nicoulaj/rainbow) || [rainbow](https://aur.archlinux.org/packages/rainbow/)
 
 *   **grc** — Yet another colouriser for beautifying your logfiles or output of commands.
     Presets: configure, cvs, df, diff, esperanto, gcc, irclog, ldap, log, mount, netstat, ping, proftpd, traceroute, wdiff.

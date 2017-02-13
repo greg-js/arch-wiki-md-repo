@@ -678,7 +678,7 @@ $ sudo chmod -x /usr/share/plasma/look-and-feel/$themedir/contents/splash/images
 
 ### Отсутствие иконок в трее (KDE5)
 
-В KDE5 по умолчанию в трее отображаются иконки только от стандартных приложений. Другие же приложения (например Skype) в трее не отображаются. Для решения этой проблемы требуется установить следущие пакеты: [sni-qt](https://www.archlinux.org/packages/?name=sni-qt) и [lib32-sni-qt](https://www.archlinux.org/packages/?name=lib32-sni-qt). После этого перезагрузите компьютер.
+В KDE5 по умолчанию в трее отображаются иконки только от стандартных приложений. Другие же приложения (например Skype) в трее не отображаются. Для решения этой проблемы требуется установить следущие пакеты: [sni-qt](https://www.archlinux.org/packages/?name=sni-qt) и [lib32-sni-qt](https://aur.archlinux.org/packages/lib32-sni-qt/). После этого перезагрузите компьютер.
 
 ### Проблемы с настройками
 

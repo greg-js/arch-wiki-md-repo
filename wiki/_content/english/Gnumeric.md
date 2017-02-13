@@ -8,7 +8,7 @@ Optional dependencies are [psiconv](https://www.archlinux.org/packages/?name=psi
 
 ## Tips and tricks
 
-Gnumeric respects your [locale](/index.php/Locale "Locale") for the numeric decimal seperator and uses it for exporting, e.g. to .csv files, as well. For example
+Gnumeric respects your [locale](/index.php/Locale "Locale") for the numeric decimal separator and uses it for exporting, e.g. to .csv files, as well. For example
 
 *   with a german locale `de`, a number shows as `0,5` *(comma)*,
 *   with an english locale `en`, a number shows as `0.5` *(dot)*.

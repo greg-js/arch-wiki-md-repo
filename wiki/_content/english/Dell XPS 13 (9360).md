@@ -26,6 +26,7 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [5 Bluetooth](#Bluetooth)
 *   [6 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
     *   [6.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
+    *   [6.2 USB-C Compatibility Chart](#USB-C_Compatibility_Chart)
 *   [7 SATA controller](#SATA_controller)
 *   [8 Touchpad](#Touchpad)
     *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
@@ -80,6 +81,13 @@ The USB-C port supports Thunderbolt 3, Displayport-over-USB-C and USB power deli
 Use of a power management package (such as [TLP](/index.php/TLP "TLP")) may cause the ethernet adapter to repeatedly disconnect and reconnect. If this happens, disable/blacklist USB autosuspend for the ethernet adapter. (On my laptop, this is the device <tt>Bus 004 Device 007: ID 0bda:8153 Realtek Semiconductor Corp</tt> in the output of <tt>lsusb</tt>.)
 
 Also disabling or reducing power of wifi may help: [http://en.community.dell.com/support-forums/network-internet-wireless/f/3324/t/19995423](http://en.community.dell.com/support-forums/network-internet-wireless/f/3324/t/19995423)
+
+### USB-C Compatibility Chart
+
+| **Device** | **Ports** | **Status** |
+| [Apple USB-C Digital AV Multiport Adapter](http://www.apple.com/uk/shop/product/MJ1K2ZM/A/usb-c-digital-av-multiport-adapter) | USB-C, USB-A, HDMI | Not Working |
+| [Apple 29W USB-C Power Adapter](http://www.apple.com/uk/shop/product/MJ262B/A/apple-29w-usb-c-power-adapter?fnode=8b) | USB-C Power | Not Working |
+| [Aukey USB C Hub HDMI 4 Port](https://www.amazon.co.uk/gp/product/B01H3K387Q/ref=oh_aui_search_detailpage?ie=UTF8&psc=1) | USB-C, 4xUSB-A, HDMI | Working |
 
 ## SATA controller
 

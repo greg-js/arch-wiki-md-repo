@@ -45,7 +45,7 @@ See also [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Lim
 **Note:**
 
 *   Some [systemd](/index.php/Systemd "Systemd") tools such as *localectl* and *timedatectl* can not be used inside a chroot, as they require an active [dbus](/index.php/Dbus "Dbus") connection. [[1]](https://github.com/systemd/systemd/issues/798#issuecomment-126568596)
-*   The file system that will serve as the new root (`/`) of your chroot must accessible (i.e., decrypted, mounted).
+*   The file system that will serve as the new root (`/`) of your chroot must be accessible (i.e., decrypted, mounted).
 
 There are two main options for using chroot, described below.
 

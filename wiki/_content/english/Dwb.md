@@ -397,7 +397,7 @@ See [Browser plugins#Multimedia playback](/index.php/Browser_plugins#Multimedia_
 
 [dwb-git](https://aur.archlinux.org/packages/dwb-git/) offers many improvements over the stable version, the most notable of which are listed below.
 
-**Note:** As of May 4th, 2015, the official [dwb](https://www.archlinux.org/packages/?name=dwb) package should contain all those features, and more.
+**Note:** As of May 4th, 2015, the official [dwb](https://aur.archlinux.org/packages/dwb/) package should contain all those features, and more.
 
 ### Plugin Support
 

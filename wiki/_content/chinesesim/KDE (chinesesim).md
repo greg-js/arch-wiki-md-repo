@@ -31,8 +31,8 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
     *   [4.2 KCM](#KCM)
 *   [5 桌面搜索](#.E6.A1.8C.E9.9D.A2.E6.90.9C.E7.B4.A2)
     *   [5.1 Baloo](#Baloo)
-    *   [5.2 Web browsers](#Web_browsers)
-        *   [5.2.1 Konqueuor and Rekonq](#Konqueuor_and_Rekonq)
+    *   [5.2 Web 浏览器](#Web_.E6.B5.8F.E8.A7.88.E5.99.A8)
+        *   [5.2.1 Konqueuor 和 Rekonq](#Konqueuor_.E5.92.8C_Rekonq)
         *   [5.2.2 Firefox](#Firefox)
         *   [5.2.3 Qupzilla](#Qupzilla)
 *   [6 PIM](#PIM)
@@ -48,16 +48,16 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
     *   [8.2 KDE Telepathy](#KDE_Telepathy)
         *   [8.2.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
 *   [9 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
-    *   [9.1 Using an alternative window manager](#Using_an_alternative_window_manager)
-        *   [9.1.1 KDE/Openbox Session](#KDE.2FOpenbox_Session)
-        *   [9.1.2 Compiz Custom](#Compiz_Custom)
+    *   [9.1 使用其他窗口管理器](#.E4.BD.BF.E7.94.A8.E5.85.B6.E4.BB.96.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8)
+        *   [9.1.1 KDE/Openbox 会话](#KDE.2FOpenbox_.E4.BC.9A.E8.AF.9D)
+        *   [9.1.2 Compiz 设置](#Compiz_.E8.AE.BE.E7.BD.AE)
         *   [9.1.3 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [9.2 Integrate Android](#Integrate_Android)
-    *   [9.3 Get notifications for software updates](#Get_notifications_for_software_updates)
+    *   [9.3 获取软件包更新提醒](#.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E5.8C.85.E6.9B.B4.E6.96.B0.E6.8F.90.E9.86.92)
     *   [9.4 配置 KWin 成使用 OpenGL ES](#.E9.85.8D.E7.BD.AE_KWin_.E6.88.90.E4.BD.BF.E7.94.A8_OpenGL_ES)
     *   [9.5 Konqueror/Dolphin 文件管理器中开启视频缩略图](#Konqueror.2FDolphin_.E6.96.87.E4.BB.B6.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.AD.E5.BC.80.E5.90.AF.E8.A7.86.E9.A2.91.E7.BC.A9.E7.95.A5.E5.9B.BE)
     *   [9.6 加速应用启动](#.E5.8A.A0.E9.80.9F.E5.BA.94.E7.94.A8.E5.90.AF.E5.8A.A8)
-    *   [9.7 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
+    *   [9.7 显示器分辨率 / 多显示器配置](#.E6.98.BE.E7.A4.BA.E5.99.A8.E5.88.86.E8.BE.A8.E7.8E.87_.2F_.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E9.85.8D.E7.BD.AE)
     *   [9.8 Open application launcher with Super key (Windows key)](#Open_application_launcher_with_Super_key_.28Windows_key.29)
 *   [10 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [10.1 Plasma 在 Intel 显卡上崩溃](#Plasma_.E5.9C.A8_Intel_.E6.98.BE.E5.8D.A1.E4.B8.8A.E5.B4.A9.E6.BA.83)
@@ -68,7 +68,7 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
     *   [10.3 Fix empty IMAP inbox](#Fix_empty_IMAP_inbox)
     *   [10.4 为了支持和调试获取 KWin 的当前状况](#.E4.B8.BA.E4.BA.86.E6.94.AF.E6.8C.81.E5.92.8C.E8.B0.83.E8.AF.95.E8.8E.B7.E5.8F.96_KWin_.E7.9A.84.E5.BD.93.E5.89.8D.E7.8A.B6.E5.86.B5)
     *   [10.5 KDE 和 Qt 程序在别的窗口管理器下很难看](#KDE_.E5.92.8C_Qt_.E7.A8.8B.E5.BA.8F.E5.9C.A8.E5.88.AB.E7.9A.84.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E5.BE.88.E9.9A.BE.E7.9C.8B)
-    *   [10.6 KF5/Qt5 applications don't display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_don.27t_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [10.6 KF5/Qt5 应用在 i3/fvwm/awesome 中不显示图标](#KF5.2FQt5_.E5.BA.94.E7.94.A8.E5.9C.A8_i3.2Ffvwm.2Fawesome_.E4.B8.AD.E4.B8.8D.E6.98.BE.E7.A4.BA.E5.9B.BE.E6.A0.87)
     *   [10.7 有关图形的故障](#.E6.9C.89.E5.85.B3.E5.9B.BE.E5.BD.A2.E7.9A.84.E6.95.85.E9.9A.9C)
         *   [10.7.1 Plasma keeps crashing with legacy Nvidia](#Plasma_keeps_crashing_with_legacy_Nvidia)
         *   [10.7.2 Applications don't refresh properly](#Applications_don.27t_refresh_properly)
@@ -85,9 +85,9 @@ KDE 软件集是由 Plasma [桌面环境](/index.php/Desktop_environment "Deskto
             *   [10.8.1.2 使用 GStreamer Phonon 后端时不能播放 MP3 文件](#.E4.BD.BF.E7.94.A8_GStreamer_Phonon_.E5.90.8E.E7.AB.AF.E6.97.B6.E4.B8.8D.E8.83.BD.E6.92.AD.E6.94.BE_MP3_.E6.96.87.E4.BB.B6)
     *   [10.9 Konsole 不保存命令历史](#Konsole_.E4.B8.8D.E4.BF.9D.E5.AD.98.E5.91.BD.E4.BB.A4.E5.8E.86.E5.8F.B2)
     *   [10.10 Inotify 文件夹监控上限](#Inotify_.E6.96.87.E4.BB.B6.E5.A4.B9.E7.9B.91.E6.8E.A7.E4.B8.8A.E9.99.90)
-    *   [10.11 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [10.11 自动挂载NFS卷时卡死](#.E8.87.AA.E5.8A.A8.E6.8C.82.E8.BD.BDNFS.E5.8D.B7.E6.97.B6.E5.8D.A1.E6.AD.BB)
     *   [10.12 Locale warning when installing packages in Konsole](#Locale_warning_when_installing_packages_in_Konsole)
-    *   [10.13 Multi-monitor issues](#Multi-monitor_issues)
+    *   [10.13 多显示器问题](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8.E9.97.AE.E9.A2.98)
 *   [11 不稳定版本](#.E4.B8.8D.E7.A8.B3.E5.AE.9A.E7.89.88.E6.9C.AC)
 *   [12 Trinity](#Trinity)
 *   [13 缺陷](#.E7.BC.BA.E9.99.B7)
@@ -375,25 +375,25 @@ Once you added additional folders to the blacklist or disabled Baloo entirely, a
 
 How do I index a removable device? By default every removable device is blacklisted. You just have to remove your device from the blacklist in the KCM panel.
 
-### Web browsers
+### Web 浏览器
 
-#### Konqueuor and Rekonq
+#### Konqueuor 和 Rekonq
 
-Konqueror supports two rendering engines – KHTML and QtWebKit (via the [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) package) – Rekonq supports only QtWebKit. KHTML development was halted after Qt shipped WebKit but was kept for compatibility reasons. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is currently not supported by either Konqueror or Rekonq.
+Konqueror 支持两种渲染引擎 – KHTML 和 QtWebKit (通过 [kwebkitpart](https://www.archlinux.org/packages/?name=kwebkitpart) 包) – Rekonq 只支持 QtWebKit. KHTML 开发在Qt迁移到WebKit后已经中止, 但由于兼容性原因仍然保留. QtWebKit, in turn, has since been [deprecated](https://www.mail-archive.com/development@qt-project.org/msg18866.html) by the Qt Project and replaced by [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine which is currently not supported by either Konqueror or Rekonq.
 
 A successor named Fiber is currently in development, which will use Chromium's engine.
 
 #### Firefox
 
-Firefox can be configured to better integrate with Plasma. See [Firefox KDE integration](/index.php/Firefox#KDE_integration "Firefox") for details.
+Firefox 可以通过配置以和 Plasma 更好地集成. 参考 [Firefox KDE integration](/index.php/Firefox#KDE_integration "Firefox") 获取具体内容.
 
 #### Qupzilla
 
-Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) is a Qt web browser with Plasma integration features. Qupzilla 2.0 will use Qt WebEngine intead of WebKit.
+Qupzilla ([qupzilla](https://www.archlinux.org/packages/?name=qupzilla)) 是一个包含 Plasma 集成特性的 Qt web 浏览器. Qupzilla 2.0 将使用 Qt WebEngine 来替代 WebKit.
 
 ## PIM
 
-KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc.
+KDE 提供了自己的个人信息管理应用栈，包括电子邮件，联系人，日历等.
 
 ### Akonadi
 
@@ -456,24 +456,24 @@ Telegram protocol is available using [telepathy-haze](https://www.archlinux.org/
 
 ## 提示和技巧
 
-### Using an alternative window manager
+### 使用其他窗口管理器
 
-There may be reasons you want to use another window manager than KWin, for example to work around the DRI bug that causes [black screen with PRIME](/index.php/PRIME#Black_screen_with_GL-based_compositors "PRIME").
+你可能会想使用除 KWin 外的其他窗口管理器, 比如导致绕过 [black screen with PRIME](/index.php/PRIME#Black_screen_with_GL-based_compositors "PRIME") 的 DRI bug.
 
-To use an alternative [window manager](/index.php/Window_manager "Window manager") with KDE open the `systemsettings` panel and navigate to Default Applications > Window Manager > Use a different window manager and select the window manager you wish to use from the list.
+要在KDE中使用其他 [window manager](/index.php/Window_manager "Window manager")， 打开 `systemsettings` 面板后进入 Default Applications > Window Manager > Use a different window manager 并从列表中选择你用使用的窗口管理器.
 
-#### KDE/Openbox Session
+#### KDE/Openbox 会话
 
-The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a session for using plasma with [Openbox](/index.php/Openbox "Openbox"). To make use of this session, select *KDE/Openbox* from the [display manager](/index.php/Display_manager "Display manager") menu.
+软件包 [openbox](https://www.archlinux.org/packages/?name=openbox) 为在plasma下使用 [Openbox](/index.php/Openbox "Openbox") 提供了会话. 要使用这个会话，请在 [display manager](/index.php/Display_manager "Display manager") 菜单中选择 *KDE/Openbox* .
 
-For those starting the session manually, add the following line to your `.xinitrc` file:
+若要手动启动会话，请将下面这行添加到你的 `.xinitrc` 文件中:
 
 ```
 exec openbox-kde-session
 
 ```
 
-#### Compiz Custom
+#### Compiz 设置
 
 If you need to run Compiz with custom options and switches select *Compiz custom* and then create a script called `compiz-kde-launcher` and add to it the commands you wish to use to start Compiz. See the example below:
 
@@ -511,13 +511,13 @@ KDE connect provides several features for you:
 
 You will need to install KDE Connect both on your computer and on your Android. For PC side, install [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install `KDE Connect` from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
 
-### Get notifications for software updates
+### 获取软件包更新提醒
 
-Install [apper](https://aur.archlinux.org/packages/apper/) to get notifications about package updates in your KDE system tray and a basic package manager GUI. See the [PackageKit website](http://www.packagekit.org/index.html) for more information.
+安装 [apper](https://aur.archlinux.org/packages/apper/) 后可以从KDE系统托盘中获取软件包更新提醒以及一个基础的软件包管理工具GUI. 参考 [PackageKit website](http://www.packagekit.org/index.html) 获取更多信息.
 
 ### 配置 KWin 成使用 OpenGL ES
 
-Set environment variable `KWIN_COMPOSE` to 'O2ES' to force the OpenGL ES backend. Please note that OpenGL ES is not supported by all drivers.
+设置环境变量 `KWIN_COMPOSE` 为 'O2ES' 以强制使用 OpenGL ES 后端. 请注意 OpenGL ES 未被所有驱动支持.
 
 ### Konqueror/Dolphin 文件管理器中开启视频缩略图
 
@@ -534,9 +534,9 @@ $ mkdir -p ~/.compose-cache
 
 **注意:** 对于这中间发生了什么感到好奇的人来说，这个操作启用了一项前一段时间由 Lubos （以 general KDE speediness 知名） 提出，然后被重写并整合到 libx11 中的优化。应用平时启动时从 `/usr/share/X11/locale/<your locale>/Compose` 读取输入法信息，这个文件很长（对于 en_US.UTF-8 有超过 5000 行），需要不少时间来处理。libX11 可以缓存解析过的信息，以后读取时会快很多。但是它仅在目录存在时才会重用现有的缓存或者在 `~/.compose-cache` 中创建一份新的。
 
-### Configuring monitor resolution / multiple monitors
+### 显示器分辨率 / 多显示器配置
 
-To enable display resolution management and multiple monitors in Plasma 5, install [kscreen](https://www.archlinux.org/packages/?name=kscreen). This adds the additional options to System Settings/Display and Monitor.
+要在 Plasma 5 中启用分辨率和多显示器管理, 请安装 [kscreen](https://www.archlinux.org/packages/?name=kscreen). 它在 System Settings/Display and Monitor 中添加了更多选项.
 
 ### Open application launcher with Super key (Windows key)
 
@@ -627,9 +627,9 @@ export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 
 在 Gnome 中，你可以尝试安装软件包 libgnomeui。
 
-### KF5/Qt5 applications don't display icons in i3/fvwm/awesome
+### KF5/Qt5 应用在 i3/fvwm/awesome 中不显示图标
 
-See [Qt#Configuration of Qt5 apps under environments other than KDE](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE "Qt").
+参考 [Qt#Configuration of Qt5 apps under environments other than KDE](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE "Qt").
 
 ### 有关图形的故障
 
@@ -773,9 +773,9 @@ fs.inotify.max_user_watches = 10000
 
 ```
 
-### Freezes when using Automount on a NFS volume
+### 自动挂载NFS卷时卡死
 
-Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") on a [NFS](/index.php/NFS "NFS") volume may cause freezes, see [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
+对 [NFS](/index.php/NFS "NFS") 卷使用 [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab") 可能导致卡死，见 [bug report upstream](https://bugs.kde.org/show_bug.cgi?id=354137).
 
 ### Locale warning when installing packages in Konsole
 
@@ -786,18 +786,18 @@ Using [Fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fs
 
 By default, Konsole sets $LANG to en_US.US-ASCII. If you haven't generated that locale, then mandb can't use it. In your Konsole profile settings, click "Environment" and then add a line for LANG=en_US.UTF-8 or whatever your locale should be.
 
-### Multi-monitor issues
+### 多显示器问题
 
-The current release of KDE Plasma has several issues with multi-monitor setups, which can make Plasma unusable. See [these](https://bugs.kde.org/show_bug.cgi?id=356225) [reports](https://bugs.kde.org/show_bug.cgi?id=356720).
+当前版本的 KDE Plasma 在设置多显示器时有一些问题, 可能导致Plasma不可用. 参考 [报告](https://bugs.kde.org/show_bug.cgi?id=356225) 和 [报告](https://bugs.kde.org/show_bug.cgi?id=356720).
 
-These bugs have been resolved in the upstream/git KDE Plasma builds, which can be installed from [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) or [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) - bear in mind that all packages will conflict with current versions - it is recommended to remove them first:
+这些 bug 在上游/git KDE Plasma 构建中已经解决, 可以通过 [plasma-desktop-git](https://aur.archlinux.org/packages/plasma-desktop-git/) 或 [plasma-git-meta](https://aur.archlinux.org/packages/plasma-git-meta/) 来安装 - 记住这些包会和当前版本冲突 - 建议你先移除它们:
 
 ```
  # pacman -R plasma-meta
 
 ```
 
-The [unstable releases](/index.php/Official_repositories#kde-unstable "Official repositories") may also contain the required patches (not confirmed).
+[unstable releases](/index.php/Official_repositories#kde-unstable "Official repositories") 可能也包含了所需的补丁 (不确定).
 
 ## 不稳定版本
 

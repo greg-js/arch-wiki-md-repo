@@ -180,8 +180,6 @@ Next, create a new service file at `/etc/systemd/system/btkbd.service`.
 [Unit]
 Description=systemd Unit to automatically start a Bluetooth keyboard
 Documentation=https://wiki.archlinux.org/index.php/Bluetooth_Keyboard
-Requires=dbus-org.bluez.service
-After=dbus-bluez.org.service
 ConditionPathExists=/etc/btkbd.conf
 ConditionPathExists=/usr/bin/hcitool
 ConditionPathExists=/usr/bin/hciconfig
@@ -195,7 +193,7 @@ ExecStart=/usr/bin/hciconfig ${HCIDEVICE} up
 ExecStart=-/usr/bin/hcitool cc ${BTKBDMAC}
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=bluetooth.target
 
 ```
 

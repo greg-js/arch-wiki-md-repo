@@ -127,7 +127,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with vi-like shortcuts and tiling layouts.
 
-	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
+	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://aur.archlinux.org/packages/dwb/)
 
 *   **[Epiphany](/index.php/Epiphany "Epiphany")** — Browser which uses the WebKit rendering engine, part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 

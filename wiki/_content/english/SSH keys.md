@@ -120,9 +120,7 @@ OpenSSH 7.0 [deprecated and disabled support for DSA keys](https://www.archlinux
 
 `ssh-keygen` defaults to RSA therefore there is no need to specify it with the `-t` option. It provides the best compatibility of all algorithms but requires the key size to be larger to provide sufficient security.
 
-Minimum key size is 1024 bits, default is 2048 (see [ssh-keygen(1)](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html)) and maximum is 16384:
-
- `$ ssh-keygen -b 32768`  `key bits exceeds maximum 16384` 
+Minimum key size is 1024 bits, default is 2048 (see [ssh-keygen(1)](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html)) and maximum is 16384.
 
 If you wish to generate a stronger RSA key pair (*e.g.* to guard against cutting-edge or unknown attacks and more sophisticated attackers), simply specify the `-b` option with a higher bit value than the default:
 

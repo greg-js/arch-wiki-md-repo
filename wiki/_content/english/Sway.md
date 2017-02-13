@@ -8,9 +8,8 @@
 *   [2 Installation](#Installation)
 *   [3 Starting sway](#Starting_sway)
     *   [3.1 From a terminal](#From_a_terminal)
-    *   [3.2 Automatically on log in](#Automatically_on_log_in)
-    *   [3.3 Using a display manager](#Using_a_display_manager)
-    *   [3.4 From X](#From_X)
+    *   [3.2 Using a display manager](#Using_a_display_manager)
+    *   [3.3 From X](#From_X)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keymap](#Keymap)
     *   [4.2 Statusbar](#Statusbar)
@@ -18,13 +17,15 @@
     *   [4.4 Input devices](#Input_devices)
     *   [4.5 HiDPI](#HiDPI)
     *   [4.6 Custom keybindings](#Custom_keybindings)
-*   [5 Known issues](#Known_issues)
-    *   [5.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
-    *   [5.2 Using VirtualBox](#Using_VirtualBox)
-    *   [5.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
-    *   [5.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
-    *   [5.5 Extraneous cursor after logging in with gdm](#Extraneous_cursor_after_logging_in_with_gdm)
-*   [6 See also](#See_also)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Automatically start on login](#Automatically_start_on_login)
+*   [6 Known issues](#Known_issues)
+    *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
+    *   [6.2 Using VirtualBox](#Using_VirtualBox)
+    *   [6.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
+    *   [6.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
+    *   [6.5 Extraneous cursor after logging in with gdm](#Extraneous_cursor_after_logging_in_with_gdm)
+*   [7 See also](#See_also)
 
 ## Status
 
@@ -39,30 +40,19 @@ A detailed accounting of what features have been implemented and what features a
 
 ## Installation
 
-*sway* can be [installed](/index.php/Installed "Installed") with the [sway](https://www.archlinux.org/packages/?name=sway) package (or [sway-git](https://aur.archlinux.org/packages/sway-git/) for the latest git version). If you already use i3, then copy your i3 configuration to `~/.config/sway/config` and it will work out of the box. Otherwise, copy the sample configuration file to `~/.config/sway/config`. It is located at `/etc/sway/config`, unless the `DFALLBACK_CONFIG_DIR` flag has been set. See the sway(5) [man page](/index.php/Man_page "Man page") for information on the configuration.
+*sway* can be [installed](/index.php/Installed "Installed") with the [sway](https://www.archlinux.org/packages/?name=sway) package. Alternatively install the [sway-git](https://aur.archlinux.org/packages/sway-git/) package for the latest development version.
 
 ## Starting sway
+
+**Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
 
 ### From a terminal
 
 You can start sway by simply typing `sway` in a terminal.
 
-### Automatically on log in
-
-**Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
-
-To start on login to tty1, add the following to your `.bash_profile`:
-
-```
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  exec sway
-fi
-
-```
-
 ### Using a display manager
 
-The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by GDM.
+The sway session is located at `/usr/share/wayland-sessions/sway.desktop`. It is automatically recognized by [GDM](/index.php/GDM "GDM").
 
 ### From X
 
@@ -70,12 +60,14 @@ If you want to start *sway* in an X session for testing purposes it is possible 
 
 ## Configuration
 
+If you already use i3, then copy your i3 configuration to `~/.config/sway/config` and it should work out of the box. Otherwise, copy the sample configuration file to `~/.config/sway/config`. It is located at `/etc/sway/config`, unless the `DFALLBACK_CONFIG_DIR` flag has been set. See sway(5) for information on the configuration.
+
 ### Keymap
 
 By default, sway starts with the US QWERTY keymap. You can override this behaviour by starting sway with
 
 ```
-$ XKB_DEFAULT_LAYOUT=gb XKB_DEFAULT_VARIANT=colemak XKB_DEFAULT_MODEL=pc101 sway
+$ export XKB_DEFAULT_LAYOUT=gb; export XKB_DEFAULT_VARIANT=colemak; export XKB_DEFAULT_MODEL=pc101; sway
 
 ```
 
@@ -159,12 +151,7 @@ swaymsg -t get_inputs
 
 The output from the command, sometimes has a "\" to escape symbols like "/" (ie `"2:14:ETPS\/2_Elantech_Touchpad"`) and it needs to be removed.
 
-More documentation and options like acceleration profiles can be found with:
-
-```
-man sway-input
-
-```
+More documentation and options like acceleration profiles can be found in sway-input(5).
 
 ### HiDPI
 
@@ -197,6 +184,19 @@ swaymsg -t get_outputs
 ```
 
 You many need to change the sound card index to 1 or 2 depending on your system configuration. See [Backlight](/index.php/Backlight "Backlight") for a list of utilities to control brightness and color correction.
+
+## Tips and tricks
+
+### Automatically start on login
+
+To start on login to tty1, add the following to your `.bash_profile`:
+
+```
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  exec sway
+fi
+
+```
 
 ## Known issues
 

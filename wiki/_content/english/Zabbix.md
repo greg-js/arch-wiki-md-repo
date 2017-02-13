@@ -61,6 +61,28 @@ $ mysql -u zabbix -p zabbix < /usr/share/zabbix/database/data.sql
 
 ```
 
+Note: If you using PHP 7.1 you need to edit /srv/http/zabbix/include/func.inc.php
+
+```
+   function str2mem($val) {
+       $val = trim($val);
+       $last = strtolower(substr($val, -1));
+       switch ($last) {
+               case 'g':
+                       $val = (int) $val * 1024;
+                       /* falls through */
+               case 'm':
+                       $val = (int) $val * 1024;
+                       /* falls through */
+               case 'k':
+                       $val = (int) $val * 1024;
+       }
+       return $val;
+
+```
+
+}
+
 ### Starting
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server` service.

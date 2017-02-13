@@ -123,7 +123,7 @@ export CXXFLAGS="$CXXFLAGS -g -O1"
 
 ### Qt
 
-除了之前的通用设置，还需要添加`-developer-build`选项到`PKGBUILD`的`configure`脚本中。如果安装了 qtwebkit，编译 Qt 可能会出问题，所以需要先临时删除软件包[qtwebkit](https://www.archlinux.org/packages/?name=qtwebkit)，使用下面的删除命令以忽略依赖检查：
+除了之前的通用设置，还需要添加`-developer-build`选项到`PKGBUILD`的`configure`脚本中。如果安装了 qtwebkit，编译 Qt 可能会出问题，所以需要先临时删除软件包[qtwebkit](https://aur.archlinux.org/packages/qtwebkit/)，使用下面的删除命令以忽略依赖检查：
 
 ```
 # pacman -Rdd qtwebkit

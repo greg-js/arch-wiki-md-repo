@@ -494,7 +494,7 @@ An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepk
 
 **Tip:**
 
-*   These tasks can be automated, see [plist-gist](https://aur.archlinux.org/packages/plist-gist/), [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) or [pacmanity](https://aur.archlinux.org/packages/pacmanity/) for examples.
+*   These tasks can be automated, see [plist-gist](https://aur.archlinux.org/packages/plist-gist/), [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) or [pug](https://aur.archlinux.org/packages/pug/) for examples.
 *   To skip already installed packages, use `--needed`.
 
 Keeping a list of explicitly installed packages can be useful to speed up installation on a new system:
@@ -676,3 +676,4 @@ There are other downloading applications that you can use with Pacman. Here they
 *   `snarf`: `XferCommand = /usr/bin/snarf -N %u`
 *   `lftp`: `XferCommand = /usr/bin/lftp -c pget %u`
 *   `axel`: `XferCommand = /usr/bin/axel -n 2 -v -a -o %o %u`
+*   `hget`: `XferCommand = /usr/bin/hget %u -n 2 -skip-tls false` (please read the [documentation on the Github project page](https://github.com/huydx/hget) for more info)

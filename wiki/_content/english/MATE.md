@@ -28,6 +28,7 @@ From [MATE homepage](http://mate-desktop.org/):
     *   [5.11 Change font DPI setting](#Change_font_DPI_setting)
     *   [5.12 Change applications menu icon](#Change_applications_menu_icon)
     *   [5.13 Panel speed settings](#Panel_speed_settings)
+    *   [5.14 Set the terminal for caja-open-terminal](#Set_the_terminal_for_caja-open-terminal)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Toggling compositing](#Toggling_compositing)
     *   [6.2 Vertical sync for compositing](#Vertical_sync_for_compositing)
@@ -37,7 +38,6 @@ From [MATE homepage](http://mate-desktop.org/):
     *   [6.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
     *   [6.7 MATE Screensaver background cannot be changed](#MATE_Screensaver_background_cannot_be_changed)
     *   [6.8 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
-    *   [6.9 Caja doesn't open terminal](#Caja_doesn.27t_open_terminal)
 *   [7 See also](#See_also)
 
 ## MATE applications
@@ -329,6 +329,17 @@ $ dconf write /org/mate/panel/toplevels/*panel*/animation-speed *value*
 
 where *panel* is either *top* or *bottom* and *value* is either `"'fast'"`, `"'medium'"` or `"'slow'"`.
 
+### Set the terminal for caja-open-terminal
+
+The `caja-open-terminal` extension uses GSettings to determine which terminal to use - *mate-terminal* is the default. To change the terminal that will be used, run the following command
+
+```
+$ gsettings set org.mate.applications-terminal exec *my-terminal*
+
+```
+
+where *my-terminal* is the name of the terminal executable to be launched, for example: *xterm*.
+
 ## Troubleshooting
 
 ### Toggling compositing
@@ -402,6 +413,8 @@ Whilst there is no way of disabling this feature through MATE's settings, this f
 
 ### MATE Screensaver background cannot be changed
 
+**Note:** This issue has been fixed upstream as of version 1.17.1\. [[3]](https://github.com/mate-desktop/mate-screensaver/commit/b2f48abf744a58f63cff97219e31532d361eb27f)
+
 Due to a [bug](https://github.com/mate-desktop/mate-screensaver/issues/55) in MATE Screensaver, it is only possible to change the MATE Screensaver background by changing the default background image using a gsettings override. The full list of configuration options can be found in `/usr/share/glib-2.0/schemas/org.mate.background.gschema.xml`, they are overridden by creating the file `/usr/share/glib-2.0/schemas/mate-background.gschema.override`.
 
 **Note:** The values on the right must be enclosed in single quotes ('') otherwise an error will occur during re-compile.
@@ -438,15 +451,6 @@ Finally, restart your X session for the change to effect.
 ### Logout/shutdown delayed by at-spi-registryd
 
 When logging out or shutting down, you may find that you are presented with an *A program is still running: at-spi-registryd.desktop* popup. As a workaround, you can prevent *at-spi-registryd* from starting - see [GTK+#Suppress warning about accessibility bus](/index.php/GTK%2B#Suppress_warning_about_accessibility_bus "GTK+") - though this may have an effect on some accessibility features.
-
-### Caja doesn't open terminal
-
-caja-open-terminal extension uses gsettings to find terminal which defaults to mate-terminal. To use it from XFCE or other DE change it:
-
-```
-gsettings set org.mate.applications-terminal exec xfce4-terminal
-
-```
 
 ## See also
 

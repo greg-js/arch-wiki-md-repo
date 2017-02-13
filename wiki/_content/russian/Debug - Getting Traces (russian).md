@@ -95,7 +95,7 @@ strip $STRIP_SHARED usr/lib/{libanl,libBrokenLocale,libcidn,libcrypt}-*.so \
 
 **Note:**
 
-При компилировании Qt при установленном [qtwebkit](https://www.archlinux.org/packages/?name=qtwebkit) могут возникнуть ошибки. Может понадобиться временно удалить пакет qtwebkit. Чтобы система игнорировала зависимости, используйте команду
+При компилировании Qt при установленном [qtwebkit](https://aur.archlinux.org/packages/qtwebkit/) могут возникнуть ошибки. Может понадобиться временно удалить пакет qtwebkit. Чтобы система игнорировала зависимости, используйте команду
 
 ```
 # pacman -Rdd qtwebkit

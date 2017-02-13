@@ -332,7 +332,7 @@
 
 *   **[dwb](/index.php/Dwb "Dwb")** — Легковесный, сильнонастраиваемый веб-браузер, основанный на движке WebKit, с горячими клавишами в стиле *vi* и тайлингом. По состоянию на октябрь 2014 г. *dwb* [не разрабатывается](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936)
 
-	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://www.archlinux.org/packages/?name=dwb)
+	[http://portix.bitbucket.org/dwb/](http://portix.bitbucket.org/dwb/) || [dwb](https://aur.archlinux.org/packages/dwb/)
 
 *   **[GNOME/Web](/index.php/GNOME/Web "GNOME/Web")** — Браузер, использующий движок WebKit, часть группы пакетов [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
