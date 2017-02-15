@@ -38,7 +38,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 2\. Determine the necessary driver version for your card by:
 
-*   finding the code name (e.g. NV50, NVC0, etc.) on [nouveau wiki's code names page](http://nouveau.freedesktop.org/wiki/CodeNames)
+*   finding the code name (e.g. NV50, NVC0, etc.) on [Nouveau wiki's code names page](https://nouveau.freedesktop.org/wiki/CodeNames/)
 *   looking up the name in NVIDIA's [legacy card list](http://www.nvidia.com/object/IO_32667.html): if your card is not there you can use the latest driver
 *   visiting NVIDIA's [driver download site](http://www.nvidia.com/Download/index.aspx)
 
@@ -58,7 +58,7 @@ Once the driver has been installed, continue to [#Configuration](#Configuration)
 
 ### Unsupported drivers
 
-If you have a GeForce 5 FX series card or older, Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
+If you have a GeForce 5 FX series card or older, Nvidia no longer supports drivers for your card. This means that these drivers [do not support the current Xorg version](http://nvidia.custhelp.com/app/answers/detail/a_id/3142/). It thus might be easier if you use the [Nouveau](/index.php/Nouveau "Nouveau") driver, which supports the old cards with the current Xorg.
 
 However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade Xorg:
 
@@ -418,7 +418,7 @@ $ nvidia-xconfig --base-mosaic --metamodes="GPU-0.DFP-0: 1920x1024+0+0, GPU-0.DF
 
 ```
 
-**Note:** While the documentation lists a 2x2 configuration of monitors, Nvidia has reduced that ability to just 3 monitors in Base Mosaic mode as of driver version 304\. More monitors are available with a Quadro card, but with standard consumer cards, it is limited to three. The explanation given for this reduction is "Feature parity with the Windows driver". As of September 2014, Windows has no restriction on the number of monitors, even on the same driver version. This is not a bug, this is entirely by design.
+**Note:** While the documentation lists a 2x2 configuration of monitors, [GeForce cards are artificially limited to 3 monitors](https://devtalk.nvidia.com/default/topic/579449/linux/basemosaic-v295-vs-v310-vs-v325-only-up-to-three-screens-/post/3954733/#3954733) in Base Mosaic mode. Quadro cards support more than 3 monitors. As of September 2014, the Windows driver has dropped this artificial restriction, but it remains in the Linux driver.
 
 ##### SLI Mosaic
 

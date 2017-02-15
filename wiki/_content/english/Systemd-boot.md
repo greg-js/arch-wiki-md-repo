@@ -246,11 +246,11 @@ See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibern
 
 ### Kernel parameters editor with password protection
 
-Alternatively you can install [systemd-boot-password](https://aur.archlinux.org/packages/systemd-boot-password/) which supports `password` basic configuration option. Use `sbp-generate` to generate a value for this option.
+Alternatively you can install [systemd-boot-password](https://aur.archlinux.org/packages/systemd-boot-password/) which supports `password` basic configuration option. Use `sbpctl generate` to generate a value for this option.
 
 Install *systemd-boot-password* with the following command:
 
- `# sbp-install *esp*` 
+ `# sbpctl install *esp*` 
 
 With enabled editor you will be prompted for your password before you can edit kernel parameters.
 

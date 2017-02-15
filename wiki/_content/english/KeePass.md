@@ -9,6 +9,7 @@ Currently, there are two variants of the database formats: *KeePass 1.x (Classic
     *   [2.1 Plugin Installation](#Plugin_Installation)
     *   [2.2 Firefox](#Firefox)
     *   [2.3 Chrome/Chromium](#Chrome.2FChromium)
+    *   [2.4 Nextcloud](#Nextcloud)
 *   [3 See Also](#See_Also)
 
 ## Installation
@@ -82,6 +83,12 @@ Extension allowing Google Chrome and Chromium to form-fill passwords stored in K
 *   [Url in title](https://chrome.google.com/webstore/detail/url-in-title/ignpacbgnbnkaiooknalneoeladjnfgb)
 
 Modifies window title to assist autotype feature. Similar to KeePass Helper for Firefox in function.
+
+### Nextcloud
+
+*   [Keeweb for Nextcloud](https://github.com/jhass/nextcloud-keeweb) ([nextcloud-app-keeweb](https://aur.archlinux.org/packages/nextcloud-app-keeweb/))
+
+Open Keepass stores inside Nextcloud
 
 ## See Also
 

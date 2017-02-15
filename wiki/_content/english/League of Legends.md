@@ -254,7 +254,7 @@ To test if the game is working, create a custom Summoner's Rift match with one b
 
 ### Launcher screen is black
 
-You should make sure you have a lib32 version of libgl installed [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)/[lib32-catalyst-libgl](/index.php/AMD_Catalyst#Installing_from_the_unofficial_repository "AMD Catalyst").
+Install the 32-bit graphics driver listed in the *OpenGL (Multilib)* column in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 ### Login server does not respond
 

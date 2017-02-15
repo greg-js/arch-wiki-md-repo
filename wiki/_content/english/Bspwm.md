@@ -7,6 +7,8 @@
     *   [2.1 Note for multi-monitor setups](#Note_for_multi-monitor_setups)
     *   [2.2 Rules](#Rules)
     *   [2.3 Panels](#Panels)
+        *   [2.3.1 Using lemonbar](#Using_lemonbar)
+        *   [2.3.2 Using yabar](#Using_yabar)
     *   [2.4 Scratchpad](#Scratchpad)
     *   [2.5 Different monitor configurations for different machines](#Different_monitor_configurations_for_different_machines)
     *   [2.6 Set up a desktop where all windows are floating](#Set_up_a_desktop_where_all_windows_are_floating)
@@ -89,6 +91,8 @@ If a particular window does not seem to be behaving according to your rules, che
 
 ### Panels
 
+#### Using lemonbar
+
 An example panel for [lemonbar](https://aur.archlinux.org/packages/lemonbar/) is provided in the examples folder on the GitHub page. You might also get some insights from the [lemonbar](/index.php/Lemonbar "Lemonbar") wiki page. The panel will be executed by placing `panel &` in your bspwmrc. Check the opt-depends in the bspwm package for dependencies that may be required.
 
 To display system information on your status bar you can use various system calls. This example will show you how to edit your `panel` to get the volume status on your BAR:
@@ -118,6 +122,10 @@ echo "S" "$(panel_volume) $(panel_clock)" > "$PANEL_FIFO"
 done &
 
 ```
+
+#### Using yabar
+
+Using the example panel using lemonbar requires you to set your environment (.profile), and make sure the panel scripts are on your path. Easier panel to set up is [yabar](https://aur.archlinux.org/packages/yabar/), which has just one config file.
 
 ### Scratchpad
 

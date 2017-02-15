@@ -70,7 +70,7 @@ The available options are documented in the [smb.conf(5)](http://www.samba.org/s
 
 ### Creating a share
 
-Open `/etc/samba/smb.conf` and scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory.
+Open `/etc/samba/smb.conf`, and scroll down to the **Share Definitions** section. The default configuration automatically creates a share for each user's home directory.
 
 The `workgroup` specified in `smb.conf` has to match the in use Windows workgroup (default `WORKGROUP`).
 
@@ -413,9 +413,9 @@ The mounted share is likely to be present at `/run/user/*your_UID*/gvfs` or `~/.
 
 #### KDE
 
-KDE, has the ability to browse Samba shares built in. Therefore do not need any additional packages. However, for a GUI in the KDE System Settings, install the [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) package from the official repositories.
+KDE has the ability to browse Samba shares built in. To use a GUI in the KDE System Settings, you will need to install the [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) package from the official repositories.
 
-If when navigating with Dolphin you get a "Time Out" Error, you should uncomment and edit this line in smb.conf: `name resolve order = lmhosts bcast host wins` 
+If you get a "Time Out" Error when navigating with Dolphin, you should uncomment and edit the following line in smb.conf: `name resolve order = lmhosts bcast host wins` 
 
 as shown in this [page](http://ubuntuforums.org/showthread.php?t=1605499).
 
@@ -886,16 +886,16 @@ $ ls
 
 ```
 
-If everything is file you will notice a file named `mysharedfiles`
+If everything is fine, you will notice a file named `mysharedfiles`
 
-Read file contents by the following command
+Read the file contents using the following command:
 
 ```
 $ cat mysharedfiles
 
 ```
 
-terminal output should display something like this:
+The terminal output should display something like this:
 
  `/var/lib/samba/usershare/mysharedfiles` 
 ```
@@ -908,7 +908,7 @@ sharename=MySharedFiles
 
 #### Verify folder access by guest
 
-Run the following command from a terminal and just press Enter if a password is asked for your user:
+Run the following command from a terminal. If prompted for a password, just press Enter:
 
 ```
 $ smbclient -L localhost
@@ -928,13 +928,13 @@ If everything is fine samba client prompt will be displayed:
 
 `smb: \>`
 
-From samba prompt verify guest can list directory contents
+From samba prompt verify guest can list directory contents:
 
 `smb: \> ls`
 
 If `NTFS_STATUS_ACCESS_DENIED` error displayed, probably there is something to be solved at directory permission level.
 
-Run the following commands as root to set correct permissions for folders
+Run the following commands as root to set correct permissions for folders:
 
 ```
 # cd /home

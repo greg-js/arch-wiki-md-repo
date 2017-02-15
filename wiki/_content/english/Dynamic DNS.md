@@ -36,6 +36,7 @@ Some of the compatible services are listed below, but you can also check the [ex
 | [FreeDNS](http://freedns.afraid.org/) | Free or paid | CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV | 5 free | [example](http://freedns.afraid.org/scripts/freedns.clients.php) | [afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/), [petrified](https://aur.archlinux.org/packages/petrified/) |
 | [No-IP](http://www.noip.com/) | Free or paid | 3 free, 25+ paid | Use protocol `noip`, server `dynupdate.no-ip.com` | [noip](https://aur.archlinux.org/packages/noip/) |
 | [nsupdate.info](https://www.nsupdate.info/) | Free and open source | A, AAAA | Use protocol `dyndns2` | [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/) |
+| [Dynu](https://www.dynu.com/) | Free or paid | 4 free, 500 paid | [example](https://www.dynu.com/DynamicDNS/IPUpdateClient/DDClient) |
 
 **Note:** Free users of no-ip are required to manually confirm their domain(s) every 30 days. Domain confirmation is not required for Enhanced users though. More info at [Why is My Hostname Pending Deletion?](http://www.noip.com/support/knowledgebase/why-is-my-hostname-pending-deletion/)
 

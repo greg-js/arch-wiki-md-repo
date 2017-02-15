@@ -1,6 +1,6 @@
-This article covers the open-source [Nouveau](http://nouveau.freedesktop.org/) driver for NVIDIA graphics cards. For information about the proprietary driver, see [NVIDIA](/index.php/NVIDIA "NVIDIA").
+This article covers the open-source [Nouveau](https://nouveau.freedesktop.org/) driver for NVIDIA graphics cards. For information about the proprietary driver, see [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
-Find your card's [code name](http://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.
+Find your card's [code name](https://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](https://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.
 
 ## Contents
 
@@ -24,7 +24,9 @@ Find your card's [code name](http://nouveau.freedesktop.org/wiki/CodeNames) (a m
 
 [Install](/index.php/Install "Install") the [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package. It provides the DDX driver for 2D acceleration in [Xorg](/index.php/Xorg "Xorg"), and pulls in [mesa](https://www.archlinux.org/packages/?name=mesa) as a dependency which provides the DRI driver for 3D acceleration.
 
-For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl), and [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) when using [multilib](/index.php/Multilib "Multilib").
+For 32-bit application support on x86_64, also install [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) from [multilib](/index.php/Multilib "Multilib").
+
+For OpenGL support, also install [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl), and [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl).
 
 ## Loading
 
@@ -32,13 +34,13 @@ The Nouveau kernel module should load automatically on system boot. If it does n
 
 *   Make sure you do **not** have `nomodeset` or `vga=` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), since Nouveau requires kernel mode-setting.
 *   Also, check that you do not have Nouveau disabled using any modprobe blacklisting technique within `/etc/modprobe.d/` or `/usr/lib/modprobe.d/`.
-*   If all above still fails to load nouveau check dmesg for an opcode error. Add `nouveau.config=NvBios=PRAMIN` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent module unloading.[[1]](http://nouveau.freedesktop.org/wiki/TroubleShooting/#index10h3)
+*   If all above still fails to load nouveau check dmesg for an opcode error. Add `nouveau.config=NvBios=PRAMIN` to your [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to prevent module unloading.[[1]](https://nouveau.freedesktop.org/wiki/TroubleShooting/#index10h3)
 
 ### Enable early KMS
 
 **Tip:** If you have problems with the resolution, check [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting").
 
-[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is required by the Nouveau driver. By default, the KMS is done after the other kernel modules are loaded. You will see the text "Loading modules" and the size of the text may change, possibly with an undesirable flicker. See the [Nouveau KernelModeSetting page](http://nouveau.freedesktop.org/wiki/KernelModeSetting) for more details.
+[Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) is required by the Nouveau driver. By default, the KMS is done after the other kernel modules are loaded. You will see the text "Loading modules" and the size of the text may change, possibly with an undesirable flicker. See the [Nouveau KernelModeSetting page](https://nouveau.freedesktop.org/wiki/KernelModeSetting) for more details.
 
 It is also possible to start the KMS as early as possible in the boot process, when the [initramfs](/index.php/Initramfs "Initramfs") is loaded.
 
@@ -83,8 +85,6 @@ EndSection
 
 ```
 
-**Tip:** You can use [these scripts](/index.php/NVIDIA#Switching_between_NVIDIA_and_nouveau_drivers "NVIDIA") if you are switching between open and closed drivers often.
-
 If you already used the NVIDIA driver, and want to test Nouveau without reboot, make sure the 'nvidia' module is no longer loaded:
 
 ```
@@ -114,7 +114,7 @@ You may install the latest -git packages, through AUR:
 *   You can also try installing a newer kernel version, through packages like [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/) in which the Nouveau DRM code would allow better performance.
 *   To get the latest Nouveau improvements, you should use the [linux-git](https://aur.archlinux.org/packages/linux-git/) package from the AUR, edit the PKGBUILD and use Nouveau's own kernel repository, which is currently located at [git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau](git://anongit.freedesktop.org/git/nouveau/xf86-video-nouveau).
 
-Upstream driver sources can be found at the [Nouveau Source page](http://nouveau.freedesktop.org/wiki/Source).
+Upstream driver sources can be found at the [Nouveau Source page](https://nouveau.freedesktop.org/wiki/Source).
 
 ### Dual Head
 
@@ -168,7 +168,7 @@ You can also pass the resolution to nouveau with the `video=` kernel line option
 
 ### Power Management
 
-The lack of proper power management in the nouveau driver is one of the most important causes of performance issue, since most card will remain in their lower power state with lower clocks during their use. Experimental support for GPU reclocking is available for some cards (See the [Nouveau PowerManagement page](http://nouveau.freedesktop.org/wiki/PowerManagement)) and since kernel 4.5 can be controlled through a debugfs interface located at `/sys/kernel/debug/dri/*/pstate`.
+The lack of proper power management in the nouveau driver is one of the most important causes of performance issue, since most card will remain in their lower power state with lower clocks during their use. Experimental support for GPU reclocking is available for some cards (See the [Nouveau PowerManagement page](https://nouveau.freedesktop.org/wiki/PowerManagement)) and since kernel 4.5 can be controlled through a debugfs interface located at `/sys/kernel/debug/dri/*/pstate`.
 
 For example, to check the available power states and the current setting for the first card in your system, run:
 

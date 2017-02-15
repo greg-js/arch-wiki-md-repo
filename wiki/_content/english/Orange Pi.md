@@ -43,7 +43,7 @@ Download and extract the root filesystem:
 
 ```
 # wget [http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz](http://archlinuxarm.org/os/ArchLinuxARM-armv7-latest.tar.gz)
-# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C /mnt/
+# bsdtar -xpf ArchLinuxARM-armv7-latest.tar.gz -C mnt/
 
 ```
 
@@ -75,8 +75,8 @@ fi
 Compile it and write it to the SD-card using the package [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools)
 
 ```
-# mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "Orange Pi One boot script" -d boot.cmd /mnt/boot/boot.scr
-# umount /mnt
+# mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "Orange Pi One boot script" -d boot.cmd mnt/boot/boot.scr
+# umount mnt
 
 ```
 

@@ -1,6 +1,6 @@
 [DASH (Debian Almquist shell)](https://en.wikipedia.org/wiki/Debian_Almquist_shell "wikipedia:Debian Almquist shell") is a modern POSIX-compliant implementation of [`/bin/sh` (sh, Bourne shell)](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
 
-Not [Bash](/index.php/Bash "Bash") compatible, it is other way round.
+DASH is not [Bash](/index.php/Bash "Bash") compatible, it's the other way around.
 
 DASH shines in:
 

@@ -64,6 +64,8 @@ USB tethering is available for devices running Android 2.2 "Froyo" or newer.
 
 	 `# dhcpcd enp0s20u3` 
 
+*   If you're using a cellular data plan instead of Wi-Fi, a restart of your phone may be required if you've recently entered a new billing period.
+
 #### Using systemd-networkd with udev
 
 Using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") you can automatically adjust the networking to use the phone as the gateway when plugged in.

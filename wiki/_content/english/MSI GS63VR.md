@@ -7,6 +7,7 @@
     *   [2.3 Networking](#Networking)
         *   [2.3.1 Wireless](#Wireless)
     *   [2.4 Audio](#Audio)
+    *   [2.5 SteelSeries Keyboard](#SteelSeries_Keyboard)
 *   [3 Misc](#Misc)
     *   [3.1 BIOS](#BIOS)
 
@@ -37,6 +38,10 @@ This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinpu
 The headphone jack always acts as SPDIF out and subsequently has no volume control and does not mute the speakers when a device is plugged in. [Link to a description of the issue on the ALSA mailing list](https://sourceforge.net/p/alsa/mailman/message/35292536/).
 
 As a workaround it is possible to reassign a microphone input jack using hdajackretask to behave as an audio output.
+
+### SteelSeries Keyboard
+
+To set color to Steel Series Keyboard use [MSIKLM](https://github.com/Gibtnix/MSIKLM)
 
 ## Misc
 

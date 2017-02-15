@@ -470,6 +470,10 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
 
+*   **[Luakit](/index.php/Luakit "Luakit")** — Fast, small, webkit based browser framework extensible by Lua. The original luakit is insecure and should not be used. An updated fork using GTK+ 3 and WebKit2GTK+ is available on the [AUR](/index.php/AUR "AUR").
+
+	[http://luakit.org/](http://luakit.org/) || [luakit-git](https://aur.archlinux.org/packages/luakit-git/)
+
 ###### Browsers based on qt5-webkit
 
 **Warning:** The following browsers are based on [qt5-webkit](https://www.archlinux.org/packages/?name=qt5-webkit), which is today considered insecure and outdated. A secure and up to date replacement is provided by the [qt5-webkit-ng](https://www.archlinux.org/packages/?name=qt5-webkit-ng) package.

@@ -30,6 +30,7 @@
 *   [21 In Home Streaming does not work from archlinux host to archlinux guest](#In_Home_Streaming_does_not_work_from_archlinux_host_to_archlinux_guest)
 *   [22 Very slow app down speed](#Very_slow_app_down_speed)
 *   [23 Symbol lookup error using dri3](#Symbol_lookup_error_using_dri3)
+*   [24 Hardware decoding not available](#Hardware_decoding_not_available)
 
 ## Debugging Steam
 
@@ -402,3 +403,7 @@ For steam to work, disable dri3 in xorg config file or as a workaround run steam
  LIBGL_DRI3_DISABLE=1 steam
 
 ```
+
+## Hardware decoding not available
+
+In-home streaming hardware decoding uses `vaapi`, so it needs to be installed (or wrapped around `vdpau`) following [this instructions](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Don't forget to install the `lib32` versions too. In addition, **steam must be running with the steam runtime disabled** (i.e. launched with `steam-native`).

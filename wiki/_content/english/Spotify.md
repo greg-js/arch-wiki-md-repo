@@ -26,7 +26,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
         *   [2.6.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
     *   [2.7 HiDPI Mode](#HiDPI_Mode)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Gnome alerts (beep) mutes Spotify](#Gnome_alerts_.28beep.29_mutes_Spotify)
+    *   [3.1 Desktop Environment alerts (beeps) mutes Spotify](#Desktop_Environment_alerts_.28beeps.29_mutes_Spotify)
     *   [3.2 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
     *   [3.3 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
     *   [3.4 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
@@ -398,7 +398,7 @@ You might need to relaunch your Desktop Manager, before these override changes w
 
 ## Troubleshooting
 
-### Gnome alerts (beep) mutes Spotify
+### Desktop Environment alerts (beeps) mutes Spotify
 
 Comment out "module-role-cork" in pulse audio configuration file.
 

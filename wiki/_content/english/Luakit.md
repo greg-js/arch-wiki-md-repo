@@ -1,6 +1,4 @@
-**Warning:** Luakit is based on a WebKit port that is today considered insecure and outdated. It's recommended to use [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
-
-[Luakit](http://luakit.github.io/luakit/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts.
+[Luakit](http://luakit.github.io/luakit/) is an extremely fast, lightweight and flexible web browser using the webkit engine. It is customizable through lua scripts and fully usable with keyboard shortcuts. Although the original version has not been updated and is insecure, an updated and active fork is available that uses GTK+ 3 and WebKit2GTK+.
 
 ## Contents
 
@@ -25,7 +23,9 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [luakit](https://aur.archlinux.org/packages/luakit/) package..
+To use the up-to-date fork, [install](/index.php/Install "Install") [luakit-git](https://aur.archlinux.org/packages/luakit-git/) from the [AUR](/index.php/AUR "AUR").
+
+**Warning:** The original luakit is based on a WebKit port that is today considered insecure and outdated. It's recommended to use the up-to-date fork or [another browser](/index.php/List_of_applications/Internet#Web_browsers "List of applications/Internet") instead. More info [here](https://blogs.gnome.org/mcatanzaro/2016/02/01/on-webkit-security-updates/).
 
 With the Unix philosophy in mind, Luakit is entirely customizable through its configuration files. Those files are written in the Lua scripting language, thus allowing virtually unlimited features.
 

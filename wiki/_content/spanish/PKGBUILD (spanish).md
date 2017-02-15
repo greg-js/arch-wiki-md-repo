@@ -2,7 +2,7 @@ Un `PKGBUILD` es un archivo descriptivo de construcción de un paquete para Arch
 
 ## Construyendo paquetes
 
-Los paquetes en Arch Linux son construidos utilizando la utilidad [makepkg](/index.php/Makepkg "Makepkg") y la información almacenada en un `PKGBUILD`. Cuando se ejecuta `makepkg` busca un `PKGBUILD` en el directorio actual y sigue las instrucciones ahí almacenadas para compilar y/o descargar y empaquetar todos los archivos necesarios en un archivo `pkgname.pkg.tar.xz`). Este archivo resultante contiene archivos binarios e instrucciones de instalación legibles para [pacman](/index.php/Pacman "Pacman").
+Los paquetes en Arch Linux son construidos utilizando [makepkg](/index.php/Makepkg "Makepkg") y la información almacenada en un `PKGBUILD`. Cuando se ejecuta `makepkg` busca un `PKGBUILD` en el directorio actual y sigue las instrucciones ahí almacenadas para compilar y/o descargar y empaquetar todos los archivos necesarios en un archivo `pkgname.pkg.tar.xz`). Este archivo resultante contiene archivos binarios e instrucciones de instalación legibles para [pacman](/index.php/Pacman "Pacman").
 
 Vea la documentación de [Creando paquetes (Español)](/index.php/Creando_paquetes_(Espa%C3%B1ol) "Creando paquetes (Español)") para mayor información
 

@@ -67,26 +67,27 @@ It is possible to make the ESP part of a RAID1 array, but doing so brings the ri
 
 ### Using bind mount
 
-Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind mount (see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)). This allows pacman to update the kernel directly while keeping the ESP organized to your liking. If it works for you, this method is much simpler than the other approaches which copy files.
+Instead of mounting the ESP itself to `/boot`, you can mount a directory of the ESP to `/boot` using a bind [mount](/index.php/Mount "Mount") (see [mount(8)](http://man7.org/linux/man-pages/man8/mount.8.html)). This allows [pacman](/index.php/Pacman "Pacman") to update the kernel directly while keeping the ESP organized to your liking.
 
-**Note:** This requires a kernel and bootloader compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot`). Forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
+**Note:**
 
-As [EFISTUB#Alternative ESP Mount Points](/index.php/EFISTUB#Alternative_ESP_Mount_Points "EFISTUB"), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot` (e.g. `/esp`). Then bind mount the directory:
+*   This requires a kernel and bootloader compatible with FAT32\. This is not an issue for a regular Arch install, but could be problematic for other distributions (namely those that require symlinks in `/boot`). See the forum post [here](https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867).
+*   You *must* use the `root=` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
+
+Just like in [EFISTUB#Alternative ESP Mount Points](/index.php/EFISTUB#Alternative_ESP_Mount_Points "EFISTUB"), copy all boot files to a directory on your ESP, but mount the ESP **outside** `/boot` (e.g. `/esp`). Then bind mount the directory:
 
 ```
 # mount --bind /esp/EFI/arch/ /boot
 
 ```
 
-If your files appear in `/boot` as desired, edit your [Fstab](/index.php/Fstab "Fstab") to make it persistent:
+After verifying success, edit your [Fstab](/index.php/Fstab "Fstab") to make the changes persistent:
 
  `/etc/fstab` 
 ```
 /esp/EFI/arch /boot none defaults,bind 0 0
 
 ```
-
-**Warning:** You *must* use the `root=*system_root*` [kernel parameter](/index.php/Kernel_parameters#Parameter_list "Kernel parameters") in order to boot using this method.
 
 ## See also
 

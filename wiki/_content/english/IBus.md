@@ -20,6 +20,8 @@
     *   [4.5 Chinese input](#Chinese_input)
     *   [4.6 LibreOffice](#LibreOffice)
     *   [4.7 Non US keyboards](#Non_US_keyboards)
+    *   [4.8 Englisch international AltGr](#Englisch_international_AltGr)
+    *   [4.9 Trouble with japanese](#Trouble_with_japanese)
 
 ## Installation
 
@@ -257,3 +259,11 @@ That will make IBus work with LibreOffice, and you can start LibreOffice from an
 If [Ibus does not let you write in a given language](https://code.google.com/p/ibus/issues/detail?id=155), let's say Chinese, with a different keyboard layout other than US, then you need to tell it which one to use.
 
 You need to change `/usr/share/ibus/component/<method_name>.xml` and change the `<layout>` tag to the expected keyboard layout.
+
+### Englisch international AltGr
+
+If you want to use AltGr as compose key for the english keyboard, choose `English international AltGr` in the ibus-setup instead of 'English'.
+
+### Trouble with japanese
+
+If you have trouble with japanese input try to generate the locales with uncommenting `ja_JP.UTF-8 UTF-8` in the `/etc/locale.gen` file and then run `locale-gen`.

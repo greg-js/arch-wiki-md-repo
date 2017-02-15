@@ -353,18 +353,20 @@ An alternative that does not require a Google Account is a Ruby script for [Noti
 You may see output like the following in the main window after starting **weechat**:
 
 ```
-12:29:37 =!= | Error: unable to load plugin "/usr/lib/weechat/plugins/**tcl.so**": libtcl8.6.so: cannot open shared object file: No such file or directory
-12:29:37 =!= | If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
-12:29:37 =!= | Error: unable to load plugin "/usr/lib/weechat/plugins/**ruby.so**": libruby.so.2.0: cannot open shared object file: No such file or directory
-12:29:37 =!= | If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
-12:29:37     | Plugins loaded: alias, aspell, charset, fifo, guile, irc, logger, lua, perl, python, relay, rmodifier, script, xfer
-
+13:26:10 =!= | Error: unable to load plugin "/usr/lib/weechat/plugins/ruby.so": libruby.so.2.4: cannot open shared object file: No such file or directory
+13:26:10 =!= | If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+13:26:10 =!= | Error: unable to load plugin "/usr/lib/weechat/plugins/lua.so": liblua.so.5.3: cannot open shared object file: No such file or directory
+13:26:10 =!= | If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+13:26:10 =!= | Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+13:26:10 =!= | If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+13:26:10 =!= | Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+13:26:10 =!= | If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
 ```
 
-The default configuration for weechat attempts to load all plugins found in /usr/lib/weechat/plugins which in this case includes both tcl and ruby. These packages are not required by the weechat package and may not be installed on your machine. There are two options if these errors bother you:
+The default configuration for weechat attempts to load all plugins found in /usr/lib/weechat/plugins which in this case includes ruby, lua, aspell and tcl. These packages are not required by the weechat package and may not be installed on your machine. There are two options if these errors bother you:
 
-1.  [Install](/index.php/Packages "Packages") [tcl](https://www.archlinux.org/packages/?name=tcl), [ruby](https://www.archlinux.org/packages/?name=ruby) from the [official repositories](/index.php/Official_repositories "Official repositories").
-2.  Or, run `/set weechat.plugin.autoload "*,!tcl,!ruby"` which will prevent loading those plugins with a bang (!) prefix.
+1.  [Install](/index.php/Packages "Packages") [ruby](https://www.archlinux.org/packages/?name=ruby), [lua](https://www.archlinux.org/packages/?name=lua), [aspell](https://www.archlinux.org/packages/?name=aspell) and/or [tcl](https://www.archlinux.org/packages/?name=tcl) from the [official repositories](/index.php/Official_repositories "Official repositories").
+2.  Or, run `/set weechat.plugin.autoload "*,!ruby,!lua,!aspell,!tcl"` which will prevent loading those plugins with a bang (!) prefix.
 
 ## Getting Help
 

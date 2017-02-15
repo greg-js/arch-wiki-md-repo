@@ -5,9 +5,8 @@ Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name th
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 From [city] repository](#From_.5Bcity.5D_repository)
-    *   [1.2 From AUR](#From_AUR)
-    *   [1.3 From Activity Library](#From_Activity_Library)
+    *   [1.1 From AUR](#From_AUR)
+    *   [1.2 From Activity Library](#From_Activity_Library)
 *   [2 Starting Sugar](#Starting_Sugar)
 *   [3 Packaging](#Packaging)
     *   [3.1 Notes](#Notes)
@@ -15,17 +14,11 @@ Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name th
 
 ## Installation
 
-**Note:** Sugar is on its way to the [official repositories](/index.php/Official_repositories "Official repositories"). Until this happens, packages are available in the unofficial [[city] repository](http://pkgbuild.com/~bgyorgy/city.html) (see below).
-
-### From [city] repository
-
-*   For the core system (*Glucose*), install [sugar](https://aur.archlinux.org/packages/sugar/), available in the [[city] repository](http://pkgbuild.com/~bgyorgy/city.html). It provides the graphical interface and a desktop session, but not very useful on its own.
-*   The *sugar-fructose* group contains the base activities (*Fructose*) including a web browser, a text editor, a media player and a terminal emulator.
-*   The [sugar-runner](https://aur.archlinux.org/packages/sugar-runner/) package provides a helper script that makes it possible to launch Sugar within another desktop environment, or from the command line directly.
+*   For the core system (*Glucose*), install [sugar](https://www.archlinux.org/packages/?name=sugar). It provides the graphical interface and a desktop session, but not very useful on its own.
+*   The [sugar-fructose](https://www.archlinux.org/groups/x86_64/sugar-fructose/) group contains the base activities (*Fructose*) including a web browser, a text editor, a media player and a terminal emulator.
+*   The [sugar-runner](https://www.archlinux.org/packages/?name=sugar-runner) package provides a helper script that makes it possible to launch Sugar within another desktop environment, or from the command line directly.
 
 ### From AUR
-
-Install [sugar](https://aur.archlinux.org/packages/sugar/) from the [AUR](/index.php/AUR "AUR").
 
 **Activities**
 
@@ -54,7 +47,7 @@ Select the session *Sugar* from the display manager's session menu.
 
 **Manually**
 
-If [sugar-runner](https://aur.archlinux.org/packages/sugar-runner/) installed, Sugar can be launched with the `sugar-runner` command.
+If [sugar-runner](https://www.archlinux.org/packages/?name=sugar-runner) installed, Sugar can be launched with the `sugar-runner` command.
 
 Alternative method is to add `exec sugar` to the `~/.xinitrc` file. After that, Sugar can be launched with the `startx` command (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details). After setting up the `~/.xinitrc` file, it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
@@ -71,16 +64,15 @@ pkgver=30
 pkgrel=1
 pkgdesc="A calculator for Sugar."
 arch=('i686' 'x86_64')
-url="[http://www.sugarlabs.org/](http://www.sugarlabs.org/)"
+url="[https://www.sugarlabs.org/](https://www.sugarlabs.org/)"
 license=('GPL')
-groups=('sucrose' 'fructose')
-depends=('sugar')
-source=([http://download.sugarlabs.org/sources/sucrose/fructose/${_realname}/${_realname}-$pkgver.tar.bz2](http://download.sugarlabs.org/sources/sucrose/fructose/${_realname}/${_realname}-$pkgver.tar.bz2))
+depends=('sugar-toolkit-gtk3')
+source=([https://download.sugarlabs.org/sources/sucrose/fructose/${_realname}/${_realname}-$pkgver.tar.bz2](https://download.sugarlabs.org/sources/sucrose/fructose/${_realname}/${_realname}-$pkgver.tar.bz2))
 md5sums=('011bd911516f27d05194320164c7dcd7')
 
-build() {
+package() {
   cd "$srcdir/${_realname}-$pkgver"
-  ./setup.py install --prefix="$pkgdir/usr" || return 1
+  ./setup.py install --prefix="$pkgdir/usr"
 }
 # vim:set ts=2 sw=2 et:
 ```

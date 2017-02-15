@@ -151,7 +151,7 @@ $ cargo test --target "$ARCH-pc-windows-gnu"
 
 ## Cargo
 
-[Cargo](https://crates.io/), систему сборки и менеджер пакетов для Rust, можно установить с помощью пакета [cargo](https://www.archlinux.org/packages/?name=cargo). Nightly доступен в AUR: [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/). Если у вас [rustup](https://www.archlinux.org/packages/?name=rustup), то он уже содержит в себе cargo.
+[Cargo](https://crates.io/), систему сборки и менеджер пакетов для Rust, можно установить с помощью пакета [cargo](https://www.archlinux.org/packages/?name=cargo). Nightly доступен в AUR: [cargo-nightly-bin](https://aur.archlinux.org/packages/cargo-nightly-bin/). Если у вас [rustup](https://www.archlinux.org/packages/?name=rustup), то он уже содержит в себе cargo.
 
 Cargo помогает работать с зависимостями вашего проекта, скачивая их из своего [хранилища](https://crates.io/) или стороннего [Git](/index.php/Git "Git") репозитория. Также он позволяет убедиться, что вы всегда будете получать повторяемые сборки. Рекомендуем прочитать [официальное руководство](http://doc.crates.io/guide.html).
 

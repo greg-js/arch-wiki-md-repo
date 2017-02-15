@@ -604,7 +604,7 @@ Do not forget to reenable your profile:
 
 ### Problems with netctl-auto on resume
 
-Sometimes *netctl-auto* fails to reconnect when the system resumes from suspend, hibernate or hybrid-sleep. An easy solution is to restart the service for *netctl-auto*. This can be automated with an additional service like the following:
+Sometimes *netctl-auto* fails to reconnect when the system resumes from suspend, hibernate or hybrid-sleep. An easy solution is to restart the service for *netctl-auto*. This can be automated with an additional service like the following ([netctl-auto-resume](https://aur.archlinux.org/packages/netctl-auto-resume/)):
 
  `/etc/systemd/system/netctl-auto-resume@.service` 
 ```

@@ -104,11 +104,25 @@ or try "exportfs -rav" reload `/etc/exports` file.
 
 ### Unable to connect from OS X clients
 
-When trying to connect from a OS X client, you will see that everything is ok at logs, but MacOS X refuses to mount your NFS share. You have to add `insecure` option to your share and re-run `exportfs -r`.
+When trying to connect from an OS X client, you will see that everything is ok in the server logs, but OS X will refuse to mount your NFS share. You can do one of two things to fix this:
+
+*   On the NFS server, add the `insecure` option to the share in `/etc/exports` and re-run `exportfs -r`.
+
+... **OR** ...
+
+*   On the OS X client, add the `resvport` option to the `mount` command line. You can also set `resvport` as a default client mount option in `/etc/nfs.conf`:
+
+ `/etc/nfs.conf` 
+```
+nfs.client.mount.options = resvport
+
+```
+
+Using the default client mount option should also affect mounting the share from Finder via "Connect to Server...".
 
 ### Unreliable connection from OS X clients
 
-OS X's NFS client is optimized for OS X Servers and might present some issues with Linux servers. If you are experiencing slow performance, frequent disconnects and problems with international characters edit the default mount options by adding the line `nfs.client.mount.options = intr,locallocks,nfc` to `/etc/nfs.conf` on your Mac client. More information about the mount options can be found [here](https://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man8/mount_nfs.8.html#//apple_ref/doc/man/8/mount_nfs).
+OS X's NFS client is optimized for OS X Servers and might present some issues with Linux servers. If you are experiencing slow performance, frequent disconnects and problems with international characters edit the default mount options by adding the line `nfs.client.mount.options = intr,locallocks,nfc` to `/etc/nfs.conf` on your Mac client. More information about the mount options can be found in the OS X [mount_nfs man page](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man8/mount_nfs.8.html).
 
 ### Intermittent client freezes when copying large files
 

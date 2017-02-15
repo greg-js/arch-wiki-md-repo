@@ -208,7 +208,7 @@ Next, make a directory to encrypt:
 
 ```
 
-Note that encryption can only be applied to an empty directory. New files and subdirectories within an encrypted directory inherit its encryption policies. Encrypting already existing files is not yet supported.
+Note that encryption can only be applied to an empty directory. New files and subdirectories within an encrypted directory inherit its encryption policy. Encrypting already existing files is not yet supported.
 
 Now generate and add a new key to your keyring. This step must be repeated every time you flush your keyring (i.e., reboot):
 
@@ -247,7 +247,12 @@ This completes setting up encryption for a directory named `*/encrypted*`. If yo
 *   Some applications cannot open files in directories encrypted using this method. Try moving the file outside of the encrypted directory before assuming it is broken. In this case, you will often see a message about a missing key.
 *   Logging in does automatically unlock home directories encrypted by this method when using GDM or console login.
 
-**Note:** Attempting to move files will result in an error. Try copying the files instead.
+**Note:** For security reasons, unencrypted files are not allowed to exist in an encrypted directory. As such, attempting to move (`mv`) unencrypted files into an encrypted directory will
+
+*   fail, if both directories are on the same filesystem mount point. This happens because *mv* will only update the directory index to point to the new directory, but not the file's data inodes (which contain the crypto reference).
+*   succeed, if both directories are on different filesystem mount points (new data inodes are created).
+
+In both cases it is better to copy (`cp`) files instead, because that leaves the option to securely delete the unencrypted original with *shred* or a similar tool.
 
 ## Tips and tricks
 

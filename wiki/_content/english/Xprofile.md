@@ -29,8 +29,8 @@ All of these execute, directly or indirectly, `~/.xinitrc` or `/etc/X11/xinit/
 #!/bin/sh
 
 # Make sure this is before the 'exec' command or it won't be sourced.
-[ -f /etc/xprofile ] && source /etc/xprofile
-[ -f ~/.xprofile ] && source ~/.xprofile
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 ...
 

@@ -61,13 +61,14 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Tilaa](https://www.tilaa.com/) | 2016.03.01 | [KVM](https://www.tilaa.com/pages/vps/technology) | Amsterdam, NL |
 | [TransIP](https://www.transip.eu/) | [2017.01.01](https://www.transip.eu/vps/vps-os/) | [KVM](https://www.transip.eu/vps/vps-technology/) | Amsterdam, NL | Also registrar. |
 | [upCUBE](https://upcube.io) | Latest | Docker | Germany | Different prepared arch linux templates available |
-| [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
 | [Virpus](http://virpus.com/) | [2014.11.07](http://virpus.com/linux-vps.php) | Xen | Kansas City, US-KS; Los Angeles, US-CA | A subcompany of Wow Technologies, Inc. 24/7 support via Live Chat, Email, Phone, and Ticket System. |
 | [Virtual Master](https://www.virtualmaster.com/) | 2012-08 |  ?? | Prague, CZ |
 | [VMLine](http://www.vmline.pl/) | 2013.09.01 | KVM, OpenVZ | Kraków, PL | (Polish language site only) [S-Net](http://www.s-net.pl/en/) reseller. Full virtualization. |
+| [VPS6.NET](https://vps6.net/) | 2013.01.xx | OpenVZ, Xen, HVM-ISO | [Multiple US](http://vps6.net/network/); Frankfurt, DE; Bucharest, RO; Istanbul, TR | Registrar. |
 | [VPSBG.eu](https://www.vpsbg.eu/) | 2013.10 | OpenVZ | [Sofia, Bulgaria](https://vpsbg.eu/en/index.php?page=vps-datacenter) | Offshore VPS in Bulgaria - anonymous registrations and Bitcoin are accepted. |
-| [VPS6.NET](https://vps6.net/) | 2013.01.xx  | OpenVZ, Xen, HVM-ISO | [Multiple US](http://vps6.net/network/); Frankfurt, DE; Bucharest, RO; Istanbul, TR | Registrar. |
+| [VPSSERVER](https://www.vpsserver.com/) | 2015.07 | KVM | Chicago, US-IL; Dallas, US-TX; Miami, US-FL; New York, US-NY; Silicon Valley, US-CA; Amsterdam, NL; Frankfurt, DE; London, UK |
 | [World4You](http://www.world4you.com/) | 2015.10.28 | OpenVZ | Austria (AT) | Internet hosting provider; quick setup; 24/7 support; shared web hosting; also CentOS, Debian, Ubuntu, Fedora and Arch OpenVZ servers; supports newest systemd (227 atm) |
+| [XenVZ](http://www.xenvz.co.uk/) | 2009.12.07 | OpenVZ, Xen | United Kingdom (UK), United States (US) | [Hardware](http://www.xenvz.co.uk/faq.php#use2) |
 
 ## Installation
 

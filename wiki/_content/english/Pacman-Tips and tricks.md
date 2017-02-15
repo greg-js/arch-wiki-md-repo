@@ -88,7 +88,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 *   **pacutils** — Helper library for libalpm based programs.
 
-	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils-git](https://aur.archlinux.org/packages/pacutils-git/)
+	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
 
 *   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Tool that finds what package owns a file.
 

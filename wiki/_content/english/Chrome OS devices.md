@@ -482,7 +482,7 @@ Then [rebuild your grub config](/index.php/GRUB#Generate_the_main_configuration_
 
 #### Baytrail based models
 
-Most baytrail models will work on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) but a regression introduced by 4.5.0 broke it so if you desire a newer kernel then you can install [linux-max98090](https://aur.archlinux.org/packages/linux-max98090/). It is likely that you will also need to use [alsamixer](https://www.archlinux.org/packages/?name=alsamixer) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[12]](https://bugs.archlinux.org/task/48936).
+Most baytrail models will work on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) but a regression introduced by 4.5.0 broke it so if you desire a newer kernel then you can install [linux-max98090](https://aur.archlinux.org/packages/linux-max98090/). It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[12]](https://bugs.archlinux.org/task/48936).
 
 #### Haswell based models
 

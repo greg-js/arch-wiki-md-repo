@@ -31,8 +31,7 @@ Pacman 4 uses [GnuPG](/index.php/GnuPG "GnuPG") to implement package signing.
 *   [4 Links](#Links)
     *   [4.1 Bug reports](#Bug_reports)
     *   [4.2 Blogs](#Blogs)
-    *   [4.3 Mailing list discussions and patches](#Mailing_list_discussions_and_patches)
-    *   [4.4 Forum discussions](#Forum_discussions)
+    *   [4.3 Forum discussions](#Forum_discussions)
 
 ## Usage
 
@@ -192,24 +191,6 @@ See [result](http://security.ubuntu.com/ubuntu/pool/main/a/acpid/acpid_1.0.4-1ub
 
 1.  [Attack on package managers](http://www.cs.arizona.edu/people/justin/packagemanagersecurity/attacks-on-package-managers.html#overview)
 2.  [Attack faq](http://www.cs.arizona.edu/people/justin/packagemanagersecurity/faq.html)
-
-### Mailing list discussions and patches
-
-1.  [Add Keyring option in alpm/pacman](https://www.archlinux.org/pipermail/pacman-dev/2008-June/006607.html)
-2.  [Package signing again](https://www.archlinux.org/pipermail/pacman-dev/2009-June/008858.html)
-3.  [PATCH (newgpg) Let pacman specify GnuPG's home directory.](https://www.archlinux.org/pipermail/pacman-dev/2008-December/007808.html)
-4.  [Dan's pacman tree build&test](https://www.archlinux.org/pipermail/pacman-dev/2008-December/007726.html)
-5.  [GPG work](https://www.archlinux.org/pipermail/pacman-dev/2008-December/007761.html)
-6.  [GPG signature option in makepkg patch](https://www.archlinux.org/pipermail/pacman-dev/2008-June/006548.html)
-7.  [GPG signature support for makepkg](https://www.archlinux.org/pipermail/pacman-dev/2008-June/006560.html)
-8.  [GPG signature option in makepkg, adapted to Dan McGee's suggestions patch](https://www.archlinux.org/pipermail/pacman-dev/2008-June/006552.html)
-9.  [GPG verification patch](https://www.archlinux.org/pipermail/pacman-dev/2008-June/006559.html)
-10.  [GPGSIG in repo-add patch](https://www.archlinux.org/pipermail/pacman-dev/2008-June/006559.html)
-11.  [Signing by default](https://www.archlinux.org/pipermail/pacman-dev/2008-June/006621.html)
-12.  [Package Database signing](https://www.archlinux.org/pipermail/pacman-dev/2008-December/007720.html)
-13.  [Pointless to use non-md5 for makepkg INTEGRITY_CHECK](https://www.archlinux.org/pipermail/arch-general/2009-January/003216.html)
-14.  [Can we trust our mirrors](https://www.archlinux.org/pipermail/arch-dev-public/2008-November/009089.html)
-15.  [Multiple/Shared Architectures](https://www.archlinux.org/pipermail/pacman-dev/2008-September/007567.html)
 
 ### Forum discussions
 

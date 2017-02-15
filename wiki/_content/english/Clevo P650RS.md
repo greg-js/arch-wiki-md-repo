@@ -7,8 +7,9 @@ The P650RS is a device by the taiwanese OEM manufacturer Clevo. It is also sold 
     *   [2.1 Discrete only](#Discrete_only)
     *   [2.2 Switchable / Optimus](#Switchable_.2F_Optimus)
 *   [3 Power management](#Power_management)
-*   [4 WiFi](#WiFi)
-*   [5 Webcam](#Webcam)
+*   [4 Keyboard Backlight](#Keyboard_Backlight)
+*   [5 WiFi](#WiFi)
+*   [6 Webcam](#Webcam)
 
 ## Installation
 
@@ -60,11 +61,19 @@ Using switchable graphics and standard [TLP](/index.php/TLP "TLP") configuration
 
 The dGPU cannot be turned off automatically as a function of being in use at this moment though (see [#Switchable / Optimus](#Switchable_.2F_Optimus)). If left on, the system will take >20W on idle though.
 
+## Keyboard Backlight
+
+For the white keyboard backlight, no special actions are required. However the RGB-backlit keyboard won't work out of the box.
+
+To enable the Keyboard, the installation of the [clevo-xsm-wmi](https://aur.archlinux.org/packages/clevo-xsm-wmi/) package is required.
+
+The colors of the three sections can be controlled, after loading the kernel module, the special keys on the keyboard (`Fn++`, `Fn+-`, `Fn+*`, `Fn+/`) should work.
+
 ## WiFi
 
 WiFi seems to work well and coexist nicely with bluetooth. Consider enabling antenna aggregation to take the most out of the hardware: [iwlwifi](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration").
 
-The `Fn+F11` combination to toggle air plane mode doesn't work.
+When using the [clevo-xsm-wmi](https://aur.archlinux.org/packages/clevo-xsm-wmi/) package, the `Fn+F11` combination to toggle air plane mode also works.
 
 ## Webcam
 

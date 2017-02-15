@@ -1,5 +1,7 @@
 [bubblewrap](https://github.com/projectatomic/bubblewrap) is a lightweight [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") sandbox application developed from [Flatpak](https://en.wikipedia.org/wiki/Flatpak "wikipedia:Flatpak") with a small installation footprint and minimal resource requirements. While the application package is named bubblewrap, the actual executable binary and manpage reference is *bwrap*. bubblewrap is expected to [anchor the sandbox mechanism](https://blog.torproject.org/blog/q-and-yawning-angel) of the [Tor Browser](https://www.torproject.org/projects/torbrowser.html) (Linux) in the future. Notable features include support for cgroup/IPC/mount/network/PID/user/UTS [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [seccomp](https://en.wikipedia.org/wiki/Seccomp "wikipedia:Seccomp") filtering. Note that bubblewrap drops all [capabilities](/index.php/Capabilities "Capabilities") within a sandbox and that child tasks cannot gain greater privileges than its parent. Notable feature exclusions include the lack of explicit support for blacklisting/whitelisting file paths.
 
+**Warning:** Unlike when using a separate user, bubblewrap not only exposes security vulnerabilities in the kernel but also in the window compositor. Users should be aware that running untrustworthy code in bubblewrap is still not safe.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -11,6 +13,7 @@
     *   [3.4 Desktop](#Desktop)
     *   [3.5 MuPDF](#MuPDF)
     *   [3.6 p7zip](#p7zip)
+    *   [3.7 Filesystem isolation](#Filesystem_isolation)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Using X11](#Using_X11)
     *   [4.2 Sandboxing X11](#Sandboxing_X11)
@@ -290,6 +293,103 @@ bash-4.4$ ls -A /usr/bin
 7za  ls  sh
 
 ```
+
+### Filesystem isolation
+
+**Warning:** It is the bubblewrap user’s responsibility to update the filesystem trees regularly.
+
+To further hide the contents of the file system (such as those in `/var`, `/usr/bin` and `/usr/lib`) and to sandbox even the installation of software, pacman can be made to install Arch packages into isolated filesystem trees.
+
+In order to use pacman for installing software into the filesystem trees, you will need to install [fakeroot](https://www.archlinux.org/packages/?name=fakeroot) and [fakechroot](https://www.archlinux.org/packages/?name=fakechroot).
+
+Suppose you want to install the `xterm` package with pacman into an isolated filesystem tree. You should prepare your tree like this:
+
+```
+$ MYPACKAGE=xterm
+$ mkdir -p ~/sandboxes/${MYPACKAGE}/files/var/lib/pacman
+$ mkdir -p ~/sandboxes/${MYPACKAGE}/files/etc
+$ cp /etc/pacman.conf ~/sandboxes/${MYPACKAGE}/files/etc/pacman.conf
+
+```
+
+You may want to edit `~/sandboxes/${MYPACKAGE}/files/etc/pacman.conf` and adjust the pacman configuration used:
+
+*   Remove any undesired custom repositories and `IgnorePkg`, `IgnoreGroup`, `NoUpgrade` and `NoExtract` settings that are needed only for the host system.
+*   You may need to remove the `CheckSpace` option so pacman will not complain about errors finding the root filesystem for checking disk space.
+
+Then install the `base` group along with the needed fakeroot into the isolated filesystem tree:
+
+```
+$ fakechroot fakeroot pacman -Syu \
+    --root ~/sandboxes/${MYPACKAGE}/files \
+    --dbpath ~/sandboxes/${MYPACKAGE}/files/var/lib/pacman \
+    --config ~/sandboxes/${MYPACKAGE}/files/etc/pacman.conf \
+    base fakeroot
+
+```
+
+Since you will be repeatedly calling bubblewrap with the same options, make an alias:
+
+```
+$ alias bw-install='bwrap                        \
+     --bind ~/sandboxes/${MYPACKAGE}/files/ /    \
+     --ro-bind /etc/resolv.conf /etc/resolv.conf \
+     --tmpfs /tmp                                \
+     --proc /proc                                \
+     --dev /dev                                  \
+     --chdir /                                   '
+
+```
+
+You will need to set up the [locales](/index.php/Locale "Locale"):
+
+```
+$ nano -w ~/sandboxes/${MYPACKAGE}/files/etc/locale.gen
+$ bw-install locale-gen
+
+```
+
+Then set up pacman’s keyring:
+
+```
+$ bw-install fakeroot pacman-key --init
+$ bw-install fakeroot pacman-key --populate archlinux
+
+```
+
+Now you can install the desired `xterm` package.
+
+```
+$ bw-install fakeroot pacman -S ${MYPACKAGE}
+
+```
+
+If the pacman command fails here, try running the command for populating the keyring again.
+
+Congratulations. You now have an isolated filesystem tree containing `xterm`. You can use `bw-install` again to upgrade your filesystem tree.
+
+You can now run your software with bubblewrap. `*command*` should be `xterm` in this case.
+
+```
+$ bwrap                                          \
+     --ro-bind ~/sandboxes/${MYPACKAGE}/files/ / \
+     --ro-bind /etc/resolv.conf /etc/resolv.conf \
+     --tmpfs /tmp                                \
+     --proc /proc                                \
+     --dev /dev                                  \
+     --chdir /                                   \
+     *command*
+
+```
+
+Note that some files can be shared between packages. You can hardlink to all files of an existing parent filesystem tree to reuse them in a new tree:
+
+```
+$ cp -al ~/sandboxes/${MYPARENTPACKAGE} ~/sandboxes/${MYPACKAGE}
+
+```
+
+Then proceed with the installation as usual by calling pacman from `bw-install fakechroot fakeroot pacman …`.
 
 ## Troubleshooting
 

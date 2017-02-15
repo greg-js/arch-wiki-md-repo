@@ -8,6 +8,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
     *   [1.1 Network printers](#Network_printers)
     *   [1.2 Custom drivers](#Custom_drivers)
         *   [1.2.1 Manually installing from the RPM packages](#Manually_installing_from_the_RPM_packages)
+    *   [1.3 Multiple Copy Problem](#Multiple_Copy_Problem)
 *   [2 Canon](#Canon)
     *   [2.1 CARPS](#CARPS)
     *   [2.2 CAPT](#CAPT)
@@ -109,6 +110,81 @@ Brother provides custom drivers on their website, either in source tarball, rpm,
 [Install](/index.php/Install "Install") the [rpmextract](https://www.archlinux.org/packages/?name=rpmextract) package, and extract both rpm packages using `rpmextract.sh`. Extracting both files will create a var and a usr directory - move the contents of both directories into the corresponding root directories.
 
 Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should automatically install and configure your brother printer.
+
+### Multiple Copy Problem
+
+Sometimes when using the latest drivers, the printer will print multiple copies (my MFC-9330CDW printed 10 copies, yours may differ). The solution is to update the firmware (there is a windows tool, but it didn't work for me). To start you will need snmpwalk (found here: [http://www.ireasoning.com/downloadmibbrowserfree.php](http://www.ireasoning.com/downloadmibbrowserfree.php)).
+
+```
+mkdir Brother_FW
+cd Brother_FW
+wget [http://www.ireasoning.com/download/mibfree/mibbrowser.zip](http://www.ireasoning.com/download/mibfree/mibbrowser.zip)
+unzip mibbrowser.zip
+./ireasoning/mibbrowser/snmpwalk.sh -c public $PRINTER_IP > snmp_output.log
+cat snmp_output.log | grep -A 1 3.6.1.4.1.2435.2.4.3.99.3.1.6.1.2
+
+```
+
+At this point, you will have the relevant data that has to be passed to Brother to get a valid Firmware download link. That file will look similar to the one below (name it `request.xml`):
+
+```
+<REQUESTINFO>
+   <FIRMUPDATETOOLINFO>
+       <FIRMCATEGORY>MAIN</FIRMCATEGORY>
+       <OS>LINUX</OS>
+       <INSPECTMODE>1</INSPECTMODE>
+   </FIRMUPDATETOOLINFO>
+
+   <FIRMUPDATEINFO>
+       <MODELINFO>
+           <SELIALNO></SELIALNO>
+           <NAME>MFC-9330CDW</NAME>
+           <SPEC>0401</SPEC>
+           <DRIVER></DRIVER>
+           <FIRMINFO>
+               <FIRM>
+                   <ID>MAIN</ID>
+                   <VERSION>R1506121801:4504</VERSION>
+               </FIRM>
+               <FIRM>
+                   <ID>SUB1</ID>
+                   <VERSION>1.07</VERSION>
+               </FIRM>
+               <FIRM>
+                   <ID>SUB2</ID>
+                   <VERSION>L1505291600</VERSION>
+               </FIRM>
+           </FIRMINFO>
+       </MODELINFO>
+       <DRIVERCNT>1</DRIVERCNT>
+       <LOGNO>2</LOGNO>
+       <ERRBIT></ERRBIT>
+       <NEEDRESPONSE>1</NEEDRESPONSE>
+   </FIRMUPDATEINFO>
+</REQUESTINFO>
+
+```
+
+Next, we post this file to Brother and extract the resulting URL.
+
+```
+curl -X POST -d @request.xml [https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate](https://firmverup.brother.co.jp/kne_bh7_update_nt_ssl/ifax2.asmx/fileUpdate) -H "Content-Type:text/xml" > response.xml
+
+```
+
+In `response.xml` you will find a `<PATH>` tag that contains the url. Next, we download the firmware, push it to the printer, and let the printer process it. Before that is done, change the Admin password to something known, it will be used as the user to log into the FTP site (VERY bad practice, don't do this).
+
+```
+wget [http://update-akamai.brother.co.jp/CS/LZ4266_W.djf](http://update-akamai.brother.co.jp/CS/LZ4266_W.djf)
+ftp $PRINTER_IP
+ bin
+ hash
+ send LZ4266_W.djf
+ bye
+
+```
+
+With that, the printer will restart, and the latest firmware will be installed and (hopefully) your printing woes will be solved.
 
 ## Canon
 

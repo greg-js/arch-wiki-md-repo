@@ -26,7 +26,7 @@ exec budgie-desktop
 
 ## Utilizzo
 
-Puoi vedere le notifiche, settare il volume e modificare l'aspetto del desktop con la barra laterale chiamata "Raven". Lo puoi accedere con la combinazione `Super+N` o cliccando l'indicatore di stato.
+Puoi vedere le notifiche, settare il volume e modificare l'aspetto del desktop con la barra laterale chiamata "Raven", ci puoi accedere con la combinazione `Super+N` o cliccando l'indicatore di stato.
 
 ## Vedere anche
 
