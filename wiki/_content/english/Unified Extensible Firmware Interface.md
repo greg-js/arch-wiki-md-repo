@@ -61,7 +61,7 @@ An x86_64 EFI firmware does not include support for launching 32-bit EFI apps (u
 
 Check whether the dir `/sys/firmware/efi` exists, if it exists it means the kernel has booted in EFI mode. In that case the UEFI bitness is same as kernel bitness. (ie. i686 or x86_64)
 
-**Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for more info.
+**Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for more info. Also see [this Intel blog post](https://blogs.intel.com/evangelists/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems/).
 
 ### Apple Macs
 

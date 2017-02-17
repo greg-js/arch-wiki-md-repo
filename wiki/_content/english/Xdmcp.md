@@ -100,12 +100,22 @@ systemctl restart kdm
 
 ### LightDM
 
-Modify `/etc/lightdm/lightdm.conf` to include:
+Modify `/etc/lightdm/lightdm.conf`
+
+Enable the XDMCP Server:
 
 ```
 [XDMCPServer]
 enabled=true
 port=177
+
+```
+
+On a headless system, disable the automatic start of one seat so that LightDM can run in the background:
+
+```
+[LightDM]
+start-default-seat=false
 
 ```
 

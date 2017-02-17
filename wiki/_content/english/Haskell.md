@@ -107,9 +107,11 @@ It is possible to install a package system–wide with the `--global` flag, but 
 
 #### Removing packages
 
-There is no easy way to do it.
+There is no easy way to do it. Cabal does not have removing process.
 
 One thing to make your life easier is use zsh auto completion to find all the haskell packages.
+
+If you want/can fix/reinstall whole Haskell package system - remove `~/.cabal` and `~/.ghc` and start from scratch.
 
 ## See also
 

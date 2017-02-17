@@ -21,7 +21,8 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 *   [2 NVM Express SSD](#NVM_Express_SSD)
     *   [2.1 NVME Power Saving Patch](#NVME_Power_Saving_Patch)
 *   [3 Video](#Video)
-    *   [3.1 Blank screen issue after booting](#Blank_screen_issue_after_booting)
+    *   [3.1 Module-based Powersaving Options](#Module-based_Powersaving_Options)
+    *   [3.2 Blank screen issue after booting](#Blank_screen_issue_after_booting)
 *   [4 Wireless](#Wireless)
 *   [5 Bluetooth](#Bluetooth)
 *   [6 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
@@ -57,6 +58,52 @@ Andy Lutomirski has released version 4 of his patchset which fixes powersaving f
 ## Video
 
 The video should work with the `i915` driver of the current [linux](https://www.archlinux.org/packages/?name=linux) kernel. Consult [Intel graphics](/index.php/Intel_graphics "Intel graphics") for a detailed installation and configuration guide as well as for [Troubleshooting](/index.php/Intel_graphics#Troubleshooting "Intel graphics").
+
+### Module-based Powersaving Options
+
+For the HD 620 graphics card the following modules are working: (see [Intel graphics#Module-based Powersaving Options](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics"))
+
+```
+modeset=1
+
+```
+
+For modesetting, wasn't default.
+
+```
+enable_rc6=1 
+
+```
+
+Works fine, also gives some decent powersaving. Higher levels than 1 do not exist and get changed by the system to 1.
+
+```
+enable_fbc=1 
+
+```
+
+Didn't change so much for energy saving, but helped a lot for the coil whine issue
+
+```
+enable_guc_loading=1 enable_guc_submission=1
+
+```
+
+Update the GuC binary blob, you have to download the firmware ([https://01.org/linuxgraphics/downloads/firmware](https://01.org/linuxgraphics/downloads/firmware)) and add in manually to '/usr/lib/firmware/i915/' at the moment.
+
+```
+enable_huc=1
+
+```
+
+The binary is allready released, but vanilla kernel doesn't try to load it at the moment. Maybe working for kernel 4.9.9 or 4.9.10.
+
+```
+enable_psr=2
+
+```
+
+Enalbe psr level 2 is working while level 1 has a lot of problems, setting it on level 2 doens't give much energy saving at the moment. It's said that 'disable_power_well=0 enable_psr=1' is working in this combination.
 
 ### Blank screen issue after booting
 

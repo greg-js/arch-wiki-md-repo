@@ -15,20 +15,17 @@
 *   [3 Build the ISO](#Build_the_ISO)
     *   [3.1 Rebuild the ISO](#Rebuild_the_ISO)
 *   [4 Using the ISO](#Using_the_ISO)
-    *   [4.1 CD](#CD)
-    *   [4.2 USB](#USB)
-    *   [4.3 GRUB](#GRUB)
-    *   [4.4 grub4dos](#grub4dos)
-*   [5 Installation without Internet access](#Installation_without_Internet_access)
-    *   [5.1 Install the archiso to the new root](#Install_the_archiso_to_the_new_root)
-    *   [5.2 Chroot and configure the base system](#Chroot_and_configure_the_base_system)
-        *   [5.2.1 Restore the configuration of journald](#Restore_the_configuration_of_journald)
-        *   [5.2.2 Remove special udev rule](#Remove_special_udev_rule)
-        *   [5.2.3 Disable and remove the services created by archiso](#Disable_and_remove_the_services_created_by_archiso)
-        *   [5.2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
-        *   [5.2.5 Importing archlinux keys](#Importing_archlinux_keys)
-        *   [5.2.6 Configure the system](#Configure_the_system)
-        *   [5.2.7 Enable graphical login (optional)](#Enable_graphical_login_.28optional.29)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Installation without Internet access](#Installation_without_Internet_access)
+        *   [5.1.1 Install the archiso to the new root](#Install_the_archiso_to_the_new_root)
+        *   [5.1.2 Chroot and configure the base system](#Chroot_and_configure_the_base_system)
+            *   [5.1.2.1 Restore the configuration of journald](#Restore_the_configuration_of_journald)
+            *   [5.1.2.2 Remove special udev rule](#Remove_special_udev_rule)
+            *   [5.1.2.3 Disable and remove the services created by archiso](#Disable_and_remove_the_services_created_by_archiso)
+            *   [5.1.2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
+            *   [5.1.2.5 Importing archlinux keys](#Importing_archlinux_keys)
+            *   [5.1.2.6 Configure the system](#Configure_the_system)
+            *   [5.1.2.7 Enable graphical login (optional)](#Enable_graphical_login_.28optional.29)
 *   [6 See also](#See_also)
     *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
     *   [6.2 Example customization template](#Example_customization_template)
@@ -44,33 +41,33 @@ Before you begin, [install](/index.php/Install "Install") the [archiso](https://
 
 Archiso comes with two "profiles": *releng* and *baseline*.
 
-*   If you wish to create a fully customised live version of Arch Linux, pre-installed with all your favourite programs and configurations, use *releng*.
+*   If you wish to create a fully customized live version of Arch Linux, pre-installed with all your favorite programs and configurations, use *releng*.
 *   If you just want to create the most basic live medium, with no pre-installed packages and a minimalistic configuration, use *baseline*.
 
-Now, copy the profile of your choice to a directory where you can make adjustments and build it (we will use `~/archlive`). Execute the following, replacing `**profile**` with either `releng` or `baseline`.
+Now, copy the profile of your choice to a directory (*archlive* in the example below) where you can make adjustments and build it. Execute the following, replacing `**profile**` with either `releng` or `baseline`.
 
 ```
-# cp -r /usr/share/archiso/configs/**profile**/* ~/archlive
+# cp -r /usr/share/archiso/configs/**profile**/* *archlive*
 
 ```
 
-*   If you are using the `releng` profile to make a fully customised image, then you can proceed onto [#Configure the live medium](#Configure_the_live_medium).
-*   If you are using the `baseline` profile to create a bare image, then you will not be needing to do any customisations and can proceed onto [#Build the ISO](#Build_the_ISO).
+*   If you are using the `releng` profile to make a fully customized image, then you can proceed onto [#Configure the live medium](#Configure_the_live_medium).
+*   If you are using the `baseline` profile to create a bare image, then you will not be needing to do any customization and can proceed onto [#Build the ISO](#Build_the_ISO).
 
 ## Configure the live medium
 
 This section details configuring the image you will be creating, allowing you to define the packages and configurations you want your live image to contain.
 
-Inside the `~/archlive` directory there are a number of files and directories; we are only concerned with a few of these, mainly:
+Inside the `*archlive*` directory created in [#Setup](#Setup) there are a number of files and directories; we are only concerned with a few of these, mainly:
 
 *   `packages.*` - this is where you list, line by line, the packages you want to have installed, and
-*   the `airootfs` directory - this directory acts as an overlay and it is where you make all the customisations.
+*   the `airootfs` directory - this directory acts as an overlay and it is where you make all the customizations.
 
-Generally, every administrative task that you would normally do after a fresh install except for package installation can be scripted into `~/archlive/airootfs/root/customize_airootfs.sh`. It has to be written from the perspective of the new environment, so `/` in the script means the root of the live-iso which is created.
+Generally, every administrative task that you would normally do after a fresh install except for package installation can be scripted into `*archlive*/airootfs/root/customize_airootfs.sh`. It has to be written from the perspective of the new environment, so `/` in the script means the root of the live-iso which is to be created.
 
 ### Installing packages
 
-You will want to create a list of packages you want installed on your live CD system. A file full of package names, one-per-line, is the format for this. This is *great* for special interest live CDs, just specify packages you want in packages.both and bake the image. The `packages.i686` and `packages.x86_64` files allow you to install software on just 32-bit or 64-bit, respectively.
+[Edit](/index.php/Edit "Edit") the lists of packages in `packages.i686`, `packages.x86_64`, or `packages.both` to indicate which packages are to be installed on the live medium. The suffix here indicates which architecture the packages are available.
 
 **Note:** If you want to use a [window manager](/index.php/Window_manager "Window manager") in the Live CD then you must add the necessary and correct [video drivers](/index.php/Video_drivers "Video drivers"), or the WM may freeze on loading.
 
@@ -314,40 +311,17 @@ Also remove persistent data such as created users or symlinks such as `/etc/sudo
 
 ## Using the ISO
 
-### CD
+See the [Category:Getting and installing Arch#Installation methods](/index.php/Category:Getting_and_installing_Arch#Installation_methods "Category:Getting and installing Arch") section for various options.
 
-Just burn the iso to a CD. You can follow [Optical disc drive#Burning](/index.php/Optical_disc_drive#Burning "Optical disc drive") as you wish.
+## Tips and tricks
 
-### USB
-
-See [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media").
-
-### GRUB
-
-See [Multiboot USB drive#Arch Linux](/index.php/Multiboot_USB_drive#Arch_Linux "Multiboot USB drive").
-
-### grub4dos
-
-Grub4dos is a utility that can be used to create multiboot USBs, able to boot multiple linux distros from the same USB stick.
-
-To boot the generated system on a USB with grub4dos already installed, loop mount the ISO and copy the entire `/arch` directory to the **root of the USB**. Then edit the `menu.lst` file from the grub4dos (it must be on the USB root) and add these lines:
-
-```
-title Archlinux x86_64
-kernel /arch/boot/x86_64/vmlinuz archisolabel=<your usb label>
-initrd /arch/boot/x86_64/archiso.img
-
-```
-
-Change the `x86_64` part as necessary and put your **real** usb label there.
-
-## Installation without Internet access
+### Installation without Internet access
 
 If you wish to install the archiso (e.g. [the official monthly release](https://www.archlinux.org/download/)) as it is without an Internet connection, or, if you do not want to download the packages you want again:
 
 First, follow the [Installation guide](/index.php/Installation_guide "Installation guide"), skipping the [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide") section, until the [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide") step.
 
-### Install the archiso to the new root
+#### Install the archiso to the new root
 
 Instead of installing the packages with `pacstrap` (which would try to download from the remote repositories), copy *everything* in the live environment to the new root:
 
@@ -367,7 +341,7 @@ Then, copy the kernel image to the new root, in order to keep the integrity of t
 
 After that, generate a fstab as described in [Installation guide#Fstab](/index.php/Installation_guide#Fstab "Installation guide").
 
-### Chroot and configure the base system
+#### Chroot and configure the base system
 
 Next, chroot into your newly installed system:
 
@@ -378,7 +352,7 @@ Next, chroot into your newly installed system:
 
 **Note:** Before performing the other [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") steps (e.g. locale, keymap, etc.), it is necessary to get rid of the trace of the Live environment (in other words, the customization of archiso which does not fit a non-Live environment).
 
-#### Restore the configuration of journald
+##### Restore the configuration of journald
 
 [This customization of archiso](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/root/customize_airootfs.sh#n19) will lead to storing the system journal in RAM, it means that the journal will not be available after reboot:
 
@@ -387,7 +361,7 @@ Next, chroot into your newly installed system:
 
 ```
 
-#### Remove special udev rule
+##### Remove special udev rule
 
 [This rule of udev](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) starts the dhcpcd automatically if there are any wired network interfaces.
 
@@ -396,7 +370,7 @@ Next, chroot into your newly installed system:
 
 ```
 
-#### Disable and remove the services created by archiso
+##### Disable and remove the services created by archiso
 
 Some service files are created for the Live environment, please disable the services and remove the file as they are unnecessary for the new system:
 
@@ -407,7 +381,7 @@ Some service files are created for the Live environment, please disable the serv
 
 ```
 
-#### Remove special scripts of the Live environment
+##### Remove special scripts of the Live environment
 
 There are some scripts installed in the live system by archiso scripts, which are unnecessary for the new system:
 
@@ -419,7 +393,7 @@ There are some scripts installed in the live system by archiso scripts, which ar
 
 ```
 
-#### Importing archlinux keys
+##### Importing archlinux keys
 
 In order to use the official repositories, we need to import the archlinux master keys ([pacman/Package signing#Initializing the keyring](/index.php/Pacman/Package_signing#Initializing_the_keyring "Pacman/Package signing")). This step is usually done by pacstrap but can be achieved with
 
@@ -431,11 +405,11 @@ In order to use the official repositories, we need to import the archlinux maste
 
 **Note:** Keyboard or mouse activity is needed to generate entropy and speed-up the first step.
 
-#### Configure the system
+##### Configure the system
 
 Now you can follow the skipped steps of the [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") section (setting a locale, timezone, hostname, etc.) and finish the installation by creating an initial ramdisk as described in [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide").
 
-#### Enable graphical login (optional)
+##### Enable graphical login (optional)
 
 If using a display manager like GDM, you may want to change the systemd default target from multi-user.target to one that allows graphical login.
 

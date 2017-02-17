@@ -5,20 +5,11 @@
 *   [3 Настройка консоли](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8)
 *   [4 Настройка X.org](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_X.org)
     *   [4.1 Настройки клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-        *   [4.1.1 Модель клавиатуры](#.D0.9C.D0.BE.D0.B4.D0.B5.D0.BB.D1.8C_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-        *   [4.1.2 Опции раскладок](#.D0.9E.D0.BF.D1.86.D0.B8.D0.B8_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA)
-        *   [4.1.3 Переключение раскладок](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA)
-        *   [4.1.4 Переключение раскладок средствами X.org](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D1.81.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.B0.D0.BC.D0.B8_X.org)
+        *   [4.1.1 Переключение раскладок средствами X.org](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BE.D0.BA_.D1.81.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.B0.D0.BC.D0.B8_X.org)
     *   [4.2 Compose-последовательности](#Compose-.D0.BF.D0.BE.D1.81.D0.BB.D0.B5.D0.B4.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D0.B8)
-*   [5 Настройка GTK1](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_GTK1)
-*   [6 Настройка ncurses приложений](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_ncurses_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [6.1 Midnight Commander (mc)](#Midnight_Commander_.28mc.29)
-    *   [6.2 nano](#nano)
-    *   [6.3 ncmpc](#ncmpc)
-    *   [6.4 dialog](#dialog)
-*   [7 Настройка русских man-страниц](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D1.83.D1.81.D1.81.D0.BA.D0.B8.D1.85_man-.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86)
-*   [8 Сделаем openoffice русским](#.D0.A1.D0.B4.D0.B5.D0.BB.D0.B0.D0.B5.D0.BC_openoffice_.D1.80.D1.83.D1.81.D1.81.D0.BA.D0.B8.D0.BC)
-*   [9 Перекодировка тегов MP3](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D1.82.D0.B5.D0.B3.D0.BE.D0.B2_MP3)
+*   [5 Настройка русских man-страниц](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.80.D1.83.D1.81.D1.81.D0.BA.D0.B8.D1.85_man-.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86)
+*   [6 Сделаем libreoffice русским](#.D0.A1.D0.B4.D0.B5.D0.BB.D0.B0.D0.B5.D0.BC_libreoffice_.D1.80.D1.83.D1.81.D1.81.D0.BA.D0.B8.D0.BC)
+*   [7 Перекодировка тегов MP3](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BE.D0.B4.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D1.82.D0.B5.D0.B3.D0.BE.D0.B2_MP3)
 
 ## Об этой статье
 
@@ -157,55 +148,33 @@ pacman -S ttf-dejavu ttf-liberation
 
 ### Настройки клавиатуры
 
-**Примечание:** Начиная с версии Xorg 1.8, [HAL](/index.php/HAL "HAL") не используется для настройки
-
-Создайте файл /etc/hal/fdi/policy/10-keymap.fdi такого содержания:
+Клавиатуру теперь принято настраивать при помощи systemd, точнее localectl. При настройке Xorg она читает и правит файл 00-keyboard.conf:
 
 ```
-<?xml version="1.0" encoding="utf-8"?>
-<deviceinfo version="0.2">
- <device>
-  <match key="info.capabilities" contains="input.keypad">
-    <merge key="input.xkb.rules" type="string">base</merge>
-    <merge key="input.xkb.model" type="string">pc105</merge>
-    <merge key="input.x11_driver" type="string">evdev</merge>
-    <merge key="input.xkb.layout" type="string">us,ru</merge>
-    <merge key="input.xkb.variant" type="string">,winkeys</merge>
-    <merge key="input.xkb.options" type="string">grp:rctrl_toggle</merge>
-  </match>
- </device>
-</deviceinfo>
+$ cat /etc/X11/xorg.conf.d/00-keyboard.conf 
+# Read and parsed by systemd-localed. It's probably wise not to edit this file
+# manually too freely.
+Section "InputClass"
+        Identifier "system-keyboard"
+        MatchIsKeyboard "on"
+	Option "XkbLayout" "us,ru"
+	Option "XkbModel" "pc105"
+	Option "XkbLayout" "us,ru"
+	Option "XkbVariant" "os_winkeys"
+	Option "XKbOptions" "grp:menu_toggle,grp_led:scroll,ctrl:swapcaps,compose:ralt"
+EndSection
 
 ```
 
-Это простой пример, подходящий для владельцев стандартных устройств ввода. Для владельцев ноутбуков, подключающих, допустим, выносную клавиатуру, правила будут сложнее.
+Это значит, что localectl нужен root, а Xorg придется перезапускать.
 
-#### Модель клавиатуры
-
-Модель Вашей клавиатуры указана в ключе input.xkb.model. Различные значения для этого ключа можно увидеть в `/usr/share/X11/xkb/rules/evdev.lst`. В данном примере модель pc105 - стандартная клавиатура. Например, для клавиатуры Logitech Generic Keyboard строка примет вид:
+Посмотреть возможные значения:
 
 ```
-<merge key="input.xkb.model" type="string">logitech_base</merge>
-
-```
-
-#### Опции раскладок
-
-Параметры *xkb.layout* и *xkb.variant* указывают соответственно на варианты раскладки. В примере раскладки *us,ru* дополнены опцией *winkeys* которая расставляет знаки препинания и некоторые символы в соответствии с раскладкой win.
-
-#### Переключение раскладок
-
-Для настройки переключения между двумя раскладками, используйте опцию значение ключа input.xkb.options. В примере переключение осуществляется по правому Ctrl. Другой пример: раскладки переключаются комбинацией Ctrl-Shift, при использовании русской раскладки горит лампочка Scroll Lock, строка опций должна выглядеть следующим образом:
-
-```
-<merge key="input.xkb.options" type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
-
-```
-
-Возможно будет удобно использовать <Menu> для переключения раскладок и поменять CapsLock и левый Ctrl. Тогда нужно написать так:
-
-```
-<merge key="input.xkb.options" type="string">grp:menu_toggle,grp_led:scroll,ctrl:swapcaps</merge>
+ $ localectl list-x11-keymap-models
+ $ localectl list-x11-keymap-layouts
+ $ localectl list-x11-keymap-variants ru
+ $ localectl list-x11-keymap-options
 
 ```
 
@@ -341,71 +310,46 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 
 ```
 
-## Настройка GTK1
-
-Отредактируйте файл
-
- `/etc/gtk/gtkrc.ru` 
-```
-style "gtk-default-ru" {
-       fontset = "-*-arial-medium-r-normal--12-*-*-*-*-*-iso10646-1",\
-       -*-fixed-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
-}
-
-```
-
-class "GtkWidget" style "gtk-default-ru"
-
-## Настройка ncurses приложений
-
-### Midnight Commander (mc)
-
-Пакет [mc](https://www.archlinux.org/packages/?name=mc) с версией 4.6.1-5 из репозитория [extra]
-При старом срезе - пакет из репозитория **community** mc-utf8.
-Теперь mc собран с поддержкой юникодной локали и имеет приличный вид.
-
-### nano
-
-С версии 2.0 nano поддерживает utf-8.
-
-### ncmpc
-
-В репозитории extra пакет ncmpc 0.11.1 собран с ncurses без поддержки unicode, а также файл руссификации почему-то в кодировке ISO-8859-1\. Решение:
-
-*   Скачайте из AUR архив
-*   Переместите его в **/var/abs/local/** (если вы используете ABS) или в любую другую директорию
-*   Разархивируйте **tar -xzf ncmpc-svn.tar.gz**
-*   Перейдите в получившуюся директорию
-*   Выполните **makepkg -i**
-
-### dialog
-
-Некоторые скрипты (например, alsaconf) используют программу dialog для вывода сообщений. Чтобы включить в ней поддержку юникода, поставьте пакет dialog-w из community или пересобирите с опцией `--with-ncursesw`
-
 ## Настройка русских man-страниц
 
 Установите русские страницы командой
 
 ```
- pacman -S man-pages-ru
+ $ pacman -S man-pages-ru
 
 ```
 
-Также позаботьтесь о том, чтобы переменная окружения *LESSCHARSET* имела значение *UTF-8*, либо просто заккоментируйте строку **export LESSCHARSET="latin1"** в файле */etc/profile*, тогда less будет автоматически брать кодировку из локали.
-
-## Сделаем openoffice русским
-
-Все просто. Поддержка языков в openoffice реализуется отдельными пакетами. Смотрим список пакетов:
+man показывает страницы ориентируясь на локаль, для принудительного показа русских манов:
 
 ```
- pacman -Ss openoffice
+ $ man -L ru <manpage>
+
+```
+
+## Сделаем libreoffice русским
+
+Все просто. Поддержка языков в openoffice реализуется отдельными пакетами.
+
+Смотрим список пакетов:
+
+```
+ $ pacman -Ss libreoffice | grep \\-ru
+ extra/libreoffice-fresh-ru 5.3.0-1
+ extra/libreoffice-still-ru 5.2.5-1
 
 ```
 
 Ставим поддержку русского языка
 
 ```
- pacman -S openoffice-ru
+ pacman -S libreoffice-fresh-ru
+
+```
+
+или
+
+```
+ pacman -S libreoffice-still-ru
 
 ```
 

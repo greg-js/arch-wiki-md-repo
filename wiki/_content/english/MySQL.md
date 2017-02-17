@@ -36,7 +36,7 @@ MySQL is a widely spread, multi-threaded, multi-user SQL database. For more info
 
 ## Installation
 
-[MariaDB](https://mariadb.org/) is the [default implementation](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) of MySQL in Arch Linux, provided with the [mariadb](https://www.archlinux.org/packages/?name=mariadb) package.
+[MariaDB](https://mariadb.com/) is the [default implementation](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/) of MySQL in Arch Linux, provided with the [mariadb](https://www.archlinux.org/packages/?name=mariadb) package.
 
 Alternative implementations are:
 
@@ -555,7 +555,7 @@ Alternatively, you can purge some binary logs in `/var/lib/mysql` to free up dis
 
 ## See also
 
-*   [MariaDB Official Website](https://mariadb.org/)
+*   [MariaDB Official Website](https://mariadb.com/)
 *   [MariaDB knowledge Base](https://mariadb.com/kb/en/)
 *   [MySQL documentation](http://dev.mysql.com/doc/)
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") - ArchWiki article on the Apache HTTP Server

@@ -406,4 +406,4 @@ For steam to work, disable dri3 in xorg config file or as a workaround run steam
 
 ## Hardware decoding not available
 
-In-home streaming hardware decoding uses `vaapi`, so it needs to be installed (or wrapped around `vdpau`) following [this instructions](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Don't forget to install the `lib32` versions too. In addition, **steam must be running with the steam runtime disabled** (i.e. launched with `steam-native`).
+In-home streaming hardware decoding uses `vaapi`, so it needs to be installed (or wrapped around `vdpau`). See [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Remember to install the `lib32` versions as well.

@@ -16,7 +16,8 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
     *   [2.3 Editing provided units](#Editing_provided_units)
         *   [2.3.1 Replacement unit files](#Replacement_unit_files)
         *   [2.3.2 Drop-in files](#Drop-in_files)
-        *   [2.3.3 Examples](#Examples)
+        *   [2.3.3 Revert to vendor version](#Revert_to_vendor_version)
+        *   [2.3.4 Examples](#Examples)
 *   [3 Targets](#Targets)
     *   [3.1 Get current targets](#Get_current_targets)
     *   [3.2 Create custom target](#Create_custom_target)
@@ -325,6 +326,15 @@ The easiest way to do this is to run:
 ```
 
 This opens the file `/etc/systemd/system/*unit*.d/override.conf` in your text editor (creating it if necessary) and automatically reloads the unit when you are done editing.
+
+#### Revert to vendor version
+
+To revert any changes to a unit made using `systemctl edit` do:
+
+```
+# systemctl revert *unit*
+
+```
 
 #### Examples
 

@@ -50,7 +50,7 @@ As Netbeans is written in [Java](/index.php/Java "Java"), the font rendering is 
  `~/.netbeans/*version*/etc/netbeans.conf` 
 ```
 *[...]*
-netbeans_default_options="*[...]*-J-Dswing.aatext=TRUE -J-Dawt.useSystemAAFontSettings=on
+netbeans_default_options="*[...]*-J-Dswing.aatext=TRUE -J-Dawt.useSystemAAFontSettings=on"
 *[...]*
 ```
 

@@ -266,6 +266,8 @@ mpv defaults to using the OpenGL video output device setting on hardware that su
 
  `~/.config/mpv/mpv.conf`  `vo=xv` 
 
+This VO is deprecated and will cause issues in recent versions of mpv, most noticeably is the osd looking very blurry.
+
 It is possible to increase playback performance even more (especially on lower hardware), but this decreases the video quality dramatically in most cases.
 
 The following [options](/index.php/Mpv#Configuration "Mpv") may be considered to increase the video playback performance:

@@ -10,8 +10,8 @@ This article aims to assist users creating their own packages using the Arch Lin
 *   [3 Creating a PKGBUILD](#Creating_a_PKGBUILD)
     *   [3.1 Defining PKGBUILD variables](#Defining_PKGBUILD_variables)
     *   [3.2 PKGBUILD functions](#PKGBUILD_functions)
-        *   [3.2.1 pkgver()](#pkgver.28.29)
-        *   [3.2.2 prepare()](#prepare.28.29)
+        *   [3.2.1 prepare()](#prepare.28.29)
+        *   [3.2.2 pkgver()](#pkgver.28.29)
         *   [3.2.3 build()](#build.28.29)
         *   [3.2.4 check()](#check.28.29)
         *   [3.2.5 package()](#package.28.29)
@@ -109,19 +109,19 @@ There are five functions, listed here in the order they are executed if all of t
 
 **Note:** This does not apply to the `package()` function, as it is required in every PKGBUILD
 
+#### prepare()
+
+This function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function runs right after package extraction, before [pkgver()](#pkgver.28.29) and the build function. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
+
+**Note:** (From `man PKGBUILD`) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
+
 #### pkgver()
 
-Beginning with pacman 4.1, you can update the pkgver variable during a makepkg. `pkgver()` is run right after the sources are fetched and extracted.
+`pkgver()` runs after the sources are fetched, extracted and [prepare()](#prepare.28.29) executed. So you can update the pkgver variable during a makepkg stage.
 
 This is particularly useful if you are [making git/svn/hg/etc. packages](/index.php/VCS_PKGBUILD_Guidelines "VCS PKGBUILD Guidelines"), where the build process may remain the same, but the source could be updated every day, even every hour. The old way of doing this was to put the date into the pkgver field which, if the software was not updated, makepkg would still rebuild it thinking the version had changed. Some useful commands for this are `git describe`, `hg identify -ni`, etc. Please test these before submitting a PKGBUILD, as a failure in the `pkgver()` function can stop a build in its tracks.
 
 **Note:** pkgver cannot contain spaces or hyphens (`-`). Using sed to correct this is common.
-
-#### prepare()
-
-Pacman 4.1 introduces the `prepare()` function. In this function, commands that are used to prepare sources for building are run, such as [patching](/index.php/Patching_in_ABS "Patching in ABS"). This function is run before the build function and after package extraction. If extraction is skipped (`makepkg -e`), then `prepare()` is not run.
-
-**Note:** (From `man PKGBUILD`) The function is run in `bash -e` mode, meaning any command that exits with a non-zero status will cause the function to exit.
 
 #### build()
 

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=447662)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-17，点击[这里](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=467029)可以查看翻译后英文页面的改动。
 
 本文探讨如何制作能在 UEFI 和 BIOS 系统上启动的 Arch Linux 安装 USB 驱动器（也被称为*“闪存驱动器”，“USB记忆棒"，“U盘”等）。制作好的U盘被称为 LiveUSB 系统（类似 LiveCD 系统），因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的性质，关机后所有的更改都会丢失。这样的系统可用于安装 Arch Linux、系统维护或者系统恢复。*
 
@@ -12,9 +12,10 @@
         *   [1.1.2 Windows](#Windows)
             *   [1.1.2.1 Rufus](#Rufus)
             *   [1.1.2.2 USBwriter](#USBwriter)
-            *   [1.1.2.3 Cygwin](#Cygwin)
-            *   [1.1.2.4 dd for Windows](#dd_for_Windows)
-        *   [1.1.3 Mac OS X](#Mac_OS_X)
+            *   [1.1.2.3 Using win32diskimager](#Using_win32diskimager)
+            *   [1.1.2.4 Cygwin](#Cygwin)
+            *   [1.1.2.5 dd for Windows](#dd_for_Windows)
+        *   [1.1.3 macOS](#macOS)
     *   [1.2 手动方法](#.E6.89.8B.E5.8A.A8.E6.96.B9.E6.B3.95)
         *   [1.2.1 GNU/Linux](#GNU.2FLinux_2)
         *   [1.2.2 Windows](#Windows_2)
@@ -54,7 +55,7 @@
 
 ```
 
-`status=progress` 选项会更新传输进度。[coreutils](https://www.archlinux.org/packages/?name=coreutils) 8.24 版本以后支持此选项，如果使用的发行版比较老，可以删除此选项。
+请等待 sync 完成，所有数据都写入之后再拔掉 U 盘。
 
 #### Windows
 
@@ -67,6 +68,10 @@ Since Rufus does not care if the drive is properly formatted or not and provides
 ##### USBwriter
 
 这种方法和 `dd` 一样简单，只要下载 Arch Linux 安装镜像并用 [USBwriter](http://sourceforge.net/p/usbwriter/wiki/Documentation/) 写入U盘即可。
+
+##### Using win32diskimager
+
+[win32diskimager](https://sourceforge.net/projects/win32diskimager/) is another graphical USB iso writing tool for Windows. Simply select your iso image and the target USB drive letter (you may have to format it first to assign it a drive letter), and click Write.
 
 ##### Cygwin
 
@@ -134,38 +139,36 @@ dd if=image.iso of=/dev/sdb bs=4M
 
 ```
 
-#### Mac OS X
+#### macOS
 
 做一些特定操作后才能在 Mac 下使用 `dd` 写入 USB 设备。先插入 USB 设备，OS X 会自动挂载它，然后在终端程序中运行:
+
+先确认设备，打开 `/Applications/Utilities/Terminal` 然后通过下面命令查看所有设备：
 
 ```
 $ diskutil list
 
 ```
 
-用 `mount` 或者 `sudo dmesg | tail`（例如 `/dev/disk2`）来找出 USB 设备的名称，卸载设备上的分区（即，/dev/disk2s1）同时保留设备本身（即，/dev/disk2）：
+USB 设备应该显示类似 `/dev/disk2 (external, physical)`. 通过名称和大小确认设备名，在后面的命令中替换 /dev/diskX。
+
+设备会被自动挂载，在使用 dd 前需要先卸载设备上的分区：
 
 ```
 $ diskutil unmountDisk /dev/disk2
 
 ```
 
-接着我们可以依照上面介绍的方法继续操作（如果用的是 OS X `dd`，用 `/dev/rdisk` 替代 `/dev/disk`，且 `bs=1m`。`rdisk`指的是“raw disk”，在 OS X 上比较快，而 `bs=1m`表示 1 MB 块大小）。
+接着我们可以依照上面介绍的方法继续操作，磁盘名使用 `rdisk`， 在 OS X 上比较快。
 
- `# dd if=image.iso of=/dev/rdisk2 bs=1m` 
 ```
-20480+0 records in
-20480+0 records out
-167772160 bytes transferred in 220.016918 secs (762542 bytes/sec)
+$ sudo dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 ```
 
 此时，在物理拔出U盘前，弹出您的USB驱动器可能是个好主意。
 
-```
-$ diskutil eject /dev/disk2
-
-```
+完成后，Mac OS 可能抱怨 "The disk you inserted was not readable by this computer". 选择忽略。启动盘就做好了。
 
 ### 手动方法
 
@@ -192,13 +195,19 @@ $ diskutil eject /dev/disk2
 ```
 
 *   **注意:** 如果用的是 [Archboot](/index.php/Archboot "Archboot")，以下步骤可省略；如果是[Archiso](/index.php/Archiso "Archiso") 则不可。
-    卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2016**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用*gparted*）。 要修改识别的卷标，可以编辑 */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg*、*archiso_sys64.cfg*和*/mnt/usb/loader/entries/archiso-x86_64.conf*中的 `archisolabel=ARCH_2016**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
+    卷标，或者 UUID 是成功引导必不可少的。默认识别的卷标是 `ARCH_2017**XX**`（XX 和镜像发布月份有关）。因此，FAT32 分区的卷标须设成一样的（可以用*gparted*）。 要修改识别的卷标，可以编辑 */mnt/usb/arch/boot/syslinux/archiso_sys32.cfg*、*archiso_sys64.cfg*和*/mnt/usb/loader/entries/archiso-x86_64.conf*中的 `archisolabel=ARCH_2017**XX**`（最后一个文件仅对 EFI 系统生效）。32位的 ISO 需要类似修改。要让安装镜像识别 UUID 而不是卷标，将这些地方改为 `archiso*device*=/dev/disk/by-uuid/**YOUR-UUID**`。UUID 可通过 `blkid -o value -s UUID /dev/sd**Xn**` 查看。
 
 **警告:** 错误的卷标或 UUID 会导致启动失败。
 
 *   */mnt/usb/arch/boot/syslinux* 里已经安装 syslinux。请按照 [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux")进行重装。
     *   用新 syslinux 的模块（`*.c32` 文件）覆盖原有 syslinux 的模块，以免因版本差异导致启动失败。
-    *   运行：
+
+```
+# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux
+
+```
+
+*   *   运行：
 
 ```
 # extlinux --install /mnt/usb/arch/boot/syslinux
@@ -263,11 +272,6 @@ $ diskutil eject /dev/disk2
 ### GNU/Linux
 
 #### Using GNOME Disk Utility
-
-```
-	+	
-
-```
 
 Linux distributions running GNOME can easily make a live CD through [nautilus](https://www.archlinux.org/packages/?name=nautilus) and [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Simply right-click on the .iso file, and select "Open With Disk Image Writer." When GNOME Disk Utility opens, specify the flash drive from the "Destination" drop-down menu and click "Start Restoring."
 

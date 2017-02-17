@@ -10,7 +10,7 @@
         *   [1.3.2 Install the dependencies](#Install_the_dependencies)
         *   [1.3.3 Client installation](#Client_installation)
             *   [1.3.3.1 Using Windows installer](#Using_Windows_installer)
-            *   [1.3.3.2 Using a existing copy of the game](#Using_a_existing_copy_of_the_game)
+            *   [1.3.3.2 Using an existing copy of the game](#Using_an_existing_copy_of_the_game)
         *   [1.3.4 Compatibility Steps (Optional)](#Compatibility_Steps_.28Optional.29)
         *   [1.3.5 Run the game under Wine](#Run_the_game_under_Wine)
 *   [2 Troubleshooting](#Troubleshooting)
@@ -102,7 +102,7 @@ GC_DONT_GC=1 WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine /PATH/TO/INSTALLER.exe
 
 Follow the steps indicated on the installer menu.
 
-##### Using a existing copy of the game
+##### Using an existing copy of the game
 
 There are several ways to do this, the Windows version (as long as it can run the Installer which probably requires Windows XP or newer) here are a few methods.
 

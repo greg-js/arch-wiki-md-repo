@@ -8,7 +8,6 @@
     *   [2.2 Flash Player plugin](#Flash_Player_plugin)
     *   [2.3 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
     *   [2.4 PDF viewer plugin](#PDF_viewer_plugin)
-        *   [2.4.1 PDF.js](#PDF.js)
     *   [2.5 Certificates](#Certificates)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Troubleshooting](#Troubleshooting)
@@ -73,7 +72,9 @@ To set Chromium as the default browser and to change which applications Chromium
 
 *Pepper Flash* is the Flash Player plugin, using the new Pepper plugin API. To install it for Chromium, [install](/index.php/Install "Install") it the [pepper-flash](https://aur.archlinux.org/packages/pepper-flash/) package.
 
-Make sure the plugin is enabled in `chrome://plugins` and restart Chromium via its menu.
+For Chrome < 57, make sure the plugin is enabled in `chrome://plugins` and restart Chromium via its menu.
+
+Make sure Flash is allowed to run in `chrome://settings/content`.
 
 ### Widevine Content Decryption Module plugin
 
@@ -81,17 +82,15 @@ Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module 
 
 To install the Widevine CDM for Chromium, install the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package.
 
-Make sure the plugin is enabled in `chrome://plugins`.
+For Chrome < 57, make sure the plugin is enabled in `chrome://plugins`.
+
+For Chrome >= 57, make sure *Allow sites to play protected content* is checked in `chrome://settings/content`.
 
 ### PDF viewer plugin
 
 Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin, so installing a third-party plugin is not required.
 
-If you prefer another implementation, disable the *Chromium PDF Viewer* plugin in `chrome://plugins`, and install one of the following alternatives:
-
-#### PDF.js
-
-See the main article: [Browser plugins#PDF.js](/index.php/Browser_plugins#PDF.js "Browser plugins")
+If you prefer another implementation, check *Open PDF files in the default PDF viewer application* at the bottom of `chrome://settings/content`, and install one of the alternatives from [Browser plugins#PDF viewer](/index.php/Browser_plugins#PDF_viewer "Browser plugins").
 
 ### Certificates
 

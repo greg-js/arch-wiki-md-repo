@@ -371,7 +371,7 @@ Pacman download operations (repository DBs, packages, and public keys) can be do
 Advantages:
 
 *   Attackers that can monitor your Internet connection and that specifically targets your machine cannot watch the updates anymore and, because of that, they cannot deduce the packages you have installed, how up to date they are, when or how frequently you update them. An attacker can still learn what software and the versions you use by other means, for instance watching the packets from your http server or probing the machine will show that you have an http server installed and its version.
-*   If the mirror is not an onion, a malicious exit nodes you are going trough can watch the updates, and may decide to attack you, however they probably cannot know who they are attacking.
+*   If the mirror is not an onion, a malicious exit nodes you are going through can watch the updates, and may decide to attack you, however they probably cannot know who they are attacking.
 *   Attackers trying to make your machine believe that there are no new updates to prevent it from getting security fixes will have a harder time doing it since they cannot target your machine specifically.
 
 Disadvantages:
@@ -387,7 +387,7 @@ Reliability with Tor:
 
 Note on gpg:
 
-On stock arch, pacman only trust keys which are either signed by you (That can be done with pacman-key --lsign-key) or signed by 2 of 5 Arch master keys. If a malicious exit node replaces pakcages with ones signed by its key, pacman will not let the user install the package.
+On stock arch, pacman only trust keys which are either signed by you (That can be done with pacman-key --lsign-key) or signed by 2 of 5 Arch master keys. If a malicious exit node replaces packages with ones signed by its key, pacman will not let the user install the package.
 **Warning:** This might not be true for other distributions derived from ARCH, for non-official repositories and for AUR
  `/etc/pacman.conf` 
 ```
@@ -445,7 +445,7 @@ ExitPolicy reject *:*
 
 ### Running a Tor exit node
 
-Any requests from a Tor user to the regular internet obviously need to exit the network somewhere, and exit nodes provide this vital service. To the accessed host, the request will appear as having originated from your machine. This means that running an exit node is generally considered more legally onerous than running other forms of Tor relays. Before becoming an exit relay, you may want to read [Tips for Running an Exit Node With Minimal Harrasment](https://blog.torproject.org/running-exit-node).
+Any requests from a Tor user to the regular internet obviously need to exit the network somewhere, and exit nodes provide this vital service. To the accessed host, the request will appear as having originated from your machine. This means that running an exit node is generally considered more legally onerous than running other forms of Tor relays. Before becoming an exit relay, you may want to read [Tips for Running an Exit Node With Minimal Harassment](https://blog.torproject.org/running-exit-node).
 
 #### Configuration
 
@@ -501,7 +501,7 @@ tor     hard    nofile    32768
 
 ```
 
-Check if the `nofile` (filedescriptor) limit is succesfully raised with `# sudo -u tor 'ulimit -Hn'` or `# sudo -u tor bash` and `# ulimit -Hn`.
+Check if the `nofile` (filedescriptor) limit is successfully raised with `# sudo -u tor 'ulimit -Hn'` or `# sudo -u tor bash` and `# ulimit -Hn`.
 
 ###### Start tor.service as root to bind Tor to privileged ports
 

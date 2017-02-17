@@ -119,7 +119,7 @@ profile test /usr/lib/test/test_binary {
 
 ```
 
-Text preceded by a `@` symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`), tunables (`/etc/apparmor.d/tunables/`) or by the profile itself. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax).
+Strings preceded by a '@' symbol are variables defined by abstractions (`/etc/apparmor.d/abstractions/`), tunables (`/etc/apparmor.d/tunables/`) or by the profile itself. `#include` includes other profile-files directly. Paths followed by a set of characters are [access permissions](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#File_access_rules). Pattern matching is done using [AppArmor's globbing syntax](http://wiki.apparmor.net/index.php/AppArmor_Core_Policy_Reference#AppArmor_globbing_syntax).
 
 Most common use cases are covered by the following statements:
 
@@ -140,7 +140,7 @@ To load (enforce or complain), unload, reload, cache and stat profiles use `appa
 
 ### Preventing circumvention of path-based MAC via links
 
-AppArmor can be circumvented via hardlinks in the standard POSIX security model. However, the kernel [included](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=800179c9b8a1e796e441674776d11cd4c05d61d7) the ability to prevent this vulnerability via the following settings:
+This section refers back to outdated kernels and should be considered obsolete. Previously AppArmor can be circumvented via hardlinks in the standard POSIX security model. However, the kernel [included](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=800179c9b8a1e796e441674776d11cd4c05d61d7) the ability to prevent this vulnerability via the following settings:
 
  `/usr/lib/sysctl.d/50-default.conf` 
 ```
@@ -149,7 +149,7 @@ fs.protected_hardlinks = 1
 fs.protected_symlinks = 1
 ```
 
-Patches distributions like Ubuntu have applied to their kernels as workarounds as not needed anymore.
+Kernel patches distributed by Ubuntu as workarounds are not needed.
 
 ## Tips and tricks
 

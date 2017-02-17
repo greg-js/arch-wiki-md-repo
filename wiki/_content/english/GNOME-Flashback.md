@@ -24,14 +24,6 @@ You can also install the following packages which provide some additional applet
 
 	[https://wiki.gnome.org/Projects/GnomeApplets](https://wiki.gnome.org/Projects/GnomeApplets) || [gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets)
 
-*   **Byzanz Applet** — Record what's happening on your desktop
-
-	[https://git.gnome.org/browse/byzanz/](https://git.gnome.org/browse/byzanz/) || [byzanz](https://aur.archlinux.org/packages/byzanz/)
-
-*   **Command Runner Applet** — Applet for GNOME Flashback panel which periodically displays a command output
-
-	[https://github.com/porridge/command-runner-applet](https://github.com/porridge/command-runner-applet) || [command-runner-applet](https://aur.archlinux.org/packages/command-runner-applet/)
-
 *   **Pomodoro Applet** — GNOME Panel applet for timing the intervals used in the Pomodoro Technique(tm)
 
 	[https://github.com/stump/pomodoro-applet](https://github.com/stump/pomodoro-applet) || [pomodoro-applet](https://aur.archlinux.org/packages/pomodoro-applet/)

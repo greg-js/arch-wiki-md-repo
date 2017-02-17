@@ -8,6 +8,7 @@ Neovim is a fork of [Vim](/index.php/Vim "Vim") aiming to improve user experienc
         *   [2.1.1 Loading vim addons](#Loading_vim_addons)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Replacing vi and vim with neovim](#Replacing_vi_and_vim_with_neovim)
+    *   [3.2 Symlinking init.vim to .vimrc](#Symlinking_init.vim_to_.vimrc)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -38,6 +39,26 @@ set rtp^=/usr/share/vim/vimfiles/
 Setting `$VISUAL` and `$EDITOR` [environment variables](/index.php/Environment_variables "Environment variables") should be sufficient in most cases.
 
 Some applications may hardcode vi or vim as default editor, to use *neovim* in their place, install [neovim-drop-in](https://aur.archlinux.org/packages/neovim-drop-in/).
+
+### Symlinking init.vim to .vimrc
+
+As neovim is mostly compatible with standard vim, you can symlink `nvim/init.vim` to your old `.vimrc` to keep old configuration options:
+
+```
+$ ln -s ~/.vimrc ~/.config/nvim/init.vim
+
+```
+
+If you want some lines to specific to each version, you can use an `if` block in your `.vimrc` file:
+
+```
+if has('nvim')
+    " Neovim specific commands
+else
+    " Standard vim specific commands
+endif
+
+```
 
 ## See also
 
