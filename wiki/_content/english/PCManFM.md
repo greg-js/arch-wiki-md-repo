@@ -128,7 +128,7 @@ You can configure what terminal emulator PCManFM should use for *Tools > Open Cu
 
 ### Integrate an archiver
 
-You can choose the integrated archiver under *Edit > Preferences > Advanced*. PCManFM supports [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) and [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/).
+You can choose the integrated archiver under *Edit > Preferences > Advanced*. PCManFM supports [file-roller](https://www.archlinux.org/packages/?name=file-roller), [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) (or [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)), [engrampa](https://www.archlinux.org/packages/?name=engrampa), [ark](https://www.archlinux.org/packages/?name=ark) and [squeeze-git](https://aur.archlinux.org/packages/squeeze-git/).
 
 ### Templates are accessible under *Create New...*
 

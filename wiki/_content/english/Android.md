@@ -77,11 +77,12 @@ There are 3 steps that need to be performed before you can develop Android appli
 
 **Note:** If you plan to install [#Android Studio](#Android_Studio) and want the IDE to manage your SDK installation, you do not need to install these packages
 
-Before developing Android applications, you need to install the Android SDK, which is made of 3 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
+Before developing Android applications, you need to install the Android SDK, which is made of 4 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 
-1.  [android-sdk](https://aur.archlinux.org/packages/android-sdk/)
-2.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)
-3.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)
+1.  [android-platform](https://aur.archlinux.org/packages/android-platform/)
+2.  [android-sdk](https://aur.archlinux.org/packages/android-sdk/)
+3.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)
+4.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)
 
 If supporting older devices, or working with older code, [android-support](https://aur.archlinux.org/packages/android-support/) and [android-support-repository](https://aur.archlinux.org/packages/android-support-repository/) might be required.
 

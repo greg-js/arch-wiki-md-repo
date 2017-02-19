@@ -1,4 +1,4 @@
-This document covers the steps to creating and/or applying patches to packages when using [ABS](/index.php/ABS "ABS").
+This article covers how to create and how to apply patches to packages in the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS).
 
 ## Contents
 
@@ -9,22 +9,21 @@ This document covers the steps to creating and/or applying patches to packages w
 
 ## Creating patches
 
-If you are attempting to use a patch that you got from elsewhere (ie: you downloaded a patch to the Linux kernel), you can skip to the next section. However, if you need to edit source code, make files, configuration files, etc, you will need to be able to create a patch.
+A patch describes a set of line changes for one or multiple files. Patches are typically used to automate the changing of source code.
 
-**Note:** If you need only to change one or two lines in a file (e.g. a Makefile), you may be better off investigating the properties of `sed` instead.
+**Note:** If you only need to change one or two lines, you might want to use `sed` instead.
 
-Creating a patch for a package involves creating two copies of the package, editing the new copy, and creating a unified diff between the two files. When creating an Arch Linux package, this can be done as follows:
+The `diff` tool compares files line by line if you save its output you have got a patch, e.g. `diff -ura foo bar > patch`. If you pass directories `diff` will compare the files they contain.
 
-1.  Add the download source of the file to the source array of the `PKGBUILD` you are creating. Of course, if you are altering an existing PKGBUILD, this step is taken care of.
-2.  Create a dummy (empty, or containing a single `echo` command is good) build() function. If you are altering an existing `PKGBUILD`, you should comment out most of the lines of the build function, as you are likely going to be running `makepkg` several times, and you will not want to spend a lot of time waiting for a broken package to build.
-3.  Run `makepkg -o` This will download the source files you need to edit into the `src` directory.
-4.  Change to the `src` directory. In standard cases, there will be a directory containing a bunch of files that were unzipped or untarred from a downloaded archive there (Sometimes it's a single file, but diffs work on multiple files too!) You should make two copies of these directories. One is a pristine copy that makepkg will not be allowed to manipulate, and one will be the new copy that you will create a patch from. You can name the two copies `package.pristine` and `package.new` or something similar.
-5.  Change into the `package.new` directory. Edit whichever files need to be edited. The changes needed depend on what the patch has to do; it might correct a Makefile paths, it may have to correct source errors (for example, to agree with `gcc 3.4`), and so on. You can also edit files in subfolders of the `package.new` directory, of course. **Do not** issue any commands that will inadvertently create a bunch of files in the `package.new` directory; ie: do not try to compile the program to make sure your changes work. The problem is that all the new files will show up in the patch, and you do not want that. Instead, apply the patch to another copy of the directory (**not** the pristine directory), either manually with the `patch` command, or in the `PKGBUILD` (described below) and test the changes from there.
-6.  Change back to the `src` directory.
-7.  Run `diff -aur package.pristine package.new` This will output all the changes you made in unified diff format. You can scan these to make sure the patch is good.
-8.  Run `diff -aur package.pristine package.new > package.patch` to capture all the changes in a file named `package.patch`. This is the file that will be used by patch. You may now apply the changes to a copy of the original directory and make sure they are working properly. You should also check to ensure that the patch does not contain any extraneous details. For example, you do not want the patch to convert all tabs in the files you edited to spaces because your text editor did that behind your back. You can edit the patch either using a text editor, or to be safer (and not accidentally introduce errors into the diff file), edit the original files and create the patch afresh.
+1.  Delete the `src` directory if you have already built the package.
+2.  Run `makepkg -o` which will download and extract the source files, specified in `PKGBUILD`, but not build them.
+3.  Create two copies of the extracted directory in the `src` directory, one as a pristine copy and one for your altered version. We will call them `package.orig` and `package.new`.
+4.  Make your changes in the `package.new` directory.
+5.  Run `diff -ura package.orig package.new --color` and check if the patch looks good.
+6.  Run `diff -ura package.orig package.new > package.patch` to create the patch.
+7.  Change into the `package.new` directory and apply the patch using `patch -p1 < ../package.patch`. Verify that the patch is working by building and installing the modified package with `makepkg -ei`.
 
-**Note:** [git](/index.php/Git "Git") is also able to generate patch via `git diff -p -u commit_hash > patchfile.diff` inside a working tree.
+**Note:** You can also create patches with [Git](/index.php/Git "Git") using `git diff`.
 
 ## Applying patches
 

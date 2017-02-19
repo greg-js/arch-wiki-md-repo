@@ -2028,15 +2028,15 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[http://getnightingale.com/](http://getnightingale.com/) || [nightingale-git](https://aur.archlinux.org/packages/nightingale-git/)
 
-*   **Noise** — Simple, fast, and good looking music player.
+*   **Noise** — Simple, fast, and good looking music player. The official elementary music player.
 
 	[https://launchpad.net/noise](https://launchpad.net/noise) || [noise-player](https://www.archlinux.org/packages/?name=noise-player)
 
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 
-	[http://nuvolaplayer.fenryxo.cz/](http://nuvolaplayer.fenryxo.cz/) || [nuvolaplayer](https://aur.archlinux.org/packages/nuvolaplayer/)
+	[https://tiliado.eu/nuvolaplayer/](https://tiliado.eu/nuvolaplayer/) || [nuvolaplayer](https://aur.archlinux.org/packages/nuvolaplayer/)
 
-*   **pithos** — Python/GTK Pandora desktop client.
+*   **pithos** — Python/GTK Pandora Radio desktop client.
 
 	[https://pithos.github.io/](https://pithos.github.io/) || [pithos](https://aur.archlinux.org/packages/pithos/)
 
@@ -3134,7 +3134,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK+.
 
-	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || [xarchiver](https://www.archlinux.org/packages/?name=xarchiver)
+	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) or [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
 
 #### Comparison, diff, merge
 
@@ -5321,7 +5321,7 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://aur.archlinux.org/packages/abduco/)
 
-*   **dtach** — Program that emulates the detach feature of [screen](/index.php/Screen "Screen").
+*   **[dtach](/index.php/Dtach "Dtach")** — Program that emulates the detach feature of [screen](/index.php/Screen "Screen").
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
 

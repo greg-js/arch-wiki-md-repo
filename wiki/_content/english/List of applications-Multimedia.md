@@ -530,15 +530,15 @@ See also: [List of MPD clients](/index.php/Music_Player_Daemon#Clients "Music Pl
 
 	[http://getnightingale.com/](http://getnightingale.com/) || [nightingale-git](https://aur.archlinux.org/packages/nightingale-git/)
 
-*   **Noise** — Simple, fast, and good looking music player.
+*   **Noise** — Simple, fast, and good looking music player. The official elementary music player.
 
 	[https://launchpad.net/noise](https://launchpad.net/noise) || [noise-player](https://www.archlinux.org/packages/?name=noise-player)
 
 *   **Nuvola Player** — Integrated Google Music, 8tracks and Hype Machine player.
 
-	[http://nuvolaplayer.fenryxo.cz/](http://nuvolaplayer.fenryxo.cz/) || [nuvolaplayer](https://aur.archlinux.org/packages/nuvolaplayer/)
+	[https://tiliado.eu/nuvolaplayer/](https://tiliado.eu/nuvolaplayer/) || [nuvolaplayer](https://aur.archlinux.org/packages/nuvolaplayer/)
 
-*   **pithos** — Python/GTK Pandora desktop client.
+*   **pithos** — Python/GTK Pandora Radio desktop client.
 
 	[https://pithos.github.io/](https://pithos.github.io/) || [pithos](https://aur.archlinux.org/packages/pithos/)
 

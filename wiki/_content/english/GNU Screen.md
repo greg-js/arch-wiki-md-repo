@@ -27,36 +27,36 @@
 
 ## Installation
 
-GNU Screen can be [installed](/index.php/Pacman "Pacman") using the [screen](https://www.archlinux.org/packages/?name=screen) package found in the [official repositories](/index.php/Official_repositories "Official repositories").
+GNU Screen can be [installed](/index.php/Pacman "Pacman") using the [screen](https://www.archlinux.org/packages/?name=screen) package.
 
 ## Usage
 
-Commands are entered pressing the "escape key" `ctrl+a` and then the key binding.
+Commands are entered pressing the "escape key" `Ctrl+a` and then the key binding.
 
-Some users find the default escape key `ctrl+a` inconvenient. The escape key can be changed to another key as [described below](#Change_the_escape_key).
+Some users find the default escape key `Ctrl+a` inconvenient. The escape key can be changed to another key as [described below](#Change_the_escape_key).
 
 ### Common Commands
 
-*   `ctrl+a` `?` Displays commands and its defaults (VERY important)
-*   `ctrl+a` `:` Enter to the command prompt of screen
-*   `ctrl+a` `"` Window list
-*   `ctrl+a` `0` opens window 0
-*   `ctrl+a` `A` Rename the current window
-*   `ctrl+a` `a` Sends `ctrl+a` to the current window
-*   `ctrl+a` `c` Create a new window (with shell)
-*   `ctrl+a` `S` Split current region into two regions
-*   `ctrl+a` `tab` Switch the input focus to the next region
-*   `ctrl+a` `ctrl+a` Toggle between current and previous region
-*   `ctrl+a` `Esc` Enter Copy Mode (use enter to select a range of text)
-*   `ctrl+a` `]` Paste text
-*   `ctrl+a` `Q` Close all regions but the current one
-*   `ctrl+a` `X` Close the current region
-*   `ctrl+a` `d` Detach from the current screen session, and leave it running. Use `screen -r` to resume
+*   `Ctrl+a` `?` Displays commands and its defaults (VERY important)
+*   `Ctrl+a` `:` Enter to the command prompt of screen
+*   `Ctrl+a` `"` Window list
+*   `Ctrl+a` `0` opens window 0
+*   `Ctrl+a` `A` Rename the current window
+*   `Ctrl+a` `a` Sends `Ctrl+a` to the current window
+*   `Ctrl+a` `c` Create a new window (with shell)
+*   `Ctrl+a` `S` Split current region into two regions
+*   `Ctrl+a` `tab` Switch the input focus to the next region
+*   `Ctrl+a` `Ctrl+a` Toggle between current and previous region
+*   `Ctrl+a` `Esc` Enter Copy Mode (use enter to select a range of text)
+*   `Ctrl+a` `]` Paste text
+*   `Ctrl+a` `Q` Close all regions but the current one
+*   `Ctrl+a` `X` Close the current region
+*   `Ctrl+a` `d` Detach from the current screen session, and leave it running. Use `screen -r` to resume
 
 ### Command Prompt Commands
 
-*   `ctrl+a` `:quit` Closes all windows and closes screen session
-*   `ctrl+a` `:source ~/.screenrc` Reloads screenrc configuration file (can alternatively use /etc/screenrc)
+*   `Ctrl+a` `:quit` Closes all windows and closes screen session
+*   `Ctrl+a` `:source ~/.screenrc` Reloads screenrc configuration file (can alternatively use /etc/screenrc)
 
 ### Named sessions
 
@@ -69,7 +69,7 @@ $ screen -S *session_name*
 
 To (re)name an existing a session, run the following command while screen is running:
 
-`ctrl+a` `:sessionname *session_name*`
+`Ctrl+a` `:sessionname *session_name*`
 
 To print a list of *pid.tty.host* strings identifying your screen sessions:
 
@@ -117,13 +117,13 @@ WantedBy=multi-user.target
 
 ### Change the escape key
 
-It can be a good idea to change the default escape key, not only because "a" is usually typed with the left pinky, but also because `ctrl+a` is mapped to the common command `beginning-of-line` in [GNU Readline](/index.php/Readline "Readline") and [Bash](/index.php/Bash "Bash")-like shells.
+It can be a good idea to change the default escape key, not only because "a" is usually typed with the left pinky, but also because `Ctrl+a` is mapped to the common command `beginning-of-line` in [GNU Readline](/index.php/Readline "Readline") and [Bash](/index.php/Bash "Bash")-like shells.
 
 The escape key can be changed with the `escape` option in `~/.screenrc`, or the `-e` option to `screen`.
 
-For example, if you find that you rarely type `ctrl+j` in your shell or editor, you could use `escape ^Jj` to set the escape key to `ctrl-j`. The second "j" means that a literal `ctrl-j` can be sent to the terminal via the sequence `ctrl-j j`. For [Dvorak](/index.php/Dvorak "Dvorak") keyboard users, `ctrl-t` (`escape ^Tt`) might be more convenient.
+For example, if you find that you rarely type `Ctrl+j` in your shell or editor, you could use `escape ^Jj` to set the escape key to `Ctrl+j`. The second "j" means that a literal `Ctrl+j` can be sent to the terminal via the sequence `Ctrl+j j`. For [Dvorak](/index.php/Dvorak "Dvorak") keyboard users, `Ctrl+t` (`escape ^Tt`) might be more convenient.
 
-More exotic options include `escape ``` which sets the escape key to ```, or `escape ^^^` which sets it to `ctrl+^`.
+More exotic options include `escape ``` which sets the escape key to ```, or `escape ^^^` which sets it to `Ctrl+^`.
 
 The escape key is also called the "command character" in Screen documentation.
 
@@ -142,10 +142,10 @@ screen 1
 
 ### Nested Screen Sessions
 
-It is possible to get stuck in a nested screen session. A common scenario: you start an ssh session from within a screen session. Within the ssh session, you start screen. By default, the outer screen session that was launched first responds to `ctrl+a` commands. To send a command to the inner screen session, use `ctrl+a` `a`, followed by your command. For example:
+It is possible to get stuck in a nested screen session. A common scenario: you start an ssh session from within a screen session. Within the ssh session, you start screen. By default, the outer screen session that was launched first responds to `Ctrl+a` commands. To send a command to the inner screen session, use `Ctrl+a` `a`, followed by your command. For example:
 
-*   `ctrl+a` `a` `d` Detaches the inner screen session.
-*   `ctrl+a` `a` `K` Kills the inner screen session.
+*   `Ctrl+a` `a` `d` Detaches the inner screen session.
+*   `Ctrl+a` `a` `K` Kills the inner screen session.
 
 ### Use 256 colors
 
@@ -233,7 +233,7 @@ This will give you something like `screen (0 bash)` in the title of your termina
 
 ### Use X scrolling mechanism
 
-The scroll buffer of GNU Screen can be accessed with `ctrl+a` `[`. However, this is very inconvenient. To use the scroll bar of e.g. xterm or konsole, add the following line:
+The scroll buffer of GNU Screen can be accessed with `Ctrl+a` `[`. However, this is very inconvenient. To use the scroll bar of e.g. xterm or konsole, add the following line:
 
  `~/.screenrc` 
 ```

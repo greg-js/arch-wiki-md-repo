@@ -18,14 +18,15 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 *   [1 Hardware](#Hardware)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Touchpad/TrackPoint](#Touchpad.2FTrackPoint)
-    *   [2.2 Suspend / Resume](#Suspend_.2F_Resume)
-    *   [2.3 Hibernate / Resume](#Hibernate_.2F_Resume)
-    *   [2.4 Fingerprint Sensor](#Fingerprint_Sensor)
-    *   [2.5 ALSA Beep](#ALSA_Beep)
-    *   [2.6 Function keys](#Function_keys)
-    *   [2.7 Video Issues](#Video_Issues)
-    *   [2.8 Smartcard Reader](#Smartcard_Reader)
+    *   [2.1 flip_done timed out freezes](#flip_done_timed_out_freezes)
+    *   [2.2 Touchpad/TrackPoint](#Touchpad.2FTrackPoint)
+    *   [2.3 Suspend / Resume](#Suspend_.2F_Resume)
+    *   [2.4 Hibernate / Resume](#Hibernate_.2F_Resume)
+    *   [2.5 Fingerprint Sensor](#Fingerprint_Sensor)
+    *   [2.6 ALSA Beep](#ALSA_Beep)
+    *   [2.7 Function keys](#Function_keys)
+    *   [2.8 Video Issues](#Video_Issues)
+    *   [2.9 Smartcard Reader](#Smartcard_Reader)
 *   [3 See also](#See_also)
 
 ## Hardware
@@ -71,6 +72,15 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ```
 
 ## Configuration
+
+### flip_done timed out freezes
+
+See [this thread](https://bbs.archlinux.org/viewtopic.php?pid=1689914#p1689914) for some discussion. You can either move back to a <4.8 kernel by using linux-lts, or add the following parameter to your kernel command line, which seems to help (it disables S-Video, but there's no such connector on a T460s):
+
+```
+video=SVIDEO-1:d
+
+```
 
 ### Touchpad/TrackPoint
 

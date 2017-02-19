@@ -100,7 +100,7 @@ Install the [plasma-meta](https://www.archlinux.org/packages/?name=plasma-meta) 
 
 To install the full set of KDE Applications, install the [kde-applications](https://www.archlinux.org/groups/x86_64/kde-applications/) group or the [kde-applications-meta](https://www.archlinux.org/packages/?name=kde-applications-meta) meta-package. Note that this will only install applications, it will not install any version of the Plasma Desktop.
 
-If you need language files, install `kde-l10n-**yourlanguagehere**` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see [this link](https://www.archlinux.org/packages/extra/any/kde-l10n/).
+If you need language files, install `kde-l10n-***yourlanguagehere***` (e.g. [kde-l10n-de](https://www.archlinux.org/packages/?name=kde-l10n-de) for the German language). For a full list of available languages see the [kde-l10n split package](https://www.archlinux.org/packages/extra/any/kde-l10n/).
 
 ### Unstable releases
 
@@ -124,7 +124,7 @@ To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec st
 
 ## Configuration
 
-Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing *systemsettings5*.
+Most settings for KDE applications are stored in `~/.config`, but some older applications may use `~/.kde4`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing `systemsettings5`.
 
 Some Frameworks 5 applications can use KDE 4 configuration, after moving the configuration files to the new location. Examples are:
 
@@ -568,11 +568,13 @@ To enable display resolution management and multiple monitors in Plasma 5, insta
 
 **Note:** Since plasma 5.8 release, this workaround is no longer needed. Pressing `Super` key launches the application launcher. This works by looking for a launcher which has a global keyboard shortcut set.
 
+To disable this feature you currently can use `kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""`.
+
 Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you do not want to start it manually.
 
 ### Enabling touchpad tap to click on plasma wayland session
 
-Currently, it's not possible to [configure tap to click via systemsettings](https://bugs.kde.org/show_bug.cgi?id=363109) on plasma wayland session. [A workaround](https://bugs.kde.org/show_bug.cgi?id=366605#c4) is provided to configure tap to click on plasma wayland session via dbus.
+Currently, it is not possible to [configure tap to click via systemsettings](https://bugs.kde.org/show_bug.cgi?id=363109) on plasma wayland session. [A workaround](https://bugs.kde.org/show_bug.cgi?id=366605#c4) is provided to configure tap to click on plasma wayland session via dbus.
 
 Here are simplified steps to get touchpad tap to click enabled on plasma wayland session.
 
@@ -766,7 +768,7 @@ For more information, consult this [KDE Developer blog entry](https://apachelog.
 
 KDE begins with desktop effects enabled. Older cards may be insufficient for 3D desktop acceleration. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`.
 
-**Note:** You may encounter such problems with 3D desktop performance even when using a more powerful graphics card. Make sure the GPU driver and it's components has been successfully installed.
+**Note:** You may encounter such problems with 3D desktop performance even when using a more powerful graphics card. Make sure the GPU driver and its components has been successfully installed.
 
 #### Desktop compositing is disabled on my system with a modern Nvidia GPU
 

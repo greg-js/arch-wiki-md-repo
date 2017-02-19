@@ -110,6 +110,21 @@ If using a iBFT compatible NIC or boot device (such as ipxe) you can use auto co
 
 ii) `/mnt/usr/lib/initcpio/hooks/iscsi`
 
+```
+run_hook ()
+{
+    modprobe iscsi_tcp
+    modprobe iscsi_ibft
+
+    echo "Network configuration based on iBFT"
+    iscsistart -N || echo "Unable to configure network"
+
+    echo "iSCSI auto connect based on iBFT"
+    iscsistart -b || echo "Unable to auto connect"
+}
+
+```
+
 #### Manually Setting the iSCSI Target
 
 If you are not using an iBFT compatible boot rom you must explicitly setup the network and the iscsi target manually.

@@ -98,10 +98,11 @@ $ flatpak uninstall *name*
 
 ### Adding Flatpak .desktop files to your menu
 
-Some window managers and launchers do not scan the Flatpak directory by default. If you can edit the list of directories scanned, add this to it:
+Flatpak expects window managers to respect the XDG_DATA_DIRS environment variable to discover applications. This may require restarting the session or the launcher may not support this. In such a case where you can edit the list of directories scanned, add these to it:
 
 ```
 ~/.local/share/flatpak/exports/applications
+/var/lib/flatpak/exports/applications
 
 ```
 
@@ -285,3 +286,4 @@ $ flatpak run org.gnome.gedit
 *   [Official website](http://flatpak.org)
 *   [Official Github wiki](https://github.com/flatpak/flatpak/wiki)
 *   [Gnome SandboxedApps](https://wiki.gnome.org/Projects/SandboxedApps)
+*   [KDE Testing Runtime and Applications](https://community.kde.org/Guidelines_and_HOWTOs/Flatpak)

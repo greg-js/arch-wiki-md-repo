@@ -67,6 +67,13 @@ Multiple options may be combined in a single call. If there's no guake instance 
 
 To display list of all available options, type `guake --help`.
 
+There are 2 ways of starting guake while applying these scripts
+
+*   copying the below example into a file like `guake-init.sh` making it executable and running that file instead of guake
+*   right clicking on `Guake Terminal > Preferences > General` and adding the path to the `guake-init.sh` script in the "Path to script executed on Guake start:" section while making certain to comment out `/usr/bin/guake &` from the script below
+
+The second option is preferable if you want the script to run regardless of how guake is started and you can still instruct guake not to run the script with `guake --no-startup-script` if needed.
+
 Example:
 
 ```

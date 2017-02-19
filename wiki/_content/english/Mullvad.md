@@ -83,7 +83,7 @@ Make it executable:
 
 ```
 
-The VPN can then be [controlled](/index.php/Enabled "Enabled") through `openvpn@mullvad.service`.
+The VPN can then be [controlled](/index.php/Enabled "Enabled") through `openvpn-client@mullvad.service`.
 
 ## Mullvad Client
 

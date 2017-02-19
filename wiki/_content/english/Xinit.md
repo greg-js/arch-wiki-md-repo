@@ -122,8 +122,6 @@ $ pkill -15 -t tty"$XDG_VTNR" Xorg
 
 ```
 
-The program `xprop` is provided by the [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) package.
-
 ## Autostart X at login
 
 Make sure that *startx* is properly [configured](#Configuration).

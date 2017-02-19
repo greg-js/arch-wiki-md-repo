@@ -874,7 +874,7 @@ Server = https://repo.holocm.org/archlinux/x86_64
 *   **Maintainer**: [Anna Ivanova](https://aur.archlinux.org/account/kalterfive)
 *   **Upstream page**: [https://deadsoftware.ru/files/linux-kalterfx](https://deadsoftware.ru/files/linux-kalterfx)
 *   **Description**: Kernel packages based on the [-pf](https://wiki.archlinux.org/index.php/Kernels#-pf) kernel, with applied [reiser4](/index.php/Reiser4 "Reiser4") and UKSM patches
-*   **Key** ([key.asc](https://keybase.io/kalterfive/key.asc)): `A0C04F15`
+*   **Key** ([key.asc](https://keybase.io/kalterfive/key.asc)): `24E3A929`
 
 ```
 [linux-kalterfx]

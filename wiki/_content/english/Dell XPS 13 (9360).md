@@ -51,7 +51,7 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 ### NVME Power Saving Patch
 
-Andy Lutomirski has released version 4 of his patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR package below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
+Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR or repository linked below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/) (check out [[1]](http://linuxnvme.damige.net/) for compiled packages)
 

@@ -22,29 +22,28 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [4.3 Multiple monitors](#Multiple_monitors)
         *   [4.3.1 Outputs wired to the Intel chip](#Outputs_wired_to_the_Intel_chip)
         *   [4.3.2 Output wired to the NVIDIA chip](#Output_wired_to_the_NVIDIA_chip)
-*   [5 Switch between discrete and integrated like Windows](#Switch_between_discrete_and_integrated_like_Windows)
-*   [6 CUDA without Bumblebee](#CUDA_without_Bumblebee)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 [VGL] ERROR: Could not open display :8](#.5BVGL.5D_ERROR:_Could_not_open_display_:8)
-    *   [7.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_.22GLX.22_missing_on_display_.22:0.0.22)
-    *   [7.3 [ERROR]Cannot access secondary GPU: No devices detected](#.5BERROR.5DCannot_access_secondary_GPU:_No_devices_detected)
-        *   [7.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA.280.29:_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
-        *   [7.3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
-        *   [7.3.3 Could not load GPU driver](#Could_not_load_GPU_driver)
-        *   [7.3.4 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
-    *   [7.4 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
-    *   [7.5 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
-    *   [7.6 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
-    *   [7.7 Video tearing](#Video_tearing)
-    *   [7.8 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
-    *   [7.9 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
-    *   [7.10 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
-    *   [7.11 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
-    *   [7.12 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
-    *   [7.13 Optirun doesn't work, no debug output](#Optirun_doesn.27t_work.2C_no_debug_output)
-    *   [7.14 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
-    *   [7.15 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
-*   [8 See also](#See_also)
+*   [5 CUDA without Bumblebee](#CUDA_without_Bumblebee)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 [VGL] ERROR: Could not open display :8](#.5BVGL.5D_ERROR:_Could_not_open_display_:8)
+    *   [6.2 Xlib: extension "GLX" missing on display ":0.0"](#Xlib:_extension_.22GLX.22_missing_on_display_.22:0.0.22)
+    *   [6.3 [ERROR]Cannot access secondary GPU: No devices detected](#.5BERROR.5DCannot_access_secondary_GPU:_No_devices_detected)
+        *   [6.3.1 NVIDIA(0): Failed to assign any connected display devices to X screen 0](#NVIDIA.280.29:_Failed_to_assign_any_connected_display_devices_to_X_screen_0)
+        *   [6.3.2 Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29)
+        *   [6.3.3 Could not load GPU driver](#Could_not_load_GPU_driver)
+        *   [6.3.4 NOUVEAU(0): [drm] failed to set drm interface version](#NOUVEAU.280.29:_.5Bdrm.5D_failed_to_set_drm_interface_version)
+    *   [6.4 /dev/dri/card0: failed to set DRM interface version 1.4: Permission denied](#.2Fdev.2Fdri.2Fcard0:_failed_to_set_DRM_interface_version_1.4:_Permission_denied)
+    *   [6.5 ERROR: ld.so: object 'libdlfaker.so' from LD_PRELOAD cannot be preloaded: ignored](#ERROR:_ld.so:_object_.27libdlfaker.so.27_from_LD_PRELOAD_cannot_be_preloaded:_ignored)
+    *   [6.6 Fatal IO error 11 (Resource temporarily unavailable) on X server](#Fatal_IO_error_11_.28Resource_temporarily_unavailable.29_on_X_server)
+    *   [6.7 Video tearing](#Video_tearing)
+    *   [6.8 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
+    *   [6.9 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
+    *   [6.10 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
+    *   [6.11 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
+    *   [6.12 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
+    *   [6.13 Optirun doesn't work, no debug output](#Optirun_doesn.27t_work.2C_no_debug_output)
+    *   [6.14 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
+    *   [6.15 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
+*   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
 
@@ -418,30 +417,6 @@ The tool will also start bumblebee (which may be left as default install). See t
 **Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `UseEDID` and `Option "AutoAddDevices" "false"` to `"true"`, if you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
 
 When run in a terminal, it will daemonize itself unless the `-f` switch is used. The advantage of using it in foreground mode is that once the external display is disconnected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
-
-## Switch between discrete and integrated like Windows
-
-In Windows, the way that Optimus works is NVIDIA has a whitelist of applications that require Optimus for, and you can add applications to this whitelist as needed. When you launch the application, it automatically decides which card to use.
-
-To mimic this behavior in Linux, you can use [libgl-switcheroo-git](https://aur.archlinux.org/packages/libgl-switcheroo-git/). After installing, you can add the below in your .xprofile.
-
- `~/.xprofile` 
-```
-mkdir -p /tmp/libgl-switcheroo-$USER/fs
-gtkglswitch &
-libgl-switcheroo /tmp/libgl-switcheroo-$USER/fs &
-```
-
-To enable this, you must add the below to the shell that you intend to launch applications from (I simply added it to the .xprofile file)
-
-```
-export LD_LIBRARY_PATH=/tmp/libgl-switcheroo-$USER/fs/\$LIB${LD_LIBRARY_PATH+:}$LD_LIBRARY_PATH
-
-```
-
-Once this has all been done, every application you launch from this shell will pop up a GTK+ window asking which card you want to run it with (you can also add an application to the whitelist in the configuration). The configuration is located in `$XDG_CONFIG_HOME/libgl-switcheroo.conf`, usually `~/.config/libgl-switcheroo.conf`
-
-**Note:** This tool acts by making a FUSE file system and then adding it into the dynamic library searching path, which may lead to slow speed or even segmentation faults when launching a software.
 
 ## CUDA without Bumblebee
 

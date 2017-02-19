@@ -78,7 +78,7 @@ For a list of popular add-ons, see [Mozilla's add-on list sorted by popularity](
 
 Search engines can be added to Firefox through normal add-ons, see [this page](https://addons.mozilla.org/firefox/search-tools/) for a list of available search engines.
 
-A very extensive list of search engines can be found [here](http://mycroft.mozdev.org/).
+A very extensive list of search engines can be found at the [Mycroft Project](http://mycroftproject.com/).
 
 Also, you can use the [add-to-searchbar](https://firefox.maltekraus.de/extensions/add-to-search-bar) extension to add a search to your search bar from any web site, by simply right clicking on the site's search field and selecting *Add to Search Bar...*
 
@@ -136,7 +136,7 @@ Please note that the first line must contain exactly `//`. The syntax of the fil
 
 Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package needs to be installed.
 
-Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](http://www.quirksmode.org/html5/tests/video.html) or [audio-test page](http://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
+Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](https://www.quirksmode.org/html5/tests/video.html) or [audio-test page](https://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
 Since Firefox 49 HTML5 DRM playback is supported by the Google Widevine CDM, it is however not enabled by default. See *Preferences > Content > DRM content* if you want to learn more.
 
@@ -260,11 +260,11 @@ Alternatively, having the traditional scroll cursor on middle-click (default beh
 
 ### Backspace does not work as the 'Back' button
 
-As per [this article](http://ubuntu.wordpress.com/2006/12/21/fix-firefox-backspace-to-take-you-to-the-previous-page/), the feature has been removed in order to fix a bug. To re-introduce the original behavior go to `about:config` and set the `browser.backspace_action` option to **0** (zero).
+As per [this article](https://embraceubuntu.com/2006/12/21/fix-firefox-backspace-to-take-you-to-the-previous-page/), the feature has been removed in order to fix a bug. To re-introduce the original behavior go to `about:config` and set the `browser.backspace_action` option to **0** (zero).
 
 ### Firefox does not remember login information
 
-It may be due to a corrupted `cookies.sqlite` file in [Firefox's profile](http://support.mozilla.com/en-US/kb/Profiles#How_to_find_your_profile) folder. In order to fix this, just rename or remove `cookie.sqlite` while Firefox is not running.
+It may be due to a corrupted `cookies.sqlite` file in [Firefox's profile](https://support.mozilla.org/t5/Firefox/Profiles-Where-Firefox-stores-your-bookmarks-passwords-and-other/ta-p/4608#w_how-do-i-find-my-profile) folder. In order to fix this, just rename or remove `cookie.sqlite` while Firefox is not running.
 
 Open a terminal of choice and type the following:
 
@@ -319,7 +319,7 @@ Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
 
 ### "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear
 
-From the [Mozilla support](http://support.mozilla.com/en-US/questions/767751) site:
+From the [Mozilla support](https://support.mozilla.com/en-US/questions/767751) site:
 
 1.  Type `about:config` in the address bar.
 2.  Set `browser.warnOnQuit` to **true**.
@@ -351,7 +351,7 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[3]](http://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[4]](http://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[5]](http://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[3]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[4]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[5]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
@@ -394,8 +394,8 @@ You can try setting `media.navigator.audio.full_duplex` property to `false` at `
 
 ## See also
 
-*   [Official website](http://www.mozilla.org/firefox/)
-*   [Mozilla Foundation](http://www.mozilla.org/)
+*   [Official website](https://www.mozilla.org/firefox/)
+*   [Mozilla Foundation](https://www.mozilla.org/)
 *   [Firefox wiki](https://wiki.mozilla.org/Firefox)
 *   [Firefox Add-ons](https://addons.mozilla.org/)
 *   [Firefox themes](https://addons.mozilla.org/firefox/themes/)

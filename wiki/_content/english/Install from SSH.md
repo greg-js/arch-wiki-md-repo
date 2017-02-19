@@ -36,24 +36,6 @@ $ ssh root@*ip.address.of.target*
 
 ```
 
-From here one is presented with the live environment's welcome message and is able to administer the target machine as if sitting at the physical keyboard. At this point, if the intent is to simply install Arch from the live media, follow the guide at [Installation guide](/index.php/Installation_guide "Installation guide"). If the intent is to edit an existing Linux install that got broken, follow the [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") wiki article. You may also consider to install [GNU Screen](/index.php/GNU_Screen "GNU Screen") on remote (target) machine first before beginning anything else.
+From here one is presented with the live environment's welcome message and is able to administer the target machine as if sitting at the physical keyboard. At this point, if the intent is to simply install Arch from the live media, follow the guide at [Installation guide](/index.php/Installation_guide "Installation guide"). If the intent is to edit an existing Linux install that got broken, follow the [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") wiki article.
 
-## Install GNU Screen on the remote (target) machine
-
-You may install [GNU Screen](/index.php/GNU_Screen "GNU Screen") first in the target machine's Live environment so that you can continue to work in same session even if your or target machine's internet disconnects for any reason.
-
-After SSH to target machine run:
-
-```
-$ pacman -Syy
-$ pacman -S screen
-$ screen
-
-```
-
-In case internet connection drops for any reason, you can always SSH to target machine again and run:
-
-```
-$ screen -r
-
-```
+**Tip:** Consider installing a [terminal multiplexer](/index.php/List_of_applications#Terminal_multiplexers "List of applications") on the remote machine, so that if you are disconnected you can reattach to your multiplexer's session.

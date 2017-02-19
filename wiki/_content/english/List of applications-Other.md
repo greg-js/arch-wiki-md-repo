@@ -73,7 +73,7 @@ See also [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/
 
 	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://aur.archlinux.org/packages/abduco/)
 
-*   **dtach** — Program that emulates the detach feature of [screen](/index.php/Screen "Screen").
+*   **[dtach](/index.php/Dtach "Dtach")** — Program that emulates the detach feature of [screen](/index.php/Screen "Screen").
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
 

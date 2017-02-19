@@ -25,14 +25,14 @@ The following two sections show how to create an EFI System Partition (ESP).
 
 It is recommended to keep ESP size at 512 MiB although smaller/larger sizes are fine. [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html)
 
-According to a Microsoft note[[2]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 260 MB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MB), due to a limitation of the FAT32 file format.
+According to a Microsoft note[[2]](http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules), the minimum size for the EFI System Partition (ESP) would be 100 MB, though this is not stated in the UEFI Specification. Note that for Advanced Format 4K Native drives (4-KB-per-sector) drives, the size is at least 256 MiB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KB) x 65527 = 256 MiB), due to a limitation of the FAT32 file format.
 
 ### GPT partitioned disks
 
 **Choose one** of the following methods to create an ESP for a GPT partitioned disk:
 
 *   [fdisk/gdisk](/index.php/Fdisk "Fdisk"): Create a partition with partition type EFI System (`EFI System` in *fdisk* or `EF00` in *gdisk*). Proceed to [#Format the partition](#Format_the_partition).
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a FAT32 partition and in Parted set/activate the `boot` flag (not `legacy_boot` flag) on that partition. Proceed to [#Mount the partition](#Mount_the_partition).
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"): Create a FAT32 partition and in Parted set/activate the `boot` flag (**not** `legacy_boot` flag) on that partition. Proceed to [#Mount the partition](#Mount_the_partition).
 
 ### MBR partitioned disks
 

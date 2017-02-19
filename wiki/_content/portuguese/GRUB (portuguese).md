@@ -42,7 +42,7 @@ Rode o próximo comando para criar a entrada do GRUB no menu da UEFI Veja [efibo
 
 Mesmo não havendo problemas na utilização de um `grub.cfg` gerado manualmente, é recomendado que iniciantes gerem tal arquivo automaticamente:
 
-**Dica:** Para a busca automática de outros sistemas operacionais em seu computador, instale o pacote [os-prober](https://www.archlinux.org/packages/?name=os-prober) (`pacman -S os-prober`)antes de rodar o próximo comando.
+**Dica:** Para a busca automática de outros sistemas operacionais em seu computador, instale o pacote [os-prober](https://www.archlinux.org/packages/?name=os-prober) (`pacman -S os-prober`) antes de rodar o próximo comando.
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg

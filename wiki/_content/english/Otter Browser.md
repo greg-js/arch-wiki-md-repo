@@ -11,6 +11,8 @@
 
 Otter Browser can be [installed](/index.php/Installed "Installed") with [otter-browser](https://aur.archlinux.org/packages/otter-browser/) or [otter-browser-git](https://aur.archlinux.org/packages/otter-browser-git/).
 
+**Tip:** [qt5-webkit-ng](https://www.archlinux.org/packages/?name=qt5-webkit-ng) should be installed to make QtWebKit backend using up-to-date WebKit engine.
+
 ## Tips and tricks
 
 ### Experimental support for QtWebEngine

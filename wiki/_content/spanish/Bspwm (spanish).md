@@ -17,7 +17,7 @@
 
 ## Instalación
 
-[Instale](/index.php?title=Instale&action=edit&redlink=1 "Instale (page does not exist)") [bspwm](https://www.archlinux.org/packages/?name=bspwm) y [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), o las versiones en desarrollo: [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) y [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/). **sxhkd** es un simple servicio de combinaciones de teclas usables dentro de [X](https://es.wikipedia.org/wiki/Sistema_de_ventanas_X), requerido para comunicarse con bspwm y lanzar aplicaciones a elección.
+Instale [bspwm](https://www.archlinux.org/packages/?name=bspwm) y [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), o las versiones en desarrollo: [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) y [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/). **sxhkd** es un simple servicio de combinaciones de teclas usables dentro de [X](https://es.wikipedia.org/wiki/Sistema_de_ventanas_X), requerido para comunicarse con bspwm y lanzar aplicaciones a elección.
 
 Para comenzar bspwm al iniciar sesión, añada lo siguiente a `~/.xinitrc` o `~/.xprofile` (dependiendo de [cómo ha escogido iniciar X](https://wiki.archlinux.org/index.php/Xorg_(Espa%C3%B1ol)#Ejecuci.C3.B3n)):
 

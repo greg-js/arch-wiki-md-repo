@@ -31,8 +31,7 @@
     *   [5.8 liteide](#liteide)
     *   [5.9 screen recording](#screen_recording)
     *   [5.10 remote display](#remote_display)
-    *   [5.11 drag and drop between GNOME and QT, or within QT](#drag_and_drop_between_GNOME_and_QT.2C_or_within_QT)
-    *   [5.12 Remote desktop and vm applications don't grab input](#Remote_desktop_and_vm_applications_don.27t_grab_input)
+    *   [5.11 Remote desktop and vm applications don't grab input](#Remote_desktop_and_vm_applications_don.27t_grab_input)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -293,7 +292,7 @@ When both Wayland and X backends are enabled, GTK+ will default to the X11 backe
 
 ### Qt 5
 
-The [qt5](https://www.archlinux.org/groups/x86_64/qt5/) package from the repositories has the Wayland support if [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) is installed. To run a Qt 5 app with the Wayland plugin, set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable").
+The [qt5](https://www.archlinux.org/groups/x86_64/qt5/) package from the repositories has the Wayland support if [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) is installed. To run a Qt 5 app with the Wayland plugin, set the `QT_QPA_PLATFORM=wayland-egl` [environment variable](/index.php/Environment_variable "Environment variable"). For Arch, most QT applications do not work because of QTBUG-58423, will be fixed with qt-5.8.1: [https://codereview.qt-project.org/#/c/184278/](https://codereview.qt-project.org/#/c/184278/) .
 
 ### Clutter
 
@@ -392,10 +391,6 @@ gsettings set org.nemo.desktop show-desktop-icons false
 ### remote display
 
 (20161229) there was a merge of FreeRDP into weston in 2013, enabled via compile time switch. The arch linux weston package currently has it not enabled.
-
-### drag and drop between GNOME and QT, or within QT
-
-(20170103) when running GNOME, dragging files from dolphin or nemo into avidemux does not work. see [QTBUG-57879](https://bugreports.qt.io/browse/QTBUG-57879).
 
 ### Remote desktop and vm applications don't grab input
 

@@ -68,7 +68,7 @@ In the XPS 13 the display panels (both FHD and QHD+) come with adaptive brightne
 
 The most convenient way to install Arch Linux is by disabling "Secure Boot" (Secure Boot > Disable). However it is possible to self-sign your kernel and boot with it enabled. For further information have a look at the [Secure Boot](/index.php/Secure_Boot "Secure Boot") article.
 
-In case you `efivars` are not properly set it is most likely due to you not being booted into [UEFI](/index.php/UEFI "UEFI"). Should the problem persist be sure to consult the [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") section.
+In case your `efivars` are not properly set it is most likely due to you not being booted into [UEFI](/index.php/UEFI "UEFI"). Should the problem persist be sure to consult the [UEFI#UEFI Variables](/index.php/UEFI#UEFI_Variables "UEFI") section.
 
 ### Updates
 
@@ -143,7 +143,7 @@ Using the `discard` mount option for your filesystem is not recommended, as ment
 
 ### NVME Power Saving Patch
 
-Andy Lutomirski has released version 4 of his patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR package below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
+Andy Lutomirski has created a patchset which fixes powersaving for NVME devices in linux. Currently, this patch is not merged into mainline yet. Until it lands in mainline kernel use the AUR or repository linked below. **Linux-nvme** — Mainline linux kernel patched with Andy's patch for NVME powersaving APST.
 
 	[https://github.com/damige/linux-nvme](https://github.com/damige/linux-nvme) || [linux-nvme](https://aur.archlinux.org/packages/linux-nvme/)
 

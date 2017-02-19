@@ -14,7 +14,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gajim](https://www.archlinux.org/packages/?name=gajim) package.
+[Install](/index.php/Install "Install") the [gajim](https://www.archlinux.org/packages/?name=gajim) package. Then, restart Gajim.
 
 ## Enabling DBus remote control Support
 
@@ -28,6 +28,8 @@ If you would like to be able to show/hide the roster using a script or your wm, 
 $ gajim-remote toggle_roster_appearance
 
 ```
+
+It may be necessary to restart Gajim if this doesn't work.
 
 ## Auto logout on suspend
 
@@ -61,9 +63,7 @@ $ gajim-remote check_gajim_running
 
 ```
 
-In case it returns "False" while Gajim is running, enable DBus Support
-
-Then [enable](/index.php/Enable "Enable") the service.
+In case it returns "False" while Gajim is running, enable DBus Support, restart Gajim, then [enable](/index.php/Enable "Enable") the service.
 
 ## Off-the-Record Messaging
 
@@ -73,12 +73,15 @@ Then [enable](/index.php/Enable "Enable") the service.
 
 1.  Go to "contact-window" menu "Edit => Plugins";
 2.  If not activated out of the box, activate the "Plugin Installer";
-3.  In "plugins-window", switch to the "Available" tab;
-4.  Activate the "Off-the-record encryption" plugin;
-5.  Click on plugin settings button;
-6.  Generate your OTR key using "Generate key";
-7.  Take a look on other settings;
-8.  Close dialogs to save the changes.
+3.  Restart Gajim.
+4.  In "plugins-window", switch to the "Available" tab;
+5.  Activate the "Off-the-record encryption" plugin;
+6.  Restart Gajim.
+7.  Click on plugin settings button;
+8.  Generate your OTR key using "Generate key";
+9.  Take a look on other settings;
+10.  Close dialogs to save the changes.
+11.  Restart Gajim.
 
 ### gajim-otr version confusions
 
@@ -97,4 +100,5 @@ After installing the OMEMO plugin, you have to enable it in Gajim Plugin Manager
 1.  Go to menu Edit => Plugins;
 2.  Activate the "OMEMO Multi-End Message and Object Encryption" plugin;
 3.  Close dialogs to save the changes.
-4.  Please refer to the official documentation for [running instructions](https://github.com/omemo/gajim-omemo#running)
+4.  Restart Gajim.
+5.  Please refer to the official documentation for [running instructions](https://dev.gajim.org/gajim/gajim-plugins/wikis/OmemoGajimPlugin#running)

@@ -21,10 +21,10 @@ There are many UPnP or DLNA-compliant server and you can use Mpd too. Some of th
 *   [Rygel](/index.php/Rygel "Rygel")
 *   [PS3 Mediaserver](/index.php/PS3_Mediaserver "PS3 Mediaserver")
 *   [Plex](/index.php/Plex "Plex")
-*   [Emby](https://emby.media) ([emby-server](https://www.archlinux.org/packages/?name=emby-server))
+*   [Emby](/index.php/Emby "Emby")
+*   [Universal Media Server](/index.php/Universal_Media_Server "Universal Media Server")
 *   [Serviio](http://serviio.org/) ([serviio](https://aur.archlinux.org/packages/serviio/))
 *   [Coherence](http://coherence.beebits.net) ([coherence](https://aur.archlinux.org/packages/coherence/))
-*   [Universal Media Server](http://www.universalmediaserver.com/) ([ums](https://aur.archlinux.org/packages/ums/))
 
 And here is a list of DLNA controller applications. These can be used to control a DLNA renderer and server:
 

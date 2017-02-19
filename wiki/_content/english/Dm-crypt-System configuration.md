@@ -237,6 +237,7 @@ See [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html
 
 *   It may be further required to add the `plain` option explicitly to force `systemd-cryptsetup` to recognize a `--type plain`) device at boot. [GitHub issue in question.](https://github.com/systemd/systemd/issues/442)
 
+**Warning:** If the *nofail* option is specified, the password entry screen may disappear while typing the password. *nofail* should therefore only be used together with keyfiles.
  `/etc/crypttab` 
 ```
 # Example crypttab file. Fields are: name, underlying device, passphrase, cryptsetup options.

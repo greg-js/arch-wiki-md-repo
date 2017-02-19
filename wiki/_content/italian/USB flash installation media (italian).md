@@ -82,7 +82,8 @@ La procedura è leggermente più complessa del semplice `dd` ma permette di usar
 **Nota:** Su alcune distribuzioni il file `mbr.bin` si trova in `/usr/**share**/syslinux/mbr.bin`.
 
 ```
-# extlinux --install /media/cartella_pendrive/arch/boot/syslinux
+# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux
+# extlinux --install /mnt/usb/arch/boot/syslinux
 # dd bs=440 conv=notrunc count=1 if=/usr/lib/syslinux/bios/mbr.bin of=/dev/sdx
 # parted /dev/sdx toggle 1 boot
 
@@ -90,7 +91,7 @@ La procedura è leggermente più complessa del semplice `dd` ma permette di usar
 
 **3.** Sistemare i file di configurazione:
 
-**Nota:** È *possibile* etichettare il disco USB con la *label* "`ARCH_2013XX`" (con l'appropriata release mensile) ma l'approccio migliore potrebbe essere l'uso degli [UUID](/index.php/Persistent_block_device_naming_(Italiano)#By-uuid "Persistent block device naming (Italiano)"). Non usare gli UUID potrebbe portare al famoso errore: **30 seconds error**.
+**Nota:** È *possibile* etichettare il disco USB con la *label* "`ARCH_2013XX`" (con l'appropriata release mensile) nel file */mnt/usb/loader/entries/archiso-x86_64.conf* ma l'approccio migliore potrebbe essere l'uso degli [UUID](/index.php/Persistent_block_device_naming_(Italiano)#By-uuid "Persistent block device naming (Italiano)"). Non usare gli UUID potrebbe portare al famoso errore: **30 seconds error**.
 
 Per modificare `archisolabel=ARCH_2013XX` nel equivalente `archiso**device**=/dev/disk/by-uuid/47FA-4071` in tutti i file di configurazione allo stesso tempo usando un solo comando.
 

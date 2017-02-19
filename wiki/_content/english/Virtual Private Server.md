@@ -38,6 +38,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [Atlantic.Net](https://www.atlantic.net/) | 2015.05.01 | KVM | NYC/SF/Toronto/Dallas/Orlando, US & Canada | 100% SSD 1-click Arch Linux, ready in 30 seconds |
 | [BuyVM](http://www.buyvm.net/) | 2013.07.01 | KVM | LA, Buffalo NY | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
 | [Coinshost](https://coinshost.com/en/vps) | 2015.04 | Xen | Zurich, Switzerland | Bitcoin and other cryptocurrencies accepted. |
+| [Cherry Host](https://cherry.host) | Latest | KVM | Santee, US-CA | Must submit a support ticket to get Arch installed. |
 | [DirectVPS](https://www.directvps.nl/) | 2014.01.xx | OpenVZ | Amsterdam, NL; Rotterdam, NL | (Dutch language site only) |
 | [Edis](http://www.edis.at/en/) | [2013.03.01](http://www.edis.at/en/support-and-service/faq/server-faq/which-distributions-are-available-with-edis-kvm-vps-plans/) | vServer, KVM, OpenVZ | [Multiple international locations](http://www.edis.at/en/server/kvm-vps/austria/). | Also offer dedicated server options as well as an "off-shore" location at the Isle of Man (IM). |
 | [GigaTux](https://www.gigatux.com/virtual.php) | [2013.06.01](https://www.gigatux.com/distro/) | Xen | Chicago, US-IL; Frankfurt, DE; London, GB; San Jose, US-CA |

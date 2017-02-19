@@ -667,7 +667,7 @@ See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/
 
 *   **[Xarchiver](https://en.wikipedia.org/wiki/Xarchiver "wikipedia:Xarchiver")** — Lightweight desktop independent archive manager built with GTK+.
 
-	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || [xarchiver](https://www.archlinux.org/packages/?name=xarchiver)
+	[https://github.com/ib/xarchiver](https://github.com/ib/xarchiver) || [xarchiver](https://www.archlinux.org/packages/?name=xarchiver) or [xarchiver-gtk2](https://www.archlinux.org/packages/?name=xarchiver-gtk2)
 
 #### Comparison, diff, merge
 

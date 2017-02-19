@@ -46,10 +46,21 @@ $ lspci
 
 ```
 $ lsusb
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 001 Device 002: ID 13d3:5126 IMC Networks 
+Bus 004 Device 003: ID 0b05:1788 ASUSTek Computer, Inc. BT-270 Bluetooth Adapter
 Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 001 Device 002: ID 13d3:5111 IMC Networks Integrated Webcam
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+
+```
+
+```
+$ hciconfig hci0 version
+hci0:   Type: Primary  Bus: USB
+        BD Address: XX:XX:XX:XX:XX:XX  ACL MTU: 1021:8  SCO MTU: 64:1
+        HCI Version: 3.0 (0x5)  Revision: 0x1c1
+        LMP Version: 3.0 (0x5)  Subversion: 0x4203
+        Manufacturer: Broadcom Corporation (15)
 
 ```

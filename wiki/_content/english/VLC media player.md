@@ -33,6 +33,7 @@ Notable variants are:
 
 *   [vlc-git](https://aur.archlinux.org/packages/vlc-git/) - Development branch.
 *   [vlc-nox](https://aur.archlinux.org/packages/vlc-nox/) - Without X support.
+*   [vlc-qt5](https://aur.archlinux.org/packages/vlc-qt5/) - With Qt5 interface.
 
 Notable optional dependencies are:
 
