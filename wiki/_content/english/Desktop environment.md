@@ -89,7 +89,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 
-	[https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](https://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
+	[https://lumina-desktop.org/](https://lumina-desktop.org/) || [lumina-desktop](https://aur.archlinux.org/packages/lumina-desktop/)
 
 *   **[Moksha](/index.php/Moksha "Moksha")** — Fork of Enlightenment currently used as default desktop environment in Ubuntu-based Bodhi Linux.
 
@@ -247,7 +247,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [pcmanfm-gtk3](https://www.archlinux.org/packages/?name=pcmanfm-gtk3) | [Galculator](http://galculator.sourceforge.net/)
 [galculator](https://www.archlinux.org/packages/?name=galculator) | L3afpad
 [l3afpad](https://www.archlinux.org/packages/?name=l3afpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
-[gpicview-gtk3](https://aur.archlinux.org/packages/gpicview-gtk3/) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
+[gpicview-gtk3](https://www.archlinux.org/packages/?name=gpicview-gtk3) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
 [lxmusic-gtk3](https://www.archlinux.org/packages/?name=lxmusic-gtk3) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LXDM](/index.php/LXDM "LXDM")
 [lxdm-gtk3](https://www.archlinux.org/packages/?name=lxdm-gtk3) |
@@ -258,7 +258,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [qterminal](https://www.archlinux.org/packages/?name=qterminal) | PCManFM-Qt
 [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [SpeedCrunch](http://speedcrunch.org/)
 [speedcrunch](https://www.archlinux.org/packages/?name=speedcrunch) | Notepadqq
-[notepadqq](https://aur.archlinux.org/packages/notepadqq/) | LxImage-Qt
+[notepadqq](https://www.archlinux.org/packages/?name=notepadqq) | LxImage-Qt
 [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt) | SMPlayer
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM

@@ -236,7 +236,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **SpaceFM** — Administrador de archivos multipanel con pestañas basado en GTK+.
 
-	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://www.archlinux.org/packages/?name=spacefm)
+	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
 
 *   **Sunflower** — Gestor de archivos de doble panel, pequeño y altamente personalizable, para Linux, con soporte para plugins.
 

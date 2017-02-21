@@ -28,11 +28,11 @@ The Linux kernel only supports reading Microsoft's NTFS file system. [NTFS-3G](h
 Two options exist for manually mounting NTFS partitions. The traditional:
 
 ```
-# mount -t ntfs-3g /dev/*your_NTFS_partition* */mount/point*
+# mount /dev/*your_NTFS_partition* */mount/point*
 
 ```
 
-Mount type `ntfs-3g` does not need to be explicitly specified in Arch. The *mount* command by default will use `/usr/bin/mount.ntfs` which is symlinked to `/usr/bin/ntfs-3g` after the ntfs-3g package is installed.
+The mount type `ntfs-3g` does not need to be explicitly specified in Arch. The *mount* command by default will use `/usr/bin/mount.ntfs` which is symlinked to `/usr/bin/ntfs-3g` after the ntfs-3g package is installed.
 
 The second option is to call `ntfs-3g` directly:
 

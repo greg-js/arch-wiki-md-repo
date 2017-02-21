@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [USB_Flash_Installation_Media](/index.php/USB_Flash_Installation_Media "USB Flash Installation Media") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-17，点击[这里](https://wiki.archlinux.org/index.php?title=USB_Flash_Installation_Media&diff=0&oldid=467029)可以查看翻译后英文页面的改动。
 
-本文探讨如何制作能在 UEFI 和 BIOS 系统上启动的 Arch Linux 安装 USB 驱动器（也被称为*“闪存驱动器”，“USB记忆棒"，“U盘”等）。制作好的U盘被称为 LiveUSB 系统（类似 LiveCD 系统），因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的性质，关机后所有的更改都会丢失。这样的系统可用于安装 Arch Linux、系统维护或者系统恢复。*
+USB 驱动器，也被称为闪存驱动器、USB记忆棒、U盘等。可以从 ISO 制作 Arch LiveUSB 系统，从 UEFI 或 BIOS 系统上直接启动 Arch Linux 安装环境。因为[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")的只读性质，关机后所有的更改都会丢失。这样的系统可用于 Arch Linux 安装、系统维护或者系统恢复。
 
-如果想在U盘上运行完整的 Arch Linux（即能保留设置），参见[在U盘中安装Arch Linux](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")。如果想将 Arch Linux LiveUSB 当作救援 USB 来用，参见[Change Root](/index.php/Change_root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change root (简体中文)")
+要在 U 盘上运行完整的 Arch Linux（即能保留设置），请阅读[在U盘中安装Arch Linux](/index.php/Installing_Arch_Linux_on_a_USB_key_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installing Arch Linux on a USB key (简体中文)")。如果想将 Arch Linux LiveUSB 当作救援 USB 来用，参见[Change Root](/index.php/Change_root_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Change root (简体中文)")
 
 ## Contents
 

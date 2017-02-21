@@ -107,7 +107,7 @@
 
 *   **[Sugar](/index.php/Sugar "Sugar")** — Sugar是一个为5-12岁孩子提供学习帮助的桌面环境，并且集成了多媒体的活动。在为全世界每一位孩子提供素质教育机会的计划中，Sugar是其核心组成部分 — 目前全世界有将近一百万小孩使用该桌面环境，他们讲着25种语言，来自40多个国家。在Sugar的帮助下，他们有机会接受素质教育，从而成就自己的人生。
 
-	[http://wiki.sugarlabs.org/](http://wiki.sugarlabs.org/) || [sugar](https://aur.archlinux.org/packages/sugar/)
+	[http://wiki.sugarlabs.org/](http://wiki.sugarlabs.org/) || [sugar](https://www.archlinux.org/packages/?name=sugar)
 
 *   **[Trinity](/index.php/Trinity "Trinity")** — The Trinity Desktop Environment (TDE) project is a computer desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style.
 
@@ -343,14 +343,14 @@
 | [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
 [metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar
-[sugar](https://aur.archlinux.org/packages/sugar/) | Terminal
-[sugar-activity-terminal](https://aur.archlinux.org/packages/sugar-activity-terminal/) | Sugar Journal
-[sugar](https://aur.archlinux.org/packages/sugar/) | Calculate
-[sugar-activity-calculate](https://aur.archlinux.org/packages/sugar-activity-calculate/) | Write
-[sugar-activity-write](https://aur.archlinux.org/packages/sugar-activity-write/) | ImageViewer
-[sugar-activity-imageviewer](https://aur.archlinux.org/packages/sugar-activity-imageviewer/) | Jukebox
-[sugar-activity-jukebox](https://aur.archlinux.org/packages/sugar-activity-jukebox/) | Browse
-[sugar-activity-browse](https://aur.archlinux.org/packages/sugar-activity-browse/) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[sugar](https://www.archlinux.org/packages/?name=sugar) | Terminal
+[sugar-activity-terminal](https://www.archlinux.org/packages/?name=sugar-activity-terminal) | Sugar Journal
+[sugar](https://www.archlinux.org/packages/?name=sugar) | Calculate
+[sugar-activity-calculate](https://www.archlinux.org/packages/?name=sugar-activity-calculate) | Write
+[sugar-activity-write](https://www.archlinux.org/packages/?name=sugar-activity-write) | ImageViewer
+[sugar-activity-imageviewer](https://www.archlinux.org/packages/?name=sugar-activity-imageviewer) | Jukebox
+[sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox) | Browse
+[sugar-activity-browse](https://www.archlinux.org/packages/?name=sugar-activity-browse) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
 | [Unity](/index.php/Unity_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unity (简体中文)") | [GTK+](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)") 3

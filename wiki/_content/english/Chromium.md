@@ -42,6 +42,10 @@ Other alternatives include:
 
 	[https://www.chromium.org/](https://www.chromium.org/) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
 
+*   **Chromium with GTK+ 3** — built with gtk3 instead of gtk2
+
+	[https://googlechromereleases.blogspot.com/](https://googlechromereleases.blogspot.com/) || [chromium-gtk3](https://aur.archlinux.org/packages/chromium-gtk3/)
+
 The derived browser, **Google Chrome**, bundled with Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
 
 Other alternatives include:

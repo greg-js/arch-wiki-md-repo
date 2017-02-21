@@ -343,6 +343,12 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 ##### Vi text editors
 
+[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune)
+
+*   **[Kakoune](/index.php?title=Kakoune&action=edit&redlink=1 "Kakoune (page does not exist)")** — Vim inspired. Less keystrokes. Multiple selections. Orthogonal design.
+
+	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune-git](https://aur.archlinux.org/packages/kakoune-git/)
+
 *   **[Neovim](/index.php/Neovim "Neovim")** — Vim's rebirth for the 21st century
 
 	[http://neovim.io/](http://neovim.io/) || [neovim](https://www.archlinux.org/packages/?name=neovim)

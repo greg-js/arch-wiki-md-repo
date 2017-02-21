@@ -330,7 +330,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud")** — Fork of ownCloud.
 
-	[http://nextcloud.com/](http://nextcloud.com/) || [nextcloud](https://aur.archlinux.org/packages/nextcloud/)
+	[http://nextcloud.com/](http://nextcloud.com/) || [nextcloud](https://www.archlinux.org/packages/?name=nextcloud)
 
 *   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
 

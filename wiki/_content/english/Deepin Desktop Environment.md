@@ -16,13 +16,7 @@
 
 To get a minimal desktop interface, you may start by [installing](/index.php/Installing "Installing") [deepin](https://www.archlinux.org/groups/x86_64/deepin/) group. This will pull all the basic components.
 
-However, it is recommended to also install [deepin-extra](https://www.archlinux.org/groups/x86_64/deepin-extra/) group to get a fully working DDE:
-
-*   [deepin-game](https://www.archlinux.org/packages/?name=deepin-game): Deepin game center to play flash games
-*   [deepin-movie](https://www.archlinux.org/packages/?name=deepin-movie): Deepin video player
-*   [deepin-music](https://www.archlinux.org/packages/?name=deepin-music): Deepin music player
-*   [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot): Deepin screen-shot tools
-*   [deepin-terminal](https://www.archlinux.org/packages/?name=deepin-terminal): Deepin terminal
+The [deepin-extra](https://www.archlinux.org/groups/x86_64/deepin-extra/) group contains some extra applications for a more complete desktop environment.
 
 To be able to use the integrated network administration, the [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) package is required, and the `NetworkManager.service` must be [started and enabled](/index.php/Systemd#Using_units "Systemd").
 
@@ -113,4 +107,4 @@ See [here](https://github.com/linuxdeepin/developer-center/issues/121). A soluti
 
 ## Bug Reporting
 
-Any upstream or arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)
+Any upstream or arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). All deepin developers will see the bug reports and solve them as soon as possible.

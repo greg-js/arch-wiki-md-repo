@@ -26,7 +26,7 @@ For general methods to improve the flexibility of the provided tips or pacman it
         *   [3.3.2 Read-write cache](#Read-write_cache)
         *   [3.3.3 two-way with rsync](#two-way_with_rsync)
         *   [3.3.4 Dynamic reverse proxy cache using nginx](#Dynamic_reverse_proxy_cache_using_nginx)
-        *   [3.3.5 Synchronize pacman package cache using BitTorrent Sync](#Synchronize_pacman_package_cache_using_BitTorrent_Sync)
+        *   [3.3.5 Synchronize pacman package cache using synchronization programs](#Synchronize_pacman_package_cache_using_synchronization_programs)
         *   [3.3.6 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
     *   [3.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
     *   [3.5 List of installed packages](#List_of_installed_packages)
@@ -397,7 +397,7 @@ If you are looking for a quick and dirty solution, you can simply run a standalo
 
 #### Read-write cache
 
-**Tip:** See [pacserve](/index.php/Pacserve "Pacserve") for an alternative (and probably simpler) solution than what follows.
+**Tip:** See [pacserve](/index.php/Pacserve "Pacserve") for an alternative solution than what follows.
 
 In order to share packages between multiple computers, simply share `/var/cache/pacman/` using any network-based mount protocol. This section shows how to use shfs or sshfs to share a package cache plus the related library-directories between multiple computers on the same local network. Keep in mind that a network shared cache can be slow depending on the file-system choice, among other factors.
 
@@ -453,23 +453,9 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 **Note:** You will need to create a method to clear old packages, as this directory will continue to grow over time. `paccache` (which is included with `pacman`) can be used to automate this using retention criteria of your choosing. For example, `find /srv/http/pacman-cache/ -type d -exec paccache -v -r -k 2 -c {} \;` will keep the last 2 versions of packages in your cache directory.
 
-#### Synchronize pacman package cache using BitTorrent Sync
+#### Synchronize pacman package cache using synchronization programs
 
-[BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync") is a new way of synchronizing folder via network (it works in LAN and over the internet). It is peer-to-peer so you do not need to set up a server: follow the link for more information.
-
-How to share a pacman cache using BitTorrent Sync:
-
-*   First install the [btsync](https://aur.archlinux.org/packages/btsync/) package from the AUR on the machines you want to sync
-*   Follow the installation instructions of the AUR package or on the [BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync") wiki page
-    *   set up BitTorrent Sync to work for the root account. This process requires read/write to the pacman package cache.
-    *   make sure to set a good password on btsync's web UI
-    *   start the systemd daemon for btsync.
-    *   in the btsync Web GUI add a new synchronized folder on the first machine and generate a new Secret. Point the folder to `/var/cache/pacman/pkg`
-    *   Add the folder on all the other machines using the same Secret to share the cached packages between all systems. Or, to set the first system as a master and the others as slaves, use the Read Only Secret. Be sure to point it to `/var/cache/pacman/pkg`
-
-Now the machines should connect and start synchronizing their cache. Pacman works as expected even during synchronization. The process of syncing is entirely automatic.
-
-**Note:** There is a free/libre alternative to bittorent Sync, called [Syncthing](/index.php/Syncthing "Syncthing"), which could be used here the same way as bittorent Sync.
+Use [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") or [Syncthing](/index.php/Syncthing "Syncthing") to synchronize the pacman cache folders (i.e. `/var/cache/pacman/pkg`).
 
 #### Preventing unwanted cache purges
 

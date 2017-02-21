@@ -14,8 +14,9 @@ This article lists data recovery and undeletion options for Linux.
     *   [4.2 Usage](#Usage)
 *   [5 Testdisk and PhotoRec](#Testdisk_and_PhotoRec)
     *   [5.1 Installation](#Installation_2)
-    *   [5.2 Files recovered by photorec](#Files_recovered_by_photorec)
-    *   [5.3 See also](#See_also)
+    *   [5.2 Usage](#Usage_2)
+    *   [5.3 Files recovered by photorec](#Files_recovered_by_photorec)
+    *   [5.4 See also](#See_also)
 *   [6 e2fsck](#e2fsck)
     *   [6.1 Installation](#Installation_3)
     *   [6.2 See also](#See_also_2)
@@ -140,6 +141,10 @@ TestDisk and Photorec are both open-source data recovery utilities licensed unde
 ### Installation
 
 [testdisk](https://www.archlinux.org/packages/?name=testdisk) from the [official repositories](/index.php/Official_repositories "Official repositories") provides both TestDisk and PhotoRec.
+
+### Usage
+
+After running e.g. ddrescue to create image.img, `photorec image.img` will open a terminal UI where you can select what file types to search for and where to put the recovered files.
 
 ### Files recovered by photorec
 

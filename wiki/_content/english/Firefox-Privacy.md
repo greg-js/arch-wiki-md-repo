@@ -1,36 +1,149 @@
-This article overviews some useful extensions which enhance security and privacy while using the [Firefox](/index.php/Firefox "Firefox") web browser.
+This article overviews configuration settings and some useful extensions which enhance security and privacy while using the [Firefox](/index.php/Firefox "Firefox") web browser.
 
 ## Contents
 
-*   [1 Extensions](#Extensions)
-    *   [1.1 HTTPS Everywhere](#HTTPS_Everywhere)
-    *   [1.2 uBlock Origin](#uBlock_Origin)
-    *   [1.3 Adblock Plus](#Adblock_Plus)
-    *   [1.4 Privacy Badger](#Privacy_Badger)
-    *   [1.5 Disconnect](#Disconnect)
-    *   [1.6 NoScript](#NoScript)
-    *   [1.7 uMatrix](#uMatrix)
-    *   [1.8 Cookie Monster](#Cookie_Monster)
-    *   [1.9 Self-Destructing Cookies](#Self-Destructing_Cookies)
-    *   [1.10 RefControl](#RefControl)
-    *   [1.11 RequestPolicy](#RequestPolicy)
-    *   [1.12 Decentraleyes](#Decentraleyes)
-    *   [1.13 CanvasBlocker](#CanvasBlocker)
-    *   [1.14 Random User Agent](#Random_User_Agent)
-    *   [1.15 Privacy Settings](#Privacy_Settings)
-    *   [1.16 Stop Fingerprinting](#Stop_Fingerprinting)
-*   [2 Configuration tweaks](#Configuration_tweaks)
-    *   [2.1 Enable tracking protection](#Enable_tracking_protection)
-    *   [2.2 Change browser time zone](#Change_browser_time_zone)
-    *   [2.3 Change user agent and platform](#Change_user_agent_and_platform)
-    *   [2.4 Disable battery api](#Disable_battery_api)
-    *   [2.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
-    *   [2.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [2.7 Disable telemetry](#Disable_telemetry)
-    *   [2.8 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
-    *   [2.9 Disable geolocation](#Disable_geolocation)
-    *   [2.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
-    *   [2.11 Disable WebGL](#Disable_WebGL)
+*   [1 Configuration tweaks](#Configuration_tweaks)
+    *   [1.1 Enable tracking protection](#Enable_tracking_protection)
+    *   [1.2 Change browser time zone](#Change_browser_time_zone)
+    *   [1.3 Change user agent and platform](#Change_user_agent_and_platform)
+    *   [1.4 Disable battery api](#Disable_battery_api)
+    *   [1.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
+    *   [1.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
+    *   [1.7 Disable telemetry](#Disable_telemetry)
+    *   [1.8 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
+    *   [1.9 Disable geolocation](#Disable_geolocation)
+    *   [1.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
+    *   [1.11 Disable WebGL](#Disable_WebGL)
+*   [2 Extensions](#Extensions)
+    *   [2.1 HTTPS Everywhere](#HTTPS_Everywhere)
+    *   [2.2 uBlock Origin](#uBlock_Origin)
+    *   [2.3 Adblock Plus](#Adblock_Plus)
+    *   [2.4 Privacy Badger](#Privacy_Badger)
+    *   [2.5 Disconnect](#Disconnect)
+    *   [2.6 NoScript](#NoScript)
+    *   [2.7 uMatrix](#uMatrix)
+    *   [2.8 Cookie Monster](#Cookie_Monster)
+    *   [2.9 Self-Destructing Cookies](#Self-Destructing_Cookies)
+    *   [2.10 RefControl](#RefControl)
+    *   [2.11 RequestPolicy](#RequestPolicy)
+    *   [2.12 Decentraleyes](#Decentraleyes)
+    *   [2.13 CanvasBlocker](#CanvasBlocker)
+    *   [2.14 Random User Agent](#Random_User_Agent)
+    *   [2.15 Privacy Settings](#Privacy_Settings)
+    *   [2.16 Stop Fingerprinting](#Stop_Fingerprinting)
+
+## Configuration tweaks
+
+The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
+
+In addition, see the following links:
+
+*   [How to stop Firefox from making automatic connections](https://support.mozilla.org/t5/Protect-your-privacy/How-to-stop-Firefox-from-making-automatic-connections/ta-p/1748) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
+*   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
+*   [user.js Firefox hardening stuff](https://github.com/pyllyukko/user.js) - This is a user.js configuration file for Mozilla Firefox that's supposed to harden Firefox's settings and make it more secure.
+
+### Enable tracking protection
+
+Firefox gained an option for [tracking protection](https://support.mozilla.org/en-US/kb/tracking-protection-firefox). It can be enabled by setting `about:config`:
+
+*   privacy.trackingprotection.enabled true
+
+Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
+
+Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet "List of applications/Internet").
+
+### Change browser time zone
+
+The time zone of your system can be used in browser fingerprinting. To set firefox's time zone to UTC launch it as:
+
+```
+$ TZ=UTC firefox
+
+```
+
+Or, set a script to launch the above (for example, at `/usr/local/bin/firefox`).
+
+### Change user agent and platform
+
+To change the user agent in firefox, add the following `string` key in `about:config`:
+
+```
+general.useragent.override
+
+```
+
+The value for the key is your browser's user agent. Select a known common one.
+
+**Tip:** The value `Mozilla/5.0 (Windows NT 6.1; rv:38.0) Gecko/20100101 Firefox/38.0` is used as the user agent for the Tor browser, thus being very common.
+
+**Warning:** Changing the user agent without changing to a corresponding platform will make your browser nearly unique.
+
+To change the platform for firefox, add the following `string` key in `about:config`:
+
+```
+general.platform.override
+
+```
+
+Select a known common platform that corresponds with your user agent.
+
+**Tip:** The value `Win32` is used as the platform for the Tor browser, corresponding with the user agent provided above.
+
+### Disable battery api
+
+Firefox is disabling the battery api for web content starting with Firefox 52, the api will still be available for add-ons [[1]](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) [[2]](https://www.theguardian.com/technology/2016/nov/01/firefox-disable-battery-status-api-tracking)
+
+Battery status api may be used to fingerprint the user[[3]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.
+
+### WebRTC exposes LAN IP address
+
+To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
+
+*   `media.peerconnection.ice.default_address_only` to **true**
+*   `media.peerconnection.enabled` to **false**. (only if you want to completely disable WebRTC)
+
+You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://www.privacytools.io/webrtc.html) to confirm that your internal/external IP address is no longer leaked.
+
+### Disable 1024-bit Diffie-Hellman primes
+
+Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to **false** in `about:config`:
+
+```
+security.ssl3.dhe_rsa_aes_128_sha
+security.ssl3.dhe_rsa_aes_256_sha
+
+```
+
+Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
+
+### Disable telemetry
+
+Set `toolkit.telemetry.enabled` to **false** and/or disable it under Preferences, Advanced, Data Choices.
+
+### Enable Do Not Track Header (DNT)
+
+**Note:** The user has no control over whether the request is honoured or not.
+
+Set `privacy.donottrackheader.enabled` to **true** or toggle it in Preferences under Privacy, manage your Do Not Track settings.
+
+### Disable geolocation
+
+Set `geo.enabled` to **false** in `about:config`.
+
+### Disable Safe Browsing service
+
+Safe Browsing offers phishing protection and malware checks, however it may send user information (e.g. URL, file hashes, etc.) to third parties like Google.
+
+To disable the Safe Browsing service, in `about:config` set:
+
+*   Set `browser.safebrowsing.malware.enabled` to **false**
+*   Set `browser.safebrowsing.phishing.enabled` to **false**
+
+In addition disable download checking, by setting `browser.safebrowsing.downloads.enabled` to **false**.
+
+### Disable WebGL
+
+WebGL is a potential [security risk](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern). Set `webgl.disabled` to **true** in `about:config` if you want to disable it.
 
 ## Extensions
 
@@ -52,7 +165,7 @@ uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](ht
 
 ### Adblock Plus
 
-[Adblock Plus](https://adblockplus.org/en/) was a popular exstension to block ads. Now that it is not blocking some ads on purpose [[1]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
+[Adblock Plus](https://adblockplus.org/en/) was a popular exstension to block ads. Now that it is not blocking some ads on purpose [[4]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like uBlock Origin.
 
 ### Privacy Badger
 
@@ -125,115 +238,3 @@ For more information on cross-site requests and RequestPolicy visit [here](https
 ### Stop Fingerprinting
 
 [Stop Fingerprinting](https://addons.mozilla.org/firefox/addon/stop-fingerprinting/) disables / modifies some browser APIs that would otherwise allow browser fingerprinting.
-
-## Configuration tweaks
-
-The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
-
-In addition, see the following links:
-
-*   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
-*   [user.js Firefox hardening stuff](https://github.com/pyllyukko/user.js) - This is a user.js configuration file for Mozilla Firefox that's supposed to harden Firefox's settings and make it more secure.
-
-### Enable tracking protection
-
-Firefox gained an option for [tracking protection](https://support.mozilla.org/en-US/kb/tracking-protection-firefox). It can be enabled by setting `about:config`:
-
-*   privacy.trackingprotection.enabled true
-
-Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
-
-Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet "List of applications/Internet").
-
-### Change browser time zone
-
-The time zone of your system can be used in browser fingerprinting. To set firefox's time zone to UTC launch it as:
-
-```
-$ TZ=UTC firefox
-
-```
-
-Or, set a script to launch the above (for example, at `/usr/local/bin/firefox`).
-
-### Change user agent and platform
-
-To change the user agent in firefox, add the following `string` key in `about:config`:
-
-```
-general.useragent.override
-
-```
-
-The value for the key is your browser's user agent. Select a known common one.
-
-**Tip:** The value `Mozilla/5.0 (Windows NT 6.1; rv:38.0) Gecko/20100101 Firefox/38.0` is used as the user agent for the Tor browser, thus being very common.
-
-**Warning:** Changing the user agent without changing to a corresponding platform will make your browser nearly unique.
-
-To change the platform for firefox, add the following `string` key in `about:config`:
-
-```
-general.platform.override
-
-```
-
-Select a known common platform that corresponds with your user agent.
-
-**Tip:** The value `Win32` is used as the platform for the Tor browser, corresponding with the user agent provided above.
-
-### Disable battery api
-
-Firefox is disabling the battery api for web content starting with Firefox 52, the api will still be available for add-ons [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1313580) [[3]](https://www.theguardian.com/technology/2016/nov/01/firefox-disable-battery-status-api-tracking)
-
-Battery status api may be used to fingerprint the user[[4]](http://eprint.iacr.org/2015/616.pdf). To disable it, set `dom.battery.enabled` to `false` in `about:config`.
-
-### WebRTC exposes LAN IP address
-
-To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC "wikipedia:WebRTC")'s peer-to-peer (and JavaScript), open `about:config` and set:
-
-*   `media.peerconnection.ice.default_address_only` to **true**
-*   `media.peerconnection.enabled` to **false**. (only if you want to completely disable WebRTC)
-
-You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://www.privacytools.io/webrtc.html) to confirm that your internal/external IP address is no longer leaked.
-
-### Disable 1024-bit Diffie-Hellman primes
-
-Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to **false** in `about:config`:
-
-```
-security.ssl3.dhe_rsa_aes_128_sha
-security.ssl3.dhe_rsa_aes_256_sha
-
-```
-
-Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
-
-### Disable telemetry
-
-Set `toolkit.telemetry.enabled` to **false** and/or disable it under Preferences, Advanced, Data Choices.
-
-### Enable Do Not Track Header (DNT)
-
-**Note:** The user has no control over whether the request is honoured or not.
-
-Set `privacy.donottrackheader.enabled` to **true** or toggle it in Preferences under Privacy, manage your Do Not Track settings.
-
-### Disable geolocation
-
-Set `geo.enabled` to **false** in `about:config`.
-
-### Disable Safe Browsing service
-
-Safe Browsing offers phishing protection and malware checks, however it may send user information (e.g. URL, file hashes, etc.) to third parties like Google.
-
-To disable the Safe Browsing service, in `about:config` set:
-
-*   Set `browser.safebrowsing.malware.enabled` to **false**
-*   Set `browser.safebrowsing.phishing.enabled` to **false**
-
-In addition disable download checking, by setting `browser.safebrowsing.downloads.enabled` to **false**.
-
-### Disable WebGL
-
-WebGL is a potential [security risk](http://security.stackexchange.com/questions/13799/is-webgl-a-security-concern). Set `webgl.disabled` to **true** in `about:config` if you want to disable it.

@@ -6,16 +6,13 @@ Gitweb actually supports fcgi natively, so you do not need to wrap it as a cgi s
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Apache 2.2](#Apache_2.2)
-        *   [2.1.1 Apache 2.4](#Apache_2.4)
+    *   [2.1 Apache](#Apache)
     *   [2.2 Lighttpd](#Lighttpd)
     *   [2.3 Nginx](#Nginx)
     *   [2.4 Gitweb config](#Gitweb_config)
     *   [2.5 Syntax highlighting](#Syntax_highlighting)
 *   [3 Adding repositories](#Adding_repositories)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 "An error occurred while reading CGI reply (no response received)" in browser](#.22An_error_occurred_while_reading_CGI_reply_.28no_response_received.29.22_in_browser)
-*   [5 See also](#See_also)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -23,82 +20,26 @@ To install gitweb you first have to install [git](https://www.archlinux.org/pack
 
 For this example we use [apache](https://www.archlinux.org/packages/?name=apache) but you can also use [nginx](https://www.archlinux.org/packages/?name=nginx), [lighttpd](https://www.archlinux.org/packages/?name=lighttpd) or others.
 
-Next you need to link the current gitweb default to your webserver location. In this example the default folder locations are used:
-
-```
-# ln -s /usr/share/gitweb /srv/http/gitweb
-
-```
-
-**Note:** You may want to double check the server directory to make sure the symbolic links were made.
+For all the examples below, you need to [install](/index.php/Install "Install") the [perl-cgi](https://www.archlinux.org/packages/?name=perl-cgi) package. ([FS#45431](https://bugs.archlinux.org/task/45431))
 
 ## Configuration
 
-### Apache 2.2
+### Apache
 
-Add the following to the end of your `/etc/httpd/conf/httpd.conf`
+Create `/etc/httpd/conf/extra/gitweb.conf`
 
+ `gitweb.conf` 
 ```
-<Directory "/srv/http/gitweb">
-   DirectoryIndex gitweb.cgi
-   Allow from all
-   AllowOverride all
-   Order allow,deny
-   Options ExecCGI
-   <Files gitweb.cgi>
-   SetHandler cgi-script
-   </Files>
-   SetEnv  GITWEB_CONFIG  /etc/gitweb.conf
+Alias /gitweb "/usr/share/gitweb"
+<Directory "/usr/share/gitweb">
+    DirectoryIndex gitweb.cgi
+    Options ExecCGI
+    Require all granted
+    <Files gitweb.cgi>
+    SetHandler cgi-script
+    </Files>
+    SetEnv  GITWEB_CONFIG  /etc/gitweb.conf
 </Directory>
-
-```
-
-If using a virtualhosts configuration, add this to `/etc/httpd/conf/extra/httpd-vhosts.conf`
-
-```
-<VirtualHost *:80>
-    ServerName gitserver
-    DocumentRoot /var/www/gitweb
-    <Directory /var/www/gitweb>
-       Options ExecCGI +FollowSymLinks +SymLinksIfOwnerMatch
-       AllowOverride All
-       order allow,deny
-       Allow from all
-       AddHandler cgi-script cgi
-       DirectoryIndex gitweb.cgi
-   </Directory>
-</VirtualHost>
-
-```
-
-You could also put the configuration in its own config file in `/etc/httpd/conf/extra/` but that is up to you to decide.
-
-#### Apache 2.4
-
-For Apache 2.4 you need to install [mod_perl](https://aur.archlinux.org/packages/mod_perl/) along with [git](https://www.archlinux.org/packages/?name=git) and [apache](https://www.archlinux.org/packages/?name=apache).
-
-Create `/etc/httpd/conf/extra/httpd-gitweb.conf`
-
-```
-<IfModule mod_perl.c>
-    Alias /gitweb "/usr/share/gitweb"
-    <Directory "/usr/share/gitweb">
-        DirectoryIndex gitweb.cgi
-        Require all granted
-        Options ExecCGI
-        AddHandler perl-script .cgi
-        PerlResponseHandler ModPerl::Registry
-        PerlOptions +ParseHeaders
-        SetEnv  GITWEB_CONFIG  /etc/gitweb.conf
-    </Directory>
-</IfModule>
-
-```
-
-Add the following line to the modules section of `/etc/httpd/conf/httpd.conf`
-
-```
-LoadModule perl_module modules/mod_perl.so
 
 ```
 
@@ -106,7 +47,7 @@ Add the following line to the end of `/etc/httpd/conf/httpd.conf`
 
 ```
 # gitweb configuration
-Include conf/extra/httpd-gitweb.conf
+Include conf/extra/gitweb.conf
 
 ```
 
@@ -251,22 +192,6 @@ This will fill in the "Owner" field in gitweb. It is not required.
 This assumes that you want to have this repository as "central" repository storage where you push your commits to so the git-daemon-export-ok and --bare are here to have minimal overhead and to allow the git daemon to be used on it.
 
 That is all for making a repository. You can now see it on your [http://localhost/gitweb](http://localhost/gitweb) (assuming everything went fine). You do not need to restart apache for new repositories since the gitweb cgi script simply reads your repository folder.
-
-## Troubleshooting
-
-### "An error occurred while reading CGI reply (no response received)" in browser
-
-When browsing [http://localhost/gitweb](http://localhost/gitweb), there is only a one-line message as title. By running `gitweb.cgi` in command line as follows, we can get the complete error message (assuming you have symlinked `ln -s /usr/share/gitweb /srv/http`):
-
- `$ perl /srv/http/gitweb/gitweb.cgi` 
-```
-Can't locate CGI.pm in @INC (you may need to install the CGI module) (@INC contains: /usr/lib/perl5/site_perl
- /usr/share/perl5/site_perl /usr/lib/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib/perl5/core_perl 
-/usr/share/perl5/core_perl .) at gitweb/gitweb.cgi line 13.
-
-```
-
-To solve this issue, just install [perl-cgi](https://www.archlinux.org/packages/?name=perl-cgi). There is also a bug report: [FS#45431](https://bugs.archlinux.org/task/45431).
 
 ## See also
 

@@ -10,9 +10,10 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
         *   [2.1.1 Starting the server](#Starting_the_server)
         *   [2.1.2 Miscellaneous](#Miscellaneous)
             *   [2.1.2.1 Optional configuration](#Optional_configuration)
-            *   [2.1.2.2 Static ports for NFSv3](#Static_ports_for_NFSv3)
-            *   [2.1.2.3 NFSv2 compatibility](#NFSv2_compatibility)
-            *   [2.1.2.4 Firewall configuration](#Firewall_configuration)
+            *   [2.1.2.2 Ensure NFSv4 idmapping is fully enabled](#Ensure_NFSv4_idmapping_is_fully_enabled)
+            *   [2.1.2.3 Static ports for NFSv3](#Static_ports_for_NFSv3)
+            *   [2.1.2.4 NFSv2 compatibility](#NFSv2_compatibility)
+            *   [2.1.2.5 Firewall configuration](#Firewall_configuration)
     *   [2.2 Client](#Client)
         *   [2.2.1 Error from systemd](#Error_from_systemd)
         *   [2.2.2 Manual mounting](#Manual_mounting)
@@ -104,6 +105,32 @@ otherwise the `rpcbind.service` is required.
 ##### Optional configuration
 
 `/etc/sysconfig/nfs` holds optional configurations for options to pass to `rpc.nfsd`, `rpc.mountd`, or `rpc.svcgssd`. Users setting up a simple configuration may not need to edit this file.
+
+##### Ensure NFSv4 idmapping is fully enabled
+
+Even though idmapd may be running, it may not be fully enabled. Verify by checking `cat /sys/module/nfsd/parameters/nfs4_disable_idmapping` returns `N`. If not:
+
+```
+# echo "N" | sudo tee /sys/module/nfsd/parameters/nfs4_disable_idmapping
+
+```
+
+Set this to survive reboots by adding an option to the nfs kernel module:
+
+```
+# echo "options nfs nfs4_disable_idmapping=0" | sudo tee -a /etc/modprobe.d/nfs.conf
+
+```
+
+(See [this forum reply](https://bbs.archlinux.org/viewtopic.php?pid=1530693#p1530693) for more information.)
+
+If journalctl reports lines like the following when starting nfs-server.service and nfs-idmapd.service, then this may be the solution.
+
+```
+rpc.idmapd[25010]: nfsdcb: authbuf=192.168.0.0/16 authtype=user
+rpc.idmapd[25010]: nfsdcb: bad name in upcall
+
+```
 
 ##### Static ports for NFSv3
 

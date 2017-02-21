@@ -26,7 +26,7 @@ This article is not meant to be an exhaustive setup guide and assumes that the r
 
 ## Installing Arch Linux ARM
 
-See the instructions at the [archlinuxarm site](http://archlinuxarm.org/platforms/armv7/samsung-chromebook#qt-platform_tabs-ui-tabs2). This is a fully supported platform at Arch Linux ARM (wholly separate entity)
+See the instructions at the [archlinuxarm site](https://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebook). This is a fully supported platform at Arch Linux ARM (wholly separate entity)
 
 You can install to:
 

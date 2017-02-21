@@ -68,7 +68,7 @@ This section contains advanced Firefox options for performance tweaking. For add
 
 #### Enable OpenGL Off-Main-Thread Compositing (OMTC)
 
-**Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables. Proceed with force-enabling it at your own risk.
+**Warning:** If OpenGL OMTC is disabled for a specific hardware, it may be due to stability issues, high system resources consumption, driver bugs or a number of different variables, and so instead of speeding things up it might slow them down. Proceed with force-enabling it at your own risk, benchmark if you aren’t sure.
 
 **Note:** Since Firefox version 40 basic software OMTC is enabled by default except on machines mentioned above.
 

@@ -467,12 +467,18 @@ To find the default configuration paths:
 
 `$ mkdir -p "$XDG_CACHE_HOME"/vim/{undo,swap,backup}`
 
- `~/.vim/vimrc` 
+ `"$XDG_CONFIG_HOME"/vim/vimrc` 
 ```
-set undodir=~/.cache/vim/undo
-set directory=~/.cache/vim/swap
-set backupdir=~/.cache/vim/backup
-set viminfo+=n~/.cache/vim/viminfo
+set undodir=$XDG_CACHE_HOME/vim/undo
+set directory=$XDG_CACHE_HOME/vim/swap
+set backupdir=$XDG_CACHE_HOME/vim/backup
+set viminfo+='1000,n$XDG_CACHE_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIMRUNTIME
+
+```
+ `~/.profile` 
+```
+export VIMINIT="$XDG_CONFIG_HOME"/vim/vimrc
 
 ```
 

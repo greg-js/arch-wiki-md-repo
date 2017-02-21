@@ -625,9 +625,17 @@ TimeoutStopSec=1
 
 Autofit means that when you resize the VMWare window in the host, ArchLinux should automatically follow and readjust its resolution to fit the new size of the host window.
 
-For some reason autofit requires packages **gtkmm** and **gtk2**, so you should check that you have them installed. If you don't have X windows installed or you are using a non GTK-based desktop environment such as KDE, you might have to install them manually.
+**Potential solution 1**
+
+Make sure you have enabled autofit.
+
+For VMware Worksation you can find the setting in: *View -> Autosize -> Autofit Guest*
 
 **Potential solution 2**
+
+For some reason autofit requires packages **gtkmm** and **gtk2**, so you should check that you have them installed. If you don't have X windows installed or you are using a non GTK-based desktop environment such as KDE, you might have to install them manually.
+
+**Potential solution 3**
 
 You may need to add the modules to mkinitcpio.conf.
 

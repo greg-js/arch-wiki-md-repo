@@ -120,7 +120,7 @@ As of Plasma 5.9, Plasma on [Wayland](/index.php/Wayland "Wayland") should be us
 
 ### Manual
 
-To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `startplasmacompositor`.
+To start Plasma with [xinit](/index.php/Xinit "Xinit")/*startx*, append `exec startkde` to your `.xinitrc` file. If you want to start Xorg at login, please see [Start X at login](/index.php/Start_X_at_login "Start X at login"). To start a Plasma on Wayland session from a console, run `startplasmacompositor`. Note that [qt5-wayland](https://www.archlinux.org/packages/?name=qt5-wayland) is required to run Plasma on Wayland.
 
 ## Configuration
 
@@ -573,6 +573,8 @@ To disable this feature you currently can use `kwriteconfig5 --file kwinrc --gro
 Install and start [ksuperkey](https://aur.archlinux.org/packages/ksuperkey/). Now assign `Alt+F1` as hot key. The `Super` key will now open the application launcher. You can add ksuperkey to the autostart if you do not want to start it manually.
 
 ### Enabling touchpad tap to click on plasma wayland session
+
+**Note:** Since plasma 5.9.2 release, this workaround is no longer needed.
 
 Currently, it is not possible to [configure tap to click via systemsettings](https://bugs.kde.org/show_bug.cgi?id=363109) on plasma wayland session. [A workaround](https://bugs.kde.org/show_bug.cgi?id=366605#c4) is provided to configure tap to click on plasma wayland session via dbus.
 

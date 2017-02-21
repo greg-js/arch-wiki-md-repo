@@ -106,7 +106,7 @@ Beginning with version 5.54 of psd, native support for overlayfs is included. Un
 Currently, the following browsers are auto-detected and managed:
 
 *   [Chromium](/index.php/Chromium "Chromium")
-*   [chromium-dev](/index.php/AUR "AUR")
+*   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
 *   [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
 *   [Epiphany](/index.php/Epiphany "Epiphany")
 *   [Firefox](/index.php/Firefox "Firefox") (all flavors including stable, beta, and aurora)

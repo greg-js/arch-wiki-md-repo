@@ -91,8 +91,6 @@ Generally, the naming method used for the `resume` parameter should be the same 
 
 The configuration depends on the used [boot loader](/index.php/Boot_loader "Boot loader"), refer to [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for details.
 
-**Warning:** If you run into problem when after hibernating with `systemctl hibernate` system boots "normally" instead of hibernating, it may be caused by `systemd` doesn't recognize resume volume specified in `UUID=` or similar formats. In such case you may want to provide a filesystem path instead: `resume=/dev/disk/by-uuid/4209c845-f495-4c43-8a03-5363dd433153`
-
 #### Hibernation into swap file
 
 **Warning:** [Btrfs](/index.php/Btrfs#Swap_file "Btrfs") does not support swap files. Failure to heed this warning may result in file system corruption. While a swap file may be used on Btrfs when mounted through a loop device, this will result in severely degraded swap performance.

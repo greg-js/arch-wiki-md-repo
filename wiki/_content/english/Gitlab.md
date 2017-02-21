@@ -72,7 +72,7 @@ In order to receive mail notifications, a mail server must be installed and conf
 
 The [gitlab](https://www.archlinux.org/packages/?name=gitlab) package installs GitLab's files in a manner that more closely follows standard Linux conventions:
 
-| Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md) | [gitlab](https://www.archlinux.org/packages/?name=gitlab) |
+| Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/master/doc/install/installation.md) | [gitlab](https://www.archlinux.org/packages/?name=gitlab) |
 | Configuration File GitShell | `/home/git/gitlab-shell/config.yml` | `/etc/webapps/gitlab-shell/config.yml` |
 | Configuration File GitLab | `/home/git/gitlab/config/gitlab.yml` | `/etc/webapps/gitlab/gitlab.yml` |
 | User (Home Directory) | `git` (`/home/git`) | `gitlab` (`/var/lib/gitlab`) |

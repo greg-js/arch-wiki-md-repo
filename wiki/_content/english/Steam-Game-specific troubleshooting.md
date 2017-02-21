@@ -220,7 +220,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [80.5 Slow loading textures](#Slow_loading_textures)
 *   [81 Terraria](#Terraria)
 *   [82 This War of Mine](#This_War_of_Mine)
-    *   [82.1 Game doesn't load](#Game_doesn.27t_load)
+    *   [82.1 Game doesn't start](#Game_doesn.27t_start)
     *   [82.2 Sound glitches (on steam-native)](#Sound_glitches_.28on_steam-native.29)
 *   [83 Tomb Raider](#Tomb_Raider)
     *   [83.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
@@ -1636,23 +1636,14 @@ See the KNOWN ISSUES & WORKAROUNDS​ section of the [release announcement](http
 
 ## This War of Mine
 
-### Game doesn't load
+### Game doesn't start
 
-This happens because of a incompatibility of the newer version of `lib32-glibc`. To Fix the problem you need to download the version 2.20-6 of the lib, you can download it [here](http://ftp.nara.wide.ad.jp/pub/Linux/archlinux/multilib-testing/os/x86_64/lib32-glibc-2.20-6-x86_64.pkg.tar.xz), then extract the:
-
-```
-   libc.so.6
-   libc-2.20.so
-   libpthread.so.0
-   libpthread-2.20.so
-   libresolv-2.20.so
-   libresolv.so.2
-   librt.so.1
-   librt-2.20.so
+This happens because of a incompatibility of the newer version of `lib32-curl`. To fix the problem you need to remove the bundled `libcurl.so.4`
 
 ```
+ rm "~/.local/share/Steam/steamapps/common/This War of Mine/libcurl.so.4"
 
-located in the archive and put on the main game folder: `~/.local/share/Steam/steamapps/common/This War of Mine/`
+```
 
 ### Sound glitches (on `steam-native`)
 

@@ -314,7 +314,9 @@ See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/ind
 
 #### Keyboard volume buttons
 
-If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin). This provides a panel applet which has support for keyboard volume control and volume notifications.
+[xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) provides a panel applet which has support for keyboard volume control and volume notifications. As an alternative, you can install [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/), which also provides keybinding and notification control, but without an icon sitting in the panel. This is handy, for example, when using [pasystray](https://aur.archlinux.org/packages/pasystray/) at the same time for a finer control.
+
+Alternatively, [xfce4-mixer](https://git.xfce.org/apps/xfce4-mixer/) also provides a panel applet and keyboard shortcuts which supports Alsa as well. Note however, that it is based on a feature of GStreamer 0.10 which has been abandoned in 1.0.
 
 For non desktop environment specific alternatives, see [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications").
 

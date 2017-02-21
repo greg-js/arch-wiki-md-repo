@@ -9,16 +9,18 @@
     *   [2.3 User service](#User_service)
 *   [3 Accessing the web-interface](#Accessing_the_web-interface)
 *   [4 Configuration](#Configuration)
-*   [5 Use Inotify](#Use_Inotify)
-    *   [5.1 Custom Settings](#Custom_Settings)
-*   [6 Run a Relay](#Run_a_Relay)
-*   [7 Stop journal spam](#Stop_journal_spam)
-*   [8 Discovery Server](#Discovery_Server)
-*   [9 Troubleshooting](#Troubleshooting)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Use inotify](#Use_inotify)
+    *   [5.2 Run a Relay](#Run_a_Relay)
+    *   [5.3 Stop journal spam](#Stop_journal_spam)
+    *   [5.4 Discovery Server](#Discovery_Server)
+*   [6 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
-Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package, which depends on the former. This latter includes additional features such as synchronization by inotify, desktop notifications and integration with Nautilus, Nemo and Caja.
+Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package, which depends on the former.
+
+[syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) includes additional features such as synchronization by inotify (for caveats, see [Use inotify](#Use_inotify)), desktop notifications and integration with Nautilus, Nemo and Caja.
 
 After installing, you can [start Syncthing](#Starting_Syncthing).
 
@@ -34,33 +36,19 @@ Run the `syncthing` binary manually from a terminal.
 
 Running Syncthing as a system service ensures that it is running at startup even if the user has no active session, it is intended to be used on a server.
 
-Enable and start the service. Replace *myuser* with the actual Syncthing user after the @:
-
-```
-# systemctl enable syncthing@myuser.service
-# systemctl start syncthing@myuser.service 
-
-```
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `syncthing@*myuser*.service` where *myuser* is the actual name of your user.
 
 ### User service
 
-Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. It avoids unnecessarily running Syncthing instances. Run this provided `syncthing.service`:
-
-```
-$ systemctl --user enable syncthing.service
-$ systemctl --user start syncthing.service
-
-```
+Running Syncthing as a [user service](/index.php/Systemd/User "Systemd/User") ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a (multiuser) desktop computer. To use the user service, [start/enable](/index.php/Start/enable "Start/enable") the user unit `syncthing.service` (i.e. with the `--user` flag).
 
 The systemd services need to be started for a specific user in any case, see [Autostart-syncthing with systemd](http://docs.syncthing.net/users/autostart.html#using-systemd) for detailed information on the services.
 
 ## Accessing the web-interface
 
-**Tip:** Syncthing can only be accessed on the running computer. Change `<address>127.0.0.1:8384</address>` in `~/.config/syncthing/config.xml` to `<address>0.0.0.0:8384</address>` and restart the [systemd](/index.php/Systemd "Systemd") service to allow access from another computer.
+**Tip:** To access the configuration GUI for a remote computer, see the [FAQ](https://docs.syncthing.net/users/faq.html#how-do-i-access-the-web-gui-from-another-computer).
 
-When Syncthing is started, a web interface will be provided by default on [localhost port 8384](http://localhost:8384). If you started syncthing manually, it should open the admin page in your browser.
-
-**Note:** In syncthing releases before 0.11 (or when you have updated from 0.10) the web interface is available at port 8080\. Since port 8080 often conflicts with web development utilities [the default port has been changed to port 8384](https://github.com/syncthing/syncthing/commit/960c0cbddf8802ae440f2f9ae33bced4e2d72e44) ('ST' in ASCII). Custom port number can be configured under "GUI Listen Addresses" in the settings, configuration from versions prior to 0.11 were **not** adjusted automatically.
+When Syncthing is started, a web interface will be provided by default on [http://localhost:8384](http://localhost:8384). If you started syncthing manually, it should open the admin page in your browser.
 
 ## Configuration
 
@@ -74,34 +62,15 @@ After saving the configuration, you will be prompted to restart the syncthing se
 
 Next, you can either change the configuration of the default node (click its name and then `Edit`), or create a new one to share data with. Simply tick the node you wish to share the data with, and they will have permission to access it.
 
-## Use Inotify
+## Tips and tricks
 
-Inotify (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support Inotify yet but there is an official extension module which talks to the Syncthing REST API. The usage of Inotify avoids expensive rescans every minute. The rescan interval of each folder is automatically increased to avoid expensive, regular rescans. Syncthing-inotify can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. If Syncthing is managed through systemd, it is ensured by systemd dependencies that `syncthing-inotify.service` is started and stopped automatically.
+### Use inotify
 
-You may want to check if the `syncthing-inotify` service is running correctly:
+Inotify (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support inotify yet but there is an official extension module which talks to the Syncthing REST API. The usage of inotify avoids expensive rescans every minute. The inotify extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") the syncthing service (user or system) for changes to take effect.
 
- `# systemctl status syncthing-inotify@**user**.service` 
-```
-Jan 12 16:37:33 <host> systemd[1]: Started Syncthing Inotify File Watcher for <user>.
-Jan 12 16:37:33 <host> syncthing-inotify[16916]: [OK] Watching <folder>: <status>
-..
-```
+Note that while [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) includes inotify, it does not depend upon syncthing-inotify, and as such inotify will only work while the GUI is running.
 
-### Custom Settings
-
-Run `$ syncthing-inotify -help` for available options, such as setting the API key.
-
-To set options for syncthing-inotify service, create a `.conf` file in `/etc/systemd/user/syncthing-inotify.service.d/` (When running as [#User service](#User_service)) and/or `/etc/systemd/system/syncthing-inotify@**user**.service.d/` ([#System service](#System_service)), e.g.:
-
- `/etc/systemd/user/syncthing-inotify.service.d/start.conf` 
-```
-[Unit]
-ExecStart=
-ExecStart=/usr/bin/syncthing-inotify -logflags=0 -api="0M6ubcgtcy7KBLucu0jeXrgqB8U7YKp9"
-RuntimeDirectory=syncthing-inotify
-```
-
-## Run a Relay
+### Run a Relay
 
 Since version 0.12 Syncthing has the ability to connect two devices via a relay when there exists no direct path between them. There is a default set of relays that is used out of the box. Relayed connections are encrypted in the usual manner, end to end, so the relay has no more insight into the connection than any other random eavesdropper on the internet [[1]](https://forum.syncthing.net/t/syncthing-v0-12-beryllium-bedbug-release-notes-v0-12-0-beta1/5480?u=rumpelsepp). To run a relay install [syncthing-relaysrv](https://www.archlinux.org/packages/?name=syncthing-relaysrv), then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `syncthing-relaysrv.service` service.
 
@@ -118,7 +87,7 @@ ExecStart=/usr/bin/syncthing-relaysrv FLAGS
 
 A traffic statistics page is available at port 22070, e.g. [http://78.47.248.86:22070/status](http://78.47.248.86:22070/status).
 
-## Stop journal spam
+### Stop journal spam
 
 Syncthing can be quite noisy even while it isn't doing anything. The service ExecStart can be overridden like this to filter output directly without an extra script (adjust "grep" as needed):
 
@@ -129,7 +98,7 @@ ExecStart=
 ExecStart=/bin/bash -c 'set -o pipefail; /usr/bin/syncthing -no-browser -no-restart -logflags=0 | grep -v "INFO: "'
 ```
 
-## Discovery Server
+### Discovery Server
 
 The Syncthing Discovery Server is available in the AUR under [syncthing-discosrv](https://aur.archlinux.org/packages/syncthing-discosrv/). Documentation is provided [here](https://docs.syncthing.net/users/discosrv.html).
 

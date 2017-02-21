@@ -18,6 +18,7 @@
     *   [2.9 OpenBox](#OpenBox)
     *   [2.10 LightDM](#LightDM)
     *   [2.11 LXDM](#LXDM)
+    *   [2.12 LXQt](#LXQt)
 
 ## Console
 
@@ -236,16 +237,18 @@ See [LightDM#NumLock on by default](/index.php/LightDM#NumLock_on_by_default "Li
 
 ### LXDM
 
-In the file `/etc/lxdm/lxdm.conf` uncomment the line:
-
-```
-#numlock=0
-
-```
-
-and change to:
+Set the option in `/etc/lxdm/lxdm.conf`:
 
 ```
 numlock=1
+
+```
+
+### LXQt
+
+Set the option in `~/.config/lqxt/session.conf`:
+
+```
+numlock=true
 
 ```

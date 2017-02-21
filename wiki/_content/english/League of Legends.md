@@ -13,6 +13,7 @@
             *   [1.3.3.2 Using an existing copy of the game](#Using_an_existing_copy_of_the_game)
         *   [1.3.4 Compatibility Steps (Optional)](#Compatibility_Steps_.28Optional.29)
         *   [1.3.5 Run the game under Wine](#Run_the_game_under_Wine)
+            *   [1.3.5.1 Use the League Client open beta](#Use_the_League_Client_open_beta)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Tips](#Tips)
     *   [2.2 Launcher screen is black](#Launcher_screen_is_black)
@@ -237,6 +238,50 @@ To be able to use an Icon for the application, you need to either convert the **
 Run the bash script/alias/shortcut and you should be good to go!
 
 To test if the game is working, create a custom Summoner's Rift match with one bot. If it loads and you do not crash upon opening the in-game store, you are golden! Congratulations!
+
+##### Use the League Client open beta
+
+If you want to try out the new League Client, click on the upgrade button on the patcher. You have to add three overrides to your libraries for the client to start.
+
+```
+# WINEARCH=win32 WINEPREFIX=$HOME/.wine32 winecfg
+
+```
+
+Access the libraries tab, and add :
+
+*   msvcp140 (Native, then builtin)
+*   vcomp140 (Native, then builtin)
+*   vcruntime140 (Native, then builtin)
+
+Starting the client from the actual patcher seems to work, but you can also start it by improving the script above :
+
+Bash script example: **/bin/leagueoflegends**
+
+```
+#!/bin/sh
+#
+
+case $1 in
+    beta)
+        pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/
+        WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine LeagueClient.exe
+        ;;
+    *)
+        pushd $HOME/.wine32/drive_c/Riot\ Games/League\ of\ Legends/RADS/system/
+        WINEARCH=win32 WINEPREFIX=$HOME/.wine32 wine rads_user_kernel.exe run lol_launcher $(ls ../projects/lol_launcher/releases/) LoLLauncher.exe
+        ;;
+esac
+popd
+
+```
+
+And running the beta version by typing
+
+```
+# leagueoflegends beta
+
+```
 
 ## Troubleshooting
 

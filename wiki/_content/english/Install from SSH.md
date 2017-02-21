@@ -38,4 +38,4 @@ $ ssh root@*ip.address.of.target*
 
 From here one is presented with the live environment's welcome message and is able to administer the target machine as if sitting at the physical keyboard. At this point, if the intent is to simply install Arch from the live media, follow the guide at [Installation guide](/index.php/Installation_guide "Installation guide"). If the intent is to edit an existing Linux install that got broken, follow the [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux") wiki article.
 
-**Tip:** Consider installing a [terminal multiplexer](/index.php/List_of_applications#Terminal_multiplexers "List of applications") on the remote machine, so that if you are disconnected you can reattach to your multiplexer's session.
+**Tip:** Consider installing a [terminal multiplexer](/index.php/List_of_applications#Terminal_multiplexers "List of applications") on the target machine's live (in memory) system, so that if you are disconnected you can reattach to your multiplexer's session.

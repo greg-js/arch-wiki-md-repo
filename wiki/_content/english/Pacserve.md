@@ -28,7 +28,7 @@ Instead of pacman, use the *pacsrv* wrapper to perform an update, install packag
 
 ## Configure Pacman to use Pacserve
 
-If you are always running the pacserve daemon and want pacman to use it without the wrapper, add the following line below **each** repository in /etc/pacman.conf:
+If you are always running the pacserve daemon and want pacman to use it without the wrapper, insert the following line (before any other `Include` lines) in **each** repository in /etc/pacman.conf.
 
 ```
  Include = /etc/pacman.d/pacserve
@@ -47,7 +47,7 @@ Server   = http://xyne.archlinux.ca/repos/xyne
 ...
 ```
 
-Alternatively (for official mirrors only), you may insert the *Include...*-line at the top of the Pacman mirrorlist file or let *pacman.conf-insert_pacserve* generate a *pacman.conf* file for you.
+Alternatively (for official mirrors only), you may insert the `Include` line at the top of the Pacman mirrorlist file or let *pacman.conf-insert_pacserve* generate a *pacman.conf* file for you.
 
 ## Troubleshooting
 

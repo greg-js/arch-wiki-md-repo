@@ -231,6 +231,8 @@ The `/etc/crypttab` (encrypted device table) file is similar to the [fstab](/ind
 
 See [crypttab(5)](https://www.freedesktop.org/software/systemd/man/crypttab.html) for details, read below for some examples, and the [#Mounting at boot time](#Mounting_at_boot_time) section for instructions on how to use UUIDs to mount an encrypted device.
 
+**Note:** When using [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and the `sd-encrypt` hook, if a non-root partition's passphrase is the same as root's, there is no need to put that non-root partition in crypttab due to passphrase caching. See [this thread](https://bbs.archlinux.org/viewtopic.php?id=219859) for more information.
+
 **Warning:** There are issues with [systemd](/index.php/Systemd "Systemd") when processing `crypttab` entries for *dm-crypt* [plain mode](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_plain_mode "Dm-crypt/Device encryption") (`--type plain`) devices:
 
 *   For `--type plain` devices with a keyfile, it is necessary to add the `hash=plain` option to crypttab due to a [systemd incompatibility](https://bugs.freedesktop.org/show_bug.cgi?id=52630). **Do not** use `systemd-cryptsetup` manually for device creation to work around it.

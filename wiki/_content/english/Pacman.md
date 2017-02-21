@@ -360,6 +360,8 @@ The *paccache* script, provided by the [pacman](https://www.archlinux.org/packag
 
 ```
 
+**Tip:** You can create [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") to run this automatically after every pacman transaction.
+
 You can also define how many recent versions you want to keep:
 
 ```

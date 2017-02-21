@@ -1,4 +1,4 @@
-**Note:** This page refers to the 9550 variant of the XPS 15.
+**Note:** This page refers to the 9550 variant of the XPS 15\. This is identical to the Dell Precision 5510 but without a Nvidia Quadro 1000m card
 
 | **Device** | **Status** | **Modules** |
 | Video | Modify | i915, nvidia |

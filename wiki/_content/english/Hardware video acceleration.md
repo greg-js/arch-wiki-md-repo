@@ -30,7 +30,7 @@ There are several ways to achieve this on Linux:
 **Note:** To choose the correct driver see [#Installation](#Installation).
 
 <caption>VA-API</caption>
- [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://cgit.freedesktop.org/vaapi/intel-driver/tree/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) | [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") |
+ [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) | [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") |
 | Decoding |
 | MPEG2 | GMA 4500 and newer | 
 
@@ -139,7 +139,7 @@ There are several ways to achieve this on Linux:
  |
 
 <caption>VDPAU</caption>
- [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) | [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-amdgpu-pro/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) |
+ [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) |
 | Decoding |
 | MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | 
 
@@ -190,7 +190,7 @@ There are several ways to achieve this on Linux:
 
 The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
 
-Regarding the [libvdpau-amdgpu-pro](https://aur.archlinux.org/packages/libvdpau-amdgpu-pro/) package, see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU").
+Regarding the [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) package, see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU").
 
 ### Software
 

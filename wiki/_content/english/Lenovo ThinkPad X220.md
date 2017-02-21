@@ -1,3 +1,5 @@
+The Lenovo ThinkPad X220 is a small-form-factor laptop with Intel Mobile i5/i7 CPU, and Intel graphics. It has no optical drive. You can see full specs at [ThinkWiki](http://www.thinkwiki.org/wiki/Category:X220).
+
 ## Contents
 
 *   [1 Setup](#Setup)
@@ -6,7 +8,7 @@
     *   [1.3 Graphics](#Graphics)
     *   [1.4 Trackpoint and Clickpad](#Trackpoint_and_Clickpad)
 *   [2 Issues](#Issues)
-    *   [2.1 Boot fails](#Boot_fails)
+    *   [2.1 Boot fails (UEFI/GPT)](#Boot_fails_.28UEFI.2FGPT.29)
     *   [2.2 Reboot loop after resume from suspend](#Reboot_loop_after_resume_from_suspend)
     *   [2.3 Microphone](#Microphone)
     *   [2.4 Backlight](#Backlight)
@@ -32,9 +34,15 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 
 ## Issues
 
-### Boot fails
+### Boot fails (UEFI/GPT)
 
-The laptop can not boot from a GPT disk in legacy BIOS mode, it is necessary to either switch to UEFI booting or create a MBR Partition Table.
+The laptop can not boot from a [GPT](/index.php/Partitioning#GUID_Partition_Table "Partitioning") disk in `Legacy BIOS` mode, it is necessary to either switch to `UEFI` booting or create a [MBR Partition Table](/index.php/Partitioning#Master_Boot_Record "Partitioning").
+
+Additional considerations from ThinkWiki:
+
+*   The X220 cannot/will not boot GPT disks using `Legacy BIOS`, you must setup `UEFI`.
+*   The X220 will not boot `/efi/*/*.efi` unless *signed(?)* into BIOS, you have to copy it to `/efi/boot/bootx64.efi`.
+*   Disabling the BIOS setting `USB UEFI BIOS Support` disables **all** USB booting, ie, both `UEFI` and `Legacy BIOS`.
 
 ### Reboot loop after resume from suspend
 

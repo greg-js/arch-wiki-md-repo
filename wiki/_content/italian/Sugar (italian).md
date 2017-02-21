@@ -124,17 +124,17 @@ hippo-canvas		 :-> [unsupported]
 
 Tutte le attività di `fructose` sono disponibili su AUR come `sugar-activity-**acttività**`:
 
-*   [sugar-activity-browse](https://aur.archlinux.org/packages/sugar-activity-browse/)
-*   [sugar-activity-calculate](https://aur.archlinux.org/packages/sugar-activity-calculate/)
-*   [sugar-activity-chat](https://aur.archlinux.org/packages/sugar-activity-chat/)
-*   [sugar-activity-imageviewer](https://aur.archlinux.org/packages/sugar-activity-imageviewer/)
-*   [sugar-activity-jukebox](https://aur.archlinux.org/packages/sugar-activity-jukebox/)
-*   [sugar-activity-log](https://aur.archlinux.org/packages/sugar-activity-log/)
-*   [sugar-activity-pippy](https://aur.archlinux.org/packages/sugar-activity-pippy/)
-*   [sugar-activity-read](https://aur.archlinux.org/packages/sugar-activity-read/)
-*   [sugar-activity-terminal](https://aur.archlinux.org/packages/sugar-activity-terminal/)
+*   [sugar-activity-browse](https://www.archlinux.org/packages/?name=sugar-activity-browse)
+*   [sugar-activity-calculate](https://www.archlinux.org/packages/?name=sugar-activity-calculate)
+*   [sugar-activity-chat](https://www.archlinux.org/packages/?name=sugar-activity-chat)
+*   [sugar-activity-imageviewer](https://www.archlinux.org/packages/?name=sugar-activity-imageviewer)
+*   [sugar-activity-jukebox](https://www.archlinux.org/packages/?name=sugar-activity-jukebox)
+*   [sugar-activity-log](https://www.archlinux.org/packages/?name=sugar-activity-log)
+*   [sugar-activity-pippy](https://www.archlinux.org/packages/?name=sugar-activity-pippy)
+*   [sugar-activity-read](https://www.archlinux.org/packages/?name=sugar-activity-read)
+*   [sugar-activity-terminal](https://www.archlinux.org/packages/?name=sugar-activity-terminal)
 *   [sugar-activity-turtleart](https://aur.archlinux.org/packages/sugar-activity-turtleart/)
-*   [sugar-activity-write](https://aur.archlinux.org/packages/sugar-activity-write/)
+*   [sugar-activity-write](https://www.archlinux.org/packages/?name=sugar-activity-write)
 
 ### Etoys
 

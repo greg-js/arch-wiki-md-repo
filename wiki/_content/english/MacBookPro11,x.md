@@ -361,7 +361,7 @@ After=upower.service
 *   Intel, works on Linux 3.13
 *   Framebuffer, works for MacBook Pro 11,1 and 11,3 via `/sys/class/backlight/gmux_backlight/brightness`.
 *   Brightness in `/sys/class/backlight/gmux_backlight/brightness` can be modified comfortably via the [gmux_backlight](https://aur.archlinux.org/packages/gmux_backlight/) utility without root privileges. Requires the `setpci` setting below.
-*   Nvidia, does not work using default settings. Try adding `setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0` to `/etc/rc.local`.
+*   Nvidia, does not work using default settings. Try executing as root `setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0`. It may be worthwhile to create a systemd unit to execute this on boot.
 *   AMD models may require a patched kernel for the backlight to be adjusted. The [linux-macbook](https://aur.archlinux.org/packages/linux-macbook/) kernel fixes this.
 
 **Note:** If the screen does not show the prompt or the login manager (i.e. a black screen), append `i915.invert_brightness=1` to the kernel.

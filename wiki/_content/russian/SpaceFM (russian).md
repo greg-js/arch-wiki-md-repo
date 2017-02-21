@@ -18,7 +18,7 @@
 
 ## Установка
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [spacefm](https://www.archlinux.org/packages/?name=spacefm).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [spacefm](https://aur.archlinux.org/packages/spacefm/).
 
 Если же вы хотите использовать версию на GTK+ 2, используйте пакет [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/).
 

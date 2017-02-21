@@ -130,4 +130,4 @@ $ sed '/OnlyShowIn/aNoDisplay=true' </usr/share/applications/lxqt-hibernate.desk
 *   [LXQt homepage](http://lxqt.org)
 *   [LXQt development](https://github.com/lxde/lxqt)
 *   [LXQt on deviantART](http://lxqt-de.deviantart.com/)
-*   [LXQt wiki on GitHUb](https://github.com/lxde/lxqt/wiki)
+*   [LXQt wiki on GitHub](https://github.com/lxde/lxqt/wiki)

@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-12-28，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=459689)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [pacman](/index.php/Pacman "Pacman") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-02-20，点击[这里](https://wiki.archlinux.org/index.php?title=pacman&diff=0&oldid=465856)可以查看翻译后英文页面的改动。
 
 [pacman](https://archlinux.org/pacman/)[软件包管理器](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system")是 Arch Linux 的一大亮点。它将一个简单的二进制包格式和易用的构建系统结合了起来(参见[makepkg](/index.php/Makepkg "Makepkg")和[ABS](/index.php/ABS "ABS"))。不管软件包是来自官方的 Arch 库还是用户自己创建，*pacman* 都能方便得管理。
 
@@ -21,6 +21,7 @@
     *   [1.5 清理软件包缓存](#.E6.B8.85.E7.90.86.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BC.93.E5.AD.98)
     *   [1.6 其它命令](#.E5.85.B6.E5.AE.83.E5.91.BD.E4.BB.A4)
     *   [1.7 安装原因](#.E5.AE.89.E8.A3.85.E5.8E.9F.E5.9B.A0)
+    *   [1.8 查询一个包含具体文件的包名](#.E6.9F.A5.E8.AF.A2.E4.B8.80.E4.B8.AA.E5.8C.85.E5.90.AB.E5.85.B7.E4.BD.93.E6.96.87.E4.BB.B6.E7.9A.84.E5.8C.85.E5.90.8D)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
     *   [2.1 通用选项](#.E9.80.9A.E7.94.A8.E9.80.89.E9.A1.B9)
     *   [2.2 升级前对比版本](#.E5.8D.87.E7.BA.A7.E5.89.8D.E5.AF.B9.E6.AF.94.E7.89.88.E6.9C.AC)
@@ -39,29 +40,28 @@
     *   [3.3 "error: failed to init transaction (unable to lock database)" 错误](#.22error:_failed_to_init_transaction_.28unable_to_lock_database.29.22_.E9.94.99.E8.AF.AF)
     *   [3.4 安装时无法获取软件包](#.E5.AE.89.E8.A3.85.E6.97.B6.E6.97.A0.E6.B3.95.E8.8E.B7.E5.8F.96.E8.BD.AF.E4.BB.B6.E5.8C.85)
     *   [3.5 pacman 重复升级同一个包](#pacman_.E9.87.8D.E5.A4.8D.E5.8D.87.E7.BA.A7.E5.90.8C.E4.B8.80.E4.B8.AA.E5.8C.85)
-    *   [3.6 我需要有一个指定文件的包。我怎么知道谁提供了这个文件？](#.E6.88.91.E9.9C.80.E8.A6.81.E6.9C.89.E4.B8.80.E4.B8.AA.E6.8C.87.E5.AE.9A.E6.96.87.E4.BB.B6.E7.9A.84.E5.8C.85.E3.80.82.E6.88.91.E6.80.8E.E4.B9.88.E7.9F.A5.E9.81.93.E8.B0.81.E6.8F.90.E4.BE.9B.E4.BA.86.E8.BF.99.E4.B8.AA.E6.96.87.E4.BB.B6.EF.BC.9F)
-    *   [3.7 pacman 完全坏掉，如何修复?](#pacman_.E5.AE.8C.E5.85.A8.E5.9D.8F.E6.8E.89.EF.BC.8C.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.3F)
-    *   [3.8 pacman 更新时崩溃](#pacman_.E6.9B.B4.E6.96.B0.E6.97.B6.E5.B4.A9.E6.BA.83)
-    *   [3.9 pacman crashes the official installation media](#pacman_crashes_the_official_installation_media)
-    *   [3.10 升级系统重启后，出现"unable to find root device"错误，无法登陆](#.E5.8D.87.E7.BA.A7.E7.B3.BB.E7.BB.9F.E9.87.8D.E5.90.AF.E5.90.8E.EF.BC.8C.E5.87.BA.E7.8E.B0.22unable_to_find_root_device.22.E9.94.99.E8.AF.AF.EF.BC.8C.E6.97.A0.E6.B3.95.E7.99.BB.E9.99.86)
-        *   [3.10.1 Fallback 启动项](#Fallback_.E5.90.AF.E5.8A.A8.E9.A1.B9)
-        *   [3.10.2 Chroot 修复](#Chroot_.E4.BF.AE.E5.A4.8D)
-    *   [3.11 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
-    *   [3.12 Request on importing PGP keys](#Request_on_importing_PGP_keys)
-    *   [3.13 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"](#.E4.B8.8D.E5.81.9C.E7.9C.8B.E5.88.B0.E9.94.99.E8.AF.AF_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
-    *   [3.14 'warning: current locale is invalid; using default "C" locale' 错误](#.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27_.E9.94.99.E8.AF.AF)
-    *   [3.15 pacman不使用我的代理设置](#pacman.E4.B8.8D.E4.BD.BF.E7.94.A8.E6.88.91.E7.9A.84.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
-    *   [3.16 如何重装所有包并保留安装和依赖信息？](#.E5.A6.82.E4.BD.95.E9.87.8D.E8.A3.85.E6.89.80.E6.9C.89.E5.8C.85.E5.B9.B6.E4.BF.9D.E7.95.99.E5.AE.89.E8.A3.85.E5.92.8C.E4.BE.9D.E8.B5.96.E4.BF.A1.E6.81.AF.EF.BC.9F)
-    *   [3.17 "Cannot open shared object file" 错误](#.22Cannot_open_shared_object_file.22_.E9.94.99.E8.AF.AF)
-    *   [3.18 软件包下载停滞](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.B8.8B.E8.BD.BD.E5.81.9C.E6.BB.9E)
-    *   [3.19 无法从镜像服务器获取 'core.db'](#.E6.97.A0.E6.B3.95.E4.BB.8E.E9.95.9C.E5.83.8F.E6.9C.8D.E5.8A.A1.E5.99.A8.E8.8E.B7.E5.8F.96_.27core.db.27)
+    *   [3.6 pacman 完全坏掉，如何修复?](#pacman_.E5.AE.8C.E5.85.A8.E5.9D.8F.E6.8E.89.EF.BC.8C.E5.A6.82.E4.BD.95.E4.BF.AE.E5.A4.8D.3F)
+    *   [3.7 pacman 更新时崩溃](#pacman_.E6.9B.B4.E6.96.B0.E6.97.B6.E5.B4.A9.E6.BA.83)
+    *   [3.8 pacman crashes the official installation media](#pacman_crashes_the_official_installation_media)
+    *   [3.9 升级系统重启后，出现"unable to find root device"错误，无法登陆](#.E5.8D.87.E7.BA.A7.E7.B3.BB.E7.BB.9F.E9.87.8D.E5.90.AF.E5.90.8E.EF.BC.8C.E5.87.BA.E7.8E.B0.22unable_to_find_root_device.22.E9.94.99.E8.AF.AF.EF.BC.8C.E6.97.A0.E6.B3.95.E7.99.BB.E9.99.86)
+        *   [3.9.1 Fallback 启动项](#Fallback_.E5.90.AF.E5.8A.A8.E9.A1.B9)
+        *   [3.9.2 Chroot 修复](#Chroot_.E4.BF.AE.E5.A4.8D)
+    *   [3.10 Signature from "User <email@gmail.com>" is unknown trust, installation failed](#Signature_from_.22User_.3Cemail.40gmail.com.3E.22_is_unknown_trust.2C_installation_failed)
+    *   [3.11 Request on importing PGP keys](#Request_on_importing_PGP_keys)
+    *   [3.12 不停看到错误 "PackageName: signature from "User <email@archlinux.org>" is invalid"](#.E4.B8.8D.E5.81.9C.E7.9C.8B.E5.88.B0.E9.94.99.E8.AF.AF_.22PackageName:_signature_from_.22User_.3Cemail.40archlinux.org.3E.22_is_invalid.22)
+    *   [3.13 'warning: current locale is invalid; using default "C" locale' 错误](#.27warning:_current_locale_is_invalid.3B_using_default_.22C.22_locale.27_.E9.94.99.E8.AF.AF)
+    *   [3.14 pacman不使用我的代理设置](#pacman.E4.B8.8D.E4.BD.BF.E7.94.A8.E6.88.91.E7.9A.84.E4.BB.A3.E7.90.86.E8.AE.BE.E7.BD.AE)
+    *   [3.15 如何重装所有包并保留安装和依赖信息？](#.E5.A6.82.E4.BD.95.E9.87.8D.E8.A3.85.E6.89.80.E6.9C.89.E5.8C.85.E5.B9.B6.E4.BF.9D.E7.95.99.E5.AE.89.E8.A3.85.E5.92.8C.E4.BE.9D.E8.B5.96.E4.BF.A1.E6.81.AF.EF.BC.9F)
+    *   [3.16 "Cannot open shared object file" 错误](#.22Cannot_open_shared_object_file.22_.E9.94.99.E8.AF.AF)
+    *   [3.17 软件包下载停滞](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.B8.8B.E8.BD.BD.E5.81.9C.E6.BB.9E)
+    *   [3.18 无法从镜像服务器获取 'core.db'](#.E6.97.A0.E6.B3.95.E4.BB.8E.E9.95.9C.E5.83.8F.E6.9C.8D.E5.8A.A1.E5.99.A8.E8.8E.B7.E5.8F.96_.27core.db.27)
 *   [4 参见](#.E5.8F.82.E8.A7.81)
 
 ## 用法
 
 下面只是一个可执行操作的小部分示范，*pacman* 的其他示例请阅读[man pacman](https://www.archlinux.org/pacman/pacman.8.html)。
 
-**Tip:** 使用过其它发行版的用户，可以参考 [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") 中的对比.
+**提示：** 使用过其它发行版的用户，可以参考 [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") 中的对比.
 
 ### 安装软件包
 
@@ -448,6 +448,31 @@ which-2.20-6
 
 使用`--asexplicit`改为**指定安装**。
 
+### 查询一个包含具体文件的包名
+
+同步文件数据库:
+
+```
+# pacman -Fy
+
+```
+
+查询包含某个文件的包名，比如:
+
+```
+# pacman -Fs pacman
+core/pacman 5.0.1-4
+    usr/bin/pacman
+    usr/share/bash-completion/completions/pacman
+extra/xscreensaver 5.36-1
+    usr/lib/xscreensaver/pacman
+
+```
+
+**提示：** 可以设置一个 `crontab` 或者 `systemd timer` 来定期同步文件信息数据库。
+
+如果需要高级功能请安装 [pkgfile](/index.php/Pkgfile "Pkgfile")，它使用一个单独的数据库来保存文件和它们所关联的软件包的信息。
+
 ## 配置
 
 *pacman* 的配置文件位于`/etc/pacman.conf`。 [man pacman.conf](https://www.archlinux.org/pacman/pacman.conf.5.html) 可以查看配置文件的进一步信息。
@@ -606,10 +631,6 @@ Errors occurred, no packages were upgraded.
 
 解决方法：删除 `/var/lib/pacman/local/` 中多余的条目。
 
-### 我需要有一个指定文件的包。我怎么知道谁提供了这个文件？
-
-安装 [pkgfile](/index.php/Pkgfile "Pkgfile")，它使用一个单独的数据库保存所有文件的软件包归属。
-
 ### pacman 完全坏掉，如何修复?
 
 如果 *pacman* 完全坏掉不能使用，需要手动下载或构建需要的软件包([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive) 和 [pacman](https://www.archlinux.org/packages/?name=pacman)) 并解压到根目录。*pacman* 会和默认配置文件一起恢复。之后，用 *pacman* 重新安装这些软件包以保证数据库的完整性。
@@ -638,7 +659,7 @@ If you *require* an install media with persistent dataspace, the [Archiso](/inde
 
 #### Fallback 启动项
 
-**Tip:** 如果删除了此启动项，可以在启动时进入启动加载器的手动模式，将 initramfs 修改为 `initramfs-linux-fallback.img` 继续启动。
+**提示：** 如果删除了此启动项，可以在启动时进入启动加载器的手动模式，将 initramfs 修改为 `initramfs-linux-fallback.img` 继续启动。
 
 如果系统可以启动，运行如下命令可以生产原始内核 [linux](https://www.archlinux.org/packages/?name=linux) 的 initramfs:
 
@@ -663,10 +684,11 @@ If you *require* an install media with persistent dataspace, the [Archiso](/inde
 
 ### Signature from "User <email@gmail.com>" is unknown trust, installation failed
 
-查看[pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key"). 或试试：
+试试以下途径：
 
 *   更新已知密钥：`pacman-key --refresh-keys`;
 *   手动升级`archlinux-keyring`软件包：`pacman -S archlinux-keyring`.
+*   查看[pacman-key#Resetting all the keys](/index.php/Pacman-key#Resetting_all_the_keys "Pacman-key").
 
 ### Request on importing PGP keys
 

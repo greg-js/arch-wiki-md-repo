@@ -201,7 +201,7 @@ VLAN=vlan10
 Address=10.10.10.2/24
 
 [Route]
-Destination=0.0.0.0
+Destination=0.0.0.0/0
 Gateway=10.10.10.1
 
 ```

@@ -84,7 +84,7 @@ Algunos temas son incluidos por defecto, muchos otros estan disponibles con el p
 
 ## Gestores de Archivos
 
-Se debe señalar que IceWM es un gestor de ventanas y por lo tanto no incluye un Gestor de Archivos.[spacefm](https://www.archlinux.org/packages/?name=spacefm), [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm), y [rox](https://www.archlinux.org/packages/?name=rox) pueden gestionar los íconos del escritorio, aunque [iDesk](/index.php/Idesk "Idesk") también puede ser usado para lograr dicha funcionalidad.
+Se debe señalar que IceWM es un gestor de ventanas y por lo tanto no incluye un Gestor de Archivos.[spacefm](https://aur.archlinux.org/packages/spacefm/), [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm), y [rox](https://www.archlinux.org/packages/?name=rox) pueden gestionar los íconos del escritorio, aunque [iDesk](/index.php/Idesk "Idesk") también puede ser usado para lograr dicha funcionalidad.
 
 **Note:** Para una mejor lista de Gestores de Archivos, vea [File managers](/index.php/Category:File_managers "Category:File managers").
 

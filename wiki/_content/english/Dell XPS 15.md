@@ -229,7 +229,7 @@ lspci for model Precision 5510:
 
 ## Differences between XPS 9550 & Precision 5510
 
-The Precision 5510 is essentially identical to the 9550 variant, with the exception of an Intel Wireless NIC & Quadro 1000M Graphics Chip. Compared to the 9550's Broadcom NIC & 960M graphics chip.
+The Precision 5510 is essentially identical to the [XPS 9550](https://wiki.archlinux.org/index.php/Dell_XPS_15_(9550)) variant, with the exception of an Intel Wireless NIC & Quadro 1000M Graphics Chip. Compared to the 9550's Broadcom NIC & 960M graphics chip.
 
 ## System Setup
 

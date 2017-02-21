@@ -2061,7 +2061,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 *   **SpaceFM** — Administrador de archivos multipanel con pestañas basado en GTK+.
 
-	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://www.archlinux.org/packages/?name=spacefm)
+	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
 
 *   **Sunflower** — Gestor de archivos de doble panel, pequeño y altamente personalizable, para Linux, con soporte para plugins.
 
@@ -3000,7 +3000,7 @@ Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/w
 
 *   **abduco** — Herramienta con soporte para la desconexión y reconexión de sesiones, lo que permite a un proceso ejecutarse con independencia de la terminal que lo controla.
 
-	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://aur.archlinux.org/packages/abduco/)
+	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://www.archlinux.org/packages/?name=abduco)
 
 *   **dtach** — Programa que emula la capacidad de desconexión de [screen](/index.php/Screen "Screen").
 
