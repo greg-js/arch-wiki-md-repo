@@ -52,7 +52,7 @@ Other alternatives include:
 
 *   **Firefox Developer Edition/Aurora** — for developers
 
-	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/), [firefox-developer](https://aur.archlinux.org/packages/firefox-developer/), [firefox-dev](https://aur.archlinux.org/packages/firefox-dev/)
+	[https://www.mozilla.org/firefox/developer/](https://www.mozilla.org/firefox/developer/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/), [firefox-developer](https://aur.archlinux.org/packages/firefox-developer/)
 
 *   **Firefox Nightly** — nightly builds for testing ([experimental features](https://developer.mozilla.org/Firefox/Experimental_features))
 
@@ -134,9 +134,7 @@ Please note that the first line must contain exactly `//`. The syntax of the fil
 
 ### Multimedia playback
 
-Firefox will try to use [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. For this to work, the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package needs to be installed.
-
-Restart Firefox, and go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](https://www.quirksmode.org/html5/tests/video.html) or [audio-test page](https://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
+Firefox uses [FFmpeg](/index.php/FFmpeg "FFmpeg") for playing multimedia inside HTML5 `<audio>` and `<video>` elements. Go to [YouTube's HTML5 page](https://www.youtube.com/html5), [video-test page](https://www.quirksmode.org/html5/tests/video.html) or [audio-test page](https://hpr.dogphilosophy.net/test/) to check which formats are actually supported.
 
 Since Firefox 49 HTML5 DRM playback is supported by the Google Widevine CDM, it is however not enabled by default. See *Preferences > Content > DRM content* if you want to learn more.
 

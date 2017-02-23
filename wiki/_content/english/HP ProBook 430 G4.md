@@ -16,13 +16,23 @@
 | USB 3.0 Type-C™ port | Not tested |
 | Fingerprint Reader | Not tested |
 
+## Contents
+
+*   [1 Device information](#Device_information)
+*   [2 Backlight](#Backlight)
+*   [3 ACPI errors](#ACPI_errors)
+*   [4 Touchpad](#Touchpad)
+*   [5 Graphic card setup](#Graphic_card_setup)
+*   [6 other errors/bugs](#other_errors.2Fbugs)
+
 ## Device information
+
+This is a work in progress with information about the HP ProBook 430 G4\. There are many configurations for these models of HP Probooks. Mine is a HP ProBook 430 G4/822C, BIOS P85 Ver. 01.03 12/05/2016, shipped with a Core i5-7200U, 8GB, 256GB SSD. I've added a 2nd 8GB memory rig and placed my old 64GB 2,5" SATA SSD into the 2nd slot. The UEFI bios allows legacy boot.
 
 Basic information for the new [HP ProBook 430 G4](http://www.notebookcheck.net/HP-updates-the-mainstream-ProBook-400-series.174476.0.html) model. Hardware works out of the box. No configuration was needed. Information for the "Not tested" units will be posted additionally.
 
- `lspci -v` 
 ```
-{{
+lspci -v
 00:00.0 Host bridge: Intel Corporation Device 5904 (rev 02)
 	Subsystem: Hewlett-Packard Company Device 822c
 	Flags: bus master, fast devsel, latency 0
@@ -207,6 +217,70 @@ Basic information for the new [HP ProBook 430 G4](http://www.notebookcheck.net/H
 	Capabilities: [158] L1 PM Substates
 	Kernel driver in use: rtsx_pci
 	Kernel modules: rtsx_pci
-}}
+```
 
+## Backlight
+
+I have not found a solution so far to control the backlight via kernel hardware control keys via kernel. So backlight control works only via software. It works out of the box under Xfce and under i3wm I use a custom command using " xbacklight -inc/-dec 10".
+
+## ACPI errors
+
+There are lots of acpi related error messages with kernel 4.9.x:
+
+```
+Feb 21 16:08:57 localhost kernel: ACPI Error: Field [CAP1] at 96 exceeds Buffer [NULL] size 64 (bits) (20160831/dsopcode-236)
+Feb 21 16:08:57 localhost kernel: ACPI Error: Method parse/execution failed [\_SB._OSC] (Node ffff88041f8ef348), AE_AML_BUFFER_LIMIT (20
+...
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Needed [Buffer/String/Package], found [Integer] ffff88041b43f750 (20160831/exresop-594)
+Feb 21 16:09:01 laptop64 kernel: ACPI Exception: AE_AML_OPERAND_TYPE, While resolving operands for [OpcodeName unavailable] (20160831/ds
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WVPO] (Node ffff88041f89bcd0), AE_AML_OPERAND_TYPE
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WMPV] (Node ffff88041f89b780), AE_AML_OPERAND_TYPE
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Needed [Buffer/String/Package], found [Integer] ffff88041ce2e318 (20160831/exresop-594)
+Feb 21 16:09:01 laptop64 kernel: ACPI Exception: AE_AML_OPERAND_TYPE, While resolving operands for [OpcodeName unavailable] (20160831/ds
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WVPO] (Node ffff88041f89bcd0), AE_AML_OPERAND_TYPE
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WMPV] (Node ffff88041f89b780), AE_AML_OPERAND_TYPE
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Needed [Buffer/String/Package], found [Integer] ffff88041b43f900 (20160831/exresop-594)
+Feb 21 16:09:01 laptop64 kernel: ACPI Exception: AE_AML_OPERAND_TYPE, While resolving operands for [OpcodeName unavailable] (20160831/ds
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WVPO] (Node ffff88041f89bcd0), AE_AML_OPERAND_TYPE
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WMPV] (Node ffff88041f89b780), AE_AML_OPERAND_TYPE
+Feb 21 16:09:01 laptop64 kernel: input: HP WMI hotkeys as /devices/virtual/input/input18
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Attempt to CreateField of length zero (20160831/dsopcode-168)
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WVPI] (Node ffff88041f89b280), AE_AML_OPERAND_VALU
+Feb 21 16:09:01 laptop64 kernel: ACPI Error: Method parse/execution failed [\_SB.WMIV.WMPV] (Node ffff88041f89b780), AE_AML_OPERAND_VALU
+```
+
+## Touchpad
+
+Middle click doesn't work so far.
+
+## Graphic card setup
+
+Either modesetting driver or Intel driver seem to work well. I'm using the Intel driver here. DRI3 seems to work well.
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+      Identifier  "Intel Graphics"
+
+     #Driver      "modesetting"
+     #Option      "AccelMethod"     "glamor"
+
+      Driver      "intel"
+      Option      "AccelMethod"     "sna"
+
+     #Option      "DRI"             "2"
+
+     Option      "Backlight"       "intel_backlight" # use your backlight that works here
+
+EndSection
+```
+
+## other errors/bugs
+
+```
+Feb 21 16:08:58 localhost systemd-udevd[75]: Assertion '!d->current' failed at src/libsystemd/sd-event/sd-event.c:733, function event_un
+...
+Feb 21 16:09:01 laptop64 kernel: pcieport 0000:00:1d.0: PCIe Bus Error: severity=Corrected, type=Physical Layer, id=00e8(Receiver ID)
+Feb 21 16:09:01 laptop64 kernel: pcieport 0000:00:1d.0:   device [8086:9d18] error status/mask=00000001/00002000
+Feb 21 16:09:01 laptop64 kernel: pcieport 0000:00:1d.0:    [ 0] Receiver Error         (First)
 ```

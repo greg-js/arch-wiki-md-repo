@@ -8,60 +8,55 @@ The [GNOME](/index.php/GNOME "GNOME") packages on Arch Linux follow a certain sc
 
 ## Contents
 
-*   [1 GNOME profile initialization](#GNOME_profile_initialization)
-*   [2 GConf schemas](#GConf_schemas)
-*   [3 GSettings schemas](#GSettings_schemas)
-*   [4 Scrollkeeper documentation](#Scrollkeeper_documentation)
+*   [1 GConf schemas](#GConf_schemas)
+*   [2 GSettings schemas](#GSettings_schemas)
+*   [3 Scrollkeeper documentation](#Scrollkeeper_documentation)
+*   [4 GTK icon cache](#GTK_icon_cache)
 *   [5 .desktop files](#.desktop_files)
-*   [6 GTK icon cache](#GTK_icon_cache)
-*   [7 .install files](#.install_files)
-*   [8 Example](#Example)
-
-## GNOME profile initialization
-
-There is no GNOME profile initialization anymore. The old line below should be stripped from any [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"):
-
- `[ -z "$GNOMEDIR" ] && . /etc/profile.d/gnome.sh` 
+*   [6 .install files](#.install_files)
 
 ## GConf schemas
 
-Many GNOME packages install [GConf schemas](https://en.wikipedia.org/wiki/GConf#Schemas "wikipedia:GConf"). These schemas get installed in the system GConf database, which has to be avoided. Some packages provide a `--disable-schemas-install` switch for **./configure**, which hardly ever works. Therefore, gconftool-2 has a variable called `GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL`, whenever this is set, gconftool-2 will not update any databases.
+Some GNOME packages install [GConf schemas](https://en.wikipedia.org/wiki/GConf#Schemas "wikipedia:GConf"), even though many others already migrated to GSettings. Those packages should depend on [gconf](https://www.archlinux.org/packages/?name=gconf).
 
-When creating packages that install schema files, use
+Gconf schemas get installed in the system GConf database, which has to be avoided. Some packages provide a `--disable-schemas-install` switch for **./configure**, which hardly ever works. However, gconftool-2 has a variable called `GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL` which you can set to tell gconftool-2 to not update any databases.
+
+When creating packages that install GConf schema files, use
 
  `make GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR=${pkgdir} install` 
 
 for the package installation step in the PKGBUILD.
 
-GConf schemas need to be installed and removed in the `.install` file using `pre_remove`, `pre_upgrade` and `post_upgrade` and `post_install`. Use **gconf-merge-schemas** to merge several schemas into one package specific file, install or uninstall them with `usr/sbin/gconfpkg --*(un)*install $pkgname` The usage of **gconfpkg** requres a dependency on [gconf](https://www.archlinux.org/packages/?name=gconf)>=2.18.0.1-4 (or [gconfmm](https://www.archlinux.org/packages/?name=gconfmm)>=2.20.0).
+Do not call `gconfpkg` in the .install file, as GConf schemas are automatically installed/removed (while installing/removing the GNOME package) via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [gconf](https://www.archlinux.org/packages/?name=gconf)=3.2.6-4
 
 ## GSettings schemas
 
-The GConf schemas will be replaced by GSettings schemas in the near future, but some applications (e.g. Empathy) already using it. GSettings uses dconf as backend, so all packages that contain GSettings schemas require dconf as dependency. When a new GSettings schema installed on the system, the GSettings database should be recompiled, but not when packaging. To avoid recompiling GSettings database on packaging, use the `--disable-schemas-compile` switch for **./configure**. To recompile it on install, add the following line to the .install file using post_install, post_upgrade and post_remove:
+The GConf schemas were migrated to GSettings schemas, so many GNOME applications can be found using this new schema file. GSettings uses dconf as backend, so all packages that contain GSettings schemas require [dconf](https://www.archlinux.org/packages/?name=dconf) as dependency. When a new GSettings schema installed on the system, the GSettings database has to be recompiled, but not when packaging.
 
-```
-glib-compile-schemas usr/share/glib-2.0/schemas
+To avoid recompiling GSettings database on packaging, use the `--disable-schemas-compile` switch for **./configure**.
 
-```
+Do not call `glib-compile-schemas` in the .install file, as GSettings schema databases are automatically recompiled via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [glib2](https://www.archlinux.org/packages/?name=glib2)=2.48.0-2.
 
 ## Scrollkeeper documentation
 
-Starting from GNOME 2.20 there is no need to handle scrollkeeper anymore, as rarian reads OMF files directly. Scrollkeeper-update is a dummy these days. The only required thing now is to makedepend on [gnome-doc-utils](https://www.archlinux.org/packages/?name=gnome-doc-utils)>=0.11.2.
+Starting from GNOME 2.20 there is no need to handle scrollkeeper anymore, as [rarian](https://www.archlinux.org/packages/?name=rarian) reads its OMF files directly. Scrollkeeper-update is a dummy these days. The only required thing now is to makedepend on [gnome-doc-utils](https://www.archlinux.org/packages/?name=gnome-doc-utils)>=0.11.2.
 
-## .desktop files
-
-Many packages install Freedesktop.org compatible `.desktop` files and register MimeType entries in them. Running `update-desktop-database -q` in `post_install` and `post_remove` is recommended (package should depend on [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) in this case).
+It can be disabled using `--disable-scrollkeeper` switch from **./configure**.
 
 ## GTK icon cache
 
-Quite some packages install icons in the hicolor icon theme. These packages should depend on [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache) and should have `gtk-update-icon-cache -q -t -f usr/share/icons/hicolor` (WITHOUT leading slash) in the `post_install`, `post_upgrade` and `post_remove` function.
+Quite some packages install icons in the hicolor icon theme. These packages should depend on [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache).
+
+Do not call `gtk-update-icon-cache` in the .install file, as the icon cache is updated via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2.
+
+## .desktop files
+
+Many packages install Freedesktop.org compatible `.desktop` files and register MimeType entries in them. They should depend on [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)
+
+Do not call `update-desktop-database` in the .install file, as the database is automatically updated via [pacman hooks](/index.php/Pacman#Hooks "Pacman") since [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2.
 
 ## .install files
 
-For many GNOME packages, all .install files look almost exactly the same. The [gedit](https://www.archlinux.org/packages/?name=gedit) package contains a very generic install file: [https://projects.archlinux.org/svntogit/packages.git/tree/gedit/repos/extra-x86_64/gedit.install](https://projects.archlinux.org/svntogit/packages.git/tree/gedit/repos/extra-x86_64/gedit.install)
+Previously, most of the GNOME packages had a .install file calling commands like `glib-compile-schemas`, `gtk-update-icon-cache`, and `update-desktop-database` in order to install/update local cache or databases. This is deprecated since pacman 5.0 implemented [hooks](/index.php/Pacman#Hooks "Pacman") which call those commands automatically when installing the package.
 
-Basically, the only thing that has to be changed is the `pkgname` variable on top of the `.install` file. As long as pacman does not supply us with the `pkgname` variable, we need to supply it in the `.install` file. When packages do not have gconf schemas, hicolor icon files, or `.desktop` files, remove the parts that handle those subjects.
-
-## Example
-
-For an example of above rules, take a look at the gedit PKGBUILD and the `.install` file supplied above: [https://projects.archlinux.org/svntogit/packages.git/tree/gedit/repos/extra-x86_64/](https://projects.archlinux.org/svntogit/packages.git/tree/gedit/repos/extra-x86_64/)
+To avoid being called twice, the above mentioned commands should be removed from .install file.

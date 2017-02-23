@@ -70,6 +70,14 @@ ip link set $INTERFACE down
 
 ```
 
+These files are meant to be run as scripts. As such, don't forget to make them executable!
+
+```
+#!/bin/sh
+chmod 775 /etc/tinc/*vpnname*/tinc-*
+
+```
+
 ### Configuration of beta
 
 /etc/tinc/*vpnname*/tinc.conf
@@ -98,6 +106,14 @@ ip route add 192.168.0.0/24 dev $INTERFACE
 ip route del 192.168.0.0/24 dev $INTERFACE
 ip addr del 192.168.0.2/32 dev $INTERFACE
 ip link set $INTERFACE down
+
+```
+
+These files are meant to be run as scripts. As such, don't forget to make them executable!
+
+```
+#!/bin/sh
+chmod 775 /etc/tinc/*vpnname*/tinc-*
 
 ```
 

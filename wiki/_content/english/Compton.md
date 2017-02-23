@@ -13,10 +13,11 @@ Compton is a standalone composite manager, suitable for use with [window manager
     *   [4.1 slock](#slock)
     *   [4.2 dwm & dmenu](#dwm_.26_dmenu)
     *   [4.3 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.4 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.5 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
-    *   [4.6 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
-    *   [4.7 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [4.4 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [4.5 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [4.6 High CPU use with nvidia drivers](#High_CPU_use_with_nvidia_drivers)
+    *   [4.7 Errors while trying to daemonize with nvidia drivers](#Errors_while_trying_to_daemonize_with_nvidia_drivers)
+    *   [4.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -218,7 +219,11 @@ $ hsetroot -solid '#000000'
 
 ```
 
-For a detailed explaination, please see [https://github.com/chjj/compton/issues/162](https://github.com/chjj/compton/issues/162).
+For a detailed explanation, please see [https://github.com/chjj/compton/issues/162](https://github.com/chjj/compton/issues/162).
+
+### Corrupted screen contents with Intel graphics
+
+On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.freedesktop.org/show_bug.cgi?id=97916) for compton when the display resolution is changed or a new monitor is connected. This can happen with either the `intel` or `modesetting` driver. A workaround is to [disable DRI3](/index.php/Intel_graphics#DRI3_issues "Intel graphics").
 
 ### Screen artifacts/screenshot issues when using AMD's Catalyst driver
 

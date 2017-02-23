@@ -10,6 +10,8 @@
         *   [2.3.1 Install boot files](#Install_boot_files)
             *   [2.3.1.1 Install to disk](#Install_to_disk)
             *   [2.3.1.2 Install to external USB stick](#Install_to_external_USB_stick)
+                *   [2.3.1.2.1 BIOS](#BIOS)
+                *   [2.3.1.2.2 EFI](#EFI)
             *   [2.3.1.3 Install to partition or partitionless disk](#Install_to_partition_or_partitionless_disk)
             *   [2.3.1.4 Generate core.img alone](#Generate_core.img_alone)
 *   [3 UEFI systems](#UEFI_systems)
@@ -142,6 +144,8 @@ If you use [LVM](/index.php/LVM "LVM") for your `/boot`, you can install GRUB on
 
 ##### Install to external USB stick
 
+###### BIOS
+
 Assume your USB stick's first partition is FAT32 and its partition is /dev/sdy1
 
 ```
@@ -165,6 +169,10 @@ Optionally backup configuration files of `grub.cfg`:
 # sync; umount /mnt/usb
 
 ```
+
+###### EFI
+
+To have grub write its EFI image to `/boot/efi/EFI/BOOT/BOOTX64.efi`, which the boot firmware will be able to find without any UEFI boot entry, use `--removable` when you run `grub-install`.
 
 ##### Install to partition or partitionless disk
 

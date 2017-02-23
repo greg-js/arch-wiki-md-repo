@@ -581,7 +581,7 @@ For instructions on how to use kwallet to store your SSH keys, see [KDE Wallet#U
 *   Supports both PuTTY and OpenSSH private key formats.
 *   Works with native SSH agent on Linux/Mac and with PuTTY on Windows.
 
-See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://aur.archlinux.org/packages/keepass-plugin-keeagent/) package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/).
+See [KeePass#Plugin Installation](/index.php/KeePass#Plugin_Installation "KeePass") or [install](/index.php/Install "Install") the [keepass-plugin-keeagent](https://www.archlinux.org/packages/?name=keepass-plugin-keeagent) package. There is also the beta version, where new features appear first, [keepass-plugin-keeagent-beta](https://aur.archlinux.org/packages/keepass-plugin-keeagent-beta/).
 
 ## Troubleshooting
 

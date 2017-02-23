@@ -1,30 +1,4 @@
-In an operating system, the time (clock) is determined by four parts: time value, time standard, time zone, and Daylight Saving Time (DST) if applicable. This article explains what they are and how to read/set them.
-
-## Contents
-
-*   [1 Hardware clock and system clock](#Hardware_clock_and_system_clock)
-    *   [1.1 Read clock](#Read_clock)
-    *   [1.2 Set clock](#Set_clock)
-*   [2 Time standard](#Time_standard)
-    *   [2.1 UTC in Windows](#UTC_in_Windows)
-    *   [2.2 UTC in Ubuntu](#UTC_in_Ubuntu)
-*   [3 Time zone](#Time_zone)
-*   [4 Time skew](#Time_skew)
-*   [5 Time synchronization](#Time_synchronization)
-*   [6 Per-user/session or temporary settings](#Per-user.2Fsession_or_temporary_settings)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Clock shows a value that is neither UTC nor local time](#Clock_shows_a_value_that_is_neither_UTC_nor_local_time)
-*   [8 Tips and tricks](#Tips_and_tricks)
-    *   [8.1 fake-hwclock](#fake-hwclock)
-*   [9 See also](#See_also)
-
-## Hardware clock and system clock
-
-A computer has two clocks that need to be considered: the "Hardware clock" and the "System/software clock".
-
-**Hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores the values of: Year, Month, Day, Hour, Minute, and Seconds. It does not have the ability to store the time standard (localtime or UTC), nor whether DST is used.
-
-**System clock** (a.k.a. the software clock) keeps track of: time, time zone, and DST if applicable. It is calculated by the Linux kernel as the number of seconds since midnight January 1st 1970, UTC. The initial value of the system clock is calculated from the hardware clock, dependent on the contents of `/etc/adjtime`. After boot-up has completed, the system clock runs independently of the hardware clock. The Linux kernel keeps track of the system clock by counting timer interrupts.
+In an operating system, the time (clock) is determined by four parts: time value, time standard, time zone, and Daylight Saving Time (DST) if applicable. This article explains what they are and how to read/set them. Two clocks are present on systems: a hardware clock and a system clock which are also detailed in this article.
 
 Standard behavior of most operating systems is:
 
@@ -32,16 +6,61 @@ Standard behavior of most operating systems is:
 *   Keep accurate time of the system clock with an NTP daemon, see [#Time synchronization](#Time_synchronization).
 *   Set the hardware clock from the system clock on shutdown.
 
+## Contents
+
+*   [1 Hardware clock](#Hardware_clock)
+    *   [1.1 Read hardware clock](#Read_hardware_clock)
+    *   [1.2 Set hardware clock from system clock](#Set_hardware_clock_from_system_clock)
+*   [2 System clock](#System_clock)
+    *   [2.1 Read clock](#Read_clock)
+    *   [2.2 Set system clock](#Set_system_clock)
+*   [3 Time standard](#Time_standard)
+    *   [3.1 UTC in Windows](#UTC_in_Windows)
+    *   [3.2 UTC in Ubuntu](#UTC_in_Ubuntu)
+*   [4 Time zone](#Time_zone)
+*   [5 Time skew](#Time_skew)
+*   [6 Time synchronization](#Time_synchronization)
+*   [7 Per-user/session or temporary settings](#Per-user.2Fsession_or_temporary_settings)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Clock shows a value that is neither UTC nor local time](#Clock_shows_a_value_that_is_neither_UTC_nor_local_time)
+*   [9 Tips and tricks](#Tips_and_tricks)
+    *   [9.1 fake-hwclock](#fake-hwclock)
+*   [10 See also](#See_also)
+
+## Hardware clock
+
+The **hardware clock** (a.k.a. the Real Time Clock (RTC) or CMOS clock) stores the values of: Year, Month, Day, Hour, Minute, and Seconds. It does not have the ability to store the time standard (localtime or UTC), nor whether DST is used.
+
+### Read hardware clock
+
+```
+# hwclock --show
+
+```
+
+### Set hardware clock from system clock
+
+The following sets the hardware clock from the system clock. Additionally it updates `/etc/adjtime` or creates it if not present. See [hwclock(8)](http://man7.org/linux/man-pages/man8/hwclock.8.html) section "The Adjtime File" for more information on this file.
+
+```
+# hwlock --systohc
+
+```
+
+## System clock
+
+The **system clock** (a.k.a. the software clock) keeps track of: time, time zone, and DST if applicable. It is calculated by the Linux kernel as the number of seconds since midnight January 1st 1970, UTC. The initial value of the system clock is calculated from the hardware clock, dependent on the contents of `/etc/adjtime`. After boot-up has completed, the system clock runs independently of the hardware clock. The Linux kernel keeps track of the system clock by counting timer interrupts.
+
 ### Read clock
 
-To check the current system clock time (presented both in local time and UTC) as well as the RTC:
+To check the current system clock time (presented both in local time and UTC) as well as the RTC (hardware clock):
 
 ```
 $ timedatectl
 
 ```
 
-### Set clock
+### Set system clock
 
 To set the local time of the system clock directly:
 

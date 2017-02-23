@@ -259,7 +259,7 @@ Set the root [password](/index.php/Password "Password"):
 
 ### Boot loader
 
-See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations. For example, set up the boot loader with [systemd-boot](/index.php/Systemd-boot "Systemd-boot") if your system supports UEFI, and [GRUB](/index.php/GRUB#BIOS_systems "GRUB") when not.
+See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices and configurations.
 
 If you have an Intel CPU, install the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package in addition, and [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
 

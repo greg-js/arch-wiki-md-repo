@@ -6,9 +6,14 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
+    *   [2.1 Default JHBuild configuration](#Default_JHBuild_configuration)
+    *   [2.2 User configuration](#User_configuration)
 *   [3 Usage](#Usage)
-    *   [3.1 Installing prerequisites](#Installing_prerequisites)
-    *   [3.2 Building](#Building)
+    *   [3.1 Checking and installing prerequisites](#Checking_and_installing_prerequisites)
+    *   [3.2 Updating modules](#Updating_modules)
+    *   [3.3 Building modules](#Building_modules)
+    *   [3.4 Running modules](#Running_modules)
+    *   [3.5 Creating dependency graph](#Creating_dependency_graph)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Python issues](#Python_issues)
         *   [4.1.1 Building from scratch without JHBuild, or in a JHBuild shell](#Building_from_scratch_without_JHBuild.2C_or_in_a_JHBuild_shell)
@@ -23,101 +28,169 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
 
 ## Installation
 
-Install the [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package, which provides the stable version.
+Install the [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package, which usually provides the stable version.
+
+Alternatively, you may want to install [jhbuild-git](https://aur.archlinux.org/packages/jhbuild-git/) for latest JHBuild version in GNOME repository.
 
 ## Configuration
 
-The configuration file for JHBuild is located at `~/.config/jhbuildrc`. It uses [Python](/index.php/Python "Python") syntax to set configuration variables. Here is the sample file provided for building GNOME:
+JHBuild gets its configuration from a system-wide configuration file installed with the package, the `defaults.jhbuildrc`, and from an optional user configuration file jhbuildrc, in `~/.config/jhbuildrc` (if it exists).
+
+These files use [Python](/index.php/Python "Python") syntax to set configuration variables.
+
+The variables currently accepted can be found in [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/).
+
+### Default JHBuild configuration
+
+It can be found at `/usr/lib/python2.7/site-packages/jhbuild/defaults.jhbuildrc`.
+
+`defaults.jhbuildrc` provides default values for many configuration options, e.g. moduleset, modules, autoargs, module_autoargs, and others.
+
+It is provided with the package, so please avoid modifying it.
+
+The values set in `defaults.jhbuildrc` should be enough for JHBuild to work. Nevertheless, take a look at its value to decide what you want to use the default, and what you want to customize in a personal jhbuild configuration file.
+
+### User configuration
+
+`~/.config/jhbuildrc` is very useful for setting personal values in order to overlap what is currently set in `defaults.jhbuildrc` (e.g.: want to set a different moduleset), or to set values not already set in `defaults.jhbuildrc` (e.g.: your own module_autoargs for a specific module).
+
+You may find a very extended sample of a configuration file in `/usr/share/jhbuild/examples/sample.jhbuildrc`
+
+See below a few examples for `~/.config/jhbuildrc` contents:
+
+*   Enable a wide-most moduleset, and also force GTK3 for modules that would use GTK2 by default
 
 ```
-# -*- mode: python -*-
-# -*- coding: utf-8 -*-
-
-# edit this file to match your settings and copy it to ~/.config/jhbuildrc
-
-# if you have a GNOME git account, uncomment this line
-# repos['git.gnome.org'] = 'ssh://user@git.gnome.org/git/'
-
-# what module set should be used. The default can be found in
-# jhbuild/defaults.jhbuildrc, but can be any file in the modulesets directory
-# or a URL of a module set file on a web server.
-# moduleset = 'gnome-apps-3.12'
-#
-# A list of the modules to build. Defaults to the GNOME core and tested apps.
-# modules = [ 'meta-gnome-core', 'meta-gnome-apps-tested' ]
-
-# Or to build the old GNOME 2.32:
-# moduleset = 'gnome2/gnome-2.32'
-# modules = ['meta-gnome-desktop']
-
-# what directory should the source be checked out to?
-checkoutroot = os.path.expanduser('~/checkout/gnome')
-
-# the prefix to configure/install modules to (must have write access)
-prefix = '/opt/gnome'
-
-# custom CFLAGS / environment pieces for the build
-# os.environ['CFLAGS'] = '-Wall -g -O0'
-
-# extra arguments to pass to all autogen.sh scripts
-# to speed up builds of GNOME, try '--disable-static --disable-gtk-doc'
-#autogenargs=''
-
-# On multiprocessor systems setting makeargs to '-j2' may improve compilation
-# time. Be aware that not all modules compile correctly with '-j2'.
-# Set makeargs to 'V=1' for verbose build output.
-#makeargs = '-j2'
+ moduleset = ['gnome-world']
+ autogenargs = '--with-gtk3'
 
 ```
 
-You should edit (at least) *modules* to the desired modules to be built. A reference for most configuration variables is available at [GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/unstable/config-reference.html).
+*   Or you may want to enable documentation build, even though it will slowdown module compilation
+
+```
+ autogenargs = '--enable-gtk-doc'
+
+```
+
+*   Or you want some debug output from make command
+
+```
+ makeargs = 'V=1'
+
+```
+
+*   Or you found out that a module needs a specific setting (this is just an example; itstool is already specified)
+
+```
+ module_autogenargs = {
+      'itstool': autogenargs + ' PYTHON=/usr/bin/python2'
+ }
+
+```
 
 ## Usage
 
-### Installing prerequisites
+This topic provides some information and examples on how to use some JHBuild commands, but without intending to exhaust the subject. For a detailed information on each of JHBuild commands, please refer to [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/), learn from each command's help output or even read JHBuild's [source code](https://git.gnome.org/browse/jhbuild/).
 
-JHBuild can check if the required tools are installed by running *sysdeps*:
+JHBuild provides a general `--help` which lists all the commands available, and also a help message for each sub-command, e.g. `jhbuild sysdeps --help`.
+
+### Checking and installing prerequisites
+
+*sysdeps* can be used to get a detailed list of which dependencies you have installed and which ones you should install. In order to get this information, just run:
 
 ```
 $ jhbuild sysdeps
 
 ```
 
-*sanitycheck* has the similar function of *sysdeps*, but it fails on checking automake version due to an [regexp error in automake](http://lists.gnu.org/archive/html/automake/2016-05/msg00000.html) until 1.15 ([Already fixed next automake version](http://git.savannah.gnu.org/gitweb/?p=automake.git;a=commit;h=13f00eb4493c217269b76614759e452d8302955e)).
+Alternatively, *sanitycheck* may also be used to report missing tools that are required (e.g. mozjs38). If nothing is reported (and exit code is 0), then you're good to go! Similiar to the above command, just run:
 
-If any errors are shown, missing packages may be installed from repositories or running the *bootstrap* command, which tries to download, build and install the build prerequisites:
+```
+$ jhbuild sanitycheck
+
+```
+
+If some tools are reported to be missing, you can — besides installing correspondent packages with pacman, if available — run *bootstrap* command, which will download, build and install the named module inside your jhbuild tree:
 
 ```
 $ jhbuild bootstrap
 
 ```
 
-### Building
+**Note:** All dependencies informed by *sysdeps* should be already listed as dependency [jhbuild](https://aur.archlinux.org/packages/jhbuild/) by now. If you run *sysdeps* and find out a dependency that is not be listed, please report it in the comments of [jhbuild](https://aur.archlinux.org/packages/jhbuild/)
 
-To build all the modules selected in the configuration file, just run the *build* command:
+### Updating modules
+
+It is possible to simply update the source code of the modules without building them, making it possible build another time without having to wait fetching the source code. There are three ways of simply updating modules:
+
+*update*, without any arguments, will update all modules available in the moduleset/modules set in configuration file
+
+```
+$ jhbuild update
+
+```
+
+*update*, with one or more modules as arguments, will update **all** modules that the named modules depends on. e.g.:
+
+```
+$ jhbuild update gedit
+
+```
+
+*updateone*, with one or more modules, will update **only** the named module(s). e.g.:
+
+```
+$ jhbuild updateonly gedit
+
+```
+
+### Building modules
+
+This action will run the whole build process: it will update the source code (unless it is already up-to-date), configure & build, and install it in the proper directory.
+
+Just like *update*, There are three ways of building modules in JHBuild:
+
+*build*, without any arguments, will build all modules available in the moduleset/modules set in configuration file
 
 ```
 $ jhbuild build
 
 ```
 
-JHBuild will download, configure, compile and install each of the modules. See
+*build*, with one or more modules as arguments, will build **all** modules that the named modules depends on. e.g.:
 
 ```
-$ jhbuild help
+$ jhbuild build gedit
 
 ```
 
-for more details.
-
-If an error occurs at any stage, JHBuild will present a menu asking what to do. The choices include dropping to a shell to fix the error, rerunning the build from various stages, giving up on the module, or ignore the error and continue. Often, dropping to a shell and checking makefiles and configuration files can be helpful. If you face a build error, for example, you can try to manually `make` and check errors on the shell.
-
-Giving up on a module will cause any modules depending on it to fail.
-
-To build as many packages as possible, skipping broken packages, run:
+*buildone*, with one or more modules, will build **only** the named module(s). e.g.:
 
 ```
-$ yes 3 | jhbuild --try-checkout build
+$ jhbuild buildone gedit
+
+```
+
+**Note:** Please notice that since *buildone* don't also build the latest development version of a module's dependencies, it may fail due to dependency not being installed or being out-of-date; in this case, you should run *build* for the named module
+
+### Running modules
+
+After a successfully installed application in JHBuild, use *run* to start the module you just built. e.g.:
+
+```
+$ jhbuild run gedit
+
+```
+
+### Creating dependency graph
+
+JHBuild can output graph contents which can by piped into [graphviz](https://www.archlinux.org/packages/?name=graphviz) in order to generate e.g. a PNG or PostScript file.
+
+To generate a PNG file of e.g. gedit, run:
+
+```
+$ jhbuild dot gedit | dot -Tpng > dependencies.png
 
 ```
 
@@ -227,4 +300,8 @@ This list includes modules transitively depending on broken modules (i.e. some o
 
 ## See also
 
-[GNOME JHBuild Manual](http://developer.gnome.org/jhbuild/)
+*   [JHBuild homepage in GNOME Wiki](https://wiki.gnome.org/Projects/Jhbuild)
+*   [JHBuild for GNOME newcomers](https://wiki.gnome.org/Newcomers/BuildGnome)
+*   [JHBuild for experienced GNOME contributors](https://wiki.gnome.org/HowDoI/Jhbuild)
+*   [JHBuild Manual](https://developer.gnome.org/jhbuild/stable/)
+*   [JHBuild Source Code](https://git.gnome.org/browse/jhbuild/)

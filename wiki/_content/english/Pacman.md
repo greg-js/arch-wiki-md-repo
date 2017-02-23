@@ -227,7 +227,7 @@ $ pacman -Ss *string1* *string2* ...
 Sometimes, `-s`'s builtin ERE can cause a lot of unwanted results, so it has to be limited to match the package name only; not the description nor any other field:
 
 ```
-# pacman -Ss '^vim-'
+$ pacman -Ss '^vim-'
 
 ```
 

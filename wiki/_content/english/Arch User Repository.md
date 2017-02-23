@@ -271,7 +271,7 @@ $ git push
 *   Check for feedback and comments from other users and try to incorporate any improvements they suggest; consider it a learning process!
 *   Please do not leave a comment containing the version number every time you update the package. This keeps the comment section usable for valuable content mentioned above. [AUR helpers](/index.php/AUR_helpers "AUR helpers") are suited better to check for updates.
 *   Please do not just submit and forget about packages! It is the maintainer's job to maintain the package by checking for updates and improving the PKGBUILD.
-*   If you do not want to continue to maintain the package for some reason, `disown` the package using the AUR web interface and/or post a message to the AUR Mailing List.
+*   If you do not want to continue to maintain the package for some reason, `disown` the package using the AUR web interface and/or post a message to the AUR Mailing List. If all maintainers of an AUR package disown it, it will become an ["orphaned"](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=&SB=n&SO=a&PP=50&do_Orphans=Orphans) package.
 
 ### Other requests
 

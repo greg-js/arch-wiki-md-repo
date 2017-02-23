@@ -23,7 +23,6 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
     *   [3.2 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
     *   [3.3 Failed to run Redshift due to geoclue2](#Failed_to_run_Redshift_due_to_geoclue2)
-    *   [3.4 No autostart in i3](#No_autostart_in_i3)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -58,6 +57,8 @@ There are several options to have redshift automatically started:
 *   By right-clicking the system tray icon when redshift-gtk or plasma5-applets-redshift-control is already launched and selecting 'Autostart'.
 
 **Note:** The redshift services files contains `Restart=always` so the service will restart infinitely (see `man systemd.service`)
+
+*   By using your preferred window manager or desktop environment's autostart methods. For example in i3, the following line could be added to the config file: `exec --no-startup-id redshift-gtk`
 
 ### Quick start
 
@@ -220,15 +221,6 @@ By default, the geoclue2 configuration files does not allow Redshift access. In 
 allowed=true
 system=false
 users=
-```
-
-### No autostart in i3
-
-Add the following to the i3 config file:
-
-```
-exec --no-startup-id redshift-gtk
-
 ```
 
 ## See also

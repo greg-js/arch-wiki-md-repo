@@ -3850,9 +3850,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 ##### Vi text editors
 
-[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune)
-
-*   **[Kakoune](/index.php?title=Kakoune&action=edit&redlink=1 "Kakoune (page does not exist)")** — Vim inspired. Less keystrokes. Multiple selections. Orthogonal design.
+*   **Kakoune** — Vim inspired. Less keystrokes. Multiple selections. Orthogonal design.
 
 	[https://github.com/mawww/kakoune](https://github.com/mawww/kakoune) || [kakoune-git](https://aur.archlinux.org/packages/kakoune-git/)
 
@@ -3868,7 +3866,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://www.vim.org/](http://www.vim.org/) || [vim](https://www.archlinux.org/packages/?name=vim)
 
-*   **[Vis](/index.php?title=Vis&action=edit&redlink=1 "Vis (page does not exist)")** — modern, legacy free, simple yet efficient vim-like editor.
+*   **Vis** — modern, legacy free, simple yet efficient vim-like editor.
 
 	[http://www.brain-dump.org/projects/vis/](http://www.brain-dump.org/projects/vis/) || [vis](https://www.archlinux.org/packages/?name=vis)
 
@@ -4647,7 +4645,7 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **xlockmore** — Simple X11 screen lock with PAM support.
 
-	[http://www.tux.org/~bagleyd/xlockmore.html](http://www.tux.org/~bagleyd/xlockmore.html) || [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)
+	[http://sillycycle.com/xlockmore.html](http://sillycycle.com/xlockmore.html) || [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)
 
 *   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — Screen saver and locker for the X Window System.
 

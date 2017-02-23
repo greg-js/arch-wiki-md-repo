@@ -20,7 +20,7 @@ When executed, it will also automatically:
 
 ## Creating custom directories
 
-Both the local `~/.config/user-dirs.dirs` and global `/etc/xdg/user-dirs.defaults` configuration files use the following environmental variable format to point to user directories: `XDG_DIRNAME_DIR="$HOME/directory_name`" An example configuration file will/may likely look like this (these are all the template directories):
+Both the local `~/.config/user-dirs.dirs` and global `/etc/xdg/user-dirs.defaults` configuration files use the following environmental variable format to point to user directories: `XDG_DIRNAME_DIR="$HOME/directory_name"` An example configuration file will/may likely look like this (these are all the template directories):
 
  `~/.config/user-dirs.dirs` 
 ```

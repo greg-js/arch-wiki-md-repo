@@ -105,6 +105,13 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
 ```
 
+After, you need to create /media directory:
+
+```
+# mkdir /media
+
+```
+
 ### Mount loop devices
 
 To easily mount ISO images, use the following command:

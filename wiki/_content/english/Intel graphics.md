@@ -244,6 +244,8 @@ Option "DRI" "2"
 
 ```
 
+For the `modesetting` driver, this method of disabling DRI3 does not work. Instead, one can set the environment variable `LIBGL_DRI3_DISABLE=1`.
+
 ### Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)
 
 Should you experience missing font glyphs in GTK+ applications, the following workaround might help. [Edit](/index.php/Textedit "Textedit") `/etc/environment` to add the following line:

@@ -18,11 +18,9 @@
 
 ## Installation
 
-Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package, which depends on the former.
+Syncthing can be [installed](/index.php/Install "Install") with the [syncthing](https://www.archlinux.org/packages/?name=syncthing) package.
 
-[syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) includes additional features such as synchronization by inotify (for caveats, see [Use inotify](#Use_inotify)), desktop notifications and integration with Nautilus, Nemo and Caja.
-
-After installing, you can [start Syncthing](#Starting_Syncthing).
+Synchronization by *inotify* can be added with either the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) or the [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) package, see [#Use inotify](#Use_inotify) for caveats. *syncthing-gtk* also provides a GTK interface, [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") and integration with [Nautilus](/index.php/Nautilus "Nautilus"), [Nemo](/index.php/Nemo "Nemo") and Caja.
 
 ## Starting Syncthing
 
@@ -66,9 +64,9 @@ Next, you can either change the configuration of the default node (click its nam
 
 ### Use inotify
 
-Inotify (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support inotify yet but there is an official extension module which talks to the Syncthing REST API. The usage of inotify avoids expensive rescans every minute. The inotify extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") the syncthing service (user or system) for changes to take effect.
+[Inotify](https://en.wikipedia.org/wiki/Inotify "w:Inotify") (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and report those changes to applications. Syncthing does not support *inotify* yet but there is an official extension module which talks to the Syncthing REST API. The usage of *inotify* avoids expensive rescans every minute. The *inotify* extension can be installed with the [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify) package. [Restart](/index.php/Restart "Restart") the syncthing service (user or system) for changes to take effect.
 
-Note that while [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) includes inotify, it does not depend upon syncthing-inotify, and as such inotify will only work while the GUI is running.
+Alternatively, *inotify* support is provided by [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk) (which does not depend on [syncthing-inotify](https://www.archlinux.org/packages/?name=syncthing-inotify)) but in this case *inotify* will only work while the GUI is running.
 
 ### Run a Relay
 

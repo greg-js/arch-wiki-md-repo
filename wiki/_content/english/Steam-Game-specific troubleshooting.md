@@ -53,9 +53,7 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [20.2 Cannot reach bottom of the screen on menues](#Cannot_reach_bottom_of_the_screen_on_menues)
     *   [20.3 Audio is not synced](#Audio_is_not_synced)
     *   [20.4 Unable to aim when in game](#Unable_to_aim_when_in_game)
-    *   [20.5 Mouse deadzone](#Mouse_deadzone)
-    *   [20.6 Low Performance on AMD card using Catalyst proprietary driver ( <= 15.7 )](#Low_Performance_on_AMD_card_using_Catalyst_proprietary_driver_.28_.3C.3D_15.7_.29)
-    *   [20.7 Brightness slider not working](#Brightness_slider_not_working)
+    *   [20.5 Brightness slider not working](#Brightness_slider_not_working)
 *   [21 Crusader Kings II](#Crusader_Kings_II)
     *   [21.1 Dependencies (x86_64)](#Dependencies_.28x86_64.29)
     *   [21.2 Tips and tricks](#Tips_and_tricks)
@@ -184,89 +182,82 @@ See [Steam](/index.php/Steam "Steam") for the main article, and [Steam/Troublesh
     *   [66.1 Game fails to launch after update to new Nvidia drivers](#Game_fails_to_launch_after_update_to_new_Nvidia_drivers)
     *   [66.2 Game causes GPU lockup with mesa drivers](#Game_causes_GPU_lockup_with_mesa_drivers)
 *   [67 Serious Sam 3: BFE](#Serious_Sam_3:_BFE)
-    *   [67.1 Dependencies](#Dependencies_31)
-    *   [67.2 No audio](#No_audio_2)
-*   [68 Sir, You Are Being Hunted](#Sir.2C_You_Are_Being_Hunted)
-    *   [68.1 Dependencies](#Dependencies_32)
-*   [69 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
-    *   [69.1 Dependencies](#Dependencies_33)
-    *   [69.2 No audio](#No_audio_3)
-*   [70 Spacechem](#Spacechem)
-    *   [70.1 Dependencies](#Dependencies_34)
-    *   [70.2 Game crash](#Game_crash)
-*   [71 Splice](#Splice)
-    *   [71.1 Dependencies](#Dependencies_35)
-*   [72 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
-*   [73 The Stanley Parable](#The_Stanley_Parable)
-    *   [73.1 Game won't start](#Game_won.27t_start)
-*   [74 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
-    *   [74.1 Dependencies](#Dependencies_36)
-*   [75 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
-    *   [75.1 Start with black screen](#Start_with_black_screen)
-    *   [75.2 No English fonts](#No_English_fonts)
-*   [76 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
-    *   [76.1 No sound](#No_sound_6)
-*   [77 Strike Suite Zero](#Strike_Suite_Zero)
-    *   [77.1 Dependencies](#Dependencies_37)
-*   [78 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
-    *   [78.1 Dependencies](#Dependencies_38)
-*   [79 Tabletop Simulator](#Tabletop_Simulator)
-    *   [79.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
-*   [80 Team Fortress 2](#Team_Fortress_2)
-    *   [80.1 Dependencies](#Dependencies_39)
-    *   [80.2 Making HRTF work](#Making_HRTF_work)
-    *   [80.3 Loading screen freeze](#Loading_screen_freeze)
-    *   [80.4 No audio](#No_audio_4)
-    *   [80.5 Slow loading textures](#Slow_loading_textures)
-*   [81 Terraria](#Terraria)
-*   [82 This War of Mine](#This_War_of_Mine)
-    *   [82.1 Game doesn't start](#Game_doesn.27t_start)
-    *   [82.2 Sound glitches (on steam-native)](#Sound_glitches_.28on_steam-native.29)
-*   [83 Tomb Raider](#Tomb_Raider)
-    *   [83.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
-    *   [83.2 Steam Controller not working ingame while being correctly recognised* by Steam outside of the game](#Steam_Controller_not_working_ingame_while_being_correctly_recognised.2A_by_Steam_outside_of_the_game)
-*   [84 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
-    *   [84.1 Crash on launch](#Crash_on_launch)
-*   [85 Transistor](#Transistor)
-    *   [85.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
-*   [86 Transmissions: Element 120](#Transmissions:_Element_120)
-    *   [86.1 Troubleshooting](#Troubleshooting)
-    *   [86.2 Dependencies](#Dependencies_40)
-*   [87 Trine 2](#Trine_2)
-    *   [87.1 Dependencies](#Dependencies_41)
-    *   [87.2 Colors](#Colors)
-    *   [87.3 Sound](#Sound)
-    *   [87.4 Resolution](#Resolution)
-*   [88 Tropico 5](#Tropico_5)
-    *   [88.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
-*   [89 Unity of Command](#Unity_of_Command)
-    *   [89.1 Dependencies](#Dependencies_42)
-    *   [89.2 Squares](#Squares)
-    *   [89.3 No audio](#No_audio_5)
-*   [90 Unity3D](#Unity3D)
-    *   [90.1 Locale Settings](#Locale_Settings)
-    *   [90.2 Unity 5 sound problems](#Unity_5_sound_problems)
-    *   [90.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
-*   [91 Unrest](#Unrest)
-    *   [91.1 Dependencies](#Dependencies_43)
-*   [92 War Thunder](#War_Thunder)
-    *   [92.1 Blank screen](#Blank_screen)
-*   [93 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
-    *   [93.1 Dependencies](#Dependencies_44)
-    *   [93.2 Blank screen](#Blank_screen_2)
-*   [94 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
-    *   [94.1 Dependencies](#Dependencies_45)
-    *   [94.2 Game does not start](#Game_does_not_start_7)
-*   [95 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
-    *   [95.1 Dependencies](#Dependencies_46)
-*   [96 World of Goo](#World_of_Goo)
-    *   [96.1 Changing resolution](#Changing_resolution)
-*   [97 Worms Reloaded](#Worms_Reloaded)
-    *   [97.1 Dependencies](#Dependencies_47)
-*   [98 XCOM](#XCOM)
-    *   [98.1 Dependencies](#Dependencies_48)
-    *   [98.2 Hangs on startup](#Hangs_on_startup)
-    *   [98.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
+    *   [67.1 No audio](#No_audio_2)
+*   [68 Space Pirates and Zombies](#Space_Pirates_and_Zombies)
+    *   [68.1 Dependencies](#Dependencies_31)
+    *   [68.2 No audio](#No_audio_3)
+*   [69 Spacechem](#Spacechem)
+    *   [69.1 Dependencies](#Dependencies_32)
+    *   [69.2 Game crash](#Game_crash)
+*   [70 Splice](#Splice)
+    *   [70.1 Dependencies](#Dependencies_33)
+*   [71 Star Wars Battlefront II](#Star_Wars_Battlefront_II)
+*   [72 The Stanley Parable](#The_Stanley_Parable)
+    *   [72.1 Game won't start](#Game_won.27t_start)
+*   [73 Shadow Tactics: Blades of the Shogun](#Shadow_Tactics:_Blades_of_the_Shogun)
+    *   [73.1 Dependencies](#Dependencies_34)
+*   [74 Steel Storm: Burning Retribution](#Steel_Storm:_Burning_Retribution)
+    *   [74.1 Start with black screen](#Start_with_black_screen)
+    *   [74.2 No English fonts](#No_English_fonts)
+*   [75 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
+    *   [75.1 No sound](#No_sound_6)
+*   [76 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
+    *   [76.1 Dependencies](#Dependencies_35)
+*   [77 Tabletop Simulator](#Tabletop_Simulator)
+    *   [77.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
+*   [78 Team Fortress 2](#Team_Fortress_2)
+    *   [78.1 Dependencies](#Dependencies_36)
+    *   [78.2 Making HRTF work](#Making_HRTF_work)
+    *   [78.3 Loading screen freeze](#Loading_screen_freeze)
+    *   [78.4 No audio](#No_audio_4)
+    *   [78.5 Slow loading textures](#Slow_loading_textures)
+*   [79 Terraria](#Terraria)
+*   [80 This War of Mine](#This_War_of_Mine)
+    *   [80.1 Game doesn't start](#Game_doesn.27t_start)
+    *   [80.2 Sound glitches (on steam-native)](#Sound_glitches_.28on_steam-native.29)
+*   [81 Tomb Raider](#Tomb_Raider)
+    *   [81.1 Game immediately closes when running with steam-native](#Game_immediately_closes_when_running_with_steam-native)
+    *   [81.2 Steam Controller not working ingame while being correctly recognised* by Steam outside of the game](#Steam_Controller_not_working_ingame_while_being_correctly_recognised.2A_by_Steam_outside_of_the_game)
+*   [82 Towns / Towns Demo](#Towns_.2F_Towns_Demo)
+    *   [82.1 Crash on launch](#Crash_on_launch)
+*   [83 Transistor](#Transistor)
+    *   [83.1 Crash on launch / FMOD binding crash / Audio issues](#Crash_on_launch_.2F_FMOD_binding_crash_.2F_Audio_issues)
+*   [84 Transmissions: Element 120](#Transmissions:_Element_120)
+    *   [84.1 Troubleshooting](#Troubleshooting)
+    *   [84.2 Dependencies](#Dependencies_37)
+*   [85 Trine 2](#Trine_2)
+    *   [85.1 Dependencies](#Dependencies_38)
+    *   [85.2 Colors](#Colors)
+    *   [85.3 Sound](#Sound)
+    *   [85.4 Resolution](#Resolution)
+*   [86 Tropico 5](#Tropico_5)
+    *   [86.1 Blank screen with sound only on startup](#Blank_screen_with_sound_only_on_startup)
+*   [87 Unity of Command](#Unity_of_Command)
+    *   [87.1 Dependencies](#Dependencies_39)
+    *   [87.2 Squares](#Squares)
+    *   [87.3 No audio](#No_audio_5)
+*   [88 Unity3D](#Unity3D)
+    *   [88.1 Locale Settings](#Locale_Settings)
+    *   [88.2 Unity 5 sound problems](#Unity_5_sound_problems)
+    *   [88.3 Game launching on wrong monitor in fullscreen mode](#Game_launching_on_wrong_monitor_in_fullscreen_mode)
+*   [89 Unrest](#Unrest)
+    *   [89.1 Dependencies](#Dependencies_40)
+*   [90 War Thunder](#War_Thunder)
+    *   [90.1 Blank screen](#Blank_screen)
+*   [91 Warhammer 40,000: Dawn of War II](#Warhammer_40.2C000:_Dawn_of_War_II)
+    *   [91.1 Dependencies](#Dependencies_41)
+    *   [91.2 Blank screen](#Blank_screen_2)
+*   [92 Witcher 2: Assassin of Kings](#Witcher_2:_Assassin_of_Kings)
+    *   [92.1 Dependencies](#Dependencies_42)
+    *   [92.2 Game does not start](#Game_does_not_start_7)
+*   [93 Wizardry 6: Bane of the Cosmic Forge](#Wizardry_6:_Bane_of_the_Cosmic_Forge)
+    *   [93.1 Dependencies](#Dependencies_43)
+*   [94 World of Goo](#World_of_Goo)
+    *   [94.1 Changing resolution](#Changing_resolution)
+*   [95 XCOM](#XCOM)
+    *   [95.1 Dependencies](#Dependencies_44)
+    *   [95.2 Hangs on startup](#Hangs_on_startup)
+    *   [95.3 Graphical glitches on Intel HD](#Graphical_glitches_on_Intel_HD)
 
 ## Air Brawl
 
@@ -530,11 +521,17 @@ as seen here [https://github.com/ValveSoftware/steam-for-linux/issues/4379](http
 
 The game can't find "libpcre.so.3" and fails to run. A solution is to create a symbolic link:
 
- `ln -s /usr/lib/libpcre.so /usr/lib/libpcre.so.3` 
+```
+# ln -s /usr/lib/libpcre.so /usr/lib/libpcre.so.3
+
+```
 
 or safer way
 
- `ln -s /usr/lib/libpcre.so  /home/<user>/.steam/steam/SteamApps/common/Company\ of\ Heroes\ 2/lib/<ARCH>/libpcre.so.3` 
+```
+$ ln -s /usr/lib/libpcre.so  ~/.steam/steam/SteamApps/common/Company\ of\ Heroes\ 2/lib/<ARCH>/libpcre.so.3
+
+```
 
 ## Counter-Strike: Global Offensive (CS:GO)
 
@@ -582,43 +579,6 @@ export SDL_VIDEO_X11_DGAMOUSE=0
 ```
 
 See also [[1]](https://bbs.archlinux.org/viewtopic.php?id=184905).
-
-### Mouse deadzone
-
-Small mouse movements (less than under 5 pixels per second) does not register on X or an OpenGL games.
-
-[Solution](https://bbs.archlinux.org/viewtopic.php?pid=1519944#p1519944): [install](/index.php/Install "Install") the [x86-input-libinput](https://www.archlinux.org/packages/?name=x86-input-libinput) package.
-
-### Low Performance on AMD card using Catalyst proprietary driver ( <= 15.7 )
-
-Solution[[2]](http://www.phoronix.com/scan.php?page=article&item=amd-csgo-workaround&num=1):
-
-```
-cd ~/.steam/steam/steamapps/common/Counter-Strike\ Global\ Offensive
-mv csgo_linux hl2_linux
-
-```
-
-Now edit csgo.sh
-
-```
-nano csgo.sh
-
-```
-
-and change
-
-```
-GAMEEXE=csgo_linux
-
-```
-
-to
-
-```
-GAMEEXE=hl2_linux
-
-```
 
 ### Brightness slider not working
 
@@ -696,13 +656,17 @@ LD_LIBRARY_PATH="/usr/lib:$LD_LIBRARY_PATH" %command%
 
 *   Package [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/) installs Adobe Air not in the place where the game expects it to be, fix this by creating a symlink (requires root permissions):
 
- `$ ln -s /opt/adobe-air-sdk/runtimes/air/linux/Adobe\ AIR /opt/Adobe\ AIR` 
+```
+$ ln -s /opt/adobe-air-sdk/runtimes/air/linux/Adobe\ AIR /opt/Adobe\ AIR
+
+```
 
 *   Adobe AIR will want to check whether the EULA was accepted and fail in doing so. To fix it, issue the following commands (from under your user, not under root):
 
 ```
 $ mkdir -p ~/.appdata/Adobe/AIR
 $ echo 2 > ~/.appdata/Adobe/AIR/eulaAccepted
+
 ```
 
 **Note:** By issuing these commands you're accepting Adobe Air's EULA.
@@ -723,7 +687,6 @@ LD_LIBRARY_PATH="." primusrun ./EoCApp
 ### Dependencies
 
 *   [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) (Looks like it fixes sound in some cases. See [this github issue](https://github.com/ValveSoftware/steam-for-linux/issues/2968) for details)
 *   [lib32-libcurl-gnutls](https://www.archlinux.org/packages/?name=lib32-libcurl-gnutls)
 
 ### No sound
@@ -743,7 +706,7 @@ On the game, go to the option and set all audio to the proper volume.
 
 *   [libpng12](https://www.archlinux.org/packages/?name=libpng12)
 *   [libtxc_dxtn](https://www.archlinux.org/packages/?name=libtxc_dxtn)
-*   [libudev0](https://aur.archlinux.org/packages/libudev0/) or [libudev.so.0](https://aur.archlinux.org/packages/libudev.so.0/)
+*   [libudev0](https://aur.archlinux.org/packages/libudev0/)
 
 ### In-game font is unreadable
 
@@ -781,9 +744,9 @@ Steam distributes a copy of libxcb which is incompatible with the latest xorg li
 
 See more information here:
 
-	[[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3199)
+	[[2]](https://github.com/ValveSoftware/steam-for-linux/issues/3199)
 
-	[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3093)
+	[[3]](https://github.com/ValveSoftware/steam-for-linux/issues/3093)
 
 ### Chinese Tips and player's name display problem
 
@@ -883,7 +846,6 @@ This game has 32-bit and 64-bit binaries. For unknown reason, steam will launch 
 
 ### Dependencies
 
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
 
 ## FTL: Faster than Light
@@ -1107,7 +1069,6 @@ Game does not run if you try to launch it via Steam, but you can run it directly
 ### Dependencies
 
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse)
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 
 ### Compatibility
 
@@ -1229,13 +1190,13 @@ If Multiwinia crashes on startup on X64 systems, force launching the 32-bit exec
 
 ```
 
-See [[5]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
+See [[4]](https://steamcommunity.com/app/1530/discussions/0/864969481950542663/#c558746995160431396).
 
 ## Natural Selection 2
 
 ### No Sound
 
-If there is no sound in-game. Try installing [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl), [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2), and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
+If there is no sound in-game. Try installing [lib32-sdl](https://www.archlinux.org/packages/?name=lib32-sdl) and [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2).
 
 If this fails, try setting the game's launch options in Steam to:
 
@@ -1302,7 +1263,6 @@ The error:
 was resolved by installing:
 
 *   [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa)
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse)
 
 per [PulseAudio#ALSA](/index.php/PulseAudio#ALSA "PulseAudio").
@@ -1360,10 +1320,6 @@ A workaround is to set the launch options to:
 
 ## Serious Sam 3: BFE
 
-### Dependencies
-
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
-
 ### No audio
 
 Try running:
@@ -1387,17 +1343,10 @@ mmap = true
 
 ```
 
-## Sir, You Are Being Hunted
-
-### Dependencies
-
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
-
 ## Space Pirates and Zombies
 
 ### Dependencies
 
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 
 ### No audio
@@ -1457,10 +1406,10 @@ In order to use the patched wine version with PlayOnLinux, copy the completely p
 
 ### Game won't start
 
-as discussed in steam's store page, remove `libstdc++.so.6` from the game folder. For example:
+As discussed in Steam's store page, remove `libstdc++.so.6` from the game folder. For example:
 
 ```
-rm ~/.local/share/Steam/steamapps/common/The\ Stanley\ Parable/bin/libstdc++.so.6
+$ rm ~/.local/share/Steam/steamapps/common/The\ Stanley\ Parable/bin/libstdc++.so.6
 
 ```
 
@@ -1468,13 +1417,9 @@ rm ~/.local/share/Steam/steamapps/common/The\ Stanley\ Parable/bin/libstdc++.so.
 
 ### Dependencies
 
-*   [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc)
-*   [lib32-libx11](https://www.archlinux.org/packages/?name=lib32-libx11)
 *   [lib32-libxcursor](https://www.archlinux.org/packages/?name=lib32-libxcursor)
 *   [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr)
 *   [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5)
-*   [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) (or any vendor specific libgl like nvidia version)
-*   [lib32-alsa-lib](https://www.archlinux.org/packages/?name=lib32-alsa-lib)
 
 ## Steel Storm: Burning Retribution
 
@@ -1542,12 +1487,6 @@ LD_LIBRARY_PATH="noload/:$LD_LIBRARY_PATH" %command%
 
 Again, this should work because Steam checks for a `noload/` directory relative to the game's directory. The dynamic linker should respect the `$LD_LIBRARY_PATH` variable and fail to load the necessary [libpulse](https://www.archlinux.org/packages/?name=libpulse) files. The game should then fallback to plain ALSA.
 
-## Strike Suite Zero
-
-### Dependencies
-
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
-
 ## Superbrothers: Sword & Sworcery EP
 
 [The game bundles with an outdated version of libstdc++](http://steamcommunity.com/app/204060/discussions/0/364039785161291413/) which prevents the game from starting. The following can be observed when you run Steam and S&S from the terminal:
@@ -1567,7 +1506,7 @@ libGL error: failed to load driver: swrast
 To solve this problem, go into the game's library folder which should be something like
 
 ```
-/home/steam/.steam/steam/steamapps/common/Superbrothers Sword & Sworcery EP/lib
+~/.steam/steam/steamapps/common/Superbrothers Sword & Sworcery EP/lib
 
 ```
 
@@ -1583,7 +1522,6 @@ After that the game will use the libstdc++ from Steam.
 ### Dependencies
 
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) (if you use PulseAudio)
 
 ## Tabletop Simulator
@@ -1603,16 +1541,16 @@ Install [wqy-microhei](https://www.archlinux.org/packages/?name=wqy-microhei) an
 Assuming HRTF has been set up properly in the operating system, hrtf won't be enabled unless you disable the original processing. To do so, use
 
 ```
-   dsp_slow_cpu 1
+dsp_slow_cpu 1
 
 ```
 
 For best results, also change the following:
 
 ```
-   snd_spatialize_roundrobin 1
-   dsp_enhance_stereo 0
-   snd_pitchquality 1
+snd_spatialize_roundrobin 1
+dsp_enhance_stereo 0
+snd_pitchquality 1
 
 ```
 
@@ -1641,7 +1579,7 @@ See the KNOWN ISSUES & WORKAROUNDS​ section of the [release announcement](http
 This happens because of a incompatibility of the newer version of `lib32-curl`. To fix the problem you need to remove the bundled `libcurl.so.4`
 
 ```
- rm "~/.local/share/Steam/steamapps/common/This War of Mine/libcurl.so.4"
+$ rm "~/.local/share/Steam/steamapps/common/This War of Mine/libcurl.so.4"
 
 ```
 
@@ -1650,9 +1588,9 @@ This happens because of a incompatibility of the newer version of `lib32-curl`. 
 The bundled `libOpenAL` might not work corretly. Use the following fix:
 
 ```
-   cd ~/.local/share/Steam/steamapps/common/This\ War\ of\ Mine
-   mv libOpenAL.so libOpenAL.so.backup
-   ln -s /usr/lib32/libopenal.so libOpenAL.so
+$ cd ~/.local/share/Steam/steamapps/common/This\ War\ of\ Mine
+$ mv libOpenAL.so libOpenAL.so.backup
+$ ln -s /usr/lib32/libopenal.so libOpenAL.so
 
 ```
 
@@ -1700,9 +1638,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 This will force Steam to do the fix whenever Transistor is started, but allows Steam to be launched normally.
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[6]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[5]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
+Also, check out this thread [[6]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
 
 ## Transmissions: Element 120
 
@@ -1771,7 +1709,6 @@ Right click on the game's entry in your Steam library, click on `Properties`, th
 ### Dependencies
 
 *   [lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango)
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 
 ### Squares
 
@@ -1836,7 +1773,7 @@ Be aware that some games do not support setting that parameter, it will simply b
 
 ### Blank screen
 
-If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` [environment variable](/index.php/Environment_variable "Environment variable"). [[8]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[9]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRIDE=4.1COMPAT` [environment variable](/index.php/Environment_variable "Environment variable"). [[7]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[8]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ## Warhammer 40,000: Dawn of War II
 
@@ -1872,7 +1809,6 @@ You can also put the replacement after an else statement if using multiple linux
 
 ### Dependencies
 
-*   [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2)
 *   [lib32-libcurl-compat](https://www.archlinux.org/packages/?name=lib32-libcurl-compat)
 *   [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls)
 *   [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2)
@@ -1884,8 +1820,8 @@ You can also put the replacement after an else statement if using multiple linux
 If the game does not run, enable error messages:
 
 ```
-cd "${HOME}/.local/share/Steam/SteamApps/common/the witcher 2"
-LIBGL_DEBUG=verbose ./witcher2
+$ cd "${HOME}/.local/share/Steam/SteamApps/common/the witcher 2"
+$ LIBGL_DEBUG=verbose ./witcher2
 
 ```
 
@@ -1925,12 +1861,6 @@ exec dosbox -conf dosbox_wiz6.conf -conf dosbox_wiz6_launch_linux.conf -noconsol
  <param name="ui_inset" value="10" />
 
 ```
-
-## Worms Reloaded
-
-### Dependencies
-
-*   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins)
 
 ## XCOM
 

@@ -57,13 +57,6 @@ For compatibility with [resolv.conf](/index.php/Resolv.conf "Resolv.conf"), dele
 
 ```
 
-Optionally, if you wish to use the local DNS stub resolver of *systemd-resolved* (and thus use LLMNR and DNS merging per interface), replace `dns` with `resolve` in `/etc/nsswitch.conf`:
-
-```
-hosts: files **resolve** myhostname
-
-```
-
 See `man systemd-resolved` and `man resolved.conf` and [Systemd README](https://github.com/systemd/systemd/blob/master/README#L205).
 
 **Note:** Systemd's `resolve` may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate `.network` file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:

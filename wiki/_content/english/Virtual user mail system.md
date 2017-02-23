@@ -129,6 +129,8 @@ smtpd_tls_key_file = /etc/ssl/private/vmail.key
 smtpd_sasl_local_domain = $mydomain
 broken_sasl_auth_clients = yes
 smtpd_tls_loglevel = 1
+smtp_tls_security_level = may
+smtp_tls_loglevel = 1
 
 ```
 

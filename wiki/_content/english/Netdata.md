@@ -1,6 +1,6 @@
-[netdata](https://github.com/firehol/netdata/) is a system for distributed real-time performance and health monitoring. It provides unparalleled insights, in real-time, of everything happening on the system it runs (including applications such as web and database servers), using modern interactive web dashboards. *netdata* is created by the group that also created FireHOL and FireQOS.
+[netdata](https://github.com/firehol/netdata/) is a system for distributed real-time performance and health monitoring. *netdata* is created by the group that also created FireHOL and FireQOS.
 
-*netdata* is fast and efficient, designed to permanently run on all systems (physical and virtual servers, containers, IoT devices), without disrupting their core function.
+*netdata* is designed to permanently run on all systems (physical and virtual servers, containers, IoT devices), without disrupting their core function.
 
 ## Contents
 

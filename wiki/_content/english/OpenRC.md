@@ -15,14 +15,17 @@
     *   [2.6 Kernel modules](#Kernel_modules)
     *   [2.7 Locale](#Locale)
     *   [2.8 DM-Crypt](#DM-Crypt)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Error while unmounting /tmp](#Error_while_unmounting_.2Ftmp)
-    *   [3.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
-    *   [3.3 During shutdown remounting root as read-only fails](#During_shutdown_remounting_root_as_read-only_fails)
-    *   [3.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
-    *   [3.5 X server does not start unless user is root](#X_server_does_not_start_unless_user_is_root)
-*   [4 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
-*   [5 See also](#See_also)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Quiet booting](#Quiet_booting)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Error while unmounting /tmp](#Error_while_unmounting_.2Ftmp)
+    *   [4.2 Disabling IPv6 does not work](#Disabling_IPv6_does_not_work)
+    *   [4.3 During shutdown remounting root as read-only fails](#During_shutdown_remounting_root_as_read-only_fails)
+    *   [4.4 /etc/sysctl.conf not found](#.2Fetc.2Fsysctl.conf_not_found)
+    *   [4.5 X server does not start unless user is root](#X_server_does_not_start_unless_user_is_root)
+    *   [4.6 Not authorized to perform operation when mounting device](#Not_authorized_to_perform_operation_when_mounting_device)
+*   [5 Using OpenRC with a desktop environment](#Using_OpenRC_with_a_desktop_environment)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -114,6 +117,12 @@ See [[3]](http://wiki.gentoo.org/wiki/Localization/HOWTO#Keyboard_layout_for_the
 
 See [DM-Crypt - Gentoo-en](http://gentoo-en.vfose.ru/wiki/DM-Crypt) for automatically mounting encrypted LVM or other block devices.
 
+## Tips and tricks
+
+### Quiet booting
+
+To hide boot messages from OpenRC, you can edit `/etc/inittab` and add `--quiet` to every openrc command. For further information check with `$ openrc -h`.
+
 ## Troubleshooting
 
 ### Error while unmounting /tmp
@@ -178,13 +187,28 @@ To prevent a missing file error, create the file:
 
 ### X server does not start unless user is root
 
-With the Xorg release 1.16, X was made rootless by relying on systemd-login. Using `startx` will not work when running OpenRC as init system.
+With Xorg 1.16, X was made rootless and now relies on systemd-login. Using `startx` will not work as-is when running OpenRC as your init system.
 
-This can be solved by creating the `/etc/X11/Xwrapper.config` file with the contents:
+To solve this, create the `/etc/X11/Xwrapper.config` file with the following contents:
 
 ```
-# Xorg.wraper configuration file
+# Xorg.wrapper configuration file
 needs_root_rights = yes
+
+```
+
+### Not authorized to perform operation when mounting device
+
+When you use `startx` to start `Xfce`, you may not be able mount other devices directly in `thunar`, in this case, you can change your `~/.xinitrc` file with codes below. [[6]](https://bbs.archlinux.org/viewtopic.php?pid=976373#p976373)
+
+```
+#if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+# for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+#  [ -x "$f" ] && . "$f"
+# done
+# unset f
+#fi
+exec ck-launch-session startxfce4
 
 ```
 
